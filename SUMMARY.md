@@ -69,6 +69,7 @@
     * [Connector Types & Setup](flows/flow-setup-essentials/connecting-apps/connector-types-and-setup.md)
     * [Managing & Using Connectors](flows/flow-setup-essentials/connecting-apps/managing-and-using-connectors.md)
     * [Setting up Connector Authentication](flows/flow-setup-essentials/connecting-apps/setting-up-connector-authentication.md)
+    * [Fixed vs Dynamic Connections](flows/flow-setup-essentials/connecting-apps/fixed-vs-dynamic-connections.md)
   * [Data & Storage](flows/flow-setup-essentials/data-and-storage/README.md)
     * [Connect to the Fastn DB](flows/flow-setup-essentials/data-and-storage/connect-to-the-fastn-db.md)
     * [Connecting External Databases](flows/flow-setup-essentials/data-and-storage/connecting-external-databases.md)
