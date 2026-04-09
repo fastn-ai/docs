@@ -14,7 +14,7 @@ The Test button lets you run your flow with sample data without deploying it. Th
 
 The **Test** button is in the top-right corner of the flow builder, next to **Deploy** and **\</> Integrate**. It has a play icon (▶) and a dropdown arrow.
 
-<figure><img src="../.gitbook/assets/test button fastn flows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/test button fastn flows.gif" alt="Animated demo showing the Test button location in the top-right corner of the flow builder"><figcaption></figcaption></figure>
 
 #### How to use it
 
@@ -27,7 +27,7 @@ The **Test** button is in the top-right corner of the flow builder, next to **De
 * **Click on any step** after a test run to see its input and output in the right panel. This tells you exactly what data entered the step and what came out.
 * If a step shows a red indicator this likely means an error was detected , the right panel shows the error message.
 
-<figure><img src="../.gitbook/assets/error fastn flowes right pop up.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/error fastn flowes right pop up.png" alt="Flow builder showing a failed step highlighted in red with error details and JSON output in the right panel"><figcaption></figcaption></figure>
 
 * Compare the output of each step with what you expected. If step 3 returns unexpected data, the problem is likely in step 2's configuration (the step feeding data into step 3).
 
@@ -47,7 +47,7 @@ The Logs page shows the execution history of all your deployed flows — every t
 
 Click **Logs** in the left sidebar. It is a separate section, not inside Flows.
 
-<figure><img src="../.gitbook/assets/logs.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/logs.gif" alt="Animated demo of navigating to the Logs page from the left sidebar to view flow execution history"><figcaption></figcaption></figure>
 
 #### What you'll see
 
@@ -86,11 +86,11 @@ The Logger step lets you write data to the Logs at any point in your flow. Use i
 
 In the flow builder, click the **+** button to open the step picker. Scroll down to **Flow Control**. Logger is listed alongside Custom Code, Switch, Loop, and Log Metrics.
 
-<figure><img src="../.gitbook/assets/logger alt fastn flows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/logger alt fastn flows.gif" alt="Animated demo of adding a Logger step from the Flow Control section in the step picker"><figcaption></figcaption></figure>
 
 Alternatively you can search "Logger" on the right side of the canvas and drag the logger to the desired step, as shown below:
 
-<figure><img src="../.gitbook/assets/logger fastn flows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/logger fastn flows.gif" alt="Animated demo of dragging a Logger step from the search panel onto the flow canvas"><figcaption></figcaption></figure>
 
 #### How to use it
 
@@ -102,7 +102,7 @@ Alternatively you can search "Logger" on the right side of the canvas and drag t
 
 > **Additional step:** You can also check if the Logger is working before deployment by testing the steps till the logger by utilizing the Test button as shown below:
 
-<figure><img src="../.gitbook/assets/logger details .png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/logger details .png" alt="Flow builder showing Logger step configuration and test output with LogOutput highlighted in the bottom panel"><figcaption></figcaption></figure>
 
 #### When to use Logger vs Test
 
@@ -145,4 +145,3 @@ These are the most frequently reported problems across Fastn customers, drawn fr
 | **Scheduled flow did not run**                       | Flow is not deployed, schedule is paused, or the webhook was never registered                   | Check the flow's status on the Flows list — must be **Live**. Go to **Triggers → Schedules** tab and confirm the schedule is active. If the flow uses an activation-registered webhook, confirm the activation flow ran successfully. |
 | **Scheduled flow ran but produced no results**       | No new data in the external system since the last run, or the query filters are too restrictive | Add a Logger step to inspect what the Connector returns on each run. If it returns an empty array, the problem is upstream (in the source system), not in your flow.                                                                  |
 | **API returns empty response**                       | No **Success** or **Error** step at the end of the flow                                         | Add a **Success** step (under **Flow Response**) as the final step. Map the data you want to return. Without this, the flow executes but the API caller receives nothing back.                                                        |
-

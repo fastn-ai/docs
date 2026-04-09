@@ -10,9 +10,9 @@ description: >-
 
 {% embed url="https://youtu.be/H_hHMOIq7Zo" %}
 
-**Embedding** refers to integrating UCL directly into your AI agent’s environment so it can take real actions, like sending messages, updating records, or triggering workflows, using your connected tools.
+**Embedding** refers to integrating UCL directly into your AI agent's environment so it can take real actions, like sending messages, updating records, or triggering workflows, using your connected tools.
 
-When you’re integrating **tools** into your SaaS product, **Unified Context Layer (UCL)** makes it easy to connect 1000+ tools (Actions), manage customer environments, and orchestrate real-world actions from a single command layer.
+When you're integrating **tools** into your SaaS product, **Unified Context Layer (UCL)** makes it easy to connect 1000+ tools (Actions), manage customer environments, and orchestrate real-world actions from a single command layer.
 
 In this guide, we will walk you through step by step from setting up your space to fully embedding your tools into your environment, including but not limited to:
 
@@ -100,7 +100,7 @@ In this case, you can use the Fastn UCL \[GitHub Template Starter] for embedding
 
 <figure><img src="../../../.gitbook/assets/image (596).png" alt="UCL Embed page showing step-by-step guides for connecting AI clients"><figcaption></figcaption></figure>
 
-. ToWithin the first embedding step, we’ll focus on setting up your codebase environment where you can embed UCL easily, to ensure an easy-to-follow process, you can find an example environment repository to clone below:
+. ToWithin the first embedding step, we'll focus on setting up your codebase environment where you can embed UCL easily, to ensure an easy-to-follow process, you can find an example environment repository to clone below:
 
 {% embed url="https://github.com/fastnai/embedded-multitenant-ai-assistant" %}
 
@@ -118,7 +118,7 @@ If you wish to run the code locally on your code editor, simply follow the READM
 
 * Click on the code button to download the ZIP file.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt="GitHub repository page for embedded-multitenant-ai-assistant with Code dropdown showing Clone and Download ZIP options"><figcaption></figcaption></figure>
 
 * After downloading, open the file in your respective code editor.
 
@@ -132,7 +132,7 @@ OPENAI_API_KEY
 NEXT_PUBLIC_FASTN_MCP_SERVER_URL
 ```
 
-<figure><img src="../../../.gitbook/assets/image (303).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (303).png" alt="VS Code editor showing the .env file with OPENAI_API_KEY and NEXT_PUBLIC_FASTN_MCP_SERVER_URL placeholder variables"><figcaption></figcaption></figure>
 
 * Then head over to [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys) and generate your API key. This API key will ensure that an LLM is integrated with your MCP.
 * Head back to the **.env** file and insert your generated API key within the **OPENAI\_API\_KEY** environment variable.
@@ -143,7 +143,7 @@ NEXT_PUBLIC_FASTN_MCP_SERVER_URL
 
 * In the next step for setting up the environment variables, copy the command, and paste it into the **NEXT\_PUBLIC\_FASTN\_MCP\_SERVER\_URL** variable in the **.env** file:&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (600).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (600).png" alt="UCL Embed page showing steps to clone the repo, generate an OpenAI API key, and set up environment variables with MCP server URL"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You can check the **Multi Tenant** box above the Command code to enable multitenancy in your integrations.
@@ -163,7 +163,7 @@ npm run dev
 
 Once you have executed the command, you will see a local host site showcasing UCL embedded within an AI agent, where you can put your tools and tools to test as shown below:
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt="Demo app with AI Assistant chat showing a sent email confirmation and Available Apps panel with Gmail and Google Docs connected"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You'll see your tools embedded on the web app as per the tools that you have enabled in the UCL "setup" section.
@@ -171,7 +171,7 @@ You'll see your tools embedded on the web app as per the tools that you have ena
 
 Additionally, in the **Tools** section of the demo app, you can also see the actions that you have enabled for each tool as shown below:
 
-<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (15) (1).png" alt="Demo app Tools tab listing available actions including createDoc, updateDoc, getDoc, getDocs, sendMail, and getMessages"><figcaption></figcaption></figure>
 
 ## Environment via Codespaces - Alternative Method
 
@@ -181,13 +181,13 @@ Alternatively, if you do not want to use your code editor, you can simply set up
 
 Codespaces provides a complete, pre-configured development environment in the cloud, allowing you to start coding instantly without worrying about local setup or dependencies.
 
-* Simply access the repository → Click on **Code → Then click on “Create codespace on main”**
+* Simply access the repository → Click on **Code → Then click on "Create codespace on main"**
 
-<figure><img src="../../../.gitbook/assets/image (431).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (431).png" alt="GitHub repository Codespaces tab with the Create codespace on main button"><figcaption></figcaption></figure>
 
-* After creating a codespace environment you’ll see a live code editor waiting for you
+* After creating a codespace environment you'll see a live code editor waiting for you
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt="GitHub Codespaces editor showing the .env file with environment variable placeholders for API key and MCP server URL"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **From here on, you can simply follow the same steps as described in the** [**code editor**](embedding-ucl-onto-your-ai-agent.md#environment-via-code-editor) **section above.**
