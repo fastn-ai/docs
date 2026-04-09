@@ -1,3 +1,9 @@
+---
+description: >-
+  Transform and map data between flow steps in Fastn. Route outputs from
+  connectors, variables, and secrets into the format your next step needs.
+---
+
 # Data Mapper
 
 This lets you transform data between steps. You can map data from previous steps, variables, or secrets into a new object format you need later in the flow.
@@ -6,7 +12,7 @@ This lets you transform data between steps. You can map data from previous steps
 
 For example,
 
-This example mapping step titled "**Content"** can be used when you need to map data (usually text) from a previous step and ensure it’s passed forward as a string.
+This example mapping step titled "**Content"** can be used when you need to map data (usually text) from a previous step and ensure it's passed forward as a string.
 
 <figure><img src="https://docs.fastn.ai/~gitbook/image?url=https%3A%2F%2F1255842839-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3iSr2Tx8FvvuoLPncziH%252Fuploads%252F8nGknZE7unentydDeBCl%252Fimage.png%3Falt%3Dmedia%26token%3Dbce2e596-2949-49e5-82b4-3e9930c3102c&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=f69f828b&#x26;sv=2" alt="Content mapping step with res field mapped from ChatGPT connector output"><figcaption></figcaption></figure>
 
@@ -17,7 +23,7 @@ res = steps.chatGPT.output.choices[0].message.content
 ```
 
 * Here, `res` is the variable inside the Content step.
-* It is mapped directly from the **ChatGPT connector’s** output: `steps.chatGPT.output.choices[0].message.content`.
+* It is mapped directly from the **ChatGPT connector's** output: `steps.chatGPT.output.choices[0].message.content`.
 * The mapped value must always resolve to a **string** type, since Content steps are designed to pass textual data forward.
 
 ### **Example**

@@ -1,3 +1,9 @@
+---
+description: >-
+  Add conditional branching logic to your Fastn flows. Use the Switch component
+  to route automation paths based on specific data conditions.
+---
+
 # Switch
 
 Create conditional logic to control the flow of actions based on specific criteria. Switches enable your automation to choose different paths based on specific conditions.

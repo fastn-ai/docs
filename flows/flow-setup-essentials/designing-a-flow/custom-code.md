@@ -1,3 +1,9 @@
+---
+description: >-
+  Write custom logic in JavaScript, Python, or C# inside your Fastn flow.
+  Handle advanced data processing that standard automation components cannot cover.
+---
+
 # Custom Code
 
 Write your own logic inside the flow using supported programming languages such as **JavaScript, Python Lambda, or C#**. This step is useful when you need more control, advanced data handling, or custom logic that cannot be achieved with standard components.

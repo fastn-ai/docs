@@ -1,3 +1,9 @@
+---
+description: >-
+  Repeat actions in your Fastn flow using loop components. Iterate over data,
+  run fixed repetitions, or use while conditions for workflow automation.
+---
+
 # Loop
 
 Repeat actions in a controlled way using the **Loop** flow component:
