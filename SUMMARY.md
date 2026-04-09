@@ -99,6 +99,17 @@
     * [Setting Up a Redshift to GCS Migration Flow](flows/tutorials/data-migrations/setting-up-a-redshift-to-gcs-migration-flow.md)
 * [API Reference](flows/api-reference.md)
 
+## Python SDK
+
+* [Python SDK Reference](python-sdk/README.md)
+  * [Client](python-sdk/client.md)
+  * [Connectors and Tools](python-sdk/connectors-and-tools.md)
+  * [Flows](python-sdk/flows.md)
+  * [Authentication](python-sdk/authentication.md)
+  * [Configuration](python-sdk/configuration.md)
+  * [CLI Reference](python-sdk/cli-reference.md)
+  * [Exceptions](python-sdk/exceptions.md)
+
 ## Resources
 
 ## Tutorials & resources
