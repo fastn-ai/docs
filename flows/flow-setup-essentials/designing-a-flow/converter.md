@@ -1,3 +1,9 @@
+---
+description: >-
+  Convert data formats in your Fastn flow, such as JSON to CSV, XML, or
+  Parquet. Prepare data for exports, analytics, or downstream API integrations.
+---
+
 # Converter
 
 The Converter step transforms data into a different format (e.g., JSON → CSV, JSON → XML, JSON → Parquet). This is useful when preparing data for exports, analytics, or other APIs.

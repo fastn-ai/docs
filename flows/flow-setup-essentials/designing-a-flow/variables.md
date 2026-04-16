@@ -1,3 +1,9 @@
+---
+description: >-
+  Define and reuse values like counters, strings, and flags across your Fastn
+  flow steps. Store intermediate data and configuration settings.
+---
+
 # Variables
 
 Set and reuse values across your flow, like counters, strings, objects, or flags. Great for storing intermediate data or config settings.

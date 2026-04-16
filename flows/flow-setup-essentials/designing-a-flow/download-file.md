@@ -1,3 +1,9 @@
+---
+description: >-
+  Fetch files from a URL and use them within your Fastn flow. Download CSVs,
+  attachments, or other files for processing in subsequent automation steps.
+---
+
 # Download File
 
 Fetch a file from a URL and use it within your flow.

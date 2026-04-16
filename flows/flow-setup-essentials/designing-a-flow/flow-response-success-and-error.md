@@ -1,3 +1,9 @@
+---
+description: >-
+  Configure success and error responses for your Fastn flow. Customize HTTP
+  response messages and status codes returned when an automation completes.
+---
+
 # Flow Response: Success & Error
 
 Control what gets returned when your flow ends. Customize success or error messages based on HTTP response codes.
