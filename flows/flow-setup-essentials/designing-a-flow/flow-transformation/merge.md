@@ -4,6 +4,8 @@ description: Combine data from multiple branches back into a single output path.
 
 # Merge
 
+The **Merge** component combines outputs from two or more previous steps back into a single data path. Use it after branches — such as parallel connectors, loops, or switch paths — when you need to reunify data before passing it to the next step. Merge appends or joins the results so downstream steps receive one consolidated input instead of multiple separate outputs.
+
 ### **When to Use the Merge Component?**
 
 Use the Merge component when you need to:

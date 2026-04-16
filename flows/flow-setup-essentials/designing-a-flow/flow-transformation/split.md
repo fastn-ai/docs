@@ -4,11 +4,7 @@ description: Split data into multiple branches based on a defined condition.
 
 # Split
 
-Divide a dataset into multiple branches based on selected fields or conditions.
-
-The **Split** feature in **Flow Transformation** lets you break a large dataset into smaller, structured pieces that you can process independently in the next steps of your flow.
-
-> This is especially helpful when a connector returns a large table or a complex object, and you only want to work with **specific portions,** such as selected columns, targeted attributes, or filtered sections of the data.
+The **Split** component breaks a dataset into smaller, structured pieces that you can process independently in subsequent flow steps. Use it when a connector returns a large table or complex object and you only need specific portions — such as selected columns, targeted attributes, or filtered sections. While [Aggregate](aggregate.md) combines multiple items into one output, Split does the opposite: it divides a single dataset into separate branches.
 
 ### **Use Case Example**
 

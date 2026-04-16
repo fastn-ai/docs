@@ -6,7 +6,7 @@ description: >-
 
 # Loop
 
-Repeat actions in a controlled way using the **Loop** flow component:
+The **Loop** component repeats a set of actions multiple times within your flow. Use it when you need to iterate over a list of items (such as processing each record from an API response), run a block a fixed number of times, or keep executing while a condition remains true. Fastn supports three loop types: **Loop N times**, **Loop over data**, and **While loop**.
 
 <figure><img src="https://docs.fastn.ai/~gitbook/image?url=https%3A%2F%2F1255842839-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3iSr2Tx8FvvuoLPncziH%252Fuploads%252FHp6qLW5glBYyiRkSSOoJ%252Fimage.png%3Falt%3Dmedia%26token%3D8a0aaea8-cbdc-44f4-97cb-74ec3d4b808a&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=909a8e72&#x26;sv=2" alt="Loop component with loop type selection and data mapping options"><figcaption></figcaption></figure>
 

@@ -6,9 +6,7 @@ description: >-
 
 # Download File
 
-Fetch a file from a URL and use it within your flow.
-
-For example, to parse a CSV or attach a file to an email.
+The **Download File** component fetches a file from a URL and makes it available for subsequent steps in your flow. Use it when you need to retrieve remote files — such as CSVs, PDFs, or attachments — for parsing, transformation, or forwarding to another service like email or cloud storage.
 
 ```
 SourceUrl = "https://files.server.com/report.csv"

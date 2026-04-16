@@ -6,7 +6,7 @@ description: >-
 
 # Converter
 
-The Converter step transforms data into a different format (e.g., JSON → CSV, JSON → XML, JSON → Parquet). This is useful when preparing data for exports, analytics, or other APIs.
+The **Converter** component transforms data from one file format to another — for example, JSON to CSV, JSON to XML, or JSON to Parquet. Use it when you need to prepare data for exports, analytics pipelines, or downstream APIs that expect a specific format. Unlike the [Data Mapper](data-mapper.md), which restructures fields within the same format, the Converter changes the serialization format of the entire dataset.
 
 **Example definition**
 

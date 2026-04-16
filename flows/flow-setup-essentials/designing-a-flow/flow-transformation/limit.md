@@ -4,9 +4,7 @@ description: Restrict the number of records processed or passed forward in the f
 
 # Limit
 
-The **Limit** feature is available under **Flow Transformation**.
-
-You can place it immediately after any connector step, such as **Zendesk**, **Salesforce**, **HubSpot**, or others, to control how many items from a returned list should move to the next step.
+The **Limit** component restricts how many items from a list pass forward to the next step in your flow. Use it when a connector returns more records than you need — for example, keeping only the first five collaborators from a Zendesk ticket or the ten most recent orders from Salesforce. Place it immediately after any step that outputs a list to control the volume of data your downstream steps process.
 
 {% hint style="info" %}
 This is especially useful when you only want to process a subset of records instead of the full list.
