@@ -21,7 +21,7 @@ Use the Merge component when you need to:
 <figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 * Give it a clear and descriptive name based on what you're merging\
-  &#xNAN;_(e.g., “MergeOutputandTokens”)_
+  \&#xNAN;_(e.g., “MergeOutputandTokens”)_
 
 This helps in identifying the merged output in the next steps.
 
@@ -54,7 +54,7 @@ You will see fields to add the inputs you want to merge:
   * `{{steps.loopOverWebhooks.output}}`
   * `{{steps.generateToken.headers}}`
 
-<figure><img src="../../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 > Add or remove fields using the icons on the right, based on how many sources you are merging.
 

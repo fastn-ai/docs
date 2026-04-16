@@ -20,7 +20,7 @@ This flow will be triggered by the activation button in your widget for Google D
 * In this case, we simply return a static success message like:\
   `"Activation successful for {{input.source}}"`
 
-<figure><img src="../../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
 ### Deactivation Flow
 
@@ -32,17 +32,17 @@ This flow handles deactivation logic, such as deleting registered webhooks.
 
 The deactivation flow begins with initializing the variables `webhookIds` and `tenantId`. The `webhookIds` have a value of `{{input.source}}`, while `tenantId` is obtained from the request headers as `headers['x-fastn-space-tenantid']`.
 
-<figure><img src="../../../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
 
 2. **Loop over Webhook IDs:**
 
 * Use a Loop step to iterate over `webhookIds`
 
-<figure><img src="../../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
 
 * Inside the loop, add a `Delete Webhook` step that deletes each of the webhooks fetched through there IDs as long as the flow runs.
 
-<figure><img src="../../../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
 
 3. **Return Success Message:**
 
@@ -61,15 +61,15 @@ This flow is used to prepopulate options for user configuration in the widget, s
 
     `files`: List of available files
 
-    <figure><img src="../../../../.gitbook/assets/image (209).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (209).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-In the **mapping step**, users can click the three dots next to fields like **Files** and **Sync Frequency** to access **Configuration Field Options**.&#x20;
+In the **mapping step**, users can click the three dots next to fields like **Files** and **Sync Frequency** to access **Configuration Field Options**.
 {% endhint %}
 
 For both **Files** and **Sync Frequency**, users can configure settings like setting a label, hiding the field in the config pop-up or based on the config Field.
 
-<figure><img src="../../../../.gitbook/assets/image (495).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (495).png" alt=""><figcaption></figcaption></figure>
 
 In the **Selections** section for **Files**, you can:
 
@@ -77,13 +77,13 @@ In the **Selections** section for **Files**, you can:
 * Set the Selection Type as Custom, Static, or Dynamic
 * Choose the Selector for your Widget
 
-<figure><img src="../../../../.gitbook/assets/image (497).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (496).png" alt=""><figcaption></figcaption></figure>
 
 * **Map Schedule:**
 
 `syncFrequency`: Frequency options (daily, hourly, etc.)
 
-<figure><img src="../../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 `syncFrequency` is an object with dropdown values, left empty in the flow initially and populates dynamically.
@@ -95,7 +95,7 @@ In the **Selections** section for **Sync Frequency**, you can:
 * Enable or disable Selection
 * Option Items for your drop-down of Sync Frequency in the Widget with the value for each sync and its respective label
 
-<figure><img src="../../../../.gitbook/assets/image (498).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (498).png" alt=""><figcaption></figcaption></figure>
 
 ### Sync Flow Breakdown (activate)
 
@@ -103,9 +103,9 @@ The sync flow fetches selected files from Google Drive and migrates them to a sp
 
 * **Initialize flow variables**
 
-<figure><img src="../../../../.gitbook/assets/image (488).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (488).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (489).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (489).png" alt=""><figcaption></figcaption></figure>
 
 * **Switch**
 
@@ -116,24 +116,24 @@ In the switch statement, the Data Mapper:
 * If the connector is Google Drive:
   * Calls `driveConfigFlow` for schedule info
 
-<figure><img src="../../../../.gitbook/assets/image (490).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (490).png" alt=""><figcaption></figcaption></figure>
 
 * If Redshift:
   * Calls `RedShiftconfigflow` for schedule info
 
-<figure><img src="../../../../.gitbook/assets/image (491).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (491).png" alt=""><figcaption></figcaption></figure>
 
 * **Initializing Flow Variables**
 
 In the next step, variables are initialized for both Drive and Redshift mapped outputs respectively.
 
-<figure><img src="../../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
 
 * Else:
   * Ends the flow
 * **Parse Sync Frequency**
 
-<figure><img src="../../../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
 
 * A JavaScript step (`parseSyncFrequency`) extracts and formats frequency info
 
@@ -154,12 +154,12 @@ function handler(params) {
   * If tenant doesn’t exist → return error
   * Else → proceed to Loop Over Templates
 
-<figure><img src="../../../../.gitbook/assets/image (492).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (492).png" alt=""><figcaption></figcaption></figure>
 
 * **Loop Over Templates**
   * Fetches APIs for each project ID involved
 
-<figure><img src="../../../../.gitbook/assets/image (493).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (493).png" alt=""><figcaption></figcaption></figure>
 
 * **Loop Over Webhooks**
   * If webhooks exist:
@@ -167,9 +167,9 @@ function handler(params) {
   * If not:
     * Create webhooks using:
       * `projectID` in headers
-      * `unitRate` and `unitTime` from `parseSyncFrequency`               &#x20;
+      * `unitRate` and `unitTime` from `parseSyncFrequency`
 
-<figure><img src="../../../../.gitbook/assets/image (494).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (494).png" alt=""><figcaption></figcaption></figure>
 
 * The flow returns **Success Message** after successful execution.
 
@@ -183,7 +183,7 @@ The widget will support the following actions:
 * **Configure:** Allows file selection from Drive
 * **Sync:** Schedules and runs the migration
 
-<figure><img src="../../../../.gitbook/assets/image (486).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (486).png" alt=""><figcaption></figcaption></figure>
 
 ### 1. Connect Action
 
@@ -236,24 +236,24 @@ The Sync Action also takes the [drive\_to\_gcs](setting-up-a-google-drive-to-gcs
 
 * User sees the **Connect** button → clicks to authenticate with Google
 
-<figure><img src="../../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * On success, **Disconnect** and **Configure** buttons appear.
 
-<figure><img src="../../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 * User clicks **Configure** to:
   * Browse through Google Drive and select source files.
 
-<figure><img src="../../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 * User selects sync frequency from the dropdown.
 
-<figure><img src="../../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 * User will now be able to see the **Sync** button, which you can use to start a scheduled migration to GCS.
 
-<figure><img src="../../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 * The **Disconnect** button allows you to disconnect your Widget.
 

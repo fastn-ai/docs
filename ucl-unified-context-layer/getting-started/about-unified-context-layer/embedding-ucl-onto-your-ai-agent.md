@@ -6,8 +6,6 @@ description: >-
 
 # Embedding UCL onto your AI Agent
 
-
-
 {% embed url="https://youtu.be/H_hHMOIq7Zo" %}
 
 **Embedding** refers to integrating UCL directly into your AI agent’s environment so it can take real actions, like sending messages, updating records, or triggering workflows, using your connected tools.
@@ -55,8 +53,6 @@ The embedding process enables you to:
 
 Let's further understand embedding via a **use case example below**:
 
-
-
 ## **Step 1: Creating Your UCL Account**
 
 1. Go to [ucl.dev ](https://ucl.dev)and sign up for an account.
@@ -69,8 +65,6 @@ When you first log in to UCL, a workspace titled "My Workspace" is created by de
 <br>
 
 <figure><img src="../../../.gitbook/assets/image (585).png" alt="UCL workspace selection screen after login"><figcaption></figcaption></figure>
-
-
 
 ## Step 2: Choose Apps & Actions <a href="#step-1-select-your-apps-then-chat" id="step-1-select-your-apps-then-chat"></a>
 
@@ -94,11 +88,11 @@ UCL handles all OAuth and API token management in the background.
 
 ## **Step 3: Setting Up Your Environment**
 
-The **Embed** page on your UCL dashboard has step-by-step guides for a number of clients.&#x20;
+The **Embed** page on your UCL dashboard has step-by-step guides for a number of clients.
 
 In this case, you can use the Fastn UCL \[GitHub Template Starter] for embedding UCL into your custom AI Agent.
 
-<figure><img src="../../../.gitbook/assets/image (596).png" alt="UCL Embed page showing step-by-step guides for connecting AI clients"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (595).png" alt="UCL Embed page showing step-by-step guides for connecting AI clients"><figcaption></figcaption></figure>
 
 . ToWithin the first embedding step, we’ll focus on setting up your codebase environment where you can embed UCL easily, to ensure an easy-to-follow process, you can find an example environment repository to clone below:
 
@@ -141,9 +135,9 @@ NEXT_PUBLIC_FASTN_MCP_SERVER_URL
 >
 > Keep in mind that each workspace has a unique Space ID.
 
-* In the next step for setting up the environment variables, copy the command, and paste it into the **NEXT\_PUBLIC\_FASTN\_MCP\_SERVER\_URL** variable in the **.env** file:&#x20;
+* In the next step for setting up the environment variables, copy the command, and paste it into the **NEXT\_PUBLIC\_FASTN\_MCP\_SERVER\_URL** variable in the **.env** file:
 
-<figure><img src="../../../.gitbook/assets/image (600).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (599).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 You can check the **Multi Tenant** box above the Command code to enable multitenancy in your integrations.

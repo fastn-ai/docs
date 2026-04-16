@@ -12,7 +12,7 @@ description: UCL lets you easily build your own custom tool groups using natural
 
 * Click **“Define a Custom App”** to launch the **App Builder Assistant** chat.
 
-<figure><img src="../../../.gitbook/assets/image (574).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (573).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 2: Create a Tool via Prompt**
 
@@ -68,7 +68,7 @@ The assistant will respond:
 
 > _“The ‘GoogleCloudStorage’ group is ready.”_
 
-<figure><img src="../../../.gitbook/assets/image (216).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 4: Add Actions to the Tool**
 

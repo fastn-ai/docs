@@ -51,9 +51,9 @@ Set up authentication and activation parameters for your MCP tool.
 
 <figure><img src="../../../.gitbook/assets/image (638).png" alt=""><figcaption></figcaption></figure>
 
-> &#x20;You can set one of these methods as the **default**.
+> You can set one of these methods as the **default**.
 >
-> &#x20;Example: In _Custom Input_ mode, you may define `instanceId` as a required parameter for connecting.
+> Example: In _Custom Input_ mode, you may define `instanceId` as a required parameter for connecting.
 
 Click **Next** to proceed.
 
@@ -63,7 +63,7 @@ Provide the server connection details.
 
 #### **Server Configuration**
 
-* **Server URL** → Add the URL of your MCP server&#x20;
+* **Server URL** → Add the URL of your MCP server
 
 ```
  https://your-mcp-server.com
@@ -88,7 +88,7 @@ Click **Next** to continue.
 
 ### Step 5: Test Connection
 
-You will now see your MCP server details.&#x20;
+You will now see your MCP server details.
 
 ```
 - Tool Name
@@ -96,7 +96,7 @@ You will now see your MCP server details.&#x20;
 - Connection Status: Ready to test connection
 ```
 
-<figure><img src="../../../.gitbook/assets/image (642).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (641).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Test Connection**.
 * If successful, you will see a notification: _“Connection Successful. Ready to complete setup.”_
@@ -107,7 +107,7 @@ You will now see your MCP server details.&#x20;
 
 <figure><img src="../../../.gitbook/assets/image (643).png" alt=""><figcaption></figcaption></figure>
 
-* Your new MCP server will be added as a tool in your dashboard.&#x20;
+* Your new MCP server will be added as a tool in your dashboard.
 
 <figure><img src="../../../.gitbook/assets/image (644).png" alt=""><figcaption></figcaption></figure>
 

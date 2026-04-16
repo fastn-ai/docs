@@ -9,7 +9,7 @@ You can use **Data Mapper** to reshape and transform data as it flows through yo
 ### Getting Started
 
 1. Log in to [live.fastn.ai](https://live.fastn.ai) and navigate to "Flows." Select the flow type you need and name your new flow based on the task you want to perform.
-2. Navigate to the side panel and from the list of available flow components, select "Data Mapper." This will allow you to reshape your data as needed for your specific flow requirements.&#x20;
+2. Navigate to the side panel and from the list of available flow components, select "Data Mapper." This will allow you to reshape your data as needed for your specific flow requirements.
 
 <figure><img src="../../../.gitbook/assets/image (466).png" alt=""><figcaption></figcaption></figure>
 
@@ -33,15 +33,13 @@ Make sure your defined key type aligns with your headers or input in the termina
     * An App Config for any environment where you wish to deploy your project.
 
     <figure><img src="../../../.gitbook/assets/image (468).png" alt=""><figcaption></figcaption></figure>
-
-
 5. You can run the Data Mapper in a debug mode. This allows you to verify the accuracy of mapping and ensure that the data transformations meet your expectations before proceeding to deployment.
 
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3iSr2Tx8FvvuoLPncziH%2Fuploads%2FRldJ4cCVXZ5G0iDzR7Nl%2F20250617-1958-06.8141168.mp4?alt=media&token=dd356c3e-c382-4033-8ac4-b7e8f3513487" %}
 
 ## Defining Field Data Types
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-06-18 013507.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (288).png" alt=""><figcaption></figcaption></figure>
 
 Here's an example of defining different data types as shown in the image in JSON, including nested objects and arrays:
 
@@ -80,7 +78,7 @@ Here's an example of defining different data types as shown in the image in JSON
 
 In the **Advanced Action** section, a variety of options are available to dynamically manipulate data:
 
-* **Filter:** Extract specific elements from arrays or lists.&#x20;
+* **Filter:** Extract specific elements from arrays or lists.
 
 The filter function iterates through the elements and selects those matching specified criteria. The result is a new array containing only the filtered elements.
 
@@ -108,8 +106,6 @@ You need to fill in the following fields;
 Variable Name: id_UUID
 Generate Type: Dynamic UUID
 ```
-
-
 
 <figure><img src="../../../.gitbook/assets/image (269).png" alt=""><figcaption></figcaption></figure>
 
@@ -376,12 +372,12 @@ The field becomes part of a nested JSON structure. This is useful when APIs or s
         { "id": "default-id-001" }
         ```
 
-    &#x20;If `id` is not set, this default will be used during execution.
+    If `id` is not set, this default will be used during execution.
 *   **Required (fail if missing)**
 
     * Enforces that a value must be present.
 
-    &#x20;If `id` is not provided at runtime, the system throws an error or blocks the workflow. Ideal for mandatory identifiers.
+    If `id` is not provided at runtime, the system throws an error or blocks the workflow. Ideal for mandatory identifiers.
 
 ### **4. Import JSON**
 
@@ -417,7 +413,7 @@ The field is replaced by the full JSON structure from the import. This is useful
 
 _View or author logic in different programming languages or expression styles._
 
-Fastn data mapper offers a feature that allows you to switch between visual and code-based views for defining field values within a flow. It supports various programming languages like JavaScript, C#, and Python Lambda.&#x20;
+Fastn data mapper offers a feature that allows you to switch between visual and code-based views for defining field values within a flow. It supports various programming languages like JavaScript, C#, and Python Lambda.
 
 This flexibility enables users to manage their data structure according to their preferred coding or visual style, offering a more customizable approach to editing and mapping data. Additionally, the section mentions the functionality of adding states to manage dynamic data changes, like updating counters in response to API calls, which aids in maintaining accurate and updated data flow within the application.
 
@@ -468,7 +464,7 @@ You can map values from a connector step’s output into another step, or pass d
 #### **Example (Mapping into Gmail)**
 
 _App: Gmail_\
-_Endpoint: sendMail_
+&#xNAN;_&#x45;ndpoint: sendMail_
 
 <pre class="language-js"><code class="lang-js">Object Recipient = {{steps.hubspot.output.getEmail}}
 <strong>Object Subject = "Welcome " + {{steps.hubspot.output.firstName}}

@@ -19,7 +19,7 @@ With **Custom Configuration Flows**, you can design any kind of configuration fl
   * Dropbox File Picker
   * Microsoft OneDrive File Picker
 
-<figure><img src="../../../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
 
 ### **Using Custom Flow for Advanced File Picker**
 
@@ -31,7 +31,7 @@ With **Custom Configuration Flows**, you can design any kind of configuration fl
 * Add file types (e.g., `.csv`, `.xlsx`, `.pdf`, `.jpg`).
 * Save your settings.
 
-<figure><img src="../../../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 This ensures the widget will only accept the file types you’ve defined.
@@ -41,6 +41,6 @@ This ensures the widget will only accept the file types you’ve defined.
 
 If you have a widget field (e.g., **files**), map the file picker output to it. The selected files will be stored in this field, and the restrictions will enforce allowed file types.
 
-<figure><img src="../../../../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 > **Result:** The widget can now collect files from users while respecting the restrictions you set.

@@ -33,7 +33,7 @@ You can select and follow the guide for any client of your choice from the embed
 
 <figure><img src="../../../.gitbook/assets/image (616).png" alt=""><figcaption></figcaption></figure>
 
-* &#x20;In the **Open Setting and Add MCP Server** step, you will see the Cursor command code, which you can copy for your workspace and paste it into Cursor.
+* In the **Open Setting and Add MCP Server** step, you will see the Cursor command code, which you can copy for your workspace and paste it into Cursor.
 
 {% hint style="info" %}
 Checking the **Multi Tenant** option will enable you to embed connectors and actions for multiple users \[users].
@@ -57,7 +57,7 @@ Checking the **Multi Tenant** option will enable you to embed connectors and act
 
 * You should now see the UCL Server listed as connected in Cursor. Under the tools label in Cursor, you can view all the enabled actions available with your connectors in UCL.
 
-<figure><img src="../../../.gitbook/assets/image (613).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (612).png" alt=""><figcaption></figcaption></figure>
 
 ### **Use Cursor to Fetch Meeting Summary from Notion**
 

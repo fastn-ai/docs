@@ -56,7 +56,7 @@ Suppose you want to send an email automatically whenever an API request is made 
 
 ### **ii. On App Event**
 
-Let your flow respond to what's happening in your favorite apps; like Salesforce, Shopify, or HubSpot. When something changes (like a new lead, order, or form submission), Fastn can jump into action automatically.&#x20;
+Let your flow respond to what's happening in your favorite apps; like Salesforce, Shopify, or HubSpot. When something changes (like a new lead, order, or form submission), Fastn can jump into action automatically.
 
 <figure><img src="../../.gitbook/assets/image (581).png" alt="On App Event trigger configuration showing available apps like Salesforce, Shopify, and HubSpot"><figcaption></figcaption></figure>
 
@@ -81,7 +81,7 @@ Flows can listen for incoming webhooks and act instantly when data is received. 
 
 When a webhook event is triggered, Fastn creates a new document in Google Docs with the received data and then shares the link directly into a Slack channel. This way, every webhook instantly generates a record and notifies your team.
 
-<figure><img src="../../.gitbook/assets/image (578).png" alt="Flow editor showing a webhook trigger connected to Google Docs creation and Slack notification steps"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (577).png" alt="Flow editor showing a webhook trigger connected to Google Docs creation and Slack notification steps"><figcaption></figcaption></figure>
 
 ### **iv. On Schedule**
 
@@ -93,13 +93,11 @@ Every day at midnight, the flow runs on schedule and uses **Google Sheets → ap
 
 <figure><img src="../../.gitbook/assets/image (576).png" alt="Scheduled flow running daily at midnight using Google Sheets appendSheet to log timestamp entries"><figcaption></figcaption></figure>
 
-
-
 ### **v. On Chat Message**
 
 Trigger flows based on new messages from your users. This is especially useful for chatbot interactions, support flows, or conversational interfaces where a message can kick off a series of automated actions; all while keeping the experience personal and responsive.
 
-#### Use Case (Intercom  →  getContacts)
+#### Use Case (Intercom → getContacts)
 
 When a user types _“Get my last 5 contacts from Intercom”_ into chat, Fastn triggers the flow and calls the **Intercom → getContacts** endpoint. The chatbot then returns the details of the most recent 5 contacts directly in the conversation.
 

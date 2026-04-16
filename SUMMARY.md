@@ -1,7 +1,5 @@
 # Table of contents
 
-## Customer-Facing Integrations
-
 ## Getting started
 
 * [Fastn: embedded integration platform for AI agents](README.md)
@@ -98,8 +96,6 @@
     * [Setting Up a Google Drive to GCS Migration Flow](flows/tutorials/data-migrations/setting-up-a-google-drive-to-gcs-migration-flow.md)
     * [Setting Up a Redshift to GCS Migration Flow](flows/tutorials/data-migrations/setting-up-a-redshift-to-gcs-migration-flow.md)
 * [API Reference](flows/api-reference.md)
-
-## Resources
 
 ## Tutorials & resources
 

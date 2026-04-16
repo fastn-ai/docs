@@ -24,15 +24,13 @@ To create a configuration flow:
 * Click the arrow next to the **Add Widget** button (top-right corner).
 * Select **Add Configuration Flow**.
 
-<figure><img src="../../../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
 
 * Enter a name for your configuration flow and click **Build**.
 
-<figure><img src="../../../../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
 
 This creates a configuration flow that allows you to add steps, such as data mapping and field selectors.
-
-
 
 This opens the flow builder, where you can start adding steps such as:
 
@@ -74,7 +72,7 @@ Define how this field behaves and appears in the configuration pop-up:
 * **Hide this field in configuration pop-up** – Keeps advanced fields hidden from the user.
 * **Hide Based on config field** – Control a field’s visibility based on another field’s value, by defining a key, operation, and value condition that determines when the field should appear or stay hidden.
 
-<figure><img src="../../../../../.gitbook/assets/image (658).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (658).png" alt=""><figcaption></figcaption></figure>
 
 ### **Selections Section** <a href="#selections-section" id="selections-section"></a>
 
@@ -85,9 +83,7 @@ This is where you make the configuration dynamic:
 Every field supports **Selections**, which define how users choose or input values.\
 You can choose one of four **Selection Types**, each suited to different use cases.
 
-
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Static Selection</strong></td><td>Define fixed, predefined options that users can pick directly from a dropdown.</td><td><a href="../../../../../.gitbook/assets/Screenshot 2025-10-16 232357.png">Screenshot 2025-10-16 232357.png</a></td><td><a href="setting-up-a-configuration-flow-with-static-selection-options.md">setting-up-a-configuration-flow-with-static-selection-options.md</a></td><td><a href="setting-up-a-configuration-flow-with-static-selection-options.md">setting-up-a-configuration-flow-with-static-selection-options.md</a></td></tr><tr><td><strong>Dynamic Selection</strong></td><td>Fetch real-time data from connected flows or APIs to populate your fields dynamically.</td><td><a href="../../../../../.gitbook/assets/Screenshot 2025-10-16 232457.png">Screenshot 2025-10-16 232457.png</a></td><td></td><td><a href="setting-up-a-configuration-flow-with-dynamic-selection-options.md">setting-up-a-configuration-flow-with-dynamic-selection-options.md</a></td></tr><tr><td><strong>Custom Selection</strong></td><td>Design fully tailored configuration experiences like file pickers or advanced selectors.</td><td><a href="../../../../../.gitbook/assets/Screenshot 2025-10-16 232656.png">Screenshot 2025-10-16 232656.png</a></td><td></td><td><a href="setting-up-a-configuration-flow-with-custom-selection-options.md">setting-up-a-configuration-flow-with-custom-selection-options.md</a></td></tr><tr><td><strong>Mapping Selection</strong></td><td>Map fields and values between source and destination flows for seamless data alignment.</td><td><a href="../../../../../.gitbook/assets/Screenshot 2025-10-16 232812.png">Screenshot 2025-10-16 232812.png</a></td><td></td><td><a href="setting-up-a-configuration-flow-with-mapping-selection-options.md">setting-up-a-configuration-flow-with-mapping-selection-options.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Static Selection</strong></td><td>Define fixed, predefined options that users can pick directly from a dropdown.</td><td><a href="../../../../.gitbook/assets/Screenshot 2025-10-16 232357.png">Screenshot 2025-10-16 232357.png</a></td><td><a href="setting-up-a-configuration-flow-with-static-selection-options.md">setting-up-a-configuration-flow-with-static-selection-options.md</a></td><td><a href="setting-up-a-configuration-flow-with-static-selection-options.md">setting-up-a-configuration-flow-with-static-selection-options.md</a></td></tr><tr><td><strong>Dynamic Selection</strong></td><td>Fetch real-time data from connected flows or APIs to populate your fields dynamically.</td><td><a href="../../../../.gitbook/assets/Screenshot 2025-10-16 232457.png">Screenshot 2025-10-16 232457.png</a></td><td></td><td><a href="setting-up-a-configuration-flow-with-dynamic-selection-options.md">setting-up-a-configuration-flow-with-dynamic-selection-options.md</a></td></tr><tr><td><strong>Custom Selection</strong></td><td>Design fully tailored configuration experiences like file pickers or advanced selectors.</td><td><a href="../../../../.gitbook/assets/Screenshot 2025-10-16 232656.png">Screenshot 2025-10-16 232656.png</a></td><td></td><td><a href="setting-up-a-configuration-flow-with-custom-selection-options.md">setting-up-a-configuration-flow-with-custom-selection-options.md</a></td></tr><tr><td><strong>Mapping Selection</strong></td><td>Map fields and values between source and destination flows for seamless data alignment.</td><td><a href="../../../../.gitbook/assets/Screenshot 2025-10-16 232812.png">Screenshot 2025-10-16 232812.png</a></td><td></td><td><a href="setting-up-a-configuration-flow-with-mapping-selection-options.md">setting-up-a-configuration-flow-with-mapping-selection-options.md</a></td></tr></tbody></table>
 
 Each selection type has its own setup flow and example.\
 You can learn more in the following guides:
@@ -103,7 +99,7 @@ For example, you can:
 
 Learn more about how to add field validation here:<br>
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Fields Level Validation in Configuration Flows</strong></td><td>Add rules to verify user input and ensure data accuracy in configuration fields.</td><td><a href="../../../../../.gitbook/assets/Screenshot 2025-10-16 232116.png">Screenshot 2025-10-16 232116.png</a></td><td><a href="setting-up-field-level-validation-in-configuration-flows.md">setting-up-field-level-validation-in-configuration-flows.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Fields Level Validation in Configuration Flows</strong></td><td>Add rules to verify user input and ensure data accuracy in configuration fields.</td><td><a href="../../../../.gitbook/assets/Screenshot 2025-10-16 232116.png">Screenshot 2025-10-16 232116.png</a></td><td><a href="setting-up-field-level-validation-in-configuration-flows.md">setting-up-field-level-validation-in-configuration-flows.md</a></td></tr></tbody></table>
 
 ## **Using Configuration Flows in Widgets**
 

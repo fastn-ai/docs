@@ -28,7 +28,7 @@ Community connectors make it easy to connect to tools your team already uses, so
 
 ### Example: Using a Google Doc and Slack Connector
 
-To create a Google Doc and send it to a specific Slack channel, utilize the **Google Docs Connector** with **Create Doc Endpoint**  to generate your document and then use the **Slack Connector** with **Send Message Endpoint** to send it directly to your selected channel. This process requires no coding, streamlining document sharing within your workflows.
+To create a Google Doc and send it to a specific Slack channel, utilize the **Google Docs Connector** with **Create Doc Endpoint** to generate your document and then use the **Slack Connector** with **Send Message Endpoint** to send it directly to your selected channel. This process requires no coding, streamlining document sharing within your workflows.
 
 <figure><img src="../../../.gitbook/assets/image (243).png" alt="Flow editor with Google Docs Create Doc connector followed by Slack Send Message connector"><figcaption></figcaption></figure>
 
@@ -40,13 +40,13 @@ Workspace connectors let you create custom connector groups tailored to your pro
 You can also use the **Build with AI** button to leverage AI to assist in creating custom connector groups. Provide a description of the service you want to connect to, and Fastn generates the connector group structure for you.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (250).png" alt="Workspace Connectors page with Add Connector button and Build with AI option"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (249).png" alt="Workspace Connectors page with Add Connector button and Build with AI option"><figcaption></figcaption></figure>
 
 ### Before you begin
 
-- You have an active Fastn workspace.
-- You have the necessary permissions to manage connectors in the workspace.
-- If connecting to an external service, you have the service's API credentials or OAuth configuration details ready.
+* You have an active Fastn workspace.
+* You have the necessary permissions to manage connectors in the workspace.
+* If connecting to an external service, you have the service's API credentials or OAuth configuration details ready.
 
 ### Step 1: Create a connector group
 
@@ -58,14 +58,14 @@ A connector group acts as a container for related connectors — for example, a 
 
 <figure><img src="../../../.gitbook/assets/image (252).png" alt="Add Connector Group form with fields for name, image URL, description, documentation link, and resource type"><figcaption></figcaption></figure>
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| **Name** | Yes | A unique name for the connector group (e.g., "Stripe" or "Internal Billing API"). |
-| **Image URL** | No | A URL to an icon or logo that visually represents the connector group. |
-| **Description** | No | A brief summary of the group's purpose and the services it connects to. |
-| **Documentation Link** | No | A link to external documentation for the underlying API or service. |
-| **Resource Type** | Yes | Select **EXTERNAL** for third-party services or **INTERNAL** for services hosted within your own infrastructure. |
-| **Enable Activation** | No | Toggle this on to require authentication when connecting. Enabling this reveals [authentication configuration options](setting-up-connector-authentication.md). |
+| Field                  | Required | Description                                                                                                                                                     |
+| ---------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Name**               | Yes      | A unique name for the connector group (e.g., "Stripe" or "Internal Billing API").                                                                               |
+| **Image URL**          | No       | A URL to an icon or logo that visually represents the connector group.                                                                                          |
+| **Description**        | No       | A brief summary of the group's purpose and the services it connects to.                                                                                         |
+| **Documentation Link** | No       | A link to external documentation for the underlying API or service.                                                                                             |
+| **Resource Type**      | Yes      | Select **EXTERNAL** for third-party services or **INTERNAL** for services hosted within your own infrastructure.                                                |
+| **Enable Activation**  | No       | Toggle this on to require authentication when connecting. Enabling this reveals [authentication configuration options](setting-up-connector-authentication.md). |
 
 4. Click **Save** to create the group.
 
@@ -140,13 +140,13 @@ If your connector group has **Enable Activation** turned on, configure the authe
 
 Fastn supports five authentication types:
 
-| Authentication type | Use when |
-|---------------------|----------|
-| **OAuth** | The service supports an OAuth login screen (e.g., Google, Microsoft, Slack). |
-| **Basic Auth** | The service requires a username and password. |
-| **API Key** | The service authenticates via an API key in headers or query parameters. |
-| **Bearer Token** | The service requires a bearer token in the `Authorization` header. |
-| **Custom Input** | The service requires custom credential fields (e.g., API key + secret key with expiry). |
+| Authentication type | Use when                                                                                |
+| ------------------- | --------------------------------------------------------------------------------------- |
+| **OAuth**           | The service supports an OAuth login screen (e.g., Google, Microsoft, Slack).            |
+| **Basic Auth**      | The service requires a username and password.                                           |
+| **API Key**         | The service authenticates via an API key in headers or query parameters.                |
+| **Bearer Token**    | The service requires a bearer token in the `Authorization` header.                      |
+| **Custom Input**    | The service requires custom credential fields (e.g., API key + secret key with expiry). |
 
 For detailed setup instructions for each type, see [Setting up connector authentication](setting-up-connector-authentication.md).
 
@@ -173,9 +173,9 @@ You can export connectors from one workspace and import them into another. You c
 
 To access these options, click the menu icon on the connector group and select:
 
-- **Export** — download the connector configuration as a file.
-- **Import** — upload a previously exported connector configuration.
-- **Download OpenAPI File** — generate and download the OpenAPI specification for the connector group.
+* **Export** — download the connector configuration as a file.
+* **Import** — upload a previously exported connector configuration.
+* **Download OpenAPI File** — generate and download the OpenAPI specification for the connector group.
 
 ### Using workspace connectors in flows
 
@@ -195,5 +195,5 @@ These connectors can be defined at the organization level, allowing any member w
 <figure><img src="../../../.gitbook/assets/image (242).png" alt="Organization Connectors page showing shared connectors available to all organization members"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Similar to Workspace connectors, you can define group connectors and then manage different categories of connectors within them.&#x20;
+Similar to Workspace connectors, you can define group connectors and then manage different categories of connectors within them.
 {% endhint %}

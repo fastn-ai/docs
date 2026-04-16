@@ -13,9 +13,7 @@ To access the monitoring tools, simply go to the **Insights** section in the top
 
 ### Overview Dashboard
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.40 PM (1).png" alt="UCL Insights Overview dashboard showing active tenants, connectors, success rates, and usage metrics"><figcaption></figcaption></figure>
-
-
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.40 PM.png" alt="UCL Insights Overview dashboard showing active tenants, connectors, success rates, and usage metrics"><figcaption></figcaption></figure>
 
 The dashboard represents each action triggered by a connector (e.g., sending a message, syncing data) and monitors them across key metrics:
 
@@ -48,8 +46,6 @@ Workspace-specific data is not displayed here.
 * Use the **filter** at the top to switch between current month or current week views.
 
 <figure><img src="../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.54 PM.png" alt="UCL Insights Tool Usage page with a monthly trend graph and App Breakdown table showing tool calls and response usage"><figcaption></figcaption></figure>
-
-
 
 ### Logs
 
