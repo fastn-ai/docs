@@ -4,7 +4,7 @@ description: >-
   attachments, or other files for processing in subsequent automation steps.
 ---
 
-# Download File
+# Download files in Fastn flows
 
 Fetch a file from a URL and use it within your flow.
 

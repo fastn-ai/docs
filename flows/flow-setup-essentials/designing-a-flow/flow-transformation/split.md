@@ -2,7 +2,7 @@
 description: Split data into multiple branches based on a defined condition.
 ---
 
-# Split
+# Split data into branches in Fastn flows
 
 Divide a dataset into multiple branches based on selected fields or conditions.
 

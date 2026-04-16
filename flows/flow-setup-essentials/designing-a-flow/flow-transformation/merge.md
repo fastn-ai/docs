@@ -2,7 +2,7 @@
 description: Combine data from multiple branches back into a single output path.
 ---
 
-# Merge
+# Merge data branches in Fastn flows
 
 ### **When to Use the Merge Component?**
 

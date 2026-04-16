@@ -2,7 +2,7 @@
 description: Initiate a flow whenever a specific event occurs in a connected app
 ---
 
-# Trigger
+# Set up triggers for Fastn flows
 
 It helps you start automated actions based on real-time activities such as new messages, form submissions, or updates in integrated systems.
 

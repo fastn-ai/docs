@@ -4,7 +4,7 @@ description: >-
   connectors, variables, and secrets into the format your next step needs.
 ---
 
-# Data Mapper
+# Map and transform data in Fastn flows
 
 This lets you transform data between steps. You can map data from previous steps, variables, or secrets into a new object format you need later in the flow.
 

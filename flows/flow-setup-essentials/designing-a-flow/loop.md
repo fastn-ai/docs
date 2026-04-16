@@ -4,7 +4,7 @@ description: >-
   run fixed repetitions, or use while conditions for workflow automation.
 ---
 
-# Loop
+# Repeat actions with Loop in Fastn flows
 
 Repeat actions in a controlled way using the **Loop** flow component:
 

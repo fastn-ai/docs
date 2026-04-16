@@ -4,7 +4,7 @@ description: >-
   flow activity.
 ---
 
-# Logger
+# Log and debug Fastn flows
 
 Use the **Logger** component to record messages, variable values, or object data at any point in your flow.
 

@@ -4,7 +4,7 @@ description: >-
   Parquet. Prepare data for exports, analytics, or downstream API integrations.
 ---
 
-# Converter
+# Convert data formats in Fastn flows
 
 The Converter step transforms data into a different format (e.g., JSON → CSV, JSON → XML, JSON → Parquet). This is useful when preparing data for exports, analytics, or other APIs.
 

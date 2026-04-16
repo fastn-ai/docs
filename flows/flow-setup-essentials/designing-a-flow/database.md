@@ -4,7 +4,7 @@ description: >-
   structured data, run lookups, and store results within your automation flows.
 ---
 
-# Database
+# Query the database in Fastn flows
 
 Use this to read from or write to Fastn's internal database using SQL queries. Ideal for managing structured data inside your flows.
 

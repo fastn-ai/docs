@@ -4,7 +4,7 @@ description: >-
   flow steps. Store intermediate data and configuration settings.
 ---
 
-# Variables
+# Use variables in Fastn flows
 
 Set and reuse values across your flow, like counters, strings, objects, or flags. Great for storing intermediate data or config settings.
 

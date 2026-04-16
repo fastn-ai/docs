@@ -2,7 +2,7 @@
 description: Filter data based on a condition to keep only the required records.
 ---
 
-# Filter
+# Filter data in Fastn flows
 
 The **Filter** component allows you to control which records move forward in a flow by applying one or more conditions. It is useful when you want to keep only specific data, for example, filtering orders above a certain amount, or selecting customers from a specific region.
 

@@ -2,7 +2,7 @@
 description: Restrict the number of records processed or passed forward in the flow.
 ---
 
-# Limit
+# Limit records in Fastn flows
 
 The **Limit** feature is available under **Flow Transformation**.
 
