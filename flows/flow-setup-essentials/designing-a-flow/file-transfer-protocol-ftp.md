@@ -4,7 +4,7 @@ description: Transfer files between systems using FTP, FTPS, or SFTP connections
 
 # File Transfer Protocol (FTP)
 
-The **File Transfer Protocol** component allows you to upload, download, list, delete, or rename files on remote servers securely and efficiently.
+The **File Transfer Protocol** component lets you upload, download, list, delete, or rename files on remote servers directly from your flow. Use it when your automation needs to exchange files with external systems over FTP, FTPS, or SFTP — for example, uploading reports to a partner's server or downloading data feeds for processing.
 
 <figure><img src="../../../.gitbook/assets/image (28).png" alt="File Transfer Protocol component in the Fastn flow editor"><figcaption></figcaption></figure>
 

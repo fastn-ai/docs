@@ -6,7 +6,7 @@ description: >-
 
 # Connectors
 
-Connectors link your flow to external services and APIs; like Slack, HubSpot, or Google Sheets, enabling seamless data exchange.
+The **Connectors** component links your flow to external services and APIs — such as Slack, HubSpot, or Google Sheets — enabling seamless data exchange. Use it whenever your flow needs to read from, write to, or trigger actions in a third-party application. Fastn provides 250+ prebuilt connectors, each with ready-to-use endpoints you can configure without writing code.
 
 <figure><img src="https://docs.fastn.ai/~gitbook/image?url=https%3A%2F%2F1255842839-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3iSr2Tx8FvvuoLPncziH%252Fuploads%252FzauUXKipsL4hupiUXRoK%252Fimage.png%3Falt%3Dmedia%26token%3D9155202f-7760-40a5-a0f8-a45514ff964e&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=cd9ae17&#x26;sv=2" alt="Connector component in the Fastn flow editor for linking external services"><figcaption></figcaption></figure>
 

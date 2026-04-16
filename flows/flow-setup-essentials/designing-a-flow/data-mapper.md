@@ -6,7 +6,7 @@ description: >-
 
 # Data Mapper
 
-This lets you transform data between steps. You can map data from previous steps, variables, or secrets into a new object format you need later in the flow.
+The **Data Mapper** component lets you reshape and route data between flow steps. You can map outputs from previous steps, variables, or secrets into a new object structure that downstream steps require. Unlike the [Converter](converter.md), which changes data formats (for example, JSON to CSV), the Data Mapper restructures fields within the same format — renaming keys, combining values, or extracting nested properties.
 
 <figure><img src="https://docs.fastn.ai/~gitbook/image?url=https%3A%2F%2F1255842839-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F3iSr2Tx8FvvuoLPncziH%252Fuploads%252FF1LauqCeDl6OOpO41GRJ%252Fimage.png%3Falt%3Dmedia%26token%3D15f5d337-2d04-4794-90a7-453cbd9bc77a&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=fedb4a83&#x26;sv=2" alt="Data Mapper component in the Fastn flow editor"><figcaption></figcaption></figure>
 
