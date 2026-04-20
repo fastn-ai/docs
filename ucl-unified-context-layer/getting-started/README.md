@@ -9,6 +9,10 @@ description: >-
 
 Unified Context Layer (UCL) enables your SaaS platforms to deliver embedded, secure, and scalable AI integrations. This section covers setting up your account, connecting apps, embedding AI clients, and understanding how UCL manages external systems, connections, and actions.&#x20;
 
+{% hint style="success" %}
+**Ready to embed UCL into your AI agent?** Jump straight to the [Embedding UCL onto your AI Agent](about-unified-context-layer/embedding-ucl-onto-your-ai-agent.md) guide for a step-by-step walkthrough.
+{% endhint %}
+
 ## **1. Workspace Selection**
 
 After you log in to [UCL](https://app.ucl.dev/), you can select a workspace or create a new one by clicking on **Create Workspace** button, after which you'll be directed to the next page to set up your integrations.
@@ -44,7 +48,7 @@ You need to have at least one app connected to see the AI Assistant.
 <figure><img src="../../.gitbook/assets/image (557).png" alt="UCL dashboard with connected apps and AI Assistant Playground visible on the left"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Use **Modify Selection** in the “Selected Apps” section to adjust your choices.
+Use **Modify Selection** in the "Selected Apps" section to adjust your choices.
 {% endhint %}
 
 Click on **Continue** in the top-right corner to move to the next step.
@@ -116,7 +120,7 @@ You can also **create a Custom App**, which means:
 
     Learn more about UCL Monitoring [here](about-unified-context-layer/monitoring/).
 
-    <figure><img src="../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.40 PM.png" alt="UCL Insights dashboard showing active tenants, request success rate, and usage metrics"><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.40 PM.png" alt="UCL Insights dashboard showing active tenants, request success rate, and usage metrics"><figcaption></figcaption></figure>
 
 ## 8. Test in Playground
 
@@ -133,4 +137,3 @@ You can also **create a Custom App**, which means:
 {% embed url="https://docs.fastn.ai/ucl-use-cases/connect-ucl-for-task-assignment-in-jira" %}
 
 {% embed url="https://docs.fastn.ai/ucl-use-cases/connect-ucl-to-cursor-and-access-data-from-notion" %}
-

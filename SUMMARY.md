@@ -22,8 +22,8 @@
 ## AI agent integrations (UCL)
 
 * [Getting Started](ucl-unified-context-layer/getting-started/README.md)
+  * [Embedding UCL onto your AI Agent](ucl-unified-context-layer/getting-started/about-unified-context-layer/embedding-ucl-onto-your-ai-agent.md)
   * [About Unified Context Layer](ucl-unified-context-layer/getting-started/about-unified-context-layer/README.md)
-    * [Embedding UCL onto your AI Agent](ucl-unified-context-layer/getting-started/about-unified-context-layer/embedding-ucl-onto-your-ai-agent.md)
     * [Multitenancy](ucl-unified-context-layer/getting-started/about-unified-context-layer/multitenancy.md)
     * [Defining an MCP Server](ucl-unified-context-layer/getting-started/about-unified-context-layer/defining-an-mcp-server.md)
     * [Creating a Custom Tool](ucl-unified-context-layer/getting-started/about-unified-context-layer/creating-a-custom-tool.md)
@@ -36,6 +36,7 @@
 
 ## Flows
 
+* [Quick Start Guide](flows/quick-start-guide.md)
 * [Flow Setup Essentials](flows/flow-setup-essentials/README.md)
   * [Flow Settings](flows/flow-setup-essentials/flow-settings/README.md)
     * [Flow Step Settings](flows/flow-setup-essentials/flow-settings/flow-step-settings.md)
@@ -71,7 +72,6 @@
   * [Data & Storage](flows/flow-setup-essentials/data-and-storage/README.md)
     * [Connect to the Fastn DB](flows/flow-setup-essentials/data-and-storage/connect-to-the-fastn-db.md)
     * [Connecting External Databases](flows/flow-setup-essentials/data-and-storage/connecting-external-databases.md)
-* [Quick Start Guide](flows/quick-start-guide.md)
 * [Debugging & Troubleshooting](flows/debugging-and-troubleshooting.md)
 * [Scheduling Flows](flows/scheduling-flows.md)
 * [Tutorials](flows/tutorials/README.md)
