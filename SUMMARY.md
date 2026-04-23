@@ -71,7 +71,7 @@
   * [Data & Storage](flows/flow-setup-essentials/data-and-storage/README.md)
     * [Connect to the Fastn DB](flows/flow-setup-essentials/data-and-storage/connect-to-the-fastn-db.md)
     * [Connecting External Databases](flows/flow-setup-essentials/data-and-storage/connecting-external-databases.md)
-* [Quick Start Guide](flows/quick-start-guide.md)
+* [Quick start guide for Fastn workflow automation](flows/quick-start-guide.md)
 * [Debugging & Troubleshooting](flows/debugging-and-troubleshooting.md)
 * [Scheduling Flows](flows/scheduling-flows.md)
 * [Tutorials](flows/tutorials/README.md)

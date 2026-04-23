@@ -1,12 +1,12 @@
 ---
-description: Build a working flow in under 10 minutes. No prior Fastn experience required.
+description: Create your first Fastn workflow automation in under 10 minutes. Connect an API trigger to Slack with no prior Fastn experience required.
 ---
 
-# Quick Start Guide
+# Quick start guide for Fastn workflow automation
 
 In this quick start guide, you'll create a flow that listens for an incoming API request and sends a message to a Slack channel. By the end you will have a live, working automation running on Fastn.
 
-### What you'll learn
+## What you'll learn
 
 * How to create a flow with an API request trigger
 * How to add and configure your first connector step
@@ -15,12 +15,12 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 
 **Estimated time:** 10 minutes
 
-### Prerequisites
+## Prerequisites
 
 * A **Fastn account,** sign up at [fastn.ai](https://fastn.ai/) if you do not have one
 * A **Slack workspace** where you can post messages (and permission to install apps)
 
-### Step 1: Create a new flow
+## Step 1: Create a new flow
 
 1. Click **Flows** in the left-hand menu.
 2. Click **+ Create Flows** in the top-right corner.
@@ -29,7 +29,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 
 <figure><img src="../.gitbook/assets/part1.gif" alt=""><figcaption></figcaption></figure>
 
-### Step 2: Add a Slack connector
+## Step 2: Add a Slack connector
 
 1. Click the **+** button below the trigger step on the canvas.
 2. You see five tabs: **Trigger**, **Connection**, **AI**, **Transformation**, **Control**.
@@ -41,7 +41,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 
 <figure><img src="../.gitbook/assets/part 2 connectors.gif" alt=""><figcaption></figcaption></figure>
 
-### Step 3: Connect your Slack account
+## Step 3: Connect your Slack account
 
 1. In the Slack connector step, click **Connect**.
 2. A Slack authorization window opens. Select the workspace you want to connect.
@@ -53,7 +53,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 
 > **Note:** Fastn manages OAuth tokens securely. Your application never sees raw Slack credentials.
 
-### Step 4: Configure the Slack message
+## Step 4: Configure the Slack message
 
 1. In the Slack connector step, fill in the required fields:
 
@@ -66,7 +66,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 
 <figure><img src="../.gitbook/assets/slack channel id.png" alt=""><figcaption></figcaption></figure>
 
-### Step 5: Map request data to the Slack message
+## Step 5: Map request data to the Slack message
 
 This is where the flow connects input to output. You map data from the incoming API request to the Slack message text.
 
@@ -81,7 +81,7 @@ New request received: {{input.message}}
 
 <figure><img src="../.gitbook/assets/data mapping.png" alt=""><figcaption></figcaption></figure>
 
-### Step 6: Test your flow
+## Step 6: Test your flow
 
 1. Click the **Test** button in the top-right corner of the flow builder.
 2. Enter test input in JSON format:
@@ -99,7 +99,7 @@ New request received: {{input.message}}
 
 > If the test fails, check that your Slack account is connected and that the channel name is correct. The test console displays error details for each step.
 
-### Step 7: Deploy your flow
+## Step 7: Deploy your flow
 
 1. Click the **Deploy** button in the top-right corner.
 2. Confirm the deployment.
@@ -109,7 +109,7 @@ Your flow is now live and callable via API. You can find your API key in **Setti
 
 <figure><img src="../.gitbook/assets/api key.gif" alt=""><figcaption></figcaption></figure>
 
-### Troubleshooting
+## Troubleshooting
 
 | Problem                       | Solution                                                                                           |
 | ----------------------------- | -------------------------------------------------------------------------------------------------- |
