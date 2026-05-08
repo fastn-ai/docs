@@ -3,6 +3,7 @@
 ## Getting started
 
 * [Fastn: embedded integration platform for AI agents](README.md)
+  * [Developer Quick Start](getting-started/developer-quick-start.md)
   * [How Fastn Works](getting-started/about-fastn/how-fastn-works.md)
   * [Your First Automation](getting-started/about-fastn/your-first-automation.md)
 
