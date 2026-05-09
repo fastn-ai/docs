@@ -4,7 +4,7 @@ description: >-
   attachments, or other files for processing in subsequent automation steps.
 ---
 
-# Download File
+# Download files in Fastn flows
 
 The **Download File** component fetches a file from a URL and makes it available for subsequent steps in your flow. Use it when you need to retrieve remote files — such as CSVs, PDFs, or attachments — for parsing, transformation, or forwarding to another service like email or cloud storage.
 

@@ -4,7 +4,7 @@ description: >-
   to route automation paths based on specific data conditions.
 ---
 
-# Switch
+# Add conditional logic with Switch in Fastn
 
 Create conditional logic to control the flow of actions based on specific criteria. Switches enable your automation to choose different paths based on specific conditions.
 

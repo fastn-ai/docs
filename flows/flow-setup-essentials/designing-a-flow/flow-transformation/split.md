@@ -2,7 +2,7 @@
 description: Split data into multiple branches based on a defined condition.
 ---
 
-# Split
+# Split data into branches in Fastn flows
 
 The **Split** component breaks a dataset into smaller, structured pieces that you can process independently in subsequent flow steps. Use it when a connector returns a large table or complex object and you only need specific portions — such as selected columns, targeted attributes, or filtered sections. While [Aggregate](aggregate.md) combines multiple items into one output, Split does the opposite: it divides a single dataset into separate branches.
 

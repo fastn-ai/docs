@@ -2,7 +2,7 @@
 description: Initiate a flow whenever a specific event occurs in a connected app
 ---
 
-# Trigger
+# Set up triggers for Fastn flows
 
 The **Trigger** component starts your flow automatically when a specific event occurs in a connected app — such as a new message in Slack, a form submission, or a record update in a CRM. Use it when you want your automation to run in response to real-time activity rather than on a manual or scheduled basis.
 

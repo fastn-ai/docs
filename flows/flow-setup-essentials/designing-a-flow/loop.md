@@ -4,7 +4,7 @@ description: >-
   run fixed repetitions, or use while conditions for workflow automation.
 ---
 
-# Loop
+# Repeat actions with Loop in Fastn flows
 
 The **Loop** component repeats a set of actions multiple times within your flow. Use it when you need to iterate over a list of items (such as processing each record from an API response), run a block a fixed number of times, or keep executing while a condition remains true. Fastn supports three loop types: **Loop N times**, **Loop over data**, and **While loop**.
 

@@ -4,7 +4,7 @@ description: >-
   Configure prebuilt connectors to automate data exchange across 250+ apps.
 ---
 
-# Connectors
+# Connect external apps in Fastn flows
 
 The **Connectors** component links your flow to external services and APIs — such as Slack, HubSpot, or Google Sheets — enabling seamless data exchange. Use it whenever your flow needs to read from, write to, or trigger actions in a third-party application. Fastn provides 250+ prebuilt connectors, each with ready-to-use endpoints you can configure without writing code.
 

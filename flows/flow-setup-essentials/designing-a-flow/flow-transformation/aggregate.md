@@ -2,7 +2,7 @@
 description: Compute summarized or aggregated values from data.
 ---
 
-# Aggregate
+# Aggregate data in Fastn flows
 
 The **Aggregate** component collects multiple items from a list and combines them into a single aggregated output. Use it when you need to summarize, bundle, or pick a subset of list items — for example, gathering the five most recent support tickets for a daily digest. While [Split](split.md) divides a dataset into separate branches, Aggregate does the opposite: it merges multiple items into one consolidated result.
 

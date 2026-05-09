@@ -2,7 +2,7 @@
 description: Restrict the number of records processed or passed forward in the flow.
 ---
 
-# Limit
+# Limit records in Fastn flows
 
 The **Limit** component restricts how many items from a list pass forward to the next step in your flow. Use it when a connector returns more records than you need — for example, keeping only the first five collaborators from a Zendesk ticket or the ten most recent orders from Salesforce. Place it immediately after any step that outputs a list to control the volume of data your downstream steps process.
 

@@ -4,7 +4,7 @@ description: >-
   flow steps. Store intermediate data and configuration settings.
 ---
 
-# Variables
+# Use variables in Fastn flows
 
 The **Variables** component lets you define and reuse named values — such as counters, strings, objects, or flags — across multiple steps in your flow. Use it to store intermediate data, configuration settings, or default values that several steps need to reference. Unlike flow step outputs that belong to a single step, variables persist across the entire flow execution and you can update them at any point.
 
