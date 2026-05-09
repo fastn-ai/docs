@@ -1,8 +1,10 @@
 ---
-description: Build a working flow in under 10 minutes. No prior Fastn experience required.
+description: >-
+  Build your first Fastn workflow automation in under 10 minutes. Create an API-triggered
+  flow that sends Slack messages, with no prior Fastn experience required.
 ---
 
-# Quick Start Guide
+# Fastn quick start: build your first workflow automation
 
 In this quick start guide, you'll create a flow that listens for an incoming API request and sends a message to a Slack channel. By the end you will have a live, working automation running on Fastn.
 
@@ -117,4 +119,3 @@ Your flow is now live and callable via API. You can find your API key in **Setti
 | Test returns an error         | Check the error details in the test console. Most common cause is a misconfigured field            |
 | Flow shows "Changes Pending"  | You have unsaved changes. Click **Save**, then **Deploy** again                                    |
 | API request returns 401       | Include the `x-fastn-api-key` header with a valid API key. Generate one in **Settings → API Keys** |
-
