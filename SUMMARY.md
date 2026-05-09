@@ -22,6 +22,7 @@
 ## AI agent integrations (UCL)
 
 * [Getting Started](ucl-unified-context-layer/getting-started/README.md)
+  * [Quickstart: Connect your AI agent to tools](ucl-unified-context-layer/getting-started/quickstart.md)
   * [About Unified Context Layer](ucl-unified-context-layer/getting-started/about-unified-context-layer/README.md)
     * [Embedding UCL onto your AI Agent](ucl-unified-context-layer/getting-started/about-unified-context-layer/embedding-ucl-onto-your-ai-agent.md)
     * [Multitenancy](ucl-unified-context-layer/getting-started/about-unified-context-layer/multitenancy.md)
