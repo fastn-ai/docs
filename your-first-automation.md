@@ -14,12 +14,12 @@ Getting started with Fastn is easy. In this section, we’ll walk you through yo
 
 #### Start with these tutorials:
 
-{% content-ref url="fastn-ucl-legacy/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl.md" %}
-[create-a-google-doc-and-share-it-to-slack-using-ucl.md](fastn-ucl-legacy/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl.md)
+{% content-ref url="fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl.md" %}
+[create-a-google-doc-and-share-it-to-slack-using-ucl.md](fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl.md)
 {% endcontent-ref %}
 
-{% content-ref url="fastn-ucl-legacy/getting-started/about-unified-context-layer/creating-a-custom-tool.md" %}
-[creating-a-custom-tool.md](fastn-ucl-legacy/getting-started/about-unified-context-layer/creating-a-custom-tool.md)
+{% content-ref url="fastn-ucl/getting-started/about-unified-context-layer/creating-a-custom-tool.md" %}
+[creating-a-custom-tool.md](fastn-ucl/getting-started/about-unified-context-layer/creating-a-custom-tool.md)
 {% endcontent-ref %}
 
 {% content-ref url="tutorials/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md" %}

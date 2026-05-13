@@ -145,6 +145,6 @@ Fastn gives you real-time visibility into all your integrations and platform act
 
 Jump into **Your First Automation** to start building with Fastn.
 
-{% content-ref url="your-first-automation.md" %}
-[your-first-automation.md](your-first-automation.md)
+{% content-ref url="../../your-first-automation.md" %}
+[your-first-automation.md](../../your-first-automation.md)
 {% endcontent-ref %}
