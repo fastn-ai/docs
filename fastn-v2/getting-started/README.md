@@ -11,7 +11,7 @@ Fastn is an embedded integration platform for SaaS companies. You embed it into 
 
 This section walks you through the platform from first principles to a working integration.
 
-<figure><img src=".gitbook/assets/what is fastn.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/what is fastn.png" alt=""><figcaption></figcaption></figure>
 
 ### In this section
 

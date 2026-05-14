@@ -114,13 +114,13 @@
   * [FAQs](library/faqs.md)
   * [Glossary](library/glossary.md)
 
-## Fastn
+## Fastn V2
 
-* [Getting Started](<README (1).md>)
-  * [What is Fastn](fastn/getting-started/what-is-fastn.md)
-  * [Platform Overview](fastn/getting-started/platform-overview.md)
-  * [Signing Up as a SaaS Partner](fastn/getting-started/signing-up-as-a-saas-partner.md)
-  * [Your First Integration](fastn/getting-started/your-first-integration.md)
+* [Getting Started](fastn-v2/getting-started/README.md)
+  * [What is Fastn](fastn-v2/getting-started/what-is-fastn.md)
+  * [Platform Overview](fastn-v2/getting-started/platform-overview.md)
+  * [Signing Up as a SaaS Partner](fastn-v2/getting-started/signing-up-as-a-saas-partner.md)
+  * [Your First Integration](fastn-v2/getting-started/your-first-integration.md)
 
 ***
 
