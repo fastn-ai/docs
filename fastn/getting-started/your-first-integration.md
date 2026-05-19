@@ -1,6 +1,6 @@
 ---
 description: >-
-  Build a working integration from scratch — create a connector, write a
+  Build a working integration from scratch i.e. create a connector, write a
   workflow, set up a trigger, and test the full loop.
 ---
 
@@ -220,7 +220,3 @@ You can also check:
 5. Triggered the webhook and verified execution in Activity
 
 This is the core pattern for every integration on Fastn: **Connector → Workflow → Trigger → Customer isolation → Monitor**.
-
-
-
-> **Feedback:** If any step didn't match what you see in the platform, let us know at [github.com/fastnai/docs](https://github.com/fastnai/docs).

@@ -1,5 +1,5 @@
 ---
-description: A guide on how to use Fastn if you're a SaaS
+description: A guide on how to use Fastn if you're a SaaS company
 ---
 
 # Signing Up as a SaaS Partner
@@ -96,5 +96,3 @@ The Setup Assistants on the Home page guide you through this automatically, but 
 3. **Set up a trigger** — Go to **Integrations → Triggers** → **Add Trigger** (Webhook, Scheduler, or App Event)
 4. **Create a customer** — Go to **Settings → Customers** → **Create Customer**
 5. **Monitor** — Go to **Activity → Executions** to see your workflow runs
-
-Each of these steps has detailed documentation in the [Tutorials](https://claude.ai/tutorials/tutorials.md) section.

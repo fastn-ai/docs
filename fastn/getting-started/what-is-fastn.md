@@ -16,7 +16,7 @@ Fastn is built for two audiences:
 
 **SaaS companies (you)** — You have a product and your customers need integrations with third-party apps. You don't want to build and maintain connector infrastructure yourself. With Fastn, you configure connectors, build automation workflows, and embed a branded integration hub into your product. You manage everything from the Fastn dashboard at `live.fastn.ai`.
 
-**Your customers** — The people who use your SaaS product. They interact with Fastn through the embedded widget inside your app — connecting their own accounts (their Slack workspace, their HubSpot instance, their Shopify store), activating integrations, and viewing sync status. They never see the Fastn dashboard or know that Fastn exists behind the scenes.
+**Your customers** — The people who use your SaaS product. They interact with Fastn through the embedded widget inside your app connecting their own accounts (their Slack workspace, their HubSpot instance, their Shopify store), activating integrations, and viewing sync status. They never see the Fastn dashboard or know that Fastn exists behind the scenes.
 
 ### What Fastn replaces
 

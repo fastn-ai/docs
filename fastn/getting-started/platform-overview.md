@@ -7,13 +7,11 @@ description: >-
 
 # Platform Overview
 
-This page shows how Fastn's platform is organized and where each piece fits. Use it as a reference map when you're building integrations.
-
 > **Diagram:** Architecture overview: SaaS App → Embedded Widget → Fastn Platform (Connectors, Workflows, Triggers, CDM, Event System, AI Agents) → Third-Party Apps. Show customer isolation boundary and MCP Gateway.
 
 ### Dashboard layout
 
-The V2 dashboard uses **top navigation** with five main sections:
+The dashboard uses **top navigation** with five main sections:
 
 #### Home
 
@@ -178,7 +176,7 @@ The platform starts on the **Free** plan. Visible quota dimensions from Settings
 
 You can customize limits per customer with the **"Customize Customer Limits"** button on the Billing page.
 
-> **Screenshot needed:** Settings → Billing showing the quota usage table with dimensions, defaults, usage bars, and enforcement modes.
+> **Screenshot:** Settings → Billing showing the quota usage table with dimensions, defaults, usage bars, and enforcement modes.
 
 ### Security model
 
