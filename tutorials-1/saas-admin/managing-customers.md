@@ -17,9 +17,9 @@ In Fastn, your end users are called **Customers** (alternatively called "Tenants
 3. Enter the customer details (name, and any other required fields).
 4. Click create. Note the **customer ID** — you'll use this for API calls and widget embedding.
 
-> &#x20;**Screenshot needed:** Settings → Customers showing the Create Customer button and the creation form.
+> &#x20;**Screenshot:** Settings → Customers showing the Create Customer button and the creation form.
 
-> &#x20;**Screenshot needed:** Customer list showing created customers with their IDs.
+> &#x20;**Screenshot:** Customer list showing created customers with their IDs.
 
 #### Naming conventions
 
@@ -29,7 +29,9 @@ Customer IDs are used in API headers and widget configuration. Pick a convention
 * Slug: `acme-corp`
 * Auto-generated UUID
 
-Be consistent — changing IDs later means updating every API call.
+{% hint style="info" %}
+Changing IDs later means updating every API call.
+{% endhint %}
 
 ### Customer isolation
 
@@ -63,7 +65,7 @@ Use this for:
 * Trial customers with lower limits
 * Enterprise customers with custom agreements
 
-> **Screenshot needed:** Customize Customer Limits interface showing per-customer quota overrides.
+> **Screenshot:** Customize Customer Limits interface showing per-customer quota overrides.
 
 ### Monitoring customer activity
 
@@ -73,7 +75,7 @@ Use this for:
 2. Use the **"All workflows"** dropdown to filter.
 3. Each execution row shows **Triggered By** — which tells you what started the execution (agent-service, webhook, scheduler, manual).
 
-> **Screenshot needed:** Activity → Executions filtered to show a specific customer's workflow runs.
+> **Screenshot:** Activity → Executions filtered to show a specific customer's workflow runs.
 
 #### Activity → Events
 
@@ -93,6 +95,6 @@ For a complete history of all actions:
 
 * Customers replace "Tenants" in V2
 * How to create customers under Settings → Customers
-* Customer isolation model — each customer has separate connections, data, and executions
+* Customer isolation model i.e. each customer has separate connections, data, and executions
 * How to customize quota limits per customer
 * How to monitor customer activity through Executions, Events, and Audit Log

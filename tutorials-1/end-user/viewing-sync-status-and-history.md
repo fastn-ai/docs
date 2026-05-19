@@ -25,7 +25,7 @@ Open the integration widget and look at your connected apps. Each one typically 
 | **Error** / **Failed** (red)       | The last sync encountered a problem               |
 | **Paused** / **Disabled** (gray)   | Integration is connected but not actively running |
 
-> **Screenshot needed:** Widget showing multiple connected apps with different status indicators — one active (green), one with an error (red).
+> **Screenshot:** Widget showing multiple connected apps with different status indicators — one active (green), one with an error (red).
 
 ### Viewing execution history
 
@@ -39,10 +39,10 @@ If the SaaS company has enabled history logs in the widget, you can see a record
    * **Duration** — how long it took
    * **Summary** — what happened (e.g., "Synced 45 orders", "Created 12 invoices")
 
-> &#x20;**Screenshot needed:** Execution history view inside the widget showing a list of recent syncs with timestamps, status, and summaries.
+> &#x20;**Screenshot:** Execution history view inside the widget showing a list of recent syncs with timestamps, status, and summaries.
 
 {% hint style="info" %}
-⚠️ **Note:** Not all integrations show detailed history in the widget. If you don't see a history section, the SaaS company may not have enabled it. Contact their support for execution details.
+**Note:** Not all integrations show detailed history in the widget. If you don't see a history section, the SaaS company may not have enabled it. Contact their support for execution details.
 {% endhint %}
 
 ### Understanding errors
@@ -63,7 +63,7 @@ When a sync fails, the history may show an error message. Common causes:
 
 **Service unavailable** — The third-party app was temporarily down. The next sync will retry automatically.
 
-> **Screenshot needed:** Error detail view showing a failed sync with the error type and a brief explanation.
+> **Screenshot:** Error detail view showing a failed sync with the error type and a brief explanation.
 
 ### What to do when something fails
 
@@ -85,7 +85,7 @@ For integrations that sync on a schedule (hourly, daily), you can verify they're
 
 If the last sync timestamp is older than expected (e.g., a daily sync hasn't run in 3 days), something may be wrong. Check for errors in the history or contact support.
 
-> **Screenshot needed:** Widget showing a connected app with "Last synced: 2 hours ago" timestamp visible.
+> **Screenshot:** Widget showing a connected app with "Last synced: 2 hours ago" timestamp visible.
 
 ### What you've learned
 

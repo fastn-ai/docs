@@ -22,7 +22,7 @@ Fastn is built for two audiences:
 
 Without Fastn, SaaS companies typically face one of these situations:
 
-* Building integrations in-house: a team maintains OAuth flows, API versioning, error handling, and data mapping for every third-party app — per customer.
+* Building integrations in-house: a team maintains OAuth flows, API versioning, error handling, and data mapping for every third-party app per customer.
 * Using an integration marketplace like Zapier or Make: works for simple triggers, but doesn't give you a native, branded experience inside your product.
 * Hiring a systems integrator: expensive, slow, and creates a dependency on external consultants for every new connector.
 
@@ -46,7 +46,7 @@ Once a connector exists, you or your customers create **Connections** — authen
 
 You manage connectors under **Integrations → Connectors** and connections under **Integrations → Connections**.
 
-> **Screenshot needed:** Integrations → Connectors page showing connector cards with + Create and Build with AI buttons.
+> **Screenshot:** Integrations → Connectors page showing connector cards with + Create and Build with AI buttons.
 
 #### Workflows
 
@@ -62,9 +62,9 @@ Workflows support three execution tiers:
 
 You manage workflows under **Integrations → Workflows**.
 
-> **Screenshot needed:** Integrations → Workflows page showing the workflow table with status, version, tier columns.
+> **Screenshot:** Integrations → Workflows page showing the workflow table with status, version, tier columns.
 
-> **Screenshot needed:** Workflow code editor showing the default `export default async function(ctx)` template with the Configuration panel on the left and Test panel on the right.
+> **Screenshot:** Workflow code editor showing the default `export default async function(ctx)` template with the Configuration panel on the left and Test panel on the right.
 
 #### Triggers
 
@@ -78,7 +78,7 @@ Three trigger types:
 
 You manage triggers under **Integrations → Triggers**.
 
-> **Screenshot needed:** Integrations → Triggers page showing the three tabs (Webhooks, Schedulers, App Events) and the Add Trigger button.
+> **Screenshot:** Integrations → Triggers page showing the three tabs (Webhooks, Schedulers, App Events) and the Add Trigger button.
 
 #### Widgets
 
@@ -97,7 +97,7 @@ The live preview shows three tabs your customers will see:
 * **Workflows** — active workflows and workflow templates
 * **Insights** — KPIs (runs today, records processed, needs attention), connector status, most-used workflow
 
-> &#x20;**Screenshot needed:** Widget Builder showing the left panel (Layout tab) and right panel (Live Preview with Apps tab showing connected integrations).
+> &#x20;**Screenshot:** Widget Builder showing the left panel (Layout tab) and right panel (Live Preview with Apps tab showing connected integrations).
 
 ### AI agents across the platform
 

@@ -87,7 +87,3 @@ Resources provide data without executing actions — useful for AI assistants th
 ```
 https://mcp.ucl.dev/mcp/?id={PROJECT_ID}&api_key={API_KEY}&space_id={PROJECT_ID}
 ```
-
-{% hint style="info" %}
-⚠️ **VERIFY:** Confirm the exact MCP server URL pattern on the live platform.
-{% endhint %}

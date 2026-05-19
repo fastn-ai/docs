@@ -1,7 +1,7 @@
 ---
 description: >-
-  Field-level specification for all 6 CDM entities — Contact, Product, Order,
-  Invoice, InventoryLevel, Fulfillment — with types, requirements, and connector
+  Field-level specification for all 6 CDM entities i.e. Contact, Product, Order,
+  Invoice, InventoryLevel, Fulfillment with types, requirements, and connector
   mappings.
 ---
 

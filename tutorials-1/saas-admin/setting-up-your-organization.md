@@ -19,7 +19,7 @@ Here you can configure:
 * **Timezone** — used for scheduled triggers and activity timestamps
 * **Domain & Access Control** — set your email domain (e.g., `yourcompany.com`) so team members signing up with that domain can request to join. Toggle **"Auto-approve domain users"** to skip manual approval.
 
-> **Screenshot needed:** Settings → General showing Organization Name, Timezone, and Domain & Access Control sections.
+> **Screenshot:** Settings → General showing Organization Name, Timezone, and Domain & Access Control sections.
 
 ### Step 2: Create API keys
 
@@ -36,7 +36,7 @@ API keys authenticate programmatic requests. Fastn has two types:
 4. Name the key descriptively (e.g., `dev-key`, `production-key`).
 5. Copy the key immediately — it won't be shown again.
 
-> **📷 Screenshot needed:** Settings → API Keys showing the Test/Live toggle and a newly created key.
+> **📷 Screenshot:** Settings → API Keys showing the Test/Live toggle and a newly created key.
 
 {% hint style="info" %}
 ⚠️ **Security:** Treat API keys like passwords. Don't commit them to Git repositories. Use environment variables or secrets in your application code.
@@ -53,7 +53,7 @@ Secrets store sensitive values — third-party API tokens, database credentials 
 
 In your workflow code, access secrets through the context object.
 
-> **Screenshot needed:** Settings → Secrets showing the secret creation form.
+> **Screenshot:** Settings → Secrets showing the secret creation form.
 
 ### Step 4: Create environments
 
@@ -65,7 +65,7 @@ Environments separate development from production. Each environment can have its
 
 When you deploy workflows, you target a specific environment.
 
-> **Screenshot needed:** Settings → Environments showing the environment creation flow.
+> **Screenshot:** Settings → Environments showing the environment creation flow.
 
 ### Step 5: Review OAuth Apps
 
@@ -76,7 +76,7 @@ Fastn manages OAuth apps on your behalf for common platforms. This means you can
 
 If your connector's platform isn't listed, you'll need to create your own OAuth app in the third-party's developer settings and configure it in your connector.
 
-> **Screenshot needed:** Settings → OAuth Apps showing the managed OAuth apps list.
+> **Screenshot:** Settings → OAuth Apps showing the managed OAuth apps list.
 
 ### Step 6: Invite your team
 
@@ -96,9 +96,9 @@ If your connector's platform isn't listed, you'll need to create your own OAuth 
 
 The People page shows a table with columns: USER, ROLE, TEAMS, STATUS, LAST ACTIVE. Filter by role, status, or team.
 
-> **Screenshot needed:** Settings → People showing the user table with the Invite User button.
+> **Screenshot:** Settings → People showing the user table with the Invite User button.
 
-> **GIF needed:** Invite flow — clicking Invite User, entering email, selecting role, sending.
+> **GIF:** Invite flow — clicking Invite User, entering email, selecting role, sending.
 
 ### Step 7: Check your plan and quotas
 
@@ -122,7 +122,7 @@ Key limits on the Free plan:
 
 Click **"Customize Customer Limits"** to set per-customer quota overrides.
 
-> **Screenshot needed:** Settings → Billing showing the plan card and quota usage table.
+> **Screenshot:** Settings → Billing showing the plan card and quota usage table.
 
 ### What you've configured
 

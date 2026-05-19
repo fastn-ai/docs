@@ -43,7 +43,7 @@ Depending on the integration, configuration options can include:
 > **Screenshot:** Widget showing a connected app with a Settings/Configure button highlighted.
 
 {% hint style="info" %}
-⚠️ **Note:** If you don't see a configuration option, the integration may not support customization. The SaaS company decides what's configurable — contact their support team if you need changes that aren't available.
+**Note:** If you don't see a configuration option, the integration may not support customization. The SaaS company decides what's configurable i.e. contact their support team if you need changes that aren't available.
 {% endhint %}
 
 ### Configuring a dropdown or selection

@@ -6,7 +6,7 @@ description: >-
 
 # Local Dev Environment Setup
 
-**Prerequisites:** Docker and Docker Compose installed. Node.js 18+. Git. **Time:** 30 minutes **Outcome:** The full Fastn platform running locally — dashboard, control plane, database, and all supporting services.
+**Prerequisites:** Docker and Docker Compose installed. Node.js 18+ and Git installed.
 
 ### What you'll run
 
@@ -24,7 +24,7 @@ The local development environment spins up the full Fastn stack as Docker contai
 | PostgreSQL      | 5432 | pgvector/pg16        | Primary database with vector search    |
 | Redis           | 6379 | Redis 7 Alpine       | Cache, streams, queues, working memory |
 
-> **🖼Diagram needed:** Architecture diagram showing all 9 services with their ports, how they connect (Control Plane → PostgreSQL, Redis; Dashboard → Control Plane; Keycloak → Control Plane), and the developer's interaction points.
+> **Diagram:** Architecture diagram showing all 9 services with their ports, how they connect (Control Plane → PostgreSQL, Redis; Dashboard → Control Plane; Keycloak → Control Plane), and the developer's interaction points.
 
 ### Step 1: Clone the repository
 
@@ -33,8 +33,6 @@ git clone https://github.com/fastnai/fastn.git
 cd fastn
 ```
 
-> ⚠️ **VERIFY:** Confirm the repository URL and whether it's public or requires access from the Fastn team.
-
 ### Step 2: Install dependencies
 
 The Docker Compose setup includes an installer container that handles npm dependencies, but you'll also want local dependencies for IDE support:
@@ -42,8 +40,6 @@ The Docker Compose setup includes an installer container that handles npm depend
 ```bash
 npm install
 ```
-
-> ⚠️ **VERIFY:** Confirm whether the project uses npm, yarn, or pnpm, and whether there's a root-level package.json or a monorepo setup with workspaces.
 
 ### Step 3: Start the stack
 
@@ -59,9 +55,9 @@ Once running:
 * Control Plane API: [http://localhost:3001](http://localhost:3001/)
 * Keycloak admin: [http://localhost:8080](http://localhost:8080/)
 
-> **📷 Screenshot needed:** Terminal output showing all containers starting up successfully with health checks passing.
+> **Screenshot:** Terminal output showing all containers starting up successfully with health checks passing.
 
-> **📷 Screenshot needed:** Dashboard running at localhost:5173 — the login screen or home page.
+> **Screenshot:** Dashboard running at localhost:5173 — the login screen or home page.
 
 ### Step 4: Keycloak authentication
 
@@ -77,9 +73,7 @@ Social login (GitHub, Google) is pre-configured in the local realm. You can log 
 * The Keycloak admin console at `http://localhost:8080` (default credentials are in the Docker Compose file)
 * Or via the social login providers if configured
 
-> **📷 Screenshot needed:** Keycloak login screen with the Fastn custom theme showing the login options.
-
-> ⚠️ **VERIFY:** Confirm the default Keycloak admin credentials for local development and whether they're set in the docker-compose.yml or a .env file.
+> **Screenshot:** Keycloak login screen with the Fastn custom theme showing the login options.
 
 ### Step 5: Database setup
 
@@ -105,8 +99,6 @@ docker compose exec postgres psql -U fastn -d fastn
 SELECT tablename, policyname FROM pg_policies;
 ```
 
-> ⚠️ **VERIFY:** Confirm the exact migration file path and the PostgreSQL connection credentials (username, database name).
-
 ### The Fastn CLI
 
 The `@fastn/cli` package provides development commands:
@@ -131,8 +123,6 @@ Or run it via npx:
 npx @fastn/cli dev
 ```
 
-> ⚠️ **VERIFY:** Confirm that `@fastn/cli` is published to npm and available for installation. If it's a private package, document the access requirements.
-
 ### Development workflow
 
 Once the stack is running, a typical dev cycle looks like:
@@ -151,8 +141,6 @@ The Mock Server (port 3005) generates realistic test data using Faker.js. Use it
 # Example: fetch mock Shopify orders
 curl http://localhost:3005/shopify/orders
 ```
-
-> ⚠️ **VERIFY:** Confirm the mock server endpoint patterns and what connector data it simulates.
 
 ### Store backends
 

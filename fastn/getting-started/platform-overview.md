@@ -9,7 +9,7 @@ description: >-
 
 This page shows how Fastn's platform is organized and where each piece fits. Use it as a reference map when you're building integrations.
 
-> **Diagram needed:** Architecture overview: SaaS App → Embedded Widget → Fastn Platform (Connectors, Workflows, Triggers, CDM, Event System, AI Agents) → Third-Party Apps. Show customer isolation boundary and MCP Gateway.
+> **Diagram:** Architecture overview: SaaS App → Embedded Widget → Fastn Platform (Connectors, Workflows, Triggers, CDM, Event System, AI Agents) → Third-Party Apps. Show customer isolation boundary and MCP Gateway.
 
 ### Dashboard layout
 
@@ -33,7 +33,7 @@ Your landing page after login. Contains:
 **After your initial setup and overall onboarding is complete,** locked features that become available after your first customer connects: Pricing tiers, Real-time events, OAuth configuration, Custom domain, Workflow templates.
 {% endhint %}
 
-> **Screenshot needed:** Home page showing the full layout — Setup Assistants panel with AI output, the 5-step stepper at top, and the right sidebar checklist.
+> **Screenshot:** Home page showing the full layout — Setup Assistants panel with AI output, the 5-step stepper at top, and the right sidebar checklist.
 
 #### Integrations
 
@@ -46,7 +46,7 @@ Where you build everything. Four sub-tabs:
 | **Workflows**   | Create and manage workflows. Table shows name, status (active), version, updated date, and actions (Run, Delete). Buttons: **Create Workflow** (code editor) and **Build with AI** (Workflow Agent). Filter tabs: All, Instant, Standard, Long. |
 | **Triggers**    | Create and manage triggers separately from workflows. Three tabs: Webhooks, Schedulers, App Events. Button: **Add Trigger**.                                                                                                                    |
 
-> **Screenshot needed:** Integrations page showing the four sub-tabs (Connectors, Connections, Workflows, Triggers).
+> **Screenshot:** Integrations page showing the four sub-tabs (Connectors, Connections, Workflows, Triggers).
 
 #### Widgets
 
@@ -54,7 +54,7 @@ Where you build the customer-facing integration hub. The **Widget Builder** has 
 
 1. **Builder:**
 
-> **GIF needed:** Overview of widget builder on the left hand side
+> **GIF:** Overview of widget builder on the left hand side
 
 | Tab          | What it configures                                                                                                               |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ The builder also shows an **INTEGRATIONS** list where you add, edit, reorder, an
 
 2. **Live Preview**
 
-> **GIF needed:** Overview of preview on the right hand side
+> **GIF:** Overview of preview on the right hand side
 
 | Preview tab   | What it shows                                                                                                               |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -75,7 +75,7 @@ The builder also shows an **INTEGRATIONS** list where you add, edit, reorder, an
 | **Workflows** | Active workflows with visualizer, plus Use Template cards that launch Integration Agent sessions                            |
 | **Insights**  | KPI cards (Runs Today, Records Processed, Needs Attention), connector status, most-used workflow                            |
 
-> **Screenshot needed:** Widget Builder showing the left panel with Layout tab and right panel with Live Preview (Apps tab).
+> **Screenshot:** Widget Builder showing the left panel with Layout tab and right panel with Live Preview (Apps tab).
 
 #### Activity
 
@@ -88,7 +88,7 @@ Where you monitor everything. Four sub-tabs:
 | **Alerts**     | Alert rules for monitoring connector and workflow performance. Conditions: error rate, latency (p99/p95/avg), throughput, failure count. | —                                        |
 | **Executions** | Workflow execution history. Columns: Time, Workflow, Tier, Version, Status, Duration, Triggered By.                                      | All, Running, Completed, Failed, Timeout |
 
-> **Screenshot needed:** Activity → Executions page showing the execution table with all columns populated.
+> **Screenshot:** Activity → Executions page showing the execution table with all columns populated.
 
 #### Settings
 
@@ -107,7 +107,7 @@ Platform configuration. Left sidebar within Settings:
 | **Audit Log**        | Track all actions across your organization. Filter by user, action, type, date range. Columns: Timestamp, User, Action, Resource, Outcome.                                |
 | **ADVANCED → Roles** | 6 system roles (Owner, Admin, Developer, Operator, Viewer, End User) + custom roles. Per-role permission matrix across Connectors, Connections, Workflows, Agents, Tools. |
 
-> **Screenshot needed:** Settings page showing the left sidebar with all sections visible.
+> **Screenshot:** Settings page showing the left sidebar with all sections visible.
 
 ### How the pieces connect
 

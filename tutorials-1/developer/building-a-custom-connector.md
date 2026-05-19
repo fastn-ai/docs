@@ -41,10 +41,6 @@ const myConnector: ConnectorDefinition = {
 };
 ```
 
-{% hint style="info" %}
-⚠️ **VERIFY:** This interface structure is derived from PRD Section 3.2. Confirm the exact import path and property names against the `@fastn/connectors` package source code.
-{% endhint %}
-
 ### Step 1: Scaffold the connector
 
 Create a new file in the connectors directory:
@@ -54,10 +50,6 @@ Create a new file in the connectors directory:
 mkdir -p packages/connectors/src/my-app
 touch packages/connectors/src/my-app/index.ts
 ```
-
-{% hint style="info" %}
-⚠️ **VERIFY:** Confirm the directory structure for custom connectors in the monorepo.
-{% endhint %}
 
 ### Step 2: Define authentication
 
@@ -189,10 +181,6 @@ The `ctx` object provides:
 * `ctx.tenant` — the current customer context
 * `ctx.logger` — structured logging
 
-{% hint style="info" %}
-⚠️ **VERIFY:** Confirm the `ctx` object properties and the HTTP client interface from the `@fastn/connectors` package.
-{% endhint %}
-
 ### Step 4: Define entities
 
 Entities describe the data types your connector works with. They map to CDM entities for cross-connector normalization:
@@ -257,16 +245,12 @@ After registration, your connector appears in:
 * The step picker when building flows (Connection → Connector)
 * The capability registry for MCP tool generation
 
-{% hint style="info" %}
-⚠️ **VERIFY:** Confirm the registration mechanism — is it `ConnectorRegistry.register()` or does it use a config file / auto-discovery pattern?
-{% endhint %}
-
 ### Step 7: Test the connector
 
 With the local dev environment running:
 
 1. Open the dashboard at `http://localhost:5173`.
-2. Go to **Connectors** — your custom connector should appear in the list.
+2. Go to **Connectors** and your custom connector should appear in the list.
 3. Click **Connect** and authenticate with your test account on the third-party app.
 4. Create a simple flow using your connector's actions.
 5. Test the flow and verify the data comes through correctly.
@@ -280,9 +264,9 @@ curl -X POST http://localhost:3001/api/v1/connectors/my-app/actions/listContacts
   -d '{"limit": 10}'
 ```
 
-> **Screenshot needed:** Custom connector appearing in the Connectors list in the local dashboard.
+> **Screenshot:** Custom connector appearing in the Connectors list in the local dashboard.
 
-> **Screenshot needed:** A flow using the custom connector's action in a step, with test output showing data from the third-party app.
+> **Screenshot:** A flow using the custom connector's action in a step, with test output showing data from the third-party app.
 
 ### Capability declaration
 
@@ -302,7 +286,7 @@ capabilities: {
 }
 ```
 
-The capability registry also tracks field coverage — how completely your connector maps to the CDM. Higher coverage means better cross-connector interoperability.
+The capability registry also tracks field coverage and how completely your connector maps to the CDM. Higher coverage means better cross-connector interoperability.
 
 ### What you've built
 

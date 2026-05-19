@@ -28,7 +28,7 @@ description: >-
 
 4. Click **Create**.
 
-> **📷 Screenshot needed:** Create Connector dialog with all fields filled in.
+> **Screenshot:** Create Connector dialog with all fields filled in.
 
 #### Building with AI
 
@@ -38,7 +38,7 @@ description: >-
 4. Describe what you want (e.g., "HubSpot CRM") or click a quick-start prompt.
 5. The agent researches the API, discovers the spec, builds actions and events, and tests them.
 
-> **Screenshot needed:** Connector Agent page with the chat input and quick-start prompts.
+> **Screenshot:** Connector Agent page with the chat input and quick-start prompts.
 
 > &#x20;**GIF needed:** Using Build with AI — entering a connector name, watching the agent discover the API and build actions.
 
@@ -57,7 +57,7 @@ Six auth methods are available when creating a connector:
 
 You can add multiple auth methods to one connector (click **"+ Add"** in the Auth Methods section). One method is set as default.
 
-> **Screenshot needed:** Auth Methods dropdown showing all 6 options.
+> **Screenshot:** Auth Methods dropdown showing all 6 options.
 
 #### Using Fastn-managed OAuth apps
 
@@ -81,7 +81,7 @@ A connector defines the integration. A **connection** is an authenticated instan
    * **Basic Auth:** Enter username and password.
 4. The connection appears under **Integrations → Connections**.
 
-> **GIF needed:** Adding a connection — clicking Connect on a connector card, completing OAuth, seeing the connected state.
+> **GIF:** Adding a connection — clicking Connect on a connector card, completing OAuth, seeing the connected state.
 
 #### Connections vs connectors
 

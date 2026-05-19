@@ -20,7 +20,7 @@ For the person setting up and managing Fastn within their SaaS product.
 
 [**Creating a Workflow via Chat**](https://app.gitbook.com/o/d4yvP9A8wMsLuRwerHPU/s/3iSr2Tx8FvvuoLPncziH/~/edit/~/changes/517/tutorials/saas-admin/creating-a-workflow-via-chat) — Use "Build with AI" to create workflows by describing what you need in plain language.
 
-[**Creating a Workflow in Code**](https://docs.fastn.ai/~/revisions/syzyb9fquxvsttnXzZup/tutorials/saas-admin/configuring-a-workflow-in-code) — Write workflows in the code editor, configure execution tiers, and test with sample input.
+[**Configuring a Workflow in Code**](https://docs.fastn.ai/~/revisions/syzyb9fquxvsttnXzZup/tutorials/saas-admin/configuring-a-workflow-in-code) — Write workflows in the code editor, configure execution tiers, and test with sample input.
 
 [**Setting Up Triggers**](https://docs.fastn.ai/~/revisions/syzyb9fquxvsttnXzZup/tutorials/saas-admin/setting-up-triggers) — Create webhook, scheduler, and app event triggers and route them to workflows.
 

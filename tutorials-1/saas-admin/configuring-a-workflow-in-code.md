@@ -14,7 +14,7 @@ description: >-
 2. Click **Create Workflow**.
 3. The workflow editor opens with three panels.
 
-> **Screenshot needed:** Full workflow editor showing all three panels — Configuration (left), Code (center), Test (right).
+> **Screenshot:** Full workflow editor showing all three panels — Configuration (left), Code (center), Test (right).
 
 ### The three panels
 
@@ -56,10 +56,6 @@ The Test tab has:
 * **CTX.INPUT** — JSON input your workflow receives
 * **CTX.HEADERS** — optional HTTP headers
 * **Run** button — executes the workflow without saving
-
-{% hint style="info" %}
-**Note:** "Hit Run to execute without saving" — iterate on your code before committing.
-{% endhint %}
 
 ### The ctx object
 
@@ -150,7 +146,7 @@ export default async function(ctx) {
 5. The output appears below — check the result matches your expectations.
 6. Toggle between **Test** (sample data) and **Real** mode if available.
 
-> **📷 Screenshot needed:** Test panel with sample input JSON and the output result after running.
+> **Screenshot:** Test panel with sample input JSON and the output result after running.
 
 ### Choosing an execution tier
 
@@ -174,7 +170,7 @@ Once your code works in testing:
 
 The workflow appears in the Workflows table with status **active**.
 
-> **📷 Screenshot needed:** Workflows table showing the newly created workflow with active status.
+> **Screenshot:** Workflows table showing the newly created workflow with active status.
 
 ### Editing an existing workflow
 

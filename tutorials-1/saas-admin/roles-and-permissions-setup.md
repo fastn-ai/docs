@@ -21,7 +21,7 @@ Fastn has 6 system roles. View them under **Settings → ADVANCED → Roles**:
 | **Viewer**    | 7           | Read-only access                                                 |
 | **End User**  | 9           | Customer-facing widget access                                    |
 
-> **Screenshot needed:** Settings → ADVANCED → Roles showing the 6 system roles with permission counts.
+> **Screenshot:** Settings → ADVANCED → Roles showing the 6 system roles with permission counts.
 
 ### Permission categories
 
@@ -47,7 +47,7 @@ Each role has granular permissions across 5 categories:
 
 **End User** — 9 permissions. Customer-facing access through the widget. Can use connections and view their own data.
 
-> **Screenshot needed:** Role detail view for "Admin" showing the permission categories with checkboxes — Connectors 6/6, Connections 6/6, Workflows 7/7, Agents 5/5, Tools 5/5.
+> **Screenshot:** Role detail view for "Admin" showing the permission categories with checkboxes — Connectors 6/6, Connections 6/6, Workflows 7/7, Agents 5/5, Tools 5/5.
 
 ### Assigning roles
 
@@ -60,7 +60,7 @@ The People table shows: USER, ROLE (badge), TEAMS, STATUS, LAST ACTIVE.
 
 Filter by role, status, or team using the dropdown filters at the top.
 
-> **Screenshot needed:** Settings → People showing the role badge on a user and the filter dropdowns.
+> **Screenshot:** Settings → People showing the role badge on a user and the filter dropdowns.
 
 ### Creating custom roles
 
@@ -78,11 +78,11 @@ Alternatively, duplicate an existing system role and modify it:
 3. Adjust the permissions as needed.
 4. Save.
 
-> **Screenshot needed:** Create Custom Role form or the "Duplicate as Custom" button on a system role.
+> **Screenshot:** Create Custom Role form or the "Duplicate as Custom" button on a system role.
 
 ### Teams
 
-The People section supports **Teams** — groups of users that can be assigned collectively. The user table has a TEAMS column and the filter bar includes an "All Teams" dropdown.
+The People section supports **Teams i.e.** groups of users that can be assigned collectively. The user table has a TEAMS column and the filter bar includes an "All Teams" dropdown.
 
 {% hint style="info" %}
 ⚠️ **VERIFY:** Teams functionality is visible in the UI but may not be fully documented. Confirm how teams are created and assigned.
@@ -98,7 +98,7 @@ Every permission-gated action is logged:
 4. Actions include: `auth.login`, `credential.token_refresh`, and others.
 5. Outcomes: **Success** (green badge), **Failure**, **Denied**.
 
-> **Screenshot needed:** Audit Log showing entries with timestamp, user, action, resource, and outcome columns.
+> **Screenshot:** Audit Log showing entries with timestamp, user, action, resource, and outcome columns.
 
 ### What you've learned
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Connect AI assistants to Fastn's MCP server — native tools, dynamic tools,
+  Connect AI assistants to Fastn's MCP server i.e. native tools, dynamic tools,
   per-customer scoping, and integration patterns.
 ---
 
@@ -62,7 +62,7 @@ Add Fastn as an MCP server in Claude Desktop's configuration:
 
 After configuration, Claude can discover and invoke Fastn tools directly in conversation.
 
-> **📷 Screenshot needed:** Claude Desktop with Fastn MCP tools visible in the tool list — showing both native and dynamic tools.
+> **Screenshot:** Claude Desktop with Fastn MCP tools visible in the tool list and showing both native and dynamic tools.
 
 #### Programmatic integration
 
@@ -119,7 +119,7 @@ const response = await fetch("https://api.anthropic.com/v1/messages", {
 });
 ```
 
-> **📷 Screenshot needed:** API response showing Claude using a Fastn MCP tool and returning integration data.
+> **Screenshot:** API response showing Claude using a Fastn MCP tool and returning integration data.
 
 ### Per-customer tool scoping
 

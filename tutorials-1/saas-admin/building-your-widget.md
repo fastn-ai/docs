@@ -7,14 +7,14 @@ description: >-
 
 # Building Your Widget
 
-**Prerequisites:** At least one connector configured and one workflow created. See [Configuring a Connector](https://claude.ai/chat/configuring-a-connector.md) and [Creating a Workflow in Code](https://claude.ai/chat/creating-a-workflow-in-code.md).
+**Prerequisites:** At least one connector configured and one workflow created. See [Configuring a Connector](configuring-a-connector.md) and [Creating a Workflow in Code](https://claude.ai/chat/creating-a-workflow-in-code.md).
 
 ### Opening the Widget Builder
 
 1. Click **Widgets** in the top nav.
 2. The Widget Builder opens with two panels: the builder on the left, the live preview on the right.
 
-> **Screenshot needed:** Full Widget Builder page showing both panels.
+> **Screenshot:** Full Widget Builder page showing both panels.
 
 ### Adding integrations
 
@@ -25,7 +25,7 @@ The left panel shows an **INTEGRATIONS** section at the top.
 3. Each integration appears as a card with edit (✏️) and delete (🗑) icons.
 4. Drag to reorder how they appear in the hub.
 
-> **Screenshot needed:** INTEGRATIONS list showing added integrations with edit/delete icons.
+> **Screenshot:** INTEGRATIONS list showing added integrations with edit/delete icons.
 
 ### Configuring Layout
 
@@ -39,7 +39,7 @@ Click the **Layout** tab in the left panel:
 
 Templates appear in the **Workflows** tab of the preview. When a customer clicks a template, it launches an Integration Agent session to set up the workflow.
 
-> **Screenshot needed:** Layout tab showing Title, Subtitle, and Use Templates with added template cards.
+> **Screenshot:** Layout tab showing Title, Subtitle, and Use Templates with added template cards.
 
 ### Customizing Style
 
@@ -53,7 +53,7 @@ Click the **Style** tab:
 
 All style values are exportable as **CSS variables** or **JSON tokens** for consistency with your product's design system.
 
-> **Screenshot needed:** Style tab showing theme presets and color token controls.
+> **Screenshot:** Style tab showing theme presets and color token controls.
 
 ### Features (Coming Soon)
 
@@ -124,7 +124,7 @@ await fastn.configure(widgetId, {     // Open configure chat
 });
 ```
 
-> **Screenshot needed:** Embed tab showing the React SDK and Headless SDK code with tab toggles.
+> **Screenshot:** Embed tab showing the React SDK and Headless SDK code with tab toggles.
 
 #### Which method to choose
 
@@ -151,9 +151,7 @@ Shows connected integrations as cards with:
 * **Configure** button — opens the field mapping dialog
 * **Disconnect** button
 
-At the bottom: an **AI Assistant card** — "Can't find what you need? Tell AI what you want to automate and it will configure it for you." with a "Build with AI" button.
-
-> **Screenshot needed:** Apps tab in the preview showing connected integrations and the AI assistant card.
+> **Screenshot:** Apps tab in the preview showing connected integrations and the AI assistant card.
 
 #### Workflows tab
 
@@ -162,9 +160,9 @@ Shows:
 * **Active workflows** — click the arrow to open the interactive workflow visualizer (node graph with TRIGGER, PROCESS, DECISION, READ, WRITE, DONE nodes)
 * **Use Template** cards — click to launch an Integration Agent session
 
-> **Screenshot needed:** Workflows tab showing an active workflow and template cards.
+> **Screenshot:** Workflows tab showing an active workflow and template cards.
 
-> **Screenshot needed:** Workflow visualizer showing the interactive node graph.
+> **Screenshot:** Workflow visualizer showing the interactive node graph.
 
 #### Insights tab
 
@@ -204,9 +202,9 @@ Header shows sync type ("Ongoing sync") and entity count ("2 entities"). Toggle 
 
 Footer: "Changes apply on the next workflow run" with Cancel / Save Configuration buttons.
 
-> **Screenshot needed:** Integration Configuration dialog showing bidirectional field mappings with preview values.
+> **Screenshot:** Integration Configuration dialog showing bidirectional field mappings with preview values.
 
-> **Screenshot needed:** Filters section showing filter rows with operator dropdown.
+> **Screenshot:** Filters section showing filter rows with operator dropdown.
 
 ### Publishing
 

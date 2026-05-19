@@ -6,9 +6,9 @@ description: >-
 
 # Deploying to Lamba/Cloud Run
 
-> **Prerequisites:** [Writing a Workflow (TypeScript DSL)](https://claude.ai/chat/writing-a-workflow-typescript-dsl.md). An AWS or GCP account with appropriate permissions.
+**Prerequisites:** [Writing a Workflow (TypeScript DSL)](https://claude.ai/chat/writing-a-workflow-typescript-dsl.md). An AWS or GCP account with appropriate permissions.
 
-Locally, workflows run on a Fastify server with hot reload. For production, Fastn supports two deployment targets — AWS Lambda and GCP Cloud Run. The CLI and Pulumi handle the infrastructure provisioning.
+Locally, workflows run on a Fastify server with hot reload. For production, Fastn supports two deployment targets i.e. AWS Lambda and GCP Cloud Run.
 
 ### Deployment targets
 
@@ -41,8 +41,6 @@ createCloudRunHandler(syncOrders);
 ```
 
 The handler wraps your workflow with the execution runtime — step ordering (topological sort), retry logic, context building, input/output propagation, and OpenTelemetry tracing.
-
-> ⚠️ **VERIFY:** Confirm the handler imports and function signatures against the `@fastn/runtime` package.
 
 ### Deploying with the CLI
 
@@ -82,7 +80,7 @@ Pulumi provisions:
 * A URL endpoint for triggering the workflow
 * IAM bindings for service invocation
 
-> **📷 Screenshot needed:** Terminal output showing a successful `fastn deploy` command with the deployed endpoint URL.
+> **Screenshot:** Terminal output showing a successful `fastn deploy` command with the deployed endpoint URL.
 
 ### Managing deployments
 
@@ -95,8 +93,6 @@ fastn destroy sync_orders
 ```
 
 The `destroy` command tears down all Pulumi-managed resources for that workflow — Lambda functions, API Gateways, Cloud Run services, and associated IAM roles.
-
-> ⚠️ **VERIFY:** Confirm the CLI flags and deployment flow. The PRD describes Pulumi-managed infrastructure but the exact CLI interface needs verification.
 
 ### Execution runtime
 

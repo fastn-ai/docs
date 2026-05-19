@@ -1,5 +1,6 @@
 ---
 description: Find and fix problems in your flows using Fastn's built-in debugging tools.
+hidden: true
 ---
 
 # Debugging & Troubleshooting
@@ -14,7 +15,7 @@ The Test button lets you run your flow with sample data without deploying it. Th
 
 The **Test** button is in the top-right corner of the flow builder, next to **Deploy** and **\</> Integrate**. It has a play icon (▶) and a dropdown arrow.
 
-<figure><img src="../../.gitbook/assets/test button fastn flows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/test button fastn flows.gif" alt=""><figcaption></figcaption></figure>
 
 #### How to use it
 
@@ -27,7 +28,7 @@ The **Test** button is in the top-right corner of the flow builder, next to **De
 * **Click on any step** after a test run to see its input and output in the right panel. This tells you exactly what data entered the step and what came out.
 * If a step shows a red indicator this likely means an error was detected , the right panel shows the error message.
 
-<figure><img src="../../.gitbook/assets/error fastn flowes right pop up.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/error fastn flowes right pop up.png" alt=""><figcaption></figcaption></figure>
 
 * Compare the output of each step with what you expected. If step 3 returns unexpected data, the problem is likely in step 2's configuration (the step feeding data into step 3).
 
@@ -47,7 +48,7 @@ The Logs page shows the execution history of all your deployed flows — every t
 
 Click **Logs** in the left sidebar. It is a separate section, not inside Flows.
 
-<figure><img src="../../.gitbook/assets/logs.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/logs.gif" alt=""><figcaption></figcaption></figure>
 
 #### What you'll see
 
@@ -86,11 +87,11 @@ The Logger step lets you write data to the Logs at any point in your flow. Use i
 
 In the flow builder, click the **+** button to open the step picker. Scroll down to **Flow Control**. Logger is listed alongside Custom Code, Switch, Loop, and Log Metrics.
 
-<figure><img src="../../.gitbook/assets/logger alt fastn flows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/logger alt fastn flows.gif" alt=""><figcaption></figcaption></figure>
 
 Alternatively you can search "Logger" on the right side of the canvas and drag the logger to the desired step, as shown below:
 
-<figure><img src="../../.gitbook/assets/logger fastn flows.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/logger fastn flows.gif" alt=""><figcaption></figcaption></figure>
 
 #### How to use it
 
@@ -102,7 +103,7 @@ Alternatively you can search "Logger" on the right side of the canvas and drag t
 
 > **Additional step:** You can also check if the Logger is working before deployment by testing the steps till the logger by utilizing the Test button as shown below:
 
-<figure><img src="../../.gitbook/assets/logger details .png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/logger details .png" alt=""><figcaption></figcaption></figure>
 
 #### When to use Logger vs Test
 

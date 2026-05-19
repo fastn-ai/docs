@@ -53,10 +53,6 @@ create, read, update, delete, execute
 | Agents      | 5/5   | 5/5   | 5/5       | varies   | read only | —        |
 | Tools       | 5/5   | 5/5   | 5/5       | varies   | read only | —        |
 
-{% hint style="info" %}
-⚠️ **VERIFY:** Exact permissions for Operator, Viewer, and End User roles per category. The screenshot confirms totals (18p, 7p, 9p) but not the exact distribution.
-{% endhint %}
-
 ### Custom roles
 
 * Click **"Create Custom Role"** to build a role from scratch

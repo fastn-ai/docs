@@ -36,7 +36,7 @@ The exact location depends on how the SaaS company set things up. If you can't f
 7. Review the permissions being requested and click **Authorize** (or **Allow**).
 8. The popup closes and you're redirected back to the widget. The app now shows as **Connected**.
 
-> **GIF needed:** Full connection flow — clicking Connect on an app, the OAuth popup appearing, signing in, authorizing, and seeing the connected status in the widget.
+> **GIF:** Full connection flow — clicking Connect on an app, the OAuth popup appearing, signing in, authorizing, and seeing the connected status in the widget.
 
 ### What happens during authorization
 
@@ -82,8 +82,3 @@ Disconnecting removes the stored credentials. If you reconnect later, you'll nee
 * Found the integration widget in your product
 * Connected a third-party app by authorizing your account
 * Understand what permissions are granted and how your data is protected
-
-### Next steps
-
-* [**Customizing Your Integrations**](https://claude.ai/chat/customizing-your-integrations.md) — Configure how your connected apps sync data
-* [**Viewing Sync Status & History**](https://claude.ai/chat/viewing-sync-status-and-history.md) — Check what's happening with your integrations

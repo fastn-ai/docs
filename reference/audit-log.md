@@ -32,10 +32,6 @@ The Audit Log tracks all actions across your organization. Found under **Setting
 | `auth.login`               | User logged into the platform                    |
 | `credential.token_refresh` | System refreshed an OAuth token for a connection |
 
-{% hint style="info" %}
-⚠️ **VERIFY:** More action types exist. Document all visible action types by generating different events and checking the audit log.
-{% endhint %}
-
 ### User types
 
 | User       | Badge                        | Description                                              |

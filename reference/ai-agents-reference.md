@@ -6,8 +6,6 @@ description: >-
 
 # AI Agents Reference
 
-For detailed descriptions of what each agent does, see the [AI Agents section](https://docs.fastn.ai/~/revisions/aj5eaS57qHvafrgYtfbL/ai-agents). This page covers the technical specifications.
-
 ### Platform agents
 
 #### Orchestrated agents

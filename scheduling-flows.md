@@ -2,6 +2,7 @@
 description: >-
   Run flows automatically on a timer whether daily syncs, hourly checks, weekly
   reports.
+hidden: true
 ---
 
 # Scheduling Flows
@@ -23,7 +24,7 @@ This is the most common approach. You build the flow and define the schedule as 
 
 The flow builder opens with a **Trigger on Specific Schedule** step on the canvas. Click this step to open its configuration panel on the right.
 
-<figure><img src="../../.gitbook/assets/Area.gif" alt="Animated demo of creating a new flow with the On Schedule trigger and opening the flow builder"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Area.gif" alt="Animated demo of creating a new flow with the On Schedule trigger and opening the flow builder"><figcaption></figcaption></figure>
 
 #### Option B: Create a schedule in the Triggers section
 
@@ -38,13 +39,13 @@ This approach registers the schedule first, then links it to an existing flow. I
 5. Under **Select an Event Model**, select **Json (default)**.
 6. Click **Register**.
 
-<figure><img src="../../.gitbook/assets/scheduling part 2.gif" alt="Animated demo of registering a new schedule trigger from the Triggers section"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/scheduling part 2.gif" alt="Animated demo of registering a new schedule trigger from the Triggers section"><figcaption></figcaption></figure>
 
 **Step 2 — Configure the Trigger**
 
 After registering, you advance to the **Trigger** step where you configure the schedule interval and link the flow to trigger.
 
-<figure><img src="../../.gitbook/assets/scheduling intervals part 2.png" alt="Trigger configuration panel showing Schedule Type, Value, Unit of time, and Select destination fields"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/scheduling intervals part 2.png" alt="Trigger configuration panel showing Schedule Type, Value, Unit of time, and Select destination fields"><figcaption></figcaption></figure>
 
 Use Option B when you already have a flow built and want to add a schedule to it afterward, or when you want to manage all your schedules from one place without opening each flow individually.
 
@@ -65,7 +66,7 @@ The panel shows two fields:
 
 To run a flow every hour, set the value to `60` and the unit to `minutes`. To run every 15 minutes, set it to `15` minutes.
 
-<figure><img src="../../.gitbook/assets/scheduling intervals.png" alt="Flow builder canvas with a Trigger on Specific Schedule step and the interval configuration panel on the right"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/scheduling intervals.png" alt="Flow builder canvas with a Trigger on Specific Schedule step and the interval configuration panel on the right"><figcaption></figcaption></figure>
 
 #### Date/Time mode
 

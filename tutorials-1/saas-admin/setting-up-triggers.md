@@ -16,7 +16,7 @@ Triggers are what start your workflows. In Fastn, triggers are managed **separat
 3. Click **Add Trigger** to create a new trigger.
 4. Select the trigger type: **Webhook**, **Scheduler**, or **App Event**.
 
-> **Screenshot needed:** Triggers page showing the three tabs and the Add Trigger type selection panel.
+> **Screenshot:** Triggers page showing the three tabs and the Add Trigger type selection panel.
 
 ### Webhook triggers
 
@@ -46,7 +46,17 @@ Routes map incoming webhooks to workflows. Each route has:
 
 A single webhook endpoint receiving different event types:
 
-**Route 1:** Workflow = "process-new-orders", Filter Key = `event_type`, Value = `order.created` **Route 2:** Workflow = "update-inventory", Filter Key = `event_type`, Value = `inventory.updated`
+**Route 1:**
+
+* Workflow = "process-new-orders"
+* Filter Key = `event_type`
+* Value = `order.created`&#x20;
+
+**Route 2:**
+
+* Workflow = "update-inventory"
+* Filter Key = `event_type`
+* Value = `inventory.updated`
 
 Different payloads go to different workflows through the same webhook URL.
 
@@ -72,7 +82,7 @@ Schedulers trigger workflows on a time-based schedule.
 5. Optionally set **Starts at** — a date/time to begin. Leave empty to start immediately.
 6. Click **Create**.
 
-> **📷 Screenshot needed:** Scheduler trigger configuration showing the preset buttons (Interval, Daily, Weekly, Monthly, Custom) and the interval settings.
+> **Screenshot:** Scheduler trigger configuration showing the preset buttons (Interval, Daily, Weekly, Monthly, Custom) and the interval settings.
 
 #### Example schedules
 
@@ -98,7 +108,7 @@ App Events subscribe to events from your connected third-party apps. When someth
 6. Select the event you want to subscribe to.
 7. Click **Create**.
 
-> **Screenshot needed:** App Event trigger configuration showing the Connector dropdown, Connection dropdown, and the event list with event names, WEBHOOK badges, and subscription status.
+> **Screenshot:** App Event trigger configuration showing the Connector dropdown, Connection dropdown, and the event list with event names, WEBHOOK badges, and subscription status.
 
 #### Event subscription
 

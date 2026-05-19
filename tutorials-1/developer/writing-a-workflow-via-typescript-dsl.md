@@ -6,7 +6,7 @@ description: >-
 
 # Writing a Workflow via TypeScript DSL
 
-**Prerequisites:** [Local Dev Environment Setup](https://claude.ai/chat/local-dev-environment-setup.md). TypeScript/JavaScript experience.
+**Prerequisites:** [Local Dev Environment Setup](local-dev-environment-setup.md). TypeScript/JavaScript experience.
 
 Fastn workflows are code-first. Every workflow is a JavaScript/TypeScript file that exports a default async function receiving a context object. No visual canvas, no drag-and-drop you write the logic directly.
 
@@ -24,7 +24,7 @@ export default async function(ctx) {
 }
 ```
 
-The function receives `ctx` and must return a result object. Whatever you return is the workflow's output — visible in the execution log and returned to the caller for Instant-tier workflows.
+The function receives `ctx` and must return a result object. Whatever you return is the workflow's output visible in the execution log and returned to the caller for Instant-tier workflows.
 
 ### The ctx object
 
@@ -32,10 +32,6 @@ The function receives `ctx` and must return a result object. Whatever you return
 | --------- | ------ | ---------------------------------------------------------------------------------------------------------- |
 | `input`   | object | Incoming data — request body from a webhook trigger, event payload from an app event, or scheduler context |
 | `headers` | object | HTTP headers from the incoming request (if triggered by a webhook)                                         |
-
-{% hint style="info" %}
-⚠️ **VERIFY:** The Fastn code editor shows `const { input, headers } = ctx;` as the default template. Confirm whether additional properties (like connector clients or config) are available on ctx in the runtime. The PRD described `ctx.connectors`, `ctx.tenant`, `ctx.config`, `ctx.steps` but these may have changed.
-{% endhint %}
 
 ### Examples
 
@@ -147,7 +143,7 @@ async function processItem(item) {
 
 ### Workflow configuration
 
-When creating a workflow in the editor, the Configuration panel (left side) has:
+When creating a workflow in the editor, the Configuration panel has:
 
 | Setting               | Options                      | Description                    |
 | --------------------- | ---------------------------- | ------------------------------ |
@@ -231,8 +227,3 @@ Click an execution row for detailed output including your return object.
 * Testing happens in the editor's Test panel before creating
 * Triggers are managed separately and routed to workflows
 * Executions are monitored under Activity → Executions
-
-### Next steps
-
-* [**Deploying to Lambda / Cloud Run**](https://claude.ai/chat/deploying-to-lambda-cloud-run.md) — Ship your workflow to production
-* [**Building a Custom Connector**](https://claude.ai/chat/building-a-custom-connector.md) — Build connectors your workflow can call

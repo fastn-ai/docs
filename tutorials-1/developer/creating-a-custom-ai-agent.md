@@ -128,15 +128,19 @@ The Agent Builder lets you create agents via natural language. No code required 
 2. Navigate to the Agent Builder section.
 3. Describe your agent:
 
-> "Build me an agent that helps our support team look up customer accounts by email, check their integration status across Shopify and Xero, and create support tickets when there's an issue. The agent should always confirm before creating a ticket."
+{% code overflow="wrap" %}
+```
+"Build me an agent that helps our support team look up customer accounts by email, check their integration status across Shopify and Xero, and create support tickets when there's an issue. The agent should always confirm before creating a ticket."
+```
+{% endcode %}
 
 4. Review the generated architecture and tools.
 5. Test the agent interactively — ask it questions and verify it uses the tools correctly.
 6. Deploy when satisfied.
 
-> **Screenshot needed:** Agent Builder interface showing the natural language input and the generated agent architecture.
+> **Screenshot:** Agent Builder interface showing the natural language input and the generated agent architecture.
 
-> **GIF needed:** Agent Builder flow — entering a description, reviewing the generated tools, testing with a sample conversation, deploying.
+> **GIF:** Agent Builder flow — entering a description, reviewing the generated tools, testing with a sample conversation, deploying.
 
 ### Agent memory
 
