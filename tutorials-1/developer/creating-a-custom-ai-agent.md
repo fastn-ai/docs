@@ -8,7 +8,14 @@ description: >-
 
 **Prerequisites:** [Local Dev Environment Setup](https://claude.ai/chat/local-dev-environment-setup.md). Understanding of LLM tool-use patterns.&#x20;
 
-Fastn includes 15 built-in agents covering onboarding (SaaS Onboarding, Tenant Onboarding), building (Connector Builder, Workflow Builder, Event Builder, and their orchestrator-managed variants), API management (Spec Import Builder, Manual Action Builder), testing (Test Case Agent, Action Tester, Action Fixer), intelligence (Intelligence Brief, Planner Agent), and configuration (Configuration Agent).
+Fastn includes 15 built-in agents covering:
+
+* Onboarding (SaaS Onboarding, Tenant Onboarding)
+* Building (Connector Builder, Workflow Builder, Event Builder, and their orchestrator-managed variants)
+* API management (Spec Import Builder, Manual Action Builder)
+* Testing (Test Case Agent, Action Tester, Action Fixer)
+* Intelligence (Intelligence Brief, Planner Agent)
+* Configuration (Configuration Agent).
 
 When you need an agent tailored to your specific use case, you can build one in two ways — via code using the AgentTool interface, or via natural language using the Agent Builder.
 
