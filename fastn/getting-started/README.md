@@ -22,8 +22,4 @@ This section walks you through the platform from first principles to a working i
 
 [**Your First Integration**](your-first-integration.md) — Build a working integration from scratch i.e. create a connector, write a workflow, set up a trigger, and test the full loop.
 
-### Who should read this
-
-**SaaS companies** evaluating or onboarding onto Fastn. If you're a developer, product manager, or technical lead and you need to offer integrations to your customers — start here.
-
 If you already have a Fastn account and want to jump straight to building, go to [Your First Integration](https://docs.fastn.ai/~/revisions/syzyb9fquxvsttnXzZup/fastn/getting-started/your-first-integration).
