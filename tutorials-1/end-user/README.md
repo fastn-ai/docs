@@ -9,7 +9,7 @@ description: >-
 These tutorials are for the people who use integrations through the widget embedded in a SaaS product. You don't need a Fastn account or dashboard access — everything happens inside the product you already use.
 
 {% hint style="info" %}
-**Note for SaaS Admins:** Share these pages with your customers when they ask how to use the integrations you've embedded. These tutorials describe the end user experience through the widget, not the Fastn dashboard.
+**Note for SaaS Admins:** Share this section with your customers when they ask how to use the integrations you've embedded. These tutorials describe the end user experience through the widget, not the Fastn dashboard.
 {% endhint %}
 
 ### Tutorials in this section
