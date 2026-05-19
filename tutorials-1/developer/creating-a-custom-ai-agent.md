@@ -6,8 +6,6 @@ description: >-
 
 # Creating a Custom AI Agent
 
-**Prerequisites:** [Local Dev Environment Setup](local-dev-environment-setup.md). Understanding of LLM tool-use patterns.&#x20;
-
 Fastn includes 15 built-in agents covering:
 
 * Onboarding (SaaS Onboarding, Tenant Onboarding)
