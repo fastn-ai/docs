@@ -6,7 +6,7 @@ description: >-
 
 # Creating a Workflow via Chat
 
-**Prerequisites:** [Your First Integration](https://app.gitbook.com/o/d4yvP9A8wMsLuRwerHPU/s/3iSr2Tx8FvvuoLPncziH/~/edit/~/changes/517/fastn-v2/getting-started/your-first-integration) — you should know what workflows and triggers are.&#x20;
+**Prerequisites:** [Your First Integration](https://app.gitbook.com/o/d4yvP9A8wMsLuRwerHPU/s/3iSr2Tx8FvvuoLPncziH/~/edit/~/changes/517/fastn-v2/getting-started/your-first-integration), by now you should know what workflows and triggers are.&#x20;
 
 ### Opening the Workflow Builder
 

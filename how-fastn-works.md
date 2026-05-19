@@ -3,6 +3,7 @@ description: >-
   Embed integrations instantly, seamlessly connecting APIs, legacy systems, and
   enterprise workflows. Fastn AI powers everything in between to accelerate your
   product.
+hidden: true
 ---
 
 # How Fastn Works
@@ -48,7 +49,7 @@ Add a widget or button inside your app using Fastn’s UI components. You can:
 
 ### 5. Monitor & Manage
 
-Use the Fastn [dashboard](embedded-integrations-1/workspace-management/analytics-and-monitoring-dashboard.md) to have complete visibility into your integrations and workflows:
+Use the Fastn [dashboard](embedded-integrations/workspace-management/analytics-and-monitoring-dashboard.md) to have complete visibility into your integrations and workflows:
 
 * See which users are connected
 * Track flow runs, latency, and errors

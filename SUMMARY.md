@@ -1,20 +1,16 @@
 # Table of contents
 
-## Embedded integrations
-
-***
-
 * [Fastn: embedded integration platform for AI agents](README.md)
-* [Embedded Integrations](embedded-integrations-1/README.md)
-  * [Getting Started with Fastn's Embedded Experience](embedded-integrations-1/getting-started-with-fastns-embedded-experience/README.md)
-    * [Building and Configuring Widgets in Fastn](embedded-integrations-1/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md)
-    * [Previewing and Integrating Widgets](embedded-integrations-1/getting-started-with-fastns-embedded-experience/previewing-and-integrating-widgets.md)
-    * [Custom Webhooks: Automatic Triggers](embedded-integrations-1/getting-started-with-fastns-embedded-experience/custom-webhooks-automatic-triggers.md)
-  * [Workspace Management](embedded-integrations-1/workspace-management/README.md)
-    * [Analytics & Monitoring Dashboard](embedded-integrations-1/workspace-management/analytics-and-monitoring-dashboard.md)
-    * [Deployment](embedded-integrations-1/workspace-management/deployment/README.md)
-      * [Releases](embedded-integrations-1/workspace-management/deployment/releases.md)
-      * [Pipelines](embedded-integrations-1/workspace-management/deployment/pipelines.md)
+* [Embedded Integrations](embedded-integrations/README.md)
+  * [Getting Started with Fastn's Embedded Experience](embedded-integrations/getting-started-with-fastns-embedded-experience/README.md)
+    * [Building and Configuring Widgets in Fastn](embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md)
+    * [Previewing and Integrating Widgets](embedded-integrations/getting-started-with-fastns-embedded-experience/previewing-and-integrating-widgets.md)
+    * [Custom Webhooks: Automatic Triggers](embedded-integrations/getting-started-with-fastns-embedded-experience/custom-webhooks-automatic-triggers.md)
+  * [Workspace Management](embedded-integrations/workspace-management/README.md)
+    * [Analytics & Monitoring Dashboard](embedded-integrations/workspace-management/analytics-and-monitoring-dashboard.md)
+    * [Deployment](embedded-integrations/workspace-management/deployment/README.md)
+      * [Releases](embedded-integrations/workspace-management/deployment/releases.md)
+      * [Pipelines](embedded-integrations/workspace-management/deployment/pipelines.md)
 
 ## AI agent integrations (UCL)
 
@@ -114,13 +110,13 @@
   * [FAQs](library/faqs.md)
   * [Glossary](library/glossary.md)
 
-## Fastn V2
+## Fastn
 
-* [Getting Started](fastn-v2/getting-started/README.md)
-  * [What is Fastn](fastn-v2/getting-started/what-is-fastn.md)
-  * [Platform Overview](fastn-v2/getting-started/platform-overview.md)
-  * [Signing Up as a SaaS Partner](fastn-v2/getting-started/signing-up-as-a-saas-partner.md)
-  * [Your First Integration](fastn-v2/getting-started/your-first-integration.md)
+* [Getting Started](fastn/getting-started/README.md)
+  * [What is Fastn](fastn/getting-started/what-is-fastn.md)
+  * [Platform Overview](fastn/getting-started/platform-overview.md)
+  * [Signing Up as a SaaS Partner](fastn/getting-started/signing-up-as-a-saas-partner.md)
+  * [Your First Integration](fastn/getting-started/your-first-integration.md)
 
 ***
 
@@ -170,6 +166,8 @@
   * [Intelligence Brief Agent](ai-agents/intelligence-brief-agent.md)
   * [Configuration Agent](ai-agents/configuration-agent.md)
   * [Key Concepts & Terminology](ai-agents/key-concepts-and-terminology.md)
+
+## Embedded integrations
 
 ## Classic
 

@@ -2,6 +2,7 @@
 description: >-
   Explore real-world use cases to quickly kickstart your integration flows with
   Fastn AI.
+hidden: true
 ---
 
 # Your First Automation

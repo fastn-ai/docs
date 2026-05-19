@@ -2,6 +2,7 @@
 description: >-
   These integrations are designed for your customers to use, no need for them to
   sign in to Fastn directly.
+hidden: true
 ---
 
 # Embedded Integrations
@@ -42,8 +43,6 @@ With such customer-facing integrations, you can:
    Drop the widget into your app using a simple script tag or iframe, no complex setup required.
 4. **Let Users Take Action**\
    Your users authenticate securely, trigger flows directly from your app, and Fastn handles the rest.
-
-
 
 ## **Real-World Use Cases**
 

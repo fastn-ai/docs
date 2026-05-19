@@ -2,7 +2,6 @@
 description: >-
   Technical reference documentation — specifications, schemas, interfaces, and
   lookup tables for every component of the Fastn platform.
-hidden: true
 ---
 
 # Reference

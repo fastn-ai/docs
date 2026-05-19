@@ -2,6 +2,7 @@
 description: >-
   API endpoints, authentication, request formats, and error codes for Fastn
   Flows.
+hidden: true
 ---
 
 # API Reference

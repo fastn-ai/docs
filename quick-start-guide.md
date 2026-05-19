@@ -1,5 +1,6 @@
 ---
 description: Build a working flow in under 10 minutes. No prior Fastn experience required.
+hidden: true
 ---
 
 # Quick Start Guide
@@ -27,7 +28,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 3. Your new flow opens with a **New API Request** trigger already in place (labeled "Real Time").
 4. Give your flow a descriptive name, such as `slacknotification`.
 
-<figure><img src="../../.gitbook/assets/part1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/part1.gif" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Add a Slack connector
 
@@ -39,7 +40,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 6. Ensure that you have authorized Slack for
 7. Choose the **sendMessage** action.
 
-<figure><img src="../../.gitbook/assets/part 2 connectors.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/part 2 connectors.gif" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Connect your Slack account
 
@@ -49,7 +50,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 4. Once connected, your Slack account appears in the connector step.
 5. Additionally, you will see a new Slack app pop up in your workspace as shown below:
 
-<figure><img src="../../.gitbook/assets/slack app connector.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/slack app connector.png" alt=""><figcaption></figcaption></figure>
 
 > **Note:** Fastn manages OAuth tokens securely. Your application never sees raw Slack credentials.
 
@@ -64,7 +65,7 @@ In this quick start guide, you'll create a flow that listens for an incoming API
 
 2. For the `channel` field, enter the name or ID of your target Slack channel which you can access from the your Slack channel details.
 
-<figure><img src="../../.gitbook/assets/slack channel id.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/slack channel id.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 5: Map request data to the Slack message
 
@@ -79,7 +80,7 @@ New request received: {{input.message}}
 
 3. This maps the `message` field from the incoming API request payload into the Slack message text.
 
-<figure><img src="../../.gitbook/assets/data mapping.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/data mapping.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 6: Test your flow
 
@@ -95,7 +96,7 @@ New request received: {{input.message}}
 3. Click **Run**.
 4. Check your Slack channel — the message "New request received: Hello from my first Fastn flow!" should appear.
 
-<figure><img src="../../.gitbook/assets/test success.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/test success.gif" alt=""><figcaption></figcaption></figure>
 
 > If the test fails, check that your Slack account is connected and that the channel name is correct. The test console displays error details for each step.
 
@@ -107,7 +108,7 @@ New request received: {{input.message}}
 
 Your flow is now live and callable via API. You can find your API key in **Settings → API Keys** and include it as the `x-fastn-api-key` header in production requests.
 
-<figure><img src="../../.gitbook/assets/api key.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/api key.gif" alt=""><figcaption></figcaption></figure>
 
 ### Troubleshooting
 
