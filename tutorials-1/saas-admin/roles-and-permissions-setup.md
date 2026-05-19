@@ -84,10 +84,6 @@ Alternatively, duplicate an existing system role and modify it:
 
 The People section supports **Teams i.e.** groups of users that can be assigned collectively. The user table has a TEAMS column and the filter bar includes an "All Teams" dropdown.
 
-{% hint style="info" %}
-⚠️ **VERIFY:** Teams functionality is visible in the UI but may not be fully documented. Confirm how teams are created and assigned.
-{% endhint %}
-
 ### Audit trail
 
 Every permission-gated action is logged:

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Tutorials for building on Fastn's platform — local dev setup, custom
-  connectors, TypeScript workflows, deployment, AI agents, and MCP integration.
+  Tutorials for building on Fastn's platform from local dev setup, custom
+  connectors, TypeScript workflows, deployment, AI agents, to MCP integration.
 ---
 
 # Developer
