@@ -6,7 +6,7 @@ description: >-
 
 # Setting Up Your Organization
 
-**Prerequisites:** Complete [Signing Up as a SaaS Partner](https://app.gitbook.com/o/d4yvP9A8wMsLuRwerHPU/s/3iSr2Tx8FvvuoLPncziH/~/edit/~/changes/517/fastn-v2/getting-started/signing-up-as-a-saas-partner) first.
+**Prerequisites:** Complete [Signing Up as a SaaS Partner](../../getting-started/signing-up-as-a-saas-partner.md) first.
 
 ### Step 1: Configure organization settings
 
