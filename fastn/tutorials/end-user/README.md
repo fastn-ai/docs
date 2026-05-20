@@ -14,8 +14,8 @@ These tutorials are for the people who use integrations through the widget embed
 
 ### Tutorials in this section
 
-[**Connecting Apps via Widget**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/end-user/connecting-apps-via-widget) — Find available integrations, authorize your accounts, and activate connections through the embedded widget.
+[**Connecting Apps via Widget**](connecting-apps-via-widget.md) — Find available integrations, authorize your accounts, and activate connections through the embedded widget.
 
-[**Customizing Your Integrations**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/end-user/customizing-your-integrations) — Configure sync preferences, field mappings, scheduling, and other settings for your active integrations.
+[**Customizing Your Integrations**](customizing-your-integrations.md) — Configure sync preferences, field mappings, scheduling, and other settings for your active integrations.
 
-[**Viewing Sync Status & History**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/end-user/viewing-sync-status-and-history) — Check what's syncing, view execution history, and troubleshoot when something fails.
+[**Viewing Sync Status & History** ](viewing-sync-status-and-history.md)— Check what's syncing, view execution history, and troubleshoot when something fails.

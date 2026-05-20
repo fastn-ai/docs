@@ -6,7 +6,7 @@ description: >-
 
 # Building a Custom Connector
 
-**Prerequisites:** [Local Dev Environment Setup](https://claude.ai/chat/local-dev-environment-setup.md). Familiarity with TypeScript and REST APIs.
+**Prerequisites:** [Local Dev Environment Setup](local-dev-environment-setup.md). Familiarity with TypeScript and REST APIs.
 
 Fastn ships with built-in connectors for Shopify, Stripe, Xero, QuickBooks, Slack, GitHub, and others. When you need to integrate an app that isn't in the library, you build a custom connector using the `ConnectorDefinition` interface.
 

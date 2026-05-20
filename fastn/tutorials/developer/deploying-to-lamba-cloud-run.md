@@ -6,7 +6,7 @@ description: >-
 
 # Deploying to Lamba/Cloud Run
 
-**Prerequisites:** [Writing a Workflow (TypeScript DSL)](https://claude.ai/chat/writing-a-workflow-typescript-dsl.md). An AWS or GCP account with appropriate permissions.
+**Prerequisites:** [Writing a Workflow (TypeScript DSL)](writing-a-workflow-via-typescript-dsl.md). An AWS or GCP account with appropriate permissions.
 
 Locally, workflows run on a Fastify server with hot reload. For production, Fastn supports two deployment targets i.e. AWS Lambda and GCP Cloud Run.
 
