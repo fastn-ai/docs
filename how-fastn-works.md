@@ -49,7 +49,7 @@ Add a widget or button inside your app using Fastn’s UI components. You can:
 
 ### 5. Monitor & Manage
 
-Use the Fastn [dashboard](embedded-integrations/workspace-management/analytics-and-monitoring-dashboard.md) to have complete visibility into your integrations and workflows:
+Use the Fastn [dashboard](classic/embedded-integrations/workspace-management/analytics-and-monitoring-dashboard.md) to have complete visibility into your integrations and workflows:
 
 * See which users are connected
 * Track flow runs, latency, and errors

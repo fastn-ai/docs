@@ -53,7 +53,7 @@ Fastn stores the credentials securely in the workspace vault and reuses them for
 
 ## Dynamic connections
 
-A dynamic connection delegates authentication to each tenant. Instead of a single workspace credential, every tenant authenticates independently through an embedded [widget](../../embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md). At runtime, Fastn resolves the correct credentials for the tenant that triggered the flow.
+A dynamic connection delegates authentication to each tenant. Instead of a single workspace credential, every tenant authenticates independently through an embedded [widget](../../classic/embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md). At runtime, Fastn resolves the correct credentials for the tenant that triggered the flow.
 
 ### When to use dynamic connections
 
@@ -66,7 +66,7 @@ A dynamic connection delegates authentication to each tenant. Instead of a singl
 Dynamic connections require a multi-tenant setup:
 
 * **Tenants configured** — Create tenants under **Settings > Tenants** in your workspace. Each tenant is identified by a unique tenant ID (`x-fastn-space-tenantid` header).
-* **Widget created** — Build a widget that includes the connector as a dependency. The widget provides the UI through which tenants authenticate. See [Building and configuring widgets in Fastn](../../embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md).
+* **Widget created** — Build a widget that includes the connector as a dependency. The widget provides the UI through which tenants authenticate. See [Building and configuring widgets in Fastn](../../classic/embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md).
 
 ### How to set up a dynamic connection
 
@@ -131,6 +131,6 @@ Does the flow serve multiple customers or tenants?
 
 * [Connector types & setup](connector-types-and-setup.md) — Community, workspace, and organization connectors
 * [Setting up connector authentication](setting-up-connector-authentication.md) — OAuth, API key, and other auth methods
-* [Building and configuring widgets in Fastn](../../embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md) — Create the widget that powers dynamic connections
-* [Multitenancy](../../fastn-ucl/getting-started/about-unified-context-layer/multitenancy.md) — Tenant isolation architecture
+* [Building and configuring widgets in Fastn](../../classic/embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md) — Create the widget that powers dynamic connections
+* [Multitenancy](../../classic/fastn-ucl/getting-started/about-unified-context-layer/multitenancy.md) — Tenant isolation architecture
 * [How to manage multiple app connections together](../../tutorials/flow-customization-and-operations/how-to-manage-multiple-app-connections-together.md) — Unified connectors for multi-app flows

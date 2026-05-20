@@ -10,7 +10,7 @@ Widgets are the user-facing building blocks of Fastn's embedded integration expe
 
 ## 1. Add a new widget
 
-<figure><img src="../../../../.gitbook/assets/widgets.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/widgets.gif" alt=""><figcaption></figcaption></figure>
 
 1. Click **Widgets** in the left sidebar to open the Widgets page.
 2. Click the **Add Widget** button at the top-right corner.
@@ -18,11 +18,11 @@ Widgets are the user-facing building blocks of Fastn's embedded integration expe
 
     * **With a connector/Publish Connector** — the widget is linked to a specific connector and can manage authentication and actions for that service.
 
-    <figure><img src="../../../../.gitbook/assets/widget - with connector.gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/widget - with connector.gif" alt=""><figcaption></figcaption></figure>
 
     * **Without a connector** — creates a standalone widget you can attach flows to without tying it to a single connector.
 
-    <figure><img src="../../../../.gitbook/assets/widget- without connector.gif" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/widget- without connector.gif" alt=""><figcaption></figcaption></figure>
 4. **Search and select** the connector the widget should handle.
 
 {% hint style="info" %}
@@ -33,7 +33,7 @@ You can pick from **Fastn's built-in connectors** or connectors from **your own 
 
 After you create a widget, the widget editor opens. It contains the following fields.
 
-<figure><img src="../../../../.gitbook/assets/widget editor.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/widget editor.png" alt=""><figcaption></figcaption></figure>
 
 ### Name and branding
 
@@ -74,7 +74,7 @@ The Settings panel also includes:
 
 If your widget relies on one or more external services for authentication, specify them under **Dependency Connectors**. A dependency connector represents a service your end-users must authenticate with before the widget's actions can run.
 
-<figure><img src="../../../../.gitbook/assets/dependency connector.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/dependency connector.gif" alt=""><figcaption></figcaption></figure>
 
 For each dependency connector you add, configure the following:
 
@@ -123,7 +123,7 @@ Actions are the buttons your end-users interact with on the widget card. Each ac
 
 Click **"Add"** under **Actions** to create a new action row.
 
-<figure><img src="../../../../.gitbook/assets/actions for widgets.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/actions for widgets.gif" alt=""><figcaption></figcaption></figure>
 
 ### Actions table reference
 
@@ -190,13 +190,13 @@ Should the button always be visible?
 
 The action type tells Fastn what lifecycle event the action represents. This controls how the platform tracks connector state and determines which built-in behaviors apply.
 
-| Action type         | What it does                                                                                                                                                                                             | When to use                                                                                                                                                                                                                                                                                           |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Activation**      | Transitions the integration into an **active** state. The platform marks the connector as connected and updates the widget UI accordingly (for example, switching the card to an "active" visual state). | For your primary "Connect" or "Activate" action — the action that establishes the integration.                                                                                                                                                                                                        |
-| **Configuration**   | Opens a **form or input dialog** defined by the linked configuration flow. Does not change the connector's active/inactive state.                                                                        | For "Configure" or "Settings" actions that let users customize integration behavior (for example, selecting sync frequency, choosing folders, or mapping fields).                                                                                                                                     |
-| **Deactivation**    | Transitions the integration into an **inactive** state. The platform marks the connector as disconnected, clears session data, and resets the widget UI to its pre-auth state.                           | For "Disconnect" or "Deactivate" actions that tear down the integration.                                                                                                                                                                                                                              |
-| **Multi Connector** | Handles actions that span **multiple dependency connectors** at once. Allows the flow to interact with several connected services in a single action.                                                    | For actions that require coordinating across multiple connectors (for example, syncing data between two services simultaneously). See [Managing multiple app connections together](../../tutorials/flow-customization-and-operations/how-to-manage-multiple-app-connections-together.md) for details. |
-| **None**            | Runs the linked flow **without affecting** the connector's lifecycle state. No activation, deactivation, or configuration behavior is triggered.                                                         | For custom actions that run a flow but do not change the widget's connection state (for example, a "Sync Now" or "Test Connection" button).                                                                                                                                                           |
+| Action type         | What it does                                                                                                                                                                                             | When to use                                                                                                                                                                                                                                                                                              |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Activation**      | Transitions the integration into an **active** state. The platform marks the connector as connected and updates the widget UI accordingly (for example, switching the card to an "active" visual state). | For your primary "Connect" or "Activate" action — the action that establishes the integration.                                                                                                                                                                                                           |
+| **Configuration**   | Opens a **form or input dialog** defined by the linked configuration flow. Does not change the connector's active/inactive state.                                                                        | For "Configure" or "Settings" actions that let users customize integration behavior (for example, selecting sync frequency, choosing folders, or mapping fields).                                                                                                                                        |
+| **Deactivation**    | Transitions the integration into an **inactive** state. The platform marks the connector as disconnected, clears session data, and resets the widget UI to its pre-auth state.                           | For "Disconnect" or "Deactivate" actions that tear down the integration.                                                                                                                                                                                                                                 |
+| **Multi Connector** | Handles actions that span **multiple dependency connectors** at once. Allows the flow to interact with several connected services in a single action.                                                    | For actions that require coordinating across multiple connectors (for example, syncing data between two services simultaneously). See [Managing multiple app connections together](../../../tutorials/flow-customization-and-operations/how-to-manage-multiple-app-connections-together.md) for details. |
+| **None**            | Runs the linked flow **without affecting** the connector's lifecycle state. No activation, deactivation, or configuration behavior is triggered.                                                         | For custom actions that run a flow but do not change the widget's connection state (for example, a "Sync Now" or "Test Connection" button).                                                                                                                                                              |
 
 {% hint style="info" %}
 Each widget typically has **one Activation action**, **one Deactivation action**, and **one or more Configuration actions**. Use **Multi Connector** when the widget bundles multiple services, and **None** for utility actions that do not change connector state.
@@ -208,18 +208,18 @@ Fastn provides pre-built flow templates for each action type. Import them from t
 
 **Activate flow** — runs when the user triggers an Activation action. It prepares the connector, initiates authentication, and marks the integration as active.
 
-<figure><img src="../../../../.gitbook/assets/image (257).png" alt="Activate flow template in the Fastn flow editor for enabling a connected app integration"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (257).png" alt="Activate flow template in the Fastn flow editor for enabling a connected app integration"><figcaption></figcaption></figure>
 
 **Deactivate flow** — runs when the user triggers a Deactivation action. It cleans up resources, revokes tokens if needed, and marks the integration as inactive.
 
-<figure><img src="../../../../.gitbook/assets/image (256).png" alt="Deactivate flow template in the Fastn flow editor for disabling a connected app integration"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (256).png" alt="Deactivate flow template in the Fastn flow editor for disabling a connected app integration"><figcaption></figcaption></figure>
 
 **Configure flow** — runs when the user triggers a Configuration action. It renders a form based on the fields you define in the flow and stores the user's selections.
 
-<figure><img src="../../../../.gitbook/assets/image (258).png" alt="Configure flow template in the Fastn flow editor for managing connected app settings"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (258).png" alt="Configure flow template in the Fastn flow editor for managing connected app settings"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Configuration flows must also be linked in **Settings > Configurations** for the widget to display configuration options. See [How to set up a configuration flow](../../tutorials/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/) for details.
+Configuration flows must also be linked in **Settings > Configurations** for the widget to display configuration options. See [How to set up a configuration flow](../../../tutorials/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/) for details.
 {% endhint %}
 
 ### Flow payload
@@ -243,7 +243,7 @@ After you complete all actions and configurations:
 * Click the **Deploy to LIVE** button at the bottom to deploy the widget to your selected environment. This deploys all connected flows to your live environment and makes the widget available to end-users.
 * Open **Preview** from the **Integrate** section on the **Widgets** page to verify how the widget appears to end-users.
 
-<figure><img src="../../../../.gitbook/assets/deploy to live + preview.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/deploy to live + preview.gif" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Preview always shows the **DRAFT** version of the widget. Use the `env` query parameter to preview a specific deployed environment.
@@ -252,7 +252,7 @@ Preview always shows the **DRAFT** version of the widget. Use the `env` query pa
 ## Next steps
 
 * [Previewing and integrating widgets](previewing-and-integrating-widgets.md) — embed widgets via iframe or the headless React package
-* [How to set up an activation flow](../../tutorials/understanding-flow-types/how-to-set-up-an-activation-flow.md) — build a custom activation flow from scratch
-* [How to set up a configuration flow](../../tutorials/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/) — define form fields for widget configuration
-* [Fixed vs dynamic connections](../../flow-setup-essentials/connecting-apps/fixed-vs-dynamic-connections.md) — understand when widgets are required for tenant authentication
-* [Setting up a Google Drive to GCS migration widget](../../tutorials/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md) — end-to-end example with Pre-Auth, Post-Auth, and Post-Auth & Configured visibility
+* [How to set up an activation flow](../../../tutorials/understanding-flow-types/how-to-set-up-an-activation-flow.md) — build a custom activation flow from scratch
+* [How to set up a configuration flow](../../../tutorials/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/) — define form fields for widget configuration
+* [Fixed vs dynamic connections](../../../flow-setup-essentials/connecting-apps/fixed-vs-dynamic-connections.md) — understand when widgets are required for tenant authentication
+* [Setting up a Google Drive to GCS migration widget](../../../tutorials/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md) — end-to-end example with Pre-Auth, Post-Auth, and Post-Auth & Configured visibility
