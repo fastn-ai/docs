@@ -6,7 +6,7 @@ description: >-
 
 # Configuring a Connector
 
-**Prerequisites:** [Your First Integration](https://app.gitbook.com/o/d4yvP9A8wMsLuRwerHPU/s/3iSr2Tx8FvvuoLPncziH/~/edit/~/changes/517/fastn-v2/getting-started/your-first-integration).
+**Prerequisites:** [Your First Integration](../../getting-started/your-first-integration.md).
 
 ### Two ways to create a connector
 

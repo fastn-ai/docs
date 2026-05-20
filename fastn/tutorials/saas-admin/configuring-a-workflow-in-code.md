@@ -6,7 +6,7 @@ description: >-
 
 # Configuring a Workflow in Code
 
-**Prerequisites:** [Your First Integration](https://claude.ai/getting-started/your-first-integration.md). Basic JavaScript familiarity.
+**Prerequisites:** [Your First Integration](../../getting-started/your-first-integration.md). Basic JavaScript familiarity.
 
 ### Opening the code editor
 

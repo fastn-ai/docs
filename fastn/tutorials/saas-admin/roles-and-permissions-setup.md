@@ -6,8 +6,6 @@ description: >-
 
 # Roles & Permissions Setup
 
-**Prerequisites:** [Setting Up Your Organization](https://claude.ai/chat/setting-up-your-organization.md)
-
 ### The 6 system roles
 
 Fastn has 6 system roles. View them under **Settings → ADVANCED → Roles**:

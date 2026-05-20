@@ -7,7 +7,7 @@ description: >-
 
 # Building Your Widget
 
-**Prerequisites:** At least one connector configured and one workflow created. See [Configuring a Connector](configuring-a-connector.md) and [Creating a Workflow in Code](https://claude.ai/chat/creating-a-workflow-in-code.md).
+**Prerequisites:** At least one connector configured and one workflow created.
 
 ### Opening the Widget Builder
 
