@@ -1,225 +1,192 @@
 ---
 description: >-
   Use the Widget Builder to create an embeddable integration hub add
-  integrations, customize layout and style, configure embed code, and preview
-  the customer experience.
+  integrations, customize layout and style, and preview the customer experience.
 ---
 
 # Building Your Widget
 
-**Prerequisites:** At least one connector configured and one workflow created.
+The widget is what your customers see which is a branded integration portal embedded inside your product where your customers can connect apps, manage workflows, and monitor sync activity. You can configure it visually in the Widget Builder; while your development team handles the embed code separately.
 
-### Opening the Widget Builder
+**Prerequisites:** At least one connector configured and one workflow created to see the full experience.
 
-1. Click **Widgets** in the top nav.
-2. The Widget Builder opens with two panels: the builder on the left, the live preview on the right.
+## Exploring the Widget Builder
 
-> **Screenshot:** Full Widget Builder page showing both panels.
+Click **Widgets** in the top navigation bar and the Widget Builder opens with two panels:
 
-### Adding integrations
+1. The **builder** on the left
+2. The **live preview** on the right.
 
-The left panel shows an **INTEGRATIONS** section at the top.
+Everything you change on the left updates the preview in real time.
 
-1. Click **+ Add** to add an integration to the hub.
+{% hint style="info" %}
+Any changes you make in the preview version of your widget does not affect the published widget unless the changes are saved.
+{% endhint %}
+
+> **Screenshot:** Full Widget Builder page showing the left builder panel and the right live preview panel side by side.
+
+Through the widget builder, you can control and customize key four areas:
+
+* Layout
+* Style
+* Features
+* Embedding
+
+### Adding integrations to the widget
+
+The left panel starts with an **INTEGRATIONS** section at the top. This controls which connectors and workflows your customers can access through the widget.
+
+1. Click **+ Add** to add an integration.
 2. Select from your configured connectors and workflows.
 3. Each integration appears as a card with edit (✏️) and delete (🗑) icons.
-4. Drag to reorder how they appear in the hub.
+4. Drag cards to reorder how they appear in the live preview.
 
-> **Screenshot:** INTEGRATIONS list showing added integrations with edit/delete icons.
+> **Screenshot needed:** INTEGRATIONS list showing 3-4 added integrations with their app icons, edit/delete icons, and drag handles.
 
-### Configuring Layout
+### 1. Configuring Layout
 
-Click the **Layout** tab in the left panel:
+Click the **Layout** tab in the left panel. This controls the hub's content and structure. The layout sub section consists of the following:
 
-| Field             | What it sets                                                                                                                                                  |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Title**         | Header text your customers see (e.g., "Integrations")                                                                                                         |
-| **Subtitle**      | Subtext below the title (e.g., "Connect your favorite tools")                                                                                                 |
-| **Use Templates** | Workflow templates available to your customers. Click **+ Add** to add templates with a name and category (e.g., "Generate discovery deck in Gamma" / Sales). |
+#### Widget Sections
 
-Templates appear in the **Workflows** tab of the preview. When a customer clicks a template, it launches an Integration Agent session to set up the workflow.
+This controls which parts of the widget your customers see and in what order. Six sections are available as follows:
 
-> **Screenshot:** Layout tab showing Title, Subtitle, and Use Templates with added template cards.
+**Header & Branding** — The title bar at the top of the widget showing the title and subtitle you configured above.
 
-### Customizing Style
+**AI Assistant** — This is the customer-facing equivalent of the Build with AI capability.
 
-Click the **Style** tab:
+**Search Bar** — A search field that lets customers filter integrations by name or category.
 
-* **Theme presets** — pick a pre-built color scheme
-* **Color tokens** — granular control over individual colors (primary, background, text, borders)
-* **Typography** — font family and sizes
-* **Border radii** — corner rounding
-* **Shadows** — drop shadow settings
+{% hint style="info" %}
+Customers can only see the integrations on the widget that SaaS Admins have enabled through the widget builder.
+{% endhint %}
 
-All style values are exportable as **CSS variables** or **JSON tokens** for consistency with your product's design system.
+**Apps** — The integration cards showing connected apps with Configure and Disconnect functionality for users.
 
-> **Screenshot:** Style tab showing theme presets and color token controls.
+**Workflows** — The active workflows list and template cards.
 
-### Features (Coming Soon)
+**Insights** — Performance metrics and KPI cards.
 
-Click the **Features** tab:
+Drag sections to change the order they appear in the widget. Toggle any section OFF to hide it from customers entirely.
 
-* **Widget Filter** — let customers filter integrations by category (Coming Soon)
-* **RBAC** — role-based visibility control for which integrations customers see (Coming Soon)
+For example, if you don't want customers building their own automations, toggle off **AI Assistant**. If you don't need workflow visibility, toggle off **Workflows**.
 
-### Embedding in your product
+The live preview on the right updates immediately as you reorder or toggle sections.
 
-Click the **Embed** tab. Two integration methods:
+> **Screenshot:** Widget Sections panel within the Layout tab, showing all six sections with drag handles and green toggles. Show the Reset and Save & Publish buttons at the bottom.
 
-#### Method A: React SDK (drop-in component)
+#### Header Content
 
-```bash
-npm install @fastn/react
-```
+**Title** — The heading your customers see at the top of the widget (e.g., "Integrations").
 
-```jsx
-import { FastnHub } from '@fastn/react';
+**Subtitle** — A short description beneath the title (e.g., "Connect your favorite tools").
 
-export function IntegrationsPage() {
-  return (
-    <FastnHub
-      token={embedToken}
-      theme={{ primary: '#8f85e8' }}
-    />
-  );
-}
-```
+#### Use Templates
 
-The `embedToken` is generated from your backend and scopes the widget to a specific customer. Each customer sees only their own connections and data.
+Click **+ Add** to add workflow templates that appear in the Workflows tab of the preview. Each template shows as a card with an option to remove it. When a customer clicks a template in the live widget, it launches an **Integration Agent** session that walks them through setting up the workflow while the AI handles configuration, field mapping, and testing for them.
 
-#### Method B: Headless SDK (full design freedom)
+> **Screenshot:** Layout tab showing Header Content (Title: "Integrations", Subtitle: "Connect your favorite tools") and the Use Templates section with template cards and the + Add button.
 
-```bash
-npm install @fastn/headless
-```
+### 2. Customizing Style
 
-```js
-import { createFastnClient } from '@fastn/headless';
+Click the **Style** tab to match the widget to your product's look and feel. The Style tab has four sub-tabs:
 
-const fastn = createFastnClient({
-  token: embedToken,
-  baseUrl: 'https://live.fastn.ai',
-});
-```
+#### Colors
 
-Use hooks for data:
+Set the color palette for your widget. Available tokens include: primary, primary-foreground, background, foreground, card, muted, muted-foreground, and border. Adjust each to match your brand.
 
-```jsx
-import { useWidgets, useConnections } from '@fastn/headless';
+> **Screenshot needed:** Colors sub-tab showing the color token controls with color pickers.
 
-function MyIntegrations() {
-  const { widgets } = useWidgets();
-  const { connections } = useConnections();
-  return ( /* your custom UI */ );
-}
-```
+#### Typography
 
-Trigger actions programmatically:
+Control font family, font size, font weight, and letter spacing for the widget text.
 
-```js
-await fastn.connect(widgetId);        // Connect a widget
-await fastn.disconnect(connectionId); // Disconnect
-await fastn.configure(widgetId, {     // Open configure chat
-  context: 'Sync products with HubSpot',
-});
-```
+#### Shape
 
-> **Screenshot:** Embed tab showing the React SDK and Headless SDK code with tab toggles.
+Fine-tune corner rounding with three separate radius controls, each with a slider and quick-select presets as follows:
 
-#### Which method to choose
+* **Global Radius** — Applied to cards, panels, and dropdowns (e.g., 8px)
+* **Button Radius** — Applied to all buttons (e.g., 8px)
+* **Input Radius** — Applied to inputs and selects (e.g., 6px)
 
-|                   | React SDK                   | Headless SDK              |
-| ----------------- | --------------------------- | ------------------------- |
-| **Setup time**    | Minutes — drop-in component | Hours — build your own UI |
-| **Customization** | Theme prop for colors       | Every pixel is yours      |
-| **Best for**      | Quick launch, standard look | Custom design, unique UX  |
+This also includes radius controls via **Shadow Strength** that consist of four presets i.e.  None, SM, MD, and LG. This controls the drop shadow depth on cards and panels.
 
-### Using the Live Preview
+> **Screenshot needed:** Shape sub-tab showing the three radius sliders with Square/Rounded/Full presets and the Shadow Strength selector with MD selected.
 
-The right panel shows what your customers will see. Controls at the top:
+#### JSON
 
-* **Viewport toggles** — Mobile / Tablet / Desktop
-* **Open full-page preview** — larger view
-* **Live Preview** status indicator (green dot)
+This sub-tab lets you export and import your full style configuration as code which is useful for sharing with your development team or applying a consistent theme across multiple widgets.
 
-#### Apps tab
+### 3. Embed
 
-Shows connected integrations as cards with:
+The Embed section is where you can find a previewable URL for your widget and is shareable. This also includes two SDKs that your development team can utilize for embedding.
+
+* **NPM React SDK**
+* **Headless SDK**
+
+## Using the Live Preview
+
+The right panel on your widget builders shows exactly what your customers will see. Use the controls at the top to test different views:
+
+**Viewport toggles** — Three device icons in the top-right of the preview panel let you switch between phone, tablet, and desktop layouts.
+
+**Preview button** — The **Preview** button opens a full-page preview for detailed inspection.
+
+The preview has three tabs by default:
+
+### 1. Apps
+
+Apps tab shows the integrations your customers can connect to. At the top, a search bar lets them search across all categories. Each integration appears as a card with:
 
 * App icon and name
-* **Connected** status (green dot)
-* **Configure** button — opens the field mapping dialog
-* **Disconnect** button
+* Connection status
+* Configure button
+* Disconnect button
 
-> **Screenshot:** Apps tab in the preview showing connected integrations and the AI assistant card.
+When you click **Configure** on any connected integration in the Apps preview. Two things can happen:
 
-#### Workflows tab
+**If no configuration exists yet:** A modal appears prompting "Run the Integration Agent to set up field mappings and filters." Click it and the AI agent handles the setup which is the same agent experience except its running directly inside the widget.
 
-Shows:
+**If configuration already exists:** The Integration Configuration dialog opens.
 
-* **Active workflows** — click the arrow to open the interactive workflow visualizer (node graph with TRIGGER, PROCESS, DECISION, READ, WRITE, DONE nodes)
-* **Use Template** cards — click to launch an Integration Agent session
+Below the integration cards, you'll find the **AI Assistant** section where customers can describe what they want to automate and click **Build with AI** to start an agent session.
 
-> **Screenshot:** Workflows tab showing an active workflow and template cards.
+This is the first thing your customers see when they open the widget.
 
-> **Screenshot:** Workflow visualizer showing the interactive node graph.
+> **Screenshot:** Apps tab in the preview showing connected integrations (e.g., HubSpot and Gamma with "Connected" labels), Configure/Disconnect buttons, and the AI Assistant prompt at the bottom.
 
-#### Insights tab
+### 2. Workflows
 
-Shows KPI cards with a time-range selector (7 days / 30 days / 90 days):
+Shows two things:
 
-| Card                   | What it shows                       |
-| ---------------------- | ----------------------------------- |
-| **Runs Today**         | Number of workflow executions today |
-| **Records Processed**  | Synced, failed, and skipped counts  |
-| **Needs Attention**    | Issues requiring action             |
-| **Connectors**         | Connected and broken count          |
-| **Most-Used Workflow** | Highest run count workflow          |
+**Active workflows** — Workflows currently running for this customer. Click the arrow on any workflow to open the **workflow visualizer** which is an interactive node graph showing the full flow logic and nodes. This is the same visualization available in the workflow editor's Docs → Flow tab, but here it's customer-facing so they can understand what's happening with their data.
 
-> **Screenshot needed:** Insights tab showing KPI cards.
+**Template cards** — The templates you added in the Layout tab. When a customer clicks one, it launches an Integration Agent session that builds and configures the workflow for them through a chat interface. These are more or so suggestions for your customers to try out on your widget.
 
-### Configuring integrations
+> **Screenshot needed:** Workflows tab showing an active workflow card and template cards below.
 
-Click **Configure** on any connected integration in the Apps preview:
+> **Screenshot needed:** Workflow visualizer showing the interactive node graph with labeled node types.
 
-* If no configuration exists: a modal prompts "Run the Integration Agent to set up field mappings and filters"
-* If configuration exists: the **Integration Configuration** dialog opens
+### 3. Insights&#x20;
 
-#### Integration Configuration dialog
+Shows performance metrics for the customer's integrations with a time-range selector (7 days / 30 days / 90 days).
 
-Header shows sync type ("Ongoing sync") and entity count ("2 entities"). Toggle between **Config** and **Plan** views.
+> **Screenshot:** Insights tab showing KPI cards with the time-range selector.
 
-**Config view:**
+## Publishing and sharing
 
-* Bidirectional sub-tabs (e.g., "HubSpot Company → Cin7 Customer" and "Cin7 Customer → HubSpot Company")
-* **Field Mappings** — source/target pills, mapping rows with preview values, Change/delete actions, "Add field mapping" link
-* **Filters** — "only sync records where" with field, operator, and value. Operators: is not empty, is empty, equals, does not equal, contains, greater than, is one of, is not one of
+When everything looks right in the preview:
 
-**Plan view:**
-
-* Shows the Integration Agent-generated plan
-* Empty state: "No plan data available yet. Run the Integration Agent to generate a plan."
-
-Footer: "Changes apply on the next workflow run" with Cancel / Save Configuration buttons.
-
-> **Screenshot:** Integration Configuration dialog showing bidirectional field mappings with preview values.
-
-> **Screenshot:** Filters section showing filter rows with operator dropdown.
-
-### Publishing
-
-When everything looks right:
-
-1. Click **Save & Publish** (bottom-left of the builder panel)
-2. Your widget hub is live and ready for embedding
-
-Click **Reset** to discard unsaved changes.
+1. Click **Save & Publish** at the bottom-left of the builder panel. Your widget hub is now live and ready for embedding.
+2. Use **Reset** to discard unsaved changes if needed.
 
 ### What you've learned
 
-* How to add and manage integrations in the Widget Builder
-* Layout, Style, Features, and Embed configuration
-* Two embed methods: React SDK (drop-in) and Headless SDK (custom UI)
-* The three preview tabs: Apps, Workflows, Insights
-* Integration configuration with bidirectional field mappings and filters
-* The workflow visualizer.
+* How to open the Widget Builder from the Widgets top nav
+* How to add, reorder, and manage integrations in the hub
+* How to configure Layout
+* How to customize Style across four sub-tabs
+* How the AI Assistant widget section lets your customers build automations directly inside the widget
+* How the three preview tabs work: Apps (connections + AI assistant), Workflows (active + templates + visualizer), Insights (metrics)
+* How to publish a widget or reset changes
+

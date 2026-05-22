@@ -19,8 +19,6 @@ These tutorials are for the person responsible for Fastn inside a SaaS company t
 
 [**Creating a Workflow via AI**](creating-a-workflow-via-ai.md) — Use the "Build with AI" button to create workflows by describing what you need in plain language.
 
-[**Setting Up Triggers**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/setting-up-triggers) — Create webhook, scheduler, and app event triggers under Integrations → Triggers and route them to your workflows.
-
 [**Managing Customers**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/managing-customers) — Create customers under Settings → Customers, scope API calls per customer, and monitor customer-level activity.
 
 [**Roles & Permissions Setup**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/roles-and-permissions-setup) — Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage team access.
