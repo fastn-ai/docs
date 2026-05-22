@@ -134,13 +134,12 @@ The agent then updates the workflow, field mappings, and test cases based on you
 
 ### Tips for better results
 
-**Be concrete about records, not abstract about goals.** "Sync HubSpot contacts to Cin7 customers, match by email" works better than "integrate HubSpot and Cin7."
-
-**Name the specific fields if you care about them.** "Include the customer name, order total, and line items in the Slack message" gives the agent enough to build the right field mapping.
-
-**Describe edge cases.** "If a contact doesn't have an email, skip it" or "If the Cin7 API is down, retry 3 times then send a Slack alert" helps the agent build error handling from the start.
-
-**Iterate rather than rewrite.** If the first result is 80% right, send a follow-up to fix the remaining 20%. The agent keeps context from the conversation.
+1. **Be concrete about your prompts**\
+   "Sync HubSpot contacts to Cin7 customers, match by email" works better than "integrate HubSpot and Cin7."
+2. **Name the specific fields if you care about them.**\
+   "Include the customer name, order total, and line items in the Slack message" gives the agent enough to build the right field mapping.
+3. **Iterate rather than rewrite**\
+   If the first result is 80% right, send a follow-up to fix the remaining 20%. The agent keeps context from the conversation.
 
 ### What you've learned
 
