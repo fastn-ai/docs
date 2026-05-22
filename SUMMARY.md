@@ -11,7 +11,7 @@
   * [SaaS Admin](fastn/tutorials/saas-admin/README.md)
     * [Setting Up Your Organization](fastn/tutorials/saas-admin/setting-up-your-organization.md)
     * [Configuring a Connector](fastn/tutorials/saas-admin/configuring-a-connector.md)
-    * [Creating a Workflow via Chat](fastn/tutorials/saas-admin/creating-a-workflow-via-chat.md)
+    * [Creating a Workflow via AI](fastn/tutorials/saas-admin/creating-a-workflow-via-ai.md)
     * [Configuring a Workflow in Code](fastn/tutorials/saas-admin/configuring-a-workflow-in-code.md)
     * [Setting Up Triggers](fastn/tutorials/saas-admin/setting-up-triggers.md)
     * [Building Your Widget](fastn/tutorials/saas-admin/building-your-widget.md)

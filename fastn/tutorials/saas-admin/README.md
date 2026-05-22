@@ -17,9 +17,7 @@ These tutorials are for the person responsible for Fastn inside a SaaS company t
 
 [**Configuring a Connector**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/configuring-a-connector) — Create a connector manually or with AI, configure auth methods, add connections, and understand connector capabilities.
 
-[**Creating a Workflow via Chat**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/creating-a-workflow-via-chat) — Use the "Build with AI" button to create workflows by describing what you need in plain language.
-
-[**Creating a Workflow in Code**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/configuring-a-workflow-in-code) — Write workflows in the code editor using `export default async function(ctx)`, configure execution tiers, and test with sample input.
+[**Creating a Workflow via AI**](creating-a-workflow-via-ai.md) — Use the "Build with AI" button to create workflows by describing what you need in plain language.
 
 [**Setting Up Triggers**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/tutorials/saas-admin/setting-up-triggers) — Create webhook, scheduler, and app event triggers under Integrations → Triggers and route them to your workflows.
 

@@ -1,0 +1,150 @@
+---
+description: >-
+  Fastn's AI agents build workflows for you. Describe what you need in plain
+  language and the agent handles the rest
+---
+
+# Creating a Workflow via AI
+
+**Prerequisites:** [Your First Integration,](../../getting-started/your-first-integration.md) by now you should know what workflows and triggers are.&#x20;
+
+### Where to start
+
+You can build workflows with AI from two places in the platform:
+
+**From the Home page** — The AI assistant on the Home page accepts natural language prompts like "Help me create an automation" or "Sync Salesforce leads to my CRM." This is the general-purpose entry point and will route you to the right agent.
+
+**From the Integrations page** — Go to **Integrations → Workflows** and click **Build with AI** (next to "Create Workflow"). This opens the dedicated Workflow Builder, which is focused specifically on creating and validating workflows.
+
+Both paths use the same AI agents underneath. This tutorial focuses on the Workflow Builder via **Integrations → Workflows → Build with AI**.
+
+> **Screenshot needed:** Integrations → Workflows page with the "Build with AI" button highlighted next to "Create Workflow."
+
+### Opening the Workflow Builder
+
+1. Go to **Integrations → Workflows**.
+2. Click **"Build with AI"** (next to the Create Workflow button).
+3. The **Standalone Workflow Builder** page opens.
+
+> **Screenshot:** Standalone Workflow Builder page showing the chat input, quick-start prompts, and the left sidebar with builder info and tasks.
+
+{% hint style="info" %}
+**Note:** There are two workflow builder variants. The **Standalone Builder** (accessed via "Build with AI" on the Workflows page) builds and validates workflows directly. The **Workflow Agent (Orchestrator)** coordinates the Planner, Builder, and Test Case agents for complex multi-step builds with handback support. This tutorial covers the Standalone Builder.
+{% endhint %}
+
+### Describing what you need
+
+Type a plain-language description of the workflow you want. The more specific you are about three things, the better the result:
+
+**What data** — Name the systems and records involved. "HubSpot contacts," "Shopify orders above $100," "yesterday's Stripe payouts."
+
+**What to do with it** — Describe the action. "Sync to Cin7 customers," "send a Slack notification to #orders," "generate a summary report."
+
+**When it should run** — Describe the timing. "On every new order," "daily at 6 AM," "when a contact is updated."
+
+#### Example prompts
+
+**Data sync:**
+
+> "Sync HubSpot contacts to Cin7 customers. Match by email. Create new Cin7 customers for any HubSpot contacts that don't exist yet."
+
+**Notification:**
+
+> "When a new Shopify order comes in, send a summary to the #orders Slack channel with the customer name, order total, and line items."
+
+**Scheduled report:**
+
+> "Every day at 6 AM, pull yesterday's Stripe payouts and send a summary to Slack with the total amount and number of transactions."
+
+> **Screenshot needed:** Chat interface showing a user prompt (e.g., the HubSpot-to-Cin7 example) and the agent beginning to analyze the request.
+
+### What the agent does
+
+After you describe your workflow, the agent works through several stages. You'll see each one happen in the chat.
+
+#### 1. Analyzes your request
+
+The agent breaks down what you've asked for which systems are involved, what data needs to move, what transformations are needed, and what trigger to use.
+
+#### 2. Sets up connectors
+
+If the systems you mentioned don't have connectors configured yet, the agent will flag this and either create one or ask you for credentials. For example, if you ask for a HubSpot sync but haven't connected HubSpot yet, the agent will say something like "Gamma needs its own connector before I can plan the HubSpot integration."
+
+#### 3. Handles authentication inline
+
+When a connector needs credentials, the auth form appears right inside the chat so you never leave the conversation.
+
+For **API key auth**, you'll see a tabbed form with fields for the key and any required configuration. For **OAuth** (e.g., HubSpot, Shopify), you'll see a form with fields for Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal to get your credentials.
+
+> **Screenshot needed:** Inline OAuth form in the chat showing CLIENT ID, CLIENT SECRET, OAUTH SCOPES fields, and a portal link.
+
+#### 4. Maps fields between systems
+
+Once connectors are ready, the agent generates field mappings between source and target systems. You'll see a **"WE'VE SET THIS UP FOR YOU"** banner with a summary of each mapping.
+
+Each mapping row shows a plain-language description of what it does (e.g., "Contact email → Customer email"), the source field, the target field, and a **Change** button to modify it. Fixed values appear as colored badges, for example, a yellow badge showing `Format: "presentation"` or a green badge showing `Text Mode: "generate"`.
+
+Below the mappings you'll find:
+
+* **Record Matching Strategy** — How the workflow tracks records across systems (e.g., "Track IDs via fastn.state")
+* **+ Add Mapping** — Add a field mapping the agent didn't include
+* **Add Filters** — Narrow which records get synced
+* A natural-language input where you can describe changes and the agent will update the mappings
+
+When everything looks right, click **"Looks good, turn on"** to approve the field mapping configuration.
+
+> **Screenshot needed:** Field mapping panel showing the "WE'VE SET THIS UP FOR YOU" banner, 3-4 mapping rows with source/target dropdowns and Change buttons, fixed value badges, and the "Looks good, turn on" button.
+
+#### 5. Generates test cases
+
+The agent creates test cases to validate the workflow before it goes live. You'll see a test case panel showing with named test groups.
+
+Each test case has:
+
+* A **MOCK** or **LIVE** badge
+
+{% hint style="info" %}
+Mock tests use simulated data whereas live tests hit the actual APIs
+{% endhint %}
+
+* A description of the scenario being tested
+* A **Feedback** field where you can flag issues
+
+You can easily review the test cases, approve the ones that look correct and then flag any that need changes and the agent will revise them.
+
+> **Screenshot needed:** Test cases panel showing MOCK/LIVE badges, scenario descriptions, Feedback fields, and Approve buttons.
+
+#### 6. Reports the result
+
+The agent summarizes what was built from the workflow, the trigger, the field mappings to the test results. The workflow is now ready for deployment.
+
+> **GIF needed:** Full sequence — typing a prompt, agent analyzing, setting up auth, showing field mappings, generating test cases, final summary. (This is the hero visual for this page — should be \~15-20 seconds showing the AI doing the work.)
+
+### Iterating on the workflow
+
+In case you want changes on your workflow, you can ask follow-up questions to refine what the agent built such as:
+
+* "Add error handling for when the Cin7 API is down"
+* "Filter out contacts without email addresses"
+* "Change the schedule to every hour instead of daily"
+* "Add a Slack notification when the sync fails"
+* "Only sync contacts created in the last 30 days"
+
+The agent then updates the workflow, field mappings, and test cases based on your follow-up. The **TASKS** panel on the left sidebar tracks what the agent has completed and what's still pending.
+
+### Tips for better results
+
+**Be concrete about records, not abstract about goals.** "Sync HubSpot contacts to Cin7 customers, match by email" works better than "integrate HubSpot and Cin7."
+
+**Name the specific fields if you care about them.** "Include the customer name, order total, and line items in the Slack message" gives the agent enough to build the right field mapping.
+
+**Describe edge cases.** "If a contact doesn't have an email, skip it" or "If the Cin7 API is down, retry 3 times then send a Slack alert" helps the agent build error handling from the start.
+
+**Iterate rather than rewrite.** If the first result is 80% right, send a follow-up to fix the remaining 20%. The agent keeps context from the conversation.
+
+### What you've learned
+
+* How to open the Workflow Builder from Integrations → Workflows → Build with AI
+* How to describe a workflow in plain language so the agent can build it
+* How the agent handles the full cycle: connector setup, inline auth, field mapping, test case generation
+* How to iterate on the generated workflow with follow-up prompts

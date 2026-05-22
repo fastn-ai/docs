@@ -2,6 +2,7 @@
 description: >-
   Set up a connector with OAuth or API key auth, configure its capabilities,
   test actions, and manage tenant-level credentials.
+hidden: true
 ---
 
 # Configuring a Connector

@@ -2,6 +2,7 @@
 description: >-
   Write workflows in the code editor using export default async function(ctx),
   configure execution tiers, and test with sample input.
+hidden: true
 ---
 
 # Configuring a Workflow in Code
