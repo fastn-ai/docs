@@ -22,4 +22,4 @@ This section walks you through the platform from first principles to a working i
 
 [**Your First Integration**](getting-started/your-first-integration.md) — Build a working integration from scratch using Fastn's AI functionalities
 
-If you already have a Fastn account and want to jump straight to building, go to [Your First Integration](https://docs.fastn.ai/~/revisions/syzyb9fquxvsttnXzZup/fastn/getting-started/your-first-integration).
+If you already have a Fastn account and want to jump straight to building, go to[ Your First Integration](getting-started/your-first-integration.md).
