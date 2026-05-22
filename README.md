@@ -20,6 +20,6 @@ This section walks you through the platform from first principles to a working i
 
 [**Signing Up as a SaaS Partner** ](fastn/getting-started/signing-up-as-a-saas-partner.md)— Create your account, pass the validation pipeline, and get your API keys and dashboard access.
 
-[**Your First Integration**](fastn/getting-started/your-first-integration.md) — Build a working integration from scratch i.e. create a connector, write a workflow, set up a trigger, and test the full loop.
+[**Your First Integration**](fastn/getting-started/your-first-integration.md) — Build a working integration from scratch using Fastn's AI functionalities
 
 If you already have a Fastn account and want to jump straight to building, go to [Your First Integration](https://docs.fastn.ai/~/revisions/syzyb9fquxvsttnXzZup/fastn/getting-started/your-first-integration).

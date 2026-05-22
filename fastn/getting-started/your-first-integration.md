@@ -1,222 +1,260 @@
 ---
 description: >-
-  Build a working integration from scratch i.e. create a connector, write a
-  workflow, set up a trigger, and test the full loop.
+  Build a working integration using the AI Setup Assistant from use case
+  analysis to live workflows.
 ---
 
 # Your First Integration
 
-This walkthrough takes you from an empty Fastn project to a working integration. You'll create a connector, write a workflow, set up a trigger, create a customer, and monitor executions.
+This walkthrough takes you from a fresh Fastn account to a working integration. The AI Setup Assistant handles most of the work you describe what you need, review what the AI builds, and go live.
 
 **Prerequisites:** A Fastn account with dashboard access.
 
-### What you'll build
+### Before you start
 
-A HubSpot contact sync workflow. When a webhook trigger fires, the workflow fetches contact data and processes it. This demonstrates:
+When you first log in (or reset onboarding), you'll see a setup screen that prompts you to setup your company:
 
-* Creating a connector (HubSpot)
-* Writing a workflow in the code editor
-* Setting up a webhook trigger with routes
-* Testing the workflow
-* Monitoring executions in Activity
+> **Screenshot: Enter domain URL**
 
-### Step 1: Create a connector
+Enter your **SaaS domain** (e.g., `gamma.app`) and click **Start setup →**.
 
-1. Click **Integrations** in the top nav.
-2. You're on the **Connectors** sub-tab. Click **+ Create**.
-3. Fill in the Create Connector dialog:
-   * **Name:** HubSpot CRM
-   * **Slug:** hubspot-crm (auto-generated from name)
-   * **Description:** HubSpot CRM integration
-   * **Domain:** hubspot.com
-   * **Visibility:** Private
-   * **Auth Methods:** Click the auth dropdown and select **OAuth 2.0**
-4. Click **Create**.
+This kicks off the 5-step Setup Assistant pipeline.
 
-> **Screenshot:** Create Connector dialog filled in with HubSpot details and OAuth 2.0 selected.
+> **Screenshot:** Initial setup screen showing the SaaS domain field and Start setup button.
 
-{% hint style="info" %}
-Alternatively, click **Build with AI** to open the **Connector Agent**. Describe what you need (e.g., "HubSpot CRM") and the agent will discover the API, build actions and events, and test them automatically.
-{% endhint %}
+### Step 1: Use cases
 
-> **Screenshot:** Connector Agent page showing the chat input with quick-start prompts.
+The AI agent researches your company automatically. It analyzes:
 
-#### Add a connection
+* **Company profile** — what you build, who your customers are
+* **Existing integrations** — what you already offer
+* **Customer reviews** — real feedback from Reddit, Trustpilot, G2, community forums
+* **Competitive landscape** — how your integration offering compares to competitors
+* **Integration gaps** — where you're falling behind peers
 
-After creating the connector, you need to authenticate it:
+The right sidebar tracks research progress with checkmarks focusing on but not limited to:
 
-1. Find your connector card on the Connectors page.
-2. Click **Connect** (or **+ Add Connection**).
-3. Complete the OAuth flow — sign in to HubSpot and authorize Fastn.
-4. The connection is stored under **Integrations → Connections**.
+* Company profile
+* Existing integrations
+* Customer reviews
+* Community feedback
+* Competitive landscape
+* Customer ecosystem
+* Business opportunities
+* Customer discovery
+* Integration gaps
+* News & social
 
-> **GIF:** Clicking Connect on a connector card, completing the OAuth popup, seeing the connected state.
+The AI then shows you an **Integration gap vs. peers** table comparing your integration count against competitors, with each competitor's advantage explained.
 
-### Step 2: Create a workflow
+#### You pick the pain points
 
-1. Click the **Workflows** sub-tab under Integrations.
-2. Click **Create Workflow**.
-3. The workflow editor opens with three panels:
+The AI will then ask: **"Which of these pain points are real for your customers?"**
 
-**Left — Configuration:**
+You'll see checkboxes with specific pain points the AI identified from its research. For example:
 
-* **Name:** `hubspot-contact-sync`
-* **Description:** Syncs HubSpot contacts on webhook trigger
-* **Execution Tier:** Standard
-* **Execution Timeout:** 1.0m
-* **Retry Policy:** Off (for now)
+* Manual presentation requests from email and chat
+* Painful export and editing outside Gamma
+* Missing downstream page and CMS workflows
+* Manually re-keying CRM or sheet data into Gamma
 
-**Center — Code editor** (`workflow.js`):
+Select the ones that matter or you can also type **"Something else"** to add your own custom pain points and then click **Send**.
 
-```javascript
-export default async function(ctx) {
-  const { input, headers } = ctx;
-  
-  // Log the incoming data
-  console.log("Received:", JSON.stringify(input));
-  
-  // Process the contact data
-  const contact = input.contact || {};
-  
-  return {
-    result: "Contact processed",
-    contactEmail: contact.email,
-    receivedAt: new Date().toISOString()
-  };
-}
-```
+You can also click on **"View detailed report →"** for the full research output to ensure your own validation against the output.
 
-**Right — Test panel:**
+> **Screenshot needed:** Step 1 showing the pain points selection with checkboxes and the Send button.
 
-* **CTX.INPUT:** Enter sample JSON
-* **CTX.HEADERS:** Optional headers
-* **Run** button to execute without saving
+### Step 2: Connectors
 
-> **Screenshot:** Workflow editor showing all three panels — Configuration on left with Name and Execution Tier filled in, code in center, Test panel on right.
+Based on your selected pain points, the AI then recommends which connectors to build first prioritized by customer impact.
 
-### Step 3: Test the workflow
+For example, if you selected "Manually re-keying CRM or sheet data," the AI might recommend:
 
-Before creating it, test directly in the editor:
+1. **HubSpot** (build first) — maps to the sales and marketing workflows your users already run
+2. **Salesforce** — enterprise gap
+3. **Google Sheets** — common manual handoff
+4. **Notion** (nice-to-have) — visible demand but less direct revenue signal
 
-1. Click the **Test** tab in the right panel.
-2. In **CTX.INPUT**, enter sample data:
+The AI explains its reasoning with links to real sources.
 
-```json
-{
-  "contact": {
-    "email": "test@acme.com",
-    "firstName": "Jane",
-    "lastName": "Doe"
-  }
-}
-```
+#### You pick which to build
 
-3. Click **Run**.
-4. The output appears below — you should see your return object with `"result": "Contact processed"`.
+The AI asks: **"Which would you like to build first?"**
 
-> **Screenshot:** Test panel showing the input JSON and the successful output after clicking Run.
+Options appear as selectable cards, for example: HubSpot, Salesforce, Google Sheets, Notion, **Skip - go straight to widget**, or type **"Something else"**.
+
+Select one and the AI starts building.
+
+> **Screenshot needed:** Connector selection showing the recommended apps and the "Skip - go straight to widget" option.
 
 {% hint style="info" %}
-**Note:** "Hit Run to execute without saving" this lets you iterate on the code before committing.
+If your desired options do not arrive, you can type in your desired application you want your connector to work with.
 {% endhint %}
 
-### Step 4: Create the workflow
+### Step 3: Building the integration
 
-Once the test passes:
+Once you select a connector (e.g., HubSpot), the AI moves to building the integration. The right sidebar shows sub-steps as shown below:
 
-1. Click **Create Workflow** (bottom-left of the editor).
-2. The workflow appears in the Workflows table with status **active**.
+* ✓ Building partner connectors
+* ◎ Planning the integration
+* ○ Building the integration
 
-> **Screenshot:** Workflows table showing the new workflow with active status, version, and updated date.
+#### The AI builds your connectors
 
-### Step 5: Set up a trigger
+If your own app also needs a connector, the AI detects this automatically:
 
-Triggers are managed separately from workflows. You need to create a trigger and route it to your workflow.
+> "Gamma needs its own connector before I can plan the HubSpot integration. How do you want to proceed?"
+>
+> 1. Build the Gamma connector
+> 2. Cancel
 
-1. Click the **Triggers** sub-tab under Integrations.
-2. Click **Add Trigger**.
-3. Select **Webhook** (for this tutorial).
+{% hint style="info" %}
+If your app already has a connector in Fastn. the AI will then inform you that a connector already exists and will prompt you to connect.
+{% endhint %}
 
-#### Configure the webhook trigger
+Select option 1 and the AI starts building. The AI also tells you the estimated time when the connector will be ready, the duration though varies and depends upon how complex is your application.
 
-4. Fill in the **Name** and optional **Description**.
-5. Under **Routes**, click **+ Add route**:
-   * **Workflow:** Select `hubspot-contact-sync` from the dropdown
-   * **Key/Value filters:** Leave empty for now (all payloads will trigger this route)
-   * **Headers:** Optional — leave empty
-6. Click **Create**.
+#### Credentials and Authentication process
 
-> **Screenshot:** Webhook trigger configuration with a route pointing to the hubspot-contact-sync workflow.
+The AI then asks you to authenticate each connector inline right in the chat:
 
-Your webhook now has a URL. Any HTTP POST to this URL will trigger the workflow.
+{% hint style="info" %}
+**Note:** Every connector setup varies per application and its permissions.
+{% endhint %}
 
-#### Alternative: Set up a scheduler
+**For API Key connectors:**
 
-To test with a scheduled trigger instead:
+During a connector setup, the AI might prompt you to input an API key with a message as follows:
 
-1. Click **Add Trigger** → **Scheduler**.
-2. Set **Name:** "Daily contact sync"
-3. Under **Schedule**, select a preset:
-   * **Interval** — Run every X minutes
-   * **Daily** — Run once per day
-   * **Weekly** / **Monthly** / **Custom**
-4. For testing, set **Interval** → Run every **5 minutes**.
-5. Click **Create**.
+> **Connect your Gamma account** Connect your Gamma account so I can finish the connector and verify it works.
 
-> **Screenshot:** Scheduler trigger configuration showing the preset buttons and interval settings.
+{% hint style="info" %}
+You can access your desired connectors' API keys through the developer platform of your application.
+{% endhint %}
 
-### Step 6: Create a test customer
+Enter your API key and click on **Connect.**
 
-1. Go to **Settings → Customers**.
-2. Click **Create Customer**.
-3. Enter a name (e.g., "Acme Corp Test").
-4. Note the customer ID — you'll use this for customer-scoped API calls.
+**For OAuth connectors:**
 
-> **Screenshot:** Settings → Customers showing the Create Customer button and the customer creation form.
+Some connectors, require more details such as Client IDs, Secrets, and OAuth Scopes for a complete setup. Following below is an example:
 
-### Step 7: Test the webhook trigger
+> **HUBSPOT CREDENTIALS**
+>
+> * CLIENT ID \*
+> * CLIENT SECRET \*
+> * OAUTH SCOPES \* (pre-filled with recommended scopes like `crm.objects.contacts.read crm.objects.deals.read oauth`)
 
-Send a test request to your webhook URL:
+For such setup, you will find a **Portal** link that takes you directly to the third-party's developer settings where you can find these values. Enter the credentials and click **Submit**.
 
-```bash
-curl -X POST YOUR_WEBHOOK_URL \
-  -H "Content-Type: application/json" \
-  -d '{
-    "contact": {
-      "email": "jane@acme.com",
-      "firstName": "Jane",
-      "lastName": "Doe"
-    }
-  }'
-```
+> **Screenshot:** Inline auth for an API Key connector (Gamma) and inline auth for an OAuth connector (HubSpot) showing the credentials form.
 
-### Step 8: Monitor in Activity
+#### The AI sets up the integration
 
-1. Click **Activity** in the top nav.
-2. Click the **Executions** sub-tab.
-3. You should see your workflow execution:
-   * **Time:** just now
-   * **Workflow:** hubspot-contact-sync
-   * **Tier:** STANDARD
-   * **Version:** v1
-   * **Status:** Completed (green) or Failed (red)
-   * **Duration:** execution time
-   * **Triggered By:** webhook
-4. Click on the execution row to see details.
+Once both connectors are built and authenticated, the AI configures how data flows between them:
 
-> **Screenshot:** Activity → Executions showing the successful execution with all columns visible.
+You'll see a mapping screen showing you how can you connect your application to a third party application. This includes:
 
-You can also check:
+* **Direction pills** — e.g., `Gamma Presentation Generation ← HubSpot Deal`
+* **Mapping count** — e.g., "7 mappings ready to go"
+* **Each mapping row** with:
+  * A plain-language description (e.g., "Input Text in Gamma Presentation Generation will be the `Description` from HubSpot Deal")
+  * Source and target field dropdowns
+  * A **Change** button to modify
 
-* **Activity → Events** to see the incoming webhook event
-* **Activity → Traces** to see the connector execution trace
+Some mappings use **fixed values,** values the AI sets as defaults, however you can change them as needed.
 
-### What you've built
+#### Reviewing and adjusting your mapping
 
-1. Created a connector (HubSpot CRM) with OAuth 2.0 auth
-2. Wrote a workflow in the code editor with test data
-3. Set up a webhook trigger with a route to the workflow
-4. Created a test customer
-5. Triggered the webhook and verified execution in Activity
+Each mapping has a **Change** button. When clicking to it you can either:
 
-This is the core pattern for every integration on Fastn: **Connector → Workflow → Trigger → Customer isolation → Monitor**.
+* **Set a fixed value** — always use the same value
+* **Combine fields** — merge multiple source fields
+* **Conditional value** — different values based on conditions
+* **Pick a source field** — choose from the source app's fields (e.g., "Load 99 more fields")
+* **Pick a target field** — choose from the target app's fields
+
+Additionally in the bottom you will find options like:
+
+* **Add Mapping** — add custom mappings the AI didn't create
+* **Add Filters** — only sync records matching certain conditions
+* **Record Matching Strategy** — shows how Fastn tracks which records have already been synced&#x20;
+
+{% hint style="info" %}
+You can also additionaly tweak the whole setup in natural language in a text input.
+{% endhint %}
+
+When everything looks right, click on **"Looks good, turn on"** on the top.
+
+> **Screenshot needed:** Field mapping screen showing mappings with Change buttons, fixed values, and the "Looks good, turn on" button.
+
+> **Screenshot needed:** The "Want to tweak the whole setup?" input field at the bottom.
+
+#### Test cases
+
+After you approve the mappings, the AI generates test cases to validate the integration and the third party application you want to connect with. Test cases allows you to validate the mappings and connections that you have established without any manual effort.
+
+Test cases are organized into groups of cases where each test case (e.g., TC-07, TC-08) has:
+
+* A **MOCK** or **LIVE** badge
+
+{% hint style="info" %}
+Mock tests do not consume API credits.
+{% endhint %}
+
+* A detailed scenario describing exactly what's tested
+* Pass criteria explaining what must be true
+
+You can expand any group to see individual test cases, add groups with and provide optional feedback.
+
+Click **Approve** (the green button below) to confirm the test cases and proceed.
+
+> **Screenshot needed:** Test cases screen showing groups, individual test cases with MOCK badges, and the Approve button.
+
+### Step 4: Embed
+
+Embedding is a crucial part of Fastn where you get to configure the customer-facing widget your customers will use inside your product.
+
+The Widget Builder opens where you set up:
+
+* **Layout** — title, subtitle, workflow templates
+* **Style** — colors, typography, themes
+* **Embed** — get the React SDK or Headless SDK code snippet
+
+### Step 5: Live
+
+Your platform is ready for customers. Connectors are built, integrations are configured with field mappings, test cases are validated, and the widget is set up.
+
+### Alternative: Build with AI from the Integrations section
+
+If you already have a Fastn account and you have gone through the onboarding process prior, you don't have to reset and use the Setup Assistant. After onboarding (or anytime), you can build new integrations directly:
+
+1. Click **Integrations** in the top nav
+2. Click **"Build with AI"** on top-right corner
+3. The integration builder opens which give you a chat like interface and with a set of quick start prompts you can execute or type in your preffered prompt
+
+> **Screenshot: Build an integration**
+
+The left sidebar shows **SESSIONS** which is your build history and the right sidebar shows **ACTIVITY** which gives you an overview what the agents are doing on the backend.
+
+The AI agents handle the entire build from connectors, configuration to testing just like the Setup Assistant, but without the guided pipeline. Use this when you already know what you want to build.
+
+### Connectors page
+
+After you have built your first integration using the Setup Assistant or with Integration Builder, your connectors will appear under **Integrations → Connectors.** There are two types of connectors:
+
+* **MANAGED** connectors (green badge, "Created by: Fastn") — pre-built by Fastn for common apps like HubSpot CRM, Cin7 Core, Shopify, Slack, ServiceNow
+* **PERSONAL** connectors (purple badge, "Created by: You") — built by you or by the AI on your behalf
+
+Each connector card shows a **Connect** button (if not yet authenticated) or **+ Add Connection** (if already connected).
+
+You can also:
+
+* **Import** — import a connector definition
+* **Create** — manually create a connector (advanced)
+* **Build with AI** — have the Connector Agent build one
+
+> **Screenshot needed:** Connectors page showing MANAGED and PERSONAL connector cards with Connect buttons.
+
+{% hint style="info" %}
+**Tip:** You can reset the Setup Assistant anytime from **Settings → General → Reset Onboarding** (bottom of page). However, this is irreversible and it deletes your qualification wizard answers and every Setup Assistant thread.
+{% endhint %}

@@ -34,7 +34,7 @@ Fastn has four core product areas visible in the dashboard:
 
 #### Connectors
 
-Pre-built or AI-generated integrations with third-party apps. Fastn provides connectors for apps like Shopify, Stripe, Xero, QuickBooks, Slack, HubSpot, GitHub, and others — or you can build your own using the **Connector Agent** or the **+ Create** button.
+Pre-built or AI-generated integrations with third-party apps. Fastn provides connectors for apps like Shopify, Stripe, Xero, QuickBooks, Slack, HubSpot, GitHub, and others or you can build your own using the **Connector Agent** or the **+ Create** button.
 
 Each connector defines:
 
@@ -42,17 +42,17 @@ Each connector defines:
 * **Actions** — things you can do (create a contact, fetch orders, send a message)
 * **Events** — webhook events you can subscribe to (new order created, contact updated)
 
-Once a connector exists, you or your customers create **Connections** — authenticated instances that store credentials per user.
+Once a connector exists, you or your customers create **Connections** that are authenticated instances that store credentials per user.
 
-You manage connectors under **Integrations → Connectors** and connections under **Integrations → Connections**.
+You can manage connectors under **Integrations → Connectors** and connections under **Integrations → Connections**.
 
 > **Screenshot:** Integrations → Connectors page showing connector cards with + Create and Build with AI buttons.
 
 #### Workflows
 
-The automation backbone. Workflows define what happens when data needs to move between systems. You write them in JavaScript/TypeScript using a code editor — each workflow is an `async function(ctx)` that receives input and headers, processes data, and returns a result.
+Workflows define what happens when data needs to move between systems. In Fastn, you can build them instantly using the "Build with AI" feature or you can write them in JavaScript/TypeScript where each workflow is an `async function(ctx)` that receives input and headers, processes data, and returns a result.
 
-Example: When a new order lands in Shopify, fetch the customer details, normalize the data, create an invoice in Xero, and send a confirmation to Slack.
+**Example:** When a new order lands in Shopify, fetch the customer details, normalize the data, create an invoice in Xero, and send a confirmation to Slack.
 
 Workflows support three execution tiers:
 
@@ -68,7 +68,7 @@ You manage workflows under **Integrations → Workflows**.
 
 #### Triggers
 
-Triggers connect external events to your workflows. They're managed as a separate section — you create a trigger, then route it to one or more workflows.
+Triggers connect external events to your workflows. They're managed as a separate section that allows you to create a trigger, then route it to one or more workflows.
 
 Three trigger types:
 
@@ -82,7 +82,7 @@ You manage triggers under **Integrations → Triggers**.
 
 #### Widgets
 
-The customer-facing piece. The **Widget Builder** (under **Widgets** in the top nav) lets you create an embeddable integration hub that lives inside your product. Your customers use it to connect their apps, view workflows, configure field mappings, and monitor sync status — all without leaving your app.
+Widgets are the customer-facing piece of your product that allows your customers to connect their apps, view workflows, configure field mappings, and monitor sync status all without leaving your app.  You can build a widget through Fastn's **Widget Builder** (under **Widgets** in the top nav) that lets you create an embeddable integration hub that lives inside your product.
 
 The Widget Builder has four configuration tabs:
 
@@ -94,14 +94,14 @@ The Widget Builder has four configuration tabs:
 The live preview shows three tabs your customers will see:
 
 * **Apps** — connected integrations with Configure/Disconnect buttons and an AI assistant ("Build with AI")
-* **Workflows** — active workflows and workflow templates
-* **Insights** — KPIs (runs today, records processed, needs attention), connector status, most-used workflow
+* **Workflows** — active workflows and workflow templates that additionally allow you to visualize the workflows
+* **Insights** — Shows metrics such as runs, records processed, needs attention), connector status, most-used workflow
 
 > &#x20;**Screenshot:** Widget Builder showing the left panel (Layout tab) and right panel (Live Preview with Apps tab showing connected integrations).
 
 ### AI agents across the platform
 
-Fastn uses AI agents powered by Anthropic Claude to reduce manual work throughout the platform. These aren't a separate product they're built in and accessible via **"Build with AI"** buttons on the Connectors, Workflows, and Widgets pages, and through the **Setup Assistants** on the Home page.
+Fastn uses AI agents to reduce manual work throughout the platform. They're built in and accessible via **"Build with AI"** buttons on the Connectors, Workflows, and Widgets pages, and through the **Setup Assistants** on the Home page.
 
 15 specialized agents are available, organized by function:
 
@@ -157,11 +157,4 @@ Fastn uses AI agents powered by Anthropic Claude to reduce manual work throughou
 
 * A SaaS product where your customers need third-party integrations
 * A Fastn account (sign up at [fastn.ai](https://fastn.ai/))
-* Basic familiarity with JavaScript/TypeScript (for writing workflows via code)
-* Frontend capability to embed the widget (when available)
-
-No infrastructure setup required. Fastn runs as a managed service.
-
-{% hint style="info" %}
-If you do not have any coding experience, you can simply build a workflow or an integration through our "Build with AI" feature.
-{% endhint %}
+* Frontend capability to embed the widget
