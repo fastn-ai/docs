@@ -172,5 +172,5 @@ The **center panel** shows the generated code. You don't need to touch this and 
 * How to open the Workflow Builder from Integrations → Workflows → Build with AI
 * How to describe a workflow in plain language so the agent can build it
 * How the agent handles the full cycle: connector setup, inline auth, field mapping, test case generation
-* How to visually view the workflow your agent built end to end
+* How to visualize the workflow your agent built end to end
 * How to iterate on the generated workflow with follow-up prompts
