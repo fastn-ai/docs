@@ -134,9 +134,9 @@ Once the agent finishes, the workflow appears in your **Integrations → Workflo
 
 The editor has three panels. As a SaaS admin, the one that matters most is the right panel specifically the **Docs** tab.
 
-#### Visualizing the workflow (Docs → Flow)
+#### Visualizing the workflow
 
-The **Docs** tab has three sub-tabs: **Flow**, **Sequence**, and **Docs**.
+The **Docs** tab has core sub-tabs: **Flow**, **Sequence**, and **Docs**.
 
 The **Flow** sub-tab renders a visual flowchart of the entire workflow as a node graph. Its the very workflow in result that would have taken you manually to build without Fastn's agents. Every step the agent generated appears as a connected node  consisting decision points, API calls, data retrieval, and skip/error paths are all mapped out visually.&#x20;
 
