@@ -23,6 +23,6 @@ Getting started with Fastn is easy. In this section, we’ll walk you through yo
 [creating-a-custom-tool.md](classic/fastn-ucl/getting-started/about-unified-context-layer/creating-a-custom-tool.md)
 {% endcontent-ref %}
 
-{% content-ref url="tutorials/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md" %}
-[setting-up-a-google-drive-to-gcs-migration-widget.md](tutorials/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md)
+{% content-ref url="tutorials-1/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md" %}
+[setting-up-a-google-drive-to-gcs-migration-widget.md](tutorials-1/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget.md)
 {% endcontent-ref %}

@@ -133,4 +133,4 @@ Does the flow serve multiple customers or tenants?
 * [Setting up connector authentication](setting-up-connector-authentication.md) — OAuth, API key, and other auth methods
 * [Building and configuring widgets in Fastn](../../classic/embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn.md) — Create the widget that powers dynamic connections
 * [Multitenancy](../../classic/fastn-ucl/getting-started/about-unified-context-layer/multitenancy.md) — Tenant isolation architecture
-* [How to manage multiple app connections together](../../tutorials/flow-customization-and-operations/how-to-manage-multiple-app-connections-together.md) — Unified connectors for multi-app flows
+* [How to manage multiple app connections together](../../tutorials-1/flow-customization-and-operations/how-to-manage-multiple-app-connections-together.md) — Unified connectors for multi-app flows
