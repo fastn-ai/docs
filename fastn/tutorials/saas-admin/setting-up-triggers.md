@@ -2,6 +2,7 @@
 description: >-
   Create webhook, scheduler, and app event triggers under Integrations →
   Triggers and route them to your workflows.
+hidden: true
 ---
 
 # Setting Up Triggers
