@@ -255,6 +255,6 @@ You can also:
 
 > **Screenshot needed:** Connectors page showing MANAGED and PERSONAL connector cards with Connect buttons.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 **Tip:** You can reset the Setup Assistant anytime from **Settings → General → Reset Onboarding** (bottom of page). However, this is irreversible and it deletes your qualification wizard answers and every Setup Assistant thread.
 {% endhint %}
