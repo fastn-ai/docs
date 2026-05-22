@@ -28,10 +28,6 @@ Both paths use the same AI agents underneath. This tutorial focuses on the Workf
 
 > **Screenshot:** Standalone Workflow Builder page showing the chat input, quick-start prompts, and the left sidebar with builder info and tasks.
 
-{% hint style="info" %}
-**Note:** There are two workflow builder variants. The **Standalone Builder** (accessed via "Build with AI" on the Workflows page) builds and validates workflows directly. The **Workflow Agent (Orchestrator)** coordinates the Planner, Builder, and Test Case agents for complex multi-step builds with handback support. This tutorial covers the Standalone Builder.
-{% endhint %}
-
 ### Describing what you need
 
 Type a plain-language description of the workflow you want. The more specific you are about three things, the better the result:
@@ -131,6 +127,36 @@ In case you want changes on your workflow, you can ask follow-up questions to re
 * "Only sync contacts created in the last 30 days"
 
 The agent then updates the workflow, field mappings, and test cases based on your follow-up. The **TASKS** panel on the left sidebar tracks what the agent has completed and what's still pending.
+
+### Reviewing what the agent built
+
+Once the agent finishes, the workflow appears in your **Integrations → Workflows** list. Click on it to open the Workflow Editor.
+
+The editor has three panels. As a SaaS admin, the one that matters most is the right panel specifically the **Docs** tab.
+
+#### Visualizing the workflow (Docs → Flow)
+
+The **Docs** tab has three sub-tabs: **Flow**, **Sequence**, and **Docs**.
+
+The **Flow** sub-tab renders a visual flowchart of the entire workflow as a node graph. Its the very workflow in result that would have taken you manually to build without Fastn's agents. Every step the agent generated appears as a connected node  consisting decision points, API calls, data retrieval, and skip/error paths are all mapped out visually.&#x20;
+
+This is the fastest way to verify the agent built the right logic. You can trace the flow from trigger to completion and spot missing branches or wrong conditions with no code reading required.
+
+The **Sequence** sub-tab shows the same logic as a step-by-step timeline, useful for understanding the order things happen in.
+
+The **Docs** sub-tab shows auto-generated documentation describing what the workflow does.
+
+{% hint style="info" %}
+This same visualization appears in the customer-facing widget when end users click into an active workflow. What you see here is what your customers see so reviewing it now also means reviewing your customers' experience.
+{% endhint %}
+
+> **Screenshot needed:** Right panel Docs tab with the Flow sub-tab active, showing the full visual flowchart with connected nodes, decision branches, and action steps.
+
+#### What else is in the editor
+
+The **left panel** shows the workflow's configuration i.e. its name, description, execution settings, and the **Publish & Deploy** buttons you'll use to go live. The agent sets these up for you, but you can adjust them if needed.
+
+The **center panel** shows the generated code. You don't need to touch this and it's there for visibility. The footer shows metadata like `Edited via agent`, confirming the AI wrote it.
 
 ### Tips for better results
 
