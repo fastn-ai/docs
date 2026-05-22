@@ -10,7 +10,7 @@ This walkthrough takes you from a fresh Fastn account to a working integration. 
 
 **Prerequisites:** A Fastn account with dashboard access.
 
-### Before you start
+### Building via Setup Assistant
 
 When you first log in (or reset onboarding), you'll see a setup screen that prompts you to setup your company:
 
@@ -224,7 +224,7 @@ The Widget Builder opens where you set up:
 
 Your platform is ready for customers. Connectors are built, integrations are configured with field mappings, test cases are validated, and the widget is set up.
 
-### Alternative: Build with AI from the Integrations section
+## Alternative: Build with AI from the Integrations section
 
 If you already have a Fastn account and you have gone through the onboarding process prior, you don't have to reset and use the Setup Assistant. After onboarding (or anytime), you can build new integrations directly:
 

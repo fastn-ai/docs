@@ -22,21 +22,33 @@ The exact location depends on how the SaaS company set things up. If you can't f
 
 > **Screenshot:** Example of an embedded widget as it appears inside a SaaS product — showing the integration hub with available app icons and connect buttons.
 
+### Navigating the widget
+
+The widget has three tabs at the top:
+
+* **Apps** — Connect and manage your third-party apps&#x20;
+* **Workflows** — View active automations and available templates&#x20;
+* **Insights** — Monitor sync activity and performance
+
+{% hint style="warning" %}
+Widget options and fucntionalities may vary per SaaS company's settings and configurations.
+{% endhint %}
+
+At the top of the Apps tab, a **search bar** lets you filter available integrations by name or category and useful when many apps are available.
+
 ### Connecting an app
 
 1. Open the integration widget in your product.
-2. You'll see a list of available integrations — these are the apps the product supports.
-3. Find the app you want to connect (e.g., **Slack**).
-4. Click **Connect** (the button label may vary — "Connect", "Activate", or "Enable").
+2. You'll see a list of available integrations
+3. Find the app you want to connect by scrolling or using the search bar.
+4. Click **Connect** (the button label may vary).
 
-> **Screenshot:** Widget showing a list of available integrations with Connect buttons next to each one.
+> **Screenshot needed:** Widget showing a list of available integrations with Connect buttons next to each one, and the search bar at the top.
 
-5. A popup opens with the third-party app's authorization screen. This is the app's own login page — not the product's, not Fastn's.
+5. A popup opens with the third-party app's authorization screen. This is the app's own login page not the product's, not Fastn's.
 6. Sign in with your account on the third-party app.
-7. Review the permissions being requested and click **Authorize** (or **Allow**).
-8. The popup closes and you're redirected back to the widget. The app now shows as **Connected**.
-
-> **GIF:** Full connection flow — clicking Connect on an app, the OAuth popup appearing, signing in, authorizing, and seeing the connected status in the widget.
+7. Review the permissions being requested and click **Authorize** (or "Allow").
+8. The popup closes and you're redirected back to the widget. The app now shows a green dot with a **"Connected"** label beneath the app name.
 
 ### What happens during authorization
 
@@ -52,7 +64,7 @@ Your credentials are stored securely and are isolated from other users. No one e
 
 ### Connecting multiple apps
 
-Some products let you connect multiple apps at once. Each connection is independent — connecting Slack doesn't affect your Shopify connection, and disconnecting one doesn't disconnect others.
+Some products let you connect multiple apps at once. Each connection is independent and connecting Slack doesn't affect your Shopify connection, and disconnecting one doesn't disconnect others.
 
 If the product supports it, you may also be able to connect multiple accounts of the same app (e.g., two different Slack workspaces). Look for a "Add another connection" option.
 
@@ -71,7 +83,7 @@ Disconnecting removes the stored credentials. If you reconnect later, you'll nee
 
 ### Troubleshooting
 
-**The Connect button does nothing:** Check if your browser is blocking popups. The authorization screen opens in a popup window — if it's blocked, nothing happens. Allow popups for this site and try again.
+**The Connect button does nothing:** Check if your browser is blocking popups. The authorization screen opens in a popup window, if it's blocked, nothing happens. Allow popups for this site and try again.
 
 **Authorization fails:** Make sure you're signing into the correct account on the third-party app. If you have multiple accounts (e.g., multiple Slack workspaces), verify you're authorizing the right one.
 

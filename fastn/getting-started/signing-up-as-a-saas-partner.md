@@ -37,13 +37,13 @@ Log in at [live.fastn.ai](https://live.fastn.ai). The dashboard has five top-lev
 
 Your first experience is the **Setup Assistant** on the Home page which is a 5-step AI-guided pipeline that takes you from zero to a working integration platform:
 
-| Step | Name           | What it does                                                                                                                                                                              |
-| ---- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | **Use cases**  | AI researches your company, analyzes your customers' integration needs, compares your integration gap vs peers (Workato, Zapier, Tray.ai), identifies manual workflows your customers run |
-| 2    | **Connectors** | Set up the integration building blocks your platform offers. Connectors are set up once and reused everywhere.                                                                            |
-| 3    | **Workflows**  | Build the integration logic your customers will configure. AI agents create the workflows for you.                                                                                        |
-| 4    | **Embed**      | Configure the customer-facing experience inside your product — the widget hub.                                                                                                            |
-| 5    | **Live**       | Your platform is ready for customers.                                                                                                                                                     |
+| Name           | What it does                                                                                                                                                                              |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Use cases**  | AI researches your company, analyzes your customers' integration needs, compares your integration gap vs peers (Workato, Zapier, Tray.ai), identifies manual workflows your customers run |
+| **Connectors** | Set up the integration building blocks your platform offers. Connectors are set up once and reused everywhere.                                                                            |
+| **Workflows**  | Build the integration logic your customers will configure. AI agents create the workflows for you.                                                                                        |
+| **Embed**      | Configure the customer-facing experience inside your product — the widget hub.                                                                                                            |
+| **Live**       | Your platform is ready for customers.                                                                                                                                                     |
 
 The right sidebar shows **YOUR SETUP** progress (0/5 → 5/5) with a description for each step.
 
@@ -74,9 +74,9 @@ Click **"+ Create API Key"** and select Test or Live. Copy the key immediately �
 
 #### Credits
 
-The top-right of the dashboard shows your **credits counter** (e.g., "189 / ∞ credits"). Credits track AI agent usage across the platform.
+The top-right of the dashboard shows your **credits counter**. Credits track AI agent usage across the platform.
 
-New accounts start on the **Free** plan ($0/mo):
+New accounts start on the **Free** plan which includes but may be subjected to changes:
 
 * 500 events per day
 * 10 events per minute
