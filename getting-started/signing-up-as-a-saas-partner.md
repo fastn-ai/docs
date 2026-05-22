@@ -45,7 +45,7 @@ Your first experience is the **Setup Assistant** on the Home page which is a 5-s
 | **Embed**      | Configure the customer-facing experience inside your product — the widget hub.                                                                                                            |
 | **Live**       | Your platform is ready for customers.                                                                                                                                                     |
 
-The right sidebar shows **YOUR SETUP** progress (0/5 → 5/5) with a description for each step.
+The right sidebar shows **YOUR SETUP** progress with a description for each step.
 
 Each step has a **"Skip to next phase"** button if you want to move ahead without completing the current step.
 
@@ -58,6 +58,7 @@ Go to **Settings → General** to configure:
 * **Organization Name** — how your company appears in the platform
 * **Timezone** — used for scheduled triggers and activity timestamps
 * **Domain & Access Control** — set your email domain so team members can request to join. Toggle "Auto-approve domain users" to skip manual approval.
+* **Reset Onboarding —** Reset the Setup Assistant to setup your connector from scratch which results in deletion of previous data
 
 > **Screenshot:** Settings → General showing Organization Name, Timezone, and Domain & Access Control sections.
 
@@ -106,18 +107,6 @@ Users are listed in a table with columns: USER, ROLE, TEAMS, STATUS, LAST ACTIVE
 > **Screenshot:** Settings → People showing the user table and Invite User button.
 
 > **GIF:** Full invite flow — clicking Invite User, entering email, selecting role, sending.
-
-### First steps after signup
-
-The Setup Assistant handles all of this automatically through the 5-step pipeline. But if you prefer to work manually or want to explore on your own, then following are the steps you can follow in order:
-
-1. **Describe your use case** — On the Home page, tell the AI what integrations your customers need
-2. **Build connectors** — Go to **Integrations → Connectors** → **Build with AI** (recommended) or **+ Create** (manual)
-3. **Build workflows** — Go to **Integrations → Workflows** → **Build with AI** (recommended) or **Create Workflow** (manual code editor)
-4. **Set up triggers** — Go to **Integrations → Triggers** → **Add Trigger** (Webhook, Scheduler, or App Event)
-5. **Build the widget** — Go to **Widgets** to configure the customer-facing integration hub
-6. **Create a customer** — Go to **Settings → Customers** → **Create Customer**
-7. **Monitor** — Go to **Activity → Executions** to see your workflow runs
 
 {% hint style="info" %}
 If you're a new user, the recommended path is the Setup Assistant pipeline. It uses Fastn's AI Agents to research your company, recommend connectors, build workflows, and get you to production faster than manual setup.
