@@ -242,8 +242,8 @@ The AI agents handle the entire build from connectors, configuration to testing 
 
 After you have built your first integration using the Setup Assistant or with Integration Builder, your connectors will appear under **Integrations → Connectors.** There are two types of connectors:
 
-* **MANAGED** connectors (green badge, "Created by: Fastn") — pre-built by Fastn for common apps like HubSpot CRM, Cin7 Core, Shopify, Slack, ServiceNow
-* **PERSONAL** connectors (purple badge, "Created by: You") — built by you or by the AI on your behalf
+* **Managed** connectors — pre-built by Fastn for common apps like HubSpot CRM, Cin7 Core, Shopify, Slack, ServiceNow
+* **Personal** connectors — built by you or by the AI on your behalf
 
 Each connector card shows a **Connect** button (if not yet authenticated) or **+ Add Connection** (if already connected).
 
