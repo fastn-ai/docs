@@ -73,7 +73,7 @@ Use this for:
 
 1. Go to **Activity → Executions**.
 2. Use the **"All workflows"** dropdown to filter.
-3. Each execution row shows **Triggered By** — which tells you what started the execution (agent-service, webhook, scheduler, manual).
+3. Each execution row shows **Triggered By** which tells you what started the execution (agent-service, webhook, scheduler, manual).
 
 > **Screenshot:** Activity → Executions filtered to show a specific customer's workflow runs.
 
@@ -93,7 +93,6 @@ For a complete history of all actions:
 
 ### What you've learned
 
-* Customers replace "Tenants" in V2
 * How to create customers under Settings → Customers
 * Customer isolation model i.e. each customer has separate connections, data, and executions
 * How to customize quota limits per customer
