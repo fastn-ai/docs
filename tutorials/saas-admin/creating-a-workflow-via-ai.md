@@ -1,10 +1,10 @@
 ---
-description: >-
-  Fastn's AI agents build workflows for you. Describe what you need in plain
-  language and the agent handles the rest
+description: An overview of building a workflow from natural language descriptions.
 ---
 
 # Creating a Workflow via AI
+
+Fastn's AI agents build workflows from natural language descriptions. You can simply describe the workflow and what data to sync, between which systems, and the agent sets up the connectors, configures authentication, maps the  fields, generates test cases, and then produces the workflow code with the addition of even visualizing it.
 
 **Prerequisites:** [Your First Integration,](../../getting-started/your-first-integration.md) by now you should know what workflows and triggers are.&#x20;
 
@@ -16,15 +16,13 @@ You can build workflows with AI from two places in the platform:
 
 **From the Integrations page** — Go to **Integrations → Workflows** and click **Build with AI** (next to "Create Workflow"). This opens the dedicated Workflow Builder, which is focused specifically on creating and validating workflows.
 
-Both paths use the same AI agents underneath. This tutorial focuses on the Workflow Builder via **Integrations → Workflows → Build with AI**.
-
 > **Screenshot needed:** Integrations → Workflows page with the "Build with AI" button highlighted next to "Create Workflow."
 
 ### Opening the Workflow Builder
 
 1. Go to **Integrations → Workflows**.
 2. Click **"Build with AI"** (next to the Create Workflow button).
-3. The **Standalone Workflow Builder** page opens.
+3. The **Workflow Builder** page opens.
 
 > **Screenshot:** Standalone Workflow Builder page showing the chat input, quick-start prompts, and the left sidebar with builder info and tasks.
 
@@ -56,19 +54,21 @@ Type a plain-language description of the workflow you want. The more specific yo
 
 ### What the agent does
 
-After you describe your workflow, the agent works through several stages. You'll see each one happen in the chat.
+After you describe your workflow, the agent works through several stages. You'll see each one happen in the chat in the following order:
 
 #### 1. Analyzes your request
 
-The agent breaks down what you've asked for which systems are involved, what data needs to move, what transformations are needed, and what trigger to use.
+The agent breaks down what you've asked for, this also includes which systems are involved, what data needs to move, what transformations are needed, and what trigger to use.
 
 #### 2. Sets up connectors
 
-If the systems you mentioned don't have connectors configured yet, the agent will flag this and either create one or ask you for credentials. For example, if you ask for a HubSpot sync but haven't connected HubSpot yet, the agent will say something like "Gamma needs its own connector before I can plan the HubSpot integration."
+If the systems you mentioned don't have connectors configured yet, the agent will flag this and either create one or ask you for credentials.
+
+For example, if you ask for a HubSpot sync but haven't connected HubSpot yet, the agent will  inform you that it needs to setup your connector before it can plan an integration with HubSpot.
 
 #### 3. Handles authentication inline
 
-When a connector needs credentials, the auth form appears right inside the chat so you never leave the conversation.
+When a connector needs credentials, the auth form appears right inside the chat so you never have to leave the conversation.
 
 For **API key auth**, you'll see a tabbed form with fields for the key and any required configuration. For **OAuth** (e.g., HubSpot, Shopify), you'll see a form with fields for Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal to get your credentials.
 
@@ -140,7 +140,7 @@ The **Docs** tab has core sub-tabs: **Flow**, **Sequence**, and **Docs**.
 
 The **Flow** sub-tab renders a visual flowchart of the entire workflow as a node graph. Its the very workflow in result that would have taken you manually to build without Fastn's agents. Every step the agent generated appears as a connected node  consisting decision points, API calls, data retrieval, and skip/error paths are all mapped out visually.&#x20;
 
-This is the fastest way to verify the agent built the right logic. You can trace the flow from trigger to completion and spot missing branches or wrong conditions with no code reading required.
+You can use the visualizer to verify if the agent build the correct logic. This also allows you to trace the flow from triggger to completion to check for any missing branches or wrong conditions.
 
 The **Sequence** sub-tab shows the same logic as a step-by-step timeline, useful for understanding the order things happen in.
 
@@ -156,7 +156,7 @@ This same visualization appears in the customer-facing widget when end users cli
 
 The **left panel** shows the workflow's configuration i.e. its name, description, execution settings, and the **Publish & Deploy** buttons you'll use to go live. The agent sets these up for you, but you can adjust them if needed.
 
-The **center panel** shows the generated code. You don't need to touch this and it's there for visibility. The footer shows metadata like `Edited via agent`, confirming the AI wrote it.
+The **center panel** shows the generated code. The footer shows medata tags like `Edited via agent`, indicating that the code was produced by the AI agent.
 
 ### Tips for better results
 

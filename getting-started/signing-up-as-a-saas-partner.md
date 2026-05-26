@@ -1,113 +1,112 @@
 ---
-description: A guide on how to use Fastn if you're a SaaS company
+description: A guide on how to use Fastn if you're a SaaS company.
 ---
 
 # Signing Up as a SaaS Partner
 
-Fastn is built for SaaS companies. The signup process includes a validation step to confirm you're a legitimate software business.
+Fastn is the embedded integration layer for SaaS companies whether you're building a product or an AI agent. It sits inside your product so your customers configure their own integrations, without engineering tickets or implementation projects. Your team manages the platform; your customers self-serve.
+
+You can sign up with a business email, Fastn validates your company, and the Setup Assistant walks you through configuring your integration platform.
 
 ### Before you sign up
 
 You'll need:
 
-* **A business email address** — Personal email providers (Gmail, Yahoo, Outlook, etc.) are blocked.
-* **A SaaS product** — Fastn validates that your company builds and sells software. Preferably just the URL to your SaaS product.
-* **A use case in mind** — Know which integrations your customers need.
+* **A business email address** — Personal email providers (Gmail, Yahoo, Outlook, etc.) are blocked. Use your company email.
+* **Your SaaS product URL** — Fastn's AI will research your company using this to understand your product, customers, and integration needs.
 
-{% hint style="info" %}
-Alternatively Fastn can suggest usecases based on the research it will do according to what your company is focused on and what customers say about your product.
-{% endhint %}
+From here on, the Setup Assistant handles integration discovery and configuration during onboarding.
 
-### What happens during signup
+### Signing up
 
-1. **Email validation** — Domain checked against a blocklist of \~40 personal email providers.
-2. **Duplicate check** — If your domain is already registered, you'll be directed to join the existing organization.
-3. **Company classification** — AI classifier analyzes your company based on public information.
-4. **Outcome** — Approved (immediate), Provisional (limited access, pending review), Manual review, or Rejected.
+1. Go to [live.fastn.ai](https://live.fastn.ai/).
+2. Enter your business email address and company details.
+3. Fastn validates your company in the background — it checks that you're a legitimate SaaS business using publicly available information about your domain and product.
+4. Once validated, you land in the dashboard and the Setup Assistant starts immediately.
 
-Most SaaS companies with a live product get approved within minutes.
+The process takes a few minutes. If your domain is already registered with Fastn, you'll be directed to join the existing organization rather than creating a new one.
 
-### What you get after signup
+> **Screenshot needed:** The signup form at live.fastn.ai showing the email and company fields.
 
-#### Dashboard access
+### What you see after signup
 
-Log in at [live.fastn.ai](https://live.fastn.ai). The dashboard has five top-level sections: **Home**, **Integrations**, **Widgets**, **Activity**, and **Settings**.
+After approval, you log into the dashboard at [live.fastn.ai](https://live.fastn.ai/). Your first experience is the **Setup Assistant** on the Home page which is a 5-step AI-guided pipeline that configures your integration platform.&#x20;
 
-#### The onboarding experience
+> &#x20;**Screenshot needed:** Home page after first login showing the Setup Assistant with Step 1 active and the YOUR SETUP sidebar showing 0/5 progress.
 
-Your first experience is the **Setup Assistant** on the Home page which is a 5-step AI-guided pipeline that takes you from zero to a working integration platform:
+### The Setup Assistant
 
-| Name           | What it does                                                                                                                                                                              |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Use cases**  | AI researches your company, analyzes your customers' integration needs, compares your integration gap vs peers (Workato, Zapier, Tray.ai), identifies manual workflows your customers run |
-| **Connectors** | Set up the integration building blocks your platform offers. Connectors are set up once and reused everywhere.                                                                            |
-| **Workflows**  | Build the integration logic your customers will configure. AI agents create the workflows for you.                                                                                        |
-| **Embed**      | Configure the customer-facing experience inside your product — the widget hub.                                                                                                            |
-| **Live**       | Your platform is ready for customers.                                                                                                                                                     |
+The Setup Assistant walks you through each stage of configuring your integration platform. Each step uses AI agents to research, recommend, and build you provide direction and approve the results.
 
-The right sidebar shows **YOUR SETUP** progress with a description for each step.
+#### Step 1: Use cases
 
-Each step has a **"Skip to next phase"** button if you want to move ahead without completing the current step.
+The AI researches your company automatically. It doesn't just ask you what you need — it analyzes publicly available data across ten categories:
 
-> **Screenshot:** Home page after first login showing the Setup Assistants with step 1 (Research) active.
+* Company profile
+* Existing integrations
+* Customer reviews
+* Community feedback
+* Competitive landscape
+* Customer ecosystem
+* Business opportunities
+* Customer discovery
+* Integration gaps
+* News & social
 
-#### Organization settings
+The AI produces a competitor comparison table showing how your integration offering compares to platforms like Workato, Zapier, and Tray.ai. It then asks: **"Which of these pain points are real for your customers?"** with checkboxes for each identified gap.
 
-Go to **Settings → General** to configure:
+Click **"View detailed report →"** to see the full research. This report is saved to your account and available later under **Settings → General → Company Research Report**.
 
-* **Organization Name** — how your company appears in the platform
-* **Timezone** — used for scheduled triggers and activity timestamps
-* **Domain & Access Control** — set your email domain so team members can request to join. Toggle "Auto-approve domain users" to skip manual approval.
-* **Reset Onboarding —** Reset the Setup Assistant to setup your connector from scratch which results in deletion of previous data
+Click **"Skip to next phase"** if you want to move ahead.
 
-> **Screenshot:** Settings → General showing Organization Name, Timezone, and Domain & Access Control sections.
+> **Screenshot needed:** Step 1 showing the AI research results with competitor comparison table and pain point checkboxes.
 
-#### API Keys
+> **Screenshot needed:** The "View detailed report" expanded view showing the full company research.
 
-Go to **Settings → API Keys** to create keys for programmatic access:
+#### Step 2: Connectors
 
-* **Test** keys — for development and testing
-* **Live** keys — for production
+Based on the research, the AI recommends connectors prioritized by impact on your customers. For example:
 
-Click **"+ Create API Key"** and select Test or Live. Copy the key immediately — it won't be shown again.
+1. HubSpot (highest impact)
+2. Salesforce
+3. Google Sheets
+4. Nice-to-have: Notion
 
-> **Screenshot:** Settings → API Keys showing the Test/Live toggle and Create API Key button.
+The AI asks: **"Which would you like to build first?"** with selectable options. You can also choose **"Skip — go straight to widget"** or **"Something else"** to describe a connector not on the list.
 
-#### Credits
+> **Screenshot needed:** Step 2 showing the AI's prioritized connector recommendations with selectable options.
 
-The top-right of the dashboard shows your **credits counter**. Credits track AI agent usage across the platform.
+#### Step 3: Workflows
 
-New accounts start on the **Free** plan which includes but may be subjected to changes:
+This is where the AI builds your integration logic. The right sidebar shows sub-steps: ✓ Building partner connectors → ◎ Planning the integration → ○ Building workflows.
 
-* 500 events per day
-* 10 events per minute
-* 1,000 API calls per day
-* 20 API calls per minute
+**Connector setup happens inline.** If your own app needs a connector (which it usually does), the AI flags this: "Your app needs its own connector before I can plan the integration." Auth forms appear right in the chat:
 
-View your quota usage and upgrade from **Settings → Billing**.
+* **API Key auth** — A tabbed form with fields for the key and configuration.
+* **OAuth** — A form with Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal.
 
-### Inviting team members
+**Field mapping happens inline.** Once connectors are ready, the AI generates field mappings between systems. You see a **"WE'VE SET THIS UP FOR YOU"** banner with mapping rows showing source fields, target fields, and a **Change** button for each. Fixed values appear as colored badges. Click **"Looks good, turn on"** to approve.
 
-1. Go to **Settings → People**.
-2. Click **"Invite User"**.
-3. Enter their email address.
-4. Select a role:
+**Test cases happen inline.** The AI generates test scenarios with **MOCK** and **LIVE** badges. Review them, provide feedback, and click **Approve** on the ones that look correct.
 
-| Role          | Permissions | What they can do                                                                         |
-| ------------- | ----------- | ---------------------------------------------------------------------------------------- |
-| **Admin**     | 39          | Full access which includes access to connectors, workflows, customers, billing, settings |
-| **Developer** | 34          | Build access i.e. connectors, workflows, agents. No billing or org settings.             |
-| **Operator**  | 18          | Operational access which allows the user to run workflows and monitor activity           |
-| **Viewer**    | 7           | Only includes read-only access                                                           |
+> **Screenshot needed:** Step 3 showing inline OAuth form in the chat with Client ID, Client Secret fields, and portal link.
 
-5. Click send. They'll receive an email to join your organization.
+> **Screenshot needed:** Field mapping panel with "WE'VE SET THIS UP FOR YOU" banner, mapping rows, and "Looks good, turn on" button.
 
-Users are listed in a table with columns: USER, ROLE, TEAMS, STATUS, LAST ACTIVE.
+> **Screenshot needed:** Test cases panel showing MOCK/LIVE badges, scenario descriptions, and Approve buttons.
 
-> **Screenshot:** Settings → People showing the user table and Invite User button.
+#### Step 4: Embed
 
-> **GIF:** Full invite flow — clicking Invite User, entering email, selecting role, sending.
+The Widget Builder opens. Configure what your customers will see — the integration portal embedded inside your product. You control which integrations appear, the layout, branding, and which widget sections are visible (AI Assistant, Search Bar, Apps, Workflows, Insights).
 
-{% hint style="info" %}
-If you're a new user, the recommended path is the Setup Assistant pipeline. It uses Fastn's AI Agents to research your company, recommend connectors, build workflows, and get you to production faster than manual setup.
-{% endhint %}
+> **Screenshot needed:** Widget Builder showing the left builder panel and right live preview.
+
+#### Step 5: Live
+
+Your integration platform is ready for customers. The Setup Assistant summarizes what was built and your dashboard transitions to the post-onboarding state.
+
+### After onboarding: the Home page
+
+Once the Setup Assistant completes, the Home page changes to a daily dashboard where you can input new builds anytime.
+
+> **Screenshot needed:** Post-onboarding Home page showing the greeting, stats, AI assistant prompt, quick prompts, and dashboard cards.
