@@ -12,7 +12,9 @@ Fastn supports two ways to scope connections within the same embed: org-level (s
 
 **User-level (per individual)** — Each user has their own connection, isolated from other users in the same organization. Use this for resources tied to one person's identity.
 
+{% hint style="info" %}
 This is **not** an "internal vs external user" distinction, and it is **not** about who can edit. It is strictly shared-vs-personal, based on who owns the connected resource.
+{% endhint %}
 
 ### How to decide
 
