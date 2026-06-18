@@ -1,3 +1,7 @@
+---
+description: An overview of how tenancy works per user and org leve
+---
+
 # Understanding Tenancy
 
 Fastn supports two ways to scope connections within the same embed: org-level (shared) and user-level (per individual). Choosing correctly determines who can see and use which connections.
@@ -54,5 +58,3 @@ These illustrate the typical mix of shared and personal connections per buyer pe
 | Head of Customer Success           | Usage-data system  | Each CSM's calendar / email   |
 
 The through-line: shared systems of record map to org-level; personal identity, inbox, or calendar maps to user-level. Most customers need both, which is why both flavors exist.
-
-> **VERIFY:** Confirm the exact interaction between `tenant-id` and the token's `userEmail` / `userName` for true per-user isolation versus org scope, before publishing.
