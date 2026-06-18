@@ -1,5 +1,5 @@
 ---
-description: An overview of how tenancy works per user and org leve
+description: An overview of how tenancy works per user and org level in Fastn
 ---
 
 # Understanding Tenancy
