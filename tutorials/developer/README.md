@@ -13,28 +13,20 @@ You don't run Fastn locally or build the integration infrastructure yourself. Fa
 
 ### In this section
 
-[**Embedding Fastn**](https://claude.ai/fastn/tutorials/developer/embedding-fastn) — The embedding model: how the iframe, the token, and your backend fit together.
+[**How Embedding Works**](how-embedding-works.md) — The embedding model: how the iframe, the token, and your backend fit together.
 
-[**Quickstart**](https://claude.ai/fastn/tutorials/developer/quickstart) — Generate a token, render the iframe, and see a working connection.
+[**Embedding Quickstart**](embedding-quickstart.md) — Generate a token, render the iframe, and see a working connection.
 
-[**Generating Embed Tokens**](https://claude.ai/fastn/tutorials/developer/generating-embed-tokens) — The token endpoint, the server-side pattern, and token lifecycle.
+[**Generating Embed Tokens**](generating-embed-tokens.md) — The token endpoint, the server-side pattern, and token lifecycle.
 
-[**Authentication & API Keys**](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys) — Test vs live keys and the headers each requires.
+[**Authentication & API Keys**](authentication-and-api-keys.md) — Test vs live keys and the headers each requires.
 
-[**Finding Your Org Identifier**](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier) — Locating the `endOrgId` your token and iframe calls need.
+[**Finding Your Org Identifier**](finding-your-org-identifier.md) — Locating the `endOrgId` your token and iframe calls need.
 
-[**Tenancy: Org-level vs User-level**](https://claude.ai/fastn/tutorials/developer/tenancy) — The two ways connections can be scoped, and how to choose.
+[**Understanding Tenancy**](understanding-tenancy.md) — The two ways connections can be scoped, and how to choose.
 
-[**Connectors vs Raw REST**](https://claude.ai/fastn/tutorials/developer/connectors-vs-raw-rest) — When to use a first-party connector instead of calling an API directly.
+[**Deployment**](deployment.md) — Environment variables and deploy-time considerations.
 
-[**Deployment**](https://claude.ai/fastn/tutorials/developer/deployment) — Environment variables and deploy-time considerations.
+[**MCP Gateway Integration**](mcp-gateway-integration.md) — Exposing integrations as tools for AI agents.
 
-[**MCP Gateway Integration**](https://claude.ai/fastn/tutorials/developer/mcp-gateway-integration) — Exposing integrations as tools for AI agents.
-
-[**Troubleshooting**](https://claude.ai/fastn/tutorials/developer/troubleshooting) — Common errors and their causes.
-
-### Prerequisites
-
-* A Fastn account with a published widget (see [Building Your Widget](https://claude.ai/fastn/tutorials/saas-admin/building-your-widget))
-* An API key (see [Authentication & API Keys](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys))
-* A backend you can run a token-generation function on
+[**Troubleshooting**](troubleshooting.md) — Common errors and their causes.
