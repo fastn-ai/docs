@@ -4,41 +4,30 @@ description: Audit log columns, filters, action types, and query patterns.
 
 # Audit Log
 
-The Audit Log tracks all actions across your organization. Found under **Settings → Audit Log**.
+The audit log records significant actions taken in your organization. It is found under **Settings → Audit Log**.
 
 ### Columns
 
-| Column        | Description                                                    | Example                                  |
-| ------------- | -------------------------------------------------------------- | ---------------------------------------- |
-| **TIMESTAMP** | When the action occurred                                       | May 7, 10:39:19 PM                       |
-| **USER**      | Who performed it — user name or "system" for automated actions | "John Doe", "system"                     |
-| **ACTION**    | What was done — action identifier with dot notation            | `auth.login`, `credential.token_refresh` |
-| **RESOURCE**  | What was affected — resource ID + type                         | `eae3a753-7bdc-...` (connection)         |
-| **OUTCOME**   | Result of the action                                           | Success (green badge), Failure, Denied   |
+| Column    | Description                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------- |
+| TIMESTAMP | When the action occurred                                                                      |
+| USER      | The actor that performed the action                                                           |
+| ACTION    | A dotted event name (e.g., `workflow.execute.completed`, `workflow.publish`, `widget.create`) |
+| RESOURCE  | The affected resource — an ID with a type sub-label (e.g., `workflow_executions`)             |
 
-### Filters
+### Reading entries
 
-| Filter          | Options                                                             |
-| --------------- | ------------------------------------------------------------------- |
-| **All Users**   | Filter by specific user or "system"                                 |
-| **All Actions** | Filter by action type (e.g., auth.login, credential.token\_refresh) |
-| **All Types**   | Filter by resource type                                             |
-| **From / To**   | Date range (dd/mm/yyyy)                                             |
+Action values are structured event names. Some examples:
 
-### Known action types
+* `workflow.execute.completed` — A workflow execution finished
+* `workflow.publish` — A workflow version was published
+* `widget.create` — A widget was created
 
-| Action                     | Description                                      |
-| -------------------------- | ------------------------------------------------ |
-| `auth.login`               | User logged into the platform                    |
-| `credential.token_refresh` | System refreshed an OAuth token for a connection |
+The RESOURCE cell shows the specific resource the action applied to, with its type beneath the ID.
 
-### User types
+Actions taken by AI agents are attributed to an agent actor rather than a human user.
 
-| User       | Badge                        | Description                                              |
-| ---------- | ---------------------------- | -------------------------------------------------------- |
-| Named user | Colored avatar with initials | A human user (e.g., "JD" for John Doe)                   |
-| **system** | Green "S" badge              | Automated system action (token refresh, scheduled tasks) |
+### Related
 
-### Event count
-
-The top-right shows the total number of events matching the current filters (e.g., "100 events").
+* [Workflows](https://claude.ai/fastn/reference/workflows) — many audit entries reference workflow actions
+* [RBAC & Security](https://claude.ai/fastn/reference/rbac-and-security) — who can perform which actions

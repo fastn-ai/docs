@@ -6,67 +6,53 @@ description: >-
 
 # Customer model
 
-In Fastn, your end users are called **Customers** (alternatively called "Tenants"). Every entity in the system i.e. connections, workflows, execution logs, configurations is scoped to a specific customer.
+A **customer** is an end user organization of your SaaS product, the businesses that use the integrations you offer through Fastn. Each customer's connections, data, and sync history are isolated from every other customer's.
 
-### Hierarchy
+### Where customers live
 
-```
-Platform (Fastn)
-└── Organization (Your SaaS Company)
-    ├── Customer A (Your end user)
-    ├── Customer B (Your end user)
-    └── Customer C (Your end user)
-```
+Customers are managed under **Settings → Customers** ("Manage customers under your account").
 
-### Roles
+When a customer connects an app through the embedded widget, they are associated with a customer record. You can also create customer records directly.
 
-| Role          | Permissions | Scope                                         |
-| ------------- | ----------- | --------------------------------------------- |
-| **Owner**     | 39          | Full access within organization and customers |
-| **Admin**     | 39          | Full access within organization and customers |
-| **Developer** | 34          | Build connectors, workflows, agents           |
-| **Operator**  | 18          | Operational access                            |
-| **Viewer**    | 7           | Read-only access                              |
-| **End User**  | 9           | Customer-facing widget access                 |
+### What a customer record contains
 
-Roles are managed under **Settings → ADVANCED → Roles**. Custom roles can be created or duplicated from system roles.
+Opening a customer record shows:
 
-### Customer isolation
+| Field              | Description                                               | Example                       |
+| ------------------ | --------------------------------------------------------- | ----------------------------- |
+| **Name**           | The customer's display name                               | John-Acme                     |
+| **Slug**           | A URL-safe identifier                                     | acme-customer                 |
+| **Status**         | The customer's activation state                           | Pending Admin Activation      |
+| **Customer Admin** | The admin user for this customer, and their invite status | john@acme.ai (Invite Pending) |
+| **Created**        | The date the record was created                           | 2026-06-09                    |
 
-Isolation is enforced at the database level:
+The list view also shows a **Plan** column (e.g., Free).
 
-* **Row-Level Security (RLS)** policies on customer-scoped database tables
-* PostgreSQL session variables (`app.tenant_id`, `app.role`) set per request
-* Every query automatically filters by the customer's ID
-* No customer can read, write, or reference another customer's data
+A customer record also has a **Connected Accounts** section (the apps this customer has authenticated) and a **Danger Zone** (destructive actions).
 
-### Customer management
+### The customer identifier
 
-Customers are managed under **Settings → Customers**.
+Integration flows — generating embed tokens and configuring the MCP Gateway — require the customer's internal identifier.
 
-| Action           | How                                                  |
-| ---------------- | ---------------------------------------------------- |
-| Create           | Click **"Create Customer"**                          |
-| View             | Customer list with IDs                               |
-| Customize limits | **Settings → Billing → "Customize Customer Limits"** |
+* The **slug** (e.g., `katana-customer`) is shown in the UI but does **not** work as the identifier in API calls (it returns 404).
+* The internal **UUID** is what the token and gateway calls require, but it is **not currently displayed in the Customers UI**.
 
-### Data residency
+See [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier) for how to obtain the UUID.
 
-Customers can be configured for regional data residency:
+> **VERIFY:** Confirm the relationship between the customer identifier used in the embed token (`endOrgId`), the MCP Gateway (`customer_id`), and the customer record — and the recommended way to retrieve the UUID.
 
-| Region   | Description                   |
-| -------- | ----------------------------- |
-| **US**   | Data stored in United States  |
-| **EU**   | Data stored in European Union |
-| **APAC** | Data stored in Asia-Pacific   |
+### Customer status
 
-### SaaS partner signup
+Customers move through activation states. One observed value is **Pending Admin Activation**, shown when a customer record exists but its admin has not yet accepted their invitation.
 
-SaaS partners register through a validation pipeline:
+> **VERIFY:** Confirm the full set of customer status values and what each means.
 
-1. Email validation (domain check against \~40 personal provider blocklist)
-2. Duplicate check (existing domain lookup)
-3. LLM classification (industry, tech stack, integration needs)
-4. Outcome: approved, provisional, manual\_review, or rejected
+### Per-customer quotas
 
-Each partner gets an organization with the **Free** plan by default.
+You can set quota overrides per customer from **Settings → Billing → Customize Customer Limits** — useful when specific customers need higher limits than your plan default, or when you want to cap an individual customer to protect shared capacity.
+
+### Related
+
+* [Managing Customers](https://claude.ai/fastn/tutorials/saas-admin/managing-customers) — the tutorial for working with customers
+* [Tenancy](https://claude.ai/fastn/tutorials/developer/tenancy) — how connections are scoped within a customer
+* [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier) — obtaining the customer UUID

@@ -6,95 +6,104 @@ description: >-
 
 # Viewing Sync Status & History
 
-Once your integrations are running, you'll want to know:
+Once your integrations are connected and running, the widget shows you how they're doing, what's running, what's succeeded or failed, and what needs attention. This information lives mainly on the **Insights** tab, with per-workflow run history available on the **Workflows** tab.
 
-* Is my data syncing?
-* When did it last run?
-* Did anything fail?
+**Prerequisites:** At least one app connected via the widget. See [Connecting Apps via Widget](https://claude.ai/fastn/tutorials/end-user/connecting-apps-via-widget).
 
-The widget provides visibility into your integration activity depending on what the SaaS company has enabled.
+***
 
-### Checking sync status
+### The Insights tab
 
-Open the integration widget and look at your connected apps. Each one typically shows a status indicator:
+Open the **Insights** tab in the widget. This is where most of your sync and health information lives. A time-range selector in the top-right lets you switch between **7 days**, **30 days**, and **90 days** (7 days is selected by default).
 
-| Status                             | What it means                                     |
-| ---------------------------------- | ------------------------------------------------- |
-| **Active** / **Connected** (green) | Integration is running normally                   |
-| **Syncing** / **Running**          | A sync is currently in progress                   |
-| **Error** / **Failed** (red)       | The last sync encountered a problem               |
-| **Paused** / **Disabled** (gray)   | Integration is connected but not actively running |
+#### Summary cards
 
-> **Screenshot:** Widget showing multiple connected apps with different status indicators — one active (green), one with an error (red).
+Three cards across the top give you an at-a-glance view:
 
-### Viewing execution history
+| Card                  | Shows                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------- |
+| **Runs Today**        | Total runs today, broken into successful and failed (e.g., "1.2k ok · 251 failed") |
+| **Records Processed** | How many records moved, split into synced, failed, and skipped                     |
+| **Needs Attention**   | How many workflows need action                                                     |
 
-If the SaaS company has enabled history logs in the widget, you can see a record of past syncs:
+#### Workflows table
 
-1. Open the widget.
-2. Click on a connected app or look for a **History** / **Activity** / **Logs** tab.
-3. You'll see a list of recent executions, each showing:
-   * **Timestamp** — when the sync ran
-   * **Status** — success or failure
-   * **Duration** — how long it took
-   * **Summary** — what happened (e.g., "Synced 45 orders", "Created 12 invoices")
+Below the cards, a table lists your workflows with these columns:
 
-> &#x20;**Screenshot:** Execution history view inside the widget showing a list of recent syncs with timestamps, status, and summaries.
+| Column   | Shows                                                                  |
+| -------- | ---------------------------------------------------------------------- |
+| NAME     | The workflow name                                                      |
+| LAST RUN | When it last ran, as a relative time (e.g., "40m ago", "2d ago")       |
+| STATUS   | The latest status (e.g., "failed", or blank if the last run was clean) |
+| RUNS     | Total number of runs                                                   |
+| AVG      | Average run duration (e.g., "20.2s")                                   |
 
-{% hint style="info" %}
-**Note:** Not all integrations show detailed history in the widget. If you don't see a history section, the SaaS company may not have enabled it. Contact their support for execution details.
-{% endhint %}
+A footer summarizes activity, such as "5/13 active" and "8 not run in 30d".
 
-### Understanding errors
+#### Connectors
 
-When a sync fails, the history may show an error message. Common causes:
+A **Connectors** section shows summary tiles ("Connected" and "Broken" counts) and a per-connector row with a status dot and a short status — for example, "Slack" with "no sync yet" if it hasn't run a sync yet.
 
-**Authentication expired** — Your connection to the third-party app is no longer valid. This happens when:
+#### Needs Attention
 
-* You changed your password on the third-party app
-* You revoked access in the third-party app's settings
-* The OAuth token expired and couldn't be refreshed
+A **Needs Attention** list surfaces recent errors. Each entry shows:
 
-**Fix:** Disconnect and reconnect the app through the widget.
+* A category badge (CONNECTION, CONFIGURATION, USER\_DATA, or DATA)
+* A short error summary
+* The workflow it came from
+* A relative timestamp
 
-**Rate limiting** — The third-party app rejected requests because too many were sent in a short time. This usually resolves on its own — the next scheduled sync will retry.
+This is the fastest place to see what's gone wrong and which integration it affects.
 
-**Data validation error** — A specific record couldn't be synced because it didn't match the expected format. For example, a required field was empty or a date was in the wrong format.
+***
 
-**Service unavailable** — The third-party app was temporarily down. The next sync will retry automatically.
+### Per-workflow history (Workflows tab)
 
-> **Screenshot:** Error detail view showing a failed sync with the error type and a brief explanation.
+The **Workflows** tab lists your workflows as cards. Each card shows the workflow's title and a short description of what it does and when it runs. The card itself doesn't show run times or status — those are on the Insights tab and in the detail view.
 
-### What to do when something fails
+Each card has a run button, a remove button, and a **chevron** that opens a detail view with four tabs:
 
-1. **Check if it's temporary.** Rate limits and service outages resolve on their own. Wait for the next scheduled sync.
-2. **Try reconnecting.** If the error mentions authentication, disconnect the app and reconnect it.
-3. **Check the third-party app.** Log into the app directly and verify your account is active, your API access is enabled, and nothing has changed.
-4. **Contact support.** If the error persists after reconnecting, reach out to the SaaS company's support team. Give them:
-   * Which integration is failing
-   * When it started failing
-   * The error message (screenshot it if you can)
+| Tab            | Shows                                                                                                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Diagram**    | A visual node-graph of the workflow's logic                                                                            |
+| **Executions** | Run history — each row has a status badge (COMPLETED or FAILED), an execution ID, a duration, and a relative timestamp |
+| **Errors**     | Errors with a count badge — each shows an error-type badge (e.g., CONNECTION), the message, and a timestamp            |
+| **Test Cases** | The test scenarios for the workflow, with a count badge                                                                |
 
-### Monitoring ongoing syncs
+The **Executions** tab is where you see the full run-by-run history for a single workflow.
 
-For integrations that sync on a schedule (hourly, daily), you can verify they're running by checking:
+***
 
-* The **last synced** timestamp on the connected app in the widget
-* The history log for regular entries at the expected intervals
-* Whether new data is appearing as expected in both apps
+### Where to look for what
 
-If the last sync timestamp is older than expected (e.g., a daily sync hasn't run in 3 days), something may be wrong. Check for errors in the history or contact support.
+| You want to know...                              | Look at...                               |
+| ------------------------------------------------ | ---------------------------------------- |
+| Overall health today (runs, successes, failures) | Insights → summary cards                 |
+| Which workflows ran and when                     | Insights → workflows table               |
+| What's currently failing or needs action         | Insights → Needs Attention               |
+| Whether a connector is connected or broken       | Insights → Connectors                    |
+| The full run history of one workflow             | Workflows tab → open a card → Executions |
+| Why a specific workflow failed                   | Workflows tab → open a card → Errors     |
+| What a workflow does, visually                   | Workflows tab → open a card → Diagram    |
 
-> **Screenshot:** Widget showing a connected app with "Last synced: 2 hours ago" timestamp visible.
+***
+
+### Reading timestamps
+
+Run times appear as relative timestamps ("40m ago", "14h ago", "2d ago") rather than absolute dates. "Last run" on the Insights table and the timestamps in the Executions list both use this format.
+
+***
+
+### A connected app's status
+
+On the **Apps** tab, a connected integration shows its connection state — the name, a status dot, and a connection count (e.g., "1/2 connected") — but not sync activity or errors. For sync status, go to the **Insights** tab, where the Connectors section shows each connector's sync state.
+
+***
 
 ### What you've learned
 
-* How to read sync status indicators (active, error, paused)
-* How to access and interpret execution history
-* Common error types and what causes them
-* Steps to troubleshoot failed syncs
-* When to contact the SaaS company's support team
-
-{% hint style="info" %}
-**For SaaS Admins:** If your customers report sync issues, check **Activity → Executions** in your Fastn dashboard. Filter by workflow name or time range. You'll see the full execution detail including status, duration, and triggered-by info, which provides more information than what's visible in the widget.
-{% endhint %}
+* How to read overall sync health from the Insights summary cards
+* How to find which workflows ran, when, and how often
+* How to see what needs attention and why, including error categories
+* How to open a workflow's full run history, errors, and diagram from the Workflows tab
+* Where connector sync state is shown (Insights, not the Apps tab)

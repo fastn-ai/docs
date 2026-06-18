@@ -4,41 +4,25 @@ description: Alert rule conditions, thresholds, and monitoring configuration.
 
 # Alerts
 
-Alert rules monitor connector and workflow performance. Managed under **Activity → Alerts**.
+Alerts notify you when a workflow or integration crosses a performance threshold. They are configured under **Activity → Alerts**.
 
 ### Creating an alert
 
-1. Go to **Activity → Alerts**.
-2. Click **"Create Alert"**.
-3. Configure:
+Click **Create Alert**. The form has:
 
-| Field         | Required | Description                                               |
-| ------------- | -------- | --------------------------------------------------------- |
-| **Name**      | Yes      | Alert identifier (e.g., "High Error Rate")                |
-| **Condition** | Yes      | What metric to monitor (dropdown)                         |
-| **Threshold** | Yes      | Value that triggers the alert (e.g., 5 for 5% error rate) |
+* **Name** (required)
+* **Condition** (required) — The metric to watch
+* **Threshold** (required) — The value that triggers the alert (e.g., "5" for a 5% error rate)
 
-4. Click **Create**.
+### Conditions
 
-### Alert conditions
+The available alert conditions are:
 
-6 metric conditions available:
-
-| Condition         | What it measures                     | Threshold example |
-| ----------------- | ------------------------------------ | ----------------- |
-| **error rate**    | Percentage of failed executions      | 5 = 5% error rate |
-| **latency p99**   | 99th percentile execution duration   | 5000 = 5 seconds  |
-| **latency p95**   | 95th percentile execution duration   | 3000 = 3 seconds  |
-| **latency avg**   | Average execution duration           | 2000 = 2 seconds  |
-| **throughput**    | Number of executions per time period | Varies            |
-| **failure count** | Absolute number of failed executions | 10 = 10 failures  |
-
-### Alert rules page
-
-Under **Activity → Alerts**:
-
-* Title: **"Alert Rules"**
-* Subtitle: "Configure alert rules to monitor connector and workflow performance."
-* **"Create Alert"** button
-* List of configured alert rules
-* Empty state: "No alert rules configured. Create your first alert."
+| Condition     | Watches                             |
+| ------------- | ----------------------------------- |
+| error rate    | The percentage of failed executions |
+| latency p99   | 99th-percentile execution latency   |
+| latency p95   | 95th-percentile execution latency   |
+| latency avg   | Average execution latency           |
+| throughput    | Execution volume                    |
+| failure count | The number of failures              |

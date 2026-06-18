@@ -6,103 +6,81 @@ description: >-
 
 # Triggers
 
-Triggers start workflows. They're managed separately under **Integrations → Triggers** and consist of three types:
+Triggers start the workflows you build. They are managed separately from workflows under **Integrations → Triggers**, then routed to one or more workflows. The page header reads "Manage webhook and scheduler triggers for your workflows."
+
+Most triggers are set up by the AI agent when you build a workflow ("on every new order," "daily at 6 AM"). This page documents the trigger types and their configuration for when you need to create or adjust one directly.
+
+### Trigger types
+
+The page has three tabs, each showing a count of existing triggers:
+
+| Tab            | Starts a workflow when...                               |
+| -------------- | ------------------------------------------------------- |
+| **Webhooks**   | An external service sends an HTTP POST to your endpoint |
+| **Schedulers** | A time-based schedule fires                             |
+| **App Events** | An event occurs in a connected app                      |
+
+Click **Add Trigger** (top-right) to open the "Select trigger type" panel, which has three cards: Webhook, Scheduler, App Event.
 
 ### Webhook triggers
 
-Receive events from external services via HTTP POST.
+A webhook trigger receives HTTP POST requests from external services and routes them to workflows.
 
-#### Configuration
+**Fields:**
 
-| Field                | Required         | Description                |
-| -------------------- | ---------------- | -------------------------- |
-| **Name**             | Yes              | Trigger identifier         |
-| **Description**      | No               | What this webhook receives |
-| **Routes**           | Yes (at least 1) | Map payloads to workflows  |
-| **Advanced options** | No               | Additional configuration   |
+* **Name** (required)
+* **Description** (optional)
+* **Routes** (required) — Map incoming requests to workflows. Click **Add route** to add more.
 
-#### Routes
+Each route has:
 
-Each route maps incoming payloads to a workflow:
+* **Workflow** (required) — The target workflow.
+* **Headers** — Key/value pairs.
+* **Optional JSON filters** — Route based on the payload contents (a single webhook can route to different workflows based on different filters).
 
-| Field           | Description                                                                 |
-| --------------- | --------------------------------------------------------------------------- |
-| **Workflow**    | Target workflow (dropdown of active workflows)                              |
-| **Key / Value** | JSON filter — only payloads matching this key-value pair trigger this route |
-| **Header**      | Optional headers to forward to the workflow                                 |
+**Advanced options** (expander) reveal:
 
-A single webhook trigger can have **multiple routes**. Different payloads go to different workflows through the same endpoint.
-
-#### Example: Route by event type
-
-```
-Route 1: Workflow = "process-orders"     Key = event_type  Value = order.created
-Route 2: Workflow = "update-inventory"   Key = event_type  Value = inventory.updated
-Route 3: Workflow = "sync-contacts"      Key = event_type  Value = contact.updated
-```
+| Option                   | Default                 | Description                                           |
+| ------------------------ | ----------------------- | ----------------------------------------------------- |
+| Webhook ID               | (optional UUID)         | A specific ID for the webhook                         |
+| Authentication           | API Key (`x-fastn-key`) | How the incoming request is authenticated             |
+| Execution Mode           | Parallel                | How matched workflows execute                         |
+| Deduplication Key        | (optional)              | Prevents duplicate processing of the same event       |
+| Enable Dead Letter Queue | (checkbox)              | Captures failed events for later inspection or replay |
 
 ### Scheduler triggers
 
-Trigger workflows on a time-based schedule.
+A scheduler trigger fires workflows on a time-based schedule.
 
-#### Configuration
+**Presets:** Interval, Daily, Weekly, Monthly, Custom.
 
-| Field           | Required | Description                                      |
-| --------------- | -------- | ------------------------------------------------ |
-| **Name**        | Yes      | Trigger identifier                               |
-| **Description** | No       | What the scheduler does                          |
-| **Schedule**    | Yes      | Frequency configuration                          |
-| **Starts at**   | No       | Date/time to begin (leave empty for immediately) |
+For **Interval**, you set "Run every \[n] minutes / hours / days," an optional "Starts at" time, and the form shows a live preview of the schedule (e.g., "Every 5 minutes").
 
-#### Schedule presets
-
-| Preset       | Configuration                                          |
-| ------------ | ------------------------------------------------------ |
-| **Interval** | Run every X minutes/hours. Set number + unit dropdown. |
-| **Daily**    | Run once per day at a specific time.                   |
-| **Weekly**   | Run once per week on a specific day and time.          |
-| **Monthly**  | Run once per month on a specific date and time.        |
-| **Custom**   | Enter a cron expression for complex schedules.         |
+Schedulers also have **Routes** with a Workflow target, Headers, and a Payload (JSON) passed to the workflow.
 
 ### App Event triggers
 
-Subscribe to events from connected third-party apps.
+An app event trigger subscribes to events from a connected app and routes them to workflows.
 
-#### Configuration
+**Creation fields:**
 
-| Field          | Required | Description                             |
-| -------------- | -------- | --------------------------------------- |
-| **Name**       | Yes      | Trigger identifier                      |
-| **Connector**  | Yes      | Which connector to listen to (dropdown) |
-| **Connection** | Yes      | Which authenticated connection to use   |
-| **Event**      | Yes      | Which event to subscribe to             |
+* **Name**
+* **Connector** — A dropdown of available connectors (\~75).
 
-#### Event list
+Selecting a connector with no active connection shows: "No active connection found for this connector. Connect first to use it as a trigger source," with a Connect button. An active connection is required.
 
-The event list shows available events from the selected connector:
+**The App Events list** shows these columns:
 
-| Element                 | Description                                         |
-| ----------------------- | --------------------------------------------------- |
-| **Event name**          | Human-readable name (e.g., "Sale Created")          |
-| **Type badge**          | WEBHOOK — indicates the event mechanism             |
-| **Subscription status** | **Not Subscribed** (red) or **Subscribed** (green)  |
-| **Event path**          | Technical path (e.g., "Sale/Created")               |
-| **Payload Schema**      | Expandable section showing the event data structure |
+| Column       | Description                                         |
+| ------------ | --------------------------------------------------- |
+| NAME         | The trigger name                                    |
+| CONNECTOR    | The source connector                                |
+| TYPE         | The event type                                      |
+| EVENTS       | The specific event (e.g., `Calendar.Events.Exists`) |
+| WEBHOOK URL  | The endpoint the app posts to                       |
+| STATUS       | The trigger's status                                |
+| SUBSCRIPTION | Subscription state (e.g., ACTIVE)                   |
+| ROUTES       | Routed workflows                                    |
+| CREATED      | Creation date                                       |
+| ACTIONS      | Edit/delete                                         |
 
-When you create the trigger, Fastn subscribes to the webhook on the third-party app automatically. Deleting the trigger unsubscribes.
-
-### Trigger management
-
-#### Tabs
-
-| Tab            | Count shown | Contents                      |
-| -------------- | ----------- | ----------------------------- |
-| **Webhooks**   | e.g., "(0)" | Webhook triggers with routes  |
-| **Schedulers** | e.g., "(1)" | Time-based triggers           |
-| **App Events** | e.g., "(3)" | Connector event subscriptions |
-
-#### Each tab has
-
-* Search bar
-* Status filter ("All statuses")
-* Trigger list with edit/delete actions

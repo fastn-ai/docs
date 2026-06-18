@@ -7,20 +7,34 @@ hidden: true
 
 # Developer
 
-These tutorials are for engineers building on top of Fastn's platform. You'll work with the CLI, write TypeScript, build custom connectors, deploy workflows to cloud infrastructure, and integrate AI agents via the MCP gateway.
+This section is dedicated for developers embedding Fastn into their own product. Your customers use the embedded widget to connect their apps and configure integrations; your job is to render that widget inside your application and generate the tokens that scope it to each customer.
 
-### Tutorials in this section
+You don't run Fastn locally or build the integration infrastructure yourself. Fastn runs as a hosted platform. You embed its widget as an iframe, generate a short-lived token from your backend, and decide how connections are scoped to your customers.
 
-[**Local Dev Environment Setup** ](local-dev-environment-setup.md)— Clone the repo, run the full platform stack locally with Docker Compose, and use the Fastn CLI for development.
+### In this section
 
-[**Building a Custom Connector** ](building-a-custom-connector.md)— Implement the ConnectorDefinition interface to integrate an app that Fastn doesn't support out of the box.
+[**Embedding Fastn**](https://claude.ai/fastn/tutorials/developer/embedding-fastn) — The embedding model: how the iframe, the token, and your backend fit together.
 
-[**Writing a Workflow (TypeScript)**](writing-a-workflow-via-typescript-dsl.md) — Write workflows as async functions using the code editor — ctx object, execution tiers, testing, and deployment patterns.
+[**Quickstart**](https://claude.ai/fastn/tutorials/developer/quickstart) — Generate a token, render the iframe, and see a working connection.
 
-[**Deploying to Lambda / Cloud Run** ](deploying-to-lamba-cloud-run.md)— Deploy your workflows to AWS Lambda or GCP Cloud Run using the Fastn CLI and Pulumi infrastructure.
+[**Generating Embed Tokens**](https://claude.ai/fastn/tutorials/developer/generating-embed-tokens) — The token endpoint, the server-side pattern, and token lifecycle.
 
-[**Creating a Custom AI Agent**](creating-a-custom-ai-agent.md) — Build a custom agent using the AgentTool interface or the Agent Builder's natural language lifecycle.
+[**Authentication & API Keys**](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys) — Test vs live keys and the headers each requires.
 
-[**MCP Gateway Integration** ](mcp-gateway-integration.md)— Connect AI assistants to Fastn's MCP server — native tools, dynamic tools, and per-customer scoping.
+[**Finding Your Org Identifier**](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier) — Locating the `endOrgId` your token and iframe calls need.
 
-If you're integrating Fastn into an existing AI product, skip to [MCP Gateway Integration](mcp-gateway-integration.md) directly.
+[**Tenancy: Org-level vs User-level**](https://claude.ai/fastn/tutorials/developer/tenancy) — The two ways connections can be scoped, and how to choose.
+
+[**Connectors vs Raw REST**](https://claude.ai/fastn/tutorials/developer/connectors-vs-raw-rest) — When to use a first-party connector instead of calling an API directly.
+
+[**Deployment**](https://claude.ai/fastn/tutorials/developer/deployment) — Environment variables and deploy-time considerations.
+
+[**MCP Gateway Integration**](https://claude.ai/fastn/tutorials/developer/mcp-gateway-integration) — Exposing integrations as tools for AI agents.
+
+[**Troubleshooting**](https://claude.ai/fastn/tutorials/developer/troubleshooting) — Common errors and their causes.
+
+### Prerequisites
+
+* A Fastn account with a published widget (see [Building Your Widget](https://claude.ai/fastn/tutorials/saas-admin/building-your-widget))
+* An API key (see [Authentication & API Keys](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys))
+* A backend you can run a token-generation function on

@@ -8,34 +8,24 @@ description: >-
 
 ### In this section
 
-[**Glossary**](glossary.md) — Alphabetized definitions of every term used across the platform.
+[**Glossary**](glossary.md) — Definitions of the core terms used across the platform, matched to the exact language the product uses.
 
-[**Customer Model**](customer-model.md) — The multi-tier hierarchy, isolation model, and customer management.
+[**Customer Model**](customer-model.md) — What a customer is, the fields on a customer record, identifiers, status, and per-customer quotas.
 
-[**Canonical Data Model (CDM)**](canonical-data-model-cdm.md) — Field-level specification for all 6 CDM entities.
+[**Connectors**](connectors.md) — The connector list, MANAGED vs PERSONAL badges, authentication types, and the connector-vs-connection distinction.
 
-[**Connectors**](https://docs.fastn.ai/~/revisions/m0hEPQFsdMhQVmegKM0n/reference/connectors) — Built-in connector list, 6 auth methods, Create Connector fields, and capability registry.
+[**Workflows**](workflows.md) — The runtime API (`ctx`, `fastn.connector`, `fastn.db`, `fastn.state`, `fastn.secrets`), the editor, execution tiers, retry policy, and the workflow lifecycle.
 
-[**Workflows** ](workflows.md)— Code editor interface, ctx object, execution tiers, retry policy, statuses, and versioning.
+[**Triggers**](triggers.md) — Webhook, Scheduler, and App Event triggers, their configuration fields, and the Dead Letter Queue option.
 
-[**Transformation Engine** ](transformation-engine.md)— Field Mapper syntax, built-in transforms, and Type Coercer rules.
+[**RBAC & Security**](rbac-and-security.md) — The six system roles, permission categories, custom roles, and data isolation.
 
-[**Event System**](event-system.md) — Event pipeline, webhook receiver, Dead Letter Queue, and Synthetic Event Engine.
+[**MCP Gateway**](mcp-gateway.md) — The Control Plane (Admin MCP) and Data Plane (Customer Gateway) for exposing integrations as tools to AI agents.
 
-[**Sync Engine** ](sync-engine.md)— ID mapping, dependency resolution, and conflict resolution strategies.
+[**Activity**](activity.md) — The admin view for monitoring events, connector traces, workflow executions, and alert rules across your workspace.
 
-[**AI Agents Reference** ](ai-agents-reference.md)— All 15 platform agents, AgentTool interface, Agent Builder lifecycle, and memory system.
+[**API Reference**](api-reference.md) — The workflow execution API: endpoint, authentication headers, and request/response shapes.
 
-[**MCP Gateway**](mcp-gateway.md) — Native tools, dynamic tools, and per-customer availability.
+[**Alerts**](alerts.md) — Alert conditions (error rate, latency, throughput, failure count) and how to configure them.
 
-[**RBAC & Security** ](rbac-and-security.md)— 6 system roles, permission categories, custom roles, Row-Level Security.
-
-[**Configuration** ](configuration.md)— Organization settings, secrets, environments, and domain access control.
-
-[**API Reference** ](api-reference.md)— Core and platform endpoints, auth headers, error codes, and rate limiting.
-
-[**Infrastructure** ](infrastructure.md)— Service topology, package architecture, database schema, and deployment.
-
-[**Alerts**](alerts.md) — Alert rule conditions, thresholds, and monitoring configuration.
-
-[**Audit Log**](audit-log.md) — Columns, filters, action types, and query patterns.
+[**Audit Log**](audit-log.md) — The record of administrative actions, its columns, and how to read entries.

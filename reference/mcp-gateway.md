@@ -6,84 +6,71 @@ description: >-
 
 # MCP Gateway
 
-The MCP Gateway exposes Fastn capabilities as tools for AI assistants via the Model Context Protocol.
+The MCP Gateway exposes Fastn's capabilities as tools that AI assistants and agents can call over the Model Context Protocol (MCP). It is found under **Widgets → Widget Builder → Embed → MCP**, with two planes: a Control Plane for managing your workspace and a Data Plane for per-customer agent access.
 
-### Native tools
+### The two planes
 
-Six built-in tools are always available regardless of which connectors a tenant has connected:
+| Plane         | Server               | For                                                            |
+| ------------- | -------------------- | -------------------------------------------------------------- |
+| Control Plane | Admin MCP Server     | Managing your Fastn workspace via an AI tool (Claude, Cursor)  |
+| Data Plane    | Customer MCP Gateway | An agent acting inside a specific customer's connected systems |
 
-| Tool                           | Description                                     | Input                                                       |
-| ------------------------------ | ----------------------------------------------- | ----------------------------------------------------------- |
-| `fastn_list_integrations`      | List all active integrations for a tenant       | `{ tenant_id: string }`                                     |
-| `fastn_get_integration_status` | Get detailed status of a specific integration   | `{ tenant_id: string, integration_id: string }`             |
-| `fastn_create_flow`            | Create a new automation flow from specification | `{ tenant_id: string, spec: FlowSpec }`                     |
-| `fastn_get_event_history`      | Retrieve recent events for a tenant             | `{ tenant_id: string, limit?: number, since?: datetime }`   |
-| `fastn_get_usage_summary`      | Get quota usage summary                         | `{ tenant_id: string }`                                     |
-| `fastn_search_entities`        | Search CDM entities across integrations         | `{ tenant_id: string, entity_type: string, query: object }` |
+### Control Plane — Admin MCP Server
 
-### Dynamic tools
+For developers and AI tools (Claude, Cursor) to manage connectors, actions, auth, webhooks, and connections.
 
-Auto-generated from active connector capabilities. Each connector action becomes an MCP tool.
+* **Server URL:** `https://live.gcp.fastn.ai/mcp/admin`
+* **Authentication:** Your API key, passed as a query parameter (`?api_key=fsk_live_...`)
+* **Tools available:** 37
 
-#### Generation rules
+Example configuration for an MCP client (Claude, Cursor):
 
-* Tool name: `{connector}_{action}` (e.g., `slack_send_message`, `shopify_list_orders`)
-* Tool description: derived from the action's description field
-* Input schema: derived from the action's inputSchema
-* Only generated for connectors the tenant has active
-
-#### Example dynamic tools
-
-A tenant with Slack and Shopify connected gets:
-
-```
-slack_send_message
-slack_list_channels
-slack_list_users
-shopify_list_orders
-shopify_get_customer
-shopify_list_products
-shopify_get_order
+```json
+{
+  "mcpServers": {
+    "fastn-admin": {
+      "url": "https://live.gcp.fastn.ai/mcp/admin?api_key=fsk_live_..."
+    }
+  }
+}
 ```
 
-A different tenant with only Slack gets:
+Use this when you want to manage your Fastn setup through an AI tool — for example, asking Claude to list your connectors or configure an action.
 
+### Data Plane — Customer MCP Gateway
+
+A per-customer MCP endpoint. This is the path for AI agents in your product that need to act inside a specific customer's connected systems.
+
+* **Gateway URL:** `https://live.gcp.fastn.ai/mcp/gateway?customer_id=CUSTOMER_ID`
+* **Authentication:** Your API key, passed as a query parameter
+* **Tool exposure:** Configurable per customer — "All connectors" or "Selected only"
+
+Example configuration:
+
+```json
+{
+  "mcpServers": {
+    "fastn": {
+      "url": "https://live.gcp.fastn.ai/mcp/gateway?customer_id=CUSTOMER_ID&api_key=fsk_live_..."
+    }
+  }
+}
 ```
-slack_send_message
-slack_list_channels
-slack_list_users
-```
 
-No Shopify tools — they haven't connected Shopify.
+#### Configuring tools
 
-### Per-tenant availability
+In the Data Plane view, you select a customer and configure which tools are exposed to agents acting on that customer's behalf:
 
-Tool visibility is scoped per tenant:
+* **All connectors** — every connector the customer has connected is available as a tool.
+* **Selected only** — you choose which connectors are exposed.
 
-1. AI assistant invokes an MCP tool
-2. Gateway identifies the tenant from the request context
-3. Gateway checks the tenant's active integrations
-4. Only tools for connected connectors are exposed
-5. Tool executes using the tenant's stored credentials
-6. Response returns to the AI assistant
+Until tools are configured, the gateway shows "No tools configured. Click Configure to enable connectors."
 
-This ensures tenants only see tools for apps they've connected, and all API calls use the correct tenant credentials.
+> **VERIFY:** Confirm whether `customer_id` in the gateway URL is the same identifier as `endOrgId` used in the embed token flow, and confirm the production authentication method (query parameter vs header).
 
-### Resource protocol
+### Which plane to use
 
-The MCP gateway implements the MCP resource protocol for read-only data access:
-
-| Resource       | Description                                     |
-| -------------- | ----------------------------------------------- |
-| `integrations` | List of active integrations and their status    |
-| `entities`     | CDM entities available across connected systems |
-| `events`       | Recent event history                            |
-| `usage`        | Quota usage data                                |
-
-Resources provide data without executing actions — useful for AI assistants that need to answer questions about state without triggering workflows.
-
-### MCP server URL
-
-```
-https://mcp.ucl.dev/mcp/?id={PROJECT_ID}&api_key={API_KEY}&space_id={PROJECT_ID}
-```
+| Goal                                                    | Plane                         |
+| ------------------------------------------------------- | ----------------------------- |
+| Manage your own Fastn workspace through an AI tool      | Control Plane (Admin MCP)     |
+| Let your product's AI agent act in a customer's systems | Data Plane (Customer Gateway) |
