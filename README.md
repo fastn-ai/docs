@@ -1,4 +1,5 @@
 ---
+title: "Fastn docs — embedded integration platform for AI agents"
 description: >-
   Everything you need to go from signup to a working embedded integration — what
   Fastn is, how it works, and your first end-to-end build.
