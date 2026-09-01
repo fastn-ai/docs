@@ -1,25 +1,49 @@
 ---
 description: >-
-  Everything you need to go from signup to a working embedded integration — what
-  Fastn is, how it works, and your first end-to-end build.
+  fastn is an embedded integration platform. You put it inside your product, and
+  your customers get native integrations with the tools they already use.
 ---
 
-# Getting Started
+# fastn
 
-Fastn is an embedded integration platform for SaaS companies. You embed it into your product, and your customers get native integrations with the apps they already use without you building or maintaining the overall infrastructure.
+You sell software. Your prospects ask whether it talks to their CRM, their ERP, their warehouse system. Building and maintaining those integrations is not your product, but losing deals over them is your problem.
 
-This section walks you through the platform from first principles to a working integration.
+fastn is the layer that answers that question for you. You describe what needs to happen in plain words, fastn's agents pick the connectors and write the workflow, and you drop an integrations panel into your own UI. Your customers authorise their own accounts. You never see their credentials, and you never write an OAuth flow.
 
-<figure><img src=".gitbook/assets/what is fastn.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/home.jpg" alt="The fastn home screen with the build prompt"><figcaption>Home. Describe what you want to build, or jump straight into a section.</figcaption></figure>
 
-### In this section
+### How the platform is laid out
 
-[**What is Fastn**](getting-started/what-is-fastn.md) — Who the platform is for, what it replaces, and how the core product areas work together.
+The left rail groups its navigation under three headings — **BUILD**, **OPERATE**, **MANAGE**. Each heading holds one or two nav items, and those items are what page breadcrumbs in this documentation refer to.
 
-[**Platform Overview**](getting-started/platform-overview.md) — How the platform is organized. Covers the four main sections (Home, Integrations, Activity, Settings), the onboarding steps, and the architecture underneath.
+| Rail group  | Nav items          | Sub-pages                                                                                | Who spends time here          |
+| ----------- | ------------------ | ------------------------------------------------------------------------------------------ | ----------------------------- |
+| **BUILD**   | Integrations       | Agent, Connectors, Unified APIs, Connections, Workflows, Triggers, Connector updates       | Developers and solution teams |
+|             | Widgets            | Layout, Style, Features, Embed                                                             | Developers and design         |
+| **OPERATE** | Activity           | Events, Traces, Alerts, Executions, Sync Reports                                           | Support and on-call           |
+|             | Customers          | —                                                                                          | Support and account teams     |
+| **MANAGE**  | Settings           | People, General, API keys, Secrets, Environments, Configs, Database, Billing, Roles, Audit log, Trash | Admins and owners  |
 
-[**Signing Up as a SaaS Partner** ](getting-started/signing-up-as-a-saas-partner.md)— Create your account, pass the validation pipeline, and get your API keys and dashboard access.
+So a page in this documentation headed **Integrations → Connectors** is the Connectors sub-page of the Integrations nav item, under the BUILD group.
 
-[**Your First Integration**](getting-started/your-first-integration.md) — Build a working integration from scratch using Fastn's AI functionalities
+### Where to start
 
-If you already have a Fastn account and want to jump straight to building, go to[ Your First Integration](getting-started/your-first-integration.md).
+{% content-ref url="getting-started/README.md" %}
+[Overview](getting-started/README.md)
+{% endcontent-ref %}
+
+{% content-ref url="getting-started/quickstart.md" %}
+[Quickstart: your first integration](getting-started/quickstart.md)
+{% endcontent-ref %}
+
+{% content-ref url="getting-started/concepts.md" %}
+[Core concepts](getting-started/concepts.md)
+{% endcontent-ref %}
+
+{% content-ref url="reference/faqs.md" %}
+[FAQs](reference/faqs.md)
+{% endcontent-ref %}
+
+{% hint style="info" %}
+Screenshots in these pages come from a development workspace. Names, counts and IDs will differ from yours; the layout will not.
+{% endhint %}
