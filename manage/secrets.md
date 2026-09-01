@@ -8,29 +8,37 @@ description: Encrypted values your workflows read at runtime.
 
 > Encrypted values your workflows read at runtime. Scope a secret to a customer or environment for per-tenant overrides.
 
-A secret is written once and never shown again. Workflows read it with `fastn.secrets.get`, so a key never has to live in your code.
+A secret is written once and never shown again, so a key never has to live in your code:
 
 ```javascript
 const apiToken = await fastn.secrets.get("SHOPIFY_API_TOKEN");
 ```
 
-The empty state says it plainly: *A secret is written once and never shown again. Workflows read it with `fastn.secrets.get`, so a key never has to live in your code.*
+With no secrets yet, the page shows **No secrets yet** above the same instruction:
+
+> A secret is written once and never shown again. Workflows read it with fastn.secrets.get.
 
 ### Creating one
 
-**New secret** — or **Create your first secret** on the empty state — takes a name and a value. The name is what your code passes to `fastn.secrets.get`; the value is encrypted on save and is not retrievable afterwards, from the UI or the API.
+**Create Secret** opens a form with five fields.
+
+| Field             | Notes                                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Name \***       | UPPER\_SNAKE\_CASE. This string is literally the argument to `fastn.secrets.get()`, so `SHOPIFY_API_TOKEN` here is `fastn.secrets.get("SHOPIFY_API_TOKEN")` in code. |
+| **Type**          | **Text** (the default) or **JSON**. JSON is validated on save and comes back to your workflow already parsed — you do not `JSON.parse` it yourself. |
+| **Value \***      | The value itself. Written once; the screen does not show it again afterwards.                                  |
+| **Customer**      | Defaults to **All customers (org-wide)**. Pick a customer to hold a value that applies only to them.           |
+| **Environment**   | Defaults to **All environments**. The other choices are **test** and **Live**.                                 |
 
 To change a value, write a new one over the same name.
 
 ### Scoping
 
-A secret can be global to the organisation, or scoped to a **customer** or an **environment**.
+A secret can be org-wide, or scoped to a **customer**, an **environment**, or both — which is what gives you per-tenant overrides without branching in code. The same `fastn.secrets.get("PARTNER_TOKEN")` call is what runs for everybody.
 
-Scoping gives you per-tenant overrides without branching in code: the same `fastn.secrets.get("PARTNER_TOKEN")` call resolves to whichever value applies to whoever is running. Resolution goes from most to least specific — customer, then environment, then organisation.
-
-### Guarantees
-
-Secrets are never logged, never included in execution output, and never exposed in error messages. The [audit log](audit-log.md) records `secret.create`, `secret.update` and `secret.delete` — who and when, never the value.
+{% hint style="info" %}
+How fastn picks between a customer-scoped and an environment-scoped value when both could match is not documented here. If you rely on overlapping scopes, set one up and confirm which value a run actually reads before you build on it.
+{% endhint %}
 
 ### What belongs here
 

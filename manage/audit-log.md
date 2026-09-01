@@ -8,42 +8,39 @@ description: Every action taken in this organisation.
 
 <figure><img src="../.gitbook/assets/settings-audit-log.jpg" alt="The audit log"><figcaption></figcaption></figure>
 
-A complete, filterable record of everything anyone — or anything — did.
+A complete, filterable record of everything anyone — or anything — did. The header carries the total, which runs high: a working organisation accumulates hundreds of thousands of events.
 
 ### The table
 
 | Column       | Notes                                                                                   |
 | ------------ | ----------------------------------------------------------------------------------------- |
-| **Who**      | A person, an API key (`apikey:7`), or a service (`agent-se`).                            |
-| **Action**   | The action name, e.g. `workflow.execute`, `auth.login`, `connector.publish`.              |
+| **Who**      | A person, or an API key in the form `apikey:7`.                                          |
+| **Action**   | The action name — `auth.login`, `workflow.execute`, `workflow.execute.completed`.        |
 | **Resource** | The object acted on, with its type underneath.                                           |
 | **Customer** | The customer scope, or **Organisation-wide**.                                            |
-| **Result**   | Success or failure.                                                                      |
+| **Result**   | **Success** on every observed row. How a failure renders has not been captured.          |
 | **When**     | Timestamp.                                                                               |
 
 ### Filters
 
-Search by person, action or resource; then narrow by **people**, **actions**, **types**, and a date range. **Export** downloads the filtered set.
+Search by person, action or resource; then narrow by **people**, **actions**, **types**, and a date range. **Export** downloads the set currently filtered — check the file it produces for its format before wiring anything to it.
 
 ### Action families
 
-Actions are namespaced, which makes filtering practical.
+Actions are namespaced, which is what makes filtering practical: `auth.login`, `workflow.execute` and `workflow.execute.completed` are all confirmed, and the pattern is `<resource>.<verb>`, sometimes with a terminal state appended.
 
-| Prefix                          | Covers                                                                   |
+Beyond those three, the surest way to see what your organisation actually emits is the **All actions** dropdown on this page — it lists the real vocabulary. Expect namespaces along these lines, but confirm there before you build a filter or an alert on one:
+
+| Prefix                          | Likely covers                                                            |
 | ------------------------------- | -------------------------------------------------------------------------- |
-| `auth.*`                        | Logins.                                                                   |
-| `api_key.*`                     | create, delete, revoke, roll, update.                                     |
-| `connection.*`, `credential.*`  | Connection lifecycle, token refresh, refresh failures, redaction.         |
-| `connector.*`                   | create, publish, promote, import, soft_delete, restore.                   |
-| `connector_update_proposal.*`   | Proposal creation, agent runs, decisions, apply, fan-out.                 |
-| `workflow.*`                    | create, update, publish, deploy, execute, rollback, replay, edit_code.    |
-| `workflow.sync.*`               | GitHub review flow: requested, merged, rejected, cancelled.               |
-| `secret.*`, `config.*`          | Secret and config changes. Values are never recorded.                     |
-| `user.*`, `membership.*`, `custom_roles.*` | Access changes.                                                |
-| `environment.*`                 | Environment creation, deletion, review requirements.                      |
-| `impersonation.start`           | Support access into a workspace.                                          |
-| `oauth.*`                       | initiate, complete, reconnect.                                            |
-| `widget.*`, `installation.*`    | Widget and installation changes.                                          |
+| `auth.*`                        | Logins. `auth.login` confirmed.                                           |
+| `workflow.*`                    | Workflow lifecycle and runs. `workflow.execute` and `workflow.execute.completed` confirmed. |
+| `api_key.*`                     | Key creation, rotation and revocation.                                    |
+| `connection.*`, `credential.*`  | Connection lifecycle and token refresh.                                   |
+| `connector.*`                   | Connector creation, publishing and deletion.                              |
+| `secret.*`, `config.*`          | Secret and config changes — who and when, not values.                     |
+| `user.*`, `membership.*`        | Access changes.                                                           |
+| `environment.*`                 | Environment changes.                                                      |
 
 ### Who can read it
 
@@ -51,14 +48,14 @@ Restricted to account owners and admins. This is enforced by role at the API lay
 
 ### What to look for
 
-| Question                                | Filter                                                                 |
+| Question                                | Where to start                                                          |
 | --------------------------------------- | ------------------------------------------------------------------------ |
-| Who changed this workflow?              | Action `workflow.update`, resource = the workflow.                      |
-| Why did a connection start failing?     | `credential.token_refresh_failed`, plus `connection.*` for that customer. |
-| Who created that API key?               | `api_key.create`.                                                       |
-| What did this key do?                   | Filter by the key under **All people**.                                 |
-| Did anyone touch production last night? | `workflow.deploy` plus the date range.                                  |
+| Who changed this workflow?              | Filter to the workflow as the resource, then pick its update action.     |
+| Why did a connection start failing?     | Filter to that customer, then to the connection and credential actions.  |
+| Who created that API key?               | Filter to the key-creation action in **All actions**.                    |
+| What did this key do?                   | Filter by the key — it appears under **All people** as `apikey:<n>`.     |
+| Did anyone touch production last night? | The deploy action plus the date range.                                   |
 
 {% hint style="info" %}
-Volume is high — a working organisation accumulates hundreds of thousands of events. Filter before you scroll, and export when you need to analyse.
+Filter before you scroll, and export when you need to analyse. At this volume, scrolling is not a search strategy.
 {% endhint %}

@@ -10,13 +10,13 @@ description: Your plan, what you have used, and where the ceilings are.
 
 ### Plan and credits
 
-The plan card shows what you are on and what it costs. **Credits this period** tracks AI usage — the same number as the top bar — with its reset date.
+The plan card shows what you are on and what it costs — **Free**, at **$0 per month**, until you upgrade. **See plans** is the upgrade control, and the only one on the page.
 
-The Free plan is described as *enough to build and test against a sandbox tenant. Upgrade before you put a paying customer on it.*
+**Credits this period** tracks AI usage against the allowance. It is the same number as the AI credits readout in the top bar, and the popover behind that readout is where the detail lives: tabs for **Your usage** and **Org total**, a **By agent** breakdown, and a reset at the start of the calendar month, UTC.
 
 ### Limits
 
-Every quota, with usage against it. Where a limit is enforced but not metered, it reads **not measured** with the cap shown.
+Each quota is listed with usage against it. **Customize customer limits** overrides limits for a single customer.
 
 | Limit                       | Scope        |
 | --------------------------- | ------------ |
@@ -27,37 +27,15 @@ Every quota, with usage against it. Where a limit is enforced but not metered, i
 | Connectors allowed          | total        |
 | Workflows                   | per customer |
 | Steps                       | per flow     |
-| Concurrent workflows        | total        |
-| AI sessions                 | per day      |
-| Messages                    | per AI session |
-| LLM tokens                  | per day      |
-| Data retention (days)       | total        |
-| Storage (GB)                | total        |
-| Connected accounts          | total        |
-| Users                       | per customer |
-| Webhook endpoints           | total        |
-| Max payload size (bytes)    | total        |
-| Executions                  | per month    |
-| AI credits                  | per month    |
+
+The list continues past the visible area with further rows — concurrency, AI sessions and tokens, retention, storage, connected accounts, users, webhook endpoints, payload size, executions and AI credits are all reported to appear further down. Scroll the page and read the rows themselves rather than relying on that list being complete or the scopes being as described.
 
 {% hint style="info" %}
 Going over a limit **stops new work rather than charging you, and nothing already running is interrupted.** No surprise invoices, but also no silent overage — a sync that stops because you hit a ceiling looks like a broken sync until you check this page.
 {% endhint %}
 
-The page flags how many limits are close enough to matter, so you can scan rather than read every row.
+### Below the fold
 
-### Customer tiers
+Sections further down this page — **Customer tiers** and **Create tier**, **Usage by customer**, **Payment** and **Invoices** — have not been captured, so this page does not describe how they behave. Read them in the product before planning around them.
 
-> What each customer is allowed to use. Every customer is on exactly one tier.
-
-**Create tier** defines a bundle of limits, which you then assign to customers. This is how you express your own plan structure: a trial tier with tight caps, a growth tier, an enterprise tier. Tiers can also carry a [custom role](roles.md), which is what scopes what an embedded user may do.
-
-**Customize customer limits** overrides limits for a single customer without creating a tier.
-
-### Usage by customer
-
-A per-customer breakdown of executions, events per day, integrations, users and storage. Useful for two things: finding the customer causing a spike, and checking whether the tier you put someone on matches what they actually use.
-
-### Payment and invoices
-
-**Payment** holds the card, requested when you upgrade. **Invoices** lists every charge with a downloadable receipt, issued at the end of each period.
+One thing about tiers is corroborated from elsewhere: the [Roles](roles.md) screen states that a custom role can be assigned to an embed tier under Billing, which is how you scope what an embedded end user may do.

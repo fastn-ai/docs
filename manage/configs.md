@@ -6,7 +6,9 @@ description: Values your workflow code reads per environment.
 
 **Settings → Configs**
 
-> A config holds anything that changes between test and live, like an endpoint or a feature flag. Read one with `fastn.envConfig.get`.
+With nothing configured yet, the page reads **No configs yet** above the line that explains the feature:
+
+> A config holds anything that changes between test and live, like an endpoint or a feature flag. Read one with fastn.envConfig.get.
 
 ```javascript
 const endpoint  = await fastn.envConfig.get("PARTNER_API_BASE");
@@ -15,11 +17,21 @@ const batchSize = await fastn.envConfig.get("BATCH_SIZE");
 
 ### Creating one
 
-**Add config** — or **Add your first config** on the empty state — takes a name and a value per environment. The same name resolves to a different value depending on which environment the run is in, so your code never branches on environment.
+**Add Config** takes two things.
 
-### Configs are readable
+**Key \*** is the string your code passes — `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`.
 
-Unlike [secrets](secrets.md), configs are not encrypted and are visible in the dashboard. That is the point: you want to be able to see what an environment is set to without running anything.
+**Values per environment** is one editor per environment, labelled with the display name and the slug: **Test (test)**, **Live (live)**, and a row for each named environment you have added. A value may be raw text or valid JSON.
+
+{% hint style="info" %}
+**Leaving an environment's editor blank skips that environment on save** — it does not write an empty value. That is usually what you want when you are only setting up test, but it means a config can silently have no value in live.
+{% endhint %}
+
+The same key resolves to a different value depending on which environment the run is in, so your code never branches on environment.
+
+### Configs versus secrets
+
+A config's value is entered and edited in the dashboard rather than written once and hidden, which is the practical difference from a [secret](secrets.md): you can see what an environment is set to without running anything. Treat that as the working assumption — anything whose exposure would be an incident belongs in a secret regardless.
 
 ### Choosing between a config and a secret
 

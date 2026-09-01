@@ -10,9 +10,29 @@ description: Every workflow run, newest first.
 
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 
+### The table
+
+| Column           | Notes                                                          |
+| ---------------- | ---------------------------------------------------------------- |
+| **Workflow**     | Name, with a version chip.                                      |
+| **Tier**         | Instant, Standard or Long.                                      |
+| **Status**       | See below.                                                      |
+| **Duration**     | How long the run took.                                          |
+| **Triggered by** | What started it.                                                |
+| **When**         | Timestamp, in your timezone.                                    |
+| **Replay**       | Re-runs the execution.                                          |
+
+**Rows per page** is 10, 20 or 50.
+
 ### Filters
 
-Status chips carry live counts:
+| Filter          | Values                                                                            |
+| --------------- | ----------------------------------------------------------------------------------- |
+| Date range      | **All time** (default), Last 15m, 1h, 6h, 24h, 7d, 30d                             |
+| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timeout, Cancelled           |
+| Workflow        | One workflow, or all                                                               |
+
+Alongside them: **Search executions** and **Refresh**.
 
 | Status        | Meaning                                                           |
 | ------------- | ------------------------------------------------------------------- |
@@ -24,24 +44,37 @@ Status chips carry live counts:
 | **Timeout**   | Exceeded its execution timeout.                                    |
 | **Cancelled** | Stopped before finishing.                                          |
 
-Alongside them: a time range (**All time**, Last 15m, 1h, 6h, 24h, 7d, 30d), a workflow selector, a search box, **Refresh**, and rows-per-page.
+### Opening a run
 
-### What counts as an execution
+This is where debugging actually happens. A row expands **inline** — you do not leave the page — into:
 
-> A workflow appears here the moment it runs, whether a trigger fired it, a schedule reached it, the API called it, or an agent did. Test runs started from a workflow's own Execute button are not recorded here.
+* A **result banner** for the run, and its **Raw response**.
+* Chips summarising the run: **Steps**, **Success**, **Error**, **Slowest**.
+* Tabs **Summary**, **Input** and **Output**.
+* A footer carrying the two identifiers you need when asking anyone else about the run: `exec_…` and `wf_…`.
 
-That last sentence means the **Run Live** button on a workflow's Test tab. The exclusion is deliberate. This log is the record of real traffic; iterating in the Test tab does not pollute it.
+The Summary JSON carries the keys worth knowing by name:
+
+| Key                                          | Tells you                                                  |
+| -------------------------------------------- | ------------------------------------------------------------ |
+| `totalSteps`, `succeeded`, `failed`          | How much of the run got through.                            |
+| `slowestStep`, `slowestMs`                   | Where the time went — the first thing to read on a slow run. |
+| `peakSandboxMB`, `sandboxMemoryLimitMB`      | How close the run came to its memory ceiling.               |
+
+{% hint style="warning" %}
+Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run will not quietly recover the way a transient failure does — it just stops.
+{% endhint %}
 
 ### Reading the statuses
 
-**Failed** is a workflow error — bad data, a rejected call, a bug. Open the execution for the error and the logs.
+**Failed** is a workflow error — bad data, a rejected call, a bug. Expand the row for the result banner and raw response, then check [Traces](traces.md) for the external call behind it.
 
 **Timeout** means the tier's budget ran out. Either the work genuinely needs longer, or a single external call is hanging. Check [Traces](traces.md) before raising the timeout.
 
-**Queued** for an extended period suggests you are at a concurrency limit. Check [Billing](../manage/billing.md) for the concurrent-workflows cap.
+**Queued** for an extended period means the run has been accepted but has not yet reached a runner.
 
-**Cancelled** means something stopped it — a deploy replacing the version mid-run, or a manual cancel.
+**Cancelled** means the run stopped before finishing.
 
-### Retries
+### The per-workflow tab
 
-When a workflow's retry policy is on, retries appear as separate executions. A cluster of failures followed by a success is the policy working, not four separate incidents.
+The **Executions** tab inside a workflow's editor filters differently: its pills are HTTP status codes — **All**, `200`, `201`, `400`, `404`, `422`, `500` — rather than run statuses. Use this page when you want to know *how a run ended*, and that tab when you want to know *what the caller got back*.

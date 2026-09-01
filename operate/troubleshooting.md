@@ -37,12 +37,13 @@ Filter the Events chips by **Scheduled** — a count of zero on a schedule you e
 
 A Delivered event means the payload arrived and was handed on. If no execution followed:
 
+* **The workflow was never published.** Every call returns `WORKFLOW_NOT_PUBLISHED` until a snapshot is published, so nothing runs and nothing appears in Executions. The workflows list shows this as **Not published** / **Unpublished**, and its tooltip says so: "Never published — this workflow cannot run yet." This is the likeliest cause of *nothing ran at all*. Publish a snapshot from the editor.
 * The workflow is **disabled**. Check the Status toggle in its Configuration panel.
 * The trigger route points at an environment with **nothing deployed to it**. A named environment runs the version deployed there, and the fire fails if nothing is. Either deploy, or point the route at `test`, which runs the latest published version.
 
 ### Event never Delivered
 
-It exhausted its delivery attempts and is parked under **Failed deliveries**. Fix the cause, then **Replay**. Attempt count and backoff are on the webhook trigger — see [Triggers](../build/triggers.md).
+It exhausted its delivery attempts. The row shows a failure state in the **Status** column; fix the cause, then **Replay** it. Attempt count and backoff are on the webhook trigger — see [Triggers](../build/triggers.md).
 
 ---
 
@@ -50,7 +51,7 @@ It exhausted its delivery attempts and is parked under **Failed deliveries**. Fi
 
 ### Status: Failed
 
-Open the execution for the error and logs, then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
+Expand the execution row for its result banner and raw response, then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
 
 1. **The connection is Expired or Failed.** The customer re-authorises through your widget.
 2. **The upstream API changed.** Check [Connector updates](../build/connector-updates.md) for a proposal against that connector.
@@ -65,23 +66,21 @@ The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 * **Hundreds of calls** — batch them, or move to the Long tier.
 * **A Pending trace that never resolved** — the upstream system accepted the request and never answered.
 
-**Escalate on timeout** retries one tier up with the higher tier's full budget, which buys time without redesigning. It is subject to your plan.
+**Escalate on timeout** retries one tier up — instant to standard — which buys time without redesigning. It returns a queued execution id to poll, so the caller's response shape changes; the option is hidden on the Long tier, which has nothing above it.
 
-### Status: Queued for a long time
+### Status: Failed with no obvious error
 
-You are probably at the concurrent-workflows cap. Check [Billing](../manage/billing.md).
+Expand the row and read `peakSandboxMB` against `sandboxMemoryLimitMB`. Out-of-memory never retries, so a run that hit the ceiling simply stops rather than recovering on the next attempt.
 
-### Retries that look like repeated failures
+### Retries
 
-With a retry policy on, each attempt is a separate execution. A cluster of failures ending in a success is the policy working.
-
-The policy retries transient failures, and timeouts too when **Escalate on timeout** is off. Code errors, data errors and out-of-memory never retry, however many attempts you allow.
+The retry policy retries transient failures. Code errors, data errors and out-of-memory never retry, however many attempts you allow — so if the same run fails identically every time, the policy is not the thing to adjust.
 
 ---
 
 ## It succeeded but the data is wrong
 
-Open [Sync reports](sync-reports.md). It shows what the run created, updated, skipped and rejected, record by record — which distinguishes *the record was filtered out* from *the record was never seen*.
+Open [Sync reports](sync-reports.md). It shows what the run did, record by record — which distinguishes *the record was filtered out* from *the record was never seen*.
 
 If the page is empty, the workflow does not call `fastn.diff.compare`. Ask the agent to add diff reporting; reconstructing this from logs afterwards is far harder.
 
@@ -122,10 +121,12 @@ Almost always a connection. Open [Connections](../build/connections.md) — the 
 | ------------ | -------------------------------------------------------------- |
 | **Expired**  | The customer re-authorises through your widget.               |
 | **Failed**   | Access was revoked, a password changed, or a key was rotated. Same fix. |
-| **Inactive** | Re-enable from the row menu.                                  |
+| **Inactive** | The row menu offers **Reconnect** and **Disconnect**. There is no re-enable — reconnect it. |
 | Missing      | They never connected that system.                             |
 
-Also check whether that customer is **pinned to an older connector version**, and whether their [customer tier](../manage/billing.md) has a limit they have hit.
+Use the search box rather than the status filter chips: see [Known issues](#known-issues) below.
+
+Also check whether that customer is **pinned to an older connector version** — see Version pins on the connector.
 
 ---
 
@@ -133,23 +134,30 @@ Also check whether that customer is **pinned to an older connector version**, an
 
 | Response                       | Cause                                                                            |
 | ------------------------------ | ---------------------------------------------------------------------------------- |
+| `WORKFLOW_NOT_PUBLISHED`       | No snapshot has been published for that workflow. Publish one from the editor.   |
 | Rejected with a test key       | Missing `X-fastn-Test-Mode: true`. A test key is refused without it.             |
-| Rejected with a live key       | Sending `X-fastn-Test-Mode: true` with an `fsk_live_` key. Drop the header.      |
 | Wrong code ran                 | `x-fastn-env`. `test` means the latest published version; any other slug means the version deployed there. |
-| Empty `ctx.input`              | The body is missing its `input` wrapper. Copy the curl from the workflow's API tab. |
-| Forbidden                      | The key's role does not carry the permission. See [Roles](../manage/roles.md).   |
-
----
-
-## Everything stopped at once
-
-Check [Billing](../manage/billing.md). Going over a limit stops new work rather than charging you, and nothing already running is interrupted — which reads exactly like a broken platform until you look at the usage figures. The page flags how many limits are close enough to matter, so it is a quick scan rather than a full read.
+| Forbidden                      | The key's permissions do not cover the call. Key permissions are a preset plus a **What it can touch** matrix on the key itself — see [API keys](../manage/api-keys.md). [Roles](../manage/roles.md) govern people, not keys. |
 
 ---
 
 ## You deleted something by mistake
 
-Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Widgets, customers, connections, triggers and secrets are deleted immediately and cannot be restored.
+Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources — as the product puts it, "widgets and their integrations among them" — are deleted immediately and cannot be restored from that page.
+
+---
+
+## Known issues
+
+These are current product defects rather than anything you have misconfigured. Route around them.
+
+| What you see                                                       | What is actually happening                                                          |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| Connections filter chips (**Active**/**Inactive**/**Expired**/**Failed**) return nothing | The chips report 0 for every state even when rows are plainly Active. Search by customer or connector instead. |
+| A connector shows **Connected** in the list but **0 connections** on its detail page | The list badge and the detail count disagree. Check [Connections](../build/connections.md) for the real answer. |
+| `Created: Invalid Date` on a connector overview                    | A date-rendering bug, not a broken connector.                                        |
+| Trash → **Actions** hangs on `Loading deleted actions…`            | The tab never resolves. Deleted actions cannot currently be reviewed there.          |
+| The connector catalogue count is higher than the systems you recognise | Several systems appear twice, once **managed** and once **Custom**. The headline count is not a count of distinct systems. |
 
 ---
 

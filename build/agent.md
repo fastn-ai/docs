@@ -8,15 +8,30 @@ description: The chat-driven builder that picks connectors, drafts workflows and
 
 <figure><img src="../.gitbook/assets/agent-home.jpg" alt="The agent start screen"><figcaption></figcaption></figure>
 
-The agent is the primary way integrations get built in fastn. You describe the outcome; it works out which connectors are involved, sets up authentication, drafts the workflow, generates test cases, and presents the result for review.
+The agent is the primary way integrations get built in fastn. The pane is headed **Build an integration**, and states its own contract:
+
+> Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
+
+What it drafts is JavaScript — a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](workflows.md) for you to read, test and publish.
 
 ### Sessions
 
-The left sidebar holds your session history. Each session keeps its full conversation, so you can come back to an integration weeks later and continue where you left off rather than re-explaining it.
+The left rail, headed **Sessions**, holds your session history. Each session keeps its full conversation, so you can come back to an integration weeks later and continue where you left off rather than re-explaining it. Before you start anything it reads *No sessions yet. Click New session to start.*
 
 * **New session** starts a fresh build.
-* The search icon filters sessions by name.
-* The collapse icon widens the workspace when you are reading a long diff.
+* **Search sessions** (⌘K) filters the rail by name.
+* **Collapse sessions sidebar** widens the workspace when you are reading a long diff.
+
+### Starting from an example
+
+Four cards sit under **START FROM AN EXAMPLE**:
+
+* *Sync deals into billing*
+* *Alert before an SLA breaches*
+* *Keep a sheet current*
+* *Give an agent scoped access*
+
+They are written in the shape a good first message takes, and are worth reading before you write your own.
 
 ### Writing a good first message
 
@@ -29,25 +44,22 @@ The agent handles ambiguity by asking, but you get a better first draft by being
 | **What moves**              | "the company name, the deal amount, and the line items"      |
 | **The rules**               | "skip anything under $500", "only the EU warehouse"          |
 
-The example cards on the start screen are written in exactly this shape and are a good template.
+The composer carries **Attach a file**, the message box (*Write a message…*) and **Send**.
 
 ### Approval mode
 
-The control under the message box decides how far the agent goes without checking in.
+The chip under the message box decides how far the agent goes without checking in.
 
-| Mode     | Behaviour                                                                        |
-| -------- | ---------------------------------------------------------------------------------- |
-| **Auto** | Runs the build end to end and presents the finished draft. Fastest for exploration. |
-| Manual   | Pauses for confirmation at each significant step. Use when touching live data.      |
+| Mode     | Behaviour                                                              |
+| -------- | ------------------------------------------------------------------------ |
+| **Auto** | The default. Does not ask. Fastest for exploration.                     |
+| Manual   | Asks before any create, update or delete. Use when touching live data.   |
 
-### What it does, in order
+### What it does
 
-1. **Analyse** — which systems, what data, what transformations, which trigger.
-2. **Connector setup** — reuse what exists, create what does not.
-3. **Auth** — inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes.
-4. **Field mapping** — proposed source-to-target mappings, a record matching strategy, and any filters.
-5. **Test cases** — generated scenarios, marked MOCK or LIVE, for you to approve.
-6. **Workflow** — the code, opened in the editor.
+The product's own summary is the reliable one: the agents pick the connectors, draft the workflow, and show you the diff before anything runs. In practice that means working out which systems are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat — inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes — and then writing the workflow code and opening it in the editor.
+
+Generated test cases land on the editor's **Test cases** tab, grouped as `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`, each row badged `LIVE` or `MOCK`.
 
 ### Iterating
 
@@ -62,8 +74,12 @@ The agent updates code, mappings and test cases together, so they do not drift a
 
 ### Attachments
 
-The paperclip accepts files — an API spec, a sample payload, a field-mapping spreadsheet. Giving the agent a real payload is the single fastest way to get accurate mappings.
+**Attach a file** accepts an API spec, a sample payload, a field-mapping spreadsheet. Giving the agent a real payload is the single fastest way to get accurate mappings.
 
 {% hint style="info" %}
-Agent usage draws on the AI credits shown in the top bar. The balance and its reset date are under [Billing](../manage/billing.md).
+Agent usage draws on the AI credits shown in the top bar — click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, naming the ones doing this work: *Orchestrator V2 Orchestrator*, *Docs Agent*, *Error Diagnosis* and *Orchestrator V2 Title*. Plan and quota detail live under [Billing](../manage/billing.md), which is visible to Owners and Admins.
+{% endhint %}
+
+{% hint style="warning" %}
+Using the AI assistant is gated by role rather than by an individual permission, so a role that cannot use it cannot be granted access to it one permission at a time.
 {% endhint %}

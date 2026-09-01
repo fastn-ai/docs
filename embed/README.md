@@ -16,8 +16,18 @@ Two pages cover it:
 
 {% content-ref url="embedding.md" %}[Embedding the widget](embedding.md){% endcontent-ref %}
 
+### There is no widget list
+
+**Widgets** in the sidebar opens `/widgets`, which *is* the builder. There is no separate list page: the **INTEGRATIONS** panel inside the builder is the list of what your widget offers. A **Live** badge appears in the builder header once the widget has been saved.
+
 ### The preview
 
-The preview is not an approximation. It renders the real widget at **Mobile**, **Tablet** and **Desktop** widths, and the user selector at the top-right lets you view it as any of your customers — so you can see their actual connection states rather than a mock-up. **View as admin** shows the administrative variant.
+The preview renders the widget at **Mobile**, **Tablet** and **Desktop** widths, with **Tablet** selected by default. The tenant selector at the top right, defaulting to **View as admin**, renders the widget as any one of your customers — so you can see their actual connection states rather than a mock-up. **Preview** opens it on its own.
 
-**Save and publish** pushes changes to the live widget. **Reset** discards them.
+### Saving, and the two Resets
+
+**Save and publish** in the sticky footer pushes changes to the live widget.
+
+{% hint style="warning" %}
+The two Resets do different things. **Reset**, beside Save and publish in the footer, discards changes you have not saved. **Widget actions** ⋯ → **Reset to defaults** throws the whole configuration back to its defaults. Check which one you are clicking.
+{% endhint %}

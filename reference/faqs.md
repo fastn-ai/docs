@@ -10,7 +10,7 @@ description: Short answers to the questions that come up most.
 
 <summary>Do my customers need a fastn account?</summary>
 
-No. Your customers only ever see the [widget](../embed/README.md) embedded in your product. They authorise their own accounts there and never sign in to fastn.
+No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorising their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user` — not a fastn login of their own.
 
 </details>
 
@@ -26,7 +26,9 @@ No. The [agent](../build/agent.md) writes workflows from a plain description, an
 
 <summary>What is the difference between a customer and a tenant?</summary>
 
-Nothing. *Tenant* is the older name, still used in some API parameters and in the V1 documentation. Both mean one isolated container for a customer's connections and data.
+They are the same thing under two names, and **both are current**. *Customer* is what the dashboard calls it — the Customers screen, the ⌘K search group, the Connections column. *Tenant* is what the plumbing calls it: it is the column header on all three Triggers tables, and the last segment of a connection id, `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`.
+
+So do not read *tenant* as legacy vocabulary you can ignore. If a screen or an identifier says tenant, it means one of your customers.
 
 </details>
 
@@ -46,7 +48,7 @@ A **connector** is the definition of a system — its actions, auth methods and 
 
 <summary>My customers see "fastn.ai" on the OAuth consent screen. How do I show my own brand?</summary>
 
-Register your own OAuth app for that connector under its **Auth** tab. Until you do, the consent screen shows fastn.ai. See [Connectors](../build/connectors.md).
+Start on the connector's **Auth** tab, which is where a connector's OAuth providers are configured — it shows the auth methods and a providers list. Whether that lets you register your own OAuth application, and what the consent screen then shows, is not something this page can confirm; check the tab for your connector, and ask fastn if it is not there. See [Connectors](../build/connectors.md).
 
 </details>
 
@@ -54,7 +56,13 @@ Register your own OAuth app for that connector under its **Auth** tab. Until you
 
 <summary>A connection says Expired or Failed. Can I fix it from the dashboard?</summary>
 
-No, and that is deliberate — the credential belongs to the customer. They re-authorise through your widget. Expired means the credential ran out and could not be refreshed; Failed means the last verification was rejected, usually revoked access or a rotated key.
+Not by re-entering the credential — it belongs to the customer, and they re-authorise through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
+
+The precise meaning of each status is not documented here; treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect" and read the connection's own **Token and activity** section for `Expires`, `Last refreshed` and `Last used`.
+
+{% hint style="warning" %}
+The **Active** / **Inactive** / **Expired** / **Failed** filter chips on the Connections tab currently return zero rows whichever one you pick, even when every row in the unfiltered list shows Active. Do not conclude from an empty filtered list that you have no connections in that state — clear the filter and read the Status column.
+{% endhint %}
 
 </details>
 
@@ -82,15 +90,13 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 
 <summary>Which execution tier should I pick?</summary>
 
-**Instant** only when something is waiting on the answer — the caller blocks, up to 2 minutes. **Standard** for almost everything else; it returns 202 and runs in the background, up to 15 minutes. **Long** for batch imports and backfills, up to 6 hours.
+| Tier         | Behaviour                                       | Maximum      | Timeout slider |
+| ------------ | ----------------------------------------------- | ------------ | -------------- |
+| **Instant**  | The caller blocks and gets the result inline.    | **30 seconds** | 1s – 30s     |
+| **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s – 15min   |
+| **Long**     | Returns 202, runs in the background.             | **36 hours**   | 30s – 36h    |
 
-</details>
-
-<details>
-
-<summary>Why don't my test runs appear in Executions?</summary>
-
-By design. Test runs from a workflow's own Run Live button execute without saving and are not recorded — the [Executions](../operate/executions.md) log is the record of real traffic.
+**Instant** only when something is genuinely waiting on the answer — 30 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
 
 </details>
 
@@ -122,7 +128,15 @@ Set a **deduplication key** on the webhook trigger, and add an idempotency guard
 
 <summary>Does a retry policy retry everything?</summary>
 
-No. It retries transient failures — and timeouts as well, when **Escalate on timeout** is off. Code errors, data errors and out-of-memory never retry.
+No. It retries transient failures. **Code errors, data errors and out-of-memory never retry** — a bug does not get better on the second attempt, and neither does a payload that was always malformed.
+
+</details>
+
+<details>
+
+<summary>I called the API and nothing ran.</summary>
+
+Check whether the workflow has ever been published. Until a snapshot exists, every call returns `WORKFLOW_NOT_PUBLISHED` — the workflow list shows this as status **Not published** and latest version **Unpublished**. See [HTTP API](api.md).
 
 </details>
 
@@ -166,7 +180,7 @@ Account owners and admins only. It is enforced at the API layer and cannot be gr
 
 <summary>Can I limit an agent to read-only access for one customer?</summary>
 
-Yes — that is what the action checkboxes on a connector are for, combined with a narrow role on the API key. See [MCP gateway](../build/mcp-gateway.md).
+Yes. Combine the action selection on the connector with a narrow API key: pick the **Viewer** preset, or **Custom** with only the read boxes ticked in the `What it can touch` matrix, and set **Customers it can reach** to **Only the ones I pick**. See [API keys](../manage/api-keys.md).
 
 </details>
 
@@ -202,7 +216,53 @@ New work stops rather than being charged for, and nothing already running is int
 
 <summary>I deleted something by mistake.</summary>
 
-Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Widgets, customers, connections, triggers and secrets are deleted immediately and cannot be restored.
+Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources — widgets and their integrations among them — are deleted immediately and cannot be restored from that page.
+
+</details>
+
+---
+
+## Things that look broken
+
+<details>
+
+<summary>Why does the same connector appear twice in the catalogue?</summary>
+
+Because two entries exist for one system — typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
+
+The practical consequence: the connector count is a count of *entries*, not of distinct systems, so "156 connectors" is not 156 different products. Check the badge and the provenance line before you connect, so you do not authorise the copy you did not mean.
+
+</details>
+
+<details>
+
+<summary>A connector says Connected but its detail page says 0 connections.</summary>
+
+That is a known inconsistency between the list badge and the detail page's count, not a lost connection. Confirm on the [Connections](../build/connections.md) tab, which lists actual connections with their customer and status.
+
+</details>
+
+<details>
+
+<summary>A connector shows "Created: Invalid Date".</summary>
+
+A display defect in the Overview tab's Created row. It says nothing about the connector's health.
+
+</details>
+
+<details>
+
+<summary>The Trash Actions tab never finishes loading.</summary>
+
+Known: the **Actions** tab on [Trash](../manage/trash.md) sits on *Loading deleted actions…* and does not resolve. The Connectors and Workflows tabs work normally.
+
+</details>
+
+<details>
+
+<summary>The Connections status filters return nothing.</summary>
+
+Also known — every status chip returns zero rows. Clear the filter and read the Status column instead.
 
 </details>
 

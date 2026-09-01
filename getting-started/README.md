@@ -10,17 +10,19 @@ Every integration you ship yourself carries the same recurring cost: an OAuth ap
 
 fastn takes that whole layer. You keep the part your customers pay for.
 
-### The four things you work with
+### The five things you work with
 
 **Connectors** are the systems your customers can authorise — a catalogue managed by fastn, plus any you create. A connector knows an API's actions, its auth methods, and its webhooks.
 
 **Connections** are what you get when a specific customer authorises a specific connector. Credentials live encrypted on fastn's side, scoped to that customer.
 
-**Workflows** are the code that runs. They read from one system, transform, and write to another. The agent writes them; you review, test, publish and deploy.
+**Workflows** are the code that runs. Each one is a JavaScript module — a file called `<slug>.js` that exports `export default async function(ctx)`. It reads from one system, transforms, and writes to another. The agent writes them; you review, test, publish and deploy.
 
 **Triggers** decide when a workflow runs — an inbound webhook, a schedule, or an event from a connected system.
 
-Around those four sit two surfaces: **Widgets**, the panel your customers see inside your product, and **Activity**, where you watch everything that happens.
+**Unified APIs** give you one canonical endpoint per business entity — contact, document, message — served by whichever provider each customer connected, so your code stops branching per vendor.
+
+Around those five sit two surfaces: **Widgets**, the panel your customers see inside your product, and **Activity**, where you watch everything that happens.
 
 ### The shape of a build
 
@@ -40,6 +42,8 @@ fastn is used by two different people at once, and the product is split accordin
 | ---------------------------- | ------------------------------------------------------------------------ |
 | The SaaS company using fastn | Build, Operate and Manage — the dashboard in these docs                  |
 | Your customer                | The embedded widget inside your product — they never sign in to fastn    |
+
+Inside the dashboard, what you can see and do depends on your role. The role vocabulary is **Platform Admin**, **Owner**, **Admin**, **Developer** and **Operator**, and it changes the Settings navigation as well as individual permissions — an Owner or Admin sees People, General, Billing, Roles and Audit log; a Developer does not, but does see Trash.
 
 {% content-ref url="platform-tour.md" %}
 [Platform tour](platform-tour.md)

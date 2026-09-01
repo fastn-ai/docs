@@ -12,9 +12,13 @@ description: Terms used across fastn, defined once.
 
 **App event trigger** — starts a workflow when something changes in a connected system.
 
+**Approval mode** — on the [agent](../build/agent.md), whether it asks before it acts. **Auto** (the default) creates, updates and deletes without asking; **Manual** asks first.
+
 **Backoff strategy** — how long fastn waits between delivery attempts: Exponential, Linear or Fixed.
 
-**Connection** — one customer's authorised link to one connector. Holds the encrypted credential.
+**Config** — a per-environment value read with `fastn.envConfig.get`. Entered and edited in the dashboard rather than write-once, unlike a secret.
+
+**Connection** — one customer's authorised link to one connector. Holds the encrypted credential. Its id has the form `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`.
 
 **Connector** — the definition of an external system: actions, auth methods, webhook config, versions. Managed by fastn, or custom.
 
@@ -22,39 +26,47 @@ description: Terms used across fastn, defined once.
 
 **Contract** — the declared input and output shape of a workflow.
 
-**Customer** — one of your customers; an isolated container for their connections and data. Called a *tenant* in older material and some API parameters.
+**Customer** — one of your customers, and the unit your connections and embedded integrations are scoped to. **Tenant** is the same thing under a different name, and both are current vocabulary: *Tenant* is the column header on all three Triggers tables and the last segment of a connection id, while *Customer* is what the dashboard screens call it.
 
-**Customer tier** — a bundle of limits, and optionally a role, that every customer sits on exactly one of.
+**Customer tier** — referred to on the Roles screen as an *embed tier* under Billing, to which a custom role can be assigned. Beyond that, how tiers behave is not documented here — read the Billing screen before planning around them.
 
 **Deduplication key** — a field in an incoming payload that uniquely identifies an event, so a retried delivery does not run the workflow twice.
 
-**Embed token** — a short-lived credential scoping the widget to one customer.
+**Deploy** — sends a published version to an environment so it handles real events.
+
+**Embed session** — one customer's session inside your embedded widget, opened with an embed token and capped at seven days of refreshing, after which the widget posts `fastn:session-expired` to the parent. A **shareable link** is the alternative way in: created on the widget's Embed tab, and carrying no token — but the reference in the URL is itself the credential, so it is revocable and should be treated as a secret.
+
+**Embed token** — a credential scoping the widget to one customer. Minted at `POST /api/v1/embed/token`, prefixed `emb_`, valid for eight hours.
 
 **Environment** — a deployment stage. `test` and `live` are built in; you can add named ones. In the `x-fastn-env` header, `test` means *latest published version*.
 
-**Escalate on timeout** — retry one tier up on timeout, with the higher tier's full time budget.
+**Escalate on timeout** — on a timeout, retry one tier up (instant → standard). It changes the caller's response shape: instead of an inline result, the caller gets a queued execution id to poll. Hidden on the Long tier, which has nothing above it.
 
 **Event** — one inbound arrival: a webhook fired, a schedule reached, a manual run.
 
 **Execution** — one workflow run, with a status, duration, tier and version.
 
-**Execution tier** — Instant, Standard or Long. Decides whether the caller waits and how long the run may take.
-
 **Execution mode** — Parallel or Sequential, on a webhook trigger.
 
-**fastn.db** — customer-scoped SQL available inside a workflow.
+**Execution tier** — how long a run may take and whether the caller waits. **Instant** — synchronous, result inline, **30 seconds**. **Standard** — asynchronous, 202, **15 minutes**. **Long** — asynchronous, 202, **36 hours**.
 
-**fastn.state** — durable key-value storage across runs, scoped ORG or INVOCATION.
+**fastn.db** — SQL inside a workflow, against **your workspace's** own Postgres schema (`ws_<hash>`). The schema isolates your workspace from every other workspace; it does not separate one of your customers from another inside it.
 
-**MCP gateway** — lets an AI client reach your connectors as tools, scoped by customer, role and action. See [MCP gateway](../build/mcp-gateway.md).
+**fastn.state** — durable key-value storage across runs, in scope ORG or INVOCATION.
+
+**fastn.unified** — the runtime handle for [unified APIs](../build/unified-apis.md): call one canonical entity and let fastn route to whichever provider the customer connected.
+
+**Installation** — one customer's set-up of one of your integrations, carrying its own configuration. Identified at runtime by the `x-installation-id` header, alongside `x-fastn-installation-config`.
+
+**MCP access** — reaching your connectors as tools from an AI client. The surface in the product is **Connect to Claude** in the top bar, which supplies an MCP URL and a deep link. See [MCP gateway](../build/mcp-gateway.md).
 
 **Organisation** — you, the SaaS company. Holds connectors, workflows, widgets, people and settings.
 
 **Per customer / workspace** — whether a connector in a workflow uses the running customer's connection or one your organisation owns.
 
-**Publish** — creates an immutable version snapshot (v1, v2, …).
+**Platform Admin** — a platform-level role held by fastn, visible in the organisation switcher. Not a role you assign to someone inside your own organisation.
 
-**Deploy** — sends a published version to an environment so it handles real events.
+**Publish** — creates an immutable version snapshot (v1, v2, …). Until a workflow has one, every call returns `WORKFLOW_NOT_PUBLISHED`.
 
 **Replay** — re-deliver a past event to its workflow.
 
@@ -62,9 +74,7 @@ description: Terms used across fastn, defined once.
 
 **Route** — on a webhook trigger, one destination for an arriving payload. Multiple routes fan out.
 
-**Secret** — an encrypted value read at runtime with `fastn.secrets.get`. Write-once, never displayed.
-
-**Config** — a per-environment value read with `fastn.envConfig.get`. Not encrypted.
+**Secret** — an encrypted value read at runtime with `fastn.secrets.get`. Written once and not shown again.
 
 **Sync report** — a record-by-record account of what a run changed. Produced when a workflow calls `fastn.diff.compare`.
 

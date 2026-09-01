@@ -4,7 +4,7 @@ description: Authenticated links between your customers and their systems.
 
 # Connections
 
-**Integrations → Connections**
+**Integrations → Connections** · `/integrations?tab=connections`
 
 <figure><img src="../.gitbook/assets/connections-list.jpg" alt="The connections table"><figcaption></figcaption></figure>
 
@@ -14,20 +14,25 @@ A connection is one customer's authorised link to one connector. It holds the cr
 
 | Column        | What it tells you                                                                 |
 | ------------- | ----------------------------------------------------------------------------------- |
-| **Connector** | The system, with the connection's name underneath (`Default` unless you named it). |
-| **Customer**  | Which customer owns it. `—` means a workspace-level connection owned by your org.  |
-| **Auth**      | How it was authorised: `OAUTH`, `OAUTH_2`, `INPUT`.                                |
+| **Connector** | The system, with the tenant key on the second line.                                |
+| **Customer**  | Which customer owns it.                                                            |
+| **Auth**      | How it was authorised.                                                             |
 | **Status**    | Active, Inactive, Expired or Failed.                                               |
 | **Created**   | When the customer authorised it.                                                   |
+| **⋯**         | **Reconnect** and **Disconnect**.                                                  |
 
-The filter chips above the table match the status values, so **Expired** and **Failed** give you a one-click triage list.
+The table pages at 10 rows. Filter chips above it — **All**, **Active**, **Inactive**, **Expired**, **Failed** — are not kept in the URL, so a filtered view cannot be linked.
+
+{% hint style="warning" %}
+The `Active`, `Inactive`, `Expired` and `Failed` chips currently return nothing, even when every row in the unfiltered table shows `Active`. Until that is fixed, triage from the full list rather than the chips.
+{% endhint %}
 
 ### Status, and what to do about each
 
 | Status       | Meaning                                                       | Action                                                              |
 | ------------ | ------------------------------------------------------------- | -------------------------------------------------------------------- |
 | **Active**   | Working.                                                      | Nothing.                                                            |
-| **Inactive** | Exists but disabled.                                          | Re-enable from the row menu, or delete if it is genuinely finished. |
+| **Inactive** | Exists but disabled.                                          | **Reconnect** from the row menu, or **Disconnect** if it is genuinely finished. |
 | **Expired**  | The credential ran out and could not be refreshed.            | The customer re-authorises through your widget.                     |
 | **Failed**   | The last verification call was rejected — revoked access, changed password, rotated key. | Same: the customer reconnects. |
 
@@ -37,16 +42,38 @@ Expired and Failed connections are the most common cause of "the sync stopped wo
 
 ### Auth types
 
-**OAUTH / OAUTH\_2** — the customer signed in with the provider. fastn holds the refresh token and renews access tokens on its own. Refresh attempts, successes and failures are all recorded in the [audit log](../manage/audit-log.md).
+The `Auth` column mixes display names and raw enum values for the same concepts — you will see `OAuth 2.0` and `OAUTH` for one, `Custom` and `INPUT` for the other. They are the same two shapes:
 
-**INPUT** — the customer pasted a key, token or connection string. These do not expire on their own but do break when rotated upstream.
+**OAuth** — the customer signed in with the provider. fastn holds the refresh token and renews access tokens on its own. Whether that is still working is visible on the connection's detail page, under **Token and activity**.
+
+**Custom / INPUT** — the customer pasted a key, token or connection string. These do not expire on their own but do break when rotated upstream.
+
+### Inside a connection
+
+Opening a row gives four sections.
+
+**Connection** — `Customer`, `Connector`, `Auth method`, `Scope` and `Connection ID`. Scope reads `Account level` when the connection is shared across the workspace rather than belonging to one customer. The connection id has the form:
+
+```
+ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>
+```
+
+The page's own note on it is the operative one:
+
+> Pass this to the API to act as this customer.
+
+**Token and activity** — `Expires`, `Last refreshed`, `Last used`, `Created`, `Updated`. This is where you check whether a refresh is still succeeding.
+
+**Recent activity** — the last calls made on this connection, with **View all** into [Activity](../operate/README.md).
+
+**Danger zone** — **Disconnect this customer**:
+
+> Syncing stops immediately and the credential is deleted.
 
 ### Creating a connection yourself
 
-**New connection** is for connections your organisation owns — your own Slack workspace, your own data warehouse — wired into workflows as *workspace* rather than *per customer*.
+**New connection** opens a full-screen **Connect a system** picker: a **Search systems** box, an A–Z index, a counter reading `156 of 156 systems`, and one row per connector showing its auth-method label.
+
+Use it for connections your organisation owns — your own Slack workspace, your own data warehouse — which a workflow then uses at account level rather than per customer.
 
 Customer connections should be created by the customer, through your embedded widget. That is what keeps their credentials theirs.
-
-### Row actions
-
-The **…** menu on each row offers verify, set as default, and delete. Deleting a connection revokes the workflows' access immediately; anything running against it starts failing on the next call.

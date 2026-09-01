@@ -6,6 +6,8 @@ description: Everything that defines how an integration behaves.
 
 Build is where integrations are made. Nine pages, in roughly the order you meet them.
 
+Seven of them match a screen under **Integrations** in the sidebar. *MCP gateway* and *Common patterns* have no screen of their own — they cut across several. The other BUILD nav item, **Widgets**, is documented under [Embed](../embed/README.md).
+
 {% content-ref url="agent.md" %}[Agent](agent.md){% endcontent-ref %}
 
 {% content-ref url="connectors.md" %}[Connectors](connectors.md){% endcontent-ref %}

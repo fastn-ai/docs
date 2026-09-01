@@ -4,33 +4,37 @@ description: One canonical endpoint per business entity, served by whichever pro
 
 # Unified APIs
 
-**Integrations → Unified APIs**
+**Integrations → Unified APIs** · `/integrations?tab=unified`
 
 <figure><img src="../.gitbook/assets/unified-apis.jpg" alt="Unified API categories"><figcaption></figcaption></figure>
 
 Three of your customers use three different CRMs. Without a unified API, your code branches three ways for what is conceptually one operation: create a contact. With one, you call a single endpoint and fastn routes to whichever provider that customer authorised.
 
+> One canonical endpoint per business entity, served by whichever providers your org connects.
+
 ### Categories and entities
 
-A **category** is a domain — CRM, Documents, Messaging. An **entity** is a business object inside it — Account, Contact, Note. Each entity is backed by one or more **providers**.
+A **category** is a domain. An **entity** is a business object inside it. Each entity is backed by one or more **providers**. There are three categories, shown with a `3 categories` chip and a **Search categories** box; a search that matches nothing reads `No categories match` / *Try another search.*
 
-| Category      | Entities               | Providers                      |
-| ------------- | ---------------------- | ------------------------------ |
-| **CRM**       | Account, Contact, Note | HubSpot, Salesforce, Zoho CRM  |
-| **Documents** | 2 entities             | Google Docs, Notion            |
-| **Messaging** | 2 entities             | Slack, Microsoft Teams         |
+| Category      | Entities                            | Providers (slugs)                          |
+| ------------- | ----------------------------------- | -------------------------------------------- |
+| **CRM**       | `Account`, `contact`, `Note`        | `hubspot`, `salesforce`, `zohoCrm`          |
+| **Documents** | `Document`, `Document Content`      | `googleDocs`, `notion`                      |
+| **Messaging** | `Channel Message`, `Direct Message` | `microsoftTeams`, `slack`                   |
 
-The exact set depends on your workspace — the page header shows the category count, and each card its entity count.
+The provider slugs are what you use in the API; the cards show display names. Entity names are reproduced as the product renders them — note that `contact` is lower-case among title-case siblings, which is a display inconsistency rather than a different kind of entity.
 
 ### Inside a category
 
 <figure><img src="../.gitbook/assets/unified-api-crm-detail.jpg" alt="The CRM unified surface, showing the Account entity"><figcaption></figcaption></figure>
 
+Opening a category swaps the pane for a detail view with the breadcrumb **Unified APIs / \<Category>** and two chips, *N entities* and *N providers*. **The URL does not change when you do this**, so there is no link you can send someone that opens a category directly.
+
 Each entity gets its own block showing:
 
 * **Connection state** — `0/1 connected`, `0/3 connected`. How many of the backing providers this customer has authorised.
-* **Providers** — each with its own Connect button.
-* **API** — the endpoints, filterable by provider, each with **Copy curl**.
+* **PROVIDERS** — one row per provider, with a **Connect** button, or **Connected** and a `⋯` menu offering **Add another connection** and **Disconnect default**.
+* **API** — the endpoints, filtered by an **All providers** selector, each row with **Copy curl**.
 
 Endpoints follow a consistent shape:
 
@@ -44,7 +48,7 @@ POST /api/v1/unified/crm/account
 POST /api/v1/unified/crm/note
 ```
 
-Not every entity supports every verb. Note, for example, is create-only, and the UI says so.
+Not every entity supports every verb. `Note` and both Messaging entities — `Channel Message` and `Direct Message` — are create-only.
 
 ### Choosing between unified and direct
 
@@ -56,6 +60,6 @@ Not every entity supports every verb. Note, for example, is create-only, and the
 
 The two are not exclusive — a workflow can use a unified endpoint for the common path and a direct connector action for the vendor-specific part.
 
-### The PROVIDER selector
+### The All providers filter
 
 Above the endpoint list, **All providers** shows the canonical surface; picking a single provider shows how that one behaves. Useful when a provider has a quirk you need to design around.

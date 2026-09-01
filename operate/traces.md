@@ -1,27 +1,29 @@
 ---
-description: Every workflow run that called a connected system, and how long each call took.
+description: Every workflow run that called a connected system.
 ---
 
 # Traces
 
 **Activity → Traces**
 
-A trace is recorded for every workflow run that calls a connected system. Where [Executions](executions.md) tells you a run failed, traces tell you which external call was responsible.
+A trace is recorded for every workflow run that calls a connected system. Where [Executions](executions.md) tells you a run failed, traces are where you look for the external call behind it.
 
-### Filters
+### Controls
 
-**All**, **Success**, **Error**, **Pending**, each with a live count.
+**Search traces**, and filters for **All**, **Success**, **Error** and **Pending**.
 
-**Pending** deserves attention. A trace that never resolves usually means an upstream system accepted the request and never answered — the failure mode that produces timeouts rather than errors, and the one people find hardest to diagnose without this view.
+**Pending** is the state worth watching. A trace that never resolves points at an upstream system that accepted the request and never answered — the failure mode that produces timeouts rather than errors, and the one people find hardest to diagnose.
 
-### What a trace shows
+### When the page is empty
 
-Each entry covers one workflow run and the connector calls it made, with per-call duration. Reading them tells you three things quickly:
+Until a workflow calls a connected system there is nothing here. An empty filter gives you **No traces match**, with:
 
-* **Which system is slow.** A workflow that takes 40 seconds is usually waiting on one call, not doing 40 seconds of work.
-* **Which call fails.** Error traces name the connector and the action.
-* **How many calls a run makes.** A run doing hundreds of calls is a candidate for batching, and is probably close to its tier's timeout.
+> A trace is recorded for every workflow run that calls a connected system.
 
 {% hint style="info" %}
-If traces show one connector consistently slow, raising the workflow's execution timeout treats the symptom. Batching the calls, or moving to the Long tier, treats the cause.
+This page is thin in these docs because no trace had been recorded in the workspace we documented from. The controls above are confirmed; the shape of a populated row is not. If you are working from a workspace with real traffic, trust the screen over this page.
 {% endhint %}
+
+### Traces and timeouts
+
+If a workflow is timing out, look here before raising its execution timeout. A longer timeout treats the symptom. Batching the calls, or moving to the Long tier, treats the cause. See [Executions](executions.md) for the run-level view.

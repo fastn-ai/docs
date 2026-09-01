@@ -4,7 +4,7 @@ description: Every system your customers can authorise — managed, imported or 
 
 # Connectors
 
-**Integrations → Connectors**
+**Integrations → Connectors** · `/integrations?tab=connectors`
 
 <figure><img src="../.gitbook/assets/connectors-list.jpg" alt="The connector catalogue"><figcaption></figcaption></figure>
 
@@ -12,92 +12,135 @@ A connector is the definition of one external system: its actions, its authentic
 
 ### The catalogue
 
-The page header states the intent plainly: *depth on the ones that block deals, not a catalogue count*. Connectors marked **managed** are maintained by fastn — when the vendor ships a breaking change, you get a proposal under [Connector updates](connector-updates.md) rather than a broken sync.
+The page header states the intent plainly:
 
-| Control            | What it filters                                                     |
-| ------------------ | --------------------------------------------------------------------- |
-| **Search**         | Name and description                                                 |
-| **All**            | Everything in the catalogue                                          |
-| **Connected**      | Connectors with at least one live connection                         |
-| **OAuth**          | Connectors offering OAuth 2.0                                        |
-| **All Visibility** | Private (your workspace only) or Public (visible to your workspaces) |
+> Every system your customers can authorise. Depth on the ones that block deals, not a catalogue count.
 
-Cards show the connector's name, a managed/custom/Connected badge, its description, its auth methods, and who maintains it. The button reads **Connect** on an unconnected connector and **Add another connection** on one already in use.
+Connectors marked **managed** are maintained by fastn — when the vendor ships a breaking change, you get a proposal under [Connector updates](connector-updates.md) rather than a broken sync. Ones you build yourself are badged **Custom**. Either badge is replaced by **Connected** once at least one connection exists.
+
+| Control            | What it filters                                          | URL              |
+| ------------------ | ---------------------------------------------------------- | ---------------- |
+| **Search connectors** | Name and description                                   | `?q=`            |
+| **All / Connected / OAuth** | Everything · at least one live connection · offers OAuth 2.0 | `?category=` |
+| **All Visibility** | `All Visibility`, `Private`, `Public`                     | `?visibility=`   |
+
+There is no sort control. The list pages at 24 per page with a footer reading `1–24 of 156`; the page number is not kept in the URL, so a deep link always lands on page one.
+
+A search that matches nothing shows `No connectors match "x"`, *Try another search or category.* and a **Clear search** button.
+
+**Card anatomy.** Favicon, name, badge, description, an `OAuth 2.0` chip where it applies, and a provenance string. The footer button reads **Connect**, or **Add another connection** with a chevron offering **Reconnect** and **Disconnect**. The `⋯` menu holds **Select**, **Edit**, **Export** and **Delete**.
+
+**Header controls.** **Create connector** opens the create dialog. **Import** is a bare file input — it takes a JSON connector definition with no intermediate dialog. Selecting cards (via `⋯ → Select`) reveals **Export Selected (n)**.
+
+{% hint style="warning" %}
+Three things about this list are known to mislead, and are worth knowing before you count anything:
+
+* The catalogue contains duplicates — Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core each appear twice, once `managed` and once `Custom` — so the total is not a count of distinct systems.
+* A connector badged `Connected` in the list can still report `0 connections` on its own detail page.
+* Provenance is written three different ways for the same thing: *Managed by Fastn*, *Managed by fastn.ai* and *Managed by fastn*.
+{% endhint %}
 
 ### Inside a connector
 
-Click any card to open it. A searchable list of every action sits on the left; five tabs on the right.
+`/integrations/connectors/<slug>`. Three panes: the connector list on the left, that connector's actions in the middle, and the detail tabs on the right.
+
+* **Left** — **Back to all connectors**, **Create a connector**, a search box, and the connector list with `<Name> operations` expanders. Connectors your org owns also get **Add action**.
+* **Middle** — the action list, each with a method chip (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`), plus **Select all**. Selecting actions is how you scope what a workflow or an agent may use — the point of *read-only Jira for one customer, nothing beyond that*.
+* **Right** — the connector name, a `<owner> · <auth type>` line, a version chip such as `v1.0 · Test`, a **Connect** button, and a `⋯` menu with **Edit** and **Delete**. Below that, five tabs.
 
 <figure><img src="../.gitbook/assets/connector-detail-overview.jpg" alt="A connector's overview tab"><figcaption>The Overview tab: connections, auth methods, current version.</figcaption></figure>
 
 #### Overview
 
-Three counters — connections, auth methods, current version — and a details table.
+Three tiles — **Connections**, **Auth method(s)**, **Current version** — and a details table.
 
-| Field            | Meaning                                                                                      |
-| ---------------- | ---------------------------------------------------------------------------------------------- |
-| **Slug**         | The identifier used in API paths and in workflow code.                                        |
-| **Visibility**   | **Private**: your workspace only. **Public**: workspaces under your org can use it when Catalog connectors is on. Other organisations never see it. |
-| **Auth methods** | What your customers authorise with.                                                           |
-| **Created**      | When it entered the catalogue.                                                                |
+| Field            | Meaning                                                                       |
+| ---------------- | ------------------------------------------------------------------------------- |
+| **Slug**         | The identifier used in API paths and in workflow code.                         |
+| **Visibility**   | Private or Public. New connectors start Private; publishing publicly is a platform-admin action. |
+| **Auth methods** | What your customers authorise with.                                            |
+| **Created**      | When it entered the catalogue.                                                 |
 
-The **Versions** panel lists every version with its Test/Live state.
+A **Versions** section underneath carries a `Test` / `Live` toggle and a **Publish to live** control.
 
 #### Auth
 
 <figure><img src="../.gitbook/assets/connector-auth-tab.jpg" alt="A connector's authentication methods"><figcaption></figcaption></figure>
 
-The authentication methods your customers can use, one marked **Default**. Two shapes:
+One row per authentication method, plus a **9 providers** button showing the OAuth apps behind it. The tab describes the two shapes in your customer's terms:
 
-* **OAuth** — customers sign in with the provider and approve access. The providers link shows which OAuth apps back it.
-* **Token or key** — customers paste a credential they generate themselves.
+> Your customers sign in with the provider and approve access.
 
-{% hint style="warning" %}
-Until you register your own OAuth app for a connector, your customers see **fastn.ai** on the provider's consent screen. Set up your own app on this tab to show your brand instead.
-{% endhint %}
+> Your customers paste a key they generate themselves.
 
 #### Connections
 
-Every customer who has authorised this connector, with the auth method they used and the connection's status. It is the same data as the workspace-wide [Connections](connections.md) page, filtered to this one system — the fastest way to answer "how many of our customers have connected Salesforce, and are any of them broken?"
+Every customer who has authorised this connector. Before anyone has, it reads `Nobody has connected yet`. It is the same data as the workspace-wide [Connections](connections.md) page, filtered to this one system.
 
 #### Version pins
 
-Connectors are versioned, and a customer can be held on a specific version rather than the current one.
+> Hold one customer on one version while everyone else moves on. A version set in code still wins over a pin.
 
-Pin a customer when they cannot absorb a change yet — a field they depend on moved, or their own integration needs a release first. Everyone else moves forward while that customer stays put, and you unpin them when they are ready. Without pins, a connector change is all-or-nothing across your whole customer base.
+That second sentence is the rule that matters: a pin is a fallback, not an override. Pin a customer when they cannot absorb a change yet — a field they depend on moved, or their own integration needs a release first — then unpin them when they are ready.
+
+With nothing to pin, the tab reads `No versioned actions yet` / *Add actions with an externalVersion to enable per-tenant routing.*
+
+The tab also carries a **Compare two versions** tool: `Action slug`, `From`, `To`, `From major`, `To major`, and **Compare**.
 
 #### Webhook config
 
-Where inbound event delivery from this system is set up: the endpoint the vendor calls, the signing secret used to verify that a delivery really came from them, and which events are subscribed.
+**New config** creates one. Until then:
 
-This is the plumbing behind an [app event trigger](triggers.md). Configure it here once, and app event triggers on this connector work for every customer without each of them registering a webhook themselves.
+> No webhook config yet
 
-### Actions
+> Until one exists, customers of this connector can be polled but cannot be notified.
 
-The left panel lists every action with its HTTP verb. Asana, for example, exposes 159. Checkboxes let you scope which actions a workflow or an agent is allowed to use — the point of *"read-only Jira for one customer, nothing beyond that"*.
+That is the plumbing behind an [app event trigger](triggers.md) — configure it once here and app event triggers on this connector work for every customer, rather than each of them registering a webhook themselves.
+
+### Action detail
+
+Opening an action from the middle pane gives seven tabs: **Params**, **Headers**, **Auth**, **Body**, **Input schema**, **Output schema** and **Mocks**. The footer shows the action's version and a **New version** button.
+
+Actions on a platform-owned connector are marked **Read-only — owned by platform** and offer **Propose an update** instead of an edit — that proposal is what surfaces under [Connector updates](connector-updates.md).
 
 ### Creating a connector
 
-**Create connector** opens a dialog with two sections.
+**Create connector** opens a dialog with three sections: **Identity**, **Connection** and **Authentication**.
 
 <figure><img src="../.gitbook/assets/create-connector-dialog.jpg" alt="The create connector dialog"><figcaption></figcaption></figure>
 
-| Field           | Notes                                                                        |
-| --------------- | ------------------------------------------------------------------------------ |
-| **Name**        | Required. What people see.                                                    |
-| **Slug**        | Derived from the name; editable. Used in API paths and code, so choose once.  |
-| **Description** | Optional, but the agent reads it when deciding what a connector is for.       |
-| **Protocol**    | REST, MCP, FTP, Database or REDIS.                                            |
-| **Visibility**  | Starts Private. Publishing to the customer catalog is done by a platform admin. |
-| **Domain**      | Optional. The vendor's domain.                                                |
-| **Icon URL**    | Optional. Shown on the card and in the widget.                                |
+| Field           | Type   | Notes                                                                        |
+| --------------- | ------ | ------------------------------------------------------------------------------ |
+| **Name**        | text   | Required. What people see. Placeholder `Salesforce`.                          |
+| **Slug**        | text   | Required. *Derived from the name. Edit it to override.* Used in API paths and code. |
+| **Description** | text   | Optional, but the agent reads it when deciding what a connector is for.       |
+| **Protocol**    | select | Required. `REST` (default), `MCP`, `FTP`, `Database`, `REDIS`.                |
+| **Visibility**  | select | Offers only `Private` — publishing a connector publicly is a platform-admin action. |
+| **Domain**      | text   | Optional. The vendor's domain, e.g. `salesforce.com`.                         |
+| **Icon URL**    | text   | Optional. Shown on the card and in the widget.                                |
 
-Authentication is configured after creation, from **No Auth**, **Basic Auth**, **Digest Auth**, **Bearer Token**, **API Key**, **OAuth 2.0** or **Custom**.
+Authentication is set up **in the same dialog**, not afterwards. **Add method** adds one; each method has a type:
+
+| Type            | Internal value |
+| --------------- | -------------- |
+| No Auth         | `NO_AUTH`      |
+| Basic Auth      | `BASIC`        |
+| Digest Auth     | `DIGEST`       |
+| Bearer Token    | `BEARER`       |
+| API Key         | `API_KEY`      |
+| OAuth 2.0 (default) | `OAUTH_2`  |
+| Custom          | `INPUT`        |
+
+Those internal values are worth knowing because some of them surface raw in the `Auth` column on [Connections](connections.md).
+
+Each method also carries a **Set as default** radio, an **Authentication docs URL(optional)** field, a **Use Dynamic Client Registration (DCR)** checkbox (RFC 7591), and an **Additional OAuth Config(optional)** key/value repeater. Choosing Basic Auth or API Key swaps in a **Configuration** section with a `Form` / `JSON` toggle and a key/value repeater.
+
+The dialog footer will not let you save until the connector is named — the hint reads *Give it a name to continue.*
 
 {% hint style="info" %}
 You rarely need to do this by hand. Describe the system to the [Agent](agent.md) and give it a spec URL or an OpenAPI file — it will discover the actions, build the connector, and test it.
 {% endhint %}
 
-### Importing
+### Importing and exporting
 
-**Import** brings in a connector definition that already exists — exported from another workspace, or generated from a spec.
+**Import** takes a JSON connector definition straight from a file picker — exported from another workspace, or generated from a spec. In the other direction, `⋯ → Export` exports one card, and **Export Selected (n)** exports a batch.
