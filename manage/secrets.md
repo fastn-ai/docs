@@ -8,6 +8,8 @@ description: Encrypted values your workflows read at runtime.
 
 > Encrypted values your workflows read at runtime. Scope a secret to a customer or environment for per-tenant overrides.
 
+<figure><img src="../.gitbook/assets/create-secret.jpg" alt="The Create Secret panel with Name, Type, Value, Customer and Environment fields"><figcaption>New secret opens the Create Secret panel. The name is UPPER_SNAKE_CASE and becomes the argument to <code>fastn.secrets.get()</code>.</figcaption></figure>
+
 A secret is written once and never shown again, so a key never has to live in your code:
 
 ```javascript

@@ -8,6 +8,8 @@ description: Values your workflow code reads per environment.
 
 With nothing configured yet, the page reads **No configs yet** above the line that explains the feature:
 
+<figure><img src="../.gitbook/assets/configs-empty.jpg" alt="The Configs page empty state with Add config and Add your first config"><figcaption>The Configs page before any config exists. Read a config from workflow code with <code>fastn.envConfig.get("key")</code>.</figcaption></figure>
+
 > A config holds anything that changes between test and live, like an endpoint or a feature flag. Read one with fastn.envConfig.get.
 
 ```javascript
