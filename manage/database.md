@@ -10,7 +10,7 @@ description: Which Postgres your workflows read and write through.
 
 Workflows can persist data with `fastn.db`. This page decides where that data lands.
 
-> Choose which Postgres your workflows read and write through fastn.db.
+> Which Postgres your workflows read and write through.
 
 Every `fastn.db` call from this organisation goes to whichever option is selected here, and the page shows the active schema name in the form `ws_<32 hex characters>`.
 

@@ -20,7 +20,7 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 | **Duration**     | How long the run took.                                          |
 | **Triggered by** | What started it.                                                |
 | **When**         | Timestamp, in your timezone.                                    |
-| **Replay**       | Re-runs the execution.                                          |
+| **Actions**      | The **Replay** control re-runs the execution.                                          |
 
 **Rows per page** is 10, 20 or 50.
 

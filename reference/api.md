@@ -8,7 +8,7 @@ description: Calling workflows and unified endpoints over HTTP.
 
 ### Base URL
 
-The base URL is the deployment you are on — for example `https://dev.gcp.fastn.ai` on the development platform. Your workflow's **API** tab always shows the correct one for your workspace; the examples below use `YOUR_FASTN_HOST`.
+The base URL is the deployment you are on — for example `https://live.gcp.fastn.ai` on the production platform. Your workflow's **API** tab always shows the correct one for your workspace; the examples below use `YOUR_FASTN_HOST`.
 
 ---
 

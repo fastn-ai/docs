@@ -40,7 +40,7 @@ Three status tooltips explain the unpublished state, and the middle one is the s
 
 **Search workflows** filters by name; pills split the list by execution tier — **All**, **Instant**, **Standard**, **Long**.
 
-Two buttons sit top-right: **Build with AI**, which hands the job to the [agent](agent.md), and **Create workflow**, which gives you an empty one.
+Two buttons sit top-right: **Connect GitHub**, which connects the workspace to a GitHub repository, and **Create workflow**, which gives you an empty one.
 
 ### The editor
 
@@ -110,7 +110,7 @@ Then **Run Live** (or **Run**).
 This list is **auto-extracted from the `fastn.connectors.X.Y(…)` calls in your code every time you save** — it is a readout of the code, not a separate configuration. **Add** exists for anything you need to wire manually. Each row shows a **Per customer** badge where it applies, plus the connector slug, the owning org, the action and its version.
 
 {% hint style="warning" %}
-Pinned action versions are what stop an upstream change breaking you silently. When fastn proposes a newer action, it arrives through [Connector updates](connector-updates.md) for you to accept.
+Pinned action versions are what stop an upstream change breaking you silently. When fastn proposes a newer action, it arrives through [Pending updates](connector-updates.md) for you to accept.
 {% endhint %}
 
 #### Contract
@@ -156,7 +156,7 @@ See [Sync reports](../operate/sync-reports.md).
 How to call this workflow over HTTP, with a copyable curl:
 
 ```http
-POST https://dev.gcp.fastn.ai/api/v1/workflows/<wfId>/execute
+POST https://live.gcp.fastn.ai/api/v1/workflows/<wfId>/execute
 ```
 
 Two headers steer it — `X-fastn-Test-Mode` and `x-fastn-env` — and you authenticate with an API key in the `fsk_live_…` format. Covered in full in the [HTTP API reference](../reference/api.md).

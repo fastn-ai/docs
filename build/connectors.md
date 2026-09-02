@@ -16,7 +16,7 @@ The page header states the intent plainly:
 
 > Every system your customers can authorise. Depth on the ones that block deals, not a catalogue count.
 
-Connectors marked **managed** are maintained by fastn — when the vendor ships a breaking change, you get a proposal under [Connector updates](connector-updates.md) rather than a broken sync. Ones you build yourself are badged **Custom**. Either badge is replaced by **Connected** once at least one connection exists.
+Connectors marked **managed** are maintained by fastn — when the vendor ships a breaking change, you get a proposal under [Pending updates](connector-updates.md) rather than a broken sync. Ones you build yourself are badged **Custom**. Either badge is replaced by **Connected** once at least one connection exists.
 
 | Control            | What it filters                                          | URL              |
 | ------------------ | ---------------------------------------------------------- | ---------------- |
@@ -24,7 +24,7 @@ Connectors marked **managed** are maintained by fastn — when the vendor ships 
 | **All / Connected / OAuth** | Everything · at least one live connection · offers OAuth 2.0 | `?category=` |
 | **All Visibility** | `All Visibility`, `Private`, `Public`                     | `?visibility=`   |
 
-There is no sort control. The list pages at 24 per page with a footer reading `1–24 of 156`; the page number is not kept in the URL, so a deep link always lands on page one.
+There is no sort control. The list pages at 24 per page with a footer reading `1–24 of 236`; the page number is not kept in the URL, so a deep link always lands on page one.
 
 A search that matches nothing shows `No connectors match "x"`, *Try another search or category.* and a **Clear search** button.
 
@@ -101,7 +101,7 @@ That is the plumbing behind an [app event trigger](triggers.md) — configure it
 
 Opening an action from the middle pane gives seven tabs: **Params**, **Headers**, **Auth**, **Body**, **Input schema**, **Output schema** and **Mocks**. The footer shows the action's version and a **New version** button.
 
-Actions on a platform-owned connector are marked **Read-only — owned by platform** and offer **Propose an update** instead of an edit — that proposal is what surfaces under [Connector updates](connector-updates.md).
+Actions on a platform-owned connector are marked **Read-only — owned by platform** and offer **Propose an update** instead of an edit — that proposal is what surfaces under [Pending updates](connector-updates.md).
 
 ### Creating a connector
 

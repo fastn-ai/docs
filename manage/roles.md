@@ -14,14 +14,14 @@ description: What each role can do, and how to narrow one.
 
 | Role          | Permissions | Summary                                                                                                                 |
 | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Owner**     | 45          | One per organisation. Manages admins and transfers ownership.                                                            |
-| **Admin**     | 45          | Full access within their organisation and customers.                                                                     |
+| **Owner**     | 42          | One per organisation. Manages admins and transfers ownership.                                                            |
+| **Admin**     | 42          | Full access within their organisation and customers.                                                                     |
 | **Developer** | 34          | Builds and deploys connectors, workflows and agents.                                                                     |
 | **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only.                                                         |
 | **Viewer**    | 6           | Read-only on connectors, connections, workflows, agents, widgets and events. Not executions, users, settings or secrets. |
 | **End User**  | 35          | Uses the embed widget: creates connections, runs agents.                                                                 |
 
-Selecting a role on the left shows its permission matrix, the count it holds out of 45, and a percentage bar. Built-in roles carry a **Built in** badge.
+Selecting a role on the left shows its permission matrix, the count it holds out of 42, and a percentage bar. Built-in roles carry a **Built in** badge.
 
 ### Platform Admin
 
@@ -44,7 +44,7 @@ The six roles on this screen govern **people**. API keys carry their own permiss
 | **Secrets**     | read, write, delete                                                 |
 | **Executions**  | create, read                                                        |
 | **Widgets**     | create, read, update, delete                                        |
-| **Unified API** | create, read, update, delete, execute                               |
+| **Unified API** | read, execute                               |
 
 ### Two capabilities that are not permissions
 

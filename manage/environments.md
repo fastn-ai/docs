@@ -21,7 +21,7 @@ description: Deployment stages, and the GitHub review gate in front of them.
 
 Live carries a **Protected** badge. Read that as fastn marking it as the one you should not casually restructure; whether the badge also hard-blocks deletion is not something this page can confirm.
 
-**Create Environment** adds a stage and asks for two things:
+**New environment** opens the **Create Environment** dialog, which adds a stage and asks for two things:
 
 | Field       | Notes                                              |
 | ----------- | ---------------------------------------------------- |

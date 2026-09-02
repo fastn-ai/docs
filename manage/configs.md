@@ -17,7 +17,7 @@ const batchSize = await fastn.envConfig.get("BATCH_SIZE");
 
 ### Creating one
 
-**Add Config** takes two things.
+**Add config** opens the **Add Config** dialog, which takes two things.
 
 **Key \*** is the string your code passes — `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`.
 

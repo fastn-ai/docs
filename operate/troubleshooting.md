@@ -14,7 +14,7 @@ Work down this page in order. Most problems resolve at the first or second step,
 | Something ran but ended badly                 | [Executions](executions.md) — what status?             |
 | It succeeded but the data is wrong            | [Sync reports](sync-reports.md)                        |
 | It is slow                                    | [Traces](traces.md)                                    |
-| It worked yesterday and not today             | [Connections](../build/connections.md), then [Connector updates](../build/connector-updates.md) |
+| It worked yesterday and not today             | [Connections](../build/connections.md), then [Pending updates](../build/connector-updates.md) |
 | One customer is affected, others are not      | [Connections](../build/connections.md), scoped to that customer |
 
 ---
@@ -54,7 +54,7 @@ It exhausted its delivery attempts. The row shows a failure state in the **Statu
 Expand the execution row for its result banner and raw response, then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
 
 1. **The connection is Expired or Failed.** The customer re-authorises through your widget.
-2. **The upstream API changed.** Check [Connector updates](../build/connector-updates.md) for a proposal against that connector.
+2. **The upstream API changed.** Check [Pending updates](../build/connector-updates.md) for a proposal against that connector.
 3. **The data did not match the contract.** A field the mapping expects is absent or the wrong type.
 4. **A permission is missing.** The customer's OAuth grant may not cover the scope the action needs.
 

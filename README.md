@@ -18,7 +18,7 @@ The left rail groups its navigation under three headings — **BUILD**, **OPERAT
 
 | Rail group  | Nav items          | Sub-pages                                                                                | Who spends time here          |
 | ----------- | ------------------ | ------------------------------------------------------------------------------------------ | ----------------------------- |
-| **BUILD**   | Integrations       | Agent, Connectors, Unified APIs, Connections, Workflows, Triggers, Connector updates       | Developers and solution teams |
+| **BUILD**   | Integrations       | Connectors, Unified APIs, Connections, Workflows, Triggers, Pending updates                 | Developers and solution teams |
 |             | Widgets            | Layout, Style, Features, Embed                                                             | Developers and design         |
 | **OPERATE** | Activity           | Events, Traces, Alerts, Executions, Sync Reports                                           | Support and on-call           |
 |             | Customers          | —                                                                                          | Support and account teams     |

@@ -12,10 +12,16 @@ Everything you build in fastn — connectors, actions, workflows — can be expo
 
 ### Connecting
 
-**Connect to Claude** opens a dialog carrying two things: the gateway's MCP URL, and a deep link that opens Claude's custom-connector modal with it filled in.
+**Connect to Claude** opens a dialog carrying several ways in: the gateway's MCP URL, a deep link that opens Claude's custom-connector modal with it filled in, a ready-made Claude Code command, a Claude Desktop `mcp-remote` config, and an org-wide add link.
 
 ```
-https://mcp.fastn-test.dev
+https://mcp.fastn.dev
+```
+
+For Claude Code, the dialog also gives you a command to run:
+
+```
+claude mcp add --transport http fastn https://mcp.fastn.dev
 ```
 
 For any other MCP client, point it at that URL and authenticate with an API key from [Settings → API keys](../manage/api-keys.md):

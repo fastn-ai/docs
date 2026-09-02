@@ -20,7 +20,7 @@ With no secrets yet, the page shows **No secrets yet** above the same instructio
 
 ### Creating one
 
-**Create Secret** opens a form with five fields.
+**New secret** opens the **Create Secret** form, which has five fields.
 
 | Field             | Notes                                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |

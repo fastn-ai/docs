@@ -18,7 +18,7 @@
 * [Connections](build/connections.md)
 * [Workflows](build/workflows.md)
 * [Triggers](build/triggers.md)
-* [Connector updates](build/connector-updates.md)
+* [Pending updates](build/connector-updates.md)
 * [MCP gateway](build/mcp-gateway.md)
 * [Common patterns](build/patterns.md)
 

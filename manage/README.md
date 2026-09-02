@@ -6,7 +6,7 @@ description: Organisation settings, access, credentials and billing.
 
 **Settings** in the MANAGE group of the left rail.
 
-**Its sub-navigation is role-scoped — you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, Billing, Roles and Audit log; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. Visibility varies in both directions: Trash is absent from the Owner sidebar, and People, Billing, Roles and the Audit log are absent from a Developer's.
+**Its sub-navigation is role-scoped — you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, Billing, Roles, Audit log and Trash; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. The pages a Developer does not get are the administrative ones — People, General, Billing, Roles and the Audit log; Trash shows for everyone.
 
 The table follows the Owner sidebar order, with Trash last.
 
@@ -40,5 +40,5 @@ The sidebar itself changes by role, so the first answer to "why can't I see that
 | People, General, Billing, Roles | In the Owner and Admin sidebar; absent from a Developer's.      |
 | Secrets                  | The `Secrets` permissions — `read`, `write`, `delete`.                  |
 | API keys, Environments, Configs, Database | In both the Owner/Admin and Developer sidebars.       |
-| Trash                    | In the Developer sidebar. `/settings/trash` renders for a Developer even though the Owner sidebar omits the link. |
+| Trash                    | In the Owner, Admin and Developer sidebars, at `/settings/trash`.       |
 | Everything else          | Per the permission matrix in [Roles](roles.md).                        |

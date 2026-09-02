@@ -72,7 +72,7 @@ The page's own note on it is the operative one:
 
 ### Creating a connection yourself
 
-**New connection** opens a full-screen **Connect a system** picker: a **Search systems** box, an A–Z index, a counter reading `156 of 156 systems`, and one row per connector showing its auth-method label.
+**New connection** opens a full-screen **Connect a system** picker: a **Search systems** box, an A–Z index, a counter reading `236 of 236 systems`, and one row per connector showing its auth-method label.
 
 Use it for connections your organisation owns — your own Slack workspace, your own data warehouse — which a workflow then uses at account level rather than per customer.
 

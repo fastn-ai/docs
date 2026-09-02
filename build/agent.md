@@ -4,11 +4,11 @@ description: The chat-driven builder that picks connectors, drafts workflows and
 
 # Agent
 
-**Integrations → Agent**
+**Home → What do you want to build?**
 
 <figure><img src="../.gitbook/assets/agent-home.jpg" alt="The agent start screen"><figcaption></figcaption></figure>
 
-The agent is the primary way integrations get built in fastn. The pane is headed **Build an integration**, and states its own contract:
+The agent is the primary way integrations get built in fastn. You reach it from the **What do you want to build?** prompt on Home — there is no separate sidebar item for it. The pane is headed **Build an integration**, and states its own contract:
 
 > Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
 

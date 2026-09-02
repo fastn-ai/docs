@@ -1,40 +1,32 @@
 ---
-description: Fixes fastn proposes when an upstream API changes. Nothing is applied until you accept it.
+description: Vendor changes to the integrations you use, and the fixes proposed for them. Nothing is applied until you accept it.
 ---
 
-# Connector updates
+# Pending updates
 
-**Integrations → Connector updates** · `/integrations/updates`
+**Integrations → Pending updates** · `/integrations/updates`
 
-<figure><img src="../.gitbook/assets/connector-updates.jpg" alt="The connector updates page"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/connector-updates.jpg" alt="The pending updates page"><figcaption></figcaption></figure>
 
 Vendors deprecate endpoints, change parameter names and alter response shapes. Normally you find out when a sync starts failing. fastn watches for these changes, works out what the fix is, and files a proposal here. The page states its own promise:
 
-> Fixes proposed for upstream API changes. Nothing here is applied until you accept it.
+> Vendor changes to the integrations you use, and the fixes proposed for them. Nothing here is applied until you accept it.
 
-Two tabs: **Connector fixes**, the default, holding proposals against managed connectors; and **My workflows**, which reads *None of your workflows need changes right now.* until one of yours is affected.
+It is a single list — there are no *Connector fixes* or *My workflows* tabs. When nothing is outstanding it reads *Nothing needs your attention…*, and a **Show N already handled** toggle brings the resolved ones back into view.
 
 ### Reading a proposal
 
-Each card carries a status word, the connector slug, the proposed strategy — *Fork a new major*, for example — the blast radius, such as *1 workflow across 3 orgs*, and a description. **Review** opens the detail.
+Each card carries:
 
-<figure><img src="../.gitbook/assets/connector-update-review.jpg" alt="A connector update proposal in detail"><figcaption></figcaption></figure>
+* a **status word**, such as `Applied`;
+* **Integration connector:** — the connector the change affects;
+* **Affected workflows:** — the workflows that depend on it;
+* a description of what changed and the fix; and
+* a **Details** button.
 
-The detail view opens with **← Back to proposals** and contains:
+<figure><img src="../.gitbook/assets/connector-update-review.jpg" alt="A pending update in detail"><figcaption></figcaption></figure>
 
-* **What changed upstream**, with the specific endpoints involved.
-* A **Migration:** block — the fix as numbered steps: updated IDs, remapped parameters, changed response parsing.
-* A confidence line in the form `Agent confidence 100% · derived by agent`.
-
-### Acting on one
-
-**Notify affected orgs** tells the organisations running the affected workflows that a change is coming, before anything moves.
-
-Where a proposal cannot be turned into a patch, the footer says so — and that distinction is the one to read carefully, because an unpatched proposal is still a live problem, not a resolved one.
-
-{% hint style="warning" %}
-A proposal's status badge and its footer can disagree: a proposal badged `applied` has been observed alongside a footer stating that no patch could be derived. Read the footer before assuming the connector has actually been changed, and check the connector's own **Versions** section on [Connectors](connectors.md) to confirm.
-{% endhint %}
+**Details** opens the proposal in full: what changed upstream, with the specific endpoints involved, and the fix set out as numbered migration steps — updated IDs, remapped parameters, changed response parsing.
 
 ### Why nothing auto-applies
 

@@ -8,7 +8,7 @@ This walks the shortest honest path. Budget about twenty minutes.
 
 ### 1. Describe what you want
 
-Go to **Integrations → Agent** and click **New session**, or type straight into the prompt on Home. With no sessions yet the rail reads *No sessions yet. Click New session to start.*
+Type what you want to build into the **What do you want to build?** prompt on Home — that opens the agent. Once you are in, **New session** on the left rail starts a fresh build; with no sessions yet the rail reads *No sessions yet. Click New session to start.*
 
 <figure><img src="../.gitbook/assets/agent-home.jpg" alt="The agent's start screen with example integrations"><figcaption>The pane heading is Build an integration; four example cards sit under START FROM AN EXAMPLE.</figcaption></figure>
 
@@ -92,5 +92,5 @@ Done. From here, [Core concepts](concepts.md) explains the model underneath, [Wo
 {% endhint %}
 
 {% hint style="info" %}
-Deleted a connector or workflow by mistake while exploring? It is in [Settings → Trash](../manage/trash.md), restorable with its slug and history intact. Trash appears in the Settings sidebar for a Developer; an Owner reaches it directly at `/settings/trash`.
+Deleted a connector or workflow by mistake while exploring? It is in [Settings → Trash](../manage/trash.md), restorable with its slug and history intact. Trash appears in the Settings sidebar for Owners, Admins and Developers alike, at `/settings/trash`.
 {% endhint %}

@@ -63,7 +63,7 @@ The confirmed exports are `FastnConnectCard`, `FastnHub` and `FastnProvider`; th
 Not an npm install: a hosted bundle you load with a `<script>` tag.
 
 ```html
-<script src="https://dev.gcp.fastn.ai/api/v1/embed/assets/fastn-embed.min.js"></script>
+<script src="https://YOUR_FASTN_HOST/api/v1/embed/assets/fastn-embed.min.js"></script>
 ```
 
 ```javascript
