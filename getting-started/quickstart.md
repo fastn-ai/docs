@@ -8,15 +8,15 @@ This walks the shortest honest path. Budget about twenty minutes.
 
 ### 1. Describe what you want
 
-Type what you want to build into the **What do you want to build?** prompt on Home — that opens the agent. Once you are in, **New session** on the left rail starts a fresh build; with no sessions yet the rail reads *No sessions yet. Click New session to start.*
+Type what you want to build into the **What do you want to build?** prompt on Home and submit it — that hands your request to the agent.
 
-<figure><img src="../.gitbook/assets/agent-home.jpg" alt="The agent's start screen with example integrations"><figcaption>The pane heading is Build an integration; four example cards sit under START FROM AN EXAMPLE.</figcaption></figure>
+<figure><img src="../.gitbook/assets/agent-home.jpg" alt="The Home screen with the build prompt"><figcaption>Home opens on the <strong>What do you want to build?</strong> prompt, with example starter prompts beneath it.</figcaption></figure>
 
 The pane states the contract plainly:
 
 > Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
 
-If you would rather start from a shape than a blank page, the four cards under **START FROM AN EXAMPLE** are *Sync deals into billing*, *Alert before an SLA breaches*, *Keep a sheet current* and *Give an agent scoped access*.
+If you would rather start from a shape than a blank page, tap one of the example starter prompts beneath the box — these are seeded suggestions and vary by workspace — and edit it to fit.
 
 Otherwise, write the integration the way you would explain it to a colleague:
 
