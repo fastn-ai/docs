@@ -18,7 +18,7 @@ A customer is one of your customers — a container for their connections, crede
 | **Connections** | How many systems they have authorised.                          |
 | **Status**      | Active, or Pending admin activation.                            |
 
-A count sits above the table, and **Search customers** narrows it. **View connections** on each row filters [Connections](../build/connections.md) to that customer.
+A count sits above the table, and **Search customers** narrows it. **View connections** on each row filters [Connections](../build/connections/README.md) to that customer.
 
 ### Status
 
@@ -30,7 +30,7 @@ A count sits above the table, and **Search customers** narrows it. **View connec
 
 **Create customer** adds one manually, which is what you want when onboarding an account before they first sign in.
 
-The identifier is the stable one — use your own account ID rather than a display name. It is what you will see again as `endOrgId` in the [embed token](../embed/embedding.md) response, and as the final `tenant` segment of a connection ID.
+The identifier is the stable one — use your own account ID rather than a display name. It is what you will see again as `endOrgId` in the [embed token](../embed/embedding/README.md) response, and as the final `tenant` segment of a connection ID.
 
 ### Customers and tenants
 
@@ -47,7 +47,7 @@ Treat them as the same thing: one isolated customer container, called a tenant w
 | Surface                            | What it does                                        |
 | ---------------------------------- | ----------------------------------------------------- |
 | ⌘K search, **CUSTOMERS** group     | Jump straight to one.                                |
-| [Connections](../build/connections.md) | A **Customer** column on every connection.       |
+| [Connections](../build/connections/README.md) | A **Customer** column on every connection.       |
 | Widget builder preview             | The tenant selector renders the widget as a customer. |
-| [Embed tab](../embed/embedding.md) | The **USER** selector scopes the generated snippet.  |
+| [Embed tab](../embed/embedding/README.md) | The **USER** selector scopes the generated snippet.  |
 | Triggers tables                    | A **Tenant** column on webhooks, schedulers and app events. |

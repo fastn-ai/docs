@@ -16,7 +16,7 @@ description: Your organisation and how people join it.
 | **Timezone** | Sets the default timezone for new schedules. Dates elsewhere are shown in your own timezone.        |
 
 {% hint style="info" %}
-The timezone here is the default offered when creating a [schedule trigger](../build/triggers.md), not a global rewrite. A schedule keeps whatever timezone it was saved with.
+The timezone here is the default offered when creating a [schedule trigger](../build/triggers/README.md), not a global rewrite. A schedule keeps whatever timezone it was saved with.
 {% endhint %}
 
 ### Joining by email domain

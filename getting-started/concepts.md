@@ -78,7 +78,7 @@ Test mode is not a sandbox. A test key reaches the same live connections as a li
 
 ### Triggers
 
-Three kinds, covered fully in [Triggers](../build/triggers.md).
+Three kinds, covered fully in [Triggers](../build/triggers/README.md).
 
 * **Webhook** — an outside system calls a URL you give it.
 * **Schedule** — a clock you set.
@@ -88,7 +88,7 @@ Three kinds, covered fully in [Triggers](../build/triggers.md).
 
 Where several providers do the same job — HubSpot, Salesforce and Zoho all hold contacts — fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/api/v1/unified/crm/contact` and does not branch on the CRM.
 
-There are three categories today — CRM (`Account`, `contact`, `Note`), Documents (`Document`, `Document Content`) and Messaging (`Channel Message`, `Direct Message`). `Note` and both message entities are create-only. See [Unified APIs](../build/unified-apis.md).
+There are three categories today — CRM (`Account`, `contact`, `Note`), Documents (`Document`, `Document Content`) and Messaging (`Channel Message`, `Direct Message`). `Note` and both message entities are create-only. See [Unified APIs](../build/unified-apis/README.md).
 
 ### The agent
 

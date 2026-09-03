@@ -6,13 +6,13 @@ description: The chat-driven builder that picks connectors, drafts workflows and
 
 **Home → What do you want to build?**
 
-<figure><img src="../.gitbook/assets/agent-home.jpg" alt="The agent start screen"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-home.jpg" alt="The agent start screen"><figcaption></figcaption></figure>
 
 The agent is the primary way integrations get built in fastn. You reach it from the **What do you want to build?** prompt on Home — there is no separate sidebar item for it. The pane is headed **Build an integration**, and states its own contract:
 
 > Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
 
-What it drafts is JavaScript — a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](workflows.md) for you to read, test and publish.
+What it drafts is JavaScript — a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](../workflows/README.md) for you to read, test and publish.
 
 ### Sessions
 
@@ -46,64 +46,11 @@ The agent handles ambiguity by asking, but you get a better first draft by being
 
 The composer carries **Attach a file**, the message box (*Write a message…*) and **Send**.
 
-### Approval mode
-
-The chip under the message box decides how far the agent goes without checking in.
-
-| Mode     | Behaviour                                                              |
-| -------- | ------------------------------------------------------------------------ |
-| **Auto** | The default. Does not ask. Fastest for exploration.                     |
-| Manual   | Asks before any create, update or delete. Use when touching live data.   |
-
 ### What it does
 
 The product's own summary is the reliable one: the agents pick the connectors, draft the workflow, and show you the diff before anything runs. In practice that means working out which systems are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat — inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes — and then writing the workflow code and opening it in the editor.
 
 Generated test cases land on the editor's **Test cases** tab, grouped as `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`, each row badged `LIVE` or `MOCK`.
-
-### Using the agent: a worked example
-
-<figure><img src="../.gitbook/assets/agent-prompt.jpg" alt="Describing an integration in the agent prompt"><figcaption>Describe the integration in plain words on Home; the agent plans the connectors and drafts the workflow.</figcaption></figure>
-
-Say you want this: *when a new contact is created in HubSpot, add a row to a Google Sheet with their name, email and company.* Here is how that request becomes a running integration.
-
-{% stepper %}
-{% step %}
-#### Describe it in plain words
-
-On Home, type the whole thing into **What do you want to build?** and press **Send** — there is no need to name connectors or pick a trigger yourself:
-
-> When a new contact is created in HubSpot, add a row to a Google Sheet with their name, email, and company.
-
-The prompt opens the agent's **Build an integration** pane and starts a session.
-{% endstep %}
-
-{% step %}
-#### The agent picks the connectors
-
-It works out the systems involved — HubSpot as the source, Google Sheets as the destination — reusing connectors that already exist and creating any that do not. Where a system needs authorising, it handles that in the chat: an inline API-key field, or an OAuth form with client ID, secret and pre-filled scopes.
-{% endstep %}
-
-{% step %}
-#### It drafts the workflow and shows a diff
-
-The agent writes the workflow — a `<slug>.js` module — with the trigger (a new HubSpot contact), the field mapping (name, email, company) and the Google Sheets write. It then **shows you the diff before anything runs**: nothing is created or changed until you have seen what it proposes.
-{% endstep %}
-
-{% step %}
-#### You review — Approval mode decides how much it did unattended
-
-The **Approval mode** chip governs how far it goes on its own. **Auto**, the default, acts without asking — quickest for exploring. **Manual** asks before any create, update or delete — the mode to use when it is touching live data. Read the diff, then accept it or reply with a correction.
-{% endstep %}
-
-{% step %}
-#### Test and publish
-
-The draft opens in the [workflow editor](workflows.md), where the generated scenarios sit on the **Test cases** tab. Run it from the **Test** tab, then **Publish** when it does what you meant.
-{% endstep %}
-{% endstepper %}
-
-From here you refine it in the same conversation rather than starting over, as the next section covers.
 
 ### Iterating
 
@@ -121,9 +68,14 @@ The agent updates code, mappings and test cases together, so they do not drift a
 **Attach a file** accepts an API spec, a sample payload, a field-mapping spreadsheet. Giving the agent a real payload is the single fastest way to get accurate mappings.
 
 {% hint style="info" %}
-Agent usage draws on the AI credits shown in the top bar — click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, naming the ones doing this work: *Orchestrator V2 Orchestrator*, *Docs Agent*, *Error Diagnosis* and *Orchestrator V2 Title*. Plan and quota detail live under [Billing](../manage/billing.md), which is visible to Owners and Admins.
+Agent usage draws on the AI credits shown in the top bar — click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, naming the ones doing this work: *Orchestrator V2 Orchestrator*, *Docs Agent*, *Error Diagnosis* and *Orchestrator V2 Title*. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
 {% endhint %}
 
 {% hint style="warning" %}
 Using the AI assistant is gated by role rather than by an individual permission, so a role that cannot use it cannot be granted access to it one permission at a time.
 {% endhint %}
+
+### In this section
+
+* [Approval mode](approval-mode.md)
+* [Worked example](worked-example.md)

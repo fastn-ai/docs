@@ -46,7 +46,7 @@ How fastn picks between a customer-scoped and an environment-scoped value when b
 
 Third-party API tokens, database credentials, signing keys, webhook signing secrets — anything you would not paste into a ticket.
 
-What does **not** belong here: connector credentials. Those live on [connections](../build/connections.md) and are managed by fastn, including OAuth refresh.
+What does **not** belong here: connector credentials. Those live on [connections](../build/connections/README.md) and are managed by fastn, including OAuth refresh.
 
 {% hint style="warning" %}
 Deleting a secret takes effect immediately. Any workflow calling `fastn.secrets.get` for that name starts failing on its next run.

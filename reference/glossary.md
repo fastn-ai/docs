@@ -12,7 +12,7 @@ description: Terms used across fastn, defined once.
 
 **App event trigger** — starts a workflow when something changes in a connected system.
 
-**Approval mode** — on the [agent](../build/agent.md), whether it asks before it acts. **Auto** (the default) creates, updates and deletes without asking; **Manual** asks first.
+**Approval mode** — on the [agent](../build/agent/README.md), whether it asks before it acts. **Auto** (the default) creates, updates and deletes without asking; **Manual** asks first.
 
 **Backoff strategy** — how long fastn waits between delivery attempts: Exponential, Linear or Fixed.
 
@@ -54,7 +54,7 @@ description: Terms used across fastn, defined once.
 
 **fastn.state** — durable key-value storage across runs, in scope ORG or INVOCATION.
 
-**fastn.unified** — the runtime handle for [unified APIs](../build/unified-apis.md): call one canonical entity and let fastn route to whichever provider the customer connected.
+**fastn.unified** — the runtime handle for [unified APIs](../build/unified-apis/README.md): call one canonical entity and let fastn route to whichever provider the customer connected.
 
 **Installation** — one customer's set-up of one of your integrations, carrying its own configuration. Identified at runtime by the `x-installation-id` header, alongside `x-fastn-installation-config`.
 

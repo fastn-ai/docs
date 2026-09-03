@@ -85,7 +85,7 @@ The slug is the one on the connector's Overview tab. Available actions and their
 
 ## fastn.unified
 
-Calls a [unified API](../build/unified-apis.md) — one canonical entity, served by whichever provider the running customer has connected — rather than naming a specific connector.
+Calls a [unified API](../build/unified-apis/README.md) — one canonical entity, served by whichever provider the running customer has connected — rather than naming a specific connector.
 
 This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: the routing to hubspot, salesforce or zohoCrm is the platform's problem rather than your code's. The exact call shape is on the workflow's **Docs** tab.
 
@@ -143,7 +143,7 @@ if (seen) {
 await fastn.state.set(key, { processedAt: new Date().toISOString() });
 ```
 
-That is the standard idempotency guard. Pair it with a [deduplication key](../build/triggers.md) on the trigger and a retried delivery is much less likely to double-write — verify the guard actually holds under a replay in your own workspace before treating it as a guarantee.
+That is the standard idempotency guard. Pair it with a [deduplication key](../build/triggers/README.md) on the trigger and a retried delivery is much less likely to double-write — verify the guard actually holds under a replay in your own workspace before treating it as a guarantee.
 
 ---
 

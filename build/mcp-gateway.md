@@ -54,4 +54,4 @@ Agent usage against your AI credit allowance is broken down **By agent** in the 
 
 ### The A2A option
 
-The widget's Embed tab lists **A2A** — agent-to-agent — alongside Iframe and SDK, marked *soon*. That is the customer-facing counterpart: your customer's own agent reaching the integrations you offer. See [Embedding the widget](../embed/embedding.md).
+The widget's Embed tab lists **A2A** — agent-to-agent — alongside Iframe and SDK, marked *soon*. That is the customer-facing counterpart: your customer's own agent reaching the integrations you offer. See [Embedding the widget](../embed/embedding/README.md).

@@ -112,7 +112,7 @@ Inside the workflow these arrive on `ctx.headers` — see [Workflow runtime API]
 
 ## Unified endpoints
 
-Where a [unified API](../build/unified-apis.md) covers an entity, call it directly rather than a specific connector.
+Where a [unified API](../build/unified-apis/README.md) covers an entity, call it directly rather than a specific connector.
 
 ```http
 GET  /api/v1/unified/crm/account?page_size=50
@@ -127,7 +127,7 @@ fastn routes to whichever provider the customer authorised. Each endpoint on the
 
 ## Webhook endpoints
 
-A [webhook trigger](../build/triggers.md) gives you a public URL. Whether callers must authenticate is set on the trigger:
+A [webhook trigger](../build/triggers/README.md) gives you a public URL. Whether callers must authenticate is set on the trigger:
 
 | Authentication setting            | Caller must send                      |
 | --------------------------------- | --------------------------------------- |
@@ -182,7 +182,7 @@ The iframe endpoint takes it on the query string:
 https://YOUR_FASTN_HOST/api/v1/embed/iframe?token=emb_…
 ```
 
-That URL carries a live credential. Treat it like one — build it server-side per session, and do not log or share it. Full setup in [Embedding the widget](../embed/embedding.md).
+That URL carries a live credential. Treat it like one — build it server-side per session, and do not log or share it. Full setup in [Embedding the widget](../embed/embedding/README.md).
 
 ---
 

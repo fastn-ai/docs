@@ -105,7 +105,7 @@ Full detail in the [HTTP API reference](../reference/api.md).
 
 * One key per consuming system, so revoking one does not take down four things.
 * Rotate on a schedule, and when anyone with access leaves.
-* Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend — see [Embedding the widget](../embed/embedding.md).
+* Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend — see [Embedding the widget](../embed/embedding/README.md).
 * Check **Last used** before revoking. A key showing Never is either unused or misconfigured; either way, find out which.
 * Set an expiry rather than **Never**, and turn on HMAC verification for any key a customer's browser session depends on.
 

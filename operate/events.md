@@ -33,7 +33,7 @@ The toggle top-right is **off** by default. Turn it on to keep the list current 
 Every row has **Replay**, which re-delivers the same payload to the same workflow. Use it after fixing a workflow that failed on an event you cannot ask the sender to resend.
 
 {% hint style="warning" %}
-Replay re-runs the workflow for real. If the workflow writes to an external system, and it has no deduplication key, replaying can create duplicates. Set a [deduplication key](../build/triggers.md) on the webhook trigger before you need it.
+Replay re-runs the workflow for real. If the workflow writes to an external system, and it has no deduplication key, replaying can create duplicates. Set a [deduplication key](../build/triggers/README.md) on the webhook trigger before you need it.
 {% endhint %}
 
 An event that exhausts its delivery attempts shows a failure state in the **Status** column and can be re-sent with **Replay** once the cause is fixed. Attempt count and backoff are configured on the trigger, not here.
@@ -44,7 +44,7 @@ An empty filter gives you **Nothing matches that filter**, with:
 
 > Events arrive as your customers use their connected systems. Widen the filter, or check that a trigger is listening.
 
-and a **Show all events** button. Take the second half of that literally — an empty Events log with a trigger you expected to fire is a trigger problem, not an events problem. See [Triggers](../build/triggers.md).
+and a **Show all events** button. Take the second half of that literally — an empty Events log with a trigger you expected to fire is a trigger problem, not an events problem. See [Triggers](../build/triggers/README.md).
 
 ### Events versus executions
 

@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. The [agent](../build/agent.md) writes workflows from a plain description, and iterates on follow-up messages. Some workspaces have code editing switched off entirely — you can still test, wire connectors and edit the contract. It can be switched on if you want to write code yourself; ask fastn to enable it.
+No. The [agent](../build/agent/README.md) writes workflows from a plain description, and iterates on follow-up messages. Some workspaces have code editing switched off entirely — you can still test, wire connectors and edit the contract. It can be switched on if you want to write code yourself; ask fastn to enable it.
 
 </details>
 
@@ -48,7 +48,7 @@ A **connector** is the definition of a system — its actions, auth methods and 
 
 <summary>My customers see "fastn.ai" on the OAuth consent screen. How do I show my own brand?</summary>
 
-Start on the connector's **Auth** tab, which is where a connector's OAuth providers are configured — it shows the auth methods and a providers list. Whether that lets you register your own OAuth application, and what the consent screen then shows, is not something this page can confirm; check the tab for your connector, and ask fastn if it is not there. See [Connectors](../build/connectors.md).
+Start on the connector's **Auth** tab, which is where a connector's OAuth providers are configured — it shows the auth methods and a providers list. Whether that lets you register your own OAuth application, and what the consent screen then shows, is not something this page can confirm; check the tab for your connector, and ask fastn if it is not there. See [Connectors](../build/connectors/README.md).
 
 </details>
 
@@ -156,7 +156,7 @@ No. A test key reaches the same live connections as a live key and causes the sa
 
 <summary>Can I put an API key in my frontend?</summary>
 
-No. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embedding the widget](../embed/embedding.md).
+No. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embedding the widget](../embed/embedding/README.md).
 
 </details>
 
@@ -238,7 +238,7 @@ The practical consequence: the connector count is a count of *entries*, not of d
 
 <summary>A connector says Connected but its detail page says 0 connections.</summary>
 
-That is a known inconsistency between the list badge and the detail page's count, not a lost connection. Confirm on the [Connections](../build/connections.md) tab, which lists actual connections with their customer and status.
+That is a known inconsistency between the list badge and the detail page's count, not a lost connection. Confirm on the [Connections](../build/connections/README.md) tab, which lists actual connections with their customer and status.
 
 </details>
 

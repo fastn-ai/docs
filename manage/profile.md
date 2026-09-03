@@ -22,7 +22,7 @@ Shown to your team on invitations, comments and audit entries.
 | **Timezone**   | The full IANA list. Every time on screen is shown in this zone. |
 
 {% hint style="info" %}
-Your profile timezone changes how timestamps are *displayed* to you. It does not change when a [schedule trigger](../build/triggers.md) fires — a schedule keeps the timezone it was saved with.
+Your profile timezone changes how timestamps are *displayed* to you. It does not change when a [schedule trigger](../build/triggers/README.md) fires — a schedule keeps the timezone it was saved with.
 {% endhint %}
 
 ### Sign in email

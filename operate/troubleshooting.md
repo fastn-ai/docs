@@ -14,8 +14,8 @@ Work down this page in order. Most problems resolve at the first or second step,
 | Something ran but ended badly                 | [Executions](executions.md) — what status?             |
 | It succeeded but the data is wrong            | [Sync reports](sync-reports.md)                        |
 | It is slow                                    | [Traces](traces.md)                                    |
-| It worked yesterday and not today             | [Connections](../build/connections.md), then [Pending updates](../build/connector-updates.md) |
-| One customer is affected, others are not      | [Connections](../build/connections.md), scoped to that customer |
+| It worked yesterday and not today             | [Connections](../build/connections/README.md), then [Pending updates](../build/connector-updates.md) |
+| One customer is affected, others are not      | [Connections](../build/connections/README.md), scoped to that customer |
 
 ---
 
@@ -43,7 +43,7 @@ A Delivered event means the payload arrived and was handed on. If no execution f
 
 ### Event never Delivered
 
-It exhausted its delivery attempts. The row shows a failure state in the **Status** column; fix the cause, then **Replay** it. Attempt count and backoff are on the webhook trigger — see [Triggers](../build/triggers.md).
+It exhausted its delivery attempts. The row shows a failure state in the **Status** column; fix the cause, then **Replay** it. Attempt count and backoff are on the webhook trigger — see [Triggers](../build/triggers/README.md).
 
 ---
 
@@ -115,7 +115,7 @@ See [Workflow runtime API](../reference/workflow-runtime.md).
 
 ## It works for one customer and not another
 
-Almost always a connection. Open [Connections](../build/connections.md) — the Customer column tells you whose each one is, and the search box narrows the list.
+Almost always a connection. Open [Connections](../build/connections/README.md) — the Customer column tells you whose each one is, and the search box narrows the list.
 
 | Status       | Fix                                                          |
 | ------------ | -------------------------------------------------------------- |
@@ -154,7 +154,7 @@ These are current product defects rather than anything you have misconfigured. R
 | What you see                                                       | What is actually happening                                                          |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
 | Connections filter chips (**Active**/**Inactive**/**Expired**/**Failed**) return nothing | The chips report 0 for every state even when rows are plainly Active. Search by customer or connector instead. |
-| A connector shows **Connected** in the list but **0 connections** on its detail page | The list badge and the detail count disagree. Check [Connections](../build/connections.md) for the real answer. |
+| A connector shows **Connected** in the list but **0 connections** on its detail page | The list badge and the detail count disagree. Check [Connections](../build/connections/README.md) for the real answer. |
 | `Created: Invalid Date` on a connector overview                    | A date-rendering bug, not a broken connector.                                        |
 | Trash → **Actions** hangs on `Loading deleted actions…`            | The tab never resolves. Deleted actions cannot currently be reviewed there.          |
 | The connector catalogue count is higher than the systems you recognise | Several systems appear twice, once **managed** and once **Custom**. The headline count is not a count of distinct systems. |

@@ -30,7 +30,7 @@ The **Approval mode** chip under the message box decides how much it does unatte
 
 The agent checks whether connectors exist for the systems you named, creates any that are missing, and handles authentication in the chat — API-key fields inline, or an OAuth form with client ID, secret and pre-filled scopes.
 
-Anything it creates shows up under [Connectors](../build/connectors.md) afterwards, so you can inspect it.
+Anything it creates shows up under [Connectors](../build/connectors/README.md) afterwards, so you can inspect it.
 
 ### 3. Review the draft
 
@@ -77,18 +77,18 @@ For the HubSpot example, choose **App event**. The form is progressive: name it,
 
 > No active connection found for this connector. Connect first to use it as a trigger source.
 
-Full field-by-field detail is in [Triggers](../build/triggers.md).
+Full field-by-field detail is in [Triggers](../build/triggers/README.md).
 
 ### 7. Put it in front of customers
 
-Open **Widgets**, click **Add** under INTEGRATIONS, and pick the integration you just built. Then use the **Embed** tab to drop it into your product — see [Embedding the widget](../embed/embedding.md).
+Open **Widgets**, click **Add** under INTEGRATIONS, and pick the integration you just built. Then use the **Embed** tab to drop it into your product — see [Embedding the widget](../embed/embedding/README.md).
 
 ### 8. Make failure loud
 
 Go to **Activity → Alerts** and click **Turn on failure alerts** — one click turns on the two alerts most teams need. A sync that fails quietly for six hours is a support ticket you could have avoided. Alerts are checked every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
 
 {% hint style="success" %}
-Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway.md) covers exposing the same integrations to an AI client.
+Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows/README.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway.md) covers exposing the same integrations to an AI client.
 {% endhint %}
 
 {% hint style="info" %}
