@@ -8,7 +8,7 @@ description: >-
 
 The widget is what your customers see — an integration portal embedded inside your product where they connect apps, manage workflows, and monitor sync activity. You configure it visually in the Widget Builder; your development team handles the embed code separately.
 
-**Prerequisites:** Complete [Your First Integration](https://claude.ai/fastn/getting-started/your-first-integration). During the Setup Assistant (Step 4: Embed), you may have already created your first widget. This tutorial covers building or customizing widget hubs beyond that initial setup.
+**Prerequisites:** Complete [Your First Integration](../../getting-started/quickstart.md). During the Setup Assistant (Step 4: Embed), you may have already created your first widget. This tutorial covers building or customizing widget hubs beyond that initial setup.
 
 ***
 
@@ -190,7 +190,7 @@ Shows performance metrics for the customer's integrations with a time-range sele
 
 Click **Configure** on any connected integration in the Apps preview. Two things can happen:
 
-**If no configuration exists yet:** A modal appears prompting "Run the Integration Agent to set up field mappings and filters." Click it and the Integration Agent configures the integration — the same agent experience from [Creating a Workflow via AI](https://claude.ai/fastn/tutorials/saas-admin/creating-a-workflow-via-ai), running directly inside the widget.
+**If no configuration exists yet:** A modal appears prompting "Run the Integration Agent to set up field mappings and filters." Click it and the Integration Agent configures the integration — the same agent experience from [Creating a Workflow via AI](creating-a-workflow-via-ai.md), running directly inside the widget.
 
 **If configuration already exists:** The Integration Configuration dialog opens.
 
@@ -240,7 +240,7 @@ Click the **Embed** tab. It has four sub-tabs: **Iframe**, **MCP**, **SDK**, and
 * **SDK** (coming soon) — A React component (`@fastn/react`) that will wrap the iframe flow.
 * **A2A** (coming soon).
 
-Hand this off to your development team — see [Embedding Fastn](https://claude.ai/fastn/tutorials/developer/embedding-fastn) in the Developer tutorials for the token generation and iframe setup.
+Hand this off to your development team — see [Embedding Fastn](../developer/how-embedding-works.md) in the Developer tutorials for the token generation and iframe setup.
 
 > 📷 **Screenshot needed:** Embed tab showing the four sub-tabs (Iframe, MCP, SDK, A2A) with the Iframe tab active and the Embed Code block visible.
 

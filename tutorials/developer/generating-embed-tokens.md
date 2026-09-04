@@ -28,8 +28,8 @@ X-fastn-Test-Mode: true        (only for fsk_test_ keys; omit for fsk_live_)
 
 | Field       | Description                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `endOrgId`  | The internal UUID of the customer the widget is for. Must be the UUID — the slug and External ID both return 404. See [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier). |
-| `userEmail` | The email of the individual user. Used for user-level tenancy (see [Tenancy](https://claude.ai/fastn/tutorials/developer/tenancy)).                                                                                           |
+| `endOrgId`  | The internal UUID of the customer the widget is for. Must be the UUID — the slug and External ID both return 404. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
+| `userEmail` | The email of the individual user. Used for user-level tenancy (see [Tenancy](understanding-tenancy.md)).                                                                                           |
 | `userName`  | The display name of the individual user.                                                                                                                                                                                      |
 
 **Response:**

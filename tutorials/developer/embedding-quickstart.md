@@ -6,8 +6,8 @@ This walks through the shortest path to a working embed: generate a token from y
 
 You'll need:
 
-* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys).
-* **Your org identifier (`endOrgId`)** — The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier).
+* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
+* **Your org identifier (`endOrgId`)** — The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** — Any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
@@ -79,4 +79,4 @@ Click Connect on one, complete the authentication popup, and confirm the app sho
 
 ### If the iframe is blank
 
-The most common cause is an expired or hardcoded token. Confirm your frontend fetches a fresh token on each load rather than reusing one. See [Troubleshooting](https://claude.ai/fastn/tutorials/developer/troubleshooting).
+The most common cause is an expired or hardcoded token. Confirm your frontend fetches a fresh token on each load rather than reusing one. See [Troubleshooting](troubleshooting.md).

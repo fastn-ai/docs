@@ -57,4 +57,4 @@ headers: {
 
 * Store keys in environment variables, never in source code or client-side bundles.
 * Use test keys in development and live keys only in production.
-* The API key is used to mint embed tokens on your backend — it should never reach the browser. See [Generating Embed Tokens](https://claude.ai/fastn/tutorials/developer/generating-embed-tokens).
+* The API key is used to mint embed tokens on your backend — it should never reach the browser. See [Generating Embed Tokens](generating-embed-tokens.md).

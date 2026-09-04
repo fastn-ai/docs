@@ -24,7 +24,7 @@ Embed tokens expire after 15 minutes. If a token is hardcoded into your frontend
 
 Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true`. Without it, requests fail in ways the error message doesn't make obvious.
 
-**Fix:** Add `X-fastn-Test-Mode: true` for test keys. Remove it for live keys. See [Authentication & API Keys](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys).
+**Fix:** Add `X-fastn-Test-Mode: true` for test keys. Remove it for live keys. See [Authentication & API Keys](authentication-and-api-keys.md).
 
 ### "Failed to fetch" in the widget
 

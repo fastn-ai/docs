@@ -9,6 +9,33 @@
 * [Quickstart: your first integration](getting-started/quickstart.md)
 * [Core concepts](getting-started/concepts.md)
 
+## Tutorials
+
+* [Tutorials](tutorials/README.md)
+* [SaaS Admin](tutorials/saas-admin/README.md)
+  * [Setting up your organization](tutorials/saas-admin/setting-up-your-organization.md)
+  * [Configuring a connector](tutorials/saas-admin/configuring-a-connector.md)
+  * [Creating a workflow via AI](tutorials/saas-admin/creating-a-workflow-via-ai.md)
+  * [Configuring a workflow in code](tutorials/saas-admin/configuring-a-workflow-in-code.md)
+  * [Setting up triggers](tutorials/saas-admin/setting-up-triggers.md)
+  * [Building your widget](tutorials/saas-admin/building-your-widget.md)
+  * [Managing customers](tutorials/saas-admin/managing-customers.md)
+  * [Roles and permissions setup](tutorials/saas-admin/roles-and-permissions-setup.md)
+* [Developer](tutorials/developer/README.md)
+  * [How embedding works](tutorials/developer/how-embedding-works.md)
+  * [Embedding quickstart](tutorials/developer/embedding-quickstart.md)
+  * [Generating embed tokens](tutorials/developer/generating-embed-tokens.md)
+  * [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md)
+  * [Finding your org identifier](tutorials/developer/finding-your-org-identifier.md)
+  * [Understanding tenancy](tutorials/developer/understanding-tenancy.md)
+  * [Deployment](tutorials/developer/deployment.md)
+  * [MCP gateway integration](tutorials/developer/mcp-gateway-integration.md)
+  * [Troubleshooting](tutorials/developer/troubleshooting.md)
+* [End User](tutorials/end-user/README.md)
+  * [Connecting apps via the widget](tutorials/end-user/connecting-apps-via-widget.md)
+  * [Customizing your integrations](tutorials/end-user/customizing-your-integrations.md)
+  * [Viewing sync status and history](tutorials/end-user/viewing-sync-status-and-history.md)
+
 ## Build
 
 * [Build](build/README.md)
