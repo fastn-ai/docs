@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. The [agent](../build/agent/README.md) writes workflows from a plain description, and iterates on follow-up messages. Some workspaces have code editing switched off entirely — you can still test, wire connectors and edit the contract. It can be switched on if you want to write code yourself; ask fastn to enable it.
+No. The [agent](../build/agent/README.md) writes workflows from a plain description, and iterates on follow-up messages. In fact code editing is switched off in almost every workspace — it is enabled only for the parent organisation — so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. It can be switched on if you want to write code yourself; ask fastn to enable it.
 
 </details>
 

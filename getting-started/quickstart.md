@@ -8,9 +8,9 @@ This walks the shortest honest path. Budget about twenty minutes.
 
 ### 1. Describe what you want
 
-Type what you want to build into the **What do you want to build?** prompt on Home and submit it — that hands your request to the agent.
+Open **Integrations → Agent** in the sidebar, or type what you want to build into the **What do you want to build?** prompt on Home. Both land on the same screen.
 
-<figure><img src="../.gitbook/assets/agent-home.jpg" alt="The Home screen with the build prompt"><figcaption>Home opens on the <strong>What do you want to build?</strong> prompt, with example starter prompts beneath it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/agent-start.jpg" alt="The Agent screen: the Sessions rail on the left, a Build an integration pane with four START FROM AN EXAMPLE cards, and a message composer with an Auto approval-mode chip"><figcaption><strong>Agent</strong> is the first item under Integrations; Home's prompt box opens the same place.</figcaption></figure>
 
 The pane states the contract plainly:
 
@@ -34,20 +34,20 @@ Anything it creates shows up under [Connectors](../build/connectors/README.md) a
 
 ### 3. Review the draft
 
-The agent produces a workflow and opens the editor. It has three columns: configuration on the left, the code in the middle, and the tool tabs on the right.
+The agent produces a workflow and opens the editor: configuration on the left, the tool tabs on the right, and — only where code editing is enabled — the code between them. **Code editing is off in almost every workspace**, so expect two columns rather than three; the workflow is still there, it is just written and updated by the agent rather than by you.
 
 <figure><img src="../.gitbook/assets/workflow-editor-diagram.jpg" alt="The workflow editor showing the flow diagram"><figcaption>The Diagram tab draws the workflow from the code — it is read-only, and it cannot drift.</figcaption></figure>
 
 Work through it in this order:
 
-1. **The code** — the middle column holds `<slug>.js`, a JavaScript module exporting `export default async function(ctx)`. This is the workflow. Everything else on the screen describes, tests or deploys it.
+1. **The code** — where code editing is on, the middle column holds `<slug>.js`, a JavaScript module exporting `export default async function(ctx)`. This is the workflow; everything else on the screen describes, tests or deploys it. Where it is off, read the **Diagram** tab instead to see what the agent wrote.
 2. **Diagram → Flow** — a read-only picture auto-generated from that code, with node kinds `TRIGGER`, `DECISION`, `READ` and `DONE`. You cannot edit the graph; edit the code and the graph follows.
 3. **Contract** — check the input and output shapes.
 4. **Connectors** — the list is extracted from the `fastn.connectors.X.Y(…)` calls in your code when you save. Confirm the right actions are wired, and whether each connector is marked **Per customer**.
 5. **Configuration** (left panel) — set the execution tier and timeout. **Instant** is synchronous and capped at 30 seconds, **Standard** is asynchronous and capped at 15 minutes, **Long** is asynchronous and capped at 36 hours. Instant is the default; most syncs want Standard.
 
 {% hint style="info" %}
-Some workspaces have code editing switched off. There, workflows are generated and updated by the AI builder, and you can still test them, wire connectors and edit the contract.
+Code editing is switched off in almost every workspace — it is enabled only for the parent organisation. There, workflows are generated and updated by the AI builder, and you can still test them, wire connectors, edit the contract, publish and deploy. If you want to write workflow code yourself, ask fastn to switch it on.
 {% endhint %}
 
 ### 4. Test it

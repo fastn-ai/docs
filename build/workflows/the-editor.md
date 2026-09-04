@@ -1,12 +1,22 @@
 ---
-description: The three-column workflow editor, walked through tab by tab, plus the configuration panel reference.
+description: The workflow editor walked through tab by tab, plus the configuration panel reference.
 ---
 
 # The workflow editor, tab by tab
 
-<figure><img src="../../.gitbook/assets/workflow-editor.jpg" alt="The workflow editor: Configuration, code, and Test panel"><figcaption>The workflow editor — Configuration on the left, the JavaScript code in the middle, the Test panel on the right.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/workflow-editor.jpg" alt="The workflow editor with code editing enabled: a Configuration panel on the left with Name and Slug fields, workflow.js in the middle labelled JavaScript · export default async function(ctx), and the Test panel on the right showing ctx.input, ctx.headers, Use contract, a Live selector and Run Live"><figcaption>The editor with code editing enabled — Configuration left, <code>workflow.js</code> centre, the tool tabs right.</figcaption></figure>
 
-Opening a workflow — **Create workflow**, or **Edit** from a row's `⋯` menu — drops you into a three-column drawer: **Configuration** on the left, the `<slug>.js` code in the middle, and the tool tabs on the right. This is roughly the order you move through it.
+Opening a workflow — **Create workflow**, or **Edit** from a row's `⋯` menu — drops you into a drawer with **Configuration** on the left and the tool tabs on the right. Whether there is a code column between them depends on your workspace.
+
+{% hint style="warning" %}
+**Code editing is switched off in almost every workspace.** It is enabled only for the parent organisation, so unless you are working there, you will not see the middle column at all — the editor shows Configuration and the tool tabs, and the banner reads:
+
+> Code editing is switched off for this workspace — workflows here are generated and updated by the AI builder. It can be switched on if you want to write workflow code yourself; ask fastn to enable it.
+
+Everything else on this page still applies. You change a workflow's behaviour by talking to the [agent](../agent/README.md) instead of typing into the file, and you still configure, test, wire connectors, edit the contract, publish and deploy exactly as described below. **If you want to write workflow code yourself, ask fastn to switch it on.**
+{% endhint %}
+
+The walkthrough below assumes the code column is present. This is roughly the order you move through it.
 
 {% stepper %}
 {% step %}
@@ -26,9 +36,17 @@ Full ranges and defaults are in the Configuration panel reference below.
 {% step %}
 #### Write the function
 
-The middle column is one `<slug>.js` file exporting `export default async function (ctx)`. You reach the request through `ctx.input` and `ctx.headers`, and connected systems through `ctx.connectors` and `fastn.*`.
+The middle column is one `<slug>.js` file exporting `export default async function (ctx)`. You reach the request through `ctx.input` and `ctx.headers`, and connected systems through `ctx.connectors` and `fastn.*`. A new workflow is scaffolded for you:
 
-Where a workspace has code editing switched off, the file is generated and updated by the AI builder instead — you change behaviour by talking to the [agent](../agent/README.md), and everything else on this screen still works.
+```javascript
+export default async function(ctx) {
+  const { input, headers } = ctx;
+  // Your workflow logic here
+  return { result: "Hello from workflow!", input };
+}
+```
+
+**This step is the one that does not apply in most workspaces.** With code editing off — the default everywhere but the parent organisation — the file is generated and updated by the AI builder, and you describe the change you want to the [agent](../agent/README.md) rather than editing it here. Skip to the next step; everything from there on is identical.
 {% endstep %}
 
 {% step %}
@@ -76,7 +94,7 @@ This workflow's own run history, filtered by the HTTP-status pills `All`, `200`,
 
 ### The editor
 
-Opening a workflow opens a drawer with three columns: **configuration on the left, the code editor in the middle, and nine tool tabs on the right**. The middle column is labelled `<slug>.js` and `JavaScript · export default async function(ctx)`.
+Opening a workflow opens a drawer laid out as **configuration on the left, the tool tabs on the right, and — where code editing is enabled — the code editor between them**. That middle column is labelled `<slug>.js` and `JavaScript · export default async function(ctx)`. A workspace without code editing gets the same drawer minus that column.
 
 Along the top: **Discard**, the workflow name, **Close tab**, **Save workflow** and **Publish**. Closing with unsaved edits asks first — *Discard unsaved changes?* / "This workflow has edits that have not been saved. Closing the tab throws them away." / **Keep editing** / **Discard changes**.
 

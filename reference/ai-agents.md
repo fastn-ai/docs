@@ -47,6 +47,10 @@ export default async function (ctx) {
 **Do not generate TypeScript.** Workflows are JavaScript.
 {% endhint %}
 
+{% hint style="danger" %}
+**Code editing is switched off in almost every workspace** — enabled only for the parent organisation. In every other workspace the editor has no code column, and workflows are written and updated by the fastn agent from a natural-language description. Handing a user a code block to paste into the editor will not work there. Describe the change to the agent instead, or tell the user to ask fastn to enable code editing. The runtime surface documented below is identical either way, so this page is still the right reference for *what* the generated code can do.
+{% endhint %}
+
 ### `ctx`
 
 | Property | Contains |
@@ -95,7 +99,7 @@ Sent on the request; readable at `ctx.headers`.
 
 ## HTTP API
 
-Base URL is your deployment — production is `https://live.gcp.fastn.ai`. Each workflow's **API** tab shows the correct host for your workspace. Examples below use `YOUR_FASTN_HOST`.
+Base URL is your deployment — production is `https://app.fastn.dev`. Each workflow's **API** tab shows the correct host for your workspace. Examples below use `YOUR_FASTN_HOST`.
 
 ### Auth
 

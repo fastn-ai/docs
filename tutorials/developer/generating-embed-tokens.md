@@ -5,7 +5,7 @@ Embed tokens are short-lived credentials that scope the Fastn widget to a specif
 ### The token endpoint
 
 ```
-POST https://live.gcp.fastn.ai/api/v1/embed/token
+POST https://app.fastn.dev/api/v1/embed/token
 ```
 
 **Headers:**
@@ -55,7 +55,7 @@ The embed token is prefixed `emb_`. In the hands-on integration, the token was n
 Because tokens expire after 15 minutes, a long-lived embed session needs the token refreshed before it expires. The platform provides a refresh endpoint, and the Embed tab notes that tokens auto-refresh:
 
 ```
-POST https://live.gcp.fastn.ai/api/v1/embed/token/refresh
+POST https://app.fastn.dev/api/v1/embed/token/refresh
 ```
 
 Use the refresh endpoint to obtain a new token before the current one expires, or generate a fresh token from your backend on each load for shorter sessions.
@@ -76,7 +76,7 @@ Put token generation in a server-side function that reads the API key and org ID
 
 ```javascript
 async function getFastnToken({ userEmail, userName }) {
-  const res = await fetch("https://live.gcp.fastn.ai/api/v1/embed/token", {
+  const res = await fetch("https://app.fastn.dev/api/v1/embed/token", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,

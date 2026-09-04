@@ -18,4 +18,4 @@ An environment can be marked **Requires review**. Promoting to one of those open
 
 ### When code editing is switched off
 
-Code editing can be turned off per workspace. Where it is, a banner says so: workflows there are generated and updated by the AI builder, and you can still test them, wire connectors and edit the contract. You change behaviour by talking to the [agent](../agent/README.md) rather than editing the file. The runtime surface is the same either way.
+Code editing is a per-workspace setting, and **off in almost every workspace** — it is enabled only for the parent organisation. Where it is off, a banner says so, and the editor simply has no code column: workflows are generated and updated by the AI builder, and you change behaviour by talking to the [agent](../agent/README.md) rather than editing the file. Everything else is unchanged — you still test, wire connectors, edit the contract, publish and deploy, and the runtime surface is identical. It can be switched on if you want to write workflow code yourself; ask fastn to enable it.

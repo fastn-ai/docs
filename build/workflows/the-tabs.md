@@ -71,7 +71,7 @@ See [Sync reports](../../operate/sync-reports.md).
 How to call this workflow over HTTP, with a copyable curl:
 
 ```http
-POST https://live.gcp.fastn.ai/api/v1/workflows/<wfId>/execute
+POST https://app.fastn.dev/api/v1/workflows/<wfId>/execute
 ```
 
 Two headers steer it — `X-fastn-Test-Mode` and `x-fastn-env` — and you authenticate with an API key in the `fsk_live_…` format. Covered in full in the [HTTP API reference](../../reference/api.md).

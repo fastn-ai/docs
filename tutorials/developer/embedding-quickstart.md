@@ -17,7 +17,7 @@ Create a server-side function that calls the Fastn token endpoint. Keep the API 
 ```javascript
 // Server-side only
 async function getFastnToken({ userEmail, userName }) {
-  const res = await fetch("https://live.gcp.fastn.ai/api/v1/embed/token", {
+  const res = await fetch("https://app.fastn.dev/api/v1/embed/token", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
@@ -64,7 +64,7 @@ const { token } = await fetch("/api/fastn-token").then(r => r.json());
 
 const iframe = document.createElement("iframe");
 // Org-level (shared) embed — see the Tenancy guide for user-level
-iframe.src = `https://live.gcp.fastn.ai/api/v1/embed/iframe?token=${token}`;
+iframe.src = `https://app.fastn.dev/api/v1/embed/iframe?token=${token}`;
 iframe.style.width = "100%";
 iframe.style.height = "100%";
 iframe.style.border = "none";
