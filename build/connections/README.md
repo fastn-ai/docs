@@ -6,7 +6,7 @@ description: Authenticated links between your customers and their systems.
 
 **Integrations → Connections** · `/integrations?tab=connections`
 
-<figure><img src="../../.gitbook/assets/connections-list.jpg" alt="The connections table"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connections-list.jpg" alt="The Connections table listing seven rows — TikTok Shop, Cin7 Core, BigCommerce B2B Edition, Azure Service Bus, Dynamics 365 Finance &#38; Operations — under Connector, Customer, Auth, Status and Created, every one Active"><figcaption>The Auth column shows the raw internal values: OAUTH, INPUT, OAUTH_2.</figcaption></figure>
 
 A connection is one customer's authorised link to one connector. It holds the credential — encrypted, never displayed — and records how it was obtained.
 

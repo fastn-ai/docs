@@ -6,7 +6,7 @@ description: Deployment stages, and the GitHub review gate in front of them.
 
 **Settings → Environments**
 
-<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="Environments and the GitHub connection"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page with a GitHub card connected to fastn-ai-team/fastn-platform on main, a Require review before publishing toggle switched off, and one table row: Live, slug live, Default, Protected"><figcaption>Sync to GitHub mirrors every workflow to the connected repository.</figcaption></figure>
 
 > Test and Live are built in. Add a named environment here when you want another stage, such as staging or review.
 

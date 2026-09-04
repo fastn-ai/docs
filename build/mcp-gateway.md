@@ -40,7 +40,7 @@ The gateway inherits the platform's access model rather than inventing a second 
 
 * **Customer scope** — a connection belongs to one customer, so a tool call runs against that customer's credential and cannot reach another's. Which customers a key may reach is set on the key itself, under *Customers it can reach*.
 * **Permissions** — an API key carries a permission preset (`Full access`, `Developer`, `Operator`, `Viewer`, `End user` or `Custom`) and a per-resource matrix. That caps what the gateway can do with it.
-* **Action scope** — on a [connector's](connectors.md) detail page, the middle pane lists every action with a **Select all** control. Narrowing that selection is what makes *read-only Jira for one customer, nothing beyond that* a configuration rather than a promise.
+* **Action scope** — on a [connector's](connectors/README.md) detail page, the middle pane lists every action with a **Select all** control. Narrowing that selection is what makes *read-only Jira for one customer, nothing beyond that* a configuration rather than a promise.
 
 {% hint style="warning" %}
 An MCP client acts with whatever the key it holds can do. Mint a key specifically for the client, give it the narrowest permission preset that works, and name it after the client — the Name field's own helper text is *Shown in the audit log beside everything this key does.*

@@ -42,7 +42,7 @@ The sidebar parent **Integrations** links to its connectors view (`/integrations
 
 ### Home
 
-<figure><img src="../.gitbook/assets/home.jpg" alt="fastn home screen"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/home.jpg" alt="The fastn Home screen: one What do you want to build? prompt box under a Good afternoon greeting, four suggestion chips that stop mid-sentence, and a Connect to Claude button"><figcaption>The left rail sorts everything into BUILD, OPERATE and MANAGE.</figcaption></figure>
 
 One prompt box: *What do you want to build?* Type an integration in plain words and fastn routes you to the right agent. The suggestion chips underneath all stop mid-sentence — deliberately, so you finish the thought rather than accept a canned one.
 
@@ -50,7 +50,7 @@ One prompt box: *What do you want to build?* Type an integration in plain words 
 
 The BUILD group holds two nav items: **Integrations**, which expands into the six pages below, and **Widgets**.
 
-<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="The connectors catalogue"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 236 catalogue cards — Adyen, Agile CRM, Aha!, Akeneo PIM, Amplitude — each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
 
 | Page                  | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
@@ -65,13 +65,13 @@ The BUILD group holds two nav items: **Integrations**, which expands into the si
 
 ### BUILD → Widgets
 
-<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="Widget builder with live preview"><figcaption>Left: what you configure. Right: exactly what your customer sees.</figcaption></figure>
+<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="The widget builder's Layout tab beside a tablet-width preview of the customer's panel: a purple Integrations header, a search box, and TikTok Shop marked Not connected with a Connect button"><figcaption>Left: what you configure. Right: exactly what your customer sees.</figcaption></figure>
 
 The widget builder has four tabs — Layout, Style, Features, Embed — and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset** and **Save and publish**; a **Live** badge appears once the widget is saved, and **Widget actions** offers **Reset to defaults**.
 
 ### OPERATE → Activity
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity events log"><figcaption>Activity → Events, the inbound and outbound record.</figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity → Events listing qa-wh-master rows, each tagged webhook and Delivered with a Sep 1 timestamp and a Replay link, under filter chips All 20, Webhook 20, Scheduled 0 and Manual 0"><figcaption>Activity → Events, the inbound and outbound record.</figcaption></figure>
 
 | Page             | Answers                                                        |
 | ---------------- | -------------------------------------------------------------- |
@@ -83,7 +83,7 @@ The widget builder has four tabs — Layout, Style, Features, Embed — and a li
 
 ### OPERATE → Customers
 
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The customers list"><figcaption>Every customer using your embedded integrations.</figcaption></figure>
+<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers list with two rows — osg-canada, 3 connections, Active, and asd, 1 connection, Pending admin activation — each ending in a View connections link"><figcaption>Every customer using your embedded integrations.</figcaption></figure>
 
 **Customers** is its own item in OPERATE, a sibling of Activity rather than a page inside it. It lists everyone using your embedded integrations, with columns *Customer*, *Connections* and *Status* — `Active` or `Pending admin activation` — plus **Create customer**, a search box, and **View connections** on each row. Documented with [Operate](../operate/customers.md).
 

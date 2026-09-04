@@ -6,7 +6,7 @@ description: The chat-driven builder that picks connectors, drafts workflows and
 
 **Home → What do you want to build?**
 
-<figure><img src="../../.gitbook/assets/agent-home.jpg" alt="The agent start screen"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-home.jpg" alt="fastn Home, greeting Good afternoon, Zain above a What do you want to build? prompt box, four half-finished suggestion chips, and a Connect to Claude button"><figcaption>The agent has no sidebar entry of its own — this prompt box is the way in.</figcaption></figure>
 
 The agent is the primary way integrations get built in fastn. You reach it from the **What do you want to build?** prompt on Home — there is no separate sidebar item for it. The pane is headed **Build an integration**, and states its own contract:
 
@@ -16,6 +16,8 @@ What it drafts is JavaScript — a `<slug>.js` module exporting `export default 
 
 ### Sessions
 
+<figure><img src="../../.gitbook/assets/agent-session.jpg" alt="An agent session: the Sessions rail on the left listing the current build and earlier sessions, the conversation on the right with a collapsed Worked · 3 steps summary, and the approval-mode chip and context meter under the composer"><figcaption>A session in progress. The rail on the left is your history; every session keeps its full conversation.</figcaption></figure>
+
 The left rail, headed **Sessions**, holds your session history. Each session keeps its full conversation, so you can come back to an integration weeks later and continue where you left off rather than re-explaining it. Before you start anything it reads *No sessions yet. Click New session to start.*
 
 * **New session** starts a fresh build.
@@ -24,14 +26,11 @@ The left rail, headed **Sessions**, holds your session history. Each session kee
 
 ### Starting from an example
 
-Four cards sit under **START FROM AN EXAMPLE**:
+A row of suggestion chips sits beneath the prompt box — short starters such as *Sync Stripe MRR to…*, *Log Stripe payouts in…*, *Trigger Mailchimp on Stripe…* or *Alert Slack on failed…*.
 
-* *Sync deals into billing*
-* *Alert before an SLA breaches*
-* *Keep a sheet current*
-* *Give an agent scoped access*
-
-They are written in the shape a good first message takes, and are worth reading before you write your own.
+{% hint style="info" %}
+**These are seeded per workspace and differ between them**, so the ones you see will not match the examples above. Treat them as a demonstration of the shape a good first message takes — name the systems, the trigger and what moves — rather than as a fixed menu. Tap one and edit it to fit.
+{% endhint %}
 
 ### Writing a good first message
 
@@ -51,6 +50,35 @@ The composer carries **Attach a file**, the message box (*Write a message…*) a
 The product's own summary is the reliable one: the agents pick the connectors, draft the workflow, and show you the diff before anything runs. In practice that means working out which systems are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat — inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes — and then writing the workflow code and opening it in the editor.
 
 Generated test cases land on the editor's **Test cases** tab, grouped as `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`, each row badged `LIVE` or `MOCK`.
+
+### The integration plan
+
+Before building, the agent writes an **Integration Plan** — an actual markdown document (named for the integration, such as `plan-hubspot-to-sheets.md`) that opens in a side panel. It sets out the trigger, the actions and connectors involved, a field-mapping table with a worked example per row, and a tenancy section. Its header has a **download** button, so the plan can be reviewed or circulated before anything is created.
+
+Read it. It is the cheapest place to catch a wrong assumption — correcting a mapping here costs a sentence; correcting it after the workflow is generated costs a rebuild.
+
+### Build progress
+
+Alongside the plan, a **BUILD PROGRESS** panel tracks the work as a step count (`0/6`, `2/6`, …) across four phases:
+
+| Phase | What happens |
+| ----- | ------------ |
+| **1. Use cases** | Plan and confirm the integration with you |
+| **2. Connectors** | Create and authorise the connectors it needs |
+| **3. Workflows** | Approve mappings and test cases, build and test the workflow, bind the trigger |
+| **4. Embed** | Expose the finished integration as a widget |
+
+Each phase expands to its named substeps, a completed one collapses to a green check and **Complete**, and the one in flight shows a spinner against the current substep. Phase counts vary with the integration — a build with no customer-facing surface will not have an Embed phase.
+
+### Clarifying questions
+
+Where your brief is ambiguous, the agent asks rather than guesses, rendering the question as selectable answer cards — each with a title and a sentence explaining what choosing it means. Every question also offers **Other…** for a free-form answer, so you are never limited to the options it drafted. Typical questions cover sync scope (ongoing only, versus an initial backfill first) and tenancy (internal, versus per-customer multi-tenant).
+
+### Reading what it did
+
+The agent's tool calls collapse into a single summary line in the chat — **Worked · 3 steps**, with **Show details** to expand the individual calls. Documents it produces appear as artifact chips (for example *Field Mappings & Connectors*) that reopen the full panel.
+
+Two counters are worth watching: the **context meter** beside the composer (`19k / 1000k`) shows how much of the session's context window the conversation has consumed, and **AI credits** in the top bar show what is left of your quota.
 
 ### Iterating
 

@@ -6,7 +6,7 @@ description: Every customer using your embedded integrations.
 
 **Customers** — a top-level item in the sidebar's OPERATE group, beside Activity rather than inside it.
 
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The customers list"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with two rows: osg-canada, 3 connections, Active; and asd with identifier aasdasdasd, 1 connection, Pending admin activation — each ending in View connections"><figcaption>The second line under each name is the identifier you will see again as endOrgId.</figcaption></figure>
 
 A customer is one of your customers — a container for their connections, credentials and workflow data.
 

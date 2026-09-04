@@ -85,5 +85,6 @@
 
 * [Workflow runtime API](reference/workflow-runtime.md)
 * [HTTP API](reference/api.md)
+* [fastn for AI agents](reference/ai-agents.md)
 * [FAQs](reference/faqs.md)
 * [Glossary](reference/glossary.md)

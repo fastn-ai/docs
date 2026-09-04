@@ -6,7 +6,7 @@ description: Every system your customers can authorise — managed, imported or 
 
 **Integrations → Connectors** · `/integrations?tab=connectors`
 
-<figure><img src="../../.gitbook/assets/connectors-list.jpg" alt="The connector catalogue"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connectors-list.jpg" alt="The Connectors catalogue showing 24 of 236 cards — Adyen, Agile CRM, Aha!, Akeneo PIM, Amplitude, Anthropic (Claude) — each badged managed and Managed by Fastn, with its own Connect button"><figcaption>Import and Create connector sit top-right; the chips filter by All, Connected, OAuth and visibility.</figcaption></figure>
 
 A connector is the definition of one external system: its actions, its authentication methods, its webhook configuration and its versions. It is not a credential — that is a [connection](../connections/README.md).
 

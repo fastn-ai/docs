@@ -6,7 +6,7 @@ description: The code that runs on a trigger, a schedule, or an agent call.
 
 **Integrations → Workflows** · `/integrations?tab=workflows`
 
-<figure><img src="../../.gitbook/assets/workflows-list.jpg" alt="The workflows list"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/workflows-list.jpg" alt="The Workflows list with three Active rows — sync_cin7_trackstar_salesOrder, sync_trackstar_cin7_salesOrder and sync_tiktok_cin7_inventory — each at Latest v1 with nothing live, and a Run button"><figcaption>Sync to GitHub, Build with AI and Create workflow sit top-right; the pills filter by execution tier.</figcaption></figure>
 
 A workflow is JavaScript. One file, `<slug>.js`, exporting one function:
 

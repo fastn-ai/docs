@@ -6,7 +6,7 @@ description: What starts a workflow — an inbound webhook, a schedule, or an ev
 
 **Integrations → Triggers** · `/integrations?tab=triggers`
 
-<figure><img src="../../.gitbook/assets/triggers.jpg" alt="The triggers page"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/triggers.jpg" alt="The Triggers page on its Webhooks sub-tab, with Schedulers and App events beside it all reading zero, an All statuses filter, and a No webhooks yet empty state offering Add your first webhook"><figcaption>The dismissible What triggers do banner explains all three types before you pick one.</figcaption></figure>
 
 A workflow with no trigger only runs when something calls it. A trigger is what makes it run on its own.
 
@@ -14,7 +14,7 @@ The page splits into three sub-tabs — **Webhooks**, **Schedulers** (`?trigger=
 
 ### Choosing a type
 
-<figure><img src="../../.gitbook/assets/add-trigger-dialog.jpg" alt="The add trigger dialog"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/add-trigger-dialog.jpg" alt="The Add a trigger dialog asking What should start the workflow?, offering Webhook, Schedule and App event as three rows, each with a sentence of explanation and a forward arrow"><figcaption>Each choice leads straight into that trigger type's own creation form.</figcaption></figure>
 
 | Type          | Fires when                                                     | Reach for it when                                            |
 | ------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |

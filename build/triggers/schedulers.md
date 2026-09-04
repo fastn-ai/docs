@@ -16,7 +16,7 @@ A schedule trigger fires on a clock you set — nightly reconciliation, hourly p
 
 From **Add trigger**, choose **Schedule**, and give it a **Name** (and an optional **Description**).
 
-<figure><img src="../../.gitbook/assets/schedule-trigger-form.jpg" alt="The new schedule trigger form"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/schedule-trigger-form.jpg" alt="The New schedule trigger dialog with Name and Description fields, mode pills Interval, Daily, Weekly, Monthly and Custom, Run every set to 5 minutes, and Timezone Asia/Karachi"><figcaption>Interval is the default mode, and the timezone defaults to your browser's.</figcaption></figure>
 {% endstep %}
 
 {% step %}

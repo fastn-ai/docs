@@ -6,7 +6,7 @@ description: Watching what actually happens once integrations are live.
 
 Build tells you what should happen. Operate tells you what did.
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="The events log"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity → Events, first of the five logs: webhook rows all marked Delivered with Sep 1 timestamps, chips reading All 20, Webhook 20, Scheduled 0 and Manual 0, and Auto refresh off"><figcaption>Events is where a debugging pass starts — did the thing arrive at all?</figcaption></figure>
 
 **Activity** holds five logs, each answering a different question.
 

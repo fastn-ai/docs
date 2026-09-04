@@ -4,7 +4,7 @@ description: The Features tab: optional capabilities your customers get inside t
 
 # Features
 
-<figure><img src="../../.gitbook/assets/widget-features.jpg" alt="The Features tab"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-features.jpg" alt="The Features tab with Catalog connectors and Workflow Diagram listed under Available now, both toggles off, and a Coming soon block beginning with Widget filter badged Soon"><figcaption>The live preview keeps rendering the customer's view while you flip these.</figcaption></figure>
 
 Optional capabilities your customers get inside the widget.
 

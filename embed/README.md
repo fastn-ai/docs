@@ -8,13 +8,13 @@ description: The integrations panel your customers see inside your own product.
 
 Everything under Build exists so that this screen can do its job. The widget is the only part of fastn your customers ever touch: they browse the integrations you offer, authorise their own accounts, and configure what syncs — inside your product, under your branding.
 
-<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="The widget builder"><figcaption>Configure on the left, see exactly what the customer sees on the right.</figcaption></figure>
+<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="The widget builder: a left panel with Layout, Style, Features and Embed tabs over Title and Subtitle fields, beside a tablet-width Live preview showing a purple Integrations header and a TikTok Shop row"><figcaption>Configure on the left, see exactly what the customer sees on the right.</figcaption></figure>
 
 Two pages cover it:
 
-{% content-ref url="widget-builder.md" %}[Widget builder](widget-builder.md){% endcontent-ref %}
+{% content-ref url="widget-builder.md" %}[Widget builder](widget-builder/README.md){% endcontent-ref %}
 
-{% content-ref url="embedding.md" %}[Embedding the widget](embedding.md){% endcontent-ref %}
+{% content-ref url="embedding.md" %}[Embedding the widget](embedding/README.md){% endcontent-ref %}
 
 ### There is no widget list
 

@@ -6,7 +6,7 @@ description: Three ways to put the widget in your product, and how to hand it a 
 
 **Widgets → Embed**
 
-<figure><img src="../../.gitbook/assets/widget-embed.jpg" alt="The Embed tab"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-embed.jpg" alt="The Embed tab with Iframe selected beside SDK and A2A soon, a USER selector set to osg-canada, and an Embed Code block with a Copy button"><figcaption>The preview follows the selected user — here one system is connected and one is not.</figcaption></figure>
 
 Pick a **USER** at the top — the widget is always scoped to one of your customers, and the selector scopes the snippet the tab generates — then choose how to mount it.
 

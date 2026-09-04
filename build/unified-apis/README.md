@@ -6,7 +6,7 @@ description: One canonical endpoint per business entity, served by whichever pro
 
 **Integrations → Unified APIs** · `/integrations?tab=unified`
 
-<figure><img src="../../.gitbook/assets/unified-apis.jpg" alt="Unified API categories"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/unified-apis.jpg" alt="The Unified APIs page showing five category cards — CRM with 10 entities, Documents with 2, Knowledge Base with 1, Messaging with 2 and Project Management with 1 — each stacking its provider icons"><figcaption>The icons on each card are the providers currently serving that category.</figcaption></figure>
 
 Three of your customers use three different CRMs. Without a unified API, your code branches three ways for what is conceptually one operation: create a contact. With one, you call a single endpoint and fastn routes to whichever provider that customer authorised.
 

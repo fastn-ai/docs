@@ -6,7 +6,7 @@ description: Which Postgres your workflows read and write through.
 
 **Settings → Database**
 
-<figure><img src="../.gitbook/assets/settings-database.jpg" alt="Database settings, shared versus your own"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-database.jpg" alt="Database settings, shared versus your own"><figcaption>Each workspace gets its own Postgres schema, isolated from every other workspace — but not from your own customers.</figcaption></figure>
 
 Workflows can persist data with `fastn.db`. This page decides where that data lands.
 

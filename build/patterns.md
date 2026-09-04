@@ -4,7 +4,7 @@ description: The handful of workflow shapes that come up again and again.
 
 # Common patterns
 
-You can describe any of these to the [agent](agent.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
+You can describe any of these to the [agent](agent/README.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
 
 Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use — `fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector` — are listed on the editor's **Docs** tab; check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
 
@@ -16,7 +16,7 @@ Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime
 
 **The shape.** Three defences, cheapest first.
 
-1. A **deduplication key** on the [trigger](triggers.md) — the field in the payload that identifies the event, so a retried delivery does not run the workflow twice.
+1. A **deduplication key** on the [trigger](triggers/README.md) — the field in the payload that identifies the event, so a retried delivery does not run the workflow twice.
 2. An **idempotency guard** in the workflow, using `fastn.state`:
 
    ```javascript
@@ -88,7 +88,7 @@ Which customer a run belongs to arrives in the request headers — `x-end-org-id
 
 **The problem.** One inbound event needs to do three unrelated things — create an invoice, notify Slack, update a sheet.
 
-**The shape.** One webhook trigger, three [routes](triggers.md). Each route names its own workflow, and they run independently, so a Slack outage does not stop the invoice.
+**The shape.** One webhook trigger, three [routes](triggers/README.md). Each route names its own workflow, and they run independently, so a Slack outage does not stop the invoice.
 
 Prefer this over one workflow that does all three. Three workflows means three execution records, three retry policies, and a failure you can read at a glance.
 
@@ -121,7 +121,7 @@ Run it against one customer first, and read the [sync report](../operate/sync-re
 
 **The problem.** You want failures posted to *your* Slack, not the customer's.
 
-**The shape.** Use a Slack connection your organisation owns — one created from **New connection** and scoped `Account level` — rather than one belonging to a customer. On the workflow's [Connectors tab](workflows.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
+**The shape.** Use a Slack connection your organisation owns — one created from **New connection** and scoped `Account level` — rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
 
 For failure notification specifically, an [alert](../operate/alerts.md) with a Slack destination is simpler than building it into the workflow — and it also catches the case where the workflow itself never ran.
 
@@ -145,7 +145,7 @@ If the failure is a timeout rather than a rejection, **Escalate on timeout** ret
 
 **The problem.** Customer A is on HubSpot, B on Salesforce, C on Zoho, and the workflow has grown a branch per vendor for what is one operation.
 
-**The shape.** Call the [unified API](unified-apis.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorised. `/api/v1/unified/crm/contact` is the same call regardless of the stack underneath.
+**The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorised. `/api/v1/unified/crm/contact` is the same call regardless of the stack underneath.
 
 Keep the vendor-specific parts on the direct connector — the two mix freely in one workflow. Watch the entity limits: `Note`, `Channel Message` and `Direct Message` are create-only.
 

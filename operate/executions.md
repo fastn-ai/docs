@@ -6,7 +6,7 @@ description: Every workflow run, newest first.
 
 **Activity → Executions**
 
-<figure><img src="../.gitbook/assets/activity-executions.jpg" alt="The executions log"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-executions.jpg" alt="The Executions log with every status chip at zero — Pending, Queued, Running, Completed, Failed, Timeout, Cancelled — and a No runs yet empty state above Rows per page set to 10"><figcaption>The empty state notes that test runs from a workflow's own Execute button never appear here.</figcaption></figure>
 
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 

@@ -6,7 +6,7 @@ description: The Create connector dialog: identity, connection and authenticatio
 
 **Create connector** opens a dialog with three sections: **Identity**, **Connection** and **Authentication**.
 
-<figure><img src="../../.gitbook/assets/create-connector-dialog.jpg" alt="The create connector dialog"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-connector-dialog.jpg" alt="The Create a connector dialog: Identity fields Name, Slug and Description, then Connection fields Protocol set to REST, Visibility set to Private, Domain and Icon URL"><figcaption>Create connector stays disabled until the name is filled — the footer says so.</figcaption></figure>
 
 | Field           | Type   | Notes                                                                        |
 | --------------- | ------ | ------------------------------------------------------------------------------ |

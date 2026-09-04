@@ -6,7 +6,7 @@ description: Deleted connectors, actions and workflows, kept until you remove th
 
 **Settings → Trash**
 
-<figure><img src="../.gitbook/assets/settings-trash.jpg" alt="The trash page"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-trash.jpg" alt="The Trash page on its Connectors tab, beside Actions and Workflows, showing a Nothing deleted empty state and the line that deleted connectors land here, so a mistake is a restore"><figcaption>The paragraph underneath warns that widgets are deleted immediately and cannot be restored here.</figcaption></figure>
 
 > Deleted connectors, actions and workflows, kept until you remove them.
 

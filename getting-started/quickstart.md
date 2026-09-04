@@ -52,7 +52,7 @@ Some workspaces have code editing switched off. There, workflows are generated a
 
 ### 4. Test it
 
-<figure><img src="../.gitbook/assets/workflow-test.jpg" alt="The Test tab with ctx.input and ctx.headers"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/workflow-test.jpg" alt="The Test tab with ctx.input and ctx.headers"><figcaption><strong>Use contract</strong> fills <code>ctx.input</code> with a sample built from the workflow's own contract.</figcaption></figure>
 
 Open **Test**, click **Use contract** to populate a sample `ctx.input`, and choose a mode beside the run button: **Live** calls the real systems, **Partial Mock** mixes real calls with stubs, **Fully Mock** uses stubs only. Then hit **Run Live** (or **Run**).
 
@@ -71,7 +71,7 @@ Until a snapshot is published, the workflow's status reads `Not published` and e
 
 A workflow with no trigger only runs when you call it. Go to **Integrations → Triggers → Add trigger** and pick one:
 
-<figure><img src="../.gitbook/assets/add-trigger-dialog.jpg" alt="The add trigger dialog offering webhook, schedule and app event"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/add-trigger-dialog.jpg" alt="The add trigger dialog offering webhook, schedule and app event"><figcaption>Three trigger types. A workflow with no trigger only runs when you call it.</figcaption></figure>
 
 For the HubSpot example, choose **App event**. The form is progressive: name it, pick the HubSpot connector, then pick a connection and an event, then add a route pointing at your workflow. Two things to know before you start — the connector cannot be changed after the trigger is created, and you cannot get past the connector step without an active connection. Without one the form stops you:
 

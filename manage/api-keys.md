@@ -6,7 +6,7 @@ description: Programmatic access to your workspace.
 
 **Settings → API keys**
 
-<figure><img src="../.gitbook/assets/settings-api-keys.jpg" alt="The API keys list"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-api-keys.jpg" alt="The API keys list with two rows, LiveMCP badged Live and Testing MCP badged Test, both Full access and Last used Never, each offering Rotate; the filters read All 2, Live 1, Test 1"><figcaption>The Key column shows only a prefix and the last four characters, with a copy icon.</figcaption></figure>
 
 | Column        | Notes                                              |
 | ------------- | ---------------------------------------------------- |
@@ -22,7 +22,7 @@ description: Programmatic access to your workspace.
 
 ### Creating a key
 
-<figure><img src="../.gitbook/assets/create-api-key.jpg" alt="The create API key dialog"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/create-api-key.jpg" alt="The Create an API key dialog with a Name field, Mode cards Test selected and Live carrying a warning, Permissions set to Viewer, and a line saying the key reads test data and expires in 90 days"><figcaption>The dialog spells out that Test is a separate credential, not a sandbox.</figcaption></figure>
 
 The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 

@@ -4,7 +4,7 @@ description: The Style tab: theme, accent, type, shape and design tokens.
 
 # Style
 
-<figure><img src="../../.gitbook/assets/widget-style.jpg" alt="The Style tab"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-style.jpg" alt="The Style tab on its Theme sub-tab, beside Accent, Type, Shape and Tokens, offering Light and Dark base cards with a note that neither is selected because custom surfaces are set"><figcaption>Status colours stay fixed whichever base you pick, so failed always reads as failed.</figcaption></figure>
 
 Five sub-tabs: **Theme**, **Accent**, **Type**, **Shape**, **Tokens**.
 

@@ -6,7 +6,7 @@ description: Vendor changes to the integrations you use, and the fixes proposed 
 
 **Integrations → Pending updates** · `/integrations/updates`
 
-<figure><img src="../.gitbook/assets/connector-updates.jpg" alt="The pending updates page"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/connector-updates.jpg" alt="The Pending updates page in its empty state, reading Nothing needs your attention above a Show 1 already handled link that brings resolved proposals back into view"><figcaption>Nothing outstanding — the handled count is the only sign anything ever landed here.</figcaption></figure>
 
 Vendors deprecate endpoints, change parameter names and alter response shapes. Normally you find out when a sync starts failing. fastn watches for these changes, works out what the fix is, and files a proposal here. The page states its own promise:
 
@@ -24,7 +24,7 @@ Each card carries:
 * a description of what changed and the fix; and
 * a **Details** button.
 
-<figure><img src="../.gitbook/assets/connector-update-review.jpg" alt="A pending update in detail"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/connector-update-review.jpg" alt="An applied hubspot proposal tagged Fork a new major, covering 1 workflow across 3 orgs, explaining the retired Contacts Lists v1 API and three numbered migration steps, with a Notify affected orgs button"><figcaption>Agent confidence and provenance sit under the text; here no patch could be derived automatically.</figcaption></figure>
 
 **Details** opens the proposal in full: what changed upstream, with the specific endpoints involved, and the fix set out as numbered migration steps — updated IDs, remapped parameters, changed response parsing.
 
@@ -33,5 +33,5 @@ Each card carries:
 Because a connector change can alter behaviour your workflows depend on. A parameter rename is safe; a response shape that drops a field your mapping reads is not. fastn does the diagnosis and the drafting, and leaves the decision with you.
 
 {% hint style="info" %}
-Version pins on a connector let you hold specific customers on the old version while you migrate the rest — remembering that a version set in code still wins over a pin. See [Connectors](connectors.md).
+Version pins on a connector let you hold specific customers on the old version while you migrate the rest — remembering that a version set in code still wins over a pin. See [Connectors](connectors/README.md).
 {% endhint %}

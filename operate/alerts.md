@@ -6,7 +6,7 @@ description: Get told when something crosses a line you care about. Checked ever
 
 **Activity → Alerts**
 
-<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The alerts page before any alert exists"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The alerts page before any alert exists"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
 
 Without an alert, a sync can fail quietly for hours. This is the cheapest insurance in the product. The empty state says as much:
 
@@ -22,7 +22,7 @@ A standing **Sync failure notifications** card sits on the page with its own **T
 
 ### Custom alerts
 
-<figure><img src="../.gitbook/assets/alert-editor.jpg" alt="The alert editor"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/alert-editor.jpg" alt="The alert editor open on an Untitled alert badged Paused and No recipients, set to fire when Error rate is above 5% over 24 hours, watching All workflows, with Slack, Email and Webhook delivery fields"><figcaption>Firing history at the bottom reads This alert has not fired yet.</figcaption></figure>
 
 **New alert** — or **Custom alert** on the empty state — opens the editor.
 
