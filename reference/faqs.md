@@ -230,7 +230,7 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 Because two entries exist for one system — typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
 
-The practical consequence: the connector count is a count of *entries*, not of distinct systems, so "236 connectors" is not 236 different products. Check the badge and the provenance line before you connect, so you do not authorise the copy you did not mean.
+The practical consequence: the connector count is a count of *entries*, not of distinct systems, so "351 connectors" is not 351 different products. Check the badge and the provenance line before you connect, so you do not authorise the copy you did not mean.
 
 </details>
 

@@ -4,11 +4,11 @@ description: The chat-driven builder that picks connectors, drafts workflows and
 
 # Agent
 
-**Home → What do you want to build?**
+**Integrations → Agent** (`/agent`), or the **What do you want to build?** prompt on Home
 
-<figure><img src="../../.gitbook/assets/agent-home.jpg" alt="fastn Home, greeting Good afternoon, Zain above a What do you want to build? prompt box, four half-finished suggestion chips, and a Connect to Claude button"><figcaption>The agent has no sidebar entry of its own — this prompt box is the way in.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-start.jpg" alt="The Agent screen at /agent: the Sessions rail on the left listing earlier sessions, and a Build an integration pane with four START FROM AN EXAMPLE cards above a Write a message composer carrying an Auto chip and a 0 / 1000k context meter"><figcaption><strong>Agent</strong> is the first item under Integrations in the sidebar. Home's prompt box opens the same place.</figcaption></figure>
 
-The agent is the primary way integrations get built in fastn. You reach it from the **What do you want to build?** prompt on Home — there is no separate sidebar item for it. The pane is headed **Build an integration**, and states its own contract:
+The agent is the primary way integrations get built in fastn, and there are two ways in: the **Agent** item in the sidebar, directly under **Integrations**, or the **What do you want to build?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
 
 > Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
 
@@ -26,10 +26,19 @@ The left rail, headed **Sessions**, holds your session history. Each session kee
 
 ### Starting from an example
 
-A row of suggestion chips sits beneath the prompt box — short starters such as *Sync Stripe MRR to…*, *Log Stripe payouts in…*, *Trigger Mailchimp on Stripe…* or *Alert Slack on failed…*.
+Four cards sit under **START FROM AN EXAMPLE**, each pairing a goal with the concrete detail that makes it buildable:
+
+| Card | What it asks for |
+| ---- | ---------------- |
+| **Sync deals into billing** | Closed-won Salesforce opportunities, custom fields included |
+| **Alert before an SLA breaches** | Post to Slack when a Zendesk ticket is close to its deadline |
+| **Keep a sheet current** | Append new HubSpot contacts to a Google Sheet as they arrive |
+| **Give an agent scoped access** | Read-only Jira for one customer, nothing beyond that |
+
+They are written in the shape a good first message takes — a system, a trigger, and the specific thing that moves — and are worth reading before you write your own.
 
 {% hint style="info" %}
-**These are seeded per workspace and differ between them**, so the ones you see will not match the examples above. Treat them as a demonstration of the shape a good first message takes — name the systems, the trigger and what moves — rather than as a fixed menu. Tap one and edit it to fit.
+Do not confuse these with the suggestion chips on **Home**, which are seeded per workspace and differ between them. The four cards above are the agent screen's own examples.
 {% endhint %}
 
 ### Writing a good first message

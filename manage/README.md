@@ -6,7 +6,7 @@ description: Organisation settings, access, credentials and billing.
 
 **Settings** in the MANAGE group of the left rail.
 
-**Its sub-navigation is role-scoped — you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, Billing, Roles, Audit log and Trash; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. The pages a Developer does not get are the administrative ones — People, General, Billing, Roles and the Audit log; Trash shows for everyone.
+**Its sub-navigation is role-scoped — you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, SaaS Connectors, Billing, Roles, Audit log and Trash; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. The pages a Developer does not get are the administrative ones — People, General, Billing, Roles and the Audit log; Trash shows for everyone.
 
 The table follows the Owner sidebar order, with Trash last.
 
@@ -19,6 +19,7 @@ The table follows the Owner sidebar order, with Trash last.
 | [Environments and GitHub](environments.md) | Deployment stages and review gates.                         |
 | [Configs](configs.md)                   | Per-environment values read at runtime.                        |
 | [Database](database.md)                 | Which Postgres your workflows read and write through.          |
+| [SaaS Connectors](saas-connectors.md)   | Your own SaaS API, and the scopes tenants connect under.       |
 | [Billing and limits](billing.md)        | Plan, credits and limits.                                      |
 | [Roles](roles.md)                       | What each role can do, and how to narrow one.                  |
 | [Audit log](audit-log.md)               | Every action taken in the organisation.                        |

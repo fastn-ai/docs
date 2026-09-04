@@ -6,7 +6,7 @@ description: What each role can do, and how to narrow one.
 
 **Settings → Roles**
 
-<figure><img src="../.gitbook/assets/settings-roles.jpg" alt="The Roles screen with Owner, Admin, Developer, Operator, Viewer and End User down the left and Admin selected at 45 of 45 permissions, its Connectors, Connections and Workflows groups fully ticked"><figcaption>Two capabilities are called out as role-gated rather than grantable: using the AI assistant and reading the audit log.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-roles.jpg" alt="The Roles screen with Owner 42, Admin 42, Developer 34, Operator 21, Viewer 6 and End User 35 down the left, Admin selected at 42 of 42 permissions and 100%, and its Connectors 5 of 5, Connections 6 of 6 and Workflows 7 of 7 groups fully ticked"><figcaption>Two capabilities are called out as role-gated rather than grantable: using the AI assistant and reading the audit log.</figcaption></figure>
 
 > A custom role narrows a built-in one; assign either to a person on the People screen, or to an embed tier under Billing.
 

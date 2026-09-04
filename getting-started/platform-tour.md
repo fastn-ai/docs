@@ -37,7 +37,7 @@ The account card at the bottom-left switches organisation and opens your profile
 | —         | Profile             | `/profile`                          |
 
 {% hint style="info" %}
-The sidebar parent **Integrations** links to its connectors view (`/integrations?tab=connectors`), and its badge shows the number of connectors in your catalogue. The agent has no sidebar item of its own — reach it from the **What do you want to build?** prompt on Home. Both are worth knowing before you go looking for a page that seems to have moved.
+The sidebar parent **Integrations** links to its connectors view (`/integrations?tab=connectors`), and its badge shows the number of connectors in your catalogue. **Agent** is the first item under Integrations, at `/agent`; the **What do you want to build?** prompt on Home opens the same screen. Both are worth knowing before you go looking for a page that seems to have moved.
 {% endhint %}
 
 ### Home
@@ -50,7 +50,7 @@ One prompt box: *What do you want to build?* Type an integration in plain words 
 
 The BUILD group holds two nav items: **Integrations**, which expands into the six pages below, and **Widgets**.
 
-<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 236 catalogue cards — Adyen, Agile CRM, Aha!, Akeneo PIM, Amplitude — each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 351 catalogue cards — AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha! — each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
 
 | Page                  | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
