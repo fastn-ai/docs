@@ -4,7 +4,7 @@ description: The SDK mounts the same iframe and adds events, token refresh, them
 
 # SDK
 
-<figure><img src="../../.gitbook/assets/widget-embed-sdk.jpg" alt="The Embed tab with SDK selected, a USER selector set to osg-canada, and expandable variants starting with Connect card from @fastn-ai/embed/react and React component below it"><figcaption>Each variant expands to the exact snippet for the user you selected.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-embed-sdk.jpg" alt="The Embed tab with SDK selected, a USER selector naming the customer the snippets are scoped to, and expandable variants starting with Connect card from @fastn-ai/embed/react and React component below it"><figcaption>Each variant expands to the exact snippet for the user you selected.</figcaption></figure>
 
 The SDK mounts the same iframe and adds what a raw tag cannot: events when a user connects an app, token refresh, live theming, and modal mode.
 

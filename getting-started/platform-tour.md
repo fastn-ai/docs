@@ -32,7 +32,7 @@ The account card at the bottom-left switches organisation and opens your profile
 |           | Pending updates     | `/integrations/updates`             |
 |           | Widgets             | `/widgets`                          |
 | OPERATE   | Activity            | `/activity/*`                       |
-|           | Customers           | see below                           |
+|           | Customers           | `/settings/customers`               |
 | MANAGE    | Settings            | `/settings/*`                       |
 | —         | Profile             | `/profile`                          |
 
@@ -42,15 +42,15 @@ The sidebar parent **Integrations** links to its connectors view (`/integrations
 
 ### Home
 
-<figure><img src="../.gitbook/assets/home.jpg" alt="The fastn Home screen: one What do you want to build? prompt box under a Good afternoon greeting, four suggestion chips that stop mid-sentence, and a Connect to Claude button"><figcaption>The left rail sorts everything into BUILD, OPERATE and MANAGE.</figcaption></figure>
+<figure><img src="../.gitbook/assets/home.jpg" alt="The fastn Home screen: a Good evening, Zain greeting, one What do you want to build? prompt box, four suggestion chips, and a Connect to Claude button"><figcaption>Nothing else competes for attention here — no counters, no recent activity.</figcaption></figure>
 
-One prompt box: *What do you want to build?* Type an integration in plain words and fastn routes you to the right agent. The suggestion chips underneath all stop mid-sentence — deliberately, so you finish the thought rather than accept a canned one.
+One prompt box: *What do you want to build?* Type an integration in plain words and fastn routes you to the right agent. Four suggestion chips sit underneath — *Sync TikTok settlements*, *Notify Slack on orders*, *Log errors to Google Sheets* and *Build a Notion connector* — each a starting point you can take as-is or rewrite. **Connect to Claude** sits below them.
 
 ### BUILD → Integrations
 
 The BUILD group holds two nav items: **Integrations**, which expands into the six pages below, and **Widgets**.
 
-<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 351 catalogue cards — AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha! — each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 354 catalogue cards — AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha! — each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
 
 | Page                  | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
@@ -65,13 +65,13 @@ The BUILD group holds two nav items: **Integrations**, which expands into the si
 
 ### BUILD → Widgets
 
-<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="The widget builder's Layout tab beside a tablet-width preview of the customer's panel: a purple Integrations header, a search box, and TikTok Shop marked Not connected with a Connect button"><figcaption>Left: what you configure. Right: exactly what your customer sees.</figcaption></figure>
+<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="Widget builder, Layout tab, badged Live, beside a Tablet-width preview: purple Integrations header, Connect your favorite tools, a search box, and TikTok Shop marked Not connected"><figcaption>Left: what you configure. Right: exactly what your customer sees.</figcaption></figure>
 
 The widget builder has four tabs — Layout, Style, Features, Embed — and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset** and **Save and publish**; a **Live** badge appears once the widget is saved, and **Widget actions** offers **Reset to defaults**.
 
 ### OPERATE → Activity
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity → Events listing qa-wh-master rows, each tagged webhook and Delivered with a Sep 1 timestamp and a Replay link, under filter chips All 20, Webhook 20, Scheduled 0 and Manual 0"><figcaption>Activity → Events, the inbound and outbound record.</figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity → Events listing repeated Perigon article-alert webhook rows, each tagged webhook, Delivered, timestamped Sep 4, with a Replay link, under chips All 20, Webhook 20, Scheduled 0, Manual 0"><figcaption>Activity → Events, the inbound and outbound record.</figcaption></figure>
 
 | Page             | Answers                                                        |
 | ---------------- | -------------------------------------------------------------- |
@@ -83,9 +83,9 @@ The widget builder has four tabs — Layout, Style, Features, Embed — and a li
 
 ### OPERATE → Customers
 
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers list with two rows — osg-canada, 3 connections, Active, and asd, 1 connection, Pending admin activation — each ending in a View connections link"><figcaption>Every customer using your embedded integrations.</figcaption></figure>
+<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers list holding a single row — testing, identifier testing, 1 connection, Active — beside an All tiers filter, with Create customer top-right and View connections on the row"><figcaption>Every customer using your embedded integrations; this workspace has only a test one.</figcaption></figure>
 
-**Customers** is its own item in OPERATE, a sibling of Activity rather than a page inside it. It lists everyone using your embedded integrations, with columns *Customer*, *Connections* and *Status* — `Active` or `Pending admin activation` — plus **Create customer**, a search box, and **View connections** on each row. Documented with [Operate](../operate/customers.md).
+**Customers** appears as its own item in the OPERATE group, a sibling of Activity rather than a page inside it — though its route is `/settings/customers`, not `/customers`. It lists everyone using your embedded integrations, with columns *Customer*, *Connections* and *Status* — `Active` or `Pending admin activation` — plus **Create customer**, a search box, and **View connections** on each row. Documented with [Operate](../operate/customers.md).
 
 ### MANAGE → Settings
 
@@ -93,12 +93,12 @@ The widget builder has four tabs — Layout, Style, Features, Embed — and a li
 
 | Role                | Settings contains                                                                                        |
 | ------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Owner / Admin**   | People, General, API keys, Secrets, Environments, Configs, Database, Billing, Roles, Audit log, Trash |
+| **Owner / Admin**   | People, General, API keys, Secrets, Environments, Configs, Database, SaaS Connectors, Billing, Roles, Audit log, Trash |
 | **Developer**       | API keys, Secrets, Environments, Configs, Database, Trash                                                 |
 
 Trash is in the sidebar for Owners, Admins and Developers alike, at `/settings/trash`. Two capabilities are gated by role rather than by permission — using the AI assistant, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
 
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings, with the full sub-navigation expanded"><figcaption>The Owner view of Settings.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organisation block with Name Zain's Organization and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner — organisation identity first, joining rules second.</figcaption></figure>
 
 ### The account card
 

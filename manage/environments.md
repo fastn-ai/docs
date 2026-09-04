@@ -6,7 +6,7 @@ description: Deployment stages, and the GitHub review gate in front of them.
 
 **Settings → Environments**
 
-<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page with a GitHub card connected to fastn-ai-team/fastn-platform on main, a Require review before publishing toggle switched off, and one table row: Live, slug live, Default, Protected"><figcaption>Sync to GitHub mirrors every workflow to the connected repository.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page: a GitHub card reading No repository connected beside a Connect GitHub button, and a single table row — Live, slug live, Default, Requires review off, Protected"><figcaption>What a workspace looks like before anyone adds a stage: one built-in Live target and no review gate in front of it.</figcaption></figure>
 
 > Test and Live are built in. Add a named environment here when you want another stage, such as staging or review.
 
@@ -17,7 +17,7 @@ description: Deployment stages, and the GitHub review gate in front of them.
 | **Name**            | Display name.                                                            |
 | **Slug**            | Used in the `x-fastn-env` header and in trigger routes.                  |
 | **Type**            | Default, or a named environment you created.                             |
-| **Requires review** | A checkbox per environment. Ticked, promoting to it opens a pull request instead of deploying. |
+| **Requires review** | A toggle per environment, off by default. Switched on, promoting to it opens a pull request instead of deploying. |
 
 Live carries a **Protected** badge. Read that as fastn marking it as the one you should not casually restructure; whether the badge also hard-blocks deletion is not something this page can confirm.
 
@@ -40,7 +40,7 @@ A **GitHub** panel sits above the table, explaining what connecting a repository
 
 > Connect a repository and promoting to a reviewed environment opens a pull request instead of deploying straight away.
 
-Until you connect one, its status reads **No repository connected** and the only control is **Connect GitHub**. That is what a new workspace sees, and it is worth knowing that the review gate does nothing on its own — it needs both a repository here and **Requires review** ticked on the environment you are promoting into.
+Until you connect one, its status reads **No repository connected** and the only control is **Connect GitHub**. That is what a new workspace sees, and it is worth knowing that the review gate does nothing on its own — it needs both a repository here and **Requires review** switched on for the environment you are promoting into.
 
 Once a repository is connected the panel shows it, along with controls for mirroring workflows to the repo and for disconnecting. Those controls were not captured on a connected workspace, so check what disconnecting does to anything already deployed before you use it rather than assuming it is inert.
 

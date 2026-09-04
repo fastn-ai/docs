@@ -71,7 +71,7 @@ Until a snapshot is published, the workflow's status reads `Not published` and e
 
 A workflow with no trigger only runs when you call it. Go to **Integrations → Triggers → Add trigger** and pick one:
 
-<figure><img src="../.gitbook/assets/add-trigger-dialog.jpg" alt="The add trigger dialog offering webhook, schedule and app event"><figcaption>Three trigger types. A workflow with no trigger only runs when you call it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/add-trigger-dialog.jpg" alt="The Add a trigger dialog, headed What should start the workflow?, with Webhook, Schedule and App event as three rows, each explained in a sentence and ending in an arrow"><figcaption>Three trigger types. A workflow with no trigger only runs when you call it.</figcaption></figure>
 
 For the HubSpot example, choose **App event**. The form is progressive: name it, pick the HubSpot connector, then pick a connection and an event, then add a route pointing at your workflow. Two things to know before you start — the connector cannot be changed after the trigger is created, and you cannot get past the connector step without an active connection. Without one the form stops you:
 

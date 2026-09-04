@@ -16,7 +16,7 @@ Connectors marked **managed** are maintained by fastn — when the vendor ships 
 | **All / Connected / OAuth** | Everything · at least one live connection · offers OAuth 2.0 | `?category=` |
 | **All Visibility** | `All Visibility`, `Private`, `Public`                     | `?visibility=`   |
 
-There is no sort control. The list pages at 24 per page with a footer reading `1–24 of 351`; the page number is not kept in the URL, so a deep link always lands on page one.
+There is no sort control. The list pages at 24 per page with a footer reading `1–24 of 354`; the page number is not kept in the URL, so a deep link always lands on page one.
 
 A search that matches nothing shows `No connectors match "x"`, *Try another search or category.* and a **Clear search** button.
 

@@ -6,7 +6,7 @@ description: Your plan, what you have used, and where the ceilings are.
 
 **Settings → Billing**
 
-<figure><img src="../.gitbook/assets/settings-billing.jpg" alt="The Billing page with a Free, $0 per month plan card, a Credits this period tile reading 0 of 50 used, and a Limits list where API keys per customer sits at 2 / 2, 100%"><figcaption>Rows marked not measured have a cap but no usage reading behind them.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-billing.jpg" alt="The Billing page with a Free, $0 per month plan card, a Credits this period tile reading 0 of 50 used and resetting in 27 days, and a Limits list where API keys per customer reads 4 / 2, 100%"><figcaption>Rows marked not measured have a cap but no usage reading behind them.</figcaption></figure>
 
 ### Plan and credits
 

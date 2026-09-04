@@ -8,7 +8,7 @@ description: Encrypted values your workflows read at runtime.
 
 > Encrypted values your workflows read at runtime. Scope a secret to a customer or environment for per-tenant overrides.
 
-<figure><img src="../.gitbook/assets/create-secret.jpg" alt="The Create Secret panel with Name, Type, Value, Customer and Environment fields"><figcaption>New secret opens the Create Secret panel. The name is UPPER_SNAKE_CASE and becomes the argument to <code>fastn.secrets.get()</code>.</figcaption></figure>
+<figure><img src="../.gitbook/assets/create-secret.jpg" alt="The Create Secret side panel: Name placeholdered STRIPE_SECRET_KEY, Type set to Text, an empty Value box, Customer set to All customers (org-wide), and a disabled Create Secret button"><figcaption>New secret opens the Create Secret panel. The name is UPPER_SNAKE_CASE and becomes the argument to <code>fastn.secrets.get()</code>.</figcaption></figure>
 
 A secret is written once and never shown again, so a key never has to live in your code:
 
@@ -22,7 +22,7 @@ With no secrets yet, the page shows **No secrets yet** above the same instructio
 
 ### Creating one
 
-**New secret** opens the **Create Secret** form, which has five fields.
+**New secret** opens the **Create Secret** form:
 
 | Field             | Notes                                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |

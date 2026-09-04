@@ -6,16 +6,16 @@ description: Every action taken in this organisation.
 
 **Settings → Audit log**
 
-<figure><img src="../.gitbook/assets/settings-audit-log.jpg" alt="The Audit log header counting 773092 events, over rows of auth.login, workflow.execute and workflow.execute.completed by Zain Ishtiaq, apikey:7 and 19099a78, each Success"><figcaption>Filters for people, actions, types and a date range sit above the table, with Export top-right.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-audit-log.jpg" alt="The Audit log counting 4304255 events, over rows of connection.update by apikey:8, workflow.execute by Joell Miller and auth.login by Zain Ishtiaq — each Success, scoped to a customer or Organisation-wide"><figcaption>Filters for people, actions, types and a date range sit above the table, with Export top-right.</figcaption></figure>
 
-A complete, filterable record of everything anyone — or anything — did. The header carries the total, which runs high: a working organisation accumulates hundreds of thousands of events.
+A complete, filterable record of everything anyone — or anything — did. The header carries the total, which runs high: a working organisation accumulates millions of events.
 
 ### The table
 
 | Column       | Notes                                                                                   |
 | ------------ | ----------------------------------------------------------------------------------------- |
-| **Who**      | A person, or an API key in the form `apikey:7`.                                          |
-| **Action**   | The action name — `auth.login`, `workflow.execute`, `workflow.execute.completed`.        |
+| **Who**      | A person, or an API key in the form `apikey:8`.                                          |
+| **Action**   | The action name — `auth.login`, `workflow.execute`, `connection.update`.                 |
 | **Resource** | The object acted on, with its type underneath.                                           |
 | **Customer** | The customer scope, or **Organisation-wide**.                                            |
 | **Result**   | **Success** on every observed row. How a failure renders has not been captured.          |
@@ -36,7 +36,7 @@ Beyond those three, the surest way to see what your organisation actually emits 
 | `auth.*`                        | Logins. `auth.login` confirmed.                                           |
 | `workflow.*`                    | Workflow lifecycle and runs. `workflow.execute` and `workflow.execute.completed` confirmed. |
 | `api_key.*`                     | Key creation, rotation and revocation.                                    |
-| `connection.*`, `credential.*`  | Connection lifecycle and token refresh.                                   |
+| `connection.*`, `credential.*`  | Connection lifecycle and token refresh. `connection.update` confirmed.     |
 | `connector.*`                   | Connector creation, publishing and deletion.                              |
 | `secret.*`, `config.*`          | Secret and config changes — who and when, not values.                     |
 | `user.*`, `membership.*`        | Access changes.                                                           |

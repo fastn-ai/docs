@@ -6,7 +6,7 @@ description: Programmatic access to your workspace.
 
 **Settings → API keys**
 
-<figure><img src="../.gitbook/assets/settings-api-keys.jpg" alt="The API keys list with two rows, LiveMCP badged Live and Testing MCP badged Test, both Full access and Last used Never, each offering Rotate; the filters read All 2, Live 1, Test 1"><figcaption>The Key column shows only a prefix and the last four characters, with a copy icon.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-api-keys.jpg" alt="The API keys list with four rows — Workflow, two called MCP, and TEST — every one badged Live, three Full access and one Default, each offering Rotate; the filters read All 4, Live 4, Test 0"><figcaption>The Key column shows only a prefix and the last four characters, with a copy icon.</figcaption></figure>
 
 | Column        | Notes                                              |
 | ------------- | ---------------------------------------------------- |

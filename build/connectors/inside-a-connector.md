@@ -10,7 +10,7 @@ description: The three-pane connector detail view and its five tabs.
 * **Middle** — the action list, each with a method chip (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`), plus **Select all**. Selecting actions is how you scope what a workflow or an agent may use — the point of *read-only Jira for one customer, nothing beyond that*.
 * **Right** — the connector name, a `<owner> · <auth type>` line, a version chip such as `v1.0 · Test`, a **Connect** button, and a `⋯` menu with **Edit** and **Delete**. Below that, five tabs.
 
-<figure><img src="../../.gitbook/assets/connector-detail-overview.jpg" alt="The Asana connector's Overview tab: tiles reading 0 Connections, 2 Auth methods and v1.0 Current version, above a Details table of Slug, Visibility, Auth methods and Created"><figcaption>The Overview tab: connections, auth methods, current version.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-detail-overview.jpg" alt="The HubSpot connector's Overview tab: tiles reading 0 Connections, 1 Auth method and v1.0 Current version, over a Details table giving slug hubspot, Visibility Public and Created Aug 20, 2026"><figcaption>The version tile reads <em>In test, not published</em> — the connector works, but no customer can reach it yet.</figcaption></figure>
 
 #### Overview
 
@@ -27,9 +27,9 @@ A **Versions** section underneath carries a `Test` / `Live` toggle and a **Publi
 
 #### Auth
 
-<figure><img src="../../.gitbook/assets/connector-auth-tab.jpg" alt="The Asana connector's Auth tab listing two authentication methods — Connect with Asana OAuth, badged Default and linking to 2 providers, and Personal Access Token (PAT)"><figcaption>The providers link opens the OAuth apps sitting behind that method.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-auth-tab.jpg" alt="The HubSpot connector's Auth tab, headed Authentication methods, with a single row: OAuth 2.0 badged Default, 1 provider, and a View providers button top-right"><figcaption>The providers link opens the OAuth apps sitting behind that method.</figcaption></figure>
 
-One row per authentication method, plus a **9 providers** button showing the OAuth apps behind it. The tab describes the two shapes in your customer's terms:
+One row per authentication method, each showing its provider count, plus a **View providers** button that opens the OAuth apps behind them. The tab describes each shape in your customer's terms:
 
 > Your customers sign in with the provider and approve access.
 

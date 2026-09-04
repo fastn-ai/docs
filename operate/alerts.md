@@ -6,19 +6,17 @@ description: Get told when something crosses a line you care about. Checked ever
 
 **Activity → Alerts**
 
-<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The alerts page before any alert exists"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The Alerts page holding only a No alerts yet empty state, naming zain@fastn.ai as the destination, with Turn on failure alerts and Custom alert buttons and New alert top-right"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
 
 Without an alert, a sync can fail quietly for hours. This is the cheapest insurance in the product. The empty state says as much:
 
 > Without one, a sync can fail quietly for hours. One click turns on the two alerts most teams need…
 
-under the heading **No alerts yet**, with **Turn on failure alerts** and **Custom alert** beside it.
+under the heading **No alerts yet**, with **Turn on failure alerts** and **Custom alert** beside it. It names the address the two alerts would go to — the email you signed in with. **New alert** sits top-right, and the empty state is the whole page until an alert exists.
 
 ### The one-click start
 
-**Turn on failure alerts** creates the two alerts most teams need in one click. If you do nothing else on this page, do that.
-
-A standing **Sync failure notifications** card sits on the page with its own **Turn on** button.
+**Turn on failure alerts** creates the two alerts most teams need in one click: an email the moment a run fails, and a daily reliability check. If you do nothing else on this page, do that.
 
 ### Custom alerts
 

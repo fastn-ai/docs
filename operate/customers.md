@@ -4,9 +4,11 @@ description: Every customer using your embedded integrations.
 
 # Customers
 
-**Customers** — a top-level item in the sidebar's OPERATE group, beside Activity rather than inside it.
+**Customers** · `/settings/customers`
 
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with two rows: osg-canada, 3 connections, Active; and asd with identifier aasdasdasd, 1 connection, Pending admin activation — each ending in View connections"><figcaption>The second line under each name is the identifier you will see again as endOrgId.</figcaption></figure>
+A top-level item in the sidebar's OPERATE group, beside Activity rather than inside it. Note the mismatch between where it sits and where it lives: the sidebar puts it under OPERATE, but its route is under `/settings/`. Linking to `/customers` gets you a **Page not found**.
+
+<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with a single row: testing, identifier testing underneath, 1 connection, status Active, ending in View connections — with an All tiers filter and a 1 customer count above"><figcaption>The second line under each name is the identifier you will see again as endOrgId.</figcaption></figure>
 
 A customer is one of your customers — a container for their connections, credentials and workflow data.
 

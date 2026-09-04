@@ -6,7 +6,7 @@ description: Everything moving in and out of your customers' systems, newest fir
 
 **Activity → Events**
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="The Events table under columns Event, Source, Status and When: qa-wh-master identifiers, each tagged webhook, Delivered, timestamped Sep 1, with a Replay link on every row"><figcaption>Auto refresh, top-right, is off by default.</figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-events.jpg" alt="The Events table under columns Event, Source, Status and When: repeated Perigon article-alert webhook rows, each tagged webhook, Delivered, timestamped Sep 4, with a Replay link"><figcaption>Auto refresh, top-right, is off by default.</figcaption></figure>
 
 An event is one inbound arrival: a webhook fired, a schedule reached, or a manual run. This is the first place to look when something did not happen.
 

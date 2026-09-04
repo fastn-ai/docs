@@ -4,7 +4,7 @@ description: The Layout tab: header content and the sections your customers see.
 
 # Layout
 
-<figure><img src="../../.gitbook/assets/widget-builder-layout.jpg" alt="The Layout tab with an INTEGRATIONS list holding TikTok Shop, Header content fields Title set to Integrations and Subtitle set to Connect your favorite tools, and Sections reading 3 of 3 shown"><figcaption>The preview redraws as you type — that header text is exactly what appears above it.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-builder-layout.jpg" alt="The Layout tab: a What you're building explainer, an INTEGRATIONS list of 1 holding TikTok Shop with edit and delete icons, then Header content with Title set to Integrations, above Reset and Save and publish"><figcaption>The preview redraws as you type — that header text is exactly what appears above it.</figcaption></figure>
 
 **Header content**
 

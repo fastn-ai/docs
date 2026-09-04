@@ -10,7 +10,7 @@ You sell software. Your prospects ask whether it talks to their CRM, their ERP, 
 
 fastn is the layer that answers that question for you. You describe what needs to happen in plain words, fastn's agents pick the connectors and write the workflow, and you drop an integrations panel into your own UI. Your customers authorise their own accounts. You never see their credentials, and you never write an OAuth flow.
 
-<figure><img src=".gitbook/assets/home.jpg" alt="The fastn home screen with the build prompt"><figcaption>Home. Describe what you want to build, or jump straight into a section.</figcaption></figure>
+<figure><img src=".gitbook/assets/home.jpg" alt="The fastn Home screen: a Good evening, Zain greeting over a What do you want to build? prompt box, four suggestion chips, and a Connect to Claude button"><figcaption>Home is a prompt, not a dashboard — describing the integration is how you start one.</figcaption></figure>
 
 ### How the platform is laid out
 
@@ -18,11 +18,11 @@ The left rail groups its navigation under three headings — **BUILD**, **OPERAT
 
 | Rail group  | Nav items          | Sub-pages                                                                                | Who spends time here          |
 | ----------- | ------------------ | ------------------------------------------------------------------------------------------ | ----------------------------- |
-| **BUILD**   | Integrations       | Connectors, Unified APIs, Connections, Workflows, Triggers, Pending updates                 | Developers and solution teams |
+| **BUILD**   | Integrations       | Agent, Connectors, Unified APIs, Connections, Workflows, Triggers, Pending updates          | Developers and solution teams |
 |             | Widgets            | Layout, Style, Features, Embed                                                             | Developers and design         |
 | **OPERATE** | Activity           | Events, Traces, Alerts, Executions, Sync Reports                                           | Support and on-call           |
 |             | Customers          | —                                                                                          | Support and account teams     |
-| **MANAGE**  | Settings           | People, General, API keys, Secrets, Environments, Configs, Database, Billing, Roles, Audit log, Trash | Admins and owners  |
+| **MANAGE**  | Settings           | People, General, API keys, Secrets, Environments, Configs, Database, SaaS Connectors, Billing, Roles, Audit log, Trash | Admins and owners  |
 
 So a page in this documentation headed **Integrations → Connectors** is the Connectors sub-page of the Integrations nav item, under the BUILD group.
 
