@@ -13,7 +13,7 @@ These tutorials are for the person responsible for Fastn inside a SaaS company t
 
 ### Tutorials in this section
 
-[**Setting Up Your Organisation**](setting-up-your-organisation.md) — Configure organisation settings, API keys (Test & Live), secrets, environments, and invite your team via Settings → People.
+[**Setting Up Your Organisation**](setting-up-your-organization.md) — Configure organisation settings, API keys (Test & Live), secrets, environments, and invite your team via Settings → People.
 
 [**Creating a Workflow via AI**](creating-a-workflow-via-ai.md) — Use the "Build with AI" button to create workflows by describing what you need in plain language.
 
