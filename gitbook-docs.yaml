@@ -8,4 +8,4 @@ site:
       path: fastn-v2
       default: true
       content:
-        directory: ./fastn-v2
+        directory: ./

@@ -6,10 +6,10 @@ structure:
 
 redirects:
   getting-started/what-is-fastn: getting-started/README.md
-  tutorials/saas-admin/configuring-a-connector: build/connectors.md
-  tutorials/saas-admin/setting-up-triggers: build/triggers.md
-  tutorials/saas-admin/building-your-widget: embed/widget-builder.md
+  tutorials/saas-admin/configuring-a-connector: build/connectors/README.md
+  tutorials/saas-admin/setting-up-triggers: build/triggers/README.md
+  tutorials/saas-admin/building-your-widget: embed/widget-builder/README.md
   tutorials/saas-admin/managing-customers: operate/customers.md
-  reference/workflows: build/workflows.md
+  reference/workflows: build/workflows/README.md
   reference/activity: operate/README.md
   reference/api-reference: reference/api.md
