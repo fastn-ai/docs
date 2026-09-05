@@ -1,5 +1,5 @@
 ---
-description: How the connector catalogue reads: badges, filters, card anatomy, and the counts that mislead.
+description: "How the connector catalogue reads: badges, filters, card anatomy, and the counts that mislead."
 ---
 
 # The catalogue

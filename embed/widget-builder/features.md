@@ -1,5 +1,5 @@
 ---
-description: The Features tab: optional capabilities your customers get inside the widget.
+description: "The Features tab: optional capabilities your customers get inside the widget."
 ---
 
 # Features

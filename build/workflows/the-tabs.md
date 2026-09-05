@@ -1,5 +1,5 @@
 ---
-description: Every tool tab in the editor: Test, Connectors, Contract, Diagram, Test cases, Executions, Sync reports, API and Docs.
+description: "Every tool tab in the editor: Test, Connectors, Contract, Diagram, Test cases, Executions, Sync reports, API and Docs."
 ---
 
 # The tabs

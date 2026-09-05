@@ -1,5 +1,5 @@
 ---
-description: The two shapes a connection's credential takes: OAuth and Custom/INPUT.
+description: "The two shapes a connection's credential takes: OAuth and Custom/INPUT."
 ---
 
 # Auth types
