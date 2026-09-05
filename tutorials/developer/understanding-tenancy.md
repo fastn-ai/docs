@@ -8,9 +8,9 @@ Fastn supports two ways to scope connections within the same embed: org-level (s
 
 ### The distinction
 
-**Org-level (shared)** — One connection serves the entire customer organization. Anyone in that organization uses the same connection. Use this for shared systems of record.
+**Org-level (shared)** — One connection serves the entire customer organisation. Anyone in that organisation uses the same connection. Use this for shared systems of record.
 
-**User-level (per individual)** — Each user has their own connection, isolated from other users in the same organization. Use this for resources tied to one person's identity.
+**User-level (per individual)** — Each user has their own connection, isolated from other users in the same organisation. Use this for resources tied to one person's identity.
 
 {% hint style="info" %}
 This is **not** an "internal vs external user" distinction, and it is **not** about who can edit. It is strictly shared-vs-personal, based on who owns the connected resource.
@@ -45,7 +45,7 @@ The `tenant-id` parameter is present. Combined with the `userEmail` and `userNam
 https://app.fastn.dev/api/v1/embed/iframe?token=<token>
 ```
 
-No `tenant-id` parameter. Connections are shared across the organization.
+No `tenant-id` parameter. Connections are shared across the organisation.
 
 ### Persona examples
 

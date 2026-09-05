@@ -98,7 +98,7 @@ The widget builder has four tabs — Layout, Style, Features, Embed — and a li
 
 Trash is in the sidebar for Owners, Admins and Developers alike, at `/settings/trash`. Two capabilities are gated by role rather than by permission — using the AI assistant, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
 
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organisation block with Name Zain's Organization and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner — organisation identity first, joining rules second.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organisation block with Name Zain's Organisation and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner — organisation identity first, joining rules second.</figcaption></figure>
 
 ### The account card
 

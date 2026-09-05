@@ -40,7 +40,7 @@ Without a live connection for that connector the form stops here: *No active con
 {% step %}
 #### Pick the connection
 
-**Connection** is required — which authorized link this trigger listens on.
+**Connection** is required — which authorised link this trigger listens on.
 {% endstep %}
 
 {% step %}

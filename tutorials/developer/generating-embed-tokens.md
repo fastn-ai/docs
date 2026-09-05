@@ -101,4 +101,4 @@ async function getFastnToken({ userEmail, userName }) {
 
 Expose this through an endpoint your frontend calls at render time. Return only the token.
 
-This pattern is what makes the embed reliable across different users and sessions. Hardcoding or caching tokens is what causes "works for me, fails for them" behavior.
+This pattern is what makes the embed reliable across different users and sessions. Hardcoding or caching tokens is what causes "works for me, fails for them" behaviour.

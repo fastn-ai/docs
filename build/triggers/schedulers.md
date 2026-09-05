@@ -44,7 +44,7 @@ Five modes:
 {% step %}
 #### Set the timezone and start
 
-**Timezone** is required and defaults to your browser's zone — not your organization's, and not the one on [your profile](../../manage/profile.md), which only controls how times are displayed to you. Two more fields sit alongside it: **Starts at**, optional, and **Run immediately on create**, a checkbox.
+**Timezone** is required and defaults to your browser's zone — not your organisation's, and not the one on [your profile](../../manage/profile.md), which only controls how times are displayed to you. Two more fields sit alongside it: **Starts at**, optional, and **Run immediately on create**, a checkbox.
 {% endstep %}
 
 {% step %}

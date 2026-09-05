@@ -28,7 +28,7 @@ When the React SDK ships, it will wrap this same flow — your backend will stil
 
 1. A server-side function that generates an embed token on each request (never hardcode tokens — they expire in 15 minutes).
 2. A frontend component that renders the Fastn iframe with the token.
-3. A decision about how connections are scoped — shared across the customer's organization, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
+3. A decision about how connections are scoped — shared across the customer's organisation, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
 
 ### Why generate tokens server-side
 
