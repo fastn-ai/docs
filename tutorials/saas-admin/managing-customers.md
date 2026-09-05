@@ -2,6 +2,7 @@
 description: >-
   Create customers under Settings → Customers, scope API calls per customer, and
   monitor customer-level activity.
+hidden: true
 ---
 
 # Managing Customers

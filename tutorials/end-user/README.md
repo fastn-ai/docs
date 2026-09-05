@@ -2,6 +2,7 @@
 description: >-
   Tutorials for end users interacting with Fastn through the embedded widget —
   connecting apps, customizing integrations, and viewing sync status.
+hidden: true
 ---
 
 # End User

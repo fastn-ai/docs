@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # How Embedding Works
 
 Fastn is embedded into your product as an iframe. Your application renders the Fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.

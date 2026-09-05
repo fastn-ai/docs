@@ -2,6 +2,7 @@
 description: >-
   Find available integrations, authorise your accounts, and activate connections
   through the embedded integration widget.
+hidden: true
 ---
 
 # Connecting Apps via Widget

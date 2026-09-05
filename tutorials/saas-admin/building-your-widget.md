@@ -2,6 +2,7 @@
 description: >-
   Use the Widget Builder to create an embeddable integration hub add
   integrations, customize layout and style, and preview the customer experience.
+hidden: true
 ---
 
 # Building Your Widget

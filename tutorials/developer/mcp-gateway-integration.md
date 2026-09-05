@@ -2,6 +2,7 @@
 description: >-
   Connect AI assistants to Fastn's MCP server i.e. native tools, dynamic tools,
   per-customer scoping, and integration patterns.
+hidden: true
 ---
 
 # MCP Gateway Integration

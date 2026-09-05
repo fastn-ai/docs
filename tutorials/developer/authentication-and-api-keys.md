@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Authentication & API Keys
 
 Fastn API keys authenticate your backend's requests — including generating embed tokens. Keys come in test and live variants, and each requires different handling.

@@ -2,6 +2,7 @@
 description: >-
   Configure sync preferences, field mappings, scheduling, and other settings for
   your active integrations through the widget.
+hidden: true
 ---
 
 # Customizing Your Integrations

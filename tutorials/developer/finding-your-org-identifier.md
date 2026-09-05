@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Finding Your Org Identifier
 
 The `endOrgId` identifies the customer a widget embed is for. Both the token endpoint and the iframe URL require it. Getting the right identifier is necessary for anything to work.
