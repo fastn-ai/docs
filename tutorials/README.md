@@ -14,7 +14,7 @@ These tutorials are hands-on walkthroughs that teach you how to use Fastn by bui
 
 For the person setting up and managing Fastn within their SaaS product.
 
-[**Setting Up Your Organization** ](saas-admin/setting-up-your-organization.md)— Configure org settings, API keys (Test & Live), secrets, environments, OAuth Apps, and invite your team.
+[**Setting Up Your Organisation** ](saas-admin/setting-up-your-organization.md)— Configure org settings, API keys (Test & Live), secrets, environments, OAuth Apps, and invite your team.
 
 [**Creating a Workflow via AI**](saas-admin/creating-a-workflow-via-ai.md) — Use "Build with AI" to create workflows by describing what you need in plain language.
 
@@ -28,7 +28,7 @@ For the person setting up and managing Fastn within their SaaS product.
 
 For the people who use integrations through the embedded widget in a SaaS product.
 
-[**Connecting Apps via Widget** ](end-user/connecting-apps-via-widget.md)— Find available integrations, authorize your accounts, and activate connections.
+[**Connecting Apps via Widget** ](end-user/connecting-apps-via-widget.md)— Find available integrations, authorise your accounts, and activate connections.
 
 [**Customizing Your Integrations**](end-user/customizing-your-integrations.md) — Configure sync preferences, field mappings, and scheduling.
 

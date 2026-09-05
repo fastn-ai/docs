@@ -1,21 +1,21 @@
 ---
 description: >-
-  Configure your organization profile, environments, API keys, and project
+  Configure your organisation profile, environments, API keys, and project
   settings after your first Fastn login.
 ---
 
-# Setting Up Your Organization
+# Setting Up Your Organisation
 
-After the Setup Assistant configures your core integrations, workflows, and widget, there are a handful of organization-level settings that allows you to control your company profile, team access, customer management, and billing. This tutorial walks through each one.
+After the Setup Assistant configures your core integrations, workflows, and widget, there are a handful of organisation-level settings that allows you to control your company profile, team access, customer management, and billing. This tutorial walks through each one.
 
-### Step 1: Configure organization settings
+### Step 1: Configure organisation settings
 
 1. Click **Settings** in the top nav.
 2. Click **General** in the left sidebar.
 
 Here you can configure:
 
-**Organization Name** — How your company appears across the platform.
+**Organisation Name** — How your company appears across the platform.
 
 **Timezone** — Used for scheduled triggers and activity timestamps.
 
@@ -29,7 +29,7 @@ Scroll down on the General page to find the **Company Research Report** card.
 
 This report is what informed the AI's connector recommendations and workflow suggestions during onboarding. Revisit it when planning new integrations or evaluating which connectors to prioritize next.
 
-> **Screenshot:** Settings → General showing Organization Name, Timezone, Domain & Access Control, and the Company Research Report card with the "View research report" button.
+> **Screenshot:** Settings → General showing Organisation Name, Timezone, Domain & Access Control, and the Company Research Report card with the "View research report" button.
 
 #### Reset Onboarding
 
@@ -66,9 +66,9 @@ Fastn has six system roles. Each role has a fixed set of permissions across Conn
 
 | Role          | Permissions | What they can do                                                                                                      |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Owner**     | 39          | Full access to everything an Admin can do, plus ownership transfer and organization deletion. One per organization.   |
+| **Owner**     | 39          | Full access to everything an Admin can do, plus ownership transfer and organisation deletion. One per organisation.   |
 | **Admin**     | 39          | Full access to connectors, workflows, customers, billing, settings. Cannot transfer ownership.                        |
-| **Developer** | 34          | Allows a user to build connectors, workflows, agents. No billing or organization settings.                            |
+| **Developer** | 34          | Allows a user to build connectors, workflows, agents. No billing or organisation settings.                            |
 | **Operator**  | 18          | Can run workflows, monitor activity. Cannot create or modify connectors or workflows.                                 |
 | **Viewer**    | 7           | Read-only access across the platform.                                                                                 |
 | **End User**  | 9           | Widget-only access. Can connect apps, view sync status, configure their own integrations through the embedded widget. |
@@ -119,7 +119,7 @@ Click **"Customize Customer Limits"** to set per-customer quota overrides which 
 1. Go to **Settings → Audit Log**.
 2. The log shows a table with columns: **TIMESTAMP, USER, ACTION, RESOURCE, OUTCOME**.
 
-Every significant action in your organization is recorded here from user logins, workflow deployments, connector changes to customer connections. Use it for compliance, debugging, or understanding who changed what.
+Every significant action in your organisation is recorded here from user logins, workflow deployments, connector changes to customer connections. Use it for compliance, debugging, or understanding who changed what.
 
 > **Screenshot needed:** Settings → Audit Log showing a few example entries with timestamps and actions.
 
@@ -135,7 +135,7 @@ See more details in the [Developer](../developer/) tutorials for the full setup 
 
 ### What you've configured
 
-* Organization name, timezone, and domain access control
+* Organisation name, timezone, and domain access control
 * Reviewed the Company Research Report from onboarding
 * Reviewed Fastn-managed OAuth apps
 * Team members invited with appropriate roles

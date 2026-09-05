@@ -28,7 +28,7 @@ When the React SDK ships, it will wrap this same flow — your backend will stil
 
 1. A server-side function that generates an embed token on each request (never hardcode tokens — they expire in 15 minutes).
 2. A frontend component that renders the Fastn iframe with the token.
-3. A decision about how connections are scoped — shared across the customer's organization, or isolated per individual user (see [Tenancy](https://claude.ai/fastn/tutorials/developer/tenancy)).
+3. A decision about how connections are scoped — shared across the customer's organisation, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
 
 ### Why generate tokens server-side
 
@@ -38,4 +38,4 @@ A common failure is hardcoding a token into the frontend during testing. It work
 
 ### Next
 
-Start with the [Quickstart](https://claude.ai/fastn/tutorials/developer/quickstart) to get a working embed, then read [Generating Embed Tokens](https://claude.ai/fastn/tutorials/developer/generating-embed-tokens) for the full token details.
+Start with the [Quickstart](embedding-quickstart.md) to get a working embed, then read [Generating Embed Tokens](generating-embed-tokens.md) for the full token details.

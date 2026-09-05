@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Fastn
+  structure:
+    - type: space
+      key: space-1
+      title: Fastn
+      path: fastn
+      default: true
+      content:
+        directory: ./
