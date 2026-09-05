@@ -1,5 +1,5 @@
 ---
-description: Opening a category: entities, connection state, providers and endpoints.
+description: "Opening a category: entities, connection state, providers and endpoints."
 ---
 
 # Inside a category
