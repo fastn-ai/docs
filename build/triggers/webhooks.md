@@ -8,6 +8,11 @@ A webhook trigger fires when another system calls a URL you give it. Nothing is 
 
 **Columns:** `Name`, `Tenant`, `Type`, `Status`, `Auth`, `Routes`, `Created`.
 
+* **`Auth`** reads `API key` where the webhook requires the `x-fastn-access-key` header, or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
+* **`Tenant`** is the customer the trigger belongs to, and reads `—` for org-level triggers.
+
+Unlike the Schedulers and App events tables, this one ships **no `Actions` header** — the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
+
 ### Create a webhook trigger
 
 {% stepper %}
@@ -27,19 +32,23 @@ From **Add trigger**, choose **Webhook**.
 {% step %}
 #### Add at least one route
 
-A route says where a payload goes when it arrives. Routes are required, and **Add route** creates more than one, which fans a single inbound call out to several workflows.
+A route says where a payload goes when it arrives. Routes are required. Add more with **Add route** to fan a single inbound call out to several workflows.
 
 | Field           | Notes                                                                                                   |
 | --------------- | --------------------------------------------------------------------------------------------------------- |
 | **Workflow**    | Required. Which workflow this route runs.                                                                |
-| **Environment** | Optional. `test (latest published)` runs the workflow's latest published version; `live` runs what is deployed to Live. |
+| **Environment** | Optional. `test (latest published)` runs the workflow's latest published version. **Any other option is one of your org's named environments** (see [Environments](../../manage/environments.md)) and runs the version deployed there — and **if nothing is deployed there, the fire fails**. Every org starts with one named environment, `Live`. |
 | **Headers**     | Optional key/value pairs sent with the request to the workflow. Use for a key the workflow needs to call back to the sender. |
 {% endstep %}
 
 {% step %}
 #### Set delivery attempts
 
-How many times in total fastn tries to deliver an event to the workflow, counting the first try. Once the attempts are exhausted the delivery is recorded as failed; you replay it from [Activity → Events](../../operate/events.md), which has a **Replay** column on every row.
+How many times in total fastn tries to deliver an event to the workflow, counting the first try. Once the attempts are exhausted the delivery is recorded as failed, and you replay it from [Activity → Events](../../operate/events.md), where every row carries a **Replay** action.
+
+{% hint style="warning" %}
+**Finding the failed one is the hard part.** Events filters by source — `All`, `Webhook`, `Scheduled`, `Manual` — and has **no status filter**, so on a busy org you cannot list failures directly. Search Events by the trigger's name and look for a row whose status is not `Delivered`. The create-trigger form calls this destination *Failed deliveries*; there is no view by that name — Activity → Events is where the events actually are.
+{% endhint %}
 
 | Field                | Range / options                                      | Default          |
 | -------------------- | ------------------------------------------------------ | ---------------- |
@@ -61,9 +70,9 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 {% endstep %}
 
 {% step %}
-#### Save, then hand out the URL
+#### Create it, then hand out the URL
 
-Save the trigger and it joins the **Webhooks** list. Its row menu offers **Copy URL**, **Copy as cURL**, **Disable**, **Edit** and **Delete** — **Copy as cURL** is the fastest way to fire one by hand while you are debugging.
+Select **Create trigger** — there is no Save button — and it joins the **Webhooks** list. Its row menu offers **Copy URL**, **Copy as cURL**, **Disable**, **Edit** and **Delete** — **Copy as cURL** is the fastest way to fire one by hand while you are debugging.
 {% endstep %}
 {% endstepper %}
 
