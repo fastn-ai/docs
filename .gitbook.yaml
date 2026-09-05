@@ -5,11 +5,41 @@ structure:
   summary: SUMMARY.md
 
 redirects:
-  getting-started/what-is-fastn: getting-started/README.md
+  getting-started/what-is-fastn: README.md
+  getting-started/platform-overview: getting-started/platform-tour.md
+  getting-started/signing-up-as-a-saas-partner: getting-started/README.md
+  getting-started/your-first-integration: getting-started/quickstart.md
+
+  reference/customer-model: operate/customers.md
+  reference/connectors: build/connectors/README.md
+  reference/workflows: build/workflows/README.md
+  reference/triggers: build/triggers/README.md
+  reference/rbac-and-security: manage/roles.md
+  reference/mcp-gateway: build/mcp-gateway.md
+  reference/activity: operate/README.md
+  reference/api-reference: reference/api.md
+  reference/alerts: operate/alerts.md
+  reference/audit-log: manage/audit-log.md
+
+  ai-agents: build/agent/README.md
+  ai-agents/connector-agent: build/connectors/creating-a-connector.md
+  ai-agents/workflow-agent: build/agent/README.md
+  ai-agents/onboarding-agents: build/agent/README.md
+  ai-agents/intelligence-brief-agent: build/agent/README.md
+  ai-agents/configuration-agent: build/agent/README.md
+  ai-agents/key-concepts-and-terminology: reference/glossary.md
+
+  library: reference/faqs.md
+  library/faqs: reference/faqs.md
+  library/glossary: reference/glossary.md
+
+  how-fastn-works: getting-started/concepts.md
+  your-first-automation: getting-started/quickstart.md
+  quick-start-guide: getting-started/quickstart.md
+  api-reference: reference/api.md
+  debugging-and-troubleshooting: operate/troubleshooting.md
+
   tutorials/saas-admin/configuring-a-connector: build/connectors/README.md
   tutorials/saas-admin/setting-up-triggers: build/triggers/README.md
   tutorials/saas-admin/building-your-widget: embed/widget-builder/README.md
   tutorials/saas-admin/managing-customers: operate/customers.md
-  reference/workflows: build/workflows/README.md
-  reference/activity: operate/README.md
-  reference/api-reference: reference/api.md
