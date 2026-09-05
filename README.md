@@ -1,10 +1,10 @@
 ---
 description: >-
-  fastn is an embedded integration platform. You put it inside your product, and
-  your customers get native integrations with the tools they already use.
+  Everything you need to go from signup to a working embedded integration — what
+  fastn is, how it works, and your first end-to-end build.
 ---
 
-# fastn
+# Getting Started
 
 You sell software. Your prospects ask whether it talks to their CRM, their ERP, their warehouse system. Building and maintaining those integrations is not your product, but losing deals over them is your problem.
 

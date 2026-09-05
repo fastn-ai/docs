@@ -1,13 +1,14 @@
 # Table of contents
 
-* [fastn](README.md)
+## Fastn
 
-## Getting started
+***
 
-* [Overview](getting-started/README.md)
-* [Platform tour](getting-started/platform-tour.md)
-* [Quickstart: your first integration](getting-started/quickstart.md)
-* [Core concepts](getting-started/concepts.md)
+* [Getting Started](README.md)
+  * [Overview](getting-started/README.md)
+  * [Platform tour](getting-started/platform-tour.md)
+  * [Quickstart: your first integration](getting-started/quickstart.md)
+  * [Core concepts](getting-started/concepts.md)
 
 ## Tutorials
 
