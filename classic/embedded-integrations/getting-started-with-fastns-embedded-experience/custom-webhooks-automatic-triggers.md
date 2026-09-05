@@ -19,7 +19,7 @@ You can create a custom webhook tailored to your use case by following these ste
 
 From the left side menu, navigate to the **Triggers** page and then click on **Add Webhook**.
 
-<figure><img src="../../../../.gitbook/assets/image (339).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (309).png" alt=""><figcaption></figcaption></figure>
 
 1. **Enter a Descriptive Name**\
    Provide a clear and meaningful name for your webhook to easily identify it later.
@@ -36,11 +36,11 @@ Routes provide you with a webhook URL that can be linked to a specific route. Ea
 
 Once you’ve registered your webhook, you can configure routes to define how incoming data should be processed.
 
-<figure><img src="../../../../.gitbook/assets/image (340).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (310).png" alt=""><figcaption></figcaption></figure>
 
 To add a new route, simply click on **“Add Route.”**
 
-<figure><img src="../../../../.gitbook/assets/image (341).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (311).png" alt=""><figcaption></figcaption></figure>
 
 1. **Provide a Name for the Route**\
    Give your route a clear, descriptive name to easily identify it later.
@@ -56,7 +56,7 @@ To configure a Pattern Filter, follow these steps:
 3. **Select an operator** — such as `Equals`, Prefix, or Suffix.
 4. **Enter a value** — for example, `user`.
 
-<figure><img src="../../../../.gitbook/assets/image (343).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (313).png" alt=""><figcaption></figcaption></figure>
 
 5. **Add Headers:** After setting up patterns and filters to define how data is processed, you can further customize the outgoing HTTP request by adding headers.
 
@@ -64,7 +64,7 @@ To configure a Pattern Filter, follow these steps:
 Headers allow you to include additional information or instructions for the destination receiving the webhook payload, such as authentication tokens, content types, or custom metadata.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (344).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (314).png" alt=""><figcaption></figcaption></figure>
 
 ### **How to Add Headers**
 
@@ -78,7 +78,7 @@ Headers allow you to include additional information or instructions for the dest
 6. **Batch Window:** Define the size of each batch to be processed. This controls how many events are grouped together before processing, optimizing performance and resource usage.
 7. **Add Description:** After adding headers, it’s helpful to include a description for your webhook route. This provides context and clarifies the purpose or functionality of the route for future reference.
 
-<figure><img src="../../../../.gitbook/assets/image (345).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (315).png" alt=""><figcaption></figcaption></figure>
 
 6. **Save and Continue:** Click **Configure** to save your route settings, then click **Next** to proceed.
 
@@ -88,7 +88,7 @@ Once you’ve registered your webhook and configured its routes on Fastn.ai, you
 
 Triggers enable you to schedule automatic executions based on your preferred timing or intervals—no manual intervention needed.
 
-<figure><img src="../../../../.gitbook/assets/image (346).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (316).png" alt=""><figcaption></figcaption></figure>
 
 Follow these steps to configure a trigger for your webhook:
 

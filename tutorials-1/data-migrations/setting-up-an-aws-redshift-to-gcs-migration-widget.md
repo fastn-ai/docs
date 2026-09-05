@@ -20,7 +20,7 @@ This flow will be triggered by the activation button in your widget for Redshift
 * In this case, we simply return a static success message like:\
   `"Activation successful for {{input.source}}"`
 
-<figure><img src="../../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
 ### Deactivation Flow
 
@@ -32,17 +32,17 @@ This flow handles deactivation logic, such as deleting registered webhooks.
 
 The deactivation flow begins with initializing the variables `webhookIds` and `tenantId`. The `webhookIds` have a value of `{{input.source}}`, while `tenantId` is obtained from the request headers as `headers['x-fastn-space-tenantid']`.
 
-<figure><img src="../../../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (186).png" alt=""><figcaption></figcaption></figure>
 
 2. **Loop over Webhook IDs:**
 
 * Use a Loop step to iterate over `webhookIds`
 
-<figure><img src="../../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
 * Inside the loop, add a `Delete Webhook` step
 
-<figure><img src="../../../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
 
 3. **Return Success Message:**
 
@@ -61,15 +61,15 @@ This flow is used to prepopulate options for user configuration in the widget, s
 
     `tables`: List of available tables from Redshift storage
 
-<figure><img src="../../../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-In the **mapping step**, users can click the three dots next to fields like **Tables** and **Sync Frequency** to access **Configuration Field Options**.&#x20;
+In the **mapping step**, users can click the three dots next to fields like **Tables** and **Sync Frequency** to access **Configuration Field Options**.
 {% endhint %}
 
 For both **Tables** and **Sync Frequency**, users can configure settings like setting a label, hiding the field in the config pop-up or based on the config Field.
 
-<figure><img src="../../../../.gitbook/assets/image (495).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (447).png" alt=""><figcaption></figcaption></figure>
 
 In the **Selections** section for **Files**, you can:
 
@@ -81,13 +81,13 @@ In the **Selections** section for **Files**, you can:
 Pagination in data storage refers to the process of dividing a large dataset into smaller, more manageable "pages" for efficient retrieval and display, particularly in web applications and APIs. You can learn more about setting up Pagination with Fastn [here](../flow-customization-and-operations/how-to-set-up-pagination-in-your-flow.md).
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
 * **Map Schedule:**
 
 `syncFrequency`: Frequency options (daily, hourly, etc.)
 
-<figure><img src="../../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 `syncFrequency` is an object with dropdown values, left empty in the flow initially and populates dynamically.
@@ -99,9 +99,9 @@ In the **Selections** section for **Sync Frequency**, you can:
 * Enable or disable Selection
 * Option Items for your drop-down of Sync Frequency in the Widget with the value for each sync and its respective label
 
-<figure><img src="../../../../.gitbook/assets/image (498).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (449).png" alt=""><figcaption></figcaption></figure>
 
-### Sync Flow Breakdown&#x20;
+### Sync Flow Breakdown
 
 The sync flow fetches selected data from AWS Redshift and migrates them to a specified Google Cloud Storage (GCS) bucket. It handles file processing, formatting, and storage while respecting user-configured preferences. [View complete flow breakdown](setting-up-a-google-drive-to-gcs-migration-widget.md#sync-flow-breakdown-activate)
 
@@ -115,7 +115,7 @@ The widget will support the following actions:
 * **Configure:** Allows file selection from Drive
 * **Sync:** Schedules and runs the migration
 
-<figure><img src="../../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
 
 ### 1. Connect Action
 
@@ -168,22 +168,22 @@ The Sync Action also takes the [redshift\_to\_gcs](setting-up-a-redshift-to-gcs-
 
 * User sees the **Connect** button → clicks to authenticate with AWS.
 
-<figure><img src="../../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
 
 * On success, **Deactivate** and **Configure** buttons appear.
 
-<figure><img src="../../../../.gitbook/assets/image (193).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
 
 * User clicks **Configure** to:
   * Browse through AWS Redshift and select source tables and enter the relevant query.
 
-<figure><img src="../../../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
 
 * User selects sync frequency from dropdown.
 
-<figure><img src="../../../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
 
 * User will now be able to see the **Sync** button that can be used to start a scheduled migration to GCS.
 * The **Deactivate** button allows you to disconnect your Widget.

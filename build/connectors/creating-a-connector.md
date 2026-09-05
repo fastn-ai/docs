@@ -1,5 +1,5 @@
 ---
-description: The Create connector dialog: identity, connection and authentication in one place.
+description: "The Create connector dialog: identity, connection and authentication in one place."
 ---
 
 # Creating a connector

@@ -12,9 +12,9 @@ The **Static Configuration Flow** type is used when you want to define a fixed l
 
 In the **Options** section, go to the **Selection Type** setting and choose **Static**.
 
-<figure><img src="../../../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
-For example, if you’re defining a variable  `syncFrequency` in your Data Mapper step, you can configure it as an **array** and manually add static options.
+For example, if you’re defining a variable `syncFrequency` in your Data Mapper step, you can configure it as an **array** and manually add static options.
 
 ## **Setting Up Static Options**
 
@@ -35,19 +35,19 @@ Let’s say you have a variable called `syncFrequency`.
   * Option Label: **Once a Day** → Option Value: **24**
   * Option Label: **Every Hour** → Option Value: **12**
 
-<figure><img src="../../../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
 
 This will be shown to users in a dropdown list when configuring the widget.
 
-<figure><img src="../../../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
 However, if your `syncFrequency` depends on another variable.
 
-<figure><img src="../../../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 For example, if the label or value needs to be generated dynamically (like `HubSpotToCin7`), then you should define `syncFrequency` as an **object variable** and use a **Dynamic Configuration Flow** instead.
 
-<figure><img src="../../../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
 > Your configuration flow is now set up with **Static Selection**, allowing you to define fixed option values that appear in dropdown menus. These static variables can be used in widgets or other flows wherever consistent, predefined selections are needed.
 

@@ -10,7 +10,7 @@ description: >-
 
 Browse ready-to-use templates across key categories to automate tasks, integrate systems, and power intelligent workflows with minimal setup.
 
-<figure><img src="../../../../.gitbook/assets/image (365).png" alt="Fastn Templates gallery showing prebuilt workflow templates organized by category"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (333).png" alt="Fastn Templates gallery showing prebuilt workflow templates organized by category"><figcaption></figcaption></figure>
 
 ### 🔗 **Integration Workflows**
 

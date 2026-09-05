@@ -27,13 +27,13 @@ To add flow syncs with HubSpot using your organization's connector, proceed with
 
 Navigate to the **Action** Section in your widget and select **Multiconnector** to enable multiple connection functionalities.
 
-<figure><img src="../../../../.gitbook/assets/image (617).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (558).png" alt=""><figcaption></figcaption></figure>
 
 ### Adding Task Flows from HubSpot
 
 You can add individual flows related to tasks between HubSpot and your organization within your widget. This will allow for task data synchronization, providing a seamless workflow experience across platforms.
 
-<figure><img src="../../../../.gitbook/assets/WhatsApp Image 2025-07-01 at 14.55.39.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/WhatsApp Image 2025-07-01 at 14.55.39.jpeg" alt=""><figcaption></figcaption></figure>
 
 * **Sync Sales from HubSpot**:
   * **Enable**: Accelerate revenue growth by allowing real-time sales data to flow between HubSpot and your organization.
@@ -42,8 +42,8 @@ You can add individual flows related to tasks between HubSpot and your organizat
 * **Sync Products from HubSpot**:
   * **Configure**: Achieve unified product data across all channels by syncing your HubSpot inventory with your organization.
 
-<figure><img src="../../../../.gitbook/assets/image (619).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (560).png" alt=""><figcaption></figcaption></figure>
 
 These syncs will be displayed as buttons within your widgets. By adding each of these flows, you can execute any desired action from a single widget interface.
 
-<figure><img src="../../../../.gitbook/assets/image (618).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (559).png" alt=""><figcaption></figcaption></figure>

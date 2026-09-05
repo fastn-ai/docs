@@ -1,5 +1,5 @@
 ---
-description: The Style tab: theme, accent, type, shape and design tokens.
+description: "The Style tab: theme, accent, type, shape and design tokens."
 ---
 
 # Style

@@ -1,5 +1,5 @@
 ---
-description: The Layout tab: header content and the sections your customers see.
+description: "The Layout tab: header content and the sections your customers see."
 ---
 
 # Layout

@@ -30,7 +30,7 @@ Community connectors make it easy to connect to tools your team already uses, so
 
 To create a Google Doc and send it to a specific Slack channel, utilize the **Google Docs Connector** with **Create Doc Endpoint** to generate your document and then use the **Slack Connector** with **Send Message Endpoint** to send it directly to your selected channel. This process requires no coding, streamlining document sharing within your workflows.
 
-<figure><img src="../../../../.gitbook/assets/image (243).png" alt="Flow editor with Google Docs Create Doc connector followed by Slack Send Message connector"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (219).png" alt="Flow editor with Google Docs Create Doc connector followed by Slack Send Message connector"><figcaption></figcaption></figure>
 
 ## ii. Workspace Connectors
 
@@ -40,7 +40,7 @@ Workspace connectors let you create custom connector groups tailored to your pro
 You can also use the **Build with AI** button to leverage AI to assist in creating custom connector groups. Provide a description of the service you want to connect to, and Fastn generates the connector group structure for you.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (249).png" alt="Workspace Connectors page with Add Connector button and Build with AI option"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (225).png" alt="Workspace Connectors page with Add Connector button and Build with AI option"><figcaption></figcaption></figure>
 
 ### Before you begin
 
@@ -56,7 +56,7 @@ A connector group acts as a container for related connectors — for example, a 
 2. Click the **Add Connector** button in the top right corner.
 3. Fill in the connector group details:
 
-<figure><img src="../../../../.gitbook/assets/image (252).png" alt="Add Connector Group form with fields for name, image URL, description, documentation link, and resource type"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (227).png" alt="Add Connector Group form with fields for name, image URL, description, documentation link, and resource type"><figcaption></figcaption></figure>
 
 | Field                  | Required | Description                                                                                                                                                     |
 | ---------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +82,7 @@ After creating a connector group, add individual connectors that represent speci
 3. Select **Add Custom Action**.
 4. Choose one of the four connector types:
 
-<figure><img src="../../../../.gitbook/assets/image (247).png" alt="Add Custom Action dialog with connector type options: Function, HTTP API, gRPC, and Database"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (223).png" alt="Add Custom Action dialog with connector type options: Function, HTTP API, gRPC, and Database"><figcaption></figcaption></figure>
 
 #### Function connector
 
@@ -109,7 +109,7 @@ Use an HTTP API connector to integrate with RESTful APIs over standard HTTP/HTTP
 5. Test the API call to verify the response.
 6. Click **Create** to add the connector.
 
-<figure><img src="../../../../.gitbook/assets/image (476).png" alt="HTTP API Connector setup with URL field and JavaScript code editor for defining API calls"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (429).png" alt="HTTP API Connector setup with URL field and JavaScript code editor for defining API calls"><figcaption></figcaption></figure>
 
 #### gRPC connector
 
@@ -120,7 +120,7 @@ Use a gRPC connector to communicate with services that expose APIs over gRPC ins
 3. Define input and output schemas matching your protobuf definitions.
 4. Click **Create** to add the connector.
 
-<figure><img src="../../../../.gitbook/assets/image (480).png" alt="gRPC API Connector configuration interface for connecting to gRPC-based services"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (433).png" alt="gRPC API Connector configuration interface for connecting to gRPC-based services"><figcaption></figcaption></figure>
 
 #### Database connector
 
@@ -132,7 +132,7 @@ Use a Database connector to integrate directly with PostgreSQL, Redshift, or MyS
 4. Define your query or operation.
 5. Click **Create** to add the connector.
 
-<figure><img src="../../../../.gitbook/assets/image (477).png" alt="Database Connector setup showing options for PostgreSQL, Redshift, and MySQL integration"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (430).png" alt="Database Connector setup showing options for PostgreSQL, Redshift, and MySQL integration"><figcaption></figcaption></figure>
 
 ### Step 3: Configure authentication (optional)
 
@@ -163,13 +163,13 @@ Before using your connector in a flow:
 
 Once your connector group is set up, you can manage individual connectors and share them across your workspace.
 
-<figure><img src="../../../../.gitbook/assets/image (253).png" alt="List of individual connectors within a workspace connector group"><figcaption><p>List of connectors in a connector group</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (228).png" alt="List of individual connectors within a workspace connector group"><figcaption><p>List of connectors in a connector group</p></figcaption></figure>
 
 **Export and import connectors**
 
 You can export connectors from one workspace and import them into another. You can also download the corresponding **OpenAPI file** for your connector group.
 
-<figure><img src="../../../../.gitbook/assets/image (254).png" alt="Connector options menu showing export, import, and download OpenAPI file actions"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (229).png" alt="Connector options menu showing export, import, and download OpenAPI file actions"><figcaption></figcaption></figure>
 
 To access these options, click the menu icon on the connector group and select:
 
@@ -192,7 +192,7 @@ For more details on adding connectors to flows, see [Managing & using connectors
 
 These connectors can be defined at the organization level, allowing any member within the organization to access and utilize the connections provided. This allows for streamlined organization and application of connections across various parts of the organization.
 
-<figure><img src="../../../../.gitbook/assets/image (242).png" alt="Organization Connectors page showing shared connectors available to all organization members"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (218).png" alt="Organization Connectors page showing shared connectors available to all organization members"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Similar to Workspace connectors, you can define group connectors and then manage different categories of connectors within them.

@@ -10,8 +10,8 @@ This walks through the shortest path to a working embed: generate a token from y
 
 You'll need:
 
-* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
-* **Your org identifier (`endOrgId`)** — The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](https://claude.ai/fastn/tutorials/developer/authentication-and-api-keys).
+* **Your org identifier (`endOrgId`)** — The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier).
 * **A backend** — Any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
@@ -21,7 +21,7 @@ Create a server-side function that calls the Fastn token endpoint. Keep the API 
 ```javascript
 // Server-side only
 async function getFastnToken({ userEmail, userName }) {
-  const res = await fetch("https://app.fastn.dev/api/v1/embed/token", {
+  const res = await fetch("https://live.gcp.fastn.ai/api/v1/embed/token", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
@@ -68,7 +68,7 @@ const { token } = await fetch("/api/fastn-token").then(r => r.json());
 
 const iframe = document.createElement("iframe");
 // Org-level (shared) embed — see the Tenancy guide for user-level
-iframe.src = `https://app.fastn.dev/api/v1/embed/iframe?token=${token}`;
+iframe.src = `https://live.gcp.fastn.ai/api/v1/embed/iframe?token=${token}`;
 iframe.style.width = "100%";
 iframe.style.height = "100%";
 iframe.style.border = "none";
@@ -83,4 +83,4 @@ Click Connect on one, complete the authentication popup, and confirm the app sho
 
 ### If the iframe is blank
 
-The most common cause is an expired or hardcoded token. Confirm your frontend fetches a fresh token on each load rather than reusing one. See [Troubleshooting](troubleshooting.md).
+The most common cause is an expired or hardcoded token. Confirm your frontend fetches a fresh token on each load rather than reusing one. See [Troubleshooting](https://claude.ai/fastn/tutorials/developer/troubleshooting).

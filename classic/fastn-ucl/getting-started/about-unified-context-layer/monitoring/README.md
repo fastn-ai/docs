@@ -9,11 +9,11 @@ description: >-
 
 To access the monitoring tools, simply go to the **Insights** section in the top navigation bar of your Dashboard.
 
-<figure><img src="../../../../../../.gitbook/assets/image (116).png" alt="UCL dashboard with the Insights tab highlighted in the top navigation bar, showing connected apps"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (107).png" alt="UCL dashboard with the Insights tab highlighted in the top navigation bar, showing connected apps"><figcaption></figcaption></figure>
 
 ### Overview Dashboard
 
-<figure><img src="../../../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.40 PM.png" alt="UCL Insights Overview dashboard showing active tenants, connectors, success rates, and usage metrics"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.40 PM.png" alt="UCL Insights Overview dashboard showing active tenants, connectors, success rates, and usage metrics"><figcaption></figcaption></figure>
 
 The dashboard represents each action triggered by a connector (e.g., sending a message, syncing data) and monitors them across key metrics:
 
@@ -45,7 +45,7 @@ Workspace-specific data is not displayed here.
   * Response usage
 * Use the **filter** at the top to switch between current month or current week views.
 
-<figure><img src="../../../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.54 PM.png" alt="UCL Insights Tool Usage page with a monthly trend graph and App Breakdown table showing tool calls and response usage"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.40.54 PM.png" alt="UCL Insights Tool Usage page with a monthly trend graph and App Breakdown table showing tool calls and response usage"><figcaption></figcaption></figure>
 
 ### Logs
 
@@ -63,7 +63,7 @@ The logging system provides detailed visibility into every action performed.
 Expand a log entry to view the **full request details**.
 {% endhint %}
 
-<figure><img src="../../../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.31.45 PM.png" alt="UCL Insights Logs tab showing a table of connector actions with status codes, durations, and request times"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-09-11 at 11.31.45 PM.png" alt="UCL Insights Logs tab showing a table of connector actions with status codes, durations, and request times"><figcaption></figcaption></figure>
 
 By clicking the **→** button, you can access detailed insights for individual logs, including:
 
@@ -71,7 +71,7 @@ By clicking the **→** button, you can access detailed insights for individual 
 * Timestamps
 * Detailed request parameters and responses
 
-<figure><img src="../../../../../../.gitbook/assets/image (443).png" alt="Expanded log entry showing request JSON with action ID, parameters, and response timing details"><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (403).png" alt="Expanded log entry showing request JSON with action ID, parameters, and response timing details"><figcaption></figcaption></figure>
 
 ### **Why Monitoring Matters**
 

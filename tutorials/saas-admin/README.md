@@ -1,7 +1,7 @@
 ---
 description: >-
   Tutorials for setting up and managing Fastn within your SaaS product
-  organisation config, connectors, workflows, widgets, tenants, and access
+  organization config, connectors, workflows, widgets, tenants, and access
   control.
 hidden: true
 ---
@@ -14,7 +14,7 @@ These tutorials are for the person responsible for Fastn inside a SaaS company t
 
 ### Tutorials in this section
 
-[**Setting Up Your Organisation**](setting-up-your-organization.md) — Configure organisation settings, API keys (Test & Live), secrets, environments, and invite your team via Settings → People.
+[**Setting Up Your Organization**](setting-up-your-organization.md) — Configure organization settings, API keys (Test & Live), secrets, environments, and invite your team via Settings → People.
 
 [**Creating a Workflow via AI**](creating-a-workflow-via-ai.md) — Use the "Build with AI" button to create workflows by describing what you need in plain language.
 

@@ -9,7 +9,7 @@ hidden: true
 
 Once your integrations are connected and running, the widget shows you how they're doing, what's running, what's succeeded or failed, and what needs attention. This information lives mainly on the **Insights** tab, with per-workflow run history available on the **Workflows** tab.
 
-**Prerequisites:** At least one app connected via the widget. See [Connecting Apps via Widget](connecting-apps-via-widget.md).
+**Prerequisites:** At least one app connected via the widget. See [Connecting Apps via Widget](https://claude.ai/fastn/tutorials/end-user/connecting-apps-via-widget).
 
 ***
 

@@ -12,7 +12,7 @@ Fastn supports multiple authentication types, including **OAuth, Basic Auth, API
 
 When [creating a connector](connector-types-and-setup.md#ii.-workspace-connectors) in the Fastn Workspace, you can configure its authentication by enabling ‘Activation’ to reveal all available authentication types, or you can access and edit these settings later by clicking the three dots at the top-right of your connector.
 
-<figure><img src="../../../../.gitbook/assets/image (691).png" alt="Connector settings menu accessed via three-dot icon showing authentication configuration option"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (630).png" alt="Connector settings menu accessed via three-dot icon showing authentication configuration option"><figcaption></figcaption></figure>
 
 * You will now see all available authentication modes.
 
@@ -20,7 +20,7 @@ When [creating a connector](connector-types-and-setup.md#ii.-workspace-connector
 These options only appear when **Enable Activation** is checked.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (692).png" alt="Authentication modes panel showing OAuth, Basic Auth, API Key, Bearer Token, and Custom Input options"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (631).png" alt="Authentication modes panel showing OAuth, Basic Auth, API Key, Bearer Token, and Custom Input options"><figcaption></figcaption></figure>
 
 ### **Setting Up Custom Input Authentication**
 
@@ -28,7 +28,7 @@ Use this when a connector requires a simple API key, secret key, or any custom f
 
 In the **Custom Input** section, you can define fields such as the API key, its description, the input type (password or text), whether it is required, and any expiry-related information.
 
-<figure><img src="../../../../.gitbook/assets/image (693).png" alt="Custom Input authentication form with fields for API key, description, input type, and expiry settings"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (632).png" alt="Custom Input authentication form with fields for API key, description, input type, and expiry settings"><figcaption></figcaption></figure>
 
 #### **Example Input Configuration**
 
@@ -50,7 +50,7 @@ In the **Custom Input** section, you can define fields such as the API key, its 
 
 > When the user clicks **Connect**, Fastn will display the custom input fields, and if the field type is set to password, the value will remain hidden.
 
-<figure><img src="../../../../.gitbook/assets/image (694).png" alt="Connect dialog displaying custom input fields with the API key value hidden as a password field"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (633).png" alt="Connect dialog displaying custom input fields with the API key value hidden as a password field"><figcaption></figcaption></figure>
 
 ### **Setting Up OAuth Authentication**
 
@@ -58,7 +58,7 @@ In the **Custom Input** section, you can define fields such as the API key, its 
 
 In the **OAuth** section, you can configure the base URL, client ID, client secret (if required), scope, authorization parameters, required attributes, and the tenant ID.
 
-<figure><img src="../../../../.gitbook/assets/image (696).png" alt="OAuth configuration section with fields for base URL, client ID, client secret, scope, and authorization parameters"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (635).png" alt="OAuth configuration section with fields for base URL, client ID, client secret, scope, and authorization parameters"><figcaption></figcaption></figure>
 
 #### **What does this section handle?**
 
@@ -68,7 +68,7 @@ This part manages the login redirect, the consent popup, and retrieving the auth
 It does not generate access tokens.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (697).png" alt="OAuth login redirect and consent popup handling configuration for authorization code retrieval"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (636).png" alt="OAuth login redirect and consent popup handling configuration for authorization code retrieval"><figcaption></figcaption></figure>
 
 ### **Setting Up OAuth2 \[Authorization & Token Exchange]**
 
@@ -78,7 +78,7 @@ The **OAuth2 Authorization** section is used to exchange the authorization code 
 * **Access Token URL**: URL used to fetch the access token.
 * **Refresh Token Grant Type**: Defines how expired tokens should be refreshed.
 
-<figure><img src="../../../../.gitbook/assets/image (698).png" alt="OAuth2 Authorization section with grant type, access token URL, and refresh token configuration"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (637).png" alt="OAuth2 Authorization section with grant type, access token URL, and refresh token configuration"><figcaption></figcaption></figure>
 
 ### **Example OAuth Configurations**
 

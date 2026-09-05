@@ -23,7 +23,7 @@ If you want to allow **only a single option selection**, use an **object variabl
 
 * Open the three-dot menu next to the field and select **Options**.
 
-<figure><img src="../../../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
 * Configure the following sections:
 
@@ -36,7 +36,7 @@ This is where you make the configuration dynamic:
   * _Dynamic selections_ fetch their options from another flow in real time (for example, a selection flow that retrieves a list of files).
 * **Selection Flow** – Choose which **Selection Flow** will power this dynamic data (e.g., a flow named `getFiles`).
 
-<figure><img src="../../../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Once selected, the data returned by that flow (like file names or IDs) will automatically appear in the file picker UI inside your widget.
@@ -52,7 +52,7 @@ For dynamic data sets that return large lists (such as files, customers, or reco
   * **Cursor** – Uses a pointer to fetch results in chunks.
   * **Offset** – Uses index-based offsets to load data progressively.
 
-<figure><img src="../../../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
 * **Limit:**\
   Defines the number of records to retrieve per chunk.\
@@ -67,7 +67,7 @@ For example:
 
 * **Selection Flow:** A flow that defines the selection of your Google files.
 
-<figure><img src="../../../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 When you save this configuration, your widget’s file picker will use the `Gcsgetfiles` flow to fetch available files dynamically.
@@ -84,14 +84,14 @@ The widget automatically:
 
 * Fetches available options using the connected selection flow.
 
-<figure><img src="../../../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
 * Applies pagination rules (Cursor/Offset + Limit).
 
-<figure><img src="../../../../../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 * Reflects the field behaviors you set (hidden, disabled, or dependent visibility).
 
-<figure><img src="../../../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
 > This creates a seamless dynamic experience, allowing end-users to select real-time data (e.g., files, connectors, records) directly from your Fastn widget.

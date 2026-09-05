@@ -17,16 +17,16 @@ To enforce input validation at the field level within your configuration flows, 
 3. **Open Step Settings**\
    Click on the three-dot menu (`⋮`) associated with the step.
 
-<figure><img src="../../../../../.gitbook/assets/image (262).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (237).png" alt=""><figcaption></figcaption></figure>
 
 4. Click on **Configure**
 
-<figure><img src="../../../../../.gitbook/assets/image (263).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
 
 5. **Enable Submit Validation**\
    In the configuration pane, select the **Validation** tab and toggle **Enable Submit Validation**.
 
-<figure><img src="../../../../../.gitbook/assets/image (264).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (239).png" alt=""><figcaption></figcaption></figure>
 
 ## **Validation Script: Empty Field and URL Format Check**
 
@@ -83,7 +83,7 @@ jsCopyEditasync function validator(data = [
 * Click **Save.**
 * **Redeploy** your configuration flow.
 
-<figure><img src="../../../../../.gitbook/assets/image (265).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (240).png" alt=""><figcaption></figcaption></figure>
 
 ## **What This Validator Does?**
 

@@ -15,7 +15,7 @@ These tutorials are for the people who use integrations through the widget embed
 
 ### Tutorials in this section
 
-[**Connecting Apps via Widget**](connecting-apps-via-widget.md) — Find available integrations, authorise your accounts, and activate connections through the embedded widget.
+[**Connecting Apps via Widget**](connecting-apps-via-widget.md) — Find available integrations, authorize your accounts, and activate connections through the embedded widget.
 
 [**Customizing Your Integrations**](customizing-your-integrations.md) — Configure sync preferences, field mappings, scheduling, and other settings for your active integrations.
 

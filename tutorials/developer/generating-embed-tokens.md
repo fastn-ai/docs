@@ -9,7 +9,7 @@ Embed tokens are short-lived credentials that scope the Fastn widget to a specif
 ### The token endpoint
 
 ```
-POST https://app.fastn.dev/api/v1/embed/token
+POST https://live.gcp.fastn.ai/api/v1/embed/token
 ```
 
 **Headers:**
@@ -32,8 +32,8 @@ X-fastn-Test-Mode: true        (only for fsk_test_ keys; omit for fsk_live_)
 
 | Field       | Description                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `endOrgId`  | The internal UUID of the customer the widget is for. Must be the UUID — the slug and External ID both return 404. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
-| `userEmail` | The email of the individual user. Used for user-level tenancy (see [Tenancy](understanding-tenancy.md)).                                                                                           |
+| `endOrgId`  | The internal UUID of the customer the widget is for. Must be the UUID — the slug and External ID both return 404. See [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier). |
+| `userEmail` | The email of the individual user. Used for user-level tenancy (see [Tenancy](https://claude.ai/fastn/tutorials/developer/tenancy)).                                                                                           |
 | `userName`  | The display name of the individual user.                                                                                                                                                                                      |
 
 **Response:**
@@ -59,7 +59,7 @@ The embed token is prefixed `emb_`. In the hands-on integration, the token was n
 Because tokens expire after 15 minutes, a long-lived embed session needs the token refreshed before it expires. The platform provides a refresh endpoint, and the Embed tab notes that tokens auto-refresh:
 
 ```
-POST https://app.fastn.dev/api/v1/embed/token/refresh
+POST https://live.gcp.fastn.ai/api/v1/embed/token/refresh
 ```
 
 Use the refresh endpoint to obtain a new token before the current one expires, or generate a fresh token from your backend on each load for shorter sessions.
@@ -80,7 +80,7 @@ Put token generation in a server-side function that reads the API key and org ID
 
 ```javascript
 async function getFastnToken({ userEmail, userName }) {
-  const res = await fetch("https://app.fastn.dev/api/v1/embed/token", {
+  const res = await fetch("https://live.gcp.fastn.ai/api/v1/embed/token", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
@@ -105,4 +105,4 @@ async function getFastnToken({ userEmail, userName }) {
 
 Expose this through an endpoint your frontend calls at render time. Return only the token.
 
-This pattern is what makes the embed reliable across different users and sessions. Hardcoding or caching tokens is what causes "works for me, fails for them" behaviour.
+This pattern is what makes the embed reliable across different users and sessions. Hardcoding or caching tokens is what causes "works for me, fails for them" behavior.

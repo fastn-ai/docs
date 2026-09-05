@@ -16,24 +16,24 @@ For this use case, we need to connect the Jira App with the Assign Issue Action.
 
 > You can select any app by checking the top-right box on the app and click on **Select Tools** to modify your action selection and then finalize this setup by clicking the **Confirm Action** button in the right-bottom.
 
-<figure><img src="../../../../../.gitbook/assets/image (609).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (552).png" alt=""><figcaption></figcaption></figure>
 
 * You need to authenticate your Jira account, after which the Jira App will appear as **Connected**.
 * From Select Tools, you can enable the **Assign Issue** Action.
 
 > ⚠️ You may need to be a Jira project admin or have the right permissions to link your account successfully.
 
-<figure><img src="../../../../../.gitbook/assets/image (606).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (549).png" alt=""><figcaption></figcaption></figure>
 
 You will now see Jira along with other selected apps in your dashboard.
 
-<figure><img src="../../../../../.gitbook/assets/image (607).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (550).png" alt=""><figcaption></figcaption></figure>
 
 ### **Use UCL’s Playground to Perform Actions**
 
 You can use the **Playground** (from the three-dot menu, top-right) in your dashboard to test all your connected apps.
 
-<figure><img src="../../../../../.gitbook/assets/image (608).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (551).png" alt=""><figcaption></figcaption></figure>
 
 In the AI Assistant, enter the prompt describing the action you want to perform. For example:
 
@@ -45,6 +45,6 @@ The AI Assistant will process your request using the appropriate action in the c
 
 Once successful, the task ownership will be updated in your Jira workspace.
 
-<figure><img src="../../../../../.gitbook/assets/image (366).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (334).png" alt=""><figcaption></figcaption></figure>
 
 > This setup allows you to automate and streamline task management in Jira using natural language, making workflows faster and more efficient.

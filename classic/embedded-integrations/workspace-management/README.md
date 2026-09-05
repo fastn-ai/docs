@@ -15,11 +15,11 @@ description: >-
 If you have more than one workspace, you will be provided with an option to choose your respective.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 * You can create any new desired workspace with a unique Space ID by using the **Create Workspace** button on [live.fastn.ai/app](https://live.fastn.ai/app)
 
-<figure><img src="../../../../.gitbook/assets/image (460).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (416).png" alt=""><figcaption></figcaption></figure>
 
 ## Workspace Settings[​](https://docs.fastn.ai/docs/workspace-management#workspace-settings)
 
@@ -55,7 +55,7 @@ Fastn supports **multi-tenant architecture**, making it easy to build and manage
 
 A **tenant** represents an isolated environment for a particular user within your workspace. It helps separate data, configurations, credentials, and workflows for different customers, business units, or systems. Fastn’s built-in multi-tenancy ensures complete **data isolation and secure execution** for each tenant.
 
-<figure><img src="../../../../.gitbook/assets/image (323).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (293).png" alt=""><figcaption></figcaption></figure>
 
 ### How to Manage Tenants
 

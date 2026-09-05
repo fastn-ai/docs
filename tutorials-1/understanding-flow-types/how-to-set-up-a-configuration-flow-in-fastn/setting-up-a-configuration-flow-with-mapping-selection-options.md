@@ -13,7 +13,7 @@ Mapping flows allow you to link and transform data between different variables o
 
 In the **Selections** section, select Mapping from the list as your **Selection Type**.
 
-<figure><img src="../../../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 This enables you to map data between flows by linking a **Source Flow** and a **Destination Flow**.
@@ -23,7 +23,7 @@ This enables you to map data between flows by linking a **Source Flow** and a **
 * **Set this field as independent?** – Determines if the field functions independently from other mappings.
 * **Selection Type** – Should be set to **Mapping** for this configuration.
 
-<figure><img src="../../../../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 ### **Mapping**
 

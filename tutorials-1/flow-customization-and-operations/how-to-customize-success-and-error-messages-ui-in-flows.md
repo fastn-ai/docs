@@ -6,7 +6,7 @@ description: >-
 
 # How to Customize Success and Error Messages UI in Flows?
 
-In **Flows**, you can display customized success and error messages to inform users about the outcome of a Flow execution.&#x20;
+In **Flows**, you can display customized success and error messages to inform users about the outcome of a Flow execution.
 
 {% hint style="info" %}
 By default, success and error messages are shown as text notifications, but you can extend them into a UI format using the **`userMessage`** variable.
@@ -39,15 +39,15 @@ In your Flow, add either:
 Place this component right after your API request or as the first step after the Flow trigger.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 2: Set User Message Variables**
 
-You can define custom values for `userMessage`  & `userMessageHeader` .
+You can define custom values for `userMessage` & `userMessageHeader` .
 
 #### Example configuration
 
-<figure><img src="../../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 3: Add the JSON Configuration**
 
@@ -91,24 +91,24 @@ This JSON enables the Flow to display the success UI message when executed succe
 * Use the above JSON structure.
 * Deploy the changes to live.
 
-<figure><img src="../../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 ### **Attach the Flow to the App Widget**
 
 In the **widget** for the Google app (or any other app for your use case), add the Flow you created for activation.
 
-<figure><img src="../../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 > Deploy the changes to live, and you will be able to see the updated UI upon activation in the **Preview** section.
 
 This ensures the Flow runs automatically when the widget action is triggered, for example, when a user clicks **Activate** or performs an API-based operation.
 
-<figure><img src="../../../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 \
 After successful authentication by using the **Connect** button, a UI message appears displaying:
 
-<figure><img src="../../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
 > **Activation Succeeded**\
 > Your Google account has been activated successfully!

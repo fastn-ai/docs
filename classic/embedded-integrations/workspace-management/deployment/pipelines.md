@@ -11,17 +11,17 @@ You use a pipeline to send releases to environments or domains.
 * Go to **Settings → Deployment → Pipelines**.
 * Click **Create Pipeline** (top-right).
 
-<figure><img src="../../../../../.gitbook/assets/image (677).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (616).png" alt=""><figcaption></figcaption></figure>
 
 * Add:
   * **Pipeline Name**
   * **Description**
 
-<figure><img src="../../../../../.gitbook/assets/image (678).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (617).png" alt=""><figcaption></figcaption></figure>
 
 * (Optional) Enable **Deploy to Different Domains** to deploy outside the current domain.
 
-<figure><img src="../../../../../.gitbook/assets/image (679).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (618).png" alt=""><figcaption></figcaption></figure>
 
 * Under **Destination**, select your primary deployment destination (e.g., UCL).
 * Add additional destinations if needed.
@@ -33,14 +33,14 @@ Once the pipeline is created:
 
 * Click the **Deploy a Release** button.
 
-<figure><img src="../../../../../.gitbook/assets/image (687).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (626).png" alt=""><figcaption></figcaption></figure>
 
 * Add a **Deployment Description**.
 
-<figure><img src="../../../../../.gitbook/assets/image (682).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (621).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Deploy**.
 
-<figure><img src="../../../../../.gitbook/assets/image (683).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (622).png" alt=""><figcaption></figcaption></figure>
 
 > You’ll see a confirmation indicating that the deployment is complete and that the selected release was successfully pushed to the configured destinations.

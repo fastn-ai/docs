@@ -50,10 +50,10 @@ Six auth methods are available when creating a connector:
 | Method           | How it works                                                             | Example apps                          |
 | ---------------- | ------------------------------------------------------------------------ | ------------------------------------- |
 | **No Auth**      | No authentication required. For public APIs.                             | Public data feeds                     |
-| **Basic Auth**   | Username and password sent as Base64 in Authorisation header.            | Legacy APIs, internal systems         |
-| **Bearer Token** | Token sent in Authorisation header as `Bearer {token}`.                  | Many modern APIs                      |
+| **Basic Auth**   | Username and password sent as Base64 in Authorization header.            | Legacy APIs, internal systems         |
+| **Bearer Token** | Token sent in Authorization header as `Bearer {token}`.                  | Many modern APIs                      |
 | **API Key**      | Key sent in a custom header (e.g., `X-API-Key`).                         | Stripe, SendGrid, OpenAI              |
-| **OAuth 2.0**    | User authorises via the app's login screen. Fastn manages token refresh. | Slack, Shopify, HubSpot, Xero, Google |
+| **OAuth 2.0**    | User authorizes via the app's login screen. Fastn manages token refresh. | Slack, Shopify, HubSpot, Xero, Google |
 | **Custom**       | A custom handler manages auth. For proprietary systems.                  | Internal tools, custom APIs           |
 
 You can add multiple auth methods to one connector (click **"+ Add"** in the Auth Methods section). One method is set as default.
@@ -77,7 +77,7 @@ A connector defines the integration. A **connection** is an authenticated instan
 1. On the Connectors page, find your connector card.
 2. Click **Connect** (first connection) or **+ Add Connection** (additional connections).
 3. Complete the auth flow:
-   * **OAuth 2.0:** Popup opens with the app's login screen. Authorise and you're redirected back.
+   * **OAuth 2.0:** Popup opens with the app's login screen. Authorize and you're redirected back.
    * **API Key / Bearer Token:** Paste the key/token and save.
    * **Basic Auth:** Enter username and password.
 4. The connection appears under **Integrations → Connections**.
@@ -108,8 +108,8 @@ On the Connectors page, each connector card shows:
 
 | Visibility  | Who can see it                                   |
 | ----------- | ------------------------------------------------ |
-| **Private** | Only you and your organisation                   |
-| **Public**  | Available to other organisations (if applicable) |
+| **Private** | Only you and your organization                   |
+| **Public**  | Available to other organizations (if applicable) |
 
 Set visibility in the Create Connector dialog or edit it later from the connector's settings.
 
