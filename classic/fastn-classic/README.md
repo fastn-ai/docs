@@ -6,7 +6,7 @@ description: >-
 
 # Fastn Classic
 
-This section contains documentation for **Fastn V1** — the original embedded integration platform. V1 is currently in **maintenance mode**: active bugs are addressed, but no new features will be added. All new development is happening in [Fastn V2](../../README.md).
+This section contains documentation for **Fastn V1** — the original embedded integration platform. V1 is currently in **maintenance mode**: active bugs are addressed, but no new features will be added. All new development is happening in [Fastn V2](https://claude.ai/README.md).
 
 If you are starting a new project, use V2.
 
@@ -14,29 +14,28 @@ If you are starting a new project, use V2.
 
 Fastn V1 is a UI-driven embedded integration platform that lets SaaS companies give their customers pre-built connectors and automation flows. You configure connectors, build flows using a visual step editor, and embed an integration widget into your product.
 
-V1 does not include Unified APIs, code-first workflows, AI agents, or the Claude/MCP connection. These are V2-only capabilities.
+V1 does not include the Canonical Data Model, TypeScript DSL, AI agents, or the MCP Gateway. These are V2-only capabilities.
 
 ### V1 vs V2 at a Glance
 
-|                    | V1 (Legacy)                | V2                                                            |
-| ------------------ | -------------------------- | ------------------------------------------------------------- |
-| Workflow authoring | Visual step editor         | JavaScript — `export default async function(ctx)`             |
-| Flow diagram       | The authoring surface      | Read-only, generated from the code                            |
-| Connector building | UI-only                    | Create-connector dialog: REST, MCP, FTP, Database, REDIS      |
-| AI agents          | Not available              | Agent builds the workflow and shows you the diff              |
-| Data model         | Connector-specific schemas | Unified APIs — one endpoint per business entity               |
-| Auth               | OAuth2, API Key            | No Auth, Basic, Digest, Bearer, API Key, OAuth 2.0, Custom    |
-| Multi-tenancy      | Single-tier                | Per-customer connections, scoped API keys, named environments |
-| Status             | **Maintenance only**       | **Active development**                                        |
+|                    | V1 (Legacy)                | V2                                                  |
+| ------------------ | -------------------------- | --------------------------------------------------- |
+| Workflow authoring | Visual step editor         | TypeScript DSL + visual canvas                      |
+| Connector building | UI-only                    | Code-first (`ConnectorDefinition`)                  |
+| AI agents          | Not available              | 7 platform agents + custom Agent Builder            |
+| Data model         | Connector-specific schemas | Canonical Data Model (CDM)                          |
+| Auth               | OAuth2, API Key            | OAuth2, API Key, SSO (Keycloak)                     |
+| Multi-tenancy      | Single-tier                | Three-tier (Platform Admin / SaaS Admin / End User) |
+| Status             | **Maintenance only**       | **Active development**                              |
 
 ### Support Timeline
 
 V1 will be supported until the official sunset date is announced. When sunset is confirmed, this section will be archived and a migration guide will be published.
 
-If you are on V1 and want to understand what moving to V2 involves, see the Migration Guide.
+If you are on V1 and want to understand what moving to V2 involves, see the [Migration Guide](https://claude.ai/resources/migration-guide.md).
 
 {% hint style="info" %}
-⚠️ No new features will be added to V1. If a capability you need is not in V1, it will not be backported. Check the V2 docs to see if it is available there.
+⚠️ No new features will be added to V1. If a capability you need is not in V1, it will not be backported. Check the V2 docs to see if it is available there. \{% endhint %\}
 {% endhint %}
 
 ### Known Limitations in V1
@@ -78,5 +77,5 @@ Use the navigation under this **Legacy** section. The structure covers:
 * **Tutorials & Resources** — step-by-step walkthroughs
 
 {% hint style="info" %}
-⚠️ **You are reading legacy documentation.** Features, UI labels, and configuration steps described here apply to V1 only. Do not mix V1 and V2 concepts — the architectures are fundamentally different. If you are unsure which version you are on, check your dashboard URL or contact your Fastn account manager.
+⚠️ **You are reading legacy documentation.** Features, UI labels, and configuration steps described here apply to V1 only. Do not mix V1 and V2 concepts  the architectures are fundamentally different. If you are unsure which version you are on, check your dashboard URL or contact your Fastn account manager.
 {% endhint %}

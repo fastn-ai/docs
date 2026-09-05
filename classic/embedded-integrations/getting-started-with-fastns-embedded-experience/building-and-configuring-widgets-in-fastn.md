@@ -208,15 +208,15 @@ Fastn provides pre-built flow templates for each action type. Import them from t
 
 **Activate flow** — runs when the user triggers an Activation action. It prepares the connector, initiates authentication, and marks the integration as active.
 
-<figure><img src="../../../.gitbook/assets/image (257).png" alt="Activate flow template in the Fastn flow editor for enabling a connected app integration"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (232).png" alt="Activate flow template in the Fastn flow editor for enabling a connected app integration"><figcaption></figcaption></figure>
 
 **Deactivate flow** — runs when the user triggers a Deactivation action. It cleans up resources, revokes tokens if needed, and marks the integration as inactive.
 
-<figure><img src="../../../.gitbook/assets/image (256).png" alt="Deactivate flow template in the Fastn flow editor for disabling a connected app integration"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (231).png" alt="Deactivate flow template in the Fastn flow editor for disabling a connected app integration"><figcaption></figcaption></figure>
 
 **Configure flow** — runs when the user triggers a Configuration action. It renders a form based on the fields you define in the flow and stores the user's selections.
 
-<figure><img src="../../../.gitbook/assets/image (258).png" alt="Configure flow template in the Fastn flow editor for managing connected app settings"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (233).png" alt="Configure flow template in the Fastn flow editor for managing connected app settings"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Configuration flows must also be linked in **Settings > Configurations** for the widget to display configuration options. See [How to set up a configuration flow](../../../tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/) for details.

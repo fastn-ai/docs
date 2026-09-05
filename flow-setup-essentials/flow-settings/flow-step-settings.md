@@ -10,7 +10,7 @@ Every flow component in Fastn — connectors, switches, loops, data mappers, and
 
 To open the Settings panel, click the **Settings icon** in the **top-right corner** of any component on the canvas.
 
-<figure><img src="../../../../.gitbook/assets/image (63).png" alt="Flow step Settings panel accessed via the Settings icon in the top-right corner of a component"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59).png" alt="Flow step Settings panel accessed via the Settings icon in the top-right corner of a component"><figcaption></figcaption></figure>
 
 The panel contains four key features:
 
@@ -71,7 +71,7 @@ Step notes let you add free-text documentation directly to a step. Use notes to 
 2. Scroll to the **Step Note** field.
 3. Enter your note text.
 
-<figure><img src="../../../../.gitbook/assets/image (66).png" alt="Step Note text field for adding comments about the purpose or logic of a flow step"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62).png" alt="Step Note text field for adding comments about the purpose or logic of a flow step"><figcaption></figcaption></figure>
 
 After you save a note, a **note icon** appears on the step in the canvas. Click the icon to quickly view the note without opening the full Settings panel.
 
@@ -130,7 +130,7 @@ The retry mechanism configures automatic retries when a step fails. This is crit
 1. Click the **Settings icon** on the step to open the Settings panel.
 2. Locate the **Retry Settings** section.
 
-<figure><img src="../../../../.gitbook/assets/image (64).png" alt="Retry Settings panel with Make Step Required checkbox to stop flow on step failure"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60).png" alt="Retry Settings panel with Make Step Required checkbox to stop flow on step failure"><figcaption></figcaption></figure>
 
 ### Make step required
 

@@ -11,7 +11,7 @@ You can use **Data Mapper** to reshape and transform data as it flows through yo
 1. Log in to [live.fastn.ai](https://live.fastn.ai) and navigate to "Flows." Select the flow type you need and name your new flow based on the task you want to perform.
 2. Navigate to the side panel and from the list of available flow components, select "Data Mapper." This will allow you to reshape your data as needed for your specific flow requirements.
 
-<figure><img src="../../../../.gitbook/assets/image (466).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (422).png" alt=""><figcaption></figcaption></figure>
 
 3. Inside the Data Mapper, define your data types such as `int`, `string`, or `boolean`. Once you've established a key for your value, you can choose to:
    * Hardcode a value directly.
@@ -22,7 +22,7 @@ You can use **Data Mapper** to reshape and transform data as it flows through yo
 Make sure your defined key type aligns with your headers or input in the terminal, otherwise it will throw an error.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (467).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (423).png" alt=""><figcaption></figcaption></figure>
 
 4.  Utilize AI-assisted suggestions in the Data Mapper for efficient schema mapping. Use the search function in the Flow data Map to quickly locate and map items:
 
@@ -32,14 +32,14 @@ Make sure your defined key type aligns with your headers or input in the termina
     * Assign steps to a key that navigate input from the previous steps.
     * An App Config for any environment where you wish to deploy your project.
 
-    <figure><img src="../../../../.gitbook/assets/image (468).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (424).png" alt=""><figcaption></figcaption></figure>
 5. You can run the Data Mapper in a debug mode. This allows you to verify the accuracy of mapping and ensure that the data transformations meet your expectations before proceeding to deployment.
 
 {% embed url="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F3iSr2Tx8FvvuoLPncziH%2Fuploads%2FRldJ4cCVXZ5G0iDzR7Nl%2F20250617-1958-06.8141168.mp4?alt=media&token=dd356c3e-c382-4033-8ac4-b7e8f3513487" %}
 
 ## Defining Field Data Types
 
-<figure><img src="../../../../.gitbook/assets/image (288).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (261).png" alt=""><figcaption></figcaption></figure>
 
 Here's an example of defining different data types as shown in the image in JSON, including nested objects and arrays:
 
@@ -92,7 +92,7 @@ Operator: ==
 Value: {{field_value}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (268).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (242).png" alt=""><figcaption></figcaption></figure>
 
 * **UUID:** Generate a unique identifier.
 
@@ -107,7 +107,7 @@ Variable Name: id_UUID
 Generate Type: Dynamic UUID
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (269).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (243).png" alt=""><figcaption></figcaption></figure>
 
 * **Array Size:** Obtain the size of an array.
 
@@ -120,7 +120,7 @@ Variable Name: id_array_Length
 Target: {{headers['x-fastn-space-tenantid']}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (272).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (246).png" alt=""><figcaption></figcaption></figure>
 
 * **Escape String:** Escape special characters in a string.
 
@@ -135,7 +135,7 @@ Target Value: {{input}}
 Regex Value: [add regex here]
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (271).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (245).png" alt=""><figcaption></figcaption></figure>
 
 * **Loop:** Iterate over elements to apply transformations.
 
@@ -147,7 +147,7 @@ Loop Over: {{input}}
 Variable Index: input_index
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (273).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (247).png" alt=""><figcaption></figcaption></figure>
 
 * **Substring:** Extract a portion of a string.
 
@@ -161,7 +161,7 @@ Target Value: {{input}}
 Regex Value: [add regex here]
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (274).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (248).png" alt=""><figcaption></figcaption></figure>
 
 * **Trim White Spaces:** Remove leading and trailing spaces.
 
@@ -173,7 +173,7 @@ Trim Type: All
 Target Value: {{input}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (275).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (249).png" alt=""><figcaption></figcaption></figure>
 
 * **Math Expression:** Apply mathematical calculations.
 
@@ -184,7 +184,7 @@ Mathematical Operation: {{input}} + 1
 Cast Variable: Integer
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (277).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (250).png" alt=""><figcaption></figcaption></figure>
 
 * **Conditions:** Implement logic branches based on conditions.
 
@@ -199,7 +199,7 @@ Condition (1):
 Return Value: {{field_value}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (278).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (251).png" alt=""><figcaption></figcaption></figure>
 
 * **Converter:** Change data types or formats.
 
@@ -212,7 +212,7 @@ Source Field: {{value}}
 Date Format: ISO_8601
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (279).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (252).png" alt=""><figcaption></figcaption></figure>
 
 * **Transcode:** Transform data encoding.
 
@@ -224,7 +224,7 @@ Transcode Type: Decode Base64
 Target Value: {{value}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (280).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (253).png" alt=""><figcaption></figcaption></figure>
 
 * **Hashing:** Generate a hash value.
 
@@ -236,7 +236,7 @@ Algorithm Type: SHA-256
 Target Value: {{value}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (281).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (254).png" alt=""><figcaption></figcaption></figure>
 
 * **Append To List:** Add an element to a list.
 
@@ -248,7 +248,7 @@ Selected List: {{target_list}}
 List To Append: {{list_to_add}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (282).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (255).png" alt=""><figcaption></figcaption></figure>
 
 * **Remove From List:** Delete elements from a list.
 
@@ -261,7 +261,7 @@ Selected List: {{target_list}}
 List of Indices: [list]
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (283).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (256).png" alt=""><figcaption></figcaption></figure>
 
 * **Insert Item:** Place an item at a specific position.
 
@@ -273,7 +273,7 @@ Selected List: {{target_list}}
 Item: {{item_to_add}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (284).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (257).png" alt=""><figcaption></figcaption></figure>
 
 * **Remove Item:** Delete an item from a list.
 
@@ -285,7 +285,7 @@ Selected List: {{target_list}}
 Index: {{item_index}}
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (285).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (258).png" alt=""><figcaption></figcaption></figure>
 
 * **Date Source:** Handle and manipulate date/time values.
 
@@ -299,7 +299,7 @@ Target Format: YYYY-MM-dd HH:mm:ss.SSS Z
 Operation: None
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (286).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (259).png" alt=""><figcaption></figcaption></figure>
 
 * **Find index:** Determine the index of an element in a list.
 
@@ -313,7 +313,7 @@ Target Value: {{target_field}}
 Target Type: Text
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (287).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (260).png" alt=""><figcaption></figcaption></figure>
 
 ### **2. Add Parent Key**
 

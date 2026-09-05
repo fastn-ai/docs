@@ -12,8 +12,8 @@ Fastn has 6 system roles. View them under **Settings → ADVANCED → Roles**:
 
 | Role          | Permissions | Description                                                      |
 | ------------- | ----------- | ---------------------------------------------------------------- |
-| **Owner**     | 39          | Full access within organisation and customers                    |
-| **Admin**     | 39          | Full access within organisation and customers                    |
+| **Owner**     | 39          | Full access within organization and customers                    |
+| **Admin**     | 39          | Full access within organization and customers                    |
 | **Developer** | 34          | Build connectors, workflows, agents. No billing or org settings. |
 | **Operator**  | 18          | Operational access — run workflows, monitor activity             |
 | **Viewer**    | 7           | Read-only access                                                 |
@@ -37,7 +37,7 @@ Each role has granular permissions across 5 categories:
 
 **Owner / Admin** — All 39 permissions. Full access to everything.
 
-**Developer** — 34 permissions. Can build and deploy connectors, workflows, and agents. Cannot manage billing, organisation settings, or user roles.
+**Developer** — 34 permissions. Can build and deploy connectors, workflows, and agents. Cannot manage billing, organization settings, or user roles.
 
 **Operator** — 18 permissions. Can run workflows, monitor executions, and manage connections. Cannot create new connectors or workflows.
 

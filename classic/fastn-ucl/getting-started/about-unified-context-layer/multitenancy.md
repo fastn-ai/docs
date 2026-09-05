@@ -12,7 +12,7 @@ Multitenancy is a foundational concept within UCL that enables secure, scalable,
 
 Multitenancy means that a single deployment of the UCL platform can serve multiple distinct tenants \[users], such as different customers, departments, or user groups. Each user operates in an isolated environment with their data, credentials, tools, and access policies. This ensures privacy and security, preventing any cross-tenant data exposure.
 
-<figure><img src="../../../../../.gitbook/assets/Fastn-GIF3.gif" alt="Animated demo of UCL multitenancy showing isolated tenant environments within a shared platform instance"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Fastn-GIF3.gif" alt="Animated demo of UCL multitenancy showing isolated tenant environments within a shared platform instance"><figcaption></figcaption></figure>
 
 ## How Multitenancy Works in UCL: A Simple Case Study
 
@@ -73,4 +73,4 @@ UCL's multitenancy architecture delivers several critical advantages that enhanc
 
 The multitenant architecture of UCL consists of a centralized server that handles requests for all users. Each user's data, configuration, and authentication tokens are stored separately within secure workspaces. Tools and actions are dynamically mapped based on user context, allowing seamless routing of operations. The architecture supports horizontal scaling to meet increasing demand while preserving user isolation and performance consistency.
 
-<figure><img src="../../../../../.gitbook/assets/image (321).png" alt="UCL multitenant architecture diagram showing request routing from API, SDK, or MCP client through Fastn UCL to tenant-isolated apps with Slack and Teams notifications"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (291).png" alt="UCL multitenant architecture diagram showing request routing from API, SDK, or MCP client through Fastn UCL to tenant-isolated apps with Slack and Teams notifications"><figcaption></figcaption></figure>

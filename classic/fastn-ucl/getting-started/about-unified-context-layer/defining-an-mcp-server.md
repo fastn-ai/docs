@@ -14,7 +14,7 @@ The Unified Context Layer (UCL) allows you to define your own **MCP (Model Conte
 * Select your workspace.
 * From the **Dashboard → Connect page**, click on **Define an MCP Server**.
 
-<figure><img src="../../../../../.gitbook/assets/Screenshot 2025-10-03 195550.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Screenshot 2025-10-03 195550.png" alt=""><figcaption></figcaption></figure>
 
 * You will be taken to the **Create New MCP Tool** screen.
 
@@ -33,7 +33,7 @@ On this screen, you will provide the basic information for your MCP tool.
   * Light
   * Dark
 
-<figure><img src="../../../../../.gitbook/assets/image (636).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (576).png" alt=""><figcaption></figcaption></figure>
 
 Click **Next** to continue.
 
@@ -49,7 +49,7 @@ Set up authentication and activation parameters for your MCP tool.
 * **Bearer Token** → Token-based authentication.
 * **Custom Input** → Define your own variable names and descriptions (e.g., `Instance ID`).
 
-<figure><img src="../../../../../.gitbook/assets/image (638).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (578).png" alt=""><figcaption></figcaption></figure>
 
 > You can set one of these methods as the **default**.
 >
@@ -71,7 +71,7 @@ Provide the server connection details.
 
 * **Headers** → Add any required headers (e.g., `instanceId`).
 
-<figure><img src="../../../../../.gitbook/assets/image (639).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (579).png" alt=""><figcaption></figcaption></figure>
 
 * **Query Parameters** → Add query parameters if needed.
 * **Authentication Configuration** → Choose one:
@@ -82,7 +82,7 @@ Provide the server connection details.
   * AWS Signature
   * API Key
 
-<figure><img src="../../../../../.gitbook/assets/image (640).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (580).png" alt=""><figcaption></figcaption></figure>
 
 Click **Next** to continue.
 
@@ -96,7 +96,7 @@ You will now see your MCP server details.
 - Connection Status: Ready to test connection
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (641).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (581).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Test Connection**.
 * If successful, you will see a notification: _“Connection Successful. Ready to complete setup.”_
@@ -105,10 +105,10 @@ You will now see your MCP server details.
 
 * Click **Complete Setup**.
 
-<figure><img src="../../../../../.gitbook/assets/image (643).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (582).png" alt=""><figcaption></figcaption></figure>
 
 * Your new MCP server will be added as a tool in your dashboard.
 
-<figure><img src="../../../../../.gitbook/assets/image (644).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (583).png" alt=""><figcaption></figcaption></figure>
 
 > You can now use it within your UCL workspace.

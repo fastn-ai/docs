@@ -20,7 +20,7 @@ Using **Includes Only**, you can split the dataset so only the selected fields m
 
 Add a _**Google Sheets**_ Connector and select the action _**getDataFromSheet**_.
 
-<figure><img src="../../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * This step retrieves all the data from your sheet and provides it as the output for the next steps.
 
@@ -29,7 +29,7 @@ Add a _**Google Sheets**_ Connector and select the action _**getDataFromSheet**_
 * After your connector step, click the '+' button to insert a new step.
 * Search for **Flow Transformation Actions** and select **Split**.
 
-<figure><img src="../../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 * The Split step divides the data based on the input field and strategy you choose. Configure the Split step as follows:
 
@@ -37,7 +37,7 @@ Add a _**Google Sheets**_ Connector and select the action _**getDataFromSheet**_
 
 \{{steps.getDataFromSheet.output\}}
 
-<figure><img src="../../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 _This references the output from the previous connector step._
@@ -53,17 +53,17 @@ As an example, we will choose the _Includes Only_ Strategy in this scenario.
 You can choose Includes Only or Excludes Only, depending on your use case.
 {% endhint %}
 
-<figure><img src="../../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 **Input Fields**
 
 You can select any input field you want to use for splitting, like the Major Dimensions of the data from the sheet, in this case.
 
-<figure><img src="../../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 Save the step.
 
-<figure><img src="../../../../../.gitbook/assets/image (670).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (609).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Testing the Split Step
 
@@ -71,11 +71,11 @@ You can test the split step to ensure it works as expected:
 
 * Test the step directly from the **Test** inside the Split step.
 
-<figure><img src="../../../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 * Next, test the entire flow from the **Test** button at the top-right corner of the flow editor.
 
-<figure><img src="../../../../../.gitbook/assets/image (669).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (608).png" alt=""><figcaption></figcaption></figure>
 
 ### Using Split Data
 

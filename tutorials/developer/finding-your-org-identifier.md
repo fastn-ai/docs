@@ -8,7 +8,7 @@ The `endOrgId` identifies the customer a widget embed is for. Both the token end
 
 ### Where the UUID comes from
 
-Each customer in your Fastn workspace has an internal UUID. You create customers under **Settings → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)).
+Each customer in your Fastn workspace has an internal UUID. You create customers under **Settings → Customers** (see [Managing Customers](https://claude.ai/fastn/tutorials/saas-admin/managing-customers)).
 
 The customer record in the dashboard shows: Name, Slug, Status, Customer Admin, and Created date. It does **not** display the UUID — there is no UUID or External ID field in the Customers UI.
 

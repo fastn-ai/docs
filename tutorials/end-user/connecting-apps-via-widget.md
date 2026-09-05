@@ -1,6 +1,6 @@
 ---
 description: >-
-  Find available integrations, authorise your accounts, and activate connections
+  Find available integrations, authorize your accounts, and activate connections
   through the embedded integration widget.
 ---
 
@@ -45,14 +45,14 @@ At the top of the Apps tab, a **search bar** lets you filter available integrati
 
 > **Screenshot needed:** Widget showing a list of available integrations with Connect buttons next to each one, and the search bar at the top.
 
-5. A popup opens with the third-party app's authorisation screen. This is the app's own login page not the product's, not Fastn's.
+5. A popup opens with the third-party app's authorization screen. This is the app's own login page not the product's, not Fastn's.
 6. Sign in with your account on the third-party app.
-7. Review the permissions being requested and click **Authorise** (or "Allow").
+7. Review the permissions being requested and click **Authorize** (or "Allow").
 8. The popup closes and you're redirected back to the widget. The app now shows a green dot with a **"Connected"** label beneath the app name.
 
-### What happens during authorisation
+### What happens during authorization
 
-When you click Connect and authorise, you're giving the product permission to access your data on the third-party app. For example:
+When you click Connect and authorize, you're giving the product permission to access your data on the third-party app. For example:
 
 * Connecting Slack lets the product send messages to your channels or read your channel list
 * Connecting Shopify lets the product read your orders, products, or customers
@@ -77,20 +77,20 @@ If you want to stop an integration:
 3. Click **Disconnect** (or "Deactivate" / "Remove").
 4. The connection is removed. The product can no longer access your data on that app.
 
-Disconnecting removes the stored credentials. If you reconnect later, you'll need to authorise again.
+Disconnecting removes the stored credentials. If you reconnect later, you'll need to authorize again.
 
 > **Screenshot:** Widget showing a connected app with the Disconnect button visible.
 
 ### Troubleshooting
 
-**The Connect button does nothing:** Check if your browser is blocking popups. The authorisation screen opens in a popup window, if it's blocked, nothing happens. Allow popups for this site and try again.
+**The Connect button does nothing:** Check if your browser is blocking popups. The authorization screen opens in a popup window, if it's blocked, nothing happens. Allow popups for this site and try again.
 
-**Authorisation fails:** Make sure you're signing into the correct account on the third-party app. If you have multiple accounts (e.g., multiple Slack workspaces), verify you're authorising the right one.
+**Authorization fails:** Make sure you're signing into the correct account on the third-party app. If you have multiple accounts (e.g., multiple Slack workspaces), verify you're authorizing the right one.
 
-**The app shows "Error" after connecting:** The authorisation may have succeeded but the initial setup failed. Try disconnecting and reconnecting. If the error persists, contact the product's support team.
+**The app shows "Error" after connecting:** The authorization may have succeeded but the initial setup failed. Try disconnecting and reconnecting. If the error persists, contact the product's support team.
 
 ### What you've done
 
 * Found the integration widget in your product
-* Connected a third-party app by authorising your account
+* Connected a third-party app by authorizing your account
 * Understand what permissions are granted and how your data is protected

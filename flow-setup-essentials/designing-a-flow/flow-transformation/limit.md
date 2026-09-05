@@ -21,18 +21,18 @@ You can narrow the list, e.g., to the first 5 collaborator IDs, before sending t
 
 * After your connector step (for example, **Zendesk → Get Ticket**), add the **Limit** step from the **Transformation Actions** section.
 
-<figure><img src="../../../../../.gitbook/assets/image (662).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (601).png" alt=""><figcaption></figcaption></figure>
 
 * In the **List** field, provide the list you want to limit.\
   For example, if you're retrieving ticket details from Zendesk, you can use:\
   `{{steps.getTicket.output.ticket.collaborator_ids}}`
 
-<figure><img src="../../../../../.gitbook/assets/image (663).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (602).png" alt=""><figcaption></figcaption></figure>
 
 * In **Max Items**, enter the maximum number of items you want to allow through.\
   **Example:** `5`
 
-<figure><img src="../../../../../.gitbook/assets/image (664).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (603).png" alt=""><figcaption></figcaption></figure>
 
 *   Choose the **starting direction** for the limit:
 
@@ -41,12 +41,12 @@ You can narrow the list, e.g., to the first 5 collaborator IDs, before sending t
 
     This defines whether the limit applies from the beginning or end of the list.
 
-<figure><img src="../../../../../.gitbook/assets/image (665).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (604).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Save** in the top-right corner to apply the configuration.
 
-<figure><img src="../../../../../.gitbook/assets/image (666).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (605).png" alt=""><figcaption></figcaption></figure>
 
 * To test the step, use the **Dashboard** button in the top-right corner.
 
-<figure><img src="../../../../../.gitbook/assets/image (668).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (607).png" alt=""><figcaption></figcaption></figure>

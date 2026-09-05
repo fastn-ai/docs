@@ -11,17 +11,17 @@ When a flow fails, Fastn can automatically forward errors to a **notification fl
 
 * In your flow, go to the **right-hand sidebar → Settings → Configuration**.
 
-<figure><img src="../../../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (116).png" alt=""><figcaption></figcaption></figure>
 
 * Under **Error Notification**, toggle **Enable Error Notification**.
 
-<figure><img src="../../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
 
 * Open the **fastnErrorNotification** flow.
 
-<figure><img src="../../../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
 
 * This flow starts with an **On API Request** trigger.
 * Inside this flow, you can:
@@ -29,9 +29,8 @@ When a flow fails, Fastn can automatically forward errors to a **notification fl
   * Alter the error message.
   * Optionally, add any other steps as needed.
 
-<figure><img src="../../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 * Save your changes.
 
 **With this setup, you have control over how error messages are handled and displayed for your flow.**
-

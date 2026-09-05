@@ -10,7 +10,7 @@ description: >-
 
 Unified Context Layer (UCL) is a secure, scalable integration layer that connects AI agents to real-world tools and data, so they can go beyond suggestions and take action.
 
-<figure><img src="../../../../../.gitbook/assets/Frame 6.png" alt="Diagram showing UCL as a secure integration layer connecting AI agents to external tools and data"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Frame 6.png" alt="Diagram showing UCL as a secure integration layer connecting AI agents to external tools and data"><figcaption></figcaption></figure>
 
 Think of it as a universal remote control for AI agents, letting them interact with real-world tools and services while maintaining security and proper access controls. UCL brings the protocol to life with a fully managed server that handles authentication, routing, multitenancy, and context management out of the box.
 
@@ -20,7 +20,7 @@ SaaS platforms serve many customers, and each customer often uses a different mi
 
 UCL handles this complexity out of the box. It enables you to support custom integrations for every customer while managing authentication, routing, and user isolation. So, whether one customer uses **Salesforce** and **Slack** and another uses **HubSpot** and **Microsoft Teams**, their AI agents can still act intelligently within the right context and without requiring any code changes.
 
-<figure><img src="../../../../../.gitbook/assets/image (304).png" alt="Diagram showing UCL routing requests to different tools per customer, such as Salesforce, Slack, HubSpot, and Microsoft Teams"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (275).png" alt="Diagram showing UCL routing requests to different tools per customer, such as Salesforce, Slack, HubSpot, and Microsoft Teams"><figcaption></figcaption></figure>
 
 ### **Why do enterprise companies need UCL?**
 
@@ -64,11 +64,11 @@ You don’t need to write separate logic for each user or app. UCL ensures the r
 
 A user interacts with an AI assistant to trigger an intent (e.g., sending a task reminder). The assistant securely connects to UCL to retrieve the user-specific context. UCL server processes the request, selects the right tool based on user settings, and executes the action (like sending a message via Slack, Teams, or Gmail). Finally, the result is sent back to the assistant, which delivers the response to the user.
 
-<figure><img src="../../../../../.gitbook/assets/image (433).png" alt="Flowchart showing a user intent routed through UCL to the correct tool such as Slack, Teams, or Gmail"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (394).png" alt="Flowchart showing a user intent routed through UCL to the correct tool such as Slack, Teams, or Gmail"><figcaption></figcaption></figure>
 
 _Visual overview of how UCL components interact:_
 
-<figure><img src="../../../../../.gitbook/assets/image (434).png" alt="Architecture overview of UCL components: AI assistant, UCL server, context management, and tool execution"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (395).png" alt="Architecture overview of UCL components: AI assistant, UCL server, context management, and tool execution"><figcaption></figcaption></figure>
 
 ## **How UCL Works?**
 

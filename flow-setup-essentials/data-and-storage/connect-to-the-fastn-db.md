@@ -8,7 +8,7 @@ description: >-
 
 Database elements can be added when building a flow and configured with an SQL query to perform database operations.
 
-<figure><img src="../../../../.gitbook/assets/image (419).png" alt="Flow editor showing a database element added to a flow with SQL query configuration panel"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (382).png" alt="Flow editor showing a database element added to a flow with SQL query configuration panel"><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Since database flow elements allow users to add SQL queries, they can be used to create tables.
@@ -24,7 +24,7 @@ Click on the **Create Table** button here to create a new table in the database.
 
 Next you can define the table structure by specifying the name of the table and defining its columns. Once you have entered all the necessary details, you can save the table configuration and see it added in the database.
 
-<figure><img src="../../../../.gitbook/assets/image (420).png" alt="Fastn DB interface showing a newly created table with its column definitions saved"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (383).png" alt="Fastn DB interface showing a newly created table with its column definitions saved"><figcaption></figcaption></figure>
 
 ## Example: Storing Slack Messages in a Fastn Database
 

@@ -11,11 +11,11 @@ description: >-
 
 * You need to authenticate your Notion account, after which the Notion App will appear as **Connected**.
 
-<figure><img src="../../../../../.gitbook/assets/image (610).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (553).png" alt=""><figcaption></figcaption></figure>
 
 * From **Select Tools**, you can enable all or any specific **Actions**.
 
-<figure><img src="../../../../../.gitbook/assets/image (611).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (554).png" alt=""><figcaption></figcaption></figure>
 
 ### **Connect Cursor to UCL**
 
@@ -31,7 +31,7 @@ description: >-
 You can select and follow the guide for any client of your choice from the embed page to integrate it with UCL.
 {% endhint %}
 
-<figure><img src="../../../../../.gitbook/assets/image (616).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (557).png" alt=""><figcaption></figcaption></figure>
 
 * In the **Open Setting and Add MCP Server** step, you will see the Cursor command code, which you can copy for your workspace and paste it into Cursor.
 
@@ -57,13 +57,13 @@ Checking the **Multi Tenant** option will enable you to embed connectors and act
 
 * You should now see the UCL Server listed as connected in Cursor. Under the tools label in Cursor, you can view all the enabled actions available with your connectors in UCL.
 
-<figure><img src="../../../../../.gitbook/assets/image (612).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (555).png" alt=""><figcaption></figcaption></figure>
 
 ### **Use Cursor to Fetch Meeting Summary from Notion**
 
 * In Cursor, click **Toggle AI Pane** from the top-right corner to open the assistant.
 
-<figure><img src="../../../../../.gitbook/assets/image (614).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (556).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Make sure you’ve selected an **agent;** it's not auto-set.

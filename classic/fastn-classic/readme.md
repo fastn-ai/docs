@@ -1,12 +1,8 @@
 ---
-description: >-
-  Connect AI agents and SaaS applications to 250+ enterprise tools with Fastn's
-  embedded integration platform. Managed OAuth, multi-tenant architecture, and
-  sub-second execution.
 hidden: true
 ---
 
-# Fastn: embedded integration platform for AI agents
+# Fastn V1: embedded integration platform for AI agents
 
 Customers expect your product to work seamlessly with the tools they already rely on. Fastn makes it easy to deliver native integrations that connect with your users' apps, without the overhead of building and maintaining complex backend infrastructure.
 
@@ -29,7 +25,7 @@ _Connect Everything in Your Stack_
 
 Fastn includes a growing library of[ 100&#x30;**+ Connectors**](https://fastn.ai/integrations) that are pre-built to unify your tech ecosystem. No more writing custom integration code; just plug, play, and automate.
 
-<figure><img src="../.gitbook/assets/image (345).png" alt="Fastn connector library showing 1000+ prebuilt integrations across popular apps and services"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (345).png" alt="Fastn connector library showing 1000+ prebuilt integrations across popular apps and services"><figcaption></figcaption></figure>
 
 New connectors are constantly being added via the Fastn Marketplace, where you can also find reusable widgets, logic modules, and third-party integrations ready to drop into your flows.
 
@@ -41,7 +37,7 @@ New connectors are constantly being added via the Fastn Marketplace, where you c
 
 Securely connect your AI agents to the tools your users already rely on with enterprise scale in mind.
 
-<figure><img src="../.gitbook/assets/Fastn-GIF3 (1).gif" alt="Animated demo of the Unified Context Layer connecting AI agents to user tools"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Fastn-GIF3 (1).gif" alt="Animated demo of the Unified Context Layer connecting AI agents to user tools"><figcaption></figcaption></figure>
 
 </details>
 
@@ -51,7 +47,7 @@ Securely connect your AI agents to the tools your users already rely on with ent
 
 An embedded app store that lets your users seamlessly connect and manage their apps directly inside your SaaS platform.
 
-<figure><img src="../.gitbook/assets/Fastn-GIF2.gif" alt="Animated demo of the Integration Hub embedded app store for managing SaaS connections"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Fastn-GIF2.gif" alt="Animated demo of the Integration Hub embedded app store for managing SaaS connections"><figcaption></figcaption></figure>
 
 </details>
 
@@ -61,7 +57,7 @@ An embedded app store that lets your users seamlessly connect and manage their a
 
 Build enterprise grade automations ten times faster using the power of generative AI.
 
-<figure><img src="../.gitbook/assets/Fastn-GIF5.gif" alt="Animated demo of AI Automation building enterprise-grade workflows with generative AI"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Fastn-GIF5.gif" alt="Animated demo of AI Automation building enterprise-grade workflows with generative AI"><figcaption></figcaption></figure>
 
 </details>
 
@@ -75,7 +71,7 @@ Fastn makes it easy to build and run automated workflows across your integration
 
 An example is Fastn's **Zap Trigger Subscribe** to kick off a Zapier workflow whenever a new contact is added in your app. This lets your users instantly connect Fastn-powered actions with 5,000+ tools on Zapier, without writing a single line of code.
 
-<div align="left"><figure><img src="../.gitbook/assets/image (319).png" alt="Fastn flow showing a Zap Trigger Subscribe workflow for Zapier integration"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (319).png" alt="Fastn flow showing a Zap Trigger Subscribe workflow for Zapier integration"><figcaption></figcaption></figure></div>
 
 </details>
 
@@ -89,7 +85,7 @@ Triggers let you schedule workflows to run automatically, at set intervals or sp
 
 For example, you want to send a daily status update to your Slack channel every morning? Or maybe post a summary every 15 minutes? Fastn allows you to automate messages to Slack (or any connected app) based on your chosen schedule, so your team always stays in the loop.
 
-<figure><img src="../.gitbook/assets/image (320).png" alt="Fastn flow with scheduled triggers sending automated messages to Slack on a recurring basis"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (320).png" alt="Fastn flow with scheduled triggers sending automated messages to Slack on a recurring basis"><figcaption></figcaption></figure>
 
 </details>
 
@@ -103,7 +99,7 @@ For example, automatically ingest Salesforce contacts and sync them into your us
 
 Fastn handles the heavy lifting so you can focus on your product, not data plumbing.
 
-<div align="left" data-full-width="false"><figure><img src="../.gitbook/assets/image (318).png" alt="Fastn flow ingesting Salesforce contacts and syncing them into HubSpot accounts"><figcaption></figcaption></figure></div>
+<div align="left" data-full-width="false"><figure><img src="../../.gitbook/assets/image (318).png" alt="Fastn flow ingesting Salesforce contacts and syncing them into HubSpot accounts"><figcaption></figcaption></figure></div>
 
 </details>
 
@@ -119,9 +115,9 @@ For example:
 
 Fastn makes two-way syncing seamless, whether it's time-based or triggered by events.
 
-<div align="left"><figure><img src="../.gitbook/assets/image (373).png" alt="Fastn flow syncing Salesforce contacts to HubSpot on a scheduled basis"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (373).png" alt="Fastn flow syncing Salesforce contacts to HubSpot on a scheduled basis"><figcaption></figcaption></figure></div>
 
-<div align="left"><figure><img src="../.gitbook/assets/image (372).png" alt="Fastn flow pushing HubSpot contacts to Salesforce when new data is added"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (372).png" alt="Fastn flow pushing HubSpot contacts to Salesforce when new data is added"><figcaption></figcaption></figure></div>
 
 </details>
 
@@ -133,7 +129,7 @@ Fastn lets AI agents trigger actions or fetch data from third-party tools using 
 
 For example, an agent can create a Google Doc, insert content, and share it—automatically, with no manual steps needed.
 
-![AI agent creating a Google Doc, inserting content, and sharing it automatically](<../.gitbook/assets/image (322).png>)
+![AI agent creating a Google Doc, inserting content, and sharing it automatically](<../../.gitbook/assets/image (322).png>)
 
 </details>
 
@@ -143,12 +139,12 @@ For example, an agent can create a Google Doc, insert content, and share it—au
 
 Fastn gives you real-time visibility into all your integrations and platform actions. Monitor which workflows are running smoothly, which ones are failing, and what automations are active. View latency trends over time, broken down by days, to quickly spot performance issues; all from one centralized dashboard.<br>
 
-<figure><img src="../.gitbook/assets/image (324).png" alt="Fastn monitoring dashboard showing integration activity, latency trends, and workflow status"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (324).png" alt="Fastn monitoring dashboard showing integration activity, latency trends, and workflow status"><figcaption></figcaption></figure>
 
 </details>
 
 Jump into **Your First Automation** to start building with Fastn.
 
-{% content-ref url="../your-first-automation.md" %}
-[your-first-automation.md](../your-first-automation.md)
+{% content-ref url="../../your-first-automation.md" %}
+[your-first-automation.md](../../your-first-automation.md)
 {% endcontent-ref %}

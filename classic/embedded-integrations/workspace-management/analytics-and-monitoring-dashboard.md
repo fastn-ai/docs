@@ -13,7 +13,7 @@ Together, they help you **monitor**, **troubleshoot**, and **optimize** integrat
 
 The **Overview Dashboard** gives you a high-level snapshot of your system’s performance and activity across all tenants. It helps you track latency, errors, flow executions, and connector activity over time.
 
-<figure><img src="../../../../.gitbook/assets/image (646).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (585).png" alt=""><figcaption></figcaption></figure>
 
 ### **Key Metrics**
 
@@ -28,7 +28,7 @@ These metrics provide a quick understanding of your integration health and flow 
 2. **Error Trends (Last 7 Days)**\
    Visualize when and how often errors occur to identify problematic flows or connectors.
 
-<figure><img src="../../../../.gitbook/assets/image (647).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (586).png" alt=""><figcaption></figcaption></figure>
 
 * **Latency Trends (P50, P90, P99)**\
   Measure and compare request latency percentiles to detect performance degradation or API bottlenecks.
@@ -36,26 +36,26 @@ These metrics provide a quick understanding of your integration health and flow 
   * **P90:** 90th percentile (upper threshold of normal performance)
   * **P99:** 99th percentile (outlier or worst-case latency)
 
-<figure><img src="../../../../.gitbook/assets/image (648).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (587).png" alt=""><figcaption></figcaption></figure>
 
 *   **Flow Activity (Last 7 Days)**\
     Monitor which flows have been triggered and how frequently they run.<br>
 
-    <figure><img src="../../../../.gitbook/assets/image (649).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (588).png" alt=""><figcaption></figcaption></figure>
 * **Connector Usage (Last 7 Days)**\
   View which connectors were used within the period and how often.
 
-<figure><img src="../../../../.gitbook/assets/image (650).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (589).png" alt=""><figcaption></figcaption></figure>
 
 ### **Filtering Options**
 
 * **Tenant Filter:** Analyze performance for specific tenants or across all tenants.
 
-<figure><img src="../../../../.gitbook/assets/image (651).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (590).png" alt=""><figcaption></figcaption></figure>
 
 * **Flow Filter:** Drill down into individual flows to isolate latency, error trends, or request spikes.
 
-<figure><img src="../../../../.gitbook/assets/image (652).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (591).png" alt=""><figcaption></figcaption></figure>
 
 ## **Connectors Dashboard**
 
@@ -63,7 +63,7 @@ These metrics provide a quick understanding of your integration health and flow 
 
 The **Connectors Dashboard** provides a detailed view of connector usage, success rates, and tenant-level activity. It helps you detect integration failures, analyze performance patterns, and assess data flow across your Fastn environment.
 
-<figure><img src="../../../../.gitbook/assets/image (653).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (592).png" alt=""><figcaption></figcaption></figure>
 
 > Tool usage statistics reflect **tenant-level activity**. Workspace-specific data is not displayed.
 
@@ -78,7 +78,7 @@ Each metric helps you understand different aspects of integration health.
 
 Gives per-tenant visibility into connection activity and data flow metrics.
 
-<figure><img src="../../../../.gitbook/assets/image (654).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (593).png" alt=""><figcaption></figcaption></figure>
 
 You can **sort results** by number of connections, error count, or total data transferred.
 
@@ -86,7 +86,7 @@ You can **sort results** by number of connections, error count, or total data tr
 
 Displays connectors with the highest number of connected accounts or the most frequent usage.
 
-<figure><img src="../../../../.gitbook/assets/image (655).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (594).png" alt=""><figcaption></figcaption></figure>
 
 ### **Connector Error Rate**
 
@@ -97,11 +97,11 @@ Shows connectors with the highest error percentage over the selected period.
 Visualize connector-level action performance and system activity over time.\
 The graph plots total action usage per day (e.g., Sep 9–Oct 9), highlighting activity spikes and usage frequency.
 
-<figure><img src="../../../../.gitbook/assets/image (656).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (595).png" alt=""><figcaption></figcaption></figure>
 
 ### **App Breakdown (Current Month)**
 
-<figure><img src="../../../../.gitbook/assets/image (657).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (596).png" alt=""><figcaption></figcaption></figure>
 
 #### **Data Refresh Frequency**
 

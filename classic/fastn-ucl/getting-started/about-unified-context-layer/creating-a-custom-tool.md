@@ -8,11 +8,11 @@ description: UCL lets you easily build your own custom tool groups using natural
 
 * Go to the **Connect** section in your UCL Workspace.
 
-<figure><img src="../../../../../.gitbook/assets/image (575).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (522).png" alt=""><figcaption></figcaption></figure>
 
 * Click **“Define a Custom App”** to launch the **App Builder Assistant** chat.
 
-<figure><img src="../../../../../.gitbook/assets/image (573).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (521).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 2: Create a Tool via Prompt**
 
@@ -28,12 +28,12 @@ You respond:
 
 > _“Create a new group.”_
 
-<figure><img src="../../../../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (194).png" alt=""><figcaption></figcaption></figure>
 
 ℹ️ **Want to add to an existing tool instead?**\
 Click **“Add to Existing Tool”** and select the tool you'd like to edit or extend with new toolkits.
 
-<figure><img src="../../../../../.gitbook/assets/image (220).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 3: Confirm OAuth2 Authentication Setup**
 
@@ -68,7 +68,7 @@ The assistant will respond:
 
 > _“The ‘GoogleCloudStorage’ group is ready.”_
 
-<figure><img src="../../../../../.gitbook/assets/image (215).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 4: Add Actions to the Tool**
 
@@ -93,30 +93,30 @@ You’ll then receive:
 
 > _The tools “createBucket” and “listObjects” have been created successfully in the “GoogleCloudStorage” group. You can now use them in your workflows._
 
-<figure><img src="../../../../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 5: Finalize Setup in the Tools Section**
 
 * Navigate to the **Tools** section in your UCL project.
 * Under **Workspace Tools**, find the newly created **GoogleCloudStorage** group.
 
-<figure><img src="../../../../../.gitbook/assets/image (210).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (191).png" alt=""><figcaption></figcaption></figure>
 
 * Click the **three dots menu** > **Edit**, and fill in the `clientId` and `secret` using your Google Cloud credentials.
 * Save the configuration.
 
-<figure><img src="../../../../../.gitbook/assets/image (212).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
 
 ### **Step 6: Connect and Test with AI Agent**
 
 * Now go back to the **Setup** section.
 * Search for your **GoogleCloudStorage** tool group and **Connect** the app by authenticating your Google account.
 
-<figure><img src="../../../../../.gitbook/assets/image (219).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
 
 * Once connected, select any of the added actions (like `createBucket` or `listObjects`).
 
-<figure><img src="../../../../../.gitbook/assets/image (218).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
 *   Use the AI Agent to test your tool with a natural command:
 
