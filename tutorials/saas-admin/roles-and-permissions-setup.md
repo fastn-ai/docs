@@ -2,6 +2,7 @@
 description: >-
   Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User),
   create custom roles, and manage team access.
+hidden: true
 ---
 
 # Roles & Permissions Setup

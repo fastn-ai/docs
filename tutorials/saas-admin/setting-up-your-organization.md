@@ -2,6 +2,7 @@
 description: >-
   Configure your organization profile, environments, API keys, and project
   settings after your first Fastn login.
+hidden: true
 ---
 
 # Setting Up Your Organization

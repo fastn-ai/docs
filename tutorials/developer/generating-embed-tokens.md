@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Generating Embed Tokens
 
 Embed tokens are short-lived credentials that scope the Fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.

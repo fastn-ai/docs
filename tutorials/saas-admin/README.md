@@ -3,6 +3,7 @@ description: >-
   Tutorials for setting up and managing Fastn within your SaaS product
   organization config, connectors, workflows, widgets, tenants, and access
   control.
+hidden: true
 ---
 
 # SaaS Admin

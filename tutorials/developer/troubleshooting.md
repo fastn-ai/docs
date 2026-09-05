@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Troubleshooting
 
 Common errors when embedding Fastn, with their causes and fixes.

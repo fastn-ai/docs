@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Deployment
 
 When you deploy the application you've embedded Fastn into, the main consideration is how environment variables and secrets bind on your deploy target. Getting this wrong is a common cause of a working local build that fails in production.

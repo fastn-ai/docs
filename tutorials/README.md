@@ -2,6 +2,7 @@
 description: >-
   Step-by-step guided lessons organized by role — SaaS Admin, Developer, and End
   User.
+hidden: true
 ---
 
 # Tutorials

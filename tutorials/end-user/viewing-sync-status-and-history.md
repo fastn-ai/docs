@@ -2,6 +2,7 @@
 description: >-
   Check what's syncing, view execution history, spot errors, and know when to
   contact support.
+hidden: true
 ---
 
 # Viewing Sync Status & History

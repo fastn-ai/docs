@@ -1,5 +1,6 @@
 ---
 description: An overview of building a workflow from natural language descriptions.
+hidden: true
 ---
 
 # Creating a Workflow via AI

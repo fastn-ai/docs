@@ -1,5 +1,6 @@
 ---
 description: An overview of how tenancy works per user and org level in Fastn
+hidden: true
 ---
 
 # Understanding Tenancy

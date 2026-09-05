@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Embedding Quickstart
 
 This walks through the shortest path to a working embed: generate a token from your backend, render the iframe, and see a connection. It assumes you have a published widget and an API key.
