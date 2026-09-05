@@ -29,6 +29,7 @@ redirects:
   ai-agents/configuration-agent: build/agent/README.md
   ai-agents/key-concepts-and-terminology: reference/glossary.md
 
+  reference: reference/glossary.md
   library: reference/faqs.md
   library/faqs: reference/faqs.md
   library/glossary: reference/glossary.md
@@ -38,8 +39,3 @@ redirects:
   quick-start-guide: getting-started/quickstart.md
   api-reference: reference/api.md
   debugging-and-troubleshooting: operate/troubleshooting.md
-
-  tutorials/saas-admin/configuring-a-connector: build/connectors/README.md
-  tutorials/saas-admin/setting-up-triggers: build/triggers/README.md
-  tutorials/saas-admin/building-your-widget: embed/widget-builder/README.md
-  tutorials/saas-admin/managing-customers: operate/customers.md
