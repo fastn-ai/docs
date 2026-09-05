@@ -7,7 +7,7 @@ hidden: true
 
 # Managing Customers
 
-**Prerequisites:** [Your First Integration](../../getting-started/your-first-integration.md).&#x20;
+**Prerequisites:** [Your First Integration](../../getting-started/quickstart.md).&#x20;
 
 In Fastn, your end users are called **Customers** (alternatively called "Tenants"). Each customer gets an isolated environment with their own connections, data, and execution history.
 
