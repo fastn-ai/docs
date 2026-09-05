@@ -29,6 +29,7 @@ redirects:
   ai-agents/configuration-agent: build/agent/README.md
   ai-agents/key-concepts-and-terminology: reference/glossary.md
 
+  classic/fastn-classic/readme: classic/fastn-classic/fastn-v1-overview.md
   reference: reference/glossary.md
   library: reference/faqs.md
   library/faqs: reference/faqs.md

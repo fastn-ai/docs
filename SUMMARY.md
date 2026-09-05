@@ -181,7 +181,7 @@
 ## Classic
 
 * [Fastn Classic](classic/fastn-classic/README.md)
-  * [Fastn V1: embedded integration platform for AI agents](classic/fastn-classic/readme.md)
+  * [Fastn V1: embedded integration platform for AI agents](classic/fastn-classic/fastn-v1-overview.md)
 * [Fastn: embedded integration platform for AI agents](classic/fastn-embedded-integration-platform-for-ai-agents.md)
 * [Embedded Integrations](classic/embedded-integrations/README.md)
   * [Getting Started with Fastn's Embedded Experience](classic/embedded-integrations/getting-started-with-fastns-embedded-experience/README.md)
