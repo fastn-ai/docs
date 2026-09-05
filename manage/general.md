@@ -6,7 +6,7 @@ description: Your organisation and how people join it.
 
 **Settings → General**
 
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="General settings: an Organisation block with Name Zain's Organisation and Timezone Asia/Karachi, then Joining by email domain with an empty Email domain field, Approve automatically off, and the joining role set to Developer"><figcaption>The role selector only preselects what a joiner gets; it is not a ceiling.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-general.jpg" alt="General settings: an Organisation block holding the organisation Name and Timezone Asia/Karachi, then Joining by email domain with an empty Email domain field, Approve automatically off, and the joining role set to Developer"><figcaption>The role selector only preselects what a joiner gets; it is not a ceiling.</figcaption></figure>
 
 ### Organisation
 

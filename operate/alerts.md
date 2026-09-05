@@ -6,7 +6,7 @@ description: Get told when something crosses a line you care about. Checked ever
 
 **Activity → Alerts**
 
-<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The Alerts page holding only a No alerts yet empty state, naming zain@fastn.ai as the destination, with Turn on failure alerts and Custom alert buttons and New alert top-right"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The Alerts page holding only a No alerts yet empty state, naming the destination address it would send to, with Turn on failure alerts and Custom alert buttons and New alert top-right"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
 
 Without an alert, a sync can fail quietly for hours. This is the cheapest insurance in the product. The empty state says as much:
 

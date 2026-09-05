@@ -10,7 +10,7 @@ You sell software. Your prospects ask whether it talks to their CRM, their ERP, 
 
 fastn is the layer that answers that question for you. You describe what needs to happen in plain words, fastn's agents pick the connectors and write the workflow, and you drop an integrations panel into your own UI. Your customers authorise their own accounts. You never see their credentials, and you never write an OAuth flow.
 
-<figure><img src=".gitbook/assets/home.jpg" alt="The fastn Home screen: a Good evening, Zain greeting over a What do you want to build? prompt box, four suggestion chips, and a Connect to Claude button"><figcaption>Home is a prompt, not a dashboard — describing the integration is how you start one.</figcaption></figure>
+<figure><img src=".gitbook/assets/home.jpg" alt="The fastn Home screen: a time-of-day greeting over a What do you want to build? prompt box, four suggestion chips, and a Connect to Claude button"><figcaption>Home is a prompt, not a dashboard — describing the integration is how you start one.</figcaption></figure>
 
 ### How the platform is laid out
 

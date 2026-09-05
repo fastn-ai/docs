@@ -6,7 +6,7 @@ description: Your account and how you sign in. Organisation settings live separa
 
 The profile row at the bottom of the left rail, or `/profile`
 
-<figure><img src="../.gitbook/assets/profile.jpg" alt="Your profile: an account card for Zain Ishtiaq badged Owner, About you holding First name Zain, Last name Ishtiaq, an empty Job title and Timezone Asia/Karachi, then a Verified sign-in email"><figcaption>The sign-in address is read-only here because an identity provider manages it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/profile.jpg" alt="Your profile: an account card badged Owner with the name and address obscured, an About you section holding First name, Last name, an empty Job title placeholdered Head of Platform and Timezone Asia/Karachi, then a Sign in email section whose address is obscured"><figcaption>The sign-in address is read-only here because an identity provider manages it.</figcaption></figure>
 
 This page is about you, not the organisation. The **Organisation settings** link crosses over to [General](general.md).
 

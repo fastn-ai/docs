@@ -6,7 +6,7 @@ description: Who can see and change things in this workspace.
 
 **Settings → People**
 
-<figure><img src="../.gitbook/assets/settings-people.jpg" alt="The People list with four rows — Ahmad Ali Rai, Khalid Muaydh and Saman Noor as Admin, Zain Ishtiaq as Owner — all Active with no extra Access, under chips Everyone 4, Owner 1, Admin 3"><figcaption>Change role is greyed out on the Owner's own row.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-people.jpg" alt="The People list with four rows, names and addresses obscured — three Admins and one Owner, all Active with no extra Access, under the chips Everyone 4, Owner 1 and Admin 3, each row ending in Change role and a delete control"><figcaption>Change role is greyed out on the Owner's own row.</figcaption></figure>
 
 | Column     | Notes                                                            |
 | ---------- | ------------------------------------------------------------------ |

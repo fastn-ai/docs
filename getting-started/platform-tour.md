@@ -42,7 +42,7 @@ The sidebar parent **Integrations** links to its connectors view (`/integrations
 
 ### Home
 
-<figure><img src="../.gitbook/assets/home.jpg" alt="The fastn Home screen: a Good evening, Zain greeting, one What do you want to build? prompt box, four suggestion chips, and a Connect to Claude button"><figcaption>Nothing else competes for attention here — no counters, no recent activity.</figcaption></figure>
+<figure><img src="../.gitbook/assets/home.jpg" alt="The fastn Home screen: a time-of-day greeting, one What do you want to build? prompt box, four suggestion chips, and a Connect to Claude button"><figcaption>Nothing else competes for attention here — no counters, no recent activity.</figcaption></figure>
 
 One prompt box: *What do you want to build?* Type an integration in plain words and fastn routes you to the right agent. Four suggestion chips sit underneath — *Sync TikTok settlements*, *Notify Slack on orders*, *Log errors to Google Sheets* and *Build a Notion connector* — each a starting point you can take as-is or rewrite. **Connect to Claude** sits below them.
 
@@ -98,7 +98,7 @@ The widget builder has four tabs — Layout, Style, Features, Embed — and a li
 
 Trash is in the sidebar for Owners, Admins and Developers alike, at `/settings/trash`. Two capabilities are gated by role rather than by permission — using the AI assistant, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
 
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organisation block with Name Zain's Organisation and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner — organisation identity first, joining rules second.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organisation block holding the organisation Name and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner — organisation identity first, joining rules second.</figcaption></figure>
 
 ### The account card
 

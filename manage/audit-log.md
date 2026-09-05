@@ -6,7 +6,7 @@ description: Every action taken in this organisation.
 
 **Settings → Audit log**
 
-<figure><img src="../.gitbook/assets/settings-audit-log.jpg" alt="The Audit log counting 4304255 events, over rows of connection.update by apikey:8, workflow.execute by Joell Miller and auth.login by Zain Ishtiaq — each Success, scoped to a customer or Organisation-wide"><figcaption>Filters for people, actions, types and a date range sit above the table, with Export top-right.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-audit-log.jpg" alt="The Audit log counting 4304255 events, over rows of connection.update attributed to apikey:8 and workflow.execute and auth.login attributed to people whose names are obscured — each Success, scoped to a customer id or Organisation-wide"><figcaption>Filters for people, actions, types and a date range sit above the table, with Export top-right.</figcaption></figure>
 
 A complete, filterable record of everything anyone — or anything — did. The header carries the total, which runs high: a working organisation accumulates millions of events.
 

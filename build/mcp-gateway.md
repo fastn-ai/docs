@@ -8,7 +8,7 @@ description: Letting an AI client reach your connectors as tools.
 
 Everything you build in fastn — connectors, actions, workflows — can be exposed to an AI client over the Model Context Protocol. The client sees your connectors as tools it can call, with the same customer scoping and the same permission model as everything else.
 
-<figure><img src="../.gitbook/assets/home.jpg" alt="The Home screen, with a Connect to Claude button below the four suggestion chips and the What do you want to build? prompt box, under a Good evening, Zain greeting"><figcaption>Connect to Claude sits under the build prompt on Home, below the suggestion chips.</figcaption></figure>
+<figure><img src="../.gitbook/assets/home.jpg" alt="The Home screen, with a Connect to Claude button below the four suggestion chips and the What do you want to build? prompt box, under a time-of-day greeting"><figcaption>Connect to Claude sits under the build prompt on Home, below the suggestion chips.</figcaption></figure>
 
 ### Connecting
 
