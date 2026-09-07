@@ -11,7 +11,7 @@ Work down this page in order. Most problems resolve at the first or second step,
 | Symptom                                       | Look first at                                         |
 | --------------------------------------------- | ------------------------------------------------------- |
 | Nothing happened at all                       | [Events](events.md) — did anything arrive?             |
-| Something ran but ended badly                 | [Executions](executions.md) — what status?             |
+| Something ran but ended badly                 | [Executions](executions.md) — expand the row, read the **Error** tab. Codes explained in [Errors and failure states](../reference/errors.md) |
 | It succeeded but the data is wrong            | [Sync reports](sync-reports.md)                        |
 | It is slow                                    | [Traces](traces.md)                                    |
 | It worked yesterday and not today             | [Connections](../build/connections/README.md), then [Pending updates](../build/connector-updates.md) |
@@ -57,6 +57,16 @@ Expand the execution row for its result banner and raw response, then check [Tra
 2. **The upstream API changed.** Check [Pending updates](../build/connector-updates.md) for a proposal against that connector.
 3. **The data did not match the contract.** A field the mapping expects is absent or the wrong type.
 4. **A permission is missing.** The customer's OAuth grant may not cover the scope the action needs.
+
+### Status: Failed with a `Dependency Error` tag
+
+The commonest failure of all, and it means something the workflow *called* refused — nearly always a connector action, not your code. Runs usually die in under a second, because they stop at the first call that will not work.
+
+Expand the row and open the **Error** tab. The **AI Diagnosis** names the step that broke and, usually, the fix; **Error Details** beside it carries the raw message. Most of the time the answer is a connection that is expired, revoked, pinned to something unusable, or belonging to another organisation.
+
+**It will not clear on its own.** Retry policies cover transient failures, and an invalid connection is not transient — a daily schedule in this state fails at the same minute every day until someone acts.
+
+Full breakdown, with the causes in order of frequency, in [Errors and failure states](../reference/errors.md#dependency-error).
 
 ### Status: Timeout
 
