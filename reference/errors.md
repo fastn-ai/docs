@@ -109,6 +109,115 @@ A workflow that runs and throws is a **Failed execution, not a transport error**
 
 ---
 
+
+### The error envelope
+
+Every error the HTTP API returns carries the same shape:
+
+```json
+{
+  "error": {
+    "code": "CONN-REFRESH-FAILED",
+    "message": "OAuth token refresh failed",
+    "details": {},
+    "retryAfter": 30
+  }
+}
+```
+
+`code` and `message` are always present. `details` appears only when there is structured context worth acting on. `retryAfter` appears on throttled responses, in **seconds** — the same value is sent as a standard `Retry-After` header, so a client that already honours that header needs no special handling.
+
+{% hint style="info" %}
+Codes are stable; message wording is not. **Branch on `code`, never on `message`.**
+{% endhint %}
+
+### Error codes
+
+The prefix tells you which service raised it: no prefix for the shared vocabulary, `CONN-` connector, `WF-` workflow, `AGT-` agent, `API-UNIFIED-` the [Unified API](../build/unified-apis/README.md), `EVT-` events.
+
+**Shared — any endpoint can return these**
+
+| Code | HTTP | Means |
+| ---- | ---- | ----- |
+| `AUTH_INVALID` | 401 | Invalid authentication credentials |
+| `AUTH_EXPIRED` | 401 | Credentials have expired |
+| `FORBIDDEN` | 403 | Permission denied |
+| `NOT_FOUND` | 404 | Resource not found |
+| `VALIDATION_ERROR` | 400 | Request validation failed — check `details` for the offending field |
+| `CONFLICT` | 409 | Resource conflict |
+| `RATE_LIMITED` | 429 | Rate limit exceeded — honour `retryAfter` |
+| `QUOTA_EXCEEDED` | 429 | Plan quota exceeded. Unlike `RATE_LIMITED`, waiting will not clear it |
+| `PAYMENT_REQUIRED` | 402 | Quota exhausted and billing action is needed. See [Billing and limits](../manage/billing.md) |
+| `METHOD_NOT_ALLOWED` | 405 | Wrong HTTP method for that route |
+| `PAYLOAD_TOO_LARGE` | 413 | Request body over the size limit |
+| `INTERNAL_ERROR` | 500 | Unhandled server error — safe to retry once, then report |
+| `SERVICE_UNAVAILABLE` | 503 | Service temporarily unavailable — retry with backoff |
+| `UPSTREAM_ERROR` | 502 | A service fastn depends on failed |
+| `DB_ERROR` | 500 | Database operation failed |
+| `TIMEOUT` | 504 | Operation timed out |
+
+**Connector** — see [Connection statuses](#connection-statuses) for the fix in each case.
+
+| Code | HTTP | Means |
+| ---- | ---- | ----- |
+| `CONN-AUTH-FAILED` | 401 | The connection's credential was rejected by the provider |
+| `CONN-REFRESH-FAILED` | 401 | An OAuth token could not be refreshed. Reconnect — this will not recover on its own |
+| `CONN-EXEC-FAILED` | 502 | The connector ran but the provider call failed |
+
+**Workflow**
+
+| Code | HTTP | Means |
+| ---- | ---- | ----- |
+| `WF-EXEC-FAILED` | 500 | The run threw. The detail is in [Executions](../operate/executions.md), not this response |
+| `WF-TIMEOUT` | 504 | The run exceeded its tier's time budget |
+
+**Agent**
+
+| Code | HTTP | Means |
+| ---- | ---- | ----- |
+| `AGT-LLM-ERROR` | 502 | The model provider returned an error |
+| `AGT-TIMEOUT` | 504 | The agent request timed out |
+
+**Unified API**
+
+| Code | HTTP | Means |
+| ---- | ---- | ----- |
+| `API-UNIFIED-ENTITY-UNSUPPORTED` | 404 | No such unified entity |
+| `API-UNIFIED-OPERATION-UNSUPPORTED` | 404 | That entity does not support the operation |
+| `API-UNIFIED-NO-PROVIDER` | 404 | Nothing is connected that can serve the entity |
+| `API-UNIFIED-MULTIPLE-PROVIDERS` | 409 | More than one provider is connected — name the one you want |
+| `API-UNIFIED-CURSOR-INVALID` | 400 | The pagination cursor is malformed or expired |
+| `API-UNIFIED-VALIDATION-FAILED` | 400 | The record failed the unified schema |
+| `API-UNIFIED-PROVIDER-AUTH-FAILED` | 401 | The underlying provider rejected the credential |
+| `API-UNIFIED-PROVIDER-RATE-LIMITED` | 429 | The provider throttled the call, not fastn |
+| `API-UNIFIED-PROVIDER-ERROR` | 502 | The provider request failed |
+
+**Events** — these two reach a caller; the remaining event codes are operational and surface in [Trigger failure states](#trigger-failure-states) rather than an API response.
+
+| Code | HTTP | Means |
+| ---- | ---- | ----- |
+| `EVT-WEBHOOK-AUTH-FAILED` | 401 | An inbound webhook failed its signature or secret check |
+| `EVT-WEBHOOK-DELIVERY-FAILED` | 502 | An outbound delivery failed |
+
+### Older code names
+
+Prefixed codes are canonical, but the earlier flat names are still returned by some paths and mean exactly the same thing. Treat each pair as one code:
+
+| Canonical | Also seen as |
+| --------- | ------------ |
+| `CONN-AUTH-FAILED` / `CONN-REFRESH-FAILED` / `CONN-EXEC-FAILED` | `CONNECTOR_AUTH_FAILED` / `CONNECTOR_REFRESH_FAILED` / `CONNECTOR_EXEC_FAILED` |
+| `WF-EXEC-FAILED` / `WF-TIMEOUT` | `WORKFLOW_EXEC_FAILED` / `WORKFLOW_TIMEOUT` |
+| `AGT-LLM-ERROR` / `AGT-TIMEOUT` | `AGENT_LLM_ERROR` / `AGENT_TIMEOUT` |
+| `API-UNIFIED-*` | `UNIFIED_*` — e.g. `API-UNIFIED-NO-PROVIDER` is `UNIFIED_NO_CONNECTED_PROVIDER` |
+| `EVT-*` | `WEBHOOK_AUTH_FAILED`, `WEBHOOK_DELIVERY_FAILED` |
+
+### When no code was set
+
+Some routes return a bare status with no explicit code. One is then derived from the status, so you still get a usable `code`:
+
+`400` and `422` → `VALIDATION_ERROR` · `401` → `AUTH_INVALID` · `402` → `PAYMENT_REQUIRED` · `403` → `FORBIDDEN` · `404` → `NOT_FOUND` · `405` → `METHOD_NOT_ALLOWED` · `408` and `504` → `TIMEOUT` · `409` → `CONFLICT` · `429` → `RATE_LIMITED` · `500` → `INTERNAL_ERROR` · `502` → `UPSTREAM_ERROR` · `503` → `SERVICE_UNAVAILABLE`
+
+Any status outside that list yields `HTTP_<status>`.
 ## Trigger failure states
 
 ### App events — `Subscription: Failed`
