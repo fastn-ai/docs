@@ -8,9 +8,9 @@ description: Every customer using your embedded integrations.
 
 A top-level item in the sidebar's OPERATE group, beside Activity rather than inside it. Note the mismatch between where it sits and where it lives: the sidebar puts it under OPERATE, but its route is under `/settings/`. Linking to `/customers` gets you a **Page not found**.
 
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with a single row: testing, identifier testing underneath, 1 connection, status Active, ending in View connections — with an All tiers filter and a 1 customer count above"><figcaption>The second line under each name is the identifier you will see again as endOrgId.</figcaption></figure>
+<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with a single row: testing, identifier testing underneath, 1 connection, status Active, ending in View connections, with an All tiers filter and a 1 customer count above"><figcaption>The second line under each name is the identifier you will see again as endOrgId.</figcaption></figure>
 
-A customer is one of your customers — a container for their connections, credentials and workflow data.
+A customer is one of your customers: a container for their connections, credentials and workflow data.
 
 ### The table
 
@@ -24,15 +24,15 @@ A count sits above the table, and **Search customers** narrows it. **View connec
 
 ### Status
 
-**Active** — set up and usable.
+**Active**: set up and usable.
 
-**Pending admin activation** — created, but an administrator has not activated it. Its integrations will not run until they do.
+**Pending admin activation**: created, but an administrator has not activated it. Its integrations will not run until they do.
 
 ### Creating a customer
 
 **Create customer** adds one manually, which is what you want when onboarding an account before they first sign in.
 
-The identifier is the stable one — use your own account ID rather than a display name. It is what you will see again as `endOrgId` in the [embed token](../embed/embedding/README.md) response, and as the final `tenant` segment of a connection ID.
+The identifier is the stable one: use your own account ID rather than a display name. It is what you will see again as `endOrgId` in the [embed token](../embed/embedding/README.md) response, and as the final `tenant` segment of a connection ID.
 
 ### Customers and tenants
 

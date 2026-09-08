@@ -6,7 +6,7 @@ description: Which Postgres your workflows read and write through.
 
 **Settings → Database**
 
-<figure><img src="../.gitbook/assets/settings-database.jpg" alt="Database settings: a Writing to your database banner over two cards, Shared (fastn runs it) unselected and Your own (You run it) selected, each listing Backups, Capacity, Uptime and Network setup"><figcaption>The choice is exclusive and it is a redirect, not a migration — rows already written stay where they are.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-database.jpg" alt="Database settings: a Writing to your database banner over two cards, Shared (fastn runs it) unselected and Your own (You run it) selected, each listing Backups, Capacity, Uptime and Network setup"><figcaption>The choice is exclusive and it is a redirect, not a migration, rows already written stay where they are.</figcaption></figure>
 
 Workflows can persist data with `fastn.db`. This page decides where that data lands.
 
@@ -22,22 +22,22 @@ The page is read-only below Owner and Admin. A Developer gets the mode and the i
 | ------------------ | ---------------------------------------------- |
 | Mode               | **Shared**                                    |
 | **DATABASE**       | `fastn-managed`                               |
-| **MANAGED SCHEMA** | `ws_<hash>` — your workspace's schema name    |
+| **MANAGED SCHEMA** | `ws_<hash>`: your workspace's schema name    |
 
-Username, password and CA chain are not rendered for this role. That is deliberate, and it is enough: `fastn.db` connects for you, so a workflow never needs the credential. There is no table browser and no SQL console on this page — inspect data from a workflow.
+Username, password and CA chain are not rendered for this role. That is deliberate, and it is enough: `fastn.db` connects for you, so a workflow never needs the credential. There is no table browser and no SQL console on this page: inspect data from a workflow.
 
 ### Two options
 
-| | **Shared** — fastn runs it | **Your own** — you run it |
+| | **Shared** (fastn runs it | **Your own**), you run it |
 | --- | --- | --- |
 | **Backups** | fastn | You |
 | **Capacity** | fastn | You |
 | **Uptime** | fastn | You |
 | **Network setup** | None | Allow our runners |
 
-**Shared** — fastn runs it, and handles backups, patching, upgrades and capacity. Your workspace sits in its own schema, isolated from everyone else.
+**Shared**: fastn runs it, and handles backups, patching, upgrades and capacity. Your workspace sits in its own schema, isolated from everyone else.
 
-**Your own** — you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you will need to allow fastn's runners through your network.
+**Your own**: you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you will need to allow fastn's runners through your network.
 
 ### Reasons to bring your own
 
@@ -51,9 +51,9 @@ Switching changes where **new** reads and writes go. Rows are never copied betwe
 
 ### What the isolation actually is
 
-**The unit of isolation is the workspace, not the customer.** Each workspace gets its own Postgres schema — the `ws_<hash>` above — isolated from every other workspace, which is what the page means by *your workspace sits in its own schema, isolated from everyone else*.
+**The unit of isolation is the workspace, not the customer.** Each workspace gets its own Postgres schema (the `ws_<hash>` above), isolated from every other workspace, which is what the page means by *your workspace sits in its own schema, isolated from everyone else*.
 
-That is a boundary between you and other fastn customers. It is **not** a boundary between *your* customers: rows written on behalf of one of your customers and rows written on behalf of another land in the same schema. If you need per-customer separation inside it, build it — a customer column on every table, and a predicate on every query.
+That is a boundary between you and other fastn customers. It is **not** a boundary between *your* customers: rows written on behalf of one of your customers and rows written on behalf of another land in the same schema. If you need per-customer separation inside it, build it: a customer column on every table, and a predicate on every query.
 
 ### Using it from a workflow
 
@@ -74,5 +74,5 @@ await fastn.db.query(
 ```
 
 {% hint style="info" %}
-The exact `fastn.db` call signature — whether it is `query(sql, params)` and whether parameters are `$1`-style — is worth confirming against a workflow's own **Docs** tab, which is generated from the runtime you are actually calling. See [Workflow runtime API](../reference/workflow-runtime.md).
+The exact `fastn.db` call signature (whether it is `query(sql, params)` and whether parameters are `$1`-style), is worth confirming against a workflow's own **Docs** tab, which is generated from the runtime you are actually calling. See [Workflow runtime API](../reference/workflow-runtime.md).
 {% endhint %}

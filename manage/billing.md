@@ -10,7 +10,7 @@ description: Your plan, what you have used, and where the ceilings are.
 
 ### Plan and credits
 
-The plan card shows what you are on and what it costs — **Free**, at **$0 per month**, until you upgrade. **See plans** is the upgrade control, and the only one on the page.
+The plan card shows what you are on and what it costs: **Free**, at **$0 per month**, until you upgrade. **See plans** is the upgrade control, and the only one on the page.
 
 **Credits this period** tracks AI usage against the allowance. It is the same number as the AI credits readout in the top bar, and the popover behind that readout is where the detail lives: tabs for **Your usage** and **Org total**, a **By agent** breakdown, and a reset at the start of the calendar month, UTC.
 
@@ -28,14 +28,14 @@ Each quota is listed with usage against it. **Customize customer limits** overri
 | Workflows                   | per customer |
 | Steps                       | per flow     |
 
-The list continues past the visible area with further rows — concurrency, AI sessions and tokens, retention, storage, connected accounts, users, webhook endpoints, payload size, executions and AI credits are all reported to appear further down. Scroll the page and read the rows themselves rather than relying on that list being complete or the scopes being as described.
+The list continues past the visible area with further rows: concurrency, AI sessions and tokens, retention, storage, connected accounts, users, webhook endpoints, payload size, executions and AI credits are all reported to appear further down. Scroll the page and read the rows themselves rather than relying on that list being complete or the scopes being as described.
 
 {% hint style="info" %}
-Going over a limit **stops new work rather than charging you, and nothing already running is interrupted.** No surprise invoices, but also no silent overage — a sync that stops because you hit a ceiling looks like a broken sync until you check this page.
+Going over a limit **stops new work rather than charging you, and nothing already running is interrupted.** No surprise invoices, but also no silent overage: a sync that stops because you hit a ceiling looks like a broken sync until you check this page.
 {% endhint %}
 
 ### Below the fold
 
-Sections further down this page — **Customer tiers** and **Create tier**, **Usage by customer**, **Payment** and **Invoices** — have not been captured, so this page does not describe how they behave. Read them in the product before planning around them.
+Sections further down this page (**Customer tiers** and **Create tier**, **Usage by customer**, **Payment** and **Invoices**), have not been captured, so this page does not describe how they behave. Read them in the product before planning around them.
 
 One thing about tiers is corroborated from elsewhere: the [Roles](roles.md) screen states that a custom role can be assigned to an embed tier under Billing, which is how you scope what an embedded end user may do.

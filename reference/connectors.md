@@ -65,8 +65,8 @@ There are two distinct Supabase connectors:
 
 | Connector           | Scope                                                           |
 | ------------------- | --------------------------------------------------------------- |
-| Supabase            | Data plane — PostgREST CRUD, Storage, Auth Admin                |
-| Supabase Management | Management API — edge functions, SQL/DDL, project configuration |
+| Supabase            | Data plane: PostgREST CRUD, Storage, Auth Admin                |
+| Supabase Management | Management API: edge functions, SQL/DDL, project configuration |
 
 Use **Supabase** for reading and writing data. Use **Supabase Management** for managing the project itself.
 
@@ -74,10 +74,10 @@ Use **Supabase** for reading and writing data. Use **Supabase Management** for m
 
 Connectors authenticate with their systems using one of several methods, depending on what the system supports:
 
-* **OAuth** — The connector redirects the user to the system's authorization screen. For common platforms, Fastn manages the OAuth app (see **Settings → OAuth Apps**); for others, you supply your own OAuth credentials.
-* **API Key** — The user provides an API key for the system.
+* **OAuth**: The connector redirects the user to the system's authorization screen. For common platforms, Fastn manages the OAuth app (see **Settings → OAuth Apps**); for others, you supply your own OAuth credentials.
+* **API Key**: The user provides an API key for the system.
 
-When a connector is used during an AI-built integration, the authentication form appears inline in the chat — the user provides credentials without leaving the flow.
+When a connector is used during an AI-built integration, the authentication form appears inline in the chat: the user provides credentials without leaving the flow.
 
 ### Connections
 

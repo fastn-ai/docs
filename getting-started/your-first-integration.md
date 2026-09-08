@@ -26,11 +26,11 @@ This kicks off the 5-step Setup Assistant pipeline.
 
 The AI agent researches your company automatically. It analyzes:
 
-* **Company profile** — what you build, who your customers are
-* **Existing integrations** — what you already offer
-* **Customer reviews** — real feedback from Reddit, Trustpilot, G2, community forums
-* **Competitive landscape** — how your integration offering compares to competitors
-* **Integration gaps** — where you're falling behind peers
+* **Company profile**: what you build, who your customers are
+* **Existing integrations**: what you already offer
+* **Customer reviews**: real feedback from Reddit, Trustpilot, G2, community forums
+* **Competitive landscape**: how your integration offering compares to competitors
+* **Integration gaps**: where you're falling behind peers
 
 The right sidebar tracks research progress with checkmarks focusing on but not limited to:
 
@@ -70,10 +70,10 @@ Based on your selected pain points, the AI then recommends which connectors to b
 
 For example, if you selected "Manually re-keying CRM or sheet data," the AI might recommend:
 
-1. **HubSpot** (build first) — maps to the sales and marketing workflows your users already run
-2. **Salesforce** — enterprise gap
-3. **Google Sheets** — common manual handoff
-4. **Notion** (nice-to-have) — visible demand but less direct revenue signal
+1. **HubSpot** (build first): maps to the sales and marketing workflows your users already run
+2. **Salesforce**: enterprise gap
+3. **Google Sheets**: common manual handoff
+4. **Notion** (nice-to-have): visible demand but less direct revenue signal
 
 The AI explains its reasoning with links to real sources.
 
@@ -154,8 +154,8 @@ Once both connectors are built and authenticated, the AI configures how data flo
 
 You'll see a mapping screen showing you how can you connect your application to a third party application. This includes:
 
-* **Direction pills** — e.g., `Gamma Presentation Generation ← HubSpot Deal`
-* **Mapping count** — e.g., "7 mappings ready to go"
+* **Direction pills**: e.g., `Gamma Presentation Generation ← HubSpot Deal`
+* **Mapping count**: e.g., "7 mappings ready to go"
 * **Each mapping row** with:
   * A plain-language description (e.g., "Input Text in Gamma Presentation Generation will be the `Description` from HubSpot Deal")
   * Source and target field dropdowns
@@ -167,17 +167,17 @@ Some mappings use **fixed values,** values the AI sets as defaults, however you 
 
 Each mapping has a **Change** button. When clicking to it you can either:
 
-* **Set a fixed value** — always use the same value
-* **Combine fields** — merge multiple source fields
-* **Conditional value** — different values based on conditions
-* **Pick a source field** — choose from the source app's fields (e.g., "Load 99 more fields")
-* **Pick a target field** — choose from the target app's fields
+* **Set a fixed value**: always use the same value
+* **Combine fields**: merge multiple source fields
+* **Conditional value**: different values based on conditions
+* **Pick a source field**: choose from the source app's fields (e.g., "Load 99 more fields")
+* **Pick a target field**: choose from the target app's fields
 
 Additionally in the bottom you will find options like:
 
-* **Add Mapping** — add custom mappings the AI didn't create
-* **Add Filters** — only sync records matching certain conditions
-* **Record Matching Strategy** — shows how Fastn tracks which records have already been synced&#x20;
+* **Add Mapping**: add custom mappings the AI didn't create
+* **Add Filters**: only sync records matching certain conditions
+* **Record Matching Strategy**: shows how Fastn tracks which records have already been synced&#x20;
 
 {% hint style="info" %}
 You can also additionaly tweak the whole setup in natural language in a text input.
@@ -216,9 +216,9 @@ Embedding is a crucial part of Fastn where you get to configure the customer-fac
 
 The Widget Builder opens where you set up:
 
-* **Layout** — title, subtitle, workflow templates
-* **Style** — colors, typography, themes
-* **Embed** — get the React SDK or Headless SDK code snippet
+* **Layout**: title, subtitle, workflow templates
+* **Style**: colors, typography, themes
+* **Embed**: get the React SDK or Headless SDK code snippet
 
 ### Step 5: Live
 
@@ -242,16 +242,16 @@ The AI agents handle the entire build from connectors, configuration to testing 
 
 After you have built your first integration using the Setup Assistant or with Integration Builder, your connectors will appear under **Integrations → Connectors.** There are two types of connectors:
 
-* **Managed** connectors — pre-built by Fastn for common apps like HubSpot CRM, Cin7 Core, Shopify, Slack, ServiceNow
-* **Personal** connectors — built by you or by the AI on your behalf
+* **Managed** connectors: pre-built by Fastn for common apps like HubSpot CRM, Cin7 Core, Shopify, Slack, ServiceNow
+* **Personal** connectors: built by you or by the AI on your behalf
 
 Each connector card shows a **Connect** button (if not yet authenticated) or **+ Add Connection** (if already connected).
 
 You can also:
 
-* **Import** — import a connector definition
-* **Create** — manually create a connector (advanced)
-* **Build with AI** — have the Connector Agent build one
+* **Import**: import a connector definition
+* **Create**: manually create a connector (advanced)
+* **Build with AI**: have the Connector Agent build one
 
 > **Screenshot needed:** Connectors page showing MANAGED and PERSONAL connector cards with Connect buttons.
 

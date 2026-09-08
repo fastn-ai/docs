@@ -20,9 +20,9 @@ Then **Run Live** (or **Run**).
 
 #### Connectors
 
-<figure><img src="../../.gitbook/assets/workflow-connectors-tab.jpg" alt="The Connectors tab listing two extracted connectors — Cin7 Core with getSale, listCustomers and listProducts, and Trackstar with createOrder, getOrder, listOrders and more — both badged Per customer"><figcaption>Every action chip carries its pinned version, such as getSale V1.1.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/workflow-connectors-tab.jpg" alt="The Connectors tab listing two extracted connectors (Cin7 Core with getSale, listCustomers and listProducts, and Trackstar with createOrder, getOrder, listOrders and more), both badged Per customer"><figcaption>Every action chip carries its pinned version, such as getSale V1.1.</figcaption></figure>
 
-This list is **auto-extracted from the `fastn.connectors.X.Y(…)` calls in your code every time you save** — it is a readout of the code, not a separate configuration. **Add** exists for anything you need to wire manually. Each row shows a **Per customer** badge where it applies, plus the connector slug, the owning org, the action and its version.
+This list is **auto-extracted from the `fastn.connectors.X.Y(…)` calls in your code every time you save**. It is a readout of the code, not a separate configuration. **Add** exists for anything you need to wire manually. Each row shows a **Per customer** badge where it applies, plus the connector slug, the owning org, the action and its version.
 
 {% hint style="warning" %}
 Pinned action versions are what stop an upstream change breaking you silently. When fastn proposes a newer action, it arrives through [Pending updates](../connector-updates.md) for you to accept.
@@ -38,11 +38,11 @@ Pinned action versions are what stop an upstream change breaking you silently. W
 
 Three sub-tabs.
 
-**Flow** — a read-only React Flow rendering, generated from your code. Node kinds are `TRIGGER`, `DECISION`, `READ` and `DONE`; the controls are Zoom In, Zoom Out and Fit View. You cannot edit the graph. Edit the code and the graph follows.
+**Flow**: a read-only React Flow rendering, generated from your code. Node kinds are `TRIGGER`, `DECISION`, `READ` and `DONE`; the controls are Zoom In, Zoom Out and Fit View. You cannot edit the graph. Edit the code and the graph follows.
 
-**Sequence** — the same logic as an ordered list of phases.
+**Sequence**: the same logic as an ordered list of phases.
 
-**Docs** — generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**.
+**Docs**: generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**.
 
 The end-user document has eight sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*.
 
@@ -52,7 +52,7 @@ Generating or regenerating these docs consumes AI credits from the workspace all
 
 #### Test cases
 
-Scenarios generated during the build, organised into groups — `happy-path`, `pagination`, `fields`, `edge-cases`, `error-handling`. The header carries pass, fail and untested counters. Each row is an id such as `TC-01`, a `LIVE` or `MOCK` badge, and the expectation.
+Scenarios generated during the build, organised into groups: `happy-path`, `pagination`, `fields`, `edge-cases`, `error-handling`. The header carries pass, fail and untested counters. Each row is an id such as `TC-01`, a `LIVE` or `MOCK` badge, and the expectation.
 
 #### Executions
 
@@ -66,7 +66,7 @@ See [Sync reports](../../operate/sync-reports.md).
 
 #### API
 
-<figure><img src="../../.gitbook/assets/workflow-api-tab.jpg" alt="The API tab with endpoint and curl"><figcaption>Generated from the deployment you are actually calling — copy the curl from here rather than from docs.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/workflow-api-tab.jpg" alt="The API tab with endpoint and curl"><figcaption>Generated from the deployment you are actually calling, copy the curl from here rather than from docs.</figcaption></figure>
 
 How to call this workflow over HTTP, with a copyable curl:
 
@@ -74,7 +74,7 @@ How to call this workflow over HTTP, with a copyable curl:
 POST https://app.fastn.dev/api/v1/workflows/<wfId>/execute
 ```
 
-Two headers steer it — `X-fastn-Test-Mode` and `x-fastn-env` — and you authenticate with an API key in the `fsk_live_…` format. Covered in full in the [HTTP API reference](../../reference/api.md).
+Two headers steer it (`X-fastn-Test-Mode` and `x-fastn-env`) and you authenticate with an API key in the `fsk_live_…` format. Covered in full in the [HTTP API reference](../../reference/api.md).
 
 #### Docs
 
@@ -85,12 +85,12 @@ The runtime reference for the code you are writing:
 | `ctx.input`             | The request body, shaped by the input contract.                   |
 | `ctx.headers`           | The request headers.                                              |
 | `ctx.connectors`        | The connectors wired to this workflow.                            |
-| `fastn.envConfig`       | Per-environment values — see [Configs](../../manage/configs.md).      |
+| `fastn.envConfig`       | Per-environment values. See [Configs](../../manage/configs.md).      |
 | `fastn.unified`         | The [unified API](../unified-apis/README.md) surface.                        |
 | `fastn.connector`       | A connector call.                                                  |
-| `fastn.db`              | The workspace Postgres schema — see [Database](../../manage/database.md). |
+| `fastn.db`              | The workspace Postgres schema. See [Database](../../manage/database.md). |
 | `fastn.state`           | Key/value state, with scopes `ORG` and `INVOCATION`.               |
-| `fastn.secrets`         | Encrypted values — see [Secrets](../../manage/secrets.md).            |
+| `fastn.secrets`         | Encrypted values. See [Secrets](../../manage/secrets.md).            |
 
 Multi-tenant calls are addressed with headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
 

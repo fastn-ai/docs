@@ -32,14 +32,14 @@ A customer record also has a **Connected Accounts** section (the apps this custo
 
 ### The customer identifier
 
-Integration flows — generating embed tokens and configuring the MCP Gateway — require the customer's internal identifier.
+Integration flows (generating embed tokens and configuring the MCP Gateway), require the customer's internal identifier.
 
 * The **slug** (e.g., `katana-customer`) is shown in the UI but does **not** work as the identifier in API calls (it returns 404).
 * The internal **UUID** is what the token and gateway calls require, but it is **not currently displayed in the Customers UI**.
 
 See [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier) for how to obtain the UUID.
 
-> **VERIFY:** Confirm the relationship between the customer identifier used in the embed token (`endOrgId`), the MCP Gateway (`customer_id`), and the customer record — and the recommended way to retrieve the UUID.
+> **VERIFY:** Confirm the relationship between the customer identifier used in the embed token (`endOrgId`), the MCP Gateway (`customer_id`), and the customer record. And the recommended way to retrieve the UUID.
 
 ### Customer status
 
@@ -49,10 +49,10 @@ Customers move through activation states. One observed value is **Pending Admin 
 
 ### Per-customer quotas
 
-You can set quota overrides per customer from **Settings → Billing → Customize Customer Limits** — useful when specific customers need higher limits than your plan default, or when you want to cap an individual customer to protect shared capacity.
+You can set quota overrides per customer from **Settings → Billing → Customize Customer Limits**: useful when specific customers need higher limits than your plan default, or when you want to cap an individual customer to protect shared capacity.
 
 ### Related
 
-* [Managing Customers](https://claude.ai/fastn/tutorials/saas-admin/managing-customers) — the tutorial for working with customers
-* [Tenancy](https://claude.ai/fastn/tutorials/developer/tenancy) — how connections are scoped within a customer
-* [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier) — obtaining the customer UUID
+* [Managing Customers](https://claude.ai/fastn/tutorials/saas-admin/managing-customers): the tutorial for working with customers
+* [Tenancy](https://claude.ai/fastn/tutorials/developer/tenancy): how connections are scoped within a customer
+* [Finding Your Org Identifier](https://claude.ai/fastn/tutorials/developer/finding-your-org-identifier): obtaining the customer UUID

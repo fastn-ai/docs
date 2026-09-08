@@ -6,7 +6,7 @@ description: The handful of ideas that everything else in fastn is built from.
 
 ### Organisation, customer, connection
 
-An **organisation** is you — the SaaS company. It holds your connectors, workflows, widgets, people and settings.
+An **organisation** is you, the SaaS company. It holds your connectors, workflows, widgets, people and settings.
 
 A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. In older fastn material and in some API parameters this is called a *tenant*.
 
@@ -21,13 +21,13 @@ Organisation (you)
     └── Connection → Salesforce (OAuth)
 ```
 
-Every connection has an id in the form `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>` — the detail page shows it with the line *Pass this to the API to act as this customer.* When you call a workflow on a customer's behalf, the tenancy is carried in request headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections` and `x-fastn-installation-config`.
+Every connection has an id in the form `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`. The detail page shows it with the line *Pass this to the API to act as this customer.* When you call a workflow on a customer's behalf, the tenancy is carried in request headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections` and `x-fastn-installation-config`.
 
 ### Connector versus connection
 
 A **connector** is the definition: this API, these actions, these auth methods, this webhook config. A **connection** is an instance of it for one customer. One connector, many connections.
 
-Connectors are either **managed by fastn** — maintained upstream, patched when the vendor changes something — or **custom**, created by you.
+Connectors are either **managed by fastn**, maintained upstream and patched when the vendor changes something, or **custom**, created by you.
 
 ### Per-customer versus account-level connectors
 
@@ -36,7 +36,7 @@ Inside a workflow, each connector is wired one of two ways.
 | Mode              | Credential used                                  | Use for                                            |
 | ----------------- | ------------------------------------------------ | -------------------------------------------------- |
 | **Per customer**  | The connection belonging to the running customer | Anything touching customer data                    |
-| Account level     | A single connection owned by your org, shared across the workspace | Your own systems — your Slack, your data warehouse |
+| Account level     | A single connection owned by your org, shared across the workspace | Your own systems: your Slack, your data warehouse |
 
 Only the first of these is labelled in the UI: the workflow's Connectors tab shows a **Per customer** badge, and a connection's detail page shows `Scope: Account level` when it is shared across the workspace.
 
@@ -80,15 +80,15 @@ Test mode is not a sandbox. A test key reaches the same live connections as a li
 
 Three kinds, covered fully in [Triggers](../build/triggers/README.md).
 
-* **Webhook** — an outside system calls a URL you give it.
-* **Schedule** — a clock you set.
-* **App event** — something changed in a connected system.
+* **Webhook**: an outside system calls a URL you give it.
+* **Schedule**: a clock you set.
+* **App event**: something changed in a connected system.
 
 ### Unified APIs
 
-Where several providers do the same job — HubSpot, Salesforce and Zoho all hold contacts — fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/api/v1/unified/crm/contact` and does not branch on the CRM.
+Where several providers do the same job (HubSpot, Salesforce and Zoho all hold contacts), fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/api/v1/unified/crm/contact` and does not branch on the CRM.
 
-There are three categories today — CRM (`Account`, `contact`, `Note`), Documents (`Document`, `Document Content`) and Messaging (`Channel Message`, `Direct Message`). `Note` and both message entities are create-only. See [Unified APIs](../build/unified-apis/README.md).
+There are three categories today: CRM (`Account`, `contact`, `Note`), Documents (`Document`, `Document Content`) and Messaging (`Channel Message`, `Direct Message`). `Note` and both message entities are create-only. See [Unified APIs](../build/unified-apis/README.md).
 
 ### The agent
 

@@ -27,7 +27,7 @@ The AI agent is the primary path for creating and modifying workflows. It handle
 | Variant                   | Behavior                                                                                                                                                        |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Standalone Builder**    | Builds and validates a single workflow directly. Accessed via ✦ Build with AI on the Workflows page.                                                            |
-| **Workflow Orchestrator** | Coordinates multiple agents — a Planner, Builder, and Test Case agent — for complex multi-step builds. Fastn routes to this automatically for complex requests. |
+| **Workflow Orchestrator** | Coordinates multiple agents (a Planner, Builder, and Test Case agent), for complex multi-step builds. Fastn routes to this automatically for complex requests. |
 
 #### What the agent does
 
@@ -59,8 +59,8 @@ The Standalone Builder has:
 
 | Panel                        | Content                                                                                         |
 | ---------------------------- | ----------------------------------------------------------------------------------------------- |
-| **Left sidebar — SESSIONS**  | History of builder sessions. Each session preserves the full conversation.                      |
-| **Right sidebar — ACTIVITY** | Real-time log of what the agent is doing (creating connectors, generating code, running tests). |
+| **Left sidebar: SESSIONS**  | History of builder sessions. Each session preserves the full conversation.                      |
+| **Right sidebar: ACTIVITY** | Real-time log of what the agent is doing (creating connectors, generating code, running tests). |
 
 ***
 
@@ -72,10 +72,10 @@ Every workflow runs as an `export default async function(ctx)` and has access to
 
 The incoming data payload. Contents depend on what triggered the workflow:
 
-* **Webhook trigger** — The HTTP request body
-* **Scheduler trigger** — Scheduler context (schedule metadata)
-* **App Event trigger** — The event payload from the connector
-* **Manual trigger** — The JSON you provide in the Test tab
+* **Webhook trigger**: The HTTP request body
+* **Scheduler trigger**: Scheduler context (schedule metadata)
+* **App Event trigger**: The event payload from the connector
+* **Manual trigger**: The JSON you provide in the Test tab
 
 ```javascript
 const events = ctx.input;
@@ -84,7 +84,7 @@ const { propertyName, propertyValue, objectId } = events[0];
 
 #### ctx.headers
 
-HTTP headers from the incoming request (webhook-triggered workflows only). Auth headers are stripped for security — you won't see `Authorization` or `x-fastn-access-key` here.
+HTTP headers from the incoming request (webhook-triggered workflows only). Auth headers are stripped for security. You won't see `Authorization` or `x-fastn-access-key` here.
 
 ```javascript
 const contentType = ctx.headers['content-type'];
@@ -109,7 +109,7 @@ const deal = await fastn.connector.hubspotCrm.getDeal({ dealId: objectId });
 const result = await fastn.connector.gamma.createGeneration({ ... });
 ```
 
-The connector slug matches the connector name in **Integrations → Connectors** (lowercase, hyphenated). Each connector exposes its own set of actions — check the connector's documentation or the Docs tab in the workflow editor for available methods.
+The connector slug matches the connector name in **Integrations → Connectors** (lowercase, hyphenated). Each connector exposes its own set of actions: check the connector's documentation or the Docs tab in the workflow editor for available methods.
 
 #### fastn.db
 
@@ -174,7 +174,7 @@ Secrets are never logged, never included in execution output, and never exposed 
 
 Open any workflow from **Integrations → Workflows** to launch the three-panel editor.
 
-#### Left panel — Configuration
+#### Left panel: Configuration
 
 | Field                 | Description                                                                                       |
 | --------------------- | ------------------------------------------------------------------------------------------------- |
@@ -201,7 +201,7 @@ Top navigation:
 | **Save Workflow** | Saves the current draft without publishing.                  |
 | **Publish**       | Creates a new version snapshot (same as "Publish snapshot"). |
 
-#### Center panel — Code editor
+#### Center panel: Code editor
 
 Displays the workflow code as a `.js` file (e.g., `hubspot-discovery-deal-to-gamma-deck.js`). The header shows `JavaScript · export default async function(ctx)`.
 
@@ -211,11 +211,11 @@ The editor footer displays metadata:
 Latest: v2 — Edited via agent: 434 bytes
 ```
 
-* **Version** — The current published version number.
-* **Edited via agent** — Indicates the code was generated or last modified by the AI agent. Shows `Edited manually` if you changed it in the code editor.
-* **Byte count** — Size of the workflow code.
+* **Version**: The current published version number.
+* **Edited via agent**: Indicates the code was generated or last modified by the AI agent. Shows `Edited manually` if you changed it in the code editor.
+* **Byte count**: Size of the workflow code.
 
-#### Right panel — Five tabs
+#### Right panel: Five tabs
 
 **▶ Test**
 
@@ -227,13 +227,13 @@ Run the workflow with sample data without saving or publishing.
 | **CTX.HEADERS** | JSON object simulating HTTP headers.           |
 | **Run**         | Executes the workflow with the provided input. |
 
-The banner reads: "Hit Run to execute without saving" — this lets you iterate quickly.
+The banner reads: "Hit Run to execute without saving". This lets you iterate quickly.
 
 **📄 Docs**
 
 Three sub-tabs for understanding the workflow:
 
-**Flow** — A visual flowchart rendering the entire workflow as a node graph. Each step appears as a connected node with labeled types:
+**Flow**: A visual flowchart rendering the entire workflow as a node graph. Each step appears as a connected node with labeled types:
 
 | Node type | Represents                                     |
 | --------- | ---------------------------------------------- |
@@ -246,9 +246,9 @@ Three sub-tabs for understanding the workflow:
 
 Decision branches show both paths (e.g., "yes" → continue, "no" → skip). Skip and error paths are visible in the graph.
 
-**Sequence** — The same logic as a step-by-step sequential timeline showing execution order.
+**Sequence**: The same logic as a step-by-step sequential timeline showing execution order.
 
-**Docs** — Auto-generated reference documentation for the workflow.
+**Docs**: Auto-generated reference documentation for the workflow.
 
 **✏️ Test Cases**
 
@@ -291,9 +291,9 @@ x-fastn-account-tenant-id: <tenant-id>
 
 | Tier         | Behavior                                                                | Returns       | Max timeout | Timeout range | Use when                                                              |
 | ------------ | ----------------------------------------------------------------------- | ------------- | ----------- | ------------- | --------------------------------------------------------------------- |
-| **Instant**  | Synchronous — caller waits for result                                   | Result inline | 60 seconds  | 1s – 2min     | API endpoints needing responses, quick lookups, real-time validations |
-| **Standard** | Asynchronous via Temporal — returns immediately, executes in background | 202 Accepted  | 15 minutes  | 5s – 15min    | Data syncs, multi-step processes, most workflows                      |
-| **Long**     | Asynchronous via Temporal — for large data volumes                      | 202 Accepted  | 6 hours     | 30s – 6hrs    | Batch imports, full backfills, large report generation                |
+| **Instant**  | Synchronous: caller waits for result                                   | Result inline | 60 seconds  | 1s – 2min     | API endpoints needing responses, quick lookups, real-time validations |
+| **Standard** | Asynchronous via Temporal: returns immediately, executes in background | 202 Accepted  | 15 minutes  | 5s – 15min    | Data syncs, multi-step processes, most workflows                      |
+| **Long**     | Asynchronous via Temporal: for large data volumes                      | 202 Accepted  | 6 hours     | 30s – 6hrs    | Batch imports, full backfills, large report generation                |
 
 The timeout slider in the Configuration panel adjusts within the tier's allowed range.
 
@@ -318,7 +318,7 @@ Create → Save (draft) → Publish (versioned snapshot) → Deploy (to environm
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Create**  | New workflow with default `export default async function(ctx)` template. Via "Create Workflow" (manual) or "Build with AI" (agent-generated). |
 | **Save**    | Persists the current code and configuration as a draft. Does not create a version or go live.                                                 |
-| **Publish** | Creates a version snapshot (v1, v2, etc.). The version is immutable — you can roll back to any previous version.                              |
+| **Publish** | Creates a version snapshot (v1, v2, etc.). The version is immutable. You can roll back to any previous version.                              |
 | **Deploy**  | Sends a published version to a target environment. The workflow starts processing triggers in that environment.                               |
 
 #### Statuses

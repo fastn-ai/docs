@@ -15,18 +15,18 @@ An event is one inbound arrival: a webhook fired, a schedule reached, or a manua
 | Column     | Notes                                                          |
 | ---------- | ---------------------------------------------------------------- |
 | **Event**  | The event identifier.                                          |
-| **Source** | Where it came from — `webhook` on every row observed.          |
+| **Source** | Where it came from: `webhook` on every row observed.          |
 | **Status** | `Delivered` on a successful hand-off.                          |
 | **When**   | Timestamp, in your timezone.                                   |
 | **Replay** | Re-delivers the row. See below.                                |
 
-Filter chips carry live counts — **All**, **Webhook**, **Scheduled**, **Manual** — so you can see at a glance whether your schedules are firing. **Search events** narrows the list.
+Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see at a glance whether your schedules are firing. **Search events** narrows the list.
 
 The list is not paginated, and rows do not expand. To see what a run did with an event, go to [Executions](executions.md).
 
 ### Auto refresh
 
-The toggle top-right is **off** by default. Turn it on to keep the list current without reloading — useful while you are testing a webhook from the sending system — and off again when you want to read a stable list.
+The toggle top-right is **off** by default. Turn it on to keep the list current without reloading (useful while you are testing a webhook from the sending system) and off again when you want to read a stable list.
 
 ### Replay
 
@@ -44,7 +44,7 @@ An empty filter gives you **Nothing matches that filter**, with:
 
 > Events arrive as your customers use their connected systems. Widen the filter, or check that a trigger is listening.
 
-and a **Show all events** button. Take the second half of that literally — an empty Events log with a trigger you expected to fire is a trigger problem, not an events problem. See [Triggers](../build/triggers/README.md).
+and a **Show all events** button. Take the second half of that literally: an empty Events log with a trigger you expected to fire is a trigger problem, not an events problem. See [Triggers](../build/triggers/README.md).
 
 ### Events versus executions
 

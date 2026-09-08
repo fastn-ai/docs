@@ -12,7 +12,7 @@ Without an alert, a sync can fail quietly for hours. This is the cheapest insura
 
 > Without one, a sync can fail quietly for hours. One click turns on the two alerts most teams need…
 
-under the heading **No alerts yet**, with **Turn on failure alerts** and **Custom alert** beside it. It names the address the two alerts would go to — the email you signed in with. **New alert** sits top-right, and the empty state is the whole page until an alert exists.
+under the heading **No alerts yet**, with **Turn on failure alerts** and **Custom alert** beside it. It names the address the two alerts would go to: the email you signed in with. **New alert** sits top-right, and the empty state is the whole page until an alert exists.
 
 ### The one-click start
 
@@ -22,18 +22,18 @@ under the heading **No alerts yet**, with **Turn on failure alerts** and **Custo
 
 <figure><img src="../.gitbook/assets/alert-editor.jpg" alt="The alert editor open on an Untitled alert badged Paused and No recipients, set to fire when Error rate is above 5% over 24 hours, watching All workflows, with Slack, Email and Webhook delivery fields"><figcaption>Firing history at the bottom reads This alert has not fired yet.</figcaption></figure>
 
-**New alert** — or **Custom alert** on the empty state — opens the editor.
+**New alert** (or **Custom alert** on the empty state), opens the editor.
 
 {% hint style="danger" %}
-**The editor autosaves, and there is no Save button.** **New alert** persists an alert on the server the moment you click it — an `Untitled alert`, **Paused**, with **No recipients** — and every subsequent edit is saved as you make it. There is nothing to confirm and nothing to cancel. If you opened one by accident, delete it from its row; closing the editor leaves it behind.
+**The editor autosaves, and there is no Save button.** **New alert** persists an alert on the server the moment you click it (an `Untitled alert`, **Paused**, with **No recipients**) and every subsequent edit is saved as you make it. There is nothing to confirm and nothing to cancel. If you opened one by accident, delete it from its row; closing the editor leaves it behind.
 {% endhint %}
 
 #### Alert when
 
 Two shapes. **a metric crosses a threshold** is the default.
 
-* **a run fails (instant)** — fires on the failure itself.
-* **a metric crosses a threshold** — fires when a measured value goes above or below a number, over a window. The default.
+* **a run fails (instant)**: fires on the failure itself.
+* **a metric crosses a threshold**: fires when a measured value goes above or below a number, over a window. The default.
 
 #### Metrics
 
@@ -44,7 +44,7 @@ Two shapes. **a metric crosses a threshold** is the default.
 | **Error rate**          | Percent of runs that failed in the window.       | %       |
 | **Success rate**        | The inverse.                                     | %       |
 | **Failed runs**         | Count of failures.                               | count   |
-| **Total runs**          | Count of runs — catches a source that went quiet. | count   |
+| **Total runs**          | Count of runs: catches a source that went quiet. | count   |
 | **Records synced**      | Volume moved.                                    | count   |
 | **Records failed**      | Records rejected downstream.                     | count   |
 | **Avg run time**        | Mean duration.                                   | time    |
@@ -55,7 +55,7 @@ Two shapes. **a metric crosses a threshold** is the default.
 Each takes **is above** or **is below**, a value, and a window of **1 hour**, **24 hours**, **7 days** or **30 days**.
 
 {% hint style="warning" %}
-Watch the unit when you type a threshold. The default alert is **Error rate is above 5** — five *percent*. Switch the metric to **Failed runs** and the same 5 means five *runs*, which on a busy workspace is a far tighter trigger than it looks.
+Watch the unit when you type a threshold. The default alert is **Error rate is above 5**: five *percent*. Switch the metric to **Failed runs** and the same 5 means five *runs*, which on a busy workspace is a far tighter trigger than it looks.
 {% endhint %}
 
 **Defaults on a new alert:** **a metric crosses a threshold**, metric **Error rate**, comparator **is above**, threshold **5%**, window **24 hours**.
@@ -76,7 +76,7 @@ An alert with no recipients shows **No recipients** and will not notify anyone.
 
 #### Firing history
 
-Each alert keeps a record of every time it fired — the fastest way to tell a real signal from a threshold set too tight. On a new one it reads `This alert has not fired yet.`
+Each alert keeps a record of every time it fired: the fastest way to tell a real signal from a threshold set too tight. On a new one it reads `This alert has not fired yet.`
 
 ### Evaluation
 

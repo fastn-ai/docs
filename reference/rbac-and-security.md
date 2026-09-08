@@ -15,11 +15,11 @@ There are six system roles. Each has a fixed set of permissions across the platf
 | Role          | Permissions | Scope                                                                                                                  |
 | ------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Owner**     | 39          | Full access, including ownership transfer and organization deletion. One per organization.                             |
-| **Admin**     | 39          | Full access — connectors, workflows, customers, billing, settings. Cannot transfer ownership.                          |
+| **Admin**     | 39          | Full access: connectors, workflows, customers, billing, settings. Cannot transfer ownership.                          |
 | **Developer** | 34          | Build connectors, workflows, and agents. No billing or organization settings.                                          |
 | **Operator**  | 18          | Run workflows and monitor activity. Cannot create or modify connectors or workflows.                                   |
 | **Viewer**    | 7           | Read-only access across the platform.                                                                                  |
-| **End User**  | 9           | Widget-only access — connect apps, view sync status, and configure their own integrations through the embedded widget. |
+| **End User**  | 9           | Widget-only access: connect apps, view sync status, and configure their own integrations through the embedded widget. |
 
 > **VERIFY:** Permission counts (39/39/34/18/7/9) are from an earlier platform observation. Confirm against **Settings → ADVANCED → Roles** before publishing, as counts may change.
 
@@ -41,8 +41,8 @@ Permissions are grouped by resource type. Each role has a different number of pe
 
 If the system roles don't fit, you can create custom roles. Go to **Settings → ADVANCED → Roles**:
 
-* **Create Custom Role** — Build a role from scratch, selecting individual permissions.
-* **Duplicate as Custom** — Start from an existing system role and modify its permissions.
+* **Create Custom Role**: Build a role from scratch, selecting individual permissions.
+* **Duplicate as Custom**: Start from an existing system role and modify its permissions.
 
 ### Where roles are managed
 

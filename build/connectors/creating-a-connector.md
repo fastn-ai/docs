@@ -6,7 +6,7 @@ description: "The Create connector dialog: identity, connection and authenticati
 
 **Create connector** opens a dialog with three sections: **Identity**, **Connection** and **Authentication**.
 
-<figure><img src="../../.gitbook/assets/create-connector-dialog.jpg" alt="The Create a connector dialog: Identity fields Name, Slug and Description, then Connection fields Protocol set to REST, Visibility set to Private, Domain and Icon URL"><figcaption>Create connector stays disabled until the name is filled — the footer says so.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/create-connector-dialog.jpg" alt="The Create a connector dialog: Identity fields Name, Slug and Description, then Connection fields Protocol set to REST, Visibility set to Private, Domain and Icon URL"><figcaption>Create connector stays disabled until the name is filled, the footer says so.</figcaption></figure>
 
 | Field           | Type   | Notes                                                                        |
 | --------------- | ------ | ------------------------------------------------------------------------------ |
@@ -14,7 +14,7 @@ description: "The Create connector dialog: identity, connection and authenticati
 | **Slug**        | text   | Required. *Derived from the name. Edit it to override.* Used in API paths and code. |
 | **Description** | text   | Optional, but the agent reads it when deciding what a connector is for.       |
 | **Protocol**    | select | Required. `REST` (default), `MCP`, `FTP`, `Database`, `REDIS`.                |
-| **Visibility**  | select | Offers only `Private` — publishing a connector publicly is a platform-admin action. |
+| **Visibility**  | select | Offers only `Private`: publishing a connector publicly is a platform-admin action. |
 | **Domain**      | text   | Optional. The vendor's domain, e.g. `salesforce.com`.                         |
 | **Icon URL**    | text   | Optional. Shown on the card and in the widget.                                |
 
@@ -34,8 +34,8 @@ Those internal values are worth knowing because some of them surface raw in the 
 
 Each method also carries a **Set as default** radio, an **Authentication docs URL(optional)** field, a **Use Dynamic Client Registration (DCR)** checkbox (RFC 7591), and an **Additional OAuth Config(optional)** key/value repeater. Choosing Basic Auth or API Key swaps in a **Configuration** section with a `Form` / `JSON` toggle and a key/value repeater.
 
-The dialog footer will not let you save until the connector is named — the hint reads *Give it a name to continue.*
+The dialog footer will not let you save until the connector is named: the hint reads *Give it a name to continue.*
 
 {% hint style="info" %}
-You rarely need to do this by hand. Describe the system to the [Agent](../agent/README.md) and give it a spec URL or an OpenAPI file — it will discover the actions, build the connector, and test it.
+You rarely need to do this by hand. Describe the system to the [Agent](../agent/README.md) and give it a spec URL or an OpenAPI file. It will discover the actions, build the connector, and test it.
 {% endhint %}

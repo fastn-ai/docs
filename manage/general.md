@@ -27,7 +27,7 @@ Anyone signing up with this domain can ask to join instead of waiting for an inv
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **Email domain \***                    | Required. Placeholder `yourcompany.com`. Must be a domain your organisation controls, not a mailbox provider.        |
 | **Approve automatically**              | Off means an admin approves each request. Leave it off unless the domain is yours alone.                            |
-| **Role people joining on this domain get** | A default role selector. Which roles it offers was not captured with the dropdown open — open it and check rather than assuming. Whatever it is set to is a starting point, not a limit: you can still invite someone as anything you are allowed to assign. |
+| **Role people joining on this domain get** | A default role selector. Which roles it offers was not captured with the dropdown open: open it and check rather than assuming. Whatever it is set to is a starting point, not a limit: you can still invite someone as anything you are allowed to assign. |
 
 {% hint style="warning" %}
 Never set a mailbox provider here. Auto-approve on a shared domain means anyone with an address there can join your workspace.
@@ -35,4 +35,4 @@ Never set a mailbox provider here. Auto-approve on a shared domain means anyone 
 
 ### Saving
 
-The two sections above are what this page is documented to hold. Anything further down it — including how edits are committed — has not been captured, so save and discard the way the screen tells you to rather than the way this page describes.
+The two sections above are what this page is documented to hold. Anything further down it (including how edits are committed), has not been captured, so save and discard the way the screen tells you to rather than the way this page describes.

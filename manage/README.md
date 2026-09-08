@@ -6,7 +6,7 @@ description: Organisation settings, access, credentials and billing.
 
 **Settings** in the MANAGE group of the left rail.
 
-**Its sub-navigation is role-scoped — you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, SaaS Connectors, Billing, Roles, Audit log and Trash; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. The pages a Developer does not get are the administrative ones — People, General, Billing, Roles and the Audit log; Trash shows for everyone.
+**Its sub-navigation is role-scoped (you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, SaaS Connectors, Billing, Roles, Audit log and Trash; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. The pages a Developer does not get are the administrative ones), People, General, Billing, Roles and the Audit log; Trash shows for everyone.
 
 The table follows the Owner sidebar order, with Trash last.
 
@@ -25,7 +25,7 @@ The table follows the Owner sidebar order, with Trash last.
 | [Audit log](audit-log.md)               | Every action taken in the organisation.                        |
 | [Trash](trash.md)                       | Deleted connectors, actions and workflows.                     |
 
-**Customers** is not here — it is a top-level item in the OPERATE group, and is documented with [Operate](../operate/customers.md).
+**Customers** is not here. It is a top-level item in the OPERATE group, and is documented with [Operate](../operate/customers.md).
 
 Your own account is separate from the organisation:
 
@@ -37,9 +37,9 @@ The sidebar itself changes by role, so the first answer to "why can't I see that
 
 | Page                     | Who reaches it                                                        |
 | ------------------------ | ----------------------------------------------------------------------- |
-| Audit log                | Owner or Admin — gated by role, enforced at the API layer on `/api/v1/audit-log` |
+| Audit log                | Owner or Admin: gated by role, enforced at the API layer on `/api/v1/audit-log` |
 | People, General, Billing, Roles | In the Owner and Admin sidebar; absent from a Developer's.      |
-| Secrets                  | The `Secrets` permissions — `read`, `write`, `delete`.                  |
+| Secrets                  | The `Secrets` permissions: `read`, `write`, `delete`.                  |
 | API keys, Environments, Configs, Database | In both the Owner/Admin and Developer sidebars.       |
 | Trash                    | In the Owner, Admin and Developer sidebars, at `/settings/trash`.       |
 | Everything else          | Per the permission matrix in [Roles](roles.md).                        |

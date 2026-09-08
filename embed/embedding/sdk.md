@@ -14,14 +14,14 @@ Four variants, depending on how much of the UI you want to own:
 | ------------------------ | --------------------------- | ------------------------------------------------------------------- |
 | **React component**      | `@fastn-ai/embed/react`     | Your app is React and you want the whole panel.                    |
 | **Connect card**         | `@fastn-ai/embed/react`     | You want the smallest surface: one card, one button.               |
-| **Script tag**           | hosted bundle, no install   | Vue, Svelte, Rails, plain HTML — anything that runs JS.            |
+| **Script tag**           | hosted bundle, no install   | Vue, Svelte, Rails, plain HTML: anything that runs JS.            |
 | **Build your own UI**    | `@fastn-ai/embed/headless`  | The integrations screen has to look like the rest of your product.  |
 
 ### React
 
 The confirmed exports are `FastnConnectCard`, `FastnHub` and `FastnProvider`; the headless entry point exposes the hooks `useConnectors`, `useConnections` and `useConnect`.
 
-`FastnProvider` supplies the session the other components read, so wrap your tree in it rather than mounting `FastnHub` bare. Copy the exact props from the dashboard's generated snippet — they are rendered there for the user you selected.
+`FastnProvider` supplies the session the other components read, so wrap your tree in it rather than mounting `FastnHub` bare. Copy the exact props from the dashboard's generated snippet. They are rendered there for the user you selected.
 
 ### Script tag
 

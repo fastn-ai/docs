@@ -10,8 +10,8 @@ Work down this page in order. Most problems resolve at the first or second step,
 
 | Symptom                                       | Look first at                                         |
 | --------------------------------------------- | ------------------------------------------------------- |
-| Nothing happened at all                       | [Events](events.md) — did anything arrive?             |
-| Something ran but ended badly                 | [Executions](executions.md) — expand the row, read the **Error** tab. Codes explained in [Errors and failure states](../reference/errors.md) |
+| Nothing happened at all                       | [Events](events.md): did anything arrive?             |
+| Something ran but ended badly                 | [Executions](executions.md): expand the row, read the **Error** tab. Codes explained in [Errors and failure states](../reference/errors.md) |
 | It succeeded but the data is wrong            | [Sync reports](sync-reports.md)                        |
 | It is slow                                    | [Traces](traces.md)                                    |
 | It worked yesterday and not today             | [Connections](../build/connections/README.md), then [Pending updates](../build/connector-updates.md) |
@@ -31,7 +31,7 @@ If [Events](events.md) shows nothing, the problem is before fastn.
 | **Schedule**  | Is the trigger Active rather than Disabled? Is its timezone what you assumed?                |
 | **App event** | Is the connector's **Webhook config** set up, and does the customer have an active connection? |
 
-Filter the Events chips by **Scheduled** — a count of zero on a schedule you expected to fire is the answer.
+Filter the Events chips by **Scheduled**: a count of zero on a schedule you expected to fire is the answer.
 
 ### Event Delivered, but no execution
 
@@ -43,7 +43,7 @@ A Delivered event means the payload arrived and was handed on. If no execution f
 
 ### Event never Delivered
 
-It exhausted its delivery attempts. The row shows a failure state in the **Status** column; fix the cause, then **Replay** it. Attempt count and backoff are on the webhook trigger — see [Triggers](../build/triggers/README.md).
+It exhausted its delivery attempts. The row shows a failure state in the **Status** column; fix the cause, then **Replay** it. Attempt count and backoff are on the webhook trigger. See [Triggers](../build/triggers/README.md).
 
 ---
 
@@ -60,11 +60,11 @@ Expand the execution row for its result banner and raw response, then check [Tra
 
 ### Status: Failed with a `Dependency Error` tag
 
-The commonest failure of all, and it means something the workflow *called* refused — nearly always a connector action, not your code. Runs usually die in under a second, because they stop at the first call that will not work.
+The commonest failure of all, and it means something the workflow *called* refused: nearly always a connector action, not your code. Runs usually die in under a second, because they stop at the first call that will not work.
 
 Expand the row and open the **Error** tab. The **AI Diagnosis** names the step that broke and, usually, the fix; **Error Details** beside it carries the raw message. Most of the time the answer is a connection that is expired, revoked, pinned to something unusable, or belonging to another organisation.
 
-**It will not clear on its own.** Retry policies cover transient failures, and an invalid connection is not transient — a daily schedule in this state fails at the same minute every day until someone acts.
+**It will not clear on its own.** Retry policies cover transient failures, and an invalid connection is not transient: a daily schedule in this state fails at the same minute every day until someone acts.
 
 Full breakdown, with the causes in order of frequency, in [Errors and failure states](../reference/errors.md#dependency-error).
 
@@ -72,11 +72,11 @@ Full breakdown, with the causes in order of frequency, in [Errors and failure st
 
 The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 
-* **One slow call** — the fix is upstream, or batching, not a longer timeout.
-* **Hundreds of calls** — batch them, or move to the Long tier.
-* **A Pending trace that never resolved** — the upstream system accepted the request and never answered.
+* **One slow call**: the fix is upstream, or batching, not a longer timeout.
+* **Hundreds of calls**: batch them, or move to the Long tier.
+* **A Pending trace that never resolved**: the upstream system accepted the request and never answered.
 
-**Escalate on timeout** retries one tier up — instant to standard — which buys time without redesigning. It returns a queued execution id to poll, so the caller's response shape changes; the option is hidden on the Long tier, which has nothing above it.
+**Escalate on timeout** retries one tier up (instant to standard), which buys time without redesigning. It returns a queued execution id to poll, so the caller's response shape changes; the option is hidden on the Long tier, which has nothing above it.
 
 ### Status: Failed with no obvious error
 
@@ -84,13 +84,13 @@ Expand the row and read `peakSandboxMB` against `sandboxMemoryLimitMB`. Out-of-m
 
 ### Retries
 
-The retry policy retries transient failures. Code errors, data errors and out-of-memory never retry, however many attempts you allow — so if the same run fails identically every time, the policy is not the thing to adjust.
+The retry policy retries transient failures. Code errors, data errors and out-of-memory never retry, however many attempts you allow, so if the same run fails identically every time, the policy is not the thing to adjust.
 
 ---
 
 ## It succeeded but the data is wrong
 
-Open [Sync reports](sync-reports.md). It shows what the run did, record by record — which distinguishes *the record was filtered out* from *the record was never seen*.
+Open [Sync reports](sync-reports.md). It shows what the run did, record by record, which distinguishes *the record was filtered out* from *the record was never seen*.
 
 If the page is empty, the workflow does not call `fastn.diff.compare`. Ask the agent to add diff reporting; reconstructing this from logs afterwards is far harder.
 
@@ -98,7 +98,7 @@ Common causes:
 
 | Cause                     | Where to fix it                                                        |
 | ------------------------- | ------------------------------------------------------------------------ |
-| A field was never mapped  | The workflow's field mappings — tell the agent what is missing.        |
+| A field was never mapped  | The workflow's field mappings: tell the agent what is missing.        |
 | A filter is too broad     | The include/exclude rules in the workflow.                             |
 | Duplicates downstream     | No deduplication key on the trigger, or no `fastn.state` idempotency guard. |
 | Stale values              | A pinned connector version that predates a field. See Version pins on the connector. |
@@ -111,7 +111,7 @@ Replay re-runs the workflow for real. Without protection it will write twice.
 
 Two defences, and you want both:
 
-1. A **deduplication key** on the webhook trigger — a field that uniquely identifies each event, so a retried delivery from the sender does not run the workflow twice.
+1. A **deduplication key** on the webhook trigger: a field that uniquely identifies each event, so a retried delivery from the sender does not run the workflow twice.
 2. An **idempotency guard** in the workflow using `fastn.state`:
 
 ```javascript
@@ -125,18 +125,18 @@ See [Workflow runtime API](../reference/workflow-runtime.md).
 
 ## It works for one customer and not another
 
-Almost always a connection. Open [Connections](../build/connections/README.md) — the Customer column tells you whose each one is, and the search box narrows the list.
+Almost always a connection. Open [Connections](../build/connections/README.md): the Customer column tells you whose each one is, and the search box narrows the list.
 
 | Status       | Fix                                                          |
 | ------------ | -------------------------------------------------------------- |
 | **Expired**  | The customer re-authorises through your widget.               |
 | **Failed**   | Access was revoked, a password changed, or a key was rotated. Same fix. |
-| **Inactive** | The row menu offers **Reconnect** and **Disconnect**. There is no re-enable — reconnect it. |
+| **Inactive** | The row menu offers **Reconnect** and **Disconnect**. There is no re-enable: reconnect it. |
 | Missing      | They never connected that system.                             |
 
 Use the search box rather than the status filter chips: see [Known issues](#known-issues) below.
 
-Also check whether that customer is **pinned to an older connector version** — see Version pins on the connector.
+Also check whether that customer is **pinned to an older connector version**. See Version pins on the connector.
 
 ---
 
@@ -147,13 +147,13 @@ Also check whether that customer is **pinned to an older connector version** —
 | `WORKFLOW_NOT_PUBLISHED`       | No snapshot has been published for that workflow. Publish one from the editor.   |
 | Rejected with a test key       | Missing `X-fastn-Test-Mode: true`. A test key is refused without it.             |
 | Wrong code ran                 | `x-fastn-env`. `test` means the latest published version; any other slug means the version deployed there. |
-| Forbidden                      | The key's permissions do not cover the call. Key permissions are a preset plus a **What it can touch** matrix on the key itself — see [API keys](../manage/api-keys.md). [Roles](../manage/roles.md) govern people, not keys. |
+| Forbidden                      | The key's permissions do not cover the call. Key permissions are a preset plus a **What it can touch** matrix on the key itself. See [API keys](../manage/api-keys.md). [Roles](../manage/roles.md) govern people, not keys. |
 
 ---
 
 ## You deleted something by mistake
 
-Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources — as the product puts it, "widgets and their integrations among them" — are deleted immediately and cannot be restored from that page.
+Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (as the product puts it, "widgets and their integrations among them"), are deleted immediately and cannot be restored from that page.
 
 ---
 

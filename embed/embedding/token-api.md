@@ -23,7 +23,7 @@ x-org-id: <orgId>
 }
 ```
 
-`expiresIn` is 28800 seconds — eight hours.
+`expiresIn` is 28800 seconds: eight hours.
 
 If the API key is pinned to a particular customer, send the customer in the body instead of the header:
 
@@ -40,7 +40,7 @@ POST /api/v1/embed/token/refresh
 ```
 
 {% hint style="warning" %}
-Refresh is capped at **seven days per session**. At the cap the widget posts `fastn:session-expired` to the parent window and stops. Long-lived sessions do not refresh indefinitely — listen for that message and start a new session by minting a fresh token.
+Refresh is capped at **seven days per session**. At the cap the widget posts `fastn:session-expired` to the parent window and stops. Long-lived sessions do not refresh indefinitely: listen for that message and start a new session by minting a fresh token.
 {% endhint %}
 
 The flow for production:

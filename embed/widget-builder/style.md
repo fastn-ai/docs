@@ -18,7 +18,7 @@ Status colours are deliberately not themeable. A customer has to read "failed" c
 
 ### Accent
 
-A pair, not a single colour: **Accent** (default `#000000`) and **Text on accent** (default `#fff`), with a live contrast readout beside them. Set both — the readout is there so you can check the pairing is legible before your customers do.
+A pair, not a single colour: **Accent** (default `#000000`) and **Text on accent** (default `#fff`), with a live contrast readout beside them. Set both: the readout is there so you can check the pairing is legible before your customers do.
 
 ### Type
 
@@ -31,7 +31,7 @@ A pair, not a single colour: **Accent** (default `#000000`) and **Text on accent
 
 ### Shape
 
-Four presets — **Square**, **Rounded**, **Soft**, **Pill** — over a radius of 0–20, with separate card, button and input radii underneath if the preset is not quite right. **Shadow strength** is None, SM, MD or LG.
+Four presets (**Square**, **Rounded**, **Soft**, **Pill**), over a radius of 0–20, with separate card, button and input radii underneath if the preset is not quite right. **Shadow strength** is None, SM, MD or LG.
 
 ### Tokens
 

@@ -14,9 +14,9 @@ You embed Fastn into your product. Your customers connect their apps (Slack, Hub
 
 Fastn is built for two audiences:
 
-**SaaS companies (you)** — You have a product and your customers need integrations with third-party apps. You don't want to build and maintain connector infrastructure yourself. With Fastn, you configure connectors, build automation workflows, and embed a branded integration hub into your product. You manage everything from the Fastn dashboard at `live.fastn.ai`.
+**SaaS companies (you)**: You have a product and your customers need integrations with third-party apps. You don't want to build and maintain connector infrastructure yourself. With Fastn, you configure connectors, build automation workflows, and embed a branded integration hub into your product. You manage everything from the Fastn dashboard at `live.fastn.ai`.
 
-**Your customers** — The people who use your SaaS product. They interact with Fastn through the embedded widget inside your app connecting their own accounts (their Slack workspace, their HubSpot instance, their Shopify store), activating integrations, and viewing sync status. They never see the Fastn dashboard or know that Fastn exists behind the scenes.
+**Your customers**: The people who use your SaaS product. They interact with Fastn through the embedded widget inside your app connecting their own accounts (their Slack workspace, their HubSpot instance, their Shopify store), activating integrations, and viewing sync status. They never see the Fastn dashboard or know that Fastn exists behind the scenes.
 
 ### What Fastn replaces
 
@@ -38,9 +38,9 @@ Pre-built or AI-generated integrations with third-party apps. Fastn provides con
 
 Each connector defines:
 
-* **Authentication** — OAuth 2.0, API Key, Bearer Token, Basic Auth, Custom, or No Auth
-* **Actions** — things you can do (create a contact, fetch orders, send a message)
-* **Events** — webhook events you can subscribe to (new order created, contact updated)
+* **Authentication**: OAuth 2.0, API Key, Bearer Token, Basic Auth, Custom, or No Auth
+* **Actions**: things you can do (create a contact, fetch orders, send a message)
+* **Events**: webhook events you can subscribe to (new order created, contact updated)
 
 Once a connector exists, you or your customers create **Connections** that are authenticated instances that store credentials per user.
 
@@ -56,9 +56,9 @@ Workflows define what happens when data needs to move between systems. In Fastn,
 
 Workflows support three execution tiers:
 
-* **Instant** — synchronous, returns result inline, max 60 seconds
-* **Standard** — default async execution
-* **Long** — extended execution for large data volumes
+* **Instant**: synchronous, returns result inline, max 60 seconds
+* **Standard**: default async execution
+* **Long**: extended execution for large data volumes
 
 You manage workflows under **Integrations → Workflows**.
 
@@ -72,9 +72,9 @@ Triggers connect external events to your workflows. They're managed as a separat
 
 Three trigger types:
 
-* **Webhook** — receives HTTP POST events from external services. Supports routes with JSON filters to direct different payloads to different workflows.
-* **Scheduler** — runs workflows on a schedule (every 5 minutes, daily, weekly, monthly, or custom cron).
-* **App Event** — subscribes to events from your connectors (e.g., "Sale Created" from Cin7, "Contact Updated" from HubSpot).
+* **Webhook**: receives HTTP POST events from external services. Supports routes with JSON filters to direct different payloads to different workflows.
+* **Scheduler**: runs workflows on a schedule (every 5 minutes, daily, weekly, monthly, or custom cron).
+* **App Event**: subscribes to events from your connectors (e.g., "Sale Created" from Cin7, "Contact Updated" from HubSpot).
 
 You manage triggers under **Integrations → Triggers**.
 
@@ -86,16 +86,16 @@ Widgets are the customer-facing piece of your product that allows your customers
 
 The Widget Builder has four configuration tabs:
 
-* **Layout** — title, subtitle, and workflow templates
-* **Style** — theme presets, colors, typography, borders, shadows
-* **Features** — widget filter and RBAC (coming soon)
-* **Embed** — two integration methods: React SDK (`@fastn/react`) or Headless SDK (`@fastn/headless`)
+* **Layout**: title, subtitle, and workflow templates
+* **Style**: theme presets, colors, typography, borders, shadows
+* **Features**: widget filter and RBAC (coming soon)
+* **Embed**: two integration methods: React SDK (`@fastn/react`) or Headless SDK (`@fastn/headless`)
 
 The live preview shows three tabs your customers will see:
 
-* **Apps** — connected integrations with Configure/Disconnect buttons and an AI assistant ("Build with AI")
-* **Workflows** — active workflows and workflow templates that additionally allow you to visualize the workflows
-* **Insights** — Shows metrics such as runs, records processed, needs attention), connector status, most-used workflow
+* **Apps**: connected integrations with Configure/Disconnect buttons and an AI assistant ("Build with AI")
+* **Workflows**: active workflows and workflow templates that additionally allow you to visualize the workflows
+* **Insights**: Shows metrics such as runs, records processed, needs attention), connector status, most-used workflow
 
 > &#x20;**Screenshot:** Widget Builder showing the left panel (Layout tab) and right panel (Live Preview with Apps tab showing connected integrations).
 
@@ -140,18 +140,18 @@ Fastn uses AI agents to reduce manual work throughout the platform. They're buil
 | **Action Tester**   | Executes actions against real test connections and reports pass/fail |
 | **Action Fixer**    | Fixes broken actions using real API docs, applies schema patches     |
 
-> **GIF needed:** The SaaS Onboarding agent in action on the Home page — the Setup Assistants panel researching a company and producing recommendations.
+> **GIF needed:** The SaaS Onboarding agent in action on the Home page. The Setup Assistants panel researching a company and producing recommendations.
 
 ### How data flows through Fastn
 
 > **Diagram needed:** Visual flow: Event source (webhook/schedule/API) → Trigger → Workflow execution → CDM Normalization → Target System. Show customer isolation boundary.
 
-1. **Event arrives** — A webhook fires from Shopify, a scheduler triggers, or an app event is received.
-2. **Trigger routes** — The trigger matches the event to one or more workflows via routes and filters.
-3. **Workflow executes** — Fastn runs your workflow code: fetch data, transform it, write to a target system.
-4. **Data normalizes** — The Canonical Data Model (CDM) translates between different systems' data formats.
-5. **Customer isolation** — Every piece of data is scoped to a specific customer. Your customers never see each other's data, credentials, or execution history.
-6. **Monitoring** — Every execution is logged under **Activity → Executions** with workflow name, tier, version, status, duration, and what triggered it.
+1. **Event arrives**: A webhook fires from Shopify, a scheduler triggers, or an app event is received.
+2. **Trigger routes**: The trigger matches the event to one or more workflows via routes and filters.
+3. **Workflow executes**: Fastn runs your workflow code: fetch data, transform it, write to a target system.
+4. **Data normalizes**: The Canonical Data Model (CDM) translates between different systems' data formats.
+5. **Customer isolation**: Every piece of data is scoped to a specific customer. Your customers never see each other's data, credentials, or execution history.
+6. **Monitoring**: Every execution is logged under **Activity → Executions** with workflow name, tier, version, status, duration, and what triggered it.
 
 ### What you need to get started
 

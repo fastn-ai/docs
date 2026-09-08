@@ -6,7 +6,7 @@ description: The integrations panel your customers see inside your own product.
 
 **Widgets**
 
-Everything under Build exists so that this screen can do its job. The widget is the only part of fastn your customers ever touch: they browse the integrations you offer, authorise their own accounts, and configure what syncs — inside your product, under your branding.
+Everything under Build exists so that this screen can do its job. The widget is the only part of fastn your customers ever touch: they browse the integrations you offer, authorise their own accounts, and configure what syncs: inside your product, under your branding.
 
 <figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="The widget builder: a left panel with Layout, Style, Features and Embed tabs over Title and Subtitle fields, beside a tablet-width Live preview showing a purple Integrations header and a TikTok Shop row"><figcaption>Configure on the left, see exactly what the customer sees on the right.</figcaption></figure>
 
@@ -22,7 +22,7 @@ Two pages cover it:
 
 ### The preview
 
-The preview renders the widget at **Mobile**, **Tablet** and **Desktop** widths, with **Tablet** selected by default. The tenant selector at the top right, defaulting to **View as admin**, renders the widget as any one of your customers — so you can see their actual connection states rather than a mock-up. **Preview** opens it on its own.
+The preview renders the widget at **Mobile**, **Tablet** and **Desktop** widths, with **Tablet** selected by default. The tenant selector at the top right, defaulting to **View as admin**, renders the widget as any one of your customers, so you can see their actual connection states rather than a mock-up. **Preview** opens it on its own.
 
 ### Saving, and the two Resets
 

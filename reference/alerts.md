@@ -11,8 +11,8 @@ Alerts notify you when a workflow or integration crosses a performance threshold
 Click **Create Alert**. The form has:
 
 * **Name** (required)
-* **Condition** (required) — The metric to watch
-* **Threshold** (required) — The value that triggers the alert (e.g., "5" for a 5% error rate)
+* **Condition** (required): The metric to watch
+* **Threshold** (required): The value that triggers the alert (e.g., "5" for a 5% error rate)
 
 ### Conditions
 

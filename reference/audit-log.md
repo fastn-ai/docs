@@ -13,15 +13,15 @@ The audit log records significant actions taken in your organization. It is foun
 | TIMESTAMP | When the action occurred                                                                      |
 | USER      | The actor that performed the action                                                           |
 | ACTION    | A dotted event name (e.g., `workflow.execute.completed`, `workflow.publish`, `widget.create`) |
-| RESOURCE  | The affected resource — an ID with a type sub-label (e.g., `workflow_executions`)             |
+| RESOURCE  | The affected resource: an ID with a type sub-label (e.g., `workflow_executions`)             |
 
 ### Reading entries
 
 Action values are structured event names. Some examples:
 
-* `workflow.execute.completed` — A workflow execution finished
-* `workflow.publish` — A workflow version was published
-* `widget.create` — A widget was created
+* `workflow.execute.completed`: A workflow execution finished
+* `workflow.publish`: A workflow version was published
+* `widget.create`: A widget was created
 
 The RESOURCE cell shows the specific resource the action applied to, with its type beneath the ID.
 
@@ -29,5 +29,5 @@ Actions taken by AI agents are attributed to an agent actor rather than a human 
 
 ### Related
 
-* [Workflows](https://claude.ai/fastn/reference/workflows) — many audit entries reference workflow actions
-* [RBAC & Security](https://claude.ai/fastn/reference/rbac-and-security) — who can perform which actions
+* [Workflows](https://claude.ai/fastn/reference/workflows): many audit entries reference workflow actions
+* [RBAC & Security](https://claude.ai/fastn/reference/rbac-and-security), who can perform which actions

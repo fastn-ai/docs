@@ -16,5 +16,5 @@ The simplest option: an HTML tag.
 Use it for a CMS block, or anywhere you only control markup.
 
 {% hint style="danger" %}
-The snippet the dashboard generates contains a live token in the URL — the tab says so. That is fine for a first run and wrong for production: URLs end up in logs, referrers and browser history. For production, mint tokens from your backend and keep them out of the URL. The SDK exists for exactly that.
+The snippet the dashboard generates contains a live token in the URL: the tab says so. That is fine for a first run and wrong for production: URLs end up in logs, referrers and browser history. For production, mint tokens from your backend and keep them out of the URL. The SDK exists for exactly that.
 {% endhint %}
