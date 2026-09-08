@@ -81,7 +81,7 @@ Each phase expands to its named substeps, a completed one collapses to a green c
 
 ### Clarifying questions
 
-Where your brief is ambiguous, the agent asks rather than guesses, rendering the question as selectable answer cards: each with a title and a sentence explaining what choosing it means. Every question also offers **Other…** for a free-form answer, so you are never limited to the options it drafted. Typical questions cover sync scope (ongoing only, versus an initial backfill first) and tenancy (internal, versus per-customer multi-tenant).
+Where your brief is ambiguous, the agent asks rather than guesses, rendering the question as selectable answer cards, each with a title and a sentence explaining what choosing it means. Every question also offers **Other…** for a free-form answer, so you are never limited to the options it drafted. Typical questions cover sync scope (ongoing only, versus an initial backfill first) and tenancy (internal, versus per-customer multi-tenant).
 
 ### Reading what it did
 
