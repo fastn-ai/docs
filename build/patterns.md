@@ -6,7 +6,7 @@ description: The handful of workflow shapes that come up again and again.
 
 You can describe any of these to the [agent](agent/README.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
 
-Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use — `fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector` — are listed on the editor's **Docs** tab; check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
+Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use (`fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector`), are listed on the editor's **Docs** tab; check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
 
 ---
 
@@ -16,7 +16,7 @@ Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime
 
 **The shape.** Three defences, cheapest first.
 
-1. A **deduplication key** on the [trigger](triggers/README.md) — the field in the payload that identifies the event, so a retried delivery does not run the workflow twice.
+1. A **deduplication key** on the [trigger](triggers/README.md): the field in the payload that identifies the event, so a retried delivery does not run the workflow twice.
 2. An **idempotency guard** in the workflow, using `fastn.state`:
 
    ```javascript
@@ -62,7 +62,7 @@ Each stage retries independently, and a failure in publishing does not mean re-p
 
 ## Per-customer business rules
 
-**The problem.** Every customer wants a slightly different filter — a category, a threshold, a warehouse — and you do not want a code change per customer.
+**The problem.** Every customer wants a slightly different filter (a category, a threshold, a warehouse) and you do not want a code change per customer.
 
 **The shape.** Put the rule in configuration rather than code. The workflow reads it at runtime, so changing a customer's rule is an edit, not a deploy.
 
@@ -72,13 +72,13 @@ Each stage retries independently, and a failure in publishing does not mean re-p
 | Sensitive, and differs per customer  | A [secret](../manage/secrets.md) scoped to that customer                | `fastn.secrets.get`   |
 | The same for everyone, but differs between test and live | A [config](../manage/configs.md)                    | `fastn.envConfig.get` |
 
-Configs vary by *environment*, not by customer — so a per-customer rule belongs in the database or in a customer-scoped secret, not in a config.
+Configs vary by *environment*, not by customer, so a per-customer rule belongs in the database or in a customer-scoped secret, not in a config.
 
 {% hint style="warning" %}
 `fastn.db` isolates one Postgres schema **per workspace**, not per customer. Rows are not scoped to a customer for you. If a table holds per-customer rules, put the customer on the row yourself and filter on it in every query.
 {% endhint %}
 
-Which customer a run belongs to arrives in the request headers — `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config` — and reaches your code through `ctx.headers`. That is also how you invoke a workflow as a specific customer from outside.
+Which customer a run belongs to arrives in the request headers (`x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`) and reaches your code through `ctx.headers`. That is also how you invoke a workflow as a specific customer from outside.
 
 **Ask for it as:** *"Make the warehouse and the minimum order value configurable per customer, not hard-coded."*
 
@@ -86,7 +86,7 @@ Which customer a run belongs to arrives in the request headers — `x-end-org-id
 
 ## Fan-out from one webhook
 
-**The problem.** One inbound event needs to do three unrelated things — create an invoice, notify Slack, update a sheet.
+**The problem.** One inbound event needs to do three unrelated things: create an invoice, notify Slack, update a sheet.
 
 **The shape.** One webhook trigger, three [routes](triggers/README.md). Each route names its own workflow, and they run independently, so a Slack outage does not stop the invoice.
 
@@ -102,7 +102,7 @@ Prefer this over one workflow that does all three. Three workflows means three e
 
 **The shape.** A separate workflow on the **Long** tier, triggered manually or by API rather than by a schedule.
 
-The guard has to be somewhere both workflows can see. A table in `fastn.db` is the safe choice: the live sync records what it has written, the backfill checks that table before writing, and neither redoes the other's work. `fastn.state` has two scopes, `ORG` and `INVOCATION` — `INVOCATION` is definitively too narrow, and if you intend to lean on `ORG` reaching across two different workflows, confirm that on the editor's Docs tab first rather than assuming it from the name.
+The guard has to be somewhere both workflows can see. A table in `fastn.db` is the safe choice: the live sync records what it has written, the backfill checks that table before writing, and neither redoes the other's work. `fastn.state` has two scopes, `ORG` and `INVOCATION`: `INVOCATION` is definitively too narrow, and if you intend to lean on `ORG` reaching across two different workflows, confirm that on the editor's Docs tab first rather than assuming it from the name.
 
 ```javascript
 const done = await fastn.db.query(
@@ -121,9 +121,9 @@ Run it against one customer first, and read the [sync report](../operate/sync-re
 
 **The problem.** You want failures posted to *your* Slack, not the customer's.
 
-**The shape.** Use a Slack connection your organisation owns — one created from **New connection** and scoped `Account level` — rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
+**The shape.** Use a Slack connection your organisation owns (one created from **New connection** and scoped `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
 
-For failure notification specifically, an [alert](../operate/alerts.md) with a Slack destination is simpler than building it into the workflow — and it also catches the case where the workflow itself never ran.
+For failure notification specifically, an [alert](../operate/alerts.md) with a Slack destination is simpler than building it into the workflow, and it also catches the case where the workflow itself never ran.
 
 ---
 
@@ -135,7 +135,7 @@ For failure notification specifically, an [alert](../operate/alerts.md) with a S
 
 Know its boundary: it retries transient failures. Code errors, data errors and out-of-memory never retry, so a bug will not be papered over by attempt three.
 
-If the failure is a timeout rather than a rejection, **Escalate on timeout** retries one tier up — instant → standard — and the escalated instant run returns a queued execution id to poll instead of a synchronous result. The toggle is hidden on the Long tier, which has nowhere further to go.
+If the failure is a timeout rather than a rejection, **Escalate on timeout** retries one tier up (instant → standard) and the escalated instant run returns a queued execution id to poll instead of a synchronous result. The toggle is hidden on the Long tier, which has nowhere further to go.
 
 **Ask for it as:** *"Retry this three times with backoff if the destination is down."*
 
@@ -147,7 +147,7 @@ If the failure is a timeout rather than a rejection, **Escalate on timeout** ret
 
 **The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorised. `/api/v1/unified/crm/contact` is the same call regardless of the stack underneath.
 
-Keep the vendor-specific parts on the direct connector — the two mix freely in one workflow. Watch the entity limits: `Note`, `Channel Message` and `Direct Message` are create-only.
+Keep the vendor-specific parts on the direct connector: the two mix freely in one workflow. Watch the entity limits: `Note`, `Channel Message` and `Direct Message` are create-only.
 
 **Ask for it as:** *"Create the contact through the unified CRM endpoint, not through HubSpot directly."*
 

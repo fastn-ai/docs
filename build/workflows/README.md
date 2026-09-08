@@ -6,7 +6,7 @@ description: The code that runs on a trigger, a schedule, or an agent call.
 
 **Integrations → Workflows** · `/integrations?tab=workflows`
 
-<figure><img src="../../.gitbook/assets/workflows-list.jpg" alt="5 workflows under Workflow, Status, Latest, live and Updated: three Load Test rows Active at v1, one badged 2 triggers off, and sync_tiktok_settlements_cin7 Not published and Unpublished"><figcaption>Connect GitHub and Create workflow sit top-right; the pills filter by execution tier. Every row's <strong>live</strong> cell is an em dash — nothing is deployed.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/workflows-list.jpg" alt="5 workflows under Workflow, Status, Latest, live and Updated: three Load Test rows Active at v1, one badged 2 triggers off, and sync_tiktok_settlements_cin7 Not published and Unpublished"><figcaption>Connect GitHub and Create workflow sit top-right; the pills filter by execution tier. Every row's <strong>live</strong> cell is an em dash, nothing is deployed.</figcaption></figure>
 
 A workflow is JavaScript. One file, `<slug>.js`, exporting one function:
 
@@ -38,7 +38,7 @@ Three status tooltips explain the unpublished state, and the middle one is the s
 
 > Nothing deployed to Live.
 
-**Search workflows** filters by name; pills split the list by execution tier — **All**, **Instant**, **Standard**, **Long**.
+**Search workflows** filters by name; pills split the list by execution tier: **All**, **Instant**, **Standard**, **Long**.
 
 Two buttons sit top-right: **Connect GitHub**, which connects the workspace to a GitHub repository, and **Create workflow**, which gives you an empty one.
 

@@ -10,7 +10,7 @@ description: Short answers to the questions that come up most.
 
 <summary>Do my customers need a fastn account?</summary>
 
-No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorising their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user` — not a fastn login of their own.
+No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorising their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user`, not a fastn login of their own.
 
 </details>
 
@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. The [agent](../build/agent/README.md) writes workflows from a plain description, and iterates on follow-up messages. In fact code editing is switched off in almost every workspace — it is enabled only for the parent organisation — so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. It can be switched on if you want to write code yourself; ask fastn to enable it.
+No. The [agent](../build/agent/README.md) writes workflows from a plain description, and iterates on follow-up messages. In fact code editing is switched off in almost every workspace (it is enabled only for the parent organisation) so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. It can be switched on if you want to write code yourself; ask fastn to enable it.
 
 </details>
 
@@ -26,7 +26,7 @@ No. The [agent](../build/agent/README.md) writes workflows from a plain descript
 
 <summary>What is the difference between a customer and a tenant?</summary>
 
-They are the same thing under two names, and **both are current**. *Customer* is what the dashboard calls it — the Customers screen, the ⌘K search group, the Connections column. *Tenant* is what the plumbing calls it: it is the column header on all three Triggers tables, and the last segment of a connection id, `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`.
+They are the same thing under two names, and **both are current**. *Customer* is what the dashboard calls it: the Customers screen, the ⌘K search group, the Connections column. *Tenant* is what the plumbing calls it: it is the column header on all three Triggers tables, and the last segment of a connection id, `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`.
 
 So do not read *tenant* as legacy vocabulary you can ignore. If a screen or an identifier says tenant, it means one of your customers.
 
@@ -40,7 +40,7 @@ So do not read *tenant* as legacy vocabulary you can ignore. If a screen or an i
 
 <summary>What is the difference between a connector and a connection?</summary>
 
-A **connector** is the definition of a system — its actions, auth methods and webhooks. A **connection** is one customer's authorised link to it, holding the encrypted credential. One connector, many connections.
+A **connector** is the definition of a system: its actions, auth methods and webhooks. A **connection** is one customer's authorised link to it, holding the encrypted credential. One connector, many connections.
 
 </details>
 
@@ -48,7 +48,7 @@ A **connector** is the definition of a system — its actions, auth methods and 
 
 <summary>My customers see "fastn.ai" on the OAuth consent screen. How do I show my own brand?</summary>
 
-Start on the connector's **Auth** tab, which is where a connector's OAuth providers are configured — it shows the auth methods and a providers list. Whether that lets you register your own OAuth application, and what the consent screen then shows, is not something this page can confirm; check the tab for your connector, and ask fastn if it is not there. See [Connectors](../build/connectors/README.md).
+Start on the connector's **Auth** tab, which is where a connector's OAuth providers are configured. It shows the auth methods and a providers list. Whether that lets you register your own OAuth application, and what the consent screen then shows, is not something this page can confirm; check the tab for your connector, and ask fastn if it is not there. See [Connectors](../build/connectors/README.md).
 
 </details>
 
@@ -56,12 +56,12 @@ Start on the connector's **Auth** tab, which is where a connector's OAuth provid
 
 <summary>A connection says Expired or Failed. Can I fix it from the dashboard?</summary>
 
-Not by re-entering the credential — it belongs to the customer, and they re-authorise through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
+Not by re-entering the credential. It belongs to the customer, and they re-authorise through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
 
 The precise meaning of each status is not documented here; treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect" and read the connection's own **Token and activity** section for `Expires`, `Last refreshed` and `Last used`.
 
 {% hint style="warning" %}
-The **Active** / **Inactive** / **Expired** / **Failed** filter chips on the Connections tab currently return zero rows whichever one you pick, even when every row in the unfiltered list shows Active. Do not conclude from an empty filtered list that you have no connections in that state — clear the filter and read the Status column.
+The **Active** / **Inactive** / **Expired** / **Failed** filter chips on the Connections tab currently return zero rows whichever one you pick, even when every row in the unfiltered list shows Active. Do not conclude from an empty filtered list that you have no connections in that state: clear the filter and read the Status column.
 {% endhint %}
 
 </details>
@@ -70,7 +70,7 @@ The **Active** / **Inactive** / **Expired** / **Failed** filter chips on the Con
 
 <summary>What is a workspace connection for?</summary>
 
-Systems your organisation owns rather than your customers — your Slack, your warehouse. In a workflow, each connector is wired either **per customer** or **workspace**, which decides whose credential the call uses.
+Systems your organisation owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **per customer** or **workspace**, which decides whose credential the call uses.
 
 </details>
 
@@ -96,7 +96,7 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 | **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s – 15min   |
 | **Long**     | Returns 202, runs in the background.             | **36 hours**   | 30s – 36h    |
 
-**Instant** only when something is genuinely waiting on the answer — 30 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
+**Instant** only when something is genuinely waiting on the answer: 30 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
 
 </details>
 
@@ -128,7 +128,7 @@ Set a **deduplication key** on the webhook trigger, and add an idempotency guard
 
 <summary>Does a retry policy retry everything?</summary>
 
-No. It retries transient failures. **Code errors, data errors and out-of-memory never retry** — a bug does not get better on the second attempt, and neither does a payload that was always malformed.
+No. It retries transient failures. **Code errors, data errors and out-of-memory never retry**: a bug does not get better on the second attempt, and neither does a payload that was always malformed.
 
 </details>
 
@@ -136,7 +136,7 @@ No. It retries transient failures. **Code errors, data errors and out-of-memory 
 
 <summary>I called the API and nothing ran.</summary>
 
-Check whether the workflow has ever been published. Until a snapshot exists, every call returns `WORKFLOW_NOT_PUBLISHED` — the workflow list shows this as status **Not published** and latest version **Unpublished**. See [HTTP API](api.md).
+Check whether the workflow has ever been published. Until a snapshot exists, every call returns `WORKFLOW_NOT_PUBLISHED`: the workflow list shows this as status **Not published** and latest version **Unpublished**. See [HTTP API](api.md).
 
 </details>
 
@@ -148,7 +148,7 @@ Check whether the workflow has ever been published. Until a snapshot exists, eve
 
 <summary>Is a test API key a sandbox?</summary>
 
-No. A test key reaches the same live connections as a live key and causes the same real writes. It is a separate, separately revocable credential — not a safe one. It is also refused unless the caller sends `X-fastn-Test-Mode: true`.
+No. A test key reaches the same live connections as a live key and causes the same real writes. It is a separate, separately revocable credential, not a safe one. It is also refused unless the caller sends `X-fastn-Test-Mode: true`.
 
 </details>
 
@@ -164,7 +164,7 @@ No. Browser-facing widgets use short-lived embed tokens minted by your backend. 
 
 <summary>Someone left the team. What do I need to do?</summary>
 
-Remove them under [People](../manage/people.md) — their audit history stays. Then check [API keys](../manage/api-keys.md): keys belong to the workspace, not to a person, so removing someone does not revoke keys they created.
+Remove them under [People](../manage/people.md): their audit history stays. Then check [API keys](../manage/api-keys.md): keys belong to the workspace, not to a person, so removing someone does not revoke keys they created.
 
 </details>
 
@@ -200,7 +200,7 @@ In fastn's shared managed Postgres by default, in a schema isolated to your work
 
 <summary>Secret or config?</summary>
 
-Secret if exposure would be an incident — tokens, passwords, keys. Config if you would happily show it to a colleague — endpoints, feature flags, batch sizes. When in doubt, secret.
+Secret if exposure would be an incident (tokens, passwords, keys. Config if you would happily show it to a colleague), endpoints, feature flags, batch sizes. When in doubt, secret.
 
 </details>
 
@@ -208,7 +208,7 @@ Secret if exposure would be an incident — tokens, passwords, keys. Config if y
 
 <summary>What happens when I hit a plan limit?</summary>
 
-New work stops rather than being charged for, and nothing already running is interrupted. Check [Billing](../manage/billing.md) — a sync that stops because of a quota looks exactly like a broken sync until you do.
+New work stops rather than being charged for, and nothing already running is interrupted. Check [Billing](../manage/billing.md): a sync that stops because of a quota looks exactly like a broken sync until you do.
 
 </details>
 
@@ -216,7 +216,7 @@ New work stops rather than being charged for, and nothing already running is int
 
 <summary>I deleted something by mistake.</summary>
 
-Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources — widgets and their integrations among them — are deleted immediately and cannot be restored from that page.
+Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (widgets and their integrations among them), are deleted immediately and cannot be restored from that page.
 
 </details>
 
@@ -228,7 +228,7 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 <summary>Why does the same connector appear twice in the catalogue?</summary>
 
-Because two entries exist for one system — typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
+Because two entries exist for one system: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
 
 The practical consequence: the connector count is a count of *entries*, not of distinct systems, so "354 connectors" is not 354 different products. Check the badge and the provenance line before you connect, so you do not authorise the copy you did not mean.
 
@@ -262,7 +262,7 @@ Known: the **Actions** tab on [Trash](../manage/trash.md) sits on *Loading delet
 
 <summary>The Connections status filters return nothing.</summary>
 
-Also known — every status chip returns zero rows. Clear the filter and read the Status column instead.
+Also known: every status chip returns zero rows. Clear the filter and read the Status column instead.
 
 </details>
 
@@ -270,4 +270,4 @@ Also known — every status chip returns zero rows. Clear the filter and read th
 
 ## Still stuck
 
-Work through [Troubleshooting](../operate/troubleshooting.md) — it is organised by symptom.
+Work through [Troubleshooting](../operate/troubleshooting.md). It is organised by symptom.

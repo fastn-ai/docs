@@ -12,7 +12,7 @@ A trace is recorded for every workflow run that calls a connected system. Where 
 
 **Search traces**, and filters for **All**, **Success**, **Error** and **Pending**.
 
-**Pending** is the state worth watching. A trace that never resolves points at an upstream system that accepted the request and never answered — the failure mode that produces timeouts rather than errors, and the one people find hardest to diagnose.
+**Pending** is the state worth watching. A trace that never resolves points at an upstream system that accepted the request and never answered: the failure mode that produces timeouts rather than errors, and the one people find hardest to diagnose.
 
 ### When the page is empty
 

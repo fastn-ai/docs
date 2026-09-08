@@ -22,27 +22,27 @@ Shown to your team on invitations, comments and audit entries.
 | **Timezone**   | The full IANA list. Every time on screen is shown in this zone. |
 
 {% hint style="info" %}
-Your profile timezone changes how timestamps are *displayed* to you. It does not change when a [schedule trigger](../build/triggers/README.md) fires — a schedule keeps the timezone it was saved with.
+Your profile timezone changes how timestamps are *displayed* to you. It does not change when a [schedule trigger](../build/triggers/README.md) fires: a schedule keeps the timezone it was saved with.
 {% endhint %}
 
 ### Sign in email
 
 Your sign-in address, and where security notices go. It shows a **Verified** badge once confirmed.
 
-Where sign-in is managed by an identity provider, the address is read-only and the page says so — an admin changes it, not you.
+Where sign-in is managed by an identity provider, the address is read-only and the page says so: an admin changes it, not you.
 
 ### Security
 
-Three rows, each showing its current state — **Not set up** until you configure it, with 2FA also flagged **Recommended**.
+Three rows, each showing its current state: **Not set up** until you configure it, with 2FA also flagged **Recommended**.
 
 | Control                       | Notes                                                                              |
 | ----------------------------- | ------------------------------------------------------------------------------------ |
 | **Two factor authentication** | **Recommended**, and **Not set up** by default. A code from an authenticator app, in addition to your magic link or passkey. |
 | **Passkeys**                  | **Not set up** by default. Sign in with Face ID, a fingerprint or a hardware key.    |
-| **Password**                  | Sign-in is passwordless — magic links and passkeys. There is no password to set or change. |
+| **Password**                  | Sign-in is passwordless: magic links and passkeys. There is no password to set or change. |
 
 {% hint style="info" %}
-There is no password on a fastn account, so a second factor is not a backstop behind one — it is the second thing in front of an account that otherwise rests on access to an inbox or a device. If your account is an Owner or Admin, it can change anything in the organisation. Set one up.
+There is no password on a fastn account, so a second factor is not a backstop behind one. It is the second thing in front of an account that otherwise rests on access to an inbox or a device. If your account is an Owner or Admin, it can change anything in the organisation. Set one up.
 {% endhint %}
 
 ### Where you are signed in
@@ -58,4 +58,4 @@ Sign out anything you do not recognise, then check the [audit log](audit-log.md)
 
 ### Switching organisation
 
-The account card at the bottom of the left rail switches between organisations you belong to. Everything else in the dashboard — connectors, workflows, customers, settings — is scoped to whichever one is selected.
+The account card at the bottom of the left rail switches between organisations you belong to. Everything else in the dashboard (connectors, workflows, customers, settings), is scoped to whichever one is selected.

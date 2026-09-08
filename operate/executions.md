@@ -6,7 +6,7 @@ description: Every workflow run, newest first.
 
 **Activity → Executions**
 
-<figure><img src="../.gitbook/assets/activity-executions.jpg" alt="The Executions log: chips reading All 214651, Completed 212338, Failed 2298, Cancelled 15, over six Sync TikTok Orders to Cin7 Core rows, every one Failed with a Dependency Error tag"><figcaption>A daily 3 PM schedule failing the same way every day — the pattern the Workflow filter is for.</figcaption></figure>
+<figure><img src="../.gitbook/assets/activity-executions.jpg" alt="The Executions log: chips reading All 214651, Completed 212338, Failed 2298, Cancelled 15, over six Sync TikTok Orders to Cin7 Core rows, every one Failed with a Dependency Error tag"><figcaption>A daily 3 PM schedule failing the same way every day, the pattern the Workflow filter is for.</figcaption></figure>
 
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 
@@ -46,7 +46,7 @@ Alongside them: **Search executions** and **Refresh**.
 
 ### Opening a run
 
-This is where debugging actually happens. A row expands **inline** — you do not leave the page — into:
+This is where debugging actually happens. A row expands **inline** (you do not leave the page), into:
 
 * A **result banner** for the run, and its **Raw response**.
 * Chips summarising the run: **Steps**, **Success**, **Error**, **Slowest**.
@@ -58,16 +58,16 @@ The Summary JSON carries the keys worth knowing by name:
 | Key                                          | Tells you                                                  |
 | -------------------------------------------- | ------------------------------------------------------------ |
 | `totalSteps`, `succeeded`, `failed`          | How much of the run got through.                            |
-| `slowestStep`, `slowestMs`                   | Where the time went — the first thing to read on a slow run. |
+| `slowestStep`, `slowestMs`                   | Where the time went: the first thing to read on a slow run. |
 | `peakSandboxMB`, `sandboxMemoryLimitMB`      | How close the run came to its memory ceiling.               |
 
 {% hint style="warning" %}
-Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run will not quietly recover the way a transient failure does — it just stops.
+Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run will not quietly recover the way a transient failure does. It just stops.
 {% endhint %}
 
 ### Reading the statuses
 
-**Failed** is a workflow error — bad data, a rejected call, a bug. Expand the row for the result banner and raw response, then check [Traces](traces.md) for the external call behind it.
+**Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row for the result banner and raw response, then check [Traces](traces.md) for the external call behind it.
 
 **Timeout** means the tier's budget ran out. Either the work genuinely needs longer, or a single external call is hanging. Check [Traces](traces.md) before raising the timeout.
 
@@ -77,4 +77,4 @@ Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed witho
 
 ### The per-workflow tab
 
-The **Executions** tab inside a workflow's editor filters differently: its pills are HTTP status codes — **All**, `200`, `201`, `400`, `404`, `422`, `500` — rather than run statuses. Use this page when you want to know *how a run ended*, and that tab when you want to know *what the caller got back*.
+The **Executions** tab inside a workflow's editor filters differently: its pills are HTTP status codes (**All**, `200`, `201`, `400`, `404`, `422`, `500`), rather than run statuses. Use this page when you want to know *how a run ended*, and that tab when you want to know *what the caller got back*.

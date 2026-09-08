@@ -15,19 +15,19 @@ Three tabs: **Connectors** (the default), **Actions** and **Workflows**. The Wor
 | Column                  | Notes                                        |
 | ----------------------- | ---------------------------------------------- |
 | **Name**                | The workflow's display name.                  |
-| **Slug**                | Restored unchanged — see below.               |
+| **Slug**                | Restored unchanged. See below.               |
 | **Deleted**             | When it was moved here.                       |
 | **In trash**            | How long it has been sitting here.            |
 | **Restore**             | Puts it back.                                 |
 | **Delete permanently**  | Removes it for good.                          |
 
 {% hint style="warning" %}
-**The Actions tab currently does not load.** It sits on *Loading deleted actions…* and never resolves. Deleted connector actions are still tracked — this is a defect in the tab, not evidence that nothing is there — but you cannot restore one from this screen while it persists.
+**The Actions tab currently does not load.** It sits on *Loading deleted actions…* and never resolves. Deleted connector actions are still tracked (this is a defect in the tab, not evidence that nothing is there) but you cannot restore one from this screen while it persists.
 {% endhint %}
 
 ### What restore gives you back
 
-Anything here is restored with its slug and history intact. That matters — a workflow that referenced a connector by slug keeps working after a restore, which would not be true if you rebuilt it from scratch.
+Anything here is restored with its slug and history intact. That matters: a workflow that referenced a connector by slug keeps working after a restore, which would not be true if you rebuilt it from scratch.
 
 ### Nothing expires
 
@@ -39,9 +39,9 @@ Nothing is removed automatically. Items stay until you use **Delete permanently*
 
 ### What does not come here
 
-> Other resources — widgets and their integrations among them — are deleted immediately and cannot be restored from this page.
+> Other resources (widgets and their integrations among them), are deleted immediately and cannot be restored from this page.
 
-So the recoverable set is exactly connectors, connector actions and workflows. Anything else — a widget and the integrations configured on it, explicitly — goes when you delete it.
+So the recoverable set is exactly connectors, connector actions and workflows. Anything else (a widget and the integrations configured on it, explicitly), goes when you delete it.
 
 ### In the audit log
 

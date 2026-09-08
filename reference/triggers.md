@@ -30,13 +30,13 @@ A webhook trigger receives HTTP POST requests from external services and routes 
 
 * **Name** (required)
 * **Description** (optional)
-* **Routes** (required) — Map incoming requests to workflows. Click **Add route** to add more.
+* **Routes** (required): Map incoming requests to workflows. Click **Add route** to add more.
 
 Each route has:
 
-* **Workflow** (required) — The target workflow.
-* **Headers** — Key/value pairs.
-* **Optional JSON filters** — Route based on the payload contents (a single webhook can route to different workflows based on different filters).
+* **Workflow** (required): The target workflow.
+* **Headers**: Key/value pairs.
+* **Optional JSON filters**: Route based on the payload contents (a single webhook can route to different workflows based on different filters).
 
 **Advanced options** (expander) reveal:
 
@@ -65,7 +65,7 @@ An app event trigger subscribes to events from a connected app and routes them t
 **Creation fields:**
 
 * **Name**
-* **Connector** — A dropdown of available connectors (\~75).
+* **Connector**: A dropdown of available connectors (\~75).
 
 Selecting a connector with no active connection shows: "No active connection found for this connector. Connect first to use it as a trigger source," with a Connect button. An active connection is required.
 

@@ -21,19 +21,19 @@ const batchSize = await fastn.envConfig.get("BATCH_SIZE");
 
 **Add config** opens the **Add Config** dialog, which takes two things.
 
-**Key \*** is the string your code passes — `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`.
+**Key \*** is the string your code passes: `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`.
 
 **Values per environment** is one editor per environment, labelled with the display name and the slug: **Test (test)**, **Live (live)**, and a row for each named environment you have added. A value may be raw text or valid JSON.
 
 {% hint style="info" %}
-**Leaving an environment's editor blank skips that environment on save** — it does not write an empty value. That is usually what you want when you are only setting up test, but it means a config can silently have no value in live.
+**Leaving an environment's editor blank skips that environment on save**: it does not write an empty value. That is usually what you want when you are only setting up test, but it means a config can silently have no value in live.
 {% endhint %}
 
 The same key resolves to a different value depending on which environment the run is in, so your code never branches on environment.
 
 ### Configs versus secrets
 
-A config's value is entered and edited in the dashboard rather than written once and hidden, which is the practical difference from a [secret](secrets.md): you can see what an environment is set to without running anything. Treat that as the working assumption — anything whose exposure would be an incident belongs in a secret regardless.
+A config's value is entered and edited in the dashboard rather than written once and hidden, which is the practical difference from a [secret](secrets.md): you can see what an environment is set to without running anything. Treat that as the working assumption: anything whose exposure would be an incident belongs in a secret regardless.
 
 ### Choosing between a config and a secret
 
@@ -58,4 +58,4 @@ Point test at a sandbox and live at production, without a line of conditional co
 | `BATCH_SIZE`        | `10`                              | `500`                         |
 | `DRY_RUN`           | `true`                            | `false`                       |
 
-Which environment a run uses is decided by the `x-fastn-env` header or the trigger route — see [Environments](environments.md).
+Which environment a run uses is decided by the `x-fastn-env` header or the trigger route. See [Environments](environments.md).

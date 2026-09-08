@@ -8,7 +8,7 @@ description: Encrypted values your workflows read at runtime.
 
 > Encrypted values your workflows read at runtime. Scope a secret to a customer or environment for per-tenant overrides.
 
-<figure><img src="../.gitbook/assets/create-secret.jpg" alt="The Create Secret side panel: Name placeholdered STRIPE_SECRET_KEY above the note UPPER_SNAKE_CASE used as the argument to fastn.secrets.get(), Type set to Text, an empty Value box, Customer set to All customers (org-wide), and Cancel and Create Secret in the footer"><figcaption>The panel scrolls past what is shown here — an <strong>Environment</strong> selector follows <strong>Customer</strong>.</figcaption></figure>
+<figure><img src="../.gitbook/assets/create-secret.jpg" alt="The Create Secret side panel: Name placeholdered STRIPE_SECRET_KEY above the note UPPER_SNAKE_CASE used as the argument to fastn.secrets.get(), Type set to Text, an empty Value box, Customer set to All customers (org-wide), and Cancel and Create Secret in the footer"><figcaption>The panel scrolls past what is shown here, an <strong>Environment</strong> selector follows <strong>Customer</strong>.</figcaption></figure>
 
 A secret is written once and never shown again, so a key never has to live in your code:
 
@@ -28,14 +28,14 @@ Once secrets exist, the page is a table:
 | ------ | ----- |
 | **Name** | The UPPER_SNAKE_CASE name, which is what your code passes to `fastn.secrets.get()`. |
 | **Type** | `Text` or `JSON`. |
-| **Scope** | Where the value applies — `org` for an org-wide default, otherwise the customer and/or environment it is pinned to. |
+| **Scope** | Where the value applies: `org` for an org-wide default, otherwise the customer and/or environment it is pinned to. |
 | **Created** / **Updated** | Dates. Overwriting a value moves **Updated**, since a secret is replaced rather than versioned. |
 
-Each row ends in **Edit** and a delete control. The value itself is never shown in the table — only its metadata.
+Each row ends in **Edit** and a delete control. The value itself is never shown in the table: only its metadata.
 
 ### Creating one
 
-**New secret** opens the **Create Secret** side panel, which has five fields. The panel scrolls — **Environment** sits below **Customer**, past the fold.
+**New secret** opens the **Create Secret** side panel, which has five fields. The panel scrolls: **Environment** sits below **Customer**, past the fold.
 
 | Field             | Notes                                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ To change a value, write a new one over the same name.
 
 ### Scoping
 
-A secret can be org-wide, or scoped to a **customer**, an **environment**, or both — which is what gives you per-tenant overrides without branching in code. The same `fastn.secrets.get("PARTNER_TOKEN")` call is what runs for everybody.
+A secret can be org-wide, or scoped to a **customer**, an **environment**, or both, which is what gives you per-tenant overrides without branching in code. The same `fastn.secrets.get("PARTNER_TOKEN")` call is what runs for everybody.
 
 {% hint style="info" %}
 How fastn picks between a customer-scoped and an environment-scoped value when both could match is not documented here. If you rely on overlapping scopes, set one up and confirm which value a run actually reads before you build on it.
@@ -57,7 +57,7 @@ How fastn picks between a customer-scoped and an environment-scoped value when b
 
 ### What belongs here
 
-Third-party API tokens, database credentials, signing keys, webhook signing secrets — anything you would not paste into a ticket.
+Third-party API tokens, database credentials, signing keys, webhook signing secrets: anything you would not paste into a ticket.
 
 What does **not** belong here: connector credentials. Those live on [connections](../build/connections/README.md) and are managed by fastn, including OAuth refresh.
 

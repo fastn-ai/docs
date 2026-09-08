@@ -8,7 +8,7 @@ The page header states the intent plainly:
 
 > Every system your customers can authorise. Depth on the ones that block deals, not a catalogue count.
 
-Connectors marked **managed** are maintained by fastn — when the vendor ships a breaking change, you get a proposal under [Pending updates](../connector-updates.md) rather than a broken sync. Ones you build yourself are badged **Custom**. Either badge is replaced by **Connected** once at least one connection exists.
+Connectors marked **managed** are maintained by fastn: when the vendor ships a breaking change, you get a proposal under [Pending updates](../connector-updates.md) rather than a broken sync. Ones you build yourself are badged **Custom**. Either badge is replaced by **Connected** once at least one connection exists.
 
 | Control            | What it filters                                          | URL              |
 | ------------------ | ---------------------------------------------------------- | ---------------- |
@@ -22,12 +22,12 @@ A search that matches nothing shows `No connectors match "x"`, *Try another sear
 
 **Card anatomy.** Favicon, name, badge, description, an `OAuth 2.0` chip where it applies, and a provenance string. The footer button reads **Connect**, or **Add another connection** with a chevron offering **Reconnect** and **Disconnect**. The `⋯` menu holds **Select**, **Edit**, **Export** and **Delete**.
 
-**Header controls.** **Create connector** opens the create dialog. **Import** is a bare file input — it takes a JSON connector definition with no intermediate dialog. Selecting cards (via `⋯ → Select`) reveals **Export Selected (n)**.
+**Header controls.** **Create connector** opens the create dialog. **Import** is a bare file input: it takes a JSON connector definition with no intermediate dialog. Selecting cards (via `⋯ → Select`) reveals **Export Selected (n)**.
 
 {% hint style="warning" %}
 Three things about this list are known to mislead, and are worth knowing before you count anything:
 
-* The catalogue contains duplicates — Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core each appear twice, once `managed` and once `Custom` — so the total is not a count of distinct systems.
+* The catalogue contains duplicates (Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core each appear twice, once `managed` and once `Custom`) so the total is not a count of distinct systems.
 * A connector badged `Connected` in the list can still report `0 connections` on its own detail page.
 * Provenance is written three different ways for the same thing: *Managed by Fastn*, *Managed by fastn.ai* and *Managed by fastn*.
 {% endhint %}

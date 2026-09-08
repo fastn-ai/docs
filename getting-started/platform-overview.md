@@ -21,11 +21,11 @@ The Home page has two states depending on where you are in the setup process.
 
 When you sign into Fastn as a new user, a Setup Assistant will activate prompting you to place in your company's website. The Setup Assistant will then guide you through a setup pipeline which consist of five steps:
 
-1. **Use cases —** What your customers need to integrate.
-2. **Connectors —** The integration building blocks your platform offers.
-3. **Workflows —** The integration logic that connects with the connectors and triggers.
-4. **Embed —** The customer-facing experiecing inside your product.
-5. **Live —** Deployed on your platform and ready for your customer.
+1. **Use cases:** What your customers need to integrate.
+2. **Connectors:** The integration building blocks your platform offers.
+3. **Workflows:** The integration logic that connects with the connectors and triggers.
+4. **Embed:** The customer-facing experiecing inside your product.
+5. **Live:** Deployed on your platform and ready for your customer.
 
 On the backend, AI agents research your company, recommend connectors, and help you build your first integrations. The right sidebar tracks your progress per setup pipeline.
 
@@ -215,10 +215,10 @@ You can customize limits per customer with the **"Customize Customer Limits"** b
 
 ### Security model
 
-**Authentication** — Keycloak-based OIDC with JWT tokens. Social login via GitHub and Google.
+**Authentication**: Keycloak-based OIDC with JWT tokens. Social login via GitHub and Google.
 
-**Authorization (RBAC)** — 6 system roles (Owner, Admin, Developer, Operator, Viewer, End User) with granular permissions across Connectors, Connections, Workflows, Agents, and Tools. Custom roles supported.
+**Authorization (RBAC)**: 6 system roles (Owner, Admin, Developer, Operator, Viewer, End User) with granular permissions across Connectors, Connections, Workflows, Agents, and Tools. Custom roles supported.
 
-**Data isolation (RLS)** — Row-Level Security policies on PostgreSQL tables ensure customer data is isolated at the database level.
+**Data isolation (RLS)**: Row-Level Security policies on PostgreSQL tables ensure customer data is isolated at the database level.
 
-**Data residency** — Customers can be configured for US, EU, or APAC data residency.
+**Data residency**: Customers can be configured for US, EU, or APAC data residency.

@@ -6,7 +6,7 @@ description: Deployment stages, and the GitHub review gate in front of them.
 
 **Settings → Environments**
 
-<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page: a GitHub card reading No repository connected beside a Connect GitHub button, and a single table row — Live, slug live, Default, Requires review off, Protected"><figcaption>What a workspace looks like before anyone adds a stage: one built-in Live target and no review gate in front of it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page: a GitHub card reading No repository connected beside a Connect GitHub button, and a single table row, Live, slug live, Default, Requires review off, Protected"><figcaption>What a workspace looks like before anyone adds a stage: one built-in Live target and no review gate in front of it.</figcaption></figure>
 
 > Test and Live are built in. Add a named environment here when you want another stage, such as staging or review.
 
@@ -28,11 +28,11 @@ Live carries a **Protected** badge. Read that as fastn marking it as the one you
 | **Name \*** | Display name, for example `Staging`.                |
 | **Slug \*** | What goes in `x-fastn-env` and in trigger routes. The form notes that `test` and `live` are built in, so those two are taken. |
 
-A named environment runs whatever version is deployed to it. If nothing has been deployed there, there is no code for a trigger pointed at it to run — deploy before you point traffic at a new stage.
+A named environment runs whatever version is deployed to it. If nothing has been deployed there, there is no code for a trigger pointed at it to run: deploy before you point traffic at a new stage.
 
 ### The special value `test`
 
-In trigger routes and in the `x-fastn-env` header, `test` is not a deployed environment — it means *the workflow's latest published version*. Any other slug means *the version deployed to that environment*. That is why the table is a list of deployment targets, with `test` handled by the platform rather than sitting among them.
+In trigger routes and in the `x-fastn-env` header, `test` is not a deployed environment. It means *the workflow's latest published version*. Any other slug means *the version deployed to that environment*. That is why the table is a list of deployment targets, with `test` handled by the platform rather than sitting among them.
 
 ### GitHub
 
@@ -40,7 +40,7 @@ A **GitHub** panel sits above the table, explaining what connecting a repository
 
 > Connect a repository and promoting to a reviewed environment opens a pull request instead of deploying straight away.
 
-Until you connect one, its status reads **No repository connected** and the only control is **Connect GitHub**. That is what a new workspace sees, and it is worth knowing that the review gate does nothing on its own — it needs both a repository here and **Requires review** switched on for the environment you are promoting into.
+Until you connect one, its status reads **No repository connected** and the only control is **Connect GitHub**. That is what a new workspace sees, and it is worth knowing that the review gate does nothing on its own: it needs both a repository here and **Requires review** switched on for the environment you are promoting into.
 
 Once a repository is connected the panel shows it, along with controls for mirroring workflows to the repo and for disconnecting. Those controls were not captured on a connected workspace, so check what disconnecting does to anything already deployed before you use it rather than assuming it is inert.
 

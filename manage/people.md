@@ -6,7 +6,7 @@ description: Who can see and change things in this workspace.
 
 **Settings → People**
 
-<figure><img src="../.gitbook/assets/settings-people.jpg" alt="The People list with four rows, names and addresses obscured — three Admins and one Owner, all Active with no extra Access, under the chips Everyone 4, Owner 1 and Admin 3, each row ending in Change role and a delete control"><figcaption>Change role is greyed out on the Owner's own row.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-people.jpg" alt="The People list with four rows, names and addresses obscured, three Admins and one Owner, all Active with no extra Access, under the chips Everyone 4, Owner 1 and Admin 3, each row ending in Change role and a delete control"><figcaption>Change role is greyed out on the Owner's own row.</figcaption></figure>
 
 | Column     | Notes                                                            |
 | ---------- | ------------------------------------------------------------------ |
@@ -16,7 +16,7 @@ description: Who can see and change things in this workspace.
 | **Added**  | When they joined.                                                |
 | **Access** | Any scoping beyond the role. It showed `—` in every observed row. |
 
-**Search by name or email** narrows the list. Filter chips carry a count per role — Everyone, Owner, Admin and so on — and the dropdown on the right filters by status. Each row carries a checkbox; no bulk-action control was visible alongside them.
+**Search by name or email** narrows the list. Filter chips carry a count per role (Everyone, Owner, Admin and so on) and the dropdown on the right filters by status. Each row carries a checkbox; no bulk-action control was visible alongside them.
 
 ### Inviting someone
 
@@ -26,7 +26,7 @@ If you have set up [domain joining](general.md), people on that domain can reque
 
 ### Changing a role
 
-**Change role** on any row. What you may assign is bounded by your own role — you cannot grant more than you hold.
+**Change role** on any row. What you may assign is bounded by your own role. You cannot grant more than you hold.
 
 **Change role** is disabled on the Owner's own row, so the Owner's role cannot be reassigned from this screen. There is exactly one Owner per organisation.
 

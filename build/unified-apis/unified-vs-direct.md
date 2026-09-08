@@ -10,7 +10,7 @@ description: When to reach for a unified API and when to call the connector dire
 | You want one code path regardless of the customer's stack   | The operation has no meaningful equivalent elsewhere        |
 | The fields you need are common across providers             | You are already deep in one vendor's model                  |
 
-The two are not exclusive — a workflow can use a unified endpoint for the common path and a direct connector action for the vendor-specific part.
+The two are not exclusive: a workflow can use a unified endpoint for the common path and a direct connector action for the vendor-specific part.
 
 ### The All providers filter
 

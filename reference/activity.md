@@ -14,7 +14,7 @@ The section has four tabs: **Events, Traces, Alerts, Executions**.
 
 ### Events
 
-Heading: "Events" — "Monitor incoming and outgoing integration events."
+Heading: "Events": "Monitor incoming and outgoing integration events."
 
 Tracks the integration events flowing through your workspace.
 
@@ -24,7 +24,7 @@ Tracks the integration events flowing through your workspace.
 
 ### Traces
 
-Heading: "Traces" — "Monitor connector execution traces and performance."
+Heading: "Traces": "Monitor connector execution traces and performance."
 
 A trace represents a connector execution. Use this tab to inspect connector-level performance and diagnose issues.
 
@@ -33,9 +33,9 @@ A trace represents a connector execution. Use this tab to inspect connector-leve
 
 ### Executions
 
-Heading: "Executions" — "Monitor workflow executions across all workflows."
+Heading: "Executions": "Monitor workflow executions across all workflows."
 
-This is the cross-workflow execution log — every run of every workflow in one place. (For the executions of a single workflow, the workflow editor has its own Executions tab.)
+This is the cross-workflow execution log: every run of every workflow in one place. (For the executions of a single workflow, the workflow editor has its own Executions tab.)
 
 **Columns:**
 
@@ -58,7 +58,7 @@ This is the cross-workflow execution log — every run of every workflow in one 
 
 ### Alerts
 
-Heading: "Alert Rules" — "Configure alert rules to monitor connector and workflow performance."
+Heading: "Alert Rules": "Configure alert rules to monitor connector and workflow performance."
 
 Create rules that notify you when a metric crosses a threshold. A **Create Alert** button is in the top-right; the empty state reads "No alert rules configured" with a "Create your first alert" button.
 

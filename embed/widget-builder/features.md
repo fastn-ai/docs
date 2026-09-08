@@ -8,7 +8,7 @@ description: "The Features tab: optional capabilities your customers get inside 
 
 Optional capabilities your customers get inside the widget.
 
-**Available now** — both off by default.
+**Available now**: both off by default.
 
 | Feature                | What it does                                                                         |
 | ---------------------- | -------------------------------------------------------------------------------------- |

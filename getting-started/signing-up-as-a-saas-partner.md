@@ -12,8 +12,8 @@ You can sign up with a business email, Fastn validates your company, and the Set
 
 You'll need:
 
-* **A business email address** — Personal email providers (Gmail, Yahoo, Outlook, etc.) are blocked. Use your company email.
-* **Your SaaS product URL** — Fastn's AI will research your company using this to understand your product, customers, and integration needs.
+* **A business email address**: Personal email providers (Gmail, Yahoo, Outlook, etc.) are blocked. Use your company email.
+* **Your SaaS product URL**: Fastn's AI will research your company using this to understand your product, customers, and integration needs.
 
 From here on, the Setup Assistant handles integration discovery and configuration during onboarding.
 
@@ -21,7 +21,7 @@ From here on, the Setup Assistant handles integration discovery and configuratio
 
 1. Go to [live.fastn.ai](https://live.fastn.ai/).
 2. Enter your business email address and company details.
-3. Fastn validates your company in the background — it checks that you're a legitimate SaaS business using publicly available information about your domain and product.
+3. Fastn validates your company in the background. It checks that you're a legitimate SaaS business using publicly available information about your domain and product.
 4. Once validated, you land in the dashboard and the Setup Assistant starts immediately.
 
 The process takes a few minutes. If your domain is already registered with Fastn, you'll be directed to join the existing organization rather than creating a new one.
@@ -40,7 +40,7 @@ The Setup Assistant walks you through each stage of configuring your integration
 
 #### Step 1: Use cases
 
-The AI researches your company automatically. It doesn't just ask you what you need — it analyzes publicly available data across ten categories:
+The AI researches your company automatically. It doesn't just ask you what you need. It analyzes publicly available data across ten categories:
 
 * Company profile
 * Existing integrations
@@ -82,8 +82,8 @@ This is where the AI builds your integration logic. The right sidebar shows sub-
 
 **Connector setup happens inline.** If your own app needs a connector (which it usually does), the AI flags this: "Your app needs its own connector before I can plan the integration." Auth forms appear right in the chat:
 
-* **API Key auth** — A tabbed form with fields for the key and configuration.
-* **OAuth** — A form with Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal.
+* **API Key auth**: A tabbed form with fields for the key and configuration.
+* **OAuth**: A form with Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal.
 
 **Field mapping happens inline.** Once connectors are ready, the AI generates field mappings between systems. You see a **"WE'VE SET THIS UP FOR YOU"** banner with mapping rows showing source fields, target fields, and a **Change** button for each. Fixed values appear as colored badges. Click **"Looks good, turn on"** to approve.
 
@@ -97,7 +97,7 @@ This is where the AI builds your integration logic. The right sidebar shows sub-
 
 #### Step 4: Embed
 
-The Widget Builder opens. Configure what your customers will see — the integration portal embedded inside your product. You control which integrations appear, the layout, branding, and which widget sections are visible (AI Assistant, Search Bar, Apps, Workflows, Insights).
+The Widget Builder opens. Configure what your customers will see: the integration portal embedded inside your product. You control which integrations appear, the layout, branding, and which widget sections are visible (AI Assistant, Search Bar, Apps, Workflows, Insights).
 
 > **Screenshot needed:** Widget Builder showing the left builder panel and right live preview.
 

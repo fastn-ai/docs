@@ -12,7 +12,7 @@ Base URL: `https://live.fastn.ai`
 
 | Header            | Required     | Description                                       |
 | ----------------- | ------------ | ------------------------------------------------- |
-| `x-fastn-api-key` | Yes          | Your API key (Settings → API Keys — Test or Live) |
+| `x-fastn-api-key` | Yes          | Your API key (Settings → API Keys: Test or Live) |
 | `Content-Type`    | For POST/PUT | `application/json`                                |
 
 {% hint style="info" %}
@@ -139,7 +139,7 @@ Base URL: `https://live.fastn.ai`
 | 404         | Resource not found                      |
 | 409         | Resource conflict or version mismatch   |
 | 422         | Validation error                        |
-| 429         | Rate limited — check Retry-After header |
+| 429         | Rate limited: check Retry-After header |
 | 500         | Server error                            |
 
 ### Rate limiting
