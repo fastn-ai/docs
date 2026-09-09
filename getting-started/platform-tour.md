@@ -50,7 +50,7 @@ One prompt box: *What do you want to build?* Type an integration in plain words 
 
 The BUILD group holds two nav items: **Integrations**, which expands into the six pages below, and **Widgets**.
 
-<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 354 catalogue cards (AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha!), each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 351 catalogue cards (AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha!), each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
 
 | Page                  | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |

@@ -29,7 +29,7 @@ Each connector card shows either **Connect** (if not yet authenticated) or **+ A
 
 ### Available connectors
 
-The platform has 40+ connectors. Verified examples include:
+The catalogue holds several hundred connectors. These are verified examples, not the full list:
 
 **CRM & Sales:** Salesforce, HubSpot, Dynamics 365 CRM (Dataverse)
 
