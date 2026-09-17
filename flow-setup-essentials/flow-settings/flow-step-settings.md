@@ -179,5 +179,5 @@ Use this table to decide which features to apply during flow development:
 ## Related
 
 * [Flow Settings](./) — configure flow-level behavior (type, validation, authentication, visuals)
-* [Debugging & Troubleshooting](../../debugging-and-troubleshooting.md) — use the Test button, Logs page, and Logger step to diagnose flow issues
+* [Debugging & Troubleshooting](../../operate/troubleshooting.md) — use the Test button, Logs page, and Logger step to diagnose flow issues
 * [Connectors](../designing-a-flow/connectors.md) — connect your flow to external services and APIs
