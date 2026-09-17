@@ -12,9 +12,9 @@ Everything under Build exists so that this screen can do its job. The widget is 
 
 Two pages cover it:
 
-{% content-ref url="widget-builder.md" %}[Widget builder](widget-builder/README.md){% endcontent-ref %}
+{% content-ref url="widget-builder/README.md" %}[Widget builder](widget-builder/README.md){% endcontent-ref %}
 
-{% content-ref url="embedding.md" %}[Embedding the widget](embedding/README.md){% endcontent-ref %}
+{% content-ref url="embedding/README.md" %}[Embedding the widget](embedding/README.md){% endcontent-ref %}
 
 ### There is no widget list
 

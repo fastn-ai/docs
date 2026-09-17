@@ -7,7 +7,7 @@ hidden: true
 
 Fastn's AI agents build workflows from natural language descriptions. You can simply describe the workflow and what data to sync, between which systems, and the agent sets up the connectors, configures authentication, maps the  fields, generates test cases, and then produces the workflow code with the addition of even visualizing it.
 
-**Prerequisites:** [Your First Integration,](../../getting-started/your-first-integration.md) by now you should know what workflows and triggers are.&#x20;
+**Prerequisites:** [Your First Integration,](../../getting-started/quickstart.md) by now you should know what workflows and triggers are.&#x20;
 
 ### Where to start
 
