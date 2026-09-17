@@ -9,6 +9,7 @@
   * [Platform tour](getting-started/platform-tour.md)
   * [Quickstart: your first integration](getting-started/quickstart.md)
   * [Core concepts](getting-started/concepts.md)
+* [Getting help](getting-help.md)
 
 ## Tutorials
 
