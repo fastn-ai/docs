@@ -74,6 +74,7 @@
 
 * [Widgets](embed/README.md)
 * [Widget builder](embed/widget-builder/README.md)
+  * [Edit Integration](embed/widget-builder/edit-integration.md)
   * [Layout](embed/widget-builder/layout.md)
   * [Style](embed/widget-builder/style.md)
   * [Features](embed/widget-builder/features.md)
