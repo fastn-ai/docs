@@ -7,7 +7,7 @@ hidden: true
 
 # Configuring a Connector
 
-**Prerequisites:** [Your First Integration](../../getting-started/your-first-integration.md).
+**Prerequisites:** [Your First Integration](../../getting-started/quickstart.md).
 
 ### Two ways to create a connector
 

@@ -6,7 +6,7 @@ hidden: true
 
 Customers expect your product to work seamlessly with the tools they already rely on. Fastn makes it easy to deliver native integrations that connect with your users' apps, without the overhead of building and maintaining complex backend infrastructure.
 
-Fastn provides access to over 15000+ tools through its extensive library of connectors, enabling your AI agents to automate and orchestrate workflows across a vast ecosystem of SaaS apps and services.
+Fastn provides access to a broad library of connectors, enabling your AI agents to automate and orchestrate workflows across a vast ecosystem of SaaS apps and services.
 
 **With Fastn, you get:**
 
@@ -19,13 +19,13 @@ Fastn provides access to over 15000+ tools through its extensive library of conn
 * **Built-in monitoring and visibility**\
   Track integration activity, catch issues early, and get clear insights into how everything's performing.
 
-### Integrate Instantly with 1000+ Connectors
+### Integrate Instantly with Prebuilt Connectors
 
 _Connect Everything in Your Stack_
 
-Fastn includes a growing library of[ 100&#x30;**+ Connectors**](https://fastn.ai/integrations) that are pre-built to unify your tech ecosystem. No more writing custom integration code; just plug, play, and automate.
+Fastn includes a growing library of[ **prebuilt Connectors**](https://fastn.ai/integrations) that are pre-built to unify your tech ecosystem. No more writing custom integration code; just plug, play, and automate.
 
-<figure><img src="../../.gitbook/assets/image (378).png" alt="Fastn connector library showing 1000+ prebuilt integrations across popular apps and services"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (378).png" alt="The Fastn connector library, showing prebuilt integrations across popular apps and services"><figcaption></figcaption></figure>
 
 New connectors are constantly being added via the Fastn Marketplace, where you can also find reusable widgets, logic modules, and third-party integrations ready to drop into your flows.
 
