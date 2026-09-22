@@ -36,38 +36,13 @@ An integration that moves data between two systems shows both logos and a direct
 
 ### Edit Integration
 
-The pencil on a row opens **Edit Integration**, which is where most of the configuration actually lives.
+The pencil on a row opens **Edit Integration**, where most of the configuration lives: the configuration template, activation mode, customer visibility, the connectors and their per-connector overrides, the workflows that auto-bind to every connected customer, triggers, and the callbacks that run a workflow when a customer activates or changes something.
 
-| Field                      | Notes                                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------------------- |
-| **NAME**                   | What the customer sees on the card.                                                        |
-| **CONFIGURATION TEMPLATE** | **Edit field mappings & sync rules**: the defaults a customer starts from.                |
-| **Widget enabled**         | Switch. Off hides the integration from the widget without removing it.                     |
-| **Activation mode**        | **Single activation** (default) or **Multi-connection**.                                   |
-| **Customer visibility**    | **All customers** (default) or **Specific customers**.                                     |
-| **Connectors**             | The connectors this integration uses.                                                      |
-| **UNIFIED APIS**           | Unified entities this integration uses.                                                    |
-| **Workflows**              | Bound automatically on **Save and publish**.                                               |
-| **Triggers**               | Each trigger has a gear for its template defaults and for whether the end user may edit it. |
-| **Trigger categories**     | Groups triggers for the customer.                                                          |
-
-**Callbacks** send your backend an HTTP call when a customer does something in the widget. There are six:
-
-| Callback                       | Fires when                                       |
-| ------------------------------ | -------------------------------------------------- |
-| **Customer activates**         | A customer turns the integration on.              |
-| **Customer deactivates**       | A customer turns it off.                          |
-| **Customer changes settings**  | A customer edits its configuration.               |
-| **Customer creates a trigger** | A customer adds a trigger.                        |
-| **Customer updates a trigger** | A customer edits one.                             |
-| **Customer deletes a trigger** | A customer removes one.                           |
-
-{% hint style="info" %}
-Callbacks are how your own product learns what happened in the widget: a customer activating an integration is usually something your billing, onboarding or support tooling wants to know about.
-{% endhint %}
+It has a page of its own: [Edit Integration](edit-integration.md).
 
 ### In this section
 
+* [Edit Integration](edit-integration.md)
 * [Layout](layout.md)
 * [Style](style.md)
 * [Features](features.md)
