@@ -8,6 +8,8 @@ description: "Every field in the Edit Integration dialog: connectors, workflows,
 
 Each row in the INTEGRATIONS panel carries a status dot, a **pencil** and a **trash**. The pencil opens **Edit Integration**, and this dialog is where most of an integration's behaviour is configured. The trash removes the integration from the widget.
 
+<figure><img src="../../.gitbook/assets/widget-edit-integration.jpg" alt="The Edit Integration dialog: a NAME field reading TikTok Shop, a CONFIGURATION TEMPLATE row for field mappings and sync rules, a Widget enabled switch, Activation mode set to Multi-connection, and Customer visibility set to All customers"><figcaption>Everything above the Connectors list: identity, status, activation mode and visibility.</figcaption></figure>
+
 ## Identity and template
 
 | Field | What it does |
@@ -45,6 +47,8 @@ The systems this integration connects. Search the catalogue and add them; each s
 
 ### Per-connector settings
 
+<figure><img src="../../.gitbook/assets/widget-connector-settings.jpg" alt="The TikTok Shop settings panel reading Override only what differs from the connector defaults, an AUTH PROVIDER select on Use platform default, a Show logo switch turned on, and a Delete on deactivate switch turned off"><figcaption>The gear on a connector chip. Only what you change here overrides the connector default.</figcaption></figure>
+
 The gear on a connector chip opens **&lt;Connector&gt; settings**, which *override only what differs from the connector defaults*.
 
 | Setting | What it does |
@@ -58,6 +62,8 @@ The gear on a connector chip opens **&lt;Connector&gt; settings**, which *overri
 {% hint style="warning" %}
 **Delete on deactivate is destructive.** Deleting a connection is permanent. Any workflow, trigger or other integration using that connector for that customer stops working until the customer reconnects. Leave it off if connections are shared across more than one integration.
 {% endhint %}
+
+<figure><img src="../../.gitbook/assets/widget-integration-bindings.jpg" alt="The lower half of the dialog: a UNIFIED APIS picker showing CRM with 10 entities, Documents with 2, Knowledge Base with 1, Messaging with 2 and Project Management with 1, above collapsed Workflows, Triggers and Callbacks sections each reading None"><figcaption>Unified API categories, then the three binding sections. All three read <strong>None</strong> on a new integration.</figcaption></figure>
 
 ## Unified APIs
 
@@ -74,6 +80,8 @@ Binding happens **on Save & Publish**, not when you tick the box.
 ## Triggers
 
 Triggers the customer gets with this integration. Each has a gear for its template defaults and for whether the end user may edit it. A fresh integration reads **None**.
+
+<figure><img src="../../.gitbook/assets/widget-callbacks.jpg" alt="The Callbacks section expanded, listing Customer activates, Customer deactivates, Customer changes settings, Customer creates a trigger, Customer updates a trigger and Customer deletes a trigger, each reading Not set with a gear"><figcaption>Six lifecycle events. Each one runs a workflow you choose with the gear.</figcaption></figure>
 
 ## Callbacks
 
