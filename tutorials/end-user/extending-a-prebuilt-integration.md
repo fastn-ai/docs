@@ -15,7 +15,7 @@ This page is about **what you can change and how to ask for it**. For the click-
 
 | Route | Use it when | Where |
 | --- | --- | --- |
-| **Ask the agent** | You can describe the outcome but not the field names. Fastest for anything involving more than one field. | The **AI Assistant** section of the widget, or **Configure** on a connected app |
+| **Ask the agent** | You can describe the outcome but not the field names. Fastest for anything involving more than one field. | The **AI assistant** prompt box in the widget |
 | **Edit it yourself** | You know exactly which field or filter is wrong. | **Configure** → the Config view |
 
 Both write to the same configuration. Neither needs a developer.
@@ -45,7 +45,7 @@ If it guesses a field wrong, re-pick the field on that one row rather than re-pr
 > **Screenshot needed:** the configuration dialog immediately after the agent finishes, showing the field-mapping rows it wrote and the filter it added, with the plain-language description visible on each row.
 
 {% hint style="info" %}
-**First time on an integration?** There may be no configuration at all yet. Clicking **Configure** then shows a prompt to _Run the Integration Agent to set up field mappings and filters_ — let it do the first pass, then adjust. Starting from the agent's draft is always less work than building mappings from an empty list.
+**First time on an integration?** There may be no configuration at all yet. **Configure** then shows _No configuration found for this widget_, with the note that _The Integration Agent sets up field mappings and filters for you_ — and, for a customer, _Ask whoever administers this workspace to finish setting it up._ That first pass is your provider's to run, not yours: the button that starts it needs an operator role, so it is deliberately not offered to a customer session rather than sent to a dead end. Ask them to run it once, and everything below is yours to adjust from then on.
 {% endhint %}
 
 ### What the agent will not do
@@ -74,7 +74,7 @@ Check the **Insights** view after the next run to confirm it succeeded with your
 ### If something is not there
 
 * **No Configure button on an app** — that integration was shipped as fixed. Your provider decides what is configurable.
-* **No AI Assistant in the widget** — it is a widget section like any other, and your provider may have switched it off.
+* **No AI assistant in the widget** — it is a widget section like any other (on by default), and your provider may have switched it off.
 * **The change saved but nothing happened** — confirm a run has actually happened since you saved, then check that run in Insights.
 
 In all three cases the answer is the same: contact your SaaS provider's support team, not fastn. They own the widget you are looking at.
