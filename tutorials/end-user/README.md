@@ -23,6 +23,6 @@ These tutorials are for the people who use integrations through the widget embed
 
 [**Getting Alerted**](getting-alerted.md) — Set up your own alerts so a broken or stalled integration tells you, instead of a colleague telling you.
 
-[**Connecting Claude and Other AI Clients**](connecting-claude.md) — Reaching your integrations from an MCP client: what exists today, and what does not.
+[**Connecting Claude and Other AI Clients**](connecting-claude.md) — Copy the MCP URL from a share link and drive your integrations from Claude, with no fastn account.
 
 [**Viewing Sync Status & History** ](viewing-sync-status-and-history.md)— Check what's syncing, view execution history, and troubleshoot when something fails.
