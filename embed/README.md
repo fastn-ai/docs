@@ -22,7 +22,13 @@ Two pages cover it:
 
 ### The preview
 
-The preview renders the widget at **Mobile**, **Tablet** and **Desktop** widths, with **Tablet** selected by default. The tenant selector at the top right, defaulting to **View as admin**, renders the widget as any one of your customers, so you can see their actual connection states rather than a mock-up. **Preview** opens it on its own.
+The preview renders the widget at **Mobile**, **Tablet** and **Desktop** widths, with **Tablet** selected by default. The tenant selector at the top right, defaulting to **View as admin**, renders the widget as any one of your customers, so you can see their actual connection states rather than a mock-up.
+
+**Preview** opens the widget on its own page, away from the builder panel, at `/widgets/preview`. Use it to see the widget at full size, or to check it without the configuration panel beside it.
+
+{% hint style="warning" %}
+**The preview is not a link you can send to a customer.** It is a page inside your own dashboard and it needs a fastn login, so a customer opening it sees nothing. To put the widget in front of someone who has no fastn account, create a [shareable link](embedding/README.md#shareable-links) instead — that is the one that works for them.
+{% endhint %}
 
 ### Saving, and the two Resets
 
