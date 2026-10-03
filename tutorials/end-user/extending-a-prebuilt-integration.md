@@ -40,10 +40,6 @@ The agent inspects both schemas, finds the phone field on each side, adds the ma
 
 If it guesses a field wrong, re-pick the field on that one row rather than re-prompting — you will get there faster. Each row has a field picker on each side and a remove icon.
 
-> **Screenshot needed:** the **AI Assistant** section of the embedded widget with a request like "only sync companies that have a billing country" typed in, before submitting.
-
-> **Screenshot needed:** the configuration dialog immediately after the agent finishes, showing the field-mapping rows it wrote and the filter it added, with the plain-language description visible on each row.
-
 {% hint style="info" %}
 **First time on an integration?** There may be no configuration at all yet. **Configure** then shows _No configuration found for this widget_, with the note that _The Integration Agent sets up field mappings and filters for you_ — and, for a customer, _Ask whoever administers this workspace to finish setting it up._ That first pass is your provider's to run, not yours: the button that starts it needs an operator role, so it is deliberately not offered to a customer session rather than sent to a dead end. Ask them to run it once, and everything below is yours to adjust from then on.
 {% endhint %}

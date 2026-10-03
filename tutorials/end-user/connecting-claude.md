@@ -11,6 +11,10 @@ Everything the widget does — list your connections, run an action against a co
 
 Which route you have depends on how your SaaS provider gave you the widget.
 
+{% hint style="warning" %}
+**Check this first.** The in-widget **Copy MCP URL** below is recent. If your provider's fastn version predates it, the item is not in the menu and no amount of looking will find it — ask them which route they support before you start.
+{% endhint %}
+
 ### The short version
 
 | How you reached the widget | Route |
@@ -50,7 +54,7 @@ Three possible reasons, in order of likelihood:
 
 1. **You did not open the widget from a share link.** Embedded iframe and SDK sessions do not get the item, by design — the link is the credential, and there isn't one. Use the key route below.
 2. **Your provider switched it off** on the widget's Features tab.
-3. **Their fastn version predates the feature.** Ask them; it is recent.
+3. **Their fastn version predates the feature**, as flagged at the top of this page.
 
 ### If you are inside their product instead
 
