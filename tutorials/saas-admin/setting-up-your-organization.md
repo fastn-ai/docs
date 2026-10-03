@@ -49,8 +49,6 @@ The Setup Assistant may have already configured OAuth for your connectors during
 
 Fastn manages OAuth apps on your behalf for common platforms, meaning you can authenticate connectors without creating your own OAuth application in the third-party's developer portal. If your connector's platform isn't listed, your development team will need to create an OAuth app in the third-party's developer settings and configure it here.
 
-> **Screenshot needed:** Settings → OAuth Apps showing the managed OAuth apps list with platform icons and status indicators.
-
 ### Step 3: Invite your team
 
 1. Go to **Settings → People**.
@@ -76,8 +74,6 @@ Fastn has six system roles. Each role has a fixed set of permissions across Conn
 
 To see the full permission breakdown or create custom roles: go to **Settings → ADVANCED → Roles**. Each system role can be duplicated as a custom role and modified. Click **"Create Custom Role"** to build one from scratch.
 
-> **Screenshot needed:** Settings → People showing the user table with the Invite User button and role/status columns.
-
 ### Step 4: Manage customers
 
 Your customers (the end users of your SaaS product who use the integrations) are managed under:
@@ -88,8 +84,6 @@ Your customers (the end users of your SaaS product who use the integrations) are
 Each customer gets their own isolated environment i.e. their own connections, data, sync history, and configuration. When a customer connects an app through the embedded widget, they appear here automatically.
 
 From this page you can view customer details, monitor their integration status, and set per-customer quota overrides.
-
-> **Screenshot needed:** Settings → Customers page showing the customer list (or empty state for new accounts).
 
 ### Step 5: Check your plan and quotas
 
@@ -113,16 +107,12 @@ Key limits on the Free plan:
 
 Click **"Customize Customer Limits"** to set per-customer quota overrides which is useful when specific customers need higher limits than your plan default, or when you want to throttle individual customers to protect shared capacity.
 
-> **Screenshot needed:** Settings → Billing showing the plan card and quota usage table with progress bars.
-
 ### Step 6: Review the Audit Log
 
 1. Go to **Settings → Audit Log**.
 2. The log shows a table with columns: **TIMESTAMP, USER, ACTION, RESOURCE, OUTCOME**.
 
 Every significant action in your organization is recorded here from user logins, workflow deployments, connector changes to customer connections. Use it for compliance, debugging, or understanding who changed what.
-
-> **Screenshot needed:** Settings → Audit Log showing a few example entries with timestamps and actions.
 
 ### For your development team
 

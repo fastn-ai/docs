@@ -44,8 +44,6 @@ At the top of the Apps tab, a **search bar** lets you filter available integrati
 3. Find the app you want to connect by scrolling or using the search bar.
 4. Click **Connect** (the button label may vary).
 
-> **Screenshot needed:** Widget showing a list of available integrations with Connect buttons next to each one, and the search bar at the top.
-
 5. A popup opens with the third-party app's authorization screen. This is the app's own login page not the product's, not Fastn's.
 6. Sign in with your account on the third-party app.
 7. Review the permissions being requested and click **Authorize** (or "Allow").
