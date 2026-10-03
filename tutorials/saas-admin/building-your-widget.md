@@ -9,7 +9,7 @@ hidden: true
 
 The widget is what your customers see — an integration portal embedded inside your product where they connect apps, manage workflows, and monitor sync activity. You configure it visually in the Widget Builder; your development team handles the embed code separately.
 
-**Prerequisites:** Complete [Your First Integration](https://claude.ai/fastn/getting-started/your-first-integration). During the Setup Assistant (Step 4: Embed), you may have already created your first widget. This tutorial covers building or customizing widget hubs beyond that initial setup.
+**Prerequisites:** Complete [Quickstart](../../getting-started/quickstart.md). During the Setup Assistant (Step 4: Embed), you may have already created your first widget. This tutorial covers building or customizing widget hubs beyond that initial setup.
 
 ***
 
@@ -191,7 +191,7 @@ Shows performance metrics for the customer's integrations with a time-range sele
 
 Click **Configure** on any connected integration in the Apps preview. Two things can happen:
 
-**If no configuration exists yet:** A modal appears prompting "Run the Integration Agent to set up field mappings and filters." Click it and the Integration Agent configures the integration — the same agent experience from [Creating a Workflow via AI](https://claude.ai/fastn/tutorials/saas-admin/creating-a-workflow-via-ai), running directly inside the widget.
+**If no configuration exists yet:** A modal appears prompting "Run the Integration Agent to set up field mappings and filters." Click it and the Integration Agent configures the integration — the same agent experience from [Creating a Workflow via AI](creating-a-workflow-via-ai.md), running directly inside the widget.
 
 **If configuration already exists:** The Integration Configuration dialog opens.
 
@@ -234,16 +234,15 @@ A **Preview** button at the top-right of the builder opens a full-page preview o
 
 #### Handing off to your developers
 
-Click the **Embed** tab. It has four sub-tabs: **Iframe**, **MCP**, **SDK**, and **A2A** (the last two are marked "coming soon").
+Click the **Embed** tab. It has three sub-tabs: **Iframe**, **SDK**, and **A2A** (the last marked "coming soon").
 
 * **Iframe** — The current method for embedding the widget into your product. Shows an **Embed Code** block (with a Copy button) containing the iframe snippet. The widget is embedded via an iframe that loads with a short-lived token your developers generate from your backend. The tab notes: "Live token — expires in 15 min. For production, generate tokens from your backend."
-* **MCP** — For exposing your integrations as tools to AI agents (the agent use case). See the Developer tutorials.
-* **SDK** (coming soon) — A React component (`@fastn/react`) that will wrap the iframe flow.
+* **SDK** — A React component that wraps the iframe flow, with install and code blocks on the tab.
 * **A2A** (coming soon).
 
-Hand this off to your development team — see [Embedding Fastn](https://claude.ai/fastn/tutorials/developer/embedding-fastn) in the Developer tutorials for the token generation and iframe setup.
+Hand this off to your development team — see [Embedding Fastn](../developer/embedding-quickstart.md) in the Developer tutorials for the token generation and iframe setup.
 
-> 📷 **Screenshot needed:** Embed tab showing the four sub-tabs (Iframe, MCP, SDK, A2A) with the Iframe tab active and the Embed Code block visible.
+> 📷 **Screenshot needed:** Embed tab showing the three sub-tabs (Iframe, SDK, A2A) with the Iframe tab active and the Embed Code block visible.
 
 ***
 

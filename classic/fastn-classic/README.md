@@ -6,7 +6,7 @@ description: >-
 
 # Fastn Classic
 
-This section contains documentation for **Fastn V1** — the original embedded integration platform. V1 is currently in **maintenance mode**: active bugs are addressed, but no new features will be added. All new development is happening in [Fastn V2](https://claude.ai/README.md).
+This section contains documentation for **Fastn V1** — the original embedded integration platform. V1 is currently in **maintenance mode**: active bugs are addressed, but no new features will be added. All new development is happening in [Fastn V2](../../README.md).
 
 If you are starting a new project, use V2.
 
@@ -32,7 +32,7 @@ V1 does not include the Canonical Data Model, TypeScript DSL, AI agents, or the 
 
 V1 will be supported until the official sunset date is announced. When sunset is confirmed, this section will be archived and a migration guide will be published.
 
-If you are on V1 and want to understand what moving to V2 involves, see the [Migration Guide](https://claude.ai/resources/migration-guide.md).
+If you are on V1 and want to understand what moving to V2 involves, start from the [V2 documentation](../../README.md). A dedicated V1-to-V2 migration guide is not published yet.
 
 {% hint style="info" %}
 ⚠️ No new features will be added to V1. If a capability you need is not in V1, it will not be backported. Check the V2 docs to see if it is available there. \{% endhint %\}

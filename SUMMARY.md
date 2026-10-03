@@ -35,6 +35,9 @@
 * [End User](tutorials/end-user/README.md)
   * [Connecting apps via the widget](tutorials/end-user/connecting-apps-via-widget.md)
   * [Customizing your integrations](tutorials/end-user/customizing-your-integrations.md)
+  * [Extending a pre-built integration](tutorials/end-user/extending-a-prebuilt-integration.md)
+  * [Getting alerted](tutorials/end-user/getting-alerted.md)
+  * [Connecting Claude and other AI clients](tutorials/end-user/connecting-claude.md)
   * [Viewing sync status and history](tutorials/end-user/viewing-sync-status-and-history.md)
 
 ## Build

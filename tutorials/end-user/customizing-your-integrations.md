@@ -19,11 +19,11 @@ What happens next depends on whether the integration has been configured before.
 
 #### First-time configuration
 
-If no configuration exists yet, a modal appears prompting you to **run the Integration Agent**. The AI agent sets up field mappings and filters for you automatically, it figures out which fields in one app correspond to fields in the other, and configures sensible defaults.
+If no configuration exists yet, you'll see **No configuration found for this widget**, with a note that the Integration Agent sets up field mappings and filters for you — and, as a customer, _Ask whoever administers this workspace to finish setting it up._
 
-Click through the prompt and the agent handles the setup. Once it finishes, the configuration dialog opens with everything pre-configured. You can review what the agent did and adjust anything that doesn't look right.
+That first pass belongs to your SaaS provider: starting the agent needs an operator role, so the button is deliberately not shown to a customer session rather than sending you to a permission error. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
 
-> **Screenshot needed:** Modal prompting "Run the Integration Agent to set up field mappings and filters" with the action button.
+See [Extending a Pre-Built Integration](extending-a-prebuilt-integration.md) for what you can change yourself, and how to ask the AI assistant for it.
 
 #### Returning to an existing configuration
 
@@ -127,9 +127,9 @@ You'll also see **template cards** for pre-built automations. Click one to launc
 * **I don't see a Configure button**\
   Not all integrations support customization. The SaaS company decides what's configurable. If you need changes that aren't available, contact the product's support team.
 * **My changes didn't take effect:**\
-  Changes apply on the next workflow run, not immediately. If the integration runs daily, your changes will be reflected in the next day's sync. Check the Insights tab to confirm when the next run happens.
+  Changes apply on the next sync run, not immediately. If the integration runs daily, your changes will be reflected in the next day's sync. The Insights view shows recent activity, so you can confirm the run after your change succeeded — it does not show when the next one is due, so ask your provider if you need the schedule.
 * **I want to start over:**\
-  Disconnect the app from the Apps tab and reconnect it. This clears the configuration. When you click Configure again, the Integration Agent will set up a fresh configuration.
+  Disconnect the app from the Apps tab and reconnect it. This clears the configuration — but rebuilding it with the Integration Agent is your provider's to run, so ask them before you clear anything you still depend on.
 
 ### What you've done
 

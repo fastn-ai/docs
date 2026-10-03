@@ -4,7 +4,7 @@ description: Letting an AI client reach your connectors as tools.
 
 # MCP gateway
 
-**Connect to Claude**: in the top bar, and again under the prompt box on Home
+**Connect an agent**: in the top bar, and **Connect fastn to your favourite agent** under the prompt box on Home
 
 Everything you build in fastn (connectors, actions, workflows), can be exposed to an AI client over the Model Context Protocol. The client sees your connectors as tools it can call, with the same customer scoping and the same permission model as everything else.
 
@@ -12,7 +12,15 @@ Everything you build in fastn (connectors, actions, workflows), can be exposed t
 
 ### Connecting
 
-**Connect to Claude** opens a dialog carrying several ways in: the gateway's MCP URL, a deep link that opens Claude's custom-connector modal with it filled in, a ready-made Claude Code command, a Claude Desktop `mcp-remote` config, and an org-wide add link.
+Either opens the same dialog: _Add fastn as an MCP server and your agent can build integrations for you, right in the chat._
+
+<figure><img src="../.gitbook/assets/connect-agent-modal.png" alt="The Connect fastn to your favourite agent dialog, with Claude recommended and an Add to Claude button, a grid of other clients including Cursor, VS Code, Codex, Gemini CLI, Antigravity, Windsurf, Cline, ChatGPT, Lovable and Bolt, and the MCP server URL https://mcp.fastn.dev with a Copy button"><figcaption><strong>Add to Claude</strong> is the one-click path; every other client takes the same URL.</figcaption></figure>
+
+**Claude** is the recommended client, with **Add to Claude** opening Claude's custom-connector dialog with the name and URL already filled in. Picking any client from **Other** — Cursor, VS Code, Codex, Gemini CLI, Antigravity, Windsurf, Cline, ChatGPT, Lovable, Bolt — swaps in that client's own instructions, including by-hand steps, a Claude Code command and a whole-org option for Claude.
+
+The dialog's own note on the one-click link is worth repeating: it opens Claude with the connector filled in, you review it and authorise fastn yourself, and *Claude never adds a connector from a link on its own.*
+
+The **MCP server URL** sits at the bottom with a **Copy** button.
 
 ```
 https://mcp.fastn.dev
