@@ -19,8 +19,6 @@ Click **Widgets** in the top navigation bar (Home | Integrations | **Widgets** |
 
 The Widget Builder opens with two panels: the **builder** on the left and the **live preview** on the right. Everything you change on the left updates the preview in real time.
 
-> 📷 **Screenshot needed:** Full Widget Builder page showing the left builder panel and the right live preview panel side by side.
-
 ***
 
 ### Adding integrations to the hub
@@ -31,8 +29,6 @@ The left panel starts with an **INTEGRATIONS** section at the top. This controls
 2. Select from your configured connectors and workflows.
 3. Each integration appears as a card with edit (✏️) and delete (🗑) icons.
 4. Drag cards to reorder how they appear in the hub.
-
-> 📷 **Screenshot needed:** INTEGRATIONS list showing 3-4 added integrations with their app icons, edit/delete icons, and drag handles.
 
 ***
 
@@ -49,8 +45,6 @@ Click the **Layout** tab in the left panel. This controls the hub's content and 
 #### Use Templates
 
 Click **+ Add** to add workflow templates that appear in the Workflows tab of the preview. Each template shows as a card with an × to remove it. When a customer clicks a template in the live widget, it launches an **Integration Agent** session that walks them through setting up the workflow — configuring connections, field mappings, and test cases.
-
-> 📷 **Screenshot needed:** Layout tab showing Header Content (Title: "Integrations", Subtitle: "Connect your favorite tools") and the Use Templates section with template cards and the + Add button.
 
 #### Widget Sections
 
@@ -76,8 +70,6 @@ Drag sections to change the order they appear in the widget. Toggle any section 
 
 The live preview on the right updates immediately as you reorder or toggle sections.
 
-> 📷 **Screenshot needed:** Widget Sections panel within the Layout tab, showing all six sections with drag handles and green toggles. Show the Reset and Save & Publish buttons at the bottom.
-
 > 🎬 **GIF needed:** Dragging the "AI Assistant" section from its position to above "Apps," then watching the live preview reorder in real time.
 
 > 🎬 **GIF needed:** Toggling off "Search Bar" and watching it disappear from the live preview.
@@ -91,8 +83,6 @@ Click the **Style** tab to match the widget to your product's look and feel. The
 #### Colors
 
 Set the color palette for your widget. Available tokens include: primary, primary-foreground, background, foreground, card, muted, muted-foreground, and border. Adjust each to match your brand.
-
-> 📷 **Screenshot needed:** Colors sub-tab showing the color token controls with color pickers.
 
 #### Typography
 
@@ -108,8 +98,6 @@ Fine-tune corner rounding with three separate radius controls, each with a slide
 
 Below the radius controls: **Shadow Strength** with four presets — **None | SM | MD | LG**. This controls the drop shadow depth on cards and panels.
 
-> 📷 **Screenshot needed:** Shape sub-tab showing the three radius sliders with Square/Rounded/Full presets and the Shadow Strength selector with MD selected.
-
 #### Json
 
 This sub-tab lets you export and import your full style configuration as code — useful for sharing with your development team or applying a consistent theme across multiple widgets.
@@ -117,8 +105,6 @@ This sub-tab lets you export and import your full style configuration as code �
 **CSS Variables** — A read-only JSON block showing all your design tokens (colors, radii, typography) as CSS custom properties. Below it, a `:root { }` CSS block with a **Copy** button, labeled "Apply to your container element." Your developers can paste this directly into your product's CSS to match the widget's styling.
 
 **Import from JSON** — Paste a tokens JSON object (e.g., `{ "--primary": "#4F46E5", ... }`) and click **Apply** to set all style values at once. This is useful when you have an existing design system and want to apply it without adjusting each control individually.
-
-> 📷 **Screenshot needed:** Json sub-tab showing the CSS Variables block, the `:root` CSS output with Copy button, and the Import from JSON input area with Apply button.
 
 > 🎬 **GIF needed:** Changing a color in the Colors sub-tab and watching the live preview update in real time.
 
@@ -165,8 +151,6 @@ At the bottom: **"Powered by fastn"** footer.
 
 This is the first thing your customers see when they open the widget.
 
-> 📷 **Screenshot needed:** Apps tab in the preview showing connected integrations (e.g., HubSpot and Gamma with "Connected" labels), Configure/Disconnect buttons, and the AI Assistant prompt at the bottom.
-
 #### Workflows tab
 
 Shows two things:
@@ -175,15 +159,9 @@ Shows two things:
 
 **Template cards** — The templates you added in the Layout tab. When a customer clicks one, it launches an Integration Agent session that builds and configures the workflow for them through a chat interface.
 
-> 📷 **Screenshot needed:** Workflows tab showing an active workflow card and template cards below.
-
-> 📷 **Screenshot needed:** Workflow visualizer showing the interactive node graph with labeled node types (TRIGGER → PROCESS → DECISION → WRITE → DONE).
-
 #### Insights tab
 
 Shows performance metrics for the customer's integrations with a time-range selector (7 days / 30 days / 90 days). \[VERIFY: what specific KPI cards appear here? Events processed, sync success rate, active connections, error count?]
-
-> 📷 **Screenshot needed:** Insights tab showing KPI cards with the time-range selector.
 
 ***
 
@@ -215,10 +193,6 @@ Bidirectional sub-tabs let you configure each direction separately (e.g., "HubSp
 
 The footer reads **"Changes apply on the next workflow run"** with **Cancel** and **Save Configuration** buttons.
 
-> 📷 **Screenshot needed:** Integration Configuration dialog showing bidirectional field mappings with source/target pills and preview values.
-
-> 📷 **Screenshot needed:** Filters section showing 2-3 filter rows with the operator dropdown expanded.
-
 ***
 
 ### Publishing and sharing
@@ -242,8 +216,6 @@ Click the **Embed** tab. It has four sub-tabs: **Iframe**, **MCP**, **SDK**, and
 * **A2A** (coming soon).
 
 Hand this off to your development team — see [Embedding Fastn](https://claude.ai/fastn/tutorials/developer/embedding-fastn) in the Developer tutorials for the token generation and iframe setup.
-
-> 📷 **Screenshot needed:** Embed tab showing the four sub-tabs (Iframe, MCP, SDK, A2A) with the Iframe tab active and the Embed Code block visible.
 
 ***
 
