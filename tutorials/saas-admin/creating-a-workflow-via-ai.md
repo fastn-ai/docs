@@ -17,8 +17,6 @@ You can build workflows with AI from two places in the platform:
 
 **From the Integrations page** — Go to **Integrations → Workflows** and click **Build with AI** (next to "Create Workflow"). This opens the dedicated Workflow Builder, which is focused specifically on creating and validating workflows.
 
-> **Screenshot needed:** Integrations → Workflows page with the "Build with AI" button highlighted next to "Create Workflow."
-
 ### Opening the Workflow Builder
 
 1. Go to **Integrations → Workflows**.
@@ -51,8 +49,6 @@ Type a plain-language description of the workflow you want. The more specific yo
 
 > "Every day at 6 AM, pull yesterday's Stripe payouts and send a summary to Slack with the total amount and number of transactions."
 
-> **Screenshot needed:** Chat interface showing a user prompt (e.g., the HubSpot-to-Cin7 example) and the agent beginning to analyze the request.
-
 ### What the agent does
 
 After you describe your workflow, the agent works through several stages. You'll see each one happen in the chat in the following order:
@@ -73,8 +69,6 @@ When a connector needs credentials, the auth form appears right inside the chat 
 
 For **API key auth**, you'll see a tabbed form with fields for the key and any required configuration. For **OAuth** (e.g., HubSpot, Shopify), you'll see a form with fields for Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal to get your credentials.
 
-> **Screenshot needed:** Inline OAuth form in the chat showing CLIENT ID, CLIENT SECRET, OAUTH SCOPES fields, and a portal link.
-
 #### 4. Maps fields between systems
 
 Once connectors are ready, the agent generates field mappings between source and target systems. You'll see a **"WE'VE SET THIS UP FOR YOU"** banner with a summary of each mapping.
@@ -89,8 +83,6 @@ Below the mappings you'll find:
 * A natural-language input where you can describe changes and the agent will update the mappings
 
 When everything looks right, click **"Looks good, turn on"** to approve the field mapping configuration.
-
-> **Screenshot needed:** Field mapping panel showing the "WE'VE SET THIS UP FOR YOU" banner, 3-4 mapping rows with source/target dropdowns and Change buttons, fixed value badges, and the "Looks good, turn on" button.
 
 #### 5. Generates test cases
 
@@ -108,8 +100,6 @@ Mock tests use simulated data whereas live tests hit the actual APIs
 * A **Feedback** field where you can flag issues
 
 You can easily review the test cases, approve the ones that look correct and then flag any that need changes and the agent will revise them.
-
-> **Screenshot needed:** Test cases panel showing MOCK/LIVE badges, scenario descriptions, Feedback fields, and Approve buttons.
 
 #### 6. Reports the result
 
@@ -150,8 +140,6 @@ The **Docs** sub-tab shows auto-generated documentation describing what the work
 {% hint style="info" %}
 This same visualization appears in the customer-facing widget when end users click into an active workflow. What you see here is what your customers see so reviewing it now also means reviewing your customers' experience.
 {% endhint %}
-
-> **Screenshot needed:** Right panel Docs tab with the Flow sub-tab active, showing the full visual flowchart with connected nodes, decision branches, and action steps.
 
 #### What else is in the editor
 
