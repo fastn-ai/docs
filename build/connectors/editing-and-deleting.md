@@ -63,7 +63,13 @@ Customers pinned to another version (see [Version pins](inside-a-connector.md#ve
 
 ### Restore a version
 
-An earlier version in the **Versions** list can be restored with **Restore this version**, which asks for confirmation in a **Restore Version** dialog. The connector returns to that version's definition.
+Each save adds a version with a note of what changed, for example *Updated description, authMethods*. Older versions in the **Versions** list have a **Restore** button.
+
+<figure><img src="../../.gitbook/assets/connector-restore-version.webp" alt="The Restore Version dialog over the Versions list (v1.1 Updated description, authMethods; v1.0 Initial version with Publish to live and Restore): You are about to restore to version v1.0 from test. Description: Initial version. This will restore the connector configuration to this version and create a new test version. You can then publish when ready. With Cancel and Restore Version buttons"><figcaption>Restoring creates a new test version; nothing goes live until you publish.</figcaption></figure>
+
+> This will restore the connector configuration to this version and create a new test version. You can then publish when ready.
+
+**Restore Version** confirms. Customers are not affected until you [publish](#publish-a-version) the new test version.
 
 ### Delete a connector
 
