@@ -12,12 +12,12 @@ Once a workspace holds more than a handful of workflows, the list stops being sc
 | --- | ------ | ---------- |
 | Per workflow | Many | **One** |
 | What they do to the list | Filter it | Group it |
-| Per workspace | Up to 5 | Up to 5 |
+| Per workspace | A number set by your plan | A number set by your plan |
 | Per workflow limit | Up to 5 labels | n/a, a workflow is in one category or none |
 
 A label is a tag you filter by, so a workflow can carry several: a sync can be both `Dev` and `Billing`. A category is where a workflow *lives*, so it only gets one, the way a file sits in one folder.
 
-<figure><img src="../.gitbook/assets/workflow-tags-settings.webp" alt="The Workflows Tags page with a Labels panel reading 2 of 5 and a Categories panel reading 2 of 5. Each tag row shows a coloured dot, its name, and how many workflows use it, either a count or Not used yet. Each panel ends with a colour swatch, a name field and an Add button"><figcaption>Both panels carry a counter. At 5 of 5 the Add button stops accepting new ones until you delete something.</figcaption></figure>
+<figure><img src="../.gitbook/assets/workflow-tags-settings.webp" alt="The Workflows Tags page with a Labels panel reading 2 of 5 and a Categories panel reading 2 of 5. Each tag row shows a coloured dot, its name, and how many workflows use it, either a count or Not used yet. Each panel ends with a colour swatch, a name field and an Add button"><figcaption>Both panels carry a counter: how many you have defined, against the number your plan allows. Once they match, the name field is replaced until you delete something.</figcaption></figure>
 
 ## Creating one
 
@@ -30,14 +30,24 @@ Tags are created here and nowhere else. The page is the registry; workflows only
 Each row then shows how many workflows use that tag, reading **Not used yet** until something does. That count is the thing to check before deleting one.
 
 {% hint style="info" %}
-**Five of each, per workspace.** Not five per workflow, per workspace: the whole organisation shares one registry of at most 5 labels and 5 categories. The cap is deliberate. Tags are for cutting a list down, and a filter with thirty options does not do that.
+**The limit is per workspace, not per workflow.** The whole workspace shares one registry of labels and one of categories, and **how many of each you get comes from your plan**. [Billing and limits](billing.md) lists both, with your usage against them. The counter on each panel is the number that applies to you, so read it there rather than assuming one.
+
+A customer workspace inherits the plan of the organisation it belongs to.
 {% endhint %}
+
+### When a panel is full
+
+The name field is replaced by a line saying so, rather than being greyed out. Delete a tag to make room.
+
+Changing plan never deletes a tag. If a new plan allows fewer than you already have, **you keep all of them** and simply cannot add another until you delete down to the new number. The panel says how many that is.
+
+A full registry also affects workflows arriving from a prebuilt integration. Their tags are recreated by name in your workspace, so when there is no room left the workflow lands without that label, or uncategorised, and the result says which tag it could not create.
 
 ## Attaching one to a workflow
 
 Tags are attached from the workflow itself, on **Workflows**, not from this page. Each workflow's panel carries two controls:
 
-* **Labels**, a multi-select. A workflow can carry up to 5.
+* **Labels**, a multi-select. A workflow can carry up to 5 of them, whatever your plan. That cap is separate from how many the workspace may define.
 * **Category**, a single select. Choosing a new one replaces the old.
 
 Both are available when you create a workflow and when you edit an existing one. Both are disabled for roles that cannot manage workflows, so a read-only role sees the tags but cannot change them.
@@ -63,7 +73,7 @@ Deleting a tag never deletes the workflows carrying it.
 * Delete a **category** and its workflows fall back to **Uncategorised**.
 
 {% hint style="warning" %}
-Deleting is the only way to make room once a panel reads 5 of 5. Check the usage count on the row first: a category showing **3 workflows** will drop those three into Uncategorised, and nothing records which category they used to be in.
+Deleting is the only way to make room once a panel is full. Check the usage count on the row first: a category showing **3 workflows** will drop those three into Uncategorised, and nothing records which category they used to be in.
 {% endhint %}
 
 ## Who can change them

@@ -28,6 +28,8 @@ Each quota is listed with usage against it. **Customize customer limits** overri
 | Workflows                   | per customer |
 | Steps                       | per flow     |
 
+**Workflow categories** and **Workflow labels** are listed here too, both scoped per workspace and counted live, so the usage reading against them is real. They are the two registries behind [Workflows Tags](workflow-tags.md), and that page is where you add and remove them.
+
 The list continues past the visible area with further rows: concurrency, AI sessions and tokens, retention, storage, connected accounts, users, webhook endpoints, payload size, executions and AI credits are all reported to appear further down. Scroll the page and read the rows themselves rather than relying on that list being complete or the scopes being as described.
 
 {% hint style="info" %}
