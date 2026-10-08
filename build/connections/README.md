@@ -1,47 +1,65 @@
 ---
-description: Authenticated links between your customers and their systems.
+description: "The Connections page: your organisation's and your customers' signed-in accounts, how to find one, and what each column means."
 ---
 
 # Connections
 
 **Integrations → Connections** · `/integrations?tab=connections`
 
-<figure><img src="../../.gitbook/assets/connections-list.jpg" alt="The Connections table, 5 connections, under Connector, Customer, Auth, Status and Created: TikTok Shop on OAUTH, Cin7 Core and three unnamed connector IDs on INPUT, every row Active with an em dash for Customer"><figcaption>The Auth column shows the raw internal values, <code>OAUTH</code> and <code>INPUT</code> here. A connector with no catalogue entry shows its raw ID instead of a name.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connections-list.webp" alt="The Connections page in the My organisation view: a New connection button, a search box, status chips All, Active, Inactive, Expired and Failed, the count 5 connections, and a table with columns Connector, Auth, Status and Created listing OpenAI (BEARER, Active), Cin7 Core (INPUT, Active), Google Gmail (OAUTH_2, Active), HubSpot (OAUTH_2, Expired) and Google Calendar (OAUTH_2, Expired)"><figcaption>The <strong>My organisation</strong> view.</figcaption></figure>
 
-A connection is one customer's authorised link to one connector. It holds the credential (encrypted, never displayed) and records how it was obtained.
+A **connection** is one signed-in account on one connector: the stored, encrypted result of someone authorising access once. Every later call reuses it, so nobody signs in again. Workflows act through connections.
+
+A [connector](../connectors/README.md) is the definition of an app; a connection is a credential for it. One connector can have many connections: one for your organisation and one for each customer who connects.
 
 ### How connections work
 
-A connection is an authenticated link between one of your customers and one connector: the stored, encrypted result of that customer authorising access once, which every later API call reuses so nobody signs in again. A few properties are worth holding in mind before the detail below:
+* **Who it belongs to.** A connection belongs either to your organisation (made by someone on your team) or to one of your customers (made through your embedded widget). The two are shown in separate views on this page.
+* **How it is addressed.** Every connection has a connection ID. It starts with `ucl:`, followed by your organisation, the environment (for example `default`), the connector's ID and an identifier for the credential, separated by colons. Pass it to the API to act as that account.
+* **Whether it still works.** Each connection has a status: `Active`, `Inactive`, `Expired` or `Failed`. See [Statuses](statuses.md).
+* **How it is kept alive.** For OAuth connections, fastn refreshes the access token before it runs out.
+* **Fixing or ending one.** **Reconnect** signs in again to repair a broken connection. **Disconnect** stops all syncing and deletes the credential.
 
-* **Who it belongs to: Scope.** Most connections belong to a single customer (one tenant). Some belong to your organisation instead: those read `Account level` on the detail page, meaning the link is shared across the workspace rather than tied to one customer.
-* **How you address it: the connection ID.** Every connection has an id of the form `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`. You pass it to the API to act as that customer, and it is what routes a call to the right credential.
-* **Whether it still works: Status.** A connection is `Active`, `Inactive`, `Expired` or `Failed`. Active needs nothing; the other three need attention.
-* **Fixing or ending one: Reconnect / Disconnect.** Every row's `⋯` menu offers **Reconnect** (re-run authorisation to restore a broken link) and **Disconnect** (syncing stops and the credential is deleted).
-* **Making one yourself: the picker.** **New connection** opens the full-screen **Connect a system** picker; customer connections should instead come through your embedded widget.
+### My organisation and Customers
 
-The rest of this page is the detail behind each of those.
+The toggle at the top switches between two views.
+
+| View | Shows | Page subtitle |
+| --- | --- | --- |
+| **My organisation** | Connections your team made. | *Signed-in accounts your organisation holds on its connectors. Workflows act through them.* |
+| **Customers** | Connections your customers made through the widget, across every customer. | *Signed-in accounts your customers have made on your connectors, across every customer.* |
+
+<figure><img src="../../.gitbook/assets/connections-customers.webp" alt="The Customers view: a search box reading Search by customer, connector or name, an All customers selector, the status chips, 0 connections and the empty state No customer connections yet, Your customers connect their own systems through the widget you embed"><figcaption>The <strong>Customers</strong> view, empty until a customer connects through the widget.</figcaption></figure>
+
+The **Customers** view adds an **All customers** selector to show one customer's connections, and its search box also matches customer names.
+
+### Finding a connection
+
+* **Search connections** matches the connector and connection name (and the customer, in the Customers view).
+* The status chips **All**, **Active**, **Inactive**, **Expired** and **Failed** show only connections in that state.
+* The count on the right shows how many connections match, for example *5 connections*.
+
+If nothing matches, the page reads *No connections yet* · *Connect a system and its authenticated link appears here.* with a **Connect a system** button.
 
 ### The table
 
-| Column        | What it tells you                                                                 |
-| ------------- | ----------------------------------------------------------------------------------- |
-| **Connector** | The system, with the tenant key on the second line.                                |
-| **Customer**  | Which customer owns it.                                                            |
-| **Auth**      | How it was authorised.                                                             |
-| **Status**    | Active, Inactive, Expired or Failed.                                               |
-| **Created**   | When the customer authorised it.                                                   |
-| **⋯**         | **Reconnect** and **Disconnect**.                                                  |
+| Column | Meaning |
+| --- | --- |
+| **Connector** | The app, with the connection's name underneath (`Default` unless it was named). |
+| **Auth** | The auth type the connection was made with, as stored: for example `OAUTH_2`, `BEARER`, `INPUT`. See [Auth types](auth-types.md). |
+| **Status** | `Active`, `Inactive`, `Expired` or `Failed`. See [Statuses](statuses.md). |
+| **Created** | When the connection was made. |
+| **⋯** | **Reconnect** and **Disconnect**. |
 
-The table pages at 10 rows. Filter chips above it (**All**, **Active**, **Inactive**, **Expired**, **Failed**), are not kept in the URL, so a filtered view cannot be linked.
+<figure><img src="../../.gitbook/assets/connections-row-menu.webp" alt="The Connections table with the three-dot menu of the Google Calendar row open, showing Reconnect and a red Disconnect"><figcaption>Each row's menu.</figcaption></figure>
 
-{% hint style="warning" %}
-The `Active`, `Inactive`, `Expired` and `Failed` chips currently return nothing, even when every row in the unfiltered table shows `Active`. Until that is fixed, triage from the full list rather than the chips.
-{% endhint %}
+Click a row to open its detail page. See [Inside a connection](inside-a-connection.md).
+
+**New connection** (top right) connects a new app for your organisation. See [Creating a connection](creating-a-connection.md).
 
 ### In this section
 
-* [Statuses](statuses.md)
-* [Auth types](auth-types.md)
-* [Inside a connection](inside-a-connection.md)
-* [Creating a connection](creating-a-connection.md)
+* [Statuses](statuses.md): what each status means and what to do about it.
+* [Auth types](auth-types.md): the values in the Auth column.
+* [Inside a connection](inside-a-connection.md): the detail page, Reconnect and Disconnect.
+* [Creating a connection](creating-a-connection.md): New connection and the connect dialog.
