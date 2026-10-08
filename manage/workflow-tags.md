@@ -17,7 +17,7 @@ Once a workspace holds more than a handful of workflows, the list stops being sc
 
 A label is a tag you filter by, so a workflow can carry several: a sync can be both `Dev` and `Billing`. A category is where a workflow *lives*, so it only gets one, the way a file sits in one folder.
 
-<figure><img src="../.gitbook/assets/workflow-tags-settings.webp" alt="The Workflows Tags page with a Labels panel reading 2 of 5 and a Categories panel reading 2 of 5. Each tag row shows a coloured dot, its name, and how many workflows use it, either a count or Not used yet. Each panel ends with a colour swatch, a name field and an Add button"><figcaption>Both panels carry a counter: how many you have defined, against the number your plan allows. Once they match, the name field is replaced until you delete something.</figcaption></figure>
+<figure><img src="../.gitbook/assets/workflow-tags-settings.webp" alt="The Workflows Tags page, reached from Workflows Tags in the Settings sidebar. A Labels panel counts 1 of 5 and holds one row, Dev, reading 1 workflow. A Categories panel counts 1 of 5 and holds one row reading 1 workflow. Each row carries a coloured dot before its name, and each panel ends with a colour swatch, a name field and an Add button"><figcaption>Both panels carry a counter: how many you have defined, against the number allowed. Once the two match, the name field is replaced by a line saying so until you delete something.</figcaption></figure>
 
 ## Creating one
 
