@@ -36,12 +36,14 @@ Until a connector has a config, the tab reads:
 > No webhook config yet · Until one exists, customers of this connector can be polled but cannot be notified. Most providers support one webhook for the whole app.
 
 {% hint style="info" %}
-Webhook configs on **managed** connectors are maintained by fastn and are read-only in your workspace. **New config** opens the form below only on connectors your workspace owns.
+Webhook configs on **managed** connectors are maintained by fastn and are read-only in your workspace: **New config** is shown there but does not open a form. On a connector your workspace owns, it opens the form below.
 {% endhint %}
 
 ### The config form
 
-**New config** opens the form; **Edit** on a row opens the same form filled in.
+**New config** opens **New webhook config** in place of the table; **Edit** on a row opens the same form filled in. **Cancel** (top right or bottom) closes it without saving.
+
+<figure><img src="../../.gitbook/assets/webhook-config-form-top.webp" alt="The New webhook config form on a custom connector: Available as a trigger source switched on, Type set to One webhook for the whole app, Auth provider reading None configured yet, an Event key field with placeholder event_type, and the Subscribe snippet editor with a Run button and a JavaScript template"><figcaption>The top of the form: general settings and the first snippet.</figcaption></figure>
 
 #### General
 
@@ -57,7 +59,17 @@ Webhook configs on **managed** connectors are maintained by fastn and are read-o
 
 > Three snippets: how to subscribe, how to stop, and how to renew.
 
-Each snippet is JavaScript, for example `return await fastn.http.post(...)`.
+Each snippet is a JavaScript function. A new config starts each one with a template:
+
+```javascript
+export default async function(ctx) {
+  const { input, headers } = ctx;
+  // Your workflow logic here
+  return { result: "Hello from workflow!", input };
+}
+```
+
+Each snippet has its own **Run** button for trying it out.
 
 | Snippet | When it runs |
 | --- | --- |
@@ -65,21 +77,21 @@ Each snippet is JavaScript, for example `return await fastn.http.post(...)`.
 | **Unsubscribe** | *Runs when they disconnect. Remove the webhook you registered.* |
 | **Renew** | *Runs before the subscription expires, for providers that time out.* |
 
-**Execution Input (JSON)** lets you test-run a snippet from the form with sample input before saving.
+**Execution Input (JSON)** is the sample input used when you click a snippet's **Run**.
 
 #### Events
 
-The list of events the config can deliver. Each event has an **Event ID** (the app's own name for it, for example `invoice.created`), a **Label** and an optional **Description**. These are the events a user picks from when creating an app event trigger on this connector.
+The list of events the config can deliver. **+ Add Event** adds one. Each event has an **Event ID** (the app's own name for it, for example `invoice.created`), a **Label** and an optional **Description**. These are the events a user picks from when creating an app event trigger on this connector.
 
 #### Inputs
 
 > Define input parameters for the subscription code. `webhookUrl` and `event` are always auto-provided.
 
-Each input has a **Key** and a **Default value**, and can be hidden.
+Each input has a **Key** and a **Default value**, and a **Hidden** checkbox. **+ Add Input** adds one.
 
 #### Get User Account Action
 
-Used when one webhook carries events for many customers (the **App** type). It tells fastn how to match an incoming event to the right customer:
+Used when one webhook carries events for many customers (the **App** type). It tells fastn how to match an incoming event to the right customer. **+ Add Required Action** adds one:
 
 * **Select an action**: an action that returns the customer's account, run against their connection when they set up an app trigger.
 * **Label path** and **Value path**: dotted paths into that action's response, for example `data.response.user` and `data.response.user_id`. The value becomes the trigger's account ID.
@@ -96,7 +108,13 @@ Used when one webhook carries events for many customers (the **App** type). It t
 | **Verification token (Notion-style)** | The app sends a one-time token when the subscription is created. fastn answers it, stores the token as **Captured Token**, and uses it to verify later events. For Notion, paste the captured token into Notion under **Webhooks → Verify** to activate the subscription. |
 | **Challenge-response only** | The app checks the URL with a challenge request. Set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`) and **Response Field** (for example `challenge`), the field fastn echoes back. |
 
-The shared secret for HMAC is the `client_secret` of the connector's auth provider.
+The shared secret for HMAC is the `client_secret` of the connector's auth provider. A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request.
+
+<figure><img src="../../.gitbook/assets/webhook-config-form-bottom.webp" alt="The bottom of the New webhook config form: Inputs webhookUrl and event with Hidden checkboxes and + Add Input, Get User Account Action with + Add Required Action, Webhook Verification with Method None, accept all requests and the Enable URL-verification challenge handshake checkbox, and the footer An event key is needed before this can be saved, with Cancel and Create"><figcaption>The bottom of the form. <strong>Create</strong> needs an event key first.</figcaption></figure>
+
+### Saving
+
+**Create** saves the new config. For the **App** type, the footer reads *An event key is needed before this can be saved.* until **Event key** is filled in.
 
 ### Related
 

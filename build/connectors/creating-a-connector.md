@@ -17,7 +17,7 @@ You rarely need to build a connector by hand. Describe the app to the [Agent](..
 | Field | Required | Notes |
 | --- | --- | --- |
 | **Name** | Yes | What people see on the card and in the widget. Placeholder: `Salesforce`. |
-| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* Use lowercase letters, numbers and hyphens, for example `acme-crm`. |
+| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* It must be camelCase: start with a lowercase letter, then letters and digits only, for example `acmeCrm`. Hyphens, spaces and underscores are rejected with *Request validation failed*. |
 | **Description** | No | Shown on the card. The Agent also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
 
 ### Connection
@@ -108,7 +108,7 @@ Change `apiKeyName`'s `default` to the header the vendor expects, for example `X
 
 ### Saving
 
-The footer reads *Give it a name to continue.* until **Name** is filled in. **Create connector** then creates the connector as a private connector owned by your workspace. Add its actions from the connector's detail page; see [Actions](action-detail.md).
+The footer reads *Give it a name to continue.* until **Name** is filled in. **Create connector** then creates the connector as a private connector owned by your workspace, with version `v1.0` in **Test**. Its card is badged `Custom`. Add actions from the connector's detail page; see [Editing, publishing and deleting](editing-and-deleting.md#add-an-action).
 
 ### Request a connector
 

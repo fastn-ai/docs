@@ -49,7 +49,7 @@ Each card shows:
 * a **badge**: `managed` (maintained by fastn), `Custom` (created in your workspace), or `Connected` (at least one connection exists);
 * the **description**, cut to a few lines;
 * an **OAuth 2.0** chip if the connector offers OAuth;
-* who maintains it, for example *Managed by Fastn*;
+* who maintains it: *Managed by Fastn*, or *Managed by &lt;your organization&gt;* for a connector your workspace created;
 * a button at the bottom.
 
 The button depends on whether you have connected:
@@ -60,6 +60,8 @@ The button depends on whether you have connected:
 | Connected | **Add another connection**, plus a chevron | **Add another connection** opens the connect dialog again so you can sign in a second account. The chevron opens a menu with **Disconnect**. |
 
 <figure><img src="../../.gitbook/assets/connectors-card-disconnect.webp" alt="The HubSpot card in the Connected view with its chevron menu open, showing a single red Disconnect item"><figcaption>The chevron next to <strong>Add another connection</strong> holds <strong>Disconnect</strong>.</figcaption></figure>
+
+Cards of connectors your workspace owns also have a **⋯** menu with **Select**, **Edit**, **Export** and **Delete**; see [Importing and exporting](importing-and-exporting.md#export-connectors) and [Editing, publishing and deleting](editing-and-deleting.md).
 
 Click a card's name to open the [connector's detail page](inside-a-connector.md).
 

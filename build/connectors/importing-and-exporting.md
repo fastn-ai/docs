@@ -56,18 +56,44 @@ An export holds definitions only. It never contains credentials or connections.
 
 ### Export connectors
 
-On the catalogue page, connectors your workspace owns have a **⋯** menu on their card with **Select**, **Edit**, **Export** and **Delete**.
+Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their catalogue card with **Select**, **Edit**, **Export** and **Delete**.
+
+<figure><img src="../../.gitbook/assets/connectors-custom-card-menu.webp" alt="The catalogue filtered to Private showing one card, Docs Demo CRM, badged Custom, with its three-dot menu open listing Select, Edit, Export and Delete"><figcaption>The card menu on a connector your workspace owns.</figcaption></figure>
 
 * **⋯ → Export** downloads that one connector.
-* **⋯ → Select** starts a selection. Select more cards, then click **Export Selected (n)** in the header to download them together.
+* **⋯ → Select** ticks the card and adds **Export Selected (n)** to the page header. Select more cards, then click it to download them together.
+* On the connector's detail page, its row in the rail also has a **⋯** menu with **Export All** and **Import**.
 
-Managed connectors do not have this menu. To copy one of their actions, use [Export actions](#export-actions).
+<figure><img src="../../.gitbook/assets/connectors-export-selected.webp" alt="The catalogue header with an Export Selected (1) button between Request connector and Create connector, and the Docs Demo CRM card ticked"><figcaption><strong>Export Selected (n)</strong> appears once a card is selected.</figcaption></figure>
+
+The download is named `connectors-bundle-<date>.json`, for example `connectors-bundle-2026-10-08.json`:
+
+```json
+{
+  "$schema": "https://fastn.ai/schemas/connector-bundle/v1.json",
+  "version": "1.0",
+  "exportedAt": "2026-10-08T11:56:56.422Z",
+  "connectors": [
+    {
+      "connector": { "name": "Docs Demo CRM", "slug": "docsDemoCrm", "protocol": "REST", "visibility": "private", "authMethods": [], "…": "…" },
+      "actions": [ { "name": "List Users", "slug": "listUsers", "httpConfig": { "method": "GET", "url": "https://jsonplaceholder.typicode.com/users" }, "…": "…" } ],
+      "webhookConfigs": [],
+      "authProviders": [],
+      "appRegistrations": []
+    }
+  ]
+}
+```
+
+Each entry carries the connector's definition, its actions, its webhook configs, its auth providers and its app registrations. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
 
 ### Import
 
-**Import** on the catalogue page opens a file picker. Choose one `.json` connector file. There is no form to fill in: the file is read and the connector is created in your workspace as a connector you own.
+**Import** on the catalogue page opens a file picker. Choose one `.json` file, such as a `connectors-bundle-<date>.json` from [Export connectors](#export-connectors). There is no form to fill in: the file is read and its connectors are created in your workspace as connectors you own.
 
 If a connector in the file already exists in your workspace, fastn asks first:
+
+<figure><img src="../../.gitbook/assets/connectors-import-replace.webp" alt="The Replace existing connector? dialog: Docs Demo CRM already exists. Importing will replace its actions and configuration. Saved connections are preserved. With Cancel and Replace buttons"><figcaption>Importing a connector that already exists.</figcaption></figure>
 
 > **Replace existing connector?**
 >

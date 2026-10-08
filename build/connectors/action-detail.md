@@ -12,13 +12,12 @@ On the [connector detail page](inside-a-connector.md), the connector rail lists 
 
 * Click an action to open it in the editor. The URL becomes `/integrations/connectors/<connector-slug>/<action-slug>`.
 * Hover an action and click **⋯** for its menu. On a managed connector it holds **Export**.
+* On a connector your workspace owns, **+** next to the connector's name adds an action; see [Add an action](editing-and-deleting.md#add-an-action).
 * Tick actions (or **Select all**) to act on several at once. The rail then shows *n selected* and an **Export** button.
 
 <figure><img src="../../.gitbook/assets/connector-actions-selected.webp" alt="The connector rail with two actions ticked, Add List Members and Archive Call, and a bar at the top reading 2 selected with an Export link"><figcaption>Selecting actions shows the bulk <strong>Export</strong>.</figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/action-row-menu.webp" alt="The Add List Members row with its three-dot menu open, showing one item, Export"><figcaption>The menu on a single action.</figcaption></figure>
-
-On a connector your workspace owns, the rail also offers **Add action**, and each action can be edited and deleted.
 
 ### The action editor
 
@@ -32,7 +31,7 @@ The top of the editor holds:
 | **Description** | What the action does and how to call it. The Agent reads this, so it should say which inputs matter. |
 | **Method** | `GET`, `POST`, `PUT`, `PATCH` or `DELETE`. |
 | **URL** | The endpoint. Parts in double braces are filled in when the action runs: `{{input.<field>}}` takes a value from the action's input. |
-| **Run** | Runs the action using your own connection to this connector, so you can check the request before a workflow uses it. |
+| **Run** | Opens the run panel to call the action once, live or with a mock. See [Running an action](#running-an-action). |
 
 #### Placeholders
 
@@ -98,7 +97,27 @@ A mock is a stored response for this action. When a workflow runs in mock mode, 
 * **Generate with AI** has the AI write scenarios for the action. Generated scenarios are replaced when you generate again.
 * Each scenario shows its source (`CUSTOM` for hand-written ones), its name and a description. The bin icon deletes it.
 
+### Running an action
+
+**Run** opens a panel titled with the method and the action's name.
+
+<figure><img src="../../.gitbook/assets/action-run-panel.webp" alt="The run panel for GET List Users with the Mock toggle switched on: Mock scenario (optional), No saved mock scenarios. AI will generate a realistic response, an Input section with Form and JSON views and a plus button, and a Run Mock button"><figcaption>The run panel in mock mode.</figcaption></figure>
+
+| Part | Meaning |
+| --- | --- |
+| **Mock** | Toggle. Off: the call goes to the real app. On: no call is made; a mock response is returned instead. |
+| **Connection** | *(Live mode.)* Which of your connections to run as. With no connection it reads *No connections available.* and **Run Action** stays disabled. |
+| **Mock scenario (optional)** | *(Mock mode.)* Which saved mock to return. With none saved: *No saved mock scenarios. AI will generate a realistic response.* |
+| **Input** | The action's input, in **Form** or **JSON** view. **+** adds a field. |
+| **Run Action** / **Run Mock** | Runs it. |
+
+The result appears beside the inputs: the HTTP status, the time taken (`0ms (mock)` for a mock), and **Response** and **Request** tabs with the response body and the request that was sent.
+
+<figure><img src="../../.gitbook/assets/action-run-mock-result.webp" alt="The run panel after Run Mock: on the right HTTP 200, 0ms (mock), Response and Request tabs, and the response body null"><figcaption>A mock run. The body is <code>null</code> here because this action has no output schema yet.</figcaption></figure>
+
 ### Versions
+
+On an action your workspace owns, the footer shows the version, **New version** and **Save Changes**. Hovering the version explains it: *Internal revision — major.minor. A minor bump reaches pinned callers automatically; a major fork does not.*
 
 The footer shows the action's version, for example `v1.2`. **New version** opens a small form:
 
