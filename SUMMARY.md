@@ -106,6 +106,7 @@
 * [API keys](manage/api-keys.md)
 * [Secrets](manage/secrets.md)
 * [Configs](manage/configs.md)
+* [Workflows Tags](manage/workflow-tags.md)
 * [Environments and GitHub](manage/environments.md)
 * [Database](manage/database.md)
 * [SaaS Connectors](manage/saas-connectors.md)
