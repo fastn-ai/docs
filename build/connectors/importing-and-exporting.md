@@ -52,7 +52,7 @@ The file looks like this (shortened):
 | `stage` | `test` or `live`. |
 | `version` | The action's version. |
 
-An export holds definitions only. It never contains credentials or connections.
+An action export holds definitions only: no credentials and no connections.
 
 ### Export connectors
 
@@ -85,7 +85,7 @@ The download is named `connectors-bundle-<date>.json`, for example `connectors-b
 }
 ```
 
-Each entry carries the connector's definition, its actions, its webhook configs, its auth providers and its app registrations. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
+Each entry carries the connector's definition, its actions, its webhook configs, its auth providers and its app registrations. Connections are never included. If the connector has its own OAuth app, open the file and check the `authProviders` entries before sharing it. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
 
 ### Import
 

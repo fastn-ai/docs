@@ -39,7 +39,7 @@ If nothing matches, the page shows *No connectors match these filters* and *Try 
 The **Connected** and **OAuth** views can take several seconds to load the first time you open them, because the page checks each connector's connections and auth methods. The list shows *Loading...* until it is ready.
 {% endhint %}
 
-The list shows 24 connectors per page, with **Previous** and **Next** below it.
+The list is split into pages, with **Previous** and **Next** below it.
 
 ### Reading a card
 
@@ -49,7 +49,7 @@ Each card shows:
 * a **badge**: `managed` (maintained by fastn), `Custom` (created in your workspace), or `Connected` (at least one connection exists);
 * the **description**, cut to a few lines;
 * an **OAuth 2.0** chip if the connector offers OAuth;
-* who maintains it: *Managed by Fastn*, or *Managed by &lt;your organization&gt;* for a connector your workspace created;
+* who maintains it: *Managed by Fastn*, or *Managed by* your organisation's name for a connector your workspace created;
 * a button at the bottom.
 
 The button depends on whether you have connected:

@@ -46,7 +46,7 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 | --- | --- |
 | **Params** | Query parameters (**Query Parameters**, **+ Add**). Each one is a key and a value; the value can be a placeholder. |
 | **Headers** | Request headers (**Request Headers**, **+ Add**), as **KEY** / **VALUE** pairs. |
-| **Auth** | How this request is authorised. **Auth type**: `No Auth`, `Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0` or `API Key`. `No auth` (*This request does not use any authorization.*) is the usual choice when the credential is already sent in a header, as in the HubSpot example below. |
+| **Auth** | How this request is authorised. **Auth type**: `No Auth`, `Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0` or `API Key`. **No Auth** (the panel then reads *No auth · This request does not use any authorization.*) is the usual choice when the credential is already sent in a header, as in the HubSpot example below. |
 | **Body** | **Body type**: `JSON`, `Form Data`, `Raw`, `GraphQL` or `Form URL Encoded`, and the body itself. |
 | **Input schema** | The inputs the action accepts. See below. |
 | **Output schema** | The shape of the response the action returns. Same editor as the input schema. |
@@ -79,7 +79,7 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 
 **Add** (top right) adds a top-level field. The count (for example *1 field*) shows how many top-level fields there are.
 
-<figure><img src="../../.gitbook/assets/action-editor-field-options.webp" alt="The Input schema tab with the more-options menu of the phone field open, showing Enum values"><figcaption><strong>More options</strong> on a field.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-editor-field-options.webp" alt="The Input schema tab with a field's more-options menu open, showing Enum values"><figcaption><strong>More options</strong> on a field.</figcaption></figure>
 
 The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and the Agent read it to know which fields a response contains.
 
@@ -89,13 +89,14 @@ The **Output schema** tab (*Define the expected output structure for this action
 
 > Test cases returned when running in mock mode. LLM-generated and live-captured stubs are auto-updated when you regenerate.
 
-<figure><img src="../../.gitbook/assets/action-editor-mocks.webp" alt="The Mocks tab, headed Mock Scenarios, with + Add custom and Generate with AI buttons and two CUSTOM scenarios: rate-limited-chunk, described as a chunk returning 429 while others succeed, and added-ok, Default success: HubSpot accepted the batch"><figcaption>Two custom mock scenarios on Add List Members.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-editor-mocks.webp" alt="The Mocks tab of HubSpot Create Contact, headed Mock Scenarios, with + Add custom and Generate with AI buttons and the empty state No mock scenarios yet. Click Generate with AI to create scenarios automatically"><figcaption>The Mocks tab before any scenario exists.</figcaption></figure>
 
 A mock is a stored response for this action. When a workflow runs in mock mode, the action returns the mock instead of calling the vendor, so you can test a workflow without touching real data.
 
 * **+ Add custom** adds a scenario you write yourself.
 * **Generate with AI** has the AI write scenarios for the action. Generated scenarios are replaced when you generate again.
 * Each scenario shows its source (`CUSTOM` for hand-written ones), its name and a description. The bin icon deletes it.
+* With none saved, the tab reads *No mock scenarios yet.*
 
 ### Running an action
 
@@ -119,13 +120,13 @@ The result appears beside the inputs: the HTTP status, the time taken (`0ms (moc
 
 After a successful live run the action is marked **Live tested** (a green check also appears next to it in the rail), and **Last test** in the panel reopens the most recent result.
 
-<figure><img src="../../.gitbook/assets/action-run-mock-result.webp" alt="The run panel after Run Mock: on the right HTTP 200, 0ms (mock), Response and Request tabs, and the response body null"><figcaption>A mock run. The body is <code>null</code> here because this action has no output schema yet.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-run-mock-result.webp" alt="The run panel after Run Mock: on the right HTTP 200, 0ms (mock), Response and Request tabs, and the response body null"><figcaption>A mock run for an action with no saved scenarios and no output schema.</figcaption></figure>
 
 ### Versions
 
-On an action your workspace owns, the footer shows the version, **New version** and **Save Changes**. Hovering the version explains it: *Internal revision — major.minor. A minor bump reaches pinned callers automatically; a major fork does not.*
+The footer shows the action's version, for example `v1.2`, and **New version**. On an action your workspace owns it also shows **Save Changes**. Hovering the version explains it: *Internal revision — major.minor. A minor bump reaches pinned callers automatically; a major fork does not.*
 
-The footer shows the action's version, for example `v1.2`. **New version** opens a small form:
+**New version** opens a small form:
 
 <figure><img src="../../.gitbook/assets/action-new-version.webp" alt="The New version form above the editor footer: a Fork selector set to Next internal major (breaking), checkboxes Deprecate this version and Make default, and Create and Cancel buttons"><figcaption>Creating a new version of an action.</figcaption></figure>
 

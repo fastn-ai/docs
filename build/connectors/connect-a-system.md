@@ -6,12 +6,13 @@ description: "Making a connection step by step: open the connect dialog, choose 
 
 A connection is what lets a connector call an app as a specific account. Connecting here signs in **your own** account, for your organisation's workflows and for testing. Your customers connect their own accounts through the [widget](../../embed/README.md) you embed.
 
-There are four ways to open the connect dialog. All of them lead to the same dialog:
+These all open the same connect dialog:
 
 * **Connect** on a connector's card in the [catalogue](the-catalogue.md);
 * **Add another connection** on a card that is already connected;
 * **Connect** in the header, or on the **Connections** tab, of the [connector detail page](inside-a-connector.md);
 * **New connection** on the [Connections](../connections/README.md) page, then pick the app.
+* **⋯ → Connect** on the connector's row in the rail, for a connector your workspace owns.
 
 {% stepper %}
 {% step %}

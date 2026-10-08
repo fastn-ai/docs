@@ -32,11 +32,11 @@ The connector's name and icon, the connection's name (for example `Default`), it
 | **Created** | *When your customer authorised it.* |
 | **Updated** | *The last change to this connection record.* |
 
-Use this panel to tell whether a refresh is still succeeding. An **Expires** date in the past together with an old **Last refreshed** date means fastn could no longer renew the token, and the account has to sign in again.
+Use this panel to tell whether a refresh is still succeeding. An **Expires** date in the past together with an old **Last refreshed** date usually means the token could not be renewed, and the account has to sign in again.
 
 ### Recent activity
 
-The latest calls made through this connection. **View all** opens the full list in Activity. Until something has run, it reads *Nothing has come through this connection yet. Calls appear here as soon as your customer starts using it.*
+The latest calls made through this connection. **View all** opens the full list in [Activity](../../operate/README.md). Until something has run, it reads *Nothing has come through this connection yet. Calls appear here as soon as your customer starts using it.*
 
 ### Reconnect
 

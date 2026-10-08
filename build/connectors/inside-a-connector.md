@@ -21,7 +21,7 @@ description: "The connector detail page: the connector rail, the header, and the
 | Element | Meaning |
 | --- | --- |
 | **Name** and icon | The connector. |
-| `<owner> · <auth type>` | Who maintains it (*Fastn* for managed connectors, your organization's name for connectors you own) and its default auth type, for example `Fastn · OAuth 2.0` or `Fastn · INPUT`. |
+| `<owner> · <auth type>` | Who maintains it (*Fastn* for managed connectors, your organisation's name for connectors you own) and its default auth type, for example `Fastn · OAuth 2.0` or `Fastn · INPUT`. |
 | Version chip, for example `v1.0 · Test` | The connector's current version and whether that version is in **Test** or **Live**. |
 | **Connect** or **Disconnect** | **Connect** opens the connect dialog. Once you are connected it changes to **Disconnect**, which removes your connection after a confirmation. |
 | **⋯** (More actions) | On a managed connector you are connected to: **Disconnect**. On a connector your workspace owns: **Edit** and **Delete**; see [Editing, publishing and deleting](editing-and-deleting.md). |

@@ -11,14 +11,14 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 ### How it works
 
 1. A customer connects to the connector.
-2. fastn runs the config's **Subscribe** code with that customer's connection. The code registers a webhook with the app that points at fastn.
+2. fastn runs the config's **Subscribe** code with that customer's connection. The code registers the subscription with the app. With the **App** type, every customer's events arrive at one shared fastn URL; with **Event Webhook**, a separate webhook is registered for each event.
 3. The app sends events to fastn. fastn checks the request (see [Webhook verification](#webhook-verification)), works out which customer and which event it is, and fires the matching app event triggers.
 4. When the customer disconnects, fastn runs the **Unsubscribe** code to remove the webhook.
 5. For apps whose subscriptions expire, fastn runs the **Renew** code before they do.
 
 ### The config table
 
-<figure><img src="../../.gitbook/assets/connector-tab-webhook-config.webp" alt="The HubSpot Webhook config tab with a New config button and a table with columns Type, Events, Registered, Subscription, Unsubscription, Created and Actions; one row: App, 28 events, 15/28, Defined, Defined, Jun 2, 2026"><figcaption>HubSpot has one config of type App covering 28 events.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-tab-webhook-config.webp" alt="The HubSpot Webhook config tab with a New config button and a table with columns Type, Events, Registered, Subscription, Unsubscription, Created and Actions; one row: App, 28 events, 15/28, Defined, Defined, Jun 2, 2026"><figcaption>HubSpot has one config of type App.</figcaption></figure>
 
 | Column | Meaning |
 | --- | --- |
@@ -32,7 +32,7 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 <figure><img src="../../.gitbook/assets/webhook-config-row-actions.webp" alt="The Webhook config tab of a custom connector with one config row: App, 1 event, 0/1, Defined, Defined, Oct 8, 2026, and the actions Edit, Execute and Delete"><figcaption>On a connector you own, each config row has <strong>Edit</strong>, <strong>Execute</strong> and <strong>Delete</strong>.</figcaption></figure>
 
 * **Edit** opens **Edit webhook config** below the table, the same form as **New config** with **Update** instead of **Create**.
-* **Execute** runs the config's subscription code.
+* **Execute** runs the **Subscribe** snippet once with empty input and reports *Subscription executed successfully* when it works. It is disabled if the config has no Subscribe code.
 * **Delete** asks *Delete this webhook config?* in a browser confirmation, then removes it. The tab returns to *No webhook config yet* if it was the only one.
 
 <figure><img src="../../.gitbook/assets/webhook-config-edit.webp" alt="The Edit webhook config form open below the config table, with Available as a trigger source on, Type One webhook for the whole app, Auth provider None configured yet, Event key type, and the Subscribe snippet"><figcaption>Editing an existing config.</figcaption></figure>

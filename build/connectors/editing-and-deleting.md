@@ -4,7 +4,7 @@ description: "What you can change on a connector your workspace owns: editing it
 
 # Editing, publishing and deleting
 
-Everything on this page applies to connectors your workspace **owns**: ones you created with **Create connector** or brought in with **Import**. Their card is badged `Custom` and reads *Managed by &lt;your organization&gt;*. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
+Everything on this page applies to connectors your workspace **owns**: ones you created with **Create connector** or brought in with **Import**. Their card is badged `Custom` and reads *Managed by* followed by your organisation's name. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
 
 ### Where the controls are
 
@@ -38,7 +38,7 @@ On an owned connector:
 
 **+** next to the connector's name in the rail opens a blank action in the editor:
 
-<figure><img src="../../.gitbook/assets/action-new-action.webp" alt="A new, empty action in the editor: name New Action, Description (optional), method GET, a Request URL field with placeholder https://api.example.com/path or paste curl, the tabs Params, Headers, Auth, Body, Input schema and Output schema, and a footer with + Add note for reviewer, Discard and a disabled Create Action button"><figcaption>A new action. <strong>Create Action</strong> is enabled once the request has a URL.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-new-action.webp" alt="A new, empty action in the editor: name New Action, Description (optional), method GET, a Request URL field with placeholder https://api.example.com/path or paste curl, the tabs Params, Headers, Auth, Body, Input schema and Output schema, and a footer with + Add note for reviewer, Discard and a disabled Create Action button"><figcaption>A new action. <strong>Create Action</strong> stays disabled until the request is filled in.</figcaption></figure>
 
 1. Replace **New Action** with the action's name, and add a description.
 2. Choose the method and enter the URL. You can also paste a complete `curl` command into the URL field.
@@ -59,7 +59,7 @@ Every saved change goes to the connector's **Test** version. Customers keep runn
 
 <figure><img src="../../.gitbook/assets/connector-publish-confirm.webp" alt="The Publish to live? dialog: v1.0 becomes the version your customers run. Connections and pins keep working; anyone not pinned moves to it immediately. With Cancel and Publish buttons"><figcaption>Publishing moves every customer who is not pinned to this version.</figcaption></figure>
 
-Customers pinned to another version (see [Version pins](inside-a-connector.md#version-pins)) stay on it. The Edit dialog states that [credential verification](#edit-a-connector) is *required before this connector can go live*, so set a verification action before you publish.
+Customers pinned to another version (see [Version pins](inside-a-connector.md#version-pins)) stay on it. The Edit dialog also says [credential verification](#edit-a-connector) is *required before this connector can go live*. Publishing a test version without it is not blocked, so add a verification action before customers rely on the connector.
 
 ### Restore a version
 
@@ -77,7 +77,7 @@ Each save adds a version with a note of what changed, for example *Updated descr
 
 <figure><img src="../../.gitbook/assets/connector-delete-dialog.webp" alt="The Delete Connector dialog: Are you sure you want to delete Docs Demo CRM? By default this is a soft delete, the connector is hidden but can be restored. Connected accounts are disconnected for good either way. Tick the box below to remove it permanently. A Permanently delete (cannot be undone) checkbox, and Cancel and Delete buttons"><figcaption>Soft delete is the default; tick the box to delete permanently.</figcaption></figure>
 
-* **Soft delete** (the default): the connector disappears from the catalogue and can be restored. Every connection on it is disconnected and its credentials are deleted; restoring brings back the connector, not the credentials.
+* **Soft delete** (the default): the connector disappears from the catalogue. The dialog says it *can be restored*. Every connection on it is disconnected and its credentials are deleted; restoring brings back the connector, not the credentials.
 * **Permanently delete (cannot be undone)**: tick this box to remove the connector for good.
 
 After **Delete**, you return to the catalogue.

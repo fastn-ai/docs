@@ -58,7 +58,7 @@ Workflows, the Agent and the MCP gateway call the connector's actions through th
 {% step %}
 #### Receive events (optional)
 
-If the connector has a webhook config, fastn registers a webhook for each connection so that an app event trigger can start a workflow when something happens in the app.
+If the connector has a webhook config, fastn runs its subscription code for each new connection, so that events from that account reach fastn and an app event trigger can start a workflow.
 {% endstep %}
 {% endstepper %}
 
