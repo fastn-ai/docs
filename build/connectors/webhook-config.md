@@ -29,7 +29,7 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 | **Created** | When the config was created. |
 | **Actions** | **Edit**, **Execute** and **Delete**, on connectors your workspace owns. Empty on managed connectors. |
 
-<figure><img src="../../.gitbook/assets/webhook-config-row-actions.webp" alt="The Webhook config tab of a custom connector with one config row: App, 1 event, 0/1, Defined, Defined, Oct 8, 2026, and the actions Edit, Execute and Delete"><figcaption>On a connector you own, each config row has <strong>Edit</strong>, <strong>Execute</strong> and <strong>Delete</strong>.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/webhook-config-row-actions.webp" alt="The Webhook config tab of a custom connector with one config row: App, 1 event, 0/1, Defined, Defined, the created date, and the actions Edit, Execute and Delete"><figcaption>On a connector you own, each config row has <strong>Edit</strong>, <strong>Execute</strong> and <strong>Delete</strong>.</figcaption></figure>
 
 * **Edit** opens **Edit webhook config** below the table, the same form as **New config** with **Update** instead of **Create**.
 * **Execute** runs the **Subscribe** snippet once with empty input and reports *Subscription executed successfully* when it works. It is disabled if the config has no Subscribe code.

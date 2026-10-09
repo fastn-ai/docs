@@ -51,7 +51,7 @@ Then a **Details** table:
 
 #### Versions
 
-<figure><img src="../../.gitbook/assets/connector-detail-versions.webp" alt="The lower part of the HubSpot Overview tab: the Details table and a Versions section with a Test/Live toggle listing v1.1 Test, Auto-versioned on update, Jun 2, 2026, and v1.0 Test, Initial version, Jun 2, 2026"><figcaption>The Versions list with the <strong>Test</strong> toggle selected.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-detail-versions.webp" alt="The HubSpot Overview tab with the Details table and, below it, a Versions section with a Test/Live toggle listing v1.1 Test, Auto-versioned on update, Jun 2, 2026, and v1.0 Test, Initial version, Jun 2, 2026"><figcaption>The Versions list with the <strong>Test</strong> toggle selected.</figcaption></figure>
 
 Every saved change to a connector creates a version. The **Versions** section lists them, newest first, with a note such as *Initial version* or *Auto-versioned on update* and the date.
 

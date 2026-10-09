@@ -15,7 +15,7 @@ On an owned connector:
 * the catalogue card's **⋯** menu holds **Select**, **Edit**, **Export** and **Delete** (see [Importing and exporting](importing-and-exporting.md#export-connectors));
 * each test version under **Overview → Versions** has **Publish to live**.
 
-<figure><img src="../../.gitbook/assets/connector-owned-menu.webp" alt="The detail page of a custom connector, Docs Demo CRM, with the header three-dot menu open showing Edit and Delete; the Overview shows 0 Connections, 1 Auth method No Auth and v1.0 Current version, and the Versions list has a Publish to live button on v1.0"><figcaption>An owned connector: <strong>Edit</strong> and <strong>Delete</strong> in the header menu, <strong>Publish to live</strong> on the version.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-owned-menu.webp" alt="The detail page of a custom connector, Docs Demo CRM, with the header three-dot menu open showing Edit and Delete; the Overview shows 0 Connections, 1 Auth method API key and v1.0 Current version, and the Versions list has a Publish to live button on v1.0"><figcaption>An owned connector: <strong>Edit</strong> and <strong>Delete</strong> in the header menu, <strong>Publish to live</strong> on the version.</figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/connector-rail-menu.webp" alt="The connector rail with the Docs Demo CRM row's three-dot menu open, listing New Folder, Import, Export All, Connect, Edit and Delete"><figcaption>The menu on an owned connector's row in the rail.</figcaption></figure>
 
@@ -23,7 +23,7 @@ On an owned connector:
 
 **⋯ → Edit** opens **Edit connector**. It has the same Identity, Connection and Authentication sections as [Create a connector](creating-a-connector.md), plus **Credential verification**:
 
-<figure><img src="../../.gitbook/assets/connector-edit-verification.webp" alt="The lower part of the Edit connector dialog: the No Auth method block, then a Credential verification section with a Verification action selector set to None, connections stay unverified, a Success path field with placeholder $.id, and the footer Changes apply to the test version until you publish, with Cancel and Save changes"><figcaption>Credential verification appears only when editing.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-edit-verification.webp" alt="The lower part of the Edit connector dialog: the end of the API Key configuration (apiKeyValue and expires_in fields), then a Credential verification section with a Verification action selector set to None, connections stay unverified, a Success path field with placeholder $.id, and the footer Changes apply to the test version until you publish, with Cancel and Save changes"><figcaption>Credential verification appears only when editing.</figcaption></figure>
 
 > Runs when someone connects, so a wrong API key is caught immediately instead of failing later in a workflow. Required before this connector can go live.
 

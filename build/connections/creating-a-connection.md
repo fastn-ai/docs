@@ -12,7 +12,7 @@ Your **customers'** connections should not be made here. Customers connect their
 
 **New connection** opens **Connect a system** · *Pick the system your customers use. You can add more later.*
 
-<figure><img src="../../.gitbook/assets/connections-new-picker.webp" alt="The Connect a system dialog with a Search systems box and a grid of systems, each showing its name and the label of its default auth method, such as AbstractAPI Holidays API Key, Airtable OAuth 2.0, Akeneo PIM Akeneo Credentials and Asana Connect with Asana OAuth, with the count 420 of 420 systems and a Cancel button"><figcaption>Every connector in the catalogue, with the label of its default auth method.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connections-new-picker.webp" alt="The Connect a system dialog with a Search systems box and a grid of systems, each showing its name and the label of its default auth method, such as AbstractAPI Holidays API Key, Airtable OAuth 2.0, Akeneo PIM Akeneo Credentials and Asana Connect with Asana OAuth, with the count 422 of 422 systems and a Cancel button"><figcaption>Every connector in the catalogue, with the label of its default auth method.</figcaption></figure>
 
 Type in **Search systems** to narrow the grid, then click the system. The footer counts how many systems match. The list can take a few seconds to load (*Loading systems...*).
 

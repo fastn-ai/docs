@@ -114,7 +114,7 @@ A mock is a stored response for this action. When a workflow runs in mock mode, 
 
 The result appears beside the inputs: the HTTP status, the time taken (`0ms (mock)` for a mock), and **Response** and **Request** tabs with the response body and the request that was sent.
 
-<figure><img src="../../.gitbook/assets/action-run-live-result.webp" alt="The run panel for GET List Users, badged Live tested, with Mock and Last test buttons, Connection set to default (default), and on the right HTTP 200, 19ms and the Response tab showing a JSON array of sample users"><figcaption>A live run through a connection: status, time and the response body.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-run-live-result.webp" alt="The run panel for GET List Users with a Mock button, Connection set to default (default), a Run Action button, and on the right HTTP 200, the response time and the Response tab showing a JSON array of sample users"><figcaption>A live run through a connection: status, time and the response body.</figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/action-run-live-request.webp" alt="The same run panel with the Request tab selected: URL GET https://jsonplaceholder.typicode.com/users?_limit=[redacted], and Body: No request body, GET requests do not send one"><figcaption>The Request tab shows what was sent. Query values are shown as <code>[redacted]</code>.</figcaption></figure>
 

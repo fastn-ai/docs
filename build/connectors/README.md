@@ -6,7 +6,7 @@ description: "What a connector is, how it relates to actions, auth methods, conn
 
 **Integrations → Connectors** · `/integrations?tab=connectors`
 
-<figure><img src="../../.gitbook/assets/connectors-catalogue.webp" alt="The Connectors page: Import, Request connector and Create connector buttons top right, a Categories list on the left starting with All connectors 420, a search box with All, Connected and OAuth chips and an All Visibility filter, connector cards such as AbstractAPI Email Reputation badged managed with a Connect button, and the Connectors guide panel on the right"><figcaption>The Connectors catalogue with the guide panel open.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connectors-catalogue.webp" alt="The Connectors page: Import, Request connector and Create connector buttons top right, a Categories list on the left starting with All connectors 422, a search box with All, Connected and OAuth chips and an All Visibility filter, connector cards such as AbstractAPI Email Reputation badged managed with a Connect button, and the Connectors guide panel on the right"><figcaption>The Connectors catalogue with the guide panel open.</figcaption></figure>
 
 A **connector** is fastn's bridge to one external app, such as HubSpot, Jira or Stripe. The page describes it in one line:
 
