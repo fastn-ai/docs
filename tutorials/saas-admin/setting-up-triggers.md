@@ -41,8 +41,6 @@ Routes map incoming webhooks to workflows. Each route has:
 5. Expand **Advanced options** for additional configuration.
 6. Click **Create**.
 
-> **Screenshot needed:** Webhook trigger configuration showing Routes with workflow dropdown, Key/Value filter, and Header fields.
-
 #### Example: Route by event type
 
 A single webhook endpoint receiving different event types:

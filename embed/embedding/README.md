@@ -41,7 +41,22 @@ Instead of a snippet, send a link. It keeps working until you revoke it, and the
 The reference in a shareable link *is* the credential. Treat the link itself as a secret: anyone who has it can act as that customer.
 {% endhint %}
 
-Create links per customer under **Shareable links** on the Embed tab. Each row offers **Copy**, **Show** and **Revoke**.
+#### Creating one
+
+1. Go to **Widgets → Embed** and pick the customer in the **USER** dropdown. **Create link** stays disabled until you do — with nobody selected the card reads *Pick a customer above first.*
+2. In the **Shareable links** card, select **Create link**.
+3. The new row appears badged **New**.
+
+Each row identifies itself by the last few characters of its id rather than printing the credential as a headline, and carries its own state:
+
+| State | Meaning |
+| ----- | --------- |
+| **Never used** | Created, not yet opened. |
+| **Used N times** | How many times it has been opened. |
+| **Revoked** | You revoked it. It will not load. |
+| **Expired** | It passed its expiry. It will not load. |
+
+**Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. **Revoke** is immediate, and a revoked or expired link offers neither — handing one over is only a way to give someone something that will not load.
 
 A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorise on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
 

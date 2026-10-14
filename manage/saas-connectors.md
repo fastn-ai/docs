@@ -4,7 +4,11 @@ description: Registering your own SaaS API as a connector, and the scopes tenant
 
 # SaaS Connectors
 
-**Settings → SaaS Connectors**
+**Settings → SaaS Connectors** — in your dashboard, `/settings/saas-connectors`.
+
+{% hint style="info" %}
+**This page needs the admin role.** Unlike the rest of Settings, SaaS Connectors is admin-only, so a developer will not see it in the sidebar at all. If you are looking for it and it is not there, that is why — ask an admin on your account.
+{% endhint %}
 
 > Register your own SaaS API's connectors and define the connection scopes tenants are provisioned under.
 
@@ -18,11 +22,16 @@ With nothing registered the page reads:
 
 ### Registering one
 
-**Add your first SaaS connector** (or **Add**, once the list is populated) opens the **Add SaaS Connector** panel, which takes two things.
+1. Go to **Settings → SaaS Connectors**.
+2. Select **Add your first SaaS connector** — or **Add**, once the list is populated.
+3. In the **Add SaaS Connector** panel, pick your own API's **Connector** and add at least one **Connection scope**.
+4. Select **Add SaaS Connector** to save, or **Cancel** to discard.
+
+The panel takes two things.
 
 | Field | Notes |
 | ----- | ----- |
-| **Connector \*** | A picker over the whole connector catalogue (*Select your SaaS API's connector…*. Its helper text is the important part: *"The connector for your own SaaS API), the one your tenants' connections are provisioned against."* This is not the system you are integrating **with**; it is the one representing **you**. |
+| **Connector \*** | A picker over the whole connector catalogue (*Select your SaaS API's connector…*. Its helper text is the important part: *"The connector for your own SaaS API, the one your tenants' connections are provisioned against."* This is not the system you are integrating **with**; it is the one representing **you**. |
 | **Connection scopes** | A free-text field with an **Add** button beside it, seeded with the example `inventory`. Add as many as you need. |
 
 The panel closes with **Cancel** and **Add SaaS Connector**.
