@@ -44,7 +44,7 @@ Checking the **Multi Tenant** option will enable you to embed connectors and act
   "mcpServers": {
     "fastn": {
       "transport": "streamable_http",
-      "url": "https://mcp.ucl.dev/shttp/space_id={}&tenant_id=test-tenant&auth_token=customAuthToken"
+      "url": "https://mcp.fastn.dev/shttp/space_id={}&tenant_id=test-tenant&auth_token=customAuthToken"
     }
   }
 }

@@ -41,11 +41,19 @@ Dynamic tools are scoped per tenant — a customer who only connected Slack will
 
 #### MCP server URL
 
-Your MCP server URL follows this pattern:
+Every workspace uses the same MCP server URL:
 
 ```
-https://mcp.ucl.dev/mcp/?id={PROJECT_ID}&api_key={API_KEY}&space_id={PROJECT_ID}
+https://mcp.fastn.dev
 ```
+
+Authentication is a header, not a query string. Pass an API key from [Settings → API keys](../../manage/api-keys.md):
+
+```
+Authorization: Bearer fsk_live_<your-key>
+```
+
+Test keys work too, with `X-fastn-Test-Mode: true`. Neither mode is a sandbox: a test key reaches the same live connections as a live key and causes the same real writes.
 
 #### Claude Desktop configuration
 
@@ -55,7 +63,10 @@ Add Fastn as an MCP server in Claude Desktop's configuration:
 {
   "mcpServers": {
     "fastn": {
-      "url": "https://mcp.ucl.dev/mcp/?id=YOUR_PROJECT_ID&api_key=YOUR_API_KEY&space_id=YOUR_PROJECT_ID"
+      "url": "https://mcp.fastn.dev",
+      "headers": {
+        "Authorization": "Bearer fsk_live_<your-key>"
+      }
     }
   }
 }
@@ -80,7 +91,8 @@ const client = new Client({
 
 // Connect to Fastn's MCP server
 await client.connect({
-  url: 'https://mcp.ucl.dev/mcp/?id=PROJECT_ID&api_key=API_KEY&space_id=PROJECT_ID'
+  url: 'https://mcp.fastn.dev',
+  headers: { Authorization: `Bearer ${process.env.FASTN_API_KEY}` }
 });
 
 // List available tools
@@ -104,7 +116,7 @@ const response = await fetch("https://api.anthropic.com/v1/messages", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-sonnet-5-5",
     max_tokens: 1000,
     messages: [
       { role: "user", content: "List all active integrations for tenant acme-corp" }
@@ -112,8 +124,9 @@ const response = await fetch("https://api.anthropic.com/v1/messages", {
     mcp_servers: [
       {
         type: "url",
-        url: "https://mcp.ucl.dev/mcp/?id=PROJECT_ID&api_key=API_KEY&space_id=PROJECT_ID",
-        name: "fastn"
+        url: "https://mcp.fastn.dev",
+        name: "fastn",
+        authorization_token: process.env.FASTN_API_KEY
       }
     ]
   })
