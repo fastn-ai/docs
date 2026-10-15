@@ -8,7 +8,7 @@ This walks the shortest honest path. Budget about twenty minutes.
 
 ### 1. Describe what you want
 
-Open **Integrations → Agent** in the sidebar, or type what you want to build into the **What do you want to build?** prompt on Home. Both land on the same screen.
+Open **Build with AI** in the sidebar, or type what you want into the **What should your customers be able to do?** prompt on Home. Both land on the same screen.
 
 <figure><img src="../.gitbook/assets/agent-start.jpg" alt="The Agent screen: the Sessions rail on the left, a Build an integration pane with four START FROM AN EXAMPLE cards, and a message composer with an Auto approval-mode chip"><figcaption><strong>Agent</strong> is the first item under Integrations; Home's prompt box opens the same place.</figcaption></figure>
 
@@ -85,7 +85,7 @@ Open **Widgets**, click **Add** under INTEGRATIONS, and pick the integration you
 
 ### 8. Make failure loud
 
-Go to **Activity → Alerts** and click **Turn on failure alerts**. One click turns on the two alerts most teams need. A sync that fails quietly for six hours is a support ticket you could have avoided. Alerts are checked every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
+Go to **Health → Alerts** and click **Turn on failure alerts**. One click turns on the two alerts most teams need. A sync that fails quietly for six hours is a support ticket you could have avoided. Alerts are checked every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
 
 {% hint style="success" %}
 Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows/README.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway.md) covers exposing the same integrations to an AI client.

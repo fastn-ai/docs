@@ -61,8 +61,8 @@ Three possible reasons, in order of likelihood:
 No menu item, so the route is a key your provider mints for you:
 
 1. **Ask your provider** for an MCP key for your organization, naming the apps and operations you need.
-2. **They mint it** under Settings → API keys, scoped to your organization only, on the narrowest permission preset that covers the ask — there is an **End user** preset meant for this.
-3. **They send you the key and the gateway URL** to point your client at. It is the same hosted gateway they use themselves — their dashboard has a **Connect an agent** dialog that shows the URL and a one-click **Add to Claude**, so they can copy both from there.
+2. **They mint it** under Embed → API keys and MCP, scoped to your organization only, on the narrowest permission preset that covers the ask. There is an **End user** preset meant for this.
+3. **They send you the key and the gateway URL** to point your client at. It is the same hosted gateway they use themselves: their dashboard has an **MCP server** page (Embed → API keys and MCP) that shows the URL and a one-click **Add to Claude**, so they can copy both from there.
 4. **You add it** to your client, sending the key as a bearer token:
 
    ```

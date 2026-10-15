@@ -1,6 +1,6 @@
 ---
 description: >-
-  Create customers under Settings → Customers, scope API calls per customer, and
+  Create customers under Operate → Customers, scope API calls per customer, and
   monitor customer-level activity.
 hidden: true
 ---
@@ -13,12 +13,12 @@ In Fastn, your end users are called **Customers** (alternatively called "Tenants
 
 ### Creating customers
 
-1. Go to **Settings → Customers**.
+1. Go to **Operate → Customers**.
 2. Click **"Create Customer"**.
 3. Enter the customer details (name, and any other required fields).
 4. Click create. Note the **customer ID** — you'll use this for API calls and widget embedding.
 
-> &#x20;**Screenshot:** Settings → Customers showing the Create Customer button and the creation form.
+> &#x20;**Screenshot:** Operate → Customers showing the Create Customer button and the creation form.
 
 > &#x20;**Screenshot:** Customer list showing created customers with their IDs.
 
@@ -94,7 +94,7 @@ For a complete history of all actions:
 
 ### What you've learned
 
-* How to create customers under Settings → Customers
+* How to create customers under Operate → Customers
 * Customer isolation model i.e. each customer has separate connections, data, and executions
 * How to customize quota limits per customer
 * How to monitor customer activity through Executions, Events, and Audit Log

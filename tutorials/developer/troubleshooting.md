@@ -10,7 +10,7 @@ Common errors when embedding Fastn, with their causes and fixes.
 
 **Most likely cause:** an expired or hardcoded token.
 
-Embed tokens expire after 15 minutes. If a token is hardcoded into your frontend or cached and reused, it works until it expires, then the iframe loads blank with no obvious error.
+Embed tokens expire after 8 hours. If a token is hardcoded into your frontend or cached and reused, it works until it expires, then the iframe loads blank with no obvious error.
 
 **Fix:** Generate a fresh token from your backend on each page load. Never hardcode or cache tokens. See [Generating Embed Tokens](generating-embed-tokens.md).
 

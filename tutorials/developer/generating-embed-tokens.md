@@ -50,13 +50,13 @@ X-fastn-Test-Mode: true        (only for fsk_test_ keys; omit for fsk_live_)
 
 The embed token is prefixed `emb_`. In the hands-on integration, the token was nested under `data` — read `response.data.token`, not `response.token`.
 
-`expiresIn` is `900` seconds — 15 minutes.
+`expiresIn` is `28800` seconds, which is 8 hours.
 
 > **VERIFY:** The Embed tab UI shows the token request with only `Authorization: Bearer YOUR_API_KEY` and references a `YOUR_CUSTOMER_ID` parameter, while the hands-on integration used a body of `{ endOrgId, userEmail, userName }` and read the token from `data.token`. Confirm the exact request body and response shape against the current API before publishing — the UI snippet and the hands-on result should be reconciled.
 
 ### Refreshing tokens
 
-Because tokens expire after 15 minutes, a long-lived embed session needs the token refreshed before it expires. The platform provides a refresh endpoint, and the Embed tab notes that tokens auto-refresh:
+Because tokens expire after 8 hours, a long-lived embed session needs the token refreshed before it expires. The platform provides a refresh endpoint, and the Embed tab notes that tokens auto-refresh:
 
 ```
 POST https://live.gcp.fastn.ai/api/v1/embed/token/refresh
@@ -68,7 +68,7 @@ Use the refresh endpoint to obtain a new token before the current one expires, o
 
 ### Token lifecycle
 
-**Tokens expire after 15 minutes.** Generate a fresh token on each page load. Do not generate one and reuse it across sessions or store it for later.
+**Tokens expire after 8 hours.** Generate a fresh token on each page load. Do not generate one and reuse it across sessions or store it for later.
 
 **Generate tokens server-side.** The token is minted from your API key, and your API key must never appear in client-side code. The token request has to happen on your backend.
 

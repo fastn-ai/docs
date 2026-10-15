@@ -4,7 +4,7 @@ description: Letting an AI client reach your connectors as tools.
 
 # MCP gateway
 
-**Connect an agent**: in the top bar, and **Connect fastn to your favourite agent** under the prompt box on Home
+**Embed → API keys and MCP → MCP server** · `/access?tab=mcp`. Also in the command palette (⌘K) as **Use fastn from Claude or any MCP client**, and under **Create connector → Build from Claude or any MCP client** on the Connectors page.
 
 Everything you build in fastn (connectors, actions, workflows), can be exposed to an AI client over the Model Context Protocol. The client sees your connectors as tools it can call, with the same customer scoping and the same permission model as everything else.
 
@@ -32,7 +32,7 @@ For Claude Code, the dialog also gives you a command to run:
 claude mcp add --transport http fastn https://mcp.fastn.dev
 ```
 
-For any other MCP client, point it at that URL and authenticate with an API key from [Settings → API keys](../manage/api-keys.md):
+For any other MCP client, point it at that URL and authenticate with an API key from [Embed → API keys and MCP](../manage/api-keys.md):
 
 ```
 Authorization: Bearer fsk_live_<your-key>
