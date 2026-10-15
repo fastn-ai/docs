@@ -30,15 +30,15 @@ When the React SDK ships, it will wrap this same flow — your backend will stil
 
 ### What you'll set up
 
-1. A server-side function that generates an embed token on each request (never hardcode tokens — they expire in 15 minutes).
+1. A server-side function that generates an embed token on each request (never hardcode tokens: they expire in 8 hours).
 2. A frontend component that renders the Fastn iframe with the token.
 3. A decision about how connections are scoped — shared across the customer's organization, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
 
 ### Why generate tokens server-side
 
-The token is minted from your API key. Your API key must never be exposed in client-side code. The token also expires after 15 minutes, so it can't be generated once and reused — each page load needs a fresh token. Both of these require a backend step.
+The token is minted from your API key. Your API key must never be exposed in client-side code. The token also expires after 8 hours, so it can't be generated once and reused; each page load needs a fresh token. Both of these require a backend step.
 
-A common failure is hardcoding a token into the frontend during testing. It works for the first 15 minutes, then the iframe renders blank with no obvious error. Generating the token server-side per request avoids this entirely.
+A common failure is hardcoding a token into the frontend during testing. It works for the first 8 hours, then the iframe renders blank with no obvious error. Generating the token server-side per request avoids this entirely.
 
 ### Next
 

@@ -4,7 +4,7 @@ description: Every customer using your embedded integrations.
 
 # Customers
 
-**Customers** · `/settings/customers`
+**Operate → Customers** · `/customers`
 
 A top-level item in the sidebar's OPERATE group, beside Activity rather than inside it. Note the mismatch between where it sits and where it lives: the sidebar puts it under OPERATE, but its route is under `/settings/`. Linking to `/customers` gets you a **Page not found**.
 

@@ -2,13 +2,13 @@
 description: The chat-driven builder that picks connectors, drafts workflows and shows you the diff.
 ---
 
-# Agent
+# Build with AI
 
-**Integrations → Agent** (`/agent`), or the **What do you want to build?** prompt on Home
+**Build → Build with AI** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
-<figure><img src="../../.gitbook/assets/agent-start.jpg" alt="The Agent screen at /agent: the Sessions rail on the left listing earlier sessions, and a Build an integration pane with four START FROM AN EXAMPLE cards above a Write a message composer carrying an Auto chip and a 0 / 1000k context meter"><figcaption><strong>Agent</strong> is the first item under Integrations in the sidebar. Home's prompt box opens the same place.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-start.jpg" alt="The Agent screen at /agent: the Sessions rail on the left listing earlier sessions, and a Build an integration pane with four START FROM AN EXAMPLE cards above a Write a message composer carrying an Auto chip and a 0 / 1000k context meter"><figcaption><strong>Build with AI</strong> is the first item under Build in the sidebar. Home's prompt box opens the same place.</figcaption></figure>
 
-The agent is the primary way integrations get built in fastn, and there are two ways in: the **Agent** item in the sidebar, directly under **Integrations**, or the **What do you want to build?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
+The agent is the primary way integrations get built in fastn, and there are two ways in: **Build with AI** in the sidebar, the first item under **Build**, or the **What should your customers be able to do?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
 
 > Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
 

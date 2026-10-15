@@ -20,7 +20,7 @@ Every request carries an API key as a bearer token.
 Authorization: Bearer fsk_live_<your-key>
 ```
 
-Keys are created under [Settings → API keys](../manage/api-keys.md) and come in two modes.
+Keys are created under [Embed → API keys and MCP](../manage/api-keys.md) and come in two modes.
 
 | Header                   | Live key                    | Test key                              |
 | ------------------------ | --------------------------- | ------------------------------------- |
@@ -191,7 +191,7 @@ That URL carries a live credential. Treat it like one: build it server-side per 
 | Response                  | Means                                                                          |
 | ------------------------- | -------------------------------------------------------------------------------- |
 | `WORKFLOW_NOT_PUBLISHED`  | The workflow has never had a snapshot published, so there is no version to run. **Every call returns this until you publish one**. It is the most common cause of "the API did nothing". Publish from the workflow editor. |
-| `401` / `403`             | The key is wrong, revoked, expired, outside its IP allowlist, or lacks the permission for what you called. Check the key on [Settings → API keys](../manage/api-keys.md). |
+| `401` / `403`             | The key is wrong, revoked, expired, outside its IP allowlist, or lacks the permission for what you called. Check the key on [Embed → API keys and MCP](../manage/api-keys.md). |
 | Test key rejected         | The key is a test key and `X-fastn-Test-Mode: true` was not sent.                |
 
 A workflow that runs and throws is a **Failed** execution rather than a transport error: look for it in [Executions](../operate/executions.md), not in the HTTP response.

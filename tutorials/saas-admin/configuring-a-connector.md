@@ -80,7 +80,7 @@ A connector defines the integration. A **connection** is an authenticated instan
    * **OAuth 2.0:** Popup opens with the app's login screen. Authorize and you're redirected back.
    * **API Key / Bearer Token:** Paste the key/token and save.
    * **Basic Auth:** Enter username and password.
-4. The connection appears under **Integrations → Connections**.
+4. The connection appears under **Operate → Connections**.
 
 > **GIF:** Adding a connection — clicking Connect on a connector card, completing OAuth, seeing the connected state.
 
@@ -90,7 +90,7 @@ A connector defines the integration. A **connection** is an authenticated instan
 | ----------------- | --------------------------------------------------------- | ------------------------------------------------- |
 | **What it is**    | The integration definition (auth config, actions, events) | An authenticated instance with stored credentials |
 | **How many**      | One per app                                               | Many — one per user/customer who connects         |
-| **Where managed** | Integrations → Connectors                                 | Integrations → Connections                        |
+| **Where managed** | Integrations → Connectors                                 | Operate → Connections                             |
 | **Created by**    | You (manual or AI)                                        | You (for testing) or your customers (via widget)  |
 
 #### Connector card states
