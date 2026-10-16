@@ -99,7 +99,7 @@ Sent on the request; readable at `ctx.headers`.
 
 ## HTTP API
 
-Base URL is your deployment: production is `https://api.fastn.dev`. Each workflow's **API** tab shows the correct host for your workspace. Examples below use `YOUR_FASTN_HOST`.
+Production base URL: `https://api.fastn.dev`. Your workflow's **API** tab shows the URL for your workspace. Examples below use `YOUR_FASTN_HOST`.
 
 ### Auth
 
