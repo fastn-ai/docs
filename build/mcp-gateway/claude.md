@@ -12,7 +12,7 @@ Add fastn once, switch it on in a chat, then ask for the integration in one sent
 2. Or add it by hand: in Claude, open **Customize** → **Connectors**, click **Add** → **Add custom connector**, enter **Name** `fastn` and **MCP server URL** `https://mcp.fastn.dev/fastn-workspace`, then click **Continue**.
 3. Open the fastn connector. Claude shows *You're not connected to Fastn yet*. Click **Connect**.
 
-<figure><img src="../../.gitbook/assets/mcp-claude-not-connected.png" alt="Claude's fastn connector page reading You're not connected to Fastn yet, with a Connect button"><figcaption>The fastn connector in Claude before you connect it.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-claude-not-connected.png" alt="Claude's fastn connector page showing the URL it was added with, https://mcp.fastn.dev, then You're not connected to Fastn yet and a Connect button"><figcaption>The page shows the URL your connector was added with. Use <code>https://mcp.fastn.dev/fastn-workspace</code>, the link from fastn's <strong>Connect an agent</strong>.</figcaption></figure>
 
 4. fastn opens **Choose what Claude can reach**. Pick your workspace, then choose which apps and tools Claude may use: **Select all**, **Reads only**, or tick them one by one. Click **Authorize Claude**.
 
