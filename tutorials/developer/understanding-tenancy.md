@@ -35,7 +35,7 @@ The tenancy choice is encoded in the iframe URL and the identity the token is mi
 **User-level (per individual):**
 
 ```
-https://live.gcp.fastn.ai/api/v1/embed/iframe?tenant-id=<endOrgId>&token=<token>
+https://api.fastn.dev/api/v1/embed/iframe?tenant-id=<endOrgId>&token=<token>
 ```
 
 The `tenant-id` parameter is present. Combined with the `userEmail` and `userName` in the token body, connections are isolated to that individual user.
@@ -43,7 +43,7 @@ The `tenant-id` parameter is present. Combined with the `userEmail` and `userNam
 **Org-level (shared):**
 
 ```
-https://live.gcp.fastn.ai/api/v1/embed/iframe?token=<token>
+https://api.fastn.dev/api/v1/embed/iframe?token=<token>
 ```
 
 No `tenant-id` parameter. Connections are shared across the organization.
