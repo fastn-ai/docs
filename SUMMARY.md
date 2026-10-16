@@ -46,6 +46,7 @@
 * [Agent](build/agent/README.md)
   * [Approval mode](build/agent/approval-mode.md)
   * [Worked example](build/agent/worked-example.md)
+* [Building from your AI agent](build/building-from-your-ai-agent.md)
 * [Connectors](build/connectors/README.md)
   * [The catalogue](build/connectors/the-catalogue.md)
   * [Creating a connector](build/connectors/creating-a-connector.md)
@@ -73,7 +74,11 @@
   * [Schedule triggers](build/triggers/schedulers.md)
   * [App event triggers](build/triggers/app-events.md)
 * [Pending updates](build/connector-updates.md)
-* [MCP gateway](build/mcp-gateway.md)
+* [MCP gateway](build/mcp-gateway/README.md)
+  * [Claude](build/mcp-gateway/claude.md)
+  * [ChatGPT](build/mcp-gateway/chatgpt.md)
+  * [Lovable](build/mcp-gateway/lovable.md)
+  * [Bolt](build/mcp-gateway/bolt.md)
 * [Common patterns](build/patterns.md)
 
 ## Embed
