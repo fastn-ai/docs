@@ -88,7 +88,7 @@ Open **Widgets**, click **Add** under INTEGRATIONS, and pick the integration you
 Go to **Activity → Alerts** and click **Turn on failure alerts**. One click turns on the two alerts most teams need. A sync that fails quietly for six hours is a support ticket you could have avoided. Alerts are checked every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
 
 {% hint style="success" %}
-Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows/README.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway.md) covers exposing the same integrations to an AI client.
+Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows/README.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway/README.md) covers exposing the same integrations to an AI client.
 {% endhint %}
 
 {% hint style="info" %}

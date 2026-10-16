@@ -96,4 +96,4 @@ fastn's agents are not autocomplete. They discover API specs, create connectors,
 
 ### The MCP gateway
 
-Everything you build can also be exposed to an AI client as tools, with the same customer scoping and permission model. See [MCP gateway](../build/mcp-gateway.md).
+Everything you build can also be exposed to an AI client as tools, with the same customer scoping and permission model. See [MCP gateway](../build/mcp-gateway/README.md).

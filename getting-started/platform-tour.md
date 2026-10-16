@@ -61,7 +61,7 @@ The BUILD group holds two nav items: **Integrations**, which expands into the si
 | **Triggers**          | Webhooks, schedules and app events that start workflows.                                         |
 | **Pending updates**   | Vendor changes to your integrations, and the fixes proposed for them. Nothing is applied until you accept it. |
 
-**Connect to Claude**, in the top bar and again on Home, exposes all of this to an AI client. See [MCP gateway](../build/mcp-gateway.md).
+**Connect to Claude**, in the top bar and again on Home, exposes all of this to an AI client. See [MCP gateway](../build/mcp-gateway/README.md).
 
 ### BUILD → Widgets
 
