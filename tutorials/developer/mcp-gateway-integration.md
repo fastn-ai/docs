@@ -41,27 +41,31 @@ Dynamic tools are scoped per tenant — a customer who only connected Slack will
 
 #### MCP server URL
 
-Your MCP server URL follows this pattern:
+`mcp.ucl.dev` no longer resolves. The dashboard's **Connect an agent** dialog gives you the current URL for your workspace, with a **Copy** button beside it. [MCP gateway](../../build/mcp-gateway.md) covers that dialog, the one-click Claude install and the API key in one place, so the examples below write it as `YOUR_FASTN_MCP_URL` rather than keeping a second copy here.
 
-```
-https://mcp.ucl.dev/mcp/?id={PROJECT_ID}&api_key={API_KEY}&space_id={PROJECT_ID}
-```
+Two things changed with the host, and both matter for the samples:
+
+* **The URL carries no credentials.** The server advertises `bearer_methods_supported: ["header"]` at `/.well-known/oauth-protected-resource`, so the key goes in an `Authorization` header and nowhere else. The old `?id=&api_key=&space_id=` form is gone.
+* **The path is what selects the workspace**, in the form `mcp.<zone>/<org>[/<workspace>]`, which is the job `space_id` used to do. Which customers a key may reach on top of that is set on the key itself, under *Customers it can reach*.
 
 #### Claude Desktop configuration
 
-Add Fastn as an MCP server in Claude Desktop's configuration:
+Claude adds a remote MCP server under **Customize → Connectors → Add custom connector**, not through `claude_desktop_config.json`. Paste the URL there; the same dialog takes a fixed request header, which is where `Authorization: Bearer fsk_live_<your-key>` goes.
+
+`claude_desktop_config.json` runs local commands, so the file form of the same thing proxies through `mcp-remote`:
 
 ```json
 {
   "mcpServers": {
     "fastn": {
-      "url": "https://mcp.ucl.dev/mcp/?id=YOUR_PROJECT_ID&api_key=YOUR_API_KEY&space_id=YOUR_PROJECT_ID"
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "YOUR_FASTN_MCP_URL"]
     }
   }
 }
 ```
 
-After configuration, Claude can discover and invoke Fastn tools directly in conversation.
+Either way, Claude can then discover and invoke Fastn tools directly in conversation.
 
 > **Screenshot:** Claude Desktop with Fastn MCP tools visible in the tool list and showing both native and dynamic tools.
 
@@ -71,17 +75,22 @@ For custom AI applications, connect to the MCP server using any MCP client libra
 
 ```typescript
 // Example using the MCP SDK
-import { Client } from '@modelcontextprotocol/sdk/client';
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 const client = new Client({
   name: 'my-ai-app',
   version: '1.0.0'
 });
 
-// Connect to Fastn's MCP server
-await client.connect({
-  url: 'https://mcp.ucl.dev/mcp/?id=PROJECT_ID&api_key=API_KEY&space_id=PROJECT_ID'
+// Connect to Fastn's MCP server. connect() takes a transport, and the key
+// rides on the transport's request headers.
+const transport = new StreamableHTTPClientTransport(new URL('YOUR_FASTN_MCP_URL'), {
+  requestInit: {
+    headers: { Authorization: `Bearer ${process.env.FASTN_API_KEY}` }
+  }
 });
+await client.connect(transport);
 
 // List available tools
 const tools = await client.listTools();
@@ -102,9 +111,15 @@ If you're building with Claude via the API, pass the MCP server in your request:
 ```javascript
 const response = await fetch("https://api.anthropic.com/v1/messages", {
   method: "POST",
-  headers: { "Content-Type": "application/json" },
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": process.env.ANTHROPIC_API_KEY,
+    "anthropic-version": "2023-06-01",
+    // The MCP connector is in beta and the request is rejected without this.
+    "anthropic-beta": "mcp-client-2025-11-20"
+  },
   body: JSON.stringify({
-    model: "claude-sonnet-4-20250514",
+    model: "claude-sonnet-5-5",
     max_tokens: 1000,
     messages: [
       { role: "user", content: "List all active integrations for tenant acme-corp" }
@@ -112,13 +127,20 @@ const response = await fetch("https://api.anthropic.com/v1/messages", {
     mcp_servers: [
       {
         type: "url",
-        url: "https://mcp.ucl.dev/mcp/?id=PROJECT_ID&api_key=API_KEY&space_id=PROJECT_ID",
-        name: "fastn"
+        url: "YOUR_FASTN_MCP_URL",
+        name: "fastn",
+        authorization_token: process.env.FASTN_API_KEY
       }
+    ],
+    // mcp_servers alone fails validation: each server also needs a toolset entry.
+    tools: [
+      { type: "mcp_toolset", mcp_server_name: "fastn" }
     ]
   })
 });
 ```
+
+An `mcp_servers` entry takes only `type`, `url`, `name` and `authorization_token`, with no field for extra headers. A Fastn **test** key is refused without `X-fastn-Test-Mode: true`, so this path needs a live key. Clients that can set their own headers, such as the Connectors dialog and the SDK transport above, can use either.
 
 > **Screenshot:** API response showing Claude using a Fastn MCP tool and returning integration data.
 
