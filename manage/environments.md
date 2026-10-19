@@ -4,7 +4,7 @@ description: Deployment stages, and the GitHub review gate in front of them.
 
 # Environments and GitHub
 
-**Settings → Environments**
+**Settings → Environments** — in your dashboard, `/settings/environments`. Visible to **developer** and above.
 
 <figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page: a GitHub card reading No repository connected beside a Connect GitHub button, and a single table row, Live, slug live, Default, Requires review off, Protected"><figcaption>What a workspace looks like before anyone adds a stage: one built-in Live target and no review gate in front of it.</figcaption></figure>
 

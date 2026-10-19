@@ -4,7 +4,13 @@ description: A trigger that fires when another system calls a URL you give it.
 
 # Webhook triggers
 
+**Integrations → Triggers** — in your dashboard, `/integrations?tab=triggers`.
+
 A webhook trigger fires when another system calls a URL you give it. Nothing is polled.
+
+{% hint style="info" %}
+**Looking for triggers somewhere else?** They used to sit under Settings and under Activity. Both of those paths now redirect to **Integrations**, which is the one place triggers are created and listed. App-level webhooks are the neighbouring **App webhooks** tab.
+{% endhint %}
 
 **Columns:** `Name`, `Tenant`, `Type`, `Status`, `Auth`, `Routes`, `Created`.
 
@@ -13,7 +19,13 @@ A webhook trigger fires when another system calls a URL you give it. Nothing is 
 
 Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
 
-### Create a webhook trigger
+### Can the agent do this for me?
+
+Yes. The AI builder can bind triggers as part of building a workflow — webhook, schedule and app-event triggers are all actions it can take, so "run this whenever my store sends an order webhook" is a reasonable thing to ask for in plain language rather than wiring by hand.
+
+What the agent binds is the trigger-to-workflow connection. You still come to this screen to read the URL it created, to copy it as cURL while debugging, or to disable or delete it. Build it by hand when you want control over the routes, the delivery attempts and the auth up front; ask the agent when you want the workflow and its trigger created together.
+
+### Create a webhook trigger by hand
 
 {% stepper %}
 {% step %}

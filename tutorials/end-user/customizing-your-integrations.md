@@ -29,8 +29,6 @@ See [Extending a Pre-Built Integration](extending-a-prebuilt-integration.md) for
 
 If the integration has already been configured (either by the AI or by you previously), clicking Configure opens the **Integration Configuration dialog** directly.
 
-> **Screenshot needed:** A connected app card (e.g., HubSpot with green "Connected" label) with the ⚙ Configure button highlighted.
-
 ### The configuration dialog
 
 The dialog header shows the sync type (e.g., "Ongoing sync") and how many data types are configured (e.g., "2 entities"). Below the header, you can switch between two views: **Config** and **Plan**.
@@ -48,8 +46,6 @@ If the integration syncs data in both directions, you'll see sub-tabs for each d
 
 Click a tab to see and edit the field mappings for that direction. Each direction has its own independent configuration.
 
-> **Screenshot needed:** Configuration dialog showing the bidirectional sub-tabs at the top, with one direction active.
-
 **Field mappings**
 
 Field mappings control which fields in one app correspond to fields in the other. Each mapping row shows:
@@ -61,8 +57,6 @@ Field mappings control which fields in one app correspond to fields in the other
 * A delete icon to remove it
 
 To add a mapping the AI didn't include, click **"Add field mapping"** at the bottom of the list.
-
-> **Screenshot needed:** Field mappings section showing 3-4 mapping rows with source/target labels, preview values, and Change buttons.
 
 **Filters**
 
@@ -87,8 +81,6 @@ Available operators:
 | is one of      | Syncs records where the field matches any value in a list       |
 | is not one of  | Syncs records where the field doesn't match any value in a list |
 
-> **Screenshot needed:** Filters section showing 2-3 filter rows with the operator dropdown expanded.
-
 ### Saving your changes
 
 After making adjustments:
@@ -110,17 +102,11 @@ If you're not sure how to adjust the configuration manually, use the AI assistan
 
 Click **Build with AI** and the agent will update the configuration for you.
 
-> **Screenshot needed:** AI assistant input at the bottom of the widget with an example prompt like "Only sync contacts with an email address."
-
 ### Viewing active workflows
 
 Click the **Workflows** tab in the widget to see the automations running on your integrations. Active workflows show as cards, click the arrow on any workflow to open an interactive visual diagram showing how the automation works, step by step. You can trace the flow from trigger to completion and see each decision point along the way.
 
 You'll also see **template cards** for pre-built automations. Click one to launch an AI assistant session that sets it up for you.
-
-> **Screenshot needed:** Workflows tab showing an active workflow card and a template card.
-
-> **Screenshot needed:** Workflow visualizer showing the interactive node graph with labeled steps.
 
 ### Troubleshooting
 
