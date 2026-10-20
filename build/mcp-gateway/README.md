@@ -10,6 +10,10 @@ Everything you build in fastn (connectors, actions, workflows), can be exposed t
 
 <figure><img src="../../.gitbook/assets/home.jpg" alt="The Home screen, with a Connect to Claude button below the four suggestion chips and the What do you want to build? prompt box, under a time-of-day greeting"><figcaption>Connect to Claude sits under the build prompt on Home, below the suggestion chips.</figcaption></figure>
 
+{% hint style="info" %}
+**Looking for a gateway for your whole team's tools?** This page is about reaching your fastn integrations from an agent. To give Claude, ChatGPT or Cursor governed access to Slack, GitHub, Google and thousands of other apps, each person signing in as themselves, see [Fastn Connect](../../connect/README.md).
+{% endhint %}
+
 ### Connecting
 
 Either opens the same dialog: _Add fastn as an MCP server and your agent can build integrations for you, right in the chat._

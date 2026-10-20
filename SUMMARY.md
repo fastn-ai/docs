@@ -81,6 +81,35 @@
   * [Bolt](build/mcp-gateway/bolt.md)
 * [Common patterns](build/patterns.md)
 
+## Fastn Connect
+
+* [Fastn Connect](connect/README.md)
+  * [Quickstart](connect/quickstart.md)
+  * [Core concepts](connect/concepts.md)
+  * [A tour of the app](connect/app-tour.md)
+* [Tools](connect/tools/README.md)
+  * [Add an MCP server](connect/tools/add-mcp-server.md)
+  * [Whose account a call runs with](connect/tools/sign-in-modes.md)
+  * [Choosing tools](connect/tools/choosing-tools.md)
+* [Connecting AI clients](connect/clients/README.md)
+  * [Claude](connect/clients/claude.md)
+  * [ChatGPT](connect/clients/chatgpt.md)
+  * [Cursor, VS Code, Windsurf and others](connect/clients/other-clients.md)
+* [Agents and access keys](connect/agents/README.md)
+  * [Multi-tenant agents](connect/agents/multi-tenant.md)
+* [People and roles](connect/access/README.md)
+  * [Policies](connect/access/policies.md)
+* [Skills](connect/skills.md)
+* [Connections](connect/connections.md)
+* [Monitor](connect/monitor.md)
+* [Audit](connect/audit.md)
+* [Workspaces](connect/workspaces.md)
+* [Settings and your profile](connect/settings.md)
+* [Plans and limits](connect/plans-and-limits.md)
+* [Gateway URLs](connect/reference/gateway-urls.md)
+* [Gateway API reference](connect/reference/gateway-api.md)
+* [Troubleshooting](connect/troubleshooting.md)
+
 ## Embed
 
 * [Widgets](embed/README.md)
