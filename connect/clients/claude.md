@@ -8,6 +8,10 @@ description: >-
 
 **You need:** your gateway URL from **Home** (`https://mcp.fastn.dev/<your-org>`) and a Claude plan that allows custom connectors.
 
+{% hint style="info" %}
+**Building fastn integrations from Claude instead?** That uses a different URL, `https://mcp.fastn.dev/fastn-workspace`. See [Claude under MCP gateway](../../build/mcp-gateway/claude.md).
+{% endhint %}
+
 ### Add the connector (claude.ai and Claude Desktop)
 
 Claude Desktop uses the same connectors as claude.ai, so you only add it once.

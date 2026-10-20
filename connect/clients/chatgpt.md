@@ -8,6 +8,10 @@ description: >-
 
 **You need:** your gateway URL from **Home** (`https://mcp.fastn.dev/<your-org>`) and a ChatGPT plan with developer mode for connectors (Plus, Pro, Business, Enterprise or Edu). On Business and Enterprise, a workspace admin may need to allow custom connectors first.
 
+{% hint style="info" %}
+**Building fastn integrations from ChatGPT instead?** That uses a different URL, `https://mcp.fastn.dev/fastn-workspace`. See [ChatGPT under MCP gateway](../../build/mcp-gateway/chatgpt.md).
+{% endhint %}
+
 ### Add the connector
 
 1. In ChatGPT, open **Settings** → **Apps & Connectors**. Under **Advanced settings**, turn on **Developer mode**.

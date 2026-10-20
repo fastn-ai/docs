@@ -10,6 +10,13 @@ Fastn Connect is a hosted **MCP gateway**. You connect the apps your team works 
 
 <figure><img src="../.gitbook/assets/connect-home.png" alt="The Fastn Connect Home page, showing the gateway URL with Copy, Add to Claude and Invite your team buttons, counts of connected apps, tools and people, and the Needs your attention list"><figcaption>Home: your gateway URL, what is connected, and anything that needs you.</figcaption></figure>
 
+{% hint style="info" %}
+**Which URL do I use?** fastn has two MCP addresses, for two different jobs:
+
+* `https://mcp.fastn.dev/<your-org>`: **Fastn Connect**, these pages. Your AI tool uses your team's connected apps (Slack, GitHub, Google and more). Copy the exact URL from Home in [connect.fastn.dev](https://connect.fastn.dev).
+* `https://mcp.fastn.dev/fastn-workspace`: **the fastn platform**. Your AI tool builds fastn integrations for you from a chat. See [MCP gateway](../build/mcp-gateway/README.md).
+{% endhint %}
+
 ### What it does for you
 
 * **One endpoint for every tool.** Aggregate any number of MCP servers and catalog apps behind a single URL. Tools are namespaced per app, so calls always reach the right one.
@@ -37,10 +44,6 @@ Fastn Connect lives on two hosts. You only ever paste the second one into a clie
 | `https://mcp.fastn.dev` | The MCP endpoint your clients and agents connect to. |
 
 See [Gateway URLs](reference/gateway-urls.md) for every URL form.
-
-{% hint style="info" %}
-**Fastn Connect or the fastn MCP server?** These pages cover Fastn Connect, the gateway at `connect.fastn.dev`. If you are building integrations in the fastn platform and want your agent to build them from a chat, see [MCP gateway](../build/mcp-gateway/README.md) instead.
-{% endhint %}
 
 ### In this section
 
