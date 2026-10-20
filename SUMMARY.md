@@ -58,6 +58,7 @@
   * [Importing and exporting](build/connectors/importing-and-exporting.md)
   * [Connect a system](build/connectors/connect-a-system.md)
 * [Unified APIs](build/unified-apis/README.md)
+  * [How to set up and use the Unified API](build/unified-apis/setting-up-and-using.md)
   * [Inside a category](build/unified-apis/inside-a-category.md)
   * [Unified vs direct](build/unified-apis/unified-vs-direct.md)
 * [Connections](build/connections/README.md)
@@ -71,6 +72,7 @@
   * [Lifecycle](build/workflows/lifecycle.md)
 * [Triggers](build/triggers/README.md)
   * [Webhook triggers](build/triggers/webhooks.md)
+  * [Using a webhook trigger](build/triggers/using-a-webhook-trigger.md)
   * [Schedule triggers](build/triggers/schedulers.md)
   * [App event triggers](build/triggers/app-events.md)
 * [Pending updates](build/connector-updates.md)
@@ -93,6 +95,7 @@
   * [Iframe](embed/embedding/iframe.md)
   * [SDK](embed/embedding/sdk.md)
   * [Token API](embed/embedding/token-api.md)
+  * [Integration flow](embed/embedding/integration-flow.md)
 
 ## Operate
 

@@ -57,5 +57,6 @@ So if a nightly job silently stops, open the row, read Status history, and look 
 ### In this section
 
 * [Webhook triggers](webhooks.md)
+* [Using a webhook trigger](using-a-webhook-trigger.md)
 * [Schedule triggers](schedulers.md)
 * [App event triggers](app-events.md)

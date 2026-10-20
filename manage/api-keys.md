@@ -26,6 +26,19 @@ description: Programmatic access to your workspace.
 
 The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
+#### Quick steps
+
+1. Go to your Fastn dashboard → **Settings** → **API Keys**.
+2. Click **+ Create API Key**.
+3. In the dialog:
+    * **Name**: give it something identifiable.
+    * **Mode**: select **Live** for production use or **Test** for dev use.
+    * Set scopes, IP whitelisting, rate limits, and expiry as needed.
+    * Enable caller identity verification (HMAC).
+4. Click **Create Key**.
+
+<figure><img src="../.gitbook/assets/api-key-verify-caller-identity.png" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption><strong>Verify caller identity (HMAC)</strong> in the Create an API key dialog.</figcaption></figure>
+
 #### Identity
 
 **Name \***: shown in the audit log beside everything this key does. Name it after the system that will hold it, not after a person.
@@ -81,6 +94,48 @@ Whichever preset you pick, the **What it can touch** matrix below shows exactly 
 The dialog keeps a live summary sentence at the bottom describing what you have built, so you can read back the whole key before committing:
 
 > This key can read on test data for every customer, from any address, and expires in 90 days.
+
+### Identity hash
+
+Every tenant specific request needs to provide an identity hash to confirm that the org-id and user-id you're sending are ones your backend actually authorized.
+
+#### 1. Get your identity-verification secret
+
+Once you create an API key with HMAC enabled the following dialog will appear. It contains the secret and code snippets to generate the HMAC key.
+
+<figure><img src="../.gitbook/assets/api-key-identity-secret.png" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
+
+**Safety pre-cautions:**
+
+* If the secret is lost, you'll need to generate a new one.
+* Never ship this secret to the client. It only ever lives on your backend. If it appears in frontend code, anyone can forge a valid hash for any org or user.
+
+#### 2. Compute the hash
+
+The hash is an HMAC-SHA256 of the org ID and user ID, newline-joined, signed with your secret:
+
+```js
+const crypto = require("crypto");
+const IDV_SECRET = process.env.IDV_SECRET;
+
+function identityHash(orgId = '', userId = '') {
+  return crypto.createHmac("sha256", IDV_SECRET)
+    .update(`${orgId}\n${userId}`)
+    .digest("hex");
+}
+```
+
+#### 3. Send it alongside the identity headers
+
+Attach the result as `x-identity-hmac`, sent together with the plaintext `x-org-id` and `x-user-id`.
+
+```
+x-org-id: <org-id>
+x-user-id: <user-id>
+x-identity-hmac: <identityHash(orgId, userId)>
+```
+
+The plaintext headers tell the gateway which identity is being claimed; the hash proves your backend authorized that specific claim. The gateway rejects a call whose hash is missing or doesn't match what it recomputes from the plaintext values.
 
 ### Using a key
 
