@@ -18,5 +18,5 @@ curl --location 'https://webhooks.fastn.dev/prod/triggers/<WORKSPACE_ID>/webhook
 ```
 
 {% hint style="info" %}
-`x-fastn-access-key` works in place of `x-api-key`, as described in [Webhook triggers](webhooks.md). `x-org-id`, `x-user-id` and `x-identity-hmac` are the identity headers: see [Identity hash](../../manage/api-keys.md#identity-hash) for how to compute the hash.
+`x-fastn-access-key` works in place of `x-api-key`, as described in [Webhook triggers](../../build/triggers/webhooks.md). `x-org-id`, `x-user-id` and `x-identity-hmac` are the identity headers: see [Identity hash](../../manage/api-keys.md#identity-hash) for how to compute the hash.
 {% endhint %}
