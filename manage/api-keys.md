@@ -37,7 +37,7 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
     * Enable caller identity verification (HMAC).
 4. Click **Create Key**.
 
-<figure><img src="../.gitbook/assets/api-key-verify-caller-identity.png" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption><strong>Verify caller identity (HMAC)</strong> in the Create an API key dialog.</figcaption></figure>
+<figure><img src="../.gitbook/assets/api-key-verify-caller-identity.webp" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption><strong>Verify caller identity (HMAC)</strong> in the Create an API key dialog.</figcaption></figure>
 
 #### Identity
 
@@ -103,7 +103,7 @@ Every tenant specific request needs to provide an identity hash to confirm that 
 
 Once you create an API key with HMAC enabled the following dialog will appear. It contains the secret and code snippets to generate the HMAC key.
 
-<figure><img src="../.gitbook/assets/api-key-identity-secret.png" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
+<figure><img src="../.gitbook/assets/api-key-identity-secret.webp" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
 
 **Safety pre-cautions:**
 

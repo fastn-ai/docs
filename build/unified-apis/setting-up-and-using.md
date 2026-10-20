@@ -12,13 +12,13 @@ Go to [app.fastn.dev](https://app.fastn.dev/) and log in to your Fastn account.
 
 From the dashboard, navigate to **Integrations → Unified API**.
 
-<figure><img src="../../.gitbook/assets/unified-api-setup-integrations.png" alt="The fastn dashboard on the Connectors page, with arrows pointing to Integrations in the sidebar and to the Unified APIs tab at the top"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/unified-api-setup-integrations.webp" alt="The fastn dashboard on the Connectors page, with arrows pointing to Integrations in the sidebar and to the Unified APIs tab at the top"><figcaption></figcaption></figure>
 
 ## 3. Select a Unified API
 
 Choose the Unified API you want to use. For this guide, we'll use **Project Management** as an example.
 
-<figure><img src="../../.gitbook/assets/unified-api-setup-project-management.png" alt="The Project Management Unified API: the Ticket entity, its providers (Asana, ClickUp, Jira, Linear, Monday.com, Notion, ServiceNow and Trello) with their connection status, and the API section listing GET List, GET Get and POST Create endpoints, each with a Copy curl button"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/unified-api-setup-project-management.webp" alt="The Project Management Unified API: the Ticket entity, its providers (Asana, ClickUp, Jira, Linear, Monday.com, Notion, ServiceNow and Trello) with their connection status, and the API section listing GET List, GET Get and POST Create endpoints, each with a Copy curl button"><figcaption></figcaption></figure>
 
 Click **Project Management** to view the available endpoints and their request details.
 
@@ -28,7 +28,7 @@ Navigate to the endpoint you want to use. For example, to create a ticket, selec
 
 At the bottom of the endpoint details, click **Copy cURL Request**. Use the copied request as the starting point for your integration.
 
-<figure><img src="../../.gitbook/assets/unified-api-setup-copy-curl.png" alt="The API section of the Project Management Unified API, with the Copy curl buttons for the List, Get and Create endpoints highlighted"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/unified-api-setup-copy-curl.webp" alt="The API section of the Project Management Unified API, with the Copy curl buttons for the List, Get and Create endpoints highlighted"><figcaption></figcaption></figure>
 
 The request will look similar to this:
 

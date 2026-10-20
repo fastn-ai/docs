@@ -92,7 +92,7 @@ Here's how to generate one:
 
 1. Go to your **Fastn dashboard** → **Settings** → **API Keys**.
 
-<figure><img src="../../.gitbook/assets/api-key-settings-page.png" alt="The Settings API Keys page in the earlier dashboard layout, with Test and Live tabs and a Create API Key button"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-settings-page.webp" alt="The Settings API Keys page in the earlier dashboard layout, with Test and Live tabs and a Create API Key button"><figcaption></figcaption></figure>
 
 2. Click **+ Create API Key**.
 3. In the dialog:
@@ -102,9 +102,9 @@ Here's how to generate one:
     * Enable caller identity verification (HMAC).
 4. Click **Create Key**.
 
-<figure><img src="../../.gitbook/assets/api-key-create-dialog.png" alt="The Create an API key dialog: Name set to Test, Mode with Test and Live cards, Permissions set to Viewer and the What it can touch matrix"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-create-dialog.webp" alt="The Create an API key dialog: Name set to Test, Mode with Test and Live cards, Permissions set to Viewer and the What it can touch matrix"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/api-key-verify-caller-identity.png" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-verify-caller-identity.webp" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption></figcaption></figure>
 
 ### Creating an Identity Hash
 
@@ -114,7 +114,7 @@ Every tenant specific request needs to provide an identity hash to confirm that 
 
 Once you create an API key with HMAC enabled the following dialog will appear. Which contains the secret and code snippets to generate the HMAC key.
 
-<figure><img src="../../.gitbook/assets/api-key-identity-secret.png" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-identity-secret.webp" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
 
 **Safety pre-cautions:**
 
