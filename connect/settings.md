@@ -10,7 +10,7 @@ description: >-
 
 *Owners and admins.* **Settings** → **Organisation** holds what is true of the whole organisation, rather than of one workspace.
 
-<figure><img src="../.gitbook/assets/connect-settings-org.png" alt="The Organisation settings page with Name and domain, Staging changes before they go live, Event webhooks and Client certificate (mTLS) cards"><figcaption>Settings → Organisation.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-settings-org.webp" alt="The Organisation settings page with Name and domain, Staging changes before they go live, Event webhooks and Client certificate (mTLS) cards"><figcaption>Settings → Organisation.</figcaption></figure>
 
 | Section | What it is |
 | --- | --- |
@@ -45,4 +45,4 @@ Click your name on the account card at the foot of the sidebar.
 * **Your connected accounts**: every app you authorised with your own account. **Disconnect** deletes your stored credential for that app. Tools that run as you will ask you to connect again the next time.
 * **Your session**: **Sign out** ends this browser session only. *Access keys and running agents keep working.*
 
-<figure><img src="../.gitbook/assets/connect-profile.png" alt="The Profile page with You, Appearance, Your connected accounts and Your session cards"><figcaption>Your profile.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-profile.webp" alt="The Profile page with You, Appearance, Your connected accounts and Your session cards"><figcaption>Your profile.</figcaption></figure>

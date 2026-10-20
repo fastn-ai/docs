@@ -8,7 +8,7 @@ description: >-
 
 *Owners and admins.* A skill is a reusable recipe your clients and agents can call by name. It is governed the same way as a tool: policies, Monitor and Audit all apply.
 
-<figure><img src="../.gitbook/assets/connect-skills.png" alt="The Skills page with a New skill button, a Search skills box, Active and Disabled filters, and a list of skills with Playbook or Composite badges and Test run and Edit buttons"><figcaption>Skills.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-skills.webp" alt="The Skills page with a New skill button, a Search skills box, Active and Disabled filters, and a list of skills with Playbook or Composite badges and Test run and Edit buttons"><figcaption>Skills.</figcaption></figure>
 
 ### Two kinds of skill
 

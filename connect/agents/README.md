@@ -13,7 +13,7 @@ description: >-
 | **Access key** | A long-lived bearer token starting `ucl_`. | An agent, a script, a client without OAuth. |
 | **OAuth client** | A client ID and client secret (OAuth2 client credentials). | A service that authenticates with an ID and a secret rather than holding a key. |
 
-<figure><img src="../../.gitbook/assets/connect-agents.png" alt="The Agents page with an Access keys table (Agent, Key, Reaches, Policy, Calls, Last call, Status) and an OAuth clients card below"><figcaption>Agents: one key per agent or client.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-agents.webp" alt="The Agents page with an Access keys table (Agent, Key, Reaches, Policy, Calls, Last call, Status) and an OAuth clients card below"><figcaption>Agents: one key per agent or client.</figcaption></figure>
 
 ### Create an access key
 
@@ -32,7 +32,7 @@ description: >-
 3. Click **Create key**.
 4. Copy the key straight away. *Key created - copy it now. You won't be able to see it again.*
 
-<figure><img src="../../.gitbook/assets/connect-new-key.png" alt="The New access key form with Name, Apps and identity, Tool loading (Search-first or Load all), Tenancy (Single org or Multi-tenant), Policies and Client IPs, and a Create key button"><figcaption>The <strong>New access key</strong> form.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-new-key.webp" alt="The New access key form with Name, Apps and identity, Tool loading (Search-first or Load all), Tenancy (Single org or Multi-tenant), Policies and Client IPs, and a Create key button"><figcaption>The <strong>New access key</strong> form.</figcaption></figure>
 
 Fastn Connect stores only a hash of the key. If you lose it, revoke it and create a new one.
 

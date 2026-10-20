@@ -8,7 +8,7 @@ description: >-
 
 **Access** is where you decide who may use the gateway, what each of them may do, and the rules that decide it. It has three parts: [Policies](policies.md) at the top, **People** (or **Access keys** in an agents workspace) in the middle, and **Identity mappings** at the bottom.
 
-<figure><img src="../../.gitbook/assets/connect-access.png" alt="The Access page: a Policies card with Suggested and New policy buttons, then the People table with Person, Role, Joined and Can reach columns and an Invite someone button"><figcaption>Access: policies, then people.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-access.webp" alt="The Access page: a Policies card with Suggested and New policy buttons, then the People table with Person, Role, Joined and Can reach columns and an Invite someone button"><figcaption>Access: policies, then people.</figcaption></figure>
 
 Members can open Access too, but see the People list read-only.
 

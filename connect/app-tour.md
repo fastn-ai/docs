@@ -24,7 +24,7 @@ The sidebar is grouped into **Build**, **Operate** and **Manage**. What you see 
 
 A member's sidebar is therefore **Home**, **Tools**, **Access** and **Connections**.
 
-<figure><img src="../.gitbook/assets/connect-sidebar.png" alt="The Fastn Connect sidebar with Home, then Build (Tools, Skills, Agents), Operate (Monitor, Audit) and Manage (Access, Connections, Settings), and the account card at the bottom"><figcaption>The sidebar, as an admin sees it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-sidebar.webp" alt="The Fastn Connect sidebar with Home, then Build (Tools, Skills, Agents), Operate (Monitor, Audit) and Manage (Access, Connections, Settings), and the account card at the bottom"><figcaption>The sidebar, as an admin sees it.</figcaption></figure>
 
 At the foot of the sidebar is your **account card**. Click your name to open your [Profile](settings.md#your-profile). Click the switcher beside it to move between **Organisations & workspaces**, create a **New workspace**, or **Sign out**.
 
@@ -47,7 +47,7 @@ Home is laid out top to bottom:
 6. **Connect a client.** One tile per supported client. See [Connecting AI clients](clients/README.md).
 7. **Building an agent?** (admins). Copy-paste code for LangChain, OpenAI, TypeScript, cURL and mTLS. See [Agents and access keys](agents/README.md).
 
-<figure><img src="../.gitbook/assets/connect-home-attention.png" alt="The lower half of Home: the Needs your attention list, the People table, Latest calls, and the Connect a client tiles"><figcaption>Needs your attention, People, Latest calls and Connect a client.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-home-attention.webp" alt="The lower half of Home: the Needs your attention list, the People table, Latest calls, and the Connect a client tiles"><figcaption>Needs your attention, People, Latest calls and Connect a client.</figcaption></figure>
 
 {% hint style="info" %}
 **Team or Agents view.** A workspace is either for people (Claude and other chat clients) or for agents (keys). Admins see a **Team** / **Agents** switch on Home (**People** / **Agents** on Access) in the organisation's default workspace, and in a team workspace where **Also enable for agents** is on. Members always see the Team view. An Agents workspace always shows agents.

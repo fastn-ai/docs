@@ -9,7 +9,7 @@ description: >-
 
 Every plan is billed on tool calls, never per seat. There is no charge for the MCP servers you connect, and listing tools and reading config are always free.
 
-<figure><img src="../.gitbook/assets/connect-pricing.png" alt="The pricing page with Monthly and Annual toggle and four plan cards: Free at $0, Pro at $19.99 a month, Team at $249 a month, and Enterprise at Custom"><figcaption>Plans at <a href="https://connect.fastn.dev/pricing">connect.fastn.dev/pricing</a>.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-pricing.webp" alt="The pricing page with Monthly and Annual toggle and four plan cards: Free at $0, Pro at $19.99 a month, Team at $249 a month, and Enterprise at Custom"><figcaption>Plans at <a href="https://connect.fastn.dev/pricing">connect.fastn.dev/pricing</a>.</figcaption></figure>
 
 ### Plans
 

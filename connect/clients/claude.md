@@ -23,7 +23,7 @@ Claude Desktop uses the same connectors as claude.ai, so you only add it once.
 5. Click **Continue with fastn** and sign in with your work account.
 6. On **Choose what Claude can reach**, pick the apps and tools Claude may use, then click **Authorize Claude**.
 
-<figure><img src="../../.gitbook/assets/connect-consent.png" alt="The Choose what Claude can reach page: Signed in as an address with a Not you link, Search apps and tools, apps with N of M tool counts, Select all, Reads only and Clear, a tools selected count, and an Authorize Claude button"><figcaption>Choose what Claude can reach. Fewer tools means Claude picks the right one faster.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-consent.webp" alt="The Choose what Claude can reach page: Signed in as an address with a Not you link, Search apps and tools, apps with N of M tool counts, Select all, Reads only and Clear, a tools selected count, and an Authorize Claude button"><figcaption>Choose what Claude can reach. Fewer tools means Claude picks the right one faster.</figcaption></figure>
 
 The tab returns you to Claude and the connector shows as connected.
 

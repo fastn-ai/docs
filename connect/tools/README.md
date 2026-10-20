@@ -8,7 +8,7 @@ description: >-
 
 **Tools** lists every connector in the current workspace: which apps your agents can reach, how many of each app's tools are turned on, and whose account each call runs with.
 
-<figure><img src="../../.gitbook/assets/connect-tools.png" alt="The Tools page: a Browse connectors button, a toolbar with Search connectors, Add MCP server, Build custom connector and Clean up unused, a count of connectors turned on, and a list of connector rows with health badges, tool counts and on/off toggles"><figcaption>Tools, as an admin sees it.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-tools.webp" alt="The Tools page: a Browse connectors button, a toolbar with Search connectors, Add MCP server, Build custom connector and Clean up unused, a count of connectors turned on, and a list of connector rows with health badges, tool counts and on/off toggles"><figcaption>Tools, as an admin sees it.</figcaption></figure>
 
 ### Add an app from the catalog
 
@@ -21,7 +21,7 @@ description: >-
 4. In **Set up {app}**, choose how the app signs in: **One shared account**, **Each user**, **Each org** or **Caller's token**. You can change it later. See [Whose account a call runs with](sign-in-modes.md).
 5. Click **Done**, then **Connect** on the app's row if it needs an account.
 
-<figure><img src="../../.gitbook/assets/connect-catalog.png" alt="The Browse catalog pop-up with the All connectors and Toolsets tabs, a search box, and connector rows with tags and an Install button"><figcaption>Browse catalog. Apps provided by fastn show <strong>Included by default</strong>.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-catalog.webp" alt="The Browse catalog pop-up with the All connectors and Toolsets tabs, a search box, and connector rows with tags and an Install button"><figcaption>Browse catalog. Apps provided by fastn show <strong>Included by default</strong>.</figcaption></figure>
 
 The **Toolsets** tab installs a ready-made bundle of apps and tools in one click. To have one assembled for a job, describe the job in the box at the top of the catalog and click **Build →**. See [Choosing tools](choosing-tools.md#toolsets).
 

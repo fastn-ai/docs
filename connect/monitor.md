@@ -8,7 +8,7 @@ description: >-
 
 *Owners and admins.* **Monitor** shows every call through your gateway: what ran, how long it took, and what was refused.
 
-<figure><img src="../.gitbook/assets/connect-monitor.png" alt="The Monitor page with a time window selector, a Plan usage card with Today, This week and This month bars, Overview tiles for tool calls, success rate, p95 latency and refused calls, and further charts"><figcaption>Monitor: plan usage and the overview tiles.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-monitor.webp" alt="The Monitor page with a time window selector, a Plan usage card with Today, This week and This month bars, Overview tiles for tool calls, success rate, p95 latency and refused calls, and further charts"><figcaption>Monitor: plan usage and the overview tiles.</figcaption></figure>
 
 ### Pick a window
 

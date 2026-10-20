@@ -24,7 +24,7 @@ On Home, under **Connect a client**, click your client's tile. The **Connect {cl
 | **Bearer token** | Paste a scoped access key into the client. | Clients without OAuth support, scripts. |
 | **Config file** | Drop a JSON snippet into the client's MCP config and restart it. | Clients configured by file. |
 
-<figure><img src="../../.gitbook/assets/connect-client-dialog.png" alt="The Connect Claude Desktop dialog with OAuth, Bearer token and Config file tabs, the OAuth tab open showing the Gateway URL with Copy, and Copy URL and Done buttons"><figcaption>The <strong>Connect {client}</strong> dialog, on the <strong>OAuth</strong> tab.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-client-dialog.webp" alt="The Connect Claude Desktop dialog with OAuth, Bearer token and Config file tabs, the OAuth tab open showing the Gateway URL with Copy, and Copy URL and Done buttons"><figcaption>The <strong>Connect {client}</strong> dialog, on the <strong>OAuth</strong> tab.</figcaption></figure>
 
 | Client | Tabs offered |
 | --- | --- |
@@ -43,7 +43,7 @@ Any other client that supports remote MCP over Streamable HTTP works the same wa
 3. **Choose what {client} can reach.** They pick the tools this client may use, then click **Authorize {client}**.
 4. The tab returns them to the client, which now sees exactly those tools.
 
-<figure><img src="../../.gitbook/assets/connect-consent.png" alt="The Choose what Claude can reach page with a search box, apps listed with N of M tool counts, Select all, Reads only and Clear, and an Authorize Claude button"><figcaption>The consent screen. Each person chooses, per client.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-consent.webp" alt="The Choose what Claude can reach page with a search box, apps listed with N of M tool counts, Select all, Reads only and Clear, and an Authorize Claude button"><figcaption>The consent screen. Each person chooses, per client.</figcaption></figure>
 
 On the consent screen:
 

@@ -18,7 +18,7 @@ A client reads every tool it is given before each reply. Fewer, clearer tools me
 3. Use the **Read** / **Write** / **Delete** filter to find, say, every write tool at once.
 4. Click **Save**. Nothing changes until you save.
 
-<figure><img src="../../.gitbook/assets/connect-choose-tools.png" alt="The Configure dialog for a connector: a list of tools with toggles on the left, and on the right the selected tool's description, input fields and output fields"><figcaption><strong>Choose tools</strong>: toggle tools on the left, edit the selected tool on the right.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-choose-tools.webp" alt="The Configure dialog for a connector: a list of tools with toggles on the left, and on the right the selected tool's description, input fields and output fields"><figcaption><strong>Choose tools</strong>: toggle tools on the left, edit the selected tool on the right.</figcaption></figure>
 
 Required fields are always sent and cannot be turned off. Tools that fastn has disabled for everyone show *Disabled by fastn for all organizations. You cannot turn this on.*
 

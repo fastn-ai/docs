@@ -27,7 +27,7 @@ An admin can also turn on **Also enable for agents** on a team workspace, which 
 2. Enter a name (for example *Marketing*) and pick **Team** or **Agents**. (**Agents** is offered only when agent access is turned on for your organisation.)
 3. Click **Create workspace**.
 
-<figure><img src="../.gitbook/assets/connect-workspace-switcher.png" alt="The Organisations and workspaces menu open from the sidebar's account card, with a search box, an organisation and its nested workspaces, and New workspace and Sign out at the bottom"><figcaption>Switch, create and delete workspaces from the account card.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-workspace-switcher.webp" alt="The Organisations and workspaces menu open from the sidebar's account card, with a search box, an organisation and its nested workspaces, and New workspace and Sign out at the bottom"><figcaption>Switch, create and delete workspaces from the account card.</figcaption></figure>
 
 The Free plan includes one workspace. See [Plans and limits](plans-and-limits.md).
 

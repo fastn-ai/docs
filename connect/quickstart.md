@@ -15,7 +15,7 @@ By the end of this page you will have a live gateway, one connected app, and Cla
 1. Go to [connect.fastn.dev](https://connect.fastn.dev) and click **Claim your gateway** (or **Sign in**).
 2. Sign in with your work email.
 
-<figure><img src="../.gitbook/assets/connect-landing-hero.png" alt="The Fastn Connect landing page with the heading Claim your team's MCP gateway, a Claim your gateway button, and a Your gateway box with a gateway address field"><figcaption>Claim your gateway from the landing page. Sign in with your work email.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-landing-hero.webp" alt="The Fastn Connect landing page with the heading Claim your team's MCP gateway, a Claim your gateway button, and a Your gateway box with a gateway address field"><figcaption>Claim your gateway from the landing page. Sign in with your work email.</figcaption></figure>
 
 The first person to sign in from a company domain creates that company's organisation and becomes its **Owner**. Teammates who sign in later with the same domain join it automatically. See [People and roles](access/README.md).
 
@@ -26,7 +26,7 @@ The first person to sign in from a company domain creates that company's organis
 3. In **Set up {app}**, choose how it signs in. For a first try, pick **Each user**: every person who uses the tool connects their own account. Click **Done**.
 4. On the app's row, click **Connect** and sign in to the app in the pop-up.
 
-<figure><img src="../.gitbook/assets/connect-catalog.png" alt="The Browse catalog pop-up with a search box, a list of connectors showing tool counts and auth tags, and an Install button on each row"><figcaption>Browse catalog: search, then <strong>Install</strong>.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-catalog.webp" alt="The Browse catalog pop-up with a search box, a list of connectors showing tool counts and auth tags, and an Install button on each row"><figcaption>Browse catalog: search, then <strong>Install</strong>.</figcaption></figure>
 
 The row now shows how many of the app's tools are turned on and whose account calls run with. More on this in [Tools](tools/README.md) and [Whose account a call runs with](tools/sign-in-modes.md).
 
@@ -47,7 +47,7 @@ https://mcp.fastn.dev/<your-org>
 3. Click **Connect** on the new connector. Your browser opens Fastn Connect.
 4. On **Choose what Claude can reach**, tick the apps and tools Claude may use (or **Select all**), then click **Authorize Claude**.
 
-<figure><img src="../.gitbook/assets/connect-consent.png" alt="The Choose what Claude can reach page: signed in as an address with a Not you link, a search box, a list of apps with tool counts and checkboxes, Select all, Reads only and Clear links, a count of tools selected, and an Authorize Claude button"><figcaption>You choose what Claude can reach. You can change it later.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-consent.webp" alt="The Choose what Claude can reach page: signed in as an address with a Not you link, a search box, a list of apps with tool counts and checkboxes, Select all, Reads only and Clear links, a count of tools selected, and an Authorize Claude button"><figcaption>You choose what Claude can reach. You can change it later.</figcaption></figure>
 
 Full details, including Claude Team and Enterprise plans, are in [Claude](clients/claude.md).
 

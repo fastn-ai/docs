@@ -18,7 +18,7 @@ description: >-
    * *Could not reach this server. Check the URL.*
 4. Check **Auth**, fill in any credential fields, and click **Connect**.
 
-<figure><img src="../../.gitbook/assets/connect-add-mcp-server.png" alt="The Connect a server pop-up with Name and Server URL fields, an Auth dropdown set to Auto-detect, and a Connect button"><figcaption>Paste the URL and leave <strong>Auth</strong> on <strong>Auto-detect</strong>.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-add-mcp-server.webp" alt="The Connect a server pop-up with Name and Server URL fields, an Auth dropdown set to Auto-detect, and a Connect button"><figcaption>Paste the URL and leave <strong>Auth</strong> on <strong>Auto-detect</strong>.</figcaption></figure>
 
 If the server could not be reached when you click **Connect**, the button becomes **Add anyway**, so you can add a server that is not up yet.
 

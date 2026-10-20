@@ -26,7 +26,7 @@ Open a connector on **Tools**. Under **Whose account does a call run with?** pic
 
 Below the choices, the row reads *Right now this runs as {...}*, so you can always check the current setting. A public server that needs no sign-in shows *Public server: no sign-in needed* instead.
 
-<figure><img src="../../.gitbook/assets/connect-sign-in-mode.png" alt="An open connector row showing the heading Whose account does a call run with? and four choices: One shared account, Each person signs in, Each customer org, The caller brings a token"><figcaption>The sign-in mode on an open connector row.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-sign-in-mode.webp" alt="An open connector row showing the heading Whose account does a call run with? and four choices: One shared account, Each person signs in, Each customer org, The caller brings a token"><figcaption>The sign-in mode on an open connector row.</figcaption></figure>
 
 {% hint style="info" %}
 Right after you install an app, **Set up {app}** asks the same question with shorter labels: **One shared account**, **Each user**, **Each org** and **Caller's token**. They are the same four modes.

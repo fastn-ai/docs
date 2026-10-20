@@ -16,7 +16,7 @@ description: >-
 
 A policy is *a rule written once and attached to as many people and keys as you like*. Policies live at the top of the **Access** page. *Owners and admins.*
 
-<figure><img src="../../.gitbook/assets/connect-policies.png" alt="The Policies card on Access listing policies with summaries like read-only, all tools, masks PII, and the Suggested and New policy buttons"><figcaption>Policies, with the suggested presets shown.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-policies.webp" alt="The Policies card on Access listing policies with summaries like read-only, all tools, masks PII, and the Suggested and New policy buttons"><figcaption>Policies, with the suggested presets shown.</figcaption></figure>
 
 ### Start from a suggested policy
 
@@ -54,7 +54,7 @@ Edit a preset after adding it, like any other policy.
 
 For the column rules, type to search a field, or type a path (wildcards `*` allowed) and press <kbd>Enter</kbd>.
 
-<figure><img src="../../.gitbook/assets/connect-policy-editor.png" alt="The New policy dialog with Name, Read-only, Restrict to selected tools, Deny tools, a Data classification grid with Mask on read and Block on write columns, and column redaction fields"><figcaption>The policy editor.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-policy-editor.webp" alt="The New policy dialog with Name, Read-only, Restrict to selected tools, Deny tools, a Data classification grid with Mask on read and Block on write columns, and column redaction fields"><figcaption>The policy editor.</figcaption></figure>
 
 ### Attach a policy
 

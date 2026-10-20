@@ -8,7 +8,7 @@ description: >-
 
 **Connections** shows what is plugged into your gateway, and what your gateway is plugged into.
 
-<figure><img src="../.gitbook/assets/connect-connections.png" alt="The Connections page with an MCP clients card listing authorised clients with Revoke buttons, and a Connected apps card listing accounts with Manage buttons"><figcaption>Connections, as an admin sees it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-connections.webp" alt="The Connections page with an MCP clients card listing authorised clients with Revoke buttons, and a Connected apps card listing accounts with Manage buttons"><figcaption>Connections, as an admin sees it.</figcaption></figure>
 
 ### What members see
 

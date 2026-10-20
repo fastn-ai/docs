@@ -8,7 +8,7 @@ description: >-
 
 Fastn Connect is a hosted **MCP gateway**. You connect the apps your team works in (Slack, GitHub, Google, Jira, your own MCP servers and thousands more) once, and you get back **one URL**. Any MCP client pointed at that URL sees every tool you turned on, and every call is checked, logged and run with the right person's account.
 
-<figure><img src="../.gitbook/assets/connect-home.png" alt="The Fastn Connect Home page, showing the gateway URL with Copy, Add to Claude and Invite your team buttons, counts of connected apps, tools and people, and the Needs your attention list"><figcaption>Home: your gateway URL, what is connected, and anything that needs you.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-home.webp" alt="The Fastn Connect Home page, showing the gateway URL with Copy, Add to Claude and Invite your team buttons, counts of connected apps, tools and people, and the Needs your attention list"><figcaption>Home: your gateway URL, what is connected, and anything that needs you.</figcaption></figure>
 
 {% hint style="info" %}
 **Which URL do I use?** fastn has two MCP addresses, for two different jobs:

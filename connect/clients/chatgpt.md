@@ -20,7 +20,7 @@ description: >-
 4. Confirm you trust the connector and click **Create**.
 5. ChatGPT opens Fastn Connect. Click **Continue with fastn**, sign in with your work account, pick the tools on **Choose what ChatGPT can reach**, and click **Authorize ChatGPT**.
 
-<figure><img src="../../.gitbook/assets/connect-consent.png" alt="The Fastn Connect consent screen listing apps and tools to tick, with an Authorize button"><figcaption>The same consent screen as every client: pick the tools, then authorise.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connect-consent.webp" alt="The Fastn Connect consent screen listing apps and tools to tick, with an Authorize button"><figcaption>The same consent screen as every client: pick the tools, then authorise.</figcaption></figure>
 
 ChatGPT's menu names change from time to time. If you cannot find **Developer mode**, check ChatGPT's own help for *custom connectors (MCP)*.
 

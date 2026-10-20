@@ -8,7 +8,7 @@ description: >-
 
 *Owners and admins.* **Audit** records every sign-in, access change and tool call, in a chain that shows if a record was altered.
 
-<figure><img src="../.gitbook/assets/connect-audit.png" alt="The Audit page with a banner reading The record chain is intact, filters for search, category and decision, an Export button, and a table of events with Time, Actor, Action, Resource, Decision and IP columns"><figcaption>Audit, with the chain check at the top.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connect-audit.webp" alt="The Audit page with a banner reading The record chain is intact, filters for search, category and decision, an Export button, and a table of events with Time, Actor, Action, Resource, Decision and IP columns"><figcaption>Audit, with the chain check at the top.</figcaption></figure>
 
 ### The chain check
 
