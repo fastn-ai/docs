@@ -58,6 +58,7 @@
   * [Importing and exporting](build/connectors/importing-and-exporting.md)
   * [Connect a system](build/connectors/connect-a-system.md)
 * [Unified APIs](build/unified-apis/README.md)
+  * [Setup and Usage](build/unified-apis/setting-up-and-using.md)
   * [Inside a category](build/unified-apis/inside-a-category.md)
   * [Unified vs direct](build/unified-apis/unified-vs-direct.md)
 * [Connections](build/connections/README.md)
@@ -93,6 +94,7 @@
   * [Iframe](embed/embedding/iframe.md)
   * [SDK](embed/embedding/sdk.md)
   * [Token API](embed/embedding/token-api.md)
+  * [Integration flow](embed/embedding/integration-flow.md)
 
 ## Operate
 
@@ -101,6 +103,8 @@
 * [Traces](operate/traces.md)
 * [Alerts](operate/alerts.md)
 * [Executions](operate/executions.md)
+* [Triggers](operate/triggers/README.md)
+  * [Using a webhook trigger](operate/triggers/using-a-webhook-trigger.md)
 * [Sync reports](operate/sync-reports.md)
 * [Customers](operate/customers.md)
 * [Troubleshooting](operate/troubleshooting.md)

@@ -50,3 +50,4 @@ A shareable link suits the cases where you cannot embed at all: onboarding a cus
 * [Iframe](iframe.md)
 * [SDK](sdk.md)
 * [Token API](token-api.md)
+* [Integration flow](integration-flow.md)
