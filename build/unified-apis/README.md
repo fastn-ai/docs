@@ -28,6 +28,6 @@ Knowledge Base and Project Management are the two newest categories; their entit
 
 ### In this section
 
-* [Setup and Usage](setting-up-and-using.md)
+* [Setup and Usage](setup-and-usage.md)
 * [Inside a category](inside-a-category.md)
 * [Unified vs direct](unified-vs-direct.md)
