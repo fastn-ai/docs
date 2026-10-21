@@ -17,7 +17,7 @@ Onboarding takes you through the four steps a SaaS company takes to offer integr
 
 Your team connects your product and builds integrations once; the widget carries them into your product, where each customer connects and customizes on their own.
 
-**AI credits:** you start with 0 and earn 50 by finishing onboarding: 20 for step 1 and 10 for each other step. Building with your AI tools uses no AI credits.
+**AI credits:** finishing onboarding earns you 50 AI credits on top of your plan's monthly allowance: 20 for step 1 and 10 for each other step. Building with your AI tools uses no AI credits.
 
 Screenshots on these pages come from the onboarding screens, so the live app may differ slightly.
 

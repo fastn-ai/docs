@@ -50,7 +50,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 Five parts, each done once; part 5 is optional. Keep the API key and identity secret on your backend: only the embed token reaches the browser.
 
-**1 · Create an API key.** In **Settings** → **API keys**, create a key, limit it to specific customers, and turn on identity verification. You get an API key and an identity secret (shown once). See [API keys](../../manage/api-keys.md).
+**1 · Create an API key.** In **Settings** → **API keys**, create a key with **Full access** permissions that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones it registers later, and the identity hash says which customer each call is for. A key limited to specific customers can't register customers, or get embed tokens for customers it doesn't list. See [API keys](../../manage/api-keys.md).
 
 **2 · Register each customer** (backend, once per customer), with your own ID for them, their tier and connection limit:
 

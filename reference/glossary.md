@@ -25,7 +25,7 @@ description: >-
 | **Build with AI**           | The label for the AI integration/workflow builder.                                                                                                                   | Workflows tab; embedded widget        |
 | **Agent**                   | The Integrations sub-tab where you describe an integration and the AI agents build it.                                                                               | Integrations → Agent                  |
 | **AI tools** | Claude, ChatGPT, Gemini, Cursor and similar, connected to fastn through its MCP server. They use no AI credits. | [MCP gateway](../build/mcp-gateway/README.md) |
-| **AI credits** | What the fastn agent uses. You earn 50 by finishing onboarding. | [Onboarding](../getting-started/onboarding/README.md) |
+| **AI credits** | What the fastn agent uses. Your plan includes a monthly allowance, and finishing onboarding adds 50 on top of it. | [Onboarding](../getting-started/onboarding/README.md) |
 | **AI Assistant**            | A toggleable widget section that lets your customers describe an automation and have it built inside the widget.                                                     | Widget sections                       |
 | **MCP Gateway**             | The endpoint that exposes integrations as tools for AI agents, over the Model Context Protocol. Has a Control Plane (Admin MCP) and a Data Plane (Customer Gateway). | Widgets → Embed → MCP                 |
 | **Embed token**             | A short-lived token (15-minute expiry, `emb_` prefix) generated from your backend that scopes an embedded widget to a specific customer.                             | Generated via the embed token API     |
