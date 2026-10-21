@@ -9,6 +9,11 @@
   * [Platform tour](getting-started/platform-tour.md)
   * [Quickstart: your first integration](getting-started/quickstart.md)
   * [Core concepts](getting-started/concepts.md)
+  * [Onboarding](getting-started/onboarding/README.md)
+    * [Connect your product](getting-started/onboarding/connect-your-product.md)
+    * [Choose integrations](getting-started/onboarding/choose-integrations.md)
+    * [Embed the widget](getting-started/onboarding/embed-the-widget.md)
+    * [Customers connect and customize](getting-started/onboarding/customers-connect-and-customize.md)
 
 ## Tutorials
 

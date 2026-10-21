@@ -79,6 +79,8 @@ Whichever preset you pick, the **What it can touch** matrix below shows exactly 
 
 **Customers it can reach**: **Every customer**, or **Only the ones I pick**. Narrowing it is not optional everywhere: the form notes that picking specific customers is *Required for keys used in an embed session.*
 
+That note covers a key used directly as one customer's widget session. The backend key that registers customers and gets embed tokens should reach **Every customer**, because a key limited to specific customers is refused for any customer it doesn't list (see [Embed the widget](../getting-started/onboarding/embed-the-widget.md)).
+
 **Verify caller identity (HMAC)**: turning it on requires callers to send a signed `x-identity-hmac` header, so a caller cannot change the `x-org-id` or `x-user-id` it claims to be. The signing secret is shown once at creation. If you lose it, reach it again through **Identity verification** on the key's **…** menu.
 
 **Resource scope** *(optional)*: narrows the key to particular resources rather than everything its permissions would otherwise cover.
