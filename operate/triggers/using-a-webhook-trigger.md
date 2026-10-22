@@ -16,3 +16,5 @@ curl --location 'https://webhooks.fastn.dev/prod/triggers/<WORKSPACE_ID>/webhook
 --data '{
 }'
 ```
+
+The `x-user-id` and `x-identity-hmac` headers are optional.
