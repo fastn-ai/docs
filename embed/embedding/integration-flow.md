@@ -20,17 +20,17 @@ Before you start, you need an API key. We also recommend two optional security m
 
 1. Go to your **Fastn dashboard** → **Settings** → **API Keys**.
 
-<figure><img src="../../.gitbook/assets/api-key-settings-page.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-settings-page.webp" alt="The Settings API Keys page in the earlier dashboard layout, with Test and Live tabs and a Create API Key button"><figcaption></figcaption></figure>
 
-1. Click **+ Create API Key**.
-2. In the dialog:
+2. Click **+ Create API Key**.
+3. In the dialog:
    * **Name**: give it something identifiable.
    * **Mode**: select **Live** for production use or **Test** for development.
    * Set **scopes**, **IP whitelisting**, **rate limits**, and **expiry** as needed.
    * Enable **caller identity verification (HMAC)**. This is optional but recommended for security.
-3. Click **Create Key**.
+4. Click **Create Key**.
 
-<figure><img src="../../.gitbook/assets/api-key-create-dialog.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-create-dialog.webp" alt="The Create an API key dialog: Name set to Test, Mode with Test and Live cards, Permissions set to Viewer and the What it can touch matrix"><figcaption></figcaption></figure>
 
 #### Creating an identity hash (recommended)
 
@@ -42,7 +42,7 @@ If you skip this section, omit the `x-identity-hmac` header from your requests a
 
 When you create an API key with HMAC enabled, a dialog appears showing the secret along with code snippets for generating the hash.
 
-<figure><img src="../../.gitbook/assets/api-key-identity-secret.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/api-key-identity-secret.webp" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption></figcaption></figure>
 
 **Safety precautions:**
 
