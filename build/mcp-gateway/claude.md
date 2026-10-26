@@ -6,6 +6,10 @@ description: Add fastn to Claude as a custom connector, then build integrations 
 
 Add fastn once, switch it on in a chat, then ask for the integration in one sentence.
 
+{% hint style="info" %}
+**Want Claude to use your team's apps (Slack, GitHub, Google and more) rather than build integrations?** That is Fastn Connect, which uses your organisation's own URL. See [Claude in Fastn Connect](../../connect/clients/claude.md).
+{% endhint %}
+
 ### Add fastn
 
 1. In fastn, open **Connect an agent** and click **Add to Claude**. Claude opens the **Add custom connector** form with the name and URL already filled in.

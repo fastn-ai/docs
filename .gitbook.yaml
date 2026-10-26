@@ -42,3 +42,18 @@ redirects:
   quick-start-guide: getting-started/quickstart.md
   api-reference: reference/api.md
   debugging-and-troubleshooting: operate/troubleshooting.md
+
+  # Fastn UCL (classic) pages, replaced by the Fastn Connect section
+  classic/fastn-ucl: connect/README.md
+  classic/fastn-ucl/getting-started: connect/quickstart.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer: connect/concepts.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/embedding-ucl-onto-your-ai-agent: connect/agents/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/multitenancy: connect/agents/multi-tenant.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/defining-an-mcp-server: connect/tools/add-mcp-server.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/creating-a-custom-tool: connect/tools/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/monitoring: connect/monitor.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/monitoring/ucl-security-and-compliance: connect/access/policies.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios: connect/clients/README.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl: connect/clients/claude.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-for-task-assignment-in-jira: connect/clients/claude.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-to-cursor-and-access-data-from-notion: connect/clients/other-clients.md

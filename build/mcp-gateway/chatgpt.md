@@ -10,6 +10,10 @@ ChatGPT reaches fastn through a custom connector, which needs Developer mode. De
 fastn hasn't yet checked these steps inside ChatGPT itself. They follow the ChatGPT tab of fastn's **Connect an agent** dialog, which has the current wording if a menu in ChatGPT has moved.
 {% endhint %}
 
+{% hint style="info" %}
+**Want ChatGPT to use your team's apps (Slack, GitHub, Google and more) rather than build integrations?** That is Fastn Connect, which uses your organisation's own URL. See [ChatGPT in Fastn Connect](../../connect/clients/chatgpt.md).
+{% endhint %}
+
 1. In ChatGPT, open **Settings** → **Apps & Connectors** → **Advanced settings**, and turn on **Developer mode**.
 2. Back in **Connectors**, click **Add custom connector**.
 3. Name it `fastn`, paste `https://mcp.fastn.dev/fastn-workspace`, and pick **OAuth** as the auth method.
