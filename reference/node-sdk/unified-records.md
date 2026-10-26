@@ -251,6 +251,6 @@ Get `connectionId` from `customer.connections()` or the `connection.connected` e
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has no active connection for any app mapped to this entity (or for the `provider` you named). Send a setup link. |
 | `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. |
 | `409 UNIFIED_MULTIPLE_PROVIDERS` | Several apps are connected and the call needs one: pass `provider`. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request, for example a record id that does not exist (or was archived). When `details` is present, it carries what the app said. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request, for example a record id that does not exist (or was archived), or a field the app requires. What the app said is in `e.body.providerStatus` (its HTTP status) and `e.body.providerError` (its message). |
 
 The full list of error fields is on [Errors, retries and options](errors-and-options.md#errors).

@@ -147,6 +147,6 @@ try {
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | The app does not offer that operation for this entity. | Use a [direct app action](app-actions.md). |
 | `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. | Stop using it; pick a connection from `customer.connections()`. |
 | `422 IDEMPOTENCY_KEY_REUSED` | The same `idempotencyKey` was used for a different request. | Use a new key for a new request. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request. | Read `message` and `details`; check the record id or fields. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); check the record id or fields. |
 
 See [Unified records](unified-records.md#errors-from-unified-calls) for every unified code, and [Errors and failure states](../errors.md) for failures you see in the dashboard.
