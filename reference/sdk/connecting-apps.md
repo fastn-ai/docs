@@ -89,7 +89,7 @@ The SDK fills in the customer for you. If the customer does not exist yet, the l
 | `setupId` | The link's id, to check or cancel it. |
 | `status` | `pending` (new), `complete` (used) or `revoked` (cancelled). |
 | `expiresAt` | When the link stops working. |
-| `endOrgId` | fastn's id for the customer. |
+| `endOrgId` | fastn's own id for the customer; you can ignore it. The link belongs to the customer you created it for. |
 
 ### Check or cancel a link
 
@@ -163,6 +163,8 @@ Answer:
 }
 ```
 
+`endOrgId` is fastn's own id for the customer; you can ignore it. The token is for the customer you created it for.
+
 `expiresIn` is in seconds: the token lasts eight hours. Treat the token as a credential. How the browser side uses it is in [Embedding the widget](../../embed/embedding/README.md) and [Token API](../../embed/embedding/token-api.md).
 
 ---
@@ -216,7 +218,7 @@ const connectionId = hubspot?.id;
 | `connectorId` | The app's id in the catalogue. |
 | `status` | For example `ACTIVE` or `EXPIRED`. An expired connection needs the customer to sign in again. |
 | `isDefault` | The account used when you do not pick one. |
-| `endOrgId` | The customer the connection belongs to. |
+| `endOrgId` | fastn's own id for the customer the connection belongs to; you can ignore it. |
 
 ### Other connection calls
 

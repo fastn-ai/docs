@@ -22,7 +22,7 @@ await contacts.create(
 | `timeoutMs` | | A time limit for this call, in milliseconds. Overrides the client's `timeoutMs`. |
 | `retries` | | How many retries for this call. `0` never retries. Overrides the client's `retries`. |
 | `signal` | | An `AbortSignal`, to cancel the call yourself. |
-| `customer` | `x-end-org-ref` or `x-end-org-id` header | Run the call for one customer: `{ ref: "acme_customer_42" }` (your id) or `{ id: "<fastn id>" }`. `fastn.customer(ref)` sets this for you. |
+| `customer` | `x-end-org-ref` header | Run the call for one customer: `{ ref: "acme_customer_42" }` sends your customer id as `x-end-org-ref`. `fastn.customer(ref)` and `customer.api` set this for you. |
 | `installationId` | `x-installation-id` header | Run the call for one installation. |
 | `headers` | | Extra headers, sent as given. |
 | `extraQuery` | query string | Query parameters the SDK does not know yet, sent as given. |
@@ -121,7 +121,7 @@ try {
 | `code` | The API's error code, for example `UNIFIED_VALIDATION_FAILED`. Some errors have no code: use `status` then. |
 | `message` | The method, path, status, code and the API's message, for example `POST /v1/unified/{category}/{entity} -> 400 UNIFIED_VALIDATION_FAILED: Field "title" is required`. |
 | `details` | Extra details the API sent, when any. |
-| `requestId` | fastn's id for the failed request. Quote it when you ask fastn for help. |
+| `requestId` | The id fastn gave the failed request. Quote it when you ask fastn for help. |
 | `method`, `path` | The call that failed. |
 | `body` | The raw answer body. |
 | `isNotFound`, `isConflict`, `isRateLimited`, `isAuth`, `isValidation` | Shortcuts for the common cases (`404`, `409`, `429`, `401`/`403`, `400`/`422`). |

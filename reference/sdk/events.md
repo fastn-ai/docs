@@ -32,7 +32,7 @@ For every customer at once, call `fastn.events.createEventSubscription({ … })`
 | `connectors` | No | `connector.event` only: just events from these apps (slug or connector id), for example `["hubspot"]`. |
 | `providerEvents` | No | `connector.event` only: just these app event names, for example `["contact.creation"]`. |
 | `entities` | No | `unified.event` only: just these entities, as `category/entity`, for example `["crm/contact"]`. |
-| `endOrgId` | No | Only events about this customer (fastn's id). The customer form above fills it in for you. |
+| `endOrgId` | No | Only events about this customer, by your customer id. The customer form above fills it in for you. |
 | `description` | No | Your label. |
 | `enabled` | No | Default `true`. |
 
@@ -53,7 +53,7 @@ Answer: `{ data: { id, url, endOrgId, eventTypes, connectors, providerEvents, en
 | `unified.event` | The same app change, as a unified record. Needs an [app event trigger](#app-events). | `app`, `connector`, `connectionId`, `category`, `entity`, `action` (`created`, `updated` or `deleted`), `remoteId` (the record id in the app), `providerEvent`, `triggerId`, and `record` (the unified record `{ id, provider, data }`) or `recordError` (why it could not be read) |
 | `endpoint.test` | You sent a test with `testEventSubscription`. | None |
 
-Every event carries `id` (`evt_…`), `type`, `occurredAt`, `tenantRef` (your customer id) and `endOrgId` (fastn's customer id). `metadata` is the object you set on the setup link.
+Every event carries `id` (`evt_…`), `type`, `occurredAt`, `tenantRef` (your customer id: match on this) and `endOrgId` (fastn's own id for the customer; you can ignore it). `metadata` is the object you set on the setup link.
 
 ```json
 {
@@ -190,7 +190,7 @@ await fastn.events.createAppEventTrigger({
   ],
   type: "WEBHOOK",
   accountId: "<the account id in the app, for example the HubSpot portal id>",
-  endOrgId: await customer.id(),
+  endOrgId: "acme_customer_42",
   connectionId: String(hubspot?.id),
   status: "ACTIVE",
 });
@@ -202,7 +202,7 @@ await fastn.events.createAppEventTrigger({
 | `connectorId` | Yes | The app's id: `connectorId` of the connection. |
 | `connectorName` | Yes | The app's name, for example `HubSpot`. |
 | `events` | Yes | The app events to receive, each `{ id, label }`, from `listConnectorEvents`. |
-| `endOrgId` | For a customer's account | `await customer.id()` |
+| `endOrgId` | For a customer's account | Your customer id, `"acme_customer_42"` |
 | `connectionId` | For a customer's account | The connection the events are for. |
 | `accountId` | When the app needs it | The app's own account id, for example the HubSpot portal id or a Facebook Page id. |
 | `type` | No | `WEBHOOK` or `POLLING`. |

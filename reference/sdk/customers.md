@@ -17,9 +17,8 @@ You do not have to register a customer before you create a [setup link](connecti
 | Create | `customer.register({ name })` | `name` (required): display name. Optional: `slug` (made from the name when left out), `plan`, `tier`, `limits`, `domain`. | The customer. Calling it again for the same id returns the existing customer instead of a second one. |
 | Look up | `customer.find()` | None | The customer row, or `undefined` when fastn does not know this id. |
 | Read | `customer.get()` | None | `{ data: customer }` |
-| fastn id | `customer.id()` | None | fastn's id for this customer (a string). Cached after the first call. |
 | List all | `fastn.orgs.listOrgs({ parent_id })` | Optional: `parent_id` (your own org id, from `fastn.me()`), `type` (`end_org` for customers), `include_usage: "true"` (adds usage numbers per customer). | `{ data: [customer, …] }` |
-| Change | `fastn.orgs.updateTenant({ id, … })` | `id` (required): `await customer.id()`. Optional: `name`, `plan`, `status` (`active`, `suspended`). | The updated customer. |
+| Change | `fastn.orgs.updateTenant({ id, … })` | `id` (required): your customer id, `"acme_customer_42"`. Optional: `name`, `plan`, `status` (`active`, `suspended`). | The updated customer. |
 | Remove | `customer.remove()` | None | Nothing. See the warning below. |
 
 ```typescript
@@ -28,7 +27,6 @@ const customer = fastn.customer("acme_customer_42");
 await customer.register({ name: "Acme Dental" });
 
 const row = await customer.find();          // undefined when unknown
-const fastnId = await customer.id();       // fastn's id, cached
 
 const { data } = await customer.get();
 console.log(data.name, data.status);
@@ -58,8 +56,8 @@ console.log(data.name, data.status);
 
 | Field | Meaning |
 | ----- | ------- |
-| `id` | fastn's id for the customer. |
-| `orgId`, `externalRef` | Your id for the customer (the same value). |
+| `id` | fastn's own id for the customer; you can ignore it. Match the customer by your own id, in the next row. |
+| `orgId`, `externalRef` | Your id for the customer (the same value). Use it to match the customer. |
 | `parentId` | Your own org: the account the customer belongs to. |
 | `type` | `end_org` for a customer. |
 | `status` | `active` or `suspended`. |
@@ -75,7 +73,7 @@ const list = await fastn.orgs.listOrgs({ parent_id: String(me.org?.id), type: "e
 for (const c of list.data ?? []) console.log(c.externalRef, c.name);
 ```
 
-`customer.find()` and `customer.id()` only look at customers under your own org, so they never return another account's customer.
+`customer.find()` and every other `customer` method only look at customers under your own org, so they never return another account's customer.
 
 ### Remove a customer
 

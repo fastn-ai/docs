@@ -30,7 +30,7 @@ npm install @fastn-ai/sdk
 
 ## Create the client
 
-Create one client when your app starts, and reuse it. It caches the lookups it makes, such as each customer's fastn id.
+Create one client when your app starts, and reuse it. It caches the lookups it makes.
 
 ```typescript
 import { FastnClient } from "@fastn-ai/sdk";
@@ -67,7 +67,7 @@ console.log(me.role, me.org?.id);
 
 fastn is multi-tenant. You are the **partner**; each business you serve is a **customer** (fastn also calls it a tenant or end org). Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
 
-You name each customer with **your own id**, for example the id it has in your database. fastn also gives the same customer its own internal id. The SDK lets you use only yours: `fastn.customer("acme_customer_42")`. It looks up fastn's id when a call needs it, and caches it.
+You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. The API also returns fastn's own id for the customer in its answers; you never need it.
 
 {% hint style="warning" %}
 To act for your customers, the API key must be allowed to act for customers (a multi-tenant partner key).
@@ -77,8 +77,8 @@ To act for your customers, the API key must be allowed to act for customers (a m
 
 | Id | Example | What it is | Who makes it |
 | -- | ------- | ---------- | ------------ |
-| Your customer id | `acme_customer_42` | Your own id for a customer. The API also calls it `orgId`, `externalRef`, `endOrgRef` and `tenantRef`: all the same value. | You |
-| fastn customer id | `7c9e6679-…` (a UUID) | fastn's own id for the same customer. Called `id` in customer answers and `endOrgId` elsewhere. Get it with `await customer.id()`. | fastn |
+| Your customer id | `acme_customer_42` | Your own id for a customer. Use it everywhere. The API also calls it `orgId`, `externalRef`, `endOrgRef` and `tenantRef`: all the same value. | You |
+| fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers and `endOrgId` elsewhere. You never need it: those fields accept your customer id (`acme_customer_42`) too. | fastn |
 | `widgetId` | `wgt_…` | A widget: which apps a setup link or the embedded widget offers. | You, in the dashboard |
 | `setupId` | `stp_…` | One setup link. | fastn |
 | `installationId` | `inst_…` | The finished setup made from a setup link or the widget. | fastn |
@@ -93,7 +93,7 @@ To act for your customers, the API key must be allowed to act for customers (a m
 | Webhook secret | `whsec_…` | Signs the events fastn sends you. Shown once. | fastn |
 | `idempotencyKey` | `booking_123` | Your key that makes a write safe to retry. | You |
 | `correlationId` | `req_abc` | Your id for a request, to trace what fastn did for it. | You |
-| `requestId` | from the error | fastn's id of one failed request. Quote it when you ask for help. | fastn |
+| `requestId` | from the error | The id fastn gave one failed request. Quote it when you ask for help. | fastn |
 
 ---
 
