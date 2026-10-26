@@ -1,5 +1,5 @@
 ---
-description: "Request options (retry keys, tracing, time limits, extra fields) and the errors the Node SDK throws."
+description: "Request options (retry keys, tracing, time limits, extra fields) and the errors the SDK throws."
 ---
 
 # Errors, retries and options

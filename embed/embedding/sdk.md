@@ -9,7 +9,7 @@ description: The SDK mounts the same iframe and adds events, token refresh, them
 The SDK mounts the same iframe and adds what a raw tag cannot: events when a user connects an app, token refresh, live theming, and modal mode.
 
 {% hint style="info" %}
-This page is the browser widget package, `@fastn-ai/embed`. The server-side package that calls the fastn API from your backend is `@fastn-ai/sdk`: see [Node SDK](../../reference/node-sdk/README.md).
+This page is the browser widget package, `@fastn-ai/embed`. The server-side package that calls the fastn API from your backend is `@fastn-ai/sdk`: see [SDK](../../reference/sdk/README.md).
 {% endhint %}
 
 Four variants, depending on how much of the UI you want to own:

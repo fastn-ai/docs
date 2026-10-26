@@ -10,7 +10,7 @@ description: Calling workflows and unified endpoints over HTTP.
 
 Production base URL: `https://api.fastn.dev`. Your workflow's **API** tab shows the URL for your workspace. Examples below use `YOUR_FASTN_HOST`.
 
-From Node.js or TypeScript, the [Node SDK](node-sdk/README.md) (`@fastn-ai/sdk`) wraps the same API in typed methods.
+From Node.js or TypeScript, the [SDK](sdk/README.md) (`@fastn-ai/sdk`) wraps the same API in typed methods.
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "Every other fastn API operation from the Node SDK: by area, by name with call(), for one customer, and with paginate()."
+description: "Every other fastn API operation from the SDK: by area, by name with call(), for one customer, and with paginate()."
 ---
 
 # Any other operation

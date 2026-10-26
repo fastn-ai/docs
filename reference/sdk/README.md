@@ -1,10 +1,10 @@
 ---
-description: "Call the fastn platform from Node.js or TypeScript with @fastn-ai/sdk: install, set up the client, and learn the ids."
+description: "Call the fastn platform from your backend with the fastn SDK: install, set up the client, and learn the ids."
 ---
 
-# Node SDK
+# SDK
 
-`@fastn-ai/sdk` is the fastn platform API as a Node.js / TypeScript package. You call normal typed methods, you get plain objects back, and failures come back as typed errors. The SDK also handles customer ids, retries and event signatures for you.
+The fastn SDK is the fastn platform API as a library for your backend. The first version is for Node.js and TypeScript: `@fastn-ai/sdk`. You call normal typed methods, you get plain objects back, and failures come back as typed errors. The SDK also handles customer ids, retries and event signatures for you.
 
 Use it from your **backend**. It needs your fastn API key, which must never reach a browser.
 

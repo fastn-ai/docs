@@ -1,5 +1,5 @@
 ---
-description: "Register, find, read, list, change and remove your customers with the Node SDK."
+description: "Register, find, read, list, change and remove your customers with the SDK."
 ---
 
 # Customers
