@@ -181,7 +181,7 @@ Do not conflate these.
 | --- | --- | --- |
 | **URL** | `<docs-site>/~gitbook/mcp` | `https://mcp.fastn.dev/fastn-workspace` |
 | **Exposes** | This documentation, as searchable tools | Your connectors and actions, as callable tools |
-| **Auth** | Public, as the docs site is | `Authorization: Bearer fsk_live_<key>` |
+| **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to fastn to sign in and pick a workspace |
 | **Use for** | Answering questions about fastn | Acting on real customer systems |
 
 Claude Code, against the product gateway:
@@ -190,7 +190,7 @@ Claude Code, against the product gateway:
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 ```
 
-A gateway client acts with exactly what its key permits: customer scope, permission preset, and the actions selected on the connector. Mint a dedicated key per client and name it after the client; the name appears in the audit log beside everything the key does.
+A gateway client acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [MCP gateway](../build/mcp-gateway/README.md).
 
 ---
 

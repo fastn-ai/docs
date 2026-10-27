@@ -27,6 +27,6 @@ You don't run Fastn locally or build the integration infrastructure yourself. Fa
 
 [**Deployment**](deployment.md) — Environment variables and deploy-time considerations.
 
-[**MCP Gateway Integration**](mcp-gateway-integration.md) — Exposing integrations as tools for AI agents.
+[**MCP gateway**](../../build/mcp-gateway/README.md) — Using your integrations as tools from Claude, Cursor and other AI clients.
 
 [**Troubleshooting**](troubleshooting.md) — Common errors and their causes.
