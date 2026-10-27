@@ -38,7 +38,7 @@ You add fastn as an MCP server at that URL and sign in. The client sends you to 
 
 #### Any other MCP client
 
-Any client that speaks Streamable HTTP and OAuth can add fastn the same way: give it the URL above and sign in when it asks. Gemini CLI works only with a Gemini API key or a Google Cloud project now that personal Google sign-in for it has been retired, and fastn no longer lists it.
+Any client that speaks Streamable HTTP and OAuth can add fastn the same way: give it the URL above and sign in when it asks.
 
 ### Scoping
 
