@@ -4,7 +4,7 @@ description: Registering your own SaaS API as a connector, and the scopes tenant
 
 # SaaS Connectors
 
-**Settings → SaaS Connectors**
+**Connect your product → API connector**
 
 > Register your own SaaS API's connectors and define the connection scopes tenants are provisioned under.
 
@@ -42,7 +42,7 @@ Three consequences worth being deliberate about:
 Pick scopes that name a *capability boundary* in your own API (`inventory`, `product`, `billing`), rather than one scope per customer. Customers are already the tenant axis; scopes are the second axis crossing it.
 
 {% hint style="info" %}
-This screen sits in Settings alongside [Environments](environments.md) and [Configs](configs.md) rather than under Build, because registering your own API is an organisation-level act rather than something you do per integration.
+This screen used to be **Settings → SaaS Connectors**, and that address now opens **Connect your product**, under **Build** in the sidebar. Its other tab, **Webhooks**, is where fastn calls your product back: see [SaaS Webhooks](saas-webhooks.md).
 {% endhint %}
 
 {% hint style="warning" %}
