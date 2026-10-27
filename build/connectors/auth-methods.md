@@ -33,7 +33,7 @@ The method types, and the fields each one asks for, are listed in [Creating a co
 | --- | --- |
 | **Name** | The provider's name, for example *HubSpot OAuth*. |
 | **Client ID** | The OAuth client ID registered with the vendor. The client secret is never shown. |
-| **Preferred** | **Preferred app** marks the provider the connect dialog uses by default. |
+| **Preferred** | **Preferred app** marks a default provider. Your own app and the community app can both show it; the connect dialog shows which one it will use. |
 | **Used By** | Which connections use this provider. |
 | **Actions** | What you can do with it. *Community, read-only* means the provider belongs to fastn's shared catalogue and cannot be changed from your workspace. |
 
@@ -43,7 +43,7 @@ The **‹** arrow returns to the method list.
 
 Every fastn-managed OAuth connector ships with a **community app** (shown as "[Connector] OAuth"). It works out of the box but is read-only and shared across fastn customers. A connector your workspace built has no community app, so it has no provider until you create one. An **auth provider** is a set of OAuth credentials that fastn uses when your customers sign in to a connector. Creating your own provider lets you:
 
-* Show your own app name and logo on the service's consent screen.
+* Show your own app name and logo on the service's consent screen when sign-in goes through your app (see Step 6).
 * Control exactly which scopes are requested.
 * Use your own API rate limits instead of shared ones.
 * Rotate or revoke credentials without contacting fastn.
@@ -128,13 +128,13 @@ Click **Create** when every field is filled.
 
 <figure><img src="../../.gitbook/assets/own-oauth-app-5-endpoints.webp" alt="The New Auth Provider dialog, lower half: Response Type set to code, Authorization URL and Token URL with example placeholders, Grant Type and Token Grant Type dropdowns, and URL Variables"><figcaption>The lower half, with the endpoints and grant types.</figcaption></figure>
 
-**Step 6: Switch to your app**
+**Step 6: Make your app preferred**
 
-After you click **Create**, your provider appears in the list under the community app, for example "My Company Custom App". It is not active yet: the community app still holds the **Preferred app** badge.
+After you click **Create**, your provider appears in the list under the community app, for example "My Company Custom App". It is not your preferred app yet: only the community app has the **Preferred app** badge.
 
-1. In your provider's row, click **Use this app** in the **Preferred** column. The badge moves to your app.
+1. In your provider's row, click **Use this app** in the **Preferred** column. Your app gets the **Preferred app** badge. The community app keeps its own badge, so both rows show it.
 2. Check the Client ID in the row matches the one in your developer app.
-3. Open the **Connections** tab and create a test connection. The service's consent screen should show your app's name.
+3. Open the **Connections** tab and create a test connection. The connect dialog shows the provider it will use; if it isn't your app, pick yours under **⋯** → **Change provider**. The service's consent screen should then show your app's name. If it still shows the community app, contact fastn.
 
 To change credentials later, click **Edit** on your provider's row. **Delete** is available only when no active connection uses the provider.
 
@@ -147,7 +147,7 @@ To change credentials later, click **Edit** on your provider's row. **Delete** i
 | **Create** button is greyed out | A required field is empty | Fill **Name**, **Client ID** and **Client Secret**, then retry |
 | The service shows a redirect URI error | fastn's callback URL is not registered in your developer app | Add the exact callback URL in the app's OAuth settings on the service. Some services, such as Airtable, expect it with a trailing slash (`https://oauth.live.fastn.ai/`). If the error persists with the URL registered exactly, contact fastn |
 | The service shows an invalid scope error | A scope in fastn is not enabled on the developer app | Make the scope lists match in both places |
-| Consent screen still shows the community app | Your provider is not the preferred app | Click **Use this app** on your provider's row |
+| Consent screen still shows the community app | Both apps show **Preferred app**, and the connect dialog picked the community app | For a test connection in the dashboard, pick your app under **⋯** → **Change provider**. Customers connecting in the widget can't choose, so if they keep getting the community app, contact fastn |
 | Sign-in fails after a secret change | fastn still holds the old secret | Edit the provider and paste the new **Client Secret** |
 
 ### How the default method is chosen
