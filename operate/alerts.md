@@ -71,6 +71,7 @@ A multi-select: leave it across everything, or pick the specific workflows this 
 | **Slack**   | An incoming webhook URL.        |
 | **Email**   | One or more addresses.          |
 | **Webhook** | An HTTPS endpoint of your own.  |
+| **Teams**   | A connected Microsoft Teams account: pick the team, then the channel. |
 
 An alert with no recipients shows **No recipients** and will not notify anyone.
 
@@ -97,7 +98,7 @@ Your customers can set up alerts themselves, from the integration hub inside you
 
 **Step 1: Open Insights**
 
-1. Open the **Integrations** hub in your app.
+1. Open the **Integrations** hub in the product where it's embedded.
 2. Click the **...** (menu) button in the top right corner of the hub header.
 3. Select **Insights**.
 
@@ -129,4 +130,5 @@ The fields are the same as in a [custom alert](#custom-alerts) above.
 
 1. Switch the toggle next to the alert name on. A new alert starts paused.
 2. Optionally, click the test (play) button to send a test alert and check it arrives.
-3. **Firing history** under the alert shows every time it has fired.
+
+**Firing history** under the alert shows every time it has fired.
