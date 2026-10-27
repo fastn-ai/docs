@@ -35,12 +35,13 @@ The workspace key is a different credential from your fastn platform API key. Ke
 | `url` | Yes | The workspace endpoint. |
 | `timeoutMs` | No | Time limit per call. Default 120000 (tools can be slow). |
 | `defaults` | No | Options for every call, for example `{ customer: { ref: "acme_customer_42" } }`. |
+| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once. `false` turns that off. |
 
 | Method | Answer |
 | ------ | ------ |
 | `tools()` | Every tool: `[ { name, title, description, inputSchema, annotations } ]`. Tool names look like `<app>__<action>`. |
 | `toolsOf(app)` | The tools of one app. |
-| `customer(ref)` | The same client, sending `X-Org-Id: ref` on every call. |
+| `customer(ref)` | The same client, sending `X-Org-Id: ref` on every call and filling `endOrgRef: ref` into the Fastn Workspace tools that take it (the unified record tools). The tool schemas come from one `tools()` listing per workspace, shared by every `customer()` client and kept for 10 minutes; call `tools()` once at startup if the first call must not pay for it. An `endOrgRef` or `endOrgId` you pass yourself wins. |
 | `call(name, args, opts?)` | `{ data, text, content, structuredContent, isError }`. `data` is the answer JSON-decoded when it parses; `text` is the raw text. |
 | `rpc(method, params)` | A raw JSON-RPC call, for methods the client does not wrap. |
 
