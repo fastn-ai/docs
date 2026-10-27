@@ -35,7 +35,7 @@ The workspace key is a different credential from your fastn platform API key. Ke
 | `url` | Yes | The workspace endpoint. |
 | `timeoutMs` | No | Time limit per call. Default 120000 (tools can be slow). |
 | `defaults` | No | Options for every call, for example `{ customer: { ref: "acme_customer_42" } }`. |
-| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once; and `orgId` in the arguments is passed to a Fastn Workspace tool that spells the customer `endOrgId` or `end_org_id` under that spelling, so you write `orgId` everywhere. `false` turns both off. |
+| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once; `orgId` in the arguments is passed to a Fastn Workspace tool that spells the customer `endOrgId` or `end_org_id` under that spelling, so you write `orgId` everywhere; and Fastn Workspace answers come back without fastn's internal customer id keys (`endOrgId`, `end_org_id`), so the only customer id you see is yours (`r.text` keeps the raw answer). `false` turns all three off. |
 
 | Method | Answer |
 | ------ | ------ |
