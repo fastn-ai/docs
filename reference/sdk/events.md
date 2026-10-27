@@ -53,7 +53,7 @@ Answer: `{ data: { id, url, endOrgId, eventTypes, connectors, providerEvents, en
 | `unified.event` | The same app change, as a unified record. Needs an [app event trigger](#app-events). | `app`, `connector`, `connectionId`, `category`, `entity`, `action` (`created`, `updated` or `deleted`), `remoteId` (the record id in the app), `providerEvent`, `triggerId`, and `record` (the unified record `{ id, provider, data }`) or `recordError` (why it could not be read) |
 | `endpoint.test` | You sent a test with `testEventSubscription`. | None |
 
-Every event carries `id` (`evt_…`), `type`, `occurredAt`, `tenantRef` (your customer id: match on this) and `endOrgId` (fastn's own id for the customer; you can ignore it). `metadata` is the object you set on the setup link.
+Every event carries `id` (`evt_…`), `type`, `occurredAt` and `tenantRef` (your customer id: match on this). The wire body also carries `endOrgId`, fastn's own id for the customer; `parseEvent` leaves it out (pass `{ internalIds: true }` to keep it). `metadata` is the object you set on the setup link.
 
 ```json
 {

@@ -35,13 +35,13 @@ The workspace key is a different credential from your fastn platform API key. Ke
 | `url` | Yes | The workspace endpoint. |
 | `timeoutMs` | No | Time limit per call. Default 120000 (tools can be slow). |
 | `defaults` | No | Options for every call, for example `{ customer: { ref: "acme_customer_42" } }`. |
-| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once. `false` turns that off. |
+| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once; `orgId` in the arguments is passed to a Fastn Workspace tool that spells the customer `endOrgId` or `end_org_id` under that spelling, so you write `orgId` everywhere; and Fastn Workspace answers come back without fastn's internal customer id keys (`endOrgId`, `end_org_id`), so the only customer id you see is yours (`r.text` keeps the raw answer). `false` turns all three off. |
 
 | Method | Answer |
 | ------ | ------ |
 | `tools()` | Every tool: `[ { name, title, description, inputSchema, annotations } ]`. Tool names look like `<app>__<action>`. |
 | `toolsOf(app)` | The tools of one app. |
-| `customer(ref)` | The same client, sending `X-Org-Id: ref` on every call and filling `endOrgRef: ref` into the Fastn Workspace tools that take it (the unified record tools). The tool schemas come from one `tools()` listing per workspace, shared by every `customer()` client; after 10 minutes a call still goes out at once with the cached schemas and one refresh runs in the background. Call `tools()` once at startup if the first call must not pay for the listing. A call is never sent without the customer on a guess: when the listing fails or comes back empty, the call throws that error (and the next call lists again); a `fastnPlatform__*` tool missing from the cached map triggers one fresh listing, then an unknown-tool `ToolError`. An `endOrgRef` or `endOrgId` you pass yourself wins. |
+| `customer(ref)` | The same client, sending `X-Org-Id: ref` on every call and filling `endOrgRef: ref` into the Fastn Workspace tools that take it (the unified record tools). The tool schemas come from one `tools()` listing per workspace, shared by every `customer()` client; after 10 minutes a call still goes out at once with the cached schemas and one refresh runs in the background. Call `tools()` once at startup if the first call must not pay for the listing. A call is never sent without the customer on a guess: when the listing fails or comes back empty, the call throws that error (and the next call lists again); a `fastnPlatform__*` tool missing from the cached map triggers one fresh listing, then an unknown-tool `ToolError`. An `endOrgRef` or `endOrgId` you pass yourself wins. Register webhooks from a client with no customer: on `fastnPlatform__createEventSubscription` the customer id (`endOrgId`, so `orgId` too) is a filter, and a subscription made with it only receives that one customer's events. With `customerArg` on, the answers of the subscription tools come back without that field, so the filter shows only in `r.text` or with `customerArg: false`. |
 | `call(name, args, opts?)` | `{ data, text, content, structuredContent, isError }`. `data` is the answer JSON-decoded when it parses; `text` is the raw text. |
 | `rpc(method, params)` | A raw JSON-RPC call, for methods the client does not wrap. |
 
@@ -59,6 +59,10 @@ Failures throw `ToolError`.
 | `auth` | The app behind the tool is not connected for this customer yet. |
 
 Other fields: `status`, `code`, `tool`, `body`, and the shortcuts `isAuth`, `isUnknownTool` and `isConnectionRequired`. For kind `auth`, `isConnectionRequired` is `true`, `authorizeUrl` is where to send the customer to connect, and `connector` names the app.
+
+{% hint style="warning" %}
+Today the gateway reports an app refusal (a record id that does not exist, a value the app rejects) as a tool error whose message is only `error code: 502`, the same text as a real upstream hiccup. The app's own message is on its way (platform ticket KAT-8586). Until then: the SDK counts that message as a hiccup, so with `retries` on it has already retried it; a 502 that still comes back is the app refusing the request, so check the id or the value rather than retrying further.
+{% endhint %}
 
 ```typescript
 import { ToolError } from "@fastn-ai/sdk";
