@@ -83,7 +83,7 @@ From the webhook's row in the list you can:
 * **Send test**: send a test event to the URL.
 * **Edit**: change the URL, events or payload schema. The customer is set when the webhook is created and can't be changed.
 * **Deliveries**: see recent deliveries and their status, and replay a failed one.
-* **Pause**: stop sending for now. Events are held and sent when you turn it back on. An event still not delivered 24 hours after it happened is marked failed; replay it from **Deliveries**.
+* **Pause**: stop sending for now. Events that happen while it is paused are not sent and don't appear in **Deliveries**. Deliveries already waiting to retry go out when you turn it back on; any still undelivered 24 hours after the event are marked failed, and you can replay them from **Deliveries**.
 * **Rotate secret**: get a new signing secret. The old secret stops working at once, so update your server straight away. Deliveries still waiting to retry are signed with the new secret.
 
 ### How can I add schemas for different connectors?
@@ -103,9 +103,9 @@ To add one:
 
 5. Check the result in the preview box under the table, then click **Save**.
 
-You can also edit the schema as JSON in the **JSON Schema** tab, or start from **Use example**. If a field is marked **Required** and the event cannot fill it, that event is not sent, and the delivery log shows which field was missing.
+You can also edit the schema as JSON in the **JSON Schema** tab, or start from **Use example**. If a field is marked **Required** and the event cannot fill it, that event is not sent, and the delivery log shows which field was missing. It is retried on the normal schedule for up to 24 hours, so if you fix the schema in that time, the waiting events go out. To send one straight away after a fix, use **Resend** in **Deliveries**.
 
-An event uses the schema for its connector. If its connector has no schema, it uses the **Default** schema.
+An event uses the schema for the connector (or app) it names. If that has no schema, it uses the **Default** schema. If there is no Default schema either, it gets fastn's standard format.
 
 ### What if I want a single schema for all?
 
