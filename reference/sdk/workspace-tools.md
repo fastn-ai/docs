@@ -35,7 +35,7 @@ The workspace key is a different credential from your fastn platform API key. Ke
 | `url` | Yes | The workspace endpoint. |
 | `timeoutMs` | No | Time limit per call. Default 120000 (tools can be slow). |
 | `defaults` | No | Options for every call, for example `{ customer: { ref: "acme_customer_42" } }`. |
-| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once. `false` turns that off. |
+| `customerArg` | No | Default `true`: a call scoped to a customer fills `endOrgRef` into every Fastn Workspace tool whose input schema takes it, so the customer is named once; and `orgId` in the arguments is passed to a Fastn Workspace tool that spells the customer `endOrgId` or `end_org_id` under that spelling, so you write `orgId` everywhere. `false` turns both off. |
 
 | Method | Answer |
 | ------ | ------ |
@@ -58,7 +58,11 @@ Failures throw `ToolError`.
 | `tool` | The tool ran and answered with an error. |
 | `auth` | The app behind the tool is not connected for this customer yet. |
 
-Other fields: `status`, `code`, `tool`, `body`, and the shortcuts `isAuth`, `isUnknownTool` and `isConnectionRequired`. For kind `auth`, `isConnectionRequired` is `true`, `authorizeUrl` is where to send the customer to connect, and `connector` names the app.
+Other fields: `status`, `code`, `tool`, `body`, and the shortcuts `isAuth`, `isUnknownTool` and `isConnectionRequired`.
+
+{% hint style="warning" %}
+Today the gateway reports an app refusal (a record id that does not exist, a value the app rejects) as a tool error whose message is only `error code: 502`, the same text as a real upstream hiccup. The app's own message is on its way (platform ticket KAT-8586). Until then: a 502 that comes back again after one retry is the app refusing the request, so check the id or the value rather than retrying further.
+{% endhint %} For kind `auth`, `isConnectionRequired` is `true`, `authorizeUrl` is where to send the customer to connect, and `connector` names the app.
 
 ```typescript
 import { ToolError } from "@fastn-ai/sdk";
