@@ -41,7 +41,7 @@ The workspace key is a different credential from your fastn platform API key. Ke
 | ------ | ------ |
 | `tools()` | Every tool: `[ { name, title, description, inputSchema, annotations } ]`. Tool names look like `<app>__<action>`. |
 | `toolsOf(app)` | The tools of one app. |
-| `customer(ref)` | The same client, sending `X-Org-Id: ref` on every call and filling `endOrgRef: ref` into the Fastn Workspace tools that take it (the unified record tools). The tool schemas come from one `tools()` listing per workspace, shared by every `customer()` client and kept for 10 minutes; call `tools()` once at startup if the first call must not pay for it. An `endOrgRef` or `endOrgId` you pass yourself wins. |
+| `customer(ref)` | The same client, sending `X-Org-Id: ref` on every call and filling `endOrgRef: ref` into the Fastn Workspace tools that take it (the unified record tools). The tool schemas come from one `tools()` listing per workspace, shared by every `customer()` client; after 10 minutes a call still goes out at once with the cached schemas and one refresh runs in the background. Call `tools()` once at startup if the first call must not pay for the listing. A call is never sent without the customer on a guess: when the listing fails or comes back empty, the call throws that error (and the next call lists again); a `fastnPlatform__*` tool missing from the cached map triggers one fresh listing, then an unknown-tool `ToolError`. An `endOrgRef` or `endOrgId` you pass yourself wins. |
 | `call(name, args, opts?)` | `{ data, text, content, structuredContent, isError }`. `data` is the answer JSON-decoded when it parses; `text` is the raw text. |
 | `rpc(method, params)` | A raw JSON-RPC call, for methods the client does not wrap. |
 
