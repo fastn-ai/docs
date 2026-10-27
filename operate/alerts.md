@@ -90,3 +90,43 @@ Threshold alerts are evaluated every 15 minutes. Run-failure alerts are instant.
 | Error rate above 5% over 1 hour                      | Catches degradation before it is total.           |
 | Total runs below 1 over 24 hours, on a daily sync    | Catches a schedule that silently stopped.         |
 | Broken connectors above 0                            | Catches expired credentials before the customer does. |
+
+### Alerts your customers set up
+
+Your customers can set up alerts themselves, from the integration hub inside your app. They do it from the **Insights** panel of the hub. Their alerts watch their own integrations and go to their own recipients, separately from the alerts on this page.
+
+**Step 1: Open Insights**
+
+1. Open the **Integrations** hub in your app.
+2. Click the **...** (menu) button in the top right corner of the hub header.
+3. Select **Insights**.
+
+<figure><img src="../.gitbook/assets/widget-menu-insights.png" alt="The integration hub header, titled Integrations with the subtitle Connect your favorite tools, with the three-dot menu open showing Insights"><figcaption>The <strong>...</strong> menu in the hub header.</figcaption></figure>
+
+**Step 2: Go to the alerts section**
+
+Scroll to the bottom of the **Insights** panel. There are two options there:
+
+* **Sync failure notifications**: click **Turn on** to be notified the moment any sync run fails. This is the quickest option.
+* **New alert**: create a custom alert with your own conditions (Step 3).
+
+<figure><img src="../.gitbook/assets/customer-alerts-sync-failure-row.webp" alt="The alerts section of the Insights panel: a New alert button above the Sync failure notifications row, which reads Off, a sync can fail silently, with an Edit channels toggle"><figcaption><strong>Sync failure notifications</strong> and <strong>New alert</strong>.</figcaption></figure>
+
+**Step 3: Create a custom alert**
+
+Click **New alert** and fill in:
+
+* **Name**: for example, "Order sync failures".
+* **Alert when**: the condition to alert on, for example error rate is above 5% over 24 hours.
+* **Watch**: all workflows, or only a specific one (for example, HubSpot Deal to Order).
+* **Deliver to**: where the alert is sent: Email, Slack, Microsoft Teams or a Webhook.
+
+The fields are the same as in a [custom alert](#custom-alerts) above.
+
+<figure><img src="../.gitbook/assets/widget-alert-card.png" alt="A new alert card named Untitled alert, badged Paused and No recipients, with Alert when set to Error rate is above 5 percent over 24 hours, Watch set to All workflows, Deliver to rows for Email, Slack, Teams and Webhook, and a Firing history reading This alert has not fired yet"><figcaption>A new custom alert, before it is turned on.</figcaption></figure>
+
+**Step 4: Turn the alert on**
+
+1. Switch the toggle next to the alert name on. A new alert starts paused.
+2. Optionally, click the test (play) button to send a test alert and check it arrives.
+3. **Firing history** under the alert shows every time it has fired.
