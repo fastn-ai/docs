@@ -41,14 +41,14 @@ The **‹** arrow returns to the method list.
 
 #### Using your own OAuth app
 
-Every OAuth connector in fastn ships with a **community app** (shown as "[Connector] OAuth"). It works out of the box but is read-only and shared across fastn customers. An **auth provider** is a set of OAuth credentials that fastn uses when your customers sign in to a connector. Creating your own provider lets you:
+Every fastn-managed OAuth connector ships with a **community app** (shown as "[Connector] OAuth"). It works out of the box but is read-only and shared across fastn customers. A connector your workspace built has no community app, so it has no provider until you create one. An **auth provider** is a set of OAuth credentials that fastn uses when your customers sign in to a connector. Creating your own provider lets you:
 
 * Show your own app name and logo on the service's consent screen.
 * Control exactly which scopes are requested.
 * Use your own API rate limits instead of shared ones.
 * Rotate or revoke credentials without contacting fastn.
 
-You need a role that can create connectors in your fastn workspace (Owner, Admin, Developer or Operator) to follow these steps.
+You need a role that can create connectors in your fastn workspace (Owner, Admin, Developer or Operator) to follow these steps. On a fastn-managed connector, your workspace also needs custom OAuth apps allowed. This is on by default; if fastn has turned it off for your workspace, you can view the providers but not add your own.
 
 **Before you begin**
 
@@ -77,8 +77,8 @@ Start in **Integrations**, then open the connector you want to configure.
 Authentication settings live on the connector's **Auth** tab, not on the connector list.
 
 1. On the connector page, click the **Auth** tab. The other tabs are **Overview**, **Connections**, **Version pins** and **Webhook config**.
-2. Under **Authentication methods**, you will see **OAuth 2.0** marked **Default**, with "1 provider" on the right. This is the community app.
-3. Click **Manage providers** at the top right of the panel.
+2. Under **Authentication methods**, you will see **OAuth 2.0** marked **Default**. On a fastn-managed connector it shows "1 provider" on the right: the community app.
+3. Click **Manage providers** at the top right of the panel. The button reads **Add provider** when the connector has no providers yet, and **View providers** when you can't add one.
 
 <figure><img src="../../.gitbook/assets/own-oauth-app-2-auth-tab.webp" alt="The HubSpot connector's Auth tab: Authentication methods lists OAuth 2.0 marked Default with 1 provider, and a Manage providers button at the top right"><figcaption>The <strong>Auth</strong> tab, with <strong>Manage providers</strong> at the top right.</figcaption></figure>
 
@@ -145,7 +145,7 @@ To change credentials later, click **Edit** on your provider's row. **Delete** i
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
 | **Create** button is greyed out | A required field is empty | Fill **Name**, **Client ID** and **Client Secret**, then retry |
-| The service shows a redirect URI error | fastn's callback URL is not registered in your developer app | Add the exact callback URL in the app's OAuth settings on the service |
+| The service shows a redirect URI error | fastn's callback URL is not registered in your developer app | Add the exact callback URL in the app's OAuth settings on the service. Some services, such as Airtable, expect it with a trailing slash (`https://oauth.live.fastn.ai/`). If the error persists with the URL registered exactly, contact fastn |
 | The service shows an invalid scope error | A scope in fastn is not enabled on the developer app | Make the scope lists match in both places |
 | Consent screen still shows the community app | Your provider is not the preferred app | Click **Use this app** on your provider's row |
 | Sign-in fails after a secret change | fastn still holds the old secret | Edit the provider and paste the new **Client Secret** |
