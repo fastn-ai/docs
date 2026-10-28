@@ -147,6 +147,7 @@
   * [Customers](reference/sdk/customers.md)
   * [Connecting apps](reference/sdk/connecting-apps.md)
   * [Unified records](reference/sdk/unified-records.md)
+  * [Calendar and CRM](reference/sdk/calendar-and-crm.md)
   * [Direct app actions](reference/sdk/app-actions.md)
   * [Events](reference/sdk/events.md)
   * [Errors, retries and options](reference/sdk/errors-and-options.md)

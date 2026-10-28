@@ -47,6 +47,38 @@ The workspace key is a different credential from your fastn platform API key. Ke
 
 Per-call options: `customer`, `userId` (sent as `X-User-Id`, when the workspace runs calls as each person), `headers`, `timeoutMs`, `signal`, `retries` (default `0`, because the SDK cannot know whether a tool is safe to repeat; turn it on for reads).
 
+### Typed methods for your workspace: `npx fastn-sdk-tools`
+
+Tool names as strings work, but your editor cannot check them. The generator turns your workspace's tool list into one TypeScript module with a class per app and a method per tool, each input typed from the tool's schema:
+
+```bash
+# once, and again whenever the workspace changes (commit the file)
+export FASTN_TOOLS_KEY=...                                        # the workspace key; it never ends up in the file
+npx fastn-sdk-tools --url https://mcp.fastn.dev/<workspace> --out src/fastn-tools.ts
+npx fastn-sdk-tools --url https://mcp.fastn.dev/<workspace> --out src/fastn-tools.ts --check   # CI: exit 1 on drift
+```
+
+```typescript
+import { ToolsClient } from "@fastn-ai/sdk";
+import { createTools } from "./fastn-tools.js";
+
+const tools = createTools(new ToolsClient({ key: process.env.FASTN_TOOLS_KEY!, url: "https://mcp.fastn.dev/<workspace>" }));
+
+const acme = tools.customer("acme_customer_42");
+const cals = await acme.googleCalendar.listCalendars({});
+const created = await acme.hubspot.createContact({ email: "jane@example.com", firstname: "Jane" });   // typed from the schema
+```
+
+| Option | Meaning |
+| ------ | ------- |
+| `--url`, `--key` (or `FASTN_TOOLS_URL`, `FASTN_TOOLS_KEY`) | Fetch the tool list from the workspace. The file records the url and the tool count, never the key. |
+| `--from tools-list.json` | Generate offline from a saved tool list. The same list gives the same file. |
+| `--customer <ref>` | Fetch the list as that customer. |
+| `--out <file.ts>` | Where to write. |
+| `--check` | Exit 1 when the file would change. |
+
+The module exports `createTools`, one class per app (`GoogleCalendarTools`), one input interface per tool (`GoogleCalendarListEventsInput`), an output type where the tool publishes one, and `TOOL_NAMES`. Names become identifiers (`google-calendar` → `googleCalendar`); property names stay as the schema spells them. `tools.client` is the `ToolsClient` underneath, for a tool the file does not know yet. Answers and errors are the same `ToolResult` and `ToolError` as `call()`.
+
 ### ToolError
 
 Failures throw `ToolError`.

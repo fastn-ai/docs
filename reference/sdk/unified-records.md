@@ -6,7 +6,7 @@ description: "One set of methods for every app: create, get, list, search, updat
 
 The [unified API](../../build/unified-apis/README.md) gives every app of one kind the same record shape. A contact has the same fields whether it lives in HubSpot or Salesforce; a meeting has the same fields in Google Calendar or Outlook.
 
-The SDK has no app-specific methods. Every app goes through one call:
+For calendars and CRMs there are typed methods with the fields named: see [Calendar and CRM](calendar-and-crm.md). Every other entity, and any entity with untyped input, goes through one call:
 
 ```typescript
 const contacts = customer.records({ category: "crm", entity: "contact", provider: "hubspot" });
@@ -220,7 +220,7 @@ const inWindow = await meetings.search({
 
 `search` takes the fields to match as one object. Which fields an app can search by depends on its mapping, for example `email` or `phone` for a CRM contact, and a time window plus `query` text for a meeting.
 
-Answer: `{ records: [ … ], hasMore, provider }` (plus `nextCursor` when there are more). No match gives `{ records: [], hasMore: false }`.
+Answer: `{ records: [ … ], hasMore, provider }`. No match gives `{ records: [], hasMore: false }`. A search answers one page: the route has no cursor, so narrow the filters or raise `page_size` to see more; `list` pages.
 
 ---
 

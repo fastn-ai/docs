@@ -4,7 +4,7 @@ description: "Call the fastn platform from your backend with the fastn SDK: inst
 
 # SDK
 
-The fastn SDK is the fastn platform API as a library for your backend. The first version is for Node.js and TypeScript: `@fastn-ai/sdk`. You call normal typed methods, you get plain objects back, and failures come back as typed errors. The SDK also handles customer ids, retries and event signatures for you.
+The fastn SDK is the fastn platform API as a library for your backend. The first version is for Node.js and TypeScript: `@fastn-ai/sdk`. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries and event signatures for you.
 
 Use it from your **backend**. It needs your fastn API key, which must never reach a browser.
 
@@ -119,10 +119,11 @@ Fields of unified records and their list options use `snake_case` (`start_time`,
 | [Customers](customers.md) | Register, find, read, list, change and remove customers. |
 | [Connecting apps](connecting-apps.md) | Widgets, setup links, redirect addresses, embed tokens, and the connections a customer made. |
 | [Unified records](unified-records.md) | One set of methods for every app: create, get, list, search, update and delete records, and how to find the fields. |
+| [Calendar and CRM](calendar-and-crm.md) | The typed methods: free slots, book, find and cancel meetings; contacts, notes, tasks and deals. |
 | [Direct app actions](app-actions.md) | Run an app's own action when the unified API does not cover what you need. |
-| [Events](events.md) | Receive signed events about connections, setup links and app changes. |
+| [Events](events.md) | Register your webhook, receive signed events, and watch a customer's app for changes. |
 | [Errors, retries and options](errors-and-options.md) | Retry keys, tracing, time limits, and the errors to handle. |
-| [Workspace tools](workspace-tools.md) | The optional route: run your workspace's MCP tools by name. |
+| [Workspace tools](workspace-tools.md) | The optional route: run your workspace's MCP tools by name, or generate typed methods for them. |
 | [Any other operation](any-operation.md) | Every other API operation, by name. |
 
 The SDK has one method for every partner operation of the fastn API, under an area such as `fastn.orgs`, `fastn.embed`, `fastn.connections`, `fastn.unified`, `fastn.events` or `fastn.connectors`. Each method has the same name as the operation. For the plain HTTP calls, see [HTTP API](../api.md).

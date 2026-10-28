@@ -18,8 +18,9 @@ You do not have to register a customer before you create a [setup link](connecti
 | Look up | `customer.find()` | None | The customer row, or `undefined` when fastn does not know this id. |
 | Read | `customer.get()` | None | `{ data: customer }` |
 | List all | `fastn.orgs.listOrgs({ parent_id })` | Optional: `parent_id` (your own org id, from `fastn.me()`), `type` (`end_org` for customers), `include_usage: "true"` (adds usage numbers per customer). | `{ data: [customer, …] }` |
-| Change | `fastn.orgs.updateTenant({ id, … })` | `id` (required): your customer id, `"acme_customer_42"`. Optional: `name`, `plan`, `status` (`active`, `suspended`). | The updated customer. |
+| Change | `customer.update({ name?, status? })` | `name`: a new display name. `status`: `active` or `suspended`. | The updated customer. |
 | Remove | `customer.remove()` | None | Nothing. See the warning below. |
+| Trace a request | `customer.callLog(correlationId)` | The `correlationId` you sent on a call. | One entry per app call fastn made for that request. |
 
 ```typescript
 const customer = fastn.customer("acme_customer_42");
@@ -74,6 +75,15 @@ for (const c of list.data ?? []) console.log(c.externalRef, c.name);
 ```
 
 `customer.find()` and every other `customer` method only look at customers under your own org, so they never return another account's customer.
+
+### Change a customer, trace a request
+
+```typescript
+await customer.update({ name: "Acme Dental Group" });
+await customer.update({ status: "suspended" });
+
+const calls = await customer.callLog("req_abc");       // what fastn did for correlationId req_abc
+```
 
 ### Remove a customer
 
