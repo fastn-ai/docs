@@ -10,20 +10,18 @@ fastn can tell your backend when something happens: a customer connected an app,
 
 ## Register your endpoint
 
-For one customer only, create the subscription on the customer. The SDK fills in the customer for you:
-
 ```typescript
-const sub = await customer.api.events.createEventSubscription({
+const hook = await fastn.webhooks.create({
   url: "https://hooks.example.com/fastn/events",
-  eventTypes: ["connection.connected", "connection.revoked", "connection.expired", "setup_link.completed", "setup_link.expired"],
+  eventTypes: ["connection.connected", "connection.revoked", "connection.expired", "setup_link.completed", "setup_link.expired", "connector.event", "unified.event"],
   description: "Production",
 });
 
-const subscriptionId = sub.data?.id;   // esub_…
-const secret = sub.data?.secret;       // whsec_…: shown once, store it now
+const webhookId = hook.id;     // esub_…
+const secret = hook.secret;    // whsec_…: shown once, store it now
 ```
 
-For every customer at once, call `fastn.events.createEventSubscription({ … })` with the same fields.
+`fastn.webhooks` answers the subscription itself (no `data` wrapper). For one customer only, create it on the customer instead: `customer.api.events.createEventSubscription({ … })` fills in the customer for you, and that endpoint receives that customer's events alone.
 
 | Field | Required | Meaning |
 | ----- | -------- | ------- |
@@ -156,21 +154,45 @@ fastn retries a delivery with growing gaps for 24 hours, until your endpoint ans
 
 | Do this | SDK | Answer |
 | ------- | --- | ------ |
-| Send a test event | `fastn.events.testEventSubscription({ id: "esub_…" })` | `{ data: { eventId, status: "queued" } }`. Sends one `endpoint.test` event. |
-| See deliveries | `fastn.events.listEventDeliveries({ id: "esub_…", status?, limit? })` | `{ data: [ { id, eventId, type, status, attempts, lastStatus, lastError, nextAttemptAt, createdAt, deliveredAt } ] }`. `status` is `pending`, `delivered` or `dead`. |
-| Send one again | `fastn.events.replayEventDelivery({ id: "evd_…" })` | Sends the delivery again with the same event id, marked as a redelivery. Works for `dead` deliveries too. |
-| Pause or change | `fastn.events.updateEventSubscription({ id, url?, eventTypes?, connectors?, providerEvents?, entities?, description?, enabled? })` | The updated subscription. With `enabled: false`, events queue and are sent when you enable it again. |
-| Read | `fastn.events.getEventSubscription({ id })` / `fastn.events.listEventSubscriptions()` | The subscription(s), without the secret. |
-| New secret | `fastn.events.rotateEventSubscriptionSecret({ id })` | A new secret, returned once. Deliveries after this are signed with it. |
-| Remove | `fastn.events.deleteEventSubscription({ id })` | `{ data: { id, deleted: true } }`. Queued deliveries go with it. |
+| Send a test event | `fastn.webhooks.test(id)` | `{ eventId, status: "queued" }`. Sends one `endpoint.test` event. |
+| See deliveries | `fastn.webhooks.deliveries(id, { status?, limit? })` | `[ { id, eventId, type, status, attempts, lastStatus, lastError, nextAttemptAt, createdAt, deliveredAt } ]`. `status` is `pending`, `delivered` or `dead`. |
+| Send one again | `fastn.webhooks.replay(deliveryId)` | Sends the delivery again with the same event id, marked as a redelivery. Works for `dead` deliveries too. |
+| Pause or change | `fastn.webhooks.update(id, { url?, eventTypes?, connectors?, providerEvents?, entities?, description?, enabled? })` | The updated subscription. With `enabled: false`, events queue and are sent when you enable it again. |
+| Read | `fastn.webhooks.get(id)` / `fastn.webhooks.list()` | The subscription(s), without the secret. |
+| New secret | `fastn.webhooks.rotateSecret(id)` | A new secret, returned once. Deliveries after this are signed with it. |
+| Remove | `fastn.webhooks.delete(id)` | `{ id, deleted: true }`. Queued deliveries go with it. |
+
+The same calls exist as raw operations under `fastn.events` (`createEventSubscription`, `listEventDeliveries`, …) with `{ data }` answers.
 
 ---
 
-## App events
+## App events: watch a customer's app
 
-`connector.event` and `unified.event` come from changes inside a customer's app. fastn receives them only after you create an **app event trigger** for that customer's account.
+`connector.event` and `unified.event` come from changes inside a customer's app. fastn listens for them only after you turn them on for that customer's account:
 
-First list the events an app offers:
+```typescript
+const watch = await customer.watch("hubspot", ["contact.created", "contact.updated", "deal.stageChanged"]);
+// watch.id, watch.events (the app's own event ids)
+
+const events = await customer.watchableEvents("hubspot");     // what the app offers, plain names and the app's ids
+const watches = await customer.watches("hubspot");            // the customer's watches on that app (every page)
+await customer.unwatch("hubspot");                            // or unwatch(watch.id)
+```
+
+| Method | Meaning |
+| ------ | ------- |
+| `customer.watch(app, events, { accountId?, connectionId?, name? })` | Turns the events on. Events are named in plain words (`contact.created`, `deal.stageChanged`) or as the app names them; an unknown name is `400 EVENT_NOT_FOUND` with the valid list. The customer's account on the app is found from their connections: none is `404 CONNECTION_NOT_FOUND`, several is `409 CONNECTION_AMBIGUOUS` (pass `connectionId`). Two plain names that map to one app event are sent once; a `connectionId` of another app is `400 CONNECTION_MISMATCH`. `accountId` is the app's own account id when the app needs one (the HubSpot portal id). |
+| `customer.watchableEvents(app)` | The events the app offers. |
+| `customer.watches(app?)` | The customer's watches, every page. |
+| `customer.unwatch(app)` / `customer.unwatch(watchId)` | Removes the watches on an app, or one watch; answers the ids removed. A watch id that is not this customer's is `404 WATCH_NOT_FOUND`. |
+
+HubSpot has no stage-only event: `deal.stageChanged` maps to `deal.propertyChange`; filter on `propertyName === "dealstage"` in the event.
+
+Each change then arrives as a `connector.event` (the app's own body) and a `unified.event` (the record in unified fields) on every webhook that lists those types.
+
+### Underneath: app event triggers
+
+`watch` creates an **app event trigger**. The raw calls are still there when you need them. First list the events an app offers:
 
 ```typescript
 const conns = await customer.connections();

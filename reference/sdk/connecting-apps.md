@@ -8,7 +8,7 @@ Before fastn can read or write a customer's data in an app, the customer has to 
 
 | Way | What the customer sees | SDK |
 | --- | ---------------------- | --- |
-| **Setup link** | A hosted fastn page you send them a link to. | `customer.setupLink(...)` |
+| **Setup link** | A hosted fastn page you send them a link to. | `customer.connect("hubspot")`, or `customer.setupLink(...)` with a widget id |
 | **Embedded widget** | The fastn widget inside your own app. | `customer.embedToken(...)`, then the widget package in the browser |
 
 Either way, the result is a **connection**: one connected account, with its own `connectionId`.
@@ -33,9 +33,33 @@ for (const w of (widgets.data ?? []) as any[]) {
 
 ---
 
+## Connect by app
+
+The short way to a setup link names the app and nothing else. The SDK finds your widget for that app, creates the link for the customer and answers the address to send:
+
+```typescript
+const link = await customer.connect("googleCalendar", {
+  expiresInMinutes: 60 * 24,
+  redirectUrl: "https://app.example.com/connected",
+  metadata: { flowId: "flow_123" },
+});
+
+console.log(link.url);     // send this to the customer
+```
+
+| Field | Required | Meaning |
+| ----- | -------- | ------- |
+| app (first argument) | Yes | The app's slug, for example `googleCalendar` or `hubspot`. |
+| `widgetId` | No | Which widget, when more than one of your widgets offers the app (`409 WIDGET_AMBIGUOUS` otherwise). No widget offers it: `404 WIDGET_NOT_FOUND`. |
+| `connectionName`, `label`, `expiresInMinutes`, `redirectUrl`, `metadata`, `allowAdditionalConnection` | No | As on `setupLink` below. `connectionName` defaults to the widget's name. |
+
+Answer: `{ setupId, url, status, expiresAt, widgetId }`. Read or cancel the link later with `customer.links.get(setupId)` and `customer.links.cancel(setupId)`. The widget list is reused for 60 seconds, so a widget you create after start-up is found without a restart.
+
+---
+
 ## Setup links
 
-A setup link is a one-time link to a hosted fastn page. The customer opens it, signs in to the app, and the connection is stored on that customer.
+A setup link is a one-time link to a hosted fastn page. The customer opens it, signs in to the app, and the connection is stored on that customer. `connect(app)` above makes one by app name; `setupLink` takes the widget id yourself:
 
 ```typescript
 const link = await customer.setupLink({
@@ -226,8 +250,8 @@ const connectionId = hubspot?.id;
 | ------- | --- | ----- |
 | List a customer's connections | `customer.connections()` | Optional: `includePartnerPool: "true"` adds your own org's shared connections that the customer can also use. |
 | Read one | `fastn.connections.getConnection({ id })` | `id` (required): the `connectionId`. Answer: `{ data: connection }`. Credentials are not returned. |
-| Rename | `fastn.connections.updateConnection({ id, name })` | `id` (required). Optional: `name`, `isDefault`. |
-| Disconnect | `fastn.connections.deleteConnections({ id })` | `id` (required). The account is removed; stop using its `connectionId`. |
+| Rename | `customer.renameAccount(connectionId, name)` | The connection must belong to this customer (`404 CONNECTION_NOT_FOUND` otherwise), so one key serving every customer can never touch another customer's account by mistake. |
+| Disconnect | `customer.disconnect(connectionId)` | Same check. The account is removed; stop using its `connectionId`. |
 
 {% hint style="info" %}
 A unified call for a customer can also use connections in **your own** org's shared pool. So `providers()` (see [Unified records](unified-records.md#which-apps-a-customer-can-use)) can show an app as connected even when `customer.connections()` does not list it. Use `customer.connections({ includePartnerPool: "true" })` to see both.
