@@ -42,3 +42,4 @@ redirects:
   quick-start-guide: getting-started/quickstart.md
   api-reference: reference/api.md
   debugging-and-troubleshooting: operate/troubleshooting.md
+  tutorials/developer/mcp-gateway-integration: build/mcp-gateway/README.md
