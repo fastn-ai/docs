@@ -144,6 +144,7 @@
 * [Workflow runtime API](reference/workflow-runtime.md)
 * [HTTP API](reference/api.md)
 * [SDK](reference/sdk/README.md)
+  * [Build an integration, end to end](reference/sdk/end-to-end.md)
   * [Customers](reference/sdk/customers.md)
   * [Connecting apps](reference/sdk/connecting-apps.md)
   * [Unified records](reference/sdk/unified-records.md)

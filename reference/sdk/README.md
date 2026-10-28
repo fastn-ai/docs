@@ -116,6 +116,7 @@ Fields of unified records and their list options use `snake_case` (`start_time`,
 
 | Page | Covers |
 | ---- | ------ |
+| [Build an integration, end to end](end-to-end.md) | One complete integration in the order you build it: set up once, onboard a customer, the calls during a conversation, events, retries and errors. |
 | [Customers](customers.md) | Register, find, read, list, change and remove customers. |
 | [Connecting apps](connecting-apps.md) | Widgets, setup links, redirect addresses, embed tokens, and the connections a customer made. |
 | [Unified records](unified-records.md) | One set of methods for every app: create, get, list, search, update and delete records, and how to find the fields. |
