@@ -36,7 +36,7 @@ A key set to **Enforce** refuses a request without identity headers, even when t
 | Header | Value |
 | ------ | ----- |
 | `x-org-id` | The customer: the id you registered them under (the `orgId` you sent to `POST /api/v1/orgs`), or fastn's own id for them. It must be one of your customers: anything else, your own organization included, is `404 IDENTITY_ORG_NOT_FOUND`. |
-| `x-user-id` | Optional. Your id for the person using the widget. |
+| `x-user-id` | Optional. Your id for the person using the widget. Required for a key limited to a single customer and set to Enforce. |
 | `x-identity-hmac` | The hex HMAC-SHA256 of `<x-org-id>`, a newline and `<x-user-id>`, signed with the key's identity secret. Use an empty string for a header you leave out. |
 
 Compute the hash on your backend. The identity secret is shown once, when you create the key, and must never reach a browser.
