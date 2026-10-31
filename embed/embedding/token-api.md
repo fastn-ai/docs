@@ -52,6 +52,8 @@ If the API key is pinned to a particular customer, send the customer in the body
 { "endOrgId": "<fastn's own id for the customer>" }
 ```
 
+If that key is also set to Enforce, send `x-user-id` and an `x-identity-hmac` computed over `"\n" + userId` (the org part is empty, because no `x-org-id` is sent). Without them the call is `401 IDENTITY_HEADERS_REQUIRED`.
+
 Every body field, the hash code, a curl for each way and the errors are in [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md). Your API key never reaches the browser. See [API keys](../../manage/api-keys.md).
 
 ### Refresh, and the session cap

@@ -99,7 +99,7 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
 | `roleOverride`    | Optional, for a customer on a tier. The role whose permissions this token carries, in place of the tier's role. It can narrow what the session may do, never widen it beyond `end_user`. |
 | `allowOrgLevel`   | Optional. `true`, with no `endOrgId`, mints a token for your own organization instead of a customer, to preview the widget yourself. Never hand one to a customer. |
 
-A key limited to a single customer already acts as that customer. Name it with `endOrgId` in the body, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`.
+A key limited to a single customer already acts as that customer. Name it with `endOrgId` in the body, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`. If that key is also set to **Enforce**, it still needs signed identity: send `x-user-id` and an `x-identity-hmac` computed over `"\n" + userId` (the org part is empty, because no `x-org-id` is sent). Without them the call is `401 IDENTITY_HEADERS_REQUIRED`.
 
 **Response:**
 

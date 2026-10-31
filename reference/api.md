@@ -163,7 +163,7 @@ POST /api/v1/embed/token
 | `x-user-id`       | Optional. Your id for the user |
 | `x-identity-hmac` | Hex HMAC-SHA256 of `<x-org-id>\n<x-user-id>`, signed with the key's identity secret. Required when the key's **Verify caller identity** is set to Enforce |
 
-With these headers the body can be empty. A key without identity verification can name the customer in the body instead: `{"endOrgId": "…", "userId": "…"}`. Where the API key is limited to a single customer, send `{"endOrgId": "…"}` in the request body instead of the `x-org-id` header, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`.
+With these headers the body can be empty. A key without identity verification can name the customer in the body instead: `{"endOrgId": "…", "userId": "…"}`. Where the API key is limited to a single customer, send `{"endOrgId": "…"}` in the request body instead of the `x-org-id` header, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`. If that key is also set to Enforce, send `x-user-id` and an `x-identity-hmac` over `"\n" + userId` (empty org part); without them the call is `401 IDENTITY_HEADERS_REQUIRED`.
 
 ```json
 {
