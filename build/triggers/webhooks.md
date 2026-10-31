@@ -8,7 +8,7 @@ A webhook trigger fires when another system calls a URL you give it. Nothing is 
 
 **Columns:** `Name`, `Tenant`, `Type`, `Status`, `Auth`, `Routes`, `Created`.
 
-* **`Auth`** reads `API key` where the webhook requires the `x-fastn-access-key` header, or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
+* **`Auth`** reads `API key` where callers must send a fastn API key (in `X-API-Key` or `x-fastn-access-key`), or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
 * **`Tenant`** is the customer the trigger belongs to, and reads `—` for org-level triggers.
 
 Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
@@ -64,7 +64,7 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 | Field                 | Notes                                                                                                                                    |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Webhook ID**        | Optional. Becomes part of the public webhook URL. Leave empty and one is generated.                                                      |
-| **Authentication**    | **API Key (x-fastn-access-key)**, the default (callers must send the header. **None (public)**), anyone with the URL can fire it.        |
+| **Authentication**    | **API Key (x-api-key)**, the default: callers must send a fastn API key, as `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…`. A webhook URL does not read `Authorization`. **None (public)**: anyone with the URL can fire it. |
 | **Execution mode**    | **Parallel**, the default (concurrent events run concurrently. **Sequential**), one at a time, in arrival order.                         |
 | **Deduplication key** | Optional. A field in the incoming payload that uniquely identifies each event, so a retried delivery from the sender does not run the workflow twice. |
 {% endstep %}
@@ -73,6 +73,8 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 #### Create it, then hand out the URL
 
 Select **Create trigger** (there is no Save button) and it joins the **Webhooks** list. Its row menu offers **Copy URL**, **Copy as cURL**, **Disable**, **Edit** and **Delete**: **Copy as cURL** is the fastest way to fire one by hand while you are debugging.
+
+Callers of an **API Key** webhook send your API key as `X-API-Key: fsk_…`, which is what **Copy as cURL** puts in, or as `x-fastn-access-key: fsk_…`. See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md).
 {% endstep %}
 {% endstepper %}
 

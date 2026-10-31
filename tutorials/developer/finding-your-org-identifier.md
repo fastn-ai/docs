@@ -6,29 +6,28 @@ hidden: true
 
 The `endOrgId` identifies the customer a widget embed is for. Both the token endpoint and the iframe URL require it. Getting the right identifier is necessary for anything to work.
 
-### It must be the customer UUID
+### Your id, or fastn's
 
-`endOrgId` must be the customer's internal UUID. The customer **slug** (e.g., `katana-customer`) does not work in its place.
+`endOrgId` takes either of a customer's two identifiers:
 
-### Where the UUID comes from
+* **The id you registered them under**: the `orgId` you sent to `POST /api/v1/orgs`, shown as **External ID** on the customer in the dashboard. Register each customer under your own id for them and you never need to look one up.
+* **fastn's own id**: a UUID, returned as `id` when you register the customer, and as `endOrgId` in every token response.
 
-Each customer in your Fastn workspace has an internal UUID. You create customers under **Settings → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)).
+The token request looks the value up among your own customers only, so another account using the same id never reaches yours. The `x-org-id` header takes the same values.
 
-The customer record in the dashboard shows: Name, Slug, Status, Customer Admin, and Created date. It does **not** display the UUID — there is no UUID or External ID field in the Customers UI.
+### Where to find it
 
-To retrieve the UUID today, open the customer in the dashboard and read it from the page state using your browser's developer tools.
-
-> **VERIFY:** This is a confirmed gap — the customer UUID is not exposed anywhere in the Customers UI (validated on the live platform). The Embed tab refers to this value as `YOUR_CUSTOMER_ID` / `customer_id`. Confirm the recommended retrieval method, and update this page if the UUID becomes available directly in the UI or via an API endpoint.
+You create customers under **Settings → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)), or from your backend with `POST /api/v1/orgs`. Open a customer in the dashboard: its details show the **External ID** it was registered under.
 
 ### Using it
 
-Once you have the UUID, pass it as `endOrgId` in:
+Pass it as `endOrgId` in:
 
-* The token request body (`{ endOrgId, userEmail, userName }`)
+* The token request body (`{ endOrgId, userId, userEmail, userName }`), or as the `x-org-id` header with a key that verifies caller identity. See [Generating Embed Tokens](generating-embed-tokens.md).
 * The iframe URL for user-level embeds (`?tenant-id=<endOrgId>&token=<token>`)
 
 Store it in an environment variable rather than hardcoding it, so it can change per environment (test customer vs production customer).
 
 ```
-FASTN_END_ORG_ID=<customer-uuid>
+FASTN_END_ORG_ID=<customer id>
 ```

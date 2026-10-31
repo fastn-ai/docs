@@ -63,7 +63,7 @@ curl -X POST https://api.fastn.dev/api/v1/orgs \
 
 Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
 
-**3 · Get an embed token** (backend, every page load). Sign the customer and user with your identity secret; fastn rejects the call without it. See [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md).
+**3 · Get an embed token** (backend, every page load). Name the customer and user in the `x-org-id` and `x-user-id` headers, and sign them with your identity secret in `x-identity-hmac`. The key from part 1 refuses the call without them, and no body is needed. [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md) is the full reference: every field and error, and the request for a key without identity verification, which names the customer in the body instead.
 
 ```javascript
 const hmac = crypto.createHmac("sha256", process.env.FASTN_IDENTITY_SECRET)
@@ -79,7 +79,7 @@ const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
   },
 });
 const json = await res.json();
-const token = json.token ?? json.data?.token;
+const token = json.data.token;
 ```
 
 **4 · Add the widget** (frontend, once) on the page where customers manage settings:
@@ -92,7 +92,7 @@ const token = json.token ?? json.data?.token;
 </iframe>
 ```
 
-**5 · Send your product's events (optional).** For an integration that starts when something happens in your product, call its webhook trigger on each event. Copy the URL from the trigger's row menu (**Copy URL**) and send the same identity headers as part 3, with the event as the JSON body:
+**5 · Send your product's events (optional).** For an integration that starts when something happens in your product, call its webhook trigger on each event. Copy the URL from the trigger's row menu (**Copy URL**) and send the same identity headers as part 3, with the event as the JSON body. On a webhook URL the API key goes in `x-api-key`, not in `Authorization`:
 
 ```bash
 curl --location 'https://webhooks.fastn.dev/prod/triggers/<WORKSPACE_ID>/webhooks/<WEBHOOK_ID>' \

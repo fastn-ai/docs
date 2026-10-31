@@ -10,8 +10,8 @@ This walks through the shortest path to a working embed: generate a token from y
 
 You'll need:
 
-* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
-* **Your org identifier (`endOrgId`)** — The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md). This quickstart uses a key without identity verification, which names the customer in the request body. A key with **Verify caller identity (HMAC)** set to Enforce needs signed headers instead: see [Generating Embed Tokens](generating-embed-tokens.md).
+* **Your org identifier (`endOrgId`)** — The customer the widget is for: the id you registered them under, or fastn's own id for them. See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** — Any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
@@ -20,7 +20,7 @@ Create a server-side function that calls the Fastn token endpoint. Keep the API 
 
 ```javascript
 // Server-side only
-async function getFastnToken({ userEmail, userName }) {
+async function getFastnToken({ userId, userEmail, userName }) {
   const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
     method: "POST",
     headers: {
@@ -31,6 +31,7 @@ async function getFastnToken({ userEmail, userName }) {
     },
     body: JSON.stringify({
       endOrgId: process.env.FASTN_END_ORG_ID,
+      userId,
       userEmail,
       userName,
     }),
@@ -52,6 +53,7 @@ Create an endpoint your frontend can call to get a fresh token. Return only the 
 // Example route
 app.get("/api/fastn-token", async (req, res) => {
   const token = await getFastnToken({
+    userId: req.user.id,
     userEmail: req.user.email,
     userName: req.user.name,
   });

@@ -16,11 +16,17 @@ From Node.js or TypeScript, the [SDK](sdk/README.md) (`@fastn-ai/sdk`) wraps the
 
 ## Authentication
 
-Every request carries an API key as a bearer token.
+Every request carries an API key, as a bearer token or in `X-API-Key`:
 
 ```
 Authorization: Bearer fsk_live_<your-key>
 ```
+
+```
+X-API-Key: fsk_live_<your-key>
+```
+
+These two are the only headers this API reads a key from. A webhook URL is different: it reads `X-API-Key` or `x-fastn-access-key`, and not `Authorization` (see [Webhook endpoints](#webhook-endpoints)). `X-API-Key` is the one header that works on both. No endpoint reads `x-fastn-api-key`: a call that sends the key there is answered `401`.
 
 Keys are created under [Settings → API keys](../manage/api-keys.md) and come in two modes.
 
@@ -133,8 +139,10 @@ A [webhook trigger](../build/triggers/README.md) gives you a public URL. Whether
 
 | Authentication setting            | Caller must send                      |
 | --------------------------------- | --------------------------------------- |
-| **API Key (x-fastn-access-key)**  | `x-fastn-access-key: <your-key>`      |
+| **API Key (x-api-key)**           | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
 | **None (public)**                 | Nothing                               |
+
+A webhook URL does not read `Authorization`, so a bearer token there is answered `401`. `X-API-Key` counts only when its value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` is not mistaken for one.
 
 ---
 
@@ -148,29 +156,40 @@ Tokens that scope the widget to one customer. Mint them from your backend with y
 POST /api/v1/embed/token
 ```
 
-| Header          | Value                    |
-| --------------- | ------------------------ |
-| `Authorization` | `Bearer <API key>`       |
-| `x-org-id`      | `<orgId>`                |
+| Header            | Value                    |
+| ----------------- | ------------------------ |
+| `Authorization`   | `Bearer <API key>` (or `X-API-Key: <API key>`) |
+| `x-org-id`        | The customer: your id for them, or fastn's |
+| `x-user-id`       | Optional. Your id for the user. Required for a key limited to a single customer and set to Enforce |
+| `x-identity-hmac` | Hex HMAC-SHA256 of `<x-org-id>\n<x-user-id>`, signed with the key's identity secret. Required when the key's **Verify caller identity** is set to Enforce |
+
+With these headers the body can be empty. A key without identity verification can name the customer in the body instead: `{"endOrgId": "…", "userId": "…"}`. Where the API key is limited to a single customer, send `{"endOrgId": "…"}` in the request body instead of the `x-org-id` header, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`. If that key is also set to Enforce, send `x-user-id` and an `x-identity-hmac` over `"\n" + userId` (empty org part); without them the call is `401 IDENTITY_HEADERS_REQUIRED`.
 
 ```json
 {
-  "token": "emb_…",
-  "endOrgId": "…",
-  "role": "end_user",
-  "expiresIn": 28800
+  "data": {
+    "token": "emb_…",
+    "endOrgId": "…",
+    "userId": "…",
+    "role": "end_user",
+    "tierId": null,
+    "expiresAt": "…",
+    "expiresIn": 28800
+  }
 }
 ```
 
-`expiresIn` is **28800 seconds: eight hours**. `endOrgId` is the customer the token is scoped to, and the returned role is always `end_user`.
+The token is `data.token`. `expiresIn` is **28800 seconds: eight hours**. `endOrgId` is fastn's id for the customer the token is scoped to, and the returned role is always `end_user`.
 
-Where the API key is pinned to specific customers, send `{"endOrgId": "…"}` in the request body instead of the `x-org-id` header.
+Every body field and error: [Generating embed tokens](../tutorials/developer/generating-embed-tokens.md).
 
 ### Refresh
 
 ```
 POST /api/v1/embed/token/refresh
 ```
+
+The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer is `data.token`, `data.endOrgId`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` is the seconds the new token has left, below 28800 near the seven-day cap.
 
 {% hint style="warning" %}
 **Refresh is capped at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops: refreshing again does not extend it. Listen for that message and start a new session by minting a fresh token. A host app that assumes refresh is indefinite will strand long-lived sessions.

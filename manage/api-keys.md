@@ -156,6 +156,17 @@ With a test key, add the two headers:
   -H "x-fastn-env: test"
 ```
 
+#### Which header carries the key
+
+Every key starts `fsk_live_` or `fsk_test_`. The header it goes in depends on what you call:
+
+| You call | Send the key as |
+| -------- | --------------- |
+| The platform API, `https://api.fastn.dev/api/v1/…` (a workflow's `/execute`, `/embed/token`, every other route) | `Authorization: Bearer fsk_…` or `X-API-Key: fsk_…` |
+| A [webhook trigger](../build/triggers/webhooks.md)'s URL | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
+
+`X-API-Key` works on both. `x-fastn-access-key` on the platform API, or `Authorization` on a webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
+
 Full detail in the [HTTP API reference](../reference/api.md).
 
 ### Practice worth keeping

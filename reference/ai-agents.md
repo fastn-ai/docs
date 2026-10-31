@@ -113,6 +113,8 @@ Authorization: Bearer fsk_live_<key>
 | `X-fastn-Test-Mode` | Not needed | **Must be `true`**: a test key is refused without it |
 | `x-fastn-env` | Environment slug | Environment slug |
 
+`X-API-Key: fsk_…` works in place of `Authorization`. A webhook trigger URL reads the key from `X-API-Key` or `x-fastn-access-key` only, never from `Authorization`. No endpoint reads `x-fastn-api-key`.
+
 `x-fastn-env: test` runs the latest published version; any other slug runs the version deployed to that environment.
 
 {% hint style="danger" %}
@@ -165,7 +167,7 @@ There is **no documented endpoint for polling an execution id**. For Standard an
 
 | Type | Starts a run when | Key settings |
 | ---- | ----------------- | ------------ |
-| **Webhook** | An HTTP request arrives at a public URL | Auth (`x-fastn-access-key` or public), routes, execution mode (Parallel/Sequential), deduplication key |
+| **Webhook** | An HTTP request arrives at a public URL | Auth (API key in `X-API-Key` or `x-fastn-access-key`, or public), routes, execution mode (Parallel/Sequential), deduplication key |
 | **Schedule** | A time is reached | Cron/interval, plus a **Payload** JSON that becomes `ctx.input` |
 | **App event** | Something changes in a connected system | Connector (**immutable after creation**), connection, event, routes |
 
