@@ -10,7 +10,7 @@ Common errors when embedding Fastn, with their causes and fixes.
 
 **Most likely cause:** an expired or hardcoded token.
 
-Embed tokens expire after 15 minutes. If a token is hardcoded into your frontend or cached and reused, it works until it expires, then the iframe loads blank with no obvious error.
+Embed tokens expire after eight hours. If a token is hardcoded into your frontend or cached and reused, it works until it expires, then the iframe loads blank with no obvious error.
 
 **Fix:** Generate a fresh token from your backend on each page load. Never hardcode or cache tokens. See [Generating Embed Tokens](generating-embed-tokens.md).
 
@@ -20,7 +20,7 @@ Embed tokens expire after 15 minutes. If a token is hardcoded into your frontend
 
 **Most likely cause:** the wrong org identifier.
 
-`endOrgId` must be the customer's internal UUID. The customer slug and the External ID both return 404.
+`endOrgId` in the body, or the `x-org-id` header, must name one of your customers: the id you registered them under (their External ID), or fastn's own id for them. An id that matches none of your customers is `404`: `Tenant not found` for `endOrgId`, `IDENTITY_ORG_NOT_FOUND` for `x-org-id`. See [Generating Embed Tokens](generating-embed-tokens.md).
 
 ### Requests fail with a test key
 

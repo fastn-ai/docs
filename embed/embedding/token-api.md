@@ -8,22 +8,43 @@ An embed token identifies one of your customers to the widget. The dashboard sho
 
 ### The Token API
 
+With an API key that has **Verify caller identity (HMAC)** set to Enforce, name the customer and user in signed headers. The body can be empty:
+
 ```http
 POST /api/v1/embed/token
 Authorization: Bearer <API key>
-x-org-id: <orgId>
+x-org-id: <your id for the customer>
+x-user-id: <your id for the user>
+x-identity-hmac: <hex HMAC-SHA256 of "<x-org-id>\n<x-user-id>", signed with the key's identity secret>
 ```
+
+With a key that has no identity verification, name the customer in the body instead:
+
+```http
+POST /api/v1/embed/token
+Authorization: Bearer <API key>
+Content-Type: application/json
+
+{ "endOrgId": "<your id for the customer>", "userId": "<your id for the user>" }
+```
+
+Either way, the answer is:
 
 ```json
 {
-  "token": "emb_…",
-  "endOrgId": "…",
-  "role": "end_user",
-  "expiresIn": 28800
+  "data": {
+    "token": "emb_…",
+    "endOrgId": "…",
+    "userId": "…",
+    "role": "end_user",
+    "tierId": null,
+    "expiresAt": "…",
+    "expiresIn": 28800
+  }
 }
 ```
 
-`expiresIn` is 28800 seconds: eight hours.
+The token is `data.token`. `expiresIn` is 28800 seconds: eight hours.
 
 If the API key is pinned to a particular customer, send the customer in the body instead of the header:
 
@@ -31,13 +52,18 @@ If the API key is pinned to a particular customer, send the customer in the body
 { "endOrgId": "…" }
 ```
 
-Your API key never reaches the browser. See [API keys](../../manage/api-keys.md).
+Every body field, the hash code, a curl for each way and the errors are in [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md). Your API key never reaches the browser. See [API keys](../../manage/api-keys.md).
 
 ### Refresh, and the session cap
 
 ```http
 POST /api/v1/embed/token/refresh
+Content-Type: application/json
+
+{ "token": "emb_…" }
 ```
+
+The token in the body is the credential: no API key. The answer is a new token in the same shape, and the one you sent stops working.
 
 {% hint style="warning" %}
 Refresh is capped at **seven days per session**. At the cap the widget posts `fastn:session-expired` to the parent window and stops. Long-lived sessions do not refresh indefinitely: listen for that message and start a new session by minting a fresh token.

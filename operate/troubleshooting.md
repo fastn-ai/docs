@@ -27,7 +27,7 @@ If [Events](events.md) shows nothing, the problem is before fastn.
 
 | Trigger type  | Check                                                                                       |
 | ------------- | --------------------------------------------------------------------------------------------- |
-| **Webhook**   | Is the sending system pointed at the right URL? Does it require the `x-fastn-access-key` header, and is the sender sending it? |
+| **Webhook**   | Is the sending system pointed at the right URL? Does it require an API key, and is the sender sending it in `X-API-Key` or `x-fastn-access-key` (not `Authorization`)? |
 | **Schedule**  | Is the trigger Active rather than Disabled? Is its timezone what you assumed?                |
 | **App event** | Is the connector's **Webhook config** set up, and does the customer have an active connection? |
 

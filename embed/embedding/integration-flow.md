@@ -158,6 +158,8 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 { }
 ```
 
+`x-identity-hmac` is required when the API key's caller identity verification is set to Enforce. The token is `data.token` in the response. Every field and error, and how to name the customer in the body instead, are in [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md).
+
 #### Create a SaaS Connection (optional)
 
 **Note:** You only need this if Fastn must access your product's APIs.
