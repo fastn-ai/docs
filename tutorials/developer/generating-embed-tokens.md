@@ -93,13 +93,13 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
 | `userId`          | Optional. Your id for the person using the widget. Left out, each token gets a new generated id. |
 | `userEmail`       | Optional. The person's email address. |
 | `userName`        | Optional. The person's display name, up to 200 characters. |
-| `createIfMissing` | Optional. `true` registers the customer named by `endOrgId`, with that value as its id, if your account does not have it yet, then mints the token. The key needs permission to register customers. |
+| `createIfMissing` | Optional. `true` registers the customer named by `endOrgId` if your account does not have it yet, then mints the token. The value is stored as the new customer's external id; fastn assigns its own id, which is what `data.endOrgId` returns. The key needs permission to register customers. |
 | `customerName`    | Optional, with `createIfMissing`. The new customer's display name. Defaults to `endOrgId`. |
 | `metadata`        | Optional. A JSON object of your own, at most 4 KB, handed back to you in the widget's lifecycle hooks for this session. |
 | `roleOverride`    | Optional, for a customer on a tier. The role whose permissions this token carries, in place of the tier's role. It can narrow what the session may do, never widen it beyond `end_user`. |
 | `allowOrgLevel`   | Optional. `true`, with no `endOrgId`, mints a token for your own organization instead of a customer, to preview the widget yourself. Never hand one to a customer. |
 
-A key limited to a single customer already acts as that customer. Name it with `endOrgId` in the body, set to fastn's own id for the customer, not with `x-org-id`.
+A key limited to a single customer already acts as that customer. Name it with `endOrgId` in the body, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`.
 
 **Response:**
 
@@ -127,11 +127,14 @@ The token is nested under `data`: read `response.data.token`, not `response.toke
 | -------- | ----- |
 | `400 EMBED_TOKEN_REQUIRES_END_ORG_ID` | No customer named: no `x-org-id` header and no `endOrgId` in the body. |
 | `400 IDENTITY_ORG_MISMATCH`, `400 IDENTITY_USER_MISMATCH` | The body names a different customer or user than the headers. |
+| `400 IDENTITY_HEADERS_CONFLICT` | `x-org-id` was sent with a key limited to a single customer. Send `endOrgId` in the body instead. |
 | `401 IDENTITY_HEADERS_REQUIRED` | The key is set to Enforce and the request has no identity headers. |
 | `401 IDENTITY_HMAC_INVALID` | The key is set to Enforce and `x-identity-hmac` is missing or does not match. |
 | `404 IDENTITY_ORG_NOT_FOUND` | `x-org-id` is not one of your customers. |
 | `404 Tenant not found` | `endOrgId` matches no customer. |
 | `403 TENANT_NOT_ACTIVE` | The customer, or your account, is suspended. |
+| `403 quota_exceeded` | With `createIfMissing`: your account is at its customer limit. The body's `dimension` is `tenants_per_saas`, and `message` says how to clear it. Retrying does not help. |
+| `409 TENANT_SLUG_TAKEN` | With `createIfMissing`: the slug derived from `customerName` (or `endOrgId`) for the new customer is taken. Retry with a different `customerName`. |
 | `403` | The request was made with an embed token. An embed token cannot mint another one: mint from your backend, and extend a live session with the refresh endpoint below. |
 
 ### Refreshing tokens
@@ -145,7 +148,7 @@ Content-Type: application/json
 { "token": "emb_..." }
 ```
 
-The token in the body is the credential, so no API key is sent. The answer has the same shape as a new token (`data.token`, `data.expiresAt`, `data.expiresIn`), and the token you sent is retired: carry on with the new one. A token that expired less than 24 hours ago can still be refreshed. The widget calls this endpoint itself to keep its session going.
+The token in the body is the credential, so no API key is sent. The answer carries fewer fields than a mint: `data.token`, `data.endOrgId`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` counts the seconds the new token has left, so it is below 28800 near the seven-day cap. The token you sent is retired: carry on with the new one. A token that expired less than 24 hours ago can still be refreshed. The widget calls this endpoint itself to keep its session going.
 
 Sending a retired token again later is treated as a stolen token: the whole session is revoked (`401 EMBED_TOKEN_REUSED`).
 

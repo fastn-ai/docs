@@ -163,7 +163,7 @@ POST /api/v1/embed/token
 | `x-user-id`       | Optional. Your id for the user |
 | `x-identity-hmac` | Hex HMAC-SHA256 of `<x-org-id>\n<x-user-id>`, signed with the key's identity secret. Required when the key's **Verify caller identity** is set to Enforce |
 
-With these headers the body can be empty. A key without identity verification can name the customer in the body instead: `{"endOrgId": "…", "userId": "…"}`. Where the API key is limited to a single customer, send `{"endOrgId": "…"}` in the request body instead of the `x-org-id` header.
+With these headers the body can be empty. A key without identity verification can name the customer in the body instead: `{"endOrgId": "…", "userId": "…"}`. Where the API key is limited to a single customer, send `{"endOrgId": "…"}` in the request body instead of the `x-org-id` header, set to fastn's own id for the customer: with such a key the external id is `404 Tenant not found`, and `x-org-id` is `400 IDENTITY_HEADERS_CONFLICT`.
 
 ```json
 {
@@ -189,7 +189,7 @@ Every body field and error: [Generating embed tokens](../tutorials/developer/gen
 POST /api/v1/embed/token/refresh
 ```
 
-The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer is a new token in the same shape.
+The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer is `data.token`, `data.endOrgId`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` is the seconds the new token has left, below 28800 near the seven-day cap.
 
 {% hint style="warning" %}
 **Refresh is capped at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops: refreshing again does not extend it. Listen for that message and start a new session by minting a fresh token. A host app that assumes refresh is indefinite will strand long-lived sessions.

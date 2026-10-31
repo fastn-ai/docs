@@ -46,10 +46,10 @@ Either way, the answer is:
 
 The token is `data.token`. `expiresIn` is 28800 seconds: eight hours.
 
-If the API key is pinned to a particular customer, send the customer in the body instead of the header:
+If the API key is pinned to a particular customer, send the customer in the body instead of the header, by fastn's own id for them (with such a key, the external id is not found and `x-org-id` is refused):
 
 ```json
-{ "endOrgId": "…" }
+{ "endOrgId": "<fastn's own id for the customer>" }
 ```
 
 Every body field, the hash code, a curl for each way and the errors are in [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md). Your API key never reaches the browser. See [API keys](../../manage/api-keys.md).
@@ -63,7 +63,7 @@ Content-Type: application/json
 { "token": "emb_…" }
 ```
 
-The token in the body is the credential: no API key. The answer is a new token in the same shape, and the one you sent stops working.
+The token in the body is the credential: no API key. The answer is `data.token`, `data.endOrgId`, `data.role`, `data.expiresAt` and `data.expiresIn` (no `userId` or `tierId`), and the token you sent stops working.
 
 {% hint style="warning" %}
 Refresh is capped at **seven days per session**. At the cap the widget posts `fastn:session-expired` to the parent window and stops. Long-lived sessions do not refresh indefinitely: listen for that message and start a new session by minting a fresh token.
