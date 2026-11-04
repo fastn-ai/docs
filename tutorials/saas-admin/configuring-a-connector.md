@@ -73,8 +73,6 @@ A connector defines the integration. A **connection** is an authenticated instan
    * **Basic Auth:** Enter username and password.
 4. The connection appears under **Operate → Connections**.
 
-> **GIF:** Adding a connection - clicking Connect on a connector card, completing OAuth, seeing the connected state.
-
 #### Connections vs connectors
 
 |                   | Connector                                                 | Connection                                        |

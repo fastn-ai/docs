@@ -50,3 +50,6 @@ Moved out of the published pages on 2026-11-04 so readers no longer see writer n
 ## tutorials/saas-admin/managing-customers.md
 - > &#x20;**Screenshot:** Operate → Customers showing the Create customer button and the creation form.
 - > &#x20;**Screenshot:** Customer list showing created customers with their IDs.
+
+## tutorials/saas-admin/configuring-a-connector.md
+- > **GIF:** Adding a connection - clicking Connect on a connector card, completing OAuth, seeing the connected state.
