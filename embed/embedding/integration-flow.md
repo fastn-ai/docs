@@ -80,7 +80,7 @@ The plaintext headers tell the gateway which identity is being claimed, and the 
 
 **1. Register the customer organization**
 
-Register the customer once from your backend with Create a Customer Organization, before you mint its first token. That endpoint needs an **Admin** key (full access); the **Embed backend** key that mints tokens gets `403`. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
+Register the customer once from your backend with Create a Customer Organization, before you mint its first token. That endpoint needs an **Admin** key (full access) with **Verify caller identity (HMAC)** off; the **Embed backend** key that mints tokens gets `403`, and a key that enforces identity verification gets `401` because this call carries no identity headers. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
 
 #### Integrate the widget
 
@@ -106,7 +106,7 @@ Pass the token to your frontend and embed the iframe:
 #### Create a Customer Organization
 
 {% hint style="info" %}
-This endpoint needs an API key with full access (the **Admin** preset). An **Embed backend** key cannot call it.
+This endpoint needs an API key with full access (the **Admin** preset) and identity verification off. An **Embed backend** key cannot call it.
 {% endhint %}
 
 **Endpoint**

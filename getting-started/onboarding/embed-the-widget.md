@@ -52,7 +52,7 @@ Five parts, each done once; part 5 is optional. Keep the API key and identity se
 
 **1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
 
-Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
+Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Leave **Verify caller identity (HMAC)** off on this key: a key that enforces it refuses every call without identity headers, and registering a customer has none. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
 
 **2 · Register each customer** (backend, once per customer, with the **Admin** key), with your own ID for them, their tier and connection limit. The **Embed backend** key gets `403` here.
 
