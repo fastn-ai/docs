@@ -4,7 +4,7 @@ description: Vendor changes to the integrations you use, and the fixes proposed 
 
 # Pending updates
 
-**Integrations → Pending updates** · `/integrations/updates`
+**Operate → Health → Updates** · `/health?tab=updates`
 
 <figure><img src="../.gitbook/assets/connector-updates.jpg" alt="The Pending updates page in its empty state, reading Nothing needs your attention above a Show 1 already handled link that brings resolved proposals back into view"><figcaption>Nothing outstanding, the handled count is the only sign anything ever landed here.</figcaption></figure>
 

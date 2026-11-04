@@ -82,14 +82,14 @@ To see the full permission breakdown or create custom roles: go to **Settings �
 
 Your customers (the end users of your SaaS product who use the integrations) are managed under:
 
-1. Go to **Settings → Customers**.
+1. Go to **Operate → Customers**.
 2. The page reads: "Manage customers under your account."
 
 Each customer gets their own isolated environment i.e. their own connections, data, sync history, and configuration. When a customer connects an app through the embedded widget, they appear here automatically.
 
 From this page you can view customer details, monitor their integration status, and set per-customer quota overrides.
 
-> **Screenshot needed:** Settings → Customers page showing the customer list (or empty state for new accounts).
+> **Screenshot needed:** Operate → Customers page showing the customer list (or empty state for new accounts).
 
 ### Step 5: Check your plan and quotas
 

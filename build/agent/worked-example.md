@@ -14,7 +14,7 @@ Everything below is what the agent did with it.
 {% step %}
 #### Describe it in plain words
 
-Type the whole thing into **What do you want to build?** on Home and send it. There is no need to name connectors, pick a trigger, or know what a workflow is yet.
+Type the whole thing into **What should your customers be able to do?** on Home and send it. There is no need to name connectors, pick a trigger, or know what a workflow is yet.
 
 <figure><img src="../../.gitbook/assets/agent-session.jpg" alt="An agent session: the sent prompt at top right, a collapsed Worked · 3 steps summary beneath it, the Sessions rail on the left, and the Manual approval-mode chip under the composer"><figcaption>The session opens with your message at the top. The agent's tool runs collapse into <strong>Worked · 3 steps</strong>, <strong>Show details</strong> expands them.</figcaption></figure>
 

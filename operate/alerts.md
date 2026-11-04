@@ -4,7 +4,7 @@ description: Get told when something crosses a line you care about. Checked ever
 
 # Alerts
 
-**Activity → Alerts**
+**Operate → Health → Alerts** · `/health?tab=alerts`
 
 <figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The Alerts page holding only a No alerts yet empty state, naming the destination address it would send to, with Turn on failure alerts and Custom alert buttons and New alert top-right"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
 

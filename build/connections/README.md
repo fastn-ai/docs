@@ -4,7 +4,7 @@ description: "The Connections page: your organisation's and your customers' sign
 
 # Connections
 
-**Integrations → Connections** · `/integrations?tab=connections`
+**Operate → Connections** · `/connections`
 
 <figure><img src="../../.gitbook/assets/connections-list.webp" alt="The Connections page in the My organisation view: a New connection button, a search box, status chips All, Active, Inactive, Expired and Failed, the count 5 connections, and a table with columns Connector, Auth, Status and Created listing OpenAI (BEARER, Active), Cin7 Core (INPUT, Active), Google Gmail (OAUTH_2, Active), HubSpot (OAUTH_2, Expired) and Google Calendar (OAUTH_2, Expired)"><figcaption>The <strong>My organisation</strong> view.</figcaption></figure>
 

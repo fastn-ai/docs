@@ -20,6 +20,6 @@ These tutorials are for the person responsible for Fastn inside a SaaS company t
 
 [**Building Your Widget**](building-your-widget.md) — An overview of how to customize, preview and publish your widget for your customers.
 
-[**Managing Customers**](managing-customers.md) — Create customers under Settings → Customers, scope API calls per customer, and monitor customer-level activity.
+[**Managing Customers**](managing-customers.md): create customers under Operate → Customers, scope API calls per customer, and monitor customer-level activity.
 
 [**Roles & Permissions Setup** ](roles-and-permissions-setup.md)— Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage team access.

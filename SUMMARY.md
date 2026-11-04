@@ -132,7 +132,7 @@
 * [Workflows Tags](manage/workflow-tags.md)
 * [Environments and GitHub](manage/environments.md)
 * [Database](manage/database.md)
-* [SaaS Connectors](manage/saas-connectors.md)
+* [Connect your product](manage/saas-connectors.md)
 * [SaaS Webhooks](manage/saas-webhooks.md)
 * [Billing and limits](manage/billing.md)
 * [Audit log](manage/audit-log.md)
