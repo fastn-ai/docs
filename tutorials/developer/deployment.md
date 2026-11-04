@@ -26,4 +26,4 @@ On some hosts, environment variables set in a CI pipeline are not automatically 
 
 ### Verifying after deploy
 
-Load the embedded page in production and confirm the widget renders and a token is being generated fresh on each load. If the iframe is blank, check that the environment variables are bound on the runtime, not just present in CI. See [Troubleshooting](troubleshooting.md).
+Load the embedded page in production and confirm the widget renders and a token is being generated fresh on each load. If the widget is blank, check that the environment variables are bound on the runtime, not just present in CI. See [Troubleshooting](troubleshooting.md).

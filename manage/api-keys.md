@@ -18,7 +18,7 @@ description: Programmatic access to your workspace.
 
 **Search keys** narrows the list, and the filters are **All** / **Live** / **Test**.
 
-**Rotate** issues a new secret for the same key. The **…** menu holds **Edit**, **Identity verification** and **Revoke**. There is no delete. Revoking is the way a key ends.
+**Rotate** issues a new secret for the same key. The **…** menu holds **Edit**, **Identity verification** and **Revoke**; **Identity verification** is hidden on a key pinned to exactly one customer, because that key already is the customer. Revoking is how an active key ends. Once a key is revoked or expired, its row offers **Delete** (a trash icon) instead, which removes it permanently.
 
 ### Creating a key
 
@@ -28,14 +28,14 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
 #### Quick steps
 
-1. Go to your fastn dashboard → **Settings** → **API Keys**.
-2. Click **+ Create API Key**.
+1. Go to **Embed** → **API keys and MCP** → **API keys** (`/access`).
+2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
     * **Name**: give it something identifiable.
-    * **Mode**: select **Live** for production use or **Test** for dev use.
-    * Set scopes, IP whitelisting, rate limits, and expiry as needed.
-    * Enable caller identity verification (HMAC).
-4. Click **Create Key**.
+    * **Mode**: select **Live** for production use or **Test** for dev use. A live key also needs an **Environment**.
+    * Set permissions, customers, allowed IP addresses, rate limit and expiry as needed.
+    * Optionally turn on **Verify caller identity (HMAC)**.
+4. Click **Create key**.
 
 <figure><img src="../.gitbook/assets/api-key-verify-caller-identity.webp" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption><strong>Verify caller identity (HMAC)</strong> in the Create an API key dialog.</figcaption></figure>
 
@@ -45,10 +45,12 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
 **Mode**: **Test** or **Live**, defaulting to **Test**.
 
-| Mode     | Behaviour                                                                          |
+| Mode     | Behavior                                                                           |
 | -------- | ------------------------------------------------------------------------------------ |
-| **Test** | Separately revocable, and refused unless the caller sends `X-fastn-Test-Mode: true`. |
-| **Live** | Acts on real customer data. Treat it like a password.                              |
+| **Test** | Runs the latest published version of your workflows, never a deployed environment. Refused unless the caller sends `X-fastn-Test-Mode: true`. |
+| **Live** | Runs the workflows deployed to one **Environment** you pick in the dialog. Acts on real customer data. Treat it like a password. |
+
+A live key is pinned to its environment: it runs what is deployed there, can also run the latest published version by sending `x-fastn-env: test`, and is refused (403) for any other environment. To run a workflow from your code, use a key for the environment it is deployed to.
 
 {% hint style="danger" %}
 Neither mode is a sandbox. A Test key reaches the same live connections as a Live key and causes the same real writes. It is a separate credential, not a safe one.
@@ -56,9 +58,9 @@ Neither mode is a sandbox. A Test key reaches the same live connections as a Liv
 
 #### Access
 
-**Permissions \*** takes one of six presets: **Full access**, **Developer**, **Operator**, **Viewer** (the default), **End user** or **Custom**. These are key presets, not the people roles on [Roles](roles.md), even where the names match. Choose the narrowest that works: a key that only reads should stay on Viewer.
+**Permissions \*** takes one preset. Under **Roles**: **Admin** (offered only to callers who can grant full access, that is an owner, admin or platform admin), **Developer**, **Operator**, **Viewer** (the default) and **End User**. Under **Key presets**: **Embed backend** (for your server: mints embed tokens and registers customers on first use; the right choice for a backend behind `@fastn-ai/embed`) and **Custom** (only the permissions you tick). The role presets borrow the names of the people roles on [Roles](roles.md). Choose the narrowest that works: a key that only reads should stay on Viewer.
 
-Whichever preset you pick, the **What it can touch** matrix below shows exactly what it grants, and **Custom** lets you set each box yourself. Ten resource groups:
+Whichever preset you pick, the **What it can touch** matrix below shows exactly what it grants, and **Custom** lets you set each box yourself. Eleven resource groups:
 
 | Resource        | Permissions                                                     |
 | --------------- | ----------------------------------------------------------------- |
@@ -71,7 +73,8 @@ Whichever preset you pick, the **What it can touch** matrix below shows exactly 
 | **Secrets**     | read, write, delete                                              |
 | **Executions**  | create, read                                                     |
 | **Widgets**     | create, read, update, delete                                     |
-| **Unified API** | create, read, update, delete, execute                            |
+| **Customers**   | create                                                           |
+| **Unified API** | read, execute, customize                                         |
 
 {% hint style="warning" %}
 `decrypt` on Connections and `read` on Secrets are the two boxes worth arguing about before you tick them. A key holding either can read credentials, and a key is easier to leak than a person.
@@ -81,7 +84,9 @@ Whichever preset you pick, the **What it can touch** matrix below shows exactly 
 
 That note covers a key used directly as one customer's widget session. The backend key that registers customers and gets embed tokens should reach **Every customer**, because a key limited to specific customers is refused for any customer it doesn't list (see [Embed the widget](../getting-started/onboarding/embed-the-widget.md)).
 
-**Verify caller identity (HMAC)**: turning it on requires callers to send a signed `x-identity-hmac` header, so a caller cannot change the `x-org-id` or `x-user-id` it claims to be. The signing secret is shown once at creation. If you lose it, reach it again through **Identity verification** on the key's **…** menu.
+**Verify caller identity (HMAC)** *(optional)*: turning it on asks callers to send a signed `x-identity-hmac` header, so a caller cannot change the `x-org-id` or `x-user-id` it claims to be. Pick **Enforce** (reject a missing or invalid hash) or **Monitor only** (log mismatches, let calls through). Left off, the key trusts the headers. The option is not offered on a key that reaches exactly one customer.
+
+The signing secret is shown once at creation and cannot be shown again. If you lose it, open **Identity verification** on the key's **…** menu: you can switch the mode between **Off**, **Monitor only** and **Enforce**, or tick **Rotate the secret** to mint a new one (also shown once; the previous secret keeps validating until the next rotation). Turning verification off deletes the stored secret.
 
 **Resource scope** *(optional)*: narrows the key to particular resources rather than everything its permissions would otherwise cover.
 
@@ -99,7 +104,7 @@ The dialog keeps a live summary sentence at the bottom describing what you have 
 
 ### Identity hash
 
-Every tenant specific request needs to provide an identity hash to confirm that the org-id and user-id you're sending are ones your backend actually authorized.
+When a key has identity verification turned on, each customer-specific request carries an identity hash that confirms the `x-org-id` and `x-user-id` you're sending are ones your backend actually authorized.
 
 #### 1. Get your identity-verification secret
 
@@ -107,9 +112,9 @@ Once you create an API key with HMAC enabled the following dialog will appear. I
 
 <figure><img src="../.gitbook/assets/api-key-identity-secret.webp" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
 
-**Safety pre-cautions:**
+**Safety precautions:**
 
-* If the secret is lost, you'll need to generate a new one.
+* The secret cannot be shown again. If it is lost, rotate it from **Identity verification** on the key's **…** menu.
 * Never ship this secret to the client. It only ever lives on your backend. If it appears in frontend code, anyone can forge a valid hash for any org or user.
 
 #### 2. Compute the hash
@@ -137,7 +142,7 @@ x-user-id: <user-id>
 x-identity-hmac: <identityHash(orgId, userId)>
 ```
 
-The plaintext headers tell the gateway which identity is being claimed; the hash proves your backend authorized that specific claim. The gateway rejects a call whose hash is missing or doesn't match what it recomputes from the plaintext values.
+The plaintext headers tell the gateway which identity is being claimed; the hash proves your backend authorized that specific claim. What happens to a bad call depends on the key's mode: **Enforce** rejects a call whose hash is missing or doesn't match what the gateway recomputes from the plaintext values; **Monitor only** logs the mismatch and lets the call through; **Off** does not check.
 
 ### Using a key
 
@@ -148,13 +153,14 @@ curl -X POST https://YOUR_FASTN_HOST/api/v1/workflows/WORKFLOW_ID/execute \
   -d '{ "input": { "key": "value" } }'
 ```
 
-With a test key, add the two headers:
+With a test key, add the `X-fastn-Test-Mode` header. Without it the call is refused with `403` and *Test API keys require X-fastn-Test-Mode: true header*:
 
 ```bash
   -H "Authorization: Bearer fsk_test_<your-key>" \
-  -H "X-fastn-Test-Mode: true" \
-  -H "x-fastn-env: test"
+  -H "X-fastn-Test-Mode: true"
 ```
+
+`x-fastn-env` is optional: a test key always runs against `test`, so you never need to send it.
 
 Full detail in the [HTTP API reference](../reference/api.md).
 

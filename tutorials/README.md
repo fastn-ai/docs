@@ -1,7 +1,7 @@
 ---
 description: >-
-  Step-by-step guided lessons organized by role - SaaS Admin, Developer, and End
-  User.
+  Step-by-step guided lessons organized by role - SaaS Admin, Developer, and the
+  people at your customers.
 hidden: true
 ---
 
@@ -9,13 +9,13 @@ hidden: true
 
 These tutorials are hands-on walkthroughs that teach you how to use fastn by building real things. Each tutorial has a clear outcome and by the end, you'll have something working.
 
-**Prerequisites:** Complete the [Getting Started](https://docs.fastn.ai/~/revisions/aj5eaS57qHvafrgYtfbL/fastn-v2/getting-started) section first. These tutorials assume you have a fastn account and basic familiarity with the dashboard.
+**Prerequisites:** Complete the [Getting Started](../getting-started/README.md) section first. These tutorials assume you have a fastn account and basic familiarity with the dashboard.
 
 ### SaaS Admin tutorials
 
 For the person setting up and managing fastn within their SaaS product.
 
-[**Setting Up Your Organization** ](saas-admin/setting-up-your-organization.md) - Configure org settings, API keys (Test & Live), secrets, environments, OAuth Apps, and invite your team.
+[**Setting Up Your Organization** ](saas-admin/setting-up-your-organization.md) - Configure organization settings, invite your team, review plan limits and the audit log, and find API keys, secrets, environments and connector auth.
 
 [**Creating a Workflow via AI**](saas-admin/creating-a-workflow-via-ai.md) - Use "Build with AI" to create workflows by describing what you need in plain language.
 
@@ -25,9 +25,9 @@ For the person setting up and managing fastn within their SaaS product.
 
 [**Roles & Permissions Setup**](saas-admin/roles-and-permissions-setup.md) - Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage access.
 
-### End User tutorials
+### Tutorials for the people at your customers
 
-For the people who use integrations through the embedded widget in a SaaS product.
+For the people at your customers who use integrations through the embedded widget in your product.
 
 [**Connecting Apps via Widget** ](end-user/connecting-apps-via-widget.md) - Find available integrations, authorize your accounts, and activate connections.
 

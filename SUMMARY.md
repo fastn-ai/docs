@@ -36,7 +36,7 @@
     * [Bolt](build/mcp-gateway/bolt.md)
   * [fastn for AI agents](reference/ai-agents.md)
 * [Connect your product](manage/saas-connectors.md)
-  * [SaaS Webhooks](manage/saas-webhooks.md)
+  * [Webhooks](manage/saas-webhooks.md)
 * [Integrations](build/integrations.md)
   * [Connectors](build/connectors/README.md)
     * [Configure a connector](tutorials/saas-admin/configuring-a-connector.md)

@@ -9,7 +9,7 @@ Onboarding takes you through the four steps a SaaS company takes to offer integr
 | Step | What you do | Time | Needed to go live |
 | --- | --- | --- | --- |
 | [1 · Connect your product](connect-your-product.md) | Connect your product's API to fastn as a connector | Depends on your API and use case; about 25 min with your AI tools | Yes |
-| [2 · Choose integrations](choose-integrations.md) | Build your first integration, or offer the whole catalog | 2-5 min, plus about 20 if a connector needs building | No |
+| [2 · Choose integrations](choose-integrations.md) | Build your first integration, or offer the whole catalog | 2-5 min, plus the build time onboarding estimates if a connector needs building | No |
 | [3 · Embed the widget](embed-the-widget.md) | Add the widget to your product | Usually the same day as building your use case | Yes |
 | [4 · Customers connect and customize](customers-connect-and-customize.md) | Connect and customize as a test customer, in your product | A few minutes | Yes |
 
@@ -23,7 +23,7 @@ Screenshots on these pages come from the onboarding screens, so the live app may
 
 To build a first integration outside onboarding, see [Quickstart: your first integration](../quickstart.md).
 
-**Get help:** ask the fastn agent (**Integrations** → **Agent** → **New session**), or contact the fastn team from the help menu in fastn.
+**Get help:** ask fastn's agent (**Build** → **Build with AI**), or contact the fastn team from the help menu in fastn.
 
 ### In this section
 

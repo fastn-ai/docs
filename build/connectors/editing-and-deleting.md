@@ -4,7 +4,7 @@ description: "What you can change on a connector your workspace owns: editing it
 
 # Editing, publishing and deleting
 
-Everything on this page applies to connectors your workspace **owns**: ones you created with **Create connector** or brought in with **Import**. Their card is badged `Custom` and reads *Managed by* followed by your organisation's name. Managed connectors (badged `managed`, *Managed by fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
+Everything on this page applies to connectors your workspace **owns**: ones you created from the **Create connector** menu or brought in with **Import from file**. Their card is badged `Custom` and reads *Managed by* followed by your organization's name. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
 
 ### Where the controls are
 
@@ -12,7 +12,7 @@ On an owned connector:
 
 * the header's **⋯** menu holds **Edit** and **Delete**;
 * the connector's row in the rail has **+** (Add action) and a **⋯** menu with **New Folder**, **Import**, **Export All**, **Connect**, **Edit** and **Delete**;
-* the catalogue card's **⋯** menu holds **Select**, **Edit**, **Export** and **Delete** (see [Importing and exporting](importing-and-exporting.md#export-connectors));
+* the catalog card's **⋯** menu holds **Select**, **Edit**, **Export** and **Delete** (see [Importing and exporting](importing-and-exporting.md#export-connectors));
 * each test version under **Overview → Versions** has **Publish to live**.
 
 <figure><img src="../../.gitbook/assets/connector-owned-menu.webp" alt="The detail page of a custom connector, Docs Demo CRM, with the header three-dot menu open showing Edit and Delete; the Overview shows 0 Connections, 1 Auth method API key and v1.0 Current version, and the Versions list has a Publish to live button on v1.0"><figcaption>An owned connector: <strong>Edit</strong> and <strong>Delete</strong> in the header menu, <strong>Publish to live</strong> on the version.</figcaption></figure>
@@ -75,12 +75,12 @@ Each save adds a version with a note of what changed, for example *Updated descr
 
 **⋯ → Delete** opens **Delete Connector**:
 
-<figure><img src="../../.gitbook/assets/connector-delete-dialog.webp" alt="The Delete Connector dialog: Are you sure you want to delete Docs Demo CRM? By default this is a soft delete, the connector is hidden but can be restored. Connected accounts are disconnected for good either way. Tick the box below to remove it permanently. A Permanently delete (cannot be undone) checkbox, and Cancel and Delete buttons"><figcaption>Soft delete is the default; tick the box to delete permanently.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-delete-dialog.webp" alt="The Delete Connector dialog: Are you sure you want to delete Docs Demo CRM? By default this is a soft delete, the connector is hidden but can be restored. Connections are disconnected for good either way: restoring brings back the connector, not its credentials, so they have to be reconnected. Tick the box below to remove it permanently. A Permanently delete (cannot be undone) checkbox, and Cancel and Delete buttons"><figcaption>Soft delete is the default; tick the box to delete permanently.</figcaption></figure>
 
-* **Soft delete** (the default): the connector disappears from the catalogue. The dialog says it *can be restored*. Every connection on it is disconnected and its credentials are deleted; restoring brings back the connector, not the credentials.
+* **Soft delete** (the default): the connector disappears from the catalog. The dialog says it *can be restored*. Every connection on it is disconnected and its credentials are deleted; restoring brings back the connector, not the credentials.
 * **Permanently delete (cannot be undone)**: tick this box to remove the connector for good.
 
-After **Delete**, you return to the catalogue.
+After **Delete**, you return to the catalog.
 
 {% hint style="danger" %}
 Either way, every workflow and trigger that uses the connector's connections stops working. Check who uses it on the **Connections** tab before deleting.

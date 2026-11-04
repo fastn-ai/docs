@@ -6,13 +6,13 @@ description: Connecting your own product, through its API or webhooks, and the s
 
 **Build → Connect your product → API connector**
 
-> Connect your product through its API or webhooks, so each customer's connection to it can be scoped. Integrations can't go live until your product is connected.
+> Connect your product through its API or webhooks, so each customer's connection to it can be scoped, and tell fastn where to call your product back. Integrations can't go live until your product is connected.
 
-Every other connector in fastn represents someone else's system: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organised.
+Every other connector in fastn represents someone else's system: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organized.
 
 An integration usually has two ends. One end is the app your customer uses, picked from **Integrations**. The other end is your product, connected here. Workflows read and write both through the same kind of connection. You can explore and build before this is done, but no integration goes live until your product is connected.
 
-Admin only.
+The sidebar row shows for Owners and Admins. The page itself opens for Owners, Admins, Developers and Operators, but only Owners and Admins can save a connector or its scopes. The **Webhooks** tab shows for Owners, Admins and Developers; Operators see the connector tab only.
 
 With nothing registered the page reads:
 
@@ -24,8 +24,8 @@ With nothing registered the page reads:
 
 | Field | Notes |
 | ----- | ----- |
-| **Connector \*** | A picker over the whole connector catalogue (*Select your product's connector…*). Its helper text is the important part: *"The connector for your own product, through its API or webhooks: the one your customers' connections are made against."* This is not the system you are integrating **with**; it is the one representing **you**. If your product is not in the catalogue yet, create its connector first from **Integrations → Connectors → Create connector**. |
-| **Connection scopes** | A free-text field with an **Add** button beside it, seeded with the example `inventory`. Add as many as you need. |
+| **Connector \*** | A picker over every connector you can see, except ones already registered here (*Select your product's connector…*). Its helper text is the important part: *"The connector for your own product, through its API or webhooks: the one your customers' connections are made against."* This is not the system you are integrating **with**; it is the one representing **you**. If your product is not in the catalog yet, create its connector first from **Integrations → Connectors → Create connector**. |
+| **Connection scopes** | A free-text field with an **Add** button beside it (press Enter or click **Add**). The list starts empty; `inventory` is only the placeholder text. Scopes are lowercased and can be at most 50 characters. Add as many as you need. |
 
 The panel closes with **Cancel** and **Add connector**.
 
@@ -44,9 +44,9 @@ Three consequences worth being deliberate about:
 Pick scopes that name a *capability boundary* in your own product (`inventory`, `product`, `billing`), rather than one scope per customer. Customers are already one axis; scopes are the second axis crossing it.
 
 {% hint style="info" %}
-This page sits under **Build**, beside Integrations rather than inside it. Integrations is the catalogue of other companies' apps; this is the one connector that is yours. It moved here from Settings (where it was called **SaaS Connectors**) and from the Integrations page (where it was briefly called **Your API**), and both old links redirect. Its other tab, **Webhooks**, is where fastn calls your product back: see [SaaS Webhooks](saas-webhooks.md).
+This page sits under **Build**, beside Integrations rather than inside it. Integrations is the catalog of other companies' apps; this is the one connector that is yours. It moved here from Settings (where it was called **SaaS Connectors**), and the old Settings address redirects. Its other tab, **Webhooks**, is where fastn calls your product back: see [Webhooks](saas-webhooks.md).
 {% endhint %}
 
 {% hint style="warning" %}
-How a scope behaves once connections exist against it (whether it can be renamed or removed with live customer connections attached) is not documented here. Register a scope you intend to keep, and confirm the behaviour in your own workspace before restructuring one that is in use.
+How a scope behaves once connections exist against it (whether it can be renamed or removed with live customer connections attached) is not documented here. Register a scope you intend to keep, and confirm the behavior in your own workspace before restructuring one that is in use.
 {% endhint %}

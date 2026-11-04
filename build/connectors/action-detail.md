@@ -4,7 +4,7 @@ description: "A connector's actions: the action list, the action editor and its 
 
 # Actions
 
-An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Under the hood it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, the Agent and the MCP gateway call actions; they never call the vendor's API directly.
+An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Under the hood it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, Build with AI and your AI tool (over MCP) call actions; they never call the vendor's API directly.
 
 ### The action list
 
@@ -28,7 +28,7 @@ The top of the editor holds:
 | Element | Meaning |
 | --- | --- |
 | **Name** | The action's display name. |
-| **Description** | What the action does and how to call it. The Agent reads this, so it should say which inputs matter. |
+| **Description** | What the action does and how to call it. Build with AI reads this, so it should say which inputs matter. |
 | **Method** | `GET`, `POST`, `PUT`, `PATCH` or `DELETE`. |
 | **URL** | The endpoint. Parts in double braces are filled in when the action runs: `{{input.<field>}}` takes a value from the action's input. |
 | **Run** | Opens the run panel to call the action once, live or with a mock. See [Running an action](#running-an-action). |
@@ -46,7 +46,7 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 | --- | --- |
 | **Params** | Query parameters (**Query Parameters**, **+ Add**). Each one is a key and a value; the value can be a placeholder. |
 | **Headers** | Request headers (**Request Headers**, **+ Add**), as **KEY** / **VALUE** pairs. |
-| **Auth** | How this request is authorised. **Auth type**: `No Auth`, `Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0` or `API Key`. **No Auth** (the panel then reads *No auth · This request does not use any authorization.*) is the usual choice when the credential is already sent in a header, as in the HubSpot example below. |
+| **Auth** | How this request is authorized. **Auth type**: `No Auth`, `Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0` or `API Key`. **No Auth** (the panel then reads *No auth · This request does not use any authorization.*) is the usual choice when the credential is already sent in a header, as in the HubSpot example below. |
 | **Body** | **Body type**: `JSON`, `Form Data`, `Raw`, `GraphQL` or `Form URL Encoded`, and the body itself. |
 | **Input schema** | The inputs the action accepts. See below. |
 | **Output schema** | The shape of the response the action returns. Same editor as the input schema. |
@@ -56,7 +56,7 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 
 <figure><img src="../../.gitbook/assets/action-editor-auth.webp" alt="The Auth tab with Auth type set to No Auth and the text No auth, This request does not use any authorization"><figcaption>The Auth tab. Here the credential is sent in a header instead.</figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/action-editor-body.webp" alt="The Body tab for HubSpot Create Contact: Body type JSON on the left and a body editor labelled body JSON on the right"><figcaption>The Body tab with <strong>JSON</strong> selected.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-editor-body.webp" alt="The Body tab for HubSpot Create Contact: Body type JSON on the left and a body editor labeled body JSON on the right"><figcaption>The Body tab with <strong>JSON</strong> selected.</figcaption></figure>
 
 #### Input schema and output schema
 
@@ -81,7 +81,7 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 
 <figure><img src="../../.gitbook/assets/action-editor-field-options.webp" alt="The Input schema tab with a field's more-options menu open, showing Enum values"><figcaption><strong>More options</strong> on a field.</figcaption></figure>
 
-The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and the Agent read it to know which fields a response contains.
+The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and Build with AI read it to know which fields a response contains.
 
 <figure><img src="../../.gitbook/assets/action-editor-output-schema.webp" alt="The Output schema tab for Create Contact: 5 fields, id string, archived boolean, createdAt string, updatedAt string and properties object"><figcaption>The fields Create Contact returns.</figcaption></figure>
 

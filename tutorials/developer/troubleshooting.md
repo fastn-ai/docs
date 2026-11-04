@@ -17,15 +17,15 @@ Embed tokens expire after 8 hours. If a token is hardcoded into your frontend or
 
 ### 404 on the token request
 
-**Most likely cause:** the wrong org identifier.
+**Most likely cause:** the wrong customer identifier.
 
-`endOrgId` must be the customer's internal UUID. The customer slug and the External ID both return 404.
+For `endOrgId`, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns 404 `Tenant not found`.
 
 ### Requests fail with a test key
 
 **Most likely cause:** the missing test-mode header.
 
-Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true`. Without it, requests fail in ways the error message doesn't make obvious.
+Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true`. Without it, requests fail with 403 `Test API keys require X-fastn-Test-Mode: true header`.
 
 **Fix:** Add `X-fastn-Test-Mode: true` for test keys. Remove it for live keys. See [Authentication & API Keys](authentication-and-api-keys.md).
 

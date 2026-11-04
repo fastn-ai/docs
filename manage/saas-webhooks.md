@@ -4,30 +4,30 @@ description: >-
   one of your customers: account, setup link, provider and workflow events.
 ---
 
-# SaaS Webhooks
+# Webhooks
 
-The [SaaS connector](saas-connectors.md) you registered lets fastn call your product's API, using each tenant's connection for the right connection scope. Webhooks cover the other direction: they let fastn call your product back when something happens for one of your tenants.
+The connector you registered on the **API connector** tab of [Connect your product](saas-connectors.md) lets fastn call your product's API, using each customer's connection for the right connection scope. Webhooks cover the other direction: they let fastn call your product back when something happens for one of your customers.
 
-Both live under **Connect your product**: the **API connector** tab is your SaaS connector, and the **Webhooks** tab is described on this page.
+Both live under **Connect your product**: the **API connector** tab is your product's connector, and the **Webhooks** tab is described on this page.
 
 ### What is the feature?
 
-A webhook is a URL on your server. You give fastn the URL and pick the events you want, and fastn sends a POST request with a JSON body to that URL every time one of those events happens for a tenant.
+A webhook is a URL on your server. You give fastn the URL and pick the events you want, and fastn sends a POST request with a JSON body to that URL every time one of those events happens for a customer.
 
 You can receive:
 
-* **Account events**: a tenant connects an app, removes it, or needs to sign in again.
+* **Account events**: a customer connects an app, removes it, or needs to sign in again.
 * **Setup link events**: a setup link is used or expires unused.
-* **Provider events**: an event from an app a tenant connected, such as Jira or Linear, passed on unchanged.
+* **Provider events**: an event from an app a customer connected, such as Jira or Linear, passed on unchanged.
 * **Unified events**: the same app event in fastn's standard format.
-* **Workflow events**: an event your own workflow sends. For example, after your workflow creates a ticket in Jira, Linear or ServiceNow for a tenant, it can send the ticket details to your URL.
+* **Workflow events**: an event your own workflow sends. For example, after your workflow creates a ticket in Jira, Linear or ServiceNow for a customer, it can send the ticket details to your URL.
 
-Each event carries the tenant it belongs to, so your server knows which of your customers it is about.
+Each event carries the customer it belongs to, so your server knows which of your customers it is about.
 
 ### How does it work?
 
 1. Something happens: an account is connected, an app sends an event, or your workflow sends one.
-2. fastn checks which of your webhooks want that event and that tenant, and reads each webhook's URL and payload schema.
+2. fastn checks which of your webhooks want that event and that customer, and reads each webhook's URL and payload schema.
 3. fastn builds the request body. If the event is a workflow event and the webhook has a payload schema, the body is shaped to match it. Otherwise, fastn sends its standard format.
 4. fastn sends a POST to your URL with the JSON body.
 
@@ -63,7 +63,7 @@ You need the Owner, Admin or Developer role.
 2. Click **Add webhook**.
 3. Enter your **Endpoint URL**. It must be a public https address. fastn does not follow redirects.
 4. Under **Events**, tick the events you want. All account and setup link events start ticked; untick any you don't need.
-5. Under **Customers**, keep **All customers**, or pick one tenant to send only that tenant's events to this URL.
+5. Under **Customers**, keep **All customers**, or pick one customer to send only that customer's events to this URL.
 6. Optionally add a **Description**, such as "Production server".
 7. Click **Add webhook**.
 
@@ -101,7 +101,7 @@ To add one:
 
 <figure><img src="../.gitbook/assets/saas-webhooks-payload-schema.webp" alt="Payload schema switched on, the Editing dropdown open on Default with Jira, notion, ServiceNow and Linear schemas listed, and a table of fields, each with a type, a Required tick and an Event path such as payload.ticket_url"><figcaption>A schema in the Table view. Each field reads its value from the event.</figcaption></figure>
 
-5. Check the result in the preview box under the table, then click **Save**.
+5. Check the result in the preview box under the table, then click **Add webhook** (when adding a webhook) or **Save** (when editing one).
 
 You can also edit the schema as JSON in the **JSON Schema** tab, or start from **Use example**. If a field is marked **Required** and the event cannot fill it, that event is not sent, and the delivery log shows which field was missing. It is retried on the normal schedule for up to 24 hours, so if you fix the schema in that time, the waiting events go out. To send one straight away after a fix, use **Resend** in **Deliveries**.
 
@@ -127,14 +127,14 @@ Example Default schema in the **JSON Schema** tab:
 
 If you turn **Payload schema** off, fastn sends its standard format for each event type.
 
-### Can an AI agent set this up for me?
+### Can my AI tool set this up for me?
 
-Yes. If you have connected fastn to an AI agent, such as Claude, Cursor or another tool that uses fastn's MCP server, you can ask it to do any of the steps above in plain language. For example:
+Yes. If you have connected your AI tool to fastn's MCP server, you can ask it to do any of the steps above in plain language. For example:
 
-* "Add a webhook for `https://example.com/fastn-events` that sends workflow events for all tenants."
+* "Add a webhook for `https://example.com/fastn-events` that sends workflow events for all customers."
 * "Add a payload schema to that webhook with these fields: event, finding_id, ticket_url."
 * "Give Jira its own schema where ticket_key comes from payload.issue_key."
 * "Send a test event and show me the last 5 deliveries."
 * "Pause the webhook" or "Rotate the signing secret."
 
-The agent makes the same changes you would make in the dashboard, and they show up there right away. The signing secret is shown only once, so ask the agent for it right after it creates the webhook.
+Your AI tool makes the same changes you would make in the dashboard, and they show up there right away. The signing secret is shown only once, so ask your AI tool for it right after it creates the webhook.

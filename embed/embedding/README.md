@@ -4,15 +4,15 @@ description: Three ways to put the widget in your product, and how to hand it a 
 
 # Embedding the widget
 
-**Widgets → Embed**
+**Embed → Widget → Embed**
 
 <figure><img src="../../.gitbook/assets/widget-embed.jpg" alt="The Embed tab with Iframe selected beside SDK and A2A soon, a USER selector set to NewTest, and an Embed Code block with a Copy button, beside a preview reading TikTok Shop, 0 of 1 connected"><figcaption>The preview follows the selected user, pick one and the panel shows that customer's real connection state, not a mock-up.</figcaption></figure>
 
 ## Pick the customer first
 
-The widget is always scoped to **one** of your customers, so the **USER** dropdown at the top is not a preview toggle. It decides who the generated snippet is for.
+The widget is always scoped to **one** of your customers, so the dropdown labelled **User** at the top is not a preview toggle. It decides who the generated snippet is for.
 
-The dropdown lists the customers on your account, by their identifier, for example `test-tenant`. Selecting one does two things at once:
+The dropdown lists the customers on your account by name. Selecting one does two things at once:
 
 * the preview beside it shows **that customer's real connection state**, not a mock-up, so `TikTok Shop, 0 of 1 connected` is the truth for that customer
 * the **Embed Code** block regenerates with a token scoped to them
@@ -35,7 +35,7 @@ For production, mint short-lived tokens from your backend and keep them out of t
 
 ## Shareable links
 
-Instead of a snippet, send a link. It keeps working until you revoke it, and the URL carries no token.
+Instead of a snippet, send a link. It keeps working until it expires or you revoke it, and the URL carries no token. Shareable links live on the **Iframe** sub-tab.
 
 {% hint style="warning" %}
 The reference in a shareable link *is* the credential. Treat the link itself as a secret: anyone who has it can act as that customer.
@@ -43,9 +43,10 @@ The reference in a shareable link *is* the credential. Treat the link itself as 
 
 #### Creating one
 
-1. Go to **Widgets → Embed** and pick the customer in the **USER** dropdown. **Create link** stays disabled until you do - with nobody selected the card reads *Pick a customer above first.*
-2. In the **Shareable links** card, select **Create link**.
-3. The new row appears badged **New**.
+1. Go to **Embed → Widget → Embed**, stay on the **Iframe** sub-tab, and pick the customer in the **User** dropdown. **Create link** stays disabled until you do - with nobody selected the card reads *Pick a customer above first.*
+2. In the **Shareable links** card, set **New links** to the expiry you want: **Never expire** (the default), **Expire in 1 day**, **Expire in 7 days** or **Expire in 30 days**.
+3. Select **Create link**.
+4. The new row appears badged **New**.
 
 Each row identifies itself by the last few characters of its id rather than printing the credential as a headline, and carries its own state:
 
@@ -58,7 +59,7 @@ Each row identifies itself by the last few characters of its id rather than prin
 
 **Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. **Revoke** is immediate, and a revoked or expired link offers neither - handing one over is only a way to give someone something that will not load.
 
-A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorise on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
+A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorize on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
 
 ### In this section
 

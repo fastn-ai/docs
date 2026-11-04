@@ -4,12 +4,12 @@ description: "The Create a connector dialog field by field: identity, protocol, 
 
 # Creating a connector
 
-**Create connector** (top right of the catalogue, or **+** at the top of the connector rail on a detail page) opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.*
+**Create connector → From scratch** (top right of the catalog), or **+** at the top of the connector rail on a detail page, opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.*
 
 <figure><img src="../../.gitbook/assets/connectors-create-dialog.webp" alt="The Create a connector dialog: Identity section with Name, Slug and Description; Connection section with Protocol set to REST, Visibility set to Private, Domain and Icon URL; Authentication section with an OAuth 2.0 method; the Create connector button is disabled and the footer reads Give it a name to continue"><figcaption>The dialog as it opens. <strong>Create connector</strong> stays disabled until the connector has a name.</figcaption></figure>
 
 {% hint style="info" %}
-You rarely need to build a connector by hand. Describe the app to the [Agent](../agent/README.md) and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions and its auth method, then tests them.
+You rarely need to build a connector by hand. Describe the app to [Build with AI](../agent/README.md) (**Create connector → Build with AI**) and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions and its auth method, then tests them.
 {% endhint %}
 
 ### Identity
@@ -18,14 +18,14 @@ You rarely need to build a connector by hand. Describe the app to the [Agent](..
 | --- | --- | --- |
 | **Name** | Yes | What people see on the card and in the widget. Placeholder: `Salesforce`. |
 | **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* It must be camelCase: start with a lowercase letter, then letters and digits only, for example `acmeCrm`. Hyphens, spaces and underscores are rejected with *Request validation failed*. |
-| **Description** | No | Shown on the card. The Agent also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
+| **Description** | No | Shown on the card. Build with AI also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
 
 ### Connection
 
 | Field | Notes |
 | --- | --- |
 | **Protocol** | How fastn talks to the app: `REST` (default), `MCP`, `FTP`, `Database` or `REDIS`. The choice changes the rest of the dialog; see below. |
-| **Visibility** | Always `Private`: *Only your workspace can see it. Publishing to the customer catalog is done by a platform admin.* |
+| **Visibility** | Always `Private`: *Only your organization can see it. Publishing to the customer catalog is done by a platform admin.* |
 | **Domain** | Optional. The vendor's domain, for example `salesforce.com`. Used to find the connector's icon. |
 | **Icon URL** | Optional. An image URL to use as the icon instead. |
 
@@ -36,7 +36,7 @@ What each protocol adds:
 | **REST** | None. | Shown. |
 | **MCP** | **MCP Server URL**: the address of the MCP server the connector talks to. | Shown. |
 | **FTP** | **Transfer Protocol**: `SFTP`, `FTP` or `FTPS`. A **Connection Fields** list shows what users enter when they connect: **Host**, **Port**, **Username**, and either **Password** or **SSH Private Key (PEM)**. | Replaced by Connection Fields. |
-| **Database** | **Connection Fields**: **Database Type** (`postgres`, `mysql`, `mssql`, `redshift` or `mongodb`), **Host**, **Port**, **Database**, **Username**, **Password**, **SSL Mode** (`disable`, `prefer`, `require` or `verify-full`). | Replaced by Connection Fields. |
+| **Database** | **Connection Fields**: **Database Type** (`postgres`, `mysql`, `mssql`, `redshift` or `mongodb`), **Host**, **Port**, **Database**, **Username**, **Password**, **SSL Mode** (`disable`, `prefer`, `require` or `verify-full`), and for SQL Server: **SQL Server Sign-in** (`sql` for a SQL login, or `azure-ad-password` for a Microsoft Entra ID account), **Azure Tenant ID** (required with `azure-ad-password`) and **Azure Client ID** (optional). | Replaced by Connection Fields. |
 | **REDIS** | **Connection Fields**: **Host**, **Port**, **Password**, **TLS** (default off) and **Database** (a number from 0 to 15, default 0). | Replaced by Connection Fields. |
 
 For FTP, Database and REDIS the dialog notes that the host, port and credentials are entered when someone adds a connection, not here.
@@ -112,7 +112,7 @@ The footer reads *Give it a name to continue.* until **Name** is filled in. **Cr
 
 ### Request a connector
 
-If you would rather fastn built the connector, use **Request connector** on the catalogue page.
+If you would rather fastn built the connector, use **Request connector** on the catalog page.
 
 <figure><img src="../../.gitbook/assets/connectors-request-connector.webp" alt="The Request a connector dialog with fields Which system (placeholder Workday), Website or API docs (placeholder developer.workday.com), What does it need to do (a workflow example about HubSpot and Workday) and an optional Anything else, with Cancel and Send request buttons"><figcaption>The request goes to the team that builds connectors.</figcaption></figure>
 

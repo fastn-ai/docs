@@ -16,22 +16,22 @@ There are three parts:
 **The fastn platform** validates the token, serves the widget, and handles the integration work - authentication with third-party apps, data sync, and workflow execution.
 
 ```
-Your backend ──(API key)──> Fastn token endpoint ──> short-lived token
+Your backend ──(API key)──> fastn token endpoint ──> short-lived token
      │
-     └──> token ──> Your frontend ──> Fastn iframe (with token) ──> Widget
+     └──> token ──> Your frontend ──> fastn iframe (with token) ──> Widget
 ```
 
-### The iframe is the current integration path
+### Iframe or SDK
 
-The Embed tab in the Widget Builder lists a React SDK, but it is marked "coming soon." Today, the supported method is the iframe. This guide documents the iframe path.
+The Embed tab in the widget builder offers two methods today: **Iframe** and **SDK**. Only **A2A** is marked coming soon. The SDK comes in four variants (Connect card, React component, Script tag and Build your own UI); see [SDK](../../embed/embedding/sdk.md).
 
-When the React SDK ships, it will wrap this same flow - your backend will still generate the token, and the SDK will render the iframe for you. The token generation pattern you build now will carry over.
+This guide documents the iframe path. The SDK wraps the same flow: your backend still generates the token, and the SDK renders the iframe for you, so the token generation pattern you build here carries over.
 
 ### What you'll set up
 
 1. A server-side function that generates an embed token on each request (never hardcode tokens: they expire in 8 hours).
 2. A frontend component that renders the fastn iframe with the token.
-3. A decision about how connections are scoped - shared across the customer's organization, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
+3. A user id for each person at your customer, sent when you mint the token, so each person's session is scoped to them (see [Tenancy](understanding-tenancy.md)).
 
 ### Why generate tokens server-side
 

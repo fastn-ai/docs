@@ -20,7 +20,7 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 | **Duration**     | How long the run took.                                          |
 | **Triggered by** | What started it.                                                |
 | **When**         | Timestamp, in your timezone.                                    |
-| **Actions**      | The **Replay** control re-runs the execution.                                          |
+| **Actions**      | **Replay** re-runs a finished execution. A pending, queued or running one shows **Stop** instead. |
 
 **Rows per page** is 10, 20 or 50.
 
@@ -28,11 +28,11 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 
 | Filter          | Values                                                                            |
 | --------------- | ----------------------------------------------------------------------------------- |
-| Date range      | **All time** (default), Last 15m, 1h, 6h, 24h, 7d, 30d                             |
-| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timeout, Cancelled           |
+| Date range      | **All time** (default), Last 15m, 1h, 6h, 24h, 7d, 30d, or **Custom range**        |
+| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timed out, Cancelled         |
 | Workflow        | One workflow, or all                                                               |
 
-Alongside them: **Search executions** and **Refresh**.
+Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch, and **Enable payload searching**, a toggle that extends the search into run payloads so you can find an id that came inside the event itself.
 
 | Status        | Meaning                                                           |
 | ------------- | ------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ Alongside them: **Search executions** and **Refresh**.
 | **Running**   | In progress.                                                       |
 | **Completed** | Finished successfully.                                             |
 | **Failed**    | Raised an error.                                                   |
-| **Timeout**   | Exceeded its execution timeout.                                    |
+| **Timed out** | Exceeded its execution timeout.                                    |
 | **Cancelled** | Stopped before finishing.                                          |
 
 ### Opening a run
@@ -49,8 +49,8 @@ Alongside them: **Search executions** and **Refresh**.
 This is where debugging actually happens. A row expands **inline** (you do not leave the page), into:
 
 * A **result banner** for the run, and its **Raw response**.
-* Chips summarising the run: **Steps**, **Success**, **Error**, **Slowest**.
-* Tabs **Summary**, **Input** and **Output**.
+* Chips summarizing the run: **Steps**, **Success**, **Error**, **Slowest**.
+* Tabs **Summary**, **Input**, **Output** and **Logs**, plus **Error** when the run errored.
 * A footer carrying the two identifiers you need when asking anyone else about the run: `exec_…` and `wf_…`.
 
 The Summary JSON carries the keys worth knowing by name:
@@ -67,9 +67,9 @@ Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed witho
 
 ### Reading the statuses
 
-**Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row for the result banner and raw response, then check [Traces](traces.md) for the external call behind it.
+**Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row for the result banner and raw response, then check [Traces](traces.md) (by URL, `/activity/traces`) for the external call behind it.
 
-**Timeout** means the tier's budget ran out. Either the work genuinely needs longer, or a single external call is hanging. Check [Traces](traces.md) before raising the timeout.
+**Timed out** means the tier's budget ran out. Either the work genuinely needs longer, or a single external call is hanging. Check [Traces](traces.md) before raising the timeout.
 
 **Queued** for an extended period means the run has been accepted but has not yet reached a runner.
 

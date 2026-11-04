@@ -18,7 +18,7 @@ Build turns a plain-language description into a working integration. You say wha
 | --- | --- |
 | **Integration or solutions engineer** | Turn a customer request into a tested integration the same day |
 | **Product manager** | Ship the integration a deal is waiting on, without queueing it for engineering |
-| **Developer** | Read and edit the generated workflow code, or write it yourself |
+| **Developer** | Read the generated workflow code, and edit it or write it yourself where code editing is on for your organization |
 | **Founder or CTO** | Say yes to "do you integrate with X?" and keep engineers on the core product |
 
 ## How do I use it?
@@ -41,7 +41,7 @@ Open **Build → Build with AI** in the dashboard, or type into the prompt on Ho
 {% endtab %}
 
 {% tab title="Code" %}
-Every workflow is a JavaScript module you can read and edit in the workflow editor, test with sample input, and version.
+Every workflow is a JavaScript module you can read in the workflow editor, test with sample input, and version. Editing the code yourself needs code editing to be switched on for your organization; where it is off, you change a workflow by describing the change to Build with AI.
 
 [Workflows](workflows/README.md) · [Write a workflow in code](../tutorials/saas-admin/configuring-a-workflow-in-code.md)
 {% endtab %}
@@ -85,9 +85,9 @@ Paste these into your AI tool or Build with AI, and adjust the apps and fields.
 
 Build is where integrations are made. Ten pages, in roughly the order you meet them.
 
-Six of them match a screen under **Integrations** in the sidebar. **Build with AI** has its own sidebar item and is also reached from the Home *What should your customers be able to do?* prompt. *Building from your AI agent*, *MCP gateway* and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
+Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. **Build with AI** has its own sidebar item and is also reached from the Home *What should your customers be able to do?* prompt. *Building from your AI agent*, *MCP gateway* and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
 
-{% content-ref url="agent/README.md" %}[Agent](agent/README.md){% endcontent-ref %}
+{% content-ref url="agent/README.md" %}[Build with AI](agent/README.md){% endcontent-ref %}
 
 {% content-ref url="building-from-your-ai-agent.md" %}[Building from your AI agent](building-from-your-ai-agent.md){% endcontent-ref %}
 

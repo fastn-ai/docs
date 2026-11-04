@@ -26,7 +26,7 @@ Then `create`, `get`, `list`, `search`, `update` or `delete` on it. To use anoth
 
 ## Find categories, entities and fields
 
-The catalogue is live. Read it rather than hard-coding it:
+The catalog is live. Read it rather than hard-coding it:
 
 ```typescript
 const catalog = await fastn.unified.listUnifiedCategories();
@@ -46,14 +46,14 @@ for (const category of catalog.data ?? []) {
 | `entities[].connectorSlugs` | The apps mapped for this entity: the values `provider` can take. |
 | `entities[].createFields` | The fields you can send: `{ field, label, type, required }`. `required: true` means a create is refused without it. |
 
-For example, the `crm` / `note` entity lists these `createFields`:
+For example, the `crm` / `note` entity can list `createFields` like these (read your own catalog for the current fields and labels):
 
 | `field` | `type` | `required` | `label` |
 | ------- | ------ | ---------- | ------- |
 | `body` | string | true | Body |
 | `parent_id` | string | true | Parent record ID |
 | `parent_type` | string | false | Parent record type (contact, deal, company, account, lead, opportunity) |
-| `created_at` | string | false | Created at (ISO 8601; used as the note timestamp for HubSpot) |
+| `created_at` | string | false | Created at (ISO 8601) |
 | `title` | string | false | Title |
 
 Times are ISO 8601 strings with `Z` or an offset, for example `2026-11-03T15:00:00Z`.
@@ -111,7 +111,7 @@ Answer:
 `id` is the record's id in the app. Keep it to read, change or delete the record later.
 
 * Pass an `idempotencyKey` on writes. Sending the same key again returns the first answer (the same `id`) instead of creating a second record. See [Errors, retries and options](errors-and-options.md#safe-retries-idempotencykey).
-* A field the catalogue does not know is refused: `400 UNIFIED_VALIDATION_FAILED` with `Unknown field "…"`. A missing required field gives `Field "…" is required`.
+* A field the catalog does not know is refused: `400 UNIFIED_VALIDATION_FAILED` with `Unknown field "…"`. A missing required field gives `Field "…" is required`.
 * A field the entity knows but this app does not map is skipped, and the answer says so in `warnings`, for example `["Field \"contact_id\" is not mapped for provider \"hubspot\" and was not sent"]`.
 
 A meeting looks the same:
@@ -143,7 +143,7 @@ const free = await availability.create({
   end_time: "2026-11-03T18:00:00Z",
   timezone: "Europe/London",
 });
-// free.data.busy = [ { start: "2026-11-03T15:00:00Z", end: "2026-11-03T15:30:00Z" } ]
+// free.data.busy: the busy intervals the calendar reports (the exact shape depends on the app)
 ```
 
 ---
@@ -169,7 +169,7 @@ const removed = await contacts.delete("51234567890", { idempotencyKey: "signup_9
 | `update(id, fields)` | `id` (required). `fields`: only the fields that change. | `{ id, provider, data }` |
 | `delete(id)` | `id` (required). | `{ id, provider, deleted: true }` |
 
-What delete means is up to the app. Some archive the record (HubSpot), so a later `get` fails. Some mark it cancelled (a Google Calendar meeting), so a later `get` still works and shows `status: "cancelled"`.
+What delete means is up to the app. Some archive or remove the record, so a later `get` fails. Others mark it cancelled, so a later `get` still works and shows the cancelled status. Check what your connected app does before relying on either.
 
 ---
 

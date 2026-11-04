@@ -12,12 +12,12 @@ A sync that stops is worse than a sync that fails loudly: nothing errors, nothin
 
 In the widget header, open the **⋯** menu and choose **Insights**.
 
-<figure><img src="../../.gitbook/assets/widget-menu-insights.png" alt="The widget header, titled Integrations with the subtitle Connect your favorite tools, with the three-dot menu open showing a single Insights item"><figcaption>The <strong>⋯</strong> menu in the widget header. Insights is the way in.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-menu-insights.png" alt="The widget header, titled Integrations with the subtitle Connect your favorite tools, with the three-dot menu open showing Insights"><figcaption>The <strong>⋯</strong> menu in the widget header. Insights is the way in; the same menu also shows <strong>Generate MCP URL</strong> unless your provider turned it off.</figcaption></figure>
 
 The panel that opens leads with your integration metrics - what is running, what needs attention, recent runs - and the alerts section sits at the bottom, below the workflow list.
 
 {% hint style="info" %}
-**No ⋯ menu, or no Insights in it?** Insights lives in that menu and is on by default, but an older widget configuration can leave it hidden. If it is not there, contact your SaaS provider - this is where alerts for your organization are set up.
+**No ⋯ menu, or no Insights in it?** Insights lives in that menu and is on by default, but your provider can switch the Insights section off. If it is not there, contact your SaaS provider - this is where alerts for your organization are set up.
 {% endhint %}
 
 ### The one-click start
@@ -28,6 +28,8 @@ With nothing set up yet, the section offers the two alerts most teams want:
 
 **Turn on failure alerts** creates an email the moment a run fails, plus a daily reliability check. If you do nothing else on this page, do that. **Custom alert** opens an empty card instead.
 
+The one-click option sends to the email address on your widget session. If the product didn't pass one, the button is disabled with the tooltip _No email on your session - create a custom alert instead_: use **Custom alert** and add your address under **Deliver to**.
+
 Once alerts exist, the one-click option stays available as a **Sync failure notifications** row - _Off - a sync can fail silently. Turn on to get notified the moment a run fails._ - with **+ New alert** beside it for everything else.
 
 ### Building a custom alert
@@ -37,11 +39,15 @@ A new alert is a card you edit in place. Every field is on it:
 <figure><img src="../../.gitbook/assets/widget-alert-card.png" alt="An expanded alert card named Untitled alert, badged Paused and No recipients, with Alert when set to a metric crosses a threshold on Error rate is above 5 percent over 24 hours, a Watch scope of All workflows, Deliver to rows for Email, Slack, Teams and Webhook, and a Firing history reading This alert has not fired yet"><figcaption>Defaults on a new alert: Error rate, is above, 5%, over 24 hours, watching all workflows.</figcaption></figure>
 
 1. **Name it** for what it means to you - _Orders stopped arriving_ beats _Untitled alert_.
-2. **Alert when** - either **a run fails (instant)**, which fires on the failure itself, or **a metric crosses a threshold**, the default.
-3. **Pick the metric**, the comparison (**is above** / **is below**), a value, and the window: 1 hour, 24 hours, 7 days or 30 days.
+2. **Alert when** - one of four options:
+   * **a run fails (instant)** - fires on the failure itself.
+   * **an event is not processed in time** - fires when an incoming event waits too long.
+   * **a metric crosses a threshold** - the default; set up in the next step.
+   * **workflow code raises it (fastn.alerts)** - fires when a workflow raises an alert from its own code.
+3. For a threshold alert, **pick the metric**, the comparison (**is above** / **is below**), a value, and the window: 1 hour, 24 hours, 7 days or 30 days.
 4. **Watch** - leave it on **All workflows**, or pick the specific ones this alert applies to.
 5. **Deliver to** - at least one channel. An alert with no recipients shows **No recipients** and notifies nobody.
-6. **Enable it.** A new alert is created **paused**. Flip the toggle on the card; its tooltip reads _Paused - click to enable_.
+6. **Enable it.** A new alert is created **paused**. Until it has a delivery, the toggle's tooltip reads _Add a Slack, email or webhook delivery before switching this on_, and clicking it takes you to **Deliver to**. Once a delivery is saved, the tooltip reads _Paused - click to enable_; flip the toggle on.
 
 {% hint style="danger" %}
 **A new alert is paused, and the card saves as you type.** Those two together are the trap: edits persist the moment you make them, with no Save button to confirm and nothing to cancel - but filling in every field still leaves the rule **paused** until you flip the toggle. A card you completed and walked away from is not watching anything.
@@ -60,7 +66,7 @@ A new alert is a card you edit in place. Every field is on it:
 | **Avg run time** | Average run duration. | ms |
 | **p95 run time** | Slowest runs - catches tail latency. | ms |
 | **Broken connectors** | Connections that are not active right now. | count |
-| **Inactive workflows** | Enabled integrations that have not run in the window. | count |
+| **Inactive workflows** | Enabled workflows that have not run in the window. | count |
 
 {% hint style="warning" %}
 Watch the unit when you type a threshold. **Error rate is above 5** means five _percent_. Switch to **Failed runs** and the same 5 means five _runs_ - a far tighter trigger than it looks. The run-time metrics are in milliseconds, so a five-second threshold is `5000`.
@@ -79,7 +85,7 @@ Four channels, each a row with its own **Send via** choice:
 
 The connection options only list apps **you** have connected and that are currently active. Routing through a connected Slack or Teams account means no webhook URL to generate and no secret to store.
 
-Each card also has a **Send test** button that posts a sample through whatever you have configured. It is disabled until you add a channel - the tooltip says _Add a channel first_ - and it is the fastest way to confirm delivery works, rather than waiting for a real failure to find out.
+Each card also has a **Send test** icon button that posts a sample through whatever you have configured. It is disabled until you add a channel - the tooltip says _Add a Slack, email or webhook delivery before sending a test_ - and it is the fastest way to confirm delivery works, rather than waiting for a real failure to find out.
 
 ### A starting set
 

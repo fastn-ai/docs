@@ -16,9 +16,9 @@ The connector's name and icon, the connection's name (for example `Default`), it
 
 | Field | Meaning |
 | --- | --- |
-| **Customer** | *The customer this credential belongs to.* For your own connections, this is your organisation. |
+| **Customer** | *The customer this credential belongs to.* For your own connections, this is your organization. |
 | **Connector** | *Opens the connector this connection uses.* Click it to go to the [connector detail page](../connectors/inside-a-connector.md). |
-| **Auth method** | How the connection was authorised, for example `OAUTH_2` (*Your customer signed in and approved access.*). See [Auth types](auth-types.md). |
+| **Auth method** | How the connection was authorized, for example **OAuth 2.0** (*Your customer signed in and approved access.*). See [Auth types](auth-types.md). |
 | **Scope** | **Account level**: *Shared across your whole workspace rather than one project.* |
 | **Connection ID** | *Pass this to the API to act as this customer.* The copy button copies it. |
 
@@ -26,7 +26,7 @@ The connector's name and icon, the connection's name (for example `Default`), it
 
 | Field | Meaning |
 | --- | --- |
-| **Expires** | When the current credential expires. *fastn renews this automatically before it runs out.* If renewal failed, it reads *Expired* with the date. |
+| **Expires** | How long until the current credential expires, with the date (for example *3 days* and the date). *fastn renews this automatically before it runs out.* Once the date has passed, it reads *Expired* with the date. For connections that are not OAuth, it reads *Not applicable*; for an OAuth token with no expiry, *Does not expire*. |
 | **Last refreshed** | *The last time fastn renewed this credential.* |
 | **Last used** | When a call last went through this connection, or *Never*. |
 | **Created** | *When your customer authorised it.* |
@@ -36,11 +36,11 @@ Use this panel to tell whether a refresh is still succeeding. An **Expires** dat
 
 ### Recent activity
 
-The latest calls made through this connection. **View all** opens the full list in [Activity](../../operate/README.md). Until something has run, it reads *Nothing has come through this connection yet. Calls appear here as soon as your customer starts using it.*
+The latest calls made through this connection. **View all** opens [Activity](../../operate/README.md) on its **Events** tab, which is not filtered to this connection. Until something has run, it reads *Nothing has come through this connection yet. Calls appear here as soon as your customer starts using it.*
 
 ### Reconnect
 
-**Reconnect** (in the header, or in the row's **⋯** menu on the Connections page) runs the sign-in again for the same connector and replaces the stored credential. Use it for `Expired` and `Failed` connections, or after the account's password or key changed.
+**Reconnect** (in the header, or in the row's **⋯** menu on the Connections page, alongside **Rename** and **Disconnect**) runs the sign-in again for the same connector and replaces the stored credential. Use it for `Expired` and `Failed` connections, or after the account's password or key changed.
 
 ### Disconnect
 

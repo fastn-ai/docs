@@ -13,7 +13,7 @@ This step is for what your customers do: connect their own accounts in the widge
 |  | Without fastn | With fastn |
 | --- | --- | --- |
 | Connecting | Customers send credentials to your support team, or you build a connect flow per system | Customers sign in to each system in the widget; their credentials stay theirs |
-| Customizing | Feature requests and custom code per customer | Customers change mappings, filters and direction in **Configure**, or with **Build with AI** |
+| Customizing | Feature requests and custom code per customer | Customers change mappings, filters and direction in **Configure**, or with the widget's AI assistant |
 | Knowing it works | Customers report what broke | **Insights** shows runs and connection health, with alerts by email, Slack, Teams or webhook |
 | Supporting customers | Search your own logs | You see each customer's connections, runs and events, and can replay a failed delivery |
 
@@ -24,7 +24,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | Customer | One of your customers. It must be Active before its integrations run |
 | Connection | A customer's signed-in account on one system |
 | Configuration | A customer's own direction, field mappings and filters, copied from the integration's configuration template |
-| Build with AI | The customer describes a change in plain words and reviews it before saving |
+| AI assistant | The customer describes a change in plain words and reviews it before saving |
 | Insights and alerts | Runs, records, errors and connection health, with failure and threshold alerts |
 
 ### Ways to do it
@@ -43,7 +43,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | Different field names | Maps their "Region" field to your "Territory" |
 | Only some records | Adds a filter, for example only deals above a value |
 | One way instead of two | Turns off one direction of a two-way sync |
-| A change in plain words | Asks **Build with AI**, then reviews each labelled change |
+| A change in plain words | Asks the widget's AI assistant, then reviews each labeled change |
 | Something broke | Sees it in **Insights**, or reconnects an expired connection |
 
 ### What to know
@@ -51,8 +51,8 @@ This step is for what your customers do: connect their own accounts in the widge
 * **Activate customers.** A customer in **Pending admin activation** can't run integrations until an admin activates it.
 * **First-time setup.** A configurable integration needs its first configuration made once by your team (Operator role or higher). Until then, the customer's **Configure** shows "No configuration found for this widget".
 * **Changes apply on the next run.** Records already synced keep their old values.
-* **Build with AI** sits at the bottom of the widget's **Apps** tab. It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add a system you don't offer, re-sync old records, change the schedule or add custom logic.
-* **Limits.** Customers share your plan's limits. Change one customer's in **Settings** → **Billing** → **Customize Customer Limits**.
+* **The AI assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add a system you don't offer, re-sync old records, change the schedule or add custom logic.
+* **Limits.** Customers share your plan's limits. Change one customer's in **Settings** → **Billing** → **Customize customer limits**.
 
 ### In the onboarding
 

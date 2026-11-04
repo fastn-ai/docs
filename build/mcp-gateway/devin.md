@@ -34,7 +34,7 @@ Devin shows **Enable MCP integration**. Tick **I understand and want to proceed*
 {% step %}
 #### Connect and pick the workspace
 
-Click **Connect MCP** on fastn's row, then **Open** when Devin asks to open the external website. fastn opens in your browser. Sign in if asked, pick the workspace Devin works in and click **Connect**.
+Click **Connect MCP** on fastn's row, then **Open** when Devin asks to open the external website. fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Devin works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-devin-choose-workspace.webp" alt="fastn's page titled Which workspace should Devin use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Devin to it.</figcaption></figure>
 

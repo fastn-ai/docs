@@ -17,6 +17,6 @@ description: "The Layout tab: header content and the sections your customers see
 
 | Section                 | Notes                                                             |
 | ----------------------- | ------------------------------------------------------------------- |
-| **Header and branding** | Your title, subtitle and accent colour across the top.             |
+| **Header and branding** | Your title, subtitle and accent color across the top.             |
 | **AI assistant**        | The assistant surface inside the widget.                           |
 | **Search bar**          | Worth keeping once there are more than about a dozen connectors.   |

@@ -6,9 +6,13 @@ description: Integrations, layout, style and features of the panel your customer
 
 <figure><img src="../../.gitbook/assets/lifecycle/fastn-lifecycle-2-publish.svg" alt="Stage 2, Publish: the product owner adds integrations to the widget catalog and chooses what customers may change"><figcaption><p>Where this fits: stage 2 of the integration lifecycle</p></figcaption></figure>
 
-**Widgets**: the Layout, Style and Features tabs. The Embed tab has its [own page](../embedding/README.md).
+**Embed → Widget**: the Layout, Style and Features tabs. The Embed tab has its [own page](../embedding/README.md).
 
-Opening **Widgets** takes you straight into the builder; there is no widget list page. A **Live** badge sits in the header once the widget has been saved, and **Widget actions** ⋯ offers **Reset to defaults**. The sticky footer carries **Reset** and **Save and publish**.
+Opening **Widget** takes you straight into the builder; there is no widget list page. The header badge reads **Live** when everything is saved and **Unsaved changes** while you have edits pending, and **Widget actions** ⋯ offers **Reset to defaults**. The sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits) and **Save and publish**.
+
+{% hint style="warning" %}
+**Reset** and **Reset to defaults** do the same thing: after you type `RESET` in the **Reset widget to defaults?** dialog, they publish the default configuration to every customer using the widget, immediately, and it cannot be undone. To drop edits you have not saved, use **Discard changes**.
+{% endhint %}
 
 ## Integrations
 
@@ -22,19 +26,10 @@ An integration that moves data between two systems shows both logos and a direct
 
 | Tab         | What it offers                                                    |
 | ----------- | ------------------------------------------------------------------- |
-| **Apps**    | **Select connectors**: individual systems from your catalogue.    |
+| **Apps**    | **Select connectors**: individual systems from your catalog.      |
 | **Unified** | Unified API categories rather than one connector at a time.        |
 
-**Scope:** decides whose credentials the integration uses.
-
-| Scope          | Meaning                                                        |
-| -------------- | ---------------------------------------------------------------- |
-| **Org level**  | Default. Connections are shared across the organisation.        |
-| **User level** | Each customer connects their own account.                       |
-
-{% hint style="warning" %}
-**Org level** is the default, and it is the wrong default for most embedded products: it shares one set of connections rather than giving each customer their own. If your customers are meant to authorise their own accounts, choose **User level**.
-{% endhint %}
+On the **Apps** tab, **Scope:** offers **Organization level** (the default, captioned "Shared connections") or **User level** ("Per-customer connections"). The choice is recorded on each integration you create (it sets the integration's sync direction and agent context); it does not share or separate connections. Which customer's connections an integration uses comes from the embed token the widget runs with.
 
 ### Edit Integration
 

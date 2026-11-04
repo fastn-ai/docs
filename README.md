@@ -27,7 +27,7 @@ Every customer asks for integrations. Some you already have, but they need to fi
 {% step %}
 ### Build
 
-Your integration builder describes the integration in plain words, with **Build with AI** in the dashboard, or from Claude or Cursor over MCP. The agent picks the connectors, writes the workflow, and generates and runs test cases. [Build with the agent](build/README.md)
+Your integration builder describes the integration in plain words, with **Build with AI** in the dashboard, or from your AI tool, such as Claude or Cursor, over MCP. fastn's agent picks the connectors, writes the workflow, and generates and runs test cases. [Build with the agent](build/README.md)
 {% endstep %}
 
 {% step %}
@@ -39,13 +39,13 @@ You save, publish and deploy a version, then add it to your widget's integration
 {% step %}
 ### Embed
 
-Your developer drops the widget into your product with an iframe or the SDK. Your backend issues a short-lived token per customer, so every connection is scoped to the right tenant. [Embed the widget](embed/embedding/README.md)
+Your developer drops the widget into your product with an iframe or the SDK. Your backend issues a short-lived token per customer, so every connection is scoped to the right customer. [Embed the widget](embed/embedding/README.md)
 {% endstep %}
 
 {% step %}
 ### Customize
 
-Inside your product, each customer connects their own accounts, maps fields to fit how they work, and can ask the widget agent for a change or an integration that doesn't exist yet. Nothing ships until it is approved. [What your customers see](tutorials/end-user/README.md)
+Inside your product, each customer connects their own accounts, maps fields to fit how they work, and can ask the widget's AI assistant for a change or an integration that doesn't exist yet. Nothing ships until it is approved. [What your customers see](tutorials/end-user/README.md)
 {% endstep %}
 
 {% step %}

@@ -26,7 +26,7 @@ Open `~/.gemini/config/mcp_config.json` in any editor (create it if it does not 
 
 The key must be `serverUrl`. Antigravity does not read `url` or `httpUrl`, and a server written with them silently loads no tools.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-antigravity.webp" alt="fastn's MCP server page with the Antigravity tile selected, showing a note that Antigravity's remote field is serverUrl and a ~/.gemini/config/mcp_config.json snippet with a fastn serverUrl entry"><figcaption>The Antigravity tab under <strong>Connect AI tools</strong> in fastn has the same snippet with a Copy button.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-antigravity.webp" alt="fastn's MCP server page with the Antigravity tile selected, showing a note that Antigravity's remote field is serverUrl and a ~/.gemini/config/mcp_config.json snippet with a fastn serverUrl entry"><figcaption>The Antigravity tile under <strong>Connect AI tools</strong> in fastn has the same snippet with a Copy button.</figcaption></figure>
 
 In the Antigravity IDE you can open the same file from the agent panel: the **…** menu at the top, then **MCP Servers** → **Manage MCP Servers** → **View raw config**. For one workspace only, use `.agents/mcp_config.json` in that folder.
 {% endstep %}
@@ -44,7 +44,7 @@ fastn shows a red dot and an *Unauthorized* error until you sign in. Click **Aut
 {% step %}
 #### Pick the workspace
 
-fastn opens in your browser. Sign in if asked, pick the workspace Antigravity works in and click **Connect**.
+fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Antigravity works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-antigravity-choose-workspace.webp" alt="fastn's page titled Which workspace should Google Antigravity (antigravity.google) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Antigravity to it.</figcaption></figure>
 {% endstep %}

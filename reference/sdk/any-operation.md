@@ -4,7 +4,7 @@ description: "Every other fastn API operation from the SDK: by area, by name wit
 
 # Any other operation
 
-The pages before this one cover the common partner flow. The SDK also has a method for every other partner operation of the fastn API.
+The pages before this one cover the common flow. The SDK also has a method for every other operation of the fastn API that your key can call.
 
 ### By area
 
@@ -62,7 +62,7 @@ for await (const event of paginate((input) => fastn.events.listEvents(input), {}
 | `offsetKey` | `offset` | The input name for the offset. Set it to `null` for cursor-only lists. |
 | `cursorKey` | `cursor` | The input name for the cursor. |
 | `rows` | `data`, `data.items`, `items` or `records` | A function that picks the rows out of an answer. |
-| `nextCursor` | `nextCursor`, `data.nextCursor` or `cursor` | A function that picks the next cursor out of an answer. |
+| `nextCursor` | `nextCursor`, `data.nextCursor`, `pagination.nextCursor` or `data.pagination.nextCursor` (never `cursor`) | A function that picks the next cursor out of an answer. |
 | `maxPages` | 1000 | A safety cap on pages. |
 
 For unified records, page with `cursor` and `hasMore` as shown in [Unified records](unified-records.md#list-and-page-through-records).

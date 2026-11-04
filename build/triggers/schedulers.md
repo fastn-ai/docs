@@ -6,13 +6,12 @@ description: A trigger that fires on a clock you set.
 
 A schedule trigger fires on a clock you set: nightly reconciliation, hourly pulls, anything time-based.
 
-**Columns:** `Name`, `Tenant`, `Schedule`, `Next run`, `Last run`, `Status`, `Failures`, `Timezone`, `Routes`, `Created`, `Actions`.
+**Columns:** `Name`, `Schedule`, `Next run`, `Last run`, `Status`, `Failures`, `Timezone`, `Routes`, `Created`, `Actions`.
 
-Three of those are worth knowing before you scan the table:
+Two of those are worth knowing before you scan the table:
 
-* **`Schedule`** shows the cron expression the trigger compiles to, whichever mode built it.
+* **`Schedule`** shows `Every N unit` (for example `Every 5 minutes`) for an interval schedule, and the cron expression for every other mode.
 * **`Failures`** counts *consecutive* failures, and resets on a success. A number climbing here is the early warning that fastn is about to disable the trigger for you. See [when fastn disables a trigger](README.md#when-fastn-disables-a-trigger-for-you).
-* **`Tenant`** is the customer a trigger belongs to, and reads `-` for org-level triggers.
 
 ### Create a schedule trigger
 
@@ -22,7 +21,7 @@ Three of those are worth knowing before you scan the table:
 
 From **Add trigger**, choose **Schedule**, and give it a **Name** (and an optional **Description**).
 
-<figure><img src="../../.gitbook/assets/schedule-trigger-form.jpg" alt="The New schedule trigger dialog with Name and Description fields, mode pills Interval, Daily, Weekly, Monthly and Custom, Run every set to 5 minutes, and Timezone Asia/Karachi"><figcaption>Interval is the default mode, and the timezone defaults to your browser's.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/schedule-trigger-form.jpg" alt="The New schedule trigger dialog with Name and Description fields, mode pills Interval, Daily, Weekly, Monthly and Custom, Run every set to 5 minutes, and Timezone Asia/Karachi"><figcaption>Interval is the default mode. The timezone defaults to your organization's default timezone if one is set, otherwise to your browser's.</figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -38,19 +37,19 @@ Five modes:
 | **Monthly**  | **Day of month**, 1-31 (one day, not several) and a time.                                        |
 | **Custom**   | **Cron expression**, required. *Standard 5-field cron: minute hour day-of-month month day-of-week*  |
 
-**Whichever mode you pick, fastn stores a cron expression**, and that is what the list's `Schedule` column shows. A trigger built with *Daily, 06:00* displays `0 6 * * *`; one built with *Interval, every 5 minutes* displays `*/5 * * * *`. The modes are a friendlier way to write the same thing, which is also why **Custom** exists: it is the escape hatch for schedules the other four cannot express.
+**An interval is stored as a rate; every other mode is stored as a cron expression**, and the list's `Schedule` column shows whichever was stored. A trigger built with *Interval, every 5 minutes* displays `Every 5 minutes`; one built with *Daily, 06:00* displays `0 6 * * *`. **Custom** is the escape hatch for schedules the other four cannot express.
 {% endstep %}
 
 {% step %}
 #### Set the timezone and start
 
-**Timezone** is required and defaults to your browser's zone, not your organisation's, and not the one on [your profile](../../manage/profile.md), which only controls how times are displayed to you. Two more fields sit alongside it: **Starts at**, optional, and **Run immediately on create**, a checkbox.
+**Timezone** is required. A new schedule defaults to your organization's default timezone (set under **Settings → General**) if one is set, otherwise to your browser's zone. It does not use the one on [your profile](../../manage/profile.md). An existing schedule keeps the zone it was saved with. Two more fields sit alongside it: **Starts at**, optional, and **Run immediately on create**, a checkbox.
 {% endstep %}
 
 {% step %}
 #### Add routes, with a payload if the workflow needs one
 
-Routes on a schedule trigger carry one field the other two do not: **Payload (JSON)**, optional, which is the body handed to the workflow when there is no inbound request to supply one.
+At least one route is required, and each route needs a **Workflow**. Each route also has an optional **Environment** (defaulting to **test (latest published)**, which runs the latest published version) and optional **Headers** (key/value). Routes on a schedule trigger carry one field the other two do not: **Payload** (JSON), optional, which is the body handed to the workflow when there is no inbound request to supply one.
 {% endstep %}
 
 {% step %}

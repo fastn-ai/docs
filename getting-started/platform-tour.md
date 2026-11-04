@@ -10,20 +10,18 @@ The top bar carries the same controls on every screen.
 
 | Element | What it does |
 | --- | --- |
-| **Search** (⌘K / Ctrl+K) | Finds connectors, workflows and customers. Results are grouped by type. The action **Use fastn from Claude or any MCP client** is here too. |
+| **Search** (⌘K / Ctrl+K) | Finds connectors, workflows and customers. Results are grouped by type. The action **Connect fastn to your AI tool** is here too. |
 | **Help** (?) | **Take a tour** of the current page, **Documentation** (these docs) and **Contact support**. |
 | **Theme** | Switches the dashboard between light and dark. |
-| **Credits** | Your AI credits left this month. Click it for a breakdown by agent and the org total. Credits reset at the start of each calendar month, UTC. |
+| **Report a bug** | Sends a bug report to fastn. |
+| **Connect AI tools** | Connects Claude, Cursor, ChatGPT or any MCP client to fastn, from any page. Building from your AI tool uses no AI credits. |
+| **Credits** | Owners and Admins only. Your AI credits left this month. Click it for a breakdown by agent and the org total. Credits reset at the start of each calendar month, UTC. |
 
-The account card at the bottom-left switches organisation and opens your profile.
-
-{% hint style="success" %}
-**New to a page?** Most pages offer a short guided tour the first time you open them. You can replay it any time from **Help → Take a tour**.
-{% endhint %}
+The account card at the bottom-left switches organization and opens your profile.
 
 ### Where everything lives
 
-The sidebar follows the three steps of putting fastn in your product: **Build**, **Embed** and **Operate**, then **Settings**. Every item in a step group is a page; the sections inside a page are its tabs. What you see depends on your [role](../manage/roles.md).
+The sidebar starts with **Home**, then follows the three steps of putting fastn in your product: **Build**, **Embed** and **Operate**. **Settings** sits in its own unlabeled group at the end. Every item in a step group is a page; the sections inside a page are its tabs. What you see depends on your [role](../manage/roles.md).
 
 | Group | Item | Route | Docs |
 | --- | --- | --- | --- |
@@ -39,9 +37,9 @@ The sidebar follows the three steps of putting fastn in your product: **Build**,
 | | API keys and MCP → MCP server | `/access?tab=mcp` | [Build from Claude, Cursor or any agent](../build/mcp-gateway/README.md) |
 | Operate | Customers | `/customers` | [Customers](../operate/customers.md) |
 | | Connections | `/connections` | [Connections](../build/connections/README.md) |
-| | Health → Needs attention, Overview, Updates, Alerts | `/health` | [Operate](../operate/README.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
+| | Health → Needs attention, Overview, Pending updates, Alerts | `/health` | [Operate](../operate/README.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
 | | Activity → Events, Executions, Sync reports | `/activity/*` | [Activity](../operate/README.md) |
-| | Settings | `/settings/*` | [Settings](../manage/README.md) |
+| (own group) | Settings | `/settings/*` | [Settings](../manage/README.md) |
 
 {% hint style="info" %}
 **Build with AI** in the sidebar and the **What should your customers be able to do?** prompt on Home open the same builder at `/agent`. See [Build with the agent](../build/agent/README.md).
@@ -49,25 +47,26 @@ The sidebar follows the three steps of putting fastn in your product: **Build**,
 
 ### Home
 
-Home opens with your greeting and, under it, one small line: **Launch your first integration**, with how many of the four steps are done. Click it to open the checklist. Below it, a switch picks who builds:
+Home asks one question: **What should your customers be able to do?** (with your product's name in it once fastn knows it). Under it, for roles that can use the builder, a prompt box reads *Describe an integration in plain words…*. Send it and **Build with AI** opens at `/agent` with your request, and fastn's agent starts building it using AI credits.
 
-- **Your AI tool** (the default): **Connect fastn to your AI tool** connects Claude, Cursor, Codex or any MCP client once. Then, from your AI tool: select integrations, or build new ones in plain words, and embed the fastn widget in your product. Your customers select, connect and customize them, and fastn keeps them working. No AI credits needed. **Try asking it** offers starting prompts: click one to copy it, then paste it into your AI tool.
-- **fastn agent**: the prompt box, *What do you want to build?*, where fastn's agent builds it for you using AI credits, with suggestion chips under it.
+Below the box, **Ideas** (or **Ideas for** your product) offers up to three suggestions, written for your product where fastn has researched it. Click one to send it to the builder. Roles that cannot use the builder see links to pages instead, such as **Browse connectors** or **View activity**.
 
-The checklist has four steps. Testing is part of each step rather than a step of its own. Each step is marked done, current or not started from what actually exists in your account. A line at the top lets you connect your AI tool once for every step, and the current step carries one action:
+To build from Claude, Cursor or another AI tool instead, use **Connect AI tools** in the top bar.
+
+### Your first integration (setup checklist)
+
+Setup has four steps, the same four that onboarding at `/onboarding` walks you through:
 
 | Step | Done when |
 | --- | --- |
-| **1. Connect your product** | Your own product is connected (Build → Connect your product). Admin work: a developer sees it waiting on an admin and carries on with step 2. |
-| **2. Build your first integration** | Your widget offers at least one connector, or a workflow exists. |
-| **3. Embed the widget** | The widget exists and an API key or an installation does. |
-| **4. Connect a customer** | A customer has made a connection, or an installation is active. |
+| **1. Connect your product** | Your own product is registered under **Build** → **Connect your product**. This is admin work: a Developer sees it waiting on an admin and carries on with step 2. |
+| **2. Choose integrations** | Your widget offers at least one connector, **Catalog connectors** is on in the widget, or a workflow exists. |
+| **3. Embed the widget** | The widget has loaded on a page of your own product, or a customer has connected (which can only happen through the widget). |
+| **4. Customers connect and customize** | A customer has connected an app in the widget (a connection to anything other than your own product), or a customer's installation is active. |
 
-Inside step 2, **How an integration is built** opens the five parts every integration is made of: the connector, the workflow, the trigger, the connection and the widget, each linking to where you manage it.
+Each step is marked from what actually exists in your account, not from a stored checklist, so a step done from your AI tool or another tab ticks over too. Finishing a step earns its onboarding AI credits.
 
-The current step shows what it's waiting for, such as *Waiting for your product to be connected*. The checklist checks again every few seconds while it's open, so when you finish a step, here or from your AI tool, it ticks over without a reload.
-
-You don't have to come back to Home to see the checklist. A **Your first integration** pill at the bottom of the left rail opens it on any page. Once you're set up, the pill becomes **How fastn works** and stays there, so the five parts are always one click away. **Connect your AI tool** also sits in the top bar, next to your AI credits, on every page.
+Owners, Admins and Developers see a **Your first integration** pill at the bottom of the left rail, with how many of the four steps are done (for example `1/4`). Click it on any page to open the checklist: each step with a line on what it needs, where to do it in the app, and its docs. The pill goes away once setup is complete.
 
 ### Build → Connect your product
 
@@ -75,13 +74,13 @@ Your own product, through its API or webhooks, registered as a connector so your
 
 ### Build → Integrations
 
-Integrations is the third-party catalogue and opens on **Connectors**: an integration starts from the app your customers use. Your own product is not here; it has its own row, **Connect your product**.
+Integrations is the third-party catalog and opens on **Connectors**: an integration starts from the app your customers use. Your own product is not here; it has its own row, **Connect your product**.
 
-<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 415 catalogue cards (AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha!), each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
+<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 415 catalog cards (AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha!), each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
 
 | Tab                   | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
-| **Connectors**        | Every system your customers can authorise. **Create connector** opens one menu: from scratch, Build with AI, build from Claude or any MCP client, or import from a file. **Request connector** asks fastn to add one. |
+| **Connectors**        | Every system your customers can authorize. **Create connector** opens one menu: from scratch, Build with AI, build from Claude or any MCP client, or import from a file. **Request connector** asks fastn to add one. |
 | **Workflows**         | The JavaScript that runs, with editor, tests, executions and API details.                        |
 | **Triggers**          | Webhooks, schedules and app events that start workflows.                                         |
 | **Unified APIs**      | One canonical endpoint per business entity, backed by whichever providers you connect.           |
@@ -92,7 +91,7 @@ Integrations is the third-party catalogue and opens on **Connectors**: an integr
 
 <figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="Widget builder, Layout tab, badged Live, beside a Tablet-width preview: purple Integrations header, Connect your favorite tools, a search box, and TikTok Shop marked Not connected"><figcaption>Left: what you configure. Right: exactly what your customer sees.</figcaption></figure>
 
-The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset** and **Save and publish**; a **Live** badge appears once the widget is saved, and **Widget actions** offers **Reset to defaults**.
+The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits) and **Save and publish**. **Reset** publishes the defaults to every customer using the widget straight away, after you type `RESET` to confirm; **Widget actions** → **Reset to defaults** does the same. A **Live** badge appears once the widget is saved.
 
 ### Embed → API keys and MCP
 
@@ -106,7 +105,7 @@ Two tabs. **API keys** are what your backend uses to mint embed tokens and call 
 
 ### Operate → Connections
 
-Every connection your customers have made on your connectors, across every customer, with its status. The **My organisation** view shows the connections your own organisation holds, which your workflows act through. Documented under [Connections](../build/connections/README.md).
+Every connection your customers have made on your connectors, across every customer, with its status. The **My organization** view shows the connections your own organization holds, which your workflows act through. Documented under [Connections](../build/connections/README.md).
 
 ### Operate → Health
 
@@ -114,9 +113,9 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 
 | Tab | Answers |
 | --- | --- |
-| **Needs attention** | Opens first. Every vendor change waiting for review, every customer connection that expired or failed, and every workflow that failed today, each with its action: **Review patch**, **Open connection**, or **Runs** and **Fix with AI**. |
+| **Needs attention** | Opens first. Every vendor change waiting for review, every customer connection that expired or failed, and every workflow that failed today, each with its action: **Review**, **Open connection**, or **Runs** and **Fix with AI**. |
 | **Overview** | Every customer's integration health in one place: who needs attention, runs and records over time, connection health, what is failing and why. See [Operate](../operate/README.md). |
-| **Updates** | The full review of each vendor patch the maintainer agent proposes: the diff, accept or refuse. Nothing is applied until you accept it. See [Pending connector updates](../build/connector-updates.md). |
+| **Pending updates** | The full review of each vendor patch the maintainer agent proposes: the diff, accept or refuse. Nothing is applied until you accept it. See [Pending connector updates](../build/connector-updates.md). |
 | **Alerts** | What should page us, and where. See [Alerts](../operate/alerts.md). |
 
 ### Operate → Activity
@@ -141,8 +140,8 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 
 Two capabilities are gated by role rather than by permission: using the builder, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
 
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organisation block holding the organisation Name and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner: organisation identity first, joining rules second.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organization block holding the organization Name and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner: organization identity first, joining rules second.</figcaption></figure>
 
 ### The account card
 
-Bottom-left. It shows who you are and which organisation you are in. The chevron opens [your profile](../manage/profile.md); the up-down arrows open **SWITCH ORGANISATION**, which lists every organisation you belong to with your role in each: Platform Admin, Owner, Admin, Developer or Operator. Everything else in the dashboard is scoped to whichever organisation is selected, so check this first when something you expected to find is missing.
+Bottom-left. It shows who you are and which organization you are in. The chevron opens [your profile](../manage/profile.md); the up-down arrows open **Switch organization**, which lists every organization you belong to with your role in each: Owner, Admin, Developer, Operator or Viewer (fastn staff show as Platform Admin). Everything else in the dashboard is scoped to whichever organization is selected, so check this first when something you expected to find is missing.

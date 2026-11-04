@@ -21,7 +21,7 @@ const batchSize = await fastn.envConfig.get("BATCH_SIZE");
 
 **Add config** opens the **Add Config** dialog, which takes two things.
 
-**Key \*** is the string your code passes: `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`.
+**Key \*** is the string your code passes: `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`. A key must start with a letter and contain only letters, numbers, `_`, `.` or `-`. A key that already exists is refused: edit that config instead, since adding it again would replace its value.
 
 **Values per environment** is one editor per environment, labelled with the display name and the slug: **Test (test)**, **Live (live)**, and a row for each named environment you have added. A value may be raw text or valid JSON.
 

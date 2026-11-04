@@ -1,133 +1,107 @@
 ---
 description: >-
-  Configure your organization profile, environments, API keys, and project
-  settings after your first fastn login.
+  Configure your organization profile, team access, customers, plan limits and
+  audit log after your first fastn login.
 ---
 
 # Setting Up Your Organization
 
-After the Setup Assistant configures your core integrations, workflows, and widget, there are a handful of organization-level settings that allows you to control your company profile, team access, customer management, and billing. This tutorial walks through each one.
+Onboarding (at `/onboarding`) takes you through four steps: **Connect your product**, **Choose integrations**, **Embed the widget** and **Customers connect and customize**. Alongside it, a handful of organization-level settings control your company profile, team access, customer management and billing. This tutorial walks through each one.
 
 ### Step 1: Configure organization settings
 
-1. Click **Settings** in the top nav.
-2. Click **General** in the left sidebar.
+1. Click **Settings**, the last item in the left sidebar.
+2. Click **General**.
 
-Here you can configure:
+The **Organization** card holds:
 
-**Organization Name** - How your company appears across the platform.
+**Name** - How your company appears across the platform.
 
 **Timezone** - Used for scheduled triggers and activity timestamps.
 
-**Domain & Access Control** - Set your email domain (e.g., `yourcompany.com`) so team members signing up with that domain can request to join. Toggle **"Auto-approve domain users"** to skip manual approval for teammates with matching email domains.
+The **Joining by email domain** card lets people sign up and ask to join instead of waiting for an invite:
 
-#### Company Research Report
+* **Email domain** - Your company's domain (for example `yourcompany.com`). It has to be a domain your organization controls, not a mailbox provider.
+* **Approve automatically** - Off means an admin has to approve each request. Leave it off unless the domain is yours alone.
+* **Role people joining on this domain get** - The starting role for people who join through the domain. It also preselects the role when you invite someone on that domain.
 
-During onboarding, the Setup Assistant's AI researched your company automatically and analyzed your existing integrations, customer ecosystem, competitive landscape, and integration gaps. The results are saved here.
-
-Scroll down on the General page to find the **Company Research Report** card.
-
-This report is what informed the AI's connector recommendations and workflow suggestions during onboarding. Revisit it when planning new integrations or evaluating which connectors to prioritize next.
-
-#### Reset Onboarding
-
-At the bottom of the General page: **Reset Onboarding**. This reruns the Setup Assistant from scratch.
-
-{% hint style="danger" %}
-&#x20;This is irreversible. It deletes your qualification wizard answers and every Setup Assistant thread. Only use this for testing or if you need to completely restart your onboarding configuration.
-{% endhint %}
-
-### Step 2: Review OAuth Apps
-
-The Setup Assistant may have already configured OAuth for your connectors during onboarding  when the AI set up inline auth, those configurations were saved here.
-
-1. Go to **Settings → OAuth Apps**.
-2. You'll see the list of platforms fastn manages OAuth for.
-
-fastn manages OAuth apps on your behalf for common platforms, meaning you can authenticate connectors without creating your own OAuth application in the third-party's developer portal. If your connector's platform isn't listed, your development team will need to create an OAuth app in the third-party's developer settings and configure it here.
-
-### Step 3: Invite your team
+### Step 2: Invite your team
 
 1. Go to **Settings → People**.
-2. Click **"Invite User"**.
+2. Click **Invite someone**.
 3. Enter their email address.
 4. Select a role.
-5. Click send andhey'll receive an email to join.
+5. Send the invite. They'll receive an email to join.
 
-The People page shows a table with columns: **USER, ROLE, TEAMS, STATUS, LAST ACTIVE**. Filter by role, status, or team.
+The People page shows a table with columns **Person**, **Role**, **Status**, **Added** and **Access** (Access shows when a time-limited grant ends).
 
 #### Roles
 
-fastn has six system roles. Each role has a fixed set of permissions across Connectors, Connections, Workflows, Agents, and Tools:
+fastn has these system roles. **Settings → Roles** counts each role's permissions across 11 resources (Connectors, Connections, Workflows, Users, Settings, Events, Secrets, Executions, Widgets, Customers and Unified API), 44 permissions in all:
 
 | Role          | Permissions | What they can do                                                                                                      |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Owner**     | 39          | Full access to everything an Admin can do, plus ownership transfer and organization deletion. One per organization.   |
-| **Admin**     | 39          | Full access to connectors, workflows, customers, billing, settings. Cannot transfer ownership.                        |
-| **Developer** | 34          | Allows a user to build connectors, workflows, agents. No billing or organization settings.                            |
-| **Operator**  | 18          | Can run workflows, monitor activity. Cannot create or modify connectors or workflows.                                 |
-| **Viewer**    | 7           | Read-only access across the platform.                                                                                 |
-| **End User**  | 9           | Widget-only access. Can connect apps, view sync status, configure their own integrations through the embedded widget. |
+| **Owner**     | 44          | Everything an Admin can do, plus managing admins and transferring ownership. One per organization.                    |
+| **Admin**     | 44          | Full access within the organization and its customers: connectors, workflows, customers, billing, settings.          |
+| **Developer** | 36          | Builds and deploys connectors, workflows and agents. No billing, people management or audit log.                     |
+| **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only.                                                      |
+| **Viewer**    | 6           | Read-only access to connectors, connections, workflows, agents, widgets and events. Not executions, users, settings or secrets. |
+| **End User**  | 35          | The role for people at your customers using the embedded widget: create connections and run agents inside their own customer. |
 
-To see the full permission breakdown or create custom roles: go to **Settings → ADVANCED → Roles**. Each system role can be duplicated as a custom role and modified. Click **"Create Custom Role"** to build one from scratch.
+To see the full permission breakdown or build your own role, go to **Settings → Roles** and click **Create custom role**. A custom role is based on a system role and can't go beyond it.
 
-### Step 4: Manage customers
+### Step 3: Manage customers
 
-Your customers (the end users of your SaaS product who use the integrations) are managed under:
+Your customers (the companies using your product, who turn on integrations in your widget) are managed under:
 
 1. Go to **Operate → Customers**.
-2. The page reads: "Manage customers under your account."
+2. The page reads: "Every customer using your embedded integrations. Your widget is what they see; this is where you watch each one's installs and connections."
 
-Each customer gets their own isolated environment i.e. their own connections, data, sync history, and configuration. When a customer connects an app through the embedded widget, they appear here automatically.
+Each customer is isolated: its own connections, data, sync history and configuration. Your backend registers each customer, and its connections show up once it connects an app in the widget.
 
-From this page you can view customer details, monitor their integration status, and set per-customer quota overrides.
+From this page you can view customer details and monitor their integrations. Per-customer limit overrides are set from Billing (Step 4).
 
-### Step 5: Check your plan and quotas
+### Step 4: Check your plan and limits
 
 1. Go to **Settings → Billing**.
-2. **Current Plan** shows your tier.
-3. **Quota Usage** table shows each dimension with:
-   * Plan default
-   * Current usage (progress bar)
-   * % used
-   * Enforcement mode
-   * Source
+2. At the top is your plan: its name and price, with **See plans** (on Launch) or **Request plan change**.
+3. The **Limits** card lists each limit with its name, a usage bar, used against the cap, and the percentage used. Going over stops new work rather than charging you, and nothing already running is interrupted.
 
-Key limits on the Free plan:
+Key limits on the **Launch** plan:
 
-| Dimension            | Default | Enforcement |
-| -------------------- | ------- | ----------- |
-| Events per day       | 500     | Hard Block  |
-| Events per minute    | 10      | Hard Block  |
-| API calls per day    | 1,000   | Hard Block  |
-| API calls per minute | 20      | Hard Block  |
+| Limit                                           | Default on Launch |
+| ----------------------------------------------- | ----------------- |
+| Events per day                                  | 500               |
+| API calls per day                               | 1,000             |
+| API requests per minute (API key and embed calls) | 100             |
 
-Click **"Customize Customer Limits"** to set per-customer quota overrides which is useful when specific customers need higher limits than your plan default, or when you want to throttle individual customers to protect shared capacity.
+There is no events-per-minute cap on Launch unless an admin sets one.
 
-### Step 6: Review the Audit Log
+Click **Customize customer limits** on the Limits card to set per-customer overrides. Overrides win over the plan default, which is useful when specific customers need higher limits, or when you want to throttle individual customers to protect shared capacity.
 
-1. Go to **Settings → Audit Log**.
-2. The log shows a table with columns: **TIMESTAMP, USER, ACTION, RESOURCE, OUTCOME**.
+### Step 5: Review the Audit log
 
-Every significant action in your organization is recorded here from user logins, workflow deployments, connector changes to customer connections. Use it for compliance, debugging, or understanding who changed what.
+1. Go to **Settings → Audit log**.
+2. The log shows a table with columns **Who**, **Action**, **Resource**, **Customer**, **Result** and **When**.
+
+Significant actions in your organization are recorded here, from workflow deployments and connector changes to customer connections. Use it for compliance, debugging, or understanding who changed what. The audit log is for Owners and Admins.
 
 ### For your development team
 
-The Settings section also includes pages your developers will need:
+A few places your developers will need:
 
-* **API Keys** - Test and Live keys for programmatic access to the fastn API
-* **Secrets** - Sensitive values (third-party tokens, database credentials) that workflows read at runtime
-* **Environments** - Separate configurations for development, staging, and production deployments
+* **API keys** - Under **Embed → API keys and MCP → API keys**: Test and Live keys for programmatic access to the fastn API, including the key your backend uses to mint embed tokens.
+* **Secrets** - Under **Settings → Secrets**: sensitive values (third-party tokens, database credentials) that workflows read at runtime.
+* **Environments** - Under **Settings → Environments**: where published workflow versions are deployed, such as test, live and your own named ones.
+* **Your own OAuth apps** - fastn manages OAuth apps for many common platforms. To use your own OAuth application for a connector instead, set it on that connector's **Auth** tab.
 
-See more details in the [Developer](../developer/) tutorials for the full setup guide.
+See the [Developer](../developer/) tutorials for the full setup guide.
 
 ### What you've configured
 
-* Organization name, timezone, and domain access control
-* Reviewed the Company Research Report from onboarding
-* Reviewed fastn-managed OAuth apps
+* Organization name, timezone, and joining by email domain
 * Team members invited with appropriate roles
 * Customer management set up
-* Plan limits and quota enforcement reviewed
+* Plan limits reviewed, with per-customer overrides where needed
 * Audit log available for compliance and debugging
-* Developer team pointed to API Keys, Secrets, and Environments setup
+* Developer team pointed to API keys, Secrets, Environments and connector auth

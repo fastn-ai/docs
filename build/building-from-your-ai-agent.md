@@ -4,7 +4,7 @@ description: What your own AI agent does after you ask it for an integration, wh
 
 # Building from your AI agent
 
-Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever agent you use, it follows fastn's integration builder through the same six steps, and each one ends with something you approve.
+Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever agent you use, it follows fastn's integration-builder playbook, which fastn serves to your AI tool and can update over time. A typical run looks like this, with something for you to approve along the way.
 
 | Step | What the agent does | What you do |
 | --- | --- | --- |
@@ -17,16 +17,16 @@ Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/READ
 
 If an account isn't connected yet, the agent stops and sends a connect link. Enter credentials there, never in the chat.
 
-This is the same idea as fastn's in-app [Agent](agent/README.md), run from the agent you already use.
+This is the same idea as fastn's in-app [Build with AI](agent/README.md), run from the agent you already use.
 
 ### Where the result lands in fastn
 
 | What | Where |
 | --- | --- |
-| The workflows | **Workflows** |
+| The workflows | **Build → Integrations → Workflows** |
 | Tests and their results | Open the workflow → **Test cases** |
 | Every run | Open the workflow → **Executions** |
-| What your customers see | **Widgets** → the new widget (style, embed, publish) |
+| What your customers see | **Embed → Widget** (style, embed, publish) |
 
 ### Test it
 

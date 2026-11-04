@@ -6,32 +6,34 @@ description: What each role can do, and how to narrow one.
 
 **Settings → Roles**
 
-<figure><img src="../.gitbook/assets/settings-roles.jpg" alt="The Roles screen with Owner 42, Admin 42, Developer 34, Operator 21, Viewer 6 and End User 35 down the left, Admin selected at 42 of 42 permissions and 100%, and its Connectors 5 of 5, Connections 6 of 6 and Workflows 7 of 7 groups fully ticked"><figcaption>Two capabilities are called out as role-gated rather than grantable: using the AI assistant and reading the audit log.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-roles.jpg" alt="The Roles screen with the built-in roles down the left, Admin selected with every permission held, and its Connectors, Connections and Workflows groups fully ticked"><figcaption>Some capabilities are called out as role-gated rather than grantable, such as using the AI assistant and reading the audit log.</figcaption></figure>
 
-> A custom role narrows a built-in one; assign either to a person on the People screen, or to an embed tier under Billing.
+> What each role can do. A custom role narrows a built-in one; assign either to a person on the People screen, or to a customer tier under Billing.
 
 ### The six built-in roles
 
 | Role          | Permissions | Summary                                                                                                                 |
 | ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Owner**     | 42          | One per organisation. Manages admins and transfers ownership.                                                            |
-| **Admin**     | 42          | Full access within their organisation and customers.                                                                     |
-| **Developer** | 34          | Builds and deploys connectors, workflows and agents.                                                                     |
+| **Owner**     | 44          | Can manage admins and transfer ownership.                                                                                |
+| **Admin**     | 44          | Full access within their organization and customers.                                                                     |
+| **Developer** | 36          | Builds and deploys connectors, workflows and agents.                                                                     |
 | **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only.                                                         |
 | **Viewer**    | 6           | Read-only on connectors, connections, workflows, agents, widgets and events. Not executions, users, settings or secrets. |
 | **End User**  | 35          | Uses the embed widget: creates connections, runs agents.                                                                 |
 
-Selecting a role on the left shows its permission matrix, the count it holds out of 42, and a percentage bar. Built-in roles carry a **Built in** badge.
+Selecting a role on the left shows its permission matrix, the count it holds out of 44, and a percentage bar. Built-in roles carry a **Built in** badge.
 
 ### Platform Admin
 
-A seventh role, **Platform Admin**, appears in the organisation switcher rather than on this screen. It is platform-level (held by fastn, not something you assign to someone inside your own organisation) and it is what publishes connectors to the public catalogue.
+A seventh role, **Platform Admin**, is platform-level: held by fastn, not something you assign to someone inside your own organization. It does not appear on this screen.
 
 ### Roles here are not API-key permissions
 
-The six roles on this screen govern **people**. API keys carry their own permission presets (`Full access`, `Developer`, `Operator`, `Viewer` (the default), `End user` and `Custom`), chosen on the key creation dialog. The names overlap, but they are two separate systems configured in two different places; granting a person the Developer role does nothing to a key, and vice versa. See [API keys](api-keys.md).
+The six roles on this screen govern **people**. API keys carry their own permission presets (**Admin**, **Developer**, **Operator**, **Viewer** (the default), **End User**, **Embed backend** and **Custom**), chosen on the key creation dialog. The names overlap, but they are two separate systems configured in two different places; granting a person the Developer role does nothing to a key, and vice versa. See [API keys](api-keys.md).
 
 ### The permission matrix
+
+Eleven resources, 44 permissions in all:
 
 | Resource        | Permissions                                                        |
 | --------------- | -------------------------------------------------------------------- |
@@ -44,25 +46,25 @@ The six roles on this screen govern **people**. API keys carry their own permiss
 | **Secrets**     | read, write, delete                                                 |
 | **Executions**  | create, read                                                        |
 | **Widgets**     | create, read, update, delete                                        |
-| **Unified API** | read, execute                               |
+| **Customers**   | create                                                              |
+| **Unified API** | read, execute, customize                                            |
 
-### Two capabilities that are not permissions
+### Capabilities that are not permissions
 
-Two things are gated by role directly rather than by a grantable permission, and cannot be turned on or off per user:
+Some things are gated by role directly rather than by a grantable permission, and cannot be turned on or off per user:
 
-* **Use the AI assistant**: the agent service checks the caller's role.
+* **Use the AI assistant**: the agent service checks the caller's role. Every built-in role except Viewer has it.
 * **Read the audit log**: `/api/v1/audit-log` is restricted to account owners and admins.
-
-Both are called out in a banner at the top of any role that has them.
+* **Manage the Unified API catalog**: Platform Admin only. Admin and Owner can read and execute the catalog but not change it.
 
 ### Custom roles
 
-**Custom role**, or **Duplicate** on a built-in, creates a role that *narrows* its parent. You can take permissions away; you cannot add ones the parent does not have.
+**Custom role**, or **Duplicate** on a built-in, creates a role that *narrows* its parent. You pick the built-in it is **Based on**, then take permissions away; you cannot add ones the parent does not have.
 
-Assign a custom role to a person on [People](people.md), or (as the line at the top of this screen puts it), to an embed tier under [Billing](billing.md), which is how you scope what an embedded end user may do.
+Assign a custom role to a person on [People](people.md), or to a customer tier under [Billing](billing.md), which is how you scope what the people at your customer may do in the embed.
 
 ### The boundary worth knowing
 
-**Operator** is described on this screen as deploying **to test only**. Whether **Developer** holds `deploy prod` is the difference that usually draws the line between people who build and people who run: check the Developer matrix on this screen before you rely on it either way.
+**Operator** deploys **to test only**: it holds `deploy test` on Workflows but not `deploy prod`. **Developer** holds every Workflows permission, `deploy prod` included, so it is the role that can push to production.
 
-`decrypt` on Connections and `read` on Secrets are the two most sensitive permissions in the matrix. Viewer holds neither. Operator's matrix is worth reading directly rather than assumed.
+`decrypt` on Connections and `read` on Secrets are the two most sensitive permissions in the matrix. Viewer holds neither. Operator holds every Connections permission, `decrypt` included, but no Secrets permission.

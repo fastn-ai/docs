@@ -10,7 +10,7 @@ This walks through the shortest path to a working embed: generate a token from y
 You'll need:
 
 * **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
-* **Your org identifier (`endOrgId`)** - The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **The customer identifier (`endOrgId`)** - fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** - Any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
@@ -19,7 +19,7 @@ Create a server-side function that calls the fastn token endpoint. Keep the API 
 
 ```javascript
 // Server-side only
-async function getFastnToken({ userEmail, userName }) {
+async function getFastnToken({ customerId, userId, userEmail, userName }) {
   const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
     method: "POST",
     headers: {
@@ -29,7 +29,8 @@ async function getFastnToken({ userEmail, userName }) {
       "X-fastn-Test-Mode": "true",
     },
     body: JSON.stringify({
-      endOrgId: process.env.FASTN_END_ORG_ID,
+      endOrgId: customerId, // fastn id or your external reference
+      userId,               // the signed-in person; keys per-user isolation
       userEmail,
       userName,
     }),
@@ -51,6 +52,8 @@ Create an endpoint your frontend can call to get a fresh token. Return only the 
 // Example route
 app.get("/api/fastn-token", async (req, res) => {
   const token = await getFastnToken({
+    customerId: req.user.companyId, // however your app knows the customer
+    userId: req.user.id,
     userEmail: req.user.email,
     userName: req.user.name,
   });
@@ -66,7 +69,7 @@ On your frontend, fetch a token and render the fastn iframe with it.
 const { token } = await fetch("/api/fastn-token").then(r => r.json());
 
 const iframe = document.createElement("iframe");
-// Org-level (shared) embed - see the Tenancy guide for user-level
+// The token carries the customer and user, so the URL needs nothing else
 iframe.src = `https://api.fastn.dev/api/v1/embed/iframe?token=${token}`;
 iframe.style.width = "100%";
 iframe.style.height = "100%";

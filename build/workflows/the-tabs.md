@@ -1,8 +1,10 @@
 ---
-description: "Every tool tab in the editor: Test, Connectors, Contract, Diagram, Test cases, Executions, Sync reports, API and Docs."
+description: "Every tool tab in the editor: Test, Connectors, Contract, Diagram, Compare, Test cases, Executions, Sync reports and API."
 ---
 
 # The tabs
+
+A new workflow shows three tabs: **Test**, **Connectors** and **Contract**. Once it is saved, the rest appear: **Diagram**, **Compare** (when there is code to compare), **Test cases**, **Executions**, **Sync reports** and **API**. If there is not room for all of them, the overflow collapses into a **More** menu.
 
 #### Test
 
@@ -16,13 +18,13 @@ Two JSON editors, `ctx.input` and `ctx.headers`. **Use contract** fills the inpu
 | **Partial Mock** | Live where the connector has an active connection, a stored mock stub where it does not. |
 | **Fully Mock**   | Stubs only.                           |
 
-Then **Run Live** (or **Run**).
+The run button follows the mode: **Run Live**, **Run Partial Mock** or **Run Fully Mock**.
 
 #### Connectors
 
 <figure><img src="../../.gitbook/assets/workflow-connectors-tab.jpg" alt="The Connectors tab listing two extracted connectors (Cin7 Core with getSale, listCustomers and listProducts, and Trackstar with createOrder, getOrder, listOrders and more), both badged Per customer"><figcaption>Every action chip carries its pinned version, such as getSale V1.1.</figcaption></figure>
 
-This list is **auto-extracted from the `fastn.connectors.X.Y(…)` calls in your code every time you save**. It is a readout of the code, not a separate configuration. **Add** exists for anything you need to wire manually. Each row shows a **Per customer** badge where it applies, plus the connector slug, the owning org, the action and its version.
+This list is **auto-extracted from the `fastn.connector.<slug>.<action>(…)` calls in your code every time you save**. It is a readout of the code, not a separate configuration. **Add** exists for anything you need to wire manually. Each row shows a **Per customer** badge where it applies, plus the connector slug, the owning org, the action and its version.
 
 {% hint style="warning" %}
 Pinned action versions are what stop an upstream change breaking you silently. When fastn proposes a newer action, it arrives through [Pending updates](../connector-updates.md) for you to accept.
@@ -38,23 +40,23 @@ Pinned action versions are what stop an upstream change breaking you silently. W
 
 Three sub-tabs.
 
-**Flow**: a read-only React Flow rendering, generated from your code. Node kinds are `TRIGGER`, `DECISION`, `READ` and `DONE`; the controls are Zoom In, Zoom Out and Fit View. You cannot edit the graph. Edit the code and the graph follows.
+**Flow**: a read-only React Flow rendering, generated from your code. Node kinds are `TRIGGER`, `READ`, `PROCESS`, `WRITE`, `DECISION` and `DONE`; the controls are Zoom In, Zoom Out and Fit View. You cannot edit the graph. Edit the code and the graph follows.
 
 **Sequence**: the same logic as an ordered list of phases.
 
 **Docs**: generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**.
 
-The end-user document has eight sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*.
+The end-user document has nine sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*, *Related links*.
 
 {% hint style="info" %}
-Generating or regenerating these docs consumes AI credits from the workspace allowance shown in the top bar.
+Generating or regenerating these docs consumes AI credits from your organization's allowance.
 {% endhint %}
 
 #### Test cases
 
 Two tabs sit here, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
 
-**Who writes them.** The AI builder generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. It asks you to approve that suite before attaching it, rather than attaching it silently. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
+**Who writes them.** Build with AI generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. It asks you to approve that suite before attaching it, rather than attaching it silently. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
 
 A case is three fields and a mode:
 
@@ -77,7 +79,7 @@ None of this is the [Test](#test) tab above. **Test** runs one payload you type,
 
 #### Executions
 
-This workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The workspace-wide view is [Activity → Executions](../../operate/executions.md).
+This workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Activity → Executions](../../operate/executions.md).
 
 #### Sync reports
 
@@ -97,26 +99,23 @@ POST https://api.fastn.dev/api/v1/workflows/<wfId>/execute
 
 Two headers steer it (`X-fastn-Test-Mode` and `x-fastn-env`) and you authenticate with an API key in the `fsk_live_…` format. Covered in full in the [HTTP API reference](../../reference/api.md).
 
-#### Docs
+#### Where the runtime reference lives
 
-The runtime reference for the code you are writing:
+There is no separate runtime reference tab (the **Docs** view under **Diagram** documents this workflow, not the runtime). What `ctx` and `fastn.*` expose inside the function shows up in the code editor's autocomplete, and is documented in full in [Workflow runtime API](../../reference/workflow-runtime.md). In short:
 
 | Surface                 | For                                                              |
 | ----------------------- | ------------------------------------------------------------------ |
 | `ctx.input`             | The request body, shaped by the input contract.                   |
 | `ctx.headers`           | The request headers.                                              |
-| `ctx.connectors`        | The connectors wired to this workflow.                            |
 | `fastn.envConfig`       | Per-environment values. See [Configs](../../manage/configs.md).      |
 | `fastn.unified`         | The [unified API](../unified-apis/README.md) surface.                        |
-| `fastn.connector`       | A connector call.                                                  |
-| `fastn.db`              | The workspace Postgres schema. See [Database](../../manage/database.md). |
-| `fastn.state`           | Key/value state, with scopes `ORG` and `INVOCATION`.               |
+| `fastn.connector`       | A connector call: `fastn.connector.<slug>.<action>()`.             |
+| `fastn.db`              | Your organization's Postgres schema. See [Database](../../manage/database.md). |
+| `fastn.state`           | Key/value state, with scopes `ORG` (the default) and `INVOCATION`. |
 | `fastn.secrets`         | Encrypted values. See [Secrets](../../manage/secrets.md).            |
 
-Multi-tenant calls are addressed with headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
+Calls made for a specific customer are addressed with headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
 
-{% hint style="info" %}
-This tab uses `fastn.connector` (singular) while the Connectors tab extracts from `fastn.connectors.X.Y(…)` (plural). Both spellings appear in the product; check the Docs tab in your own workspace before relying on either.
+{% hint style="warning" %}
+Use `fastn.connector` (singular) in your code. The Connectors tab's extractor recognizes the plural `fastn.connectors.<slug>.<action>()` too, but the runtime does not provide it, so a plural call fails when the workflow runs.
 {% endhint %}
-
-Fuller treatment in [Workflow runtime API](../../reference/workflow-runtime.md).

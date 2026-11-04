@@ -14,22 +14,22 @@ fastn takes that whole layer. You keep the part your customers pay for.
 
 ### The five things you work with
 
-**Connectors** are the systems your customers can authorise. There is a catalogue managed by fastn, plus any you create. A connector knows an API's actions, its auth methods, and its webhooks.
+**Connectors** are the systems your customers can authorize. There is a catalog managed by fastn, plus any you create. A connector knows an API's actions, its auth methods, and its webhooks.
 
-**Connections** are what you get when a specific customer authorises a specific connector. Credentials live encrypted on fastn's side, scoped to that customer.
+**Connections** are what you get when a specific customer authorizes a specific connector. Credentials live encrypted on fastn's side, scoped to that customer.
 
-**Workflows** are the code that runs. Each one is a JavaScript module: a file called `<slug>.js` that exports `export default async function(ctx)`. It reads from one system, transforms, and writes to another. The agent writes them; you review, test, publish and deploy.
+**Workflows** are the code that runs. Each one is a JavaScript module: a file called `<slug>.js` that exports `export default async function(ctx)`. It reads from one system, transforms, and writes to another. Build with AI writes them; you review, test, publish and deploy.
 
 **Triggers** decide when a workflow runs: an inbound webhook, a schedule, or an event from a connected system.
 
 **Unified APIs** give you one canonical endpoint per business entity (contact, document, message), served by whichever provider each customer connected, so your code stops branching per vendor.
 
-Around those five sit two surfaces: **Widgets**, the panel your customers see inside your product, and **Activity**, where you watch everything that happens.
+Around those five sit two surfaces: the **Widget**, the panel your customers see inside your product, and **Activity**, where you watch everything that happens.
 
 ### The shape of a build
 
-1. Describe the integration to the **Agent**, or wire it by hand.
-2. The agent picks or creates **Connectors** and handles authentication.
+1. Describe the integration to **Build with AI** (or your AI tool), or wire it by hand.
+2. fastn's agent picks or creates **Connectors** and handles authentication.
 3. It drafts a **Workflow**, generates test cases, and shows you the diff.
 4. You attach a **Trigger** so it runs on real events.
 5. You publish a version and **deploy** it to an environment.
@@ -42,10 +42,10 @@ fastn is used by two different people at once, and the product is split accordin
 
 | You are…                     | You work in…                                                            |
 | ---------------------------- | ------------------------------------------------------------------------ |
-| The SaaS company using fastn | Build, Operate and Manage: the dashboard in these docs                  |
+| The SaaS company using fastn | The dashboard in these docs: Home, the Build, Embed and Operate groups, and Settings |
 | Your customer                | The embedded widget inside your product. They never sign in to fastn    |
 
-Inside the dashboard, what you can see and do depends on your role. The role vocabulary is **Platform Admin**, **Owner**, **Admin**, **Developer** and **Operator**, and it changes the Settings navigation as well as individual permissions. An Owner or Admin sees People, General, Billing, Roles and Audit log. A Developer does not, but does see Trash.
+Inside the dashboard, what you can see and do depends on your role. The dashboard roles are **Owner**, **Admin**, **Developer**, **Operator** and **Viewer** (**End User** is the role for people at your customers using the widget), and the role changes the Settings navigation as well as individual permissions. An Owner or Admin sees People, General, Billing, Roles and Audit log. A Developer does not, but does see Trash.
 
 {% content-ref url="platform-tour.md" %}
 [Platform tour](platform-tour.md)

@@ -1,62 +1,40 @@
 ---
-description: An overview of how tenancy works per user and org level in fastn
+description: How the embed token scopes the widget to one customer, and to one person at that customer
 ---
 
 # Understanding Tenancy
 
-fastn supports two ways to scope connections within the same embed: org-level (shared) and user-level (per individual). Choosing correctly determines who can see and use which connections.
+Every widget session in fastn is scoped twice: to one **customer** (a company using your product), and to one **person** at that customer. Both come from the embed token your backend mints. Nothing in the iframe URL changes either of them.
 
-### The distinction
+### The customer
 
-**Org-level (shared)** - One connection serves the entire customer organization. Anyone in that organization uses the same connection. Use this for shared systems of record.
+The customer is named when your backend mints the token, by `endOrgId` in the body or by the `x-org-id` header. Either value can be fastn's id for the customer or the external reference you registered it under (see [Finding Your Org Identifier](finding-your-org-identifier.md)). A token always belongs to exactly one customer, and the widget shows that customer's integrations and connections only.
 
-**User-level (per individual)** - Each user has their own connection, isolated from other users in the same organization. Use this for resources tied to one person's identity.
+A token minted without a customer is refused (`400`, code `EMBED_TOKEN_REQUIRES_END_ORG_ID`) unless you explicitly ask for an organization-level token with `allowOrgLevel: true`. That kind of token is for previewing your own organization only; never hand one to a customer.
 
-{% hint style="info" %}
-This is **not** an "internal vs external user" distinction, and it is **not** about who can edit. It is strictly shared-vs-personal, based on who owns the connected resource.
-{% endhint %}
+### The person
 
-### How to decide
+Within a customer, per-user isolation keys on the **user id**:
 
-Ask who owns the resource being connected:
+* send `userId` in the token request body, or
+* send `x-user-id` on the token request, attested with an identity hash when the API key has identity verification turned on (see [API keys](../../manage/api-keys.md)).
 
-| Resource type                         | Scope      | Examples                                                           |
-| ------------------------------------- | ---------- | ------------------------------------------------------------------ |
-| Shared systems of record              | Org-level  | CRM, project management, data warehouse, shared messaging channels |
-| Personal identity, inbox, or calendar | User-level | A person's email, personal calendar, individual account            |
-
-A shared Salesforce instance that the whole company uses is org-level. An individual sales rep's email inbox is user-level. Most customers need both in the same embed - a shared CRM connection plus each rep's own email.
+`userEmail` and `userName` are for display only; they do not decide whose session it is. If you send no user id at all, each token gets a random `embed_usr…` id, so nothing a person does carries over to their next session. Send a stable id from your own user table.
 
 ### How it's set in the embed
 
-The tenancy choice is encoded in the iframe URL and the identity the token is minted with.
-
-**User-level (per individual):**
-
-```
-https://api.fastn.dev/api/v1/embed/iframe?tenant-id=<endOrgId>&token=<token>
-```
-
-The `tenant-id` parameter is present. Combined with the `userEmail` and `userName` in the token body, connections are isolated to that individual user.
-
-**Org-level (shared):**
+The iframe takes the token, and only the token:
 
 ```
 https://api.fastn.dev/api/v1/embed/iframe?token=<token>
 ```
 
-No `tenant-id` parameter. Connections are shared across the organization.
+The customer and the user are inside the token, put there when your backend minted it. You do not add a `tenant-id` parameter. If an older snippet still carries one, it must name the same customer as the token: when the two disagree, the widget refuses the session rather than guess. Drop the parameter and let the token name the customer.
 
-### Persona examples
+### What this means for your backend
 
-These illustrate the typical mix of shared and personal connections per buyer persona:
+1. When a signed-in person opens the page that hosts the widget, look up which customer they belong to and their user id.
+2. Mint a token for that customer and that user.
+3. Hand only the token to the browser.
 
-| Persona                            | Org-level (shared) | User-level (personal)         |
-| ---------------------------------- | ------------------ | ----------------------------- |
-| Integration Backlog Owner (VP Eng) | Jira, Slack        | Google Calendar               |
-| Product Manager                    | Ad account, CRM    | Slack alerts                  |
-| CRO                                | Salesforce         | Each rep's email              |
-| Head of Solution Engineering       | Snowflake, CRM     | Each tester's sandbox account |
-| Head of Customer Success           | Usage-data system  | Each CSM's calendar / email   |
-
-The through-line: shared systems of record map to org-level; personal identity, inbox, or calendar maps to user-level. Most customers need both, which is why both flavors exist.
+See [Generating Embed Tokens](generating-embed-tokens.md) for the full request.

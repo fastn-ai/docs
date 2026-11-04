@@ -43,7 +43,7 @@ With fastn connected to your AI tool, ask about runs and failures in plain words
 | --- | --- |
 | Morning check | *Which workflows failed today, and why?* |
 | One customer | *Show Acme's connections and their last sync.* |
-| Debug a run | *Find the failed runs of the order sync this week and summarise the errors.* |
+| Debug a run | *Find the failed runs of the order sync this week and summarize the errors.* |
 | Stay ahead | *Which customer connections have expired?* |
 
 ## Where things are
@@ -53,7 +53,7 @@ With fastn connected to your AI tool, ask about runs and failures in plain words
 | [Health](health.md) | See what needs attention, totals and trends, pending vendor fixes and alerts |
 | [Customers](customers.md) | Find a customer and everything they have connected |
 | [Connections](../build/connections/README.md) | Check each signed-in account and its status |
-| [Activity](README.md) | Read every event, execution, trace and sync report |
+| [Activity](README.md) | Read every event, execution and sync report |
 | [Troubleshooting](troubleshooting.md) | Match a symptom to its cause and fix |
 
 ## Questions?

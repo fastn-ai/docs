@@ -4,9 +4,9 @@ description: The SDK mounts the same iframe and adds events, token refresh, them
 
 # SDK
 
-<figure><img src="../../.gitbook/assets/widget-embed-sdk.jpg" alt="The Embed tab with SDK selected, a USER selector naming the customer the snippets are scoped to, and expandable variants starting with Connect card from @fastn-ai/embed/react and React component below it"><figcaption>Each variant expands to the exact snippet for the user you selected.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-embed-sdk.jpg" alt="The Embed tab with SDK selected, a USER selector naming the customer the snippets are scoped to, and expandable variants starting with Connect card from @fastn-ai/embed/react and React component below it"><figcaption>Each variant expands to the exact snippet for the customer you selected.</figcaption></figure>
 
-The SDK mounts the same iframe and adds what a raw tag cannot: events when a user connects an app, token refresh, live theming, and modal mode.
+The SDK mounts the same iframe and adds what a raw tag cannot: events when a customer connects an app, token refresh, live theming, and modal mode.
 
 {% hint style="info" %}
 This page is the browser widget package, `@fastn-ai/embed`. The server-side package that calls the fastn API from your backend is `@fastn-ai/sdk`: see [SDK](../../reference/sdk/README.md).
@@ -23,9 +23,23 @@ Four variants, depending on how much of the UI you want to own:
 
 ### React
 
-The confirmed exports are `FastnConnectCard`, `FastnHub` and `FastnProvider`; the headless entry point exposes the hooks `useConnectors`, `useConnections` and `useConnect`.
+`@fastn-ai/embed/react` exports `FastnHub`, `FastnHubModal`, `FastnConnectCard` and the `useFastnHub` hook. `FastnHub` and `FastnConnectCard` mount on their own, with no provider around them: pass the customer as `orgId`, and either a `token` or a `getToken` function that fetches one from your backend.
 
-`FastnProvider` supplies the session the other components read, so wrap your tree in it rather than mounting `FastnHub` bare. Copy the exact props from the dashboard's generated snippet. They are rendered there for the user you selected.
+```tsx
+import { FastnHub } from '@fastn-ai/embed/react';
+
+<FastnHub
+  orgId={customerId}
+  getToken={() => fetch('/api/fastn-token').then(r => r.json()).then(d => d.token)}
+  onConnected={({ connectorId }) => refetch()}
+/>
+```
+
+Here `/api/fastn-token` is your own backend route, which mints a token with the [Token API](token-api.md) and returns just the token string to the browser. Copy the exact props from the dashboard's generated snippet. They are rendered there for the customer you selected.
+
+### Build your own UI
+
+`FastnProvider` and the hooks `useConnectors`, `useConnections` and `useConnect` come from `@fastn-ai/embed/headless/react`, and are only for the **Build your own UI** variant, where you render every pixel and fastn supplies the data, the auth and the OAuth popup. Your page's origin has to be registered on the API key that mints your tokens, or the browser blocks the calls before they are sent.
 
 ### Script tag
 
@@ -42,7 +56,7 @@ hub.mount('#hub');   // inline
 hub.open();          // or as a modal
 
 hub.on('connected', (e) => {
-  // Refresh your app's data after the user connects an integration.
+  // Refresh your app's data after the customer connects an integration.
 });
 ```
 

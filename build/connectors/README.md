@@ -6,7 +6,7 @@ description: "What a connector is, how it relates to actions, auth methods, conn
 
 **Integrations → Connectors** · `/integrations?tab=connectors`
 
-<figure><img src="../../.gitbook/assets/connectors-catalogue.webp" alt="The Connectors page: Import, Request connector and Create connector buttons top right, a Categories list on the left starting with All connectors 422, a search box with All, Connected and OAuth chips and an All Visibility filter, connector cards such as AbstractAPI Email Reputation badged managed with a Connect button, and the Connectors guide panel on the right"><figcaption>The Connectors catalogue with the guide panel open.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connectors-catalogue.webp" alt="The Connectors page: Request connector and Create connector buttons top right, a Categories list on the left starting with All connectors, a search box with All, Featured, Connected and OAuth chips, and connector cards such as AbstractAPI Email Reputation badged managed with a Connect button"><figcaption>The Connectors catalog.</figcaption></figure>
 
 A **connector** is fastn's bridge to one external app, such as HubSpot, Jira or Stripe. The page describes it in one line:
 
@@ -29,10 +29,10 @@ A connector is a **definition**. It holds no credentials. Credentials live on a 
 
 Every card carries a badge that says who maintains it.
 
-* **managed**: built and maintained by fastn. The card reads *Managed by fastn*. You can view every part of it, connect to it, export its actions and run them, but you cannot edit, delete or publish it. To suggest a change to one of its actions, use **Propose an update**. fastn reviews it, and vendor changes reach you as proposals under [Pending updates](../connector-updates.md).
-* **Custom**: created in your workspace with **Create connector** or **Import**. Your workspace owns it, so you can edit it, add actions, set up its webhook config, publish versions and delete it.
+* **managed**: built and maintained by fastn. The card reads *Managed by Fastn*. You can view every part of it, connect to it, export its actions and run them, but you cannot edit, delete or publish it. To suggest a change to one of its actions, use **Propose an update**. fastn reviews it, and vendor changes reach you as proposals under [Pending updates](../connector-updates.md).
+* **Custom**: created in your workspace from the **Create connector** menu (**From scratch**, **Build with AI**, **Build from Claude or any MCP client**, or **Import from file**). People whose role cannot create connectors see an **Import** button instead of the menu. Your workspace owns it, so you can edit it, add actions, set up its webhook config, publish versions and delete it.
 
-When a connector has at least one connection, its badge changes to **Connected**.
+When a connector has at least one active connection, its badge changes to **Connected**. If it has connections but none of them is active, the badge reads **Inactive**.
 
 ### How the pieces work together
 
@@ -40,7 +40,7 @@ When a connector has at least one connection, its badge changes to **Connected**
 {% step %}
 #### Pick or build a connector
 
-Find the app in the [catalogue](the-catalogue.md). If it is not there, [request it](creating-a-connector.md#request-a-connector) or [create it](creating-a-connector.md).
+Find the app in the [catalog](the-catalogue.md). If it is not there, [request it](creating-a-connector.md#request-a-connector) or [create it](creating-a-connector.md).
 {% endstep %}
 
 {% step %}
@@ -52,7 +52,7 @@ Find the app in the [catalogue](the-catalogue.md). If it is not there, [request 
 {% step %}
 #### Use the actions
 
-Workflows, the Agent and the MCP gateway call the connector's actions through that connection. The connection decides whose account the call runs as.
+Workflows, **Build with AI** and your AI tool (over MCP) call the connector's actions through that connection. The connection decides whose account the call runs as.
 {% endstep %}
 
 {% step %}
@@ -63,12 +63,12 @@ If the connector has a webhook config, fastn runs its subscription code for each
 {% endstepper %}
 
 {% hint style="warning" %}
-**Connect** on this page signs in *your own* account. Your customers sign in their own accounts through the widget you embed. The guide panel on the page says the same: *Connecting here signs in your account. Your customers sign in their own, through the widget.*
+**Connect** on this page signs in *your own* account. Your customers sign in their own accounts through the widget you embed. The page's step-by-step guide says the same: *It says Connected when it works. This signs in your own account, not your customers'.*
 {% endhint %}
 
 ### In this section
 
-* [The catalogue](the-catalogue.md): searching, filtering and reading the connector cards.
+* [The catalog](the-catalogue.md): searching, filtering and reading the connector cards.
 * [Creating a connector](creating-a-connector.md): the Create connector dialog, every protocol and auth type, and Request connector.
 * [Inside a connector](inside-a-connector.md): the detail page, its Overview, Connections and Version pins tabs, and versions.
 * [Auth methods and providers](auth-methods.md): the Auth tab and the OAuth apps behind it.

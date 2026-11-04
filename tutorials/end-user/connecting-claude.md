@@ -22,9 +22,11 @@ Open the integrations widget in the product you use. In the widget header, open 
 {% step %}
 ### Add it to your AI client as a custom connector
 
-* **Claude:** open **Settings → Connectors → Add custom connector**, give it a name such as *Integrations*, paste the URL and click **Add**, then **Connect**.
+* **Claude:** add a custom connector in Claude's connector settings, give it a name such as *Integrations*, paste the URL, then connect it.
 * **Claude Code:** run `claude mcp add --transport http integrations <the URL you copied>`.
 * **ChatGPT, Cursor and other clients:** add a custom MCP connector or server and paste the URL.
+
+The exact menus belong to each client and can change; check the client's own help if you can't find where to add a custom connector.
 {% endstep %}
 
 {% step %}
@@ -37,6 +39,10 @@ Ask in plain words, for example *Which of my integrations failed this week?* or 
 {% hint style="info" %}
 The URL is **valid for 10 minutes and works once**. If it expires before you paste it, generate a new one. Once connected, the connection stays until it is disconnected.
 {% endhint %}
+
+## "Could not create a link. Try again."
+
+If this message appears when you click **Generate MCP URL**, try once more. If it keeps appearing, the product's widget session may not be tied to you as a person, which the link needs. That is set up on the product's side, so contact the product's support team.
 
 ## No "Generate MCP URL" in the menu?
 

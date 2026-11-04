@@ -6,7 +6,7 @@ description: "How far the agent goes without checking in: Auto versus Manual."
 
 The chip under the message box decides how far the agent goes without checking in.
 
-| Mode     | Behaviour                                                                |
+| Mode     | Behavior                                                                 |
 | -------- | ------------------------------------------------------------------------ |
 | **Auto** | The default. Does not ask. Fastest for exploration.                      |
 | Manual   | Asks before any create, update or delete. Use when touching live data.   |
@@ -17,7 +17,7 @@ You can change it mid-session. Switching to **Auto** after a few approvals is a 
 
 In **Manual** mode the agent stops and posts a card for each pending call. Nothing happens until you answer it.
 
-<figure><img src="../../.gitbook/assets/agent-approval-gate.jpg" alt="Two stacked approval cards, each headed Create connect link with the tool name create_connect_link, a JSON payload containing a connectorId, a VIEW RAW INPUT toggle, a note-to-agent textarea, and Accept, Always allow and Reject buttons"><figcaption>One card per pending call. Each shows the exact tool name and the exact arguments.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-approval-gate.jpg" alt="Two stacked approval cards, each headed Create connect link with the tool name create_connect_link, a JSON payload containing a connectorId, a VIEW RAW INPUT toggle, a note-to-agent textarea, and Accept, Always allow and Reject buttons"><figcaption>One card per pending call. Each names the exact tool, previews the change, and keeps the raw arguments one click away.</figcaption></figure>
 
 Every card carries the same parts:
 
@@ -25,8 +25,8 @@ Every card carries the same parts:
 | ---- | ------------- |
 | Title | The action in plain language, e.g. **Create connect link** |
 | Tool badge | The literal tool being invoked, e.g. `create_connect_link` |
-| Payload | The exact JSON arguments, such as the `connectorId` it will act on |
-| **VIEW RAW INPUT** | Expands the full, untruncated payload |
+| Change preview | What the call will change, drawn as a before/after for the connector, action, workflow, widget or trigger it touches |
+| **VIEW RAW INPUT** | Expands the exact arguments as JSON, such as the `connectorId` it will act on. Secrets are redacted, and an input larger than 50,000 bytes is not displayed |
 | **NOTE TO AGENT (OPTIONAL)** | Free text: *"On reject, this note is sent to the agent so it can re-plan…"* |
 
 ### The three responses

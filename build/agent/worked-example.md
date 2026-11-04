@@ -24,7 +24,7 @@ Three things on this screen are worth knowing before you go further:
 
 * **The approval-mode chip** sits under the composer: here set to **Manual**. It decides whether the agent pauses before acting. See [Approval mode](approval-mode.md).
 * **The context meter** on the right (`19k / 1000k`) shows how much of the session's context window the conversation has used.
-* **AI credits** in the top bar (`50 of 50 credits left`) are what agent runs draw down.
+* **AI credits** in the top bar (`50 of 50 AI credits left`) are what agent runs draw down. Only Owners and Admins see this badge.
 {% endstep %}
 
 {% step %}
@@ -32,7 +32,7 @@ Three things on this screen are worth knowing before you go further:
 
 The agent needed to create connect links for the two systems. In **Manual** mode it does not just do that; it stops and shows you each call.
 
-<figure><img src="../../.gitbook/assets/agent-approval-gate.jpg" alt="Two stacked approval cards, each headed Create connect link with the tool name create_connect_link, a JSON payload containing a connectorId, a VIEW RAW INPUT toggle, a note-to-agent textarea, and Accept, Always allow and Reject buttons"><figcaption>A Manual-mode approval gate. One card per pending call, each showing the exact tool and payload.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-approval-gate.jpg" alt="Two stacked approval cards, each headed Create connect link with the tool name create_connect_link, a JSON payload containing a connectorId, a VIEW RAW INPUT toggle, a note-to-agent textarea, and Accept, Always allow and Reject buttons"><figcaption>A Manual-mode approval gate. One card per pending call, each naming the exact tool and what it will change.</figcaption></figure>
 
 Every gate shows you the same five things:
 
@@ -40,8 +40,8 @@ Every gate shows you the same five things:
 | ----------- | ---------- |
 | **Create connect link** | The action in plain language |
 | `create_connect_link` | The literal tool being called |
-| The JSON body | The exact arguments: here the `connectorId` it is acting on |
-| **VIEW RAW INPUT** | Expands the untruncated payload |
+| The change preview | What the call will change, drawn as a before/after |
+| **VIEW RAW INPUT** | The exact arguments as JSON, here the `connectorId` it is acting on. Secrets are redacted, and an input over 50,000 bytes is not displayed |
 | **NOTE TO AGENT (OPTIONAL)** | Free text: *"On reject, this note is sent to the agent so it can re-plan…"* |
 
 And three ways out: **Accept** runs this one call, **Always allow** stops asking for that tool for the rest of the session, and **Reject** refuses it: with your note attached, so the agent re-plans rather than simply retrying.
@@ -70,9 +70,9 @@ Those two answers change the generated code materially, which is exactly why it 
 {% step %}
 #### It writes a plan you can read before anything is built
 
-The agent produces an **Integration Plan** (a real markdown document, here `/plan-hubspot-to-sheets.md`), in a side panel, and a **BUILD PROGRESS** tracker beside it.
+The agent produces an **Integration Plan** (a real markdown document, here `/plan-hubspot-to-sheets.md`), in a side panel, and the **Build progress** tracker beside it.
 
-<figure><img src="../../.gitbook/assets/agent-integration-plan.jpg" alt="Three panels: the clarifying-question answer cards on the left, a BUILD PROGRESS tracker reading 0/6 with phases Use cases, Connectors, Workflows and Embed in the middle, and the Integration Plan document on the right showing Overview, Flow Details and a Field Mapping table"><figcaption>The plan (right) and the build tracker (middle). Nothing has been built yet, the counter reads <code>0/6</code>.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-integration-plan.jpg" alt="Three panels: the clarifying-question answer cards on the left, a BUILD PROGRESS tracker reading 0/6 with phases Use cases, Connectors, Workflows and Widget in the middle, and the Integration Plan document on the right showing Overview, Flow Details and a Field Mapping table"><figcaption>The plan (right) and the build tracker (middle). Nothing has been built yet, the counter reads <code>0/6</code>.</figcaption></figure>
 
 The plan spells out the mechanism, not just the intent:
 
@@ -95,16 +95,16 @@ The panel header carries a **download** button: the plan is a portable artifact,
 {% step %}
 #### It builds in tracked phases
 
-**BUILD PROGRESS** is the honest view of what is happening. It counts completed steps against the total (`0/6` → `2/6` → …) across four phases, each expandable into named substeps.
+**Build progress** is the honest view of what is happening. It counts completed steps against the total (`0/6` → `2/6` → …) across the phases the agent has written steps into (up to four), each expandable into named substeps.
 
-<figure><img src="../../.gitbook/assets/agent-build-progress.jpg" alt="The BUILD PROGRESS tracker at 2 of 6: Use cases and Connectors marked Complete with green checks, Workflows in progress showing three substeps, and Embed pending; the chat on the left shows a Proposed Field Mappings message"><figcaption>Two phases complete. <strong>Workflows</strong> is mid-flight, its three substeps named. Note the chip now reads <strong>Auto</strong>.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/agent-build-progress.jpg" alt="The Build progress tracker at 2 of 6: Use cases and Connectors marked Complete with green checks, Workflows in progress showing three substeps, and Widget pending; the chat on the left shows a Proposed Field Mappings message"><figcaption>Two phases complete. <strong>Workflows</strong> is mid-flight, its three substeps named. Note the chip now reads <strong>Auto</strong>.</figcaption></figure>
 
 | Phase | Substeps in this run |
 | ----- | -------------------- |
 | **1. Use cases** | Plan & confirm HubSpot to Google Sheets contact sync |
-| **2. Connectors** | Create and authorise the two connectors |
+| **2. Connectors** | Create and authorize the two connectors |
 | **3. Workflows** | Review & approve field mappings and test cases · Build and test contact sync workflow · Bind HubSpot `contact.creation` app event trigger |
-| **4. Embed** | Expose the integration as a widget |
+| **4. Widget** | Expose the integration in the widget |
 
 A completed phase collapses to a green check and **Complete**. The one in flight shows a spinner against the current substep, so you always know which of the six things it is doing.
 
@@ -136,7 +136,7 @@ What the agent hands over is an ordinary workflow. It opens in the [workflow edi
 * **It plans in writing first.** The Integration Plan is readable, downloadable, and exists before any building starts.
 * **It shows its work.** Six tracked steps across four named phases, not a spinner and a promise.
 * **It finishes the job.** Binding the app-event trigger is part of the build, not homework left for you.
-* **Manual mode is a real gate.** Every call surfaced its exact tool name and payload, with a note field that turns a rejection into a re-plan.
+* **Manual mode is a real gate.** Every call surfaced its exact tool name and a preview of the change, with a note field that turns a rejection into a re-plan.
 
 {% hint style="info" %}
 Manual mode is worth the extra clicks the first few times, purely because the approval cards show you which tools the agent reaches for. Once the shape is familiar, switch to **Auto** (as this run did partway through) and let it work.

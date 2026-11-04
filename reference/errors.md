@@ -9,14 +9,14 @@ description: >-
 Start with [Troubleshooting](../operate/troubleshooting.md) if you know the symptom but not the error. Use this page when you have an error in front of you and want to know what it means.
 
 {% hint style="info" %}
-**This page lists the failure states verified in the product.** fastn does not publish a fixed catalogue of error codes: most failures surface as a category plus a message written for the specific case, rather than a numbered code. Where a literal string is quoted below, it is quoted verbatim from the product.
+**This page lists the failure states verified in the product.** fastn does not publish a fixed catalog of error codes: most failures surface as a category plus a message written for the specific case, rather than a numbered code. Where a literal string is quoted below, it is quoted verbatim from the product.
 {% endhint %}
 
 ---
 
 ## Where the detail actually is
 
-A failed run tells you almost nothing from the list. **Click the row.** It expands into a step summary and four tabs (**Summary**, **Input**, **Output** and **Error**) and the Error tab is where the answer is.
+A failed run tells you almost nothing from the list. **Click the row.** It expands into a step summary and the tabs **Summary**, **Input**, **Output** and **Logs**, plus an **Error** tab when the run errored. The Error tab is where the answer is.
 
 <figure><img src="../.gitbook/assets/execution-error-diagnosis.jpg" alt="An expanded failed execution on the Error tab: a Configuration chip beside a Needs your attention chip, the headline The TikTok Shop connector needs to be connected, a Failed at line naming connector.tiktokShop.getAuthorizedShops at step 2 of 2, and an AI Diagnosis tab open on WHAT HAPPENED, WHY and HOW TO FIX"><figcaption>The Error tab leads with a plain-language diagnosis; <strong>Error Details</strong> beside it holds the raw message.</figcaption></figure>
 
@@ -58,7 +58,7 @@ The usual causes, in rough order of frequency:
 
 | Cause | How to confirm it | Fix |
 | ----- | ----------------- | --- |
-| The connection is **Expired** or **Failed** | [Connections](../build/connections/README.md), filtered to that customer | The customer re-authorises through your widget |
+| The connection is **Expired** or **Failed** | [Connections](../build/connections/README.md), filtered to that customer | The customer re-authorizes through your widget |
 | The connection is **pinned and no longer usable**, or belongs to another org | The raw message names a pinned connection id | Re-authenticate, then select the active connection |
 | The customer never connected that system | No row for them in Connections | They connect it |
 | A scope is missing from the grant | The action fails where others on the same connector succeed | Reconnect with the scope the action needs |
@@ -112,7 +112,7 @@ A workflow that runs and throws is a **Failed execution, not a transport error**
 
 ### The error envelope
 
-Every error the HTTP API returns carries the same shape:
+Most errors the HTTP API returns carry the same shape:
 
 ```json
 {
@@ -125,10 +125,18 @@ Every error the HTTP API returns carries the same shape:
 }
 ```
 
-`code` and `message` are always present. `details` appears only when there is structured context worth acting on. `retryAfter` appears on throttled responses, in **seconds**: the same value is sent as a standard `Retry-After` header, so a client that already honours that header needs no special handling.
+In this envelope, `code` and `message` are always present. `details` appears only when there is structured context worth acting on. `retryAfter` appears on throttled responses, in **seconds**: the same value is sent as a standard `Retry-After` header, so a client that already honors that header needs no special handling.
+
+Not every route uses the envelope yet. Many return a flat body with a plain string instead, for example a Test key sent without the test-mode header gets a `403` with:
+
+```json
+{ "error": "Test API keys require X-fastn-Test-Mode: true header" }
+```
+
+So check whether `error` is an object or a string before reading `error.code`, and fall back to the HTTP status when there is no code.
 
 {% hint style="info" %}
-Codes are stable; message wording is not. **Branch on `code`, never on `message`.**
+Codes are stable; message wording is not. **Branch on `code` (or the status), never on `message`.**
 {% endhint %}
 
 ### Error codes
@@ -145,13 +153,14 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `NOT_FOUND` | 404 | Resource not found |
 | `VALIDATION_ERROR` | 400 | Request validation failed: check `details` for the offending field |
 | `CONFLICT` | 409 | Resource conflict |
-| `RATE_LIMITED` | 429 | Rate limit exceeded: honour `retryAfter` |
+| `RATE_LIMITED` | 429 | Rate limit exceeded: honor `retryAfter` |
 | `QUOTA_EXCEEDED` | 429 | Plan quota exceeded. Unlike `RATE_LIMITED`, waiting will not clear it |
 | `PAYMENT_REQUIRED` | 402 | Quota exhausted and billing action is needed. See [Billing and limits](../manage/billing.md) |
 | `METHOD_NOT_ALLOWED` | 405 | Wrong HTTP method for that route |
 | `PAYLOAD_TOO_LARGE` | 413 | Request body over the size limit |
 | `INTERNAL_ERROR` | 500 | Unhandled server error: safe to retry once, then report |
 | `SERVICE_UNAVAILABLE` | 503 | Service temporarily unavailable: retry with backoff |
+| `DB_POOL_EXHAUSTED` | 503 | Database busy, retry shortly. Sent with `Retry-After` |
 | `UPSTREAM_ERROR` | 502 | A service fastn depends on failed |
 | `DB_ERROR` | 500 | Database operation failed |
 | `TIMEOUT` | 504 | Operation timed out |
@@ -163,6 +172,7 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `CONN-AUTH-FAILED` | 401 | The connection's credential was rejected by the provider |
 | `CONN-REFRESH-FAILED` | 401 | An OAuth token could not be refreshed. Reconnect. This will not recover on its own |
 | `CONN-EXEC-FAILED` | 502 | The connector ran but the provider call failed |
+| `CONN-PROTOCOL-UNAVAILABLE` | 503 | A protocol action (database, SFTP, FTPS, MSSQL, MongoDB) reached a runtime that cannot run it. Retrying the same call will not help |
 
 **Workflow**
 
@@ -170,6 +180,12 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | ---- | ---- | ----- |
 | `WF-EXEC-FAILED` | 500 | The run threw. The detail is in [Executions](../operate/executions.md), not this response |
 | `WF-TIMEOUT` | 504 | The run exceeded its tier's time budget |
+| `WF-LABEL-LIMIT` | 400 | Too many labels for one workflow |
+| `WF-CODE-READONLY` | 403 | Your organization can read workflow code but not change it |
+| `WF-CODE-ERROR` | 422 | A test run failed because of the workflow code itself |
+| `WF-TEST-TIMEOUT` | 408 | A test run timed out |
+| `WF-MEMORY-LIMIT` | 422 | The workflow exceeded the sandbox memory limit |
+| `WF-RESULT-TOO-LARGE` | 413 | The workflow returned a result over the size limit |
 
 **Agent**
 
@@ -186,10 +202,14 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `API-UNIFIED-OPERATION-UNSUPPORTED` | 404 | That entity does not support the operation |
 | `API-UNIFIED-NO-PROVIDER` | 404 | Nothing is connected that can serve the entity |
 | `API-UNIFIED-MULTIPLE-PROVIDERS` | 409 | More than one provider is connected: name the one you want |
+| `API-UNIFIED-CONNECTION-NOT-FOUND` | 404 | No such connection for this provider |
+| `API-UNIFIED-CONNECTION-EXPIRED` | 409 | The connection needs a new sign-in |
 | `API-UNIFIED-CURSOR-INVALID` | 400 | The pagination cursor is malformed or expired |
 | `API-UNIFIED-VALIDATION-FAILED` | 400 | The record failed the unified schema |
 | `API-UNIFIED-PROVIDER-AUTH-FAILED` | 401 | The underlying provider rejected the credential |
 | `API-UNIFIED-PROVIDER-RATE-LIMITED` | 429 | The provider throttled the call, not fastn |
+| `API-UNIFIED-PROVIDER-NOT-FOUND` | 404 | The provider could not find the requested record |
+| `API-UNIFIED-PROVIDER-REJECTED` | 400 | The provider rejected the request |
 | `API-UNIFIED-PROVIDER-ERROR` | 502 | The provider request failed |
 
 **Events**: these two reach a caller; the remaining event codes are operational and surface in [Trigger failure states](#trigger-failure-states) rather than an API response.
@@ -205,8 +225,8 @@ Prefixed codes are canonical, but the earlier flat names are still returned by s
 
 | Canonical | Also seen as |
 | --------- | ------------ |
-| `CONN-AUTH-FAILED` / `CONN-REFRESH-FAILED` / `CONN-EXEC-FAILED` | `CONNECTOR_AUTH_FAILED` / `CONNECTOR_REFRESH_FAILED` / `CONNECTOR_EXEC_FAILED` |
-| `WF-EXEC-FAILED` / `WF-TIMEOUT` | `WORKFLOW_EXEC_FAILED` / `WORKFLOW_TIMEOUT` |
+| `CONN-AUTH-FAILED` / `CONN-REFRESH-FAILED` / `CONN-EXEC-FAILED` / `CONN-PROTOCOL-UNAVAILABLE` | `CONNECTOR_AUTH_FAILED` / `CONNECTOR_REFRESH_FAILED` / `CONNECTOR_EXEC_FAILED` / `CONNECTOR_PROTOCOL_UNAVAILABLE` |
+| `WF-EXEC-FAILED` / `WF-TIMEOUT` / `WF-LABEL-LIMIT` / `WF-CODE-READONLY` | `WORKFLOW_EXEC_FAILED` / `WORKFLOW_TIMEOUT` / `WORKFLOW_LABEL_LIMIT` / `WORKFLOW_CODE_READ_ONLY` |
 | `AGT-LLM-ERROR` / `AGT-TIMEOUT` | `AGENT_LLM_ERROR` / `AGENT_TIMEOUT` |
 | `API-UNIFIED-*` | `UNIFIED_*`, e.g. `API-UNIFIED-NO-PROVIDER` is `UNIFIED_NO_CONNECTED_PROVIDER` |
 | `EVT-*` | `WEBHOOK_AUTH_FAILED`, `WEBHOOK_DELIVERY_FAILED` |
@@ -249,7 +269,7 @@ From [Connections](../build/connections/README.md). A connection that is not hea
 | Status | Means | Fix |
 | ------ | ----- | --- |
 | **Active** | Working | - |
-| **Expired** | The credential ran out and could not be refreshed | The customer re-authorises through your widget |
+| **Expired** | The credential ran out and could not be refreshed | The customer re-authorizes through your widget |
 | **Failed** | Access was revoked, a password changed, or a key was rotated | Same: the customer reconnects |
 | **Inactive** | Not currently in use | The row menu offers **Reconnect** and **Disconnect**; there is no re-enable |
 

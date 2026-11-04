@@ -30,7 +30,7 @@ Enter **Server name** `fastn` and **Server URL** `https://mcp.fastn.dev/fastn-wo
 {% step %}
 #### Pick the workspace
 
-fastn opens in a popup. Sign in if asked, pick the workspace Lovable works in and click **Connect**.
+fastn opens in a popup. Sign in if asked. If you belong to more than one fastn org, pick the workspace Lovable works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-lovable-choose-workspace.webp" alt="fastn's page titled Which workspace should Lovable (api.lovable.dev) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Lovable to it.</figcaption></figure>
 

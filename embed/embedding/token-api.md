@@ -11,25 +11,54 @@ An embed token identifies one of your customers to the widget. The dashboard sho
 ```http
 POST /api/v1/embed/token
 Authorization: Bearer <API key>
-x-org-id: <orgId>
+x-org-id: <customer id or your external reference>
+Content-Type: application/json
 ```
+
+`x-org-id` names the customer (the API calls it an end org): either fastn's id for the customer, or the external reference you registered it under (the `orgId` you sent to `POST /api/v1/orgs`). If you created a customer without one, fastn stored its slug as the external reference at creation time.
 
 ```json
 {
-  "token": "emb_…",
-  "endOrgId": "…",
-  "role": "end_user",
-  "expiresIn": 28800
+  "userId": "user_123",
+  "userEmail": "ana@acme.com",
+  "userName": "Ana"
 }
 ```
 
-`expiresIn` is 28800 seconds: eight hours.
-
-If the API key is pinned to a particular customer, send the customer in the body instead of the header:
+The response is wrapped in `data`:
 
 ```json
-{ "endOrgId": "…" }
+{
+  "data": {
+    "token": "emb_…",
+    "endOrgId": "…",
+    "userId": "user_123",
+    "role": "end_user",
+    "tierId": null,
+    "expiresAt": "2026-11-04T18:00:00.000Z",
+    "expiresIn": 28800
+  }
+}
 ```
+
+Read the token as `response.data.token`. `expiresIn` is 28800 seconds: eight hours.
+
+#### Body fields
+
+All fields are optional; the customer must come from the header, the body or the key.
+
+| Field | What it does |
+| --- | --- |
+| `endOrgId` | The customer, as fastn's id or your external reference. Use it instead of the header (for example when the API key is pinned to one customer). If you also send `x-org-id`, the two must agree |
+| `userId` | The person at your customer. Per-user isolation keys on this id (or on an attested `x-user-id`). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions |
+| `userEmail`, `userName` | Display only |
+| `createIfMissing` | Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission |
+| `customerName` | Display name for a customer created by `createIfMissing`. Defaults to the id |
+| `roleOverride` | Per-user role override that your backend decides |
+| `metadata` | Your own data, handed back in the widget's lifecycle callbacks for this session. At most 4 KB of JSON |
+| `allowOrgLevel` | Mint an organization-level token with no customer. Only for previewing your own organization; never hand one to a customer |
+
+If there is no customer in the header, the body or the key, and `allowOrgLevel` is not set, the call fails with `400` and code `EMBED_TOKEN_REQUIRES_END_ORG_ID`. An embed token cannot mint another embed token (`403`): mint from your backend with an API key, and use the refresh endpoint below to extend a live session.
 
 Your API key never reaches the browser. See [API keys](../../manage/api-keys.md).
 

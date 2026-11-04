@@ -1,7 +1,7 @@
 ---
 description: >-
-  Tutorials for building on fastn's platform from local dev setup, custom
-  connectors, TypeScript workflows, deployment, AI agents, to MCP integration.
+  Tutorials for developers embedding fastn in their product: embed tokens, API
+  keys, customer identifiers, connection scope, deployment and MCP.
 hidden: true
 ---
 

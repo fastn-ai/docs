@@ -239,7 +239,7 @@ const connectionId = hubspot?.id;
 | `id` | The `connectionId`. Pass it to [unified records](unified-records.md#pick-one-account-connectionid) when a customer has more than one account for the same app. |
 | `name` | The connection's name, for example the `connectionName` from the setup link. |
 | `connector.slug` | The app, for example `hubspot`. Use it as `provider` in unified calls and as `connector` in [direct actions](app-actions.md). |
-| `connectorId` | The app's id in the catalogue. |
+| `connectorId` | The app's id in the catalog. |
 | `status` | For example `ACTIVE` or `EXPIRED`. An expired connection needs the customer to sign in again. |
 | `isDefault` | The account used when you do not pick one. |
 | `endOrgId` | fastn's own id for the customer the connection belongs to; you can ignore it. |

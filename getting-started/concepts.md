@@ -4,16 +4,16 @@ description: The handful of ideas that everything else in fastn is built from.
 
 # Core concepts
 
-### Organisation, customer, connection
+### Organization, customer, connection
 
-An **organisation** is you, the SaaS company. It holds your connectors, workflows, widgets, people and settings.
+An **organization** is you, the SaaS company. It holds your connectors, workflows, widgets, people and settings.
 
-A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. In older fastn material and in some API parameters this is called a *tenant*.
+A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. The API calls a customer an *end org* (`endOrgId`), and some identifiers and older material say *tenant*. API calls identify a customer by fastn's customer id or by your own external reference for it, which defaults to the customer's slug if you did not set one.
 
-A **connection** is one customer's authorised link to one system. It stores the credential, encrypted, and records which auth method produced it.
+A **connection** is one customer's authorized link to one system. It stores the credential, encrypted, and records which auth method produced it.
 
 ```
-Organisation (you)
+Organization (you)
 ├── Customer A
 │   ├── Connection → HubSpot   (OAuth)
 │   └── Connection → Cin7 Core (API key)
@@ -21,7 +21,7 @@ Organisation (you)
     └── Connection → Salesforce (OAuth)
 ```
 
-Every connection has an id in the form `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`. The detail page shows it with the line *Pass this to the API to act as this customer.* When you call a workflow on a customer's behalf, the tenancy is carried in request headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections` and `x-fastn-installation-config`.
+Every connection has an id in the form `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`. The detail page shows it with the line *Pass this to the API to act as this customer.* When you call a workflow on a customer's behalf, the customer is identified in request headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections` and `x-fastn-installation-config`.
 
 ### Connector versus connection
 
@@ -29,16 +29,16 @@ A **connector** is the definition: this API, these actions, these auth methods, 
 
 Connectors are either **managed by fastn**, maintained upstream and patched when the vendor changes something, or **custom**, created by you.
 
-### Per-customer versus account-level connectors
+### Per-customer versus platform-wide connectors
 
 Inside a workflow, each connector is wired one of two ways.
 
 | Mode              | Credential used                                  | Use for                                            |
 | ----------------- | ------------------------------------------------ | -------------------------------------------------- |
 | **Per customer**  | The connection belonging to the running customer | Anything touching customer data                    |
-| Account level     | A single connection owned by your org, shared across the workspace | Your own systems: your Slack, your data warehouse |
+| **Platform-wide** | A single connection owned by your org, shared across the workspace | Your own systems: your Slack, your data warehouse |
 
-Only the first of these is labelled in the UI: the workflow's Connectors tab shows a **Per customer** badge, and a connection's detail page shows `Scope: Account level` when it is shared across the workspace.
+Both modes are labeled in the UI: the workflow's Connectors tab shows a **Per customer** or **Platform-wide** badge on each connector. On the connection side, a connection that belongs to your organization rather than to one customer shows `Scope: Account level` on its detail page.
 
 ### Workflows are code
 
@@ -50,19 +50,19 @@ export default async function (ctx) {
 }
 ```
 
-There is no node palette and no drag-and-drop step builder. The editor's Diagram tab draws a picture *from* that code, and is read-only.
+There is no node palette and no drag-and-drop step builder. The editor's Diagram tab is AI-generated documentation of that code: a read-only picture that regenerates when the code has changed.
 
 ### Execution tiers
 
 Every workflow declares how long it may run and how it answers the caller.
 
-| Tier         | Behaviour                                       | Returns       | Timeout range | Default |
+| Tier         | Behavior                                        | Returns       | Timeout range | Default |
 | ------------ | ----------------------------------------------- | ------------- | ------------- | ------- |
-| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s - 30s      | 30s     |
+| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s - 25s      | 25s     |
 | **Standard** | Asynchronous, run via Temporal                  | 202 Accepted  | 5s - 15min    | 2min    |
 | **Long**     | Asynchronous, for large volumes                 | 202 Accepted  | 30s - 36h     | 15min   |
 
-Pick Instant only when something is waiting on the answer. Most syncs are Standard.
+Instant's 25-second ceiling rises to 2 minutes only for organizations where fastn has turned on the longer Instant timeout. Long runs for up to 36 hours. Pick Instant only when something is waiting on the answer. Most syncs are Standard.
 
 ### Test and live
 
@@ -88,11 +88,11 @@ Three kinds, covered fully in [Triggers](../build/triggers/README.md).
 
 Where several providers do the same job (HubSpot, Salesforce and Zoho all hold contacts), fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/api/v1/unified/crm/contact` and does not branch on the CRM.
 
-There are three categories today: CRM (`Account`, `contact`, `Note`), Documents (`Document`, `Document Content`) and Messaging (`Channel Message`, `Direct Message`). `Note` and both message entities are create-only. See [Unified APIs](../build/unified-apis/README.md).
+The categories and entities available depend on the unified API catalog in your workspace, and the list grows over time; CRM contacts are a typical example. See [Unified APIs](../build/unified-apis/README.md) for how to browse what is available.
 
-### The agent
+### Build with AI
 
-fastn's agents are not autocomplete. They discover API specs, create connectors, wire auth, propose field mappings, generate test cases and write the workflow, and they show you a diff before anything runs. You review; they build.
+fastn's builder, **Build with AI**, is not autocomplete. It discovers API specs, creates connectors, wires auth, proposes field mappings, generates test cases and writes the workflow, and it shows you a diff before anything runs. You review; it builds.
 
 ### The MCP gateway
 

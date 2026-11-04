@@ -25,16 +25,17 @@ const secret = hook.secret;    // whsec_…: shown once, store it now
 
 | Field | Required | Meaning |
 | ----- | -------- | ------- |
-| `url` | Yes | Your https endpoint. An `http` URL, or a private or internal address, is refused (`400 VALIDATION_ERROR`). |
-| `eventTypes` | No | Which events to send (table below). Leave it out for every connection and setup link event. `connector.event` and `unified.event` are sent only when you list them. |
+| `url` | Yes | Your https endpoint. An `http` URL is refused with `400 VALIDATION_ERROR`; a private or internal address is refused with `400 EVENT_SUBSCRIPTION_URL_NOT_ALLOWED`. |
+| `eventTypes` | No | Which events to send (table below). Leave it out for every connection and setup link event. `connector.event`, `unified.event` and `workflow.event` are sent only when you list them. |
 | `connectors` | No | `connector.event` only: just events from these apps (slug or connector id), for example `["hubspot"]`. |
 | `providerEvents` | No | `connector.event` only: just these app event names, for example `["contact.creation"]`. |
 | `entities` | No | `unified.event` only: just these entities, as `category/entity`, for example `["crm/contact"]`. |
+| `workflowEvents` | No | `workflow.event` only: just these event names (the names your workflows pass to `fastn.events.emit`). Empty means every name. |
 | `endOrgId` | No | Only events about this customer, by your customer id. The customer form above fills it in for you. |
 | `description` | No | Your label. |
 | `enabled` | No | Default `true`. |
 
-Answer: `{ data: { id, url, endOrgId, eventTypes, connectors, providerEvents, entities, enabled, description, createdBy, createdAt, updatedAt, secret } }`. The `secret` is returned **only here**: reading the subscription later never shows it.
+Answer: the subscription itself, `{ id, url, endOrgId, eventTypes, connectors, connectorCategories, providerEvents, entities, workflowEvents, payloadTemplate, enabled, description, createdBy, createdAt, updatedAt, secret }`. The raw operation `fastn.events.createEventSubscription` answers the same object wrapped as `{ data: { … } }`. The `secret` is returned **only here**: reading the subscription later never shows it.
 
 ---
 
@@ -49,6 +50,7 @@ Answer: `{ data: { id, url, endOrgId, eventTypes, connectors, providerEvents, en
 | `setup_link.expired` | A setup link expired unused. | `setupLinkId`, `metadata` |
 | `connector.event` | A change in a customer's app, for example a new HubSpot contact. Needs an [app event trigger](#app-events). | `app`, `connector`, `connectionId`, `event` (the app's event name), `accountId`, `triggerId`, `payload` (the app's own body) |
 | `unified.event` | The same app change, as a unified record. Needs an [app event trigger](#app-events). | `app`, `connector`, `connectionId`, `category`, `entity`, `action` (`created`, `updated` or `deleted`), `remoteId` (the record id in the app), `providerEvent`, `triggerId`, and `record` (the unified record `{ id, provider, data }`) or `recordError` (why it could not be read) |
+| `workflow.event` | A workflow sent an event with `fastn.events.emit`. Opt in: sent only when you list it, filtered by `workflowEvents`. | `event` (the name the workflow gave it), `workflowId`, `executionId`, `payload` (the data the workflow sent), and when set `app`, `connector`, `installationId` |
 | `endpoint.test` | You sent a test with `testEventSubscription`. | None |
 
 Every event carries `id` (`evt_…`), `type`, `occurredAt` and `tenantRef` (your customer id: match on this). The wire body also carries `endOrgId`, fastn's own id for the customer; `parseEvent` leaves it out (pass `{ internalIds: true }` to keep it). `metadata` is the object you set on the setup link.
@@ -78,9 +80,9 @@ Each delivery carries these headers:
 | `X-Fastn-Signature` | `sha256=` + HMAC-SHA256 of `<timestamp>.<raw body>`, keyed with your `whsec_…` secret. |
 | `X-Fastn-Timestamp` | Unix seconds when the delivery was signed. |
 | `X-Fastn-Event-Id` | The event id. It stays the same on every retry. |
-| `X-Fastn-Redelivery` | `true` on a resend. |
+| `X-Fastn-Redelivery` | `true` on an automatic retry. A replay starts the count again, so its first send does not carry it. |
 
-`parseEvent` checks the signature, refuses deliveries older than five minutes, and returns the event. Give it the **raw** body exactly as received: a re-serialised object changes the bytes and fails the check.
+`parseEvent` checks the signature, refuses deliveries older than five minutes, and returns the event. Give it the **raw** body exactly as received: a re-serialized object changes the bytes and fails the check.
 
 ```typescript
 import express from "express";
@@ -155,9 +157,9 @@ fastn retries a delivery with growing gaps for 24 hours, until your endpoint ans
 | Do this | SDK | Answer |
 | ------- | --- | ------ |
 | Send a test event | `fastn.webhooks.test(id)` | `{ eventId, status: "queued" }`. Sends one `endpoint.test` event. |
-| See deliveries | `fastn.webhooks.deliveries(id, { status?, limit? })` | `[ { id, eventId, type, status, attempts, lastStatus, lastError, nextAttemptAt, createdAt, deliveredAt } ]`. `status` is `pending`, `delivered` or `dead`. |
-| Send one again | `fastn.webhooks.replay(deliveryId)` | Sends the delivery again with the same event id, marked as a redelivery. Works for `dead` deliveries too. |
-| Pause or change | `fastn.webhooks.update(id, { url?, eventTypes?, connectors?, providerEvents?, entities?, description?, enabled? })` | The updated subscription. With `enabled: false`, events queue and are sent when you enable it again. |
+| See deliveries | `fastn.webhooks.deliveries(id, { limit? })` | `[ { id, eventId, type, status, attempts, lastStatus, lastError, nextAttemptAt, createdAt, deliveredAt } ]`, newest first. `limit` defaults to 50, at most 200. `status` is `pending`, `delivered` or `dead`; the API does not filter on it, so filter the list yourself. |
+| Send one again | `fastn.webhooks.replay(deliveryId)` | `{ id, status: "pending" }`. Sends the delivery again with the same event id, on a fresh retry schedule (attempts start again at 0). Works for `dead` deliveries too. |
+| Pause or change | `fastn.webhooks.update(id, { url?, eventTypes?, connectors?, providerEvents?, entities?, description?, enabled? })` | The updated subscription. With `enabled: false`, deliveries are held and checked again every 5 minutes; a delivery still held 24 hours after it was created is marked `dead`. Enable the webhook again within 24 hours, or replay the dead deliveries. |
 | Read | `fastn.webhooks.get(id)` / `fastn.webhooks.list()` | The subscription(s), without the secret. |
 | New secret | `fastn.webhooks.rotateSecret(id)` | A new secret, returned once. Deliveries after this are signed with it. |
 | Remove | `fastn.webhooks.delete(id)` | `{ id, deleted: true }`. Queued deliveries go with it. |
@@ -174,7 +176,7 @@ The same calls exist as raw operations under `fastn.events` (`createEventSubscri
 const watch = await customer.watch("hubspot", ["contact.created", "contact.updated", "deal.stageChanged"]);
 // watch.id, watch.events (the app's own event ids)
 
-const events = await customer.watchableEvents("hubspot");     // what the app offers, plain names and the app's ids
+const events = await customer.watchableEvents("hubspot");     // the app's own event rows: { id, label, description, payloadSchema }
 const watches = await customer.watches("hubspot");            // the customer's watches on that app (every page)
 await customer.unwatch("hubspot");                            // or unwatch(watch.id)
 ```
@@ -182,7 +184,7 @@ await customer.unwatch("hubspot");                            // or unwatch(watc
 | Method | Meaning |
 | ------ | ------- |
 | `customer.watch(app, events, { accountId?, connectionId?, name? })` | Turns the events on. Events are named in plain words (`contact.created`, `deal.stageChanged`) or as the app names them; an unknown name is `400 EVENT_NOT_FOUND` with the valid list. The customer's account on the app is found from their connections: none is `404 CONNECTION_NOT_FOUND`, several is `409 CONNECTION_AMBIGUOUS` (pass `connectionId`). Two plain names that map to one app event are sent once; a `connectionId` of another app is `400 CONNECTION_MISMATCH`. `accountId` is the app's own account id when the app needs one (the HubSpot portal id). |
-| `customer.watchableEvents(app)` | The events the app offers. |
+| `customer.watchableEvents(app)` | The app's own event rows, `{ id, label, description, payloadSchema }`. The plain names `watch` accepts (`contact.created`) are SDK aliases and are not in this list. |
 | `customer.watches(app?)` | The customer's watches, every page. |
 | `customer.unwatch(app)` / `customer.unwatch(watchId)` | Removes the watches on an app, or one watch; answers the ids removed. A watch id that is not this customer's is `404 WATCH_NOT_FOUND`. |
 

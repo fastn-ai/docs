@@ -27,7 +27,7 @@ The method types, and the fields each one asks for, are listed in [Creating a co
 
 **View providers** lists the OAuth apps behind the connector's OAuth methods.
 
-<figure><img src="../../.gitbook/assets/connector-auth-providers.webp" alt="The Auth Providers panel, OAuth credentials for this connector, with columns Name, Client ID, Preferred, Used By and Actions, and one row: HubSpot OAuth, a blurred client ID, a Preferred app badge, a dash under Used By, and Community, read-only under Actions"><figcaption>A managed connector's provider is fastn's own OAuth app, so its row is read-only.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-auth-providers.webp" alt="The Auth Providers panel, OAuth credentials for this connector, with columns Name, Client ID, Preferred, Used By and Actions, and one row: HubSpot OAuth, a blurred client ID, a Preferred app badge, a dash under Used By, and Community - read-only under Actions"><figcaption>A managed connector's provider is fastn's own OAuth app, so its row is read-only.</figcaption></figure>
 
 | Column | Meaning |
 | --- | --- |
@@ -35,7 +35,7 @@ The method types, and the fields each one asks for, are listed in [Creating a co
 | **Client ID** | The OAuth client ID registered with the vendor. The client secret is never shown. |
 | **Preferred** | **Preferred app** marks a default provider. Your own app and the community app can both show it; the connect dialog shows which one it will use. |
 | **Used By** | Which connections use this provider. |
-| **Actions** | What you can do with it. *Community, read-only* means the provider belongs to fastn's shared catalogue and cannot be changed from your workspace. |
+| **Actions** | What you can do with it. *Community - read-only* means the provider belongs to fastn's shared catalog and cannot be changed from your workspace. |
 
 The **‹** arrow returns to the method list.
 
@@ -91,7 +91,7 @@ The **Auth Providers** page lists every set of OAuth credentials for this connec
 
 Click **+ Create Provider** at the top right to add your own.
 
-<figure><img src="../../.gitbook/assets/own-oauth-app-3-providers.webp" alt="The Auth Providers list with one row, HubSpot OAuth, badged Preferred app and labelled Community, read-only, and a Create Provider button at the top right"><figcaption>The community app, before you add your own.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/own-oauth-app-3-providers.webp" alt="The Auth Providers list with one row, HubSpot OAuth, badged Preferred app and labeled Community - read-only, and a Create Provider button at the top right"><figcaption>The community app, before you add your own.</figcaption></figure>
 
 **Step 4: Enter your app's identity and scopes**
 

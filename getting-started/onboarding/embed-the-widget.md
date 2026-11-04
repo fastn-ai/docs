@@ -41,7 +41,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 | Use case | How you set it up |
 | --- | --- |
-| Settings page in a B2B product | The iframe on your settings page, with Org level Scope so one admin connects for the whole customer |
+| Settings page in a B2B product | The iframe on your settings page, with Organization level Scope so one admin connects for the whole customer |
 | Each user connects their own systems | User level Scope |
 | Plans and tiers | Register each customer with a tier and connection limit; show some integrations to specific customers only |
 | Integrations that start from your product | Your backend calls a webhook trigger on each event (part 5 below) |
@@ -50,7 +50,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 Five parts, each done once; part 5 is optional. Keep the API key and identity secret on your backend: only the embed token reaches the browser.
 
-**1 · Create an API key.** In **Settings** → **API keys**, create a key with **Full access** permissions that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones it registers later, and the identity hash says which customer each call is for. A key limited to specific customers can't register customers, or get embed tokens for customers it doesn't list. See [API keys](../../manage/api-keys.md).
+**1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens and registers customers) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones it registers later, and the identity hash says which customer each call is for. A key limited to specific customers can't register customers, or get embed tokens for customers it doesn't list. See [API keys](../../manage/api-keys.md).
 
 **2 · Register each customer** (backend, once per customer), with your own ID for them, their tier and connection limit:
 
@@ -60,6 +60,8 @@ curl -X POST https://api.fastn.dev/api/v1/orgs \
   -H "Content-Type: application/json" \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
+
+`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`, `endOrgId`) accept either fastn's customer id or that external reference.
 
 Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
 
@@ -73,7 +75,7 @@ const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
   method: "POST",
   headers: {
     Authorization: `Bearer ${process.env.FASTN_API_KEY}`,
-    "x-org-id": orgId,     // the orgId you registered in part 2
+    "x-org-id": orgId,     // the orgId from part 2, or fastn's customer id
     "x-user-id": userId,
     "x-identity-hmac": hmac,
   },

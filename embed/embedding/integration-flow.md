@@ -14,27 +14,27 @@ Terms used on this page are defined in the [Glossary](../../reference/glossary.m
 Before you start, you need an API key. We also recommend two optional security measures:
 
 * Enable caller identity verification (HMAC) on the API key.
-* Compute an identity hash on your backend and send it with every tenant-specific request.
+* Compute an identity hash on your backend and send it with every customer-specific request. The hash is recommended; it is required only when the key's identity verification is set to **Enforce**.
 
 #### Creating an API key
 
-1. Go to your **fastn dashboard** → **Settings** → **API Keys**.
+1. Go to **Embed** → **API keys and MCP** → **API keys** (`/access`).
 
 <figure><img src="../../.gitbook/assets/api-key-settings-page.webp" alt="The Settings API Keys page in the earlier dashboard layout, with Test and Live tabs and a Create API Key button"><figcaption></figcaption></figure>
 
-2. Click **+ Create API Key**.
+2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
    * **Name**: give it something identifiable.
-   * **Mode**: select **Live** for production use or **Test** for development.
-   * Set **scopes**, **IP whitelisting**, **rate limits**, and **expiry** as needed.
+   * **Mode**: select **Live** for production use or **Test** for development. A live key also needs an **Environment**.
+   * Set **permissions** (the **Embed backend** preset fits a backend that mints tokens), **allowed IP addresses**, **rate limit** and **expiry** as needed.
    * Enable **caller identity verification (HMAC)**. This is optional but recommended for security.
-4. Click **Create Key**.
+4. Click **Create key**.
 
 <figure><img src="../../.gitbook/assets/api-key-create-dialog.webp" alt="The Create an API key dialog: Name set to Test, Mode with Test and Live cards, Permissions set to Viewer and the What it can touch matrix"><figcaption></figcaption></figure>
 
 #### Creating an identity hash (recommended)
 
-Sending an identity hash with tenant-specific requests is optional, but we recommend it for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.
+Sending an identity hash with customer-specific requests is optional, but we recommend it for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.
 
 If you skip this section, omit the `x-identity-hmac` header from your requests and don't enable HMAC on your API key.
 
@@ -76,7 +76,7 @@ x-identity-hmac: <identityHash(orgId, userId)>  // optional, recommended
 
 The user ID is optional. If you don't send `x-user-id`, call `identityHash(orgId)` so the user ID defaults to an empty string.
 
-The plaintext headers tell the gateway which identity is being claimed, and the hash proves that your backend authorized that specific claim. The gateway rejects any call whose hash doesn't match the one it recomputes from the plaintext values. If your API key is set to enforce HMAC verification, it also rejects calls where the hash is missing.
+The plaintext headers tell the gateway which identity is being claimed, and the hash proves that your backend authorized that specific claim. With the key set to **Enforce**, the gateway rejects any call whose hash is missing or doesn't match the one it recomputes from the plaintext values. With **Monitor only**, it logs mismatches and lets the call through.
 
 ### Integration steps
 
@@ -90,7 +90,7 @@ From your backend server, call Create a Customer Organization to register the cu
 
 **2. Retrieve an embed token**
 
-From your backend server, call Generate Embed Token to get the authentication token for the tenant. See [API Reference: Generate Embed Token](#generate-embed-token).
+From your backend server, call Generate Embed Token to get the authentication token for the customer. The token is in the response's `data` object: read it as `data.token`. See [API Reference: Generate Embed Token](#generate-embed-token).
 
 **3. Load the widget**
 
@@ -100,7 +100,8 @@ Pass the token to your frontend and embed the iframe:
 <iframe
   src="https://api.fastn.dev/api/v1/embed/iframe?token=<token>"
   style="width:100%;height:600px;border:none"
-  allow="clipboard-write">
+  allow="clipboard-write"
+  referrerpolicy="strict-origin-when-cross-origin">
 </iframe>
 ```
 
@@ -152,10 +153,30 @@ x-user-id: <USER_ID>  // optional
 x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 ```
 
+`x-org-id` is the customer: fastn's id for it, or the `orgId` you registered it under above.
+
 **Body**
 
 ```json
-{ }
+{ "userId": "<USER_ID>" }
+```
+
+Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. The full field list is on [Tokens](token-api.md).
+
+**Response**
+
+```json
+{
+  "data": {
+    "token": "emb_…",
+    "endOrgId": "…",
+    "userId": "<USER_ID>",
+    "role": "end_user",
+    "tierId": null,
+    "expiresAt": "…",
+    "expiresIn": 28800
+  }
+}
 ```
 
 #### Create a SaaS Connection (optional)

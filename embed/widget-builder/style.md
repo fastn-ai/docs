@@ -4,21 +4,21 @@ description: "The Style tab: theme, accent, type, shape and design tokens."
 
 # Style
 
-<figure><img src="../../.gitbook/assets/widget-style.jpg" alt="The Style tab on its Theme sub-tab, beside Accent, Type, Shape and Tokens, offering Light and Dark base cards with a note that neither is selected because custom surfaces are set"><figcaption>Status colours stay fixed whichever base you pick, so failed always reads as failed.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/widget-style.jpg" alt="The Style tab on its Theme sub-tab, beside Accent, Type, Shape and Tokens, offering Light and Dark base cards with a note that neither is selected because custom surfaces are set"><figcaption>Status colors stay fixed whichever base you pick, so failed always reads as failed.</figcaption></figure>
 
 Five sub-tabs: **Theme**, **Accent**, **Type**, **Shape**, **Tokens**.
 
 ### Theme
 
-**Light** for a white product, **Dark** for a dark one. Everything except your accent colour derives from it. If you have set custom surface colours that match neither base, the UI tells you: picking one replaces them.
+**Light** for a white product, **Dark** for a dark one. Everything except your accent color derives from it. If you have set custom surface colors that match neither base, the UI tells you: picking one replaces them.
 
 {% hint style="info" %}
-Status colours are deliberately not themeable. A customer has to read "failed" correctly no matter what brand sits around it.
+Status colors are deliberately not themeable. A customer has to read "failed" correctly no matter what brand sits around it.
 {% endhint %}
 
 ### Accent
 
-A pair, not a single colour: **Accent** (default `#000000`) and **Text on accent** (default `#fff`), with a live contrast readout beside them. Set both: the readout is there so you can check the pairing is legible before your customers do.
+A pair, not a single color: **Accent** (default `#4F46E5`) and **Text on accent** (default `#FFFFFF`), with a live contrast readout beside them. Set both: the readout is there so you can check the pairing is legible before your customers do.
 
 ### Type
 
@@ -35,7 +35,7 @@ Four presets (**Square**, **Rounded**, **Soft**, **Pill**), over a radius of 0-2
 
 ### Tokens
 
-Surface colours, set individually: **Background**, **Foreground**, **Card**, **Muted**, **Muted text**, **Border**.
+Surface colors, set individually: **Background**, **Foreground**, **Card**, **Muted**, **Muted text**, **Border**.
 
 | Control                        | Notes                                          |
 | ------------------------------ | ------------------------------------------------ |
