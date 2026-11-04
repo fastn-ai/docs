@@ -6,8 +6,6 @@ description: Every workflow run, newest first.
 
 **Activity → Executions**
 
-<figure><img src="../.gitbook/assets/activity-executions.jpg" alt="The Executions log: chips reading All 214651, Completed 212338, Failed 2298, Cancelled 15, over six Sync TikTok Orders to Cin7 Core rows, every one Failed with a Dependency Error tag"><figcaption>A daily 3 PM schedule failing the same way every day, the pattern the Workflow filter is for.</figcaption></figure>
-
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 
 ### The table

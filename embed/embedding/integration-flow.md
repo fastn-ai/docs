@@ -20,8 +20,6 @@ Before you start, you need an API key. We also recommend two optional security m
 
 1. Go to **Embed** → **API keys and MCP** → **API keys** (`/access`).
 
-<figure><img src="../../.gitbook/assets/api-key-settings-page.webp" alt="The Settings API Keys page in the earlier dashboard layout, with Test and Live tabs and a Create API Key button"><figcaption></figcaption></figure>
-
 2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
    * **Name**: give it something identifiable.
