@@ -31,7 +31,6 @@ redirects:
   ai-agents/configuration-agent: build/agent/README.md
   ai-agents/key-concepts-and-terminology: reference/glossary.md
 
-  classic/fastn-classic/readme: classic/fastn-classic/fastn-v1-overview.md
   reference: reference/glossary.md
   library: reference/faqs.md
   library/faqs: reference/faqs.md
@@ -43,3 +42,33 @@ redirects:
   api-reference: reference/api.md
   debugging-and-troubleshooting: operate/troubleshooting.md
   tutorials/developer/mcp-gateway-integration: build/mcp-gateway/README.md
+
+  # fastn Classic (V1) and UCL pages, retired 2026-11: point at the current equivalent
+  classic/fastn-classic: README.md
+  classic/fastn-classic/fastn-v1-overview: README.md
+  classic/fastn-classic/readme: README.md
+  classic/fastn-embedded-integration-platform-for-ai-agents: README.md
+  classic/embedded-integrations: embed/README.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience: embed/README.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn: tutorials/saas-admin/building-your-widget.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience/previewing-and-integrating-widgets: embed/embedding/README.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience/custom-webhooks-automatic-triggers: build/triggers/webhooks.md
+  classic/embedded-integrations/workspace-management: manage/README.md
+  classic/embedded-integrations/workspace-management/analytics-and-monitoring-dashboard: operate/health.md
+  classic/embedded-integrations/workspace-management/deployment: build/workflows/lifecycle.md
+  classic/embedded-integrations/workspace-management/deployment/releases: build/workflows/lifecycle.md
+  classic/embedded-integrations/workspace-management/deployment/pipelines: manage/environments.md
+  classic/fastn-ucl: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/embedding-ucl-onto-your-ai-agent: reference/ai-agents.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/multitenancy: tutorials/developer/understanding-tenancy.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/defining-an-mcp-server: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/creating-a-custom-tool: build/connectors/creating-a-connector.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/monitoring: operate/overview.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/monitoring/ucl-security-and-compliance: reference/faqs.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl: build/building-from-your-ai-agent.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-for-task-assignment-in-jira: build/building-from-your-ai-agent.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-to-cursor-and-access-data-from-notion: build/mcp-gateway/cursor.md
+  classic/scheduling-flows: build/triggers/schedulers.md
