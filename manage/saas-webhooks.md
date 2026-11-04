@@ -74,6 +74,8 @@ When you tick **Workflow events**, two more options appear:
 * **Only these categories and connectors**: leave it on **Every connector** unless you want to limit which events are sent.
 * **Only these workflow events**: the event names to send, comma separated (for example `ticket.created`). Leave it empty to send every name.
 
+A workflow event is sent only when a workflow emits it: the workflow code calls `await fastn.events.emit("ticket.created", data, { connector: "jira" })`. Nothing is sent automatically when a workflow runs, and test runs never send.
+
 From the webhook's row in the list you can:
 
 * **Send test**: send a test event to the URL.
