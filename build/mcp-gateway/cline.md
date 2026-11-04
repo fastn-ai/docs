@@ -34,7 +34,7 @@ fastn shows *This MCP server requires authentication to get started.* Click **Au
 
 <figure><img src="../../.gitbook/assets/mcp-cline-needs-auth.webp" alt="Cline's MCP list with fastn, a status dot, the message This MCP server requires authentication to get started, and Authenticate and Delete Server buttons"><figcaption>Cline signs in with OAuth, so no token is needed.</figcaption></figure>
 
-fastn opens in your browser. Sign in if asked, pick the workspace Cline works in and click **Connect**.
+fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Cline works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-cline-choose-workspace.webp" alt="fastn's page titled Which workspace should Cline use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Cline to it.</figcaption></figure>
 
@@ -65,7 +65,7 @@ Click **Edit Configuration** in Cline's **MCP** tab and add fastn under `mcpServ
 
 Then click **Authenticate** on fastn's row, as in step 3.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-cline.webp" alt="fastn's MCP server page with the Cline tile selected, showing a cline_mcp_settings.json snippet with a fastn entry of type streamableHttp and a note that the type must be camelCase"><figcaption>The Cline tab under <strong>Connect AI tools</strong> in fastn has the same snippet.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-cline.webp" alt="fastn's MCP server page with the Cline tile selected, showing a cline_mcp_settings.json snippet with a fastn entry of type streamableHttp and a note that the type must be camelCase"><figcaption>The Cline tile under <strong>Connect AI tools</strong> in fastn has the same snippet.</figcaption></figure>
 
 ## Troubleshooting
 

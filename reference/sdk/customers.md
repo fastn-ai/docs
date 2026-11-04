@@ -61,7 +61,7 @@ console.log(data.name, data.status);
 | `orgId`, `externalRef` | Your id for the customer (the same value). Use it to match the customer. |
 | `parentId` | Your own org: the account the customer belongs to. |
 | `type` | `end_org` for a customer. |
-| `status` | `active` or `suspended`. |
+| `status` | `active`, `suspended`, `pending_review` or `blocked`. `customer.update()` can set only `active` or `suspended`. |
 
 Rows from `customer.find()` and `listOrgs` carry two more fields, `connectionsCount` and `tierId`. With `include_usage: "true"`, `listOrgs` rows also carry `executions`, `events`, `storage_gb`, `overage`, `credits`, `integrations` and `users`.
 

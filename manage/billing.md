@@ -4,40 +4,89 @@ description: Your plan, what you have used, and where the ceilings are.
 
 # Billing and limits
 
-**Settings → Billing**
+**Settings → Billing** ([open in app](https://app.fastn.dev/settings/billing)). Billing is in the Settings menu for **Owners and Admins**, and only they see the plan, credits, payment and invoices, or can press any of its buttons. See [Who sees what](#who-sees-what) for the other roles.
 
-<figure><img src="../.gitbook/assets/settings-billing.jpg" alt="The Billing page with a Free, $0 per month plan card, a Credits this period tile reading 0 of 50 used and resetting in 27 days, and a Limits list where API keys per customer reads 4 / 2, 100%"><figcaption>Rows marked not measured have a cap but no usage reading behind them.</figcaption></figure>
+## Plans
 
-### Plan and credits
+fastn is priced by **customer connection**: one of your customers signed in to one app (a customer's HubSpot, their Google Calendar, and so on). The Limits list meters this as **Customer connections**.
 
-The plan card shows what you are on and what it costs: **Free**, at **$0 per month**, until you upgrade. **See plans** is the upgrade control, and the only one on the page.
+| Plan | Price | Includes |
+| --- | --- | --- |
+| **Launch** | $0 | 3 customer connections and 50 AI credits a month. For building and testing before you put a paying customer on it. |
+| **Scale** | $500 a month | 10 customer connections included, then $50 a month for each one past that, and 1,000 AI credits a month. Subscribe yourself from this page with **Subscribe to Scale**. |
+| **Enterprise** | Custom | Priced to your volume, with no AI credit cap. Contact sales. |
 
-**Credits this period** tracks AI usage against the allowance. It is the same number as the AI credits readout in the top bar, and the popover behind that readout is where the detail lives: tabs for **Your usage** and **Org total**, a **By agent** breakdown, and a reset at the start of the calendar month, UTC.
-
-### Limits
-
-Each quota is listed with usage against it. **Customize customer limits** overrides limits for a single customer.
-
-| Limit                       | Scope        |
-| --------------------------- | ------------ |
-| API keys                    | per customer |
-| Events                      | per day, per minute |
-| API calls                   | per day, per minute |
-| Active integrations         | total        |
-| Connectors allowed          | total        |
-| Workflows                   | per customer |
-| Steps                       | per flow     |
-
-**Workflow categories** and **Workflow labels** are listed here too, both scoped per workspace and counted live, so the usage reading against them is real. They are the two registries behind [Workflows Tags](workflow-tags.md), and that page is where you add and remove them.
-
-The list continues past the visible area with further rows: concurrency, AI sessions and tokens, retention, storage, connected accounts, users, webhook endpoints, payload size, executions and AI credits are all reported to appear further down. Scroll the page and read the rows themselves rather than relying on that list being complete or the scopes being as described.
+Connectors, workflows and seats are unlimited on every plan. See [fastn.ai/pricing](https://fastn.ai/pricing) for the full comparison, including support and security.
 
 {% hint style="info" %}
-Going over a limit **stops new work rather than charging you, and nothing already running is interrupted.** No surprise invoices, but also no silent overage: a sync that stops because you hit a ceiling looks like a broken sync until you check this page.
+Once you are subscribed, the plan card shows a line such as **Billing 12 connections · renews** followed by the renewal date. That number counts your **connected accounts**, which is the number of customers you have, not the number of apps they have signed in to.
 {% endhint %}
 
-### Below the fold
+### The plan card
 
-Sections further down this page (**Customer tiers** and **Create tier**, **Usage by customer**, **Payment** and **Invoices**), have not been captured, so this page does not describe how they behave. Read them in the product before planning around them.
+The card shows the plan you are on and its price. Which buttons it carries depends on where your subscription stands:
 
-One thing about tiers is corroborated from elsewhere: the [Roles](roles.md) screen states that a custom role can be assigned to an embed tier under Billing, which is how you scope what an embedded end user may do.
+| Button | When it appears |
+| --- | --- |
+| **Subscribe to Scale** | On Launch. Opens Stripe checkout. |
+| **See plans** | On Launch. |
+| **Manage billing** | Once a Stripe subscription exists. Opens the Stripe billing portal for card and billing details. |
+| **Cancel subscription** | Only while you are being billed, and not once a cancellation is already scheduled. It opens the same Stripe portal. |
+| **Request plan change** | On a paid plan. On Enterprise without a Stripe subscription, this is the only button. |
+
+A plan change request shows a **Plan change requested** notice at the top of the page; your plan and limits stay as they are until the fastn team decides. If a payment fails, the card says **Payment failed.** and your plan is unchanged while Stripe retries.
+
+## Credits
+
+**Credits this period** tracks AI usage (fastn's builder agent building and changing integrations) against your monthly allowance: 50 on Launch, 1,000 on Scale, no cap on Enterprise. It shows how many you have used, how many are left and how many days until the reset. It is the same number as the credits readout in the top bar. Click that readout for the detail: **Your usage** and **Org total** tabs, and a **By agent** breakdown. Credits reset at the start of each calendar month, UTC.
+
+## Limits
+
+The **Limits** card lists every quota with your usage against it, ordered so the one closest to its ceiling is at the top. The defaults per plan are:
+
+| Limit | Launch | Scale | Enterprise |
+| --- | --- | --- | --- |
+| Customer connections | 3 | 10 included, then billed per connection | Custom |
+| Connected accounts (your customers) | 3 | No cap | No cap |
+| AI credits (per month) | 50 | 1,000 | No cap |
+| Workflows running at the same time, account and customers | 1 | 5 | Custom, with per-customer caps |
+| Concurrent workflows (Cloud Run), per organization | 1 | 5 | 10 |
+| Concurrent instant runs | 3 | 10 | 20 |
+| Events per day | 500 | 50,000 | No cap |
+| API calls per day | 1,000 | 100,000 | No cap |
+| API keys per customer | 2 | 50 | No cap |
+| Workflow categories | 2 | 10 | 15 |
+| Workflow labels | 2 | 10 | 15 |
+| Connectors per integration | 2 | 2 | 2 |
+| Database connections | 2 | 7 | 15 |
+| fastn.state storage | 50 MiB | 250 MiB | 1 GiB |
+| fastn.state keys | 250,000 | 1,000,000 | 5,000,000 |
+
+Separately from the card, API requests are rate limited per minute: 100 on Launch, 500 on Scale, no limit on Enterprise. The count covers calls made with an API key or from an embed session, with your customers' calls counted toward your organization's total. This limit is not a row on the **Limits** card.
+
+**Connected accounts** counts your customers, and is checked only when a new customer is created: on Launch the 4th customer is refused, and a count already past 3 is kept. **Customer connections** is the pricing unit, one customer signed in to one app, summed across your customers.
+
+Connectors, workflows, executions, seats (users) and webhook endpoints are unlimited on every plan. Connectors per integration is 2 on every plan: an integration is your product and one other app, and each further app gets an integration of its own. Workflow categories and labels are managed under [Workflow tags](workflow-tags.md).
+
+**Customize customer limits** overrides the limits for one customer, for example to give a pilot customer more room than the rest. Pick the customer, then edit its limits; an override wins over the plan default.
+
+{% hint style="warning" %}
+A limit is checked when new work starts, and going over it **stops that new work**: the 4th customer connection on Launch, a run past the concurrency cap, an event past the daily allowance. What already exists is kept. The one exception is **customer connections on Scale**: connections past the 10 included are allowed and billed, per [fastn.ai/pricing](https://fastn.ai/pricing). A sync that stops at a ceiling can look like a broken sync, so if runs stop unexpectedly, check this page before you debug the workflow.
+{% endhint %}
+
+## Payment and invoices
+
+**Payment** shows the card on file, with **Update card** to change it through Stripe. With no card it reads *Free plan, nothing to pay* on Launch, or *Billed through your fastn agreement* on a plan billed outside Stripe. **Invoices** lists every invoice with its date, amount, status and a receipt you can download. Before your first one it reads *Your first invoice is issued when you subscribe.*
+
+## Who sees what
+
+| Role | What Billing shows them |
+| --- | --- |
+| **Owner, Admin** | Everything on this page, with working buttons. Billing is in their Settings menu. |
+| **Developer** | Not in their menu. Opened directly, the page shows no plan, no credits and no limits; the Limits card reads *Limits appear here once the quotas API is reachable.* |
+| **Operator, Viewer** | Not in their menu. Opened directly, they get a simpler **Your Allocation** view instead of this page. |
+
+## Related
+
+* [Customers](../operate/customers.md): who your customers are and what each one has connected (Operate → Customers)
+* [Roles](roles.md): who can see billing

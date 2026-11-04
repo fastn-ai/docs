@@ -6,7 +6,7 @@ description: Add fastn to OpenAI Codex with one command, sign in, and build inte
 
 Codex reads its MCP servers from `~/.codex/config.toml`. The Codex CLI and the Codex IDE extension share that file, so adding fastn once covers both.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tab selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tab under <strong>Connect AI tools</strong> in fastn has the command and the file.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tile selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect AI tools</strong> in fastn has the command and the file.</figcaption></figure>
 
 ## Add fastn
 
@@ -24,7 +24,7 @@ Codex detects that fastn uses OAuth and starts the sign-in straight away. It pri
 {% step %}
 #### Sign in to fastn
 
-In the browser, sign in to fastn if asked, pick the workspace Codex works in and click **Connect**. When the terminal prints *Successfully logged in.*, you are done.
+In the browser, sign in to fastn if asked. If you belong to more than one fastn org, pick the workspace Codex works in and click **Connect**. When the terminal prints *Successfully logged in.*, you are done.
 
 <figure><img src="../../.gitbook/assets/mcp-codex-choose-workspace.webp" alt="fastn's page titled Which workspace should Codex (chatgpt.com) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Codex to it.</figcaption></figure>
 

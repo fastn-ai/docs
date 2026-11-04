@@ -22,7 +22,7 @@ This step is for connecting your product to fastn. fastn learns your product's A
 | Component | What it is |
 | --- | --- |
 | Connector | The definition of your API in fastn: its actions, auth methods and webhook config. It holds no credentials |
-| Actions | One operation each, such as list, get or create a record. Workflows, the fastn agent and AI tools call actions, never your API directly |
+| Actions | One operation each, such as list, get or create a record. Workflows, Build with AI and your AI tools call actions, never your API directly |
 | Auth methods | How a customer signs in to your product: API key, OAuth 2.0, Basic, Bearer, Custom fields and more. An optional verification action checks that the credential works |
 | Webhook config (optional) | How fastn subscribes to your product's events, so they can start workflows |
 | Versions | Every change is saved as a Test version. Customers run the Live version until you publish |
@@ -34,7 +34,7 @@ This step is for connecting your product to fastn. fastn learns your product's A
 | --- | --- | --- |
 | Catalog connector | Your product is already in fastn's catalog | A connector fastn maintains. Nothing to build |
 | Your AI tools | Your team works in Claude, ChatGPT, Gemini, Cursor or similar | The connector built and tested from your chat, through fastn's MCP server. Uses no AI credits |
-| The fastn agent | You want fastn to build it from your API docs or OpenAPI file | The connector built and tested by the fastn agent. Uses AI credits |
+| Build with AI | You want fastn to build it from your API docs or OpenAPI file | The connector built and tested by fastn's agent. Uses AI credits |
 | By hand | You want full control | An empty connector you fill in action by action (you can paste a curl command) |
 | Import | You have a connector exported from another fastn workspace | The connector from a fastn .json bundle, without connections |
 | Request | You want fastn's team to build it | A connector built by fastn's team, with no committed date |
@@ -54,14 +54,12 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 
 1. **Test it.** Connect your own test account and run each action until it shows Live tested.
 2. **Publish it to Live.** **Integrations** → **Connectors** → your connector → **Overview** → **Versions** → **Publish to live**. Customers only run the Live version.
-3. **Register it as your SaaS connector.** **Settings** → **SaaS Connectors** → **Add**, pick your connector, add its connection scopes, then **Add SaaS Connector**.
+3. **Register it as your SaaS connector.** **Build** → **Connect your product** → **Connect your product** (or **Add another product connector** once one exists). In the **Connect your product** panel, pick your connector, add its connection scopes, then click **Add connector**.
 
 ### In the onboarding
 
-fastn checks your domain, researches your product and shows the result on the "Here's what we found" screen. You click **Looks right** or **Edit** on each row, then pick who builds the connector: your AI tools (recommended, no AI credits) or the fastn agent. If your product is already in the catalog, there's nothing to build. Finishing the step earns 20 AI credits.
-
-<figure><img src="../../.gitbook/assets/onboarding-step-1-connect-your-product.webp" alt="Onboarding step 1 of 4, the Here's what we found screen: what the product does, its entities, its API access and its webhooks, each with Looks right and Edit, then Next and Do it later"><figcaption>Step 1: Here's what we found.</figcaption></figure>
+fastn checks your domain, researches your product and shows the result on the "Here's what we found" screen. You click **Looks right** or **Edit** on each row, then pick who builds the connector: your AI tools (recommended, no AI credits) or the **fastn agent**, with an estimate such as "Up to 12 min" and the AI credits it may use. If your product is already in the catalog, there's nothing to build. Finishing the step earns 20 AI credits.
 
 ### Related docs
 
-[Connectors](../../build/connectors/README.md) · [SaaS connectors](../../manage/saas-connectors.md) · [Adding fastn to Claude](../../build/mcp-gateway/claude.md) · [Building from your AI agent](../../build/building-from-your-ai-agent.md) · [Agent](../../build/agent/README.md)
+[Connectors](../../build/connectors/README.md) · [SaaS connectors](../../manage/saas-connectors.md) · [Adding fastn to Claude](../../build/mcp-gateway/claude.md) · [Building from your AI agent](../../build/building-from-your-ai-agent.md) · [Build with AI](../../build/agent/README.md)

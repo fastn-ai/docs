@@ -13,7 +13,7 @@ Every connection has one status. It shows in the **Status** column on the [Conne
 | **Expired** | *Authorised, but the credential has expired. Reconnecting usually clears it.* | **Reconnect**. For a customer's connection, the customer signs in again through your widget. |
 | **Failed** | The credential is not accepted. | Same as Expired: sign in again. |
 
-Use the status chips at the top of the Connections page to list only connections in one state.
+Use the status chips at the top of the Connections page to list only connections in one state. The **Needs action** chip lists every connection that needs someone to act: those that are not active, and active ones that can no longer renew their token.
 
 {% hint style="info" %}
 A workflow that runs through an Expired or Failed connection cannot reach the app. Check connection status when a sync stops, and set an [alert](../../operate/alerts.md) so you hear about a broken connection before your customer does.

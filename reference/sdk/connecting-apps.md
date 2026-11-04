@@ -85,7 +85,7 @@ console.log(link.data?.setupUrl);   // send this link to the customer
 | `expiresInMinutes` | No | How long the link works, in minutes. Your org config carries a default link lifetime (`setupLinkDefaultTtlMinutes`, below). |
 | `redirectUrl` | No | Where the browser goes when setup ends. It must be on your list of registered redirect addresses (below), or the call is refused. |
 | `metadata` | No | Your own data, any JSON object. fastn does not use it. It comes back to you on the link and on the link's events, so you can tell which of your flows the new connection is for. |
-| `allowAdditionalConnection` | No | `true` lets the customer add another account for the same app (for example a second calendar). |
+| `allowAdditionalConnection` | No | `true` lets the customer add another account for the same app (for example a second calendar). The answer includes it only when it is `true`. |
 
 The SDK fills in the customer for you. If the customer does not exist yet, the link creates it.
 
@@ -101,7 +101,6 @@ The SDK fills in the customer for you. If the customer does not exist yet, the l
     "endOrgId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
     "metadata": { "flowId": "flow_123" },
     "redirectUrl": "https://app.example.com/connected",
-    "allowAdditionalConnection": false,
     "connectionName": "Front desk calendar"
   }
 }
@@ -239,7 +238,7 @@ const connectionId = hubspot?.id;
 | `id` | The `connectionId`. Pass it to [unified records](unified-records.md#pick-one-account-connectionid) when a customer has more than one account for the same app. |
 | `name` | The connection's name, for example the `connectionName` from the setup link. |
 | `connector.slug` | The app, for example `hubspot`. Use it as `provider` in unified calls and as `connector` in [direct actions](app-actions.md). |
-| `connectorId` | The app's id in the catalogue. |
+| `connectorId` | The app's id in the catalog. |
 | `status` | For example `ACTIVE` or `EXPIRED`. An expired connection needs the customer to sign in again. |
 | `isDefault` | The account used when you do not pick one. |
 | `endOrgId` | fastn's own id for the customer the connection belongs to; you can ignore it. |

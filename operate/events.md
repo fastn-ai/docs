@@ -6,23 +6,21 @@ description: Everything moving in and out of your customers' systems, newest fir
 
 **Activity → Events**
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="The Events table under columns Event, Source, Status and When: repeated Perigon article-alert webhook rows, each tagged webhook, Delivered, timestamped Sep 4, with a Replay link"><figcaption>Auto refresh, top-right, is off by default.</figcaption></figure>
-
 An event is one inbound arrival: a webhook fired, a schedule reached, or a manual run. This is the first place to look when something did not happen.
 
 ### The table
 
 | Column     | Notes                                                          |
 | ---------- | ---------------------------------------------------------------- |
-| **Event**  | The event identifier.                                          |
-| **Source** | Where it came from: `webhook` on every row observed.          |
-| **Status** | `Delivered` on a successful hand-off.                          |
+| **Event**  | The source's name, with the connector underneath.             |
+| **Source** | The kind of event, for example `webhook`.                     |
+| **Status** | `Delivered`, `Active`, `Idle`, `Queued`, `Warning`, `Retrying` or `Failed`. `Delivered` is a successful hand-off. |
 | **When**   | Timestamp, in your timezone.                                   |
 | **Replay** | Re-delivers the row. See below.                                |
 
-Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see at a glance whether your schedules are firing. **Search events** narrows the list.
+Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see at a glance whether your schedules are firing. **Search events** narrows the list. A time range select (**All time**, **Last 1h**, **Last 24h**, **Last 7d**, **Last 30d**, **Last 90d**), an environment select (**All environments**) and a **Refresh** button sit beside it.
 
-The list is not paginated, and rows do not expand. To see what a run did with an event, go to [Executions](executions.md).
+The list is paginated: **Rows per page** sets 25, 50 or 100. Click a row to expand it into a detail panel. To see what a run did with an event, go to [Executions](executions.md).
 
 ### Auto refresh
 
@@ -30,7 +28,7 @@ The toggle top-right is **off** by default. Turn it on to keep the list current 
 
 ### Replay
 
-Every row has **Replay**, which re-delivers the same payload to the same workflow. Use it after fixing a workflow that failed on an event you cannot ask the sender to resend.
+Owners, admins, developers and operators see **Replay** on each row, which re-delivers the same payload to the same workflow. It is disabled while the event is still pending. Use it after fixing a workflow that failed on an event you cannot ask the sender to resend.
 
 {% hint style="warning" %}
 Replay re-runs the workflow for real. If the workflow writes to an external system, and it has no deduplication key, replaying can create duplicates. Set a [deduplication key](../build/triggers/README.md) on the webhook trigger before you need it.

@@ -16,9 +16,9 @@ VS Code runs fastn as an MCP server for GitHub Copilot's **Agent** mode. Add it 
 {% step %}
 #### Click Install in VS Code
 
-In fastn, click **Connect AI tools** in the top bar (or open **Access** → **MCP server**), pick the **VS Code** tile and click **Install in VS Code**. When your browser asks to open Visual Studio Code, allow it.
+In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP** → **MCP server**), pick the **VS Code** tile and click **Install in VS Code**. When your browser asks to open Visual Studio Code, allow it.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-vscode.webp" alt="fastn's MCP server page with the VS Code tile selected, showing an Install in VS Code button, a note that VS Code keys this object servers not mcpServers, a code --add-mcp command and a .vscode/mcp.json snippet"><figcaption>The VS Code tab also has a command and a file, if you prefer those.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-vscode.webp" alt="fastn's MCP server page with the VS Code tile selected, showing an Install in VS Code button, a note that VS Code keys this object servers not mcpServers, a code --add-mcp command and a .vscode/mcp.json snippet"><figcaption>The VS Code tile also has a command and a file, if you prefer those.</figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -34,7 +34,7 @@ VS Code opens an **MCP Server: fastn** page with the URL `https://mcp.fastn.dev/
 
 Installing does not start the server. Press **Cmd+Shift+P** (**Ctrl+Shift+P** on Windows and Linux), run **MCP: List Servers**, pick **fastn** and choose **Start Server**.
 
-The first time, VS Code asks to let fastn authenticate. Click **Allow**. fastn opens in your browser: sign in, pick the workspace VS Code works in, and click **Connect**.
+The first time, VS Code asks to let fastn authenticate. Click **Allow**. fastn opens in your browser: sign in and, if you belong to more than one fastn org, pick the workspace VS Code works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-vscode-choose-workspace.webp" alt="fastn's page titled Which workspace should Visual Studio Code (vscode.dev) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins VS Code to it.</figcaption></figure>
 

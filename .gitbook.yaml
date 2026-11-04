@@ -31,7 +31,6 @@ redirects:
   ai-agents/configuration-agent: build/agent/README.md
   ai-agents/key-concepts-and-terminology: reference/glossary.md
 
-  classic/fastn-classic/readme: classic/fastn-classic/fastn-v1-overview.md
   reference: reference/glossary.md
   library: reference/faqs.md
   library/faqs: reference/faqs.md
@@ -43,3 +42,91 @@ redirects:
   api-reference: reference/api.md
   debugging-and-troubleshooting: operate/troubleshooting.md
   tutorials/developer/mcp-gateway-integration: build/mcp-gateway/README.md
+
+  # fastn Classic (V1) and UCL pages, retired 2026-11: point at the current equivalent
+  classic/fastn-classic: README.md
+  classic/fastn-classic/fastn-v1-overview: README.md
+  classic/fastn-classic/readme: README.md
+  classic/fastn-embedded-integration-platform-for-ai-agents: README.md
+  classic/embedded-integrations: embed/README.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience: embed/README.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience/building-and-configuring-widgets-in-fastn: tutorials/saas-admin/building-your-widget.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience/previewing-and-integrating-widgets: embed/embedding/README.md
+  classic/embedded-integrations/getting-started-with-fastns-embedded-experience/custom-webhooks-automatic-triggers: build/triggers/webhooks.md
+  classic/embedded-integrations/workspace-management: manage/README.md
+  classic/embedded-integrations/workspace-management/analytics-and-monitoring-dashboard: operate/health.md
+  classic/embedded-integrations/workspace-management/deployment: build/workflows/lifecycle.md
+  classic/embedded-integrations/workspace-management/deployment/releases: build/workflows/lifecycle.md
+  classic/embedded-integrations/workspace-management/deployment/pipelines: manage/environments.md
+  classic/fastn-ucl: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/embedding-ucl-onto-your-ai-agent: reference/ai-agents.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/multitenancy: tutorials/developer/understanding-tenancy.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/defining-an-mcp-server: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/creating-a-custom-tool: build/connectors/creating-a-connector.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/monitoring: operate/overview.md
+  classic/fastn-ucl/getting-started/about-unified-context-layer/monitoring/ucl-security-and-compliance: reference/faqs.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios: build/mcp-gateway/README.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl: build/building-from-your-ai-agent.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-for-task-assignment-in-jira: build/building-from-your-ai-agent.md
+  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-to-cursor-and-access-data-from-notion: build/mcp-gateway/cursor.md
+  classic/scheduling-flows: build/triggers/schedulers.md
+
+  # V1 Flows pages (flow-setup-essentials, tutorials-1), unpublished 2026-09: point at the current equivalent
+  flow-setup-essentials: build/workflows/README.md
+  flow-setup-essentials/connecting-apps: build/connectors/README.md
+  flow-setup-essentials/connecting-apps/connector-types-and-setup: build/connectors/README.md
+  flow-setup-essentials/connecting-apps/fixed-vs-dynamic-connections: tutorials/developer/understanding-tenancy.md
+  flow-setup-essentials/connecting-apps/managing-and-using-connectors: build/connectors/README.md
+  flow-setup-essentials/connecting-apps/setting-up-connector-authentication: build/connectors/auth-methods.md
+  flow-setup-essentials/data-and-storage: manage/database.md
+  flow-setup-essentials/data-and-storage/connect-to-the-fastn-db: manage/database.md
+  flow-setup-essentials/data-and-storage/connecting-external-databases: manage/database.md
+  flow-setup-essentials/designing-a-flow: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/ai-agent-and-ai-action-in-flows: build/agent/README.md
+  flow-setup-essentials/designing-a-flow/connectors: build/connectors/README.md
+  flow-setup-essentials/designing-a-flow/converter: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/custom-code: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/data-mapper: build/unified-apis/README.md
+  flow-setup-essentials/designing-a-flow/data-mapping-in-flows: build/unified-apis/README.md
+  flow-setup-essentials/designing-a-flow/database: manage/database.md
+  flow-setup-essentials/designing-a-flow/download-file: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/file-transfer-protocol-ftp: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-response-success-and-error: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-transformation: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-transformation/aggregate: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-transformation/filter: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-transformation/limit: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-transformation/merge: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/flow-transformation/split: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/logger: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/loop: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/summarization-chain: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/switch: build/workflows/the-editor.md
+  flow-setup-essentials/designing-a-flow/trigger: build/triggers/README.md
+  flow-setup-essentials/designing-a-flow/variables: build/workflows/the-editor.md
+  flow-setup-essentials/flow-settings: build/workflows/README.md
+  flow-setup-essentials/flow-settings/flow-step-settings: build/workflows/README.md
+  flow-setup-essentials/flow-settings/using-templates: build/patterns.md
+  tutorials-1: getting-started/quickstart.md
+  tutorials-1/data-migrations: build/patterns.md
+  tutorials-1/data-migrations/setting-up-a-google-drive-to-gcs-migration-flow: build/patterns.md
+  tutorials-1/data-migrations/setting-up-a-google-drive-to-gcs-migration-widget: build/patterns.md
+  tutorials-1/data-migrations/setting-up-a-redshift-to-gcs-migration-flow: build/patterns.md
+  tutorials-1/data-migrations/setting-up-an-aws-redshift-to-gcs-migration-widget: build/patterns.md
+  tutorials-1/flow-customization-and-operations: getting-started/quickstart.md
+  tutorials-1/flow-customization-and-operations/how-to-customize-success-and-error-messages-ui-in-flows: build/workflows/the-editor.md
+  tutorials-1/flow-customization-and-operations/how-to-customize-your-authentication-flow: build/connectors/auth-methods.md
+  tutorials-1/flow-customization-and-operations/how-to-customize-your-error-notification-flow: operate/alerts.md
+  tutorials-1/flow-customization-and-operations/how-to-manage-multiple-app-connections-together: build/connections/README.md
+  tutorials-1/flow-customization-and-operations/how-to-set-up-pagination-in-your-flow: build/patterns.md
+  tutorials-1/understanding-flow-types: build/workflows/README.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn: tutorials/end-user/customizing-your-integrations.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/setting-up-a-configuration-flow-with-custom-selection-options: tutorials/end-user/customizing-your-integrations.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/setting-up-a-configuration-flow-with-dynamic-selection-options: tutorials/end-user/customizing-your-integrations.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/setting-up-a-configuration-flow-with-mapping-selection-options: tutorials/end-user/customizing-your-integrations.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/setting-up-a-configuration-flow-with-static-selection-options: tutorials/end-user/customizing-your-integrations.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-configuration-flow-in-fastn/setting-up-field-level-validation-in-configuration-flows: tutorials/end-user/customizing-your-integrations.md
+  tutorials-1/understanding-flow-types/how-to-set-up-a-selection-flow: embed/widget-builder/edit-integration.md
+  tutorials-1/understanding-flow-types/how-to-set-up-an-activation-flow: tutorials/end-user/connecting-apps-via-widget.md

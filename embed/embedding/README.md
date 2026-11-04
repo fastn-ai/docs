@@ -4,20 +4,18 @@ description: Three ways to put the widget in your product, and how to hand it a 
 
 # Embedding the widget
 
-**Widgets → Embed**
-
-<figure><img src="../../.gitbook/assets/widget-embed.jpg" alt="The Embed tab with Iframe selected beside SDK and A2A soon, a USER selector set to NewTest, and an Embed Code block with a Copy button, beside a preview reading TikTok Shop, 0 of 1 connected"><figcaption>The preview follows the selected user, pick one and the panel shows that customer's real connection state, not a mock-up.</figcaption></figure>
+**Embed → Widget → Embed**
 
 ## Pick the customer first
 
-The widget is always scoped to **one** of your customers, so the **USER** dropdown at the top is not a preview toggle. It decides who the generated snippet is for.
+The widget is always scoped to **one** of your customers, so the dropdown labelled **User** at the top is not a preview toggle. It decides who the generated snippet is for.
 
-The dropdown lists the customers on your account, by their identifier, for example `test-tenant`. Selecting one does two things at once:
+The dropdown lists the customers on your account by name. Selecting one does two things at once:
 
 * the preview beside it shows **that customer's real connection state**, not a mock-up, so `TikTok Shop, 0 of 1 connected` is the truth for that customer
 * the **Embed Code** block regenerates with a token scoped to them
 
-If the dropdown is empty, you have no customers yet. Create one under [Customers](../../operate/customers.md) first.
+If you have no customers yet, the **User** dropdown does not appear. Instead a card reads **No customers yet - this is a template**, the snippet uses placeholders, and a **Create a customer** button takes you to [Customers](../../operate/customers.md). Once a customer exists, a live token replaces the placeholders.
 
 Then choose how to mount it.
 
@@ -35,15 +33,31 @@ For production, mint short-lived tokens from your backend and keep them out of t
 
 ## Shareable links
 
-Instead of a snippet, send a link. It keeps working until you revoke it, and the URL carries no token.
+Instead of a snippet, send a link. It keeps working until it expires or you revoke it, and the URL carries no token. Shareable links live on the **Iframe** sub-tab.
 
 {% hint style="warning" %}
 The reference in a shareable link *is* the credential. Treat the link itself as a secret: anyone who has it can act as that customer.
 {% endhint %}
 
-Create links per customer under **Shareable links** on the Embed tab. Each row offers **Copy**, **Show** and **Revoke**.
+#### Creating one
 
-A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorise on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
+1. Go to **Embed → Widget → Embed**, stay on the **Iframe** sub-tab, and pick the customer in the **User** dropdown. **Create link** stays disabled until you do - with nobody selected the card reads *Pick a customer above first.*
+2. In the **Shareable links** card, set **New links** to the expiry you want: **Never expire** (the default), **Expire in 1 day**, **Expire in 7 days** or **Expire in 30 days**.
+3. Select **Create link**.
+4. The new row appears badged **New**.
+
+Each row identifies itself by the last few characters of its id rather than printing the credential as a headline, and carries its own state:
+
+| State | Meaning |
+| ----- | --------- |
+| **Never used** | Created, not yet opened. |
+| **Used N times** | How many times it has been opened. |
+| **Revoked** | You revoked it. It will not load. |
+| **Expired** | It passed its expiry. It will not load. |
+
+**Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. **Revoke** is immediate, and a revoked or expired link offers neither - handing one over is only a way to give someone something that will not load.
+
+A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorize on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
 
 ### In this section
 

@@ -32,7 +32,7 @@ ChatGPT shows **Connect fastn**. Click **Connect fastn**.
 
 <figure><img src="../../.gitbook/assets/mcp-chatgpt-connect-dialog.webp" alt="ChatGPT's Connect fastn dialog explaining what ChatGPT may share with the app, with Connect fastn and Cancel buttons"><figcaption>ChatGPT asks once per account.</figcaption></figure>
 
-fastn opens in your browser. Sign in if asked, pick the workspace ChatGPT works in and click **Connect**.
+fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace ChatGPT works in, then click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-chatgpt-choose-workspace.webp" alt="fastn's page titled Which workspace should ChatGPT (chatgpt.com) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins ChatGPT to it.</figcaption></figure>
 

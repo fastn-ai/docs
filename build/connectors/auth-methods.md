@@ -8,8 +8,6 @@ An **auth method** is one way a customer can prove who they are to the app: sign
 
 ### The Auth tab
 
-<figure><img src="../../.gitbook/assets/connector-tab-auth.webp" alt="The HubSpot Auth tab headed Authentication methods, with a View providers button and one row: OAuth 2.0, badged Default, Your customers sign in with the provider and approve access, 1 provider"><figcaption>HubSpot offers one method, OAuth 2.0, backed by one provider.</figcaption></figure>
-
 > How your customers prove who they are. The default is used unless a connection picks another.
 
 One row per method. Each row shows:
@@ -21,13 +19,11 @@ One row per method. Each row shows:
   * Keys and tokens: *Your customers paste a key they generate themselves.*
 * for OAuth methods, how many providers it has, for example *1 provider*.
 
-The method types, and the fields each one asks for, are listed in [Creating a connector → Authentication](creating-a-connector.md#authentication). The value stored for each type (`OAUTH_2`, `API_KEY`, `BEARER`, `BASIC`, `DIGEST`, `INPUT`, `NO_AUTH`) is what the header line and the [Connections](../connections/README.md) page show.
+The method types, and the fields each one asks for, are listed in [Creating a connector → Authentication](creating-a-connector.md#authentication). Each type is stored as a value such as `OAUTH_2`, `API_KEY`, `BEARER`, `BASIC`, `DIGEST`, `INPUT` or `NO_AUTH`. The header line and the [Connections](../connections/README.md) page show readable labels instead, for example *OAuth 2.0*, *API key* or *Custom*.
 
 ### Auth providers
 
 **View providers** lists the OAuth apps behind the connector's OAuth methods.
-
-<figure><img src="../../.gitbook/assets/connector-auth-providers.webp" alt="The Auth Providers panel, OAuth credentials for this connector, with columns Name, Client ID, Preferred, Used By and Actions, and one row: HubSpot OAuth, a blurred client ID, a Preferred app badge, a dash under Used By, and Community, read-only under Actions"><figcaption>A managed connector's provider is fastn's own OAuth app, so its row is read-only.</figcaption></figure>
 
 | Column | Meaning |
 | --- | --- |
@@ -35,7 +31,7 @@ The method types, and the fields each one asks for, are listed in [Creating a co
 | **Client ID** | The OAuth client ID registered with the vendor. The client secret is never shown. |
 | **Preferred** | **Preferred app** marks a default provider. Your own app and the community app can both show it; the connect dialog shows which one it will use. |
 | **Used By** | Which connections use this provider. |
-| **Actions** | What you can do with it. *Community, read-only* means the provider belongs to fastn's shared catalogue and cannot be changed from your workspace. |
+| **Actions** | What you can do with it. *Community - read-only* means the provider belongs to fastn's shared catalog and cannot be changed from your workspace. |
 
 The **‹** arrow returns to the method list.
 
@@ -91,8 +87,6 @@ The **Auth Providers** page lists every set of OAuth credentials for this connec
 
 Click **+ Create Provider** at the top right to add your own.
 
-<figure><img src="../../.gitbook/assets/own-oauth-app-3-providers.webp" alt="The Auth Providers list with one row, HubSpot OAuth, badged Preferred app and labelled Community, read-only, and a Create Provider button at the top right"><figcaption>The community app, before you add your own.</figcaption></figure>
-
 **Step 4: Enter your app's identity and scopes**
 
 The **New Auth Provider** dialog opens. Fill in the top section first.
@@ -106,8 +100,6 @@ The **New Auth Provider** dialog opens. Fill in the top section first.
    * Use **+ Group** to bundle related scopes together.
 
 Scroll down in the dialog to continue. The **Create** button stays disabled until the required fields are filled.
-
-<figure><img src="../../.gitbook/assets/own-oauth-app-4-new-provider.webp" alt="The New Auth Provider dialog, top half: Name, Description, Client ID, Client Secret and Scopes with Add, Detailed and Group buttons"><figcaption>The top half of <strong>New Auth Provider</strong>.</figcaption></figure>
 
 **Step 5: Set the endpoints and grant types**
 
@@ -126,8 +118,6 @@ Confirm the URLs and grant types against the service's OAuth documentation befor
 
 Click **Create** when every field is filled.
 
-<figure><img src="../../.gitbook/assets/own-oauth-app-5-endpoints.webp" alt="The New Auth Provider dialog, lower half: Response Type set to code, Authorization URL and Token URL with example placeholders, Grant Type and Token Grant Type dropdowns, and URL Variables"><figcaption>The lower half, with the endpoints and grant types.</figcaption></figure>
-
 **Step 6: Make your app preferred**
 
 After you click **Create**, your provider appears in the list under the community app, for example "My Company Custom App". It is not your preferred app yet: only the community app has the **Preferred app** badge.
@@ -137,8 +127,6 @@ After you click **Create**, your provider appears in the list under the communit
 3. Open the **Connections** tab and create a test connection. The connect dialog shows the provider it will use; if it isn't your app, pick yours under **⋯** → **Change provider**. The service's consent screen should then show your app's name. If it still shows the community app, contact fastn.
 
 To change credentials later, click **Edit** on your provider's row. **Delete** is available only when no active connection uses the provider.
-
-<figure><img src="../../.gitbook/assets/own-oauth-app-6-use-this-app.webp" alt="The Auth Providers list with two rows: HubSpot OAuth as the Preferred app, and Custom Hubspot App with Use this app in the Preferred column and Edit and Delete actions"><figcaption>Your provider, ready for <strong>Use this app</strong>.</figcaption></figure>
 
 **Security and troubleshooting**
 

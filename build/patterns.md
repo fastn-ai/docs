@@ -4,9 +4,9 @@ description: The handful of workflow shapes that come up again and again.
 
 # Common patterns
 
-You can describe any of these to the [agent](agent/README.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
+You can describe any of these to [Build with AI](agent/README.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
 
-Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use (`fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector`), are listed on the editor's **Docs** tab; check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
+Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use (`fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector`), show up in the code editor's autocomplete and are documented in [Workflow runtime API](../reference/workflow-runtime.md); check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
 
 ---
 
@@ -14,7 +14,7 @@ Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime
 
 **The problem.** A webhook fires, the workflow writes a record. The sender retries, or someone replays the event, and you have two records.
 
-**The shape.** Three defences, cheapest first.
+**The shape.** Three defenses, cheapest first.
 
 1. A **deduplication key** on the [trigger](triggers/README.md): the field in the payload that identifies the event, so a retried delivery does not run the workflow twice.
 2. An **idempotency guard** in the workflow, using `fastn.state`:
@@ -27,7 +27,7 @@ Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime
    ```
 3. **Sequential execution mode** on the trigger, if two concurrent events for the same record could race.
 
-**Ask for it as:** *"Make this idempotent — if the same order comes in twice, only create it once."*
+**Ask for it as:** *"Make this idempotent - if the same order comes in twice, only create it once."*
 
 ---
 
@@ -68,14 +68,14 @@ Each stage retries independently, and a failure in publishing does not mean re-p
 
 | The rule is…                        | Put it in                                                              | Read it with          |
 | ----------------------------------- | ------------------------------------------------------------------------ | --------------------- |
-| Structured, and differs per customer | A table in [`fastn.db`](../manage/database.md), with a tenant column   | `fastn.db.query`      |
+| Structured, and differs per customer | A table in [`fastn.db`](../manage/database.md), with a customer column | `fastn.db.query`      |
 | Sensitive, and differs per customer  | A [secret](../manage/secrets.md) scoped to that customer                | `fastn.secrets.get`   |
 | The same for everyone, but differs between test and live | A [config](../manage/configs.md)                    | `fastn.envConfig.get` |
 
 Configs vary by *environment*, not by customer, so a per-customer rule belongs in the database or in a customer-scoped secret, not in a config.
 
 {% hint style="warning" %}
-`fastn.db` isolates one Postgres schema **per workspace**, not per customer. Rows are not scoped to a customer for you. If a table holds per-customer rules, put the customer on the row yourself and filter on it in every query.
+`fastn.db` isolates one Postgres schema **per organization**, not per customer. Rows are not scoped to a customer for you. If a table holds per-customer rules, put the customer on the row yourself and filter on it in every query.
 {% endhint %}
 
 Which customer a run belongs to arrives in the request headers (`x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`) and reaches your code through `ctx.headers`. That is also how you invoke a workflow as a specific customer from outside.
@@ -102,13 +102,13 @@ Prefer this over one workflow that does all three. Three workflows means three e
 
 **The shape.** A separate workflow on the **Long** tier, triggered manually or by API rather than by a schedule.
 
-The guard has to be somewhere both workflows can see. A table in `fastn.db` is the safe choice: the live sync records what it has written, the backfill checks that table before writing, and neither redoes the other's work. `fastn.state` has two scopes, `ORG` and `INVOCATION`: `INVOCATION` is definitively too narrow, and if you intend to lean on `ORG` reaching across two different workflows, confirm that on the editor's Docs tab first rather than assuming it from the name.
+The guard has to be somewhere both workflows can see. A table in `fastn.db` is the safe choice: the live sync records what it has written, the backfill checks that table before writing, and neither redoes the other's work. `fastn.state` also works: it has two scopes, `ORG` (the default), whose keys are per organization and shared by all of its workflows, and `INVOCATION`, whose keys last for one run only and are too narrow for this. A table is still easier to query and audit when someone asks what was synced.
 
 ```javascript
 const done = await fastn.db.query(
   `SELECT 1 FROM synced_orders WHERE source_id = $1`, [order.id]
 );
-if (done.rows.length) return { skipped: true };
+if (done.length) return { skipped: true }; // fastn.db.query returns the rows array
 ```
 
 Run it against one customer first, and read the [sync report](../operate/sync-reports.md) before running it against everyone.
@@ -117,11 +117,11 @@ Run it against one customer first, and read the [sync report](../operate/sync-re
 
 ---
 
-## Workspace-level notifications
+## Organization-level notifications
 
 **The problem.** You want failures posted to *your* Slack, not the customer's.
 
-**The shape.** Use a Slack connection your organisation owns (one created from **New connection** and scoped `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
+**The shape.** Use a Slack connection your organization owns (its detail page shows the scope `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
 
 For failure notification specifically, an [alert](../operate/alerts.md) with a Slack destination is simpler than building it into the workflow, and it also catches the case where the workflow itself never ran.
 
@@ -131,11 +131,11 @@ For failure notification specifically, an [alert](../operate/alerts.md) with a S
 
 **The problem.** A destination is flaky, and the workflow is growing a hand-rolled retry loop.
 
-**The shape.** Turn on **Retry policy** in the workflow's configuration panel instead. It gives you `Max attempts` (1–10, default 3), `Initial interval (ms)` (5000), `Backoff coefficient` (2) and `Max interval (ms)` (60000), applied to the run as a whole.
+**The shape.** Turn on **Retry policy** in the workflow's configuration panel instead. It gives you `Max attempts` (2-10, default 3), `Initial interval (ms)` (5000), `Backoff coefficient` (2) and `Max interval (ms)` (60000), applied to the run as a whole.
 
 Know its boundary: it retries transient failures. Code errors, data errors and out-of-memory never retry, so a bug will not be papered over by attempt three.
 
-If the failure is a timeout rather than a rejection, **Escalate on timeout** retries one tier up (instant → standard) and the escalated instant run returns a queued execution id to poll instead of a synchronous result. The toggle is hidden on the Long tier, which has nowhere further to go.
+If the failure is a timeout rather than a rejection, **Escalate on timeout** retries one tier up (instant → standard, or standard → long), subject to your plan, and an escalated instant run returns a queued execution id to poll instead of a synchronous result. The toggle is hidden on the Long tier, which has nowhere further to go.
 
 **Ask for it as:** *"Retry this three times with backoff if the destination is down."*
 
@@ -145,9 +145,9 @@ If the failure is a timeout rather than a rejection, **Escalate on timeout** ret
 
 **The problem.** Customer A is on HubSpot, B on Salesforce, C on Zoho, and the workflow has grown a branch per vendor for what is one operation.
 
-**The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorised. `/api/v1/unified/crm/contact` is the same call regardless of the stack underneath.
+**The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorized. The unified `crm/contact` endpoint is the same call regardless of the stack underneath.
 
-Keep the vendor-specific parts on the direct connector: the two mix freely in one workflow. Watch the entity limits: `Note`, `Channel Message` and `Direct Message` are create-only.
+Keep the vendor-specific parts on the direct connector: the two mix freely in one workflow. Watch the entity limits: not every unified entity supports every operation, so check which ones the category lists for the entity you need.
 
 **Ask for it as:** *"Create the contact through the unified CRM endpoint, not through HubSpot directly."*
 

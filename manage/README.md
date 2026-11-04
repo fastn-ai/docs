@@ -1,45 +1,43 @@
 ---
-description: Organisation settings, access, credentials and billing.
+description: Organization settings, access, credentials and billing.
 ---
 
 # Settings
 
-**Settings** in the MANAGE group of the left rail.
+**Settings** at the bottom of the left rail.
 
-**Its sub-navigation is role-scoped (you will not see every page below.** An Owner or Admin sees People, General, API keys, Secrets, Environments, Configs, Database, SaaS Connectors, Billing, Roles, Audit log and Trash; a Developer sees API keys, Secrets, Environments, Configs, Database and Trash. The pages a Developer does not get are the administrative ones), People, General, Billing, Roles and the Audit log; Trash shows for everyone.
+**Its menu is role-scoped, so you will not see every page below.** An Owner or Admin sees People, General, Billing, Roles and Audit log, plus everything a Developer sees: Environments, Secrets, Configs, Database, Workflow tags and Trash. API keys and the MCP server moved to **Embed → API keys and MCP**, and Your API moved to **Build → Connect your product**.
 
-The table follows the Owner sidebar order, with Trash last.
+The table follows the Settings menu order: People, General, Billing, Roles, Audit log, Environments, Secrets, Configs, Database, Workflow tags, Trash.
 
 | Page                                    | Covers                                                        |
 | --------------------------------------- | --------------------------------------------------------------- |
-| [People](people.md)                     | Who is in the workspace, invitations, statuses.                |
-| [General](general.md)                   | Organisation name, timezone, joining by email domain.          |
-| [API keys](api-keys.md)                 | Programmatic access, test and live modes.                      |
-| [Secrets](secrets.md)                   | Encrypted values read at runtime.                              |
-| [Environments and GitHub](environments.md) | Deployment stages and review gates.                         |
-| [Configs](configs.md)                   | Per-environment values read at runtime.                        |
-| [Database](database.md)                 | Which Postgres your workflows read and write through.          |
-| [SaaS Connectors](saas-connectors.md)   | Your own SaaS API, and the scopes tenants connect under.       |
+| [People](people.md)                     | Who is in the organization, invitations, statuses.             |
+| [General](general.md)                   | Organization name, timezone, joining by email domain.          |
 | [Billing and limits](billing.md)        | Plan, credits and limits.                                      |
 | [Roles](roles.md)                       | What each role can do, and how to narrow one.                  |
-| [Audit log](audit-log.md)               | Every action taken in the organisation.                        |
+| [Audit log](audit-log.md)               | Every action taken in the organization.                        |
+| [Environments and GitHub](environments.md) | Deployment stages and review gates.                         |
+| [Secrets](secrets.md)                   | Encrypted values read at runtime.                              |
+| [Configs](configs.md)                   | Per-environment values read at runtime.                        |
+| [Database](database.md)                 | Which Postgres your workflows read and write through.          |
+| [Workflow tags](workflow-tags.md)       | The labels and categories workflows are filtered and grouped by. |
 | [Trash](trash.md)                       | Deleted connectors, actions and workflows.                     |
 
-**Customers** is not here. It is a top-level item in the OPERATE group, and is documented with [Operate](../operate/customers.md).
+Some pages that used to be here have moved into the sidebar: **API keys and MCP** is under **Embed** ([API keys and MCP](api-keys.md)), **Connect your product** is under **Build** ([Connect your product](saas-connectors.md)), and **Customers** is under **Operate** ([Customers](../operate/customers.md)). Their old Settings addresses redirect.
 
-Your own account is separate from the organisation:
+Your own account is separate from the organization:
 
 {% content-ref url="profile.md" %}[Your profile](profile.md){% endcontent-ref %}
 
 ### Who can reach what
 
-The sidebar itself changes by role, so the first answer to "why can't I see that page" is usually the role you are signed in as.
+The Settings menu itself changes by role, so the first answer to "why can't I see that page" is usually the role you are signed in as.
 
 | Page                     | Who reaches it                                                        |
 | ------------------------ | ----------------------------------------------------------------------- |
-| Audit log                | Owner or Admin: gated by role, enforced at the API layer on `/api/v1/audit-log` |
-| People, General, Billing, Roles | In the Owner and Admin sidebar; absent from a Developer's.      |
-| Secrets                  | The `Secrets` permissions: `read`, `write`, `delete`.                  |
-| API keys, Environments, Configs, Database | In both the Owner/Admin and Developer sidebars.       |
-| Trash                    | In the Owner, Admin and Developer sidebars, at `/settings/trash`.       |
+| People, General, Billing, Roles, Audit log | Owner and Admin. Absent from a Developer's menu. The audit log is also enforced by role at the API layer on `/api/v1/audit-log`. |
+| Environments, Secrets, Configs, Database, Trash | Owner, Admin and Developer.                    |
+| Workflow tags            | Developer or above.                                                    |
+| API keys and MCP         | Not in Settings: under **Embed**. See [API keys and MCP](api-keys.md). |
 | Everything else          | Per the permission matrix in [Roles](roles.md).                        |

@@ -2,21 +2,17 @@
 description: The chat-driven builder that picks connectors, drafts workflows and shows you the diff.
 ---
 
-# Agent
+# Build with AI
 
-**Integrations → Agent** (`/agent`), or the **What do you want to build?** prompt on Home
+**Build → Build with AI** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
-<figure><img src="../../.gitbook/assets/agent-start.jpg" alt="The Agent screen at /agent: the Sessions rail on the left listing earlier sessions, and a Build an integration pane with four START FROM AN EXAMPLE cards above a Write a message composer carrying an Auto chip and a 0 / 1000k context meter"><figcaption><strong>Agent</strong> is the first item under Integrations in the sidebar. Home's prompt box opens the same place.</figcaption></figure>
+The agent is the primary way integrations get built in fastn, and there are two ways in: **Build with AI** in the sidebar, the first item under **Build**, or the **What should your customers be able to do?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
 
-The agent is the primary way integrations get built in fastn, and there are two ways in: the **Agent** item in the sidebar, directly under **Integrations**, or the **What do you want to build?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
+> Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
 
-> Describe what you need in plain words. The agents pick the connectors, draft the workflow, and show you the diff before anything runs.
-
-What it drafts is JavaScript: a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](../workflows/README.md) for you to read, test and publish.
+What it drafts is JavaScript: a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](../workflows/README.md) for you to test and publish. You can read the code there only where code view is switched on for your organization; where it is off, the editor shows diagrams and docs, and you change the workflow through the agent.
 
 ### Sessions
-
-<figure><img src="../../.gitbook/assets/agent-session.jpg" alt="An agent session: the Sessions rail on the left listing the current build and earlier sessions, the conversation on the right with a collapsed Worked · 3 steps summary, and the approval-mode chip and context meter under the composer"><figcaption>A session in progress. The rail on the left is your history; every session keeps its full conversation.</figcaption></figure>
 
 The left rail, headed **Sessions**, holds your session history. Each session keeps its full conversation, so you can come back to an integration weeks later and continue where you left off rather than re-explaining it. Before you start anything it reads *No sessions yet. Click New session to start.*
 
@@ -33,7 +29,7 @@ Four cards sit under **START FROM AN EXAMPLE**, each pairing a goal with the con
 | **Sync deals into billing** | Closed-won Salesforce opportunities, custom fields included |
 | **Alert before an SLA breaches** | Post to Slack when a Zendesk ticket is close to its deadline |
 | **Keep a sheet current** | Append new HubSpot contacts to a Google Sheet as they arrive |
-| **Give an agent scoped access** | Read-only Jira for one customer, nothing beyond that |
+| **Give an AI agent scoped access** | Read-only Jira for one customer, nothing beyond that |
 
 They are written in the shape a good first message takes (a system, a trigger, and the specific thing that moves) and are worth reading before you write your own.
 
@@ -56,28 +52,28 @@ The composer carries **Attach a file**, the message box (*Write a message…*) a
 
 ### What it does
 
-The product's own summary is the reliable one: the agents pick the connectors, draft the workflow, and show you the diff before anything runs. In practice that means working out which systems are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat (inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes) and then writing the workflow code and opening it in the editor.
+The product's own summary is the reliable one: fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs. In practice that means working out which systems are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat (inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes) and then writing the workflow code and opening it in the editor.
 
-Generated test cases land on the editor's **Test cases** tab, grouped as `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`, each row badged `LIVE` or `MOCK`.
+Generated test cases land on the editor's **Test cases** tab, in groups the agent names for the integration, each row badged **Live** or **Mock**.
 
 ### The integration plan
 
-Before building, the agent writes an **Integration Plan**: an actual markdown document (named for the integration, such as `plan-hubspot-to-sheets.md`) that opens in a side panel. It sets out the trigger, the actions and connectors involved, a field-mapping table with a worked example per row, and a tenancy section. Its header has a **download** button, so the plan can be reviewed or circulated before anything is created.
+Before building, the agent writes a plan: a markdown document that opens in a side panel. The agent writes it for each integration, so its name and sections vary, but it typically sets out the trigger, the actions and connectors involved, and how fields map between the systems. Its header has a download icon (**Download document**), so the plan can be reviewed or circulated before anything is created.
 
 Read it. It is the cheapest place to catch a wrong assumption: correcting a mapping here costs a sentence; correcting it after the workflow is generated costs a rebuild.
 
 ### Build progress
 
-Alongside the plan, a **BUILD PROGRESS** panel tracks the work as a step count (`0/6`, `2/6`, …) across four phases:
+Alongside the plan, the **Build progress** section of the right-hand rail tracks the work as a step count (`0/6`, `2/6`, …) across up to four phases:
 
 | Phase | What happens |
 | ----- | ------------ |
 | **1. Use cases** | Plan and confirm the integration with you |
-| **2. Connectors** | Create and authorise the connectors it needs |
+| **2. Connectors** | Create and authorize the connectors it needs |
 | **3. Workflows** | Approve mappings and test cases, build and test the workflow, bind the trigger |
-| **4. Embed** | Expose the finished integration as a widget |
+| **4. Widget** | Expose the finished integration in the widget |
 
-Each phase expands to its named substeps, a completed one collapses to a green check and **Complete**, and the one in flight shows a spinner against the current substep. Phase counts vary with the integration: a build with no customer-facing surface will not have an Embed phase.
+Each phase expands to its named substeps, a completed one collapses to a green check and **Complete**, and the one in flight shows a spinner against the current substep. Only phases the agent has written steps into are shown, so the count varies with the integration: a build with no customer-facing surface will not have a Widget phase.
 
 ### Clarifying questions
 
@@ -85,9 +81,9 @@ Where your brief is ambiguous, the agent asks rather than guesses, rendering the
 
 ### Reading what it did
 
-The agent's tool calls collapse into a single summary line in the chat: **Worked · 3 steps**, with **Show details** to expand the individual calls. Documents it produces appear as artifact chips (for example *Field Mappings & Connectors*) that reopen the full panel.
+The agent's tool calls collapse into a single summary line in the chat: **Worked · 3 steps**, with **Show details** to expand the individual calls. Documents it produces appear as artifact chips that reopen the full panel.
 
-Two counters are worth watching: the **context meter** beside the composer (`19k / 1000k`) shows how much of the session's context window the conversation has consumed, and **AI credits** in the top bar show what is left of your quota.
+Two counters are worth watching: the **context meter** beside the composer (`19k / 1000k`) shows how much of the session's context window the conversation has consumed, and **AI credits** in the top bar show what is left of your quota. The credits badge is shown to Owners and Admins only.
 
 ### Iterating
 
@@ -105,11 +101,11 @@ The agent updates code, mappings and test cases together, so they do not drift a
 **Attach a file** accepts an API spec, a sample payload, a field-mapping spreadsheet. Giving the agent a real payload is the single fastest way to get accurate mappings.
 
 {% hint style="info" %}
-Agent usage draws on the AI credits shown in the top bar: click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, naming the ones doing this work: *Orchestrator V2 Orchestrator*, *Docs Agent*, *Error Diagnosis* and *Orchestrator V2 Title*. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
+Agent usage draws on the AI credits shown in the top bar (visible to Owners and Admins): click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, listing each fastn agent that used credits in the period. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
 {% endhint %}
 
 {% hint style="warning" %}
-Using the AI assistant is gated by role rather than by an individual permission, so a role that cannot use it cannot be granted access to it one permission at a time.
+Build with AI needs two things: the **Operator** role or above, and Build with AI switched on for your organization (fastn turns it on). If either is missing, **Build with AI** does not appear in the sidebar. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
 {% endhint %}
 
 ### In this section

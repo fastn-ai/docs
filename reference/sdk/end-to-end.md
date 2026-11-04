@@ -1,5 +1,5 @@
 ---
-description: "Build a partner integration with the SDK from start to finish: set up once, onboard a customer, make the calls your product needs, receive events, and handle retries and errors."
+description: "Build an integration with the SDK from start to finish: set up once, onboard a customer, make the calls your product needs, receive events, and handle retries and errors."
 ---
 
 # Build an integration, end to end
@@ -19,9 +19,9 @@ Keep every fixed value in one place.
 | Value | Where it is used |
 | ----- | ---------------- |
 | Base URL `https://api.fastn.dev` | The client. It is the default. |
-| API key `fsk_live_…` | Every call. Create it on [API keys](../../manage/api-keys.md). It is a password: secret store only. |
+| API key `fsk_live_…` | Every call. Create it on [Embed → API keys and MCP](../../manage/api-keys.md). It is a password: secret store only. |
 | Webhook secret `whsec_…` | Checking that an event really came from fastn (2.1). You get it once, when you register the webhook. |
-| Package `@fastn-ai/sdk` 0.4.0 or newer, Node.js 20 or newer | `npm install @fastn-ai/sdk` |
+| Package `@fastn-ai/sdk` 0.5.1 or newer, Node.js 20 or newer | `npm install @fastn-ai/sdk` |
 
 ### 1.2 Create the client
 
@@ -39,8 +39,8 @@ Create one client when your app starts and reuse it: it caches the lookups it ma
 
 ### 1.3 Names, dates and ids
 
-* Record fields are `snake_case`, the catalogue's own names (`start_time`, `first_name`, `parent_id`). Options and setup arguments are `camelCase` (`idempotencyKey`, `connectionName`).
-* Dates go in as ISO 8601 with a zone (`2026-11-03T15:00:00Z`) or as a JavaScript `Date`; they come back as ISO 8601 in the app's own zone.
+* Record fields are `snake_case`, the catalog's own names (`start_time`, `first_name`, `parent_id`). Options and setup arguments are `camelCase` (`idempotencyKey`, `connectionName`).
+* Dates go in as ISO 8601 with a zone (`2026-11-03T15:00:00Z`) or as a JavaScript `Date`; they come back as ISO 8601 strings, in whatever zone the app reports.
 * You choose the customer id (`customerRef`), any string unique per customer. fastn also has its own id for the customer; you never need it.
 * Ids you receive and keep: `setupId` (a setup link), `connectionId` (one connected account), a record id (the meeting or contact inside the app), `requestId` (from an error, for support).
 
@@ -78,7 +78,8 @@ app.post("/fastn/events", express.raw({ type: "application/json" }), (req, res) 
     return res.status(401).end();          // not from fastn, or older than 5 minutes
   }
   res.status(200).end();                   // reply quickly, then handle it
-  handle(event);                           // event.type, event.tenantRef (your customerRef), event.data
+  handle(event);                           // event.type, event.tenantRef (your customerRef), plus top-level fields such as
+                                           // event.app, event.connectionId, event.setupLinkId; an app's own body is in event.payload
 });
 ```
 
@@ -112,7 +113,7 @@ const link = await customer.connect("googleCalendar", {
 // send link.url to the customer; link.setupId to check or cancel it later (customer.links.get / cancel)
 ```
 
-One link per app: `connect("hubspot")` for their CRM. The link works once and expires after the lifetime set in the dashboard. The browser lands on your return page with `?status=completed&setupId=…` when it is done.
+One link per app: `connect("hubspot")` for their CRM. The link works once and expires after the lifetime set in the dashboard. The browser lands on your return page with `?status=complete&setupId=stp_…&installationId=inst_…` when it is done.
 
 ### 3.3 What you receive when the customer connects
 
@@ -187,19 +188,19 @@ const contact = page.records[0] ?? (await customer.crm.contacts.create(
 ));
 ```
 
-A contact you have just added can take about ten seconds to show up in a phone search: search again before creating a second one.
+A contact you have just added can take a few seconds to show up in a search (the delay is set by the app): search again before creating a second one.
 
 ### 4.4 Log the call, add a task, move a deal
 
 ```typescript
 await customer.crm.notes.add({ body: "Booked an intro call for 3 Nov", parent_id: contact.id, parent_type: "contact" });
-await customer.crm.tasks.add({ subject: "Call back", due_date: "2026-11-05T09:00:00Z", status: "open" });
+await customer.crm.tasks.add({ subject: "Call back", due_date: "2026-11-05T09:00:00Z" });   // a status, if you set one, is the app's own value (HubSpot: NOT_STARTED)
 
 const deal = await customer.crm.deals.create({ name: "Acme Dental: 12 chairs", amount: 48000, stage: "appointmentscheduled" });
 await customer.crm.deals.moveStage(deal.id, "qualifiedtobuy");   // customer.crm.deals.stages() lists the stages the app knows
 ```
 
-Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a field the app does not map and therefore dropped. The fields each entity takes are in the catalogue: `fastn.catalog.fields("crm", "contact")`. For an entity without a typed method, `customer.records({ category, entity })` takes any catalogue entity; for an app's own action, `customer.runAction(…)`. See [Calendar and CRM](calendar-and-crm.md) and [Unified records](unified-records.md).
+Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a field the app does not map and therefore dropped. The fields each entity takes are in the catalog: `fastn.catalog.fields("crm", "contact")`. For an entity without a typed method, `customer.records({ category, entity })` takes any catalog entity; for an app's own action, `customer.runAction(…)`. See [Calendar and CRM](calendar-and-crm.md) and [Unified records](unified-records.md).
 
 ---
 
@@ -209,7 +210,7 @@ Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a f
 | ----- | ---------- |
 | Retry keys | Pass `idempotencyKey` on every write. The same key with the same input returns the first answer instead of creating a second record; the same key with different input is `422`; a key whose first run is still going is `409 IDEMPOTENCY_IN_PROGRESS` (wait a moment, send the same call again). |
 | Your call id | Pass `correlationId` on the calls of one conversation. `customer.callLog(correlationId)` then lists every app call fastn made for it. |
-| What the SDK retries | Reads, and writes that carry an `idempotencyKey`, on `429`, `502`, `503`, `504` and network errors, twice by default. Everything else is thrown to you. |
+| What the SDK retries | Reads (`GET`), and the writes fastn de-duplicates (unified create, update and delete, and workflow execute) when they carry an `idempotencyKey`, on `429`, `502`, `503`, `504` and network errors, twice by default. A `502 UNIFIED_PROVIDER_ERROR` whose `providerStatus` is `400`, `401`, `403`, `405`, `413`, `415` or `422` is the app's final refusal and is never retried. Everything else is thrown to you. |
 | Rate limits | `429` carries `Retry-After`; the SDK waits for it. |
 | Slow apps | Set `timeoutMs` per call when a provider is known to be slow; the default is 60 seconds. |
 
@@ -226,6 +227,7 @@ Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a f
 | `400 UNIFIED_VALIDATION_FAILED` | A required field is missing or a field is unknown. | The message names the field. |
 | `400 SETUP_LINK_REDIRECT_NOT_ALLOWED` | `redirectUrl` is not registered. | Register it in the dashboard first (2.2). |
 | `404 CONNECTION_NOT_FOUND` | The account id is not one of this customer's. | Read `customer.connections()`. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request. | `e.body.providerStatus` and `e.body.providerError` say why. |
+| `400 UNIFIED_PROVIDER_REJECTED`, `401 UNIFIED_PROVIDER_AUTH_FAILED`, `404 UNIFIED_PROVIDER_NOT_FOUND`, `429 UNIFIED_PROVIDER_RATE_LIMITED` | The app refused the request. | `e.body.providerStatus` and `e.body.providerError` say why. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer). | Retry later. |
 
 Every failure is a `FastnApiError` with `status`, `code`, `message` and `requestId` (quote it when you ask for help), or a `FastnNetworkError`. The full list is on [Errors, retries and options](errors-and-options.md).

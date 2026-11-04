@@ -6,36 +6,33 @@ description: Which Postgres your workflows read and write through.
 
 **Settings → Database**
 
-<figure><img src="../.gitbook/assets/settings-database.jpg" alt="Database settings: a Writing to your database banner over two cards, Shared (fastn runs it) unselected and Your own (You run it) selected, each listing Backups, Capacity, Uptime and Network setup"><figcaption>The choice is exclusive and it is a redirect, not a migration, rows already written stay where they are.</figcaption></figure>
-
 Workflows can persist data with `fastn.db`. This page decides where that data lands.
 
 > Which Postgres your workflows read and write through.
 
-Every `fastn.db` call from this organisation goes to whichever option is selected here, and the page shows the active schema name in the form `ws_<32 hex characters>`.
+Every `fastn.db` call from this organization, and from its customers, goes to whichever option is selected here, unless a customer has an override (see [Customer overrides](#customer-overrides)). The page shows the active schema name in the form `ws_<32 hex characters>`.
 
 ### What a Developer sees
 
-The page is read-only below Owner and Admin. A Developer gets the mode and the identifiers and nothing else:
+The page is read-only below Owner and Admin. A Developer gets a **Read-only** banner (*An organization admin or owner can change this. Credentials are never shown.*) and a **Current connection** card badged **Shared** or **Your own database**:
 
-| Row                | Value                                        |
-| ------------------ | ---------------------------------------------- |
-| Mode               | **Shared**                                    |
-| **DATABASE**       | `fastn-managed`                               |
-| **MANAGED SCHEMA** | `ws_<hash>`: your workspace's schema name    |
+| Mode                  | Rows shown                                                          |
+| --------------------- | -------------------------------------------------------------------- |
+| **Shared**            | **Database** `fastn-managed`, and **Managed schema** `ws_<hash>`, your organization's schema name. |
+| **Your own database** | **Host**, **Database**, **Schema in use**, **SSL mode** and **Last changed**. |
 
 Username, password and CA chain are not rendered for this role. That is deliberate, and it is enough: `fastn.db` connects for you, so a workflow never needs the credential. There is no table browser and no SQL console on this page: inspect data from a workflow.
 
 ### Two options
 
-| | **Shared** (fastn runs it | **Your own**), you run it |
+| | **Shared** (fastn runs it) | **Your own** (You run it) |
 | --- | --- | --- |
 | **Backups** | fastn | You |
 | **Capacity** | fastn | You |
 | **Uptime** | fastn | You |
 | **Network setup** | None | Allow our runners |
 
-**Shared**: fastn runs it, and handles backups, patching, upgrades and capacity. Your workspace sits in its own schema, isolated from everyone else.
+**Shared**: fastn runs it, and handles backups, patching, upgrades and capacity. Your organization sits in its own schema, isolated from everyone else.
 
 **Your own**: you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you will need to allow fastn's runners through your network.
 
@@ -51,9 +48,15 @@ Switching changes where **new** reads and writes go. Rows are never copied betwe
 
 ### What the isolation actually is
 
-**The unit of isolation is the workspace, not the customer.** Each workspace gets its own Postgres schema (the `ws_<hash>` above), isolated from every other workspace, which is what the page means by *your workspace sits in its own schema, isolated from everyone else*.
+**Each workspace gets its own Postgres schema, and each of your customers is a workspace of its own.** Your organization's schema is the `ws_<hash>` above, isolated from every other organization, which is what the page means by *your organization sits in its own schema, isolated from everyone else*. Every customer gets a separate `ws_<hash>` schema of its own, so `fastn.db` calls made on behalf of one customer land in that customer's schema, not in yours and not in another customer's.
 
-That is a boundary between you and other fastn customers. It is **not** a boundary between *your* customers: rows written on behalf of one of your customers and rows written on behalf of another land in the same schema. If you need per-customer separation inside it, build it: a customer column on every table, and a predicate on every query.
+The same holds when you bring your own database: a customer that inherits your connection still gets its own derived schema on your server, never your schema or another customer's.
+
+### Customer overrides
+
+Shown to Owners and Admins only. The **Customer overrides** card lists every customer in this organization with where its data actually lands: the **Database**, the **Schema in use**, **SSL** and a **Source** badge (**fastn-managed**, **Organization default** or **Override**). Customers use your selected database automatically; the ones marked **fastn-managed** are still on fastn's own database.
+
+**Add override** points a single customer somewhere else. An override replaces the whole connection, not part of it. **Remove override** returns that customer to the organization default as runner pools recycle; rows already written to the override database stay there.
 
 ### Using it from a workflow
 
@@ -73,6 +76,4 @@ await fastn.db.query(
 );
 ```
 
-{% hint style="info" %}
-The exact `fastn.db` call signature (whether it is `query(sql, params)` and whether parameters are `$1`-style), is worth confirming against a workflow's own **Docs** tab, which is generated from the runtime you are actually calling. See [Workflow runtime API](../reference/workflow-runtime.md).
-{% endhint %}
+`fastn.db.query(sql, params)` runs one statement, with `$1`-style parameters. It refuses transaction control (`BEGIN`, `COMMIT`) and more than one statement per call, because each call uses its own pooled connection. To run several statements atomically, pass them to `fastn.db.transaction([{ sql, params }, ...])`. See [Workflow runtime API](../reference/workflow-runtime.md).

@@ -13,7 +13,7 @@ Work down this page in order. Most problems resolve at the first or second step,
 | Nothing happened at all                       | [Events](events.md): did anything arrive?             |
 | Something ran but ended badly                 | [Executions](executions.md): expand the row, read the **Error** tab. Codes explained in [Errors and failure states](../reference/errors.md) |
 | It succeeded but the data is wrong            | [Sync reports](sync-reports.md)                        |
-| It is slow                                    | [Traces](traces.md)                                    |
+| It is slow                                    | [Traces](traces.md) (open `/activity/traces` directly) |
 | It worked yesterday and not today             | [Connections](../build/connections/README.md), then [Pending updates](../build/connector-updates.md) |
 | One customer is affected, others are not      | [Connections](../build/connections/README.md), scoped to that customer |
 
@@ -27,7 +27,7 @@ If [Events](events.md) shows nothing, the problem is before fastn.
 
 | Trigger type  | Check                                                                                       |
 | ------------- | --------------------------------------------------------------------------------------------- |
-| **Webhook**   | Is the sending system pointed at the right URL? Does it require the `x-fastn-access-key` header, and is the sender sending it? |
+| **Webhook**   | Is the sending system pointed at the right URL? If the trigger's auth is API key, is the sender sending the key in the `x-api-key` header? (`x-fastn-access-key` is still accepted.) |
 | **Schedule**  | Is the trigger Active rather than Disabled? Is its timezone what you assumed?                |
 | **App event** | Is the connector's **Webhook config** set up, and does the customer have an active connection? |
 
@@ -37,7 +37,7 @@ Filter the Events chips by **Scheduled**: a count of zero on a schedule you expe
 
 A Delivered event means the payload arrived and was handed on. If no execution followed:
 
-* **The workflow was never published.** Every call returns `WORKFLOW_NOT_PUBLISHED` until a snapshot is published, so nothing runs and nothing appears in Executions. The workflows list shows this as **Not published** / **Unpublished**, and its tooltip says so: "Never published — this workflow cannot run yet." This is the likeliest cause of *nothing ran at all*. Publish a snapshot from the editor.
+* **The workflow was never published.** Every call returns `WORKFLOW_NOT_PUBLISHED` until a snapshot is published, so nothing runs and nothing appears in Executions. The workflows list shows its status as **Unpublished**, with "-" in the version cell (its tooltip reads "No published version yet."). This is the likeliest cause of *nothing ran at all*. Publish a snapshot from the editor.
 * The workflow is **disabled**. Check the Status toggle in its Configuration panel.
 * The trigger route points at an environment with **nothing deployed to it**. A named environment runs the version deployed there, and the fire fails if nothing is. Either deploy, or point the route at `test`, which runs the latest published version.
 
@@ -51,9 +51,9 @@ It exhausted its delivery attempts. The row shows a failure state in the **Statu
 
 ### Status: Failed
 
-Expand the execution row for its result banner and raw response, then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
+Expand the execution row and open the **Error** tab (**AI Diagnosis** and **Error Details**), then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
 
-1. **The connection is Expired or Failed.** The customer re-authorises through your widget.
+1. **The connection is Expired or Failed.** The customer re-authorizes through your widget.
 2. **The upstream API changed.** Check [Pending updates](../build/connector-updates.md) for a proposal against that connector.
 3. **The data did not match the contract.** A field the mapping expects is absent or the wrong type.
 4. **A permission is missing.** The customer's OAuth grant may not cover the scope the action needs.
@@ -62,13 +62,13 @@ Expand the execution row for its result banner and raw response, then check [Tra
 
 The commonest failure of all, and it means something the workflow *called* refused: nearly always a connector action, not your code. Runs usually die in under a second, because they stop at the first call that will not work.
 
-Expand the row and open the **Error** tab. The **AI Diagnosis** names the step that broke and, usually, the fix; **Error Details** beside it carries the raw message. Most of the time the answer is a connection that is expired, revoked, pinned to something unusable, or belonging to another organisation.
+Expand the row and open the **Error** tab. The **AI Diagnosis** names the step that broke and, usually, the fix; **Error Details** beside it carries the raw message. Most of the time the answer is a connection that is expired, revoked, pinned to something unusable, or belonging to another organization.
 
 **It will not clear on its own.** Retry policies cover transient failures, and an invalid connection is not transient: a daily schedule in this state fails at the same minute every day until someone acts.
 
 Full breakdown, with the causes in order of frequency, in [Errors and failure states](../reference/errors.md#dependency-error).
 
-### Status: Timeout
+### Status: Timed out
 
 The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 
@@ -92,13 +92,13 @@ The retry policy retries transient failures. Code errors, data errors and out-of
 
 Open [Sync reports](sync-reports.md). It shows what the run did, record by record, which distinguishes *the record was filtered out* from *the record was never seen*.
 
-If the page is empty, the workflow does not call `fastn.diff.compare`. Ask the agent to add diff reporting; reconstructing this from logs afterwards is far harder.
+If the page is empty, the workflow does not call `fastn.diff.compare`. Ask Build with AI (or your AI tool) to add diff reporting; reconstructing this from logs afterwards is far harder.
 
 Common causes:
 
 | Cause                     | Where to fix it                                                        |
 | ------------------------- | ------------------------------------------------------------------------ |
-| A field was never mapped  | The workflow's field mappings: tell the agent what is missing.        |
+| A field was never mapped  | The workflow's field mappings: tell Build with AI (or your AI tool) what is missing. |
 | A filter is too broad     | The include/exclude rules in the workflow.                             |
 | Duplicates downstream     | No deduplication key on the trigger, or no `fastn.state` idempotency guard. |
 | Stale values              | A pinned connector version that predates a field. See Version pins on the connector. |
@@ -125,16 +125,16 @@ See [Workflow runtime API](../reference/workflow-runtime.md).
 
 ## It works for one customer and not another
 
-Almost always a connection. Open [Connections](../build/connections/README.md): the Customer column tells you whose each one is, and the search box narrows the list.
+Almost always a connection. Open [Connections](../build/connections/README.md) in its **Customers** view: the Customer column tells you whose each one is, and the search box narrows the list.
 
 | Status       | Fix                                                          |
 | ------------ | -------------------------------------------------------------- |
-| **Expired**  | The customer re-authorises through your widget.               |
+| **Expired**  | The customer re-authorizes through your widget.               |
 | **Failed**   | Access was revoked, a password changed, or a key was rotated. Same fix. |
-| **Inactive** | The row menu offers **Reconnect** and **Disconnect**. There is no re-enable: reconnect it. |
+| **Inactive** | The row menu offers **Reconnect**, **Rename** and **Disconnect**. There is no re-enable: reconnect it. |
 | Missing      | They never connected that system.                             |
 
-Use the search box rather than the status filter chips: see [Known issues](#known-issues) below.
+The **Needs action** status chip lists every connection that needs someone to act.
 
 Also check whether that customer is **pinned to an older connector version**. See Version pins on the connector.
 
@@ -157,25 +157,11 @@ Connectors, connector actions and workflows go to [Trash](../manage/trash.md) an
 
 ---
 
-## Known issues
-
-These are current product defects rather than anything you have misconfigured. Route around them.
-
-| What you see                                                       | What is actually happening                                                          |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| Connections filter chips (**Active**/**Inactive**/**Expired**/**Failed**) return nothing | The chips report 0 for every state even when rows are plainly Active. Search by customer or connector instead. |
-| A connector shows **Connected** in the list but **0 connections** on its detail page | The list badge and the detail count disagree. Check [Connections](../build/connections/README.md) for the real answer. |
-| `Created: Invalid Date` on a connector overview                    | A date-rendering bug, not a broken connector.                                        |
-| Trash → **Actions** hangs on `Loading deleted actions…`            | The tab never resolves. Deleted actions cannot currently be reviewed there.          |
-| The connector catalogue count is higher than the systems you recognise | Several systems appear twice, once **managed** and once **Custom**. The headline count is not a count of distinct systems. |
-
----
-
 ## Making the next one easier
 
 | Do this once                                                  | Saves you                                     |
 | ------------------------------------------------------------- | ----------------------------------------------- |
-| **Turn on failure alerts** on [Alerts](alerts.md)             | Finding out from a customer                    |
+| **Turn on failure alerts** on [Alerts](alerts.md) (offered while no alert exists; once one does, switch on **Sync failure notifications** instead) | Finding out from a customer                    |
 | Add an alert on **Broken connectors above 0**                 | Expired credentials going unnoticed            |
 | Add an alert on **Total runs below 1 over 24 hours**          | A schedule that silently stopped               |
 | Set a **deduplication key** on every webhook trigger          | Duplicate records after any replay             |

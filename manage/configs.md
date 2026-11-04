@@ -8,8 +8,6 @@ description: Values your workflow code reads per environment.
 
 With nothing configured yet, the page reads **No configs yet** above the line that explains the feature:
 
-<figure><img src="../.gitbook/assets/configs-empty.jpg" alt="The Configs page holding only a No configs yet empty state, explaining that a config holds anything changing between test and live, with Add your first config centred and Add config top-right"><figcaption>The Configs page before any config exists. Read a config from workflow code with <code>fastn.envConfig.get("key")</code>.</figcaption></figure>
-
 > A config holds anything that changes between test and live, like an endpoint or a feature flag. Read one with fastn.envConfig.get.
 
 ```javascript
@@ -21,7 +19,7 @@ const batchSize = await fastn.envConfig.get("BATCH_SIZE");
 
 **Add config** opens the **Add Config** dialog, which takes two things.
 
-**Key \*** is the string your code passes: `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`.
+**Key \*** is the string your code passes: `fastn.envConfig.get("PARTNER_API_BASE")` reads the config whose key is `PARTNER_API_BASE`. A key must start with a letter and contain only letters, numbers, `_`, `.` or `-`. A key that already exists is refused: edit that config instead, since adding it again would replace its value.
 
 **Values per environment** is one editor per environment, labelled with the display name and the slug: **Test (test)**, **Live (live)**, and a row for each named environment you have added. A value may be raw text or valid JSON.
 
