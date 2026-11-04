@@ -52,7 +52,7 @@ All fields are optional; the customer must come from the header, the body or the
 | `endOrgId` | The customer, as fastn's id or your external reference. Use it instead of the header (for example when the API key is pinned to one customer). If you also send `x-org-id`, the two must agree |
 | `userId` | The person at your customer. Per-user isolation keys on this id (or on an attested `x-user-id`). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions |
 | `userEmail`, `userName` | Display only |
-| `createIfMissing` | Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission |
+| `createIfMissing` | Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission. Leave out `x-org-id` for a customer that doesn't exist yet (it is refused with `404` first), so this only works on a key without enforced identity verification |
 | `customerName` | Display name for a customer created by `createIfMissing`. Defaults to the id |
 | `roleOverride` | Per-user role override that your backend decides |
 | `metadata` | Your own data, handed back in the widget's lifecycle callbacks for this session. At most 4 KB of JSON |

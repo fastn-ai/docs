@@ -80,7 +80,7 @@ The plaintext headers tell the gateway which identity is being claimed, and the 
 
 **1. Register the customer organization**
 
-The simplest path is to let the token call register the customer: send `createIfMissing: true` with the customer's id in step 2, and fastn creates the customer on first use. This works with an **Embed backend** key, which has the `customers.create` permission.
+The simplest path is to let the token call register the customer: send `endOrgId` and `createIfMissing: true` in the body in step 2, and fastn creates the customer on first use. This works with an **Embed backend** key, which has the `customers.create` permission. Send `endOrgId` in the body and leave out `x-org-id`: a header that names a customer fastn doesn't know yet is refused with `404` (`IDENTITY_ORG_NOT_FOUND`) before the customer can be created. That also means it only works on a key that doesn't enforce identity verification (HMAC), since such a key requires the identity headers on every call.
 
 You can also register the customer ahead of time from your backend with Create a Customer Organization. That endpoint needs an **Admin** key (full access); an **Embed backend** key gets `403`. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
 
@@ -163,7 +163,7 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 { "userId": "<USER_ID>" }
 ```
 
-To register the customer on first use, add `"endOrgId": "<ORG_ID>", "createIfMissing": true` (and optionally `customerName`). This needs the `customers.create` permission, which the **Embed backend** preset has.
+To register the customer on first use, add `"endOrgId": "<ORG_ID>", "createIfMissing": true` (and optionally `customerName`). This needs the `customers.create` permission, which the **Embed backend** preset has. Send `endOrgId` in the body and leave out `x-org-id`: a header that names a customer fastn doesn't know yet is refused with `404` (`IDENTITY_ORG_NOT_FOUND`) before the customer can be created. That also means it only works on a key that doesn't enforce identity verification (HMAC), since such a key requires the identity headers on every call.
 
 Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. The full field list is on [Tokens](token-api.md).
 

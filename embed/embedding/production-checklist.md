@@ -20,7 +20,7 @@ Never ship the dashboard's sample snippet: it contains a live token in the URL, 
 {% step %}
 ### Scope every token to exactly one customer
 
-A token must identify one customer. If an API key covers several customers and you don't say which one, the widget cannot know whose connections to show. Name the customer on every mint. Either create it first under **Operate → Customers**, or let the token call register it on first use with `createIfMissing` (needs the **Embed backend** preset or another key with `customers.create`). See [Tokens](token-api.md) and [Customers and tenancy](../../tutorials/developer/understanding-tenancy.md).
+A token must identify one customer. If an API key covers several customers and you don't say which one, the widget cannot know whose connections to show. Name the customer on every mint. Either create it first under **Operate → Customers**, or let the token call register it on first use with `createIfMissing` (needs the **Embed backend** preset or another key with `customers.create`, `endOrgId` in the body rather than `x-org-id`, and a key without enforced identity verification). See [Tokens](token-api.md) and [Customers and tenancy](../../tutorials/developer/understanding-tenancy.md).
 {% endstep %}
 
 {% step %}

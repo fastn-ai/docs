@@ -50,18 +50,22 @@ This step is for putting your integrations inside your product. The widget is th
 
 Five parts, each done once; part 5 is optional. Keep the API key and identity secret on your backend: only the embed token reaches the browser.
 
-**1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens and registers customers) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones it registers later, and the identity hash says which customer each call is for. A key limited to specific customers can't register customers, or get embed tokens for customers it doesn't list. See [API keys](../../manage/api-keys.md).
+**1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
 
-**2 · Register each customer** (backend, once per customer), with your own ID for them, their tier and connection limit:
+Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
+
+**2 · Register each customer** (backend, once per customer, with the **Admin** key), with your own ID for them, their tier and connection limit. The **Embed backend** key gets `403` here.
 
 ```bash
 curl -X POST https://api.fastn.dev/api/v1/orgs \
-  -H "Authorization: Bearer $FASTN_API_KEY" \
+  -H "Authorization: Bearer $FASTN_ADMIN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
 
 `orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`, `endOrgId`) accept either fastn's customer id or that external reference.
+
+No tier or limits to set, and no identity verification on the token key? You can skip this part and let the token call in part 3 register the customer on first use with `createIfMissing` (see [Tokens](../../embed/embedding/token-api.md)).
 
 Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
 

@@ -37,7 +37,7 @@ x-org-id: <customer id>        (optional; instead of endOrgId in the body)
 | `userId`    | Your id for the person at the customer. Per-user isolation keys on this (or on an attested `x-user-id` header). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Tenancy](understanding-tenancy.md)). |
 | `userEmail` | The person's email. Display only.                                                                                                                                                                                             |
 | `userName`  | The person's display name. Display only.                                                                                                                                                                                      |
-| `createIfMissing` | Optional. Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission (the **Embed backend** key preset has it). |
+| `createIfMissing` | Optional. Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission (the **Embed backend** key preset has it). Leave out `x-org-id` for a new customer; only works on a key without enforced identity verification. |
 | `customerName` | Optional. Display name for a customer created by `createIfMissing`. Defaults to the id.                                                                                                                                  |
 | `roleOverride` | Optional. A per-user role override your backend decides.                                                                                                                                                              |
 | `metadata`  | Optional. Your own data, handed back in the widget's lifecycle callbacks for this session. At most 4 KB of JSON.                                                                                                             |
@@ -115,6 +115,6 @@ async function getFastnToken({ customerId, userId, userEmail, userName }) {
 }
 ```
 
-Expose this through an endpoint your frontend calls at render time. Return only the token.
+Expose this through an endpoint your frontend calls at render time. Return only the token, as `{ "token": "emb_..." }`, never the API key.
 
 This pattern is what makes the embed reliable across different users and sessions. Hardcoding or caching tokens is what causes "works for me, fails for them" behavior.

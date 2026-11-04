@@ -33,7 +33,7 @@ import { FastnHub } from '@fastn-ai/embed/react';
 />
 ```
 
-Here `/api/fastn-token` is your own backend route, which mints a token with the [Token API](token-api.md) and returns just the token string to the browser. Copy the exact props from the dashboard's generated snippet. They are rendered there for the customer you selected.
+Here `/api/fastn-token` is your own backend route, which mints a token with the [Token API](token-api.md) and returns `{ "token": "emb_..." }` to the browser, never the API key. Copy the exact props from the dashboard's generated snippet. They are rendered there for the customer you selected.
 
 ### Build your own UI
 

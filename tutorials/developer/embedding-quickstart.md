@@ -46,7 +46,7 @@ async function getFastnToken({ customerId, userId, userEmail, userName }) {
 
 ### Step 2: Expose the token to your frontend
 
-Create an endpoint your frontend can call to get a fresh token. Return only the token, never the API key.
+Create an endpoint your frontend can call to get a fresh token. Return only the token, as `{ "token": "emb_..." }`, never the API key.
 
 ```javascript
 // Example route
