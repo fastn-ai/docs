@@ -78,7 +78,7 @@ From the webhook's row in the list you can:
 
 * **Send test**: send a test event to the URL.
 * **Edit**: change the URL, events or payload schema. The customer is set when the webhook is created and can't be changed.
-* **Deliveries**: see recent deliveries and their status, and replay a failed one.
+* **Deliveries**: see recent deliveries and their status (Delivered, Retrying, Failed), and **Resend** any that is not still pending.
 * **Pause**: stop sending for now. Events that happen while it is paused are not sent and don't appear in **Deliveries**. Deliveries already waiting to retry go out when you turn it back on; any still undelivered 24 hours after the event are marked failed, and you can replay them from **Deliveries**.
 * **Rotate secret**: get a new signing secret. The old secret stops working at once, so update your server straight away. Deliveries still waiting to retry are signed with the new secret.
 
