@@ -9,7 +9,7 @@ This walks through the shortest path to a working embed: generate a token from y
 
 You'll need:
 
-* **An API key** - From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
+* **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
 * **Your org identifier (`endOrgId`)** - The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** - Any server environment where you can make an HTTP request with a secret API key.
 

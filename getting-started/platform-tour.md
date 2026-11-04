@@ -36,7 +36,7 @@ The sidebar follows the three steps of putting fastn in your product: **Build**,
 | | Integrations → Unified APIs | `/integrations?tab=unified` | [Unified APIs](../build/unified-apis/README.md) |
 | Embed | Widget | `/widgets` | [Widget](../embed/README.md) |
 | | API keys and MCP → API keys | `/access?tab=api-keys` | [API keys](../manage/api-keys.md) |
-| | API keys and MCP → MCP server | `/access?tab=mcp` | [Build from Claude, Cursor or any agent](../build/mcp-gateway.md) |
+| | API keys and MCP → MCP server | `/access?tab=mcp` | [Build from Claude, Cursor or any agent](../build/mcp-gateway/README.md) |
 | Operate | Customers | `/customers` | [Customers](../operate/customers.md) |
 | | Connections | `/connections` | [Connections](../build/connections/README.md) |
 | | Health → Needs attention, Overview, Updates, Alerts | `/health` | [Operate](../operate/README.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
@@ -96,7 +96,7 @@ The widget builder has four tabs (Layout, Style, Features, Embed) and a live pre
 
 ### Embed → API keys and MCP
 
-Two tabs. **API keys** are what your backend uses to mint embed tokens and call the API. **MCP server** adds fastn's integrations to Claude, Cursor, Codex or any MCP client. See [Build from Claude, Cursor or any agent](../build/mcp-gateway.md).
+Two tabs. **API keys** are what your backend uses to mint embed tokens and call the API. **MCP server** adds fastn's integrations to Claude, Cursor, Codex or any MCP client. See [Build from Claude, Cursor or any agent](../build/mcp-gateway/README.md).
 
 ### Operate → Customers
 

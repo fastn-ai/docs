@@ -4,6 +4,8 @@ description: Integrations, layout, style and features of the panel your customer
 
 # Widget builder
 
+<figure><img src="../../.gitbook/assets/lifecycle/fastn-lifecycle-2-publish.svg" alt="Stage 2, Publish: the product owner adds integrations to the widget catalog and chooses what customers may change"><figcaption><p>Where this fits: stage 2 of the integration lifecycle</p></figcaption></figure>
+
 **Widgets**: the Layout, Style and Features tabs. The Embed tab has its [own page](../embedding/README.md).
 
 Opening **Widgets** takes you straight into the builder; there is no widget list page. A **Live** badge sits in the header once the widget has been saved, and **Widget actions** ⋯ offers **Reset to defaults**. The sticky footer carries **Reset** and **Save and publish**.

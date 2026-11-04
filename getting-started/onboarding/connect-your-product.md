@@ -54,7 +54,7 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 
 1. **Test it.** Connect your own test account and run each action until it shows Live tested.
 2. **Publish it to Live.** **Integrations** → **Connectors** → your connector → **Overview** → **Versions** → **Publish to live**. Customers only run the Live version.
-3. **Register it as your SaaS connector.** **Settings** → **SaaS Connectors** → **Add**, pick your connector, add its connection scopes, then **Add SaaS Connector**.
+3. **Register it as your SaaS connector.** **Build** → **Connect your product** → **Add**, pick your connector, add its connection scopes, then **Add SaaS Connector**.
 
 ### In the onboarding
 

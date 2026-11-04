@@ -141,7 +141,7 @@ try {
 | `400 UNIFIED_VALIDATION_FAILED` | A unified field is unknown, has the wrong type, or a required field is missing. | Fix the fields. The message names the field. |
 | `400 VALIDATION_ERROR` | The request does not match the operation's input, for example an `http` URL where https is needed. | Fix the input. |
 | `400 SETUP_LINK_REDIRECT_NOT_ALLOWED` | The setup link's `redirectUrl` is not registered. | Register it (see [Connecting apps](connecting-apps.md#redirect-addresses)). |
-| `401` / `403` | The key is wrong, revoked, or not allowed to do this. | Check the key on [Settings → API keys](../../manage/api-keys.md). |
+| `401` / `403` | The key is wrong, revoked, or not allowed to do this. | Check the key on [Embed → API keys and MCP](../../manage/api-keys.md). |
 | `404 NOT_FOUND` (or `404` with no code) | The thing you asked for does not exist. | Check the id. |
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has not connected an app for this entity. | Send a [setup link](connecting-apps.md#setup-links). |
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | The app does not offer that operation for this entity. | Use a [direct app action](app-actions.md). |

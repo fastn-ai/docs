@@ -6,7 +6,7 @@ description: Every customer using your embedded integrations.
 
 **Operate → Customers** · `/customers`
 
-A top-level item in the sidebar's OPERATE group, beside Activity rather than inside it. Note the mismatch between where it sits and where it lives: the sidebar puts it under OPERATE, but its route is under `/settings/`. Linking to `/customers` gets you a **Page not found**.
+A top-level item in the sidebar's **Operate** group, beside Health, Connections and Activity. It used to live under Settings at `/settings/customers`, and that old address redirects here.
 
 <figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with a single row: testing, identifier testing underneath, 1 connection, status Active, ending in View connections, with an All tiers filter and a 1 customer count above"><figcaption>The second line under each name is the identifier you will see again as endOrgId.</figcaption></figure>
 

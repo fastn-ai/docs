@@ -27,7 +27,7 @@ Every customer asks for integrations. Some you already have, but they need to fi
 {% step %}
 ### Build
 
-Your integration builder describes the integration in plain words, to fastn's agent in the dashboard or from Claude or Cursor over MCP. The agent picks the connectors, writes the workflow, and generates and runs test cases. [Build with the agent](build/agent/README.md)
+Your integration builder describes the integration in plain words, with **Build with AI** in the dashboard, or from Claude or Cursor over MCP. The agent picks the connectors, writes the workflow, and generates and runs test cases. [Build with the agent](build/README.md)
 {% endstep %}
 
 {% step %}
@@ -51,7 +51,7 @@ Inside your product, each customer connects their own accounts, maps fields to f
 {% step %}
 ### Run and monitor
 
-One dashboard shows every customer's runs: what synced, what retried and what failed, with alerts when something needs attention. fastn handles retries, rate limits and token renewal, and its agents catch API changes and propose the fix. [Monitor your integrations](operate/README.md)
+**Health** shows what needs attention across every customer, with the fix for each, and alerts tell you when a run fails. fastn handles retries, rate limits and token renewal, and its agents catch API changes and propose the fix. [Operate](operate/overview.md)
 {% endstep %}
 {% endstepper %}
 
@@ -64,7 +64,7 @@ Pick the path that matches what you're doing today.
 <tr><td><strong>Build your first integration</strong></td><td>Describe an integration to the agent and get a tested, working workflow.</td><td><a href="getting-started/quickstart.md">getting-started/quickstart.md</a></td></tr>
 <tr><td><strong>Embed it in your product</strong></td><td>For developers: render the widget and generate tokens from your backend.</td><td><a href="tutorials/developer/embedding-quickstart.md">tutorials/developer/embedding-quickstart.md</a></td></tr>
 <tr><td><strong>Test, deploy and release</strong></td><td>Test cases, versions, environments, and shipping a change safely.</td><td><a href="build/workflows/lifecycle.md">build/workflows/lifecycle.md</a></td></tr>
-<tr><td><strong>Monitor and get alerted</strong></td><td>See every customer's executions, and get told when something fails.</td><td><a href="operate/alerts.md">operate/alerts.md</a></td></tr>
+<tr><td><strong>Monitor and get alerted</strong></td><td>Health, alerts and every customer's runs, in one place.</td><td><a href="operate/health.md">operate/health.md</a></td></tr>
 <tr><td><strong>Help for your customers</strong></td><td>Pages you can share with the people using integrations inside your product.</td><td><a href="tutorials/end-user/README.md">tutorials/end-user/README.md</a></td></tr>
 </tbody></table>
 

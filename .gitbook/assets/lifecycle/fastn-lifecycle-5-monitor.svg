@@ -71,7 +71,7 @@
 <text class="mut" x="40" y="796.0" font-size="12.5">Agents and runtime</text>
 <g class="dim">
 <rect class="c-team" x="260.0" y="160" width="210.8" height="76" rx="8" stroke-width="1.2"/>
-<text class="fg" font-size="12.8"><tspan x="272.0" y="177.0">Describes the integration in</tspan><tspan x="272.0" y="194.0">plain words to fastn's agent,</tspan><tspan x="272.0" y="211.0">or from Claude or Cursor over</tspan><tspan x="272.0" y="228.0">MCP</tspan></text>
+<text class="fg" font-size="12.8"><tspan x="272.0" y="177.0">Describes the integration in</tspan><tspan x="272.0" y="194.0">plain words, in Build with AI</tspan><tspan x="272.0" y="211.0">or from Claude or Cursor over</tspan><tspan x="272.0" y="228.0">MCP</tspan></text>
 </g>
 <g class="dim">
 <rect class="c-team" x="494.8" y="160" width="210.8" height="76" rx="8" stroke-width="1.2"/>
@@ -87,7 +87,7 @@
 </g>
 <g>
 <rect class="c-team" x="1199.2" y="478" width="210.8" height="76" rx="8" stroke-width="1.2"/>
-<text class="fg" font-size="12.8"><tspan x="1211.2" y="503.5">Watches every customer's runs</tspan><tspan x="1211.2" y="520.5">in Activity, gets alerts, finds</tspan><tspan x="1211.2" y="537.5">and fixes failures</tspan></text>
+<text class="fg" font-size="12.8"><tspan x="1211.2" y="503.5">Checks Health every day, works</tspan><tspan x="1211.2" y="520.5">what needs attention, and gets</tspan><tspan x="1211.2" y="537.5">alerts when runs fail</tspan></text>
 </g>
 <g class="dim">
 <rect class="c-customer" x="964.4000000000001" y="610" width="210.8" height="76" rx="8" stroke-width="1.2"/>

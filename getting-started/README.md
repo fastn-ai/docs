@@ -4,6 +4,8 @@ description: What fastn does, who each part is for, and the path from signup to 
 
 # Overview
 
+<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle.svg" alt="The fastn integration lifecycle: who does what across Build, Publish, Embed, Customize, and Run and monitor"><figcaption><p>The full lifecycle: your team, your customer and fastn</p></figcaption></figure>
+
 ### The problem fastn solves
 
 Every integration you ship yourself carries the same recurring cost: an OAuth app to register, tokens to refresh, per-customer credentials to store, an upstream API that changes without warning, and a support queue when a sync quietly stops. Multiply that by the number of systems your customers use.

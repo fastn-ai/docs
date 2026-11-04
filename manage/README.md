@@ -4,7 +4,7 @@ description: Organisation settings, access, credentials and billing.
 
 # Settings
 
-**Settings** in the MANAGE group of the left rail.
+**Settings** at the bottom of the left rail.
 
 **Its sub-navigation is role-scoped, so you will not see every page below.** An Owner or Admin sees People, General, Billing, Roles and Audit log, plus everything a Developer sees: Environments, Secrets, Configs, Database, Workflow tags and Trash. API keys and the MCP server moved to **Embed → API keys and MCP**, and Your API moved to **Build → Connect your product**.
 
@@ -25,7 +25,7 @@ The table follows the Owner sidebar order, with Trash last.
 | [Audit log](audit-log.md)               | Every action taken in the organisation.                        |
 | [Trash](trash.md)                       | Deleted connectors, actions and workflows.                     |
 
-**Customers** is not here. It is a top-level item in the OPERATE group, and is documented with [Operate](../operate/customers.md).
+Some pages that used to be here have moved into the sidebar: **API keys and MCP** is under **Embed** ([API keys and MCP](api-keys.md)), **Connect your product** is under **Build** ([Connect your product](saas-connectors.md)), and **Customers** is under **Operate** ([Customers](../operate/customers.md)). Their old Settings addresses redirect.
 
 Your own account is separate from the organisation:
 

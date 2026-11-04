@@ -14,11 +14,11 @@ Build tells you what should happen. Operate tells you what did.
 | ------------------------------- | ------------------------- | ------------------------------------------------------------------ |
 | [Events](events.md)             | `/activity/events`        | What arrived, from where, and was it delivered?                   |
 | [Traces](traces.md)             | `/activity/traces`        | Which connected systems did a run call?                           |
-| [Alerts](alerts.md)             | `/activity/alerts`        | What should tell us something is wrong, and where does it go?     |
+| [Alerts](alerts.md)             | `/health?tab=alerts`      | What should tell us something is wrong, and where does it go?     |
 | [Executions](executions.md)     | `/activity/executions`    | Which runs happened, and how did each end?                        |
 | [Sync reports](sync-reports.md) | `/activity/sync-reports`  | What actually changed, record by record?                          |
 
-Also under Operate: **[Customers](customers.md)**, who is using your embedded integrations. It is a top-level item in the sidebar's OPERATE group, a sibling of Activity rather than one of its logs.
+Also under Operate: **[Health](health.md)**, what needs attention across every customer; **[Customers](customers.md)**, who is using your embedded integrations; and **[Connections](../build/connections/README.md)**, every signed-in account. Alerts moved from Activity to **Health → Alerts**, and the old `/activity/alerts` address redirects there.
 
 And [Troubleshooting](troubleshooting.md), which is a page of this documentation rather than a screen in the product: something is wrong, where do I look?
 

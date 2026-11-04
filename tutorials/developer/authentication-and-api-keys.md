@@ -7,7 +7,7 @@ fastn API keys authenticate your backend's requests - including generating embed
 
 ### Where to find your keys
 
-Go to **Settings → API Keys**. The page has a **Test / Live toggle** in the top-right and a keys table with a **MODE** column - each key shows a badge indicating whether it's a LIVE or TEST key. Click **+ Create API Key** to generate one. Keys are shown once at creation - copy and store it securely.
+Go to **Embed → API keys and MCP**. The page has a **Test / Live toggle** in the top-right and a keys table with a **MODE** column - each key shows a badge indicating whether it's a LIVE or TEST key. Click **+ Create API Key** to generate one. Keys are shown once at creation - copy and store it securely.
 
 When viewing test data, the page shows a banner: "Test keys only work with the X-fastn-Test-Mode: true header."
 

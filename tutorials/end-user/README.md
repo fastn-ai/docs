@@ -5,6 +5,8 @@ description: >-
 
 # End User
 
+<figure><img src="../../.gitbook/assets/lifecycle/fastn-lifecycle-4-customize.svg" alt="Stage 4, Customize: the end-customer admin connects accounts and adapts integrations in the widget"><figcaption><p>Where this fits: stage 4 of the integration lifecycle</p></figcaption></figure>
+
 These tutorials are for the people who use integrations through the widget embedded in a SaaS product. You don't need a fastn account or dashboard access - everything happens inside the product you already use.
 
 {% hint style="info" %}

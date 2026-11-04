@@ -24,7 +24,7 @@ npm install @fastn-ai/sdk
 | -------- | --------------------------------------------------------------------------- |
 | Runtime  | Node.js 20 or newer. The SDK uses the built-in `fetch`.                     |
 | Modules  | ESM and CommonJS. TypeScript types are included.                            |
-| API key  | Create one on [Settings → API keys](../../manage/api-keys.md). Keep it in your secret store. |
+| API key  | Create one on [Embed → API keys and MCP](../../manage/api-keys.md). Keep it in your secret store. |
 
 ---
 
