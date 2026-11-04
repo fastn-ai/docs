@@ -12,7 +12,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 |  | Without fastn | With fastn |
 | --- | --- | --- |
-| Integrations page | Build your own integrations page and settings screens | The widget, styled to your product in the widget builder |
+| Integrations page | Build your own integration catalog and settings screens | The widget, styled to your product in the widget builder |
 | Customer sign-in | OAuth flows and token refresh for every app | The widget opens each app's own sign-in; fastn stores and refreshes the credentials |
 | Keeping customers apart | Your code keeps every token and record separate per customer | Your backend gets a short-lived embed token per customer; the widget shows only that customer's data |
 | New integrations | A frontend and backend release | Add it in fastn and it appears in the widget |
