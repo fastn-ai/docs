@@ -12,7 +12,7 @@ Two JSON editors, `ctx.input` and `ctx.headers`. **Use contract** fills the inpu
 
 | Mode             | What runs                            |
 | ---------------- | -------------------------------------- |
-| **Live**         | Real calls to the connected systems.  |
+| **Live**         | Real calls to the connected apps.  |
 | **Partial Mock** | Live where the connector has an active connection, a stored mock stub where it does not. |
 | **Fully Mock**   | Stubs only.                           |
 

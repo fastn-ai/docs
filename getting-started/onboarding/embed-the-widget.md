@@ -13,7 +13,7 @@ This step is for putting your integrations inside your product. The widget is th
 |  | Without fastn | With fastn |
 | --- | --- | --- |
 | Integrations page | Build your own marketplace and settings screens | The widget, styled to your product in the widget builder |
-| Customer sign-in | OAuth flows and token refresh for every system | The widget opens each system's own sign-in; fastn stores and refreshes the credentials |
+| Customer sign-in | OAuth flows and token refresh for every app | The widget opens each app's own sign-in; fastn stores and refreshes the credentials |
 | Keeping customers apart | Your code keeps every token and record separate per customer | Your backend gets a short-lived embed token per customer; the widget shows only that customer's data |
 | New integrations | A frontend and backend release | Add it in fastn and it appears in the widget |
 
@@ -42,7 +42,7 @@ This step is for putting your integrations inside your product. The widget is th
 | Use case | How you set it up |
 | --- | --- |
 | Settings page in a B2B product | The iframe on your settings page, with Organization level Scope so one admin connects for the whole customer |
-| Each user connects their own systems | User level Scope |
+| Each user connects their own apps | User level Scope |
 | Plans and tiers | Register each customer with a tier and connection limit; show some integrations to specific customers only |
 | Integrations that start from your product | Your backend calls a webhook trigger on each event (part 5 below) |
 

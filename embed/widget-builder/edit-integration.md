@@ -34,7 +34,7 @@ How many times one customer may activate this integration.
 | **Single activation** | *Each customer has one connected instance.* |
 | **Multi-connection** | *Customers can activate it more than once, each time with its own set of connections.* |
 
-Pick **Multi-connection** when one customer legitimately has several accounts on the same system, such as two TikTok Shop storefronts.
+Pick **Multi-connection** when one customer legitimately has several accounts on the same app, such as two TikTok Shop storefronts.
 
 ## Customer visibility
 
@@ -47,7 +47,7 @@ Pick **Multi-connection** when one customer legitimately has several accounts on
 
 ## Connectors
 
-The systems this integration connects. Search the catalog and add them; each selected connector becomes a chip carrying a **gear** and an **X**.
+The apps this integration connects. Search the catalog and add them; each selected connector becomes a chip carrying a **gear** and an **X**.
 
 ### Per-connector settings
 

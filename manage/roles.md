@@ -29,7 +29,7 @@ A seventh role, **Platform Admin**, is platform-level: held by fastn, not someth
 
 ### Roles here are not API-key permissions
 
-The six roles on this screen govern **people**. API keys carry their own permission presets (**Admin**, **Developer**, **Operator**, **Viewer** (the default), **End User**, **Embed backend** and **Custom**), chosen on the key creation dialog. The names overlap, but they are two separate systems configured in two different places; granting a person the Developer role does nothing to a key, and vice versa. See [API keys](api-keys.md).
+The six roles on this screen govern **people**. API keys carry their own permission presets (**Admin**, **Developer**, **Operator**, **Viewer** (the default), **End User**, **Embed backend** and **Custom**), chosen on the key creation dialog. The names overlap, but they are two separate apps configured in two different places; granting a person the Developer role does nothing to a key, and vice versa. See [API keys](api-keys.md).
 
 ### The permission matrix
 

@@ -15,7 +15,7 @@ If you are an agent writing fastn workflows or calling the fastn API, read this 
 ## The model in six lines
 
 1. An **organization** is you, the SaaS company. It holds everything below.
-2. A **connector** defines an external system: its actions, auth methods and versions.
+2. A **connector** defines an external app: its actions, auth methods and versions.
 3. A **connection** is *one of your customers'* authorized link to one connector, holding the encrypted credential.
 4. A **workflow** is JavaScript that runs on a trigger. It is code, not a drag-and-drop graph.
 5. A **trigger** starts a workflow: webhook, schedule, or app event.
@@ -62,7 +62,7 @@ export default async function (ctx) {
 
 | Call | Purpose |
 | ---- | ------- |
-| `fastn.connectors.<slug>.<action>(args)` | Call an action on a connected system. `fastn.connector.<slug>.<action>(args)` (singular) also works. See the caveat below. |
+| `fastn.connectors.<slug>.<action>(args)` | Call an action on a connected app. `fastn.connector.<slug>.<action>(args)` (singular) also works. See the caveat below. |
 | `fastn.unified.…` | Call a unified entity and let fastn route to whichever provider the customer connected. |
 | `fastn.db.query(sql, params)` | SQL against your workspace's Postgres schema (`ws_<hash>`). **Verify** signature. |
 | `fastn.state.get(key)` / `fastn.state.set(key, value)` | Durable key-value across runs. Scopes: `ORG`, `INVOCATION`. |
@@ -78,7 +78,7 @@ export default async function (ctx) {
 | **Standard** | `202` + execution id | 15 minutes |
 | **Long** | `202` + execution id | 36 hours (the maximum the dashboard allows) |
 
-Instant is the default. Anything calling two or three systems in sequence belongs on Standard.
+Instant is the default. Anything calling two or three apps in sequence belongs on Standard.
 
 ---
 
@@ -167,7 +167,7 @@ Polling depends on the tier:
 | ---- | ----------------- | ------------ |
 | **Webhook** | An HTTP request arrives at a public URL | Auth (`x-fastn-access-key` or public), routes, execution mode (Parallel/Sequential), deduplication key |
 | **Schedule** | A time is reached | Cron/interval, plus a **Payload** JSON that becomes `ctx.input` |
-| **App event** | Something changes in a connected system | Connector, connection, event, routes |
+| **App event** | Something changes in a connected app | Connector, connection, event, routes |
 
 ---
 
@@ -180,7 +180,7 @@ Do not conflate these.
 | **URL** | `<docs-site>/~gitbook/mcp` | `https://mcp.fastn.dev/fastn-workspace` |
 | **Exposes** | This documentation, as searchable tools | Your fastn workflows and the fastn platform tools (connector actions run through platform tools such as `executeAction`) |
 | **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to fastn to sign in, and to pick a workspace if you belong to more than one org |
-| **Use for** | Answering questions about fastn | Acting on real customer systems |
+| **Use for** | Answering questions about fastn | Acting on real customer apps |
 
 Claude Code, against the product gateway:
 

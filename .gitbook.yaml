@@ -5,6 +5,7 @@ structure:
   summary: SUMMARY.md
 
 redirects:
+  build/connectors/connect-a-system: build/connectors/connect-an-app.md
   getting-started/what-is-fastn: README.md
   getting-started/platform-overview: getting-started/platform-tour.md
   getting-started/signing-up-as-a-saas-partner: getting-started/README.md
