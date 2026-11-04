@@ -3,11 +3,11 @@
 
 # Finding Your Org Identifier
 
-The `endOrgId` identifies the customer a widget embed is for. Only the token request needs it: the iframe URL takes the token alone, because the token already carries the customer. Getting the right identifier is necessary for anything to work.
+The customer identifier names the customer a widget embed is for, in the `x-org-id` header of the token request. Only the token request needs it: the iframe URL takes the token alone, because the token already carries the customer. Getting the right identifier is necessary for anything to work.
 
 ### Two identifiers work
 
-`endOrgId` (or the `x-org-id` header) accepts either:
+`x-org-id` accepts either:
 
 * **fastn's id for the customer**, or
 * **your external reference**: the id you gave the customer when you registered it (`orgId` on `POST /api/v1/orgs`). Using your own id means you never have to store fastn's. If you created a customer without one, fastn stored its slug as the external reference at creation time.
@@ -24,7 +24,7 @@ Create a separate test customer for development and use its id locally, so test 
 
 ### Using it
 
-Once you have the identifier, pass it as `endOrgId` in the token request body (`{ endOrgId, userId, userEmail, userName }`) or as the `x-org-id` header. Nothing else needs it: the iframe URL is just `?token=<token>`.
+Once you have the identifier, send it as the `x-org-id` header on the token request. (Only an API key pinned to one customer sends it as `endOrgId` in the body instead, because a pinned key rejects the header.) Nothing else needs it: the iframe URL is just `?token=<token>`.
 
 In production, look the identifier up per request from the signed-in person's company rather than fixing one value, so each customer gets their own token. For local testing against a single test customer, an environment variable is fine:
 

@@ -21,7 +21,7 @@ You don't run fastn locally or build the integration infrastructure yourself. fa
 
 [**Authentication & API Keys**](authentication-and-api-keys.md) - Test vs live keys and the headers each requires.
 
-[**Finding Your Org Identifier**](finding-your-org-identifier.md) - Locating the `endOrgId` your token and iframe calls need.
+[**Finding Your Org Identifier**](finding-your-org-identifier.md) - Locating the customer identifier your token request needs.
 
 [**Understanding Tenancy**](understanding-tenancy.md) - The two ways connections can be scoped, and how to choose.
 

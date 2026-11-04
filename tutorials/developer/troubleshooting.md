@@ -19,7 +19,7 @@ Embed tokens expire after 8 hours. If a token is hardcoded into your frontend or
 
 **Most likely cause:** the wrong customer identifier.
 
-For `endOrgId`, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns 404 `Tenant not found`.
+For `x-org-id`, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns 404 `Tenant not found`.
 
 ### Requests fail with a test key
 
@@ -35,7 +35,7 @@ Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true
 
 This can appear when the iframe URL's tenancy shape doesn't match how the token was minted - for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
 
-**Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `endOrgId` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
+**Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `x-org-id` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
 
 
 

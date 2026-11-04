@@ -10,7 +10,7 @@ This walks through the shortest path to a working embed: generate a token from y
 You'll need:
 
 * **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
-* **The customer identifier (`endOrgId`)** - fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **The customer identifier** - fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** - Any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
@@ -27,9 +27,9 @@ async function getFastnToken({ customerId, userId, userEmail, userName }) {
       "Content-Type": "application/json",
       // Required only for fsk_test_ keys:
       "X-fastn-Test-Mode": "true",
+      "x-org-id": customerId, // fastn id or your external reference
     },
     body: JSON.stringify({
-      endOrgId: customerId, // fastn id or your external reference
       userId,               // the signed-in person; keys per-user isolation
       userEmail,
       userName,

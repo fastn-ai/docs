@@ -63,9 +63,7 @@ curl -X POST https://api.fastn.dev/api/v1/orgs \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
 
-`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`, `endOrgId`) accept either fastn's customer id or that external reference.
-
-No tier or limits to set, and no identity verification on the token key? You can skip this part and let the token call in part 3 register the customer on first use with `createIfMissing` (see [Tokens](../../embed/embedding/token-api.md)).
+`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference.
 
 Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
 

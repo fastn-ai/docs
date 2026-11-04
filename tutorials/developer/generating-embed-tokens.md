@@ -17,14 +17,13 @@ POST https://api.fastn.dev/api/v1/embed/token
 Authorization: Bearer <FASTN_API_KEY>
 Content-Type: application/json
 X-fastn-Test-Mode: true        (only for fsk_test_ keys; omit for fsk_live_)
-x-org-id: <customer id>        (optional; instead of endOrgId in the body)
+x-org-id: <customer id>        (fastn's id for the customer, or your external reference)
 ```
 
 **Body:**
 
 ```json
 {
-  "endOrgId": "<customer id or your external reference>",
   "userId": "<your user id>",
   "userEmail": "user@example.com",
   "userName": "User Name"
@@ -33,12 +32,10 @@ x-org-id: <customer id>        (optional; instead of endOrgId in the body)
 
 | Field       | Description                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `endOrgId`  | The customer the widget is for (the API calls it an end org): fastn's id for the customer, or the external reference you registered it under (`orgId` on `POST /api/v1/orgs`). You can send it as the `x-org-id` header instead; if you send both, they must agree. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
+| `endOrgId`  | Only for an API key pinned to one customer, which rejects the `x-org-id` header. Every other key names the customer in `x-org-id`. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
 | `userId`    | Your id for the person at the customer. Per-user isolation keys on this (or on an attested `x-user-id` header). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Tenancy](understanding-tenancy.md)). |
 | `userEmail` | The person's email. Display only.                                                                                                                                                                                             |
 | `userName`  | The person's display name. Display only.                                                                                                                                                                                      |
-| `createIfMissing` | Optional. Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission (the **Embed backend** key preset has it). Leave out `x-org-id` for a new customer; only works on a key without enforced identity verification. |
-| `customerName` | Optional. Display name for a customer created by `createIfMissing`. Defaults to the id.                                                                                                                                  |
 | `roleOverride` | Optional. A per-user role override your backend decides.                                                                                                                                                              |
 | `metadata`  | Optional. Your own data, handed back in the widget's lifecycle callbacks for this session. At most 4 KB of JSON.                                                                                                             |
 | `allowOrgLevel` | Optional. Mint an organization-level token with no customer, for previewing your own organization only. Never hand one to a customer.                                                                                |
@@ -97,9 +94,9 @@ async function getFastnToken({ customerId, userId, userEmail, userName }) {
       "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
       "Content-Type": "application/json",
       "X-fastn-Test-Mode": "true", // omit for live keys
+      "x-org-id": customerId, // fastn id or your external reference
     },
     body: JSON.stringify({
-      endOrgId: customerId, // fastn id or your external reference
       userId,
       userEmail,
       userName,

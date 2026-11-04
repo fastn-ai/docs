@@ -165,7 +165,7 @@ POST /api/v1/embed/token
 | `Authorization` | `Bearer <API key>`       |
 | `x-org-id`      | The customer: fastn's id for it, or your own id for it |
 
-`x-org-id` names the customer the token is for. Without it, send `{"endOrgId": "…"}` in the request body (fastn's id or your own id for the customer); a request with neither is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`.
+`x-org-id` names the customer the token is for. Only an API key pinned to one customer leaves it out (a pinned key rejects the header) and sends `{"endOrgId": "…"}` in the body instead; a request with neither is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`.
 
 ```json
 {
