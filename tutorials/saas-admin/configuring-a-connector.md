@@ -2,7 +2,6 @@
 description: >-
   Set up a connector with OAuth or API key auth, configure its capabilities,
   test actions, and manage tenant-level credentials.
-hidden: true
 ---
 
 # Configuring a Connector
@@ -41,7 +40,7 @@ hidden: true
 
 > **Screenshot:** Connector Agent page with the chat input and quick-start prompts.
 
-> &#x20;**GIF needed:** Using Build with AI — entering a connector name, watching the agent discover the API and build actions.
+> &#x20;**GIF needed:** Using Build with AI - entering a connector name, watching the agent discover the API and build actions.
 
 ### Authentication methods
 
@@ -53,16 +52,16 @@ Six auth methods are available when creating a connector:
 | **Basic Auth**   | Username and password sent as Base64 in Authorization header.            | Legacy APIs, internal systems         |
 | **Bearer Token** | Token sent in Authorization header as `Bearer {token}`.                  | Many modern APIs                      |
 | **API Key**      | Key sent in a custom header (e.g., `X-API-Key`).                         | Stripe, SendGrid, OpenAI              |
-| **OAuth 2.0**    | User authorizes via the app's login screen. Fastn manages token refresh. | Slack, Shopify, HubSpot, Xero, Google |
+| **OAuth 2.0**    | User authorizes via the app's login screen. fastn manages token refresh. | Slack, Shopify, HubSpot, Xero, Google |
 | **Custom**       | A custom handler manages auth. For proprietary systems.                  | Internal tools, custom APIs           |
 
 You can add multiple auth methods to one connector (click **"+ Add"** in the Auth Methods section). One method is set as default.
 
 > **Screenshot:** Auth Methods dropdown showing all 6 options.
 
-#### Using Fastn-managed OAuth apps
+#### Using fastn-managed OAuth apps
 
-For supported platforms, Fastn manages OAuth on your behalf (see **Settings → OAuth Apps**). This means you can authenticate without creating your own OAuth application in the third-party's developer portal.
+For supported platforms, fastn manages OAuth on your behalf (see **Settings → OAuth Apps**). This means you can authenticate without creating your own OAuth application in the third-party's developer portal.
 
 If the platform isn't listed under OAuth Apps, you'll need to:
 
@@ -72,7 +71,7 @@ If the platform isn't listed under OAuth Apps, you'll need to:
 
 ### Adding a connection
 
-A connector defines the integration. A **connection** is an authenticated instance — your credentials or your customer's credentials.
+A connector defines the integration. A **connection** is an authenticated instance - your credentials or your customer's credentials.
 
 1. On the Connectors page, find your connector card.
 2. Click **Connect** (first connection) or **+ Add Connection** (additional connections).
@@ -82,14 +81,14 @@ A connector defines the integration. A **connection** is an authenticated instan
    * **Basic Auth:** Enter username and password.
 4. The connection appears under **Operate → Connections**.
 
-> **GIF:** Adding a connection — clicking Connect on a connector card, completing OAuth, seeing the connected state.
+> **GIF:** Adding a connection - clicking Connect on a connector card, completing OAuth, seeing the connected state.
 
 #### Connections vs connectors
 
 |                   | Connector                                                 | Connection                                        |
 | ----------------- | --------------------------------------------------------- | ------------------------------------------------- |
 | **What it is**    | The integration definition (auth config, actions, events) | An authenticated instance with stored credentials |
-| **How many**      | One per app                                               | Many — one per user/customer who connects         |
+| **How many**      | One per app                                               | Many - one per user/customer who connects         |
 | **Where managed** | Integrations → Connectors                                 | Operate → Connections                             |
 | **Created by**    | You (manual or AI)                                        | You (for testing) or your customers (via widget)  |
 
@@ -100,8 +99,8 @@ On the Connectors page, each connector card shows:
 | Element                     | Meaning                                    |
 | --------------------------- | ------------------------------------------ |
 | **PERSONAL** badge          | Created by you, not shared                 |
-| **Connect** button (purple) | No connection yet — click to authenticate  |
-| **+ Add Connection** button | Already connected — add another connection |
+| **Connect** button (purple) | No connection yet - click to authenticate  |
+| **+ Add Connection** button | Already connected - add another connection |
 | **Created by: You**         | Shows who created the connector            |
 
 ### Connector visibility
@@ -117,6 +116,6 @@ Set visibility in the Create Connector dialog or edit it later from the connecto
 
 * Two ways to create connectors: manual (+ Create) and AI (Build with AI)
 * All 6 auth methods and when to use each
-* How Fastn-managed OAuth apps simplify authentication
+* How fastn-managed OAuth apps simplify authentication
 * The difference between connectors and connections
 * Connector card states and visibility settings

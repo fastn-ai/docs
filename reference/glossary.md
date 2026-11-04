@@ -1,6 +1,6 @@
 ---
 description: >-
-  Alphabetized definitions of every term used across the Fastn platform and
+  Alphabetized definitions of every term used across the fastn platform and
   documentation.
 ---
 
@@ -17,7 +17,7 @@ description: >-
 | **Integration** | Connectors plus a workflow and its trigger, doing a job between your product and a customer's system. | [Onboarding → Choose integrations](../getting-started/onboarding/choose-integrations.md) |
 | **Trigger**                 | What starts a workflow. Three types: Webhook, Scheduler, App Event.                                                                                                  | Integrations → Triggers               |
 | **Customer**                | One company using your product. The API calls it an end org. Each customer's connections and data are isolated.                                                                    | Operate → Customers                   |
-| **Organization (customer organization)** | A customer/tenant of your product that will access embedded integrations. It can have multiple users. Each customer organization has a string identifier, the org id, created when the org is registered in the Fastn platform through the UI or the [Create a Customer Organization](../embed/embedding/integration-flow.md#create-a-customer-organization) API. It is represented in APIs as "org-id". | Operate → Customers |
+| **Organization (customer organization)** | A customer/tenant of your product that will access embedded integrations. It can have multiple users. Each customer organization has a string identifier, the org id, created when the org is registered in the fastn platform through the UI or the [Create a Customer Organization](../embed/embedding/integration-flow.md#create-a-customer-organization) API. It is represented in APIs as "org-id". | Operate → Customers |
 | **User** | An end-user who is part of the customer organization that will access embedded integrations. Each user is expected to have a unique user id, represented as "user-id". Sending a "user-id" is optional. | The `x-user-id` header |
 | **Identity hash** | Also written Identity-hmac, or the `x-identity-hmac` header. An HMAC-SHA256 of the org ID and user ID (newline-joined), signed with your identity-verification secret. It proves that your backend authorized that specific org and user pair. | [API keys → Identity hash](../manage/api-keys.md#identity-hash) |
 | **Widget**                  | The embedded interface your customers use to connect apps and manage integrations inside your product.                                                               | Embed → Widget                        |

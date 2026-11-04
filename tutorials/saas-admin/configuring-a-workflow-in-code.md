@@ -2,7 +2,6 @@
 description: >-
   Write workflows in the code editor using export default async function(ctx),
   configure execution tiers, and test with sample input.
-hidden: true
 ---
 
 # Configuring a Workflow in Code
@@ -15,7 +14,7 @@ hidden: true
 2. Click **Create Workflow**.
 3. The workflow editor opens with three panels.
 
-> **Screenshot:** Full workflow editor showing all three panels — Configuration (left), Code (center), Test (right).
+> **Screenshot:** Full workflow editor showing all three panels - Configuration (left), Code (center), Test (right).
 
 ### The three panels
 
@@ -28,7 +27,7 @@ The code editor consists of three panels which are as follows:
 | **Name**              | Workflow identifier (required). Example: "sync-contacts"                           |
 | **Description**       | What the workflow does. Shown in the workflows table.                              |
 | **Execution Tier**    | **Instant** (sync, max 60s), **Standard** (async, default), or **Long** (extended) |
-| **Execution Timeout** | Max time before timeout. Slider: 1s–2min range for Instant tier.                   |
+| **Execution Timeout** | Max time before timeout. Slider: 1s - 2min range for Instant tier.                   |
 | **Retry Policy**      | Toggle on/off. When on, failed executions retry automatically.                     |
 
 #### 2. Code editor
@@ -43,20 +42,20 @@ export default async function(ctx) {
 }
 ```
 
-Every workflow exports a default async function that receives `ctx` — the context object.
+Every workflow exports a default async function that receives `ctx` - the context object.
 
 #### 3. Test panel
 
 Two tabs:
 
-* **Test** — run the workflow with sample input
-* **Docs** — reference documentation
+* **Test** - run the workflow with sample input
+* **Docs** - reference documentation
 
 The Test tab has:
 
-* **CTX.INPUT** — JSON input your workflow receives
-* **CTX.HEADERS** — optional HTTP headers
-* **Run** button — executes the workflow without saving
+* **CTX.INPUT** - JSON input your workflow receives
+* **CTX.HEADERS** - optional HTTP headers
+* **Run** button - executes the workflow without saving
 
 ### The ctx object
 
@@ -68,7 +67,7 @@ const { input, headers } = ctx;
 
 | Property  | What it contains                                                                     |
 | --------- | ------------------------------------------------------------------------------------ |
-| `input`   | The incoming data — request body from a webhook, event payload, or scheduler context |
+| `input`   | The incoming data - request body from a webhook, event payload, or scheduler context |
 | `headers` | HTTP headers from the incoming request (if triggered by webhook)                     |
 
 ### Writing a workflow
@@ -112,7 +111,7 @@ export default async function(ctx) {
   }
   
   if (order.total > 500) {
-    // High-value order — needs review
+    // High-value order - needs review
     return {
       action: "review",
       reason: `Order total $${order.total} exceeds threshold`,
@@ -120,7 +119,7 @@ export default async function(ctx) {
     };
   }
   
-  // Standard order — process normally
+  // Standard order - process normally
   return {
     action: "process",
     order
@@ -144,7 +143,7 @@ export default async function(ctx) {
 
 3. Optionally add headers in **CTX.HEADERS**.
 4. Click **Run**.
-5. The output appears below — check the result matches your expectations.
+5. The output appears below - check the result matches your expectations.
 6. Toggle between **Test** (sample data) and **Real** mode if available.
 
 > **Screenshot:** Test panel with sample input JSON and the output result after running.
@@ -153,9 +152,9 @@ export default async function(ctx) {
 
 | Tier         | Behavior                                                                          | Use when                                                             |
 | ------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| **Instant**  | Synchronous — caller waits for the result. Max 60 seconds. Returns result inline. | API endpoints that need a response, quick lookups, simple transforms |
-| **Standard** | Asynchronous — returns immediately, executes in background.                       | Data syncs, multi-step processes, most workflows                     |
-| **Long**     | Extended async — for large data volumes and long-running processes.               | Batch imports, full data backfills, large report generation          |
+| **Instant**  | Synchronous - caller waits for the result. Max 60 seconds. Returns result inline. | API endpoints that need a response, quick lookups, simple transforms |
+| **Standard** | Asynchronous - returns immediately, executes in background.                       | Data syncs, multi-step processes, most workflows                     |
+| **Long**     | Extended async - for large data volumes and long-running processes.               | Batch imports, full data backfills, large report generation          |
 
 The Workflows table has filter tabs for **All | Instant | Standard | Long** so you can filter by tier.
 

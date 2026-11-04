@@ -2,21 +2,20 @@
 description: >-
   Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User),
   create custom roles, and manage team access.
-hidden: true
 ---
 
 # Roles & Permissions Setup
 
 ### The 6 system roles
 
-Fastn has 6 system roles. View them under **Settings → ADVANCED → Roles**:
+fastn has 6 system roles. View them under **Settings → ADVANCED → Roles**:
 
 | Role          | Permissions | Description                                                      |
 | ------------- | ----------- | ---------------------------------------------------------------- |
 | **Owner**     | 39          | Full access within organization and customers                    |
 | **Admin**     | 39          | Full access within organization and customers                    |
 | **Developer** | 34          | Build connectors, workflows, agents. No billing or org settings. |
-| **Operator**  | 18          | Operational access — run workflows, monitor activity             |
+| **Operator**  | 18          | Operational access - run workflows, monitor activity             |
 | **Viewer**    | 7           | Read-only access                                                 |
 | **End User**  | 9           | Customer-facing widget access                                    |
 
@@ -36,17 +35,17 @@ Each role has granular permissions across 5 categories:
 
 #### What each role gets
 
-**Owner / Admin** — All 39 permissions. Full access to everything.
+**Owner / Admin** - All 39 permissions. Full access to everything.
 
-**Developer** — 34 permissions. Can build and deploy connectors, workflows, and agents. Cannot manage billing, organization settings, or user roles.
+**Developer** - 34 permissions. Can build and deploy connectors, workflows, and agents. Cannot manage billing, organization settings, or user roles.
 
-**Operator** — 18 permissions. Can run workflows, monitor executions, and manage connections. Cannot create new connectors or workflows.
+**Operator** - 18 permissions. Can run workflows, monitor executions, and manage connections. Cannot create new connectors or workflows.
 
-**Viewer** — 7 permissions. Read-only across all categories. Can view connectors, workflows, and executions but cannot modify or run anything.
+**Viewer** - 7 permissions. Read-only across all categories. Can view connectors, workflows, and executions but cannot modify or run anything.
 
-**End User** — 9 permissions. Customer-facing access through the widget. Can use connections and view their own data.
+**End User** - 9 permissions. Customer-facing access through the widget. Can use connections and view their own data.
 
-> **Screenshot:** Role detail view for "Admin" showing the permission categories with checkboxes — Connectors 6/6, Connections 6/6, Workflows 7/7, Agents 5/5, Tools 5/5.
+> **Screenshot:** Role detail view for "Admin" showing the permission categories with checkboxes - Connectors 6/6, Connections 6/6, Workflows 7/7, Agents 5/5, Tools 5/5.
 
 ### Assigning roles
 

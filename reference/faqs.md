@@ -92,9 +92,9 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 
 | Tier         | Behaviour                                       | Maximum      | Timeout slider |
 | ------------ | ----------------------------------------------- | ------------ | -------------- |
-| **Instant**  | The caller blocks and gets the result inline.    | **30 seconds** | 1s – 30s     |
-| **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s – 15min   |
-| **Long**     | Returns 202, runs in the background.             | **36 hours**   | 30s – 36h    |
+| **Instant**  | The caller blocks and gets the result inline.    | **30 seconds** | 1s - 30s     |
+| **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
+| **Long**     | Returns 202, runs in the background.             | **36 hours**   | 30s - 36h    |
 
 **Instant** only when something is genuinely waiting on the answer: 30 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
 

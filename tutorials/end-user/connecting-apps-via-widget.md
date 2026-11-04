@@ -2,14 +2,13 @@
 description: >-
   Find available integrations, authorize your accounts, and activate connections
   through the embedded integration widget.
-hidden: true
 ---
 
 # Connecting Apps via Widget
 
-The product you use has an integrations section powered by Fastn. This is where you connect your third-party apps your Slack workspace, your Shopify store, your HubSpot account so data can flow between them and the product you're using.
+The product you use has an integrations section powered by fastn. This is where you connect your third-party apps your Slack workspace, your Shopify store, your HubSpot account so data can flow between them and the product you're using.
 
-**Prerequisites:** Access to a SaaS product that uses Fastn for integrations. An account on the third-party app you want to connect (e.g., Slack, Shopify, HubSpot).
+**Prerequisites:** Access to a SaaS product that uses fastn for integrations. An account on the third-party app you want to connect (e.g., Slack, Shopify, HubSpot).
 
 ### Finding the integration widget
 
@@ -21,15 +20,15 @@ The integration widget is embedded somewhere in the product you use. Common loca
 
 The exact location depends on how the SaaS company set things up. If you can't find it, check the product's help docs or ask their support team.
 
-> **Screenshot:** Example of an embedded widget as it appears inside a SaaS product — showing the integration hub with available app icons and connect buttons.
+> **Screenshot:** Example of an embedded widget as it appears inside a SaaS product - showing the integration hub with available app icons and connect buttons.
 
 ### Navigating the widget
 
 The widget has three tabs at the top:
 
-* **Apps** — Connect and manage your third-party apps&#x20;
-* **Workflows** — View active automations and available templates&#x20;
-* **Insights** — Monitor sync activity and performance
+* **Apps** - Connect and manage your third-party apps&#x20;
+* **Workflows** - View active automations and available templates&#x20;
+* **Insights** - Monitor sync activity and performance
 
 {% hint style="warning" %}
 Widget options and fucntionalities may vary per SaaS company's settings and configurations.
@@ -46,7 +45,7 @@ At the top of the Apps tab, a **search bar** lets you filter available integrati
 
 > **Screenshot needed:** Widget showing a list of available integrations with Connect buttons next to each one, and the search bar at the top.
 
-5. A popup opens with the third-party app's authorization screen. This is the app's own login page not the product's, not Fastn's.
+5. A popup opens with the third-party app's authorization screen. This is the app's own login page not the product's, not fastn's.
 6. Sign in with your account on the third-party app.
 7. Review the permissions being requested and click **Authorize** (or "Allow").
 8. The popup closes and you're redirected back to the widget. The app now shows a green dot with a **"Connected"** label beneath the app name.
@@ -59,7 +58,7 @@ When you click Connect and authorize, you're giving the product permission to ac
 * Connecting Shopify lets the product read your orders, products, or customers
 * Connecting HubSpot lets the product read or create contacts in your account
 
-The product can only do what it was set up to do — it can't access anything beyond the specific actions configured by the SaaS company.
+The product can only do what it was set up to do - it can't access anything beyond the specific actions configured by the SaaS company.
 
 Your credentials are stored securely and are isolated from other users. No one else using the same product can see your connections or access your third-party accounts.
 

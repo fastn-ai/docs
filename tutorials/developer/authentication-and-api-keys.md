@@ -1,14 +1,13 @@
 ---
-hidden: true
 ---
 
 # Authentication & API Keys
 
-Fastn API keys authenticate your backend's requests — including generating embed tokens. Keys come in test and live variants, and each requires different handling.
+fastn API keys authenticate your backend's requests - including generating embed tokens. Keys come in test and live variants, and each requires different handling.
 
 ### Where to find your keys
 
-Go to **Settings → API Keys**. The page has a **Test / Live toggle** in the top-right and a keys table with a **MODE** column — each key shows a badge indicating whether it's a LIVE or TEST key. Click **+ Create API Key** to generate one. Keys are shown once at creation — copy and store it securely.
+Go to **Settings → API Keys**. The page has a **Test / Live toggle** in the top-right and a keys table with a **MODE** column - each key shows a badge indicating whether it's a LIVE or TEST key. Click **+ Create API Key** to generate one. Keys are shown once at creation - copy and store it securely.
 
 When viewing test data, the page shows a banner: "Test keys only work with the X-fastn-Test-Mode: true header."
 
@@ -61,4 +60,4 @@ headers: {
 
 * Store keys in environment variables, never in source code or client-side bundles.
 * Use test keys in development and live keys only in production.
-* The API key is used to mint embed tokens on your backend — it should never reach the browser. See [Generating Embed Tokens](generating-embed-tokens.md).
+* The API key is used to mint embed tokens on your backend - it should never reach the browser. See [Generating Embed Tokens](generating-embed-tokens.md).

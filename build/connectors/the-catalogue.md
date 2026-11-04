@@ -49,7 +49,7 @@ Each card shows:
 * a **badge**: `managed` (maintained by fastn), `Custom` (created in your workspace), or `Connected` (at least one connection exists);
 * the **description**, cut to a few lines;
 * an **OAuth 2.0** chip if the connector offers OAuth;
-* who maintains it: *Managed by Fastn*, or *Managed by* your organisation's name for a connector your workspace created;
+* who maintains it: *Managed by fastn*, or *Managed by* your organisation's name for a connector your workspace created;
 * a button at the bottom.
 
 The button depends on whether you have connected:

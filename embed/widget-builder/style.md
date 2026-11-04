@@ -25,13 +25,13 @@ A pair, not a single colour: **Accent** (default `#000000`) and **Text on accent
 | Control            | Values                                                                                         |
 | ------------------ | ------------------------------------------------------------------------------------------------ |
 | Font               | `Inter`, `DM Sans`, `Geist`, `Plus Jakarta Sans`, `Nunito`, `Manrope`, `System UI`, `Custom…`   |
-| **Base size**      | 11–18px                                                                                         |
+| **Base size**      | 11-18px                                                                                         |
 | **Font weight**    | Light, Regular, Medium                                                                          |
 | **Letter spacing** | Tight, Normal, Wide                                                                             |
 
 ### Shape
 
-Four presets (**Square**, **Rounded**, **Soft**, **Pill**), over a radius of 0–20, with separate card, button and input radii underneath if the preset is not quite right. **Shadow strength** is None, SM, MD or LG.
+Four presets (**Square**, **Rounded**, **Soft**, **Pill**), over a radius of 0-20, with separate card, button and input radii underneath if the preset is not quite right. **Shadow strength** is None, SM, MD or LG.
 
 ### Tokens
 

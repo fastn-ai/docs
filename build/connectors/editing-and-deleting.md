@@ -4,7 +4,7 @@ description: "What you can change on a connector your workspace owns: editing it
 
 # Editing, publishing and deleting
 
-Everything on this page applies to connectors your workspace **owns**: ones you created with **Create connector** or brought in with **Import**. Their card is badged `Custom` and reads *Managed by* followed by your organisation's name. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
+Everything on this page applies to connectors your workspace **owns**: ones you created with **Create connector** or brought in with **Import**. Their card is badged `Custom` and reads *Managed by* followed by your organisation's name. Managed connectors (badged `managed`, *Managed by fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
 
 ### Where the controls are
 
@@ -29,7 +29,7 @@ On an owned connector:
 
 | Field | Meaning |
 | --- | --- |
-| **Verification action** | An action fastn runs right after someone connects, to prove the credential works. *Only read-only actions with no required inputs can be used.* The default, **None — connections stay unverified**, skips the check. |
+| **Verification action** | An action fastn runs right after someone connects, to prove the credential works. *Only read-only actions with no required inputs can be used.* The default, **None - connections stay unverified**, skips the check. |
 | **Success path** | Optional. *A field that must be present in the response. Use this when the provider answers bad credentials with 200 and a login page.* For example `$.id`. |
 
 **Save changes** saves. The footer explains where the change goes: *Changes apply to the test version until you publish.*

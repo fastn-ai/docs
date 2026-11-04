@@ -25,7 +25,7 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 | **Type** | **App**: one webhook for the whole app. **Event Webhook**: one webhook per event. A **Hidden** badge means the config is switched off as a trigger source. |
 | **Events** | How many events the config declares. |
 | **Registered** | How many of those events are registered, for example `15/28`. Green when all are registered, amber when only some are. |
-| **Subscription** / **Unsubscription** | `Defined` when the config has that code, `—` when it does not. |
+| **Subscription** / **Unsubscription** | `Defined` when the config has that code, `-` when it does not. |
 | **Created** | When the config was created. |
 | **Actions** | **Edit**, **Execute** and **Delete**, on connectors your workspace owns. Empty on managed connectors. |
 
@@ -111,7 +111,7 @@ Used when one webhook carries events for many customers (the **App** type). It t
 
 | Method | Use it when |
 | --- | --- |
-| **None — accept all requests** | The app does not sign its webhooks. |
+| **None - accept all requests** | The app does not sign its webhooks. |
 | **HMAC signature** | The app signs each request with a shared secret. Set **Signature Header** (for example `x-slack-signature`), **Algorithm** (for example `sha256`), **Signature Prefix** (for example `v0=` or `sha256=`), **Signature Format**, **Signing Payload**, and optionally **Timestamp Header** and **Max Timestamp Age (ms)** (for example `300000`) to reject replayed requests. |
 | **Verification token (Notion-style)** | The app sends a one-time token when the subscription is created. fastn answers it, stores the token as **Captured Token**, and uses it to verify later events. For Notion, paste the captured token into Notion under **Webhooks → Verify** to activate the subscription. |
 | **Challenge-response only** | The app checks the URL with a challenge request. Set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`) and **Response Field** (for example `challenge`), the field fastn echoes back. |

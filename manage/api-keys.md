@@ -28,7 +28,7 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
 #### Quick steps
 
-1. Go to your Fastn dashboard → **Settings** → **API Keys**.
+1. Go to your fastn dashboard → **Settings** → **API Keys**.
 2. Click **+ Create API Key**.
 3. In the dialog:
     * **Name**: give it something identifiable.

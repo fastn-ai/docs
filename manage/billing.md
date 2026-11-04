@@ -4,40 +4,56 @@ description: Your plan, what you have used, and where the ceilings are.
 
 # Billing and limits
 
-**Settings → Billing**
+**Settings → Billing** ([open in app](https://app.fastn.dev/settings/billing)). Owners and admins see everything on this page. Developers see the plan and usage, but not payment details or invoices.
 
-<figure><img src="../.gitbook/assets/settings-billing.jpg" alt="The Billing page with a Free, $0 per month plan card, a Credits this period tile reading 0 of 50 used and resetting in 27 days, and a Limits list where API keys per customer reads 4 / 2, 100%"><figcaption>Rows marked not measured have a cap but no usage reading behind them.</figcaption></figure>
+## Plans
 
-### Plan and credits
+fastn is billed by **connected accounts**: each account one of your customers connects through fastn (a customer's HubSpot, their Google Calendar, and so on).
 
-The plan card shows what you are on and what it costs: **Free**, at **$0 per month**, until you upgrade. **See plans** is the upgrade control, and the only one on the page.
+| Plan | Price | What it is for |
+| --- | --- | --- |
+| **Launch** | $0, forever | Building and testing against a sandbox customer. Includes 3 connected accounts, unlimited connectors and workflows, 50 agent runs a month and community support. Upgrade before you put a paying customer on it. |
+| **Scale** | $500 a month, including 10 connected accounts | Production. Each additional connected account is $50 a month, and the count tracks your connected accounts automatically. Subscribe yourself from this page with **Subscribe to Scale**. |
+| **Enterprise** | Custom | Priced to your volume, with terms and support agreed up front. Contact sales. |
 
-**Credits this period** tracks AI usage against the allowance. It is the same number as the AI credits readout in the top bar, and the popover behind that readout is where the detail lives: tabs for **Your usage** and **Org total**, a **By agent** breakdown, and a reset at the start of the calendar month, UTC.
+See [fastn.ai/pricing](https://fastn.ai/pricing) for the full comparison.
 
-### Limits
+The plan card shows what you are on. On Launch it offers **See plans** and **Subscribe to Scale**. On a paid plan it offers **Manage billing** (card and billing details, through Stripe), **Cancel subscription** and **Request plan change**.
 
-Each quota is listed with usage against it. **Customize customer limits** overrides limits for a single customer.
+## Credits
 
-| Limit                       | Scope        |
-| --------------------------- | ------------ |
-| API keys                    | per customer |
-| Events                      | per day, per minute |
-| API calls                   | per day, per minute |
-| Active integrations         | total        |
-| Connectors allowed          | total        |
-| Workflows                   | per customer |
-| Steps                       | per flow     |
+**Credits this period** tracks AI usage (the agent building and changing integrations) against your monthly allowance. It is the same number as the credits readout in the top bar. Click that readout for the detail: **Your usage** and **Org total** tabs, and a breakdown by agent. Credits reset at the start of each calendar month, UTC.
 
-**Workflow categories** and **Workflow labels** are listed here too, both scoped per workspace and counted live, so the usage reading against them is real. They are the two registries behind [Workflows Tags](workflow-tags.md), and that page is where you add and remove them.
+## Limits
 
-The list continues past the visible area with further rows: concurrency, AI sessions and tokens, retention, storage, connected accounts, users, webhook endpoints, payload size, executions and AI credits are all reported to appear further down. Scroll the page and read the rows themselves rather than relying on that list being complete or the scopes being as described.
+Every quota on your plan is listed with your usage against it. On Launch the main ceilings are:
 
-{% hint style="info" %}
-Going over a limit **stops new work rather than charging you, and nothing already running is interrupted.** No surprise invoices, but also no silent overage: a sync that stops because you hit a ceiling looks like a broken sync until you check this page.
+| Limit | Launch |
+| --- | --- |
+| Connected accounts | 3 |
+| Active integrations | 3 |
+| Users per workspace | 3 |
+| Webhook endpoints | 3 |
+| Events | 500 a day |
+| API calls | 1,000 a day |
+| Executions | 10,000 a month |
+| AI credits | 50 a month |
+| Log retention | 7 days |
+| Storage | 1 GB |
+
+Paid plans raise or remove these. The page also lists per-customer limits (API keys and workflows per customer), per-minute rate limits, and the workflow categories and labels managed under [Workflows Tags](workflow-tags.md).
+
+**Customize customer limits** overrides the limits for one customer, for example to give a pilot customer more room than the rest.
+
+{% hint style="warning" %}
+Going over a limit **stops new work rather than charging you**, and nothing already running is interrupted. There are no surprise invoices, but a sync that stops at a ceiling can look like a broken sync. If runs stop unexpectedly, check this page before you debug the workflow.
 {% endhint %}
 
-### Below the fold
+## Payment and invoices
 
-Sections further down this page (**Customer tiers** and **Create tier**, **Usage by customer**, **Payment** and **Invoices**), have not been captured, so this page does not describe how they behave. Read them in the product before planning around them.
+**Payment** shows the card on file for paid plans, or *Free plan, nothing to pay* on Launch. **Invoices** lists every invoice with its amount and status. Owners and admins can open and download them.
 
-One thing about tiers is corroborated from elsewhere: the [Roles](roles.md) screen states that a custom role can be assigned to an embed tier under Billing, which is how you scope what an embedded end user may do.
+## Related
+
+* [Customers](../operate/customers.md): who your customers are and what each one has connected (Operate → Customers)
+* [Roles](roles.md): who can see billing

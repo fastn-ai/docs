@@ -34,7 +34,7 @@ Claude checks the server and preselects how to sign in. Leave **Sign in now** an
 {% step %}
 #### Connect
 
-Claude opens the new connector and shows *You're not connected to Fastn yet*. Click **Connect**.
+Claude opens the new connector and shows *You're not connected to fastn yet*. Click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-not-connected.webp" alt="Claude's Fastn connector page showing the fastn logo, the URL https://mcp.fastn.dev/fastn-workspace, the text You're not connected to Fastn yet, and a Connect button"><figcaption>The connector is added but not signed in yet.</figcaption></figure>
 {% endstep %}
@@ -50,7 +50,7 @@ fastn opens in a new tab. Sign in if you are not already, then pick the workspac
 {% step %}
 #### Check the tools
 
-Back in Claude, a *Connected to Fastn* notice appears and the connector lists fastn's tools under **Tool permissions**. Choose for each group whether Claude may use the tools without asking, needs your approval, or may not use them.
+Back in Claude, a *Connected to fastn* notice appears and the connector lists fastn's tools under **Tool permissions**. Choose for each group whether Claude may use the tools without asking, needs your approval, or may not use them.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-connected-tools.webp" alt="Claude's Fastn connector page after connecting, with a Disconnect button, the URL, and Tool permissions listing 75 read-only tools such as fastnPlatform__getAction and fastnPlatform__getConnector, each with allow, needs approval and block icons, and a Needs approval setting for the group"><figcaption>Every fastn tool starts on <strong>Needs approval</strong>.</figcaption></figure>
 {% endstep %}
@@ -58,7 +58,7 @@ Back in Claude, a *Connected to Fastn* notice appears and the connector lists fa
 
 ## Use it in a chat
 
-1. In a new chat, click **+** → **Connectors** and make sure **Fastn** is switched on.
+1. In a new chat, click **+** → **Connectors** and make sure **fastn** is switched on.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-chat-connectors.png" alt="Claude's chat + menu open on Connectors, with Fastn switched on"><figcaption>Switch fastn on for the chat.</figcaption></figure>
 
@@ -91,7 +91,7 @@ If you belong to more than one Claude workspace (for example Personal and a Team
 ## Troubleshooting
 
 * *A connector with this URL already exists in your organization.* Someone in your Claude organization already added fastn. Open **Customize** → **Connectors** and connect that one instead of adding another.
-* **Fastn works on the wrong org.** Open the connector, click **Disconnect**, then **Connect** again and pick the workspace. If you chose **The org selected in fastn**, switch org in the fastn dashboard instead.
+* **fastn works on the wrong org.** Open the connector, click **Disconnect**, then **Connect** again and pick the workspace. If you chose **The org selected in fastn**, switch org in the fastn dashboard instead.
 * **Claude Code or the Claude desktop config file.** These are set up separately: see [Claude Code](claude-code.md).
 
 {% hint style="info" %}

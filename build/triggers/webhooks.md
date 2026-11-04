@@ -9,7 +9,7 @@ A webhook trigger fires when another system calls a URL you give it. Nothing is 
 **Columns:** `Name`, `Tenant`, `Type`, `Status`, `Auth`, `Routes`, `Created`.
 
 * **`Auth`** reads `API key` where the webhook requires the `x-fastn-access-key` header, or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
-* **`Tenant`** is the customer the trigger belongs to, and reads `—` for org-level triggers.
+* **`Tenant`** is the customer the trigger belongs to, and reads `-` for org-level triggers.
 
 Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
 
@@ -52,7 +52,7 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 
 | Field                | Range / options                                      | Default          |
 | -------------------- | ------------------------------------------------------ | ---------------- |
-| **Max attempts**     | 1–10. `1` means try once and never retry.             | 3                |
+| **Max attempts**     | 1-10. `1` means try once and never retry.             | 3                |
 | **Backoff strategy** | `Exponential (1s, 2s, 4s…)`, `Linear`, `Fixed`        | Exponential      |
 {% endstep %}
 

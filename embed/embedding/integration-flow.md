@@ -1,6 +1,6 @@
 ---
 description: >-
-  This page walks you through embedding the Fastn widget for your customers:
+  This page walks you through embedding the fastn widget for your customers:
   register a customer organization, retrieve an embed token, and load the
   widget.
 ---
@@ -18,7 +18,7 @@ Before you start, you need an API key. We also recommend two optional security m
 
 #### Creating an API key
 
-1. Go to your **Fastn dashboard** → **Settings** → **API Keys**.
+1. Go to your **fastn dashboard** → **Settings** → **API Keys**.
 
 <figure><img src="../../.gitbook/assets/api-key-settings-page.webp" alt="The Settings API Keys page in the earlier dashboard layout, with Test and Live tabs and a Create API Key button"><figcaption></figcaption></figure>
 
@@ -84,7 +84,7 @@ The plaintext headers tell the gateway which identity is being claimed, and the 
 
 **1. Register the customer organization**
 
-From your backend server, call Create a Customer Organization to register the customer org in Fastn. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
+From your backend server, call Create a Customer Organization to register the customer org in fastn. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
 
 #### Integrate the widget
 
@@ -160,7 +160,7 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 
 #### Create a SaaS Connection (optional)
 
-**Note:** You only need this if Fastn must access your product's APIs.
+**Note:** You only need this if fastn must access your product's APIs.
 
 **Endpoint**
 

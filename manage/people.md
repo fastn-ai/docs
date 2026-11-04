@@ -14,7 +14,7 @@ description: Who can see and change things in this workspace.
 | **Role**   | Their assigned role. **Change role** edits it.                   |
 | **Status** | **Active** in every observed row. See [Statuses](#statuses) below. |
 | **Added**  | When they joined.                                                |
-| **Access** | Any scoping beyond the role. It showed `—` in every observed row. |
+| **Access** | Any scoping beyond the role. It showed `-` in every observed row. |
 
 **Search by name or email** narrows the list. Filter chips carry a count per role (Everyone, Owner, Admin and so on) and the dropdown on the right filters by status. Each row carries a checkbox; no bulk-action control was visible alongside them.
 

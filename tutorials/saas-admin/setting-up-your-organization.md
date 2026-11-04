@@ -1,8 +1,7 @@
 ---
 description: >-
   Configure your organization profile, environments, API keys, and project
-  settings after your first Fastn login.
-hidden: true
+  settings after your first fastn login.
 ---
 
 # Setting Up Your Organization
@@ -16,11 +15,11 @@ After the Setup Assistant configures your core integrations, workflows, and widg
 
 Here you can configure:
 
-**Organization Name** — How your company appears across the platform.
+**Organization Name** - How your company appears across the platform.
 
-**Timezone** — Used for scheduled triggers and activity timestamps.
+**Timezone** - Used for scheduled triggers and activity timestamps.
 
-**Domain & Access Control** — Set your email domain (e.g., `yourcompany.com`) so team members signing up with that domain can request to join. Toggle **"Auto-approve domain users"** to skip manual approval for teammates with matching email domains.
+**Domain & Access Control** - Set your email domain (e.g., `yourcompany.com`) so team members signing up with that domain can request to join. Toggle **"Auto-approve domain users"** to skip manual approval for teammates with matching email domains.
 
 #### Company Research Report
 
@@ -45,9 +44,9 @@ At the bottom of the General page: **Reset Onboarding**. This reruns the Setup A
 The Setup Assistant may have already configured OAuth for your connectors during onboarding  when the AI set up inline auth, those configurations were saved here.
 
 1. Go to **Settings → OAuth Apps**.
-2. You'll see the list of platforms Fastn manages OAuth for.
+2. You'll see the list of platforms fastn manages OAuth for.
 
-Fastn manages OAuth apps on your behalf for common platforms, meaning you can authenticate connectors without creating your own OAuth application in the third-party's developer portal. If your connector's platform isn't listed, your development team will need to create an OAuth app in the third-party's developer settings and configure it here.
+fastn manages OAuth apps on your behalf for common platforms, meaning you can authenticate connectors without creating your own OAuth application in the third-party's developer portal. If your connector's platform isn't listed, your development team will need to create an OAuth app in the third-party's developer settings and configure it here.
 
 > **Screenshot needed:** Settings → OAuth Apps showing the managed OAuth apps list with platform icons and status indicators.
 
@@ -63,7 +62,7 @@ The People page shows a table with columns: **USER, ROLE, TEAMS, STATUS, LAST AC
 
 #### Roles
 
-Fastn has six system roles. Each role has a fixed set of permissions across Connectors, Connections, Workflows, Agents, and Tools:
+fastn has six system roles. Each role has a fixed set of permissions across Connectors, Connections, Workflows, Agents, and Tools:
 
 | Role          | Permissions | What they can do                                                                                                      |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -128,9 +127,9 @@ Every significant action in your organization is recorded here from user logins,
 
 The Settings section also includes pages your developers will need:
 
-* **API Keys** — Test and Live keys for programmatic access to the Fastn API
-* **Secrets** — Sensitive values (third-party tokens, database credentials) that workflows read at runtime
-* **Environments** — Separate configurations for development, staging, and production deployments
+* **API Keys** - Test and Live keys for programmatic access to the fastn API
+* **Secrets** - Sensitive values (third-party tokens, database credentials) that workflows read at runtime
+* **Environments** - Separate configurations for development, staging, and production deployments
 
 See more details in the [Developer](../developer/) tutorials for the full setup guide.
 
@@ -138,7 +137,7 @@ See more details in the [Developer](../developer/) tutorials for the full setup 
 
 * Organization name, timezone, and domain access control
 * Reviewed the Company Research Report from onboarding
-* Reviewed Fastn-managed OAuth apps
+* Reviewed fastn-managed OAuth apps
 * Team members invited with appropriate roles
 * Customer management set up
 * Plan limits and quota enforcement reviewed

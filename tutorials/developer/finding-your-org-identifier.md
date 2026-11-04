@@ -1,5 +1,4 @@
 ---
-hidden: true
 ---
 
 # Finding Your Org Identifier
@@ -12,13 +11,13 @@ The `endOrgId` identifies the customer a widget embed is for. Both the token end
 
 ### Where the UUID comes from
 
-Each customer in your Fastn workspace has an internal UUID. You create customers under **Operate → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)).
+Each customer in your fastn workspace has an internal UUID. You create customers under **Operate → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)).
 
-The customer record in the dashboard shows: Name, Slug, Status, Customer Admin, and Created date. It does **not** display the UUID — there is no UUID or External ID field in the Customers UI.
+To find it, open **Operate → Customers** in the dashboard and click the customer. The address bar changes to `app.fastn.dev/customers/<id>`: the last part of that URL is the customer's UUID. Copy it from there.
 
-To retrieve the UUID today, open the customer in the dashboard and read it from the page state using your browser's developer tools.
-
-> **VERIFY:** This is a confirmed gap — the customer UUID is not exposed anywhere in the Customers UI (validated on the live platform). The Embed tab refers to this value as `YOUR_CUSTOMER_ID` / `customer_id`. Confirm the recommended retrieval method, and update this page if the UUID becomes available directly in the UI or via an API endpoint.
+{% hint style="info" %}
+Create a separate test customer for development and use its UUID locally, so test connections never land on a real customer.
+{% endhint %}
 
 ### Using it
 

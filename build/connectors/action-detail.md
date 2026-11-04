@@ -124,7 +124,7 @@ After a successful live run the action is marked **Live tested** (a green check 
 
 ### Versions
 
-The footer shows the action's version, for example `v1.2`, and **New version**. On an action your workspace owns it also shows **Save Changes**. Hovering the version explains it: *Internal revision — major.minor. A minor bump reaches pinned callers automatically; a major fork does not.*
+The footer shows the action's version, for example `v1.2`, and **New version**. On an action your workspace owns it also shows **Save Changes**. Hovering the version explains it: *Internal revision - major.minor. A minor bump reaches pinned callers automatically; a major fork does not.*
 
 **New version** opens a small form:
 
@@ -140,7 +140,7 @@ The footer shows the action's version, for example `v1.2`, and **New version**. 
 
 ### Platform-owned actions and Propose an update
 
-Actions on a managed connector belong to fastn. Their footer reads *Read-only — owned by platform*, and you cannot save changes to them. You can still read every tab, run the action, and export it.
+Actions on a managed connector belong to fastn. Their footer reads *Read-only - owned by platform*, and you cannot save changes to them. You can still read every tab, run the action, and export it.
 
 If an action is wrong or missing something, click **Propose an update**:
 
@@ -150,4 +150,4 @@ If an action is wrong or missing something, click **Propose an update**:
 2. Click **Propose an update** and add a note for the reviewer: why the update is needed and what changed.
 3. Click **Propose update**.
 
-Fastn reviews the proposal. Nothing changes on the connector until it is accepted.
+fastn reviews the proposal. Nothing changes on the connector until it is accepted.

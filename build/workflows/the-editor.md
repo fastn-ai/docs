@@ -115,7 +115,7 @@ Along the top: **Discard**, the workflow name, **Close tab**, **Save workflow** 
 | Field                 | Notes                                                                                     |
 | --------------------- | ------------------------------------------------------------------------------------------- |
 | **Execution tier**    | `Instant` (default) (synchronous, result inline, max 30s. `Standard`), asynchronous via Temporal, returns 202, max 15 min. `Long`: asynchronous, returns 202, max 36 h. |
-| **Execution timeout** | A slider constrained to the tier: 1s–30s, 5s–15min, or 30s–36h. Defaults are 30s, 2.0m and 15.0m respectively. |
+| **Execution timeout** | A slider constrained to the tier: 1s - 30s, 5s - 15min, or 30s - 36h. Defaults are 30s, 2.0m and 15.0m respectively. |
 | **Status**            | A toggle, on by default, and shown only on workflows that already exist. Off stops new runs without deleting anything. |
 
 **WHEN A RUN FAILS**
@@ -124,10 +124,10 @@ The **Retry policy** toggle is off by default. Its own description sets the boun
 
 | Field                    | Range | Default |
 | ------------------------ | ----- | ------- |
-| **Max attempts**         | 1–10  | 3       |
-| **Initial interval (ms)** | —    | 5000    |
-| **Backoff coefficient**  | —     | 2       |
-| **Max interval (ms)**    | —     | 60000   |
+| **Max attempts**         | 1-10  | 3       |
+| **Initial interval (ms)** | - | 5000    |
+| **Backoff coefficient**  | - | 2       |
+| **Max interval (ms)**    | - | 60000   |
 
 **Escalate on timeout** is a separate toggle, off by default and hidden on the Long tier. On timeout it retries one tier up (instant → standard) and an escalated instant run returns a queued execution id to poll rather than a synchronous result.
 

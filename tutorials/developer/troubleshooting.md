@@ -1,10 +1,9 @@
 ---
-hidden: true
 ---
 
 # Troubleshooting
 
-Common errors when embedding Fastn, with their causes and fixes.
+Common errors when embedding fastn, with their causes and fixes.
 
 ### Blank embed / iframe renders nothing
 
@@ -34,7 +33,7 @@ Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true
 
 **Most likely cause:** a tenancy or token mismatch.
 
-This can appear when the iframe URL's tenancy shape doesn't match how the token was minted — for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
+This can appear when the iframe URL's tenancy shape doesn't match how the token was minted - for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
 
 **Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `endOrgId` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
 
@@ -44,6 +43,6 @@ This can appear when the iframe URL's tenancy shape doesn't match how the token 
 
 **Most likely cause:** reading the token from the wrong place in the response.
 
-The token is nested under `data` in the response — `response.data.token`, not `response.token`.
+The token is nested under `data` in the response - `response.data.token`, not `response.token`.
 
 **Fix:** Read `json.data.token`. See [Generating Embed Tokens](generating-embed-tokens.md).

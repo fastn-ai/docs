@@ -32,7 +32,7 @@ There is no node palette and no drag-and-drop step builder. Everything else on t
 
 Three status tooltips explain the unpublished state, and the middle one is the string you will search for when a call fails:
 
-> Never published — this workflow cannot run yet.
+> Never published - this workflow cannot run yet.
 
 > Every call returns WORKFLOW\_NOT\_PUBLISHED until a snapshot is published
 

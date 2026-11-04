@@ -2,7 +2,6 @@
 description: >-
   Check what's syncing, view execution history, spot errors, and know when to
   contact support.
-hidden: true
 ---
 
 # Viewing Sync Status & History
@@ -43,7 +42,7 @@ A footer summarizes activity, such as "5/13 active" and "8 not run in 30d".
 
 #### Connectors
 
-A **Connectors** section shows summary tiles ("Connected" and "Broken" counts) and a per-connector row with a status dot and a short status — for example, "Slack" with "no sync yet" if it hasn't run a sync yet.
+A **Connectors** section shows summary tiles ("Connected" and "Broken" counts) and a per-connector row with a status dot and a short status - for example, "Slack" with "no sync yet" if it hasn't run a sync yet.
 
 #### Needs Attention
 
@@ -60,15 +59,15 @@ This is the fastest place to see what's gone wrong and which integration it affe
 
 ### Per-workflow history (Workflows tab)
 
-The **Workflows** tab lists your workflows as cards. Each card shows the workflow's title and a short description of what it does and when it runs. The card itself doesn't show run times or status — those are on the Insights tab and in the detail view.
+The **Workflows** tab lists your workflows as cards. Each card shows the workflow's title and a short description of what it does and when it runs. The card itself doesn't show run times or status - those are on the Insights tab and in the detail view.
 
 Each card has a run button, a remove button, and a **chevron** that opens a detail view with four tabs:
 
 | Tab            | Shows                                                                                                                  |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **Diagram**    | A visual node-graph of the workflow's logic                                                                            |
-| **Executions** | Run history — each row has a status badge (COMPLETED or FAILED), an execution ID, a duration, and a relative timestamp |
-| **Errors**     | Errors with a count badge — each shows an error-type badge (e.g., CONNECTION), the message, and a timestamp            |
+| **Executions** | Run history - each row has a status badge (COMPLETED or FAILED), an execution ID, a duration, and a relative timestamp |
+| **Errors**     | Errors with a count badge - each shows an error-type badge (e.g., CONNECTION), the message, and a timestamp            |
 | **Test Cases** | The test scenarios for the workflow, with a count badge                                                                |
 
 The **Executions** tab is where you see the full run-by-run history for a single workflow.
@@ -97,7 +96,7 @@ Run times appear as relative timestamps ("40m ago", "14h ago", "2d ago") rather 
 
 ### A connected app's status
 
-On the **Apps** tab, a connected integration shows its connection state — the name, a status dot, and a connection count (e.g., "1/2 connected") — but not sync activity or errors. For sync status, go to the **Insights** tab, where the Connectors section shows each connector's sync state.
+On the **Apps** tab, a connected integration shows its connection state - the name, a status dot, and a connection count (e.g., "1/2 connected") - but not sync activity or errors. For sync status, go to the **Insights** tab, where the Connectors section shows each connector's sync state.
 
 ***
 

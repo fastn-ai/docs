@@ -37,7 +37,7 @@ Filter the Events chips by **Scheduled**: a count of zero on a schedule you expe
 
 A Delivered event means the payload arrived and was handed on. If no execution followed:
 
-* **The workflow was never published.** Every call returns `WORKFLOW_NOT_PUBLISHED` until a snapshot is published, so nothing runs and nothing appears in Executions. The workflows list shows this as **Not published** / **Unpublished**, and its tooltip says so: "Never published — this workflow cannot run yet." This is the likeliest cause of *nothing ran at all*. Publish a snapshot from the editor.
+* **The workflow was never published.** Every call returns `WORKFLOW_NOT_PUBLISHED` until a snapshot is published, so nothing runs and nothing appears in Executions. The workflows list shows this as **Not published** / **Unpublished**, and its tooltip says so: "Never published - this workflow cannot run yet." This is the likeliest cause of *nothing ran at all*. Publish a snapshot from the editor.
 * The workflow is **disabled**. Check the Status toggle in its Configuration panel.
 * The trigger route points at an environment with **nothing deployed to it**. A named environment runs the version deployed there, and the fire fails if nothing is. Either deploy, or point the route at `test`, which runs the latest published version.
 

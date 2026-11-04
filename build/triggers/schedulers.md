@@ -12,7 +12,7 @@ Three of those are worth knowing before you scan the table:
 
 * **`Schedule`** shows the cron expression the trigger compiles to, whichever mode built it.
 * **`Failures`** counts *consecutive* failures, and resets on a success. A number climbing here is the early warning that fastn is about to disable the trigger for you. See [when fastn disables a trigger](README.md#when-fastn-disables-a-trigger-for-you).
-* **`Tenant`** is the customer a trigger belongs to, and reads `—` for org-level triggers.
+* **`Tenant`** is the customer a trigger belongs to, and reads `-` for org-level triggers.
 
 ### Create a schedule trigger
 
@@ -34,8 +34,8 @@ Five modes:
 | ------------ | --------------------------------------------------------------------------------------------------- |
 | **Interval** | The default. **Run every** *n* + `minutes` / `hours` / `days`, with a live preview: *Every 5 minutes*. |
 | **Daily**    | **Time**, defaulting to 09:00.                                                                     |
-| **Weekly**   | S–M–T–W–T–F–S toggles, and a time.                                                                 |
-| **Monthly**  | **Day of month**, 1–31 (one day, not several) and a time.                                        |
+| **Weekly**   | S - M - T - W - T - F - S toggles, and a time.                                                                 |
+| **Monthly**  | **Day of month**, 1-31 (one day, not several) and a time.                                        |
 | **Custom**   | **Cron expression**, required. *Standard 5-field cron: minute hour day-of-month month day-of-week*  |
 
 **Whichever mode you pick, fastn stores a cron expression**, and that is what the list's `Schedule` column shows. A trigger built with *Daily, 06:00* displays `0 6 * * *`; one built with *Interval, every 5 minutes* displays `*/5 * * * *`. The modes are a friendlier way to write the same thing, which is also why **Custom** exists: it is the escape hatch for schedules the other four cannot express.

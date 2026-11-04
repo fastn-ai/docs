@@ -36,7 +36,7 @@ Fill them in and click **Connect**.
 | --- | --- |
 | **Auth Method** | Shown when the connector offers more than one method. Starts on the default. |
 | **Auth provider** | The OAuth app that sends you to the consent screen. **Default** marks the connector's preferred provider. If there are several, **⋯ → Change provider** picks another. See [Auth methods and providers](../connectors/auth-methods.md). |
-| **Scopes** | *These are the permissions this connection will ask for on the consent screen. Pick only what you need — you can reconnect with more later.* With nothing selected (**All scopes (default)**), every scope the provider declares is requested. |
+| **Scopes** | *These are the permissions this connection will ask for on the consent screen. Pick only what you need - you can reconnect with more later.* With nothing selected (**All scopes (default)**), every scope the provider declares is requested. |
 
 <figure><img src="../../.gitbook/assets/connections-change-provider.webp" alt="The Connect Airtable dialog with the provider's three-dot menu open, showing Change provider"><figcaption><strong>Change provider</strong> on the provider card.</figcaption></figure>
 

@@ -2,18 +2,17 @@
 description: >-
   Create webhook, scheduler, and app event triggers under Integrations →
   Triggers and route them to your workflows.
-hidden: true
 ---
 
 # Setting Up Triggers
 
-Triggers are what start your workflows. In Fastn, triggers are managed **separately from workflows,** you create a trigger under **Integrations → Triggers**, then route it to one or more workflows.
+Triggers are what start your workflows. In fastn, triggers are managed **separately from workflows,** you create a trigger under **Integrations → Triggers**, then route it to one or more workflows.
 
 1. Go to **Integrations → Triggers**.
 2. The page has three tabs:
-   * **Webhooks** — HTTP POST endpoints for external events
-   * **Schedulers** — Time-based triggers (interval, daily, weekly, monthly)
-   * **App Events** — Subscribe to events from your connectors
+   * **Webhooks** - HTTP POST endpoints for external events
+   * **Schedulers** - Time-based triggers (interval, daily, weekly, monthly)
+   * **App Events** - Subscribe to events from your connectors
 3. Click **Add Trigger** to create a new trigger.
 4. Select the trigger type: **Webhook**, **Scheduler**, or **App Event**.
 
@@ -34,7 +33,7 @@ Routes map incoming webhooks to workflows. Each route has:
 | Field           | What it does                                                                 |
 | --------------- | ---------------------------------------------------------------------------- |
 | **Workflow**    | Select the target workflow from the dropdown                                 |
-| **Key / Value** | Optional JSON filter — only payloads matching this filter trigger this route |
+| **Key / Value** | Optional JSON filter - only payloads matching this filter trigger this route |
 | **Header**      | Optional headers to forward to the workflow                                  |
 
 4. Click **+ Add route** to add more routes. A single webhook trigger can route to **multiple workflows** based on different payload filters.
@@ -80,29 +79,29 @@ Schedulers trigger workflows on a time-based schedule.
 | **Custom**   | Enter a custom cron expression.                 |
 
 4. For **Interval**: set "Run every \[number] \[minutes/hours]".
-5. Optionally set **Starts at** — a date/time to begin. Leave empty to start immediately.
+5. Optionally set **Starts at** - a date/time to begin. Leave empty to start immediately.
 6. Click **Create**.
 
 > **Screenshot:** Scheduler trigger configuration showing the preset buttons (Interval, Daily, Weekly, Monthly, Custom) and the interval settings.
 
 #### Example schedules
 
-* "Run every 5 minutes" — Interval preset, 5 minutes
-* "Daily at 6 AM" — Daily preset, 06:00
-* "Every Monday at 9 AM" — Weekly preset, Monday 09:00
-* "First of every month" — Monthly preset, day 1
+* "Run every 5 minutes" - Interval preset, 5 minutes
+* "Daily at 6 AM" - Daily preset, 06:00
+* "Every Monday at 9 AM" - Weekly preset, Monday 09:00
+* "First of every month" - Monthly preset, day 1
 
 ### App Event triggers
 
-App Events subscribe to events from your connected third-party apps. When something happens in the app (new sale, contact update), Fastn receives the event and triggers your workflow.
+App Events subscribe to events from your connected third-party apps. When something happens in the app (new sale, contact update), fastn receives the event and triggers your workflow.
 
 #### Creating an app event trigger
 
 1. Click **Add Trigger** → **App Event**.
 2. Enter a **Name**.
 3. Select the **Connector** (e.g., "Cin7 Core") from the dropdown.
-4. Select the **Connection** — which authenticated connection to use for this trigger.
-5. Browse the **Event** list — shows available events from the connector:
+4. Select the **Connection** - which authenticated connection to use for this trigger.
+5. Browse the **Event** list - shows available events from the connector:
    * Each event shows: event name, type badge (**WEBHOOK**), subscription status (**Not Subscribed** / **Subscribed**)
    * Event path (e.g., "Sale/Created")
    * Expandable **Payload Schema** showing the event data structure
@@ -113,7 +112,7 @@ App Events subscribe to events from your connected third-party apps. When someth
 
 #### Event subscription
 
-When you create an App Event trigger, Fastn subscribes to the webhook on the third-party app automatically. The subscription status changes from "Not Subscribed" to "Subscribed". When you delete the trigger, Fastn unsubscribes.
+When you create an App Event trigger, fastn subscribes to the webhook on the third-party app automatically. The subscription status changes from "Not Subscribed" to "Subscribed". When you delete the trigger, fastn unsubscribes.
 
 ### Managing triggers
 
@@ -127,7 +126,7 @@ Each tab (Webhooks, Schedulers, App Events) shows a list of triggers with:
 
 #### Editing and deleting
 
-Click on a trigger to edit its configuration, routes, or schedule. Delete triggers you no longer need — this stops the webhook/schedule and unsubscribes from app events.
+Click on a trigger to edit its configuration, routes, or schedule. Delete triggers you no longer need - this stops the webhook/schedule and unsubscribes from app events.
 
 ### What you've learned
 

@@ -2,7 +2,6 @@
 description: >-
   Configure sync preferences, field mappings, scheduling, and other settings for
   your active integrations through the widget.
-hidden: true
 ---
 
 # Customizing Your Integrations
@@ -19,7 +18,7 @@ What happens next depends on whether the integration has been configured before.
 
 #### First-time configuration
 
-If no configuration exists yet, you'll see **No configuration found for this widget**, with a note that the Integration Agent sets up field mappings and filters for you — and, as a customer, _Ask whoever administers this workspace to finish setting it up._
+If no configuration exists yet, you'll see **No configuration found for this widget**, with a note that the Integration Agent sets up field mappings and filters for you - and, as a customer, _Ask whoever administers this workspace to finish setting it up._
 
 That first pass belongs to your SaaS provider: starting the agent needs an operator role, so the button is deliberately not shown to a customer session rather than sending you to a permission error. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
 
@@ -70,9 +69,9 @@ Filters let you narrow which records sync. For example, you might only want to s
 
 Each filter row has three parts:
 
-* **Field** — Which field to check (e.g., "Status," "Amount," "Email")
-* **Operator** — The condition to apply
-* **Value** — What to compare against
+* **Field** - Which field to check (e.g., "Status," "Amount," "Email")
+* **Operator** - The condition to apply
+* **Value** - What to compare against
 
 Available operators:
 
@@ -127,9 +126,9 @@ You'll also see **template cards** for pre-built automations. Click one to launc
 * **I don't see a Configure button**\
   Not all integrations support customization. The SaaS company decides what's configurable. If you need changes that aren't available, contact the product's support team.
 * **My changes didn't take effect:**\
-  Changes apply on the next sync run, not immediately. If the integration runs daily, your changes will be reflected in the next day's sync. The Insights view shows recent activity, so you can confirm the run after your change succeeded — it does not show when the next one is due, so ask your provider if you need the schedule.
+  Changes apply on the next sync run, not immediately. If the integration runs daily, your changes will be reflected in the next day's sync. The Insights view shows recent activity, so you can confirm the run after your change succeeded - it does not show when the next one is due, so ask your provider if you need the schedule.
 * **I want to start over:**\
-  Disconnect the app from the Apps tab and reconnect it. This clears the configuration — but rebuilding it with the Integration Agent is your provider's to run, so ask them before you clear anything you still depend on.
+  Disconnect the app from the Apps tab and reconnect it. This clears the configuration - but rebuilding it with the Integration Agent is your provider's to run, so ask them before you clear anything you still depend on.
 
 ### What you've done
 

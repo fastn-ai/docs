@@ -1,17 +1,16 @@
 ---
-description: An overview of how tenancy works per user and org level in Fastn
-hidden: true
+description: An overview of how tenancy works per user and org level in fastn
 ---
 
 # Understanding Tenancy
 
-Fastn supports two ways to scope connections within the same embed: org-level (shared) and user-level (per individual). Choosing correctly determines who can see and use which connections.
+fastn supports two ways to scope connections within the same embed: org-level (shared) and user-level (per individual). Choosing correctly determines who can see and use which connections.
 
 ### The distinction
 
-**Org-level (shared)** — One connection serves the entire customer organization. Anyone in that organization uses the same connection. Use this for shared systems of record.
+**Org-level (shared)** - One connection serves the entire customer organization. Anyone in that organization uses the same connection. Use this for shared systems of record.
 
-**User-level (per individual)** — Each user has their own connection, isolated from other users in the same organization. Use this for resources tied to one person's identity.
+**User-level (per individual)** - Each user has their own connection, isolated from other users in the same organization. Use this for resources tied to one person's identity.
 
 {% hint style="info" %}
 This is **not** an "internal vs external user" distinction, and it is **not** about who can edit. It is strictly shared-vs-personal, based on who owns the connected resource.
@@ -26,7 +25,7 @@ Ask who owns the resource being connected:
 | Shared systems of record              | Org-level  | CRM, project management, data warehouse, shared messaging channels |
 | Personal identity, inbox, or calendar | User-level | A person's email, personal calendar, individual account            |
 
-A shared Salesforce instance that the whole company uses is org-level. An individual sales rep's email inbox is user-level. Most customers need both in the same embed — a shared CRM connection plus each rep's own email.
+A shared Salesforce instance that the whole company uses is org-level. An individual sales rep's email inbox is user-level. Most customers need both in the same embed - a shared CRM connection plus each rep's own email.
 
 ### How it's set in the embed
 

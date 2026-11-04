@@ -46,7 +46,7 @@ The tag you will see most. It appears beside **Failed** in the Executions list.
 
 A real example, from a daily schedule that failed identically for nine consecutive days:
 
-> **Failed at** `connector.tiktokShop.getAuthorizedShops` — Step 2 of 2
+> **Failed at** `connector.tiktokShop.getAuthorizedShops` - Step 2 of 2
 >
 > **Diagnosis:** The TikTok Shop connector needs to be connected.
 >
@@ -78,11 +78,11 @@ Every run ends in one of these. They are the filter chips on [Executions](../ope
 | ------ | ----- | ------------------ |
 | **Pending** | Accepted, not yet queued | Nothing to do |
 | **Queued** | Waiting for a runner | Nothing to do |
-| **Running** | In progress | — |
+| **Running** | In progress | - |
 | **Completed** | Finished successfully | [Sync reports](../operate/sync-reports.md), if the data looks wrong |
 | **Failed** | Threw, or a dependency refused | The Error tab, as above |
 | **Timeout** | The tier's budget ran out | [Traces](../operate/traces.md): one slow call, or hundreds? |
-| **Cancelled** | Stopped before finishing | — |
+| **Cancelled** | Stopped before finishing | - |
 
 **Failed and Timeout are different problems.** Failed means something was wrong; Timeout means nothing was necessarily wrong except the clock. Do not raise the timeout on a Failed run. It will fail identically, just later.
 
@@ -248,7 +248,7 @@ From [Connections](../build/connections/README.md). A connection that is not hea
 
 | Status | Means | Fix |
 | ------ | ----- | --- |
-| **Active** | Working | — |
+| **Active** | Working | - |
 | **Expired** | The credential ran out and could not be refreshed | The customer re-authorises through your widget |
 | **Failed** | Access was revoked, a password changed, or a key was rotated | Same: the customer reconnects |
 | **Inactive** | Not currently in use | The row menu offers **Reconnect** and **Disconnect**; there is no re-enable |

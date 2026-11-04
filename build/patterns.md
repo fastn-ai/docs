@@ -27,7 +27,7 @@ Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime
    ```
 3. **Sequential execution mode** on the trigger, if two concurrent events for the same record could race.
 
-**Ask for it as:** *"Make this idempotent — if the same order comes in twice, only create it once."*
+**Ask for it as:** *"Make this idempotent - if the same order comes in twice, only create it once."*
 
 ---
 
@@ -131,7 +131,7 @@ For failure notification specifically, an [alert](../operate/alerts.md) with a S
 
 **The problem.** A destination is flaky, and the workflow is growing a hand-rolled retry loop.
 
-**The shape.** Turn on **Retry policy** in the workflow's configuration panel instead. It gives you `Max attempts` (1–10, default 3), `Initial interval (ms)` (5000), `Backoff coefficient` (2) and `Max interval (ms)` (60000), applied to the run as a whole.
+**The shape.** Turn on **Retry policy** in the workflow's configuration panel instead. It gives you `Max attempts` (1-10, default 3), `Initial interval (ms)` (5000), `Backoff coefficient` (2) and `Max interval (ms)` (60000), applied to the run as a whole.
 
 Know its boundary: it retries transient failures. Code errors, data errors and out-of-memory never retry, so a bug will not be papered over by attempt three.
 

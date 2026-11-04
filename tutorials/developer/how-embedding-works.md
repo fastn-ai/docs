@@ -1,20 +1,19 @@
 ---
-hidden: true
 ---
 
 # How Embedding Works
 
-Fastn is embedded into your product as an iframe. Your application renders the Fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.
+fastn is embedded into your product as an iframe. Your application renders the fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.
 
 ### How the pieces fit together
 
 There are three parts:
 
-**Your backend** generates a short-lived embed token by calling the Fastn token endpoint with your API key. The token scopes the widget to a specific customer.
+**Your backend** generates a short-lived embed token by calling the fastn token endpoint with your API key. The token scopes the widget to a specific customer.
 
-**Your frontend** renders the Fastn iframe, passing the token in the URL. The iframe loads the widget your customers interact with.
+**Your frontend** renders the fastn iframe, passing the token in the URL. The iframe loads the widget your customers interact with.
 
-**The Fastn platform** validates the token, serves the widget, and handles the integration work — authentication with third-party apps, data sync, and workflow execution.
+**The fastn platform** validates the token, serves the widget, and handles the integration work - authentication with third-party apps, data sync, and workflow execution.
 
 ```
 Your backend ──(API key)──> Fastn token endpoint ──> short-lived token
@@ -26,13 +25,13 @@ Your backend ──(API key)──> Fastn token endpoint ──> short-lived tok
 
 The Embed tab in the Widget Builder lists a React SDK, but it is marked "coming soon." Today, the supported method is the iframe. This guide documents the iframe path.
 
-When the React SDK ships, it will wrap this same flow — your backend will still generate the token, and the SDK will render the iframe for you. The token generation pattern you build now will carry over.
+When the React SDK ships, it will wrap this same flow - your backend will still generate the token, and the SDK will render the iframe for you. The token generation pattern you build now will carry over.
 
 ### What you'll set up
 
 1. A server-side function that generates an embed token on each request (never hardcode tokens: they expire in 8 hours).
-2. A frontend component that renders the Fastn iframe with the token.
-3. A decision about how connections are scoped — shared across the customer's organization, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
+2. A frontend component that renders the fastn iframe with the token.
+3. A decision about how connections are scoped - shared across the customer's organization, or isolated per individual user (see [Tenancy](understanding-tenancy.md)).
 
 ### Why generate tokens server-side
 

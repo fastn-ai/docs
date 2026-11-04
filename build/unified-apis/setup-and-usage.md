@@ -1,12 +1,12 @@
 ---
-description: Set up a Unified API in Fastn, copy its request, authenticate with your admin API key, and run it against your customers' connections.
+description: Set up a Unified API in fastn, copy its request, authenticate with your admin API key, and run it against your customers' connections.
 ---
 
-# How to Set Up and Use Fastn's Unified API
+# How to Set Up and Use fastn's Unified API
 
-## 1. Log in to Fastn
+## 1. Log in to fastn
 
-Go to [app.fastn.dev](https://app.fastn.dev/) and log in to your Fastn account.
+Go to [app.fastn.dev](https://app.fastn.dev/) and log in to your fastn account.
 
 ## 2. Open Unified API
 
@@ -57,11 +57,11 @@ curl --location --request POST \
 
 Replace the placeholder values with the appropriate values for your request. The fields required and supported depend on the endpoint and the connected project management application.
 
-## 5. Generate Your Fastn Admin API Key
+## 5. Generate Your fastn Admin API Key
 
-To authenticate your requests, you'll need a **Fastn API key**. This key is your admin API Key.
+To authenticate your requests, you'll need a **fastn API key**. This key is your admin API Key.
 
-Follow the [Fastn API Keys documentation](../../manage/api-keys.md) to create your admin API key.
+Follow the [fastn API Keys documentation](../../manage/api-keys.md) to create your admin API key.
 
 Replace `YOUR_FASTN_ADMIN_API_KEY` in the cURL request with your actual key.
 
@@ -71,7 +71,7 @@ Keep this key secure. Do not expose it in frontend code or public repositories.
 
 If your SaaS application needs to execute Unified API requests on behalf of your customers, include the `x-org-id` header in the request.
 
-Your **admin API key authenticates your SaaS application with Fastn**, while the `x-org-id` header identifies your customer whose connections should be used for the request.
+Your **admin API key authenticates your SaaS application with fastn**, while the `x-org-id` header identifies your customer whose connections should be used for the request.
 
 Add the following header:
 
@@ -79,12 +79,12 @@ Add the following header:
 --header 'x-org-id: YOUR_CUSTOMER_ORG_ID'
 ```
 
-Use the **same organization ID discussed in the** [**Fastn embedding guide**](../../embed/embedding/README.md). This is the organization ID you already use when setting up the embedded Fastn experience.
+Use the **same organization ID discussed in the** [**fastn embedding guide**](../../embed/embedding/README.md). This is the organization ID you already use when setting up the embedded fastn experience.
 
-Make sure the customer has connected and authorized the relevant application in Fastn before sending requests that rely on that connection.
+Make sure the customer has connected and authorized the relevant application in fastn before sending requests that rely on that connection.
 
 ## 7. You're Ready to Make API Requests
 
-Once you have your Fastn admin API key and have configured the appropriate `x-org-id` header, you can start making requests through Fastn's Unified API.
+Once you have your fastn admin API key and have configured the appropriate `x-org-id` header, you can start making requests through fastn's Unified API.
 
-You can follow the same process for other Unified APIs and endpoints, using the cURL request provided in the Fastn dashboard as your starting point.
+You can follow the same process for other Unified APIs and endpoints, using the cURL request provided in the fastn dashboard as your starting point.

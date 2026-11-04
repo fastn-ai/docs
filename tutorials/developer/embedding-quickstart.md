@@ -1,5 +1,4 @@
 ---
-hidden: true
 ---
 
 # Embedding Quickstart
@@ -10,13 +9,13 @@ This walks through the shortest path to a working embed: generate a token from y
 
 You'll need:
 
-* **An API key** — From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
-* **Your org identifier (`endOrgId`)** — The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
-* **A backend** — Any server environment where you can make an HTTP request with a secret API key.
+* **An API key** - From Settings → API Keys. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
+* **Your org identifier (`endOrgId`)** - The internal UUID for the customer the widget is for. See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **A backend** - Any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
 
-Create a server-side function that calls the Fastn token endpoint. Keep the API key in an environment variable — never in client code.
+Create a server-side function that calls the fastn token endpoint. Keep the API key in an environment variable - never in client code.
 
 ```javascript
 // Server-side only
@@ -42,7 +41,7 @@ async function getFastnToken({ userEmail, userName }) {
 }
 ```
 
-> Note: the response nests the token under `data` — read `json.data.token`, not `json.token`.
+> Note: the response nests the token under `data` - read `json.data.token`, not `json.token`.
 
 ### Step 2: Expose the token to your frontend
 
@@ -61,13 +60,13 @@ app.get("/api/fastn-token", async (req, res) => {
 
 ### Step 3: Render the iframe
 
-On your frontend, fetch a token and render the Fastn iframe with it.
+On your frontend, fetch a token and render the fastn iframe with it.
 
 ```javascript
 const { token } = await fetch("/api/fastn-token").then(r => r.json());
 
 const iframe = document.createElement("iframe");
-// Org-level (shared) embed — see the Tenancy guide for user-level
+// Org-level (shared) embed - see the Tenancy guide for user-level
 iframe.src = `https://api.fastn.dev/api/v1/embed/iframe?token=${token}`;
 iframe.style.width = "100%";
 iframe.style.height = "100%";
@@ -77,7 +76,7 @@ document.getElementById("integrations").appendChild(iframe);
 
 ### Step 4: Verify
 
-Load the page. The Fastn widget should render inside your application. You should see the integrations you added to the widget, each with a Connect button.
+Load the page. The fastn widget should render inside your application. You should see the integrations you added to the widget, each with a Connect button.
 
 Click Connect on one, complete the authentication popup, and confirm the app shows as Connected.
 

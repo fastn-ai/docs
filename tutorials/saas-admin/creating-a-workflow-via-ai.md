@@ -1,11 +1,10 @@
 ---
 description: An overview of building a workflow from natural language descriptions.
-hidden: true
 ---
 
 # Creating a Workflow via AI
 
-Fastn's AI agents build workflows from natural language descriptions. You can simply describe the workflow and what data to sync, between which systems, and the agent sets up the connectors, configures authentication, maps the  fields, generates test cases, and then produces the workflow code with the addition of even visualizing it.
+fastn's AI agents build workflows from natural language descriptions. You can simply describe the workflow and what data to sync, between which systems, and the agent sets up the connectors, configures authentication, maps the  fields, generates test cases, and then produces the workflow code with the addition of even visualizing it.
 
 **Prerequisites:** [Your First Integration,](../../getting-started/quickstart.md) by now you should know what workflows and triggers are.&#x20;
 
@@ -13,9 +12,9 @@ Fastn's AI agents build workflows from natural language descriptions. You can si
 
 You can build workflows with AI from two places in the platform:
 
-**From the Home page** — The AI assistant on the Home page accepts natural language prompts like "Help me create an automation" or "Sync Salesforce leads to my CRM." This is the general-purpose entry point and will route you to the right agent.
+**From the Home page** - The AI assistant on the Home page accepts natural language prompts like "Help me create an automation" or "Sync Salesforce leads to my CRM." This is the general-purpose entry point and will route you to the right agent.
 
-**From the Integrations page** — Go to **Integrations → Workflows** and click **Build with AI** (next to "Create Workflow"). This opens the dedicated Workflow Builder, which is focused specifically on creating and validating workflows.
+**From the Integrations page** - Go to **Integrations → Workflows** and click **Build with AI** (next to "Create Workflow"). This opens the dedicated Workflow Builder, which is focused specifically on creating and validating workflows.
 
 > **Screenshot needed:** Integrations → Workflows page with the "Build with AI" button highlighted next to "Create Workflow."
 
@@ -31,11 +30,11 @@ You can build workflows with AI from two places in the platform:
 
 Type a plain-language description of the workflow you want. The more specific you are about three things, the better the result:
 
-**What data** — Name the systems and records involved. "HubSpot contacts," "Shopify orders above $100," "yesterday's Stripe payouts."
+**What data** - Name the systems and records involved. "HubSpot contacts," "Shopify orders above $100," "yesterday's Stripe payouts."
 
-**What to do with it** — Describe the action. "Sync to Cin7 customers," "send a Slack notification to #orders," "generate a summary report."
+**What to do with it** - Describe the action. "Sync to Cin7 customers," "send a Slack notification to #orders," "generate a summary report."
 
-**When it should run** — Describe the timing. "On every new order," "daily at 6 AM," "when a contact is updated."
+**When it should run** - Describe the timing. "On every new order," "daily at 6 AM," "when a contact is updated."
 
 #### Example prompts
 
@@ -83,9 +82,9 @@ Each mapping row shows a plain-language description of what it does (e.g., "Cont
 
 Below the mappings you'll find:
 
-* **Record Matching Strategy** — How the workflow tracks records across systems (e.g., "Track IDs via fastn.state")
-* **+ Add Mapping** — Add a field mapping the agent didn't include
-* **Add Filters** — Narrow which records get synced
+* **Record Matching Strategy** - How the workflow tracks records across systems (e.g., "Track IDs via fastn.state")
+* **+ Add Mapping** - Add a field mapping the agent didn't include
+* **Add Filters** - Narrow which records get synced
 * A natural-language input where you can describe changes and the agent will update the mappings
 
 When everything looks right, click **"Looks good, turn on"** to approve the field mapping configuration.
@@ -115,7 +114,7 @@ You can easily review the test cases, approve the ones that look correct and the
 
 The agent summarizes what was built from the workflow, the trigger, the field mappings to the test results. The workflow is now ready for deployment.
 
-> **GIF needed:** Full sequence — typing a prompt, agent analyzing, setting up auth, showing field mappings, generating test cases, final summary. (This is the hero visual for this page — should be \~15-20 seconds showing the AI doing the work.)
+> **GIF needed:** Full sequence - typing a prompt, agent analyzing, setting up auth, showing field mappings, generating test cases, final summary. (This is the hero visual for this page - should be \~15-20 seconds showing the AI doing the work.)
 
 ### Iterating on the workflow
 
@@ -139,7 +138,7 @@ The editor has three panels. As a SaaS admin, the one that matters most is the r
 
 The **Docs** tab has core sub-tabs: **Flow**, **Sequence**, and **Docs**.
 
-The **Flow** sub-tab renders a visual flowchart of the entire workflow as a node graph. Its the very workflow in result that would have taken you manually to build without Fastn's agents. Every step the agent generated appears as a connected node  consisting decision points, API calls, data retrieval, and skip/error paths are all mapped out visually.&#x20;
+The **Flow** sub-tab renders a visual flowchart of the entire workflow as a node graph. Its the very workflow in result that would have taken you manually to build without fastn's agents. Every step the agent generated appears as a connected node  consisting decision points, API calls, data retrieval, and skip/error paths are all mapped out visually.&#x20;
 
 You can use the visualizer to verify if the agent build the correct logic. This also allows you to trace the flow from triggger to completion to check for any missing branches or wrong conditions.
 

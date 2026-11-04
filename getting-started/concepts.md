@@ -58,9 +58,9 @@ Every workflow declares how long it may run and how it answers the caller.
 
 | Tier         | Behaviour                                       | Returns       | Timeout range | Default |
 | ------------ | ----------------------------------------------- | ------------- | ------------- | ------- |
-| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s – 30s      | 30s     |
-| **Standard** | Asynchronous, run via Temporal                  | 202 Accepted  | 5s – 15min    | 2min    |
-| **Long**     | Asynchronous, for large volumes                 | 202 Accepted  | 30s – 36h     | 15min   |
+| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s - 30s      | 30s     |
+| **Standard** | Asynchronous, run via Temporal                  | 202 Accepted  | 5s - 15min    | 2min    |
+| **Long**     | Asynchronous, for large volumes                 | 202 Accepted  | 30s - 36h     | 15min   |
 
 Pick Instant only when something is waiting on the answer. Most syncs are Standard.
 

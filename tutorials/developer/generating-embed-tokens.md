@@ -1,10 +1,9 @@
 ---
-hidden: true
 ---
 
 # Generating Embed Tokens
 
-Embed tokens are short-lived credentials that scope the Fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
+Embed tokens are short-lived credentials that scope the fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
 
 ### The token endpoint
 
@@ -32,7 +31,7 @@ X-fastn-Test-Mode: true        (only for fsk_test_ keys; omit for fsk_live_)
 
 | Field       | Description                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `endOrgId`  | The internal UUID of the customer the widget is for. Must be the UUID — the slug and External ID both return 404. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
+| `endOrgId`  | The internal UUID of the customer the widget is for. Must be the UUID - the slug and External ID both return 404. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
 | `userEmail` | The email of the individual user. Used for user-level tenancy (see [Tenancy](understanding-tenancy.md)).                                                                                           |
 | `userName`  | The display name of the individual user.                                                                                                                                                                                      |
 
@@ -43,16 +42,16 @@ X-fastn-Test-Mode: true        (only for fsk_test_ keys; omit for fsk_live_)
   "data": {
     "token": "emb_...",
     "endOrgId": "<customer-org-uuid>",
-    "expiresIn": 900
+    "expiresIn": 28800
   }
 }
 ```
 
-The embed token is prefixed `emb_`. In the hands-on integration, the token was nested under `data` — read `response.data.token`, not `response.token`.
+The embed token is prefixed `emb_`. In the hands-on integration, the token was nested under `data` - read `response.data.token`, not `response.token`.
 
 `expiresIn` is `28800` seconds, which is 8 hours.
 
-> **VERIFY:** The Embed tab UI shows the token request with only `Authorization: Bearer YOUR_API_KEY` and references a `YOUR_CUSTOMER_ID` parameter, while the hands-on integration used a body of `{ endOrgId, userEmail, userName }` and read the token from `data.token`. Confirm the exact request body and response shape against the current API before publishing — the UI snippet and the hands-on result should be reconciled.
+> **VERIFY:** The Embed tab UI shows the token request with only `Authorization: Bearer YOUR_API_KEY` and references a `YOUR_CUSTOMER_ID` parameter, while the hands-on integration used a body of `{ endOrgId, userEmail, userName }` and read the token from `data.token`. Confirm the exact request body and response shape against the current API before publishing - the UI snippet and the hands-on result should be reconciled.
 
 ### Refreshing tokens
 
