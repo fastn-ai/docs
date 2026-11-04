@@ -13,8 +13,6 @@ fastn is the embedded integration platform for SaaS. You embed the fastn widget 
 
 The result: you close the deals you were losing to a missing integration, keep the customers you were churning, and keep your engineers on your product.
 
-<figure><img src=".gitbook/assets/widget - with connector (1).gif" alt="The fastn widget embedded in a SaaS product, showing a customer connecting an app"><figcaption><p>The fastn widget, inside your product</p></figcaption></figure>
-
 ## The problem fastn solves
 
 Every customer asks for integrations. Some you already have, but they need to fit how each customer works. Some you don't offer at all. Your team can't build and maintain them all, and handing customers your API docs just moves the work onto them. Either way, you risk losing the customer.
