@@ -32,7 +32,7 @@ Saving only persists your draft. A saved draft does not change what runs: a work
 
 #### Publish
 
-Open the **Publish & Deploy** panel and select **Publish snapshot**. (The draft row in the same panel offers **Publish now**, which does the same thing.)
+Open the **Publish & Deploy** panel and select **Publish snapshot**. (The workflow detail view, which opens when you select **Run** on a workflow's row, has its own **Publish & Deploy** card whose **Draft** row offers **Publish now**, which does the same thing.)
 
 A publish freezes the current code as the next numbered version. When it succeeds the toast reads *Published vN. Deploy it to make it live.* Publishing does not put a version into a named environment such as `live`, but it does change what the test environment runs, and so what every trigger routed to **test (latest published)** runs (see the warning above).
 

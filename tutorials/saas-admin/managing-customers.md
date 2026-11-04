@@ -75,11 +75,11 @@ Use this for:
 2. Filter by type: **All | Webhook | Scheduled | Manual**.
 3. See incoming and outgoing events for your customers.
 
-#### Audit Log
+#### Audit log
 
 For a complete history of all actions:
 
-1. Go to **Settings → Audit Log**.
+1. Go to **Settings → Audit log**.
 2. Search by person, action or resource, and filter by person, action, resource type and date range.
 3. Columns: Who, Action, Resource, Customer, Result, When.
 
@@ -88,4 +88,4 @@ For a complete history of all actions:
 * How to create customers under Operate → Customers
 * Customer isolation model i.e. each customer has separate connections, data, and executions
 * How to customize quota limits per customer
-* How to monitor customer activity through Executions, Events, and Audit Log
+* How to monitor customer activity through Executions, Events, and Audit log

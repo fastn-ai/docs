@@ -63,9 +63,9 @@ if (ctx.isRetry) {
 }
 ```
 
-## ctx.connectors
+## Connectors are not on ctx
 
-The connectors bound to this workflow, available on the context object alongside `ctx.input` and `ctx.headers`. What is bound is what the workflow's **Connectors** tab lists, so that tab is the authoritative view of what a run can reach.
+`ctx` carries only `input`, `headers`, `env`, `endOrgId`, `externalRef`, `attempt` and `isRetry`. There is no `ctx.connectors`: call connectors through the `fastn` global, as shown in [Calling a connector](#calling-a-connector). What a run can reach is what the workflow's **Connectors** tab lists, so that tab is the authoritative view.
 
 ---
 
@@ -116,7 +116,7 @@ This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{ent
 
 SQL against your workspace's Postgres schema.
 
-**The isolation unit is the workspace, not the customer.** Each workspace gets its own schema (named `ws_<hash>`), isolated from every other workspace. Rows written for one of *your* customers and rows written for another sit in that same schema together. Nothing scopes a query to a customer for you: if you need that separation, put a customer column on the table and a predicate on every query.
+Which schema a query runs in depends on how your organization's database is set up (see [Database](../manage/database.md)). Do not rely on the database to keep one customer's rows apart from another's: if a table holds data for several customers, add a customer column (for example `ctx.endOrgId`) and filter on it in every query.
 
 ```javascript
 await fastn.db.query(

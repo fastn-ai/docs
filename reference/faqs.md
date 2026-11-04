@@ -26,7 +26,7 @@ No. [Build with AI](../build/agent/README.md) (or your AI tool) writes workflows
 
 <summary>What is the difference between a customer and a tenant?</summary>
 
-They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example the last segment of a connection id, `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`. The API also calls a customer an *end org* (`endOrgId`).
+They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example the second segment of a connection id, `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`. The API also calls a customer an *end org* (`endOrgId`).
 
 If an identifier says tenant or end org, it means one of your customers.
 
@@ -196,7 +196,7 @@ In fastn's shared managed Postgres by default, in a schema isolated to your work
 
 <summary>Secret or config?</summary>
 
-Secret if exposure would be an incident (tokens, passwords, keys. Config if you would happily show it to a colleague), endpoints, feature flags, batch sizes. When in doubt, secret.
+Secret if exposure would be an incident (tokens, passwords, keys). Config if you would happily show it to a colleague (endpoints, feature flags, batch sizes). When in doubt, secret.
 
 </details>
 

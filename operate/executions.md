@@ -48,7 +48,7 @@ Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch
 
 This is where debugging actually happens. A row expands **inline** (you do not leave the page), into:
 
-* A **result banner** for the run, and its **Raw response**.
+* A **result banner** with its **Raw response**, on a run that completed and returned output.
 * Chips summarizing the run: **Steps**, **Success**, **Error**, **Slowest**.
 * Tabs **Summary**, **Input**, **Output** and **Logs**, plus **Error** when the run errored.
 * A footer carrying the two identifiers you need when asking anyone else about the run: `exec_…` and `wf_…`.
@@ -67,7 +67,7 @@ Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed witho
 
 ### Reading the statuses
 
-**Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row for the result banner and raw response, then check [Traces](traces.md) (by URL, `/activity/traces`) for the external call behind it.
+**Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row and open the **Error** tab (**AI Diagnosis** and **Error Details**), then check [Traces](traces.md) (by URL, `/activity/traces`) for the external call behind it.
 
 **Timed out** means the tier's budget ran out. Either the work genuinely needs longer, or a single external call is hanging. Check [Traces](traces.md) before raising the timeout.
 

@@ -47,10 +47,11 @@ The **Limits** card lists every quota with your usage against it, ordered so the
 | Limit | Launch | Scale | Enterprise |
 | --- | --- | --- | --- |
 | Customer connections | 3 | 10 included, then billed per connection | Custom |
+| Connected accounts (your customers) | 3 | No cap | No cap |
 | AI credits (per month) | 50 | 1,000 | No cap |
 | Workflows running at the same time, account and customers | 1 | 5 | Custom, with per-customer caps |
+| Concurrent workflows (Cloud Run), per organization | 1 | 5 | 10 |
 | Concurrent instant runs | 3 | 10 | 20 |
-| API requests per minute (per organization) | 100 | 500 | Custom |
 | Events per day | 500 | 50,000 | No cap |
 | API calls per day | 1,000 | 100,000 | No cap |
 | API keys per customer | 2 | 50 | No cap |
@@ -61,7 +62,9 @@ The **Limits** card lists every quota with your usage against it, ordered so the
 | fastn.state storage | 50 MiB | 250 MiB | 1 GiB |
 | fastn.state keys | 250,000 | 1,000,000 | 5,000,000 |
 
-API requests per minute counts calls made with an API key or from an embed session, with your customers' calls counted toward your organization's total.
+Separately from the card, API requests are rate limited per minute: 100 on Launch, 500 on Scale, no limit on Enterprise. The count covers calls made with an API key or from an embed session, with your customers' calls counted toward your organization's total. This limit is not a row on the **Limits** card.
+
+**Connected accounts** counts your customers, and is checked only when a new customer is created: on Launch the 4th customer is refused, and a count already past 3 is kept. **Customer connections** is the pricing unit, one customer signed in to one app, summed across your customers.
 
 Connectors, workflows, executions, seats (users) and webhook endpoints are unlimited on every plan. Connectors per integration is 2 on every plan: an integration is your product and one other app, and each further app gets an integration of its own. Workflow categories and labels are managed under [Workflow tags](workflow-tags.md).
 

@@ -17,7 +17,7 @@ In the widget header, open the **⋯** menu and choose **Insights**.
 The panel that opens leads with your integration metrics - what is running, what needs attention, recent runs - and the alerts section sits at the bottom, below the workflow list.
 
 {% hint style="info" %}
-**No ⋯ menu, or no Insights in it?** Insights lives in that menu and is on by default, but your provider can switch the Insights section off. If it is not there, contact your SaaS provider - this is where alerts for your organization are set up.
+**No ⋯ menu, or no Insights in it?** Insights lives in that menu and is on by default. If your provider hides the widget header, the whole **⋯** menu goes with it, and some older widget setups may still have Insights turned off. If it is not there, contact your SaaS provider - this is where alerts for your organization are set up.
 {% endhint %}
 
 ### The one-click start

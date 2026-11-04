@@ -16,7 +16,7 @@ Opening **Widget** takes you straight into the builder; there is no widget list 
 
 ## Integrations
 
-Above the tabs, the **INTEGRATIONS** panel lists what appears in the widget, with a count. This panel *is* the widget list: the offer your customers browse. Everything else on this screen is presentation.
+Below the tabs, the **INTEGRATIONS** panel lists what appears in the widget, with a count. This panel *is* the widget list: the offer your customers browse. Everything else on this screen is presentation.
 
 An integration that moves data between two systems shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
 

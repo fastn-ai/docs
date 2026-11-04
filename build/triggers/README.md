@@ -53,7 +53,7 @@ The status select separates active from disabled. Disabling a trigger stops it f
 When the platform disables one:
 
 * The trigger's status becomes `Disabled`, and the row's status cell adds **(auto)**; hover it to read the reason. A trigger you disabled by hand shows no **(auto)** marker.
-* A **Re-enable Cooldown** applies, shown in the scheduler detail panel (30 minutes unless it was set otherwise). Once the cooldown passes, fastn re-enables the trigger automatically. A cooldown of `0` means it stays disabled until someone re-enables it by hand.
+* A **Re-enable Cooldown** applies, shown in the scheduler detail panel (30 minutes unless it was set otherwise). Once the cooldown passes, fastn re-enables the trigger automatically. The cooldown can be set from 1 to 1440 minutes. The exception is a trigger disabled because its workflow was deleted or was never published: a cooldown does not fix that, so it stays disabled until someone re-enables it by hand, even though the panel still shows the stored cooldown.
 * The reason and the moment are recorded in **Status History** on the detail panel, which shows the last 20 status changes.
 
 So if a nightly job silently stops, open the row, read Status History, and look at the Failures count: do not assume someone on your team turned it off.

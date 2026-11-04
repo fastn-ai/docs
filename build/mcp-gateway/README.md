@@ -4,7 +4,7 @@ description: Letting an AI client reach your connectors as tools.
 
 # MCP gateway
 
-Everything you build in fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your connectors as tools it can call, with the same customer scoping and the same permission model as everything else. Your agent can also build new integrations for you, right in the chat: see [Building from your AI agent](../building-from-your-ai-agent.md).
+Everything you build in fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your fastn workflows and the fastn platform tools, and reaches your connectors' actions through those platform tools, with the same customer scoping and the same permission model as everything else. Your agent can also build new integrations for you, right in the chat: see [Building from your AI agent](../building-from-your-ai-agent.md).
 
 ### Connecting
 

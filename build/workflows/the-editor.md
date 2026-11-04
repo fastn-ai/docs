@@ -70,7 +70,7 @@ Every `fastn.connector.<slug>.<action>(…)` call in your code is extracted here
 {% step %}
 #### Read the logic back: `Diagram` tab
 
-**Flow**, **Sequence** and **Docs** are all generated from the code and read-only: you edit the code and they follow. **Docs** carries an **End user** / **Technical** toggle and consumes AI credits when you **Regenerate**.
+**Flow** and **Sequence** are generated from the code and read-only: you edit the code and they follow. **Docs** is generated too, with an **End user** / **Technical** toggle and **Regenerate**, but you can also **Edit** and **Save** it; an edited doc shows an **Edited** badge, survives regeneration, and **Reset to generated** returns to the generated version.
 {% endstep %}
 
 {% step %}
@@ -135,4 +135,4 @@ The **Retry policy** toggle is off by default (off means a single attempt). Its 
 
 * **Publish snapshot**: freezes the current code and configuration as a version.
 * **Deploy to environment**: sends a published version to an environment.
-* Underneath: a row showing the environment's current status.
+* Underneath: a **Latest: vN** line for the newest published version, then one row per environment showing its current status.

@@ -24,7 +24,7 @@ Both change the same configuration. Neither needs a developer.
 
 fastn's agent reads the real schemas of both connected apps - the actual fields on your HubSpot account, not a generic template - and changes the configuration to match what you asked for.
 
-It is reliable at:
+Requests that suit it well:
 
 * **Adding or removing a field** - "also sync the phone number", "stop sending the internal notes field"
 * **Narrowing what qualifies** - "only contacts with an email address", "skip orders under $50", "only companies in the UK"
@@ -81,5 +81,5 @@ In all three cases the answer is the same: contact your SaaS provider's support 
 ### What you can do next
 
 * [Getting Alerted](getting-alerted.md) - be told when an integration breaks instead of discovering it
-* [Connecting Claude and other AI clients](connecting-claude.md) - driving your integrations from an AI client
+* [Connect Claude and other AI clients](connecting-claude.md) - driving your integrations from an AI client
 * [Customizing Your Integrations](customizing-your-integrations.md) - the full dialog reference

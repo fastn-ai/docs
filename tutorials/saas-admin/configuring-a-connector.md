@@ -35,8 +35,6 @@ For every field and protocol, see [Creating a connector](../../build/connectors/
 2. Describe what you want (e.g., "HubSpot CRM"), and give it the vendor's API docs if you have them.
 3. Build with AI researches the API, builds the actions and auth method, and tests them.
 
-> &#x20;**GIF needed:** Using Build with AI - entering a connector name, watching it discover the API and build actions.
-
 ### Authentication methods
 
 Seven auth methods are available when creating a connector:

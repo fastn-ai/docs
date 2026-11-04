@@ -49,7 +49,7 @@ Webhook configs on **managed** connectors are maintained by fastn and are read-o
 
 ### The config form
 
-**New config** opens **New webhook config** in place of the table; **Edit** on a row opens the same form filled in. **Cancel** (top right or bottom) closes it without saving.
+**New config** opens **New webhook config** below the config table, which stays visible; **Edit** on a row opens the same form filled in. **Cancel** (top right or bottom) closes it without saving.
 
 <figure><img src="../../.gitbook/assets/webhook-config-form-top.webp" alt="The New webhook config form on a custom connector: Available as a trigger source switched on, Type set to One webhook for the whole app, Auth provider reading None configured yet, an Event key field with placeholder event_type, and the Subscribe snippet editor with a Run button and a JavaScript template"><figcaption>The top of the form: general settings and the first snippet.</figcaption></figure>
 
@@ -62,6 +62,8 @@ Webhook configs on **managed** connectors are maintained by fastn and are read-o
 | **Auth provider** | *(App type only.)* *Which credential fastn uses to register the subscription.* |
 | **Webhook URL** | *(App type only, once an auth provider is chosen.)* The fastn URL to give the app. *This URL is shared across all events for this connector.* |
 | **Event key** | *(App type only.)* *The field in the incoming payload that says what happened. fastn reads it to decide which trigger to fire.* For example `event_type`. |
+| **Route deliveries to customers by** | *(App type only.)* **Account on the customer's connection (Get User Account Action)** matches each event to a customer through the [Get User Account Action](#get-user-account-action). **Customer named in the call (no connection)** routes by the customer named in the incoming call instead, and hides Get User Account Action. |
+| **Require API key** | *(App type only.)* On: every call to the connector's webhook URL must carry your fastn API key in `x-api-key`, and calls without it are refused. Off: the provider can post to the URL without one. |
 
 #### Code: Subscribe, Unsubscribe, Renew
 
@@ -99,7 +101,7 @@ Each input has a **Key** and a **Default value**, and a **Hidden** checkbox. **+
 
 #### Get User Account Action
 
-Used when one webhook carries events for many customers (the **App** type). It tells fastn how to match an incoming event to the right customer. **+ Add Required Action** adds one:
+Tells fastn how to match an incoming event to the right customer. It is shown for the **Event Webhook** type and for the **App** type when **Route deliveries to customers by** is set to **Account on the customer's connection (Get User Account Action)**. **+ Add Required Action** adds one:
 
 * **Select an action**: an action that returns the customer's account, run against their connection when they set up an app trigger.
 * **Label path** and **Value path**: dotted paths into that action's response, for example `data.response.user` and `data.response.user_id`. The value becomes the trigger's account ID.
@@ -114,9 +116,12 @@ Used when one webhook carries events for many customers (the **App** type). It t
 | **None - accept all requests** | The app does not sign its webhooks. |
 | **HMAC signature** | The app signs each request with a shared secret. Set **Signature Header** (for example `x-slack-signature`), **Algorithm** (for example `sha256`), **Signature Prefix** (for example `v0=` or `sha256=`), **Signature Format**, **Signing Payload**, and optionally **Timestamp Header** and **Max Timestamp Age (ms)** (for example `300000`) to reject replayed requests. |
 | **Verification token (Notion-style)** | The app sends a one-time token when the subscription is created. fastn answers it, stores the token as **Captured Token**, and uses it to verify later events. For Notion, paste the captured token into Notion under **Webhooks → Verify** to activate the subscription. |
-| **Challenge-response only** | The app checks the URL with a challenge request. Set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`) and **Response Field** (for example `challenge`), the field fastn echoes back. |
+| **Header token (echoed subscription token, Google push)** | The app echoes back, in a header, a token fastn chose when it subscribed. Set **Token Header** (for example `x-goog-channel-token`) and **Token**. No body is signed, so this is the only check. |
+| **Challenge-response only** | The app checks the URL with a challenge request and does not sign events. |
 
-The shared secret for HMAC is the `client_secret` of the connector's auth provider. A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request.
+For HMAC, enter the provider's webhook signing secret in **Signing Secret**. The form's help text also notes that the shared secret is read from the `client_secret` of the connector's auth provider.
+
+A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request. When it is ticked, set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`) and **Response Field** (for example `challenge`), the field fastn echoes back.
 
 <figure><img src="../../.gitbook/assets/webhook-config-form-bottom.webp" alt="The bottom of the New webhook config form: Inputs webhookUrl and event with Hidden checkboxes and + Add Input, Get User Account Action with + Add Required Action, Webhook Verification with Method None, accept all requests and the Enable URL-verification challenge handshake checkbox, and the footer An event key is needed before this can be saved, with Cancel and Create"><figcaption>The bottom of the form. <strong>Create</strong> needs an event key first.</figcaption></figure>
 

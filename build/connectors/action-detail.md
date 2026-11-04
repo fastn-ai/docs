@@ -38,7 +38,7 @@ The top of the editor holds:
 Anywhere in the URL, headers, query parameters or body, values in double braces are filled in at run time:
 
 * `{{input.<field>}}`: a field from the action's input, as defined in **Input schema**.
-* `{{auth.token}}`: the credential from the connection, for example in an `Authorization: Bearer {{auth.token}}` header.
+* `{{auth.<field>}}`: a field from the connection's credential, for example in an `Authorization: Bearer {{auth.token}}` header. Which field names are available depends on the connector's auth method.
 
 #### The seven tabs
 
@@ -46,7 +46,7 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 | --- | --- |
 | **Params** | Query parameters (**Query Parameters**, **+ Add**). Each one is a key and a value; the value can be a placeholder. |
 | **Headers** | Request headers (**Request Headers**, **+ Add**), as **KEY** / **VALUE** pairs. |
-| **Auth** | How this request is authorized. **Auth type**: `No Auth`, `Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0` or `API Key`. **No Auth** (the panel then reads *No auth · This request does not use any authorization.*) is the usual choice when the credential is already sent in a header, as in the HubSpot example below. |
+| **Auth** | How this request is authorized. **Auth type** shows the auth that actually runs, which is the connector's auth method, for example *OAuth 2.0 (from connector)*, with a note such as *OAuth 2.0, from the connector*. Below it, **Stored action setting** is a dropdown (`Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0`, `API Key`, or *None (use connector)*) that is saved with the action but, as its help text says, *Not used at run time. Requests are signed with the connector's auth method.* The *No auth* panel appears only when the connector has no auth method. |
 | **Body** | **Body type**: `JSON`, `Form Data`, `Raw`, `GraphQL` or `Form URL Encoded`, and the body itself. |
 | **Input schema** | The inputs the action accepts. See below. |
 | **Output schema** | The shape of the response the action returns. Same editor as the input schema. |
@@ -54,7 +54,7 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 
 <figure><img src="../../.gitbook/assets/action-editor-headers.webp" alt="The Headers tab with two rows: Content-Type application/json and Authorization Bearer {{auth.token}}"><figcaption>The connection's token goes into the <code>Authorization</code> header through <code>{{auth.token}}</code>.</figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/action-editor-auth.webp" alt="The Auth tab with Auth type set to No Auth and the text No auth, This request does not use any authorization"><figcaption>The Auth tab. Here the credential is sent in a header instead.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/action-editor-auth.webp" alt="The Auth tab of an action"><figcaption>The Auth tab.</figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/action-editor-body.webp" alt="The Body tab for HubSpot Create Contact: Body type JSON on the left and a body editor labeled body JSON on the right"><figcaption>The Body tab with <strong>JSON</strong> selected.</figcaption></figure>
 

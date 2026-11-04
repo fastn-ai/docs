@@ -18,7 +18,7 @@ Build turns a plain-language description into a working integration. You say wha
 | --- | --- |
 | **Integration or solutions engineer** | Turn a customer request into a tested integration the same day |
 | **Product manager** | Ship the integration a deal is waiting on, without queueing it for engineering |
-| **Developer** | Read the generated workflow code, and edit it or write it yourself where code editing is on for your organization |
+| **Developer** | Read the generated workflow code where code view is on for your organization, and edit it or write it yourself where code editing is also on |
 | **Founder or CTO** | Say yes to "do you integrate with X?" and keep engineers on the core product |
 
 ## How do I use it?
@@ -41,7 +41,7 @@ Open **Build → Build with AI** in the dashboard, or type into the prompt on Ho
 {% endtab %}
 
 {% tab title="Code" %}
-Every workflow is a JavaScript module you can read in the workflow editor, test with sample input, and version. Editing the code yourself needs code editing to be switched on for your organization; where it is off, you change a workflow by describing the change to Build with AI.
+Every workflow is a JavaScript module you can test with sample input and version. Reading the code in the workflow editor needs code view to be switched on for your organization (fastn turns it on), and editing it needs code editing as well. Where code view is off, the editor shows diagrams and docs only, and you change a workflow by describing the change to Build with AI.
 
 [Workflows](workflows/README.md) · [Write a workflow in code](../tutorials/saas-admin/configuring-a-workflow-in-code.md)
 {% endtab %}

@@ -21,7 +21,7 @@ One row per method. Each row shows:
   * Keys and tokens: *Your customers paste a key they generate themselves.*
 * for OAuth methods, how many providers it has, for example *1 provider*.
 
-The method types, and the fields each one asks for, are listed in [Creating a connector → Authentication](creating-a-connector.md#authentication). The value stored for each type (`OAUTH_2`, `API_KEY`, `BEARER`, `BASIC`, `DIGEST`, `INPUT`, `NO_AUTH`) is what the header line and the [Connections](../connections/README.md) page show.
+The method types, and the fields each one asks for, are listed in [Creating a connector → Authentication](creating-a-connector.md#authentication). Each type is stored as a value such as `OAUTH_2`, `API_KEY`, `BEARER`, `BASIC`, `DIGEST`, `INPUT` or `NO_AUTH`. The header line and the [Connections](../connections/README.md) page show readable labels instead, for example *OAuth 2.0*, *API key* or *Custom*.
 
 ### Auth providers
 

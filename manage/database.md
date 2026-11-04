@@ -12,7 +12,7 @@ Workflows can persist data with `fastn.db`. This page decides where that data la
 
 > Which Postgres your workflows read and write through.
 
-Every `fastn.db` call from this organization goes to whichever option is selected here, and the page shows the active schema name in the form `ws_<32 hex characters>`.
+Every `fastn.db` call from this organization, and from its customers, goes to whichever option is selected here, unless a customer has an override (see [Customer overrides](#customer-overrides)). The page shows the active schema name in the form `ws_<32 hex characters>`.
 
 ### What a Developer sees
 
@@ -50,9 +50,15 @@ Switching changes where **new** reads and writes go. Rows are never copied betwe
 
 ### What the isolation actually is
 
-**The unit of isolation is your organization, not the customer.** Each organization gets its own Postgres schema (the `ws_<hash>` above), isolated from every other organization, which is what the page means by *your organization sits in its own schema, isolated from everyone else*.
+**Each workspace gets its own Postgres schema, and each of your customers is a workspace of its own.** Your organization's schema is the `ws_<hash>` above, isolated from every other organization, which is what the page means by *your organization sits in its own schema, isolated from everyone else*. Every customer gets a separate `ws_<hash>` schema of its own, so `fastn.db` calls made on behalf of one customer land in that customer's schema, not in yours and not in another customer's.
 
-That is a boundary between you and other fastn customers. It is **not** a boundary between *your* customers: rows written on behalf of one of your customers and rows written on behalf of another land in the same schema. If you need per-customer separation inside it, build it: a customer column on every table, and a predicate on every query.
+The same holds when you bring your own database: a customer that inherits your connection still gets its own derived schema on your server, never your schema or another customer's.
+
+### Customer overrides
+
+Shown to Owners and Admins only. The **Customer overrides** card lists every customer in this organization with where its data actually lands: the **Database**, the **Schema in use**, **SSL** and a **Source** badge (**fastn-managed**, **Organization default** or **Override**). Customers use your selected database automatically; the ones marked **fastn-managed** are still on fastn's own database.
+
+**Add override** points a single customer somewhere else. An override replaces the whole connection, not part of it. **Remove override** returns that customer to the organization default as runner pools recycle; rows already written to the override database stay there.
 
 ### Using it from a workflow
 

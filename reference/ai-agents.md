@@ -57,7 +57,6 @@ export default async function (ctx) {
 | -------- | -------- |
 | `ctx.input` | The incoming payload. Webhook → request body. Schedule → the route's **Payload** JSON. App event → the connector's event payload. Manual/API → the `input` object from the request body. |
 | `ctx.headers` | HTTP headers from the incoming request, including the customer headers below. |
-| `ctx.connectors` | The connectors bound to this workflow: the same set listed on its **Connectors** tab. |
 
 ### Runtime surface
 
@@ -168,9 +167,7 @@ Polling depends on the tier:
 | ---- | ----------------- | ------------ |
 | **Webhook** | An HTTP request arrives at a public URL | Auth (`x-fastn-access-key` or public), routes, execution mode (Parallel/Sequential), deduplication key |
 | **Schedule** | A time is reached | Cron/interval, plus a **Payload** JSON that becomes `ctx.input` |
-| **App event** | Something changes in a connected system | Connector (**immutable after creation**), connection, event, routes |
-
-An app event trigger cannot be created without an active connection for that connector.
+| **App event** | Something changes in a connected system | Connector, connection, event, routes |
 
 ---
 
@@ -181,7 +178,7 @@ Do not conflate these.
 | | Docs MCP | Product MCP gateway |
 | --- | --- | --- |
 | **URL** | `<docs-site>/~gitbook/mcp` | `https://mcp.fastn.dev/fastn-workspace` |
-| **Exposes** | This documentation, as searchable tools | Your connectors and actions, as callable tools |
+| **Exposes** | This documentation, as searchable tools | Your fastn workflows and the fastn platform tools (connector actions run through platform tools such as `executeAction`) |
 | **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to fastn to sign in, and to pick a workspace if you belong to more than one org |
 | **Use for** | Answering questions about fastn | Acting on real customer systems |
 
@@ -201,7 +198,7 @@ Read this section before generating code.
 
 * **`fastn.connector` vs `fastn.connectors`.** Both work. On save, fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
 * **`fastn.state` `ORG` keys are shared by every workflow in the org.** `INVOCATION` keys live for one execution. Namespace `ORG` keys by workflow (`myworkflow:deal:123`) so two workflows do not overwrite each other.
-* **`fastn.db` isolates by workspace, not by customer.** Every customer's rows share one schema. Nothing scopes a query for you: add a customer column and a predicate on every query, or you will leak across tenants.
+* **Don't rely on `fastn.db` to separate customers.** Which schema a query runs in depends on your organization's database setup. If a table holds data for several customers, add a customer column and filter on it in every query.
 * **Always parameterize SQL.** Interpolating `ctx.input` into a query string is an injection.
 * **Publishing is not optional.** Code that is saved but not published does not run over the API.
 * **Instant's 25-second ceiling is hard**, and finding out by timing out in production is expensive.

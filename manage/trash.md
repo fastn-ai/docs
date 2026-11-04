@@ -43,4 +43,4 @@ So the recoverable set is exactly connectors, connector actions and workflows. A
 
 ### In the audit log
 
-Soft deletes, restores and permanent deletes are recorded separately from one another, which is what lets you reconstruct what happened to something after the fact. Filter by the resource on the [audit log](audit-log.md), and use its **All actions** dropdown for the exact action names your organization emits.
+Deletes and restores are recorded, which is what lets you reconstruct what happened to something after the fact. For workflows, a move to the trash (`workflow.soft_delete`) and a permanent delete (`workflow.delete`) are separate actions. Filter by the resource on the [audit log](audit-log.md), and use its **All actions** dropdown for the exact action names your organization emits.

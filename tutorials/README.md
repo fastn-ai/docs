@@ -1,6 +1,6 @@
 ---
 description: >-
-  Step-by-step guided lessons organized by role - SaaS Admin, Developer, and the
+  Step-by-step guided lessons organized by role - your team, Developer, and the
   people at your customers.
 hidden: true
 ---
@@ -11,7 +11,7 @@ These tutorials are hands-on walkthroughs that teach you how to use fastn by bui
 
 **Prerequisites:** Complete the [Getting Started](../getting-started/README.md) section first. These tutorials assume you have a fastn account and basic familiarity with the dashboard.
 
-### SaaS Admin tutorials
+### Tutorials for your team
 
 For the person setting up and managing fastn within their SaaS product.
 

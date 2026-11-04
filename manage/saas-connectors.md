@@ -39,7 +39,7 @@ Three consequences worth being deliberate about:
 
 * **One connection per customer per scope.** A scope is the uniqueness key. A customer cannot hold two `inventory` connections to your product, so a scope is how you stop a customer from accidentally wiring the same thing twice.
 * **Widgets tag against a scope.** The [widget](../embed/widget-builder/README.md) names the scope it wants, which is what lets one widget resolve to the right connection for whichever customer is looking at it.
-* **Installation pins the match.** When a customer installs an integration, the connection matching that scope is the one bound, so the scopes you choose here decide how granular each customer's setup can be.
+* **Turning on an integration pins the match.** When a customer turns on an integration, the connection matching that scope is the one bound, so the scopes you choose here decide how granular each customer's setup can be.
 
 Pick scopes that name a *capability boundary* in your own product (`inventory`, `product`, `billing`), rather than one scope per customer. Customers are already one axis; scopes are the second axis crossing it.
 

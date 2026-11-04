@@ -41,7 +41,7 @@ The cross-customer rollup (previously the **Reporting** page): which customers n
 
 ### What it shows
 
-**Customer tiles** (with All customers selected): how many **Customers** you have, how many **Need attention**, how many are **Healthy**, how many are **Not connected** yet, and the total number of **Connections**. Click a tile to see the customers behind it.
+**Customer tiles** (with All customers selected): how many **Customers** you have, how many **Need attention**, how many are **Healthy**, how many are **Not connected** yet, and the total number of **Connections**. Click a tile to see the customers behind it. **Need attention** is the exception: it opens the problems themselves rather than a customer list.
 
 **Right now** (live, refreshed on a timer):
 

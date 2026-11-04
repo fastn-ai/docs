@@ -51,7 +51,7 @@ It exhausted its delivery attempts. The row shows a failure state in the **Statu
 
 ### Status: Failed
 
-Expand the execution row for its result banner and raw response, then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
+Expand the execution row and open the **Error** tab (**AI Diagnosis** and **Error Details**), then check [Traces](traces.md) for the call that was rejected. The usual causes, in order of frequency:
 
 1. **The connection is Expired or Failed.** The customer re-authorizes through your widget.
 2. **The upstream API changed.** Check [Pending updates](../build/connector-updates.md) for a proposal against that connector.

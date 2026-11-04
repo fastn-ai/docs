@@ -10,7 +10,7 @@ Opening a category swaps the pane for a detail view with an **All categories** b
 
 Each entity gets its own block showing:
 
-* **Connection state**: `<connected>/<total> connected`, how many of the backing providers this customer has authorized.
+* **Connection state**: `<connected>/<total> connected`, how many of the backing providers your organization has connected.
 * **Providers**: one row per provider, with a **Connect** button, or **Connected** and a `⋯` menu. The menu offers **Add another connection**; **Use \<name> by default** (only when the provider has two or more connections, one item per non-default connection); and **Disconnect** (or **Disconnect \<name>**, one per connection, when there are several). Viewers, who cannot connect accounts, see **Not connected** instead of a **Connect** button.
 * **API**: the endpoints, filtered by an **All providers** selector. Each row shows the HTTP method, the operation name and the path, with a **Copy curl** button.
 

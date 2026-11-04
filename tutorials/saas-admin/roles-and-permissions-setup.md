@@ -16,7 +16,7 @@ fastn has 6 built-in roles. View them under **Settings → Roles** (Owners and A
 | **Admin**     | 44          | Full access within the organization and its customers.           |
 | **Developer** | 36          | Builds and deploys connectors, workflows and agents.             |
 | **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only. |
-| **Viewer**    | 6           | Read-only on connectors, connections, workflows, widgets and events. |
+| **Viewer**    | 6           | Read-only on connectors, connections, workflows, widgets, events and the Unified API. |
 | **End User**  | 35          | Uses the embed widget: creates connections, runs agents.         |
 
 Each built-in role carries a **Built in** badge. Selecting one shows its permission matrix and the count it holds out of 44.

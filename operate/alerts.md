@@ -117,7 +117,7 @@ Scroll to the bottom of the **Insights** panel. With no alerts yet, it shows **N
 * **Turn on failure alerts**: turns on an email the moment a run fails and a daily reliability check. This is the quickest option. It is disabled if the session has no email.
 * **Custom alert**: create a custom alert with your own conditions (Step 3).
 
-Once an alert exists, the section shows a **Sync failure notifications** card (switch its toggle on to be notified the moment any sync run fails) and a **New alert** button.
+Once an alert exists, the section shows a **Sync failure notifications** card, which notifies you the moment any sync run fails. If an instant alert for all workflows already exists (for example from **Turn on failure alerts**), switch the card's toggle on; otherwise click its **Turn on** button. The section also shows a **New alert** button.
 
 <figure><img src="../.gitbook/assets/customer-alerts-sync-failure-row.webp" alt="The alerts section of the Insights panel: a New alert button above the Sync failure notifications row, which reads Off, a sync can fail silently, with an Edit channels toggle"><figcaption><strong>Sync failure notifications</strong> and <strong>New alert</strong>.</figcaption></figure>
 

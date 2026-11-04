@@ -16,7 +16,7 @@ Once your integrations are connected and running, the widget shows you how they'
 
 In the widget header, open the **⋯** menu and choose **Insights**. A range selector lets you switch between **Today**, **7 days** (the default), **30 days**, and **Custom** (pick your own from and to dates).
 
-If Insights isn't in the menu, your provider has switched it off; contact the product's support team.
+If there is no **⋯** menu, your provider has hidden the widget header; if the menu is there without Insights, your provider's widget setup has it turned off. In either case, contact the product's support team.
 
 #### Panels
 
@@ -59,7 +59,7 @@ This is the fastest place to see what's gone wrong and which workflow it affects
 Click **Manage** on an integration to open its detail view.
 
 * **Activity** shows the last 7 days for that integration: records, runs and issues, plus its latest runs. Each run reads **ran**, **failed**, **timed out**, **cancelled**, **queued** or **running**. Click **View all runs** for the full list.
-* **Workflows** lists the integration's workflows. Each row has a **Run workflow** button, may have an enable or disable toggle, and has a chevron that opens the workflow's details. **Remove workflow** appears only on workflows your organization owns.
+* **Workflows** lists the integration's workflows. Each row has a **Run workflow** button, may have an enable or disable toggle, and opens the workflow's details when you click the row. **Remove workflow** appears only on workflows your organization owns.
 
 The workflow details have these tabs:
 

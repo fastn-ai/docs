@@ -21,7 +21,7 @@ The timezone here is the default offered when creating a [schedule trigger](../b
 
 ### Your product
 
-If you have started connecting your own product, a **Your product** card shows it, badged **Connected** or **Not connected**. Until it is connected it reads *Not connected yet. Needed to go live.* and offers **Continue setup**. See [Connect your product](saas-connectors.md).
+If you have started connecting your own product, a **Your product** card shows it, badged **Connected** or **Not connected**. Until it is connected it reads *Not connected yet. Needed to go live.* (or *API docs found, not confirmed. Needed to go live.* once API docs have been found but not yet confirmed) and offers **Continue setup**. See [Connect your product](saas-connectors.md).
 
 ### Joining by email domain
 

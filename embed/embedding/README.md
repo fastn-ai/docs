@@ -17,7 +17,7 @@ The dropdown lists the customers on your account by name. Selecting one does two
 * the preview beside it shows **that customer's real connection state**, not a mock-up, so `TikTok Shop, 0 of 1 connected` is the truth for that customer
 * the **Embed Code** block regenerates with a token scoped to them
 
-If the dropdown is empty, you have no customers yet. Create one under [Customers](../../operate/customers.md) first.
+If you have no customers yet, the **User** dropdown does not appear. Instead a card reads **No customers yet - this is a template**, the snippet uses placeholders, and a **Create a customer** button takes you to [Customers](../../operate/customers.md). Once a customer exists, a live token replaces the placeholders.
 
 Then choose how to mount it.
 

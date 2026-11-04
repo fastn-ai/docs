@@ -84,7 +84,9 @@ The plaintext headers tell the gateway which identity is being claimed, and the 
 
 **1. Register the customer organization**
 
-From your backend server, call Create a Customer Organization to register the customer org in fastn. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
+The simplest path is to let the token call register the customer: send `createIfMissing: true` with the customer's id in step 2, and fastn creates the customer on first use. This works with an **Embed backend** key, which has the `customers.create` permission.
+
+You can also register the customer ahead of time from your backend with Create a Customer Organization. That endpoint needs an **Admin** key (full access); an **Embed backend** key gets `403`. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
 
 #### Integrate the widget
 
@@ -108,6 +110,10 @@ Pass the token to your frontend and embed the iframe:
 ### API Reference
 
 #### Create a Customer Organization
+
+{% hint style="info" %}
+This endpoint needs an API key with full access (the **Admin** preset). An **Embed backend** key cannot call it; use `createIfMissing` on [Generate Embed Token](#generate-embed-token) instead.
+{% endhint %}
 
 **Endpoint**
 
@@ -160,6 +166,8 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 ```json
 { "userId": "<USER_ID>" }
 ```
+
+To register the customer on first use, add `"endOrgId": "<ORG_ID>", "createIfMissing": true` (and optionally `customerName`). This needs the `customers.create` permission, which the **Embed backend** preset has.
 
 Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. The full field list is on [Tokens](token-api.md).
 

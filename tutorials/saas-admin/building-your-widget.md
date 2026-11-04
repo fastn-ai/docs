@@ -22,7 +22,7 @@ The builder opens with two panels: the **Widget builder** on the left, with **La
 
 ### Adding integrations to the widget
 
-The left panel starts with an **INTEGRATIONS** section. This is the list of integrations your customers can turn on through the widget.
+Below the tabs at the top of the left panel is an **INTEGRATIONS** section. This is the list of integrations your customers can turn on through the widget.
 
 1. Click **Add** to open the **Add Integrations** dialog.
 2. Pick connectors on the **Apps** tab, or unified API categories on the **Unified** tab.
@@ -126,7 +126,7 @@ The builder header shows a badge: **Live** when everything is saved, **Unsaved c
 Click the **Embed** tab. It has three sub-tabs: **Iframe**, **SDK**, and **A2A** (marked coming soon).
 
 * **Iframe** - Pick a customer in the **User** dropdown and copy the **Embed Code** block. The snippet carries a live token so you can try it at once; for production, your developers mint short-lived tokens from your backend. Tokens last eight hours. This sub-tab also creates **Shareable links** for a customer, when you need to put the widget in front of them before the embed ships.
-* **SDK** - Four variants: **Connect card**, **React component**, **Script tag** and **Build your own UI**, each with install and code blocks.
+* **SDK** - Four variants: **Connect card**, **React component**, **Script tag** and **Build your own UI**, each with a code block. All but **Script tag** (a hosted bundle) also show an install command.
 * **A2A** (coming soon).
 
 Hand this off to your development team - see [Embedding fastn](../developer/embedding-quickstart.md) in the Developer tutorials for the token generation and iframe setup.

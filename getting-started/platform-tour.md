@@ -140,7 +140,7 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 
 Two capabilities are gated by role rather than by permission: using the builder, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
 
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organization block holding the organization Name and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General is where Settings opens for an Owner: organization identity first, joining rules second.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organization block holding the organization Name and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General holds organization identity first and joining rules second. For an Owner or Admin, Settings itself opens on People.</figcaption></figure>
 
 ### The account card
 

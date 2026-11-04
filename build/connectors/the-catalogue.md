@@ -6,7 +6,7 @@ description: "The Connectors page: header buttons, categories, search, filters, 
 
 `/integrations?tab=connectors` lists every connector your workspace can use: the ones fastn manages and the ones your workspace created.
 
-<figure><img src="../../.gitbook/assets/connectors-filter-connected.webp" alt="The Connectors page filtered to Connected, showing 4 connectors (Cin7 Core, Google Gmail, HubSpot and OpenAI), each badged Connected with an Add another connection button"><figcaption>The <strong>Connected</strong> chip narrows the list to connectors that already have a connection.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/connectors-filter-connected.webp" alt="The Connectors page filtered to Connected, showing 4 connectors (Cin7 Core, Google Gmail, HubSpot and OpenAI), each badged Connected with an Add another connection button"><figcaption>The <strong>Connected</strong> chip narrows the list to connectors that have at least one active connection.</figcaption></figure>
 
 ### Page header
 

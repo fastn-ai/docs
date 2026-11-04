@@ -47,7 +47,8 @@ The file looks like this (shortened):
 | Field | Meaning |
 | --- | --- |
 | `connector` | The connector the actions came from. |
-| `httpConfig` | The request: everything on the Params, Headers, Auth and Body tabs. `ftpConfig` and `redisConfig` hold the equivalent for FTP and REDIS connectors. |
+| `httpConfig` | The request: everything on the Params, Headers and Body tabs. `ftpConfig` and `redisConfig` hold the equivalent for FTP and REDIS connectors. |
+| `authConfig` | The **Stored action setting** from the Auth tab. It is not used at run time. |
 | `inputContract` / `outputContract` | The **Input schema** and **Output schema**. |
 | `stage` | `test` or `live`. |
 | `version` | The action's version. |
@@ -60,13 +61,13 @@ Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their ca
 
 <figure><img src="../../.gitbook/assets/connectors-custom-card-menu.webp" alt="The catalog filtered to Private showing one card, Docs Demo CRM, badged Custom, with its three-dot menu open listing Select, Edit, Export and Delete"><figcaption>The card menu on a connector your workspace owns.</figcaption></figure>
 
-* **⋯ → Export** downloads that one connector.
+* **⋯ → Export** downloads that one connector as `<slug>-bundle.json`.
 * **⋯ → Select** ticks the card and adds **Export Selected (n)** to the page header. Select more cards, then click it to download them together.
 * On the connector's detail page, its row in the rail also has a **⋯** menu with **Export All** and **Import**.
 
 <figure><img src="../../.gitbook/assets/connectors-export-selected.webp" alt="The catalog header with an Export Selected (1) button between Request connector and Create connector, and the Docs Demo CRM card ticked"><figcaption><strong>Export Selected (n)</strong> appears once a card is selected.</figcaption></figure>
 
-The download is named `connectors-bundle-<date>.json`, for example `connectors-bundle-2026-10-08.json`:
+**Export Selected (n)** downloads a file named `connectors-bundle-<date>.json`, for example `connectors-bundle-2026-10-08.json`:
 
 ```json
 {
@@ -84,6 +85,8 @@ The download is named `connectors-bundle-<date>.json`, for example `connectors-b
   ]
 }
 ```
+
+A single-connector `<slug>-bundle.json` is flat: `connector`, `actions`, `webhookConfigs`, `authProviders` and `appRegistrations` sit at the top level, with no `connectors` array.
 
 Each entry carries the connector's definition, its actions, its webhook configs, its auth providers and its app registrations. Connections are never included. If the connector has its own OAuth app, open the file and check the `authProviders` entries before sharing it. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
 

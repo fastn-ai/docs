@@ -95,5 +95,5 @@ If you belong to more than one Claude workspace (for example Personal and a Team
 * **Claude Code or the Claude desktop config file.** These are set up separately: see [Claude Code](claude-code.md).
 
 {% hint style="info" %}
-This page is for your own team. Your customers reach their integrations from Claude a different way: see [Connecting Claude and other AI clients](../../tutorials/end-user/connecting-claude.md).
+This page is for your own team. Your customers reach their integrations from Claude a different way: see [Connect Claude and other AI clients](../../tutorials/end-user/connecting-claude.md).
 {% endhint %}

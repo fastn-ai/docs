@@ -4,7 +4,7 @@ description: Onboarding step 2. Choose the integrations your customers get insid
 
 # Choose integrations
 
-This step is for choosing the integrations your customers get inside your product, and building the first one. You pick a system your customers use and say what the integration should do; fastn's agent (**Build with AI**) builds it. An integration is connectors plus a workflow: it moves data between your product and the customer's system and does a job there.
+This step is for choosing the integrations your customers get inside your product, and building the first one. You pick a system your customers use and say what the integration should do; fastn's agent (**Build with AI**) builds it. An integration is a connector, a connection, its triggers and the workflow logic around them: it moves data between your product and the customer's system and does a job there.
 
 **Why:** customers ask for integrations as jobs, not connectors. Not "a HubSpot connector", but "when a shipment is created, add it to our HubSpot". What you choose here is what they find in your widget.
 

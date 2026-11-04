@@ -4,7 +4,7 @@ description: "Every other fastn API operation from the SDK: by area, by name wit
 
 # Any other operation
 
-The pages before this one cover the common flow. The SDK also has a method for every other operation of the fastn API that your key can call.
+The pages before this one cover the common tasks. The SDK also has a method for every other operation of the fastn API that your key can call.
 
 ### By area
 

@@ -60,7 +60,7 @@ Neither mode is a sandbox. A Test key reaches the same live connections as a Liv
 
 **Permissions \*** takes one preset. Under **Roles**: **Admin** (offered only to callers who can grant full access, that is an owner, admin or platform admin), **Developer**, **Operator**, **Viewer** (the default) and **End User**. Under **Key presets**: **Embed backend** (for your server: mints embed tokens and registers customers on first use; the right choice for a backend behind `@fastn-ai/embed`) and **Custom** (only the permissions you tick). The role presets borrow the names of the people roles on [Roles](roles.md). Choose the narrowest that works: a key that only reads should stay on Viewer.
 
-Whichever preset you pick, the **What it can touch** matrix below shows exactly what it grants, and **Custom** lets you set each box yourself. Eleven resource groups:
+For every preset except **Admin**, the **What it can touch** matrix below shows exactly what it grants, and **Custom** lets you set each box yourself. **Admin** grants full access, so the matrix is hidden. Eleven resource groups:
 
 | Resource        | Permissions                                                     |
 | --------------- | ----------------------------------------------------------------- |

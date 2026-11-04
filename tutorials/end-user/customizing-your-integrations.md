@@ -101,7 +101,7 @@ If you're not sure how to adjust the configuration yourself, click the round spa
 
 ### Viewing workflows
 
-Workflows live inside each integration. Click **Manage** on an integration to see its **Workflows** list. Click a workflow's chevron to open its details, which start on **Executions** (its run history). A **Diagram** tab showing the workflow step by step appears only if your provider turned it on.
+Workflows live inside each integration. Click **Manage** on an integration to see its **Workflows** list. Click a workflow's row to open its details, which start on **Executions** (its run history). A **Diagram** tab showing the workflow step by step appears only if your provider turned it on.
 
 ### Troubleshooting
 

@@ -121,7 +121,7 @@ Run it against one customer first, and read the [sync report](../operate/sync-re
 
 **The problem.** You want failures posted to *your* Slack, not the customer's.
 
-**The shape.** Use a Slack connection your organization owns (one created from **New connection** and scoped `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
+**The shape.** Use a Slack connection your organization owns (its detail page shows the scope `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
 
 For failure notification specifically, an [alert](../operate/alerts.md) with a Slack destination is simpler than building it into the workflow, and it also catches the case where the workflow itself never ran.
 

@@ -17,7 +17,7 @@ The **Organization** card holds:
 
 **Name** - How your company appears across the platform.
 
-**Timezone** - Used for scheduled triggers and activity timestamps.
+**Timezone** - Sets the default timezone for new schedules. Dates elsewhere are shown in each viewer's own timezone.
 
 The **Joining by email domain** card lets people sign up and ask to join instead of waiting for an invite:
 
@@ -43,10 +43,10 @@ fastn has these system roles. **Settings → Roles** counts each role's permissi
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Owner**     | 44          | Everything an Admin can do, plus managing admins and transferring ownership. One per organization.                    |
 | **Admin**     | 44          | Full access within the organization and its customers: connectors, workflows, customers, billing, settings.          |
-| **Developer** | 36          | Builds and deploys connectors, workflows and agents. No billing, people management or audit log.                     |
+| **Developer** | 36          | Builds and deploys connectors and workflows, and uses Build with AI. No billing, people management or audit log.                     |
 | **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only.                                                      |
-| **Viewer**    | 6           | Read-only access to connectors, connections, workflows, agents, widgets and events. Not executions, users, settings or secrets. |
-| **End User**  | 35          | The role for people at your customers using the embedded widget: create connections and run agents inside their own customer. |
+| **Viewer**    | 6           | Read-only access to connectors, connections, workflows, widgets, events and the Unified API. Not executions, users, settings or secrets, and no AI assistant. |
+| **End User**  | 35          | The role for people at your customers using the embedded widget: create connections and use the widget's assistant inside their own customer. |
 
 To see the full permission breakdown or build your own role, go to **Settings → Roles** and click **Create custom role**. A custom role is based on a system role and can't go beyond it.
 
@@ -65,7 +65,7 @@ From this page you can view customer details and monitor their integrations. Per
 
 1. Go to **Settings → Billing**.
 2. At the top is your plan: its name and price, with **See plans** (on Launch) or **Request plan change**.
-3. The **Limits** card lists each limit with its name, a usage bar, used against the cap, and the percentage used. Going over stops new work rather than charging you, and nothing already running is interrupted.
+3. The **Limits** card lists each limit with its name, a usage bar, used against the cap, and the percentage used. For most limits, going over stops new work rather than charging you, and nothing already running is interrupted. The exception is customer connections on Scale: past the 10 included, each extra one is billed rather than refused.
 
 Key limits on the **Launch** plan:
 
@@ -73,7 +73,7 @@ Key limits on the **Launch** plan:
 | ----------------------------------------------- | ----------------- |
 | Events per day                                  | 500               |
 | API calls per day                               | 1,000             |
-| API requests per minute (API key and embed calls) | 100             |
+| API requests per minute (a rate limit per organization, not shown on the Limits card) | 100 |
 
 There is no events-per-minute cap on Launch unless an admin sets one.
 

@@ -55,7 +55,7 @@ The line under each integration's name tells you where it stands:
 3. Click **Connect**. A setup wizard opens and walks you through each account the integration needs.
 4. When you connect an account, a popup opens with the app's own sign-in screen - the app's login page, not the product's and not fastn's.
 5. Sign in with your account on that app.
-6. Review the permissions being requested and click **Authorize** (or "Allow"; the wording is the app's).
+6. Review the permissions being requested and approve them. The button wording is the app's own, for example Authorize or Allow.
 7. The popup closes and you're back in the wizard. When setup finishes, the integration's detail view opens, and in the list its button now reads **Manage**. When every account it needs is signed in, its status reads **Connected**.
 
 ### What happens during authorization
@@ -79,13 +79,13 @@ Click **Manage** on an integration you've set up. The detail view lists your set
 Each connection is independent: connecting Slack doesn't affect your Shopify connection, and removing one doesn't remove the others.
 
 * **Another setup of the same integration:** open the integration and click **New installation**. This button appears only when the integration allows more than one setup; many allow just one.
-* **A different account on the same app** (for example a second Slack workspace): in a setup's account picker, choose **Connect new account**.
+* **A different account on the same app** (for example a second Slack workspace): each setup holds one account per app. Remove the current account with **Delete connection**, then click that app's **Connect** button in the setup to sign in with the other account. To keep both accounts, add another setup with **New installation**, where the integration allows it.
 
 ### Removing an integration
 
 1. Open the widget and click **Manage** on the integration.
-2. Click **View** on the installation you want to remove.
-3. Click the trash icon (**Delete installation**) and confirm **Delete installation** in the dialog.
+2. On the installation you want to remove, click the trash icon (**Delete installation**). It is on the installation's header, so you don't need to expand it with **View** first.
+3. Confirm **Delete installation** in the dialog.
 
 This removes that installation and its configuration. Your signed-in accounts usually stay; only for some apps does the product remove the account too, and in that case the dialog warns you that anything using that connection stops working until someone reconnects it.
 

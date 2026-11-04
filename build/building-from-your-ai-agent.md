@@ -4,7 +4,7 @@ description: What your own AI agent does after you ask it for an integration, wh
 
 # Building from your AI agent
 
-Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever agent you use, it follows fastn's integration-builder playbook, which fastn serves to your AI tool and can update over time. A typical run looks like this, with something for you to approve along the way.
+Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever agent you use, it follows fastn's integration-builder playbook, which fastn serves to your AI tool and can update over time. A typical run looks like the one below, with something for you to approve along the way. The exact steps come from the playbook, so they can differ from this table as fastn updates it.
 
 | Step | What the agent does | What you do |
 | --- | --- | --- |
@@ -12,7 +12,7 @@ Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/READ
 | 2. Plan | Picks the connectors and recommends a plan | Answer its business questions; the recommendation is pre-selected |
 | 3. Map (only when data moves between systems) | Proposes field mappings and filters | Approve them on the review page it links to |
 | 4. Test cases | Writes acceptance tests for the whole integration | Approve them on the review page; this is the go-ahead to build |
-| 5. Build | Builds, tests and publishes each workflow, sets its trigger, and creates one widget | Confirm how often it runs, and any test that writes more than a couple of live records |
+| 5. Build | Builds, tests and publishes each workflow, sets its trigger, and can set up a widget | Confirm how often it runs, and any test that writes more than a couple of live records |
 | 6. Verify | Runs the approved tests and checks real runs | Read its report: what's running, what passed, what's left |
 
 If an account isn't connected yet, the agent stops and sends a connect link. Enter credentials there, never in the chat.

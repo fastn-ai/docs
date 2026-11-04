@@ -220,7 +220,7 @@ const inWindow = await meetings.search({
 
 `search` takes the fields to match as one object. Which fields an app can search by depends on its mapping, for example `email` or `phone` for a CRM contact, and a time window plus `query` text for a meeting.
 
-Answer: `{ records: [ … ], hasMore, provider }`. No match gives `{ records: [], hasMore: false }`. A search answers one page: the route has no cursor, so narrow the filters or raise `page_size` to see more; `list` pages.
+Answer: `{ records: [ … ], hasMore, provider }`. No match gives `records: []`. `hasMore` is `false` when the app's search mapping has a cursor and it came back empty, and `null` (with a `warnings` entry) when the mapping declares no cursor, so fastn cannot tell whether results were cut off. A search answers one page: the route has no cursor, so narrow the filters or raise `page_size` to see more; `list` pages.
 
 ---
 
@@ -250,7 +250,14 @@ Get `connectionId` from `customer.connections()` or the `connection.connected` e
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | This app does not support the operation for this entity (check `providers()`). Use a [direct app action](app-actions.md) instead. |
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has no active connection for any app mapped to this entity (or for the `provider` you named). Send a setup link. |
 | `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. |
+| `409 UNIFIED_CONNECTION_EXPIRED` | The connection's login expired. The customer has to sign in to the app again. |
 | `409 UNIFIED_MULTIPLE_PROVIDERS` | Several apps are connected and the call needs one: pass `provider`. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request, for example a record id that does not exist (or was archived), or a field the app requires. What the app said is in `e.body.providerStatus` (its HTTP status) and `e.body.providerError` (its message). |
+| `400 UNIFIED_PROVIDER_REJECTED` | The app refused what you sent, for example a duplicate or a value it does not accept. |
+| `401 UNIFIED_PROVIDER_AUTH_FAILED` | The app refused the connection's credentials. The customer has to reconnect the app. |
+| `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id on a get, update or delete, for example one that was deleted or archived. |
+| `429 UNIFIED_PROVIDER_RATE_LIMITED` | The app's own rate limit was hit. Retry later. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer), or fastn's connector platform refused the call. |
+
+For the `UNIFIED_PROVIDER_*` codes, what the app said is in `e.body.providerStatus` (its HTTP status) and `e.body.providerError` (its message), when the app answered.
 
 The full list of error fields is on [Errors, retries and options](errors-and-options.md#errors).

@@ -109,8 +109,6 @@ To have the agent change them, type into **Feedback (optional)...** and click **
 
 The agent builds and tests the workflow, binds its trigger, and summarizes what it built: the workflow, the trigger, the field mappings and the test results.
 
-> **GIF needed:** Full sequence - typing a prompt, agent analyzing, setting up auth, showing field mappings, generating test cases, final summary. (This is the hero visual for this page - should be \~15-20 seconds showing the AI doing the work.)
-
 ### Iterating on the workflow
 
 To change what the agent built, send a follow-up in the same session, such as:

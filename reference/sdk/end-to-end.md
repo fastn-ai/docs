@@ -19,7 +19,7 @@ Keep every fixed value in one place.
 | Value | Where it is used |
 | ----- | ---------------- |
 | Base URL `https://api.fastn.dev` | The client. It is the default. |
-| API key `fsk_live_…` | Every call. Create it on [API keys](../../manage/api-keys.md). It is a password: secret store only. |
+| API key `fsk_live_…` | Every call. Create it on [Embed → API keys and MCP](../../manage/api-keys.md). It is a password: secret store only. |
 | Webhook secret `whsec_…` | Checking that an event really came from fastn (2.1). You get it once, when you register the webhook. |
 | Package `@fastn-ai/sdk` 0.5.1 or newer, Node.js 20 or newer | `npm install @fastn-ai/sdk` |
 
@@ -227,6 +227,7 @@ Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a f
 | `400 UNIFIED_VALIDATION_FAILED` | A required field is missing or a field is unknown. | The message names the field. |
 | `400 SETUP_LINK_REDIRECT_NOT_ALLOWED` | `redirectUrl` is not registered. | Register it in the dashboard first (2.2). |
 | `404 CONNECTION_NOT_FOUND` | The account id is not one of this customer's. | Read `customer.connections()`. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request. | `e.body.providerStatus` and `e.body.providerError` say why. |
+| `400 UNIFIED_PROVIDER_REJECTED`, `401 UNIFIED_PROVIDER_AUTH_FAILED`, `404 UNIFIED_PROVIDER_NOT_FOUND`, `429 UNIFIED_PROVIDER_RATE_LIMITED` | The app refused the request. | `e.body.providerStatus` and `e.body.providerError` say why. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer). | Retry later. |
 
 Every failure is a `FastnApiError` with `status`, `code`, `message` and `requestId` (quote it when you ask for help), or a `FastnNetworkError`. The full list is on [Errors, retries and options](errors-and-options.md).

@@ -55,7 +55,7 @@ On a new workflow there are three tabs:
 * **Connectors** - the connectors the workflow calls
 * **Contract** - the input and output contract
 
-Once the workflow is saved, more tabs appear (Diagram, Test cases, Executions, Sync reports, API and others). There is no Docs tab; the runtime reference is in the code editor's autocomplete and in [Workflow runtime API](../../reference/workflow-runtime.md).
+Once the workflow is saved, more tabs appear (Diagram, Test cases, Executions, Sync reports, API and others). Diagram has a **Docs** view, but it documents this workflow, not the runtime; the runtime reference is in the code editor's autocomplete and in [Workflow runtime API](../../reference/workflow-runtime.md).
 
 The Test tab has:
 

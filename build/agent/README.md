@@ -12,7 +12,7 @@ The agent is the primary way integrations get built in fastn, and there are two 
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
 
-What it drafts is JavaScript: a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](../workflows/README.md) for you to read, test and publish.
+What it drafts is JavaScript: a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](../workflows/README.md) for you to test and publish. You can read the code there only where code view is switched on for your organization; where it is off, the editor shows diagrams and docs, and you change the workflow through the agent.
 
 ### Sessions
 
@@ -62,7 +62,7 @@ Generated test cases land on the editor's **Test cases** tab, in groups the agen
 
 ### The integration plan
 
-Before building, the agent writes an **Integration Plan**: an actual markdown document (named for the integration, such as `plan-hubspot-to-sheets.md`) that opens in a side panel. It sets out the trigger, the actions and connectors involved, a field-mapping table with a worked example per row, and a tenancy section. Its header has a **download** button, so the plan can be reviewed or circulated before anything is created.
+Before building, the agent writes a plan: a markdown document that opens in a side panel. The agent writes it for each integration, so its name and sections vary, but it typically sets out the trigger, the actions and connectors involved, and how fields map between the systems. Its header has a download icon (**Download document**), so the plan can be reviewed or circulated before anything is created.
 
 Read it. It is the cheapest place to catch a wrong assumption: correcting a mapping here costs a sentence; correcting it after the workflow is generated costs a rebuild.
 
@@ -85,7 +85,7 @@ Where your brief is ambiguous, the agent asks rather than guesses, rendering the
 
 ### Reading what it did
 
-The agent's tool calls collapse into a single summary line in the chat: **Worked · 3 steps**, with **Show details** to expand the individual calls. Documents it produces appear as artifact chips (for example *Field Mappings & Connectors*) that reopen the full panel.
+The agent's tool calls collapse into a single summary line in the chat: **Worked · 3 steps**, with **Show details** to expand the individual calls. Documents it produces appear as artifact chips that reopen the full panel.
 
 Two counters are worth watching: the **context meter** beside the composer (`19k / 1000k`) shows how much of the session's context window the conversation has consumed, and **AI credits** in the top bar show what is left of your quota. The credits badge is shown to Owners and Admins only.
 
@@ -105,7 +105,7 @@ The agent updates code, mappings and test cases together, so they do not drift a
 **Attach a file** accepts an API spec, a sample payload, a field-mapping spreadsheet. Giving the agent a real payload is the single fastest way to get accurate mappings.
 
 {% hint style="info" %}
-Agent usage draws on the AI credits shown in the top bar (visible to Owners and Admins): click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, naming the ones doing this work: *Orchestrator V2 Orchestrator*, *Docs Agent*, *Error Diagnosis* and *Orchestrator V2 Title*. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
+Agent usage draws on the AI credits shown in the top bar (visible to Owners and Admins): click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, listing each fastn agent that used credits in the period. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
 {% endhint %}
 
 {% hint style="warning" %}

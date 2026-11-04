@@ -44,19 +44,15 @@ Three sub-tabs.
 
 **Sequence**: the same logic as an ordered list of phases.
 
-**Docs**: generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**.
+**Docs**: generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**. Docs are generated when you first open them, not on every save. You can **Edit** and **Save** either document; your version is kept separately, shows an **Edited** badge, survives regeneration, and **Reset to generated** discards it.
 
 The end-user document has nine sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*, *Related links*.
 
-{% hint style="info" %}
-Generating or regenerating these docs consumes AI credits from your organization's allowance.
-{% endhint %}
-
 #### Test cases
 
-Two tabs sit here, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
+The editor's **Test cases** tab shows the suite itself: a header with the case count, **+ New group** and **Refresh**, then the cases. On the workflow detail view (it opens when you select **Run** on a workflow's row) the same suite sits under two tabs, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
 
-**Who writes them.** Build with AI generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. It asks you to approve that suite before attaching it, rather than attaching it silently. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
+**Who writes them.** Build with AI generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
 
 A case is three fields and a mode:
 
@@ -67,9 +63,9 @@ A case is three fields and a mode:
 | **Pass criteria** | What has to be true for the case to pass. Required. |
 | **Mode** | `MOCK` (the default) or `LIVE`. This is the badge on the row. |
 
-**Who runs them.** The workflow validator agent does, not you and not the Run button. Until it has run, the **Validation** tab reads *Not validated yet. The workflow validator agent will populate this tab after it runs against the test cases.* Once it has, that tab carries the status, the mode it ran in, when it ran, and a result for each case against the total.
+**Who runs them.** The workflow validator agent does, not you and not the Run button. Until it has run, the **Validation** tab on the detail view reads *Not validated yet. The workflow validator agent will populate this tab after it runs against the test cases.* Once it has, that tab carries the status, the mode it ran in, when it ran, and a result for each case against the total.
 
-The pass, fail and untested counters in the **Test Cases** header reflect that last validation run. **Untested** means the validator has not reached that case, not that the case failed.
+The pass, fail and untested counters above the list reflect that last validation run. **Untested** means the validator has not reached that case, not that the case failed.
 
 {% hint style="info" %}
 **`LIVE` and `MOCK` are set per case, and `MOCK` is the default.** A `MOCK` case is served from stored mock stubs and never reaches the third-party API; a `LIVE` case makes real calls. A suite that is entirely `MOCK` proves your logic, not your connections, so promote the few cases that actually matter to `LIVE` before you trust a green run.
@@ -97,7 +93,7 @@ How to call this workflow over HTTP, with a copyable curl:
 POST https://api.fastn.dev/api/v1/workflows/<wfId>/execute
 ```
 
-Two headers steer it (`X-fastn-Test-Mode` and `x-fastn-env`) and you authenticate with an API key in the `fsk_live_…` format. Covered in full in the [HTTP API reference](../../reference/api.md).
+Two headers steer it (`X-fastn-Test-Mode` and `x-fastn-env`) and you authenticate with an API key. The copied curl uses a test key (`fsk_test_<your-key>`) with `X-fastn-Test-Mode: true` and `x-fastn-env: test`; with a live key (`fsk_live_<your-key>`), drop the test-mode header. Covered in full in the [HTTP API reference](../../reference/api.md).
 
 #### Where the runtime reference lives
 

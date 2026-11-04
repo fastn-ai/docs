@@ -146,7 +146,10 @@ try {
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has not connected an app for this entity. | Send a [setup link](connecting-apps.md#setup-links). |
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | The app does not offer that operation for this entity. | Use a [direct app action](app-actions.md). |
 | `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. | Stop using it; pick a connection from `customer.connections()`. |
+| `409 UNIFIED_CONNECTION_EXPIRED` | The connection's login expired. | Ask the customer to sign in to the app again. |
+| `400 UNIFIED_PROVIDER_REJECTED` | The app refused what you sent. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); fix the fields. |
+| `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id. | Check the record id. |
 | `422 IDEMPOTENCY_KEY_REUSED` | The same `idempotencyKey` was used for a different request. | Use a new key for a new request. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); check the record id or fields. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer), or fastn's connector platform refused the call. | Retry later; `e.body.providerStatus` and `e.body.providerError` hold what the app said, when it answered. |
 
 See [Unified records](unified-records.md#errors-from-unified-calls) for every unified code, and [Errors and failure states](../errors.md) for failures you see in the dashboard.

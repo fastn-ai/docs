@@ -46,7 +46,7 @@ A workflow is a JavaScript module. The editor holds one file, `<slug>.js`, and i
 
 ```javascript
 export default async function (ctx) {
-  // ctx.input, ctx.headers, ctx.connectors
+  // ctx.input, ctx.headers (connectors are called as fastn.connector.<slug>.<action>())
 }
 ```
 

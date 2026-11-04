@@ -6,9 +6,9 @@ description: >-
 hidden: true
 ---
 
-# SaaS Admin
+# Tutorials for your team
 
-These tutorials are for the person responsible for fastn inside a SaaS company typically are at a COO role or overseeing a SaaS product as a product manager or do not want to get in deep with the technicalities. You'll configure the platform, preview and publish the integration experience, and manage your customers.
+These tutorials are for the person responsible for fastn inside your company, often someone in operations or a product manager who would rather not go deep into the technical details. You'll configure the platform, preview and publish the integration experience, and manage your customers.
 
 **Prerequisites:** Complete the Getting Started section first. These tutorials assume you have a fastn account and have completed onboarding (Connect your product, Choose integrations, Embed the widget, Customers connect and customize).
 

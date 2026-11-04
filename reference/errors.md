@@ -81,10 +81,10 @@ Every run ends in one of these. They are the filter chips on [Executions](../ope
 | **Running** | In progress | - |
 | **Completed** | Finished successfully | [Sync reports](../operate/sync-reports.md), if the data looks wrong |
 | **Failed** | Threw, or a dependency refused | The Error tab, as above |
-| **Timeout** | The tier's budget ran out | [Traces](../operate/traces.md): one slow call, or hundreds? |
+| **Timed out** | The tier's budget ran out | [Traces](../operate/traces.md): one slow call, or hundreds? |
 | **Cancelled** | Stopped before finishing | - |
 
-**Failed and Timeout are different problems.** Failed means something was wrong; Timeout means nothing was necessarily wrong except the clock. Do not raise the timeout on a Failed run. It will fail identically, just later.
+**Failed and Timed out are different problems.** Failed means something was wrong; Timed out means nothing was necessarily wrong except the clock. Do not raise the timeout on a Failed run. It will fail identically, just later.
 
 ### Out of memory
 

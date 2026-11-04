@@ -43,3 +43,6 @@ Moved out of the published pages on 2026-11-04 so readers no longer see writer n
 
 ## tutorials/saas-admin/setting-up-your-organization.md
 - line 32: > **Screenshot:** Settings → General showing Organization Name, Timezone, Domain & Access Control, and the Company Research Report card with the "View research report" button.
+
+## tutorials/saas-admin/configuring-a-connector.md
+- > &#x20;**GIF needed:** Using Build with AI - entering a connector name, watching it discover the API and build actions.

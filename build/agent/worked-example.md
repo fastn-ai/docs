@@ -89,7 +89,7 @@ Below that sits a **Field Mapping** table with a worked example per row, and a *
 | Email (`email`) | Email | jane.doe@example.com |
 | Company (`company`) | Company | Acme Corp |
 
-The panel header carries a **download** button: the plan is a portable artifact, useful for review before you let it build.
+The panel header carries a download icon (**Download document**): the plan is a portable artifact, useful for review before you let it build.
 {% endstep %}
 
 {% step %}
@@ -126,7 +126,7 @@ This is the moment to correct it. Replying *"put first and last name in separate
 {% step %}
 #### Then test and publish as usual
 
-What the agent hands over is an ordinary workflow. It opens in the [workflow editor](../workflows/README.md) as a `<slug>.js` module, its generated scenarios sit on the **Test cases** tab, and you run it from the **Test** tab. Publishing a snapshot and deploying it are the same steps as for anything you wrote by hand. See [Lifecycle](../workflows/lifecycle.md).
+What the agent hands over is an ordinary workflow, a `<slug>.js` module. It opens in the [workflow editor](../workflows/README.md) (the code itself is shown only where code view is switched on for your organization), its generated scenarios sit on the **Test cases** tab, and you run it from the **Test** tab. Publishing a snapshot and deploying it are the same steps as for anything you wrote by hand. See [Lifecycle](../workflows/lifecycle.md).
 {% endstep %}
 {% endstepper %}
 

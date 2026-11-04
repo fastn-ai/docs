@@ -39,7 +39,7 @@ The name field is replaced by a line saying so, rather than being greyed out. De
 
 Changing plan never deletes a tag. If a new plan allows fewer than you already have, **you keep all of them** and simply cannot add another until you delete down to the new number. The panel says how many that is.
 
-A full registry also affects workflows arriving from a prebuilt integration. Their tags are recreated by name in your organization, so when there is no room left the workflow lands without that label, or uncategorised, and the result says which tag it could not create.
+A full registry also affects workflows arriving from a prebuilt integration. Their tags are recreated by name in your organization, so when there is no room left the workflow lands without that label, or uncategorized. For a category, the result says which one it could not create.
 
 ## Attaching one to a workflow
 

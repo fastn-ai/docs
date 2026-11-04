@@ -4,7 +4,7 @@ description: "The Create a connector dialog field by field: identity, protocol, 
 
 # Creating a connector
 
-**Create connector → From scratch** (top right of the catalog), or **+** at the top of the connector rail on a detail page, opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.*
+**Create connector → From scratch** (top right of the catalog) opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.* The **+** at the top of the connector rail on a detail page opens a separate create dialog. Its footer stays blank once you enter a name, and its **Protocol** list offers only `REST` and `MCP` for most users.
 
 <figure><img src="../../.gitbook/assets/connectors-create-dialog.webp" alt="The Create a connector dialog: Identity section with Name, Slug and Description; Connection section with Protocol set to REST, Visibility set to Private, Domain and Icon URL; Authentication section with an OAuth 2.0 method; the Create connector button is disabled and the footer reads Give it a name to continue"><figcaption>The dialog as it opens. <strong>Create connector</strong> stays disabled until the connector has a name.</figcaption></figure>
 
@@ -17,7 +17,7 @@ You rarely need to build a connector by hand. Describe the app to [Build with AI
 | Field | Required | Notes |
 | --- | --- | --- |
 | **Name** | Yes | What people see on the card and in the widget. Placeholder: `Salesforce`. |
-| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* It must be camelCase: start with a lowercase letter, then letters and digits only, for example `acmeCrm`. Hyphens, spaces and underscores are rejected with *Request validation failed*. |
+| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* In this dialog, use a lowercase letter followed by lowercase letters and digits only, for example `acmecrm`. The form blocks capital letters, spaces and underscores before you submit, so a slug derived from a two-word name (such as `acmeCrm` from *Acme CRM*) has to be edited to all lowercase. Hyphens pass the form but are rejected by the API with *Request validation failed*. |
 | **Description** | No | Shown on the card. Build with AI also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
 
 ### Connection
@@ -64,7 +64,7 @@ Each method is one block. **Add method** adds another block, so one connector ca
 | **OAuth 2.0** (default) | `OAUTH_2` | **Use Dynamic Client Registration (DCR)** (RFC 7591), and **Additional OAuth Config**, a list of extra key/value settings sent with the OAuth flow. The OAuth app itself (client ID and secret) is added afterwards as an [auth provider](auth-methods.md). |
 | **Custom** | `INPUT` | An empty Configuration. You define every field the user must enter, for example an account subdomain plus a token. |
 
-The **Stored as** value is what appears in the **Auth** column on the [Connections](../connections/README.md) page and on the connector's header line.
+The **Stored as** value is the type saved with the auth method, for example in an exported bundle. The **Auth** column on the [Connections](../connections/README.md) page and the connector's header line show readable labels instead, such as *OAuth 2.0*, *API key* or *Custom*.
 
 #### The Configuration editor
 
