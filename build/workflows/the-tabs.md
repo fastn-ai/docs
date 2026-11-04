@@ -13,7 +13,7 @@ Two JSON editors, `ctx.input` and `ctx.headers`. **Use contract** fills the inpu
 | Mode             | What runs                            |
 | ---------------- | -------------------------------------- |
 | **Live**         | Real calls to the connected systems.  |
-| **Partial Mock** | A mix of real calls and stubs.        |
+| **Partial Mock** | Live where the connector has an active connection, a stored mock stub where it does not. |
 | **Fully Mock**   | Stubs only.                           |
 
 Then **Run Live** (or **Run**).
@@ -52,7 +52,28 @@ Generating or regenerating these docs consumes AI credits from the workspace all
 
 #### Test cases
 
-Scenarios generated during the build, organised into groups: `happy-path`, `pagination`, `fields`, `edge-cases`, `error-handling`. The header carries pass, fail and untested counters. Each row is an id such as `TC-01`, a `LIVE` or `MOCK` badge, and the expectation.
+Two tabs sit here, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
+
+**Who writes them.** The AI builder generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. It asks you to approve that suite before attaching it, rather than attaching it silently. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
+
+A case is three fields and a mode:
+
+| Field | Notes |
+| ----- | ------- |
+| **Group** | Free text, with existing groups suggested. Left blank it becomes `Ungrouped`. |
+| **Scenario** | What is being exercised. |
+| **Pass criteria** | What has to be true for the case to pass. Required. |
+| **Mode** | `MOCK` (the default) or `LIVE`. This is the badge on the row. |
+
+**Who runs them.** The workflow validator agent does, not you and not the Run button. Until it has run, the **Validation** tab reads *Not validated yet. The workflow validator agent will populate this tab after it runs against the test cases.* Once it has, that tab carries the status, the mode it ran in, when it ran, and a result for each case against the total.
+
+The pass, fail and untested counters in the **Test Cases** header reflect that last validation run. **Untested** means the validator has not reached that case, not that the case failed.
+
+{% hint style="info" %}
+**`LIVE` and `MOCK` are set per case, and `MOCK` is the default.** A `MOCK` case is served from stored mock stubs and never reaches the third-party API; a `LIVE` case makes real calls. A suite that is entirely `MOCK` proves your logic, not your connections, so promote the few cases that actually matter to `LIVE` before you trust a green run.
+{% endhint %}
+
+None of this is the [Test](#test) tab above. **Test** runs one payload you type, once, right now. **Test cases** are a saved suite the validator agent runs against the whole workflow.
 
 #### Executions
 
