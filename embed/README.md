@@ -77,7 +77,7 @@ Your AI tool can set up the customer-facing side too:
 
 ## The widget screen
 
-**Widgets**
+**Embed → Widget** · `/widgets`
 
 Everything under Build exists so that this screen can do its job. The widget is the only part of fastn your customers ever touch: they browse the integrations you offer, authorise their own accounts, and configure what syncs: inside your product, under your branding.
 
@@ -91,7 +91,7 @@ Two pages cover it:
 
 ### There is no widget list
 
-**Widgets** in the sidebar opens `/widgets`, which *is* the builder. There is no separate list page: the **INTEGRATIONS** panel inside the builder is the list of what your widget offers. A **Live** badge appears in the builder header once the widget has been saved.
+**Widget** in the sidebar opens `/widgets`, which *is* the builder. There is no separate list page: the **INTEGRATIONS** panel inside the builder is the list of what your widget offers. A **Live** badge appears in the builder header once the widget has been saved.
 
 ### The preview
 
