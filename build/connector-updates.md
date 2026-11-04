@@ -6,8 +6,6 @@ description: When an app you connect to changes something your workflows depend 
 
 **Operate → Health → Pending updates** · `/health?tab=updates`
 
-<figure><img src="../.gitbook/assets/connector-updates.jpg" alt="The Pending updates page in its empty state, with a Show 1 already handled link that brings resolved proposals back into view"><figcaption>Nothing outstanding: the handled count is the only sign anything ever landed here.</figcaption></figure>
-
 Vendors deprecate endpoints, change parameter names and alter response shapes. Normally you find out when a sync starts failing. fastn watches for these changes, works out what the fix is, and files a proposal here. The page states its own promise:
 
 > When an app you connect to changes something your workflows depend on, it lands here, with any patch the maintainer agent proposes. Nothing is applied until you accept it.

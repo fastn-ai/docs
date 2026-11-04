@@ -18,8 +18,6 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 
 ### The config table
 
-<figure><img src="../../.gitbook/assets/connector-tab-webhook-config.webp" alt="The HubSpot Webhook config tab with a New config button and a table with columns Type, Events, Registered, Subscription, Unsubscription, Created and Actions; one row: App, 28 events, 15/28, Defined, Defined, Jun 2, 2026"><figcaption>HubSpot has one config of type App.</figcaption></figure>
-
 | Column | Meaning |
 | --- | --- |
 | **Type** | **App**: one webhook for the whole app. **Event Webhook**: one webhook per event. A **Hidden** badge means the config is switched off as a trigger source. |
@@ -29,17 +27,11 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 | **Created** | When the config was created. |
 | **Actions** | **Edit**, **Execute** and **Delete**, on connectors your workspace owns. Empty on managed connectors. |
 
-<figure><img src="../../.gitbook/assets/webhook-config-row-actions.webp" alt="The Webhook config tab of a custom connector with one config row: App, 1 event, 0/1, Defined, Defined, the created date, and the actions Edit, Execute and Delete"><figcaption>On a connector you own, each config row has <strong>Edit</strong>, <strong>Execute</strong> and <strong>Delete</strong>.</figcaption></figure>
-
 * **Edit** opens **Edit webhook config** below the table, the same form as **New config** with **Update** instead of **Create**.
 * **Execute** runs the **Subscribe** snippet once with empty input and reports *Subscription executed successfully* when it works. It is disabled if the config has no Subscribe code.
 * **Delete** asks *Delete this webhook config?* in a browser confirmation, then removes it. The tab returns to *No webhook config yet* if it was the only one.
 
-<figure><img src="../../.gitbook/assets/webhook-config-edit.webp" alt="The Edit webhook config form open below the config table, with Available as a trigger source on, Type One webhook for the whole app, Auth provider None configured yet, Event key type, and the Subscribe snippet"><figcaption>Editing an existing config.</figcaption></figure>
-
 Until a connector has a config, the tab reads:
-
-<figure><img src="../../.gitbook/assets/connector-webhook-config-empty.webp" alt="The AbstractAPI Holidays Webhook config tab with a New config button and the empty state No webhook config yet: Until one exists, customers of this connector can be polled but cannot be notified. Most providers support one webhook for the whole app"><figcaption>Without a config, workflows can only poll this app.</figcaption></figure>
 
 > No webhook config yet · Until one exists, customers of this connector can be polled but cannot be notified. Most providers support one webhook for the whole app.
 
@@ -50,8 +42,6 @@ Webhook configs on **managed** connectors are maintained by fastn and are read-o
 ### The config form
 
 **New config** opens **New webhook config** below the config table, which stays visible; **Edit** on a row opens the same form filled in. **Cancel** (top right or bottom) closes it without saving.
-
-<figure><img src="../../.gitbook/assets/webhook-config-form-top.webp" alt="The New webhook config form on a custom connector: Available as a trigger source switched on, Type set to One webhook for the whole app, Auth provider reading None configured yet, an Event key field with placeholder event_type, and the Subscribe snippet editor with a Run button and a JavaScript template"><figcaption>The top of the form: general settings and the first snippet.</figcaption></figure>
 
 #### General
 
@@ -122,8 +112,6 @@ Tells fastn how to match an incoming event to the right customer. It is shown fo
 For HMAC, enter the provider's webhook signing secret in **Signing Secret**. The form's help text also notes that the shared secret is read from the `client_secret` of the connector's auth provider.
 
 A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request. When it is ticked, set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`) and **Response Field** (for example `challenge`), the field fastn echoes back.
-
-<figure><img src="../../.gitbook/assets/webhook-config-form-bottom.webp" alt="The bottom of the New webhook config form: Inputs webhookUrl and event with Hidden checkboxes and + Add Input, Get User Account Action with + Add Required Action, Webhook Verification with Method None, accept all requests and the Enable URL-verification challenge handshake checkbox, and the footer An event key is needed before this can be saved, with Cancel and Create"><figcaption>The bottom of the form. <strong>Create</strong> needs an event key first.</figcaption></figure>
 
 ### Saving
 

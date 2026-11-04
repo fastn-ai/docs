@@ -17,8 +17,6 @@ Once an organization holds more than a handful of workflows, the list stops bein
 
 A label is a tag you filter by, so a workflow can carry several: a sync can be both `Dev` and `Billing`. A category is where a workflow *lives*, so it only gets one, the way a file sits in one folder.
 
-<figure><img src="../.gitbook/assets/workflow-tags-settings.webp" alt="The Workflow tags page, reached from Workflow tags in the Settings menu. A Labels panel counts how many labels exist against the plan limit and holds one row, Dev, reading 1 workflow. A Categories panel carries the same counter and holds one row reading 1 workflow. Each row carries a colored dot before its name, and each panel ends with a color swatch, a name field and an Add button"><figcaption>Both panels carry a counter: how many you have defined, against the number allowed. Once the two match, the name field is replaced by a line saying so until you delete something.</figcaption></figure>
-
 ## Creating one
 
 Tags are created here and nowhere else. The page is the registry; workflows only attach what already exists.
@@ -51,8 +49,6 @@ Tags are attached from the workflow itself, on **Workflows**, not from this page
 Both are available when you create a workflow and when you edit an existing one. Both are disabled for roles that cannot manage workflows, so a read-only role sees the tags but cannot change them.
 
 ## Using them on the list
-
-<figure><img src="../.gitbook/assets/workflow-tags-list.webp" alt="The workflows list grouped by category, showing one named category group holding a single workflow and an Uncategorised group holding four. The workflow row carries a blue Dev label chip under its description"><figcaption>Labels render as chips on the row. Categories become the group headers.</figcaption></figure>
 
 Two controls sit above the list:
 

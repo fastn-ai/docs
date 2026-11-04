@@ -16,8 +16,6 @@ Everything below is what the agent did with it.
 
 Type the whole thing into **What should your customers be able to do?** on Home and send it. There is no need to name connectors, pick a trigger, or know what a workflow is yet.
 
-<figure><img src="../../.gitbook/assets/agent-session.jpg" alt="An agent session: the sent prompt at top right, a collapsed Worked · 3 steps summary beneath it, the Sessions rail on the left, and the Manual approval-mode chip under the composer"><figcaption>The session opens with your message at the top. The agent's tool runs collapse into <strong>Worked · 3 steps</strong>, <strong>Show details</strong> expands them.</figcaption></figure>
-
 The session is added to the **Sessions** rail on the left, named after your prompt, so you can leave and come back to it.
 
 Three things on this screen are worth knowing before you go further:
@@ -96,8 +94,6 @@ The panel header carries a download icon (**Download document**): the plan is a 
 #### It builds in tracked phases
 
 **Build progress** is the honest view of what is happening. It counts completed steps against the total (`0/6` → `2/6` → …) across the phases the agent has written steps into (up to four), each expandable into named substeps.
-
-<figure><img src="../../.gitbook/assets/agent-build-progress.jpg" alt="The Build progress tracker at 2 of 6: Use cases and Connectors marked Complete with green checks, Workflows in progress showing three substeps, and Widget pending; the chat on the left shows a Proposed Field Mappings message"><figcaption>Two phases complete. <strong>Workflows</strong> is mid-flight, its three substeps named. Note the chip now reads <strong>Auto</strong>.</figcaption></figure>
 
 | Phase | Substeps in this run |
 | ----- | -------------------- |

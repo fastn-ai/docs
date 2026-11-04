@@ -32,8 +32,6 @@ What Build with AI binds is the trigger-to-workflow connection. You still come t
 
 From **Add trigger**, choose **Webhook**.
 
-<figure><img src="../../.gitbook/assets/webhook-trigger-form.jpg" alt="The New webhook trigger dialog with Name and Description fields above a Routes section, an Add route button, and ROUTE 1 showing an unset Workflow select and Environment test (latest published)"><figcaption>Routes are required, a webhook with none has nowhere to send its payload.</figcaption></figure>
-
 | Field           | Notes                                                       |
 | --------------- | ------------------------------------------------------------- |
 | **Name**        | Required. Shown in the list and on every execution record.   |
@@ -69,8 +67,6 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 
 {% step %}
 #### Set the advanced options, if you need them
-
-<figure><img src="../../.gitbook/assets/webhook-advanced-options.jpg" alt="The webhook dialog scrolled to Max attempts 3 and Backoff strategy Exponential, with Advanced options open on Webhook ID, Authentication API Key, Execution mode Parallel and Deduplication key"><figcaption>Advanced options start collapsed; the defaults shown here suit most senders.</figcaption></figure>
 
 | Field                 | Notes                                                                                                                                    |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |

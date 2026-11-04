@@ -98,8 +98,6 @@ Opening a workflow opens a drawer laid out as **configuration on the left, the t
 
 Along the top: **Discard**, the workflow name, **Close tab**, **Save workflow** and **Publish**. Closing with unsaved edits asks first: *Discard unsaved changes?* / "\"\<name>\" has edits that have not been saved. Closing this tab throws them away." / **Keep editing** / **Discard changes**.
 
-<figure><img src="../../.gitbook/assets/workflow-config-panel.jpg" alt="The workflow Configuration panel scrolled to a Status toggle reading Enabled, a WHEN A RUN FAILS block with Retry policy and Escalate on timeout both off, and a PUBLISH &#38; DEPLOY section"><figcaption>Deploy to environment sits under Publish snapshot, with the latest version noted beneath it.</figcaption></figure>
-
 #### Configuration panel
 
 **Identity**

@@ -6,8 +6,6 @@ description: Three ways to put the widget in your product, and how to hand it a 
 
 **Embed → Widget → Embed**
 
-<figure><img src="../../.gitbook/assets/widget-embed.jpg" alt="The Embed tab with Iframe selected beside SDK and A2A soon, a USER selector set to NewTest, and an Embed Code block with a Copy button, beside a preview reading TikTok Shop, 0 of 1 connected"><figcaption>The preview follows the selected user, pick one and the panel shows that customer's real connection state, not a mock-up.</figcaption></figure>
-
 ## Pick the customer first
 
 The widget is always scoped to **one** of your customers, so the dropdown labelled **User** at the top is not a preview toggle. It decides who the generated snippet is for.

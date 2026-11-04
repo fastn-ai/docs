@@ -6,8 +6,6 @@ description: The code that runs on a trigger, a schedule, or an API call.
 
 **Integrations → Workflows** · `/integrations?tab=workflows`
 
-<figure><img src="../../.gitbook/assets/workflows-list.jpg" alt="The Workflows list with columns Workflow, Status, Latest, an environment column and Updated, one row badged 2 triggers off"><figcaption>Connect GitHub and Create workflow sit top-right; the pills filter by execution tier. An environment cell showing a dash means nothing is deployed there.</figcaption></figure>
-
 A workflow is JavaScript. One file, `<slug>.js`, exporting one function:
 
 ```javascript

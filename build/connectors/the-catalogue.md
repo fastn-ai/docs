@@ -6,8 +6,6 @@ description: "The Connectors page: header buttons, categories, search, filters, 
 
 `/integrations?tab=connectors` lists every connector your workspace can use: the ones fastn manages and the ones your workspace created.
 
-<figure><img src="../../.gitbook/assets/connectors-filter-connected.webp" alt="The Connectors page filtered to Connected, showing 4 connectors (Cin7 Core, Google Gmail, HubSpot and OpenAI), each badged Connected with an Add another connection button"><figcaption>The <strong>Connected</strong> chip narrows the list to connectors that have at least one active connection.</figcaption></figure>
-
 ### Page header
 
 | Button | What it does |
@@ -26,13 +24,9 @@ description: "The Connectors page: header buttons, categories, search, filters, 
 
 Filters combine. When you search, the category counts change to show how many matches each category holds.
 
-<figure><img src="../../.gitbook/assets/connectors-search-category.webp" alt="The Connectors page with the CRM and Sales category selected and the search box set to hub: the category list now shows All connectors 8 and CRM and Sales 1, and one card, HubSpot, is listed"><figcaption>A search combined with a category. The counts on the left now count matches only.</figcaption></figure>
-
 Because the filters are kept in the URL, you can bookmark or share a filtered view. The page number is not kept, so a shared link always opens on page one.
 
 If nothing matches, the page shows *No connectors match these filters* and *Try another search or category.*
-
-<figure><img src="../../.gitbook/assets/connectors-filter-empty.webp" alt="The Connectors page with the visibility filter set to Private and the message No connectors match these filters, Try another search or category"><figcaption>The empty state. Here the workspace has no private connectors.</figcaption></figure>
 
 {% hint style="info" %}
 The **Connected** and **OAuth** views can take several seconds to load the first time you open them, because the page checks each connector's connections and auth methods. The list shows *Loading...* until it is ready.
@@ -57,8 +51,6 @@ The button depends on whether you have connected:
 | --- | --- | --- |
 | Not connected | **Connect** | Opens the connect dialog for this connector. See [Connect a system](connect-a-system.md). |
 | Connected | **Add another connection**, plus a chevron | **Add another connection** opens the connect dialog again so you can sign in a second account. The chevron opens a menu with **Disconnect**. |
-
-<figure><img src="../../.gitbook/assets/connectors-card-disconnect.webp" alt="The HubSpot card in the Connected view with its chevron menu open, showing a single red Disconnect item"><figcaption>The chevron next to <strong>Add another connection</strong> holds <strong>Disconnect</strong>.</figcaption></figure>
 
 Cards of connectors your workspace owns also have a **⋯** menu with **Select**, **Edit**, **Export** and **Delete**; see [Importing and exporting](importing-and-exporting.md#export-connectors) and [Editing, publishing and deleting](editing-and-deleting.md).
 

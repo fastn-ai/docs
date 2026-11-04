@@ -21,7 +21,6 @@ Two of those are worth knowing before you scan the table:
 
 From **Add trigger**, choose **Schedule**, and give it a **Name** (and an optional **Description**).
 
-<figure><img src="../../.gitbook/assets/schedule-trigger-form.jpg" alt="The New schedule trigger dialog with Name and Description fields, mode pills Interval, Daily, Weekly, Monthly and Custom, Run every set to 5 minutes, and Timezone Asia/Karachi"><figcaption>Interval is the default mode. The timezone defaults to your organization's default timezone if one is set, otherwise to your browser's.</figcaption></figure>
 {% endstep %}
 
 {% step %}

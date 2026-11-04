@@ -12,13 +12,9 @@ Go to [app.fastn.dev](https://app.fastn.dev/) and log in to your fastn account.
 
 From the dashboard, go to **Integrations** and open the **Unified APIs** tab.
 
-<figure><img src="../../.gitbook/assets/unified-api-setup-integrations.webp" alt="The fastn dashboard on the Connectors page, with arrows pointing to Integrations in the sidebar and to the Unified APIs tab at the top"><figcaption></figcaption></figure>
-
 ## 3. Select a Unified API
 
 Choose the Unified API you want to use. For this guide, we'll use **Project Management** as an example.
-
-<figure><img src="../../.gitbook/assets/unified-api-setup-project-management.webp" alt="The Project Management Unified API: the Ticket entity, its providers (Asana, ClickUp, Jira, Linear, Monday.com, Notion, ServiceNow and Trello) with their connection status, and the API section listing List, Get and Create endpoints, each with a Copy curl button"><figcaption></figcaption></figure>
 
 Click **Project Management** to view the available endpoints and their request details.
 

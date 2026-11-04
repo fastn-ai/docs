@@ -6,8 +6,6 @@ description: "The Connections page: your organization's and your customers' sign
 
 **Operate → Connections** · `/connections`
 
-<figure><img src="../../.gitbook/assets/connections-list.webp" alt="The Connections page in the My organization view: a New connection button, a search box, status chips All, Active, Inactive, Expired and Failed, the count 5 connections, and a table with columns Connector, Auth, Status and Created listing OpenAI (BEARER, Active), Cin7 Core (INPUT, Active), Google Gmail (OAUTH_2, Active), HubSpot (OAUTH_2, Expired) and Google Calendar (OAUTH_2, Expired)"><figcaption>The <strong>My organization</strong> view.</figcaption></figure>
-
 A **connection** is one signed-in account on one connector: the stored, encrypted result of someone authorizing access once. Every later call reuses it, so nobody signs in again. Workflows act through connections.
 
 A [connector](../connectors/README.md) is the definition of an app; a connection is a credential for it. One connector can have many connections: one for your organization and one for each customer who connects.
@@ -29,8 +27,6 @@ The toggle at the top switches between two views.
 | **My organization** | Connections your team made. | *Connections your organization holds on its connectors. Workflows act through them.* |
 | **Customers** | Connections your customers made through the widget, across every customer. | *Connections your customers have made on your connectors, across every customer.* |
 
-<figure><img src="../../.gitbook/assets/connections-customers.webp" alt="The Customers view: a search box reading Search by customer, connector or name, an All customers selector, the status chips, 0 connections and the empty state No customer connections yet, Your customers connect their own systems through the widget you embed"><figcaption>The <strong>Customers</strong> view, empty until a customer connects through the widget.</figcaption></figure>
-
 The **Customers** view adds an **All customers** selector to show one customer's connections and a **Customer** column in the table, and its search box also matches customer names.
 
 ### Finding a connection
@@ -51,8 +47,6 @@ If connections exist but none match, the page reads *No connections match* · *A
 | **Status** | `Active`, `Inactive`, `Expired` or `Failed`. See [Statuses](statuses.md). |
 | **Created** | When the connection was made. |
 | **⋯** | **Reconnect**, **Rename** and **Disconnect**. |
-
-<figure><img src="../../.gitbook/assets/connections-row-menu.webp" alt="The Connections table with the three-dot menu of the Google Calendar row open, showing Reconnect and a red Disconnect"><figcaption>Each row's menu.</figcaption></figure>
 
 Click a row to open its detail page. See [Inside a connection](inside-a-connection.md).
 

@@ -50,6 +50,4 @@ The last panel, **Disconnect this customer**, reads:
 
 **Disconnect** asks for confirmation first:
 
-<figure><img src="../../.gitbook/assets/connection-disconnect-confirm.webp" alt="The confirmation dialog Disconnect Google Calendar? Syncing stops immediately and the credential is deleted. Anything running against this connection stops working until it is connected again. This cannot be undone. with Cancel and a red Disconnect button"><figcaption>Disconnecting cannot be undone.</figcaption></figure>
-
 Confirm only when the connection is no longer needed. Workflows and triggers that use it stop working until someone connects again. To fix a broken connection, use **Reconnect** instead.

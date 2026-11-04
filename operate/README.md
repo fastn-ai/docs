@@ -6,8 +6,6 @@ description: Watching what actually happens once integrations are live.
 
 Build tells you what should happen. Operate tells you what did.
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity → Events, the first tab: Perigon webhook rows all marked Delivered with Sep 4 timestamps, chips reading All 20, Webhook 20, Scheduled 0 and Manual 0, and Auto refresh off"><figcaption>Events is where a debugging pass starts, did the thing arrive at all?</figcaption></figure>
-
 **Activity** has three tabs, each answering a different question. Owners and admins on workspaces with monitoring turned on also see a fourth tab, **Monitoring**.
 
 | Page                            | Route                     | Answers                                                          |

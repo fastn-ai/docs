@@ -6,8 +6,6 @@ description: Which Postgres your workflows read and write through.
 
 **Settings → Database**
 
-<figure><img src="../.gitbook/assets/settings-database.jpg" alt="Database settings: a Writing to your database banner over two cards, Shared (fastn runs it) unselected and Your own (You run it) selected, each listing Backups, Capacity, Uptime and Network setup"><figcaption>The choice is exclusive and it is a redirect, not a migration, rows already written stay where they are.</figcaption></figure>
-
 Workflows can persist data with `fastn.db`. This page decides where that data lands.
 
 > Which Postgres your workflows read and write through.

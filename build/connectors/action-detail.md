@@ -15,13 +15,7 @@ On the [connector detail page](inside-a-connector.md), the connector rail lists 
 * On a connector your workspace owns, **+** next to the connector's name adds an action; see [Add an action](editing-and-deleting.md#add-an-action).
 * Tick actions (or **Select all**) to act on several at once. The rail then shows *n selected* and an **Export** button.
 
-<figure><img src="../../.gitbook/assets/connector-actions-selected.webp" alt="The connector rail with two actions ticked, Add List Members and Archive Call, and a bar at the top reading 2 selected with an Export link"><figcaption>Selecting actions shows the bulk <strong>Export</strong>.</figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/action-row-menu.webp" alt="The Add List Members row with its three-dot menu open, showing one item, Export"><figcaption>The menu on a single action.</figcaption></figure>
-
 ### The action editor
-
-<figure><img src="../../.gitbook/assets/action-editor-params.webp" alt="The action editor for HubSpot Add List Members: name and description fields at the top, a PUT method selector, the URL https://api.hubapi.com/crm/v3/lists/{{input.listId}}/memberships/add and a Run button, the tabs Params, Headers, Auth, Body, Input schema, Output schema and Mocks with Params open showing No query parameters, and a footer with v1.2, New version, Read-only owned by platform, and Propose an update"><figcaption>The editor for one action. <code>{{input.listId}}</code> in the URL is filled in from the action's input when it runs.</figcaption></figure>
 
 The top of the editor holds:
 
@@ -52,12 +46,6 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 | **Output schema** | The shape of the response the action returns. Same editor as the input schema. |
 | **Mocks** | Canned responses used in mock mode. See below. |
 
-<figure><img src="../../.gitbook/assets/action-editor-headers.webp" alt="The Headers tab with two rows: Content-Type application/json and Authorization Bearer {{auth.token}}"><figcaption>The connection's token goes into the <code>Authorization</code> header through <code>{{auth.token}}</code>.</figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/action-editor-auth.webp" alt="The Auth tab of an action"><figcaption>The Auth tab.</figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/action-editor-body.webp" alt="The Body tab for HubSpot Create Contact: Body type JSON on the left and a body editor labeled body JSON on the right"><figcaption>The Body tab with <strong>JSON</strong> selected.</figcaption></figure>
-
 #### Input schema and output schema
 
 > Define the expected input parameters for this action.
@@ -79,17 +67,11 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 
 **Add** (top right) adds a top-level field. The count (for example *1 field*) shows how many top-level fields there are.
 
-<figure><img src="../../.gitbook/assets/action-editor-field-options.webp" alt="The Input schema tab with a field's more-options menu open, showing Enum values"><figcaption><strong>More options</strong> on a field.</figcaption></figure>
-
 The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and Build with AI read it to know which fields a response contains.
-
-<figure><img src="../../.gitbook/assets/action-editor-output-schema.webp" alt="The Output schema tab for Create Contact: 5 fields, id string, archived boolean, createdAt string, updatedAt string and properties object"><figcaption>The fields Create Contact returns.</figcaption></figure>
 
 #### Mocks
 
 > Test cases returned when running in mock mode. LLM-generated and live-captured stubs are auto-updated when you regenerate.
-
-<figure><img src="../../.gitbook/assets/action-editor-mocks.webp" alt="The Mocks tab of HubSpot Create Contact, headed Mock Scenarios, with + Add custom and Generate with AI buttons and the empty state No mock scenarios yet. Click Generate with AI to create scenarios automatically"><figcaption>The Mocks tab before any scenario exists.</figcaption></figure>
 
 A mock is a stored response for this action. When a workflow runs in mock mode, the action returns the mock instead of calling the vendor, so you can test a workflow without touching real data.
 
@@ -102,8 +84,6 @@ A mock is a stored response for this action. When a workflow runs in mock mode, 
 
 **Run** opens a panel titled with the method and the action's name.
 
-<figure><img src="../../.gitbook/assets/action-run-panel.webp" alt="The run panel for GET List Users with the Mock toggle switched on: Mock scenario (optional), No saved mock scenarios. AI will generate a realistic response, an Input section with Form and JSON views and a plus button, and a Run Mock button"><figcaption>The run panel in mock mode.</figcaption></figure>
-
 | Part | Meaning |
 | --- | --- |
 | **Mock** | Toggle. Off: the call goes to the real app. On: no call is made; a mock response is returned instead. |
@@ -114,21 +94,13 @@ A mock is a stored response for this action. When a workflow runs in mock mode, 
 
 The result appears beside the inputs: the HTTP status, the time taken (`0ms (mock)` for a mock), and **Response** and **Request** tabs with the response body and the request that was sent.
 
-<figure><img src="../../.gitbook/assets/action-run-live-result.webp" alt="The run panel for GET List Users with a Mock button, Connection set to default (default), a Run Action button, and on the right HTTP 200, the response time and the Response tab showing a JSON array of sample users"><figcaption>A live run through a connection: status, time and the response body.</figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/action-run-live-request.webp" alt="The same run panel with the Request tab selected: URL GET https://jsonplaceholder.typicode.com/users?_limit=[redacted], and Body: No request body, GET requests do not send one"><figcaption>The Request tab shows what was sent. Query values are shown as <code>[redacted]</code>.</figcaption></figure>
-
 After a successful live run the action is marked **Live tested** (a green check also appears next to it in the rail), and **Last test** in the panel reopens the most recent result.
-
-<figure><img src="../../.gitbook/assets/action-run-mock-result.webp" alt="The run panel after Run Mock: on the right HTTP 200, 0ms (mock), Response and Request tabs, and the response body null"><figcaption>A mock run for an action with no saved scenarios and no output schema.</figcaption></figure>
 
 ### Versions
 
 The footer shows the action's version, for example `v1.2`, and **New version**. On an action your workspace owns it also shows **Save Changes**. Hovering the version explains it: *Internal revision - major.minor. A minor bump reaches pinned callers automatically; a major fork does not.*
 
 **New version** opens a small form:
-
-<figure><img src="../../.gitbook/assets/action-new-version.webp" alt="The New version form above the editor footer: a Fork selector set to Next internal major (breaking), checkboxes Deprecate this version and Make default, and Create and Cancel buttons"><figcaption>Creating a new version of an action.</figcaption></figure>
 
 | Field | Meaning |
 | --- | --- |
@@ -143,8 +115,6 @@ The footer shows the action's version, for example `v1.2`, and **New version**. 
 Actions on a managed connector belong to fastn. Their footer reads *Read-only - owned by platform*, and you cannot save changes to them. You can still read every tab, run the action, and export it.
 
 If an action is wrong or missing something, click **Propose an update**:
-
-<figure><img src="../../.gitbook/assets/action-propose-update.webp" alt="The Propose an update form at the bottom of the editor: a text box reading Add a note for the reviewer (optional), why this update, what changed, with Cancel and Propose update buttons"><figcaption>A proposal goes to fastn for review.</figcaption></figure>
 
 1. Make your changes in the editor tabs.
 2. Click **Propose an update** and add a note for the reviewer: why the update is needed and what changed.

@@ -34,11 +34,7 @@ What the dialog asks for depends on the method.
 
 **API key, bearer token and other keyed methods**: the dialog shows one field per credential, for example **API Key**. Paste the value and click **Connect**.
 
-<figure><img src="../../.gitbook/assets/connections-connect-apikey.webp" alt="The Connect AbstractAPI Holidays dialog, tagged API Key, with a single API Key field and the note Stored encrypted and scoped to this organization, with Cancel and Connect buttons"><figcaption>An API key method needs one field.</figcaption></figure>
-
 **OAuth 2.0**: the dialog shows *You will authorise in a new window*, the **Auth provider** it will use, and **Scopes**. Click **Authorise**, sign in to the app in the new window and approve access.
-
-<figure><img src="../../.gitbook/assets/connectors-connect-oauth.webp" alt="The Connect Asana dialog: You will authorise in a new window, an Auth Method selector set to Connect with Asana OAuth, the Auth provider Asana OAuth marked Default with a blurred client ID, a Scopes selector reading All scopes (default), and Cancel and Authorise buttons"><figcaption>An OAuth method. Nothing is stored until you come back from the app.</figcaption></figure>
 
 The scope and provider options are explained in [Creating a connection](../connections/creating-a-connection.md#connecting-with-oauth).
 {% endstep %}

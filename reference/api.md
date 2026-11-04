@@ -4,8 +4,6 @@ description: Calling workflows and unified endpoints over HTTP.
 
 # HTTP API
 
-<figure><img src="../.gitbook/assets/workflow-api-tab.jpg" alt="A workflow's API tab showing a POST endpoint ending /workflows/wf_b5880b29eb25/execute, a copyable curl carrying Authorization, X-fastn-Test-Mode and x-fastn-env headers, and a Request body block"><figcaption>Every workflow's API tab shows its own endpoint and a copyable curl.</figcaption></figure>
-
 ### Base URL
 
 Production base URL: `https://api.fastn.dev`. Your workflow's **API** tab shows the URL for your workspace. Examples below use `YOUR_FASTN_HOST`.

@@ -6,8 +6,6 @@ description: "What starts a workflow: an inbound webhook, a schedule, or an even
 
 **Integrations → Triggers** · `/integrations?tab=triggers`
 
-<figure><img src="../../.gitbook/assets/triggers.jpg" alt="The Triggers page on the Schedulers tab beside Webhooks and App events: rows with columns Name, Schedule, Next run, Last run, Status as Disabled or Active pills, Failures, Timezone, Routes, Created and Actions"><figcaption>The <code>Schedule</code> column shows a cron expression, or <em>Every N unit</em> for an interval schedule.</figcaption></figure>
-
 A workflow with no trigger only runs when something calls it. A trigger is what makes it run on its own.
 
 The page splits into three sub-tabs (**Webhooks**, **Schedulers** (`?trigger=scheduler`) and **App events** (`?trigger=app`)), with a status select offering `All statuses`, `Active` and `Disabled`.

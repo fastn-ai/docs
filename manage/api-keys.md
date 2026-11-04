@@ -37,8 +37,6 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
     * Optionally turn on **Verify caller identity (HMAC)**.
 4. Click **Create key**.
 
-<figure><img src="../.gitbook/assets/api-key-verify-caller-identity.webp" alt="The Create an API key dialog scrolled to Verify caller identity (HMAC), ticked and set to Enforce, reject a missing or invalid hash, above the optional Resource scope fields and the Limits section"><figcaption><strong>Verify caller identity (HMAC)</strong> in the Create an API key dialog.</figcaption></figure>
-
 #### Identity
 
 **Name \***: shown in the audit log beside everything this key does. Name it after the system that will hold it, not after a person.

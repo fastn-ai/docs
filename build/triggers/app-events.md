@@ -22,7 +22,6 @@ The form is progressive: each answer reveals the next question. Five answers in 
 
 From **Add trigger**, choose **App event**, and give it a **Name** (required).
 
-<figure><img src="../../.gitbook/assets/app-event-trigger-form.jpg" alt="The New app event trigger form, showing the progressive steps: name, connector, connection and event, then the routes that point at a workflow"><figcaption>The connector cannot be changed after the trigger is created, choose it deliberately.</figcaption></figure>
 {% endstep %}
 
 {% step %}

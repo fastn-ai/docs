@@ -4,8 +4,6 @@ description: "Opening a category: entities, connection state, providers and endp
 
 # Inside a category
 
-<figure><img src="../../.gitbook/assets/unified-api-crm-detail.jpg" alt="The CRM category with its entity and provider count chips: the Account entity with none of its providers connected, one provider row per CRM each offering Connect, then the endpoint list"><figcaption>Nothing is connected here yet, and the endpoints are listed anyway. They exist per entity, not per provider.</figcaption></figure>
-
 Opening a category swaps the pane for a detail view with an **All categories** back button, the breadcrumb **Unified APIs / \<Category>** and two chips, *N entities* and *N providers*. Opening a category also sets `?surface=<slug>` in the URL, so a category view is linkable, survives a reload, and browser Back returns you to the category list.
 
 Each entity gets its own block showing:

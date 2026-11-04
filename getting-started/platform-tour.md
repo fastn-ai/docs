@@ -76,8 +76,6 @@ Your own product, through its API or webhooks, registered as a connector so your
 
 Integrations is the third-party catalog and opens on **Connectors**: an integration starts from the app your customers use. Your own product is not here; it has its own row, **Connect your product**.
 
-<figure><img src="../.gitbook/assets/connectors-list.jpg" alt="Integrations → Connectors showing 24 of 415 catalog cards (AbstractAPI Email Reputation, AbstractAPI Holidays, Adyen, Agile CRM, Aha!), each badged managed and Managed by Fastn, with Import and Create connector top-right"><figcaption>Integrations → Connectors, filtered by connection state, auth type and visibility.</figcaption></figure>
-
 | Tab                   | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
 | **Connectors**        | Every system your customers can authorize. **Create connector** opens one menu: from scratch, Build with AI, build from Claude or any MCP client, or import from a file. **Request connector** asks fastn to add one. |
@@ -88,8 +86,6 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 **Connect AI tools**, in the top bar, exposes all of this to Claude, Cursor or another AI client. See [MCP gateway](../build/mcp-gateway/README.md).
 
 ### Embed → Widget
-
-<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="Widget builder, Layout tab, badged Live, beside a Tablet-width preview: purple Integrations header, Connect your favorite tools, a search box, and TikTok Shop marked Not connected"><figcaption>Left: what you configure. Right: exactly what your customer sees.</figcaption></figure>
 
 The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits) and **Save and publish**. **Reset** publishes the defaults to every customer using the widget straight away, after you type `RESET` to confirm; **Widget actions** → **Reset to defaults** does the same. A **Live** badge appears once the widget is saved.
 
@@ -120,8 +116,6 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 
 ### Operate → Activity
 
-<figure><img src="../.gitbook/assets/activity-events.jpg" alt="Activity → Events listing repeated Perigon article-alert webhook rows, each tagged webhook, Delivered, timestamped Sep 4, with a Replay link, under chips All 20, Webhook 20, Scheduled 0, Manual 0"><figcaption>Activity → Events, the inbound and outbound record.</figcaption></figure>
-
 | Tab              | Answers                                                        |
 | ---------------- | -------------------------------------------------------------- |
 | **Events**       | What arrived, from where, and was it delivered?                |
@@ -139,8 +133,6 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | **Developer** and above | Environments, Secrets, Configs, Database, Workflow tags, Trash |
 
 Two capabilities are gated by role rather than by permission: using the builder, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
-
-<figure><img src="../.gitbook/assets/settings-general.jpg" alt="Settings → General: an Organization block holding the organization Name and Timezone Asia/Karachi, then Joining by email domain with an empty domain field and Approve automatically off"><figcaption>General holds organization identity first and joining rules second. For an Owner or Admin, Settings itself opens on People.</figcaption></figure>
 
 ### The account card
 

@@ -27,8 +27,6 @@ description: "The connector detail page: the connector rail, the header, and the
 | **Connect** or **Disconnect** | **Connect** opens the connect dialog. Once you are connected it changes to **Disconnect**, which removes your connection after a confirmation. |
 | **⋯** (More actions) | On a managed connector you are connected to: **Disconnect**. On a connector your workspace owns: **Edit** and **Delete**; see [Editing, publishing and deleting](editing-and-deleting.md). |
 
-<figure><img src="../../.gitbook/assets/connector-detail-menu.webp" alt="The HubSpot header with the three-dot menu open, showing one item, Disconnect"><figcaption>On a managed connector the menu only offers <strong>Disconnect</strong>.</figcaption></figure>
-
 Below the header are five tabs: **Overview**, **Auth**, **Connections**, **Version pins** and **Webhook config**. **Auth** is covered in [Auth methods and providers](auth-methods.md) and **Webhook config** in [Webhook config](webhook-config.md).
 
 ### Overview
@@ -52,8 +50,6 @@ Then a **Details** table:
 
 #### Versions
 
-<figure><img src="../../.gitbook/assets/connector-detail-versions.webp" alt="The HubSpot Overview tab with the Details table and, below it, a Versions section with a Test/Live toggle listing v1.1 Test, Auto-versioned on update, Jun 2, 2026, and v1.0 Test, Initial version, Jun 2, 2026"><figcaption>The Versions list with the <strong>Test</strong> toggle selected.</figcaption></figure>
-
 Every saved change to a connector creates a version. The **Versions** section lists the five most recent, newest first, with a note such as *Initial version* or *Auto-versioned on update* and the date.
 
 * **Test** lists versions that are still being tested. Customers do not run them.
@@ -62,8 +58,6 @@ Every saved change to a connector creates a version. The **Versions** section li
 If a list is empty it reads *No test versions yet.* (or the live equivalent). On a connector your workspace owns, each test version also has a **Publish to live** button; see [Editing, publishing and deleting](editing-and-deleting.md#publish-a-version).
 
 ### Connections
-
-<figure><img src="../../.gitbook/assets/connector-tab-connections.webp" alt="The HubSpot Connections tab: a Connect button top right and a table with columns Name, Status and Default, holding one row named default with a blurred connection ID, status Active, a Default badge and a delete icon"><figcaption>Every connection made on this connector. The second line of each row is the connection ID (blurred here).</figcaption></figure>
 
 > Every customer who has authorised this connector. Make one yourself to test the flow end to end.
 
@@ -76,13 +70,9 @@ If a list is empty it reads *No test versions yet.* (or the live equivalent). On
 
 **Connect** adds a connection. Before anyone has connected, the tab reads *Nobody has connected yet* with a **Connect &lt;connector&gt;** button:
 
-<figure><img src="../../.gitbook/assets/connector-tab-connections-empty.webp" alt="The AbstractAPI Holidays Connections tab reading Nobody has connected yet, A connection appears here once one of your customers authorises AbstractAPI Holidays, with a Connect AbstractAPI Holidays button"><figcaption>The empty state on a connector nobody has connected yet.</figcaption></figure>
-
 This tab shows the same connections as the workspace-wide [Connections](../connections/README.md) page, limited to one connector.
 
 ### Version pins
-
-<figure><img src="../../.gitbook/assets/connector-tab-version-pins.webp" alt="The HubSpot Version pins tab: an empty state reading No versioned actions yet, Add actions with an externalVersion to enable per-customer routing, and below it a Compare two versions panel with Action, From, To, From major and To major fields and a Compare button"><figcaption>Version pins and the version comparison tool.</figcaption></figure>
 
 > Hold one customer on one version while everyone else moves on. A version set in code still wins over a pin.
 

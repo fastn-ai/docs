@@ -6,8 +6,6 @@ description: Get told when something crosses a line you care about. Checked ever
 
 **Operate → Health → Alerts** · `/health?tab=alerts`
 
-<figure><img src="../.gitbook/assets/activity-alerts.jpg" alt="The Alerts page holding only a No alerts yet empty state, naming the destination address it would send to, with Turn on failure alerts and Custom alert buttons and New alert top-right"><figcaption><strong>Turn on failure alerts</strong> creates the two alerts most teams need in one click.</figcaption></figure>
-
 Without an alert, a sync can fail quietly for hours. This is the cheapest insurance in the product.
 
 At the top of the tab, a **Notification channels** strip ("Email and webhooks work without a connection") shows which messaging apps are connected for alerts, with a way to connect the ones that are not. Below it, until an alert exists, sits the empty state:
@@ -118,8 +116,6 @@ Scroll to the bottom of the **Insights** panel. With no alerts yet, it shows **N
 * **Custom alert**: create a custom alert with your own conditions (Step 3).
 
 Once an alert exists, the section shows a **Sync failure notifications** card, which notifies you the moment any sync run fails. If an instant alert for all workflows already exists (for example from **Turn on failure alerts**), switch the card's toggle on; otherwise click its **Turn on** button. The section also shows a **New alert** button.
-
-<figure><img src="../.gitbook/assets/customer-alerts-sync-failure-row.webp" alt="The alerts section of the Insights panel: a New alert button above the Sync failure notifications row, which reads Off, a sync can fail silently, with an Edit channels toggle"><figcaption><strong>Sync failure notifications</strong> and <strong>New alert</strong>.</figcaption></figure>
 
 **Step 3: Create a custom alert**
 

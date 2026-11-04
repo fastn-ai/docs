@@ -18,8 +18,6 @@ Start with [Troubleshooting](../operate/troubleshooting.md) if you know the symp
 
 A failed run tells you almost nothing from the list. **Click the row.** It expands into a step summary and the tabs **Summary**, **Input**, **Output** and **Logs**, plus an **Error** tab when the run errored. The Error tab is where the answer is.
 
-<figure><img src="../.gitbook/assets/execution-error-diagnosis.jpg" alt="An expanded failed execution on the Error tab: a Configuration chip beside a Needs your attention chip, the headline The TikTok Shop connector needs to be connected, a Failed at line naming connector.tiktokShop.getAuthorizedShops at step 2 of 2, and an AI Diagnosis tab open on WHAT HAPPENED, WHY and HOW TO FIX"><figcaption>The Error tab leads with a plain-language diagnosis; <strong>Error Details</strong> beside it holds the raw message.</figcaption></figure>
-
 The Error tab carries, in order:
 
 | Element | What it gives you |
@@ -108,7 +106,6 @@ A workflow that runs and throws is a **Failed execution, not a transport error**
 {% endhint %}
 
 ---
-
 
 ### The error envelope
 

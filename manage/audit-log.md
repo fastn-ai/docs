@@ -6,8 +6,6 @@ description: Every action taken in this organization.
 
 **Settings → Audit log**
 
-<figure><img src="../.gitbook/assets/settings-audit-log.jpg" alt="The Audit log with its event total in the header, over rows of connection.update attributed to apikey:8 and workflow.execute and auth.login attributed to people whose names are obscured, each Success, scoped to a customer id or Organization-wide"><figcaption>Filters for people, actions, types and a date range sit above the table, with Export top-right.</figcaption></figure>
-
 A complete, filterable record of everything anyone (or anything) did. The header carries the total, which stops counting at 10,000: past that it reads **10,000+ events**.
 
 ### The table

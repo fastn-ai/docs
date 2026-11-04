@@ -58,8 +58,6 @@ You need the Owner, Admin or Developer role.
 
 1. In the fastn dashboard, open **Connect your product** and go to the **Webhooks** tab.
 
-<figure><img src="../.gitbook/assets/saas-webhooks-list.webp" alt="Connect your product, Webhooks tab: an Add webhook button and a list with one webhook, its endpoint and description, 1 of 8 events (workflow events: ticket.created, custom payload template), All customers, Active, and Send test, Edit, Deliveries, Pause and Rotate secret actions"><figcaption>The Webhooks tab lists your webhooks. Click <strong>Add webhook</strong> to create one.</figcaption></figure>
-
 2. Click **Add webhook**.
 3. Enter your **Endpoint URL**. It must be a public https address. fastn does not follow redirects.
 4. Under **Events**, tick the events you want. All account and setup link events start ticked; untick any you don't need.
@@ -75,8 +73,6 @@ When you tick **Workflow events**, two more options appear:
 
 * **Only these categories and connectors**: leave it on **Every connector** unless you want to limit which events are sent.
 * **Only these workflow events**: the event names to send, comma separated (for example `ticket.created`). Leave it empty to send every name.
-
-<figure><img src="../.gitbook/assets/saas-webhooks-workflow-options.webp" alt="Workflow events ticked, with Only these categories and connectors set to Every connector, Only these workflow events with a ticket.created, ticket.updated placeholder, and the Payload schema switch"><figcaption>Workflow event options and the <strong>Payload schema</strong> switch.</figcaption></figure>
 
 From the webhook's row in the list you can:
 
@@ -98,8 +94,6 @@ To add one:
 2. Click **+ Connector schema** and pick the connector, for example Jira.
 3. Use the **Editing** dropdown to choose which schema you are working on.
 4. Add each field with **Add field**: its name, its type, whether it is required, and **Value from**. With **Event path**, write where the value is in the event, for example `payload.ticket_url`. Paths starting with `payload.` read the data your workflow sent; `event`, `connector` and `tenantRef` read the event's own fields.
-
-<figure><img src="../.gitbook/assets/saas-webhooks-payload-schema.webp" alt="Payload schema switched on, the Editing dropdown open on Default with Jira, notion, ServiceNow and Linear schemas listed, and a table of fields, each with a type, a Required tick and an Event path such as payload.ticket_url"><figcaption>A schema in the Table view. Each field reads its value from the event.</figcaption></figure>
 
 5. Check the result in the preview box under the table, then click **Add webhook** (when adding a webhook) or **Save** (when editing one).
 

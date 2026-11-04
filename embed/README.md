@@ -82,8 +82,6 @@ Your AI tool can set up the customer-facing side too:
 
 Everything under Build exists so that this screen can do its job. The widget is the only part of fastn your customers ever touch: they browse the integrations you offer, authorize their own accounts, and configure what syncs, inside your product, under your branding.
 
-<figure><img src="../.gitbook/assets/widget-builder-layout.jpg" alt="The widget builder: a left panel with Layout, Style, Features and Embed tabs over Title and Subtitle fields, beside a tablet-width Live preview showing a purple Integrations header and a TikTok Shop row"><figcaption>Configure on the left, see exactly what the customer sees on the right.</figcaption></figure>
-
 Two pages cover it:
 
 {% content-ref url="widget-builder/README.md" %}[Widget builder](widget-builder/README.md){% endcontent-ref %}

@@ -28,8 +28,6 @@ Before you start, you need an API key. We also recommend two optional security m
    * Enable **caller identity verification (HMAC)**. This is optional but recommended for security.
 4. Click **Create key**.
 
-<figure><img src="../../.gitbook/assets/api-key-create-dialog.webp" alt="The Create an API key dialog: Name set to Test, Mode with Test and Live cards, Permissions set to Viewer and the What it can touch matrix"><figcaption></figcaption></figure>
-
 #### Creating an identity hash (recommended)
 
 Sending an identity hash with customer-specific requests is optional, but we recommend it for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.

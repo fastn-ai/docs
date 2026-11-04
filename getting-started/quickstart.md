@@ -10,8 +10,6 @@ This walks the shortest honest path. Budget about twenty minutes.
 
 Open **Build with AI** in the sidebar, or type what you want into the **What should your customers be able to do?** prompt on Home. Both land on the same screen.
 
-<figure><img src="../.gitbook/assets/agent-start.jpg" alt="The Build with AI screen: the Sessions rail on the left, a Build an integration pane with four START FROM AN EXAMPLE cards, and a message composer with an Auto approval-mode chip"><figcaption><strong>Build with AI</strong> is the first item under Build; Home's prompt box opens the same place.</figcaption></figure>
-
 The pane states the contract plainly:
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
@@ -36,8 +34,6 @@ Anything it creates shows up under [Connectors](../build/connectors/README.md) a
 
 The agent produces a workflow and opens the editor: configuration on the left, the tool tabs on the right, and, only where code editing is enabled, the code between them. **Code editing is off by default**: it is a per-organization setting that fastn turns on when you ask. Until then, expect two columns rather than three; the workflow is still there, it is just written and updated by the agent rather than by you.
 
-<figure><img src="../.gitbook/assets/workflow-editor-diagram.jpg" alt="The workflow editor showing the flow diagram"><figcaption>The Diagram tab is AI-generated documentation of the code. It is read-only and regenerates when it is out of date.</figcaption></figure>
-
 Work through it in this order:
 
 1. **The code.** Where code editing is on, the middle column holds `<slug>.js`, a JavaScript module exporting `export default async function(ctx)`. This is the workflow; everything else on the screen describes, tests or deploys it. Where it is off, read the **Diagram** tab instead to see what the agent wrote.
@@ -51,8 +47,6 @@ Code editing is a per-organization setting and is off by default. Without it, wo
 {% endhint %}
 
 ### 4. Test it
-
-<figure><img src="../.gitbook/assets/workflow-test.jpg" alt="The Test tab with ctx.input and ctx.headers"><figcaption><strong>Use contract</strong> fills <code>ctx.input</code> with a sample built from the workflow's own contract.</figcaption></figure>
 
 Open **Test**, click **Use contract** to populate a sample `ctx.input`, and choose a mode beside the run button: **Live** calls the real systems, **Partial Mock** mixes real calls with stubs, **Fully Mock** uses stubs only. Then hit **Run Live** (or **Run**).
 

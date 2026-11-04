@@ -14,8 +14,6 @@ You can export the actions of any connector, managed or owned.
 2. Either tick the actions you want in the connector rail (or **Select all**) and click **Export** in the *n selected* bar, or open one action's **⋯** menu and click **Export**.
 3. The browser downloads a JSON file. A bulk export from the rail is named `<connector-slug>-<n>-actions.json`, for example `hubspot-2-actions.json`. Exporting a single action from its **⋯** menu downloads `<action-slug>.json`.
 
-<figure><img src="../../.gitbook/assets/connector-actions-selected.webp" alt="The connector rail with two HubSpot actions ticked and a bar reading 2 selected with an Export link"><figcaption>Bulk export from the connector rail.</figcaption></figure>
-
 The file looks like this (shortened):
 
 ```json
@@ -59,13 +57,9 @@ An action export holds definitions only: no credentials and no connections.
 
 Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their catalog card with **Select**, **Edit**, **Export** and **Delete**.
 
-<figure><img src="../../.gitbook/assets/connectors-custom-card-menu.webp" alt="The catalog filtered to Private showing one card, Docs Demo CRM, badged Custom, with its three-dot menu open listing Select, Edit, Export and Delete"><figcaption>The card menu on a connector your workspace owns.</figcaption></figure>
-
 * **⋯ → Export** downloads that one connector as `<slug>-bundle.json`.
 * **⋯ → Select** ticks the card and adds **Export Selected (n)** to the page header. Select more cards, then click it to download them together.
 * On the connector's detail page, its row in the rail also has a **⋯** menu with **Export All** and **Import**.
-
-<figure><img src="../../.gitbook/assets/connectors-export-selected.webp" alt="The catalog header with an Export Selected (1) button between Request connector and Create connector, and the Docs Demo CRM card ticked"><figcaption><strong>Export Selected (n)</strong> appears once a card is selected.</figcaption></figure>
 
 **Export Selected (n)** downloads a file named `connectors-bundle-<date>.json`, for example `connectors-bundle-2026-10-08.json`:
 
@@ -95,8 +89,6 @@ Each entry carries the connector's definition, its actions, its webhook configs,
 **Create connector → Import from file** on the catalog page opens a file picker (if your role cannot create connectors, the page shows an **Import** button instead). Choose one `.json` file, such as a `connectors-bundle-<date>.json` from [Export connectors](#export-connectors). There is no form to fill in: the file is read and its connectors are created in your workspace as connectors you own.
 
 If a connector in the file already exists in your workspace, fastn asks first:
-
-<figure><img src="../../.gitbook/assets/connectors-import-replace.webp" alt="The Replace existing connector? dialog: Docs Demo CRM already exists. Importing will replace its actions and configuration. Saved connections are preserved. With Cancel and Replace buttons"><figcaption>Importing a connector that already exists.</figcaption></figure>
 
 > **Replace existing connector?**
 >

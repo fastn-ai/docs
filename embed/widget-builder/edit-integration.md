@@ -12,8 +12,6 @@ Each row in the INTEGRATIONS panel carries a status dot, a **pencil** and a **tr
 **Deleting an integration takes effect immediately.** It disappears from every customer's widget at once, with no draft or publish step, and it cannot be undone. Customers running it have their installations stopped and archived; customers who made their own customized version keep that version working.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/widget-edit-integration.jpg" alt="The Edit Integration dialog: a NAME field reading TikTok Shop, a CONFIGURATION TEMPLATE row for field mappings and sync rules, a Widget enabled switch, Activation mode set to Multi-connection, and Customer visibility set to All customers"><figcaption>Everything above the Connectors list: identity, status, activation mode and visibility.</figcaption></figure>
-
 ## Identity and template
 
 | Field | What it does |
@@ -53,8 +51,6 @@ The systems this integration connects. Search the catalog and add them; each sel
 
 ### Per-connector settings
 
-<figure><img src="../../.gitbook/assets/widget-connector-settings.jpg" alt="The TikTok Shop settings panel reading Override only what differs from the connector defaults, an AUTH PROVIDER select on Use platform default, a Show logo switch turned on, and a Delete on deactivate switch turned off"><figcaption>The gear on a connector chip. Only what you change here overrides the connector default.</figcaption></figure>
-
 The gear on a connector chip opens **&lt;Connector&gt; settings**, which *override only what differs from the connector defaults*.
 
 | Setting | What it does |
@@ -69,8 +65,6 @@ The gear on a connector chip opens **&lt;Connector&gt; settings**, which *overri
 {% hint style="warning" %}
 **Delete on deactivate is destructive.** Deleting a connection is permanent. Any workflow, trigger or other integration using that connector for that customer stops working until the customer reconnects. Leave it off if connections are shared across more than one integration.
 {% endhint %}
-
-<figure><img src="../../.gitbook/assets/widget-integration-bindings.jpg" alt="The lower half of the dialog: a UNIFIED APIS picker showing CRM with 10 entities, Documents with 2, Knowledge Base with 1, Messaging with 2 and Project Management with 1, above collapsed Workflows, Triggers and Callbacks sections each reading None"><figcaption>Unified API categories, then the three binding sections. All three read <strong>None</strong> on a new integration.</figcaption></figure>
 
 ## Unified APIs
 

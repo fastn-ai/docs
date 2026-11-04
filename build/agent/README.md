@@ -6,8 +6,6 @@ description: The chat-driven builder that picks connectors, drafts workflows and
 
 **Build → Build with AI** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
-<figure><img src="../../.gitbook/assets/agent-start.jpg" alt="The Build with AI screen at /agent: the Sessions rail on the left listing earlier sessions, and a Build an integration pane with four START FROM AN EXAMPLE cards above a Write a message composer carrying an Auto chip and a 0 / 1000k context meter"><figcaption><strong>Build with AI</strong> is the first item under Build in the sidebar. Home's prompt box opens the same place.</figcaption></figure>
-
 The agent is the primary way integrations get built in fastn, and there are two ways in: **Build with AI** in the sidebar, the first item under **Build**, or the **What should your customers be able to do?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
@@ -15,8 +13,6 @@ The agent is the primary way integrations get built in fastn, and there are two 
 What it drafts is JavaScript: a `<slug>.js` module exporting `export default async function(ctx)`, opened in the [workflow editor](../workflows/README.md) for you to test and publish. You can read the code there only where code view is switched on for your organization; where it is off, the editor shows diagrams and docs, and you change the workflow through the agent.
 
 ### Sessions
-
-<figure><img src="../../.gitbook/assets/agent-session.jpg" alt="An agent session: the Sessions rail on the left listing the current build and earlier sessions, the conversation on the right with a collapsed Worked · 3 steps summary, and the approval-mode chip and context meter under the composer"><figcaption>A session in progress. The rail on the left is your history; every session keeps its full conversation.</figcaption></figure>
 
 The left rail, headed **Sessions**, holds your session history. Each session keeps its full conversation, so you can come back to an integration weeks later and continue where you left off rather than re-explaining it. Before you start anything it reads *No sessions yet. Click New session to start.*
 
