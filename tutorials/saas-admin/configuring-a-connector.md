@@ -28,8 +28,6 @@ description: >-
 
 4. Click **Create**.
 
-> **Screenshot:** Create Connector dialog with all fields filled in.
-
 #### Building with AI
 
 1. Go to **Integrations → Connectors**.
@@ -37,8 +35,6 @@ description: >-
 3. The **Connector Agent** page opens.
 4. Describe what you want (e.g., "HubSpot CRM") or click a quick-start prompt.
 5. The agent researches the API, discovers the spec, builds actions and events, and tests them.
-
-> **Screenshot:** Connector Agent page with the chat input and quick-start prompts.
 
 > &#x20;**GIF needed:** Using Build with AI - entering a connector name, watching the agent discover the API and build actions.
 
@@ -56,8 +52,6 @@ Six auth methods are available when creating a connector:
 | **Custom**       | A custom handler manages auth. For proprietary systems.                  | Internal tools, custom APIs           |
 
 You can add multiple auth methods to one connector (click **"+ Add"** in the Auth Methods section). One method is set as default.
-
-> **Screenshot:** Auth Methods dropdown showing all 6 options.
 
 #### Using fastn-managed OAuth apps
 

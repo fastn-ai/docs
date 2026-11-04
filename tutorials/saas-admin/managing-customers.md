@@ -65,8 +65,6 @@ Use this for:
 * Trial customers with lower limits
 * Enterprise customers with custom agreements
 
-> **Screenshot:** Customize Customer Limits interface showing per-customer quota overrides.
-
 ### Monitoring customer activity
 
 #### Activity → Executions
@@ -74,8 +72,6 @@ Use this for:
 1. Go to **Activity → Executions**.
 2. Use the **"All workflows"** dropdown to filter.
 3. Each execution row shows **Triggered By** which tells you what started the execution (agent-service, webhook, scheduler, manual).
-
-> **Screenshot:** Activity → Executions filtered to show a specific customer's workflow runs.
 
 #### Activity → Events
 

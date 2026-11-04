@@ -20,8 +20,6 @@ The integration widget is embedded somewhere in the product you use. Common loca
 
 The exact location depends on how the SaaS company set things up. If you can't find it, check the product's help docs or ask their support team.
 
-> **Screenshot:** Example of an embedded widget as it appears inside a SaaS product - showing the integration hub with available app icons and connect buttons.
-
 ### Navigating the widget
 
 The widget has three tabs at the top:
@@ -76,8 +74,6 @@ If you want to stop an integration:
 4. The connection is removed. The product can no longer access your data on that app.
 
 Disconnecting removes the stored credentials. If you reconnect later, you'll need to authorize again.
-
-> **Screenshot:** Widget showing a connected app with the Disconnect button visible.
 
 ### Troubleshooting
 

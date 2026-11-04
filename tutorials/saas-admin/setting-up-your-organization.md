@@ -29,8 +29,6 @@ Scroll down on the General page to find the **Company Research Report** card.
 
 This report is what informed the AI's connector recommendations and workflow suggestions during onboarding. Revisit it when planning new integrations or evaluating which connectors to prioritize next.
 
-> **Screenshot:** Settings → General showing Organization Name, Timezone, Domain & Access Control, and the Company Research Report card with the "View research report" button.
-
 #### Reset Onboarding
 
 At the bottom of the General page: **Reset Onboarding**. This reruns the Setup Assistant from scratch.

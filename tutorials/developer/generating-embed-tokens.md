@@ -51,8 +51,6 @@ The embed token is prefixed `emb_`. In the hands-on integration, the token was n
 
 `expiresIn` is `28800` seconds, which is 8 hours.
 
-> **VERIFY:** The Embed tab UI shows the token request with only `Authorization: Bearer YOUR_API_KEY` and references a `YOUR_CUSTOMER_ID` parameter, while the hands-on integration used a body of `{ endOrgId, userEmail, userName }` and read the token from `data.token`. Confirm the exact request body and response shape against the current API before publishing - the UI snippet and the hands-on result should be reconciled.
-
 ### Refreshing tokens
 
 Because tokens expire after 8 hours, a long-lived embed session needs the token refreshed before it expires. The platform provides a refresh endpoint, and the Embed tab notes that tokens auto-refresh:
@@ -61,9 +59,9 @@ Because tokens expire after 8 hours, a long-lived embed session needs the token 
 POST https://api.fastn.dev/api/v1/embed/token/refresh
 ```
 
-Use the refresh endpoint to obtain a new token before the current one expires, or generate a fresh token from your backend on each load for shorter sessions.
+Refresh is capped at seven days per session. At the cap the widget posts `fastn:session-expired` to the parent window; listen for it and mint a new token. See [Token API](../../embed/embedding/token-api.md).
 
-> **VERIFY:** The refresh endpoint exists (confirmed on the platform). Confirm its exact request and response shape, and whether the SDK (when it ships) handles auto-refresh automatically.
+Use the refresh endpoint to obtain a new token before the current one expires, or generate a fresh token from your backend on each load for shorter sessions.
 
 ### Token lifecycle
 

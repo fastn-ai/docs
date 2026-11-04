@@ -160,7 +160,7 @@ Shows two things:
 
 #### Insights tab
 
-Shows performance metrics for the customer's integrations with a time-range selector (7 days / 30 days / 90 days). \[VERIFY: what specific KPI cards appear here? Events processed, sync success rate, active connections, error count?]
+Shows the customer's own integration health for **Today**, **7 days** or **30 days**: runs, records processed, connection health, the busiest workflows, each connection's status (Active, Reauth needed, Broken or Disconnected) with its last sync, and recent runs per workflow. The same panel lets the customer set up their own alerts.
 
 ***
 

@@ -22,8 +22,6 @@ You can build workflows with AI from two places in the platform:
 2. Click **"Build with AI"** (next to the Create Workflow button).
 3. The **Workflow Builder** page opens.
 
-> **Screenshot:** Standalone Workflow Builder page showing the chat input, quick-start prompts, and the left sidebar with builder info and tasks.
-
 ### Describing what you need
 
 Type a plain-language description of the workflow you want. The more specific you are about three things, the better the result:

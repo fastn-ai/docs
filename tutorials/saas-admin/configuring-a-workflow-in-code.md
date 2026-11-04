@@ -14,8 +14,6 @@ description: >-
 2. Click **Create Workflow**.
 3. The workflow editor opens with three panels.
 
-> **Screenshot:** Full workflow editor showing all three panels - Configuration (left), Code (center), Test (right).
-
 ### The three panels
 
 The code editor consists of three panels which are as follows:
@@ -146,8 +144,6 @@ export default async function(ctx) {
 5. The output appears below - check the result matches your expectations.
 6. Toggle between **Test** (sample data) and **Real** mode if available.
 
-> **Screenshot:** Test panel with sample input JSON and the output result after running.
-
 ### Choosing an execution tier
 
 | Tier         | Behavior                                                                          | Use when                                                             |
@@ -169,8 +165,6 @@ Once your code works in testing:
 5. Click **Create Workflow** (bottom of the Configuration panel).
 
 The workflow appears in the Workflows table with status **active**.
-
-> **Screenshot:** Workflows table showing the newly created workflow with active status.
 
 ### Editing an existing workflow
 

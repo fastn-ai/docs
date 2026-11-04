@@ -16,8 +16,6 @@ Triggers are what start your workflows. In fastn, triggers are managed **separat
 3. Click **Add Trigger** to create a new trigger.
 4. Select the trigger type: **Webhook**, **Scheduler**, or **App Event**.
 
-> **Screenshot:** Triggers page showing the three tabs and the Add Trigger type selection panel.
-
 ### Webhook triggers
 
 Webhooks receive events from external services via HTTP POST. When a third-party app sends a webhook to your endpoint, the trigger routes the payload to your workflow.
@@ -80,8 +78,6 @@ Schedulers trigger workflows on a time-based schedule.
 5. Optionally set **Starts at** - a date/time to begin. Leave empty to start immediately.
 6. Click **Create**.
 
-> **Screenshot:** Scheduler trigger configuration showing the preset buttons (Interval, Daily, Weekly, Monthly, Custom) and the interval settings.
-
 #### Example schedules
 
 * "Run every 5 minutes" - Interval preset, 5 minutes
@@ -105,8 +101,6 @@ App Events subscribe to events from your connected third-party apps. When someth
    * Expandable **Payload Schema** showing the event data structure
 6. Select the event you want to subscribe to.
 7. Click **Create**.
-
-> **Screenshot:** App Event trigger configuration showing the Connector dropdown, Connection dropdown, and the event list with event names, WEBHOOK badges, and subscription status.
 
 #### Event subscription
 
