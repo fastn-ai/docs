@@ -16,4 +16,4 @@ curl --location 'https://webhooks.fastn.dev/prod/triggers/<ORG_ID>/webhooks/<WEB
 
 The `x-api-key` header is needed only when the trigger's auth is set to API key. A trigger with no auth accepts the call without it.
 
-On a trigger whose auth is API key, your backend can also name the customer and end user the call is for with the optional `x-org-id` and `x-user-id` headers, proven with `x-identity-hmac`. These headers name the customer only when your API key's identity verification is set to optional or required, or when the call carries `x-identity-hmac`. Otherwise, and on a trigger with no auth, those headers are passed through to the workflow as ordinary headers.
+On a trigger whose auth is API key, your backend can also name the customer and the person at the customer the call is for with the optional `x-org-id` and `x-user-id` headers, proven with `x-identity-hmac`. These headers name the customer only when your API key's identity verification is set to optional or required, or when the call carries `x-identity-hmac`. Otherwise, and on a trigger with no auth, those headers are passed through to the workflow as ordinary headers.

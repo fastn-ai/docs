@@ -18,7 +18,6 @@ redirects:
   reference/rbac-and-security: manage/roles.md
   reference/mcp-gateway: build/mcp-gateway/README.md
   build/unified-apis/setting-up-and-using: build/unified-apis/setup-and-usage.md
-  build/mcp-gateway: build/mcp-gateway/README.md
   reference/activity: operate/README.md
   reference/api-reference: reference/api.md
   reference/alerts: operate/alerts.md
