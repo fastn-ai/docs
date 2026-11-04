@@ -30,8 +30,6 @@ Three things on this screen are worth knowing before you go further:
 
 The agent needed to create connect links for the two systems. In **Manual** mode it does not just do that; it stops and shows you each call.
 
-<figure><img src="../../.gitbook/assets/agent-approval-gate.jpg" alt="Two stacked approval cards, each headed Create connect link with the tool name create_connect_link, a JSON payload containing a connectorId, a VIEW RAW INPUT toggle, a note-to-agent textarea, and Accept, Always allow and Reject buttons"><figcaption>A Manual-mode approval gate. One card per pending call, each naming the exact tool and what it will change.</figcaption></figure>
-
 Every gate shows you the same five things:
 
 | On the card | What it is |
@@ -69,8 +67,6 @@ Those two answers change the generated code materially, which is exactly why it 
 #### It writes a plan you can read before anything is built
 
 The agent produces an **Integration Plan** (a real markdown document, here `/plan-hubspot-to-sheets.md`), in a side panel, and the **Build progress** tracker beside it.
-
-<figure><img src="../../.gitbook/assets/agent-integration-plan.jpg" alt="Three panels: the clarifying-question answer cards on the left, a BUILD PROGRESS tracker reading 0/6 with phases Use cases, Connectors, Workflows and Widget in the middle, and the Integration Plan document on the right showing Overview, Flow Details and a Field Mapping table"><figcaption>The plan (right) and the build tracker (middle). Nothing has been built yet, the counter reads <code>0/6</code>.</figcaption></figure>
 
 The plan spells out the mechanism, not just the intent:
 

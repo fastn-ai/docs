@@ -6,8 +6,6 @@ description: "The connection detail page: who and what the connection is, its to
 
 `/integrations/connections/<connection-id>`. Click a row on the [Connections](README.md) page to open it.
 
-<figure><img src="../../.gitbook/assets/connection-detail.webp" alt="The detail page of the Google Calendar connection: header Google Calendar, Default, an Expired badge with Authorised, but the credential has expired. Reconnecting usually clears it, and a Reconnect button; a Connection panel with Customer (blurred), Connector Google Calendar, Auth method OAUTH_2, Scope Account level and a blurred Connection ID with a copy button; a Token and activity panel with Expires, Last refreshed, Last used Never, Created and Updated; a Recent activity panel with View all; and Disconnect this customer with a red Disconnect button"><figcaption>A connection whose OAuth credential has expired.</figcaption></figure>
-
 ### Header
 
 The connector's name and icon, the connection's name (for example `Default`), its **status** badge and a one-line explanation of the status, for example *Authorised, but the credential has expired. Reconnecting usually clears it.* **Reconnect** (top right) repairs the connection. The **←** arrow returns to the list.

@@ -20,8 +20,6 @@ under the heading **No alerts yet**, with **Turn on failure alerts** and **Custo
 
 ### Custom alerts
 
-<figure><img src="../.gitbook/assets/alert-editor.jpg" alt="The alert editor open on an Untitled alert badged Paused and No recipients, set to fire when Error rate is above 5% over 24 hours, watching All workflows, with Slack, Email and Webhook delivery fields"><figcaption>Firing history at the bottom reads This alert has not fired yet.</figcaption></figure>
-
 **New alert** (or **Custom alert** on the empty state), opens the editor.
 
 {% hint style="danger" %}

@@ -17,10 +17,6 @@ Each company using your product is a customer. Each customer gets an isolated en
 3. Enter the customer details (name, and any other required fields). Optionally, put your own ID for this customer (for example `customer_12345`) in **External ID**; if you leave it empty, it defaults to the slug.
 4. Click **Create Customer** at the bottom of the form. Note fastn's **customer id** or the External ID - you'll use one of them for API calls and widget embedding.
 
-> &#x20;**Screenshot:** Operate → Customers showing the Create customer button and the creation form.
-
-> &#x20;**Screenshot:** Customer list showing created customers with their IDs.
-
 #### Which identifier to use
 
 API calls and widget configuration identify a customer. Use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An identifier that matches neither returns 404 "Tenant not found".

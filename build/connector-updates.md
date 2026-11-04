@@ -24,8 +24,6 @@ Each update is one row. The row shows:
 * a single **status pill**, such as `Already failing`, `Breaks today`, `No date given`, `Fixed` or `Not going ahead`; and
 * a call to action.
 
-<figure><img src="../.gitbook/assets/connector-update-review.jpg" alt="An expanded hubspot proposal explaining the retired Contacts Lists v1 API and the steps to migrate, with a Notify affected organizations button"><figcaption>An expanded row. Everything happens in the row; there is no separate details screen.</figcaption></figure>
-
 Click a row to expand it in place. The expanded row holds the full detail: the vendor's own description of the change (kept as evidence behind a disclosure), which of your workflows are affected, and any patch the maintainer agent proposes. A patch also says how it was checked: `Unverified`, `Reasoned only`, `Seen on live traffic`, `Ran against stubs` or `Probed for real`. If a patch has not been tested, a *Not tested yet* banner sits above it.
 
 On an applied connector fix that your organization owns, **Notify affected organizations** creates a review for each organization whose workflows use the connector.

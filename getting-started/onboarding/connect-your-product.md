@@ -60,8 +60,6 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 
 fastn checks your domain, researches your product and shows the result on the "Here's what we found" screen. You click **Looks right** or **Edit** on each row, then pick who builds the connector: your AI tools (recommended, no AI credits) or the **fastn agent**, with an estimate such as "Up to 12 min" and the AI credits it may use. If your product is already in the catalog, there's nothing to build. Finishing the step earns 20 AI credits.
 
-<figure><img src="../../.gitbook/assets/onboarding-step-1-connect-your-product.webp" alt="Onboarding step 1 of 4, the Here's what we found screen: what the product does, its entities, its API access and its webhooks, each with Looks right and Edit, then Next and Do it later"><figcaption>Step 1: Here's what we found.</figcaption></figure>
-
 ### Related docs
 
 [Connectors](../../build/connectors/README.md) · [SaaS connectors](../../manage/saas-connectors.md) · [Adding fastn to Claude](../../build/mcp-gateway/claude.md) · [Building from your AI agent](../../build/building-from-your-ai-agent.md) · [Build with AI](../../build/agent/README.md)

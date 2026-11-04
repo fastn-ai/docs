@@ -113,8 +113,6 @@ See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md)
 
 Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns 10 AI credits.
 
-<figure><img src="../../.gitbook/assets/onboarding-step-3-embed-the-widget.webp" alt="Onboarding step 3 of 4, Embed the widget: Preview the widget, Open the widget builder, Copy link for a developer and Watch, above the four parts Create an API key, Register each customer, Get an embed token and Add the widget to your page"><figcaption>Step 3: Embed the widget, in four parts.</figcaption></figure>
-
 ### Related docs
 
 [How embedding works](../../tutorials/developer/how-embedding-works.md) · [API keys](../../manage/api-keys.md) · [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) · [Widget builder](../../embed/widget-builder/README.md) · [Webhook triggers](../../build/triggers/webhooks.md)

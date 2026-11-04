@@ -50,8 +50,6 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 
 > Define the expected input parameters for this action.
 
-<figure><img src="../../.gitbook/assets/action-editor-input-schema.webp" alt="The Input schema tab for Create Contact in Form view: 1 field, properties, of type object, with nested fields email, phone, company, website, jobtitle, lastname, firstname, hs_lead_status and lifecyclestage, each with a key, a label, a description, a type selector, a Required/Optional toggle, a more-options button, a plus button and a delete cross"><figcaption>An object field (<code>properties</code>) with nested string fields.</figcaption></figure>
-
 Switch between **Form** and **JSON**. In Form view each field is one row:
 
 | Part | Meaning |

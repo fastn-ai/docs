@@ -4,8 +4,6 @@ description: The workflow editor walked through tab by tab, plus the configurati
 
 # The workflow editor, tab by tab
 
-<figure><img src="../../.gitbook/assets/workflow-editor.jpg" alt="The workflow editor with code editing enabled: a Configuration panel on the left with Name and Slug fields, workflow.js in the middle labelled JavaScript · export default async function(ctx), and the Test panel on the right showing ctx.input, ctx.headers, Use contract, a Live selector and Run Live"><figcaption>The editor with code editing enabled, Configuration left, <code>workflow.js</code> center, the tool tabs right.</figcaption></figure>
-
 Opening a workflow (**Create workflow**, or **Edit** from a row's `⋯` menu), drops you into a drawer with **Configuration** on the left and the tool tabs on the right. Whether there is a code column between them depends on your organization.
 
 {% hint style="warning" %}

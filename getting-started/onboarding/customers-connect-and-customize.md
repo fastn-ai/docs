@@ -58,8 +58,6 @@ This step is for what your customers do: connect their own accounts in the widge
 
 You open your product where the widget is embedded, as a test customer, then connect and customize the integration from [step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on a live connection. Finishing the step earns 10 AI credits.
 
-<figure><img src="../../.gitbook/assets/onboarding-step-4-customers-connect.webp" alt="Onboarding step 4 of 4, Your customers connect and customize: try it in your product as a test customer, connect Jira and customize it, then a Listening panel waiting for the first connection and a Finish button that unlocks on a live connection"><figcaption>Step 4: try it in your product as a test customer.</figcaption></figure>
-
 ### Related docs
 
 [Customers](../../operate/customers.md) · [Managing customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customizing your integrations](../../tutorials/end-user/customizing-your-integrations.md) · [Extending a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Getting alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)

@@ -6,8 +6,6 @@ description: "The connector detail page: the connector rail, the header, and the
 
 `/integrations/connectors/<slug>`. Click a connector's name in the catalog to open it.
 
-<figure><img src="../../.gitbook/assets/connector-detail-overview.webp" alt="The HubSpot connector detail page: on the left the connector rail with HubSpot expanded to its 162 actions, each with a method chip such as PUT or DELETE and a checkbox; on the right the header HubSpot, Fastn · OAuth 2.0, a v1.0 · Test chip, a Disconnect button and a three-dot menu, the tabs Overview, Auth, Connections, Version pins and Webhook config, and the Overview tab with tiles 1 Connection, 1 Auth method and v1.0 Current version above a Details table"><figcaption>The detail page has two panes: the connector rail on the left and the selected connector on the right.</figcaption></figure>
-
 ### The connector rail (left)
 
 * **←** (Back to all connectors) returns to the catalog.

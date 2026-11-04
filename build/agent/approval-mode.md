@@ -17,8 +17,6 @@ You can change it mid-session. Switching to **Auto** after a few approvals is a 
 
 In **Manual** mode the agent stops and posts a card for each pending call. Nothing happens until you answer it.
 
-<figure><img src="../../.gitbook/assets/agent-approval-gate.jpg" alt="Two stacked approval cards, each headed Create connect link with the tool name create_connect_link, a JSON payload containing a connectorId, a VIEW RAW INPUT toggle, a note-to-agent textarea, and Accept, Always allow and Reject buttons"><figcaption>One card per pending call. Each names the exact tool, previews the change, and keeps the raw arguments one click away.</figcaption></figure>
-
 Every card carries the same parts:
 
 | Part | What it shows |

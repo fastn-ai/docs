@@ -6,8 +6,6 @@ description: "What a connector is, how it relates to actions, auth methods, conn
 
 **Integrations → Connectors** · `/integrations?tab=connectors`
 
-<figure><img src="../../.gitbook/assets/connectors-catalogue.webp" alt="The Connectors page: Request connector and Create connector buttons top right, a Categories list on the left starting with All connectors, a search box with All, Featured, Connected and OAuth chips, and connector cards such as AbstractAPI Email Reputation badged managed with a Connect button"><figcaption>The Connectors catalog.</figcaption></figure>
-
 A **connector** is fastn's bridge to one external app, such as HubSpot, Jira or Stripe. The page describes it in one line:
 
 > A connector is fastn's bridge to one app: it handles sign-in and exposes the app's actions and events. Sign in to one to create a connection.
