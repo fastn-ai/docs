@@ -149,6 +149,24 @@ Also check whether that customer is **pinned to an older connector version**. Se
 | Wrong code ran                 | `x-fastn-env`. `test` means the latest published version; any other slug means the version deployed there. |
 | Forbidden                      | The key's permissions do not cover the call. Key permissions are a preset plus a **What it can touch** matrix on the key itself. See [API keys](../manage/api-keys.md). [Roles](../manage/roles.md) govern people, not keys. |
 
+### MCP gateway returns 401
+
+A call to the [MCP gateway](../build/mcp-gateway/README.md) without a valid credential returns **401** with body:
+
+```json
+{"error":"unauthorized"}
+```
+
+and a `www-authenticate` header of the form `Bearer resource_metadata=...` (pointing at the workspace's OAuth protected-resource metadata).
+
+Check that:
+
+* The credential is sent as `Authorization: Bearer <token>` (not another header).
+* The token is not expired.
+* The token is for the workspace you are calling.
+
+<!-- TODO(eng): confirm whether all MCP gateway auth failures return the same `{"error":"unauthorized"}` body (expired token, wrong workspace, missing header, malformed Bearer), or whether some paths differ. -->
+
 ---
 
 ## You deleted something by mistake
