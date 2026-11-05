@@ -39,6 +39,8 @@ Here `/api/fastn-token` is your own backend route, which mints a token with the 
 
 `FastnProvider` and the hooks `useConnectors`, `useConnections` and `useConnect` come from `@fastn-ai/embed/headless/react`, and are only for the **Build your own UI** variant, where you render every pixel and fastn supplies the data, the auth and the OAuth popup. Your page's origin has to be registered on the API key that mints your tokens, or the browser blocks the calls before they are sent.
 
+For the full walkthrough (token endpoint, connect, setups, settings forms, events, errors and the API reference), see [Build your own integrations UI](headless-sdk.md).
+
 ### Script tag
 
 Not an npm install: a hosted bundle you load with a `<script>` tag.
