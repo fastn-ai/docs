@@ -1,5 +1,5 @@
 ---
-description: Headless SDK guide: build a custom integrations screen with @fastn-ai/embed/headless. Tokens, connect, setups, settings, events and errors.
+description: "Headless SDK guide: build a custom integrations screen with @fastn-ai/embed/headless. Tokens, connect, setups, settings, events and errors."
 ---
 
 # Build your own integrations UI
@@ -157,7 +157,7 @@ import { FastnProvider } from "@fastn-ai/embed/headless/react";
 
 async function getToken(): Promise<string> {
   const res = await fetch("/api/fastn-token", { method: "POST" });
-  if (!res.ok) throw new Error(`token endpoint returned \${res.status}`);
+  if (!res.ok) throw new Error(`token endpoint returned ${res.status}`);
   const { token } = await res.json();
   return token;
 }
@@ -233,8 +233,18 @@ function Apps() {
 
 ### 5.1 API key and basic-auth connectors
 
-| import { getCredentialFields, isOAuthType } from "@fastn-ai/embed/headless/domain";<br><br>const method = app.authMethods?.find((m) => m.isDefault) ?? app.authMethods?.[0];<br>if (!method \ | \ | isOAuthType(method.type)) {<br>  connect(app.id); // OAuth: straight from the click<br>} else {<br>  const fields = getCredentialFields(method);<br>  // render fields in your form, then on submit:<br>  await connect(app.id, { credentials: values });<br>} |
-| --- | --- | --- |
+```ts
+import { getCredentialFields, isOAuthType } from "@fastn-ai/embed/headless/domain";
+
+const method = app.authMethods?.find((m) => m.isDefault) ?? app.authMethods?.[0];
+if (!method || isOAuthType(method.type)) {
+  connect(app.id); // OAuth: straight from the click
+} else {
+  const fields = getCredentialFields(method);
+  // render fields in your form, then on submit:
+  await connect(app.id, { credentials: values });
+}
+```
 
 getCredentialFields turns an auth method into fields: key, label, type, required, placeholder, enumValues. Use isOAuthType to choose the path: an empty field list also comes back for connectors with no auth.
 
@@ -265,7 +275,7 @@ await client.installations.create({
   targetType: "widget",
   targetId: widget.id,
   widgetId: widget.id,
-  label: `\${widget.name} setup`,
+  label: `${widget.name} setup`,
   connections: { hubspot: hubspotConnectionId }, // connector slug -> connection id
   status: "active",
 });
@@ -410,8 +420,24 @@ Include requestId when you report a FastnApiError to Fastn support: it names the
 
 With React, read error from useConnect. With the plain client, catch it.
 
-| import { FastnConnectError } from "@fastn-ai/embed/headless";<br><br>function connectMessage(err: unknown): string \ | null {<br>  if (err instanceof FastnConnectError && err.reason === "popup_blocked")<br>    return "Allow pop-ups for this site, then try again.";<br>  if (err instanceof FastnConnectError && err.reason === "cancelled")<br>    return null; // the user closed the popup<br>  return err ? "Could not connect. Please try again." : null;<br>}<br><br>// React<br>const { connect, error } = useConnect();<br>const message = connectMessage(error);<br><br>// plain client<br>try { await fastn.connect(app.id); } catch (err) { show(connectMessage(err)); } |
-| --- | --- |
+```ts
+import { FastnConnectError } from "@fastn-ai/embed/headless";
+
+function connectMessage(err: unknown): string | null {
+  if (err instanceof FastnConnectError && err.reason === "popup_blocked")
+    return "Allow pop-ups for this site, then try again.";
+  if (err instanceof FastnConnectError && err.reason === "cancelled")
+    return null; // the user closed the popup
+  return err ? "Could not connect. Please try again." : null;
+}
+
+// React
+const { connect, error } = useConnect();
+const message = connectMessage(error);
+
+// plain client
+try { await fastn.connect(app.id); } catch (err) { show(connectMessage(err)); }
+```
 
 ## 10. Without React
 
