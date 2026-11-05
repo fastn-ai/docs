@@ -81,6 +81,7 @@
   * [Embedding quickstart](tutorials/developer/embedding-quickstart.md)
   * [Iframe](embed/embedding/iframe.md)
   * [SDK](embed/embedding/sdk.md)
+  * [Build your own integrations UI](embed/embedding/headless-sdk.md)
   * [Token API](embed/embedding/token-api.md)
   * [Generate embed tokens](tutorials/developer/generating-embed-tokens.md)
   * [Integration flow](embed/embedding/integration-flow.md)
