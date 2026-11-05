@@ -60,6 +60,7 @@ The widget's Embed tab lists **A2A** (agent-to-agent), alongside Iframe and SDK,
 
 ### In this section
 
+* [From your backend](from-your-backend.md)
 * [Claude](claude.md)
 * [Claude Code](claude-code.md)
 * [ChatGPT](chatgpt.md)

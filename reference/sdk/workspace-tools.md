@@ -4,7 +4,7 @@ description: "The optional route: list and run the MCP tools your fastn workspac
 
 # Workspace tools
 
-You do not need this page for the flows in the rest of this section. It is an optional second route: if your app or AI agent works with **tools by name** (as an MCP client does), `ToolsClient` lists and runs the tools your fastn workspace has turned on, with the customer set on each call. See [MCP gateway](../../build/mcp-gateway/README.md) for what a workspace exposes.
+You do not need this page for the flows in the rest of this section. It is an optional second route: if your app or AI agent works with **tools by name** (as an MCP client does), `ToolsClient` lists and runs the tools your fastn workspace has turned on, with the customer set on each call. See [MCP gateway](../../build/mcp-gateway/README.md) for what a workspace exposes. For a backend that obtains its own OAuth token instead of a workspace key, see [From your backend](../../build/mcp-gateway/from-your-backend.md).
 
 ```typescript
 import { ToolsClient, ToolError } from "@fastn-ai/sdk";

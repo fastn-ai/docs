@@ -16,6 +16,10 @@ A webhook trigger fires when another system calls a URL you give it. Nothing is 
 
 * **`Auth`** reads `API key` where the webhook requires an API key in the `x-api-key` header, or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
 
+The key value comes from **Settings → API keys** (prefix `fsk_`). See [API keys](../../manage/api-keys.md).
+
+<!-- TODO(eng): this page documents `x-api-key` (default) and still accepts `x-fastn-access-key`, while operate/triggers/using-a-webhook-trigger.md shows only `x-api-key`. Confirm whether the `x-api-key` alias is live in prod, and whether docs should standardize on one header name. -->
+
 Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
 
 ### Can Build with AI do this for me?
