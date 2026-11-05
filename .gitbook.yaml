@@ -70,7 +70,6 @@ redirects:
   classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios: build/mcp-gateway/README.md
   classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/create-a-google-doc-and-share-it-to-slack-using-ucl: build/building-from-your-ai-agent.md
   classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-for-task-assignment-in-jira: build/building-from-your-ai-agent.md
-  classic/fastn-ucl/getting-started/how-ucl-works-in-real-scenarios/connect-ucl-to-cursor-and-access-data-from-notion: build/mcp-gateway/cursor.md
   classic/scheduling-flows: build/triggers/schedulers.md
 
   # V1 Flows pages (flow-setup-essentials, tutorials-1), unpublished 2026-09: point at the current equivalent
