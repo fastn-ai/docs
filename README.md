@@ -1,4 +1,5 @@
 ---
+title: "Fastn docs — embedded integration platform for AI agents"
 description: >-
   fastn is the embedded integration platform for SaaS. Embed one widget and your
   customers connect, customize and build their own integrations inside your
