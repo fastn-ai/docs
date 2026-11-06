@@ -85,6 +85,7 @@
   * [Generate embed tokens](tutorials/developer/generating-embed-tokens.md)
   * [Integration flow](embed/embedding/integration-flow.md)
   * [Customers and tenancy](tutorials/developer/understanding-tenancy.md)
+  * [Customer MCP URL](embed/embedding/customer-mcp-url.md)
 * [Go-live checklist](embed/embedding/production-checklist.md)
 * [API keys and MCP](manage/api-keys.md)
   * [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md)
