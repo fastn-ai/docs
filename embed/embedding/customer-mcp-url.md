@@ -8,16 +8,16 @@ A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to
 
 ## Create the URL
 
-Call this with the customer's [embed token](token-api.md). Mint the token on your backend as usual, for the customer and the person the connection is for.
+Call this with the customer's [embed token](token-api.md). Mint the token on your backend as usual, and always send `userId` for the person the connection is for. Without it, the token gets a random user id: the call still works, but the client sees none of that person's own connections.
 
 ```bash
 curl -X POST https://api.fastn.dev/api/v1/embed/mcp-connect-codes \
-  -H "Authorization: Bearer emb_<token>" \
+  -H "Authorization: Bearer <embed token>" \
   -H "Content-Type: application/json" \
   -d '{}'
 ```
 
-The customer and user come from the token, so the body is ignored.
+The customer and user come from the token, so any `endOrgId` you send is ignored. The body must still be valid JSON.
 
 ```json
 {
@@ -31,8 +31,10 @@ The customer and user come from the token, so the body is ignored.
 | Response | Means |
 | --- | --- |
 | `201` | The URL is in `data.url`. |
-| `403` `EMBED_MCP_CONNECT_NO_TENANT` | The token is not tied to a customer and a user. |
-| `403` | The token is a link token, which cannot create a connection, or lacks permission. |
+| `400` | The body is not valid JSON, or a field has the wrong type. |
+| `401` | The token is invalid or has expired. Embed tokens last 8 hours, so mint a fresh one. |
+| `403` `EMBED_MCP_CONNECT_NO_TENANT` | The token is org-level, not tied to a customer. |
+| `403` | The token is a link token, which cannot create a connection, or the call came from an origin the token does not allow. |
 | `429` `EMBED_RATE_LIMITED` | Too many URLs requested. Wait and try again. |
 | `503` `EMBED_MCP_CONNECT_UNAVAILABLE` | MCP connections are not available on this server. |
 
@@ -46,24 +48,35 @@ The customer and user come from the token, so the body is ignored.
 2. The client connects with OAuth, and fastn approves it without a sign-in screen. The URL is what authorizes it.
 3. The connection stays until it is disconnected, even though the URL has expired.
 
+Your call has already returned `201` by the time the customer pastes the URL, so a failure at this point shows only in their AI client. A used or expired URL fails, and so does any URL for a customer that is not active. Either way, offer a new URL.
+
 ## What the client can reach
 
 The client connects to the Fastn Workspace tools and acts as that customer and that user, with the `end_user` role.
 
-* It reaches only that customer's data and connections, and it cannot see your other customers.
+* It stays inside that customer, and it cannot see your other customers.
+* It acts as one person. It uses that user's connections, so a connection another person at the customer made for themselves is not available to it.
 * It can change data. A tool call runs against the customer's connected apps, including creating and updating records.
 * What it can call is limited by the `end_user` role, so the list is shorter than the tools you see with your own account. To see the exact list, ask the connected client to list its tools.
 
 ## Manage connections
 
+Call these from your backend with a key that acts for your own organization and has `connectors.read`. An embed token, or a key limited to one customer, gets an empty list and cannot disconnect.
+
 | Task | Call |
 | --- | --- |
-| List a workspace's connections | `GET /api/v1/embed/share-links?kind=mcp` |
+| List one customer's connections | `GET /api/v1/embed/share-links?kind=mcp&endOrgId=<fastn customer id>` |
 | Disconnect one | `DELETE /api/v1/embed/share-links/{id}` |
 
-These need an API key or session with `connectors.read`. Disconnecting ends the client's sessions and refuses its refresh token.
+The list returns the newest 200 rows, including disconnected ones. Skip any row with a `revoked_at`. Leave out `endOrgId` and it spans all your customers, so always send it when you show the list to a customer. Rows do not say which person connected. Disconnecting a row that is already disconnected returns `404`.
 
-You can do the same in the widget builder, on the **Embed** tab under **Claude (MCP)**: generate a URL for a selected customer, see live connections, and disconnect them.
+Disconnecting ends the client's sessions and refuses its refresh token.
+
+{% hint style="danger" %}
+**Treat each row's `id` as a secret.** Keep it on your backend and do not send it to the browser. Give your settings page your own reference, and look up the `id` on the server when someone disconnects.
+{% endhint %}
+
+You can do the same in the widget builder. On the **Embed** tab, select a customer and use the **MCP** card to generate a URL, see live connections and disconnect them.
 
 ## Hide it in the widget
 
