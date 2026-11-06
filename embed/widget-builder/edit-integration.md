@@ -114,6 +114,8 @@ Each callback runs as **Blocking** (the default: *Runs first and can stop the ac
 A callback marked **background** does not hold up the customer. The widget completes the activation and the workflow runs behind it, so a slow check never blocks the person in front of the screen.
 {% endhint %}
 
+[Widget callbacks](../../reference/widget-callbacks.md) lists what each workflow receives in `ctx.input` and what it can return.
+
 ## Saving
 
 **Save & Publish** applies everything, including binding the selected workflows, and offers the integration to every allowed customer. On a draft integration, **Save draft** saves your changes and keeps it a draft, so new customers still do not see it. **Cancel** discards the dialog.

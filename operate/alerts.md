@@ -73,7 +73,7 @@ A multi-select: leave it across everything, or pick the specific workflows this 
 | **Teams**   | A connected Microsoft Teams account: pick the team, then the channel. |
 | **Webhook** | An `http` or `https` endpoint of your own. |
 
-Discord and Telegram deliveries can be set up through the API.
+Discord and Telegram deliveries can be [set up through the API](#set-deliveries-through-the-api).
 
 An alert with no recipients shows **No recipients** and will not notify anyone.
 
@@ -84,6 +84,70 @@ The editor shows the five most recent times the alert fired, each marked **Deliv
 ### Evaluation
 
 Threshold alerts are evaluated every 15 minutes by default. Run-failure alerts fire within about a minute of the failure. Processing alerts fire once an event has waited longer than the minutes you set. Code alerts fire when your workflow code sends them.
+
+### Set deliveries through the API
+
+An alert rule's `deliveries` is an array of up to 10 channels. Send it to `POST /v1/alerts` or `PUT /v1/alerts/{id}` (see the [REST API reference](../reference/rest/observability.md)).
+
+```json
+{
+  "name": "Sync failures",
+  "mode": "instant",
+  "deliveries": [
+    { "type": "email", "to": "oncall@example.com", "subject": "Sync failed" },
+    { "type": "webhook", "url": "https://example.com/hooks/fastn" },
+    { "type": "slack", "url": "https://hooks.slack.com/services/..." },
+    { "type": "connection", "connectionId": "conn_123", "target": "C0123456789", "targetName": "#alerts" }
+  ]
+}
+```
+
+| `type` | Fields | Notes |
+| --- | --- | --- |
+| `email` | `to` (required), `subject` | Sent through fastn email. `subject` is one line of at most 200 characters. |
+| `webhook` | `url` (required) | An `http` or `https` URL. Receives the JSON below. |
+| `slack` | `url` (required) | A Slack incoming webhook URL. Receives `{ "text": "..." }`. |
+| `connection` | `connectionId` and `target` (required), `targetName`, `subject` | Sends through a connected account. `targetName` is a display name of at most 200 characters. `subject` applies to Gmail only. |
+
+The `connectionId` must be one of your own connections. `GET /v1/alerts/channels` lists the ones you can use, and `GET /v1/events/alerts/channels/{connectionId}/targets` lists their targets where the app can. What `target` holds depends on the app:
+
+| App | `target` |
+| --- | --- |
+| Slack | The channel |
+| Gmail | The recipient's email address |
+| Microsoft Teams | `channel:<teamId>:<channelId>` or `chat:<chatId>` |
+| Discord | The channel id |
+| Telegram | The chat id |
+
+A `webhook` delivery receives this body:
+
+```json
+{
+  "alert": {
+    "id": "...",
+    "name": "Sync failures",
+    "metric": "failed_runs",
+    "condition": "gt",
+    "threshold": 0,
+    "window": "24h"
+  },
+  "value": 1,
+  "message": "...",
+  "event": {
+    "type": "workflow_failure",
+    "workflowId": "wf_123",
+    "workflowName": "Sync contacts",
+    "executionId": "...",
+    "status": "failed",
+    "error": "...",
+    "errorCategory": "...",
+    "fixSuggestion": "...",
+    "failures": 1
+  }
+}
+```
+
+`value` is the measured value and `message` is the text the other channels get. `event` is present on **a run fails** alerts, as above, and on **workflow code raises it** alerts, where its `type` is `workflow_alert` and it carries `title`, `message`, `severity`, `key` and `data` from your `fastn.alerts.send` call along with the workflow and execution ids. Threshold alerts have no `event`.
 
 ### A starting set
 
