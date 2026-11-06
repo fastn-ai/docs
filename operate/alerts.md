@@ -109,6 +109,8 @@ An alert rule's `deliveries` is an array of up to 10 channels. Send it to `POST 
 | `slack` | `url` (required) | A Slack incoming webhook URL. Receives `{ "text": "..." }`. |
 | `connection` | `connectionId` and `target` (required), `targetName`, `subject` | Sends through a connected account. `targetName` is a display name of at most 200 characters. `subject` applies to Gmail only. |
 
+On a response, a `connection` delivery also includes `connectorSlug` (the connector slug of that connected account).
+
 The `connectionId` must be one of your own connections. `GET /v1/alerts/channels` lists the ones you can use, and `GET /v1/events/alerts/channels/{connectionId}/targets` lists their targets where the app can. What `target` holds depends on the app:
 
 | App | `target` |

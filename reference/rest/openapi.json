@@ -33709,6 +33709,10 @@
       "type": "string",
       "description": "connection: the connected account to send through"
      },
+     "connectorSlug": {
+      "type": "string",
+      "description": "connection: the connector slug of the connected account"
+     },
      "target": {
       "type": "string",
       "description": "connection: the channel / chat to post to"

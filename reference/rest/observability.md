@@ -49,6 +49,7 @@ Operation: `listAlerts`
 | `data[].deliveries[].to` | `string` | email: the address |
 | `data[].deliveries[].url` | `string` | webhook / slack: the URL |
 | `data[].deliveries[].connectionId` | `string` | connection: the connected account to send through |
+| `data[].deliveries[].connectorSlug` | `string` | connection: the connector slug of the connected account |
 | `data[].deliveries[].target` | `string` | connection: the channel / chat to post to |
 | `data[].deliveries[].subject` | `string` | email, or a connection through Gmail: optional subject, one line, at most 200 characters |
 | `data[].deliveries[].targetName` | `string` | connection: optional display name of the target, at most 200 characters |
@@ -122,6 +123,7 @@ Operation: `createAlert`
 | `data.deliveries[].to` | `string` | email: the address |
 | `data.deliveries[].url` | `string` | webhook / slack: the URL |
 | `data.deliveries[].connectionId` | `string` | connection: the connected account to send through |
+| `data.deliveries[].connectorSlug` | `string` | connection: the connector slug of the connected account |
 | `data.deliveries[].target` | `string` | connection: the channel / chat to post to |
 | `data.deliveries[].subject` | `string` | email, or a connection through Gmail: optional subject, one line, at most 200 characters |
 | `data.deliveries[].targetName` | `string` | connection: optional display name of the target, at most 200 characters |
@@ -268,6 +270,7 @@ Operation: `updateAlert`
 | `data.deliveries[].to` | `string` | email: the address |
 | `data.deliveries[].url` | `string` | webhook / slack: the URL |
 | `data.deliveries[].connectionId` | `string` | connection: the connected account to send through |
+| `data.deliveries[].connectorSlug` | `string` | connection: the connector slug of the connected account |
 | `data.deliveries[].target` | `string` | connection: the channel / chat to post to |
 | `data.deliveries[].subject` | `string` | email, or a connection through Gmail: optional subject, one line, at most 200 characters |
 | `data.deliveries[].targetName` | `string` | connection: optional display name of the target, at most 200 characters |
