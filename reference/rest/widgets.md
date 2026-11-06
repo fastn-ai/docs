@@ -24,7 +24,7 @@ Operation: `listWidgets`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `include` | query | string | No | inherited: One of: `inherited`. |
+| `include` | query | string | No | inherited. One of: `inherited`. |
 | `endOrgId` | query | string | No | Preview the catalog a customer sees (its own widgets plus inherited ones, enabled and allowed for it only), as the embed would. |
 
 **Responses**
@@ -54,7 +54,7 @@ Operation: `listWidgets`
 POST /v1/widgets
 ```
 
-unified_refs attaches unified catalog entities (their mapped connectors join the manifest; no config template is created). trigger_categories defines named trigger groups (unique slugs) the installer picks from at activation; trigger_refs[].categories tags each template with those slugs (untagged = core, always provisioned). connector_refs[].connectionScope tags a registered SaaS connector with the connection scope activation must pin (registry-validated). Creates a widget in the caller's org (requires widgets.create). Idempotent by name: a live widget with the same name (case-insensitive) is returned with 200 and reused: true instead of a new one. Needs at least one connector: connector_ids, connector_refs or unified_refs. Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details[] names the field and the rule, and error reads 'Request validation failed: &lt;path>: &lt;message>'. No connector is a path-less issue 'At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)'; an unknown category is trigger_refs.N.categories; a scope outside the SaaS-connector registry is connector_refs.N.connectionScope.
+Create an embed widget; unified_refs attaches unified catalog entities (their mapped connectors join the manifest; no config template is created). trigger_categories defines named trigger groups (unique slugs) the installer picks from at activation; trigger_refs[].categories tags each template with those slugs (untagged = core, always provisioned). connector_refs[].connectionScope tags a registered SaaS connector with the connection scope activation must pin (registry-validated). Creates a widget in the caller's org (requires widgets.create). Idempotent by name: a live widget with the same name (case-insensitive) is returned with 200 and reused: true instead of a new one. Needs at least one connector: connector_ids, connector_refs or unified_refs. Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details[] names the field and the rule, and error reads 'Request validation failed: &lt;path>: &lt;message>'. No connector is a path-less issue 'At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)'; an unknown category is trigger_refs.N.categories; a scope outside the SaaS-connector registry is connector_refs.N.connectionScope.
 
 Operation: `createWidget`
 
@@ -122,6 +122,84 @@ Operation: `createWidget`
 | `lifecycle_hooks.onDeactivation` | `object` | No |  |
 | `lifecycle_hooks.onDeactivation.workflowId` | `string` | Yes |  |
 | `lifecycle_hooks.onDeactivation.version` | `string` | No |  |
+| `lifecycle_hooks.onDeactivation.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onDeactivation.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onDeactivation.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationCreated` | `object` | No |  |
+| `lifecycle_hooks.onConfigurationCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConfigurationCreated.version` | `string` | No |  |
+| `lifecycle_hooks.onConfigurationCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConfigurationCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationChange` | `object` | No |  |
+| `lifecycle_hooks.onConfigurationChange.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConfigurationChange.version` | `string` | No |  |
+| `lifecycle_hooks.onConfigurationChange.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationChange.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConfigurationChange.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationDelete` | `object` | No |  |
+| `lifecycle_hooks.onConfigurationDelete.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConfigurationDelete.version` | `string` | No |  |
+| `lifecycle_hooks.onConfigurationDelete.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationDelete.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConfigurationDelete.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionDeleted` | `object` | No |  |
+| `lifecycle_hooks.onConnectionDeleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConnectionDeleted.version` | `string` | No |  |
+| `lifecycle_hooks.onConnectionDeleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionDeleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConnectionDeleted.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionCreated` | `object` | No |  |
+| `lifecycle_hooks.onConnectionCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConnectionCreated.version` | `string` | No |  |
+| `lifecycle_hooks.onConnectionCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConnectionCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted` | `object` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onSetupLinkCompleted.version` | `string` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onSetupLinkCompleted.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated` | `object` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.beforeTriggerCreated.version` | `string` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.beforeTriggerCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerCreated` | `object` | No |  |
+| `lifecycle_hooks.onTriggerCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onTriggerCreated.version` | `string` | No |  |
+| `lifecycle_hooks.onTriggerCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onTriggerCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated` | `object` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.beforeTriggerUpdated.version` | `string` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.beforeTriggerUpdated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerUpdated` | `object` | No |  |
+| `lifecycle_hooks.onTriggerUpdated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onTriggerUpdated.version` | `string` | No |  |
+| `lifecycle_hooks.onTriggerUpdated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerUpdated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onTriggerUpdated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted` | `object` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.beforeTriggerDeleted.version` | `string` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.beforeTriggerDeleted.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerDeleted` | `object` | No |  |
+| `lifecycle_hooks.onTriggerDeleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onTriggerDeleted.version` | `string` | No |  |
+| `lifecycle_hooks.onTriggerDeleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerDeleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onTriggerDeleted.runForCustomer` | `boolean` | No |  |
+| `activation_mode` | `string` | No | One of: `SINGLE_ACTIVATION`, `MULTI_CONNECTION`. |
+| `enabled` | `boolean` | No |  |
+| `allowed_end_org_ids` | `string[]` | No |  |
 
 **Responses**
 
@@ -187,13 +265,13 @@ Operation: `getWidgetInsights`
 * `200`: runsToday, recordsProcessed, needsAttention, connector summary, failedRuns, per-workflow lastRunStatus with dead-workflow signal. `window` is the exact { from, to } the numbers cover; `historyFrom` is the earliest instant counts are held from (null: none yet), a window starting earlier is answered for its covered part only.
 * `400`: Invalid range/days, a half-specified or inverted from..to, or a span over 365 days
 
-### Widget insights, right now
+### Widget insights, right now: runs processing and queued and trigger deliveries due...
 
 ```http
 GET /v1/widgets/insights/live
 ```
 
-runs processing and queued and trigger deliveries due another retry, in the insights panel's scope Not windowed; read from the in-flight rows. Scoped like getWidgetInsights: the caller's org, narrowed to one customer for an end_user or by endOrgId. range is still validated (400 on an unknown value) but does not change the answer.
+Widget insights, right now: runs processing and queued and trigger deliveries due another retry, in the insights panel's scope. Not windowed; read from the in-flight rows. Scoped like getWidgetInsights: the caller's org, narrowed to one customer for an end_user or by endOrgId. range is still validated (400 on an unknown value) but does not change the answer.
 
 Operation: `getLiveWidgetInsights`
 
@@ -210,13 +288,13 @@ Operation: `getLiveWidgetInsights`
 * `400`: Invalid range
 * `403`: endOrgId is outside the caller's customer scope
 
-### Partner reporting
+### Partner reporting: the same operational metrics as /widgets/insights, totalled across...
 
 ```http
 GET /v1/widgets/insights/tenants
 ```
 
-the same operational metrics as /widgets/insights, totalled across every customer of the calling account plus one row per customer. Workflows labelled Internal or Staging are left out of every number. Totals span all customers and ignore ?q; only the table is filtered. Refused for a customer-scoped session (an embed token or customer-pinned API key), whose 'customers' would be its own siblings, and for roles below developer. Account-wide reporting across the caller's customers: totals, chart series, failure categories, per-workflow and per-connector rows, and a sorted, paged per-customer table. Refused (403) for customer-scoped sessions and roles below the account tier.
+Partner reporting: the same operational metrics as /widgets/insights, totalled across every customer of the calling account plus one row per customer. Workflows labelled Internal or Staging are left out of every number. Totals span all customers and ignore ?q; only the table is filtered. Refused for a customer-scoped session (an embed token or customer-pinned API key), whose 'customers' would be its own siblings, and for roles below developer. Account-wide reporting across the caller's customers: totals, chart series, failure categories, per-workflow and per-connector rows, and a sorted, paged per-customer table. Refused (403) for customer-scoped sessions and roles below the account tier.
 
 Operation: `getTenantInsights`
 
@@ -244,13 +322,13 @@ Operation: `getTenantInsights`
 * `403`: Customer-scoped session, or a role that cannot read other organisations' reporting
 * `404`: `customer` is not one of the caller's own customers
 
-### Partner reporting, right now
+### Partner reporting, right now: runs processing and queued (with the oldest age of...
 
 ```http
 GET /v1/widgets/insights/tenants/live
 ```
 
-runs processing and queued (with the oldest age of each), and trigger deliveries due another retry, across every customer or one. Not windowed; read from the in-flight rows. In-flight snapshot across the caller's customers (or one, via customer): runs processing and queued and trigger deliveries awaiting retry. Refused (403) for customer-scoped sessions and roles below the account tier.
+Partner reporting, right now: runs processing and queued (with the oldest age of each), and trigger deliveries due another retry, across every customer or one. Not windowed; read from the in-flight rows. In-flight snapshot across the caller's customers (or one, via customer): runs processing and queued and trigger deliveries awaiting retry. Refused (403) for customer-scoped sessions and roles below the account tier.
 
 Operation: `getLiveTenantInsights`
 
@@ -281,7 +359,7 @@ Operation: `getWidget`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `include` | query | string | No | inherited: One of: `inherited`. |
+| `include` | query | string | No | inherited. One of: `inherited`. |
 
 **Responses**
 
@@ -294,7 +372,7 @@ Operation: `getWidget`
 PUT /v1/widgets/{id}
 ```
 
-Shrinking trigger_categories while trigger_refs still tag a removed slug is rejected (400). connector_refs[].connectionScope (SaaS-connector activation pinning) is validated against the org's saas_connectors registry. Partial update; omitted fields keep their stored value, and an omitted unified_refs[].configForm keeps the stored form. The integration's How it works doc is changed with updateWidgetDocs, not here. Allowed when the caller is owner/admin/developer in the widget's owning workspace; 403 WIDGET_NOT_IN_ACCOUNT otherwise (an inherited widget must be forked first). Every 400 is VALIDATION_ERROR in the same envelope as any schema failure, details[] naming the field and the rule: id for a malformed id in the URL, and the path-less 'At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)' when the update would leave no connector and no unified entity. Only fields the request sent are named; a stored value that breaks a rule is reported on the sent field that kept it, with the message saying it is stored.
+Update widget. Shrinking trigger_categories while trigger_refs still tag a removed slug is rejected (400). connector_refs[].connectionScope (SaaS-connector activation pinning) is validated against the org's saas_connectors registry. Partial update; omitted fields keep their stored value, and an omitted unified_refs[].configForm keeps the stored form. The integration's How it works doc is changed with updateWidgetDocs, not here. Allowed when the caller is owner/admin/developer in the widget's owning workspace; 403 WIDGET_NOT_IN_ACCOUNT otherwise (an inherited widget must be forked first). Every 400 is VALIDATION_ERROR in the same envelope as any schema failure, details[] naming the field and the rule: id for a malformed id in the URL, and the path-less 'At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)' when the update would leave no connector and no unified entity. Only fields the request sent are named; a stored value that breaks a rule is reported on the sent field that kept it, with the message saying it is stored.
 
 Operation: `updateWidget`
 
@@ -368,6 +446,84 @@ Operation: `updateWidget`
 | `lifecycle_hooks.onDeactivation` | `object` | No |  |
 | `lifecycle_hooks.onDeactivation.workflowId` | `string` | Yes |  |
 | `lifecycle_hooks.onDeactivation.version` | `string` | No |  |
+| `lifecycle_hooks.onDeactivation.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onDeactivation.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onDeactivation.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationCreated` | `object` | No |  |
+| `lifecycle_hooks.onConfigurationCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConfigurationCreated.version` | `string` | No |  |
+| `lifecycle_hooks.onConfigurationCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConfigurationCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationChange` | `object` | No |  |
+| `lifecycle_hooks.onConfigurationChange.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConfigurationChange.version` | `string` | No |  |
+| `lifecycle_hooks.onConfigurationChange.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationChange.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConfigurationChange.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationDelete` | `object` | No |  |
+| `lifecycle_hooks.onConfigurationDelete.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConfigurationDelete.version` | `string` | No |  |
+| `lifecycle_hooks.onConfigurationDelete.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConfigurationDelete.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConfigurationDelete.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionDeleted` | `object` | No |  |
+| `lifecycle_hooks.onConnectionDeleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConnectionDeleted.version` | `string` | No |  |
+| `lifecycle_hooks.onConnectionDeleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionDeleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConnectionDeleted.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionCreated` | `object` | No |  |
+| `lifecycle_hooks.onConnectionCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onConnectionCreated.version` | `string` | No |  |
+| `lifecycle_hooks.onConnectionCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onConnectionCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onConnectionCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted` | `object` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onSetupLinkCompleted.version` | `string` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onSetupLinkCompleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onSetupLinkCompleted.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated` | `object` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.beforeTriggerCreated.version` | `string` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.beforeTriggerCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerCreated` | `object` | No |  |
+| `lifecycle_hooks.onTriggerCreated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onTriggerCreated.version` | `string` | No |  |
+| `lifecycle_hooks.onTriggerCreated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerCreated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onTriggerCreated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated` | `object` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.beforeTriggerUpdated.version` | `string` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerUpdated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.beforeTriggerUpdated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerUpdated` | `object` | No |  |
+| `lifecycle_hooks.onTriggerUpdated.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onTriggerUpdated.version` | `string` | No |  |
+| `lifecycle_hooks.onTriggerUpdated.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerUpdated.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onTriggerUpdated.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted` | `object` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.beforeTriggerDeleted.version` | `string` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.beforeTriggerDeleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.beforeTriggerDeleted.runForCustomer` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerDeleted` | `object` | No |  |
+| `lifecycle_hooks.onTriggerDeleted.workflowId` | `string` | Yes |  |
+| `lifecycle_hooks.onTriggerDeleted.version` | `string` | No |  |
+| `lifecycle_hooks.onTriggerDeleted.enabled` | `boolean` | No |  |
+| `lifecycle_hooks.onTriggerDeleted.mode` | `string` | No | One of: `blocking`, `background`. |
+| `lifecycle_hooks.onTriggerDeleted.runForCustomer` | `boolean` | No |  |
+| `activation_mode` | `string` | No | One of: `SINGLE_ACTIVATION`, `MULTI_CONNECTION`. |
+| `enabled` | `boolean` | No |  |
+| `allowed_end_org_ids` | `string[]` | No |  |
 
 **Responses**
 
@@ -538,7 +694,7 @@ Operation: `generateWidgetDocs`
 POST /v1/widgets/{widgetId}/unified-config/options
 ```
 
-params become ctx.input for cascading selects Runs the options snippet stored on the widget's unified config field in the workflow sandbox and returns the options, filtered by query and paged by offset/limit. An end_user may not name another customer or installation (403).
+Load select options for a widget's unified config field by executing the snippet stored on the widget (never client-supplied code); params become ctx.input for cascading selects. Runs the options snippet stored on the widget's unified config field in the workflow sandbox and returns the options, filtered by query and paged by offset/limit. An end_user may not name another customer or installation (403).
 
 Operation: `loadUnifiedConfigFieldOptions`
 
@@ -776,7 +932,7 @@ Operation: `validateEmbedToken`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `string` | Yes |  |
-| `endOrgId` | `string` | No | Optional. The customer the caller believes this session is for (the &lt;fastn-embed org-id/customer-id> attribute). Either the customer's fastn id or the external_ref it was registered under. If it names a different customer than the token carries, the request is refused rather than silently answered for the token's customer. |
+| `endOrgId` | `string` | No | Optional. The customer the caller believes this session is for (the &lt;fastn-embed org-id/tenant-id> attribute). Either the customer's fastn id or the external_ref it was registered under. If it names a different customer than the token carries, the request is refused rather than silently answered for the token's customer. |
 
 **Responses**
 

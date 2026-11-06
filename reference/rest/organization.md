@@ -25,7 +25,7 @@ Operation: `listOrgs`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `type` | query | string | No | company \| partner \| end_org \| personal (account is accepted as an alias of company). |
-| `tier` | query | string | No | account or customer; any other value is a 400. One of: `account`, `tenant`. |
+| `tier` | query | string | No | account or tenant; any other value is a 400. One of: `account`, `tenant`. |
 | `parent_id` | query | string | No | Only children of this org. |
 | `include_usage` | query | string | No | 1 or true adds executions, events, storage_gb, overage, credits, integrations and users per org. One of: `1`, `true`. |
 
@@ -64,8 +64,8 @@ Operation: `createTenant`
 **Responses**
 
 * `201`: Org created. Account-tier responses carry an `owner` object ({ userId, email, inviteStatus }, `inviteStatus` is `accepted` when the named owner already had a fastn account they had verified, so it is not a 'somebody must act' flag); `inviteSent: false` is added only when the invite email failed to send.
-* `400`: Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org; type personal is for a person's own workspace and only a platform admin may create one here
-* `403`: Paid plan requires platform admin, or account cap reached
+* `400`: Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org.
+* `403`: No description.
 * `500`: Owner assignment failed and the partial org could not be removed, its slug stays in use
 * `502`: Owner assignment failed; nothing was written and the call can be retried
 
@@ -75,7 +75,7 @@ Operation: `createTenant`
 GET /v1/orgs/{id}
 ```
 
-Returns one org. Requires settings.read;
+Returns one org. Requires settings.read.
 
 Operation: `getTenant`
 
@@ -96,7 +96,7 @@ Operation: `getTenant`
 PUT /v1/orgs/{id}
 ```
 
-Updates an org the caller may manage. status may be changed by or by an owner/admin on its own child org. external_ref is immutable: resending the stored value is a no-op, any other value is a 400.
+Updates an org the caller may manage. status may be changed by an owner/admin on its own child org. external_ref is immutable: resending the stored value is a no-op, any other value is a 400.
 
 Operation: `updateTenant`
 
@@ -180,7 +180,7 @@ Operation: `assignOrgAdmin`
 GET /v1/orgs/{id}/config
 ```
 
-Returns the org's config document (org_configs.config). Requires settings.update on this org or its parent; 404 when the org does not exist.
+Requires settings.update on this org or its parent; 404 when the org does not exist.
 
 Operation: `getOrgConfig`
 
@@ -202,7 +202,7 @@ Operation: `getOrgConfig`
 PUT /v1/orgs/{id}/config
 ```
 
-Merges the body into org_configs.config at the top level. `orgName` is not a config key: it is written through to the org's `name` column (readable at GET /api/v1/orgs/{id}) and never stored in the document. Accepted at the top level or nested under `config`, and must be a non-blank string of at most 200 characters with no control characters, angle brackets or invisible characters. A value that differs from the current name is a rename and requires org.update; resending the name the org already has is a no-op and needs only settings.update, so a form that posts the name on every save still works. Omit it to leave the name unchanged; a blank value is rejected rather than clearing the saved name. The rename and the config write commit together. Only some keys may be changed, by who is writing: on its own org, timezone, setupLinkRedirectUrls and setupLinkDefaultTtlMinutes; an account on its own org also customer_tiers; a partner on one of its customers also tier, limits and roleOverride; a platform admin anything. A key outside that set is refused with 403 CONFIG_KEY_NOT_ALLOWED (a key sent with its stored value is ignored). roleOverride and a tier roleId cannot name an account-level role.
+`orgName` is not a config key: it is written through to the org's `name` column (readable at GET /api/v1/orgs/{id}) and never stored in the document. Accepted at the top level or nested under `config`, and must be a non-blank string of at most 200 characters with no control characters, angle brackets or invisible characters. A value that differs from the current name is a rename and requires org.update; resending the name the org already has is a no-op and needs only settings.update, so a form that posts the name on every save still works. Omit it to leave the name unchanged; a blank value is rejected rather than clearing the saved name. The rename and the config write commit together. Only some keys may be changed, by who is writing: on its own org, timezone, setupLinkRedirectUrls and setupLinkDefaultTtlMinutes; an account on its own org also customer_tiers; a partner on one of its customers also tier, limits and roleOverride; A key outside that set is refused with 403 CONFIG_KEY_NOT_ALLOWED (a key sent with its stored value is ignored). roleOverride and a tier roleId cannot name an account-level role.
 
 Operation: `updateOrgConfig`
 
@@ -752,7 +752,7 @@ Operation: `rollApiKey`
 GET /v1/me
 ```
 
-Who you are talking to. Answers from the gateway's resolved context, so it works for every credential a caller can arrive with, a dashboard JWT, an API key, an embed (widget) token and a share link alike; Call it before your first substantive reply and adapt to the answer, including `signupProfile` for how to word replies to this person and what they first came to build. Two independent axes, and do not collapse them: `actor` is WHICH CREDENTIAL, `actingAsTenant` is WHOSE WORKSPACE. `actingAsTenant: true` means the credential was minted for a customer of a parent org, `org` is that customer's own workspace and `parentOrg` is the partner whose product they are using, so speak in business terms about their own connections and not about building the platform. Their provider's integrations are theirs to use, and to customise by forking a copy into their own workspace (forkIntegration) - never in place. It is true for a partner's customer in an embedded widget AND for a customer-scoped API key, so it does not on its own mean a human is present; read `actor` for that. `actingAsTenant: false` means the caller is acting as the org itself, which for `actor: user` is the partner's own staff in the dashboard, with `role` naming the persona. `permissions` reports three layers rather than one merged list, because enforcement is a layered predicate and a merged copy would drift from it: `role` is the enforced baseline for the persona, `structured` narrows it when present (an action needs both; it is reported already intersected with the role, so it is the effective set), and `apiKeyGrant` is a ceiling over both and never widens them. Retired-resource entries may appear in `role` and govern nothing. Every tool call you make executes under this identity, so a 403 means this persona lacks the permission rather than a fault worth retrying. One limitation:
+Who you are talking to. Answers from the gateway's resolved context, so it works for every credential a caller can arrive with, a dashboard JWT, an API key, an embed (widget) token and a share link alike; Call it before your first substantive reply and adapt to the answer, including `signupProfile` for how to word replies to this person and what they first came to build. Two independent axes, and do not collapse them: `actor` is WHICH CREDENTIAL, `actingAsTenant` is WHOSE WORKSPACE. `actingAsTenant: true` means the credential was minted for a customer of a parent org, `org` is that customer's own workspace and `parentOrg` is the partner whose product they are using, so speak in business terms about their own connections and not about building the platform. Their provider's integrations are theirs to use, and to customise by forking a copy into their own workspace (forkIntegration) - never in place. It is true for a partner's customer in an embedded widget AND for a customer-scoped API key, so it does not on its own mean a human is present; read `actor` for that. `actingAsTenant: false` means the caller is acting as the org itself, which for `actor: user` is the partner's own staff in the dashboard, with `role` naming the persona. `permissions` reports three layers rather than one merged list, because enforcement is a layered predicate and a merged copy would drift from it: `role` is the enforced baseline for the persona, `structured` narrows it when present (an action needs both; it is reported already intersected with the role, so it is the effective set), and `apiKeyGrant` is a ceiling over both and never widens them. Retired-resource entries may appear in `role` and govern nothing. Every tool call you make executes under this identity, so a 403 means this persona lacks the permission rather than a fault worth retrying. One limitation.
 
 Operation: `whoami`
 
@@ -921,7 +921,7 @@ Operation: `listUsers`
 POST /v1/users/invite
 ```
 
-role may also be a custom role id (cr_...) of the target org;
+role may also be a custom role id (cr_...) of the target org.
 
 Operation: `inviteUser`
 
@@ -1271,7 +1271,7 @@ Operation: `resendInvite`
 PUT /v1/users/{userId}/role
 ```
 
-Changes a member's role in the caller's org. Cannot change your own role, assign owner (use ownership transfer), or assign a role above your own;
+Changes a member's role in the caller's org. Cannot change your own role, assign owner (use ownership transfer), or assign a role above your own.
 
 Operation: `updateUserRole`
 

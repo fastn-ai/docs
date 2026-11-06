@@ -147,7 +147,16 @@ A `webhook` delivery receives this body:
 }
 ```
 
-`value` is the measured value and `message` is the text the other channels get. `event` is present on **a run fails** alerts, as above, and on **workflow code raises it** alerts, where its `type` is `workflow_alert` and it carries `title`, `message`, `severity`, `key` and `data` from your `fastn.alerts.send` call along with the workflow and execution ids. Threshold alerts have no `event`.
+`value` is the measured value and `message` is the text the other channels get. `event` depends on what fired, so switch on its `type` and ignore types you do not know:
+
+| `event.type` | Sent for | Fields |
+| --- | --- | --- |
+| `workflow_failure` | **a run fails** alerts | As in the sample above. |
+| `workflow_alert` | **workflow code raises it** alerts | `title`, `message`, `severity`, `key` and `data` from your `fastn.alerts.send` call, plus `count`, `summary`, `test`, `workflowId`, `workflowName`, `executionId`, `endOrgId`, `alertId`, and `alertIds` on a summary. |
+| `platform_outage` | A fastn outage affecting your events | `startedAt`, `triggers`, `workflows`, `total`. |
+| `platform_recovered` | The end of that outage | `startedAt` when known, `endedAt`. |
+
+Threshold alerts have no `event`. On a code alert, `alert.metric` and `alert.window` do not describe the rule, so read `event` instead.
 
 ### A starting set
 

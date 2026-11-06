@@ -9,8 +9,8 @@ A callback runs one of your workflows when something happens to a customer's set
 ```json
 {
   "lifecycle_hooks": {
-    "onActivation": { "workflowId": "wf_123", "mode": "blocking" },
-    "onConnectionCreated": { "workflowId": "wf_456", "mode": "background", "runForCustomer": true }
+    "onActivation": { "workflowId": "wf_123", "mode": "blocking", "runForCustomer": true },
+    "onConnectionCreated": { "workflowId": "wf_456", "mode": "background" }
   }
 }
 ```
@@ -22,7 +22,7 @@ A callback runs one of your workflows when something happens to a customer's set
 | `enabled` | boolean | Set `false` to silence the callback and keep the workflow selected. On when left out. |
 | `runForCustomer` | boolean | Lets this callback run a workflow the customer has not installed. Off when left out. `onSetupLinkCompleted`, `onConnectionCreated` and `onConnectionDeleted` do not need it. |
 
-Callbacks run under the customer's org, whoever acted: the widget, a share link, the dashboard or an API key. A workflow you use only as a callback is not installed for the customer, so it needs `runForCustomer: true`. Without it the run is refused, and a blocking callback then stops the customer's action.
+Most callbacks run under the customer's org, whoever acted: the widget, a share link, the dashboard or an API key. The exception is updating or deleting a config through `/v1/configs`, which runs `onConfigurationChange` or `onConfigurationDelete` under the caller's org. A workflow you use only as a callback is not installed for the customer, so it needs `runForCustomer: true`. Without it the run is refused, and a blocking callback then stops the customer's action.
 
 ## What the workflow receives
 
@@ -103,8 +103,8 @@ The same customer and installation are also on the request as `x-end-org-id` and
 | `onActivation` | An installation is created as active, or changes to active | Blocking or background | 5 seconds |
 | `onDeactivation` | An active installation changes to inactive, or is deleted | Blocking or background | 5 seconds |
 | `onConfigurationCreated` | A customer's config is created for this widget | Blocking or background | 2 seconds |
-| `onConfigurationChange` | An installation's configuration changes, or an active installation is created with values | Blocking or background | 2 seconds |
-| `onConfigurationDelete` | A customer's config for this widget is deleted | Blocking or background | 2 seconds |
+| `onConfigurationChange` | An installation's configuration changes, a config pinned to an installation is updated, or an active installation is created with values | Blocking or background | 2 seconds |
+| `onConfigurationDelete` | A config for this widget is deleted by a caller acting for a customer. Deleting one with no customer in context runs no callback. | Blocking or background | 2 seconds |
 | `onSetupLinkCompleted` | A setup link creates the customer's first setup of this widget | Background only | |
 | `onConnectionCreated` | A later setup link adds another account, or signs a pinned account in again | Background only | |
 | `onConnectionDeleted` | The customer removes an account an active setup uses | Background only | |

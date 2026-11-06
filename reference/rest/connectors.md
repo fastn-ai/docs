@@ -118,7 +118,7 @@ Operation: `createConnector`
 | `retryPolicy.methods` | `string[]` | No |  |
 | `timeoutMs` | `integer` | No |  |
 | `additionalFields` | `object` | No |  |
-| `protocol` | `string` | No | One of: `REST`, `MCP`, `FTP`, `DB`, `REDIS`. |
+| `protocol` | `string` | No | One of: `REST`, `MCP`, `FTP`, `DB`. |
 | `mcpServerUrl` | `string` | No |  |
 | `dbConnectionConfig` | `object` | No |  |
 | `dbConnectionConfig.dbType` | `string` | Yes | One of: `postgres`, `redshift`, `mysql`, `mssql`, `mongodb`. |
@@ -136,6 +136,15 @@ Operation: `createConnector`
 | `ftpConnectionConfig.username` | `string` | No |  |
 | `ftpConnectionConfig.password` | `string` | No |  |
 | `ftpConnectionConfig.privateKey` | `string` | No |  |
+| `ftpConnectionConfig.secure` | `boolean` | No |  |
+| `ftpConnectionConfig.rejectUnauthorized` | `boolean` | No |  |
+| `redisConnectionConfig` | `object` | No |  |
+| `redisConnectionConfig.host` | `string` | No |  |
+| `redisConnectionConfig.port` | `integer` | No |  |
+| `redisConnectionConfig.password` | `string` | No |  |
+| `redisConnectionConfig.tls` | `boolean` | No |  |
+| `redisConnectionConfig.db` | `integer` | No |  |
+| `connectionVerifyActionId` | `string` | No |  |
 
 **Responses**
 
@@ -353,7 +362,7 @@ Operation: `updateConnector`
 | `timeoutMs` | `integer` | No |  |
 | `additionalFields` | `object` | No |  |
 | `commit` | `string` | No |  |
-| `protocol` | `string` | No | One of: `REST`, `MCP`, `FTP`, `DB`, `REDIS`. |
+| `protocol` | `string` | No | One of: `REST`, `MCP`, `FTP`, `DB`. |
 | `mcpServerUrl` | `string` | No |  |
 | `ftpConnectionConfig` | `object` | No |  |
 | `ftpConnectionConfig.protocol` | `string` | Yes | One of: `ftp`, `ftps`, `sftp`. |
@@ -369,6 +378,21 @@ Operation: `updateConnector`
 | `dbConnectionConfig.host` | `string` | No |  |
 | `dbConnectionConfig.port` | `integer` | No |  |
 | `dbConnectionConfig.database` | `string` | No |  |
+| `dbConnectionConfig.username` | `string` | No |  |
+| `dbConnectionConfig.password` | `string` | No |  |
+| `dbConnectionConfig.ssl` | `boolean or string` | No |  |
+| `dbConnectionConfig.authSource` | `string` | No |  |
+| `redisConnectionConfig` | `object` | No |  |
+| `redisConnectionConfig.host` | `string` | No |  |
+| `redisConnectionConfig.port` | `integer` | No |  |
+| `redisConnectionConfig.password` | `string` | No |  |
+| `redisConnectionConfig.tls` | `boolean` | No |  |
+| `redisConnectionConfig.db` | `integer` | No |  |
+| `connectionInitActionId` | `string` | No |  |
+| `credentialMapping` | `object` | No |  |
+| `generateKeyPair` | `boolean` | No |  |
+| `connectionVerifyActionId` | `string` | No |  |
+| `verifySuccessPath` | `string` | No |  |
 
 **Responses**
 
@@ -432,7 +456,7 @@ Operation: `createConnectorAction`
 | `name` | `string` | Yes |  |
 | `slug` | `string` | Yes |  |
 | `description` | `string` | No |  |
-| `type` | `string` | Yes | One of: `HTTP`, `GRPC`, `FTP`, `LAMBDA`, `DB`, `REDIS`. |
+| `type` | `string` | Yes | One of: `HTTP`, `GRPC`, `FTP`, `LAMBDA`, `DB`. |
 | `method` | `string` | No | One of: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, `PROPFIND`, `MKCOL`, `MOVE`, `COPY`, `LOCK`, `UNLOCK`. |
 | `path` | `string` | No |  |
 | `headers` | `object` | No |  |
@@ -488,6 +512,33 @@ Operation: `createConnectorAction`
 | `lambdaConfig.invocationType` | `string` | No | One of: `RequestResponse`, `Event`, `DryRun`. |
 | `dbConfig` | `object` | No |  |
 | `dbConfig.operation` | `string` | Yes | One of: `query`. |
+| `dbConfig.dbType` | `string` | Yes | One of: `postgres`, `redshift`, `mysql`, `mssql`, `mongodb`. |
+| `dbConfig.query` | `string` | No |  |
+| `authConfig` | `object` | No |  |
+| `inputContract` | `object` | No |  |
+| `inputContract.type` | `string` | Yes | Always `object`. |
+| `inputContract.properties` | `object` | Yes |  |
+| `inputContract.required` | `string[]` | No |  |
+| `outputContract` | `object` | No |  |
+| `outputContract.type` | `string` | Yes | Always `object`. |
+| `outputContract.properties` | `object` | Yes |  |
+| `outputContract.required` | `string[]` | No |  |
+| `language` | `string` | No | One of: `PYTHON`, `JS`. |
+| `code` | `string` | No |  |
+| `rateLimit` | `object` | No |  |
+| `rateLimit.enabled` | `boolean` | Yes |  |
+| `rateLimit.limits` | `object[]` | Yes |  |
+| `rateLimit.limits[].requests` | `integer` | Yes |  |
+| `rateLimit.limits[].strategy` | `string` | Yes | One of: `FIXED_WINDOW`, `SLIDING_WINDOW`, `CONCURRENCY`. |
+| `rateLimit.limits[].window` | `integer` | Yes |  |
+| `rateLimit.limits[].burstLimit` | `integer` | No |  |
+| `stage` | `string` | No | One of: `test`, `live`. |
+| `folderId` | `string` | No |  |
+| `externalVersion` | `string` | No |  |
+| `apiVersion` | `string` | No |  |
+| `isDefaultExternalVersion` | `boolean` | No |  |
+| `versionMajor` | `integer` | No |  |
+| `submissionNote` | `string` | No |  |
 
 **Responses**
 
@@ -1166,7 +1217,7 @@ Operation: `createAction`
 | `name` | `string` | Yes |  |
 | `slug` | `string` | Yes |  |
 | `description` | `string` | No |  |
-| `type` | `string` | Yes | One of: `HTTP`, `GRPC`, `FTP`, `LAMBDA`, `DB`, `REDIS`. |
+| `type` | `string` | Yes | One of: `HTTP`, `GRPC`, `FTP`, `LAMBDA`, `DB`. |
 | `method` | `string` | No | One of: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, `PROPFIND`, `MKCOL`, `MOVE`, `COPY`, `LOCK`, `UNLOCK`. |
 | `path` | `string` | No |  |
 | `headers` | `object` | No |  |
@@ -1222,6 +1273,33 @@ Operation: `createAction`
 | `lambdaConfig.invocationType` | `string` | No | One of: `RequestResponse`, `Event`, `DryRun`. |
 | `dbConfig` | `object` | No |  |
 | `dbConfig.operation` | `string` | Yes | One of: `query`. |
+| `dbConfig.dbType` | `string` | Yes | One of: `postgres`, `redshift`, `mysql`, `mssql`, `mongodb`. |
+| `dbConfig.query` | `string` | No |  |
+| `authConfig` | `object` | No |  |
+| `inputContract` | `object` | No |  |
+| `inputContract.type` | `string` | Yes | Always `object`. |
+| `inputContract.properties` | `object` | Yes |  |
+| `inputContract.required` | `string[]` | No |  |
+| `outputContract` | `object` | No |  |
+| `outputContract.type` | `string` | Yes | Always `object`. |
+| `outputContract.properties` | `object` | Yes |  |
+| `outputContract.required` | `string[]` | No |  |
+| `language` | `string` | No | One of: `PYTHON`, `JS`. |
+| `code` | `string` | No |  |
+| `rateLimit` | `object` | No |  |
+| `rateLimit.enabled` | `boolean` | Yes |  |
+| `rateLimit.limits` | `object[]` | Yes |  |
+| `rateLimit.limits[].requests` | `integer` | Yes |  |
+| `rateLimit.limits[].strategy` | `string` | Yes | One of: `FIXED_WINDOW`, `SLIDING_WINDOW`, `CONCURRENCY`. |
+| `rateLimit.limits[].window` | `integer` | Yes |  |
+| `rateLimit.limits[].burstLimit` | `integer` | No |  |
+| `stage` | `string` | No | One of: `test`, `live`. |
+| `folderId` | `string` | No |  |
+| `externalVersion` | `string` | No |  |
+| `apiVersion` | `string` | No |  |
+| `isDefaultExternalVersion` | `boolean` | No |  |
+| `versionMajor` | `integer` | No |  |
+| `submissionNote` | `string` | No |  |
 
 **Responses**
 
@@ -1408,6 +1486,28 @@ Operation: `updateAction`
 | `lambdaConfig.region` | `string` | No |  |
 | `lambdaConfig.payload` | `object` | No |  |
 | `lambdaConfig.invocationType` | `string` | No | One of: `RequestResponse`, `Event`, `DryRun`. |
+| `dbConfig` | `object` | No |  |
+| `dbConfig.operation` | `string` | Yes | One of: `query`. |
+| `dbConfig.dbType` | `string` | Yes | One of: `postgres`, `redshift`, `mysql`, `mssql`, `mongodb`. |
+| `dbConfig.query` | `string` | No |  |
+| `language` | `string` | No |  |
+| `code` | `string` | No |  |
+| `rateLimit` | `object` | No |  |
+| `rateLimit.enabled` | `boolean` | Yes |  |
+| `rateLimit.limits` | `object[]` | Yes |  |
+| `rateLimit.limits[].requests` | `integer` | Yes |  |
+| `rateLimit.limits[].strategy` | `string` | Yes | One of: `FIXED_WINDOW`, `SLIDING_WINDOW`, `CONCURRENCY`. |
+| `rateLimit.limits[].window` | `integer` | Yes |  |
+| `rateLimit.limits[].burstLimit` | `integer` | No |  |
+| `stage` | `string` | No | One of: `test`, `live`. |
+| `commit` | `string` | No |  |
+| `folderId` | `string` | No |  |
+| `externalVersion` | `string` | No |  |
+| `apiVersion` | `string` | No |  |
+| `isDefaultExternalVersion` | `boolean` | No |  |
+| `deprecated` | `boolean` | No |  |
+| `sunsetAt` | `string` | No |  |
+| `successorActionId` | `string` | No |  |
 
 **Responses**
 
@@ -1684,6 +1784,20 @@ Operation: `proposeActionUpdate`
 | `lambdaConfig.region` | `string` | No |  |
 | `lambdaConfig.payload` | `object` | No |  |
 | `lambdaConfig.invocationType` | `string` | No | One of: `RequestResponse`, `Event`, `DryRun`. |
+| `dbConfig` | `object` | No |  |
+| `dbConfig.operation` | `string` | Yes | One of: `query`. |
+| `dbConfig.dbType` | `string` | Yes | One of: `postgres`, `redshift`, `mysql`, `mssql`, `mongodb`. |
+| `dbConfig.query` | `string` | No |  |
+| `language` | `string` | No |  |
+| `code` | `string` | No |  |
+| `rateLimit` | `object` | No |  |
+| `rateLimit.enabled` | `boolean` | Yes |  |
+| `rateLimit.limits` | `object[]` | Yes |  |
+| `rateLimit.limits[].requests` | `integer` | Yes |  |
+| `rateLimit.limits[].strategy` | `string` | Yes | One of: `FIXED_WINDOW`, `SLIDING_WINDOW`, `CONCURRENCY`. |
+| `rateLimit.limits[].window` | `integer` | Yes |  |
+| `rateLimit.limits[].burstLimit` | `integer` | No |  |
+| `submissionNote` | `string` | No |  |
 
 **Responses**
 
@@ -2051,6 +2165,11 @@ Operation: `createAuthMethod`
 | `authConfig.requestSigning.canonical.bodySkipMethods` | `string[]` | No |  |
 | `authConfig.requestSigning.expiresInSeconds` | `integer` | No |  |
 | `authConfig.requestSigning.output` | `object` | Yes |  |
+| `authConfig.requestSigning.output.in` | `string` | Yes | One of: `query`, `header`. |
+| `authConfig.requestSigning.output.name` | `string` | Yes |  |
+| `authConfig.requestSigning.output.template` | `string` | No |  |
+| `authProviderId` | `string` | No |  |
+| `docsUrl` | `string` | No |  |
 
 **Responses**
 
@@ -2158,6 +2277,11 @@ Operation: `updateAuthMethod`
 | `authConfig.requestSigning.canonical.bodySkipMethods` | `string[]` | No |  |
 | `authConfig.requestSigning.expiresInSeconds` | `integer` | No |  |
 | `authConfig.requestSigning.output` | `object` | Yes |  |
+| `authConfig.requestSigning.output.in` | `string` | Yes | One of: `query`, `header`. |
+| `authConfig.requestSigning.output.name` | `string` | Yes |  |
+| `authConfig.requestSigning.output.template` | `string` | No |  |
+| `authProviderId` | `string` | No |  |
+| `docsUrl` | `string` | No |  |
 
 **Responses**
 

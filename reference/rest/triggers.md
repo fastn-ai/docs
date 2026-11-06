@@ -1102,7 +1102,7 @@ Operation: `replayDlqEntry`
 GET /v1/events
 ```
 
-Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). Scoped by org_id OR end_org_id;
+Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). Scoped by org_id OR end_org_id.
 
 Operation: `listEvents`
 
@@ -1195,7 +1195,7 @@ Operation: `testAlert`
 GET /v1/events/count
 ```
 
-Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR end_org_id;
+Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR end_org_id.
 
 Operation: `countEvents`
 

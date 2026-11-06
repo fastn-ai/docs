@@ -180,35 +180,6 @@ Operation: `deleteConnections`
 * `200`: Deleted
 * `404`: Connection not found (or outside the caller's scope)
 
-### Get a usable OAuth access token for a connection
-
-```http
-POST /v1/connections/{id}/access-token
-```
-
-Returns only the access token, never the refresh token or client secret, refreshing it on demand when the stored token is at or past expiry. Ownership-scoped: callers reach only their own pool's connections (admin/owner additionally their child customers'). Used by browser surfaces such as the config page's file pickers.
-
-Operation: `getConnectionAccessToken`
-
-**Parameters**
-
-| Name | In | Type | Required | Description |
-| --- | --- | --- | --- | --- |
-| `id` | path | string | Yes |  |
-
-**Responses**
-
-* `200`: Access token
-* `400`: Connection has no stored credentials or no OAuth access token
-* `404`: Connection not found (or outside the caller's scope)
-
-**Response fields**
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `data` | `object` |  |
-| `data.access_token` | `string` |  |
-
 ### Make a connection the default
 
 ```http
@@ -223,7 +194,7 @@ Operation: `setDefaultConnection`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `id` | path | string | Yes | Connection id (an id starting ucl: for a managed connection). |
+| `id` | path | string | Yes | for a managed connection). |
 
 **Responses**
 

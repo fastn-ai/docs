@@ -13,9 +13,6 @@
  "security": [
   {
    "bearerAuth": []
-  },
-  {
-   "apiKey": []
   }
  ],
  "tags": [
@@ -73,7 +70,7 @@
   },
   {
    "name": "Unified API",
-   "description": "Canonical entities executed across connected providers;"
+   "description": "Canonical entities executed across connected providers."
   }
  ],
  "paths": {
@@ -4310,7 +4307,7 @@
       "description": "Validation error, includes an expires_at that is not ISO-8601 or is in the past"
      }
     },
-    "description": "role may also be a custom role id (cr_...) of the target org;"
+    "description": "role may also be a custom role id (cr_...) of the target org."
    }
   },
   "/v1/users/{userId}": {
@@ -4428,7 +4425,7 @@
       "description": "Role updated"
      }
     },
-    "description": "Changes a member's role in the caller's org. Cannot change your own role, assign owner (use ownership transfer), or assign a role above your own;"
+    "description": "Changes a member's role in the caller's org. Cannot change your own role, assign owner (use ownership transfer), or assign a role above your own."
    }
   },
   "/v1/users/pending": {
@@ -4552,7 +4549,7 @@
       "name": "tier",
       "in": "query",
       "required": false,
-      "description": "account or customer; any other value is a 400.",
+      "description": "account or tenant; any other value is a 400.",
       "schema": {
        "type": "string",
        "enum": [
@@ -4697,11 +4694,9 @@
       "description": "Org created. Account-tier responses carry an `owner` object ({ userId, email, inviteStatus }, `inviteStatus` is `accepted` when the named owner already had a fastn account they had verified, so it is not a 'somebody must act' flag); `inviteSent: false` is added only when the invite email failed to send."
      },
      "400": {
-      "description": "Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org; type personal is for a person's own workspace and only a platform admin may create one here"
+      "description": "Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org."
      },
-     "403": {
-      "description": "Paid plan requires platform admin, or account cap reached"
-     },
+     "403": {},
      "500": {
       "description": "Owner assignment failed and the partial org could not be removed, its slug stays in use"
      },
@@ -4737,7 +4732,7 @@
       "description": "Not found"
      }
     },
-    "description": "Returns one org. Requires settings.read;"
+    "description": "Returns one org. Requires settings.read."
    },
    "put": {
     "tags": [
@@ -4761,7 +4756,7 @@
       "description": "Updated"
      }
     },
-    "description": "Updates an org the caller may manage. status may be changed by or by an owner/admin on its own child org. external_ref is immutable: resending the stored value is a no-op, any other value is a 400.",
+    "description": "Updates an org the caller may manage. status may be changed by an owner/admin on its own child org. external_ref is immutable: resending the stored value is a no-op, any other value is a 400.",
     "requestBody": {
      "required": true,
      "content": {
@@ -4875,7 +4870,7 @@
       "description": "Org not found"
      }
     },
-    "description": "Returns the org's config document (org_configs.config). Requires settings.update on this org or its parent; 404 when the org does not exist."
+    "description": "Requires settings.update on this org or its parent; 404 when the org does not exist."
    },
    "put": {
     "tags": [
@@ -4883,7 +4878,7 @@
     ],
     "summary": "Update org config document",
     "operationId": "updateOrgConfig",
-    "description": "Merges the body into org_configs.config at the top level. `orgName` is not a config key: it is written through to the org's `name` column (readable at GET /api/v1/orgs/{id}) and never stored in the document. Accepted at the top level or nested under `config`, and must be a non-blank string of at most 200 characters with no control characters, angle brackets or invisible characters. A value that differs from the current name is a rename and requires org.update; resending the name the org already has is a no-op and needs only settings.update, so a form that posts the name on every save still works. Omit it to leave the name unchanged; a blank value is rejected rather than clearing the saved name. The rename and the config write commit together. Only some keys may be changed, by who is writing: on its own org, timezone, setupLinkRedirectUrls and setupLinkDefaultTtlMinutes; an account on its own org also customer_tiers; a partner on one of its customers also tier, limits and roleOverride; a platform admin anything. A key outside that set is refused with 403 CONFIG_KEY_NOT_ALLOWED (a key sent with its stored value is ignored). roleOverride and a tier roleId cannot name an account-level role.",
+    "description": "`orgName` is not a config key: it is written through to the org's `name` column (readable at GET /api/v1/orgs/{id}) and never stored in the document. Accepted at the top level or nested under `config`, and must be a non-blank string of at most 200 characters with no control characters, angle brackets or invisible characters. A value that differs from the current name is a rename and requires org.update; resending the name the org already has is a no-op and needs only settings.update, so a form that posts the name on every save still works. Omit it to leave the name unchanged; a blank value is rejected rather than clearing the saved name. The rename and the config write commit together. Only some keys may be changed, by who is writing: on its own org, timezone, setupLinkRedirectUrls and setupLinkDefaultTtlMinutes; an account on its own org also customer_tiers; a partner on one of its customers also tier, limits and roleOverride; A key outside that set is refused with 403 CONFIG_KEY_NOT_ALLOWED (a key sent with its stored value is ignored). roleOverride and a tier roleId cannot name an account-level role.",
     "parameters": [
      {
       "name": "id",
@@ -5495,8 +5490,7 @@
            "REST",
            "MCP",
            "FTP",
-           "DB",
-           "REDIS"
+           "DB"
           ]
          },
          "mcpServerUrl": {
@@ -5989,8 +5983,7 @@
            "REST",
            "MCP",
            "FTP",
-           "DB",
-           "REDIS"
+           "DB"
           ]
          },
          "mcpServerUrl": {
@@ -6997,54 +6990,6 @@
     "description": "Removes the SaaS-connector designation (and its scopes) from a connector of the caller's org. Requires settings.update; 404 when the connector is not designated."
    }
   },
-  "/v1/connections/{id}/access-token": {
-   "post": {
-    "tags": [
-     "Connections"
-    ],
-    "summary": "Get a usable OAuth access token for a connection",
-    "operationId": "getConnectionAccessToken",
-    "description": "Returns only the access token, never the refresh token or client secret, refreshing it on demand when the stored token is at or past expiry. Ownership-scoped: callers reach only their own pool's connections (admin/owner additionally their child customers'). Used by browser surfaces such as the config page's file pickers.",
-    "parameters": [
-     {
-      "name": "id",
-      "in": "path",
-      "required": true,
-      "schema": {
-       "type": "string"
-      }
-     }
-    ],
-    "responses": {
-     "200": {
-      "description": "Access token",
-      "content": {
-       "application/json": {
-        "schema": {
-         "type": "object",
-         "properties": {
-          "data": {
-           "type": "object",
-           "properties": {
-            "access_token": {
-             "type": "string"
-            }
-           }
-          }
-         }
-        }
-       }
-      }
-     },
-     "400": {
-      "description": "Connection has no stored credentials or no OAuth access token"
-     },
-     "404": {
-      "description": "Connection not found (or outside the caller's scope)"
-     }
-    }
-   }
-  },
   "/v1/app-triggers": {
    "get": {
     "tags": [
@@ -8008,7 +7953,7 @@
     ],
     "summary": "List received events",
     "operationId": "listEvents",
-    "description": "Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). Scoped by org_id OR end_org_id;",
+    "description": "Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). Scoped by org_id OR end_org_id.",
     "parameters": [
      {
       "name": "since",
@@ -8317,7 +8262,7 @@
       "description": "Malformed since or env, or unknown type"
      }
     },
-    "description": "Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR end_org_id;"
+    "description": "Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR end_org_id."
    }
   },
   "/v1/events/{id}": {
@@ -9080,7 +9025,7 @@
       "description": "Validation error"
      },
      "403": {
-      "description": "The org can read workflow code but not change it (WF-CODE-READONLY), the platform-admin entitlement workflow.codeEditor.write is off for this org, and create persists code. Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429."
+      "description": "Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429."
      },
      "409": {
       "description": "A workflow with this slug already exists in the org"
@@ -11412,7 +11357,7 @@
     ],
     "responses": {
      "200": {
-      "description": "Execution list rows with workflow name/slug/version/tier. Any `search` walks the window newest-first within a time budget and also returns `payloadSearch: { complete, searchedFrom, hasMore, unsearched }` (the name predates ordinary searches using it): `complete: false` with `hasMore: false` means it stopped at `searchedFrom` before reaching dateFrom. `unsearched` counts runs whose input is archived to GCS but too large to search (0 almost always). With a `search`, `pagination.total` is a floor (`totalIsLowerBound`), and with no dateFrom the search covers the last 90 days, the longest any run is retained. /workflows/executions/counts with a `search` caps at 1000 matches and sets isLowerBound."
+      "description": "Execution list rows with workflow name/slug/version/tier. Any `search` walks the window newest-first within a time budget and also returns `payloadSearch: { complete, searchedFrom, hasMore, unsearched }` (the name predates ordinary searches using it): `complete: false` with `hasMore: false` means it stopped at `searchedFrom` before reaching dateFrom. With a `search`, `pagination.total` is a floor (`totalIsLowerBound`), and with no dateFrom the search covers the last 90 days, the longest any run is retained. /workflows/executions/counts with a `search` caps at 1000 matches and sets isLowerBound."
      },
      "400": {
       "description": "dateFrom/dateTo is not an ISO 8601 date or date-time (VALIDATION_ERROR), or searchIn=payload without a short enough window or a long enough search"
@@ -11501,7 +11446,7 @@
     ],
     "responses": {
      "200": {
-      "description": "`{ source: 'loki', available, reason?, lines: [{ ts, tsNs, level, source, message, executionId, workflowId, data }], truncated, runs: { <executionId>: { workflowId, workflowName, status } }, cursor }`"
+      "description": "`{ source: [{ ts, tsNs, level, source, message, executionId, workflowId, data }], truncated, runs: { <executionId>: { workflowId, workflowName, status } }, cursor }`"
      },
      "400": {
       "description": "A window over 7 days or ending before it starts, an unknown level, a malformed since, or a limit outside 1-1000 (VALIDATION_ERROR)"
@@ -11605,7 +11550,7 @@
     ],
     "responses": {
      "200": {
-      "description": "Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from: `gcs` when the run's archived bundle was read (EXECUTION_BODIES_READ_FROM=gcs and the run has one), `postgres` otherwise."
+      "description": "Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from."
      }
     },
     "description": "One execution with its steps, logs and trace (requires workflows.read). Log and trace bodies are omitted for roles that cannot read execution bodies. 404 when the run is not in the caller's scope."
@@ -11695,10 +11640,8 @@
            "properties": {
             "source": {
              "type": "string",
-             "enum": [
-              "loki"
-             ],
-             "description": "Where this answer came from. Always loki: this route reads nothing else."
+             "enum": [],
+             "description": "Where this answer came from. this route reads nothing else."
             },
             "available": {
              "type": "boolean"
@@ -11713,7 +11656,7 @@
             },
             "truncated": {
              "type": "boolean",
-             "description": "True when the page is full:"
+             "description": "True when the page is full."
             },
             "lines": {
              "type": "array",
@@ -13064,11 +13007,7 @@
          "deliveries": {
           "type": "array",
           "items": {
-           "type": "object",
-           "propertyNames": {
-            "type": "string"
-           },
-           "additionalProperties": {}
+           "$ref": "#/components/schemas/AlertDelivery"
           }
          },
          "enabled": {
@@ -14236,7 +14175,7 @@
          },
          "endOrgId": {
           "type": "string",
-          "description": "Optional. The customer the caller believes this session is for (the <fastn-embed org-id/customer-id> attribute). Either the customer's fastn id or the external_ref it was registered under. If it names a different customer than the token carries, the request is refused rather than silently answered for the token's customer."
+          "description": "Optional. The customer the caller believes this session is for (the <fastn-embed org-id/tenant-id> attribute). Either the customer's fastn id or the external_ref it was registered under. If it names a different customer than the token carries, the request is refused rather than silently answered for the token's customer."
          }
         },
         "required": [
@@ -15270,7 +15209,7 @@
       "name": "include",
       "in": "query",
       "required": false,
-      "description": "inherited:",
+      "description": "inherited.",
       "schema": {
        "type": "string",
        "enum": [
@@ -16954,7 +16893,7 @@
       "name": "include",
       "in": "query",
       "required": false,
-      "description": "inherited:",
+      "description": "inherited.",
       "schema": {
        "type": "string",
        "enum": [
@@ -18818,7 +18757,7 @@
     ],
     "summary": "Get the caller's resolved identity",
     "operationId": "whoami",
-    "description": "Who you are talking to. Answers from the gateway's resolved context, so it works for every credential a caller can arrive with, a dashboard JWT, an API key, an embed (widget) token and a share link alike; Call it before your first substantive reply and adapt to the answer, including `signupProfile` for how to word replies to this person and what they first came to build. Two independent axes, and do not collapse them: `actor` is WHICH CREDENTIAL, `actingAsTenant` is WHOSE WORKSPACE. `actingAsTenant: true` means the credential was minted for a customer of a parent org, `org` is that customer's own workspace and `parentOrg` is the partner whose product they are using, so speak in business terms about their own connections and not about building the platform. Their provider's integrations are theirs to use, and to customise by forking a copy into their own workspace (forkIntegration) - never in place. It is true for a partner's customer in an embedded widget AND for a customer-scoped API key, so it does not on its own mean a human is present; read `actor` for that. `actingAsTenant: false` means the caller is acting as the org itself, which for `actor: user` is the partner's own staff in the dashboard, with `role` naming the persona. `permissions` reports three layers rather than one merged list, because enforcement is a layered predicate and a merged copy would drift from it: `role` is the enforced baseline for the persona, `structured` narrows it when present (an action needs both; it is reported already intersected with the role, so it is the effective set), and `apiKeyGrant` is a ceiling over both and never widens them. Retired-resource entries may appear in `role` and govern nothing. Every tool call you make executes under this identity, so a 403 means this persona lacks the permission rather than a fault worth retrying. One limitation:",
+    "description": "Who you are talking to. Answers from the gateway's resolved context, so it works for every credential a caller can arrive with, a dashboard JWT, an API key, an embed (widget) token and a share link alike; Call it before your first substantive reply and adapt to the answer, including `signupProfile` for how to word replies to this person and what they first came to build. Two independent axes, and do not collapse them: `actor` is WHICH CREDENTIAL, `actingAsTenant` is WHOSE WORKSPACE. `actingAsTenant: true` means the credential was minted for a customer of a parent org, `org` is that customer's own workspace and `parentOrg` is the partner whose product they are using, so speak in business terms about their own connections and not about building the platform. Their provider's integrations are theirs to use, and to customise by forking a copy into their own workspace (forkIntegration) - never in place. It is true for a partner's customer in an embedded widget AND for a customer-scoped API key, so it does not on its own mean a human is present; read `actor` for that. `actingAsTenant: false` means the caller is acting as the org itself, which for `actor: user` is the partner's own staff in the dashboard, with `role` naming the persona. `permissions` reports three layers rather than one merged list, because enforcement is a layered predicate and a merged copy would drift from it: `role` is the enforced baseline for the persona, `structured` narrows it when present (an action needs both; it is reported already intersected with the role, so it is the effective set), and `apiKeyGrant` is a ceiling over both and never widens them. Retired-resource entries may appear in `role` and govern nothing. Every tool call you make executes under this identity, so a 403 means this persona lacks the permission rather than a fault worth retrying. One limitation.",
     "responses": {
      "200": {
       "description": "Caller identity",
@@ -21415,8 +21354,7 @@
            "GRPC",
            "FTP",
            "LAMBDA",
-           "DB",
-           "REDIS"
+           "DB"
           ]
          },
          "method": {
@@ -22042,8 +21980,7 @@
            "GRPC",
            "FTP",
            "LAMBDA",
-           "DB",
-           "REDIS"
+           "DB"
           ]
          },
          "method": {
@@ -25503,7 +25440,7 @@
       "schema": {
        "type": "string"
       },
-      "description": "Connection id (an id starting ucl: for a managed connection)."
+      "description": "for a managed connection)."
      }
     ],
     "responses": {
@@ -33385,7 +33322,6 @@
     "description": "Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity."
    },
    "XOrgIdHeader": {
-    "x-mcp": false,
     "name": "x-org-id",
     "in": "header",
     "required": false,
@@ -33396,7 +33332,6 @@
     "description": "Customer org the request acts for, the customer's fastn org id or the external_ref the partner registered it under. Requires API-key auth on a multi-customer key; always ownership-checked against the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac."
    },
    "XUserIdHeader": {
-    "x-mcp": false,
     "name": "x-user-id",
     "in": "header",
     "required": false,
@@ -33407,7 +33342,6 @@
     "description": "End-user identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification."
    },
    "XIdentityHmacHeader": {
-    "x-mcp": false,
     "name": "x-identity-hmac",
     "in": "header",
     "required": false,
@@ -33905,13 +33839,7 @@
    "bearerAuth": {
     "type": "http",
     "scheme": "bearer",
-    "bearerFormat": "JWT",
-    "description": "Which org the request runs as depends on the client the token was minted for (its azp). A dashboard session follows the dashboard's org picker: a fastn-admin token, or a fastn-app token on a request carrying the x-fastn-dashboard header that the dashboard adds to every call. A fastn-app token without that header (for example one minted by username/password from a script) is treated like any other client. Failures on a non-dashboard session: 400 with code invalid_target_org when x-fastn-target-org is not shaped like an org id; 403 with code org_not_member when the user holds no active membership in the org it names. POST /api/v1/users/me/switch-account answers 409 switch_account_dashboard_only for a non-dashboard session, because the picker does not steer it."
-   },
-   "apiKey": {
-    "type": "apiKey",
-    "in": "header",
-    "name": "x-api-key"
+    "description": "An API key (fsk_live_... or fsk_test_...), or a signed-in user's token."
    }
   }
  }

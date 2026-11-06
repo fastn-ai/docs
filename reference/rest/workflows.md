@@ -126,12 +126,20 @@ Operation: `createWorkflow`
 | `connectorManifest[].actions[].retryPolicy.backoffMultiplier` | `number` | No |  |
 | `connectorManifest[].actions[].retryPolicy.maxDelayMs` | `integer` | No |  |
 | `connectorManifest[].actions[].retryPolicy.maxTotalDelayMs` | `integer` | No |  |
+| `connectorManifest[].actions[].retryPolicy.retryOnStatuses` | `integer[]` | No |  |
+| `connectorManifest[].actions[].retryPolicy.retryOnNetworkErrors` | `boolean` | No |  |
+| `connectorManifest[].actions[].retryPolicy.respectRetryAfter` | `boolean` | No |  |
+| `connectorManifest[].actions[].retryPolicy.methods` | `string[]` | No |  |
+| `connectorManifest[].actions[].timeoutMs` | `integer` | No |  |
+| `connectorManifest[].scope` | `string` | No | One of: `SAAS`, `MULTI_TENANT`. |
+| `connectorManifest[].connectionId` | `string` | No |  |
+| `connectorManifest[].stale` | `boolean` | No |  |
 
 **Responses**
 
 * `201`: Workflow created
 * `400`: Validation error
-* `403`: The org can read workflow code but not change it (WF-CODE-READONLY), the platform-admin entitlement workflow.codeEditor.write is off for this org, and create persists code. Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429.
+* `403`: Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429.
 * `409`: A workflow with this slug already exists in the org
 
 ### List diff-engine run reports
@@ -203,7 +211,7 @@ Operation: `listWorkflowExecutions`
 
 **Responses**
 
-* `200`: Execution list rows with workflow name/slug/version/tier. Any `search` walks the window newest-first within a time budget and also returns `payloadSearch: { complete, searchedFrom, hasMore, unsearched }` (the name predates ordinary searches using it): `complete: false` with `hasMore: false` means it stopped at `searchedFrom` before reaching dateFrom. `unsearched` counts runs whose input is archived to GCS but too large to search (0 almost always). With a `search`, `pagination.total` is a floor (`totalIsLowerBound`), and with no dateFrom the search covers the last 90 days, the longest any run is retained. /workflows/executions/counts with a `search` caps at 1000 matches and sets isLowerBound.
+* `200`: Execution list rows with workflow name/slug/version/tier. Any `search` walks the window newest-first within a time budget and also returns `payloadSearch: { complete, searchedFrom, hasMore, unsearched }` (the name predates ordinary searches using it): `complete: false` with `hasMore: false` means it stopped at `searchedFrom` before reaching dateFrom. With a `search`, `pagination.total` is a floor (`totalIsLowerBound`), and with no dateFrom the search covers the last 90 days, the longest any run is retained. /workflows/executions/counts with a `search` caps at 1000 matches and sets isLowerBound.
 * `400`: dateFrom/dateTo is not an ISO 8601 date or date-time (VALIDATION_ERROR), or searchIn=payload without a short enough window or a long enough search
 * `403`: searchIn=payload from a role that cannot read execution bodies
 
@@ -257,7 +265,7 @@ Operation: `searchExecutionLogs`
 
 **Responses**
 
-* `200`: `{ source: 'loki', available, reason?, lines: [{ ts, tsNs, level, source, message, executionId, workflowId, data }], truncated, runs: { <executionId>: { workflowId, workflowName, status } }, cursor }`
+* `200`: `{ source: [{ ts, tsNs, level, source, message, executionId, workflowId, data }], truncated, runs: { <executionId>: { workflowId, workflowName, status } }, cursor }`
 * `400`: A window over 7 days or ending before it starts, an unknown level, a malformed since, or a limit outside 1-1000 (VALIDATION_ERROR)
 
 ### Rate an execution's error diagnosis
@@ -470,6 +478,8 @@ Operation: `updateWorkflow`
 | `connectorManifest[].actions[].retryPolicy.methods` | `string[]` | No |  |
 | `connectorManifest[].actions[].timeoutMs` | `integer` | No |  |
 | `connectorManifest[].scope` | `string` | No | One of: `SAAS`, `MULTI_TENANT`. |
+| `connectorManifest[].connectionId` | `string` | No |  |
+| `connectorManifest[].stale` | `boolean` | No |  |
 
 **Responses**
 
@@ -831,7 +841,7 @@ Operation: `getWorkflowExecution`
 
 **Responses**
 
-* `200`: Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from: `gcs` when the run's archived bundle was read (EXECUTION_BODIES_READ_FROM=gcs and the run has one), `postgres` otherwise.
+* `200`: Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from.
 
 ### Cancel a running execution
 
@@ -884,10 +894,10 @@ Operation: `getExecutionLogs`
 | Field | Type | Description |
 | --- | --- | --- |
 | `data` | `object` |  |
-| `data.source` | `string` | Where this answer came from. Always loki: this route reads nothing else. One of: `loki`. |
+| `data.source` | `string` | Where this answer came from. this route reads nothing else. |
 | `data.available` | `boolean` |  |
 | `data.reason` | `string` | One of: `not_configured`, `query_failed`, `redacted`. |
-| `data.truncated` | `boolean` | True when the page is full: |
+| `data.truncated` | `boolean` | True when the page is full. |
 | `data.lines` | `object[]` |  |
 | `data.lines[].ts` | `string` |  |
 | `data.lines[].level` | `string` | One of: `debug`, `info`, `warn`, `error`. |

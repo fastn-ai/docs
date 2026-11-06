@@ -179,7 +179,7 @@ Operation: `getInstallationResolvedConfig`
 GET /v1/installations/{id}/triggers
 ```
 
-Templates carry their categories tags and are never filtered by the installation's selected_trigger_categories, templates outside the selection stay available for manual creation. The installation's trigger templates (from its widget) and the live trigger instances made from them. Requires events.read.
+List the widget's template triggers plus the trigger instances materialized for this installation (with live trigger state). Templates carry their categories tags and are never filtered by the installation's selected_trigger_categories, templates outside the selection stay available for manual creation. The installation's trigger templates (from its widget) and the live trigger instances made from them. Requires events.read.
 
 Operation: `getInstallationTriggers`
 
@@ -200,7 +200,7 @@ Operation: `getInstallationTriggers`
 POST /v1/installations/{id}/triggers
 ```
 
-The created trigger is partner-org-owned, stamped with end_org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-end-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config. Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as end org. 404 when the template is not attached to the widget. Requires events.create.
+Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with end_org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-end-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config. Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as end org. 404 when the template is not attached to the widget. Requires events.create.
 
 Operation: `createInstallationTrigger`
 
@@ -239,7 +239,7 @@ Operation: `createInstallationTrigger`
 PUT /v1/installations/{id}/triggers/{triggerId}
 ```
 
-Fires onTriggerUpdated. Edits a trigger instance's settings (name, cron or rate, timezone, startsAt) and extra headers. Extra headers are honoured only when the template sets allowExtraHeaders. Requires events.update.
+Update a trigger instance within the template's editableFields (preset membership enforced unless allowCustom). Fires onTriggerUpdated. Edits a trigger instance's settings (name, cron or rate, timezone, startsAt) and extra headers. Extra headers are honoured only when the template sets allowExtraHeaders. Requires events.update.
 
 Operation: `updateInstallationTrigger`
 
@@ -277,7 +277,7 @@ Operation: `updateInstallationTrigger`
 DELETE /v1/installations/{id}/triggers/{triggerId}
 ```
 
-Fires onTriggerDeleted. Deletes a trigger instance from this installation. Requires events.delete.
+Delete one trigger instance (unregisters schedules / third-party subscriptions via the event service). Fires onTriggerDeleted. Deletes a trigger instance from this installation. Requires events.delete.
 
 Operation: `deleteInstallationTrigger`
 
@@ -299,7 +299,7 @@ Operation: `deleteInstallationTrigger`
 PUT /v1/installations/{id}/unified-values
 ```
 
-scoped by org_id or end_org_id) Writes per-connector unified-API field values into the installation's inline config (connectorSlug -> fieldKey -> value). Requires unified.execute.
+Merge per-customer unified config values into an installation's inline config (end_user-callable; scoped by org_id or end_org_id) Writes per-connector unified-API field values into the installation's inline config (connectorSlug -> fieldKey -> value). Requires unified.execute.
 
 Operation: `updateInstallationUnifiedValues`
 

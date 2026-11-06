@@ -232,6 +232,13 @@ Operation: `updateAlert`
 | `window` | `string` | No |  |
 | `workflowIds` | `string[]` | No |  |
 | `deliveries` | `object[]` | No |  |
+| `deliveries[].type` | `string` | Yes | One of: `email`, `webhook`, `slack`, `connection`. |
+| `deliveries[].to` | `string` | No | email: the address |
+| `deliveries[].url` | `string` | No | webhook / slack: the URL |
+| `deliveries[].connectionId` | `string` | No | connection: the connected account to send through |
+| `deliveries[].target` | `string` | No | connection: the channel / chat to post to |
+| `deliveries[].subject` | `string` | No | email, or a connection through Gmail: optional subject, one line, at most 200 characters |
+| `deliveries[].targetName` | `string` | No | connection: optional display name of the target, at most 200 characters |
 | `enabled` | `boolean` | No |  |
 | `throttle` | `boolean` | No |  |
 

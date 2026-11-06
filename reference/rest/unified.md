@@ -49,7 +49,7 @@ Operation: `listUnifiedCategories`
 GET /v1/unified/{category}/{entity}
 ```
 
-fans out over every connected provider unless ?provider= or a cursor pins one Lists canonical records of a unified entity. Without provider, connection_id or cursor it fans out over every connected provider; a cursor is pinned to the provider that minted it and is rejected when it contradicts ?provider=. Requires unified.read.
+List canonical records; fans out over every connected provider unless ?provider= or a cursor pins one. Lists canonical records of a unified entity. Without provider, connection_id or cursor it fans out over every connected provider; a cursor is pinned to the provider that minted it and is rejected when it contradicts ?provider=. Requires unified.read.
 
 Operation: `listUnifiedRecords`
 
@@ -270,7 +270,7 @@ Operation: `deleteUnifiedRecord`
 GET /v1/unified-custom
 ```
 
-editable marks rows the caller's org owns. Returns the entities owned by the caller's catalog orgs (own org and ancestors, with mappings) and the extensions of platform entities; editable marks rows the caller's org owns. Requires unified.read.
+The caller's catalog orgs' own entities (with mappings) and extensions of platform entities. editable marks rows the caller's org owns. Returns the entities owned by the caller's catalog orgs (own org and ancestors, with mappings) and the extensions of platform entities; editable marks rows the caller's org owns. Requires unified.read.
 
 Operation: `listUnifiedCustom`
 
@@ -284,7 +284,7 @@ Operation: `listUnifiedCustom`
 POST /v1/unified-custom/entities
 ```
 
-fromEntityId copies a visible entity's schema and enabled mappings, with the caller's extensions merged in. Creates an entity owned by the caller's org in a platform category; fromEntityId copies a visible entity's schema and enabled mappings. Requires unified.customize. 400 for an unknown categoryId or fromEntityId.
+Create an entity owned by the caller's org in a platform category (unified.customize). fromEntityId copies a visible entity's schema and enabled mappings, with the caller's extensions merged in. Creates an entity owned by the caller's org in a platform category; fromEntityId copies a visible entity's schema and enabled mappings. Requires unified.customize. 400 for an unknown categoryId or fromEntityId.
 
 Operation: `createUnifiedCustomEntity`
 
@@ -360,7 +360,7 @@ Operation: `deleteUnifiedCustomEntity`
 POST /v1/unified-custom/entities/{id}/mappings
 ```
 
-same body as the platform catalog mapping Binds a connector mapping to an entity the caller's org owns. Requires unified.customize. 409 when the connector is already mapped; 404 when the entity is not found.
+Bind a connector mapping to one of the caller org's entities (unified.customize); same body as the platform catalog mapping. Binds a connector mapping to an entity the caller's org owns. Requires unified.customize. 409 when the connector is already mapped; 404 when the entity is not found.
 
 Operation: `createUnifiedCustomMapping`
 
@@ -434,6 +434,76 @@ Operation: `createUnifiedCustomMapping`
 | `operations.update.totalPath` | `string` | No |  |
 | `operations.update.remoteIdPath` | `string` | Yes |  |
 | `operations.update.resolveInput` | `object` | No |  |
+| `operations.delete` | `object` | No |  |
+| `operations.delete.actionSlug` | `string` | Yes |  |
+| `operations.delete.staticInput` | `object` | No |  |
+| `operations.delete.paramMap` | `object` | No |  |
+| `operations.delete.paramMap.cursor` | `string` | No |  |
+| `operations.delete.paramMap.pageSize` | `string` | No |  |
+| `operations.delete.paramMap.page` | `string` | No |  |
+| `operations.delete.paramMap.offset` | `string` | No |  |
+| `operations.delete.paramMap.id` | `string` | No |  |
+| `operations.delete.recordsPath` | `string` | No |  |
+| `operations.delete.cursorPath` | `string` | No |  |
+| `operations.delete.totalPath` | `string` | No |  |
+| `operations.delete.remoteIdPath` | `string` | No | Default: `"id"`. |
+| `operations.delete.resolveInput` | `object` | No |  |
+| `operations.search` | `object` | No |  |
+| `operations.search.actionSlug` | `string` | Yes |  |
+| `operations.search.staticInput` | `object` | No |  |
+| `operations.search.paramMap` | `object` | No |  |
+| `operations.search.paramMap.cursor` | `string` | No |  |
+| `operations.search.paramMap.pageSize` | `string` | No |  |
+| `operations.search.paramMap.page` | `string` | No |  |
+| `operations.search.paramMap.offset` | `string` | No |  |
+| `operations.search.paramMap.id` | `string` | No |  |
+| `operations.search.recordsPath` | `string` | Yes |  |
+| `operations.search.cursorPath` | `string` | No |  |
+| `operations.search.totalPath` | `string` | No |  |
+| `operations.search.remoteIdPath` | `string` | Yes |  |
+| `operations.search.resolveInput` | `object` | No |  |
+| `fieldMappings` | `object[]` | No |  |
+| `fieldMappings[].connectorField` | `string` | Yes |  |
+| `fieldMappings[].connectorLabel` | `string` | Yes |  |
+| `fieldMappings[].canonicalField` | `string` | Yes |  |
+| `fieldMappings[].canonicalLabel` | `string` | Yes |  |
+| `fieldMappings[].type` | `string` | No | One of: `string`, `enum`, `number`, `boolean`, `date`. |
+| `fieldMappings[].direction` | `string` | No | One of: `both`, `toCanonical`, `fromCanonical`. |
+| `fieldMappings[].transform` | `string` | No | One of: `uppercase`, `lowercase`, `trim`, `toNumber`, `toBoolean`, `toDate`. |
+| `fieldMappings[].default` | `any` | No |  |
+| `fieldMappings[].valueMappings` | `object[]` | No |  |
+| `fieldMappings[].valueMappings[].sourceValue` | `string` | Yes |  |
+| `fieldMappings[].valueMappings[].targetValue` | `string` | Yes |  |
+| `fieldMappings[].unmappedDefault` | `any` | No |  |
+| `fieldMappings[].condition` | `object` | No |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `fallback`. |
+| `fieldMappings[].condition.fallbackSource` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `conditional`. |
+| `fieldMappings[].condition.when` | `object` | Yes |  |
+| `fieldMappings[].condition.when.field` | `string` | Yes |  |
+| `fieldMappings[].condition.when.operator` | `string` | Yes |  |
+| `fieldMappings[].condition.when.value` | `string` | Yes |  |
+| `fieldMappings[].condition.thenSource` | `string` | Yes |  |
+| `fieldMappings[].condition.elseSource` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `combine`. |
+| `fieldMappings[].condition.sources` | `string[]` | Yes |  |
+| `fieldMappings[].condition.separator` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `split`. |
+| `fieldMappings[].condition.separator` | `string` | Yes |  |
+| `fieldMappings[].condition.index` | `integer` | Yes |  |
+| `enrichActions` | `object[]` | No |  |
+| `enrichActions[].id` | `string` | Yes | One of: `enrich_source_fields`, `enrich_target_fields`, `enrich_source_records`. |
+| `enrichActions[].connector` | `string` | Yes |  |
+| `enrichActions[].connectorId` | `string` | No |  |
+| `enrichActions[].action` | `string` | Yes |  |
+| `enrichActions[].params` | `object` | No |  |
+| `enrichActions[].labelKey` | `string` | Yes |  |
+| `enrichActions[].valueKey` | `string` | Yes |  |
+| `conditions` | `object[]` | No |  |
+| `conditions[].field` | `string` | Yes |  |
+| `conditions[].operator` | `string` | Yes |  |
+| `conditions[].value` | `string` | Yes |  |
+| `conditions[].label` | `string` | No |  |
 
 **Responses**
 
@@ -446,7 +516,7 @@ Operation: `createUnifiedCustomMapping`
 POST /v1/unified-custom/entities/{id}/test
 ```
 
-Runs list, get or create for an entity the caller can see against the caller's own connections. Requires unified.customize. 404 when the entity is not visible or has no enabled mappings.
+Test-execute an entity the caller can see (own, ancestor's, or platform with the caller's extensions) against the caller's own connections (unified.customize) Runs list, get or create for an entity the caller can see against the caller's own connections. Requires unified.customize. 404 when the entity is not visible or has no enabled mappings.
 
 Operation: `testUnifiedCustomEntity`
 
@@ -469,13 +539,13 @@ Operation: `testUnifiedCustomEntity`
 
 * `200`: Engine result with remote data
 
-### Create or replace the caller org's extension of a platform entity
+### Create or replace the caller org's extension of a platform entity: extra canonical...
 
 ```http
 PUT /v1/unified-custom/extensions/{entityId}
 ```
 
-extra canonical fields plus, per mapped connector, field mappings and staticInput values to append (e.g. HubSpot properties). Visible to the org and its customers only (unified.customize). Creates or replaces the caller org's extension of a platform entity. Requires unified.customize. 404 when the platform entity does not exist; 400 when the extension conflicts with the entity.
+Create or replace the caller org's extension of a platform entity: extra canonical fields plus, per mapped connector, field mappings and staticInput values to append (e.g. HubSpot properties). Visible to the org and its customers only (unified.customize). Creates or replaces the caller org's extension of a platform entity. Requires unified.customize. 404 when the platform entity does not exist; 400 when the extension conflicts with the entity.
 
 Operation: `upsertUnifiedExtension`
 
@@ -599,6 +669,75 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.update.remoteIdPath` | `string` | Yes |  |
 | `operations.update.resolveInput` | `object` | No |  |
 | `operations.delete` | `object` | No |  |
+| `operations.delete.actionSlug` | `string` | Yes |  |
+| `operations.delete.staticInput` | `object` | No |  |
+| `operations.delete.paramMap` | `object` | No |  |
+| `operations.delete.paramMap.cursor` | `string` | No |  |
+| `operations.delete.paramMap.pageSize` | `string` | No |  |
+| `operations.delete.paramMap.page` | `string` | No |  |
+| `operations.delete.paramMap.offset` | `string` | No |  |
+| `operations.delete.paramMap.id` | `string` | No |  |
+| `operations.delete.recordsPath` | `string` | No |  |
+| `operations.delete.cursorPath` | `string` | No |  |
+| `operations.delete.totalPath` | `string` | No |  |
+| `operations.delete.remoteIdPath` | `string` | No | Default: `"id"`. |
+| `operations.delete.resolveInput` | `object` | No |  |
+| `operations.search` | `object` | No |  |
+| `operations.search.actionSlug` | `string` | Yes |  |
+| `operations.search.staticInput` | `object` | No |  |
+| `operations.search.paramMap` | `object` | No |  |
+| `operations.search.paramMap.cursor` | `string` | No |  |
+| `operations.search.paramMap.pageSize` | `string` | No |  |
+| `operations.search.paramMap.page` | `string` | No |  |
+| `operations.search.paramMap.offset` | `string` | No |  |
+| `operations.search.paramMap.id` | `string` | No |  |
+| `operations.search.recordsPath` | `string` | Yes |  |
+| `operations.search.cursorPath` | `string` | No |  |
+| `operations.search.totalPath` | `string` | No |  |
+| `operations.search.remoteIdPath` | `string` | Yes |  |
+| `operations.search.resolveInput` | `object` | No |  |
+| `fieldMappings` | `object[]` | No |  |
+| `fieldMappings[].connectorField` | `string` | Yes |  |
+| `fieldMappings[].connectorLabel` | `string` | Yes |  |
+| `fieldMappings[].canonicalField` | `string` | Yes |  |
+| `fieldMappings[].canonicalLabel` | `string` | Yes |  |
+| `fieldMappings[].type` | `string` | No | One of: `string`, `enum`, `number`, `boolean`, `date`. |
+| `fieldMappings[].direction` | `string` | No | One of: `both`, `toCanonical`, `fromCanonical`. |
+| `fieldMappings[].transform` | `string` | No | One of: `uppercase`, `lowercase`, `trim`, `toNumber`, `toBoolean`, `toDate`. |
+| `fieldMappings[].default` | `any` | No |  |
+| `fieldMappings[].valueMappings` | `object[]` | No |  |
+| `fieldMappings[].valueMappings[].sourceValue` | `string` | Yes |  |
+| `fieldMappings[].valueMappings[].targetValue` | `string` | Yes |  |
+| `fieldMappings[].unmappedDefault` | `any` | No |  |
+| `fieldMappings[].condition` | `object` | No |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `fallback`. |
+| `fieldMappings[].condition.fallbackSource` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `conditional`. |
+| `fieldMappings[].condition.when` | `object` | Yes |  |
+| `fieldMappings[].condition.when.field` | `string` | Yes |  |
+| `fieldMappings[].condition.when.operator` | `string` | Yes |  |
+| `fieldMappings[].condition.when.value` | `string` | Yes |  |
+| `fieldMappings[].condition.thenSource` | `string` | Yes |  |
+| `fieldMappings[].condition.elseSource` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `combine`. |
+| `fieldMappings[].condition.sources` | `string[]` | Yes |  |
+| `fieldMappings[].condition.separator` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `split`. |
+| `fieldMappings[].condition.separator` | `string` | Yes |  |
+| `fieldMappings[].condition.index` | `integer` | Yes |  |
+| `enrichActions` | `object[]` | No |  |
+| `enrichActions[].id` | `string` | Yes | One of: `enrich_source_fields`, `enrich_target_fields`, `enrich_source_records`. |
+| `enrichActions[].connector` | `string` | Yes |  |
+| `enrichActions[].connectorId` | `string` | No |  |
+| `enrichActions[].action` | `string` | Yes |  |
+| `enrichActions[].params` | `object` | No |  |
+| `enrichActions[].labelKey` | `string` | Yes |  |
+| `enrichActions[].valueKey` | `string` | Yes |  |
+| `conditions` | `object[]` | No |  |
+| `conditions[].field` | `string` | Yes |  |
+| `conditions[].operator` | `string` | Yes |  |
+| `conditions[].value` | `string` | Yes |  |
+| `conditions[].label` | `string` | No |  |
 
 **Responses**
 
