@@ -106,7 +106,7 @@ Pass the token to your frontend and embed the iframe:
 #### Create a Customer Organization
 
 {% hint style="info" %}
-This endpoint needs an API key with full access (the **Admin** preset) and identity verification off. An **Embed backend** key cannot call it.
+This endpoint needs an API key with full access (the **Admin** preset). An **Embed backend** key cannot call it. Use a key with identity verification off, or see [Register with an enforcing key](#register-with-an-enforcing-key).
 {% endhint %}
 
 **Endpoint**
@@ -134,6 +134,23 @@ content-type: application/json
   }
 }
 ```
+
+`name` is the only required field. `plan` is not needed: a paid plan here is refused with `403`.
+
+##### Register with an enforcing key
+
+A key set to **Enforce** refuses a call with no identity headers (`401 IDENTITY_HEADERS_REQUIRED`), and this customer does not exist yet. Send `x-user-id` and leave out `x-org-id`. The hash signs an empty org id:
+
+```js
+const hmac = identityHash("", userId);   // the same as HMAC of "\n" + userId
+```
+
+```
+x-user-id: <USER_ID>
+x-identity-hmac: <hmac>
+```
+
+Do not send the new customer's id as `x-org-id`. It names a customer that must already exist, so the call returns `404 IDENTITY_ORG_NOT_FOUND`.
 
 #### Generate Embed Token
 
@@ -179,9 +196,9 @@ Send `userId` (or an attested `x-user-id`) so each person at the customer gets t
 }
 ```
 
-#### Create a SaaS Connection (optional)
+#### Create a connection for a customer
 
-**Note:** You only need this if fastn must access your product's APIs.
+**Note:** You only need this if you already hold the customer's credentials, such as a token for your own product. Otherwise the customer connects in the widget.
 
 **Endpoint**
 
@@ -207,9 +224,67 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
   "connectorId": "<CONNECTOR_ID>",
   "authMethodId": "<AUTH_METHOD_ID>",
   "credentials": {
-    "access_token": "<YOUR_API_KEY>"
+    "<FIELD_NAME>": "<VALUE>"
   },
   "name": "<CONNECTION_NAME>",
   "connectionScope": "<CONNECTION_SCOPE_NAME>"
 }
 ```
+
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `connectorId` | Yes | The connector. For your own product, `GET /api/v1/saas-connectors` lists it. |
+| `authMethodId` | Yes | The auth method on that connector. `GET /api/v1/auth-methods?connectorId=<CONNECTOR_ID>` lists them. |
+| `credentials` | Yes | The values for that auth method. |
+| `orgId` or `endOrgId` | No | The customer, if you do not send `x-org-id`: fastn's id for it, or your own. If you send both, they must match. |
+| `name` | No | A display name. Calling again with the same name updates that connection. |
+| `connectionScope` | No | One of the scopes on your [product's connector](../../manage/saas-connectors.md). Calling again with the same scope replaces that connection's credentials. It needs a customer. Not every account supports it yet: if yours does not, the call returns `400` and saves nothing. |
+
+**The field names in `credentials` come from the auth method.** Each method lists them under `inputContract.properties`, so read them before you build this call. A method whose contract has a `token` field takes `{ "token": "..." }`:
+
+```bash
+curl "https://api.fastn.dev/api/v1/auth-methods?connectorId=$CONNECTOR_ID" \
+  -H "Authorization: Bearer $FASTN_API_KEY"
+```
+
+```json
+{
+  "data": [
+    {
+      "id": "<AUTH_METHOD_ID>",
+      "type": "API_KEY",
+      "inputContract": {
+        "type": "object",
+        "required": ["token"],
+        "properties": { "token": { "type": "string" } }
+      }
+    }
+  ]
+}
+```
+
+A complete call for one customer:
+
+```bash
+curl -X POST https://api.fastn.dev/api/v1/connections \
+  -H "Authorization: Bearer $FASTN_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "connectorId": "<CONNECTOR_ID>",
+    "authMethodId": "<AUTH_METHOD_ID>",
+    "orgId": "northwind",
+    "name": "Northwind production",
+    "credentials": { "token": "<THE_CUSTOMERS_TOKEN>" }
+  }'
+```
+
+The call answers `201` for a new connection and `200` when it updated one. Other answers:
+
+| Response | Means |
+| --- | --- |
+| `400` `IDENTITY_ORG_MISMATCH` | `orgId` in the body names a different customer from `x-org-id`. |
+| `403` `CONNECTION_LIMIT_REACHED` | This customer is at the connection limit you set for it. |
+| `403` `quota_exceeded` | Your customers already have as many connections as your plan includes. |
+| `404` `IDENTITY_ORG_NOT_FOUND` | `x-org-id` is not one of your customers. |
+
+With an **Enforce** key, send the identity headers above and leave `orgId` out of the body.

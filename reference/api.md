@@ -118,6 +118,8 @@ The same workflow serves all of your customers, and headers on the request are w
 | `x-fastn-connections`           | The connections the installation uses.                         |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.    |
 
+**`x-org-id` or `x-end-org-id`:** a partner backend can instead name the customer with the identity headers `x-org-id` and `x-user-id`, signed with `x-identity-hmac` when the key verifies callers. Send one way or the other. `x-org-id` with `x-end-org-id` or `x-end-org-ref` is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is `x-org-id` on a key already pinned to one customer. `x-org-id` must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. Leave it out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
+
 `x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On `/execute`, fastn reloads the named installation and overlays its stored connections and configuration on the headers, so callers name an installation; they cannot pick connections by sending them.
 
 Inside the workflow these arrive on `ctx.headers`. See [Workflow runtime API](workflow-runtime.md). The workflow editor's autocomplete lists the exact shapes; check there before you hard-code one.

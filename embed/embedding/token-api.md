@@ -15,7 +15,7 @@ x-org-id: <customer id or your external reference>
 Content-Type: application/json
 ```
 
-`x-org-id` names the customer (the API calls it an end org): either fastn's id for the customer, or the external reference you registered it under (the `orgId` you sent to `POST /api/v1/orgs`). If you created a customer without one, fastn stored its slug as the external reference at creation time.
+`x-org-id` always names one of your customers, never your own organization. Sending your own org id returns `404 IDENTITY_ORG_NOT_FOUND`. It names the customer (the API calls it an end org): either fastn's id for the customer, or the external reference you registered it under (the `orgId` you sent to `POST /api/v1/orgs`). If you created a customer without one, fastn stored its slug as the external reference at creation time.
 
 ```json
 {

@@ -63,9 +63,11 @@ curl -X POST https://api.fastn.dev/api/v1/orgs \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
 
-`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference.
+`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference. You don't send a `plan` for a customer: a paid plan in this call is refused with `403`.
 
-Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
+If your Admin key has **Verify caller identity (HMAC)** set to enforce, this call needs identity headers too. There is no customer yet, so send `x-user-id` and `x-identity-hmac`, leave out `x-org-id`, and sign an empty org id: `hmac("\n" + userId)`. See [Register with an enforcing key](../../embed/embedding/integration-flow.md#register-with-an-enforcing-key).
+
+Already hold a customer's credentials, such as a token for your own product? Create the connection for them with `POST /api/v1/connections`. See [Create a connection for a customer](../../embed/embedding/integration-flow.md#create-a-connection-for-a-customer).
 
 **3 · Get an embed token** (backend, every page load). Sign the customer and user with your identity secret; fastn rejects the call without it. See [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md).
 
