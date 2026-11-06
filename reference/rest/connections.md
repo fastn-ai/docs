@@ -42,7 +42,7 @@ Operation: `listConnections`
 POST /v1/connections
 ```
 
-Creates (or upserts) a connection. Partner backends select the customer org either via the identity headers (x-org-id + x-user-id, proven with x-identity-hmac when the API key's identity-verification mode requires it) or via orgId/endOrgId in the body (customer's fastn org id or its external_ref). When identity headers are present, body orgId/userId must agree with the claim. Upserts by name, or by scope when `connectionScope` is set (re-provisioning a scope rotates that row's credentials); `connectionScope` requires a customer (endOrgId) and must be one of the connector's allowed scopes in the org's SaaS-connector registry.
+Creates a connection. Partner backends select the customer either with the identity headers (x-org-id + x-user-id, signed with x-identity-hmac when the API key requires it) or with orgId or endOrgId in the body. With neither, the connection is created on the caller's own organization. It only creates: a name already in use returns 409, and connectionScope returns 400. To replace credentials, use PUT /v1/connections/{id}.
 
 Operation: `storeConnections`
 
@@ -70,11 +70,9 @@ Operation: `storeConnections`
 | `endOrgId` | `string` | No |  |
 | `orgId` | `string` | No |  |
 | `authProvider` | `string` | No |  |
-| `connectionScope` | `string` | No |  |
 
 **Responses**
 
-* `200`: Existing connection updated (upsert)
 * `201`: Connection created
 * `400`: Validation error / invalid connectionScope / connectionScope without endOrgId / IDENTITY_ORG_MISMATCH / IDENTITY_USER_MISMATCH
 * `401`: Missing or invalid x-identity-hmac on a key whose identity-verification mode is required (IDENTITY_HMAC_INVALID)
@@ -82,6 +80,7 @@ Operation: `storeConnections`
 * `404`: x-org-id does not match a customer org (IDENTITY_ORG_NOT_FOUND)
 * `502`: The connector service could not be read to count connections or name this one; nothing was stored
 * `504`: Storing the credential timed out and a read-back did not find it (TIMEOUT). The error says whether it was confirmed absent (safe to retry) or could not be confirmed
+* `409`: That name is already in use for this connector
 
 ### Find a connection by name
 
