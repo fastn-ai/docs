@@ -52,7 +52,7 @@ Five parts, each done once; part 5 is optional. Keep the API key and identity se
 
 **1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
 
-Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Leave **Verify caller identity (HMAC)** off on this key: a key that enforces it refuses every call without identity headers, and registering a customer has none. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
+Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Leaving **Verify caller identity (HMAC)** off on this key is simplest, because a key that enforces it refuses every call without identity headers. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
 
 **2 · Register each customer** (backend, once per customer, with the **Admin** key), with your own ID for them, their tier and connection limit. The **Embed backend** key gets `403` here.
 
@@ -63,9 +63,11 @@ curl -X POST https://api.fastn.dev/api/v1/orgs \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
 
-`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference.
+`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference. You don't send a `plan` for a customer: a paid plan in this call is refused with `403`.
 
-Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
+If your Admin key has **Verify caller identity (HMAC)** set to enforce, this call needs identity headers too. There is no customer yet, so send `x-user-id` and `x-identity-hmac`, leave out `x-org-id`, and sign an empty org id: `hmac("\n" + userId)`. See [Register with an enforcing key](../../embed/embedding/integration-flow.md#register-with-an-enforcing-key).
+
+Already hold a customer's credentials, such as a token for your own product? Create the connection for them with `POST /api/v1/connections`. See [Create a connection for a customer](../../embed/embedding/integration-flow.md#create-a-connection-for-a-customer).
 
 **3 · Get an embed token** (backend, every page load). Sign the customer and user with your identity secret; fastn rejects the call without it. See [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md).
 

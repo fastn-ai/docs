@@ -80,7 +80,7 @@ The plaintext headers tell the gateway which identity is being claimed, and the 
 
 **1. Register the customer organization**
 
-Register the customer once from your backend with Create a Customer Organization, before you mint its first token. That endpoint needs an **Admin** key (full access) with **Verify caller identity (HMAC)** off; the **Embed backend** key that mints tokens gets `403`, and a key that enforces identity verification gets `401` because this call carries no identity headers. See [API Reference: Create a Customer Organization](#create-a-customer-organization).
+Register the customer once from your backend with Create a Customer Organization, before you mint its first token. That endpoint needs an **Admin** key (full access), and the **Embed backend** key that mints tokens gets `403`. Identity verification off is simplest. A key set to enforce needs [identity headers on this call too](#register-with-an-enforcing-key). See [API Reference: Create a Customer Organization](#create-a-customer-organization).
 
 #### Integrate the widget
 
@@ -106,7 +106,7 @@ Pass the token to your frontend and embed the iframe:
 #### Create a Customer Organization
 
 {% hint style="info" %}
-This endpoint needs an API key with full access (the **Admin** preset) and identity verification off. An **Embed backend** key cannot call it.
+This endpoint needs an API key with full access (the **Admin** preset). An **Embed backend** key cannot call it. Use a key with identity verification off, or see [Register with an enforcing key](#register-with-an-enforcing-key).
 {% endhint %}
 
 **Endpoint**
@@ -134,6 +134,23 @@ content-type: application/json
   }
 }
 ```
+
+`name` is the only required field. `plan` is not needed: a paid plan here is refused with `403`.
+
+#### Register with an enforcing key
+
+A key set to **Enforce** refuses a call with no identity headers (`401 IDENTITY_HEADERS_REQUIRED`), and this customer does not exist yet. Send `x-user-id` and leave out `x-org-id`. No end user exists yet, so use any stable id for your provisioning service. The hash signs an empty org id:
+
+```js
+const hmac = identityHash("", userId);   // the same as HMAC of "\n" + userId
+```
+
+```
+x-user-id: <USER_ID>
+x-identity-hmac: <hmac>
+```
+
+Do not send the new customer's id as `x-org-id`. It names a customer that must already exist, so the call returns `404 IDENTITY_ORG_NOT_FOUND`.
 
 #### Generate Embed Token
 
@@ -179,9 +196,13 @@ Send `userId` (or an attested `x-user-id`) so each person at the customer gets t
 }
 ```
 
-#### Create a SaaS Connection (optional)
+#### Create a connection for a customer
 
-**Note:** You only need this if fastn must access your product's APIs.
+**Note:** You only need this if you already hold the customer's credentials, such as a token for your own product. Otherwise the customer connects in the widget.
+
+{% hint style="info" %}
+This call needs a key with `connections.create`, and the lookups below need `connectors.read` and `settings.read`. The **Embed backend** key has neither `connections.create` nor `settings.read`, so use your **Admin** key.
+{% endhint %}
 
 **Endpoint**
 
@@ -207,9 +228,73 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
   "connectorId": "<CONNECTOR_ID>",
   "authMethodId": "<AUTH_METHOD_ID>",
   "credentials": {
-    "access_token": "<YOUR_API_KEY>"
+    "<FIELD_NAME>": "<VALUE>"
   },
-  "name": "<CONNECTION_NAME>",
-  "connectionScope": "<CONNECTION_SCOPE_NAME>"
+  "name": "<CONNECTION_NAME>"
 }
 ```
+
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `connectorId` | Yes | The connector. For your own product, `GET /api/v1/saas-connectors` lists it. |
+| `authMethodId` | Yes | The auth method on that connector. `GET /api/v1/auth-methods?connectorId=<CONNECTOR_ID>` lists them. |
+| `credentials` | Yes | The values for that auth method. |
+| `orgId` or `endOrgId` | No | The customer, if you do not send `x-org-id`: fastn's id for it, or your own. If you send both, they must match. **With neither, the connection is created on your own organization, not a customer's.** |
+| `name` | No | A display name, unique per connector and customer. A name already in use returns `409`. Leave it out and fastn generates one. |
+
+`connectionScope` is not accepted on this call and returns `400`.
+
+**The field names in `credentials` come from the auth method.** Each method lists them under `inputContract.properties`, so read them before you build this call. A method whose contract has a `token` field takes `{ "token": "..." }`:
+
+```bash
+curl "https://api.fastn.dev/api/v1/auth-methods?connectorId=$CONNECTOR_ID" \
+  -H "Authorization: Bearer $FASTN_API_KEY"
+```
+
+```json
+{
+  "data": [
+    {
+      "id": "<AUTH_METHOD_ID>",
+      "type": "API_KEY",
+      "inputContract": {
+        "type": "object",
+        "required": ["token"],
+        "properties": { "token": { "type": "string" } }
+      }
+    }
+  ]
+}
+```
+
+A complete call for one customer:
+
+```bash
+curl -X POST https://api.fastn.dev/api/v1/connections \
+  -H "Authorization: Bearer $FASTN_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "connectorId": "<CONNECTOR_ID>",
+    "authMethodId": "<AUTH_METHOD_ID>",
+    "orgId": "northwind",
+    "name": "Northwind production",
+    "credentials": { "token": "<THE_CUSTOMERS_TOKEN>" }
+  }'
+```
+
+The call answers `201` with the new connection. It only creates: to replace a customer's credentials, such as when rotating a token, call `PUT /api/v1/connections/{id}` with the new `credentials`. Other answers:
+
+| Response | Means |
+| --- | --- |
+| `400` `IDENTITY_ORG_MISMATCH` | `orgId` in the body names a different customer from `x-org-id`. |
+| `401` `IDENTITY_HEADERS_REQUIRED` or `IDENTITY_HMAC_INVALID` | The key is set to enforce, and the identity headers are missing or wrong. |
+| `403` `Access denied` | `orgId` in the body is not one of your customers. |
+| `403` `CONNECTION_LIMIT_REACHED` | This customer is at the connection limit you set for it. |
+| `403` `quota_exceeded` | Your customers already have as many connections as your plan includes. |
+| `403` | The key lacks `connections.create`. |
+| `404` `IDENTITY_ORG_NOT_FOUND` | `x-org-id` is not one of your customers. |
+| `409` | That `name` is already in use for this connector. |
+| `422` | The app rejected these credentials, so nothing was saved. Check the field names and values. |
+| `504` | fastn timed out while saving. The response says whether it is safe to try again. |
+
+**With an Enforce key, every call needs identity headers, including the two lookups above.** For the lookups, sign `x-user-id` with an empty org id, as in [Register with an enforcing key](#register-with-an-enforcing-key). For this call, send and sign `x-org-id` as well and leave `orgId` out of the body, so the hash covers the customer.
