@@ -57,7 +57,7 @@ At least one route is required, and each route needs a **Workflow**. Each route 
 | Field                     | Notes                                                                                          |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
 | **Scheduler ID**          | Optional. Leave it empty and one is generated.                                                  |
-| **Delay (minutes)**       | Default `0`. Holds the run back by this many minutes after the scheduled moment: useful when an upstream system needs a head start. |
+| **Delay (minutes)**       | Default `0`. Holds the run back by this many minutes after the scheduled moment: useful when an upstream app needs a head start. |
 | **Keep failed deliveries** | Off by default. Tick it to retry failed deliveries and keep them for inspection; it reveals **Max attempts** and **Backoff strategy** (Exponential, Linear or Fixed). Left off, each scheduled run gets one attempt with no delivery retries. |
 {% endstep %}
 

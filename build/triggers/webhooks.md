@@ -1,12 +1,12 @@
 ---
-description: A trigger that fires when another system calls a URL you give it.
+description: A trigger that fires when another app calls a URL you give it.
 ---
 
 # Webhook triggers
 
 **Integrations → Triggers** - in your dashboard, `/integrations?tab=triggers`.
 
-A webhook trigger fires when another system calls a URL you give it. Nothing is polled.
+A webhook trigger fires when another app calls a URL you give it. Nothing is polled.
 
 {% hint style="info" %}
 **Looking for triggers somewhere else?** They used to sit under Settings and under Activity. Both of those paths now redirect to **Integrations**, which is the one place triggers are created and listed. Its tabs are **Connectors**, **Workflows**, **Triggers** and **Unified APIs**.

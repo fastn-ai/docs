@@ -10,7 +10,7 @@ An **organization** is you, the SaaS company. It holds your connectors, workflow
 
 A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. The API calls a customer an *end org* (`endOrgId`), and some identifiers and older material say *tenant*. API calls identify a customer by fastn's customer id or by your own external reference for it, which defaults to the customer's slug if you did not set one.
 
-A **connection** is one customer's authorized link to one system. It stores the credential, encrypted, and records which auth method produced it.
+A **connection** is one customer's authorized link to one app. It stores the credential, encrypted, and records which auth method produced it.
 
 ```
 Organization (you)
@@ -36,7 +36,7 @@ Inside a workflow, each connector is wired one of two ways.
 | Mode              | Credential used                                  | Use for                                            |
 | ----------------- | ------------------------------------------------ | -------------------------------------------------- |
 | **Per customer**  | The connection belonging to the running customer | Anything touching customer data                    |
-| **Platform-wide** | A single connection owned by your org, shared across the workspace | Your own systems: your Slack, your data warehouse |
+| **Platform-wide** | A single connection owned by your org, shared across the workspace | Your own apps: your Slack, your data warehouse |
 
 Both modes are labeled in the UI: the workflow's Connectors tab shows a **Per customer** or **Platform-wide** badge on each connector. On the connection side, a connection that belongs to your organization rather than to one customer shows `Scope: Account level` on its detail page.
 
@@ -80,9 +80,9 @@ Test mode is not a sandbox. A test key reaches the same live connections as a li
 
 Three kinds, covered fully in [Triggers](../build/triggers/README.md).
 
-* **Webhook**: an outside system calls a URL you give it.
+* **Webhook**: an outside app calls a URL you give it.
 * **Schedule**: a clock you set.
-* **App event**: something changed in a connected system.
+* **App event**: something changed in a connected app.
 
 ### Unified APIs
 

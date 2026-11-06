@@ -2,7 +2,7 @@
 description: "Making a connection step by step: open the connect dialog, choose the auth method, give the credential, and check that it worked."
 ---
 
-# Connect a system, step by step
+# Connect an app, step by step
 
 A connection is what lets a connector call an app as a specific account. Connecting here signs in **your own** account, for your organization's workflows and for testing. Your customers connect their own accounts through the [widget](../../embed/README.md) you embed.
 

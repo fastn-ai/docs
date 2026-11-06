@@ -35,7 +35,7 @@ The **Customers** view adds an **All customers** selector to show one customer's
 * The status chips **All**, **Active**, **Inactive**, **Expired**, **Failed** and **Needs action** show only connections in that state. **Needs action** collects connections that are not active, or are active but can no longer renew their token.
 * The count on the right shows how many connections match, for example *5 connections*.
 
-If connections exist but none match, the page reads *No connections match* · *Adjust the filter, or pick the other view.* When there are no connections at all, it reads *No connections yet* · *Connect a system and its authenticated link appears here.* with a **Connect a system** button.
+If connections exist but none match, the page reads *No connections match* · *Adjust the filter, or pick the other view.* When there are no connections at all, it reads *No connections yet* · *Connect an app and its authenticated link appears here.* with a **Connect an app** button.
 
 ### The table
 

@@ -58,7 +58,7 @@ The usual causes, in rough order of frequency:
 | ----- | ----------------- | --- |
 | The connection is **Expired** or **Failed** | [Connections](../build/connections/README.md), filtered to that customer | The customer re-authorizes through your widget |
 | The connection is **pinned and no longer usable**, or belongs to another org | The raw message names a pinned connection id | Re-authenticate, then select the active connection |
-| The customer never connected that system | No row for them in Connections | They connect it |
+| The customer never connected that app | No row for them in Connections | They connect it |
 | A scope is missing from the grant | The action fails where others on the same connector succeed | Reconnect with the scope the action needs |
 | The upstream API changed | [Pending updates](../build/connector-updates.md) has a proposal for that connector | Accept the proposal |
 

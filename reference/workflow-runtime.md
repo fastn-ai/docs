@@ -89,7 +89,7 @@ Their exact shapes are listed in the workflow editor's autocomplete, which is ge
 
 ## Calling a connector
 
-Calls actions on connected systems, by connector slug.
+Calls actions on connected apps, by connector slug.
 
 ```javascript
 const sale    = await fastn.connector.cin7core.getSale({ saleId });
@@ -204,7 +204,7 @@ Whatever you return becomes the workflow's output, and must match the output con
 | **Standard** | `202` and an execution id.                                              | 15 minutes |
 | **Long**     | `202` and an execution id.                                              | Up to 36 hours |
 
-**Instant's ceiling is 25 seconds** unless your organization holds the "Increase Instant timeout" entitlement, which raises it to 2 minutes. It is short on purpose. It is the tier for something a caller is blocked on. Anything that reaches out to two or three systems in sequence belongs on Standard, and finding out by timing out in production is the expensive way to learn it.
+**Instant's ceiling is 25 seconds** unless your organization holds the "Increase Instant timeout" entitlement, which raises it to 2 minutes. It is short on purpose. It is the tier for something a caller is blocked on. Anything that reaches out to two or three apps in sequence belongs on Standard, and finding out by timing out in production is the expensive way to learn it.
 
 ## Errors
 

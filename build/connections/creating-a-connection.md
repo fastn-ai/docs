@@ -1,5 +1,5 @@
 ---
-description: "Making a connection yourself with New connection: the system picker, key-based methods, OAuth with providers and scopes, and when to use it."
+description: "Making a connection yourself with New connection: the app picker, key-based methods, OAuth with providers and scopes, and when to use it."
 ---
 
 # Creating a connection
@@ -8,15 +8,15 @@ description: "Making a connection yourself with New connection: the system picke
 
 Your **customers'** connections should not be made here. Customers connect their own accounts through the [widget](../../embed/README.md) you embed, which keeps their credentials theirs.
 
-### 1. Pick the system
+### 1. Pick the app
 
-**New connection** opens **Connect a system** · *Pick the system your customers use. You can add more later.*
+**New connection** opens **Connect an app** · *Pick the app your customers use. You can add more later.*
 
-Type in **Search systems** to narrow the grid, then click the system. The footer counts how many systems match. The list can take a few seconds to load (*Loading systems...*).
+Type in **Search apps** to narrow the grid, then click the app. The footer counts how many apps match. The list can take a few seconds to load (*Loading apps...*).
 
 ### 2. Give the credential
 
-The dialog changes to **Connect &lt;system&gt;**, tagged with the selected auth method. **←** goes back to the picker.
+The dialog changes to **Connect** followed by the app's name, tagged with the selected auth method. **←** goes back to the picker.
 
 #### Keys and tokens
 

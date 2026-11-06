@@ -42,7 +42,7 @@ Seven auth methods are available when creating a connector:
 | Method           | How it works                                                             | Example apps                          |
 | ---------------- | ------------------------------------------------------------------------ | ------------------------------------- |
 | **No Auth**      | No authentication required. For public APIs.                             | Public data feeds                     |
-| **Basic Auth**   | Username and password sent as Base64 in Authorization header.            | Legacy APIs, internal systems         |
+| **Basic Auth**   | Username and password sent as Base64 in Authorization header.            | Legacy APIs, internal apps         |
 | **Digest Auth**  | Username and password, using HTTP digest authentication.                 | APIs that require digest auth         |
 | **Bearer Token** | Token sent in Authorization header as `Bearer {token}`.                  | Many modern APIs                      |
 | **API Key**      | Key sent in a custom header (e.g., `X-API-Key`).                         | Stripe, SendGrid, OpenAI              |

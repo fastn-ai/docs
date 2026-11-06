@@ -8,7 +8,7 @@ description: Connecting your own product, through its API or webhooks, and the s
 
 > Connect your product through its API or webhooks, so each customer's connection to it can be scoped, and tell fastn where to call your product back. Integrations can't go live until your product is connected.
 
-Every other connector in fastn represents someone else's system: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organized.
+Every other connector in fastn represents someone else's app: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organized.
 
 An integration usually has two ends. One end is the app your customer uses, picked from **Integrations**. The other end is your product, connected here. Workflows read and write both through the same kind of connection. You can explore and build before this is done, but no integration goes live until your product is connected.
 
@@ -24,7 +24,7 @@ With nothing registered the page reads:
 
 | Field | Notes |
 | ----- | ----- |
-| **Connector \*** | A picker over every connector you can see, except ones already registered here (*Select your product's connector…*). Its helper text is the important part: *"The connector for your own product, through its API or webhooks: the one your customers' connections are made against."* This is not the system you are integrating **with**; it is the one representing **you**. If your product is not in the catalog yet, create its connector first from **Integrations → Connectors → Create connector**. |
+| **Connector \*** | A picker over every connector you can see, except ones already registered here (*Select your product's connector…*). Its helper text is the important part: *"The connector for your own product, through its API or webhooks: the one your customers' connections are made against."* This is not the app you are integrating **with**; it is the one representing **you**. If your product is not in the catalog yet, create its connector first from **Integrations → Connectors → Create connector**. |
 | **Connection scopes** | A free-text field with an **Add** button beside it (press Enter or click **Add**). The list starts empty; `inventory` is only the placeholder text. Scopes are lowercased and can be at most 50 characters. Add as many as you need. |
 
 The panel closes with **Cancel** and **Add connector**.

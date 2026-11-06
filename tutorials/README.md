@@ -23,7 +23,7 @@ For the person setting up and managing fastn within their SaaS product.
 
 [**Managing Customers**](saas-admin/managing-customers.md) - Create customers, scope API calls, customize quota limits, and monitor activity.
 
-[**Roles & Permissions Setup**](saas-admin/roles-and-permissions-setup.md) - Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage access.
+[**Roles & Permissions Setup**](saas-admin/roles-and-permissions-setup.md) - Assign built-in roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage access.
 
 ### Tutorials for the people at your customers
 
