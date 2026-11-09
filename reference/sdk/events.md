@@ -31,11 +31,10 @@ const secret = hook.secret;    // whsec_…: shown once, store it now
 | `providerEvents` | No | `connector.event` only: just these app event names, for example `["contact.creation"]`. |
 | `entities` | No | `unified.event` only: just these entities, as `category/entity`, for example `["crm/contact"]`. |
 | `workflowEvents` | No | `workflow.event` only: just these event names (the names your workflows pass to `fastn.events.emit`). Empty means every name. |
-| `endOrgId` | No | Only events about this customer, by your customer id. The customer form above fills it in for you. |
 | `description` | No | Your label. |
 | `enabled` | No | Default `true`. |
 
-Answer: the subscription itself, `{ id, url, endOrgId, eventTypes, connectors, connectorCategories, providerEvents, entities, workflowEvents, payloadTemplate, enabled, description, createdBy, createdAt, updatedAt, secret }`. The raw operation `fastn.events.createEventSubscription` answers the same object wrapped as `{ data: { … } }`. The `secret` is returned **only here**: reading the subscription later never shows it.
+Answer: the subscription itself, `{ id, url, orgId, eventTypes, connectors, connectorCategories, providerEvents, entities, workflowEvents, payloadTemplate, enabled, description, createdBy, createdAt, updatedAt, secret }`. The raw operation `fastn.events.createEventSubscription` answers the same object wrapped as `{ data: { … } }`. The `secret` is returned **only here**: reading the subscription later never shows it.
 
 ---
 
@@ -53,7 +52,7 @@ Answer: the subscription itself, `{ id, url, endOrgId, eventTypes, connectors, c
 | `workflow.event` | A workflow sent an event with `fastn.events.emit`. Opt in: sent only when you list it, filtered by `workflowEvents`. | `event` (the name the workflow gave it), `workflowId`, `executionId`, `payload` (the data the workflow sent), and when set `app`, `connector`, `installationId` |
 | `endpoint.test` | You sent a test with `testEventSubscription`. | None |
 
-Every event carries `id` (`evt_…`), `type`, `occurredAt` and `tenantRef` (your customer id: match on this). The wire body also carries `endOrgId`, fastn's own id for the customer; `parseEvent` leaves it out (pass `{ internalIds: true }` to keep it). `metadata` is the object you set on the setup link.
+Every event carries `id` (`evt_…`), `type`, `occurredAt`, and `tenantRef` and `orgId` (your customer id: match on this). `metadata` is the object you set on the setup link.
 
 ```json
 {
@@ -61,7 +60,7 @@ Every event carries `id` (`evt_…`), `type`, `occurredAt` and `tenantRef` (your
   "type": "setup_link.completed",
   "occurredAt": "2026-10-26T00:01:03.486Z",
   "tenantRef": "acme_customer_42",
-  "endOrgId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+  "orgId": "acme_customer_42",
   "setupLinkId": "stp_1a2b3c4d5e6f",
   "installationId": "inst_…",
   "connections": { "hubspot": "ucl:…:default" },
@@ -204,7 +203,7 @@ const offered = await fastn.events.listConnectorEvents({ connectorId: String(hub
 // offered.data.events = [ { id: "contact.creation", label: "Contact Created", description, payloadSchema }, … ]
 
 // Then create the trigger for that account
-await fastn.events.createAppEventTrigger({
+await customer.api.events.createAppEventTrigger({
   name: "Acme HubSpot contacts",
   connectorId: String(hubspot?.connectorId),
   connectorName: "HubSpot",
@@ -214,7 +213,6 @@ await fastn.events.createAppEventTrigger({
   ],
   type: "WEBHOOK",
   accountId: "<the account id in the app, for example the HubSpot portal id>",
-  endOrgId: "acme_customer_42",
   connectionId: String(hubspot?.id),
   status: "ACTIVE",
 });
@@ -226,7 +224,6 @@ await fastn.events.createAppEventTrigger({
 | `connectorId` | Yes | The app's id: `connectorId` of the connection. |
 | `connectorName` | Yes | The app's name, for example `HubSpot`. |
 | `events` | Yes | The app events to receive, each `{ id, label }`, from `listConnectorEvents`. |
-| `endOrgId` | For a customer's account | Your customer id, `"acme_customer_42"` |
 | `connectionId` | For a customer's account | The connection the events are for. |
 | `accountId` | When the app needs it | The app's own account id, for example the HubSpot portal id or a Facebook Page id. |
 | `type` | No | `WEBHOOK` or `POLLING`. |

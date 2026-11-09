@@ -24,10 +24,10 @@ Create a separate test customer for development and use its id locally, so test 
 
 ### Using it
 
-Once you have the identifier, send it as the `x-org-id` header on the token request. (Only an API key pinned to one customer sends it as `endOrgId` in the body instead, because a pinned key rejects the header.) Nothing else needs it: the iframe URL is just `?token=<token>`.
+Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. Nothing else needs it: the iframe URL is just `?token=<token>`.
 
 In production, look the identifier up per request from the signed-in person's company rather than fixing one value, so each customer gets their own token. For local testing against a single test customer, an environment variable is fine:
 
 ```
-FASTN_END_ORG_ID=<test-customer-id>
+FASTN_ORG_ID=<test-customer-id>
 ```

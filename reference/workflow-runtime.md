@@ -50,8 +50,8 @@ The simplest way to know which of your customers a run is acting for is to read 
 
 | Field             | Holds                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------- |
-| `ctx.endOrgId`    | fastn's id for the customer the run acts for (the API calls a customer an end org), or `null` when the run is not for a customer. |
-| `ctx.externalRef` | Your own reference for that customer, or `null`.                                      |
+| `ctx.endOrgId`    | fastn's id for the customer the run acts for, or `null` when the run is not for a customer. |
+| `ctx.externalRef` | Your own id for that customer, when the caller named the customer by it; otherwise `null`. |
 | `ctx.env`         | The environment the run executes in, for example `test` or `live`.                   |
 | `ctx.attempt`     | The attempt number, starting at `1`.                                                  |
 | `ctx.isRetry`     | `true` when this run is a retry (`ctx.attempt` is greater than `1`).                  |
@@ -71,12 +71,11 @@ if (ctx.isRetry) {
 
 ## Customer headers
 
-One workflow serves all of your customers, and these five headers on the incoming request are how a call says which customer it is for and what it may use. Getting them right is the difference between a workflow that serves one customer and one that serves all of them.
+One workflow serves all of your customers, and these four headers on the incoming request are how a call says which customer it is for and what it may use. Getting them right is the difference between a workflow that serves one customer and one that serves all of them.
 
 | Header                          | Carries                                                                 |
 | ------------------------------- | ------------------------------------------------------------------------- |
-| `x-end-org-id`                  | The customer the run acts for.                                           |
-| `x-end-org-ref`                 | Your own reference for that customer.                                    |
+| `x-org-id`                      | The customer the run acts for: your own id for it, or fastn's id for it. |
 | `x-installation-id`             | Which installation of the integration this run belongs to.               |
 | `x-fastn-connections`           | The connections the installation uses.                                   |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.              |

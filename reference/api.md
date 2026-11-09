@@ -112,13 +112,12 @@ The same workflow serves all of your customers, and headers on the request are w
 
 | Header                          | Carries                                                       |
 | ------------------------------- | --------------------------------------------------------------- |
-| `x-end-org-id`                  | The customer this call acts for.                               |
-| `x-end-org-ref`                 | Your own reference for that customer.                          |
+| `x-org-id`                      | The customer this call acts for: your own id for it, or fastn's id for it. |
 | `x-installation-id`             | Which installation of the integration the call belongs to.     |
 | `x-fastn-connections`           | The connections the installation uses.                         |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.    |
 
-**`x-org-id` or `x-end-org-id`:** a partner backend can instead name the customer with the identity headers `x-org-id` and `x-user-id`, signed with `x-identity-hmac`. A key set to Enforce must use them on every call, so it cannot name a customer with `x-end-org-id` alone (`401 IDENTITY_HEADERS_REQUIRED`). `x-org-id` with `x-end-org-id`, `x-end-org-ref` or `x-fastn-external-ref` is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is `x-org-id` on a key already pinned to one customer. `x-org-id` must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. Leave it out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
+**Naming the customer:** `x-org-id` is the one header that names a customer. Send your own id for the customer (the `orgId` you gave it when you created it) or fastn's id for it. It must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. A partner backend can sign it: send `x-user-id` too, with `x-identity-hmac`. A key set to Enforce must send them on every call (`401 IDENTITY_HEADERS_REQUIRED`). On a key pinned to one customer, `x-org-id` naming any other customer is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is a request whose `x-org-id` and `?orgId=` name two different customers. On a key limited to some customers, a customer outside that list is refused with `403 API_KEY_SCOPE_MISMATCH`, and a key that covers several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS`). Leave `x-org-id` out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
 
 `x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On `/execute`, fastn reloads the named installation and overlays its stored connections and configuration on the headers, so callers name an installation; they cannot pick connections by sending them.
 
@@ -167,23 +166,23 @@ POST /api/v1/embed/token
 | `Authorization` | `Bearer <API key>`       |
 | `x-org-id`      | The customer: fastn's id for it, or your own id for it |
 
-`x-org-id` names the customer the token is for. Only an API key pinned to one customer leaves it out (a pinned key rejects the header) and sends `{"endOrgId": "…"}` in the body instead; a request with neither is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`.
+`x-org-id` names the customer the token is for. You can send `{"orgId": "…"}` in the body instead, with the same value; if you send both, they must name the same customer (`400 IDENTITY_ORG_MISMATCH`). A request that names no customer is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`.
 
 ```json
 {
   "data": {
     "token": "emb_…",
-    "endOrgId": "…",
     "userId": "…",
     "role": "end_user",
     "tierId": null,
     "expiresAt": "…",
-    "expiresIn": 28800
+    "expiresIn": 28800,
+    "orgId": "acme_customer_42"
   }
 }
 ```
 
-`expiresIn` is **28800 seconds: eight hours**. `endOrgId` is the customer the token is scoped to, and the returned role is always `end_user`.
+`expiresIn` is **28800 seconds: eight hours**. `orgId` is the customer the token is scoped to, under your own id for it, and the returned role is always `end_user`.
 
 ### Refresh
 

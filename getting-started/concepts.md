@@ -8,7 +8,7 @@ description: The handful of ideas that everything else in fastn is built from.
 
 An **organization** is you, the SaaS company. It holds your connectors, workflows, widgets, people and settings.
 
-A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. The API calls a customer an *end org* (`endOrgId`), and some identifiers and older material say *tenant*. API calls identify a customer by fastn's customer id or by your own external reference for it, which defaults to the customer's slug if you did not set one.
+A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. Some identifiers and older material say *tenant*. API calls name a customer with `x-org-id` (or `orgId` in a query or body): your own id for it, which defaults to the customer's slug if you did not set one, or fastn's id for it. Answers name the customer by your own id, as `orgId`.
 
 A **connection** is one customer's authorized link to one system. It stores the credential, encrypted, and records which auth method produced it.
 
@@ -21,7 +21,7 @@ Organization (you)
     └── Connection → Salesforce (OAuth)
 ```
 
-Every connection has an id in the form `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`. The detail page shows it with the line *Pass this to the API to act as this customer.* When you call a workflow on a customer's behalf, the customer is identified in request headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections` and `x-fastn-installation-config`.
+Every connection has an id in the form `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`. The detail page shows it with the line *Pass this to the API to act as this customer.* In the customer segment you can use your own id for the customer, and answers to your API key show it that way. When you call a workflow on a customer's behalf, the customer is identified in request headers: `x-org-id`, `x-installation-id`, `x-fastn-connections` and `x-fastn-installation-config`.
 
 ### Connector versus connection
 

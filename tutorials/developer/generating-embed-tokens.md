@@ -32,7 +32,7 @@ x-org-id: <customer id>        (fastn's id for the customer, or your external re
 
 | Field       | Description                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `endOrgId`  | Only for an API key pinned to one customer, which rejects the `x-org-id` header. Every other key names the customer in `x-org-id`. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
+| `orgId`     | The customer, if you do not send the `x-org-id` header: your own id for it, or fastn's id for it. If you send both, they must name the same customer. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
 | `userId`    | Your id for the person at the customer. Per-user isolation keys on this (or on an attested `x-user-id` header). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Tenancy](understanding-tenancy.md)). |
 | `userEmail` | The person's email. Display only.                                                                                                                                                                                             |
 | `userName`  | The person's display name. Display only.                                                                                                                                                                                      |
@@ -40,7 +40,7 @@ x-org-id: <customer id>        (fastn's id for the customer, or your external re
 | `metadata`  | Optional. Your own data, handed back in the widget's lifecycle callbacks for this session. At most 4 KB of JSON.                                                                                                             |
 | `allowOrgLevel` | Optional. Mint an organization-level token with no customer, for previewing your own organization only. Never hand one to a customer.                                                                                |
 
-With no customer in the header, body or key and no `allowOrgLevel`, the request fails with `400` and code `EMBED_TOKEN_REQUIRES_END_ORG_ID`. An embed token cannot be used to mint another one (`403`).
+With no customer in the header or body and no `allowOrgLevel`, the request fails with `400` and code `EMBED_TOKEN_REQUIRES_END_ORG_ID`. An embed token cannot be used to mint another one (`403`).
 
 **Response:**
 
@@ -48,12 +48,12 @@ With no customer in the header, body or key and no `allowOrgLevel`, the request 
 {
   "data": {
     "token": "emb_...",
-    "endOrgId": "<customer id>",
     "userId": "<your user id>",
     "role": "end_user",
     "tierId": null,
     "expiresAt": "2026-11-04T18:00:00.000Z",
-    "expiresIn": 28800
+    "expiresIn": 28800,
+    "orgId": "<your id for the customer>"
   }
 }
 ```

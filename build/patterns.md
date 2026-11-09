@@ -78,7 +78,7 @@ Configs vary by *environment*, not by customer, so a per-customer rule belongs i
 `fastn.db` isolates one Postgres schema **per organization**, not per customer. Rows are not scoped to a customer for you. If a table holds per-customer rules, put the customer on the row yourself and filter on it in every query.
 {% endhint %}
 
-Which customer a run belongs to arrives in the request headers (`x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`) and reaches your code through `ctx.headers`. That is also how you invoke a workflow as a specific customer from outside.
+Which customer a run belongs to arrives in the request headers (`x-org-id`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`) and reaches your code through `ctx.headers`. That is also how you invoke a workflow as a specific customer from outside.
 
 **Ask for it as:** *"Make the warehouse and the minimum order value configurable per customer, not hard-coded."*
 

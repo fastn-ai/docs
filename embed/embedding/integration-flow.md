@@ -186,12 +186,12 @@ Send `userId` (or an attested `x-user-id`) so each person at the customer gets t
 {
   "data": {
     "token": "emb_…",
-    "endOrgId": "…",
     "userId": "<USER_ID>",
     "role": "end_user",
     "tierId": null,
     "expiresAt": "…",
-    "expiresIn": 28800
+    "expiresIn": 28800,
+    "orgId": "<ORG_ID>"
   }
 }
 ```
@@ -239,7 +239,7 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 | `connectorId` | Yes | The connector. For your own product, `GET /api/v1/saas-connectors` lists it. |
 | `authMethodId` | Yes | The auth method on that connector. `GET /api/v1/auth-methods?connectorId=<CONNECTOR_ID>` lists them. |
 | `credentials` | Yes | The values for that auth method. |
-| `orgId` or `endOrgId` | No | The customer, if you do not send `x-org-id`: fastn's id for it, or your own. If you send both, they must match. **With neither, the connection is created on your own organization, not a customer's.** |
+| `orgId` | No | The customer, if you do not send `x-org-id`: your own id for it, or fastn's id for it. If you send both, they must match. **With neither, the connection is created on your own organization, not a customer's.** |
 | `name` | No | A display name, unique per connector and customer. A name already in use returns `409`. Leave it out and fastn generates one. |
 
 `connectionScope` is not accepted on this call and returns `400`.

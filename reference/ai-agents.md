@@ -88,8 +88,7 @@ Sent on the request; readable at `ctx.headers`.
 
 | Header | Carries |
 | ------ | ------- |
-| `x-end-org-id` | The customer the run acts for |
-| `x-end-org-ref` | Your own reference for that customer |
+| `x-org-id` | The customer the run acts for: your own id for it, or fastn's id for it |
 | `x-installation-id` | Which installation of the integration this run belongs to |
 | `x-fastn-connections` | The connections the run may use |
 | `x-fastn-installation-config` | The configuration values that installation was set up with |

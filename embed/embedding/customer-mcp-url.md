@@ -17,7 +17,7 @@ curl -X POST https://api.fastn.dev/api/v1/embed/mcp-connect-codes \
   -d '{}'
 ```
 
-The customer and user come from the token, so any `endOrgId` you send is ignored. The body must still be valid JSON.
+The customer and user come from the token, so a customer named in the body is ignored. The body must still be valid JSON.
 
 ```json
 {
@@ -65,10 +65,10 @@ Call these from your backend with a key that acts for your own organization and 
 
 | Task | Call |
 | --- | --- |
-| List one customer's connections | `GET /api/v1/embed/share-links?kind=mcp&endOrgId=<fastn customer id>` |
+| List one customer's connections | `GET /api/v1/embed/share-links?kind=mcp&orgId=<your id for the customer>` |
 | Disconnect one | `DELETE /api/v1/embed/share-links/{id}` |
 
-The list returns the newest 200 rows, including disconnected ones. Skip any row with a `revoked_at`. Leave out `endOrgId` and it spans all your customers, so always send it when you show the list to a customer. Rows do not say which person connected. Disconnecting a row that is already disconnected returns `404`.
+The list returns the newest 200 rows, including disconnected ones. Skip any row with a `revoked_at`. Leave out `orgId` and it spans all your customers, so always send it when you show the list to a customer. Rows do not say which person connected. Disconnecting a row that is already disconnected returns `404`.
 
 Disconnecting ends the client's sessions and refuses its refresh token.
 

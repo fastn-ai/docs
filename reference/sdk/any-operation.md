@@ -12,7 +12,7 @@ Operations are grouped in areas on the client, and each method has the same name
 
 ```typescript
 await fastn.orgs.getTenant({ id: "acme_customer_42" });
-await fastn.connections.listConnections({ endOrgId: "acme_customer_42" });
+await fastn.connections.listConnections({ orgId: "acme_customer_42" });
 await fastn.events.listEventSubscriptions();
 await fastn.embed.listWidgets();
 ```
@@ -21,7 +21,7 @@ Some areas: `orgs`, `embed`, `connections`, `connectors`, `unified`, `events`, `
 
 Inputs are one object. Path, query, body and header fields all go in it by name; the SDK puts each where the API expects it.
 
-Wherever an input names a customer (`id` on the customer routes, `endOrgId` elsewhere), pass your own customer id, as above.
+Wherever an input names a customer (`id` on the customer routes, `orgId` elsewhere), pass your own customer id, as above. To run any operation for one customer, call it on `fastn.customer("acme_customer_42").api`, which fills in the customer for you.
 
 ### By name: call()
 
