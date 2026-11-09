@@ -65,9 +65,9 @@ console.log(me.role, me.org?.id);
 
 ## Your customers and their ids
 
-You are the SaaS company using fastn; each business you serve is a **customer** (the API calls it an end org). Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
+You are the SaaS company using fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
 
-You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. The API also returns fastn's own id for the customer in its answers; you never need it.
+You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. Answers name the customer by your id too, as `orgId`.
 
 {% hint style="warning" %}
 To act for your customers, use a key that can act for your customers (one not pinned to a single customer).
@@ -77,8 +77,8 @@ To act for your customers, use a key that can act for your customers (one not pi
 
 | Id | Example | What it is | Who makes it |
 | -- | ------- | ---------- | ------------ |
-| Your customer id | `acme_customer_42` | Your own id for a customer. Use it everywhere. The API also calls it `orgId`, `externalRef`, `endOrgRef` and `tenantRef`: all the same value. | You |
-| fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers and `endOrgId` elsewhere. You never need it: those fields accept your customer id (`acme_customer_42`) too. | fastn |
+| Your customer id | `acme_customer_42` | Your own id for a customer. Use it everywhere. The API calls it `orgId`; customer answers also show it as `externalRef`, and events as `tenantRef`: all the same value. | You |
+| fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers. You never need it: wherever the API takes a customer, your customer id (`acme_customer_42`) works. | fastn |
 | `widgetId` | `wgt_…` | A widget: which apps a setup link or the embedded widget offers. | You, in the dashboard |
 | `setupId` | `stp_…` | One setup link. | fastn |
 | `installationId` | `inst_…` | The finished setup made from a setup link or the widget. | fastn |
@@ -103,7 +103,7 @@ The generated methods (`fastn.<area>.<operation>()`) return answers exactly as t
 
 * `fastn.webhooks.*` unwraps `data` and returns the subscription (or list) itself.
 * `customer.connect(app)` returns `{ setupId, url, status, expiresAt, widgetId }`.
-* `customer.links.get()` and `.cancel()`, `customer.callLog()` and `customer.watch()` return the item itself, without the `data` wrapper and without fastn's own `endOrgId`.
+* `customer.links.get()` and `.cancel()`, `customer.callLog()` and `customer.watch()` return the item itself, without the `data` wrapper.
 * `customer.find()` returns the customer row, or `undefined` when there is none.
 
 Raw answers from the generated methods look like this:

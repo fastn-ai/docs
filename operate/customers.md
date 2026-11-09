@@ -36,7 +36,7 @@ A count sits above the table, and **Search customers** narrows it. **View connec
 
 **Create customer** adds one manually, which is what you want when onboarding an account before they first sign in.
 
-You can put your own ID for the customer in **External ID** when you create it. When you mint an [embed token](../embed/embedding/README.md) or send `x-org-id`, identify the customer this way: use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). The token response returns fastn's customer id as `endOrgId`.
+You can put your own ID for the customer in **External ID** when you create it. When you mint an [embed token](../embed/embedding/README.md) or send `x-org-id`, identify the customer this way: use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). The token response names the customer by its External ID, as `orgId`.
 
 ### Customers in connection IDs
 
@@ -46,7 +46,7 @@ A connection's ID names the customer it belongs to:
 ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]
 ```
 
-`default` in the customer segment means the connection belongs to your own organization rather than to a customer. Some API fields and older screens still say "tenant" or "end org"; they mean the same thing as customer.
+`default` in the customer segment means the connection belongs to your own organization rather than to a customer. Some API fields and older screens still say "tenant"; it means the same thing as customer.
 
 ### Where customers show up elsewhere
 

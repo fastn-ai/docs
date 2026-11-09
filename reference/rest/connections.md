@@ -14,7 +14,7 @@ Base URL, authentication and errors are on the [REST API overview](README.md).
 GET /v1/connections
 ```
 
-Connections the caller can reach: their own pool, plus their child customers' for admin/owner. Credentials are never returned. Each row carries endOrgId and endOrgName so a cross-customer list can name the customer it belongs to.
+Connections the caller can reach: their own pool, plus their child customers' for admin/owner. Credentials are never returned. Each row carries orgId and orgName so a cross-customer list can name the customer it belongs to.
 
 Operation: `listConnections`
 
@@ -22,8 +22,7 @@ Operation: `listConnections`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No | Customer whose connections to list: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit for the caller's own pool. |
-| `orgId` | query | string | No | Alternate spelling of the customer org (the customer detail page uses this). Takes the same values as endOrgId. |
+| `orgId` | query | string | No | Alternate spelling of the customer org (the customer detail page uses this). Takes the same values as orgId. |
 | `userId` | query | string | No | Filter to one external user reference. |
 | `connectionScope` | query | string | No | Filter by SaaS-connector connection scope (e.g. inventory). Distinct from scope=saasPool. |
 | `scope` | query | string | No | Which pool. saasPool = the caller's own connections. customers = every child customer's connections and none of the caller's own (the partner Connections page's customer view) - account-tier roles only, and refused for a customer-scoped session. One of: `saasPool`, `customers`. |
@@ -42,7 +41,7 @@ Operation: `listConnections`
 POST /v1/connections
 ```
 
-Creates a connection. Partner backends select the customer either with the identity headers (x-org-id + x-user-id, signed with x-identity-hmac when the API key requires it) or with orgId or endOrgId in the body. With neither, the connection is created on the caller's own organization. It only creates: a name already in use returns 409, and connectionScope returns 400. To replace credentials, use PUT /v1/connections/{id}.
+Creates a connection. Partner backends select the customer either with the identity headers (x-org-id + x-user-id, signed with x-identity-hmac when the API key requires it) or with orgId in the body. With neither, the connection is created on the caller's own organization. It only creates: a name already in use returns 409, and connectionScope returns 400. To replace credentials, use PUT /v1/connections/{id}.
 
 Operation: `storeConnections`
 
@@ -50,7 +49,7 @@ Operation: `storeConnections`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `x-org-id` | header | string | No | Customer org the request acts for, the customer's fastn org id or the external_ref the partner registered it under. Requires API-key auth on a multi-customer key; always ownership-checked against the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 | `x-user-id` | header | string | No | End-user identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification. |
 | `x-identity-hmac` | header | string | No | Hex HMAC-SHA256 of "{x-org-id}\n{x-user-id}" (the header values exactly as sent, newline-joined; an absent header is the empty string) signed with the API key's identity-verification secret. Required when the key's idv mode is 'required' (missing/invalid = 401); logged-only under 'optional'; ignored when 'off'. |
 
@@ -67,14 +66,13 @@ Operation: `storeConnections`
 | `userId` | `string` | No |  |
 | `userEmail` | `string` | No |  |
 | `userName` | `string` | No |  |
-| `endOrgId` | `string` | No |  |
-| `orgId` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `authProvider` | `string` | No |  |
 
 **Responses**
 
 * `201`: Connection created
-* `400`: Validation error / invalid connectionScope / connectionScope without endOrgId / IDENTITY_ORG_MISMATCH / IDENTITY_USER_MISMATCH
+* `400`: Validation error / invalid connectionScope / connectionScope without orgId / IDENTITY_ORG_MISMATCH / IDENTITY_USER_MISMATCH
 * `401`: Missing or invalid x-identity-hmac on a key whose identity-verification mode is required (IDENTITY_HMAC_INVALID)
 * `403`: The partner's customers already have as many app connections as its plan includes ({ error: "quota_exceeded", dimension: "customer_connections", current, limit, limitSource, message }), or this customer is at the connections limit its partner set on it (CONNECTION_LIMIT_REACHED). Another account of an app the customer already connected is not refused
 * `404`: x-org-id does not match a customer org (IDENTITY_ORG_NOT_FOUND)
@@ -156,7 +154,7 @@ Operation: `updateConnection`
 
 * `200`: Connection updated
 * `404`: Connection not found (or outside the caller's scope)
-* `409`: A connection of that name already exists for this connector at the same address. Names are unique per connector and address: per (connector, org, end-org) for a customer-scoped connection, and per (connector, user, org) for an org-level one.
+* `409`: A connection of that name already exists for this connector at the same address. Names are unique per connector and address: per (connector, org, customer) for a customer-scoped connection, and per (connector, user, org) for an org-level one.
 
 ### Disconnect, delete a connection and its stored credential
 
@@ -193,7 +191,7 @@ Operation: `setDefaultConnection`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `id` | path | string | Yes | for a managed connection). |
+| `id` | path | string | Yes | Connection id, as returned by the connections list. id names its customer by the customer's own id (orgId) in its customer segment, and is accepted the same way. |
 
 **Responses**
 
@@ -275,9 +273,9 @@ Operation: `initiateOauthConnection`
 | `returnUrl` | `string` | No |  |
 | `dashboardOrigin` | `string` | No |  |
 | `oauthVariables` | `object` | No |  |
-| `endOrgId` | `string` | No |  |
 | `source` | `string` | No |  |
 | `connectionScope` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -401,9 +399,9 @@ Operation: `listSaasConnectorConnections`
 | `connections[].connectionScope` | `string` |  |
 | `connections[].status` | `string` |  |
 | `connections[].verifyStatus` | `string` |  |
-| `connections[].endOrgId` | `string` |  |
-| `connections[].endOrgName` | `string` |  |
-| `connections[].endOrgSlug` | `string` |  |
 | `connections[].pinnedInstallations` | `integer` |  |
 | `connections[].createdAt` | `string` |  |
 | `connections[].updatedAt` | `string` |  |
+| `connections[].orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
+| `connections[].orgName` | `string` |  |
+| `connections[].orgSlug` | `string` |  |

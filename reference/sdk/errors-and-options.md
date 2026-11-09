@@ -22,7 +22,7 @@ await contacts.create(
 | `timeoutMs` | | A time limit for this call, in milliseconds. Overrides the client's `timeoutMs`. |
 | `retries` | | How many retries for this call. `0` never retries. Overrides the client's `retries`. |
 | `signal` | | An `AbortSignal`, to cancel the call yourself. |
-| `customer` | `x-end-org-ref` header | Run the call for one customer: `{ ref: "acme_customer_42" }` sends your customer id as `x-end-org-ref`. `fastn.customer(ref)` and `customer.api` set this for you. |
+| `customer` | customer header | Run the call for one customer: `{ ref: "acme_customer_42" }` sends your customer id with the call. `fastn.customer(ref)` and `customer.api` set this for you. |
 | `installationId` | `x-installation-id` header | Run the call for one installation. |
 | `headers` | | Extra headers, sent as given. |
 | `extraQuery` | query string | Query parameters the SDK does not know yet, sent as given. |
@@ -81,7 +81,7 @@ for (const c of calls.data ?? []) {
 }
 ```
 
-Each row: `id`, `correlationId`, `endOrgId`, `category`, `entity`, `operation`, `connectorSlug`, `executionId`, `status`, `durationMs`, `createdAt`.
+Each row: `id`, `correlationId`, `orgId`, `category`, `entity`, `operation`, `connectorSlug`, `executionId`, `status`, `durationMs`, `createdAt`.
 
 ---
 

@@ -2,7 +2,7 @@
  "openapi": "3.1.0",
  "info": {
   "title": "fastn REST API",
-  "version": "v1.11.0_hotfix1"
+  "version": "v1.12.0"
  },
  "servers": [
   {
@@ -127,24 +127,6 @@
     "operationId": "listUnifiedEntityProviders",
     "parameters": [
      {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
       "name": "category",
       "in": "path",
       "required": true,
@@ -161,6 +143,9 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "responses": {
@@ -184,24 +169,6 @@
     "parameters": [
      {
       "$ref": "#/components/parameters/XInstallationIdHeader"
-     },
-     {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
      },
      {
       "name": "category",
@@ -277,6 +244,9 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "responses": {
@@ -289,8 +259,11 @@
      "404": {
       "description": "Unknown entity, no connected provider, or no such connection"
      },
+     "424": {
+      "description": "UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError."
+     },
      "502": {
-      "description": "The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
+      "description": "The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
      }
     },
     "description": "Lists canonical records of a unified entity. Without provider, connection_id or cursor it fans out over every connected provider; a cursor is pinned to the provider that minted it and is rejected when it contradicts ?provider=. Requires unified.read."
@@ -324,24 +297,6 @@
      },
      {
       "$ref": "#/components/parameters/XInstallationIdHeader"
-     },
-     {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
      },
      {
       "name": "category",
@@ -388,6 +343,9 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "requestBody": {
@@ -414,8 +372,11 @@
      "409": {
       "description": "UNIFIED_CONNECTION_EXPIRED when the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in (ask for a fresh sign-in). Otherwise: Multiple providers connected; specify ?provider= (or ?connection_id= to pick one of several connections on the same provider)"
      },
+     "424": {
+      "description": "UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError."
+     },
      "502": {
-      "description": "The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
+      "description": "The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
      }
     },
     "description": "Creates a record from a canonical body (any JSON object, mapped to the provider's fields) through one resolved provider. Requires unified.execute; 400 when the body is not a JSON object."
@@ -442,24 +403,6 @@
      },
      {
       "$ref": "#/components/parameters/XInstallationIdHeader"
-     },
-     {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
      },
      {
       "name": "category",
@@ -507,6 +450,9 @@
        "minimum": 1,
        "maximum": 200
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "requestBody": {
@@ -545,8 +491,11 @@
      "409": {
       "description": "UNIFIED_CONNECTION_EXPIRED: the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in; ask for a fresh sign-in rather than a different id. (Also UNIFIED_MULTIPLE_PROVIDERS when several providers are connected and none is pinned.)"
      },
+     "424": {
+      "description": "UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError."
+     },
      "502": {
-      "description": "The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
+      "description": "The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
      }
     }
    }
@@ -561,24 +510,6 @@
     "parameters": [
      {
       "$ref": "#/components/parameters/XInstallationIdHeader"
-     },
-     {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
      },
      {
       "name": "category",
@@ -643,6 +574,9 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "responses": {
@@ -655,8 +589,11 @@
      "409": {
       "description": "UNIFIED_CONNECTION_EXPIRED when the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in (ask for a fresh sign-in). Otherwise: Multiple providers connected; specify ?provider= (or ?connection_id= to pick one of several connections on the same provider)"
      },
+     "424": {
+      "description": "UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError."
+     },
      "502": {
-      "description": "The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
+      "description": "The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
      }
     },
     "description": "Fetches one canonical record by the provider's remote id through one resolved provider. Requires unified.read."
@@ -693,24 +630,6 @@
       "$ref": "#/components/parameters/XInstallationIdHeader"
      },
      {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
       "name": "category",
       "in": "path",
       "required": true,
@@ -755,6 +674,9 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "requestBody": {
@@ -781,8 +703,11 @@
      "409": {
       "description": "UNIFIED_CONNECTION_EXPIRED: the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in; ask for a fresh sign-in rather than a different id. (Also UNIFIED_MULTIPLE_PROVIDERS when several providers are connected and none is pinned.)"
      },
+     "424": {
+      "description": "UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError."
+     },
      "502": {
-      "description": "The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
+      "description": "The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
      }
     }
    },
@@ -818,24 +743,6 @@
       "$ref": "#/components/parameters/XInstallationIdHeader"
      },
      {
-      "name": "x-end-org-id",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged.",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
-      "name": "x-end-org-ref",
-      "in": "header",
-      "required": false,
-      "description": "Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400).",
-      "schema": {
-       "type": "string"
-      }
-     },
-     {
       "name": "category",
       "in": "path",
       "required": true,
@@ -880,6 +787,9 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "$ref": "#/components/parameters/XOrgIdHeader"
      }
     ],
     "responses": {
@@ -892,8 +802,11 @@
      "409": {
       "description": "UNIFIED_CONNECTION_EXPIRED: the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in; ask for a fresh sign-in rather than a different id. (Also UNIFIED_MULTIPLE_PROVIDERS when several providers are connected and none is pinned.)"
      },
+     "424": {
+      "description": "UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError."
+     },
      "502": {
-      "description": "The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
+      "description": "The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none."
      }
     }
    }
@@ -941,10 +854,6 @@
           },
           "additionalProperties": {}
          },
-         "endOrgId": {
-          "type": "string",
-          "minLength": 1
-         },
          "installationId": {
           "type": "string",
           "minLength": 1
@@ -966,6 +875,11 @@
           "description": "Case-insensitive substring filter over label then value, applied server-side to what the snippet returned.",
           "type": "string",
           "maxLength": 200
+         },
+         "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
@@ -985,7 +899,7 @@
       "description": "Unknown field (UNIFIED_CONFIG_UNKNOWN_FIELD)"
      },
      "403": {
-      "description": "end_user supplied endOrgId/installationId"
+      "description": "end_user supplied orgId/installationId"
      },
      "404": {
       "description": "Widget not found"
@@ -1005,7 +919,7 @@
     "tags": [
      "Unified API"
     ],
-    "summary": "Merge per-customer unified config values into an installation's inline config (end_user-callable; scoped by org_id or end_org_id)",
+    "summary": "Merge per-customer unified config values into an installation's inline config (end_user-callable; scoped by org_id or org_id)",
     "operationId": "updateInstallationUnifiedValues",
     "parameters": [
      {
@@ -1059,6 +973,82 @@
     "description": "Writes per-connector unified-API field values into the installation's inline config (connectorSlug -> fieldKey -> value). Requires unified.execute."
    }
   },
+  "/v1/installations/{id}/form-values": {
+   "put": {
+    "tags": [
+     "Embed"
+    ],
+    "summary": "Save the customer's answers to the widget's settings form (form_schema). Validated against that schema, stored as the installation's inline config.formValues (so workflows read them via fastn.config.getByWorkflow), and gated on the widget's onConfigurationChange hook. Requires widgets.update.",
+    "operationId": "updateInstallationFormValues",
+    "parameters": [
+     {
+      "name": "id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "required": true,
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "formValues": {
+          "type": "object",
+          "propertyNames": {
+           "type": "string"
+          },
+          "additionalProperties": {
+           "anyOf": [
+            {
+             "type": "string"
+            },
+            {
+             "type": "number"
+            },
+            {
+             "type": "boolean"
+            },
+            {
+             "type": "array",
+             "items": {
+              "type": "string"
+             }
+            },
+            {
+             "type": "null"
+            }
+           ]
+          }
+         }
+        },
+        "required": [
+         "formValues"
+        ]
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Updated installation"
+     },
+     "400": {
+      "description": "Malformed body, or the widget has no settings form"
+     },
+     "404": {
+      "description": "Installation not found or out of scope"
+     },
+     "422": {
+      "description": "Answers fail the form's rules ({ fieldErrors: { key: message } }), or an onConfigurationChange hook vetoed the change"
+     }
+    }
+   }
+  },
   "/v1/installations/{id}/triggers": {
    "get": {
     "tags": [
@@ -1078,7 +1068,7 @@
     ],
     "responses": {
      "200": {
-      "description": "{ data: { templates: TriggerRef[], instances: [{ triggerId, templateTriggerId, type, createdAt, trigger }] } }. trigger carries live state plus accountId (APP_EVENT routing account; for an activation NONE trigger the end org's external ref, or its id) and endOrgId (the value a partner sends as x-end-org-id)."
+      "description": "{ data: { templates: TriggerRef[], instances: [{ triggerId, templateTriggerId, type, createdAt, trigger }] } }. trigger carries live state plus accountId (APP_EVENT routing account; for an activation NONE trigger the customer's external ref, or its id) and orgId (the value a partner sends as x-org-id)."
      },
      "404": {
       "description": "Installation not found or out of scope"
@@ -1090,7 +1080,7 @@
     "tags": [
      "Events"
     ],
-    "summary": "Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with end_org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-end-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config.",
+    "summary": "Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config.",
     "operationId": "createInstallationTrigger",
     "parameters": [
      {
@@ -1207,7 +1197,89 @@
       "description": "Hook veto, non-editable field, preset mismatch, extra headers not allowed, or missing APP_EVENT connection"
      }
     },
-    "description": "Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as end org. 404 when the template is not attached to the widget. Requires events.create."
+    "description": "Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as customer. 404 when the template is not attached to the widget. Requires events.create."
+   }
+  },
+  "/v1/installations/trigger-health": {
+   "get": {
+    "tags": [
+     "Events"
+    ],
+    "summary": "Active customer setups whose app triggers have no working subscription, so the customer's events cannot start the workflow. A setup is checked only for the copies provisioning can make for it: the APP_EVENT template triggers on its own widget, inside its trigger-category selection, activation NONE excluded. Each is reported when the customer has no copy (missing) or the copy's stored subscription status is FAILED or UNSUBSCRIBED, whether the copy is enabled or not (every provisioned copy starts disabled). Copies are matched per setup, not per customer. A template provisioning refused because a sibling setup of the same customer already runs the same workflow on those events is not reported as missing; one refused because a sibling shares the subscription for a different workflow still is. Paused or polling templates and setups with no widget are not reported. Same scope as GET /api/v1/installations; at most 500 setups are read, and `truncated` says when there were more.",
+    "operationId": "getInstallationTriggerHealth",
+    "responses": {
+     "200": {
+      "description": "Trigger health",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object",
+           "properties": {
+            "truncated": {
+             "type": "boolean"
+            },
+            "issues": {
+             "type": "array",
+             "items": {
+              "type": "object",
+              "properties": {
+               "installationId": {
+                "type": "string"
+               },
+               "installationLabel": {
+                "type": "string",
+                "nullable": true
+               },
+               "templateTriggerId": {
+                "type": "string"
+               },
+               "triggerName": {
+                "type": "string",
+                "nullable": true
+               },
+               "connectorName": {
+                "type": "string",
+                "nullable": true
+               },
+               "triggerId": {
+                "type": "string",
+                "nullable": true,
+                "description": "The customer's copy, when there is one"
+               },
+               "subscriptionStatus": {
+                "type": "string",
+                "nullable": true
+               },
+               "problem": {
+                "type": "string",
+                "enum": [
+                 "missing",
+                 "failed",
+                 "unsubscribed"
+                ]
+               },
+               "orgId": {
+                "type": "string",
+                "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
+               },
+               "orgName": {
+                "type": "string",
+                "nullable": true
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
    }
   },
   "/v1/installations/{id}/triggers/{triggerId}": {
@@ -1883,6 +1955,43 @@
                 "path"
                ]
               }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
+              }
              }
             },
             "required": [
@@ -1973,6 +2082,43 @@
                 "actionSlug",
                 "path"
                ]
+              }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
               }
              }
             },
@@ -2065,6 +2211,43 @@
                 "path"
                ]
               }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
+              }
              }
             },
             "required": [
@@ -2155,6 +2338,43 @@
                 "actionSlug",
                 "path"
                ]
+              }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
               }
              }
             },
@@ -2249,6 +2469,43 @@
                 "path"
                ]
               }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
+              }
              }
             },
             "required": [
@@ -2337,6 +2594,43 @@
                 "actionSlug",
                 "path"
                ]
+              }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
               }
              }
             },
@@ -2511,6 +2805,24 @@
                 "type",
                 "sources",
                 "separator"
+               ]
+              },
+              {
+               "type": "object",
+               "properties": {
+                "type": {
+                 "type": "string",
+                 "const": "template"
+                },
+                "template": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 1000
+                }
+               },
+               "required": [
+                "type",
+                "template"
                ]
               },
               {
@@ -2790,6 +3102,43 @@
                 "path"
                ]
               }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
+              }
              }
             },
             "required": [
@@ -2880,6 +3229,43 @@
                 "actionSlug",
                 "path"
                ]
+              }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
               }
              }
             },
@@ -2972,6 +3358,43 @@
                 "path"
                ]
               }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
+              }
              }
             },
             "required": [
@@ -3062,6 +3485,43 @@
                 "actionSlug",
                 "path"
                ]
+              }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
               }
              }
             },
@@ -3156,6 +3616,43 @@
                 "path"
                ]
               }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
+              }
              }
             },
             "required": [
@@ -3244,6 +3741,43 @@
                 "actionSlug",
                 "path"
                ]
+              }
+             },
+             "requiredInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "object",
+               "properties": {
+                "path": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                },
+                "when": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 500
+                }
+               },
+               "required": [
+                "path"
+               ]
+              }
+             },
+             "idFormat": {
+              "type": "string",
+              "enum": [
+               "lastSegment"
+              ]
+             },
+             "viewOnlyInput": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+               "type": "string",
+               "minLength": 1,
+               "maxLength": 200
               }
              }
             },
@@ -3417,6 +3951,24 @@
                 "type",
                 "sources",
                 "separator"
+               ]
+              },
+              {
+               "type": "object",
+               "properties": {
+                "type": {
+                 "type": "string",
+                 "const": "template"
+                },
+                "template": {
+                 "type": "string",
+                 "minLength": 1,
+                 "maxLength": 1000
+                }
+               },
+               "required": [
+                "type",
+                "template"
                ]
               },
               {
@@ -3837,6 +4389,24 @@
                   "properties": {
                    "type": {
                     "type": "string",
+                    "const": "template"
+                   },
+                   "template": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                   }
+                  },
+                  "required": [
+                   "type",
+                   "template"
+                  ]
+                 },
+                 {
+                  "type": "object",
+                  "properties": {
+                   "type": {
+                    "type": "string",
                     "const": "split"
                    },
                    "separator": {
@@ -4161,15 +4731,6 @@
       "schema": {
        "type": "string"
       }
-     },
-     {
-      "name": "end_org_id",
-      "in": "query",
-      "required": false,
-      "description": "Alias for org_id.",
-      "schema": {
-       "type": "string"
-      }
      }
     ],
     "responses": {
@@ -4280,11 +4841,8 @@
           "description": "One of owner, admin, developer, operator, viewer, end_user, or a custom role id (cr_...) of the target org."
          },
          "orgId": {
-          "type": "string"
-         },
-         "endOrgId": {
           "type": "string",
-          "description": "Invite into this customer of the caller's org."
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          },
          "expiresAt": {
           "type": "string",
@@ -4490,7 +5048,13 @@
     ],
     "responses": {
      "200": {
-      "description": "Membership approved"
+      "description": "Membership approved; it becomes the user's default org"
+     },
+     "404": {
+      "description": "No pending membership with that id in the caller's org"
+     },
+     "409": {
+      "description": "Already decided, or the request carries a role a domain join may not grant (owner)"
      }
     },
     "description": "Approves a pending membership request in the caller's org, making it active. Requires users.invite; 404 when the membership is not pending in this org."
@@ -4517,6 +5081,12 @@
     "responses": {
      "200": {
       "description": "Membership rejected"
+     },
+     "404": {
+      "description": "No pending membership with that id in the caller's org"
+     },
+     "409": {
+      "description": "Already decided"
      }
     },
     "description": "Rejects a pending membership request in the caller's org. Requires users.invite; 404 when the membership is not pending in this org."
@@ -4568,10 +5138,32 @@
       }
      },
      {
+      "name": "parentId",
+      "in": "query",
+      "required": false,
+      "description": "Alias of parent_id, used when parent_id is absent.",
+      "schema": {
+       "type": "string"
+      }
+     },
+     {
       "name": "include_usage",
       "in": "query",
       "required": false,
-      "description": "1 or true adds executions, events, storage_gb, overage, credits, integrations and users per org.",
+      "description": "1 or true adds executions, events, storage_gb, overage, credits, integrations and users per org. With no metered executions the count of runs is used, capped at 100,000; a capped row also carries executionsIsLowerBound: true.",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "1",
+        "true"
+       ]
+      }
+     },
+     {
+      "name": "include_connections",
+      "in": "query",
+      "required": false,
+      "description": "1 or true adds connectionsCount (live connections, read from the connector layer) to each customer of the one partner the list is scoped to. Omitted on a row when it could not be counted. Combines with include_usage.",
       "schema": {
        "type": "string",
        "enum": [
@@ -4607,7 +5199,7 @@
          "orgId": {
           "type": "string",
           "maxLength": 256,
-          "description": "Partner-supplied external reference for this customer org, stored as external_ref. Usable later as x-org-id / endOrgId."
+          "description": "Partner-supplied external reference for this customer org, stored as external_ref. Usable later as x-org-id / orgId."
          },
          "external_ref": {
           "type": "string",
@@ -4694,9 +5286,11 @@
       "description": "Org created. Account-tier responses carry an `owner` object ({ userId, email, inviteStatus }, `inviteStatus` is `accepted` when the named owner already had a fastn account they had verified, so it is not a 'somebody must act' flag); `inviteSent: false` is added only when the invite email failed to send."
      },
      "400": {
-      "description": "Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org."
+      "description": "Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org"
      },
-     "403": {},
+     "403": {
+      "description": "This caller cannot set a paid plan, or account cap reached"
+     },
      "500": {
       "description": "Owner assignment failed and the partial org could not be removed, its slug stays in use"
      },
@@ -4895,12 +5489,95 @@
       "application/json": {
        "schema": {
         "type": "object",
+        "description": "Every config key is optional and only the keys sent are merged. They are declared here, not left to additionalProperties, because each declared property is what an MCP client is offered: with only orgName declared, the generated updateOrgConfig tool could rename an org and nothing else.",
         "properties": {
          "orgName": {
           "type": "string",
           "minLength": 1,
           "maxLength": 200,
           "description": "Renames the org. Written to orgs.name, not to the config document."
+         },
+         "timezone": {
+          "type": "string",
+          "description": "IANA time zone name, e.g. Asia/Karachi. Own org; any caller with settings.update."
+         },
+         "setupLinkRedirectUrls": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          },
+          "description": "Where a setup link may send the customer when it is done: https URLs (http only on localhost). A setup link's redirectUrl must be one of them. Own org."
+         },
+         "setupLinkDefaultTtlMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Default lifetime of a new setup link, in minutes, capped by the deployment maximum. Own org."
+         },
+         "customer_tiers": {
+          "type": "array",
+          "description": "An account's catalogue of customer tiers, on its own org. Replaces the whole list, and a tier left out is also cleared from every customer on it in the same write: read the current list with getOrgConfig first and send every tier to keep. A customer is put on one with `tier`.",
+          "items": {
+           "type": "object",
+           "required": [
+            "id",
+            "name",
+            "roleId"
+           ],
+           "properties": {
+            "id": {
+             "type": "string",
+             "description": "Stable id, e.g. free or pro"
+            },
+            "name": {
+             "type": "string",
+             "description": "Display name"
+            },
+            "roleId": {
+             "type": "string",
+             "description": "The role a customer on this tier gets. Account-level roles (owner, admin, developer) are refused with CUSTOMER_ROLE_TOO_HIGH"
+            },
+            "limits": {
+             "type": "object",
+             "additionalProperties": {
+              "type": "integer"
+             },
+             "description": "Ceilings for a customer on this tier by dimension, e.g. { connections: 4, integrations: 4, users: 2 }; -1 is unlimited. Never above the account's own plan"
+            },
+            "resources": {
+             "type": "object",
+             "properties": {
+              "connectors": {
+               "type": "object",
+               "properties": {
+                "only": {
+                 "type": "array",
+                 "items": {
+                  "type": "string"
+                 },
+                 "description": "Connector ids a customer on this tier may connect"
+                }
+               }
+              }
+             },
+             "description": "What a customer on this tier may use"
+            }
+           }
+          }
+         },
+         "tier": {
+          "type": "string",
+          "description": "A partner writing one of its customers: the id of one of the partner's customer_tiers."
+         },
+         "limits": {
+          "type": "object",
+          "additionalProperties": {
+           "type": "integer"
+          },
+          "description": "A partner writing one of its customers: that customer's own ceilings by dimension, overriding its tier's; -1 is unlimited, never above the partner's own plan."
+         },
+         "roleOverride": {
+          "type": "string",
+          "description": "A partner writing one of its customers: a customer-level role that replaces its tier's roleId. Account-level roles are refused with CUSTOMER_ROLE_TOO_HIGH."
          }
         },
         "additionalProperties": true
@@ -6161,7 +6838,9 @@
       "description": "Updated connector"
      },
      "400": {},
-     "403": {},
+     "403": {
+      "description": "Caller may not set this field"
+     },
      "404": {
       "description": "Not found"
      }
@@ -6330,8 +7009,9 @@
        "schema": {
         "type": "object",
         "properties": {
-         "endOrgId": {
-          "type": "string"
+         "orgId": {
+          "type": "string",
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -6346,7 +7026,7 @@
       "description": "Connector not found"
      }
     },
-    "description": "Marks a connector active for a customer (the caller's own customer, or endOrgId for a partner-side call). 403 when endOrgId differs from the caller's customer. Requires connections.create."
+    "description": "Marks a connector active for a customer (the caller's own customer, or orgId for a partner-side call). 403 when orgId differs from the caller's customer. Requires connections.create."
    }
   },
   "/v1/connections": {
@@ -6356,23 +7036,15 @@
     ],
     "summary": "List connections",
     "operationId": "listConnections",
-    "description": "Connections the caller can reach: their own pool, plus their child customers' for admin/owner. Credentials are never returned. Each row carries endOrgId and endOrgName so a cross-customer list can name the customer it belongs to.",
+    "description": "Connections the caller can reach: their own pool, plus their child customers' for admin/owner. Credentials are never returned. Each row carries orgId and orgName so a cross-customer list can name the customer it belongs to.",
     "parameters": [
-     {
-      "name": "endOrgId",
-      "in": "query",
-      "schema": {
-       "type": "string"
-      },
-      "description": "Customer whose connections to list: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit for the caller's own pool."
-     },
      {
       "name": "orgId",
       "in": "query",
       "schema": {
        "type": "string"
       },
-      "description": "Alternate spelling of the customer org (the customer detail page uses this). Takes the same values as endOrgId."
+      "description": "Alternate spelling of the customer org (the customer detail page uses this). Takes the same values as orgId."
      },
      {
       "name": "userId",
@@ -6443,7 +7115,7 @@
     ],
     "summary": "Store connector credentials",
     "operationId": "storeConnections",
-    "description": "Creates a connection. Partner backends select the customer either with the identity headers (x-org-id + x-user-id, signed with x-identity-hmac when the API key requires it) or with orgId or endOrgId in the body. With neither, the connection is created on the caller's own organization. It only creates: a name already in use returns 409, and connectionScope returns 400. To replace credentials, use PUT /v1/connections/{id}.",
+    "description": "Creates a connection. Partner backends select the customer either with the identity headers (x-org-id + x-user-id, signed with x-identity-hmac when the API key requires it) or with orgId in the body. With neither, the connection is created on the caller's own organization. It only creates: a name already in use returns 409, and connectionScope returns 400. To replace credentials, use PUT /v1/connections/{id}.",
     "parameters": [
      {
       "$ref": "#/components/parameters/XOrgIdHeader"
@@ -6520,11 +7192,9 @@
          "userName": {
           "type": "string"
          },
-         "endOrgId": {
-          "type": "string"
-         },
          "orgId": {
-          "type": "string"
+          "type": "string",
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          },
          "authProvider": {
           "anyOf": [
@@ -6551,7 +7221,7 @@
       "description": "Connection created"
      },
      "400": {
-      "description": "Validation error / invalid connectionScope / connectionScope without endOrgId / IDENTITY_ORG_MISMATCH / IDENTITY_USER_MISMATCH"
+      "description": "Validation error / invalid connectionScope / connectionScope without orgId / IDENTITY_ORG_MISMATCH / IDENTITY_USER_MISMATCH"
      },
      "401": {
       "description": "Missing or invalid x-identity-hmac on a key whose identity-verification mode is required (IDENTITY_HMAC_INVALID)"
@@ -6702,7 +7372,7 @@
       "description": "Connection not found (or outside the caller's scope)"
      },
      "409": {
-      "description": "A connection of that name already exists for this connector at the same address. Names are unique per connector and address: per (connector, org, end-org) for a customer-scoped connection, and per (connector, user, org) for an org-level one."
+      "description": "A connection of that name already exists for this connector at the same address. Names are unique per connector and address: per (connector, org, customer) for a customer-scoped connection, and per (connector, user, org) for an org-level one."
      }
     },
     "description": "Renames a connection, reconnects it with new credentials, or makes it the connector's default (isDefault: true). For a managed connection only those three are supported (400 otherwise). 409 when the new name is already used at the same address. Requires connections.create."
@@ -6874,17 +7544,6 @@
               "type": "string",
               "nullable": true
              },
-             "endOrgId": {
-              "type": "string"
-             },
-             "endOrgName": {
-              "type": "string",
-              "nullable": true
-             },
-             "endOrgSlug": {
-              "type": "string",
-              "nullable": true
-             },
              "pinnedInstallations": {
               "type": "integer"
              },
@@ -6895,6 +7554,18 @@
              "updatedAt": {
               "type": "string",
               "format": "date-time"
+             },
+             "orgId": {
+              "type": "string",
+              "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
+             },
+             "orgName": {
+              "type": "string",
+              "nullable": true
+             },
+             "orgSlug": {
+              "type": "string",
+              "nullable": true
              }
             }
            }
@@ -7040,12 +7711,12 @@
       }
      },
      {
-      "name": "end_org_id",
+      "name": "org_id",
       "in": "query",
       "schema": {
        "type": "string"
       },
-      "description": "Only one customer's triggers: fastn's org id, or the id you gave the customer at creation (orgId / externalRef)."
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      }
     ],
     "responses": {
@@ -7061,10 +7732,30 @@
     ],
     "summary": "Create an app-event trigger",
     "operationId": "createAppEventTrigger",
-    "description": "Binds workflows to events a connector emits (1-50 events from GET /api/v1/app-triggers/connectors/{connectorId}/events). The connector must have an app registration or a webhook config, otherwise 400. When the connector supports it the provider-side subscription is created too; the response says whether it was attempted and, when it was not, the ingest URL to register by hand. A POLL event makes the trigger a polling trigger. Requires events.create.",
+    "description": "Binds workflows to events a connector emits (1-50 events from GET /api/v1/app-triggers/connectors/{connectorId}/events). The connector must have an app registration or a webhook config, otherwise 400. When the connector supports it the provider-side subscription is created too; the response says whether it was attempted and, when it was not, the ingest URL to register by hand. A POLL event makes the trigger a polling trigger. Leave routes[].env out unless the workflow is deployed to that environment; the response carries a warning when it is not. Requires events.create.",
     "responses": {
      "201": {
-      "description": "{ data: trigger with webhookUrl, subscription outcome }"
+      "description": "{ data: trigger with webhookUrl, subscription, warning? }",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object"
+          },
+          "subscription": {
+           "type": "object",
+           "description": "Whether the provider-side subscription was attempted and its outcome; when it was not, the reason and the ingest url to register by hand."
+          },
+          "warning": {
+           "type": "string",
+           "description": "Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test)."
+          }
+         }
+        }
+       }
+      }
      },
      "400": {
       "description": "Invalid JSON or a body that fails validation"
@@ -7089,8 +7780,8 @@
            "DISABLED"
           ]
          },
-         "endOrgId": {
-          "description": "The customer the trigger is for: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit when the caller is the customer.",
+         "orgId": {
+          "description": "The customer: the id you gave it (its external ref), or its fastn id.",
           "type": "string",
           "minLength": 1
          },
@@ -7177,6 +7868,7 @@
              "additionalProperties": {}
             },
             "env": {
+             "description": "Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route.",
              "type": "string",
              "minLength": 1
             },
@@ -7314,7 +8006,7 @@
     ],
     "summary": "Update an app-event trigger",
     "operationId": "updateAppEventTrigger",
-    "description": "Partially updates an app-event trigger. routes and events, when sent, replace the whole list. Requires events.update.",
+    "description": "Partially updates an app-event trigger. routes and events, when sent, replace the whole list. The response carries a warning when a route is pinned to an environment the workflow is not deployed to. Requires events.update.",
     "parameters": [
      {
       "name": "id",
@@ -7327,7 +8019,23 @@
     ],
     "responses": {
      "200": {
-      "description": "{ data: trigger }"
+      "description": "{ data: trigger, warning? }",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object"
+          },
+          "warning": {
+           "type": "string",
+           "description": "Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test)."
+          }
+         }
+        }
+       }
+      }
      },
      "400": {
       "description": "Invalid JSON or a body that fails validation"
@@ -7417,6 +8125,7 @@
              "additionalProperties": {}
             },
             "env": {
+             "description": "Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route.",
              "type": "string",
              "minLength": 1
             },
@@ -7538,7 +8247,7 @@
     ],
     "summary": "Retry upstream subscription",
     "operationId": "retryTriggerSubscription",
-    "description": "Re-runs the provider subscription for a FAILED/NONE app-event trigger.",
+    "description": "Re-runs the provider subscription for a FAILED/NONE app-event trigger. Answers 409 when a registration made with the trigger's previous input values could not be removed; force=true registers anyway once it has been removed at the provider.",
     "parameters": [
      {
       "name": "id",
@@ -7547,11 +8256,25 @@
       "schema": {
        "type": "string"
       }
+     },
+     {
+      "name": "force",
+      "in": "query",
+      "description": "true: register even though the previous registration could not be removed. Use it only once that registration is gone at the provider, or both fire the trigger.",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "true"
+       ]
+      }
      }
     ],
     "responses": {
      "200": {
       "description": "Updated trigger plus subscription {success, error, warning}. warning is set when the trigger's saved connection could no longer be used and the subscription ran on the customer's current connection: the trigger still names the old one, so recreate it"
+     },
+     "409": {
+      "description": "SUBSCRIPTION_CONFLICT. A registration made with the previous input values could not be removed (force=true registers anyway), or the subscription changed while this retry waited (read the trigger first; force does not apply)."
      }
     }
    }
@@ -7665,7 +8388,7 @@
     ],
     "responses": {
      "200": {
-      "description": "Pipeline counters plus per-trigger stats, DLQ counts, circuit-breaker state, and the owning installationId / endOrgId (both null for a trigger created outside an installation)"
+      "description": "Pipeline counters plus per-trigger stats, DLQ counts, circuit-breaker state, and the owning installationId / orgId (both null for a trigger created outside an installation)"
      }
     },
     "description": "Health overview of every trigger (webhook, scheduler, app event) in the caller's org: pipeline counters, per-trigger delivery stats, DLQ depth and circuit-breaker state, with a computed health. order=oldest surfaces the longest-waiting triggers and is single-page (a cursor with it is a 400)."
@@ -7948,7 +8671,7 @@
     ],
     "summary": "List received events",
     "operationId": "listEvents",
-    "description": "Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). Scoped by org_id OR end_org_id.",
+    "description": "Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). An event whose every run so far ended through fastn.skip(reason) also carries runOutcome: \"skipped\" (absent otherwise). Scoped by org_id OR org_id.",
     "parameters": [
      {
       "name": "since",
@@ -8059,7 +8782,7 @@
      {
       "name": "customer",
       "in": "query",
-      "description": "Narrows to one customer, inside the caller's scope. The caller's own org id: its events with no customer on them (with delivery, the dead letters of its own triggers). An end org of the caller: events whose endOrgId is that customer (with delivery=dlq/retrying, the dead letters its triggers hold). Anything else is a 404. A token scoped to an end org may name only that end org.",
+      "description": "Narrows to one customer, inside the caller's scope. The caller's own org id: its events with no customer on them (with delivery, the dead letters of its own triggers). An customer of the caller: events whose orgId is that customer (with delivery=dlq/retrying, the dead letters its triggers hold). Anything else is a 404. A token scoped to an customer may name only that customer.",
       "schema": {
        "type": "string"
       }
@@ -8067,7 +8790,7 @@
     ],
     "responses": {
      "200": {
-      "description": "{ data: Event[], pagination: { total, limit, offset, totalIsLowerBound } }, id, orgId, endOrgId, triggerId, type, source, payload, status, receivedAt (createdAt is an alias). total stops counting at 10000, at which point totalIsLowerBound is true."
+      "description": "{ data: Event[], pagination: { total, limit, offset, totalIsLowerBound } }, id, orgId, orgId, triggerId, type, source, payload, status, receivedAt (createdAt is an alias). total stops counting at 10000, at which point totalIsLowerBound is true."
      },
      "400": {
       "description": "Malformed since, until or env, unknown type, delivery or outcome, outcome with delivery, or since/until with delivery=waiting"
@@ -8076,7 +8799,7 @@
       "description": "outcome from a customer-scoped session"
      },
      "404": {
-      "description": "customer is not the caller or one of its end orgs"
+      "description": "customer is not the caller or one of its customers"
      },
      "503": {
       "description": "delivery=waiting could not be read"
@@ -8189,7 +8912,7 @@
       "description": "outcome from a customer-scoped session"
      },
      "404": {
-      "description": "customer is not the caller or one of its end orgs"
+      "description": "customer is not the caller or one of its customers"
      }
     }
    }
@@ -8257,7 +8980,7 @@
       "description": "Malformed since or env, or unknown type"
      }
     },
-    "description": "Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR end_org_id."
+    "description": "Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR org_id."
    }
   },
   "/v1/events/{id}": {
@@ -9020,7 +9743,7 @@
       "description": "Validation error"
      },
      "403": {
-      "description": "Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429."
+      "description": "The org can read workflow code but not change it (WF-CODE-READONLY). Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429."
      },
      "409": {
       "description": "A workflow with this slug already exists in the org"
@@ -9473,7 +10196,7 @@
       "description": "Run result with logs and trace"
      },
      "400": {
-      "description": "Validation error, the body is not a JSON object, or `code` is missing or not a string. Code: VALIDATION_ERROR."
+      "description": "Validation error, the body is not a JSON object, or `code` is missing or not a string. Code: VALIDATION_ERROR. Also refused with VALIDATION_ERROR when the session acts for a customer (an embed token or customer-scoped key, which carries a parent org) but names no customer and the body names no x-org-id, so the run would otherwise use the partner's connections."
      },
      "403": {
       "description": "x-fastn-env named in the body headers is outside the caller's environment pin: a test key (or a token minted with it) may run only 'test', a key made for one environment only that environment and 'test'. The gateway never sees the body, so it is held to the pin here. Code: ENV_NOT_PERMITTED."
@@ -9554,7 +10277,7 @@
       "description": "Run result with logs and trace"
      },
      "400": {
-      "description": "The body is not valid JSON, or is JSON but not an object (null, an array, a scalar). Code: VALIDATION_ERROR."
+      "description": "The body is not valid JSON, or is JSON but not an object (null, an array, a scalar). Code: VALIDATION_ERROR. Also refused with VALIDATION_ERROR when the session acts for a customer (an embed token or customer-scoped key, which carries a parent org) but names no customer and the body names no x-org-id, so the run would otherwise use the partner's connections."
      },
      "403": {
       "description": "x-fastn-env named in the body headers is outside the caller's environment pin: a test key (or a token minted with it) may run only 'test', a key made for one environment only that environment and 'test'. The gateway never sees the body, so it is held to the pin here. Code: ENV_NOT_PERMITTED."
@@ -11072,7 +11795,7 @@
     ],
     "summary": "Execute workflow",
     "operationId": "executeWorkflow",
-    "description": "Behaviour depends on the workflow's executionTier, and callers must handle both. STANDARD and LONG queue the run and return 202 with an executionId to poll. INSTANT runs synchronously and returns 200 with the finished result, it holds the HTTP request for the duration, which is the point of the tier, so there is nothing to poll. On the instant path the id appears ONLY in the X-Execution-Id response header, the body is the workflow's own return value and has nowhere to put it, so use that header to correlate a synchronous run. The queued path does not set that header; its id is in data.executionId. A caller written to poll unconditionally will break on an instant-tier workflow. An instant timeout on a workflow with escalateOnTimeout also returns 202, naming the escalated standard run in escalatedTo/escalatedFrom. Send Idempotency-Key to make a retry safe: a duplicate returns the existing execution for the same customer instead of running again, 200 once it has finished, 202 while it is still in flight, and resolves to the escalated run where a timeout escalated.",
+    "description": "Behaviour depends on the workflow's executionTier, and callers must handle both. STANDARD and LONG queue the run and return 202 with an executionId to poll. INSTANT runs synchronously and returns 200 with the finished result, it holds the HTTP request for the duration, which is the point of the tier, so there is nothing to poll. On the instant path the id appears ONLY in the X-Execution-Id response header, the body is the workflow's own return value and has nowhere to put it, so use that header to correlate a synchronous run. The queued path does not set that header; its id is in data.executionId. A caller written to poll unconditionally will break on an instant-tier workflow. An instant timeout on a workflow with escalateOnTimeout also returns 202, naming the escalated standard run in escalatedTo/escalatedFrom. Send Idempotency-Key to make a retry safe: a duplicate returns the existing execution for the same customer instead of running again, 200 once it has finished, 202 while it is still in flight, and resolves to the escalated run where a timeout escalated. By default that duplicate answer is the execution record ({ data: execution }, the run's return value under data.output); send x-fastn-idempotency-replay: output to get the same body the first call got instead.",
     "parameters": [
      {
       "name": "id",
@@ -11083,13 +11806,25 @@
       }
      },
      {
+      "name": "x-fastn-idempotency-replay",
+      "in": "header",
+      "required": false,
+      "schema": {
+       "type": "string",
+       "enum": [
+        "output"
+       ]
+      },
+      "description": "Only with Idempotency-Key. 'output' makes a duplicate answer exactly as the original call did: an instant run's own return value as { data: <return value> } with its status code (a run still in flight is 202 { data: { executionId, status } }; a failed run is its error). The same key sent with a different input or for a different workflow is refused with 400 IDEMPOTENCY_KEY_REUSED. Omitted, a duplicate returns the execution record, unchanged from before."
+     },
+     {
       "name": "Idempotency-Key",
       "in": "header",
       "required": false,
       "schema": {
        "type": "string"
       },
-      "description": "Client-supplied dedup key. Scoped to the execution's (owner org, end-org); no expiry window beyond the execution's retention. The prefix fastn-event: is reserved for trigger dispatch and is refused with 400 (reserved_idempotency_key); keys with it replay only an in-flight or completed run from the last 24 hours. Rarely, concurrent requests under one key are answered 503 (idempotency_key_contended) with nothing created; retry. A fastn-event: key whose run exists but was not yet handed to an engine is answered 409 (dispatch_run_not_started); retry."
+      "description": "Client-supplied dedup key. Scoped to the execution's (owner org, customer); no expiry window beyond the execution's retention. The prefix fastn-event: is reserved for trigger dispatch and is refused with 400 (reserved_idempotency_key); keys with it replay only an in-flight or completed run from the last 24 hours. Rarely, concurrent requests under one key are answered 503 (idempotency_key_contended) with nothing created; retry. A fastn-event: key whose run exists but was not yet handed to an engine is answered 409 (dispatch_run_not_started); retry."
      },
      {
       "name": "x-fastn-env",
@@ -11240,7 +11975,7 @@
     ],
     "summary": "List executions across all workflows",
     "operationId": "listWorkflowExecutions",
-    "description": "Org-wide execution list, newest first. eventId/triggerId match the x-fastn-event-id / x-fastn-trigger-id headers stamped by the event pipeline on every dispatch, so a trigger fire can be correlated to its execution in one query. sort=duration lists finished runs slowest first and needs dateFrom within 30 days of dateTo (400 otherwise). List rows are metadata: they omit input, output, logs and trace (hasTrace flags a trace), and requestHeaders carries only x-fastn-event-id / x-fastn-trigger-id; outputCounts reports the run's record counts. Fetch a run's bodies from the per-execution detail route.",
+    "description": "Org-wide execution list, newest first. eventId/triggerId match the x-fastn-event-id / x-fastn-trigger-id headers stamped by the event pipeline on every dispatch, so a trigger fire can be correlated to its execution in one query. sort=duration lists finished runs slowest first and needs dateFrom within 30 days of dateTo (400 otherwise). List rows are metadata: they omit input, output, logs and trace (hasTrace flags a trace), and requestHeaders carries only x-fastn-event-id / x-fastn-trigger-id; outputCounts reports the run's record counts. outcome is \"skipped\" for a completed run that ended through fastn.skip(reason), with the reason in skipReason (null for a role that cannot read run bodies); both are null on every other run. Fetch a run's bodies from the per-execution detail route.",
     "parameters": [
      {
       "name": "limit",
@@ -11545,10 +12280,10 @@
     ],
     "responses": {
      "200": {
-      "description": "Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from."
+      "description": "Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from: `outcome` is `skipped` for a completed run that ended through fastn.skip(reason), with the reason in `skipReason` (null for a role that cannot read run bodies)."
      }
     },
-    "description": "One execution with its steps, logs and trace (requires workflows.read). Log and trace bodies are omitted for roles that cannot read execution bodies. 404 when the run is not in the caller's scope."
+    "description": "One execution with its steps, logs and trace (requires workflows.read). id is the workflow id (wf_...) and executionId the run id (exec_...); both are required here. With only the run id, use GET /api/v1/workflows/executions/{executionId} (getExecutionById). Log and trace bodies are omitted for roles that cannot read execution bodies. 404 when the run is not in the caller's scope."
    },
    "delete": {
     "tags": [
@@ -11997,7 +12732,7 @@
     ],
     "summary": "List workflow environments",
     "operationId": "listEnvironments",
-    "description": "The org's workflow environments, ordered default first, then oldest first, then by id as a tiebreak (environments created together in one bulk call share a creation timestamp, so id is what makes the order total). Includes the built-in Live environment (slug 'live', isDefault true, isDeletable false), which every workflow-authoring org is seeded at creation, it is a real row, and its id is what /workflows/{id}/deploy and /workflows/{id}/promote accept. A customer workspace (end_org) is deliberately not seeded one and can legitimately return an empty list. 'test' is a separate hardcoded environment with no row here; it is a valid env_slug for env-configs only, never a deploy target.",
+    "description": "The org's workflow environments, ordered default first, then oldest first, then by id as a tiebreak (environments created together in one bulk call share a creation timestamp, so id is what makes the order total). Includes the built-in Live environment (slug 'live', isDefault true, isDeletable false), which every workflow-authoring org is seeded at creation, it is a real row, and its id is what /workflows/{id}/deploy and /workflows/{id}/promote accept. A customer workspace is deliberately not seeded one and can legitimately return an empty list. 'test' is a separate hardcoded environment with no row here; it is a valid env_slug for env-configs only, never a deploy target.",
     "responses": {
      "200": {
       "description": "Environment list",
@@ -12559,12 +13294,13 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
       "schema": {
        "type": "string"
-      }
+      },
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      },
      {
       "name": "userId",
@@ -12715,10 +13451,10 @@
     "description": "Lists the alert rules in the caller's scope (newest first, 200 max). An end_user sees only their customer's rules. Roles: owner, admin, developer, end_user.",
     "parameters": [
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -12835,10 +13571,10 @@
     },
     "parameters": [
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -12907,10 +13643,10 @@
     },
     "parameters": [
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -12937,10 +13673,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -13061,10 +13797,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -13105,10 +13841,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Only events of this customer (customer).",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -13225,11 +13961,8 @@
               "type": "object"
              },
              "orgId": {
-              "type": "string"
-             },
-             "endOrgId": {
               "type": "string",
-              "nullable": true
+              "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
              },
              "createdAt": {
               "type": "string",
@@ -13600,39 +14333,14 @@
           }
          },
          "orgId": {
-          "type": "string"
+          "type": "string",
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          },
-         "endOrgId": {
-          "type": "string"
-         },
-         "endOrgScope": {
+         "orgScope": {
           "type": "array",
           "items": {
-           "type": "object",
-           "properties": {
-            "id": {
-             "type": "string",
-             "minLength": 1
-            },
-            "name": {
-             "type": "string",
-             "minLength": 1
-            },
-            "externalRef": {
-             "anyOf": [
-              {
-               "type": "string"
-              },
-              {
-               "type": "null"
-              }
-             ]
-            }
-           },
-           "required": [
-            "id",
-            "name"
-           ]
+           "type": "string",
+           "minLength": 1
           }
          },
          "ipWhitelist": {
@@ -14022,7 +14730,7 @@
     ],
     "summary": "Generate scoped embed token",
     "operationId": "createEmbedToken",
-    "description": "Issues a short-lived (8 hour) token scoped to a customer and end_user role. Requires connectors.read permission. Partner backends may send an EMPTY body together with the identity headers (x-org-id + x-user-id, proven with x-identity-hmac when the API key's identity-verification mode requires it), the customer and user then come from the headers. Without identity headers, endOrgId is required unless allowOrgLevel is true.",
+    "description": "Issues a short-lived (8 hour) token scoped to a customer and end_user role. Requires connectors.read permission. Partner backends may send an EMPTY body together with the identity headers (x-org-id + x-user-id, proven with x-identity-hmac when the API key's identity-verification mode requires it), the customer and user then come from the headers. Without identity headers, orgId is required unless allowOrgLevel is true.",
     "parameters": [
      {
       "$ref": "#/components/parameters/XOrgIdHeader"
@@ -14041,10 +14749,6 @@
        "schema": {
         "type": "object",
         "properties": {
-         "endOrgId": {
-          "type": "string",
-          "minLength": 1
-         },
          "allowOrgLevel": {
           "type": "boolean"
          },
@@ -14086,6 +14790,11 @@
            "type": "string"
           },
           "additionalProperties": {}
+         },
+         "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -14106,9 +14815,6 @@
             "token": {
              "type": "string"
             },
-            "endOrgId": {
-             "type": "string"
-            },
             "userId": {
              "type": "string"
             },
@@ -14126,6 +14832,10 @@
             "expiresIn": {
              "type": "integer",
              "description": "Seconds until expiry"
+            },
+            "orgId": {
+             "type": "string",
+             "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
             }
            }
           }
@@ -14168,9 +14878,9 @@
          "token": {
           "type": "string"
          },
-         "endOrgId": {
+         "orgId": {
           "type": "string",
-          "description": "Optional. The customer the caller believes this session is for (the <fastn-embed org-id/tenant-id> attribute). Either the customer's fastn id or the external_ref it was registered under. If it names a different customer than the token carries, the request is refused rather than silently answered for the token's customer."
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
@@ -14194,11 +14904,9 @@
             "valid": {
              "type": "boolean"
             },
-            "endOrgId": {
-             "type": "string"
-            },
             "orgId": {
-             "type": "string"
+             "type": "string",
+             "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
             },
             "role": {
              "type": "string"
@@ -14232,7 +14940,7 @@
       }
      },
      "400": {
-      "description": "The endOrgId in the body names a different customer than the token carries (code EMBED_TENANT_MISMATCH). The error text names only the customer the caller asked for, never the one the token belongs to."
+      "description": "The orgId in the body names a different customer than the token carries (code EMBED_TENANT_MISMATCH). The error text names only the customer the caller asked for, never the one the token belongs to."
      },
      "401": {
       "description": "Invalid or expired token"
@@ -14281,9 +14989,6 @@
             "token": {
              "type": "string"
             },
-            "endOrgId": {
-             "type": "string"
-            },
             "role": {
              "type": "string"
             },
@@ -14293,6 +14998,10 @@
             },
             "expiresIn": {
              "type": "integer"
+            },
+            "orgId": {
+             "type": "string",
+             "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
             }
            }
           }
@@ -14320,7 +15029,7 @@
     ],
     "summary": "Create a one-time Claude (MCP) connect URL",
     "operationId": "createMcpConnectCode",
-    "description": "Returns mcp.<zone>/fastn-workspace/c/<mcpc_code>, which works once and for 10 minutes. Pasted into an MCP client, it connects that client to Fastn Workspace as the customer; redeeming it creates a Claude connection (listed by GET /api/v1/embed/share-links?kind=mcp, disconnected by DELETE /api/v1/embed/share-links/{id}). From an embed token the customer and user are the token's and the body is ignored; from a dashboard session (owner/admin/developer) endOrgId names one of the caller's own customers. Capability-scoped link tokens are refused.",
+    "description": "Returns mcp.<zone>/fastn-workspace/c/<mcpc_code>, which works once and for 10 minutes. Pasted into an MCP client, it connects that client to Fastn Workspace as the customer; redeeming it creates a Claude connection (listed by GET /api/v1/embed/share-links?kind=mcp, disconnected by DELETE /api/v1/embed/share-links/{id}). From an embed token the customer and user are the token's and the body is ignored; from a dashboard session (owner/admin/developer) orgId names one of the caller's own customers. Capability-scoped link tokens are refused.",
     "requestBody": {
      "required": false,
      "content": {
@@ -14328,10 +15037,11 @@
        "schema": {
         "type": "object",
         "properties": {
-         "endOrgId": {
+         "orgId": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 200
+          "maxLength": 200,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -14364,7 +15074,7 @@
       }
      },
      "400": {
-      "description": "endOrgId missing (dashboard caller)"
+      "description": "orgId missing (dashboard caller)"
      },
      "403": {
       "description": "Not a customer session, or role not allowed"
@@ -14388,7 +15098,7 @@
     ],
     "summary": "Create a setup link for widget installation",
     "operationId": "createSetupLink",
-    "description": "Generates a single-use URL where an end-org customer can install a widget (connect accounts + configure) without logging in. Lifetime defaults to SETUP_LINK_DEFAULT_TTL_MINUTES (15) and can be set per link with expiresInMinutes up to SETUP_LINK_MAX_TTL_MINUTES (7 days). After the setup is completed the link token stays usable only SETUP_LINK_AFTER_COMPLETE_MINUTES (60) so the wizard can finish. The caller must be the partner org (passing endOrgId or externalRef) or the end-org itself (omit both or set useCallerOrg: true). With externalRef + createIfMissing the customer is created on first use (needs customers.create). When the widget opts in to the onSetupLinkCompleted hook, completing the link fires it in background mode with source \"setup_link\" and the link metadata.",
+    "description": "Generates a single-use URL where an customer customer can install a widget (connect accounts + configure) without logging in. Lifetime defaults to SETUP_LINK_DEFAULT_TTL_MINUTES (15) and can be set per link with expiresInMinutes up to SETUP_LINK_MAX_TTL_MINUTES (7 days). After the setup is completed the link token stays usable only SETUP_LINK_AFTER_COMPLETE_MINUTES (60) so the wizard can finish. The caller must be the partner org (passing orgId or externalRef) or the customer itself (omit both or set useCallerOrg: true). With externalRef + createIfMissing the customer is created on first use (needs customers.create). When the widget opts in to the onSetupLinkCompleted hook, completing the link fires it in background mode with source \"setup_link\" and the link metadata.",
     "requestBody": {
      "required": true,
      "content": {
@@ -14397,10 +15107,6 @@
         "type": "object",
         "properties": {
          "widgetId": {
-          "type": "string",
-          "minLength": 1
-         },
-         "endOrgId": {
           "type": "string",
           "minLength": 1
          },
@@ -14442,6 +15148,11 @@
           "type": "string",
           "maxLength": 2048,
           "format": "uri"
+         },
+         "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
@@ -14482,9 +15193,6 @@
              "type": "string",
              "format": "date-time"
             },
-            "endOrgId": {
-             "type": "string"
-            },
             "metadata": {
              "type": "object"
             },
@@ -14493,6 +15201,10 @@
             },
             "allowAdditionalConnection": {
              "type": "boolean"
+            },
+            "orgId": {
+             "type": "string",
+             "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
             }
            }
           }
@@ -14502,7 +15214,7 @@
       }
      },
      "400": {
-      "description": "Invalid endOrgId, could not resolve partner org, or expiresInMinutes over the maximum (code SETUP_LINK_TTL_TOO_LONG)"
+      "description": "Invalid orgId, could not resolve partner org, or expiresInMinutes over the maximum (code SETUP_LINK_TTL_TOO_LONG)"
      },
      "404": {
       "description": "Widget not found, or no customer has externalRef (code TENANT_NOT_FOUND)"
@@ -14556,9 +15268,6 @@
              ]
             },
             "widgetId": {
-             "type": "string"
-            },
-            "endOrgId": {
              "type": "string"
             },
             "label": {
@@ -14627,6 +15336,10 @@
                "type": "object"
               }
              }
+            },
+            "orgId": {
+             "type": "string",
+             "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
             }
            }
           }
@@ -14706,7 +15419,7 @@
     ],
     "summary": "Complete setup and create installation",
     "operationId": "completeSetupLink",
-    "description": "Marks the setup link as complete and creates (or reuses) a widget installation for the end-org. The link is single-use and cannot be completed again. Must be called before the 15-minute expiry.",
+    "description": "Marks the setup link as complete and creates (or reuses) a widget installation for the customer. The link is single-use and cannot be completed again. Must be called before the 15-minute expiry.",
     "parameters": [
      {
       "name": "id",
@@ -14962,13 +15675,13 @@
       }
      }
     },
-    "description": "Lists secret names and metadata (scope, type, endOrgId, environment); values are never returned. end_org_id narrows to that customer's secrets plus org-wide ones. An environment-pinned API key sees only its environment, test, and org-wide secrets.",
+    "description": "Lists secret names and metadata (scope, type, orgId, environment); values are never returned. org_id narrows to that customer's secrets plus org-wide ones. An environment-pinned API key sees only its environment, test, and org-wide secrets.",
     "parameters": [
      {
-      "name": "end_org_id",
+      "name": "org_id",
       "in": "query",
       "required": false,
-      "description": "Return this customer's secrets plus the org-wide ones.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -15006,13 +15719,14 @@
            "json"
           ]
          },
-         "endOrgId": {
-          "type": "string",
-          "minLength": 1
-         },
          "environment": {
           "type": "string",
           "minLength": 1
+         },
+         "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
@@ -15086,10 +15800,10 @@
       }
      },
      {
-      "name": "end_org_id",
+      "name": "org_id",
       "in": "query",
       "required": false,
-      "description": "Customer (customer) scope of the secret; omitted means the org-wide secret.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -15163,10 +15877,10 @@
       }
      },
      {
-      "name": "end_org_id",
+      "name": "org_id",
       "in": "query",
       "required": false,
-      "description": "Customer (customer) scope of the secret; omitted means the org-wide secret.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -15189,7 +15903,7 @@
       "description": "Not found"
      }
     },
-    "description": "Deletes the secret with this name at exactly the given scope (end_org_id + environment; both omitted = the org-wide secret). 404 when no secret matches that scope; 403 when an environment-pinned API key targets another environment."
+    "description": "Deletes the secret with this name at exactly the given scope (org_id + environment; both omitted = the org-wide secret). 404 when no secret matches that scope; 403 when an environment-pinned API key targets another environment."
    }
   },
   "/v1/widgets": {
@@ -15213,16 +15927,16 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Preview the catalog a customer sees (its own widgets plus inherited ones, enabled and allowed for it only), as the embed would.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
      }
     ],
-    "description": "Your org's own integrations, plus, for a child org, the integrations its DIRECT parent built and offers it (never a grandparent's), marked inheritedFrom: you can run those, cannot edit them, and your own customers do not get them. A customised copy you made of one is yours (customisedFrom), and the copy and its original come back as two rows sharing version.groupId, exactly one version.active.",
+    "description": "Your org's own integrations, plus, for a child org, the integrations its DIRECT parent built and offers it (never a grandparent's), marked inheritedFrom: you can run those, cannot edit them, and your own customers do not get them. A customised copy you made of one is yours (customisedFrom), and the copy and its original come back as two rows sharing version.groupId, exactly one version.active. Each widget carries workflowConnectors (read-only, absent when empty): the apps its workflows call per customer that are not in connectorIds, which the hub asks the customer to connect too. Derived on read; it does not count toward connectors_per_widget.",
     "responses": {
      "200": {
       "description": "Widget list",
@@ -15341,6 +16055,10 @@
              "type": "boolean"
             },
             "hideLogo": {
+             "type": "boolean"
+            },
+            "optional": {
+             "description": "The customer may leave this app unconnected and the integration still activates. With every connector optional, connecting any one of them is enough (\"connect Gmail or Outlook\"). Unset = required. The widget's workflows must handle the app not being connected.",
              "type": "boolean"
             },
             "connectionScope": {
@@ -16177,7 +16895,7 @@
       "description": "Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details and issues list every { path, message }, error reads \"Request validation failed: <path>: <message>\" for the first three, and traceId is set when the request was traced. The rules: no connector (connector_ids, connector_refs and unified_refs all absent or empty) is a path-less issue \"At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)\", reported alongside any other failed field; a missing or invalid field (e.g. name, 1-100 characters); trigger_categories: slugs must be unique; trigger_refs.N.categories: every category a ref tags must be in trigger_categories; connector_refs.N.connectionScope: must be in the org's saas_connectors registry for that connector; unified_refs.N.entityId / .connectorSlugs / .configForm: an unknown unified entity, a provider it has no enabled mapping for, or a config form for an unselected provider or with a duplicate key; body: the body is not JSON."
      },
      "403": {
-      "description": "quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan; An update is refused only when it adds connectors."
+      "description": "quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan). An update is refused only when it adds connectors."
      }
     },
     "description": "Creates a widget in the caller's org (requires widgets.create). Idempotent by name: a live widget with the same name (case-insensitive) is returned with 200 and reused: true instead of a new one. Needs at least one connector: connector_ids, connector_refs or unified_refs. Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details[] names the field and the rule, and error reads 'Request validation failed: <path>: <message>'. No connector is a path-less issue 'At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)'; an unknown category is trigger_refs.N.categories; a scope outside the SaaS-connector registry is connector_refs.N.connectionScope."
@@ -16244,9 +16962,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
-      "description": "Admin preview of one customer (validated against the caller's org chain).",
+      "required": false,
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16453,7 +17172,7 @@
     ],
     "summary": "Fork (duplicate) an inherited integration into your own org so you can customise it",
     "operationId": "forkIntegration",
-    "description": "For a child org (a customer) whose parent offers an integration (widget) it wants to change. The parent's integration can never be modified from a child org; this copies it into the caller's org and the copy is fully the caller's to edit. Copies the widget, its config template, every workflow it runs (lifecycle hooks, trigger targets, config option sources and every sub-flow they invoke, published, and deployed wherever the source is live), everything those workflows read by org at run time (env config values, secrets, the configs they name, the environments they run in), their category, labels, documentation and validation, its trigger templates (webhook, schedule and app-event, routed to the copied workflows, with the webhook configs and app registrations app events need) and the parent's CUSTOM connectors with their actions, auth methods, entities, mock stubs and OAuth providers including client secrets. Catalog connectors are shared by every org and stay referenced; so do all connectors when the caller's role cannot author connectors (end_user) - the response lists them in sharedConnectorIds. Every id is rewritten so the copy points at the copies. The parent's integration stays where it is and existing installations of it keep running. The customer sees ONE integration with two versions, their copy and the original: the copy becomes the active version, unless they already run the original, which then stays active until they switch (setWidgetActiveVersion). Idempotent: forking again returns the existing copies (200), and a fork that failed part-way resumes when repeated. Pass ?endOrgId=<customer> from a partner session to fork into that customer. Use it when the caller wants to change an integration whose orgId is not their own org; ask them first. Afterwards change ONLY the copies named in data.items (type workflow: updateWorkflow or editWorkflowCode, then publishWorkflow, then run it), never the original ids. Tell the caller which connectors stay shared (sharedConnectorIds) and relay warnings. A copy deployed to live keeps running the previous version for live traffic until it is deployed again. If the customer already has a copy (a widget in listWidgets with version.kind = custom), change THAT copy; forking again returns it. If the original is still their active version, offer to switch (setWidgetActiveVersion): switching pauses their setup on the original and moves it to the copy with the same connected accounts.",
+    "description": "For a child org (a customer) whose parent offers an integration (widget) it wants to change. The parent's integration can never be modified from a child org; this copies it into the caller's org and the copy is fully the caller's to edit. Copies the widget, its config template, every workflow it runs (lifecycle hooks, trigger targets, config option sources and every sub-flow they invoke, published, and deployed wherever the source is live), everything those workflows read by org at run time (env config values, secrets, the configs they name, the environments they run in), their category, labels, documentation and validation, its trigger templates (webhook, schedule and app-event, routed to the copied workflows, with the webhook configs and app registrations app events need) and the parent's CUSTOM connectors with their actions, auth methods, entities, mock stubs and OAuth providers including client secrets. Catalog connectors are shared by every org and stay referenced; so do all connectors when the caller's role cannot author connectors (end_user) - the response lists them in sharedConnectorIds. Every id is rewritten so the copy points at the copies. The parent's integration stays where it is and existing installations of it keep running. The customer sees ONE integration with two versions, their copy and the original: the copy becomes the active version, unless they already run the original, which then stays active until they switch (setWidgetActiveVersion). Idempotent: forking again returns the existing copies (200), and a fork that failed part-way resumes when repeated. Pass ?orgId=<customer> from a partner session to fork into that customer. Use it when the caller wants to change an integration whose orgId is not their own org; ask them first. Afterwards change ONLY the copies named in data.items (type workflow: updateWorkflow or editWorkflowCode, then publishWorkflow, then run it), never the original ids. Tell the caller which connectors stay shared (sharedConnectorIds) and relay warnings. A copy deployed to live keeps running the previous version for live traffic until it is deployed again. If the customer already has a copy (a widget in listWidgets with version.kind = custom), change THAT copy; forking again returns it. If the original is still their active version, offer to switch (setWidgetActiveVersion): switching pauses their setup on the original and moves it to the copy with the same connected accounts.",
     "parameters": [
      {
       "name": "id",
@@ -16465,10 +17184,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: fork into this customer as its embed would",
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16529,10 +17248,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: act for this customer (validated against the caller's org chain) as its embed would.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -16578,7 +17297,7 @@
     ],
     "summary": "Choose which version of a customised integration your org runs",
     "operationId": "setWidgetActiveVersion",
-    "description": "{id} is the ORIGINAL widget. activeWidgetId is either the original itself or your org's live fork of it. In the customer catalog (GET /widgets as an end user) the pair is returned as two rows sharing version.groupId, exactly one with version.active = true. Exactly one version runs: switching pauses the customer's active setups on the version it leaves, resumes the ones an earlier switch paused on the version it returns to, and where that version has no setup yet recreates the paused ones on it with the same connections, label and answers (data.carried). A setup cannot be created or resumed on the inactive version (409 VERSION_INACTIVE). Ask the customer before switching. Accepts ?endOrgId= for a partner previewing a customer.",
+    "description": "{id} is the ORIGINAL widget. activeWidgetId is either the original itself or your org's live fork of it. In the customer catalog (GET /widgets as an end user) the pair is returned as two rows sharing version.groupId, exactly one with version.active = true. Exactly one version runs: switching pauses the customer's active setups on the version it leaves, resumes the ones an earlier switch paused on the version it returns to, and where that version has no setup yet recreates the paused ones on it with the same connections, label and answers (data.carried). A setup cannot be created or resumed on the inactive version (409 VERSION_INACTIVE). Ask the customer before switching. Accepts ?orgId= for a partner previewing a customer.",
     "parameters": [
      {
       "name": "id",
@@ -16589,10 +17308,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: act for this customer as its embed would",
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16652,10 +17371,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: act for this customer as its embed would",
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16706,10 +17425,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: act for this customer as its embed would",
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16757,10 +17476,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: act for this customer as its embed would",
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16811,10 +17530,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Partner preview: act for this customer as its embed would",
+      "description": "The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId.",
       "schema": {
        "type": "string"
       }
@@ -16857,7 +17576,7 @@
     ],
     "responses": {
      "200": {
-      "description": "data: { activeWindowDays, truncated, customers: [{ endOrgId, name, status: active | inactive | never, firstSeenAt, lastSeenAt, host, widgets: [{ widgetId, firstSeenAt, lastSeenAt }] }] }"
+      "description": "data: { activeWindowDays, truncated, customers: [{ orgId, name, status: active | inactive | never, firstSeenAt, lastSeenAt, host, widgets: [{ widgetId, firstSeenAt, lastSeenAt }] }] }"
      },
      "400": {
       "description": "widgetId empty or longer than 100 characters, or no organisation selected"
@@ -16905,7 +17624,7 @@
       "description": "Not found"
      }
     },
-    "description": "Returns one widget. An end_user gets only a widget its catalog lists (enabled and allowed for its customer); a child org's team can also read its direct parent's widget, returned with inheritedFrom. 404 when out of scope."
+    "description": "Returns one widget. An end_user gets only a widget its catalog lists (enabled and allowed for its customer); a child org's team can also read its direct parent's widget, returned with inheritedFrom. 404 when out of scope. workflowConnectors (read-only, absent when empty) lists the apps the widget's workflows call per customer (MULTI_TENANT manifest entries) that are not in connectorIds: the hub asks the customer to connect them too. It is derived on read, never stored, and does not count toward connectors_per_widget. connectorRefs[].optional marks an app the customer may leave unconnected; with every app optional, any one is enough."
    },
    "put": {
     "tags": [
@@ -16931,7 +17650,7 @@
       "description": "Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details and issues list every { path, message }, error reads \"Request validation failed: <path>: <message>\" for the first three, and traceId is set when the request was traced. Only fields this request sent are named: a rule broken by a stored value names the sent field that kept or exposed it, and the message says the value is stored. id: the id in the URL is malformed; an update that would leave no connector and no unified entity is the same path-less issue as on create, \"At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)\"; a field that fails the schema; trigger_categories: slugs must be unique, or the new catalog drops a category a stored trigger ref still tags; trigger_refs.N.categories (trigger_ids.N for an ids-only update carrying a stored ref): every category a ref tags must be in the resulting trigger_categories; connector_refs.N.connectionScope (connector_ids.N for an ids-only update keeping a stored scope): must be in the org's saas_connectors registry for that connector; unified_refs.N.entityId / .connectorSlugs / .configForm: as on create; body: not JSON, or no field to update."
      },
      "403": {
-      "description": "quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan; An update is refused only when it adds connectors."
+      "description": "quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan). An update is refused only when it adds connectors."
      }
     },
     "description": "Partial update; omitted fields keep their stored value, and an omitted unified_refs[].configForm keeps the stored form. The integration's How it works doc is changed with updateWidgetDocs, not here. Allowed when the caller is owner/admin/developer in the widget's owning workspace; 403 WIDGET_NOT_IN_ACCOUNT otherwise (an inherited widget must be forked first). Every 400 is VALIDATION_ERROR in the same envelope as any schema failure, details[] naming the field and the rule: id for a malformed id in the URL, and the path-less 'At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)' when the update would leave no connector and no unified entity. Only fields the request sent are named; a stored value that breaks a rule is reported on the sent field that kept it, with the message saying it is stored.",
@@ -16988,6 +17707,10 @@
              "type": "boolean"
             },
             "hideLogo": {
+             "type": "boolean"
+            },
+            "optional": {
+             "description": "The customer may leave this app unconnected and the integration still activates. With every connector optional, connecting any one of them is enough (\"connect Gmail or Outlook\"). Unset = required. The widget's workflows must handle the app not being connected.",
              "type": "boolean"
             },
             "connectionScope": {
@@ -17836,13 +18559,13 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
       "schema": {
        "type": "string"
       },
-      "description": "Builder preview: read as this child customer would (an account-role caller previewing one of its own customers). The doc is still returned when it is hidden from customers, with visibleToEndUsers false."
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      },
      {
       "name": "include",
@@ -17965,7 +18688,7 @@
     ],
     "summary": "Fetch dynamic options for a configuration form field",
     "operationId": "getConfigFieldOptions",
-    "description": "Executes the field's optionsSource.flowId workflow (matched by workflow id or slug within the config's catalog lineage) with the caller's current form values and the config's customer context (x-end-org-id + x-installation-id are stamped server-side; a caller-supplied installationId pin wins over the derivation and supplies the end-org). The field is identified by its dot-path id (e.g. mapdata1.channels).",
+    "description": "Executes the field's optionsSource.flowId workflow (matched by workflow id or slug within the config's catalog lineage) with the caller's current form values and the config's customer context (x-org-id + x-installation-id are stamped server-side; a caller-supplied installationId pin wins over the derivation and supplies the customer). The field is identified by its dot-path id (e.g. mapdata1.channels).",
     "parameters": [
      {
       "name": "id",
@@ -18005,7 +18728,7 @@
       "schema": {
        "type": "string"
       },
-      "description": "Pin the options flow to a specific installation. The flow runs as that installation's end-org (its connections map selects the connection), which must be within the caller's customer scope. Wins over the server-side derivation from the config. Rejected for end_user callers."
+      "description": "Pin the options flow to a specific installation. The flow runs as that installation's customer (its connections map selects the connection), which must be within the caller's customer scope. Wins over the server-side derivation from the config. Rejected for end_user callers."
      }
     ],
     "requestBody": {
@@ -18847,7 +19570,8 @@
               },
               "name": {
                "type": "string",
-               "nullable": true
+               "nullable": true,
+               "description": "When actingAsTenant is true: the partner's PRODUCT name, or null when it has none. Never the partner's workspace name, which is internal and can be built from an email. Call the provider by this name, or \"your provider\" when it is null"
               },
               "type": {
                "type": "string",
@@ -19192,12 +19916,13 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
       "schema": {
        "type": "string"
-      }
+      },
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      }
     ],
     "responses": {
@@ -19212,13 +19937,13 @@
     ],
     "summary": "Pin a customer to a connector version",
     "operationId": "upsertConnectorVersionPin",
-    "description": "Routes one customer (end org) to a provider externalVersion of a connector; requests that name no version resolve through the pin. Upserts. Requires connectors.update.",
+    "description": "Routes one customer (customer) to a provider externalVersion of a connector; requests that name no version resolve through the pin. Upserts. Requires connectors.update.",
     "responses": {
      "200": {
       "description": "Pin"
      },
      "400": {
-      "description": "Validation error, endOrgId not a customer of the org, or the version does not exist for the connector"
+      "description": "Validation error, orgId not a customer of the org, or the version does not exist for the connector"
      }
     },
     "requestBody": {
@@ -19232,10 +19957,6 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 100
-         },
-         "endOrgId": {
-          "type": "string",
-          "minLength": 1
          },
          "externalVersion": {
           "type": "string",
@@ -19258,11 +19979,16 @@
             "type": "null"
            }
           ]
+         },
+         "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
          "connectorSlug",
-         "endOrgId"
+         "orgId"
         ]
        }
       }
@@ -24271,9 +24997,6 @@
            "type": "string"
           }
          },
-         "endOrgId": {
-          "type": "string"
-         },
          "source": {
           "type": "string"
          },
@@ -24281,6 +25004,10 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 50
+         },
+         "orgId": {
+          "type": "string",
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
@@ -25435,7 +26162,7 @@
       "schema": {
        "type": "string"
       },
-      "description": "for a managed connection)."
+      "description": "Connection id, as returned by the connections list. id names its customer by the customer's own id (orgId) in its customer segment, and is accepted the same way."
      }
     ],
     "responses": {
@@ -26064,12 +26791,13 @@
     "description": "The org's share links (newest 200), including revoked ones. kind=mcp lists Claude MCP connections instead of share links. Requires connectors.read.",
     "parameters": [
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
       "schema": {
        "type": "string"
-      }
+      },
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      },
      {
       "name": "kind",
@@ -26097,10 +26825,10 @@
     ],
     "summary": "Create an embed share link",
     "operationId": "createEmbedShareLink",
-    "description": "Creates a durable, revocable link that opens one customer's embedded hub without a token in the URL; each load mints an end_user session for endOrgId. Optional metadata (partner only, at most 4KB) is handed back in the widget's installation lifecycle hooks for sessions opened from the link. Requires connectors.read.",
+    "description": "Creates a durable, revocable link that opens one customer's embedded hub without a token in the URL; each load mints an end_user session for orgId. Optional metadata (partner only, at most 4KB) is handed back in the widget's installation lifecycle hooks for sessions opened from the link. Requires connectors.read.",
     "responses": {
      "201": {
-      "description": "{ data: { id, endOrgId, label, expiresAt, metadata? } }"
+      "description": "{ data: { id, orgId, label, expiresAt, metadata? } }"
      },
      "400": {
       "description": "Validation error"
@@ -26116,10 +26844,6 @@
        "schema": {
         "type": "object",
         "properties": {
-         "endOrgId": {
-          "type": "string",
-          "minLength": 1
-         },
          "label": {
           "type": "string",
           "maxLength": 200
@@ -26135,10 +26859,15 @@
            "type": "string"
           },
           "additionalProperties": {}
+         },
+         "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
-         "endOrgId"
+         "orgId"
         ]
        }
       }
@@ -26192,13 +26921,13 @@
       }
      },
      {
-      "name": "end_org_id",
+      "name": "org_id",
       "in": "query",
       "required": false,
       "schema": {
        "type": "string"
       },
-      "description": "Customer whose per-installation configs to list."
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      }
     ],
     "responses": {
@@ -26213,7 +26942,7 @@
     ],
     "summary": "Create a config",
     "operationId": "createConfig",
-    "description": "Creates a config. Either send config, or fork_from_widget_id to clone that widget's template server side. installation_id pins the new config onto that installation in the same call. 403 when end_org_id is outside the caller's customer scope. Requires widgets.create.",
+    "description": "Creates a config. Either send config, or fork_from_widget_id to clone that widget's template server side. installation_id pins the new config onto that installation in the same call. 403 when org_id is outside the caller's customer scope. Requires widgets.create.",
     "responses": {
      "201": {
       "description": "Created config"
@@ -26222,7 +26951,7 @@
       "description": "Validation error, empty config, or a widget/template/installation that is not the caller's"
      },
      "403": {
-      "description": "end_org_id out of scope"
+      "description": "org_id out of scope"
      },
      "404": {
       "description": "installation not found"
@@ -26236,16 +26965,6 @@
         "type": "object",
         "properties": {
          "widget_id": {
-          "anyOf": [
-           {
-            "type": "string"
-           },
-           {
-            "type": "null"
-           }
-          ]
-         },
-         "end_org_id": {
           "anyOf": [
            {
             "type": "string"
@@ -26355,6 +27074,17 @@
            "type": "string"
           },
           "additionalProperties": {}
+         },
+         "org_id": {
+          "anyOf": [
+           {
+            "type": "string"
+           },
+           {
+            "type": "null"
+           }
+          ],
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -26431,16 +27161,6 @@
         "type": "object",
         "properties": {
          "widget_id": {
-          "anyOf": [
-           {
-            "type": "string"
-           },
-           {
-            "type": "null"
-           }
-          ]
-         },
-         "end_org_id": {
           "anyOf": [
            {
             "type": "string"
@@ -26547,6 +27267,17 @@
          },
          "baseUpdatedAt": {
           "type": "string"
+         },
+         "org_id": {
+          "anyOf": [
+           {
+            "type": "string"
+           },
+           {
+            "type": "null"
+           }
+          ],
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -26666,7 +27397,7 @@
     ],
     "summary": "Upgrade a config clone from its template",
     "operationId": "upgradeConfig",
-    "description": "Re-copies the template's config into this per-installation clone, keeping the customer's unifiedValues answers. 400 when the config is not a clone. Requires widgets.update.",
+    "description": "Moves this per-installation clone to its template's latest version. The template supplies the structure; the customer's choices are kept wherever the new version has the same item: mappings (by id, else target field), filter values (by field), setup answers (by decision id, else field), configuration-form values (by field key), custom properties, matching and unifiedValues. Customer-added mappings and filters are kept; template items the clone lacked are added. The response's merge object counts what was kept and added, and merge.lost names what goes: whole sections (with how many mappings, filters, answers and form values the customer had in each), mappings that yield to a template mapping into the same field, answers to questions no longer asked, and form values for fields no longer present. With { dryRun: true } nothing is written: the response is the same report, for confirming the upgrade before it runs. 400 when the config is not a clone. Requires widgets.update.",
     "parameters": [
      {
       "name": "id",
@@ -26678,9 +27409,25 @@
       "description": "Config id (cfg_*)."
      }
     ],
+    "requestBody": {
+     "required": false,
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "dryRun": {
+          "type": "boolean",
+          "description": "Report what the upgrade would keep, add and lose without writing anything."
+         }
+        }
+       }
+      }
+     }
+    },
     "responses": {
      "200": {
-      "description": "Upgraded config, or alreadyUpToDate: true"
+      "description": "Upgraded config with a merge report, or alreadyUpToDate: true"
      },
      "400": {
       "description": "Not a clone"
@@ -27658,7 +28405,7 @@
     ],
     "summary": "List installations",
     "operationId": "listInstallations",
-    "description": "Lists installations (a widget, workflow or trigger set up for one customer) visible to the caller, newest first, each with a computed healthStatus. A customer caller only sees its own. 403 when end_org_id is outside the caller's subtree. Requires widgets.read.",
+    "description": "Lists installations (a widget, workflow or trigger set up for one customer) visible to the caller, newest first, each with a computed healthStatus. A customer caller only sees its own. 403 when org_id is outside the caller's subtree. Requires widgets.read.",
     "parameters": [
      {
       "name": "target_type",
@@ -27685,13 +28432,13 @@
       }
      },
      {
-      "name": "end_org_id",
+      "name": "org_id",
       "in": "query",
       "required": false,
       "schema": {
        "type": "string"
       },
-      "description": "Customer whose installations to list."
+      "description": "The customer: the id you gave it (its external ref), or its fastn id."
      },
      {
       "name": "widget_id",
@@ -27757,10 +28504,6 @@
             "type": "null"
            }
           ]
-         },
-         "end_org_id": {
-          "type": "string",
-          "minLength": 1
          },
          "widget_id": {
           "anyOf": [
@@ -27876,12 +28619,17 @@
             "type": "null"
            }
           ]
+         },
+         "org_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         },
         "required": [
          "target_type",
          "target_id",
-         "end_org_id",
+         "org_id",
          "label"
         ]
        }
@@ -28230,9 +28978,9 @@
           "nullable": true,
           "description": "workflow.event only: send the body in the endpoint's own schema. { connectors?: { <connector slug or id>: schema }, default?: schema }, where schema is a JSON Schema object: { type: \"object\", properties: { <field>: { type?, \"x-source\"?: <dotted path into the event, e.g. payload.finding.id>, const?, default?, properties? } }, required?: [<field>] }. The event's connector picks the schema, else default. type (string, number, integer, boolean, object, array) converts what it can; an empty optional field is left out; an event that cannot fill a required field is not sent and its delivery records why. With no schema (or null) the standard body is sent. Headers are unchanged; the signature covers the body actually sent."
          },
-         "endOrgId": {
+         "orgId": {
           "type": "string",
-          "description": "Only events about this customer (a child of the org): fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit for every customer."
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          },
          "description": {
           "type": "string",
@@ -28251,7 +28999,7 @@
       "description": "{ data: subscription & { secret } }"
      },
      "400": {
-      "description": "Validation error, URL refused, or endOrgId is not the org's customer"
+      "description": "Validation error, URL refused, or orgId is not the org's customer"
      },
      "403": {
       "description": "Role not allowed"
@@ -29483,13 +30231,13 @@
     ],
     "summary": "Widget insights, right now: runs processing and queued and trigger deliveries due another retry, in the insights panel's scope",
     "operationId": "getLiveWidgetInsights",
-    "description": "Not windowed; read from the in-flight rows. Scoped like getWidgetInsights: the caller's org, narrowed to one customer for an end_user or by endOrgId. range is still validated (400 on an unknown value) but does not change the answer.",
+    "description": "Not windowed; read from the in-flight rows. Scoped like getWidgetInsights: the caller's org, narrowed to one customer for an end_user or by orgId. range is still validated (400 on an unknown value) but does not change the answer.",
     "parameters": [
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Admin preview of one customer (validated against the caller's org chain).",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -29519,7 +30267,7 @@
       "description": "Invalid range"
      },
      "403": {
-      "description": "endOrgId is outside the caller's customer scope"
+      "description": "orgId is outside the caller's customer scope"
      }
     }
    }
@@ -29549,10 +30297,10 @@
     "description": "Lists the caller's active connections that alerts can deliver to (e.g. Slack), with the target field each sender needs. includeInactive=true also returns connections that need reconnecting (status other than ACTIVE). Roles: owner, admin, developer, end_user.",
     "parameters": [
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -29597,10 +30345,10 @@
       }
      },
      {
-      "name": "endOrgId",
+      "name": "orgId",
       "in": "query",
       "required": false,
-      "description": "Act on this customer's own alert rules (\"view as customer\"). Alerts are not inherited: each org has its own.",
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
       "schema": {
        "type": "string"
       }
@@ -29653,7 +30401,7 @@
     ],
     "summary": "Probe a connector action's fields",
     "operationId": "probeConnector",
-    "description": "Runs a read-only connector action, infers its output fields with sample values, and caches the result for 30 minutes under the returned probeId (for field mapping). Requires connectors.read; 400 for a non-read-only action; 403 when endOrgId is not a customer of the caller.",
+    "description": "Runs a read-only connector action, infers its output fields with sample values, and caches the result for 30 minutes under the returned probeId (for field mapping). Requires connectors.read; 400 for a non-read-only action; 403 when orgId is not a customer of the caller.",
     "requestBody": {
      "required": true,
      "content": {
@@ -29681,12 +30429,12 @@
          "connectionId": {
           "type": "string"
          },
-         "endOrgId": {
-          "type": "string",
-          "description": "Customer whose connection to use; must descend from the caller's org."
-         },
          "installationId": {
           "type": "string"
+         },
+         "orgId": {
+          "type": "string",
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -29741,12 +30489,12 @@
          "connectionId": {
           "type": "string"
          },
-         "endOrgId": {
-          "type": "string",
-          "description": "Customer whose connection to use; must descend from the caller's org."
-         },
          "installationId": {
           "type": "string"
+         },
+         "orgId": {
+          "type": "string",
+          "description": "The customer: the id you gave it (its external ref), or its fastn id."
          }
         }
        }
@@ -30501,6 +31249,34 @@
     }
    }
   },
+  "/v1/workflows/executions/{executionId}": {
+   "get": {
+    "tags": [
+     "Workflows"
+    ],
+    "summary": "Get an execution by its id alone",
+    "operationId": "getExecutionById",
+    "description": "The same execution detail as GET /api/v1/workflows/{id}/executions/{executionId}, for a caller that holds only the execution id (for example the X-Execution-Id header of an instant run). Same scope, same body gating, same response (requires workflows.read). 404 when the run does not exist or is not in the caller's scope.",
+    "parameters": [
+     {
+      "name": "executionId",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{ data: execution, bodiesSource }"
+     },
+     "404": {
+      "description": "Execution not found in the caller's scope"
+     }
+    }
+   }
+  },
   "/v1/workflows/{id}/manifest/refresh": {
    "post": {
     "tags": [
@@ -30682,7 +31458,7 @@
     ],
     "summary": "Edit workflow code by exact string replacement",
     "operationId": "editWorkflowCode",
-    "description": "Replaces oldString with newString in the workflow's current code and publishes the result as a new version immediately (requires workflows.update). oldString must occur exactly once unless replaceAll is true (409 on multiple matches, 404 when absent). The response carries a regressionGate when the workflow has test cases to re-run. 403 WF-CODE-READONLY when the org may read but not write workflow code.",
+    "description": "Replaces oldString with newString in the workflow's current code and publishes the result as a new version immediately, re-extracting its connector manifest from the new code as publishWorkflow does (requires workflows.update). oldString must occur exactly once unless replaceAll is true (409 on multiple matches, 404 when absent). The response carries a regressionGate when the workflow has test cases to re-run. 403 WF-CODE-READONLY when the org may read but not write workflow code.",
     "parameters": [
      {
       "name": "id",
@@ -31226,7 +32002,7 @@
     ],
     "summary": "List webhook triggers",
     "operationId": "listWebhookTriggers",
-    "description": "Lists inbound webhook triggers in the caller's org (or a customer's with end_org_id), cursor-paginated. Requires events.read.",
+    "description": "Lists inbound webhook triggers in the caller's org (or a customer's with org_id), cursor-paginated. Requires events.read.",
     "parameters": [
      {
       "name": "limit",
@@ -31277,12 +32053,21 @@
       "description": "true also lists triggers created by installations (per-customer instances)."
      },
      {
-      "name": "end_org_id",
+      "name": "orgId",
       "in": "query",
       "schema": {
        "type": "string"
       },
-      "description": "List a customer's triggers. Must be a customer of the caller's org, otherwise 403."
+      "description": "The customer whose triggers to list: the id you gave it at creation (orgId), or fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id."
+     },
+     {
+      "name": "org_id",
+      "in": "query",
+      "schema": {
+       "type": "string"
+      },
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
+      "deprecated": true
      }
     ],
     "responses": {
@@ -31290,7 +32075,7 @@
       "description": "{ data: Trigger[], nextCursor, hasMore, total }"
      },
      "403": {
-      "description": "end_org_id is not a customer of the caller's org"
+      "description": "org_id is not a customer of the caller's org"
      }
     }
    },
@@ -31300,10 +32085,26 @@
     ],
     "summary": "Create a webhook trigger",
     "operationId": "createWebhookTrigger",
-    "description": "Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external system. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere (the response carries a warning). authMethod API_KEY (default) makes callers send a fastn API key. endOrgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.",
+    "description": "Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external system. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere, and a route pinned (env) to an environment the workflow is not deployed to dead-letters every event (the response carries a warning for either). authMethod API_KEY (default) makes callers send a fastn API key. orgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.",
     "responses": {
      "201": {
-      "description": "{ data: trigger with triggerUrl, warning? }"
+      "description": "{ data: trigger with triggerUrl, warning? }",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object"
+          },
+          "warning": {
+           "type": "string",
+           "description": "Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test)."
+          }
+         }
+        }
+       }
+      }
      },
      "400": {
       "description": "Invalid JSON or a body that fails validation"
@@ -31336,11 +32137,6 @@
            "ACTIVE",
            "DISABLED"
           ]
-         },
-         "endOrgId": {
-          "description": "The customer the trigger is for: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit when the caller is the customer.",
-          "type": "string",
-          "minLength": 1
          },
          "installationId": {
           "type": "string",
@@ -31437,6 +32233,7 @@
              "additionalProperties": {}
             },
             "env": {
+             "description": "Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route.",
              "type": "string",
              "minLength": 1
             },
@@ -31468,6 +32265,11 @@
             "routeId"
            ]
           }
+         },
+         "orgId": {
+          "description": "The customer: the id you gave it (its external ref), or its fastn id.",
+          "type": "string",
+          "minLength": 1
          }
         },
         "required": [
@@ -31595,7 +32397,23 @@
     ],
     "responses": {
      "200": {
-      "description": "{ data: trigger, warning? }"
+      "description": "{ data: trigger, warning? }",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object"
+          },
+          "warning": {
+           "type": "string",
+           "description": "Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test)."
+          }
+         }
+        }
+       }
+      }
      },
      "400": {
       "description": "Invalid JSON or a body that fails validation"
@@ -31711,6 +32529,7 @@
              "additionalProperties": {}
             },
             "env": {
+             "description": "Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route.",
              "type": "string",
              "minLength": 1
             },
@@ -31783,7 +32602,7 @@
     ],
     "summary": "List schedulers",
     "operationId": "listSchedulers",
-    "description": "Lists scheduled triggers in the caller's org (or one customer's with end_org_id), newest first, cursor-paginated. Use include_customers=true before creating a schedule for a customer: it adds every customer's schedulers, labelled, so you can see the customer already has one and not create a duplicate. Without it the list is your own org's only. Requires events.read.",
+    "description": "Lists scheduled triggers in the caller's org (or one customer's with org_id), newest first, cursor-paginated. Use include_customers=true before creating a schedule for a customer: it adds every customer's schedulers, labelled, so you can see the customer already has one and not create a duplicate. Without it the list is your own org's only. Requires events.read.",
     "parameters": [
      {
       "name": "limit",
@@ -31834,12 +32653,21 @@
       "description": "true also lists triggers created by installations (per-customer instances)."
      },
      {
-      "name": "end_org_id",
+      "name": "orgId",
       "in": "query",
       "schema": {
        "type": "string"
       },
-      "description": "List a customer's triggers. Must be a customer of the caller's org, otherwise 403."
+      "description": "The customer whose triggers to list: the id you gave it at creation (orgId), or fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id."
+     },
+     {
+      "name": "org_id",
+      "in": "query",
+      "schema": {
+       "type": "string"
+      },
+      "description": "The customer: the id you gave it (its external ref), or its fastn id.",
+      "deprecated": true
      },
      {
       "name": "include_customers",
@@ -31851,7 +32679,7 @@
         "false"
        ]
       },
-      "description": "true also lists every customer's schedulers: those you provisioned for a customer and those the customer made itself, never another partner's. Each row then carries customer ({ endOrgId, name }, null for your own) and isInstance. Add include_instances=true to also see schedulers a customer's setup (installation) created. Only for an owner, admin or developer listing its own org: 403 with end_org_id, from a customer-scoped caller, or from another role. Default false."
+      "description": "true also lists every customer's schedulers: those you provisioned for a customer and those the customer made itself, never another partner's. Each row then carries customer ({ orgId, name }, null for your own) and isInstance. Add include_instances=true to also see schedulers a customer's setup (installation) created. Only for an owner, admin or developer listing its own org: 403 with org_id, from a customer-scoped caller, or from another role. Default false."
      }
     ],
     "responses": {
@@ -31874,11 +32702,8 @@
               "type": "string"
              },
              "orgId": {
-              "type": "string"
-             },
-             "endOrgId": {
               "type": "string",
-              "nullable": true
+              "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
              },
              "installationId": {
               "type": "string",
@@ -31900,12 +32725,13 @@
               "nullable": true,
               "description": "Only with include_customers=true. The customer this scheduler belongs to, null for your own.",
               "properties": {
-               "endOrgId": {
-                "type": "string"
-               },
                "name": {
                 "type": "string",
                 "nullable": true
+               },
+               "orgId": {
+                "type": "string",
+                "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
                }
               }
              },
@@ -31932,7 +32758,7 @@
       }
      },
      "403": {
-      "description": "end_org_id is not a customer of the caller's org, or include_customers=true from a caller that may not list its customers (not owner, admin or developer of its own org, a customer-scoped caller, or with end_org_id)"
+      "description": "org_id is not a customer of the caller's org, or include_customers=true from a caller that may not list its customers (not owner, admin or developer of its own org, a customer-scoped caller, or with org_id)"
      }
     }
    },
@@ -31942,10 +32768,26 @@
     ],
     "summary": "Create a scheduler",
     "operationId": "createScheduler",
-    "description": "Creates a scheduled trigger that fires its routes on a 5-field cron expression or a fixed rate (exactly one of cron or rate). runOnCreate=true also fires it once immediately; omitted or false waits for the schedule. A scheduler auto-disabled by repeated failures is re-enabled after reenableAfterMinutes, unless the failures were its workflow being deleted or never published: that one stays disabled until it is turned back on. Requires events.create.",
+    "description": "Creates a scheduled trigger that fires its routes on a 5-field cron expression or a fixed rate (exactly one of cron or rate). runOnCreate=true also fires it once immediately; omitted or false waits for the schedule. A scheduler auto-disabled by repeated failures is re-enabled after reenableAfterMinutes, unless the failures were its workflow being deleted or never published: that one stays disabled until it is turned back on. Leave routes[].env out unless the workflow is deployed to that environment; the response carries a warning when it is not. Requires events.create.",
     "responses": {
      "201": {
-      "description": "{ data: scheduler }"
+      "description": "{ data: scheduler, warning? }",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object"
+          },
+          "warning": {
+           "type": "string",
+           "description": "Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test)."
+          }
+         }
+        }
+       }
+      }
      },
      "400": {
       "description": "Invalid JSON or a body that fails validation"
@@ -31977,11 +32819,6 @@
            "ACTIVE",
            "DISABLED"
           ]
-         },
-         "endOrgId": {
-          "description": "The customer the trigger is for: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit when the caller is the customer.",
-          "type": "string",
-          "minLength": 1
          },
          "installationId": {
           "type": "string",
@@ -32118,6 +32955,7 @@
              "additionalProperties": {}
             },
             "env": {
+             "description": "Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route.",
              "type": "string",
              "minLength": 1
             },
@@ -32165,6 +33003,11 @@
             "type": "null"
            }
           ]
+         },
+         "orgId": {
+          "description": "The customer: the id you gave it (its external ref), or its fastn id.",
+          "type": "string",
+          "minLength": 1
          }
         },
         "required": [
@@ -32324,7 +33167,7 @@
     ],
     "summary": "Update a scheduler",
     "operationId": "updateScheduler",
-    "description": "Partially updates a scheduler and re-registers its timer. cron and rate cannot both be sent. routes, when sent, replaces the whole binding list. Requires events.update.",
+    "description": "Partially updates a scheduler and re-registers its timer. cron and rate cannot both be sent. routes, when sent, replaces the whole binding list. The response carries a warning when a route is pinned to an environment the workflow is not deployed to. Requires events.update.",
     "parameters": [
      {
       "name": "id",
@@ -32337,7 +33180,23 @@
     ],
     "responses": {
      "200": {
-      "description": "{ data: scheduler }"
+      "description": "{ data: scheduler, warning? }",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "object",
+         "properties": {
+          "data": {
+           "type": "object"
+          },
+          "warning": {
+           "type": "string",
+           "description": "Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test)."
+          }
+         }
+        }
+       }
+      }
      },
      "400": {
       "description": "Invalid JSON or a body that fails validation"
@@ -32493,6 +33352,7 @@
              "additionalProperties": {}
             },
             "env": {
+             "description": "Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route.",
              "type": "string",
              "minLength": 1
             },
@@ -33307,15 +34167,6 @@
  },
  "components": {
   "parameters": {
-   "XInstallationIdHeader": {
-    "name": "x-installation-id",
-    "in": "header",
-    "required": false,
-    "schema": {
-     "type": "string"
-    },
-    "description": "Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity."
-   },
    "XOrgIdHeader": {
     "name": "x-org-id",
     "in": "header",
@@ -33324,7 +34175,16 @@
      "type": "string",
      "maxLength": 512
     },
-    "description": "Customer org the request acts for, the customer's fastn org id or the external_ref the partner registered it under. Requires API-key auth on a multi-customer key; always ownership-checked against the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac."
+    "description": "The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac."
+   },
+   "XInstallationIdHeader": {
+    "name": "x-installation-id",
+    "in": "header",
+    "required": false,
+    "schema": {
+     "type": "string"
+    },
+    "description": "Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity."
    },
    "XUserIdHeader": {
     "name": "x-user-id",
@@ -33664,10 +34524,6 @@
       "type": "boolean",
       "description": "instant and code rules: true = at most one notification per workflow (and alert key) per cooldown window, the rest counted and summarized; false = every failure or raised alert is its own notification. Every rule stays inside the per-rule and per-org send budget. Always true for threshold rules."
      },
-     "endOrgId": {
-      "type": "string",
-      "nullable": true
-     },
      "lastFiredAt": {
       "type": "string",
       "format": "date-time",
@@ -33681,6 +34537,11 @@
      "updatedAt": {
       "type": "string",
       "format": "date-time"
+     },
+     "orgId": {
+      "type": "string",
+      "nullable": true,
+      "description": "The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer."
      }
     }
    },

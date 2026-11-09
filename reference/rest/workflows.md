@@ -139,7 +139,7 @@ Operation: `createWorkflow`
 
 * `201`: Workflow created
 * `400`: Validation error
-* `403`: Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429.
+* `403`: The org can read workflow code but not change it (WF-CODE-READONLY). Also returned with error quota_exceeded (dimension flows_per_tenant, plus current, limit, plan and a message) when the org already holds as many workflows as its plan allows; waiting does not clear it, which is why it is not a 429.
 * `409`: A workflow with this slug already exists in the org
 
 ### List diff-engine run reports
@@ -187,7 +187,7 @@ Operation: `listWorkflowDiffReports`
 GET /v1/workflows/executions
 ```
 
-Org-wide execution list, newest first. eventId/triggerId match the x-fastn-event-id / x-fastn-trigger-id headers stamped by the event pipeline on every dispatch, so a trigger fire can be correlated to its execution in one query. sort=duration lists finished runs slowest first and needs dateFrom within 30 days of dateTo (400 otherwise). List rows are metadata: they omit input, output, logs and trace (hasTrace flags a trace), and requestHeaders carries only x-fastn-event-id / x-fastn-trigger-id; outputCounts reports the run's record counts. Fetch a run's bodies from the per-execution detail route.
+Org-wide execution list, newest first. eventId/triggerId match the x-fastn-event-id / x-fastn-trigger-id headers stamped by the event pipeline on every dispatch, so a trigger fire can be correlated to its execution in one query. sort=duration lists finished runs slowest first and needs dateFrom within 30 days of dateTo (400 otherwise). List rows are metadata: they omit input, output, logs and trace (hasTrace flags a trace), and requestHeaders carries only x-fastn-event-id / x-fastn-trigger-id; outputCounts reports the run's record counts. outcome is "skipped" for a completed run that ended through fastn.skip(reason), with the reason in skipReason (null for a role that cannot read run bodies); both are null on every other run. Fetch a run's bodies from the per-execution detail route.
 
 Operation: `listWorkflowExecutions`
 
@@ -267,6 +267,27 @@ Operation: `searchExecutionLogs`
 
 * `200`: `{ source: [{ ts, tsNs, level, source, message, executionId, workflowId, data }], truncated, runs: { <executionId>: { workflowId, workflowName, status } }, cursor }`
 * `400`: A window over 7 days or ending before it starts, an unknown level, a malformed since, or a limit outside 1-1000 (VALIDATION_ERROR)
+
+### Get an execution by its id alone
+
+```http
+GET /v1/workflows/executions/{executionId}
+```
+
+The same execution detail as GET /api/v1/workflows/{id}/executions/{executionId}, for a caller that holds only the execution id (for example the X-Execution-Id header of an instant run). Same scope, same body gating, same response (requires workflows.read). 404 when the run does not exist or is not in the caller's scope.
+
+Operation: `getExecutionById`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `executionId` | path | string | Yes |  |
+
+**Responses**
+
+* `200`: { data: execution, bodiesSource }
+* `404`: Execution not found in the caller's scope
 
 ### Rate an execution's error diagnosis
 
@@ -368,7 +389,7 @@ Operation: `runWorkflowCode`
 **Responses**
 
 * `200`: Run result with logs and trace
-* `400`: Validation error, the body is not a JSON object, or `code` is missing or not a string. Code: VALIDATION_ERROR.
+* `400`: Validation error, the body is not a JSON object, or `code` is missing or not a string. Code: VALIDATION_ERROR. Also refused with VALIDATION_ERROR when the session acts for a customer (an embed token or customer-scoped key, which carries a parent org) but names no customer and the body names no x-org-id, so the run would otherwise use the partner's connections.
 * `403`: x-fastn-env named in the body headers is outside the caller's environment pin: a test key (or a token minted with it) may run only 'test', a key made for one environment only that environment and 'test'. The gateway never sees the body, so it is held to the pin here. Code: ENV_NOT_PERMITTED.
 * `404`: workflowId was supplied but names no workflow in this org
 * `408`: The run exceeded the synchronous test budget (25s by default, so the answer fits the gateway's request budget). Code: WF-TEST-TIMEOUT. Carries the trace and step summary.
@@ -514,7 +535,7 @@ Operation: `deleteWorkflow`
 PATCH /v1/workflows/{id}/code
 ```
 
-Replaces oldString with newString in the workflow's current code and publishes the result as a new version immediately (requires workflows.update). oldString must occur exactly once unless replaceAll is true (409 on multiple matches, 404 when absent). The response carries a regressionGate when the workflow has test cases to re-run. 403 WF-CODE-READONLY when the org may read but not write workflow code.
+Replaces oldString with newString in the workflow's current code and publishes the result as a new version immediately, re-extracting its connector manifest from the new code as publishWorkflow does (requires workflows.update). oldString must occur exactly once unless replaceAll is true (409 on multiple matches, 404 when absent). The response carries a regressionGate when the workflow has test cases to re-run. 403 WF-CODE-READONLY when the org may read but not write workflow code.
 
 Operation: `editWorkflowCode`
 
@@ -753,7 +774,7 @@ Operation: `saveWorkflowDraft`
 POST /v1/workflows/{id}/execute
 ```
 
-Behaviour depends on the workflow's executionTier, and callers must handle both. STANDARD and LONG queue the run and return 202 with an executionId to poll. INSTANT runs synchronously and returns 200 with the finished result, it holds the HTTP request for the duration, which is the point of the tier, so there is nothing to poll. On the instant path the id appears ONLY in the X-Execution-Id response header, the body is the workflow's own return value and has nowhere to put it, so use that header to correlate a synchronous run. The queued path does not set that header; its id is in data.executionId. A caller written to poll unconditionally will break on an instant-tier workflow. An instant timeout on a workflow with escalateOnTimeout also returns 202, naming the escalated standard run in escalatedTo/escalatedFrom. Send Idempotency-Key to make a retry safe: a duplicate returns the existing execution for the same customer instead of running again, 200 once it has finished, 202 while it is still in flight, and resolves to the escalated run where a timeout escalated.
+Behaviour depends on the workflow's executionTier, and callers must handle both. STANDARD and LONG queue the run and return 202 with an executionId to poll. INSTANT runs synchronously and returns 200 with the finished result, it holds the HTTP request for the duration, which is the point of the tier, so there is nothing to poll. On the instant path the id appears ONLY in the X-Execution-Id response header, the body is the workflow's own return value and has nowhere to put it, so use that header to correlate a synchronous run. The queued path does not set that header; its id is in data.executionId. A caller written to poll unconditionally will break on an instant-tier workflow. An instant timeout on a workflow with escalateOnTimeout also returns 202, naming the escalated standard run in escalatedTo/escalatedFrom. Send Idempotency-Key to make a retry safe: a duplicate returns the existing execution for the same customer instead of running again, 200 once it has finished, 202 while it is still in flight, and resolves to the escalated run where a timeout escalated. By default that duplicate answer is the execution record ({ data: execution }, the run's return value under data.output); send x-fastn-idempotency-replay: output to get the same body the first call got instead.
 
 Operation: `executeWorkflow`
 
@@ -762,7 +783,8 @@ Operation: `executeWorkflow`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `Idempotency-Key` | header | string | No | Client-supplied dedup key. Scoped to the execution's (owner org, end-org); no expiry window beyond the execution's retention. The prefix fastn-event: is reserved for trigger dispatch and is refused with 400 (reserved_idempotency_key); keys with it replay only an in-flight or completed run from the last 24 hours. Rarely, concurrent requests under one key are answered 503 (idempotency_key_contended) with nothing created; retry. A fastn-event: key whose run exists but was not yet handed to an engine is answered 409 (dispatch_run_not_started); retry. |
+| `x-fastn-idempotency-replay` | header | string | No | Only with Idempotency-Key. 'output' makes a duplicate answer exactly as the original call did: an instant run's own return value as { data: &lt;return value> } with its status code (a run still in flight is 202 { data: { executionId, status } }; a failed run is its error). The same key sent with a different input or for a different workflow is refused with 400 IDEMPOTENCY_KEY_REUSED. Omitted, a duplicate returns the execution record, unchanged from before. One of: `output`. |
+| `Idempotency-Key` | header | string | No | Client-supplied dedup key. Scoped to the execution's (owner org, customer); no expiry window beyond the execution's retention. The prefix fastn-event: is reserved for trigger dispatch and is refused with 400 (reserved_idempotency_key); keys with it replay only an in-flight or completed run from the last 24 hours. Rarely, concurrent requests under one key are answered 503 (idempotency_key_contended) with nothing created; retry. A fastn-event: key whose run exists but was not yet handed to an engine is answered 409 (dispatch_run_not_started); retry. |
 | `x-fastn-env` | header | string | No | Which environment to execute against, and therefore WHICH CODE RUNS. 'test' runs the workflow's latest published version; any other slug runs the version actively deployed to that environment. Omitted, it defaults to the credential's own mode: a fsk_test_ key gets 'test', a fsk_live_ key gets 'live'. A test key may ONLY name 'test', asking for anything else is refused with 403 ENV_NOT_PERMITTED rather than quietly downgraded, so a 200 always means the environment you asked for is the one that ran. A live key pinned to an environment (workflowEnvId) defaults to that environment, may also name 'test', and is refused for any other. A live key made before keys were pinned may name any environment, including 'test'. |
 
 **Request body**
@@ -828,7 +850,7 @@ Operation: `listExecutions`
 GET /v1/workflows/{id}/executions/{executionId}
 ```
 
-One execution with its steps, logs and trace (requires workflows.read). Log and trace bodies are omitted for roles that cannot read execution bodies. 404 when the run is not in the caller's scope.
+One execution with its steps, logs and trace (requires workflows.read). id is the workflow id (wf_...) and executionId the run id (exec_...); both are required here. With only the run id, use GET /api/v1/workflows/executions/{executionId} (getExecutionById). Log and trace bodies are omitted for roles that cannot read execution bodies. 404 when the run is not in the caller's scope.
 
 Operation: `getWorkflowExecution`
 
@@ -841,7 +863,7 @@ Operation: `getWorkflowExecution`
 
 **Responses**
 
-* `200`: Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from.
+* `200`: Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from: `outcome` is `skipped` for a completed run that ended through fastn.skip(reason), with the reason in `skipReason` (null for a role that cannot read run bodies).
 
 ### Cancel a running execution
 
@@ -987,7 +1009,7 @@ Operation: `forkWorkflow`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Partner preview: act for this customer as its embed would |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -1442,7 +1464,7 @@ Operation: `testSavedWorkflow`
 **Responses**
 
 * `200`: Run result with logs and trace
-* `400`: The body is not valid JSON, or is JSON but not an object (null, an array, a scalar). Code: VALIDATION_ERROR.
+* `400`: The body is not valid JSON, or is JSON but not an object (null, an array, a scalar). Code: VALIDATION_ERROR. Also refused with VALIDATION_ERROR when the session acts for a customer (an embed token or customer-scoped key, which carries a parent org) but names no customer and the body names no x-org-id, so the run would otherwise use the partner's connections.
 * `403`: x-fastn-env named in the body headers is outside the caller's environment pin: a test key (or a token minted with it) may run only 'test', a key made for one environment only that environment and 'test'. The gateway never sees the body, so it is held to the pin here. Code: ENV_NOT_PERMITTED.
 * `404`: Workflow not found
 * `408`: The run exceeded the synchronous test budget (25s by default, so the answer fits the gateway's request budget). Code: WF-TEST-TIMEOUT. Carries the trace and step summary.
@@ -1594,7 +1616,7 @@ Operation: `listConnectorExecutions`
 | --- | --- | --- | --- | --- |
 | `actionId` | query | string | No |  |
 | `connectionId` | query | string | No |  |
-| `endOrgId` | query | string | No |  |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `userId` | query | string | No |  |
 | `limit` | query | integer | No |  |
 | `offset` | query | integer | No |  |
@@ -2002,7 +2024,7 @@ Operation: `listConnectorHealth`
 POST /v1/integrations/{id}/fork
 ```
 
-For a child org (a customer) whose parent offers an integration (widget) it wants to change. The parent's integration can never be modified from a child org; this copies it into the caller's org and the copy is fully the caller's to edit. Copies the widget, its config template, every workflow it runs (lifecycle hooks, trigger targets, config option sources and every sub-flow they invoke, published, and deployed wherever the source is live), everything those workflows read by org at run time (env config values, secrets, the configs they name, the environments they run in), their category, labels, documentation and validation, its trigger templates (webhook, schedule and app-event, routed to the copied workflows, with the webhook configs and app registrations app events need) and the parent's CUSTOM connectors with their actions, auth methods, entities, mock stubs and OAuth providers including client secrets. Catalog connectors are shared by every org and stay referenced; so do all connectors when the caller's role cannot author connectors (end_user) - the response lists them in sharedConnectorIds. Every id is rewritten so the copy points at the copies. The parent's integration stays where it is and existing installations of it keep running. The customer sees ONE integration with two versions, their copy and the original: the copy becomes the active version, unless they already run the original, which then stays active until they switch (setWidgetActiveVersion). Idempotent: forking again returns the existing copies (200), and a fork that failed part-way resumes when repeated. Pass ?endOrgId=&lt;customer> from a partner session to fork into that customer. Use it when the caller wants to change an integration whose orgId is not their own org; ask them first. Afterwards change ONLY the copies named in data.items (type workflow: updateWorkflow or editWorkflowCode, then publishWorkflow, then run it), never the original ids. Tell the caller which connectors stay shared (sharedConnectorIds) and relay warnings. A copy deployed to live keeps running the previous version for live traffic until it is deployed again. If the customer already has a copy (a widget in listWidgets with version.kind = custom), change THAT copy; forking again returns it. If the original is still their active version, offer to switch (setWidgetActiveVersion): switching pauses their setup on the original and moves it to the copy with the same connected accounts.
+For a child org (a customer) whose parent offers an integration (widget) it wants to change. The parent's integration can never be modified from a child org; this copies it into the caller's org and the copy is fully the caller's to edit. Copies the widget, its config template, every workflow it runs (lifecycle hooks, trigger targets, config option sources and every sub-flow they invoke, published, and deployed wherever the source is live), everything those workflows read by org at run time (env config values, secrets, the configs they name, the environments they run in), their category, labels, documentation and validation, its trigger templates (webhook, schedule and app-event, routed to the copied workflows, with the webhook configs and app registrations app events need) and the parent's CUSTOM connectors with their actions, auth methods, entities, mock stubs and OAuth providers including client secrets. Catalog connectors are shared by every org and stay referenced; so do all connectors when the caller's role cannot author connectors (end_user) - the response lists them in sharedConnectorIds. Every id is rewritten so the copy points at the copies. The parent's integration stays where it is and existing installations of it keep running. The customer sees ONE integration with two versions, their copy and the original: the copy becomes the active version, unless they already run the original, which then stays active until they switch (setWidgetActiveVersion). Idempotent: forking again returns the existing copies (200), and a fork that failed part-way resumes when repeated. Pass ?orgId=&lt;customer> from a partner session to fork into that customer. Use it when the caller wants to change an integration whose orgId is not their own org; ask them first. Afterwards change ONLY the copies named in data.items (type workflow: updateWorkflow or editWorkflowCode, then publishWorkflow, then run it), never the original ids. Tell the caller which connectors stay shared (sharedConnectorIds) and relay warnings. A copy deployed to live keeps running the previous version for live traffic until it is deployed again. If the customer already has a copy (a widget in listWidgets with version.kind = custom), change THAT copy; forking again returns it. If the original is still their active version, offer to switch (setWidgetActiveVersion): switching pauses their setup on the original and moves it to the copy with the same connected accounts.
 
 Operation: `forkIntegration`
 
@@ -2011,7 +2033,7 @@ Operation: `forkIntegration`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | The parent's widget id |
-| `endOrgId` | query | string | No | Partner preview: fork into this customer as its embed would |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Request body**
 

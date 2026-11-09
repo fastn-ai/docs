@@ -15,7 +15,7 @@ x-org-id: <customer id or your external reference>
 Content-Type: application/json
 ```
 
-`x-org-id` always names one of your customers, never your own organization. Sending your own org id returns `404 IDENTITY_ORG_NOT_FOUND`. It names the customer (the API calls it an end org): either fastn's id for the customer, or the external reference you registered it under (the `orgId` you sent to `POST /api/v1/orgs`). If you created a customer without one, fastn stored its slug as the external reference at creation time.
+`x-org-id` names one of your customers: your own id for it (the `orgId` you sent to `POST /api/v1/orgs`), or fastn's id for it. A value that is not one of your customers returns `404 IDENTITY_ORG_NOT_FOUND`. Your own organization's id names no customer, so the mint is refused with `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. If you created a customer without one, fastn stored its slug as the external reference at creation time.
 
 ```json
 {
@@ -31,34 +31,34 @@ The response is wrapped in `data`:
 {
   "data": {
     "token": "emb_…",
-    "endOrgId": "…",
     "userId": "user_123",
     "role": "end_user",
     "tierId": null,
     "expiresAt": "2026-11-04T18:00:00.000Z",
-    "expiresIn": 28800
+    "expiresIn": 28800,
+    "orgId": "acme_customer_42"
   }
 }
 ```
 
-Read the token as `response.data.token`. `expiresIn` is 28800 seconds: eight hours.
+Read the token as `response.data.token`. `expiresIn` is 28800 seconds: eight hours. `orgId` is the customer, under your own id for it.
 
 #### Body fields
 
-All fields are optional; the customer must come from the header, the body or the key.
+All fields are optional; the customer must come from the header or the body.
 
 | Field | What it does |
 | --- | --- |
-| `endOrgId` | The customer, as fastn's id or your external reference. Use it instead of the header (for example when the API key is pinned to one customer). If you also send `x-org-id`, the two must agree |
+| `orgId` | The customer: your own id for it, or fastn's id for it. Use it instead of the header if you like. If you also send `x-org-id`, the two must name the same customer, or the call fails with `400 IDENTITY_ORG_MISMATCH` |
 | `userId` | The person at your customer. Per-user isolation keys on this id (or on an attested `x-user-id`). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions |
 | `userEmail`, `userName` | Display only |
-| `createIfMissing` | Register the customer named by `endOrgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission. Leave out `x-org-id` for a customer that doesn't exist yet (it is refused with `404` first), so this only works on a key without enforced identity verification |
+| `createIfMissing` | Register the customer named by `orgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission. Leave out `x-org-id` for a customer that doesn't exist yet (it is refused with `404` first), so this only works on a key without enforced identity verification |
 | `customerName` | Display name for a customer created by `createIfMissing`. Defaults to the id |
 | `roleOverride` | Per-user role override that your backend decides |
 | `metadata` | Your own data, handed back in the widget's lifecycle callbacks for this session. At most 4 KB of JSON |
 | `allowOrgLevel` | Mint an organization-level token with no customer. Only for previewing your own organization; never hand one to a customer |
 
-If there is no customer in the header, the body or the key, and `allowOrgLevel` is not set, the call fails with `400` and code `EMBED_TOKEN_REQUIRES_END_ORG_ID`. An embed token cannot mint another embed token (`403`): mint from your backend with an API key, and use the refresh endpoint below to extend a live session.
+If there is no customer in the header or the body, and `allowOrgLevel` is not set, the call fails with `400` and code `EMBED_TOKEN_REQUIRES_END_ORG_ID`. An embed token cannot mint another embed token (`403`): mint from your backend with an API key, and use the refresh endpoint below to extend a live session.
 
 Your API key never reaches the browser. See [API keys](../../manage/api-keys.md).
 

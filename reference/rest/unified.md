@@ -58,8 +58,6 @@ Operation: `listUnifiedRecords`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `x-installation-id` | header | string | No | Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity. |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
@@ -68,13 +66,15 @@ Operation: `listUnifiedRecords`
 | `page_size` | query | integer | No | Clamped to 1-200. |
 | `include_remote_data` | query | boolean | No | true adds the provider's raw record beside the canonical one. |
 | `widget_id` | query | string | No | Widget whose unified config values (per connector) are applied to the call; ignored when the widget is not visible to the caller. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
 * `200`: Single-provider { records, nextCursor, hasMore, provider } or slug-keyed multi-provider map. hasMore is true/false when the mapping can paginate (page token or page number) and null when it cannot - never false for a page that may have been truncated.
 * `400`: Invalid cursor, or a cursor that contradicts ?provider=
 * `404`: Unknown entity, no connected provider, or no such connection
-* `502`: The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
+* `424`: UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError.
+* `502`: The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
 
 ### Create a record from a canonical body via one provider
 
@@ -93,13 +93,12 @@ Operation: `createUnifiedRecord`
 | `Idempotency-Key` | header | string | No | Makes a retry safe: the same key on this route for the same org and customer answers from the first run for 24 hours (Idempotent-Replayed: true) instead of calling the provider again. A key still in flight is 409 IDEMPOTENCY_IN_PROGRESS; the same key sent with a different query string or body is 422 IDEMPOTENCY_KEY_REUSED. |
 | `X-Fastn-Correlation-Id` | header | string | No | Your own id for this request (a call, a job). Echoed back, and the call is recorded under it: GET /api/v1/unified/calls?correlation_id=... |
 | `x-installation-id` | header | string | No | Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity. |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
 | `widget_id` | query | string | No | Widget whose unified config values (per connector) are applied to the call; ignored when the widget is not visible to the caller. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -107,7 +106,8 @@ Operation: `createUnifiedRecord`
 * `400`: Canonical validation failed
 * `404`: Unknown entity, no connected provider, or no such connection
 * `409`: UNIFIED_CONNECTION_EXPIRED when the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in (ask for a fresh sign-in). Otherwise: Multiple providers connected; specify ?provider= (or ?connection_id= to pick one of several connections on the same provider)
-* `502`: The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
+* `424`: UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError.
+* `502`: The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
 
 ### List mapped providers and the caller's connection state
 
@@ -123,10 +123,9 @@ Operation: `listUnifiedEntityProviders`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -149,13 +148,12 @@ Operation: `searchUnifiedRecords`
 | --- | --- | --- | --- | --- |
 | `X-Fastn-Correlation-Id` | header | string | No | Your own id for this request (a call, a job). Echoed back, and the call is recorded under it: GET /api/v1/unified/calls?correlation_id=... |
 | `x-installation-id` | header | string | No | Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity. |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
 | `page_size` | query | integer | No |  |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -163,7 +161,8 @@ Operation: `searchUnifiedRecords`
 * `400`: Unknown filter or no filter (UNIFIED_VALIDATION_FAILED)
 * `404`: Unknown entity, no connected provider, no such connection, or search not offered (UNIFIED_UNSUPPORTED_OPERATION)
 * `409`: UNIFIED_CONNECTION_EXPIRED: the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in; ask for a fresh sign-in rather than a different id. (Also UNIFIED_MULTIPLE_PROVIDERS when several providers are connected and none is pinned.)
-* `502`: The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
+* `424`: UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError.
+* `502`: The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
 
 ### Get one canonical record by remote id
 
@@ -180,8 +179,6 @@ Operation: `getUnifiedRecord`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `x-installation-id` | header | string | No | Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity. |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
 | `id` | path | string | Yes | The provider's remote id. |
@@ -189,13 +186,15 @@ Operation: `getUnifiedRecord`
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
 | `include_remote_data` | query | boolean | No | true adds the provider's raw record beside the canonical one. |
 | `widget_id` | query | string | No | Widget whose unified config values (per connector) are applied to the call; ignored when the widget is not visible to the caller. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
 * `200`: Canonical record
 * `404`: UNIFIED_PROVIDER_NOT_FOUND when the provider has no record with this id (providerStatus carries its 404/410). Otherwise: unknown entity, no connected provider, or no such connection
 * `409`: UNIFIED_CONNECTION_EXPIRED when the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in (ask for a fresh sign-in). Otherwise: Multiple providers connected; specify ?provider= (or ?connection_id= to pick one of several connections on the same provider)
-* `502`: The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
+* `424`: UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError.
+* `502`: The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
 
 ### Update a record (partial canonical body) via one provider
 
@@ -214,13 +213,12 @@ Operation: `updateUnifiedRecord`
 | `Idempotency-Key` | header | string | No | Makes a retry safe: the same key on this route for the same org and customer answers from the first run for 24 hours (Idempotent-Replayed: true) instead of calling the provider again. A key still in flight is 409 IDEMPOTENCY_IN_PROGRESS; the same key sent with a different query string or body is 422 IDEMPOTENCY_KEY_REUSED. |
 | `X-Fastn-Correlation-Id` | header | string | No | Your own id for this request (a call, a job). Echoed back, and the call is recorded under it: GET /api/v1/unified/calls?correlation_id=... |
 | `x-installation-id` | header | string | No | Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity. |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
 | `id` | path | string | Yes | The provider's remote id. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -228,7 +226,8 @@ Operation: `updateUnifiedRecord`
 * `400`: Unknown, read-only or no field (UNIFIED_VALIDATION_FAILED)
 * `404`: UNIFIED_PROVIDER_NOT_FOUND when the provider has no record with this id (providerStatus carries its 404/410). Otherwise: unknown entity, no connected provider, no such connection, or update not offered
 * `409`: UNIFIED_CONNECTION_EXPIRED: the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in; ask for a fresh sign-in rather than a different id. (Also UNIFIED_MULTIPLE_PROVIDERS when several providers are connected and none is pinned.)
-* `502`: The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
+* `424`: UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError.
+* `502`: The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
 
 ### Delete a record via one provider
 
@@ -247,20 +246,20 @@ Operation: `deleteUnifiedRecord`
 | `Idempotency-Key` | header | string | No | Makes a retry safe: the same key on this route for the same org and customer answers from the first run for 24 hours (Idempotent-Replayed: true) instead of calling the provider again. A key still in flight is 409 IDEMPOTENCY_IN_PROGRESS; the same key sent with a different query string or body is 422 IDEMPOTENCY_KEY_REUSED. |
 | `X-Fastn-Correlation-Id` | header | string | No | Your own id for this request (a call, a job). Echoed back, and the call is recorded under it: GET /api/v1/unified/calls?correlation_id=... |
 | `x-installation-id` | header | string | No | Installation whose widget config values (unifiedValues) apply to this call. Omit for a call with no widget identity. |
-| `x-end-org-id` | header | string | No | Partner callers only: run the call for this customer (end-org id) and its connections. Must be a customer of the caller's org (403 otherwise); not with x-end-org-ref (400). Omitted = the caller's own scope, unchanged. |
-| `x-end-org-ref` | header | string | No | Partner callers only: run the call for the customer registered under this external ref. 404 when the caller has no such customer; not with x-end-org-id (400). |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
 | `id` | path | string | Yes | The provider's remote id. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
 * `200`: { id, provider, deleted: true }
 * `404`: UNIFIED_PROVIDER_NOT_FOUND when the provider has no record with this id (providerStatus carries its 404/410). Otherwise: unknown entity, no connected provider, no such connection, or delete not offered
 * `409`: UNIFIED_CONNECTION_EXPIRED: the pinned connection_id is yours but its login expired, or the connection the call ran on needs a new sign-in; ask for a fresh sign-in rather than a different id. (Also UNIFIED_MULTIPLE_PROVIDERS when several providers are connected and none is pinned.)
-* `502`: The provider failed (5xx, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). Provider client errors are not 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED and 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
+* `424`: UNIFIED_PROVIDER_FAILED: the provider answered with an error the caller's input did not cause: an HTTP-200 error body (e.g. a GraphQL errors array), a 405/415, a 404 on a list, search or create, or any 4xx from a resolveInput lookup. Carries providerStatus and a truncated providerError.
+* `502`: The provider failed (5xx, a transient 408/423/425, timeout, unreachable) or the connector platform refused the call (UNIFIED_PROVIDER_ERROR). A provider that answered is never a 502: a provider 404/410 on a get, update or delete is 404 UNIFIED_PROVIDER_NOT_FOUND, any other provider 4xx except 405/408/415/423/425 is 400 UNIFIED_PROVIDER_REJECTED, 401/403 (or a 2xx body naming a revoked or invalid token) is 401 UNIFIED_PROVIDER_AUTH_FAILED, 429 is 429 UNIFIED_PROVIDER_RATE_LIMITED and the rest is 424 UNIFIED_PROVIDER_FAILED. Every provider error carries providerStatus (the provider's own status) and a truncated providerError; a platform refusal or a call the platform never answered carries none.
 
 ## Unified custom
 
@@ -392,6 +391,11 @@ Operation: `createUnifiedCustomMapping`
 | `operations.list.totalPath` | `string` | No |  |
 | `operations.list.remoteIdPath` | `string` | Yes |  |
 | `operations.list.resolveInput` | `object` | No |  |
+| `operations.list.requiredInput` | `object[]` | No |  |
+| `operations.list.requiredInput[].path` | `string` | Yes |  |
+| `operations.list.requiredInput[].when` | `string` | No |  |
+| `operations.list.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.list.viewOnlyInput` | `string[]` | No |  |
 | `operations.get` | `object` | No |  |
 | `operations.get.actionSlug` | `string` | Yes |  |
 | `operations.get.staticInput` | `object` | No |  |
@@ -406,6 +410,11 @@ Operation: `createUnifiedCustomMapping`
 | `operations.get.totalPath` | `string` | No |  |
 | `operations.get.remoteIdPath` | `string` | Yes |  |
 | `operations.get.resolveInput` | `object` | No |  |
+| `operations.get.requiredInput` | `object[]` | No |  |
+| `operations.get.requiredInput[].path` | `string` | Yes |  |
+| `operations.get.requiredInput[].when` | `string` | No |  |
+| `operations.get.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.get.viewOnlyInput` | `string[]` | No |  |
 | `operations.create` | `object` | No |  |
 | `operations.create.actionSlug` | `string` | Yes |  |
 | `operations.create.staticInput` | `object` | No |  |
@@ -420,6 +429,11 @@ Operation: `createUnifiedCustomMapping`
 | `operations.create.totalPath` | `string` | No |  |
 | `operations.create.remoteIdPath` | `string` | Yes |  |
 | `operations.create.resolveInput` | `object` | No |  |
+| `operations.create.requiredInput` | `object[]` | No |  |
+| `operations.create.requiredInput[].path` | `string` | Yes |  |
+| `operations.create.requiredInput[].when` | `string` | No |  |
+| `operations.create.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.create.viewOnlyInput` | `string[]` | No |  |
 | `operations.update` | `object` | No |  |
 | `operations.update.actionSlug` | `string` | Yes |  |
 | `operations.update.staticInput` | `object` | No |  |
@@ -434,6 +448,11 @@ Operation: `createUnifiedCustomMapping`
 | `operations.update.totalPath` | `string` | No |  |
 | `operations.update.remoteIdPath` | `string` | Yes |  |
 | `operations.update.resolveInput` | `object` | No |  |
+| `operations.update.requiredInput` | `object[]` | No |  |
+| `operations.update.requiredInput[].path` | `string` | Yes |  |
+| `operations.update.requiredInput[].when` | `string` | No |  |
+| `operations.update.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.update.viewOnlyInput` | `string[]` | No |  |
 | `operations.delete` | `object` | No |  |
 | `operations.delete.actionSlug` | `string` | Yes |  |
 | `operations.delete.staticInput` | `object` | No |  |
@@ -448,6 +467,11 @@ Operation: `createUnifiedCustomMapping`
 | `operations.delete.totalPath` | `string` | No |  |
 | `operations.delete.remoteIdPath` | `string` | No | Default: `"id"`. |
 | `operations.delete.resolveInput` | `object` | No |  |
+| `operations.delete.requiredInput` | `object[]` | No |  |
+| `operations.delete.requiredInput[].path` | `string` | Yes |  |
+| `operations.delete.requiredInput[].when` | `string` | No |  |
+| `operations.delete.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.delete.viewOnlyInput` | `string[]` | No |  |
 | `operations.search` | `object` | No |  |
 | `operations.search.actionSlug` | `string` | Yes |  |
 | `operations.search.staticInput` | `object` | No |  |
@@ -462,6 +486,11 @@ Operation: `createUnifiedCustomMapping`
 | `operations.search.totalPath` | `string` | No |  |
 | `operations.search.remoteIdPath` | `string` | Yes |  |
 | `operations.search.resolveInput` | `object` | No |  |
+| `operations.search.requiredInput` | `object[]` | No |  |
+| `operations.search.requiredInput[].path` | `string` | Yes |  |
+| `operations.search.requiredInput[].when` | `string` | No |  |
+| `operations.search.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.search.viewOnlyInput` | `string[]` | No |  |
 | `fieldMappings` | `object[]` | No |  |
 | `fieldMappings[].connectorField` | `string` | Yes |  |
 | `fieldMappings[].connectorLabel` | `string` | Yes |  |
@@ -488,6 +517,8 @@ Operation: `createUnifiedCustomMapping`
 | `fieldMappings[].condition.type` | `string` | Yes | Always `combine`. |
 | `fieldMappings[].condition.sources` | `string[]` | Yes |  |
 | `fieldMappings[].condition.separator` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `template`. |
+| `fieldMappings[].condition.template` | `string` | Yes |  |
 | `fieldMappings[].condition.type` | `string` | Yes | Always `split`. |
 | `fieldMappings[].condition.separator` | `string` | Yes |  |
 | `fieldMappings[].condition.index` | `integer` | Yes |  |
@@ -626,6 +657,11 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.list.totalPath` | `string` | No |  |
 | `operations.list.remoteIdPath` | `string` | Yes |  |
 | `operations.list.resolveInput` | `object` | No |  |
+| `operations.list.requiredInput` | `object[]` | No |  |
+| `operations.list.requiredInput[].path` | `string` | Yes |  |
+| `operations.list.requiredInput[].when` | `string` | No |  |
+| `operations.list.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.list.viewOnlyInput` | `string[]` | No |  |
 | `operations.get` | `object` | No |  |
 | `operations.get.actionSlug` | `string` | Yes |  |
 | `operations.get.staticInput` | `object` | No |  |
@@ -640,6 +676,11 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.get.totalPath` | `string` | No |  |
 | `operations.get.remoteIdPath` | `string` | Yes |  |
 | `operations.get.resolveInput` | `object` | No |  |
+| `operations.get.requiredInput` | `object[]` | No |  |
+| `operations.get.requiredInput[].path` | `string` | Yes |  |
+| `operations.get.requiredInput[].when` | `string` | No |  |
+| `operations.get.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.get.viewOnlyInput` | `string[]` | No |  |
 | `operations.create` | `object` | No |  |
 | `operations.create.actionSlug` | `string` | Yes |  |
 | `operations.create.staticInput` | `object` | No |  |
@@ -654,6 +695,11 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.create.totalPath` | `string` | No |  |
 | `operations.create.remoteIdPath` | `string` | Yes |  |
 | `operations.create.resolveInput` | `object` | No |  |
+| `operations.create.requiredInput` | `object[]` | No |  |
+| `operations.create.requiredInput[].path` | `string` | Yes |  |
+| `operations.create.requiredInput[].when` | `string` | No |  |
+| `operations.create.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.create.viewOnlyInput` | `string[]` | No |  |
 | `operations.update` | `object` | No |  |
 | `operations.update.actionSlug` | `string` | Yes |  |
 | `operations.update.staticInput` | `object` | No |  |
@@ -668,6 +714,11 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.update.totalPath` | `string` | No |  |
 | `operations.update.remoteIdPath` | `string` | Yes |  |
 | `operations.update.resolveInput` | `object` | No |  |
+| `operations.update.requiredInput` | `object[]` | No |  |
+| `operations.update.requiredInput[].path` | `string` | Yes |  |
+| `operations.update.requiredInput[].when` | `string` | No |  |
+| `operations.update.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.update.viewOnlyInput` | `string[]` | No |  |
 | `operations.delete` | `object` | No |  |
 | `operations.delete.actionSlug` | `string` | Yes |  |
 | `operations.delete.staticInput` | `object` | No |  |
@@ -682,6 +733,11 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.delete.totalPath` | `string` | No |  |
 | `operations.delete.remoteIdPath` | `string` | No | Default: `"id"`. |
 | `operations.delete.resolveInput` | `object` | No |  |
+| `operations.delete.requiredInput` | `object[]` | No |  |
+| `operations.delete.requiredInput[].path` | `string` | Yes |  |
+| `operations.delete.requiredInput[].when` | `string` | No |  |
+| `operations.delete.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.delete.viewOnlyInput` | `string[]` | No |  |
 | `operations.search` | `object` | No |  |
 | `operations.search.actionSlug` | `string` | Yes |  |
 | `operations.search.staticInput` | `object` | No |  |
@@ -696,6 +752,11 @@ Operation: `updateUnifiedCustomMapping`
 | `operations.search.totalPath` | `string` | No |  |
 | `operations.search.remoteIdPath` | `string` | Yes |  |
 | `operations.search.resolveInput` | `object` | No |  |
+| `operations.search.requiredInput` | `object[]` | No |  |
+| `operations.search.requiredInput[].path` | `string` | Yes |  |
+| `operations.search.requiredInput[].when` | `string` | No |  |
+| `operations.search.idFormat` | `string` | No | One of: `lastSegment`. |
+| `operations.search.viewOnlyInput` | `string[]` | No |  |
 | `fieldMappings` | `object[]` | No |  |
 | `fieldMappings[].connectorField` | `string` | Yes |  |
 | `fieldMappings[].connectorLabel` | `string` | Yes |  |
@@ -722,6 +783,8 @@ Operation: `updateUnifiedCustomMapping`
 | `fieldMappings[].condition.type` | `string` | Yes | Always `combine`. |
 | `fieldMappings[].condition.sources` | `string[]` | Yes |  |
 | `fieldMappings[].condition.separator` | `string` | Yes |  |
+| `fieldMappings[].condition.type` | `string` | Yes | Always `template`. |
+| `fieldMappings[].condition.template` | `string` | Yes |  |
 | `fieldMappings[].condition.type` | `string` | Yes | Always `split`. |
 | `fieldMappings[].condition.separator` | `string` | Yes |  |
 | `fieldMappings[].condition.index` | `integer` | Yes |  |

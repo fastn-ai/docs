@@ -102,7 +102,7 @@ There is no separate runtime reference tab (the **Docs** view under **Diagram** 
 | `fastn.state`           | Key/value state, with scopes `ORG` (the default) and `INVOCATION`. |
 | `fastn.secrets`         | Encrypted values. See [Secrets](../../manage/secrets.md).            |
 
-Calls made for a specific customer are addressed with headers: `x-end-org-id`, `x-end-org-ref`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
+Calls made for a specific customer are addressed with headers: `x-org-id`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
 
 {% hint style="warning" %}
 Use `fastn.connector` (singular) in your code. The Connectors tab's extractor recognizes the plural `fastn.connectors.<slug>.<action>()` too, but the runtime does not provide it, so a plural call fails when the workflow runs.

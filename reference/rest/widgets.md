@@ -16,7 +16,7 @@ Base URL, authentication and errors are on the [REST API overview](README.md).
 GET /v1/widgets
 ```
 
-Your org's own integrations, plus, for a child org, the integrations its DIRECT parent built and offers it (never a grandparent's), marked inheritedFrom: you can run those, cannot edit them, and your own customers do not get them. A customised copy you made of one is yours (customisedFrom), and the copy and its original come back as two rows sharing version.groupId, exactly one version.active.
+Your org's own integrations, plus, for a child org, the integrations its DIRECT parent built and offers it (never a grandparent's), marked inheritedFrom: you can run those, cannot edit them, and your own customers do not get them. A customised copy you made of one is yours (customisedFrom), and the copy and its original come back as two rows sharing version.groupId, exactly one version.active. Each widget carries workflowConnectors (read-only, absent when empty): the apps its workflows call per customer that are not in connectorIds, which the hub asks the customer to connect too. Derived on read; it does not count toward connectors_per_widget.
 
 Operation: `listWidgets`
 
@@ -25,7 +25,7 @@ Operation: `listWidgets`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `include` | query | string | No | inherited. One of: `inherited`. |
-| `endOrgId` | query | string | No | Preview the catalog a customer sees (its own widgets plus inherited ones, enabled and allowed for it only), as the embed would. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -72,6 +72,7 @@ Operation: `createWidget`
 | `connector_refs[].authProviderId` | `string` | No |  |
 | `connector_refs[].deleteOnDeactivate` | `boolean` | No |  |
 | `connector_refs[].hideLogo` | `boolean` | No |  |
+| `connector_refs[].optional` | `boolean` | No | The customer may leave this app unconnected and the integration still activates. With every connector optional, connecting any one of them is enough ("connect Gmail or Outlook"). Unset = required. The widget's workflows must handle the app not being connected. |
 | `connector_refs[].connectionScope` | `string` | No | SaaS-connector connection scope: activation pins the customer's connection with this scope (400 when the customer has none) and the customer connect flow hides this connector. Must be in the org's saas_connectors registry for this connector. Not the OAuth scopes. |
 | `workflow_ids` | `string[]` | No |  |
 | `workflow_refs` | `object[]` | No |  |
@@ -205,7 +206,7 @@ Operation: `createWidget`
 
 * `201`: Widget created
 * `400`: Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details and issues list every { path, message }, error reads "Request validation failed: &lt;path>: &lt;message>" for the first three, and traceId is set when the request was traced. The rules: no connector (connector_ids, connector_refs and unified_refs all absent or empty) is a path-less issue "At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)", reported alongside any other failed field; a missing or invalid field (e.g. name, 1-100 characters); trigger_categories: slugs must be unique; trigger_refs.N.categories: every category a ref tags must be in trigger_categories; connector_refs.N.connectionScope: must be in the org's saas_connectors registry for that connector; unified_refs.N.entityId / .connectorSlugs / .configForm: an unknown unified entity, a provider it has no enabled mapping for, or a config form for an unselected provider or with a duplicate key; body: the body is not JSON.
-* `403`: quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan; An update is refused only when it adds connectors.
+* `403`: quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan). An update is refused only when it adds connectors.
 
 **Response fields**
 
@@ -235,7 +236,7 @@ Operation: `getWidgetEmbedStatus`
 
 **Responses**
 
-* `200`: data: { activeWindowDays, truncated, customers: [{ endOrgId, name, status: active \| inactive \| never, firstSeenAt, lastSeenAt, host, widgets: [{ widgetId, firstSeenAt, lastSeenAt }] }] }
+* `200`: data: { activeWindowDays, truncated, customers: [{ orgId, name, status: active \| inactive \| never, firstSeenAt, lastSeenAt, host, widgets: [{ widgetId, firstSeenAt, lastSeenAt }] }] }
 * `400`: widgetId empty or longer than 100 characters, or no organisation selected
 * `403`: A customer-scoped session, or a role below account tier
 
@@ -258,7 +259,7 @@ Operation: `getWidgetInsights`
 | `from` | query | string | No | Start of a calendar window (YYYY-MM-DD, inclusive). Must be sent with `to`; overrides range/days. |
 | `to` | query | string | No | End of the window (YYYY-MM-DD, inclusive of the whole day). Must be sent with `from`. |
 | `tz` | query | string | No | IANA zone the window's days are in; UTC when omitted or unrecognised. |
-| `endOrgId` | query | string | No | Admin preview of one customer (validated against the caller's org chain). |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Responses**
 
@@ -271,7 +272,7 @@ Operation: `getWidgetInsights`
 GET /v1/widgets/insights/live
 ```
 
-Widget insights, right now: runs processing and queued and trigger deliveries due another retry, in the insights panel's scope. Not windowed; read from the in-flight rows. Scoped like getWidgetInsights: the caller's org, narrowed to one customer for an end_user or by endOrgId. range is still validated (400 on an unknown value) but does not change the answer.
+Widget insights, right now: runs processing and queued and trigger deliveries due another retry, in the insights panel's scope. Not windowed; read from the in-flight rows. Scoped like getWidgetInsights: the caller's org, narrowed to one customer for an end_user or by orgId. range is still validated (400 on an unknown value) but does not change the answer.
 
 Operation: `getLiveWidgetInsights`
 
@@ -279,14 +280,14 @@ Operation: `getLiveWidgetInsights`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No | Admin preview of one customer (validated against the caller's org chain). |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `range` | query | string | No | One of: `1d`, `7d`, `14d`, `30d`, `90d`. |
 
 **Responses**
 
 * `200`: data: processing, queued, oldestProcessingSeconds, oldestQueuedSeconds, stuck (queued runs waiting over stuckAfterSeconds), retrying, per-workflow and per-customer counts, and the longest-running / longest-waiting runs and oldest retrying deliveries. `degraded` names any read that failed.
 * `400`: Invalid range
-* `403`: endOrgId is outside the caller's customer scope
+* `403`: orgId is outside the caller's customer scope
 
 ### Partner reporting: the same operational metrics as /widgets/insights, totalled across...
 
@@ -350,7 +351,7 @@ Operation: `getLiveTenantInsights`
 GET /v1/widgets/{id}
 ```
 
-Returns one widget. An end_user gets only a widget its catalog lists (enabled and allowed for its customer); a child org's team can also read its direct parent's widget, returned with inheritedFrom. 404 when out of scope.
+Returns one widget. An end_user gets only a widget its catalog lists (enabled and allowed for its customer); a child org's team can also read its direct parent's widget, returned with inheritedFrom. 404 when out of scope. workflowConnectors (read-only, absent when empty) lists the apps the widget's workflows call per customer (MULTI_TENANT manifest entries) that are not in connectorIds: the hub asks the customer to connect them too. It is derived on read, never stored, and does not count toward connectors_per_widget. connectorRefs[].optional marks an app the customer may leave unconnected; with every app optional, any one is enough.
 
 Operation: `getWidget`
 
@@ -396,6 +397,7 @@ Operation: `updateWidget`
 | `connector_refs[].authProviderId` | `string` | No |  |
 | `connector_refs[].deleteOnDeactivate` | `boolean` | No |  |
 | `connector_refs[].hideLogo` | `boolean` | No |  |
+| `connector_refs[].optional` | `boolean` | No | The customer may leave this app unconnected and the integration still activates. With every connector optional, connecting any one of them is enough ("connect Gmail or Outlook"). Unset = required. The widget's workflows must handle the app not being connected. |
 | `connector_refs[].connectionScope` | `string` | No | SaaS-connector connection scope: activation pins the customer's connection with this scope (400 when the customer has none) and the customer connect flow hides this connector. Must be in the org's saas_connectors registry for this connector. Not the OAuth scopes. |
 | `workflow_ids` | `string[]` | No |  |
 | `workflow_refs` | `object[]` | No |  |
@@ -529,7 +531,7 @@ Operation: `updateWidget`
 
 * `200`: Updated
 * `400`: Every 400 is VALIDATION_ERROR in the same envelope as any schema failure: details and issues list every { path, message }, error reads "Request validation failed: &lt;path>: &lt;message>" for the first three, and traceId is set when the request was traced. Only fields this request sent are named: a rule broken by a stored value names the sent field that kept or exposed it, and the message says the value is stored. id: the id in the URL is malformed; an update that would leave no connector and no unified entity is the same path-less issue as on create, "At least one connector or unified entity is required (connector_ids, connector_refs or unified_refs)"; a field that fails the schema; trigger_categories: slugs must be unique, or the new catalog drops a category a stored trigger ref still tags; trigger_refs.N.categories (trigger_ids.N for an ids-only update carrying a stored ref): every category a ref tags must be in the resulting trigger_categories; connector_refs.N.connectionScope (connector_ids.N for an ids-only update keeping a stored scope): must be in the org's saas_connectors registry for that connector; unified_refs.N.entityId / .connectorSlugs / .configForm: as on create; body: not JSON, or no field to update.
-* `403`: quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan; An update is refused only when it adds connectors.
+* `403`: quota_exceeded: the widget would list more distinct connectors than connectors_per_widget allows (2 on every plan). An update is refused only when it adds connectors.
 
 ### Delete widget
 
@@ -557,7 +559,7 @@ Operation: `deleteWidget`
 PUT /v1/widgets/{id}/active-version
 ```
 
-{id} is the ORIGINAL widget. activeWidgetId is either the original itself or your org's live fork of it. In the customer catalog (GET /widgets as an end user) the pair is returned as two rows sharing version.groupId, exactly one with version.active = true. Exactly one version runs: switching pauses the customer's active setups on the version it leaves, resumes the ones an earlier switch paused on the version it returns to, and where that version has no setup yet recreates the paused ones on it with the same connections, label and answers (data.carried). A setup cannot be created or resumed on the inactive version (409 VERSION_INACTIVE). Ask the customer before switching. Accepts ?endOrgId= for a partner previewing a customer.
+{id} is the ORIGINAL widget. activeWidgetId is either the original itself or your org's live fork of it. In the customer catalog (GET /widgets as an end user) the pair is returned as two rows sharing version.groupId, exactly one with version.active = true. Exactly one version runs: switching pauses the customer's active setups on the version it leaves, resumes the ones an earlier switch paused on the version it returns to, and where that version has no setup yet recreates the paused ones on it with the same connections, label and answers (data.carried). A setup cannot be created or resumed on the inactive version (409 VERSION_INACTIVE). Ask the customer before switching. Accepts ?orgId= for a partner previewing a customer.
 
 Operation: `setWidgetActiveVersion`
 
@@ -566,7 +568,7 @@ Operation: `setWidgetActiveVersion`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Partner preview: act for this customer as its embed would |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -596,7 +598,7 @@ Operation: `getWidgetDocs`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Builder preview: read as this child customer would (an account-role caller previewing one of its own customers). The doc is still returned when it is hidden from customers, with visibleToEndUsers false. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `include` | query | string | No | Also resolve a widget the caller's direct parent offers it, as GET /api/v1/widgets/{id} does One of: `inherited`. |
 
 **Responses**
@@ -650,7 +652,7 @@ Operation: `forkWidget`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Partner preview: act for this customer (validated against the caller's org chain) as its embed would. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Request body**
 
@@ -712,17 +714,17 @@ Operation: `loadUnifiedConfigFieldOptions`
 | `connectorSlug` | `string` | Yes |  |
 | `fieldKey` | `string` | Yes |  |
 | `params` | `object` | No |  |
-| `endOrgId` | `string` | No |  |
 | `installationId` | `string` | No |  |
 | `offset` | `integer` | No | Default: `0`. |
 | `limit` | `integer` | No | Page size, at most the server's option ceiling (UNIFIED_CONFIG_MAX_OPTIONS). Defaults to the whole result set. Default: `5000`. |
 | `query` | `string` | No | Case-insensitive substring filter over label then value, applied server-side to what the snippet returned. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `200`: { options: [{value, label}], pageInfo: { hasNextPage, offset, limit, endCursor, total, truncated, truncatedAt, returnedCount, droppedOptions }, durationMs }. truncated means the snippet returned more than the platform ceiling (UNIFIED_CONFIG_MAX_OPTIONS, default 5000) and the surplus is not reachable by paging or query, total is then a floor.
 * `400`: Unknown field (UNIFIED_CONFIG_UNKNOWN_FIELD)
-* `403`: end_user supplied endOrgId/installationId
+* `403`: end_user supplied orgId/installationId
 * `404`: Widget not found
 * `422`: The snippet itself failed, threw, timed out, or returned something other than an array of options (UNIFIED_OPTIONS_FAILED). Carries the reason; a 5xx here would be replaced by the edge's own error page.
 * `502`: The workflow sandbox never answered (UNIFIED_OPTIONS_FAILED)
@@ -735,7 +737,7 @@ Operation: `loadUnifiedConfigFieldOptions`
 POST /v1/embed/mcp-connect-codes
 ```
 
-Returns mcp.&lt;zone>/fastn-workspace/c/&lt;mcpc_code>, which works once and for 10 minutes. Pasted into an MCP client, it connects that client to Fastn Workspace as the customer; redeeming it creates a Claude connection (listed by GET /api/v1/embed/share-links?kind=mcp, disconnected by DELETE /api/v1/embed/share-links/{id}). From an embed token the customer and user are the token's and the body is ignored; from a dashboard session (owner/admin/developer) endOrgId names one of the caller's own customers. Capability-scoped link tokens are refused.
+Returns mcp.&lt;zone>/fastn-workspace/c/&lt;mcpc_code>, which works once and for 10 minutes. Pasted into an MCP client, it connects that client to Fastn Workspace as the customer; redeeming it creates a Claude connection (listed by GET /api/v1/embed/share-links?kind=mcp, disconnected by DELETE /api/v1/embed/share-links/{id}). From an embed token the customer and user are the token's and the body is ignored; from a dashboard session (owner/admin/developer) orgId names one of the caller's own customers. Capability-scoped link tokens are refused.
 
 Operation: `createMcpConnectCode`
 
@@ -743,12 +745,12 @@ Operation: `createMcpConnectCode`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `endOrgId` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `201`: Connect URL
-* `400`: endOrgId missing (dashboard caller)
+* `400`: orgId missing (dashboard caller)
 * `403`: Not a customer session, or role not allowed
 * `404`: Customer is not the caller's
 * `429`: EMBED_RATE_LIMITED
@@ -776,7 +778,7 @@ Operation: `listEmbedShareLinks`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No |  |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `kind` | query | string | No | One of: `share`, `mcp`. |
 
 **Responses**
@@ -789,7 +791,7 @@ Operation: `listEmbedShareLinks`
 POST /v1/embed/share-links
 ```
 
-Creates a durable, revocable link that opens one customer's embedded hub without a token in the URL; each load mints an end_user session for endOrgId. Optional metadata (partner only, at most 4KB) is handed back in the widget's installation lifecycle hooks for sessions opened from the link. Requires connectors.read.
+Creates a durable, revocable link that opens one customer's embedded hub without a token in the URL; each load mints an end_user session for orgId. Optional metadata (partner only, at most 4KB) is handed back in the widget's installation lifecycle hooks for sessions opened from the link. Requires connectors.read.
 
 Operation: `createEmbedShareLink`
 
@@ -797,14 +799,14 @@ Operation: `createEmbedShareLink`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `endOrgId` | `string` | Yes |  |
 | `label` | `string` | No |  |
 | `expiresInDays` | `integer` | No |  |
 | `metadata` | `object` | No |  |
+| `orgId` | `string` | Yes | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
-* `201`: { data: { id, endOrgId, label, expiresAt, metadata? } }
+* `201`: { data: { id, orgId, label, expiresAt, metadata? } }
 * `400`: Validation error
 * `403`: metadata sent by a caller that is not the customer's partner (code EMBED_PARTNER_ONLY_FIELD)
 
@@ -835,7 +837,7 @@ Operation: `revokeEmbedShareLink`
 POST /v1/embed/token
 ```
 
-Issues a short-lived (8 hour) token scoped to a customer and end_user role. Requires connectors.read permission. Partner backends may send an EMPTY body together with the identity headers (x-org-id + x-user-id, proven with x-identity-hmac when the API key's identity-verification mode requires it), the customer and user then come from the headers. Without identity headers, endOrgId is required unless allowOrgLevel is true.
+Issues a short-lived (8 hour) token scoped to a customer and end_user role. Requires connectors.read permission. Partner backends may send an EMPTY body together with the identity headers (x-org-id + x-user-id, proven with x-identity-hmac when the API key's identity-verification mode requires it), the customer and user then come from the headers. Without identity headers, orgId is required unless allowOrgLevel is true.
 
 Operation: `createEmbedToken`
 
@@ -843,7 +845,7 @@ Operation: `createEmbedToken`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `x-org-id` | header | string | No | Customer org the request acts for, the customer's fastn org id or the external_ref the partner registered it under. Requires API-key auth on a multi-customer key; always ownership-checked against the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 | `x-user-id` | header | string | No | End-user identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification. |
 | `x-identity-hmac` | header | string | No | Hex HMAC-SHA256 of "{x-org-id}\n{x-user-id}" (the header values exactly as sent, newline-joined; an absent header is the empty string) signed with the API key's identity-verification secret. Required when the key's idv mode is 'required' (missing/invalid = 401); logged-only under 'optional'; ignored when 'off'. |
 
@@ -851,7 +853,6 @@ Operation: `createEmbedToken`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `endOrgId` | `string` | No |  |
 | `allowOrgLevel` | `boolean` | No |  |
 | `createIfMissing` | `boolean` | No |  |
 | `customerName` | `string` | No |  |
@@ -861,6 +862,7 @@ Operation: `createEmbedToken`
 | `roleOverride` | `string` | No |  |
 | `role` | `string` | No | One of: `end_user`. Default: `"end_user"`. |
 | `metadata` | `object` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -876,12 +878,12 @@ Operation: `createEmbedToken`
 | --- | --- | --- |
 | `data` | `object` |  |
 | `data.token` | `string` |  |
-| `data.endOrgId` | `string` |  |
 | `data.userId` | `string` |  |
 | `data.role` | `string` |  |
 | `data.tierId` | `string` |  |
 | `data.expiresAt` | `string` |  |
 | `data.expiresIn` | `integer` | Seconds until expiry |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### Refresh an embed token (silent re-auth)
 
@@ -912,10 +914,10 @@ Operation: `refreshEmbedToken`
 | --- | --- | --- |
 | `data` | `object` |  |
 | `data.token` | `string` |  |
-| `data.endOrgId` | `string` |  |
 | `data.role` | `string` |  |
 | `data.expiresAt` | `string` |  |
 | `data.expiresIn` | `integer` |  |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### Validate an embed token
 
@@ -932,12 +934,12 @@ Operation: `validateEmbedToken`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `string` | Yes |  |
-| `endOrgId` | `string` | No | Optional. The customer the caller believes this session is for (the &lt;fastn-embed org-id/tenant-id> attribute). Either the customer's fastn id or the external_ref it was registered under. If it names a different customer than the token carries, the request is refused rather than silently answered for the token's customer. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `200`: Token valid
-* `400`: The endOrgId in the body names a different customer than the token carries (code EMBED_TENANT_MISMATCH). The error text names only the customer the caller asked for, never the one the token belongs to.
+* `400`: The orgId in the body names a different customer than the token carries (code EMBED_TENANT_MISMATCH). The error text names only the customer the caller asked for, never the one the token belongs to.
 * `401`: Invalid or expired token
 
 **Response fields**
@@ -946,8 +948,7 @@ Operation: `validateEmbedToken`
 | --- | --- | --- |
 | `data` | `object` |  |
 | `data.valid` | `boolean` |  |
-| `data.endOrgId` | `string` |  |
-| `data.orgId` | `string` |  |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 | `data.role` | `string` |  |
 | `data.expiresAt` | `string` |  |
 | `data.remainingMs` | `integer` | Remaining ACCESS in ms, never negative. 0 when the token resolved on the refresh grace alone. |
@@ -963,7 +964,7 @@ Operation: `validateEmbedToken`
 POST /v1/setup-links
 ```
 
-Generates a single-use URL where an end-org customer can install a widget (connect accounts + configure) without logging in. Lifetime defaults to SETUP_LINK_DEFAULT_TTL_MINUTES (15) and can be set per link with expiresInMinutes up to SETUP_LINK_MAX_TTL_MINUTES (7 days). After the setup is completed the link token stays usable only SETUP_LINK_AFTER_COMPLETE_MINUTES (60) so the wizard can finish. The caller must be the partner org (passing endOrgId or externalRef) or the end-org itself (omit both or set useCallerOrg: true). With externalRef + createIfMissing the customer is created on first use (needs customers.create). When the widget opts in to the onSetupLinkCompleted hook, completing the link fires it in background mode with source "setup_link" and the link metadata.
+Generates a single-use URL where an customer customer can install a widget (connect accounts + configure) without logging in. Lifetime defaults to SETUP_LINK_DEFAULT_TTL_MINUTES (15) and can be set per link with expiresInMinutes up to SETUP_LINK_MAX_TTL_MINUTES (7 days). After the setup is completed the link token stays usable only SETUP_LINK_AFTER_COMPLETE_MINUTES (60) so the wizard can finish. The caller must be the partner org (passing orgId or externalRef) or the customer itself (omit both or set useCallerOrg: true). With externalRef + createIfMissing the customer is created on first use (needs customers.create). When the widget opts in to the onSetupLinkCompleted hook, completing the link fires it in background mode with source "setup_link" and the link metadata.
 
 Operation: `createSetupLink`
 
@@ -972,7 +973,6 @@ Operation: `createSetupLink`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `widgetId` | `string` | Yes |  |
-| `endOrgId` | `string` | No |  |
 | `useCallerOrg` | `boolean` | No |  |
 | `label` | `string` | No |  |
 | `connectionName` | `string` | Yes |  |
@@ -982,11 +982,12 @@ Operation: `createSetupLink`
 | `allowAdditionalConnection` | `boolean` | No |  |
 | `metadata` | `object` | No |  |
 | `redirectUrl` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `201`: Setup link created
-* `400`: Invalid endOrgId, could not resolve partner org, or expiresInMinutes over the maximum (code SETUP_LINK_TTL_TOO_LONG)
+* `400`: Invalid orgId, could not resolve partner org, or expiresInMinutes over the maximum (code SETUP_LINK_TTL_TOO_LONG)
 * `404`: Widget not found, or no customer has externalRef (code TENANT_NOT_FOUND)
 * `409`: createIfMissing could not create the customer (code TENANT_SLUG_TAKEN)
 * `503`: No description.
@@ -1000,10 +1001,10 @@ Operation: `createSetupLink`
 | `data.setupUrl` | `string` | URL to share with the customer |
 | `data.status` | `string` | One of: `pending`. |
 | `data.expiresAt` | `string` |  |
-| `data.endOrgId` | `string` |  |
 | `data.metadata` | `object` |  |
 | `data.redirectUrl` | `string` |  |
 | `data.allowAdditionalConnection` | `boolean` |  |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### Get setup link status and context
 
@@ -1036,7 +1037,6 @@ Operation: `getSetupLink`
 | `data.setupId` | `string` |  |
 | `data.status` | `string` | One of: `pending`, `complete`, `revoked`. |
 | `data.widgetId` | `string` |  |
-| `data.endOrgId` | `string` |  |
 | `data.label` | `string` |  |
 | `data.installationId` | `string` |  |
 | `data.expiresAt` | `string` |  |
@@ -1053,6 +1053,7 @@ Operation: `getSetupLink`
 | `data.configTemplate` | `object` |  |
 | `data.configTemplate.id` | `string` |  |
 | `data.configTemplate.config` | `object` |  |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### Cancel a setup link
 
@@ -1091,7 +1092,7 @@ Operation: `cancelSetupLink`
 POST /v1/setup-links/{id}/complete
 ```
 
-Marks the setup link as complete and creates (or reuses) a widget installation for the end-org. The link is single-use and cannot be completed again. Must be called before the 15-minute expiry.
+Marks the setup link as complete and creates (or reuses) a widget installation for the customer. The link is single-use and cannot be completed again. Must be called before the 15-minute expiry.
 
 Operation: `completeSetupLink`
 

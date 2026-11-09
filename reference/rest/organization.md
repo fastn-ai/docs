@@ -27,7 +27,9 @@ Operation: `listOrgs`
 | `type` | query | string | No | company \| partner \| end_org \| personal (account is accepted as an alias of company). |
 | `tier` | query | string | No | account or tenant; any other value is a 400. One of: `account`, `tenant`. |
 | `parent_id` | query | string | No | Only children of this org. |
-| `include_usage` | query | string | No | 1 or true adds executions, events, storage_gb, overage, credits, integrations and users per org. One of: `1`, `true`. |
+| `parentId` | query | string | No | Alias of parent_id, used when parent_id is absent. |
+| `include_usage` | query | string | No | 1 or true adds executions, events, storage_gb, overage, credits, integrations and users per org. With no metered executions the count of runs is used, capped at 100,000; a capped row also carries executionsIsLowerBound: true. One of: `1`, `true`. |
+| `include_connections` | query | string | No | 1 or true adds connectionsCount (live connections, read from the connector layer) to each customer of the one partner the list is scoped to. Omitted on a row when it could not be counted. Combines with include_usage. One of: `1`, `true`. |
 
 **Responses**
 
@@ -48,7 +50,7 @@ Operation: `createTenant`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `name` | `string` | Yes |  |
-| `orgId` | `string` | No | Partner-supplied external reference for this customer org, stored as external_ref. Usable later as x-org-id / endOrgId. |
+| `orgId` | `string` | No | Partner-supplied external reference for this customer org, stored as external_ref. Usable later as x-org-id / orgId. |
 | `external_ref` | `string` | No | Alias of orgId. Rejected when it differs from orgId. |
 | `externalRef` | `string` | No | Alias of orgId. Rejected when it differs from orgId. |
 | `tier` | `string` | No | Customer tier: id or display name from the account's customer_tiers. |
@@ -64,8 +66,8 @@ Operation: `createTenant`
 **Responses**
 
 * `201`: Org created. Account-tier responses carry an `owner` object ({ userId, email, inviteStatus }, `inviteStatus` is `accepted` when the named owner already had a fastn account they had verified, so it is not a 'somebody must act' flag); `inviteSent: false` is added only when the invite email failed to send.
-* `400`: Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org.
-* `403`: No description.
+* `400`: Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org
+* `403`: This caller cannot set a paid plan, or account cap reached
 * `500`: Owner assignment failed and the partial org could not be removed, its slug stays in use
 * `502`: Owner assignment failed; nothing was written and the call can be retried
 
@@ -217,6 +219,20 @@ Operation: `updateOrgConfig`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `orgName` | `string` | No | Renames the org. Written to orgs.name, not to the config document. |
+| `timezone` | `string` | No | IANA time zone name, e.g. Asia/Karachi. Own org; any caller with settings.update. |
+| `setupLinkRedirectUrls` | `string[]` | No | Where a setup link may send the customer when it is done: https URLs (http only on localhost). A setup link's redirectUrl must be one of them. Own org. |
+| `setupLinkDefaultTtlMinutes` | `integer` | No | Default lifetime of a new setup link, in minutes, capped by the deployment maximum. Own org. |
+| `customer_tiers` | `object[]` | No | An account's catalogue of customer tiers, on its own org. Replaces the whole list, and a tier left out is also cleared from every customer on it in the same write: read the current list with getOrgConfig first and send every tier to keep. A customer is put on one with `tier`. |
+| `customer_tiers[].id` | `string` | Yes | Stable id, e.g. free or pro |
+| `customer_tiers[].name` | `string` | Yes | Display name |
+| `customer_tiers[].roleId` | `string` | Yes | The role a customer on this tier gets. Account-level roles (owner, admin, developer) are refused with CUSTOMER_ROLE_TOO_HIGH |
+| `customer_tiers[].limits` | `object` | No | Ceilings for a customer on this tier by dimension, e.g. { connections: 4, integrations: 4, users: 2 }; -1 is unlimited. Never above the account's own plan |
+| `customer_tiers[].resources` | `object` | No | What a customer on this tier may use |
+| `customer_tiers[].resources.connectors` | `object` | No |  |
+| `customer_tiers[].resources.connectors.only` | `string[]` | No | Connector ids a customer on this tier may connect |
+| `tier` | `string` | No | A partner writing one of its customers: the id of one of the partner's customer_tiers. |
+| `limits` | `object` | No | A partner writing one of its customers: that customer's own ceilings by dimension, overriding its tier's; -1 is unlimited, never above the partner's own plan. |
+| `roleOverride` | `string` | No | A partner writing one of its customers: a customer-level role that replaces its tier's roleId. Account-level roles are refused with CUSTOMER_ROLE_TOO_HIGH. |
 
 **Responses**
 
@@ -570,12 +586,8 @@ Operation: `createApiKey`
 | `environment` | `string` | No | One of: `production`, `staging`, `development`. |
 | `workflowEnvId` | `string` | No |  |
 | `permissions` | `string[]` | No |  |
-| `orgId` | `string` | No |  |
-| `endOrgId` | `string` | No |  |
-| `endOrgScope` | `object[]` | No |  |
-| `endOrgScope[].id` | `string` | Yes |  |
-| `endOrgScope[].name` | `string` | Yes |  |
-| `endOrgScope[].externalRef` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgScope` | `string[]` | No |  |
 | `ipWhitelist` | `string[]` | No |  |
 | `rateLimit` | `integer` | No |  |
 | `expiresAt` | `string` | No |  |
@@ -782,7 +794,7 @@ Operation: `whoami`
 | `data.org.externalRef` | `string` | The partner's own id for this org, when they set one |
 | `data.parentOrg` | `object` | The partner org, when the caller acts inside one of its customers. Null otherwise |
 | `data.parentOrg.id` | `string` |  |
-| `data.parentOrg.name` | `string` |  |
+| `data.parentOrg.name` | `string` | When actingAsTenant is true: the partner's PRODUCT name, or null when it has none. Never the partner's workspace name, which is internal and can be built from an email. Call the provider by this name, or "your provider" when it is null |
 | `data.parentOrg.type` | `string` |  |
 | `data.parentOrg.externalRef` | `string` |  |
 | `data.installationId` | `string` | Echoed from the request, not attested: unlike every other field here it is a client-supplied header on the public partner contract |
@@ -892,7 +904,6 @@ Operation: `listUsers`
 | `limit` | query | integer | No | Page size, clamped to 1-200. |
 | `offset` | query | integer | No |  |
 | `org_id` | query | string | No | list this org's members instead of the caller's. |
-| `end_org_id` | query | string | No | Alias for org_id. |
 
 **Responses**
 
@@ -933,8 +944,7 @@ Operation: `inviteUser`
 | `firstName` | `string` | No | Must not contain &lt;, >, or invisible characters. |
 | `lastName` | `string` | No | Must not contain &lt;, >, or invisible characters. |
 | `role` | `string` | No | One of owner, admin, developer, operator, viewer, end_user, or a custom role id (cr_...) of the target org. Default: `"viewer"`. |
-| `orgId` | `string` | No |  |
-| `endOrgId` | `string` | No | Invite into this customer of the caller's org. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `expiresAt` | `string` | No | Time-limited access: when the membership stops being valid. Must be in the future and carry a UTC offset. Omit for permanent access. |
 
 **Responses**
@@ -1040,7 +1050,9 @@ Operation: `approvePendingUser`
 
 **Responses**
 
-* `200`: Membership approved
+* `200`: Membership approved; it becomes the user's default org
+* `404`: No pending membership with that id in the caller's org
+* `409`: Already decided, or the request carries a role a domain join may not grant (owner)
 
 ### Reject pending membership
 
@@ -1061,6 +1073,8 @@ Operation: `rejectPendingUser`
 **Responses**
 
 * `200`: Membership rejected
+* `404`: No pending membership with that id in the caller's org
+* `409`: Already decided
 
 ### List pending membership requests
 

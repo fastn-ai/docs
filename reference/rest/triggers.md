@@ -32,7 +32,7 @@ Operation: `getTriggersMonitoring`
 
 **Responses**
 
-* `200`: Pipeline counters plus per-trigger stats, DLQ counts, circuit-breaker state, and the owning installationId / endOrgId (both null for a trigger created outside an installation)
+* `200`: Pipeline counters plus per-trigger stats, DLQ counts, circuit-breaker state, and the owning installationId / orgId (both null for a trigger created outside an installation)
 
 ### Reset circuit breaker
 
@@ -90,7 +90,7 @@ Operation: `forkTrigger`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Partner preview: act for this customer as its embed would |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -283,7 +283,7 @@ Operation: `sendTestAppEvent`
 GET /v1/schedulers
 ```
 
-Lists scheduled triggers in the caller's org (or one customer's with end_org_id), newest first, cursor-paginated. Use include_customers=true before creating a schedule for a customer: it adds every customer's schedulers, labelled, so you can see the customer already has one and not create a duplicate. Without it the list is your own org's only. Requires events.read.
+Lists scheduled triggers in the caller's org (or one customer's with org_id), newest first, cursor-paginated. Use include_customers=true before creating a schedule for a customer: it adds every customer's schedulers, labelled, so you can see the customer already has one and not create a duplicate. Without it the list is your own org's only. Requires events.read.
 
 Operation: `listSchedulers`
 
@@ -296,13 +296,14 @@ Operation: `listSchedulers`
 | `search` | query | string | No |  |
 | `status` | query | string | No | One of: `ACTIVE`, `DISABLED`. |
 | `include_instances` | query | string | No | true also lists triggers created by installations (per-customer instances). One of: `true`, `false`. |
-| `end_org_id` | query | string | No | List a customer's triggers. Must be a customer of the caller's org, otherwise 403. |
-| `include_customers` | query | string | No | true also lists every customer's schedulers: those you provisioned for a customer and those the customer made itself, never another partner's. Each row then carries customer ({ endOrgId, name }, null for your own) and isInstance. Add include_instances=true to also see schedulers a customer's setup (installation) created. Only for an owner, admin or developer listing its own org: 403 with end_org_id, from a customer-scoped caller, or from another role. Default false. One of: `true`, `false`. |
+| `orgId` | query | string | No | The customer whose triggers to list: the id you gave it at creation (orgId), or fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `include_customers` | query | string | No | true also lists every customer's schedulers: those you provisioned for a customer and those the customer made itself, never another partner's. Each row then carries customer ({ orgId, name }, null for your own) and isInstance. Add include_instances=true to also see schedulers a customer's setup (installation) created. Only for an owner, admin or developer listing its own org: 403 with org_id, from a customer-scoped caller, or from another role. Default false. One of: `true`, `false`. |
 
 **Responses**
 
 * `200`: { data: Scheduler[], nextCursor, hasMore, total }. nextCursor pages on (createdAt, id), so schedulers created at the same moment are not skipped.
-* `403`: end_org_id is not a customer of the caller's org, or include_customers=true from a caller that may not list its customers (not owner, admin or developer of its own org, a customer-scoped caller, or with end_org_id)
+* `403`: org_id is not a customer of the caller's org, or include_customers=true from a caller that may not list its customers (not owner, admin or developer of its own org, a customer-scoped caller, or with org_id)
 
 **Response fields**
 
@@ -311,14 +312,13 @@ Operation: `listSchedulers`
 | `data` | `object[]` |  |
 | `data[].id` | `string` |  |
 | `data[].name` | `string` |  |
-| `data[].orgId` | `string` |  |
-| `data[].endOrgId` | `string` |  |
+| `data[].orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 | `data[].installationId` | `string` |  |
 | `data[].status` | `string` | One of: `ACTIVE`, `DISABLED`. |
 | `data[].scheduler` | `object` | cron or rate, timezone, routes, run and failure state |
 | `data[].customer` | `object` | Only with include_customers=true. The customer this scheduler belongs to, null for your own. |
-| `data[].customer.endOrgId` | `string` |  |
 | `data[].customer.name` | `string` |  |
+| `data[].customer.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 | `data[].isInstance` | `boolean` | Only with include_customers=true. true when an installation (a customer's setup of a widget) created it. |
 | `nextCursor` | `string` |  |
 | `hasMore` | `boolean` |  |
@@ -330,7 +330,7 @@ Operation: `listSchedulers`
 POST /v1/schedulers
 ```
 
-Creates a scheduled trigger that fires its routes on a 5-field cron expression or a fixed rate (exactly one of cron or rate). runOnCreate=true also fires it once immediately; omitted or false waits for the schedule. A scheduler auto-disabled by repeated failures is re-enabled after reenableAfterMinutes, unless the failures were its workflow being deleted or never published: that one stays disabled until it is turned back on. Requires events.create.
+Creates a scheduled trigger that fires its routes on a 5-field cron expression or a fixed rate (exactly one of cron or rate). runOnCreate=true also fires it once immediately; omitted or false waits for the schedule. A scheduler auto-disabled by repeated failures is re-enabled after reenableAfterMinutes, unless the failures were its workflow being deleted or never published: that one stays disabled until it is turned back on. Leave routes[].env out unless the workflow is deployed to that environment; the response carries a warning when it is not. Requires events.create.
 
 Operation: `createScheduler`
 
@@ -341,7 +341,6 @@ Operation: `createScheduler`
 | `id` | `string` | No |  |
 | `name` | `string` | Yes |  |
 | `status` | `string` | No | One of: `ACTIVE`, `DISABLED`. |
-| `endOrgId` | `string` | No | The customer the trigger is for: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit when the caller is the customer. |
 | `installationId` | `string` | No |  |
 | `cron` | `object` | No |  |
 | `cron.expression` | `string` | Yes |  |
@@ -361,19 +360,27 @@ Operation: `createScheduler`
 | `routes[].routeType` | `string` | No | One of: `API`. Default: `"API"`. |
 | `routes[].headers` | `object` | No |  |
 | `routes[].payload` | `object` | No |  |
-| `routes[].env` | `string` | No |  |
+| `routes[].env` | `string` | No | Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route. |
 | `routes[].installationId` | `string` | No |  |
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
 | `routes[].tenantResolver.field` | `string` | Yes |  |
 | `reenableAfterMinutes` | `integer` | No | Default: `30`. |
 | `runOnCreate` | `boolean` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
-* `201`: { data: scheduler }
+* `201`: { data: scheduler, warning? }
 * `400`: Invalid JSON or a body that fails validation
 * `409`: A trigger with that id already exists
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `warning` | `string` | Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test). |
 
 ### Delete schedulers in bulk
 
@@ -445,7 +452,7 @@ Operation: `getScheduler`
 PUT /v1/schedulers/{id}
 ```
 
-Partially updates a scheduler and re-registers its timer. cron and rate cannot both be sent. routes, when sent, replaces the whole binding list. Requires events.update.
+Partially updates a scheduler and re-registers its timer. cron and rate cannot both be sent. routes, when sent, replaces the whole binding list. The response carries a warning when a route is pinned to an environment the workflow is not deployed to. Requires events.update.
 
 Operation: `updateScheduler`
 
@@ -479,7 +486,7 @@ Operation: `updateScheduler`
 | `routes[].routeType` | `string` | No | One of: `API`. Default: `"API"`. |
 | `routes[].headers` | `object` | No |  |
 | `routes[].payload` | `object` | No |  |
-| `routes[].env` | `string` | No |  |
+| `routes[].env` | `string` | No | Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route. |
 | `routes[].installationId` | `string` | No |  |
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
@@ -488,9 +495,16 @@ Operation: `updateScheduler`
 
 **Responses**
 
-* `200`: { data: scheduler }
+* `200`: { data: scheduler, warning? }
 * `400`: Invalid JSON or a body that fails validation
 * `404`: Not found in the caller's org
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `warning` | `string` | Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test). |
 
 ### Delete a scheduler
 
@@ -579,7 +593,7 @@ Operation: `listAppEventTriggers`
 | `status` | query | string | No |  |
 | `connectorId` | query | string | No |  |
 | `include_instances` | query | string | No | One of: `true`, `false`. |
-| `end_org_id` | query | string | No | Only one customer's triggers: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -591,7 +605,7 @@ Operation: `listAppEventTriggers`
 POST /v1/app-triggers
 ```
 
-Binds workflows to events a connector emits (1-50 events from GET /api/v1/app-triggers/connectors/{connectorId}/events). The connector must have an app registration or a webhook config, otherwise 400. When the connector supports it the provider-side subscription is created too; the response says whether it was attempted and, when it was not, the ingest URL to register by hand. A POLL event makes the trigger a polling trigger. Requires events.create.
+Binds workflows to events a connector emits (1-50 events from GET /api/v1/app-triggers/connectors/{connectorId}/events). The connector must have an app registration or a webhook config, otherwise 400. When the connector supports it the provider-side subscription is created too; the response says whether it was attempted and, when it was not, the ingest URL to register by hand. A POLL event makes the trigger a polling trigger. Leave routes[].env out unless the workflow is deployed to that environment; the response carries a warning when it is not. Requires events.create.
 
 Operation: `createAppEventTrigger`
 
@@ -601,7 +615,7 @@ Operation: `createAppEventTrigger`
 | --- | --- | --- | --- |
 | `name` | `string` | Yes |  |
 | `status` | `string` | No | One of: `ACTIVE`, `DISABLED`. |
-| `endOrgId` | `string` | No | The customer the trigger is for: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit when the caller is the customer. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `installationId` | `string` | No |  |
 | `connectorId` | `string` | Yes |  |
 | `connectorName` | `string` | Yes |  |
@@ -616,7 +630,7 @@ Operation: `createAppEventTrigger`
 | `routes[].routeType` | `string` | No | One of: `API`. Default: `"API"`. |
 | `routes[].headers` | `object` | No |  |
 | `routes[].payload` | `object` | No |  |
-| `routes[].env` | `string` | No |  |
+| `routes[].env` | `string` | No | Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route. |
 | `routes[].installationId` | `string` | No |  |
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
@@ -631,8 +645,16 @@ Operation: `createAppEventTrigger`
 
 **Responses**
 
-* `201`: { data: trigger with webhookUrl, subscription outcome }
+* `201`: { data: trigger with webhookUrl, subscription, warning? }
 * `400`: Invalid JSON or a body that fails validation
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `subscription` | `object` | Whether the provider-side subscription was attempted and its outcome; when it was not, the reason and the ingest url to register by hand. |
+| `warning` | `string` | Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test). |
 
 ### Delete app-event triggers in bulk
 
@@ -722,7 +744,7 @@ Operation: `getAppEventTrigger`
 PUT /v1/app-triggers/{id}
 ```
 
-Partially updates an app-event trigger. routes and events, when sent, replace the whole list. Requires events.update.
+Partially updates an app-event trigger. routes and events, when sent, replace the whole list. The response carries a warning when a route is pinned to an environment the workflow is not deployed to. Requires events.update.
 
 Operation: `updateAppEventTrigger`
 
@@ -748,7 +770,7 @@ Operation: `updateAppEventTrigger`
 | `routes[].routeType` | `string` | No | One of: `API`. Default: `"API"`. |
 | `routes[].headers` | `object` | No |  |
 | `routes[].payload` | `object` | No |  |
-| `routes[].env` | `string` | No |  |
+| `routes[].env` | `string` | No | Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route. |
 | `routes[].installationId` | `string` | No |  |
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
@@ -762,9 +784,16 @@ Operation: `updateAppEventTrigger`
 
 **Responses**
 
-* `200`: { data: trigger }
+* `200`: { data: trigger, warning? }
 * `400`: Invalid JSON or a body that fails validation
 * `404`: Not found in the caller's org
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `warning` | `string` | Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test). |
 
 ### Delete an app-event trigger
 
@@ -793,7 +822,7 @@ Operation: `deleteAppEventTrigger`
 POST /v1/app-triggers/{id}/retry-subscription
 ```
 
-Re-runs the provider subscription for a FAILED/NONE app-event trigger.
+Re-runs the provider subscription for a FAILED/NONE app-event trigger. Answers 409 when a registration made with the trigger's previous input values could not be removed; force=true registers anyway once it has been removed at the provider.
 
 Operation: `retryTriggerSubscription`
 
@@ -802,10 +831,12 @@ Operation: `retryTriggerSubscription`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
+| `force` | query | string | No | true: register even though the previous registration could not be removed. Use it only once that registration is gone at the provider, or both fire the trigger. One of: `true`. |
 
 **Responses**
 
 * `200`: Updated trigger plus subscription {success, error, warning}. warning is set when the trigger's saved connection could no longer be used and the subscription ran on the customer's current connection: the trigger still names the old one, so recreate it
+* `409`: SUBSCRIPTION_CONFLICT. A registration made with the previous input values could not be removed (force=true registers anyway), or the subscription changed while this retry waited (read the trigger first; force does not apply).
 
 ### App-event trigger route stats
 
@@ -836,7 +867,7 @@ Operation: `getAppEventTriggerStats`
 GET /v1/webhooks
 ```
 
-Lists inbound webhook triggers in the caller's org (or a customer's with end_org_id), cursor-paginated. Requires events.read.
+Lists inbound webhook triggers in the caller's org (or a customer's with org_id), cursor-paginated. Requires events.read.
 
 Operation: `listWebhookTriggers`
 
@@ -849,12 +880,13 @@ Operation: `listWebhookTriggers`
 | `search` | query | string | No |  |
 | `status` | query | string | No | One of: `ACTIVE`, `DISABLED`. |
 | `include_instances` | query | string | No | true also lists triggers created by installations (per-customer instances). One of: `true`, `false`. |
-| `end_org_id` | query | string | No | List a customer's triggers. Must be a customer of the caller's org, otherwise 403. |
+| `orgId` | query | string | No | The customer whose triggers to list: the id you gave it at creation (orgId), or fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `200`: { data: Trigger[], nextCursor, hasMore, total }
-* `403`: end_org_id is not a customer of the caller's org
+* `403`: org_id is not a customer of the caller's org
 
 ### Create a webhook trigger
 
@@ -862,7 +894,7 @@ Operation: `listWebhookTriggers`
 POST /v1/webhooks
 ```
 
-Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external system. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere (the response carries a warning). authMethod API_KEY (default) makes callers send a fastn API key. endOrgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.
+Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external system. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere, and a route pinned (env) to an environment the workflow is not deployed to dead-letters every event (the response carries a warning for either). authMethod API_KEY (default) makes callers send a fastn API key. orgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.
 
 Operation: `createWebhookTrigger`
 
@@ -873,7 +905,6 @@ Operation: `createWebhookTrigger`
 | `id` | `string` | No |  |
 | `name` | `string` | Yes |  |
 | `status` | `string` | No | One of: `ACTIVE`, `DISABLED`. |
-| `endOrgId` | `string` | No | The customer the trigger is for: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit when the caller is the customer. |
 | `installationId` | `string` | No |  |
 | `authMethod` | `string` | No | One of: `API_KEY`, `NONE`. Default: `"API_KEY"`. |
 | `routeExecutionMode` | `string` | No | One of: `parallel`, `sequential`. Default: `"parallel"`. |
@@ -887,17 +918,25 @@ Operation: `createWebhookTrigger`
 | `routes[].routeType` | `string` | No | One of: `API`. Default: `"API"`. |
 | `routes[].headers` | `object` | No |  |
 | `routes[].payload` | `object` | No |  |
-| `routes[].env` | `string` | No |  |
+| `routes[].env` | `string` | No | Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route. |
 | `routes[].installationId` | `string` | No |  |
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
 | `routes[].tenantResolver.field` | `string` | Yes |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `201`: { data: trigger with triggerUrl, warning? }
 * `400`: Invalid JSON or a body that fails validation
 * `409`: A trigger with that id already exists
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `warning` | `string` | Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test). |
 
 ### Delete webhook triggers in bulk
 
@@ -975,7 +1014,7 @@ Operation: `updateWebhookTrigger`
 | `routes[].routeType` | `string` | No | One of: `API`. Default: `"API"`. |
 | `routes[].headers` | `object` | No |  |
 | `routes[].payload` | `object` | No |  |
-| `routes[].env` | `string` | No |  |
+| `routes[].env` | `string` | No | Environment this route fires into. Omit it to run the latest published version (test), which is right for almost every trigger. Set it only to an environment the workflow is already deployed to: a route pinned to an environment with no active deployment dead-letters every event or scheduled fire, and a webhook, app-event or scheduler create/update answers with a warning naming the route. |
 | `routes[].installationId` | `string` | No |  |
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
@@ -986,6 +1025,13 @@ Operation: `updateWebhookTrigger`
 * `200`: { data: trigger, warning? }
 * `400`: Invalid JSON or a body that fails validation
 * `404`: Not found in the caller's org
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `warning` | `string` | Present when the trigger was saved but will not deliver as configured: a route is pinned (routes[].env) to an environment the workflow has no active deployment in (or, for test, no published version), so every event or scheduled fire that route receives is dead-lettered; for a webhook trigger, also when it has no routes. Names the route, the environment and the fix: deploy the workflow there, or remove env from the route to run the latest published version (test). |
 
 ### Delete a webhook trigger
 
@@ -1102,7 +1148,7 @@ Operation: `replayDlqEntry`
 GET /v1/events
 ```
 
-Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). Scoped by org_id OR end_org_id.
+Events the pipeline consumed, newest first, with the outcome each one got: dispatched (enqueued to its route bindings), no_routes (accepted but the trigger has no bindings, so delivered nowhere), dropped (the trigger was deleted or disabled between ingest and consumption), skipped_backlog (a scheduler fire not dispatched because a run it would start is already waiting for a concurrency slot; payload.skipped says which routes and why), or skipped_quota (a scheduler fire not dispatched because the org that owns the workflow has used its executions_per_month; payload.quotaExceeded names the route ids). An event whose every run so far ended through fastn.skip(reason) also carries runOutcome: "skipped" (absent otherwise). Scoped by org_id OR org_id.
 
 Operation: `listEvents`
 
@@ -1120,14 +1166,14 @@ Operation: `listEvents`
 | `delivery` | query | string | No | Lists the events behind a Reporting (Overview) count. dlq: dead-letter deliveries that will not be retried again (dead, or failed with every retry spent), first failed in [since, until), excluding routes to workflows labelled Internal or Staging. retrying: dead-letter deliveries still due another attempt, of any age unless since/until bound when they first failed. waiting: events received in the last hour, dispatched, with no workflow run yet (since/until are a 400 here). The Overview counts deliveries; this lists the distinct events they belong to, newest delivery first, so an event dead-lettered on two routes is one row. A delivery with no event id, or whose event is no longer kept, has no row. type, triggerId, env and search apply on top; /counts counts the same set. Anything else is a 400. One of: `dlq`, `retrying`, `waiting`. |
 | `outcome` | query | string | No | Lists the events behind a Reporting (Overview) events or retry number, over the Overview's window (since = window.from, until = window.to, no until when it ends now) and customer. Event numbers: received, first_attempt, recovered, not_processed, in_progress, replayed, replay_succeeded, replay_failed, replayed_from_dlq, rerun_by_hand, event_replay, after_dlq: the events the trigger_event_outcomes rows summed for that number count, by the hour each was received in, classified again when listed (an event whose outcome changed since the summary's last pass is listed under its new one). Delivery numbers: recovered_by_retry, sent_to_dlq: the distinct events the counted deliveries carried. Every response carries countedAs { unit: events\|deliveries, count (the Overview's number), unlisted (deliveries with no event to list), note }. Cannot be combined with delivery. A customer-scoped session gets 403. Anything else is a 400. One of: `received`, `first_attempt`, `recovered`, `not_processed`, `in_progress`, `replayed`, `replay_succeeded`, `replay_failed`, `replayed_from_dlq`, `rerun_by_hand`, `event_replay`, `after_dlq`, `recovered_by_retry`, `sent_to_dlq`. |
 | `until` | query | string | No | Exclusive upper bound on receivedAt (with delivery=dlq or retrying, on when the delivery first failed). A malformed timestamp is a 400. |
-| `customer` | query | string | No | Narrows to one customer, inside the caller's scope. The caller's own org id: its events with no customer on them (with delivery, the dead letters of its own triggers). An end org of the caller: events whose endOrgId is that customer (with delivery=dlq/retrying, the dead letters its triggers hold). Anything else is a 404. A token scoped to an end org may name only that end org. |
+| `customer` | query | string | No | Narrows to one customer, inside the caller's scope. The caller's own org id: its events with no customer on them (with delivery, the dead letters of its own triggers). An customer of the caller: events whose orgId is that customer (with delivery=dlq/retrying, the dead letters its triggers hold). Anything else is a 404. A token scoped to an customer may name only that customer. |
 
 **Responses**
 
-* `200`: { data: Event[], pagination: { total, limit, offset, totalIsLowerBound } }, id, orgId, endOrgId, triggerId, type, source, payload, status, receivedAt (createdAt is an alias). total stops counting at 10000, at which point totalIsLowerBound is true.
+* `200`: { data: Event[], pagination: { total, limit, offset, totalIsLowerBound } }, id, orgId, orgId, triggerId, type, source, payload, status, receivedAt (createdAt is an alias). total stops counting at 10000, at which point totalIsLowerBound is true.
 * `400`: Malformed since, until or env, unknown type, delivery or outcome, outcome with delivery, or since/until with delivery=waiting
 * `403`: outcome from a customer-scoped session
-* `404`: customer is not the caller or one of its end orgs
+* `404`: customer is not the caller or one of its customers
 * `503`: delivery=waiting could not be read
 
 ### List alert delivery targets
@@ -1195,7 +1241,7 @@ Operation: `testAlert`
 GET /v1/events/count
 ```
 
-Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR end_org_id.
+Counts received events matching the same filters as GET /api/v1/events, without the 10000 cap the list's total carries. Scoped by org_id OR org_id.
 
 Operation: `countEvents`
 
@@ -1242,7 +1288,7 @@ Operation: `eventCounts`
 * `200`: { data: { total, byType: { webhook, scheduled, manual }, totalIsLowerBound } }
 * `400`: Malformed since or until, unknown delivery or outcome, outcome with delivery
 * `403`: outcome from a customer-scoped session
-* `404`: customer is not the caller or one of its end orgs
+* `404`: customer is not the caller or one of its customers
 
 ### Get one received event
 
