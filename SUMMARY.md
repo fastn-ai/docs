@@ -23,6 +23,7 @@
   * [Worked example](build/agent/worked-example.md)
 * [Build from your AI tool](build/building-from-your-ai-agent.md)
   * [Connect your AI tool (MCP)](build/mcp-gateway/README.md)
+    * [From your backend](build/mcp-gateway/from-your-backend.md)
     * [Claude](build/mcp-gateway/claude.md)
     * [Claude Code](build/mcp-gateway/claude-code.md)
     * [ChatGPT](build/mcp-gateway/chatgpt.md)
