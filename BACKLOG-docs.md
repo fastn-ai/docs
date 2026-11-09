@@ -30,10 +30,10 @@ Moved out of the published pages on 2026-11-04 so readers no longer see writer n
 - line 78: > **Screenshot:** Activity → Executions filtered to show a specific customer's workflow runs.
 
 ## tutorials/saas-admin/roles-and-permissions-setup.md
-- line 22: > **Screenshot:** Settings → ADVANCED → Roles showing the 6 system roles with permission counts.
+- line 22: > **Screenshot:** Settings → ADVANCED → Roles showing the 6 built-in roles with permission counts.
 - line 48: > **Screenshot:** Role detail view for "Admin" showing the permission categories with checkboxes - Connectors 6/6, Connections 6/6, Workflows 7/7, Agents 5/5, Tools 5/5.
 - line 61: > **Screenshot:** Settings → People showing the role badge on a user and the filter dropdowns.
-- line 79: > **Screenshot:** Create Custom Role form or the "Duplicate as Custom" button on a system role.
+- line 79: > **Screenshot:** Create Custom Role form or the "Duplicate as Custom" button on a built-in role.
 - line 95: > **Screenshot:** Audit Log showing entries with timestamp, user, action, resource, and outcome columns.
 
 ## tutorials/saas-admin/setting-up-triggers.md

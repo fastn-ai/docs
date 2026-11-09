@@ -56,7 +56,7 @@ Customers only see what you have saved and published in the widget builder. Use 
 | The embed worked last month and is now blank | The snippet points at a retired host | Use `https://api.fastn.dev` for every embed and token call |
 | Customers are confused by "fastn.ai" on the Google or HubSpot login | No custom OAuth app is registered for that connector | Register your own OAuth app on the connector's **Auth** tab |
 | A customer needs integrations before you have shipped the embed | Your engineering team has not added the iframe yet | Send a [shareable link](README.md) from **Embed > Widget > Embed** for a pilot. Treat the link as a secret, set an expiry, and revoke it when the pilot ends |
-| A connection needs two logins (for example HubSpot, then an app ID and API key for the second system) | The integration uses two connectors | Tell customers up front that the widget asks for both, in order |
+| A connection needs two logins (for example HubSpot, then an app ID and API key for the second app) | The integration uses two connectors | Tell customers up front that the widget asks for both, in order |
 | Events from the source app never arrive | The source app has no API to register webhooks, so registration is manual | Show customers where to copy the webhook URL in the widget and where to paste it in the source app |
 | You need a layout the iframe cannot do | The iframe has one general-purpose design, styled through the widget builder | Use the [SDK](sdk.md) for events, theming and modal mode, or build your own UI on the headless package |
 

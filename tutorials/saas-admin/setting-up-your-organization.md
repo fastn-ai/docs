@@ -37,7 +37,7 @@ The People page shows a table with columns **Person**, **Role**, **Status**, **A
 
 #### Roles
 
-fastn has these system roles. **Settings → Roles** counts each role's permissions across 11 resources (Connectors, Connections, Workflows, Users, Settings, Events, Secrets, Executions, Widgets, Customers and Unified API), 44 permissions in all:
+fastn has these built-in roles. **Settings → Roles** counts each role's permissions across 11 resources (Connectors, Connections, Workflows, Users, Settings, Events, Secrets, Executions, Widgets, Customers and Unified API), 44 permissions in all:
 
 | Role          | Permissions | What they can do                                                                                                      |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ fastn has these system roles. **Settings → Roles** counts each role's permissi
 | **Viewer**    | 6           | Read-only access to connectors, connections, workflows, widgets, events and the Unified API. Not executions, users, settings or secrets, and no AI assistant. |
 | **End User**  | 35          | The role for people at your customers using the embedded widget: create connections and use the widget's assistant inside their own customer. |
 
-To see the full permission breakdown or build your own role, go to **Settings → Roles** and click **Create custom role**. A custom role is based on a system role and can't go beyond it.
+To see the full permission breakdown or build your own role, go to **Settings → Roles** and click **Create custom role**. A custom role is based on an app role and can't go beyond it.
 
 ### Step 3: Manage customers
 

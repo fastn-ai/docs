@@ -49,7 +49,7 @@ The button depends on whether you have connected:
 
 | State | Button | What it does |
 | --- | --- | --- |
-| Not connected | **Connect** | Opens the connect dialog for this connector. See [Connect a system](connect-a-system.md). |
+| Not connected | **Connect** | Opens the connect dialog for this connector. See [Connect an app](connect-an-app.md). |
 | Connected | **Add another connection**, plus a chevron | **Add another connection** opens the connect dialog again so you can sign in a second account. The chevron opens a menu with **Disconnect**. |
 
 Cards of connectors your workspace owns also have a **⋯** menu with **Select**, **Edit**, **Export** and **Delete**; see [Importing and exporting](importing-and-exporting.md#export-connectors) and [Editing, publishing and deleting](editing-and-deleting.md).

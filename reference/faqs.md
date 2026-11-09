@@ -40,7 +40,7 @@ If an identifier says tenant, it means one of your customers.
 
 <summary>What is the difference between a connector and a connection?</summary>
 
-A **connector** is the definition of a system: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
+A **connector** is the definition of an app: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
 
 </details>
 
@@ -66,7 +66,7 @@ The precise meaning of each status is not documented here; treat *Expired* and *
 
 <summary>What is a platform-wide connector for?</summary>
 
-Systems your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
+Apps your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
 
 </details>
 
@@ -92,7 +92,7 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 | **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
 | **Long**     | Returns 202, runs in the background.             | **Up to 36 hours** | 30s - 36h |
 
-Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
+Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
 
 </details>
 
@@ -226,9 +226,9 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 <summary>Why does the same connector appear twice in the catalog?</summary>
 
-Because two entries exist for one system: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
+Because two entries exist for one app: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
 
-The practical consequence: the connector count is a count of *entries*, not of distinct systems, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
+The practical consequence: the connector count is a count of *entries*, not of distinct apps, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
 
 </details>
 

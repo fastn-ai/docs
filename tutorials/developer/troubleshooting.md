@@ -31,11 +31,11 @@ Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true
 
 ### "Failed to fetch" in the widget
 
-**Most likely cause:** a tenancy or token mismatch.
+**Most likely cause:** the token is missing, expired, or for a different customer.
 
-This can appear when the iframe URL's tenancy shape doesn't match how the token was minted - for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
+The iframe URL takes the token alone (`?token=<token>`); an older snippet that also passes a `tenant-id` or customer parameter can disagree with the customer the token was minted for.
 
-**Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `x-org-id` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
+**Fix:** Drop any parameter other than `token` from the iframe URL (see [Tenancy](understanding-tenancy.md)), and check that the token was minted with the right `x-org-id` and identity headers. Confirm the backend token pattern is being used rather than a hardcoded token.
 
 
 

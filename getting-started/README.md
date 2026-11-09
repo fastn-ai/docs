@@ -8,19 +8,19 @@ description: What fastn does, who each part is for, and the path from signup to 
 
 ### The problem fastn solves
 
-Every integration you ship yourself carries the same recurring cost: an OAuth app to register, tokens to refresh, per-customer credentials to store, an upstream API that changes without warning, and a support queue when a sync quietly stops. Multiply that by the number of systems your customers use.
+Every integration you ship yourself carries the same recurring cost: an OAuth app to register, tokens to refresh, per-customer credentials to store, an upstream API that changes without warning, and a support queue when a sync quietly stops. Multiply that by the number of apps your customers use.
 
 fastn takes that whole layer. You keep the part your customers pay for.
 
 ### The five things you work with
 
-**Connectors** are the systems your customers can authorize. There is a catalog managed by fastn, plus any you create. A connector knows an API's actions, its auth methods, and its webhooks.
+**Connectors** are the apps your customers can authorize. There is a catalog managed by fastn, plus any you create. A connector knows an API's actions, its auth methods, and its webhooks.
 
 **Connections** are what you get when a specific customer authorizes a specific connector. Credentials live encrypted on fastn's side, scoped to that customer.
 
-**Workflows** are the code that runs. Each one is a JavaScript module: a file called `<slug>.js` that exports `export default async function(ctx)`. It reads from one system, transforms, and writes to another. Build with AI writes them; you review, test, publish and deploy.
+**Workflows** are the code that runs. Each one is a JavaScript module: a file called `<slug>.js` that exports `export default async function(ctx)`. It reads from one app, transforms, and writes to another. Build with AI writes them; you review, test, publish and deploy.
 
-**Triggers** decide when a workflow runs: an inbound webhook, a schedule, or an event from a connected system.
+**Triggers** decide when a workflow runs: an inbound webhook, a schedule, or an event from a connected app.
 
 **Unified APIs** give you one canonical endpoint per business entity (contact, document, message), served by whichever provider each customer connected, so your code stops branching per vendor.
 

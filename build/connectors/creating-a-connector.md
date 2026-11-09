@@ -112,7 +112,7 @@ If you would rather fastn built the connector, use **Request connector** on the 
 
 | Field | Required | What to write |
 | --- | --- | --- |
-| **Which system?** | Yes | The app's name. |
+| **Which app?** | Yes | The app's name. |
 | **Website or API docs** | Yes | *The docs if you have them, the product page otherwise. This is the difference between an estimate and a guess.* |
 | **What does it need to do?** | Yes | *The workflow, not the endpoint.* For example: *When a deal closes in HubSpot, create the employee record in Workday and keep their department in sync.* This tells the team which actions you need, and sometimes shows that an existing connector already does it. |
 | **Anything else?** | No | How it authenticates, sandbox credentials, a vendor contact, how many customers are waiting, a deadline. |

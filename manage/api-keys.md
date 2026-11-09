@@ -37,7 +37,7 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
 #### Identity
 
-**Name \***: shown in the audit log beside everything this key does. Name it after the system that will hold it, not after a person.
+**Name \***: shown in the audit log beside everything this key does. Name it after the service that will hold it, not after a person.
 
 **Mode**: **Test** or **Live**, defaulting to **Test**.
 
@@ -162,7 +162,7 @@ Full detail in the [HTTP API reference](../reference/api.md).
 
 ### Practice worth keeping
 
-* One key per consuming system, so revoking one does not take down four things.
+* One key per consuming service, so revoking one does not take down four things.
 * Rotate on a schedule, and when anyone with access leaves.
 * Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embedding the widget](../embed/embedding/README.md).
 * Check **Last used** before revoking. A key showing Never is either unused or misconfigured; either way, find out which.

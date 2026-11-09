@@ -155,10 +155,10 @@ Keep the vendor-specific parts on the direct connector: the two mix freely in on
 
 ## Reconciliation
 
-**The problem.** Everything reports success and the two systems still disagree.
+**The problem.** Everything reports success and the two apps still disagree.
 
 **The shape.** A nightly workflow that reads counts or checksums from both sides and writes the difference to `fastn.db`, plus an [alert](../operate/alerts.md) on **Records failed above 0**.
 
 It is the pattern people add after the first silent divergence. It is cheaper to add before.
 
-**Ask for it as:** *"A nightly check that both systems have the same number of open orders, and tell me when they don't."*
+**Ask for it as:** *"A nightly check that both apps have the same number of open orders, and tell me when they don't."*

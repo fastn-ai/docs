@@ -27,7 +27,7 @@ If [Events](events.md) shows nothing, the problem is before fastn.
 
 | Trigger type  | Check                                                                                       |
 | ------------- | --------------------------------------------------------------------------------------------- |
-| **Webhook**   | Is the sending system pointed at the right URL? If the trigger's auth is API key, is the sender sending the key in the `x-api-key` header? (`x-fastn-access-key` is still accepted.) |
+| **Webhook**   | Is the sending app pointed at the right URL? If the trigger's auth is API key, is the sender sending the key in the `x-api-key` header? (`x-fastn-access-key` is still accepted.) |
 | **Schedule**  | Is the trigger Active rather than Disabled? Is its timezone what you assumed?                |
 | **App event** | Is the connector's **Webhook config** set up, and does the customer have an active connection? |
 
@@ -74,7 +74,7 @@ The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 
 * **One slow call**: the fix is upstream, or batching, not a longer timeout.
 * **Hundreds of calls**: batch them, or move to the Long tier.
-* **A Pending trace that never resolved**: the upstream system accepted the request and never answered.
+* **A Pending trace that never resolved**: the upstream app accepted the request and never answered.
 
 **Escalate on timeout** retries one tier up (instant to standard), which buys time without redesigning. It returns a queued execution id to poll, so the caller's response shape changes; the option is hidden on the Long tier, which has nothing above it.
 
@@ -132,7 +132,7 @@ Almost always a connection. Open [Connections](../build/connections/README.md) i
 | **Expired**  | The customer re-authorizes through your widget.               |
 | **Failed**   | Access was revoked, a password changed, or a key was rotated. Same fix. |
 | **Inactive** | The row menu offers **Reconnect**, **Rename** and **Disconnect**. There is no re-enable: reconnect it. |
-| Missing      | They never connected that system.                             |
+| Missing      | They never connected that app.                             |
 
 The **Needs action** status chip lists every connection that needs someone to act.
 

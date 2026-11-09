@@ -10,7 +10,7 @@ Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/READ
 | --- | --- | --- |
 | 1. Understand | Checks who you are and what's already in your workspace | Approve the read-only fastn calls |
 | 2. Plan | Picks the connectors and recommends a plan | Answer its business questions; the recommendation is pre-selected |
-| 3. Map (only when data moves between systems) | Proposes field mappings and filters | Approve them on the review page it links to |
+| 3. Map (only when data moves between apps) | Proposes field mappings and filters | Approve them on the review page it links to |
 | 4. Test cases | Writes acceptance tests for the whole integration | Approve them on the review page; this is the go-ahead to build |
 | 5. Build | Builds, tests and publishes each workflow, sets its trigger, and can set up a widget | Confirm how often it runs, and any test that writes more than a couple of live records |
 | 6. Verify | Runs the approved tests and checks real runs | Read its report: what's running, what passed, what's left |
