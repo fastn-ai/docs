@@ -14,7 +14,7 @@ Base URL, authentication and errors are on the [REST API overview](README.md).
 GET /v1/environments
 ```
 
-The org's workflow environments, ordered default first, then oldest first, then by id as a tiebreak (environments created together in one bulk call share a creation timestamp, so id is what makes the order total). Includes the built-in Live environment (slug 'live', isDefault true, isDeletable false), which every workflow-authoring org is seeded at creation, it is a real row, and its id is what /workflows/{id}/deploy and /workflows/{id}/promote accept. A customer workspace (end_org) is deliberately not seeded one and can legitimately return an empty list. 'test' is a separate hardcoded environment with no row here; it is a valid env_slug for env-configs only, never a deploy target.
+The org's workflow environments, ordered default first, then oldest first, then by id as a tiebreak (environments created together in one bulk call share a creation timestamp, so id is what makes the order total). Includes the built-in Live environment (slug 'live', isDefault true, isDeletable false), which every workflow-authoring org is seeded at creation, it is a real row, and its id is what /workflows/{id}/deploy and /workflows/{id}/promote accept. A customer workspace is deliberately not seeded one and can legitimately return an empty list. 'test' is a separate hardcoded environment with no row here; it is a valid env_slug for env-configs only, never a deploy target.
 
 Operation: `listEnvironments`
 
@@ -282,7 +282,7 @@ Operation: `removeEnvironmentConfigKey`
 GET /v1/secrets
 ```
 
-Lists secret names and metadata (scope, type, endOrgId, environment); values are never returned. end_org_id narrows to that customer's secrets plus org-wide ones. An environment-pinned API key sees only its environment, test, and org-wide secrets.
+Lists secret names and metadata (scope, type, orgId, environment); values are never returned. org_id narrows to that customer's secrets plus org-wide ones. An environment-pinned API key sees only its environment, test, and org-wide secrets.
 
 Operation: `listSecrets`
 
@@ -290,7 +290,7 @@ Operation: `listSecrets`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `end_org_id` | query | string | No | Return this customer's secrets plus the org-wide ones. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -324,8 +324,8 @@ Operation: `createSecret`
 | `name` | `string` | Yes |  |
 | `value` | `string` | Yes |  |
 | `type` | `string` | No | One of: `text`, `json`. Default: `"text"`. |
-| `endOrgId` | `string` | No |  |
 | `environment` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -358,7 +358,7 @@ Operation: `updateSecret`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | The secret's name (UPPER_SNAKE_CASE), not its generated id. |
-| `end_org_id` | query | string | No | Customer (customer) scope of the secret; omitted means the org-wide secret. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `environment` | query | string | No | Environment scope of the secret; omitted means no environment narrowing. |
 
 **Request body**
@@ -381,7 +381,7 @@ Operation: `updateSecret`
 DELETE /v1/secrets/{id}
 ```
 
-Deletes the secret with this name at exactly the given scope (end_org_id + environment; both omitted = the org-wide secret). 404 when no secret matches that scope; 403 when an environment-pinned API key targets another environment.
+Deletes the secret with this name at exactly the given scope (org_id + environment; both omitted = the org-wide secret). 404 when no secret matches that scope; 403 when an environment-pinned API key targets another environment.
 
 Operation: `deleteSecret`
 
@@ -390,7 +390,7 @@ Operation: `deleteSecret`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | The secret's name (UPPER_SNAKE_CASE), not its generated id. |
-| `end_org_id` | query | string | No | Customer (customer) scope of the secret; omitted means the org-wide secret. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `environment` | query | string | No | Environment scope of the secret; omitted means no environment narrowing. |
 
 **Responses**

@@ -24,7 +24,7 @@ Operation: `listAlerts`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -55,10 +55,10 @@ Operation: `listAlerts`
 | `data[].deliveries[].targetName` | `string` | connection: optional display name of the target, at most 200 characters |
 | `data[].enabled` | `boolean` |  |
 | `data[].throttle` | `boolean` | instant and code rules: true = at most one notification per workflow (and alert key) per cooldown window, the rest counted and summarized; false = every failure or raised alert is its own notification. Every rule stays inside the per-rule and per-org send budget. Always true for threshold rules. |
-| `data[].endOrgId` | `string` |  |
 | `data[].lastFiredAt` | `string` | When a notification last reached at least one channel. |
 | `data[].createdAt` | `string` |  |
 | `data[].updatedAt` | `string` |  |
+| `data[].orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### Create alert rule
 
@@ -74,7 +74,7 @@ Operation: `createAlert`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Request body**
 
@@ -92,6 +92,7 @@ Operation: `createAlert`
 | `deliveries[].to` | `string` | No | email: the address |
 | `deliveries[].url` | `string` | No | webhook / slack: the URL |
 | `deliveries[].connectionId` | `string` | No | connection: the connected account to send through |
+| `deliveries[].connectorSlug` | `string` | No | connection: the connector slug of the connected account |
 | `deliveries[].target` | `string` | No | connection: the channel / chat to post to |
 | `deliveries[].subject` | `string` | No | email, or a connection through Gmail: optional subject, one line, at most 200 characters |
 | `deliveries[].targetName` | `string` | No | connection: optional display name of the target, at most 200 characters |
@@ -129,10 +130,10 @@ Operation: `createAlert`
 | `data.deliveries[].targetName` | `string` | connection: optional display name of the target, at most 200 characters |
 | `data.enabled` | `boolean` |  |
 | `data.throttle` | `boolean` | instant and code rules: true = at most one notification per workflow (and alert key) per cooldown window, the rest counted and summarized; false = every failure or raised alert is its own notification. Every rule stays inside the per-rule and per-org send budget. Always true for threshold rules. |
-| `data.endOrgId` | `string` |  |
 | `data.lastFiredAt` | `string` | When a notification last reached at least one channel. |
 | `data.createdAt` | `string` |  |
 | `data.updatedAt` | `string` |  |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### List alert delivery channels
 
@@ -148,7 +149,7 @@ Operation: `listAlertChannels`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `includeInactive` | query | string | No | Also return connections whose status is not ACTIVE One of: `true`, `false`. |
 
 **Responses**
@@ -169,7 +170,7 @@ Operation: `enableDefaultAlerts`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Request body**
 
@@ -220,7 +221,7 @@ Operation: `updateAlert`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Alert rule id. |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Request body**
 
@@ -238,6 +239,7 @@ Operation: `updateAlert`
 | `deliveries[].to` | `string` | No | email: the address |
 | `deliveries[].url` | `string` | No | webhook / slack: the URL |
 | `deliveries[].connectionId` | `string` | No | connection: the connected account to send through |
+| `deliveries[].connectorSlug` | `string` | No | connection: the connector slug of the connected account |
 | `deliveries[].target` | `string` | No | connection: the channel / chat to post to |
 | `deliveries[].subject` | `string` | No | email, or a connection through Gmail: optional subject, one line, at most 200 characters |
 | `deliveries[].targetName` | `string` | No | connection: optional display name of the target, at most 200 characters |
@@ -276,10 +278,10 @@ Operation: `updateAlert`
 | `data.deliveries[].targetName` | `string` | connection: optional display name of the target, at most 200 characters |
 | `data.enabled` | `boolean` |  |
 | `data.throttle` | `boolean` | instant and code rules: true = at most one notification per workflow (and alert key) per cooldown window, the rest counted and summarized; false = every failure or raised alert is its own notification. Every rule stays inside the per-rule and per-org send budget. Always true for threshold rules. |
-| `data.endOrgId` | `string` |  |
 | `data.lastFiredAt` | `string` | When a notification last reached at least one channel. |
 | `data.createdAt` | `string` |  |
 | `data.updatedAt` | `string` |  |
+| `data.orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 
 ### Delete alert rule
 
@@ -296,7 +298,7 @@ Operation: `deleteAlert`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Alert rule id. |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -317,7 +319,7 @@ Operation: `listAlertEvents`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Alert rule id. |
-| `endOrgId` | query | string | No | Act on this customer's own alert rules ("view as customer"). Alerts are not inherited: each org has its own. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -386,7 +388,7 @@ Operation: `listAuditLog`
 | --- | --- | --- | --- | --- |
 | `action` | query | string | No | Exact action, e.g. workflow.update. |
 | `userId` | query | string | No | Actor user id. |
-| `endOrgId` | query | string | No | Only events of this customer (customer). |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `resourceType` | query | string | No |  |
 | `search` | query | string | No | Case-insensitive substring over action, resource type, resource id and details. |
 | `excludeAction` | query | string[] | No | Action to leave out; repeatable. |
@@ -414,8 +416,7 @@ Operation: `listAuditLog`
 | `data[].targetName` | `string` |  |
 | `data[].outcome` | `string` |  |
 | `data[].details` | `object` |  |
-| `data[].orgId` | `string` |  |
-| `data[].endOrgId` | `string` |  |
+| `data[].orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
 | `data[].createdAt` | `string` |  |
 | `pagination` | `object` |  |
 | `pagination.total` | `integer` | Exact up to 10,000, then 10,000 with totalIsLowerBound |

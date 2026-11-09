@@ -16,7 +16,7 @@ Base URL, authentication and errors are on the [REST API overview](README.md).
 GET /v1/installations
 ```
 
-Lists installations (a widget, workflow or trigger set up for one customer) visible to the caller, newest first, each with a computed healthStatus. A customer caller only sees its own. 403 when end_org_id is outside the caller's subtree. Requires widgets.read.
+Lists installations (a widget, workflow or trigger set up for one customer) visible to the caller, newest first, each with a computed healthStatus. A customer caller only sees its own. 403 when org_id is outside the caller's subtree. Requires widgets.read.
 
 Operation: `listInstallations`
 
@@ -26,7 +26,7 @@ Operation: `listInstallations`
 | --- | --- | --- | --- | --- |
 | `target_type` | query | string | No | One of: `widget`, `workflow`, `trigger`, `connector_action`, `integration`, `agent`. |
 | `target_id` | query | string | No |  |
-| `end_org_id` | query | string | No | Customer whose installations to list. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `widget_id` | query | string | No |  |
 
 **Responses**
@@ -50,7 +50,6 @@ Operation: `createInstallation`
 | `target_type` | `string` | Yes | One of: `widget`, `workflow`, `trigger`, `connector_action`, `integration`, `agent`. |
 | `target_id` | `string` | Yes |  |
 | `target_version` | `string` | No |  |
-| `end_org_id` | `string` | Yes |  |
 | `widget_id` | `string` | No |  |
 | `source_template_id` | `string` | No |  |
 | `label` | `string` | Yes |  |
@@ -64,12 +63,45 @@ Operation: `createInstallation`
 | `rationale` | `object` | No |  |
 | `defer_config` | `boolean` | No |  |
 | `selected_trigger_categories` | `string[]` | No |  |
+| `org_id` | `string` | Yes | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `201`: Created installation
 * `400`: Validation or ownership error
 * `409`: Duplicate installation
+
+### Active customer setups whose app triggers have no working subscription, so the...
+
+```http
+GET /v1/installations/trigger-health
+```
+
+Active customer setups whose app triggers have no working subscription, so the customer's events cannot start the workflow. A setup is checked only for the copies provisioning can make for it: the APP_EVENT template triggers on its own widget, inside its trigger-category selection, activation NONE excluded. Each is reported when the customer has no copy (missing) or the copy's stored subscription status is FAILED or UNSUBSCRIBED, whether the copy is enabled or not (every provisioned copy starts disabled). Copies are matched per setup, not per customer. A template provisioning refused because a sibling setup of the same customer already runs the same workflow on those events is not reported as missing; one refused because a sibling shares the subscription for a different workflow still is. Paused or polling templates and setups with no widget are not reported. Same scope as GET /api/v1/installations; at most 500 setups are read, and `truncated` says when there were more.
+
+Operation: `getInstallationTriggerHealth`
+
+**Responses**
+
+* `200`: Trigger health
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `data.truncated` | `boolean` |  |
+| `data.issues` | `object[]` |  |
+| `data.issues[].installationId` | `string` |  |
+| `data.issues[].installationLabel` | `string` |  |
+| `data.issues[].templateTriggerId` | `string` |  |
+| `data.issues[].triggerName` | `string` |  |
+| `data.issues[].connectorName` | `string` |  |
+| `data.issues[].triggerId` | `string` | The customer's copy, when there is one |
+| `data.issues[].subscriptionStatus` | `string` |  |
+| `data.issues[].problem` | `string` | One of: `missing`, `failed`, `unsubscribed`. |
+| `data.issues[].orgId` | `string` | The customer this belongs to, under the id you gave it (its external ref); the account itself when it belongs to no customer. |
+| `data.issues[].orgName` | `string` |  |
 
 ### Get an installation
 
@@ -152,6 +184,35 @@ Operation: `deleteInstallation`
 * `200`: Deleted
 * `404`: Not found
 
+### Save the customer's answers to the widget's settings form (form_schema)
+
+```http
+PUT /v1/installations/{id}/form-values
+```
+
+Save the customer's answers to the widget's settings form (form_schema). Validated against that schema, stored as the installation's inline config.formValues (so workflows read them via fastn.config.getByWorkflow), and gated on the widget's onConfigurationChange hook. Requires widgets.update.
+
+Operation: `updateInstallationFormValues`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `formValues` | `object` | Yes |  |
+
+**Responses**
+
+* `200`: Updated installation
+* `400`: Malformed body, or the widget has no settings form
+* `404`: Installation not found or out of scope
+* `422`: Answers fail the form's rules ({ fieldErrors: { key: message } }), or an onConfigurationChange hook vetoed the change
+
 ### Get an installation's resolved config
 
 ```http
@@ -191,7 +252,7 @@ Operation: `getInstallationTriggers`
 
 **Responses**
 
-* `200`: { data: { templates: TriggerRef[], instances: [{ triggerId, templateTriggerId, type, createdAt, trigger }] } }. trigger carries live state plus accountId (APP_EVENT routing account; for an activation NONE trigger the end org's external ref, or its id) and endOrgId (the value a partner sends as x-end-org-id).
+* `200`: { data: { templates: TriggerRef[], instances: [{ triggerId, templateTriggerId, type, createdAt, trigger }] } }. trigger carries live state plus accountId (APP_EVENT routing account; for an activation NONE trigger the customer's external ref, or its id) and orgId (the value a partner sends as x-org-id).
 * `404`: Installation not found or out of scope
 
 ### Create one trigger instance from a widget template trigger (one instance per template...
@@ -200,7 +261,7 @@ Operation: `getInstallationTriggers`
 POST /v1/installations/{id}/triggers
 ```
 
-Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with end_org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-end-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config. Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as end org. 404 when the template is not attached to the widget. Requires events.create.
+Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config. Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as customer. 404 when the template is not attached to the widget. Requires events.create.
 
 Operation: `createInstallationTrigger`
 
@@ -299,7 +360,7 @@ Operation: `deleteInstallationTrigger`
 PUT /v1/installations/{id}/unified-values
 ```
 
-Merge per-customer unified config values into an installation's inline config (end_user-callable; scoped by org_id or end_org_id) Writes per-connector unified-API field values into the installation's inline config (connectorSlug -> fieldKey -> value). Requires unified.execute.
+Merge per-customer unified config values into an installation's inline config (end_user-callable; scoped by org_id or org_id) Writes per-connector unified-API field values into the installation's inline config (connectorSlug -> fieldKey -> value). Requires unified.execute.
 
 Operation: `updateInstallationUnifiedValues`
 
@@ -338,7 +399,7 @@ Operation: `listConfigs`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `widget_id` | query | string | No |  |
-| `end_org_id` | query | string | No | Customer whose per-installation configs to list. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -350,7 +411,7 @@ Operation: `listConfigs`
 POST /v1/configs
 ```
 
-Creates a config. Either send config, or fork_from_widget_id to clone that widget's template server side. installation_id pins the new config onto that installation in the same call. 403 when end_org_id is outside the caller's customer scope. Requires widgets.create.
+Creates a config. Either send config, or fork_from_widget_id to clone that widget's template server side. installation_id pins the new config onto that installation in the same call. 403 when org_id is outside the caller's customer scope. Requires widgets.create.
 
 Operation: `createConfig`
 
@@ -359,7 +420,6 @@ Operation: `createConfig`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `widget_id` | `string` | No |  |
-| `end_org_id` | `string` | No |  |
 | `template_config_id` | `string` | No |  |
 | `fork_from_widget_id` | `string` | No |  |
 | `installation_id` | `string` | No |  |
@@ -375,12 +435,13 @@ Operation: `createConfig`
 | `config.unified` | `object[]` | No |  |
 | `config.unifiedValues` | `object` | No |  |
 | `plan` | `object` | No |  |
+| `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `201`: Created config
 * `400`: Validation error, empty config, or a widget/template/installation that is not the caller's
-* `403`: end_org_id out of scope
+* `403`: org_id out of scope
 * `404`: installation not found
 
 ### Get a config
@@ -425,7 +486,6 @@ Operation: `updateConfig`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `widget_id` | `string` | No |  |
-| `end_org_id` | `string` | No |  |
 | `template_config_id` | `string` | No |  |
 | `config` | `object` | No |  |
 | `config.entities` | `object[]` | No |  |
@@ -440,6 +500,7 @@ Operation: `updateConfig`
 | `config.unifiedValues` | `object` | No |  |
 | `plan` | `object` | No |  |
 | `baseUpdatedAt` | `string` | No |  |
+| `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -669,7 +730,7 @@ Operation: `forkConfig`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Partner preview: act for this customer as its embed would |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -689,7 +750,7 @@ Operation: `forkConfig`
 POST /v1/configs/{id}/options
 ```
 
-Executes the field's optionsSource.flowId workflow (matched by workflow id or slug within the config's catalog lineage) with the caller's current form values and the config's customer context (x-end-org-id + x-installation-id are stamped server-side; a caller-supplied installationId pin wins over the derivation and supplies the end-org). The field is identified by its dot-path id (e.g. mapdata1.channels).
+Executes the field's optionsSource.flowId workflow (matched by workflow id or slug within the config's catalog lineage) with the caller's current form values and the config's customer context (x-org-id + x-installation-id are stamped server-side; a caller-supplied installationId pin wins over the derivation and supplies the customer). The field is identified by its dot-path id (e.g. mapdata1.channels).
 
 Operation: `getConfigFieldOptions`
 
@@ -700,7 +761,7 @@ Operation: `getConfigFieldOptions`
 | `id` | path | string | Yes | Config id (cfg_*) |
 | `fieldId` | query | string | Yes | Dot-path field id, e.g. mapdata1.channels |
 | `side` | query | string | No | Mapping-mode fields only: which of the field's two flows to execute, source lists the items being mapped, destination lists the choices. Defaults to destination. One of: `source`, `destination`. |
-| `installationId` | query | string | No | Pin the options flow to a specific installation. The flow runs as that installation's end-org (its connections map selects the connection), which must be within the caller's customer scope. Wins over the server-side derivation from the config. Rejected for end_user callers. |
+| `installationId` | query | string | No | Pin the options flow to a specific installation. The flow runs as that installation's customer (its connections map selects the connection), which must be within the caller's customer scope. Wins over the server-side derivation from the config. Rejected for end_user callers. |
 
 **Request body**
 
@@ -742,7 +803,7 @@ Operation: `getConfigFieldOptions`
 POST /v1/configs/{id}/upgrade
 ```
 
-Re-copies the template's config into this per-installation clone, keeping the customer's unifiedValues answers. 400 when the config is not a clone. Requires widgets.update.
+Moves this per-installation clone to its template's latest version. The template supplies the structure; the customer's choices are kept wherever the new version has the same item: mappings (by id, else target field), filter values (by field), setup answers (by decision id, else field), configuration-form values (by field key), custom properties, matching and unifiedValues. Customer-added mappings and filters are kept; template items the clone lacked are added. The response's merge object counts what was kept and added, and merge.lost names what goes: whole sections (with how many mappings, filters, answers and form values the customer had in each), mappings that yield to a template mapping into the same field, answers to questions no longer asked, and form values for fields no longer present. With { dryRun: true } nothing is written: the response is the same report, for confirming the upgrade before it runs. 400 when the config is not a clone. Requires widgets.update.
 
 Operation: `upgradeConfig`
 
@@ -752,9 +813,15 @@ Operation: `upgradeConfig`
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Config id (cfg_*). |
 
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `dryRun` | `boolean` | No | Report what the upgrade would keep, add and lose without writing anything. |
+
 **Responses**
 
-* `200`: Upgraded config, or alreadyUpToDate: true
+* `200`: Upgraded config with a merge report, or alreadyUpToDate: true
 * `400`: Not a clone
 * `404`: Config or its template not found
 

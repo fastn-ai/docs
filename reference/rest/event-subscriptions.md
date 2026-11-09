@@ -44,14 +44,14 @@ Operation: `createEventSubscription`
 | `connectorCategories` | `string[]` | No | connector.event, unified.event and workflow.event: send events from connectors in these catalog categories (e.g. project-management). An event matches when its connector is in connectors OR its connector's category is here. Both empty or omitted: every connector. One of: `ai-ml`, `developer-tools`, `search-web`, `data-database`, `cloud-devops`, `crm-sales`, `marketing`, `finance-payments`, `ecommerce`, `communication`, `social-media`, `productivity`, `project-management`, `docs-knowledge`, `analytics-monitoring`, `security`, `it-service`, `design`, `maps-location`, `entertainment-media`, `other`. |
 | `workflowEvents` | `string[]` | No | workflow.event only: send only events workflow code emits under these names (fastn.events.emit("ticket.created", ...)). Empty or omitted: every name. The connectors filter applies too, matched against the connector the code named. |
 | `payloadTemplate` | `object` | No | workflow.event only: send the body in the endpoint's own schema. { connectors?: { &lt;connector slug or id>: schema }, default?: schema }, where schema is a JSON Schema object: { type: "object", properties: { &lt;field>: { type?, "x-source"?: &lt;dotted path into the event, e.g. payload.finding.id>, const?, default?, properties? } }, required?: [&lt;field>] }. The event's connector picks the schema, else default. type (string, number, integer, boolean, object, array) converts what it can; an empty optional field is left out; an event that cannot fill a required field is not sent and its delivery records why. With no schema (or null) the standard body is sent. Headers are unchanged; the signature covers the body actually sent. |
-| `endOrgId` | `string` | No | Only events about this customer (a child of the org): fastn's org id, or the id you gave the customer at creation (orgId / externalRef). Omit for every customer. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `description` | `string` | No |  |
 | `enabled` | `boolean` | No |  |
 
 **Responses**
 
 * `201`: { data: subscription & { secret } }
-* `400`: Validation error, URL refused, or endOrgId is not the org's customer
+* `400`: Validation error, URL refused, or orgId is not the org's customer
 * `403`: Role not allowed
 
 ### Replay a delivery

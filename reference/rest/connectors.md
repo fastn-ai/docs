@@ -398,7 +398,7 @@ Operation: `updateConnector`
 
 * `200`: Updated connector
 * `400`: No description.
-* `403`: No description.
+* `403`: Caller may not set this field
 * `404`: Not found
 
 ### Delete connector (soft by default)
@@ -634,7 +634,7 @@ Operation: `getActionVersionDiff`
 POST /v1/connectors/{id}/activate
 ```
 
-Marks a connector active for a customer (the caller's own customer, or endOrgId for a partner-side call). 403 when endOrgId differs from the caller's customer. Requires connections.create.
+Marks a connector active for a customer (the caller's own customer, or orgId for a partner-side call). 403 when orgId differs from the caller's customer. Requires connections.create.
 
 Operation: `activateConnector`
 
@@ -648,7 +648,7 @@ Operation: `activateConnector`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `endOrgId` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -713,7 +713,7 @@ Operation: `forkConnector`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `endOrgId` | query | string | No | Partner preview: act for this customer as its embed would |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
 
 **Responses**
 
@@ -2845,7 +2845,7 @@ Operation: `listConnectorVersionPins`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `connectorSlug` | query | string | No |  |
-| `endOrgId` | query | string | No |  |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -2857,7 +2857,7 @@ Operation: `listConnectorVersionPins`
 POST /v1/connector-version-pins
 ```
 
-Routes one customer (end org) to a provider externalVersion of a connector; requests that name no version resolve through the pin. Upserts. Requires connectors.update.
+Routes one customer (customer) to a provider externalVersion of a connector; requests that name no version resolve through the pin. Upserts. Requires connectors.update.
 
 Operation: `upsertConnectorVersionPin`
 
@@ -2866,15 +2866,15 @@ Operation: `upsertConnectorVersionPin`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `connectorSlug` | `string` | Yes |  |
-| `endOrgId` | `string` | Yes |  |
 | `externalVersion` | `string` | No |  |
 | `apiVersion` | `string` | No |  |
 | `versionMajor` | `integer` | No |  |
+| `orgId` | `string` | Yes | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
 * `200`: Pin
-* `400`: Validation error, endOrgId not a customer of the org, or the version does not exist for the connector
+* `400`: Validation error, orgId not a customer of the org, or the version does not exist for the connector
 
 ### Remove a connector version pin
 
@@ -3105,7 +3105,7 @@ Operation: `deleteMockStub`
 POST /v1/probes
 ```
 
-Runs a read-only connector action, infers its output fields with sample values, and caches the result for 30 minutes under the returned probeId (for field mapping). Requires connectors.read; 400 for a non-read-only action; 403 when endOrgId is not a customer of the caller.
+Runs a read-only connector action, infers its output fields with sample values, and caches the result for 30 minutes under the returned probeId (for field mapping). Requires connectors.read; 400 for a non-read-only action; 403 when orgId is not a customer of the caller.
 
 Operation: `probeConnector`
 
@@ -3117,8 +3117,8 @@ Operation: `probeConnector`
 | `actionSlug` | `string` | Yes | A read-only action: its slug must start with list, get, search, fetch, describe, find, retrieve or read. |
 | `params` | `object` | No | Action input. |
 | `connectionId` | `string` | No |  |
-| `endOrgId` | `string` | No | Customer whose connection to use; must descend from the caller's org. |
 | `installationId` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
@@ -3169,8 +3169,8 @@ Operation: `probeConnectorValues`
 | `actionSlug` | `string` | Yes | A read-only action: its slug must start with list, get, search, fetch, describe, find, retrieve or read. |
 | `params` | `object` | No | Action input. |
 | `connectionId` | `string` | No |  |
-| `endOrgId` | `string` | No | Customer whose connection to use; must descend from the caller's org. |
 | `installationId` | `string` | No |  |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 

@@ -4,7 +4,7 @@ description: "Every REST endpoint you can call, generated from fastn's OpenAPI s
 
 # REST API reference
 
-This reference lists the REST endpoints you can call with an API key. It is generated from the platform's OpenAPI spec (release `v1.11.0_hotfix1`). To run workflows and mint embed tokens, start with the shorter [HTTP API](../api.md) guide.
+This reference lists the REST endpoints you can call with an API key. It is generated from the platform's OpenAPI spec (release `v1.12.0`). To run workflows and mint embed tokens, start with the shorter [HTTP API](../api.md) guide.
 
 * [Workflows](workflows.md): Create, publish, run and inspect workflows.
 * [Installations and configs](installations.md): Each customer's setup of a widget, its triggers and its configuration values.
