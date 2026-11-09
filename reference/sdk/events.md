@@ -34,6 +34,8 @@ const secret = hook.secret;    // whsec_…: shown once, store it now
 | `description` | No | Your label. |
 | `enabled` | No | Default `true`. |
 
+To receive only one customer's events, create the subscription on the customer, as above: `customer.api.events.createEventSubscription({ … })` fills in the customer. `fastn.webhooks.create` has no customer field in SDK 0.5.1.
+
 Answer: the subscription itself, `{ id, url, orgId, eventTypes, connectors, connectorCategories, providerEvents, entities, workflowEvents, payloadTemplate, enabled, description, createdBy, createdAt, updatedAt, secret }`. The raw operation `fastn.events.createEventSubscription` answers the same object wrapped as `{ data: { … } }`. The `secret` is returned **only here**: reading the subscription later never shows it.
 
 ---
