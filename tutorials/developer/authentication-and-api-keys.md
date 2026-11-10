@@ -61,9 +61,10 @@ headers: {
 | You call | Send the key as |
 | -------- | --------------- |
 | The platform API, `https://api.fastn.dev/api/v1/…` (a workflow's `/execute`, `/embed/token`, every other route) | `Authorization: Bearer fsk_…` or `X-API-Key: fsk_…` |
-| A webhook trigger's URL | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
+| A webhook trigger's URL | `X-API-Key: fsk_…`, `Authorization: Bearer fsk_…` or `x-fastn-access-key: fsk_…` |
+| A connector's webhook URL, with **Require API key** on | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
 
-`X-API-Key` works on both. `x-fastn-access-key` on the platform API, or `Authorization` on a webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
+`X-API-Key` works on all three. `x-fastn-access-key` on the platform API, or `Authorization` on a connector's webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
 
 ### Keeping keys secure
 

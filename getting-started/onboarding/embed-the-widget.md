@@ -98,7 +98,7 @@ const token = json.data.token;
 </iframe>
 ```
 
-**5 · Send your product's events (optional).** For an integration that starts when something happens in your product, call its webhook trigger on each event. Copy the URL from the trigger's row menu (**Copy URL**) and send the same identity headers as part 3, with the event as the JSON body. On a webhook URL the API key goes in `x-api-key`, not in `Authorization`:
+**5 · Send your product's events (optional).** For an integration that starts when something happens in your product, call its webhook trigger on each event. Copy the URL from the trigger's row menu (**Copy URL**) and send the same identity headers as part 3, with the event as the JSON body. The API key goes in `x-api-key`, as below, or as `Authorization: Bearer`:
 
 ```bash
 curl --location 'https://webhooks.fastn.dev/prod/triggers/<WORKSPACE_ID>/webhooks/<WEBHOOK_ID>' \

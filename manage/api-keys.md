@@ -165,9 +165,10 @@ Every key starts `fsk_live_` or `fsk_test_`. The header it goes in depends on wh
 | You call | Send the key as |
 | -------- | --------------- |
 | The platform API, `https://api.fastn.dev/api/v1/…` (a workflow's `/execute`, `/embed/token`, every other route) | `Authorization: Bearer fsk_…` or `X-API-Key: fsk_…` |
-| A [webhook trigger](../build/triggers/webhooks.md)'s URL | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
+| A [webhook trigger](../build/triggers/webhooks.md)'s URL | `X-API-Key: fsk_…`, `Authorization: Bearer fsk_…` or `x-fastn-access-key: fsk_…` |
+| A [connector's webhook URL](../build/connectors/webhook-config.md), with **Require API key** on | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
 
-`X-API-Key` works on both. `x-fastn-access-key` on the platform API, or `Authorization` on a webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
+`X-API-Key` works on all three. `x-fastn-access-key` on the platform API, or `Authorization` on a connector's webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
 
 Full detail in the [HTTP API reference](../reference/api.md).
 

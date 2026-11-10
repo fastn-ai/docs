@@ -27,7 +27,7 @@ If [Events](events.md) shows nothing, the problem is before fastn.
 
 | Trigger type  | Check                                                                                       |
 | ------------- | --------------------------------------------------------------------------------------------- |
-| **Webhook**   | Is the sending system pointed at the right URL? If the trigger's auth is API key, is the sender sending the key in the `x-api-key` header? (`x-fastn-access-key` is still accepted. `Authorization` is not read, so a bearer token is answered `401`.) |
+| **Webhook**   | Is the sending system pointed at the right URL? If the trigger's auth is API key, is the sender sending the key in the `x-api-key` header, or as `Authorization: Bearer fsk_…`? (`x-fastn-access-key` is still accepted. `x-fastn-api-key` is not read.) |
 | **Schedule**  | Is the trigger Active rather than Disabled? Is its timezone what you assumed?                |
 | **App event** | Is the connector's **Webhook config** set up, and does the customer have an active connection? |
 

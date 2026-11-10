@@ -14,7 +14,7 @@ A webhook trigger fires when another system calls a URL you give it. Nothing is 
 
 **Columns:** `Name`, `Type`, `Status`, `Auth`, `Routes`, `Created`, then the row actions.
 
-* **`Auth`** reads `API key` where the webhook requires a fastn API key (in the `x-api-key` header, or the older `x-fastn-access-key`), or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
+* **`Auth`** reads `API key` where the webhook requires a fastn API key (in the `x-api-key` header, `Authorization: Bearer`, or the older `x-fastn-access-key`), or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
 
 Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
 
@@ -71,7 +71,7 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 | Field                 | Notes                                                                                                                                    |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Webhook ID**        | Optional. Becomes part of the public webhook URL. Leave empty and one is generated.                                                      |
-| **Authentication**    | **API Key (x-api-key)**, the default: callers must send a fastn API key (`fsk_…`) in the `x-api-key` header (the older `x-fastn-access-key` header is still accepted). A webhook URL does not read `Authorization`. **None (public)**: anyone with the URL can fire it. |
+| **Authentication**    | **API Key (x-api-key)**, the default: callers must send a fastn API key (`fsk_…`) in the `x-api-key` header, or as `Authorization: Bearer fsk_…` (the older `x-fastn-access-key` header is still accepted). **None (public)**: anyone with the URL can fire it. |
 | **Execution mode**    | **Parallel**, the default: concurrent events run concurrently. **Sequential**: one at a time, in arrival order.                         |
 | **Deduplication key** | Optional. A field in the incoming payload that uniquely identifies each event, so a retried delivery from the sender does not run the workflow twice. |
 {% endstep %}

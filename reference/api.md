@@ -24,7 +24,7 @@ Authorization: Bearer fsk_live_<your-key>
 X-API-Key: fsk_live_<your-key>
 ```
 
-These two are the only headers this API reads a key from. A webhook URL is different: it reads `X-API-Key` or `x-fastn-access-key`, and not `Authorization` (see [Webhook endpoints](#webhook-endpoints)). `X-API-Key` is the one header that works on both. No endpoint reads `x-fastn-api-key`: a call that sends the key there is answered `401`.
+These two are the only headers this API reads a key from. A webhook trigger URL takes them too, and also `x-fastn-access-key` (see [Webhook endpoints](#webhook-endpoints)). No endpoint reads `x-fastn-api-key`: a call that sends the key there is answered `401`.
 
 Keys are created under [Embed → API keys and MCP](../manage/api-keys.md) and come in two modes.
 
@@ -152,10 +152,10 @@ A [webhook trigger](../build/triggers/README.md) gives you a public URL. Whether
 
 | Authentication setting            | Caller must send                      |
 | --------------------------------- | --------------------------------------- |
-| **API Key (x-api-key)**           | `x-api-key: <your-key>` (a fastn key, starting `fsk_`); `x-fastn-access-key: <your-key>` is still accepted |
+| **API Key (x-api-key)**           | `x-api-key: <your-key>` (a fastn key, starting `fsk_`) or `Authorization: Bearer <your-key>`; `x-fastn-access-key: <your-key>` is still accepted |
 | **None (public)**                 | Nothing                               |
 
-A webhook URL does not read `Authorization`, so a bearer token there is answered `401`. `X-API-Key` counts only when its value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` is not mistaken for one.
+`X-API-Key` and `Authorization: Bearer` count only when the value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` or bearer token is not mistaken for one. A connector's webhook URL (with **Require API key** on) takes `x-api-key` or `x-fastn-access-key` only, not `Authorization`.
 
 ---
 
