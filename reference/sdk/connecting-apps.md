@@ -85,7 +85,7 @@ console.log(link.data?.setupUrl);   // send this link to the customer
 | `expiresInMinutes` | No | How long the link works, in minutes. Your org config carries a default link lifetime (`setupLinkDefaultTtlMinutes`, below). |
 | `redirectUrl` | No | Where the browser goes when setup ends. It must be on your list of registered redirect addresses (below), or the call is refused. |
 | `metadata` | No | Your own data, any JSON object. fastn does not use it. It comes back to you on the link and on the link's events, so you can tell which of your flows the new connection is for. |
-| `allowAdditionalConnection` | No | `true` lets the customer add another account for the same app (for example a second calendar). |
+| `allowAdditionalConnection` | No | `true` lets the customer add another account for the same app (for example a second calendar). The answer includes it only when it is `true`. |
 
 The SDK fills in the customer for you. If the customer does not exist yet, the link creates it.
 
@@ -98,10 +98,9 @@ The SDK fills in the customer for you. If the customer does not exist yet, the l
     "setupUrl": "https://app.fastn.dev/setup/stp_1a2b3c4d5e6f#t=…",
     "status": "pending",
     "expiresAt": "2026-10-27T00:29:58.968Z",
-    "endOrgId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+    "orgId": "acme_customer_42",
     "metadata": { "flowId": "flow_123" },
     "redirectUrl": "https://app.example.com/connected",
-    "allowAdditionalConnection": false,
     "connectionName": "Front desk calendar"
   }
 }
@@ -113,13 +112,13 @@ The SDK fills in the customer for you. If the customer does not exist yet, the l
 | `setupId` | The link's id, to check or cancel it. |
 | `status` | `pending` (new), `complete` (used) or `revoked` (cancelled). |
 | `expiresAt` | When the link stops working. |
-| `endOrgId` | fastn's own id for the customer; you can ignore it. The link belongs to the customer you created it for. |
+| `orgId` | Your customer id. The link belongs to the customer you created it for. |
 
 ### Check or cancel a link
 
 | Do this | SDK | Answer |
 | ------- | --- | ------ |
-| Read a link | `fastn.embed.getSetupLink({ id: "stp_…" })` | `{ data: { setupId, status, widgetId, endOrgId, label, connectionName, installationId, expiresAt, redirectUrl, allowAdditionalConnection, metadata, widget } }`. `installationId` is set once the link is complete. |
+| Read a link | `fastn.embed.getSetupLink({ id: "stp_…" })` | `{ data: { setupId, status, widgetId, orgId, label, connectionName, installationId, expiresAt, redirectUrl, allowAdditionalConnection, metadata, widget } }`. `installationId` is set once the link is complete. |
 | Cancel a link | `fastn.embed.cancelSetupLink({ id: "stp_…" })` | `{ data: { setupId, status: "revoked" } }` |
 
 ```typescript
@@ -177,17 +176,17 @@ Answer:
 {
   "data": {
     "token": "…",
-    "endOrgId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
     "userId": "user_42",
     "role": "end_user",
     "tierId": null,
     "expiresAt": "2026-10-26T08:00:01.122Z",
-    "expiresIn": 28800
+    "expiresIn": 28800,
+    "orgId": "acme_customer_42"
   }
 }
 ```
 
-`endOrgId` is fastn's own id for the customer; you can ignore it. The token is for the customer you created it for.
+`orgId` is your customer id. The token is for the customer you created it for.
 
 `expiresIn` is in seconds: the token lasts eight hours. Treat the token as a credential. How the browser side uses it is in [Embedding the widget](../../embed/embedding/README.md) and [Token API](../../embed/embedding/token-api.md).
 
@@ -214,7 +213,7 @@ const connectionId = hubspot?.id;
 {
   "data": [
     {
-      "id": "ucl:your-org:7c9e6679-…:3fa85f64-…:default",
+      "id": "ucl:your-org:acme_customer_42:3fa85f64-…:default",
       "name": "Front desk CRM",
       "connectorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
       "connector": { "name": "HubSpot", "slug": "hubspot", "domain": "hubspot.com", "protocol": "REST" },
@@ -222,9 +221,8 @@ const connectionId = hubspot?.id;
       "authMethod": { "type": "OAUTH", "title": "OAUTH" },
       "status": "ACTIVE",
       "isDefault": true,
-      "orgId": "your-org-id",
-      "endOrgId": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
-      "endOrgName": "Acme Dental",
+      "orgId": "acme_customer_42",
+      "orgName": "Acme Dental",
       "tokenExpiresAt": "2026-10-26T00:21:06.000Z",
       "createdAt": "2026-10-18T06:26:08.000Z",
       "updatedAt": "2026-10-18T06:26:08.000Z"
@@ -239,10 +237,10 @@ const connectionId = hubspot?.id;
 | `id` | The `connectionId`. Pass it to [unified records](unified-records.md#pick-one-account-connectionid) when a customer has more than one account for the same app. |
 | `name` | The connection's name, for example the `connectionName` from the setup link. |
 | `connector.slug` | The app, for example `hubspot`. Use it as `provider` in unified calls and as `connector` in [direct actions](app-actions.md). |
-| `connectorId` | The app's id in the catalogue. |
+| `connectorId` | The app's id in the catalog. |
 | `status` | For example `ACTIVE` or `EXPIRED`. An expired connection needs the customer to sign in again. |
 | `isDefault` | The account used when you do not pick one. |
-| `endOrgId` | fastn's own id for the customer the connection belongs to; you can ignore it. |
+| `orgId`, `orgName` | The customer the connection belongs to: your customer id and its name. |
 
 ### Other connection calls
 

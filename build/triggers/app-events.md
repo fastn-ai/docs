@@ -6,11 +6,11 @@ description: A trigger that fires when something changes in a connected system.
 
 An app event trigger fires when something changes in a connected system: a HubSpot deal moves, a GitHub PR merges.
 
-**Columns:** `Name`, `Tenant`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.
+**Columns:** `Name`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.
 
-**`Subscription` is the column that matters on this page.** It reads `Subscribed` or `Failed`, and it is separate from `Status`: a trigger can be `Active` and still never fire, because *Status* is whether you have enabled it and *Subscription* is whether fastn successfully registered for events with the provider. Watch this one.
+**`Subscription` is the column that matters on this page.** It reads `Subscribed`, `Pending`, `Failed`, `Not subscribed`, `Unsubscribed` or `Shared` (riding on another trigger's provider webhook for the same events and connection), and it is separate from `Status`: a trigger can be `Active` and still never fire, because *Status* is whether you have enabled it and *Subscription* is whether fastn successfully registered for events with the provider. Watch this one.
 
-The row menu holds five items: **Copy ingest URL**, **Edit**, **Disable**, **Retry Subscription** and **Delete**.
+The row menu holds **Copy ingest URL**, **Edit**, **Disable** (or **Enable** on a disabled trigger), **Retry Subscription** (only when the subscription is `Failed`) and **Delete**.
 
 ### Create an app event trigger
 
@@ -22,7 +22,6 @@ The form is progressive: each answer reveals the next question. Five answers in 
 
 From **Add trigger**, choose **App event**, and give it a **Name** (required).
 
-<figure><img src="../../.gitbook/assets/app-event-trigger-form.jpg" alt="The New app event trigger form, showing the progressive steps: name, connector, connection and event, then the routes that point at a workflow"><figcaption>The connector cannot be changed after the trigger is created, choose it deliberately.</figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -40,7 +39,7 @@ Without a live connection for that connector the form stops here: *No active con
 {% step %}
 #### Pick the connection
 
-**Connection** is required, which authorised link this trigger listens on.
+**Connection** is required: which authorized connection this trigger listens on. Like the connector, it cannot be changed after the trigger is created.
 {% endstep %}
 
 {% step %}
@@ -52,7 +51,7 @@ Without a live connection for that connector the form stops here: *No active con
 {% step %}
 #### Add routes
 
-**Routes** are required, and the same shape as a webhook's, minus the JSON payload field.
+At least one route is required. Each route has a **Workflow** (required), an optional **Environment** (defaulting to **test (latest published)**, which runs the latest published version) and optional **Headers** (key/value).
 {% endstep %}
 
 {% step %}

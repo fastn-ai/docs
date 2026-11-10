@@ -4,7 +4,7 @@ description: "Call the fastn platform from your backend with the fastn SDK: inst
 
 # SDK
 
-The fastn SDK is the fastn platform API as a library for your backend. The first version is for Node.js and TypeScript: `@fastn-ai/sdk`. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries and event signatures for you.
+The fastn SDK is the fastn platform API as a library for your backend. It is for Node.js and TypeScript: `@fastn-ai/sdk` (version 0.5.1). A Python SDK, `fastn-ai` (also 0.5.1), offers the same client as `fastn.platform.FastnClient`, with `fastn.customer(ref)` for one customer; this section shows the Node.js SDK. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries and event signatures for you.
 
 Use it from your **backend**. It needs your fastn API key, which must never reach a browser.
 
@@ -24,7 +24,7 @@ npm install @fastn-ai/sdk
 | -------- | --------------------------------------------------------------------------- |
 | Runtime  | Node.js 20 or newer. The SDK uses the built-in `fetch`.                     |
 | Modules  | ESM and CommonJS. TypeScript types are included.                            |
-| API key  | Create one on [Settings → API keys](../../manage/api-keys.md). Keep it in your secret store. |
+| API key  | Create one on [Embed → API keys and MCP](../../manage/api-keys.md). Keep it in your secret store. |
 
 ---
 
@@ -65,25 +65,25 @@ console.log(me.role, me.org?.id);
 
 ## Your customers and their ids
 
-fastn is multi-tenant. You are the **partner**; each business you serve is a **customer** (fastn also calls it a tenant or end org). Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
+You are the SaaS company using fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
 
-You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. The API also returns fastn's own id for the customer in its answers; you never need it.
+You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. Answers name the customer by your id too, as `orgId`.
 
 {% hint style="warning" %}
-To act for your customers, the API key must be allowed to act for customers (a multi-tenant partner key).
+To act for your customers, use a key that can act for your customers (one not pinned to a single customer).
 {% endhint %}
 
 ### Every id you will see
 
 | Id | Example | What it is | Who makes it |
 | -- | ------- | ---------- | ------------ |
-| Your customer id | `acme_customer_42` | Your own id for a customer. Use it everywhere. The API also calls it `orgId`, `externalRef`, `endOrgRef` and `tenantRef`: all the same value. | You |
-| fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers and `endOrgId` elsewhere. You never need it: those fields accept your customer id (`acme_customer_42`) too. | fastn |
+| Your customer id | `acme_customer_42` | Your own id for a customer. Use it everywhere. The API calls it `orgId`; customer answers also show it as `externalRef`, and events as `tenantRef`: all the same value. | You |
+| fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers. You never need it: wherever the API takes a customer, your customer id (`acme_customer_42`) works. | fastn |
 | `widgetId` | `wgt_…` | A widget: which apps a setup link or the embedded widget offers. | You, in the dashboard |
 | `setupId` | `stp_…` | One setup link. | fastn |
 | `installationId` | `inst_…` | The finished setup made from a setup link or the widget. | fastn |
 | `connectionId` | `ucl:…:default` | One connected account, for example one Google Calendar of one customer. | fastn, when the customer connects |
-| `connectorId` | a UUID | One app (connector) in the catalogue. | fastn |
+| `connectorId` | a UUID | One app (connector) in the catalog. | fastn |
 | Connector slug | `hubspot`, `googleCalendar` | The app's short name. Used as `provider` and `connector` in calls. | fastn |
 | Action slug | `getContact` | One action of an app. | fastn |
 | Record id | `51234567890` | A record (contact, meeting, deal) in the app itself. | The app |
@@ -99,7 +99,14 @@ To act for your customers, the API key must be allowed to act for customers (a m
 
 ## What you get back
 
-Answers are returned exactly as the REST API sends them.
+The generated methods (`fastn.<area>.<operation>()`) return answers exactly as the REST API sends them. The convenience methods reshape them for you:
+
+* `fastn.webhooks.*` unwraps `data` and returns the subscription (or list) itself.
+* `customer.connect(app)` returns `{ setupId, url, status, expiresAt, widgetId }`.
+* `customer.links.get()` and `.cancel()`, `customer.callLog()` and `customer.watch()` return the item itself, without the `data` wrapper.
+* `customer.find()` returns the customer row, or `undefined` when there is none.
+
+Raw answers from the generated methods look like this:
 
 | Kind of call | Answer |
 | ------------ | ------ |
@@ -127,4 +134,4 @@ Fields of unified records and their list options use `snake_case` (`start_time`,
 | [Workspace tools](workspace-tools.md) | The optional route: run your workspace's MCP tools by name, or generate typed methods for them. |
 | [Any other operation](any-operation.md) | Every other API operation, by name. |
 
-The SDK has one method for every partner operation of the fastn API, under an area such as `fastn.orgs`, `fastn.embed`, `fastn.connections`, `fastn.unified`, `fastn.events` or `fastn.connectors`. Each method has the same name as the operation. For the plain HTTP calls, see [HTTP API](../api.md).
+The SDK has one method for every operation your key can call, under an area such as `fastn.orgs`, `fastn.embed`, `fastn.connections`, `fastn.unified`, `fastn.events` or `fastn.connectors`. Each method has the same name as the operation. For the plain HTTP calls, see [HTTP API](../api.md).

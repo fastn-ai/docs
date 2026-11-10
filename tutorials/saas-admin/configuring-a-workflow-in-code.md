@@ -2,20 +2,21 @@
 description: >-
   Write workflows in the code editor using export default async function(ctx),
   configure execution tiers, and test with sample input.
-hidden: true
 ---
 
 # Configuring a Workflow in Code
 
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md). Basic JavaScript familiarity.
 
+{% hint style="info" %}
+Code editing is a per-organization entitlement, off by default and enabled by fastn. If your editor has no code column, ask fastn to switch it on, or build the workflow with [Build with AI](../../build/agent/README.md) instead.
+{% endhint %}
+
 ### Opening the code editor
 
-1. Go to **Integrations → Workflows**.
-2. Click **Create Workflow**.
+1. Go to **Integrations** and open the **Workflows** tab.
+2. Click **Create workflow**.
 3. The workflow editor opens with three panels.
-
-> **Screenshot:** Full workflow editor showing all three panels — Configuration (left), Code (center), Test (right).
 
 ### The three panels
 
@@ -25,15 +26,16 @@ The code editor consists of three panels which are as follows:
 
 | Field                 | What it does                                                                       |
 | --------------------- | ---------------------------------------------------------------------------------- |
-| **Name**              | Workflow identifier (required). Example: "sync-contacts"                           |
+| **Name**              | Required. Placeholder: "e.g. Sync Contacts".                                        |
+| **Slug**              | Required on create. Unique identifier, used in the API path. Placeholder: "sync-contacts". *Cannot be changed after creation.* |
 | **Description**       | What the workflow does. Shown in the workflows table.                              |
-| **Execution Tier**    | **Instant** (sync, max 60s), **Standard** (async, default), or **Long** (extended) |
-| **Execution Timeout** | Max time before timeout. Slider: 1s–2min range for Instant tier.                   |
-| **Retry Policy**      | Toggle on/off. When on, failed executions retry automatically.                     |
+| **Execution tier**    | **Instant** (the default; synchronous, max 25s, or 2 minutes with the "Increase Instant timeout" entitlement), **Standard** (async, up to 15 minutes) or **Long** (async, up to 36 hours) |
+| **Execution timeout** | Max time before the run is cut off. The slider is constrained to the tier: 1s to 25s for Instant (up to 2 min with the entitlement), 5s to 15min for Standard, 30s to 36h for Long. |
+| **Retry policy**      | Toggle on/off. When on, transient failures retry automatically, up to **Max attempts** (2-10, default 3). |
 
 #### 2. Code editor
 
-The editor shows `workflow.js` with a default template:
+The editor shows `<slug>.js` with a default template:
 
 ```javascript
 export default async function(ctx) {
@@ -43,20 +45,24 @@ export default async function(ctx) {
 }
 ```
 
-Every workflow exports a default async function that receives `ctx` — the context object.
+Every workflow exports a default async function that receives `ctx` - the context object.
 
-#### 3. Test panel
+#### 3. Tool tabs
 
-Two tabs:
+On a new workflow there are three tabs:
 
-* **Test** — run the workflow with sample input
-* **Docs** — reference documentation
+* **Test** - run the workflow with sample input
+* **Connectors** - the connectors the workflow calls
+* **Contract** - the input and output contract
+
+Once the workflow is saved, more tabs appear (Diagram, Test cases, Executions, Sync reports, API and others). Diagram has a **Docs** view, but it documents this workflow, not the runtime; the runtime reference is in the code editor's autocomplete and in [Workflow runtime API](../../reference/workflow-runtime.md).
 
 The Test tab has:
 
-* **CTX.INPUT** — JSON input your workflow receives
-* **CTX.HEADERS** — optional HTTP headers
-* **Run** button — executes the workflow without saving
+* **ctx.input** - JSON input your workflow receives (**Use contract** fills it from the input contract)
+* **ctx.headers** - optional HTTP headers
+* A mode select: **Live**, **Partial Mock** or **Fully Mock**
+* A run button that follows the mode: **Run Live**, **Run Partial Mock** or **Run Fully Mock**. It executes the workflow without saving.
 
 ### The ctx object
 
@@ -68,7 +74,7 @@ const { input, headers } = ctx;
 
 | Property  | What it contains                                                                     |
 | --------- | ------------------------------------------------------------------------------------ |
-| `input`   | The incoming data — request body from a webhook, event payload, or scheduler context |
+| `input`   | The incoming data - request body from a webhook, event payload, or scheduler context |
 | `headers` | HTTP headers from the incoming request (if triggered by webhook)                     |
 
 ### Writing a workflow
@@ -112,7 +118,7 @@ export default async function(ctx) {
   }
   
   if (order.total > 500) {
-    // High-value order — needs review
+    // High-value order - needs review
     return {
       action: "review",
       reason: `Order total $${order.total} exceeds threshold`,
@@ -120,7 +126,7 @@ export default async function(ctx) {
     };
   }
   
-  // Standard order — process normally
+  // Standard order - process normally
   return {
     action: "process",
     order
@@ -131,7 +137,7 @@ export default async function(ctx) {
 ### Testing
 
 1. Click the **Test** tab in the right panel.
-2. Enter sample JSON in **CTX.INPUT**:
+2. Enter sample JSON in **ctx.input**:
 
 ```json
 {
@@ -142,47 +148,44 @@ export default async function(ctx) {
 }
 ```
 
-3. Optionally add headers in **CTX.HEADERS**.
-4. Click **Run**.
-5. The output appears below — check the result matches your expectations.
-6. Toggle between **Test** (sample data) and **Real** mode if available.
-
-> **Screenshot:** Test panel with sample input JSON and the output result after running.
+3. Optionally add headers in **ctx.headers**.
+4. Pick a mode: **Live** (real calls to connected systems), **Partial Mock** (live where the connector has an active connection, a stored mock stub where it does not) or **Fully Mock** (stubs only).
+5. Click the run button (**Run Live**, **Run Partial Mock** or **Run Fully Mock**).
+6. The output appears below - check the result matches your expectations. Test runs are real when they run live: connectors are called and side effects happen.
 
 ### Choosing an execution tier
 
 | Tier         | Behavior                                                                          | Use when                                                             |
 | ------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| **Instant**  | Synchronous — caller waits for the result. Max 60 seconds. Returns result inline. | API endpoints that need a response, quick lookups, simple transforms |
-| **Standard** | Asynchronous — returns immediately, executes in background.                       | Data syncs, multi-step processes, most workflows                     |
-| **Long**     | Extended async — for large data volumes and long-running processes.               | Batch imports, full data backfills, large report generation          |
+| **Instant**  | Synchronous - caller waits for the result. Max 25 seconds (2 minutes with the "Increase Instant timeout" entitlement). Returns result inline. | API endpoints that need a response, quick lookups, simple transforms |
+| **Standard** | Asynchronous - returns `202` immediately, executes in background. Up to 15 minutes. | Data syncs, multi-step processes, most workflows                     |
+| **Long**     | Asynchronous, for large data volumes and long-running processes. Up to 36 hours.   | Batch imports, full data backfills, large report generation          |
 
-The Workflows table has filter tabs for **All | Instant | Standard | Long** so you can filter by tier.
+The Workflows list has filter pills for **All | Instant | Standard | Long** so you can filter by tier.
 
 ### Creating the workflow
 
 Once your code works in testing:
 
-1. Fill in **Name** and **Description** in the Configuration panel.
-2. Select the appropriate **Execution Tier**.
-3. Set **Execution Timeout** (default: 1 minute for Instant).
-4. Toggle **Retry Policy** if you want automatic retries on failure.
+1. Fill in **Name**, **Slug** and **Description** in the Configuration panel.
+2. Select the appropriate **Execution tier**.
+3. Set **Execution timeout** (for Instant, the slider tops out at 25s unless your organization has the extended Instant timeout).
+4. Toggle **Retry policy** if you want automatic retries on failure.
 5. Click **Create Workflow** (bottom of the Configuration panel).
 
-The workflow appears in the Workflows table with status **active**.
-
-> **Screenshot:** Workflows table showing the newly created workflow with active status.
+The workflow appears in the Workflows list with status **Unpublished**. Until you publish it, every call returns `WORKFLOW_NOT_PUBLISHED`. Publish it from the **Publish & Deploy** section with **Publish snapshot**, then deploy it to an environment; see [Lifecycle](../../build/workflows/lifecycle.md).
 
 ### Editing an existing workflow
 
-1. Go to **Integrations → Workflows**.
-2. Click on the workflow name in the table.
+1. Go to **Integrations** and open the **Workflows** tab.
+2. Click the workflow's row (or **Edit** in its `⋯` menu).
 3. The code editor opens with the existing code.
-4. Make your changes, test them, then save.
+4. Make your changes and test them. Draft edits auto-save (**✓ Draft saved**); **Save workflow** saves explicitly.
+5. Publish again to make the change runnable. Note that publishing immediately changes what triggers routed to **test (latest published)** run.
 
 ### What you've learned
 
-* The three-panel code editor layout (Configuration, Code, Test)
+* The three-panel code editor layout (Configuration, Code, tool tabs)
 * The `ctx` object structure (`input`, `headers`)
 * How to write workflow logic in JavaScript
 * How to test with sample data before creating

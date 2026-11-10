@@ -22,10 +22,12 @@ Each workflow also has a **Sync reports** tab in its editor, scoped to that work
 
 ### Controls
 
-**Search reports**, and nothing else. Unlike Events, Traces and Executions, this page has no status filters and no date range.
+**Search reports**, plus an **All scopes** select and an **All entities** select. Unlike Events and Executions, this page has no status filters and no date range.
+
+Each report shows its counts of records **unchanged**, **updated**, **created** and **deleted**. Expand a report for two tabs: **Stats**, with the same counts, and **Changes (n)**, the changed records.
 
 Until a workflow has run `fastn.diff.compare`, the page reads **No sync reports yet**.
 
 {% hint style="info" %}
-This page is thin in these docs because no sync report had been produced in the workspace we documented from: the shape of a populated report is not something we can describe accurately. If you are building a data sync and this page stays empty, ask the agent to add diff reporting. It is far easier than reconstructing what a run did from logs afterwards.
+If you are building a data sync and this page stays empty, ask Build with AI (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterwards.
 {% endhint %}

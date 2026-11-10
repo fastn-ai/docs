@@ -1,78 +1,69 @@
 ---
 description: >-
-  Configure sync preferences, field mappings, scheduling, and other settings for
-  your active integrations through the widget.
-hidden: true
+  Adjust field mappings, filters and other settings for an integration you've
+  set up, through the widget.
 ---
 
 # Customizing Your Integrations
 
-After connecting an app, you can customize how data flows between it and the product you're using which fields sync, which records are included, and in which direction. The AI assistant can handle most of this for you, or you can fine-tune it yourself.
+After connecting an app, you can customize how data moves between it and the product you're using: which fields sync, which records are included, and how records are matched. The AI assistant can handle much of this for you, or you can fine-tune it yourself.
 
 ### Opening the configuration
 
 1. Open the integration widget in your product.
-2. Find the connected app you want to customize.
-3. Click **Configure**.
+2. Find the integration you want to customize and click **Manage**.
+3. On the installation you want to change, click **View**.
+4. On the **Configuration** row, click **Open**.
 
-What happens next depends on whether the integration has been configured before.
+The Configuration row summarizes what's set up, for example _Sync · 2 entities · 14 fields mapped_. The **Open** button stays disabled until every account the integration needs is connected (its tooltip reads _Connect every account first_).
 
 #### First-time configuration
 
-If no configuration exists yet, you'll see **No configuration found for this widget**, with a note that the Integration Agent sets up field mappings and filters for you — and, as a customer, _Ask whoever administers this workspace to finish setting it up._
+If no configuration exists yet, the dialog shows **No configuration found for this widget.** with the note _fastn's agent sets up field mappings and filters for you._ and, for you as a customer, _Ask whoever administers this organization to finish setting it up._
 
-That first pass belongs to your SaaS provider: starting the agent needs an operator role, so the button is deliberately not shown to a customer session rather than sending you to a permission error. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
+That first pass belongs to your SaaS provider: the button that starts fastn's agent needs an operator role, so it isn't shown to you. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
 
 See [Extending a Pre-Built Integration](extending-a-prebuilt-integration.md) for what you can change yourself, and how to ask the AI assistant for it.
 
-#### Returning to an existing configuration
-
-If the integration has already been configured (either by the AI or by you previously), clicking Configure opens the **Integration Configuration dialog** directly.
-
-> **Screenshot needed:** A connected app card (e.g., HubSpot with green "Connected" label) with the ⚙ Configure button highlighted.
-
 ### The configuration dialog
 
-The dialog header shows the sync type (e.g., "Ongoing sync") and how many data types are configured (e.g., "2 entities"). Below the header, you can switch between two views: **Config** and **Plan**.
+The dialog is titled **Integration Configuration**. Its header shows the configuration's version and the apps it connects.
 
-#### Config view
+#### Entity pairs
 
-This is where you review and adjust how data flows.
+When the integration moves more than one kind of record, a rail on the left titled **Entity pairs** lists them. Each row names the apps in the direction data moves (for example **HubSpot → Cin7**), with the records and field count underneath (for example _Company → Customer · 12 fields_). A pair that syncs both ways appears once in each direction.
 
-**Sync direction tabs**
+Click a pair to see and edit its settings. Each pair has its own configuration.
 
-If the integration syncs data in both directions, you'll see sub-tabs for each direction, for example:
+#### Tabs
 
-* **"HubSpot Company → Cin7 Customer"** (data flowing from HubSpot to Cin7)
-* **"Cin7 Customer → HubSpot Company"** (data flowing from Cin7 to HubSpot)
+For the selected pair, the dialog has these tabs:
 
-Click a tab to see and edit the field mappings for that direction. Each direction has its own independent configuration.
+* **Setup** - questions the integration needs you to answer. Shown only when there are some.
+* **Field mappings** - which field in one app feeds which field in the other.
+* **Filters** - which records are included.
+* **Advanced** - how records are matched between the two apps (**Matching strategy** and **Matching keys**).
 
-> **Screenshot needed:** Configuration dialog showing the bidirectional sub-tabs at the top, with one direction active.
+A small dot on a tab means something there is incomplete.
 
-**Field mappings**
+#### Field mappings
 
-Field mappings control which fields in one app correspond to fields in the other. Each mapping row shows:
+Each mapping row shows the **source field** (where the data comes from) and the **target field** (where it goes), with a plain-language description of what it does.
 
-* A plain-language description of what it does
-* The **source field** (where the data comes from) and the **target field** (where it goes) displayed as paired labels
-* A preview of actual values so you can see what data will flow
-* A **Change** button to modify the mapping
-* A delete icon to remove it
+* To edit a mapping, click the row or its chevron (**Edit mapping**). It opens in place, where you can re-pick either field.
+* To remove a mapping, use the trash icon on the row (**Remove mapping**).
+* **Required mappings are locked.** They show a lock icon instead of a remove icon; the tooltip explains the mapping is required by this integration and can't be removed.
+* To add a mapping that isn't there, click **Add field mapping** at the bottom of the list.
 
-To add a mapping the AI didn't include, click **"Add field mapping"** at the bottom of the list.
+#### Filters
 
-> **Screenshot needed:** Field mappings section showing 3-4 mapping rows with source/target labels, preview values, and Change buttons.
-
-**Filters**
-
-Filters let you narrow which records sync. For example, you might only want to sync contacts tagged as "Active" or orders above a certain amount.
+Filters narrow which records sync. For example, you might only want to sync contacts tagged as "Active" or orders above a certain amount. Click **Add filter** to add one.
 
 Each filter row has three parts:
 
-* **Field** — Which field to check (e.g., "Status," "Amount," "Email")
-* **Operator** — The condition to apply
-* **Value** — What to compare against
+* **Field** - Which field to check (for example "Status", "Amount" or "Email")
+* **Operator** - The condition to apply
+* **Value** - What to compare against
 
 Available operators:
 
@@ -87,54 +78,46 @@ Available operators:
 | is one of      | Syncs records where the field matches any value in a list       |
 | is not one of  | Syncs records where the field doesn't match any value in a list |
 
-> **Screenshot needed:** Filters section showing 2-3 filter rows with the operator dropdown expanded.
-
 ### Saving your changes
 
-After making adjustments:
+1. Click **Save changes** in the dialog header. Its tooltip reads _Changes apply on the next sync run_.
+2. Close the dialog with the **X**.
 
-1. Click **Save Configuration** at the bottom of the dialog.
-2. The footer confirms: **"Changes apply on the next workflow run."**
+Your changes don't take effect immediately on existing data. The next time the workflow runs (whether in real time, on a schedule, or started manually), it uses your updated configuration. Data that already synced is not changed retroactively; only new or updated records use the new settings.
 
-This means your changes don't take effect immediately on existing data. The next time the automation runs (whether that's in real-time, on a schedule, or manually triggered), it uses your updated configuration. Existing data that has already synced is not retroactively changed and only new or updated records use the new settings.
+If you close the dialog with unsaved changes, it asks **Discard changes?** Click **Discard** to throw them away, or cancel to go back and save.
 
-Click **Cancel** to discard your changes and close the dialog without saving.
+### Changing the schedule
+
+If the integration runs on a schedule, the installation's **Triggers** row shows it, for example _Every 1 hours_. Click **Open** on that row to see the triggers. Where your provider made the schedule editable, you can change it there; otherwise ask your provider.
 
 ### Using the AI assistant for changes
 
-If you're not sure how to adjust the configuration manually, use the AI assistant at the bottom of the widget's Apps tab. Describe what you want in plain language:
+If you're not sure how to adjust the configuration yourself, click the round sparkle button at the bottom right of the widget (**Ask the assistant**) and describe what you want in plain language:
 
 * "Only sync contacts with an email address"
 * "Stop syncing orders under $50"
 * "Add the phone number field to the sync"
 
-Click **Build with AI** and the agent will update the configuration for you.
+### Viewing workflows
 
-> **Screenshot needed:** AI assistant input at the bottom of the widget with an example prompt like "Only sync contacts with an email address."
-
-### Viewing active workflows
-
-Click the **Workflows** tab in the widget to see the automations running on your integrations. Active workflows show as cards, click the arrow on any workflow to open an interactive visual diagram showing how the automation works, step by step. You can trace the flow from trigger to completion and see each decision point along the way.
-
-You'll also see **template cards** for pre-built automations. Click one to launch an AI assistant session that sets it up for you.
-
-> **Screenshot needed:** Workflows tab showing an active workflow card and a template card.
-
-> **Screenshot needed:** Workflow visualizer showing the interactive node graph with labeled steps.
+Workflows live inside each integration. Click **Manage** on an integration to see its **Workflows** list. Click a workflow's row to open its details, which start on **Executions** (its run history). A **Diagram** tab showing the workflow step by step appears only if your provider turned it on.
 
 ### Troubleshooting
 
-* **I don't see a Configure button**\
-  Not all integrations support customization. The SaaS company decides what's configurable. If you need changes that aren't available, contact the product's support team.
-* **My changes didn't take effect:**\
-  Changes apply on the next sync run, not immediately. If the integration runs daily, your changes will be reflected in the next day's sync. The Insights view shows recent activity, so you can confirm the run after your change succeeded — it does not show when the next one is due, so ask your provider if you need the schedule.
-* **I want to start over:**\
-  Disconnect the app from the Apps tab and reconnect it. This clears the configuration — but rebuilding it with the Integration Agent is your provider's to run, so ask them before you clear anything you still depend on.
+* **I don't see a Configuration row**\
+  The row appears only when the integration has a configuration (or configuration fields) set up by your provider. With none, there's no row and nothing for you to configure. Your provider decides what's configurable; if you need changes that aren't available, contact the product's support team.
+* **The Open button is grayed out**\
+  Connect every account the integration needs first (the tooltip reads _Connect every account first_).
+* **My changes didn't take effect**\
+  Changes apply on the next sync run, not immediately. Check the installation's **Triggers** row for the schedule, then use **Insights** (in the widget's **⋯** menu) to confirm the run after your change succeeded.
+* **I want to start over**\
+  Open the integration (**Manage**), click **View** on the installation, and use **Delete installation**; then set it up again. This clears the configuration, but rebuilding it with fastn's agent is your provider's to run. Ask them before you clear anything you still depend on.
 
 ### What you've done
 
-* Opened the configuration dialog for a connected integration
-* Understood the two paths: AI-assisted first-time setup vs manual adjustment
+* Opened the configuration dialog for an integration
+* Understood the two paths: provider-run first-time setup vs your own adjustments
 * Reviewed and modified field mappings and filters
 * Know how to use the AI assistant for configuration changes
-* Know that changes apply on the next workflow run
+* Know that changes apply on the next sync run

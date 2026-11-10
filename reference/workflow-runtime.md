@@ -1,6 +1,6 @@
 ---
 description: >-
-  What a workflow can reach at runtime: ctx, multi-tenant headers, connectors,
+  What a workflow can reach at runtime: ctx, customer headers, connectors,
   unified APIs, database, state, secrets and configs.
 ---
 
@@ -42,27 +42,47 @@ HTTP headers from the incoming request, for webhook-triggered workflows.
 const contentType = ctx.headers['content-type'];
 ```
 
-`ctx.headers` is also how a run knows which of your customers it is acting for. See [Multi-tenant headers](#multi-tenant-headers) below.
+The headers also carry customer context. See [Customer headers](#customer-headers) below.
 
-## ctx.connectors
+## Customer and run fields on ctx
 
-The connectors bound to this workflow, available on the context object alongside `ctx.input` and `ctx.headers`. What is bound is what the workflow's **Connectors** tab lists, so that tab is the authoritative view of what a run can reach.
+The simplest way to know which of your customers a run is acting for is to read it straight off `ctx`:
+
+| Field             | Holds                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| `ctx.endOrgId`    | fastn's id for the customer the run acts for, or `null` when the run is not for a customer. |
+| `ctx.externalRef` | Your own id for that customer, when the caller named the customer by it; otherwise `null`. |
+| `ctx.env`         | The environment the run executes in, for example `test` or `live`.                   |
+| `ctx.attempt`     | The attempt number, starting at `1`.                                                  |
+| `ctx.isRetry`     | `true` when this run is a retry (`ctx.attempt` is greater than `1`).                  |
+
+```javascript
+const customerId = ctx.endOrgId;
+if (ctx.isRetry) {
+  // pick up from a checkpoint instead of starting over
+}
+```
+
+## Connectors are not on ctx
+
+`ctx` carries only `input`, `headers`, `env`, `endOrgId`, `externalRef`, `attempt` and `isRetry`. There is no `ctx.connectors`: call connectors through the `fastn` global, as shown in [Calling a connector](#calling-a-connector). What a run can reach is what the workflow's **Connectors** tab lists, so that tab is the authoritative view.
 
 ---
 
-## Multi-tenant headers
+## Customer headers
 
-fastn is multi-tenant, and these five headers on the incoming request are how a call says which customer it is for and what it may use. Getting them right is the difference between a workflow that serves one customer and one that serves all of them.
+One workflow serves all of your customers, and these four headers on the incoming request are how a call says which customer it is for and what it may use. Getting them right is the difference between a workflow that serves one customer and one that serves all of them.
 
 | Header                          | Carries                                                                 |
 | ------------------------------- | ------------------------------------------------------------------------- |
-| `x-end-org-id`                  | The customer the run acts for.                                           |
-| `x-end-org-ref`                 | Your own reference for that customer.                                    |
+| `x-org-id`                      | The customer the run acts for: your own id for it, or fastn's id for it. |
 | `x-installation-id`             | Which installation of the integration this run belongs to.               |
-| `x-fastn-connections`           | The connections the run may use.                                         |
+| `x-fastn-connections`           | The connections the installation uses.                                   |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.              |
 
-They are documented on every workflow's **Docs** tab, generated from the runtime you are actually calling: read exact shapes and value formats there before wiring them into a caller.
+`x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On a direct call to `/execute`, fastn reloads the named installation and overlays its stored connections and configuration on whatever the headers say, so a caller names an installation; it cannot pick connections by sending them.
+
+Their exact shapes are listed in the workflow editor's autocomplete, which is generated from the runtime: check there before wiring them into a caller.
 
 ---
 
@@ -76,7 +96,7 @@ const created = await fastn.connector.trackstar.createOrder({ ... });
 ```
 
 {% hint style="warning" %}
-**The product is inconsistent about the name here.** A workflow's **Docs** tab documents `fastn.connector` (singular), while the **Connectors** tab describes auto-extracting bound connectors from `fastn.connectors.X.Y(…)` calls (plural) when you save. Check your own workspace's Docs tab and confirm that saving picks up your calls on the Connectors tab: if the extraction misses them, you are on the wrong spelling.
+**Use `fastn.connector.<slug>.<action>()`, singular.** The plural `fastn.connectors.<slug>.<action>()` fails at run time. Saving the workflow extracts bound connectors from both spellings, so seeing your calls picked up on the **Connectors** tab does not prove the spelling is right.
 {% endhint %}
 
 The slug is the one on the connector's Overview tab. Available actions and their versions are pinned on the workflow's **Connectors** tab, and each connector there is marked *per customer* or workspace, which decides whose credential the call uses.
@@ -87,7 +107,7 @@ The slug is the one on the connector's Overview tab. Available actions and their
 
 Calls a [unified API](../build/unified-apis/README.md) (one canonical entity, served by whichever provider the running customer has connected), rather than naming a specific connector.
 
-This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: the routing to hubspot, salesforce or zohoCrm is the platform's problem rather than your code's. The exact call shape is on the workflow's **Docs** tab.
+This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: the routing to hubspot, salesforce or zohoCrm is the platform's problem rather than your code's. The workflow editor's autocomplete shows the exact call shape.
 
 ---
 
@@ -95,7 +115,7 @@ This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{ent
 
 SQL against your workspace's Postgres schema.
 
-**The isolation unit is the workspace, not the customer.** Each workspace gets its own schema (named `ws_<hash>`), isolated from every other workspace. Rows written for one of *your* customers and rows written for another sit in that same schema together. Nothing scopes a query to a customer for you: if you need that separation, put a customer column on the table and a predicate on every query.
+Which schema a query runs in depends on how your organization's database is set up (see [Database](../manage/database.md)). Do not rely on the database to keep one customer's rows apart from another's: if a table holds data for several customers, add a customer column (for example `ctx.endOrgId`) and filter on it in every query.
 
 ```javascript
 await fastn.db.query(
@@ -112,11 +132,11 @@ const rows = await fastn.db.query(
 Which Postgres this reaches is set under [Settings → Database](../manage/database.md).
 
 {% hint style="info" %}
-The exact signature above (`query(sql, params)` with `$1`-style placeholders), should be confirmed against your workflow's **Docs** tab, which is generated from the runtime you are calling.
+The signature is `query(sql, params)` with `$1`-style placeholders; the workflow editor's autocomplete shows the full shape.
 {% endhint %}
 
 {% hint style="warning" %}
-Always parameterise. String-interpolating a value from `ctx.input` into SQL is an injection waiting to happen.
+Always parameterize. String-interpolating a value from `ctx.input` into SQL is an injection waiting to happen.
 {% endhint %}
 
 ---
@@ -127,15 +147,15 @@ Durable key-value storage across runs, in one of two scopes.
 
 | Scope          | Lifetime                                                        | Use for                                    |
 | -------------- | ----------------------------------------------------------------- | -------------------------------------------- |
-| **ORG**        | Outlives a single run.                                           | Deduplication, synced-record IDs, caches.   |
-| **INVOCATION** | Bounded to one run.                                              | Temporary state inside a long run.          |
+| **ORG** (the default) | Outlives a single run. Org-wide: one key space shared by every workflow in the workspace and every customer's runs. | Deduplication, synced-record IDs, caches. |
+| **INVOCATION** | Bounded to one execution.                                        | Temporary state inside a long run.          |
 
 {% hint style="warning" %}
-**Confirm what `ORG` actually spans before you rely on it.** The two scope names are what the runtime documents; whether `ORG` means org-wide across every workflow, or is partitioned per workflow, is not settled here, and the difference matters. Org-wide, a key like `deal:123` collides between two workflows that both process deals. Check your workspace's **Docs** tab, or namespace your keys by workflow so it does not matter either way.
+**`ORG` keys are shared across workflows and customers.** A key like `deal:123` collides between two workflows that both process deals, and between two customers whose deals share an id. Namespace every key by workflow and, where the data belongs to one customer, by customer (for example with `ctx.endOrgId`).
 {% endhint %}
 
 ```javascript
-const key  = `myworkflow:deal:${dealId}`;
+const key  = `myworkflow:${ctx.endOrgId}:deal:${dealId}`;
 const seen = await fastn.state.get(key);
 if (seen) {
   return { success: true, skipped: true, reason: "already_processed" };
@@ -162,7 +182,7 @@ The string you pass is the secret's **Name** exactly, in UPPER\_SNAKE\_CASE. A s
 Reads per-environment values from [Settings → Configs](../manage/configs.md).
 
 ```javascript
-const base = await fastn.envConfig.get("PARTNER_API_BASE");
+const base = await fastn.envConfig.get("UPSTREAM_API_BASE");
 ```
 
 ---
@@ -179,12 +199,12 @@ Whatever you return becomes the workflow's output, and must match the output con
 
 | Tier         | The caller gets                                                        | Ceiling  |
 | ------------ | ------------------------------------------------------------------------ | -------- |
-| **Instant**  | The return value inline, synchronously.                                 | 30 seconds |
+| **Instant**  | The return value inline, synchronously.                                 | 25 seconds (2 minutes with the per-organization "Increase Instant timeout" entitlement) |
 | **Standard** | `202` and an execution id.                                              | 15 minutes |
-| **Long**     | `202` and an execution id.                                              | 36 hours |
+| **Long**     | `202` and an execution id.                                              | Up to 36 hours |
 
-**Instant's ceiling is 30 seconds.** It is short on purpose. It is the tier for something a caller is blocked on. Anything that reaches out to two or three systems in sequence belongs on Standard, and finding out by timing out in production is the expensive way to learn it.
+**Instant's ceiling is 25 seconds** unless your organization holds the "Increase Instant timeout" entitlement, which raises it to 2 minutes. It is short on purpose. It is the tier for something a caller is blocked on. Anything that reaches out to two or three systems in sequence belongs on Standard, and finding out by timing out in production is the expensive way to learn it.
 
 ## Errors
 
-Throwing marks the execution **Failed** and, where a retry policy is enabled, triggers a retry. Code errors, data errors and out-of-memory never retry: only transient failures do.
+Throwing marks the execution **Failed**. A `throw` from your code is recorded as a user code error and never retries, whatever the retry policy says. Where the workflow's retry policy allows more than one attempt, only transient failures retry: for example a connector call that escapes your code still failing with a 429 or 5xx after the connector's own retries, or a transient database error. Out of memory, a result that is too large, and a cancelled run never retry.

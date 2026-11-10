@@ -1,33 +1,33 @@
 ---
-hidden: true
 ---
 
 # Finding Your Org Identifier
 
-The `endOrgId` identifies the customer a widget embed is for. Both the token endpoint and the iframe URL require it. Getting the right identifier is necessary for anything to work.
+The customer identifier names the customer a widget embed is for, in the `x-org-id` header of the token request. Only the token request needs it: the iframe URL takes the token alone, because the token already carries the customer. Getting the right identifier is necessary for anything to work.
 
-### Your id, or fastn's
+### Two identifiers work
 
-`endOrgId` takes either of a customer's two identifiers:
+`x-org-id` accepts either:
 
-* **The id you registered them under**: the `orgId` you sent to `POST /api/v1/orgs`, shown as **External ID** on the customer in the dashboard. Register each customer under your own id for them and you never need to look one up.
-* **fastn's own id**: a UUID, returned as `id` when you register the customer, and as `endOrgId` in every token response.
+* **fastn's id for the customer**, or
+* **your external reference**: the id you gave the customer when you registered it (`orgId` on `POST /api/v1/orgs`). Using your own id means you never have to store fastn's. If you created a customer without one, fastn stored its slug as the external reference at creation time.
 
-The token request looks the value up among your own customers only, so another account using the same id never reaches yours. The `x-org-id` header takes the same values.
+### Where fastn's id comes from
 
-### Where to find it
+Each customer in your fastn workspace has an internal id. You create customers under **Operate → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)).
 
-You create customers under **Settings → Customers** (see [Managing Customers](../saas-admin/managing-customers.md)), or from your backend with `POST /api/v1/orgs`. Open a customer in the dashboard: its details show the **External ID** it was registered under.
+To find it, open **Operate → Customers** in the dashboard and click the customer. The address bar changes to `app.fastn.dev/customers/<id>`: the last part of that URL is the customer's id. Copy it from there.
+
+{% hint style="info" %}
+Create a separate test customer for development and use its id locally, so test connections never land on a real customer.
+{% endhint %}
 
 ### Using it
 
-Pass it as `endOrgId` in:
+Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. Nothing else needs it: the iframe URL is just `?token=<token>`. A key limited to a single customer is the one exception: it takes only fastn's id, in `orgId`. See [Generating Embed Tokens](generating-embed-tokens.md).
 
-* The token request body (`{ endOrgId, userId, userEmail, userName }`), or as the `x-org-id` header with a key that verifies caller identity. See [Generating Embed Tokens](generating-embed-tokens.md).
-* The iframe URL for user-level embeds (`?tenant-id=<endOrgId>&token=<token>`)
-
-Store it in an environment variable rather than hardcoding it, so it can change per environment (test customer vs production customer).
+In production, look the identifier up per request from the signed-in person's company rather than fixing one value, so each customer gets their own token. For local testing against a single test customer, an environment variable is fine:
 
 ```
-FASTN_END_ORG_ID=<customer id>
+FASTN_ORG_ID=<test-customer-id>
 ```

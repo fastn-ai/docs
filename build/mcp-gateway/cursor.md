@@ -16,9 +16,9 @@ Add fastn to Cursor from the fastn dashboard, sign in once, then ask Cursor's ag
 {% step %}
 #### Click Add to Cursor
 
-In fastn, click **Connect AI tools** in the top bar (or open **Access** → **MCP server**), pick the **Cursor** tile and click **Add to Cursor**. When your browser asks to open Cursor, allow it.
+In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP** → **MCP server**), pick the **Cursor** tile and click **Add to Cursor**. When your browser asks to open Cursor, allow it.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-cursor.webp" alt="fastn's MCP server page with the Cursor tile selected, showing an Add to Cursor button, a note about project-scoped servers, and a ~/.cursor/mcp.json snippet with an mcpServers fastn entry"><figcaption>The Cursor tab also has the config file, if you prefer to add it by hand.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-cursor.webp" alt="fastn's MCP server page with the Cursor tile selected, showing an Add to Cursor button, a note about project-scoped servers, and a ~/.cursor/mcp.json snippet with an mcpServers fastn entry"><figcaption>The Cursor tile also has the config file, if you prefer to add it by hand.</figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -40,7 +40,7 @@ Cursor lists fastn under **Needs Attention** with *Needs authentication*. Click 
 {% step %}
 #### Pick the workspace
 
-fastn opens in your browser. Sign in if asked, pick the workspace Cursor works in and click **Connect**.
+fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Cursor works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-cursor-choose-workspace.webp" alt="fastn's page titled Which workspace should Cursor use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Cursor to it.</figcaption></figure>
 

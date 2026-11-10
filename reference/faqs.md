@@ -10,7 +10,7 @@ description: Short answers to the questions that come up most.
 
 <summary>Do my customers need a fastn account?</summary>
 
-No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorising their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user`, not a fastn login of their own.
+No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorizing their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user`, not a fastn login of their own.
 
 </details>
 
@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. The [agent](../build/agent/README.md) writes workflows from a plain description, and iterates on follow-up messages. In fact code editing is switched off in almost every workspace (it is enabled only for the parent organisation) so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. It can be switched on if you want to write code yourself; ask fastn to enable it.
+No. [Build with AI](../build/agent/README.md) (or your AI tool) writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. If you want to write code yourself, ask fastn to turn it on for your organization; fastn can enable it for any organization.
 
 </details>
 
@@ -26,9 +26,9 @@ No. The [agent](../build/agent/README.md) writes workflows from a plain descript
 
 <summary>What is the difference between a customer and a tenant?</summary>
 
-They are the same thing under two names, and **both are current**. *Customer* is what the dashboard calls it: the Customers screen, the ⌘K search group, the Connections column. *Tenant* is what the plumbing calls it: it is the column header on all three Triggers tables, and the last segment of a connection id, `ucl:org_<org>:<env>:<connectorId>:<authId>:<tenant>`.
+They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example the second segment of a connection id, `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`.
 
-So do not read *tenant* as legacy vocabulary you can ignore. If a screen or an identifier says tenant, it means one of your customers.
+If an identifier says tenant, it means one of your customers.
 
 </details>
 
@@ -40,7 +40,7 @@ So do not read *tenant* as legacy vocabulary you can ignore. If a screen or an i
 
 <summary>What is the difference between a connector and a connection?</summary>
 
-A **connector** is the definition of a system: its actions, auth methods and webhooks. A **connection** is one customer's authorised link to it, holding the encrypted credential. One connector, many connections.
+A **connector** is the definition of a system: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
 
 </details>
 
@@ -48,7 +48,7 @@ A **connector** is the definition of a system: its actions, auth methods and web
 
 <summary>My customers see "fastn.ai" on the OAuth consent screen. How do I show my own brand?</summary>
 
-Start on the connector's **Auth** tab, which is where a connector's OAuth providers are configured. It shows the auth methods and a providers list. Whether that lets you register your own OAuth application, and what the consent screen then shows, is not something this page can confirm; check the tab for your connector, and ask fastn if it is not there. See [Connectors](../build/connectors/README.md).
+Use your own OAuth application. You set it on the connector's **Auth** tab, which is where a connector's auth methods and OAuth providers are configured; there is no separate OAuth apps page in Settings. Register the app in the provider's developer portal first, then configure it on that tab. See [Connectors](../build/connectors/README.md).
 
 </details>
 
@@ -56,21 +56,17 @@ Start on the connector's **Auth** tab, which is where a connector's OAuth provid
 
 <summary>A connection says Expired or Failed. Can I fix it from the dashboard?</summary>
 
-Not by re-entering the credential. It belongs to the customer, and they re-authorise through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
+Not by re-entering the credential. It belongs to the customer, and they re-authorize through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
 
 The precise meaning of each status is not documented here; treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect" and read the connection's own **Token and activity** section for `Expires`, `Last refreshed` and `Last used`.
-
-{% hint style="warning" %}
-The **Active** / **Inactive** / **Expired** / **Failed** filter chips on the Connections tab currently return zero rows whichever one you pick, even when every row in the unfiltered list shows Active. Do not conclude from an empty filtered list that you have no connections in that state: clear the filter and read the Status column.
-{% endhint %}
 
 </details>
 
 <details>
 
-<summary>What is a workspace connection for?</summary>
+<summary>What is a platform-wide connector for?</summary>
 
-Systems your organisation owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **per customer** or **workspace**, which decides whose credential the call uses.
+Systems your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
 
 </details>
 
@@ -90,13 +86,13 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 
 <summary>Which execution tier should I pick?</summary>
 
-| Tier         | Behaviour                                       | Maximum      | Timeout slider |
+| Tier         | Behavior                                        | Maximum      | Timeout slider |
 | ------------ | ----------------------------------------------- | ------------ | -------------- |
-| **Instant**  | The caller blocks and gets the result inline.    | **30 seconds** | 1s – 30s     |
-| **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s – 15min   |
-| **Long**     | Returns 202, runs in the background.             | **36 hours**   | 30s – 36h    |
+| **Instant**  | The caller blocks and gets the result inline.    | **25 seconds** | 1s - 25s     |
+| **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
+| **Long**     | Returns 202, runs in the background.             | **Up to 36 hours** | 30s - 36h |
 
-**Instant** only when something is genuinely waiting on the answer: 30 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
+Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
 
 </details>
 
@@ -136,7 +132,7 @@ No. It retries transient failures. **Code errors, data errors and out-of-memory 
 
 <summary>I called the API and nothing ran.</summary>
 
-Check whether the workflow has ever been published. Until a snapshot exists, every call returns `WORKFLOW_NOT_PUBLISHED`: the workflow list shows this as status **Not published** and latest version **Unpublished**. See [HTTP API](api.md).
+Check whether the workflow has ever been published. Until a snapshot exists, every call returns `WORKFLOW_NOT_PUBLISHED`: the workflow list shows this as status **Unpublished**, with a dash in the **Latest** column. See [HTTP API](api.md).
 
 </details>
 
@@ -200,7 +196,7 @@ In fastn's shared managed Postgres by default, in a schema isolated to your work
 
 <summary>Secret or config?</summary>
 
-Secret if exposure would be an incident (tokens, passwords, keys. Config if you would happily show it to a colleague), endpoints, feature flags, batch sizes. When in doubt, secret.
+Secret if exposure would be an incident (tokens, passwords, keys). Config if you would happily show it to a colleague (endpoints, feature flags, batch sizes). When in doubt, secret.
 
 </details>
 
@@ -209,6 +205,8 @@ Secret if exposure would be an incident (tokens, passwords, keys. Config if you 
 <summary>What happens when I hit a plan limit?</summary>
 
 New work stops rather than being charged for, and nothing already running is interrupted. Check [Billing](../manage/billing.md): a sync that stops because of a quota looks exactly like a broken sync until you do.
+
+Customer connections are the exception on Scale: past the 10 included, each extra one is billed at $50 a month and is never refused. On Launch, the fourth customer connection is refused.
 
 </details>
 
@@ -226,43 +224,11 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 <details>
 
-<summary>Why does the same connector appear twice in the catalogue?</summary>
+<summary>Why does the same connector appear twice in the catalog?</summary>
 
 Because two entries exist for one system: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
 
-The practical consequence: the connector count is a count of *entries*, not of distinct systems, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorise the copy you did not mean.
-
-</details>
-
-<details>
-
-<summary>A connector says Connected but its detail page says 0 connections.</summary>
-
-That is a known inconsistency between the list badge and the detail page's count, not a lost connection. Confirm on the [Connections](../build/connections/README.md) tab, which lists actual connections with their customer and status.
-
-</details>
-
-<details>
-
-<summary>A connector shows "Created: Invalid Date".</summary>
-
-A display defect in the Overview tab's Created row. It says nothing about the connector's health.
-
-</details>
-
-<details>
-
-<summary>The Trash Actions tab never finishes loading.</summary>
-
-Known: the **Actions** tab on [Trash](../manage/trash.md) sits on *Loading deleted actions…* and does not resolve. The Connectors and Workflows tabs work normally.
-
-</details>
-
-<details>
-
-<summary>The Connections status filters return nothing.</summary>
-
-Also known: every status chip returns zero rows. Clear the filter and read the Status column instead.
+The practical consequence: the connector count is a count of *entries*, not of distinct systems, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
 
 </details>
 
@@ -270,4 +236,4 @@ Also known: every status chip returns zero rows. Clear the filter and read the S
 
 ## Still stuck
 
-Work through [Troubleshooting](../operate/troubleshooting.md). It is organised by symptom.
+Work through [Troubleshooting](../operate/troubleshooting.md). It is organized by symptom.

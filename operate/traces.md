@@ -4,7 +4,9 @@ description: Every workflow run that called a connected system.
 
 # Traces
 
-**Activity → Traces**
+`/activity/traces`
+
+Traces is not a tab on the Activity strip. The page is only reachable by opening `/activity/traces` directly.
 
 A trace is recorded for every workflow run that calls a connected system. Where [Executions](executions.md) tells you a run failed, traces are where you look for the external call behind it.
 

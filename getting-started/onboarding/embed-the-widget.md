@@ -41,7 +41,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 | Use case | How you set it up |
 | --- | --- |
-| Settings page in a B2B product | The iframe on your settings page, with Org level Scope so one admin connects for the whole customer |
+| Settings page in a B2B product | The iframe on your settings page, with Organization level Scope so one admin connects for the whole customer |
 | Each user connects their own systems | User level Scope |
 | Plans and tiers | Register each customer with a tier and connection limit; show some integrations to specific customers only |
 | Integrations that start from your product | Your backend calls a webhook trigger on each event (part 5 below) |
@@ -50,20 +50,26 @@ This step is for putting your integrations inside your product. The widget is th
 
 Five parts, each done once; part 5 is optional. Keep the API key and identity secret on your backend: only the embed token reaches the browser.
 
-**1 · Create an API key.** In **Settings** → **API keys**, create a key with **Full access** permissions that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones it registers later, and the identity hash says which customer each call is for. A key limited to specific customers can't register customers, or get embed tokens for customers it doesn't list. See [API keys](../../manage/api-keys.md).
+**1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
 
-**2 · Register each customer** (backend, once per customer), with your own ID for them, their tier and connection limit:
+Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Leaving **Verify caller identity (HMAC)** off on this key is simplest, because a key that enforces it refuses every call without identity headers. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
+
+**2 · Register each customer** (backend, once per customer, with the **Admin** key), with your own ID for them, their tier and connection limit. The **Embed backend** key gets `403` here.
 
 ```bash
 curl -X POST https://api.fastn.dev/api/v1/orgs \
-  -H "Authorization: Bearer $FASTN_API_KEY" \
+  -H "Authorization: Bearer $FASTN_ADMIN_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
 
-Already hold a customer's credentials? Create the connection for them with `POST /api/v1/connections`.
+`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference. You don't send a `plan` for a customer: a paid plan in this call is refused with `403`.
 
-**3 · Get an embed token** (backend, every page load). Name the customer and user in the `x-org-id` and `x-user-id` headers, and sign them with your identity secret in `x-identity-hmac`. The key from part 1 refuses the call without them, and no body is needed. [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md) is the full reference: every field and error, and the request for a key without identity verification, which names the customer in the body instead.
+If your Admin key has **Verify caller identity (HMAC)** set to enforce, this call needs identity headers too. There is no customer yet, so send `x-user-id` and `x-identity-hmac`, leave out `x-org-id`, and sign an empty org id: `hmac("\n" + userId)`. See [Register with an enforcing key](../../embed/embedding/integration-flow.md#register-with-an-enforcing-key).
+
+Already hold a customer's credentials, such as a token for your own product? Create the connection for them with `POST /api/v1/connections`. See [Create a connection for a customer](../../embed/embedding/integration-flow.md#create-a-connection-for-a-customer).
+
+**3 · Get an embed token** (backend, every page load). Name the customer and user in the `x-org-id` and `x-user-id` headers, and sign them with your identity secret in `x-identity-hmac`. The key from part 1 refuses the call without them, and no body is needed. [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md) is the full reference: every field and error, and the request for a key without identity verification.
 
 ```javascript
 const hmac = crypto.createHmac("sha256", process.env.FASTN_IDENTITY_SECRET)
@@ -73,7 +79,7 @@ const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
   method: "POST",
   headers: {
     Authorization: `Bearer ${process.env.FASTN_API_KEY}`,
-    "x-org-id": orgId,     // the orgId you registered in part 2
+    "x-org-id": orgId,     // the orgId from part 2, or fastn's customer id
     "x-user-id": userId,
     "x-identity-hmac": hmac,
   },
@@ -110,8 +116,6 @@ See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md)
 ### In the onboarding
 
 Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns 10 AI credits.
-
-<figure><img src="../../.gitbook/assets/onboarding-step-3-embed-the-widget.webp" alt="Onboarding step 3 of 4, Embed the widget: Preview the widget, Open the widget builder, Copy link for a developer and Watch, above the four parts Create an API key, Register each customer, Get an embed token and Add the widget to your page"><figcaption>Step 3: Embed the widget, in four parts.</figcaption></figure>
 
 ### Related docs
 

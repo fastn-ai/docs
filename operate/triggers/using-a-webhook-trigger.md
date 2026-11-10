@@ -4,19 +4,18 @@ description: Call a webhook trigger from your backend once it exists, with an ex
 
 # Using a webhook trigger
 
-Once the webhook trigger is built through the UI or through the agent it can be triggered as shown by the example curl below.
+Once the webhook trigger is built, in the dashboard, with Build with AI or with your AI tool, it can be called as shown by the example curl below. The first ID in the URL is your organization's ID.
 
 ```bash
-curl --location 'https://webhooks.fastn.dev/prod/triggers/<WORKSPACE_ID>/webhooks/<WEBHOOK_ID>' \
+curl --location 'https://webhooks.fastn.dev/prod/triggers/<ORG_ID>/webhooks/<WEBHOOK_ID>' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: <YOUR_API_KEY>' \
---header 'x-org-id: <ORG_ID>' \
---header 'x-user-id: <USER_ID>' \
---header 'x-identity-hmac: <IDENTITY_HASH>' \
 --data '{
 }'
 ```
 
-The API key goes in `x-api-key`, as above, or in `x-fastn-access-key`: your `fsk_` key either way. A webhook URL does not read `Authorization`, so a bearer token here is answered `401`, even though `Authorization: Bearer` is how the [platform API](../../reference/api.md#authentication) takes the same key.
+The `x-api-key` header is needed only when the trigger's auth is set to API key. A trigger with no auth accepts the call without it.
 
-`x-org-id`, `x-user-id` and `x-identity-hmac` say which of your customers, and which user, the event is for. `x-org-id` is your id for the customer (or fastn's), `x-user-id` is optional, and the hash is computed as in [API keys](../../manage/api-keys.md#identity-hash). A key with **Verify caller identity (HMAC)** set to Enforce refuses the call unless they come with a valid hash. With a key that has no identity verification, `x-org-id` and `x-user-id` sent without `x-identity-hmac` reach the workflow as ordinary headers, and do not name the customer.
+The key is your `fsk_` key, in `x-api-key` or in the older `x-fastn-access-key`. A webhook URL does not read `Authorization`, so a bearer token here is answered `401`, even though `Authorization: Bearer` is how the [platform API](../../reference/api.md#authentication) takes the same key.
+
+On a trigger whose auth is API key, your backend can also name the customer and end user the call is for with the optional `x-org-id` and `x-user-id` headers, proven with `x-identity-hmac` (computed as in [API keys](../../manage/api-keys.md#identity-hash)). These headers name the customer only when your API key's identity verification is set to Monitor only or Enforce, or when the call carries `x-identity-hmac`. A key set to Enforce refuses the call unless they come with a valid hash. Otherwise, and on a trigger with no auth, those headers are passed through to the workflow as ordinary headers.

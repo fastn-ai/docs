@@ -4,7 +4,7 @@ description: "Typed calendar and CRM methods on a customer: book and find meetin
 
 # Calendar and CRM
 
-`customer.calendar` and `customer.crm` are the [unified API](unified-records.md) with the fields named. Each method takes a TypeScript interface with the catalogue's own field names (`start_time`, `first_name`, …) and answers a record `{ id, provider, data, warnings? }` or a page `{ records, nextCursor, hasMore }`. You never name the app: the SDK reads which app the customer connected for that entity and uses it.
+`customer.calendar` and `customer.crm` are the [unified API](unified-records.md) with the fields named. Each method takes a TypeScript interface with the catalog's own field names (`start_time`, `first_name`, …) and answers a record `{ id, provider, data, warnings? }` or a page `{ records, nextCursor, hasMore }`. You never name the app: the SDK reads which app the customer connected for that entity and uses it.
 
 ```typescript
 const customer = fastn.customer("acme_customer_42");
@@ -43,11 +43,11 @@ Every method takes the [request options](errors-and-options.md#request-options) 
 | Method | Underneath | Input |
 | ------ | ---------- | ----- |
 | `calendar.freeSlots(window)` | scheduling/availability | `start_time`, `end_time` (required), `timezone`, `slot_minutes`. Answers `{ busy, free, slots }`: `busy` from the calendar, `free` the gaps, `slots` the gaps cut into `slot_minutes` pieces (left out without `slot_minutes`). |
-| `calendar.book(meeting)` | scheduling/meeting create | `title`, `start_time`, `end_time` (required), `timezone`, `description`, `attendee_email`, `attendee_name`, `location`. |
+| `calendar.book(meeting)` | scheduling/meeting create | `title` and `start_time` (required), plus `end_time` or `duration_minutes`. Optional: `timezone`, `description`, `attendee_email`, `attendee_name`, `location`, `calendar_id`, `event_type_id`, `status`. |
 | `calendar.get(id)` | get | The meeting id. |
 | `calendar.find(filters, page?)` | search | `start_time`, `end_time` (required), `query` (matches the title, description and attendee email). `page_size` only: a search answers one page. |
 | `calendar.list(page?)` | list | `page_size`, `cursor`. |
-| `calendar.reschedule(id, times)` | update | `start_time`, `end_time`. |
+| `calendar.reschedule(id, times)` | update | `start_time`, plus `end_time` or `duration_minutes`. |
 | `calendar.cancel(id)` | delete | The meeting id. Answers `{ id, provider, deleted: true }`. |
 
 ```typescript
@@ -73,7 +73,7 @@ await customer.calendar.cancel(booked.id, { idempotencyKey: "cancel_123" });
 | ----- | ---------- | ------- |
 | `crm.contacts` | crm/contact | `create`, `get`, `find({ email, phone, first_name, last_name })`, `list`, `update`, `delete` |
 | `crm.notes` | crm/note | `add({ body, parent_id, parent_type, title?, created_at? })`, `update`, `delete`. `created_at` defaults to now. |
-| `crm.tasks` | crm/task | `add({ subject, due_date, status, … })`, `get`, `list`, `update`, `delete` |
+| `crm.tasks` | crm/task | `add({ subject, due_date, status, … })` (`status` is the app's own value, for example HubSpot's `NOT_STARTED`, `IN_PROGRESS`, `WAITING`, `COMPLETED` or `DEFERRED`), `get`, `list`, `update`, `delete` |
 | `crm.deals` | crm/opportunity and crm/stage | `create({ name, amount, stage, … })`, `get`, `list`, `update`, `moveStage(id, stage)`, `delete`, `stages()` |
 
 ```typescript
@@ -81,14 +81,14 @@ const deal = await customer.crm.deals.create({ name: "Acme Dental: 12 chairs", a
 const stages = await customer.crm.deals.stages();           // the pipeline stages the app knows
 await customer.crm.deals.moveStage(deal.id, "qualifiedtobuy");
 
-await customer.crm.tasks.add({ subject: "Call back", due_date: "2026-11-05T09:00:00Z", status: "open" });
+await customer.crm.tasks.add({ subject: "Call back", due_date: "2026-11-05T09:00:00Z", status: "NOT_STARTED" });   // HubSpot's value
 ```
 
 `find` is the app's own search and answers one page: narrow the filters or raise `page_size` to see more. Passing a `cursor` to `find` is refused with a `TypeError`; `list({ page_size, cursor })` pages.
 
 ---
 
-## The catalogue
+## The catalog
 
 Which categories and entities exist, the fields each takes, and which apps a customer connected:
 
@@ -106,4 +106,4 @@ const providers = await customer.catalog.providers("crm", "contact");  // [{ con
 | `fastn.catalog.providers(category, entity)` | The apps mapped to the entity. |
 | `customer.catalog.providers(category, entity)` | The same list with `connected` for this customer. |
 
-What the typed methods do not cover is one call away: `customer.records({ category, entity })` takes any entity in the catalogue (see [Unified records](unified-records.md)), and `customer.runAction(…)` runs an app's own action (see [Direct app actions](app-actions.md)).
+What the typed methods do not cover is one call away: `customer.records({ category, entity })` takes any entity in the catalog (see [Unified records](unified-records.md)), and `customer.runAction(…)` runs an app's own action (see [Direct app actions](app-actions.md)).

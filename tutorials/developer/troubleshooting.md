@@ -1,16 +1,15 @@
 ---
-hidden: true
 ---
 
 # Troubleshooting
 
-Common errors when embedding Fastn, with their causes and fixes.
+Common errors when embedding fastn, with their causes and fixes.
 
 ### Blank embed / iframe renders nothing
 
 **Most likely cause:** an expired or hardcoded token.
 
-Embed tokens expire after eight hours. If a token is hardcoded into your frontend or cached and reused, it works until it expires, then the iframe loads blank with no obvious error.
+Embed tokens expire after 8 hours. If a token is hardcoded into your frontend or cached and reused, it works until it expires, then the iframe loads blank with no obvious error.
 
 **Fix:** Generate a fresh token from your backend on each page load. Never hardcode or cache tokens. See [Generating Embed Tokens](generating-embed-tokens.md).
 
@@ -18,15 +17,23 @@ Embed tokens expire after eight hours. If a token is hardcoded into your fronten
 
 ### 404 on the token request
 
-**Most likely cause:** the wrong org identifier.
+**Most likely cause:** the wrong customer identifier.
 
-`endOrgId` in the body, or the `x-org-id` header, must name one of your customers: the id you registered them under (their External ID), or fastn's own id for them. An id that matches none of your customers is `404`: `Tenant not found` for `endOrgId`, `IDENTITY_ORG_NOT_FOUND` for `x-org-id`. See [Generating Embed Tokens](generating-embed-tokens.md).
+For `x-org-id`, or `orgId` in the body, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns `404`: `IDENTITY_ORG_NOT_FOUND` for `x-org-id`, `Tenant not found` for `orgId`. With a key limited to a single customer, only fastn's id works in `orgId`. See [Generating Embed Tokens](generating-embed-tokens.md).
+
+### 401 on the token request
+
+**Most likely cause:** an API key set to **Enforce** under **Verify caller identity (HMAC)**, called without signed identity headers.
+
+Such a key refuses a token request that names the customer only in the body, or in `x-org-id` with no hash: `401 IDENTITY_HEADERS_REQUIRED` when there are no identity headers, `401 IDENTITY_HMAC_INVALID` when the hash is missing or wrong.
+
+**Fix:** Send `x-org-id`, `x-user-id` and `x-identity-hmac`, computed with the key's identity secret. See [Generating Embed Tokens](generating-embed-tokens.md).
 
 ### Requests fail with a test key
 
 **Most likely cause:** the missing test-mode header.
 
-Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true`. Without it, requests fail in ways the error message doesn't make obvious.
+Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true`. Without it, requests fail with 403 `Test API keys require X-fastn-Test-Mode: true header`.
 
 **Fix:** Add `X-fastn-Test-Mode: true` for test keys. Remove it for live keys. See [Authentication & API Keys](authentication-and-api-keys.md).
 
@@ -34,9 +41,9 @@ Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true
 
 **Most likely cause:** a tenancy or token mismatch.
 
-This can appear when the iframe URL's tenancy shape doesn't match how the token was minted — for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
+This can appear when the iframe URL's tenancy shape doesn't match how the token was minted - for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
 
-**Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `endOrgId` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
+**Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `x-org-id` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
 
 
 
@@ -44,6 +51,6 @@ This can appear when the iframe URL's tenancy shape doesn't match how the token 
 
 **Most likely cause:** reading the token from the wrong place in the response.
 
-The token is nested under `data` in the response — `response.data.token`, not `response.token`.
+The token is nested under `data` in the response - `response.data.token`, not `response.token`.
 
 **Fix:** Read `json.data.token`. See [Generating Embed Tokens](generating-embed-tokens.md).

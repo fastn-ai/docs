@@ -22,7 +22,7 @@ await contacts.create(
 | `timeoutMs` | | A time limit for this call, in milliseconds. Overrides the client's `timeoutMs`. |
 | `retries` | | How many retries for this call. `0` never retries. Overrides the client's `retries`. |
 | `signal` | | An `AbortSignal`, to cancel the call yourself. |
-| `customer` | `x-end-org-ref` header | Run the call for one customer: `{ ref: "acme_customer_42" }` sends your customer id as `x-end-org-ref`. `fastn.customer(ref)` and `customer.api` set this for you. |
+| `customer` | customer header | Run the call for one customer: `{ ref: "acme_customer_42" }` sends your customer id with the call. `fastn.customer(ref)` and `customer.api` set this for you. |
 | `installationId` | `x-installation-id` header | Run the call for one installation. |
 | `headers` | | Extra headers, sent as given. |
 | `extraQuery` | query string | Query parameters the SDK does not know yet, sent as given. |
@@ -81,7 +81,7 @@ for (const c of calls.data ?? []) {
 }
 ```
 
-Each row: `id`, `correlationId`, `endOrgId`, `category`, `entity`, `operation`, `connectorSlug`, `executionId`, `status`, `durationMs`, `createdAt`.
+Each row: `id`, `correlationId`, `orgId`, `category`, `entity`, `operation`, `connectorSlug`, `executionId`, `status`, `durationMs`, `createdAt`.
 
 ---
 
@@ -141,12 +141,15 @@ try {
 | `400 UNIFIED_VALIDATION_FAILED` | A unified field is unknown, has the wrong type, or a required field is missing. | Fix the fields. The message names the field. |
 | `400 VALIDATION_ERROR` | The request does not match the operation's input, for example an `http` URL where https is needed. | Fix the input. |
 | `400 SETUP_LINK_REDIRECT_NOT_ALLOWED` | The setup link's `redirectUrl` is not registered. | Register it (see [Connecting apps](connecting-apps.md#redirect-addresses)). |
-| `401` / `403` | The key is wrong, revoked, or not allowed to do this. | Check the key on [Settings → API keys](../../manage/api-keys.md). |
+| `401` / `403` | The key is wrong, revoked, or not allowed to do this. | Check the key on [Embed → API keys and MCP](../../manage/api-keys.md). |
 | `404 NOT_FOUND` (or `404` with no code) | The thing you asked for does not exist. | Check the id. |
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has not connected an app for this entity. | Send a [setup link](connecting-apps.md#setup-links). |
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | The app does not offer that operation for this entity. | Use a [direct app action](app-actions.md). |
 | `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. | Stop using it; pick a connection from `customer.connections()`. |
+| `409 UNIFIED_CONNECTION_EXPIRED` | The connection's login expired. | Ask the customer to sign in to the app again. |
+| `400 UNIFIED_PROVIDER_REJECTED` | The app refused what you sent. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); fix the fields. |
+| `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id. | Check the record id. |
 | `422 IDEMPOTENCY_KEY_REUSED` | The same `idempotencyKey` was used for a different request. | Use a new key for a new request. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app refused the request. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); check the record id or fields. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer), or fastn's connector platform refused the call. | Retry later; `e.body.providerStatus` and `e.body.providerError` hold what the app said, when it answered. |
 
 See [Unified records](unified-records.md#errors-from-unified-calls) for every unified code, and [Errors and failure states](../errors.md) for failures you see in the dashboard.

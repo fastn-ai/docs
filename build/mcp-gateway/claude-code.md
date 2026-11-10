@@ -30,7 +30,7 @@ claude mcp login fastn
 
 Or, inside a Claude Code session, type `/mcp`, pick **fastn** and choose **Authenticate**.
 
-fastn opens in your browser. Sign in if asked, pick the workspace Claude Code works in and click **Connect**.
+fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Claude Code works in and click **Connect**.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-code-choose-workspace.webp" alt="fastn's page titled Which workspace should Claude Code (claude.ai) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Claude Code to it.</figcaption></figure>
 

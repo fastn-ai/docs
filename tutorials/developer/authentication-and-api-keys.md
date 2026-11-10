@@ -1,16 +1,15 @@
 ---
-hidden: true
 ---
 
 # Authentication & API Keys
 
-Fastn API keys authenticate your backend's requests — including generating embed tokens. Keys come in test and live variants, and each requires different handling.
+fastn API keys authenticate your backend's requests - including generating embed tokens. Keys come in test and live variants, and each requires different handling.
 
 ### Where to find your keys
 
-Go to **Settings → API Keys**. The page has a **Test / Live toggle** in the top-right and a keys table with a **MODE** column — each key shows a badge indicating whether it's a LIVE or TEST key. Click **+ Create API Key** to generate one. Keys are shown once at creation — copy and store it securely.
+Go to **Embed → API keys and MCP → API keys**. Next to **Search keys**, filter pills read **All**, **Live** and **Test**, and the keys table has a **Mode** column with a **Live** or **Test** badge on each key. Click **Create key** to open the **Create an API key** dialog. Keys are shown once at creation - copy and store it securely.
 
-When viewing test data, the page shows a banner: "Test keys only work with the X-fastn-Test-Mode: true header."
+In that dialog, the **Test** mode card says: "Refused unless the caller sends X-fastn-Test-Mode: true."
 
 ### Test vs live keys
 
@@ -29,11 +28,11 @@ Requests made with a `fsk_test_` key **must** include this header:
 X-fastn-Test-Mode: true
 ```
 
-Without it, requests with a test key fail in ways that aren't obvious from the error. If you're getting unexpected failures with a test key, this header is the first thing to check.
+Without it, the request is refused with `403` and the error `Test API keys require X-fastn-Test-Mode: true header`. If you're getting unexpected failures with a test key, this header is the first thing to check.
 
-#### Live keys must not send that header
+#### Live keys don't need that header
 
-Requests with a `fsk_live_` key must **not** include `X-fastn-Test-Mode`. Send the header only with test keys.
+Requests with a `fsk_live_` key do not need `X-fastn-Test-Mode`. Send the header only with test keys.
 
 ### Example
 
@@ -70,4 +69,4 @@ headers: {
 
 * Store keys in environment variables, never in source code or client-side bundles.
 * Use test keys in development and live keys only in production.
-* The API key is used to mint embed tokens on your backend — it should never reach the browser. See [Generating Embed Tokens](generating-embed-tokens.md).
+* The API key is used to mint embed tokens on your backend - it should never reach the browser. See [Generating Embed Tokens](generating-embed-tokens.md).
