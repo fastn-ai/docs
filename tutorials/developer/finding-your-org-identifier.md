@@ -24,7 +24,7 @@ Create a separate test customer for development and use its id locally, so test 
 
 ### Using it
 
-Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. Nothing else needs it: the iframe URL is just `?token=<token>`.
+Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. Nothing else needs it: the iframe URL is just `?token=<token>`. A key limited to a single customer is the one exception: it takes only fastn's id, in `orgId`. See [Generating Embed Tokens](generating-embed-tokens.md).
 
 In production, look the identifier up per request from the signed-in person's company rather than fixing one value, so each customer gets their own token. For local testing against a single test customer, an environment variable is fine:
 

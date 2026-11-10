@@ -178,7 +178,7 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 { "userId": "<USER_ID>" }
 ```
 
-Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. The full field list is on [Tokens](token-api.md).
+Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. `x-identity-hmac` is required when the API key's identity verification is set to Enforce. The full field list is on [Tokens](token-api.md), and every error, with a curl for each way of naming the customer, is in [Generate embed tokens](../../tutorials/developer/generating-embed-tokens.md).
 
 **Response**
 

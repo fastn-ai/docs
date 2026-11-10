@@ -19,7 +19,15 @@ Embed tokens expire after 8 hours. If a token is hardcoded into your frontend or
 
 **Most likely cause:** the wrong customer identifier.
 
-For `x-org-id`, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns 404 `Tenant not found`.
+For `x-org-id`, or `orgId` in the body, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns `404`: `IDENTITY_ORG_NOT_FOUND` for `x-org-id`, `Tenant not found` for `orgId`. With a key limited to a single customer, only fastn's id works in `orgId`. See [Generating Embed Tokens](generating-embed-tokens.md).
+
+### 401 on the token request
+
+**Most likely cause:** an API key set to **Enforce** under **Verify caller identity (HMAC)**, called without signed identity headers.
+
+Such a key refuses a token request that names the customer only in the body, or in `x-org-id` with no hash: `401 IDENTITY_HEADERS_REQUIRED` when there are no identity headers, `401 IDENTITY_HMAC_INVALID` when the hash is missing or wrong.
+
+**Fix:** Send `x-org-id`, `x-user-id` and `x-identity-hmac`, computed with the key's identity secret. See [Generating Embed Tokens](generating-embed-tokens.md).
 
 ### Requests fail with a test key
 

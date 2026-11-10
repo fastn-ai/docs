@@ -9,7 +9,7 @@ This walks through the shortest path to a working embed: generate a token from y
 
 You'll need:
 
-* **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md).
+* **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md). This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
 * **The customer identifier** - fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** - Any server environment where you can make an HTTP request with a secret API key.
 

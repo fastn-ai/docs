@@ -14,11 +14,17 @@ From Node.js or TypeScript, the [SDK](sdk/README.md) (`@fastn-ai/sdk`) wraps the
 
 ## Authentication
 
-Every request carries an API key as a bearer token.
+Every request carries an API key, as a bearer token or in `X-API-Key`:
 
 ```
 Authorization: Bearer fsk_live_<your-key>
 ```
+
+```
+X-API-Key: fsk_live_<your-key>
+```
+
+These two are the only headers this API reads a key from. A webhook trigger URL takes them too, and also `x-fastn-access-key` (see [Webhook endpoints](#webhook-endpoints)). No endpoint reads `x-fastn-api-key`: a call that sends the key there is answered `401`.
 
 Keys are created under [Embed → API keys and MCP](../manage/api-keys.md) and come in two modes.
 
@@ -146,8 +152,10 @@ A [webhook trigger](../build/triggers/README.md) gives you a public URL. Whether
 
 | Authentication setting            | Caller must send                      |
 | --------------------------------- | --------------------------------------- |
-| **API Key (x-api-key)**           | `x-api-key: <your-key>` (a fastn key, starting `fsk_`); `x-fastn-access-key: <your-key>` is still accepted |
+| **API Key (x-api-key)**           | `x-api-key: <your-key>` (a fastn key, starting `fsk_`) or `Authorization: Bearer <your-key>`; `x-fastn-access-key: <your-key>` is still accepted |
 | **None (public)**                 | Nothing                               |
+
+`X-API-Key` and `Authorization: Bearer` count only when the value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` or bearer token is not mistaken for one. Write the scheme as `Bearer`, here and on the platform API: `bearer fsk_…` in lowercase is not read. A connector's webhook URL (with **Require API key** on) takes `x-api-key` or `x-fastn-access-key` only, not `Authorization`.
 
 ---
 
@@ -161,12 +169,14 @@ Tokens that scope the widget to one customer. Mint them from your backend with y
 POST /api/v1/embed/token
 ```
 
-| Header          | Value                    |
-| --------------- | ------------------------ |
-| `Authorization` | `Bearer <API key>`       |
-| `x-org-id`      | The customer: fastn's id for it, or your own id for it |
+| Header            | Value                    |
+| ----------------- | ------------------------ |
+| `Authorization`   | `Bearer <API key>` (or `X-API-Key: <API key>`) |
+| `x-org-id`        | The customer: fastn's id for it, or your own id for it |
+| `x-user-id`       | Optional. Your id for the user |
+| `x-identity-hmac` | Hex HMAC-SHA256 of `<x-org-id>\n<x-user-id>`, signed with the key's identity secret. Required when the key's **Verify caller identity** is set to Enforce |
 
-`x-org-id` names the customer the token is for. You can send `{"orgId": "…"}` in the body instead, with the same value; if you send both, they must name the same customer (`400 IDENTITY_ORG_MISMATCH`). A request that names no customer is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`.
+`x-org-id` names the customer the token is for, and with these headers the body can be empty. A key set to Enforce must send the signed headers: a request without them is `401 IDENTITY_HEADERS_REQUIRED`, even when the body names the customer. A key without identity verification can send `{"orgId": "…"}` in the body instead, with the same value; if you send both, they must name the same customer (`400 IDENTITY_ORG_MISMATCH`). A request that names no customer is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`. A key limited to a single customer names it with `orgId` in the body, set to fastn's id for it: with such a key your own id for the customer is `404 Tenant not found`.
 
 ```json
 {
@@ -182,13 +192,17 @@ POST /api/v1/embed/token
 }
 ```
 
-`expiresIn` is **28800 seconds: eight hours**. `orgId` is the customer the token is scoped to, under your own id for it, and the returned role is always `end_user`.
+The token is `data.token`. `expiresIn` is **28800 seconds: eight hours**. `orgId` is the customer the token is scoped to, under your own id for it, and the returned role is always `end_user`.
+
+Every body field and error: [Generate embed tokens](../tutorials/developer/generating-embed-tokens.md).
 
 ### Refresh
 
 ```
 POST /api/v1/embed/token/refresh
 ```
+
+The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer carries `data.token`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` is the seconds the new token has left, below 28800 near the seven-day cap.
 
 {% hint style="warning" %}
 **Refresh is capped at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops: refreshing again does not extend it. Listen for that message and start a new session by minting a fresh token. A host app that assumes refresh is indefinite will strand long-lived sessions.
