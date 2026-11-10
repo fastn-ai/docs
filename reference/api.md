@@ -155,7 +155,7 @@ A [webhook trigger](../build/triggers/README.md) gives you a public URL. Whether
 | **API Key (x-api-key)**           | `x-api-key: <your-key>` (a fastn key, starting `fsk_`) or `Authorization: Bearer <your-key>`; `x-fastn-access-key: <your-key>` is still accepted |
 | **None (public)**                 | Nothing                               |
 
-`X-API-Key` and `Authorization: Bearer` count only when the value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` or bearer token is not mistaken for one. A connector's webhook URL (with **Require API key** on) takes `x-api-key` or `x-fastn-access-key` only, not `Authorization`.
+`X-API-Key` and `Authorization: Bearer` count only when the value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` or bearer token is not mistaken for one. Write the scheme as `Bearer`, here and on the platform API: `bearer fsk_…` in lowercase is not read. A connector's webhook URL (with **Require API key** on) takes `x-api-key` or `x-fastn-access-key` only, not `Authorization`.
 
 ---
 
