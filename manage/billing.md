@@ -38,7 +38,21 @@ A plan change request shows a **Plan change requested** notice at the top of the
 
 ## Credits
 
-**Credits this period** tracks AI usage (fastn's builder agent building and changing integrations) against your monthly allowance: 50 on Launch, 1,000 on Scale, no cap on Enterprise. It shows how many you have used, how many are left and how many days until the reset. It is the same number as the credits readout in the top bar. Click that readout for the detail: **Your usage** and **Org total** tabs, and a **By agent** breakdown. Credits reset at the start of each calendar month, UTC.
+**Credits this period** shows how many AI credits you have used, how many are left and the days until the reset: 50 a month on Launch, 1,000 on Scale, no cap on Enterprise. The top bar shows the same number; click it for **Your usage**, **Org total** and a **By agent** breakdown. Credits reset on the 1st of each month (UTC).
+
+Credits are spent each time fastn calls an AI model for you:
+
+* **Building** with the fastn agent. This is most of it.
+* **Investigating errors:** failed-run diagnosis and run summaries.
+* **Fixing integrations** when an app changes its API.
+* **Writing docs** for workflows and widgets.
+* **AI steps** in workflows (`fastn.ai.complete`).
+
+Building from your own AI tool uses no credits.
+
+**Onboarding bonus:** finishing onboarding adds 50 credits. They are used after your monthly credits and never expire.
+
+**Out of credits:** everything you built keeps running. The fastn agent, error diagnosis and AI steps pause until the month resets or you upgrade.
 
 ## Limits
 

@@ -115,7 +115,7 @@ See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md)
 
 ### In the onboarding
 
-Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns 10 AI credits.
+Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns its share of the 50 onboarding AI credits.
 
 ### Related docs
 

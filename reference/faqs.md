@@ -46,6 +46,14 @@ A **connector** is the definition of a system: its actions, auth methods and web
 
 <details>
 
+<summary>What is a sandbox connection?</summary>
+
+A connection for building and testing. It is free within your plan's allowance, expires after one week, and never counts as a [customer connection](../manage/billing.md).
+
+</details>
+
+<details>
+
 <summary>My customers see "fastn.ai" on the OAuth consent screen. How do I show my own brand?</summary>
 
 Use your own OAuth application. You set it on the connector's **Auth** tab, which is where a connector's auth methods and OAuth providers are configured; there is no separate OAuth apps page in Settings. Register the app in the provider's developer portal first, then configure it on that tab. See [Connectors](../build/connectors/README.md).
@@ -197,6 +205,38 @@ In fastn's shared managed Postgres by default, in a schema isolated to your work
 <summary>Secret or config?</summary>
 
 Secret if exposure would be an incident (tokens, passwords, keys). Config if you would happily show it to a colleague (endpoints, feature flags, batch sizes). When in doubt, secret.
+
+</details>
+
+<details>
+
+<summary>What are AI credits used for?</summary>
+
+Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Launch includes 50 a month, Scale 1,000, Enterprise has no cap. See [Credits](../manage/billing.md#credits).
+
+</details>
+
+<details>
+
+<summary>Does building in my own AI tool use AI credits?</summary>
+
+No. Your AI tool's model does the work and fastn only runs the actions, so it is how you keep building when credits run low.
+
+</details>
+
+<details>
+
+<summary>What happens when I run out of AI credits?</summary>
+
+Everything you built keeps running. The fastn agent, error diagnosis and AI steps in workflows pause until the month resets or you upgrade. Your own AI tool still works.
+
+</details>
+
+<details>
+
+<summary>Do onboarding credits expire?</summary>
+
+No. Finishing onboarding adds 50 credits on top of your monthly ones. They are used after your monthly credits and never expire.
 
 </details>
 

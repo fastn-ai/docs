@@ -58,7 +58,7 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 
 ### In the onboarding
 
-fastn checks your domain, researches your product and shows the result on the "Here's what we found" screen. You click **Looks right** or **Edit** on each row, then pick who builds the connector: your AI tools (recommended, no AI credits) or the **fastn agent**, with an estimate such as "Up to 12 min" and the AI credits it may use. If your product is already in the catalog, there's nothing to build. Finishing the step earns 20 AI credits.
+fastn checks your domain, researches your product and shows the result on the "Here's what we found" screen. You click **Looks right** or **Edit** on each row, then pick who builds the connector: your AI tools (recommended, no AI credits) or the **fastn agent**, with an estimate such as "Up to 12 min" and the AI credits it may use. If your product is already in the catalog, there's nothing to build. Finishing the step earns its share of the 50 onboarding AI credits.
 
 ### Related docs
 
