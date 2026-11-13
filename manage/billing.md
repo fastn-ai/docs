@@ -38,7 +38,7 @@ A plan change request shows a **Plan change requested** notice at the top of the
 
 ## Credits
 
-**Credits this period** tracks AI usage against your monthly allowance: 50 on Launch, 1,000 on Scale, no cap on Enterprise. One credit is $0.10 of model usage, and a credit is spent whenever fastn calls an AI model for you:
+**Credits this period** tracks AI usage against your monthly allowance: 50 on Launch, 1,000 on Scale, no cap on Enterprise. Credits are spent whenever fastn calls an AI model for you:
 
 | Used for | What it covers |
 | --- | --- |

@@ -220,7 +220,7 @@ Every time fastn calls an AI model for you. That is:
 * **Writing documentation**: the docs fastn writes for your workflows and widgets, for your team and your customers.
 * **AI inside your workflows**: each `fastn.ai.complete(...)` call in a workflow's code.
 
-One credit is $0.10 of model usage. Launch includes 50 credits a month, Scale 1,000, and Enterprise has no cap. Credits reset on the first of each month (UTC). See [Credits](../manage/billing.md#credits).
+Launch includes 50 credits a month, Scale 1,000, and Enterprise has no cap. Credits reset on the first of each month (UTC). See [Credits](../manage/billing.md#credits).
 
 </details>
 
