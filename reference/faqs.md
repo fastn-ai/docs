@@ -48,7 +48,7 @@ A **connector** is the definition of a system: its actions, auth methods and web
 
 <summary>What is a sandbox connection?</summary>
 
-A connection made in your Sandbox environment for building and testing. Sandbox connections are free up to your plan's allowance, **expire after one week**, and never count as [customer connections](../manage/billing.md). When the same customer connects in production, that becomes a customer connection.
+A connection for building and testing. It is free within your plan's allowance, expires after one week, and never counts as a [customer connection](../manage/billing.md).
 
 </details>
 
@@ -212,15 +212,7 @@ Secret if exposure would be an incident (tokens, passwords, keys). Config if you
 
 <summary>What are AI credits used for?</summary>
 
-Every time fastn calls an AI model for you. That is:
-
-* **Building with the fastn agent**: connectors, workflows, widgets, field mappings and test cases, and every fix or change you ask it for. This is where most credits go: one request can take many model calls.
-* **Investigating errors**: the automatic diagnosis of a failed run, the error explanation, and run summaries.
-* **Keeping integrations working**: when an app changes its API, fastn proposes the connector repair, then patches and re-tests the workflows that use it.
-* **Writing documentation**: the docs fastn writes for your workflows and widgets, for your team and your customers.
-* **AI inside your workflows**: each `fastn.ai.complete(...)` call in a workflow's code.
-
-Launch includes 50 credits a month, Scale 1,000, and Enterprise has no cap. Credits reset on the first of each month (UTC). See [Credits](../manage/billing.md#credits).
+Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Launch includes 50 a month, Scale 1,000, Enterprise has no cap. See [Credits](../manage/billing.md#credits).
 
 </details>
 
@@ -228,7 +220,7 @@ Launch includes 50 credits a month, Scale 1,000, and Enterprise has no cap. Cred
 
 <summary>Does building in my own AI tool use AI credits?</summary>
 
-No. When you build through Claude, ChatGPT, Cursor, VS Code or another AI tool connected to fastn's MCP server, that tool's model does the thinking and fastn only runs the actions it asks for. Your AI credits are spent only when fastn calls a model itself. That makes your AI tool the way to keep building when your credits run low.
+No. Your AI tool's model does the work and fastn only runs the actions, so it is how you keep building when credits run low.
 
 </details>
 
@@ -236,30 +228,15 @@ No. When you build through Claude, ChatGPT, Cursor, VS Code or another AI tool c
 
 <summary>What happens when I run out of AI credits?</summary>
 
-Nothing that is already built stops. Workflows keep running, connections keep working and your customers see no change. What pauses until the next month, or until you upgrade:
-
-* the fastn agent will not start new work,
-* failed runs are not diagnosed and runs are not summarized,
-* a `fastn.ai.complete(...)` call in a workflow fails with an error, so the run can handle it.
-
-You can keep building in your own AI tool, which uses no credits.
+Everything you built keeps running. The fastn agent, error diagnosis and AI steps in workflows pause until the month resets or you upgrade. Your own AI tool still works.
 
 </details>
 
 <details>
 
-<summary>How do I earn setup credits, and do they expire?</summary>
+<summary>Do onboarding credits expire?</summary>
 
-Finish onboarding and you get **50 bonus AI credits**, paid as you complete each step:
-
-| Step | Credits |
-| --- | --- |
-| 1. Connect your product | 20 |
-| 2. Build your first integration | 20 |
-| 3. Embed fastn in your product | 5 |
-| 4. Your first customer connects | 5 |
-
-Each step pays once, when it is done, not when you start it. A step you skip earns nothing until you come back and finish it. The credits are added on top of your plan's monthly allowance, are used only after that month's allowance runs out, and do not expire.
+No. Finishing onboarding adds 50 credits on top of your monthly ones. They are used after your monthly credits and never expire.
 
 </details>
 

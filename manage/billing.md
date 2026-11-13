@@ -38,19 +38,21 @@ A plan change request shows a **Plan change requested** notice at the top of the
 
 ## Credits
 
-**Credits this period** tracks AI usage against your monthly allowance: 50 on Launch, 1,000 on Scale, no cap on Enterprise. Credits are spent whenever fastn calls an AI model for you:
+**Credits this period** shows how many AI credits you have used, how many are left and the days until the reset: 50 a month on Launch, 1,000 on Scale, no cap on Enterprise. The top bar shows the same number; click it for **Your usage**, **Org total** and a **By agent** breakdown. Credits reset on the 1st of each month (UTC).
 
-| Used for | What it covers |
-| --- | --- |
-| Building with the fastn agent | Connectors, workflows, widgets, field mappings and tests, and every change you ask for. Most credits go here. |
-| Investigating errors | The automatic diagnosis of a failed run, error explanations, run summaries. |
-| Keeping integrations working | Connector repairs when an app changes its API, and re-testing the workflows that use it. |
-| Writing documentation | Workflow and widget docs for your team and your customers. |
-| AI in your workflows | Each `fastn.ai.complete(...)` call in a workflow's code. |
+Credits are spent each time fastn calls an AI model for you:
 
-Building in your own AI tool (Claude, ChatGPT, Cursor and others, through fastn's MCP server) uses no credits: that tool's model does the work. Finishing onboarding adds **50 bonus AI credits**: 20 for connecting your product, 20 for your first integration, 5 for embedding fastn and 5 when your first customer connects. They come on top of the monthly allowance, are used only after it runs out, and do not expire.
+* **Building** with the fastn agent. This is most of it.
+* **Investigating errors:** failed-run diagnosis and run summaries.
+* **Fixing integrations** when an app changes its API.
+* **Writing docs** for workflows and widgets.
+* **AI steps** in workflows (`fastn.ai.complete`).
 
-When credits run out, everything already built keeps running. The fastn agent stops starting new work, failed runs are not diagnosed, and `fastn.ai.complete(...)` calls fail, until the month resets or you upgrade. It shows how many you have used, how many are left and how many days until the reset. It is the same number as the credits readout in the top bar. Click that readout for the detail: **Your usage** and **Org total** tabs, and a **By agent** breakdown. Credits reset at the start of each calendar month, UTC.
+Building from your own AI tool uses no credits.
+
+**Onboarding bonus:** finishing onboarding adds 50 credits. They are used after your monthly credits and never expire.
+
+**Out of credits:** everything you built keeps running. The fastn agent, error diagnosis and AI steps pause until the month resets or you upgrade.
 
 ## Limits
 
