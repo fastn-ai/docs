@@ -46,6 +46,14 @@ A **connector** is the definition of a system: its actions, auth methods and web
 
 <details>
 
+<summary>What is a sandbox connection?</summary>
+
+A connection made in your Sandbox environment for building and testing. Sandbox connections are free up to your plan's allowance, **expire after one week**, and never count as [customer connections](../manage/billing.md). When the same customer connects in production, that becomes a customer connection.
+
+</details>
+
+<details>
+
 <summary>My customers see "fastn.ai" on the OAuth consent screen. How do I show my own brand?</summary>
 
 Use your own OAuth application. You set it on the connector's **Auth** tab, which is where a connector's auth methods and OAuth providers are configured; there is no separate OAuth apps page in Settings. Register the app in the provider's developer portal first, then configure it on that tab. See [Connectors](../build/connectors/README.md).
@@ -197,6 +205,61 @@ In fastn's shared managed Postgres by default, in a schema isolated to your work
 <summary>Secret or config?</summary>
 
 Secret if exposure would be an incident (tokens, passwords, keys). Config if you would happily show it to a colleague (endpoints, feature flags, batch sizes). When in doubt, secret.
+
+</details>
+
+<details>
+
+<summary>What are AI credits used for?</summary>
+
+Every time fastn calls an AI model for you. That is:
+
+* **Building with the fastn agent**: connectors, workflows, widgets, field mappings and test cases, and every fix or change you ask it for. This is where most credits go: one request can take many model calls.
+* **Investigating errors**: the automatic diagnosis of a failed run, the error explanation, and run summaries.
+* **Keeping integrations working**: when an app changes its API, fastn proposes the connector repair, then patches and re-tests the workflows that use it.
+* **Writing documentation**: the docs fastn writes for your workflows and widgets, for your team and your customers.
+* **AI inside your workflows**: each `fastn.ai.complete(...)` call in a workflow's code.
+
+One credit is $0.10 of model usage. Launch includes 50 credits a month, Scale 1,000, and Enterprise has no cap. Credits reset on the first of each month (UTC). See [Credits](../manage/billing.md#credits).
+
+</details>
+
+<details>
+
+<summary>Does building in my own AI tool use AI credits?</summary>
+
+No. When you build through Claude, ChatGPT, Cursor, VS Code or another AI tool connected to fastn's MCP server, that tool's model does the thinking and fastn only runs the actions it asks for. Your AI credits are spent only when fastn calls a model itself. That makes your AI tool the way to keep building when your credits run low.
+
+</details>
+
+<details>
+
+<summary>What happens when I run out of AI credits?</summary>
+
+Nothing that is already built stops. Workflows keep running, connections keep working and your customers see no change. What pauses until the next month, or until you upgrade:
+
+* the fastn agent will not start new work,
+* failed runs are not diagnosed and runs are not summarized,
+* a `fastn.ai.complete(...)` call in a workflow fails with an error, so the run can handle it.
+
+You can keep building in your own AI tool, which uses no credits.
+
+</details>
+
+<details>
+
+<summary>How do I earn setup credits, and do they expire?</summary>
+
+Finish onboarding and you get **50 bonus AI credits**, paid as you complete each step:
+
+| Step | Credits |
+| --- | --- |
+| 1. Connect your product | 20 |
+| 2. Build your first integration | 20 |
+| 3. Embed fastn in your product | 5 |
+| 4. Your first customer connects | 5 |
+
+Each step pays once, when it is done, not when you start it. A step you skip earns nothing until you come back and finish it. The credits are added on top of your plan's monthly allowance, are used only after that month's allowance runs out, and do not expire.
 
 </details>
 
