@@ -65,7 +65,7 @@ Paste these into your AI tool or Build with AI, and adjust the apps and fields.
 | --- | --- |
 | [Connectors](connectors/README.md) | The apps your customers can connect, with their actions, auth and webhooks |
 | [Connect your product](../manage/saas-connectors.md) | Your own product's API and webhooks, as the connector that is yours |
-| [Workflows](workflows/README.md) | The code that moves and transforms data between systems |
+| [Workflows](workflows/README.md) | The code that moves and transforms data between apps |
 | [Triggers](triggers/README.md) | What starts a workflow: a webhook, a schedule or an app event |
 | [Unified APIs](unified-apis/README.md) | One endpoint per business object (contact, deal, ticket) across many apps |
 

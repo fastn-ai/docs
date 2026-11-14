@@ -5,6 +5,7 @@ structure:
   summary: SUMMARY.md
 
 redirects:
+  build/connectors/connect-a-system: build/connectors/connect-an-app.md
   getting-started/what-is-fastn: README.md
   getting-started/platform-overview: getting-started/platform-tour.md
   getting-started/signing-up-as-a-saas-partner: getting-started/README.md
@@ -17,7 +18,6 @@ redirects:
   reference/rbac-and-security: manage/roles.md
   reference/mcp-gateway: build/mcp-gateway/README.md
   build/unified-apis/setting-up-and-using: build/unified-apis/setup-and-usage.md
-  build/mcp-gateway: build/mcp-gateway/README.md
   reference/activity: operate/README.md
   reference/api-reference: reference/api.md
   reference/alerts: operate/alerts.md

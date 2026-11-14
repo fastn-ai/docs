@@ -88,7 +88,7 @@ From the webhook's row in the list you can:
 
 A payload schema sets the exact JSON your server receives for workflow events. You list the fields you want, and for each one say where its value comes from in the event.
 
-**Why you would need it:** different apps describe the same thing in different ways. A Jira issue has a key like `FIS-12`, a ServiceNow record has a number like `INC0010020`, and Linear uses an identifier like `ACM-12`. If your system expects a different body for Jira tickets than for ServiceNow records, give each connector its own schema. Your server then gets the shape it expects without translating each one.
+**Why you would need it:** different apps describe the same thing in different ways. A Jira issue has a key like `FIS-12`, a ServiceNow record has a number like `INC0010020`, and Linear uses an identifier like `ACM-12`. If your app expects a different body for Jira tickets than for ServiceNow records, give each connector its own schema. Your server then gets the shape it expects without translating each one.
 
 To add one:
 

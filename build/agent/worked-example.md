@@ -28,7 +28,7 @@ Three things on this screen are worth knowing before you go further:
 {% step %}
 #### It asks before acting, because Manual mode was on
 
-The agent needed to create connect links for the two systems. In **Manual** mode it does not just do that; it stops and shows you each call.
+The agent needed to create connect links for the two apps. In **Manual** mode it does not just do that; it stops and shows you each call.
 
 Every gate shows you the same five things:
 

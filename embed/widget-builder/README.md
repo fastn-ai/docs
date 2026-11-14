@@ -18,7 +18,7 @@ Opening **Widget** takes you straight into the builder; there is no widget list 
 
 Below the tabs, the **INTEGRATIONS** panel lists what appears in the widget, with a count. This panel *is* the widget list: the offer your customers browse. Everything else on this screen is presentation.
 
-An integration that moves data between two systems shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
+An integration that moves data between two apps shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
 
 ### Add Integrations
 
@@ -26,7 +26,7 @@ An integration that moves data between two systems shows both logos and a direct
 
 | Tab         | What it offers                                                    |
 | ----------- | ------------------------------------------------------------------- |
-| **Apps**    | **Select connectors**: individual systems from your catalog.      |
+| **Apps**    | **Select connectors**: individual apps from your catalog.      |
 | **Unified** | Unified API categories rather than one connector at a time.        |
 
 On the **Apps** tab, **Scope:** offers **Organization level** (the default, captioned "Shared connections") or **User level** ("Per-customer connections"). The choice is recorded on each integration you create (it sets the integration's sync direction and agent context); it does not share or separate connections. Which customer's connections an integration uses comes from the embed token the widget runs with.

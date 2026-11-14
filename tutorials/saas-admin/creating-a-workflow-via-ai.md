@@ -4,7 +4,7 @@ description: Build a workflow by describing it in plain words to Build with AI.
 
 # Create a workflow with Build with AI
 
-**Build with AI** is fastn's own builder. You describe the workflow, what data to sync and between which systems, and it sets up the connectors, handles authentication, maps the fields, writes test cases, and then produces the workflow code and a diagram of it.
+**Build with AI** is fastn's own builder. You describe the workflow, what data to sync and between which apps, and it sets up the connectors, handles authentication, maps the fields, writes test cases, and then produces the workflow code and a diagram of it.
 
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md). By now you should know what workflows and triggers are.
 
@@ -25,7 +25,7 @@ The screen is headed **Build an integration**. On the left, the **Sessions** rai
 
 Type a plain-language description of the workflow you want into the message box (*Write a message…*). The more specific you are about three things, the better the result:
 
-**What data** - Name the systems and records involved. "HubSpot contacts," "Shopify orders above $100," "yesterday's Stripe payouts."
+**What data** - Name the apps and records involved. "HubSpot contacts," "Shopify orders above $100," "yesterday's Stripe payouts."
 
 **What to do with it** - Describe the action. "Sync to Cin7 customers," "send a Slack notification to #orders," "generate a summary report."
 
@@ -66,7 +66,7 @@ Where your brief is ambiguous, the agent asks rather than guesses, with selectab
 
 #### 2. Sets up connectors
 
-The agent works out which systems are involved, reuses connectors that already exist and creates the ones that don't, asking you for anything it needs.
+The agent works out which apps are involved, reuses connectors that already exist and creates the ones that don't, asking you for anything it needs.
 
 For example, if you ask for a HubSpot sync but haven't connected HubSpot yet, the agent tells you it needs to set up that connector first.
 
@@ -76,15 +76,15 @@ When a connector needs credentials, the auth form appears right inside the chat,
 
 For **API key auth**, you'll see a tabbed form with fields for the key and any required configuration. For **OAuth** (e.g., HubSpot, Shopify), you'll see a form with fields for Client ID, Client Secret, and pre-filled OAuth scopes, plus a link to the provider's portal to get your credentials.
 
-#### 4. Maps fields between systems
+#### 4. Maps fields between apps
 
-Once connectors are ready, the agent proposes field mappings between the source and target systems, under a **WE'VE SET THIS UP FOR YOU** banner.
+Once connectors are ready, the agent proposes field mappings between the source and target apps, under a **WE'VE SET THIS UP FOR YOU** banner.
 
 Each mapping row shows a plain-language description of what it does (e.g., "Contact email → Customer email"), the source field, the target field, and a **Change** button to modify it. Fixed values appear as colored badges.
 
 Below the mappings you'll find:
 
-* **Record Matching Strategy** - how the workflow tracks records across systems (e.g., "Track IDs via fastn.state")
+* **Record Matching Strategy** - how the workflow tracks records across apps (e.g., "Track IDs via fastn.state")
 * **+ Add Mapping** - add a field mapping the agent didn't include
 * **Add Filters** - narrow which records get synced
 * A text box where you can describe changes and the agent will update the mappings
