@@ -56,7 +56,7 @@ This step is for what your customers do: connect their own accounts in the widge
 
 ### In the onboarding
 
-You open your product where the widget is embedded, as a test customer, then connect and customize the integration from [step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on a live connection. Finishing the step earns 10 AI credits.
+You open your product where the widget is embedded, as a test customer, then connect and customize the integration from [step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on a live connection. Finishing the step earns its share of the 50 onboarding AI credits.
 
 ### Related docs
 

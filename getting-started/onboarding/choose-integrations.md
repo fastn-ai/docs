@@ -59,7 +59,7 @@ Each integration has a **Scope** setting: who shares a connection inside one cus
 
 ### In the onboarding
 
-Onboarding suggests systems for your product, each marked **Ready** or **Needs a connector** (fastn has none for that system yet, so one is built first). Pick one, then a suggested use case or your own in a sentence, and watch the **fastn agent** build the connector, workflow, trigger, widget entry and connection. It answers its own questions with assumptions you confirm. Or enable the whole catalog and build later. Finishing the step earns 10 AI credits.
+Onboarding suggests systems for your product, each marked **Ready** or **Needs a connector** (fastn has none for that system yet, so one is built first). Pick one, then a suggested use case or your own in a sentence, and watch the **fastn agent** build the connector, workflow, trigger, widget entry and connection. It answers its own questions with assumptions you confirm. Or enable the whole catalog and build later. Finishing the step earns its share of the 50 onboarding AI credits.
 
 <figure><img src="../../.gitbook/assets/onboarding-step-2-choose-integrations.webp" alt="Onboarding step 2 of 4, Pick your first integration: Jira, Slack and GitHub marked Ready, DefectDojo and Vanta marked Needs a connector, with Enable the whole fastn catalog and Skip this step"><figcaption>Step 2: Pick your first integration.</figcaption></figure>
 
