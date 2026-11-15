@@ -52,7 +52,7 @@ Building from your own AI tool uses no credits.
 
 **Onboarding bonus:** finishing onboarding adds 50 credits. They are used after your monthly credits and never expire.
 
-**Out of credits:** everything you built keeps running. The fastn agent, error diagnosis and AI steps pause until the month resets or you upgrade.
+**Out of credits:** workflows without AI steps keep running, and runs that reach an AI step wait or fail until credits are back. The fastn agent and error diagnosis pause until the month resets or you upgrade.
 
 ## Limits
 

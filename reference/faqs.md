@@ -48,7 +48,7 @@ A **connector** is the definition of an app: its actions, auth methods and webho
 
 <summary>What is a sandbox connection?</summary>
 
-A connection for building and testing. It is free within your plan's allowance, expires after one week, and never counts as a [customer connection](../manage/billing.md).
+A connection for building and testing. It is free within your plan's allowance. The intended sandbox period is one week, but access is not automatically revoked when it ends. It never counts as a [customer connection](../manage/billing.md).
 
 </details>
 
@@ -228,7 +228,7 @@ No. Your AI tool's model does the work and fastn only runs the actions, so it is
 
 <summary>What happens when I run out of AI credits?</summary>
 
-Everything you built keeps running. The fastn agent, error diagnosis and AI steps in workflows pause until the month resets or you upgrade. Your own AI tool still works.
+Workflows without AI steps keep running, and runs that reach an AI step wait or fail until credits are back. The fastn agent and error diagnosis pause until the month resets or you upgrade. Your own AI tool still works.
 
 </details>
 
