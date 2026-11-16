@@ -28,14 +28,25 @@ Add fastn as an MCP server at `https://mcp.fastn.dev/fastn-workspace` and sign i
 
 Then add the skill to the same tool (next section) and ask your question.
 
-#### 2. Without the MCP server
+#### 2. Install the skill
 
-The skill also works with no connection to fastn. It answers from its own definitions of the fastn pieces and marks every answer **not checked**.
+The skill ships in the `connect` plugin of the [fastn Claude plugins](https://github.com/fastn-ai/fastn-claude-plugins) repository on GitHub. The plugin also connects your tool to the fastn MCP server, so one install covers both.
 
-The skill is published in the fastn skills repository on GitHub: TODO-SKILL-REPO-URL. The folder you need is `fastn-solution-architect`.
+* **Claude Code:** run these two commands, then start a new session and ask your question.
 
-* **Claude:** download the `fastn-solution-architect` folder from the repository as a zip, then add it as a skill in Claude's settings (see Claude's own help on adding skills).
-* **Claude Code:** clone the repository, then copy the `fastn-solution-architect` folder into `~/.claude/skills/` (for all your projects) or into `.claude/skills/` inside one project. Start a new Claude Code session and ask your question.
+  ```
+  /plugin marketplace add fastn-ai/fastn-claude-plugins
+  /plugin install connect@fastn
+  ```
+* **GitHub Copilot CLI:** run the same two commands with `copilot plugin`, then start `copilot` and run `/mcp auth fastn` to sign in to fastn.
+
+  ```
+  copilot plugin marketplace add fastn-ai/fastn-claude-plugins
+  copilot plugin install connect@fastn
+  ```
+* **The skill on its own, without the plugin:** take the [fastn-solution-architect folder](https://github.com/fastn-ai/fastn-claude-plugins/tree/main/plugins/connect/skills/fastn-solution-architect) from the repository. In Claude, add it as a skill in Claude's settings (see Claude's own help on adding skills). In Claude Code, copy it into `~/.claude/skills/` (for all your projects) or into `.claude/skills/` inside one project.
+
+The skill also works with no connection to fastn. It then answers from its own definitions of the fastn pieces and marks every answer **not checked**.
 
 #### 3. Any other AI tool
 
