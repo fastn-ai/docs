@@ -149,7 +149,7 @@ export default async function(ctx) {
 ```
 
 3. Optionally add headers in **ctx.headers**.
-4. Pick a mode: **Live** (real calls to connected systems), **Partial Mock** (live where the connector has an active connection, a stored mock stub where it does not) or **Fully Mock** (stubs only).
+4. Pick a mode: **Live** (real calls to connected apps), **Partial Mock** (live where the connector has an active connection, a stored mock stub where it does not) or **Fully Mock** (stubs only).
 5. Click the run button (**Run Live**, **Run Partial Mock** or **Run Fully Mock**).
 6. The output appears below - check the result matches your expectations. Test runs are real when they run live: connectors are called and side effects happen.
 

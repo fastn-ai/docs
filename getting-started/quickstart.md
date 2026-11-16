@@ -20,13 +20,13 @@ Otherwise, write the integration the way you would explain it to a colleague:
 
 > When a HubSpot deal moves to closed-won, create a customer and a draft invoice in QuickBooks, and post a line in our #sales Slack channel.
 
-Name the systems, the trigger, and the fields that matter. The agent asks about anything ambiguous rather than guessing.
+Name the apps, the trigger, and the fields that matter. The agent asks about anything ambiguous rather than guessing.
 
 The **Approval mode** chip under the message box decides how much it does unattended: **Auto** is the default and does not ask; **Manual** asks before any create, update or delete. Leave it on Auto while you are exploring.
 
 ### 2. Let it set up connectors and auth
 
-The agent checks whether connectors exist for the systems you named, creates any that are missing, and handles authentication in the chat: API-key fields inline, or an OAuth form with client ID, secret and pre-filled scopes.
+The agent checks whether connectors exist for the apps you named, creates any that are missing, and handles authentication in the chat: API-key fields inline, or an OAuth form with client ID, secret and pre-filled scopes.
 
 Anything it creates shows up under [Connectors](../build/connectors/README.md) afterwards, so you can inspect it.
 
@@ -48,7 +48,7 @@ Code editing is a per-organization setting and is off by default. Without it, wo
 
 ### 4. Test it
 
-Open **Test**, click **Use contract** to populate a sample `ctx.input`, and choose a mode beside the run button: **Live** calls the real systems, **Partial Mock** mixes real calls with stubs, **Fully Mock** uses stubs only. Then hit **Run Live** (or **Run**).
+Open **Test**, click **Use contract** to populate a sample `ctx.input`, and choose a mode beside the run button: **Live** calls the real apps, **Partial Mock** mixes real calls with stubs, **Fully Mock** uses stubs only. Then hit **Run Live** (or **Run**).
 
 If something is wrong, tell the agent rather than patching by hand. *"Skip deals under $500"* or *"Add error handling when QuickBooks is down"* and it rewrites the code, mappings and test cases together.
 

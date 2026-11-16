@@ -64,7 +64,7 @@ Back in Claude, a *Connected to fastn* notice appears and the connector lists fa
 
 2. Ask for the outcome in one sentence. To check the connection first, ask *What can fastn do for me?* or *List my workflows*.
 
-<figure><img src="../../.gitbook/assets/mcp-claude-prompt.png" alt="A Claude message reading: Using fastn, save invoice emails from Gmail to a Google Sheet. Test it, then add it to my widget."><figcaption>Name the systems, what starts it and what moves.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-claude-prompt.png" alt="A Claude message reading: Using fastn, save invoice emails from Gmail to a Google Sheet. Test it, then add it to my widget."><figcaption>Name the apps, what starts it and what moves.</figcaption></figure>
 
 [Writing a good first message](../agent/README.md#writing-a-good-first-message) has more examples.
 

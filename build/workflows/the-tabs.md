@@ -12,7 +12,7 @@ Two JSON editors, `ctx.input` and `ctx.headers`. **Use contract** fills the inpu
 
 | Mode             | What runs                            |
 | ---------------- | -------------------------------------- |
-| **Live**         | Real calls to the connected systems.  |
+| **Live**         | Real calls to the connected apps.  |
 | **Partial Mock** | Live where the connector has an active connection, a stored mock stub where it does not. |
 | **Fully Mock**   | Stubs only.                           |
 
@@ -40,7 +40,7 @@ Three sub-tabs.
 
 **Docs**: generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**. Docs are generated when you first open them, not on every save. You can **Edit** and **Save** either document; your version is kept separately, shows an **Edited** badge, survives regeneration, and **Reset to generated** discards it.
 
-The end-user document has nine sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*, *Related links*.
+The customer-facing document has nine sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*, *Related links*.
 
 #### Test cases
 

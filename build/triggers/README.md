@@ -1,5 +1,5 @@
 ---
-description: "What starts a workflow: an inbound webhook, a schedule, or an event from a connected system."
+description: "What starts a workflow: an inbound webhook, a schedule, or an event from a connected app."
 ---
 
 # Triggers
