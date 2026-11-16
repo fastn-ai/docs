@@ -6,6 +6,8 @@ description: Letting an AI client reach your connectors as tools.
 
 Everything you build in fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your fastn workflows and the fastn platform tools, and reaches your connectors' actions through those platform tools, with the same customer scoping and the same permission model as everything else. Your agent can also build new integrations for you, right in the chat: see [Building from your AI agent](../building-from-your-ai-agent.md).
 
+Not sure which fastn pieces your use case needs? [Plan your integration](../../getting-started/plan-your-integration.md) has an AI skill that asks about it and checks your workspace through this server.
+
 ### Connecting
 
 Click **Connect AI tools** in the top bar, or open **Embed → API keys and MCP** and the **MCP server** tab. Both show the same picker: **Use fastn from Claude or any MCP client**. Both need the **Developer** role or above; below that, neither is shown.
