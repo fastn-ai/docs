@@ -78,6 +78,8 @@ Then map each need to a fastn piece:
 - Same job across every CRM, store or helpdesk: a unified API (check that each
   provider supports the operation)
 - When something happens in an app, do something: an app event trigger + a workflow
+- Our backend pushes data out to an app: one action call from the SDK; a webhook
+  trigger + a workflow when it needs reshaping or retries
 - Their system calls us: a webhook trigger + a workflow
 - Every night or every hour: a schedule trigger + a workflow
 - Tell our product when something happens: webhooks (event subscriptions)
@@ -103,6 +105,7 @@ Use this table by hand. Find the row that sounds like your need, then read the l
 | "Read or write one record in one app" | A connector action, called from the SDK or an AI tool | [Actions](../build/connectors/action-detail.md), [Direct app actions](../reference/sdk/app-actions.md) |
 | "Same job across every CRM, store or helpdesk" | A unified API | [Unified APIs](../build/unified-apis/README.md), [Unified vs direct](../build/unified-apis/unified-vs-direct.md) |
 | "When something happens in the app, do something" | An app event trigger and a workflow | [App event triggers](../build/triggers/app-events.md) |
+| "Our backend pushes data out to an app" | One action call from the SDK, or a webhook trigger and a workflow when the data needs reshaping or retries | [Direct app actions](../reference/sdk/app-actions.md), [Webhook triggers](../build/triggers/webhooks.md) |
 | "Their system will call us" | A webhook trigger and a workflow | [Webhook triggers](../build/triggers/webhooks.md) |
 | "Every night or every hour" | A schedule trigger and a workflow | [Schedule triggers](../build/triggers/schedulers.md) |
 | "Tell our product when something happens" | Webhooks to your product (event subscriptions) | [Webhooks](../manage/saas-webhooks.md), [Events in the SDK](../reference/sdk/events.md) |
@@ -144,7 +147,11 @@ The skill tells you plainly, offers a workaround if there is one (for example a 
 * **Why it matters**: what it blocks.
 * **Urgency**: blocking now, needed by a date, or nice to have.
 
-Send it to fastn from the help menu in fastn (**?** → **Contact support**).
+Send it to fastn from the dashboard: **Help (?)** → **Contact support**.
+
+### Talk to a person
+
+If you would rather talk it through, or the skill could not answer after a real attempt, contact the fastn team the same way: **Help (?)** → **Contact support**. Include the requirement summary and the verdict the skill gave you, so the conversation starts where the chat ended.
 
 ### Try it
 
