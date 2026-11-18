@@ -5,7 +5,7 @@ hidden: true
 
 # Zoho Creator
 
-<img src="../../.gitbook/assets/connectors/zoho-creator.svg" alt="Zoho Creator logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/zoho-creator.png" alt="Zoho Creator logo">
 
 Zoho Creator is Zoho's low-code application development platform. This connector wraps the Zoho Creator REST API v2.1 (https://www.zohoapis.com/creator/v2.1): Data APIs to fetch, add, update and delete report records; Meta APIs for applications, forms, reports, pages, sections and form fields; File APIs to upload and download file, image, audio, video and signature field content; Bulk APIs for asynchronous large-volume record export; and Publish APIs for records in publicly published forms and reports. All operations are scoped to an account owner name, application link name and form or report link name.
 
@@ -39,14 +39,12 @@ Add Zoho Creator from **Build → Integrations → Connectors** and connect an a
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Form Fields | `listFormFields` | Lists the meta information of every field in a Zoho Creator form, including each field's link name, display name, data type and whether it is mandatory. Use the returned field link names as the keys when setting values in the Add Records and Update Records actions. |
-| List Forms | `listForms` | Lists the meta information of every form in a Zoho Creator application, including each form's display name and link name. Use the returned link name as the form link name in the Add Records, List Form Fields and Add Published Records actions. |
-| List Pages | `listPages` | Lists the meta information of every page in a Zoho Creator application, including each page's display name and link name. |
-| List Reports | `listReports` | Lists the meta information of every report in a Zoho Creator application, including each report's display name and link name. Use the returned link name as the report link name in the record, file and bulk actions. |
-| List Sections | `listSections` | Lists the sections configured in a Zoho Creator application together with the forms, reports and pages grouped under each section. Use this to understand how an application's components are organised in its navigation. |
-| Update Records | `updateRecords` | Updates the records in a Zoho Creator report that match a criteria expression. The criteria is mandatory to prevent accidental mass updates; pass ID!=0 to update all matching records. A maximum of 200 records are updated per request, and Process Until Limit must be enabled when more than 200 records match. |
-| Upload File | `uploadFile` | Uploads a file into a file upload, image, audio, video or signature field of an existing Zoho Creator record. The file is sent as multipart form data under the field name file and must not exceed 50 MB. Binary uploads are not reliably supported through the connector engine; text-based files round-trip correctly. |
+* **List Form Fields** `listFormFields`: Lists the meta information of every field in a Zoho Creator form, including each field's link name, display name, data type and whether it is mandatory. Use the returned field link names as the keys when setting values in the Add Records and Update Records actions.
+* **List Forms** `listForms`: Lists the meta information of every form in a Zoho Creator application, including each form's display name and link name. Use the returned link name as the form link name in the Add Records, List Form Fields and Add Published Records actions.
+* **List Pages** `listPages`: Lists the meta information of every page in a Zoho Creator application, including each page's display name and link name.
+* **List Reports** `listReports`: Lists the meta information of every report in a Zoho Creator application, including each report's display name and link name. Use the returned link name as the report link name in the record, file and bulk actions.
+* **List Sections** `listSections`: Lists the sections configured in a Zoho Creator application together with the forms, reports and pages grouped under each section. Use this to understand how an application's components are organised in its navigation.
+* **Update Records** `updateRecords`: Updates the records in a Zoho Creator report that match a criteria expression. The criteria is mandatory to prevent accidental mass updates; pass ID!=0 to update all matching records. A maximum of 200 records are updated per request, and Process Until Limit must be enabled when more than 200 records match.
+* **Upload File** `uploadFile`: Uploads a file into a file upload, image, audio, video or signature field of an existing Zoho Creator record. The file is sent as multipart form data under the field name file and must not exceed 50 MB. Binary uploads are not reliably supported through the connector engine; text-based files round-trip correctly.
 
 </details>

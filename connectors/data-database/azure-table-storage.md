@@ -5,7 +5,7 @@ hidden: true
 
 # Azure Table Storage
 
-<img src="../../.gitbook/assets/connectors/azure-table-storage.png" alt="Azure Table Storage logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/azure-table-storage.png" alt="Azure Table Storage logo">
 
 Azure Table Storage — NoSQL key-value store for structured, non-relational data. Create tables, list/query entities with OData filters, and insert new entities via the Azure Tables REST API ({account}.table.core.windows.net).
 
@@ -39,14 +39,12 @@ Add Azure Table Storage from **Build → Integrations → Connectors** and conne
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Insert Or Replace Entity | `insertOrReplaceEntity` | Inserts a new entity or replaces an existing one with the same PartitionKey and RowKey. Unlike Update Entity this upsert sends no If-Match header, so it always succeeds regardless of the current ETag. |
-| Merge Entity | `mergeEntity` | Updates an existing entity by merging the supplied property values into it, leaving properties not named in the request untouched. Set ifMatch to an ETag for optimistic concurrency, or to * to force an unconditional merge. Note: the Azure Table REST specification defines this operation on the MERGE verb; the fastn action engine's method enum does not include MERGE, so this action issues PATCH, which Azure Table Storage accepts as the equivalent. |
-| Query Entities | `queryEntities` | Queries entities in a table using OData $filter, $select and $top options. Returns matching entities under the value array. |
-| Query Tables | `queryTables` | Enumerates the tables in a storage account. Returns the table names under the given Azure Storage account's Table service endpoint. |
-| Set Table ACL | `setTableAcl` | Sets a stored access policy on a table for use with shared access signatures. Engine limitation: the action templating layer has no loop construct, so exactly one stored access policy can be set per call; the Azure API itself accepts up to five and this call replaces all existing policies with the single one supplied. |
-| Set Table Service Properties | `setTableServiceProperties` | Sets the properties of the Table service on a storage account, controlling analytics logging and hour metrics. This rewrites account-wide service configuration and affects every table in the account. Engine limitation: the templating layer has no loop construct, so CORS rules cannot be expressed and are omitted from the request, which clears any existing CORS configuration. |
-| Update Entity | `updateEntity` | Updates an existing entity by replacing it entirely. Properties omitted from the request are removed. Set ifMatch to an ETag for optimistic concurrency, or to * to force an unconditional update. |
+* **Insert Or Replace Entity** `insertOrReplaceEntity`: Inserts a new entity or replaces an existing one with the same PartitionKey and RowKey. Unlike Update Entity this upsert sends no If-Match header, so it always succeeds regardless of the current ETag.
+* **Merge Entity** `mergeEntity`: Updates an existing entity by merging the supplied property values into it, leaving properties not named in the request untouched. Set ifMatch to an ETag for optimistic concurrency, or to * to force an unconditional merge. Note: the Azure Table REST specification defines this operation on the MERGE verb; the fastn action engine's method enum does not include MERGE, so this action issues PATCH, which Azure Table Storage accepts as the equivalent.
+* **Query Entities** `queryEntities`: Queries entities in a table using OData $filter, $select and $top options. Returns matching entities under the value array.
+* **Query Tables** `queryTables`: Enumerates the tables in a storage account. Returns the table names under the given Azure Storage account's Table service endpoint.
+* **Set Table ACL** `setTableAcl`: Sets a stored access policy on a table for use with shared access signatures. Engine limitation: the action templating layer has no loop construct, so exactly one stored access policy can be set per call; the Azure API itself accepts up to five and this call replaces all existing policies with the single one supplied.
+* **Set Table Service Properties** `setTableServiceProperties`: Sets the properties of the Table service on a storage account, controlling analytics logging and hour metrics. This rewrites account-wide service configuration and affects every table in the account. Engine limitation: the templating layer has no loop construct, so CORS rules cannot be expressed and are omitted from the request, which clears any existing CORS configuration.
+* **Update Entity** `updateEntity`: Updates an existing entity by replacing it entirely. Properties omitted from the request are removed. Set ifMatch to an ETag for optimistic concurrency, or to * to force an unconditional update.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # ECB Data Portal
 
-<img src="../../.gitbook/assets/connectors/ecb-data-portal.png" alt="ECB Data Portal logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ecb-data-portal.png" alt="ECB Data Portal logo">
 
 The ECB Data Portal API is the European Central Bank's free SDMX 2.1 RESTful web service for euro-area statistics: exchange rates, interest rates, inflation, money, banking, payments and more. Get time series data as SDMX-JSON or CSV, and discover dataflows, data structures, codelists, concept schemes, constraints, categories and schemas. No API key needed.
 
@@ -39,10 +39,8 @@ Add ECB Data Portal from **Build → Integrations → Connectors** and connect a
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Organisation Schemes | `getOrganisationSchemes` | Get SDMX organisation schemes by agency, id and version; use all/latest as wildcards (GET /service/organisationscheme/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata |
-| Get Statistical Data | `getData` | Get time series data for a dataflow and series key (dimension codes joined by '.', blank to wildcard, '+' for OR), with date range, updates since a time, detail level, first/last N observations, history and format (GET /service/data/{flowRef}/{key}). Docs: https://data.ecb.europa.eu/help/api/data |
-| Get Structure Sets | `getStructureSets` | Get SDMX structure sets (mappings between structures) by agency, id and version; use all/latest as wildcards (GET /service/structureset/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata |
+* **Get Organisation Schemes** `getOrganisationSchemes`: Get SDMX organisation schemes by agency, id and version; use all/latest as wildcards (GET /service/organisationscheme/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata
+* **Get Statistical Data** `getData`: Get time series data for a dataflow and series key (dimension codes joined by '.', blank to wildcard, '+' for OR), with date range, updates since a time, detail level, first/last N observations, history and format (GET /service/data/{flowRef}/{key}). Docs: https://data.ecb.europa.eu/help/api/data
+* **Get Structure Sets** `getStructureSets`: Get SDMX structure sets (mappings between structures) by agency, id and version; use all/latest as wildcards (GET /service/structureset/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata
 
 </details>

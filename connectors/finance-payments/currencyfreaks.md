@@ -5,7 +5,7 @@ hidden: true
 
 # CurrencyFreaks
 
-<img src="../../.gitbook/assets/connectors/currencyfreaks.png" alt="CurrencyFreaks logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/currencyfreaks.png" alt="CurrencyFreaks logo">
 
 CurrencyFreaks provides real-time and historical foreign exchange rates and currency conversion for over 1,000 world currencies and metals, plus IP-based local currency lookup. Sister brand to ipgeolocation.io and WhoisFreaks.
 

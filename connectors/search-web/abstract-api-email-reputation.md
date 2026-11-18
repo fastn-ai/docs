@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI Email Reputation
 
-<img src="../../.gitbook/assets/connectors/abstract-api-email-reputation.png" alt="AbstractAPI Email Reputation logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-email-reputation.png" alt="AbstractAPI Email Reputation logo">
 
 AbstractAPI Email Reputation validates and enriches an email address, returning deliverability, domain, sender, quality-score, risk, and known-breach data in a single lookup.
 

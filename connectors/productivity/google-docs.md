@@ -5,7 +5,7 @@ hidden: true
 
 # Google Docs
 
-<img src="../../.gitbook/assets/connectors/google-docs.svg" alt="Google Docs logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-docs.png" alt="Google Docs logo">
 
 Google Docs API v1 — create, read, and edit Google Documents programmatically using batchUpdate operations.
 
@@ -39,17 +39,15 @@ Add Google Docs from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 10 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Document | `getDocument` | Returns the full content and metadata of a Google Document. |
-| Insert Page Break | `insertPageBreak` | Inserts a page break at the specified index in the document. |
-| Insert Table | `insertTable` | Inserts a table with the specified number of rows and columns at the given index. |
-| Insert Table Row | `insertTableRow` | Insert a new row into an existing table in the document using the batchUpdate API. |
-| Insert Text | `insertText` | Inserts text at a specific index in the document body. |
-| List Documents | `listDocuments` | Search and list Google Docs files. Uses Google Drive API to filter by mimeType. Returns a list of document files with id, name, and metadata. |
-| Replace All Text | `replaceAllText` | Replaces all instances of searchText with replaceText throughout the document. |
-| Update Document Style | `updateDocumentStyle` | Update a document's page style including margins, page size, and background color. Uses the batchUpdate API with updateDocumentStyle request. |
-| Update Paragraph Style | `updateParagraphStyle` | Updates the paragraph alignment/style for content within startIndex to endIndex. |
-| Update Text Style | `updateTextStyle` | Updates bold, italic, and underline styling for text within the given range. |
+* **Get Document** `getDocument`: Returns the full content and metadata of a Google Document.
+* **Insert Page Break** `insertPageBreak`: Inserts a page break at the specified index in the document.
+* **Insert Table** `insertTable`: Inserts a table with the specified number of rows and columns at the given index.
+* **Insert Table Row** `insertTableRow`: Insert a new row into an existing table in the document using the batchUpdate API.
+* **Insert Text** `insertText`: Inserts text at a specific index in the document body.
+* **List Documents** `listDocuments`: Search and list Google Docs files. Uses Google Drive API to filter by mimeType. Returns a list of document files with id, name, and metadata.
+* **Replace All Text** `replaceAllText`: Replaces all instances of searchText with replaceText throughout the document.
+* **Update Document Style** `updateDocumentStyle`: Update a document's page style including margins, page size, and background color. Uses the batchUpdate API with updateDocumentStyle request.
+* **Update Paragraph Style** `updateParagraphStyle`: Updates the paragraph alignment/style for content within startIndex to endIndex.
+* **Update Text Style** `updateTextStyle`: Updates bold, italic, and underline styling for text within the given range.
 
 </details>

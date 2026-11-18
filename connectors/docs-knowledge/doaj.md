@@ -5,7 +5,7 @@ hidden: true
 
 # DOAJ (Directory of Open Access Journals)
 
-<img src="../../.gitbook/assets/connectors/doaj.png" alt="DOAJ (Directory of Open Access Journals) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/doaj.png" alt="DOAJ (Directory of Open Access Journals) logo">
 
 DOAJ (Directory of Open Access Journals) is a community-curated index of peer-reviewed open access journals and their articles. Its free public API (v4) searches articles and journals with Elasticsearch query strings and gets single article and journal records. No API key needed for search and read.
 

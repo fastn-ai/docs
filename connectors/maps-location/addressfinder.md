@@ -5,7 +5,7 @@ hidden: true
 
 # Addressfinder
 
-<img src="../../.gitbook/assets/connectors/addressfinder.png" alt="Addressfinder logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/addressfinder.png" alt="Addressfinder logo">
 
 Addressfinder provides address autocomplete, address verification, location and points-of-interest lookup, reverse geocoding, email verification and phone verification for Australia, New Zealand and 16 international countries. This connector wraps the Addressfinder API v2 at https://api.addressfinder.io/api, authenticating with OAuth 2.0 client credentials.
 
@@ -39,14 +39,12 @@ Add Addressfinder from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search New Zealand Addresses | `searchNewZealandAddresses` | Searches the New Zealand Addressfinder database for addresses closely matching a partial address string and returns a ranked list of completions. Use the returned pxid with Get New Zealand Address Metadata to load the full address record. Results can be filtered by NZ Post delivery status, PO Box or rural addresses, region and match strictness. |
-| Search New Zealand Locations | `searchNewZealandLocations` | Searches New Zealand locations - streets, suburbs, cities and regions - matching a partial query string, returning a ranked list of completions. Use the returned pxid with Get New Zealand Location Metadata to load the full location record. The street, suburb, city and region filters are applied additively, so exclude the location types you do not want. |
-| Search New Zealand Points Of Interest | `searchNewZealandPointsOfInterest` | Searches New Zealand points of interest - named businesses, buildings and landmarks - matching a partial name or address, returning a ranked list of completions. Use the returned id with Get New Zealand Point Of Interest Metadata to load the full record. |
-| Verify Australian Address | `verifyAustralianAddress` | Verifies a free-text Australian address that may contain spelling mistakes or other errors against the Geoscape G-NAF and Australia Post PAF databases, returning the corrected, fully parsed address record and whether a match was found. At least one of the G-NAF or PAF dataset flags must be supplied, otherwise the API returns error code 1000. |
-| Verify Email Address | `verifyEmailAddress` | Verifies an email address by validating its syntax, checking that the domain is configured to receive mail, confirming the mailbox exists, and identifying the email service provider. Returns a verified state plus deliverability, disposable, role-account, public-provider and catch-all indicators. Requires the email scope on your Addressfinder credentials. |
-| Verify New Zealand Address | `verifyNewZealandAddress` | Verifies a free-text New Zealand address that may contain spelling mistakes or other errors against the Addressfinder database, returning the corrected, fully parsed address record, whether a match was found, and any part of the input that could not be matched. |
-| Verify Phone Number | `verifyPhoneNumber` | Verifies a phone number by checking its syntax and number range and then performing a live network check for connection status. Returns the line type and status plus the number formatted in national and international notation. Requires the phone scope on your Addressfinder credentials. |
+* **Search New Zealand Addresses** `searchNewZealandAddresses`: Searches the New Zealand Addressfinder database for addresses closely matching a partial address string and returns a ranked list of completions. Use the returned pxid with Get New Zealand Address Metadata to load the full address record. Results can be filtered by NZ Post delivery status, PO Box or rural addresses, region and match strictness.
+* **Search New Zealand Locations** `searchNewZealandLocations`: Searches New Zealand locations - streets, suburbs, cities and regions - matching a partial query string, returning a ranked list of completions. Use the returned pxid with Get New Zealand Location Metadata to load the full location record. The street, suburb, city and region filters are applied additively, so exclude the location types you do not want.
+* **Search New Zealand Points Of Interest** `searchNewZealandPointsOfInterest`: Searches New Zealand points of interest - named businesses, buildings and landmarks - matching a partial name or address, returning a ranked list of completions. Use the returned id with Get New Zealand Point Of Interest Metadata to load the full record.
+* **Verify Australian Address** `verifyAustralianAddress`: Verifies a free-text Australian address that may contain spelling mistakes or other errors against the Geoscape G-NAF and Australia Post PAF databases, returning the corrected, fully parsed address record and whether a match was found. At least one of the G-NAF or PAF dataset flags must be supplied, otherwise the API returns error code 1000.
+* **Verify Email Address** `verifyEmailAddress`: Verifies an email address by validating its syntax, checking that the domain is configured to receive mail, confirming the mailbox exists, and identifying the email service provider. Returns a verified state plus deliverability, disposable, role-account, public-provider and catch-all indicators. Requires the email scope on your Addressfinder credentials.
+* **Verify New Zealand Address** `verifyNewZealandAddress`: Verifies a free-text New Zealand address that may contain spelling mistakes or other errors against the Addressfinder database, returning the corrected, fully parsed address record, whether a match was found, and any part of the input that could not be matched.
+* **Verify Phone Number** `verifyPhoneNumber`: Verifies a phone number by checking its syntax and number range and then performing a live network check for connection status. Returns the line type and status plus the number formatted in national and international notation. Requires the phone scope on your Addressfinder credentials.
 
 </details>

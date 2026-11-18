@@ -5,7 +5,7 @@ hidden: true
 
 # MindStudio
 
-<img src="../../.gitbook/assets/connectors/mindstudio.png" alt="MindStudio logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/mindstudio.png" alt="MindStudio logo">
 
 MindStudio developer API (api.mindstudio.ai/developer/v2): run published AI agents/apps synchronously or asynchronously with launch variables, load the workspace's agent catalog, and inspect an agent's workflows.
 

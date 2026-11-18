@@ -5,7 +5,7 @@ hidden: true
 
 # Viral Loops
 
-<img src="../../.gitbook/assets/connectors/viral-loops.png" alt="Viral Loops logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/viral-loops.png" alt="Viral Loops logo">
 
 Viral Loops referral-marketing platform. Covers the full Backend API v3: campaign stats and campaign configuration, participant registration/edit/search/query/flag/convert, participant data, rank, order, referrals and referrer, pending and given rewards and reward redemption, plus the undocumented participant count, participant delete and campaign list routes. Participant records are personal data.
 
@@ -39,17 +39,15 @@ Add Viral Loops from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Participant Rank | `getParticipantRank` | Get a participant's leaderboard rank, total referral count and points total. Identify by email or referralCode. Returns an empty object if the participant does not exist. |
-| Get Participant Referrals | `getParticipantReferrals` | List the people a participant has referred, with join date, conversion status and reward earned. Identify the referrer by email or referralCode; page with limit and offset and filter with conversionStatus. PERSONAL DATA: returns referred people's email addresses. |
-| Get Participant Referrer | `getParticipantReferrer` | Get the referrer record of a participant, including the referrer's referral code and the full campaign settings snapshot. Identify by email or referralCode. Returns 406 'Invalid Participant identifier' when the participant has no referrer or does not exist. PERSONAL DATA and SENSITIVE: the response embeds campaignSettingsJson, which includes the campaign captcha secret when one is configured. |
-| Get Pending Rewards | `getPendingRewards` | List the rewards a participant has earned but not yet redeemed. Identify by email or referralCode; omit both to list pending rewards for every participant. Returns an empty array when the campaign has no rewarding configured. |
-| List Campaigns | `listCampaigns` | List every campaign on a Viral Loops account. Undocumented but live route. It is the only route that is NOT scoped by the campaign apiToken: it takes an account-level apiKey as a query parameter, which is a different credential from the connection's campaign API token. Without a valid account apiKey the vendor answers 406 'Invalid user identifier'. |
-| Query Participants | `queryParticipants` | Look up specific participants and/or everyone referred by specific referrers, in one call. Pass participants and/or referrers as arrays of identifiers (email or referralCode) and page with filter.limit and filter.skip. PERSONAL DATA: returns email addresses and unique referral links. |
-| Redeem Reward | `redeemReward` | Mark one of a participant's pending rewards as redeemed. Get the rewardId from Get Pending Rewards. Identify the participant by email or referralCode. CAUTION: redemption is irreversible and, on a campaign with rewarding emails enabled, notifies the participant. |
-| Register Participant | `registerParticipant` | Register a new participant in the campaign and get their referral code back. Pass referrerReferralCode to record who referred them. CAUTION: this enrols a real person and, on a campaign with an email service configured, triggers the campaign's welcome/referral emails. Disposable-email domains are rejected with 451. |
-| Search Participants | `searchParticipants` | Search and page the campaign's participants, filtering by free-text search term, conversion status or acquisition source. PERSONAL DATA: returns email addresses, fraud/risk scores and custom fields. |
+* **Get Participant Rank** `getParticipantRank`: Get a participant's leaderboard rank, total referral count and points total. Identify by email or referralCode. Returns an empty object if the participant does not exist.
+* **Get Participant Referrals** `getParticipantReferrals`: List the people a participant has referred, with join date, conversion status and reward earned. Identify the referrer by email or referralCode; page with limit and offset and filter with conversionStatus. PERSONAL DATA: returns referred people's email addresses.
+* **Get Participant Referrer** `getParticipantReferrer`: Get the referrer record of a participant, including the referrer's referral code and the full campaign settings snapshot. Identify by email or referralCode. Returns 406 'Invalid Participant identifier' when the participant has no referrer or does not exist. PERSONAL DATA and SENSITIVE: the response embeds campaignSettingsJson, which includes the campaign captcha secret when one is configured.
+* **Get Pending Rewards** `getPendingRewards`: List the rewards a participant has earned but not yet redeemed. Identify by email or referralCode; omit both to list pending rewards for every participant. Returns an empty array when the campaign has no rewarding configured.
+* **List Campaigns** `listCampaigns`: List every campaign on a Viral Loops account. Undocumented but live route. It is the only route that is NOT scoped by the campaign apiToken: it takes an account-level apiKey as a query parameter, which is a different credential from the connection's campaign API token. Without a valid account apiKey the vendor answers 406 'Invalid user identifier'.
+* **Query Participants** `queryParticipants`: Look up specific participants and/or everyone referred by specific referrers, in one call. Pass participants and/or referrers as arrays of identifiers (email or referralCode) and page with filter.limit and filter.skip. PERSONAL DATA: returns email addresses and unique referral links.
+* **Redeem Reward** `redeemReward`: Mark one of a participant's pending rewards as redeemed. Get the rewardId from Get Pending Rewards. Identify the participant by email or referralCode. CAUTION: redemption is irreversible and, on a campaign with rewarding emails enabled, notifies the participant.
+* **Register Participant** `registerParticipant`: Register a new participant in the campaign and get their referral code back. Pass referrerReferralCode to record who referred them. CAUTION: this enrols a real person and, on a campaign with an email service configured, triggers the campaign's welcome/referral emails. Disposable-email domains are rejected with 451.
+* **Search Participants** `searchParticipants`: Search and page the campaign's participants, filtering by free-text search term, conversion status or acquisition source. PERSONAL DATA: returns email addresses, fraud/risk scores and custom fields.
 
 </details>
 

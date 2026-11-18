@@ -5,7 +5,7 @@ hidden: true
 
 # Gorgias
 
-<img src="../../.gitbook/assets/connectors/gorgias.png" alt="Gorgias logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/gorgias.png" alt="Gorgias logo">
 
 Gorgias helpdesk connector: tickets, messages, customers, tags, users, account, and HTTP integration (webhook) management. Subdomain-based (https://{subdomain}.gorgias.com/api). HTTP Basic auth (email + API key) primary.
 
@@ -39,13 +39,11 @@ Add Gorgias from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Messages | `listMessages` | List messages, optionally for a ticket. |
-| List Tags | `listTags` | List tags. |
-| List Tickets | `listTickets` | List tickets (cursor-paginated). |
-| List Users | `listUsers` | List agents/users. |
-| Update Customer | `updateCustomer` | Update a customer. |
-| Update Ticket | `updateTicket` | Update a ticket (status, priority, assignee, tags, subject). |
+* **List Messages** `listMessages`: List messages, optionally for a ticket.
+* **List Tags** `listTags`: List tags.
+* **List Tickets** `listTickets`: List tickets (cursor-paginated).
+* **List Users** `listUsers`: List agents/users.
+* **Update Customer** `updateCustomer`: Update a customer.
+* **Update Ticket** `updateTicket`: Update a ticket (status, priority, assignee, tags, subject).
 
 </details>

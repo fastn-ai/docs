@@ -5,7 +5,7 @@ hidden: true
 
 # Hootsuite
 
-<img src="../../.gitbook/assets/connectors/hootsuite.ico" alt="Hootsuite logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/hootsuite.png" alt="Hootsuite logo">
 
 Hootsuite is a social media management platform for scheduling, approving, and publishing content across connected social profiles. This connector covers the Hootsuite Platform REST API 1.0: outbound message scheduling and approval workflows, comment approvals, media uploads, social profiles, the authenticated member, organizations, teams, members and their permissions, and SCIM 2.0 user and group provisioning.
 
@@ -39,44 +39,42 @@ Add Hootsuite from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 36 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List My Ad Accounts | `retrieveMyAdAccounts` | Retrieve authenticated member's ad accounts. Retrieves the ad accounts that the authenticated user has permissions on. |
-| List My Organizations | `retrieveMyOrganizations` | Retrieve authenticated member's organizations. Retrieves the organizations that the authenticated member is in. |
-| List My Social Profiles | `retrieveMySocialProfiles` | Retrieve authenticated member's social profiles. Retrieves the social media profiles that the authenticated user has BASIC_USAGE permissions on. |
-| List Organization Member Social Profiles | `listOrganizationMemberSocialProfiles` | Retrieve org member’s social profiles. Retrieves the organization's social profiles that an organization member can access. |
-| List Organization Member Teams | `listOrganizationMemberTeams` | Retrieve org member's teams. Retrieves the teams an organization member is in. |
-| List Organization Members | `listOrganizationMembers` | Retrieve organization members. Retrieves the members in an organization |
-| List Organization Teams | `listOrganizationTeams` | Retrieve organization teams. Retrieves a list of teams for a given organization. |
-| List Outbound Messages | `listMessages` | Retrieve outbound messages. Outbound messages are messages that are scheduled or were previously sent. This endpoint returns outbound messages sorted by increasing scheduled send time. Messages pending approval, including those created by and/or actionable by the given user, will also be returned via this API. Messages returned can be filtered by social profile or the current state of the message. If more than 50 results are returned a cursor will be automatically created to paginate the results. Query Parameters must be [URL encoded](https://en.wikipedia.org/wiki/Percent-encoding). For example: ``` ?startTime=2020-01-01T00%3A00%3A00Z &endTime=2020-01-15T17%3A55%3A01Z &socialProfileIds=1234 &state=SCHEDULED &limit=5 ``` To specify multiple social profiles, use the following [syntax](http://stackoverflow.com/questions/6243051/how-to-pass-an-array-within-a-query-string): ``` ?socialProfileIds=1234&socialProfileIds=5678 ``` |
-| List SCIM Groups | `listScimGroups` | Get Groups. Retrieves Hootsuite teams using the SCIM 2.0 protocol. Support equals filtering on displayName. |
-| List SCIM Resource Types | `listScimResourceTypes` | Get Resource Types. Retrieves the configuration for all supported SCIM resource types |
-| List SCIM Users | `listScimUsers` | Get Users. Retrieves Hootsuite users using the SCIM 2.0 protocol. Support equals filtering on username. |
-| List Social Profile Teams | `listSocialProfileTeams` | Retrieve social profile's teams. Retrieves a list of team IDs with access to a social profile. Requires BASIC_USAGE permission on the social profile or ORG_MANAGE_SOCIAL_PROFILE permission on the organization that owns the social profile. |
-| List Social Profiles | `listSocialProfiles` | Retrieve social profiles. Retrieves the social profiles that the authenticated user has access to. |
-| List Team Members | `listTeamMembers` | Retrieve team members. Retrieves the members in a team. |
-| List Team Social Profiles | `listTeamSocialProfiles` | Retrieve org team’s social profiles. Retrieves the organization's social profiles that an organization team can access. |
-| Modify SCIM Group | `modifyScimGroup` | Modify Group. Modify one or more attributes of a Hootsuite team. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.2). |
-| Modify SCIM User | `modifyScimUser` | Modify User. Modify one or more attributes of a Hootsuite user. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.2). |
-| Reject Comment | `rejectComment` | Reject comment. Reject a comment. |
-| Reject Message | `rejectMessage` | Reject message. Reject a message. |
-| Remove Member From Organization | `removeMemberFromOrganization` | Remove member from organization. Removes a member from an organization. |
-| Replace SCIM Group | `replaceScimGroup` | Replace Group. Updates a Hootsuite team using the SCIM 2.0 protocol. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.1) |
-| Replace SCIM User | `replaceScimUser` | Replace User. Updates a Hootsuite user using the SCIM 2.0 protocol. To see the JSON object attributes required by the PUT endpoint, call the /Schemas endpoint. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.1) |
-| Retrieve Authenticated Member | `retrieveMe` | Retrieve authenticated member. Retrieves authenticated member. |
-| Retrieve Comment | `retrieveComment` | Retrieve comment. Retrieves a comment if it's been through the approvals workflow. |
-| Retrieve Media Upload Status | `retrieveMediaStatus` | Retrieve media upload status. Retrieves the status of a media upload to Hootsuite. |
-| Retrieve Member | `retrieveMember` | Retrieve member. Retrieves a member |
-| Retrieve Message | `retrieveMessage` | Retrieve message. Retrieves a message. A message is always associated with a single social profile. Messages might be unavailable for a brief time during upload to social networks. |
-| Retrieve Message Review History | `retrieveMessageHistory` | Get message review history. Gets a message's prescreening review history. |
-| Retrieve Organization Member Permissions | `retrieveOrganizationMemberPermissions` | Retrieve org member's organization permissions. Retrieves an organization member’s permissions for the organization. |
-| Retrieve Organization Member Social Profile Permissions | `retrieveOrganizationMemberSocialProfilePermissions` | Retrieve org member’s social profile permissions. Retrieves an organization member’s permissions for a social profile. |
-| Retrieve SCIM Group | `retrieveScimGroup` | Get Group. Retrieves a Hootsuite team using the SCIM 2.0 protocol. |
-| Retrieve SCIM User | `retrieveScimUser` | Get User. Retrieves a Hootsuite user using the SCIM 2.0 protocol. |
-| Retrieve Social Profile | `retrieveSocialProfile` | Retrieve social profile. Retrieve a social profile. Requires BASIC_USAGE permission on the social profile. |
-| Retrieve Team | `retrieveTeam` | Retrieve team. Retrieves a team with a given team ID. |
-| Retrieve Team Member Permissions | `retrieveTeamMemberPermissions` | Retrieve team member's permissions. Retrieves team member's team permissions. |
-| Schedule Message | `scheduleMessage` | Schedule messages. Schedules a message to send on one or more social profiles (except Pinterest). Returns an array of uniquely identifiable messages (one per social profile requested).&lt;br/&gt;&lt;br/&gt;Scheduling a message to Pinterest can not be bundled with any other social profiles. |
+* **List My Ad Accounts** `retrieveMyAdAccounts`: Retrieve authenticated member's ad accounts. Retrieves the ad accounts that the authenticated user has permissions on.
+* **List My Organizations** `retrieveMyOrganizations`: Retrieve authenticated member's organizations. Retrieves the organizations that the authenticated member is in.
+* **List My Social Profiles** `retrieveMySocialProfiles`: Retrieve authenticated member's social profiles. Retrieves the social media profiles that the authenticated user has BASIC_USAGE permissions on.
+* **List Organization Member Social Profiles** `listOrganizationMemberSocialProfiles`: Retrieve org member’s social profiles. Retrieves the organization's social profiles that an organization member can access.
+* **List Organization Member Teams** `listOrganizationMemberTeams`: Retrieve org member's teams. Retrieves the teams an organization member is in.
+* **List Organization Members** `listOrganizationMembers`: Retrieve organization members. Retrieves the members in an organization
+* **List Organization Teams** `listOrganizationTeams`: Retrieve organization teams. Retrieves a list of teams for a given organization.
+* **List Outbound Messages** `listMessages`: Retrieve outbound messages. Outbound messages are messages that are scheduled or were previously sent. This endpoint returns outbound messages sorted by increasing scheduled send time. Messages pending approval, including those created by and/or actionable by the given user, will also be returned via this API. Messages returned can be filtered by social profile or the current state of the message. If more than 50 results are returned a cursor will be automatically created to paginate the results. Query Parameters must be [URL encoded](https://en.wikipedia.org/wiki/Percent-encoding). For example: ``` ?startTime=2020-01-01T00%3A00%3A00Z &endTime=2020-01-15T17%3A55%3A01Z &socialProfileIds=1234 &state=SCHEDULED &limit=5 ``` To specify multiple social profiles, use the following [syntax](http://stackoverflow.com/questions/6243051/how-to-pass-an-array-within-a-query-string): ``` ?socialProfileIds=1234&socialProfileIds=5678 ```
+* **List SCIM Groups** `listScimGroups`: Get Groups. Retrieves Hootsuite teams using the SCIM 2.0 protocol. Support equals filtering on displayName.
+* **List SCIM Resource Types** `listScimResourceTypes`: Get Resource Types. Retrieves the configuration for all supported SCIM resource types
+* **List SCIM Users** `listScimUsers`: Get Users. Retrieves Hootsuite users using the SCIM 2.0 protocol. Support equals filtering on username.
+* **List Social Profile Teams** `listSocialProfileTeams`: Retrieve social profile's teams. Retrieves a list of team IDs with access to a social profile. Requires BASIC_USAGE permission on the social profile or ORG_MANAGE_SOCIAL_PROFILE permission on the organization that owns the social profile.
+* **List Social Profiles** `listSocialProfiles`: Retrieve social profiles. Retrieves the social profiles that the authenticated user has access to.
+* **List Team Members** `listTeamMembers`: Retrieve team members. Retrieves the members in a team.
+* **List Team Social Profiles** `listTeamSocialProfiles`: Retrieve org team’s social profiles. Retrieves the organization's social profiles that an organization team can access.
+* **Modify SCIM Group** `modifyScimGroup`: Modify Group. Modify one or more attributes of a Hootsuite team. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.2).
+* **Modify SCIM User** `modifyScimUser`: Modify User. Modify one or more attributes of a Hootsuite user. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.2).
+* **Reject Comment** `rejectComment`: Reject comment. Reject a comment.
+* **Reject Message** `rejectMessage`: Reject message. Reject a message.
+* **Remove Member From Organization** `removeMemberFromOrganization`: Remove member from organization. Removes a member from an organization.
+* **Replace SCIM Group** `replaceScimGroup`: Replace Group. Updates a Hootsuite team using the SCIM 2.0 protocol. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.1)
+* **Replace SCIM User** `replaceScimUser`: Replace User. Updates a Hootsuite user using the SCIM 2.0 protocol. To see the JSON object attributes required by the PUT endpoint, call the /Schemas endpoint. For a complete example request, see the [SCIM specification](https://tools.ietf.org/html/rfc7644#section-3.5.1)
+* **Retrieve Authenticated Member** `retrieveMe`: Retrieve authenticated member. Retrieves authenticated member.
+* **Retrieve Comment** `retrieveComment`: Retrieve comment. Retrieves a comment if it's been through the approvals workflow.
+* **Retrieve Media Upload Status** `retrieveMediaStatus`: Retrieve media upload status. Retrieves the status of a media upload to Hootsuite.
+* **Retrieve Member** `retrieveMember`: Retrieve member. Retrieves a member
+* **Retrieve Message** `retrieveMessage`: Retrieve message. Retrieves a message. A message is always associated with a single social profile. Messages might be unavailable for a brief time during upload to social networks.
+* **Retrieve Message Review History** `retrieveMessageHistory`: Get message review history. Gets a message's prescreening review history.
+* **Retrieve Organization Member Permissions** `retrieveOrganizationMemberPermissions`: Retrieve org member's organization permissions. Retrieves an organization member’s permissions for the organization.
+* **Retrieve Organization Member Social Profile Permissions** `retrieveOrganizationMemberSocialProfilePermissions`: Retrieve org member’s social profile permissions. Retrieves an organization member’s permissions for a social profile.
+* **Retrieve SCIM Group** `retrieveScimGroup`: Get Group. Retrieves a Hootsuite team using the SCIM 2.0 protocol.
+* **Retrieve SCIM User** `retrieveScimUser`: Get User. Retrieves a Hootsuite user using the SCIM 2.0 protocol.
+* **Retrieve Social Profile** `retrieveSocialProfile`: Retrieve social profile. Retrieve a social profile. Requires BASIC_USAGE permission on the social profile.
+* **Retrieve Team** `retrieveTeam`: Retrieve team. Retrieves a team with a given team ID.
+* **Retrieve Team Member Permissions** `retrieveTeamMemberPermissions`: Retrieve team member's permissions. Retrieves team member's team permissions.
+* **Schedule Message** `scheduleMessage`: Schedule messages. Schedules a message to send on one or more social profiles (except Pinterest). Returns an array of uniquely identifiable messages (one per social profile requested).&lt;br/&gt;&lt;br/&gt;Scheduling a message to Pinterest can not be bundled with any other social profiles.
 
 </details>
 

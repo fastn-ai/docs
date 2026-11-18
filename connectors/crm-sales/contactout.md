@@ -5,7 +5,7 @@ hidden: true
 
 # ContactOut
 
-<img src="../../.gitbook/assets/connectors/contactout.png" alt="ContactOut logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/contactout.png" alt="ContactOut logo">
 
 ContactOut is a contact-data and recruitment-outreach platform that finds verified email addresses and phone numbers for professionals. This connector covers the full ContactOut public API: LinkedIn and email profile enrichment, people and company search, decision-maker discovery, bulk contact-info jobs, contact availability checks, hashed-email identifiers, single and bulk email verification, outreach campaign management and API usage statistics.
 
@@ -39,25 +39,23 @@ Add ContactOut from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 17 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Enrich Profile By LinkedIn URL | `enrichProfileByLinkedInUrl` | Returns the full ContactOut profile for a LinkedIn member URL, including work and personal email addresses, phone numbers, employment history, education, skills and company details. Set Profile Only to true to retrieve profile data without contact information at a lower credit cost. |
-| Find LinkedIn Profile By Email | `findLinkedInProfileByEmail` | Returns the LinkedIn member profile URL associated with an email address. |
-| Get API Usage Stats | `getApiUsageStats` | Returns ContactOut API usage and remaining quota for a billing month, covering email, phone and search credits. |
-| Get Bulk Contact Info | `getBulkContactInfo` | Returns contact details for up to 100 LinkedIn member profiles in a single synchronous request. Use Create Bulk Contact Info Job for larger batches. |
-| Get Bulk Contact Info Job | `getBulkContactInfoJob` | Returns the status and, once complete, the results of an asynchronous bulk contact-info job created with Create Bulk Contact Info Job. |
-| Get Bulk Email Verification Job | `getBulkEmailVerificationJob` | Returns the status and, once complete, the per-address verdicts of a bulk email verification job created with Create Bulk Email Verification Job. |
-| Get Campaign | `getCampaign` | Returns a single outreach campaign by its identifier, optionally including performance statistics such as sends, opens, clicks and replies. |
-| Get Contact Info By LinkedIn URL | `getContactInfoByLinkedInUrl` | Returns only the contact details held for a LinkedIn member profile: email addresses, work and personal email verification status and, optionally, phone numbers. Use Enrich Profile By LinkedIn URL when you also need biographical data. |
-| Get Hashed Email Identifiers | `getHashedEmailIdentifiers` | Returns privacy-preserving hashed email identifiers for a batch of LinkedIn member profiles, for use in advertising audience matching. At least five unique profiles are required. |
-| List Campaigns | `listCampaigns` | Returns a paginated list of the outreach campaigns in the connected ContactOut account, with each campaign's identifier, name and status. |
-| List Decision Makers | `listDecisionMakers` | Returns the key decision makers at a company, identified by its LinkedIn company URL, website domain or name. Set Reveal Info to true to include email addresses and phone numbers, which consumes credits. |
-| Remove Campaign Recipients | `removeCampaignRecipients` | Removes up to 100 recipients from an outreach campaign. Each recipient object must contain the email address identifying the recipient to remove. |
-| Search Companies | `searchCompanies` | Searches the ContactOut company database by LinkedIn page, name, domain, employee count, location, industry, technology stack, revenue and founding year. |
-| Search People | `searchPeople` | Searches the ContactOut people database by job title, seniority, function, company, industry, location, skills, education, experience and more, returning up to 25 matching profiles per page. Set Reveal Contact Info to true to include email addresses and phone numbers, which consumes credits. |
-| Start Campaign | `startCampaign` | Starts an outreach campaign so that its scheduled messages begin sending to its recipients. |
-| Stop Campaign | `stopCampaign` | Stops a running outreach campaign so that no further messages are sent to its recipients. |
-| Verify Email | `verifyEmail` | Verifies the deliverability of a single email address and returns its status, such as valid, invalid or accept_all. |
+* **Enrich Profile By LinkedIn URL** `enrichProfileByLinkedInUrl`: Returns the full ContactOut profile for a LinkedIn member URL, including work and personal email addresses, phone numbers, employment history, education, skills and company details. Set Profile Only to true to retrieve profile data without contact information at a lower credit cost.
+* **Find LinkedIn Profile By Email** `findLinkedInProfileByEmail`: Returns the LinkedIn member profile URL associated with an email address.
+* **Get API Usage Stats** `getApiUsageStats`: Returns ContactOut API usage and remaining quota for a billing month, covering email, phone and search credits.
+* **Get Bulk Contact Info** `getBulkContactInfo`: Returns contact details for up to 100 LinkedIn member profiles in a single synchronous request. Use Create Bulk Contact Info Job for larger batches.
+* **Get Bulk Contact Info Job** `getBulkContactInfoJob`: Returns the status and, once complete, the results of an asynchronous bulk contact-info job created with Create Bulk Contact Info Job.
+* **Get Bulk Email Verification Job** `getBulkEmailVerificationJob`: Returns the status and, once complete, the per-address verdicts of a bulk email verification job created with Create Bulk Email Verification Job.
+* **Get Campaign** `getCampaign`: Returns a single outreach campaign by its identifier, optionally including performance statistics such as sends, opens, clicks and replies.
+* **Get Contact Info By LinkedIn URL** `getContactInfoByLinkedInUrl`: Returns only the contact details held for a LinkedIn member profile: email addresses, work and personal email verification status and, optionally, phone numbers. Use Enrich Profile By LinkedIn URL when you also need biographical data.
+* **Get Hashed Email Identifiers** `getHashedEmailIdentifiers`: Returns privacy-preserving hashed email identifiers for a batch of LinkedIn member profiles, for use in advertising audience matching. At least five unique profiles are required.
+* **List Campaigns** `listCampaigns`: Returns a paginated list of the outreach campaigns in the connected ContactOut account, with each campaign's identifier, name and status.
+* **List Decision Makers** `listDecisionMakers`: Returns the key decision makers at a company, identified by its LinkedIn company URL, website domain or name. Set Reveal Info to true to include email addresses and phone numbers, which consumes credits.
+* **Remove Campaign Recipients** `removeCampaignRecipients`: Removes up to 100 recipients from an outreach campaign. Each recipient object must contain the email address identifying the recipient to remove.
+* **Search Companies** `searchCompanies`: Searches the ContactOut company database by LinkedIn page, name, domain, employee count, location, industry, technology stack, revenue and founding year.
+* **Search People** `searchPeople`: Searches the ContactOut people database by job title, seniority, function, company, industry, location, skills, education, experience and more, returning up to 25 matching profiles per page. Set Reveal Contact Info to true to include email addresses and phone numbers, which consumes credits.
+* **Start Campaign** `startCampaign`: Starts an outreach campaign so that its scheduled messages begin sending to its recipients.
+* **Stop Campaign** `stopCampaign`: Stops a running outreach campaign so that no further messages are sent to its recipients.
+* **Verify Email** `verifyEmail`: Verifies the deliverability of a single email address and returns its status, such as valid, invalid or accept_all.
 
 </details>
 

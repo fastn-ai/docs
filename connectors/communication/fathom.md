@@ -5,7 +5,7 @@ hidden: true
 
 # Fathom
 
-<img src="../../.gitbook/assets/connectors/fathom.png" alt="Fathom logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/fathom.png" alt="Fathom logo">
 
 Fathom AI meeting notetaker. Poll meetings, teams, and team members, fetch recording summaries and transcripts, and register webhooks for new meeting content. Wraps the Fathom External API (https://api.fathom.ai/external/v1).
 
@@ -39,9 +39,7 @@ Add Fathom from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Request a download | `createRecordingDownload` | Request a download. Starts async generation of a downloadable file and returns a `download_id` to poll. Video is generated in the background; audio-only recordings complete immediately, so the response may already return `status: completed` with the file payload. Downloads are private to the API client that created them, and URLs expire ~24 hours after generation—request a new one when it expires. Only the owner, teammates who can view the recording, and people it was shared with at standard or admin level can download it. Limited-access shares get `403 Forbidden`. |
+* **Request a download** `createRecordingDownload`: Request a download. Starts async generation of a downloadable file and returns a `download_id` to poll. Video is generated in the background; audio-only recordings complete immediately, so the response may already return `status: completed` with the file payload. Downloads are private to the API client that created them, and URLs expire ~24 hours after generation—request a new one when it expires. Only the owner, teammates who can view the recording, and people it was shared with at standard or admin level can download it. Limited-access shares get `403 Forbidden`.
 
 </details>
 

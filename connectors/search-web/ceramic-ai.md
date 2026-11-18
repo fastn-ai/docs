@@ -5,7 +5,7 @@ hidden: true
 
 # Ceramic AI
 
-<img src="../../.gitbook/assets/connectors/ceramic-ai.png" alt="Ceramic AI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ceramic-ai.png" alt="Ceramic AI logo">
 
 Ceramic AI is a web-scale search API built for LLMs and AI agents. This connector wraps the Ceramic Search API: send a natural-language or keyword query and receive ranked web results with titles, URLs and content snippets.
 

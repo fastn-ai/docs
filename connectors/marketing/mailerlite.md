@@ -5,7 +5,7 @@ hidden: true
 
 # MailerLite
 
-<img src="../../.gitbook/assets/connectors/mailerlite.png" alt="MailerLite logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/mailerlite.png" alt="MailerLite logo">
 
 MailerLite (new API) connector: subscribers (CRUD + group assign), groups, campaigns (create/schedule), fields, automations, and webhooks. Bearer token auth. Base https://connect.mailerlite.com/api.
 
@@ -39,19 +39,17 @@ Add MailerLite from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 11 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Subscriber | `getSubscriber` | Get a subscriber by id or email. |
-| List Automations | `listAutomations` | List automations. |
-| List Campaigns | `listCampaigns` | List campaigns. |
-| List Fields | `listFields` | List custom fields. |
-| List Groups | `listGroups` | List groups. |
-| List Segments | `listSegments` | List the segments defined in the account. |
-| List Subscribers | `listSubscribers` | List subscribers (cursor pagination). |
-| List Webhooks | `listWebhooks` | List webhooks. |
-| Schedule Campaign | `scheduleCampaign` | Schedule a campaign for delivery. |
-| Unassign Subscriber From Group | `unassignFromGroup` | Remove a subscriber from a group. |
-| Update Subscriber | `updateSubscriber` | Update a subscriber by id. |
+* **Get Subscriber** `getSubscriber`: Get a subscriber by id or email.
+* **List Automations** `listAutomations`: List automations.
+* **List Campaigns** `listCampaigns`: List campaigns.
+* **List Fields** `listFields`: List custom fields.
+* **List Groups** `listGroups`: List groups.
+* **List Segments** `listSegments`: List the segments defined in the account.
+* **List Subscribers** `listSubscribers`: List subscribers (cursor pagination).
+* **List Webhooks** `listWebhooks`: List webhooks.
+* **Schedule Campaign** `scheduleCampaign`: Schedule a campaign for delivery.
+* **Unassign Subscriber From Group** `unassignFromGroup`: Remove a subscriber from a group.
+* **Update Subscriber** `updateSubscriber`: Update a subscriber by id.
 
 </details>
 
@@ -76,10 +74,8 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 
 <summary>See 3 more events</summary>
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Subscriber Spam Reported | `subscriber.spam_reported` | Fires when a subscriber reports a campaign as spam. |
-| Subscriber Unsubscribed | `subscriber.unsubscribed` | Fires when a subscriber unsubscribes. |
-| Subscriber Updated | `subscriber.updated` | Fires when a subscriber is updated. |
+* **Subscriber Spam Reported** `subscriber.spam_reported`: Fires when a subscriber reports a campaign as spam.
+* **Subscriber Unsubscribed** `subscriber.unsubscribed`: Fires when a subscriber unsubscribes.
+* **Subscriber Updated** `subscriber.updated`: Fires when a subscriber is updated.
 
 </details>

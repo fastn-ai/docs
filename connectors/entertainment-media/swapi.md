@@ -5,7 +5,7 @@ hidden: true
 
 # SWAPI (Star Wars API)
 
-<img src="../../.gitbook/assets/connectors/swapi.png" alt="SWAPI (Star Wars API) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/swapi.png" alt="SWAPI (Star Wars API) logo">
 
 SWAPI, the Star Wars API, is a free read-only API with Star Wars people, films, starships, vehicles, species and planets: list with search and pagination or get one by id, in JSON or Wookiee encoding. No API key needed (10,000 requests per day per IP).
 
@@ -39,10 +39,8 @@ Add SWAPI (Star Wars API) from **Build → Integrations → Connectors** and con
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Species | `listSpecies` | List species 10 per page, optionally filtered by a case-insensitive partial match on name (GET /api/species/). Docs: https://swapi.dev/documentation |
-| List Starships | `listStarships` | List starships 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/starships/). Docs: https://swapi.dev/documentation |
-| List Vehicles | `listVehicles` | List vehicles 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/vehicles/). Docs: https://swapi.dev/documentation |
+* **List Species** `listSpecies`: List species 10 per page, optionally filtered by a case-insensitive partial match on name (GET /api/species/). Docs: https://swapi.dev/documentation
+* **List Starships** `listStarships`: List starships 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/starships/). Docs: https://swapi.dev/documentation
+* **List Vehicles** `listVehicles`: List vehicles 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/vehicles/). Docs: https://swapi.dev/documentation
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # Environment Agency Flood Monitoring
 
-<img src="../../.gitbook/assets/connectors/ea-flood-monitoring.png" alt="Environment Agency Flood Monitoring logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ea-flood-monitoring.png" alt="Environment Agency Flood Monitoring logo">
 
 The UK Environment Agency real-time flood-monitoring API gives near real time flood warnings and alerts for England, flood areas with boundaries, and water level, flow, rainfall and tidal readings from thousands of monitoring stations. No API key needed (Open Government Licence).
 
@@ -39,9 +39,7 @@ Add Environment Agency Flood Monitoring from **Build → Integrations → Connec
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Station Readings | `listStationReadings` | List readings of all measures at one station: latest, today, a day, a date range or since a time (GET /id/stations/{id}/readings). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |
-| List Stations | `listStations` | List water level, flow, rainfall and other monitoring stations, filtered by parameter, river, catchment, town, type, status, label search or distance (GET /id/stations). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |
+* **List Station Readings** `listStationReadings`: List readings of all measures at one station: latest, today, a day, a date range or since a time (GET /id/stations/{id}/readings). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference
+* **List Stations** `listStations`: List water level, flow, rainfall and other monitoring stations, filtered by parameter, river, catchment, town, type, status, label search or distance (GET /id/stations). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference
 
 </details>

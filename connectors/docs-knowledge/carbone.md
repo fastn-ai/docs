@@ -5,7 +5,7 @@ hidden: true
 
 # Carbone
 
-<img src="../../.gitbook/assets/connectors/carbone.png" alt="Carbone logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/carbone.png" alt="Carbone logo">
 
 Carbone Cloud document generation API (api.carbone.io). Upload and manage DOCX/XLSX/ODT/HTML/MD templates, merge them with JSON data to render PDF/DOCX/XLSX/CSV/images, and download generated reports. Requires an API token from account.carbone.io; every request also sends the carbone-version: 5 header.
 
@@ -39,12 +39,10 @@ Add Carbone from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Render Report From Inline Template | `renderReportFromInlineTemplate` | One-shot render or file conversion without uploading a template first: the source file is passed as a base64 string in the 'template' body field and is never stored. Hits POST /render/template. This is the endpoint behind Carbone's document conversion use cases (HTML to PDF, DOCX to PDF, XLSX to CSV, MD to DOCX, PDF to image). Set download=true to get the generated file back directly. |
-| Render Report From Stored Template | `renderReportFromStoredTemplate` | Merges a stored template (by Template ID or Version ID) with a JSON dataset and generates a document, optionally converting it to PDF, DOCX, XLSX, CSV, HTML, JPG or PNG. With download=false (default) it returns a renderId to fetch with Download Generated Report; with download=true it streams the generated file directly and stores nothing. |
-| Update Template Metadata | `updateTemplateMetadata` | Patches the metadata of a stored template or template version: name, comment, tags, category, deployedAt, expireAt, and the owning Template ID. Does not replace the file itself - upload a new version with Upload Template for that. Returns versionId plus the fields that were sent. |
-| Upload Template | `uploadTemplate` | Uploads a DOCX/XLSX/PPTX/ODT/ODS/HTML/MD/TXT template to Carbone template storage and returns its templateId (and versionId when versioning is enabled). The file is sent as a base64 string in the 'template' field (pure base64 or a base64 data-URI) - the JSON route, not multipart. Optional metadata: name, comment, tags, category, sample, deployedAt, expireAt, origin, versioning, id. |
+* **Render Report From Inline Template** `renderReportFromInlineTemplate`: One-shot render or file conversion without uploading a template first: the source file is passed as a base64 string in the 'template' body field and is never stored. Hits POST /render/template. This is the endpoint behind Carbone's document conversion use cases (HTML to PDF, DOCX to PDF, XLSX to CSV, MD to DOCX, PDF to image). Set download=true to get the generated file back directly.
+* **Render Report From Stored Template** `renderReportFromStoredTemplate`: Merges a stored template (by Template ID or Version ID) with a JSON dataset and generates a document, optionally converting it to PDF, DOCX, XLSX, CSV, HTML, JPG or PNG. With download=false (default) it returns a renderId to fetch with Download Generated Report; with download=true it streams the generated file directly and stores nothing.
+* **Update Template Metadata** `updateTemplateMetadata`: Patches the metadata of a stored template or template version: name, comment, tags, category, deployedAt, expireAt, and the owning Template ID. Does not replace the file itself - upload a new version with Upload Template for that. Returns versionId plus the fields that were sent.
+* **Upload Template** `uploadTemplate`: Uploads a DOCX/XLSX/PPTX/ODT/ODS/HTML/MD/TXT template to Carbone template storage and returns its templateId (and versionId when versioning is enabled). The file is sent as a base64 string in the 'template' field (pure base64 or a base64 data-URI) - the JSON route, not multipart. Optional metadata: name, comment, tags, category, sample, deployedAt, expireAt, origin, versioning, id.
 
 </details>
 

@@ -5,7 +5,7 @@ hidden: true
 
 # WebScraping.AI
 
-<img src="../../.gitbook/assets/connectors/webscraping-ai.png" alt="WebScraping.AI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/webscraping-ai.png" alt="WebScraping.AI logo">
 
 WebScraping.AI is a web scraping API with rotating datacenter, residential and stealth proxies and headless Chromium rendering. This connector covers the full WebScraping.AI API: page HTML, page text as Markdown, HTML of selected page areas by CSS selector, LLM answers to questions about a page, LLM extraction of structured fields, Google search results and account quota.
 

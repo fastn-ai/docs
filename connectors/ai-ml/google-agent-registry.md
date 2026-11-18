@@ -5,7 +5,7 @@ hidden: true
 
 # Google Agent Registry
 
-<img src="../../.gitbook/assets/connectors/google-agent-registry.png" alt="Google Agent Registry logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-agent-registry.png" alt="Google Agent Registry logo">
 
 Google Cloud Agent Registry API (agentregistry.googleapis.com v1), a central catalog for discovering and governing AI agents, MCP servers and endpoints in Google Cloud. List agents and MCP servers (location 'global' includes Google's own remote MCP servers), list/get registered services, register (create) and delete a service, and poll long-running operations. Authorizes with Google OAuth 2.0 using the scopes agentregistry.read-only (list/get) and agentregistry.read-write (create/delete services).
 

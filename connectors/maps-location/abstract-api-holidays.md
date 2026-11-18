@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI Holidays
 
-<img src="../../.gitbook/assets/connectors/abstract-api-holidays.png" alt="AbstractAPI Holidays logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-holidays.png" alt="AbstractAPI Holidays logo">
 
 AbstractAPI Holidays returns public, religious, and observance holidays for 200+ countries by date. On the free plan, queries must specify a single exact day (country, year, month, and day together); broader month- or year-only queries require a paid plan.
 

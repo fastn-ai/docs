@@ -5,7 +5,7 @@ hidden: true
 
 # Beamer
 
-<img src="../../.gitbook/assets/connectors/beamer.png" alt="Beamer logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/beamer.png" alt="Beamer logo">
 
 Beamer is a changelog, feedback, NPS and user-onboarding platform for announcing product updates in-app. This connector covers the full Beamer v0 REST API: feed URL, ping, posts, post comments, post reactions, unread posts, feature requests with their comments and votes, analytics users, NPS responses and surveys, team members and privacy data deletion.
 
@@ -39,49 +39,47 @@ Add Beamer from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 41 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Feature Request | `createFeatureRequest` | Creates a feature request on your Beamer Ideas board on behalf of an end user. Title, content and language are arrays so several translations can be created at once, keeping the same order across all of them. |
-| Create Feature Request Comment | `createFeatureRequestComment` | Adds a comment to a feature request on your Beamer Ideas board on behalf of an end user. |
-| Create Feature Request Vote | `createFeatureRequestVote` | Casts a vote on a feature request on your Beamer Ideas board on behalf of an end user. |
-| Create Post | `createPost` | Creates a new post in your Beamer changelog. Title, content, language, link URL and link text are arrays so that several translations can be created at once; keep the same order across all of them. Multiple translations require the Starter plan or above. |
-| Create Post Comment | `createPostComment` | Adds a comment to a Beamer post on behalf of one of your end users. The comment appears in the Beamer inbox alongside organic feedback. |
-| Create Post Reaction | `createPostReaction` | Records a positive, neutral or negative reaction to a Beamer post on behalf of one of your end users. |
-| Delete Analytics Users | `deleteUsers` | Deletes every Beamer Analytics user matching the supplied selector and returns how many were removed. Provide at least one of User ID, Beamer ID or User Email. |
-| Delete Feature Request | `deleteFeatureRequest` | Permanently deletes a feature request from your Beamer Ideas board, together with its comments and votes. |
-| Delete Feature Request Comment | `deleteFeatureRequestComment` | Permanently deletes a single comment from a feature request on your Beamer Ideas board. |
-| Delete Feature Request Vote | `deleteFeatureRequestVote` | Removes a single vote from a feature request on your Beamer Ideas board. |
-| Delete Post | `deletePost` | Permanently deletes a Beamer post by its id, together with its translations, comments and reactions. |
-| Delete Post Comment | `deletePostComment` | Permanently deletes a single comment from a Beamer post. |
-| Delete Post Reaction | `deletePostReaction` | Permanently deletes a single reaction from a Beamer post. |
-| Delete User Privacy Data | `deleteUserPrivacyData` | Erases all data Beamer holds about the matching end users, including their analytics profile, comments, reactions, votes and NPS responses. Use it to satisfy GDPR erasure requests. Provide at least one of User ID, Beamer ID or User Email. |
-| Get Feature Request | `getFeatureRequest` | Returns a single feature request from your Beamer Ideas board by its id, including translations, vote and comment counts. |
-| Get Feature Request Comment | `getFeatureRequestComment` | Returns a single comment on a feature request by its id, including the details of the user who left it. |
-| Get Feature Request Vote | `getFeatureRequestVote` | Returns a single vote on a feature request by its id, including the details of the user who cast it. |
-| Get Feed URL | `getFeedUrl` | Retrieves the URL of your standalone Beamer feed, optionally scoped to a language, a segmentation filter, a theme and the identity of the viewing user for analytics. |
-| Get NPS Survey Link | `getNpsSurveyLink` | Returns a shareable Beamer NPS survey link personalised for the given user, so you can embed it in your own emails or in-app messaging. Requires an NPS-enabled Beamer plan. |
-| Get Post | `getPost` | Returns a single Beamer post by its id, including all of its translations and engagement counters. |
-| Get Post Comment | `getPostComment` | Returns a single comment on a Beamer post by its id, including the details of the user who left it. |
-| Get Post Reaction | `getPostReaction` | Returns a single reaction on a Beamer post by its id, including the details of the user who left it. |
-| Invite Team Member | `inviteTeamMember` | Invites a new member into your Beamer team with the given role. Beamer emails the invitation to the address supplied, so use it only with addresses you are authorised to contact. |
-| List Analytics Users | `listUsers` | Returns the end users tracked in Beamer Analytics, optionally narrowed to a single user id, Beamer id or email address, with sorting and pagination. |
-| List Feature Request Comments | `listFeatureRequestComments` | Returns the comments left on a feature request, with optional date, visibility, language and free-text search filtering plus pagination. |
-| List Feature Request Votes | `listFeatureRequestVotes` | Returns the individual votes cast on a feature request, optionally restricted to a date range, with pagination. |
-| List Feature Requests | `listFeatureRequests` | Returns feature requests submitted to your Beamer Ideas board, with optional filtering by date range, language, category, status, visibility and free-text search. |
-| List Languages | `listLanguages` | Returns the languages enabled on your Beamer product, so you can pick a valid ISO-639 code for the Language fields on posts, feeds and feature requests. This endpoint is live on the Beamer API but is not covered by the public API reference. |
-| List NPS Responses | `listNpsResponses` | Returns the NPS survey responses collected in Beamer, with optional date range, score range and free-text search filtering plus pagination. Requires an NPS-enabled Beamer plan. |
-| List Post Comments | `listPostComments` | Returns the comments users left on a Beamer post, with optional date, language and free-text search filtering plus pagination. |
-| List Post Reactions | `listPostReactions` | Returns the reactions users left on a Beamer post, optionally restricted to a date range or a single reaction type, with pagination. |
-| List Posts | `listPosts` | Returns posts from your Beamer changelog, with optional filtering by date range, language, category, published, archived and expired state, plus pagination. At most 10 posts are returned per page. |
-| List Segmentation Filters | `listSegmentationFilters` | Returns the segmentation filters configured on your Beamer product, so you can pick a valid value for the Segmentation Filter fields on posts, feeds and users. This endpoint is live on the Beamer API but is not covered by the public API reference. |
-| List Unread Posts | `listUnreadPosts` | Returns the posts a given user has not yet seen in their Beamer feed, optionally marking them as read. |
-| Ping The API | `ping` | Checks that your Beamer API key is valid and returns the name of the product the key belongs to. Use it as a lightweight connectivity and credential check. |
-| Remove Team Member | `removeTeamMember` | Removes a member from your Beamer team by their email address. The member loses access to the product immediately. |
-| Send NPS Email Survey | `sendNpsEmailSurvey` | Sends the Beamer NPS survey by email to the given address. Beamer answers 204 with no content when the survey was already sent to that user. This action delivers a real email, so use it only against addresses you own. Requires an NPS-enabled Beamer plan. |
-| Update Analytics Users | `updateUsers` | Updates every Beamer Analytics user matching the supplied selector. Provide at least one of Match User ID, Match Beamer ID or Match User Email to choose which users are updated, and supply the new attribute values in the remaining fields. |
-| Update Feature Request | `updateFeatureRequest` | Updates an existing feature request on your Beamer Ideas board, for example to move it to a new status, change its visibility or edit its content. |
-| Update Post | `updatePost` | Updates an existing Beamer post. Only the fields supplied are sent; title, content, language, link URL and link text are arrays so several translations can be updated at once, keeping the same order across all of them. |
-| Update Team Member Role | `updateTeamMemberRole` | Changes the role of an existing member of your Beamer team, identified by their email address. |
+* **Create Feature Request** `createFeatureRequest`: Creates a feature request on your Beamer Ideas board on behalf of an end user. Title, content and language are arrays so several translations can be created at once, keeping the same order across all of them.
+* **Create Feature Request Comment** `createFeatureRequestComment`: Adds a comment to a feature request on your Beamer Ideas board on behalf of an end user.
+* **Create Feature Request Vote** `createFeatureRequestVote`: Casts a vote on a feature request on your Beamer Ideas board on behalf of an end user.
+* **Create Post** `createPost`: Creates a new post in your Beamer changelog. Title, content, language, link URL and link text are arrays so that several translations can be created at once; keep the same order across all of them. Multiple translations require the Starter plan or above.
+* **Create Post Comment** `createPostComment`: Adds a comment to a Beamer post on behalf of one of your end users. The comment appears in the Beamer inbox alongside organic feedback.
+* **Create Post Reaction** `createPostReaction`: Records a positive, neutral or negative reaction to a Beamer post on behalf of one of your end users.
+* **Delete Analytics Users** `deleteUsers`: Deletes every Beamer Analytics user matching the supplied selector and returns how many were removed. Provide at least one of User ID, Beamer ID or User Email.
+* **Delete Feature Request** `deleteFeatureRequest`: Permanently deletes a feature request from your Beamer Ideas board, together with its comments and votes.
+* **Delete Feature Request Comment** `deleteFeatureRequestComment`: Permanently deletes a single comment from a feature request on your Beamer Ideas board.
+* **Delete Feature Request Vote** `deleteFeatureRequestVote`: Removes a single vote from a feature request on your Beamer Ideas board.
+* **Delete Post** `deletePost`: Permanently deletes a Beamer post by its id, together with its translations, comments and reactions.
+* **Delete Post Comment** `deletePostComment`: Permanently deletes a single comment from a Beamer post.
+* **Delete Post Reaction** `deletePostReaction`: Permanently deletes a single reaction from a Beamer post.
+* **Delete User Privacy Data** `deleteUserPrivacyData`: Erases all data Beamer holds about the matching end users, including their analytics profile, comments, reactions, votes and NPS responses. Use it to satisfy GDPR erasure requests. Provide at least one of User ID, Beamer ID or User Email.
+* **Get Feature Request** `getFeatureRequest`: Returns a single feature request from your Beamer Ideas board by its id, including translations, vote and comment counts.
+* **Get Feature Request Comment** `getFeatureRequestComment`: Returns a single comment on a feature request by its id, including the details of the user who left it.
+* **Get Feature Request Vote** `getFeatureRequestVote`: Returns a single vote on a feature request by its id, including the details of the user who cast it.
+* **Get Feed URL** `getFeedUrl`: Retrieves the URL of your standalone Beamer feed, optionally scoped to a language, a segmentation filter, a theme and the identity of the viewing user for analytics.
+* **Get NPS Survey Link** `getNpsSurveyLink`: Returns a shareable Beamer NPS survey link personalised for the given user, so you can embed it in your own emails or in-app messaging. Requires an NPS-enabled Beamer plan.
+* **Get Post** `getPost`: Returns a single Beamer post by its id, including all of its translations and engagement counters.
+* **Get Post Comment** `getPostComment`: Returns a single comment on a Beamer post by its id, including the details of the user who left it.
+* **Get Post Reaction** `getPostReaction`: Returns a single reaction on a Beamer post by its id, including the details of the user who left it.
+* **Invite Team Member** `inviteTeamMember`: Invites a new member into your Beamer team with the given role. Beamer emails the invitation to the address supplied, so use it only with addresses you are authorised to contact.
+* **List Analytics Users** `listUsers`: Returns the end users tracked in Beamer Analytics, optionally narrowed to a single user id, Beamer id or email address, with sorting and pagination.
+* **List Feature Request Comments** `listFeatureRequestComments`: Returns the comments left on a feature request, with optional date, visibility, language and free-text search filtering plus pagination.
+* **List Feature Request Votes** `listFeatureRequestVotes`: Returns the individual votes cast on a feature request, optionally restricted to a date range, with pagination.
+* **List Feature Requests** `listFeatureRequests`: Returns feature requests submitted to your Beamer Ideas board, with optional filtering by date range, language, category, status, visibility and free-text search.
+* **List Languages** `listLanguages`: Returns the languages enabled on your Beamer product, so you can pick a valid ISO-639 code for the Language fields on posts, feeds and feature requests. This endpoint is live on the Beamer API but is not covered by the public API reference.
+* **List NPS Responses** `listNpsResponses`: Returns the NPS survey responses collected in Beamer, with optional date range, score range and free-text search filtering plus pagination. Requires an NPS-enabled Beamer plan.
+* **List Post Comments** `listPostComments`: Returns the comments users left on a Beamer post, with optional date, language and free-text search filtering plus pagination.
+* **List Post Reactions** `listPostReactions`: Returns the reactions users left on a Beamer post, optionally restricted to a date range or a single reaction type, with pagination.
+* **List Posts** `listPosts`: Returns posts from your Beamer changelog, with optional filtering by date range, language, category, published, archived and expired state, plus pagination. At most 10 posts are returned per page.
+* **List Segmentation Filters** `listSegmentationFilters`: Returns the segmentation filters configured on your Beamer product, so you can pick a valid value for the Segmentation Filter fields on posts, feeds and users. This endpoint is live on the Beamer API but is not covered by the public API reference.
+* **List Unread Posts** `listUnreadPosts`: Returns the posts a given user has not yet seen in their Beamer feed, optionally marking them as read.
+* **Ping The API** `ping`: Checks that your Beamer API key is valid and returns the name of the product the key belongs to. Use it as a lightweight connectivity and credential check.
+* **Remove Team Member** `removeTeamMember`: Removes a member from your Beamer team by their email address. The member loses access to the product immediately.
+* **Send NPS Email Survey** `sendNpsEmailSurvey`: Sends the Beamer NPS survey by email to the given address. Beamer answers 204 with no content when the survey was already sent to that user. This action delivers a real email, so use it only against addresses you own. Requires an NPS-enabled Beamer plan.
+* **Update Analytics Users** `updateUsers`: Updates every Beamer Analytics user matching the supplied selector. Provide at least one of Match User ID, Match Beamer ID or Match User Email to choose which users are updated, and supply the new attribute values in the remaining fields.
+* **Update Feature Request** `updateFeatureRequest`: Updates an existing feature request on your Beamer Ideas board, for example to move it to a new status, change its visibility or edit its content.
+* **Update Post** `updatePost`: Updates an existing Beamer post. Only the fields supplied are sent; title, content, language, link URL and link text are arrays so several translations can be updated at once, keeping the same order across all of them.
+* **Update Team Member Role** `updateTeamMemberRole`: Changes the role of an existing member of your Beamer team, identified by their email address.
 
 </details>
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Ecologi
 
-<img src="../../.gitbook/assets/connectors/ecologi.png" alt="Ecologi logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ecologi.png" alt="Ecologi logo">
 
 Ecologi lets businesses fund verified climate action - tree planting, carbon avoidance, permanent carbon removal and habitat restoration - directly from their own systems. This connector covers the full Ecologi public API: the Impact API for funding each impact type, and the Reporting API for reading any Ecologi profile's cumulative impact totals.
 
@@ -39,8 +39,6 @@ Add Ecologi from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Purchase Trees | `purchaseTrees` | Funds the planting of 1 to 250,000 trees, which are added to your Ecologi forest as pending until your next monthly invoice is paid. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false. |
+* **Purchase Trees** `purchaseTrees`: Funds the planting of 1 to 250,000 trees, which are added to your Ecologi forest as pending until your next monthly invoice is paid. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false.
 
 </details>

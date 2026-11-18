@@ -5,7 +5,7 @@ hidden: true
 
 # GenderAPI.io
 
-<img src="../../.gitbook/assets/connectors/gender-api-io.png" alt="GenderAPI.io logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/gender-api-io.png" alt="GenderAPI.io logo">
 
 GenderAPI.io predicts gender from a first name, full name, email address or username, with optional country context and AI fallback, and validates and formats international phone numbers. This connector covers the full GenderAPI.io REST API: single and bulk gender lookups by name, email and username, phone number validation, and remaining-credit monitoring.
 

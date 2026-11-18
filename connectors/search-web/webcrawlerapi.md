@@ -5,7 +5,7 @@ hidden: true
 
 # WebCrawlerAPI
 
-<img src="../../.gitbook/assets/connectors/webcrawlerapi.png" alt="WebCrawlerAPI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/webcrawlerapi.png" alt="WebCrawlerAPI logo">
 
 WebCrawlerAPI crawls whole websites and scrapes single pages into Markdown, cleaned text, HTML or link lists. This connector covers the complete WebCrawlerAPI: asynchronous crawl jobs with status, discovered URLs, combined Markdown output and cancellation; synchronous and asynchronous single-page scraping with optional LLM prompts; scheduled change-monitoring feeds with RSS and JSON Feed output, pause, resume, force-run, webhook resend and deletion; AI agent runs that extract structured data; and organization balance and usage statistics.
 
@@ -39,22 +39,20 @@ Add WebCrawlerAPI from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 14 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Feed RSS | `getFeedRss` | Returns the changes detected by a feed as an Atom 1.0 XML document (RFC 5005 paginated), one entry per new, changed, unavailable or erroring page, newest first. |
-| Get Organization Balance | `getOrganizationBalance` | Returns the organization's current spendable balance in USD, combining prepaid credits and subscription credits. |
-| Get Organization Usage | `getOrganizationUsage` | Returns aggregated usage statistics for the organization over a date range (default: the last 30 days): total cost in USD and number of requests, optionally with a per-day breakdown. The range may not exceed one year. |
-| Get Scrape Result | `getScrapeResult` | Returns the status of an asynchronous scrape job and, once it is done, the scraped content in the requested formats. While the job is still running only the status is returned. |
-| List Agent Jobs | `listAgentJobs` | Returns a paginated list of the organization's agent runs with their status, model, spend and success flag, plus the total count. |
-| List Feeds | `listFeeds` | Lists every feed of the organization (active, paused and canceled), newest first, with each feed's configuration, status and run times. |
-| Pause Feed | `pauseFeed` | Temporarily stops a feed from running its scheduled crawls; scheduled runs are skipped until the feed is resumed. |
-| Resend Feed Webhook | `resendFeedWebhook` | Re-sends the webhook notification for a feed's latest completed run to the feed's configured webhook URL and reports the delivery status code. |
-| Resume Feed | `resumeFeed` | Resumes a paused feed so scheduled crawls continue; the next run is scheduled from the current time. Canceled feeds cannot be resumed. |
-| Run Agent | `runAgent` | Starts an AI agent that browses the given seed URLs, optionally follows relevant links, and extracts data according to a natural-language prompt and optional JSON Schema, within a USD spending cap. Runs asynchronously; poll Get Agent Job for the result. |
-| Run Feed Now | `runFeedNow` | Triggers an immediate extra run of an active feed outside its regular schedule. Limited to one forced run per hour per feed and charged like a scheduled run; the organization needs a balance of at least $0.01. |
-| Scrape Page | `scrapePage` | Scrapes a single web page synchronously and returns its content as Markdown, cleaned text, raw HTML and/or a list of links, optionally with structured data extracted by an LLM prompt. A failed scrape returns HTTP 200 with success false and an error code. Charged per page (plus tokens when a prompt is used). |
-| Start Async Scrape | `startAsyncScrape` | Queues a single-page scrape and returns a job id immediately instead of waiting for the result; retrieve the content later with Get Scrape Result. Accepts the same options as Scrape Page. Charged per page. |
-| Start Crawl Job | `startCrawlJob` | Starts an asynchronous crawl of a website from a seed URL, following links up to the page limit and depth you set and producing Markdown, cleaned text, HTML or link output for every page. Returns the job id; poll Get Crawl Job or supply a webhook URL to be notified when it finishes. Charged per page crawled. |
+* **Get Feed RSS** `getFeedRss`: Returns the changes detected by a feed as an Atom 1.0 XML document (RFC 5005 paginated), one entry per new, changed, unavailable or erroring page, newest first.
+* **Get Organization Balance** `getOrganizationBalance`: Returns the organization's current spendable balance in USD, combining prepaid credits and subscription credits.
+* **Get Organization Usage** `getOrganizationUsage`: Returns aggregated usage statistics for the organization over a date range (default: the last 30 days): total cost in USD and number of requests, optionally with a per-day breakdown. The range may not exceed one year.
+* **Get Scrape Result** `getScrapeResult`: Returns the status of an asynchronous scrape job and, once it is done, the scraped content in the requested formats. While the job is still running only the status is returned.
+* **List Agent Jobs** `listAgentJobs`: Returns a paginated list of the organization's agent runs with their status, model, spend and success flag, plus the total count.
+* **List Feeds** `listFeeds`: Lists every feed of the organization (active, paused and canceled), newest first, with each feed's configuration, status and run times.
+* **Pause Feed** `pauseFeed`: Temporarily stops a feed from running its scheduled crawls; scheduled runs are skipped until the feed is resumed.
+* **Resend Feed Webhook** `resendFeedWebhook`: Re-sends the webhook notification for a feed's latest completed run to the feed's configured webhook URL and reports the delivery status code.
+* **Resume Feed** `resumeFeed`: Resumes a paused feed so scheduled crawls continue; the next run is scheduled from the current time. Canceled feeds cannot be resumed.
+* **Run Agent** `runAgent`: Starts an AI agent that browses the given seed URLs, optionally follows relevant links, and extracts data according to a natural-language prompt and optional JSON Schema, within a USD spending cap. Runs asynchronously; poll Get Agent Job for the result.
+* **Run Feed Now** `runFeedNow`: Triggers an immediate extra run of an active feed outside its regular schedule. Limited to one forced run per hour per feed and charged like a scheduled run; the organization needs a balance of at least $0.01.
+* **Scrape Page** `scrapePage`: Scrapes a single web page synchronously and returns its content as Markdown, cleaned text, raw HTML and/or a list of links, optionally with structured data extracted by an LLM prompt. A failed scrape returns HTTP 200 with success false and an error code. Charged per page (plus tokens when a prompt is used).
+* **Start Async Scrape** `startAsyncScrape`: Queues a single-page scrape and returns a job id immediately instead of waiting for the result; retrieve the content later with Get Scrape Result. Accepts the same options as Scrape Page. Charged per page.
+* **Start Crawl Job** `startCrawlJob`: Starts an asynchronous crawl of a website from a seed URL, following links up to the page limit and depth you set and producing Markdown, cleaned text, HTML or link output for every page. Returns the job id; poll Get Crawl Job or supply a webhook URL to be notified when it finishes. Charged per page crawled.
 
 </details>
 

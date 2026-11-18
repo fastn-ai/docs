@@ -5,7 +5,7 @@ hidden: true
 
 # Youform
 
-<img src="../../.gitbook/assets/connectors/youform.png" alt="Youform logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/youform.png" alt="Youform logo">
 
 Youform is an online form builder for surveys, quizzes and lead capture. This connector covers the full Youform REST API: reading the authenticated account profile, listing forms, reading a single form by slug, reading complete and partial submissions for a form, creating and deleting per-form submission webhooks, and enabling or disabling a submission refill link.
 
@@ -39,9 +39,7 @@ Add Youform from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Set Submission Refill Link | `setSubmissionRefillLink` | Enables or disables the refill link for a submission, which lets the respondent reopen and edit their answers. This feature requires a Youform Pro plan; on lower plans Youform returns 403 'Only PRO users can use this feature.' |
+* **Set Submission Refill Link** `setSubmissionRefillLink`: Enables or disables the refill link for a submission, which lets the respondent reopen and edit their answers. This feature requires a Youform Pro plan; on lower plans Youform returns 403 'Only PRO users can use this feature.'
 
 </details>
 

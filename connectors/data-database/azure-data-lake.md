@@ -5,7 +5,7 @@ hidden: true
 
 # Azure Data Lake
 
-<img src="../../.gitbook/assets/connectors/azure-data-lake.png" alt="Azure Data Lake logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/azure-data-lake.png" alt="Azure Data Lake logo">
 
 Azure Data Lake Storage Gen2 DataLake REST API. Manage filesystems, directories, files, and ACLs over the DFS endpoint (https://{account}.dfs.core.windows.net). Authenticates with Microsoft Entra ID (Azure AD) OAuth2 bearer tokens.
 
@@ -39,15 +39,13 @@ Add Azure Data Lake from **Build → Integrations → Connectors** and connect a
 
 <summary>See 8 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Lease Path | `leasePath` | Create and manage a lease (acquire/break/change/renew/release) on a file or directory to control write/delete access. POST https://{account}.dfs.core.windows.net/{filesystem}/{path}. Lease action and duration set via headers. |
-| List Filesystems | `listFilesystems` | List all filesystems (containers) in the storage account. GET https://{account}.dfs.core.windows.net/?resource=account. Supports prefix/continuation/maxResults paging. |
-| List Paths | `listPaths` | List paths (files and directories) in a filesystem, optionally recursively. GET https://{account}.dfs.core.windows.net/{filesystem}?recursive={bool}&resource=filesystem. Supports directory filter, continuation, maxResults, upn. |
-| Read File | `readFile` | Read (download) the contents of a file, optionally a byte range. GET https://{account}.dfs.core.windows.net/{filesystem}/{path}. Returns the file content (200 OK, or 206 Partial Content for a range). |
-| Set Access Control | `setAccessControl` | Set owner, group, POSIX permissions, or ACL on a single file or directory. PATCH https://{account}.dfs.core.windows.net/{filesystem}/{path}?action=setAccessControl. Values supplied via x-ms-owner/x-ms-group/x-ms-permissions/x-ms-acl headers. Returns 200 OK. |
-| Set Access Control Recursive | `setAccessControlRecursive` | Set/modify/remove ACLs recursively on a directory and its contents. PATCH https://{account}.dfs.core.windows.net/{filesystem}/{path}?action=setAccessControlRecursive&mode={mode}. ACL supplied via x-ms-acl header. Returns 200 OK with counts. |
-| Set Filesystem Properties | `setFilesystemProperties` | Set user-defined properties for a filesystem. PATCH https://{account}.dfs.core.windows.net/{filesystem}?resource=filesystem. Properties supplied via x-ms-properties header. |
-| Set Path Properties | `setPathProperties` | Set system/user-defined properties (HTTP headers, metadata) on a file or directory. PATCH https://{account}.dfs.core.windows.net/{filesystem}/{path}?action=setProperties. Properties supplied via x-ms-properties header. Returns 200 OK. |
+* **Lease Path** `leasePath`: Create and manage a lease (acquire/break/change/renew/release) on a file or directory to control write/delete access. POST https://{account}.dfs.core.windows.net/{filesystem}/{path}. Lease action and duration set via headers.
+* **List Filesystems** `listFilesystems`: List all filesystems (containers) in the storage account. GET https://{account}.dfs.core.windows.net/?resource=account. Supports prefix/continuation/maxResults paging.
+* **List Paths** `listPaths`: List paths (files and directories) in a filesystem, optionally recursively. GET https://{account}.dfs.core.windows.net/{filesystem}?recursive={bool}&resource=filesystem. Supports directory filter, continuation, maxResults, upn.
+* **Read File** `readFile`: Read (download) the contents of a file, optionally a byte range. GET https://{account}.dfs.core.windows.net/{filesystem}/{path}. Returns the file content (200 OK, or 206 Partial Content for a range).
+* **Set Access Control** `setAccessControl`: Set owner, group, POSIX permissions, or ACL on a single file or directory. PATCH https://{account}.dfs.core.windows.net/{filesystem}/{path}?action=setAccessControl. Values supplied via x-ms-owner/x-ms-group/x-ms-permissions/x-ms-acl headers. Returns 200 OK.
+* **Set Access Control Recursive** `setAccessControlRecursive`: Set/modify/remove ACLs recursively on a directory and its contents. PATCH https://{account}.dfs.core.windows.net/{filesystem}/{path}?action=setAccessControlRecursive&mode={mode}. ACL supplied via x-ms-acl header. Returns 200 OK with counts.
+* **Set Filesystem Properties** `setFilesystemProperties`: Set user-defined properties for a filesystem. PATCH https://{account}.dfs.core.windows.net/{filesystem}?resource=filesystem. Properties supplied via x-ms-properties header.
+* **Set Path Properties** `setPathProperties`: Set system/user-defined properties (HTTP headers, metadata) on a file or directory. PATCH https://{account}.dfs.core.windows.net/{filesystem}/{path}?action=setProperties. Properties supplied via x-ms-properties header. Returns 200 OK.
 
 </details>

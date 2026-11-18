@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI Company Enrichment
 
-<img src="../../.gitbook/assets/connectors/abstract-api-company-enrichment.png" alt="AbstractAPI Company Enrichment logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-company-enrichment.png" alt="AbstractAPI Company Enrichment logo">
 
 AbstractAPI Company Enrichment returns firmographic data for a company domain, including name, logo, description, headquarters, industry codes, headcount, revenue, contact details, public listing, technologies, and social profiles.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Spotlightr
 
-<img src="../../.gitbook/assets/connectors/spotlightr.png" alt="Spotlightr logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/spotlightr.png" alt="Spotlightr logo">
 
 Spotlightr (formerly vooPlayer) interactive video hosting and marketing platform. Create videos from a URL or upload, organise them into projects, replace video sources, delete videos, read per-video analytics and viewer-level view records, list top-performing videos, manage whitelisted embed domains, and create course/gallery students.
 
@@ -39,17 +39,15 @@ Add Spotlightr from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Playlists | `listPlaylists` | Returns the playlists in your Spotlightr account in a paginated envelope under "playlists". This route is not in Spotlightr's published documentation but is live on the API. |
-| List Projects | `listProjects` | Returns every project (video group) in your Spotlightr account as a flat array, including the built-in Uncategorized project with id 0. Each entry carries id, name, userID, numberOfVideos, created, updated, theme, archived, numberOfSeconds and numberOfGB. |
-| List Projects Paginated | `listProjectsPaginated` | Returns your Spotlightr projects in a paginated envelope with total, per_page, current_page, last_page and a data array of id/name/created. This route is not in Spotlightr's published documentation but is live on the API. Unlike List Projects it omits the built-in Uncategorized project and the per-project usage counters. |
-| List Subscription Plans | `listSubscriptionPlans` | Returns Spotlightr's catalogue of subscription plans with pricing, storage and bandwidth allowances, team seats, transcription minutes and the marketing benefit list for each tier. This route is not in Spotlightr's published documentation but is live on the API. |
-| List Video Views | `listVideoViews` | Returns individual viewer sessions for one video as a paginated list, plus a summary with total watch time. Filter to a known viewer with customViewerID, restrict to sessions with more than 1 percent watched using onlyWatched, or disable pagination with allViews. SECURITY WARNING: this Spotlightr endpoint performs no authentication and no ownership check - it answers for any video ID on the platform. |
-| List Videos | `listVideos` | Lists the videos in your Spotlightr account. Returns a paginated envelope under "videos" containing total, per_page, current_page, last_page and a data array of video objects. Optionally narrow the result to a single video with videoID, or to one project with videoGroup. |
-| List Whitelisted Domains | `listWhitelistedDomains` | Returns the list of domains whitelisted for embedding your Spotlightr videos, as an array of domain strings. |
-| Remove Whitelisted Domain | `removeWhitelistedDomain` | Removes a domain from the embed whitelist. This route is not in Spotlightr's published documentation but is live on the API. It returns an empty 200 body whether or not the domain was present, so confirm with List Whitelisted Domains afterwards. |
-| Replace Video Source | `setVideoSource` | Points an existing Spotlightr video at a new source URL, keeping the same video ID, player settings and embed code. Spotlightr implements this as a GET and returns an empty 200 body, so confirm the change with List Videos afterwards. |
+* **List Playlists** `listPlaylists`: Returns the playlists in your Spotlightr account in a paginated envelope under "playlists". This route is not in Spotlightr's published documentation but is live on the API.
+* **List Projects** `listProjects`: Returns every project (video group) in your Spotlightr account as a flat array, including the built-in Uncategorized project with id 0. Each entry carries id, name, userID, numberOfVideos, created, updated, theme, archived, numberOfSeconds and numberOfGB.
+* **List Projects Paginated** `listProjectsPaginated`: Returns your Spotlightr projects in a paginated envelope with total, per_page, current_page, last_page and a data array of id/name/created. This route is not in Spotlightr's published documentation but is live on the API. Unlike List Projects it omits the built-in Uncategorized project and the per-project usage counters.
+* **List Subscription Plans** `listSubscriptionPlans`: Returns Spotlightr's catalogue of subscription plans with pricing, storage and bandwidth allowances, team seats, transcription minutes and the marketing benefit list for each tier. This route is not in Spotlightr's published documentation but is live on the API.
+* **List Video Views** `listVideoViews`: Returns individual viewer sessions for one video as a paginated list, plus a summary with total watch time. Filter to a known viewer with customViewerID, restrict to sessions with more than 1 percent watched using onlyWatched, or disable pagination with allViews. SECURITY WARNING: this Spotlightr endpoint performs no authentication and no ownership check - it answers for any video ID on the platform.
+* **List Videos** `listVideos`: Lists the videos in your Spotlightr account. Returns a paginated envelope under "videos" containing total, per_page, current_page, last_page and a data array of video objects. Optionally narrow the result to a single video with videoID, or to one project with videoGroup.
+* **List Whitelisted Domains** `listWhitelistedDomains`: Returns the list of domains whitelisted for embedding your Spotlightr videos, as an array of domain strings.
+* **Remove Whitelisted Domain** `removeWhitelistedDomain`: Removes a domain from the embed whitelist. This route is not in Spotlightr's published documentation but is live on the API. It returns an empty 200 body whether or not the domain was present, so confirm with List Whitelisted Domains afterwards.
+* **Replace Video Source** `setVideoSource`: Points an existing Spotlightr video at a new source URL, keeping the same video ID, player settings and embed code. Spotlightr implements this as a GET and returns an empty 200 body, so confirm the change with List Videos afterwards.
 
 </details>
 

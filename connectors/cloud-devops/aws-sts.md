@@ -5,7 +5,7 @@ hidden: true
 
 # AWS Security Token Service
 
-<img src="../../.gitbook/assets/connectors/aws-sts.png" alt="AWS Security Token Service logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/aws-sts.png" alt="AWS Security Token Service logo">
 
 AWS Security Token Service (STS) Query API. Identify the caller behind the connection's credentials and mint temporary, limited-privilege credentials by assuming an IAM role, with support for session duration, external IDs, MFA, session policies and session tags. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported.
 
@@ -39,9 +39,7 @@ Add AWS Security Token Service from **Build → Integrations → Connectors** an
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Session Token | `getSessionToken` | Returns a set of temporary credentials for the IAM user whose long-term keys the connection holds, optionally after MFA. The temporary credentials carry the same permissions as the user except that they cannot call IAM or most STS operations. Sessions last 900 to 129,600 seconds (12 hours by default). Returns the GetSessionTokenResponse envelope with the Credentials. |
-| Get Web Identity Token | `getWebIdentityToken` | Issues a short-lived JSON Web Token (JWT) signed by AWS STS that represents the calling IAM identity, for presenting to an external service that validates AWS-issued tokens. The audience populates the aud claim and up to 5 tags can be added as custom claims through this action. Tokens last 60 to 3,600 seconds (300 by default). Returns the GetWebIdentityTokenResponse envelope with the JWT. |
+* **Get Session Token** `getSessionToken`: Returns a set of temporary credentials for the IAM user whose long-term keys the connection holds, optionally after MFA. The temporary credentials carry the same permissions as the user except that they cannot call IAM or most STS operations. Sessions last 900 to 129,600 seconds (12 hours by default). Returns the GetSessionTokenResponse envelope with the Credentials.
+* **Get Web Identity Token** `getWebIdentityToken`: Issues a short-lived JSON Web Token (JWT) signed by AWS STS that represents the calling IAM identity, for presenting to an external service that validates AWS-issued tokens. The audience populates the aud claim and up to 5 tags can be added as custom claims through this action. Tokens last 60 to 3,600 seconds (300 by default). Returns the GetWebIdentityTokenResponse envelope with the JWT.
 
 </details>

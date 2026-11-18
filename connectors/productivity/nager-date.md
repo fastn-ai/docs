@@ -5,7 +5,7 @@ hidden: true
 
 # Nager.Date
 
-<img src="../../.gitbook/assets/connectors/nager-date.png" alt="Nager.Date logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/nager-date.png" alt="Nager.Date logo">
 
 Nager.Date is a free, keyless public holiday API covering 100+ countries: public holidays per year, upcoming holidays, long weekends, 'is today a holiday' checks and country information. Uses the free Community API (v4 and v3).
 
@@ -39,11 +39,9 @@ Add Nager.Date from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Next Public Holidays (API v3) | `listNextPublicHolidaysV3` | Returns the public holidays of a country in the next 365 days using the v3 API. Docs: https://date.nager.at/Api |
-| List Next Public Holidays Worldwide | `listNextPublicHolidaysWorldwide` | Returns public holidays in all supported countries in the next 7 days. Docs: https://date.nager.at/Api |
-| List Public Holidays | `listPublicHolidays` | Returns all public holidays of a country for a year, with local and English names, whether they are national or regional, the subdivisions they apply to and holiday types. Docs: https://date.nager.at/Api |
-| List Public Holidays (API v3) | `listPublicHolidaysV3` | Returns all public holidays of a country for a year using the v3 API. Docs: https://date.nager.at/Api |
+* **List Next Public Holidays (API v3)** `listNextPublicHolidaysV3`: Returns the public holidays of a country in the next 365 days using the v3 API. Docs: https://date.nager.at/Api
+* **List Next Public Holidays Worldwide** `listNextPublicHolidaysWorldwide`: Returns public holidays in all supported countries in the next 7 days. Docs: https://date.nager.at/Api
+* **List Public Holidays** `listPublicHolidays`: Returns all public holidays of a country for a year, with local and English names, whether they are national or regional, the subdivisions they apply to and holiday types. Docs: https://date.nager.at/Api
+* **List Public Holidays (API v3)** `listPublicHolidaysV3`: Returns all public holidays of a country for a year using the v3 API. Docs: https://date.nager.at/Api
 
 </details>

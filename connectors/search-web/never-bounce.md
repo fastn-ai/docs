@@ -5,7 +5,7 @@ hidden: true
 
 # NeverBounce
 
-<img src="../../.gitbook/assets/connectors/never-bounce.png" alt="NeverBounce logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/never-bounce.png" alt="NeverBounce logo">
 
 NeverBounce is a real-time email verification and bulk list-cleaning service. This connector covers the full NeverBounce v4 API: account information and credit balance, single email verification, bulk verification jobs (create, parse, start, search, status, results, download and delete) and Point-of-Entry widget token confirmation.
 
@@ -39,9 +39,7 @@ Add NeverBounce from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Verify Email | `verifyEmail` | Verifies a single email address in real time and returns its deliverability result (valid, invalid, disposable, catchall or unknown) together with any quality flags and a suggested spelling correction. Each verification consumes one NeverBounce credit. |
+* **Verify Email** `verifyEmail`: Verifies a single email address in real time and returns its deliverability result (valid, invalid, disposable, catchall or unknown) together with any quality flags and a suggested spelling correction. Each verification consumes one NeverBounce credit.
 
 </details>
 

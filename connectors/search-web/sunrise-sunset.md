@@ -5,7 +5,7 @@ hidden: true
 
 # Sunrise Sunset
 
-<img src="../../.gitbook/assets/connectors/sunrise-sunset.png" alt="Sunrise Sunset logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/sunrise-sunset.png" alt="Sunrise Sunset logo">
 
 Sunrise-Sunset.org offers a free API for sunrise and sunset times anywhere on Earth, plus twilight, golden and blue hour, solar position and moon data, for one day or a whole year at once. No API key needed; attribution to sunrise-sunset.org is required.
 

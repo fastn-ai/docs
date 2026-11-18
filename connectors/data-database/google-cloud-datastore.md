@@ -5,7 +5,7 @@ hidden: true
 
 # Google Cloud Datastore
 
-<img src="../../.gitbook/assets/connectors/google-cloud-datastore.png" alt="Google Cloud Datastore logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-cloud-datastore.png" alt="Google Cloud Datastore logo">
 
 Google Cloud Datastore API v1 (https://datastore.googleapis.com/v1), also used by Firestore in Datastore mode. Run queries, look up entities by key, allocate IDs, begin transactions, commit entity inserts and deletes, and roll back transactions. OAuth 2.0 (Google) authorization-code auth with the datastore scope.
 

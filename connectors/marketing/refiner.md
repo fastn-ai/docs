@@ -5,7 +5,7 @@ hidden: true
 
 # Refiner
 
-<img src="../../.gitbook/assets/connectors/refiner.png" alt="Refiner logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/refiner.png" alt="Refiner logo">
 
 Refiner is a customer survey platform for in-product, web and link surveys. This connector covers the full Refiner REST API v1: authentication check, account info, identifying users, tracking events, survey responses (list, store and tag), aggregated reporting, contacts, forms (list, publish, archive, duplicate and change history), segments and manual segment membership.
 
@@ -39,17 +39,15 @@ Add Refiner from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Forms | `listForms` | Retrieves surveys ordered by name, optionally limited to published, draft or archived surveys, and optionally including each survey's full configuration or metadata such as channels, publish date, response and view counts, folder and link survey URL. |
-| List Responses | `listResponses` | Retrieves survey responses and, optionally, partial responses and survey views, newest first, with the answers, survey and contact. Filter by survey, segment, tag, date range, completion status, contact search, and one survey answer, contact trait or account trait each. Supports page or cursor pagination. |
-| List Segments | `listSegments` | Retrieves all user segments ordered by name, showing whether each is a manual list segment (users can be added through the API) or a data-driven segment. |
-| Publish Form | `publishForm` | Publishes an existing survey, or unpublishes it when Published is 0. Publishing makes the survey live to its targeted audience. |
-| Remove User from Segment | `removeUserFromSegment` | Removes a user, identified by user ID or email, from a manual list segment. |
-| Store Response | `storeResponse` | Stores a survey response for a user, for importing historical survey data or collecting answers in your own UI. The survey must exist but can be empty and unpublished. Identify the user by user ID, email or contact UUID. Any additional top-level field is stored as an answer keyed by its question identifier, for example nps: 9. |
-| Tag Response | `tagResponse` | Adds up to 20 tags to an existing survey response. |
-| Track Event | `trackEvent` | Tracks a named event for a user identified by user ID or email address, creating the user if they do not exist. Tracked events can trigger in-product surveys and build segments. Event tracking is available on Refiner's Growth and Enterprise plans. |
-| Verify Authentication | `verifyAuthentication` | Confirms the API key is valid and returns the UUID and name of the Refiner environment the key belongs to. |
+* **List Forms** `listForms`: Retrieves surveys ordered by name, optionally limited to published, draft or archived surveys, and optionally including each survey's full configuration or metadata such as channels, publish date, response and view counts, folder and link survey URL.
+* **List Responses** `listResponses`: Retrieves survey responses and, optionally, partial responses and survey views, newest first, with the answers, survey and contact. Filter by survey, segment, tag, date range, completion status, contact search, and one survey answer, contact trait or account trait each. Supports page or cursor pagination.
+* **List Segments** `listSegments`: Retrieves all user segments ordered by name, showing whether each is a manual list segment (users can be added through the API) or a data-driven segment.
+* **Publish Form** `publishForm`: Publishes an existing survey, or unpublishes it when Published is 0. Publishing makes the survey live to its targeted audience.
+* **Remove User from Segment** `removeUserFromSegment`: Removes a user, identified by user ID or email, from a manual list segment.
+* **Store Response** `storeResponse`: Stores a survey response for a user, for importing historical survey data or collecting answers in your own UI. The survey must exist but can be empty and unpublished. Identify the user by user ID, email or contact UUID. Any additional top-level field is stored as an answer keyed by its question identifier, for example nps: 9.
+* **Tag Response** `tagResponse`: Adds up to 20 tags to an existing survey response.
+* **Track Event** `trackEvent`: Tracks a named event for a user identified by user ID or email address, creating the user if they do not exist. Tracked events can trigger in-product surveys and build segments. Event tracking is available on Refiner's Growth and Enterprise plans.
+* **Verify Authentication** `verifyAuthentication`: Confirms the API key is valid and returns the UUID and name of the Refiner environment the key belongs to.
 
 </details>
 

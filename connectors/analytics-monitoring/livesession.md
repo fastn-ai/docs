@@ -5,7 +5,7 @@ hidden: true
 
 # LiveSession
 
-<img src="../../.gitbook/assets/connectors/livesession.jpg" alt="LiveSession logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/livesession.png" alt="LiveSession logo">
 
 LiveSession is a product-analytics and session-replay platform. This connector covers the full LiveSession REST API: session search with visitor, device, geolocation and engagement detail; website management; alert rules and their notification providers; and webhook endpoint management, together with the session-event webhook surface.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Vtiger
 
-<img src="../../.gitbook/assets/connectors/vtiger.png" alt="Vtiger logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/vtiger.png" alt="Vtiger logo">
 
 Vtiger CRM Cloud REST API connector. Generic record operations (create, retrieve, update, revise, delete, query with VTQL) across all CRM modules (Contacts, Leads, Organizations/Accounts, Potentials/Deals, Cases, Products, Services, Quotes, SalesOrder, Invoice, Events, Documents...), module metadata (listtypes, describe, picklist dependency), related-record management, tags, lookup, sync, lead conversion, and file retrieval.
 
@@ -39,21 +39,19 @@ Add Vtiger from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 14 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Picklist Dependency | `getPicklistDependency` | Get the value dependency mapping between two picklist fields of a module (e.g. Contacts contacttype -&gt; contactstatus). Endpoint: GET /picklist_dependency. |
-| List Modules | `listModules` | List all accessible CRM modules (types) with basic metadata (isEntity, label, singular). Endpoint: GET /listtypes. |
-| List Related Types | `listRelatedTypes` | Get the modules related to a given module, with relationship labels and allowed actions (add/select). Use the returned names/labels for Add Related Record, Retrieve Related Records and Query Related Records. Endpoint: GET /relatedtypes. |
-| Lookup Records | `lookupRecords` | Search records by phone number or email across modules and fields. Endpoint: GET /lookup. |
-| Query Records | `queryRecords` | Run a VTQL query (SQL-like) against one module. Supports WHERE with =, &lt;, &gt;, &lt;=, &gt;=, !=, in (...), like 'pattern', ORDER BY, LIMIT (max 100 rows per call; use LIMIT offset, count for paging). Example: SELECT id, lastname FROM Contacts WHERE email like '%@x.com' LIMIT 0, 50;. Endpoint: GET /query. |
-| Query Related Records | `queryRelatedRecords` | Fetch related records of a source record matching a VTQL criteria. Endpoint: GET /query_related. |
-| Reopen Record | `reopenRecord` | Reopen a closed record (isclosed=1, e.g. a Closed Won/Lost Deal or a closed Case). Returns 400 'Record is already open' if the record is not closed. Endpoint: POST /reopen. |
-| Retrieve Files | `retrieveFiles` | Download the base64 content of an attached file/image resource (e.g. a Document attachment or Contact image). Get the resource id from the record's imageattachmentids field. Endpoint: GET /files_retrieve. |
-| Retrieve Record | `retrieveRecord` | Retrieve a single record by its webservice id (works across all modules). Endpoint: GET /retrieve. |
-| Retrieve Related Records | `retrieveRelatedRecords` | Get records related to a source record via a relationship label. Endpoint: GET /retrieve_related. |
-| Retrieve Tags | `retrieveTags` | Fetch the tags applied to a record. Endpoint: GET /tags_retrieve. |
-| Revise Record | `reviseRecord` | Partial update of an existing record — only send the id and the fields to change (mandatory fields do NOT need to be re-stated). Closed records cannot be revised (400 'record is closed'); use Reopen Record first. Endpoint: POST /revise. |
-| Sync Records | `syncRecords` | Fetch records created/updated/deleted since a UNIX timestamp for incremental sync. Does not work for Users or non-entity modules (Currency, Groups). Endpoint: GET /sync. |
-| Update Record | `updateRecord` | Full update of an existing record. IMPORTANT: all mandatory fields of the module must be re-stated in element along with the id, otherwise the call fails. For partial updates use Revise Record instead. Endpoint: POST /update. |
+* **Get Picklist Dependency** `getPicklistDependency`: Get the value dependency mapping between two picklist fields of a module (e.g. Contacts contacttype -&gt; contactstatus). Endpoint: GET /picklist_dependency.
+* **List Modules** `listModules`: List all accessible CRM modules (types) with basic metadata (isEntity, label, singular). Endpoint: GET /listtypes.
+* **List Related Types** `listRelatedTypes`: Get the modules related to a given module, with relationship labels and allowed actions (add/select). Use the returned names/labels for Add Related Record, Retrieve Related Records and Query Related Records. Endpoint: GET /relatedtypes.
+* **Lookup Records** `lookupRecords`: Search records by phone number or email across modules and fields. Endpoint: GET /lookup.
+* **Query Records** `queryRecords`: Run a VTQL query (SQL-like) against one module. Supports WHERE with =, &lt;, &gt;, &lt;=, &gt;=, !=, in (...), like 'pattern', ORDER BY, LIMIT (max 100 rows per call; use LIMIT offset, count for paging). Example: SELECT id, lastname FROM Contacts WHERE email like '%@x.com' LIMIT 0, 50;. Endpoint: GET /query.
+* **Query Related Records** `queryRelatedRecords`: Fetch related records of a source record matching a VTQL criteria. Endpoint: GET /query_related.
+* **Reopen Record** `reopenRecord`: Reopen a closed record (isclosed=1, e.g. a Closed Won/Lost Deal or a closed Case). Returns 400 'Record is already open' if the record is not closed. Endpoint: POST /reopen.
+* **Retrieve Files** `retrieveFiles`: Download the base64 content of an attached file/image resource (e.g. a Document attachment or Contact image). Get the resource id from the record's imageattachmentids field. Endpoint: GET /files_retrieve.
+* **Retrieve Record** `retrieveRecord`: Retrieve a single record by its webservice id (works across all modules). Endpoint: GET /retrieve.
+* **Retrieve Related Records** `retrieveRelatedRecords`: Get records related to a source record via a relationship label. Endpoint: GET /retrieve_related.
+* **Retrieve Tags** `retrieveTags`: Fetch the tags applied to a record. Endpoint: GET /tags_retrieve.
+* **Revise Record** `reviseRecord`: Partial update of an existing record — only send the id and the fields to change (mandatory fields do NOT need to be re-stated). Closed records cannot be revised (400 'record is closed'); use Reopen Record first. Endpoint: POST /revise.
+* **Sync Records** `syncRecords`: Fetch records created/updated/deleted since a UNIX timestamp for incremental sync. Does not work for Users or non-entity modules (Currency, Groups). Endpoint: GET /sync.
+* **Update Record** `updateRecord`: Full update of an existing record. IMPORTANT: all mandatory fields of the module must be re-stated in element along with the id, otherwise the call fails. For partial updates use Revise Record instead. Endpoint: POST /update.
 
 </details>

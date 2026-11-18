@@ -5,7 +5,7 @@ hidden: true
 
 # Documint
 
-<img src="../../.gitbook/assets/connectors/documint.png" alt="Documint logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/documint.png" alt="Documint logo">
 
 Documint turns structured data into pixel-perfect PDFs from templates you design in its drag-and-drop editor. This connector covers the Documint public API: template management, merging data into a template to render a document, the rendered-document store, folders, uploaded assets, and the account and subscription records.
 
@@ -39,15 +39,13 @@ Add Documint from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 8 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Template | `getTemplate` | Retrieves a single Documint template by its id, including its HTML, CSS, page options, field schema, test data and editor component tree. |
-| List Assets | `listAssets` | Lists the images and other files uploaded to the Documint account for use inside templates. |
-| List Documents | `listDocuments` | Lists the documents Documint has rendered for the account, newest first by default. Optionally filter by the template they came from, by live or test renders, or by expiry, and choose which fields come back. |
-| List Folders | `listFolders` | Lists the folders used to organise templates in the Documint account, with pagination metadata. |
-| List Templates | `listTemplates` | Lists the document templates in the Documint account, with pagination metadata. Optionally filter by exact name, folder, type, trashed state or debug state, choose which fields come back and sort the results. |
-| Update Account | `updateAccount` | Updates the Documint account's company profile and postal address. Supply the whole company object - Documint replaces it with what you send. |
-| Update Folder | `updateFolder` | Renames a Documint template folder. Returns the updated folder. |
-| Update Template | `updateTemplate` | Updates a Documint template's metadata - name, folder, page options, header and footer HTML, test data, debug mode and trashed state. Only the fields you supply change. Documint rejects the editor-managed fields html and css for API keys with HTTP 403, and it silently ignores isActive, isStarred and tags for API keys, so none of those are exposed here. |
+* **Get Template** `getTemplate`: Retrieves a single Documint template by its id, including its HTML, CSS, page options, field schema, test data and editor component tree.
+* **List Assets** `listAssets`: Lists the images and other files uploaded to the Documint account for use inside templates.
+* **List Documents** `listDocuments`: Lists the documents Documint has rendered for the account, newest first by default. Optionally filter by the template they came from, by live or test renders, or by expiry, and choose which fields come back.
+* **List Folders** `listFolders`: Lists the folders used to organise templates in the Documint account, with pagination metadata.
+* **List Templates** `listTemplates`: Lists the document templates in the Documint account, with pagination metadata. Optionally filter by exact name, folder, type, trashed state or debug state, choose which fields come back and sort the results.
+* **Update Account** `updateAccount`: Updates the Documint account's company profile and postal address. Supply the whole company object - Documint replaces it with what you send.
+* **Update Folder** `updateFolder`: Renames a Documint template folder. Returns the updated folder.
+* **Update Template** `updateTemplate`: Updates a Documint template's metadata - name, folder, page options, header and footer HTML, test data, debug mode and trashed state. Only the fields you supply change. Documint rejects the editor-managed fields html and css for API keys with HTTP 403, and it silently ignores isActive, isStarred and tags for API keys, so none of those are exposed here.
 
 </details>

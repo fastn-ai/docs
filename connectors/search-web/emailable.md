@@ -5,7 +5,7 @@ hidden: true
 
 # Emailable
 
-<img src="../../.gitbook/assets/connectors/emailable.png" alt="Emailable logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/emailable.png" alt="Emailable logo">
 
 Emailable email verification API. Verify a single email address in real time, submit and poll bulk verification batches of up to 50,000 addresses, and read account information including remaining verification credits. Each verification consumes account credits.
 

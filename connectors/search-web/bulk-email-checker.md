@@ -5,7 +5,7 @@ hidden: true
 
 # Bulk Email Checker
 
-<img src="../../.gitbook/assets/connectors/bulk-email-checker.png" alt="Bulk Email Checker logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/bulk-email-checker.png" alt="Bulk Email Checker logo">
 
 Bulk Email Checker is an email verification service that validates email addresses in real time, returning deliverability status, SMTP handshake result, disposable/role/free-mailbox flags, typo suggestions and MX server enrichment. This connector wraps the vendor's entire public HTTP surface: the Real-time Email Verification API and its Unlimited API alias, in both JSON and XML response formats, over GET and POST.
 

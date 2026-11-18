@@ -5,7 +5,7 @@ hidden: true
 
 # PDFMonkey
 
-<img src="../../.gitbook/assets/connectors/pdfmonkey.jpg" alt="PDFMonkey logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pdfmonkey.png" alt="PDFMonkey logo">
 
 PDFMonkey generates PDF and image documents from reusable Liquid or drag-and-drop templates. This connector covers the PDFMonkey v1 API: document generation (asynchronous and synchronous), documents and document cards, document templates and template cards, template folders, snippets and snippet folders, PDF rendering engines, workspaces, invoices and the current user account.
 
@@ -39,34 +39,32 @@ Add PDFMonkey from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 26 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Generate Document Synchronously | `generateDocumentSync` | Generates a document and waits for rendering to finish before responding, returning a Document Card that already carries the download URL. Use this when the caller needs the finished file immediately rather than polling. |
-| Get Current User | `getCurrentUser` | Retrieves the PDFMonkey account that owns the API key, including the current plan, document quota and remaining document allowance. |
-| Get Document | `getDocument` | Retrieves a single generated document by its unique identifier, including the merge payload, generation logs and the download URL once rendering has succeeded. |
-| Get Document Card | `getDocumentCard` | Retrieves a single generated document as a lightweight Document Card, which carries the status, filename and download URL without the merge payload or generation logs. Use it to poll for the result of an asynchronous generation. |
-| Get Document Template | `getDocumentTemplate` | Retrieves a single document template by its unique identifier, including the published and draft body, SCSS styles, sample data and rendering settings. |
-| Get Invoice | `getInvoice` | Retrieves a single billing invoice for the PDFMonkey subscription by its unique identifier. |
-| Get Snippet | `getSnippet` | Retrieves a single reusable code snippet by its unique identifier, including its shared Liquid or HTML code. |
-| Get Snippet Folder | `getSnippetFolder` | Retrieves a single snippet folder by its unique identifier. |
-| Get Template Folder | `getTemplateFolder` | Retrieves a single template folder by its unique identifier. |
-| Get Workspace | `getWorkspace` | Retrieves a single workspace by its unique identifier, including its invite token. |
-| List Document Cards | `listDocumentCards` | Lists generated documents as lightweight Document Cards, which omit the payload and generation logs. Supports filtering by template, status, workspace, last-update time and a free-text search, plus page-based pagination. |
-| List Document Template Cards | `listDocumentTemplateCards` | Lists document templates as lightweight Template Cards, which omit the body and styles but add the rendering engine name and the containing folder. Use this to populate template pickers. |
-| List Document Templates | `listDocumentTemplates` | Lists the document templates in the account, returning the full template records including body, styles and rendering settings. |
-| List Documents | `listDocuments` | Lists generated documents with their full records, including the merge payload and the stored file details. Use List Document Cards instead when only the summary fields are needed, or Get Document when the generation logs are required. |
-| List Invoices | `listInvoices` | Lists the billing invoices issued for the PDFMonkey subscription. Accounts on a trial or free plan have no invoices and receive an empty list. |
-| List PDF Engines | `listPdfEngines` | Lists the PDF rendering engines available to document templates, with their version numbers and deprecation dates. Use the returned identifier to pin a template to a specific engine. |
-| List Snippet Folders | `listSnippetFolders` | Lists the snippet folders used to organise reusable code snippets within a workspace. |
-| List Snippets | `listSnippets` | Lists the reusable code snippets available to templates in a workspace. Snippets hold shared Liquid or HTML fragments that templates include. |
-| List Template Folders | `listTemplateFolders` | Lists the template folders used to organise document templates within a workspace. |
-| List Workspace Cards | `listWorkspaceCards` | Lists the account's workspaces as summary cards, which add the current subscription plan and the last update time to the basic workspace details. |
-| List Workspaces | `listWorkspaces` | Lists the workspaces the account can access. A workspace groups document templates, snippets and generated documents, and its identifier is required when creating a template. |
-| Update Document | `updateDocument` | Updates a document. Change the merge payload or metadata while it is still a draft, or set the status to 'pending' to trigger generation of a document that was saved as a draft. |
-| Update Document Template | `updateDocumentTemplate` | Updates a document template. Only the fields supplied are changed, so this can be used to publish a new body, adjust the SCSS styles, change the rendering engine or move the template into a folder. |
-| Update Snippet | `updateSnippet` | Updates a reusable code snippet. Only the fields supplied are changed, so the snippet can be renamed, re-coded or moved into a different snippet folder independently. |
-| Update Snippet Folder | `updateSnippetFolder` | Renames a snippet folder by its unique identifier. |
-| Update Template Folder | `updateTemplateFolder` | Renames a template folder by its unique identifier. |
+* **Generate Document Synchronously** `generateDocumentSync`: Generates a document and waits for rendering to finish before responding, returning a Document Card that already carries the download URL. Use this when the caller needs the finished file immediately rather than polling.
+* **Get Current User** `getCurrentUser`: Retrieves the PDFMonkey account that owns the API key, including the current plan, document quota and remaining document allowance.
+* **Get Document** `getDocument`: Retrieves a single generated document by its unique identifier, including the merge payload, generation logs and the download URL once rendering has succeeded.
+* **Get Document Card** `getDocumentCard`: Retrieves a single generated document as a lightweight Document Card, which carries the status, filename and download URL without the merge payload or generation logs. Use it to poll for the result of an asynchronous generation.
+* **Get Document Template** `getDocumentTemplate`: Retrieves a single document template by its unique identifier, including the published and draft body, SCSS styles, sample data and rendering settings.
+* **Get Invoice** `getInvoice`: Retrieves a single billing invoice for the PDFMonkey subscription by its unique identifier.
+* **Get Snippet** `getSnippet`: Retrieves a single reusable code snippet by its unique identifier, including its shared Liquid or HTML code.
+* **Get Snippet Folder** `getSnippetFolder`: Retrieves a single snippet folder by its unique identifier.
+* **Get Template Folder** `getTemplateFolder`: Retrieves a single template folder by its unique identifier.
+* **Get Workspace** `getWorkspace`: Retrieves a single workspace by its unique identifier, including its invite token.
+* **List Document Cards** `listDocumentCards`: Lists generated documents as lightweight Document Cards, which omit the payload and generation logs. Supports filtering by template, status, workspace, last-update time and a free-text search, plus page-based pagination.
+* **List Document Template Cards** `listDocumentTemplateCards`: Lists document templates as lightweight Template Cards, which omit the body and styles but add the rendering engine name and the containing folder. Use this to populate template pickers.
+* **List Document Templates** `listDocumentTemplates`: Lists the document templates in the account, returning the full template records including body, styles and rendering settings.
+* **List Documents** `listDocuments`: Lists generated documents with their full records, including the merge payload and the stored file details. Use List Document Cards instead when only the summary fields are needed, or Get Document when the generation logs are required.
+* **List Invoices** `listInvoices`: Lists the billing invoices issued for the PDFMonkey subscription. Accounts on a trial or free plan have no invoices and receive an empty list.
+* **List PDF Engines** `listPdfEngines`: Lists the PDF rendering engines available to document templates, with their version numbers and deprecation dates. Use the returned identifier to pin a template to a specific engine.
+* **List Snippet Folders** `listSnippetFolders`: Lists the snippet folders used to organise reusable code snippets within a workspace.
+* **List Snippets** `listSnippets`: Lists the reusable code snippets available to templates in a workspace. Snippets hold shared Liquid or HTML fragments that templates include.
+* **List Template Folders** `listTemplateFolders`: Lists the template folders used to organise document templates within a workspace.
+* **List Workspace Cards** `listWorkspaceCards`: Lists the account's workspaces as summary cards, which add the current subscription plan and the last update time to the basic workspace details.
+* **List Workspaces** `listWorkspaces`: Lists the workspaces the account can access. A workspace groups document templates, snippets and generated documents, and its identifier is required when creating a template.
+* **Update Document** `updateDocument`: Updates a document. Change the merge payload or metadata while it is still a draft, or set the status to 'pending' to trigger generation of a document that was saved as a draft.
+* **Update Document Template** `updateDocumentTemplate`: Updates a document template. Only the fields supplied are changed, so this can be used to publish a new body, adjust the SCSS styles, change the rendering engine or move the template into a folder.
+* **Update Snippet** `updateSnippet`: Updates a reusable code snippet. Only the fields supplied are changed, so the snippet can be renamed, re-coded or moved into a different snippet folder independently.
+* **Update Snippet Folder** `updateSnippetFolder`: Renames a snippet folder by its unique identifier.
+* **Update Template Folder** `updateTemplateFolder`: Renames a template folder by its unique identifier.
 
 </details>
 

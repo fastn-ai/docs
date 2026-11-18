@@ -5,7 +5,7 @@ hidden: true
 
 # Vatlayer
 
-<img src="../../.gitbook/assets/connectors/vatlayer.png" alt="Vatlayer logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/vatlayer.png" alt="Vatlayer logo">
 
 Vatlayer is a lightweight EU VAT compliance API by APILayer. It validates EU VAT numbers against VIES and returns company name/address, looks up current VAT rates (standard and reduced) for a single EU member state or all 28 at once, lists the reduced-rate goods categories, and calculates VAT-compliant prices (forward or reverse) for a given amount and country.
 

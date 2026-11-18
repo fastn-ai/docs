@@ -5,7 +5,7 @@ hidden: true
 
 # ShipStation
 
-<img src="../../.gitbook/assets/connectors/shipstation.png" alt="ShipStation logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/shipstation.png" alt="ShipStation logo">
 
 ShipStation V1 (ssapi) connector: orders (list/get/create/update/mark-shipped/delete), shipments (list/create label), carriers, products, customers, and webhooks. HTTP Basic auth (API Key + API Secret). Base https://ssapi.shipstation.com.
 
@@ -39,11 +39,9 @@ Add ShipStation from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Mark As Shipped | `markAsShipped` | Mark an order as shipped with tracking info. |
-| Subscribe Webhook | `subscribeWebhook` | Subscribe to a webhook event. |
-| Unsubscribe Webhook | `unsubscribeWebhook` | Delete a webhook subscription by id. |
+* **Mark As Shipped** `markAsShipped`: Mark an order as shipped with tracking info.
+* **Subscribe Webhook** `subscribeWebhook`: Subscribe to a webhook event.
+* **Unsubscribe Webhook** `unsubscribeWebhook`: Delete a webhook subscription by id.
 
 </details>
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Europe PMC
 
-<img src="../../.gitbook/assets/connectors/europe-pmc.png" alt="Europe PMC logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/europe-pmc.png" alt="Europe PMC logo">
 
 Europe PMC is a free database of over 45 million life science publications (PubMed abstracts, PubMed Central full text, preprints, patents and more) run by EMBL-EBI. Search articles, get article details, references, citations, linked data and lab links, hit profiles, full text and book XML, and check retraction or correction status. No API key needed.
 
@@ -39,9 +39,7 @@ Add Europe PMC from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Articles | `searchArticles` | Use this module to search our publication database. For more information on query syntax, search field combination and other curiosities, see the Europe PMC help page. This module adheres to the CORS standard of headers to enable javascript cross-domain search.Construct your URL for search requests as follows: &lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=parameters &lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query. For example:search?query=parameters or search/query=parameters. Docs: https://europepmc.org/RestfulWebService (GET /search) |
-| Search Articles (POST) | `searchArticlesPost` | Use this module to search our publication database. For more information on query syntax, search field combination and other curiosities, see the Europe PMC help page. This module adheres to the CORS standard of headers to enable javascript cross-domain search.Construct your URL for search requests as follows: &lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=parameters &lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query. For example:search?query=parameters or search/query=parameters. Docs: https://europepmc.org/RestfulWebService (POST /searchPOST) Use this form for very long queries; the query is sent as a form body (avoid the & character inside it). |
+* **Search Articles** `searchArticles`: Use this module to search our publication database. For more information on query syntax, search field combination and other curiosities, see the Europe PMC help page. This module adheres to the CORS standard of headers to enable javascript cross-domain search.Construct your URL for search requests as follows: &lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=parameters &lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query. For example:search?query=parameters or search/query=parameters. Docs: https://europepmc.org/RestfulWebService (GET /search)
+* **Search Articles (POST)** `searchArticlesPost`: Use this module to search our publication database. For more information on query syntax, search field combination and other curiosities, see the Europe PMC help page. This module adheres to the CORS standard of headers to enable javascript cross-domain search.Construct your URL for search requests as follows: &lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=parameters &lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query. For example:search?query=parameters or search/query=parameters. Docs: https://europepmc.org/RestfulWebService (POST /searchPOST) Use this form for very long queries; the query is sent as a form body (avoid the & character inside it).
 
 </details>

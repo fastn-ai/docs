@@ -5,7 +5,7 @@ hidden: true
 
 # Jina AI
 
-<img src="../../.gitbook/assets/connectors/jinaai.png" alt="Jina AI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/jinaai.png" alt="Jina AI logo">
 
 Jina AI search-foundation and frontier APIs: Embeddings, Reranker, Classifier, Segmenter, Reader (URL to LLM-friendly text), Search (web search), DeepSearch (OpenAI-compatible reasoning search), and Grounding/Factcheck. Auth via Bearer API key from jina.ai/api-dashboard.
 

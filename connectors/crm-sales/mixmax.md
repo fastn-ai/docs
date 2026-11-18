@@ -5,7 +5,7 @@ hidden: true
 
 # Mixmax
 
-<img src="../../.gitbook/assets/connectors/mixmax.png" alt="Mixmax logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/mixmax.png" alt="Mixmax logo">
 
 Mixmax sales engagement platform — sequences, recipients, contacts, contact groups, snippets, meetings/summaries, file requests, and more via the Mixmax REST API v1.
 
@@ -39,40 +39,38 @@ Add Mixmax from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 33 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Rule | `deleteRule` | Delete an automation rule (DELETE /rules/:id). Returns 204. |
-| Delete Snippet Tag | `deleteSnippetTag` | Delete a snippet tag (DELETE /snippettags/:id). Returns 204. |
-| Get Contact | `getContact` | Retrieve a contact by _id (GET /contacts/:id). |
-| Get Contact Group | `getContactGroup` | Retrieve a specific contact group (GET /contactgroups/:id). |
-| Get Current User | `getCurrentUser` | Retrieve the authenticated Mixmax user (GET /users/me). Returns the user's _id. |
-| Get Live Feed | `getLiveFeed` | Get your Mixmax activity/insights live feed with engagement stats (GET /livefeed). |
-| Get Meeting Transcript | `getMeetingTranscript` | Retrieve the full transcript for a meeting by its summary id (GET /meetings/transcripts/:id). |
-| Get Meeting Type | `getMeetingType` | Retrieve a single availability / scheduling link type by id (GET /meetingtypes/:id). |
-| Get Message | `getMessage` | Retrieve a single tracked message by its id (GET /messages/:id). |
-| Get Rule | `getRule` | Retrieve a single automation rule by id (GET /rules/:id). |
-| Get Snippet | `getSnippet` | Retrieve a single snippet by id (GET /snippets/:id). |
-| Get Snippet Tag | `getSnippetTag` | Retrieve a single snippet tag by id (GET /snippettags/:id). |
-| List Contact Group Members | `listContactGroupMembers` | Return membership for a contact group (GET /contactgroups/:id/contacts). |
-| List Contact Groups | `listContactGroups` | List contact groups you can access (GET /contactgroups). |
-| List Contact Notes | `listContactNotes` | List notes for a contact (GET /contacts/:id/notes). Pass expand=userId to include owner name/email. |
-| List Contacts | `listContacts` | List your Mixmax contacts (GET /contacts). Cursor paginated. |
-| List File Requests | `listFileRequests` | List file requests you have sent (GET /filerequests). |
-| List Meeting Types | `listMeetingTypes` | List your availability / scheduling link types (GET /meetingtypes). Cursor paginated. |
-| List Messages | `listMessages` | List tracked messages you have sent with Mixmax (GET /messages). Cursor paginated via next/previous. |
-| List Rules | `listRules` | List your Mixmax automation rules (GET /rules). |
-| List Sequence Recipients | `listSequenceRecipients` | List activated recipients of a sequence (GET /sequences/:id/recipients). Offset paginated; returns an array. |
-| List Sequences | `listSequences` | List sequences you have access to (GET /sequences). Filter by name/folder; pass expand=stages for stage detail. |
-| List Snippet Tags | `listSnippetTags` | List snippet tags (GET /snippettags). Cursor paginated. |
-| List Snippets | `listSnippets` | List your saved snippets/templates (GET /snippets). Cursor paginated. |
-| List Teams | `listTeams` | List teams you belong to (GET /teams). |
-| Query Contacts | `queryContacts` | Search contacts across Mixmax, Google directory, and Salesforce (GET /contacts/query). |
-| Remove Contact Group Member | `removeContactGroupMember` | Remove a contact from a contact group (DELETE /contactgroups/:id/contacts/:contactId). |
-| Search Meeting Summaries | `searchMeetingSummaries` | Search meeting (Copilot) summaries (GET /meetings/summaries/search). Requires the mixmaxApi feature. |
-| Update Contact | `updateContact` | Update a contact (PATCH /contacts/:id). Returns 200 with empty body. |
-| Update Contact Group | `updateContactGroup` | Edit a contact group (PATCH /contactgroups/:id). |
-| Update Contact Note | `updateContactNote` | Edit a contact note (PATCH /contacts/:id/notes/:noteId). Only the creator can edit. |
-| Update Rule | `updateRule` | Update an automation rule (PATCH /rules/:id). Provide fields to change (e.g. name). |
-| Update Snippet Tag | `updateSnippetTag` | Rename a snippet tag (PATCH /snippettags/:id). |
+* **Delete Rule** `deleteRule`: Delete an automation rule (DELETE /rules/:id). Returns 204.
+* **Delete Snippet Tag** `deleteSnippetTag`: Delete a snippet tag (DELETE /snippettags/:id). Returns 204.
+* **Get Contact** `getContact`: Retrieve a contact by _id (GET /contacts/:id).
+* **Get Contact Group** `getContactGroup`: Retrieve a specific contact group (GET /contactgroups/:id).
+* **Get Current User** `getCurrentUser`: Retrieve the authenticated Mixmax user (GET /users/me). Returns the user's _id.
+* **Get Live Feed** `getLiveFeed`: Get your Mixmax activity/insights live feed with engagement stats (GET /livefeed).
+* **Get Meeting Transcript** `getMeetingTranscript`: Retrieve the full transcript for a meeting by its summary id (GET /meetings/transcripts/:id).
+* **Get Meeting Type** `getMeetingType`: Retrieve a single availability / scheduling link type by id (GET /meetingtypes/:id).
+* **Get Message** `getMessage`: Retrieve a single tracked message by its id (GET /messages/:id).
+* **Get Rule** `getRule`: Retrieve a single automation rule by id (GET /rules/:id).
+* **Get Snippet** `getSnippet`: Retrieve a single snippet by id (GET /snippets/:id).
+* **Get Snippet Tag** `getSnippetTag`: Retrieve a single snippet tag by id (GET /snippettags/:id).
+* **List Contact Group Members** `listContactGroupMembers`: Return membership for a contact group (GET /contactgroups/:id/contacts).
+* **List Contact Groups** `listContactGroups`: List contact groups you can access (GET /contactgroups).
+* **List Contact Notes** `listContactNotes`: List notes for a contact (GET /contacts/:id/notes). Pass expand=userId to include owner name/email.
+* **List Contacts** `listContacts`: List your Mixmax contacts (GET /contacts). Cursor paginated.
+* **List File Requests** `listFileRequests`: List file requests you have sent (GET /filerequests).
+* **List Meeting Types** `listMeetingTypes`: List your availability / scheduling link types (GET /meetingtypes). Cursor paginated.
+* **List Messages** `listMessages`: List tracked messages you have sent with Mixmax (GET /messages). Cursor paginated via next/previous.
+* **List Rules** `listRules`: List your Mixmax automation rules (GET /rules).
+* **List Sequence Recipients** `listSequenceRecipients`: List activated recipients of a sequence (GET /sequences/:id/recipients). Offset paginated; returns an array.
+* **List Sequences** `listSequences`: List sequences you have access to (GET /sequences). Filter by name/folder; pass expand=stages for stage detail.
+* **List Snippet Tags** `listSnippetTags`: List snippet tags (GET /snippettags). Cursor paginated.
+* **List Snippets** `listSnippets`: List your saved snippets/templates (GET /snippets). Cursor paginated.
+* **List Teams** `listTeams`: List teams you belong to (GET /teams).
+* **Query Contacts** `queryContacts`: Search contacts across Mixmax, Google directory, and Salesforce (GET /contacts/query).
+* **Remove Contact Group Member** `removeContactGroupMember`: Remove a contact from a contact group (DELETE /contactgroups/:id/contacts/:contactId).
+* **Search Meeting Summaries** `searchMeetingSummaries`: Search meeting (Copilot) summaries (GET /meetings/summaries/search). Requires the mixmaxApi feature.
+* **Update Contact** `updateContact`: Update a contact (PATCH /contacts/:id). Returns 200 with empty body.
+* **Update Contact Group** `updateContactGroup`: Edit a contact group (PATCH /contactgroups/:id).
+* **Update Contact Note** `updateContactNote`: Edit a contact note (PATCH /contacts/:id/notes/:noteId). Only the creator can edit.
+* **Update Rule** `updateRule`: Update an automation rule (PATCH /rules/:id). Provide fields to change (e.g. name).
+* **Update Snippet Tag** `updateSnippetTag`: Rename a snippet tag (PATCH /snippettags/:id).
 
 </details>

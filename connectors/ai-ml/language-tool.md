@@ -5,7 +5,7 @@ hidden: true
 
 # LanguageTool
 
-<img src="../../.gitbook/assets/connectors/language-tool.png" alt="LanguageTool logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/language-tool.png" alt="LanguageTool logo">
 
 Grammar, spelling, and style checker API by LanguageTool. Uses the free, public, anonymous API tier at api.languagetool.org - no signup or API key required for text checking and language listing. Personal-dictionary endpoints (list/add/delete words) require a separate Premium account with username + API key and are not usable on this free tier.
 

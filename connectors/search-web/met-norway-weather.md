@@ -5,7 +5,7 @@ hidden: true
 
 # MET Norway Weather API
 
-<img src="../../.gitbook/assets/connectors/met-norway-weather.jpg" alt="MET Norway Weather API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/met-norway-weather.png" alt="MET Norway Weather API logo">
 
 The Norwegian Meteorological Institute's free Weather API (api.met.no, the data behind Yr): global location forecasts, Nordic nowcasts, ocean and subseasonal forecasts, sunrise/sunset and moon times, MetAlerts weather warnings, air quality forecasts, text forecasts and tidal water. No API key needed (identify with a User-Agent).
 
@@ -39,26 +39,24 @@ Add MET Norway Weather API from **Build → Integrations → Connectors** and co
 
 <summary>See 19 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Location Forecast Status | `getLocationForecastStatus` | Weather forecasts for any location on earth. Docs: https://api.met.no/weatherapi/locationforecast/2.0/documentation (GET /status) |
-| Get Moonrise and Moonset | `getMoonEvents` | Calculate sun or moon events, as seen from a specific location on Earth. Docs: https://api.met.no/weatherapi/sunrise/3.0/documentation (GET /moon) |
-| Get Nowcast | `getNowcast` | Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /complete) |
-| Get Nowcast (Classic XML) | `getNowcastClassic` | Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /classic) |
-| Get Nowcast Status | `getNowcastStatus` | Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /status) |
-| Get Ocean Forecast | `getOceanForecast` | Ocean forecasts for points at sea in Northwestern Europe. Docs: https://api.met.no/weatherapi/oceanforecast/2.0/documentation (GET /complete) |
-| Get Ocean Forecast (MOX XML) | `getOceanForecastMox` | Ocean forecasts for points at sea in Northwestern Europe. Docs: https://api.met.no/weatherapi/oceanforecast/2.0/documentation (GET /mox) |
-| Get Ocean Forecast Status | `getOceanForecastStatus` | Ocean forecasts for points at sea in Northwestern Europe. Docs: https://api.met.no/weatherapi/oceanforecast/2.0/documentation (GET /status) |
-| Get Subseasonal Forecast | `getSubseasonalForecast` | Long term weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/subseasonal/1.0/documentation (GET /complete) |
-| Get Subseasonal Forecast Status | `getSubseasonalStatus` | Long term weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/subseasonal/1.0/documentation (GET /status) |
-| Get Sunrise and Sunset | `getSunEvents` | Calculate sun or moon events, as seen from a specific location on Earth. Docs: https://api.met.no/weatherapi/sunrise/3.0/documentation (GET /sun) |
-| Get Text Forecast | `getTextForecast` | Textual weather forecast for Norwegian land and sea areas. Docs: https://api.met.no/weatherapi/textforecast/3.0/documentation (GET /) |
-| Get Tidal Water Forecast | `getTidalWater` | Tidal water information. Docs: https://api.met.no/weatherapi/tidalwater/1.1/documentation (GET /) |
-| List Air Quality Area Classes | `listAirQualityAreaClasses` | Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /areaclasses) |
-| List Air Quality Areas | `listAirQualityAreas` | Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /areas) |
-| List Air Quality Model Run Times | `listAirQualityReftimes` | Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /reftimes) |
-| List Air Quality Stations | `listAirQualityStations` | Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /stations) |
-| List Available Text Forecasts | `listTextForecasts` | List available resources as XML, RSS or JSON. Docs: https://api.met.no/weatherapi/textforecast/3.0/documentation (GET /available.{format}) |
-| List Tidal Water Forecasts | `listTidalWaterHarbors` | List available resources as XML, RSS or JSON. Docs: https://api.met.no/weatherapi/tidalwater/1.1/documentation (GET /available.{format}) |
+* **Get Location Forecast Status** `getLocationForecastStatus`: Weather forecasts for any location on earth. Docs: https://api.met.no/weatherapi/locationforecast/2.0/documentation (GET /status)
+* **Get Moonrise and Moonset** `getMoonEvents`: Calculate sun or moon events, as seen from a specific location on Earth. Docs: https://api.met.no/weatherapi/sunrise/3.0/documentation (GET /moon)
+* **Get Nowcast** `getNowcast`: Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /complete)
+* **Get Nowcast (Classic XML)** `getNowcastClassic`: Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /classic)
+* **Get Nowcast Status** `getNowcastStatus`: Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /status)
+* **Get Ocean Forecast** `getOceanForecast`: Ocean forecasts for points at sea in Northwestern Europe. Docs: https://api.met.no/weatherapi/oceanforecast/2.0/documentation (GET /complete)
+* **Get Ocean Forecast (MOX XML)** `getOceanForecastMox`: Ocean forecasts for points at sea in Northwestern Europe. Docs: https://api.met.no/weatherapi/oceanforecast/2.0/documentation (GET /mox)
+* **Get Ocean Forecast Status** `getOceanForecastStatus`: Ocean forecasts for points at sea in Northwestern Europe. Docs: https://api.met.no/weatherapi/oceanforecast/2.0/documentation (GET /status)
+* **Get Subseasonal Forecast** `getSubseasonalForecast`: Long term weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/subseasonal/1.0/documentation (GET /complete)
+* **Get Subseasonal Forecast Status** `getSubseasonalStatus`: Long term weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/subseasonal/1.0/documentation (GET /status)
+* **Get Sunrise and Sunset** `getSunEvents`: Calculate sun or moon events, as seen from a specific location on Earth. Docs: https://api.met.no/weatherapi/sunrise/3.0/documentation (GET /sun)
+* **Get Text Forecast** `getTextForecast`: Textual weather forecast for Norwegian land and sea areas. Docs: https://api.met.no/weatherapi/textforecast/3.0/documentation (GET /)
+* **Get Tidal Water Forecast** `getTidalWater`: Tidal water information. Docs: https://api.met.no/weatherapi/tidalwater/1.1/documentation (GET /)
+* **List Air Quality Area Classes** `listAirQualityAreaClasses`: Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /areaclasses)
+* **List Air Quality Areas** `listAirQualityAreas`: Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /areas)
+* **List Air Quality Model Run Times** `listAirQualityReftimes`: Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /reftimes)
+* **List Air Quality Stations** `listAirQualityStations`: Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /stations)
+* **List Available Text Forecasts** `listTextForecasts`: List available resources as XML, RSS or JSON. Docs: https://api.met.no/weatherapi/textforecast/3.0/documentation (GET /available.{format})
+* **List Tidal Water Forecasts** `listTidalWaterHarbors`: List available resources as XML, RSS or JSON. Docs: https://api.met.no/weatherapi/tidalwater/1.1/documentation (GET /available.{format})
 
 </details>

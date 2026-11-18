@@ -5,7 +5,7 @@ hidden: true
 
 # ImageRouter
 
-<img src="../../.gitbook/assets/connectors/image-router.jpg" alt="ImageRouter logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/image-router.png" alt="ImageRouter logo">
 
 ImageRouter is a unified, OpenAI-compatible API for AI image, video and text generation across dozens of providers (FLUX, Gemini, Imagen, GPT Image, Ideogram, Qwen, Seedream, Midjourney and more) behind one API key. This connector covers the complete ImageRouter API at https://api.imagerouter.io: image generation and editing, video generation, chat completions and responses for text models, the model catalog (v1 and v2 listings plus single-model lookup), credit balance and per-key usage, API key validation, and management-key API key creation.
 
@@ -39,8 +39,6 @@ Add ImageRouter from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Test API Key | `testApiKey` | Verifies that the connected ImageRouter API key is valid and active. Returns a success flag and the account's remaining credit balance in internal units (1/10000 USD). Useful as a connection health check. |
+* **Test API Key** `testApiKey`: Verifies that the connected ImageRouter API key is valid and active. Returns a success flag and the account's remaining credit balance in internal units (1/10000 USD). Useful as a connection health check.
 
 </details>

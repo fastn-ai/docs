@@ -5,7 +5,7 @@ hidden: true
 
 # IPLocate
 
-<img src="../../.gitbook/assets/connectors/iplocate.png" alt="IPLocate logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/iplocate.png" alt="IPLocate logo">
 
 IPLocate is an IP geolocation and threat intelligence platform. This connector covers the full IPLocate IP Intelligence API: single IP lookups, caller IP lookups, field- and object-filtered lookups (ASN, privacy and threat flags, hosting provider, company, abuse contact), batch lookups of up to 1,000 addresses, and the free current-IP echo endpoints.
 
@@ -39,8 +39,6 @@ Add IPLocate from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Look Up IP Address | `lookupIpAddress` | Returns the full IPLocate intelligence record for a single IPv4 or IPv6 address, including geolocation, autonomous system, privacy and threat flags, hosting provider, company and abuse contact data. Use the include parameter to return only selected fields. |
+* **Look Up IP Address** `lookupIpAddress`: Returns the full IPLocate intelligence record for a single IPv4 or IPv6 address, including geolocation, autonomous system, privacy and threat flags, hosting provider, company and abuse contact data. Use the include parameter to return only selected fields.
 
 </details>

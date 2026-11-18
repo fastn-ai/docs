@@ -5,7 +5,7 @@ hidden: true
 
 # SeekTable
 
-<img src="../../.gitbook/assets/connectors/seektable.png" alt="SeekTable logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/seektable.png" alt="SeekTable logo">
 
 SeekTable is a self-service BI tool for pivot tables, charts and reports over CSV files, SQL databases, MongoDB, ElasticSearch and OLAP cubes. This connector covers the SeekTable web API for cloud and self-hosted installations: reports (list, get, export, share by email), cubes (list, get, CSV upload), dashboards (list, export), account backup, and the self-hosted user accounts and team management API.
 
@@ -39,24 +39,22 @@ Add SeekTable from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 17 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Export Report | `exportReport` | Generates a saved report exactly as the in-app export does, in HTML, PDF, CSV, Excel, Excel pivot table, JSON or PNG. Optional report parameters (Advanced publishing), inline HTML styles, chart-only rendering, value formatting and JSON row mode. PDF, Excel and PNG exports return a file. |
-| Get Cube | `getCube` | Retrieves metadata for one cube (data source) by its ID, including name, source type, source file and permissions. |
-| Get Report | `getReport` | Retrieves metadata for one saved report by its ID, including name, report type (pivot or table) and its JSON configuration. |
-| Get User Account | `getUserAccount` | Self-hosted SeekTable only: retrieves one user account by its numeric ID. Requires an admin API key allowed for account management. |
-| List Cubes | `listCubes` | Retrieves metadata for every cube (data source) in the SeekTable account, optionally limited to one source type such as CSV file cubes. |
-| List Dashboards | `listDashboards` | Retrieves metadata for every dashboard accessible in the SeekTable account. Available only where the Dashboards capability is enabled. |
-| List Reports | `listReports` | Retrieves metadata for every report saved in the SeekTable account. |
-| List Team Group Members | `listTeamGroupMembers` | Self-hosted SeekTable only: lists the members of one group in a user's team. Requires an admin API key allowed for account management. |
-| List Team Groups | `listTeamGroups` | Self-hosted SeekTable only: lists the groups in a user's team with their report override parameters. Requires an admin API key allowed for account management. |
-| List Team Members | `listTeamMembers` | Self-hosted SeekTable only: lists the members of a user's team with their account IDs and assigned group IDs, optionally one member by email. Requires an admin API key allowed for account management. |
-| List User Accounts | `listUserAccounts` | Self-hosted SeekTable only: lists user accounts, optionally only the account with a given login email, with offset and limit paging. Requires an admin API key whose email is allowed for account management. |
-| Remove Team Group Members | `removeTeamGroupMembers` | Self-hosted SeekTable only: removes team members, by case-sensitive email, from a team group and returns the number removed. Requires an admin API key allowed for account management. |
-| Remove Team Members | `removeTeamMembers` | Self-hosted SeekTable only: removes login emails (case-sensitive) from a user's team and returns the number removed. Requires an admin API key allowed for account management. |
-| Restore User Account Data (Admin) | `restoreUserAccountData` | Self-hosted admin API: restore cubes/reports/dashboards/team settings into an account from an XML backup (POST /api/account/{account_id}/restore). Needs an admin key listed in SeekTable_ST__Api__AccountRestoreAllowedForEmail. Can overwrite data when mode=allowUpdate. |
-| Share Report by Email | `shareReportByEmail` | Emails a saved report to a recipient with a subject and optional message, embedding the report HTML in the email body by default and optionally attaching PDF, CSV or Excel exports. This sends a real email. On self-hosted SeekTable, SMTP must be configured. |
-| Update User Account | `updateUserAccount` | Self-hosted SeekTable only: updates a user account's email, name or roles by ID. Only the fields you pass are changed. Requires an admin API key allowed for account management. |
-| Upload CSV File | `uploadCsvFile` | Uploads CSV data to SeekTable. With a Cube ID it refreshes that existing CSV cube with the new data; without one it creates a new CSV cube. Returns the created or refreshed cube's metadata. SeekTable's API has no cube delete, so new cubes must be removed in the SeekTable app. |
+* **Export Report** `exportReport`: Generates a saved report exactly as the in-app export does, in HTML, PDF, CSV, Excel, Excel pivot table, JSON or PNG. Optional report parameters (Advanced publishing), inline HTML styles, chart-only rendering, value formatting and JSON row mode. PDF, Excel and PNG exports return a file.
+* **Get Cube** `getCube`: Retrieves metadata for one cube (data source) by its ID, including name, source type, source file and permissions.
+* **Get Report** `getReport`: Retrieves metadata for one saved report by its ID, including name, report type (pivot or table) and its JSON configuration.
+* **Get User Account** `getUserAccount`: Self-hosted SeekTable only: retrieves one user account by its numeric ID. Requires an admin API key allowed for account management.
+* **List Cubes** `listCubes`: Retrieves metadata for every cube (data source) in the SeekTable account, optionally limited to one source type such as CSV file cubes.
+* **List Dashboards** `listDashboards`: Retrieves metadata for every dashboard accessible in the SeekTable account. Available only where the Dashboards capability is enabled.
+* **List Reports** `listReports`: Retrieves metadata for every report saved in the SeekTable account.
+* **List Team Group Members** `listTeamGroupMembers`: Self-hosted SeekTable only: lists the members of one group in a user's team. Requires an admin API key allowed for account management.
+* **List Team Groups** `listTeamGroups`: Self-hosted SeekTable only: lists the groups in a user's team with their report override parameters. Requires an admin API key allowed for account management.
+* **List Team Members** `listTeamMembers`: Self-hosted SeekTable only: lists the members of a user's team with their account IDs and assigned group IDs, optionally one member by email. Requires an admin API key allowed for account management.
+* **List User Accounts** `listUserAccounts`: Self-hosted SeekTable only: lists user accounts, optionally only the account with a given login email, with offset and limit paging. Requires an admin API key whose email is allowed for account management.
+* **Remove Team Group Members** `removeTeamGroupMembers`: Self-hosted SeekTable only: removes team members, by case-sensitive email, from a team group and returns the number removed. Requires an admin API key allowed for account management.
+* **Remove Team Members** `removeTeamMembers`: Self-hosted SeekTable only: removes login emails (case-sensitive) from a user's team and returns the number removed. Requires an admin API key allowed for account management.
+* **Restore User Account Data (Admin)** `restoreUserAccountData`: Self-hosted admin API: restore cubes/reports/dashboards/team settings into an account from an XML backup (POST /api/account/{account_id}/restore). Needs an admin key listed in SeekTable_ST__Api__AccountRestoreAllowedForEmail. Can overwrite data when mode=allowUpdate.
+* **Share Report by Email** `shareReportByEmail`: Emails a saved report to a recipient with a subject and optional message, embedding the report HTML in the email body by default and optionally attaching PDF, CSV or Excel exports. This sends a real email. On self-hosted SeekTable, SMTP must be configured.
+* **Update User Account** `updateUserAccount`: Self-hosted SeekTable only: updates a user account's email, name or roles by ID. Only the fields you pass are changed. Requires an admin API key allowed for account management.
+* **Upload CSV File** `uploadCsvFile`: Uploads CSV data to SeekTable. With a Cube ID it refreshes that existing CSV cube with the new data; without one it creates a new CSV cube. Returns the created or refreshed cube's metadata. SeekTable's API has no cube delete, so new cubes must be removed in the SeekTable app.
 
 </details>

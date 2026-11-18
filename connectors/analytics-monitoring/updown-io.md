@@ -5,7 +5,7 @@ hidden: true
 
 # Updown.io
 
-<img src="../../.gitbook/assets/connectors/updown-io.png" alt="Updown.io logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/updown-io.png" alt="Updown.io logo">
 
 Updown.io website and uptime monitoring. Create and manage HTTP/HTTPS, ICMP, TCP and pulse checks, read uptime metrics and downtime history, manage alert recipients and public status pages, and list the monitoring node IP addresses.
 
@@ -39,16 +39,14 @@ Add Updown.io from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 8 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Node IPs | `listNodeIps` | List every Updown.io monitoring server IP address, both IPv4 and IPv6, as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
-| List Node IPv4 Addresses | `listNodeIpv4` | List the IPv4 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
-| List Node IPv6 Addresses | `listNodeIpv6` | List the IPv6 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
-| List Nodes | `listNodes` | List all Updown.io monitoring and webhook servers, keyed by short node name (e.g. tok, fra, mia). Each node carries its IPv4 and IPv6 address, city, country, country code, latitude and longitude. Takes no parameters. |
-| List Recipients | `listRecipients` | List every alert recipient / notification channel on the Updown.io account - email, SMS, Slack, Telegram, webhook, Zapier and similar. Each entry gives the id (used to select recipients on a check), type, name and value. Takes no parameters. |
-| List Status Pages | `listStatusPages` | List all Updown.io status pages on the account. Each page gives its token, public URL, name, description, visibility (public, protected or private), access key and the ordered list of check tokens it shows. Takes no parameters. |
-| Update Check | `updateCheck` | Update an existing Updown.io check identified by its token. Only the fields you supply are changed. Returns the updated check. Requires a read-write API key. |
-| Update Status Page | `updateStatusPage` | Update an existing Updown.io status page by token. Only the fields you supply are changed. Returns the updated status page. Requires a read-write API key. |
+* **List Node IPs** `listNodeIps`: List every Updown.io monitoring server IP address, both IPv4 and IPv6, as an array of strings. Useful for firewall allow-listing. Takes no parameters.
+* **List Node IPv4 Addresses** `listNodeIpv4`: List the IPv4 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters.
+* **List Node IPv6 Addresses** `listNodeIpv6`: List the IPv6 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters.
+* **List Nodes** `listNodes`: List all Updown.io monitoring and webhook servers, keyed by short node name (e.g. tok, fra, mia). Each node carries its IPv4 and IPv6 address, city, country, country code, latitude and longitude. Takes no parameters.
+* **List Recipients** `listRecipients`: List every alert recipient / notification channel on the Updown.io account - email, SMS, Slack, Telegram, webhook, Zapier and similar. Each entry gives the id (used to select recipients on a check), type, name and value. Takes no parameters.
+* **List Status Pages** `listStatusPages`: List all Updown.io status pages on the account. Each page gives its token, public URL, name, description, visibility (public, protected or private), access key and the ordered list of check tokens it shows. Takes no parameters.
+* **Update Check** `updateCheck`: Update an existing Updown.io check identified by its token. Only the fields you supply are changed. Returns the updated check. Requires a read-write API key.
+* **Update Status Page** `updateStatusPage`: Update an existing Updown.io status page by token. Only the fields you supply are changed. Returns the updated status page. Requires a read-write API key.
 
 </details>
 

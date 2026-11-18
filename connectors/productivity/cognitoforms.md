@@ -5,7 +5,7 @@ hidden: true
 
 # Cognito Forms
 
-<img src="../../.gitbook/assets/connectors/cognitoforms.png" alt="Cognito Forms logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/cognitoforms.png" alt="Cognito Forms logo">
 
 Cognito Forms is a free online form builder for collecting submissions, managing entries, and generating documents. This connector covers the REST API: listing forms, reading a form's field schema, creating/reading/updating/deleting entries (submissions), and retrieving generated entry documents (PDFs).
 
@@ -39,11 +39,9 @@ Add Cognito Forms from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List View Entries | `listViewEntries` | Gets all entries of a form view (OData). GET /api/odata/Forms({form})/Views({viewId})/Entries. $count=true adds the total; $select=Id returns only entry ids. |
-| Set Form Availability | `setFormAvailability` | Sets the form's public link availability window. POST /api/forms/{form}/public-link-availability. Leave start and end empty to make the form always available. Returns {availabilityStart, availabilityEnd, notAvailableMessage}. |
-| Update Entry | `updateEntry` | Updates an existing entry. PATCH /api/forms/{form}/entries/{entryId}. All inputs other than form/entry ids are sent as the entry's field values (top-level JSON keys by field name, e.g. {"Name":{"First":"Jane","Last":"Doe"},"Email":"a@b.com"}). Use getFormSchema with input=true to see the settable fields. Fails if the entry includes a paid order or does not exist. |
-| Upload File | `uploadFile` | Uploads a file for use in form entries. POST /api/files (multipart/form-data, field File). Text content only - binary files cannot be sent by this action. Returns {Id, Name, ContentType, Size}. |
+* **List View Entries** `listViewEntries`: Gets all entries of a form view (OData). GET /api/odata/Forms({form})/Views({viewId})/Entries. $count=true adds the total; $select=Id returns only entry ids.
+* **Set Form Availability** `setFormAvailability`: Sets the form's public link availability window. POST /api/forms/{form}/public-link-availability. Leave start and end empty to make the form always available. Returns {availabilityStart, availabilityEnd, notAvailableMessage}.
+* **Update Entry** `updateEntry`: Updates an existing entry. PATCH /api/forms/{form}/entries/{entryId}. All inputs other than form/entry ids are sent as the entry's field values (top-level JSON keys by field name, e.g. {"Name":{"First":"Jane","Last":"Doe"},"Email":"a@b.com"}). Use getFormSchema with input=true to see the settable fields. Fails if the entry includes a paid order or does not exist.
+* **Upload File** `uploadFile`: Uploads a file for use in form entries. POST /api/files (multipart/form-data, field File). Text content only - binary files cannot be sent by this action. Returns {Id, Name, ContentType, Size}.
 
 </details>

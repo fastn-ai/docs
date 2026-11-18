@@ -5,7 +5,7 @@ hidden: true
 
 # Siteleaf
 
-<img src="../../.gitbook/assets/connectors/siteleaf.png" alt="Siteleaf logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/siteleaf.png" alt="Siteleaf logo">
 
 Siteleaf is a Git-friendly, Jekyll-based content management system. This connector wraps the Siteleaf v2 REST API so you can manage sites, pages, collections, documents, collection files, raw Jekyll source files, site users and roles, publish jobs, tags and categories.
 
@@ -39,36 +39,34 @@ Add Siteleaf from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 29 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Document | `deleteDocument` | Permanently deletes a document and its underlying source file. Returns the deleted document id with deleted set to true. |
-| Delete Page | `deletePage` | Permanently deletes a page and its underlying source file. Returns the deleted page id with deleted set to true. |
-| Delete Role | `deleteRole` | Revokes a site role, removing that user's access to the site. Take care when deleting a role that belongs to the authenticated account, as it can remove your own access. |
-| Delete Site | `deleteSite` | Permanently deletes a Siteleaf site and all of its pages, collections, documents and files. This cannot be undone. Returns the deleted site id with deleted set to true. |
-| Delete Source File | `deleteSourceFile` | Permanently deletes a file from the site's Jekyll source tree and removes the page, document or file resource behind it. Directories and _config.yml cannot be deleted. Returns the deleted file's metadata. |
-| Download Source File | `downloadSourceFile` | Downloads the raw contents of a file in the site's Jekyll source tree, including its YAML front matter. The runtime returns the file as a reference object whose data field holds the base64 encoded contents. |
-| Get Collection | `getCollection` | Retrieves a single collection of a site by its path, including its permalink style, output flag and metadata. |
-| Get Current User | `getCurrentUser` | Returns the Siteleaf user account the API credentials belong to, including id, email and name. Useful as a connection health check. |
-| Get Document | `getDocument` | Retrieves a single document by id, including its body, tags, categories, front-matter metadata and rendered URL. |
-| Get Job Status | `getJobStatus` | Reads the status of a long-running Siteleaf job such as a publish, preview or sync. Job ids come from the jobs object on a site. The endpoint streams Server-Sent Events and closes when the job completes or fails; a job id expires 30 minutes after its last event, after which the endpoint answers 410 Gone with a Job not found event. |
-| Get Page | `getPage` | Retrieves a single page by id, including its body, front-matter metadata, path, permalink and rendered URL. |
-| Get Role | `getRole` | Retrieves a single site role by id, showing which user it belongs to, which site it grants access to and the level of access. |
-| Get Site | `getSite` | Retrieves a single Siteleaf site by id, including its domain, timezone, Jekyll defaults, metadata and the ids of its most recent preview, publish and sync jobs. |
-| Get Source File | `getSourceFile` | Returns metadata for a single file in the site's Jekyll source tree, or the listing of a sub-directory when the name is a directory. Pass a path such as index.html, css/main.scss or _layouts. |
-| List Collection Files | `listCollectionFiles` | Lists the static files stored in a collection, such as images uploaded into the uploads collection. Each entry carries the filename, content type, file size and a download URL. |
-| List Collections | `listCollections` | Lists the collections of a site. A collection is a Jekyll collection such as posts or uploads and groups documents under a directory. Use the returned path value as the collectionPath input of the collection and document actions. |
-| List Documents | `listDocuments` | Lists the documents of a collection, for example the posts of a blog. Supports searching by title or path, sorting, visibility filtering and file-extension filtering. |
-| List Pages | `listPages` | Lists the pages of a site. Pages are standalone Jekyll files that live outside a collection, such as index.html or about.md. Supports searching by title or path, sorting, visibility filtering and file-extension filtering. |
-| List Post Categories | `listPostCategories` | Lists every category used by the posts of a site. Returns a plain array of category names. |
-| List Post Tags | `listPostTags` | Lists every tag used by the posts of a site. Returns a plain array of tag names. |
-| List Site Users | `listSiteUsers` | Lists the users who have access to a site, with the role each one holds on it. |
-| List Sites | `listSites` | Lists every Siteleaf site the authenticated account can access. Returns an array of site objects with id, title, domain, timezone, metadata and Jekyll defaults. Use the returned id as the siteId input of the other site-scoped actions. |
-| List Source Directory | `listSourceDirectory` | Lists the contents of the site's Jekyll source tree at its root, as if you were looking at the repository locally. Returns files and directories with their type, size and SHA. Use Get Source File to inspect a single file or a sub-directory. |
-| Publish Site | `publishSite` | Starts a publish job that builds the site with Jekyll and deploys it to its configured hosting or sync target. Returns the queued job; poll it with Get Job Status. Warning: this makes content live on the site's public domain. |
-| Update Collection | `updateCollection` | Updates a collection identified by its current path. Only the fields you supply are changed; changing path renames the collection directory. Returns the updated collection. |
-| Update Document | `updateDocument` | Updates a document by id. Only the fields you supply are changed, so you can edit just the body, the tags or the front-matter metadata. Returns the updated document. |
-| Update Page | `updatePage` | Updates a page by id. Only the fields you supply are changed, so you can edit just the body or just the front-matter metadata. Returns the updated page. |
-| Update Role | `updateRole` | Changes the level of access a site role grants. Take care when changing a role that belongs to the authenticated account, as lowering it can remove your own access to the site. |
-| Update Site | `updateSite` | Updates an existing Siteleaf site. Only the fields you supply are changed. Returns the updated site object. |
+* **Delete Document** `deleteDocument`: Permanently deletes a document and its underlying source file. Returns the deleted document id with deleted set to true.
+* **Delete Page** `deletePage`: Permanently deletes a page and its underlying source file. Returns the deleted page id with deleted set to true.
+* **Delete Role** `deleteRole`: Revokes a site role, removing that user's access to the site. Take care when deleting a role that belongs to the authenticated account, as it can remove your own access.
+* **Delete Site** `deleteSite`: Permanently deletes a Siteleaf site and all of its pages, collections, documents and files. This cannot be undone. Returns the deleted site id with deleted set to true.
+* **Delete Source File** `deleteSourceFile`: Permanently deletes a file from the site's Jekyll source tree and removes the page, document or file resource behind it. Directories and _config.yml cannot be deleted. Returns the deleted file's metadata.
+* **Download Source File** `downloadSourceFile`: Downloads the raw contents of a file in the site's Jekyll source tree, including its YAML front matter. The runtime returns the file as a reference object whose data field holds the base64 encoded contents.
+* **Get Collection** `getCollection`: Retrieves a single collection of a site by its path, including its permalink style, output flag and metadata.
+* **Get Current User** `getCurrentUser`: Returns the Siteleaf user account the API credentials belong to, including id, email and name. Useful as a connection health check.
+* **Get Document** `getDocument`: Retrieves a single document by id, including its body, tags, categories, front-matter metadata and rendered URL.
+* **Get Job Status** `getJobStatus`: Reads the status of a long-running Siteleaf job such as a publish, preview or sync. Job ids come from the jobs object on a site. The endpoint streams Server-Sent Events and closes when the job completes or fails; a job id expires 30 minutes after its last event, after which the endpoint answers 410 Gone with a Job not found event.
+* **Get Page** `getPage`: Retrieves a single page by id, including its body, front-matter metadata, path, permalink and rendered URL.
+* **Get Role** `getRole`: Retrieves a single site role by id, showing which user it belongs to, which site it grants access to and the level of access.
+* **Get Site** `getSite`: Retrieves a single Siteleaf site by id, including its domain, timezone, Jekyll defaults, metadata and the ids of its most recent preview, publish and sync jobs.
+* **Get Source File** `getSourceFile`: Returns metadata for a single file in the site's Jekyll source tree, or the listing of a sub-directory when the name is a directory. Pass a path such as index.html, css/main.scss or _layouts.
+* **List Collection Files** `listCollectionFiles`: Lists the static files stored in a collection, such as images uploaded into the uploads collection. Each entry carries the filename, content type, file size and a download URL.
+* **List Collections** `listCollections`: Lists the collections of a site. A collection is a Jekyll collection such as posts or uploads and groups documents under a directory. Use the returned path value as the collectionPath input of the collection and document actions.
+* **List Documents** `listDocuments`: Lists the documents of a collection, for example the posts of a blog. Supports searching by title or path, sorting, visibility filtering and file-extension filtering.
+* **List Pages** `listPages`: Lists the pages of a site. Pages are standalone Jekyll files that live outside a collection, such as index.html or about.md. Supports searching by title or path, sorting, visibility filtering and file-extension filtering.
+* **List Post Categories** `listPostCategories`: Lists every category used by the posts of a site. Returns a plain array of category names.
+* **List Post Tags** `listPostTags`: Lists every tag used by the posts of a site. Returns a plain array of tag names.
+* **List Site Users** `listSiteUsers`: Lists the users who have access to a site, with the role each one holds on it.
+* **List Sites** `listSites`: Lists every Siteleaf site the authenticated account can access. Returns an array of site objects with id, title, domain, timezone, metadata and Jekyll defaults. Use the returned id as the siteId input of the other site-scoped actions.
+* **List Source Directory** `listSourceDirectory`: Lists the contents of the site's Jekyll source tree at its root, as if you were looking at the repository locally. Returns files and directories with their type, size and SHA. Use Get Source File to inspect a single file or a sub-directory.
+* **Publish Site** `publishSite`: Starts a publish job that builds the site with Jekyll and deploys it to its configured hosting or sync target. Returns the queued job; poll it with Get Job Status. Warning: this makes content live on the site's public domain.
+* **Update Collection** `updateCollection`: Updates a collection identified by its current path. Only the fields you supply are changed; changing path renames the collection directory. Returns the updated collection.
+* **Update Document** `updateDocument`: Updates a document by id. Only the fields you supply are changed, so you can edit just the body, the tags or the front-matter metadata. Returns the updated document.
+* **Update Page** `updatePage`: Updates a page by id. Only the fields you supply are changed, so you can edit just the body or just the front-matter metadata. Returns the updated page.
+* **Update Role** `updateRole`: Changes the level of access a site role grants. Take care when changing a role that belongs to the authenticated account, as lowering it can remove your own access to the site.
+* **Update Site** `updateSite`: Updates an existing Siteleaf site. Only the fields you supply are changed. Returns the updated site object.
 
 </details>

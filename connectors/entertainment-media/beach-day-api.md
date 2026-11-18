@@ -5,7 +5,7 @@ hidden: true
 
 # Beach Day API
 
-<img src="../../.gitbook/assets/connectors/beach-day-api.png" alt="Beach Day API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/beach-day-api.png" alt="Beach Day API logo">
 
 Beach Day API provides beach data for more than 36,000 beaches in over 100 countries: beach profiles with location and access details, water quality grades, weather and ocean conditions, tide predictions, local rules, amenities and the proprietary 0-100 Beach Day Score. This connector covers the complete Beach Day API v1 REST surface. Every call except the health check spends pre-paid credits from the connected account.
 

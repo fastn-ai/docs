@@ -5,7 +5,7 @@ hidden: true
 
 # Gamma API
 
-<img src="../../.gitbook/assets/connectors/gamma-api.jpg" alt="Gamma API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/gamma-api.png" alt="Gamma API logo">
 
 Gamma Generate API — programmatically generate presentations, documents, webpages, and social posts from text or templates, manage themes/folders, and archive/delete gammas. Auth via X-API-KEY header.
 

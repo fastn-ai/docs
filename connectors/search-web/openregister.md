@@ -5,7 +5,7 @@ hidden: true
 
 # OpenRegister
 
-<img src="../../.gitbook/assets/connectors/openregister.jpg" alt="OpenRegister logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/openregister.png" alt="OpenRegister logo">
 
 OpenRegister provides programmatic access to official German company data from the Handelsregister, Bundesanzeiger, Transparenzregister and Insolvenzregister. This connector covers company search and lookup, ownership and beneficial owners, holdings, financial statements, contact and web data, official register documents, person search and holdings, insolvency proceedings, Transparenzregister extracts, and register change monitors.
 
@@ -39,29 +39,27 @@ Add OpenRegister from **Build → Integrations → Connectors** and connect an a
 
 <summary>See 21 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Company Shareholders | `getCompanyShareholders` | Returns the shareholders recorded in a company's latest shareholder list (the original v0 endpoint), with nominal and percentage shares and the document the data was taken from. For richer owner data use List Company Owners. |
-| Get Credit Usage | `getCreditUsage` | Returns the API credit usage for the current billing period, including used, included, remaining and overage credits, whether the account is on a paid plan and when the period resets. Takes no inputs, so it also works as a connection check. |
-| Get Document Information | `getDocumentInformation` | Returns metadata and a 15-minute download URL for a stored register document using the original v0 endpoint. Equivalent to Get Stored Document. |
-| Get Document Job | `getDocumentJob` | Returns the status of an asynchronous document job and, once it has completed, the download URL of the fetched document. |
-| Get Insolvency Proceeding | `getInsolvencyProceeding` | Returns a single German insolvency proceeding with its court, case number, debtor, administrator, distribution figures and the full chronological list of official court publications. |
-| Get Person | `getPerson` | Returns a person recorded in the German registers, including their name, date of birth, city and the management positions they hold or have held across companies. |
-| Get Realtime Document | `getRealtimeDocument` | Orders an official register document for a company directly from the Handelsregister in real time and returns a download URL for it. Use it for printouts, structured information, shareholder lists and articles of association. |
-| Get Stored Document | `getStoredDocument` | Returns a document already stored by OpenRegister, identified by the document id listed on a company profile, together with a download URL that stays valid for 15 minutes. |
-| Get Transparenzregister Extract | `getTransparenzregisterExtract` | Returns a Transparenzregister extract by id, including its processing state, the parsed beneficial-ownership report and download URLs for the extract documents. While the request is still running the status stays 'processing'. |
-| List Company Historical Owners | `listCompanyHistoricalOwners` | Returns every owner ever recorded for a company, with the full ownership history reconstructed from each filed shareholder list, including first and last appearance and whether the owner is still active. |
-| List Company Holdings | `listCompanyHoldings` | Returns the companies in which the given company holds a stake, with the relation type, nominal and percentage share and the period the holding was recorded for. |
-| List Company Owners | `listCompanyOwners` | Returns the current direct owners of a company - shareholders, stockholders, general partners and limited partners - with their nominal and percentage shares and the source documents the data was taken from. |
-| List Company UBOs | `listCompanyUbos` | Returns the ultimate beneficial owners of a company, resolved through the full ownership chain, with the percentage or maximum percentage each natural person or entity ultimately controls. |
-| List Monitors | `listMonitors` | Lists the register monitors configured on the account, with the entity each one watches, the data categories it covers, its check frequency and whether it has been disabled by a plan change. Free of charge. |
-| List Person Holdings | `listPersonHoldings` | Returns the shareholder and limited-partner positions a person holds in German companies, with the nominal and percentage share and the period each holding was recorded for. |
-| Look Up Company By Website | `lookupCompanyByWebsite` | Resolves a company website URL to the registered company behind it and returns its identifier together with the contact details published on that site. |
-| Search Companies | `searchCompanies` | Runs an advanced company search combining a free-text query with structured filters, an optional geographic radius and pagination. Filters cover register data, financial figures, ownership structure and insolvency status. Costs 1 credit per request. |
-| Search Companies By Register Fields | `searchCompaniesByRegisterFields` | Searches companies with simple query-string filters on name, register number, register type, register court, legal form, incorporation date and active status (the original v0 search endpoint). For richer filtering use Search Companies. |
-| Search Insolvency Proceedings | `searchInsolvencyProceedings` | Searches German insolvency proceedings by debtor name, case number, administrator or court, with structured filters on status, proceeding kind, court, city and the relevant dates. |
-| Search People | `searchPeople` | Searches for people recorded in the German registers by name, optionally narrowed by date of birth, city or active status, with pagination. |
-| Store Transparenzregister Credentials | `storeTransparenzregisterCredentials` | Stores a Transparenzregister portal username and password under a name so that extract requests can be made with them. Credentials are validated against the Transparenzregister before being saved. The name 'sandbox' is reserved for test-mode extracts and cannot be used. |
+* **Get Company Shareholders** `getCompanyShareholders`: Returns the shareholders recorded in a company's latest shareholder list (the original v0 endpoint), with nominal and percentage shares and the document the data was taken from. For richer owner data use List Company Owners.
+* **Get Credit Usage** `getCreditUsage`: Returns the API credit usage for the current billing period, including used, included, remaining and overage credits, whether the account is on a paid plan and when the period resets. Takes no inputs, so it also works as a connection check.
+* **Get Document Information** `getDocumentInformation`: Returns metadata and a 15-minute download URL for a stored register document using the original v0 endpoint. Equivalent to Get Stored Document.
+* **Get Document Job** `getDocumentJob`: Returns the status of an asynchronous document job and, once it has completed, the download URL of the fetched document.
+* **Get Insolvency Proceeding** `getInsolvencyProceeding`: Returns a single German insolvency proceeding with its court, case number, debtor, administrator, distribution figures and the full chronological list of official court publications.
+* **Get Person** `getPerson`: Returns a person recorded in the German registers, including their name, date of birth, city and the management positions they hold or have held across companies.
+* **Get Realtime Document** `getRealtimeDocument`: Orders an official register document for a company directly from the Handelsregister in real time and returns a download URL for it. Use it for printouts, structured information, shareholder lists and articles of association.
+* **Get Stored Document** `getStoredDocument`: Returns a document already stored by OpenRegister, identified by the document id listed on a company profile, together with a download URL that stays valid for 15 minutes.
+* **Get Transparenzregister Extract** `getTransparenzregisterExtract`: Returns a Transparenzregister extract by id, including its processing state, the parsed beneficial-ownership report and download URLs for the extract documents. While the request is still running the status stays 'processing'.
+* **List Company Historical Owners** `listCompanyHistoricalOwners`: Returns every owner ever recorded for a company, with the full ownership history reconstructed from each filed shareholder list, including first and last appearance and whether the owner is still active.
+* **List Company Holdings** `listCompanyHoldings`: Returns the companies in which the given company holds a stake, with the relation type, nominal and percentage share and the period the holding was recorded for.
+* **List Company Owners** `listCompanyOwners`: Returns the current direct owners of a company - shareholders, stockholders, general partners and limited partners - with their nominal and percentage shares and the source documents the data was taken from.
+* **List Company UBOs** `listCompanyUbos`: Returns the ultimate beneficial owners of a company, resolved through the full ownership chain, with the percentage or maximum percentage each natural person or entity ultimately controls.
+* **List Monitors** `listMonitors`: Lists the register monitors configured on the account, with the entity each one watches, the data categories it covers, its check frequency and whether it has been disabled by a plan change. Free of charge.
+* **List Person Holdings** `listPersonHoldings`: Returns the shareholder and limited-partner positions a person holds in German companies, with the nominal and percentage share and the period each holding was recorded for.
+* **Look Up Company By Website** `lookupCompanyByWebsite`: Resolves a company website URL to the registered company behind it and returns its identifier together with the contact details published on that site.
+* **Search Companies** `searchCompanies`: Runs an advanced company search combining a free-text query with structured filters, an optional geographic radius and pagination. Filters cover register data, financial figures, ownership structure and insolvency status. Costs 1 credit per request.
+* **Search Companies By Register Fields** `searchCompaniesByRegisterFields`: Searches companies with simple query-string filters on name, register number, register type, register court, legal form, incorporation date and active status (the original v0 search endpoint). For richer filtering use Search Companies.
+* **Search Insolvency Proceedings** `searchInsolvencyProceedings`: Searches German insolvency proceedings by debtor name, case number, administrator or court, with structured filters on status, proceeding kind, court, city and the relevant dates.
+* **Search People** `searchPeople`: Searches for people recorded in the German registers by name, optionally narrowed by date of birth, city or active status, with pagination.
+* **Store Transparenzregister Credentials** `storeTransparenzregisterCredentials`: Stores a Transparenzregister portal username and password under a name so that extract requests can be made with them. Credentials are validated against the Transparenzregister before being saved. The name 'sandbox' is reserved for test-mode extracts and cannot be used.
 
 </details>
 

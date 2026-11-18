@@ -5,7 +5,7 @@ hidden: true
 
 # Google Cloud Monitoring
 
-<img src="../../.gitbook/assets/connectors/google-cloud-monitoring.png" alt="Google Cloud Monitoring logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-cloud-monitoring.png" alt="Google Cloud Monitoring logo">
 
 Google Cloud Monitoring API v3 (https://monitoring.googleapis.com/v3). Read metric descriptors and time series for a Google Cloud project, create and delete custom metric descriptors, and write custom metric data points. OAuth 2.0 (Google) authorization-code auth with the monitoring, monitoring.read and monitoring.write scopes.
 

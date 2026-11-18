@@ -5,7 +5,7 @@ hidden: true
 
 # MoonClerk
 
-<img src="../../.gitbook/assets/connectors/moonclerk.png" alt="MoonClerk logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/moonclerk.png" alt="MoonClerk logo">
 
 MoonClerk is a recurring-payments and checkout platform built on Stripe. This connector covers the complete MoonClerk REST API (https://api.moonclerk.com), which is read-only: list and retrieve payment forms, customers (called "Plans" in the MoonClerk interface, each carrying its subscription and plan detail) and payments, with date, status and form filters and count/offset paging. Creating or editing forms, plans and pricing is done in the MoonClerk interface and has no API. MoonClerk events are delivered by webhook endpoints registered in the MoonClerk dashboard.
 

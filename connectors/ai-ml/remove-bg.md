@@ -5,7 +5,7 @@ hidden: true
 
 # remove.bg
 
-<img src="../../.gitbook/assets/connectors/remove-bg.png" alt="remove.bg logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/remove-bg.png" alt="remove.bg logo">
 
 remove.bg Background Removal API (https://api.remove.bg/v1.0). Removes the background from JPG/PNG/WebP images supplied by URL or as a base64-encoded file, returning the cut-out either as a base64 string or as binary image data, with full control over output size, foreground type detection, output format, region of interest, cropping, scaling, positioning, alpha channel, AI shadows, semitransparency and solid-colour or image backgrounds. Also fetches the account credit balance and remaining free API calls, and submits images to the remove.bg Improvement Program. Authentication is an API key sent in the X-Api-Key header.
 

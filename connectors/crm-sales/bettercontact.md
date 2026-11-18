@@ -5,7 +5,7 @@ hidden: true
 
 # BetterContact
 
-<img src="../../.gitbook/assets/connectors/bettercontact.png" alt="BetterContact logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/bettercontact.png" alt="BetterContact logo">
 
 BetterContact is a waterfall enrichment platform that finds verified work emails and mobile phone numbers by querying many data providers in sequence. This connector wraps the BetterContact REST API v2: asynchronous lead enrichment (email, phone and LinkedIn profile) with result retrieval, Lead Finder people search with result retrieval, synchronous lead and company profile enrichment, and the account credit balance. Results can be pushed to a webhook URL supplied on each asynchronous request. Authenticates with an API key sent in the X-API-Key header.
 

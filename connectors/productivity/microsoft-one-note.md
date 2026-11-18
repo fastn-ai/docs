@@ -5,7 +5,7 @@ hidden: true
 
 # Microsoft OneNote
 
-<img src="../../.gitbook/assets/connectors/microsoft-one-note.svg" alt="Microsoft OneNote logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/microsoft-one-note.png" alt="Microsoft OneNote logo">
 
 Microsoft OneNote via Microsoft Graph v1.0. Covers the signed-in user's notebooks, section groups, sections and pages, page HTML content read and patch, asynchronous copy operations for notebooks, sections and pages, notebook lookup by web URL, recently opened notebooks, and long-running operation status. All actions target the signed-in user's own OneNote content (the /me root); group-owned and SharePoint site-hosted notebooks are not covered.
 
@@ -39,27 +39,25 @@ Add Microsoft OneNote from **Build → Integrations → Connectors** and connect
 
 <summary>See 20 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Section Page | `createSectionPage` | Create a OneNote page in a specific section by posting its HTML. The title comes from the title element in the HTML head. Binary images and file attachments require a multipart request and are not supported by this action. |
-| Delete Page | `deletePage` | Delete a OneNote page belonging to the signed-in user. |
-| Get Notebook | `getNotebook` | Retrieve the properties of a single OneNote notebook belonging to the signed-in user. |
-| Get Notebook From Web URL | `getNotebookFromWebUrl` | Look up a OneNote notebook by the full URL path to it, for example a link copied from OneNote or SharePoint. The URL may also carry a onenote: prefix. |
-| Get Operation | `getOperation` | Check the status of a long-running OneNote operation such as a notebook, section or page copy. Poll this until the status reports completed or failed. Note that the copied resource can appear before the operation status catches up, so a status that still reads 'not started' does not mean the copy has not happened. |
-| Get Page | `getPage` | Retrieve the metadata of a single OneNote page, including its title and the content URL. Use Get Page Content to fetch the HTML body. |
-| Get Page Content | `getPageContent` | Retrieve the HTML body of a OneNote page. Set Include IDs to true to have OneNote return the generated element identifiers that Update Page Content targets. |
-| Get Recent Notebooks | `getRecentNotebooks` | Retrieve the OneNote notebooks the signed-in user has opened most recently, optionally including their personal notebooks. |
-| Get Section | `getSection` | Retrieve the properties of a single OneNote section belonging to the signed-in user. |
-| Get Section Group | `getSectionGroup` | Retrieve the properties of a single OneNote section group belonging to the signed-in user. |
-| List Nested Section Groups | `listNestedSectionGroups` | Retrieve the section groups nested inside another OneNote section group belonging to the signed-in user. |
-| List Notebook Section Groups | `listNotebookSectionGroups` | Retrieve the section groups directly inside a OneNote notebook belonging to the signed-in user. |
-| List Notebook Sections | `listNotebookSections` | Retrieve the sections directly inside a OneNote notebook belonging to the signed-in user. |
-| List Notebooks | `listNotebooks` | Retrieve the OneNote notebooks belonging to the signed-in user, including notebooks shared with them. |
-| List Pages | `listPages` | Retrieve every OneNote page the signed-in user has access to, across all of their notebooks and sections. |
-| List Section Group Sections | `listSectionGroupSections` | Retrieve the sections inside a OneNote section group belonging to the signed-in user. |
-| List Section Groups | `listSectionGroups` | Retrieve every OneNote section group the signed-in user has access to, across all of their notebooks. |
-| List Section Pages | `listSectionPages` | Retrieve the pages held in a specific OneNote section belonging to the signed-in user. |
-| List Sections | `listSections` | Retrieve every OneNote section the signed-in user has access to, across all of their notebooks. |
-| Update Page Content | `updatePageContent` | Change the HTML content of a OneNote page by applying a list of patch commands. Each command names a target element, an action such as append, insert or replace, and the HTML to apply. Use Get Page Content with Include IDs to discover the target identifiers. |
+* **Create Section Page** `createSectionPage`: Create a OneNote page in a specific section by posting its HTML. The title comes from the title element in the HTML head. Binary images and file attachments require a multipart request and are not supported by this action.
+* **Delete Page** `deletePage`: Delete a OneNote page belonging to the signed-in user.
+* **Get Notebook** `getNotebook`: Retrieve the properties of a single OneNote notebook belonging to the signed-in user.
+* **Get Notebook From Web URL** `getNotebookFromWebUrl`: Look up a OneNote notebook by the full URL path to it, for example a link copied from OneNote or SharePoint. The URL may also carry a onenote: prefix.
+* **Get Operation** `getOperation`: Check the status of a long-running OneNote operation such as a notebook, section or page copy. Poll this until the status reports completed or failed. Note that the copied resource can appear before the operation status catches up, so a status that still reads 'not started' does not mean the copy has not happened.
+* **Get Page** `getPage`: Retrieve the metadata of a single OneNote page, including its title and the content URL. Use Get Page Content to fetch the HTML body.
+* **Get Page Content** `getPageContent`: Retrieve the HTML body of a OneNote page. Set Include IDs to true to have OneNote return the generated element identifiers that Update Page Content targets.
+* **Get Recent Notebooks** `getRecentNotebooks`: Retrieve the OneNote notebooks the signed-in user has opened most recently, optionally including their personal notebooks.
+* **Get Section** `getSection`: Retrieve the properties of a single OneNote section belonging to the signed-in user.
+* **Get Section Group** `getSectionGroup`: Retrieve the properties of a single OneNote section group belonging to the signed-in user.
+* **List Nested Section Groups** `listNestedSectionGroups`: Retrieve the section groups nested inside another OneNote section group belonging to the signed-in user.
+* **List Notebook Section Groups** `listNotebookSectionGroups`: Retrieve the section groups directly inside a OneNote notebook belonging to the signed-in user.
+* **List Notebook Sections** `listNotebookSections`: Retrieve the sections directly inside a OneNote notebook belonging to the signed-in user.
+* **List Notebooks** `listNotebooks`: Retrieve the OneNote notebooks belonging to the signed-in user, including notebooks shared with them.
+* **List Pages** `listPages`: Retrieve every OneNote page the signed-in user has access to, across all of their notebooks and sections.
+* **List Section Group Sections** `listSectionGroupSections`: Retrieve the sections inside a OneNote section group belonging to the signed-in user.
+* **List Section Groups** `listSectionGroups`: Retrieve every OneNote section group the signed-in user has access to, across all of their notebooks.
+* **List Section Pages** `listSectionPages`: Retrieve the pages held in a specific OneNote section belonging to the signed-in user.
+* **List Sections** `listSections`: Retrieve every OneNote section the signed-in user has access to, across all of their notebooks.
+* **Update Page Content** `updatePageContent`: Change the HTML content of a OneNote page by applying a list of patch commands. Each command names a target element, an action such as append, insert or replace, and the HTML to apply. Use Get Page Content with Include IDs to discover the target identifiers.
 
 </details>

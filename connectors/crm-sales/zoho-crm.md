@@ -5,7 +5,7 @@ hidden: true
 
 # Zoho CRM
 
-<img src="../../.gitbook/assets/connectors/zoho-crm.png" alt="Zoho CRM logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/zoho-crm.png" alt="Zoho CRM logo">
 
 Zoho CRM is a cloud-based CRM platform. Manage leads, contacts, accounts, deals, tasks, events, calls, and notes via the Zoho CRM REST API v8.
 
@@ -39,25 +39,23 @@ Add Zoho CRM from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 18 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Note | `deleteNote` | Delete a Note by ID. |
-| Delete Task | `deleteTask` | Delete a Task by ID. |
-| Get Record | `getRecord` | Retrieve a single record by id from any Zoho CRM module, such as Leads, Contacts, Accounts, Deals, Tasks or Notes. |
-| Get Users | `getUsers` | List org users. Pass type = AllUsers, ActiveUsers, DeactiveUsers, etc. |
-| List Accounts | `listAccounts` | List Account records with pagination. |
-| List Contacts | `listContacts` | List Contact records with pagination. |
-| List Deals | `listDeals` | List Deal records with pagination. |
-| List Leads | `listLeads` | List Lead records. Returns a page of records with pagination info. |
-| List Modules | `listModules` | List all modules available in the Zoho CRM org (metadata). |
-| List Notes | `listNotes` | List Note records with pagination. |
-| List Tasks | `listTasks` | List Task records with pagination. |
-| Search Records | `searchRecords` | Search records in a Zoho CRM module by criteria, email address, phone number or a free-text word. Exactly one of criteria, email, phone or word must be supplied. |
-| Update Account | `updateAccount` | Update an Account by ID. Only the fields you supply are sent, so this is a partial update. |
-| Update Contact | `updateContact` | Update a Contact by ID. Only the fields you supply are sent, so this is a partial update. |
-| Update Deal | `updateDeal` | Update a Deal by ID. Only the fields you supply are sent, so this is a partial update. |
-| Update Lead | `updateLead` | Update a Lead by ID. Only the fields you supply are sent, so this is a partial update. |
-| Update Note | `updateNote` | Update a Note by ID. Only the fields you supply are sent, so this is a partial update. |
-| Update Task | `updateTask` | Update a Task by ID. Only the fields you supply are sent, so this is a partial update. |
+* **Delete Note** `deleteNote`: Delete a Note by ID.
+* **Delete Task** `deleteTask`: Delete a Task by ID.
+* **Get Record** `getRecord`: Retrieve a single record by id from any Zoho CRM module, such as Leads, Contacts, Accounts, Deals, Tasks or Notes.
+* **Get Users** `getUsers`: List org users. Pass type = AllUsers, ActiveUsers, DeactiveUsers, etc.
+* **List Accounts** `listAccounts`: List Account records with pagination.
+* **List Contacts** `listContacts`: List Contact records with pagination.
+* **List Deals** `listDeals`: List Deal records with pagination.
+* **List Leads** `listLeads`: List Lead records. Returns a page of records with pagination info.
+* **List Modules** `listModules`: List all modules available in the Zoho CRM org (metadata).
+* **List Notes** `listNotes`: List Note records with pagination.
+* **List Tasks** `listTasks`: List Task records with pagination.
+* **Search Records** `searchRecords`: Search records in a Zoho CRM module by criteria, email address, phone number or a free-text word. Exactly one of criteria, email, phone or word must be supplied.
+* **Update Account** `updateAccount`: Update an Account by ID. Only the fields you supply are sent, so this is a partial update.
+* **Update Contact** `updateContact`: Update a Contact by ID. Only the fields you supply are sent, so this is a partial update.
+* **Update Deal** `updateDeal`: Update a Deal by ID. Only the fields you supply are sent, so this is a partial update.
+* **Update Lead** `updateLead`: Update a Lead by ID. Only the fields you supply are sent, so this is a partial update.
+* **Update Note** `updateNote`: Update a Note by ID. Only the fields you supply are sent, so this is a partial update.
+* **Update Task** `updateTask`: Update a Task by ID. Only the fields you supply are sent, so this is a partial update.
 
 </details>

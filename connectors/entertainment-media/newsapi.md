@@ -5,7 +5,7 @@ hidden: true
 
 # NewsAPI
 
-<img src="../../.gitbook/assets/connectors/newsapi.png" alt="NewsAPI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/newsapi.png" alt="NewsAPI logo">
 
 NewsAPI indexes articles and breaking headlines from over 150,000 news sources and blogs worldwide. It exposes full-text article search with date, language, source and domain filters, country and category top headlines, and a catalogue of available publishers. Requests authenticate with an API key sent in the X-Api-Key header.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Packagist
 
-<img src="../../.gitbook/assets/connectors/packagist.png" alt="Packagist logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/packagist.png" alt="Packagist logo">
 
 Packagist is the main PHP package repository used by Composer. Its free public API lists and searches packages, gets package details, Composer v2 metadata, download stats, dependents, popular packages, the metadata change feed, overall statistics and security advisories. No API key needed for these read endpoints.
 
@@ -39,8 +39,6 @@ Add Packagist from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Packages | `searchPackages` | Search packages by name/keyword, optionally narrowed by tag and package type, paginated (GET /search.json). Docs: https://packagist.org/apidoc |
+* **Search Packages** `searchPackages`: Search packages by name/keyword, optionally narrowed by tag and package type, paginated (GET /search.json). Docs: https://packagist.org/apidoc
 
 </details>

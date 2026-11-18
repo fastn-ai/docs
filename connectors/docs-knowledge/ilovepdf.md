@@ -5,7 +5,7 @@ hidden: true
 
 # iLovePDF
 
-<img src="../../.gitbook/assets/connectors/ilovepdf.png" alt="iLovePDF logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ilovepdf.png" alt="iLovePDF logo">
 
 iLovePDF / iLoveAPI REST API v1 — PDF and image processing (merge, split, compress, OCR, convert, watermark, protect, edit, …) and electronic signature requests. Two-stage auth: the stored project public key mints a short-lived (1 hour) JWT via POST /v1/auth; that JWT must be passed as the `jwt` input to every other action. Task work runs on a per-task worker host returned by Start, passed as the `server` input.
 
@@ -39,22 +39,20 @@ Add iLovePDF from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 14 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Account Info | `getAccountInfo` | Returns the project's remaining credit balance. Useful as a cheap connection health check. |
-| Get Auth Token | `getAuthToken` | STEP 0 of every iLovePDF call. Exchanges the stored project public key for a short-lived signed JWT (valid 3660 seconds / ~1 hour). Returns { token }. Pass that token as the `jwt` input of every other action in this connector — the engine cannot chain calls, so the caller must carry it. |
-| Get Receiver Info | `getReceiverInfo` | Returns one receiver (signer, validator or witness) of a signature request by that receiver's own token: name, email, phone, type, status and notes. |
-| Get Signature Status | `getSignatureStatus` | Returns the full status of one signature request by its requester token: status (draft/sent/completed/voided/expired), files, signers/validators/witnesses with their individual statuses, expiry and reminder settings. |
-| Get Task Status | `getTaskStatus` | Polls a single task on its worker host and returns its status (TaskWaiting, TaskProcessing, TaskSuccess, TaskSuccessWithWarnings, TaskError, TaskDeleted, TaskNotFound) plus file metadata once processed. |
-| Increase Signature Expiration Days | `increaseSignatureExpirationDays` | Extends a signature request's expiry by the given number of days so receivers get extra time. Returns the full signature object with the new expires date. |
-| List Signature Requests | `listSignatureRequests` | Lists the project's electronic signature requests, paginated. Returns [] when none exist. Page is 0-based. |
-| List Tasks | `listTasks` | Lists the project's tasks and the metadata of their uploaded and result files, 50 per page. Authenticates with the stored project secret key (server-side only). Returns the string "Sorry, no tasks to show." when there are none. |
-| Process Task | `processTask` | STEP 3 of the processing workflow. Runs the chosen tool over the uploaded files of a task. BILLED: consumes iLovePDF credits (varies by tool, file count and page count). Supply the files array exactly as returned by Upload ([{ server_filename, filename, password?, rotate? }]). Tool-specific options (e.g. compression_level, pages, rotate, watermark text, output_filename, packaged_filename, ignore_errors, custom_int, custom_string, webhook) are passed as additional top-level inputs and forwarded verbatim. |
-| Send Signature Reminder | `sendSignatureReminder` | Emails a reminder to every receiver who has not finished their action. SENDS REAL EMAIL. Only works when the signature status is sent and mode is multiple (API-created requests always are). Vendor limit: 2 calls per day per request. |
-| Start Task | `startTask` | STEP 1 of the processing workflow. Reserves a task for a given tool and returns the worker host (`server`) and the `task` id to use for Upload / Process / Download. Consumes no credits. Run Get Auth Token first and pass its token as `jwt`. |
-| Start Task In Region | `startTaskInRegion` | Same as Start Task but pins the task to a data-residency region (eu or us). Returns the regional worker host and task id. |
-| Upload File From URL | `uploadFileFromUrl` | STEP 2 of the processing workflow. Adds a file to an existing task by fetching it from a publicly reachable URL (`cloud_file`). Returns the `server_filename` to reference in Process. Consumes no credits. NOTE: the same route also accepts a local binary multipart upload (fields file / chunk / chunks); the fastn engine cannot emit binary multipart parts, so use a public URL instead. |
-| Void Signature Request | `voidSignatureRequest` | Voids a signature request that is currently in progress. Once voided it is no longer accessible to any receiver. Returns the full signature object with status voided. |
+* **Get Account Info** `getAccountInfo`: Returns the project's remaining credit balance. Useful as a cheap connection health check.
+* **Get Auth Token** `getAuthToken`: STEP 0 of every iLovePDF call. Exchanges the stored project public key for a short-lived signed JWT (valid 3660 seconds / ~1 hour). Returns { token }. Pass that token as the `jwt` input of every other action in this connector — the engine cannot chain calls, so the caller must carry it.
+* **Get Receiver Info** `getReceiverInfo`: Returns one receiver (signer, validator or witness) of a signature request by that receiver's own token: name, email, phone, type, status and notes.
+* **Get Signature Status** `getSignatureStatus`: Returns the full status of one signature request by its requester token: status (draft/sent/completed/voided/expired), files, signers/validators/witnesses with their individual statuses, expiry and reminder settings.
+* **Get Task Status** `getTaskStatus`: Polls a single task on its worker host and returns its status (TaskWaiting, TaskProcessing, TaskSuccess, TaskSuccessWithWarnings, TaskError, TaskDeleted, TaskNotFound) plus file metadata once processed.
+* **Increase Signature Expiration Days** `increaseSignatureExpirationDays`: Extends a signature request's expiry by the given number of days so receivers get extra time. Returns the full signature object with the new expires date.
+* **List Signature Requests** `listSignatureRequests`: Lists the project's electronic signature requests, paginated. Returns [] when none exist. Page is 0-based.
+* **List Tasks** `listTasks`: Lists the project's tasks and the metadata of their uploaded and result files, 50 per page. Authenticates with the stored project secret key (server-side only). Returns the string "Sorry, no tasks to show." when there are none.
+* **Process Task** `processTask`: STEP 3 of the processing workflow. Runs the chosen tool over the uploaded files of a task. BILLED: consumes iLovePDF credits (varies by tool, file count and page count). Supply the files array exactly as returned by Upload ([{ server_filename, filename, password?, rotate? }]). Tool-specific options (e.g. compression_level, pages, rotate, watermark text, output_filename, packaged_filename, ignore_errors, custom_int, custom_string, webhook) are passed as additional top-level inputs and forwarded verbatim.
+* **Send Signature Reminder** `sendSignatureReminder`: Emails a reminder to every receiver who has not finished their action. SENDS REAL EMAIL. Only works when the signature status is sent and mode is multiple (API-created requests always are). Vendor limit: 2 calls per day per request.
+* **Start Task** `startTask`: STEP 1 of the processing workflow. Reserves a task for a given tool and returns the worker host (`server`) and the `task` id to use for Upload / Process / Download. Consumes no credits. Run Get Auth Token first and pass its token as `jwt`.
+* **Start Task In Region** `startTaskInRegion`: Same as Start Task but pins the task to a data-residency region (eu or us). Returns the regional worker host and task id.
+* **Upload File From URL** `uploadFileFromUrl`: STEP 2 of the processing workflow. Adds a file to an existing task by fetching it from a publicly reachable URL (`cloud_file`). Returns the `server_filename` to reference in Process. Consumes no credits. NOTE: the same route also accepts a local binary multipart upload (fields file / chunk / chunks); the fastn engine cannot emit binary multipart parts, so use a public URL instead.
+* **Void Signature Request** `voidSignatureRequest`: Voids a signature request that is currently in progress. Once voided it is no longer accessible to any receiver. Returns the full signature object with status voided.
 
 </details>
 

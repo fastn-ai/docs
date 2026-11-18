@@ -5,7 +5,7 @@ hidden: true
 
 # AssemblyAI
 
-<img src="../../.gitbook/assets/connectors/assemblyai.png" alt="AssemblyAI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/assemblyai.png" alt="AssemblyAI logo">
 
 AssemblyAI speech-to-text and audio intelligence API (https://api.assemblyai.com/v2). Upload audio, create/get/list/delete transcripts, retrieve sentences, paragraphs, word-search, SRT/VTT subtitles, and redacted audio. Audio Intelligence: speaker labels, sentiment analysis, entity detection, content safety, PII redaction, auto highlights, topic detection. LeMUR LLM framework (task, summary, question-answer, action-items) over transcripts. Auth: raw API key in the Authorization header (no Bearer prefix).
 
@@ -39,8 +39,6 @@ Add AssemblyAI from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Word Search | `wordSearch` | Search a completed transcript for one or more keywords and get match counts plus timestamps. Free read. |
+* **Word Search** `wordSearch`: Search a completed transcript for one or more keywords and get match counts plus timestamps. Free read.
 
 </details>

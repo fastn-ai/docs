@@ -5,7 +5,7 @@ hidden: true
 
 # Wachete
 
-<img src="../../.gitbook/assets/connectors/wachete.png" alt="Wachete logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/wachete.png" alt="Wachete logo">
 
 Wachete is a website-change monitoring service. This connector covers the full Wachete third-party REST API: monitoring jobs (wachets), folders, collected page data, change notifications, sub-pages of crawl jobs and API token management.
 
@@ -39,13 +39,11 @@ Add Wachete from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 5 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Wachet Data History | `listWachetData` | Returns the history of values captured by a monitoring job, newest first, optionally limited to a time window. Set Return Diff to true to receive a Google-diff breakdown of each change instead of the plain captured value. |
-| List Wachet Pages | `listWachetPages` | Lists the individual pages discovered by a Portal (crawling) monitoring job, each with its own latest captured content. A SinglePage wachet has no sub-pages and returns an empty list. |
-| Log In With Email And Password | `loginWithPassword` | Exchanges a Wachete account email and password for a bearer token. Prefer Get API Token, which uses a revocable API key instead of account credentials. |
-| Move Wachets And Folders | `moveToFolder` | Moves the given monitoring jobs (wachets) and folders into a target folder. Supply at least one wachet id or folder id; leave Target Folder ID empty to move the items to the root. |
-| Search Wachets | `searchWachets` | Searches every monitoring job on the account and returns those whose name, URL or captured content matches the query. Matching is on word prefixes, so a partial term such as 'price' matches while a full hyphenated name may not. |
+* **List Wachet Data History** `listWachetData`: Returns the history of values captured by a monitoring job, newest first, optionally limited to a time window. Set Return Diff to true to receive a Google-diff breakdown of each change instead of the plain captured value.
+* **List Wachet Pages** `listWachetPages`: Lists the individual pages discovered by a Portal (crawling) monitoring job, each with its own latest captured content. A SinglePage wachet has no sub-pages and returns an empty list.
+* **Log In With Email And Password** `loginWithPassword`: Exchanges a Wachete account email and password for a bearer token. Prefer Get API Token, which uses a revocable API key instead of account credentials.
+* **Move Wachets And Folders** `moveToFolder`: Moves the given monitoring jobs (wachets) and folders into a target folder. Supply at least one wachet id or folder id; leave Target Folder ID empty to move the items to the root.
+* **Search Wachets** `searchWachets`: Searches every monitoring job on the account and returns those whose name, URL or captured content matches the query. Matching is on word prefixes, so a partial term such as 'price' matches while a full hyphenated name may not.
 
 </details>
 

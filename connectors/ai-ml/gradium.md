@@ -5,7 +5,7 @@ hidden: true
 
 # Gradium
 
-<img src="../../.gitbook/assets/connectors/gradium.png" alt="Gradium logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/gradium.png" alt="Gradium logo">
 
 Gradium is a low-latency speech API for text-to-speech, speech-to-text, voice design and voice cloning. This connector covers the Gradium REST API: text-to-speech synthesis, voice library and custom voices, voice design candidates, pronunciation dictionaries, short-lived WebSocket tokens and credit balance.
 
@@ -39,13 +39,11 @@ Add Gradium from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Voice | `getVoice` | Retrieves the metadata of a single Gradium voice (catalog or custom) by its voice UID, including name, description, language and tags. |
-| List Pronunciation Dictionaries | `listPronunciationDictionaries` | Lists the pronunciation dictionaries of the authenticated organization, optionally filtered by language, with limit and offset pagination. Returns the dictionaries with their rewrite rules and the total count. |
-| List Voice Candidates | `listVoiceCandidates` | Lists the voice design candidates of the authenticated organization, newest first, or checks whether a single candidate is ready by passing its embedding_id. An id the organization does not hold returns an empty list. |
-| List Voices | `listVoices` | Lists the voices available to the authenticated organization. By default only your custom voices are returned; set include_catalog to true to also include the Gradium voice library. Returns each voice's uid (the voice_id used for synthesis), name, language and tags. |
-| Update Pronunciation Dictionary | `updatePronunciationDictionary` | Updates a pronunciation dictionary's name, description, language or rewrite rules by dictionary UID. Only the fields you pass are changed; when rules are passed they replace the existing rule set. |
-| Update Voice | `updateVoice` | Updates the metadata of an existing custom Gradium voice, such as its name, description, language, sample start offset, tags or rank. Only the fields you pass are changed. Catalog voices cannot be updated. |
+* **Get Voice** `getVoice`: Retrieves the metadata of a single Gradium voice (catalog or custom) by its voice UID, including name, description, language and tags.
+* **List Pronunciation Dictionaries** `listPronunciationDictionaries`: Lists the pronunciation dictionaries of the authenticated organization, optionally filtered by language, with limit and offset pagination. Returns the dictionaries with their rewrite rules and the total count.
+* **List Voice Candidates** `listVoiceCandidates`: Lists the voice design candidates of the authenticated organization, newest first, or checks whether a single candidate is ready by passing its embedding_id. An id the organization does not hold returns an empty list.
+* **List Voices** `listVoices`: Lists the voices available to the authenticated organization. By default only your custom voices are returned; set include_catalog to true to also include the Gradium voice library. Returns each voice's uid (the voice_id used for synthesis), name, language and tags.
+* **Update Pronunciation Dictionary** `updatePronunciationDictionary`: Updates a pronunciation dictionary's name, description, language or rewrite rules by dictionary UID. Only the fields you pass are changed; when rules are passed they replace the existing rule set.
+* **Update Voice** `updateVoice`: Updates the metadata of an existing custom Gradium voice, such as its name, description, language, sample start offset, tags or rank. Only the fields you pass are changed. Catalog voices cannot be updated.
 
 </details>

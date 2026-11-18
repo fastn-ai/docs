@@ -5,7 +5,7 @@ hidden: true
 
 # Airtable
 
-<img src="../../.gitbook/assets/connectors/airtable.png" alt="Airtable logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/airtable.png" alt="Airtable logo">
 
 Airtable connector — manage bases, tables, fields, records and webhooks via the Airtable Web API (https://api.airtable.com/v0). Connect with OAuth 2.0 (authorization code + PKCE), or with a Personal Access Token (Bearer).
 
@@ -39,24 +39,22 @@ Add Airtable from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 16 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Record | `getRecord` | Retrieve a single record by ID. GET /{baseId}/{tableIdOrName}/{recordId}. |
-| List Bases | `listBases` | List all bases the token can access. GET /meta/bases. Supports pagination via offset. |
-| List Record Comments | `listComments` | List comments on a record. GET /{baseId}/{tableIdOrName}/{recordId}/comments. Requires data.recordComments:read scope. Supports pageSize (max 100) and offset pagination. |
-| List Records | `listRecords` | List records in a table. GET /{baseId}/{tableIdOrName}. Supports filtering, sorting, pagination, field selection, and views. |
-| List Webhook Payloads | `listWebhookPayloads` | Retrieve change payloads for a webhook since a cursor. GET /bases/{baseId}/webhooks/{webhookId}/payloads. |
-| List Webhooks | `listWebhooks` | List webhooks registered on a base. GET /bases/{baseId}/webhooks. |
-| Refresh Webhook | `refreshWebhook` | Extend a webhook's expiration time. POST /bases/{baseId}/webhooks/{webhookId}/refresh. |
-| Toggle Webhook Notifications | `toggleWebhookNotifications` | Enable or disable ping notifications for a webhook. POST /bases/{baseId}/webhooks/{webhookId}/enableNotifications. |
-| Update Field | `updateField` | Update a field's name and/or description. PATCH /meta/bases/{baseId}/tables/{tableId}/fields/{fieldId}. Requires schema.bases:write scope. |
-| Update Record Comment | `updateComment` | Update the text of an existing record comment. PATCH /{baseId}/{tableIdOrName}/{recordId}/comments/{rowCommentId}. Requires data.recordComments:write scope; only the comment author can update it. |
-| Update Records (PATCH) | `updateRecordsPatch` | Partial update of one or more records (up to 10). PATCH /{baseId}/{tableIdOrName}. Only specified cell values are updated; others are left unchanged. |
-| Update Records (PUT) | `updateRecordsPut` | Destructive update of one or more records (up to 10). PUT /{baseId}/{tableIdOrName}. Any fields not included are cleared. |
-| Update Single Record | `updateSingleRecord` | Partial update of a single record by ID. PATCH /{baseId}/{tableIdOrName}/{recordId}. |
-| Update Table | `updateTable` | Update a table's name and/or description. PATCH /meta/bases/{baseId}/tables/{tableId}. Requires schema.bases:write scope. |
-| Upsert Records (Bulk) | `upsertRecords` | Bulk create-or-update (upsert). PATCH /{baseId}/{tableIdOrName} with performUpsert.fieldsToMergeOn. Records matching on the merge fields are updated; others are created. |
-| Who Am I | `whoami` | Get the current user's ID, email, and granted OAuth scopes for the authenticated token. GET /meta/whoami. No scopes required; email requires user.email:read; scopes array only present for OAuth tokens. |
+* **Get Record** `getRecord`: Retrieve a single record by ID. GET /{baseId}/{tableIdOrName}/{recordId}.
+* **List Bases** `listBases`: List all bases the token can access. GET /meta/bases. Supports pagination via offset.
+* **List Record Comments** `listComments`: List comments on a record. GET /{baseId}/{tableIdOrName}/{recordId}/comments. Requires data.recordComments:read scope. Supports pageSize (max 100) and offset pagination.
+* **List Records** `listRecords`: List records in a table. GET /{baseId}/{tableIdOrName}. Supports filtering, sorting, pagination, field selection, and views.
+* **List Webhook Payloads** `listWebhookPayloads`: Retrieve change payloads for a webhook since a cursor. GET /bases/{baseId}/webhooks/{webhookId}/payloads.
+* **List Webhooks** `listWebhooks`: List webhooks registered on a base. GET /bases/{baseId}/webhooks.
+* **Refresh Webhook** `refreshWebhook`: Extend a webhook's expiration time. POST /bases/{baseId}/webhooks/{webhookId}/refresh.
+* **Toggle Webhook Notifications** `toggleWebhookNotifications`: Enable or disable ping notifications for a webhook. POST /bases/{baseId}/webhooks/{webhookId}/enableNotifications.
+* **Update Field** `updateField`: Update a field's name and/or description. PATCH /meta/bases/{baseId}/tables/{tableId}/fields/{fieldId}. Requires schema.bases:write scope.
+* **Update Record Comment** `updateComment`: Update the text of an existing record comment. PATCH /{baseId}/{tableIdOrName}/{recordId}/comments/{rowCommentId}. Requires data.recordComments:write scope; only the comment author can update it.
+* **Update Records (PATCH)** `updateRecordsPatch`: Partial update of one or more records (up to 10). PATCH /{baseId}/{tableIdOrName}. Only specified cell values are updated; others are left unchanged.
+* **Update Records (PUT)** `updateRecordsPut`: Destructive update of one or more records (up to 10). PUT /{baseId}/{tableIdOrName}. Any fields not included are cleared.
+* **Update Single Record** `updateSingleRecord`: Partial update of a single record by ID. PATCH /{baseId}/{tableIdOrName}/{recordId}.
+* **Update Table** `updateTable`: Update a table's name and/or description. PATCH /meta/bases/{baseId}/tables/{tableId}. Requires schema.bases:write scope.
+* **Upsert Records (Bulk)** `upsertRecords`: Bulk create-or-update (upsert). PATCH /{baseId}/{tableIdOrName} with performUpsert.fieldsToMergeOn. Records matching on the merge fields are updated; others are created.
+* **Who Am I** `whoami`: Get the current user's ID, email, and granted OAuth scopes for the authenticated token. GET /meta/whoami. No scopes required; email requires user.email:read; scopes array only present for OAuth tokens.
 
 </details>
 

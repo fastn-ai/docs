@@ -5,7 +5,7 @@ hidden: true
 
 # ApiFlash
 
-<img src="../../.gitbook/assets/connectors/apiflash.png" alt="ApiFlash logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/apiflash.png" alt="ApiFlash logo">
 
 ApiFlash is a Chrome-based screenshot API that renders any web page to a JPEG, PNG or WebP image. This connector covers the full documented surface: the GET and form-POST forms of the screenshot endpoint with every documented capture parameter (viewport and full-page capture, element and crop targeting, load-wait strategies, ad, tracker and cookie-banner blocking, geolocation, time zone, header and cookie injection, HTML and text extraction, caching, and direct upload to S3-compatible storage), plus the quota endpoint.
 

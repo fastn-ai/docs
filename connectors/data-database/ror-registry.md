@@ -5,7 +5,7 @@ hidden: true
 
 # ROR (Research Organization Registry)
 
-<img src="../../.gitbook/assets/connectors/ror-registry.png" alt="ROR (Research Organization Registry) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ror-registry.png" alt="ROR (Research Organization Registry) logo">
 
 ROR (Research Organization Registry) is the open global registry of persistent identifiers for 120,000+ research organizations - universities, funders, hospitals, labs and companies. Search and filter organizations, match free-text affiliation strings, and get full records with names, types, locations, external ids (GRID, ISNI, Wikidata, FundRef) and relationships. No API key needed.
 

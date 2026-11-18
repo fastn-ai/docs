@@ -5,7 +5,7 @@ hidden: true
 
 # AlgoDocs
 
-<img src="../../.gitbook/assets/connectors/algodocs.png" alt="AlgoDocs logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/algodocs.png" alt="AlgoDocs logo">
 
 AlgoDocs document data extraction API. Upload invoices, receipts, bank statements, purchase orders and other PDFs or images to a trained extractor, then read back the structured fields plus JSON, Excel, XML, TXT and CSV outputs. Base URL https://api.algodocs.com/v1.
 
@@ -39,8 +39,6 @@ Add AlgoDocs from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Upload Local Document File | `uploadLocalDocument` | Uploads a document to an AlgoDocs extractor as a multipart file part. Returns the new document id, file size, MD5 checksum and upload timestamp; extraction is asynchronous, so poll Get Extracted Data By Document afterwards. LIMITATION: the fastn engine can only carry text multipart parts, so this route works for text-safe payloads (for example an ASCII-only PDF) but not for raw binary PDF, PNG or JPEG bytes. For binary files use Upload Document As Base64 or Upload Document From URL instead. |
+* **Upload Local Document File** `uploadLocalDocument`: Uploads a document to an AlgoDocs extractor as a multipart file part. Returns the new document id, file size, MD5 checksum and upload timestamp; extraction is asynchronous, so poll Get Extracted Data By Document afterwards. LIMITATION: the fastn engine can only carry text multipart parts, so this route works for text-safe payloads (for example an ASCII-only PDF) but not for raw binary PDF, PNG or JPEG bytes. For binary files use Upload Document As Base64 or Upload Document From URL instead.
 
 </details>

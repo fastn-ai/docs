@@ -5,7 +5,7 @@ hidden: true
 
 # endoflife.date
 
-<img src="../../.gitbook/assets/connectors/endoflife-date.png" alt="endoflife.date logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/endoflife-date.png" alt="endoflife.date logo">
 
 endoflife.date tracks end-of-life dates and support lifecycles for 400+ products: languages, frameworks, databases, operating systems, cloud services and devices. List products, categories, tags and identifiers (purl, CPE), and get every release of a product with its EOL, LTS and latest version. No API key needed.
 
@@ -39,9 +39,7 @@ Add endoflife.date from **Build → Integrations → Connectors** and connect an
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Products With Full Details | `listProductsFull` | List all products (full). List all the products referenced on endoflife.date, with all their details. The full products data is returned by this endpoint, making the result a dump of nearly all endoflife.date data. Preferably, use the /products endpoint to get a summary of the products and reduce the amount of data transferred. Returns about 3 MB. Docs: https://endoflife.date/docs/api/v1/ (GET /products/full) |
-| List Tags | `listTags` | List all tags. List all endoflife.date tags. Docs: https://endoflife.date/docs/api/v1/ (GET /tags) |
+* **List Products With Full Details** `listProductsFull`: List all products (full). List all the products referenced on endoflife.date, with all their details. The full products data is returned by this endpoint, making the result a dump of nearly all endoflife.date data. Preferably, use the /products endpoint to get a summary of the products and reduce the amount of data transferred. Returns about 3 MB. Docs: https://endoflife.date/docs/api/v1/ (GET /products/full)
+* **List Tags** `listTags`: List all tags. List all endoflife.date tags. Docs: https://endoflife.date/docs/api/v1/ (GET /tags)
 
 </details>

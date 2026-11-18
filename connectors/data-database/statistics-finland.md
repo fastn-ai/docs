@@ -5,7 +5,7 @@ hidden: true
 
 # Statistics Finland (StatFin)
 
-<img src="../../.gitbook/assets/connectors/statistics-finland.png" alt="Statistics Finland (StatFin) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/statistics-finland.png" alt="Statistics Finland (StatFin) logo">
 
 Statistics Finland (Tilastokeskus) publishes Finland's official statistics through its free PxWeb API: browse and search the StatFin and other databases, read table variables and value codes, and query any table for a selection of areas, years and measures as JSON-stat, CSV or PX. No API key needed.
 

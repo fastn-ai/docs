@@ -5,7 +5,7 @@ hidden: true
 
 # Pointagram
 
-<img src="../../.gitbook/assets/connectors/pointagram.png" alt="Pointagram logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pointagram.png" alt="Pointagram logo">
 
 Pointagram sales gamification platform. Manage players, teams, score series and point scoring, read competitions and leaderboards, and operate the reward store (items, settings, purchases) through the Pointagram Custom API 2.0.
 
@@ -39,25 +39,23 @@ Add Pointagram from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 18 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Score Series | `getScoreSeries` | Fetches one Pointagram score series by id and returns its name, singular and plural point names and icon. An unknown id returns HTTP 200 with message 'Scoreseries not found' and data null. |
-| Get Team | `getTeam` | Fetches a single Pointagram team by id and returns its id, name, icon and icon URL. An unknown id returns HTTP 200 with message 'Team not found' and data false. |
-| List Competition Players | `listCompetitionPlayers` | Fetches the leaderboard of a Pointagram competition: every participating player with their profile id, name, individual target, current score, rank and whether the rank is locked. |
-| List Competitions | `listCompetitions` | Fetches competitions in Pointagram, optionally narrowed to one player, one competition id or one access key. Returns each competition's id, name, start and end dates, target settings, winner rule, grouping mode and access key. |
-| List Players | `listPlayers` | Fetches players in the Pointagram organization, with optional search and pagination. Returns an array of players with id, name, email address, external id and avatar, plus a pagination block whose next_offset feeds the offset input of the next page. |
-| List Reward Store Items | `listRewardStoreItems` | Fetches all items available in the Pointagram reward store for a given profile, optionally restricted to one store. Returns each item's id, name, description, price, currency, stock, publish phase, availability dates, tags and image URL. |
-| List Reward Store Purchases | `listRewardStorePurchases` | Fetches orders and purchases from the Pointagram reward store. Without viewmember it returns only the calling profile's own purchases; pass a group member id to see that member's orders, or 'all' for every purchase. Returns each order's id, item, quantity, buyer, delivery status and dates. |
-| List Score Series | `listScoreSeries` | Fetches all score series defined in the Pointagram organization. A score series is a point account such as Sales, Calls or Coins. Returns each series' id, name, singular and plural point names and icon. |
-| List Score Series History | `listScoreSeriesHistory` | Fetches the scoring history of a Pointagram score series, with optional filters on tags, point types, teams, players, time window and revoked transactions. Returns each transaction's id, player, score, comment and timestamp plus a pagination block. |
-| List Score Series Point Types | `listScoreSeriesPointTypes` | Fetches the point types configured for a Pointagram score series. A point type is a named, fixed-value scoring rule such as 'Dollar' or 'Demo booked' that can be used instead of a raw points value when adding a score. Returns each point type's id and name. |
-| List Team Players | `listTeamPlayers` | Fetches the players that belong to a Pointagram team. Returns each member's profile_id and name. An unknown team id returns HTTP 200 with status Error and message 'Team not found'. |
-| List Teams | `listTeams` | Fetches all teams in the Pointagram organization. Returns each team's id, name, icon file name and full icon URL. |
-| Remove Player From Team | `removePlayerFromTeam` | Removes a player from a Pointagram team. The player itself is not deleted, only their team membership. Returns status Ok with message 'Player removed from team'. Responds 409 with 'Player not found' when the player is not a member of that team. |
-| Revoke Reward Store Purchase | `revokeRewardStorePurchase` | Revokes a purchase or order in the Pointagram reward store, reversing it and returning the spent currency to the player. Requires profileid as a query parameter. |
-| Test Credentials | `testCredentials` | Verifies that the configured Pointagram API key and API user are valid. Returns the id and name of the Pointagram organization the credentials belong to. Use this as a connection health check. |
-| Update Player | `updatePlayer` | Updates an existing Pointagram player identified by profile id. Supply only the attributes you want to change. Returns the profile_id of the updated player. |
-| Update Reward Store Purchase Status | `updateRewardStorePurchaseStatus` | Changes the delivery status of a Pointagram reward store order to PURCHASED, PROCESSED or DELIVERED. The calling profile must have admin rights in Pointagram. |
-| Update Team | `updateTeam` | Updates an existing Pointagram team identified by team id. Supply the attributes you want to change. Returns the team_id of the updated team. |
+* **Get Score Series** `getScoreSeries`: Fetches one Pointagram score series by id and returns its name, singular and plural point names and icon. An unknown id returns HTTP 200 with message 'Scoreseries not found' and data null.
+* **Get Team** `getTeam`: Fetches a single Pointagram team by id and returns its id, name, icon and icon URL. An unknown id returns HTTP 200 with message 'Team not found' and data false.
+* **List Competition Players** `listCompetitionPlayers`: Fetches the leaderboard of a Pointagram competition: every participating player with their profile id, name, individual target, current score, rank and whether the rank is locked.
+* **List Competitions** `listCompetitions`: Fetches competitions in Pointagram, optionally narrowed to one player, one competition id or one access key. Returns each competition's id, name, start and end dates, target settings, winner rule, grouping mode and access key.
+* **List Players** `listPlayers`: Fetches players in the Pointagram organization, with optional search and pagination. Returns an array of players with id, name, email address, external id and avatar, plus a pagination block whose next_offset feeds the offset input of the next page.
+* **List Reward Store Items** `listRewardStoreItems`: Fetches all items available in the Pointagram reward store for a given profile, optionally restricted to one store. Returns each item's id, name, description, price, currency, stock, publish phase, availability dates, tags and image URL.
+* **List Reward Store Purchases** `listRewardStorePurchases`: Fetches orders and purchases from the Pointagram reward store. Without viewmember it returns only the calling profile's own purchases; pass a group member id to see that member's orders, or 'all' for every purchase. Returns each order's id, item, quantity, buyer, delivery status and dates.
+* **List Score Series** `listScoreSeries`: Fetches all score series defined in the Pointagram organization. A score series is a point account such as Sales, Calls or Coins. Returns each series' id, name, singular and plural point names and icon.
+* **List Score Series History** `listScoreSeriesHistory`: Fetches the scoring history of a Pointagram score series, with optional filters on tags, point types, teams, players, time window and revoked transactions. Returns each transaction's id, player, score, comment and timestamp plus a pagination block.
+* **List Score Series Point Types** `listScoreSeriesPointTypes`: Fetches the point types configured for a Pointagram score series. A point type is a named, fixed-value scoring rule such as 'Dollar' or 'Demo booked' that can be used instead of a raw points value when adding a score. Returns each point type's id and name.
+* **List Team Players** `listTeamPlayers`: Fetches the players that belong to a Pointagram team. Returns each member's profile_id and name. An unknown team id returns HTTP 200 with status Error and message 'Team not found'.
+* **List Teams** `listTeams`: Fetches all teams in the Pointagram organization. Returns each team's id, name, icon file name and full icon URL.
+* **Remove Player From Team** `removePlayerFromTeam`: Removes a player from a Pointagram team. The player itself is not deleted, only their team membership. Returns status Ok with message 'Player removed from team'. Responds 409 with 'Player not found' when the player is not a member of that team.
+* **Revoke Reward Store Purchase** `revokeRewardStorePurchase`: Revokes a purchase or order in the Pointagram reward store, reversing it and returning the spent currency to the player. Requires profileid as a query parameter.
+* **Test Credentials** `testCredentials`: Verifies that the configured Pointagram API key and API user are valid. Returns the id and name of the Pointagram organization the credentials belong to. Use this as a connection health check.
+* **Update Player** `updatePlayer`: Updates an existing Pointagram player identified by profile id. Supply only the attributes you want to change. Returns the profile_id of the updated player.
+* **Update Reward Store Purchase Status** `updateRewardStorePurchaseStatus`: Changes the delivery status of a Pointagram reward store order to PURCHASED, PROCESSED or DELIVERED. The calling profile must have admin rights in Pointagram.
+* **Update Team** `updateTeam`: Updates an existing Pointagram team identified by team id. Supply the attributes you want to change. Returns the team_id of the updated team.
 
 </details>

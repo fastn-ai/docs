@@ -5,7 +5,7 @@ hidden: true
 
 # Data USA
 
-<img src="../../.gitbook/assets/connectors/data-usa.png" alt="Data USA logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/data-usa.png" alt="Data USA logo">
 
 Data USA (by Datawheel and Deloitte) publishes US public data - census, economy, education, health and more - through its Tesseract API. List and inspect data cubes, list level members, and query any cube with drilldowns, measures, member and measure filters, ranking, sorting, top-K and time selection. Free with no API key.
 

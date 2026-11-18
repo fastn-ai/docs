@@ -5,7 +5,7 @@ hidden: true
 
 # NeetoForm
 
-<img src="../../.gitbook/assets/connectors/neetoform.png" alt="NeetoForm logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/neetoform.png" alt="NeetoForm logo">
 
 NeetoForm is a form builder from the neeto suite. This connector wraps the NeetoForm external REST API (v2, plus the deprecated v1) so you can list and create forms, read form submissions with their answers and submitter user-agent details, and manage workspace team members. Authentication is a workspace API key sent in the X-Api-Key header against your workspace subdomain host.
 
@@ -39,13 +39,11 @@ Add NeetoForm from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 5 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Team Members (v1 Legacy) | `listTeamMembersV1` | List the active workspace team members using NeetoForm's legacy v1 API, which spells the collection team_members with an underscore. NeetoForm marks v1 deprecated in its own docs - prefer List Team Members (v2), which returns the identical payload. |
-| Remove Team Member | `removeTeamMember` | Deactivate and remove one NeetoForm workspace team member by id (v2 API). Their forms and submissions are left intact. Returns 204 with no body on success, so confirm with Get Team Member, which then answers 404 {"error":"User does not exist."}. DANGER: NeetoForm refuses 422 only for the LAST Admin of the workspace; any other member, including the account whose API key you are using, can be removed and cannot be restored through the API. |
-| Remove Team Member (v1 Legacy) | `removeTeamMemberV1` | Deactivate and remove one workspace team member by id using NeetoForm's legacy v1 API. Unlike the v2 route it answers HTTP 200 with {"message":"Team member has been removed"}. This per-id route is live but absent from NeetoForm's published v1 spec, which documents a collection-level DELETE by email that does not actually exist. DANGER: only the LAST Admin is protected, so any other member - including the account owning your API key - can be removed and cannot be restored through the API. Note: the v1 docs describe DELETE /team_members with an emails body, but that route returns 404 live; the per-id route is what the API serves. |
-| Update Team Member | `updateTeamMember` | Update one NeetoForm workspace team member by id (v2 API). Only the fields you pass are changed. Returns the full updated team member, so the response itself confirms the new values. Changing organization_role changes what that person may do in the workspace, so avoid pointing it at the workspace's only Admin. |
-| Update Team Member (v1 Legacy) | `updateTeamMemberV1` | Update one workspace team member by id using NeetoForm's legacy v1 API. Only the fields you pass are changed and the full updated member is returned. NeetoForm marks v1 deprecated in its own docs - prefer Update Team Member (v2). Note that v1 has no get-by-id route, so read the member back with List Team Members (v1 Legacy) or Get Team Member (v2). |
+* **List Team Members (v1 Legacy)** `listTeamMembersV1`: List the active workspace team members using NeetoForm's legacy v1 API, which spells the collection team_members with an underscore. NeetoForm marks v1 deprecated in its own docs - prefer List Team Members (v2), which returns the identical payload.
+* **Remove Team Member** `removeTeamMember`: Deactivate and remove one NeetoForm workspace team member by id (v2 API). Their forms and submissions are left intact. Returns 204 with no body on success, so confirm with Get Team Member, which then answers 404 {"error":"User does not exist."}. DANGER: NeetoForm refuses 422 only for the LAST Admin of the workspace; any other member, including the account whose API key you are using, can be removed and cannot be restored through the API.
+* **Remove Team Member (v1 Legacy)** `removeTeamMemberV1`: Deactivate and remove one workspace team member by id using NeetoForm's legacy v1 API. Unlike the v2 route it answers HTTP 200 with {"message":"Team member has been removed"}. This per-id route is live but absent from NeetoForm's published v1 spec, which documents a collection-level DELETE by email that does not actually exist. DANGER: only the LAST Admin is protected, so any other member - including the account owning your API key - can be removed and cannot be restored through the API. Note: the v1 docs describe DELETE /team_members with an emails body, but that route returns 404 live; the per-id route is what the API serves.
+* **Update Team Member** `updateTeamMember`: Update one NeetoForm workspace team member by id (v2 API). Only the fields you pass are changed. Returns the full updated team member, so the response itself confirms the new values. Changing organization_role changes what that person may do in the workspace, so avoid pointing it at the workspace's only Admin.
+* **Update Team Member (v1 Legacy)** `updateTeamMemberV1`: Update one workspace team member by id using NeetoForm's legacy v1 API. Only the fields you pass are changed and the full updated member is returned. NeetoForm marks v1 deprecated in its own docs - prefer Update Team Member (v2). Note that v1 has no get-by-id route, so read the member back with List Team Members (v1 Legacy) or Get Team Member (v2).
 
 </details>
 

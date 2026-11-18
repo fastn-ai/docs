@@ -5,7 +5,7 @@ hidden: true
 
 # Pdfless
 
-<img src="../../.gitbook/assets/connectors/pdfless.png" alt="Pdfless logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pdfless.png" alt="Pdfless logo">
 
 Pdfless generates PDF documents from HTML/CSS templates designed in the Pdfless web app, merged with JSON payload data. This connector wraps the public Pdfless REST API v1 (https://api.pdfless.com/v1): list the workspace's document templates, read the workspace's PDF generation quota, and generate a PDF from a template with optional encryption and permission settings.
 

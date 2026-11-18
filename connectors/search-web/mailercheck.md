@@ -5,7 +5,7 @@ hidden: true
 
 # MailerCheck
 
-<img src="../../.gitbook/assets/connectors/mailercheck.png" alt="MailerCheck logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/mailercheck.png" alt="MailerCheck logo">
 
 MailerCheck email verification API. Verify single emails in real time or asynchronously, manage verification lists, run list verification, read results, and read account/credit/user information. Auth is a Bearer API token created in the MailerCheck UI (profile &gt; API &gt; Create token).
 
@@ -39,11 +39,9 @@ Add MailerCheck from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get User | `getUser` | Return the MailerCheck user that created the API token. |
-| List Lists | `listLists` | Return all email verification lists belonging to the account, paginated. Spends no credits. |
-| Upload List | `uploadList` | Create an email verification list from an uploaded CSV or TXT file, sent as multipart/form-data under the field name 'file'. Pass the file's text content in fileContent and its name in filename. Uploading spends no credits; verifying the resulting list does. |
-| Verify List | `verifyList` | Start verification of every email in the given list. Returns HTTP 202 with the list object. SPENDS ONE VERIFICATION CREDIT PER EMAIL in the list; returns HTTP 402 with {"error":"Not enough credits. Credits required: N"} when the balance is too low. |
+* **Get User** `getUser`: Return the MailerCheck user that created the API token.
+* **List Lists** `listLists`: Return all email verification lists belonging to the account, paginated. Spends no credits.
+* **Upload List** `uploadList`: Create an email verification list from an uploaded CSV or TXT file, sent as multipart/form-data under the field name 'file'. Pass the file's text content in fileContent and its name in filename. Uploading spends no credits; verifying the resulting list does.
+* **Verify List** `verifyList`: Start verification of every email in the given list. Returns HTTP 202 with the list object. SPENDS ONE VERIFICATION CREDIT PER EMAIL in the list; returns HTTP 402 with {"error":"Not enough credits. Credits required: N"} when the balance is too low.
 
 </details>

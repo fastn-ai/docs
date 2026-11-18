@@ -5,7 +5,7 @@ hidden: true
 
 # Uploadcare
 
-<img src="../../.gitbook/assets/connectors/uploadcare.png" alt="Uploadcare logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/uploadcare.png" alt="Uploadcare logo">
 
 Uploadcare file uploading, storage, CDN delivery, and processing platform. Manage files, groups, file metadata, webhooks, document and video conversion, and AI add-ons (AWS Rekognition, virus scanning, background removal) via the Uploadcare REST API v0.7, plus uploading via the Upload API.
 
@@ -39,34 +39,32 @@ Add Uploadcare from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 26 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Execute AWS Rekognition Labels | `executeAwsRekognitionLabels` | Run the AWS Rekognition object/label detection add-on on an image file. Returns a request ID to poll for results. |
-| Execute AWS Rekognition Moderation | `executeAwsRekognitionModeration` | Run the AWS Rekognition unsafe-content moderation add-on on an image file. Returns a request ID to poll for results. |
-| Execute Remove Background | `executeRemoveBg` | Run the remove.bg background-removal add-on on an image file. Returns a request ID to poll for the resulting file. |
-| Execute Virus Scan | `executeVirusScan` | Run the ClamAV virus scan add-on on a file. Optionally purge the file automatically if it is infected. Returns a request ID to poll for results. |
-| Get AWS Rekognition Labels Status | `getAwsRekognitionLabelsStatus` | Check the status and retrieve results of an AWS Rekognition label detection add-on execution by its request ID. |
-| Get AWS Rekognition Moderation Status | `getAwsRekognitionModerationStatus` | Check the status and retrieve results of an AWS Rekognition moderation add-on execution by its request ID. |
-| Get Document Conversion Status | `getDocumentConversionStatus` | Check the status of a document conversion job using the token returned by Convert Document. |
-| Get File | `getFile` | Retrieve detailed information about a single file by its UUID, optionally including add-on application data. |
-| Get File Metadata | `getFileMetadata` | Retrieve all custom metadata key-value pairs attached to a file. |
-| Get File Metadata Key | `getFileMetadataKey` | Retrieve the value of a single custom metadata key for a file. |
-| Get Group | `getGroup` | Retrieve information about a single file group by its ID (in the form uuid~filesCount). |
-| Get Project | `getProject` | Retrieve information about the current project, including its name, public key, collaborators, and auto-store setting. |
-| Get Remove Background Status | `getRemoveBgStatus` | Check the status and retrieve the result of a remove.bg background-removal add-on execution by its request ID. When done, the result includes the UUID of the processed file. |
-| Get Upload File Info | `uploadFileInfo` | Retrieve information about an uploaded file directly from the Upload API by its file ID (UUID). |
-| Get Upload From URL Status | `getUploadFromUrlStatus` | Check the status of an asynchronous upload-from-URL job using its token. When complete, returns the uploaded file's UUID and metadata. |
-| Get Video Conversion Status | `getVideoConversionStatus` | Check the status of a video conversion job using the token returned by Convert Video. |
-| Get Virus Scan Status | `getVirusScanStatus` | Check the status and retrieve results of a ClamAV virus scan add-on execution by its request ID. |
-| List Files | `listFiles` | List files in the Uploadcare project with optional filtering by stored/removed status, ordering, and pagination. |
-| List Groups | `listGroups` | List file groups in the project, with optional ordering and pagination. |
-| List Webhooks | `listWebhooks` | List all webhook subscriptions configured for the project. |
-| Store File | `storeFile` | Store a single file permanently by its UUID so it is not deleted after the temporary storage period. |
-| Store Files Batch | `storeFilesBatch` | Store multiple files permanently in one request. Provide a JSON array of file UUIDs (up to 100). |
-| Unsubscribe Webhook | `unsubscribeWebhook` | Remove a webhook subscription identified by its target URL and event. |
-| Update File Metadata Key | `updateFileMetadataKey` | Set or update the value of a single custom metadata key on a file. Key up to 64 characters; value up to 512 characters. |
-| Update Webhook | `updateWebhook` | Update an existing webhook subscription by its ID. Only the provided fields are changed. |
-| Upload File From URL | `uploadFromUrl` | Upload a file to Uploadcare from a publicly accessible source URL via the Upload API. Returns an async token; poll Get Upload From URL Status with the token to obtain the resulting file. |
+* **Execute AWS Rekognition Labels** `executeAwsRekognitionLabels`: Run the AWS Rekognition object/label detection add-on on an image file. Returns a request ID to poll for results.
+* **Execute AWS Rekognition Moderation** `executeAwsRekognitionModeration`: Run the AWS Rekognition unsafe-content moderation add-on on an image file. Returns a request ID to poll for results.
+* **Execute Remove Background** `executeRemoveBg`: Run the remove.bg background-removal add-on on an image file. Returns a request ID to poll for the resulting file.
+* **Execute Virus Scan** `executeVirusScan`: Run the ClamAV virus scan add-on on a file. Optionally purge the file automatically if it is infected. Returns a request ID to poll for results.
+* **Get AWS Rekognition Labels Status** `getAwsRekognitionLabelsStatus`: Check the status and retrieve results of an AWS Rekognition label detection add-on execution by its request ID.
+* **Get AWS Rekognition Moderation Status** `getAwsRekognitionModerationStatus`: Check the status and retrieve results of an AWS Rekognition moderation add-on execution by its request ID.
+* **Get Document Conversion Status** `getDocumentConversionStatus`: Check the status of a document conversion job using the token returned by Convert Document.
+* **Get File** `getFile`: Retrieve detailed information about a single file by its UUID, optionally including add-on application data.
+* **Get File Metadata** `getFileMetadata`: Retrieve all custom metadata key-value pairs attached to a file.
+* **Get File Metadata Key** `getFileMetadataKey`: Retrieve the value of a single custom metadata key for a file.
+* **Get Group** `getGroup`: Retrieve information about a single file group by its ID (in the form uuid~filesCount).
+* **Get Project** `getProject`: Retrieve information about the current project, including its name, public key, collaborators, and auto-store setting.
+* **Get Remove Background Status** `getRemoveBgStatus`: Check the status and retrieve the result of a remove.bg background-removal add-on execution by its request ID. When done, the result includes the UUID of the processed file.
+* **Get Upload File Info** `uploadFileInfo`: Retrieve information about an uploaded file directly from the Upload API by its file ID (UUID).
+* **Get Upload From URL Status** `getUploadFromUrlStatus`: Check the status of an asynchronous upload-from-URL job using its token. When complete, returns the uploaded file's UUID and metadata.
+* **Get Video Conversion Status** `getVideoConversionStatus`: Check the status of a video conversion job using the token returned by Convert Video.
+* **Get Virus Scan Status** `getVirusScanStatus`: Check the status and retrieve results of a ClamAV virus scan add-on execution by its request ID.
+* **List Files** `listFiles`: List files in the Uploadcare project with optional filtering by stored/removed status, ordering, and pagination.
+* **List Groups** `listGroups`: List file groups in the project, with optional ordering and pagination.
+* **List Webhooks** `listWebhooks`: List all webhook subscriptions configured for the project.
+* **Store File** `storeFile`: Store a single file permanently by its UUID so it is not deleted after the temporary storage period.
+* **Store Files Batch** `storeFilesBatch`: Store multiple files permanently in one request. Provide a JSON array of file UUIDs (up to 100).
+* **Unsubscribe Webhook** `unsubscribeWebhook`: Remove a webhook subscription identified by its target URL and event.
+* **Update File Metadata Key** `updateFileMetadataKey`: Set or update the value of a single custom metadata key on a file. Key up to 64 characters; value up to 512 characters.
+* **Update Webhook** `updateWebhook`: Update an existing webhook subscription by its ID. Only the provided fields are changed.
+* **Upload File From URL** `uploadFromUrl`: Upload a file to Uploadcare from a publicly accessible source URL via the Upload API. Returns an async token; poll Get Upload From URL Status with the token to obtain the resulting file.
 
 </details>
 

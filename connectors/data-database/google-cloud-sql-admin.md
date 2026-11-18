@@ -5,7 +5,7 @@ hidden: true
 
 # Google Cloud SQL Admin
 
-<img src="../../.gitbook/assets/connectors/google-cloud-sql-admin.png" alt="Google Cloud SQL Admin logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-cloud-sql-admin.png" alt="Google Cloud SQL Admin logo">
 
 Google Cloud SQL Admin API v1 (https://sqladmin.googleapis.com/v1). List and inspect Cloud SQL instances, list, create and delete databases on an existing instance, poll long-running operations, list machine tiers and database flags, and list instances through the Cloud SQL read-only remote MCP endpoint. OAuth 2.0 (Google) authorization-code auth with the cloudsql, cloudsql.readonly and sqlservice.admin scopes.
 

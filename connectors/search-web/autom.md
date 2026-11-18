@@ -5,7 +5,7 @@ hidden: true
 
 # Autom
 
-<img src="../../.gitbook/assets/connectors/autom.png" alt="Autom logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/autom.png" alt="Autom logo">
 
 Autom is a SERP and web-data API: structured results from Google Search, Google Search Light, Autocomplete, Images, News, Videos, Shopping, Jobs and Maps, plus Bing and Brave search, with credit-based billing. This connector covers the complete Autom REST API v1: every search engine endpoint with pagination, localisation (gl, hl, location, uule) and the global fields and is_async parameters, the free Finder lookups for Google countries, languages and locations, asynchronous job retrieval, account usage and quota, and platform infrastructure stats.
 
@@ -39,14 +39,12 @@ Add Autom from **Build → Integrations → Connectors** and connect an account,
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Google Maps Search | `googleMapsSearch` | Searches Google Maps (experimental endpoint) and returns place results with feature id, coordinates, title, address, website and phone number. Supports pagination, language, country and a map-centre hint. Costs 1 credit per call. |
-| Google News Search | `googleNewsSearch` | Searches Google News and returns structured news results (date, title, link, domain, source, snippet, position) with pagination and country/language localisation. Costs 1 credit per call. |
-| Google Search | `googleSearch` | Scrapes Google Search results for a query and returns structured SERP data: organic results (title, link, domain, snippet, position), knowledge graph and pagination. Supports advanced operators (site:, inurl:, intitle:), time filters (tbs), localisation by country, language and location. Costs 1 credit per call. Pass is_async=true to receive a job_id and fetch the result with Get Job. |
-| Google Search Autocomplete | `googleSearchAutocomplete` | Returns Google Search autocomplete suggestions for a query, optionally at a given cursor position and localised by country and language. Costs 1 credit per call. |
-| Google Search Light | `googleSearchLight` | Fast, cost-efficient Google Search that returns organic results only (title, link, source, snippet, position) with optional country and language localisation. Costs 1 credit per call. |
-| Google Shopping Search | `googleShoppingSearch` | Searches Google Shopping and returns structured product listings with price, rating, rating count, merchant, image and product id, with pagination and localisation by country, language and location. Costs 1 credit per call. |
-| Google Videos Search | `googleVideosSearch` | Searches Google Videos and returns structured video results (title, link, channel, duration, date, snippet, video id, position) with pagination and localisation. The page number is required by Autom. Costs 1 credit per call. |
+* **Google Maps Search** `googleMapsSearch`: Searches Google Maps (experimental endpoint) and returns place results with feature id, coordinates, title, address, website and phone number. Supports pagination, language, country and a map-centre hint. Costs 1 credit per call.
+* **Google News Search** `googleNewsSearch`: Searches Google News and returns structured news results (date, title, link, domain, source, snippet, position) with pagination and country/language localisation. Costs 1 credit per call.
+* **Google Search** `googleSearch`: Scrapes Google Search results for a query and returns structured SERP data: organic results (title, link, domain, snippet, position), knowledge graph and pagination. Supports advanced operators (site:, inurl:, intitle:), time filters (tbs), localisation by country, language and location. Costs 1 credit per call. Pass is_async=true to receive a job_id and fetch the result with Get Job.
+* **Google Search Autocomplete** `googleSearchAutocomplete`: Returns Google Search autocomplete suggestions for a query, optionally at a given cursor position and localised by country and language. Costs 1 credit per call.
+* **Google Search Light** `googleSearchLight`: Fast, cost-efficient Google Search that returns organic results only (title, link, source, snippet, position) with optional country and language localisation. Costs 1 credit per call.
+* **Google Shopping Search** `googleShoppingSearch`: Searches Google Shopping and returns structured product listings with price, rating, rating count, merchant, image and product id, with pagination and localisation by country, language and location. Costs 1 credit per call.
+* **Google Videos Search** `googleVideosSearch`: Searches Google Videos and returns structured video results (title, link, channel, duration, date, snippet, video id, position) with pagination and localisation. The page number is required by Autom. Costs 1 credit per call.
 
 </details>

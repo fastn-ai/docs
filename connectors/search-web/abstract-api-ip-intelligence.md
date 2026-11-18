@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI IP Intelligence
 
-<img src="../../.gitbook/assets/connectors/abstract-api-ip-intelligence.png" alt="AbstractAPI IP Intelligence logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-ip-intelligence.png" alt="AbstractAPI IP Intelligence logo">
 
 AbstractAPI IP Intelligence maps an IPv4 or IPv6 address (or the caller's own IP) to geolocation, ISP/company, security threat signals, timezone, and currency data.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Twilio
 
-<img src="../../.gitbook/assets/connectors/twilio.png" alt="Twilio logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/twilio.png" alt="Twilio logo">
 
 Twilio communications API — send SMS/MMS, place voice calls, manage phone numbers, phone-number lookup, identity verification, and messaging services. Classic REST API (2010-04-01) plus Lookup v2, Verify v2, and Messaging v1.
 
@@ -39,26 +39,24 @@ Add Twilio from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 19 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Account | `getAccount` | Fetch the authenticating account's details. Cheapest free read — ideal for connection validation. |
-| Get Call | `getCall` | Fetch a single call by its SID. |
-| Get Incoming Phone Number | `getIncomingPhoneNumber` | Fetch a single owned phone number by SID. |
-| Get Message | `getMessage` | Fetch a single message by its SID. |
-| Get Messaging Service | `getMessagingService` | Fetch a single Messaging Service by SID. |
-| Get Recording | `getRecording` | Fetch metadata for a single recording by SID. |
-| List Calls | `listCalls` | List calls in the account, optionally filtered by To, From, Status, or StartTime. |
-| List Incoming Phone Numbers | `listIncomingPhoneNumbers` | List the phone numbers owned by the account. |
-| List Message Media | `listMessageMedia` | List media attached to a specific message. |
-| List Messages | `listMessages` | List messages in the account, optionally filtered by To, From, or DateSent. Cheap read suitable for connection validation. |
-| List Messaging Services | `listMessagingServices` | List Messaging Services (v1). |
-| List Recordings | `listRecordings` | List call recordings, optionally filtered by CallSid or DateCreated. |
-| List Verify Services | `listVerifyServices` | List Verify v2 services in the account. |
-| Lookup Phone Number | `lookupPhoneNumber` | Look up information about a phone number (validation, line type, caller name, etc.) via Lookup v2. Use the Fields query param to request data packages. |
-| Search Available Phone Numbers | `searchAvailablePhoneNumbers` | Search Twilio's inventory for available local phone numbers in a country. Read-only — does not buy. |
-| Send Message | `sendMessage` | Send an SMS or MMS message. Provide To plus either From (a Twilio number) or MessagingServiceSid, and Body (or MediaUrl). Body is application/x-www-form-urlencoded. |
-| Start Verification | `startVerification` | Send a verification token to a recipient via a Verify service. Provide To and Channel. Body is form-urlencoded. |
-| Update Call | `updateCall` | Update a live call to end it (Status=completed/canceled) or redirect it (Url). Body is form-urlencoded. |
-| Update Incoming Phone Number | `updateIncomingPhoneNumber` | Update configuration of an owned phone number (friendly name, voice/SMS URLs). Body is form-urlencoded. |
+* **Get Account** `getAccount`: Fetch the authenticating account's details. Cheapest free read — ideal for connection validation.
+* **Get Call** `getCall`: Fetch a single call by its SID.
+* **Get Incoming Phone Number** `getIncomingPhoneNumber`: Fetch a single owned phone number by SID.
+* **Get Message** `getMessage`: Fetch a single message by its SID.
+* **Get Messaging Service** `getMessagingService`: Fetch a single Messaging Service by SID.
+* **Get Recording** `getRecording`: Fetch metadata for a single recording by SID.
+* **List Calls** `listCalls`: List calls in the account, optionally filtered by To, From, Status, or StartTime.
+* **List Incoming Phone Numbers** `listIncomingPhoneNumbers`: List the phone numbers owned by the account.
+* **List Message Media** `listMessageMedia`: List media attached to a specific message.
+* **List Messages** `listMessages`: List messages in the account, optionally filtered by To, From, or DateSent. Cheap read suitable for connection validation.
+* **List Messaging Services** `listMessagingServices`: List Messaging Services (v1).
+* **List Recordings** `listRecordings`: List call recordings, optionally filtered by CallSid or DateCreated.
+* **List Verify Services** `listVerifyServices`: List Verify v2 services in the account.
+* **Lookup Phone Number** `lookupPhoneNumber`: Look up information about a phone number (validation, line type, caller name, etc.) via Lookup v2. Use the Fields query param to request data packages.
+* **Search Available Phone Numbers** `searchAvailablePhoneNumbers`: Search Twilio's inventory for available local phone numbers in a country. Read-only — does not buy.
+* **Send Message** `sendMessage`: Send an SMS or MMS message. Provide To plus either From (a Twilio number) or MessagingServiceSid, and Body (or MediaUrl). Body is application/x-www-form-urlencoded.
+* **Start Verification** `startVerification`: Send a verification token to a recipient via a Verify service. Provide To and Channel. Body is form-urlencoded.
+* **Update Call** `updateCall`: Update a live call to end it (Status=completed/canceled) or redirect it (Url). Body is form-urlencoded.
+* **Update Incoming Phone Number** `updateIncomingPhoneNumber`: Update configuration of an owned phone number (friendly name, voice/SMS URLs). Body is form-urlencoded.
 
 </details>

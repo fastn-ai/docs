@@ -5,7 +5,7 @@ hidden: true
 
 # LeadIQ
 
-<img src="../../.gitbook/assets/connectors/leadiq.png" alt="LeadIQ logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/leadiq.png" alt="LeadIQ logo">
 
 LeadIQ sales intelligence — GraphQL API for contact/person search, company search, advanced people search, prospect enrichment, and prospect-list management. Single endpoint POST https://api.leadiq.com/graphql.
 
@@ -39,10 +39,8 @@ Add LeadIQ from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search People (Contact Search) | `searchPeople` | Contact Search: find one person and reveal verified work/personal emails and phones by name+company, LinkedIn URL/ID, email, or phone. Consumes a credit when contact info is returned. Provide firstName+lastName+company OR linkedinUrl OR email inside input. |
-| Search People Preview | `searchPeoplePreview` | Preview whether a person has an available email/phone in LeadIQ WITHOUT spending a credit. Returns personId and hasEmail/hasPhone booleans. Provide fullName+companyName, or linkedinUrl, or email inside input. |
-| Submit Person Feedback | `submitPersonFeedback` | Submit a correction/feedback on a person's contact info (mark an email/phone Correct or Invalid). Provide input.value (the contact value) plus type and status; identify the person via personId or linkedinUrl. Returns a feedback ID. |
+* **Search People (Contact Search)** `searchPeople`: Contact Search: find one person and reveal verified work/personal emails and phones by name+company, LinkedIn URL/ID, email, or phone. Consumes a credit when contact info is returned. Provide firstName+lastName+company OR linkedinUrl OR email inside input.
+* **Search People Preview** `searchPeoplePreview`: Preview whether a person has an available email/phone in LeadIQ WITHOUT spending a credit. Returns personId and hasEmail/hasPhone booleans. Provide fullName+companyName, or linkedinUrl, or email inside input.
+* **Submit Person Feedback** `submitPersonFeedback`: Submit a correction/feedback on a person's contact info (mark an email/phone Correct or Invalid). Provide input.value (the contact value) plus type and status; identify the person via personId or linkedinUrl. Returns a feedback ID.
 
 </details>

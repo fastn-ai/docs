@@ -5,7 +5,7 @@ hidden: true
 
 # Azure Cosmos DB
 
-<img src="../../.gitbook/assets/connectors/azure-cosmos-db.jpg" alt="Azure Cosmos DB logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/azure-cosmos-db.png" alt="Azure Cosmos DB logo">
 
 Azure Cosmos DB management over the Microsoft.DocumentDB Azure Resource Manager API at https://management.azure.com. Create and manage database accounts, keys and connection strings, failover and region settings, and the full resource surface for the NoSQL (SQL), MongoDB, Cassandra, Gremlin and Table APIs - databases, containers, collections, keyspaces, tables, graphs, stored procedures, user defined functions, triggers, throughput settings, data-plane role definitions and role assignments, restorable accounts and point-in-time restore resources, private endpoint connections, services and notebook workspaces. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target subscription or resource group. Every request carries an api-version query parameter, exposed on each action with the current stable default.
 
@@ -39,15 +39,13 @@ Add Azure Cosmos DB from **Build → Integrations → Connectors** and connect a
 
 <summary>See 8 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Database Account Metric Definitions | `listDatabaseAccountMetricDefinitions` | Lists the metric definitions available for a Cosmos DB account, including each metric's unit, primary aggregation type and available time grains. |
-| List Database Account Read-Only Keys | `listDatabaseAccountReadOnlyKeys` | Lists the primary and secondary read-only master keys of a Cosmos DB account through the POST form of the operation. |
-| List Database Account Usages | `listDatabaseAccountUsages` | Lists the current usage quotas of a Cosmos DB account, such as document count and storage consumed, against their limits. |
-| List Database Accounts | `listDatabaseAccounts` | Lists every Azure Cosmos DB database account in a subscription, with its API kind, locations, consistency policy and endpoints. |
-| List Database Accounts by Resource Group | `listDatabaseAccountsByResourceGroup` | Lists the Azure Cosmos DB database accounts in a single resource group. |
-| List Locations | `listLocations` | Lists the Azure regions where Cosmos DB is available to this subscription, with each region's supported backup storage redundancies and availability zone support. |
-| List SQL Containers | `listSqlContainers` | Lists the containers in a SQL (NoSQL) API database, with each container's partition key, indexing policy and time-to-live settings. |
-| List SQL Databases | `listSqlDatabases` | Lists the SQL (NoSQL) API databases in a Cosmos DB account. |
+* **List Database Account Metric Definitions** `listDatabaseAccountMetricDefinitions`: Lists the metric definitions available for a Cosmos DB account, including each metric's unit, primary aggregation type and available time grains.
+* **List Database Account Read-Only Keys** `listDatabaseAccountReadOnlyKeys`: Lists the primary and secondary read-only master keys of a Cosmos DB account through the POST form of the operation.
+* **List Database Account Usages** `listDatabaseAccountUsages`: Lists the current usage quotas of a Cosmos DB account, such as document count and storage consumed, against their limits.
+* **List Database Accounts** `listDatabaseAccounts`: Lists every Azure Cosmos DB database account in a subscription, with its API kind, locations, consistency policy and endpoints.
+* **List Database Accounts by Resource Group** `listDatabaseAccountsByResourceGroup`: Lists the Azure Cosmos DB database accounts in a single resource group.
+* **List Locations** `listLocations`: Lists the Azure regions where Cosmos DB is available to this subscription, with each region's supported backup storage redundancies and availability zone support.
+* **List SQL Containers** `listSqlContainers`: Lists the containers in a SQL (NoSQL) API database, with each container's partition key, indexing policy and time-to-live settings.
+* **List SQL Databases** `listSqlDatabases`: Lists the SQL (NoSQL) API databases in a Cosmos DB account.
 
 </details>

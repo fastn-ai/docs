@@ -5,7 +5,7 @@ hidden: true
 
 # Erskine May API
 
-<img src="../../.gitbook/assets/connectors/erskine-may-api.png" alt="Erskine May API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/erskine-may-api.png" alt="Erskine May API logo">
 
 The Erskine May API gives open access to Erskine May, the authoritative guide to UK parliamentary practice: list parts and chapters, read sections and page between them, look up a paragraph reference, browse and search the index, and full-text search paragraphs and sections. No API key needed.
 
@@ -39,8 +39,6 @@ Add Erskine May API from **Build → Integrations → Connectors** and connect a
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Sections | `searchSections` | Returns a list of sections which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/SectionSearchResults/{searchTerm}) |
+* **Search Sections** `searchSections`: Returns a list of sections which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/SectionSearchResults/{searchTerm})
 
 </details>

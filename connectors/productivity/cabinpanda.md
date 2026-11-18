@@ -5,7 +5,7 @@ hidden: true
 
 # CabinPanda
 
-<img src="../../.gitbook/assets/connectors/cabinpanda.png" alt="CabinPanda logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/cabinpanda.png" alt="CabinPanda logo">
 
 CabinPanda is a data collection platform for building online forms, surveys and popups. This connector covers the CabinPanda REST API: forms (list, get, create, update, rename, duplicate, delete, fields), submissions (list, get, delete, public submit), form types and templates, webhooks (create, update, enable/disable, delete, activities, test and redelivery), workspaces, notifications, API tokens and the current user.
 
@@ -39,26 +39,24 @@ Add CabinPanda from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 18 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Field Types | `listFieldTypes` | Lists the available form field types (short answer, long answer, email, name, dropdown, file and so on) with their numeric ids and the attributes each type accepts, including validation rules and defaults. Field type ids are required when defining fields in Update Form. |
-| List Form Fields | `listFormFields` | Returns the field keys and labels of a form. Field keys are needed to build the 'fields' map when submitting a form. |
-| List Form Submissions | `listFormSubmissions` | Lists the submissions received by a form, newest first, with pagination. Each submission includes its id, uid and the submitted field values. |
-| List Form Templates | `listFormTemplates` | Lists all form design templates available to the workspace, with their ids (used by Create Form), form type and style variables. The list is not paginated. |
-| List Form Types | `listFormTypes` | Lists the available form types (regular, backendless, popup, conversational) with the ids used by Create Form and Update Form. |
-| List Forms | `listForms` | Lists all forms in the current workspace, with pagination. Each form includes its key (used by every other form action), name, template id and detail settings. |
-| List Forms By Type | `listFormsByType` | Lists the workspace's forms of a given form type (see List Form Types), with pagination. |
-| List Notifications | `listNotifications` | Returns the current user's in-app notifications and platform announcements. |
-| List Webhook Activities | `listWebhookActivities` | Returns the delivery log of a webhook: each activity holds the submission id, the JSON request payload that was sent and the endpoint's response. |
-| List Webhooks | `listWebhooks` | Lists the webhooks configured on a form, including each webhook's id, target URL, HTTP method type, secret, SSL verification flag and enabled status. |
-| List Workspaces | `listWorkspaces` | Lists the workspaces the current user belongs to, with their owner and team. |
-| Redeliver Webhook Activity | `redeliverWebhookActivity` | Re-sends a previous webhook delivery (an activity from List Webhook Activities) to the webhook's URL, for example after the endpoint was down. |
-| Rename Form | `renameForm` | Renames a form by key without creating a new revision. Returns the updated form. |
-| Send Webhook Test Request | `sendWebhookTestRequest` | Sends a sample submission payload to a webhook's URL to verify the endpoint accepts deliveries. Returns the payload that was sent and the endpoint's response. |
-| Set Webhook Status | `setWebhookStatus` | Enables or disables delivery for a webhook. Newly created webhooks are disabled until enabled with this action. |
-| Submit Form | `submitForm` | Submits a response to a form through the public submit endpoint. Pass the form key and a map of field key to value (field keys come from List Form Fields). Returns the uid of the new submission and triggers the form's notifications, integrations and webhooks. |
-| Update Form | `updateForm` | Replaces the definition of a form by key: its name, design template, settings ('detail') and fields, creating a new revision and optionally publishing it. This is a full replacement, so send the complete settings, template id and field list you want to keep (read them with Get Form first); omitted settings are reset to defaults, an omitted template clears the design and an omitted field list clears the fields. |
-| Update Webhook | `updateWebhook` | Replaces the settings of a form webhook: URL, delivery method, secret and SSL verification. This is a full replacement, so send every value you want to keep; an omitted secret is cleared and an omitted ssl flag resets to 1. Returns the updated webhook. |
+* **List Field Types** `listFieldTypes`: Lists the available form field types (short answer, long answer, email, name, dropdown, file and so on) with their numeric ids and the attributes each type accepts, including validation rules and defaults. Field type ids are required when defining fields in Update Form.
+* **List Form Fields** `listFormFields`: Returns the field keys and labels of a form. Field keys are needed to build the 'fields' map when submitting a form.
+* **List Form Submissions** `listFormSubmissions`: Lists the submissions received by a form, newest first, with pagination. Each submission includes its id, uid and the submitted field values.
+* **List Form Templates** `listFormTemplates`: Lists all form design templates available to the workspace, with their ids (used by Create Form), form type and style variables. The list is not paginated.
+* **List Form Types** `listFormTypes`: Lists the available form types (regular, backendless, popup, conversational) with the ids used by Create Form and Update Form.
+* **List Forms** `listForms`: Lists all forms in the current workspace, with pagination. Each form includes its key (used by every other form action), name, template id and detail settings.
+* **List Forms By Type** `listFormsByType`: Lists the workspace's forms of a given form type (see List Form Types), with pagination.
+* **List Notifications** `listNotifications`: Returns the current user's in-app notifications and platform announcements.
+* **List Webhook Activities** `listWebhookActivities`: Returns the delivery log of a webhook: each activity holds the submission id, the JSON request payload that was sent and the endpoint's response.
+* **List Webhooks** `listWebhooks`: Lists the webhooks configured on a form, including each webhook's id, target URL, HTTP method type, secret, SSL verification flag and enabled status.
+* **List Workspaces** `listWorkspaces`: Lists the workspaces the current user belongs to, with their owner and team.
+* **Redeliver Webhook Activity** `redeliverWebhookActivity`: Re-sends a previous webhook delivery (an activity from List Webhook Activities) to the webhook's URL, for example after the endpoint was down.
+* **Rename Form** `renameForm`: Renames a form by key without creating a new revision. Returns the updated form.
+* **Send Webhook Test Request** `sendWebhookTestRequest`: Sends a sample submission payload to a webhook's URL to verify the endpoint accepts deliveries. Returns the payload that was sent and the endpoint's response.
+* **Set Webhook Status** `setWebhookStatus`: Enables or disables delivery for a webhook. Newly created webhooks are disabled until enabled with this action.
+* **Submit Form** `submitForm`: Submits a response to a form through the public submit endpoint. Pass the form key and a map of field key to value (field keys come from List Form Fields). Returns the uid of the new submission and triggers the form's notifications, integrations and webhooks.
+* **Update Form** `updateForm`: Replaces the definition of a form by key: its name, design template, settings ('detail') and fields, creating a new revision and optionally publishing it. This is a full replacement, so send the complete settings, template id and field list you want to keep (read them with Get Form first); omitted settings are reset to defaults, an omitted template clears the design and an omitted field list clears the fields.
+* **Update Webhook** `updateWebhook`: Replaces the settings of a form webhook: URL, delivery method, secret and SSL verification. This is a full replacement, so send every value you want to keep; an omitted secret is cleared and an omitted ssl flag resets to 1. Returns the updated webhook.
 
 </details>
 

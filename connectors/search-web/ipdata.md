@@ -5,7 +5,7 @@ hidden: true
 
 # ipdata
 
-<img src="../../.gitbook/assets/connectors/ipdata.png" alt="ipdata logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ipdata.png" alt="ipdata logo">
 
 ipdata is an IP geolocation and threat intelligence API. This connector covers the full ipdata REST API: IP address lookups, caller IP lookups, ASN lookups, per-field lookups for the geolocation, ASN, carrier, company, currency, time zone, language and threat objects, and bulk lookups, against either the global or the EU data-residency endpoint.
 
@@ -39,9 +39,7 @@ Add ipdata from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Look Up Caller IP Address | `lookupCallerIpAddress` | Returns the full ipdata record for the IP address the request originates from, without needing to supply an address. Use the fields parameter to return only selected top-level fields. |
-| Look Up IP Address | `lookupIpAddress` | Returns the full ipdata record for a single IPv4 or IPv6 address, including geolocation, autonomous system, currency, languages, time zone, carrier and threat intelligence. Use the fields parameter to return only selected top-level fields. |
+* **Look Up Caller IP Address** `lookupCallerIpAddress`: Returns the full ipdata record for the IP address the request originates from, without needing to supply an address. Use the fields parameter to return only selected top-level fields.
+* **Look Up IP Address** `lookupIpAddress`: Returns the full ipdata record for a single IPv4 or IPv6 address, including geolocation, autonomous system, currency, languages, time zone, carrier and threat intelligence. Use the fields parameter to return only selected top-level fields.
 
 </details>

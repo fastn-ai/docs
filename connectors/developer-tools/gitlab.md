@@ -5,7 +5,7 @@ hidden: true
 
 # GitLab
 
-<img src="../../.gitbook/assets/connectors/gitlab.png" alt="GitLab logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/gitlab.png" alt="GitLab logo">
 
 GitLab REST API v4 (default base https://gitlab.com, configurable for self-managed). Manage projects, issues, merge requests, branches, commits, repository files, tags, pipelines, jobs, labels, milestones, notes/comments, users, groups, and project webhooks (hooks). Auth: Bearer personal/project access token; set baseUrl for self-managed instances.
 
@@ -39,33 +39,31 @@ Add GitLab from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 25 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Branch | `deleteBranch` | Delete a branch (DELETE /projects/{id}/repository/branches/{branch}). Returns 204. |
-| Delete Project | `deleteProject` | Delete a project (DELETE /projects/{id}). Returns 202. |
-| Delete Project Hook | `deleteProjectHook` | Delete a project webhook (DELETE /projects/{id}/hooks/{hook_id}). Returns 204. |
-| Delete Repository File | `deleteRepositoryFile` | Delete a file (DELETE /projects/{id}/repository/files/{file_path}). Returns 204. |
-| Get Current User | `getCurrentUser` | Get the authenticated user (GET /user). |
-| Get Issue | `getIssue` | Get a project issue by IID (GET /projects/{id}/issues/{iid}). |
-| Get Merge Request | `getMergeRequest` | Get a merge request by IID (GET /projects/{id}/merge_requests/{iid}). |
-| Get Project | `getProject` | Get a project by ID or URL-encoded path (GET /projects/{id}). |
-| Get Repository File | `getRepositoryFile` | Get a file's metadata and base64 content (GET /projects/{id}/repository/files/{file_path}). |
-| List Branches | `listBranches` | List repository branches (GET /projects/{id}/repository/branches). |
-| List Commits | `listCommits` | List repository commits (GET /projects/{id}/repository/commits). |
-| List Groups | `listGroups` | List groups visible to the user (GET /groups). |
-| List Issue Notes | `listIssueNotes` | List notes (comments) on an issue (GET /projects/{id}/issues/{iid}/notes). |
-| List Issues | `listIssues` | List issues in a project (GET /projects/{id}/issues). |
-| List Labels | `listLabels` | List project labels (GET /projects/{id}/labels). |
-| List Merge Requests | `listMergeRequests` | List merge requests in a project (GET /projects/{id}/merge_requests). |
-| List Pipelines | `listPipelines` | List pipelines for a project (GET /projects/{id}/pipelines). |
-| List Project Hooks | `listProjectHooks` | List project webhooks (GET /projects/{id}/hooks). |
-| List Projects | `listProjects` | List projects visible to the user (GET /projects). |
-| List Repository Tree | `listRepositoryTree` | List files and directories in a project repository tree. Returns blobs (files) and trees (directories) for a given ref and path. Supports recursive listing. |
-| List Users | `listUsers` | List users (GET /users). |
-| Merge Merge Request | `mergeMergeRequest` | Accept and merge a merge request (PUT /projects/{id}/merge_requests/{iid}/merge). |
-| Update Issue | `updateIssue` | Update or close an issue (PUT /projects/{id}/issues/{iid}). Use state_event close/reopen. |
-| Update Project | `updateProject` | Update a project (PUT /projects/{id}). |
-| Update Repository File | `updateRepositoryFile` | Update an existing file (PUT /projects/{id}/repository/files/{file_path}). |
+* **Delete Branch** `deleteBranch`: Delete a branch (DELETE /projects/{id}/repository/branches/{branch}). Returns 204.
+* **Delete Project** `deleteProject`: Delete a project (DELETE /projects/{id}). Returns 202.
+* **Delete Project Hook** `deleteProjectHook`: Delete a project webhook (DELETE /projects/{id}/hooks/{hook_id}). Returns 204.
+* **Delete Repository File** `deleteRepositoryFile`: Delete a file (DELETE /projects/{id}/repository/files/{file_path}). Returns 204.
+* **Get Current User** `getCurrentUser`: Get the authenticated user (GET /user).
+* **Get Issue** `getIssue`: Get a project issue by IID (GET /projects/{id}/issues/{iid}).
+* **Get Merge Request** `getMergeRequest`: Get a merge request by IID (GET /projects/{id}/merge_requests/{iid}).
+* **Get Project** `getProject`: Get a project by ID or URL-encoded path (GET /projects/{id}).
+* **Get Repository File** `getRepositoryFile`: Get a file's metadata and base64 content (GET /projects/{id}/repository/files/{file_path}).
+* **List Branches** `listBranches`: List repository branches (GET /projects/{id}/repository/branches).
+* **List Commits** `listCommits`: List repository commits (GET /projects/{id}/repository/commits).
+* **List Groups** `listGroups`: List groups visible to the user (GET /groups).
+* **List Issue Notes** `listIssueNotes`: List notes (comments) on an issue (GET /projects/{id}/issues/{iid}/notes).
+* **List Issues** `listIssues`: List issues in a project (GET /projects/{id}/issues).
+* **List Labels** `listLabels`: List project labels (GET /projects/{id}/labels).
+* **List Merge Requests** `listMergeRequests`: List merge requests in a project (GET /projects/{id}/merge_requests).
+* **List Pipelines** `listPipelines`: List pipelines for a project (GET /projects/{id}/pipelines).
+* **List Project Hooks** `listProjectHooks`: List project webhooks (GET /projects/{id}/hooks).
+* **List Projects** `listProjects`: List projects visible to the user (GET /projects).
+* **List Repository Tree** `listRepositoryTree`: List files and directories in a project repository tree. Returns blobs (files) and trees (directories) for a given ref and path. Supports recursive listing.
+* **List Users** `listUsers`: List users (GET /users).
+* **Merge Merge Request** `mergeMergeRequest`: Accept and merge a merge request (PUT /projects/{id}/merge_requests/{iid}/merge).
+* **Update Issue** `updateIssue`: Update or close an issue (PUT /projects/{id}/issues/{iid}). Use state_event close/reopen.
+* **Update Project** `updateProject`: Update a project (PUT /projects/{id}).
+* **Update Repository File** `updateRepositoryFile`: Update an existing file (PUT /projects/{id}/repository/files/{file_path}).
 
 </details>
 

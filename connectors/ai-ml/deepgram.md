@@ -5,7 +5,7 @@ hidden: true
 
 # Deepgram
 
-<img src="../../.gitbook/assets/connectors/deepgram.jpg" alt="Deepgram logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/deepgram.png" alt="Deepgram logo">
 
 Deepgram voice AI platform: speech-to-text transcription (listen), text-to-speech (speak), text intelligence (read), and full management API (projects, keys, members, invitations, usage, balances, models, auth grant). Auth: Authorization: Token &lt;api_key&gt;.
 
@@ -39,28 +39,26 @@ Add Deepgram from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 21 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Project Balances | `getProjectBalances` | List credit balances for a project. Free read — credit-safe for validation. |
-| Get Project Billing Breakdown | `getProjectBillingBreakdown` | Get a billing (dollars) breakdown for a project. Free read. |
-| Get Project Key | `getProjectKey` | Get a single API key for a project by key id. Free read. |
-| Get Project Model | `getProjectModel` | Get a single model available to a project by model id. Free read. |
-| Get Project Request | `getProjectRequest` | Get a single API request record by id. Free read. |
-| Get Project Usage | `getProjectUsage` | Get usage summary for a project over a date range. Free read — credit-safe for validation. |
-| Get Project Usage Breakdown | `getProjectUsageBreakdown` | Get a grouped usage breakdown for a project. Free read. |
-| List Member Scopes | `listMemberScopes` | List the scopes assigned to a project member. Free read. |
-| List Models | `listModels` | List all public Deepgram models (STT and TTS). Free read — credit-safe for validation. |
-| List Project Invites | `listProjectInvites` | List pending invitations for a project. Free read. |
-| List Project Keys | `listProjectKeys` | List API keys for a project. Free read — credit-safe for validation. |
-| List Project Members | `listProjectMembers` | List members of a project. Free read — credit-safe for validation. |
-| List Project Models | `listProjectModels` | List models available to a project, including custom models. Free read. |
-| List Project Requests | `listProjectRequests` | List API request records (usage) for a project. Free read — credit-safe for validation. |
-| List Project Usage Fields | `listProjectUsageFields` | List available usage fields (models, methods, features, tags) for a project. Free read. |
-| List Projects | `listProjects` | List all Deepgram projects the API key can access. Free read — credit-safe for validation. |
-| Remove Project Member | `removeProjectMember` | Remove a member from a project. |
-| Text to Speech (Speak) | `speak` | Convert text to speech audio using a Deepgram Aura voice. Returns binary audio (or request_id if callback is set). Costs credits per character. |
-| Transcribe Pre-recorded Audio (URL) | `transcribeUrl` | Transcribe pre-recorded audio from a hosted URL using Deepgram speech-to-text. Supply the audio url and optional feature flags (model, smart_format, diarize, summarize, etc.). Costs credits per audio second. |
-| Update Member Scopes | `updateMemberScopes` | Update the scope assigned to a project member. |
-| Update Project | `updateProject` | Update a Deepgram project's name. |
+* **Get Project Balances** `getProjectBalances`: List credit balances for a project. Free read — credit-safe for validation.
+* **Get Project Billing Breakdown** `getProjectBillingBreakdown`: Get a billing (dollars) breakdown for a project. Free read.
+* **Get Project Key** `getProjectKey`: Get a single API key for a project by key id. Free read.
+* **Get Project Model** `getProjectModel`: Get a single model available to a project by model id. Free read.
+* **Get Project Request** `getProjectRequest`: Get a single API request record by id. Free read.
+* **Get Project Usage** `getProjectUsage`: Get usage summary for a project over a date range. Free read — credit-safe for validation.
+* **Get Project Usage Breakdown** `getProjectUsageBreakdown`: Get a grouped usage breakdown for a project. Free read.
+* **List Member Scopes** `listMemberScopes`: List the scopes assigned to a project member. Free read.
+* **List Models** `listModels`: List all public Deepgram models (STT and TTS). Free read — credit-safe for validation.
+* **List Project Invites** `listProjectInvites`: List pending invitations for a project. Free read.
+* **List Project Keys** `listProjectKeys`: List API keys for a project. Free read — credit-safe for validation.
+* **List Project Members** `listProjectMembers`: List members of a project. Free read — credit-safe for validation.
+* **List Project Models** `listProjectModels`: List models available to a project, including custom models. Free read.
+* **List Project Requests** `listProjectRequests`: List API request records (usage) for a project. Free read — credit-safe for validation.
+* **List Project Usage Fields** `listProjectUsageFields`: List available usage fields (models, methods, features, tags) for a project. Free read.
+* **List Projects** `listProjects`: List all Deepgram projects the API key can access. Free read — credit-safe for validation.
+* **Remove Project Member** `removeProjectMember`: Remove a member from a project.
+* **Text to Speech (Speak)** `speak`: Convert text to speech audio using a Deepgram Aura voice. Returns binary audio (or request_id if callback is set). Costs credits per character.
+* **Transcribe Pre-recorded Audio (URL)** `transcribeUrl`: Transcribe pre-recorded audio from a hosted URL using Deepgram speech-to-text. Supply the audio url and optional feature flags (model, smart_format, diarize, summarize, etc.). Costs credits per audio second.
+* **Update Member Scopes** `updateMemberScopes`: Update the scope assigned to a project member.
+* **Update Project** `updateProject`: Update a Deepgram project's name.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # screenshot.fyi
 
-<img src="../../.gitbook/assets/connectors/screenshot-fyi.png" alt="screenshot.fyi logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/screenshot-fyi.png" alt="screenshot.fyi logo">
 
 screenshot.fyi is a simple hosted screenshot API: one call renders any public web page and returns a hosted image URL on blob.screenshot.fyi. This connector covers the complete public API surface at https://www.screenshot.fyi/api — the screenshot capture endpoint with every supported option (viewport width and height, full-page capture, dark mode, image format png/jpg/jpeg, and automatic cookie-banner removal) and the access-key verification endpoint. Captures are metered against the account plan (free plan: 100 screenshots/month).
 

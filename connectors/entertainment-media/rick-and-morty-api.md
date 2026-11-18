@@ -5,7 +5,7 @@ hidden: true
 
 # Rick and Morty API
 
-<img src="../../.gitbook/assets/connectors/rick-and-morty-api.png" alt="Rick and Morty API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/rick-and-morty-api.png" alt="Rick and Morty API logo">
 
 The Rick and Morty API is a free REST and GraphQL API with every character, location and episode of the Rick and Morty TV show: list with filters and pagination, get one or many by id, or run GraphQL queries. No API key needed.
 
@@ -39,8 +39,6 @@ Add Rick and Morty API from **Build → Integrations → Connectors** and connec
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Run GraphQL Query | `runGraphqlQuery` | Run a GraphQL query against the Rick and Morty GraphQL endpoint (POST /graphql). Queries include characters, character, charactersByIds, locations, location, locationsByIds, episodes, episode and episodesByIds with page and filter arguments. Docs: https://rickandmortyapi.com/documentation |
+* **Run GraphQL Query** `runGraphqlQuery`: Run a GraphQL query against the Rick and Morty GraphQL endpoint (POST /graphql). Queries include characters, character, charactersByIds, locations, location, locationsByIds, episodes, episode and episodesByIds with page and filter arguments. Docs: https://rickandmortyapi.com/documentation
 
 </details>

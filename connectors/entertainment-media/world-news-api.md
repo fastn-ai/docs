@@ -5,7 +5,7 @@ hidden: true
 
 # World News API
 
-<img src="../../.gitbook/assets/connectors/world-news-api.png" alt="World News API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/world-news-api.png" alt="World News API logo">
 
 World News API provides unified access to global news from thousands of sources in 86+ languages and 210+ countries, with full text, summaries, sentiment and entity analysis. This connector covers the complete World News API: keyword and semantic news search with date, language, country, category, author, sentiment and geo-radius filters, clustered top news by country, newspaper front pages, article retrieval by id, article and link extraction from any URL, news source lookup and suggestion, website-to-RSS conversion, and geocoding of location names. Every request consumes points from your daily quota.
 

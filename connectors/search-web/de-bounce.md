@@ -5,7 +5,7 @@ hidden: true
 
 # DeBounce
 
-<img src="../../.gitbook/assets/connectors/de-bounce.png" alt="DeBounce logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/de-bounce.png" alt="DeBounce logo">
 
 DeBounce email validation and list-hygiene API. Validates single email addresses in real time, runs bulk list validation, checks disposable domains, enriches addresses with name and avatar data, reports credit balance and daily API usage, and looks up company logos by domain.
 

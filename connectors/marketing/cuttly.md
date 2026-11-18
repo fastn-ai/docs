@@ -5,7 +5,7 @@ hidden: true
 
 # Cutt.ly
 
-<img src="../../.gitbook/assets/connectors/cuttly.png" alt="Cutt.ly logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/cuttly.png" alt="Cutt.ly logo">
 
 Cutt.ly URL shortener and link analytics. Shorten URLs (optionally on a branded domain with a custom alias), read click analytics for a short link, and edit an existing short link: change its destination, alias, title or tag, set a password, expiration rule, mobile/OS-specific redirect, unique-click window or an A/B-C split test, and delete it. Wraps the Cutt.ly Regular API at https://cutt.ly/api/api.php, a single endpoint dispatched by query parameter.
 
@@ -39,10 +39,8 @@ Add Cutt.ly from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Set Mobile Redirect | `setMobileRedirect` | Set an operating-system-specific redirect on a Cutt.ly short link, so visitors on Android, iOS or Windows Mobile are sent to a different destination than desktop visitors. The mobile parameter is case sensitive. Omit destination to remove the redirect already configured for that option. Returns status 1 when saved, 3 if the link does not exist or you do not own it, or 4 if the destination URL failed validation. |
-| Set Unique Click Counting | `setUniqueClickCounting` | Configure unique-click counting for a Cutt.ly short link. Send 0 to stop counting unique clicks, 1 to enable it (Single plan), or a window of 15 to 1440 minutes over which repeat clicks from the same visitor are collapsed into one (Team plans). Values outside 15-1440 return 'Unique time must be between 15 - 1440 minutes'; using a window without the required plan returns 'Insufficient subscription level'. |
-| Shorten URL | `shortenUrl` | Shorten a long URL into a Cutt.ly short link. Optionally set a custom alias, use your own approved branded domain, skip page-title lookup, or make the click stats public. Returns url.status (7 = shortened OK, 1 = the link is already shortened, 2 = invalid link, 3/4/5 = validation failure, 6 = blocked domain, 8 = monthly link limit reached) plus shortLink, fullLink, title and date when status is 7. |
+* **Set Mobile Redirect** `setMobileRedirect`: Set an operating-system-specific redirect on a Cutt.ly short link, so visitors on Android, iOS or Windows Mobile are sent to a different destination than desktop visitors. The mobile parameter is case sensitive. Omit destination to remove the redirect already configured for that option. Returns status 1 when saved, 3 if the link does not exist or you do not own it, or 4 if the destination URL failed validation.
+* **Set Unique Click Counting** `setUniqueClickCounting`: Configure unique-click counting for a Cutt.ly short link. Send 0 to stop counting unique clicks, 1 to enable it (Single plan), or a window of 15 to 1440 minutes over which repeat clicks from the same visitor are collapsed into one (Team plans). Values outside 15-1440 return 'Unique time must be between 15 - 1440 minutes'; using a window without the required plan returns 'Insufficient subscription level'.
+* **Shorten URL** `shortenUrl`: Shorten a long URL into a Cutt.ly short link. Optionally set a custom alias, use your own approved branded domain, skip page-title lookup, or make the click stats public. Returns url.status (7 = shortened OK, 1 = the link is already shortened, 2 = invalid link, 3/4/5 = validation failure, 6 = blocked domain, 8 = monthly link limit reached) plus shortLink, fullLink, title and date when status is 7.
 
 </details>

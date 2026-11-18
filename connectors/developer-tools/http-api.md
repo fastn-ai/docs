@@ -5,7 +5,7 @@ hidden: true
 
 # HTTP API
 
-<img src="../../.gitbook/assets/connectors/http-api.png" alt="HTTP API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/http-api.png" alt="HTTP API logo">
 
 Generic HTTP request tools for calling any HTTPS REST endpoint that has no dedicated connector: GET, POST, PUT, PATCH and DELETE. Each action takes a host (for example api.example.com) and a path (for example /v1/users/42). GET sends every extra input field as a query parameter; POST, PUT and PATCH send a JSON body. Authentication lives on the connection, not on each call: connect with No Authentication for public APIs, or with Custom Header or Bearer Token to send one header on every request - either a header you name yourself (for example X-API-Key) with its value, or an Authorization: Bearer token. HTTPS only.
 

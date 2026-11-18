@@ -5,7 +5,7 @@ hidden: true
 
 # Statistics Norway (SSB)
 
-<img src="../../.gitbook/assets/connectors/statistics-norway-ssb.png" alt="Statistics Norway (SSB) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/statistics-norway-ssb.png" alt="Statistics Norway (SSB) logo">
 
 Statistics Norway (SSB) publishes Norway's official statistics through the free PxWebApi 2.0: search thousands of statistical tables (population, prices, labour, trade, energy, more), read table metadata and default selections, get data as JSON-stat, CSV or PX for any selection of variables, read codelists, and create and reuse saved queries. No API key needed.
 
@@ -39,9 +39,7 @@ Add Statistics Norway (SSB) from **Build → Integrations → Connectors** and c
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Query Table Data | `queryTableData` | Get data from a table for an explicit selection of variables and values (POST /tables/{id}/data). Returns JSON-stat 2.0 by default. Docs: https://www.ssb.no/en/api/pxwebapi |
-| Search Tables | `searchTables` | Search Tables. Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables) |
+* **Query Table Data** `queryTableData`: Get data from a table for an explicit selection of variables and values (POST /tables/{id}/data). Returns JSON-stat 2.0 by default. Docs: https://www.ssb.no/en/api/pxwebapi
+* **Search Tables** `searchTables`: Search Tables. Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables)
 
 </details>

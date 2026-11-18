@@ -5,7 +5,7 @@ hidden: true
 
 # IP2WHOIS
 
-<img src="../../.gitbook/assets/connectors/ip2whois.png" alt="IP2WHOIS logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ip2whois.png" alt="IP2WHOIS logo">
 
 IP2WHOIS provides domain WHOIS lookups returning registrar, registrant, admin, technical and billing contacts, creation, update and expiration dates, domain age and name servers for 1,200+ TLDs, plus a Hosted Domain API that lists the domain names hosted on an IP address. This connector covers the IP2WHOIS Domain WHOIS API and the Hosted Domain API, authenticated with an IP2Location.io API key.
 

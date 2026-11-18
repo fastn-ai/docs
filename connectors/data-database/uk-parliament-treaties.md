@@ -5,7 +5,7 @@ hidden: true
 
 # UK Parliament Treaties API
 
-<img src="../../.gitbook/assets/connectors/uk-parliament-treaties.png" alt="UK Parliament Treaties API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/uk-parliament-treaties.png" alt="UK Parliament Treaties API logo">
 
 The UK Parliament Treaties API gives open data on treaties laid before Parliament under the CRaG Act: search treaties by text, lead government department, series and parliamentary process, get a treaty and its business items (laying, debates, committee reports), and list government organisations and treaty series. No API key needed.
 

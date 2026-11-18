@@ -5,7 +5,7 @@ hidden: true
 
 # Photoroom
 
-<img src="../../.gitbook/assets/connectors/photoroom.png" alt="Photoroom logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/photoroom.png" alt="Photoroom logo">
 
 Photoroom AI image editing API. Removes backgrounds, generates AI backgrounds, shadows, relighting, text removal, flat lay, ghost mannequin, virtual model and virtual try-on, upscaling and uncropping, and returns the edited image. Covers the Image Editing API v2 (image-api.photoroom.com), the legacy v1 render endpoint, the Remove Background API v1 (sdk.photoroom.com), Visual QA, and account/credit balance. Authenticates with an x-api-key header; prefix the key with sandbox_ to use Photoroom's free watermarked sandbox mode.
 
@@ -39,9 +39,7 @@ Add Photoroom from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Render Template From Upload (Legacy v1) | `renderTemplateFromUploadV1` | Renders an image into a saved Photoroom template through the legacy v1 render POST endpoint, sending the template id and the source image URL as multipart form fields, and returns the rendered image. Deprecated by Photoroom in favour of the v2 edit endpoint. Photoroom's POST form also accepts a raw imageFile upload, which the fastn engine cannot emit; supply the image by URL instead. Each render consumes one image from the account balance. |
-| Render Template From URL (Legacy v1) | `renderTemplateFromUrlV1` | Renders an image into a saved Photoroom template using the legacy v1 render endpoint and returns the rendered image. Deprecated by Photoroom in favour of the v2 edit endpoint, which offers the same functionality plus the AI features; kept for existing integrations that still address templates by id. Each render consumes one image from the account balance. |
+* **Render Template From Upload (Legacy v1)** `renderTemplateFromUploadV1`: Renders an image into a saved Photoroom template through the legacy v1 render POST endpoint, sending the template id and the source image URL as multipart form fields, and returns the rendered image. Deprecated by Photoroom in favour of the v2 edit endpoint. Photoroom's POST form also accepts a raw imageFile upload, which the fastn engine cannot emit; supply the image by URL instead. Each render consumes one image from the account balance.
+* **Render Template From URL (Legacy v1)** `renderTemplateFromUrlV1`: Renders an image into a saved Photoroom template using the legacy v1 render endpoint and returns the rendered image. Deprecated by Photoroom in favour of the v2 edit endpoint, which offers the same functionality plus the AI features; kept for existing integrations that still address templates by id. Each render consumes one image from the account balance.
 
 </details>

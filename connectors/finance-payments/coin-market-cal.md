@@ -5,7 +5,7 @@ hidden: true
 
 # CoinMarketCal
 
-<img src="../../.gitbook/assets/connectors/coin-market-cal.png" alt="CoinMarketCal logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/coin-market-cal.png" alt="CoinMarketCal logo">
 
 CoinMarketCal is the leading crypto events calendar, tracking upcoming and historical announcements - listings, hard forks, token unlocks, airdrops, AMAs and more - for thousands of cryptocurrencies. This connector covers the full CoinMarketCal v2 REST API: the event feed with coin, category, date-range, impact and sort filters, single event lookup, the supported coin directory, single coin lookup, the event category list and the API usage and quota endpoint.
 

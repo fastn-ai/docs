@@ -5,7 +5,7 @@ hidden: true
 
 # Dog CEO
 
-<img src="../../.gitbook/assets/connectors/dog-ceo.png" alt="Dog CEO logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/dog-ceo.png" alt="Dog CEO logo">
 
 Dog CEO's Dog API is a free, open API with 20,000+ dog images from the Stanford Dogs Dataset. List breeds and sub-breeds, get random images from all dogs, a breed or a sub-breed, or list every image of a breed. No API key needed.
 

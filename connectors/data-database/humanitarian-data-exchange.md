@@ -5,7 +5,7 @@ hidden: true
 
 # Humanitarian Data Exchange (HDX)
 
-<img src="../../.gitbook/assets/connectors/humanitarian-data-exchange.png" alt="Humanitarian Data Exchange (HDX) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/humanitarian-data-exchange.png" alt="Humanitarian Data Exchange (HDX) logo">
 
 The Humanitarian Data Exchange (HDX), run by UN OCHA, is a free open platform with over 20,000 humanitarian datasets (population, displacement, food security, health, conflict and more) from hundreds of organizations. Search and read datasets, resources, organizations, tags and activity through its public CKAN API. No API key needed for reads.
 
@@ -39,15 +39,13 @@ Add Humanitarian Data Exchange (HDX) from **Build → Integrations → Connector
 
 <summary>See 8 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Datasets | `listDatasets` | List the names (slugs) of all public datasets on the Humanitarian Data Exchange. (GET /api/3/action/package_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| List Datasets with Resources | `listDatasetsWithResources` | List datasets (newest first) with their resources in full. (GET /api/3/action/current_package_list_with_resources) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| List Licenses | `listLicenses` | List the licenses datasets can use. (GET /api/3/action/license_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| List Organizations | `listOrganizations` | List organizations (publishers). Set all_fields=true for details. (GET /api/3/action/organization_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| List Recently Changed Datasets | `listRecentlyChangedDatasets` | Get the latest dataset changes across the Humanitarian Data Exchange. (GET /api/3/action/recently_changed_packages_activity_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| List Tags | `listTags` | List all tags, optionally only those matching a string. (GET /api/3/action/tag_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| Search Datasets | `searchDatasets` | Search datasets on the Humanitarian Data Exchange by keyword and Solr filters, with sorting, paging and facets. (GET /api/3/action/package_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
-| Search Resources | `searchResources` | Search resources by field:term pairs, e.g. name:demand or format:CSV. (GET /api/3/action/resource_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs |
+* **List Datasets** `listDatasets`: List the names (slugs) of all public datasets on the Humanitarian Data Exchange. (GET /api/3/action/package_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **List Datasets with Resources** `listDatasetsWithResources`: List datasets (newest first) with their resources in full. (GET /api/3/action/current_package_list_with_resources) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **List Licenses** `listLicenses`: List the licenses datasets can use. (GET /api/3/action/license_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **List Organizations** `listOrganizations`: List organizations (publishers). Set all_fields=true for details. (GET /api/3/action/organization_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **List Recently Changed Datasets** `listRecentlyChangedDatasets`: Get the latest dataset changes across the Humanitarian Data Exchange. (GET /api/3/action/recently_changed_packages_activity_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **List Tags** `listTags`: List all tags, optionally only those matching a string. (GET /api/3/action/tag_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **Search Datasets** `searchDatasets`: Search datasets on the Humanitarian Data Exchange by keyword and Solr filters, with sorting, paging and facets. (GET /api/3/action/package_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
+* **Search Resources** `searchResources`: Search resources by field:term pairs, e.g. name:demand or format:CSV. (GET /api/3/action/resource_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) HDX guide: https://data.humdata.org/faqs/devs
 
 </details>

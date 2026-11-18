@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI IBAN Validation
 
-<img src="../../.gitbook/assets/connectors/abstract-api-iban-validation.png" alt="AbstractAPI IBAN Validation logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-iban-validation.png" alt="AbstractAPI IBAN Validation logo">
 
 AbstractAPI IBAN Validation checks whether an International Bank Account Number (IBAN) is valid.
 

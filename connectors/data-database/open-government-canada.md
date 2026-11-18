@@ -5,6 +5,8 @@ hidden: true
 
 # Open Government Canada
 
+<img src="../../.gitbook/assets/connectors/lg/open-government-canada.png" alt="Open Government Canada logo">
+
 Open Government Canada (open.canada.ca) is the Government of Canada's free open data portal with tens of thousands of federal datasets from Statistics Canada, Environment Canada and other departments. Search and read datasets, resources, organizations, licenses and change activity through its public CKAN API. No API key needed.
 
 | | |
@@ -37,11 +39,9 @@ Add Open Government Canada from **Build → Integrations → Connectors** and co
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Organizations | `listOrganizations` | List organizations (publishers). Set all_fields=true for details. (GET /api/3/action/organization_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api |
-| List Recently Changed Datasets | `listRecentlyChangedDatasets` | Get the latest dataset changes across Canada's Open Government Portal. (GET /api/3/action/recently_changed_packages_activity_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api |
-| Search Datasets | `searchDatasets` | Search datasets on Canada's Open Government Portal by keyword and Solr filters, with sorting, paging and facets. (GET /api/3/action/package_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api |
-| Search Resources | `searchResources` | Search resources by field:term pairs, e.g. name:demand or format:CSV. (GET /api/3/action/resource_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api |
+* **List Organizations** `listOrganizations`: List organizations (publishers). Set all_fields=true for details. (GET /api/3/action/organization_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api
+* **List Recently Changed Datasets** `listRecentlyChangedDatasets`: Get the latest dataset changes across Canada's Open Government Portal. (GET /api/3/action/recently_changed_packages_activity_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api
+* **Search Datasets** `searchDatasets`: Search datasets on Canada's Open Government Portal by keyword and Solr filters, with sorting, paging and facets. (GET /api/3/action/package_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api
+* **Search Resources** `searchResources`: Search resources by field:term pairs, e.g. name:demand or format:CSV. (GET /api/3/action/resource_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) Portal guide: https://open.canada.ca/en/access-our-application-programming-interface-api
 
 </details>

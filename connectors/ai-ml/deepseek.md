@@ -5,7 +5,7 @@ hidden: true
 
 # DeepSeek
 
-<img src="../../.gitbook/assets/connectors/deepseek.png" alt="DeepSeek logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/deepseek.png" alt="DeepSeek logo">
 
 DeepSeek AI API connector (OpenAI-compatible). Chat completions with deepseek-v4-flash / deepseek-v4-pro models (thinking mode, reasoning_content), FIM beta completions, model listing, and account balance. Bearer-token authenticated.
 

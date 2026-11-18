@@ -36,40 +36,38 @@ Add Stitch from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 33 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Source | `deleteSource` | Deletes a source. Stitch stops replicating it and stamps the record with a deletion timestamp. |
-| Disable Custom Email Notification Recipient | `disableCustomEmailNotificationRecipient` | Disables a custom notification recipient so Stitch stops emailing them, without removing the record. |
-| Disable Post-Load Hook Notification | `disableHookNotification` | Disables a post-load webhook so Stitch stops delivering notifications to it. |
-| Enable Custom Email Notification Recipient | `enableCustomEmailNotificationRecipient` | Re-enables a disabled custom notification recipient so Stitch resumes emailing them. |
-| Enable Post-Load Hook Notification | `enableHookNotification` | Re-enables a disabled post-load webhook so Stitch resumes delivering notifications to it. |
-| Get Destination Type | `getDestinationType` | Retrieves a single destination type and the form properties required to configure it. |
-| Get Extraction Job Logs | `getExtractionLogs` | Retrieves the log output of a single extraction job. Job names come from List Extractions. |
-| Get Import API Status | `getImportApiStatus` | Reports whether the Stitch Import API is currently available. Use it as a health check before pushing records. |
-| Get Source | `getSource` | Retrieves a single source and its current configuration state by identifier. |
-| Get Source Last Connection Check | `getSourceLastConnectionCheck` | Retrieves the result of the most recent connection check Stitch ran against a source, including the outcome of each individual check step. |
-| Get Source Type | `getSourceType` | Retrieves a single source type and the form properties required to configure it. |
-| Get Stream Schema | `getStreamSchema` | Retrieves the JSON schema and field-level metadata for a single stream, which is what field selection is applied against. |
-| List Custom Email Notification Recipients | `listCustomEmailNotificationRecipients` | Retrieves every additional email address Stitch sends account notifications to. |
-| List Destination Types | `listDestinationTypes` | Retrieves every destination type Stitch can load data into, including the form properties each type requires. |
-| List Destinations | `listDestinations` | Retrieves every destination configured on the Stitch client account. |
-| List Extractions | `listExtractions` | Retrieves the most recent extraction job for every source on the account, ordered by source identifier. Results are paginated 100 records to a page. |
-| List Import API Tokens | `listImportApiTokens` | Retrieves the identifiers of the Import API access tokens issued for a source. Token values themselves are never returned. |
-| List Loads | `listLoads` | Retrieves the most recent load attempt for every stream on the account, ordered by stream name. Results are paginated 100 records to a page. |
-| List Post-Load Hook Notifications | `listHookNotifications` | Retrieves every post-load webhook Stitch calls when a destination finishes loading data. |
-| List Source Types | `listSourceTypes` | Retrieves every source type Stitch supports, including the form properties each type requires. |
-| List Sources | `listSources` | Retrieves every source configured on the Stitch client account, including deleted ones. |
-| List Streams | `listStreams` | Retrieves every stream, meaning table or endpoint, that a source exposes for replication. |
-| Pause Source | `pauseSource` | Pauses a source so Stitch stops scheduling replication jobs for it. Any timestamp value pauses the source immediately. |
-| Push Import API Batch With Schema | `pushImportApiBatch` | Pushes a batch of records together with an explicit JSON schema, which lets Stitch type the destination columns precisely. Requires an Import API access token created for an Import API source, not a Connect API token. |
-| Push Import API Records | `pushImportApiRecords` | Pushes a batch of upsert records into a Stitch Import API source, which loads them into the destination table. Requires an Import API access token created for an Import API source, not a Connect API token. |
-| Revoke Import API Token | `revokeImportApiToken` | Revokes an Import API access token so it can no longer push data into Stitch. |
-| Start Replication Job | `startReplicationJob` | Starts a replication job for a source immediately instead of waiting for its next scheduled run. |
-| Stop Replication Job | `stopReplicationJob` | Stops the replication job currently running for a source. |
-| Unpause Source | `unpauseSource` | Resumes a paused source so Stitch schedules replication jobs for it again. |
-| Update Destination | `updateDestination` | Updates the connection properties of an existing destination. |
-| Update Source | `updateSource` | Updates the display name, destination or connection properties of an existing source. |
-| Update Streams Metadata | `updateStreamsMetadata` | Selects streams and fields for replication and sets their replication method. This is the endpoint that drives field selection on a source. |
-| Validate Import API Records | `validateImportApiRecords` | Validates a batch of Import API records against Stitch's structural rules without persisting anything. Requires an Import API access token created for an Import API source, not a Connect API token. |
+* **Delete Source** `deleteSource`: Deletes a source. Stitch stops replicating it and stamps the record with a deletion timestamp.
+* **Disable Custom Email Notification Recipient** `disableCustomEmailNotificationRecipient`: Disables a custom notification recipient so Stitch stops emailing them, without removing the record.
+* **Disable Post-Load Hook Notification** `disableHookNotification`: Disables a post-load webhook so Stitch stops delivering notifications to it.
+* **Enable Custom Email Notification Recipient** `enableCustomEmailNotificationRecipient`: Re-enables a disabled custom notification recipient so Stitch resumes emailing them.
+* **Enable Post-Load Hook Notification** `enableHookNotification`: Re-enables a disabled post-load webhook so Stitch resumes delivering notifications to it.
+* **Get Destination Type** `getDestinationType`: Retrieves a single destination type and the form properties required to configure it.
+* **Get Extraction Job Logs** `getExtractionLogs`: Retrieves the log output of a single extraction job. Job names come from List Extractions.
+* **Get Import API Status** `getImportApiStatus`: Reports whether the Stitch Import API is currently available. Use it as a health check before pushing records.
+* **Get Source** `getSource`: Retrieves a single source and its current configuration state by identifier.
+* **Get Source Last Connection Check** `getSourceLastConnectionCheck`: Retrieves the result of the most recent connection check Stitch ran against a source, including the outcome of each individual check step.
+* **Get Source Type** `getSourceType`: Retrieves a single source type and the form properties required to configure it.
+* **Get Stream Schema** `getStreamSchema`: Retrieves the JSON schema and field-level metadata for a single stream, which is what field selection is applied against.
+* **List Custom Email Notification Recipients** `listCustomEmailNotificationRecipients`: Retrieves every additional email address Stitch sends account notifications to.
+* **List Destination Types** `listDestinationTypes`: Retrieves every destination type Stitch can load data into, including the form properties each type requires.
+* **List Destinations** `listDestinations`: Retrieves every destination configured on the Stitch client account.
+* **List Extractions** `listExtractions`: Retrieves the most recent extraction job for every source on the account, ordered by source identifier. Results are paginated 100 records to a page.
+* **List Import API Tokens** `listImportApiTokens`: Retrieves the identifiers of the Import API access tokens issued for a source. Token values themselves are never returned.
+* **List Loads** `listLoads`: Retrieves the most recent load attempt for every stream on the account, ordered by stream name. Results are paginated 100 records to a page.
+* **List Post-Load Hook Notifications** `listHookNotifications`: Retrieves every post-load webhook Stitch calls when a destination finishes loading data.
+* **List Source Types** `listSourceTypes`: Retrieves every source type Stitch supports, including the form properties each type requires.
+* **List Sources** `listSources`: Retrieves every source configured on the Stitch client account, including deleted ones.
+* **List Streams** `listStreams`: Retrieves every stream, meaning table or endpoint, that a source exposes for replication.
+* **Pause Source** `pauseSource`: Pauses a source so Stitch stops scheduling replication jobs for it. Any timestamp value pauses the source immediately.
+* **Push Import API Batch With Schema** `pushImportApiBatch`: Pushes a batch of records together with an explicit JSON schema, which lets Stitch type the destination columns precisely. Requires an Import API access token created for an Import API source, not a Connect API token.
+* **Push Import API Records** `pushImportApiRecords`: Pushes a batch of upsert records into a Stitch Import API source, which loads them into the destination table. Requires an Import API access token created for an Import API source, not a Connect API token.
+* **Revoke Import API Token** `revokeImportApiToken`: Revokes an Import API access token so it can no longer push data into Stitch.
+* **Start Replication Job** `startReplicationJob`: Starts a replication job for a source immediately instead of waiting for its next scheduled run.
+* **Stop Replication Job** `stopReplicationJob`: Stops the replication job currently running for a source.
+* **Unpause Source** `unpauseSource`: Resumes a paused source so Stitch schedules replication jobs for it again.
+* **Update Destination** `updateDestination`: Updates the connection properties of an existing destination.
+* **Update Source** `updateSource`: Updates the display name, destination or connection properties of an existing source.
+* **Update Streams Metadata** `updateStreamsMetadata`: Selects streams and fields for replication and sets their replication method. This is the endpoint that drives field selection on a source.
+* **Validate Import API Records** `validateImportApiRecords`: Validates a batch of Import API records against Stitch's structural rules without persisting anything. Requires an Import API access token created for an Import API source, not a Connect API token.
 
 </details>

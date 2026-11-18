@@ -5,7 +5,7 @@ hidden: true
 
 # Kanye Rest
 
-<img src="../../.gitbook/assets/connectors/kanye-rest.png" alt="Kanye Rest logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/kanye-rest.png" alt="Kanye Rest logo">
 
 kanye.rest is a free REST API of Kanye West quotes. Get a random quote as JSON or plain text, or the full list of quotes. No API key needed.
 

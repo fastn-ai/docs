@@ -5,7 +5,7 @@ hidden: true
 
 # Notion
 
-<img src="../../.gitbook/assets/connectors/notion.ico" alt="Notion logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/notion.png" alt="Notion logo">
 
 Notion REST API connector for managing pages, databases, blocks, users, comments, and search across a Notion workspace.
 
@@ -39,34 +39,32 @@ Add Notion from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 26 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Block | `deleteBlock` | Archive (delete) a Notion block |
-| Get Block | `getBlock` | Retrieve a single block from Notion by its ID |
-| Get Block Children | `getBlockChildren` | Retrieve all child blocks of a Notion block or page |
-| Get Bot User | `getBotUser` | Retrieve the bot user associated with the current OAuth token |
-| Get Comment | `getComment` | Retrieve a single Notion comment by its comment_id (GET comments/{comment_id}). Pinned to Notion-Version 2026-03-11, consistent with the rest of the connector. Verified live on both 2022-06-28 and 2026-03-11: the endpoint is available on BOTH, so the earlier "requires 2026-03-11 or later" note in this description was incorrect. Returns the comment object with rich_text, parent, discussion_id. |
-| Get Database | `getDatabase` | Retrieve a Notion database by its ID. LEGACY - deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 this endpoint still returns 200 but its body changes shape - it returns a data_sources[] array and OMITS the properties (column schema) object this action's outputContract declares. It is therefore kept on 2022-06-28 so the documented response stays correct. For the column schema on current API versions use retrieveDataSource with a data_source_id; list a database's data sources by reading data_sources[] from a 2026-03-11 call. Known limitation: on 2022-06-28 a database with MULTIPLE data sources returns "Databases with multiple data sources are not supported in this API version" - use retrieveDataSource for those. |
-| Get File Upload | `getFileUpload` | Retrieve a single file_upload object by its id (GET file_uploads/{file_upload_id}). Use to poll upload status. Returns the file_upload object. |
-| Get Page | `getPage` | Retrieve a Notion page by its ID |
-| Get Page Property | `getPageProperty` | Retrieve a specific property of a Notion page |
-| Get User | `getUser` | Retrieve a specific Notion user by their ID |
-| List Comments | `listComments` | Retrieve all comments on a Notion page or block |
-| List Data Source Templates | `listDataSourceTemplates` | Retrieves details of all page templates available for a given data source. Results are paginated up to 100 per page. |
-| List File Uploads | `listFileUploads` | List file_upload objects for the workspace (GET file_uploads). Supports filtering by status and cursor pagination. Returns a paginated list envelope with results[]. Query params (status, start_cursor, page_size) are auto-appended on GET from the inputContract. |
-| List Users | `listUsers` | List all users in a Notion workspace |
-| Query Data Source | `queryDataSource` | Gets a paginated list of pages (rows) contained in a data source, filtered and sorted according to the provided conditions. Supports up to 10,000 results per query. |
-| Query Database | `queryDatabase` | LEGACY - query a Notion database and return matching pages. This endpoint (POST /v1/databases/{id}/query) was REMOVED in Notion API version 2025-09-03; verified live that it returns HTTP 400 invalid_request_url on 2026-03-11. It is therefore deliberately pinned to Notion-Version 2022-06-28, which still works. REPLACEMENT: use queryDataSource (POST /v1/data_sources/{data_source_id}/query), which runs on 2026-03-11 and also supports filter, sorts and filter_properties. Get a data_source_id from getDatabase's data_sources[] or from a relation property. Known limitation of this legacy action: a database with MULTIPLE data sources returns "Databases with multiple data sources are not supported in this API version" - those must use queryDataSource. |
-| Query Database Rows (Paged) | `queryDatabaseRows` | List rows (pages) of a Notion database, newest first, with cursor pagination: POST /v1/databases/{databaseId}/query. Only page_size and start_cursor are sent in the body, so extra inputs never leak into the request. Returns results plus next_cursor / has_more. |
-| Retrieve Data Source | `retrieveDataSource` | Retrieves a data source object — including its properties schema (columns) — for a provided data source ID. Use this to inspect the structure of a data source before querying its rows. |
-| Search | `search` | Search all pages and databases in a Notion workspace by title. Deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 an unfiltered search still returns 200, but this action's documented filter.value "database" is REJECTED with HTTP 400 validation_error ("should be `page` or `data_source`"), and the response envelope changes from type "page_or_database" to "page_or_data_source". Keeping 2022-06-28 preserves both the filter input and the documented response for existing callers. To search data sources on a current API version, a new action using filter.value "data_source" would be needed. |
-| Send File Upload | `sendFileUpload` | Transmit file bytes for a pending file upload (POST file_uploads/{file_upload_id}/send). Uses multipart/form-data with a 'file' part (raw binary, provided via the fastn FileRef input field 'file') and, for multi_part uploads, an optional 'part_number' (1-1000). EXECUTOR LIMITATION: the fastn executor's multipart/form-data + FileRef support may not transmit binary bodies correctly; if execution fails on the multipart body (not on auth/routing), classify as BLOCKED (executor multipart limitation) rather than fail. Returns the updated file_upload object. |
-| Update Block | `updateBlock` | Update the content of a Notion block |
-| Update Data Source | `updateDataSource` | Updates a Notion data source object — its properties schema, title, icon, trash status, or parent database. Returns the updated data source object. |
-| Update Database | `updateDatabase` | LEGACY - rename a Notion database. Deliberately pinned to Notion-Version 2022-06-28. Verified live: this title-only PATCH is still ACCEPTED on 2026-03-11 (HTTP 200), but the response there omits the properties (column schema) object this action's outputContract declares, so the version is held back to keep the documented response correct. Note the body template sends only the title, so the "archived" input is currently ignored (archiving is not actually applied). To change a database's COLUMN SCHEMA on current API versions use updateDataSource, whose properties map edits the data source that owns the columns; a database itself no longer carries a schema. |
-| Update Database Row (Plain Text) | `updateDatabaseRowPlainText` | Partially update a Notion database row (page) by pageId. titleValue, status and priority are optional objects written under titleProperty / statusProperty / priorityProperty ({title:[{text:{content}}]} / {status:{name}} / {select:{name}}); unset ones are omitted and keep their value. Returns the updated page. |
-| Update Database Row Title | `updateDatabaseRowTitle` | Set the title of a Notion database row (page) from plain text. titleProperty is the database's title column (usually Name), title is the new text. Returns the updated page. To set several columns or rich values, use Update Database Row (Plain Text). |
-| Update Page | `updatePage` | Update a Notion page's properties or archive it. Deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 this action's REQUIRED "archived" input is rejected with HTTP 400 validation_error ("body.archived should be not present") because Notion renamed that field to "in_trash" on newer versions. Keeping 2022-06-28 preserves the existing input contract. Moving this action forward would require accepting in_trash instead, which is a breaking input change and so needs a new action version rather than an edit. |
+* **Delete Block** `deleteBlock`: Archive (delete) a Notion block
+* **Get Block** `getBlock`: Retrieve a single block from Notion by its ID
+* **Get Block Children** `getBlockChildren`: Retrieve all child blocks of a Notion block or page
+* **Get Bot User** `getBotUser`: Retrieve the bot user associated with the current OAuth token
+* **Get Comment** `getComment`: Retrieve a single Notion comment by its comment_id (GET comments/{comment_id}). Pinned to Notion-Version 2026-03-11, consistent with the rest of the connector. Verified live on both 2022-06-28 and 2026-03-11: the endpoint is available on BOTH, so the earlier "requires 2026-03-11 or later" note in this description was incorrect. Returns the comment object with rich_text, parent, discussion_id.
+* **Get Database** `getDatabase`: Retrieve a Notion database by its ID. LEGACY - deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 this endpoint still returns 200 but its body changes shape - it returns a data_sources[] array and OMITS the properties (column schema) object this action's outputContract declares. It is therefore kept on 2022-06-28 so the documented response stays correct. For the column schema on current API versions use retrieveDataSource with a data_source_id; list a database's data sources by reading data_sources[] from a 2026-03-11 call. Known limitation: on 2022-06-28 a database with MULTIPLE data sources returns "Databases with multiple data sources are not supported in this API version" - use retrieveDataSource for those.
+* **Get File Upload** `getFileUpload`: Retrieve a single file_upload object by its id (GET file_uploads/{file_upload_id}). Use to poll upload status. Returns the file_upload object.
+* **Get Page** `getPage`: Retrieve a Notion page by its ID
+* **Get Page Property** `getPageProperty`: Retrieve a specific property of a Notion page
+* **Get User** `getUser`: Retrieve a specific Notion user by their ID
+* **List Comments** `listComments`: Retrieve all comments on a Notion page or block
+* **List Data Source Templates** `listDataSourceTemplates`: Retrieves details of all page templates available for a given data source. Results are paginated up to 100 per page.
+* **List File Uploads** `listFileUploads`: List file_upload objects for the workspace (GET file_uploads). Supports filtering by status and cursor pagination. Returns a paginated list envelope with results[]. Query params (status, start_cursor, page_size) are auto-appended on GET from the inputContract.
+* **List Users** `listUsers`: List all users in a Notion workspace
+* **Query Data Source** `queryDataSource`: Gets a paginated list of pages (rows) contained in a data source, filtered and sorted according to the provided conditions. Supports up to 10,000 results per query.
+* **Query Database** `queryDatabase`: LEGACY - query a Notion database and return matching pages. This endpoint (POST /v1/databases/{id}/query) was REMOVED in Notion API version 2025-09-03; verified live that it returns HTTP 400 invalid_request_url on 2026-03-11. It is therefore deliberately pinned to Notion-Version 2022-06-28, which still works. REPLACEMENT: use queryDataSource (POST /v1/data_sources/{data_source_id}/query), which runs on 2026-03-11 and also supports filter, sorts and filter_properties. Get a data_source_id from getDatabase's data_sources[] or from a relation property. Known limitation of this legacy action: a database with MULTIPLE data sources returns "Databases with multiple data sources are not supported in this API version" - those must use queryDataSource.
+* **Query Database Rows (Paged)** `queryDatabaseRows`: List rows (pages) of a Notion database, newest first, with cursor pagination: POST /v1/databases/{databaseId}/query. Only page_size and start_cursor are sent in the body, so extra inputs never leak into the request. Returns results plus next_cursor / has_more.
+* **Retrieve Data Source** `retrieveDataSource`: Retrieves a data source object — including its properties schema (columns) — for a provided data source ID. Use this to inspect the structure of a data source before querying its rows.
+* **Search** `search`: Search all pages and databases in a Notion workspace by title. Deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 an unfiltered search still returns 200, but this action's documented filter.value "database" is REJECTED with HTTP 400 validation_error ("should be `page` or `data_source`"), and the response envelope changes from type "page_or_database" to "page_or_data_source". Keeping 2022-06-28 preserves both the filter input and the documented response for existing callers. To search data sources on a current API version, a new action using filter.value "data_source" would be needed.
+* **Send File Upload** `sendFileUpload`: Transmit file bytes for a pending file upload (POST file_uploads/{file_upload_id}/send). Uses multipart/form-data with a 'file' part (raw binary, provided via the fastn FileRef input field 'file') and, for multi_part uploads, an optional 'part_number' (1-1000). EXECUTOR LIMITATION: the fastn executor's multipart/form-data + FileRef support may not transmit binary bodies correctly; if execution fails on the multipart body (not on auth/routing), classify as BLOCKED (executor multipart limitation) rather than fail. Returns the updated file_upload object.
+* **Update Block** `updateBlock`: Update the content of a Notion block
+* **Update Data Source** `updateDataSource`: Updates a Notion data source object — its properties schema, title, icon, trash status, or parent database. Returns the updated data source object.
+* **Update Database** `updateDatabase`: LEGACY - rename a Notion database. Deliberately pinned to Notion-Version 2022-06-28. Verified live: this title-only PATCH is still ACCEPTED on 2026-03-11 (HTTP 200), but the response there omits the properties (column schema) object this action's outputContract declares, so the version is held back to keep the documented response correct. Note the body template sends only the title, so the "archived" input is currently ignored (archiving is not actually applied). To change a database's COLUMN SCHEMA on current API versions use updateDataSource, whose properties map edits the data source that owns the columns; a database itself no longer carries a schema.
+* **Update Database Row (Plain Text)** `updateDatabaseRowPlainText`: Partially update a Notion database row (page) by pageId. titleValue, status and priority are optional objects written under titleProperty / statusProperty / priorityProperty ({title:[{text:{content}}]} / {status:{name}} / {select:{name}}); unset ones are omitted and keep their value. Returns the updated page.
+* **Update Database Row Title** `updateDatabaseRowTitle`: Set the title of a Notion database row (page) from plain text. titleProperty is the database's title column (usually Name), title is the new text. Returns the updated page. To set several columns or rich values, use Update Database Row (Plain Text).
+* **Update Page** `updatePage`: Update a Notion page's properties or archive it. Deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 this action's REQUIRED "archived" input is rejected with HTTP 400 validation_error ("body.archived should be not present") because Notion renamed that field to "in_trash" on newer versions. Keeping 2022-06-28 preserves the existing input contract. Moving this action forward would require accepting in_trash instead, which is a breaking input change and so needs a new action version rather than an edit.
 
 </details>
 
@@ -91,14 +89,12 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 
 <summary>See 7 more events</summary>
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Page Created | `page.created` | A page was created in the workspace. |
-| Page Deleted | `page.deleted` | A page was moved to trash (deleted). |
-| Page Locked | `page.locked` | A page was locked. |
-| Page Moved | `page.moved` | A page was moved to a different parent. |
-| Page Properties Updated | `page.properties_updated` | One or more properties of a page were updated. |
-| Page Undeleted | `page.undeleted` | A page was restored from trash. |
-| Page Unlocked | `page.unlocked` | A page was unlocked. |
+* **Page Created** `page.created`: A page was created in the workspace.
+* **Page Deleted** `page.deleted`: A page was moved to trash (deleted).
+* **Page Locked** `page.locked`: A page was locked.
+* **Page Moved** `page.moved`: A page was moved to a different parent.
+* **Page Properties Updated** `page.properties_updated`: One or more properties of a page were updated.
+* **Page Undeleted** `page.undeleted`: A page was restored from trash.
+* **Page Unlocked** `page.unlocked`: A page was unlocked.
 
 </details>

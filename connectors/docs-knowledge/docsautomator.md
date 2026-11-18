@@ -5,7 +5,7 @@ hidden: true
 
 # DocsAutomator
 
-<img src="../../.gitbook/assets/connectors/docsautomator.png" alt="DocsAutomator logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/docsautomator.png" alt="DocsAutomator logo">
 
 DocsAutomator document automation API: generate PDFs and Google Docs from Google Docs / Word / PDF templates, manage automations, inspect template placeholders, monitor the generation queue and jobs, and manage e-signature signing sessions. Base URL https://api.docsautomator.co.
 
@@ -39,17 +39,15 @@ Add DocsAutomator from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Signing Links | `getSigningLinks` | Get the per-signer signing URLs for an eSign session (used with deliveryMethod 'manual'). Returns { success, sessionId, documentName, deliveryMethod, status, signingLinks[] } with each link's expiry and signer status. SECURITY: a signing link embeds the signer's access token and lets the holder sign the document - treat the response as a secret and deliver each link only to its intended signer. |
-| Get Signing Session | `getSigningSession` | Get full details of one eSign signing session: status, closeType, signingOrder, originalPdfUrl / signedPdfUrl, document hashes, esignFields, per-signer status with timestamps, IP and geolocation, and decline details. SECURITY: each signer object carries an accessToken that grants signing access, and the PDF URLs are unauthenticated file links - treat the response as sensitive. |
-| List Automations | `listAutomations` | List all automations in the DocsAutomator workspace. Returns { automations: [...] } with each automation's _id, title, dataSource, template settings and options. |
-| List Signing Sessions | `listSigningSessions` | List DocsAutomator eSign signing sessions, optionally filtered by status or signer email, with page/limit pagination. Returns { sessions, pagination }. |
-| List Template Placeholders | `listPlaceholders` | List the placeholder names found in an automation's template (the v2 endpoint). Requires that a Google account be linked to the DocsAutomator workspace under Settings - otherwise the vendor returns HTTP 401 'No Google access permissions'. |
-| List Template Placeholders (Legacy v1) | `listPlaceholdersLegacy` | Legacy v1 placeholder listing endpoint (undocumented but live). Takes docId rather than automationId. Prefer List Template Placeholders. Requires a linked Google account on the workspace, otherwise HTTP 401 'No Google access permissions'. |
-| Resend Signing Invitation | `resendSigningInvite` | Re-send the signing invitation email to one signer of an eSign session. signerIndex is the signer's 1-based position as returned in the session's signers[].index (vendor docs: "indexed 1, 2, 3, etc."). Returns { success, message: "Invitation resent to &lt;email&gt;" }. Sends a real email to that signer. |
-| Send Test Email | `sendTestEmail` | Send a test copy of an automation's configured 'send email' action to a recipient address. Rate limited by the vendor (the response carries rateLimit.remaining and resetAt). Sends a real email - only use an address you control. |
-| Update Automation | `updateAutomation` | Update an automation's settings. docId identifies the automation and is sent in the query string. Any subset of title, docTemplateLink, newDocumentNameField, isActive, saveGoogleDoc, googleDocDestinationFolderUrl, locale, formatNumbersWithLocale, pdfExpiration, imageOptions may be supplied. Returns { message: 'Success', updatedAutomation }. |
+* **Get Signing Links** `getSigningLinks`: Get the per-signer signing URLs for an eSign session (used with deliveryMethod 'manual'). Returns { success, sessionId, documentName, deliveryMethod, status, signingLinks[] } with each link's expiry and signer status. SECURITY: a signing link embeds the signer's access token and lets the holder sign the document - treat the response as a secret and deliver each link only to its intended signer.
+* **Get Signing Session** `getSigningSession`: Get full details of one eSign signing session: status, closeType, signingOrder, originalPdfUrl / signedPdfUrl, document hashes, esignFields, per-signer status with timestamps, IP and geolocation, and decline details. SECURITY: each signer object carries an accessToken that grants signing access, and the PDF URLs are unauthenticated file links - treat the response as sensitive.
+* **List Automations** `listAutomations`: List all automations in the DocsAutomator workspace. Returns { automations: [...] } with each automation's _id, title, dataSource, template settings and options.
+* **List Signing Sessions** `listSigningSessions`: List DocsAutomator eSign signing sessions, optionally filtered by status or signer email, with page/limit pagination. Returns { sessions, pagination }.
+* **List Template Placeholders** `listPlaceholders`: List the placeholder names found in an automation's template (the v2 endpoint). Requires that a Google account be linked to the DocsAutomator workspace under Settings - otherwise the vendor returns HTTP 401 'No Google access permissions'.
+* **List Template Placeholders (Legacy v1)** `listPlaceholdersLegacy`: Legacy v1 placeholder listing endpoint (undocumented but live). Takes docId rather than automationId. Prefer List Template Placeholders. Requires a linked Google account on the workspace, otherwise HTTP 401 'No Google access permissions'.
+* **Resend Signing Invitation** `resendSigningInvite`: Re-send the signing invitation email to one signer of an eSign session. signerIndex is the signer's 1-based position as returned in the session's signers[].index (vendor docs: "indexed 1, 2, 3, etc."). Returns { success, message: "Invitation resent to &lt;email&gt;" }. Sends a real email to that signer.
+* **Send Test Email** `sendTestEmail`: Send a test copy of an automation's configured 'send email' action to a recipient address. Rate limited by the vendor (the response carries rateLimit.remaining and resetAt). Sends a real email - only use an address you control.
+* **Update Automation** `updateAutomation`: Update an automation's settings. docId identifies the automation and is sent in the query string. Any subset of title, docTemplateLink, newDocumentNameField, isActive, saveGoogleDoc, googleDocDestinationFolderUrl, locale, formatNumbersWithLocale, pdfExpiration, imageOptions may be supplied. Returns { message: 'Success', updatedAutomation }.
 
 </details>
 

@@ -5,7 +5,7 @@ hidden: true
 
 # You.com
 
-<img src="../../.gitbook/assets/connectors/youcom.png" alt="You.com logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/youcom.png" alt="You.com logo">
 
 You.com API — real-time web intelligence for AI apps. Search API (GET https://ydc-index.io/v1/search) returns LLM-optimized web + news results with optional livecrawl full-page content; Contents API (POST https://ydc-index.io/v1/contents) fetches full page HTML/markdown/metadata for given URLs; Research API (POST https://api.you.com/v1/research) is a deep-search agent returning a grounded answer with sources and optional structured (JSON-schema) output. Auth via X-API-Key header.
 

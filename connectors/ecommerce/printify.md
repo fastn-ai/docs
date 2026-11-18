@@ -5,7 +5,7 @@ hidden: true
 
 # Printify
 
-<img src="../../.gitbook/assets/connectors/printify.png" alt="Printify logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/printify.png" alt="Printify logo">
 
 Printify print-on-demand API. Manage shops, browse the product catalog (blueprints, print providers, variants, shipping), create and publish products, submit and manage orders, upload artwork, and manage webhooks.
 
@@ -39,37 +39,35 @@ Add Printify from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 30 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Blueprint | `getBlueprint` | Retrieve a specific catalog blueprint by its ID. |
-| Get Economy Shipping | `getEconomyShipping` | Retrieve economy shipping rates (v2) for a blueprint and print provider. |
-| Get Express Shipping | `getExpressShipping` | Retrieve express shipping rates (v2) for a blueprint and print provider. |
-| Get Order | `getOrder` | Retrieve a specific order in the shop by its ID. |
-| Get Print Provider | `getPrintProvider` | Retrieve a specific print provider and its details by ID. |
-| Get Priority Shipping | `getPriorityShipping` | Retrieve priority shipping rates (v2) for a blueprint and print provider. |
-| Get Product | `getProduct` | Retrieve a specific product in the shop by its ID. |
-| Get Product GPSR | `getProductGpsr` | Retrieve the GPSR (General Product Safety Regulation) compliance information for a product. |
-| Get Shipping Information | `getShippingInfo` | Retrieve shipping cost information (v1) for a blueprint and print provider. |
-| Get Shipping Information V2 | `getShippingInfoV2` | Retrieve the available shipping methods (v2) for a blueprint and print provider, with links to each method's details. |
-| Get Standard Shipping | `getStandardShipping` | Retrieve standard shipping rates (v2) for a blueprint and print provider. |
-| Get Upload | `getUpload` | Retrieve details of a specific uploaded image by its ID. |
-| List Blueprints | `listBlueprints` | List all available catalog blueprints (base products) offered by Printify. |
-| List Orders | `listOrders` | List orders in the shop. Supports pagination and filters. |
-| List Print Providers | `listPrintProviders` | List all print providers available in the Printify catalog. |
-| List Print Providers For Blueprint | `listPrintProvidersForBlueprint` | List all print providers that can fulfill a specific blueprint. |
-| List Products | `listProducts` | List products in the shop. Supports pagination via limit and page. |
-| List Shops | `listShops` | Retrieve the list of shops (stores) connected to the Printify account. |
-| List Uploads | `listUploads` | List images uploaded to the merchant's media library. Supports pagination. |
-| List Variants | `listVariants` | List all variants (and their options) available for a blueprint from a specific print provider. |
-| List Webhooks | `listWebhooks` | List all webhook subscriptions configured for the shop. |
-| Publish Product | `publishProduct` | Lock and publish a product to its connected sales channel. Boolean flags control which properties are published. |
-| Send Order To Production | `sendOrderToProduction` | Send an on-hold order to production for fulfillment. |
-| Set Publishing Failed | `setPublishFailed` | Notify Printify that publishing of a product to the external sales channel failed. Unlocks the product. |
-| Set Publishing Succeeded | `setPublishSucceeded` | Notify Printify that publishing of a product to the external sales channel succeeded, providing the external product id and handle. Unlocks the product. |
-| Simulate Webhook | `simulateWebhook` | Trigger a simulated delivery of a webhook subscription for testing the receiving endpoint. |
-| Unpublish Product | `unpublishProduct` | Unpublish a product and unlock it (removes the publish lock). |
-| Update Product | `updateProduct` | Update an existing product. Only the fields you send are changed (partial update). |
-| Update Webhook | `updateWebhook` | Update the destination URL of an existing webhook subscription. |
-| Upload Image | `uploadImage` | Upload an image to the merchant's media library by URL or base64 contents. Provide file_name plus either url or contents. |
+* **Get Blueprint** `getBlueprint`: Retrieve a specific catalog blueprint by its ID.
+* **Get Economy Shipping** `getEconomyShipping`: Retrieve economy shipping rates (v2) for a blueprint and print provider.
+* **Get Express Shipping** `getExpressShipping`: Retrieve express shipping rates (v2) for a blueprint and print provider.
+* **Get Order** `getOrder`: Retrieve a specific order in the shop by its ID.
+* **Get Print Provider** `getPrintProvider`: Retrieve a specific print provider and its details by ID.
+* **Get Priority Shipping** `getPriorityShipping`: Retrieve priority shipping rates (v2) for a blueprint and print provider.
+* **Get Product** `getProduct`: Retrieve a specific product in the shop by its ID.
+* **Get Product GPSR** `getProductGpsr`: Retrieve the GPSR (General Product Safety Regulation) compliance information for a product.
+* **Get Shipping Information** `getShippingInfo`: Retrieve shipping cost information (v1) for a blueprint and print provider.
+* **Get Shipping Information V2** `getShippingInfoV2`: Retrieve the available shipping methods (v2) for a blueprint and print provider, with links to each method's details.
+* **Get Standard Shipping** `getStandardShipping`: Retrieve standard shipping rates (v2) for a blueprint and print provider.
+* **Get Upload** `getUpload`: Retrieve details of a specific uploaded image by its ID.
+* **List Blueprints** `listBlueprints`: List all available catalog blueprints (base products) offered by Printify.
+* **List Orders** `listOrders`: List orders in the shop. Supports pagination and filters.
+* **List Print Providers** `listPrintProviders`: List all print providers available in the Printify catalog.
+* **List Print Providers For Blueprint** `listPrintProvidersForBlueprint`: List all print providers that can fulfill a specific blueprint.
+* **List Products** `listProducts`: List products in the shop. Supports pagination via limit and page.
+* **List Shops** `listShops`: Retrieve the list of shops (stores) connected to the Printify account.
+* **List Uploads** `listUploads`: List images uploaded to the merchant's media library. Supports pagination.
+* **List Variants** `listVariants`: List all variants (and their options) available for a blueprint from a specific print provider.
+* **List Webhooks** `listWebhooks`: List all webhook subscriptions configured for the shop.
+* **Publish Product** `publishProduct`: Lock and publish a product to its connected sales channel. Boolean flags control which properties are published.
+* **Send Order To Production** `sendOrderToProduction`: Send an on-hold order to production for fulfillment.
+* **Set Publishing Failed** `setPublishFailed`: Notify Printify that publishing of a product to the external sales channel failed. Unlocks the product.
+* **Set Publishing Succeeded** `setPublishSucceeded`: Notify Printify that publishing of a product to the external sales channel succeeded, providing the external product id and handle. Unlocks the product.
+* **Simulate Webhook** `simulateWebhook`: Trigger a simulated delivery of a webhook subscription for testing the receiving endpoint.
+* **Unpublish Product** `unpublishProduct`: Unpublish a product and unlock it (removes the publish lock).
+* **Update Product** `updateProduct`: Update an existing product. Only the fields you send are changed (partial update).
+* **Update Webhook** `updateWebhook`: Update the destination URL of an existing webhook subscription.
+* **Upload Image** `uploadImage`: Upload an image to the merchant's media library by URL or base64 contents. Provide file_name plus either url or contents.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # Hacker News
 
-<img src="../../.gitbook/assets/connectors/hackernews.png" alt="Hacker News logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/hackernews.png" alt="Hacker News logo">
 
 Hacker News search via the Algolia HN Search API. Public read-only access to stories, comments, polls, and users. Used to ingest HN discussions as pain signals.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Google Calendar
 
-<img src="../../.gitbook/assets/connectors/google-calendar.svg" alt="Google Calendar logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-calendar.png" alt="Google Calendar logo">
 
 Google Calendar API v3 connector — manage calendars, events, ACLs, free/busy queries, and push notification channels.
 
@@ -39,30 +39,28 @@ Add Google Calendar from **Build → Integrations → Connectors** and connect a
 
 <summary>See 22 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Colors | `getColors` | Get the color IDs and hex codes available for calendars and events. |
-| Get Event | `getEvent` | Get a single event by ID from a calendar. |
-| Get Event Instances | `getEventInstances` | List all instances of a recurring event. |
-| Get Setting | `getSetting` | Get a specific user setting (e.g. 'timezone', 'dateFieldOrder', 'format24HourTime'). |
-| List ACL Rules | `listAclRules` | List access control rules for a calendar. |
-| List Calendars | `listCalendars` | List all calendars in the authenticated user's calendar list. |
-| List Events | `listEvents` | List events on a calendar. Use 'primary' as calendarId for the primary calendar. |
-| List Settings | `listSettings` | List all user settings for the authenticated Google Calendar account. |
-| Move Event | `moveEvent` | Move an event from one calendar to another. |
-| Patch Event | `patchEvent` | Partially update an event. Only provided fields are changed. |
-| Patch Event (advanced) | `patchEventAdvanced` | Change only the fields you send (start/end, attendees, title...). Fields you leave out keep their value, so attendees stay on a reschedule. Use this to reschedule; Update Event (PUT) replaces the whole event and clears attendees. sendUpdates is not sent unless set, so Google emails nobody by default. |
-| Query Free/Busy | `queryFreeBusy` | Query free/busy information for a set of calendars and/or groups. |
-| Query Free/Busy (multiple calendars) | `queryFreeBusyMultiple` | Free/busy for several calendars in one call. Pass items as a list of {id} (calendar ids or emails, e.g. [{"id":"primary"},{"id":"team@example.com"}]). Returns calendars keyed by id with their busy periods. For one calendar, Query Free/Busy also works. |
-| Quick Add Event | `quickAddEvent` | Create an event from a natural-language text string (e.g. 'Lunch tomorrow at noon'). |
-| Remove Calendar From List | `deleteCalendarListEntry` | Unsubscribes the signed-in user from a calendar by removing it from their calendar list (Google Calendar calendarList.delete). The calendar and its events are not deleted; it just disappears from the user's list. Google scope: calendar.calendarlist (or calendar). Returns an empty body on success. |
-| Stop Watch Channel | `stopWatchChannel` | Stop receiving push notifications for a watch channel. |
-| Update ACL Rule | `updateAclRule` | Update the role of an existing ACL rule. |
-| Update Calendar | `updateCalendar` | Update metadata for a calendar. |
-| Update Calendar List Entry | `patchCalendarListEntry` | Changes how a calendar appears in the signed-in user's calendar list (Google Calendar calendarList.patch): display name override, color, hidden/selected flags and default reminders. Partial update: only the fields you send change. Does not modify the calendar itself. Google scope: calendar.calendarlist (or calendar). Returns the updated CalendarListEntry. |
-| Update Event | `updateEvent` | Replace an event (full update). Fields you leave out are cleared, including guests: send the full attendees list to keep them. To change only some fields (e.g. reschedule) use Patch Event (advanced). sendUpdates is not sent unless set. |
-| Watch Calendar Events | `watchCalendarEvents` | Register a push notification channel to watch for changes on a calendar's events. |
-| Watch Settings | `watchSettings` | Registers a push notification channel that calls your HTTPS webhook whenever the signed-in user's Calendar settings change (Google Calendar settings.watch). Google scope: calendar.settings or calendar.settings.readonly (calendar/calendar.readonly also work). Stop the channel with Stop Watch Channel using the returned id and resourceId. Returns the Channel with id, resourceId and expiration. |
+* **Get Colors** `getColors`: Get the color IDs and hex codes available for calendars and events.
+* **Get Event** `getEvent`: Get a single event by ID from a calendar.
+* **Get Event Instances** `getEventInstances`: List all instances of a recurring event.
+* **Get Setting** `getSetting`: Get a specific user setting (e.g. 'timezone', 'dateFieldOrder', 'format24HourTime').
+* **List ACL Rules** `listAclRules`: List access control rules for a calendar.
+* **List Calendars** `listCalendars`: List all calendars in the authenticated user's calendar list.
+* **List Events** `listEvents`: List events on a calendar. Use 'primary' as calendarId for the primary calendar.
+* **List Settings** `listSettings`: List all user settings for the authenticated Google Calendar account.
+* **Move Event** `moveEvent`: Move an event from one calendar to another.
+* **Patch Event** `patchEvent`: Partially update an event. Only provided fields are changed.
+* **Patch Event (advanced)** `patchEventAdvanced`: Change only the fields you send (start/end, attendees, title...). Fields you leave out keep their value, so attendees stay on a reschedule. Use this to reschedule; Update Event (PUT) replaces the whole event and clears attendees. sendUpdates is not sent unless set, so Google emails nobody by default.
+* **Query Free/Busy** `queryFreeBusy`: Query free/busy information for a set of calendars and/or groups.
+* **Query Free/Busy (multiple calendars)** `queryFreeBusyMultiple`: Free/busy for several calendars in one call. Pass items as a list of {id} (calendar ids or emails, e.g. [{"id":"primary"},{"id":"team@example.com"}]). Returns calendars keyed by id with their busy periods. For one calendar, Query Free/Busy also works.
+* **Quick Add Event** `quickAddEvent`: Create an event from a natural-language text string (e.g. 'Lunch tomorrow at noon').
+* **Remove Calendar From List** `deleteCalendarListEntry`: Unsubscribes the signed-in user from a calendar by removing it from their calendar list (Google Calendar calendarList.delete). The calendar and its events are not deleted; it just disappears from the user's list. Google scope: calendar.calendarlist (or calendar). Returns an empty body on success.
+* **Stop Watch Channel** `stopWatchChannel`: Stop receiving push notifications for a watch channel.
+* **Update ACL Rule** `updateAclRule`: Update the role of an existing ACL rule.
+* **Update Calendar** `updateCalendar`: Update metadata for a calendar.
+* **Update Calendar List Entry** `patchCalendarListEntry`: Changes how a calendar appears in the signed-in user's calendar list (Google Calendar calendarList.patch): display name override, color, hidden/selected flags and default reminders. Partial update: only the fields you send change. Does not modify the calendar itself. Google scope: calendar.calendarlist (or calendar). Returns the updated CalendarListEntry.
+* **Update Event** `updateEvent`: Replace an event (full update). Fields you leave out are cleared, including guests: send the full attendees list to keep them. To change only some fields (e.g. reschedule) use Patch Event (advanced). sendUpdates is not sent unless set.
+* **Watch Calendar Events** `watchCalendarEvents`: Register a push notification channel to watch for changes on a calendar's events.
+* **Watch Settings** `watchSettings`: Registers a push notification channel that calls your HTTPS webhook whenever the signed-in user's Calendar settings change (Google Calendar settings.watch). Google scope: calendar.settings or calendar.settings.readonly (calendar/calendar.readonly also work). Stop the channel with Stop Watch Channel using the returned id and resourceId. Returns the Channel with id, resourceId and expiration.
 
 </details>
 

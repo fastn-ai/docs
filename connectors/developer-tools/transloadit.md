@@ -5,7 +5,7 @@ hidden: true
 
 # Transloadit
 
-<img src="../../.gitbook/assets/connectors/transloadit.png" alt="Transloadit logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/transloadit.png" alt="Transloadit logo">
 
 Transloadit API2 — file uploading and encoding: Assemblies, Templates, Template Credentials, Auth Keys, DAM (Storage) assets, queues, billing, assembly notifications and tus resumable uploads.
 
@@ -39,35 +39,33 @@ Add Transloadit from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 27 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Auth Key | `deleteAuthKey` | Delete an Auth Key. DELETE https://api2.transloadit.com/auth_keys/{auth_key_id}. Scope auth_keys:write. DANGEROUS: deleting the Auth Key your own connection uses permanently locks this connection out of the Workspace. Never pass the api_auth_key_id returned by your own Assembly responses. |
-| Delete Template | `deleteTemplate` | Delete a Template by id or name. DELETE https://api2.transloadit.com/templates/{template_id}. Scope templates:write. Irreversible. |
-| Delete Template Credential | `deleteTemplateCredential` | Delete a Template Credential by id. DELETE https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:write. Irreversible. |
-| Download Resumable Upload | `downloadResumableUpload` | Read back the bytes already stored for a tus upload. GET https://{upload_host}/resumable/files/{upload_id}. Answers 200 with the uploaded file content. |
-| Get Assembly Statistics | `getAssemblyStats` | Retrieve aggregated Assembly statistics for the Workspace. GET https://api2.transloadit.com/assembly_stats. Scope assemblies:read. Pass {} in `params` with a bearer token. |
-| Get Assembly Status | `getAssembly` | Retrieve the current status and results of one Assembly. GET https://api2.transloadit.com/assemblies/{assembly_id}. This is a capability URL - knowing the Assembly id is the authentication, no signature or token is needed. |
-| Get Monthly Bill | `getBill` | Retrieve the Workspace's bill for one month. GET https://api2.transloadit.com/bill/{bill_year_month} with bill_year_month formatted YYYY-MM. Scope billing:read. Returns usage, invoice total and per-service breakdown. |
-| Get Priority Job Slot Statistics | `getPriorityJobSlotStats` | Retrieve historical priority job slot usage statistics. GET https://api2.transloadit.com/priority_job_slot_stats. Scope queues:read. |
-| Get Template | `getTemplate` | Retrieve one Template by id or name. GET https://api2.transloadit.com/templates/{template_id}. Scope templates:read. |
-| Get Template Credential | `getTemplateCredential` | Retrieve one Template Credential. GET https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:read. |
-| Get Used Job Slots | `getJobSlots` | Retrieve the priority job slots currently in use by the Workspace. GET https://api2.transloadit.com/queues/job_slots. Scope queues:read. |
-| List Assemblies | `listAssemblies` | List the Workspace's Assemblies. GET https://api2.transloadit.com/assemblies. Scope assemblies:read. Supply `params` as a JSON string (supports page, pagesize, type, fromdate, todate, keywords, order_by). With the Bearer Token auth method pass {} ; with Auth Key auth the params must contain auth.key, auth.expires and a matching `signature`. |
-| List Assembly Notifications | `listAssemblyNotifications` | List the notification webhook deliveries recorded for one Assembly, with each attempt's response code and body. GET https://api2.transloadit.com/assembly_notifications/{assembly_id}. Capability URL - the Assembly id is the authentication. |
-| List Auth Key Scopes | `listAuthKeyScopes` | List every scope string an Auth Key or bearer token can be granted (assemblies:read, templates:write, billing:read, ...). GET https://api2.transloadit.com/auth_keys/scopes. |
-| List Auth Keys | `listAuthKeys` | List the Workspace's Auth Keys (ids, labels and scopes only). GET https://api2.transloadit.com/auth_keys. Scope auth_keys:read. |
-| List Template Credential Types | `listTemplateCredentialTypes` | List the storage/service types a Template Credential can be created for (s3, google_storage, ftp, sftp, ...). GET https://api2.transloadit.com/template_credentials/types. |
-| List Template Credentials | `listTemplateCredentials` | List the Workspace's Template Credentials (stored third-party storage credentials). GET https://api2.transloadit.com/template_credentials. Scope template_credentials:read. |
-| List Templates | `listTemplates` | List the Templates available to the Workspace. GET https://api2.transloadit.com/templates. Scope templates:read. `params` supports page, pagesize, sort, order, fromdate, todate, keywords. |
-| Replay Assembly | `replayAssembly` | Re-run a finished Assembly, optionally with changed Steps. POST https://api2.transloadit.com/assemblies/{assembly_id}/replay. Scope assemblies:write. Replaying consumes encoding minutes again. |
-| Replay Assembly Notification | `replayAssemblyNotification` | Re-deliver an Assembly's completion notification webhook. POST https://api2.transloadit.com/assembly_notifications/{assembly_id}/replay. Scope assemblies:write. Use after fixing a notify_url endpoint that failed. |
-| Show Auth Key Secret | `showAuthKeySecret` | Reveal the Auth Secret belonging to an Auth Key. POST https://api2.transloadit.com/auth_keys/show_secret/{auth_key_id}. Scope auth_keys:read. SECURITY: the response body contains a live Workspace credential - anything that can run this action can read the secret that signs every other request. |
-| Stream Assembly Updates | `streamAssemblyUpdates` | Open the Server-Sent-Events stream that pushes an Assembly's status as it changes. The Assembly response returns update_stream_url as https://{host}/{streamPath}?assembly={id} - pass those three parts. The response is an open-ended text/event-stream, so this action suits a client that reads incrementally; a plain request/response call will block until the stream closes. |
-| Terminate Resumable Upload | `terminateResumableUpload` | Abandon a tus upload and free its storage. DELETE https://{upload_host}/resumable/files/{upload_id}. Answers 204; the upload URL then returns 404. |
-| Update Auth Key | `updateAuthKey` | Edit an Auth Key's label or scopes. PUT https://api2.transloadit.com/auth_keys/{auth_key_id}. Scope auth_keys:write. Do not edit the Auth Key your own connection authenticates with. |
-| Update Template | `updateTemplate` | Edit an existing Template. PUT https://api2.transloadit.com/templates/{template_id}. Scope templates:write. `params` may contain name and/or template. |
-| Update Template Credential | `updateTemplateCredential` | Edit an existing Template Credential. PUT https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:write. |
-| Upload Resumable File Bytes | `uploadResumableFileBytes` | Send file bytes to a tus upload. PATCH https://{upload_host}/resumable/files/{upload_id} with Content-Type application/offset+octet-stream and the byte offset to continue from. Answers 204 with the new Upload-Offset. Note: the fastn HTTP engine sends the body as text, so this action is reliable for text-like payloads; true binary chunks are an engine limitation. |
+* **Delete Auth Key** `deleteAuthKey`: Delete an Auth Key. DELETE https://api2.transloadit.com/auth_keys/{auth_key_id}. Scope auth_keys:write. DANGEROUS: deleting the Auth Key your own connection uses permanently locks this connection out of the Workspace. Never pass the api_auth_key_id returned by your own Assembly responses.
+* **Delete Template** `deleteTemplate`: Delete a Template by id or name. DELETE https://api2.transloadit.com/templates/{template_id}. Scope templates:write. Irreversible.
+* **Delete Template Credential** `deleteTemplateCredential`: Delete a Template Credential by id. DELETE https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:write. Irreversible.
+* **Download Resumable Upload** `downloadResumableUpload`: Read back the bytes already stored for a tus upload. GET https://{upload_host}/resumable/files/{upload_id}. Answers 200 with the uploaded file content.
+* **Get Assembly Statistics** `getAssemblyStats`: Retrieve aggregated Assembly statistics for the Workspace. GET https://api2.transloadit.com/assembly_stats. Scope assemblies:read. Pass {} in `params` with a bearer token.
+* **Get Assembly Status** `getAssembly`: Retrieve the current status and results of one Assembly. GET https://api2.transloadit.com/assemblies/{assembly_id}. This is a capability URL - knowing the Assembly id is the authentication, no signature or token is needed.
+* **Get Monthly Bill** `getBill`: Retrieve the Workspace's bill for one month. GET https://api2.transloadit.com/bill/{bill_year_month} with bill_year_month formatted YYYY-MM. Scope billing:read. Returns usage, invoice total and per-service breakdown.
+* **Get Priority Job Slot Statistics** `getPriorityJobSlotStats`: Retrieve historical priority job slot usage statistics. GET https://api2.transloadit.com/priority_job_slot_stats. Scope queues:read.
+* **Get Template** `getTemplate`: Retrieve one Template by id or name. GET https://api2.transloadit.com/templates/{template_id}. Scope templates:read.
+* **Get Template Credential** `getTemplateCredential`: Retrieve one Template Credential. GET https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:read.
+* **Get Used Job Slots** `getJobSlots`: Retrieve the priority job slots currently in use by the Workspace. GET https://api2.transloadit.com/queues/job_slots. Scope queues:read.
+* **List Assemblies** `listAssemblies`: List the Workspace's Assemblies. GET https://api2.transloadit.com/assemblies. Scope assemblies:read. Supply `params` as a JSON string (supports page, pagesize, type, fromdate, todate, keywords, order_by). With the Bearer Token auth method pass {} ; with Auth Key auth the params must contain auth.key, auth.expires and a matching `signature`.
+* **List Assembly Notifications** `listAssemblyNotifications`: List the notification webhook deliveries recorded for one Assembly, with each attempt's response code and body. GET https://api2.transloadit.com/assembly_notifications/{assembly_id}. Capability URL - the Assembly id is the authentication.
+* **List Auth Key Scopes** `listAuthKeyScopes`: List every scope string an Auth Key or bearer token can be granted (assemblies:read, templates:write, billing:read, ...). GET https://api2.transloadit.com/auth_keys/scopes.
+* **List Auth Keys** `listAuthKeys`: List the Workspace's Auth Keys (ids, labels and scopes only). GET https://api2.transloadit.com/auth_keys. Scope auth_keys:read.
+* **List Template Credential Types** `listTemplateCredentialTypes`: List the storage/service types a Template Credential can be created for (s3, google_storage, ftp, sftp, ...). GET https://api2.transloadit.com/template_credentials/types.
+* **List Template Credentials** `listTemplateCredentials`: List the Workspace's Template Credentials (stored third-party storage credentials). GET https://api2.transloadit.com/template_credentials. Scope template_credentials:read.
+* **List Templates** `listTemplates`: List the Templates available to the Workspace. GET https://api2.transloadit.com/templates. Scope templates:read. `params` supports page, pagesize, sort, order, fromdate, todate, keywords.
+* **Replay Assembly** `replayAssembly`: Re-run a finished Assembly, optionally with changed Steps. POST https://api2.transloadit.com/assemblies/{assembly_id}/replay. Scope assemblies:write. Replaying consumes encoding minutes again.
+* **Replay Assembly Notification** `replayAssemblyNotification`: Re-deliver an Assembly's completion notification webhook. POST https://api2.transloadit.com/assembly_notifications/{assembly_id}/replay. Scope assemblies:write. Use after fixing a notify_url endpoint that failed.
+* **Show Auth Key Secret** `showAuthKeySecret`: Reveal the Auth Secret belonging to an Auth Key. POST https://api2.transloadit.com/auth_keys/show_secret/{auth_key_id}. Scope auth_keys:read. SECURITY: the response body contains a live Workspace credential - anything that can run this action can read the secret that signs every other request.
+* **Stream Assembly Updates** `streamAssemblyUpdates`: Open the Server-Sent-Events stream that pushes an Assembly's status as it changes. The Assembly response returns update_stream_url as https://{host}/{streamPath}?assembly={id} - pass those three parts. The response is an open-ended text/event-stream, so this action suits a client that reads incrementally; a plain request/response call will block until the stream closes.
+* **Terminate Resumable Upload** `terminateResumableUpload`: Abandon a tus upload and free its storage. DELETE https://{upload_host}/resumable/files/{upload_id}. Answers 204; the upload URL then returns 404.
+* **Update Auth Key** `updateAuthKey`: Edit an Auth Key's label or scopes. PUT https://api2.transloadit.com/auth_keys/{auth_key_id}. Scope auth_keys:write. Do not edit the Auth Key your own connection authenticates with.
+* **Update Template** `updateTemplate`: Edit an existing Template. PUT https://api2.transloadit.com/templates/{template_id}. Scope templates:write. `params` may contain name and/or template.
+* **Update Template Credential** `updateTemplateCredential`: Edit an existing Template Credential. PUT https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:write.
+* **Upload Resumable File Bytes** `uploadResumableFileBytes`: Send file bytes to a tus upload. PATCH https://{upload_host}/resumable/files/{upload_id} with Content-Type application/offset+octet-stream and the byte offset to continue from. Answers 204 with the new Upload-Offset. Note: the fastn HTTP engine sends the body as text, so this action is reliable for text-like payloads; true binary chunks are an engine limitation.
 
 </details>
 

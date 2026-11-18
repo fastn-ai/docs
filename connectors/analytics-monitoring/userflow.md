@@ -5,7 +5,7 @@ hidden: true
 
 # Userflow
 
-<img src="../../.gitbook/assets/connectors/userflow.png" alt="Userflow logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/userflow.png" alt="Userflow logo">
 
 Userflow builds in-app onboarding flows, checklists, surveys and resource centres without code. This connector covers the Userflow REST API: syncing users, groups and group memberships, tracking events, reading event and attribute definitions, and reading content, content versions and content sessions - plus the Personal-API-Key Accounts API for team members.
 
@@ -39,20 +39,18 @@ Add Userflow from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 13 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get User | `getUser` | Retrieves a single Userflow user by the id you synced them with. Optionally expand the user's groups and memberships inline. |
-| List Attribute Definitions | `listAttributeDefinitions` | Lists every attribute Userflow knows about in this environment, with its data type and the scope it applies to - user, group, membership or event. Use it to discover the attribute names available for segmentation. |
-| List Content | `listContent` | Lists the content built in Userflow - flows, checklists, launchers, resource centres, banners, NPS surveys, announcements and tooltips - with the ids of their draft and published versions. Filter by Type to fetch one kind. |
-| List Content Sessions | `listContentSessions` | Lists content sessions - the record of a user actually seeing a flow, checklist or survey, and how far they got. Use it to check whether a specific user has already been shown a specific piece of content. |
-| List Content Versions | `listContentVersions` | Lists the saved versions of one piece of Userflow content, including its steps or checklist tasks. Content ID is mandatory - Userflow rejects the call with code invalid_params if you omit it. |
-| List Event Definitions | `listEventDefinitions` | Lists every event name Userflow knows about in this environment, including the built-in Userflow events and the custom ones created automatically the first time you tracked them. |
-| List Groups | `listGroups` | Lists the groups - companies - synced into the Userflow environment, using cursor pagination. |
-| List Members | `listMembers` | Lists the team members of a Userflow account. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. |
-| List Users | `listUsers` | Lists the users synced into the Userflow environment, using cursor pagination. Follow next_page_url, or pass the last id you saw as Starting After, to walk the whole list. |
-| Remove Member | `removeMember` | Removes a team member from a Userflow account, revoking their access to it. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. This cannot be undone without re-inviting the person. |
-| Remove User From Group | `removeUserFromGroup` | Removes a single user from a single Userflow group, leaving both the user and the group intact. The call is idempotent - it succeeds even if the user was not a member. Memberships are created through Create Or Update User, not through this resource. |
-| Track Event | `trackEvent` | Records an event a user or company performed, so Userflow can target flows and checklists on it. At least one of User ID and Group ID is required. Userflow creates the matching event definition automatically the first time it sees a new event name. |
-| Update Member | `updateMember` | Changes a team member's role or permissions on a Userflow account. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. Changing a role alters what that person can do in Userflow, so check the member before you write. |
+* **Get User** `getUser`: Retrieves a single Userflow user by the id you synced them with. Optionally expand the user's groups and memberships inline.
+* **List Attribute Definitions** `listAttributeDefinitions`: Lists every attribute Userflow knows about in this environment, with its data type and the scope it applies to - user, group, membership or event. Use it to discover the attribute names available for segmentation.
+* **List Content** `listContent`: Lists the content built in Userflow - flows, checklists, launchers, resource centres, banners, NPS surveys, announcements and tooltips - with the ids of their draft and published versions. Filter by Type to fetch one kind.
+* **List Content Sessions** `listContentSessions`: Lists content sessions - the record of a user actually seeing a flow, checklist or survey, and how far they got. Use it to check whether a specific user has already been shown a specific piece of content.
+* **List Content Versions** `listContentVersions`: Lists the saved versions of one piece of Userflow content, including its steps or checklist tasks. Content ID is mandatory - Userflow rejects the call with code invalid_params if you omit it.
+* **List Event Definitions** `listEventDefinitions`: Lists every event name Userflow knows about in this environment, including the built-in Userflow events and the custom ones created automatically the first time you tracked them.
+* **List Groups** `listGroups`: Lists the groups - companies - synced into the Userflow environment, using cursor pagination.
+* **List Members** `listMembers`: Lists the team members of a Userflow account. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak.
+* **List Users** `listUsers`: Lists the users synced into the Userflow environment, using cursor pagination. Follow next_page_url, or pass the last id you saw as Starting After, to walk the whole list.
+* **Remove Member** `removeMember`: Removes a team member from a Userflow account, revoking their access to it. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. This cannot be undone without re-inviting the person.
+* **Remove User From Group** `removeUserFromGroup`: Removes a single user from a single Userflow group, leaving both the user and the group intact. The call is idempotent - it succeeds even if the user was not a member. Memberships are created through Create Or Update User, not through this resource.
+* **Track Event** `trackEvent`: Records an event a user or company performed, so Userflow can target flows and checklists on it. At least one of User ID and Group ID is required. Userflow creates the matching event definition automatically the first time it sees a new event name.
+* **Update Member** `updateMember`: Changes a team member's role or permissions on a Userflow account. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. Changing a role alters what that person can do in Userflow, so check the member before you write.
 
 </details>

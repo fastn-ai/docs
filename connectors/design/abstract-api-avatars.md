@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI Avatars
 
-<img src="../../.gitbook/assets/connectors/abstract-api-avatars.png" alt="AbstractAPI Avatars logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-avatars.png" alt="AbstractAPI Avatars logo">
 
 AbstractAPI Avatars generates a customizable initials avatar image (PNG or SVG) from a person's name, with control over size, colors, font, shape, and letter styling.
 

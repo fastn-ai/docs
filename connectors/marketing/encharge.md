@@ -5,7 +5,7 @@ hidden: true
 
 # Encharge
 
-<img src="../../.gitbook/assets/connectors/encharge.png" alt="Encharge logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/encharge.png" alt="Encharge logo">
 
 Encharge marketing automation — manage people, segments, tags, custom person fields, webhooks (event subscriptions), send transactional emails, and ingest events/identify/alias/group objects.
 
@@ -39,17 +39,15 @@ Add Encharge from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 10 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get People | `getPeople` | Retrieve one or more specific people from your Encharge account by email, userId, or Encharge id. |
-| Get People in Segment | `getPeopleInSegment` | Retrieve the people that belong to a given segment, with optional pagination and sorting. |
-| Get Person Fields | `getFields` | Retrieve all person fields (custom and system properties) defined in your Encharge account. |
-| Get Segments | `getSegments` | Retrieve all dynamic segments defined in your Encharge account. |
-| Identify Person | `identifyPerson` | Create or update a person via the Encharge Ingest API using the 'identify' event. Any fields in the user object are stored as person properties. |
-| Remove Tag | `removeTag` | Remove one or more comma-separated tags from an existing person, identified by email, userId, or Encharge id. |
-| Send Transactional Email | `sendTransactionalEmail` | Send a transactional email via Encharge using a saved template, custom HTML, or plain text. Exactly one of template, html, or text must be provided. |
-| Track Event | `trackEvent` | Record a custom event for a person via the Encharge Ingest API. The person is created if they do not exist. |
-| Unsubscribe Person | `unsubscribePerson` | Unsubscribe a person so they no longer receive emails. Identify the person by email, userId, or Encharge id. |
-| Update Person Field | `updateField` | Modify an existing person field, identified by its field name. |
+* **Get People** `getPeople`: Retrieve one or more specific people from your Encharge account by email, userId, or Encharge id.
+* **Get People in Segment** `getPeopleInSegment`: Retrieve the people that belong to a given segment, with optional pagination and sorting.
+* **Get Person Fields** `getFields`: Retrieve all person fields (custom and system properties) defined in your Encharge account.
+* **Get Segments** `getSegments`: Retrieve all dynamic segments defined in your Encharge account.
+* **Identify Person** `identifyPerson`: Create or update a person via the Encharge Ingest API using the 'identify' event. Any fields in the user object are stored as person properties.
+* **Remove Tag** `removeTag`: Remove one or more comma-separated tags from an existing person, identified by email, userId, or Encharge id.
+* **Send Transactional Email** `sendTransactionalEmail`: Send a transactional email via Encharge using a saved template, custom HTML, or plain text. Exactly one of template, html, or text must be provided.
+* **Track Event** `trackEvent`: Record a custom event for a person via the Encharge Ingest API. The person is created if they do not exist.
+* **Unsubscribe Person** `unsubscribePerson`: Unsubscribe a person so they no longer receive emails. Identify the person by email, userId, or Encharge id.
+* **Update Person Field** `updateField`: Modify an existing person field, identified by its field name.
 
 </details>

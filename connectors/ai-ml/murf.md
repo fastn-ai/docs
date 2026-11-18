@@ -5,7 +5,7 @@ hidden: true
 
 # Murf
 
-<img src="../../.gitbook/assets/connectors/murf.png" alt="Murf logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/murf.png" alt="Murf logo">
 
 Murf AI — text-to-speech, voice changer, translation, instant voice cloning and Murf Dub automation. Wraps the Murf REST API at https://api.murf.ai (OpenAPI 3.1). Authenticates with the account api-key header.
 
@@ -39,17 +39,15 @@ Add Murf from **Build → Integrations → Connectors** and connect an account, 
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Dub Destination Languages | `listDubDestinationLanguages` | List the target locales Murf Dub can dub INTO, for use as target_locales on a dub job or project. Requires a Murf Dub API key; a TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead". |
-| List Dub Projects | `listDubProjects` | List the Murf Dub projects on the account with their project_id, name, dubbing_type and target_locales. Requires a Murf Dub API key; a TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead". |
-| List Dub Source Languages | `listDubSourceLanguages` | List the source locales Murf Dub can dub FROM. Murf Dub Automation is a separate product with its own API key: connect this connector with a Dub API key to use the dubbing family. A TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead". |
-| List Voices | `listVoices` | List every Murf stock voice available to the account: voiceId, displayName, locale, gender, accent, available styles and supported locales. Optional `model` filter (GEN2 or FALCON-2). Free — consumes no characters. Use the returned voiceId with Synthesize Speech, Stream Speech or Change Voice In Audio. |
-| List Voices For Model | `listVoicesForModel` | Undocumented path-parameter variant of the voice catalogue: GET /v1/speech/voices/{model}. Returns the voice list for one TTS model (GEN2 or FALCON-2); the two catalogues differ. Free — consumes no characters. |
-| Stream Speech | `streamSpeech` | METERED — consumes the account's character quota. Low-latency streaming synthesis: returns the raw audio bytes of the spoken text (chunked transfer, no JSON envelope) using a Murf stock voice. Prefer Synthesize Speech when you want a downloadable file and the remaining-quota figure. |
-| Synthesize Speech | `synthesizeSpeech` | METERED — consumes the account's character quota. Convert text to a finished audio file with a Murf stock voice. Returns audioFile (a presigned, UNAUTHENTICATED download URL valid ~3 days), audioLengthInSeconds, wordDurations, consumedCharacterCount and remainingCharacterCount. remainingCharacterCount is the only place the API exposes the account balance. |
-| Translate Text | `translateText` | METERED — consumes the account's character quota. Translate one or more strings into a target language, returning the source and translated text per entry plus the character counts consumed and remaining. Pair with Synthesize Speech to voice the translation. |
-| Update Dub Project | `updateDubProject` | Change the target locales of an existing Murf Dub project, identified by project_id from List Dub Projects. Requires a Murf Dub API key. |
+* **List Dub Destination Languages** `listDubDestinationLanguages`: List the target locales Murf Dub can dub INTO, for use as target_locales on a dub job or project. Requires a Murf Dub API key; a TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead".
+* **List Dub Projects** `listDubProjects`: List the Murf Dub projects on the account with their project_id, name, dubbing_type and target_locales. Requires a Murf Dub API key; a TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead".
+* **List Dub Source Languages** `listDubSourceLanguages`: List the source locales Murf Dub can dub FROM. Murf Dub Automation is a separate product with its own API key: connect this connector with a Dub API key to use the dubbing family. A TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead".
+* **List Voices** `listVoices`: List every Murf stock voice available to the account: voiceId, displayName, locale, gender, accent, available styles and supported locales. Optional `model` filter (GEN2 or FALCON-2). Free — consumes no characters. Use the returned voiceId with Synthesize Speech, Stream Speech or Change Voice In Audio.
+* **List Voices For Model** `listVoicesForModel`: Undocumented path-parameter variant of the voice catalogue: GET /v1/speech/voices/{model}. Returns the voice list for one TTS model (GEN2 or FALCON-2); the two catalogues differ. Free — consumes no characters.
+* **Stream Speech** `streamSpeech`: METERED — consumes the account's character quota. Low-latency streaming synthesis: returns the raw audio bytes of the spoken text (chunked transfer, no JSON envelope) using a Murf stock voice. Prefer Synthesize Speech when you want a downloadable file and the remaining-quota figure.
+* **Synthesize Speech** `synthesizeSpeech`: METERED — consumes the account's character quota. Convert text to a finished audio file with a Murf stock voice. Returns audioFile (a presigned, UNAUTHENTICATED download URL valid ~3 days), audioLengthInSeconds, wordDurations, consumedCharacterCount and remainingCharacterCount. remainingCharacterCount is the only place the API exposes the account balance.
+* **Translate Text** `translateText`: METERED — consumes the account's character quota. Translate one or more strings into a target language, returning the source and translated text per entry plus the character counts consumed and remaining. Pair with Synthesize Speech to voice the translation.
+* **Update Dub Project** `updateDubProject`: Change the target locales of an existing Murf Dub project, identified by project_id from List Dub Projects. Requires a Murf Dub API key.
 
 </details>
 

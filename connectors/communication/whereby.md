@@ -5,7 +5,7 @@ hidden: true
 
 # Whereby
 
-<img src="../../.gitbook/assets/connectors/whereby.png" alt="Whereby logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/whereby.png" alt="Whereby logo">
 
 Whereby Embedded is a video meeting API for embedding branded video rooms into your product. Create and manage transient meeting rooms, retrieve cloud recordings, transcriptions and AI summaries with time-limited access links, customize room branding, and query quality and usage insights for rooms, sessions and participants.
 
@@ -39,24 +39,22 @@ Add Whereby from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 17 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Recording | `getRecording` | Retrieves the metadata of a single cloud recording by its recording ID. |
-| Get Recording Access Link | `getRecordingAccessLink` | Generates a time-limited download link for a cloud recording stored in Whereby-hosted storage. |
-| Get Session Participant | `getSessionParticipant` | Retrieves detailed connection and quality insights for a single participant in a room session. |
-| Get Summary | `getSummary` | Retrieves a single AI summary, including its generated content, by its summary ID. |
-| Get Transcription | `getTranscription` | Retrieves the metadata of a single transcription by its transcription ID. |
-| Get Transcription Access Link | `getTranscriptionAccessLink` | Generates a time-limited download link for a transcription stored in Whereby-hosted storage. |
-| List Meetings | `listMeetings` | Retrieves a paginated list of the meetings that currently exist for your Whereby organization. |
-| List Recordings | `listRecordings` | Retrieves a paginated list of cloud recordings stored for your Whereby organization, optionally filtered by room name. |
-| List Room Insights | `listRoomInsights` | Retrieves usage and quality insights aggregated per room, optionally filtered by room name and creation date. |
-| List Room Session Insights | `listRoomSessionInsights` | Retrieves insights for the individual sessions that took place in a room. A session starts once at least two participants are present. |
-| List Session Participants | `listSessionParticipants` | Retrieves the participants of a room session, including when each participant joined and left. |
-| List Summaries | `listSummaries` | Retrieves a paginated list of AI summaries generated for your Whereby organization. |
-| List Transcriptions | `listTranscriptions` | Retrieves a paginated list of transcriptions for your Whereby organization, optionally filtered by room name. |
-| Reset Room Logo | `resetRoomLogo` | Resets a room's logo to the organization default. Uploading a custom logo image is only supported through the Whereby Embedded dashboard. Returns no content on success. |
-| Set Room Background | `setRoomBackground` | Sets a room's background to a predefined color palette and image. Uploading a custom background image is only supported through the Whereby Embedded dashboard. Returns no content on success. |
-| Set Room Colors | `setRoomColors` | Sets the primary, secondary and focus colors of a room, or resets them to the organization defaults. Returns no content on success. |
-| Set Room Knock Page Background | `setRoomKnockPageBackground` | Sets the background of a room's knock (waiting room) page to a predefined color palette and image. Uploading a custom image is only supported through the Whereby Embedded dashboard. Returns no content on success. |
+* **Get Recording** `getRecording`: Retrieves the metadata of a single cloud recording by its recording ID.
+* **Get Recording Access Link** `getRecordingAccessLink`: Generates a time-limited download link for a cloud recording stored in Whereby-hosted storage.
+* **Get Session Participant** `getSessionParticipant`: Retrieves detailed connection and quality insights for a single participant in a room session.
+* **Get Summary** `getSummary`: Retrieves a single AI summary, including its generated content, by its summary ID.
+* **Get Transcription** `getTranscription`: Retrieves the metadata of a single transcription by its transcription ID.
+* **Get Transcription Access Link** `getTranscriptionAccessLink`: Generates a time-limited download link for a transcription stored in Whereby-hosted storage.
+* **List Meetings** `listMeetings`: Retrieves a paginated list of the meetings that currently exist for your Whereby organization.
+* **List Recordings** `listRecordings`: Retrieves a paginated list of cloud recordings stored for your Whereby organization, optionally filtered by room name.
+* **List Room Insights** `listRoomInsights`: Retrieves usage and quality insights aggregated per room, optionally filtered by room name and creation date.
+* **List Room Session Insights** `listRoomSessionInsights`: Retrieves insights for the individual sessions that took place in a room. A session starts once at least two participants are present.
+* **List Session Participants** `listSessionParticipants`: Retrieves the participants of a room session, including when each participant joined and left.
+* **List Summaries** `listSummaries`: Retrieves a paginated list of AI summaries generated for your Whereby organization.
+* **List Transcriptions** `listTranscriptions`: Retrieves a paginated list of transcriptions for your Whereby organization, optionally filtered by room name.
+* **Reset Room Logo** `resetRoomLogo`: Resets a room's logo to the organization default. Uploading a custom logo image is only supported through the Whereby Embedded dashboard. Returns no content on success.
+* **Set Room Background** `setRoomBackground`: Sets a room's background to a predefined color palette and image. Uploading a custom background image is only supported through the Whereby Embedded dashboard. Returns no content on success.
+* **Set Room Colors** `setRoomColors`: Sets the primary, secondary and focus colors of a room, or resets them to the organization defaults. Returns no content on success.
+* **Set Room Knock Page Background** `setRoomKnockPageBackground`: Sets the background of a room's knock (waiting room) page to a predefined color palette and image. Uploading a custom image is only supported through the Whereby Embedded dashboard. Returns no content on success.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # Google Gemini
 
-<img src="../../.gitbook/assets/connectors/google-gemini.png" alt="Google Gemini logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-gemini.png" alt="Google Gemini logo">
 
 Google Gemini Developer API (generativelanguage.googleapis.com/v1beta). Generate content (text/multimodal), streaming generation, token counting, embeddings, model discovery, the Files API, context caching (cachedContents), and Batch Mode generation. Auth via Gemini API key sent in the x-goog-api-key header.
 
@@ -39,26 +39,24 @@ Add Google Gemini from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 19 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Tuned Model | `deleteTunedModel` | Permanently deletes one of the signed-in user's Gemini tuned models (Gemini API v1beta tunedModels.delete). Irreversible. Requires a Google OAuth 2.0 connection; Google scope: generative-language.tuning. Returns an empty body on success. |
-| Embed Content | `embedContent` | Generate a text embedding vector from input content using an embedding model (e.g. gemini-embedding-001, text-embedding-004). Supports taskType, title, and outputDimensionality. |
-| Generate Content | `generateContent` | Generate a model response from a list of Content inputs (text and multimodal). Supports system instructions, tools/function-calling, safety settings, and generationConfig (temperature, topK, topP, maxOutputTokens, responseMimeType, responseSchema, thinkingConfig). Returns candidates with content parts, finishReason, safetyRatings, plus usageMetadata. |
-| Generate Content (OAuth) | `generateContentOAuth` | Generates a text answer from a Gemini model for a single prompt (Gemini API v1beta models.generateContent) using the signed-in user's Google OAuth token instead of an API key, so usage counts against that user's per-user quota. Requires a Google OAuth 2.0 connection; Google scope: generative-language.peruserquota. Use the API-key Generate Content action for the full request body. Returns candidates[] with content.parts[].text, finishReason and usageMetadata. |
-| Get Batch | `getBatch` | Get the status/result of a Batch Mode job by id (batches/{id}). When done is true, response contains the inlined or file output. |
-| Get Cached Content | `getCachedContent` | Get a single context cache by id (cachedContents/{id}). |
-| Get Corpus | `getCorpus` | Gets one semantic retrieval corpus by ID (Gemini API v1beta corpora.get). Read-only. Requires a Google OAuth 2.0 connection; Google scope: generative-language.retriever.readonly (or generative-language.retriever). Returns the Corpus (name, displayName, createTime, updateTime). |
-| Get File | `getFile` | Get metadata for a single uploaded file by name (files/{id}), including its processing state and uri. |
-| Get Model | `getModel` | Get metadata for a specific model (token limits, supported generation methods, default sampling params). |
-| Get Tuned Model | `getTunedModel` | Gets one Gemini tuned model by ID (Gemini API v1beta tunedModels.get), including its base model, state, tuning task and hyperparameters. Read-only. Requires a Google OAuth 2.0 connection; Google scope: generative-language.tuning.readonly (or generative-language.tuning). Returns the TunedModel. |
-| List Batches | `listBatches` | List Batch Mode jobs for the API key's project. Paginated. |
-| List Cached Contents | `listCachedContents` | List the context caches (cachedContents) for the API key's project. Paginated. |
-| List Corpora | `listCorpora` | Lists the semantic retrieval corpora (document collections) owned by the signed-in user (Gemini API v1beta corpora.list). Read-only. Requires a Google OAuth 2.0 connection; Google scope: generative-language.retriever.readonly (or generative-language.retriever). Returns corpora[] (name, displayName, createTime, updateTime) and nextPageToken. |
-| List Files | `listFiles` | List the files uploaded via the Gemini Files API for the API key's project. Paginated. |
-| List Models | `listModels` | List the models available through the Gemini Developer API, with their token limits and supported generation methods. Paginated. |
-| List Tuned Models | `listTunedModels` | Lists the Gemini tuned (fine-tuned) models the signed-in user owns or can access (Gemini API v1beta tunedModels.list). Read-only. Requires a connection made with the Google OAuth 2.0 auth method; Google scope: generative-language.tuning.readonly (or generative-language.tuning). Returns tunedModels[] (name, displayName, baseModel, state, createTime) and nextPageToken; an empty object when the user has none. |
-| Stream Generate Content | `streamGenerateContent` | Streaming variant of generateContent. Returns incremental GenerateContentResponse chunks server-sent. Same request body as generateContent. Use alt=sse query param for server-sent events framing. |
-| Update Cached Content | `updateCachedContent` | Update a context cache's expiry (only ttl or expireTime are mutable). Pass updateMask to indicate which field changes. |
-| Upload File (metadata) | `uploadFile` | Upload a text file to the Gemini Files API in one multipart request (metadata + content). Binary files are not supported by the engine. |
+* **Delete Tuned Model** `deleteTunedModel`: Permanently deletes one of the signed-in user's Gemini tuned models (Gemini API v1beta tunedModels.delete). Irreversible. Requires a Google OAuth 2.0 connection; Google scope: generative-language.tuning. Returns an empty body on success.
+* **Embed Content** `embedContent`: Generate a text embedding vector from input content using an embedding model (e.g. gemini-embedding-001, text-embedding-004). Supports taskType, title, and outputDimensionality.
+* **Generate Content** `generateContent`: Generate a model response from a list of Content inputs (text and multimodal). Supports system instructions, tools/function-calling, safety settings, and generationConfig (temperature, topK, topP, maxOutputTokens, responseMimeType, responseSchema, thinkingConfig). Returns candidates with content parts, finishReason, safetyRatings, plus usageMetadata.
+* **Generate Content (OAuth)** `generateContentOAuth`: Generates a text answer from a Gemini model for a single prompt (Gemini API v1beta models.generateContent) using the signed-in user's Google OAuth token instead of an API key, so usage counts against that user's per-user quota. Requires a Google OAuth 2.0 connection; Google scope: generative-language.peruserquota. Use the API-key Generate Content action for the full request body. Returns candidates[] with content.parts[].text, finishReason and usageMetadata.
+* **Get Batch** `getBatch`: Get the status/result of a Batch Mode job by id (batches/{id}). When done is true, response contains the inlined or file output.
+* **Get Cached Content** `getCachedContent`: Get a single context cache by id (cachedContents/{id}).
+* **Get Corpus** `getCorpus`: Gets one semantic retrieval corpus by ID (Gemini API v1beta corpora.get). Read-only. Requires a Google OAuth 2.0 connection; Google scope: generative-language.retriever.readonly (or generative-language.retriever). Returns the Corpus (name, displayName, createTime, updateTime).
+* **Get File** `getFile`: Get metadata for a single uploaded file by name (files/{id}), including its processing state and uri.
+* **Get Model** `getModel`: Get metadata for a specific model (token limits, supported generation methods, default sampling params).
+* **Get Tuned Model** `getTunedModel`: Gets one Gemini tuned model by ID (Gemini API v1beta tunedModels.get), including its base model, state, tuning task and hyperparameters. Read-only. Requires a Google OAuth 2.0 connection; Google scope: generative-language.tuning.readonly (or generative-language.tuning). Returns the TunedModel.
+* **List Batches** `listBatches`: List Batch Mode jobs for the API key's project. Paginated.
+* **List Cached Contents** `listCachedContents`: List the context caches (cachedContents) for the API key's project. Paginated.
+* **List Corpora** `listCorpora`: Lists the semantic retrieval corpora (document collections) owned by the signed-in user (Gemini API v1beta corpora.list). Read-only. Requires a Google OAuth 2.0 connection; Google scope: generative-language.retriever.readonly (or generative-language.retriever). Returns corpora[] (name, displayName, createTime, updateTime) and nextPageToken.
+* **List Files** `listFiles`: List the files uploaded via the Gemini Files API for the API key's project. Paginated.
+* **List Models** `listModels`: List the models available through the Gemini Developer API, with their token limits and supported generation methods. Paginated.
+* **List Tuned Models** `listTunedModels`: Lists the Gemini tuned (fine-tuned) models the signed-in user owns or can access (Gemini API v1beta tunedModels.list). Read-only. Requires a connection made with the Google OAuth 2.0 auth method; Google scope: generative-language.tuning.readonly (or generative-language.tuning). Returns tunedModels[] (name, displayName, baseModel, state, createTime) and nextPageToken; an empty object when the user has none.
+* **Stream Generate Content** `streamGenerateContent`: Streaming variant of generateContent. Returns incremental GenerateContentResponse chunks server-sent. Same request body as generateContent. Use alt=sse query param for server-sent events framing.
+* **Update Cached Content** `updateCachedContent`: Update a context cache's expiry (only ttl or expireTime are mutable). Pass updateMask to indicate which field changes.
+* **Upload File (metadata)** `uploadFile`: Upload a text file to the Gemini Files API in one multipart request (metadata + content). Binary files are not supported by the engine.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # API Géo
 
-<img src="../../.gitbook/assets/connectors/api-geo-gouv.png" alt="API Géo logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/api-geo-gouv.png" alt="API Géo logo">
 
 API Géo is the French government's free API for administrative boundaries: search communes by postcode, name or GPS point, and get communes, associated/delegated communes, EPCIs, departments and regions with INSEE codes, population, postcodes and GeoJSON geometry. No API key needed.
 
@@ -39,10 +39,8 @@ Add API Géo from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Departments | `searchDepartements` | List or search French departments by code, region or name (GET /departements). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
-| Search EPCIs | `searchEpcis` | Search EPCIs (French inter-municipal cooperation bodies) by name, code, department or region (GET /epcis). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
-| Search Regions | `searchRegions` | List or search French regions by code or name (GET /regions). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
+* **Search Departments** `searchDepartements`: List or search French departments by code, region or name (GET /departements). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml)
+* **Search EPCIs** `searchEpcis`: Search EPCIs (French inter-municipal cooperation bodies) by name, code, department or region (GET /epcis). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml)
+* **Search Regions** `searchRegions`: List or search French regions by code or name (GET /regions). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml)
 
 </details>

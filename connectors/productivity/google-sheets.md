@@ -5,7 +5,7 @@ hidden: true
 
 # Google Sheets
 
-<img src="../../.gitbook/assets/connectors/google-sheets.png" alt="Google Sheets logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-sheets.png" alt="Google Sheets logo">
 
 Read, write, and manage Google Sheets spreadsheets via the Sheets API v4. Supports spreadsheet creation, sheet tab management, cell value operations, named ranges, and batch updates.
 
@@ -39,22 +39,20 @@ Add Google Sheets from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 15 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Clear Values | `clearValues` | Clear all values in a specific range of a spreadsheet, leaving formatting intact. |
-| Copy Sheet To | `copySheetTo` | Copy a sheet tab from one spreadsheet to another spreadsheet. |
-| Create Spreadsheet | `createSpreadsheet` | Create a new Google Sheets spreadsheet with a given title. |
-| Delete Named Range | `deleteNamedRange` | Delete a named range from a spreadsheet by its ID. |
-| Delete Sheet | `deleteSheet` | Delete a sheet tab from a spreadsheet by its sheetId (numeric ID, not title). |
-| Duplicate Sheet | `duplicateSheet` | Duplicate an existing sheet tab within the same spreadsheet. |
-| Get Developer Metadata | `getDeveloperMetadata` | Returns the developer metadata with the specified ID from the given spreadsheet. |
-| Get Spreadsheet | `getSpreadsheet` | Get full spreadsheet metadata including all sheet tabs, named ranges, and properties. |
-| Get Spreadsheet By Data Filter | `getSpreadsheetByDataFilter` | Returns the spreadsheet at the given ID, selecting subsets of data via dataFilters (a1Range, gridRange, or developerMetadataLookup). Optionally includes grid cell data. |
-| Get Values | `getValues` | Read cell values from a specific range in a spreadsheet. Range format: 'Sheet1!A1:B10'. |
-| Rename Sheet | `renameSheet` | Rename a sheet tab by its sheetId. |
-| Search Developer Metadata | `searchDeveloperMetadata` | Returns all developer metadata matching the criteria described by the supplied dataFilters (developerMetadataLookup, a1Range, or gridRange). |
-| TEMP watch spreadsheet check (delete me) | `tempWatchSpreadsheetCheck` | Temporary B185 probe: can a Sheets connection open a Drive watch channel on a spreadsheet. Delete after the check. |
-| Update Named Range | `updateNamedRange` | Update the name or cell range of an existing named range. |
-| Update Values | `updateValues` | Write values to a specific range in a spreadsheet, overwriting existing data. |
+* **Clear Values** `clearValues`: Clear all values in a specific range of a spreadsheet, leaving formatting intact.
+* **Copy Sheet To** `copySheetTo`: Copy a sheet tab from one spreadsheet to another spreadsheet.
+* **Create Spreadsheet** `createSpreadsheet`: Create a new Google Sheets spreadsheet with a given title.
+* **Delete Named Range** `deleteNamedRange`: Delete a named range from a spreadsheet by its ID.
+* **Delete Sheet** `deleteSheet`: Delete a sheet tab from a spreadsheet by its sheetId (numeric ID, not title).
+* **Duplicate Sheet** `duplicateSheet`: Duplicate an existing sheet tab within the same spreadsheet.
+* **Get Developer Metadata** `getDeveloperMetadata`: Returns the developer metadata with the specified ID from the given spreadsheet.
+* **Get Spreadsheet** `getSpreadsheet`: Get full spreadsheet metadata including all sheet tabs, named ranges, and properties.
+* **Get Spreadsheet By Data Filter** `getSpreadsheetByDataFilter`: Returns the spreadsheet at the given ID, selecting subsets of data via dataFilters (a1Range, gridRange, or developerMetadataLookup). Optionally includes grid cell data.
+* **Get Values** `getValues`: Read cell values from a specific range in a spreadsheet. Range format: 'Sheet1!A1:B10'.
+* **Rename Sheet** `renameSheet`: Rename a sheet tab by its sheetId.
+* **Search Developer Metadata** `searchDeveloperMetadata`: Returns all developer metadata matching the criteria described by the supplied dataFilters (developerMetadataLookup, a1Range, or gridRange).
+* **TEMP watch spreadsheet check (delete me)** `tempWatchSpreadsheetCheck`: Temporary B185 probe: can a Sheets connection open a Drive watch channel on a spreadsheet. Delete after the check.
+* **Update Named Range** `updateNamedRange`: Update the name or cell range of an existing named range.
+* **Update Values** `updateValues`: Write values to a specific range in a spreadsheet, overwriting existing data.
 
 </details>

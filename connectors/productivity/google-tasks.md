@@ -5,7 +5,7 @@ hidden: true
 
 # Google Tasks
 
-<img src="../../.gitbook/assets/connectors/google-tasks.jpg" alt="Google Tasks logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-tasks.png" alt="Google Tasks logo">
 
 Google Tasks API - manage Google Workspace task lists and tasks (create, read, update, delete, move, and clear completed tasks).
 
@@ -39,11 +39,9 @@ Add Google Tasks from **Build → Integrations → Connectors** and connect an a
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Patch Task | `patchTask` | Partially updates the specified task; only the fields provided are changed (PATCH /lists/{tasklist}/tasks/{task}). Typical use: mark a task completed by setting status. |
-| Patch Task List | `patchTaskList` | Partially updates the specified task list; only the fields provided are changed (PATCH /users/@me/lists/{tasklist}). |
-| Update Task | `updateTask` | Updates the specified task, replacing it with the supplied resource (PUT /lists/{tasklist}/tasks/{task}). |
-| Update Task List | `updateTaskList` | Updates the specified task list, replacing it with the supplied resource (PUT /users/@me/lists/{tasklist}). |
+* **Patch Task** `patchTask`: Partially updates the specified task; only the fields provided are changed (PATCH /lists/{tasklist}/tasks/{task}). Typical use: mark a task completed by setting status.
+* **Patch Task List** `patchTaskList`: Partially updates the specified task list; only the fields provided are changed (PATCH /users/@me/lists/{tasklist}).
+* **Update Task** `updateTask`: Updates the specified task, replacing it with the supplied resource (PUT /lists/{tasklist}/tasks/{task}).
+* **Update Task List** `updateTaskList`: Updates the specified task list, replacing it with the supplied resource (PUT /users/@me/lists/{tasklist}).
 
 </details>

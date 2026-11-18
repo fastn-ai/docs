@@ -5,7 +5,7 @@ hidden: true
 
 # AltText.ai
 
-<img src="../../.gitbook/assets/connectors/alt-text-ai.png" alt="AltText.ai logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/alt-text-ai.png" alt="AltText.ai logo">
 
 AltText.ai generates alt text for images using AI computer-vision models, so images can be made accessible and SEO-friendly without a human copywriter. This connector wraps the full AltText.ai REST API v1: account settings, the image library (create by public URL or base64 upload, read, update, delete, list, search), bulk CSV creation and web-page scraping, plus image webhook events.
 
@@ -39,9 +39,7 @@ Add AltText.ai from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Update Image | `updateImage` | Update an existing AltText.ai image: replace its alt text, rename its asset ID or replace its custom metadata. The image URL cannot be changed. Use the lang and overwrite query parameters to control which language the alt text is written to and whether existing alt text in that language is replaced. |
+* **Update Image** `updateImage`: Update an existing AltText.ai image: replace its alt text, rename its asset ID or replace its custom metadata. The image URL cannot be changed. Use the lang and overwrite query parameters to control which language the alt text is written to and whether existing alt text in that language is replaced.
 
 </details>
 

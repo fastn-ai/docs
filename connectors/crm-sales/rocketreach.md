@@ -5,7 +5,7 @@ hidden: true
 
 # RocketReach
 
-<img src="../../.gitbook/assets/connectors/rocketreach.png" alt="RocketReach logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/rocketreach.png" alt="RocketReach logo">
 
 RocketReach is a contact-data and sales-intelligence platform covering emails, phone numbers and social profiles for 700M+ professionals and 35M+ companies. This connector wraps the RocketReach API v2 at https://api.rocketreach.co/api/v2: account details and API key management, people lookup with asynchronous status polling, people and company search, company lookup, combined person-and-company lookup, bulk people lookup, email verification, and the newer Universal API family (universal account, person search, company search, person lookup, company lookup, bulk lookup and lookup status).
 
@@ -39,13 +39,11 @@ Add RocketReach from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| ⭐ Universal Bulk People Lookup API | `bulkLookupPeopleUniversal` | ⭐ Universal Bulk People Lookup API. Bulk People Lookup by Criteria |
-| ⭐ Universal Company Lookup API | `lookupCompanyUniversal` | ⭐ Universal Company Lookup API. Search Companies by Criteria |
-| ⭐ Universal Company Search API | `searchCompaniesUniversal` | ⭐ Universal Company Search API. Search Companies by Criteria |
-| ⭐ Universal People Lookup API | `lookupPersonUniversal` | ⭐ Universal People Lookup API. Person Enrichment API |
-| ⭐ Universal People Lookup Status API | `checkPersonLookupStatusUniversal` | ⭐ Universal People Lookup Status API. Check Universal Person Lookup Status |
-| ⭐ Universal People Search API | `searchPeopleUniversal` | ⭐ Universal People Search API. Search People by Criteria |
+* **⭐ Universal Bulk People Lookup API** `bulkLookupPeopleUniversal`: ⭐ Universal Bulk People Lookup API. Bulk People Lookup by Criteria
+* **⭐ Universal Company Lookup API** `lookupCompanyUniversal`: ⭐ Universal Company Lookup API. Search Companies by Criteria
+* **⭐ Universal Company Search API** `searchCompaniesUniversal`: ⭐ Universal Company Search API. Search Companies by Criteria
+* **⭐ Universal People Lookup API** `lookupPersonUniversal`: ⭐ Universal People Lookup API. Person Enrichment API
+* **⭐ Universal People Lookup Status API** `checkPersonLookupStatusUniversal`: ⭐ Universal People Lookup Status API. Check Universal Person Lookup Status
+* **⭐ Universal People Search API** `searchPeopleUniversal`: ⭐ Universal People Search API. Search People by Criteria
 
 </details>

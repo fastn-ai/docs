@@ -5,7 +5,7 @@ hidden: true
 
 # Cardly
 
-<img src="../../.gitbook/assets/connectors/cardly.png" alt="Cardly logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/cardly.png" alt="Cardly logo">
 
 Cardly is a print-and-post greeting card platform. Use this connector to manage artwork, contact lists and contacts, generate card previews, place card orders, manage organisation users and invitations, inspect account credit balance and history, and register webhooks for order and delivery events. Wraps the Cardly v2 REST API at https://api.card.ly/v2.
 
@@ -39,46 +39,44 @@ Add Cardly from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 38 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Invitation By Email | `deleteInvitationByEmail` | Revoke a pending Cardly organisation invitation by the email address it was sent to, without needing the invitation ID. |
-| Delete User | `deleteUser` | Revoke a user's access to your Cardly organisation by their unique user ID. The call succeeds with an empty data object whether or not a matching user existed, so confirm the user first with Retrieve User. Do not call this for the only administrator, as that would lock the organisation out. |
-| Delete User By Email | `deleteUserByEmail` | Revoke a user's access to your Cardly organisation by their email address. The call succeeds with an empty data object whether or not a matching user existed, so confirm the user first with Find User. Do not call this for the only administrator, as that would lock the organisation out. |
-| Delete Webhook | `deleteWebhook` | Permanently delete a Cardly webhook by its unique ID so it stops receiving event postbacks. Take care with webhooks flagged protected, as they were created by a third party such as Zapier. |
-| Echo Request | `echoRequest` | Send a request to Cardly's diagnostic echo endpoint and have the method, URL, query string, headers and body returned to you. Useful for validating connectivity and authentication without touching account data or consuming credits. Cardly masks the API-Key header in the reflected output. |
-| Edit Artwork | `editArtwork` | Update the name, description or page images of an existing piece of Cardly artwork. Supplying new page images creates a new revision of the artwork. At least one of name, description or artwork must be supplied. |
-| Edit Contact | `editContact` | Replace the details of an existing contact in a Cardly contact list. This is a full replace, not a merge: any optional field you omit, such as externalId, email, company or address2, is cleared on the stored contact. Send every value you want to keep. |
-| Find Invitation | `findInvitation` | Find a Cardly organisation invitation by the email address it was sent to. Returns the matching invitation, or a 404 when no invitation exists for that address. |
-| Find User | `findUser` | Find a Cardly organisation user by their email address. Returns the matching user, or a 404 when no user in the organisation has that address. |
-| Generate Order Preview | `previewOrder` | Generate a preview of a single card before ordering it. Returns the credit cost, the estimated dispatch and delivery window, and temporary PDF URLs for the rendered card and envelope. No card is printed and no credits are consumed, so use this to validate artwork, message and address before calling Place Order. |
-| List Artwork | `listArtwork` | List the card artwork available to your Cardly organisation, including both your own uploaded artwork and artwork shared with you. Use the returned artwork ID when generating a preview or placing an order. |
-| List Contact Lists | `listContactLists` | List the contact lists in your Cardly organisation, with contact counts, custom field definitions and address validation status for each. |
-| List Contacts | `listContacts` | List the contacts stored in a Cardly contact list, with their postal addresses, custom field values and address validation state. |
-| List Credit History | `listCreditHistory` | List card credit history records for your Cardly organisation, including both credits and debits with the reason for each. Supports paging and filtering by effective time. |
-| List Doodles | `listDoodles` | List the doodles (small hand-drawn illustrations) available to add to a Cardly card message. Returns each doodle's ID, slug, preview image path and pixel dimensions. |
-| List Fonts | `listFonts` | List the handwriting and print fonts available for Cardly card messages. Use a returned font ID in the style object of a preview or order to set the message typeface. |
-| List Gift Credit History | `listGiftCreditHistory` | List gift credit history records for your Cardly organisation, including both credits and debits with the reason for each. Gift credit is the monetary balance used to fund gift cards attached to orders. |
-| List Invitations | `listInvitations` | List the invitations sent to join your Cardly organisation. Accepted invitations are filtered out by default; use the filters to include or isolate accepted or expired invitations. |
-| List Media | `listMedia` | List the physical card media formats Cardly can print, such as A4 Letter, Portrait Card, Landscape Notecard and Postcard. The returned media ID is required when creating artwork. |
-| List Orders | `listOrders` | List the card orders placed on your Cardly organisation, with their status, origin, costs, timings and line items. |
-| List Templates | `listTemplates` | List the reusable card message templates saved in your Cardly organisation. Use a returned template ID when generating a preview or placing an order so the saved copy, styling and variables are applied. |
-| List Users | `listUsers` | List the users who have accepted an invitation to your Cardly organisation, with their status and permission flags. |
-| List Webhooks | `listWebhooks` | List the webhooks registered on your Cardly organisation, with their target URL, subscribed events, status and delivery statistics. Webhook secrets are masked in this listing. |
-| List Writing Styles | `listWritingStyles` | List the handwriting styles Cardly can apply to a card message, from neat to natural. Use a returned writing style ID in the style object of a preview or order. |
-| Place Order | `placeOrder` | Place a real Cardly order. Every line is physically printed, enveloped and posted to the recipient, and card credits are deducted from your organisation immediately. There is no undo. Validate the payload with Generate Order Preview first, and use a test-mode API key (prefixed test_) to exercise this endpoint without printing or posting anything. |
-| Resend Invitation | `resendInvitation` | Resend a pending Cardly organisation invitation email by the invitation's unique ID. Returns the refreshed invitation record. |
-| Resend Invitation By Email | `resendInvitationByEmail` | Resend a pending Cardly organisation invitation email by the address it was sent to, without needing the invitation ID. Returns the refreshed invitation record. |
-| Retrieve Account Balance | `getAccountBalance` | Retrieve the current card credit balance and gift credit balance for your Cardly organisation. Use this before placing an order to confirm enough credits are available, since each card consumes credits. |
-| Retrieve Artwork | `getArtwork` | Retrieve full details for a single piece of Cardly artwork by its unique ID, including the media format it targets, its current revision and the rendered page image URLs. |
-| Retrieve Contact | `getContact` | Retrieve a single contact from a Cardly contact list by its unique contact ID, including the full postal address and custom field values. |
-| Retrieve Contact List | `getContactList` | Retrieve a single Cardly contact list by its unique ID, including its custom field definitions, contact counts and address validation summary. |
-| Retrieve Invitation | `getInvitation` | Retrieve a single Cardly organisation invitation by its unique ID, including its status, granted permissions, expiry and acceptance link. |
-| Retrieve Order | `getOrder` | Retrieve a single Cardly card order by its unique ID, including overall costs and timings plus each line item's recipient, sender, delivery estimate and tracking details. |
-| Retrieve User | `getUser` | Retrieve a single Cardly organisation user by their unique ID, including status and permission flags. |
-| Retrieve Webhook | `getWebhook` | Retrieve a single Cardly webhook by its unique ID, including its target URL, subscribed events, status and delivery statistics. The signing secret is masked. |
-| Search Contacts | `searchContacts` | Find a single contact inside a Cardly contact list by its email address or your own external identifier. Returns the matching contact, or a 404 when nothing in the list matches. |
-| Sync Contact | `syncContact` | Upsert a contact into a Cardly contact list: the contact is matched on externalId or email and updated if it already exists, or created if it does not. At least one of externalId or email must be supplied. |
-| Update Webhook | `updateWebhook` | Update an existing Cardly webhook's target URL, subscribed events, description or metadata, or enable and disable it. The events list replaces the current subscription rather than adding to it. |
+* **Delete Invitation By Email** `deleteInvitationByEmail`: Revoke a pending Cardly organisation invitation by the email address it was sent to, without needing the invitation ID.
+* **Delete User** `deleteUser`: Revoke a user's access to your Cardly organisation by their unique user ID. The call succeeds with an empty data object whether or not a matching user existed, so confirm the user first with Retrieve User. Do not call this for the only administrator, as that would lock the organisation out.
+* **Delete User By Email** `deleteUserByEmail`: Revoke a user's access to your Cardly organisation by their email address. The call succeeds with an empty data object whether or not a matching user existed, so confirm the user first with Find User. Do not call this for the only administrator, as that would lock the organisation out.
+* **Delete Webhook** `deleteWebhook`: Permanently delete a Cardly webhook by its unique ID so it stops receiving event postbacks. Take care with webhooks flagged protected, as they were created by a third party such as Zapier.
+* **Echo Request** `echoRequest`: Send a request to Cardly's diagnostic echo endpoint and have the method, URL, query string, headers and body returned to you. Useful for validating connectivity and authentication without touching account data or consuming credits. Cardly masks the API-Key header in the reflected output.
+* **Edit Artwork** `editArtwork`: Update the name, description or page images of an existing piece of Cardly artwork. Supplying new page images creates a new revision of the artwork. At least one of name, description or artwork must be supplied.
+* **Edit Contact** `editContact`: Replace the details of an existing contact in a Cardly contact list. This is a full replace, not a merge: any optional field you omit, such as externalId, email, company or address2, is cleared on the stored contact. Send every value you want to keep.
+* **Find Invitation** `findInvitation`: Find a Cardly organisation invitation by the email address it was sent to. Returns the matching invitation, or a 404 when no invitation exists for that address.
+* **Find User** `findUser`: Find a Cardly organisation user by their email address. Returns the matching user, or a 404 when no user in the organisation has that address.
+* **Generate Order Preview** `previewOrder`: Generate a preview of a single card before ordering it. Returns the credit cost, the estimated dispatch and delivery window, and temporary PDF URLs for the rendered card and envelope. No card is printed and no credits are consumed, so use this to validate artwork, message and address before calling Place Order.
+* **List Artwork** `listArtwork`: List the card artwork available to your Cardly organisation, including both your own uploaded artwork and artwork shared with you. Use the returned artwork ID when generating a preview or placing an order.
+* **List Contact Lists** `listContactLists`: List the contact lists in your Cardly organisation, with contact counts, custom field definitions and address validation status for each.
+* **List Contacts** `listContacts`: List the contacts stored in a Cardly contact list, with their postal addresses, custom field values and address validation state.
+* **List Credit History** `listCreditHistory`: List card credit history records for your Cardly organisation, including both credits and debits with the reason for each. Supports paging and filtering by effective time.
+* **List Doodles** `listDoodles`: List the doodles (small hand-drawn illustrations) available to add to a Cardly card message. Returns each doodle's ID, slug, preview image path and pixel dimensions.
+* **List Fonts** `listFonts`: List the handwriting and print fonts available for Cardly card messages. Use a returned font ID in the style object of a preview or order to set the message typeface.
+* **List Gift Credit History** `listGiftCreditHistory`: List gift credit history records for your Cardly organisation, including both credits and debits with the reason for each. Gift credit is the monetary balance used to fund gift cards attached to orders.
+* **List Invitations** `listInvitations`: List the invitations sent to join your Cardly organisation. Accepted invitations are filtered out by default; use the filters to include or isolate accepted or expired invitations.
+* **List Media** `listMedia`: List the physical card media formats Cardly can print, such as A4 Letter, Portrait Card, Landscape Notecard and Postcard. The returned media ID is required when creating artwork.
+* **List Orders** `listOrders`: List the card orders placed on your Cardly organisation, with their status, origin, costs, timings and line items.
+* **List Templates** `listTemplates`: List the reusable card message templates saved in your Cardly organisation. Use a returned template ID when generating a preview or placing an order so the saved copy, styling and variables are applied.
+* **List Users** `listUsers`: List the users who have accepted an invitation to your Cardly organisation, with their status and permission flags.
+* **List Webhooks** `listWebhooks`: List the webhooks registered on your Cardly organisation, with their target URL, subscribed events, status and delivery statistics. Webhook secrets are masked in this listing.
+* **List Writing Styles** `listWritingStyles`: List the handwriting styles Cardly can apply to a card message, from neat to natural. Use a returned writing style ID in the style object of a preview or order.
+* **Place Order** `placeOrder`: Place a real Cardly order. Every line is physically printed, enveloped and posted to the recipient, and card credits are deducted from your organisation immediately. There is no undo. Validate the payload with Generate Order Preview first, and use a test-mode API key (prefixed test_) to exercise this endpoint without printing or posting anything.
+* **Resend Invitation** `resendInvitation`: Resend a pending Cardly organisation invitation email by the invitation's unique ID. Returns the refreshed invitation record.
+* **Resend Invitation By Email** `resendInvitationByEmail`: Resend a pending Cardly organisation invitation email by the address it was sent to, without needing the invitation ID. Returns the refreshed invitation record.
+* **Retrieve Account Balance** `getAccountBalance`: Retrieve the current card credit balance and gift credit balance for your Cardly organisation. Use this before placing an order to confirm enough credits are available, since each card consumes credits.
+* **Retrieve Artwork** `getArtwork`: Retrieve full details for a single piece of Cardly artwork by its unique ID, including the media format it targets, its current revision and the rendered page image URLs.
+* **Retrieve Contact** `getContact`: Retrieve a single contact from a Cardly contact list by its unique contact ID, including the full postal address and custom field values.
+* **Retrieve Contact List** `getContactList`: Retrieve a single Cardly contact list by its unique ID, including its custom field definitions, contact counts and address validation summary.
+* **Retrieve Invitation** `getInvitation`: Retrieve a single Cardly organisation invitation by its unique ID, including its status, granted permissions, expiry and acceptance link.
+* **Retrieve Order** `getOrder`: Retrieve a single Cardly card order by its unique ID, including overall costs and timings plus each line item's recipient, sender, delivery estimate and tracking details.
+* **Retrieve User** `getUser`: Retrieve a single Cardly organisation user by their unique ID, including status and permission flags.
+* **Retrieve Webhook** `getWebhook`: Retrieve a single Cardly webhook by its unique ID, including its target URL, subscribed events, status and delivery statistics. The signing secret is masked.
+* **Search Contacts** `searchContacts`: Find a single contact inside a Cardly contact list by its email address or your own external identifier. Returns the matching contact, or a 404 when nothing in the list matches.
+* **Sync Contact** `syncContact`: Upsert a contact into a Cardly contact list: the contact is matched on externalId or email and updated if it already exists, or created if it does not. At least one of externalId or email must be supplied.
+* **Update Webhook** `updateWebhook`: Update an existing Cardly webhook's target URL, subscribed events, description or metadata, or enable and disable it. The events list replaces the current subscription rather than adding to it.
 
 </details>
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Tavily
 
-<img src="../../.gitbook/assets/connectors/tavily.png" alt="Tavily logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/tavily.png" alt="Tavily logo">
 
 Tavily web search, extract, crawl, and map API for AI agents. Real-time web search optimized for LLMs, content extraction from URLs, site crawling, and URL mapping. Base URL https://api.tavily.com.
 

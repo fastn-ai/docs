@@ -5,7 +5,7 @@ hidden: true
 
 # GenerateBanners.com
 
-<img src="../../.gitbook/assets/connectors/generate-banners.png" alt="GenerateBanners.com logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/generate-banners.png" alt="GenerateBanners.com logo">
 
 GenerateBanners.com automates visual marketing: manage image templates, browse the public template library and Google Fonts catalogue, and render on-brand banner images (Open Graph images, social cards, ad creatives) from a template plus variable values. Wraps the https://api.generatebanners.com/api/v1 REST API.
 
@@ -39,11 +39,9 @@ Add GenerateBanners.com from **Build → Integrations → Connectors** and conne
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Library Templates | `listLibraryTemplates` | Lists the ready-made templates in the shared GenerateBanners.com starter library, grouped by category such as Blog, Podcast or Product, with each design's dimensions and render variables. Use a library id with Get Library Template to inspect its layer structure before copying it into your own workspace. Free - consumes no render credits. |
-| List Templates | `listTemplates` | Lists the metadata of all image templates in your GenerateBanners.com workspace, including each template's id, name, category, pixel dimensions and the variables it exposes for rendering. Supports page/limit pagination. Free - consumes no render credits. |
-| Render Template Image | `renderTemplateImage` | Renders a template into a finished image and returns the image bytes directly (JPEG by default). Pass one extra top-level property per template variable you want to override. Consumes 1 render credit per call and is rate-limited to 100 renders per 15 minutes per API key. To embed the image on a page instead of downloading it, use Get Template Signed URL. |
-| Update Template | `updateTemplate` | Updates an existing image template in place: rename it, resize the canvas, replace its layer structure or variables, or toggle public sharing. Only the fields you supply are changed. Returns HTTP 204 with an empty body, so confirm the change with Get Template. Free - consumes no render credits. |
+* **List Library Templates** `listLibraryTemplates`: Lists the ready-made templates in the shared GenerateBanners.com starter library, grouped by category such as Blog, Podcast or Product, with each design's dimensions and render variables. Use a library id with Get Library Template to inspect its layer structure before copying it into your own workspace. Free - consumes no render credits.
+* **List Templates** `listTemplates`: Lists the metadata of all image templates in your GenerateBanners.com workspace, including each template's id, name, category, pixel dimensions and the variables it exposes for rendering. Supports page/limit pagination. Free - consumes no render credits.
+* **Render Template Image** `renderTemplateImage`: Renders a template into a finished image and returns the image bytes directly (JPEG by default). Pass one extra top-level property per template variable you want to override. Consumes 1 render credit per call and is rate-limited to 100 renders per 15 minutes per API key. To embed the image on a page instead of downloading it, use Get Template Signed URL.
+* **Update Template** `updateTemplate`: Updates an existing image template in place: rename it, resize the canvas, replace its layer structure or variables, or toggle public sharing. Only the fields you supply are changed. Returns HTTP 204 with an empty body, so confirm the change with Get Template. Free - consumes no render credits.
 
 </details>

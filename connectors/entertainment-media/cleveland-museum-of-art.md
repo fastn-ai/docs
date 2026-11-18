@@ -5,7 +5,7 @@ hidden: true
 
 # Cleveland Museum of Art Open Access
 
-<img src="../../.gitbook/assets/connectors/cleveland-museum-of-art.png" alt="Cleveland Museum of Art Open Access logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/cleveland-museum-of-art.png" alt="Cleveland Museum of Art Open Access logo">
 
 The Cleveland Museum of Art Open Access API offers CC0 data on over 64,000 artworks and images for over 37,000 of them. Search artworks with rich filters, get an artwork by id or accession number, and search or get creators and exhibitions. No API key needed.
 

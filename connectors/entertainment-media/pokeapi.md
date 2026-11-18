@@ -5,7 +5,7 @@ hidden: true
 
 # PokeAPI
 
-<img src="../../.gitbook/assets/connectors/pokeapi.png" alt="PokeAPI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pokeapi.png" alt="PokeAPI logo">
 
 PokeAPI (pokeapi.co) is a free, fully keyless RESTful API providing comprehensive Pokemon data - species, moves, abilities, types, items, berries, locations, evolution chains, games, and more. Read-only (GET), no authentication or API key required.
 
@@ -39,21 +39,19 @@ Add PokeAPI from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 14 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Nature | `getNature` | Returns data for a single Pokemon nature by name or ID, including which stat it increases/decreases and its berry flavor preferences. |
-| Get Pokedex | `getPokedex` | Returns data for a single regional or national Pokedex by name or ID, including whether it is part of the main series, its region, and the full list of Pokemon species entries with their entry numbers. |
-| Get Pokemon | `getPokemon` | Returns detailed data for a single Pokemon by name or numeric Pokedex ID, including base stats, types, abilities, held items, moves, sprites, and a reference to its species. |
-| Get Pokemon Species | `getPokemonSpecies` | Returns species-level data for a Pokemon by name or ID - evolution chain reference, habitat, color, shape, growth rate, egg groups, capture rate, and localized flavor text describing the species. |
-| Get Region | `getRegion` | Returns data for a single game region by name or ID, including its locations, main generation, Pokedexes, and version groups. |
-| Get Type | `getType` | Returns data for a single Pokemon elemental type by name or ID, including its damage relations (what it is strong/weak/immune to and from) and the Pokemon and moves of that type. |
-| List Abilities | `listAbilities` | Returns a paginated list of Pokemon ability names and resource URLs. Use limit and offset to page through all abilities. |
-| List Berries | `listBerries` | Returns a paginated list of berry names and resource URLs. Use limit and offset to page through all berries. |
-| List Items | `listItems` | Returns a paginated list of game item names and resource URLs. Use limit and offset to page through all items. |
-| List Locations | `listLocations` | Returns a paginated list of in-game location names and resource URLs. Use limit and offset to page through all locations. |
-| List Moves | `listMoves` | Returns a paginated list of Pokemon move names and resource URLs. Use limit and offset to page through all moves. |
-| List Pokemon | `listPokemon` | Returns a paginated list of Pokemon names and resource URLs. Use limit and offset to page through the full National Pokedex. |
-| List Regions | `listRegions` | Returns a paginated list of game region names and resource URLs (e.g. Kanto, Johto, Hoenn). |
-| List Types | `listTypes` | Returns a paginated list of the 18 (plus special) Pokemon elemental type names and resource URLs. |
+* **Get Nature** `getNature`: Returns data for a single Pokemon nature by name or ID, including which stat it increases/decreases and its berry flavor preferences.
+* **Get Pokedex** `getPokedex`: Returns data for a single regional or national Pokedex by name or ID, including whether it is part of the main series, its region, and the full list of Pokemon species entries with their entry numbers.
+* **Get Pokemon** `getPokemon`: Returns detailed data for a single Pokemon by name or numeric Pokedex ID, including base stats, types, abilities, held items, moves, sprites, and a reference to its species.
+* **Get Pokemon Species** `getPokemonSpecies`: Returns species-level data for a Pokemon by name or ID - evolution chain reference, habitat, color, shape, growth rate, egg groups, capture rate, and localized flavor text describing the species.
+* **Get Region** `getRegion`: Returns data for a single game region by name or ID, including its locations, main generation, Pokedexes, and version groups.
+* **Get Type** `getType`: Returns data for a single Pokemon elemental type by name or ID, including its damage relations (what it is strong/weak/immune to and from) and the Pokemon and moves of that type.
+* **List Abilities** `listAbilities`: Returns a paginated list of Pokemon ability names and resource URLs. Use limit and offset to page through all abilities.
+* **List Berries** `listBerries`: Returns a paginated list of berry names and resource URLs. Use limit and offset to page through all berries.
+* **List Items** `listItems`: Returns a paginated list of game item names and resource URLs. Use limit and offset to page through all items.
+* **List Locations** `listLocations`: Returns a paginated list of in-game location names and resource URLs. Use limit and offset to page through all locations.
+* **List Moves** `listMoves`: Returns a paginated list of Pokemon move names and resource URLs. Use limit and offset to page through all moves.
+* **List Pokemon** `listPokemon`: Returns a paginated list of Pokemon names and resource URLs. Use limit and offset to page through the full National Pokedex.
+* **List Regions** `listRegions`: Returns a paginated list of game region names and resource URLs (e.g. Kanto, Johto, Hoenn).
+* **List Types** `listTypes`: Returns a paginated list of the 18 (plus special) Pokemon elemental type names and resource URLs.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # TheMealDB
 
-<img src="../../.gitbook/assets/connectors/themealdb.png" alt="TheMealDB logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/themealdb.png" alt="TheMealDB logo">
 
 TheMealDB is an open, crowd-sourced database of recipes from around the world. Search meals by name or first letter, look up full recipes with ingredients and instructions, get a random meal, filter by ingredient, category or area, and list categories, areas and ingredients. Use API key 1 (free developer test key) or your own supporter key.
 
@@ -39,8 +39,6 @@ Add TheMealDB from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Meals by Name | `searchMealsByName` | Search meals by name and get full details (GET /search.php?s=). Docs: https://www.themealdb.com/api.php |
+* **Search Meals by Name** `searchMealsByName`: Search meals by name and get full details (GET /search.php?s=). Docs: https://www.themealdb.com/api.php
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # Google Search Console
 
-<img src="../../.gitbook/assets/connectors/google-search-console.png" alt="Google Search Console logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/google-search-console.png" alt="Google Search Console logo">
 
 Google Search Console API — manage verified sites and sitemaps, query Search Analytics performance data, inspect URL indexing status, and run the Mobile-Friendly Test.
 
@@ -39,9 +39,7 @@ Add Google Search Console from **Build → Integrations → Connectors** and con
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Run Mobile Friendly Test | `runMobileFriendlyTest` | Runs the Mobile-Friendly Test against any public URL and returns the mobile-friendliness verdict, any usability issues found, and optionally a screenshot of the rendered page. The URL does not have to belong to a Search Console property. |
-| Submit Sitemap | `submitSitemap` | Submits a sitemap for a Search Console property so that Google discovers the URLs it contains. Returns an empty body on success. |
+* **Run Mobile Friendly Test** `runMobileFriendlyTest`: Runs the Mobile-Friendly Test against any public URL and returns the mobile-friendliness verdict, any usability issues found, and optionally a screenshot of the rendered page. The URL does not have to belong to a Search Console property.
+* **Submit Sitemap** `submitSitemap`: Submits a sitemap for a Search Console property so that Google discovers the URLs it contains. Returns an empty body on success.
 
 </details>

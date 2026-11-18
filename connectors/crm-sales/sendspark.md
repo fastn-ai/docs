@@ -5,7 +5,7 @@ hidden: true
 
 # Sendspark
 
-<img src="../../.gitbook/assets/connectors/sendspark.png" alt="Sendspark logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/sendspark.png" alt="Sendspark logo">
 
 Sendspark personalised video outreach API (api-gw.sendspark.com/v1): workspaces, dynamic video campaigns, prospects, video transcripts and webhooks.
 
@@ -39,14 +39,12 @@ Add Sendspark from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Webhook | `getWebhook` | Fetch a single webhook subscription by its id. GET /v1/workspaces/{workspaceId}/webhooks/{webhookId}. |
-| Get Workspace Id From Api Key | `getWorkspaceIdentifier` | Resolve the workspace id that the supplied API key belongs to. GET /v1/workspaces/identifier. |
-| List Dynamic Video Campaigns | `listDynamicCampaigns` | List the dynamic video campaigns in the connected workspace, paginated. offset is 1-based - the vendor returns HTTP 500 for offset=0. GET /v1/workspaces/{workspaceId}/dynamics. |
-| List Webhooks | `listWebhooks` | List all webhook subscriptions registered on the connected workspace. The raw vendor response is a JSON array of webhook objects. GET /v1/workspaces/{workspaceId}/webhooks. |
-| List Workspaces | `listWorkspaces` | List the Sendspark workspaces the authenticated user belongs to, with plan and member details. GET /v1/workspaces. |
-| Update Webhook | `updateWebhook` | Modify an existing webhook subscription: rename it, change the delivery url, change subscribed events or enable/disable it. PATCH /v1/workspaces/{workspaceId}/webhooks/{webhookId}. |
+* **Get Webhook** `getWebhook`: Fetch a single webhook subscription by its id. GET /v1/workspaces/{workspaceId}/webhooks/{webhookId}.
+* **Get Workspace Id From Api Key** `getWorkspaceIdentifier`: Resolve the workspace id that the supplied API key belongs to. GET /v1/workspaces/identifier.
+* **List Dynamic Video Campaigns** `listDynamicCampaigns`: List the dynamic video campaigns in the connected workspace, paginated. offset is 1-based - the vendor returns HTTP 500 for offset=0. GET /v1/workspaces/{workspaceId}/dynamics.
+* **List Webhooks** `listWebhooks`: List all webhook subscriptions registered on the connected workspace. The raw vendor response is a JSON array of webhook objects. GET /v1/workspaces/{workspaceId}/webhooks.
+* **List Workspaces** `listWorkspaces`: List the Sendspark workspaces the authenticated user belongs to, with plan and member details. GET /v1/workspaces.
+* **Update Webhook** `updateWebhook`: Modify an existing webhook subscription: rename it, change the delivery url, change subscribed events or enable/disable it. PATCH /v1/workspaces/{workspaceId}/webhooks/{webhookId}.
 
 </details>
 

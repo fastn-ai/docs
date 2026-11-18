@@ -5,7 +5,7 @@ hidden: true
 
 # OpenWeatherMap
 
-<img src="../../.gitbook/assets/connectors/openweathermap.png" alt="OpenWeatherMap logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/openweathermap.png" alt="OpenWeatherMap logo">
 
 OpenWeatherMap provides current weather, 5-day/3-hour forecasts, city search, air pollution data (current, forecast and history), direct/reverse/ZIP geocoding, personal weather-station management with measurement upload, and weather map tiles. All requests authenticate with an API key passed as the appid query parameter.
 
@@ -39,20 +39,18 @@ Add OpenWeatherMap from **Build → Integrations → Connectors** and connect an
 
 <summary>See 13 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Current Weather by City ID | `getCurrentWeatherByCityId` | Retrieves the current weather observation for a city identified by its OpenWeatherMap city id. |
-| Get Current Weather by City Name | `getCurrentWeatherByCityName` | Retrieves the current weather observation for a city identified by name, optionally narrowed by state and country code. |
-| Get Current Weather by Coordinates | `getCurrentWeatherByCoordinates` | Retrieves the current weather observation for an exact geographic point given by latitude and longitude. |
-| Get Current Weather by ZIP Code | `getCurrentWeatherByZipCode` | Retrieves the current weather observation for a postal code in a given country. |
-| Get Weather Map Tile | `getWeatherMapTile` | Retrieves a 256x256 PNG weather map tile for a given layer at the requested zoom level and tile coordinates, for overlaying on a slippy map. |
-| Get Weather Station | `getWeatherStation` | Retrieves a single registered personal weather station by its OpenWeatherMap station id. |
-| List Station Measurements | `listStationMeasurements` | Retrieves aggregated measurements uploaded for a personal weather station over a time range, grouped into minute, hour or day buckets. |
-| List Weather Stations | `listWeatherStations` | Lists every personal weather station registered under the connected OpenWeatherMap account. |
-| Register Weather Station | `registerWeatherStation` | Registers a new personal weather station on the connected OpenWeatherMap account so that measurements can be uploaded for it. |
-| Reverse Geocode Coordinates | `reverseGeocode` | Converts a latitude and longitude pair into the names of the places at that point using the OpenWeatherMap geocoding API. |
-| Search Cities by Weather | `searchCities` | Searches for cities matching a name or surrounding a coordinate and returns the current weather observation for each match. |
-| Update Weather Station | `updateWeatherStation` | Updates the name, coordinates or altitude of a registered personal weather station. |
-| Upload Station Measurements | `uploadStationMeasurements` | Uploads one or more measurements for a registered personal weather station. The endpoint returns HTTP 204 with an empty body on success. |
+* **Get Current Weather by City ID** `getCurrentWeatherByCityId`: Retrieves the current weather observation for a city identified by its OpenWeatherMap city id.
+* **Get Current Weather by City Name** `getCurrentWeatherByCityName`: Retrieves the current weather observation for a city identified by name, optionally narrowed by state and country code.
+* **Get Current Weather by Coordinates** `getCurrentWeatherByCoordinates`: Retrieves the current weather observation for an exact geographic point given by latitude and longitude.
+* **Get Current Weather by ZIP Code** `getCurrentWeatherByZipCode`: Retrieves the current weather observation for a postal code in a given country.
+* **Get Weather Map Tile** `getWeatherMapTile`: Retrieves a 256x256 PNG weather map tile for a given layer at the requested zoom level and tile coordinates, for overlaying on a slippy map.
+* **Get Weather Station** `getWeatherStation`: Retrieves a single registered personal weather station by its OpenWeatherMap station id.
+* **List Station Measurements** `listStationMeasurements`: Retrieves aggregated measurements uploaded for a personal weather station over a time range, grouped into minute, hour or day buckets.
+* **List Weather Stations** `listWeatherStations`: Lists every personal weather station registered under the connected OpenWeatherMap account.
+* **Register Weather Station** `registerWeatherStation`: Registers a new personal weather station on the connected OpenWeatherMap account so that measurements can be uploaded for it.
+* **Reverse Geocode Coordinates** `reverseGeocode`: Converts a latitude and longitude pair into the names of the places at that point using the OpenWeatherMap geocoding API.
+* **Search Cities by Weather** `searchCities`: Searches for cities matching a name or surrounding a coordinate and returns the current weather observation for each match.
+* **Update Weather Station** `updateWeatherStation`: Updates the name, coordinates or altitude of a registered personal weather station.
+* **Upload Station Measurements** `uploadStationMeasurements`: Uploads one or more measurements for a registered personal weather station. The endpoint returns HTTP 204 with an empty body on success.
 
 </details>

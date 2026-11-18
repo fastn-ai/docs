@@ -5,7 +5,7 @@ hidden: true
 
 # Supadata
 
-<img src="../../.gitbook/assets/connectors/supadata.png" alt="Supadata logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/supadata.png" alt="Supadata logo">
 
 Supadata turns videos and websites into structured data. This connector covers the Supadata v1 API: transcripts and unified metadata for YouTube, TikTok, Instagram, X and Facebook media, AI extraction of structured data from videos, YouTube video, channel, playlist, search, transcript, translation and batch jobs, web page scraping to Markdown, site maps and website crawls, and account credit usage.
 
@@ -39,18 +39,16 @@ Add Supadata from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 11 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get YouTube Batch Result | `getYoutubeBatch` | Retrieves the status, progress statistics and per-video results of a YouTube transcript or video metadata batch job. Use limit and offset to page through a completed batch. Polling does not consume credits. |
-| Get YouTube Channel | `getYoutubeChannel` | Retrieves metadata for a YouTube channel, including name, handle, description, subscriber, video and view counts, thumbnail and banner. |
-| Get YouTube Playlist | `getYoutubePlaylist` | Retrieves metadata for a YouTube playlist, including title, description, video count, view count, last update time and owning channel. |
-| Get YouTube Transcript | `getYoutubeTranscript` | Retrieves the transcript of a YouTube video as timed segments or plain text. If the requested language is unavailable, the first available language is returned. Provide either a video URL or a video ID. Costs 1 credit. |
-| Get YouTube Video | `getYoutubeVideo` | Retrieves metadata for a YouTube video, including title, description, duration, channel, tags, thumbnail, upload date, view and like counts, and the languages its transcript is available in. |
-| List YouTube Channel Videos | `listYoutubeChannelVideos` | Lists video IDs from a YouTube channel, split into regular videos, Shorts and live streams, optionally limited to one type. |
-| List YouTube Playlist Videos | `listYoutubePlaylistVideos` | Lists the video IDs in a YouTube playlist, split into regular videos, Shorts and live streams. |
-| Map Website | `mapWebsite` | Scans a website and returns the URLs found across it, useful for building a sitemap or choosing pages to scrape. Costs 1 credit. |
-| Scrape Web Page | `scrapeWebPage` | Scrapes a web page and returns its content as Markdown with the page name, description, character count and the links found on it. Costs 1 credit. |
-| Search YouTube | `searchYoutube` | Searches YouTube for videos, channels, playlists and movies with filters for upload date, type, duration, special feature and sort order. Without a limit a single page of about 20 results is returned with a next page token (1 credit); with a limit results are paginated automatically at 1 credit per 20 results. |
-| Translate YouTube Transcript | `translateYoutubeTranscript` | Translates the transcript of a YouTube video into the requested language and returns it as timed segments or plain text. Provide either a video URL or a video ID. Costs 30 credits per minute of transcript. |
+* **Get YouTube Batch Result** `getYoutubeBatch`: Retrieves the status, progress statistics and per-video results of a YouTube transcript or video metadata batch job. Use limit and offset to page through a completed batch. Polling does not consume credits.
+* **Get YouTube Channel** `getYoutubeChannel`: Retrieves metadata for a YouTube channel, including name, handle, description, subscriber, video and view counts, thumbnail and banner.
+* **Get YouTube Playlist** `getYoutubePlaylist`: Retrieves metadata for a YouTube playlist, including title, description, video count, view count, last update time and owning channel.
+* **Get YouTube Transcript** `getYoutubeTranscript`: Retrieves the transcript of a YouTube video as timed segments or plain text. If the requested language is unavailable, the first available language is returned. Provide either a video URL or a video ID. Costs 1 credit.
+* **Get YouTube Video** `getYoutubeVideo`: Retrieves metadata for a YouTube video, including title, description, duration, channel, tags, thumbnail, upload date, view and like counts, and the languages its transcript is available in.
+* **List YouTube Channel Videos** `listYoutubeChannelVideos`: Lists video IDs from a YouTube channel, split into regular videos, Shorts and live streams, optionally limited to one type.
+* **List YouTube Playlist Videos** `listYoutubePlaylistVideos`: Lists the video IDs in a YouTube playlist, split into regular videos, Shorts and live streams.
+* **Map Website** `mapWebsite`: Scans a website and returns the URLs found across it, useful for building a sitemap or choosing pages to scrape. Costs 1 credit.
+* **Scrape Web Page** `scrapeWebPage`: Scrapes a web page and returns its content as Markdown with the page name, description, character count and the links found on it. Costs 1 credit.
+* **Search YouTube** `searchYoutube`: Searches YouTube for videos, channels, playlists and movies with filters for upload date, type, duration, special feature and sort order. Without a limit a single page of about 20 results is returned with a next page token (1 credit); with a limit results are paginated automatically at 1 credit per 20 results.
+* **Translate YouTube Transcript** `translateYoutubeTranscript`: Translates the transcript of a YouTube video into the requested language and returns it as timed segments or plain text. Provide either a video URL or a video ID. Costs 30 credits per minute of transcript.
 
 </details>

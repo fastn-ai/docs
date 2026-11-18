@@ -5,7 +5,7 @@ hidden: true
 
 # ImgBB
 
-<img src="../../.gitbook/assets/connectors/imgbb.png" alt="ImgBB logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/imgbb.png" alt="ImgBB logo">
 
 ImgBB image hosting and upload API. The platform documents a single endpoint (POST /1/upload) that accepts a binary file, base64-encoded image data, or an image URL (max 32MB), with optional filename and auto-expiration. Returns hosted image URLs (direct, viewer, thumbnail) and a delete URL. Auth is an API key sent as the 'key' query parameter.
 

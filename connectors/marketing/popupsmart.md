@@ -5,7 +5,7 @@ hidden: true
 
 # Popupsmart
 
-<img src="../../.gitbook/assets/connectors/popupsmart.png" alt="Popupsmart logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/popupsmart.png" alt="Popupsmart logo">
 
 Popupsmart popup builder. Public Leads API (GET /api/leads, x-token + x-campaign-id headers) plus the app.popupsmart.com GraphQL dashboard API (campaigns, websites, folders, segments, leads, analytics, templates, webhook integrations) authenticated with a dashboard access token.
 
@@ -39,28 +39,26 @@ Add Popupsmart from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 20 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Campaign Counts | `getCampaignCounts` | Return how many Popupsmart campaigns the account has in total, active and passive. Dashboard Access Token connection. |
-| Get Current User | `getMe` | Return the signed-in Popupsmart dashboard user and their account plan. Uses the Dashboard Access Token connection. NOTE: the vendor's own `me` query also exposes the account's raw API key (`apiToken`); this action deliberately does NOT request that field. |
-| Get Leads | `getLeads` | Download the leads (popup form submissions) collected by the connected Popupsmart campaign. Uses the public Leads API. Default window is 1 day; maximum window is 90 days. Returns { leads: [...] } where each lead carries submission data plus session, location, page, device and user-agent metadata. |
-| Get Page Analytics | `getPageAnalytics` | Per-page Popupsmart analytics for a date range: which pages the popups were displayed on and how they performed. Dashboard Access Token connection. |
-| Get Short Analytics | `getShortAnalytics` | Headline Popupsmart analytics for a date range: displays, interactions, leads, page views, visitors and driven revenue, each with the previous-period comparison. Dashboard Access Token connection. |
-| List Accounts | `listAccounts` | List the Popupsmart accounts (organizations) the signed-in dashboard user belongs to, with ownership and agency flags. Dashboard Access Token connection. |
-| List Campaigns | `listCampaigns` | List every Popupsmart campaign (popup) in the connected account with its id, name, active flag, publish version, conversion rate, folder and domains. Dashboard Access Token connection. |
-| List Folders | `listFolders` | List the campaign folders on the connected Popupsmart account and the campaigns inside each. Folders are a paid-plan feature. Dashboard Access Token connection. |
-| List Invitations | `listInvitations` | List pending teammate invitations on the connected Popupsmart account with their role and campaign scope. Dashboard Access Token connection. |
-| List Leads (Dashboard) | `listLeadsDashboard` | Page through the leads captured by one Popupsmart campaign over a date range, using the dashboard GraphQL API. Returns items, total and the column list. Lead rows contain personal data (email, IP, city). Dashboard Access Token connection. |
-| List Segments | `listSegments` | List the audience segments defined for one Popupsmart campaign, with their targeting rules and category. Dashboard Access Token connection. |
-| List Template Tags | `listTemplateTags` | List the popup-template tag taxonomy (goals, industries, seasons) with template counts. Use the returned tag ids as input to Search Templates. Dashboard Access Token connection. |
-| List Webhook Integrations | `listWebhookIntegrations` | List every webhook integration on the connected Popupsmart account. Each entry is a URL that Popupsmart POSTs to when a popup form is submitted on the given campaign. Dashboard Access Token connection. |
-| List Websites | `listWebsites` | List the websites (domains) registered on the connected Popupsmart account, with verification state, detected CMS and campaign count. Dashboard Access Token connection. |
-| Login (Mint Dashboard Access Token) | `login` | Exchange Popupsmart dashboard email + password for an accessToken (valid 24h) and a refreshToken. Use the accessToken as the credential for the "Dashboard Access Token (GraphQL)" auth method. Needs no existing credential. |
-| Publish Campaign | `publishCampaign` | DESTRUCTIVE / GOES LIVE. Publish a Popupsmart campaign so the popup starts showing to real visitors on the registered website. Only call this when you intend the popup to be live. Returns { success, message, code }. Dashboard Access Token connection. |
-| Rename Campaign | `renameCampaign` | Rename an existing Popupsmart campaign. Does not change its published state. Dashboard Access Token connection. |
-| Search Templates | `searchTemplates` | Search the Popupsmart popup-template gallery by tag ids (get the ids from List Template Tags). Returns template id, name, thumbnail and device type. Dashboard Access Token connection. |
-| Update Folder | `updateFolder` | Rename a campaign folder. Paid-plan feature (see Create Folder). Dashboard Access Token connection. |
-| Update Webhook Integration | `updateWebhookIntegration` | Change the name, target URL or campaign of an existing Popupsmart webhook integration. Dashboard Access Token connection. |
+* **Get Campaign Counts** `getCampaignCounts`: Return how many Popupsmart campaigns the account has in total, active and passive. Dashboard Access Token connection.
+* **Get Current User** `getMe`: Return the signed-in Popupsmart dashboard user and their account plan. Uses the Dashboard Access Token connection. NOTE: the vendor's own `me` query also exposes the account's raw API key (`apiToken`); this action deliberately does NOT request that field.
+* **Get Leads** `getLeads`: Download the leads (popup form submissions) collected by the connected Popupsmart campaign. Uses the public Leads API. Default window is 1 day; maximum window is 90 days. Returns { leads: [...] } where each lead carries submission data plus session, location, page, device and user-agent metadata.
+* **Get Page Analytics** `getPageAnalytics`: Per-page Popupsmart analytics for a date range: which pages the popups were displayed on and how they performed. Dashboard Access Token connection.
+* **Get Short Analytics** `getShortAnalytics`: Headline Popupsmart analytics for a date range: displays, interactions, leads, page views, visitors and driven revenue, each with the previous-period comparison. Dashboard Access Token connection.
+* **List Accounts** `listAccounts`: List the Popupsmart accounts (organizations) the signed-in dashboard user belongs to, with ownership and agency flags. Dashboard Access Token connection.
+* **List Campaigns** `listCampaigns`: List every Popupsmart campaign (popup) in the connected account with its id, name, active flag, publish version, conversion rate, folder and domains. Dashboard Access Token connection.
+* **List Folders** `listFolders`: List the campaign folders on the connected Popupsmart account and the campaigns inside each. Folders are a paid-plan feature. Dashboard Access Token connection.
+* **List Invitations** `listInvitations`: List pending teammate invitations on the connected Popupsmart account with their role and campaign scope. Dashboard Access Token connection.
+* **List Leads (Dashboard)** `listLeadsDashboard`: Page through the leads captured by one Popupsmart campaign over a date range, using the dashboard GraphQL API. Returns items, total and the column list. Lead rows contain personal data (email, IP, city). Dashboard Access Token connection.
+* **List Segments** `listSegments`: List the audience segments defined for one Popupsmart campaign, with their targeting rules and category. Dashboard Access Token connection.
+* **List Template Tags** `listTemplateTags`: List the popup-template tag taxonomy (goals, industries, seasons) with template counts. Use the returned tag ids as input to Search Templates. Dashboard Access Token connection.
+* **List Webhook Integrations** `listWebhookIntegrations`: List every webhook integration on the connected Popupsmart account. Each entry is a URL that Popupsmart POSTs to when a popup form is submitted on the given campaign. Dashboard Access Token connection.
+* **List Websites** `listWebsites`: List the websites (domains) registered on the connected Popupsmart account, with verification state, detected CMS and campaign count. Dashboard Access Token connection.
+* **Login (Mint Dashboard Access Token)** `login`: Exchange Popupsmart dashboard email + password for an accessToken (valid 24h) and a refreshToken. Use the accessToken as the credential for the "Dashboard Access Token (GraphQL)" auth method. Needs no existing credential.
+* **Publish Campaign** `publishCampaign`: DESTRUCTIVE / GOES LIVE. Publish a Popupsmart campaign so the popup starts showing to real visitors on the registered website. Only call this when you intend the popup to be live. Returns { success, message, code }. Dashboard Access Token connection.
+* **Rename Campaign** `renameCampaign`: Rename an existing Popupsmart campaign. Does not change its published state. Dashboard Access Token connection.
+* **Search Templates** `searchTemplates`: Search the Popupsmart popup-template gallery by tag ids (get the ids from List Template Tags). Returns template id, name, thumbnail and device type. Dashboard Access Token connection.
+* **Update Folder** `updateFolder`: Rename a campaign folder. Paid-plan feature (see Create Folder). Dashboard Access Token connection.
+* **Update Webhook Integration** `updateWebhookIntegration`: Change the name, target URL or campaign of an existing Popupsmart webhook integration. Dashboard Access Token connection.
 
 </details>
 

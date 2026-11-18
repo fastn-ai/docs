@@ -5,7 +5,7 @@ hidden: true
 
 # Géoplateforme Geocoding (IGN)
 
-<img src="../../.gitbook/assets/connectors/geoplateforme-geocodage.png" alt="Géoplateforme Geocoding (IGN) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/geoplateforme-geocodage.png" alt="Géoplateforme Geocoding (IGN) logo">
 
 The Géoplateforme geocoding service from IGN (the French national mapping agency, successor of api-adresse.data.gouv.fr) geocodes and reverse geocodes French addresses (Base Adresse Nationale), points of interest and cadastral parcels, with autocomplete and filters by postcode, INSEE code, department and type. No API key needed.
 

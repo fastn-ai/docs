@@ -5,7 +5,7 @@ hidden: true
 
 # IPstack
 
-<img src="../../.gitbook/assets/connectors/ipstack.png" alt="IPstack logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ipstack.png" alt="IPstack logo">
 
 IPstack is a real-time IP geolocation and IP intelligence API by apilayer. It resolves an IPv4 or IPv6 address (or the caller's own IP) to location, timezone, currency, connection, and security data.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Linkly
 
-<img src="../../.gitbook/assets/connectors/linkly.png" alt="Linkly logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/linkly.png" alt="Linkly logo">
 
 Linkly URL shortener and click analytics. Create, update, list and delete branded short links; read click analytics and breakdown counters; manage workspaces, workspace members, custom domains and click webhooks.
 
@@ -39,22 +39,20 @@ Add Linkly from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 14 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Current User | `getCurrentUser` | Returns the Linkly user account that owns the API key, including id, name, email, language and account attribution. Useful as a connection health check because it needs no inputs. |
-| Get Link | `getLink` | Retrieves a single short link by id. The workspace_id query parameter is mandatory; omitting it returns 400 with code 'workspace_required'. |
-| Get Workspace | `getWorkspace` | Retrieves one Linkly workspace by id, including its plan usage counters, enabled feature flags, configured webhook endpoints, link and domain counts, and onboarding state. |
-| List Domains | `listDomains` | Lists custom branded domains for a workspace addressed by the workspace_id query parameter. Linkly returns a bare JSON array here; it is surfaced under 'items'. Omitting workspace_id returns 400 with code 'workspace_required'. |
-| List Link Webhooks | `listLinkWebhooks` | Lists the webhook endpoints subscribed to a single short link. Each entry's 'id' is the endpoint URL itself. Linkly returns a bare JSON array here; it is surfaced under 'items'. Link-level and workspace-level subscriptions are independent and can both be present. |
-| List Links | `listLinks` | Lists the short links in a workspace with pagination metadata and per-link click counters (today, previous day, thirty days, total, plus human-only variants). Supports a free-text search over link name and destination URL. This is the richer of the two link listings; use List Workspace Links for the plain link records. |
-| List Workspace Domains | `listWorkspaceDomains` | Lists the custom branded domains configured on a Linkly workspace, returned under a 'domains' key. Use List Domains for the equivalent flat listing addressed by query parameter. |
-| List Workspace Links | `listWorkspaceLinks` | Returns every short link in a workspace as a plain JSON array of link records, without pagination metadata or click counters. Use List Links instead when you need paging, search or click totals. Linkly returns a bare JSON array here; it is surfaced under 'items'. |
-| List Workspace Users | `listWorkspaceUsers` | Lists the members of a Linkly workspace. Each row carries the workspace membership id (needed by Remove Workspace User) alongside the underlying user record and that member's monthly report preference. |
-| List Workspace Webhooks | `listWorkspaceWebhooks` | Lists the webhook endpoints subscribed at the workspace level. Each entry's 'id' is the endpoint URL itself, which is what Delete Workspace Webhook expects. Linkly returns a bare JSON array here; it is surfaced under 'items'. Every workspace endpoint receives all four Linkly events (click, link.created, link.updated, link.deleted); Get Workspace shows that event list per endpoint. |
-| List Workspaces | `listWorkspaces` | Lists every Linkly workspace the API key can access, returning each workspace id and name. Call this first to obtain the workspace_id required by most other Linkly actions. |
-| Remove Workspace User | `removeWorkspaceUser` | Removes a member from a Linkly workspace by workspace membership id (the 'id' field from List Workspace Users, not the underlying user id). Removing the last remaining member also removes the workspace itself, which is the only API-side way to tear down a workspace created by Create Workspace. |
-| Save Link | `saveLink` | Creates a short link, or updates an existing one when 'id' is supplied. Returns the full link record including its generated short URL in 'full_url'. Fields belonging to paid Linkly features (UTM and Open Graph overrides, link expiry, cloaking, public analytics, tracking pixels, HTML injection, app deep links, custom slugs) are silently ignored on plans where the matching flag in the workspace 'features' map is false; call Get Workspace to see which are enabled. |
-| Save Links Bulk | `saveLinksBulk` | Creates or updates many short links in one request. Linkly requires a bare JSON array as the request body here, so pass the array serialized as a string in links_json. Each entry accepts the same fields as Save Link; an entry with 'id' updates that link, one without creates a new link. Returns one result per entry with its index, status and the resulting link record. |
+* **Get Current User** `getCurrentUser`: Returns the Linkly user account that owns the API key, including id, name, email, language and account attribution. Useful as a connection health check because it needs no inputs.
+* **Get Link** `getLink`: Retrieves a single short link by id. The workspace_id query parameter is mandatory; omitting it returns 400 with code 'workspace_required'.
+* **Get Workspace** `getWorkspace`: Retrieves one Linkly workspace by id, including its plan usage counters, enabled feature flags, configured webhook endpoints, link and domain counts, and onboarding state.
+* **List Domains** `listDomains`: Lists custom branded domains for a workspace addressed by the workspace_id query parameter. Linkly returns a bare JSON array here; it is surfaced under 'items'. Omitting workspace_id returns 400 with code 'workspace_required'.
+* **List Link Webhooks** `listLinkWebhooks`: Lists the webhook endpoints subscribed to a single short link. Each entry's 'id' is the endpoint URL itself. Linkly returns a bare JSON array here; it is surfaced under 'items'. Link-level and workspace-level subscriptions are independent and can both be present.
+* **List Links** `listLinks`: Lists the short links in a workspace with pagination metadata and per-link click counters (today, previous day, thirty days, total, plus human-only variants). Supports a free-text search over link name and destination URL. This is the richer of the two link listings; use List Workspace Links for the plain link records.
+* **List Workspace Domains** `listWorkspaceDomains`: Lists the custom branded domains configured on a Linkly workspace, returned under a 'domains' key. Use List Domains for the equivalent flat listing addressed by query parameter.
+* **List Workspace Links** `listWorkspaceLinks`: Returns every short link in a workspace as a plain JSON array of link records, without pagination metadata or click counters. Use List Links instead when you need paging, search or click totals. Linkly returns a bare JSON array here; it is surfaced under 'items'.
+* **List Workspace Users** `listWorkspaceUsers`: Lists the members of a Linkly workspace. Each row carries the workspace membership id (needed by Remove Workspace User) alongside the underlying user record and that member's monthly report preference.
+* **List Workspace Webhooks** `listWorkspaceWebhooks`: Lists the webhook endpoints subscribed at the workspace level. Each entry's 'id' is the endpoint URL itself, which is what Delete Workspace Webhook expects. Linkly returns a bare JSON array here; it is surfaced under 'items'. Every workspace endpoint receives all four Linkly events (click, link.created, link.updated, link.deleted); Get Workspace shows that event list per endpoint.
+* **List Workspaces** `listWorkspaces`: Lists every Linkly workspace the API key can access, returning each workspace id and name. Call this first to obtain the workspace_id required by most other Linkly actions.
+* **Remove Workspace User** `removeWorkspaceUser`: Removes a member from a Linkly workspace by workspace membership id (the 'id' field from List Workspace Users, not the underlying user id). Removing the last remaining member also removes the workspace itself, which is the only API-side way to tear down a workspace created by Create Workspace.
+* **Save Link** `saveLink`: Creates a short link, or updates an existing one when 'id' is supplied. Returns the full link record including its generated short URL in 'full_url'. Fields belonging to paid Linkly features (UTM and Open Graph overrides, link expiry, cloaking, public analytics, tracking pixels, HTML injection, app deep links, custom slugs) are silently ignored on plans where the matching flag in the workspace 'features' map is false; call Get Workspace to see which are enabled.
+* **Save Links Bulk** `saveLinksBulk`: Creates or updates many short links in one request. Linkly requires a bare JSON array as the request body here, so pass the array serialized as a string in links_json. Each entry accepts the same fields as Save Link; an entry with 'id' updates that link, one without creates a new link. Returns one result per entry with its index, status and the resulting link record.
 
 </details>
 

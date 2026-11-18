@@ -5,7 +5,7 @@ hidden: true
 
 # Pipedream
 
-<img src="../../.gitbook/assets/connectors/pipedream.png" alt="Pipedream logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pipedream.png" alt="Pipedream logo">
 
 Pipedream is a workflow automation and integration platform for developers. This connector covers the Pipedream REST API v1: users, workspaces, apps in the integration registry, components, deployed event sources and their events, event subscriptions, webhooks, workflows and workspace OAuth tokens.
 
@@ -39,24 +39,22 @@ Add Pipedream from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 17 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get App | `getApp` | Retrieve a single app from Pipedream's integration registry by its app ID or name slug. |
-| Get Component | `getComponent` | Retrieve a component saved in the workspace by its component key or component ID. |
-| Get Current User | `getCurrentUser` | Retrieve the profile of the user that owns the API key, including their email and the workspaces they belong to. |
-| Get OAuth Access Token | `getOauthAccessToken` | Exchange a workspace OAuth client's credentials for a short-lived Pipedream API access token using the client_credentials grant. |
-| Get Registry Component | `getRegistryComponent` | Retrieve a component from Pipedream's global public registry by its key. |
-| Get Workflow | `getWorkflow` | Retrieve a workflow's definition, including its triggers and steps. |
-| Get Workspace | `getWorkspace` | Retrieve the workspace configured on this connection, including its name, billing email and daily credit quota. |
-| List Apps | `listApps` | List the apps available in Pipedream's integration registry, optionally filtered by a search string or by whether the app publishes components. |
-| List Source Events | `listSourceEvents` | Retrieve the most recent events emitted by a source, newest last. |
-| List Workflow Emits | `listWorkflowEmits` | Retrieve the events a workflow emitted on its default channel, newest last. |
-| List Workflow Errors | `listWorkflowErrors` | Retrieve the errors a workflow has thrown, newest last, including the original event and context. |
-| List Workspace Sources | `listWorkspaceSources` | List every event source configured in the workspace configured on this connection. |
-| List Workspace Subscriptions | `listWorkspaceSubscriptions` | List every event subscription configured in the workspace configured on this connection. |
-| Revoke OAuth Access Token | `revokeOauthAccessToken` | Revoke a previously issued Pipedream OAuth access token so it can no longer be used. |
-| Search Registry Components | `searchRegistryComponents` | Search Pipedream's global component registry with a natural-language query and return the matching sources and actions. |
-| Update Source | `updateSource` | Update a deployed source: change its code, its name, or activate and deactivate it. |
-| Update Workflow | `updateWorkflow` | Activate or deactivate a deployed workflow. |
+* **Get App** `getApp`: Retrieve a single app from Pipedream's integration registry by its app ID or name slug.
+* **Get Component** `getComponent`: Retrieve a component saved in the workspace by its component key or component ID.
+* **Get Current User** `getCurrentUser`: Retrieve the profile of the user that owns the API key, including their email and the workspaces they belong to.
+* **Get OAuth Access Token** `getOauthAccessToken`: Exchange a workspace OAuth client's credentials for a short-lived Pipedream API access token using the client_credentials grant.
+* **Get Registry Component** `getRegistryComponent`: Retrieve a component from Pipedream's global public registry by its key.
+* **Get Workflow** `getWorkflow`: Retrieve a workflow's definition, including its triggers and steps.
+* **Get Workspace** `getWorkspace`: Retrieve the workspace configured on this connection, including its name, billing email and daily credit quota.
+* **List Apps** `listApps`: List the apps available in Pipedream's integration registry, optionally filtered by a search string or by whether the app publishes components.
+* **List Source Events** `listSourceEvents`: Retrieve the most recent events emitted by a source, newest last.
+* **List Workflow Emits** `listWorkflowEmits`: Retrieve the events a workflow emitted on its default channel, newest last.
+* **List Workflow Errors** `listWorkflowErrors`: Retrieve the errors a workflow has thrown, newest last, including the original event and context.
+* **List Workspace Sources** `listWorkspaceSources`: List every event source configured in the workspace configured on this connection.
+* **List Workspace Subscriptions** `listWorkspaceSubscriptions`: List every event subscription configured in the workspace configured on this connection.
+* **Revoke OAuth Access Token** `revokeOauthAccessToken`: Revoke a previously issued Pipedream OAuth access token so it can no longer be used.
+* **Search Registry Components** `searchRegistryComponents`: Search Pipedream's global component registry with a natural-language query and return the matching sources and actions.
+* **Update Source** `updateSource`: Update a deployed source: change its code, its name, or activate and deactivate it.
+* **Update Workflow** `updateWorkflow`: Activate or deactivate a deployed workflow.
 
 </details>

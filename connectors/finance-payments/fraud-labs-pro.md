@@ -5,7 +5,7 @@ hidden: true
 
 # FraudLabs Pro
 
-<img src="../../.gitbook/assets/connectors/fraud-labs-pro.png" alt="FraudLabs Pro logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/fraud-labs-pro.png" alt="FraudLabs Pro logo">
 
 FraudLabs Pro fraud prevention API (v2). Screens e-commerce orders and user registrations for chargeback and fraud risk using IP geolocation, proxy detection, email/phone/username reputation, BIN and address checks; submits order, user and payment feedback to tune the scoring model; and runs SMS OTP verification. Auth is a FraudLabs Pro API license key.
 
@@ -39,9 +39,7 @@ Add FraudLabs Pro from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Verify SMS OTP Code | `getSmsVerificationResult` | Checks the one-time password a user entered against the SMS send identified by tran_id. Returns result 'Y' when the OTP is valid and unexpired. A wrong or expired code returns 400 error_code 10034 INVALID OTP. SECURITY: FraudLabs Pro has no header auth form, so this GET carries the API key in the query string and it will appear in the execution record's requestUrl. |
+* **Verify SMS OTP Code** `getSmsVerificationResult`: Checks the one-time password a user entered against the SMS send identified by tran_id. Returns result 'Y' when the OTP is valid and unexpired. A wrong or expired code returns 400 error_code 10034 INVALID OTP. SECURITY: FraudLabs Pro has no header auth form, so this GET carries the API key in the query string and it will appear in the execution record's requestUrl.
 
 </details>
 

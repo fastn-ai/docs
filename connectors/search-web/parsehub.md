@@ -5,7 +5,7 @@ hidden: true
 
 # ParseHub
 
-<img src="../../.gitbook/assets/connectors/parsehub.png" alt="ParseHub logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/parsehub.png" alt="ParseHub logo">
 
 ParseHub is a visual web scraping service that turns websites without an API into structured data. This connector covers the complete ParseHub API v2: listing and retrieving scraping projects, starting cloud runs with optional start URL, template and value overrides, polling run status, downloading extracted run data as JSON or CSV, retrieving the data of a project's most recent ready run, and cancelling or deleting runs.
 

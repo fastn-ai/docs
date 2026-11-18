@@ -5,7 +5,7 @@ hidden: true
 
 # Knack
 
-<img src="../../.gitbook/assets/connectors/knack.png" alt="Knack logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/knack.png" alt="Knack logo">
 
 Knack is a no-code platform for building online databases and business apps. This connector covers the Knack REST API: application schema discovery, object-based record create, read, update and delete with filtering, sorting and pagination, view-based record operations for pages protected by logins, end-user session tokens, and asset downloads.
 
@@ -39,15 +39,13 @@ Add Knack from **Build → Integrations → Connectors** and connect an account,
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get View Record | `getViewRecord` | Retrieves a single record through a view on a page, returning only the fields that view exposes. Views on pages protected by a login require a user token. |
-| List Object Fields | `listObjectFields` | Lists every field defined on a Knack object, returning each field's key, label, type and whether it is required. Use the field keys when building record payloads. |
-| List Objects | `listObjects` | Lists every object (table) defined in the connected Knack application, returning each object's name and key. Use the returned object key to address records with the object-based record actions. |
-| List Records | `listRecords` | Retrieves records from a Knack object with optional filtering, sorting, pagination and value formatting. Records are returned with both raw and HTML-formatted field values. |
-| List View Records | `listViewRecords` | Retrieves the records a specific view on a page returns, honouring that view's own source, filters and record rules. Views on pages protected by a login require a user token, which Create User Session returns. |
-| Update Record | `updateRecord` | Updates an existing record in a Knack object. Only the field keys present in the supplied JSON object are changed; every other field on the record is left untouched. |
-| Update View Record | `updateViewRecord` | Updates a record through a form or inline-edit view, so the view's record and submit rules are applied. Only the field keys present in the supplied JSON object are changed. |
+* **Get View Record** `getViewRecord`: Retrieves a single record through a view on a page, returning only the fields that view exposes. Views on pages protected by a login require a user token.
+* **List Object Fields** `listObjectFields`: Lists every field defined on a Knack object, returning each field's key, label, type and whether it is required. Use the field keys when building record payloads.
+* **List Objects** `listObjects`: Lists every object (table) defined in the connected Knack application, returning each object's name and key. Use the returned object key to address records with the object-based record actions.
+* **List Records** `listRecords`: Retrieves records from a Knack object with optional filtering, sorting, pagination and value formatting. Records are returned with both raw and HTML-formatted field values.
+* **List View Records** `listViewRecords`: Retrieves the records a specific view on a page returns, honouring that view's own source, filters and record rules. Views on pages protected by a login require a user token, which Create User Session returns.
+* **Update Record** `updateRecord`: Updates an existing record in a Knack object. Only the field keys present in the supplied JSON object are changed; every other field on the record is left untouched.
+* **Update View Record** `updateViewRecord`: Updates a record through a form or inline-edit view, so the view's record and submit rules are applied. Only the field keys present in the supplied JSON object are changed.
 
 </details>
 

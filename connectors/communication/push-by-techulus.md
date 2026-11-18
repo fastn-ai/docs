@@ -5,7 +5,7 @@ hidden: true
 
 # Push by Techulus
 
-<img src="../../.gitbook/assets/connectors/push-by-techulus.png" alt="Push by Techulus logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/push-by-techulus.png" alt="Push by Techulus logo">
 
 Push by Techulus sends push notifications to your iOS, Android, desktop and web devices from any script, webhook or automation. This connector covers the full Push API: synchronous and asynchronous notifications to every device on an account or team, notifications to a specific device group, webhook-style notifications with the API key in the URL, and the beta Management API for inviting and removing team members.
 

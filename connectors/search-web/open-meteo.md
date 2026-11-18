@@ -5,7 +5,7 @@ hidden: true
 
 # Open-Meteo
 
-<img src="../../.gitbook/assets/connectors/open-meteo.png" alt="Open-Meteo logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/open-meteo.png" alt="Open-Meteo logo">
 
 Open-Meteo is a free, keyless weather API: forecasts from national weather models, historical weather back to 1940, marine, air quality, flood, climate, ensemble and seasonal data, plus geocoding and elevation. Free for non-commercial use (under 10,000 calls per day); commercial use needs an Open-Meteo API subscription.
 
@@ -39,19 +39,17 @@ Add Open-Meteo from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 12 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Historical Weather | `getHistoricalWeather` | Returns historical weather (reanalysis) data from 1940 to a few days ago for a date range and coordinates. Docs: https://open-meteo.com/en/docs/historical-weather-api |
-| Get JMA Forecast | `getJmaForecast` | Returns forecast data from the JMA model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/jma-api |
-| Get Location | `getLocation` | Returns one geocoding location by its id (as returned by Search Locations). Docs: https://open-meteo.com/en/docs/geocoding-api |
-| Get Marine Forecast | `getMarineForecast` | Returns marine weather (wave height, swell, wave period, sea surface temperature, ocean currents) for coordinates at sea. Docs: https://open-meteo.com/en/docs/marine-weather-api |
-| Get MET Norway Forecast | `getMetNoForecast` | Returns forecast data from the MET Norway model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/metno-api |
-| Get Meteo-France Forecast | `getMeteoFranceForecast` | Returns forecast data from the Meteo-France model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/meteofrance-api |
-| Get Previous Model Runs | `getPreviousModelRuns` | Returns forecasts from previous model runs (variables with suffix _previous_day1 to _previous_day7) to compare forecast accuracy by lead time. Docs: https://open-meteo.com/en/docs/previous-runs-api |
-| Get Satellite Radiation | `getSatelliteRadiation` | Returns solar radiation from geostationary satellites (shortwave, direct, diffuse, tilted irradiance) at native or hourly resolution. Docs: https://open-meteo.com/en/docs/satellite-radiation-api |
-| Get Seasonal Forecast | `getSeasonalForecast` | Returns long-range seasonal forecasts (ECMWF EC46/SEAS5, up to 7 months) as 6-hourly, daily or monthly values. Docs: https://open-meteo.com/en/docs/seasonal-forecast-api |
-| Get Single Model Run Forecast | `getSingleRunForecast` | Returns the forecast of one specific model run (run time in UTC). Docs: https://open-meteo.com/en/docs/single-runs-api |
-| Get Weather Forecast | `getForecast` | Returns hourly, daily, 15-minutely and current weather forecast data for one or more coordinates, combining the best national weather models (up to 16 days). Docs: https://open-meteo.com/en/docs |
-| Search Locations | `searchLocations` | Searches places by name or postal code and returns coordinates, time zone, country, population and admin areas (geocoding). Docs: https://open-meteo.com/en/docs/geocoding-api |
+* **Get Historical Weather** `getHistoricalWeather`: Returns historical weather (reanalysis) data from 1940 to a few days ago for a date range and coordinates. Docs: https://open-meteo.com/en/docs/historical-weather-api
+* **Get JMA Forecast** `getJmaForecast`: Returns forecast data from the JMA model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/jma-api
+* **Get Location** `getLocation`: Returns one geocoding location by its id (as returned by Search Locations). Docs: https://open-meteo.com/en/docs/geocoding-api
+* **Get Marine Forecast** `getMarineForecast`: Returns marine weather (wave height, swell, wave period, sea surface temperature, ocean currents) for coordinates at sea. Docs: https://open-meteo.com/en/docs/marine-weather-api
+* **Get MET Norway Forecast** `getMetNoForecast`: Returns forecast data from the MET Norway model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/metno-api
+* **Get Meteo-France Forecast** `getMeteoFranceForecast`: Returns forecast data from the Meteo-France model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/meteofrance-api
+* **Get Previous Model Runs** `getPreviousModelRuns`: Returns forecasts from previous model runs (variables with suffix _previous_day1 to _previous_day7) to compare forecast accuracy by lead time. Docs: https://open-meteo.com/en/docs/previous-runs-api
+* **Get Satellite Radiation** `getSatelliteRadiation`: Returns solar radiation from geostationary satellites (shortwave, direct, diffuse, tilted irradiance) at native or hourly resolution. Docs: https://open-meteo.com/en/docs/satellite-radiation-api
+* **Get Seasonal Forecast** `getSeasonalForecast`: Returns long-range seasonal forecasts (ECMWF EC46/SEAS5, up to 7 months) as 6-hourly, daily or monthly values. Docs: https://open-meteo.com/en/docs/seasonal-forecast-api
+* **Get Single Model Run Forecast** `getSingleRunForecast`: Returns the forecast of one specific model run (run time in UTC). Docs: https://open-meteo.com/en/docs/single-runs-api
+* **Get Weather Forecast** `getForecast`: Returns hourly, daily, 15-minutely and current weather forecast data for one or more coordinates, combining the best national weather models (up to 16 days). Docs: https://open-meteo.com/en/docs
+* **Search Locations** `searchLocations`: Searches places by name or postal code and returns coordinates, time zone, country, population and admin areas (geocoding). Docs: https://open-meteo.com/en/docs/geocoding-api
 
 </details>

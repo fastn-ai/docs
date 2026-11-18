@@ -5,7 +5,7 @@ hidden: true
 
 # Formcrafts
 
-<img src="../../.gitbook/assets/connectors/formcrafts.png" alt="Formcrafts logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/formcrafts.png" alt="Formcrafts logo">
 
 Formcrafts is an online form builder for lead capture, surveys, support requests, payments and registrations. This connector wraps the Formcrafts REST API (v2, plus the deprecated v1) to list workspaces, list and inspect forms and their fields, read form responses (submissions), and list and download files uploaded through forms.
 

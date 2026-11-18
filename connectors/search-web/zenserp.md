@@ -5,7 +5,7 @@ hidden: true
 
 # Zenserp
 
-<img src="../../.gitbook/assets/connectors/zenserp.png" alt="Zenserp logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/zenserp.png" alt="Zenserp logo">
 
 Zenserp is a search engine results page (SERP) scraping API by APILayer. This connector covers the complete Zenserp API: Google web, image, video, maps, news and shopping search, reverse image search, Google Shopping product pages, YouTube, Bing and Yandex search, Google Trends and trending searches, the supported languages, countries, geo-locations and search-engine lookup lists, asynchronous batch jobs, and the remaining-requests status check. Every search request consumes one request from your plan quota.
 
@@ -39,18 +39,16 @@ Add Zenserp from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 11 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Google Reverse Image Search | `googleReverseImageSearch` | Runs a Google reverse image search for a publicly reachable image URL and returns the pages that contain the image together with visually similar results. The start parameter is not supported. Consumes one request from your quota. |
-| Google Search | `googleSearch` | Runs a Google web search and returns the parsed results page: organic results, paid results (ads), featured snippets, knowledge graph, related questions and more. Optionally switch the result type with tbm (images, videos, maps, news, shopping). Consumes one request from your quota. |
-| Google Shopping Search | `googleShoppingSearch` | Runs a Google Shopping search (tbm=shop) and returns product listings with prices, merchants, ratings and product ids that can be passed to Get Shopping Product Page. The start parameter is not supported. Consumes one request from your quota. |
-| Google Video Search | `googleVideoSearch` | Runs a Google video search (tbm=vid) and returns the video results with titles, URLs, descriptions and sources. Consumes one request from your quota. |
-| List Batches | `listBatches` | Lists every asynchronous batch job submitted with the connected API key, with its status and job count. |
-| List Countries | `listCountries` | Returns every supported Google country code (gl) with its display name, for use in the gl parameter of the search actions. |
-| List Languages | `listLanguages` | Returns every supported Google interface language code (hl) with its display name, for use in the hl parameter of the search actions. |
-| List Locations | `listLocations` | Returns every supported Google geo-location as a canonical name string (e.g. 'Cremona,Lombardy,Italy'), for use in the location parameter of the search actions. The full list is very large (several megabytes) and is not filterable server-side. |
-| List Search Engines | `listSearchEngines` | Returns every supported Google search engine domain (e.g. google.com, google.de, google.co.uk), for use in the search_engine parameter of the Google search actions. |
-| Yandex Search | `yandexSearch` | Runs a Yandex web search (search_engine=yandex.com) and returns the organic results. Paginate with p and numdoc; restrict by language and timeframe with lang and within. Consumes one request from your quota. |
-| YouTube Search | `youtubeSearch` | Runs a YouTube search (search_engine=youtube.com) and returns the video results with titles, channels, view counts and URLs. Any YouTube filter can be supplied through the sp parameter. Consumes one request from your quota. |
+* **Google Reverse Image Search** `googleReverseImageSearch`: Runs a Google reverse image search for a publicly reachable image URL and returns the pages that contain the image together with visually similar results. The start parameter is not supported. Consumes one request from your quota.
+* **Google Search** `googleSearch`: Runs a Google web search and returns the parsed results page: organic results, paid results (ads), featured snippets, knowledge graph, related questions and more. Optionally switch the result type with tbm (images, videos, maps, news, shopping). Consumes one request from your quota.
+* **Google Shopping Search** `googleShoppingSearch`: Runs a Google Shopping search (tbm=shop) and returns product listings with prices, merchants, ratings and product ids that can be passed to Get Shopping Product Page. The start parameter is not supported. Consumes one request from your quota.
+* **Google Video Search** `googleVideoSearch`: Runs a Google video search (tbm=vid) and returns the video results with titles, URLs, descriptions and sources. Consumes one request from your quota.
+* **List Batches** `listBatches`: Lists every asynchronous batch job submitted with the connected API key, with its status and job count.
+* **List Countries** `listCountries`: Returns every supported Google country code (gl) with its display name, for use in the gl parameter of the search actions.
+* **List Languages** `listLanguages`: Returns every supported Google interface language code (hl) with its display name, for use in the hl parameter of the search actions.
+* **List Locations** `listLocations`: Returns every supported Google geo-location as a canonical name string (e.g. 'Cremona,Lombardy,Italy'), for use in the location parameter of the search actions. The full list is very large (several megabytes) and is not filterable server-side.
+* **List Search Engines** `listSearchEngines`: Returns every supported Google search engine domain (e.g. google.com, google.de, google.co.uk), for use in the search_engine parameter of the Google search actions.
+* **Yandex Search** `yandexSearch`: Runs a Yandex web search (search_engine=yandex.com) and returns the organic results. Paginate with p and numdoc; restrict by language and timeframe with lang and within. Consumes one request from your quota.
+* **YouTube Search** `youtubeSearch`: Runs a YouTube search (search_engine=youtube.com) and returns the video results with titles, channels, view counts and URLs. Any YouTube filter can be supplied through the sp parameter. Consumes one request from your quota.
 
 </details>

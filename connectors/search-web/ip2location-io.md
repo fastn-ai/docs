@@ -5,7 +5,7 @@ hidden: true
 
 # IP2Location.io
 
-<img src="../../.gitbook/assets/connectors/ip2location-io.png" alt="IP2Location.io logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/ip2location-io.png" alt="IP2Location.io logo">
 
 IP2Location.io is a real-time IP geolocation API returning country, region, city, ZIP code, coordinates, time zone, ASN, ISP, domain, usage type, mobile carrier, currency, language, proxy and threat detection and fraud score for any IPv4 or IPv6 address. This connector covers the IP2Location.io IP Geolocation API and the Bulk IP Geolocation API.
 

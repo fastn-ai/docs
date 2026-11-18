@@ -5,7 +5,7 @@ hidden: true
 
 # Homebrew Formulae
 
-<img src="../../.gitbook/assets/connectors/homebrew-formulae.png" alt="Homebrew Formulae logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/homebrew-formulae.png" alt="Homebrew Formulae logo">
 
 Homebrew Formulae (formulae.brew.sh) is the free public JSON API of the Homebrew package manager. Get metadata for any formula or cask (versions, download URLs, bottles, dependencies, caveats), list all formulae and casks, and read install, install-on-request, build-error and cask-install analytics. No API key needed.
 

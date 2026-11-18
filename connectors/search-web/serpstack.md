@@ -5,7 +5,7 @@ hidden: true
 
 # Serpstack
 
-<img src="../../.gitbook/assets/connectors/serpstack.png" alt="Serpstack logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/serpstack.png" alt="Serpstack logo">
 
 Serpstack is a real-time Google Search Results (SERP) scraping API by APILayer. It returns structured JSON or CSV data for organic search results, images, local results, answer boxes, related searches, and pagination, and includes a Locations lookup helper for resolving canonical geographic targeting strings.
 

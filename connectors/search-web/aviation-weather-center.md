@@ -5,7 +5,7 @@ hidden: true
 
 # Aviation Weather Center (aviationweather.gov)
 
-<img src="../../.gitbook/assets/connectors/aviation-weather-center.png" alt="Aviation Weather Center (aviationweather.gov) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/aviation-weather-center.png" alt="Aviation Weather Center (aviationweather.gov) logo">
 
 The NOAA/NWS Aviation Weather Center Data API gives free aviation weather: METAR observations, TAF forecasts, PIREPs, SIGMETs, AIRMETs and G-AIRMETs, convective forecasts, center weather advisories, winds and temperatures aloft, area forecasts, forecast discussions, plus station, airport, navaid, fix, feature and obstacle data. No API key needed.
 
@@ -39,13 +39,11 @@ Add Aviation Weather Center (aviationweather.gov) from **Build → Integrations 
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get PIREPs | `getPireps` | Pilot Reports. Pilot reports issued in PIREP or AIREP format. Bounding box, or center point identifier and radial distance, required. Docs: https://aviationweather.gov/data/api/ (GET /api/data/pirep) |
-| Get SIGMETs | `getSigmets` | SIGMETs. Decoded SIGMETs. This includes SIGMETs issued by the United States in domestic format (i.e. convective and non-convective domestic) and international SIGMETs. Docs: https://aviationweather.gov/data/api/ (GET /api/data/sigmet) |
-| Get Station Info | `getStationInfo` | Station info. Station observation location information. Docs: https://aviationweather.gov/data/api/ (GET /api/data/stationinfo) |
-| Get TAFs | `getTafs` | TAFs. Decoded Terminal Aerodrome Forecast products. Station identifiers or a bounding box is required. Docs: https://aviationweather.gov/data/api/ (GET /api/data/taf) |
-| Get Winds and Temperatures Aloft | `getWindsTemps` | Wind/Temp Point Data. Wind and temperature information from the legacy FD winds. Docs: https://aviationweather.gov/data/api/ (GET /api/data/windtemp) |
-| Query Data Server | `queryDataServer` | Data Server. Compatibility layer with previous Text Data Service. Station identifiers or a bounding box, as well as a time selection, are required. Docs: https://aviationweather.gov/data/api/ (GET /api/data/dataserver) |
+* **Get PIREPs** `getPireps`: Pilot Reports. Pilot reports issued in PIREP or AIREP format. Bounding box, or center point identifier and radial distance, required. Docs: https://aviationweather.gov/data/api/ (GET /api/data/pirep)
+* **Get SIGMETs** `getSigmets`: SIGMETs. Decoded SIGMETs. This includes SIGMETs issued by the United States in domestic format (i.e. convective and non-convective domestic) and international SIGMETs. Docs: https://aviationweather.gov/data/api/ (GET /api/data/sigmet)
+* **Get Station Info** `getStationInfo`: Station info. Station observation location information. Docs: https://aviationweather.gov/data/api/ (GET /api/data/stationinfo)
+* **Get TAFs** `getTafs`: TAFs. Decoded Terminal Aerodrome Forecast products. Station identifiers or a bounding box is required. Docs: https://aviationweather.gov/data/api/ (GET /api/data/taf)
+* **Get Winds and Temperatures Aloft** `getWindsTemps`: Wind/Temp Point Data. Wind and temperature information from the legacy FD winds. Docs: https://aviationweather.gov/data/api/ (GET /api/data/windtemp)
+* **Query Data Server** `queryDataServer`: Data Server. Compatibility layer with previous Text Data Service. Station identifiers or a bounding box, as well as a time selection, are required. Docs: https://aviationweather.gov/data/api/ (GET /api/data/dataserver)
 
 </details>

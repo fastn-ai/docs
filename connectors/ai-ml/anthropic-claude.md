@@ -5,7 +5,7 @@ hidden: true
 
 # Anthropic (Claude)
 
-<img src="../../.gitbook/assets/connectors/anthropic-claude.png" alt="Anthropic (Claude) logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/anthropic-claude.png" alt="Anthropic (Claude) logo">
 
 Anthropic Claude API connector. Messages (create, count tokens), Models (list, get), Message Batches (create, list, get, results, cancel, delete), and Files API (upload, list, get, delete, download). Base URL https://api.anthropic.com/v1. API-key auth via x-api-key + anthropic-version header.
 
@@ -39,12 +39,10 @@ Add Anthropic (Claude) from **Build → Integrations → Connectors** and connec
 
 <summary>See 5 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Model | `getModel` | Get details of a specific model by id. GET /v1/models/{model_id}. |
-| List Files | `listFiles` | List files within a Workspace, most recently uploaded first. Beta endpoint. GET /v1/files. |
-| List Message Batches | `listMessageBatches` | List all Message Batches within a Workspace, most recently created first. GET /v1/messages/batches. |
-| List Models | `listModels` | List available models, most recently released first. GET /v1/models. |
-| Upload File | `uploadFile` | Upload a file for use in Messages API requests (referenced later by file_id). Beta endpoint. POST /v1/files (multipart/form-data). |
+* **Get Model** `getModel`: Get details of a specific model by id. GET /v1/models/{model_id}.
+* **List Files** `listFiles`: List files within a Workspace, most recently uploaded first. Beta endpoint. GET /v1/files.
+* **List Message Batches** `listMessageBatches`: List all Message Batches within a Workspace, most recently created first. GET /v1/messages/batches.
+* **List Models** `listModels`: List available models, most recently released first. GET /v1/models.
+* **Upload File** `uploadFile`: Upload a file for use in Messages API requests (referenced later by file_id). Beta endpoint. POST /v1/files (multipart/form-data).
 
 </details>

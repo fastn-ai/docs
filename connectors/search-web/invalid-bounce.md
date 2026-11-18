@@ -5,7 +5,7 @@ hidden: true
 
 # Invalid Bounce
 
-<img src="../../.gitbook/assets/connectors/invalid-bounce.png" alt="Invalid Bounce logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/invalid-bounce.png" alt="Invalid Bounce logo">
 
 Invalid Bounce is an email verification and list-hygiene platform. Verify single addresses or bulk lists in real time over SMTP, detect disposable, catch-all, mailbox-full and no-MX addresses, run SPF/DKIM and blacklist checks on sending domains, retrieve verification job results, and manage webhook notifications. Authenticates with an account API key sent in the X-API-Key header.
 
@@ -39,11 +39,9 @@ Add Invalid Bounce from **Build → Integrations → Connectors** and connect an
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Verify Emails From File | `verifyEmailsFromFile` | Uploads a CSV file whose first column is headed "email" and submits every address in it as one bulk verification job. Pass the file's text content in fileContent and its name in fileName; the content is sent as a multipart/form-data text part, so only plain-text CSV is supported here, not binary .xlsx. CONSUMES ONE VERIFICATION CREDIT PER ADDRESS in the file. Returns 400 with "No file provided." or "No valid emails found in file." when the upload is empty or unparseable, and 409 when a verification job is already running for the account. KNOWN VENDOR INSTABILITY: this route intermittently returns Cloudflare "error code: 522" instead of a response; when it does, no job is created and no credit is consumed, so the call can simply be retried. |
-| Verify Emails From List | `verifyEmailsFromList` | Submits a comma-separated list of email addresses to the main verification endpoint. CONSUMES ONE VERIFICATION CREDIT PER ADDRESS. This route does NOT return a job id - collect the outcome with List Completed Verification Jobs (newest job first) or List Verification Results. Note: the vendor documents the route as multipart/form-data taking an "emails" string or a CSV/XLSX "file", but only the JSON "emails" form is reachable with an API key; a multipart or form-urlencoded request falls through to the browser-session branch and redirects to the login page. To verify a CSV or Excel file with an API key, use Verify Emails From File. |
-| Verify Single Email | `verifySingleEmail` | Submits one email address for verification and returns immediately with a job identifier; the address is queued as a one-email job rather than verified synchronously. Poll Get Single Verification Status with the returned job_id to read the final outcome. CONSUMES ONE VERIFICATION CREDIT per call. Returns 403 with "Insufficient quota." when the account has no credits left. |
+* **Verify Emails From File** `verifyEmailsFromFile`: Uploads a CSV file whose first column is headed "email" and submits every address in it as one bulk verification job. Pass the file's text content in fileContent and its name in fileName; the content is sent as a multipart/form-data text part, so only plain-text CSV is supported here, not binary .xlsx. CONSUMES ONE VERIFICATION CREDIT PER ADDRESS in the file. Returns 400 with "No file provided." or "No valid emails found in file." when the upload is empty or unparseable, and 409 when a verification job is already running for the account. KNOWN VENDOR INSTABILITY: this route intermittently returns Cloudflare "error code: 522" instead of a response; when it does, no job is created and no credit is consumed, so the call can simply be retried.
+* **Verify Emails From List** `verifyEmailsFromList`: Submits a comma-separated list of email addresses to the main verification endpoint. CONSUMES ONE VERIFICATION CREDIT PER ADDRESS. This route does NOT return a job id - collect the outcome with List Completed Verification Jobs (newest job first) or List Verification Results. Note: the vendor documents the route as multipart/form-data taking an "emails" string or a CSV/XLSX "file", but only the JSON "emails" form is reachable with an API key; a multipart or form-urlencoded request falls through to the browser-session branch and redirects to the login page. To verify a CSV or Excel file with an API key, use Verify Emails From File.
+* **Verify Single Email** `verifySingleEmail`: Submits one email address for verification and returns immediately with a job identifier; the address is queued as a one-email job rather than verified synchronously. Poll Get Single Verification Status with the returned job_id to read the final outcome. CONSUMES ONE VERIFICATION CREDIT per call. Returns 403 with "Insufficient quota." when the account has no credits left.
 
 </details>
 

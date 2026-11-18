@@ -5,7 +5,7 @@ hidden: true
 
 # Placekey
 
-<img src="../../.gitbook/assets/connectors/placekey.png" alt="Placekey logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/placekey.png" alt="Placekey logo">
 
 Placekey is a free, universal standard identifier for any physical place. This connector covers the complete Placekey API: resolving a single address, point-of-interest or coordinate pair to a Placekey, and resolving up to 100 places in one bulk request, with optional enrichment fields such as address and building Placekeys, match confidence, normalized address, geocode, RESO UPI, parcel number, census GEOID and Overture Maps GERS identifier.
 

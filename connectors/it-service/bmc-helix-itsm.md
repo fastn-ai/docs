@@ -5,7 +5,7 @@ hidden: true
 
 # BMC Helix ITSM
 
-<img src="../../.gitbook/assets/connectors/bmc-helix-itsm.png" alt="BMC Helix ITSM logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/bmc-helix-itsm.png" alt="BMC Helix ITSM logo">
 
 BMC Helix ITSM service management platform. Manage incidents, changes, problems, known errors, work orders, tasks, people, support groups, companies, configuration items and knowledge articles through the BMC Remedy AR System REST API.
 
@@ -39,40 +39,38 @@ Add BMC Helix ITSM from **Build → Integrations → Connectors** and connect an
 
 <summary>See 32 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Form Fields | `getFormFields` | Retrieves the field metadata for an AR System form, including each field's name, identifier, data type, default value, whether it is required, and the permitted values for selection fields. Use this to discover valid field names and values before creating or updating records. |
-| Get Incident | `getIncident` | Retrieves a single incident from the HPD:Help Desk form by its entry ID. |
-| Get Knowledge Article | `getKnowledgeArticle` | Retrieves a single knowledge article from the RKM:KnowledgeArticleManager form by its entry ID. |
-| Get Known Error | `getKnownError` | Retrieves a single known error from the PBM:Known Error form by its entry ID. |
-| Get Person | `getPerson` | Retrieves a single person from the CTM:People form by their entry ID. |
-| Get Problem Investigation | `getProblemInvestigation` | Retrieves a single problem investigation from the PBM:Problem Investigation form by its entry ID. |
-| Get Support Group | `getSupportGroup` | Retrieves a single support group from the CTM:Support Group form by its entry ID. |
-| Get Task | `getTask` | Retrieves a single task from the TMS:Task form by its entry ID. |
-| Get Work Order | `getWorkOrder` | Retrieves a single work order from the WOI:WorkOrder form by its entry ID. |
-| List Asset Attributes | `listAssetAttributes` | Lists asset attribute records from the AST:Attributes form, which holds the asset management attributes associated with configuration items. |
-| List Changes | `listChanges` | Lists change requests from the CHG:Infrastructure Change form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Companies | `listCompanies` | Lists companies and other organisations from the COM:Company form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Computer Systems | `listComputerSystems` | Lists computer system configuration items from the BMC.CORE:BMC_ComputerSystem class in the CMDB. |
-| List Configuration Items | `listConfigurationItems` | Lists configuration items from the BMC.CORE:BMC_BaseElement class, the common base class for every CI in the CMDB. |
-| List Form Entries | `listFormEntries` | Lists entries from any AR System form, with optional qualification filtering, field projection, sorting and pagination. Use this for forms that do not have a dedicated action. |
-| List Incident Interface Entries | `listIncidentInterfaceEntries` | Lists incident records through the HPD:IncidentInterface integration form, the supported interface for incident integrations. |
-| List Incidents | `listIncidents` | Lists incident records from the HPD:Help Desk form, with optional AR System qualification filtering, field projection, sorting and pagination. |
-| List Knowledge Articles | `listKnowledgeArticles` | Lists knowledge articles from the RKM:KnowledgeArticleManager form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Known Errors | `listKnownErrors` | Lists known errors from the PBM:Known Error form, with optional qualification filtering, field projection, sorting and pagination. |
-| List People | `listPeople` | Lists people from the CTM:People form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Problem Investigations | `listProblemInvestigations` | Lists problem investigations from the PBM:Problem Investigation form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Service Level Measurements | `listServiceLevelMeasurements` | Lists service level agreement measurements from the SLM:Measurement form, which records how requests performed against their service targets. |
-| List Support Group Associations | `listSupportGroupAssociations` | Lists the associations between people and support groups from the CTM:Support Group Association form. |
-| List Support Groups | `listSupportGroups` | Lists support groups from the CTM:Support Group form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Tasks | `listTasks` | Lists tasks from the TMS:Task form, with optional qualification filtering, field projection, sorting and pagination. |
-| List Work Orders | `listWorkOrders` | Lists work orders from the WOI:WorkOrder form, with optional qualification filtering, field projection, sorting and pagination. |
-| Merge Form Entry | `mergeFormEntry` | Creates or updates an entry on any AR System form using the merge interface, which matches an existing record and applies the chosen duplicate-handling behaviour. |
-| Release Session Token | `releaseSessionToken` | Invalidates the AR System JWT currently stored on this connection. The token is re-minted automatically the next time an action runs, so the connection keeps working; use this only to end a session early. |
-| Update Change | `updateChange` | Updates a change request on the CHG:Infrastructure Change form. Only the fields supplied are modified. |
-| Update Form Entry | `updateFormEntry` | Updates an entry on any AR System form. Only the fields supplied are modified; all other fields keep their current values. |
-| Update Incident | `updateIncident` | Updates an incident on the HPD:Help Desk form. Only the fields supplied are modified; all other fields keep their current values. |
-| Update Work Order | `updateWorkOrder` | Updates a work order on the WOI:WorkOrder form. Only the fields supplied are modified. |
+* **Get Form Fields** `getFormFields`: Retrieves the field metadata for an AR System form, including each field's name, identifier, data type, default value, whether it is required, and the permitted values for selection fields. Use this to discover valid field names and values before creating or updating records.
+* **Get Incident** `getIncident`: Retrieves a single incident from the HPD:Help Desk form by its entry ID.
+* **Get Knowledge Article** `getKnowledgeArticle`: Retrieves a single knowledge article from the RKM:KnowledgeArticleManager form by its entry ID.
+* **Get Known Error** `getKnownError`: Retrieves a single known error from the PBM:Known Error form by its entry ID.
+* **Get Person** `getPerson`: Retrieves a single person from the CTM:People form by their entry ID.
+* **Get Problem Investigation** `getProblemInvestigation`: Retrieves a single problem investigation from the PBM:Problem Investigation form by its entry ID.
+* **Get Support Group** `getSupportGroup`: Retrieves a single support group from the CTM:Support Group form by its entry ID.
+* **Get Task** `getTask`: Retrieves a single task from the TMS:Task form by its entry ID.
+* **Get Work Order** `getWorkOrder`: Retrieves a single work order from the WOI:WorkOrder form by its entry ID.
+* **List Asset Attributes** `listAssetAttributes`: Lists asset attribute records from the AST:Attributes form, which holds the asset management attributes associated with configuration items.
+* **List Changes** `listChanges`: Lists change requests from the CHG:Infrastructure Change form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Companies** `listCompanies`: Lists companies and other organisations from the COM:Company form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Computer Systems** `listComputerSystems`: Lists computer system configuration items from the BMC.CORE:BMC_ComputerSystem class in the CMDB.
+* **List Configuration Items** `listConfigurationItems`: Lists configuration items from the BMC.CORE:BMC_BaseElement class, the common base class for every CI in the CMDB.
+* **List Form Entries** `listFormEntries`: Lists entries from any AR System form, with optional qualification filtering, field projection, sorting and pagination. Use this for forms that do not have a dedicated action.
+* **List Incident Interface Entries** `listIncidentInterfaceEntries`: Lists incident records through the HPD:IncidentInterface integration form, the supported interface for incident integrations.
+* **List Incidents** `listIncidents`: Lists incident records from the HPD:Help Desk form, with optional AR System qualification filtering, field projection, sorting and pagination.
+* **List Knowledge Articles** `listKnowledgeArticles`: Lists knowledge articles from the RKM:KnowledgeArticleManager form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Known Errors** `listKnownErrors`: Lists known errors from the PBM:Known Error form, with optional qualification filtering, field projection, sorting and pagination.
+* **List People** `listPeople`: Lists people from the CTM:People form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Problem Investigations** `listProblemInvestigations`: Lists problem investigations from the PBM:Problem Investigation form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Service Level Measurements** `listServiceLevelMeasurements`: Lists service level agreement measurements from the SLM:Measurement form, which records how requests performed against their service targets.
+* **List Support Group Associations** `listSupportGroupAssociations`: Lists the associations between people and support groups from the CTM:Support Group Association form.
+* **List Support Groups** `listSupportGroups`: Lists support groups from the CTM:Support Group form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Tasks** `listTasks`: Lists tasks from the TMS:Task form, with optional qualification filtering, field projection, sorting and pagination.
+* **List Work Orders** `listWorkOrders`: Lists work orders from the WOI:WorkOrder form, with optional qualification filtering, field projection, sorting and pagination.
+* **Merge Form Entry** `mergeFormEntry`: Creates or updates an entry on any AR System form using the merge interface, which matches an existing record and applies the chosen duplicate-handling behaviour.
+* **Release Session Token** `releaseSessionToken`: Invalidates the AR System JWT currently stored on this connection. The token is re-minted automatically the next time an action runs, so the connection keeps working; use this only to end a session early.
+* **Update Change** `updateChange`: Updates a change request on the CHG:Infrastructure Change form. Only the fields supplied are modified.
+* **Update Form Entry** `updateFormEntry`: Updates an entry on any AR System form. Only the fields supplied are modified; all other fields keep their current values.
+* **Update Incident** `updateIncident`: Updates an incident on the HPD:Help Desk form. Only the fields supplied are modified; all other fields keep their current values.
+* **Update Work Order** `updateWorkOrder`: Updates a work order on the WOI:WorkOrder form. Only the fields supplied are modified.
 
 </details>
 

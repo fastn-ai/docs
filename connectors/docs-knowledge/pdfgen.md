@@ -5,7 +5,7 @@ hidden: true
 
 # PDFgen
 
-<img src="../../.gitbook/assets/connectors/pdfgen.png" alt="PDFgen logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pdfgen.png" alt="PDFgen logo">
 
 PDFgen generates pixel-perfect PDFs from saved Handlebars templates, raw HTML, Markdown, or an AI prompt through a single REST call. This connector covers the full v1 API: PDF generation, template CRUD, account/quota lookup and usage logs.
 
@@ -39,10 +39,8 @@ Add PDFgen from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 3 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Render PDF From HTML (Legacy) | `renderPdfFromHtmlLegacy` | Legacy endpoint POST /api/v1/render that renders raw HTML and forwards to the current generate endpoint. Kept for compatibility with older PDFgen integrations - prefer Generate PDF for new work. METERED: successful generations consume PDF credits at 1 credit per 5 pages. |
-| Replace Template | `replaceTemplate` | Replaces a saved PDF template using HTTP PUT. Accepts any of name, content and engine, and returns the updated template. Use Update Template if you prefer PATCH semantics. Templates are scoped to your account; an unknown id returns 404 not_found. Does not count against your PDF quota. |
-| Update Template | `updateTemplate` | Partially updates a saved PDF template using HTTP PATCH. Send only the fields you want to change - any of name, content and engine - and the updated template is returned. Templates are scoped to your account; an unknown id returns 404 not_found. Does not count against your PDF quota. |
+* **Render PDF From HTML (Legacy)** `renderPdfFromHtmlLegacy`: Legacy endpoint POST /api/v1/render that renders raw HTML and forwards to the current generate endpoint. Kept for compatibility with older PDFgen integrations - prefer Generate PDF for new work. METERED: successful generations consume PDF credits at 1 credit per 5 pages.
+* **Replace Template** `replaceTemplate`: Replaces a saved PDF template using HTTP PUT. Accepts any of name, content and engine, and returns the updated template. Use Update Template if you prefer PATCH semantics. Templates are scoped to your account; an unknown id returns 404 not_found. Does not count against your PDF quota.
+* **Update Template** `updateTemplate`: Partially updates a saved PDF template using HTTP PATCH. Send only the fields you want to change - any of name, content and engine - and the updated template is returned. Templates are scoped to your account; an unknown id returns 404 not_found. Does not count against your PDF quota.
 
 </details>

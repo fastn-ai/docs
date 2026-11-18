@@ -5,7 +5,7 @@ hidden: true
 
 # npm Registry
 
-<img src="../../.gitbook/assets/connectors/npm-registry.png" alt="npm Registry logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/npm-registry.png" alt="npm Registry logo">
 
 The npm Registry is the public JavaScript package registry. Search packages, get package metadata, versions and dist-tags, check versions against npm security advisories, and get download counts (totals, per day, per version, bulk). Public read APIs need no token.
 
@@ -39,8 +39,6 @@ Add npm Registry from **Build → Integrations → Connectors** and connect an a
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Packages | `searchPackages` | Search packages by text with optional weighting of quality, popularity and maintenance (GET /-/v1/search). Text supports qualifiers like author:, maintainer:, keywords:, scope:, not:unstable, is:insecure. Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md |
+* **Search Packages** `searchPackages`: Search packages by text with optional weighting of quality, popularity and maintenance (GET /-/v1/search). Text supports qualifiers like author:, maintainer:, keywords:, scope:, not:unstable, is:insecure. Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md
 
 </details>

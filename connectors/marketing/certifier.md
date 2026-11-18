@@ -5,7 +5,7 @@ hidden: true
 
 # Certifier
 
-<img src="../../.gitbook/assets/connectors/certifier.png" alt="Certifier logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/certifier.png" alt="Certifier logo">
 
 Certifier is a platform for issuing digital certificates and badges. This connector covers the full Certifier REST API v1: creating, listing, searching, retrieving, updating, issuing, sending and deleting credentials, reading a credential's design template previews, listing and creating credential interaction events, full CRUD on credential templates (groups), and reading certificate and badge design templates.
 
@@ -39,16 +39,14 @@ Add Certifier from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Issue Credential | `issueCredential` | Issues a draft credential, changing its status from draft to issued and making it active and accessible in the digital wallet. Only credentials with status draft can be issued. Deliver it afterwards with Send Credential. |
-| List Credential Interactions | `listCredentialInteractions` | Returns a cursor-paginated list of credential interaction events such as views, downloads, verifications and social shares, optionally narrowed to a single credential. |
-| List Credential Templates | `listCredentialTemplates` | Returns a cursor-paginated list of the credential templates (groups) in your workspace. A credential template ties together the design templates and settings used when a credential is issued. |
-| List Credentials | `listCredentials` | Returns a cursor-paginated list of the credentials in your Certifier workspace, each with its status, recipient, issue and expiry dates and attributes. |
-| List Design Templates | `listDesignTemplates` | Returns a cursor-paginated list of all certificate and badge design templates available in your workspace, each with a direct PNG preview URL. Design templates are created in the Certifier dashboard, not through the API. |
-| Search Credentials | `searchCredentials` | Finds credentials using a structured filter expression with AND, OR and NOT operators, optional sorting and cursor pagination. Filterable fields are id, publicId, groupId, status, recipientId, recipient.name, recipient.email, issueDate, expiryDate, createdAt and updatedAt. |
-| Send Credential | `sendCredential` | Delivers an already issued credential to its recipient by email. Only credentials with status issued can be sent, and the recipient must have an email address. This sends a real email, so only call it for recipients you intend to contact. |
-| Update Credential | `updateCredential` | Updates a credential's recipient, issue date, expiry date or custom attributes. Only the fields you supply are changed; set Expiry Date to null to clear it. |
-| Update Credential Template | `updateCredentialTemplate` | Updates a credential template (group). Only the fields you supply are changed; supplying Design Template IDs replaces the whole ordered list. |
+* **Issue Credential** `issueCredential`: Issues a draft credential, changing its status from draft to issued and making it active and accessible in the digital wallet. Only credentials with status draft can be issued. Deliver it afterwards with Send Credential.
+* **List Credential Interactions** `listCredentialInteractions`: Returns a cursor-paginated list of credential interaction events such as views, downloads, verifications and social shares, optionally narrowed to a single credential.
+* **List Credential Templates** `listCredentialTemplates`: Returns a cursor-paginated list of the credential templates (groups) in your workspace. A credential template ties together the design templates and settings used when a credential is issued.
+* **List Credentials** `listCredentials`: Returns a cursor-paginated list of the credentials in your Certifier workspace, each with its status, recipient, issue and expiry dates and attributes.
+* **List Design Templates** `listDesignTemplates`: Returns a cursor-paginated list of all certificate and badge design templates available in your workspace, each with a direct PNG preview URL. Design templates are created in the Certifier dashboard, not through the API.
+* **Search Credentials** `searchCredentials`: Finds credentials using a structured filter expression with AND, OR and NOT operators, optional sorting and cursor pagination. Filterable fields are id, publicId, groupId, status, recipientId, recipient.name, recipient.email, issueDate, expiryDate, createdAt and updatedAt.
+* **Send Credential** `sendCredential`: Delivers an already issued credential to its recipient by email. Only credentials with status issued can be sent, and the recipient must have an email address. This sends a real email, so only call it for recipients you intend to contact.
+* **Update Credential** `updateCredential`: Updates a credential's recipient, issue date, expiry date or custom attributes. Only the fields you supply are changed; set Expiry Date to null to clear it.
+* **Update Credential Template** `updateCredentialTemplate`: Updates a credential template (group). Only the fields you supply are changed; supplying Design Template IDs replaces the whole ordered list.
 
 </details>

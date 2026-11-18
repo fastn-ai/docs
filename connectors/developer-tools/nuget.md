@@ -5,7 +5,7 @@ hidden: true
 
 # NuGet
 
-<img src="../../.gitbook/assets/connectors/nuget.png" alt="NuGet logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/nuget.png" alt="NuGet logo">
 
 NuGet is the package manager for .NET. The free public NuGet V3 API on nuget.org searches and autocompletes packages, gets registration metadata, version lists, .nuspec manifests and readmes, reads the catalog of package changes and the vulnerability database, and lists the repository signing certificates. No API key needed for these read endpoints.
 
@@ -39,13 +39,11 @@ Add NuGet from **Build → Integrations → Connectors** and connect an account,
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Service Index | `getServiceIndex` | Get the NuGet V3 service index: every resource type (search, autocomplete, registration, package content, catalog, vulnerabilities, ...) with its URL (GET /v3/index.json). Docs: https://learn.microsoft.com/en-us/nuget/api/service-index |
-| Get Vulnerability Index | `getVulnerabilityIndex` | Get the vulnerability info index: links to the base and update vulnerability files with their update times (GET /v3/vulnerabilities/index.json). Docs: https://learn.microsoft.com/en-us/nuget/api/vulnerability-info |
-| Get Vulnerability Page | `getVulnerabilityPage` | Get one vulnerability file (base or update): a map of package ID -&gt; known vulnerabilities with severity, advisory URL and affected versions (GET /v3-vulnerabilities/...). Take the path from the vulnerability index @id. Docs: https://learn.microsoft.com/en-us/nuget/api/vulnerability-info |
-| List Package Versions | `listPackageVersions` | List all versions (listed and unlisted) of a package from the package content resource (GET /v3-flatcontainer/{id}/index.json). Docs: https://learn.microsoft.com/en-us/nuget/api/package-base-address-resource |
-| List Package Versions (Autocomplete) | `autocompletePackageVersions` | List the listed versions of one package ID via the autocomplete service (GET azuresearch autocomplete?id=). Docs: https://learn.microsoft.com/en-us/nuget/api/search-autocomplete-service-resource |
-| Search Packages | `searchPackages` | Search NuGet.org packages by keywords or field filters (id:, packageid:, version:, title:, tags:, author:, description:, summary:, owner:), with paging, prerelease and package-type filters (GET azuresearch query). Docs: https://learn.microsoft.com/en-us/nuget/api/search-query-service-resource |
+* **Get Service Index** `getServiceIndex`: Get the NuGet V3 service index: every resource type (search, autocomplete, registration, package content, catalog, vulnerabilities, ...) with its URL (GET /v3/index.json). Docs: https://learn.microsoft.com/en-us/nuget/api/service-index
+* **Get Vulnerability Index** `getVulnerabilityIndex`: Get the vulnerability info index: links to the base and update vulnerability files with their update times (GET /v3/vulnerabilities/index.json). Docs: https://learn.microsoft.com/en-us/nuget/api/vulnerability-info
+* **Get Vulnerability Page** `getVulnerabilityPage`: Get one vulnerability file (base or update): a map of package ID -&gt; known vulnerabilities with severity, advisory URL and affected versions (GET /v3-vulnerabilities/...). Take the path from the vulnerability index @id. Docs: https://learn.microsoft.com/en-us/nuget/api/vulnerability-info
+* **List Package Versions** `listPackageVersions`: List all versions (listed and unlisted) of a package from the package content resource (GET /v3-flatcontainer/{id}/index.json). Docs: https://learn.microsoft.com/en-us/nuget/api/package-base-address-resource
+* **List Package Versions (Autocomplete)** `autocompletePackageVersions`: List the listed versions of one package ID via the autocomplete service (GET azuresearch autocomplete?id=). Docs: https://learn.microsoft.com/en-us/nuget/api/search-autocomplete-service-resource
+* **Search Packages** `searchPackages`: Search NuGet.org packages by keywords or field filters (id:, packageid:, version:, title:, tags:, author:, description:, summary:, owner:), with paging, prerelease and package-type filters (GET azuresearch query). Docs: https://learn.microsoft.com/en-us/nuget/api/search-query-service-resource
 
 </details>

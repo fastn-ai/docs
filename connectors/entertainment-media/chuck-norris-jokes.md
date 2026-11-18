@@ -5,7 +5,7 @@ hidden: true
 
 # Chuck Norris Jokes
 
-<img src="../../.gitbook/assets/connectors/chuck-norris-jokes.png" alt="Chuck Norris Jokes logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/chuck-norris-jokes.png" alt="Chuck Norris Jokes logo">
 
 chucknorris.io is a free JSON API of hand-curated Chuck Norris facts. Get a random joke (optionally by category), list categories, search jokes by text, or fetch a joke by id. No API key needed.
 

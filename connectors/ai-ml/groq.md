@@ -5,7 +5,7 @@ hidden: true
 
 # Groq
 
-<img src="../../.gitbook/assets/connectors/groq.png" alt="Groq logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/groq.png" alt="Groq logo">
 
 Groq API connector — ultra-fast LLM inference over an OpenAI-compatible API (base https://api.groq.com/openai/v1). Covers chat completions, responses, model management, audio transcription/translation/speech (TTS), and the Batch + Files APIs. Auth is a Bearer API key (gsk_ prefix).
 
@@ -39,14 +39,12 @@ Add Groq from **Build → Integrations → Connectors** and connect an account, 
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Batches | `listBatches` | List all batch jobs for your organization. |
-| List Files | `listFiles` | List all uploaded files for your organization. |
-| List Models | `listModels` | List all models available to your account, including context window and max completion tokens. |
-| Retrieve Batch | `retrieveBatch` | Retrieve a single batch job by ID, including status and output/error file IDs. |
-| Retrieve File | `retrieveFile` | Retrieve metadata for a single uploaded file by ID. |
-| Retrieve Model | `retrieveModel` | Retrieve metadata for a single model by ID. |
-| Upload File | `uploadFile` | Upload a JSONL file (max 100 MB) for batch processing. purpose must be 'batch'. |
+* **List Batches** `listBatches`: List all batch jobs for your organization.
+* **List Files** `listFiles`: List all uploaded files for your organization.
+* **List Models** `listModels`: List all models available to your account, including context window and max completion tokens.
+* **Retrieve Batch** `retrieveBatch`: Retrieve a single batch job by ID, including status and output/error file IDs.
+* **Retrieve File** `retrieveFile`: Retrieve metadata for a single uploaded file by ID.
+* **Retrieve Model** `retrieveModel`: Retrieve metadata for a single model by ID.
+* **Upload File** `uploadFile`: Upload a JSONL file (max 100 MB) for batch processing. purpose must be 'batch'.
 
 </details>

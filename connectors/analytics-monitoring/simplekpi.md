@@ -5,7 +5,7 @@ hidden: true
 
 # SimpleKPI
 
-<img src="../../.gitbook/assets/connectors/simplekpi.png" alt="SimpleKPI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/simplekpi.png" alt="SimpleKPI logo">
 
 SimpleKPI is a KPI tracking and dashboard platform. This connector covers the complete SimpleKPI AI REST API (api.simplekpi.com/v1): KPIs and KPI categories with their KPIs, KPI units, the frequency and icon lookups, breakdown items, KPI entries (single upsert, batch upsert, read, update, delete), the aggregated actuals-and-targets report and the read-only users list.
 
@@ -39,35 +39,33 @@ Add SimpleKPI from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 28 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete KPI Entry | `deleteKpiEntry` | Deletes a KPI entry. Returns 204 with no body. Requires the entries:write scope. |
-| Delete KPI In Category | `deleteKpiInCategory` | Deletes a KPI reached through its category, together with its entries. Returns 204 with no body. Requires the kpis:write scope. |
-| Delete KPI Unit | `deleteKpiUnit` | Deletes a KPI unit that is no longer assigned to any KPI (reassign those KPIs first). Returns 204 with no body. Requires the kpis:write scope. |
-| Get Breakdown Item | `getBreakdownItem` | Returns a single breakdown item by id. Requires the breakdownitems:read scope. |
-| Get Data Entries Report | `getDataEntriesReport` | Returns actuals and targets for a set of KPIs over a date range, aggregated to each KPI's own frequency and aggregate function, one row per KPI, breakdown source and period. Requires the entries:read scope. |
-| Get KPI | `getKpi` | Returns a single KPI by id. Requires the kpis:read scope. |
-| Get KPI Category | `getKpiCategory` | Returns a single KPI category by id. Requires the kpis:read scope. |
-| Get KPI Entry | `getKpiEntry` | Returns a single KPI entry by id. Requires the entries:read scope. |
-| Get KPI Frequency | `getKpiFrequency` | Returns one data-entry frequency by its case-sensitive code (D, W, M, Q or Y). Requires the kpis:read scope. |
-| Get KPI Icon | `getKpiIcon` | Returns one KPI icon by id. Requires the kpis:read scope. |
-| Get KPI In Category | `getKpiInCategory` | Returns a KPI reached through its category. Returns 404 if the KPI exists but sits in a different category. Requires the kpis:read scope. |
-| Get KPI Unit | `getKpiUnit` | Returns one KPI unit by id. Requires the kpis:read scope. |
-| Get User | `getUser` | Returns one user on the account by id (read-only). Requires the users:read scope. |
-| List Breakdown Items | `listBreakdownItems` | Lists the breakdown items (the parts a KPI can be broken down by, such as people, teams, products or regions) as a plain array, including combined sets with a null breakdown_id. Requires the breakdownitems:read scope. |
-| List KPI Categories | `listKpiCategories` | Lists the KPI categories on the account as a plain array. Requires the kpis:read scope. |
-| List KPI Entries | `listKpiEntries` | Lists KPI entries (actual and target values recorded against KPIs by date) as a plain array, filtered by user, KPI, breakdown source and date range. Requires the entries:read scope. |
-| List KPI Frequencies | `listKpiFrequencies` | Returns the read-only lookup of data-entry frequencies (the codes accepted as frequency_id on a KPI) as a plain array. Requires the kpis:read scope. |
-| List KPI Icons | `listKpiIcons` | Returns the read-only lookup of icons a KPI can be given (the ids accepted as icon_id) as a plain array. Icons are shared across all accounts. Requires the kpis:read scope. |
-| List KPI Units | `listKpiUnits` | Lists the account's KPI units (how values are typed in and displayed: currency, percentage, plain number) as a plain array. Requires the kpis:read scope. |
-| List KPIs | `listKpis` | Lists the KPIs on the account as a plain array. Page through with page and rows until a short page is returned. Requires the kpis:read scope. |
-| List KPIs In Category | `listKpisInCategory` | Lists the KPIs inside one KPI category as a plain array. Requires the kpis:read scope. |
-| List Users | `listUsers` | Lists the people on the account as a plain array (read-only; users are managed in the app). Use a user's id or email to attribute KPI entries. Requires the users:read scope. |
-| Update Breakdown Item | `updateBreakdownItem` | Replaces a breakdown item (full replacement, not a patch). is_system is ignored on update. A duplicate name returns 409. Requires the breakdownitems:write scope. |
-| Update KPI | `updateKpi` | Replaces a KPI. This is a full replacement, not a patch: any field left out is reset to its default, so read the KPI first and send it back changed. Requires the kpis:write scope. |
-| Update KPI Category | `updateKpiCategory` | Replaces a KPI category (full replacement, not a patch). A duplicate name returns 409. Requires the kpis:write scope. |
-| Update KPI Entry | `updateKpiEntry` | Changes the KPI entry named in the path. Use the setActual, setTarget and setNotes flags to choose which values are written. Requires the entries:write scope. |
-| Update KPI In Category | `updateKpiInCategory` | Replaces a KPI reached through its category (full replacement, not a patch: omitted fields reset to defaults). Requires the kpis:write scope. |
-| Update KPI Unit | `updateKpiUnit` | Replaces a KPI unit (full replacement, not a patch). A duplicate name returns 409. Requires the kpis:write scope. |
+* **Delete KPI Entry** `deleteKpiEntry`: Deletes a KPI entry. Returns 204 with no body. Requires the entries:write scope.
+* **Delete KPI In Category** `deleteKpiInCategory`: Deletes a KPI reached through its category, together with its entries. Returns 204 with no body. Requires the kpis:write scope.
+* **Delete KPI Unit** `deleteKpiUnit`: Deletes a KPI unit that is no longer assigned to any KPI (reassign those KPIs first). Returns 204 with no body. Requires the kpis:write scope.
+* **Get Breakdown Item** `getBreakdownItem`: Returns a single breakdown item by id. Requires the breakdownitems:read scope.
+* **Get Data Entries Report** `getDataEntriesReport`: Returns actuals and targets for a set of KPIs over a date range, aggregated to each KPI's own frequency and aggregate function, one row per KPI, breakdown source and period. Requires the entries:read scope.
+* **Get KPI** `getKpi`: Returns a single KPI by id. Requires the kpis:read scope.
+* **Get KPI Category** `getKpiCategory`: Returns a single KPI category by id. Requires the kpis:read scope.
+* **Get KPI Entry** `getKpiEntry`: Returns a single KPI entry by id. Requires the entries:read scope.
+* **Get KPI Frequency** `getKpiFrequency`: Returns one data-entry frequency by its case-sensitive code (D, W, M, Q or Y). Requires the kpis:read scope.
+* **Get KPI Icon** `getKpiIcon`: Returns one KPI icon by id. Requires the kpis:read scope.
+* **Get KPI In Category** `getKpiInCategory`: Returns a KPI reached through its category. Returns 404 if the KPI exists but sits in a different category. Requires the kpis:read scope.
+* **Get KPI Unit** `getKpiUnit`: Returns one KPI unit by id. Requires the kpis:read scope.
+* **Get User** `getUser`: Returns one user on the account by id (read-only). Requires the users:read scope.
+* **List Breakdown Items** `listBreakdownItems`: Lists the breakdown items (the parts a KPI can be broken down by, such as people, teams, products or regions) as a plain array, including combined sets with a null breakdown_id. Requires the breakdownitems:read scope.
+* **List KPI Categories** `listKpiCategories`: Lists the KPI categories on the account as a plain array. Requires the kpis:read scope.
+* **List KPI Entries** `listKpiEntries`: Lists KPI entries (actual and target values recorded against KPIs by date) as a plain array, filtered by user, KPI, breakdown source and date range. Requires the entries:read scope.
+* **List KPI Frequencies** `listKpiFrequencies`: Returns the read-only lookup of data-entry frequencies (the codes accepted as frequency_id on a KPI) as a plain array. Requires the kpis:read scope.
+* **List KPI Icons** `listKpiIcons`: Returns the read-only lookup of icons a KPI can be given (the ids accepted as icon_id) as a plain array. Icons are shared across all accounts. Requires the kpis:read scope.
+* **List KPI Units** `listKpiUnits`: Lists the account's KPI units (how values are typed in and displayed: currency, percentage, plain number) as a plain array. Requires the kpis:read scope.
+* **List KPIs** `listKpis`: Lists the KPIs on the account as a plain array. Page through with page and rows until a short page is returned. Requires the kpis:read scope.
+* **List KPIs In Category** `listKpisInCategory`: Lists the KPIs inside one KPI category as a plain array. Requires the kpis:read scope.
+* **List Users** `listUsers`: Lists the people on the account as a plain array (read-only; users are managed in the app). Use a user's id or email to attribute KPI entries. Requires the users:read scope.
+* **Update Breakdown Item** `updateBreakdownItem`: Replaces a breakdown item (full replacement, not a patch). is_system is ignored on update. A duplicate name returns 409. Requires the breakdownitems:write scope.
+* **Update KPI** `updateKpi`: Replaces a KPI. This is a full replacement, not a patch: any field left out is reset to its default, so read the KPI first and send it back changed. Requires the kpis:write scope.
+* **Update KPI Category** `updateKpiCategory`: Replaces a KPI category (full replacement, not a patch). A duplicate name returns 409. Requires the kpis:write scope.
+* **Update KPI Entry** `updateKpiEntry`: Changes the KPI entry named in the path. Use the setActual, setTarget and setNotes flags to choose which values are written. Requires the entries:write scope.
+* **Update KPI In Category** `updateKpiInCategory`: Replaces a KPI reached through its category (full replacement, not a patch: omitted fields reset to defaults). Requires the kpis:write scope.
+* **Update KPI Unit** `updateKpiUnit`: Replaces a KPI unit (full replacement, not a patch). A duplicate name returns 409. Requires the kpis:write scope.
 
 </details>

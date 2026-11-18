@@ -5,7 +5,7 @@ hidden: true
 
 # AbstractAPI Timezone
 
-<img src="../../.gitbook/assets/connectors/abstract-api-timezone.png" alt="AbstractAPI Timezone logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/abstract-api-timezone.png" alt="AbstractAPI Timezone logo">
 
 AbstractAPI Time, Date, and Timezone returns the current time and timezone for a location name, coordinates, or IP address, and converts a date and time from one location to another.
 

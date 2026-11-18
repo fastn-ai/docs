@@ -5,7 +5,7 @@ hidden: true
 
 # Stackby
 
-<img src="../../.gitbook/assets/connectors/stackby.png" alt="Stackby logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/stackby.png" alt="Stackby logo">
 
 Stackby is a no-code database and spreadsheet work platform. This connector manages stacks (databases), tables, columns, views, and rows - list, retrieve, create, update, and delete records - plus file uploads, via the Stackby Web API v1.
 
@@ -39,14 +39,12 @@ Add Stackby from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 7 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Rows | `listRows` | List rows from a table in a stack. Supports optional row limit, view scoping, and latest-first ordering. |
-| List Stacks | `listStacks` | List all stacks (databases) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential, so no input is required. |
-| List Tables | `listTables` | List all tables in a stack. |
-| List Views | `listViews` | List all views defined on a table. |
-| Retrieve Row | `retrieveRow` | Retrieve a single row from a table by its row ID. |
-| Update Rows | `updateRows` | Update one or more existing rows in a table. Each record supplies its row ID and the field values to change. |
-| Upload File | `uploadFile` | Upload a file to Stackby and receive a hosted URL that can be stored in a file/attachment column. |
+* **List Rows** `listRows`: List rows from a table in a stack. Supports optional row limit, view scoping, and latest-first ordering.
+* **List Stacks** `listStacks`: List all stacks (databases) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential, so no input is required.
+* **List Tables** `listTables`: List all tables in a stack.
+* **List Views** `listViews`: List all views defined on a table.
+* **Retrieve Row** `retrieveRow`: Retrieve a single row from a table by its row ID.
+* **Update Rows** `updateRows`: Update one or more existing rows in a table. Each record supplies its row ID and the field values to change.
+* **Upload File** `uploadFile`: Upload a file to Stackby and receive a hosted URL that can be stored in a file/attachment column.
 
 </details>

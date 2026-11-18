@@ -5,7 +5,7 @@ hidden: true
 
 # Shotstack
 
-<img src="../../.gitbook/assets/connectors/shotstack.png" alt="Shotstack logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/shotstack.png" alt="Shotstack logo">
 
 Shotstack cloud video, image and audio editing API. Covers the Edit API (render edits, templates, media probe, AI asset generation and generation models), the Serve API (hosted asset lookup, transfer and delete) and the Ingest API (fetch/upload and manage source files). Renders are asynchronous: submit, then poll the render status endpoint for the output URL.
 
@@ -39,20 +39,18 @@ Add Shotstack from **Build → Integrations → Connectors** and connect an acco
 
 <summary>See 12 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Generation Status | `getGenerationStatus` | Edit API: poll an AI generation job by id. Returns HTTP 202 with status queued/processing while running, and HTTP 200 with status 'done' plus the generated asset url when finished, or status 'failed' with an error string. |
-| Get Render Status | `getRenderStatus` | Edit API: get the status of a render by its id. Poll this after "Render Asset" or "Render Template". status is one of queued, fetching, rendering, saving, done, failed. When status is 'done' the response carries the public output url, and duration/billable seconds. |
-| Get Source | `getSource` | Ingest API: get one ingested source file by id - its original input URL, the Shotstack-hosted source URL to use in an edit, processing status, extension, dimensions, duration and filesize, plus any renditions. |
-| Inspect Media | `inspectMedia` | Edit API: run a hosted FFprobe against any publicly reachable image, video or audio URL and return its metadata - width, height, duration, codec, bitrate, frame rate, rotation. Useful for sizing clips before building an edit. |
-| List Generation Models | `listGenerationModels` | Edit API: list every AI generation model available for text-to-image, text-to-video, image-to-video and text-to-speech, with its type, description and credit pricing. Read this before calling "Generate Asset" so the credit cost of a prompt is known in advance. |
-| List Sources | `listSources` | Ingest API: list the ingested source files stored against the account for the current environment, with their input URL, stored source URL, status, dimensions and filesize. Paginated via meta.next. |
-| List Templates | `listTemplates` | Edit API: list every template saved against the account for the current environment (stage or v1). Returns the account owner id and an array of {id, name}. |
-| Render Asset | `renderAsset` | Edit API: queue a video, image or audio render from a JSON edit (timeline + output). ASYNCHRONOUS - returns 201 with a render id only. Poll "Get Render Status" with that id until status is 'done' to obtain the output URL. Sandbox (stage) output is watermarked. |
-| Render Template | `renderTemplate` | ASYNCHRONOUS - returns 201 with a render id; poll "Get Render Status" for the output URL. |
-| Retrieve Template | `retrieveTemplate` | Edit API: retrieve a single saved template by id, including its full stored edit (timeline and output) and any merge placeholders. |
-| Transfer Asset | `transferAsset` | Serve API: fetch a file from any publicly available URL and transfer it to one or more Serve API destinations (shotstack CDN hosting, s3, mux, googleDrive, vimeo, tiktok, azure, gcs, akamai). Returns 200 with status 'queued'. The id you supply is stored as the asset's renderId, NOT as its asset id - confirm the transfer with "Get Asset by Render ID" passing that same id, which returns the generated Serve asset id and the public CDN url. |
-| Update Template | `updateTemplate` | Edit API: replace a saved template by id with a new name and edit. This is a full replacement, not a patch - send the complete template body. Confirm with "Retrieve Template". |
+* **Get Generation Status** `getGenerationStatus`: Edit API: poll an AI generation job by id. Returns HTTP 202 with status queued/processing while running, and HTTP 200 with status 'done' plus the generated asset url when finished, or status 'failed' with an error string.
+* **Get Render Status** `getRenderStatus`: Edit API: get the status of a render by its id. Poll this after "Render Asset" or "Render Template". status is one of queued, fetching, rendering, saving, done, failed. When status is 'done' the response carries the public output url, and duration/billable seconds.
+* **Get Source** `getSource`: Ingest API: get one ingested source file by id - its original input URL, the Shotstack-hosted source URL to use in an edit, processing status, extension, dimensions, duration and filesize, plus any renditions.
+* **Inspect Media** `inspectMedia`: Edit API: run a hosted FFprobe against any publicly reachable image, video or audio URL and return its metadata - width, height, duration, codec, bitrate, frame rate, rotation. Useful for sizing clips before building an edit.
+* **List Generation Models** `listGenerationModels`: Edit API: list every AI generation model available for text-to-image, text-to-video, image-to-video and text-to-speech, with its type, description and credit pricing. Read this before calling "Generate Asset" so the credit cost of a prompt is known in advance.
+* **List Sources** `listSources`: Ingest API: list the ingested source files stored against the account for the current environment, with their input URL, stored source URL, status, dimensions and filesize. Paginated via meta.next.
+* **List Templates** `listTemplates`: Edit API: list every template saved against the account for the current environment (stage or v1). Returns the account owner id and an array of {id, name}.
+* **Render Asset** `renderAsset`: Edit API: queue a video, image or audio render from a JSON edit (timeline + output). ASYNCHRONOUS - returns 201 with a render id only. Poll "Get Render Status" with that id until status is 'done' to obtain the output URL. Sandbox (stage) output is watermarked.
+* **Render Template** `renderTemplate`: ASYNCHRONOUS - returns 201 with a render id; poll "Get Render Status" for the output URL.
+* **Retrieve Template** `retrieveTemplate`: Edit API: retrieve a single saved template by id, including its full stored edit (timeline and output) and any merge placeholders.
+* **Transfer Asset** `transferAsset`: Serve API: fetch a file from any publicly available URL and transfer it to one or more Serve API destinations (shotstack CDN hosting, s3, mux, googleDrive, vimeo, tiktok, azure, gcs, akamai). Returns 200 with status 'queued'. The id you supply is stored as the asset's renderId, NOT as its asset id - confirm the transfer with "Get Asset by Render ID" passing that same id, which returns the generated Serve asset id and the public CDN url.
+* **Update Template** `updateTemplate`: Edit API: replace a saved template by id with a new name and edit. This is a full replacement, not a patch - send the complete template body. Confirm with "Retrieve Template".
 
 </details>
 

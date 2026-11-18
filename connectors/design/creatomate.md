@@ -5,7 +5,7 @@ hidden: true
 
 # Creatomate
 
-<img src="../../.gitbook/assets/connectors/creatomate.png" alt="Creatomate logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/creatomate.png" alt="Creatomate logo">
 
 Creatomate is a media automation platform for generating videos, images and GIFs from reusable templates or raw RenderScript. This connector covers the Creatomate REST API: creating and tracking renders, full template CRUD, and reading data feeds.
 
@@ -39,9 +39,7 @@ Add Creatomate from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Update Template | `updateTemplate` | Partially updates a Creatomate template. Only the fields you supply are changed - name, tags and the RenderScript source can each be updated independently. Replacing the source of a template that automations already use can break those automations, because modifications match on element names. |
+* **Update Template** `updateTemplate`: Partially updates a Creatomate template. Only the fields you supply are changed - name, tags and the RenderScript source can each be updated independently. Replacing the source of a template that automations already use can break those automations, because modifications match on element names.
 
 </details>
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Documentero
 
-<img src="../../.gitbook/assets/connectors/documentero.png" alt="Documentero logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/documentero.png" alt="Documentero logo">
 
 Documentero Cloud API - generate Word/Excel/PDF documents from templates, list account document templates, and validate API credentials. Base https://app.documentero.com/api.
 

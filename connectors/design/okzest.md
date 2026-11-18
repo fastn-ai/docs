@@ -5,7 +5,7 @@ hidden: true
 
 # OKZest
 
-<img src="../../.gitbook/assets/connectors/okzest.png" alt="OKZest logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/okzest.png" alt="OKZest logo">
 
 OKZest generates personalised images from visual design templates. Use it to list the designs in your OKZest account, inspect the editable layers and URL parameters a design accepts, and render a personalised JPEG, PNG or WebP image from a design by overriding its text, colour, image and background layers at request time. Renders count against the account's monthly image allowance.
 

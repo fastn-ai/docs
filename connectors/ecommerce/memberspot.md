@@ -5,7 +5,7 @@ hidden: true
 
 # Memberspot
 
-<img src="../../.gitbook/assets/connectors/memberspot.png" alt="Memberspot logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/memberspot.png" alt="Memberspot logo">
 
 Memberspot is a German online course and membership platform. This connector covers the full Memberspot public API: member lookup and listing, granting and revoking offer access by email or user id, order state management, custom user properties, chapter access, course progress reporting, offers and exam results.
 
@@ -39,28 +39,26 @@ Add Memberspot from **Build → Integrations → Connectors** and connect an acc
 
 <summary>See 20 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Grant Chapter Access By Email | `grantChapterAccessByEmail` | Grants a user access to a single chapter of a course, identified by email address. Use this to unlock individual lessons without granting a whole offer. |
-| Grant Chapter Access By UID | `grantChapterAccessByUid` | Grants a user access to a single chapter of a course, identified by Memberspot user id. |
-| Grant User Offer By Email | `grantUserOfferByEmail` | Grants a user access to an offer, identified by email address. If no user with that email exists in the school, Memberspot creates one using the supplied first and last name. |
-| Grant User Offer By UID | `grantUserOfferByUid` | Grants an existing user access to an offer, identified by Memberspot user id. |
-| List Custom User Properties | `listCustomUserProperties` | Lists every custom user property defined for the school. The returned property ids are required when setting custom property values on a user. |
-| List Exam Results | `listExamResults` | Returns a paginated list of every user who has taken the given exam, with their individual runs, last run, last successful run and overall pass state. |
-| List Offers | `listOffers` | Returns every offer available in the school, including the ids of the courses each offer unlocks. Offer ids are required by the grant-access and offer-state actions. |
-| List User Course Progress By Email | `listUserCourseProgressByEmail` | Returns a paginated list of the user's progress across all courses, identified by email address. |
-| List User Course Progress By UID | `listUserCourseProgressByUid` | Returns a paginated list of the user's progress across all courses, identified by Memberspot user id. |
-| List Users | `listUsers` | Returns a paginated page of users in the school. Optionally filter by offer, by course, or by active state. Use the returned nextPage value as lastLoadedId to fetch the following page. |
-| Set Custom User Properties By Email | `setCustomUserProperties` | Sets the values of several custom user properties at once for the user with the given email address. Property ids come from List Custom User Properties. |
-| Set Custom User Properties By UID | `setCustomUserPropertiesByUid` | Sets the values of several custom user properties at once for the user with the given Memberspot user id. |
-| Set Offer Expiry | `setOfferExpires` | Sets or clears the expiration date of a user's access to a specific offer. Omit Expires At to remove an existing expiry so the access no longer lapses. |
-| Set Offer State By Email | `setOfferState` | Activates or deactivates a user's access to a specific offer, identified by email address. Set Active to false to revoke access without deleting the user. |
-| Set Offer State By UID | `setOfferStateByUid` | Activates or deactivates a user's access to a specific offer, identified by Memberspot user id. |
-| Set Order State By Email | `setOrderState` | Activates or deactivates every offer a user received under a specific order id, identified by email address. Use this to revoke access when an order is refunded or charged back. |
-| Set Order State By Order ID | `setOrderStateByOrderId` | Activates or deactivates every offer carrying the given order id across all users in the school, without needing to know which user holds it. |
-| Set Order State By UID | `setOrderStateByUid` | Activates or deactivates every offer a user received under a specific order id, identified by Memberspot user id. |
-| Set Single Custom Property By Email | `setCustomProperty` | Sets one custom user property for the user with the given email address. When Value is omitted the property is set to an empty string. |
-| Set Single Custom Property By UID | `setCustomPropertyByUid` | Sets one custom user property for the user with the given Memberspot user id. When Value is omitted the property is set to an empty string. |
+* **Grant Chapter Access By Email** `grantChapterAccessByEmail`: Grants a user access to a single chapter of a course, identified by email address. Use this to unlock individual lessons without granting a whole offer.
+* **Grant Chapter Access By UID** `grantChapterAccessByUid`: Grants a user access to a single chapter of a course, identified by Memberspot user id.
+* **Grant User Offer By Email** `grantUserOfferByEmail`: Grants a user access to an offer, identified by email address. If no user with that email exists in the school, Memberspot creates one using the supplied first and last name.
+* **Grant User Offer By UID** `grantUserOfferByUid`: Grants an existing user access to an offer, identified by Memberspot user id.
+* **List Custom User Properties** `listCustomUserProperties`: Lists every custom user property defined for the school. The returned property ids are required when setting custom property values on a user.
+* **List Exam Results** `listExamResults`: Returns a paginated list of every user who has taken the given exam, with their individual runs, last run, last successful run and overall pass state.
+* **List Offers** `listOffers`: Returns every offer available in the school, including the ids of the courses each offer unlocks. Offer ids are required by the grant-access and offer-state actions.
+* **List User Course Progress By Email** `listUserCourseProgressByEmail`: Returns a paginated list of the user's progress across all courses, identified by email address.
+* **List User Course Progress By UID** `listUserCourseProgressByUid`: Returns a paginated list of the user's progress across all courses, identified by Memberspot user id.
+* **List Users** `listUsers`: Returns a paginated page of users in the school. Optionally filter by offer, by course, or by active state. Use the returned nextPage value as lastLoadedId to fetch the following page.
+* **Set Custom User Properties By Email** `setCustomUserProperties`: Sets the values of several custom user properties at once for the user with the given email address. Property ids come from List Custom User Properties.
+* **Set Custom User Properties By UID** `setCustomUserPropertiesByUid`: Sets the values of several custom user properties at once for the user with the given Memberspot user id.
+* **Set Offer Expiry** `setOfferExpires`: Sets or clears the expiration date of a user's access to a specific offer. Omit Expires At to remove an existing expiry so the access no longer lapses.
+* **Set Offer State By Email** `setOfferState`: Activates or deactivates a user's access to a specific offer, identified by email address. Set Active to false to revoke access without deleting the user.
+* **Set Offer State By UID** `setOfferStateByUid`: Activates or deactivates a user's access to a specific offer, identified by Memberspot user id.
+* **Set Order State By Email** `setOrderState`: Activates or deactivates every offer a user received under a specific order id, identified by email address. Use this to revoke access when an order is refunded or charged back.
+* **Set Order State By Order ID** `setOrderStateByOrderId`: Activates or deactivates every offer carrying the given order id across all users in the school, without needing to know which user holds it.
+* **Set Order State By UID** `setOrderStateByUid`: Activates or deactivates every offer a user received under a specific order id, identified by Memberspot user id.
+* **Set Single Custom Property By Email** `setCustomProperty`: Sets one custom user property for the user with the given email address. When Value is omitted the property is set to an empty string.
+* **Set Single Custom Property By UID** `setCustomPropertyByUid`: Sets one custom user property for the user with the given Memberspot user id. When Value is omitted the property is set to an empty string.
 
 </details>
 

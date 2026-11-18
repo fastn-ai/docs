@@ -5,7 +5,7 @@ hidden: true
 
 # Zoho Campaigns
 
-<img src="../../.gitbook/assets/connectors/zoho-campaigns.png" alt="Zoho Campaigns logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/zoho-campaigns.png" alt="Zoho Campaigns logo">
 
 Zoho Campaigns is Zoho's email marketing automation platform. This connector wraps the Zoho Campaigns REST API v1.1 (campaigns.zoho.com/api/v1.1): mailing lists, list contacts (subscribe/unsubscribe), contact fields, topics, and campaigns (create, clone, send, schedule, delete) together with campaign details and campaign reports. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
@@ -39,13 +39,11 @@ Add Zoho Campaigns from **Build → Integrations → Connectors** and connect an
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Topics | `listTopics` | Retrieve the topics configured in your Zoho Campaigns account. Topics group the kinds of email a contact can opt in to and are required when creating a campaign. |
-| Schedule Campaign | `scheduleCampaign` | Schedule an existing Zoho Campaigns campaign to be sent at a specific date and time, optionally using timewarp delivery in each recipient's own timezone. |
-| Send Campaign | `sendCampaign` | Send an existing Zoho Campaigns campaign immediately to its configured mailing lists. |
-| Subscribe Contact To Mailing List | `subscribeContactToMailingList` | Add a contact to a Zoho Campaigns mailing list and send the subscription email. Contact details are supplied as a JSON object of Zoho Campaigns contact field names. |
-| Unsubscribe Contact From Mailing List | `unsubscribeContactFromMailingList` | Unsubscribe a contact from a Zoho Campaigns mailing list, or from a specific topic within it. |
-| Update Mailing List | `updateMailingList` | Rename a Zoho Campaigns mailing list and set whether its signup form is public or private. |
+* **List Topics** `listTopics`: Retrieve the topics configured in your Zoho Campaigns account. Topics group the kinds of email a contact can opt in to and are required when creating a campaign.
+* **Schedule Campaign** `scheduleCampaign`: Schedule an existing Zoho Campaigns campaign to be sent at a specific date and time, optionally using timewarp delivery in each recipient's own timezone.
+* **Send Campaign** `sendCampaign`: Send an existing Zoho Campaigns campaign immediately to its configured mailing lists.
+* **Subscribe Contact To Mailing List** `subscribeContactToMailingList`: Add a contact to a Zoho Campaigns mailing list and send the subscription email. Contact details are supplied as a JSON object of Zoho Campaigns contact field names.
+* **Unsubscribe Contact From Mailing List** `unsubscribeContactFromMailingList`: Unsubscribe a contact from a Zoho Campaigns mailing list, or from a specific topic within it.
+* **Update Mailing List** `updateMailingList`: Rename a Zoho Campaigns mailing list and set whether its signup form is public or private.
 
 </details>

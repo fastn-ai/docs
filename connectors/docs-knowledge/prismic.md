@@ -5,7 +5,7 @@ hidden: true
 
 # Prismic
 
-<img src="../../.gitbook/assets/connectors/prismic.png" alt="Prismic logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/prismic.png" alt="Prismic logo">
 
 Prismic headless CMS connector. Manages custom types and shared slices (Custom Types API), creates and updates documents (Migration API), manages media library assets (Asset API), and reads published content and repository refs (Content API v2).
 
@@ -39,16 +39,14 @@ Add Prismic from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Custom Types | `listCustomTypes` | List all custom types (page types) in the Prismic repository via the Custom Types API. |
-| List Shared Slices | `listSlices` | List all shared slices in the Prismic repository via the Custom Types API. |
-| List Tags | `listTags` | List all tags used across documents in the Prismic repository via the Content API. |
-| Search Documents | `searchDocuments` | Query published documents from the Prismic Content API v2. Requires a ref (from Get Repository). Use q predicates to filter, e.g. [[at(document.type,"page")]]. |
-| Update Asset | `updateAsset` | Update the metadata (notes, credits, alt) of an existing asset in the Prismic media library via the Asset API. |
-| Update Custom Type | `updateCustomType` | Update an existing custom type model in the Prismic repository. Returns 204 on success, 422 if the ID does not exist. |
-| Update Document | `updateDocument` | Update an existing document (page) in the Prismic repository via the Migration API. type, lang and alternate_language_id cannot be modified. Omitting tags deletes existing tags. |
-| Update Shared Slice | `updateSlice` | Update an existing shared slice in the Prismic repository. Returns 204 on success, 422 if the ID does not exist. |
-| Upload Asset | `uploadAsset` | Upload a new asset to the Prismic media library via the Asset API. Sends the file as multipart/form-data with optional metadata. Requires a file reference input. |
+* **List Custom Types** `listCustomTypes`: List all custom types (page types) in the Prismic repository via the Custom Types API.
+* **List Shared Slices** `listSlices`: List all shared slices in the Prismic repository via the Custom Types API.
+* **List Tags** `listTags`: List all tags used across documents in the Prismic repository via the Content API.
+* **Search Documents** `searchDocuments`: Query published documents from the Prismic Content API v2. Requires a ref (from Get Repository). Use q predicates to filter, e.g. [[at(document.type,"page")]].
+* **Update Asset** `updateAsset`: Update the metadata (notes, credits, alt) of an existing asset in the Prismic media library via the Asset API.
+* **Update Custom Type** `updateCustomType`: Update an existing custom type model in the Prismic repository. Returns 204 on success, 422 if the ID does not exist.
+* **Update Document** `updateDocument`: Update an existing document (page) in the Prismic repository via the Migration API. type, lang and alternate_language_id cannot be modified. Omitting tags deletes existing tags.
+* **Update Shared Slice** `updateSlice`: Update an existing shared slice in the Prismic repository. Returns 204 on success, 422 if the ID does not exist.
+* **Upload Asset** `uploadAsset`: Upload a new asset to the Prismic media library via the Asset API. Sends the file as multipart/form-data with optional metadata. Requires a file reference input.
 
 </details>

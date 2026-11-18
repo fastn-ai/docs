@@ -5,7 +5,7 @@ hidden: true
 
 # UK Parliament Register of Interests API
 
-<img src="../../.gitbook/assets/connectors/uk-parliament-interests.png" alt="UK Parliament Register of Interests API logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/uk-parliament-interests.png" alt="UK Parliament Register of Interests API logo">
 
 The UK Parliament Register of Members' Financial Interests API gives open data on MPs' declared interests: list interest categories and published registers, search interests by member, category, register and published/registered/updated dates, and get one interest with its payments and details. No API key needed.
 

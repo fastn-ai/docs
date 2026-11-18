@@ -5,7 +5,7 @@ hidden: true
 
 # Typeform
 
-<img src="../../.gitbook/assets/connectors/typeform.png" alt="Typeform logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/typeform.png" alt="Typeform logo">
 
 Typeform Create, Responses, Webhooks, and Insights APIs. Manage forms, responses, themes, images, workspaces, webhooks, and insights via the api.typeform.com REST API.
 
@@ -39,27 +39,25 @@ Add Typeform from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 20 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Webhook | `deleteWebhook` | Delete a webhook from a form by its tag. Returns 204 No Content. |
-| Delete Workspace | `deleteWorkspace` | Delete a workspace by ID. Returns 204 No Content. |
-| Get Form | `getForm` | Retrieve a single form by its unique ID, including all fields, logic, settings, theme and workspace references. |
-| Get Form Messages | `getFormMessages` | Retrieve the customizable on-screen messages (button labels, errors, etc.) for a form. |
-| Get Image | `getImage` | Retrieve metadata for a single image by ID. |
-| Get Insights Summary | `getInsightsSummary` | Retrieve aggregate insights/metrics summary for a form (views, starts, submissions, completion and drop-off rates per question). |
-| Get Theme | `getTheme` | Retrieve a single theme by its ID. |
-| Get Webhook | `getWebhook` | Retrieve a single webhook for a form by its tag. |
-| Get Workspace | `getWorkspace` | Retrieve a single workspace by ID, including its members. |
-| List Forms | `listForms` | Retrieve a list of forms in your account. FREE read endpoint - credit-safe validation. Supports pagination and search. |
-| List Images | `listImages` | Retrieve all images in your account. |
-| List Responses | `listResponses` | Retrieve responses (submissions) for a form, with full answers, metadata, hidden fields and calculated scores. Supports filtering and pagination. |
-| List Themes | `listThemes` | Retrieve all themes in your account, with pagination. |
-| List Webhooks | `listWebhooks` | Retrieve all webhooks configured for a form. |
-| List Workspaces | `listWorkspaces` | Retrieve all workspaces in your account, with pagination and search. |
-| Patch Form | `patchForm` | Partially update a form using JSON Patch operations (PATCH). Pass an array of {op, path, value} operations in the operations field. |
-| Update Form | `updateForm` | Fully replace a form definition (PUT). Send the complete form object; any field omitted is removed. Use Patch Form for partial updates. |
-| Update Form Messages | `updateFormMessages` | Replace the customizable on-screen messages for a form. Pass a messages object of message keys to strings. |
-| Update Theme | `updateTheme` | Update an existing theme by ID. Replaces name, font, and colors. |
-| Update Workspace | `updateWorkspace` | Update a workspace using JSON Patch operations (e.g. rename). Pass an array of {op, path, value} operations. |
+* **Delete Webhook** `deleteWebhook`: Delete a webhook from a form by its tag. Returns 204 No Content.
+* **Delete Workspace** `deleteWorkspace`: Delete a workspace by ID. Returns 204 No Content.
+* **Get Form** `getForm`: Retrieve a single form by its unique ID, including all fields, logic, settings, theme and workspace references.
+* **Get Form Messages** `getFormMessages`: Retrieve the customizable on-screen messages (button labels, errors, etc.) for a form.
+* **Get Image** `getImage`: Retrieve metadata for a single image by ID.
+* **Get Insights Summary** `getInsightsSummary`: Retrieve aggregate insights/metrics summary for a form (views, starts, submissions, completion and drop-off rates per question).
+* **Get Theme** `getTheme`: Retrieve a single theme by its ID.
+* **Get Webhook** `getWebhook`: Retrieve a single webhook for a form by its tag.
+* **Get Workspace** `getWorkspace`: Retrieve a single workspace by ID, including its members.
+* **List Forms** `listForms`: Retrieve a list of forms in your account. FREE read endpoint - credit-safe validation. Supports pagination and search.
+* **List Images** `listImages`: Retrieve all images in your account.
+* **List Responses** `listResponses`: Retrieve responses (submissions) for a form, with full answers, metadata, hidden fields and calculated scores. Supports filtering and pagination.
+* **List Themes** `listThemes`: Retrieve all themes in your account, with pagination.
+* **List Webhooks** `listWebhooks`: Retrieve all webhooks configured for a form.
+* **List Workspaces** `listWorkspaces`: Retrieve all workspaces in your account, with pagination and search.
+* **Patch Form** `patchForm`: Partially update a form using JSON Patch operations (PATCH). Pass an array of {op, path, value} operations in the operations field.
+* **Update Form** `updateForm`: Fully replace a form definition (PUT). Send the complete form object; any field omitted is removed. Use Patch Form for partial updates.
+* **Update Form Messages** `updateFormMessages`: Replace the customizable on-screen messages for a form. Pass a messages object of message keys to strings.
+* **Update Theme** `updateTheme`: Update an existing theme by ID. Replaces name, font, and colors.
+* **Update Workspace** `updateWorkspace`: Update a workspace using JSON Patch operations (e.g. rename). Pass an array of {op, path, value} operations.
 
 </details>

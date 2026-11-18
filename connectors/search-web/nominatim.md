@@ -5,7 +5,7 @@ hidden: true
 
 # OpenStreetMap Nominatim
 
-<img src="../../.gitbook/assets/connectors/nominatim.png" alt="OpenStreetMap Nominatim logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/nominatim.png" alt="OpenStreetMap Nominatim logo">
 
 Nominatim is the search engine for OpenStreetMap data. Geocode free-form or structured addresses, reverse geocode coordinates, look up OSM objects by id, get place details, and check server status, held-back deletions and broken polygons. Free public server with no API key, limited to 1 request per second under the OSMF usage policy; results are ODbL-licensed.
 

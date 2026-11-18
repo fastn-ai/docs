@@ -5,7 +5,7 @@ hidden: true
 
 # Zoho People
 
-<img src="../../.gitbook/assets/connectors/zoho-people.png" alt="Zoho People logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/zoho-people.png" alt="Zoho People logo">
 
 Zoho People is Zoho's HR management system. This connector wraps the Zoho People REST API (people.zoho.com): forms and form records including employee data, leave tracking (leave records, leave types and balances), attendance check-in and check-out with attendance reports, and the time tracker module covering clients, projects, jobs, time logs and timesheets. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
@@ -39,9 +39,7 @@ Add Zoho People from **Build → Integrations → Connectors** and connect an ac
 
 <summary>See 2 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Record Attendance | `recordAttendance` | Record an attendance check-in or check-out for an employee in Zoho People. At least one of employee ID, email address or map ID must be supplied to identify the employee. |
-| Update Form Record | `updateFormRecord` | Update an existing record in a Zoho People form. Only the fields included in the input data are changed. |
+* **Record Attendance** `recordAttendance`: Record an attendance check-in or check-out for an employee in Zoho People. At least one of employee ID, email address or map ID must be supplied to identify the employee.
+* **Update Form Record** `updateFormRecord`: Update an existing record in a Zoho People form. Only the fields included in the input data are changed.
 
 </details>

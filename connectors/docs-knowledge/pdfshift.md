@@ -5,7 +5,7 @@ hidden: true
 
 # PDFShift
 
-<img src="../../.gitbook/assets/connectors/pdfshift.jpg" alt="PDFShift logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pdfshift.png" alt="PDFShift logo">
 
 PDFShift is an HTML/URL to PDF, PNG, JPEG, and WEBP conversion API. This connector covers document conversion, reusable templates, account and API key management, credit usage, request logs, and invoices.
 
@@ -39,16 +39,14 @@ Add PDFShift from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 9 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Account Details | `getAccountDetails` | Returns the authenticated PDFShift account's profile, billing plan, and subscription details. |
-| Get Credits Usage | `getCreditsUsage` | Returns the current billing period's credit usage for the authenticated PDFShift account, including total, used, remaining, and base credit allowances. |
-| Get Log by Request ID | `getLogByRequestId` | Retrieves the full log entry for a single API request, identified by its unique request ID. |
-| Get Template HTML | `getTemplateHtml` | Returns the raw HTML markup stored for a template, identified by its slug. |
-| List Invoices | `listInvoices` | Lists billing invoices issued for the authenticated PDFShift account. |
-| List Recent Logs | `listLogs` | Lists recent API request logs for the authenticated account, with optional filtering by status, API key, and time, and cursor-based pagination. |
-| List Templates | `listTemplates` | Lists the reusable templates saved on the authenticated PDFShift account. |
-| Update API Key | `updateApiKey` | Renames an existing API key on the account, identified by its secret token. Requires a master-level API key to call. |
-| Update Template | `updateTemplate` | Updates the HTML content and optionally the display name of an existing template, identified by its slug. |
+* **Get Account Details** `getAccountDetails`: Returns the authenticated PDFShift account's profile, billing plan, and subscription details.
+* **Get Credits Usage** `getCreditsUsage`: Returns the current billing period's credit usage for the authenticated PDFShift account, including total, used, remaining, and base credit allowances.
+* **Get Log by Request ID** `getLogByRequestId`: Retrieves the full log entry for a single API request, identified by its unique request ID.
+* **Get Template HTML** `getTemplateHtml`: Returns the raw HTML markup stored for a template, identified by its slug.
+* **List Invoices** `listInvoices`: Lists billing invoices issued for the authenticated PDFShift account.
+* **List Recent Logs** `listLogs`: Lists recent API request logs for the authenticated account, with optional filtering by status, API key, and time, and cursor-based pagination.
+* **List Templates** `listTemplates`: Lists the reusable templates saved on the authenticated PDFShift account.
+* **Update API Key** `updateApiKey`: Renames an existing API key on the account, identified by its secret token. Requires a master-level API key to call.
+* **Update Template** `updateTemplate`: Updates the HTML content and optionally the display name of an existing template, identified by its slug.
 
 </details>

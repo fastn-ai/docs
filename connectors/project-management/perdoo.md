@@ -5,7 +5,7 @@ hidden: true
 
 # Perdoo
 
-<img src="../../.gitbook/assets/connectors/perdoo.jpg" alt="Perdoo logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/perdoo.png" alt="Perdoo logo">
 
 Perdoo OKR platform GraphQL API. Read objectives, key results, initiatives, KPIs, KPI targets, goals, progress updates, teams, users, cadences and company settings, and create, update or delete progress updates and check-ins.
 
@@ -39,27 +39,25 @@ Add Perdoo from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 20 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Key Result | `result` | Retrieve a single Key Result or Initiative by its ID. |
-| Get KPI | `kpi` | Retrieve a single KPI by its ID. |
-| Get KPI Target | `kpiTarget` | Retrieve a single KPI target by its ID. |
-| Get Objective | `objective` | Retrieve a single Objective by its ID. |
-| Get Progress Update | `commit` | Retrieve a single progress update (commit) by its ID. |
-| Get Recommended Goal Status | `recommendedGoalStatus` | Return the status Perdoo recommends for a goal given a value on a specific date. |
-| Get Team | `group` | Retrieve a single team (group) by its ID. |
-| Get User | `user` | Retrieve a single user by their ID. |
-| Get Welcome Link Status | `welcomeLinkStatus` | Check whether a Perdoo welcome or invitation link token is still valid. |
-| List Goals | `goals` | List Perdoo goals across every goal type, with filtering, ordering and cursor or offset pagination. |
-| List Initiatives | `initiatives` | List Initiatives with filtering, ordering and cursor or offset pagination. |
-| List Key Results | `keyResults` | List Key Results with filtering, ordering and cursor or offset pagination. |
-| List KPI Targets | `allKpiTargets` | List KPI targets, optionally restricted to targets active within a date range. |
-| List KPIs | `allKpis` | List KPIs with filtering, ordering and cursor or offset pagination. |
-| List Objectives | `objectives` | List Objectives with filtering, ordering and cursor or offset pagination. |
-| List Progress Updates | `allCommits` | List progress updates (commits) recorded against goals, filtered by user, date window or team. |
-| List Results | `results` | List Key Results with filtering, ordering and cursor or offset pagination. |
-| List Teams | `allGroups` | List teams (groups) with filtering, ordering and cursor or offset pagination. |
-| List Users | `allUsers` | List users in the company with filtering, ordering and cursor or offset pagination. |
-| Validate Password | `passwordValidator` | Score a candidate password against Perdoo password policy and return improvement recommendations. |
+* **Get Key Result** `result`: Retrieve a single Key Result or Initiative by its ID.
+* **Get KPI** `kpi`: Retrieve a single KPI by its ID.
+* **Get KPI Target** `kpiTarget`: Retrieve a single KPI target by its ID.
+* **Get Objective** `objective`: Retrieve a single Objective by its ID.
+* **Get Progress Update** `commit`: Retrieve a single progress update (commit) by its ID.
+* **Get Recommended Goal Status** `recommendedGoalStatus`: Return the status Perdoo recommends for a goal given a value on a specific date.
+* **Get Team** `group`: Retrieve a single team (group) by its ID.
+* **Get User** `user`: Retrieve a single user by their ID.
+* **Get Welcome Link Status** `welcomeLinkStatus`: Check whether a Perdoo welcome or invitation link token is still valid.
+* **List Goals** `goals`: List Perdoo goals across every goal type, with filtering, ordering and cursor or offset pagination.
+* **List Initiatives** `initiatives`: List Initiatives with filtering, ordering and cursor or offset pagination.
+* **List Key Results** `keyResults`: List Key Results with filtering, ordering and cursor or offset pagination.
+* **List KPI Targets** `allKpiTargets`: List KPI targets, optionally restricted to targets active within a date range.
+* **List KPIs** `allKpis`: List KPIs with filtering, ordering and cursor or offset pagination.
+* **List Objectives** `objectives`: List Objectives with filtering, ordering and cursor or offset pagination.
+* **List Progress Updates** `allCommits`: List progress updates (commits) recorded against goals, filtered by user, date window or team.
+* **List Results** `results`: List Key Results with filtering, ordering and cursor or offset pagination.
+* **List Teams** `allGroups`: List teams (groups) with filtering, ordering and cursor or offset pagination.
+* **List Users** `allUsers`: List users in the company with filtering, ordering and cursor or offset pagination.
+* **Validate Password** `passwordValidator`: Score a candidate password against Perdoo password policy and return improvement recommendations.
 
 </details>

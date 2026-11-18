@@ -5,7 +5,7 @@ hidden: true
 
 # Tempo
 
-<img src="../../.gitbook/assets/connectors/tempo.png" alt="Tempo logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/tempo.png" alt="Tempo logo">
 
 Tempo Cloud REST API v4 for Jira Time Tracking, Resourcing and Financial Management. Covers worklogs, accounts, plans, teams, holiday schemes, workload schemes, roles, and other Tempo resource families via Bearer token auth (personal/user API token generated in the Tempo app's own Settings &gt; API Integration screen inside Jira Cloud).
 
@@ -39,38 +39,36 @@ Add Tempo from **Build → Integrations → Connectors** and connect an account,
 
 <summary>See 31 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Team | `deleteTeam` | Deletes a Tempo Team by its numeric ID. |
-| Delete Workload Scheme | `deleteWorkloadScheme` | Deletes a Workload Scheme by its numeric ID. |
-| Delete Worklog | `deleteWorklog` | Deletes a worklog by its Tempo worklog ID. |
-| Get Account | `getAccount` | Fetch a single Tempo Account by its key. |
-| Get Holiday Scheme | `getHolidayScheme` | Fetch a single Holiday Scheme by its numeric ID. |
-| Get Plan | `getPlan` | Fetch a single Tempo Plan by its numeric ID. |
-| Get Team | `getTeam` | Fetch a single Tempo Team by its numeric ID. |
-| Get User Schedule | `getUserSchedule` | Returns a user's required working schedule (combining their workload and holiday schemes) for a date range. |
-| Get Workload Scheme | `getWorkloadScheme` | Fetch a single Workload Scheme by its numeric ID. |
-| Get Worklog | `getWorklog` | Fetch a single worklog by its Tempo worklog ID. |
-| List Account Categories | `listAccountCategories` | Returns the list of Account Categories used to classify Tempo Accounts. |
-| List Account Category Types | `listAccountCategoryTypes` | Returns the list of Account Category Types (groupings for account categories). |
-| List Accounts | `listAccounts` | Returns a paginated list of Tempo Accounts (used for financial/cost tracking and budgeting against Jira work). |
-| List Holiday Schemes | `listHolidaySchemes` | Returns a paginated list of Holiday Schemes. |
-| List Holidays in Scheme | `listHolidaysInScheme` | Returns the individual holiday dates configured within a Holiday Scheme. |
-| List Plans | `listPlans` | Returns a paginated list of Tempo Plans (resource/capacity planning allocations against issues, projects, or users). |
-| List Plans by User | `listPlansByUser` | Returns Tempo Plans allocated to a specific user within an optional date range. |
-| List Team Members | `listTeamMembers` | Returns the members of a Tempo Team. |
-| List Teams | `listTeams` | Returns a paginated list of Tempo Teams. |
-| List Workload Schemes | `listWorkloadSchemes` | Returns a paginated list of Workload Schemes (define each user's expected working hours per weekday). |
-| List Worklogs | `listWorklogs` | Returns a paginated list of worklogs across the whole Jira instance, optionally filtered by date range and last-updated timestamp. |
-| List Worklogs by Issue | `listWorklogsByIssue` | Returns a paginated list of worklogs for a specific Jira issue, identified by issue key or numeric issue id. |
-| List Worklogs by Project | `listWorklogsByProject` | Returns a paginated list of worklogs for a specific Jira project, identified by project key or numeric project id. |
-| List Worklogs by User | `listWorklogsByUser` | Returns a paginated list of worklogs logged by a specific user, identified by Atlassian account ID. |
-| Remove Team Member | `removeTeamMember` | Removes a member's team membership record from a Tempo Team. |
-| Update Account | `updateAccount` | Updates an existing Tempo Account identified by its key. |
-| Update Holiday Scheme | `updateHolidayScheme` | Updates the name or description of an existing Holiday Scheme. |
-| Update Plan | `updatePlan` | Updates an existing Tempo Plan's dates or planned duration. |
-| Update Team | `updateTeam` | Updates an existing Tempo Team's name or summary. |
-| Update Workload Scheme | `updateWorkloadScheme` | Updates the name or description of an existing Workload Scheme. |
-| Update Worklog | `updateWorklog` | Updates an existing worklog identified by its Tempo worklog ID. |
+* **Delete Team** `deleteTeam`: Deletes a Tempo Team by its numeric ID.
+* **Delete Workload Scheme** `deleteWorkloadScheme`: Deletes a Workload Scheme by its numeric ID.
+* **Delete Worklog** `deleteWorklog`: Deletes a worklog by its Tempo worklog ID.
+* **Get Account** `getAccount`: Fetch a single Tempo Account by its key.
+* **Get Holiday Scheme** `getHolidayScheme`: Fetch a single Holiday Scheme by its numeric ID.
+* **Get Plan** `getPlan`: Fetch a single Tempo Plan by its numeric ID.
+* **Get Team** `getTeam`: Fetch a single Tempo Team by its numeric ID.
+* **Get User Schedule** `getUserSchedule`: Returns a user's required working schedule (combining their workload and holiday schemes) for a date range.
+* **Get Workload Scheme** `getWorkloadScheme`: Fetch a single Workload Scheme by its numeric ID.
+* **Get Worklog** `getWorklog`: Fetch a single worklog by its Tempo worklog ID.
+* **List Account Categories** `listAccountCategories`: Returns the list of Account Categories used to classify Tempo Accounts.
+* **List Account Category Types** `listAccountCategoryTypes`: Returns the list of Account Category Types (groupings for account categories).
+* **List Accounts** `listAccounts`: Returns a paginated list of Tempo Accounts (used for financial/cost tracking and budgeting against Jira work).
+* **List Holiday Schemes** `listHolidaySchemes`: Returns a paginated list of Holiday Schemes.
+* **List Holidays in Scheme** `listHolidaysInScheme`: Returns the individual holiday dates configured within a Holiday Scheme.
+* **List Plans** `listPlans`: Returns a paginated list of Tempo Plans (resource/capacity planning allocations against issues, projects, or users).
+* **List Plans by User** `listPlansByUser`: Returns Tempo Plans allocated to a specific user within an optional date range.
+* **List Team Members** `listTeamMembers`: Returns the members of a Tempo Team.
+* **List Teams** `listTeams`: Returns a paginated list of Tempo Teams.
+* **List Workload Schemes** `listWorkloadSchemes`: Returns a paginated list of Workload Schemes (define each user's expected working hours per weekday).
+* **List Worklogs** `listWorklogs`: Returns a paginated list of worklogs across the whole Jira instance, optionally filtered by date range and last-updated timestamp.
+* **List Worklogs by Issue** `listWorklogsByIssue`: Returns a paginated list of worklogs for a specific Jira issue, identified by issue key or numeric issue id.
+* **List Worklogs by Project** `listWorklogsByProject`: Returns a paginated list of worklogs for a specific Jira project, identified by project key or numeric project id.
+* **List Worklogs by User** `listWorklogsByUser`: Returns a paginated list of worklogs logged by a specific user, identified by Atlassian account ID.
+* **Remove Team Member** `removeTeamMember`: Removes a member's team membership record from a Tempo Team.
+* **Update Account** `updateAccount`: Updates an existing Tempo Account identified by its key.
+* **Update Holiday Scheme** `updateHolidayScheme`: Updates the name or description of an existing Holiday Scheme.
+* **Update Plan** `updatePlan`: Updates an existing Tempo Plan's dates or planned duration.
+* **Update Team** `updateTeam`: Updates an existing Tempo Team's name or summary.
+* **Update Workload Scheme** `updateWorkloadScheme`: Updates the name or description of an existing Workload Scheme.
+* **Update Worklog** `updateWorklog`: Updates an existing worklog identified by its Tempo worklog ID.
 
 </details>

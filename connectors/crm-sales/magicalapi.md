@@ -5,7 +5,7 @@ hidden: true
 
 # MagicalAPI
 
-<img src="../../.gitbook/assets/connectors/magicalapi.png" alt="MagicalAPI logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/magicalapi.png" alt="MagicalAPI logo">
 
 MagicalAPI provides LinkedIn profile and company scraping plus resume parsing, review and job-match scoring for recruiting and sales prospecting. This connector wraps the MagicalAPI gateway (https://gw.magicalapi.com): each service takes a request, returns a request_id, and returns the finished result when the same endpoint is called again with that request_id, or pushes it to a webhook URL.
 

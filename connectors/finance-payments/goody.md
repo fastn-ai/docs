@@ -5,7 +5,7 @@ hidden: true
 
 # Goody
 
-<img src="../../.gitbook/assets/connectors/goody.png" alt="Goody logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/goody.png" alt="Goody logo">
 
 Goody corporate gifting platform. Browse the Goody catalog (products, brands, categories, greeting cards, collections), price and create gift order batches, track orders and shipments, manage payment methods, and register webhook endpoints for order and order-batch events. Supports both the Goody Automation API and Commerce API on the production and sandbox environments.
 
@@ -39,22 +39,20 @@ Add Goody from **Build → Integrations → Connectors** and connect an account,
 
 <summary>See 14 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Order Activities | `listOrderActivities` | List Goody order activity events across the account, newest first, with optional time-window and status filters. Use it to poll for order lifecycle changes such as gift opened, accepted, shipped, delivered, canceled or refunded when webhooks are not in use. |
-| List Order Batches | `listOrderBatches` | List the Goody order batches on the account, paginated. An order batch groups the orders created by one send: it carries the sender name, message, cart, send method, send status and a preview of the first ten orders. |
-| List Orders | `listOrders` | List the Goody orders on the account, paginated, optionally restricted to a creation-time window. Each order is one gift to one recipient and carries its status, recipient, gift link, shipments and the order batch it belongs to. |
-| List Payment Methods | `listPaymentMethods` | List the payment methods available on the Goody account, such as saved credit cards, invoicing and account balance. Use a returned id as the payment_method_id when creating an order batch; if the account has no payment methods, order batch creation fails with "Payment method not found". |
-| List Products | `listProducts` | List every product active in the Goody gift catalog, paginated. Each product carries its id, name, brand, description, price in cents, variants, images, shipping country groups and status. Use a returned product id as the cart item product_id when pricing or creating an order batch. |
-| List Workspaces | `listWorkspaces` | List every Goody workspace the API key has access to. Use a returned workspace id as the workspace_id when creating an order batch; if omitted, Goody creates the batch in the oldest accessible workspace. |
-| Retrieve Collection | `retrieveCollection` | Retrieve one curated Goody collection by id, including its published version. To reach the products in a collection, traverse published_version &gt; collection_categories &gt; collection_products &gt; product. Automation API only. Returns 404 with {"error":"Collection not found"} when the id does not exist. |
-| Retrieve Current User | `retrieveCurrentUser` | Retrieve the Goody user account that owns the API key, including the account email, display name, and which optional capabilities (smart links, email lookup) are enabled. Use it to verify that a Goody connection is valid. |
-| Retrieve Order | `retrieveOrder` | Retrieve one Goody order by id, including its lifecycle status, recipient, sender, cart, gift link, thank-you note, expiration and shipment tracking. Returns 404 with {"error":"Order not found"} for an unknown id. |
-| Retrieve Order Batch | `retrieveOrderBatch` | Retrieve one Goody order batch by id, including its send status, cart, greeting card, payment method and the preview of the first ten orders. Poll this endpoint to learn when a batch of more than ten recipients, or a scheduled batch, has finished creating its orders. Returns 404 with {"error":"Order batch not found"} for an unknown id. |
-| Retrieve Orders For Order Batch | `retrieveOrdersForOrderBatch` | Page through every order created by one Goody order batch. Use this instead of the batch's orders_preview field whenever a batch has more than ten recipients. Returns 404 with {"error":"Order batch not found"} for an unknown batch id. |
-| Retrieve Product | `retrieveProduct` | Retrieve one Goody catalog product by its id, including brand, full recipient-facing description, price in cents, variants and variant groups, images, restricted states and shipping country groups. Returns 404 with {"error":"Product not found"} when the id does not exist. |
-| Retrieve Recipients For Order Batch | `retrieveRecipientsForOrderBatch` | Page through the recipients attached to one Goody order batch, including each recipient's name, email, phone and mailing address as submitted. Returns 404 with {"error":"Order batch not found"} for an unknown batch id. |
-| Update Order Expiration | `updateOrderExpiration` | Change the date and time at which an unaccepted Goody gift expires, extending or shortening how long the recipient has to accept it. Returns 404 with {"error":"Order not found"} for an unknown order id. |
+* **List Order Activities** `listOrderActivities`: List Goody order activity events across the account, newest first, with optional time-window and status filters. Use it to poll for order lifecycle changes such as gift opened, accepted, shipped, delivered, canceled or refunded when webhooks are not in use.
+* **List Order Batches** `listOrderBatches`: List the Goody order batches on the account, paginated. An order batch groups the orders created by one send: it carries the sender name, message, cart, send method, send status and a preview of the first ten orders.
+* **List Orders** `listOrders`: List the Goody orders on the account, paginated, optionally restricted to a creation-time window. Each order is one gift to one recipient and carries its status, recipient, gift link, shipments and the order batch it belongs to.
+* **List Payment Methods** `listPaymentMethods`: List the payment methods available on the Goody account, such as saved credit cards, invoicing and account balance. Use a returned id as the payment_method_id when creating an order batch; if the account has no payment methods, order batch creation fails with "Payment method not found".
+* **List Products** `listProducts`: List every product active in the Goody gift catalog, paginated. Each product carries its id, name, brand, description, price in cents, variants, images, shipping country groups and status. Use a returned product id as the cart item product_id when pricing or creating an order batch.
+* **List Workspaces** `listWorkspaces`: List every Goody workspace the API key has access to. Use a returned workspace id as the workspace_id when creating an order batch; if omitted, Goody creates the batch in the oldest accessible workspace.
+* **Retrieve Collection** `retrieveCollection`: Retrieve one curated Goody collection by id, including its published version. To reach the products in a collection, traverse published_version &gt; collection_categories &gt; collection_products &gt; product. Automation API only. Returns 404 with {"error":"Collection not found"} when the id does not exist.
+* **Retrieve Current User** `retrieveCurrentUser`: Retrieve the Goody user account that owns the API key, including the account email, display name, and which optional capabilities (smart links, email lookup) are enabled. Use it to verify that a Goody connection is valid.
+* **Retrieve Order** `retrieveOrder`: Retrieve one Goody order by id, including its lifecycle status, recipient, sender, cart, gift link, thank-you note, expiration and shipment tracking. Returns 404 with {"error":"Order not found"} for an unknown id.
+* **Retrieve Order Batch** `retrieveOrderBatch`: Retrieve one Goody order batch by id, including its send status, cart, greeting card, payment method and the preview of the first ten orders. Poll this endpoint to learn when a batch of more than ten recipients, or a scheduled batch, has finished creating its orders. Returns 404 with {"error":"Order batch not found"} for an unknown id.
+* **Retrieve Orders For Order Batch** `retrieveOrdersForOrderBatch`: Page through every order created by one Goody order batch. Use this instead of the batch's orders_preview field whenever a batch has more than ten recipients. Returns 404 with {"error":"Order batch not found"} for an unknown batch id.
+* **Retrieve Product** `retrieveProduct`: Retrieve one Goody catalog product by its id, including brand, full recipient-facing description, price in cents, variants and variant groups, images, restricted states and shipping country groups. Returns 404 with {"error":"Product not found"} when the id does not exist.
+* **Retrieve Recipients For Order Batch** `retrieveRecipientsForOrderBatch`: Page through the recipients attached to one Goody order batch, including each recipient's name, email, phone and mailing address as submitted. Returns 404 with {"error":"Order batch not found"} for an unknown batch id.
+* **Update Order Expiration** `updateOrderExpiration`: Change the date and time at which an unaccepted Goody gift expires, extending or shortening how long the recipient has to accept it. Returns 404 with {"error":"Order not found"} for an unknown order id.
 
 </details>
 

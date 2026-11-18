@@ -5,7 +5,7 @@ hidden: true
 
 # Pumble
 
-<img src="../../.gitbook/assets/connectors/pumble.png" alt="Pumble logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/pumble.png" alt="Pumble logo">
 
 Pumble is a team messaging platform by CAKE.com. This connector wraps the Pumble API addon, covering channels, channel membership, messages, threaded replies, message editing and deletion, emoji reactions, scheduled messages, workspace users, and custom status.
 
@@ -39,17 +39,15 @@ Add Pumble from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 10 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Scheduled Message | `getScheduledMessage` | Retrieves a single scheduled Pumble message by its id, including its text, target channel, and delivery time. |
-| List Channels | `listChannels` | Lists every channel and direct message conversation visible to the user that owns the API key, along with each conversation's members and pinned messages. |
-| List Messages | `listMessages` | Lists messages in a Pumble channel, newest page first, with cursor pagination. Supply either Channel ID or Channel Name. For a private channel the API addon bot must be a member. |
-| List Scheduled Messages | `listScheduledMessages` | Lists messages scheduled by the user that owns the API key, either across the whole workspace or restricted to a single channel, with cursor pagination. |
-| List Users | `listUsers` | Lists every user in the Pumble workspace, including people, addon bots, and the built-in Pumble bot, with their id, name, email, role, and account status. |
-| Remove Reaction | `removeReaction` | Removes an emoji reaction previously added by the user that owns the API key from a Pumble message. |
-| Remove User From Channel | `removeUserFromChannel` | Removes a single workspace user from a Pumble channel. The endpoint returns HTTP 200 with an empty response body; confirm membership with Get Channel. |
-| Send Message | `sendMessage` | Posts a message to a Pumble channel or direct message conversation, either as the user who owns the API key or as the API addon bot. Supply either Channel ID or Channel Name. |
-| Send Reply | `sendReply` | Posts a threaded reply to an existing message in a Pumble channel, either as the user who owns the API key or as the API addon bot. Supply either Channel ID or Channel Name. |
-| Set Custom Status | `setCustomStatus` | Sets the custom status of the Pumble user that owns the API key, consisting of an emoji, optional status text, and an expiry time. |
+* **Get Scheduled Message** `getScheduledMessage`: Retrieves a single scheduled Pumble message by its id, including its text, target channel, and delivery time.
+* **List Channels** `listChannels`: Lists every channel and direct message conversation visible to the user that owns the API key, along with each conversation's members and pinned messages.
+* **List Messages** `listMessages`: Lists messages in a Pumble channel, newest page first, with cursor pagination. Supply either Channel ID or Channel Name. For a private channel the API addon bot must be a member.
+* **List Scheduled Messages** `listScheduledMessages`: Lists messages scheduled by the user that owns the API key, either across the whole workspace or restricted to a single channel, with cursor pagination.
+* **List Users** `listUsers`: Lists every user in the Pumble workspace, including people, addon bots, and the built-in Pumble bot, with their id, name, email, role, and account status.
+* **Remove Reaction** `removeReaction`: Removes an emoji reaction previously added by the user that owns the API key from a Pumble message.
+* **Remove User From Channel** `removeUserFromChannel`: Removes a single workspace user from a Pumble channel. The endpoint returns HTTP 200 with an empty response body; confirm membership with Get Channel.
+* **Send Message** `sendMessage`: Posts a message to a Pumble channel or direct message conversation, either as the user who owns the API key or as the API addon bot. Supply either Channel ID or Channel Name.
+* **Send Reply** `sendReply`: Posts a threaded reply to an existing message in a Pumble channel, either as the user who owns the API key or as the API addon bot. Supply either Channel ID or Channel Name.
+* **Set Custom Status** `setCustomStatus`: Sets the custom status of the Pumble user that owns the API key, consisting of an emoji, optional status text, and an expiry time.
 
 </details>

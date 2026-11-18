@@ -5,7 +5,7 @@ hidden: true
 
 # Trello
 
-<img src="../../.gitbook/assets/connectors/trello.png" alt="Trello logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/trello.png" alt="Trello logo">
 
 Trello connector for boards, lists, cards, checklists, labels, members, organizations, actions, search, and webhooks via the Trello REST API (v1). Auth uses an API key + token sent as query parameters on every request.
 
@@ -39,66 +39,64 @@ Add Trello from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 58 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Label | `createLabel` | Create a new label on a board. |
-| Create List | `createList` | Create a new list on a board. |
-| Create Organization | `createOrganization` | Create a new organization (workspace). |
-| Create Webhook | `createWebhook` | Register a webhook that fires when the specified model (board, list, card, member, organization) changes. |
-| Delete Board | `deleteBoard` | Delete a board permanently. |
-| Delete Card | `deleteCard` | Delete a card permanently. |
-| Delete Card Attachment | `deleteCardAttachment` | Delete an attachment from a card. |
-| Delete Card Comment | `deleteCardComment` | Delete a comment from a card. |
-| Delete Check Item | `deleteCheckItem` | Delete a check item from a checklist. |
-| Delete Checklist | `deleteChecklist` | Delete a checklist permanently. |
-| Delete Label | `deleteLabel` | Delete a label permanently. |
-| Delete Organization | `deleteOrganization` | Delete an organization (workspace) permanently. |
-| Delete Sticker From Card | `deleteStickerFromCard` | Remove a sticker from a card. |
-| Delete Webhook | `deleteWebhook` | Delete a webhook by ID. |
-| Get Action | `getActionById` | Retrieve a single action (activity log entry) by ID. |
-| Get Board | `getBoard` | Retrieve a single board by ID. |
-| Get Card | `getCard` | Retrieve a single card by ID. |
-| Get Card Attachment | `getCardAttachment` | Retrieve a single attachment on a card. |
-| Get Check Item On Card | `getCheckItemOnCard` | Retrieve a check item on a card. |
-| Get Checklist | `getChecklist` | Retrieve a single checklist by ID. |
-| Get Label | `getLabel` | Retrieve a single label by ID. |
-| Get List | `getList` | Retrieve a single list by ID. |
-| Get Member | `getMember` | Retrieve a member by ID or username (use 'me' for the authenticated user). |
-| Get Organization | `getOrganization` | Retrieve an organization (workspace) by ID or name. |
-| Get Webhook | `getWebhook` | Retrieve a single webhook by ID. |
-| List Board Actions | `getBoardActions` | List the actions (activity feed) on a board. |
-| List Board Cards | `getBoardCards` | List the cards on a board. |
-| List Board Labels | `getBoardLabels` | List the labels on a board. |
-| List Board Lists | `getBoardLists` | List the lists on a board. |
-| List Board Members | `getBoardMembers` | List the members of a board. |
-| List Boards For Member | `listBoards` | List all boards belonging to a member (use 'me' for the authenticated user). |
-| List Card Attachments | `getCardAttachments` | List the attachments on a card. |
-| List Card Checklists | `getCardChecklists` | List the checklists on a card. |
-| List Card Comments | `getCardComments` | List the comment actions on a card. |
-| List Card Members | `getCardMembers` | List the members assigned to a card. |
-| List Card Stickers | `getCardStickers` | List the stickers on a card. |
-| List Cards In List | `getListCards` | List the cards in a list. |
-| List Checklist Check Items | `getChecklistCheckItems` | List the check items in a checklist. |
-| List Member Cards | `getMemberCards` | List the cards assigned to a member. |
-| List Member Organizations | `getMemberOrganizations` | List the organizations a member belongs to. |
-| List Organization Boards | `getOrganizationBoards` | List the boards belonging to an organization. |
-| List Organization Members | `getOrganizationMembers` | List the members of an organization. |
-| List Token Webhooks | `listWebhooks` | List all webhooks created with the current API token. Works only with the API Key + Token sign-in: Trello's endpoint needs the token in the URL path (/1/tokens/{token}/webhooks), and an OAuth 2.0 connection has no such token, so this action cannot run on OAuth connections. |
-| Move All Cards In List | `moveAllCardsInList` | Move all cards in a list to another list/board. |
-| Remove Label From Card | `removeLabelFromCard` | Remove a label from a card. |
-| Remove Member From Card | `removeMemberFromCard` | Remove a member from a card. |
-| Search | `search` | Search Trello for cards, boards, organizations, and members matching a query. |
-| Search Members | `searchMembers` | Search for Trello members by name or username. |
-| Update Board | `updateBoard` | Update an existing board. |
-| Update Card | `updateCard` | Update an existing card. Partial update: only the fields provided are changed (name is optional). |
-| Update Card Comment | `updateCardComment` | Update the text of an existing comment on a card. |
-| Update Check Item On Card | `updateCheckItemOnCard` | Update a check item on a card (name, state, position). |
-| Update Checklist | `updateChecklist` | Update an existing checklist (name/position). |
-| Update Label | `updateLabel` | Update an existing label. |
-| Update List | `updateList` | Update an existing list. |
-| Update Member | `updateMember` | Update the authenticated member's profile fields. |
-| Update Organization | `updateOrganization` | Update an existing organization (workspace). |
-| Update Webhook | `updateWebhook` | Update an existing webhook (callback URL, model, active state). |
+* **Create Label** `createLabel`: Create a new label on a board.
+* **Create List** `createList`: Create a new list on a board.
+* **Create Organization** `createOrganization`: Create a new organization (workspace).
+* **Create Webhook** `createWebhook`: Register a webhook that fires when the specified model (board, list, card, member, organization) changes.
+* **Delete Board** `deleteBoard`: Delete a board permanently.
+* **Delete Card** `deleteCard`: Delete a card permanently.
+* **Delete Card Attachment** `deleteCardAttachment`: Delete an attachment from a card.
+* **Delete Card Comment** `deleteCardComment`: Delete a comment from a card.
+* **Delete Check Item** `deleteCheckItem`: Delete a check item from a checklist.
+* **Delete Checklist** `deleteChecklist`: Delete a checklist permanently.
+* **Delete Label** `deleteLabel`: Delete a label permanently.
+* **Delete Organization** `deleteOrganization`: Delete an organization (workspace) permanently.
+* **Delete Sticker From Card** `deleteStickerFromCard`: Remove a sticker from a card.
+* **Delete Webhook** `deleteWebhook`: Delete a webhook by ID.
+* **Get Action** `getActionById`: Retrieve a single action (activity log entry) by ID.
+* **Get Board** `getBoard`: Retrieve a single board by ID.
+* **Get Card** `getCard`: Retrieve a single card by ID.
+* **Get Card Attachment** `getCardAttachment`: Retrieve a single attachment on a card.
+* **Get Check Item On Card** `getCheckItemOnCard`: Retrieve a check item on a card.
+* **Get Checklist** `getChecklist`: Retrieve a single checklist by ID.
+* **Get Label** `getLabel`: Retrieve a single label by ID.
+* **Get List** `getList`: Retrieve a single list by ID.
+* **Get Member** `getMember`: Retrieve a member by ID or username (use 'me' for the authenticated user).
+* **Get Organization** `getOrganization`: Retrieve an organization (workspace) by ID or name.
+* **Get Webhook** `getWebhook`: Retrieve a single webhook by ID.
+* **List Board Actions** `getBoardActions`: List the actions (activity feed) on a board.
+* **List Board Cards** `getBoardCards`: List the cards on a board.
+* **List Board Labels** `getBoardLabels`: List the labels on a board.
+* **List Board Lists** `getBoardLists`: List the lists on a board.
+* **List Board Members** `getBoardMembers`: List the members of a board.
+* **List Boards For Member** `listBoards`: List all boards belonging to a member (use 'me' for the authenticated user).
+* **List Card Attachments** `getCardAttachments`: List the attachments on a card.
+* **List Card Checklists** `getCardChecklists`: List the checklists on a card.
+* **List Card Comments** `getCardComments`: List the comment actions on a card.
+* **List Card Members** `getCardMembers`: List the members assigned to a card.
+* **List Card Stickers** `getCardStickers`: List the stickers on a card.
+* **List Cards In List** `getListCards`: List the cards in a list.
+* **List Checklist Check Items** `getChecklistCheckItems`: List the check items in a checklist.
+* **List Member Cards** `getMemberCards`: List the cards assigned to a member.
+* **List Member Organizations** `getMemberOrganizations`: List the organizations a member belongs to.
+* **List Organization Boards** `getOrganizationBoards`: List the boards belonging to an organization.
+* **List Organization Members** `getOrganizationMembers`: List the members of an organization.
+* **List Token Webhooks** `listWebhooks`: List all webhooks created with the current API token. Works only with the API Key + Token sign-in: Trello's endpoint needs the token in the URL path (/1/tokens/{token}/webhooks), and an OAuth 2.0 connection has no such token, so this action cannot run on OAuth connections.
+* **Move All Cards In List** `moveAllCardsInList`: Move all cards in a list to another list/board.
+* **Remove Label From Card** `removeLabelFromCard`: Remove a label from a card.
+* **Remove Member From Card** `removeMemberFromCard`: Remove a member from a card.
+* **Search** `search`: Search Trello for cards, boards, organizations, and members matching a query.
+* **Search Members** `searchMembers`: Search for Trello members by name or username.
+* **Update Board** `updateBoard`: Update an existing board.
+* **Update Card** `updateCard`: Update an existing card. Partial update: only the fields provided are changed (name is optional).
+* **Update Card Comment** `updateCardComment`: Update the text of an existing comment on a card.
+* **Update Check Item On Card** `updateCheckItemOnCard`: Update a check item on a card (name, state, position).
+* **Update Checklist** `updateChecklist`: Update an existing checklist (name/position).
+* **Update Label** `updateLabel`: Update an existing label.
+* **Update List** `updateList`: Update an existing list.
+* **Update Member** `updateMember`: Update the authenticated member's profile fields.
+* **Update Organization** `updateOrganization`: Update an existing organization (workspace).
+* **Update Webhook** `updateWebhook`: Update an existing webhook (callback URL, model, active state).
 
 </details>
 
@@ -123,15 +121,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 
 <summary>See 8 more events</summary>
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Label Added To Card | `addLabelToCard` | A label was added to a card. |
-| Label Removed From Card | `removeLabelFromCard` | A label was removed from a card. |
-| List Created | `createList` | A list was created on the watched board. |
-| List Updated | `updateList` | A list was updated (renamed, archived, moved). |
-| Member Added To Board | `addMemberToBoard` | A member was added to a board. |
-| Member Added To Card | `addMemberToCard` | A member was added to a card. |
-| Member Removed From Board | `removeMemberFromBoard` | A member was removed from a board. |
-| Member Removed From Card | `removeMemberFromCard` | A member was removed from a card. |
+* **Label Added To Card** `addLabelToCard`: A label was added to a card.
+* **Label Removed From Card** `removeLabelFromCard`: A label was removed from a card.
+* **List Created** `createList`: A list was created on the watched board.
+* **List Updated** `updateList`: A list was updated (renamed, archived, moved).
+* **Member Added To Board** `addMemberToBoard`: A member was added to a board.
+* **Member Added To Card** `addMemberToCard`: A member was added to a card.
+* **Member Removed From Board** `removeMemberFromBoard`: A member was removed from a board.
+* **Member Removed From Card** `removeMemberFromCard`: A member was removed from a card.
 
 </details>

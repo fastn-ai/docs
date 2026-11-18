@@ -5,7 +5,7 @@ hidden: true
 
 # Our World in Data
 
-<img src="../../.gitbook/assets/connectors/our-world-in-data.png" alt="Our World in Data logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/our-world-in-data.png" alt="Our World in Data logo">
 
 Our World in Data publishes free research and data on global problems - health, population, energy, CO2, economy, poverty and more - as thousands of charts. Search charts, articles and topics, then get any chart's data as CSV (all or filtered by country and years), its metadata, README, Grapher config, latest values and search card. No API key needed.
 

@@ -5,7 +5,7 @@ hidden: true
 
 # Simple Analytics
 
-<img src="../../.gitbook/assets/connectors/simple-analytics.png" alt="Simple Analytics logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/simple-analytics.png" alt="Simple Analytics logo">
 
 Simple Analytics is a privacy-friendly web analytics platform. This connector covers the Simple Analytics APIs: the Stats API for aggregated page views, visitors, histograms, referrers, UTM, device and event counts; the Export API for raw page view and event data points; the Admin API for listing and adding websites; and server-side collection of page views and events, including the no-JavaScript pixel.
 

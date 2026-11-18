@@ -5,7 +5,7 @@ hidden: true
 
 # Demio
 
-<img src="../../.gitbook/assets/connectors/demio.png" alt="Demio logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/demio.png" alt="Demio logo">
 
 Demio is a webinar platform for live, automated, and on-demand virtual events. This connector covers the complete Demio public REST API v1: verifying API credentials through both the header and query-string authorization schemes, listing events filtered by upcoming, past, or automated, retrieving a single event together with its full series of sessions, retrieving an individual event session, registering a person for an event or a specific session and returning their unique join link, and pulling a session's participant report filtered by attendance status.
 

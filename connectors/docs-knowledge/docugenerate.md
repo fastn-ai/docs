@@ -5,7 +5,7 @@ hidden: true
 
 # DocuGenerate
 
-<img src="../../.gitbook/assets/connectors/docugenerate.png" alt="DocuGenerate logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/docugenerate.png" alt="DocuGenerate logo">
 
 DocuGenerate document automation API. Create and manage document templates (.docx, .doc, .odt, .rtf, .txt, .sql) with merge tags, then generate documents from those templates by merging JSON data or spreadsheet rows, with output in .docx, .pdf, PDF/A, .odt, .txt, .html or .png, optional PDF merging and attachments.
 
@@ -39,8 +39,6 @@ Add DocuGenerate from **Build → Integrations → Connectors** and connect an a
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Update Template | `updateTemplate` | Update an existing DocuGenerate template by id. Any field left empty is unchanged. Supplying new template content replaces the stored template file and re-extracts the merge tags; supplying new delimiters re-processes the existing content. Returns the updated template. |
+* **Update Template** `updateTemplate`: Update an existing DocuGenerate template by id. Any field left empty is unchanged. Supplying new template content replaces the stored template file and re-extracts the merge tags; supplying new delimiters re-processes the existing content. Returns the updated template.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # GoDial
 
-<img src="../../.gitbook/assets/connectors/godial.png" alt="GoDial logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/godial.png" alt="GoDial logo">
 
 GoDial is a telecalling CRM and auto dialer. This connector wraps the GoDial CRM External API (v2) to manage teams, accounts (members), calling lists, contacts, dispositions, tasks and call logs.
 
@@ -39,29 +39,27 @@ Add GoDial from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 21 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Delete Task | `deleteTask` | Deletes a GoDial task by its ID. Returns the number of records removed. |
-| Delete Team | `deleteTeam` | Deletes a team from your GoDial company by its ID. Returns the number of records removed. |
-| Detach List From Account | `detachList` | Removes a GoDial calling list assignment from an account (member). |
-| Dispose Contact | `disposeContact` | Records a call, SMS or email disposition for a GoDial contact, optionally scheduling a callback. The disposition must be an uppercase value configured in your GoDial company. |
-| Get Account | `getAccount` | Retrieves a single GoDial account (member) by its ID, including its assigned lists and teams. GoDial returns an error with the message "Account is not valid" when no account matches the ID. |
-| Get Contact | `getContact` | Retrieves a single GoDial contact by its ID. GoDial returns HTTP 204 with an empty body when no contact matches the ID. |
-| Get List | `getList` | Retrieves a single GoDial calling list by its ID. GoDial returns HTTP 204 with an empty body when no list matches the ID. |
-| Get Task | `getTask` | Retrieves a single GoDial task by its ID. GoDial returns HTTP 204 with an empty body when no task matches the ID. |
-| Get Team | `getTeam` | Retrieves a single GoDial team by its ID. GoDial returns an error with the message "Team is not valid" when no team matches the ID. |
-| List Accounts | `listAccounts` | Lists all accounts (members) in your GoDial company, including their role, team memberships and permissions. |
-| List Call Logs | `listCallLogs` | Lists GoDial call logs filtered by lists, agents, dispositions and a date range. GoDial requires all four filters; use ["allLists"] and ["All Dispos"] to include everything. |
-| List Contacts In List | `listContacts` | Lists all contacts that belong to a GoDial calling list. |
-| List Lists | `listLists` | Lists all calling lists in your GoDial company. Lists hold contacts and are assigned to accounts. |
-| List Tasks | `listTasks` | Lists all tasks in your GoDial company. |
-| List Teams | `listTeams` | Lists all teams in your GoDial company. Every account belongs to at least one team. |
-| Move Contact To List | `changeContactList` | Moves a GoDial contact from its current calling list to another list. |
-| Update Account | `updateAccount` | Updates an existing GoDial account (member). GoDial requires the name, email, role and team IDs on every update, and any access flag you omit is reset to false; username and password cannot be changed through this action. |
-| Update Contact | `updateContact` | Updates an existing GoDial contact. Only the fields you pass are changed. |
-| Update List | `updateList` | Updates the name, description or team of an existing GoDial calling list. Only the fields you pass are changed. |
-| Update Task | `updateTask` | Updates a GoDial task, for example renaming it or marking it done. The task name is required on every update. Setting done to true completes the task; GoDial does not reopen a completed task when done is false. |
-| Update Team | `updateTeam` | Updates the name or description of an existing GoDial team. Only the fields you pass are changed. |
+* **Delete Task** `deleteTask`: Deletes a GoDial task by its ID. Returns the number of records removed.
+* **Delete Team** `deleteTeam`: Deletes a team from your GoDial company by its ID. Returns the number of records removed.
+* **Detach List From Account** `detachList`: Removes a GoDial calling list assignment from an account (member).
+* **Dispose Contact** `disposeContact`: Records a call, SMS or email disposition for a GoDial contact, optionally scheduling a callback. The disposition must be an uppercase value configured in your GoDial company.
+* **Get Account** `getAccount`: Retrieves a single GoDial account (member) by its ID, including its assigned lists and teams. GoDial returns an error with the message "Account is not valid" when no account matches the ID.
+* **Get Contact** `getContact`: Retrieves a single GoDial contact by its ID. GoDial returns HTTP 204 with an empty body when no contact matches the ID.
+* **Get List** `getList`: Retrieves a single GoDial calling list by its ID. GoDial returns HTTP 204 with an empty body when no list matches the ID.
+* **Get Task** `getTask`: Retrieves a single GoDial task by its ID. GoDial returns HTTP 204 with an empty body when no task matches the ID.
+* **Get Team** `getTeam`: Retrieves a single GoDial team by its ID. GoDial returns an error with the message "Team is not valid" when no team matches the ID.
+* **List Accounts** `listAccounts`: Lists all accounts (members) in your GoDial company, including their role, team memberships and permissions.
+* **List Call Logs** `listCallLogs`: Lists GoDial call logs filtered by lists, agents, dispositions and a date range. GoDial requires all four filters; use ["allLists"] and ["All Dispos"] to include everything.
+* **List Contacts In List** `listContacts`: Lists all contacts that belong to a GoDial calling list.
+* **List Lists** `listLists`: Lists all calling lists in your GoDial company. Lists hold contacts and are assigned to accounts.
+* **List Tasks** `listTasks`: Lists all tasks in your GoDial company.
+* **List Teams** `listTeams`: Lists all teams in your GoDial company. Every account belongs to at least one team.
+* **Move Contact To List** `changeContactList`: Moves a GoDial contact from its current calling list to another list.
+* **Update Account** `updateAccount`: Updates an existing GoDial account (member). GoDial requires the name, email, role and team IDs on every update, and any access flag you omit is reset to false; username and password cannot be changed through this action.
+* **Update Contact** `updateContact`: Updates an existing GoDial contact. Only the fields you pass are changed.
+* **Update List** `updateList`: Updates the name, description or team of an existing GoDial calling list. Only the fields you pass are changed.
+* **Update Task** `updateTask`: Updates a GoDial task, for example renaming it or marking it done. The task name is required on every update. Setting done to true completes the task; GoDial does not reopen a completed task when done is false.
+* **Update Team** `updateTeam`: Updates the name or description of an existing GoDial team. Only the fields you pass are changed.
 
 </details>
 

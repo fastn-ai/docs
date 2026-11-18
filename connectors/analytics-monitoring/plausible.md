@@ -5,7 +5,7 @@ hidden: true
 
 # Plausible Analytics
 
-<img src="../../.gitbook/assets/connectors/plausible.jpg" alt="Plausible Analytics logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/plausible.png" alt="Plausible Analytics logo">
 
 Plausible Analytics is a privacy-friendly, cookie-free web analytics platform. This connector covers the Stats API v2 query endpoint for aggregate, timeseries, breakdown and absolute date-range reporting, the Stats API v1 realtime, aggregate, timeseries and breakdown endpoints, and the Sites API for managing sites, shared dashboard links and conversion goals. Requests authenticate with a Plausible API key sent as a bearer token.
 
@@ -39,13 +39,11 @@ Add Plausible Analytics from **Build → Integrations → Connectors** and conne
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Sites | `listSites` | Lists every site the API key has access to, with cursor-based paging. |
-| Run Aggregate Stats Query | `runAggregateQuery` | Runs an aggregate Stats API v2 query against the site configured on the connection, returning a single row of totals for the requested metrics over a relative date range. |
-| Run Breakdown Stats Query | `runBreakdownQuery` | Runs a Stats API v2 query broken down by one or more dimensions against the site configured on the connection, returning one paginated row per dimension combination ordered by the first metric descending. |
-| Run Custom Date Range Stats Query | `runCustomDateRangeQuery` | Runs an aggregate Stats API v2 query over an absolute start and end date against the site configured on the connection. Use this instead of the relative date ranges offered by the other v2 query actions. |
-| Run Timeseries Stats Query | `runTimeseriesQuery` | Runs a Stats API v2 query bucketed over time against the site configured on the connection, returning one row per hour, day, week or month in the requested date range. |
-| Update Site | `updateSite` | Changes the domain of an existing site, which also changes its site id. Requires an API key with the sites:provision:* scope; a Stats API key is rejected with HTTP 401. |
+* **List Sites** `listSites`: Lists every site the API key has access to, with cursor-based paging.
+* **Run Aggregate Stats Query** `runAggregateQuery`: Runs an aggregate Stats API v2 query against the site configured on the connection, returning a single row of totals for the requested metrics over a relative date range.
+* **Run Breakdown Stats Query** `runBreakdownQuery`: Runs a Stats API v2 query broken down by one or more dimensions against the site configured on the connection, returning one paginated row per dimension combination ordered by the first metric descending.
+* **Run Custom Date Range Stats Query** `runCustomDateRangeQuery`: Runs an aggregate Stats API v2 query over an absolute start and end date against the site configured on the connection. Use this instead of the relative date ranges offered by the other v2 query actions.
+* **Run Timeseries Stats Query** `runTimeseriesQuery`: Runs a Stats API v2 query bucketed over time against the site configured on the connection, returning one row per hour, day, week or month in the requested date range.
+* **Update Site** `updateSite`: Changes the domain of an existing site, which also changes its site id. Requires an API key with the sites:provision:* scope; a Stats API key is rejected with HTTP 401.
 
 </details>

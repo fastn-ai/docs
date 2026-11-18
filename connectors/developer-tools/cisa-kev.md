@@ -5,7 +5,7 @@ hidden: true
 
 # CISA Known Exploited Vulnerabilities
 
-<img src="../../.gitbook/assets/connectors/cisa-kev.png" alt="CISA Known Exploited Vulnerabilities logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/cisa-kev.png" alt="CISA Known Exploited Vulnerabilities logo">
 
 The CISA Known Exploited Vulnerabilities (KEV) catalog is the US Cybersecurity and Infrastructure Security Agency's authoritative, free list of vulnerabilities exploited in the wild, with required actions and remediation due dates. Get the full catalog as JSON or CSV and its JSON schema. No API key needed.
 

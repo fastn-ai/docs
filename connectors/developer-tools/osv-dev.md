@@ -5,7 +5,7 @@ hidden: true
 
 # OSV
 
-<img src="../../.gitbook/assets/connectors/osv-dev.png" alt="OSV logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/osv-dev.png" alt="OSV logo">
 
 OSV (osv.dev, by Google) is a free, open database of vulnerabilities in open-source packages across PyPI, npm, Go, Maven, crates.io, Debian, Ubuntu and more. Query vulnerabilities by package version, purl or git commit (single or batch), fetch full vulnerability records, find C/C++ library versions from file hashes, and map Ubuntu binary packages to source packages. No API key needed.
 

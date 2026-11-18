@@ -5,7 +5,7 @@ hidden: true
 
 # Composio Search
 
-<img src="../../.gitbook/assets/connectors/composio-search.png" alt="Composio Search logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/composio-search.png" alt="Composio Search logo">
 
 Composio Search is Composio's hosted search toolkit: web, news, image, scholar, shopping, finance, trends, events, flights, hotels, maps, travel and SEC-filing search, plus page-content extraction and fast LLM inference, all without connecting a third-party account. This connector calls the Composio Connect Tool Router over HTTPS (JSON-RPC) and exposes every COMPOSIO_SEARCH tool as its own action.
 
@@ -39,19 +39,17 @@ Add Composio Search from **Build → Integrations → Connectors** and connect a
 
 <summary>See 12 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Hotels | `searchHotels` | Searches hotels and vacation rentals for a location and date range, with guest counts, price bounds, star rating, free-cancellation and sort filters. If very few results come back, widen the location before changing anything else. |
-| Search Images | `searchImages` | Searches Google Images and returns image metadata and URLs, not the binary image data. Supports a result count and page-based pagination. |
-| Search News | `searchNews` | Searches news-oriented sources for recent articles and current events, with country, language, recency and pagination filters. Blogs, documentation and company pages are excluded. A call can succeed and still report no results, so widen the query or relax the time filter before concluding there is no coverage. |
-| Search Scholar | `searchScholar` | Searches Google Scholar for academic papers and scholarly articles. Short, focused keyphrases work better than long quoted phrases; adding author names, field qualifiers or a year range improves relevance. |
-| Search SEC Filings | `searchSecFilings` | Retrieves SEC EDGAR filing metadata for a company and builds the index and primary-document URLs for each filing. Accepts a ticker or a CIK and can be narrowed to specific form types such as 10-K, 10-Q or 8-K. |
-| Search Shopping | `searchShopping` | Searches Google Shopping for products, with price-range, sale, free-shipping, location and sort filters. Use it to compare prices across retailers or to find local availability. |
-| Search Trends | `searchTrends` | Reads Google Trends data for one or more topics: interest over time, regional breakdowns, and related topics or queries. Interest is normalised from 0 to 100 and is relative to the topics in the same request, so it is not an absolute search volume. |
-| Search TripAdvisor | `searchTripAdvisor` | Searches TripAdvisor for attractions, restaurants, hotels, destinations, vacation rentals and forum threads, with no TripAdvisor account required. Ambiguous queries can return several locations, so check both the title and the location of a result before using it. |
-| Search Walmart | `searchWalmart` | Searches the Walmart catalogue across groceries, electronics, clothing, home goods, pharmacy and auto services, with optional price-range filtering in US dollars. |
-| Search Web | `searchWeb` | Runs a web search through Composio and returns a narrative answer with cited sources. Include qualifiers such as year, region, platform or intent for better results; very broad queries return generic content and excessive site: or quoted-term filters can return nothing. |
-| Search With DuckDuckGo | `searchWithDuckDuckGo` | Runs a web search through DuckDuckGo and returns the organic result list. Supports offset pagination for walking past the first page of results. |
-| Search With Tavily | `searchWithTavily` | Runs a search through the Tavily engine with domain include and exclude lists, a choice of search depth, and optional direct answers, images and raw page content. Use it when you need finer control over the result set than Search Web offers. |
+* **Search Hotels** `searchHotels`: Searches hotels and vacation rentals for a location and date range, with guest counts, price bounds, star rating, free-cancellation and sort filters. If very few results come back, widen the location before changing anything else.
+* **Search Images** `searchImages`: Searches Google Images and returns image metadata and URLs, not the binary image data. Supports a result count and page-based pagination.
+* **Search News** `searchNews`: Searches news-oriented sources for recent articles and current events, with country, language, recency and pagination filters. Blogs, documentation and company pages are excluded. A call can succeed and still report no results, so widen the query or relax the time filter before concluding there is no coverage.
+* **Search Scholar** `searchScholar`: Searches Google Scholar for academic papers and scholarly articles. Short, focused keyphrases work better than long quoted phrases; adding author names, field qualifiers or a year range improves relevance.
+* **Search SEC Filings** `searchSecFilings`: Retrieves SEC EDGAR filing metadata for a company and builds the index and primary-document URLs for each filing. Accepts a ticker or a CIK and can be narrowed to specific form types such as 10-K, 10-Q or 8-K.
+* **Search Shopping** `searchShopping`: Searches Google Shopping for products, with price-range, sale, free-shipping, location and sort filters. Use it to compare prices across retailers or to find local availability.
+* **Search Trends** `searchTrends`: Reads Google Trends data for one or more topics: interest over time, regional breakdowns, and related topics or queries. Interest is normalised from 0 to 100 and is relative to the topics in the same request, so it is not an absolute search volume.
+* **Search TripAdvisor** `searchTripAdvisor`: Searches TripAdvisor for attractions, restaurants, hotels, destinations, vacation rentals and forum threads, with no TripAdvisor account required. Ambiguous queries can return several locations, so check both the title and the location of a result before using it.
+* **Search Walmart** `searchWalmart`: Searches the Walmart catalogue across groceries, electronics, clothing, home goods, pharmacy and auto services, with optional price-range filtering in US dollars.
+* **Search Web** `searchWeb`: Runs a web search through Composio and returns a narrative answer with cited sources. Include qualifiers such as year, region, platform or intent for better results; very broad queries return generic content and excessive site: or quoted-term filters can return nothing.
+* **Search With DuckDuckGo** `searchWithDuckDuckGo`: Runs a web search through DuckDuckGo and returns the organic result list. Supports offset pagination for walking past the first page of results.
+* **Search With Tavily** `searchWithTavily`: Runs a search through the Tavily engine with domain include and exclude lists, a choice of search depth, and optional direct answers, images and raw page content. Use it when you need finer control over the result set than Search Web offers.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # Where the ISS at
 
-<img src="../../.gitbook/assets/connectors/where-the-iss-at.png" alt="Where the ISS at logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/where-the-iss-at.png" alt="Where the ISS at logo">
 
 Where the ISS at? is a free REST API for the International Space Station: its current, past or future position, velocity and visibility, TLE orbital data, and timezone and country info for any coordinates. No API key needed; about 1 request per second.
 

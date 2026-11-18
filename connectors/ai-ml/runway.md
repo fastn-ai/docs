@@ -5,7 +5,7 @@ hidden: true
 
 # Runway
 
-<img src="../../.gitbook/assets/connectors/runway.png" alt="Runway logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/runway.png" alt="Runway logo">
 
 Runway generative AI API for video and image creation. Start generation tasks (text-to-image, image-to-video, video-to-video, upscaling, character performance), track task status, and query organization credit usage.
 
@@ -39,8 +39,6 @@ Add Runway from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 1 more action</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Task | `getTask` | Retrieves the status and result of a generation task by its id. Poll this until the task status is SUCCEEDED or FAILED. This is a free read that does not consume credits. |
+* **Get Task** `getTask`: Retrieves the status and result of a generation task by its id. Poll this until the task status is SUCCEEDED or FAILED. This is a free read that does not consume credits.
 
 </details>

@@ -5,7 +5,7 @@ hidden: true
 
 # Statsig
 
-<img src="../../.gitbook/assets/connectors/statsig.png" alt="Statsig logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/statsig.png" alt="Statsig logo">
 
 Statsig is a feature flagging, experimentation and product analytics platform. This connector wraps the Statsig HTTP API (SDK API): evaluate feature gates, dynamic configs, experiments and layers for a user, fetch the full evaluated configuration set for a user, rank contextual bandit variants, and log custom events and custom exposure events for analytics and metric calculation.
 

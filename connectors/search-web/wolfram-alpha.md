@@ -5,7 +5,7 @@ hidden: true
 
 # Wolfram\|Alpha
 
-<img src="../../.gitbook/assets/connectors/wolfram-alpha.png" alt="Wolfram\|Alpha logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/wolfram-alpha.png" alt="Wolfram\|Alpha logo">
 
 Wolfram\|Alpha is a computational knowledge engine that answers free-form natural-language questions across mathematics, science, geography, history, finance and more. This connector covers the Wolfram\|Alpha developer APIs available on a single AppID: the Full Results API (structured pods with assumptions, pod states such as step-by-step solutions, formulas and location controls), query validation, Short Answers, Spoken Results, the Simple image API, the LLM API, the Fast Query Recognizer and Summary Boxes. Every call counts against the AppID's monthly quota.
 

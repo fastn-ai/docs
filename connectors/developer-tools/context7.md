@@ -5,7 +5,7 @@ hidden: true
 
 # Context7
 
-<img src="../../.gitbook/assets/connectors/context7.png" alt="Context7 logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/context7.png" alt="Context7 logo">
 
 Context7 delivers up-to-date, version-specific library documentation and code examples to AI coding agents. This connector covers the complete Context7 Public REST API (https://context7.com/api): searching the library index, fetching ranked documentation context for a library and question, library usage metrics, refreshing an indexed library, reading and updating teamspace access policies, and adding new libraries from GitHub, GitLab, Bitbucket and other Git hosts, OpenAPI specifications, llms.txt files, websites, Confluence spaces and Notion pages.
 
@@ -39,12 +39,10 @@ Add Context7 from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 5 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Library Metrics | `getLibraryMetrics` | Returns usage metrics for a library you own: lifetime request totals by surface (web page, plain text, MCP, CLI), per-day request history, daily MCP client unique-user breakdown, and lifetime topic and country distributions. Only library owners can read metrics; other callers receive 403 forbidden. |
-| Get Teamspace Policies | `getTeamspacePolicies` | Returns the complete access policy configuration of the API key's teamspace: which documentation source types are enabled, the library filter mode with its quality thresholds, blocked and excepted libraries, repository and website quality filters, the manually selected library list, and the number of libraries currently accessible. |
-| Refresh Library | `refreshLibrary` | Triggers a re-index of an existing Context7 library so its documentation reflects the latest source. Optionally targets a specific branch, and accepts a Git access token for private repositories (otherwise the stored OAuth token is used). Returns 404 library_not_found when the library has not been added yet. |
-| Search Libraries | `searchLibraries` | Searches the Context7 library index by library name, ranking results by relevance to the user's question or task. Returns matching libraries with their Context7 library ID, processing state, snippet and token counts, trust and benchmark scores, and available version tags. Returns 404 no_libraries_found when nothing matches. |
-| Update Teamspace Policies | `updateTeamspacePolicies` | Incrementally updates the teamspace's access policies. Only the fields you provide are changed. Enable or disable documentation source types, switch the library filter mode, set quality thresholds (verified only, minimum trust score, maximum age, minimum stars, allowed SPDX licenses, website backlink and traffic minimums), add or remove blocked and excepted libraries, or maintain the manually selected library list. At least one of sourceTypes or libraryFilters must be supplied. Returns the full updated policy. |
+* **Get Library Metrics** `getLibraryMetrics`: Returns usage metrics for a library you own: lifetime request totals by surface (web page, plain text, MCP, CLI), per-day request history, daily MCP client unique-user breakdown, and lifetime topic and country distributions. Only library owners can read metrics; other callers receive 403 forbidden.
+* **Get Teamspace Policies** `getTeamspacePolicies`: Returns the complete access policy configuration of the API key's teamspace: which documentation source types are enabled, the library filter mode with its quality thresholds, blocked and excepted libraries, repository and website quality filters, the manually selected library list, and the number of libraries currently accessible.
+* **Refresh Library** `refreshLibrary`: Triggers a re-index of an existing Context7 library so its documentation reflects the latest source. Optionally targets a specific branch, and accepts a Git access token for private repositories (otherwise the stored OAuth token is used). Returns 404 library_not_found when the library has not been added yet.
+* **Search Libraries** `searchLibraries`: Searches the Context7 library index by library name, ranking results by relevance to the user's question or task. Returns matching libraries with their Context7 library ID, processing state, snippet and token counts, trust and benchmark scores, and available version tags. Returns 404 no_libraries_found when nothing matches.
+* **Update Teamspace Policies** `updateTeamspacePolicies`: Incrementally updates the teamspace's access policies. Only the fields you provide are changed. Enable or disable documentation source types, switch the library filter mode, set quality thresholds (verified only, minimum trust score, maximum age, minimum stars, allowed SPDX licenses, website backlink and traffic minimums), add or remove blocked and excepted libraries, or maintain the manually selected library list. At least one of sourceTypes or libraryFilters must be supplied. Returns the full updated policy.
 
 </details>

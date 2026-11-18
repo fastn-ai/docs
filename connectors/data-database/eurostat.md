@@ -5,7 +5,7 @@ hidden: true
 
 # Eurostat
 
-<img src="../../.gitbook/assets/connectors/eurostat.png" alt="Eurostat logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/eurostat.png" alt="Eurostat logo">
 
 Eurostat is the statistical office of the European Union. Its free dissemination API gives EU statistics on economy, population, labour, prices, trade, energy, environment and more: get dataset data as JSON-stat, query SDMX series keys as JSON-stat, CSV or XML, read dataflows, data structures, codelists, concept schemes and content constraints, and list every dataset in the table of contents. No API key needed.
 

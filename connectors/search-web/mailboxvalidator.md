@@ -5,7 +5,7 @@ hidden: true
 
 # MailboxValidator
 
-<img src="../../.gitbook/assets/connectors/mailboxvalidator.png" alt="MailboxValidator logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/mailboxvalidator.png" alt="MailboxValidator logo">
 
 MailboxValidator real-time email validation API. Validates a single email address (syntax, MX record, SMTP reachability, greylisting, disposable, role-based, high-risk, catch-all, suppression list, DMARC, strict SPF and a reputation score), and offers lightweight free-email-provider and disposable-email lookups. Covers both the current v2 API and the still-live legacy v1 API. Every call consumes one credit from a shared account balance; there is no separate balance endpoint, so the remaining balance is only readable as the credits_available field of a (billed) validation response.
 

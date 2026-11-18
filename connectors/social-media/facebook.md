@@ -5,7 +5,7 @@ hidden: true
 
 # Facebook
 
-<img src="../../.gitbook/assets/connectors/facebook.png" alt="Facebook logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/facebook.png" alt="Facebook logo">
 
 Facebook (Meta Graph API v25.0) connector for Page publishing and engagement: list/read Pages, create posts, publish photos/videos, comments, insights, and Page webhook subscriptions. OAuth 2.0 (Facebook Login) primary.
 
@@ -39,35 +39,33 @@ Add Facebook from **Build → Integrations → Connectors** and connect an accou
 
 <summary>See 27 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Page | `getPage` | Get details for a Facebook Page by id. |
-| Get Page Feed | `getPageFeed` | Get posts from a Page feed. |
-| Get Page Insights | `getPageInsights` | Get insights/analytics metrics for a Page. |
-| Get Post | `getPost` | Read one Page post (GET /{postId}). |
-| Get Post Insights | `getPostInsights` | Metrics for one Page post (GET /{postId}/insights), e.g. post_impressions, post_clicks, post_reactions_by_type_total. |
-| Get Video | `getVideo` | Read one Page video including processing status (GET /{videoId}). |
-| Hide Comment | `hideComment` | Hide or unhide a comment on the Page's content (POST /{commentId}?is_hidden=true\|false). Returns {success}. |
-| Like Object | `likeObject` | Like a post or comment as the Page (POST /{objectId}/likes). Returns {success}. |
-| List Albums | `listAlbums` | List the Page's photo albums (GET /{pageId}/albums). |
-| List App Subscriptions | `listAppSubscriptions` | List the app's current webhook subscriptions. Requires an app access token. |
-| List Form Leads | `listFormLeads` | List all leads submitted through a specific Lead Ads form, newest first, with the answers each person entered. Use this to backfill leads or to recover any the webhook missed. Requires the leads_retrieval permission and a Page access token for the Page that owns the form. |
-| List Granted Permissions | `listPermissions` | List the permissions the connected user has granted or declined for this app. Each entry has a permission name and a status of granted or declined. Use it to verify a connection carries the scopes an action needs before calling it. |
-| List Lead Forms | `listLeadForms` | List the Lead Ads instant forms attached to a Facebook Page. Returns each form's id, name, status and questions. Use the returned form id with List Form Leads. Requires a Page access token plus the pages_manage_ads or leads_retrieval permission. |
-| List Managed Pages | `listPages` | List the Facebook Pages the authenticated user manages. Each entry includes the Page access_token needed for publishing/engagement actions. |
-| List Page Photos | `listPagePhotos` | List photos uploaded by the Page (GET /{pageId}/photos?type=uploaded). |
-| List Page Ratings | `listPageRatings` | List recommendations/reviews left on the Page (GET /{pageId}/ratings). |
-| List Page Videos | `listPageVideos` | List videos uploaded by the Page (GET /{pageId}/videos). |
-| List Pages For Trigger | `listPagesForTrigger` | Lists the Facebook Pages the connected user manages, returning only each Page's id and name (no Page access tokens). Used by app triggers to let the user pick which Page's events to receive. |
-| List Published Posts | `listPublishedPosts` | List posts published by the Page (GET /{pageId}/published_posts). |
-| List Scheduled Posts | `listScheduledPosts` | List the Page's scheduled (not yet published) posts (GET /{pageId}/scheduled_posts). |
-| Publish Photo | `publishPhoto` | Publish a photo to a Page from a hosted image URL. Requires a Page access token. |
-| Publish Video | `publishVideo` | Publish a video to a Page from a hosted file URL. Requires a Page access token. |
-| Subscribe Page App | `subscribePageApp` | Install/subscribe the app on a Page so it receives webhook notifications. Requires a Page access token. |
-| Unlike Object | `unlikeObject` | Remove the Page's like from a post or comment (DELETE /{objectId}/likes). Returns {success}. |
-| Unsubscribe Page App | `unsubscribePageApp` | Uninstall/unsubscribe the app from a Page. Requires a Page access token. |
-| Update Comment | `updateComment` | Edit a comment the Page wrote (POST /{commentId} message). Returns {success}. |
-| Update Post | `updatePost` | Edit the text of a Page post (POST /{postId} message). Returns {success}. |
+* **Get Page** `getPage`: Get details for a Facebook Page by id.
+* **Get Page Feed** `getPageFeed`: Get posts from a Page feed.
+* **Get Page Insights** `getPageInsights`: Get insights/analytics metrics for a Page.
+* **Get Post** `getPost`: Read one Page post (GET /{postId}).
+* **Get Post Insights** `getPostInsights`: Metrics for one Page post (GET /{postId}/insights), e.g. post_impressions, post_clicks, post_reactions_by_type_total.
+* **Get Video** `getVideo`: Read one Page video including processing status (GET /{videoId}).
+* **Hide Comment** `hideComment`: Hide or unhide a comment on the Page's content (POST /{commentId}?is_hidden=true|false). Returns {success}.
+* **Like Object** `likeObject`: Like a post or comment as the Page (POST /{objectId}/likes). Returns {success}.
+* **List Albums** `listAlbums`: List the Page's photo albums (GET /{pageId}/albums).
+* **List App Subscriptions** `listAppSubscriptions`: List the app's current webhook subscriptions. Requires an app access token.
+* **List Form Leads** `listFormLeads`: List all leads submitted through a specific Lead Ads form, newest first, with the answers each person entered. Use this to backfill leads or to recover any the webhook missed. Requires the leads_retrieval permission and a Page access token for the Page that owns the form.
+* **List Granted Permissions** `listPermissions`: List the permissions the connected user has granted or declined for this app. Each entry has a permission name and a status of granted or declined. Use it to verify a connection carries the scopes an action needs before calling it.
+* **List Lead Forms** `listLeadForms`: List the Lead Ads instant forms attached to a Facebook Page. Returns each form's id, name, status and questions. Use the returned form id with List Form Leads. Requires a Page access token plus the pages_manage_ads or leads_retrieval permission.
+* **List Managed Pages** `listPages`: List the Facebook Pages the authenticated user manages. Each entry includes the Page access_token needed for publishing/engagement actions.
+* **List Page Photos** `listPagePhotos`: List photos uploaded by the Page (GET /{pageId}/photos?type=uploaded).
+* **List Page Ratings** `listPageRatings`: List recommendations/reviews left on the Page (GET /{pageId}/ratings).
+* **List Page Videos** `listPageVideos`: List videos uploaded by the Page (GET /{pageId}/videos).
+* **List Pages For Trigger** `listPagesForTrigger`: Lists the Facebook Pages the connected user manages, returning only each Page's id and name (no Page access tokens). Used by app triggers to let the user pick which Page's events to receive.
+* **List Published Posts** `listPublishedPosts`: List posts published by the Page (GET /{pageId}/published_posts).
+* **List Scheduled Posts** `listScheduledPosts`: List the Page's scheduled (not yet published) posts (GET /{pageId}/scheduled_posts).
+* **Publish Photo** `publishPhoto`: Publish a photo to a Page from a hosted image URL. Requires a Page access token.
+* **Publish Video** `publishVideo`: Publish a video to a Page from a hosted file URL. Requires a Page access token.
+* **Subscribe Page App** `subscribePageApp`: Install/subscribe the app on a Page so it receives webhook notifications. Requires a Page access token.
+* **Unlike Object** `unlikeObject`: Remove the Page's like from a post or comment (DELETE /{objectId}/likes). Returns {success}.
+* **Unsubscribe Page App** `unsubscribePageApp`: Uninstall/unsubscribe the app from a Page. Requires a Page access token.
+* **Update Comment** `updateComment`: Edit a comment the Page wrote (POST /{commentId} message). Returns {success}.
+* **Update Post** `updatePost`: Edit the text of a Page post (POST /{postId} message). Returns {success}.
 
 </details>
 

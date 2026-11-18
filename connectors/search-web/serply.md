@@ -5,7 +5,7 @@ hidden: true
 
 # Serply
 
-<img src="../../.gitbook/assets/connectors/serply.png" alt="Serply logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/serply.png" alt="Serply logo">
 
 Serply provides real-time search engine results and web scraping over a simple REST API. This connector covers the full Serply API: Google Search, Google Video, Google Images, Google Jobs, Google Scholar, Google News, Google Maps, Bing Search, Amazon product search, eBay search, Reddit subreddits, users, posts and comment threads, and the URL scraping Request endpoint that returns full HTML or markdown.
 
@@ -39,13 +39,11 @@ Add Serply from **Build → Integrations → Connectors** and connect an account
 
 <summary>See 6 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Google Jobs | `searchGoogleJobs` | Searches Google Jobs for listings matching a position title and optional location, returning employer, location, apply link and posting date for each job. Currently only jobs in North America are supported. |
-| Search Google Maps | `searchGoogleMaps` | Searches Google Maps for places matching a location or category query and returns structured place records including name, address, coordinates, rating, categories, phone, website, timezone and opening hours. |
-| Search Google News | `searchGoogleNews` | Searches Google News for articles from thousands of sources and returns the news feed metadata and the matching article entries with title, link, publication date, summary and source. Results can be scoped to a country and language edition. |
-| Search Google Scholar | `searchGoogleScholar` | Searches scholarly literature for academic papers and articles, returning title, link, authors, open-access document link and citation count for each article. Supports page size up to 200 and offset pagination. |
-| Search Google Videos | `searchGoogleVideos` | Runs a Google Video search and returns video results with their titles, links and positions, plus any other SERP features on the page. Supports search operators, page size, offset pagination, proxy location and device type. |
-| Search Products | `searchProducts` | Searches Amazon product listings and returns each product's ASIN, title, price, rating, review count, image, Prime eligibility, bestseller flag and sponsored status. |
+* **Search Google Jobs** `searchGoogleJobs`: Searches Google Jobs for listings matching a position title and optional location, returning employer, location, apply link and posting date for each job. Currently only jobs in North America are supported.
+* **Search Google Maps** `searchGoogleMaps`: Searches Google Maps for places matching a location or category query and returns structured place records including name, address, coordinates, rating, categories, phone, website, timezone and opening hours.
+* **Search Google News** `searchGoogleNews`: Searches Google News for articles from thousands of sources and returns the news feed metadata and the matching article entries with title, link, publication date, summary and source. Results can be scoped to a country and language edition.
+* **Search Google Scholar** `searchGoogleScholar`: Searches scholarly literature for academic papers and articles, returning title, link, authors, open-access document link and citation count for each article. Supports page size up to 200 and offset pagination.
+* **Search Google Videos** `searchGoogleVideos`: Runs a Google Video search and returns video results with their titles, links and positions, plus any other SERP features on the page. Supports search operators, page size, offset pagination, proxy location and device type.
+* **Search Products** `searchProducts`: Searches Amazon product listings and returns each product's ASIN, title, price, rating, review count, image, Prime eligibility, bestseller flag and sponsored status.
 
 </details>

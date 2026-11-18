@@ -5,7 +5,7 @@ hidden: true
 
 # Metropolitan Museum of Art
 
-<img src="../../.gitbook/assets/connectors/metropolitan-museum-of-art.png" alt="Metropolitan Museum of Art logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/metropolitan-museum-of-art.png" alt="Metropolitan Museum of Art logo">
 
 The Metropolitan Museum of Art Collection API: free, keyless access to 470,000+ open-access artwork records - search the collection, list object ids by department or update date, read full object records with images, artists and dates, and list curatorial departments.
 

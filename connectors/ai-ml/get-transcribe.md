@@ -5,7 +5,7 @@ hidden: true
 
 # GetTranscribe
 
-<img src="../../.gitbook/assets/connectors/get-transcribe.png" alt="GetTranscribe logo" width="64">
+<img src="../../.gitbook/assets/connectors/lg/get-transcribe.png" alt="GetTranscribe logo">
 
 GetTranscribe transcribes and analyzes social videos from Instagram, TikTok, YouTube, Facebook, X, Pinterest, Google Drive and direct video URLs. This connector covers the full GetTranscribe REST API: asynchronous transcription jobs (create, poll, list), finished transcriptions with word-level timing and media URLs, direct video download URL resolution, folder organization, and account and usage information.
 
@@ -39,11 +39,9 @@ Add GetTranscribe from **Build → Integrations → Connectors** and connect an 
 
 <summary>See 4 more actions</summary>
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Folders | `listFolders` | Lists your transcription folders with pagination and sorting, optionally filtered to the subfolders of a given parent. Returns a paginated envelope with total, limit, skip and the folder records. |
-| List Transcription Jobs | `listTranscriptionJobs` | Lists the transcription jobs belonging to your account with pagination, sorting and optional status or id filters. Returns a paginated envelope with total, limit, skip and the job records. Completed jobs carry a transcription_id for Get Transcription. |
-| List Transcriptions | `listTranscriptions` | Lists your transcriptions as a lightweight index with pagination, sorting and optional folder or platform filters. List rows do not include the transcript text or download URLs; use Get Transcription for the full record. |
-| Update Folder | `updateFolder` | Updates a transcription folder's name and/or moves it under a different parent folder. Only the fields you pass are changed; pass parent_id as null to move the folder to the root level. Returns the updated folder record. |
+* **List Folders** `listFolders`: Lists your transcription folders with pagination and sorting, optionally filtered to the subfolders of a given parent. Returns a paginated envelope with total, limit, skip and the folder records.
+* **List Transcription Jobs** `listTranscriptionJobs`: Lists the transcription jobs belonging to your account with pagination, sorting and optional status or id filters. Returns a paginated envelope with total, limit, skip and the job records. Completed jobs carry a transcription_id for Get Transcription.
+* **List Transcriptions** `listTranscriptions`: Lists your transcriptions as a lightweight index with pagination, sorting and optional folder or platform filters. List rows do not include the transcript text or download URLs; use Get Transcription for the full record.
+* **Update Folder** `updateFolder`: Updates a transcription folder's name and/or moves it under a different parent folder. Only the fields you pass are changed; pass parent_id as null to move the folder to the root level. Returns the updated folder record.
 
 </details>
