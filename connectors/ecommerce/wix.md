@@ -28,11 +28,20 @@ This guide shows where your customers find the Wix values fastn asks for when th
 ### Get your Wix credentials
 Fastn's **Wix API Key** method asks for `apiKey`, `siteId` and an optional `accountId`.
 
-1. In Wix, go to **Account Settings** and open **API Keys**.
+1. In Wix, open your account page (manage.wix.com/account) and click **API Keys** in the left sidebar.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wix/api-keys.png" alt="The API Keys page in your Wix account"><figcaption><p>The API Keys page in your Wix account</p></figcaption></figure>
+
 2. Click **Generate API Key**.
-3. Under **Key details**, enter a name for the key.
-4. Select the permissions the key needs for the actions you plan to run (for example Stores, eCommerce, Contacts or Bookings). Limit site access to the sites you need.
-5. Click **Generate Key**, then click **Send Code** and enter the 6-digit code Wix emails you in the **Verify your account** pop-up.
+3. Under **Key details**, enter a **Name** for the key. Under **Sites**, choose **All sites** or **Specific sites** to limit the key to the sites you need.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wix/generate-api-key.png" alt="Naming the key and choosing which sites it can access"><figcaption><p>Naming the key and choosing which sites it can access</p></figcaption></figure>
+
+4. Under **Permissions**, select the permissions the key needs for the actions you plan to run. **Basic permissions** (Get Sites List) are always included; open **All site permissions** with **See all** to pick site-level areas such as Stores, eCommerce, Contacts or Bookings.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wix/permissions.png" alt="The Permissions section of the Generate API Key page"><figcaption><p>The Permissions section of the Generate API Key page</p></figcaption></figure>
+
+5. Click **Generate Key**. In the **Verify your account** pop-up, click **Send Code** and enter the 6-digit code Wix emails you. The code is valid for 10 minutes.
 6. Click **Verify & Generate Key**, then **Copy Token & Close**. This is your `apiKey`. Wix shows the token only once, so store it safely.
 7. On the same **API Keys** page, click **Copy ID** under **Account ID**. This is your `accountId`, used for account-level actions such as Query Sites.
 8. Open the site's dashboard and look at the browser address bar. The ID after `/dashboard/` (for example `manage.wix.com/dashboard/<site-id>/home`) is your `siteId`. You can also list site IDs with the Query Sites action.

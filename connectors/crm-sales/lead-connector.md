@@ -26,14 +26,27 @@ This guide shows how to connect GoHighLevel to fastn, either with your own GoHig
 - Some endpoints depend on your GoHighLevel plan and the token's scopes, not only on the connection.
 
 ### Create your GoHighLevel app
-1. Sign in to the GoHighLevel Marketplace, open **My Apps**, and click **Create App**.
-2. Enter an **APP Name**, choose the **APP Type** (Private is a good start for testing), and pick the **Target User** and **Who can install** settings. Choose Sub-account for the sub-account (location) connection, or Agency for the agency (company) connection.
-3. Go to **Advanced Settings > Auth**.
-4. In the **Redirect URL** field, enter `https://oauth.live.fastn.ai` and click **Add**. Enter it exactly, with no trailing slash.
-5. In the **Select Scope** dropdown, add the scopes fastn requests.
+1. Sign in to the GoHighLevel Marketplace at marketplace.gohighlevel.com. On the **App dashboard**, click **Create app**.
+2. In the **Start from scratch** dialog, enter an **App name** and choose the **App type** (Private is a good start for testing). Under **Who is the target user of the app?**, choose **Sub-Account** for the sub-account (location) connection or **Agency** for the agency (company) connection, pick **Who can install the app?**, and click **Create app**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/leadConnector/create-app.png" alt="The Start from scratch dialog with the app name, app type and target user"><figcaption><p>The Start from scratch dialog with the app name, app type and target user</p></figcaption></figure>
+
+3. In the app's sidebar, go to **BUILD > Advanced Settings > Auth**.
+4. Under **Redirect URLs**, enter `https://oauth.live.fastn.ai` in the **Redirect URL** field and click **Add**. Enter it exactly, with no trailing slash. It then appears under **Added redirect URLs**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/leadConnector/redirect-url.png" alt="fastn's redirect URL added to the app"><figcaption><p>fastn's redirect URL added to the app</p></figcaption></figure>
+
+5. Under **Scopes**, search for each scope fastn requests, tick it (or use **Select all** for a group), and click **Save**. Scopes that do not match the app's target user are hidden unless you turn on **Show unavailable**.
    - For the sub-account connection: `contacts.readonly`, `contacts.write`, `conversations.readonly`, `conversations.write`, `conversations/message.readonly`, `conversations/message.write`, `opportunities.readonly`, `opportunities.write`, `calendars.readonly`, `calendars.write`, `calendars/events.readonly`, `calendars/events.write`, `calendars/groups.readonly`, `calendars/groups.write`, `calendars/resources.readonly`, `calendars/resources.write`, `forms.readonly`, `surveys.readonly`, `workflows.readonly`, `campaigns.readonly`, `links.readonly`, `links.write`, `locations.readonly`, `locations/customFields.readonly`, `locations/customFields.write`, `locations/customValues.readonly`, `locations/customValues.write`, `locations/tags.readonly`, `locations/tags.write`, `locations/tasks.readonly`, `locations/templates.readonly`, `users.readonly`, `users.write`, `businesses.readonly`, `businesses.write`, `medias.readonly`, `medias.write`, `invoices.readonly`, `invoices.write`, `invoices/estimate.readonly`, `invoices/estimate.write`, `invoices/schedule.readonly`, `invoices/schedule.write`, `invoices/template.readonly`, `invoices/template.write`, `products.readonly`, `products.write`, `products/prices.readonly`, `products/prices.write`, `products/collection.readonly`, `products/collection.write`, `payments/orders.readonly`, `payments/orders.write`, `payments/transactions.readonly`, `payments/subscriptions.readonly`, `payments/coupons.readonly`, `payments/coupons.write`, `payments/integration.readonly`, `payments/integration.write`, `objects/schema.readonly`, `objects/schema.write`, `objects/record.readonly`, `objects/record.write`, `associations.readonly`, `associations.write`, `associations/relation.readonly`, `associations/relation.write`.
    - For the agency connection: `companies.readonly`, `locations.readonly`, `locations.write`, `users.readonly`, `users.write`, `snapshots.readonly`, `oauth.readonly`, `oauth.write`, `saas/company.write`, `saas/location.read`, `saas/location.write`, `emails/schedule.readonly`.
-6. Under **Client Keys**, click **Add**, name the key pair, and save it. Copy the Client ID and Client Secret right away. GoHighLevel does not show the secret again after you close the dialog.
+
+<figure><img src="../../.gitbook/assets/connector-guides/leadConnector/scopes.png" alt="Selecting scopes on the Auth page"><figcaption><p>Selecting scopes on the Auth page</p></figcaption></figure>
+
+6. In the sidebar, go to **MANAGE > Secrets**. Under **Client keys**, click **Add**, enter a name for the key, and click **Add**. Copy the Client ID and Client Secret right away. GoHighLevel does not show the secret again after you close the dialog.
+
+<figure><img src="../../.gitbook/assets/connector-guides/leadConnector/client-keys.png" alt="The Client keys section under Manage > Secrets"><figcaption><p>The Client keys section under Manage > Secrets</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/connector-guides/leadConnector/add-client-key.png" alt="Naming a new client key"><figcaption><p>Naming a new client key</p></figcaption></figure>
 
 Scopes can only be changed while the app is a draft, so add them all before you publish.
 
