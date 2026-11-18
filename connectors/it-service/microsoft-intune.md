@@ -1,0 +1,60 @@
+---
+description: "Microsoft Intune device management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/deviceManagement)."
+---
+
+# Microsoft Intune
+
+Microsoft Intune device management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/deviceManagement). Reads Intune managed devices, detected apps, compliance policies, device configuration profiles and their state summaries, enrolment configurations, terms and conditions, RBAC role definitions, connectors, troubleshooting events and mobile apps. Also manages the Microsoft Entra ID groups Intune targets (list, filter to security groups, count, read, create, delete, add a device member, delta and transitive members), reads the organization profile, manages Microsoft Graph change-notification subscriptions and issues JSON batch requests. Device management scripts use the Microsoft Graph beta endpoint because deviceManagementScripts is not available in v1.0. Connect with a Microsoft work or school account using Entra ID OAuth 2.0; the Intune permissions require tenant administrator consent and an active Intune licence.
+
+| | |
+| --- | --- |
+| **Category** | [IT and service management](README.md) |
+| **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
+| **Authentication** | OAuth 2.0 |
+| **Actions** | 35 |
+| **Events** | 0 |
+| **Slug** | `microsoftIntune` |
+
+## Use it
+
+Add Microsoft Intune from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.microsoftIntune.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+| Action | Slug | What it does |
+| --- | --- | --- |
+| Add Device To Group | `addDeviceToGroup` | Adds a device to a Microsoft Entra ID security group so that Intune policies, scripts and apps assigned to that group target the device. Member Reference URL is the full Graph read URL of the device, for example https://graph.microsoft.com/v1.0/devices/{device-object-id}. Only security groups accept device members. |
+| Create Device Management Script | `createScript` | Creates an Intune device management (PowerShell) script that can then be assigned to device or user groups. Script Content must be base64-encoded. The deviceManagementScripts resource exists only on the Microsoft Graph beta endpoint, so this action calls https://graph.microsoft.com/beta. |
+| Create Group | `createGroup` | Creates a Microsoft Entra ID security group or Microsoft 365 group that Intune policies, scripts and apps can be assigned to. Display Name, Mail Nickname, Mail Enabled and Security Enabled are required; set Group Types to ['Unified'] for a Microsoft 365 group or leave it empty for a security group. |
+| Create Subscription | `createSubscription` | Creates a Microsoft Graph change-notification subscription so a listener endpoint receives notifications when the watched resource changes, for example groups or devices. Microsoft Graph validates the Notification URL synchronously: it POSTs a validationToken to that URL and the endpoint must echo it back as plain text within 10 seconds, otherwise creation fails. |
+| Delete Device Management Script | `deleteScript` | Permanently deletes an Intune device management (PowerShell) script and removes it from every group it was assigned to. The deviceManagementScripts resource exists only on the Microsoft Graph beta endpoint, so this action calls https://graph.microsoft.com/beta. |
+| Delete Group | `deleteGroup` | Deletes a Microsoft Entra ID group by its object ID. Deleted Microsoft 365 groups are moved to a soft-deleted state for 30 days; security groups are removed permanently. Use with care - deleting a group removes every Intune assignment that targeted it. |
+| Delete Subscription | `deleteSubscription` | Deletes a Microsoft Graph change-notification subscription so the listener endpoint stops receiving notifications for that resource. Returns 204 No Content on success. |
+| Execute Batch | `executeBatch` | Combines up to 20 Microsoft Graph requests into a single JSON batch call, cutting network round trips when reading several Intune or directory resources at once. Each entry needs a unique id, a method and a service-root-relative url such as /deviceManagement/managedDevices. The outer call returns 200 even when individual requests fail, so always check the status of each entry in the responses array. |
+| Get Device Compliance Policy Device State Summary | `getDeviceCompliancePolicyDeviceStateSummary` | Retrieves the tenant-wide summary of device compliance, counting how many devices are compliant, non-compliant, in a grace period, in conflict, in error or not yet evaluated against their Intune compliance policies. |
+| Get Group By ID | `getGroupById` | Retrieves a single Microsoft Entra ID group by its object ID. Use the Select input to request properties that are not returned by default. |
+| Get Managed Device | `getManagedDevice` | Retrieves a single Intune managed device by its identifier, returning its owner, platform, compliance state, enrolment details and hardware identifiers. |
+| Get Managed Device Overview | `getManagedDeviceOverview` | Retrieves the tenant-wide summary of Intune enrolment, including total enrolled device count, dual-enrolled devices and the breakdown of devices by operating system and by management agent. |
+| Get Organization | `getOrganization` | Retrieves the organization (tenant) profile, including the tenant ID, display name, verified domains, country and the service plans provisioned for the tenant. Useful for confirming that an Intune service plan is present before calling the device management endpoints. |
+| Get Security Groups Count | `getSecurityGroupsCount` | Returns the number of Microsoft Entra ID security groups in the organization as a plain integer, using the /groups/$count advanced query. The ConsistencyLevel header set to eventual is required for $count and is sent automatically. |
+| List Detected Apps | `listDetectedApps` | Lists the applications Intune has detected on managed devices, with each app's name, version, publisher, size and the number of devices it was found on. |
+| List Device Compliance Policies | `listDeviceCompliancePolicies` | Lists the Intune device compliance policies defined in the tenant. Each policy is a platform-specific subtype identified by its @odata.type, so the properties returned vary between Windows, iOS, Android and macOS policies. |
+| List Device Configuration Device State Summaries | `listDeviceConfigurationDeviceStateSummaries` | Retrieves the tenant-wide summary of device configuration profile deployment, counting how many devices succeeded, failed, are pending, are in conflict or are not applicable for their assigned Intune configuration profiles. |
+| List Device Configurations | `listDeviceConfigurations` | Lists the Intune device configuration profiles defined in the tenant. Each profile is a platform-specific subtype identified by its @odata.type, so the properties returned vary by platform and profile kind. |
+| List Device Enrollment Configurations | `listDeviceEnrollmentConfigurations` | Lists the Intune device enrolment configurations for the tenant, such as enrolment restrictions and the device limit policy, with their priority and assignment metadata. Each entry is a subtype identified by its @odata.type. |
+| List Device Management Partners | `listDeviceManagementPartners` | Lists the third-party device management partners integrated with Intune, such as mobile threat defence or partner MDM providers, with each partner's state, heartbeat and configuration URL. |
+| List Device Management Scripts | `listScripts` | Lists the Intune device management (PowerShell) scripts configured in the tenant, returning each script's name, run-as context, signature enforcement and base64-encoded content. The deviceManagementScripts resource exists only on the Microsoft Graph beta endpoint, so this action calls https://graph.microsoft.com/beta. |
+| List Devices | `listDevices` | Lists the device objects registered in the Microsoft Entra ID directory, including devices enrolled in Intune. Advanced queries such as $search or $count require the ConsistencyLevel header set to eventual. |
+| List Devices By Group | `listDevicesByGroup` | Lists the device members of a Microsoft Entra ID group using the microsoft.graph.device OData cast, so only devices are returned. Useful for reading the device membership of an Intune assignment group. The OData cast requires the ConsistencyLevel header set to eventual. |
+| List Exchange Connectors | `listExchangeConnectors` | Lists the Intune Exchange connectors configured for the tenant, showing each connector's server, status, version and last synchronisation time. |
+| List Groups | `listGroups` | Lists the Microsoft Entra ID groups in the organization, excluding dynamic distribution groups. These are the groups Intune policies, scripts and apps are assigned to. Advanced queries such as $search or $count require the ConsistencyLevel header set to eventual. |
+| List Groups Delta | `listGroupsDelta` | Tracks changes to Microsoft Entra ID groups without reading the whole collection, returning created, updated and deleted groups since the last round. Call once with no token to seed the state, then pass the token from the previous @odata.deltaLink as Delta Token for each subsequent round. Select 'members' to track membership changes. |
+| List Managed Devices | `listManagedDevices` | Lists the devices enrolled in and managed by Microsoft Intune, returning each managedDevice with its owner, platform, compliance state, enrolment details and hardware identifiers. Requires an active Intune licence on the tenant. |
+| List Mobile Apps | `listMobileApps` | Lists the applications added to Intune for deployment to managed devices. Each app is a platform-specific subtype identified by its @odata.type, such as a Windows store app, iOS store app or line-of-business app. |
+| List Role Definitions | `listRoleDefinitions` | Lists the Intune role-based access control role definitions in the tenant, both the built-in roles and any custom roles, with the permissions each one grants. |
+| List Security Groups | `listSecurityGroups` | Lists only the Microsoft Entra ID security groups in the organization, using the documented filter securityEnabled eq true and mailEnabled eq false. Security groups are the group type Intune device assignments normally target. |
+| List Subscriptions | `listSubscriptions` | Lists the Microsoft Graph change-notification subscriptions the signed-in app and user currently hold, with the watched resource, notification endpoint and expiry of each. Use it to confirm a subscription was created or removed. |
+| List Terms And Conditions | `listTermsAndConditions` | Lists the Intune terms and conditions policies users must accept before enrolling a device, with the title, body text and acceptance statement of each. |
+| List Transitive Members | `listTransitiveMembers` | Lists every member of a Microsoft Entra ID group as a flat list, including members inherited through nested groups. Use it to see the full effective target of an Intune assignment. Query parameters other than $expand require the ConsistencyLevel header set to eventual, which is sent automatically. |
+| List Troubleshooting Events | `listTroubleshootingEvents` | Lists the Intune device management troubleshooting events recorded for the tenant, each with its event date, correlation ID and the user and device it relates to. |
+| Reauthorize Subscription | `reauthorizeSubscription` | Reauthorizes a Microsoft Graph change-notification subscription after a reauthorizationRequired lifecycle notification, proving the app still holds valid permissions on the watched resource. Takes no request body and returns 204 No Content on success; renew the subscription separately if it is also close to expiry. |

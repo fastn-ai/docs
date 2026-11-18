@@ -1,0 +1,47 @@
+---
+description: "Carbone Cloud document generation API (api.carbone.io)."
+---
+
+# Carbone
+
+Carbone Cloud document generation API (api.carbone.io). Upload and manage DOCX/XLSX/ODT/HTML/MD templates, merge them with JSON data to render PDF/DOCX/XLSX/CSV/images, and download generated reports. Requires an API token from account.carbone.io; every request also sends the carbone-version: 5 header.
+
+| | |
+| --- | --- |
+| **Category** | [Docs and knowledge](README.md) |
+| **Website** | [carbone.io](https://carbone.io) |
+| **Authentication** | API key |
+| **Actions** | 14 |
+| **Events** | 1 |
+| **Slug** | `carbone` |
+
+## Use it
+
+Add Carbone from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.carbone.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+| Action | Slug | What it does |
+| --- | --- | --- |
+| Delete Template | `deleteTemplate` | Deletes a template and all of its versions when given a Template ID, or a single version when given a Version ID. Internally sets expireAt to now: the template immediately stops being listed, downloadable and renderable, and the file is purged after the storage retention delay. |
+| Download Generated Report | `downloadGeneratedReport` | Fetches the document produced by a render, using the renderId returned by a render action. The file stream is returned. SECURITY NOTE: Carbone serves this route WITHOUT authentication - anyone holding the renderId can download the document from https://api.carbone.io/render/{renderId}. The renderId is single-use and expires after one hour; the document is deleted as soon as it is downloaded, so a second call returns 404 File not found. |
+| Download Template | `downloadTemplate` | Downloads the stored template file as a stream. Accepts either a Template ID (returns the latest deployed version) or a Version ID (returns that exact version). Returns the raw file bytes, not JSON. |
+| Download Template Data Sample | `downloadTemplateDataSample` | Downloads the JSON data sample attached to a template or template version, used by Carbone Studio for testing. Hits GET /template/{id}_sample.json. Returns 404 Template not found when the template has no sample stored. |
+| Get Account Info | `getAccountInfo` | Returns the account identity behind the API token: email, role and token type (test or production). Undocumented but live endpoint. Useful to verify a stored credential and to tell a test token (30-day template retention, watermarked output) from a production token. |
+| Get API Status | `getApiStatus` | Health check for the Carbone API. Returns the running Carbone engine version. This is the only endpoint besides Download Generated Report that does not require authentication. |
+| List Template Categories | `listTemplateCategories` | Returns every category name used by deployed templates, sorted alphabetically. Categories act like folders for grouping templates. |
+| List Template Tags | `listTemplateTags` | Returns every tag used by deployed templates, sorted alphabetically. Tags are free-form labels attached to a template at upload or patch time. |
+| List Templates | `listTemplates` | Lists templates stored in Carbone template storage with their metadata (id, versionId, name, category, tags, size, type, timestamps, origin). Supports fuzzy search on name, exact match on id/versionId, category and origin filters, cursor pagination. |
+| Render Report Asynchronously To Webhook | `renderReportAsyncToWebhook` | Asynchronous render: same POST /render/{templateId} route, but with the carbone-webhook-url header set, so Carbone answers immediately and POSTs {"success":true,"data":{"renderId":"..."}} to your URL once the document is ready. Raises the render timeout from 60 seconds to 5 minutes and is the only way to use batch processing (batchSplitBy). This is Carbone's ONLY event mechanism - there is no webhook subscription API, the callback URL is supplied per render. |
+| Render Report From Inline Template | `renderReportFromInlineTemplate` | One-shot render or file conversion without uploading a template first: the source file is passed as a base64 string in the 'template' body field and is never stored. Hits POST /render/template. This is the endpoint behind Carbone's document conversion use cases (HTML to PDF, DOCX to PDF, XLSX to CSV, MD to DOCX, PDF to image). Set download=true to get the generated file back directly. |
+| Render Report From Stored Template | `renderReportFromStoredTemplate` | Merges a stored template (by Template ID or Version ID) with a JSON dataset and generates a document, optionally converting it to PDF, DOCX, XLSX, CSV, HTML, JPG or PNG. With download=false (default) it returns a renderId to fetch with Download Generated Report; with download=true it streams the generated file directly and stores nothing. |
+| Update Template Metadata | `updateTemplateMetadata` | Patches the metadata of a stored template or template version: name, comment, tags, category, deployedAt, expireAt, and the owning Template ID. Does not replace the file itself - upload a new version with Upload Template for that. Returns versionId plus the fields that were sent. |
+| Upload Template | `uploadTemplate` | Uploads a DOCX/XLSX/PPTX/ODT/ODS/HTML/MD/TXT template to Carbone template storage and returns its templateId (and versionId when versioning is enabled). The file is sent as a base64 string in the 'template' field (pure base64 or a base64 data-URI) - the JSON route, not multipart. Optional metadata: name, comment, tags, category, sample, deployedAt, expireAt, origin, versioning, id. |
+
+## Events
+
+Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
+
+| Event | Id | When it fires |
+| --- | --- | --- |
+| Report Rendered | `report.rendered` | Fires when Carbone finishes an asynchronous render. Carbone has NO webhook subscription API - the callback URL is supplied per render, so there is nothing for fastn to register and nothing to unsubscribe. SETUP (per render, not once): copy this trigger's fastn webhook URL, then call the 'Render Report Asynchronously To Webhook' action with carboneWebhookUrl set to that URL (Carbone sends it as the carbone-webhook-url request header). Optionally set carboneWebhookHeaderAuthorization to a shared secret, which Carbone sends back as the authorization header on the callback. Carbone then POSTs {"success":true,"data":{"renderId":"..."}} with User-Agent: Carbone, and retries once on 408/429/502/503/504/521/522/524 or a socket error (16s request timeout). Pass the renderId to 'Download Generated Report'; it is single-use and expires after one hour. The payload carries NO account identifier and NO event-type discriminator - report.rendered is the only event Carbone emits - so there is no eventKey and no mappedTo account filter; routing is inherent because the callback URL is per trigger. payloadSchema below was captured from a REAL Carbone delivery, not modelled. |

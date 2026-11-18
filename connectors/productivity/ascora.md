@@ -1,0 +1,96 @@
+---
+description: "Ascora field service and job management platform."
+---
+
+# Ascora
+
+Ascora field service and job management platform. Manage enquiries, customers and contacts, inventory supplies, kits and categories, quotations and quote line items, jobs, job labour and timesheets, suppliers and supplier invoices, notes, attachments, accounting integration (invoices and payments to send), users, and webhook subscriptions.
+
+| | |
+| --- | --- |
+| **Category** | [Productivity](README.md) |
+| **Website** | [ascora.com.au](https://ascora.com.au) |
+| **Authentication** | API key |
+| **Actions** | 48 |
+| **Events** | 16 |
+| **Slug** | `ascora` |
+
+## Use it
+
+Add Ascora from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.ascora.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+| Action | Slug | What it does |
+| --- | --- | --- |
+| Add Kits to Quote | `addQuoteKits` | Add one or more inventory kits to an existing Ascora quotation. Give the full quote number including any section or stage numbering, for example Q1234.01 to add to section 1. |
+| Add Labour Items to Quote | `addQuoteLabourItems` | Add labour items to an existing Ascora quotation, by labour role GUID and number of hours. Use List Quote Labour Roles to obtain the labour role identifiers. |
+| Add Sections to Quote | `addQuoteSections` | Add child sections to an Ascora quotation. Each section carries its own labour, supplies and kits, and the parent quote total becomes the sum of its sections. The quotation must already use the SECTIONS pricing method, otherwise Ascora returns code INVALID-PRICING-METHOD. |
+| Add Supplies to Quote | `addQuoteSupplies` | Add one or more inventory supplies to an existing Ascora quotation. Give the full quote number including any section or stage numbering, for example Q1234.01 to add to section 1. |
+| Add Write-Ins to Quote | `addQuoteWriteIns` | Add ad-hoc write-in line items to an existing Ascora quotation. Write-ins are items that do not exist in your price lists. The default write-in category is applied automatically. |
+| Clear Quote Items | `clearQuoteItems` | Remove all supplies, kits and/or labour items from an Ascora quotation. On a section-based quote this affects only the quote number given, so pass the full section number such as Q1234.01 to clear a single section. |
+| Create Enquiry | `createEnquiry` | Push an enquiry (lead) captured in another system into Ascora. Returns the id of the newly created enquiry. Note that Ascora has no API to delete an enquiry once created. |
+| Create Job | `createJob` | Create a new job in Ascora. Only the site customer is required; when the job type, pricing method, billing customer or address are omitted, Ascora falls back to the defaults and to the site customer's own address. Returns the created job including its generated job number. |
+| Create Note | `createNote` | Add a note to an existing Ascora entity such as a job, quotation, enquiry, invoice or customer. Returns the id of the created note. |
+| Create or Update Contact | `createOrUpdateContact` | Create a contact against an Ascora customer, or update an existing contact when contactId is supplied. The contact role is matched by name and is created automatically if it does not already exist. |
+| Create or Update Customer | `createOrUpdateCustomer` | Create a new customer in Ascora, or update an existing one when customerId is supplied. Customer Type and Lead Source are entity links given by id or by name, and are created automatically if the name does not already exist. Returns the saved customer record. |
+| Create or Update Supplier | `createOrUpdateSupplier` | Create a new supplier in Ascora, or update an existing one when supplierId is supplied. Returns the saved supplier record. |
+| Create Payment | `createPayment` | Record a payment in Ascora against an existing customer invoice. This writes a payment record into Ascora; it does not take money. Validation codes returned are INVOICE-NOT-SPECIFIED, INVOICE-NOT-FOUND, PAYMENT-METHOD-NOT-FOUND and PAYMENT-EXCEEDS-BALANCE. |
+| Create Quote | `createQuote` | Create a new quotation in Ascora. Only the site customer is required. Supplies, kits, labour items and write-ins can be attached in the same request, and a section-based quote is built by setting the pricing method to SECTIONS and supplying child quotes. Returns the created quotation including its generated quote number. |
+| Create Supplier Invoice | `createSupplierInvoice` | Create a supplier invoice or credit note in Ascora against an existing supplier. Attachments can be added afterwards with Upload Attachment using the returned supplier invoice id. |
+| Create Webhook Subscription | `createWebhookSubscription` | Subscribe an external URL to an Ascora event. Ascora calls the URL whenever the event fires. Returns the subscription id, which is needed to remove the subscription later. |
+| Delete Quote | `deleteQuote` | Delete an Ascora quotation, or a single section of one by passing the full section number such as Q93.02. Deleting a section recalculates the parent totals and renumbers the remaining sections. Only quotations still In Progress can be deleted; anything else returns code INVALID-STATUS. |
+| Delete Webhook Subscription | `deleteWebhookSubscription` | Remove an Ascora webhook subscription by its subscription id, so that Ascora stops calling the registered URL. The subscription id is returned when the subscription is created. |
+| Get Contact | `getContact` | Retrieve a single customer contact by its contact GUID. |
+| Get Customer | `getCustomer` | Retrieve a single Ascora customer by its customer GUID, including street and postal addresses, contact details, customer type and lead source. |
+| Get Job | `getJob` | Retrieve a single Ascora job by its full job number, for example J112. Returns success false with a message when no job matches. |
+| Get Quote | `getQuote` | Retrieve a single Ascora quotation by its quote number, for example Q57. When targeting a section or stage of a quote, write the number with a dash instead of a dot, for example Q1234-01 rather than Q1234.01. Returns success false with code QUOTE-NOT-FOUND when no quote matches. |
+| Get Supplier | `getSupplier` | Retrieve a single Ascora supplier by its supplier GUID. |
+| Get Supplier Invoice | `getSupplierInvoice` | Retrieve a single Ascora supplier invoice or credit note by its supplier invoice GUID, including all line items. |
+| List Contacts For Customer | `listContactsForCustomer` | List every contact attached to a given Ascora customer, identified by the customer GUID. |
+| List Inventory Categories | `listInventoryCategories` | List the inventory categories used to segment supplies and kits in Ascora. A category sits in Category 1 or Category 2, and may be a sub-category under a parent. All filters are optional. |
+| List Inventory Kits | `listInventoryKits` | List Ascora inventory kits. A kit is a package or assembly combining any number of supplies and labour items. All filters are optional. |
+| List Inventory Supplies | `listInventorySupplies` | List Ascora inventory supplies, the basic price-list items such as materials or services. All filters are optional. |
+| List Invoices To Send | `listInvoicesToSend` | List the customer invoices dated before the given date that still need to be pushed to your accounting package. Intended for accounting packages without a direct API connection; Xero, MYOB and QuickBooks integrate natively instead. Ascora returns a bare array, which this action wraps as items. |
+| List Job Labour | `listJobLabour` | List every labour line recorded against an Ascora job, identified by its full job number. Includes hours, hourly rate, role, the user who logged it and whether it has been invoiced. |
+| List Job Timesheets | `listJobTimesheets` | List every timesheet entry recorded against an Ascora job, identified by its full job number. Includes start and end times, meal breaks, cost and pay rates and whether the entry has been sent to payroll. |
+| List Payments To Send | `listPaymentsToSend` | List the payments entered into Ascora before the given date that still need to be pushed to your accounting package. Ascora returns a bare array, which this action wraps as items. |
+| List Quote Labour Roles | `listQuoteLabourRoles` | List every labour role configured in Ascora, ordered by name, with its hourly ex-tax rate. Use the returned labourRoleId when adding labour items to a quotation. Takes no inputs; Ascora returns a bare array, which this action wraps as items. |
+| List Quote Standard Sections | `listQuoteStandardSections` | List the standard quote sections configured in Ascora that can be selected and added to a quote or job. Takes no inputs. Ascora returns a bare array, which this action wraps as items. |
+| List Quote Standard Stages | `listQuoteStandardStages` | List the standard quote stages configured in Ascora that can be selected and added to a quote or job. Takes no inputs. Ascora returns a bare array, which this action wraps as items. |
+| List Users | `listUsers` | Retrieve every user (team member) configured in the Ascora account, including their login, email address, mobile number, job title and per-module access levels. Takes no inputs. |
+| List Webhook Subscriptions | `listWebhookSubscriptions` | List every webhook subscription currently registered in the Ascora account. Takes no inputs. Ascora returns a bare array, which this action wraps as items. |
+| Mark Invoices As Sent | `markInvoicesAsSent` | Mark customer invoices as Sent to Accounts in Ascora. Once marked they no longer appear in List Invoices To Send. Ascora responds with the bare count of invoices marked. |
+| Mark Payments As Sent | `markPaymentsAsSent` | Mark payments as having been sent to your accounting package. They then show as Sent to Accounts in Ascora and no longer appear in List Payments To Send. Ascora responds with the bare count of payments marked. |
+| Mark Supplier Invoices As Sent | `markSupplierInvoicesAsSent` | Mark supplier invoices as having been sent to your accounting package. They will then show as Sent to Accounts in Ascora and are excluded from Search Supplier Invoices when ToBeSentToAccountsOnly is true. Ascora responds with the bare count of invoices marked. |
+| Search Contacts | `searchContacts` | Search customer contacts across the whole Ascora account. All filters are optional; call with no filters to page through every contact. |
+| Search Customers | `searchCustomers` | Search the Ascora customer list. All filters are optional and combine with AND; call with no filters to page through every customer. Returns a paged envelope with totalPages and totalRecords. |
+| Search Jobs | `searchJobs` | Search Ascora jobs. All filters are optional and combine with AND. When no job status is given Ascora defaults to open jobs only, so pass ALL to search every job. |
+| Search Quotes | `searchQuotes` | Search Ascora quotations. All filters are optional and combine with AND. When no quote status is given Ascora defaults to OPEN, so pass ALL to search every quotation. |
+| Search Supplier Invoices | `searchSupplierInvoices` | Search Ascora supplier invoices and credit notes. Set ToBeSentToAccountsOnly to true to list only those that have not yet been pushed to your accounting package. All filters are optional. |
+| Search Suppliers | `searchSuppliers` | Search Ascora suppliers. Supplier name and supplier number are partial matches; business number is an exact match that ignores all white space. All filters are optional. |
+| Update Quote Status | `updateQuoteStatus` | Change the status of an Ascora quotation, for example to mark it as sent to the client, lost or won. Marking a quote as WON creates the related job and returns its identifier in the message. |
+| Upload Attachment | `uploadAttachment` | Attach a text file to an existing Ascora record such as a job, quotation, enquiry, task, supplier invoice, invoice, supply or customer. The file is sent as a multipart/form-data part named file. Text content only: the request body is UTF-8 encoded, so binary files such as images or PDFs cannot be uploaded through this action. Returns the id of the created attachment. |
+
+## Events
+
+Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
+
+| Event | Id | When it fires |
+| --- | --- | --- |
+| Booking Created | `BookingCreated` | Fires when a job booking is scheduled in Ascora. Not exercised: bookings are made in the Ascora scheduler and there is no API to create one, so the schema is modelled from the Ascora booking record. |
+| Booking Modified | `BookingModified` | Fires when an existing job booking is changed in Ascora. Not exercised, for the same reason as Booking Created; schema modelled from the Ascora booking record. |
+| Contact Created | `ContactCreated` | Fires when a customer contact is created in Ascora. KNOWN VENDOR ISSUE: a subscription to this event registers successfully but no delivery was received when a contact was created through the API, so treat delivery as unproven. Schema modelled on the Ascora contact record returned by Get Contact. |
+| Contact Modified | `ContactModified` | Fires when an existing customer contact is changed in Ascora. Delivery is unproven for the contact events, as noted on Contact Created. Schema modelled on the Ascora contact record returned by Get Contact. |
+| Customer Created | `CustomerCreated` | Fires when a customer is created in Ascora. KNOWN VENDOR ISSUE: a subscription to this event registers successfully but no delivery was received when a customer was created through the API, so treat delivery as unproven. Schema modelled on the Ascora customer record returned by Get Customer. |
+| Customer Modified | `CustomerModified` | Fires when an existing customer is changed in Ascora. Delivery is unproven for the customer events, as noted on Customer Created. Schema modelled on the Ascora customer record returned by Get Customer. |
+| Enquiry Created | `EnquiryCreated` | Fires when an enquiry is created in Ascora. The payload carries the enquiry contact and address details and the work description. Note that it does not include an enquiry id. Payload schema captured from a real delivery. |
+| Enquiry Modified | `EnquiryModified` | Fires when an existing enquiry is changed in Ascora. The payload is the same shape as Enquiry Created. Schema modelled on the captured Enquiry Created delivery. |
+| Invoice Created | `InvoiceCreated` | Fires when a customer invoice is created in Ascora. Not exercised: no customer invoice exists in the test account and Ascora has no API to raise one, so the schema is modelled on the invoice record returned by List Invoices To Send. |
+| Invoice Modified | `InvoiceModified` | Fires when an existing customer invoice is changed in Ascora. Not exercised, for the same reason as Invoice Created; schema modelled on the invoice record returned by List Invoices To Send. |
+| Job Created | `JobCreated` | Fires when a job is created in Ascora. The payload is the full job record. Payload schema captured from a real delivery. |
+| Job Modified | `JobModified` | Fires when an existing job is changed in Ascora. The payload is the full job record, in the same shape as Job Created. Schema modelled on the captured Job Created delivery. |
+| Job Status Changed | `JobStatusChanged` | Fires when the status of a job changes in Ascora. The payload is the full job record; read jobStatus and jobStatusText for the new status. Schema modelled on the captured Job Created delivery. |
+| Quote Created | `QuoteCreated` | Fires when a quotation is created in Ascora. The payload is the full quotation record. Payload schema captured from a real delivery. |
+| Quote Modified | `QuoteModified` | Fires when an existing quotation is changed in Ascora. The payload is the full quotation record, in the same shape as Quote Created. Schema modelled on the captured Quote Created delivery. |
+| Quote Status Changed | `QuoteStatusChanged` | Fires when the status of a quotation changes, for example when it is sent to the client, marked lost or won. The payload is the full quotation record; read quoteStatus and quoteStatusText for the new status, and quoteCloseDate when it is closed. Payload schema captured from a real delivery. |

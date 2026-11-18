@@ -1,0 +1,63 @@
+---
+description: "La Growth Machine is a multichannel B2B outreach platform combining LinkedIn, email and Twitter sequences."
+---
+
+# La Growth Machine
+
+La Growth Machine is a multichannel B2B outreach platform combining LinkedIn, email and Twitter sequences. This connector covers the full La Growth Machine public API: workspace, member, identity and credit information, audiences and audience leads, lead creation and enrichment, lead search, lead status and audience membership, campaign listing with statistics and messages, conversation history, LinkedIn and email inbox messaging with conversation notes, website visitor imports from RB2B, Warmly and Vector, and inbox webhook management.
+
+| | |
+| --- | --- |
+| **Category** | [CRM and sales](README.md) |
+| **Website** | [lagrowthmachine.com](https://lagrowthmachine.com) |
+| **Authentication** | Credentials you enter |
+| **Actions** | 30 |
+| **Events** | 1 |
+| **Slug** | `laGrowthMachine` |
+
+## Use it
+
+Add La Growth Machine from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.laGrowthMachine.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+| Action | Slug | What it does |
+| --- | --- | --- |
+| Create Audience From LinkedIn Search | `createAudienceFromLinkedInSearch` | Creates an audience and imports leads into it from a LinkedIn search, Sales Navigator search or LinkedIn post URL, using one of the workspace's connected LinkedIn identities. La Growth Machine has no audience delete endpoint, so audiences created this way must be removed in the web app. |
+| Create Inbox Webhook | `createInboxWebhook` | Registers a webhook that posts LinkedIn and email inbox events to a public URL, optionally limited to specific campaigns. |
+| Create Or Update Lead | `createOrUpdateLead` | Creates a lead in an audience, or updates the matching lead when one already exists. Supply the audience plus at least one identifier: a work or personal email, a LinkedIn URL, a Twitter handle, or a first and last name with a company name or company URL. La Growth Machine has no lead delete endpoint, so leads added this way must be removed in the web app. |
+| Delete Inbox Webhook | `deleteInboxWebhook` | Removes a registered inbox webhook so it stops receiving LinkedIn and email inbox events. |
+| Edit Conversation Note | `editConversationNote` | Adds to or replaces the internal note attached to an inbox conversation. Identify the conversation directly by its identifier, or indirectly through the lead. |
+| Get Audience Details | `getAudienceDetails` | Retrieves a single audience with its name, lead count and the campaigns that target it. |
+| Get Campaign | `getCampaign` | Retrieves a single campaign with its full configuration, including the sequence steps and the audience it targets. |
+| Get Campaign Statistics | `getCampaignStatistics` | Returns aggregate engagement statistics for a campaign, including message, reply and conversion counts broken down by channel. |
+| Get Credit Balance | `getCreditBalance` | Returns the workspace's remaining enrichment credit balance and the feature permissions granted by its plan. |
+| Get Current Account | `getCurrentAccount` | Returns the La Growth Machine account the API key belongs to, with its member identifier and email address. |
+| Import RB2B Website Visitor | `importRb2bWebsiteVisitor` | Pushes an identified website visitor from RB2B into a La Growth Machine audience, creating the audience when the name is new. This is RB2B's native receiver, so the body uses RB2B's own webhook field names rather than La Growth Machine's lead fields. RB2B requires First Name and LinkedIn URL for a visitor to be pushed. A visitor that already exists in the workspace is returned with status 'ignored' and is not duplicated. La Growth Machine has no audience or lead delete endpoint, so records added this way must be removed in the web app. |
+| Import Vector Website Visitor | `importVectorWebsiteVisitor` | Pushes an identified website visitor from Vector into a La Growth Machine audience, creating the audience when the name is new. This is Vector's native receiver: the visitor is nested inside a contact object using Vector's snake_case field names, which differ from RB2B's and Warmly's. A visitor that already exists in the workspace is returned with status 'ignored' and is not duplicated. La Growth Machine has no audience or lead delete endpoint, so records added this way must be removed in the web app. |
+| Import Warmly Website Visitor | `importWarmlyWebsiteVisitor` | Pushes an identified website visitor from Warmly into a La Growth Machine audience, creating the audience when the name is new. This is Warmly's native receiver, so the body uses the visitor payload's own field names rather than La Growth Machine's lead fields. First Name and LinkedIn URL identify the visitor. A visitor that already exists in the workspace is returned with status 'ignored' and is not duplicated. La Growth Machine has no audience or lead delete endpoint, so records added this way must be removed in the web app. |
+| List Audience Leads | `listAudienceLeads` | Lists the leads that belong to an audience, paged with skip and limit. |
+| List Audiences | `listAudiences` | Lists every audience in the workspace. Audiences are the lead lists that campaigns run against. |
+| List Campaign Lead Statistics | `listCampaignLeadStatistics` | Returns per-lead progress and engagement statistics for a campaign, paged with cursor identifiers so large campaigns can be walked a page at a time. |
+| List Campaign Messages | `listCampaignMessages` | Returns the message templates configured on each step of a campaign sequence. |
+| List Campaigns | `listCampaigns` | Lists the outreach campaigns in the workspace, paged with skip and limit. La Growth Machine returns at most 25 campaigns per call. |
+| List Conversation Messages | `listConversationMessages` | Returns the messages exchanged in one inbox conversation, a page at a time. |
+| List Identities | `listIdentities` | Lists the sending identities connected to the workspace. Identity identifiers are required when importing a LinkedIn audience or sending LinkedIn and email messages. |
+| List Inbox Webhooks | `listInboxWebhooks` | Lists the inbox webhooks registered on the workspace, each of which pushes LinkedIn and email inbox events to an external URL. |
+| List Lead Activity Logs | `listLeadActivityLogs` | Returns the activity history of a lead, covering messages sent, enrichments run and status changes. |
+| List Lead Conversations | `listLeadConversations` | Returns every inbox conversation held with a lead across LinkedIn and email. |
+| List Members | `listMembers` | Lists the members of the La Growth Machine workspace. Member identifiers are required when sending LinkedIn messages from the inbox. |
+| List Workspaces | `listWorkspaces` | Lists the La Growth Machine workspaces the API key can reach, with each workspace's plan and identity count and a flag marking the current one. |
+| Remove Lead From Audience | `removeLeadFromAudience` | Removes a lead from one audience or from every audience it belongs to. Identify the lead with at least one of its identifiers. |
+| Search Lead | `searchLead` | Finds a single lead in the workspace by email address, LinkedIn URL, lead identifier, name or company. Returns 404 with 'Lead not found' when nothing matches. |
+| Send Email Reply | `sendEmailReply` | Replies to an existing email thread with a lead from a connected email identity. New threads cannot be started, so either reply in the most recent thread or name the message being replied to. |
+| Send LinkedIn Message | `sendLinkedInMessage` | Sends a LinkedIn text or voice message to a lead from one of the workspace's connected LinkedIn identities. La Growth Machine sends it into the existing LinkedIn conversation with that lead and returns 404 'Conversation not found' when none exists, so it replies to a conversation rather than starting one. Identify the lead by lead identifier or LinkedIn URL, and supply either message text or a voice recording URL. |
+| Update Lead Status | `updateLeadStatus` | Sets the status of a lead inside one or more campaigns, for example marking it converted or not interested. Identify the lead with at least one of its identifiers. |
+
+## Events
+
+Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
+
+| Event | Id | When it fires |
+| --- | --- | --- |
+| Inbox Event | `inboxEvent` | Fires when a LinkedIn or email inbox message is sent to, or received from, a lead in a La Growth Machine campaign. La Growth Machine registers a single INBOX_EVENT webhook that carries every inbox event; the campaigns input restricts which campaigns it covers. The payload schema below is modelled from the vendor's inbox event fields and was not captured from a live delivery, because the sandbox workspace has no connected LinkedIn identity and no running campaign. |
