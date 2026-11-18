@@ -105,5 +105,5 @@ There is no separate runtime reference tab (the **Docs** view under **Diagram** 
 Calls made for a specific customer are addressed with headers: `x-org-id`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
 
 {% hint style="warning" %}
-Use `fastn.connector` (singular) in your code. The Connectors tab's extractor recognizes the plural `fastn.connectors.<slug>.<action>()` too, but the runtime does not provide it, so a plural call fails when the workflow runs.
+Use `fastn.connector` (singular) in your code. The plural `fastn.connectors.<slug>.<action>()` also works: the runtime treats it as the same object, and the Connectors tab picks up calls written either way.
 {% endhint %}

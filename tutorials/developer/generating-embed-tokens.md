@@ -40,6 +40,8 @@ A key set to **Enforce** refuses a request without identity headers, even when t
 
 Compute the hash on your backend. The identity secret is shown once, when you create the key, and must never reach a browser.
 
+{% tabs %}
+{% tab title="Node.js" %}
 ```javascript
 const crypto = require("crypto");
 
@@ -49,9 +51,44 @@ function identityHash(orgId = "", userId = "") {
     .digest("hex");
 }
 ```
+{% endtab %}
+{% tab title="Python" %}
+```python
+import hashlib
+import hmac
+import os
 
-The same request with curl:
 
+def identity_hash(org_id="", user_id=""):
+    return hmac.new(
+        os.environ["FASTN_IDENTITY_SECRET"].encode(),
+        f"{org_id}\n{user_id}".encode(),
+        hashlib.sha256,
+    ).hexdigest()
+```
+{% endtab %}
+{% tab title="Go" %}
+```go
+import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
+	"os"
+)
+
+func identityHash(orgID, userID string) string {
+	mac := hmac.New(sha256.New, []byte(os.Getenv("FASTN_IDENTITY_SECRET")))
+	mac.Write([]byte(orgID + "\n" + userID))
+	return hex.EncodeToString(mac.Sum(nil))
+}
+```
+{% endtab %}
+{% endtabs %}
+
+The full request:
+
+{% tabs %}
+{% tab title="curl" %}
 ```bash
 ORG_ID="northwind"    # your id for the customer
 USER_ID="user_42"     # your id for the person
@@ -65,6 +102,103 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
   -H "x-identity-hmac: $HMAC" \
   -d '{}'
 ```
+{% endtab %}
+{% tab title="Node.js" %}
+```javascript
+import crypto from "node:crypto";
+
+const orgId = "northwind";   // your id for the customer
+const userId = "user_42";    // your id for the person
+const hmac = crypto.createHmac("sha256", process.env.FASTN_IDENTITY_SECRET)
+  .update(`${orgId}\n${userId}`)
+  .digest("hex");
+
+const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
+  method: "POST",
+  headers: {
+    "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
+    "Content-Type": "application/json",
+    "x-org-id": orgId,
+    "x-user-id": userId,
+    "x-identity-hmac": hmac,
+  },
+  body: "{}",
+});
+console.log(res.status, await res.json());
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+import hashlib
+import hmac
+import os
+
+import requests
+
+org_id = "northwind"   # your id for the customer
+user_id = "user_42"    # your id for the person
+signature = hmac.new(
+    os.environ["FASTN_IDENTITY_SECRET"].encode(),
+    f"{org_id}\n{user_id}".encode(),
+    hashlib.sha256,
+).hexdigest()
+
+res = requests.post(
+    "https://api.fastn.dev/api/v1/embed/token",
+    headers={
+        "Authorization": f"Bearer {os.environ['FASTN_API_KEY']}",
+        "Content-Type": "application/json",
+        "x-org-id": org_id,
+        "x-user-id": user_id,
+        "x-identity-hmac": signature,
+    },
+    data="{}",
+)
+print(res.status_code, res.json())
+```
+{% endtab %}
+{% tab title="Go" %}
+```go
+package main
+
+import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"strings"
+)
+
+func main() {
+	orgID := "northwind" // your id for the customer
+	userID := "user_42"  // your id for the person
+	mac := hmac.New(sha256.New, []byte(os.Getenv("FASTN_IDENTITY_SECRET")))
+	mac.Write([]byte(orgID + "\n" + userID))
+
+	req, err := http.NewRequest("POST", "https://api.fastn.dev/api/v1/embed/token", strings.NewReader("{}"))
+	if err != nil {
+		panic(err)
+	}
+	req.Header.Set("Authorization", "Bearer "+os.Getenv("FASTN_API_KEY"))
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("x-org-id", orgID)
+	req.Header.Set("x-user-id", userID)
+	req.Header.Set("x-identity-hmac", hex.EncodeToString(mac.Sum(nil)))
+
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer res.Body.Close()
+	body, _ := io.ReadAll(res.Body)
+	fmt.Println(res.StatusCode, string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
 
 The body can stay empty. If it also names `orgId` or `userId`, they must match the headers, or the call is refused with `400 IDENTITY_ORG_MISMATCH` or `400 IDENTITY_USER_MISMATCH`. The other body fields below still apply.
 
@@ -74,6 +208,8 @@ Register each customer before you mint for them (`POST /api/v1/orgs`): an `x-org
 
 Send `x-org-id` as above with no hash, or name the customer in the body:
 
+{% tabs %}
+{% tab title="curl" %}
 ```bash
 curl -X POST https://api.fastn.dev/api/v1/embed/token \
   -H "Authorization: Bearer $FASTN_API_KEY" \
@@ -85,6 +221,83 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
     "userName": "Jane Doe"
   }'
 ```
+{% endtab %}
+{% tab title="Node.js" %}
+```javascript
+const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
+  method: "POST",
+  headers: {
+    "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    orgId: "northwind",
+    userId: "user_42",
+    userEmail: "jane@example.com",
+    userName: "Jane Doe",
+  }),
+});
+console.log(res.status, await res.json());
+```
+{% endtab %}
+{% tab title="Python" %}
+```python
+import os
+
+import requests
+
+res = requests.post(
+    "https://api.fastn.dev/api/v1/embed/token",
+    headers={"Authorization": f"Bearer {os.environ['FASTN_API_KEY']}"},
+    json={
+        "orgId": "northwind",
+        "userId": "user_42",
+        "userEmail": "jane@example.com",
+        "userName": "Jane Doe",
+    },
+)
+print(res.status_code, res.json())
+```
+{% endtab %}
+{% tab title="Go" %}
+```go
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+)
+
+func main() {
+	payload, _ := json.Marshal(map[string]string{
+		"orgId":     "northwind",
+		"userId":    "user_42",
+		"userEmail": "jane@example.com",
+		"userName":  "Jane Doe",
+	})
+
+	req, err := http.NewRequest("POST", "https://api.fastn.dev/api/v1/embed/token", bytes.NewReader(payload))
+	if err != nil {
+		panic(err)
+	}
+	req.Header.Set("Authorization", "Bearer "+os.Getenv("FASTN_API_KEY"))
+	req.Header.Set("Content-Type", "application/json")
+
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer res.Body.Close()
+	body, _ := io.ReadAll(res.Body)
+	fmt.Println(res.StatusCode, string(body))
+}
+```
+{% endtab %}
+{% endtabs %}
 
 **Body:**
 
@@ -172,6 +385,8 @@ A session cannot be refreshed past **seven days** from its first token. After th
 
 Put token generation in a server-side function that reads the API key and identity secret from environment variables, takes the signed-in person's customer and user id from your own session, and returns a fresh token per request:
 
+{% tabs %}
+{% tab title="Node.js" %}
 ```javascript
 const crypto = require("crypto");
 
@@ -201,8 +416,95 @@ async function getFastnToken({ customerId, userId }) {
   return json.data.token;
 }
 ```
+{% endtab %}
+{% tab title="Python" %}
+```python
+import hashlib
+import hmac
+import os
 
-With a key that has no identity verification, leave out `x-user-id` and `x-identity-hmac`, and send the user in the body instead: `JSON.stringify({ userId })`.
+import requests
+
+
+def get_fastn_token(customer_id, user_id):
+    signature = hmac.new(
+        os.environ["FASTN_IDENTITY_SECRET"].encode(),
+        f"{customer_id}\n{user_id}".encode(),
+        hashlib.sha256,
+    ).hexdigest()
+
+    res = requests.post(
+        "https://api.fastn.dev/api/v1/embed/token",
+        headers={
+            "Authorization": f"Bearer {os.environ['FASTN_API_KEY']}",
+            "Content-Type": "application/json",
+            "x-org-id": customer_id,  # fastn id or your external reference
+            "x-user-id": user_id,
+            "x-identity-hmac": signature,
+            # "X-fastn-Test-Mode": "true",  # only with a fsk_test_ key
+        },
+        data="{}",
+    )
+
+    if not res.ok:
+        raise RuntimeError(f"Token request failed: {res.status_code}")
+
+    return res.json()["data"]["token"]
+```
+{% endtab %}
+{% tab title="Go" %}
+```go
+import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
+	"encoding/json"
+	"fmt"
+	"net/http"
+	"os"
+	"strings"
+)
+
+func GetFastnToken(customerID, userID string) (string, error) {
+	mac := hmac.New(sha256.New, []byte(os.Getenv("FASTN_IDENTITY_SECRET")))
+	mac.Write([]byte(customerID + "\n" + userID))
+
+	req, err := http.NewRequest("POST", "https://api.fastn.dev/api/v1/embed/token", strings.NewReader("{}"))
+	if err != nil {
+		return "", err
+	}
+	req.Header.Set("Authorization", "Bearer "+os.Getenv("FASTN_API_KEY"))
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("x-org-id", customerID) // fastn id or your external reference
+	req.Header.Set("x-user-id", userID)
+	req.Header.Set("x-identity-hmac", hex.EncodeToString(mac.Sum(nil)))
+	// req.Header.Set("X-fastn-Test-Mode", "true") // only with a fsk_test_ key
+
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return "", err
+	}
+	defer res.Body.Close()
+
+	if res.StatusCode < 200 || res.StatusCode > 299 {
+		return "", fmt.Errorf("token request failed: %d", res.StatusCode)
+	}
+
+	var out struct {
+		Data struct {
+			Token string `json:"token"`
+		} `json:"data"`
+	}
+	if err := json.NewDecoder(res.Body).Decode(&out); err != nil {
+		return "", err
+	}
+	return out.Data.Token, nil
+}
+```
+{% endtab %}
+{% endtabs %}
+
+With a key that has no identity verification, leave out `x-user-id` and `x-identity-hmac`, and send the user in the body instead: `{ "userId": "<user id>" }`.
 
 Expose this through an endpoint your frontend calls at render time. Return only the token, as `{ "token": "emb_..." }`, never the API key.
 

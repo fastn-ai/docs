@@ -8,7 +8,16 @@ description: The handful of ideas that everything else in fastn is built from.
 
 An **organization** is you, the SaaS company. It holds your connectors, workflows, widgets, people and settings.
 
-A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. Some identifiers and older material say *tenant*. API calls name a customer with `x-org-id` (or `orgId` in a query or body): your own id for it, which defaults to the customer's slug if you did not set one, or fastn's id for it. Answers name the customer by your own id, as `orgId`.
+A **customer** is one of your customers. Every customer is isolated: its connections, credentials and data never cross into another. Some identifiers and older material say *tenant*.
+
+Inside fastn, each customer is its own small organization under yours. That is why the header that names a customer is called `x-org-id`: it never names your organization, which fastn already knows from your API key or login.
+
+To name a customer in an API call, send `x-org-id` as a header (some endpoints also accept `orgId` in the query or body). The value can be either:
+
+* your own id for the customer, which defaults to its slug if you did not set one, or
+* fastn's id for it.
+
+Responses name the customer by your own id, in `orgId`.
 
 A **connection** is one customer's authorized link to one system. It stores the credential, encrypted, and records which auth method produced it.
 
