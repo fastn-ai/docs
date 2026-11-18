@@ -5,14 +5,14 @@ hidden: true
 
 # Wufoo
 
+<img src="../../.gitbook/assets/connectors/wufoo.png" alt="Wufoo logo" width="64">
+
 Wufoo is an online form builder for collecting submissions, payments and survey responses. This connector covers the Wufoo REST API v3: listing and retrieving forms and their field definitions, reading and submitting form entries, entry counts, entry comments and comment counts, reports with their entries, fields and widgets, account users, the login endpoint that exchanges account details for an API key, and the WebHook API for registering and removing per-form webhook subscriptions.
 
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 18 |
-| **Events** | 0 |
 | **Slug** | `wufoo` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Wufoo from **Build → Integrations → Connectors** and connect an account,
 | Get Report | `getReport` | Retrieves a single Wufoo report by its hashed identifier or URL title. |
 | Get Report Entry Count | `getReportEntryCount` | Retrieves the total number of entries included in a Wufoo report. |
 | Get Report Fields | `getReportFields` | Retrieves the field definitions backing a Wufoo report, describing the columns its entries contain. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Form Comments | `listFormComments` | Retrieves the comments left on a Wufoo form's entries, optionally narrowed to a single entry. |
 | List Form Entries | `listFormEntries` | Retrieves the entries submitted to a Wufoo form, with optional sorting and column filtering. Entry keys are the form's field identifiers, so pair this with Get Form Fields to interpret the values. |
 | List Forms | `listForms` | Retrieves every form in the Wufoo account the API key belongs to, including each form's name, description, settings and hashed identifier. |
@@ -41,3 +48,5 @@ Add Wufoo from **Build → Integrations → Connectors** and connect an account,
 | List Reports | `listReports` | Retrieves every report in the Wufoo account, including each report's name, description and hashed identifier. |
 | List Users | `listUsers` | Retrieves every user on the Wufoo account, including their username, email address, role and administrative permissions. |
 | Submit Form Entry | `submitFormEntry` | Submits a new entry to a Wufoo form. Supply the values as form-encoded field identifiers such as Field1 and Field2, which you can discover with Get Form Fields. Wufoo runs the form's own validation and returns per-field errors when it rejects the submission. Note that a successful submission fires the form's configured email notifications. |
+
+</details>

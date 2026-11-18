@@ -5,6 +5,8 @@ hidden: true
 
 # Donately
 
+<img src="../../.gitbook/assets/connectors/donately.png" alt="Donately logo" width="64">
+
 Donately is an online fundraising and donation platform for nonprofits, churches and businesses, offering embeddable donation forms, campaign and peer-to-peer fundraising pages, recurring giving, text-to-give and donor management. This connector wraps the Donately REST API v2 at https://api.donately.com/v2: accounts and their payment sources, processors and referrals, donations with refunds, receipts and e-cards, campaigns, people (donors), peer-to-peer fundraisers, recurring subscriptions, donation forms, email notifications and notification templates, text-to-give codes, charges, account statistics, webhooks with their retry history, and the PayPal, Stripe and Tray.io partner connection status endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Donately is an online fundraising and donation platform for nonprofits, churches
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [donately.com](https://donately.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 86 |
-| **Events** | 7 |
 | **Slug** | `donately` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Donately from **Build → Integrations → Connectors** and connect an accou
 | Create Notification | `createNotification` | Creates a notification rule that emails an account administrator when a Donately event occurs. All four fields are required and each is validated against a fixed Donately list - a missing or unrecognised value is rejected with 'Notification type is not included in the list, Event is not included in the list, and Frequency is not included in the list'. Only notification_type 'email' and frequency 'daily_digest' are accepted, and the recipient is named by person_id (an administrator of the account), not by a raw email address. Once created the rule sends REAL EMAIL to that administrator. |
 | Create Person | `createPerson` | Creates a person (donor) record on the connected Donately account. Donately validates the email for deliverability and rejects undeliverable domains with 'Email address did not pass validation'; an address already on the account is rejected with 'A person with that email address already exists, try update instead.' IRREVERSIBLE: Donately exposes no endpoint for deleting a person, so every record created here is permanent. |
 | Create Text-to-Give Keyword | `createTextToGive` | Creates a text-to-give keyword, so donors can text a code to give. code and message are both required and each must be at least three characters - Donately rejects the request with 'Code can't be blank, and Code must be at least 3 characters' otherwise. The keyword becomes live on the account's SMS number as soon as the call returns. The created id uses the t2g_ prefix. amount_in_cents is echoed back as accepted and never stored, so it is not offered here. |
+
+<details>
+
+<summary>See 76 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | Subscribes a URL to one Donately event. One webhook carries exactly one hook, so subscribe several times for several events. hook must be one of the seven Donately accepts (listed on the field) - anything else is rejected with 'Hook is not included in the list'. post_url must be an absolute http:// or https:// URL. The created webhook's id uses the hok_ prefix. Donately records every delivery attempt: read them with List Webhook Retries and re-send one with Rerun Webhook Retry. Delete Webhook is the unsubscribe. |
 | Delete Campaign | `deleteCampaign` | Permanently deletes a fundraising campaign from the connected Donately account and takes its public page offline. This is the only way to unpublish a campaign through the API. Donations already attributed to the campaign are not deleted. |
 | Delete Donation | `deleteDonation` | Permanently deletes a donation record from the connected Donately account. This removes the record only; it does not refund money. Deleting a donation does not delete the donor Person that Donately created alongside it, and Donately exposes no way to delete a person. |
@@ -110,6 +117,8 @@ Add Donately from **Build → Integrations → Connectors** and connect an accou
 | Update Subscription | `updateSubscription` | Updates a recurring giving subscription. Donately uses POST for updates and merges only the fields supplied. This is also how a subscription is cancelled - Donately has no delete route for subscriptions, so set the status instead. CHANGES WHAT A REAL DONOR IS CHARGED: altering amount_in_cents or the interval changes their next and every later payment. |
 | Update Text-to-Give Keyword | `updateTextToGive` | Updates a text-to-give keyword. Donately uses POST for updates and merges only the fields supplied. Changing the reply message changes what real donors receive by SMS from the next gift onwards. |
 | Update Webhook | `updateWebhook` | Updates a webhook subscription - its delivery URL, event or title. Donately uses POST for updates and merges only the fields supplied. hook is validated against the same seven-event list as Create Webhook. |
+
+</details>
 
 ## Events
 

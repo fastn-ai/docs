@@ -5,6 +5,8 @@ hidden: true
 
 # Kit
 
+<img src="../../.gitbook/assets/connectors/kit.png" alt="Kit logo" width="64">
+
 Kit (formerly ConvertKit) email marketing platform for creators. Manage subscribers, tags, custom fields, broadcasts, forms, sequences, purchases, segments, snippets, email templates, account stats, and webhooks via the Kit V4 API.
 
 | | |
@@ -12,8 +14,6 @@ Kit (formerly ConvertKit) email marketing platform for creators. Manage subscrib
 | **Category** | [Marketing](README.md) |
 | **Website** | [kit.com](https://kit.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 72 |
-| **Events** | 0 |
 | **Slug** | `kit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Kit from **Build → Integrations → Connectors** and connect an account, a
 | Bulk Delete Tags | `bulkDeleteTags` | Deletes up to 100 tags in one asynchronous request by id. Provide an optional callback_url to receive completion results. |
 | Bulk Remove Tags from Subscribers | `bulkRemoveTagsFromSubscribers` | Removes tags from subscribers in bulk. Each tagging pairs a tag_id with a subscriber_id. |
 | Bulk Tag Subscribers | `bulkTagSubscribers` | Applies tags to subscribers in bulk. Each tagging pairs a tag_id with a subscriber_id. Subscribers must already exist. |
+
+<details>
+
+<summary>See 62 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Subscriber Custom Field Values | `bulkUpdateSubscriberCustomFields` | Creates or updates custom field values for many subscribers in one request. Each entry pairs a subscriber_id with a subscriber_custom_field_id and value. Requires OAuth authentication. |
 | Create Broadcast | `createBroadcast` | Creates a broadcast. Leave send_at null to save a draft, set public true to publish to the web, or provide send_at to schedule sending. |
 | Create Custom Field | `createCustomField` | Creates a custom field with a unique label. Kit generates the key and name automatically from the label. |
@@ -96,3 +103,5 @@ Add Kit from **Build → Integrations → Connectors** and connect an account, a
 | Update Snippet | `updateSnippet` | Renames a snippet or replaces its inline content. Changes apply on the next send of any email referencing the snippet. |
 | Update Subscriber | `updateSubscriber` | Updates a subscriber's first name, email address, and custom field values. Only fields included in the request change. |
 | Update Tag Name | `updateTag` | Renames a tag. The tag keeps its id and all subscribers; only the name changes. |
+
+</details>

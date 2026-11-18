@@ -5,14 +5,14 @@ hidden: true
 
 # GIPHY
 
+<img src="../../.gitbook/assets/connectors/giphy.jpg" alt="GIPHY logo" width="64">
+
 GIPHY is a library of GIFs, stickers, animated emoji and short video clips, searchable through a public REST API. This connector covers the documented GIPHY API surface: GIF and sticker search, trending, translate, random and fetch-by-id; curated sticker packs; GIPHY Clips; the animated emoji library and its variations; channel search and browsing; browse categories, autocomplete, related and trending search terms; anonymous customer-id generation; the analytics pingback that reports user interaction; and the upload endpoint for publishing an asset to a channel.
 
 | | |
 | --- | --- |
 | **Category** | [Design](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `giphy` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add GIPHY from **Build → Integrations → Connectors** and connect an account,
 | Get Random GIF | `getRandomGif` | Returns one randomly selected GIF, optionally limited to a tag. |
 | Get Random Sticker | `getRandomSticker` | Returns one randomly selected sticker, optionally limited to a tag. |
 | Get Sticker Pack | `getStickerPack` | Returns a single sticker pack by its identifier. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Channel Children | `listChannelChildren` | Returns the sub-channels nested directly under a channel. |
 | List Channel GIFs | `listChannelGifs` | Returns the GIFs published by a channel. |
 | List Child Sticker Packs | `listChildStickerPacks` | Returns the sticker packs nested directly under a parent pack. |
@@ -54,3 +61,5 @@ Add GIPHY from **Build → Integrations → Connectors** and connect an account,
 | Translate Term To GIF | `translateGif` | Translates a word or phrase into the single GIF that GIPHY's search engine considers the best match. |
 | Translate Term To Sticker | `translateSticker` | Translates a word or phrase into the single sticker that GIPHY's search engine considers the best match. |
 | Upload GIF | `uploadGif` | Uploads a GIF or video to GIPHY from a URL or file and publishes it on your channel. Uploaded assets become publicly visible on GIPHY and there is no documented delete endpoint, so treat every call as permanent. |
+
+</details>

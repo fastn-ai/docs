@@ -5,6 +5,8 @@ hidden: true
 
 # DeepSeek
 
+<img src="../../.gitbook/assets/connectors/deepseek.png" alt="DeepSeek logo" width="64">
+
 DeepSeek AI API connector (OpenAI-compatible). Chat completions with deepseek-v4-flash / deepseek-v4-pro models (thinking mode, reasoning_content), FIM beta completions, model listing, and account balance. Bearer-token authenticated.
 
 | | |
@@ -12,8 +14,6 @@ DeepSeek AI API connector (OpenAI-compatible). Chat completions with deepseek-v4
 | **Category** | [AI and ML](README.md) |
 | **Website** | [deepseek.com](https://deepseek.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 10 |
-| **Events** | 0 |
 | **Slug** | `deepseek` |
 
 ## Use it

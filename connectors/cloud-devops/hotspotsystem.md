@@ -5,6 +5,8 @@ hidden: true
 
 # HotspotSystem
 
+<img src="../../.gitbook/assets/connectors/hotspotsystem.png" alt="HotspotSystem logo" width="64">
+
 HotspotSystem cloud WiFi hotspot management. Read-only access to the HotspotSystem API v2.0: hotspot locations, registered customers, newsletter subscribers, prepaid vouchers, and paid / voucher / MAC / social-login connection transactions, globally or per location.
 
 | | |
@@ -12,8 +14,6 @@ HotspotSystem cloud WiFi hotspot management. Read-only access to the HotspotSyst
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [hotspotsystem.com](https://hotspotsystem.com) |
 | **Authentication** | API key |
-| **Actions** | 18 |
-| **Events** | 6 |
 | **Slug** | `hotspotsystem` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HotspotSystem from **Build → Integrations → Connectors** and connect an 
 | List Newsletter Subscribers | `getSubscribers` | List every WiFi user across all of the operator's locations who opted in to the newsletter, with their contact details and social profile where available. Supports field selection, sorting and pagination. Returns end-user personal data. |
 | List Newsletter Subscribers By Location | `getSubscribersByLocationId` | List the newsletter opt-ins captured at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. Returns end-user personal data. |
 | List Paid Transactions | `getPaidTransactions` | List paid WiFi access transactions (credit card and other paid packages) across all of the operator's hotspot locations, with amount, currency and the purchasing customer's details. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Paid Transactions By Location | `getPaidTransactionsByLocationId` | List paid WiFi access transactions recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. |
 | List Social Login Transactions | `getSocialTransactions` | List WiFi connections authenticated through a social network login (Facebook, Twitter, Google and similar) across all of the operator's hotspot locations, with the linked social profile data captured at login. |
 | List Social Login Transactions By Location | `getSocialTransactionsByLocationId` | List social network WiFi logins recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. |
@@ -42,6 +49,8 @@ Add HotspotSystem from **Build → Integrations → Connectors** and connect an 
 | List Vouchers | `getVouchers` | List the prepaid WiFi vouchers generated across all of the operator's locations, with their code, usage limits, validity and price. Note: the HotspotSystem API returns HTTP 500 "Cannot read property 'currency' of undefined" for accounts that have no voucher currency configured in the Control Center. |
 | List Vouchers By Location | `getVouchersByLocationId` | List the prepaid WiFi vouchers generated for one specific hotspot location. Pass the location id from List Locations, or '0' for every location. Note: the HotspotSystem API returns HTTP 500 "Cannot read property 'currency' of undefined" for accounts that have no voucher currency configured in the Control Center. |
 | Ping API | `getPing` | Health check for the HotspotSystem API v2.0. Returns {"ping":"pong"} when the service is reachable and the supplied API key is accepted. Use it to validate a connection before running other actions. |
+
+</details>
 
 ## Events
 

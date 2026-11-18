@@ -5,6 +5,8 @@ hidden: true
 
 # PDOK Locatieserver
 
+<img src="../../.gitbook/assets/connectors/pdok-locatieserver.png" alt="PDOK Locatieserver logo" width="64">
+
 PDOK Locatieserver is the Dutch government's free geocoding service built on the BAG, BRK and other national registers: free-text search and type-ahead suggestions for addresses, postcodes, streets, towns, municipalities and parcels in the Netherlands, lookup by id with full details and coordinates, and reverse geocoding from a point. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ PDOK Locatieserver is the Dutch government's free geocoding service built on the
 | **Category** | [Search and web](README.md) |
 | **Website** | [pdok.nl](https://pdok.nl) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `pdokLocatieserver` |
 
 ## Use it

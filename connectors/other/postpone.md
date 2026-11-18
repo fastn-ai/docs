@@ -5,6 +5,8 @@ hidden: true
 
 # Postpone
 
+<img src="../../.gitbook/assets/connectors/postpone.png" alt="Postpone logo" width="64">
+
 Postpone is a social media scheduling and analytics platform for creators, brands and agencies, covering Reddit, Twitter/X, Instagram, Facebook, TikTok, YouTube, LinkedIn, Pinterest, Threads, Bluesky, Tumblr and Mastodon. This connector wraps the Postpone public GraphQL API at https://api.postpone.app/gql: content library and media uploads, post tags, campaigns, post templates, scheduling and managing posts on every supported platform, and post/account analytics.
 
 | | |
@@ -12,8 +14,6 @@ Postpone is a social media scheduling and analytics platform for creators, brand
 | **Category** | [Other](README.md) |
 | **Website** | [postpone.app](https://postpone.app) |
 | **Authentication** | API key |
-| **Actions** | 151 |
-| **Events** | 0 |
 | **Slug** | `postpone` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Postpone from **Build → Integrations → Connectors** and connect an accou
 | Bulk Move Post Times | `bulkUpdateMovePostAt` | Shift the scheduled time of the given submissions forwards or backwards by an amount and unit. |
 | Bulk Update Comment | `bulkUpdateComment` | Set the same first comment on every one of the given submissions. |
 | Bulk Update Post Options | `bulkUpdatePostOptions` | Set the NSFW, spoiler and send-replies-to-inbox flags on the given submissions in one call. |
+
+<details>
+
+<summary>See 141 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Reddit Username | `bulkUpdateRedditUsername` | Reassign the given Reddit submissions to a different linked Reddit username. |
 | Cancel Platform Auto Remove | `cancelPlatformAutoRemove` | Cancel the pending automatic removal configured on a submission, so the post stays up. |
 | Cancel Platform Auto Repost | `cancelPlatformAutoRepost` | Cancel the pending automatic repost configured on a submission. |
@@ -175,3 +182,5 @@ Add Postpone from **Build → Integrations → Connectors** and connect an accou
 | Update Scheduled Tweet | `updateScheduledTweet` | Update an already scheduled tweet or thread in place. Accepts the same ScheduleTweetInput as Schedule Tweet, including the ID of the post being updated. |
 | Update Scheduled YouTube Post | `updateScheduledYouTubePost` | Update an already scheduled YouTube post in place. Accepts the same ScheduleYouTubePostInput as Schedule YouTube Post, including the ID of the post being updated. |
 | Upload Media From URL | `uploadMediaFromUrl` | Add a file to the content library by having Postpone download it from a public URL. Returns the stored media object with its CDN URL, MIME type and size. |
+
+</details>

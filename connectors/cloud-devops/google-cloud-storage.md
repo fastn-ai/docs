@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Storage
 
+<img src="../../.gitbook/assets/connectors/google-cloud-storage.png" alt="Google Cloud Storage logo" width="64">
+
 Google Cloud Storage JSON API connector. Manage buckets, objects (including media upload, compose, copy, rewrite), bucket/object/default object ACLs, IAM policies, HMAC keys, and Pub/Sub notification configs. Base URL https://storage.googleapis.com/storage/v1 (uploads at https://storage.googleapis.com/upload/storage/v1). OAuth 2.0 (Google) auth.
 
 | | |
@@ -12,8 +14,6 @@ Google Cloud Storage JSON API connector. Manage buckets, objects (including medi
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloud.google.com](https://cloud.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 45 |
-| **Events** | 0 |
 | **Slug** | `googleCloudStorage` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Storage from **Build → Integrations → Connectors** and conn
 | Delete Notification | `deleteNotification` | Permanently deletes a Pub/Sub notification configuration from the given bucket. |
 | Delete Object | `deleteObject` | Deletes an object and its metadata. Deletions are permanent if versioning is not enabled. |
 | Delete Object ACL | `deleteObjectAcl` | Permanently deletes the ACL entry for the specified entity on the specified object. |
+
+<details>
+
+<summary>See 35 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Bucket | `getBucket` | Returns metadata for the specified bucket. |
 | Get Bucket ACL | `getBucketAcl` | Returns the ACL entry for the specified entity on the specified bucket. |
 | Get Bucket IAM Policy | `getBucketIamPolicy` | Returns the IAM policy for the specified bucket. |
@@ -69,3 +76,5 @@ Add Google Cloud Storage from **Build → Integrations → Connectors** and conn
 | Update Object | `updateObject` | Updates an object's metadata (full update). |
 | Update Object ACL | `updateObjectAcl` | Updates an ACL entry on the specified object (full update). |
 | Upload Object (Media) | `insertObject` | Stores a new object using a simple media upload. Uses the upload base URL with uploadType=media. The object name is set via the 'name' query param and the file content is passed as the request body. |
+
+</details>

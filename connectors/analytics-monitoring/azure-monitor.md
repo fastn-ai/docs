@@ -5,6 +5,8 @@ hidden: true
 
 # Azure Monitor
 
+<img src="../../.gitbook/assets/connectors/azure-monitor.jpg" alt="Azure Monitor logo" width="64">
+
 Azure Monitor over the Microsoft.Insights Azure Resource Manager API at https://management.azure.com. Read platform metrics, metric definitions and metric namespaces for any Azure resource, query subscription and tenant activity logs and event categories, and manage the alerting and collection surface - action groups, metric alert rules and their status, activity log alert rules, scheduled query (log search) alert rules, autoscale settings, diagnostic settings and diagnostic setting categories, log profiles, and data collection rules, endpoints and associations. Also runs Log Analytics KQL queries through the ARM proxy endpoint. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights such as Monitoring Reader or Monitoring Contributor on the target scope.
 
 | | |
@@ -12,8 +14,6 @@ Azure Monitor over the Microsoft.Insights Azure Resource Manager API at https://
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [monitor.azure.com](https://monitor.azure.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 68 |
-| **Events** | 0 |
 | **Slug** | `azureMonitor` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure Monitor from **Build → Integrations → Connectors** and connect an 
 | Create or Update Diagnostic Setting | `createOrUpdateDiagnosticSetting` | Creates or replaces a diagnostic setting on an Azure resource, routing selected log and metric categories to a Log Analytics workspace, storage account, event hub or marketplace partner. At least one destination must be supplied. |
 | Create or Update Metric Alert | `createOrUpdateMetricAlert` | Creates a new metric alert rule or replaces an existing one. Metric alert rules are global resources, so Location is normally "global". The Criteria object is a discriminated union selected by its odata.type field; see the Azure Monitor metric alerts reference for the shape of each variant. |
 | Create or Update Scheduled Query Rule | `createOrUpdateScheduledQueryRule` | Creates a new scheduled query (log search) alert rule or replaces an existing one. Each condition in the criteria carries the Kusto query, the metric measure, the operator and threshold, and how many evaluation periods must fail before the alert fires. |
+
+<details>
+
+<summary>See 58 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Action Group | `deleteActionGroup` | Deletes an action group. Alert rules that still reference it will no longer notify anyone. |
 | Delete Activity Log Alert | `deleteActivityLogAlert` | Deletes an activity log alert rule. |
 | Delete Autoscale Setting | `deleteAutoscaleSetting` | Deletes an autoscale setting. The target resource keeps its current instance count but stops scaling automatically. |
@@ -92,3 +99,5 @@ Add Azure Monitor from **Build → Integrations → Connectors** and connect an 
 | Update Data Collection Rule | `updateDataCollectionRule` | Updates the tags of an existing data collection rule. Use Create Data Collection Rule to change its data sources, destinations or data flows. |
 | Update Metric Alert | `updateMetricAlert` | Updates the tags or selected properties of an existing metric alert rule without replacing the whole resource. |
 | Update Scheduled Query Rule | `updateScheduledQueryRule` | Updates the tags or selected properties of an existing scheduled query alert rule without replacing the whole resource. |
+
+</details>

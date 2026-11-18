@@ -5,14 +5,14 @@ hidden: true
 
 # PostgreSQL
 
+<img src="../../.gitbook/assets/connectors/postgres.ico" alt="PostgreSQL logo" width="64">
+
 Generic PostgreSQL database connector with full introspection coverage. Run any SQL or use the typed introspection actions.
 
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `postgres` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add PostgreSQL from **Build → Integrations → Connectors** and connect an acc
 | Get Database Size | `getDatabaseSize` | Get the on-disk size of a database (defaults to the current database). |
 | Get Server Version | `getServerVersion` | Return the PostgreSQL server version string. |
 | Get Table Size | `getTableSize` | Get total size (table + indexes + toast) of a table in bytes and human-readable form. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Insert Rows | `insertRows` | Insert one or more rows into a table and return them (RETURNING *). Schema/table/columns/valuesClause are injected as SQL text; every value binds from params via ? placeholders, in order. Example: columns "id, name", valuesClause "(?, ?), (?, ?)", params [1,"a",2,"b"]. For bytea columns write hex: valuesClause "(?, decode(?, 'hex'))" and read it back with encode(col, 'hex') via the query action. |
 | List Active Connections | `listActiveConnections` | List active backends/connections to the current database (pg_stat_activity). |
 | List Columns | `listColumns` | List columns for a table with type, nullability and default. |
@@ -62,3 +69,5 @@ Add PostgreSQL from **Build → Integrations → Connectors** and connect an acc
 | Table Exists | `tableExists` | Check whether a table exists in the given schema. Returns a single row with an exists boolean. |
 | Upsert Rows | `upsertRows` | Insert rows, or update them when the conflict columns already exist (INSERT ... ON CONFLICT DO UPDATE, RETURNING *). Schema/table/columns/valuesClause/conflictColumns/updateClause are injected as SQL text; values bind from params via ? placeholders. Example: columns "id, name", valuesClause "(?, ?)", conflictColumns "id", updateClause "name = EXCLUDED.name", params [1,"a"]. For bytea columns write hex with decode(?, 'hex'). |
 | Vacuum Table | `vacuumTable` | Run VACUUM on a table to reclaim storage. Schema and table are injected as identifiers. Cannot run inside a transaction block. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Prospeo
 
+<img src="../../.gitbook/assets/connectors/prospeo.png" alt="Prospeo logo" width="64">
+
 Prospeo B2B contact data API. Enrich people and companies with verified emails, mobile numbers and firmographic data, search a database of 200M+ contacts and 30M+ companies with 30+ filters, resolve filter values via search suggestions, and monitor credit usage. Every enrichment or search call consumes account credits.
 
 | | |
@@ -12,8 +14,6 @@ Prospeo B2B contact data API. Enrich people and companies with verified emails, 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [prospeo.io](https://prospeo.io) |
 | **Authentication** | API key |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `prospeo` |
 
 ## Use it

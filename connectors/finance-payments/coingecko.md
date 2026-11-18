@@ -5,6 +5,8 @@ hidden: true
 
 # CoinGecko
 
+<img src="../../.gitbook/assets/connectors/coingecko.png" alt="CoinGecko logo" width="64">
+
 CoinGecko is the world's largest independent cryptocurrency data aggregator. This connector covers the complete CoinGecko API v3: simple prices, search and ID maps, coins and market data, coin charts and OHLC, categories, tokenized real world assets (RWA), exchanges, derivatives, public treasury holdings, NFT collections, trending searches, news and insights, global market data, BTC exchange rates, plus the Onchain (GeckoTerminal) DEX endpoints for networks, DEXs, pools, tokens, OHLCV charts, trades, wallets, holders and categories. Endpoints marked as paid-plan only in the CoinGecko docs require a Pro API key.
 
 | | |
@@ -12,8 +14,6 @@ CoinGecko is the world's largest independent cryptocurrency data aggregator. Thi
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [coingecko.com](https://coingecko.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 100 |
-| **Events** | 0 |
 | **Slug** | `coingecko` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CoinGecko from **Build → Integrations → Connectors** and connect an acco
 | Get Coin By Token Address | `coinsContractAddress` | Returns all metadata and market data of a coin identified by its asset platform and token contract address. |
 | Get Coin History By Date | `coinsIdHistory` | Returns a coin's historical snapshot (price, market cap and 24h volume in every currency, plus image and public interest stats) at a given date. |
 | Get Coin Market Chart | `coinsIdMarketChart` | Returns historical chart data for a coin (price, market cap and 24h volume as timestamped pairs) for the last N days in a target currency, with automatic or explicit granularity. |
+
+<details>
+
+<summary>See 90 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Coin Market Chart By Range | `coinsIdMarketChartRange` | Returns historical chart data for a coin (price, market cap and 24h volume as timestamped pairs) between two dates in a target currency. |
 | Get Coin OHLC Chart | `coinsIdOhlc` | Returns the OHLC (open, high, low, close) candles of a coin for the last N days in a target currency. |
 | Get Coin OHLC Chart By Range | `coinsIdOhlcRange` | Returns the OHLC (open, high, low, close) candles of a coin between two dates in a target currency at daily or hourly interval. Available on CoinGecko paid (Pro) API plans only. |
@@ -124,3 +131,5 @@ Add CoinGecko from **Build → Integrations → Connectors** and connect an acco
 | List Wallet Token Transfers | `walletTokenTransfers` | Returns the token transfers of a wallet address on a network, filterable by token, date range and direction, cursor paginated. Available on CoinGecko paid (Pro) API plans only. |
 | Search | `searchData` | Searches coins, exchanges, categories and NFT collections listed on CoinGecko by a free-text query and returns matching entries with their IDs. |
 | Search Onchain Pools | `searchPools` | Searches DEX liquidity pools across all networks or one network by pool address, token name, token symbol or token contract address. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Fixer
 
+<img src="../../.gitbook/assets/connectors/fixer.png" alt="Fixer logo" width="64">
+
 Fixer is a reliable, lightweight foreign exchange rates and currency conversion API by APILayer. It delivers JSON-formatted real-time and historical exchange rate data for 170+ world currencies, aggregated from 15+ trusted financial sources, plus currency conversion, time-series, and fluctuation endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Fixer is a reliable, lightweight foreign exchange rates and currency conversion 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [fixer.io](https://fixer.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `fixer` |
 
 ## Use it

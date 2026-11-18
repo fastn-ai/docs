@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Logging
 
+<img src="../../.gitbook/assets/connectors/google-cloud-logging.png" alt="Google Cloud Logging logo" width="64">
+
 Google Cloud Logging API v2 for writing, reading and managing logs across projects, organizations, folders and billing accounts. Write and list log entries, manage log buckets, views, links, sinks, exclusions, log scopes, saved queries and log-based metrics, and configure CMEK and default logging settings.
 
 | | |
@@ -12,8 +14,6 @@ Google Cloud Logging API v2 for writing, reading and managing logs across projec
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [logging.googleapis.com](https://logging.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `googleCloudLogging` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Logging from **Build → Integrations → Connectors** and conn
 | Create Log Scope | `createLogScope` | Creates a log scope naming the projects and log views that Logs Explorer should search together. Organizations and folders cannot be listed as resource names inside a scope. |
 | Create Log Sink | `createSink` | Creates a log sink that exports matching entries to Cloud Storage, BigQuery, Pub/Sub or another log bucket. The response carries a writerIdentity that must be granted write access on the destination before the sink can export anything. |
 | Create Log View | `createView` | Creates a log view on a log bucket. The view's filter decides which of the bucket's entries callers granted access to the view can read. A bucket may hold at most 30 views. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Saved Query | `createSavedQuery` | Saves a Logs Explorer or Log Analytics query so it can be reused. Supply exactly one of loggingQuery or opsAnalyticsQuery, and choose PRIVATE or SHARED visibility. |
 | Delete Bucket Link | `deleteLink` | Deletes a linked BigQuery dataset from a log bucket. Returns a long-running operation; the bucket's own data is unaffected. |
 | Delete Log | `deleteLog` | Permanently deletes every entry in a log. The log itself reappears if new entries are written to it afterwards. Entries written shortly before the call may not be removed. |
@@ -88,3 +95,5 @@ Add Google Cloud Logging from **Build → Integrations → Connectors** and conn
 | Update Logging Settings | `updateSettings` | Updates the default Cloud Logging settings for an organization or folder, which govern the storage location, CMEK key and _Default sink behaviour of newly created containers beneath it. Only the fields named in updateMask are changed. |
 | Update Saved Query | `patchSavedQuery` | Updates a saved query. Only the fields named in updateMask are changed, and a query cannot be switched between the Logging and Ops Analytics types. |
 | Write Log Entries | `writeLogEntries` | Writes log entries to Cloud Logging. Each entry needs a log name and a monitored resource, either set on the entry itself or supplied once as the request-level defaults. Use dryRun to validate entries without persisting them. |
+
+</details>

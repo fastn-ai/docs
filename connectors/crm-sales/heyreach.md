@@ -5,6 +5,8 @@ hidden: true
 
 # HeyReach
 
+<img src="../../.gitbook/assets/connectors/heyreach.jpg" alt="HeyReach logo" width="64">
+
 HeyReach LinkedIn outreach automation. Manage campaigns, lead lists, leads, LinkedIn sender accounts, inbox conversations, network, webhooks, and analytics via the HeyReach public API (X-API-KEY auth).
 
 | | |
@@ -12,8 +14,6 @@ HeyReach LinkedIn outreach automation. Manage campaigns, lead lists, leads, Link
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [heyreach.io](https://heyreach.io) |
 | **Authentication** | API key |
-| **Actions** | 32 |
-| **Events** | 9 |
 | **Slug** | `heyreach` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HeyReach from **Build → Integrations → Connectors** and connect an accou
 | Delete Webhook | `deleteWebhook` | Permanently delete a HeyReach webhook subscription. The webhook must first be deactivated with Update Webhook (isActive set to false), otherwise the API rejects the request. |
 | Get Campaign | `getCampaign` | Get a single campaign by ID (query param campaignId). |
 | Get Campaigns For Lead | `getCampaignsForLead` | Get all campaigns a lead belongs to. Body: { profileUrl }. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Chatroom | `getChatroom` | Retrieve a single LinkedIn conversation thread, including all of its messages, for a given sender account and conversation. |
 | Get Companies From List | `getCompaniesFromList` | Get companies from a company list. Body: { listId, offset, limit }. |
 | Get Conversations | `getConversations` | Get inbox conversations with filters. Body: { offset, limit, filters:{ linkedInAccountIds, campaignIds, seen } }. |
@@ -56,6 +63,8 @@ Add HeyReach from **Build → Integrations → Connectors** and connect an accou
 | Send Message | `sendMessage` | Send a message in a conversation. Body: { conversationId, linkedInAccountId, message, subject? }. |
 | Stop Lead In Campaign | `stopLeadInCampaign` | Stop an individual lead's progress in a campaign so no further outreach steps are executed for that lead. Identify the lead by LinkedIn profile URL or by LinkedIn member id. |
 | Update Webhook | `updateWebhook` | Update an existing HeyReach webhook subscription. Only the fields you supply are changed; omitted fields keep their current values. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Olostep
 
+<img src="../../.gitbook/assets/connectors/olostep.png" alt="Olostep logo" width="64">
+
 Olostep is a web search, scraping and crawling API built for AI applications. This connector covers single-page scrapes, large asynchronous batches, website crawls and URL maps, AI answers and web search, stored content retrieval, change monitors, JSON context files, scheduled API calls, AirOps enrichment batches and credit balance information.
 
 | | |
@@ -12,8 +14,6 @@ Olostep is a web search, scraping and crawling API built for AI applications. Th
 | **Category** | [Search and web](README.md) |
 | **Website** | [olostep.com](https://olostep.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 46 |
-| **Events** | 3 |
 | **Slug** | `olostep` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Olostep from **Build → Integrations → Connectors** and connect an accoun
 | Create Monitor | `createMonitor` | Creates a web monitor from a natural-language query that runs on a schedule, takes snapshots of the tracked pages and alerts on changes by email, Slack, SMS or webhook. Returns JSON with status provisioning; the monitor becomes active once planning has resolved what to track (poll Get Monitor). The optional server-sent-events streaming mode of this endpoint is not offered here. |
 | Create Schedule | `createSchedule` | Schedules an Olostep API call to run once at a future time or on a recurring cron schedule. Provide exactly one timing option: Execute At for a one-time run, or Cron Expression (with Expression Timezone) or natural-language Text for a recurring run - a request with none of them is rejected. POST endpoints may use the short form, for example v1/scrapes. |
 | Create Scrape | `createScrape` | Scrapes a single web page and returns its content as Markdown, HTML, text, structured JSON, a raw PDF or a screenshot. Supports browser actions before capture, residential country routing, parsers and LLM extraction, link extraction, screen size and cached results. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Search | `createSearch` | Searches the web with a natural-language query and returns a deduplicated list of relevant links with titles and descriptions. Results can be restricted to or exclude specific domains, run in a low-latency fast mode, and optionally include the scraped content of every returned page (billed per page). |
 | Delete File | `deleteFile` | Permanently deletes a file and its stored content. |
 | Delete Monitor | `deleteMonitor` | Soft-deletes a monitor, setting its status to deleted and removing its schedule and agent so no further runs occur. |
@@ -70,6 +77,8 @@ Add Olostep from **Build → Integrations → Connectors** and connect an accoun
 | Stream Monitor Agent Logs | `streamMonitorAgentLogs` | Tails the agent logs for a monitor as a server-sent event stream, filtered to lines that mention the monitor, starting from a given time (default the last 30 minutes). |
 | Update Batch Metadata | `updateBatchMetadata` | Updates the metadata of a batch using merge semantics: new keys are added, existing keys are overwritten and keys set to an empty string are removed. Only metadata can be changed after a batch is created. |
 | Update Monitor | `updateMonitor` | Updates a monitor's frequency, metadata, notification settings or webhook. Changing the frequency recreates the schedule. Rejected with 409 while the monitor is still provisioning. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # PDFShift
 
+<img src="../../.gitbook/assets/connectors/pdfshift.jpg" alt="PDFShift logo" width="64">
+
 PDFShift is an HTML/URL to PDF, PNG, JPEG, and WEBP conversion API. This connector covers document conversion, reusable templates, account and API key management, credit usage, request logs, and invoices.
 
 | | |
@@ -12,8 +14,6 @@ PDFShift is an HTML/URL to PDF, PNG, JPEG, and WEBP conversion API. This connect
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdfshift.io](https://pdfshift.io) |
 | **Authentication** | API key |
-| **Actions** | 19 |
-| **Events** | 0 |
 | **Slug** | `pdfshift` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PDFShift from **Build → Integrations → Connectors** and connect an accou
 | Disable API Key | `disableApiKey` | Disables an existing non-master API key on the account, identified by its secret token. At least one active key must always remain, and master keys can only be disabled from the Dashboard. |
 | Enable API Key | `enableApiKey` | Re-enables a previously disabled non-master API key on the account, identified by its secret token. |
 | Generate Document From Template | `generateFromTemplate` | Renders a saved template into a final document. The output format is selected by extension: html returns the rendered markup, and pdf, png, jpeg, or webp return the corresponding rendered file. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account Details | `getAccountDetails` | Returns the authenticated PDFShift account's profile, billing plan, and subscription details. |
 | Get Credits Usage | `getCreditsUsage` | Returns the current billing period's credit usage for the authenticated PDFShift account, including total, used, remaining, and base credit allowances. |
 | Get Log by Request ID | `getLogByRequestId` | Retrieves the full log entry for a single API request, identified by its unique request ID. |
@@ -43,3 +50,5 @@ Add PDFShift from **Build → Integrations → Connectors** and connect an accou
 | List Templates | `listTemplates` | Lists the reusable templates saved on the authenticated PDFShift account. |
 | Update API Key | `updateApiKey` | Renames an existing API key on the account, identified by its secret token. Requires a master-level API key to call. |
 | Update Template | `updateTemplate` | Updates the HTML content and optionally the display name of an existing template, identified by its slug. |
+
+</details>

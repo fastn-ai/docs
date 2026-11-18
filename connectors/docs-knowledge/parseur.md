@@ -5,6 +5,8 @@ hidden: true
 
 # Parseur
 
+<img src="../../.gitbook/assets/connectors/parseur.png" alt="Parseur logo" width="64">
+
 Parseur is an AI-powered document parser that extracts structured data from emails, PDFs and spreadsheets. This connector covers the Parseur REST API: parsers (mailboxes), documents and their processing lifecycle, templates, extraction schemas, export configurations, webhooks, account and subscription details.
 
 | | |
@@ -12,8 +14,6 @@ Parseur is an AI-powered document parser that extracts structured data from emai
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [parseur.com](https://parseur.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 38 |
-| **Events** | 5 |
 | **Slug** | `parseur` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Parseur from **Build → Integrations → Connectors** and connect an accoun
 | Create Template | `createTemplate` | Creates a template on a parser. Parser ID is required - omitting it makes Parseur return a 500 rather than a validation error. Supplying Status also requires all three field-set arrays to be present (send empty arrays for a blank template). Engine OCR is rejected by Parseur with a 500 even when every field it asks for is supplied, so only TXT templates can be created through the API. Template names must be unique within the account; a duplicate is refused with 409. This endpoint is live on the Parseur API but is not covered by the published OpenAPI specification. |
 | Create Webhook | `createWebhook` | Creates a webhook that Parseur will POST to when the chosen event fires. Creating it only defines the webhook - attach it to a parser with Attach Webhook To Parser before it receives anything. Always supply a Target URL: Parseur silently substitutes an unrelated default target when the field is omitted. |
 | Delete Document | `deleteDocument` | Permanently deletes a document and its parsed result. The credits already consumed by the document are not refunded. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Export Config | `deleteExportConfig` | Permanently deletes a custom download from a parser. The parser's documents and standard downloads are unaffected. |
 | Delete Parser | `deleteParser` | Starts an asynchronous delete of a parser together with all of its documents, templates and fields. Returns a notification immediately; the parser disappears from List Parsers once the delete completes. This cannot be undone. |
 | Delete Template | `deleteTemplate` | Permanently deletes a template. Documents already parsed with it keep their results, but future documents will no longer match it. |
@@ -62,6 +69,8 @@ Add Parseur from **Build → Integrations → Connectors** and connect an accoun
 | Update Parser | `updateParser` | Updates a parser's settings. Fields left blank are not sent and keep their current value. Attached webhooks and parser fields are managed by their own actions, not here. |
 | Update Template | `updateTemplate` | Updates a template. Fields left blank are not sent and keep their current value. Supplying Status also requires all three field-set arrays to be present. This endpoint is live on the Parseur API but is not covered by the published OpenAPI specification. |
 | Upload Email Document | `uploadEmailDocument` | Submits an email or text document to Parseur for parsing. Recipient must be the full inbound address of the target parser (its Email Prefix followed by @in.parseur.com). Each accepted document consumes one credit from the account's plan. |
+
+</details>
 
 ## Events
 

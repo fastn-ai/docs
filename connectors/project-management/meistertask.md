@@ -5,6 +5,8 @@ hidden: true
 
 # MeisterTask
 
+<img src="../../.gitbook/assets/connectors/meistertask.ico" alt="MeisterTask logo" width="64">
+
 MeisterTask is a task and project management tool. Manage projects, sections, tasks, subtasks, checklists, comments, labels, attachments, custom fields, time tracking, and team members via the MeisterTask REST API.
 
 | | |
@@ -12,8 +14,6 @@ MeisterTask is a task and project management tool. Manage projects, sections, ta
 | **Category** | [Project management](README.md) |
 | **Website** | [meistertask.com](https://meistertask.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 95 |
-| **Events** | 0 |
 | **Slug** | `meistertask` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MeisterTask from **Build → Integrations → Connectors** and connect an ac
 | Create Attachment | `createAttachment` | Upload a file attachment to a task. The file is sent as multipart form-data. |
 | Create Checklist Item | `createChecklistItem` | Add an item to a checklist. |
 | Create Comment | `createComment` | Add a comment to a task. |
+
+<details>
+
+<summary>See 85 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Custom Field | `createCustomField` | Set a custom field value on a task. Business plan only. |
 | Create Custom Field Type | `createCustomFieldType` | Create a custom field type in a project. Business plan only. |
 | Create Dropdown Item | `createDropdownItem` | Create a dropdown item for a custom field type. Business plan only. |
@@ -119,3 +126,5 @@ Add MeisterTask from **Build → Integrations → Connectors** and connect an ac
 | Update Section | `updateSection` | Update a section's name or status. |
 | Update Task | `updateTask` | Update a task, including moving it to another section, reassigning, or changing its status. |
 | Update Work Interval | `updateWorkInterval` | Update the start or end time of a work interval. |
+
+</details>

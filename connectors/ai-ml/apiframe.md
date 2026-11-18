@@ -5,6 +5,8 @@ hidden: true
 
 # Apiframe
 
+<img src="../../.gitbook/assets/connectors/apiframe.png" alt="Apiframe logo" width="64">
+
 Apiframe is a single REST API for 70+ generative media models, including Midjourney, Flux, Nano Banana, Ideogram, Imagen, GPT Image, Kling, Veo, Sora, Suno, Udio and Topaz. This connector covers the complete Apiframe v2 API: image, video and music generation, image and video upscaling and editing, background removal, Midjourney, Suno and Udio follow-up actions, Udio lyrics and audio uploads, asynchronous job tracking, the model catalog, media assets, short-lived file uploads, personal LoRA training and account information.
 
 | | |
@@ -12,8 +14,6 @@ Apiframe is a single REST API for 70+ generative media models, including Midjour
 | **Category** | [AI and ML](README.md) |
 | **Website** | [apiframe.ai](https://apiframe.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 24 |
-| **Events** | 3 |
 | **Slug** | `apiframe` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Apiframe from **Build → Integrations → Connectors** and connect an accou
 | Generate Video | `generateVideo` | Submits an asynchronous video generation job for any supported video model (Kling, Sora, Seedance, Midjourney Video, Veo, Grok Imagine, Hailuo, Luma Ray, Wan, HappyHorse, Runway or Flux 3), from a text prompt and optionally start/end frames or reference media. The model value selects which model-specific parameter block applies; only that block is read. Returns a jobId immediately; poll Get Job or supply a webhookUrl to receive the result. Credits are charged per model and duration. |
 | Get Account Info | `getAccountInfo` | Returns the authenticated user, their team with its remaining credit balance and subscription plan, and the API key used for the request. Useful for verifying credentials and checking credits before submitting jobs. |
 | Get Asset | `getAsset` | Returns a stored media asset by id with its status, URL, media type, content type and size. Assets are Active as soon as creation succeeds and can be referenced as asset://{assetId} in generation requests. Only assets created by the caller's team are accessible. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Job | `getJob` | Returns the current status, progress, submitted input and, once completed, the result of a single generation job. Poll this after submitting a job, or use a webhook instead. |
 | Get LoRA | `getLora` | Returns a single personal Flux LoRA by id, including its training status, readiness and trigger word. Poll this to follow a training run started with Create LoRA. |
 | List Jobs | `listJobs` | Returns a cursor-paginated list of generation jobs, newest first. Defaults to the caller's own jobs; team admins can pass scope=team to see every job in the team. Filter by status or model, or look up a single job id with search. |
@@ -48,6 +55,8 @@ Add Apiframe from **Build → Integrations → Connectors** and connect an accou
 | Upscale Image | `upscaleImage` | Submits an asynchronous image upscale job using Topaz Image Upscale (photo-realistic, forensic enlargement) or Clarity Upscaler (creative enhancement that invents detail from a steering prompt). Returns a jobId immediately; poll Get Job or supply a webhookUrl to receive the result. |
 | Upscale Video | `upscaleVideo` | Submits an asynchronous video upscale and frame-interpolation job with Topaz Video Upscale, up to 4K and 60 fps. Returns a jobId immediately; poll Get Job or supply a webhookUrl to receive the result. Credits are charged per second of output. |
 | Write Udio Lyrics | `writeUdioLyrics` | Has Udio write song lyrics from a description without generating any audio. The job settles in seconds and its result is { lyrics, instrumental, tempo }. Pass duration to match the song you intend to generate, or lyrics to have Udio rewrite existing words. Feed the result back as udioParams.lyrics on Generate Music. |
+
+</details>
 
 ## Events
 

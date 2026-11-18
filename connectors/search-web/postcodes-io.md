@@ -5,6 +5,8 @@ hidden: true
 
 # Postcodes.io
 
+<img src="../../.gitbook/assets/connectors/postcodes-io.jpg" alt="Postcodes.io logo" width="64">
+
 Postcodes.io is a free, open-source API for UK postcodes and geolocation, built on Office for National Statistics and Ordnance Survey open data. Look up, search, autocomplete and bulk-check postcodes, reverse geocode coordinates, and get outward codes, terminated and Scottish postcodes, and places. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Postcodes.io is a free, open-source API for UK postcodes and geolocation, built 
 | **Category** | [Search and web](README.md) |
 | **Website** | [postcodes.io](https://postcodes.io) |
 | **Authentication** | No authentication |
-| **Actions** | 16 |
-| **Events** | 0 |
 | **Slug** | `postcodesIo` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add Postcodes.io from **Build → Integrations → Connectors** and connect an a
 | Lookup Outward Code | `lookupOutcode` | Get data for a UK outward code (first half of a postcode): centroid and the districts, wards, parishes and constituencies it covers (GET /outcodes/{outcode}). Docs: https://postcodes.io/docs/outcode/lookup |
 | Lookup Place | `lookupPlace` | Get one place by its Ordnance Survey Open Names code (GET /places/{code}). Docs: https://postcodes.io/docs/place/lookup |
 | Lookup Postcode | `lookupPostcode` | Get all data for one UK postcode: location, admin areas, constituencies, NHS areas, statistical codes (GET /postcodes/{postcode}). Unknown postcodes return 404 'Postcode not found'. Docs: https://postcodes.io/docs/postcode/lookup |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Lookup Scottish Postcode | `lookupScottishPostcode` | Get Scotland-specific data for a Scottish postcode: council area, Scottish Parliament constituency, health board, data zones and more (GET /scotland/postcodes/{postcode}). Non-Scottish postcodes return 404. Docs: https://postcodes.io/docs/scottish-postcode/lookup |
 | Lookup Terminated Postcode | `lookupTerminatedPostcode` | Get the termination date and last known location of a postcode that is no longer in use (GET /terminated_postcodes/{postcode}). Live or unknown postcodes return 404. Docs: https://postcodes.io/docs/terminated-postcode/lookup |
 | Reverse Geocode Outward Codes | `reverseGeocodeOutcodes` | Find the outward codes nearest to a longitude/latitude point, closest first (GET /outcodes?lon=&lat=). Docs: https://postcodes.io/docs/outcode/reverse-geocode |
 | Reverse Geocode Postcodes | `reverseGeocodePostcodes` | Find the postcodes nearest to a longitude/latitude point, each with a distance in metres (GET /postcodes?lon=&lat=). Docs: https://postcodes.io/docs/postcode/reverse-geocode |
 | Search Places | `searchPlaces` | Find places (cities, towns, villages, suburbs and more from Ordnance Survey Open Names) by name, up to 100 (GET /places?q=). Docs: https://postcodes.io/docs/place/query |
 | Search Postcodes | `searchPostcodes` | Find postcodes that start with a partial or full postcode, sorted, up to 100 (GET /postcodes?q=). Docs: https://postcodes.io/docs/postcode/query |
+
+</details>

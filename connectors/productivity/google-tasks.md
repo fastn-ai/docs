@@ -5,6 +5,8 @@ hidden: true
 
 # Google Tasks
 
+<img src="../../.gitbook/assets/connectors/google-tasks.jpg" alt="Google Tasks logo" width="64">
+
 Google Tasks API - manage Google Workspace task lists and tasks (create, read, update, delete, move, and clear completed tasks).
 
 | | |
@@ -12,8 +14,6 @@ Google Tasks API - manage Google Workspace task lists and tasks (create, read, u
 | **Category** | [Productivity](README.md) |
 | **Website** | [tasks.googleapis.com](https://tasks.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 14 |
-| **Events** | 0 |
 | **Slug** | `googleTasks` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Google Tasks from **Build → Integrations → Connectors** and connect an a
 | List Task Lists | `listTaskLists` | Returns all the authenticated user's task lists (GET /users/@me/lists). Supports pagination via maxResults/pageToken. |
 | List Tasks | `listTasks` | Returns all tasks in the specified task list (GET /lists/{tasklist}/tasks). Supports filtering by due/completed/updated date ranges and pagination. |
 | Move Task | `moveTask` | Moves the specified task to another position in the destination task list (POST /lists/{tasklist}/tasks/{task}/move). Reposition among siblings, re-parent as a subtask, or move to a different task list. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Patch Task | `patchTask` | Partially updates the specified task; only the fields provided are changed (PATCH /lists/{tasklist}/tasks/{task}). Typical use: mark a task completed by setting status. |
 | Patch Task List | `patchTaskList` | Partially updates the specified task list; only the fields provided are changed (PATCH /users/@me/lists/{tasklist}). |
 | Update Task | `updateTask` | Updates the specified task, replacing it with the supplied resource (PUT /lists/{tasklist}/tasks/{task}). |
 | Update Task List | `updateTaskList` | Updates the specified task list, replacing it with the supplied resource (PUT /users/@me/lists/{tasklist}). |
+
+</details>

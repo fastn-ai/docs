@@ -5,6 +5,8 @@ hidden: true
 
 # Elastic Email
 
+<img src="../../.gitbook/assets/connectors/elastic-email.png" alt="Elastic Email logo" width="64">
+
 Elastic Email is an email delivery and marketing platform. This connector wraps the complete Elastic Email v4 REST API: sending transactional and bulk email, contacts, lists, segments, templates, campaigns, files, inbound routes, domains, email verification, statistics, suppressions, sub-accounts, API key and SMTP credential management, activity events and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Elastic Email is an email delivery and marketing platform. This connector wraps 
 | **Category** | [Marketing](README.md) |
 | **Website** | [elasticemail.com](https://elasticemail.com) |
 | **Authentication** | API key |
-| **Actions** | 112 |
-| **Events** | 0 |
 | **Slug** | `elasticEmail` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Elastic Email from **Build → Integrations → Connectors** and connect an 
 | Create Campaign | `createCampaign` | Adds a new email campaign to Elastic Email for processing. Provide the campaign name, the recipient lists or segments, and one or more content blocks (multiple content blocks create an A/X split campaign). Requires the ModifyCampaigns access level. |
 | Create Inbound Route | `createInboundRoute` | Creates an inbound email route in Elastic Email that matches incoming mail on the recipient address or subject and then forwards it to an email address, posts it to an HTTP endpoint, or stops processing. Requires the ModifySettings access level. |
 | Create List | `createList` | Creates a new contact list in Elastic Email and optionally seeds it with existing contacts. Leave Emails empty to add every contact in the account. Requires the ModifyContacts access level. |
+
+<details>
+
+<summary>See 102 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Segment | `createSegment` | Creates a new contact segment in Elastic Email from a SQL-like rule. Requires the ModifyContacts access level. |
 | Create SMTP Credential | `createSmtpCredential` | Creates a new SMTP credential for the Elastic Email account. The name must be a valid email address and the generated password is returned once in this response. Requires the Security access level. |
 | Create Sub-Account | `createSubAccount` | Creates a sub-account under the Elastic Email account, optionally sending it an activation email and applying per-account sending limits. Sub-accounts are a reseller feature and are not available on the free plan. Requires the ModifySubAccounts access level. |
@@ -136,3 +143,5 @@ Add Elastic Email from **Build → Integrations → Connectors** and connect an 
 | Verify Domain | `verifyDomain` | Triggers DNS verification for an Elastic Email sending domain and sets the link-tracking protocol to use for it. The request body is a single tracking-type value. Requires the ModifySettings access level. |
 | Verify Email Address | `verifyEmailAddress` | Runs an Elastic Email verification on a single email address and returns whether it is valid, risky, unknown or invalid, together with the reason and a predicted deliverability score. Requires the VerifyEmails access level. |
 | View Email | `viewEmail` | Returns the rendered subject, sender and body of a previously sent Elastic Email message, identified by its message id. Requires the ViewReports access level. |
+
+</details>

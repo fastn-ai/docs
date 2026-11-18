@@ -5,6 +5,8 @@ hidden: true
 
 # Shotstack
 
+<img src="../../.gitbook/assets/connectors/shotstack.png" alt="Shotstack logo" width="64">
+
 Shotstack cloud video, image and audio editing API. Covers the Edit API (render edits, templates, media probe, AI asset generation and generation models), the Serve API (hosted asset lookup, transfer and delete) and the Ingest API (fetch/upload and manage source files). Renders are asynchronous: submit, then poll the render status endpoint for the output URL.
 
 | | |
@@ -12,8 +14,6 @@ Shotstack cloud video, image and audio editing API. Covers the Edit API (render 
 | **Category** | [Design](README.md) |
 | **Website** | [shotstack.io](https://shotstack.io) |
 | **Authentication** | API key |
-| **Actions** | 22 |
-| **Events** | 2 |
 | **Slug** | `shotstack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Shotstack from **Build → Integrations → Connectors** and connect an acco
 | Get Asset | `getAsset` | Serve API: look up a hosted asset by its Serve asset id. Returns the provider, region, originating render id, filename, filesize, hosting status and the public CDN url. NOTE: that url is publicly readable without an API key. |
 | Get Asset by Render ID | `getAssetByRenderId` | Serve API: list every hosted asset produced by a given render id - the video or image plus any poster and thumbnail. This is the bridge from an Edit API render id to the Serve API asset id needed by "Get Asset" and "Delete Asset". |
 | Get Generation Model | `getGenerationModel` | Edit API: get one AI generation model by its id, including credit pricing and the JSON Schema of the options it accepts (aspectRatio, resolution, seed, systemPrompt, voice, duration and so on). Use this to build a valid options object for "Generate Asset". |
+
+<details>
+
+<summary>See 12 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Generation Status | `getGenerationStatus` | Edit API: poll an AI generation job by id. Returns HTTP 202 with status queued/processing while running, and HTTP 200 with status 'done' plus the generated asset url when finished, or status 'failed' with an error string. |
 | Get Render Status | `getRenderStatus` | Edit API: get the status of a render by its id. Poll this after "Render Asset" or "Render Template". status is one of queued, fetching, rendering, saving, done, failed. When status is 'done' the response carries the public output url, and duration/billable seconds. |
 | Get Source | `getSource` | Ingest API: get one ingested source file by id - its original input URL, the Shotstack-hosted source URL to use in an edit, processing status, extension, dimensions, duration and filesize, plus any renditions. |
@@ -46,6 +53,8 @@ Add Shotstack from **Build → Integrations → Connectors** and connect an acco
 | Retrieve Template | `retrieveTemplate` | Edit API: retrieve a single saved template by id, including its full stored edit (timeline and output) and any merge placeholders. |
 | Transfer Asset | `transferAsset` | Serve API: fetch a file from any publicly available URL and transfer it to one or more Serve API destinations (shotstack CDN hosting, s3, mux, googleDrive, vimeo, tiktok, azure, gcs, akamai). Returns 200 with status 'queued'. The id you supply is stored as the asset's renderId, NOT as its asset id - confirm the transfer with "Get Asset by Render ID" passing that same id, which returns the generated Serve asset id and the public CDN url. |
 | Update Template | `updateTemplate` | Edit API: replace a saved template by id with a new name and edit. This is a full replacement, not a patch - send the complete template body. Confirm with "Retrieve Template". |
+
+</details>
 
 ## Events
 

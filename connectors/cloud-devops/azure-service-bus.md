@@ -5,6 +5,8 @@ hidden: true
 
 # Azure Service Bus
 
+<img src="../../.gitbook/assets/connectors/azure-service-bus.svg" alt="Azure Service Bus logo" width="64">
+
 Azure Service Bus messaging. Send and receive messages on queues and topics/subscriptions, manage queue/topic/subscription entities, and handle message locking, completion, abandon, and dead-lettering. Auth via SAS token (Shared Access Signature).
 
 | | |
@@ -12,8 +14,6 @@ Azure Service Bus messaging. Send and receive messages on queues and topics/subs
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [servicebus.windows.net](https://servicebus.windows.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `azureServiceBus` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure Service Bus from **Build → Integrations → Connectors** and connect
 | Create Topic | `createTopic` | Create a new topic in the namespace. |
 | Delete Queue | `deleteQueue` | Delete a queue from the namespace. All messages in the queue are discarded. |
 | Delete Subscription | `deleteSubscription` | Delete a subscription from a topic. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Subscription Rule | `deleteRule` | Delete a rule (filter) from a topic subscription by name. |
 | Delete Topic | `deleteTopic` | Delete a topic and all its subscriptions from the namespace. |
 | Get Queue | `getQueue` | Get metadata and runtime info for a specific queue, including message counts. |
@@ -59,3 +66,5 @@ Add Azure Service Bus from **Build → Integrations → Connectors** and connect
 | Update Queue | `updateQueue` | Update properties of an existing queue. Uses PUT with If-Match: * to modify the QueueDescription in place. Only supply the properties you want to change. |
 | Update Subscription | `updateSubscription` | Update properties of an existing topic subscription. Uses PUT with If-Match: * to modify the SubscriptionDescription in place. |
 | Update Topic | `updateTopic` | Update properties of an existing topic. Uses PUT with If-Match: * to modify the TopicDescription in place. |
+
+</details>

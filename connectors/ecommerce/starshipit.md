@@ -5,6 +5,8 @@ hidden: true
 
 # Starshipit
 
+<img src="../../.gitbook/assets/connectors/starshipit.png" alt="Starshipit logo" width="64">
+
 Starshipit is a multi-carrier shipping and fulfilment platform for ecommerce retailers. This connector wraps the Starshipit REST API: orders and order search, label printing and manifesting, shipments, tracking, live rates and delivery services, the address book, manifests and the product catalogue.
 
 | | |
@@ -12,8 +14,6 @@ Starshipit is a multi-carrier shipping and fulfilment platform for ecommerce ret
 | **Category** | [E-commerce](README.md) |
 | **Website** | [starshipit.com](https://starshipit.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 44 |
-| **Events** | 10 |
 | **Slug** | `starshipit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Starshipit from **Build → Integrations → Connectors** and connect an acc
 | Delete Address Book Entries | `addressBookDelete` | Remove one or more saved contacts from the account's address book. |
 | Delete Orders | `ordersDelete` | Delete unshipped orders from Starshipit. The Starshipit reference documents this as DELETE with a single order_id; the live API is POST with an order_ids array, and the documented form returns the router 404. |
 | Delete Products | `productsDelete` | Remove products from the Starshipit catalogue, either the listed ones or, with All Products set, the whole catalogue. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account Settings | `settingsGet` | Return the account's Starshipit settings: plan and account identity, the default sender address, packaging presets, default shipping options, the carriers that are configured and the carriers available for pickup, plan permissions and feature flags. This route is not in the published Starshipit reference but is live, and its pickup_carriers list is the source of the numeric carrier_id that Batch Update Orders expects. |
 | Get Delivery Services | `deliveryServicesGet` | Return the delivery services available for a shipment, optionally with live pricing, for a given sender, destination and parcel set. |
 | Get Manifest Files | `manifestFilesGet` | List the documents attached to a manifest, such as the carrier manifest PDF. |
@@ -68,6 +75,8 @@ Add Starshipit from **Build → Integrations → Connectors** and connect an acc
 | Update Order | `ordersUpdate` | Update a single unshipped order. Starshipit replaces the order with the body supplied, so send the whole order, not only the changed fields. |
 | Update Orders | `ordersUpdateMany` | Update several unshipped orders in one request. Starshipit replaces each order with the body supplied, so send the whole order, not only the changed fields. |
 | Update Product | `productsUpdate` | Update a product in the Starshipit catalogue. Starshipit replaces the stored record, so send the whole product. |
+
+</details>
 
 ## Events
 

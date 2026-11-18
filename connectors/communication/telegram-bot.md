@@ -5,6 +5,8 @@ hidden: true
 
 # Telegram Bot API
 
+<img src="../../.gitbook/assets/connectors/telegram-bot.png" alt="Telegram Bot API logo" width="64">
+
 Telegram Bot API connector. Send messages and media, manage chats and members, handle webhooks, and query bot/chat info. Auth via bot token placed in the URL path (https://api.telegram.org/bot{token}/METHOD) — Telegram uses no Authorization header.
 
 | | |
@@ -12,8 +14,6 @@ Telegram Bot API connector. Send messages and media, manage chats and members, h
 | **Category** | [Communication](README.md) |
 | **Website** | [telegram.org](https://telegram.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 43 |
-| **Events** | 0 |
 | **Slug** | `telegramBot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Telegram Bot API from **Build → Integrations → Connectors** and connect 
 | Delete Webhook | `deleteWebhook` | Remove webhook integration so the bot can switch back to getUpdates. Returns True on success. |
 | Edit Message Caption | `editMessageCaption` | Edit captions of media messages. Returns the edited Message, or True for inline messages. |
 | Edit Message Reply Markup | `editMessageReplyMarkup` | Edit only the reply markup (inline keyboard) of messages. Returns the edited Message, or True for inline messages. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Edit Message Text | `editMessageText` | Edit text and game messages. Returns the edited Message, or True for inline messages. |
 | Forward Message | `forwardMessage` | Forward a message of any kind. Returns the sent Message on success. |
 | Get Chat | `getChat` | Get up-to-date information about a chat. Returns a ChatFullInfo object. |
@@ -67,3 +74,5 @@ Add Telegram Bot API from **Build → Integrations → Connectors** and connect 
 | Set Webhook | `setWebhook` | Specify a URL to receive incoming updates via an outgoing webhook. Returns True on success. |
 | Unban Chat Member | `unbanChatMember` | Unban a previously banned user in a supergroup or channel. Returns True on success. |
 | Unpin Chat Message | `unpinChatMessage` | Remove a message from the list of pinned messages in a chat. Returns True on success. |
+
+</details>

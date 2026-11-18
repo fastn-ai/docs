@@ -5,6 +5,8 @@ hidden: true
 
 # Facebook
 
+<img src="../../.gitbook/assets/connectors/facebook.png" alt="Facebook logo" width="64">
+
 Facebook (Meta Graph API v25.0) connector for Page publishing and engagement: list/read Pages, create posts, publish photos/videos, comments, insights, and Page webhook subscriptions. OAuth 2.0 (Facebook Login) primary.
 
 | | |
@@ -12,8 +14,6 @@ Facebook (Meta Graph API v25.0) connector for Page publishing and engagement: li
 | **Category** | [Social media](README.md) |
 | **Website** | [facebook.com](https://facebook.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 37 |
-| **Events** | 3 |
 | **Slug** | `facebook` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Facebook from **Build → Integrations → Connectors** and connect an accou
 | Get Comments | `getComments` | Get comments on a post, photo, or other object. |
 | Get Lead | `getLead` | Retrieve a single submitted lead by its leadgen id, including the answers the person entered. This is the follow-up call for a leadgen webhook notification, whose payload carries only the leadgen_id and no field data. Requires the leads_retrieval permission and a Page access token for the Page that owns the form. |
 | Get Me | `getMe` | Get the authenticated user's basic profile. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Page | `getPage` | Get details for a Facebook Page by id. |
 | Get Page Feed | `getPageFeed` | Get posts from a Page feed. |
 | Get Page Insights | `getPageInsights` | Get insights/analytics metrics for a Page. |
@@ -61,6 +68,8 @@ Add Facebook from **Build → Integrations → Connectors** and connect an accou
 | Unsubscribe Page App | `unsubscribePageApp` | Uninstall/unsubscribe the app from a Page. Requires a Page access token. |
 | Update Comment | `updateComment` | Edit a comment the Page wrote (POST /{commentId} message). Returns {success}. |
 | Update Post | `updatePost` | Edit the text of a Page post (POST /{postId} message). Returns {success}. |
+
+</details>
 
 ## Events
 

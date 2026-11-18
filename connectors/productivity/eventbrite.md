@@ -5,6 +5,8 @@ hidden: true
 
 # Eventbrite
 
+<img src="../../.gitbook/assets/connectors/eventbrite.png" alt="Eventbrite logo" width="64">
+
 Eventbrite events platform connector for the Eventbrite API v3. Manage events, ticket classes, venues, organizers, orders, attendees, discounts, media, webhooks, and reference data (categories, formats, timezones).
 
 | | |
@@ -12,8 +14,6 @@ Eventbrite events platform connector for the Eventbrite API v3. Manage events, t
 | **Category** | [Productivity](README.md) |
 | **Website** | [eventbrite.com](https://eventbrite.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 54 |
-| **Events** | 0 |
 | **Slug** | `eventbrite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Eventbrite from **Build → Integrations → Connectors** and connect an acc
 | Create Webhook | `createWebhook` | Register a webhook for an Eventbrite organization so your endpoint is notified when the selected events occur. 'actions' is a comma-separated list of event types, e.g. 'order.placed,event.published'. |
 | Delete Discount | `deleteDiscount` | Delete an Eventbrite discount by its ID. |
 | Delete Event | `deleteEvent` | Delete an Eventbrite event. Only draft events with no completed orders can be deleted. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Ticket Class | `deleteTicketClass` | Delete a ticket class from an Eventbrite event. Only possible when no tickets of that class have been sold. |
 | Delete Webhook | `deleteWebhook` | Delete (unregister) an Eventbrite webhook by its ID. |
 | Get Category | `getCategory` | Retrieve a single Eventbrite category by its ID. |
@@ -78,3 +85,5 @@ Add Eventbrite from **Build → Integrations → Connectors** and connect an acc
 | Update Organizer | `updateOrganizer` | Update an existing Eventbrite organizer profile. Only the fields you provide are changed. |
 | Update Ticket Class | `updateTicketClass` | Update an existing ticket class for an Eventbrite event. Only the fields you provide are changed. |
 | Update Venue | `updateVenue` | Update an existing Eventbrite venue. Only the fields you provide are changed. |
+
+</details>

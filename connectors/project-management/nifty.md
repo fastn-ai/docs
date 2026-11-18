@@ -5,14 +5,14 @@ hidden: true
 
 # Nifty
 
+<img src="../../.gitbook/assets/connectors/nifty.png" alt="Nifty logo" width="64">
+
 Nifty project management platform. Manage projects, tasks, task groups (statuses), milestones, documents, files, tags, messages, team members, portfolios, custom fields, time tracking, folders, and webhooks.
 
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 115 |
-| **Events** | 8 |
 | **Slug** | `nifty` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Nifty from **Build → Integrations → Connectors** and connect an account,
 | Archive Task | `archiveTask` | This endpoint archives the task. |
 | Assign Status Members | `assignTask` | This endpoint assignes the list of members to the status. |
 | Assign Task | `assignTask2` | This endpoint adds assignee to the task. |
+
+<details>
+
+<summary>See 105 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clone Task | `cloneTask` | This endpoint creates clone copy of the task. |
 | Complete Task | `completeTask` | This endpoint updates the task as completed. |
 | Copy File | `copyFile` | This endpoint creates a new copy of the file. |
@@ -138,6 +145,8 @@ Add Nifty from **Build → Integrations → Connectors** and connect an account,
 | Update Task Milestone | `updateTaskMilestone` | This endpoint adds milestone details for the task. |
 | Update Webhook | `updateWebhook` | This endpoint updates an existing webhook endpoint. |
 | Upload Files | `uploadFiles` | This endpoint uploads multiples files. |
+
+</details>
 
 ## Events
 

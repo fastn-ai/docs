@@ -5,6 +5,8 @@ hidden: true
 
 # Freshsales
 
+<img src="../../.gitbook/assets/connectors/freshsales.png" alt="Freshsales logo" width="64">
+
 Freshsales (Freshworks CRM) connector — contacts, sales accounts, deals, tasks, appointments, notes, sales activities, phone calls, products, CPQ documents, files/links, marketing lists, selectors, custom fields, filters, search and lookup. Auth via per-user API key in the Authorization: Token token=&lt;key&gt; header.
 
 | | |
@@ -12,8 +14,6 @@ Freshsales (Freshworks CRM) connector — contacts, sales accounts, deals, tasks
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [freshworks.com](https://freshworks.com) |
 | **Authentication** | API key |
-| **Actions** | 79 |
-| **Events** | 0 |
 | **Slug** | `freshsales` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Freshsales from **Build → Integrations → Connectors** and connect an acc
 | Bulk Upsert Sales Accounts | `bulkUpsertSalesAccounts` | Create/update many sales accounts in one async job. |
 | Clone Contact | `cloneContact` | Clone an existing contact into a new record. |
 | Clone Deal | `cloneDeal` | Clone an existing deal into a new record. |
+
+<details>
+
+<summary>See 69 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clone Sales Account | `cloneSalesAccount` | Clone an existing sales account into a new record. |
 | Create Appointment | `createAppointment` | Create an appointment. title, from_date, end_date and time_zone are required; link to a record via targetable_type/targetable_id. |
 | Create Contact | `createContact` | Create a contact. Provide fields under the contact object. At least one identifying field (first_name/last_name/email/mobile_number) should be supplied. |
@@ -103,3 +110,5 @@ Add Freshsales from **Build → Integrations → Connectors** and connect an acc
 | Upsert Contact | `upsertContact` | Create or update a contact matched by a unique identifier (e.g. email). unique_identifier selects the match key; contact carries the attributes. |
 | Upsert Deal | `upsertDeal` | Create or update a deal matched by a unique identifier. |
 | Upsert Sales Account | `upsertSalesAccount` | Create or update a sales account matched by a unique identifier (e.g. name or external_id). |
+
+</details>

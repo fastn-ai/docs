@@ -5,6 +5,8 @@ hidden: true
 
 # eTermin
 
+<img src="../../.gitbook/assets/connectors/etermin.png" alt="eTermin logo" width="64">
+
 eTermin is an online appointment scheduling and booking platform. This connector covers the eTermin REST API (https://www.etermin.net/api): appointments and appointment sync, calendars, calendar services, calendar return times and non-working times, anchor times by weekday and by date, working times by weekday and by date, services and service groups, contacts with frequency and service links, vouchers, ratings, time slots, survey results, booking page logs, message logs and user mappings, plus the account, user, company, settings, custom field, location, payment, invoice, tag, file, survey, statistics, log and webhook configuration resources.
 
 | | |
@@ -12,8 +14,6 @@ eTermin is an online appointment scheduling and booking platform. This connector
 | **Category** | [Productivity](README.md) |
 | **Website** | [etermin.net](https://etermin.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 121 |
-| **Events** | 3 |
 | **Slug** | `etermin` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add eTermin from **Build → Integrations → Connectors** and connect an accoun
 | Create Calendar Non-Working Time | `createCalendarsnonworkingtime` | Create a non-working (blocked) time range for a calendar. Note: the calendar id parameter is named appcalendarid on this route, and nwtype is a SMALLINT (0/1) even though eTermin's OpenAPI types it boolean. |
 | Create Calendar Return Time | `createCalendarreturntime` | Create a return time (buffer window) for a calendar. |
 | Create Contact | `createContact` | Create a contact (customer record). 'newsletter' must be supplied because eTermin rejects an empty boolean query value. Setting loginid/password creates portal login credentials for the contact. |
+
+<details>
+
+<summary>See 111 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Location | `createLocation` | Creates an alternative appointment location on a calendar. Undocumented route. calendarid is an Int32 and rejects an empty value, so it is required; every address field tolerates empty. The route answers 200 with an empty statusmsg and no id, so confirm creation with List Locations for that calendar and take the id from there. All parameters travel in the URL; eTermin rejects any non-empty request body. |
 | Create Service | `createService` | Creates a bookable service inside a service group and returns its new id. eTermin takes every field as a query parameter and rejects an empty value for most numeric and true/false fields, so those are marked required here; free-text fields may be left blank. Note that maxminslots and tagscancel are numeric 0/1 flags despite being typed as booleans/strings in eTermin's own specification. |
 | Create Service Group | `createServiceGroup` | Creates a service group, the block on the booking page that holds a set of selectable services. Returns the new service group id together with the status. Services are then attached to it with Create Service. |
@@ -145,6 +152,8 @@ Add eTermin from **Build → Integrations → Connectors** and connect an accoun
 | Update Working Time | `updateWorkingtime` | Update a weekly working-time slot by id. NOTE: 'calendarid' is documented but rejected by this route (404 'Invalid column name calendarid'), so it is not exposed here. |
 | Update Working Time Date | `updateWorkingtimesdate` | Updates a date-specific working slot by its id. Returns 'N records updated!'. All parameters travel in the URL; eTermin rejects any non-empty request body. Numeric and boolean parameters reject an empty value so they are required; reason, serviceids and oneoffcode tolerate empty. Confirm with List Working Time Dates. |
 | Upload File | `uploadFile` | Attaches a file to an appointment or contact. ENGINE GAP - NOT DRIVABLE from fastn today, and proven so rather than assumed: the route reads a BINARY upload stream, not query parameters (every parameter name tried - file, filename, name, data, content, base64, image, with and without a data: URI value - returns the identical 400 'startIndex cannot be larger than length of string', and a raw text body returns 400 'Index was outside the bounds of the array'). eTermin also rejects any non-empty request body sent by the engine, and the engine cannot send binary multipart parts. The route is built here for coverage; finishing it needs engine support for binary multipart bodies plus eTermin publishing the upload contract. |
+
+</details>
 
 ## Events
 

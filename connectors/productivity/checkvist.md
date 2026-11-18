@@ -5,6 +5,8 @@ hidden: true
 
 # Checkvist
 
+<img src="../../.gitbook/assets/connectors/checkvist.png" alt="Checkvist logo" width="64">
+
 Checkvist is an online outliner and hierarchical task/list manager. This connector covers checklists, list items (tasks), notes/comments, tags, list export (6 formats), import, repeating tasks, status changes, collaborators and account info against https://checkvist.com. Authentication uses HTTP Basic with the account email and the Remote API key from the Checkvist profile page (an account password also works). Checkvist also supports OAuth 2.0 (authorization_code + PKCE) for its MCP server; those tokens also work on the REST API but require a Checkvist PRO plan.
 
 | | |
@@ -12,8 +14,6 @@ Checkvist is an online outliner and hierarchical task/list manager. This connect
 | **Category** | [Productivity](README.md) |
 | **Website** | [checkvist.com](https://checkvist.com) |
 | **Authentication** | Basic auth, OAuth 2.0 |
-| **Actions** | 44 |
-| **Events** | 0 |
 | **Slug** | `checkvist` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Checkvist from **Build → Integrations → Connectors** and connect an acco
 | Delete Checklist | `deleteChecklist` | Delete a checklist and all of its items. The list is marked for deletion immediately and physically removed by Checkvist once a day. Returns the deleted checklist representation. Destructive: there is no API to undo this. |
 | Delete Checklist Item | `deleteChecklistItem` | Delete a checklist item and all of its children. Returns the deleted item. Deleted items can be put back with Restore Checklist Items while they are still in the list's undo buffer. |
 | Delete Item Note | `deleteItemNote` | Delete a note from a checklist item by note id. Returns the deleted note. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Email List Address To Account Owner | `emailListAddressToOwner` | Ask Checkvist to email the list's "add via email" inbound address to the account owner's own mailbox. Responds with the plain text OK. The mail goes only to the authenticated account's own address - it is never sent to a third party. To read the same address without sending mail, use Get Checklist with with_inbound_email=true. |
 | Exchange Credentials For API Token | `exchangeCredentialsForApiToken` | SECURITY WARNING: this action's response contains a live Checkvist API token. Anything that logs or stores the response stores a credential - redact it. Exchanges a login email plus Remote API key (or account password) for a token valid for 1 day, which can then be sent as the token parameter or an X-Client-Token header. token2fa is required when the account has 2-step verification enabled. Returns 401 on bad credentials and 422 when the 2FA code is missing or wrong. |
 | Export Checklist | `exportChecklist` | Export a whole checklist in one of six formats: json (structured list + items), txt (indented plain text), md (Markdown), opml (outline XML), xml, or html. Pass the format as the file extension. Undocumented endpoint used by the Checkvist web app's Export dialog. |
@@ -68,3 +75,5 @@ Add Checkvist from **Build → Integrations → Connectors** and connect an acco
 | Update Checklist Item | `updateChecklistItem` | Update a checklist item: content, parent_id (re-nest), tags (replaces the whole tag set), due_date, position, priority (0-9) or assignee_ids. Does NOT change status - use Close / Reopen / Invalidate Checklist Item for that. Returns the updated item. |
 | Update Item Note | `updateItemNote` | Replace the text of an existing note on a checklist item. The new text goes in comment.comment. Returns the updated note. |
 | Validate Google Calendar Connection | `validateGoogleCalendarConnection` | Check that the account's stored Google Calendar authorisation is still valid. Undocumented route used by the Checkvist settings UI. On an account that has not connected Google Calendar it answers 404 {"message":"Calendar integration inactive"} - a Checkvist-side entitlement gate, not a missing route. |
+
+</details>

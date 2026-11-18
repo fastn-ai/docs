@@ -5,6 +5,8 @@ hidden: true
 
 # RxNorm (RxNav)
 
+<img src="../../.gitbook/assets/connectors/rxnorm-rxnav.png" alt="RxNorm (RxNav) logo" width="64">
+
 RxNorm (via the NLM RxNav REST API) is the US National Library of Medicine's normalized naming system for clinical drugs. Find drug concepts (RXCUI) by name, NDC or other ids, approximate match and spelling suggestions, get drug products, brands, generics, related concepts, properties, NDCs and their status and history, plus reference lists of term types, relationships and sources. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ RxNorm (via the NLM RxNav REST API) is the US National Library of Medicine's nor
 | **Category** | [Data and databases](README.md) |
 | **Website** | [nlm.nih.gov](https://nlm.nih.gov) |
 | **Authentication** | No authentication |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `rxnormRxnav` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add RxNorm (RxNav) from **Build → Integrations → Connectors** and connect an
 | Get All Related Concepts | `getAllRelatedInfo` | Get all concepts directly or indirectly related to a concept, grouped by term type (GET /rxcui/{rxcui}/allrelated.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getAllRelatedInfo.html |
 | Get Approximate Match | `getApproximateMatch` | Find concepts that approximately match a free-text drug string, ranked by score (GET /approximateTerm.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html |
 | Get Brands by Ingredients | `getMultiIngredBrand` | Get brand names that contain all the given ingredients (GET /brands.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getMultiIngredBrand.html |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Concept History Status | `getRxcuiHistoryStatus` | Get the status (active, remapped, obsolete...) and history of a concept, including remapping and attributes (GET /rxcui/{rxcui}/historystatus.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getRxcuiHistoryStatus.html |
 | Get Concept Name | `getRxNormName` | Get the RxNorm name of a concept (GET /rxcui/{rxcui}.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getRxNormName.html |
 | Get Concept Properties | `getRxConceptProperties` | Get the basic properties of a concept: name, synonym, term type, language, suppress flag (GET /rxcui/{rxcui}/properties.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getRxConceptProperties.html |
@@ -57,3 +64,5 @@ Add RxNorm (RxNav) from **Build → Integrations → Connectors** and connect an
 | List Relationship Types | `getRelaTypes` | List RxNorm relationship names, e.g. tradename_of (GET /relatypes.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getRelaTypes.html |
 | List Source Vocabularies | `getSourceTypes` | List the source vocabularies in RxNorm (GET /sourcetypes.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getSourceTypes.html |
 | List Term Types | `getTermTypes` | List the RxNorm term types (TTY), e.g. IN, BN, SCD, SBD (GET /termtypes.json). Docs: https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getTermTypes.html |
+
+</details>

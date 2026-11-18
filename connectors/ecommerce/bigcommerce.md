@@ -5,6 +5,8 @@ hidden: true
 
 # BigCommerce
 
+<img src="../../.gitbook/assets/connectors/bigcommerce.png" alt="BigCommerce logo" width="64">
+
 BigCommerce REST Management API — Catalog (products, categories, brands, variants, images, modifiers), Orders (V2), Customers (V3), and Carts & Checkouts (V3). Supports OAuth 2.0 app installs and store-level X-Auth-Token API accounts.
 
 | | |
@@ -12,8 +14,6 @@ BigCommerce REST Management API — Catalog (products, categories, brands, varia
 | **Category** | [E-commerce](README.md) |
 | **Website** | [bigcommerce.com](https://bigcommerce.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 607 |
-| **Events** | 90 |
 | **Slug** | `bigcommerce` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BigCommerce from **Build → Integrations → Connectors** and connect an ac
 | Archive Order | `archiveOrder` | Soft-delete (archive) an order. Order is hidden but recoverable via control panel. |
 | Capture Order Payment | `captureOrderPayment` | Capture the payment for an order (v3). No request body. Sets payment_status to 'capture pending'. |
 | Create a Blog Post | `createBlogPost` | Creates a blog post (Content v2). Required: title, body. Field-by-field body. |
+
+<details>
+
+<summary>See 597 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a Currency | `createCurrency` | Creates a currency (v2). Required: currency_code, currency_exchange_rate, name, token, token_location, decimal_token, thousands_token, decimal_places. |
 | Create a Customer (v2) | `createCustomerV2` | Creates a customer (v2, deprecated). Required fields: first_name, last_name, email. |
 | Create a Customer Address (v2) | `createCustomerV2Address` | Creates a new customer address (v2, deprecated). Required: first_name, last_name, phone, street_1, city, state, zip, country. State cannot be null; pass a space for no state. |
@@ -632,6 +639,8 @@ Add BigCommerce from **Build → Integrations → Connectors** and connect an ac
 | Validate Theme Configuration | `validateThemeConfiguration` | DEPRECATED - confirmed retired by BigCommerce, do not attempt to fix. Spec route was POST /v3/themes/{uuid}/configurations/validate. Confirmed against theme uuid e3d82ce0-9bae-0133-0de7-525400970412 with a valid variation_id; sibling GET /configurations on the same base path returns 200, but POST .../configurations/validate returns 404. Re-confirmed 2026-09-02 against BigCommerce's official OpenAPI source (github.com/bigcommerce/api-specs-1) and current docs pages theme-configurations and theme-actions: neither documents a validate endpoint anywhere under /v3/themes today - only GET /v3/themes/{uuid}/configurations and POST /v3/themes/{uuid}/actions/download exist. Provider-side removal, not a catalog defect. |
 | Void Order Payment | `voidOrderPayment` | Void the payment for an order (v3). No request body. Sets payment_status to 'void pending'. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -648,6 +657,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Cart Coupon Applied | `store/cart/couponApplied` | Fires when a coupon is applied to a cart. |
 | Cart Created | `store/cart/created` | Fires when a new cart is created. |
 | Cart Created | `store/cart/created` | Fires when a cart is created. |
+
+<details>
+
+<summary>See 80 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Cart Deleted | `store/cart/deleted` | Fires when a cart is deleted. |
 | Cart Deleted | `store/cart/deleted` | Fires when a cart is deleted. |
 | Cart Line Item Created | `store/cart/lineItem/created` | Fires when a line item is added to a cart. |
@@ -728,3 +744,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Subscriber Deleted | `store/subscriber/deleted` | Fires when a subscriber is deleted. |
 | Subscriber Updated | `store/subscriber/updated` | Fires when a subscriber is updated. |
 | Subscriber Updated | `store/subscriber/updated` | Fires when a subscriber is updated. |
+
+</details>

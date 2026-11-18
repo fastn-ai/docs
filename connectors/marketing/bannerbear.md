@@ -5,6 +5,8 @@ hidden: true
 
 # Bannerbear
 
+<img src="../../.gitbook/assets/connectors/bannerbear.png" alt="Bannerbear logo" width="64">
+
 Bannerbear is an API for automatically generating images, videos, screenshots, animated GIFs, movies and PDFs at scale for marketing automation, ad creative, and dynamic content workflows. Covers Templates, Video Templates, Template Sets, Images, Videos, Collections, Animated GIFs, Screenshots, Movies, Sessions, Webhooks, Projects, PDF utilities, Diagnoses, Fonts and Effects.
 
 | | |
@@ -12,8 +14,6 @@ Bannerbear is an API for automatically generating images, videos, screenshots, a
 | **Category** | [Marketing](README.md) |
 | **Website** | [bannerbear.com](https://bannerbear.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 44 |
-| **Events** | 0 |
 | **Slug** | `bannerbear` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bannerbear from **Build → Integrations → Connectors** and connect an acc
 | Create Screenshot | `createScreenshot` | Take a screenshot of a website URL. Consumes 1 API credit. |
 | Create Session | `createSession` | Create a secure, embeddable template editor session URL (expires after 2 hours). Free - does not render anything. |
 | Create Signed Base | `createSignedBase` | Create a signed-URL base for a template, enabling on-the-fly image generation via a signed GET URL (no API call needed to render). Free. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Template | `createTemplate` | Create a new blank template of a given size. Free - defines a design canvas, does not render anything. Layers must then be added via the Bannerbear editor UI or a session URL. |
 | Create Template Set | `createTemplateSet` | Group existing templates into a template set so a single Collection call can render all of them together. Free - references existing templates, does not render anything. |
 | Create Video | `createVideo` | Render a video from a video template (Overlay, Transcribe or Multi Overlay build pack). Consumes API credits proportional to output length - can be significantly more expensive than an image. |
@@ -68,3 +75,5 @@ Add Bannerbear from **Build → Integrations → Connectors** and connect an acc
 | List Images | `listImages` | List all generated images in the project. Free, read-only. |
 | List Movies | `listMovies` | List all movies in the project. Free, read-only. |
 | List Projects | `listProjects` | List all projects in the account. Per Bannerbear docs this requires a Master API Key. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Jotform
 
+<img src="../../.gitbook/assets/connectors/jotform.png" alt="Jotform logo" width="64">
+
 Jotform online form builder API. Manage forms, questions, properties, submissions, reports, folders, webhooks, and account/user data. Auth via APIKEY header.
 
 | | |
@@ -12,8 +14,6 @@ Jotform online form builder API. Manage forms, questions, properties, submission
 | **Category** | [Productivity](README.md) |
 | **Website** | [jotform.com](https://jotform.com) |
 | **Authentication** | API key |
-| **Actions** | 47 |
-| **Events** | 0 |
 | **Slug** | `jotform` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Jotform from **Build → Integrations → Connectors** and connect an accoun
 | Create Form Webhook | `createFormWebhook` | Register a webhook URL on a form. Jotform will POST submission data to this URL on every new submission. Form-urlencoded with webhookURL. |
 | Create Label | `createLabel` | Creates a new label. Labels group forms, workflows, sheets and portals. |
 | Create Report | `createReport` | Creates a new report for a form (csv, excel, grid, table or calendar). title, list_type and fields are required; pass fields=all to include every field. |
+
+<details>
+
+<summary>See 37 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Form | `deleteForm` | Delete a form (moves it to trash). Returns the deleted form's properties. |
 | Delete Form Question | `deleteFormQuestion` | Delete a question (field) from a form by its question id. |
 | Delete Form Webhook | `deleteFormWebhook` | Delete a webhook from a form by its webhook id (the index key returned by Get Form Webhooks). |
@@ -71,3 +78,5 @@ Add Jotform from **Build → Integrations → Connectors** and connect an accoun
 | Set Form Properties | `setFormProperties` | Updates configuration properties of a form. Pass a properties object with only the keys to change (title, thanktext, activeRedirect, thankurl, formWidth, ...); sent as JSON to the documented PUT /form/{id}/properties endpoint. |
 | Update Label | `updateLabel` | Updates a label's name and/or color. Only the fields supplied are sent (JSON PUT). |
 | Update User Settings | `updateUserSettings` | Update the user's account settings. Pass only the fields you want to change (name, website, time_zone, language); omitted fields are left untouched. Form-urlencoded. |
+
+</details>

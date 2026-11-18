@@ -5,6 +5,8 @@ hidden: true
 
 # Wikidata
 
+<img src="../../.gitbook/assets/connectors/wikidata.png" alt="Wikidata logo" width="64">
+
 Wikidata is the free, collaborative knowledge base of the Wikimedia projects. Its Wikibase REST API reads items, properties and lexemes with their labels, descriptions, aliases, sitelinks and statements (with language fallback), searches and suggests items and properties, and lists property data types. Read access needs no API key; Wikimedia asks for a descriptive User-Agent.
 
 | | |
@@ -12,8 +14,6 @@ Wikidata is the free, collaborative knowledge base of the Wikimedia projects. It
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [wikidata.org](https://wikidata.org) |
 | **Authentication** | No authentication |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `wikidata` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wikidata from **Build → Integrations → Connectors** and connect an accou
 | Get Item Label With Fallback | `getItemLabelWithFallback` | Retrieve an Item's label in a specific language, with language fallback. If a label is defined in the requested language, the API responds with a 200 status code and includes the label in the response payload. If a label only exists in a fallback language, the API returns a 307 status code and provides the location of the label. (GET /wikibase/v1/entities/items/{item_id}/labels_with_language_fallback/{language_code}). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
 | Get Item Labels | `getItemLabels` | Retrieve an Item's labels. (GET /wikibase/v1/entities/items/{item_id}/labels). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
 | Get Item Statement | `getItemStatement` | Retrieve a single Statement from an Item. This endpoint is also accessible through `/statements/{statement_id}` (GET /wikibase/v1/entities/items/{item_id}/statements/{statement_id}). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Item Statements | `getItemStatements` | Retrieve Statements from an Item. (GET /wikibase/v1/entities/items/{item_id}/statements). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
 | Get Lexeme | `getLexeme` | Retrieve a single Lexeme by ID. (GET /wikibaselexeme/v0/entities/lexemes/{lexeme_id}). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
 | Get OpenAPI Document | `getOpenApiDoc` | Retrieve the OpenAPI document. (GET /wikibase/v1/openapi.json). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
@@ -56,3 +63,5 @@ Add Wikidata from **Build → Integrations → Connectors** and connect an accou
 | Simple Property Search | `simplePropertySearch` | Simple Property search by label and aliases. (GET /wikibase/v1/search/properties). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
 | Suggest Items | `suggestItems` | Simple Item search by prefix, for labels and aliases. (GET /wikibase/v1/suggest/items). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
 | Suggest Properties | `suggestProperties` | Simple Property search by prefix, for labels and aliases. (GET /wikibase/v1/suggest/properties). Docs: https://www.wikidata.org/wiki/Wikidata:REST_API |
+
+</details>

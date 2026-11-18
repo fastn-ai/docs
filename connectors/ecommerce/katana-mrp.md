@@ -5,6 +5,8 @@ hidden: true
 
 # Katana MRP
 
+<img src="../../.gitbook/assets/connectors/katana-mrp.png" alt="Katana MRP logo" width="64">
+
 Katana Cloud Inventory (Katana MRP) — manufacturing resource planning and inventory management. Full coverage of the Katana v1 API: products, materials, variants, recipes/BOM, manufacturing orders, sales orders, purchase orders, customers, suppliers, inventory, stock adjustments/transfers/stocktakes, locations, bins, price lists, tax rates, serial/batch tracking, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Katana Cloud Inventory (Katana MRP) — manufacturing resource planning and inve
 | **Category** | [E-commerce](README.md) |
 | **Website** | [katanamrp.com](https://katanamrp.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 223 |
-| **Events** | 0 |
 | **Slug** | `katanaMrp` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Katana MRP from **Build → Integrations → Connectors** and connect an acc
 | Create Customer | `createCustomer` | Create a Customer in Katana MRP. |
 | Create Customer Address | `createCustomerAddress` | Create a Customer Address in Katana MRP. |
 | Create Demand Forecast | `createDemandForecast` | Create a Demand Forecast in Katana MRP. |
+
+<details>
+
+<summary>See 213 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Make To Order Manufacturing Order | `createManufacturingOrderMakeToOrder` | Create a Manufacturing Order Make To Order in Katana MRP. |
 | Create Manufacturing Order | `createManufacturingOrder` | Create a Manufacturing Order in Katana MRP. |
 | Create Manufacturing Order Operation Row | `createManufacturingOrderOperationRow` | Create a Manufacturing Order Operation Row in Katana MRP. |
@@ -247,3 +254,5 @@ Add Katana MRP from **Build → Integrations → Connectors** and connect an acc
 | Update Supplier Address | `updateSupplierAddress` | Update a Supplier Address in Katana MRP. |
 | Update Variant | `updateVariant` | Update a Variant in Katana MRP. |
 | Update Webhook | `updateWebhook` | Update a Webhook in Katana MRP. |
+
+</details>

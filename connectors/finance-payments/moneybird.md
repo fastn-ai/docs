@@ -5,6 +5,8 @@ hidden: true
 
 # Moneybird
 
+<img src="../../.gitbook/assets/connectors/moneybird.png" alt="Moneybird logo" width="64">
+
 Moneybird is a Dutch online accounting and invoicing platform. This connector covers the Moneybird API v2: contacts and contact people, sales invoices, recurring sales invoices, estimates, external sales invoices, purchase invoices, receipts, general and general journal documents, subscriptions and subscription templates, products, projects, time entries, task lists and tasks, ledger accounts, tax rates, financial accounts, mutations and statements, payments, purchase transactions, identities, custom fields, document styles, users, verifications, reports, downloads, the customer contact portal, workflows and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Moneybird is a Dutch online accounting and invoicing platform. This connector co
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [moneybird.com](https://moneybird.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 297 |
-| **Events** | 206 |
 | **Slug** | `moneybird` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Moneybird from **Build → Integrations → Connectors** and connect an acco
 | Add Estimate Attachment | `addEstimateAttachment` | Attaches a text-based document, such as a CSV, XML or plain-text file, to a Moneybird estimate. The file is uploaded as multipart form data and Moneybird answers with an empty body; read the estimate back with Get Estimate to obtain the new attachment id. Binary formats such as PDF or images cannot be uploaded through this action because the request body is transmitted as text. |
 | Add Note To Contact | `addNoteToContact` | Adds an internal note to a Moneybird contact. Setting todo, or assigning the note to a colleague, turns it into a to-do item. |
 | Add Note To External Sales Invoice | `createExternalSalesInvoiceNote` | Adds a note to an external sales invoice in a Moneybird administration. Set todo to true, or assign the note to a user, to turn it into a to-do item instead of a plain note. |
+
+<details>
+
+<summary>See 287 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Note To General Journal Document | `addNoteToGeneralJournalDocument` | Adds an internal note to a Moneybird general journal document. A note can optionally be turned into a to-do and assigned to a colleague. |
 | Add Sales Invoice Attachment | `addSalesInvoiceAttachment` | Attaches a text-based document, such as a CSV, XML or plain-text file, to a Moneybird sales invoice. The file is uploaded as multipart form data and Moneybird answers with an empty body; read the invoice back with Get Sales Invoice to obtain the new attachment id. Binary formats such as PDF or images cannot be uploaded through this action because the request body is transmitted as text. |
 | Add Source To Asset | `createAssetSource` | Links the booking that paid for a fixed asset to that asset in a Moneybird administration. Supply either a document line or a general journal document entry, and it must sit on the same ledger account as the asset. Fixed-asset ledger accounts do not accept invoice or receipt lines, so in practice the source is normally a general journal document entry. |
@@ -322,6 +329,8 @@ Add Moneybird from **Build → Integrations → Connectors** and connect an acco
 | Update Time Entry | `updateTimeEntry` | Updates a Moneybird time entry. Only the fields supplied inside the envelope are changed. Start and end times are rounded down to whole minutes with a minimum of one minute between them. |
 | Upload SEPA Credit Transfer File | `uploadSepaCreditTransferFile` | Uploads a SEPA credit transfer (pain.001) file to Moneybird, which turns it into purchase transaction batches ready to be paid. Requires the SEPA credit transfer feature to be enabled on the administration. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -338,6 +347,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Administration Moneybird Banking Tax Information Sent | `administration_moneybird_banking_tax_information_sent` | Fires when banking tax information is sent. |
 | Administration Moneybird Payments Activated | `administration_moneybird_payments_activated` | Fires when Moneybird Payments is activated for the administration. |
 | Administration Payments Without Proof Activated | `administration_payments_without_proof_activated` | Fires when payments without proof are activated. |
+
+<details>
+
+<summary>See 196 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Administration Payments Without Proof Deactivated | `administration_payments_without_proof_deactivated` | Fires when payments without proof are deactivated. |
 | Adyen Banking Bank Transfer Permission Created | `adyen_banking_bank_transfer_permission_created` | Fires when an Adyen banking transfer permission is created. |
 | Adyen Payment Instrument Activated | `adyen_payment_instrument_activated` | Fires when an Adyen payment instrument is activated. |
@@ -534,3 +550,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Workflow Deactivated | `workflow_deactivated` | Fires when a workflow is deactivated. |
 | Workflow Destroyed | `workflow_destroyed` | Fires when a workflow is removed. |
 | Workflow Updated | `workflow_updated` | Fires when a workflow is changed. |
+
+</details>

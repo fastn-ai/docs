@@ -5,6 +5,8 @@ hidden: true
 
 # CityBikes
 
+<img src="../../.gitbook/assets/connectors/city-bikes.png" alt="CityBikes logo" width="64">
+
 CityBikes is a free, open API for bike sharing data. List about 800 bike sharing networks worldwide and get live station availability (free bikes, empty docks) and free-floating vehicles for any network. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ CityBikes is a free, open API for bike sharing data. List about 800 bike sharing
 | **Category** | [Data and databases](README.md) |
 | **Website** | [citybik.es](https://citybik.es) |
 | **Authentication** | No authentication |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `cityBikes` |
 
 ## Use it

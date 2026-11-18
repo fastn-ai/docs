@@ -5,6 +5,8 @@ hidden: true
 
 # TheCocktailDB
 
+<img src="../../.gitbook/assets/connectors/thecocktaildb.png" alt="TheCocktailDB logo" width="64">
+
 TheCocktailDB is an open, crowd-sourced database of drinks and cocktails. Search cocktails by name or first letter, look up full recipes, search and look up ingredients, get a random cocktail, filter by ingredient, alcohol, category or glass, and list categories, glasses, ingredients and alcohol filters. Use API key 1 (free developer test key) or your own supporter key.
 
 | | |
@@ -12,8 +14,6 @@ TheCocktailDB is an open, crowd-sourced database of drinks and cocktails. Search
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [thecocktaildb.com](https://thecocktaildb.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 14 |
-| **Events** | 0 |
 | **Slug** | `thecocktaildb` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add TheCocktailDB from **Build → Integrations → Connectors** and connect an 
 | List Alcoholic Filters | `listAlcoholicFilters` | List the alcoholic filter values (GET /list.php?a=list). Docs: https://www.thecocktaildb.com/api.php |
 | List Categories | `listCategoryNames` | List all cocktail category names (GET /list.php?c=list). Docs: https://www.thecocktaildb.com/api.php |
 | List Cocktails by First Letter | `listCocktailsByFirstLetter` | List all cocktails whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.thecocktaildb.com/api.php |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Glasses | `listGlasses` | List all glass types (GET /list.php?g=list). Docs: https://www.thecocktaildb.com/api.php |
 | List Ingredients | `listIngredients` | List all ingredient names (GET /list.php?i=list). Docs: https://www.thecocktaildb.com/api.php |
 | Search Cocktails by Name | `searchCocktailsByName` | Search cocktails by name and get full details (GET /search.php?s=). Docs: https://www.thecocktaildb.com/api.php |
 | Search Ingredients by Name | `searchIngredientsByName` | Search ingredients by name and get description, type and alcohol details (GET /search.php?i=). Docs: https://www.thecocktaildb.com/api.php |
+
+</details>

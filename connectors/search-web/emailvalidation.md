@@ -5,6 +5,8 @@ hidden: true
 
 # emailvalidation
 
+<img src="../../.gitbook/assets/connectors/emailvalidation.jpg" alt="emailvalidation logo" width="64">
+
 emailvalidation.io real-time email address validation. Validates a single email address and returns syntax, MX, SMTP, disposable, role, free-provider, catch-all and quality-score signals, plus account quota status. Metered: each validation consumes one credit; /v1/status is free.
 
 | | |
@@ -12,8 +14,6 @@ emailvalidation.io real-time email address validation. Validates a single email 
 | **Category** | [Search and web](README.md) |
 | **Website** | [emailvalidation.io](https://emailvalidation.io) |
 | **Authentication** | API key |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `emailvalidation` |
 
 ## Use it

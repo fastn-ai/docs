@@ -5,6 +5,8 @@ hidden: true
 
 # Klaviyo
 
+<img src="../../.gitbook/assets/connectors/klaviyo.png" alt="Klaviyo logo" width="64">
+
 Klaviyo marketing automation platform. Manage profiles, lists, segments, campaigns, flows, events, metrics, templates, catalogs, tags, images, and webhooks via the Klaviyo JSON:API.
 
 | | |
@@ -12,8 +14,6 @@ Klaviyo marketing automation platform. Manage profiles, lists, segments, campaig
 | **Category** | [Marketing](README.md) |
 | **Website** | [klaviyo.com](https://klaviyo.com) |
 | **Authentication** | API key |
-| **Actions** | 260 |
-| **Events** | 8 |
 | **Slug** | `klaviyo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Klaviyo from **Build → Integrations → Connectors** and connect an accoun
 | Bulk Create Events | `bulkCreateEvents` | Create multiple events for one profile in a single request. |
 | Bulk Import Profiles | `bulkImportProfiles` | Asynchronously bulk create/update up to 10,000 profiles. Optionally associate them to a list via relationships. |
 | Cancel Campaign Send Job | `cancelCampaignSendJob` | Cancel or revert a campaign send job by ID. |
+
+<details>
+
+<summary>See 250 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clone Template | `cloneTemplate` | Clone an existing template into a new template with a given name. |
 | Create Back In Stock Subscription | `createBackInStockSubscription` | Subscribe a profile to back-in-stock notifications for a catalog variant. |
 | Create Campaign | `createCampaign` | Create a campaign with name, audiences, send strategy and campaign-messages. |
@@ -284,6 +291,8 @@ Add Klaviyo from **Build → Integrations → Connectors** and connect an accoun
 | Update Webhook | `updateWebhook` | Update a webhook subscription by ID (PATCH /api/webhooks/{id}). All attribute fields and topics are optional. |
 | Upload Image From File | `uploadImageFromFile` | Upload an image from a binary file (POST /api/image-upload, multipart/form-data). NOTE: blocked — fastn does not support multipart/form-data uploads. Use uploadImageFromUrl to import from a URL instead. |
 | Upload Image From URL | `uploadImageFromUrl` | Import an image into Klaviyo from a URL or data URI (POST /api/images). Supported formats: jpeg, png, gif. Max 5MB. |
+
+</details>
 
 ## Events
 

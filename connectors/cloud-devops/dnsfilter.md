@@ -5,6 +5,8 @@ hidden: true
 
 # DNSFilter
 
+<img src="../../.gitbook/assets/connectors/dnsfilter.png" alt="DNSFilter logo" width="64">
+
 DNSFilter is a cloud-based DNS security and content filtering platform. This connector wraps the DNSFilter public REST API (api.dnsfilter.com v1/v2): organizations, users, policies, networks, roaming clients (user agents), block pages, IP/MAC addresses, scheduled policies and reports, traffic reports and analytics, dashboards, billing and MSP/distributor management.
 
 | | |
@@ -12,8 +14,6 @@ DNSFilter is a cloud-based DNS security and content filtering platform. This con
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [dnsfilter.com](https://dnsfilter.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 276 |
-| **Events** | 0 |
 | **Slug** | `dnsfilter` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DNSFilter from **Build → Integrations → Connectors** and connect an acco
 | Add User To Collection | `addUserToCollection` | Add a user to a DNSFilter collection. |
 | Batch Delete Domain Notes | `batchDeleteDomainNotes` | Delete the notes for several domains on a DNSFilter resource in one call. |
 | Batch Update Domain Notes | `batchUpdateDomainNotes` | Update the notes for several domains on a DNSFilter resource in one call. |
+
+<details>
+
+<summary>See 266 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Add Allowlist Domains | `bulkAddAllowlistDomains` | Add one or more domains to the allow list of one or more DNSFilter policies. |
 | Bulk Add Blocklist Domains | `bulkAddBlocklistDomains` | Add one or more domains to the block list of one or more DNSFilter policies. |
 | Bulk Create Networks | `bulkCreateNetworks` | Start an asynchronous bulk creation of several DNSFilter networks. Returns a job id to poll for status. |
@@ -300,3 +307,5 @@ Add DNSFilter from **Build → Integrations → Connectors** and connect an acco
 | Update User UI Settings | `updateUserUiSettings` | Update the current DNSFilter user's dashboard UI settings such as theme mode. |
 | Upsert Distributor MSP SKUs | `upsertDistributorMspSkus` | Create or update the product SKUs provisioned for an MSP under the authenticated DNSFilter distributor. |
 | Verify IP Address | `verifyIpAddress` | Check whether an IP address is already registered in DNSFilter before creating it. The address is sent as the Rails nested query parameter ip_address[address], which the API accepts on this GET route. |
+
+</details>

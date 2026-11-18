@@ -5,6 +5,8 @@ hidden: true
 
 # Adafruit IO
 
+<img src="../../.gitbook/assets/connectors/adafruit-io.png" alt="Adafruit IO logo" width="64">
+
 Adafruit IO is a cloud platform for Internet of Things projects. This connector covers the Adafruit IO HTTP API v2: feeds and feed data, groups, dashboards and blocks, reactive and scheduled actions (triggers), permissions, API tokens, activities, feed webhook receivers, and the time, randomizer, weather and air quality services.
 
 | | |
@@ -12,8 +14,6 @@ Adafruit IO is a cloud platform for Internet of Things projects. This connector 
 | **Category** | [Developer tools](README.md) |
 | **Website** | [io.adafruit.com](https://io.adafruit.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 71 |
-| **Events** | 0 |
 | **Slug** | `adafruitIo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Adafruit IO from **Build → Integrations → Connectors** and connect an ac
 | All triggers for current user | `listTriggers` | All triggers for current user. The Triggers endpoint returns information about the user's triggers. |
 | Create a new Block | `createBlock` | Create a new Block. |
 | Create a new Dashboard | `createDashboard` | Create a new Dashboard. |
+
+<details>
+
+<summary>See 61 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a new Permission | `createPermission` | Create a new Permission. |
 | Create a new Token | `createToken` | WARNING: creating a token generates a NEW master Adafruit IO Key and the previous key stops working immediately (verified live 2026-10-20: every call with the old key then returned 401 'invalid API key provided'). Update your fastn connection with the new key returned in the response. Create a new Token. |
 | Create a new Trigger | `createTrigger` | Create a new Trigger. |
@@ -95,3 +102,5 @@ Add Adafruit IO from **Build → Integrations → Connectors** and connect an ac
 | Update properties of an existing Permission | `updatePermission` | Update properties of an existing Permission. |
 | Update properties of an existing Token | `updateToken` | Update properties of an existing Token. |
 | Update properties of an existing Trigger | `updateTrigger` | Update properties of an existing Trigger. |
+
+</details>

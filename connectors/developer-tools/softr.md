@@ -5,6 +5,8 @@ hidden: true
 
 # Softr
 
+<img src="../../.gitbook/assets/connectors/softr.ico" alt="Softr logo" width="64">
+
 Softr no-code app builder API. Covers the Softr Database API for databases, tables, table views, table fields and records including search, and the Softr application user API for creating, deleting, activating, deactivating, inviting and syncing users of a published application, generating magic links and validating user authentication tokens. Authenticates with a Softr workspace personal access token sent in the Softr-Api-Key header; user endpoints additionally target a published application through the Softr-Domain header.
 
 | | |
@@ -12,8 +14,6 @@ Softr no-code app builder API. Covers the Softr Database API for databases, tabl
 | **Category** | [Developer tools](README.md) |
 | **Website** | [softr.io](https://softr.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `softr` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Softr from **Build → Integrations → Connectors** and connect an account,
 | Delete App User | `deleteAppUser` | Delete a user from a published Softr application, identified by their email address. The user is removed permanently. |
 | Delete Database | `deleteDatabase` | Delete a specific database by its ID. It can only be deleted if it is empty, unless the 'force' parameter is used. The record is removed permanently and cannot be recovered. |
 | Delete Record | `deleteRecord` | Delete a specific record by its ID. The record is removed permanently and cannot be recovered. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Table | `deleteTable` | Delete a specific table by its ID. It can only be deleted if it is empty, unless the 'force' parameter is used. The record is removed permanently and cannot be recovered. |
 | Delete Table Field | `deleteTableField` | Delete a specific field from a table. The record is removed permanently and cannot be recovered. |
 | Generate User Magic Link | `generateUserMagicLink` | Generate a magic link that signs the given user into a published Softr application without a password. |
@@ -53,3 +60,5 @@ Add Softr from **Build → Integrations → Connectors** and connect an account,
 | Update Table | `updateTable` | Update a table's name and/or description. To modify fields, use the field-specific endpoints. |
 | Update Table Field | `updateTableField` | Update the properties of a specific field. |
 | Validate User Token | `validateUserToken` | Validate a Softr user authentication JWT against the application's own domain. This endpoint is served by the published application rather than the Softr studio API and takes no API key, so external systems can confirm a Softr session before trusting the user identity it carries. |
+
+</details>

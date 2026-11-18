@@ -5,6 +5,8 @@ hidden: true
 
 # PyPI
 
+<img src="../../.gitbook/assets/connectors/pypi.png" alt="PyPI logo" width="64">
+
 PyPI, the Python Package Index, is the official package registry for Python. Get project and release metadata, files and known vulnerabilities, the PEP 691 simple index, file provenance (PEP 740 attestations), storage statistics and RSS feeds of new projects and releases. Public read APIs need no API key; send a descriptive User-Agent.
 
 | | |
@@ -12,8 +14,6 @@ PyPI, the Python Package Index, is the official package registry for Python. Get
 | **Category** | [Developer tools](README.md) |
 | **Website** | [pypi.org](https://pypi.org) |
 | **Authentication** | No authentication |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `pypi` |
 
 ## Use it

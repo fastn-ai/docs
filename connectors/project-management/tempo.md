@@ -5,6 +5,8 @@ hidden: true
 
 # Tempo
 
+<img src="../../.gitbook/assets/connectors/tempo.png" alt="Tempo logo" width="64">
+
 Tempo Cloud REST API v4 for Jira Time Tracking, Resourcing and Financial Management. Covers worklogs, accounts, plans, teams, holiday schemes, workload schemes, roles, and other Tempo resource families via Bearer token auth (personal/user API token generated in the Tempo app's own Settings &gt; API Integration screen inside Jira Cloud).
 
 | | |
@@ -12,8 +14,6 @@ Tempo Cloud REST API v4 for Jira Time Tracking, Resourcing and Financial Managem
 | **Category** | [Project management](README.md) |
 | **Website** | [tempo.io](https://tempo.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 41 |
-| **Events** | 0 |
 | **Slug** | `tempo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Tempo from **Build → Integrations → Connectors** and connect an account,
 | Delete Account | `deleteAccount` | Deletes a Tempo Account by its key. |
 | Delete Holiday Scheme | `deleteHolidayScheme` | Deletes a Holiday Scheme by its numeric ID. |
 | Delete Plan | `deletePlan` | Deletes a Tempo Plan by its numeric ID. |
+
+<details>
+
+<summary>See 31 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Team | `deleteTeam` | Deletes a Tempo Team by its numeric ID. |
 | Delete Workload Scheme | `deleteWorkloadScheme` | Deletes a Workload Scheme by its numeric ID. |
 | Delete Worklog | `deleteWorklog` | Deletes a worklog by its Tempo worklog ID. |
@@ -65,3 +72,5 @@ Add Tempo from **Build → Integrations → Connectors** and connect an account,
 | Update Team | `updateTeam` | Updates an existing Tempo Team's name or summary. |
 | Update Workload Scheme | `updateWorkloadScheme` | Updates the name or description of an existing Workload Scheme. |
 | Update Worklog | `updateWorklog` | Updates an existing worklog identified by its Tempo worklog ID. |
+
+</details>

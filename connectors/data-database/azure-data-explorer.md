@@ -5,6 +5,8 @@ hidden: true
 
 # Azure Data Explorer
 
+<img src="../../.gitbook/assets/connectors/azure-data-explorer.png" alt="Azure Data Explorer logo" width="64">
+
 Azure Data Explorer (Kusto) — run KQL management and query commands against a cluster for real-time analytics on large datasets. REST API v1 at {clusterUrl}/v1/rest/mgmt.
 
 | | |
@@ -12,8 +14,6 @@ Azure Data Explorer (Kusto) — run KQL management and query commands against a 
 | **Category** | [Data and databases](README.md) |
 | **Website** | [kusto.windows.net](https://kusto.windows.net) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 55 |
-| **Events** | 0 |
 | **Slug** | `azureDataExplorer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure Data Explorer from **Build → Integrations → Connectors** and conne
 | Drop Table | `dropTable` | Permanently removes a table and all of its data from the database. Requires Database Admin or Table Admin permission and cannot be undone once the retention period elapses. |
 | Ingest Inline Into Table | `ingestInlineIntoTable` | Ingests a small batch of comma-separated rows supplied inline into an existing table. Intended for testing and small volumes rather than production data loading. |
 | Rename Table | `renameTable` | Renames an existing table within the database. Requires Database Admin or Table Admin permission. |
+
+<details>
+
+<summary>See 45 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Run Management Command | `runManagementCommand` | Runs any Kusto management command against a database. Use this escape hatch for control commands that do not have a dedicated action; the command text must begin with a dot. |
 | Run Query | `runQuery` | Runs a KQL query against a database on an Azure Data Explorer cluster and returns the result tables. Use the cluster's engine host, for example mycluster.westus.kusto.windows.net. |
 | Run Query V2 | `runQueryV2` | Runs a KQL query using the v2 query endpoint, which returns a streaming frame-based response with richer result metadata than v1. |
@@ -79,3 +86,5 @@ Add Azure Data Explorer from **Build → Integrations → Connectors** and conne
 | Show Tables | `showTables` | Returns every table in the database, with its name, owning database, folder and documentation string. |
 | Show Tables Details | `showTablesDetails` | Returns detailed statistics for every table in the database, including row count, extent count, total data size and hot cache size. |
 | Show Version | `showVersion` | Returns the build and service version information for an Azure Data Explorer cluster. This is a cluster-scoped management command and needs no database context. |
+
+</details>

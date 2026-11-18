@@ -5,6 +5,8 @@ hidden: true
 
 # Enrich Layer
 
+<img src="../../.gitbook/assets/connectors/enrich-layer.png" alt="Enrich Layer logo" width="64">
+
 Enrich Layer is a B2B data enrichment API with structured data on people, companies, jobs and schools. This connector covers the full v2 REST surface (person, company, school and job profiles; person, company and role lookups; employee, student, follower and customer listings and counts; person and company search; work, personal and reverse email and phone lookups; disposable email checks; profile pictures and credit balance), plus the v3 person enrichment, company logo and company autocomplete endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Enrich Layer is a B2B data enrichment API with structured data on people, compan
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [enrichlayer.com](https://enrichlayer.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `enrichLayer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Enrich Layer from **Build → Integrations → Connectors** and connect an a
 | Get Company Profile | `getCompanyProfile` | Returns the structured profile of a company from its LinkedIn company URL: name, description, website, industry, company size, HQ location, specialities, locations, similar companies, affiliated companies and updates. Costs 1 credit per successful request; each optional enrichment flag adds credits. |
 | Get Company Profile Picture | `getCompanyProfilePicture` | Returns a temporary link to a company's profile picture (logo), taken from the cached company profile. Costs 0 credits. |
 | Get Credit Balance | `getCreditBalance` | Returns the current credit balance of the Enrich Layer account. Costs 0 credits. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Job Profile | `getJobProfile` | Returns the structured details of a single LinkedIn job posting: title, location, company, seniority, employment type, industry and full description. Costs 2 credits per successful request. |
 | Get Person Profile | `getPersonProfile` | Returns the structured profile of a person from a LinkedIn, Twitter/X or Facebook profile URL: name, headline, summary, location, experiences, education, certifications, languages and more. Costs 1 credit per successful request; each optional enrichment flag adds credits. |
 | Get Person Profile (v3) | `getPersonProfileV3` | Enrich Layer v3 person enrichment on api.enrichlayer.com. Resolves a person from any one of email, LinkedIn, Facebook, Twitter/X or GitHub identifiers and returns a unified profile, with opt-in sections for contact information, career insight and developer profile. |
@@ -56,3 +63,5 @@ Add Enrich Layer from **Build → Integrations → Connectors** and connect an a
 | Search Company Employees | `searchCompanyEmployees` | Searches the employees of a target company by job title using boolean or regular-expression syntax. Syntactic sugar for the role_search parameter of List Company Employees. Costs 10 credits per successful request. |
 | Search Jobs | `searchJobs` | Lists LinkedIn job postings filtered by company, keyword, location, job type, experience level, flexibility and recency, with token pagination. Costs 2 credits per successful request. |
 | Search People | `searchPeople` | Searches the LinkedIn person index with 50+ filters covering location, name, education, current and past roles and companies, skills, languages, interests and company attributes such as size, industry and funding. Costs 3 credits per profile URL returned. |
+
+</details>

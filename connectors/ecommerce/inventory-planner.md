@@ -5,6 +5,8 @@ hidden: true
 
 # Inventory Planner
 
+<img src="../../.gitbook/assets/connectors/inventory-planner.png" alt="Inventory Planner logo" width="64">
+
 Inventory Planner by Sage — smart forecasting and replenishment recommendations. Provides Stock Orders API (purchase orders, transfers, assembly orders) and Reports API (variants, metrics) for syncing data with ERPs, 3PLs, and custom systems.
 
 | | |
@@ -12,8 +14,6 @@ Inventory Planner by Sage — smart forecasting and replenishment recommendation
 | **Category** | [E-commerce](README.md) |
 | **Website** | [app.inventory-planner.com](https://app.inventory-planner.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `inventoryPlanner` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Inventory Planner from **Build → Integrations → Connectors** and connect
 | Delete Purchase Order | `deletePurchaseOrder` | Permanently delete a purchase order by ID. Use with caution — this is irreversible. |
 | Delete Purchase Order Item | `deletePurchaseOrderItem` | Remove a line item from a purchase order by zeroing its ordered quantity. Inventory Planner's DELETE on a line item returns 'Not allowed', so this sets the line's replenishment to 0 via PATCH. |
 | Delete Transfer Order | `deleteTransferOrder` | Permanently delete a transfer order by ID. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Variant | `deleteVariant` | Delete a variant from Inventory Planner by ID. |
 | Delete Variant Vendor | `deleteVariantVendor` | Remove a vendor assignment from a variant. |
 | Get Assembly Order | `getAssemblyOrder` | Retrieve a single assembly order by its ID. |
@@ -64,3 +71,5 @@ Add Inventory Planner from **Build → Integrations → Connectors** and connect
 | Update Transfer Order | `updateTransferOrder` | Partially update a transfer order's reference, status, or expected_date. Note: warehouse/source_warehouse are not editable here because Inventory Planner applies empty values and would blank them; set those at creation time. |
 | Update Variant | `updateVariant` | Partially update a variant (e.g. set lead_time, review_period). |
 | Upsert Variant Vendor | `upsertVariantVendor` | Create or update vendor data for a variant (cost price, vendor reference, MOQ, etc.) |
+
+</details>

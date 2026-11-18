@@ -5,6 +5,8 @@ hidden: true
 
 # ChatBotKit
 
+<img src="../../.gitbook/assets/connectors/chatbotkit.png" alt="ChatBotKit logo" width="64">
+
 ChatBotKit is an AI agent infrastructure platform for building, deploying and operating production AI agents. This connector covers the full ChatBotKit REST API v1: bots, blueprints, datasets and files, skillsets and abilities, conversations and messages, contacts, memories, secrets, spaces and storage, tasks and executions, users and user tokens, portals, policies, magic prompts, usage, platform catalog, GraphQL, the OpenAI-compatible chat completions endpoint and every integration type (widget, Slack, Discord, WhatsApp, Telegram, Messenger, Instagram, Twilio, email, Google Chat, Microsoft Teams, Notion, GitHub, sitemap, trigger, extract, support, SkillServer and more).
 
 | | |
@@ -12,8 +14,6 @@ ChatBotKit is an AI agent infrastructure platform for building, deploying and op
 | **Category** | [AI and ML](README.md) |
 | **Website** | [chatbotkit.com](https://chatbotkit.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 334 |
-| **Events** | 0 |
 | **Slug** | `chatbotkit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ChatBotKit from **Build → Integrations → Connectors** and connect an acc
 | Clone Bot | `cloneBot` | Clone a bot. |
 | Clone Platform Example | `clonePlatformExample` | Clone a platform example into your account, creating its bots, datasets, skillsets and integrations; returns the created resources grouped by type. |
 | Clone Widget Integration | `cloneWidgetIntegration` | Clone a Widget integration. |
+
+<details>
+
+<summary>See 324 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Compact Conversation | `compactConversation` | Compact a conversation into a checkpoint message. |
 | Compact Conversation Stateless | `compactConversationStateless` | Compact an array of messages into a single summary (stateless). |
 | Complete Conversation | `completeConversation` | Stateless completion: generate the next bot message for a given list of messages without persisting a conversation. |
@@ -358,3 +365,5 @@ Add ChatBotKit from **Build → Integrations → Connectors** and connect an acc
 | Upvote Conversation Message | `upvoteConversationMessage` | Upvote a conversation message. |
 | Verify Contact Secret | `verifyContactSecret` | Verify a contact's personal secret (returns its authentication status). |
 | Verify Secret | `verifySecret` | Verify whether a secret is authenticated; unauthenticated OAuth secrets return an action with the URL to complete authentication. |
+
+</details>

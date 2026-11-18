@@ -5,6 +5,8 @@ hidden: true
 
 # New Relic
 
+<img src="../../.gitbook/assets/connectors/new-relic.png" alt="New Relic logo" width="64">
+
 New Relic observability platform. NerdGraph (GraphQL) for entities, NRQL, dashboards, alerts, workloads, tags and notifications, plus the REST API v2 for applications, alert policies, deployments, labels and key transactions.
 
 | | |
@@ -12,8 +14,6 @@ New Relic observability platform. NerdGraph (GraphQL) for entities, NRQL, dashbo
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [newrelic.com](https://newrelic.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 42 |
-| **Events** | 0 |
 | **Slug** | `newRelic` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add New Relic from **Build → Integrations → Connectors** and connect an acco
 | Delete Alert Condition | `deleteAlertCondition` | Delete any alert condition (NRQL or other) by id via NerdGraph alertsConditionDelete. Pass variables as {accountId, id}. |
 | Delete Alert Policy | `deleteAlertPolicy` | Delete an alert policy by id via NerdGraph alertsPolicyDelete. Pass variables as {accountId, id}. Also removes the policy's conditions. |
 | Delete Application | `deleteApplication` | Delete an APM application by id via the REST API v2. The application must not be reporting. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Dashboard | `deleteDashboard` | Delete a dashboard by its entity GUID via NerdGraph dashboardDelete. Pass variables as {guid}. |
 | Delete Deployment | `deleteDeployment` | Delete a deployment marker from an APM application via the REST API v2. |
 | Delete Notification Destination | `deleteNotificationDestination` | Delete a notification destination by id via NerdGraph aiNotificationsDeleteDestination. Pass variables as {accountId, destinationId}. |
@@ -66,3 +73,5 @@ Add New Relic from **Build → Integrations → Connectors** and connect an acco
 | Update Application | `updateApplication` | Update an APM application's name and settings via the REST API v2. |
 | Update Dashboard | `updateDashboard` | Replace a dashboard's definition via NerdGraph dashboardUpdate. Pass variables as {guid, dashboard} where dashboard is a full DashboardInput. Overwrites the entire dashboard. |
 | Update NRQL Alert Condition | `updateNrqlAlertCondition` | Update a static NRQL alert condition via NerdGraph alertsNrqlConditionStaticUpdate. Pass variables as {accountId, id, condition} (partial AlertsNrqlConditionUpdateStaticInput). |
+
+</details>

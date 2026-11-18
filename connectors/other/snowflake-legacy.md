@@ -5,6 +5,8 @@ hidden: true
 
 # Snowflake (Legacy)
 
+<img src="../../.gitbook/assets/connectors/snowflake-legacy.png" alt="Snowflake (Legacy) logo" width="64">
+
 Legacy Snowflake connector providing SQL-driven access to the Snowflake Data Cloud: databases, schemas, tables, views, columns, warehouses, users, roles, grants, stages, file formats, sequences, pipes, streams, tasks, functions and procedures, plus arbitrary SQL execution. Every action runs a SQL statement through the Snowflake SQL API (POST https://{account}.snowflakecomputing.com/api/v2/statements), which is the stateless equivalent of the session endpoint the legacy Python driver connector used, and keeps the legacy credential shape of account, user and token. Authentication is Programmatic Access Token only; for key-pair JWT or OAuth, and for the Snowflake resource REST APIs, use the standard Snowflake connector instead.
 
 | | |
@@ -12,8 +14,6 @@ Legacy Snowflake connector providing SQL-driven access to the Snowflake Data Clo
 | **Category** | [Other](README.md) |
 | **Website** | [snowflake.com](https://snowflake.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 130 |
-| **Events** | 0 |
 | **Slug** | `snowflakeLegacy` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Snowflake (Legacy) from **Build → Integrations → Connectors** and connec
 | Create File Format | `createFileFormat` | Creates a named file format in a schema by running CREATE FILE FORMAT IF NOT EXISTS, describing how staged data files are parsed. |
 | Create Role | `createRole` | Creates an account role by running CREATE ROLE IF NOT EXISTS. Requires a role with the CREATE ROLE privilege, such as USERADMIN or ACCOUNTADMIN. |
 | Create Schema | `createSchema` | Creates a new schema inside a database by running CREATE SCHEMA IF NOT EXISTS. |
+
+<details>
+
+<summary>See 120 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Sequence | `createSequence` | Creates a sequence in a schema by running CREATE SEQUENCE IF NOT EXISTS, for generating unique increasing numbers. |
 | Create Stage | `createStage` | Creates a named internal stage in a schema by running CREATE STAGE IF NOT EXISTS. Use it as a staging area for loading and unloading files. |
 | Create Stream | `createStream` | Creates a change-data-capture stream on a table by running CREATE STREAM IF NOT EXISTS with ON TABLE. The stream records row-level changes made to the table. |
@@ -154,3 +161,5 @@ Add Snowflake (Legacy) from **Build → Integrations → Connectors** and connec
 | Undrop Schema | `undropSchema` | Restores the most recent dropped version of a schema by running UNDROP SCHEMA, provided it is still within the Time Travel retention period. |
 | Undrop Table | `undropTable` | Restores the most recent dropped version of a table by running UNDROP TABLE, provided it is still within the Time Travel retention period. |
 | Update Rows | `updateRows` | Updates the rows of a table that match a condition, by running UPDATE with SET and WHERE. The condition is required so an update can never silently rewrite a whole table. |
+
+</details>

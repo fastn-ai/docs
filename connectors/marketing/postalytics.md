@@ -5,6 +5,8 @@ hidden: true
 
 # Postalytics
 
+<img src="../../.gitbook/assets/connectors/postalytics.png" alt="Postalytics logo" width="64">
+
 Postalytics is a direct mail automation platform for sending trackable postcards, letters and self-mailers triggered from marketing and CRM workflows. This connector covers the full Postalytics REST API (v1): accounts and agency sub-accounts, auto-login links, integrations, campaigns and their stats and delivery events, triggered drip sends, multi-touch flows, contact lists and contacts, suppression lists, mail piece templates, and campaign webhooks. Authenticates with the account API key over HTTP Basic auth.
 
 | | |
@@ -12,8 +14,6 @@ Postalytics is a direct mail automation platform for sending trackable postcards
 | **Category** | [Marketing](README.md) |
 | **Website** | [postalytics.com](https://postalytics.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 45 |
-| **Events** | 1 |
 | **Slug** | `postalytics` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Postalytics from **Build → Integrations → Connectors** and connect an ac
 | Create Webhook | `createWebhook` | Creates the outgoing webhook for a Postalytics campaign so campaign mail tracking events are posted to your URL. Each campaign has one webhook, identified by the campaign drop id. Which events are delivered is chosen by editing the webhook in the Postalytics app. Requires a Pro or higher subscription. |
 | Delete Account | `deleteAccount` | Permanently deletes a Postalytics sub-account or sub-user account together with all of its campaigns, templates and lists. Parent accounts cannot be deleted through the API. |
 | Delete Campaign | `deleteCampaign` | Deletes a Postalytics campaign by drop id. The contact list created with the campaign is not removed. |
+
+<details>
+
+<summary>See 35 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact | `deleteContact` | Deletes a contact from its Postalytics contact list. |
 | Delete Suppression List | `deleteSuppressionList` | Deletes a Postalytics suppression list. Returns a confirmation message. |
 | Delete Suppression List Contact | `deleteSuppressionListContact` | Removes a contact from a Postalytics suppression list. Returns a confirmation message. |
@@ -69,6 +76,8 @@ Add Postalytics from **Build → Integrations → Connectors** and connect an ac
 | Update Contact | `updateContact` | Updates an existing contact on a Postalytics contact list. Send contact_id and contact_list_id plus any fields to change. KNOWN VENDOR BUG (verified 2026-09-21): PUT /api/v1/contacts always answers 400 "Error updating contact -An unexpected error occurred. Reference: &lt;id&gt;" for a contact that exists, while a non-existent contact_id answers the shorter 400 "Validation error" — so the vendor resolves the contact and then throws inside its own update handler. The request body shape is correct (the API names UpdateContactRequest as the model it binds). Nothing on the connector side fixes this; delete and re-create the contact as a workaround. |
 | Update Suppression List Contact | `updateSuppressionListContact` | Replaces the non-address details of a contact on a Postalytics suppression list: name, company, country, email, phone, occupation, website and custom fields. Fields you omit are cleared, so pass every value you want to keep. Address fields cannot be changed; delete and re-add the contact to change its address. Returns the list details and the updated contact. |
 | Update Webhook | `updateWebhook` | Updates the webhook of a Postalytics campaign: change the receiving URL or turn event delivery on or off. |
+
+</details>
 
 ## Events
 

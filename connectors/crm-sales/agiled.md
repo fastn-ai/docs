@@ -5,6 +5,8 @@ hidden: true
 
 # Agiled
 
+<img src="../../.gitbook/assets/connectors/agiled.png" alt="Agiled logo" width="64">
+
 Agiled is an all-in-one business management platform for agencies and service businesses. This connector wraps the Agiled Public REST API v1 (https://api.agiled.ai/public/v1): CRM contacts, accounts, deals and pipelines with stages; support tickets; projects, tasks and time entries; invoices, estimates, expenses, payments and products; documents and document templates; forms and form submissions; scheduling event types, booking pages, appointments (book, cancel, reschedule); files; users and token context; plus webhook subscriptions and delivery logs for real-time events such as contact.created, deal.status_changed and invoice.paid. Authentication uses a Public API token from Settings &gt; API, sent as a Bearer token.
 
 | | |
@@ -12,8 +14,6 @@ Agiled is an all-in-one business management platform for agencies and service bu
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [agiled.app](https://agiled.app) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 109 |
-| **Events** | 45 |
 | **Slug** | `agiled` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Agiled from **Build → Integrations → Connectors** and connect an account
 | Create Document Template | `createDocumentTemplate` | Creates a reusable proposal or contract document template in Agiled with name, type, description, category, content and active flag. The public API has no delete endpoint for templates. |
 | Create Estimate | `createEstimate` | Creates a draft estimate (quote) in Agiled for an account, with optional contact, issue and expiry dates, currency and reference. Agiled assigns the estimate number. |
 | Create Event Type | `createEventType` | Creates a scheduling event type (bookable meeting type) in Agiled with name, duration, description, location type, price, timezone and slug. Default weekday 09:00-17:00 availability is applied. The public API has no delete endpoint for event types. |
+
+<details>
+
+<summary>See 99 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Expense | `createExpense` | Records an expense in Agiled with amount, date (defaults to today), description, category (defaults to Uncategorized), currency, reference, payment method and billable flag. |
 | Create File | `createFile` | Creates a file entry in the Agiled file manager. The JSON request schema is not published; live calls with name, content or URL payloads returned a server error and multipart uploads are rejected (Request body must be JSON), so this endpoint is currently not usable through the public API. |
 | Create Form | `createForm` | Creates a lead capture or intake form in Agiled with a title, name and field definitions. Sending a fields array is required in practice (a form without fields fails with a server error). |
@@ -134,6 +141,8 @@ Add Agiled from **Build → Integrations → Connectors** and connect an account
 | Update Ticket | `updateTicket` | Updates a support ticket in Agiled (subject, description, status, priority, type, links, assignee, due date). Only the fields sent are changed. |
 | Update Time Entry | `updateTimeEntry` | Updates a time entry in Agiled (times, description, notes, project, task, billable flag). Only the fields sent are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -150,6 +159,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Deal Status Changed | `deal.status_changed` | Agiled deal.status_changed event. Delivery body: event, id, occurred_at, organization_id and the full deal record in data. |
 | Deal Updated | `deal.updated` | Agiled deal.updated event. Delivery body: event, id, occurred_at, organization_id and the full deal record in data. |
 | Document Created | `document.created` | Agiled document.created event. Delivery body: event, id, occurred_at, organization_id and the full document record in data. |
+
+<details>
+
+<summary>See 35 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Estimate Created | `estimate.created` | Agiled estimate.created event. Delivery body: event, id, occurred_at, organization_id and the full estimate record in data. |
 | Estimate Deleted | `estimate.deleted` | Agiled estimate.deleted event. Delivery body: event, id, occurred_at, organization_id and data.id of the deleted estimate. |
 | Estimate Updated | `estimate.updated` | Agiled estimate.updated event. Delivery body: event, id, occurred_at, organization_id and the full estimate record in data. |
@@ -185,3 +201,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Ticket Updated | `ticket.updated` | Agiled ticket.updated event. Delivery body: event, id, occurred_at, organization_id and the full ticket record in data. |
 | Time Entry Created | `time_entry.created` | Agiled time_entry.created event. Delivery body: event, id, occurred_at, organization_id and the full time entry record in data. |
 | Time Entry Updated | `time_entry.updated` | Agiled time_entry.updated event. Delivery body: event, id, occurred_at, organization_id and the full time entry record in data. |
+
+</details>

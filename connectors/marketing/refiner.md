@@ -5,6 +5,8 @@ hidden: true
 
 # Refiner
 
+<img src="../../.gitbook/assets/connectors/refiner.png" alt="Refiner logo" width="64">
+
 Refiner is a customer survey platform for in-product, web and link surveys. This connector covers the full Refiner REST API v1: authentication check, account info, identifying users, tracking events, survey responses (list, store and tag), aggregated reporting, contacts, forms (list, publish, archive, duplicate and change history), segments and manual segment membership.
 
 | | |
@@ -12,8 +14,6 @@ Refiner is a customer survey platform for in-product, web and link surveys. This
 | **Category** | [Marketing](README.md) |
 | **Website** | [refiner.io](https://refiner.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 19 |
-| **Events** | 3 |
 | **Slug** | `refiner` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Refiner from **Build → Integrations → Connectors** and connect an accoun
 | Get Reporting | `getReporting` | Returns an aggregated report like Refiner's reporting dashboards: NPS, CSAT, ratings average, answer distribution, or response and view counts. Optionally narrow it to one survey, tag, segment or question identifier, a date range (default the last seven days), and one survey answer, contact trait or account trait each. |
 | Identify User | `identifyUser` | Creates or updates a Refiner contact identified by your user ID or email address, and sets user traits on it. Any additional top-level field you pass is stored as a trait: strings up to 255 characters, integers, booleans, and dates for keys ending in _at. Pass an account object to group the user under an account. Returns 201 on success, or 409 if another identify call for the same user is still running. |
 | List Contacts | `listContacts` | Retrieves contacts with their traits, segments and account, with optional search by email, user ID or name, filtering by survey or segment, ordering, and page or cursor pagination. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Forms | `listForms` | Retrieves surveys ordered by name, optionally limited to published, draft or archived surveys, and optionally including each survey's full configuration or metadata such as channels, publish date, response and view counts, folder and link survey URL. |
 | List Responses | `listResponses` | Retrieves survey responses and, optionally, partial responses and survey views, newest first, with the answers, survey and contact. Filter by survey, segment, tag, date range, completion status, contact search, and one survey answer, contact trait or account trait each. Supports page or cursor pagination. |
 | List Segments | `listSegments` | Retrieves all user segments ordered by name, showing whether each is a manual list segment (users can be added through the API) or a data-driven segment. |
@@ -43,6 +50,8 @@ Add Refiner from **Build → Integrations → Connectors** and connect an accoun
 | Tag Response | `tagResponse` | Adds up to 20 tags to an existing survey response. |
 | Track Event | `trackEvent` | Tracks a named event for a user identified by user ID or email address, creating the user if they do not exist. Tracked events can trigger in-product surveys and build segments. Event tracking is available on Refiner's Growth and Enterprise plans. |
 | Verify Authentication | `verifyAuthentication` | Confirms the API key is valid and returns the UUID and name of the Refiner environment the key belongs to. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Open-Elevation
 
+<img src="../../.gitbook/assets/connectors/open-elevation.png" alt="Open-Elevation logo" width="64">
+
 Open-Elevation is a free, open-source elevation API. Get the ground elevation in metres for any latitude/longitude points worldwide, one at a time or in bulk, from SRTM terrain data. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Open-Elevation is a free, open-source elevation API. Get the ground elevation in
 | **Category** | [Data and databases](README.md) |
 | **Website** | [open-elevation.com](https://open-elevation.com) |
 | **Authentication** | No authentication |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `openElevation` |
 
 ## Use it

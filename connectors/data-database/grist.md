@@ -5,6 +5,8 @@ hidden: true
 
 # Grist
 
+<img src="../../.gitbook/assets/connectors/grist.png" alt="Grist logo" width="64">
+
 Grist is a modern relational spreadsheet. Manage organizations, workspaces, documents, tables, columns, records, attachments, webhooks, and run SQL queries via the Grist REST API.
 
 | | |
@@ -12,8 +14,6 @@ Grist is a modern relational spreadsheet. Manage organizations, workspaces, docu
 | **Category** | [Data and databases](README.md) |
 | **Website** | [getgrist.com](https://getgrist.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `grist` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Grist from **Build → Integrations → Connectors** and connect an account,
 | Create Document in Workspace | `createDoc` | Create a new empty document inside a workspace. Returns the new document id. |
 | Create Tables | `createTables` | Add one or more tables to a document. Each table has an id and an array of column definitions. |
 | Create Webhooks | `createWebhooks` | Create one or more webhooks for a document. Each webhook's fields require a url, tableId, and eventTypes (add/update). |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Workspace | `createWorkspace` | Create a new empty workspace within an organization. Returns the new workspace id. |
 | Delete Column | `deleteColumn` | Delete a single column from a table. |
 | Delete Document | `deleteDoc` | Permanently delete a document and all of its data. |
@@ -88,3 +95,5 @@ Add Grist from **Build → Integrations → Connectors** and connect an account,
 | Update Records | `updateRecords` | Update existing records in a table. Each record must include its numeric id and a fields map of the columns to change. |
 | Update Table Data | `updateTableData` | Update rows in a table in columnar format. The data must include an id array plus arrays for each column to change. |
 | Upload Attachments | `uploadAttachments` | Upload one or more files as attachments to a document. Returns the ids of the created attachments. |
+
+</details>

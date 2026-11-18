@@ -5,6 +5,8 @@ hidden: true
 
 # Apify
 
+<img src="../../.gitbook/assets/connectors/apify.png" alt="Apify logo" width="64">
+
 Apify is a cloud platform for web scraping, browser automation and data extraction. This connector covers the full Apify API v2: Actors and their versions, environment variables, builds and runs; Actor tasks; standalone runs and builds; key-value stores, datasets and request queues; schedules; webhooks and webhook dispatches; logs; Apify Store; user account, usage and limits; and the signing utilities.
 
 | | |
@@ -12,8 +14,6 @@ Apify is a cloud platform for web scraping, browser automation and data extracti
 | **Category** | [Search and web](README.md) |
 | **Website** | [apify.com](https://apify.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 220 |
-| **Events** | 11 |
 | **Slug** | `apify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Apify from **Build → Integrations → Connectors** and connect an account,
 | Add Request To Actor's Last Run Request Queue | `addRequestToActorLastRunRequestQueue` | Adds a single request to the default request queue of an Actor run. A request with an existing unique key is not added twice. This shortcut resolves the Actor's last run (optionally filtered by status or origin) instead of taking a run id. |
 | Add Request To Request Queue | `addRequestToRequestQueue` | Adds a single request to a request queue. A request with an existing unique key is not added twice. |
 | Add Request To Run Request Queue | `addRequestToRunRequestQueue` | Adds a single request to the default request queue of an Actor run. A request with an existing unique key is not added twice. |
+
+<details>
+
+<summary>See 210 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Batch Add Requests To Actor Task's Last Run Request Queue | `batchAddRequestsToActorTaskLastRunRequestQueue` | Adds up to 25 requests at once to the default request queue of an Actor run and reports which were processed and which failed. This shortcut resolves the Actor task's last run (optionally filtered by status or origin) instead of taking a run id. |
 | Batch Add Requests To Actor's Last Run Request Queue | `batchAddRequestsToActorLastRunRequestQueue` | Adds up to 25 requests at once to the default request queue of an Actor run and reports which were processed and which failed. This shortcut resolves the Actor's last run (optionally filtered by status or origin) instead of taking a run id. |
 | Batch Add Requests To Request Queue | `batchAddRequestsToRequestQueue` | Adds up to 25 requests at once to a request queue and reports which were processed and which failed. |
@@ -245,6 +252,8 @@ Add Apify from **Build → Integrations → Connectors** and connect an account,
 | Update Webhook | `updateWebhook` | Updates an existing webhook. Only the fields supplied are changed; everything else on the webhook is preserved. |
 | Validate Actor Input | `validateActorInput` | Checks a proposed run input against an Actor build's input schema and reports any validation errors without starting a run. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -261,4 +270,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Actor Run Failed | `ACTOR.RUN.FAILED` | Fires when a run of the watched Actor or Actor task ends with a non-zero exit code. |
 | Actor Run Resurrected | `ACTOR.RUN.RESURRECTED` | Fires when a finished run of the watched Actor or Actor task is resurrected and starts again. |
 | Actor Run Succeeded | `ACTOR.RUN.SUCCEEDED` | Fires when a run of the watched Actor or Actor task finishes successfully. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Actor Run Timed Out | `ACTOR.RUN.TIMED_OUT` | Fires when a run of the watched Actor or Actor task is killed because it exceeded its timeout. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Browserless
 
+<img src="../../.gitbook/assets/connectors/browserless.png" alt="Browserless logo" width="64">
+
 Browserless is a hosted headless-browser platform. Use it to render pages, capture screenshots and PDFs, scrape structured data, run Puppeteer/Playwright code remotely, audit page performance with Lighthouse, bypass bot detection, and drive BrowserQL automation flows against the Browserless v2 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Browserless is a hosted headless-browser platform. Use it to render pages, captu
 | **Category** | [Search and web](README.md) |
 | **Website** | [browserless.io](https://browserless.io) |
 | **Authentication** | API key |
-| **Actions** | 16 |
-| **Events** | 0 |
 | **Slug** | `browserless` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add Browserless from **Build → Integrations → Connectors** and connect an ac
 | Get Instance Metadata | `getInstanceMetadata` | Returns metadata about the Browserless instance: the Browserless version and the exact Chromium, Firefox and WebKit builds it runs, plus the Playwright and Puppeteer client versions it accepts. Use it to pick a client library version that will connect successfully. |
 | Get Page Content | `getPageContent` | Loads a URL (or a raw HTML string) in a headless browser and returns the fully rendered HTML of the page after JavaScript has executed. Use it instead of a plain HTTP fetch when the page is client-side rendered. Supply either url or html, not both. |
 | Kill Session | `killSession` | Terminates a running Browserless browser session and frees the concurrency slot it holds. Pass the session, target or tracking id to kill one session, or the literal value 'all' to terminate every session on the account. Returns HTTP 204 with no body on success. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Active Sessions | `listActiveSessions` | Liveness check for your Browserless account: calls GET /active, which returns HTTP 204 with no body when the Browserless service is up and accepting your token. Per the Browserless OpenAPI reference it does NOT return a list of sessions (Browserless cloud has no list-sessions endpoint); use it as a health probe before starting work. |
 | Run Browser Function | `runBrowserFunction` | Runs your own JavaScript inside a Browserless browser session and returns whatever it resolves. The code receives a ready Puppeteer page and browser plus the context object you pass, and must export a default async function. Use it for multi-step automation that the single-purpose endpoints cannot express. |
 | Run BrowserQL Query | `runBrowserQlQuery` | Executes a BrowserQL query against a Browserless browser session. BrowserQL is Browserless's GraphQL automation language: a single mutation chains steps such as goto, click, type, waitForSelector, solve and screenshot, and returns their results together. Use it for scripted flows without writing Puppeteer code. Check the errors field, since an invalid query still returns HTTP 200. |
 | Run Performance Audit | `runPerformanceAudit` | Runs a Google Lighthouse audit against a URL in a real headless browser and returns the full Lighthouse report, including the performance, accessibility, best-practices and SEO category scores plus every individual audit. Optionally restrict the run to specific categories or assert against performance budgets. |
 | Scrape Elements | `scrapeElements` | Loads a URL or raw HTML in a headless browser and extracts structured data for each CSS selector you list, returning the text, inner HTML, attributes and bounding box of every matching element. Use it instead of Get Page Content when you want parsed fields rather than a whole document. |
 | Unblock Page | `unblockPage` | Loads a URL in a hardened browser that works through bot-detection and CAPTCHA interstitials, then returns any combination of the page HTML, a screenshot, the resulting cookies, and a WebSocket endpoint for taking over the already-unblocked session with Puppeteer or Playwright. Use it for sites that reject ordinary headless traffic. |
+
+</details>

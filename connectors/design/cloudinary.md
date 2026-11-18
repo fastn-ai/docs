@@ -5,6 +5,8 @@ hidden: true
 
 # Cloudinary
 
+<img src="../../.gitbook/assets/connectors/cloudinary.png" alt="Cloudinary logo" width="64">
+
 Cloudinary media management — Admin API and Upload API. Manage assets (resources), folders, transformations, upload presets, usage reporting, and upload/transform media. Auth via HTTP Basic (API key:API secret) scoped to a cloud name.
 
 | | |
@@ -12,8 +14,6 @@ Cloudinary media management — Admin API and Upload API. Manage assets (resourc
 | **Category** | [Design](README.md) |
 | **Website** | [cloudinary.com](https://cloudinary.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 76 |
-| **Events** | 17 |
 | **Slug** | `cloudinary` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cloudinary from **Build → Integrations → Connectors** and connect an acc
 | Create Notification Trigger | `createTrigger` | Register a webhook notification URL trigger. Admin API POST /triggers. Each trigger links one event_type to one notification URI. |
 | Create Streaming Profile | `createStreamingProfile` | Create a custom adaptive streaming profile. Admin API POST /streaming_profiles. representations is an array of {transformation:[{width,height,bit_rate,video_codec,...}]} objects. |
 | Create Upload Mapping | `createUploadMapping` | Create an upload mapping that maps a Cloudinary folder to a remote URL prefix (auto-upload / lazy migration). Admin API POST /upload_mappings. |
+
+<details>
+
+<summary>See 66 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Upload Preset | `createUploadPreset` | Create a new upload preset with default upload parameters (folder, tags, transformation, unsigned, etc.). Admin API POST /upload_presets. |
 | Delete Derived Resources | `deleteDerivedResources` | Delete derived assets by their derived resource IDs (up to 100). Derived IDs come from Get Resource details. Admin API DELETE /derived_resources. |
 | Delete Folder | `deleteFolder` | Delete an empty folder. The folder must contain no assets. Admin API DELETE /folders/{folder}. |
@@ -101,6 +108,8 @@ Add Cloudinary from **Build → Integrations → Connectors** and connect an acc
 | Update Upload Preset | `updateUploadPreset` | Update an existing upload preset's settings. Admin API PUT /upload_presets/{name}. |
 | Upload Asset | `uploadAsset` | Upload a new asset (image/video/raw) from a remote URL, base64 data URI, or S3/GCS reference. Supports public_id, folder, tags, context, transformations, eager, overwrite, and more. Upload API POST /{resource_type}/upload. Note: server-side calls authenticate via Basic auth (api_key/api_secret). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -117,6 +126,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Moderation | `moderation` | Sent when manual or automatic moderation (e.g. WebPurify, AWS Rekognition, manual) completes for an asset. |
 | Moderation Result | `moderation` | Sent when a moderation (manual, aws_rek, webpurify, etc.) result is available for an asset. |
 | Multi (Animated) Generated | `multi` | Sent when an asynchronous multi (animated GIF/video) generation request completes. |
+
+<details>
+
+<summary>See 7 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Rename | `rename` | Sent when an asset is renamed. |
 | Resource Metadata Changed | `resource_metadata_changed` | Sent when structured metadata of an asset changes. |
 | Sprite Generated | `sprite` | Sent when an asynchronous sprite generation request completes. |
@@ -124,3 +140,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Update | `update` | Sent when an asset's metadata, tags, or context are updated. |
 | Upload | `upload` | Sent when an asset finishes uploading (including asynchronous/eager processing of the originally uploaded asset). |
 | Upload Complete | `upload` | Sent when an asset upload finishes processing. Carries the full upload response (public_id, version, format, bytes, url, etc.). |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Referral Rock
 
+<img src="../../.gitbook/assets/connectors/referral-rock.png" alt="Referral Rock logo" width="64">
+
 Referral Rock is a referral, affiliate and partner marketing platform. This connector covers the complete Referral Rock REST API (https://api.referralrock.com): referral programs, members (referrers) and their statistics, referrals, rewards and reward rules, payouts and payout transactions, referral actions for recurring rewards, the customer feed that approves matching referrals, pre-authenticated member access and share URLs, the email unsubscribe list, and webhook subscription management with delivery history. Authentication is HTTP Basic using your Referral Rock public key as the username and private key as the password.
 
 | | |
@@ -12,8 +14,6 @@ Referral Rock is a referral, affiliate and partner marketing platform. This conn
 | **Category** | [Marketing](README.md) |
 | **Website** | [referralrock.com](https://referralrock.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 40 |
-| **Events** | 11 |
 | **Slug** | `referralRock` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Referral Rock from **Build → Integrations → Connectors** and connect an 
 | Delete Members | `deleteMembers` | Permanently deletes members from a referral program. The request body is a JSON array, so several members can be deleted in one call. Each element identifies one member with a query object. The response echoes each query alongside a resultInfo whose Status is 'Succeeded' or 'Failed' per member, so check every element rather than relying on the 200 status alone. |
 | Delete Members (DELETE Verb) | `deleteMembersViaDelete` | Permanently deletes members from a referral program using the HTTP DELETE verb. Identical in body and response to Delete Members, which uses POST; Referral Rock exposes both verbs on the same route so clients that cannot send a POST for a delete still have a path. Check each element's resultInfo.Status rather than relying on the 200 status alone. |
 | Delete Referrals | `deleteReferrals` | Permanently deletes referrals from a referral program. The request body is a JSON array, so several referrals can be deleted in one call. Each element identifies one referral with a query object. The response echoes each query with a resultInfo whose Status is 'Success' or 'Failed' per element, so check every element rather than relying on the 200 status alone. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Referrals (DELETE Verb) | `deleteReferralsViaDelete` | Permanently deletes referrals from a referral program using the HTTP DELETE verb. Identical in body and response to Delete Referrals, which uses POST; Referral Rock exposes both verbs on the same route. Check each element's resultInfo.Status rather than relying on the 200 status alone. |
 | Delete Rewards | `deleteRewards` | Permanently deletes rewards from members or referrals of a referral program. The request body is a JSON array of reward IDs, so several rewards can be deleted in one call. The response returns one element per ID with a resultInfo whose Status must be checked, because a 200 can still carry a Failed outcome such as "Reward Id does not exist". |
 | Delete Rewards (DELETE Verb) | `deleteRewardsViaDelete` | Permanently deletes rewards using the HTTP DELETE verb. Identical in body and response to Delete Rewards, which uses POST; Referral Rock exposes both verbs on the same route. Check each element's resultInfo.Status rather than relying on the 200 status alone. |
@@ -65,6 +72,8 @@ Add Referral Rock from **Build → Integrations → Connectors** and connect an 
 | Update Referrals | `updateReferrals` | Updates one or more referrals in a referral program, including moving a referral between the pending, qualified, approved and denied statuses. The request body is a JSON array, so several referrals can be updated in one call. Each element pairs a query that identifies the referral with a referral object holding only the fields to change. This replaces the deprecated Update Referral Status action. |
 | Update Rewards | `updateRewards` | Updates existing rewards in a referral program, changing the amount, the payout type, the eligibility date or the description. The request body is a JSON array, so several rewards can be updated in one call, each identified by its reward ID. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -81,4 +90,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Referral Status Changed | `ReferralStatusChange` | Fires when a referral moves between the pending, qualified, approved and denied statuses. Carries the same referral payload as Referral Added. Schema modelled on the captured ReferralAdd delivery, not captured for this event specifically. |
 | Referral Updated | `ReferralUpdate` | Fires when an existing referral is changed. Carries the same referral payload as Referral Added. Schema modelled on the captured ReferralAdd delivery, not captured for this event specifically. |
 | Reward Added | `RewardAdd` | Fires when a reward is created for a member or a referral. Schema modelled from the Reward object the REST API returns; not captured from a live delivery, because the sandbox account has no payout type configured and so cannot generate a reward. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Reward Issued | `RewardIssue` | Fires when a reward is issued to its recipient. Schema modelled from the Reward object the REST API returns; not captured from a live delivery, because the sandbox account has no payout type configured and so cannot issue a reward. |
+
+</details>

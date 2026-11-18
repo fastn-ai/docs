@@ -5,6 +5,8 @@ hidden: true
 
 # AI/ML API
 
+<img src="../../.gitbook/assets/connectors/aimlapi.png" alt="AI/ML API logo" width="64">
+
 AI/ML API (aimlapi.com) gives access to hundreds of AI models from one OpenAI-compatible endpoint. This connector covers the full AI/ML API surface: the model catalogue and deprecations, model performance metrics, account balance, billing details and transactions, API key management and usage, request logs, chat completions, the Responses API, Anthropic-style messages and message batches, image generation and editing, video generation, music and audio generation, text to speech, speech to text, OCR and embeddings.
 
 | | |
@@ -12,8 +14,6 @@ AI/ML API (aimlapi.com) gives access to hundreds of AI models from one OpenAI-co
 | **Category** | [AI and ML](README.md) |
 | **Website** | [aimlapi.com](https://aimlapi.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `aimlapi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AI/ML API from **Build → Integrations → Connectors** and connect an acco
 | Create Speech | `createSpeech` | Converts text to speech with any text-to-speech model in the catalogue and returns the audio URL. Voice, format and other model-specific settings are passed as documented per model at docs.aimlapi.com. Billed against the account balance. |
 | Create Transcription | `createTranscription` | Starts an asynchronous speech-to-text transcription of an audio file given by URL with any speech-to-text model in the catalogue. Returns a generation id; poll Get Transcription for the result, which is kept for one hour. Billed against the account balance. |
 | Delete API Key | `deleteApiKey` | Permanently deletes an API key identified by its 8-character prefix. The calling key must have the key-management endpoint permission enabled. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Edit Image | `editImage` | Edits one or more existing images according to a text prompt using an image-editing model, optionally with a mask marking the region to change. Images are passed as public URLs. Billed against the account balance. |
 | Generate Audio | `generateAudio` | Starts an asynchronous music or audio generation from a text prompt, optionally with lyrics, a reference audio URL or a preprocessed cover feature id. Returns a generation id and status; poll Get Audio Generation until completed. Billed against the account balance. |
 | Generate Image | `generateImage` | Generates one or more images from a text prompt with any image model in the catalogue (also used for 3D-generating models). Returns image URLs or base64 data. Model-specific parameters beyond the common ones are documented per model at docs.aimlapi.com. Billed against the account balance. |
@@ -57,3 +64,5 @@ Add AI/ML API from **Build → Integrations → Connectors** and connect an acco
 | Preprocess Reference Audio | `preprocessReferenceAudio` | Analyses a reference audio track for a music-cover model and returns a cover feature id (valid 24 hours) plus the recognised, formatted lyrics, to be passed to Generate Audio. Billed against the account balance. |
 | Run OCR | `runOcr` | Extracts text from a document or image with an OCR model, returning page-level Markdown, extracted images and optional structured annotations driven by JSON schemas. Billed against the account balance. |
 | Update API Key | `updateApiKey` | Updates an API key identified by its 8-character prefix: rename it, enable or disable it, change its spending limit or its model access scopes. Only the fields sent are changed. The calling key must have the key-management endpoint permission enabled. |
+
+</details>

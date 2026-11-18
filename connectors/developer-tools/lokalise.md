@@ -5,6 +5,8 @@ hidden: true
 
 # Lokalise
 
+<img src="../../.gitbook/assets/connectors/lokalise.png" alt="Lokalise logo" width="64">
+
 Lokalise translation management platform. Wraps the Lokalise API v2 (api.lokalise.com/api2) covering projects, keys, translations, languages, files, comments, contributors, screenshots, snapshots, branches, tasks, glossary terms, segments, custom translation statuses, webhooks, queued processes, translation memories, teams, team users, user groups, permission templates, orders, translation providers, payment cards and billing details, plus the Lokalise Public API v1 (audit logs), the Vantage content API and the OTA (over-the-air) bundle API.
 
 | | |
@@ -12,8 +14,6 @@ Lokalise translation management platform. Wraps the Lokalise API v2 (api.lokalis
 | **Category** | [Developer tools](README.md) |
 | **Website** | [lokalise.com](https://lokalise.com) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 116 |
-| **Events** | 33 |
 | **Slug** | `lokalise` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Lokalise from **Build → Integrations → Connectors** and connect an accou
 | Create A Project | `createAProject` | Create a project. Creates a new project in the specified team. Requires *Admin* role in the team. Requires &lt;code&gt;write_projects&lt;/code&gt; OAuth access scope. |
 | Create A Service JWT | `createServiceJwt` | Create a service JWT token. Create a JWT token for working with other services (primarily OTA/mobile SDKs). **Project Type Compatibility:** - ✅ **Software projects** (localization_files) - *Used with mobile SDKs and OTA updates* - ❌ **Documents projects** (paged_documents) - *Not supported* - ❌ **Marketing projects** (content_integration, marketing, marketing_integrations) - *Not supported* |
 | Create A Snapshot | `createASnapshot` | Create a snapshot. Creates snapshot of the project. Requires *Manage settings* admin right. Requires &lt;code&gt;write_snapshots&lt;/code&gt; OAuth access scope. |
+
+<details>
+
+<summary>See 106 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create A Task | `createATask` | Create a task. Creates a task in the project. Requires *Manage tasks* admin right. Keep in mind, that &lt;code&gt;initial_tm_leverage&lt;/code&gt; attribute will be empty in server response. It's being calculated after the task is created and this process may take some time. Requires &lt;code&gt;write_tasks&lt;/code&gt; OAuth access scope. |
 | Create A Webhook | `createAWebhook` | Create a webhook. Creates a webhook in the project. Requires *Manage settings* admin right. See our &lt;a href="https://docs.lokalise.com/en/articles/3184756-webhooks" target="_blank" rel="noopener noreferrer"&gt;documentation&lt;/a&gt; for available events and payload examples. Requires &lt;code&gt;write_webhooks&lt;/code&gt; OAuth access scope. |
 | Create an order | `createAnOrder` | Create an order. Creates a translation order. You must have admin privileges in the project you are placing an order in. Requires &lt;code&gt;write_team_orders&lt;/code&gt; OAuth access scope. |
@@ -141,6 +148,8 @@ Add Lokalise from **Build → Integrations → Connectors** and connect an accou
 | Update team user billing details | `updateTeamUserBillingDetails` | Update team user billing details. Updates a [Team user billing details](#object-team-user-billing-details) object. Requires &lt;code&gt;write_team_user_billing_details&lt;/code&gt; OAuth access scope. |
 | Upload A File | `uploadAFile` | Upload a file. Queues a localization file for import and returns a &lt;code&gt;202&lt;/code&gt; or &lt;code&gt;302&lt;/code&gt; response along with a &lt;a href="#object-queued-processes"&gt;Queued process&lt;/a&gt; object. &lt;a href="https://docs.lokalise.com/developer-docs/uploading-files" target="`_new`"&gt;Learn more&lt;/a&gt;. Requires *Upload files* admin right. &lt;a href="https://docs.lokalise.com/en/collections/2909229-supported-file-formats" target=_new&gt;Supported file types&lt;/a&gt;. Please note that the &lt;code&gt;302&lt;/code&gt; response code is not currently used, but in the future it will be returned if the same file is already in the upload queue. Requires &lt;code&gt;write_files&lt;/code&gt; OAuth access scope. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -157,6 +166,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Key Modified | `project.key.modified` | A single translation key was changed. |
 | Keys Added | `project.keys.added` | One or more translation keys were added to the project. |
 | Keys Deleted | `project.keys.deleted` | One or more keys were deleted from the project. |
+
+<details>
+
+<summary>See 23 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Keys Modified (Bulk) | `project.keys.modified` | Several keys were changed in one operation. |
 | Language Removed | `project.language.removed` | A language was removed from the project. |
 | Language Settings Changed | `project.language.settings_changed` | A project language's settings changed. |
@@ -180,3 +196,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Translation Updated | `project.translation.updated` | A single translation value changed. |
 | Translations Proofread (Bulk) | `project.translations.proofread` | Several translations were marked reviewed in one operation. |
 | Translations Updated (Bulk) | `project.translations.updated` | Several translations changed in one operation. |
+
+</details>

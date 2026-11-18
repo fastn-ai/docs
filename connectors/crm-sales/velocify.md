@@ -12,8 +12,6 @@ Velocify LeadManager and Dial-IQ by ICE Mortgage Technology - sales acceleration
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [velocify.com](https://velocify.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 68 |
-| **Events** | 0 |
 | **Slug** | `velocify` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Velocify from **Build → Integrations → Connectors** and connect an accou
 | Add Field Group | `addFieldGroup` | Add a new field group (lead form section) to the FormBuilder in the LeadManager database. The new FieldGroupId is returned and can then be passed as groupId to addField. Returns an XML Response document; read statusId and message. |
 | Add Lead Action | `addLeadAction` | Log an activity (action) against an existing lead - a call attempt, email, note or any tenant-defined action type. ActionTypeIds are per-tenant; resolve them with getActionTypes, which also reports whether a note is mandatory for that action type. Logging an action is what fires any Manage Posts outbound post configured against that action. Returns an XML Response document; HTTP 200 does not imply success. |
 | Add Leads | `addLeads` | Create one or more leads. This is the only way to create a lead through the API. Velocify exposes it over SOAP only, because the lead payload is an arbitrary XML fragment, so this action posts a SOAP 1.1 envelope. Supply leadsXml as a Leads document, e.g. &lt;Leads&gt;&lt;Lead&gt;&lt;Status StatusId="2"/&gt;&lt;Campaign CampaignId="3"/&gt;&lt;Agent AgentId="1"/&gt;&lt;Fields&gt;&lt;Field FieldId="2" Value="John"/&gt;&lt;Field FieldId="4" Value="a@b.com"/&gt;&lt;/Fields&gt;&lt;/Lead&gt;&lt;/Leads&gt;. No child node is required; omitted Status and Campaign fall back to the tenant defaults and an omitted Agent leaves the lead unassigned. FieldIds are per-tenant - resolve them with getFields. Each lead is reported individually in the response, so a 200 can still contain per-lead failures. |
+
+<details>
+
+<summary>See 58 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Leads With Form Type | `addLeadsEx` | Create one or more leads, with the ability to set the LeadFormType on each. Identical to addLeads apart from that. SOAP-only on the vendor side, so this action posts a SOAP 1.1 envelope. Resolve available form types with getLeadFormTypes and FieldIds with getFields. Each lead is reported individually, so a 200 can still contain per-lead failures. |
 | Assign Lead Via Distribution | `assignViaDistribution` | Assign a lead to an agent through a Velocify distribution program, so the assignment respects the program's routing rules, shark-tank and notification behaviour rather than bypassing them. Resolve programId with getPrograms and pick an eligible agentId with getAgentsQualified or getQualifiedAgents for that program and lead. Returns an XML Response document. |
 | Copy Lead | `copyLead` | Duplicate an existing lead, creating a new lead record from it. Note the parameter is capitalised LeadId on this operation, unlike the rest of the API. Returns an XML Response document carrying the new lead's result. |
@@ -92,3 +97,5 @@ Add Velocify from **Build → Integrations → Connectors** and connect an accou
 | Remove Lead | `removeLead` | Delete a lead from the LeadManager database. Destructive and not reversible through the API. Returns an XML Response document with a Removals element; HTTP 200 does not imply success, read statusId and message before treating the lead as gone. |
 | Take Direct Mail Lead By Direct Mail ID | `takeDirectMailLeadByDirectMailId` | Convert a direct mail record into a real lead using its direct mail id, assigning it to an agent. Typically called when a mail recipient calls the number on the piece. Returns an XML Response document; read statusId and message. |
 | Take Direct Mail Lead By Ref ID | `takeDirectMailLeadByRefId` | Convert a direct mail record into a real lead using the unique reference id printed on the mail piece, assigning it to an agent. Use this when the responder quotes a ref code rather than being matched by phone. Returns an XML Response document; read statusId and message. |
+
+</details>

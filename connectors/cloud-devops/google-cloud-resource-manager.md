@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Resource Manager
 
+<img src="../../.gitbook/assets/connectors/google-cloud-resource-manager.png" alt="Google Cloud Resource Manager logo" width="64">
+
 Google Cloud Resource Manager API v3 connector (https://cloudresourcemanager.googleapis.com/v3). Programmatically manage the Google Cloud resource hierarchy: create, get, list, search, update, delete, undelete, and move projects and folders; read organizations; manage IAM policies on projects, folders, and organizations; and administer tags (tag keys, tag values, tag bindings, tag holds, effective tags), liens, capabilities, tag binding collections, and long-running operations. OAuth 2.0 (Google) authorization-code auth.
 
 | | |
@@ -12,8 +14,6 @@ Google Cloud Resource Manager API v3 connector (https://cloudresourcemanager.goo
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloudresourcemanager.googleapis.com](https://cloudresourcemanager.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 62 |
-| **Events** | 0 |
 | **Slug** | `googleCloudResourceManager` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Resource Manager from **Build → Integrations → Connectors**
 | Delete Folder | `deleteFolder` | Mark the specified folder for deletion, moving it to the DELETE_REQUESTED state. The folder must not contain any active projects or sub-folders. Returns a long-running Operation. |
 | Delete Lien | `deleteLien` | Delete the specified lien, removing the restriction it enforced. |
 | Delete Project | `deleteProject` | Mark the specified project for deletion, moving it to the DELETE_REQUESTED state. The project can be restored with Undelete Project within the recovery window. Returns a long-running Operation. |
+
+<details>
+
+<summary>See 52 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Tag Binding | `deleteTagBinding` | Delete the specified tag binding, detaching a tag value from a resource. Returns a long-running Operation. |
 | Delete Tag Hold | `deleteTagHold` | Delete the specified tag hold under a tag value. Returns a long-running Operation. |
 | Delete Tag Key | `deleteTagKey` | Delete the specified tag key. The tag key must not have any child tag values. Returns a long-running Operation. |
@@ -86,3 +93,5 @@ Add Google Cloud Resource Manager from **Build → Integrations → Connectors**
 | Update Tag Binding Collection | `updateTagBindingCollection` | Replace the tag bindings on a resource in a given location by updating its tag binding collection. Returns a long-running Operation. |
 | Update Tag Key | `updateTagKey` | Update the mutable fields (description and allowedValuesRegex) of the specified tag key. The updateMask controls which fields are changed. Returns a long-running Operation. |
 | Update Tag Value | `updateTagValue` | Update the description of the specified tag value. The updateMask controls which fields are changed. Returns a long-running Operation. |
+
+</details>

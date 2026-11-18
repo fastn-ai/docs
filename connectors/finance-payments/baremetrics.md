@@ -5,6 +5,8 @@ hidden: true
 
 # Baremetrics
 
+<img src="../../.gitbook/assets/connectors/baremetrics.png" alt="Baremetrics logo" width="64">
+
 Baremetrics is a subscription analytics and revenue insights platform. This connector covers the full Baremetrics REST API: account, users, sources, plans, customers, subscriptions, one-off charges and refunds, subscription events, customer attributes and attribute fields, segments, annotations, goals, metrics (summary, per-metric, plan breakout, customer breakdown, cohorts) and Cancellation Insights reasons and events.
 
 | | |
@@ -12,8 +14,6 @@ Baremetrics is a subscription analytics and revenue insights platform. This conn
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [baremetrics.com](https://baremetrics.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 65 |
-| **Events** | 0 |
 | **Slug** | `baremetrics` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Baremetrics from **Build → Integrations → Connectors** and connect an ac
 | Create Goal | `createGoal` | Creates a goal in Baremetrics that tracks a metric from a start amount to a target amount over a date range. Amounts are in cents. |
 | Create Plan | `createPlan` | Creates a plan in a Baremetrics API source, for use when creating or updating subscriptions. Amounts are in cents. |
 | Create Refund | `createRefund` | Records a refund against a one-off API charge in a Baremetrics API source. This only records revenue data in Baremetrics; no money is moved. Amounts are in cents. |
+
+<details>
+
+<summary>See 55 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Segment | `createSegment` | Saves a new customer segment in Baremetrics defined by a list of query conditions. |
 | Create Subscription | `createSubscription` | Creates a subscription for an existing customer and plan in a Baremetrics API source. Returns the resulting subscription.created event; metrics are processed asynchronously. |
 | Delete Annotation | `deleteAnnotation` | Deletes a Baremetrics chart annotation by annotation ID. The deletion is accepted asynchronously (HTTP 202). |
@@ -89,3 +96,5 @@ Add Baremetrics from **Build → Integrations → Connectors** and connect an ac
 | Update Plan | `updatePlan` | Renames a plan in a Baremetrics API source. Only the plan name can be changed. |
 | Update Segment | `updateSegment` | Updates the name and/or query conditions of a saved Baremetrics customer segment. Only the fields you supply are changed. |
 | Update Subscription | `updateSubscription` | Updates a Baremetrics subscription, for example to change its plan, quantity, discount or add-ons. Returns the resulting subscription.updated event. |
+
+</details>

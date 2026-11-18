@@ -5,6 +5,8 @@ hidden: true
 
 # Truelist
 
+<img src="../../.gitbook/assets/connectors/truelist.png" alt="Truelist logo" width="64">
+
 Truelist is an email validation platform. This connector covers the Truelist REST API: verify up to three email addresses inline, upload batches of email addresses for background validation, list, retrieve and delete batches, search individual email validation results, and read the authenticated user and account.
 
 | | |
@@ -12,8 +14,6 @@ Truelist is an email validation platform. This connector covers the Truelist RES
 | **Category** | [Search and web](README.md) |
 | **Website** | [truelist.io](https://truelist.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 7 |
-| **Events** | 1 |
 | **Slug** | `truelist` |
 
 ## Use it

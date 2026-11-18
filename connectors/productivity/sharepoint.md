@@ -5,6 +5,8 @@ hidden: true
 
 # SharePoint
 
+<img src="../../.gitbook/assets/connectors/sharepoint.png" alt="SharePoint logo" width="64">
+
 Microsoft SharePoint via Microsoft Graph v1.0 — sites, lists, list items, columns, content types, document libraries (drives), pages, site permissions, followed sites, and change-notification subscriptions (webhooks).
 
 | | |
@@ -12,8 +14,6 @@ Microsoft SharePoint via Microsoft Graph v1.0 — sites, lists, list items, colu
 | **Category** | [Productivity](README.md) |
 | **Website** | [sharepoint.com](https://sharepoint.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 68 |
-| **Events** | 3 |
 | **Slug** | `sharepoint` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SharePoint from **Build → Integrations → Connectors** and connect an acc
 | Create Site Column | `createSiteColumn` | Create a site column. POST /sites/{site-id}/columns. Requires name plus exactly ONE type facet (text/number/boolean/choice/dateTime/currency/personOrGroup/lookup/hyperlinkOrPicture). Pass the chosen facet object in 'typeFacet' along with 'typeFacetName'. |
 | Create Site Content Type | `createSiteContentType` | Create a content type on a site. POST /sites/{site-id}/contentTypes. Requires name and a base content type ({ name, id }). Optional description, group, parentId, hidden. |
 | Create Subscription | `createSubscription` | Create a change-notification subscription (webhook) on a SharePoint resource such as a list (sites/{site-id}/lists/{list-id}) or document library drive (drives/{drive-id}/root). On create Graph immediately POSTs a validationToken to notificationUrl which must be echoed back within 10s. For SharePoint list/driveItem changeType must be 'updated' and expirationDateTime must be under ~30 days. |
+
+<details>
+
+<summary>See 58 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Drive Item | `deleteDriveItem` | Delete a driveItem (file or folder), moving it to the recycle bin. DELETE /drives/{drive-id}/items/{item-id}. Returns 204 No Content. |
 | Delete List | `deleteList` | Delete a list. DELETE /sites/{site-id}/lists/{list-id}. Returns 204 No Content. |
 | Delete List Column | `deleteListColumn` | Delete a column from a list. DELETE /sites/{site-id}/lists/{list-id}/columns/{column-id}. Returns 204 No Content. |
@@ -92,6 +99,8 @@ Add SharePoint from **Build → Integrations → Connectors** and connect an acc
 | Update Subscription | `updateSubscription` | Renew or update a change-notification subscription. Primary use is renewing expirationDateTime before it lapses. Optionally update notificationUrl. Returns the updated subscription. |
 | Upload Drive Item Content (Replace by ID) | `uploadDriveItemContent` | Upload/replace the content of an existing file driveItem (&lt;=250 MB). PUT /drives/{drive-id}/items/{item-id}/content. Body is the raw file bytes (not JSON). Returns the driveItem of the uploaded file. |
 | Upload File By Path | `uploadDriveItemByPath` | Upload a new file (or replace) by server-relative path (&lt;=250 MB). PUT /drives/{drive-id}/root:/{path}:/content. Body is the raw file bytes (not JSON). Returns the driveItem of the uploaded file. |
+
+</details>
 
 ## Events
 

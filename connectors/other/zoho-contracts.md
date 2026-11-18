@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Contracts
 
+<img src="../../.gitbook/assets/connectors/zoho-contracts.png" alt="Zoho Contracts logo" width="64">
+
 Zoho Contracts is Zoho's contract lifecycle management (CLM) application. This connector wraps the Zoho Contracts REST API v1 (contracts.zoho.com/api/v1): organization info, active users, departments, contract types and template fields, counterparties, counterparty types and counterparty contacts, contracts (create, import, draft completion, update, delete, ownership transfer and the contract lists), collaborators, approval, negotiation, signature, attachments and links, document downloads, obligation categories and obligations with their tasks.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Contracts is Zoho's contract lifecycle management (CLM) application. This c
 | **Category** | [Other](README.md) |
 | **Website** | [contracts.zoho.com](https://contracts.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 86 |
-| **Events** | 0 |
 | **Slug** | `zohoContracts` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Contracts from **Build → Integrations → Connectors** and connect an
 | Create Contract Type | `createContractType` | Creates a contract type in the Zoho Contracts organization, defining its intent, contracting parties, categories and approval workflow. Requires admin privilege. |
 | Create Contract With Document Field Values | `createContractWithDocumentFields` | Creates a contract in Zoho Contracts and populates the fields embedded in the contract document as well as the form fields. Custom date fields in the document must be supplied as a timestamp in milliseconds. Requires the ZohoWriter document editor scope when the contract type template is an uploaded one. |
 | Create Counterparty | `createCounterparty` | Creates a counterparty in Zoho Contracts with its address, website and counterparty type, optionally seeding its counterparty contacts. |
+
+<details>
+
+<summary>See 76 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Counterparty Contact | `createCounterpartyContact` | Creates a contact under an existing counterparty in Zoho Contracts. Counterparty contacts are the people who can be added as negotiators or signers on a contract. |
 | Create Counterparty Type | `createCounterpartyType` | Creates a counterparty type in the Zoho Contracts organization, used to categorise counterparties such as Procurement or Sales. Requires admin privilege. |
 | Create Department | `createDepartment` | Creates a department in the Zoho Contracts organization. Requires admin privilege. |
@@ -110,3 +117,5 @@ Add Zoho Contracts from **Build → Integrations → Connectors** and connect an
 | Update Organization Info | `updateOrganizationInfo` | Updates the profile of a Zoho Contracts organization, including its name, address, website and phone number. Only the fields supplied are sent. |
 | Upload Contract Attachment | `uploadContractAttachment` | Uploads a file against a contract in Zoho Contracts and returns the upload ID used by the Attach File action. Each file is uploaded separately and the combined size of a contract's attachments must not exceed 100 MB. The request is multipart/form-data. |
 | Upload Contract File | `uploadContractFile` | Uploads a contract document to Zoho Contracts and returns the upload ID used by the Import Contract action. Each document is uploaded separately and the module query parameter names which document type is being sent. The request is multipart/form-data. |
+
+</details>

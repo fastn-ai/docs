@@ -5,6 +5,8 @@ hidden: true
 
 # Domo
 
+<img src="../../.gitbook/assets/connectors/domo.png" alt="Domo logo" width="64">
+
 Domo is a cloud business intelligence platform for connecting, visualizing, and acting on data. This connector covers Domo's public v1 REST API: DataSets (create, query, import, export, PDP policies), Streams, the Simple API, Accounts, Users, Groups, Pages and Page Collections, Cards, Embed tokens, Projects and Tasks, and the Activity Log.
 
 | | |
@@ -12,8 +14,6 @@ Domo is a cloud business intelligence platform for connecting, visualizing, and 
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [domo.com](https://domo.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 87 |
-| **Events** | 0 |
 | **Slug** | `domo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Domo from **Build → Integrations → Connectors** and connect an account, 
 | Create DataSet | `createDataSet` | Creates a new, empty DataSet in your Domo instance. Once created, data can be imported into it with Import Data Into DataSet. |
 | Create DataSet (Simple API) | `createSimpleDataSet` | Creates a new DataSet using the Simple API, a lightweight convenience wrapper for JSON-based imports. Once created, use Import JSON Data to load rows. The created DataSet can also be managed through the standard DataSet API. |
 | Create Embed Token (Cards) | `createCardEmbedToken` | Creates an authentication token for embedding one or more cards in an external application. |
+
+<details>
+
+<summary>See 77 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Embed Token (Dashboard) | `createDashboardEmbedToken` | Creates an authentication token for embedding a page/dashboard (story) in an external application. |
 | Create Group | `createGroup` | Creates a new group in your Domo instance. |
 | Create Page | `createPage` | Creates a new page in your Domo instance. |
@@ -111,3 +118,5 @@ Add Domo from **Build → Integrations → Connectors** and connect an account, 
 | Update Task | `updateTask` | Updates the details of a task given an existing project, list, and task ID. |
 | Update User | `updateUser` | Updates the specified user's profile attributes. Any attribute left out of the request is unchanged. |
 | Upload Stream Execution Data Part | `uploadStreamExecutionPart` | Uploads a chunk of CSV row data as a numbered part of a Stream execution. Parts should be uploaded in increasing sequence. |
+
+</details>

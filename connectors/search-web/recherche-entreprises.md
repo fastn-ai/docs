@@ -5,6 +5,8 @@ hidden: true
 
 # Recherche d'entreprises
 
+<img src="../../.gitbook/assets/connectors/recherche-entreprises.png" alt="Recherche d'entreprises logo" width="64">
+
 Recherche d'entreprises is the French government's free company search API (Annuaire des Entreprises): find French companies, associations and public bodies by name, SIREN/SIRET, address, executive, activity code, size, labels and finances, or near a GPS point, with their establishments and directors. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Recherche d'entreprises is the French government's free company search API (Annu
 | **Category** | [Search and web](README.md) |
 | **Website** | [recherche-entreprises.api.gouv.fr](https://recherche-entreprises.api.gouv.fr) |
 | **Authentication** | No authentication |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `rechercheEntreprises` |
 
 ## Use it

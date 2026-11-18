@@ -5,6 +5,8 @@ hidden: true
 
 # Dropbox Sign
 
+<img src="../../.gitbook/assets/connectors/dropbox-sign.svg" alt="Dropbox Sign logo" width="64">
+
 Dropbox Sign (formerly HelloSign) is an electronic signature platform for preparing, sending, signing and tracking legally binding documents. This connector covers the Dropbox Sign v3 API: signature requests including embedded, template-based and bulk send flows with remind, cancel, release, update and file download operations, reusable templates with their files, embedded create and edit URLs, team management with members, sub teams and invites, unclaimed drafts, API apps, fax lines and faxes, account management, usage reports and OAuth token issuance and refresh.
 
 | | |
@@ -12,8 +14,6 @@ Dropbox Sign (formerly HelloSign) is an electronic signature platform for prepar
 | **Category** | [Productivity](README.md) |
 | **Website** | [hellosign.com](https://hellosign.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 73 |
-| **Events** | 0 |
 | **Slug** | `dropboxSign` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dropbox Sign from **Build → Integrations → Connectors** and connect an a
 | Create Embedded Signature Request | `createEmbeddedSignatureRequest` | Create Embedded Signature Request. Creates a new SignatureRequest with the submitted documents to be signed in an embedded iFrame. If form_fields_per_document is not specified, a signature page will be affixed where all signers will be required to add their signature, signifying their agreement to all contained documents. Note that embedded signature requests can only be signed in embedded iFrames whereas normal signature requests can only be signed on Dropbox Sign. Dropbox Sign v3 API operation signatureRequestCreateEmbedded (POST /v3/signature_request/create_embedded). This connector sends the request as JSON, so the multipart-only file upload field(s) files are not exposed; supply the document using the file_urls field instead. |
 | Create Embedded Signature Request with Template | `createEmbeddedSignatureRequestWithTemplate` | Create Embedded Signature Request with Template. Creates a new SignatureRequest based on the given Template(s) to be signed in an embedded iFrame. Note that embedded signature requests can only be signed in embedded iFrames whereas normal signature requests can only be signed on Dropbox Sign. Dropbox Sign v3 API operation signatureRequestCreateEmbeddedWithTemplate (POST /v3/signature_request/create_embedded_with_template). This connector sends the request as JSON, so the multipart-only file upload field(s) files are not exposed; supply the document using the file_urls field instead. |
 | Create Embedded Template Draft | `createEmbeddedTemplateDraft` | Create Embedded Template Draft. The first step in an embedded template workflow. Creates a draft template that can then be further set up in the template 'edit' stage. Dropbox Sign v3 API operation templateCreateEmbeddedDraft (POST /v3/template/create_embedded_draft). This connector sends the request as JSON, so the multipart-only file upload field(s) files are not exposed; supply the document using the file_urls field instead. |
+
+<details>
+
+<summary>See 63 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Embedded Unclaimed Draft | `createEmbeddedUnclaimedDraft` | Create Embedded Unclaimed Draft. Creates a new Draft that can be claimed and used in an embedded iFrame. The first authenticated user to access the URL will claim the Draft and will be shown the "Request signature" page with the Draft loaded. Subsequent access to the claim URL will result in a 404. For this embedded endpoint the requester_email_address parameter is required. NOTE: Embedded unclaimed drafts can only be accessed in embedded iFrames whereas normal drafts can be used and accessed on Dropbox Sign. Dropbox Sign v3 API operation unclaimedDraftCreateEmbedded (POST /v3/unclaimed_draft/create_embedded). This connector sends the request as JSON, so the multipart-only file upload field(s) files are not exposed; supply the document using the file_urls field instead. |
 | Create Embedded Unclaimed Draft with Template | `createEmbeddedUnclaimedDraftWithTemplate` | Create Embedded Unclaimed Draft with Template. Creates a new Draft with a previously saved template(s) that can be claimed and used in an embedded iFrame. The first authenticated user to access the URL will claim the Draft and will be shown the "Request signature" page with the Draft loaded. Subsequent access to the claim URL will result in a 404. For this embedded endpoint the requester_email_address parameter is required. NOTE: Embedded unclaimed drafts can only be accessed in embedded iFrames whereas normal drafts can be used and accessed on Dropbox Sign. Dropbox Sign v3 API operation unclaimedDraftCreateEmbeddedWithTemplate (POST /v3/unclaimed_draft/create_embedded_with_template). This connector sends the request as JSON, so the multipart-only file upload field(s) files are not exposed; supply the document using the file_urls field instead. |
 | Create Report | `createReport` | Create Report. Request the creation of one or more report(s). When the report(s) have been generated, you will receive an email (one per requested report type) containing a link to download the report as a CSV file. The requested date range may be up to 12 months in duration, and start_date must not be more than 10 years in the past. Dropbox Sign v3 API operation reportCreate (POST /v3/report/create). |
@@ -97,3 +104,5 @@ Add Dropbox Sign from **Build → Integrations → Connectors** and connect an a
 | Update Team | `updateTeam` | Update Team. Updates the name of your Team. Dropbox Sign v3 API operation teamUpdate (PUT /v3/team). |
 | Update Template Files | `updateTemplateFiles` | Update Template Files. Overlays a new file with the overlay of an existing template. The new file(s) must: 1. have the same or higher page count 2. the same orientation as the file(s) being replaced. This will not overwrite or in any way affect the existing template. Both the existing template and new template will be available for use after executing this endpoint. Also note that this will decrement your template quota. Overlaying new files is asynchronous and a successful call to this endpoint will return 200 OK response if the request passes initial validation checks. Dropbox Sign v3 API operation templateUpdateFiles (POST /v3/template/update_files/{template_id}). This connector sends the request as JSON, so the multipart-only file upload field(s) files are not exposed; supply the document using the file_urls field instead. |
 | Verify Account | `verifyAccount` | Verify Account. Verifies whether an Dropbox Sign Account exists for the given email address. Dropbox Sign v3 API operation accountVerify (POST /v3/account/verify). |
+
+</details>

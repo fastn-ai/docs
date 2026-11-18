@@ -5,6 +5,8 @@ hidden: true
 
 # Blooio
 
+<img src="../../.gitbook/assets/connectors/blooio.png" alt="Blooio logo" width="64">
+
 Blooio multi-channel messaging API (v4): iMessage, SMS, RCS and WhatsApp. Manage channels and sender numbers, contacts and identities, chats, messages, reactions and polls, groups, templates, attachments, phone-number lookup, priorities, API keys, webhooks and a unified event feed.
 
 | | |
@@ -12,8 +14,6 @@ Blooio multi-channel messaging API (v4): iMessage, SMS, RCS and WhatsApp. Manage
 | **Category** | [Communication](README.md) |
 | **Website** | [blooio.com](https://blooio.com) |
 | **Authentication** | API key |
-| **Actions** | 159 |
-| **Events** | 24 |
 | **Slug** | `blooio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Blooio from **Build → Integrations → Connectors** and connect an account
 | Create Api Key | `createApiKey` | Blooio v4: MINTS A NEW LIVE API KEY for the installed organization. *** DANGER: the raw key is returned once in this response and cannot be recovered afterwards; it is a real credential that can send messages and spend the account's quota. Never run this to "test" the route, and never let the response be logged. *** Blooio Apps (OAuth) access tokens only - API-key auth is rejected with 403 oauth_token_required. A new key owns no numbers until channels are assigned to it. |
 | Create Attachment | `createAttachment` | Blooio v4: registers an attachment for use in a message. NOT YET IMPLEMENTED by the vendor - always returns 501 {"code":"not_implemented","details":{"resource":"attachments.create"}} pending v4 schema/backfill work. |
 | Create Contact | `createContact` | Create a contact, optionally with one identity (a phone number or email on a channel type). |
+
+<details>
+
+<summary>See 149 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Group | `createGroup` | Creates a group chat on a group-capable channel (blooio/whatsapp) with one or more members. Members are phone numbers (E.164) or emails, as strings or {identifier} objects; unknown members are auto-created as contacts. |
 | Create Message Template | `createTemplate` | Creates a message template. NOT YET IMPLEMENTED by Blooio: 501 not_implemented is the only documented response and the vendor's OpenAPI declares no request schema for it, so any field may be passed through (additionalProperties is open). |
 | Create Priority | `createPriority` | Creates a channel priority (a send-time waterfall pool). channels is an array of ch_... ids or {channel_id, priority} objects. The first priority created for a key becomes its default unless is_default false is set. SECURITY: the response echoes the calling key's own value as owner_id. |
@@ -184,6 +191,8 @@ Add Blooio from **Build → Integrations → Connectors** and connect an account
 | V2 Update Webhook | `v2UpdateWebhook` | Blooio v2: updates a legacy v2 webhook's event type, expiry, or deprecation flag. |
 | Vote On Poll | `votePoll` | Casts or toggles a vote on a poll by option_index (0-based) or option text. Blooio channels only. Returns 409 poll_not_ready until the poll has materialised on the linked device. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -200,6 +209,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Message Pending | `message.pending` | An outbound message is awaiting the device or channel. |
 | Message Queued | `message.queued` | An outbound message was accepted and queued. Confirmed from a real delivery on this account. |
 | Message Reaction | `message.reaction` | A tapback reaction was added to or removed from a message. |
+
+<details>
+
+<summary>See 14 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Message Read | `message.read` | The recipient read the message (read receipt). |
 | Message Received | `message.received` | An inbound message arrived on one of the organization's channels. |
 | Message Sent | `message.sent` | An outbound message was handed to the channel. Payload shape confirmed from a real delivery on this account. |
@@ -214,3 +230,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Safety State Changed | `safety.state_changed` | A channel's safety or trust state changed. |
 | Typing Started | `typing.started` | The other party started typing in a chat. |
 | Typing Stopped | `typing.stopped` | The other party stopped typing in a chat. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # 1CRM
 
+<img src="../../.gitbook/assets/connectors/one-crm.png" alt="1CRM logo" width="64">
+
 1CRM all-in-one CRM and ERP via the 1CRM REST API. Work with any 1CRM module (accounts, contacts, leads, opportunities, cases, quotes, invoices, projects and more) through generic record, relationship, search and metadata endpoints, plus calendars, files, reports, dashboards, audit logs and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ hidden: true
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [1crm.com](https://1crm.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 141 |
-| **Events** | 3 |
 | **Slug** | `oneCrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add 1CRM from **Build → Integrations → Connectors** and connect an account, 
 | Authorization request for contact | `authorizeContact` | OAuth 2.0 authorization request for a portal contact. |
 | Authorization request for user | `authorizeUser` | OAuth 2.0 authorization request for a 1CRM user. |
 | Authorize card in Stripe | `authorizeStripeCard` | Authorize a credit card with Stripe for an account (payment processing). |
+
+<details>
+
+<summary>See 131 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Charge credit card | `chargeCreditCard` | Charge a credit card through the configured payment gateway (moves money). |
 | Create ListView layout | `createListViewLayout` | Create a new ListView layout for a module. |
 | Create PDF for signing | `createPdfForSigning` | Create PDF documents for records and prepare them for e-signing (may send signing requests). |
@@ -165,6 +172,8 @@ Add 1CRM from **Build → Integrations → Connectors** and connect an account, 
 | Update webhook | `updateWebhook` | Update a webhook's trigger type, URL, model and filters. |
 | Upload file (binary) | `uploadFile` | Upload raw binary file content to a temporary location; the returned file ID can be used for file_ref or image fields. |
 | Upload small file (base64) | `uploadFileBase64` | Upload a small base64-encoded file to a temporary location; the returned file ID can be used for file_ref or image fields. |
+
+</details>
 
 ## Events
 

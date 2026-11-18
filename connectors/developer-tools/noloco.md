@@ -5,6 +5,8 @@ hidden: true
 
 # Noloco
 
+<img src="../../.gitbook/assets/connectors/noloco.png" alt="Noloco logo" width="64">
+
 Noloco is a no-code platform for building internal tools, client portals and business apps on top of your existing data. This connector covers both of Noloco's GraphQL APIs: the per-app Data API (https://api.portals.noloco.io/data/{appName}) for full CRUD, CSV export and bulk/import operations over every built-in collection (Users, Companies, Files, Roles, Messages, Shared Files, Comments, Onboarding Tasks, Push Subscriptions) plus authentication, notifications and workflow execution; and the Account API (https://api.portals.noloco.io/) for managing projects, data types, data sources, templates, team and billing.
 
 | | |
@@ -12,8 +14,6 @@ Noloco is a no-code platform for building internal tools, client portals and bus
 | **Category** | [Developer tools](README.md) |
 | **Website** | [noloco.io](https://noloco.io) |
 | **Authentication** | API key |
-| **Actions** | 131 |
-| **Events** | 5 |
 | **Slug** | `noloco` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Noloco from **Build → Integrations → Connectors** and connect an account
 | Account: Delete Project | `acctDeleteProject` | DESTRUCTIVE. Permanently delete a Noloco project and everything in it. The name argument is OPTIONAL in the schema — calling this with no name lets the server pick the project, so always pass the project name explicitly. |
 | Account: Get Current User | `acctGetCurrentUser` | Return the Noloco account user that owns the Account API key, together with a fresh session token. SENSITIVE: the response contains a live JWT — do not log it. |
 | Account: Get Data Source | `acctGetDataSource` | Fetch one external data source of a Noloco project by id. projectId is the project NAME. |
+
+<details>
+
+<summary>See 121 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Account: Get Data Type | `acctGetDataType` | Fetch one data type (table) of a Noloco project from the Account API, including its field definitions. projectId is the project NAME; id is the numeric data type id. |
 | Account: Get Project | `acctGetProject` | Fetch one Noloco project by its project NAME (the projectId argument takes the name, not the numeric id) from the Account API. Returns the project plus its data types and media files. |
 | Account: Get Template | `acctGetTemplate` | Fetch one Noloco app template by its numeric id. |
@@ -155,6 +162,8 @@ Add Noloco from **Build → Integrations → Connectors** and connect an account
 | Upsert Onboarding Tasks | `updateOnboardingTasks` | Replace or upsert the Noloco app's whole onboarding task list in one call, using full OnboardingTaskInput objects rather than per-record ids. |
 | Verify OTP Backup Code | `verifyOtpBackupCode` | Complete two-factor authentication using one of the user's one-time backup codes instead of an authenticator app code. |
 | Verify OTP Code | `verifyOtp` | Complete two-factor authentication by submitting the six-digit authenticator code, returning a fully authenticated session token. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Planyo Online Booking
 
+<img src="../../.gitbook/assets/connectors/planyo-online-booking.png" alt="Planyo Online Booking logo" width="64">
+
 Planyo online booking / reservation system. Single-URL RPC REST API at https://www.planyo.com/rest/ where every operation is ?method=&lt;name&gt;&api_key=&lt;key&gt;. HTTP status is always 200; success is indicated by response_code:0 in the body.
 
 | | |
@@ -12,8 +14,6 @@ Planyo online booking / reservation system. Single-URL RPC REST API at https://w
 | **Category** | [Productivity](README.md) |
 | **Website** | [planyo.com](https://planyo.com) |
 | **Authentication** | API key |
-| **Actions** | 136 |
-| **Events** | 30 |
 | **Slug** | `planyoOnlineBooking` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Planyo Online Booking from **Build → Integrations → Connectors** and con
 | Add Pricing Manager Rule | `addPricingManagerRule` | [Prices] RPC add_pricing_manager_rule. Adds a new rule to Pricing Manager. Docs: https://www.planyo.com/api.php?topic=add_pricing_manager_rule |
 | Add Product Image | `addProductImage` | [Additional products] RPC add_product_image. Adds an image to an additional product. Docs: https://www.planyo.com/api.php?topic=add_product_image |
 | Add Recurring Vacation | `addRecurringVacation` | [Availability] RPC add_recurring_vacation. Adds a recurring vacation (blocked period) for a resource or the whole site. Docs: https://www.planyo.com/api.php?topic=add_recurring_vacation |
+
+<details>
+
+<summary>See 126 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Reservation Payment | `addReservationPayment` | [Reservations] RPC add_reservation_payment. Adds a payment record for a reservation. Never pass credit card numbers. Docs: https://www.planyo.com/api.php?topic=add_reservation_payment |
 | Add Resource | `addResource` | [Resources] RPC add_resource. Adds a new resource by copying an existing base resource. Docs: https://www.planyo.com/api.php?topic=add_resource |
 | Add Resource Image | `addResourceImage` | [Resources] RPC add_resource_image. Adds an image to a resource. Docs: https://www.planyo.com/api.php?topic=add_resource_image |
@@ -161,6 +168,8 @@ Add Planyo Online Booking from **Build → Integrations → Connectors** and con
 | Set Unit Property | `setUnitProperty` | [Resource units] RPC set_unit_property. Sets a custom unit property, optionally for a specific date/time. Docs: https://www.planyo.com/api.php?topic=set_unit_property |
 | Set Weekly Schedule | `setWeeklySchedule` | [Availability] RPC set_weekly_schedule. Specifies the regular working / unavailable hours for a resource. Per-slot params are documented at the docs URL. Docs: https://www.planyo.com/api.php?topic=set_weekly_schedule |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -177,6 +186,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Checked in | `checked_in` | A reservation status changed to checked-in. |
 | Checked out | `checked_out` | A reservation status changed to checked-out. |
 | Confirmed status cleared | `confirmed_cleared` | The 'confirmed' status of a reservation was cleared. |
+
+<details>
+
+<summary>See 20 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Coupon payment received | `coupon_payment_received` | An online payment for a coupon was received. |
 | Hourly notification | `hourly` | Planyo's hourly notification tick. |
 | New price quotation | `new_price_quotation` | A new price quotation was created. |
@@ -197,3 +213,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Resource settings changed | `resource_settings_changed` | Settings of a resource changed. |
 | User added or updated | `user_updated` | A user was added or their settings were updated. Carries is_new_user. |
 | Vacation added, removed or modified | `vacation_modified` | A vacation (blocked period) was added, removed or modified. |
+
+</details>

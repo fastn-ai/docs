@@ -5,6 +5,8 @@ hidden: true
 
 # Uploadcare
 
+<img src="../../.gitbook/assets/connectors/uploadcare.png" alt="Uploadcare logo" width="64">
+
 Uploadcare file uploading, storage, CDN delivery, and processing platform. Manage files, groups, file metadata, webhooks, document and video conversion, and AI add-ons (AWS Rekognition, virus scanning, background removal) via the Uploadcare REST API v0.7, plus uploading via the Upload API.
 
 | | |
@@ -12,8 +14,6 @@ Uploadcare file uploading, storage, CDN delivery, and processing platform. Manag
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [uploadcare.com](https://uploadcare.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 36 |
-| **Events** | 5 |
 | **Slug** | `uploadcare` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Uploadcare from **Build → Integrations → Connectors** and connect an acc
 | Delete File Metadata Key | `deleteFileMetadataKey` | Remove a single custom metadata key from a file. |
 | Delete Files Batch | `deleteFilesBatch` | Remove multiple files in one request. Provide a JSON array of file UUIDs (up to 100). |
 | Delete Group | `deleteGroup` | Delete a file group by its ID. The files that belonged to the group are not deleted. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Execute AWS Rekognition Labels | `executeAwsRekognitionLabels` | Run the AWS Rekognition object/label detection add-on on an image file. Returns a request ID to poll for results. |
 | Execute AWS Rekognition Moderation | `executeAwsRekognitionModeration` | Run the AWS Rekognition unsafe-content moderation add-on on an image file. Returns a request ID to poll for results. |
 | Execute Remove Background | `executeRemoveBg` | Run the remove.bg background-removal add-on on an image file. Returns a request ID to poll for the resulting file. |
@@ -60,6 +67,8 @@ Add Uploadcare from **Build → Integrations → Connectors** and connect an acc
 | Update File Metadata Key | `updateFileMetadataKey` | Set or update the value of a single custom metadata key on a file. Key up to 64 characters; value up to 512 characters. |
 | Update Webhook | `updateWebhook` | Update an existing webhook subscription by its ID. Only the provided fields are changed. |
 | Upload File From URL | `uploadFromUrl` | Upload a file to Uploadcare from a publicly accessible source URL via the Upload API. Returns an async token; poll Get Upload From URL Status with the token to obtain the resulting file. |
+
+</details>
 
 ## Events
 

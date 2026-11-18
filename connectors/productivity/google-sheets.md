@@ -5,6 +5,8 @@ hidden: true
 
 # Google Sheets
 
+<img src="../../.gitbook/assets/connectors/google-sheets.png" alt="Google Sheets logo" width="64">
+
 Read, write, and manage Google Sheets spreadsheets via the Sheets API v4. Supports spreadsheet creation, sheet tab management, cell value operations, named ranges, and batch updates.
 
 | | |
@@ -12,8 +14,6 @@ Read, write, and manage Google Sheets spreadsheets via the Sheets API v4. Suppor
 | **Category** | [Productivity](README.md) |
 | **Website** | [sheets.google.com](https://sheets.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 25 |
-| **Events** | 0 |
 | **Slug** | `googleSheets` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Sheets from **Build → Integrations → Connectors** and connect an 
 | Batch Update Spreadsheet | `batchUpdateSpreadsheet` | Generic power action: applies one or more update Requests to the spreadsheet atomically (addSheet, deleteSheet, updateCells, formatting, charts, etc.). Pass a bare requests array. The specific addSheet/deleteSheet actions wrap single request types. |
 | Batch Update Values | `batchUpdateValues` | Write values to multiple ranges in a single request. |
 | Batch Update Values By Data Filter | `batchUpdateValuesByDataFilter` | Sets values in one or more ranges selected by dataFilters. Each data entry pairs a dataFilter with the values to write and the major dimension. |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clear Values | `clearValues` | Clear all values in a specific range of a spreadsheet, leaving formatting intact. |
 | Copy Sheet To | `copySheetTo` | Copy a sheet tab from one spreadsheet to another spreadsheet. |
 | Create Spreadsheet | `createSpreadsheet` | Create a new Google Sheets spreadsheet with a given title. |
@@ -49,3 +56,5 @@ Add Google Sheets from **Build → Integrations → Connectors** and connect an 
 | TEMP watch spreadsheet check (delete me) | `tempWatchSpreadsheetCheck` | Temporary B185 probe: can a Sheets connection open a Drive watch channel on a spreadsheet. Delete after the check. |
 | Update Named Range | `updateNamedRange` | Update the name or cell range of an existing named range. |
 | Update Values | `updateValues` | Write values to a specific range in a spreadsheet, overwriting existing data. |
+
+</details>

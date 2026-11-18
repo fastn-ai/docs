@@ -5,6 +5,8 @@ hidden: true
 
 # Taskade
 
+<img src="../../.gitbook/assets/connectors/taskade.jpg" alt="Taskade logo" width="64">
+
 Taskade is an AI-native productivity platform for organizing work into workspaces, folders, projects, and tasks, and for building and running AI agents. This connector covers the Taskade Public API (v1): workspaces, folders, projects, project members, blocks, share links, tasks and subtasks (create, update, complete, move, dates, notes, assignees, custom fields), AI agents and their knowledge, conversations, public agents, media, and workspace bundles.
 
 | | |
@@ -12,8 +14,6 @@ Taskade is an AI-native productivity platform for organizing work into workspace
 | **Category** | [Project management](README.md) |
 | **Website** | [taskade.com](https://taskade.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `taskade` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Taskade from **Build → Integrations → Connectors** and connect an accoun
 | Copy Project | `projectCopy` | Copies a project into a folder, optionally with a new title. |
 | Create Agent in Folder | `folderCreateAgent` | Creates a new AI agent in a folder from configuration data or a predefined template. |
 | Create Project | `projectCreate` | Creates a new project from Markdown content in the specified folder. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project from Template | `projectFromTemplate` | Creates a new project in a folder from an existing template. |
 | Create Project in Workspace | `workspaceCreateProject` | Creates a new project directly in a workspace from Markdown content. |
 | Create Tasks | `taskCreate` | Creates one or more tasks in a project (up to 20 per request). |
@@ -88,3 +95,5 @@ Add Taskade from **Build → Integrations → Connectors** and connect an accoun
 | Update Agent Public Settings | `agentPublicUpdate` | Updates the public sharing preferences for an AI agent. |
 | Update Task Content | `taskPut` | Replaces the content of a task with new Markdown or plain text. |
 | Upload Media to Space | `mediaUpload` | Uploads a media file into a space. |
+
+</details>

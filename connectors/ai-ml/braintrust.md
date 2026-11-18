@@ -5,6 +5,8 @@ hidden: true
 
 # Braintrust
 
+<img src="../../.gitbook/assets/connectors/braintrust.png" alt="Braintrust logo" width="64">
+
 Braintrust is an AI evaluation and observability platform for building, evaluating and monitoring LLM applications. This connector covers the Braintrust REST API v1: projects, experiments, datasets and dataset snapshots, project logs, prompts, functions and agents, views, span iframes, project scores and tags, groups, roles, ACLs, users, organizations, API keys, service tokens, AI secrets, environment variables, MCP servers, project and organization automations, environments, evals and the AI proxy.
 
 | | |
@@ -12,8 +14,6 @@ Braintrust is an AI evaluation and observability platform for building, evaluati
 | **Category** | [AI and ML](README.md) |
 | **Website** | [braintrust.dev](https://braintrust.dev) |
 | **Authentication** | Bearer token |
-| **Actions** | 161 |
-| **Events** | 3 |
 | **Slug** | `braintrust` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Braintrust from **Build → Integrations → Connectors** and connect an acc
 | Create Environment Variable | `postEnvVar` | Create a new env_var scoped to an organization, project or function. If an env_var with the same name already exists on that object it is returned unmodified. Returns the env_var object (value is never returned, only preview_secret). |
 | Create Experiment | `postExperiment` | Creates a new experiment in a project. If an experiment with the same name already exists in the project, Braintrust returns it unmodified unless ensure_new is true. |
 | Create Function | `postFunction` | Creates a function (prompt, code, global, graph or remote-eval backed scorer, task, tool or other function type) in a project. If a function with the same slug already exists, a new version is appended and returned. |
+
+<details>
+
+<summary>See 151 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Group | `postGroup` | Creates a new user group. If a group with the same name already exists, Braintrust returns it unmodified. |
 | Create MCP Server | `postMcpServer` | Register a new MCP server in a project. If an mcp_server with the same name already exists in the project it is returned unmodified. Returns the mcp_server object. |
 | Create Or Replace Agent | `putAgent` | Creates an agent, or replaces the existing agent with the same name in the project using the provided fields. |
@@ -185,6 +192,8 @@ Add Braintrust from **Build → Integrations → Connectors** and connect an acc
 | Update Role | `patchRoleId` | Partially updates a role: rename it, change its description, and add or remove member permissions and inherited roles. |
 | Update Span IFrame | `patchSpanIframeId` | Partially updates a span iframe's name, URL, description or postMessage setting. |
 | Update View | `patchViewId` | Partially updates a saved view's name, description, starred flag, view data or options. The owning object's type and id are required in the body. Object-type fields are deep-merged. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Google Workspace Admin SDK
 
+<img src="../../.gitbook/assets/connectors/google-workspace-admin-sdk.png" alt="Google Workspace Admin SDK logo" width="64">
+
 Administer a Google Workspace account with the Admin SDK. Provision and manage users, aliases, photos, groups, group members, organizational units, roles and role assignments, privileges, domains, ChromeOS and mobile devices, application-specific passwords, tokens, verification codes, custom user schemas, calendar resources (buildings, features, calendars), Chrome printers and print servers, and cross-user data transfers. Requires a Google Workspace administrator account and the customer identifier my_customer.
 
 | | |
@@ -12,8 +14,6 @@ Administer a Google Workspace account with the Admin SDK. Provision and manage u
 | **Category** | [IT and service management](README.md) |
 | **Website** | [admin.google.com](https://admin.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 140 |
-| **Events** | 0 |
 | **Slug** | `googleWorkspaceAdminSdk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Workspace Admin SDK from **Build → Integrations → Connectors** an
 | Create Building | `insertBuilding` | Create a new building for organizing calendar resources. |
 | Create Calendar Resource | `insertCalendarResource` | Create a new calendar resource such as a conference room. |
 | Create Contact Delegate | `createContactDelegate` | Grant a user access to manage another user's contacts by creating a contact delegate. Both users must belong to the same Google Workspace organization, and contact sharing must be turned on for the organization in the Admin console. |
+
+<details>
+
+<summary>See 130 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Custom User Schema | `insertSchema` | Create a custom user schema to store additional structured data on user profiles. |
 | Create Data Transfer | `insertTransfer` | Request a data transfer, moving application data (such as Drive or Calendar) from one user to another. |
 | Create Domain | `insertDomain` | Add a secondary domain to the account. The domain must be verified before it can be used. |
@@ -164,3 +171,5 @@ Add Google Workspace Admin SDK from **Build → Integrations → Connectors** an
 | Update User Photo | `updateUserPhoto` | Set the user's profile photo. The photo data must be web-safe base64 encoded. |
 | Watch User Aliases | `watchUserAliases` | Subscribe to change notifications for a user's aliases via a webhook channel. Requires a verified HTTPS webhook receiver. Core channel fields only. |
 | Watch Users | `watchUsers` | Subscribe to change notifications for user resources via a webhook channel. Requires a verified, HTTPS webhook receiver domain. Core channel fields only. |
+
+</details>

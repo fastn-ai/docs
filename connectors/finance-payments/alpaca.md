@@ -5,6 +5,8 @@ hidden: true
 
 # Alpaca
 
+<img src="../../.gitbook/assets/connectors/alpaca.png" alt="Alpaca logo" width="64">
+
 Alpaca commission-free stock, options and crypto trading. Trading API is pinned to the PAPER host https://paper-api.alpaca.markets (no real money). Market Data API on https://data.alpaca.markets. Live trading host api.alpaca.markets is deliberately NOT wired.
 
 | | |
@@ -12,8 +14,6 @@ Alpaca commission-free stock, options and crypto trading. Trading API is pinned 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [alpaca.markets](https://alpaca.markets) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 90 |
-| **Events** | 0 |
 | **Slug** | `alpaca` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Alpaca from **Build → Integrations → Connectors** and connect an account
 | Create Order | `createOrder` | Place an order on the PAPER trading account. No real money is involved. Supports market/limit/stop/stop_limit/trailing_stop, qty or notional, and optional client_order_id. |
 | Create Order (legacy v1) | `createOrderV1` | DEPRECATED legacy v1 Trading API mirror of Create Order, on the PAPER host only. Prefer createOrder (v2). |
 | Create Watchlist | `createWatchlist` | Create a named watchlist with an initial list of symbols. |
+
+<details>
+
+<summary>See 80 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Watchlist By ID | `deleteWatchlistById` | Delete a watchlist by id. Returns 204 No Content. |
 | Delete Watchlist By Name | `deleteWatchlistByName` | Delete a watchlist addressed by name. Returns 204 No Content. |
 | Do Not Exercise Options Position | `doNotExerciseOptionsPosition` | Submit a do-not-exercise (DNE) instruction for a held option contract on the PAPER account, overriding auto-exercise at expiry. |
@@ -114,3 +121,5 @@ Add Alpaca from **Build → Integrations → Connectors** and connect an account
 | Update Account Configurations | `updateAccountConfigurations` | PATCH the paper account configuration (shorting, fractional trading, suspend trade, trade confirm email, margin multiplier, PDT check). |
 | Update Watchlist By ID | `updateWatchlistById` | Replace a watchlist's name and full symbol list by watchlist id. |
 | Update Watchlist By Name | `updateWatchlistByName` | Replace a watchlist's name and symbol list, addressing it by its current name. |
+
+</details>

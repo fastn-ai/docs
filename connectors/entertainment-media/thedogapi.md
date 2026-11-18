@@ -5,6 +5,8 @@ hidden: true
 
 # The Dog API
 
+<img src="../../.gitbook/assets/connectors/thedogapi.png" alt="The Dog API logo" width="64">
+
 Dog images, breed data, breed facts, health tips, legislation/breed-ban lookups, favourites, votes, and AI-powered pet analysis (portraits, genealogy, body condition, age, weight estimation) from TheDogAPI by That API Company - the sister product to The Cat API on the same platform.
 
 | | |
@@ -12,8 +14,6 @@ Dog images, breed data, breed facts, health tips, legislation/breed-ban lookups,
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [thedogapi.com](https://thedogapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 57 |
-| **Events** | 0 |
 | **Slug** | `thedogapi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add The Dog API from **Build → Integrations → Connectors** and connect an ac
 | Delete Pet | `deletePet` | Deletes a pet profile and its associated photos and analyses. |
 | Generate Body Condition Score | `generateBodyConditionScore` | Uses AI to analyse a pet's uploaded photos and estimate its WSAVA Body Condition Score (1-9). |
 | Generate Estimated Age | `generateEstimatedAge` | Uses AI to analyse a pet's uploaded photos and estimate its age. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Estimated Weight | `generateEstimatedWeight` | Uses AI to analyse a pet's uploaded photos and estimate its weight and size classification. |
 | Generate Genealogy | `generateGenealogy` | Uses AI to analyse all of a pet's uploaded photos and infer its likely breed mix, plus fun creative descriptions. |
 | Generate Muscle Condition Score | `generateMuscleConditionScore` | Uses AI to analyse a pet's uploaded photos and flag muscle-wasting risk. |
@@ -81,3 +88,5 @@ Add The Dog API from **Build → Integrations → Connectors** and connect an ac
 | Upload Image Sync | `uploadImageSync` | Uploads a base64-encoded image and waits for content review and breed analysis to complete before returning. Counts against the account's monthly image upload quota. |
 | Upload Pet Images | `uploadPetImages` | Uploads additional photos for an existing pet as a multipart file set, optionally tagged with the pet's age and pose at the time. |
 | Upload Pet Video | `uploadPetVideo` | Uploads an additional video for an existing pet as a multipart file, optionally tagged with the pet's age at the time. |
+
+</details>

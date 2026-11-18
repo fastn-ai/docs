@@ -5,6 +5,8 @@ hidden: true
 
 # Fathom MCP
 
+<img src="../../.gitbook/assets/connectors/fathom-mcp.png" alt="Fathom MCP logo" width="64">
+
 Fathom AI meeting notetaker. Poll meetings, teams, and team members, fetch recording summaries and transcripts, and register webhooks for new meeting content. Wraps the Fathom External API (https://api.fathom.ai/external/v1).
 
 | | |
@@ -12,8 +14,6 @@ Fathom AI meeting notetaker. Poll meetings, teams, and team members, fetch recor
 | **Category** | [Communication](README.md) |
 | **Website** | [fathom.video](https://fathom.video) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 0 |
-| **Events** | 0 |
 | **Slug** | `fathomMcp` |
 
 ## Use it

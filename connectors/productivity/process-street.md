@@ -5,6 +5,8 @@ hidden: true
 
 # Process Street
 
+<img src="../../.gitbook/assets/connectors/process-street.png" alt="Process Street logo" width="64">
+
 Process Street is a workflow and process management platform for recurring checklists, approvals and standard operating procedures. This connector covers the Process Street Public API v1.1: workflows and their revisions, tasks, widgets, form fields and conditional logic; workflow runs with assignees, approvals and form field values; pages and page revisions; data sets and their records; folders, permissions, scheduled workflows, one-off tasks, My Work, attachments, comments, users and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Process Street is a workflow and process management platform for recurring check
 | **Category** | [Productivity](README.md) |
 | **Website** | [process.st](https://process.st) |
 | **Authentication** | API key |
-| **Actions** | 150 |
-| **Events** | 6 |
 | **Slug** | `processStreet` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Process Street from **Build → Integrations → Connectors** and connect an
 | Create Data Set | `createDataSet` | Creates a data set with an optional list of column definitions. Each field needs a name and a fieldType such as Text, Number, Date, Url or Email. |
 | Create Data Set Incoming Webhook | `createDataSetIncomingWebhook` | Creates an inbound webhook URL that writes rows into a data set. Config.columns is an object whose KEYS are the 22-character data set column IDs and whose values are the incoming payload keys. |
 | Create Data Set Record | `createDataSetRecord` | Adds a row to a data set. Cells is a list of { fieldId, value } pairs using the data set's column IDs. |
+
+<details>
+
+<summary>See 140 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create File Upload | `createFileUpload` | Reserves a file slot and returns a File Upload ID plus a pre-signed S3 uploadUrl. PUT the file bytes to that uploadUrl, then pass the File Upload ID to Upload Attachment, Upload Form Field Value or a widget upload action. |
 | Create Folder | `createFolder` | Creates a folder in your organization. Omit Parent Folder ID to create it directly under the organization's Home folder. |
 | Create One-Off Task | `createOneOffTask` | Creates a standalone task that is not part of a workflow run. Subtasks and Assignee Emails must both be present, even as empty lists. |
@@ -174,6 +181,8 @@ Add Process Street from **Build → Integrations → Connectors** and connect an
 | Upload File To Page Widget | `uploadPageRevisionWidgetFile` | Attaches an already-uploaded file to an Image, File or Video page widget. Call Create File Upload first, PUT the bytes to the returned uploadUrl, then pass the File Upload ID here. |
 | Upload File To Task Widget | `uploadWorkflowRevisionTaskWidgetFile` | Attaches an already-uploaded file to an Image, File or Video task widget. Call Create File Upload first, PUT the bytes to the returned uploadUrl, then pass the File Upload ID here. |
 | Upload Form Field Value | `uploadFormFieldValue` | Sets a File or Image form field's value from an already-uploaded file. Call Create File Upload first, PUT the bytes to the returned uploadUrl, then pass the File Upload ID here. Returns 204 with no body on success. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Books
 
+<img src="../../.gitbook/assets/connectors/zoho-books.jpg" alt="Zoho Books logo" width="64">
+
 Zoho Books cloud accounting and invoicing platform. Manage organizations, contacts (customers/vendors), contact persons, items, estimates, sales orders, invoices, recurring invoices, delivery challans, retainer invoices, credit notes, customer payments, expenses, recurring expenses, purchase orders, bills, recurring bills, vendor credits, vendor payments, bank accounts, bank transactions, chart of accounts, journals, projects, users, price lists, currencies, taxes, and opening balances via the Zoho Books REST API v3 (books.zoho.com/api/v3). OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Books cloud accounting and invoicing platform. Manage organizations, contac
 | **Category** | [Other](README.md) |
 | **Website** | [books.zoho.com](https://books.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 122 |
-| **Events** | 0 |
 | **Slug** | `zohoBooks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Books from **Build → Integrations → Connectors** and connect an acc
 | Create Credit Note | `createCreditNote` | Create a credit note for a customer in Zoho Books. |
 | Create Currency | `createCurrency` | Add a new currency to a Zoho Books organization. |
 | Create Customer Payment | `createCustomerPayment` | Record a payment received from a customer against one or more invoices in Zoho Books. |
+
+<details>
+
+<summary>See 112 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Estimate | `createEstimate` | Create an estimate/quote for a customer in Zoho Books. |
 | Create Expense | `createExpense` | Record an expense in Zoho Books. |
 | Create Invoice | `createInvoice` | Create an invoice for a customer in Zoho Books. |
@@ -146,3 +153,5 @@ Add Zoho Books from **Build → Integrations → Connectors** and connect an acc
 | Void Credit Note | `voidCreditNote` | Void a credit note in Zoho Books. |
 | Void Invoice | `voidInvoice` | Void an invoice in Zoho Books. |
 | Void Vendor Credit | `voidVendorCredit` | Void a vendor credit in Zoho Books. |
+
+</details>

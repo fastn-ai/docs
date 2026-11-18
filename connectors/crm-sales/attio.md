@@ -5,6 +5,8 @@ hidden: true
 
 # Attio
 
+<img src="../../.gitbook/assets/connectors/attio.png" alt="Attio logo" width="64">
+
 Attio CRM API v2 (base https://api.attio.com/v2). Manage objects and attributes, records (query/create/assert/get/update/delete + attribute values), lists and list entries, workspace members, notes, tasks, comments and threads, and webhooks. Auth: Bearer API access token. Responses wrap payloads in a 'data' envelope.
 
 | | |
@@ -12,8 +14,6 @@ Attio CRM API v2 (base https://api.attio.com/v2). Manage objects and attributes,
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [attio.com](https://attio.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 91 |
-| **Events** | 34 |
 | **Slug** | `attio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Attio from **Build → Integrations → Connectors** and connect an account,
 | Create Comment | `createComment` | Creates a comment. Supply either a thread ID to reply to an existing thread, or a record or list entry to open a new thread on it. |
 | Create File Entry | `createFileEntry` | Create a native folder, or a connected file/folder entry from Dropbox, Box, Google Drive or OneDrive, on a record (POST /v2/files). Body is NOT wrapped in data. Beta. Requires file:read-write. |
 | Create List | `createList` | Creates a new list. A list must be given either full workspace access or at least one workspace member with full access. Lists cannot be deleted through the API. |
+
+<details>
+
+<summary>See 81 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create List Entry | `createListEntry` | Adds a record to a list as a new list entry. Fails on conflicts with unique entry attributes; multiple entries for the same parent record are allowed. |
 | Create Meeting | `createMeeting` | Create a meeting with participants and linked records (POST /v2/meetings). Beta. Requires meeting:read-write. |
 | Create Note | `createNote` | Creates a note on a record. The note body is supplied as plaintext or markdown and is attached to the parent record. |
@@ -116,6 +123,8 @@ Add Attio from **Build → Integrations → Connectors** and connect an account,
 | Write List Entry Attribute Values | `writeListEntryAttributeValues` | Replace the entire value history of one attribute on a list entry (PUT /v2/lists/{list}/entries/{entry_id}/attributes/{attribute}/values). Every existing value is destroyed. Meant for migrating historic data. |
 | Write Record Attribute Values | `writeRecordAttributeValues` | Replace the entire value history of one attribute on a record (PUT /v2/objects/{object}/records/{record_id}/attributes/{attribute}/values). Every existing value is destroyed and the supplied values with active_from/active_until are written. Meant for migrating historic data. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -132,6 +141,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Call Recording Created | `call-recording.created` | A call recording was added to a meeting. |
 | Comment Created | `comment.created` | A comment was created. |
 | Comment Deleted | `comment.deleted` | A comment was deleted. |
+
+<details>
+
+<summary>See 24 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Comment Resolved | `comment.resolved` | A comment thread was resolved. |
 | Comment Unresolved | `comment.unresolved` | A comment thread was reopened. |
 | List Attribute Created | `list-attribute.created` | An attribute was added to a list. |
@@ -156,3 +172,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task Deleted | `task.deleted` | A task was deleted. |
 | Task Updated | `task.updated` | A task changed. |
 | Workspace Member Created | `workspace-member.created` | A member joined the workspace. |
+
+</details>

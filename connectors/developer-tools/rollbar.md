@@ -5,6 +5,8 @@ hidden: true
 
 # Rollbar
 
+<img src="../../.gitbook/assets/connectors/rollbar.png" alt="Rollbar logo" width="64">
+
 Rollbar is a real-time error tracking and crash reporting platform for web, server and mobile applications. This connector covers the complete Rollbar API v1: reporting occurrences and deploys, browsing and updating items and their occurrences, session replays, item and occurrence metrics and reports, environments, code versions, RQL query jobs, source map and symbol uploads, Slack, PagerDuty, email and webhook notification channels and rules, service links, person deletion jobs, and the account-level administration of projects, project access tokens, teams, users and team invitations.
 
 | | |
@@ -12,8 +14,6 @@ Rollbar is a real-time error tracking and crash reporting platform for web, serv
 | **Category** | [Developer tools](README.md) |
 | **Website** | [rollbar.com](https://rollbar.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 100 |
-| **Events** | 8 |
 | **Slug** | `rollbar` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Rollbar from **Build → Integrations → Connectors** and connect an accoun
 | Configure PagerDuty Notifications | `updatePagerDutyIntegration` | Configure the project's PagerDuty notification channel - whether it is enabled and which PagerDuty service key to use. Uses the project access token from the connection, so it operates on the project that token belongs to. |
 | Configure Slack Notifications | `updateSlackIntegration` | Configure the project's Slack notification channel - whether it is enabled, which Slack service account and default channel to use, and whether to show actionable message buttons. Uses the project access token from the connection, so it operates on the project that token belongs to. |
 | Configure Webhook Notifications | `updateWebhookIntegration` | Configure the project's outbound webhook notification channel - whether it is enabled and the URL Rollbar posts notifications to. Uses the project access token from the connection, so it operates on the project that token belongs to. |
+
+<details>
+
+<summary>See 90 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Email Notification Rules | `createEmailRules` | Add one or more email notification rules to the project, each defining a trigger, filters and the email configuration. Uses the project access token from the connection, so it operates on the project that token belongs to. |
 | Create PagerDuty Notification Rules | `createPagerDutyRules` | Add one or more PagerDuty notification rules to the project, each defining a trigger, filters and whether it triggers or resolves an incident. Uses the project access token from the connection, so it operates on the project that token belongs to. Rollbar's published OpenAPI document lists this operation at /api/1/notifications/pagerduty, which returns a router-level 404; the live route is /api/1/notifications/pagerduty/rules. |
 | Create Project | `createProject` | Create a new project in the Rollbar account, optionally copying the settings of an existing project. Uses the account access token from the connection. |
@@ -124,6 +131,8 @@ Add Rollbar from **Build → Integrations → Connectors** and connect an accoun
 | Upload Flutter Symbols | `uploadFlutterSymbols` | Upload a Flutter symbols file so Rollbar can symbolicate Flutter stack traces for a given code version. Uses the project access token from the connection, so it operates on the project that token belongs to. Send flutter_symbols as a file reference produced by a workflow (for example from ctx.files); Rollbar requires a multipart/form-data upload, which the engine builds only when the input carries a file reference. |
 | Upload ProGuard Mapping | `uploadProguard` | Upload an Android ProGuard mapping file so Rollbar can de-obfuscate Android stack traces for a given code version. Uses the project access token from the connection, so it operates on the project that token belongs to. Send mapping as a file reference produced by a workflow (for example from ctx.files); Rollbar requires a multipart/form-data upload, which the engine builds only when the input carries a file reference. |
 | Upload Source Map | `uploadSourceMap` | Upload a JavaScript source map so Rollbar can de-obfuscate minified stack frames for a given code version. Uses the project access token from the connection, so it operates on the project that token belongs to. Send source_map as a file reference produced by a workflow (for example from ctx.files); Rollbar requires a multipart/form-data upload, which the engine builds only when the input carries a file reference. |
+
+</details>
 
 ## Events
 

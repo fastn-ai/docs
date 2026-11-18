@@ -5,6 +5,8 @@ hidden: true
 
 # icanhazdadjoke
 
+<img src="../../.gitbook/assets/connectors/icanhazdadjoke.png" alt="icanhazdadjoke logo" width="64">
+
 icanhazdadjoke is the largest free collection of dad jokes online. Get a random joke, fetch a joke by id (also as an image), search jokes with paging, get a Slack-formatted joke, or query by GraphQL. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ icanhazdadjoke is the largest free collection of dad jokes online. Get a random 
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [icanhazdadjoke.com](https://icanhazdadjoke.com) |
 | **Authentication** | No authentication |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `icanhazdadjoke` |
 
 ## Use it

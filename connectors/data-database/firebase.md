@@ -5,6 +5,8 @@ hidden: true
 
 # Firebase
 
+<img src="../../.gitbook/assets/connectors/firebase.png" alt="Firebase logo" width="64">
+
 Google Firebase app development platform. Covers Cloud Firestore (document CRUD, collections, structured queries, batch writes, transactions), Firebase Realtime Database (JSON REST read/write/patch/delete), Firebase Authentication Admin (list/get/create/update/delete users via Identity Toolkit), Firebase Cloud Messaging v1 (send push notifications), Remote Config (get/publish template), and Cloud Storage for Firebase (objects and buckets via the GCS JSON API). Auth is a Google service-account JWT-bearer flow: a per-project OAuth Bearer access token is minted by RS256-signing a JWT with the service account key and exchanging it at Google's token endpoint, then sent as Authorization: Bearer on every call alongside the project ID. Custom auth tokens are a local Admin SDK signing operation, not a REST endpoint, so are out of scope.
 
 | | |
@@ -12,8 +14,6 @@ Google Firebase app development platform. Covers Cloud Firestore (document CRUD,
 | **Category** | [Data and databases](README.md) |
 | **Website** | [firebase.google.com](https://firebase.google.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `firebase` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Firebase from **Build → Integrations → Connectors** and connect an accou
 | Delete Firebase Auth User | `deleteFirebaseAuthUser` | Permanently deletes a Firebase Authentication user account by its user ID. |
 | Delete Firestore Document | `deleteFirestoreDocument` | Permanently deletes a single Firestore document by its full path. |
 | Delete Realtime Database Data | `deleteRealtimeDatabaseData` | Deletes all data at the given path in the Realtime Database. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Storage Object | `deleteStorageObject` | Permanently deletes a single object from a Cloud Storage bucket. |
 | Download Storage Object | `downloadStorageObject` | Downloads the raw content of an object stored in a Cloud Storage bucket. |
 | Get Firebase Auth User | `getFirebaseAuthUser` | Looks up one or more Firebase Authentication user accounts by user ID, email address, or phone number. |
@@ -59,3 +66,5 @@ Add Firebase from **Build → Integrations → Connectors** and connect an accou
 | Update Realtime Database Data | `updateRealtimeDatabaseData` | Updates specific children under a path in the Realtime Database without overwriting the entire subtree - only the keys present in the update object are changed. |
 | Upload Storage Object | `uploadStorageObject` | Uploads text content as a new object (or overwrites an existing one) in a Cloud Storage bucket using a simple media upload. Reliable for text content; binary content may be corrupted by UTF-8 re-encoding. |
 | Write Realtime Database Data | `writeRealtimeDatabaseData` | Overwrites the JSON data at a path in the Realtime Database with the given value, replacing anything already there. |
+
+</details>

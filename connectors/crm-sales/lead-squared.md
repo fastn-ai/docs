@@ -5,6 +5,8 @@ hidden: true
 
 # LeadSquared
 
+<img src="../../.gitbook/assets/connectors/lead-squared.png" alt="LeadSquared logo" width="64">
+
 LeadSquared sales and marketing CRM. Wraps the LeadSquared v2 REST API (apidocs.leadsquared.com): leads and their custom fields, notes, activities and activity types, tasks and appointments, opportunities, static and dynamic lists, users, sales groups, email campaigns and one-off lead emails, and webhook registration. The API host is region-specific (Singapore, US, India Mumbai/Hyderabad, Middle East, Ireland, Canada), so the host is supplied per connection alongside the access key and secret key; credentials are sent on every request as the x-LSQ-AccessKey and x-LSQ-SecretKey headers.
 
 | | |
@@ -12,8 +14,6 @@ LeadSquared sales and marketing CRM. Wraps the LeadSquared v2 REST API (apidocs.
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leadsquared.com](https://leadsquared.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 58 |
-| **Events** | 18 |
 | **Slug** | `leadSquared` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add LeadSquared from **Build → Integrations → Connectors** and connect an ac
 | Create or Update Lead | `createOrUpdateLead` | Upsert a lead: create it if no match is found, otherwise update the existing one. Matching is controlled by a SearchBy attribute in the body (for example {"Attribute":"SearchBy","Value":"EmailAddress"}). Returns the lead's ProspectID and the number of rows affected. |
 | Create Sales Group | `createSalesGroup` | Create a sales group (user group). Name is mandatory. Returns the new group id. |
 | Create Static List | `createStaticList` | Create a new, empty static lead list. Returns the new list id, which Add Leads to Static List and Send Email Campaign to List then take. |
+
+<details>
+
+<summary>See 48 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Task | `createTask` | Create a to-do or an appointment. The task type name decides which: appointment task types have Category 0 and to-do types have Category 1 - list them with Get Task Types. RelatedEntity is 0 for a standalone task, 1 to attach it to a lead, and 5 to attach it to an opportunity. Returns the new task id. |
 | Create User | `createUser` | Create a LeadSquared user. FirstName, EmailAddress and Role are mandatory. Role must be one of Administrator, Marketing_User, Sales_Manager or Sales_User. Returns the new user's id. |
 | Create Webhook | `createWebhook` | Register a webhook that LeadSquared will POST to when the chosen event fires. WebhookEvent is a numeric event code as a string: 1 landing page submission, 2 lead activity create, 3 lead create, 4 lead owner change, 5 lead stage change, 6 lead update, 7 task create, 8 task reminder, 9 lead score change, 15 lead activity update, 16 task complete, 17 task update, 26 lead field update, 31 opportunity create, 32 opportunity update, 33 opportunity field update, 34 opportunity stage update, 35 opportunity delete. Returns the new webhook id. |
@@ -83,6 +90,8 @@ Add LeadSquared from **Build → Integrations → Connectors** and connect an ac
 | Update Task | `updateTask` | Update an existing task by its UserTaskId - rename it, change its description, due date, reminder, owner, or which lead or opportunity it hangs off. Returns the number of rows affected and the task's auto id. |
 | Update Webhook | `updateWebhook` | Update a registered webhook by its WebhookId - change its destination URL, event, content type or custom headers. WebhookId is mandatory. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -99,6 +108,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Lead Stage Changed | `5` | Fires when a lead moves between stages. Event code 5. Payload schema is LeadSquared's published sample for this event. |
 | Lead Updated | `6` | Fires when any lead field changes. Event code 6. The body is a Before/After pair of partial lead objects containing only the changed fields. Payload schema is LeadSquared's published sample. |
 | Opportunity Created | `31` | Fires when an opportunity is created. Event code 31. Payload schema is LeadSquared's published sample; opportunity custom fields appear as additional mx_ keys and ActivityEvent carries the opportunity type code. |
+
+<details>
+
+<summary>See 8 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Opportunity Deleted | `35` | Fires when an opportunity is deleted. Event code 35. Schema derived from the published Opportunity Created sample. |
 | Opportunity Field Updated | `33` | Fires when a specific watched opportunity field changes. Event code 33. Schema derived from the published Opportunity Created sample. |
 | Opportunity Stage Updated | `34` | Fires when an opportunity's Status or stage changes. Event code 34. Schema derived from the published Opportunity Created sample. |
@@ -107,3 +123,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task Created | `7` | Fires when a task or appointment is created. Event code 7. Payload schema is LeadSquared's published sample for this event. |
 | Task Reminder | `8` | Fires at a task's configured reminder time. Event code 8. Schema derived from the published Task Created sample. |
 | Task Updated | `17` | Fires when a task is edited. Event code 17. Schema derived from the published Task Created sample. |
+
+</details>

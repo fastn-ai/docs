@@ -5,6 +5,8 @@ hidden: true
 
 # Azure File Storage
 
+<img src="../../.gitbook/assets/connectors/azure-file-storage.png" alt="Azure File Storage logo" width="64">
+
 Azure File Storage — cloud file shares over SMB/NFS. List files and directories in a share, read file content, create files, and append content to existing files via the Azure Files REST API ({account}.file.core.windows.net).
 
 | | |
@@ -12,8 +14,6 @@ Azure File Storage — cloud file shares over SMB/NFS. List files and directorie
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [file.core.windows.net](https://file.core.windows.net) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 43 |
-| **Events** | 0 |
 | **Slug** | `azureFileStorage` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure File Storage from **Build → Integrations → Connectors** and connec
 | Create Symbolic Link | `createSymbolicLink` | Creates a symbolic link pointing at a target path. Available only on NFS file shares, which require a premium file storage account; on an SMB share Azure rejects this operation. |
 | Delete Directory | `deleteDirectory` | Deletes an empty directory from a file share. The directory must contain no files or subdirectories, otherwise Azure returns 409 DirectoryNotEmpty. directoryPath must be a single path segment because the request builder percent-encodes forward slashes. |
 | Delete File | `deleteFile` | Immediately deletes a file from a file share. The delete is not reversible unless share soft-delete retention is enabled on the storage account. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Share | `deleteShare` | Marks a file share or share snapshot for deletion; the share and any files it contains are removed during garbage collection. Supply shareSnapshot to delete a single snapshot instead of the share itself. |
 | Force Close Directory Handles | `forceCloseDirectoryHandles` | Forcibly closes open SMB handles on a directory, and optionally on everything beneath it. Pass an asterisk as handleId to close every handle. Engine limitation: the number of handles closed is returned only in the x-ms-number-of-handles-closed response header, which this engine does not surface. |
 | Force Close File Handles | `forceCloseFileHandles` | Forcibly closes open SMB handles on a file. Pass an asterisk as handleId to close every handle on the file. Engine limitation: the number of handles closed is returned only in the x-ms-number-of-handles-closed response header, which this engine does not surface. |
@@ -67,3 +74,5 @@ Add Azure File Storage from **Build → Integrations → Connectors** and connec
 | Set Share ACL | `setShareAcl` | Sets a stored access policy on a file share for use with shared access signatures. Engine limitation: the templating layer has no loop construct, so exactly one stored access policy can be set per call; the Azure API accepts up to five and this call replaces all existing policies with the single one supplied. |
 | Set Share Metadata | `setShareMetadata` | Sets one user-defined metadata name-value pair on a file share. Engine limitation: metadata is carried in dynamically-named x-ms-meta-{name} headers which the templating layer cannot generate, so this action exposes a single fixed header x-ms-meta-value whose value you supply; calling it replaces all existing metadata on the share. |
 | Set Share Properties | `setShareProperties` | Sets the properties of a file share, including its quota in gibibytes and its access tier. |
+
+</details>

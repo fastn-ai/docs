@@ -5,6 +5,8 @@ hidden: true
 
 # PubChem
 
+<img src="../../.gitbook/assets/connectors/pub-chem.png" alt="PubChem logo" width="64">
+
 PubChem (NCBI) is the world's largest free chemistry database. Look up compounds by name, SMILES, InChIKey or CID; get properties, synonyms, descriptions, cross-references and 3D conformers; search by similarity, substructure or formula; read substances, bioassays, genes, proteins, taxonomy, pathways and cell lines; and get data sheet sections and annotations. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ PubChem (NCBI) is the world's largest free chemistry database. Look up compounds
 | **Category** | [Data and databases](README.md) |
 | **Website** | [pubchem.ncbi.nlm.nih.gov](https://pubchem.ncbi.nlm.nih.gov) |
 | **Authentication** | No authentication |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `pubChem` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PubChem from **Build → Integrations → Connectors** and connect an accoun
 | Get Cell Line Summary | `getCellLineSummary` | Get a summary of a cell line by Cellosaurus accession (GET cell/cellacc/{accession}/summary/JSON). Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
 | Get Compound Assay IDs | `getCompoundAids` | Get the bioassay ids (AIDs) that tested compounds (GET compound/{namespace}/{identifier}/aids/JSON). Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
 | Get Compound Assay Summary | `getCompoundAssaySummary` | Get a table of bioassay results for compounds: AID, activity outcome, target, activity value (GET compound/{namespace}/{identifier}/assaysummary/JSON). Very well-studied compounds can return a few MB. Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Compound CIDs | `getCompoundCids` | Convert compound names, SMILES or InChIKeys to PubChem CIDs (GET compound/{namespace}/{identifier}/cids/JSON). Unknown names return 404. Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
 | Get Compound Conformer IDs | `getCompoundConformerIds` | Get the 3D conformer ids of compounds (GET compound/{namespace}/{identifier}/conformers/JSON). Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
 | Get Compound Cross-References | `getCompoundXrefs` | Get cross-references of compounds by type, e.g. RegistryID, RN (CAS), PubMedID, PatentID, GeneID, MMDBID, TaxonomyID (GET compound/{namespace}/{identifier}/xrefs/{types}/JSON). PatentID lists can be large. Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
@@ -61,3 +68,5 @@ Add PubChem from **Build → Integrations → Connectors** and connect an accoun
 | Search Compounds by Superstructure | `searchSuperstructure` | Find compounds contained in a structure, synchronously (GET compound/fastsuperstructure/{smiles\|cid}/{id}/cids/JSON). Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
 | Search Identical Compounds | `searchIdenticalCompounds` | Find compounds identical to a structure (same connectivity by default), synchronously (GET compound/fastidentity/{smiles\|cid}/{id}/cids/JSON). Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
 | Search Similar Compounds | `searchSimilarCompounds` | Find compounds with 2D Tanimoto similarity to a structure, synchronously (GET compound/fastsimilarity_2d/{smiles\|cid}/{id}/cids/JSON). Docs: https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest |
+
+</details>

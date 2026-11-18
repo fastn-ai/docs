@@ -5,6 +5,8 @@ hidden: true
 
 # Moxie
 
+<img src="../../.gitbook/assets/connectors/moxie.png" alt="Moxie logo" width="64">
+
 Moxie is a business management platform for freelancers and agencies. This connector wraps the Moxie Public API to create and search clients, contacts, projects, tasks, opportunities, invoices, payments, expenses, time entries, tickets, form submissions, calendar events and attachments.
 
 | | |
@@ -12,8 +14,6 @@ Moxie is a business management platform for freelancers and agencies. This conne
 | **Category** | [Productivity](README.md) |
 | **Website** | [withmoxie.com](https://withmoxie.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 29 |
-| **Events** | 33 |
 | **Slug** | `moxie` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Moxie from **Build → Integrations → Connectors** and connect an account,
 | Create Invoice | `createInvoice` | Creates an invoice with line items for an existing Moxie client. Without sendTo the invoice is staged as a draft; with sendTo.send true it is emailed to the listed contacts. The Moxie Public API has no endpoint to delete invoices. |
 | Create Opportunity | `createOpportunity` | Creates an opportunity in your Moxie sales pipeline with lead details, to-dos and custom values. The Moxie Public API has no endpoint to delete opportunities. |
 | Create Or Update Calendar Event | `createOrUpdateCalendarEvent` | Creates a calendar event on your Moxie homebase calendar, or replaces the existing event with the same event ID (fields you omit on an update are cleared). Useful for syncing calendars that have no native Moxie integration. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project | `createProject` | Creates a project for an existing Moxie client, either from a project template or with an explicit fee schedule. The Moxie Public API has no endpoint to delete projects. |
 | Create Task | `createTask` | Creates a task on your Moxie project management board under an existing client and project. The Moxie Public API has no endpoint to delete tasks. |
 | Create Ticket | `createTicket` | Creates a support ticket in your Moxie workspace with an initial comment and optional structured answers. Although Moxie documents that unknown requester emails are rejected, the API creates the ticket and adds the email to its CC list, so pass a known contact email. The Moxie Public API has no endpoint to delete tickets. |
@@ -54,6 +61,8 @@ Add Moxie from **Build → Integrations → Connectors** and connect an account,
 | Search Projects | `searchProjects` | Searches Moxie projects, optionally filtered to a single client by client name. Omit the query to return all projects. |
 | Upload Attachment | `uploadAttachment` | Uploads a text file as a multipart attachment to a Moxie client, project, task, opportunity, expense or ticket. Returns a signed download URL that expires after 15 minutes. Only text content is supported through this action; use Attach File From URL for binary files. Moxie does not verify that the object ID exists, so an incorrect ID stores the file without attaching it to anything. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -70,6 +79,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Invoice Sent | `InvoiceSent` | Sent with header X-Event-Type: InvoiceSent. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for InvoiceSent to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
 | Meeting Cancelled | `MeetingCancelled` | Sent with header X-Event-Type: MeetingCancelled. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for MeetingCancelled to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
 | Meeting Scheduled | `MeetingScheduled` | Sent with header X-Event-Type: MeetingScheduled. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for MeetingScheduled to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
+
+<details>
+
+<summary>See 23 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Meeting Updated | `MeetingUpdated` | Sent with header X-Event-Type: MeetingUpdated. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for MeetingUpdated to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
 | Opportunity Created | `OpportunityCreate` | Sent with header X-Event-Type: OpportunityCreate. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for OpportunityCreate to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
 | Opportunity Deleted | `OpportunityDelete` | Sent with header X-Event-Type: OpportunityDelete. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for OpportunityDelete to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
@@ -93,3 +109,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Time Entry Created | `TimerCreate` | Sent with header X-Event-Type: TimerCreate. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for TimerCreate to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
 | Time Entry Deleted | `TimerDelete` | Sent with header X-Event-Type: TimerDelete. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for TimerDelete to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
 | Time Entry Updated | `TimerUpdate` | Sent with header X-Event-Type: TimerUpdate. No registration API: in Moxie go to Workspace settings &gt; Connected Apps &gt; Integrations &gt; Custom Integration, set endpoint auth, then add an event mapping for TimerUpdate to its own fastn webhook URL (the type is only in the header). Payload from Moxie's webhook reference example. |
+
+</details>

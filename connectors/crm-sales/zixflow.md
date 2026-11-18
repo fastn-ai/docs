@@ -5,6 +5,8 @@ hidden: true
 
 # Zixflow
 
+<img src="../../.gitbook/assets/connectors/zixflow.png" alt="Zixflow logo" width="64">
+
 Zixflow is a CRM and multichannel campaign platform. This connector covers the Zixflow App REST API (api.zixflow.com/api/v1): collections, lists, custom attributes with their select and status options (create, update, delete), collection records (people, companies, deals and custom collections) with filtering and sorting, list entries, activities and tasks, and workspace members; plus campaign messaging over WhatsApp (accounts, templates, template variables, template and session messages), RCS (template variables, template, text and media messages), SMS, email with attachments, the OTPflow multichannel fallback API, and WhatsApp, SMS and email delivery reports. Incoming WhatsApp and RCS message events are delivered to a webhook URL registered in Zixflow under Settings &gt; Developer &gt; Webhook. Authentication uses a Zixflow API key sent as a Bearer token. The separate Zixflow AI product (api-ai.zixflow.com, x-api-key and workspace ID authentication) is not part of this connector.
 
 | | |
@@ -12,8 +14,6 @@ Zixflow is a CRM and multichannel campaign platform. This connector covers the Z
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [zixflow.com](https://zixflow.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 59 |
-| **Events** | 2 |
 | **Slug** | `zixflow` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zixflow from **Build → Integrations → Connectors** and connect an accoun
 | Delete Attribute | `deleteAttribute` | Deletes a custom attribute from a Zixflow collection or list. |
 | Delete Attribute Option | `deleteAttributeOption` | Deletes an option from a select or multiselect attribute on a Zixflow collection or list. |
 | Delete Attribute Status | `deleteAttributeStatus` | Deletes a status option from a status attribute on a Zixflow collection or list. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Collection Record | `deleteCollectionRecord` | Deletes a record from a Zixflow collection. |
 | Delete List Entry | `deleteListEntry` | Removes an entry from a Zixflow list. The underlying collection record is not deleted. |
 | Get Activity | `getActivity` | Retrieves a single Zixflow activity or task by ID. |
@@ -83,6 +90,8 @@ Add Zixflow from **Build → Integrations → Connectors** and connect an accoun
 | Update Collection Record | `updateCollectionRecord` | Updates a record in a Zixflow collection. Pass only the attributes to change as top-level fields keyed by attribute API key name; common system attributes are listed below and custom attributes (keys starting with 'api') can be added as extra fields. |
 | Update List Entry | `updateListEntry` | Updates the list attribute values of an entry in a Zixflow list. Pass each list attribute to change as a top-level field keyed by its API key name (for example apiStatus with a status option ID); use List Attributes with target 'list' to discover the keys. Note: although the Zixflow reference shows a 'data' wrapper, the API only applies top-level keys and silently ignores a 'data' object. |
 | Upload Email Attachment | `uploadEmailAttachment` | Uploads a file (up to 25 MB) to Zixflow as multipart form data so it can be attached to emails. Returns the file ID to pass in the Attachment IDs field of Send Email. |
+
+</details>
 
 ## Events
 

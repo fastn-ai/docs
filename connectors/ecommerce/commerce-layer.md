@@ -5,6 +5,8 @@ hidden: true
 
 # Commerce Layer
 
+<img src="../../.gitbook/assets/connectors/commerce-layer.png" alt="Commerce Layer logo" width="64">
+
 Commerce Layer is a headless, API-first commerce platform. This connector covers the Commerce Layer Core API (JSON:API) at https://{organization}.commercelayer.io/api — markets, merchants, stores, SKUs and SKU lists, prices and price lists, inventory (stock locations, stock items, stock transfers, reserved stocks), orders, line items and line item options, customers, customer groups, customer addresses and payment sources, addresses, shipments, parcels and parcel line items, shipping methods, categories and zones, deliveries, returns and return line items, promotions and coupons, gift cards, tags, attachments, events, webhooks, imports, exports and cleanups. Authenticates with OAuth 2.0 client_credentials against https://auth.commercelayer.io/oauth/token using an Integration application's client id and secret.
 
 | | |
@@ -12,8 +14,6 @@ Commerce Layer is a headless, API-first commerce platform. This connector covers
 | **Category** | [E-commerce](README.md) |
 | **Website** | [commercelayer.io](https://commercelayer.io) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 121 |
-| **Events** | 43 |
 | **Slug** | `commerceLayer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Commerce Layer from **Build → Integrations → Connectors** and connect an
 | Create Merchant | `createMerchant` | Create a new Merchant. Requires a name and an existing address relationship. |
 | Create Order | `createOrder` | Create a new Order (a draft cart). A market relationship is normally required; the order is created in draft status and no money moves until it is placed. |
 | Create Package | `createPackage` | Create a new Package at a stock location. Requires a name, its three dimensions, a unit of length and a stock_location relationship. |
+
+<details>
+
+<summary>See 111 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Parcel | `createParcel` | Create a Parcel for a shipment. Requires a weight, a unit of weight and shipment plus package relationships. |
 | Create Price | `createPrice` | Create a new Price for a SKU in a price list. Do not send currency_code: it is inherited from the price list and Commerce Layer rejects it with 400 PARAM_NOT_ALLOWED. |
 | Create Price List | `createPriceList` | Create a new Price List. Requires a name and an ISO 4217 currency code. |
@@ -146,6 +153,8 @@ Add Commerce Layer from **Build → Integrations → Connectors** and connect an
 | Update Stock Location | `updateStockLocation` | Update an existing Stock Location. Only the attributes and relationships you send are changed. |
 | Update Webhook | `updateWebhook` | Update a Webhook subscription, including enabling or disabling it with _enable and _disable, and resetting its circuit breaker after repeated delivery failures. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -162,6 +171,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Import Completed | `imports.complete` | Fires when a bulk import job finishes. |
 | In-Stock Subscription Activated | `in_stock_subscriptions.activate` | Fires when a back-in-stock notification subscription is activated. |
 | Order Approved | `orders.approve` | Fires when a placed order is approved for fulfilment. |
+
+<details>
+
+<summary>See 33 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Order Cancelled | `orders.cancel` | Fires when a placed order is cancelled and its payment authorization is voided. |
 | Order Created | `orders.create` | Fires when a new order (cart) is created in any market. Payload is the JSON:API orders resource object. Schema modelled from the live GET /api/orders/{id} representation, which is the same body Commerce Layer posts; it was not captured from a real delivery. |
 | Order Editing Started | `orders.start_editing` | Fires when a placed order is reopened for editing. |
@@ -195,3 +211,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Stock Transfer Cancelled | `stock_transfers.cancel` | Fires when a stock transfer is cancelled. |
 | Stock Transfer Completed | `stock_transfers.complete` | Fires when a stock transfer between stock locations completes. |
 | Transaction Created | `transactions.create` | Fires for every payment transaction recorded against an order: authorization, capture, void or refund. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Insightly
 
+<img src="../../.gitbook/assets/connectors/insightly.png" alt="Insightly logo" width="64">
+
 Insightly CRM REST API v3.1 — contacts, organisations, leads, opportunities, projects, tasks, events, notes, emails, comments, pipelines, custom objects/fields, users, teams, files, milestones, tags and more.
 
 | | |
@@ -12,8 +14,6 @@ Insightly CRM REST API v3.1 — contacts, organisations, leads, opportunities, p
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [insightly.com](https://insightly.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 147 |
-| **Events** | 0 |
 | **Slug** | `insightly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Insightly from **Build → Integrations → Connectors** and connect an acco
 | Add Project Link | `addProjectLink` | Link a project to another record. Path id=PROJECT_ID; body LINK_OBJECT_NAME + LINK_OBJECT_ID. |
 | Add Task Comment | `addTaskComment` | Add a comment to a task. Path id=TASK_ID; body BODY (comment text). |
 | Add Team Member | `addTeamMember` | Add a member to a team. Path id = TEAM_ID; body MEMBER_USER_ID. |
+
+<details>
+
+<summary>See 137 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Change Opportunity State | `changeOpportunityState` | Change an opportunity state. Path id=OPPORTUNITY_ID; body FOR_OPPORTUNITY_STATE (Open/Won/Lost/Abandoned/Suspended) and optional STATE_REASON_ID. |
 | Create Contact | `createContact` | Create a contact. Common fields: FIRST_NAME, LAST_NAME, EMAIL_ADDRESS, PHONE, TITLE, ORGANISATION_ID, BACKGROUND. |
 | Create Contact Note | `createContactNote` | Add a note to a contact. Path id=CONTACT_ID; body TITLE (required) and BODY. |
@@ -171,3 +178,5 @@ Add Insightly from **Build → Integrations → Connectors** and connect an acco
 | Update Task Category | `updateTaskCategory` | Update a task category. Body must include CATEGORY_ID plus fields to change. |
 | Update Team | `updateTeam` | Update a team. Body must include TEAM_ID plus fields to change (e.g. TEAM_NAME). |
 | Update Webhook | `updateWebhook` | Update a webhook subscription. Body must include SUBSCRIPTION_ID plus fields to change. |
+
+</details>

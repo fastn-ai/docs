@@ -5,6 +5,8 @@ hidden: true
 
 # Buffer
 
+<img src="../../.gitbook/assets/connectors/buffer.png" alt="Buffer logo" width="64">
+
 Buffer is a social media management platform for planning, scheduling, and publishing content across social channels. This connector uses the Buffer GraphQL API (https://api.buffer.com) to read account and organization details, list and inspect connected channels and their posting schedules, create, schedule, draft, edit, reorder and delete posts, manage the Ideas library and idea groups, manage post templates, tags, hashtag snippets and multi-channel content items (with channel-less drafts), read the per-organization configuration and Instagram audio catalog, check daily posting limits, and read per-post and aggregated post analytics.
 
 | | |
@@ -12,8 +14,6 @@ Buffer is a social media management platform for planning, scheduling, and publi
 | **Category** | [Social media](README.md) |
 | **Website** | [buffer.com](https://buffer.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `buffer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Buffer from **Build → Integrations → Connectors** and connect an account
 | Delete Content Item | `deleteContentItem` | Delete a content item: the item itself and any posts created from it. Deletion is all-or-nothing. Every post must be deletable on its own, or nothing is deleted and every blocked post is reported at once. A post can only be deleted while it is a draft, awaiting approval, scheduled, or failed, so an item cannot be deleted while any of its posts is publishing or already published. An item still holding a channel-less draft has no posts, so nothing blocks it. An error can also be reported when a post could not be fully processed after the deletion already took effect; re-fetch before retrying. Deleting a content item also deletes the team notes on the item and on its posts. The notes are removed shortly after the item is deleted. This API is an early preview and can change without a deprecation period. **Status:** ⚠️ Experimental Status: Experimental. GraphQL errors come back with HTTP 200 in errors[]; mutation errors as data.&lt;op&gt;.message. |
 | Delete Post | `deletePost` | Deletes a Buffer post by ID. Deleting a post that has already been sent removes it from Buffer only and does not remove the published post from the social network. |
 | Delete Post Template | `deletePostTemplate` | Deletes a post template owned by the caller, or an internal template in the caller's organization when the caller is an organization admin or owner. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Tag | `deleteTag` | Delete a tag. The tag is removed from every post, idea and content item carrying it; those items are otherwise untouched. A locked tag can be deleted, and deleting an unlocked tag frees a slot for the oldest locked one. See `Tag.isLocked`. This API is an early preview and can change without a deprecation period. **Status:** ⚠️ Experimental Status: Experimental. GraphQL errors come back with HTTP 200 in errors[]; mutation errors as data.&lt;op&gt;.message. |
 | Edit Post | `editPost` | Edits an existing Buffer post — its text, media, schedule, tags or service-specific options. Omitted fields keep their current values, so this is a partial update. Changing the schedule re-validates the post's content; use Move Post In Queue instead when only the queue position needs to change. |
 | Get Account | `getAccount` | Retrieves the authenticated Buffer user's account, including profile details, scheduling preferences and the OAuth applications connected to the account. |
@@ -64,3 +71,5 @@ Add Buffer from **Build → Integrations → Connectors** and connect an account
 | Update Content Item Draft | `updateContentItemDraft` | Replace a channel-less draft's content in full, and optionally set the content item's target date in the same write. The draft needs text or at least one asset. Only valid while the content item is still a draft. This API is an early preview and can change without a deprecation period. **Status:** ⚠️ Experimental Status: Experimental. GraphQL errors come back with HTTP 200 in errors[]; mutation errors as data.&lt;op&gt;.message. |
 | Update Post Template | `updatePostTemplate` | Updates a post template owned by the caller, or an internal template in the caller's organization when the caller is an organization admin or owner. Omitted fields keep their current values. |
 | Update Tag | `updateTag` | Update a tag's name and color. Both values are replaced, so send the current value for the one you are not changing. The new name must still be unique within the organization; a duplicate is refused with `DuplicateError`. A locked tag cannot be edited and the update is refused. See `Tag.isLocked`. This API is an early preview and can change without a deprecation period. **Status:** ⚠️ Experimental Status: Experimental. GraphQL errors come back with HTTP 200 in errors[]; mutation errors as data.&lt;op&gt;.message. |
+
+</details>

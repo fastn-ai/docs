@@ -5,6 +5,8 @@ hidden: true
 
 # Helpjuice
 
+<img src="../../.gitbook/assets/connectors/helpjuice.png" alt="Helpjuice logo" width="64">
+
 Helpjuice knowledge base platform. Manage articles, categories, users, groups, webhooks and account settings, run knowledge base searches, and read activity feeds, backups and the full analytics surface (searches, keywords, articles, categories, users and groups) through the Helpjuice API v3.
 
 | | |
@@ -12,8 +14,6 @@ Helpjuice knowledge base platform. Manage articles, categories, users, groups, w
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [helpjuice.com](https://helpjuice.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `helpjuice` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Helpjuice from **Build → Integrations → Connectors** and connect an acco
 | Delete Article | `deleteArticle` | Permanently deletes an article from the Helpjuice knowledge base. Helpjuice returns HTTP 204 with an empty body on success. |
 | Delete Category | `deleteCategory` | Deletes a category from the Helpjuice knowledge base. Articles that belonged to the category are not deleted. Helpjuice returns HTTP 204 with an empty body on success. |
 | Delete Group | `deleteGroup` | Deletes a user group from the Helpjuice account. By default the group's members are kept and only their group membership is removed; set Delete Users to also delete the member accounts themselves. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete User | `deleteUser` | Permanently deletes a user from the Helpjuice account. Use Deactivate User instead to revoke access while keeping the account. |
 | Delete Webhook | `deleteWebhook` | Removes a registered webhook from the Helpjuice account so it stops receiving event deliveries. |
 | Downvote Article | `downvoteArticle` | Registers a negative rating on a Helpjuice article. Helpjuice returns an empty body on success; read the dislike count back with Get Article Analytics. |
@@ -64,3 +71,5 @@ Add Helpjuice from **Build → Integrations → Connectors** and connect an acco
 | Update User | `updateUser` | Updates a Helpjuice user's name, email address, role or group memberships. Only the fields supplied inside the user envelope are sent. |
 | Update Webhook | `updateWebhook` | Updates a registered Helpjuice webhook, changing the URL it posts to or the event that triggers it. |
 | Upvote Article | `upvoteArticle` | Registers a positive rating on a Helpjuice article. Helpjuice returns an empty body on success; read the like count back with Get Article Analytics. |
+
+</details>

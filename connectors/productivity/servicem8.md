@@ -5,6 +5,8 @@ hidden: true
 
 # ServiceM8
 
+<img src="../../.gitbook/assets/connectors/servicem8.png" alt="ServiceM8 logo" width="64">
+
 ServiceM8 is a job management platform for trade and service businesses. This connector covers the ServiceM8 REST API (api_1.0): jobs, clients, contacts, activities, allocations, materials, payments, checklists, queues, staff, assets, forms, templates, attachments, notes, tasks, messaging and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ ServiceM8 is a job management platform for trade and service businesses. This co
 | **Category** | [Productivity](README.md) |
 | **Website** | [servicem8.com](https://servicem8.com) |
 | **Authentication** | API key, Basic auth |
-| **Actions** | 217 |
-| **Events** | 25 |
 | **Slug** | `servicem8` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ServiceM8 from **Build → Integrations → Connectors** and connect an acco
 | Create Asset Type Field | `createAssetTypeField` | Adds a custom field to a ServiceM8 asset type. Field Name is mandatory. Requires the Asset Management add-on. |
 | Create Attachment | `createAttachment` | Creates an attachment record against a ServiceM8 job or client. This creates the metadata record only; ServiceM8 takes the file bytes through a separate binary upload endpoint that fastn cannot call today. |
 | Create Availability | `createAvailability` | Creates a ServiceM8 availability record marking a block of time as available or unavailable. Requires the Availability add-on. |
+
+<details>
+
+<summary>See 207 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Badge | `createBadge` | Creates a badge in ServiceM8 that can then be applied to jobs and clients. Badge Name is mandatory. |
 | Create Client | `createClient` | Creates a new client (company) in ServiceM8. Only Client Name is mandatory. ServiceM8 returns {"errorCode":0,"message":"OK"} and puts the new UUID in the x-record-uuid response header, which fastn cannot surface; find the new record with List Clients and a $filter on the name. |
 | Create Client Contact | `createClientContact` | Creates a contact against a ServiceM8 client. Returns {"errorCode":0,"message":"OK"}; the new UUID is only in the x-record-uuid response header, so locate the record with List Client Contacts filtered on the client UUID. |
@@ -242,6 +249,8 @@ Add ServiceM8 from **Build → Integrations → Connectors** and connect an acco
 | Upload Attachment File | `uploadAttachmentFile` | Uploads the file content for a ServiceM8 attachment that already exists as a metadata record. Create the record first with Create Attachment, then send its UUID here together with the text content. This endpoint takes a multipart body, so only text-based files (txt, csv, svg, json, xml) can be sent; binary formats such as JPEG and PDF are corrupted in transit and are not supported. |
 | Upsert Service | `upsertService` | Creates or updates a ServiceM8 service template. Questions, variations and staff capabilities are applied sparsely - anything you omit is left untouched. Requires Services to be activated on the account. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -258,6 +267,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Job Created | `job.created` | Fires when a new job is created in ServiceM8. Payload shape modelled from ServiceM8's documented sample event data (developer.servicem8.com/docs/sample-event-data), not from a captured delivery. |
 | Job Invoice Paid | `job.invoice_paid` | Fires when a job invoice is paid. Payload shape modelled from ServiceM8's documented sample event data. |
 | Job Invoice Sent | `job.invoice_sent` | Fires when an invoice is sent for a job. Payload shape modelled from ServiceM8's documented sample event data. |
+
+<details>
+
+<summary>See 15 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Job Note Added | `job.note_added` | Fires when a note is added to a job. Payload shape modelled from ServiceM8's documented sample event data. |
 | Job Photo Added | `job.photo_added` | Fires when a photo is attached to a job. Payload shape modelled from ServiceM8's documented sample event data. |
 | Job Queued | `job.queued` | Fires when a job is placed into a queue. Payload shape modelled from ServiceM8's documented sample event data. |
@@ -273,3 +289,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Staff Checked Out Of Job | `job.checked_out` | Fires when a staff member checks out of a job. Payload shape modelled from ServiceM8's documented sample event data. |
 | Staff Clocked Off | `staff.clocked_off` | Fires when a staff member clocks off. Payload shape modelled from ServiceM8's documented sample event data. |
 | Staff Clocked On | `staff.clocked_on` | Fires when a staff member clocks on. Payload shape modelled from ServiceM8's documented sample event data. |
+
+</details>

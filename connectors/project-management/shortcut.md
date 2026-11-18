@@ -5,14 +5,14 @@ hidden: true
 
 # Shortcut
 
+<img src="../../.gitbook/assets/connectors/shortcut.jpg" alt="Shortcut logo" width="64">
+
 Shortcut (formerly Clubhouse) project management. Manage stories, epics, iterations, objectives, milestones, projects, workflows, members, teams, groups, labels, docs, files, and story links via the Shortcut REST API v3.
 
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 143 |
-| **Events** | 29 |
 | **Slug** | `shortcut` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Shortcut from **Build → Integrations → Connectors** and connect an accou
 | Create Group | `createGroup` | Create Group |
 | Create Iteration | `createIteration` | Create Iteration |
 | Create Label | `createLabel` | Create Label allows you to create a new Label in Shortcut. |
+
+<details>
+
+<summary>See 133 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Linked File | `createLinkedFile` | Create Linked File allows you to create a new Linked File in Shortcut. |
 | Create Milestone | `createMilestone` | (Deprecated: Use 'Create Objective') Create Milestone allows you to create a new Milestone in Shortcut. |
 | Create Multiple Stories | `createMultipleStories` | Create Multiple Stories allows you to create multiple stories in a single request using the same syntax as [Create Story](https://developer.shortcut.com/api/rest/v3#create-story). |
@@ -167,6 +174,8 @@ Add Shortcut from **Build → Integrations → Connectors** and connect an accou
 | Update Task | `updateTask` | Update Task can be used to update Task properties. |
 | Upload Files | `uploadFiles` | Upload Files uploads one or many files and optionally associates them with a story. Use the multipart/form-data content-type to upload. Each `file` key should contain a separate file. Each UploadedFile's name comes from the Content-Disposition header "filename" directive for that field. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -183,6 +192,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Label Deleted | `label.delete` | Fired when a Label is deleted in the Shortcut workspace. |
 | Label Updated | `label.update` | Fired when a Label is updated in the Shortcut workspace. |
 | Objective Created | `milestone.create` | Fired when a Objective is created in the Shortcut workspace. |
+
+<details>
+
+<summary>See 19 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Objective Deleted | `milestone.delete` | Fired when a Objective is deleted in the Shortcut workspace. |
 | Objective Updated | `milestone.update` | Fired when a Objective is updated in the Shortcut workspace. |
 | Project Created | `project.create` | Fired when a Project is created in the Shortcut workspace. |
@@ -202,3 +218,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Team Created | `group.create` | Fired when a Team is created in the Shortcut workspace. |
 | Team Deleted | `group.delete` | Fired when a Team is deleted in the Shortcut workspace. |
 | Team Updated | `group.update` | Fired when a Team is updated in the Shortcut workspace. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # GoDial
 
+<img src="../../.gitbook/assets/connectors/godial.png" alt="GoDial logo" width="64">
+
 GoDial is a telecalling CRM and auto dialer. This connector wraps the GoDial CRM External API (v2) to manage teams, accounts (members), calling lists, contacts, dispositions, tasks and call logs.
 
 | | |
@@ -12,8 +14,6 @@ GoDial is a telecalling CRM and auto dialer. This connector wraps the GoDial CRM
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [godial.cc](https://godial.cc) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 2 |
 | **Slug** | `godial` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GoDial from **Build → Integrations → Connectors** and connect an account
 | Delete Contact | `deleteContact` | Deletes a GoDial contact by its ID. Returns the number of records removed. |
 | Delete Contact By Phone | `deleteContactByPhone` | Deletes a GoDial contact matched by its phone number within a specific calling list. |
 | Delete List | `deleteList` | Deletes a calling list from your GoDial company by its ID. Returns the number of records removed. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Task | `deleteTask` | Deletes a GoDial task by its ID. Returns the number of records removed. |
 | Delete Team | `deleteTeam` | Deletes a team from your GoDial company by its ID. Returns the number of records removed. |
 | Detach List From Account | `detachList` | Removes a GoDial calling list assignment from an account (member). |
@@ -55,6 +62,8 @@ Add GoDial from **Build → Integrations → Connectors** and connect an account
 | Update List | `updateList` | Updates the name, description or team of an existing GoDial calling list. Only the fields you pass are changed. |
 | Update Task | `updateTask` | Updates a GoDial task, for example renaming it or marking it done. The task name is required on every update. Setting done to true completes the task; GoDial does not reopen a completed task when done is false. |
 | Update Team | `updateTeam` | Updates the name or description of an existing GoDial team. Only the fields you pass are changed. |
+
+</details>
 
 ## Events
 

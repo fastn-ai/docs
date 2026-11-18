@@ -5,6 +5,8 @@ hidden: true
 
 # SearchApi
 
+<img src="../../.gitbook/assets/connectors/search-api.png" alt="SearchApi logo" width="64">
+
 SearchApi is a real-time SERP and marketplace scraping API that returns structured JSON for Google, Bing, YouTube, Amazon, Walmart, eBay, app stores, maps, travel, ads libraries, social platforms and AI answer engines. This connector exposes every documented SearchApi engine as its own action, plus the account, search history, search analytics and locations endpoints.
 
 | | |
@@ -12,8 +14,6 @@ SearchApi is a real-time SERP and marketplace scraping API that returns structur
 | **Category** | [Search and web](README.md) |
 | **Website** | [searchapi.io](https://searchapi.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 154 |
-| **Events** | 0 |
 | **Slug** | `searchApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SearchApi from **Build → Integrations → Connectors** and connect an acco
 | Search Airbnb Property Availability Calendar | `searchAirbnbPropertyAvailabilityCalendar` | Returns an Airbnb property's day-by-day availability across up to 12 months, including bookable dates, check-in/out windows and minimum-stay constraints. Runs on the SearchApi airbnb_property_availability_calendar engine (GET /api/v1/search). |
 | Search Airbnb Property Reviews | `searchAirbnbPropertyReviews` | Returns the reviews and review topics for an Airbnb property, with keyword search, sorting and pagination. Runs on the SearchApi airbnb_property_reviews engine (GET /api/v1/search). |
 | Search Amazon | `searchAmazon` | Runs a live Amazon product search and returns structured listings with ASIN, price, rating and Prime status, filterable by category, price range, delivery location and sort order. |
+
+<details>
+
+<summary>See 144 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Amazon Bestsellers | `searchAmazonBestsellers` | Returns Amazon bestseller rankings - bestsellers, new releases, movers and shakers, most wished for and most gifted - with pricing, ratings and review counts. Runs on the SearchApi amazon_bestsellers engine (GET /api/v1/search). |
 | Search Amazon Categories | `searchAmazonCategories` | Browses Amazon's category hierarchy - list root categories, drill into subcategories, look up a node, or search categories by name. Runs on the SearchApi amazon_categories engine (GET /api/v1/search). |
 | Search Amazon Offers | `searchAmazonOffers` | Returns the live seller offers for an Amazon product by ASIN, with condition, seller and delivery details. Runs on the SearchApi amazon_offers engine (GET /api/v1/search). |
@@ -178,3 +185,5 @@ Add SearchApi from **Build → Integrations → Connectors** and connect an acco
 | Search YouTube Video | `searchYoutubeVideo` | Returns a YouTube video's details - title, description, view and like counts, channel, key moments, available transcript languages and recommended videos. Runs on the SearchApi youtube_video engine (GET /api/v1/search). |
 | Search Zillow | `searchZillow` | Searches Zillow real estate listings with prices, photos and property details, filterable by listing status, home type, price, size, year built, features and time on market. Runs on the SearchApi zillow engine (GET /api/v1/search). |
 | Search Zillow Property | `searchZillowProperty` | Returns detailed Zillow data for one property - pricing, photos, schools, walk scores, comparables, tax history and mortgage rates. Runs on the SearchApi zillow_property engine (GET /api/v1/search). |
+
+</details>

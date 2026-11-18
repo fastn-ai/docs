@@ -5,6 +5,8 @@ hidden: true
 
 # Sellsy
 
+<img src="../../.gitbook/assets/connectors/sellsy.png" alt="Sellsy logo" width="64">
+
 Sellsy CRM, invoicing and sales platform via the Sellsy API v2. Manage companies, contacts, individuals, opportunities, estimates, orders, invoices, credit notes, payments, items, tasks, calendar events, comments, custom fields, files, staff and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Sellsy CRM, invoicing and sales platform via the Sellsy API v2. Manage companies
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [sellsy.com](https://sellsy.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 422 |
-| **Events** | 15 |
 | **Slug** | `sellsy` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Sellsy from **Build → Integrations → Connectors** and connect an account
 | Attach file to an estimate | `uploadEstimateFile` | Attach a file to an estimate (open beta route). |
 | Attach file to an individual | `uploadIndividualFile` | Attach file to an individual. |
 | Attach file to an invoice | `uploadInvoiceFile` | Attach file to an invoice. |
+
+<details>
+
+<summary>See 412 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Attach file to an opportunity | `uploadOpportunityFile` | Attach file to an opportunity. |
 | Attach file to an order | `uploadOrderFile` | Attach file to an order. |
 | Batch request | `createBatch` | Run several API calls in one batch request. The body is newline-delimited JSON: a header line {uri, method, query, uuid} followed by a payload line, repeated. |
@@ -447,6 +454,8 @@ Add Sellsy from **Build → Integrations → Connectors** and connect an account
 | Validate email's DNS | `validateEmailDomainDns` | Validate the DNS configuration of an email sending domain. |
 | Validate Invoice | `validateInvoice` | Validate a draft invoice into due status; it can no longer be edited or deleted, and may be transmitted via e-invoicing. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -463,8 +472,17 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Estimate status changed | `estimate.step` |  |
 | Invoice created | `invoice.created` |  |
 | Invoice payment added | `invoice.paymentadd` |  |
+
+<details>
+
+<summary>See 5 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Opportunity created | `opportunity.created` |  |
 | Opportunity step changed | `opportunity.step` |  |
 | Opportunity updated | `opportunity.updated` |  |
 | Prospect created | `prospect.created` |  |
 | Task created | `task.created` |  |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # SignWell
 
+<img src="../../.gitbook/assets/connectors/signwell.png" alt="SignWell logo" width="64">
+
 SignWell is an electronic signature platform for sending, tracking and completing legally binding documents. This connector covers the SignWell v1 API: documents and document creation from files or templates, recipient and authentication updates, sending and reminders, completed PDF retrieval, document templates, bulk sends with CSV validation, API applications, webhooks and the connected account's credentials.
 
 | | |
@@ -12,8 +14,6 @@ SignWell is an electronic signature platform for sending, tracking and completin
 | **Category** | [Productivity](README.md) |
 | **Website** | [signwell.com](https://signwell.com) |
 | **Authentication** | API key |
-| **Actions** | 29 |
-| **Events** | 16 |
 | **Slug** | `signwell` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SignWell from **Build → Integrations → Connectors** and connect an accou
 | Delete Template | `deleteTemplate` | Permanently deletes a document template. Documents already created from the template are not affected. |
 | Delete Webhook | `deleteWebhook` | Removes a registered webhook callback endpoint so SignWell stops posting events to it. |
 | Get API Application | `getApiApplication` | Retrieves an API Application by its unique identifier. API Applications hold the branding and sender settings applied to documents created under them. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Bulk Send | `getBulkSend` | Retrieves a single bulk send by its unique identifier, including its processing status and how many documents it produced. |
 | Get Bulk Send CSV Template | `getBulkSendCsvTemplate` | Generates a blank CSV whose columns match the placeholders and fields of the chosen templates. Fill one row per recipient and feed it back to Validate Bulk Send CSV and Create Bulk Send. |
 | Get Bulk Send Documents | `getBulkSendDocuments` | Lists the documents that a bulk send produced, one per row of the uploaded CSV, with each document's signing status. |
@@ -54,6 +61,8 @@ Add SignWell from **Build → Integrations → Connectors** and connect an accou
 | Update Template | `updateTemplate` | Updates a document template's settings. Only the fields supplied are changed, so the template can be renamed, taken out of draft or have its signing options adjusted independently. |
 | Validate Bulk Send CSV | `validateBulkSendCsv` | Checks a filled-in bulk send CSV against the chosen templates and reports any row or column errors, without creating any documents. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -70,9 +79,18 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Document In Progress | `document_in_progress` | Fires once, when a document starts being completed and its status becomes in progress (returned as pending by the API). Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Document Recipients Updated | `document_recipients_updated` | Fires when a document's recipients are corrected after it has already been sent. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Document Sent | `document_sent` | Fires when a document is sent to its recipients for signature. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
+
+<details>
+
+<summary>See 6 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Document Signed | `document_signed` | Fires each time one recipient signs, so a multi-signer document raises it once per signer. The signer is carried in event.related_signer. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Document SMS Failed | `document_sms_failed` | Fires when an SMS notification to a recipient reaches a terminal failure, either undelivered or failed. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Document SMS Opted Out | `document_sms_opted_out` | Fires when a recipient's phone number is newly added to the SMS suppression list, for example because they replied STOP. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Document Viewed | `document_viewed` | Fires each time a signer opens the document, so it can fire many times per document. The signer is carried in event.related_signer. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Template Created | `template_created` | Fires when a document template is created. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
 | Template Error | `template_error` | Fires when SignWell hits an error creating or updating a template. Registration is automatic via POST /api/v1/hooks; fastn routes on event.type. Payload modelled from SignWell's documented Event Data sample. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Queue
 
+<img src="../../.gitbook/assets/connectors/queue.png" alt="Queue logo" width="64">
+
 Queue (app.usequeue.com) is a client-portal and project-management platform for agencies and productized-service businesses. This connector covers the Queue REST API v1: projects, taskboard columns and tasks, task comments and replies, clients, invoices, timesheets, task credits, services, service checkouts (subscriptions) with pause/unpause/cancel, and files with their comments and replies.
 
 | | |
@@ -12,8 +14,6 @@ Queue (app.usequeue.com) is a client-portal and project-management platform for 
 | **Category** | [Project management](README.md) |
 | **Website** | [usequeue.com](https://usequeue.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 60 |
-| **Events** | 0 |
 | **Slug** | `queue` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Queue from **Build → Integrations → Connectors** and connect an account,
 | Create Task Comment | `createTaskComment` | Post a comment on a task. A non-private comment is visible to the project's clients in the Queue client portal and may notify them, so set private to true for internal notes. Responds 201 with the created comment. |
 | Create Task Comment By Task ID | `createTaskCommentByTaskId` | Post a task comment through the top-level endpoint, passing the task id in the body instead of the URL. Undocumented but live (POST /api/v1/task_comments). Functionally the same as Create Task Comment. Responds 201. |
 | Create Task Credit | `createTaskCredit` | Record a task credit against a task. Despite the documentation marking it optional, the API rejects the request with 'service_id is required' unless a valid service_id is supplied, so the workspace must already have at least one service (services are created in the Queue web app). Responds 201. |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Client | `deleteClient` | Remove a client-portal user from the workspace, revoking their portal access. This cannot be undone. Returns {success: true}. |
 | Delete Column | `deleteColumn` | Delete a taskboard column and the tasks it holds. This cannot be undone. Returns {success: true}. |
 | Delete Invoice | `deleteInvoice` | Delete an invoice. This cannot be undone. Returns {success: true}. |
@@ -84,3 +91,5 @@ Add Queue from **Build → Integrations → Connectors** and connect an account,
 | Update Task Comment | `updateTaskComment` | Edit an existing task comment or flip its private flag. Returns the updated comment. |
 | Update Task Credit | `updateTaskCredit` | Update a recorded task credit - change the credit amount, the task or user it is attributed to, or its comment. |
 | Update Timesheet | `updateTimesheet` | Update a tracked time entry - reassign it to another task, change the logged duration or edit its notes. Returns the updated timesheet. |
+
+</details>

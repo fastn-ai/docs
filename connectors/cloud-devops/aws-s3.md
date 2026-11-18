@@ -5,6 +5,8 @@ hidden: true
 
 # AWS S3
 
+<img src="../../.gitbook/assets/connectors/aws-s3.png" alt="AWS S3 logo" width="64">
+
 Amazon Simple Storage Service (S3) REST API. List and create buckets, list objects, upload and download objects, run multipart uploads for large files, and delete objects and buckets. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported. XML responses are returned as JSON.
 
 | | |
@@ -12,8 +14,6 @@ Amazon Simple Storage Service (S3) REST API. List and create buckets, list objec
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [aws.amazon.com](https://aws.amazon.com) |
 | **Authentication** | AWS Signature V4 |
-| **Actions** | 108 |
-| **Events** | 0 |
 | **Slug** | `awsS3` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AWS S3 from **Build → Integrations → Connectors** and connect an account
 | Delete Bucket | `deleteBucket` | Deletes an Amazon S3 bucket. All objects, object versions, delete markers and in-progress multipart uploads must be removed first, otherwise S3 returns 409 BucketNotEmpty. Requires the s3:DeleteBucket permission. A successful call returns HTTP 204 with an empty body. |
 | Delete Bucket Analytics Configuration | `deleteBucketAnalyticsConfiguration` | Deletes one storage class analysis (analytics) configuration from an Amazon S3 bucket by its ID. Requires the s3:PutAnalyticsConfiguration permission. S3 returns HTTP 204 with an empty body. |
 | Delete Bucket CORS | `deleteBucketCors` | Removes the cross-origin resource sharing (CORS) configuration from an Amazon S3 bucket. Requires the s3:PutBucketCORS permission. S3 returns HTTP 204 with an empty body. |
+
+<details>
+
+<summary>See 98 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Bucket Encryption | `deleteBucketEncryption` | Resets the default server-side encryption configuration of an Amazon S3 bucket back to SSE-S3 (AES256). Requires the s3:PutEncryptionConfiguration permission. S3 returns HTTP 204 with an empty body. |
 | Delete Bucket Intelligent-Tiering Configuration | `deleteBucketIntelligentTieringConfiguration` | Deletes one S3 Intelligent-Tiering archive configuration from an Amazon S3 bucket by its ID. Requires the s3:PutIntelligentTieringConfiguration permission. S3 returns HTTP 204 with an empty body. |
 | Delete Bucket Inventory Configuration | `deleteBucketInventoryConfiguration` | Deletes one inventory report configuration from an Amazon S3 bucket by its ID. Requires the s3:PutInventoryConfiguration permission. S3 returns HTTP 204 with an empty body. |
@@ -132,3 +139,5 @@ Add AWS S3 from **Build → Integrations → Connectors** and connect an account
 | Upload Image | `uploadImage` | Uploads an image file to an Amazon S3 bucket as a single object, sending the raw image bytes as the request body. This is the Put Object operation with an image-oriented input set; the object's Content-Type comes from the file's mime field, which must be an image type. Requires the s3:PutObject permission. S3 returns HTTP 200 with an empty body. |
 | Upload Part | `uploadPart` | Uploads one part of a multipart upload, sending the raw file bytes as the request body. Each part except the last must be at least 5 MB. S3 returns the part's ETag as a response header only, which this action cannot return, so read the part ETags back with List Parts before calling Complete Multipart Upload. Requires the s3:PutObject permission. |
 | Upload Part Copy | `uploadPartCopy` | Uploads one part of a multipart upload by copying a byte range from an existing object, server-side, instead of sending the bytes. This is how objects over 5 GB are copied: start a multipart upload, copy ranges as parts, then complete it. Requires s3:GetObject on the source and s3:PutObject on the destination. Returns the CopyPartResult document converted to JSON with the part's ETag. |
+
+</details>

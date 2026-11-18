@@ -5,6 +5,8 @@ hidden: true
 
 # ClickUp
 
+<img src="../../.gitbook/assets/connectors/clickup.png" alt="ClickUp logo" width="64">
+
 ClickUp project management REST API connector for managing workspaces, spaces, folders, lists, tasks, subtasks, comments, members, goals, tags, time tracking, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ ClickUp project management REST API connector for managing workspaces, spaces, f
 | **Category** | [Project management](README.md) |
 | **Website** | [clickup.com](https://clickup.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 45 |
-| **Events** | 0 |
 | **Slug** | `clickup` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ClickUp from **Build → Integrations → Connectors** and connect an accoun
 | Create Time Entry | `createTimeEntry` | Creates a time entry for a task. |
 | Create Webhook | `createWebhook` | Creates a webhook to subscribe to ClickUp events. |
 | Delete Comment | `deleteComment` | Deletes a comment. |
+
+<details>
+
+<summary>See 35 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Folder | `deleteFolder` | Deletes a folder. |
 | Delete Goal | `deleteGoal` | Deletes a goal. |
 | Delete List | `deleteList` | Deletes a list. |
@@ -69,3 +76,5 @@ Add ClickUp from **Build → Integrations → Connectors** and connect an accoun
 | Update Space | `updateSpace` | Updates an existing space. |
 | Update Task | `updateTask` | Updates an existing task. |
 | Update Webhook | `updateWebhook` | Updates an existing webhook's endpoint or events. |
+
+</details>

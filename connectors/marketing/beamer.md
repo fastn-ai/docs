@@ -5,6 +5,8 @@ hidden: true
 
 # Beamer
 
+<img src="../../.gitbook/assets/connectors/beamer.png" alt="Beamer logo" width="64">
+
 Beamer is a changelog, feedback, NPS and user-onboarding platform for announcing product updates in-app. This connector covers the full Beamer v0 REST API: feed URL, ping, posts, post comments, post reactions, unread posts, feature requests with their comments and votes, analytics users, NPS responses and surveys, team members and privacy data deletion.
 
 | | |
@@ -12,8 +14,6 @@ Beamer is a changelog, feedback, NPS and user-onboarding platform for announcing
 | **Category** | [Marketing](README.md) |
 | **Website** | [getbeamer.com](https://getbeamer.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 51 |
-| **Events** | 9 |
 | **Slug** | `beamer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Beamer from **Build → Integrations → Connectors** and connect an account
 | Count Posts | `countPosts` | Returns the number of posts in your Beamer changelog that match the supplied filters, without returning the posts themselves. |
 | Count Unread Posts | `countUnreadPosts` | Returns the number of posts a given user would see as unread when opening their Beamer feed, together with the feed and popup URLs. Use it to drive your own unread badge. |
 | Create Analytics User | `createUser` | Creates an end user in Beamer Analytics so that segmentation filters and per-user feeds can target them before they are first seen in the widget. |
+
+<details>
+
+<summary>See 41 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Feature Request | `createFeatureRequest` | Creates a feature request on your Beamer Ideas board on behalf of an end user. Title, content and language are arrays so several translations can be created at once, keeping the same order across all of them. |
 | Create Feature Request Comment | `createFeatureRequestComment` | Adds a comment to a feature request on your Beamer Ideas board on behalf of an end user. |
 | Create Feature Request Vote | `createFeatureRequestVote` | Casts a vote on a feature request on your Beamer Ideas board on behalf of an end user. |
@@ -75,6 +82,8 @@ Add Beamer from **Build → Integrations → Connectors** and connect an account
 | Update Feature Request | `updateFeatureRequest` | Updates an existing feature request on your Beamer Ideas board, for example to move it to a new status, change its visibility or edit its content. |
 | Update Post | `updatePost` | Updates an existing Beamer post. Only the fields supplied are sent; title, content, language, link URL and link text are arrays so several translations can be updated at once, keeping the same order across all of them. |
 | Update Team Member Role | `updateTeamMemberRole` | Changes the role of an existing member of your Beamer team, identified by their email address. |
+
+</details>
 
 ## Events
 

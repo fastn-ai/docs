@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Bookings
 
+<img src="../../.gitbook/assets/connectors/microsoft-bookings.png" alt="Microsoft Bookings logo" width="64">
+
 Microsoft Bookings appointment scheduling via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/solutions/bookingBusinesses). Manage booking businesses (create, read, update, delete, publish and unpublish the self-service booking page), services, staff members, customers, custom questions and appointments, cancel an appointment with a message, read the calendar view for a date range, look up staff availability, and list the supported booking currencies. Connect with a Microsoft work or school account using Entra ID OAuth 2.0. All four delegated Bookings permissions are user-consentable and need no tenant administrator approval, but the tenant must have Microsoft Bookings enabled and the signed-in user must hold a licence that includes it (Microsoft 365 Business Standard or Premium, or A3/A5/E3/E5).
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Bookings appointment scheduling via the Microsoft Graph v1.0 API (http
 | **Category** | [Productivity](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `microsoftBookings` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Bookings from **Build → Integrations → Connectors** and connec
 | Delete Booking Appointment | `deleteBookingAppointment` | Permanently deletes an appointment from a Microsoft Bookings business without notifying the customer. Use Cancel Booking Appointment when the customer should be told. |
 | Delete Booking Business | `deleteBookingBusiness` | Permanently deletes a Microsoft Bookings business together with its services, staff, customers and appointments. Requires the Bookings.Manage.All delegated permission and cannot be undone. |
 | Delete Booking Custom Question | `deleteBookingCustomQuestion` | Permanently deletes a custom question from a Microsoft Bookings business. Services that still reference the question should be updated afterwards. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Booking Customer | `deleteBookingCustomer` | Permanently deletes a customer from a Microsoft Bookings business. Existing appointments that reference the customer are not removed. |
 | Delete Booking Service | `deleteBookingService` | Permanently deletes a bookable service from a Microsoft Bookings business. Existing appointments for the service are not removed. |
 | Delete Booking Staff Member | `deleteBookingStaffMember` | Removes a staff member from a Microsoft Bookings business. Services that reference the staff member keep the entry in staffMemberIds until updated. |
@@ -61,3 +68,5 @@ Add Microsoft Bookings from **Build → Integrations → Connectors** and connec
 | Update Booking Customer | `updateBookingCustomer` | Updates a customer of a Microsoft Bookings business. Only the properties you supply are sent, so untouched details keep their values. Verified live: supplying Phones or Addresses merges the entries into the existing list rather than replacing it, so read the customer first if you need to remove an entry. |
 | Update Booking Service | `updateBookingService` | Updates a bookable service of a Microsoft Bookings business. Only the properties you supply are sent, so untouched settings keep their values. |
 | Update Booking Staff Member | `updateBookingStaffMember` | Updates a staff member of a Microsoft Bookings business, for example their role, time zone or working hours. Only the properties you supply are sent. |
+
+</details>

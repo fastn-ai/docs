@@ -5,6 +5,8 @@ hidden: true
 
 # Zippopotam.us
 
+<img src="../../.gitbook/assets/connectors/zippopotamus.png" alt="Zippopotam.us logo" width="64">
+
 Zippopotam.us is a free, keyless postal code API for 60+ countries (GeoNames data): look up the places, state and coordinates for a postal code, or the postal codes for a city.
 
 | | |
@@ -12,8 +14,6 @@ Zippopotam.us is a free, keyless postal code API for 60+ countries (GeoNames dat
 | **Category** | [Maps and location](README.md) |
 | **Website** | [zippopotam.us](https://zippopotam.us) |
 | **Authentication** | No authentication |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `zippopotamus` |
 
 ## Use it

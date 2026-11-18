@@ -5,6 +5,8 @@ hidden: true
 
 # Timely
 
+<img src="../../.gitbook/assets/connectors/timely.png" alt="Timely logo" width="64">
+
 Timely automatic time tracking API. Log and manage time entries and timers, plan and forecast tasks, organize projects, clients, teams and users, manage tags, capacities, roles, states and permissions, generate reports, run bulk imports, and subscribe to webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Timely automatic time tracking API. Log and manage time entries and timers, plan
 | **Category** | [Productivity](README.md) |
 | **Website** | [timelyapp.com](https://timelyapp.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 76 |
-| **Events** | 0 |
 | **Slug** | `timely` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Timely from **Build → Integrations → Connectors** and connect an account
 | Create Tag | `createTag` | Creates a new tag in the Timely account, optionally nested under a parent tag. |
 | Create Task | `createTask` | Creates a new planned task (forecast) for a user and project over a date range. |
 | Create Team | `createTeam` | Creates a new team in the Timely account with the given name and members. |
+
+<details>
+
+<summary>See 66 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Time Entry | `createTimeEntry` | Creates a new time entry in the Timely account for a given project, user and day. |
 | Create Time Entry State | `createTimeEntryState` | Creates a new custom time entry state for the account. |
 | Create Webhook | `createWebhook` | Registers a new webhook that delivers Timely events to the given HTTPS endpoint. |
@@ -100,3 +107,5 @@ Add Timely from **Build → Integrations → Connectors** and connect an account
 | Update Time Entry State | `updateTimeEntryState` | Updates an existing time entry state. |
 | Update User | `updateUser` | Updates an existing account user, such as their name, role, rate or teams. Supply either role_id or user_level. This replaces the user record, so send the attributes you want to keep. |
 | Update Webhook | `updateWebhook` | Updates an existing webhook, such as its target URL, subscriptions or active state. |
+
+</details>

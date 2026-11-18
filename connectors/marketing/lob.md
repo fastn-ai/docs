@@ -5,6 +5,8 @@ hidden: true
 
 # Lob
 
+<img src="../../.gitbook/assets/connectors/lob.png" alt="Lob logo" width="64">
+
 Lob is a direct-mail and address-verification platform. This connector covers the Lob v1 REST API: postcards, letters, checks, self-mailers, snap packs, booklets, cards and buckslips; address book and address verification (US and international, single and bulk, autocompletion, ZIP lookup and reverse geocode); templates and template versions; bank accounts; campaigns, creatives, uploads and QR-code analytics; Informed Delivery campaigns; tracking links and domains; resource proofs; identity validation; billing groups; users; and event, event-type and webhook management.
 
 | | |
@@ -12,8 +14,6 @@ Lob is a direct-mail and address-verification platform. This connector covers th
 | **Category** | [Marketing](README.md) |
 | **Website** | [lob.com](https://lob.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 110 |
-| **Events** | 70 |
 | **Slug** | `lob` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Lob from **Build → Integrations → Connectors** and connect an account, a
 | Cancel Snap Pack | `cancelSnapPack` | Cancels a snap pack that has not yet entered production. Requires the snap pack product to be enabled on your Lob account. |
 | Create Address | `createAddress` | Saves a new address in your Lob address book so it can be reused as the sender or recipient of mail. Supply either a recipient name or a company. US addresses need city, state and ZIP; international addresses need a two-letter country code. |
 | Create Bank Account | `createBankAccount` | Registers a US bank account with Lob so that checks can be drawn on it. The account must be verified before it can be used to send checks in live mode. |
+
+<details>
+
+<summary>See 100 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Billing Group | `createBillingGroup` | Creates a billing group so mail pieces tagged with it are reported and invoiced separately. Billing groups require an account entitlement that Lob enables on request. |
 | Create Booklet | `createBooklet` | Creates and schedules a saddle-stitched booklet for print and mail. With a test API key nothing is printed or mailed and no charge is incurred. Requires the booklet product to be enabled on your Lob account. |
 | Create Buckslip | `createBuckslip` | Stocks a new buckslip insert with Lob by supplying front and back artwork and a size. Buckslips require an account entitlement that Lob enables on request. |
@@ -135,6 +142,8 @@ Add Lob from **Build → Integrations → Connectors** and connect an account, a
 | Verify US Address | `verifyUsAddress` | Standardizes and verifies a single US or US-territory address against USPS data, returning the corrected components, deliverability status and geocoding. Supply either the parsed lines or a single unparsed address string. Test-mode keys return simulated results: set Primary Line to deliverable, undeliverable, deliverable_missing_unit, deliverable_incorrect_unit or deliverable_unnecessary_unit and ZIP Code to 11111. |
 | Verify US Addresses In Bulk | `verifyUsAddressesBulk` | Standardizes and verifies up to 1,000 US addresses in a single request, returning one verification result per submitted address in the same order. Test-mode keys return simulated results: set each Primary Line to deliverable or undeliverable and each ZIP Code to 11111. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -151,6 +160,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Certified Letter In Local Area | `letter.certified.in_local_area` | Fires when a certified letter reaches the recipient's local area. Live mode only. |
 | Certified Letter In Transit | `letter.certified.in_transit` | Fires when a certified letter is in transit. Live mode only. |
 | Certified Letter Issue | `letter.certified.issue` | Fires when USPS reports a problem with a certified letter. Live mode only. |
+
+<details>
+
+<summary>See 60 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Certified Letter Mailed | `letter.certified.mailed` | Fires when a certified letter is mailed. Live mode only. |
 | Certified Letter Processed For Delivery | `letter.certified.processed_for_delivery` | Fires when a certified letter is processed for delivery. Live mode only. |
 | Certified Letter Re-Routed | `letter.certified.re-routed` | Fires when a certified letter is re-routed. Live mode only. |
@@ -211,3 +227,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Postcard Returned To Sender | `postcard.returned_to_sender` | Fires when USPS returns the postcard to sender. Live mode only. |
 | Postcard Thumbnails Rendered | `postcard.rendered_thumbnails` | Fires when a postcard's preview thumbnails have been rendered. Enabled in test mode. |
 | Postcard Tracking Page Viewed | `postcard.viewed` | Fires when the recipient opens the postcard's tracking page. Enabled in test mode. |
+
+</details>

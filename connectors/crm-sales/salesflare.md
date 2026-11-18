@@ -5,6 +5,8 @@ hidden: true
 
 # Salesflare
 
+<img src="../../.gitbook/assets/connectors/salesflare.png" alt="Salesflare logo" width="64">
+
 Salesflare CRM — accounts, contacts, opportunities, tasks, meetings, calls, notes, tags, custom fields, pipelines, stages, users, groups, workflows (email campaigns), and settings. REST API at api.salesflare.com, Bearer token auth.
 
 | | |
@@ -12,8 +14,6 @@ Salesflare CRM — accounts, contacts, opportunities, tasks, meetings, calls, no
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [salesflare.com](https://salesflare.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 71 |
-| **Events** | 0 |
 | **Slug** | `salesflare` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Salesflare from **Build → Integrations → Connectors** and connect an acc
 | Create Message Feedback Alt | `createMessageFeedbackAlt` | Add feedback to an internal note (singular POST /message/{id}/feedback route). feedback is required. |
 | Create Opportunity | `createOpportunity` | Create an opportunity (deal). account is required. |
 | Create Tag | `createTag` | Create a tag. name is required. |
+
+<details>
+
+<summary>See 61 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Task | `createTask` | Create a task. Body is an array; this creates one task. description is required. |
 | Create Workflow | `createWorkflow` | Create an email workflow (campaign). name is required. |
 | Delete Account | `deleteAccount` | Delete an account by id. |
@@ -95,3 +102,5 @@ Add Salesflare from **Build → Integrations → Connectors** and connect an acc
 | Update Task | `updateTask` | Update a task (description, reminder, assignees, completion). Only provided fields are sent. |
 | Update Workflow | `updateWorkflow` | Update an email workflow. name is required by the API. |
 | Update Workflow Audience | `updateWorkflowAudience` | Re-enter or exit an entity (record) from a workflow's audience. |
+
+</details>

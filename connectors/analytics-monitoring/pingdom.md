@@ -5,6 +5,8 @@ hidden: true
 
 # Pingdom
 
+<img src="../../.gitbook/assets/connectors/pingdom.png" alt="Pingdom logo" width="64">
+
 SolarWinds Pingdom website and transaction monitoring. Manage uptime checks, transaction (TMS) checks, maintenance windows, alerting contacts and teams, and read alerting actions, root-cause analysis, raw results, summary reports, probe servers and account credits via the Pingdom REST API 3.1.
 
 | | |
@@ -12,8 +14,6 @@ SolarWinds Pingdom website and transaction monitoring. Manage uptime checks, tra
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [pingdom.com](https://pingdom.com) |
 | **Authentication** | API key |
-| **Actions** | 50 |
-| **Events** | 2 |
 | **Slug** | `pingdom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pingdom from **Build → Integrations → Connectors** and connect an accoun
 | Delete Maintenance Occurrence | `deleteMaintenanceOccurrence` | Deletes a single maintenance occurrence by id, cancelling that one scheduled run of the maintenance window while leaving the window itself in place. |
 | Delete Maintenance Window | `deleteMaintenanceWindow` | Deletes a single maintenance window by id. Checks assigned to it stop being suppressed and resume normal alerting. |
 | Delete Multiple Checks | `deleteChecks` | Permanently deletes a list of Pingdom uptime checks and all of their collected monitoring data. This is irreversible. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Multiple Maintenance Occurrences | `deleteMaintenanceOccurrences` | Deletes several maintenance occurrences in one call by their identifiers. The value is sent under both the 'occurrenceids' and 'occurenceids' query keys because the Pingdom 3.1 specification names the parameter inconsistently; the API ignores the spelling it does not use. |
 | Delete Multiple Maintenance Windows | `deleteMaintenanceWindows` | Deletes several maintenance windows in one call by their identifiers. |
 | Delete Team | `deleteTeam` | Deletes a Pingdom alerting team by id. The contacts that were members are not deleted, but checks pointed at the team stop alerting it. |
@@ -74,6 +81,8 @@ Add Pingdom from **Build → Integrations → Connectors** and connect an accoun
 | Update Maintenance Window | `updateMaintenanceWindow` | Modifies an existing maintenance window: its description, start and end times, recurrence, and the uptime and transaction checks it covers. |
 | Update Team | `updateTeam` | Renames a Pingdom alerting team and replaces its membership with the supplied contact identifiers. The member list is a full replacement, not an addition. |
 | Update Transaction Check | `updateTransactionCheck` | Modifies an existing Pingdom transaction (TMS) check: rename it, activate or deactivate it, change its step script, interval, region, severity, tags or alert recipients. |
+
+</details>
 
 ## Events
 

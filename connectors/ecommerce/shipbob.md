@@ -5,6 +5,8 @@ hidden: true
 
 # ShipBob
 
+<img src="../../.gitbook/assets/connectors/shipbob.png" alt="ShipBob logo" width="64">
+
 ShipBob fulfillment (3PL) connector covering the full 2026-01 API surface: orders and shipments, products and variants, inventory, receiving (WROs), returns, tracking, billing, channels, fulfillment centers, locations, shipping methods, and webhooks — plus sandbox-only simulation endpoints. Auth: Personal Access Token (Bearer), generated from Integrations &gt; API Tokens. The API host is per-connection config (Base URL): sandbox https://sandbox-api.shipbob.com or production https://api.shipbob.com — tokens are NOT interchangeable between environments. The operations that need a channel (order create/cancel, order estimate, batch shipment cancel, return create, and the legacy 1.0 writes) take a Channel ID action input that is sent as the shipbob_channel_id header; run the List Channels action and pick a channel whose scopes include _write entries.
 
 | | |
@@ -12,8 +14,6 @@ ShipBob fulfillment (3PL) connector covering the full 2026-01 API surface: order
 | **Category** | [E-commerce](README.md) |
 | **Website** | [shipbob.com](https://shipbob.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 81 |
-| **Events** | 24 |
 | **Slug** | `shipbob` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ShipBob from **Build → Integrations → Connectors** and connect an accoun
 | Cancel Warehouse Receiving Order | `cancelWarehouseReceivingOrder` | Cancels an existing warehouse receiving order (WRO). Only orders in certain statuses can be cancelled. This action cannot be reversed. |
 | Convert Variant To Bundle | `convertVariantToBundle` | Converts an existing product variant into a bundle product, defining which variants and quantities make up the bundle. This conversion is not reversible. The resulting bundle can later be removed with Delete Product Bundle. |
 | Create Order | `createOrder` | Creates a new order in ShipBob that is queued for fulfillment. Products can be identified either by their reference ID (SKU, recommended) or by their ShipBob product ID. Requires the shipbob_channel_id header, supplied as the Channel ID input. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Product | `createProduct` | Creates a new product with one or more variants. Requires a product name and at least one variant with a SKU that is unique across the catalog. Each variant created also mints an inventory item. |
 | Create Products Batch | `createProductsBatch` | Creates multiple products in a single request. Built on the legacy 1.0 namespace because the 2026-01 API has no bulk product create. The legacy API is channel-scoped, so the shipbob_channel_id header is required here and the call returns 403 without it — unlike the 2026-01 Create Product action, which needs no channel. Products created this way need their packaging preferences set manually per product in the ShipBob dashboard. |
 | Create Return Order | `createReturn` | Creates a new return order for a previously shipped order. Specify the fulfillment center that will process the return, the inventory items being returned, and the requested action for each item. Requires the shipbob_channel_id header, supplied as the Channel ID input. |
@@ -106,6 +113,8 @@ Add ShipBob from **Build → Integrations → Connectors** and connect an accoun
 | Update Shipment Line Items | `updateShipmentLineItems` | Updates the line items for a specific shipment. The request must include the complete list of line items as returned by List Shipment Line Items, since partial updates are not supported. Retrieve the current line items first, modify the desired fields, then submit the full payload. |
 | Update Shipment Tracking Upload Status (Legacy) | `updateShipmentLegacy` | Marks whether a shipment's tracking information has been uploaded to the external system the order originated from. Built on the legacy 1.0 namespace, which scopes shipments by channel: the shipbob_channel_id header is required and the call returns 404 without it. For most shipment mutations prefer the 2026-01 actions — Update Shipment Address, Update Shipment Line Items and Bulk Update Shipping Service — which supersede the rest of this legacy endpoint's behaviour. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -122,6 +131,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Return Updated | `return.updated` | Fires when a return is updated. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
 | Shipment Address Updated | `order.shipment.address.updated` | Fires when a shipment's destination address changes. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
 | Shipment Cancelled | `order.shipment.cancelled` | Fires when a shipment is cancelled. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
+
+<details>
+
+<summary>See 14 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Shipment Delivered | `order.shipment.delivered` | Fires on final delivery confirmation for a shipment. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
 | Shipment Exception | `order.shipment.exception` | Fires when a shipment moves into an exception state. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
 | Shipment Line Item Added | `order.shipment.line_item.added` | Fires when a line item is added to a shipment. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
@@ -136,3 +152,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | WRO Box Arrived | `wro.box.arrived` | Fires when a WRO box arrives at the fulfilment centre. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
 | WRO Box Scanned | `wro.box.scanned` | Fires when a WRO box is scanned. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
 | WRO Box Stowed | `wro.box.stowed` | Fires when a WRO box is stowed into inventory. ShipBob does not publish per-topic payload schemas; the documented way to obtain one is to create a webhook in the ShipBob Dashboard and use 'Send example'. The schema here models the Standard Webhooks envelope plus the identifiers this topic carries — confirm the full body against a real delivery before mapping deeply. |
+
+</details>

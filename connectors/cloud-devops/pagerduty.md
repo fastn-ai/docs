@@ -5,6 +5,8 @@ hidden: true
 
 # PagerDuty
 
+<img src="../../.gitbook/assets/connectors/pagerduty.png" alt="PagerDuty logo" width="64">
+
 PagerDuty is an incident response and digital operations platform. This connector covers the PagerDuty REST API v2 (incidents, services, escalation policies, schedules, users, teams, extensions, add-ons, log entries, maintenance windows, event orchestrations, business services, analytics, tags, rulesets, and webhook subscription management) plus the Events API v2 for triggering and enqueuing alert and change events.
 
 | | |
@@ -12,8 +14,6 @@ PagerDuty is an incident response and digital operations platform. This connecto
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [pagerduty.com](https://pagerduty.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 90 |
-| **Events** | 0 |
 | **Slug** | `pagerduty` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PagerDuty from **Build → Integrations → Connectors** and connect an acco
 | Create Maintenance Window | `createMaintenanceWindow` | Creates a maintenance window that suppresses notifications for a service. |
 | Create Ruleset | `createRuleset` | Creates a new global event ruleset. |
 | Create Schedule | `createSchedule` | Creates a new on-call schedule with a single layer and one user. |
+
+<details>
+
+<summary>See 80 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Schedule Override | `createScheduleOverride` | Creates a temporary schedule override. |
 | Create Service | `createService` | Creates a new service. |
 | Create Tag | `createTag` | Creates a new tag. |
@@ -114,3 +121,5 @@ Add PagerDuty from **Build → Integrations → Connectors** and connect an acco
 | Update Team | `updateTeam` | Updates an existing team. |
 | Update User | `updateUser` | Updates an existing user. |
 | Update Webhook Subscription | `updateWebhookSubscription` | Updates a webhook subscription. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Clockify
 
+<img src="../../.gitbook/assets/connectors/clockify.png" alt="Clockify logo" width="64">
+
 Clockify time-tracking integration. Manage workspaces, users, user groups, projects, tasks, clients, tags, and time entries; run detailed, summary, and weekly reports; and manage webhooks for real-time event notifications.
 
 | | |
@@ -12,8 +14,6 @@ Clockify time-tracking integration. Manage workspaces, users, user groups, proje
 | **Category** | [Productivity](README.md) |
 | **Website** | [clockify.me](https://clockify.me) |
 | **Authentication** | API key |
-| **Actions** | 74 |
-| **Events** | 0 |
 | **Slug** | `clockify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Clockify from **Build → Integrations → Connectors** and connect an accou
 | Create Tag | `createTag` | Create a new tag on the workspace. |
 | Create Task | `createTask` | Create a new task on a project. |
 | Create Time Entry | `createTimeEntry` | Create a new time entry on the workspace for the authenticated user. Provide only start to begin a running timer, or both start and end for a completed entry. |
+
+<details>
+
+<summary>See 64 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create User Group | `createUserGroup` | Create a new user group on the workspace. |
 | Create Webhook | `createWebhook` | Create a webhook that sends real-time notifications to a URL when a subscribed event occurs. |
 | Delete Client | `deleteClient` | Delete a client from the workspace. |
@@ -98,3 +105,5 @@ Add Clockify from **Build → Integrations → Connectors** and connect an accou
 | Update User Hourly Rate | `updateUserHourlyRate` | Set the billable hourly rate for a user on a workspace. Requires a paid plan. |
 | Update Webhook | `updateWebhook` | Update an existing webhook's name, URL, or subscribed event. |
 | Update Workspace User Status | `updateWorkspaceUserStatus` | Activate or deactivate a user on the workspace. |
+
+</details>

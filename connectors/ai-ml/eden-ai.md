@@ -5,6 +5,8 @@ hidden: true
 
 # Eden AI
 
+<img src="../../.gitbook/assets/connectors/eden-ai.png" alt="Eden AI logo" width="64">
+
 Eden AI is a unified AI gateway giving access to 500+ models from 50+ providers through one API. This connector covers the full Eden AI v3 API: OpenAI-compatible chat completions, responses, embeddings, moderation, Anthropic messages, image generation and editing, audio transcription and speech, video generation, the Universal AI expert-model endpoint (text analysis, web scraping and search, OCR and document parsing, image analysis, translation, text-to-speech) with typed actions per feature, asynchronous jobs, collections, file uploads, model and feature catalogs, and the organization Management API (API keys, management keys, members, groups and usage).
 
 | | |
@@ -12,8 +14,6 @@ Eden AI is a unified AI gateway giving access to 500+ models from 50+ providers 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [edenai.co](https://edenai.co) |
 | **Authentication** | Bearer token |
-| **Actions** | 95 |
-| **Events** | 1 |
 | **Slug** | `edenAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Eden AI from **Build → Integrations → Connectors** and connect an accoun
 | Crawl Website | `crawlWebsite` | Starts an asynchronous crawl of a website and its linked pages; returns a job id to poll with Get Async Job. Runs the web/crawl_async expert-model feature; consumes AI credit according to the chosen provider's pricing. |
 | Create Anthropic Message | `createAnthropicMessage` | Creates a message using the Anthropic Messages API shape (native pass-through), with provider routing and fallbacks. Consumes AI credit. |
 | Create API Key | `createApiKey` | Creates a new API key for the organization, optionally attributed to a member and with spending controls. The secret is returned only once. Requires a Management Key connection (manage:write). |
+
+<details>
+
+<summary>See 85 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Async Job | `createAsyncJob` | Creates an asynchronous expert-model job (speech-to-text, multipage OCR, table extraction, web crawl, batch scrape, structured extraction, deep research, video generation, video deepfake detection). Returns a job id to poll with Get Async Job; optionally notifies a webhook URL on completion. Typed per-feature actions are also available. |
 | Create Audio Transcription | `createAudioTranscription` | Transcribes audio referenced by an upload file id or URL into text using an OpenAI-compatible speech-to-text model. Consumes AI credit. |
 | Create Chat Completion | `createChatCompletion` | Creates an OpenAI-compatible chat completion with any of the 500+ LLMs available through Eden AI, with provider routing, fallbacks, tools, structured output and prompt caching. Consumes AI credit. |
@@ -119,6 +126,8 @@ Add Eden AI from **Build → Integrations → Connectors** and connect an accoun
 | Translate Text | `translateText` | Translates text into a target language. Runs the translation/automatic_translation expert-model feature; consumes AI credit according to the chosen provider's pricing. |
 | Update API Key | `updateApiKey` | Updates the display name and spending controls of an API key; only the fields you send are changed. The environment (token_type) cannot be changed. Requires a Management Key connection (manage:write). |
 | Upload File | `uploadFile` | Uploads a file (multipart form-data) for persistent storage of up to 30 days and returns a file id usable in expert-model, image edit, transcription and collection calls. |
+
+</details>
 
 ## Events
 

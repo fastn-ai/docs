@@ -5,6 +5,8 @@ hidden: true
 
 # Splunk
 
+<img src="../../.gitbook/assets/connectors/splunk.png" alt="Splunk logo" width="64">
+
 Splunk Enterprise / Splunk Cloud REST API connector. Manage search jobs, saved searches, indexes, data inputs, KV store collections, apps, users, roles, alerts, server info, and send events via HTTP Event Collector (HEC). Auth via Bearer token against the management port (8089); HEC uses port 8088.
 
 | | |
@@ -12,8 +14,6 @@ Splunk Enterprise / Splunk Cloud REST API connector. Manage search jobs, saved s
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [splunk.com](https://splunk.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 60 |
-| **Events** | 0 |
 | **Slug** | `splunk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Splunk from **Build → Integrations → Connectors** and connect an account
 | Create Saved Search | `createSavedSearch` | Create a new saved search. POST saved/searches with name and search string. |
 | Create Search Job | `createSearchJob` | Create a new search job. POST search/jobs with a search string (SPL). Returns the search job ID (sid). |
 | Create User | `createUser` | Create a new user. POST authentication/users with name, password, and roles. |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete All KV Store Data | `deleteAllKvData` | Delete all records in a KV store collection. DELETE storage/collections/data/{collection}. |
 | Delete App | `deleteApp` | Uninstall/delete an app by name. DELETE apps/local/{name}. |
 | Delete Index | `deleteIndex` | Delete a data index by name. DELETE data/indexes/{name}. |
@@ -84,3 +91,5 @@ Add Splunk from **Build → Integrations → Connectors** and connect an account
 | Update Role | `updateRole` | Update an authorization role. POST authorization/roles/{name}. |
 | Update Saved Search | `updateSavedSearch` | Update an existing saved search. POST saved/searches/{name} with fields to change (name cannot be changed). |
 | Update User | `updateUser` | Update an existing user. POST authentication/users/{name}. |
+
+</details>

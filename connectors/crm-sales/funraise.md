@@ -12,8 +12,6 @@ Funraise is a nonprofit fundraising platform with a built-in donor CRM: donation
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [funraise.io](https://funraise.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 85 |
-| **Events** | 1 |
 | **Slug** | `funraise` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Funraise from **Build → Integrations → Connectors** and connect an accou
 | Create Donation | `createDonation` | Record a new donation (transaction) against an existing supporter. amount, donationDate, donorId and paymentMethod are required. Use offline=true plus paymentMethod cash/check for gifts taken outside Funraise, and recurring/recurringSequence to attach the gift to a subscription. Returns the created donation. |
 | Create Household | `createHousehold` | Create a household - the grouping Funraise uses for supporters who share an address or a giving history. name, primaryContact, salutation and transactionReconciliation are required. Returns the created household. |
 | Create Household Note | `createHouseholdNote` | Attach a note to a household. title, body and important are all required by Funraise. Returns the created note. |
+
+<details>
+
+<summary>See 75 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Interaction | `createInteraction` | Log an interaction (a call, meeting or touchpoint) against a supporter. Every field is optional in the Funraise schema; supply donorId and subject at minimum. Returns the created interaction. |
 | Create Subscription | `createSubscription` | Create a recurring giving subscription for an existing supporter using one of that supporter's stored payment methods. frequency, sourceAmount, supporter and paymentMethod are required. Returns the created subscription. |
 | Create Supporter | `createSupporter` | Create a supporter (donor) record. Every field is optional in the Funraise schema; supply at least a name or an email. Institution supporters are created by setting institutionName and institutionCategory. Returns the created supporter. |
@@ -109,6 +114,8 @@ Add Funraise from **Build → Integrations → Connectors** and connect an accou
 | Update Supporter | `updateSupporter` | Partially update a supporter (donor). Only the fields you supply are sent, so untouched fields keep their value. Returns the updated supporter. |
 | Update Supporter Relationship | `updateSupporterRelationship` | Replace a supporter relationship. parentId, childId and relationship are all required - this is a full replacement, not a patch. Returns the updated relationship. |
 | Update Task | `updateTask` | Update an existing task. Only the fields you supply are sent. Returns the updated task. |
+
+</details>
 
 ## Events
 

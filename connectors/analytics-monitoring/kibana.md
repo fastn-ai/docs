@@ -5,6 +5,8 @@ hidden: true
 
 # Kibana
 
+<img src="../../.gitbook/assets/connectors/kibana.png" alt="Kibana logo" width="64">
+
 Kibana is the management and visualization layer for the Elastic Stack. This connector covers the Kibana REST API on Elastic Cloud: spaces, data views and their fields and runtime fields, saved objects, dashboards, alerting rules and rule types with enable/disable/mute/snooze, action connectors and connector types (including webhook connectors used to deliver alerts), maintenance windows, Fleet agent policies, package policies, agents, enrollment keys, outputs, proxies, server hosts and integration packages, Logstash pipelines, streams, security roles, task manager health, Kibana features and status. Authenticates with an Elasticsearch API key sent as 'Authorization: ApiKey &lt;key&gt;' plus the mandatory kbn-xsrf header.
 
 | | |
@@ -12,8 +14,6 @@ Kibana is the management and visualization layer for the Elastic Stack. This con
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [elastic.co](https://elastic.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 391 |
-| **Events** | 2 |
 | **Slug** | `kibana` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Kibana from **Build → Integrations → Connectors** and connect an account
 | Bulk Delete Workflows | `deleteWorkflows` | Delete up to 1000 workflows by id in one request. By default they are soft-deleted; set force to true to remove them permanently. |
 | Bulk Get Agent Policies | `postFleetAgentPoliciesBulkGet` | Get several agent policies by id in one request. Requires the fleet-agent-policies-read, fleet-agents-read or fleet-setup privilege. |
 | Bulk Get Package Assets | `postFleetEpmBulkAssets` | Retrieve several Kibana saved-object assets belonging to integration packages by ID and type. Required privileges: integrations-read, fleet-setup or fleet-all. |
+
+<details>
+
+<summary>See 381 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Get Package Policies | `postFleetPackagePoliciesBulkGet` | Get several Fleet package policies by ID in one request. |
 | Bulk Install Packages | `postFleetEpmPackagesBulk` | Install several integration packages from the Elastic Package Registry in one request. Required privileges: integrations-all and fleet-agent-policies-all. |
 | Bulk Reassign Agents | `postFleetAgentsBulkReassign` | Reassign multiple Elastic Agents to a different Fleet agent policy. Required privilege: fleet-agents-all. |
@@ -415,6 +422,8 @@ Add Kibana from **Build → Integrations → Connectors** and connect an account
 | Upsert a Markdown Library Item | `putMarkdownsId` | Replace the full state of a markdown library item, or create it at the given ID. Partial updates are not supported. |
 | Upsert a Tag | `putTagsId` | Update a Kibana saved-object tag, or create it at the given ID when it does not exist. |
 | Upsert a Visualization | `upsertVisualization` | Replace the full state of a saved visualization, or create it at the given ID. Partial updates are not supported. |
+
+</details>
 
 ## Events
 

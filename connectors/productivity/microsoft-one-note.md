@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft OneNote
 
+<img src="../../.gitbook/assets/connectors/microsoft-one-note.svg" alt="Microsoft OneNote logo" width="64">
+
 Microsoft OneNote via Microsoft Graph v1.0. Covers the signed-in user's notebooks, section groups, sections and pages, page HTML content read and patch, asynchronous copy operations for notebooks, sections and pages, notebook lookup by web URL, recently opened notebooks, and long-running operation status. All actions target the signed-in user's own OneNote content (the /me root); group-owned and SharePoint site-hosted notebooks are not covered.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft OneNote via Microsoft Graph v1.0. Covers the signed-in user's notebook
 | **Category** | [Productivity](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 30 |
-| **Events** | 0 |
 | **Slug** | `microsoftOneNote` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft OneNote from **Build → Integrations → Connectors** and connect
 | Create Notebook Section Group | `createNotebookSectionGroup` | Create a new section group inside a OneNote notebook. Section group names must be unique within the same level and are limited to 50 characters. |
 | Create Page | `createPage` | Create a OneNote page in the signed-in user's default section by posting its HTML. The title comes from the title element in the HTML head. Binary images and file attachments require a multipart request and are not supported by this action. |
 | Create Section Group Section | `createSectionGroupSection` | Create a new section inside a OneNote section group. Section names must be unique within the same level and are limited to 50 characters. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Section Page | `createSectionPage` | Create a OneNote page in a specific section by posting its HTML. The title comes from the title element in the HTML head. Binary images and file attachments require a multipart request and are not supported by this action. |
 | Delete Page | `deletePage` | Delete a OneNote page belonging to the signed-in user. |
 | Get Notebook | `getNotebook` | Retrieve the properties of a single OneNote notebook belonging to the signed-in user. |
@@ -54,3 +61,5 @@ Add Microsoft OneNote from **Build → Integrations → Connectors** and connect
 | List Section Pages | `listSectionPages` | Retrieve the pages held in a specific OneNote section belonging to the signed-in user. |
 | List Sections | `listSections` | Retrieve every OneNote section the signed-in user has access to, across all of their notebooks. |
 | Update Page Content | `updatePageContent` | Change the HTML content of a OneNote page by applying a list of patch commands. Each command names a target element, an action such as append, insert or replace, and the HTML to apply. Use Get Page Content with Include IDs to discover the target identifiers. |
+
+</details>

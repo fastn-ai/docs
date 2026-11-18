@@ -5,6 +5,8 @@ hidden: true
 
 # Vimeo
 
+<img src="../../.gitbook/assets/connectors/vimeo.png" alt="Vimeo logo" width="64">
+
 Vimeo video platform API. OAuth 2.0 (authorization_code). Manage videos, albums/showcases, channels, groups, portfolios, users, and interactions on api.vimeo.com.
 
 | | |
@@ -12,8 +14,6 @@ Vimeo video platform API. OAuth 2.0 (authorization_code). Manage videos, albums/
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [vimeo.com](https://vimeo.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 115 |
-| **Events** | 0 |
 | **Slug** | `vimeo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Vimeo from **Build → Integrations → Connectors** and connect an account,
 | Add Video To Group | `addVideoToGroup` | Add a video to a group on Vimeo. |
 | Add Video To Portfolio | `addVideoToPortfolio` | Add a video to a portfolio owned by the authenticated Vimeo user. Needs a paid Vimeo plan (Vimeo help: portfolios need Standard/Pro or higher) and an existing portfolio made in the Vimeo web interface; the API cannot create one. |
 | Add Video To Showcase | `addVideoToShowcase` | Add a video to a showcase (album) owned by the authenticated user. |
+
+<details>
+
+<summary>See 105 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check If Following User | `checkUserFollowing` | Check whether the authenticated Vimeo user follows a specific user. Returns 204 if following, 404 if not. |
 | Check If Video Liked | `checkVideoLiked` | Check whether the authenticated user has liked a specific video. Returns 204 if liked, 404 otherwise. |
 | Check Video In My Library | `checkVideoInLibrary` | Check whether a specific video belongs to or appears in the authenticated user's library. Returns the video if present, 404 otherwise. |
@@ -139,3 +146,5 @@ Add Vimeo from **Build → Integrations → Connectors** and connect an account,
 | Set Video Thumbnail Active | `setVideoThumbnail` | Update a video thumbnail, typically to make it the active thumbnail for the video. |
 | Unfollow User | `unfollowUser` | Make the authenticated Vimeo user stop following another user by their numeric user ID. |
 | Unlike Video | `unlikeVideo` | Remove a video from the authenticated user's likes. |
+
+</details>

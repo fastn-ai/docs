@@ -5,6 +5,8 @@ hidden: true
 
 # Azure DevOps
 
+<img src="../../.gitbook/assets/connectors/azure-dev-ops.png" alt="Azure DevOps logo" width="64">
+
 Azure DevOps — accounts and profile, projects, Git repositories, branches/refs, repository items (content) and commit changes, via the Azure DevOps REST API (dev.azure.com and app.vssps.visualstudio.com).
 
 | | |
@@ -12,8 +14,6 @@ Azure DevOps — accounts and profile, projects, Git repositories, branches/refs
 | **Category** | [Project management](README.md) |
 | **Website** | [dev.azure.com](https://dev.azure.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 84 |
-| **Events** | 0 |
 | **Slug** | `azureDevOps` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure DevOps from **Build → Integrations → Connectors** and connect an a
 | Delete Service Hook Subscription | `deleteServiceHookSubscription` | Deletes a service hook subscription by its id, stopping further event deliveries. |
 | Delete Work Item | `deleteWorkItem` | Deletes a work item, sending it to the project recycle bin. Set Destroy to true to remove it permanently, which cannot be undone. |
 | Get Blob | `getBlob` | Retrieves the metadata of a Git blob (file object) by its SHA-1 object id. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Build | `getBuild` | Retrieves a single build by its numeric build id. |
 | Get Build Definition | `getBuildDefinition` | Retrieves a single build definition by its numeric definition id. |
 | Get Build Timeline | `getBuildTimeline` | Retrieves the timeline of a build, listing every stage, job and task with its state and result. |
@@ -108,3 +115,5 @@ Add Azure DevOps from **Build → Integrations → Connectors** and connect an a
 | Update Refs | `updateRefs` | Creates, updates or deletes a Git ref such as a branch. To create a branch set Old Object ID to forty zeros; to delete one set New Object ID to forty zeros. |
 | Update Repository | `updateRepository` | Renames a Git repository or changes its default branch. |
 | Update Work Item | `updateWorkItem` | Replaces the value of a single field on a work item, identified by its field reference name such as System.Title or System.State. |
+
+</details>

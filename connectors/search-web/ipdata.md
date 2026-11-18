@@ -5,6 +5,8 @@ hidden: true
 
 # ipdata
 
+<img src="../../.gitbook/assets/connectors/ipdata.png" alt="ipdata logo" width="64">
+
 ipdata is an IP geolocation and threat intelligence API. This connector covers the full ipdata REST API: IP address lookups, caller IP lookups, ASN lookups, per-field lookups for the geolocation, ASN, carrier, company, currency, time zone, language and threat objects, and bulk lookups, against either the global or the EU data-residency endpoint.
 
 | | |
@@ -12,8 +14,6 @@ ipdata is an IP geolocation and threat intelligence API. This connector covers t
 | **Category** | [Search and web](README.md) |
 | **Website** | [ipdata.co](https://ipdata.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `ipdata` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add ipdata from **Build → Integrations → Connectors** and connect an account
 | Get IP Threat Intelligence | `getIpThreat` | Returns only the threat intelligence object for an IP address, flagging Tor exit nodes, proxies, iCloud Private Relay, datacenter addresses, known attackers and abusers, and listing the blocklists the address appears on. |
 | Get IP Time Zone | `getIpTimeZone` | Returns only the time zone object for an IP address, including the tz database name, abbreviation, UTC offset, current daylight saving state and the current local time. |
 | Look Up Autonomous System | `lookupAutonomousSystem` | Returns the full record for an autonomous system by AS number, including the operating organization, its announced IPv4 and IPv6 prefixes, total address count, registry, allocation date, and its upstream, downstream and peer AS numbers. This endpoint does not support field filtering. |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Look Up Caller IP Address | `lookupCallerIpAddress` | Returns the full ipdata record for the IP address the request originates from, without needing to supply an address. Use the fields parameter to return only selected top-level fields. |
 | Look Up IP Address | `lookupIpAddress` | Returns the full ipdata record for a single IPv4 or IPv6 address, including geolocation, autonomous system, currency, languages, time zone, carrier and threat intelligence. Use the fields parameter to return only selected top-level fields. |
+
+</details>

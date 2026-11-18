@@ -5,6 +5,8 @@ hidden: true
 
 # Pointagram
 
+<img src="../../.gitbook/assets/connectors/pointagram.png" alt="Pointagram logo" width="64">
+
 Pointagram sales gamification platform. Manage players, teams, score series and point scoring, read competitions and leaderboards, and operate the reward store (items, settings, purchases) through the Pointagram Custom API 2.0.
 
 | | |
@@ -12,8 +14,6 @@ Pointagram sales gamification platform. Manage players, teams, score series and 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [pointagram.com](https://pointagram.com) |
 | **Authentication** | API key |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `pointagram` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pointagram from **Build → Integrations → Connectors** and connect an acc
 | Get Player | `getPlayer` | Fetches a single player from Pointagram by profile id. Returns the player's id, name, email address, external id, admin flag and avatar. An unknown id returns HTTP 200 with message 'Player not found' and data false. |
 | Get Reward Store Item | `getRewardStoreItem` | Fetches one item from the Pointagram reward store by item id, as seen by the given profile. Returns the item's name, description, price, currency, stock, publish phase, availability dates, tags and image URL. |
 | Get Reward Store Settings | `getRewardStoreSettings` | Fetches the settings of the Pointagram reward store visible to a given profile: store id and name, whether it is active, whether the caller may edit it, the caller's currency balances and their order count. Requires profileid. Returns HTTP 200 with status Error and message 'Store not found' when the organization has no reward store configured. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Score Series | `getScoreSeries` | Fetches one Pointagram score series by id and returns its name, singular and plural point names and icon. An unknown id returns HTTP 200 with message 'Scoreseries not found' and data null. |
 | Get Team | `getTeam` | Fetches a single Pointagram team by id and returns its id, name, icon and icon URL. An unknown id returns HTTP 200 with message 'Team not found' and data false. |
 | List Competition Players | `listCompetitionPlayers` | Fetches the leaderboard of a Pointagram competition: every participating player with their profile id, name, individual target, current score, rank and whether the rank is locked. |
@@ -52,3 +59,5 @@ Add Pointagram from **Build → Integrations → Connectors** and connect an acc
 | Update Player | `updatePlayer` | Updates an existing Pointagram player identified by profile id. Supply only the attributes you want to change. Returns the profile_id of the updated player. |
 | Update Reward Store Purchase Status | `updateRewardStorePurchaseStatus` | Changes the delivery status of a Pointagram reward store order to PURCHASED, PROCESSED or DELIVERED. The calling profile must have admin rights in Pointagram. |
 | Update Team | `updateTeam` | Updates an existing Pointagram team identified by team id. Supply the attributes you want to change. Returns the team_id of the updated team. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # TRIGGERcmd
 
+<img src="../../.gitbook/assets/connectors/triggercmd.png" alt="TRIGGERcmd logo" width="64">
+
 TRIGGERcmd is a cloud service that securely runs commands on your registered computers. This connector wraps the TRIGGERcmd REST API at https://www.triggercmd.com/api: computers, commands, panels and panel buttons, command triggering (run/trigger, run/triggerSave, panel/trigger), and account authentication. WARNING: the trigger actions execute real commands on real machines - use them deliberately.
 
 | | |
@@ -12,8 +14,6 @@ TRIGGERcmd is a cloud service that securely runs commands on your registered com
 | **Category** | [Developer tools](README.md) |
 | **Website** | [triggercmd.com](https://triggercmd.com) |
 | **Authentication** | Bearer token, No authentication, OAuth 2.0 |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `triggercmd` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TRIGGERcmd from **Build → Integrations → Connectors** and connect an acc
 | List Commands | `listCommands` | List every command defined across the computers on your TRIGGERcmd account. Optionally filter by command name with the 'name' query parameter. Returns a records array (each with the command id, name, voice trigger phrase, owning computer and allowParams flag) plus queryRecordCount. Read-only: listing a command does not run it. |
 | List Computers | `listComputers` | List the computers registered on your TRIGGERcmd account. Optionally filter by computer name with the 'name' query parameter. Returns a records array of computer objects (id, name, computerIdentifier, online status, etc.) plus queryRecordCount. Read-only and safe: it runs nothing on any machine. |
 | List Panel Buttons | `listPanelButtons` | List the panel buttons on your TRIGGERcmd account. Each button belongs to a panel and points at a command on a computer. Optionally filter by button name with the 'name' query parameter. Returns records, queryRecordCount, totalRecordCount and perPage. Read-only: listing a button does not press it. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Panels | `listPanels` | List the panels on your TRIGGERcmd account. A panel is a saved board of buttons, each button bound to a command. Optionally filter by panel name with the 'name' query parameter. Returns records, queryRecordCount, totalRecordCount and perPage. Read-only. |
 | List Public Panel Buttons | `listPublicPanelButtons` | List the buttons on a TRIGGERcmd public panel. Takes the public panel identifier from the panel's shared link (not the panel's internal 24-character id, which TRIGGERcmd re-encodes and rejects). Returns records, queryRecordCount, totalRecordCount and perPage; a panel identifier TRIGGERcmd cannot resolve comes back as 200 with an 'error' field such as 'No panel with ID: ...' or 'Bad panel param', so check that field before using the records. Read-only. |
 | Look Up Pair Token | `lookupPairToken` | Poll a pairing attempt started by Get Pair Code. Pass the pairToken it returned. While the user has not yet typed the pair code, returns 200 {"message":"No user authorized that pair code yet."}; once they have, it returns that account's API token. An expired or wrong pairToken returns 401 {"err":"Invalid Token!"}. This action deliberately uses the No Auth method: TRIGGERcmd's /pair/lookup handler returns 502 when any Authorization header is present, so the pairToken must travel only in the query string. SECURITY: on success the response carries a TRIGGERcmd account credential - do not log or forward it. |
@@ -47,3 +54,5 @@ Add TRIGGERcmd from **Build → Integrations → Connectors** and connect an acc
 | Trigger Panel Button | `triggerPanelButton` | DANGER - THIS EXECUTES A REAL COMMAND ON A REAL MACHINE. Presses a button on one of your panels, which runs the command that button is bound to. Both panel and button are names. Omitting either returns 404 {"message":"Both button and panel must be specified."}. |
 | Trigger Public Panel Button | `triggerPublicPanelButton` | DANGER - THIS EXECUTES A REAL COMMAND ON A REAL MACHINE. Presses a button on a TRIGGERcmd public panel, which runs the command that button is bound to on the panel owner's computer. Omitting either value returns 404 {"error":"Both button and panel must be specified."}. |
 | Update Command | `updateCommand` | Update an existing command by id - change its name, command line, voice trigger or parameter settings. Returns the updated record. An unknown id returns 404 {"err":"No Record found."}. Updating a command does not run it. |
+
+</details>

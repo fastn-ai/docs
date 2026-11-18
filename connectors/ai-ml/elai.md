@@ -5,6 +5,8 @@ hidden: true
 
 # Elai
 
+<img src="../../.gitbook/assets/connectors/elai.png" alt="Elai logo" width="64">
+
 Elai is an AI video generation platform that turns text, presentations and outlines into avatar-presented videos. This connector covers the complete Elai public API v1 at https://apis.elai.io/api/v1: videos (create, list, retrieve, update, delete, copy, translate, render, personalized batch rendering, text/HTML/URL and PPTX import, player payload, exports, SCORM packages, brand kits, edit history), story tools, outlines and LLM speech generation, quizzes, avatars, voices and voice previews, custom voices and voice customizations, media library uploads and folders, slide templates, live avatar streams, users, SSO, workspace API configuration and webhooks. Video rendering consumes plan minutes.
 
 | | |
@@ -12,8 +14,6 @@ Elai is an AI video generation platform that turns text, presentations and outli
 | **Category** | [AI and ML](README.md) |
 | **Website** | [elai.io](https://elai.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 97 |
-| **Events** | 2 |
 | **Slug** | `elai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Elai from **Build → Integrations → Connectors** and connect an account, 
 | Close Stream | `closeStream` | Close a live-avatar stream, release its GPU host and finalise the minutes charge. Closing an unknown id returns 200; closing an already-closed stream is an error. |
 | Confirm Upload | `confirmUpload` | Confirm that a file was uploaded to a signed URL (or supply the file inline as base64) and register it as a media-library asset, optionally filed into a folder or registered as an avatar frame, logo, brand-kit asset, hidden asset or screen recording. |
 | Copy Video | `copyVideo` | Duplicate a video or template, optionally into a folder, or turn a video into a template (and vice versa) with createTemplate. |
+
+<details>
+
+<summary>See 87 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Copy Video By Template (Legacy) | `copyVideoByTemplate` | Deprecated legacy alias of Copy Video (the same handler is mounted at /videos/byTemplate). Kept for older integrations; use Copy Video in new work. |
 | Create Outline | `createOutline` | Create an outline either from a topic prompt (8-400 characters) or from an existing video; send exactly one of prompt or videoId. Returns the new outline id. Counts against the account's video creation limit. |
 | Create SSO Integration | `createSsoIntegration` | Create the workspace's single SSO integration (Enterprise plans only; a second create returns 409). The protocol-specific config is validated per provider and the redirect URL must be a secure URL on an allowed host. Returns the generated 16-character integrationId used in SSO login URLs. |
@@ -121,6 +128,8 @@ Add Elai from **Build → Integrations → Connectors** and connect an account, 
 | Update Voice Customization | `updateVoiceCustomization` | Rename a voice customization and/or replace its settings. At least one of name or settings is required; settings is replaced wholesale, so send all four values. |
 | Upload Custom Voice For Slide | `uploadCustomVoice` | Upload an MP3 file as the voice-over of a specific slide (multipart part named file). Rate limited to 20 requests per minute and 200 per hour. |
 | Upload Music Track | `uploadMusicTrack` | Upload an audio file (multipart part named file) as a background-music asset for a video. Non-MP3 input is transcoded to MP3; a file whose name already exists in the workspace overwrites that asset's record. |
+
+</details>
 
 ## Events
 

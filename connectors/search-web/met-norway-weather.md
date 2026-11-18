@@ -5,6 +5,8 @@ hidden: true
 
 # MET Norway Weather API
 
+<img src="../../.gitbook/assets/connectors/met-norway-weather.jpg" alt="MET Norway Weather API logo" width="64">
+
 The Norwegian Meteorological Institute's free Weather API (api.met.no, the data behind Yr): global location forecasts, Nordic nowcasts, ocean and subseasonal forecasts, sunrise/sunset and moon times, MetAlerts weather warnings, air quality forecasts, text forecasts and tidal water. No API key needed (identify with a User-Agent).
 
 | | |
@@ -12,8 +14,6 @@ The Norwegian Meteorological Institute's free Weather API (api.met.no, the data 
 | **Category** | [Search and web](README.md) |
 | **Website** | [met.no](https://met.no) |
 | **Authentication** | No authentication |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `metNorwayWeather` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MET Norway Weather API from **Build → Integrations → Connectors** and co
 | Get Location Forecast (Classic XML) | `getLocationForecastClassic` | Weather forecasts for any location on earth. Docs: https://api.met.no/weatherapi/locationforecast/2.0/documentation (GET /classic) |
 | Get Location Forecast (Compact) | `getLocationForecastCompact` | Weather forecasts for any location on earth. Docs: https://api.met.no/weatherapi/locationforecast/2.0/documentation (GET /compact) |
 | Get Location Forecast (Complete) | `getLocationForecastComplete` | Weather forecasts for any location on earth. Docs: https://api.met.no/weatherapi/locationforecast/2.0/documentation (GET /complete) |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Location Forecast Status | `getLocationForecastStatus` | Weather forecasts for any location on earth. Docs: https://api.met.no/weatherapi/locationforecast/2.0/documentation (GET /status) |
 | Get Moonrise and Moonset | `getMoonEvents` | Calculate sun or moon events, as seen from a specific location on Earth. Docs: https://api.met.no/weatherapi/sunrise/3.0/documentation (GET /moon) |
 | Get Nowcast | `getNowcast` | Immediate weather forecast for specified locations in the Nordic area. Docs: https://api.met.no/weatherapi/nowcast/2.0/documentation (GET /complete) |
@@ -53,3 +60,5 @@ Add MET Norway Weather API from **Build → Integrations → Connectors** and co
 | List Air Quality Stations | `listAirQualityStations` | Something goes here. Docs: https://api.met.no/weatherapi/airqualityforecast/0.1/documentation (GET /stations) |
 | List Available Text Forecasts | `listTextForecasts` | List available resources as XML, RSS or JSON. Docs: https://api.met.no/weatherapi/textforecast/3.0/documentation (GET /available.{format}) |
 | List Tidal Water Forecasts | `listTidalWaterHarbors` | List available resources as XML, RSS or JSON. Docs: https://api.met.no/weatherapi/tidalwater/1.1/documentation (GET /available.{format}) |
+
+</details>

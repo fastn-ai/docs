@@ -5,6 +5,8 @@ hidden: true
 
 # WhatConverts
 
+<img src="../../.gitbook/assets/connectors/what-converts.png" alt="WhatConverts logo" width="64">
+
 WhatConverts lead tracking and call tracking. Read, create and update leads across every lead type (phone calls, web forms, chats, text messages, transactions, custom events, emails, appointments) with full marketing attribution, qualify and value them (quotable, quote_value, sales_value), and manage the agency hierarchy: accounts, profiles, users, roles, tracking phone numbers and tracked web forms. Wraps the REST API at https://app.whatconverts.com/api/v1 using HTTP Basic auth with an API token and secret.
 
 | | |
@@ -12,8 +14,6 @@ WhatConverts lead tracking and call tracking. Read, create and update leads acro
 | **Category** | [Marketing](README.md) |
 | **Website** | [whatconverts.com](https://whatconverts.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 26 |
-| **Events** | 8 |
 | **Slug** | `whatConverts` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WhatConverts from **Build → Integrations → Connectors** and connect an a
 | Delete Web Form | `deleteWebForm` | Stop tracking a web form. Existing leads captured from it are kept; future submissions are no longer recorded. |
 | Get Account | `getAccount` | Retrieve a single account and its profiles by account_id. Requires an Agency (master account) API key. |
 | Get Account Info | `getAccountInfo` | Identify which WhatConverts account and profile this connection's API key belongs to. Takes no input: it reads the single most recent lead and returns its account_id, account, profile_id and profile. Used as the account-mapping action for webhook (app event) triggers, and as a cheap connection health check. Returns an empty leads array if the profile has never captured a lead. |
+
+<details>
+
+<summary>See 16 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Call Recording | `getRecording` | Download the call recording for a phone call lead. The response body is a raw MP3 file, not JSON, so fastn's HTTP executor may fail on it with a body-already-read error; for audio prefer the absolute recording / play_recording / voicemail / play_voicemail URLs already returned on the lead object by Get Lead. |
 | Get Lead | `getLead` | Retrieve a single lead by its lead_id, including attribution, contact details, call recording links and transcriptions, form submissions and custom fields. |
 | Get Profile | `getProfile` | Retrieve a single profile inside an account. Requires an Agency (master account) API key. |
@@ -50,6 +57,8 @@ Add WhatConverts from **Build → Integrations → Connectors** and connect an a
 | Update Lead | `updateLead` | Edit an existing lead: qualify it (quotable), attach quote and sales values, correct the lead URL, or write additional/custom fields. Only the fields you supply are changed. This is the endpoint behind "qualify" and "value" a lead in the WhatConverts Lead Manager. |
 | Update Profile | `updateProfile` | Rename an existing profile. Requires an Agency (master account) API key. |
 | Update User | `updateUser` | Edit an existing dashboard user: change their master-account role, their default notifications, or their per-account access. Same path as Create User - the presence of user_id in the body is what makes it an edit. Set an entry's role_id to false in the accounts array to revoke access to that account. Requires an Agency (master account) API key. |
+
+</details>
 
 ## Events
 

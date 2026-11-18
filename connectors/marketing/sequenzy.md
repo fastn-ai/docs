@@ -5,6 +5,8 @@ hidden: true
 
 # Sequenzy
 
+<img src="../../.gitbook/assets/connectors/sequenzy.jpg" alt="Sequenzy logo" width="64">
+
 Sequenzy email marketing and automation platform. Manage subscribers, lists, segments, tags, campaigns, sequences, templates, landing pages, forms, popups, A/B tests, transactional email, SMS, metrics, integrations and outbound webhooks via the Sequenzy REST API (https://api.sequenzy.com/api/v1).
 
 | | |
@@ -12,8 +14,6 @@ Sequenzy email marketing and automation platform. Manage subscribers, lists, seg
 | **Category** | [Marketing](README.md) |
 | **Website** | [sequenzy.com](https://sequenzy.com) |
 | **Authentication** | API key |
-| **Actions** | 319 |
-| **Events** | 25 |
 | **Slug** | `sequenzy` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Sequenzy from **Build → Integrations → Connectors** and connect an accou
 | Add Subscriber Note by External ID | `addSubscriberNoteByExternalId` | Add a note to a Subscriber identified by external id. POST /api/v1/subscribers/external/notes?externalId=... BLOCKED BY A FASTN ENGINE BUG: the engine strips the query string from POST requests (both the queryParams map and an inline ?query in the url), so externalId never reaches the host and it always answers 400 "externalId is required". The host does NOT read externalId from the JSON body. Unblocked once the engine sends query params on POST. |
 | Add Subscribers to List | `addSubscribersToList` | Add Subscribers to a List. POST /api/v1/lists/{listId}/subscribers. WARNING: enrollInSequences true can start sending email. |
 | Add Tag to Subscriber | `addTagToSubscriber` | Add one tag to a subscriber (creates the contact if new). POST /api/v1/subscribers/tags. WARNING: a tag_added sequence trigger can start sending email. |
+
+<details>
+
+<summary>See 309 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Tags to Many Subscribers | `addTagsToManySubscribers` | Bulk add tags to subscribers. POST /api/v1/subscribers/bulk/tags/add. WARNING: a tag_added sequence trigger can start sending email. |
 | Approve Migration Plan | `approveMigrationPlan` | Approve Migration Plan. POST /api/v1/migrations/{runId}/approve-plan. |
 | Archive Sequence | `archiveSequence` | Archive Sequence. POST /api/v1/sequences/{sequenceId}/archive. |
@@ -344,6 +351,8 @@ Add Sequenzy from **Build → Integrations → Connectors** and connect an accou
 | Verify Landing Page Domain | `verifyLandingPageDomain` | Verify the workspace Landing Page Domain DNS. POST /api/v1/landing-pages/domain/verify. |
 | Verify Sending Domain | `verifySendingDomain` | Verify a sending domain's DNS. POST /api/v1/websites/{domain}/verify. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -360,6 +369,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Email Opened | `email.opened` | Open tracking fired. Not in the default set - request it explicitly. |
 | Email Replied | `email.replied` | An inbound reply was received. Not in the default set. |
 | Email Sent | `email.sent` | Sequenzy accepted an email for delivery. |
+
+<details>
+
+<summary>See 15 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Email Unsubscribed | `email.unsubscribed` | The recipient unsubscribed from an email. |
 | Poll Answered | `poll.answered` | A recipient answered a poll block. Not in the default set. |
 | Sequence Failed | `sequence.failed` | A sequence run failed. Not in the default set. |
@@ -375,3 +391,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Subscriber Left List | `subscriber.list_unsubscribed` | Per-list consent was withdrawn. Not in the default set. |
 | Subscriber Unsubscribed | `subscriber.unsubscribed` | A subscriber opted out. |
 | Subscriber Updated | `subscriber.updated` | A subscriber profile changed. Not in the default set. |
+
+</details>

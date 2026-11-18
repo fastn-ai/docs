@@ -5,6 +5,8 @@ hidden: true
 
 # Make
 
+<img src="../../.gitbook/assets/connectors/make.png" alt="Make logo" width="64">
+
 Make (formerly Integromat) is a visual workflow automation and iPaaS platform. This connector covers the Make Public API v2: scenarios, scenario folders, scenario labels, organizations, teams, connections, data stores and records, hooks (custom webhooks), templates, users, notifications, keys (keychain), and custom (SDK) apps. Base URL is zone-specific (e.g. https://eu1.make.com/api/v2) and authenticates with a per-user API token.
 
 | | |
@@ -12,8 +14,6 @@ Make (formerly Integromat) is a visual workflow automation and iPaaS platform. T
 | **Category** | [Productivity](README.md) |
 | **Website** | [make.com](https://make.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 161 |
-| **Events** | 0 |
 | **Slug** | `make` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Make from **Build → Integrations → Connectors** and connect an account, 
 | Count Trashed Scenarios | `countTrashedScenarios` | Returns the number of scenarios currently in the trash for a given team, awaiting permanent deletion. |
 | Create API Token | `createApiToken` | Creates a new API token for the authenticated user with the given scopes. |
 | Create Connection | `createConnection` | Creates a new app connection in a team from the given account type and credential data. |
+
+<details>
+
+<summary>See 151 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Data Store | `createDataStore` | Creates a new data store backed by a data structure, with a maximum size limit. |
 | Create Data Store Record | `createDataStoreRecord` | Creates a new record in a data store, optionally with a custom key (auto-generated if omitted). |
 | Create Data Structure | `createDataStructure` | Creates a new data structure (a named field schema) that can be used to define a data store or scenario data. |
@@ -185,3 +192,5 @@ Add Make from **Build → Integrations → Connectors** and connect an account, 
 | Update Template | `updateTemplate` | Updates a template's name, blueprint, or scheduling. |
 | Update User | `updateUser` | Updates a user's profile information such as display name, language, timezone, locale, or country. |
 | Verify Connection Scope | `verifyConnectionScope` | Checks whether a connection has been granted a given scope. |
+
+</details>

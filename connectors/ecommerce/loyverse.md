@@ -5,6 +5,8 @@ hidden: true
 
 # Loyverse
 
+<img src="../../.gitbook/assets/connectors/loyverse.png" alt="Loyverse logo" width="64">
+
 Loyverse is a point-of-sale and retail management platform for small businesses. This connector covers the full Loyverse API: merchant and store information, items, variants, categories, modifiers, discounts and taxes, inventory levels, customers, suppliers, employees, payment types, POS devices, receipts and refunds, shifts, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Loyverse is a point-of-sale and retail management platform for small businesses.
 | **Category** | [E-commerce](README.md) |
 | **Website** | [loyverse.com](https://loyverse.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 57 |
-| **Events** | 0 |
 | **Slug** | `loyverse` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Loyverse from **Build → Integrations → Connectors** and connect an accou
 | Create Or Update Tax | `createOrUpdateTax` | Creates a tax, or updates an existing one. This endpoint is an upsert: supplying the identifier of an existing tax updates it, and omitting the identifier creates a new one. |
 | Create Or Update Variant | `createOrUpdateVariant` | Creates a variant on an existing item, or updates an existing variant. This endpoint is an upsert: supplying the identifier of an existing variant updates it, and omitting the identifier adds a new variant to the given item. Adding a variant requires the parent item to already define the matching option names. |
 | Create Or Update Webhook | `createOrUpdateWebhook` | Subscribes a URL to a Loyverse event, or updates an existing subscription. This endpoint is an upsert: supplying the identifier of an existing webhook updates it, and omitting the identifier creates a new one. Loyverse then POSTs the event payload to your URL whenever that event occurs. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Receipt | `createReceipt` | Records a completed sale in Loyverse, exactly as if it had been rung up on a till. This is a real financial transaction: it appears in sales reports, decrements tracked stock, awards loyalty points and cannot be deleted - only refunded. Use it to push sales in from another channel, never to test connectivity. |
 | Create Refund | `createRefund` | Issues a refund against an existing sales receipt, returning money to the customer. This is a real financial transaction: it appears in sales reports, returns tracked stock and reverses loyalty points, and it cannot be undone. Refund only the lines you mean to, identified by their line item identifiers from the original receipt. |
 | Delete Category | `deleteCategory` | Deletes an item category. Items already assigned to the category are left in place but lose their category. |
@@ -81,3 +88,5 @@ Add Loyverse from **Build → Integrations → Connectors** and connect an accou
 | List Webhooks | `listWebhooks` | Returns the webhooks registered for the merchant. Loyverse only returns webhooks created by the same application as the access token making the request, so this will not show subscriptions made by other integrations. |
 | Update Inventory Levels | `updateInventoryLevels` | Sets the stock level for one or more item variants at a store. The value you supply is the resulting stock, not a delta, so read the current level first if you mean to adjust it. This writes directly to live inventory and immediately changes what the tills will sell. |
 | Upload Item Image | `uploadItemImage` | Uploads a picture for an item, shown on its POS tile. Loyverse expects the raw PNG bytes as the request body. Note that fastn's HTTP executor cannot currently send raw binary bodies without corrupting non-UTF-8 bytes, so this action is not usable for real image uploads from fastn today - set the item's Image URL through Create Or Update Item instead, or upload the picture in the Loyverse Back Office. |
+
+</details>

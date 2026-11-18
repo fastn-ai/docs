@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Learn
 
+<img src="../../.gitbook/assets/connectors/zoho-learn.svg" alt="Zoho Learn logo" width="64">
+
 Zoho Learn is Zoho's knowledge management and online training platform. This connector wraps the Zoho Learn REST API v1 (learn.zoho.com/learn/api/v1): hubs and hub members, spaces and space members, manuals, chapters and articles, article export and search, courses with members, enrollment, completion, ratings and resources, lessons, learner status and discussions, question banks, course and lesson reports, and custom portal administration (invites, users, signup requests, and shared courses and manuals).
 
 | | |
@@ -12,8 +14,6 @@ Zoho Learn is Zoho's knowledge management and online training platform. This con
 | **Category** | [Other](README.md) |
 | **Website** | [learn.zoho.com](https://learn.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 73 |
-| **Events** | 0 |
 | **Slug** | `zohoLearn` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Learn from **Build → Integrations → Connectors** and connect an acc
 | Add Users To Manual | `addUsersToManual` | Adds hub users to a manual in Zoho Learn, or updates the role of users already on it. |
 | Add Users To Space | `addUsersToSpace` | Adds hub users to a space in Zoho Learn, assigning each an Admin or Member role. |
 | Approve Custom Portal Signup | `approveCustomPortalSignup` | Approves a pending self-signup request for a Zoho Learn custom portal. |
+
+<details>
+
+<summary>See 63 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Change Role Of Course Member | `changeCourseMemberRole` | Changes the role a member holds on a course in Zoho Learn. |
 | Complete A Lesson | `completeLesson` | Marks a lesson within a course as completed for the connected Zoho Learn user and returns the updated course progress. |
 | Complete Course | `completeCourse` | Marks a course as completed for the connected Zoho Learn user. |
@@ -97,3 +104,5 @@ Add Zoho Learn from **Build → Integrations → Connectors** and connect an acc
 | View A Course Report | `viewCourseReport` | Returns the report for a course in Zoho Learn, either per member or per lesson, with optional filtering by completion state, lesson type or specific users. |
 | View A Lesson Report | `viewLessonReport` | Returns the learner report for a single lesson in Zoho Learn, with optional progress filtering, user filtering and CSV export. |
 | View Course Rating Or Feedback | `viewCourseRating` | Returns the ratings and feedback recorded against a course in Zoho Learn, including the overall rating. |
+
+</details>

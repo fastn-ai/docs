@@ -5,6 +5,8 @@ hidden: true
 
 # Superchat
 
+<img src="../../.gitbook/assets/connectors/superchat.png" alt="Superchat logo" width="64">
+
 Superchat is a unified business messaging platform that brings WhatsApp, SMS, email, Instagram, Facebook Messenger, Telegram, Google Business Messages and live chat into one shared inbox. This connector covers the complete Superchat Public API v1.0: contacts and contact handles, contact lists, custom attributes, conversations, conversation notes and exports, messages and message analytics, channels, inboxes, labels, templates and template folders, files, users, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Superchat is a unified business messaging platform that brings WhatsApp, SMS, em
 | **Category** | [Communication](README.md) |
 | **Website** | [superchat.com](https://superchat.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 59 |
-| **Events** | 12 |
 | **Slug** | `superchat` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Superchat from **Build → Integrations → Connectors** and connect an acco
 | Create Webhook Subscription | `createWebhookSubscription` | Registers a webhook subscription so Superchat posts the chosen events to your HTTPS endpoint. The target URL must be a public HTTPS address and may not be a superchat.com, superchat.de, superchat.tech or superchat.cloud host. |
 | Delete Contact | `deleteContact` | Permanently deletes a contact from the workspace. This cannot be undone. |
 | Delete Conversation | `deleteConversation` | Permanently deletes a conversation and its message history. This cannot be undone. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Conversation Note | `deleteConversationNote` | Permanently deletes an internal note from a conversation. |
 | Delete Custom Attribute | `deleteCustomAttribute` | Permanently deletes a custom contact attribute and the values stored for it on every contact. |
 | Delete File | `deleteFile` | Permanently deletes a file from the workspace. Messages and notes that reference it will lose the attachment. |
@@ -84,6 +91,8 @@ Add Superchat from **Build → Integrations → Connectors** and connect an acco
 | Update Webhook Subscription | `updateWebhookSubscription` | Updates a webhook subscription's target URL and the set of events it receives. The events array is a full replacement of the current subscription list. |
 | Upload File | `uploadFile` | Uploads a file to the workspace so it can be attached to a message or a note. Superchat accepts this endpoint as multipart/form-data only. Allowed types include application/pdf, application/rtf, application/msword, image/jpeg, image/png, image/gif, audio/mpeg, audio/ogg, audio/webm, audio/aac, video/mp4 and video/quicktime. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -100,5 +109,14 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Conversation Snoozed | `conversation_snoozed` | Fires when a conversation is snoozed until a later time. The conversation's snoozed_until field carries that time. Payload schema modelled from Superchat's documented sample at https://developers.superchat.com/reference/webhook-payload-model, not from a captured delivery. |
 | Message Failed | `message_failed` | Fires when an outbound message could not be delivered by the underlying channel. The message status is sending_failed. Payload schema modelled from Superchat's documented samples at https://developers.superchat.com/reference/webhook-payload-model, not from a captured delivery. |
 | Message Received | `message_inbound` | Fires when a contact sends a message to one of your connected channels. The message.content.type field selects the content shape: text, media, email, generic_template, whats_app_quick_reply, whats_app_template, whats_app_list, instagram_story_reply or instagram_comment. Payload schema modelled from Superchat's documented samples at https://developers.superchat.com/reference/webhook-payload-model, not from a captured delivery. |
+
+<details>
+
+<summary>See 2 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Message Sent | `message_outbound` | Fires when a message is sent from one of your connected channels, whether from the Superchat app, an automation or the API. Payload schema modelled from Superchat's documented samples at https://developers.superchat.com/reference/webhook-payload-model, not from a captured delivery. |
 | Note Created | `note_created` | Fires when a team member adds an internal note to a conversation. Payload schema modelled from Superchat's documented sample at https://developers.superchat.com/reference/webhook-payload-model, not from a captured delivery. |
+
+</details>

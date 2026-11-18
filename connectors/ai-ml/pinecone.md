@@ -5,6 +5,8 @@ hidden: true
 
 # Pinecone
 
+<img src="../../.gitbook/assets/connectors/pinecone.png" alt="Pinecone logo" width="64">
+
 Pinecone vector database connector (API version 2026-04). Wraps the Database control plane (indexes, collections, backups, restore jobs), Database data plane (vectors upsert/query/fetch/update/delete/list, namespaces, records, bulk imports), Inference API (embed, rerank, models), and Assistant API (assistants, files, chat, context). Auth via Api-Key header. Data-plane and assistant-data calls target a per-resource host supplied per request.
 
 | | |
@@ -12,8 +14,6 @@ Pinecone vector database connector (API version 2026-04). Wraps the Database con
 | **Category** | [AI and ML](README.md) |
 | **Website** | [pinecone.io](https://pinecone.io) |
 | **Authentication** | API key |
-| **Actions** | 55 |
-| **Events** | 0 |
 | **Slug** | `pinecone` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pinecone from **Build → Integrations → Connectors** and connect an accou
 | Create Index | `createIndex` | Create a Pinecone index. Specify name, dimension, metric, vector_type, deletion_protection, tags, and the deployment spec (serverless/pod/byoc). The spec is a nested object passed as a templated object input. Control-plane endpoint. |
 | Create Index For Model | `createIndexForModel` | Create an index with integrated embedding. Pinecone uses a hosted embedding model to convert source text automatically during upsert and search. Provide name, cloud, region, and embed config. Control-plane endpoint. |
 | Create Index From Backup | `createIndexFromBackup` | Create an index from a backup. Returns the restore job id and the new index id. |
+
+<details>
+
+<summary>See 45 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Namespace | `createNamespace` | Create a namespace in a serverless index. Data-plane: requires the index host. |
 | Delete Assistant | `deleteAssistant` | Delete an existing Pinecone assistant by its name. |
 | Delete Assistant File | `deleteAssistantFile` | Delete an uploaded file from an assistant. Asynchronous; returns an operation id (202) or empty body (204 for files that previously failed processing). Assistant data-plane operation; requires assistant_host. |
@@ -79,3 +86,5 @@ Add Pinecone from **Build → Integrations → Connectors** and connect an accou
 | Upsert Assistant File | `upsertAssistantFile` | Create or replace a file in the specified assistant by assistant_file_id (multipart/form-data). If the file exists it is replaced; otherwise a new one is created with that id. Asynchronous; returns an operation id. Assistant data-plane operation; requires assistant_host. |
 | Upsert Records | `upsertRecords` | Upsert text records into a namespace; Pinecone converts text to vectors using the index's hosted embedding model. Body is newline-delimited JSON (application/x-ndjson): one record per line. Each record must include an _id field plus a field matching the index field_map (e.g. chunk_text); other fields are stored as metadata. Supported only for indexes with integrated embedding. Data-plane: requires the index host. |
 | Upsert Vectors | `upsertVectors` | Upsert records into a namespace. If a new value is upserted for an existing record ID, it overwrites the previous value. Data-plane operation; requires the per-index host (index_host). |
+
+</details>

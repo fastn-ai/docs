@@ -5,6 +5,8 @@ hidden: true
 
 # GitBook
 
+<img src="../../.gitbook/assets/connectors/gitbook.png" alt="GitBook logo" width="64">
+
 GitBook documentation platform API connector. Manage organizations, spaces, collections, pages/content, revisions, and change requests via the GitBook REST API (https://api.gitbook.com/v1). Authenticates with a GitBook personal access token (gb_api_ ...) via Bearer auth.
 
 | | |
@@ -12,8 +14,6 @@ GitBook documentation platform API connector. Manage organizations, spaces, coll
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [gitbook.com](https://gitbook.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 43 |
-| **Events** | 0 |
 | **Slug** | `gitbook` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GitBook from **Build → Integrations → Connectors** and connect an accoun
 | Get Change Request Content | `getChangeRequestContent` | Get the latest content revision of a change request. |
 | Get Collection | `getCollection` | Get a collection by its ID. |
 | Get Current User | `getCurrentUser` | Get details about the user associated with the API token. FREE read — ideal for credential validation. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Organization | `getOrganization` | Get an organization by its ID. |
 | Get Organization Team | `getOrganizationTeam` | Get a team in an organization by its ID. |
 | Get Page By ID | `getPageById` | Get a page in the current revision of a space by its page ID. |
@@ -67,3 +74,5 @@ Add GitBook from **Build → Integrations → Connectors** and connect an accoun
 | Update Change Request | `updateChangeRequest` | Update a change request's subject and/or status. |
 | Update Collection | `updateCollection` | Update a collection's title, description, or default permission level. |
 | Update Space | `updateSpace` | Update a space's properties (title, edit mode, language, emoji). Send only the fields you want to change. |
+
+</details>

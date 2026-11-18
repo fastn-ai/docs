@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Trace
 
+<img src="../../.gitbook/assets/connectors/google-cloud-trace.png" alt="Google Cloud Trace logo" width="64">
+
 Google Cloud Trace API (https://cloudtrace.googleapis.com). List and read traces with the v1 API and write new spans with the v2 batchWrite API. OAuth 2.0 (Google) authorization-code auth with the trace.readonly and trace.append scopes.
 
 | | |
@@ -12,8 +14,6 @@ Google Cloud Trace API (https://cloudtrace.googleapis.com). List and read traces
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [cloudtrace.googleapis.com](https://cloudtrace.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `googleCloudTrace` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # BTCPay Server
 
+<img src="../../.gitbook/assets/connectors/btcpay-server.png" alt="BTCPay Server logo" width="64">
+
 BTCPay Server Greenfield API v1. Self-hosted, open-source Bitcoin and Lightning payment processor. Manage stores, invoices, payment requests, apps, payment methods, rates, users, notifications and webhooks on any BTCPay Server instance.
 
 | | |
@@ -12,8 +14,6 @@ BTCPay Server Greenfield API v1. Self-hosted, open-source Bitcoin and Lightning 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [btcpayserver.org](https://btcpayserver.org) |
 | **Authentication** | Basic auth, Credentials you enter |
-| **Actions** | 109 |
-| **Events** | 14 |
 | **Slug** | `btcpayServer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BTCPay Server from **Build → Integrations → Connectors** and connect an 
 | Create Payment Request | `createPaymentRequest` | Creates a shareable payment request page on a store. Unlike an invoice it does not expire by default and can optionally let the payer choose the amount. |
 | Create Point Of Sale App | `createPointOfSaleApp` | Creates a point-of-sale page on a store: a hosted checkout with a keypad or an item list that produces invoices. Template is a JSON string describing the items. Only App Name is required; everything else falls back to a default. |
 | Create Pull Payment | `createPullPayment` | Creates a pull payment on a store: a withdrawal offer, capped at Amount, that a recipient can claim through its public view link. CAUTION - the response contains a public claim URL, and with Auto Approve Claims on, claims are approved without review. Creating one does not move funds; approving a payout does. |
+
+<details>
+
+<summary>See 99 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Store | `createStore` | Creates a new store on the BTCPay Server instance. Only the name is required; every other setting falls back to the server default and can be changed later with Update Store. |
 | Create Store Lightning Invoice | `createStoreLightningInvoice` | Issues a BOLT11 Lightning invoice on the node backing a store, so someone can pay the store. Amount is in millisatoshis. This is receive-only: it requests funds and never sends them. |
 | Create Store Webhook | `createStoreWebhook` | Registers a webhook on a store so BTCPay POSTs event callbacks to your URL. The response contains the signing secret used for the BTCPay-Sig HMAC-SHA256 header, and this is the only time the secret is ever returned - store it immediately. |
@@ -134,6 +141,8 @@ Add BTCPay Server from **Build → Integrations → Connectors** and connect an 
 | Update Store Rate Configuration | `updateStoreRateConfiguration` | Replaces a store's rate-provider settings for one rate source: the preferred exchange, the spread to apply and optionally a custom rate script. This route was added after BTCPay 2.4.4, so older servers answer 404 with an empty body. |
 | Update Store Webhook | `updateStoreWebhook` | Replaces a webhook's configuration. Send the complete desired state, including the target URL and authorized events, because BTCPay overwrites the whole record. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -150,7 +159,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Payment Request Archived | `PaymentRequestArchived` | Fires when a payment request is archived. Schema MODELLED from the BTCPay Greenfield spec. |
 | Payment Request Created | `PaymentRequestCreated` | Fires when a payment request is created on the store. Schema MODELLED from the BTCPay Greenfield spec. |
 | Payment Request Status Changed | `PaymentRequestStatusChanged` | Fires when a payment request moves between Pending, Completed and Expired. Schema MODELLED from the BTCPay Greenfield spec. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Payment Request Updated | `PaymentRequestUpdated` | Fires when a payment request's details change. Schema MODELLED from the BTCPay Greenfield spec. |
 | Payout Approved | `PayoutApproved` | Fires when a payout is approved for payment. Schema MODELLED from the BTCPay Greenfield spec; payout routes move real funds and were deliberately not driven. |
 | Payout Created | `PayoutCreated` | Fires when a payout is created against a pull payment. Schema MODELLED from the BTCPay Greenfield spec; payout routes move real funds and were deliberately not driven. |
 | Payout Updated | `PayoutUpdated` | Fires when a payout changes state, for example to InProgress or Completed. Schema MODELLED from the BTCPay Greenfield spec; payout routes move real funds and were deliberately not driven. |
+
+</details>

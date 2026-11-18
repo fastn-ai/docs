@@ -5,6 +5,8 @@ hidden: true
 
 # Pumble
 
+<img src="../../.gitbook/assets/connectors/pumble.png" alt="Pumble logo" width="64">
+
 Pumble is a team messaging platform by CAKE.com. This connector wraps the Pumble API addon, covering channels, channel membership, messages, threaded replies, message editing and deletion, emoji reactions, scheduled messages, workspace users, and custom status.
 
 | | |
@@ -12,8 +14,6 @@ Pumble is a team messaging platform by CAKE.com. This connector wraps the Pumble
 | **Category** | [Communication](README.md) |
 | **Website** | [pumble.com](https://pumble.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `pumble` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pumble from **Build → Integrations → Connectors** and connect an account
 | Edit Scheduled Message | `editScheduledMessage` | Updates the text and delivery time of an existing scheduled Pumble message and returns the updated record. |
 | Get Channel | `getChannel` | Retrieves a single Pumble channel by its id or by its name, together with its member list and pinned messages. Supply either Channel ID or Channel Name; when both are given the id takes precedence. |
 | Get Current User | `getCurrentUser` | Retrieves the profile of the Pumble workspace user that owns the API key, including their id, name, email, role, status, time zone, and current custom status. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Scheduled Message | `getScheduledMessage` | Retrieves a single scheduled Pumble message by its id, including its text, target channel, and delivery time. |
 | List Channels | `listChannels` | Lists every channel and direct message conversation visible to the user that owns the API key, along with each conversation's members and pinned messages. |
 | List Messages | `listMessages` | Lists messages in a Pumble channel, newest page first, with cursor pagination. Supply either Channel ID or Channel Name. For a private channel the API addon bot must be a member. |
@@ -44,3 +51,5 @@ Add Pumble from **Build → Integrations → Connectors** and connect an account
 | Send Message | `sendMessage` | Posts a message to a Pumble channel or direct message conversation, either as the user who owns the API key or as the API addon bot. Supply either Channel ID or Channel Name. |
 | Send Reply | `sendReply` | Posts a threaded reply to an existing message in a Pumble channel, either as the user who owns the API key or as the API addon bot. Supply either Channel ID or Channel Name. |
 | Set Custom Status | `setCustomStatus` | Sets the custom status of the Pumble user that owns the API key, consisting of an emoji, optional status text, and an expiry time. |
+
+</details>

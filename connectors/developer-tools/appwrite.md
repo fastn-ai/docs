@@ -5,6 +5,8 @@ hidden: true
 
 # Appwrite
 
+<img src="../../.gitbook/assets/connectors/appwrite.png" alt="Appwrite logo" width="64">
+
 Open-source Backend-as-a-Service platform providing Databases, Storage, Authentication, Teams, Functions, Messaging, and Sites via a server-key-authenticated REST API.
 
 | | |
@@ -12,8 +14,6 @@ Open-source Backend-as-a-Service platform providing Databases, Storage, Authenti
 | **Category** | [Developer tools](README.md) |
 | **Website** | [appwrite.io](https://appwrite.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 748 |
-| **Events** | 0 |
 | **Slug** | `appwrite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Appwrite from **Build → Integrations → Connectors** and connect an accou
 | Create a new CNAME record for the given domain. | `domainsCreateRecordCNAME` | Create a new CNAME record for the given domain.. Create a new CNAME record for the given domain. A CNAME record maps a subdomain to another domain name, allowing you to create aliases for your domain. For example, you can create a CNAME record to point 'blog.example.com' to 'example.wordpress.com'. |
 | Create a new domain. | `domainsCreate` | Create a new domain.. Create a new domain. Before creating a domain, you need to ensure that your DNS provider is properly configured. After creating the domain, you can use the verification endpoint to check if the domain is ready to be used. |
 | Create a new HTTPS record for the given domain. | `domainsCreateRecordHTTPS` | Create a new HTTPS record for the given domain.. Create a new HTTPS record for the given domain. This record is used to configure HTTPS settings for your domain, enabling secure communication over SSL/TLS. |
+
+<details>
+
+<summary>See 738 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a new MX record for the given domain. | `domainsCreateRecordMX` | Create a new MX record for the given domain.. Create a new MX record for the given domain. MX records are used to define the mail servers responsible for accepting email messages for the domain. Multiple MX records can be created with different priorities. The priority parameter determines the order in which mail servers are used, with lower values indicating higher priority. |
 | Create a new NS record for the given domain. | `domainsCreateRecordNS` | Create a new NS record for the given domain.. Create a new NS record for the given domain. NS records specify the nameservers that are used to resolve the domain name to IP addresses. Each domain can have multiple NS records. |
 | Create a new SRV record for the given domain. | `domainsCreateRecordSRV` | Create a new SRV record for the given domain.. Create a new SRV record for the given domain. SRV records are used to define the location of servers for specific services. For example, they can be used to specify which server handles a specific service like SIP or XMPP for the domain. |
@@ -772,3 +779,5 @@ Add Appwrite from **Build → Integrations → Connectors** and connect an accou
 | Upsert rows | `tablesDBUpsertRows` | Upsert rows. Create or update Rows. Before using this route, you should create a new table resource using either a [server integration](https://appwrite.io/docs/references/cloud/server-dart/tablesDB#createTable) API or directly from your database console. |
 | Verify which NS records are used and update the domain accordingly. | `domainsVerifyNameservers` | Verify which NS records are used and update the domain accordingly.. Verify which NS records are used and update the domain accordingly. This will check the domain's nameservers and update the domain's status based on whether the nameservers match the expected Appwrite nameservers. |
 | View File | `getFileView` | Get file for view. Get a file content by its unique ID. This endpoint is similar to the download method but returns with no 'Content-Disposition: attachment' header. |
+
+</details>

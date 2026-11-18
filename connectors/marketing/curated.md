@@ -5,6 +5,8 @@ hidden: true
 
 # Curated
 
+<img src="../../.gitbook/assets/connectors/curated.png" alt="Curated logo" width="64">
+
 Curated is a newsletter publishing platform for curating links into email issues. This connector wraps the Curated public API v3: listing publications and their settings, listing and fetching issues (with open/click stats), creating and deleting draft issues, managing collected links (create, read, update, delete, and moving a link into a draft issue), retrieving publication categories, and managing email subscribers and unsubscribers.
 
 | | |
@@ -12,8 +14,6 @@ Curated is a newsletter publishing platform for curating links into email issues
 | **Category** | [Marketing](README.md) |
 | **Website** | [curated.co](https://curated.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 19 |
-| **Events** | 0 |
 | **Slug** | `curated` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Curated from **Build → Integrations → Connectors** and connect an accoun
 | Get Issue | `getIssue` | Retrieves one issue with its full contents: every category and the text and link items inside it, including item descriptions rendered to HTML, short URLs and embedded links. Accepts the issue number for published issues; a draft issue must be fetched by its database id. Set stats to true for open and click rates on a published issue. |
 | Get Publication Settings | `getPublication` | Retrieves the settings of a single Curated publication: display name, subdomain key, sending schedule (type, day and hour), sender name and email, inquiry email and UTM tracking defaults. Undocumented endpoint, verified live against the Curated API v3. |
 | List Categories | `listCategories` | Lists the categories configured for a publication. Each category returns its code, display name, whether it is a sponsored category and, for sponsored categories, the number of sponsored links allowed per issue. The category code is what Create Collected Link and Update Collected Link expect. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Collected Links | `listLinks` | Lists the collected links of a publication that are not yet attached to an issue. Returns each link's id, destination URL, title, description and image URL. Links moved into a draft issue no longer appear here. |
 | List Email Subscribers | `listEmailSubscribers` | Lists the confirmed email subscribers of a publication, with paging. Returns the page number, total pages, total results and an array of subscribers with their id and email address. Addresses still pending double opt-in are not included, so a list can read empty just after Subscribe Email Address succeeded. |
 | List Email Unsubscribers | `listEmailUnsubscribers` | Lists the addresses that have unsubscribed from the publication, with paging. Returns the page number, total pages, total results and an array of unsubscribed addresses. Use it to keep an external list in step with Curated's opt-outs. |
@@ -43,3 +50,5 @@ Add Curated from **Build → Integrations → Connectors** and connect an accoun
 | Subscribe Email Address | `subscribeEmail` | Subscribes an email address to the publication's list and returns the created subscriber record with its id. The address receives the publication's welcome email exactly as if it had signed up on the site, so use this only where the person has clearly consented. By default the publication's double opt-in setting is respected, so the address stays pending until it confirms; set sync to true for an address that has already opted in elsewhere. A rejected address comes back with success false, error_message and errors instead. |
 | Unsubscribe Email Address | `unsubscribeEmail` | Opts an email address out of the publication so it no longer receives issues, and returns the affected subscriber record with its id. There is no route to lift an unsubscribe, but Delete Email Subscriber removes the underlying record by that id. A rejected request comes back with success false, error_message and errors instead. |
 | Update Collected Link | `updateLink` | Updates a collected link's URL, title, description or category, and can move it into a draft issue by setting issue_id to that draft's id. Send issue_id as an empty string to move the link back to collected items. A link that already belongs to a published issue cannot be updated. Returns the updated link. |
+
+</details>

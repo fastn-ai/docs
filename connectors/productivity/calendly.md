@@ -5,6 +5,8 @@ hidden: true
 
 # Calendly
 
+<img src="../../.gitbook/assets/connectors/calendly.jpg" alt="Calendly logo" width="64">
+
 Calendly v2 REST API — users, event types, scheduled events, invitees, organization memberships/invitations, scheduling links, availability (schedules/busy times/available times), routing forms, groups, invitee no-shows, data compliance, activity log, and webhook subscriptions. Base https://api.calendly.com. Auth: Bearer personal access token or OAuth 2.
 
 | | |
@@ -12,8 +14,6 @@ Calendly v2 REST API — users, event types, scheduled events, invitees, organiz
 | **Category** | [Productivity](README.md) |
 | **Website** | [calendly.com](https://calendly.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 36 |
-| **Events** | 5 |
 | **Slug** | `calendly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Calendly from **Build → Integrations → Connectors** and connect an accou
 | Delete Invitee No Show | `deleteInviteeNoShow` | Undo an invitee no-show (DELETE /invitee_no_shows/{uuid}). Returns 204. |
 | Delete Webhook Subscription | `deleteWebhookSubscription` | Delete a webhook subscription (DELETE /webhook_subscriptions/{uuid}). Returns 204. |
 | Get Current User | `getCurrentUser` | Get the current authenticated user (GET /users/me). |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Event Invitee | `getEventInvitee` | Get a single invitee of a scheduled event (GET /scheduled_events/{event_uuid}/invitees/{invitee_uuid}). |
 | Get Event Type | `getEventType` | Get an event type by UUID (GET /event_types/{uuid}). |
 | Get Invitee No Show | `getInviteeNoShow` | Get an invitee no-show by UUID (GET /invitee_no_shows/{uuid}). |
@@ -60,6 +67,8 @@ Add Calendly from **Build → Integrations → Connectors** and connect an accou
 | List Webhook Subscriptions | `listWebhookSubscriptions` | List webhook subscriptions (GET /webhook_subscriptions). |
 | Remove Organization Membership | `removeOrganizationMembership` | Remove a user from an organization (DELETE /organization_memberships/{uuid}). Returns 204. |
 | Revoke Organization Invitation | `revokeOrganizationInvitation` | Revoke an organization invitation (DELETE /organizations/{org_uuid}/invitations/{uuid}). Returns 204. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Clockodo
 
+<img src="../../.gitbook/assets/connectors/clockodo.png" alt="Clockodo logo" width="64">
+
 Clockodo time tracking, absence management and project reporting. Wraps the Clockodo REST API at https://my.clockodo.com/api (per-resource versioning: v2, v3 and v4 paths coexist).
 
 | | |
@@ -12,8 +14,6 @@ Clockodo time tracking, absence management and project reporting. Wraps the Cloc
 | **Category** | [Productivity](README.md) |
 | **Website** | [clockodo.com](https://clockodo.com) |
 | **Authentication** | API key |
-| **Actions** | 149 |
-| **Events** | 47 |
 | **Slug** | `clockodo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Clockodo from **Build → Integrations → Connectors** and connect an accou
 | Create Clock | `createClock` | Create Clock (POST /api/v2/clock). Control the clock. Docs: https://docs.clockodo.com/#tag/Clock/operation/createClockV2 |
 | Create Customer | `createCustomer` | Create Customer (POST /api/v3/customers). Manage customers. Docs: https://docs.clockodo.com/#tag/Customer/operation/createCustomerV3 |
 | Create Entry | `createEntry` | Create Entry (POST /api/v2/entries). Manage time and lump sum entries. If the project has subprojects, subprojects_id is required. Docs: https://docs.clockodo.com/#tag/Entry/operation/createEntryV2 |
+
+<details>
+
+<summary>See 139 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Favorite | `createFavorite` | Create Favorite (POST /api/v2/favorites). Manage favorites. Docs: https://docs.clockodo.com/#tag/Favorite/operation/createFavoriteV2 |
 | Create Holiday Carryover | `createHolidayCarryover` | Create Holiday Carryover (POST /api/v3/holidaysCarry). Manage holiday carryovers. Docs: https://docs.clockodo.com/#tag/HolidayCarryover/operation/createHolidayCarryoverV3 |
 | Create Holiday Quota | `createHolidayQuota` | Create Holiday Quota (POST /api/v2/holidaysQuota). Manage holiday quotas. Docs: https://docs.clockodo.com/#tag/HolidayQuota/operation/createHolidayQuotaV2 |
@@ -174,6 +181,8 @@ Add Clockodo from **Build → Integrations → Connectors** and connect an accou
 | Update User | `updateUser` | Update User (PUT /api/v3/users/{id}). Manage co-workers. Docs: https://docs.clockodo.com/#tag/User/operation/updateUserByIdV3 |
 | Update Users Nonbusiness Group | `updateUsersNonbusinessGroup` | Update Users Nonbusiness Group (PUT /api/v3/usersNonbusinessGroups/{id}). Assign non-business day groups to users and manage time periods. Docs: https://docs.clockodo.com/#tag/UserNonbusinessGroup/operation/updateUsersNonbusinessGroupByIdV3 |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -190,6 +199,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Holiday Carry-Over Created | `holidays_carry.created` |  |
 | Holiday Carry-Over Deleted | `holidays_carry.deleted` |  |
 | Holiday Carry-Over Updated | `holidays_carry.updated` |  |
+
+<details>
+
+<summary>See 37 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Holiday Quota Created | `holidays_quota.created` |  |
 | Holiday Quota Deleted | `holidays_quota.deleted` |  |
 | Holiday Quota Updated | `holidays_quota.updated` |  |
@@ -227,3 +243,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Work Time Change Request Created | `work_time_change_request.created` |  |
 | Work Time Change Request Deleted | `work_time_change_request.deleted` |  |
 | Work Time Change Request Updated | `work_time_change_request.updated` |  |
+
+</details>

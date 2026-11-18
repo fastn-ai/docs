@@ -5,6 +5,8 @@ hidden: true
 
 # GTmetrix
 
+<img src="../../.gitbook/assets/connectors/gtmetrix.png" alt="GTmetrix logo" width="64">
+
 GTmetrix is a web page performance testing service. This connector covers the GTmetrix REST API 2.0: starting page tests, polling test state, reading performance reports and their resources (screenshots, filmstrip, HAR, Lighthouse JSON, PDF, video), managing tested pages and their report history, retesting, and looking up test locations, browsers, simulated devices and API credit status.
 
 | | |
@@ -12,8 +14,6 @@ GTmetrix is a web page performance testing service. This connector covers the GT
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [gtmetrix.com](https://gtmetrix.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `gtmetrix` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GTmetrix from **Build → Integrations → Connectors** and connect an accou
 | Get Report | `getReport` | Retrieves a completed performance report by its ID, including GTmetrix grade and scores, Web Vitals, timing metrics, page size and request counts, and links to report resources such as screenshots, HAR and Lighthouse JSON. |
 | Get Report Filmstrip | `getReportFilmstrip` | Retrieves the filmstrip for a report: the list of page-load frames with their timings and frame image URLs. Set base64 to 1 to embed the frame images as base64 data. |
 | Get Report Filmstrip Frame | `getReportFilmstripFrame` | Downloads a single filmstrip frame image for a report by frame index, returned as a JPEG file reference. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Report HAR | `getReportHar` | Downloads the HTTP Archive (HAR) of all network requests recorded during the report's page load. Returned as a file reference; set pretty to 1 for indented JSON. |
 | Get Report Lighthouse JSON | `getReportLighthouse` | Downloads the raw Lighthouse result JSON for a report generated with the lighthouse report type. Returned as a file reference; optionally compressed or pretty-printed. |
 | Get Report PDF | `getReportPdf` | Renders and downloads the report as a PDF file reference. Charged 0.2 API credits per request (0.3 for the full PDF). Not available to Team plan Viewer roles. |
@@ -52,3 +59,5 @@ Add GTmetrix from **Build → Integrations → Connectors** and connect an accou
 | Retest Page | `retestPage` | Starts a new test for an existing page using the page's URL, location and browser. Consumes API credits like Start Test and returns the queued test. |
 | Retest Report | `retestReport` | Starts a new test using the same URL and analysis options as an existing report. Consumes API credits like Start Test and returns the queued test. |
 | Start Test | `startTest` | Starts a new GTmetrix page performance test with the given URL and analysis options. Consumes API credits depending on the report type and add-ons. Returns the queued test whose state can be polled with Get Test; on a Basic account only two tests may run concurrently (HTTP 429 otherwise). |
+
+</details>

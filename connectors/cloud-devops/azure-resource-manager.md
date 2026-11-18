@@ -5,6 +5,8 @@ hidden: true
 
 # Azure Resource Manager
 
+<img src="../../.gitbook/assets/connectors/azure-resource-manager.png" alt="Azure Resource Manager logo" width="64">
+
 Azure Resource Manager (ARM) control-plane API at https://management.azure.com. List and manage subscriptions, tenants, locations, resource groups, generic resources, ARM template deployments and deployment operations, resource providers and resource types, subscription tag names and values, resource tags at any scope, and read role assignments, role definitions and effective permissions. Every ARM request requires an api-version query parameter, exposed on each action with the current stable default. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target scope.
 
 | | |
@@ -12,8 +14,6 @@ Azure Resource Manager (ARM) control-plane API at https://management.azure.com. 
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [management.azure.com](https://management.azure.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 71 |
-| **Events** | 0 |
 | **Slug** | `azureResourceManager` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure Resource Manager from **Build → Integrations → Connectors** and co
 | Create Or Update Resource Group | `createOrUpdateResourceGroup` | Creates a resource group, or replaces an existing one with the supplied location and tags. The location cannot be changed once the group exists. |
 | Create Or Update Subscription Deployment | `createOrUpdateDeploymentAtSubscriptionScope` | Starts an ARM template deployment at subscription scope, which is how resource groups and subscription-level resources are created from a template. A location is required because the deployment metadata is stored regionally. |
 | Create Tag Name | `createTagName` | Registers a predefined tag name in a subscription so it can be offered when tagging resources. |
+
+<details>
+
+<summary>See 61 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Tag Value | `createTagValue` | Registers a predefined value for an existing tag name in a subscription. |
 | Delete Deployment | `deleteDeployment` | Deletes the deployment history record for a resource group deployment. The resources the deployment created are not affected. |
 | Delete Resource | `deleteResource` | Deletes a top-level Azure resource. The api-version must be the one published by that resource's own provider, and deletion may run asynchronously. |
@@ -95,3 +102,5 @@ Add Azure Resource Manager from **Build → Integrations → Connectors** and co
 | Validate Deployment | `validateDeployment` | Validates an ARM template and its parameters against a resource group without deploying anything, reporting any template or parameter errors. |
 | Validate Move Resources | `validateMoveResources` | Validates a resource move without performing it, reporting whether every resource could be moved to the target resource group. Returns 204 No Content when the move would succeed and 409 Conflict with details when it would not. |
 | Validate Subscription Deployment | `validateDeploymentAtSubscriptionScope` | Validates a subscription-scope ARM template and its parameters without deploying anything. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # MailerSend
 
+<img src="../../.gitbook/assets/connectors/mailersend.png" alt="MailerSend logo" width="64">
+
 MailerSend is a transactional email and SMS platform. This connector covers the MailerSend v1 API: sending email and bulk email, templates, domains and their DNS, DKIM and SMTP users, sender identities, recipients and suppression lists, message and activity history, analytics, scheduled messages, email verification, inbound routing, SMS sending with its numbers, recipients and inbound routes, account users and API tokens, and webhook management for both email and SMS.
 
 | | |
@@ -12,8 +14,6 @@ MailerSend is a transactional email and SMS platform. This connector covers the 
 | **Category** | [Communication](README.md) |
 | **Website** | [mailersend.com](https://mailersend.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 129 |
-| **Events** | 12 |
 | **Slug** | `mailersend` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MailerSend from **Build → Integrations → Connectors** and connect an acc
 | Add Spam Complaints | `addSpamComplaints` | Manually adds recipients to the spam-complaint suppression list for a sending domain, so MailerSend stops delivering to them. Normally MailerSend populates this list from feedback loops. |
 | Add Unsubscribes | `addUnsubscribes` | Manually adds recipients to the unsubscribe suppression list for a sending domain, so MailerSend stops delivering to them. Use this to honour opt-outs collected outside MailerSend. |
 | Add User | `addUser` | Invites a person to this MailerSend account with a role and a set of permissions. MailerSend emails an invitation to the address, so only invite someone you intend to give real access to. Adding users requires an owner or admin token and may be gated on trial accounts with 403 {"message":"This action is unauthorized."}. |
+
+<details>
+
+<summary>See 119 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel User Invite | `cancelInvite` | Cancel a user invite. Docs: https://developers.mailersend.com/ |
 | Create Blocklist Monitor | `createBlocklistMonitor` | Create a blocklist monitor for an IP or domain. Docs: https://developers.mailersend.com/ |
 | Create DMARC Monitor | `createDmarcMonitor` | Create a DMARC monitor for a domain. Docs: https://developers.mailersend.com/ |
@@ -154,6 +161,8 @@ Add MailerSend from **Build → Integrations → Connectors** and connect an acc
 | Verify Email Async | `verifyEmailAsync` | Start an asynchronous single-email verification. Docs: https://developers.mailersend.com/ |
 | Verify Email Verification List | `verifyEmailVerificationList` | Starts verification of a bulk email-verification list that has already been created. Despite verifying, this is a GET. The run is asynchronous - poll Get Email Verification List for status and Get Email Verification List Results for the per-address verdicts. It consumes one email-verification credit per address. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -170,5 +179,14 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Link Clicked (First Time) | `activity.clicked_unique` | The recipient clicked a tracked link for the first time. Modelled from MailerSend's documented webhook sample. |
 | Recipient Unsubscribed | `activity.unsubscribed` | The recipient used the unsubscribe link; MailerSend adds them to the unsubscribe suppression list. Modelled from MailerSend's documented webhook sample. |
 | Spam Complaint | `activity.spam_complaint` | The recipient marked the message as spam; MailerSend adds them to the spam-complaint suppression list. Modelled from MailerSend's documented webhook sample. |
+
+<details>
+
+<summary>See 2 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Survey Opened | `activity.survey_opened` | The recipient opened an embedded MailerSend survey. Modelled from MailerSend's documented webhook sample. |
 | Survey Submitted | `activity.survey_submitted` | The recipient submitted an embedded MailerSend survey. Modelled from MailerSend's documented webhook sample. |
+
+</details>

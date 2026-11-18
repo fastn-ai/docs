@@ -5,6 +5,8 @@ hidden: true
 
 # Tink
 
+<img src="../../.gitbook/assets/connectors/tink.png" alt="Tink logo" width="64">
+
 Tink is an open banking platform for accessing bank account, balance, transaction, and financial insight data across European financial institutions. Connect an end user's bank via Tink Link to read accounts, balances, transactions, categories, budgets, statistics, loans, and consent status.
 
 | | |
@@ -12,8 +14,6 @@ Tink is an open banking platform for accessing bank account, balance, transactio
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [tink.com](https://tink.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `tink` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Tink from **Build → Integrations → Connectors** and connect an account, 
 | Get Credential | `getCredential` | Retrieves a single set of bank credentials of the connected user by its credentials identifier, including its current aggregation status. |
 | Get User | `getUser` | Retrieves the Tink user associated with the current access token, including the user's ID, external user ID, app ID, feature flags, and profile settings. |
 | Get User Profile | `getUserProfile` | Retrieves the profile settings of the current Tink user, including market, locale, currency, time zone, period configuration, and notification preferences. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Accounts | `listAccounts` | Lists the connected user's bank accounts with their identifiers, type, name, and balances. Returns an empty list until the user has connected a bank via Tink Link. |
 | List Accounts (Legacy) | `listAccountsLegacy` | Lists the connected user's accounts using Tink's legacy v1 accounts endpoint. Prefer the List Accounts action, which uses the current Data API v2. |
 | List Budgets | `listBudgets` | Lists the budgets defined for the connected user, including each budget's target amount, periodicity, and the filter that selects the transactions it tracks. |
@@ -47,3 +54,5 @@ Add Tink from **Build → Integrations → Connectors** and connect an account, 
 | Query Statistics | `queryStatistics` | Queries aggregated financial statistics for the connected user, such as expenses by category, income by category, balances by account, or left-to-spend, over one or more periods. |
 | Refresh Credential | `refreshCredential` | Triggers a new aggregation run for a set of bank credentials, fetching the latest accounts and transactions from the bank. Returns an empty body; poll the Get Credential action until the status becomes UPDATED. |
 | Search Transactions | `searchTransactions` | Searches the connected user's transactions using free-text, account, category, amount, and date filters, and returns matching transactions together with aggregate metrics such as count, sum, and average. |
+
+</details>

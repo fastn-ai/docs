@@ -5,6 +5,8 @@ hidden: true
 
 # Brightpearl
 
+<img src="../../.gitbook/assets/connectors/brightpearl.png" alt="Brightpearl logo" width="64">
+
 Connect to Brightpearl's retail operations platform to manage orders, products, contacts, warehouse, and accounting data via the Brightpearl REST API.
 
 | | |
@@ -12,8 +14,6 @@ Connect to Brightpearl's retail operations platform to manage orders, products, 
 | **Category** | [Other](README.md) |
 | **Website** | [brightpearl.com](https://brightpearl.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 193 |
-| **Events** | 51 |
 | **Slug** | `brightpearl` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Brightpearl from **Build → Integrations → Connectors** and connect an ac
 | Create Accounting Period | `createAccountingPeriod` | Creates a new accounting period with specified start and end dates. |
 | Create Asset Value Correction | `createAssetValueCorrection` | Corrects the value of stock received in a batch from a purchase order. Only unallocated stock can be corrected. |
 | Create Brightpearl Category | `createBrightpearlCategory` | Create a new Brightpearl product category |
+
+<details>
+
+<summary>See 183 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Company | `createCompany` | Creates a new company entity. |
 | Create Contact | `createContact` | Create a new contact (customer, supplier, or staff) |
 | Create Contact Group | `createContactGroup` | Create a new contact group |
@@ -218,6 +225,8 @@ Add Brightpearl from **Build → Integrations → Connectors** and connect an ac
 | Update Warehouse | `updateWarehouse` | Update one or more warehouses. Accepts an array of warehouse objects. Can update name, address, typeCode, and click-and-collect settings. |
 | Update Zone | `updateZone` | Update a zone's name using JSON Patch (RFC 6902). Sends a replace operation on /name. Returns the updated zone. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -234,6 +243,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Drop-Ship Note Modified | `drop-ship-note.modified` | Fires when a drop-ship note is modified. |
 | External Transfer (Any Event) | `external-transfer` | Fires on any lifecycle event for an external (warehouse-to-warehouse) stock transfer. |
 | External Transfer Created | `external-transfer.created` | Fires when a new external (warehouse-to-warehouse) stock transfer is created. |
+
+<details>
+
+<summary>See 41 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | External Transfer Modified | `external-transfer.modified` | Fires when an external stock transfer is modified. |
 | Goods-In Note (Any Event) | `goods-in-note` | Fires on any lifecycle event for a goods-in note — created, modified, or deleted. Used when stock is received against a purchase order. |
 | Goods-In Note Created | `goods-in-note.created` | Fires when a new goods-in note is created (stock received against a purchase order). |
@@ -275,3 +291,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Stock Transfer (Any Event) | `stock-transfer` | Fires on any lifecycle event for a stock transfer. |
 | Stock Transfer Created | `stock-transfer.created` | Fires when a stock transfer is created. |
 | Stock Transfer Modified | `stock-transfer.modified` | Fires when a stock transfer is modified. |
+
+</details>

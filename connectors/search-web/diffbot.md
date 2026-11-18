@@ -5,6 +5,8 @@ hidden: true
 
 # Diffbot
 
+<img src="../../.gitbook/assets/connectors/diffbot.png" alt="Diffbot logo" width="64">
+
 Diffbot turns web pages into structured data and exposes a Knowledge Graph of organizations, people, articles and products. This connector covers the full Diffbot API surface: the Extract APIs (analyze, article, product, image, video, discussion, event, list, job, plus raw-HTML POST extraction), Custom APIs, Crawl, Bulk Extract, Web Search, Knowledge Graph Search (DQL) with coverage reports, Enhance (single, combine and bulk), the Natural Language API, and the Account API.
 
 | | |
@@ -12,8 +14,6 @@ Diffbot turns web pages into structured data and exposes a Knowledge Graph of or
 | **Category** | [Search and web](README.md) |
 | **Website** | [diffbot.com](https://diffbot.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 33 |
-| **Events** | 3 |
 | **Slug** | `diffbot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Diffbot from **Build → Integrations → Connectors** and connect an accoun
 | Delete Custom API | `deleteCustomApi` | Permanently delete a Custom API from this token, identified by the same api and urlPattern pair used to create it. Deletion is irreversible - back the definition up with listCustomApis first. Free. |
 | Enhance Entity | `enhanceEntity` | Match a person or organization you already know something about (name, email, phone, URL, employer, location, IP) against the Knowledge Graph and return the enriched entity with a match score. Set refresh to re-crawl the entity's origins and search to look for new origins on the web. Consumes Knowledge Graph credits. |
 | Enhance Entity (POST) | `enhanceEntityPost` | Same single-entity Knowledge Graph enrichment as enhanceEntity, submitted as a JSON body so that long field lists, multi-valued name/url/email inputs and long JsonPath filters are not limited by URL length. Consumes Knowledge Graph credits. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Extract Article | `extractArticle` | Extract clean article content from a news story, blog post or other text-heavy page: title, author, date, plain text, HTML, images, tags, sentiment and categories. Costs 1 Diffbot credit per call. |
 | Extract Discussion | `extractDiscussion` | Extract a forum thread, comment section or review list as structured posts: author, date, text, votes, nesting and sentiment, with automatic pagination across the thread. Costs 1 Diffbot credit per call. |
 | Extract Event | `extractEvent` | Extract event details from an event listing page: event name, description, start and end date/time, venue, address, organiser, performers and ticket/offer information. Costs 1 Diffbot credit per call. |
@@ -57,6 +64,8 @@ Add Diffbot from **Build → Integrations → Connectors** and connect an accoun
 | Search Knowledge Graph (POST) | `searchKnowledgeGraphPost` | Same Knowledge Graph DQL search as searchKnowledgeGraph, but with the query and options sent as a JSON body so that very long queries and long JsonPath filter lists are not limited by URL length. Pass the body as a JSON string. Consumes Knowledge Graph credits. |
 | Web Search | `webSearch` | Search the live web through Diffbot's index and get back ranked results with a relevance score, page URL, title, a highlighted content excerpt and (where known) the publication date. The query supports the after:, before:, site: and url: operators. Authenticates with a Bearer token rather than the token query parameter. Caution: a small maxTokens (observed at 150 and below) makes Diffbot return an empty search_results array rather than shortened excerpts - leave maxTokens unset unless you have verified the value returns results. |
 | Web Search (POST) | `webSearchPost` | Same live web search as webSearch, but submitted as a JSON body so that longer queries and up to five simultaneous query strings can be sent. Pass the body as a JSON string, e.g. {"text":["diffbot","site:diffbot.com pricing"],"size":5}. Authenticates with a Bearer token. |
+
+</details>
 
 ## Events
 

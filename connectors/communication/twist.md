@@ -5,6 +5,8 @@ hidden: true
 
 # Twist
 
+<img src="../../.gitbook/assets/connectors/twist.png" alt="Twist logo" width="64">
+
 Twist by Doist — asynchronous team communication. Manage workspaces, channels, threads, comments, messages, groups, reactions, attachments, notifications, and search via the Twist API v3.
 
 | | |
@@ -12,8 +14,6 @@ Twist by Doist — asynchronous team communication. Manage workspaces, channels,
 | **Category** | [Communication](README.md) |
 | **Website** | [twist.com](https://twist.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 124 |
-| **Events** | 0 |
 | **Slug** | `twist` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Twist from **Build → Integrations → Connectors** and connect an account,
 | Add Workspace Member | `addWorkspaceMember` | Invites a person to a Twist workspace by email, optionally setting their name, role and the channels they join. Twist sends the invitation email as part of this call. |
 | Add Workspace Member (v3) | `addWorkspaceMemberV3` | Invites a person to a Twist workspace using the older v3 endpoint. Doist has deprecated this route in favour of Add Workspace Member. |
 | Archive All Inbox Threads | `archiveAllInboxThreads` | Archives every thread in the authenticated user's Twist inbox for a workspace, optionally only those older than a given time. |
+
+<details>
+
+<summary>See 114 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Archive Channel | `archiveChannel` | Archives a Twist channel so it no longer appears in the active channel list. A channel must be archived before it can be deleted. |
 | Archive Conversation | `archiveConversation` | Archives a Twist conversation so it no longer appears in the authenticated user's active message list. |
 | Archive Inbox Thread | `archiveInboxThread` | Archives a single thread out of the authenticated user's Twist inbox. The thread itself stays in its channel. |
@@ -148,3 +155,5 @@ Add Twist from **Build → Integrations → Connectors** and connect an account,
 | Update Workspace | `updateWorkspace` | Updates the name of an existing Twist workspace. |
 | Update Workspace Member | `updateWorkspaceMember` | Changes the role a person holds in a Twist workspace. Identify the person by either their email address or their user identifier. |
 | Update Workspace Member (v3) | `updateWorkspaceMemberV3` | Changes a person's role in a Twist workspace using the older v3 endpoint. Doist has deprecated this route in favour of Update Workspace Member. |
+
+</details>

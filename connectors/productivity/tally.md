@@ -5,6 +5,8 @@ hidden: true
 
 # Tally
 
+<img src="../../.gitbook/assets/connectors/tally.png" alt="Tally logo" width="64">
+
 Tally is an online form builder. This connector wraps the complete Tally REST API (https://api.tally.so): forms and their blocks, questions, submissions, per-form analytics (metrics, visits, submissions, dimensions, drop-off), workspaces and folders, organization users and invites, and webhook subscriptions with their delivery events. Authentication uses a Tally API key sent as a Bearer token, created under Settings &gt; API keys.
 
 | | |
@@ -12,8 +14,6 @@ Tally is an online form builder. This connector wraps the complete Tally REST AP
 | **Category** | [Productivity](README.md) |
 | **Website** | [tally.so](https://tally.so) |
 | **Authentication** | Bearer token |
-| **Actions** | 36 |
-| **Events** | 0 |
 | **Slug** | `tally` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Tally from **Build → Integrations → Connectors** and connect an account,
 | Delete Form Submission | `deleteFormSubmission` | Permanently deletes a single submission from a Tally form, including all of its answers. Returns 204 No Content with an empty body on success. |
 | Delete Webhook | `deleteWebhook` | Deletes a Tally webhook. If it is the last webhook on its form, the form's webhooks integration is marked deleted as well. Returns 204 No Content with an empty body on success. |
 | Delete Workspace | `deleteWorkspace` | Deletes a Tally workspace and moves it and all of its forms to the trash, from where they can be restored in the Tally dashboard. Returns 204 No Content with an empty body on success. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Workspace Folder | `deleteWorkspaceFolder` | Deletes a folder and every folder nested inside it, moving any forms they contain to the trash. Requires a Tally Pro subscription; accounts on the Free plan receive an authorization error. Returns 204 No Content with an empty body on success. |
 | Get Current User | `getCurrentUser` | Returns the profile of the Tally user that owns the API key, including the organization the user belongs to and the active subscription plan. Optionally updates the user's stored timezone. |
 | Get Form | `getForm` | Returns a single Tally form by its ID, including all of its blocks and its settings. |
@@ -60,3 +67,5 @@ Add Tally from **Build → Integrations → Connectors** and connect an account,
 | Update Webhook | `updateWebhook` | Updates an existing Tally webhook. The form, endpoint URL, event types and enabled flag must all be supplied, so read the webhook first and send back every value you want to keep. Returns 204 No Content with an empty body on success. |
 | Update Workspace | `updateWorkspace` | Renames a Tally workspace. Returns 204 No Content with an empty body on success; read the workspace back with Get Workspace to confirm the new name. |
 | Update Workspace Folder | `updateWorkspaceFolder` | Renames a folder in a Tally workspace. Requires a Tally Pro subscription; accounts on the Free plan receive an authorization error. Returns 204 No Content with an empty body on success. |
+
+</details>

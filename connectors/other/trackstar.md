@@ -5,6 +5,8 @@ hidden: true
 
 # Trackstar
 
+<img src="../../.gitbook/assets/connectors/trackstar.png" alt="Trackstar logo" width="64">
+
 Trackstar Unified API for Supply Chain Logistics (WMS / 3PL). Integrate once to read and write orders, inventory, products, inbound shipments, returns, warehouses, locations, suppliers, shipping methods, and billing across dozens of warehouse management systems.
 
 | | |
@@ -12,8 +14,6 @@ Trackstar Unified API for Supply Chain Logistics (WMS / 3PL). Integrate once to 
 | **Category** | [Other](README.md) |
 | **Website** | [trackstarhq.com](https://trackstarhq.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 67 |
-| **Events** | 52 |
 | **Slug** | `trackstar` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Trackstar from **Build → Integrations → Connectors** and connect an acco
 | Create Order | `createOrder` | Creates an outbound Order. Use the integrations endpoint to discover integration-specific fields. Body uses the unified base schema. Fields depend on the warehouse system: call Get Integration Write Info for the exact fields your integration accepts. Only the fields you send are passed to Trackstar; any other field from write-info is passed through as well. |
 | Create Order File | `createOrderFile` | Attach a file (e.g. label or document) to the specified order. |
 | Create Product | `createProduct` | Creates a Product. Use the integrations endpoint for integration-specific fields. |
+
+<details>
+
+<summary>See 57 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Return | `createReturn` | Creates a Return. Use the integrations endpoint to discover integration-specific fields. |
 | Create Webhook | `createWebhook` | Register a Trackstar webhook so fastn is notified when WMS/cart events occur. POST /webhooks with url and the event_types to subscribe to. |
 | Delete Connection | `deleteConnection` | Deletes the connection associated with the provided access token. |
@@ -92,6 +99,8 @@ Add Trackstar from **Build → Integrations → Connectors** and connect an acco
 | Update Return Trackstar Tags | `updateReturnTags` | Update the trackstar_tags for the specified return. |
 | Update Warehouse Trackstar Tags | `updateWarehouseTags` | Update the trackstar_tags for the specified warehouse. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -108,6 +117,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Cart Product Created | `cart_product.created` | When a Cart Product is created. |
 | Cart Product Updated | `cart_product.updated` | When a Cart Product is updated. |
 | Cart Warehouse Created | `cart_warehouse.created` | When a Cart Warehouse is created. |
+
+<details>
+
+<summary>See 42 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Cart Warehouse Updated | `cart_warehouse.updated` | When a Cart Warehouse is updated. |
 | Connection Created | `connection.created` | When a Connection is created. |
 | Connection Deleted | `connection.deleted` | When a Connection is deleted. |
@@ -150,3 +166,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Warehouse Location Created | `warehouse_location.created` | When a Warehouse Location is created. |
 | Warehouse Location Updated | `warehouse_location.updated` | When a Warehouse Location is updated. |
 | Warehouse Updated | `warehouse.updated` | When a Warehouse is updated. |
+
+</details>

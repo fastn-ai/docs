@@ -5,6 +5,8 @@ hidden: true
 
 # InfluxDB Cloud
 
+<img src="../../.gitbook/assets/connectors/influx-db-cloud.svg" alt="InfluxDB Cloud logo" width="64">
+
 InfluxDB Cloud is InfluxData's managed time series platform. This connector covers the InfluxDB Cloud v2 API and its Invocable Scripts API: writing line-protocol points and deleting data by predicate, running Flux queries and parsing them into an AST, stored invocable scripts and their parameters, buckets and bucket measurement schemas, organizations with their members, owners, secrets, limits and usage, API tokens (authorizations), tasks with their runs, retries and logs, dashboards with their cells and views, variables, labels, checks, notification rules and notification endpoints, Telegraf configurations and plugins, DBRP mappings for InfluxQL compatibility, templates and stacks, users, and instance metadata such as routes, resource types and feature flags.
 
 | | |
@@ -12,8 +14,6 @@ InfluxDB Cloud is InfluxData's managed time series platform. This connector cove
 | **Category** | [Data and databases](README.md) |
 | **Website** | [influxdata.com](https://influxdata.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 182 |
-| **Events** | 0 |
 | **Slug** | `influxDbCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add InfluxDB Cloud from **Build → Integrations → Connectors** and connect an
 | Add Notification Endpoint Label | `addNotificationEndpointLabel` | Add a notification Endpoint Label in InfluxDB Cloud. InfluxDB Cloud v2 API operation PostNotificationEndpointIDLabels (POST /api/v2/notificationEndpoints/{endpointID}/labels). |
 | Add Notification Rule Label | `addNotificationRuleLabel` | Add a notification Rule Label in InfluxDB Cloud. InfluxDB Cloud v2 API operation PostNotificationRuleIDLabels (POST /api/v2/notificationRules/{ruleID}/labels). |
 | Add Organization Member | `addOrganizationMember` | Add a member to an organization. Add a user to an organization. InfluxDB users have permission to access InfluxDB. Members are users within the organization. InfluxDB Cloud v2 API operation PostOrgsIDMembers (POST /api/v2/orgs/{orgID}/members). |
+
+<details>
+
+<summary>See 172 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Organization Owner | `addOrganizationOwner` | Add an owner to an organization. Use this endpoint to assign the organization owner role to a user. InfluxDB Cloud v2 API operation PostOrgsIDOwners (POST /api/v2/orgs/{orgID}/owners). |
 | Add Task Label | `addTaskLabel` | Add a label to a task. Use this endpoint to add a label that you can use to filter tasks in the InfluxDB UI. InfluxDB Cloud v2 API operation PostTasksIDLabels (POST /api/v2/tasks/{taskID}/labels). |
 | Add Task Member | `addTaskMember` | Add a member to a task. Deprecated: Tasks don't use owner and member roles. Use /api/v2/authorizations to assign user permissions. Adds a user to members of a task and returns the member. InfluxDB Cloud v2 API operation PostTasksIDMembers (POST /api/v2/tasks/{taskID}/members). |
@@ -206,3 +213,5 @@ Add InfluxDB Cloud from **Build → Integrations → Connectors** and connect an
 | Update User Password | `updateUserPassword` | Update a password. Updates a user password. Use this endpoint to let a user authenticate with Basic authentication credentials and set a new password. InfluxDB Cloud v2 API operation PutUsersIDPassword (PUT /api/v2/users/{userID}/password). Passwords are managed by the InfluxData identity provider, so InfluxDB Cloud rejects this with 400 "passwords cannot be changed through the InfluxDB Cloud API". Supported on InfluxDB OSS 2.x. |
 | Update Variable | `updateVariable` | Update the variable in InfluxDB Cloud. InfluxDB Cloud v2 API operation PatchVariablesID (PATCH /api/v2/variables/{variableID}). |
 | Write Points | `writePoints` | Write time series data to a bucket in InfluxDB line protocol. This endpoint does not take JSON: the request body is the raw line-protocol payload and a successful write returns 204 No Content with an empty body. InfluxDB Cloud v2 API operation PostWrite (POST /api/v2/write). |
+
+</details>

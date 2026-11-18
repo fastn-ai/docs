@@ -5,6 +5,8 @@ hidden: true
 
 # Fireflies.ai
 
+<img src="../../.gitbook/assets/connectors/firefliesai.png" alt="Fireflies.ai logo" width="64">
+
 Fireflies.ai connector — GraphQL API (single POST https://api.fireflies.ai/graphql) for the AI meeting notetaker. Query and manage transcripts, summaries, analytics, soundbites (bites), users, user groups, channels, contacts, AskFred AI threads, live/active meetings, audit events, and automation rule executions; upload audio; and run live/meeting mutations. Auth via Bearer API key.
 
 | | |
@@ -12,8 +14,6 @@ Fireflies.ai connector — GraphQL API (single POST https://api.fireflies.ai/gra
 | **Category** | [Communication](README.md) |
 | **Website** | [fireflies.ai](https://fireflies.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 38 |
-| **Events** | 0 |
 | **Slug** | `firefliesai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Fireflies.ai from **Build → Integrations → Connectors** and connect an a
 | Delete Transcript | `deleteTranscript` | Delete a transcript by id (returns fields from the deleted transcript). GraphQL: deleteTranscript(id). 10 req/min; deleting others' meetings needs team-admin. |
 | Get Analytics | `getAnalytics` | Team meeting analytics for a date range (ISO 8601). GraphQL: analytics(start_time, end_time). Requires a Business+ plan (returns paid_required otherwise). |
 | Get AskFred Thread | `getAskFredThread` | Get one AskFred thread by id including all messages (query/answer/suggested_queries). GraphQL: askfred_thread(id). |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Bite | `getBite` | Get one soundbite (bite) by id with captions, sources and origin. GraphQL: bite(id). |
 | Get Channel | `getChannel` | Get a single channel by id with its members. GraphQL: channel(id). |
 | Get Transcript | `getTranscript` | Get one transcript by id with full detail: sentences, summary, speakers, attendees, meeting_info, apps_preview, shared_with. GraphQL: transcript(id). |
@@ -62,3 +69,5 @@ Add Fireflies.ai from **Build → Integrations → Connectors** and connect an a
 | Update Meeting State | `updateMeetingState` | Pause or resume recording for a live meeting. GraphQL: updateMeetingState(input:{meeting_id, action}). action one of pause_recording/resume_recording. |
 | Update Meeting Title | `updateMeetingTitle` | Rename a meeting/transcript. GraphQL: updateMeetingTitle(input:{title, id}). Title 5-256 chars; requires admin. |
 | Upload Audio | `uploadAudio` | Queue an audio/video file (public URL) for transcription. GraphQL: uploadAudio(input:{url,title}). Requires a Pro+ plan (returns paid_required otherwise). Optional per-upload webhook/attendees are set in the Fireflies dashboard. |
+
+</details>

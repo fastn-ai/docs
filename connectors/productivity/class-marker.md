@@ -5,6 +5,8 @@ hidden: true
 
 # ClassMarker
 
+<img src="../../.gitbook/assets/connectors/class-marker.png" alt="ClassMarker logo" width="64">
+
 ClassMarker is an online testing and quiz platform for exams, training assessments and certification. This connector covers the ClassMarker REST API v1: the group, link and exam catalogue, recent results for groups, links and individual exams, access list code management, the question bank, and test categories. Requests are authenticated with an API key plus a per-request SHA-256 signature and UNIX timestamp.
 
 | | |
@@ -12,8 +14,6 @@ ClassMarker is an online testing and quiz platform for exams, training assessmen
 | **Category** | [Productivity](README.md) |
 | **Website** | [classmarker.com](https://classmarker.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 16 |
-| **Events** | 2 |
 | **Slug** | `classMarker` |
 
 ## Use it
@@ -34,12 +34,21 @@ Add ClassMarker from **Build → Integrations → Connectors** and connect an ac
 | List Groups Links And Exams | `listGroupsLinksAndExams` | List every group, public link and exam available to the account, with the identifiers needed by the recent-results actions. Returns status ok with data, or no_results when the account has no groups or links yet. |
 | List Questions | `listQuestions` | List every question in the account's question bank, with its type, category, scoring, feedback and answer options. |
 | List Recent Results For All Groups | `listRecentResultsForAllGroups` | Retrieve recent exam results across every group in the account. Use Finished After Timestamp to page forward through results by completion time; ClassMarker defaults to roughly the last fourteen days when it is omitted. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Recent Results For All Links | `listRecentResultsForAllLinks` | Retrieve recent exam results across every public link in the account. Use Finished After Timestamp to page forward through results by completion time; ClassMarker defaults to roughly the last fourteen days when it is omitted. |
 | List Recent Results For Group Exam | `listRecentResultsForGroupExam` | Retrieve recent results for one specific exam within one specific group. Obtain the group and exam identifiers from List Groups Links And Exams. |
 | List Recent Results For Link Exam | `listRecentResultsForLinkExam` | Retrieve recent results for one specific exam behind one specific public link. Obtain the link and exam identifiers from List Groups Links And Exams. |
 | Update Category | `updateCategory` | Rename a child category or move it under a different parent category. Obtain the category identifier from List Categories. Note that the published documentation gives the route as /v1/category/{category_id}.json, which does not exist; the working route is /v1/categories/category/{category_id}.json. |
 | Update Parent Category | `updateParentCategory` | Rename an existing parent category. Obtain the parent category identifier from List Categories. |
 | Update Question | `updateQuestion` | Update an existing question in the account's question bank, including its text, type, options, category, scoring and feedback. Obtain the question identifier from List Questions. The correct answer is designated inside the Answer Options object rather than by a top-level field: the API rejects correct_answer, correct_answers and answer as invalid properties. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Bitbucket
 
+<img src="../../.gitbook/assets/connectors/bitbucket.png" alt="Bitbucket logo" width="64">
+
 Bitbucket Cloud (Atlassian) REST API v2.0 connector. Manage workspaces, repositories, pull requests, issues, commits, refs/branches/tags, source, pipelines, snippets, projects, deploy keys, branch restrictions, downloads, and webhooks. Base URL https://api.bitbucket.org/2.0.
 
 | | |
@@ -12,8 +14,6 @@ Bitbucket Cloud (Atlassian) REST API v2.0 connector. Manage workspaces, reposito
 | **Category** | [Developer tools](README.md) |
 | **Website** | [bitbucket.org](https://bitbucket.org) |
 | **Authentication** | Basic auth, OAuth 2.0 |
-| **Actions** | 187 |
-| **Events** | 14 |
 | **Slug** | `bitbucket` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bitbucket from **Build → Integrations → Connectors** and connect an acco
 | Create Branch | `createBranch` | Create a new branch pointing at a target commit/branch. POST /2.0/repositories/{workspace}/{repo_slug}/refs/branches |
 | Create Branch Restriction | `createBranchRestriction` | Create a branch restriction. POST /2.0/repositories/{workspace}/{repo_slug}/branch-restrictions |
 | Create Commit Comment | `createCommitComment` | Add a comment to a commit. POST /2.0/repositories/{workspace}/{repo_slug}/commit/{commit}/comments |
+
+<details>
+
+<summary>See 177 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Deploy Key | `createDeployKey` | Add a deploy key to a repository. POST /2.0/repositories/{workspace}/{repo_slug}/deploy-keys |
 | Create Deployment Environment Variable | `createDeploymentVariable` | Create a variable on a deployment environment. Requires pipeline:variable scope. |
 | Create Pipeline Schedule | `createPipelineSchedule` | Create a pipeline schedule for a repository. Requires pipeline:write scope. |
@@ -212,6 +219,8 @@ Add Bitbucket from **Build → Integrations → Connectors** and connect an acco
 | Update Workspace Pipeline Variable | `updateWorkspacePipelineVariable` | Update a workspace-level pipeline variable by UUID. Requires pipeline:variable scope. |
 | Update Workspace Webhook | `updateWorkspaceWebhook` | Update a workspace-level webhook. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -228,7 +237,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Pull Request Comment Created | `pullrequest:comment_created` | A comment is added to a pull request. |
 | Pull Request Created | `pullrequest:created` | A pull request is created. |
 | Pull Request Declined | `pullrequest:rejected` | A pull request is declined. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Pull Request Merged | `pullrequest:fulfilled` | A pull request is merged. |
 | Pull Request Updated | `pullrequest:updated` | A pull request's title, description, or destination changes, or commits are pushed to the source branch. |
 | Repository Fork | `repo:fork` | A user forks a repository. |
 | Repository Push | `repo:push` | A user pushes one or more commits to a repository. Event type carried in the X-Event-Key request header. |
+
+</details>

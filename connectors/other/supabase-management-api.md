@@ -5,6 +5,8 @@ hidden: true
 
 # Supabase Management
 
+<img src="../../.gitbook/assets/connectors/supabase-management-api.png" alt="Supabase Management logo" width="64">
+
 Supabase Management API (api.supabase.com/v1): edge functions, SQL/DDL queries, migrations, PostgREST config, project & API key management. Authenticates with an account-level Personal Access Token (sbp_...); the target project is passed per-action via the projectRef input.
 
 | | |
@@ -12,8 +14,6 @@ Supabase Management API (api.supabase.com/v1): edge functions, SQL/DDL queries, 
 | **Category** | [Other](README.md) |
 | **Website** | [supabase.com](https://supabase.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 164 |
-| **Events** | 0 |
 | **Slug** | `supabaseManagementApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Supabase Management from **Build → Integrations → Connectors** and conne
 | Bulk Delete Secrets | `bulkDeleteSecrets` | Deletes all secrets with the given names from the specified project. The request body is a JSON array of secret-name strings passed via the 'names' input field. |
 | Bulk Update Functions | `bulkUpdateFunctions` | Bulk update edge functions. Creates a new function or replaces existing ones. Idempotent. NOTE: you must manually bump the version. The request body is a JSON array of function objects (pass via the 'functions' input). |
 | Cancel a Project Restoration | `cancelAProjectRestoration` | Management API: cancel an in-progress restoration of the given project. This endpoint takes no request body. Returns 200 with no body. ⛔ VERIFIED-BLOCKED 2026-06-04: provider business-state — 400 "This project is not in a failed restore state, it is ACTIVE_HEALTHY." Requires a failed-restore state which cannot be safely constructed on this project. |
+
+<details>
+
+<summary>See 154 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check Vanity Subdomain Availability | `checkVanitySubdomainAvailability` | Checks whether a desired vanity subdomain is available for a project. Requires a Pro, Team, or Enterprise organization plan. ⛔ VERIFIED-BLOCKED 2026-06-04: provider business-state — 400 "This feature requires the Pro, Team, or Enterprise organization plan." Requires Pro/Team/Enterprise plan. Wiring verified correct (auth + routing healthy). |
 | Claim Project for Organization | `claimProjectForOrganization` | Claims a project into an organization using a claim token (orgSlug path param + claimToken path param). BLOCKED (business / provider state): provider returns 400 {"message":"Cannot transfer project to the organization it already belongs to."} when claiming the test project into its own org. Config is healthy (auth + routing OK; full claim chain createProjectClaimToken→getProjectClaimToken→getOrganizationProjectClaim all return 200/201). To get a real 200 this needs a project owned by a DIFFERENT org than the claiming org. Verified 2026-06-04. |
 | Count Action Runs | `countActionRuns` | Management API: count the number of action runs for a project (HEAD request — count returned via response headers, no body). BLOCKED (fastn HEAD limitation): the fastn HTTP executor does not support the HEAD method (method enum is GET/POST/PUT/PATCH/DELETE only; executor returns "Action does not have HTTP configuration"). Use listActionRuns instead for the same data. Verified 2026-06-04. |
@@ -188,3 +195,5 @@ Add Supabase Management from **Build → Integrations → Connectors** and conne
 | Upgrade Postgres Version | `upgradePostgresVersion` | Initiates an upgrade of the project's Postgres version to target_version. Returns a tracking_id to poll with getPostgresUpgradeStatus. ⛔ VERIFIED-BLOCKED 2026-06-04: provider business-state — 400 "Project is not eligible for upgrade" (already on latest PG). Requires an upgrade-eligible state which cannot be safely constructed on this project. |
 | Upsert a Migration | `upsertMigration` | Only available to selected partner OAuth apps. Management API: upsert (insert or update) a tracked database migration. Provide the forward SQL (query), an optional descriptive name, and an optional rollback SQL. |
 | Verify DNS Config | `verifyDnsConfig` | Re-verifies the DNS configuration for a project's custom hostname and returns the updated verification status. ⛔ VERIFIED-BLOCKED 2026-06-04: provider business-state — 400 "Please enable the Custom Domain add-on for the project first." Requires Custom Domain add-on. Wiring verified correct (auth + routing healthy). |
+
+</details>

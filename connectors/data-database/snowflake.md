@@ -5,6 +5,8 @@ hidden: true
 
 # Snowflake
 
+<img src="../../.gitbook/assets/connectors/snowflake.png" alt="Snowflake logo" width="64">
+
 Snowflake Data Cloud connector using the Snowflake SQL REST API (/api/v2/statements) and the resource-management REST APIs (databases, schemas, tables, warehouses, users, roles, pipes, tasks). Base URL is per-account: https://{account}.snowflakecomputing.com/api/v2. Auth is key-pair JWT or OAuth bearer token supplied by the user (Phase 2 will supply a generated JWT).
 
 | | |
@@ -12,8 +14,6 @@ Snowflake Data Cloud connector using the Snowflake SQL REST API (/api/v2/stateme
 | **Category** | [Data and databases](README.md) |
 | **Website** | [snowflake.com](https://snowflake.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 65 |
-| **Events** | 0 |
 | **Slug** | `snowflake` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Snowflake from **Build → Integrations → Connectors** and connect an acco
 | Create or Alter User | `createOrAlterUser` | Create or alter a user to match the definition (PUT idempotent). |
 | Create or Alter Warehouse | `createOrAlterWarehouse` | Create or alter a warehouse to match the definition (PUT idempotent). |
 | Create Pipe | `createPipe` | Create a pipe with a COPY INTO statement for continuous data loading. |
+
+<details>
+
+<summary>See 55 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Role | `createRole` | Create an account-level role. |
 | Create Schema | `createSchema` | Create a schema in a database. createMode query param controls existing-object behavior. |
 | Create Table | `createTable` | Create a table with columns in a schema. columns is an array of {name,datatype,...} objects. |
@@ -89,3 +96,5 @@ Add Snowflake from **Build → Integrations → Connectors** and connect an acco
 | Suspend Task | `suspendTask` | Suspend a task so it stops running on its schedule. |
 | Suspend Warehouse | `suspendWarehouse` | Suspend (stop) a running warehouse. |
 | Use Warehouse | `useWarehouse` | Set the warehouse as the current warehouse for the session. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Europe PMC
 
+<img src="../../.gitbook/assets/connectors/europe-pmc.png" alt="Europe PMC logo" width="64">
+
 Europe PMC is a free database of over 45 million life science publications (PubMed abstracts, PubMed Central full text, preprints, patents and more) run by EMBL-EBI. Search articles, get article details, references, citations, linked data and lab links, hit profiles, full text and book XML, and check retraction or correction status. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Europe PMC is a free database of over 45 million life science publications (PubM
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [europepmc.org](https://europepmc.org) |
 | **Authentication** | No authentication |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `europePmc` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add Europe PMC from **Build → Integrations → Connectors** and connect an acc
 | Get Search Hit Profile | `getSearchProfile` | Use this module to obtain a 'profile' of hit counts from our database for various publication types and data sources.. This module adheres to the CORS standard of headers to enable javascript cross-domain search. &lt;br/&gt;Construct your URL for profile requests as follows:&lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/profile?query=parameters&lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query.For example: profile?query=parameters or profile/query=parameters. Docs: https://europepmc.org/RestfulWebService (GET /profile) |
 | List Search Fields | `listSearchFields` | Use this module to see a full list of our indexed search fields, along with the datasets they can be used for.. A note is made above in the &lt;a href="/RestfulWebService#oview" target="_blank"&gt;Overview&lt;/a&gt; about the different versions of the web service available. Construct your URL for a fields request as follows for the production version:&lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/fields &lt;br/&gt;&lt;br/&gt;Construct your URL for a fields request as follows for the test version of the web service:&lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/test/rest/fields. Docs: https://europepmc.org/RestfulWebService (GET /fields) |
 | Search Article Status Updates | `searchArticleStatusUpdates` | Use this module to search for article status update. This module must be used with the header Content-type:application/json.&lt;br/&gt;This means that all the parameters must be passed in the request body as a JSON object.&lt;br/&gt;Find out more &lt;a href="https://europepmc.org/AboutArticleStatusMonitor"&gt;About the article status monitor&lt;/a&gt;, how updates are obtained and what’s included in the data.&lt;br/&gt;Construct your POST search requests as follows:&lt;br/&gt;&lt;br/&gt;POST https://www.ebi.ac.uk/europepmc/webservices/rest/status-update-search with request body { ids: [ { src: string, extId: string } ]}. Check whether articles were retracted, corrected or have an expression of concern. Docs: https://europepmc.org/RestfulWebService (POST /status-update-search) |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Articles | `searchArticles` | Use this module to search our publication database. For more information on query syntax, search field combination and other curiosities, see the Europe PMC help page. This module adheres to the CORS standard of headers to enable javascript cross-domain search.Construct your URL for search requests as follows: &lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=parameters &lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query. For example:search?query=parameters or search/query=parameters. Docs: https://europepmc.org/RestfulWebService (GET /search) |
 | Search Articles (POST) | `searchArticlesPost` | Use this module to search our publication database. For more information on query syntax, search field combination and other curiosities, see the Europe PMC help page. This module adheres to the CORS standard of headers to enable javascript cross-domain search.Construct your URL for search requests as follows: &lt;br/&gt;&lt;br/&gt;GET https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=parameters &lt;br/&gt;&lt;br/&gt;Note that for this module, the user may specify either a slash symbol (/) or a question mark symbol (?) after the method name, and before the query. For example:search?query=parameters or search/query=parameters. Docs: https://europepmc.org/RestfulWebService (POST /searchPOST) Use this form for very long queries; the query is sent as a form body (avoid the & character inside it). |
+
+</details>

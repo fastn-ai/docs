@@ -5,6 +5,8 @@ hidden: true
 
 # Random User Generator
 
+<img src="../../.gitbook/assets/connectors/random-user-generator.png" alt="Random User Generator logo" width="64">
+
 Random User Generator is a free API that creates realistic fake user profiles for testing: names, addresses, emails, logins, phones and photos. Choose gender, nationality and fields, use seeds for repeatable data, and pin an API version. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Random User Generator is a free API that creates realistic fake user profiles fo
 | **Category** | [Developer tools](README.md) |
 | **Website** | [randomuser.me](https://randomuser.me) |
 | **Authentication** | No authentication |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `randomUserGenerator` |
 
 ## Use it

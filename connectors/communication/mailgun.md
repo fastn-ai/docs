@@ -5,6 +5,8 @@ hidden: true
 
 # Mailgun
 
+<img src="../../.gitbook/assets/connectors/mailgun.png" alt="Mailgun logo" width="64">
+
 Mailgun transactional email and email automation API. Send email, manage domains, mailing lists, templates, routes, suppressions, events, stats, tags, IPs, and webhooks. HTTP Basic Auth with username 'api' and your Mailgun API key. Base host api.mailgun.net (US) or api.eu.mailgun.net (EU). Most endpoints v3, some v4.
 
 | | |
@@ -12,8 +14,6 @@ Mailgun transactional email and email automation API. Send email, manage domains
 | **Category** | [Communication](README.md) |
 | **Website** | [mailgun.com](https://mailgun.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 75 |
-| **Events** | 8 |
 | **Slug** | `mailgun` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mailgun from **Build → Integrations → Connectors** and connect an accoun
 | Create Template | `createTemplate` | Create a template. POST /v3/{domain}/templates, form-urlencoded. |
 | Create Template Version | `createTemplateVersion` | Create a new template version. POST /v3/{domain}/templates/{name}/versions, form-urlencoded. |
 | Create Unsubscribe | `createUnsubscribe` | Add an address to the unsubscribe list. POST /v3/{domain}/unsubscribes, form-urlencoded. |
+
+<details>
+
+<summary>See 65 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | Create/register a webhook for an event type on a domain. POST /v3/domains/{domain}/webhooks, form-urlencoded with id (event type) and url. |
 | Create Whitelist | `createWhitelist` | Add an address or domain to the whitelist. POST /v3/{domain}/whitelists, form-urlencoded. |
 | Delete Bounce | `deleteBounce` | Remove an address from the bounce list. DELETE /v3/{domain}/bounces/{address}. |
@@ -99,6 +106,8 @@ Add Mailgun from **Build → Integrations → Connectors** and connect an accoun
 | Update Template Version | `updateTemplateVersion` | Update a template version. PUT /v3/{domain}/templates/{name}/versions/{tag}, form-urlencoded. |
 | Update Webhook | `updateWebhook` | Update a webhook's URL for an event type. PUT /v3/domains/{domain}/webhooks/{webhookName}, form-urlencoded. |
 | Verify Domain | `verifyDomain` | Trigger domain DNS verification. PUT /v4/domains/{domain}/verify. |
+
+</details>
 
 ## Events
 

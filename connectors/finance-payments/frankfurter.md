@@ -5,6 +5,8 @@ hidden: true
 
 # Frankfurter
 
+<img src="../../.gitbook/assets/connectors/frankfurter.png" alt="Frankfurter logo" width="64">
+
 Frankfurter is a free, keyless, open-source exchange rates API with daily mid-market rates for 200+ currencies from central banks and official sources, history back to 1948, single currency pairs, time series and per-provider rates (API v2).
 
 | | |
@@ -12,8 +14,6 @@ Frankfurter is a free, keyless, open-source exchange rates API with daily mid-ma
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [frankfurter.dev](https://frankfurter.dev) |
 | **Authentication** | No authentication |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `frankfurter` |
 
 ## Use it

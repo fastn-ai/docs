@@ -5,6 +5,8 @@ hidden: true
 
 # Cat Facts API
 
+<img src="../../.gitbook/assets/connectors/catfactninja.webp" alt="Cat Facts API logo" width="64">
+
 A free, public, fully keyless API (catfact.ninja) that returns random cat facts and a list of cat breeds with their attributes.
 
 | | |
@@ -12,8 +14,6 @@ A free, public, fully keyless API (catfact.ninja) that returns random cat facts 
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [catfact.ninja](https://catfact.ninja) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `catfactninja` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # GoCardless
 
+<img src="../../.gitbook/assets/connectors/gocardless.png" alt="GoCardless logo" width="64">
+
 Collect and manage bank-to-bank payments with GoCardless — customers, mandates, payments, subscriptions, refunds, payouts, billing requests and webhook events via the GoCardless Pro API.
 
 | | |
@@ -12,8 +14,6 @@ Collect and manage bank-to-bank payments with GoCardless — customers, mandates
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [gocardless.com](https://gocardless.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 138 |
-| **Events** | 0 |
 | **Slug** | `gocardless` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GoCardless from **Build → Integrations → Connectors** and connect an acc
 | Cancel Subscription | `cancelSubscription` | Cancel a Subscription so it is no longer processed. |
 | Check Funds Availability | `checkFundsAvailability` | Check when the funds from a given payment are expected to become available. |
 | Choose Currency For Billing Request | `chooseCurrencyBillingRequest` | Choose Currency the Billing Request resource — a request to collect customer details, a mandate and optionally a payment. |
+
+<details>
+
+<summary>See 128 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Collect Bank Account For Billing Request | `collectBankAccountBillingRequest` | Collect Bank Account the Billing Request resource — a request to collect customer details, a mandate and optionally a payment. |
 | Collect Customer Details For Billing Request | `collectCustomerDetailsBillingRequest` | Collect Customer Details the Billing Request resource — a request to collect customer details, a mandate and optionally a payment. |
 | Complete Redirect Flow | `completeRedirectFlow` | Complete a Redirect Flow once the payer has finished the hosted flow. |
@@ -162,3 +169,5 @@ Add GoCardless from **Build → Integrations → Connectors** and connect an acc
 | Update Payout | `updatePayout` | Update an existing Payout, changing only the fields you supply. |
 | Update Refund | `updateRefund` | Update an existing Refund, changing only the fields you supply. |
 | Update Subscription | `updateSubscription` | Update an existing Subscription, changing only the fields you supply. |
+
+</details>

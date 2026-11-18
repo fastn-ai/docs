@@ -12,8 +12,6 @@ Conga Advantage Platform (formerly Apttus Intelligent Cloud) — Conga's standal
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [congacloud.com](https://congacloud.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 133 |
-| **Events** | 0 |
 | **Slug** | `conga` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Conga Advantage Platform from **Build → Integrations → Connectors** and 
 | Apply Promotion To Cart | `applyPromotionToCart` | Apply a promotion or coupon code to a cart. Reprice afterwards to see the resulting adjustments. |
 | Approve Approval Request | `approveApprovalRequest` | Approve a single approval request by its request ID. The documented 200 response body is a bare boolean, so it is exposed here as an object with a single result field. Optional documented body field not templated: ApprovalFromEmail (boolean). |
 | Assign User Role | `assignUserRole` | Assign a role to a user. Both IDs are path segments and the request carries no body. Get role IDs from List Roles. |
+
+<details>
+
+<summary>See 123 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel Order | `cancelOrder` | Cancel an order. Returns the cancelled order with its CancelledDate set. |
 | Change Asset Quantity | `changeAssetQuantity` | Change the quantity of one or more assets, writing the amendment lines into a cart. The request root is a JSON array of change requests, each with AssetId and Quantity. |
 | Checkout Cart To Order | `checkoutCartToOrder` | Check a finalized cart out directly into an order, skipping the quote. Set isAsync for large carts. |
@@ -157,3 +162,5 @@ Add Conga Advantage Platform from **Build → Integrations → Connectors** and 
 | Upsert Custom Object Records | `upsertCustomObjectRecords` | Bulk upsert records on any custom object. The request body is a JSON array of records; records matched on the platform record identifier are updated, the rest are inserted. Use this for sync writes instead of per-record calls. |
 | Upsert Quote | `upsertQuote` | Insert or update a quote in one call, matched on the record identifier carried in the payload. Use this for idempotent sync writes from an external system. |
 | Validate Cart | `validateCart` | Run CPQ configuration and constraint validation on a cart. Call this before finalize to surface rule violations. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Everhour
 
+<img src="../../.gitbook/assets/connectors/everhour.png" alt="Everhour logo" width="64">
+
 Everhour time tracking, project management and billing API. Manage time records, timers, timecards, timesheets and approvals, projects, sections, tasks, custom fields, clients, invoices, expenses, resource planning schedules, time off, reports, team users and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Everhour time tracking, project management and billing API. Manage time records,
 | **Category** | [Productivity](README.md) |
 | **Website** | [everhour.com](https://everhour.com) |
 | **Authentication** | API key |
-| **Actions** | 102 |
-| **Events** | 0 |
 | **Slug** | `everhour` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Everhour from **Build → Integrations → Connectors** and connect an accou
 | Create Attachment | `createAttachment` | Upload a file that can then be attached to an expense or a time off request. Only JPG, PNG and PDF files are supported. |
 | Create Client | `createClient` | Create a new client and optionally assign existing projects to it. |
 | Create Expense | `createExpense` | Record an expense against a project, in a category, optionally billable to the client. |
+
+<details>
+
+<summary>See 92 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Expense Category | `createExpenseCategory` | Add an expense category, optionally unit-based with a price per unit such as mileage. |
 | Create Invoice | `createInvoice` | Create an invoice for a client from the time and expenses tracked on its projects in a period. |
 | Create Project | `createProject` | Create a native Everhour project and optionally assign team members to it. |
@@ -126,3 +133,5 @@ Add Everhour from **Build → Integrations → Connectors** and connect an accou
 | Update Time Record | `updateTimeRecord` | Update the duration, date, task, member or comment of a time record. Only the fields you provide are changed. |
 | Update Timecard | `updateTimecard` | Adjust the clock-in time, clock-out time or break duration recorded on a timecard. |
 | Update Webhook | `updateWebhook` | Update the target URL, subscribed events or project scope of a webhook. Changing the target URL triggers the X-Hook-Secret verification again. |
+
+</details>

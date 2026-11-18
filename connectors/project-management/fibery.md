@@ -5,6 +5,8 @@ hidden: true
 
 # Fibery
 
+<img src="../../.gitbook/assets/connectors/fibery.png" alt="Fibery logo" width="64">
+
 Fibery work-management workspace API. Covers the /api/commands command API (entities, collections, schema/databases/fields), documents & rich text, files, views (JSON-RPC), workspace history, webhooks v2, access tokens and the per-space GraphQL API.
 
 | | |
@@ -12,8 +14,6 @@ Fibery work-management workspace API. Covers the /api/commands command API (enti
 | **Category** | [Project management](README.md) |
 | **Website** | [fibery.io](https://fibery.io) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 44 |
-| **Events** | 5 |
 | **Slug** | `fibery` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Fibery from **Build → Integrations → Connectors** and connect an account
 | Create Field | `createField` | Sub-command schema.field/create inside a fibery.schema/batch envelope on POST /api/commands. Adds a Field to a Database. Use a primitive fibery/* type, another Database name for a relation, or an enum type for a select. |
 | Create Or Update Documents Batch | `createOrUpdateDocumentsBatch` | Command create-or-update-documents on POST /api/documents/commands. Writes several rich-text documents in one call. args is an array of {secret, content}. |
 | Create Views | `createViews` | JSON-RPC method create-views on POST /api/views/json-rpc. Creates one or more Views. Each view needs fibery/id, fibery/name, fibery/type (board, table, list, ...) and fibery/container-app pointing at the Space id. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | POST /api/webhooks/v2. Subscribes a URL to entity changes of one Database. Requires Architect access. Returns the webhook id used to delete it later. |
 | Delete Access Token | `deleteAccessToken` | DELETE /api/tokens/{id}. Revokes one of the current user's API tokens. Fibery serves this endpoint only to a browser-cookie session - an API token gets 401 by design. |
 | Delete Database | `deleteDatabase` | Sub-command schema.type/delete inside a fibery.schema/batch envelope on POST /api/commands. Deletes a Database; set deleteEntities/deleteRelatedFields to also drop its rows and inbound relation Fields. |
@@ -68,6 +75,8 @@ Add Fibery from **Build → Integrations → Connectors** and connect an account
 | Update Views | `updateViews` | JSON-RPC method update-views on POST /api/views/json-rpc. Updates one or more Views. Each update is {id, values}. |
 | Upload File | `uploadFile` | POST /api/files. Uploads a text file as multipart/form-data and creates the matching fibery/file entity. Returns fibery/id (to attach to an entity) and fibery/secret (to download). Binary uploads are not supported by this engine - use Upload File From Url for those. |
 | Upload File From Url | `uploadFileFromUrl` | POST /api/files/from-url. Fibery fetches the given URL itself and stores the result as a file entity. Works for binary content. |
+
+</details>
 
 ## Events
 

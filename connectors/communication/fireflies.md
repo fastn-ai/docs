@@ -5,6 +5,8 @@ hidden: true
 
 # Fireflies
 
+<img src="../../.gitbook/assets/connectors/fireflies.png" alt="Fireflies logo" width="64">
+
 Fireflies.ai connector — GraphQL API for AI meeting notetaker. Manage transcripts, summaries, soundbites (bites), users, channels, AskFred AI threads, live meetings, and audio uploads. Auth via Bearer API key.
 
 | | |
@@ -12,8 +14,6 @@ Fireflies.ai connector — GraphQL API for AI meeting notetaker. Manage transcri
 | **Category** | [Communication](README.md) |
 | **Website** | [fireflies.ai](https://fireflies.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 38 |
-| **Events** | 2 |
 | **Slug** | `fireflies` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Fireflies from **Build → Integrations → Connectors** and connect an acco
 | Create Upload URL | `createUploadUrl` | Create a pre-signed URL to directly upload an audio/video file for transcription. Returns the upload URL and meeting ID. |
 | Delete AskFred Thread | `deleteAskFredThread` | Delete an AskFred conversation thread by ID. |
 | Delete Transcript | `deleteTranscript` | Permanently delete a meeting transcript. Rate limit: 10 requests per minute. DESTRUCTIVE. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Analytics | `getAnalytics` | Get team and per-user meeting analytics. Optionally pass a Unix-ms time range. |
 | Get AskFred Thread | `getAskFredThread` | Get a single AskFred thread by ID, including its message history. |
 | Get Bite | `getBite` | Get a single soundbite (clip) by ID. |
@@ -62,6 +69,8 @@ Add Fireflies from **Build → Integrations → Connectors** and connect an acco
 | Update Meeting State | `updateMeetingState` | Pause or resume recording of a live meeting. |
 | Update Meeting Title | `updateMeetingTitle` | Update the title of a meeting transcript. |
 | Upload Audio | `uploadAudio` | Upload an audio/video file by URL for transcription. Returns processing status; the transcript is created asynchronously. |
+
+</details>
 
 ## Events
 

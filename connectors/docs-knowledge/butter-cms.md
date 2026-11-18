@@ -5,6 +5,8 @@ hidden: true
 
 # ButterCMS
 
+<img src="../../.gitbook/assets/connectors/butter-cms.png" alt="ButterCMS logo" width="64">
+
 ButterCMS headless CMS. Content API (read) for blog posts, authors, categories, tags, pages, collections, and feeds, plus the Write API for creating and managing blog posts, pages, and collection content.
 
 | | |
@@ -12,8 +14,6 @@ ButterCMS headless CMS. Content API (read) for blog posts, authors, categories, 
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [buttercms.com](https://buttercms.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 22 |
-| **Events** | 0 |
 | **Slug** | `butterCms` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ButterCMS from **Build → Integrations → Connectors** and connect an acco
 | Get Sitemap | `getSitemap` | Retrieve the blog's XML sitemap (returned as a string) listing published post URLs. |
 | List Authors | `listAuthors` | Retrieve all blog authors. Optionally include each author's recent posts. |
 | List Categories | `listCategories` | Retrieve all blog categories. Optionally include each category's recent posts. |
+
+<details>
+
+<summary>See 12 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Pages | `listPages` | Retrieve a paginated list of pages of a given page type. Use '*' as the page type to list pages of all types. |
 | List Posts | `listPosts` | Retrieve a paginated list of published blog posts, sorted by publication date (newest first). Supports filtering by author, category, or tag slug. |
 | List Tags | `listTags` | Retrieve all blog tags. Optionally include each tag's recent posts. |
@@ -46,3 +53,5 @@ Add ButterCMS from **Build → Integrations → Connectors** and connect an acco
 | Search Posts | `searchPosts` | Full-text search of published blog posts by keyword across title and body. Returns a paginated list of matching posts. |
 | Update Page | `updatePage` | Update an existing page's field values via the Write API, identified by page type and page slug. Use '*' as the page type for single (type-less) pages. The write is processed asynchronously and returns a pending status. |
 | Update Post | `updatePost` | Update an existing blog post identified by its slug via the Write API. Only the fields provided are changed; the write is processed asynchronously and returns a pending status. |
+
+</details>

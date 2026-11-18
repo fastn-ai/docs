@@ -5,6 +5,8 @@ hidden: true
 
 # SimpleKPI
 
+<img src="../../.gitbook/assets/connectors/simplekpi.png" alt="SimpleKPI logo" width="64">
+
 SimpleKPI is a KPI tracking and dashboard platform. This connector covers the complete SimpleKPI AI REST API (api.simplekpi.com/v1): KPIs and KPI categories with their KPIs, KPI units, the frequency and icon lookups, breakdown items, KPI entries (single upsert, batch upsert, read, update, delete), the aggregated actuals-and-targets report and the read-only users list.
 
 | | |
@@ -12,8 +14,6 @@ SimpleKPI is a KPI tracking and dashboard platform. This connector covers the co
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [simplekpi.com](https://simplekpi.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 38 |
-| **Events** | 0 |
 | **Slug** | `simplekpi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SimpleKPI from **Build → Integrations → Connectors** and connect an acco
 | Delete Breakdown Item | `deleteBreakdownItem` | Deletes a breakdown item outright; archive it instead if you still want its history. Returns 204 with no body. Requires the breakdownitems:write scope. |
 | Delete KPI | `deleteKpiById` | Deletes a KPI together with every entry recorded against it. This cannot be undone. Returns 204 with no body. Requires the kpis:write scope. |
 | Delete KPI Category | `deleteKpiCategory` | Deletes an empty KPI category. Move or delete its KPIs first, otherwise the call returns 400. Returns 204 with no body. Requires the kpis:write scope. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete KPI Entry | `deleteKpiEntry` | Deletes a KPI entry. Returns 204 with no body. Requires the entries:write scope. |
 | Delete KPI In Category | `deleteKpiInCategory` | Deletes a KPI reached through its category, together with its entries. Returns 204 with no body. Requires the kpis:write scope. |
 | Delete KPI Unit | `deleteKpiUnit` | Deletes a KPI unit that is no longer assigned to any KPI (reassign those KPIs first). Returns 204 with no body. Requires the kpis:write scope. |
@@ -62,3 +69,5 @@ Add SimpleKPI from **Build → Integrations → Connectors** and connect an acco
 | Update KPI Entry | `updateKpiEntry` | Changes the KPI entry named in the path. Use the setActual, setTarget and setNotes flags to choose which values are written. Requires the entries:write scope. |
 | Update KPI In Category | `updateKpiInCategory` | Replaces a KPI reached through its category (full replacement, not a patch: omitted fields reset to defaults). Requires the kpis:write scope. |
 | Update KPI Unit | `updateKpiUnit` | Replaces a KPI unit (full replacement, not a patch). A duplicate name returns 409. Requires the kpis:write scope. |
+
+</details>

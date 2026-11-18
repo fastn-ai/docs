@@ -5,6 +5,8 @@ hidden: true
 
 # GoHighLevel
 
+<img src="../../.gitbook/assets/connectors/lead-connector.png" alt="GoHighLevel logo" width="64">
+
 GoHighLevel (HighLevel) is an all-in-one CRM, marketing-automation and agency platform. This connector wraps its LeadConnector REST API v2 at https://services.leadconnectorhq.com, covering contacts, tasks, notes, tags, conversations and messaging (SMS/email/call), opportunities and pipelines, calendars, appointments and free slots, forms, surveys, workflows, campaigns, trigger links, sub-accounts (locations), users, businesses, custom fields and custom values, invoices, estimates, products and prices, payments, orders, transactions and subscriptions, media files, custom objects and associations. Every v2 request requires a date-based Version header (2021-07-28 for most groups, 2021-04-15 for calendars and conversations) and most endpoints are scoped to a single sub-account via locationId. Authenticate with a marketplace OAuth 2.0 app (Sub-Account or Agency/Company token) or with a Private Integration Token.
 
 | | |
@@ -12,8 +14,6 @@ GoHighLevel (HighLevel) is an all-in-one CRM, marketing-automation and agency pl
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leadconnectorhq.com](https://leadconnectorhq.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 553 |
-| **Events** | 31 |
 | **Slug** | `leadConnector` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GoHighLevel from **Build → Integrations → Connectors** and connect an ac
 | Add Opportunity Followers | `addOpportunityFollowers` | Add users as followers of an opportunity. Returns {followers, followersAdded}. |
 | Add Outbound Call | `addOutboundCall` | Record an outbound call placed outside LeadConnector into an existing conversation. Returns {success, conversationId, messageId}. |
 | Apply User Availability Schedule To A Calendar | `addCalendarSchedule` | Apply user availability schedule to a calendar. Associates a calendar with the given schedule by adding the calendarId to a schedule. Version header 2021-04-15. |
+
+<details>
+
+<summary>See 543 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Attach Action To Conversation AI Agent | `convAiCreateAction` | Create and attach an action to a conversation AI agent. Actions are the tasks the agent can perform: book an appointment, trigger a workflow, update a contact field, hand over to a human and so on. Returns {success, data}. Version header 2021-04-15. |
 | Attach Facebook Page Or Group | `attachFacebookPageGroup` | Attach a Facebook page or group to a social planner account after OAuth. Spec note: type is declared as an empty object here but is a plain string in the sibling LinkedIn call, so it is typed string. Returns {success, statusCode, message, results}. Version header 2021-07-28. |
 | Attach Google Business Location | `attachGoogleBusinessLocation` | Attach a Google Business Profile location to a social planner account after OAuth. The location and account objects are the entries returned by Get Google Business Locations. Spec note: AttachGMBLocationDTO declares location and account as bare objects with no properties, so they are modelled from the GoogleLocationSchema returned by the paired GET. Version header 2021-07-28. |
@@ -578,6 +585,8 @@ Add GoHighLevel from **Build → Integrations → Connectors** and connect an ac
 | Verify Email Address | `verifyEmail` | Run an email deliverability check on an address or on a contact's email. locationId is sent as a query param. Returns {result, risk, reason, address, leadconnectorRecomendation}. Version header 2021-07-28. |
 | Void Invoice | `voidInvoice` | Void a sent invoice so it can no longer be paid. Returns the invoice at the root with status 'void'. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -594,6 +603,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | ContactDelete | `ContactDelete` | Fired when a contact is deleted. Routed on 'type'; account-matched on 'locationId'. |
 | ContactDndUpdate | `ContactDndUpdate` | Fired when a contact's do-not-disturb settings change. Routed on 'type'; account-matched on 'locationId'. |
 | ContactTagUpdate | `ContactTagUpdate` | Fired when a contact's tags change. Routed on 'type'; account-matched on 'locationId'. |
+
+<details>
+
+<summary>See 21 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | ContactUpdate | `ContactUpdate` | Fired when a contact is updated. Routed on 'type'; account-matched on 'locationId'. |
 | InboundMessage | `InboundMessage` | Fired when a contact sends an inbound message on any channel. Routed on 'type'; account-matched on 'locationId'. |
 | LocationCreate | `LocationCreate` | Agency-level: a new sub-account was created. Its payload carries no locationId, so the account filter is skipped and it fans out to every active trigger on this connector. |
@@ -615,3 +631,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | TaskCreate | `TaskCreate` | Fired when a task is created on a contact. Routed on 'type'; account-matched on 'locationId'. |
 | TaskDelete | `TaskDelete` | Fired when a task is deleted. Routed on 'type'; account-matched on 'locationId'. |
 | UserCreate | `UserCreate` | Fired when a user is created. Routed on 'type'; account-matched on 'locationId'. The HighLevel docs sample shows type='string', a docs placeholder; the id here is the real slug. Re-verify against a live delivery. |
+
+</details>

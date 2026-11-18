@@ -5,6 +5,8 @@ hidden: true
 
 # Looker
 
+<img src="../../.gitbook/assets/connectors/looker.png" alt="Looker logo" width="64">
+
 Looker (Google Cloud) BI platform — Looker API 4.0. Manage Looks, Dashboards, Queries, Folders, Users, Groups, Roles, database Connections, LookML models/projects, Content favorites, Scheduled plans, Render tasks, and Alerts. Auth: API3 credentials (client_id + client_secret) exchanged at POST /login for a short-lived access_token, then sent as 'Authorization: token &lt;access_token&gt;'. Base host is the per-instance API URL, e.g. https://&lt;instance&gt;.cloud.looker.com:19999/api/4.0
 
 | | |
@@ -12,8 +14,6 @@ Looker (Google Cloud) BI platform — Looker API 4.0. Manage Looks, Dashboards, 
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [looker.com](https://looker.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 77 |
-| **Events** | 0 |
 | **Slug** | `looker` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Looker from **Build → Integrations → Connectors** and connect an account
 | Create Group | `createGroup` | Create a new group. |
 | Create Look | `createLook` | Create a new Look from an existing query in a folder. |
 | Create Look Render Task | `createLookRenderTask` | Start an asynchronous render of a Look to a file format (png, jpg). |
+
+<details>
+
+<summary>See 67 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Query | `createQuery` | Create a query definition (model + view/explore + fields) that can then be run. Returns the query with its id. |
 | Create Role | `createRole` | Create a new role from a permission set and a model set. |
 | Create Scheduled Plan | `createScheduledPlan` | Create a scheduled plan that delivers a dashboard on a crontab to one or more destinations. |
@@ -101,3 +108,5 @@ Add Looker from **Build → Integrations → Connectors** and connect an account
 | Update Role | `updateRole` | Update a role's name. |
 | Update Scheduled Plan | `updateScheduledPlan` | Update a scheduled plan's name or schedule. |
 | Update User | `updateUser` | Update a user's name or disabled state. |
+
+</details>

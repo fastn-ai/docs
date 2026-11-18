@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Outlook Contacts
 
+<img src="../../.gitbook/assets/connectors/microsoft-outlook-contacts.svg" alt="Microsoft Outlook Contacts logo" width="64">
+
 Microsoft Outlook Contacts (personal contacts in Outlook and Microsoft 365) via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0). Contacts create, read, update, delete and permanent delete; contact folders and child folders; contacts scoped to a folder or child folder; delta queries for incremental contact and folder sync; contact photo retrieval; open extensions; and single- and multi-value extended properties. Microsoft Graph provides no delete operation for an Outlook contact photo, and setting a contact photo requires a raw binary upload that this integration engine cannot currently deliver intact.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Outlook Contacts (personal contacts in Outlook and Microsoft 365) via 
 | **Category** | [Communication](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 34 |
-| **Events** | 0 |
 | **Slug** | `microsoftOutlookContacts` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Outlook Contacts from **Build → Integrations → Connectors** an
 | Delete Contact In Folder | `deleteContactInFolder` | Deletes a contact from a specific contact folder in the signed-in user's mailbox. The contact is moved to Deleted Items and can still be recovered by the user. Returns 204 No Content on success. |
 | Delete Contact Open Extension | `deleteContactOpenExtension` | Removes an open extension and all the custom properties it holds from a contact. Returns 204 No Content on success. |
 | Find Contacts By Extended Property | `findContactsByExtendedProperty` | Finds contacts in the signed-in user's default Contacts folder that carry a single-value MAPI extended property with a given value. Supply the filter expression Microsoft Graph documents, for example singleValueExtendedProperties/Any(ep: ep/id eq 'String {66f5a359-4659-4830-9070-00047ec6ac6e} Name CustomField' and ep/value eq 'Gold'). |
+
+<details>
+
+<summary>See 24 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Contact | `getContact` | Retrieves a single contact from the signed-in user's default Outlook Contacts folder by its contact ID. |
 | Get Contact Delta | `getContactDelta` | Tracks incremental changes to the contacts in a specific contact folder. Call it once without a token to start a round, then follow the returned next link or delta link token on later calls to get only contacts added, changed or deleted since the previous call. Deleted contacts appear as entries carrying an @removed annotation. |
 | Get Contact Folder | `getContactFolder` | Retrieves a single contact folder from the signed-in user's mailbox by its folder ID. Works for top-level folders and for child folders, since a child folder is addressable by its own ID. |
@@ -58,3 +65,5 @@ Add Microsoft Outlook Contacts from **Build → Integrations → Connectors** an
 | Update Contact Folder | `updateContactFolder` | Renames a contact folder in the signed-in user's mailbox. Display name is the only writable property on a contact folder. |
 | Update Contact In Folder | `updateContactInFolder` | Updates a contact held in a specific contact folder in the signed-in user's mailbox. This is a partial update: only the fields supplied are sent, and fields left blank are not changed. Collection fields such as email addresses and phone numbers are replaced in full when supplied. |
 | Update Contact Open Extension | `updateContactOpenExtension` | Updates the custom properties stored in an open extension on a contact. The body must repeat "@odata.type": "microsoft.graph.openTypeExtension" and the "extensionName", otherwise Microsoft Graph rejects the custom properties with "The property 'x' does not exist on type 'microsoft.graph.extension'". Properties you do not name are left unchanged. |
+
+</details>

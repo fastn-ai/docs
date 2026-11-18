@@ -5,6 +5,8 @@ hidden: true
 
 # Ahrefs
 
+<img src="../../.gitbook/assets/connectors/ahrefs.png" alt="Ahrefs logo" width="64">
+
 Ahrefs is an SEO and marketing intelligence platform. This connector covers the complete Ahrefs API v3 (151 endpoints across 14 tools): Site Explorer backlink, referring-domain, organic and paid traffic reports and histories; Keywords Explorer volumes and suggestions; Site Audit projects, issues and page explorer; Rank Tracker overviews and competitor reports; SERP Overview; Batch Analysis; Subscription limits and usage; Management of projects, tracked keywords, competitors, keyword lists and Brand Radar prompts and reports; Brand Radar AI-search visibility reports; Content Helper topics; Web Analytics stats and charts; GSC Insights; Social Media channels, posts and metrics; and the free Public endpoints (crawler IPs, free domain rating, top domains). Requests are authenticated with an Ahrefs API key as a Bearer token and consume API units per the plan.
 
 | | |
@@ -12,8 +14,6 @@ Ahrefs is an SEO and marketing intelligence platform. This connector covers the 
 | **Category** | [Marketing](README.md) |
 | **Website** | [ahrefs.com](https://ahrefs.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 156 |
-| **Events** | 0 |
 | **Slug** | `ahrefs` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ahrefs from **Build → Integrations → Connectors** and connect an account
 | Brand Radar Citations Overview | `createBrandRadarCitationsOverview` | Citations. &gt;Requests to this endpoint consume API units based on the `prompts` parameter: requests returning only custom prompt data are free, while requests including Ahrefs prompt data follow standard API unit pricing. Every entity provided in `brands` (and `competitors`, when applicable) must include at least one value in `url_groups`. Entities consisting only of `names` are not supported here because citations are matched against URL groups. |
 | Brand Radar Cited Domains | `brandRadarCitedDomains` | Cited Domains. &gt;Requests to this endpoint consume API units based on the `prompts` parameter: requests returning only custom prompt data are free, while requests including Ahrefs prompt data follow standard API unit pricing. |
 | Brand Radar Cited Domains (POST) | `createBrandRadarCitedDomains` | Cited Domains. &gt;Requests to this endpoint consume API units based on the `prompts` parameter: requests returning only custom prompt data are free, while requests including Ahrefs prompt data follow standard API unit pricing. |
+
+<details>
+
+<summary>See 146 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Brand Radar Cited Pages | `brandRadarCitedPages` | Cited Pages. &gt;Requests to this endpoint consume API units based on the `prompts` parameter: requests returning only custom prompt data are free, while requests including Ahrefs prompt data follow standard API unit pricing. |
 | Brand Radar Cited Pages (POST) | `createBrandRadarCitedPages` | Cited Pages. &gt;Requests to this endpoint consume API units based on the `prompts` parameter: requests returning only custom prompt data are free, while requests including Ahrefs prompt data follow standard API unit pricing. |
 | Brand Radar Impressions History | `brandRadarImpressionsHistory` | Impressions. &gt;Requests to this endpoint consume API units based on the `prompts` parameter: requests returning only custom prompt data are free, while requests including Ahrefs prompt data follow standard API unit pricing. |
@@ -180,3 +187,5 @@ Add Ahrefs from **Build → Integrations → Connectors** and connect an account
 | Web Analytics UTM Params | `webAnalyticsUtmParams` | UTM Parameters. &gt;Requests to this endpoint are free and do not consume any API units. |
 | Web Analytics UTM Params Chart | `webAnalyticsUtmParamsChart` | UTM Parameters Chart. &gt;Requests to this endpoint are free and do not consume any API units. |
 | Web Pages | `brandRadarWebPages` | Web Pages. Returns web pages that mention the requested brands or competitors. Brand mentions are matched against page titles and content from Ahrefs' web index. |
+
+</details>

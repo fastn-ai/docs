@@ -5,6 +5,8 @@ hidden: true
 
 # Base44
 
+<img src="../../.gitbook/assets/connectors/base44.png" alt="Base44 logo" width="64">
+
 Base44 is an AI app-building platform. This connector covers the Base44 App Management API: apps, entity records and entity schemas, workflows and workflow runs, analytics, app checkpoints, the AI builder chat and coding surface, deployments, GitHub sync, custom domains and custom email domains, URL redirects, SEO, security scans, secrets, social calendar and virality campaigns, Stripe and Wix payments, and the Google Ads advertising surface.
 
 | | |
@@ -12,8 +14,6 @@ Base44 is an AI app-building platform. This connector covers the Base44 App Mana
 | **Category** | [AI and ML](README.md) |
 | **Website** | [base44.com](https://base44.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 214 |
-| **Events** | 0 |
 | **Slug** | `base44` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Base44 from **Build → Integrations → Connectors** and connect an account
 | Archive Workflow | `archiveWorkflow` | Archives an automation workflow on a Base44 app. The workflow stops running and is hidden from List Workflows unless archived workflows are included. Restore it with Restore Workflow. |
 | Ask The Google Ads Assistant | `askTheGoogleAdsAssistant` | Asks Base44's advertising assistant a question about an app's Google Ads setup or performance and returns its answer. The assistant only explains; it changes nothing. |
 | Autocomplete Google Ads Keyword Themes | `autocompleteGoogleAdsKeywordThemes` | Suggests Google Ads keyword themes matching what has been typed so far, for a keyword picker. |
+
+<details>
+
+<summary>See 204 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Build Google Ads Tracking Fix Prompt | `buildGoogleAdsTrackingFixPrompt` | Produces a builder prompt that adds the missing Google Ads conversion tracking to an app. Set Wire Events to also create the conversion actions and mappings the prompt relies on. |
 | Bulk Update Google Ads Campaign Budgets | `bulkUpdateGoogleAdsCampaignBudgets` | Sets new daily budgets on several Google Ads campaigns at once. Raising a budget raises what the campaign spends each day. |
 | Cancel Workflow Run | `cancelWorkflowRun` | Stops an automation workflow run that is still in progress on a Base44 app. |
@@ -238,3 +245,5 @@ Add Base44 from **Build → Integrations → Connectors** and connect an account
 | Validate Workflow Definition | `validateWorkflowDefinition` | Checks a workflow step definition against a Base44 app without saving it, and reports any errors plus the task types and activities the app supports. |
 | Verify Custom Domain | `verifyCustomDomain` | Asks Base44 to check the DNS records for a custom domain and mark it verified once they resolve correctly. |
 | Write Sandbox File | `writeSandboxFile` | Creates a source file in a Base44 app's development sandbox. Set Overwrite to replace a file that already exists. |
+
+</details>

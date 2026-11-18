@@ -5,6 +5,8 @@ hidden: true
 
 # Cloutly
 
+<img src="../../.gitbook/assets/connectors/cloutly.png" alt="Cloutly logo" width="64">
+
 Cloutly is a customer review and online reputation management platform. This connector wraps the Cloutly public REST API (https://app.cloutly.com/api/v1 and /api/v2) to list the businesses/locations connected to a Cloutly account, pull reviews aggregated from Google, Facebook, Trustpilot and other sources, check API health and key scopes, and send review invites to customers. Authenticated with a long-lived API key sent in the x-api-key header.
 
 | | |
@@ -12,8 +14,6 @@ Cloutly is a customer review and online reputation management platform. This con
 | **Category** | [Marketing](README.md) |
 | **Website** | [cloutly.com](https://cloutly.com) |
 | **Authentication** | API key |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `cloutly` |
 
 ## Use it

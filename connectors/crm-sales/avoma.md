@@ -5,6 +5,8 @@ hidden: true
 
 # Avoma
 
+<img src="../../.gitbook/assets/connectors/avoma.jpg" alt="Avoma logo" width="64">
+
 Avoma conversation intelligence — meetings, recordings, transcriptions, AI notes, smart categories, scorecards, sentiments, calls, users, engagement, snippets, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Avoma conversation intelligence — meetings, recordings, transcriptions, AI not
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [avoma.com](https://avoma.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 54 |
-| **Events** | 0 |
 | **Slug** | `avoma` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Avoma from **Build → Integrations → Connectors** and connect an account,
 | Delete Meeting Outcome | `deleteMeetingOutcome` | Delete a meeting outcome by UUID. |
 | Delete Meeting Type | `deleteMeetingType` | Delete a meeting type by UUID. |
 | Delete Webhook | `deleteWebhook` | Delete a webhook subscription by UUID. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Drop Meeting Bot | `dropMeetingBot` | Drop the Avoma recording bot from an ongoing meeting. |
 | Get Call | `getCall` | Retrieve a single call by its external_id. |
 | Get Custom Category | `getCustomCategory` | Retrieve a single custom category by UUID. |
@@ -78,3 +85,5 @@ Add Avoma from **Build → Integrations → Connectors** and connect an account,
 | Update Meeting Type | `updateMeetingType` | Partially update a meeting type. |
 | Update Smart Category | `updateSmartCategory` | Partially update a smart category's settings, prompts, or keywords. |
 | Update Template | `updateTemplate` | Replace a note template (full update). |
+
+</details>

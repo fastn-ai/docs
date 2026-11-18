@@ -5,6 +5,8 @@ hidden: true
 
 # DocuPotion
 
+<img src="../../.gitbook/assets/connectors/docupotion.png" alt="DocuPotion logo" width="64">
+
 DocuPotion document automation API. Generate PDF or PNG documents from reusable DocuPotion templates with merged JSON data, run bulk/batch generation jobs, download batch output, and read account usage. Base URL https://api.docupotion.com/v1 with a Bearer API key.
 
 | | |
@@ -12,8 +14,6 @@ DocuPotion document automation API. Generate PDF or PNG documents from reusable 
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [docupotion.com](https://docupotion.com) |
 | **Authentication** | API key |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `docupotion` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # La Growth Machine
 
+<img src="../../.gitbook/assets/connectors/la-growth-machine.png" alt="La Growth Machine logo" width="64">
+
 La Growth Machine is a multichannel B2B outreach platform combining LinkedIn, email and Twitter sequences. This connector covers the full La Growth Machine public API: workspace, member, identity and credit information, audiences and audience leads, lead creation and enrichment, lead search, lead status and audience membership, campaign listing with statistics and messages, conversation history, LinkedIn and email inbox messaging with conversation notes, website visitor imports from RB2B, Warmly and Vector, and inbox webhook management.
 
 | | |
@@ -12,8 +14,6 @@ La Growth Machine is a multichannel B2B outreach platform combining LinkedIn, em
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [lagrowthmachine.com](https://lagrowthmachine.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 30 |
-| **Events** | 1 |
 | **Slug** | `laGrowthMachine` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add La Growth Machine from **Build → Integrations → Connectors** and connect
 | Get Campaign Statistics | `getCampaignStatistics` | Returns aggregate engagement statistics for a campaign, including message, reply and conversion counts broken down by channel. |
 | Get Credit Balance | `getCreditBalance` | Returns the workspace's remaining enrichment credit balance and the feature permissions granted by its plan. |
 | Get Current Account | `getCurrentAccount` | Returns the La Growth Machine account the API key belongs to, with its member identifier and email address. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Import RB2B Website Visitor | `importRb2bWebsiteVisitor` | Pushes an identified website visitor from RB2B into a La Growth Machine audience, creating the audience when the name is new. This is RB2B's native receiver, so the body uses RB2B's own webhook field names rather than La Growth Machine's lead fields. RB2B requires First Name and LinkedIn URL for a visitor to be pushed. A visitor that already exists in the workspace is returned with status 'ignored' and is not duplicated. La Growth Machine has no audience or lead delete endpoint, so records added this way must be removed in the web app. |
 | Import Vector Website Visitor | `importVectorWebsiteVisitor` | Pushes an identified website visitor from Vector into a La Growth Machine audience, creating the audience when the name is new. This is Vector's native receiver: the visitor is nested inside a contact object using Vector's snake_case field names, which differ from RB2B's and Warmly's. A visitor that already exists in the workspace is returned with status 'ignored' and is not duplicated. La Growth Machine has no audience or lead delete endpoint, so records added this way must be removed in the web app. |
 | Import Warmly Website Visitor | `importWarmlyWebsiteVisitor` | Pushes an identified website visitor from Warmly into a La Growth Machine audience, creating the audience when the name is new. This is Warmly's native receiver, so the body uses the visitor payload's own field names rather than La Growth Machine's lead fields. First Name and LinkedIn URL identify the visitor. A visitor that already exists in the workspace is returned with status 'ignored' and is not duplicated. La Growth Machine has no audience or lead delete endpoint, so records added this way must be removed in the web app. |
@@ -54,6 +61,8 @@ Add La Growth Machine from **Build → Integrations → Connectors** and connect
 | Send Email Reply | `sendEmailReply` | Replies to an existing email thread with a lead from a connected email identity. New threads cannot be started, so either reply in the most recent thread or name the message being replied to. |
 | Send LinkedIn Message | `sendLinkedInMessage` | Sends a LinkedIn text or voice message to a lead from one of the workspace's connected LinkedIn identities. La Growth Machine sends it into the existing LinkedIn conversation with that lead and returns 404 'Conversation not found' when none exists, so it replies to a conversation rather than starting one. Identify the lead by lead identifier or LinkedIn URL, and supply either message text or a voice recording URL. |
 | Update Lead Status | `updateLeadStatus` | Sets the status of a lead inside one or more campaigns, for example marking it converted or not interested. Identify the lead with at least one of its identifiers. |
+
+</details>
 
 ## Events
 

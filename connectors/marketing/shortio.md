@@ -5,6 +5,8 @@ hidden: true
 
 # Short.io
 
+<img src="../../.gitbook/assets/connectors/shortio.png" alt="Short.io logo" width="64">
+
 Short.io is a branded link-management platform for creating and tracking short links on your own domains. This connector covers the complete Short.io public API: domains and domain settings, DNS records, allowed hostnames, IP exclusions, themes, favicons, universal links, password pages and S3 exports; links (create, bulk create, update, duplicate, expand, archive, delete), link folders, tags, link permissions, OpenGraph properties, country and region targeting, link bundles and posts; QR code generation and hosted QR codes; organization plan and usage; the audit log; and the full click-statistics API on statistics.short.io (domain and link statistics, top values, interval breakdowns, raw click lists and popular paths).
 
 | | |
@@ -12,8 +14,6 @@ Short.io is a branded link-management platform for creating and tracking short l
 | **Category** | [Marketing](README.md) |
 | **Website** | [short.io](https://short.io) |
 | **Authentication** | API key, Credentials you enter |
-| **Actions** | 119 |
-| **Events** | 1 |
 | **Slug** | `shortio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Short.io from **Build → Integrations → Connectors** and connect an accou
 | Add Link Region Targets In Bulk | `addLinkRegionTargetsBulk` | Sets several region-specific destinations on a short link in one call. |
 | Add Link To Bundle | `addLinkToBundle` | Adds a link to a bundle page, either an existing short path on the bundle's domain or a full external URL. |
 | Add Tag To Links In Bulk | `addTagToLinksBulk` | Appends a single tag to many links at once, leaving any tags the links already carry in place. |
+
+<details>
+
+<summary>See 109 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Archive Link | `archiveLink` | Archives a single short link so it stops redirecting but is not deleted. |
 | Archive Links In Bulk | `archiveLinksBulk` | Archives many short links in one call. |
 | Cancel a pending domain transfer | `cancelDomainTransfer` | Cancel a pending domain transfer. |
@@ -143,6 +150,8 @@ Add Short.io from **Build → Integrations → Connectors** and connect an accou
 | Upload Domain QR Code Logo | `uploadDomainQrCodeLogo` | Uploads the logo image placed at the centre of QR codes generated for a domain. The image is sent as the raw request body. |
 | Upload link QR code logo | `uploadLinkQrCodeLogo` | Upload the logo embedded in this link's QR code (PUT /links/qr/settings/logo/{linkIdString}). The image is sent as the raw request body. |
 | Upload Post Cover Image | `uploadPostCoverImage` | Uploads the cover image shown at the top of a Short.io post. The image is sent as the raw request body. |
+
+</details>
 
 ## Events
 

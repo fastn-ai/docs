@@ -5,6 +5,8 @@ hidden: true
 
 # Cal.com
 
+<img src="../../.gitbook/assets/connectors/calcom.ico" alt="Cal.com logo" width="64">
+
 Cal.com API v2 connector. Scheduling automation — bookings (list, get, create, cancel, reschedule, confirm, decline, reassign, mark no-show, attendees, guests, references, recordings, transcripts), event types (CRUD + history), schedules/availability (CRUD), slots (get available, reserve, manage reservations), calendars (list, busy times, connect/disconnect), conferencing apps, teams (CRUD, members, team event types, team bookings), webhooks (CRUD), out-of-office, verified resources, and the authenticated user profile (me). Base https://api.cal.com/v2. Auth: Bearer API key (cal_live_ / cal_ prefix). Each endpoint group requires a static cal-api-version date header.
 
 | | |
@@ -12,8 +14,6 @@ Cal.com API v2 connector. Scheduling automation — bookings (list, get, create,
 | **Category** | [Productivity](README.md) |
 | **Website** | [cal.com](https://cal.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 72 |
-| **Events** | 21 |
 | **Slug** | `calcom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cal.com from **Build → Integrations → Connectors** and connect an accoun
 | Create Out Of Office | `createOutOfOffice` | Create an out-of-office entry (POST /v2/ooo). Requires start, end. |
 | Create Schedule | `createSchedule` | Create an availability schedule (POST /v2/schedules). Requires name, timeZone, isDefault. |
 | Create Team | `createTeam` | Create a team inside a Cal.com organization (POST /v2/organizations/{orgId}/teams). Cal.com removed the old POST /v2/teams route; teams are now created per organization. Requires orgId and name; the account must belong to a Cal.com organization. |
+
+<details>
+
+<summary>See 62 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | Create a webhook subscription (POST /v2/webhooks). Requires subscriberUrl, triggers, active. |
 | Decline Booking | `declineBooking` | Decline a pending booking request (POST /v2/bookings/{bookingUid}/decline). |
 | Delete Event Type | `deleteEventType` | Delete an event type (DELETE /v2/event-types/{eventTypeId}). |
@@ -97,6 +104,8 @@ Add Cal.com from **Build → Integrations → Connectors** and connect an accoun
 | Verify Email | `verifyEmail` | Verify an email address using a verification code previously sent by email (POST /v2/verified-resources/emails/verification-code/verify). |
 | Verify Phone Number | `verifyPhoneNumber` | Verify a phone number using a verification code previously sent via SMS (POST /v2/verified-resources/phones/verification-code/verify). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -113,6 +122,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Booking Rejected | `BOOKING_REJECTED` | Fires when a pending booking is declined. |
 | Booking Requested | `BOOKING_REQUESTED` | Fires when a booking requiring confirmation is requested. |
 | Booking Rescheduled | `BOOKING_RESCHEDULED` | Fires when a booking is rescheduled. |
+
+<details>
+
+<summary>See 11 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Form Submitted | `FORM_SUBMITTED` | Fires when a routing form is submitted. |
 | Form Submitted (No Event) | `FORM_SUBMITTED_NO_EVENT` | Fires when a routing form is submitted without booking an event. |
 | Guest Cal Video No-Show | `AFTER_GUESTS_CAL_VIDEO_NO_SHOW` | Fires after the configured interval when a guest did not join the Cal Video meeting. |
@@ -124,3 +140,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Out Of Office Created | `OOO_CREATED` | Fires when an out-of-office entry is created. |
 | Recording Ready | `RECORDING_READY` | Fires when a Cal Video recording is ready. |
 | Recording Transcription Generated | `RECORDING_TRANSCRIPTION_GENERATED` | Fires when a meeting transcript is generated. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Looker Studio
 
+<img src="../../.gitbook/assets/connectors/looker-studio.png" alt="Looker Studio logo" width="64">
+
 Looker Studio (formerly Google Data Studio) — the Data Studio REST API v1 (https://datastudio.googleapis.com/v1). This is Google's free BI/dashboarding tool, distinct from the enterprise Looker BI platform. Public REST surface is narrow (asset discovery + permission management only; no report/data-source CRUD is exposed): search Data Studio assets (REPORT, DATA_SOURCE) by title/owner/type, and get/patch/addMembers/revokeAllPermissions on an asset's sharing permissions. Report/page/chart authoring is only available via the Linking API (URL-based, not REST) and the Embed API (iframe embedding), not general REST endpoints. Auth: OAuth 2.0 (Google), shared org OAuth client, scope https://www.googleapis.com/auth/datastudio. API requires the connected account to belong to a Google Workspace or Cloud Identity org.
 
 | | |
@@ -12,8 +14,6 @@ Looker Studio (formerly Google Data Studio) — the Data Studio REST API v1 (htt
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [lookerstudio.google.com](https://lookerstudio.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `lookerStudio` |
 
 ## Use it

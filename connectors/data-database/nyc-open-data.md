@@ -5,6 +5,8 @@ hidden: true
 
 # NYC Open Data
 
+<img src="../../.gitbook/assets/connectors/nyc-open-data.png" alt="NYC Open Data logo" width="64">
+
 NYC Open Data publishes thousands of free datasets from New York City agencies (311 requests, taxi trips, restaurant inspections, crime, housing and more) on the Socrata platform. Query any dataset with SoQL filters and aggregates as JSON or CSV, read dataset metadata and columns, and search the catalog by text, category and tag. No API key needed (anonymous requests are throttled).
 
 | | |
@@ -12,8 +14,6 @@ NYC Open Data publishes thousands of free datasets from New York City agencies (
 | **Category** | [Data and databases](README.md) |
 | **Website** | [opendata.cityofnewyork.us](https://opendata.cityofnewyork.us) |
 | **Authentication** | No authentication |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `nycOpenData` |
 
 ## Use it

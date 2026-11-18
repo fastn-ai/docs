@@ -5,6 +5,8 @@ hidden: true
 
 # UK Bank Holidays
 
+<img src="../../.gitbook/assets/connectors/uk-bank-holidays.png" alt="UK Bank Holidays logo" width="64">
+
 UK Bank Holidays is the free GOV.UK data feed of bank holidays in England and Wales, Scotland and Northern Ireland, including substitute days. Get all divisions or one division as JSON, or a division's iCalendar file. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ UK Bank Holidays is the free GOV.UK data feed of bank holidays in England and Wa
 | **Category** | [Data and databases](README.md) |
 | **Website** | [gov.uk](https://gov.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `ukBankHolidays` |
 
 ## Use it

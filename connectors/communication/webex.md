@@ -12,8 +12,6 @@ Cisco Webex video conferencing, messaging, and collaboration platform. Wraps the
 | **Category** | [Communication](README.md) |
 | **Website** | [webexapis.com](https://webexapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 222 |
-| **Events** | 0 |
 | **Slug** | `webex` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Cisco Webex from **Build → Integrations → Connectors** and connect an ac
 | Call Out a SIP Participant | `callOutASIPParticipant` | Call Out a SIP Participant. Initiate a call to a SIP participant to join a meeting. If a user invoking the API is not a [Service App](/docs/service-apps), the user must join the meeting before invoking the API. If a user is a [Service App](/docs/service-apps), the service app can invoke the API without joining the meeting. In both cases, the normal user or the service app that invokes the API must be the meeting host or cohost. If the meeting is created by the service app on behalf of the real host, the service app cannot use the admin on behalf function to invoke this API. Instead the host or cohost must execute the action. The authenticated user calling this API must have the `meeting:participants_write` scope. The ringing on the invited SIP device stops in 30 seconds if there is no response. |
 | Cancel Calling Out a SIP Participant | `cancelCallingOutASIPParticipant` | Cancel Calling Out a SIP Participant. Cancel the call to a SIP participant before the ringing on the invited SIP device stops. The ringing on the invited SIP device stops in 30 seconds if there is no response. If a user invoking the API is not a [Service App](/docs/service-apps), the user must join the meeting before invoking the API. If a user is a [Service App](/docs/service-apps), the service app can invoke the API without joining the meeting. In both cases, the normal user or the service app that invokes the API must be the meeting host or cohost. If the meeting is created by the service app on behalf of the real host, the service app cannot use the admin on behalf function to invoke this API. Instead the host or cohost must execute the action. The authenticated user calling this API must have the `meeting:participants_write` scope. |
 | Create a Meeting Interpreter | `createInterpreter` | Create a Meeting Interpreter. Assign an interpreter to a bi-directional simultaneous interpretation language channel for a meeting. |
+
+<details>
+
+<summary>See 212 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a Meeting Invitee | `createAMeetingInvitee` | Create a Meeting Invitee. * Invite a person to attend a meeting. * Identify the invitee in the request body, by email address. * The `sendEmail` parameter is `true` by default and the meeting emails will be sent to the invitee's `email`. Please set `sendEmail` to `false` to prevent the invitee from receiving emails. |
 | Create a Person | `createAPerson` | Create a Person. Create a new user account for a given organization. Only an admin can create a new user account. At least one of the following body parameters is required to create a new user: `displayName`, `firstName`, `lastName`. Currently, users may have only one email address associated with their account. The `emails` parameter is an array, which accepts multiple values to allow for future expansion, but currently only one email address will be used for the new user. Admin users can include `Webex calling` (BroadCloud) user details in the response by specifying `callingData` parameter as true. It may happen that the POST request with calling data returns a 400 status, but the person was created still. One way to get into this state is if an invalid phone number is assigned to a user. The people API aggregates calls to several other microservices, and one may have failed. A best practice is to check if the user exists before retrying. This can be done with the user's email add... |
 | Create a Room Tab | `createARoomTab` | Create a Room Tab. Add a tab with a specified URL to a room. |
@@ -246,3 +251,5 @@ Add Cisco Webex from **Build → Integrations → Connectors** and connect an ac
 | Update User Session Types | `updateUserSessionTypes` | Update User Session Types. Assign session types to specific users. * At least one of the following body parameters is required to update a specific user session type: `personId`, `email`. |
 | Update User Tracking Codes | `updateUserTrackingCodes` | Update User Tracking Codes. Updates tracking codes for a specified user by an admin user. * The `siteUrl` is required. The operation updates a user's tracking code on the specified site. All a user's available Webex sites can be retrieved by the [Get Site List](/docs/api/v1/meeting-preferences/get-site-list) API. Please note that the user here is the admin user who invokes the API, not the user specified by `personId` or `email`. * A name that is not found in the site-level tracking codes cannot be set for a user's tracking codes. All available site-level tracking codes for a site can be retrieved by the [List Tracking Codes](/docs/api/v1/tracking-codes/list-tracking-codes) API. * If the `inputMode` of a user's tracking code is `select` or `hostProfileSelect`, its value must be one of the site-level options of that tracking code. All available site-level tracking codes for a site can be retrieved by the [List Tracking Codes](/docs/api/v1/tracking-codes/list-tracking-codes) API. * Ad... |
 | Update Video Options | `updateVideoOptions` | Update Video Options. Updates video options for the authenticated user. |
+
+</details>

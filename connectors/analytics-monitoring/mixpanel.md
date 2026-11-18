@@ -5,6 +5,8 @@ hidden: true
 
 # Mixpanel
 
+<img src="../../.gitbook/assets/connectors/mixpanel.png" alt="Mixpanel logo" width="64">
+
 Mixpanel product analytics — Query API (segmentation, funnels, retention, insights, activity stream, profiles), Lexicon schemas, annotations, cohorts, service accounts, data pipelines, GDPR data deletion, and event/profile/group ingestion.
 
 | | |
@@ -12,8 +14,6 @@ Mixpanel product analytics — Query API (segmentation, funnels, retention, insi
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [mixpanel.com](https://mixpanel.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 50 |
-| **Events** | 0 |
 | **Slug** | `mixpanel` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mixpanel from **Build → Integrations → Connectors** and connect an accou
 | Create Data Deletion Task | `createDataDeletion` | Create a GDPR/CCPA data-deletion task for the given distinct IDs. Requires OAuth/Service Account authorization. |
 | Create Identity | `createIdentity` | Associate an anonymous ID with an identified user ID by sending a $identify event to the ingestion API (Original ID Merge). $anon_id must be a UUID v4 not already merged. |
 | Create Service Account | `createServiceAccount` | Create a new service account in an organization with a role and optional expiry. Requires an owner/admin Service Account credential. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Annotation | `deleteAnnotation` | Delete an annotation by ID. Requires a Service Account credential. |
 | Delete Group | `deleteGroup` | Permanently delete a Mixpanel group profile ($delete), identified by group_key and group_id. |
 | Delete Profile | `deleteProfile` | Permanently delete a Mixpanel user profile ($delete). This removes the profile but not the user's past events. |
@@ -74,3 +81,5 @@ Add Mixpanel from **Build → Integrations → Connectors** and connect an accou
 | Unset Profile Properties | `unsetProfileProperties` | Permanently remove the named properties from a Mixpanel user profile ($unset). |
 | Update Annotation | `updateAnnotation` | Update an annotation's date and/or description by ID. Requires a Service Account credential. |
 | Upsert Schema | `upsertSchema` | Create or update a Lexicon schema for an entity by name. Requires a Service Account credential. |
+
+</details>

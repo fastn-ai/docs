@@ -5,6 +5,8 @@ hidden: true
 
 # ClickHouse Cloud
 
+<img src="../../.gitbook/assets/connectors/clickhousecloud.png" alt="ClickHouse Cloud logo" width="64">
+
 ClickHouse Cloud Management API for administering organizations, services, API keys, members, invitations, usage/cost, private endpoints, and backups on api.clickhouse.cloud.
 
 | | |
@@ -12,8 +14,6 @@ ClickHouse Cloud Management API for administering organizations, services, API k
 | **Category** | [Data and databases](README.md) |
 | **Website** | [clickhouse.com](https://clickhouse.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 145 |
-| **Events** | 0 |
 | **Slug** | `clickhousecloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ClickHouse Cloud from **Build → Integrations → Connectors** and connect 
 | ClickStack: Delete Alert | `clickstackDeleteAlert` | Deletes a ClickStack alert. Beta endpoint. |
 | ClickStack: Delete Dashboard | `clickstackDeleteDashboard` | Deletes a ClickStack dashboard. Beta endpoint. |
 | ClickStack: Delete Role | `clickstackDeleteRole` | Deletes a custom ClickStack team role. Predefined roles, the team default role, and roles assigned to users cannot be deleted. Beta endpoint. |
+
+<details>
+
+<summary>See 135 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | ClickStack: Delete Saved Search | `clickstackDeleteSavedSearch` | Deletes a saved search and any alerts attached to it. Beta endpoint. |
 | ClickStack: Delete Source | `clickstackDeleteSource` | Deletes a ClickStack data source. Beta endpoint. |
 | ClickStack: Delete Webhook | `clickstackDeleteWebhook` | Deletes a ClickStack webhook. Blocked with a 409 while any alert still references it. Beta endpoint. |
@@ -169,3 +176,5 @@ Add ClickHouse Cloud from **Build → Integrations → Connectors** and connect 
 | Update Service State | `updateServiceState` | Starts, stops, or wakes a ClickHouse service. |
 | Update Service Total Memory Scaling | `updateServiceScaling` | Updates the deprecated total-memory autoscaling limits and idle-mode behavior for a production service. Prefer Update Service Replica Scaling for new integrations. |
 | Upsert Service Query Endpoint | `upsertServiceQueryEndpoint` | Creates or replaces the service query API endpoint, which allows executing SQL queries against the service over HTTP. |
+
+</details>

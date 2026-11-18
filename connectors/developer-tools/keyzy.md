@@ -5,6 +5,8 @@ hidden: true
 
 # KEYZY
 
+<img src="../../.gitbook/assets/connectors/keyzy.png" alt="KEYZY logo" width="64">
+
 KEYZY software licensing platform. Issue, validate, upgrade and revoke licence serial numbers, manage device activations, and register offline dealer licences to customers through the KEYZY v2 REST API.
 
 | | |
@@ -12,8 +14,6 @@ KEYZY software licensing platform. Issue, validate, upgrade and revoke licence s
 | **Category** | [Developer tools](README.md) |
 | **Website** | [keyzy.io](https://keyzy.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 16 |
-| **Events** | 0 |
 | **Slug** | `keyzy` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add KEYZY from **Build → Integrations → Connectors** and connect an account,
 | List License Products | `listLicenseProducts` | Returns the products that a KEYZY licence serial number grants access to, including each product's code, licence filename, encryption key, signatures, activation limit and active flag. Requires an App Key with write permission. The serial must belong to a registered licence; an unknown or unregistered serial returns 404 'Serial does not exist or registered!'. |
 | Register Dealer License To Customer | `registerDealerLicense` | Step 2 of the offline dealer registration flow. Claims a dealer-distributed serial number for a customer by writing their email and name onto it, after which the licence counts as registered and the customer shows as its owner. Email is required, name is optional. An App Key with read permission is enough. Run Check Dealer Serial For Registration first to confirm the serial is still claimable. |
 | Register License To Customer | `registerLicense` | Assigns one free licence of a SKU to a named customer and returns the serial number that was issued. Requires an App Key with write permission. If the SKU's 'Send mail' setting is enabled in the KEYZY dashboard, KEYZY emails the licence details to the address supplied, so only send real customer addresses. For 'subscription' and 'trial' licences the start_at and end_at Unix timestamps are mandatory. Returns 403 when the SKU has no free licences left to issue. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Show License | `showLicense` | Returns the full record of one licence looked up by its serial number: the SKU it belongs to, its dealer, the licensee name and email, the licence type, the validity window and whether it has been registered to a customer. An App Key with read permission is enough. KEYZY answers an unknown serial with the body 'License does not exist!' carrying HTTP status 401. SECURITY: this is a GET route and KEYZY accepts credentials only as query parameters on GET, so the App ID and API Key appear in plaintext in this action's request URL and in every stored execution record. KEYZY supports no header authentication form. |
 | Update Activation State | `updateActivationState` | Turns one device activation on or off by flipping its activated flag, the call used to disable a device from a backend or re-enable one that was turned off earlier. Requires an App Key with write permission and the numeric activation id from List License Activations. A missing or non-boolean activated value returns 422. |
 | Update License SKU | `updateLicenseSku` | Moves a licence onto a different SKU, for example when a customer changes edition. Requires an App Key with write permission and the licence's current SKU number as a safety check. The new SKU's licence type overwrites the licence's type, so a licence moved onto a trial or subscription SKU usually needs Update License Validity Period afterwards. |
 | Update License Validity Period | `updateLicenseValidityPeriod` | Sets the start and end timestamps that bound a subscription or trial licence, the call used to extend a renewal or shorten a trial. Requires an App Key with write permission. Both timestamps are Unix seconds and BOTH are mandatory: the KEYZY documentation marks start_at optional, but the live API rejects a request without it with 422 'The start at field is required.'. Perpetual licences ignore the validity window. |
 | Upgrade License | `upgradeLicense` | Exchanges a customer's current licence for an upgrade licence: the current serial is consumed and deleted, and the upgrade serial becomes usable. The upgrade SKU must list the current licence's SKU among its upgrade sources, configured under Upgrades in the KEYZY dashboard. DESTRUCTIVE - on success the current licence and its activations are gone permanently. Returns 422 when the two licences are not a configured upgrade pair. |
 | Validate License | `validateLicense` | Validates a licence serial number against a product code and, when a host_id is supplied, records or confirms an activation for that device. Returns the validation status together with the licensee's name and email, the SKU number, the product code and the version code. An App Key with read permission is enough. Fails with 404 'Product does not exist!' for an unknown product code and 404 'Serial does not exist or registered!' when the serial is unknown or not yet registered to a customer. |
+
+</details>

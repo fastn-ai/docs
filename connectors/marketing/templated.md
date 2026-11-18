@@ -5,6 +5,8 @@ hidden: true
 
 # Templated
 
+<img src="../../.gitbook/assets/connectors/templated.png" alt="Templated logo" width="64">
+
 Templated (templated.io) generates images, PDFs and videos from reusable design templates. This connector covers the full Templated public v1 REST API: templates and their layers, pages, tags, versions and clones; the gallery; folders; renders (single, multi-template, merged, duplicated and downloaded); uploads and fonts; asynchronous download jobs; AI template generation from a prompt or HTML; and imports from Bannerbear, Canva and Polotno.
 
 | | |
@@ -12,8 +14,6 @@ Templated (templated.io) generates images, PDFs and videos from reusable design 
 | **Category** | [Marketing](README.md) |
 | **Website** | [templated.io](https://templated.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 60 |
-| **Events** | 3 |
 | **Slug** | `templated` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Templated from **Build → Integrations → Connectors** and connect an acco
 | Create Template From Render | `createTemplateFromRender` | Turns a finished render back into a reusable template, carrying over the layer values that produced it. Counts towards the account template limit. |
 | Delete Folder | `deleteFolder` | Deletes a folder. Templates and renders inside it are not deleted; they are simply no longer assigned to a folder. |
 | Delete Fonts | `deleteFonts` | Removes one or more custom fonts the team uploaded. The parameter takes font NAMES, not identifiers, and Templated answers 400 with a not_found list when no uploaded font matches. Bundled Google Fonts cannot be deleted, so this action only has an effect on accounts that can upload custom fonts (a paid feature). |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Render | `deleteRender` | Removes a stored render and its generated file from the account. The credit already spent on the render is not refunded. |
 | Delete Template | `deleteTemplate` | Permanently removes a template from the account by its identifier. Renders already produced from the template are not deleted. |
 | Delete Uploads | `deleteUploads` | Deletes one or more files from the account's asset library by identifier. Templates still pointing at a deleted file will render with a missing image. |
@@ -84,6 +91,8 @@ Add Templated from **Build → Integrations → Connectors** and connect an acco
 | Upload Asset | `uploadAsset` | Uploads a file to the account's asset library so it can be referenced from image layers. The file is sent as a multipart form part built from the file name, content type and contents. Text-based assets such as SVG, CSV or JSON round-trip correctly; binary assets are re-encoded by the request engine and should be referenced by public URL instead. |
 | Upload Font | `uploadFont` | Uploads a custom font file (TTF, OTF, WOFF or WOFF2) to the team so it can be used in text layers. The file is sent as a multipart form part. Custom fonts are a paid feature: free accounts receive 403 "Please upgrade your account to a paid plan to upload fonts." Font files are also binary, which the fastn request engine re-encodes as UTF-8, so on a paid plan prefer uploading fonts from the Templated dashboard. |
 | Upload Public Asset | `uploadPublicAsset` | Uploads a file to Templated's public asset bucket without attaching it to the account library, returning a URL usable in image layers. Same multipart form as Upload Asset; text-based files round-trip correctly. |
+
+</details>
 
 ## Events
 

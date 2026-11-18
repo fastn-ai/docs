@@ -5,6 +5,8 @@ hidden: true
 
 # Xero
 
+<img src="../../.gitbook/assets/connectors/xero.png" alt="Xero logo" width="64">
+
 Xero Accounting API connector. Manage contacts, invoices, credit notes, bank transactions, payments, accounts, items, quotes, purchase orders, tax rates, organisation, financial reports, currencies, and bank transfers via OAuth 2.0. Every call requires a Xero-Tenant-Id header identifying the connected organisation.
 
 | | |
@@ -12,8 +14,6 @@ Xero Accounting API connector. Manage contacts, invoices, credit notes, bank tra
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [xero.com](https://xero.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 48 |
-| **Events** | 2 |
 | **Slug** | `xero` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Xero from **Build → Integrations → Connectors** and connect an account, 
 | Create Payment | `createPayment` | Apply a payment to an invoice or credit note. Xero uses PUT to create. |
 | Create Purchase Order | `createPurchaseOrder` | Create a new purchase order. Xero uses PUT to create. |
 | Create Quote | `createQuote` | Create a new quote. Xero uses PUT to create. |
+
+<details>
+
+<summary>See 38 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Account | `deleteAccount` | Delete an account by AccountID. Returns 204. |
 | Delete Item | `deleteItem` | Delete an item by ItemID. Returns 204. |
 | Delete Payment | `deletePayment` | Delete (reverse) a payment by setting its Status to DELETED. POST to /Payments/{id}. |
@@ -72,6 +79,8 @@ Add Xero from **Build → Integrations → Connectors** and connect an account, 
 | Update Item | `updateItem` | Update an existing item by ItemID. Xero uses POST to update. |
 | Update Purchase Order | `updatePurchaseOrder` | Update a purchase order by PurchaseOrderID. Xero uses POST to update. |
 | Update Quote | `updateQuote` | Update an existing quote by QuoteID. Xero uses POST to update. |
+
+</details>
 
 ## Events
 

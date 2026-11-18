@@ -5,6 +5,8 @@ hidden: true
 
 # Kontent.ai
 
+<img src="../../.gitbook/assets/connectors/kontent-ai.png" alt="Kontent.ai logo" width="64">
+
 Kontent.ai headless CMS Management API v2 connector. Manage content items, language variants, content types, snippets, taxonomy groups, assets, asset folders and renditions, languages, collections, spaces, workflows, webhooks, roles, and users in a Kontent.ai environment.
 
 | | |
@@ -12,8 +14,6 @@ Kontent.ai headless CMS Management API v2 connector. Manage content items, langu
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [kontent.ai](https://kontent.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 99 |
-| **Events** | 0 |
 | **Slug** | `kontentAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Kontent.ai from **Build → Integrations → Connectors** and connect an acc
 | Add Custom App | `addCustomApp` | Creates a new custom app in the environment. |
 | Add Language | `addLanguage` | Creates a new language in the environment. |
 | Add Space | `addSpace` | Creates a new space in the environment. |
+
+<details>
+
+<summary>See 89 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Taxonomy Group | `addTaxonomyGroup` | Creates a new taxonomy group with the specified terms. |
 | Add Webhook | `addWebhook` | Creates a new webhook that sends notifications to the specified URL when the configured events occur. |
 | Add Workflow | `addWorkflow` | Creates a new workflow with the specified steps and scopes. |
@@ -123,3 +130,5 @@ Add Kontent.ai from **Build → Integrations → Connectors** and connect an acc
 | View Language Variant | `viewLanguageVariant` | Retrieves a specific language variant of a content item. |
 | View Role | `viewRole` | Retrieves a single role by its internal ID or codename. |
 | View Space | `viewSpace` | Retrieves a single space by its internal ID or codename. |
+
+</details>

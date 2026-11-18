@@ -5,6 +5,8 @@ hidden: true
 
 # WordPress.com
 
+<img src="../../.gitbook/assets/connectors/wordpress-com.ico" alt="WordPress.com logo" width="64">
+
 WordPress.com is Automattic's hosted WordPress platform. This connector covers the WordPress.com REST API v1.1 at public-api.wordpress.com, which also serves Jetpack-connected self-hosted WordPress sites: posts and pages, media library, comments and comment likes, categories, tags and custom taxonomy terms, navigation menus, widgets, site users and invites, site information and metadata, site and email statistics, followers and post subscribers, Publicize and Keyring social connections, sharing buttons, the Reader, notifications and the authenticated user's account.
 
 | | |
@@ -12,8 +14,6 @@ WordPress.com is Automattic's hosted WordPress platform. This connector covers t
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [wordpress.com](https://wordpress.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 340 |
-| **Events** | 0 |
 | **Slug** | `wordpressCom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WordPress.com from **Build → Integrations → Connectors** and connect an 
 | Create Comment On Post | `createCommentOnPost` | Creates a comment on a post. `content` is required; the API returns `invalid_input "Invalid request input"` when it is missing. |
 | Create Font Family | `createFontFamily` | Installs a font family on a site. `font_family_settings` must be a JSON-encoded string. |
 | Create Menu (Core) | `createMenuCore` | Creates a navigation menu through the WordPress core REST API. |
+
+<details>
+
+<summary>See 330 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Menu Item | `createMenuItem` | Adds an item to a navigation menu. |
 | Create Navigation Menu | `createNavigationMenu` | Create a new navigation menu. |
 | Create Navigation Menu (Core) | `createNavigationMenuCore` | Creates a block-theme navigation menu. |
@@ -364,3 +371,5 @@ Add WordPress.com from **Build → Integrations → Connectors** and connect an 
 | Upload Media | `uploadMedia` | Adds one or more items to a site's media library by sideloading them from public URLs supplied in `media_urls`. Direct binary multipart upload is not supported through this connector. |
 | Upload Video Track | `uploadVideoTrack` | Uploads a subtitle or caption track for a VideoPress video. |
 | Validate Password Strength | `validatePasswordStrength` | Checks the strength of a candidate password for the authenticated user's account without changing it. |
+
+</details>

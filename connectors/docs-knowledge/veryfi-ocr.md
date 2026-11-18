@@ -5,6 +5,8 @@ hidden: true
 
 # Veryfi OCR
 
+<img src="../../.gitbook/assets/connectors/veryfi-ocr.png" alt="Veryfi OCR logo" width="64">
+
 Veryfi is a document AI / OCR platform. This connector wraps the Veryfi Data Extraction API v8: process and manage receipts and invoices, business cards, checks, contracts, W-2s, W-8BEN-Es, W-9s, bank statements, ∀Docs (any documents) and Parse (document-to-markdown); manage line items, tags and tax lines; classify and extract; document sets and PDF splitting; blueprints; OCR counts; fraud device blocklist; mTLS certificates; webhooks; and API/client key settings.
 
 | | |
@@ -12,8 +14,6 @@ Veryfi is a document AI / OCR platform. This connector wraps the Veryfi Data Ext
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [veryfi.com](https://veryfi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 152 |
-| **Events** | 3 |
 | **Slug** | `veryfiOcr` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Veryfi OCR from **Build → Integrations → Connectors** and connect an acc
 | Add Any Document Tag | `addAnyDocumentTag` | Attach a single tag to a ∀Docs document, creating the tag if it does not exist. Returns the tag id and name. |
 | Add Any Document Tags | `addAnyDocumentTags` | Attach several tags at once to a ∀Docs document. Returns the document's full tag list. |
 | Add Bank Statement Tag | `addBankStatementTag` | Attach a single tag to a bank statement, creating the tag if it does not exist. Returns the tag id and name. |
+
+<details>
+
+<summary>See 142 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Bank Statement Tags | `addBankStatementTags` | Attach several tags at once to a bank statement. Returns the document's full tag list. |
 | Add Check Tag | `addCheckTag` | Attach a single tag to a check, creating the tag if it does not exist. Returns the tag id and name. |
 | Add Check Tags | `addCheckTags` | Attach several tags at once to a check. Returns the document's full tag list. |
@@ -176,6 +183,8 @@ Add Veryfi OCR from **Build → Integrations → Connectors** and connect an acc
 | Update W-8BEN-E | `updateW8BenE` | Correct or annotate an already-processed W-8BEN-E form. Pass meta to set the document tags and external_id. Returns the updated document. |
 | Update W-9 | `updateW9` | Correct or annotate an already-processed W-9 form. Pass meta to set the document tags and external_id. Returns the updated document. |
 | Verify API Key | `verifyApiKey` | Verify that the presented Bearer API key is valid and report its permissions. Requires a Veryfi Bearer API key. |
+
+</details>
 
 ## Events
 

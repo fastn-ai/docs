@@ -5,6 +5,8 @@ hidden: true
 
 # World Bank Indicators API
 
+<img src="../../.gitbook/assets/connectors/world-bank-indicators.png" alt="World Bank Indicators API logo" width="64">
+
 The World Bank Indicators API (v2) gives free access to tens of thousands of development indicators and their time series for every country, region and income group: countries, regions, income levels, lending types, topics, sources, indicators and their data, plus the advanced data and metadata APIs (concepts, metatypes, metadata search). No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The World Bank Indicators API (v2) gives free access to tens of thousands of dev
 | **Category** | [Data and databases](README.md) |
 | **Website** | [worldbank.org](https://worldbank.org) |
 | **Authentication** | No authentication |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `worldBankIndicators` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add World Bank Indicators API from **Build → Integrations → Connectors** and
 | Get Lending Type | `getLendingType` | Get one lending type by code (GET /v2/lendingType/{code}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
 | Get Region | `getRegion` | Get one region by code (GET /v2/region/{code}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
 | Get Source | `getSource` | Get one data source by id (GET /v2/sources/{source}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Source Data | `getSourceData` | Get data points from a source by country, series and time with the advanced data API (GET /v2/sources/{source}/country/{country}/series/{series}/time/{time}/data). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
 | Get Topic | `getTopic` | Get one or more topics by id (GET /v2/topic/{topic}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
 | List Concept Metatypes | `listConceptMetatypes` | List the metadata types of one concept of a source (GET /v2/sources/{source}/concepts/{concept}/metatypes). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
@@ -57,3 +64,5 @@ Add World Bank Indicators API from **Build → Integrations → Connectors** and
 | Search Concept Metadata | `searchConceptMetadata` | Search the metadata of one concept of a source, e.g. countries matching a name (GET /v2/sources/{source}/concepts/{concept}/search/{query}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
 | Search Metatype Metadata | `searchMetatypeMetadata` | Search the values of one metadata type of a source (GET /v2/sources/{source}/metatypes/{metatype}/search/{query}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
 | Search Source Metadata | `searchSourceMetadata` | Search all metadata of a source for a phrase (GET /v2/sources/{source}/search/{query}). Responses are JSON: a [paging info, records] pair for lists; an invalid value returns HTTP 200 with a message array instead. Docs: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information |
+
+</details>

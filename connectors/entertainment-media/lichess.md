@@ -5,6 +5,8 @@ hidden: true
 
 # Lichess
 
+<img src="../../.gitbook/assets/connectors/lichess.png" alt="Lichess logo" width="64">
+
 Lichess is a free, open-source chess server. Its public API (no token) gives users, ratings, leaderboards, games (PGN/NDJSON export), puzzles, TV, Arena and Swiss tournaments, studies, broadcasts, FIDE players, teams, simuls, streamers, cloud evaluation and the endgame tablebase. Lichess asks for one request at a time and a 60-second pause after a 429.
 
 | | |
@@ -12,8 +14,6 @@ Lichess is a free, open-source chess server. Its public API (no token) gives use
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [lichess.org](https://lichess.org) |
 | **Authentication** | No authentication |
-| **Actions** | 66 |
-| **Events** | 0 |
 | **Slug** | `lichess` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Lichess from **Build → Integrations → Connectors** and connect an accoun
 | Export Games of an Arena Tournament | `exportArenaGames` | Export games of an Arena tournament. Download games of a tournament in PGN or [ndjson](#description/streaming-with-nd-json) format. Games are sorted by reverse chronological order (most recent first). The game stream is throttled, depending on who is making the request: - Anonymous request: 20 games per second - [OAuth2 authenticated](#description/authentication) request: 30 games per second (GET /api/tournament/{id}/games). Docs: https://lichess.org/api |
 | Export One Game | `exportGame` | Export one game. Download one game in either PGN or JSON format. Ongoing games are delayed by 3 moves, as to prevent cheat bots from using this API. (GET /game/export/{gameId}). Docs: https://lichess.org/api |
 | Export One Round as PGN | `exportBroadcastRound` | Export one round as PGN. Download all games of a single round of a broadcast tournament in PGN format. You *could* poll this endpoint to get updates about a tournament, but it would be slow, and very inefficient. Instead, consider [streaming the round](#tag/broadcasts/GET/api/stream/broadcast/round/{broadcastRoundId}.pgn) to get a new PGN every time a game is updated, in real-time. (GET /api/broadcast/round/{broadcastRoundId}.pgn). Docs: https://lichess.org/api |
+
+<details>
+
+<summary>See 56 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Export One Study Chapter | `exportStudyChapter` | Export one study chapter. Download one study chapter in PGN format. If authenticated, then all public, unlisted, and private study chapters are read. If not, only public (non-unlisted) study chapters are read. (GET /api/study/{studyId}/{chapterId}.pgn). Docs: https://lichess.org/api |
 | Export Ongoing Game of a User | `exportUserCurrentGame` | Export ongoing game of a user. Download the ongoing game, or the last game played, of a user. Available in either PGN or JSON format. Ongoing games are delayed by 3 moves, as to prevent cheat bots from using this API. (GET /api/user/{username}/current-game). Docs: https://lichess.org/api |
 | Export TRF of a Swiss Tournament | `exportSwissTrf` | Export TRF of a Swiss tournament. Download a tournament in the Tournament Report File format, the FIDE standard. Documentation: &lt;https://www.fide.com/FIDE/handbook/C04Annex2_TRF16.pdf&gt; Example: &lt;https://lichess.org/swiss/j8rtJ5GL.trf&gt; (GET /swiss/{id}.trf). Docs: https://lichess.org/api |
@@ -90,3 +97,5 @@ Add Lichess from **Build → Integrations → Connectors** and connect an accoun
 | Search Teams | `searchTeams` | Search teams. Paginator of team search results for a keyword. (GET /api/team/search). Docs: https://lichess.org/api |
 | Stream Moves of a Game | `streamGameMoves` | Stream moves of a game. Stream positions and moves of any ongoing game, in [ndjson](#description/streaming-with-nd-json). A description of the game is sent as a first message. Then a message is sent each time a move is played. Finally, a description of the game is sent when it finishes, and the stream is closed. Ongoing games are delayed by 3 moves, as to prevent cheat bots from using this API. No more than 8 game streams can be opened at the same time from the same IP address. (GET /api/stream/game/{id}). Docs: https://lichess.org/api |
 | Test Multiple OAuth Tokens | `testTokens` | Test multiple OAuth tokens. For up to 1000 OAuth tokens, returns their associated user ID and scopes, or `null` if the token is invalid. The method is `POST` so a longer list of tokens can be sent in the request body. (POST /api/token/test). Docs: https://lichess.org/api |
+
+</details>

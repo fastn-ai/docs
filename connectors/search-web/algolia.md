@@ -5,6 +5,8 @@ hidden: true
 
 # Algolia
 
+<img src="../../.gitbook/assets/connectors/algolia.png" alt="Algolia logo" width="64">
+
 Algolia is a hosted search and discovery platform. This connector wraps the Algolia Search, Analytics, Insights and Monitoring REST APIs to manage indices, records, settings, synonyms, rules, dictionaries, API keys and user-ID clusters, to read search and conversion analytics, to send click and conversion events, and to read Algolia infrastructure status.
 
 | | |
@@ -12,8 +14,6 @@ Algolia is a hosted search and discovery platform. This connector wraps the Algo
 | **Category** | [Search and web](README.md) |
 | **Website** | [algolia.com](https://algolia.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 89 |
-| **Events** | 0 |
 | **Slug** | `algolia` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Algolia from **Build → Integrations → Connectors** and connect an accoun
 | Browse Records | `browse` | Browse for records. Retrieves records from an index, up to 1,000 per request. |
 | Clear Index Records | `clearObjects` | Delete all records from an index. Deletes only the records from an index while keeping settings, synonyms, and rules. |
 | Clear Rules | `clearRules` | Delete all rules. Deletes all rules from the index. |
+
+<details>
+
+<summary>See 79 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clear Synonyms | `clearSynonyms` | Delete all synonyms. Deletes all synonyms from the index. |
 | Copy Or Move Index | `operationIndex` | Copy or move an index. Copies or moves (renames) an index within the same Algolia application. |
 | Create API Key | `addApiKey` | Create an API key. Creates a new API key with specific permissions and restrictions. |
@@ -113,3 +120,5 @@ Add Algolia from **Build → Integrations → Connectors** and connect an accoun
 | Update API Key | `updateApiKey` | Update an API key. Replaces the permissions of an existing API key. |
 | Update Dictionary Settings | `setDictionarySettings` | Update dictionary settings. Turns standard stop word dictionary entries on or off for a given language. |
 | Update Index Settings | `setSettings` | Update index settings. Update the specified index settings. |
+
+</details>

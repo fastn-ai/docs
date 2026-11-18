@@ -5,6 +5,8 @@ hidden: true
 
 # Pipedream
 
+<img src="../../.gitbook/assets/connectors/pipedream.png" alt="Pipedream logo" width="64">
+
 Pipedream is a workflow automation and integration platform for developers. This connector covers the Pipedream REST API v1: users, workspaces, apps in the integration registry, components, deployed event sources and their events, event subscriptions, webhooks, workflows and workspace OAuth tokens.
 
 | | |
@@ -12,8 +14,6 @@ Pipedream is a workflow automation and integration platform for developers. This
 | **Category** | [Developer tools](README.md) |
 | **Website** | [pipedream.com](https://pipedream.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 27 |
-| **Events** | 0 |
 | **Slug** | `pipedream` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pipedream from **Build → Integrations → Connectors** and connect an acco
 | Delete Source Events | `deleteSourceEvents` | Delete events emitted by a source. Passing neither start_id nor end_id deletes every event for the source. |
 | Delete Subscription | `deleteSubscription` | Remove an event subscription between an emitter and a listener. |
 | Delete Webhook | `deleteWebhook` | Permanently delete a webhook and stop event delivery to its endpoint. |
+
+<details>
+
+<summary>See 17 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get App | `getApp` | Retrieve a single app from Pipedream's integration registry by its app ID or name slug. |
 | Get Component | `getComponent` | Retrieve a component saved in the workspace by its component key or component ID. |
 | Get Current User | `getCurrentUser` | Retrieve the profile of the user that owns the API key, including their email and the workspaces they belong to. |
@@ -51,3 +58,5 @@ Add Pipedream from **Build → Integrations → Connectors** and connect an acco
 | Search Registry Components | `searchRegistryComponents` | Search Pipedream's global component registry with a natural-language query and return the matching sources and actions. |
 | Update Source | `updateSource` | Update a deployed source: change its code, its name, or activate and deactivate it. |
 | Update Workflow | `updateWorkflow` | Activate or deactivate a deployed workflow. |
+
+</details>

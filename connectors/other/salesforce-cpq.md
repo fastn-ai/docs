@@ -5,6 +5,8 @@ hidden: true
 
 # Salesforce CPQ
 
+<img src="../../.gitbook/assets/connectors/salesforce-cpq.ico" alt="Salesforce CPQ logo" width="64">
+
 Salesforce CPQ (formerly Steelbrick) — the configure-price-quote managed package that runs inside a Salesforce org. Covers the CPQ-specific surface only: the SBQQ__ custom objects (quotes, quote lines and line groups, quote terms, quote templates and documents, product options and features, configuration attributes, product and configuration rules, price rules and their conditions and actions, discount schedules and tiers, block prices, contracted prices, costs, subscriptions and consumption schedules) plus the CPQ Apex REST API at /services/apexrest/SBQQ/ServiceRouter for reading, saving and calculating a quote and for searching and adding products. Standard Salesforce sObject CRUD, SOQL, composite, Bulk, Tooling, Chatter and Analytics are NOT duplicated here — use the Salesforce connector alongside this one against the same org. Requires the Salesforce CPQ managed package to be installed and licensed; a plain Developer Edition org does not have it.
 
 | | |
@@ -12,8 +14,6 @@ Salesforce CPQ (formerly Steelbrick) — the configure-price-quote managed packa
 | **Category** | [Other](README.md) |
 | **Website** | [salesforce.com](https://salesforce.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 98 |
-| **Events** | 16 |
 | **Slug** | `salesforceCpq` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Salesforce CPQ from **Build → Integrations → Connectors** and connect an
 | Create Apex Trigger (webhook infrastructure) | `createApexTrigger` | Webhook infrastructure, not part of the CPQ product surface. Creates an Apex trigger on an SBQQ object via the Tooling API and binds it to the callout helper class. TableEnumOrId is the sObject API name the trigger fires on, e.g. SBQQ__Quote__c. Must be stage:live for the subscription resolver to see it. |
 | Create CPQ Block Price | `createBlockPrice` | Create a block price (SBQQ__BlockPrice__c) — one quantity band that is charged a flat price rather than a per-unit one. The product's pricing method must be Block for CPQ to use these. Bounds are lower-inclusive and upper-exclusive. SBQQ__ExpirationDate__c does not exist on this object in CPQ 262.1 (only SBQQ__EffectiveDate__c does), and CurrencyIsoCode exists only in a multi-currency org. Returns {id, success, errors}. |
 | Create CPQ Configuration Attribute | `createConfigurationAttribute` | Create a configuration attribute (SBQQ__ConfigurationAttribute__c) on a bundle — the configurator control that pushes one value onto every option at once. SBQQ__TargetField__c is the API name of the field it writes on the quote lines. Scope it to one feature with SBQQ__Feature__c, or leave that empty for the whole bundle. SBQQ__ShownValues__c and SBQQ__HiddenValues__c narrow a picklist's choices. Returns {id, success, errors}. |
+
+<details>
+
+<summary>See 88 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create CPQ Configuration Rule | `createConfigurationRule` | Scope a product rule to one bundle by creating a configuration rule (SBQQ__ConfigurationRule__c). Without one, a Product-scoped rule applies wherever its conditions match; with one, it only runs inside the named bundle. Returns {id, success, errors}. |
 | Create CPQ Contracted Price | `createContractedPrice` | Create a contracted price (SBQQ__ContractedPrice__c) — a negotiated price or discount for one product on one account, which CPQ applies ahead of list pricing. Set either SBQQ__Price__c (a fixed price) or SBQQ__Discount__c (a percentage off list), not both. Multi-currency orgs need one record per currency; CPQ does not convert. Overlapping effective-date ranges for the same account, product and currency are rejected. Returns {id, success, errors}. |
 | Create CPQ Cost | `createCost` | Create a cost record (SBQQ__Cost__c) — the per-unit cost CPQ uses for margin and cost-plus pricing. Returns {id, success, errors}. SBQQ__Cost__c in CPQ 262.1 carries neither effective/expiration dates nor CurrencyIsoCode; CurrencyIsoCode only exists in a multi-currency org. |
@@ -123,6 +130,8 @@ Add Salesforce CPQ from **Build → Integrations → Connectors** and connect an
 | Validate Product Configuration (CPQ API) | `validateProductConfiguration` | CPQ Configuration API: run validation product rules against a product configuration and get the ConfigurationModel back with validationMessages populated. uid is the Product2 Id. The event property is required and selects which rule set runs: Load, Save, Edit or Always. Salesforce CPQ Spring '17 and later. |
 | Validate Quote (CPQ API) | `validateQuote` | CPQ Quote API: run CPQ's validation product rules against a QuoteModel and get the error messages back. Returns a bare JSON array of strings, empty when the quote is valid; fastn surfaces it under items. Unlike calculateQuote the context here is the QuoteModel itself, NOT wrapped in a quote key. Salesforce CPQ Winter '19 and later. Note: the Salesforce curl sample spells the provider QuoteAPI.QuoteValidator without the SBQQ prefix while the Apex sample on the same page uses the fully qualified SBQQ.QuoteAPI.QuoteValidator, which is what this action sends. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -139,9 +148,18 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | CPQ Quote Line Deleted | `sbqq__quoteline__c.deleted` | Fires after an SBQQ__QuoteLine__c record is deleted. |
 | CPQ Quote Line Group Created | `sbqq__quotelinegroup__c.created` | Fires after a new SBQQ__QuoteLineGroup__c record is inserted. |
 | CPQ Quote Line Group Deleted | `sbqq__quotelinegroup__c.deleted` | Fires after an SBQQ__QuoteLineGroup__c record is deleted. |
+
+<details>
+
+<summary>See 6 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | CPQ Quote Line Group Updated | `sbqq__quotelinegroup__c.updated` | Fires after an SBQQ__QuoteLineGroup__c record is updated. |
 | CPQ Quote Line Updated | `sbqq__quoteline__c.updated` | Fires after an SBQQ__QuoteLine__c record is updated. Recalculating a quote updates every line, so expect a burst. |
 | CPQ Quote Updated | `sbqq__quote__c.updated` | Fires after an SBQQ__Quote__c record is updated. This is the one to bind for status changes such as Draft to Approved. |
 | CPQ Subscription Created | `sbqq__subscription__c.created` | Fires after a new SBQQ__Subscription__c record is inserted, which is how CPQ signals that a quote has been contracted and a recurring entitlement now exists. |
 | CPQ Subscription Deleted | `sbqq__subscription__c.deleted` | Fires after an SBQQ__Subscription__c record is deleted. |
 | CPQ Subscription Updated | `sbqq__subscription__c.updated` | Fires after an SBQQ__Subscription__c record is updated, including renewal-forecast changes. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Acuity Scheduling
 
+<img src="../../.gitbook/assets/connectors/acuity-scheduling.png" alt="Acuity Scheduling logo" width="64">
+
 Acuity Scheduling (a Squarespace company) is an online appointment scheduling platform. Manage appointments, appointment types, availability, calendars, clients, intake forms, labels, orders, products, package and coupon certificates, blocked time, and webhook subscriptions through the Acuity Scheduling API v1.
 
 | | |
@@ -12,8 +14,6 @@ Acuity Scheduling (a Squarespace company) is an online appointment scheduling pl
 | **Category** | [Productivity](README.md) |
 | **Website** | [acuityscheduling.com](https://acuityscheduling.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 36 |
-| **Events** | 5 |
 | **Slug** | `acuityScheduling` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Acuity Scheduling from **Build → Integrations → Connectors** and connect
 | Create Webhook | `createWebhook` | Creates a webhook subscription so Acuity notifies a target URL when the chosen event occurs. The target must be reachable on port 443 or 80, and an account may hold at most 25 webhooks. |
 | Delete Blocked Time | `deleteBlockedTime` | Removes a blocked off period from a calendar, making the time bookable again. |
 | Delete Certificate | `deleteCertificate` | Deletes a package or coupon certificate code so it can no longer be redeemed. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Client | `deleteClient` | Deletes a client record, located by first name, last name and optionally phone number. Acuity returns 400 client_not_found when no client matches. |
 | Delete Webhook | `deleteWebhook` | Deletes a webhook subscription so Acuity stops sending notifications to its target URL. |
 | Get Account | `getAccount` | Returns the profile of the authenticated Acuity account, including its timezone, currency, plan and scheduling page URL. |
@@ -60,6 +67,8 @@ Add Acuity Scheduling from **Build → Integrations → Connectors** and connect
 | Reschedule Appointment | `rescheduleAppointment` | Moves an existing appointment to a new date and time, and optionally to a different calendar. |
 | Update Appointment | `updateAppointment` | Updates the client details, intake form answers, notes or label on an existing appointment. Use Reschedule Appointment to change its time. |
 | Update Client | `updateClient` | Updates an existing client record. The client is located by the Current First Name, Current Last Name and Current Phone inputs, and the remaining inputs supply the new values. Acuity returns 400 client_not_found when no client matches. |
+
+</details>
 
 ## Events
 

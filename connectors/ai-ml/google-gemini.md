@@ -5,6 +5,8 @@ hidden: true
 
 # Google Gemini
 
+<img src="../../.gitbook/assets/connectors/google-gemini.png" alt="Google Gemini logo" width="64">
+
 Google Gemini Developer API (generativelanguage.googleapis.com/v1beta). Generate content (text/multimodal), streaming generation, token counting, embeddings, model discovery, the Files API, context caching (cachedContents), and Batch Mode generation. Auth via Gemini API key sent in the x-goog-api-key header.
 
 | | |
@@ -12,8 +14,6 @@ Google Gemini Developer API (generativelanguage.googleapis.com/v1beta). Generate
 | **Category** | [AI and ML](README.md) |
 | **Website** | [ai.google.dev](https://ai.google.dev) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `googleGemini` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Gemini from **Build → Integrations → Connectors** and connect an 
 | Delete Cached Content | `deleteCachedContent` | Delete a context cache by id (cachedContents/{id}). Returns an empty body on success. |
 | Delete Corpus | `deleteCorpus` | Deletes a semantic retrieval corpus (Gemini API v1beta corpora.delete). Without force=true Google refuses (FAILED_PRECONDITION) if the corpus still contains documents. Requires a Google OAuth 2.0 connection; Google scope: generative-language.retriever. Returns an empty body on success. |
 | Delete File | `deleteFile` | Delete an uploaded file by name (files/{id}). Returns an empty body on success. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Tuned Model | `deleteTunedModel` | Permanently deletes one of the signed-in user's Gemini tuned models (Gemini API v1beta tunedModels.delete). Irreversible. Requires a Google OAuth 2.0 connection; Google scope: generative-language.tuning. Returns an empty body on success. |
 | Embed Content | `embedContent` | Generate a text embedding vector from input content using an embedding model (e.g. gemini-embedding-001, text-embedding-004). Supports taskType, title, and outputDimensionality. |
 | Generate Content | `generateContent` | Generate a model response from a list of Content inputs (text and multimodal). Supports system instructions, tools/function-calling, safety settings, and generationConfig (temperature, topK, topP, maxOutputTokens, responseMimeType, responseSchema, thinkingConfig). Returns candidates with content parts, finishReason, safetyRatings, plus usageMetadata. |
@@ -53,3 +60,5 @@ Add Google Gemini from **Build → Integrations → Connectors** and connect an 
 | Stream Generate Content | `streamGenerateContent` | Streaming variant of generateContent. Returns incremental GenerateContentResponse chunks server-sent. Same request body as generateContent. Use alt=sse query param for server-sent events framing. |
 | Update Cached Content | `updateCachedContent` | Update a context cache's expiry (only ttl or expireTime are mutable). Pass updateMask to indicate which field changes. |
 | Upload File (metadata) | `uploadFile` | Upload a text file to the Gemini Files API in one multipart request (metadata + content). Binary files are not supported by the engine. |
+
+</details>

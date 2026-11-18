@@ -5,6 +5,8 @@ hidden: true
 
 # Gumroad
 
+<img src="../../.gitbook/assets/connectors/gumroad.png" alt="Gumroad logo" width="64">
+
 Gumroad is a commerce platform for creators to sell digital products, memberships and subscriptions. This connector covers products, variant categories and variants, offer codes, custom fields, sales, subscribers, licenses, and resource subscriptions (webhooks).
 
 | | |
@@ -12,8 +14,6 @@ Gumroad is a commerce platform for creators to sell digital products, membership
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [gumroad.com](https://gumroad.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 44 |
-| **Events** | 0 |
 | **Slug** | `gumroad` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Gumroad from **Build → Integrations → Connectors** and connect an accoun
 | Delete Custom Field | `deleteCustomField` | Delete a custom field from a product, identified by its name. |
 | Delete Offer Code | `deleteOfferCode` | Delete an offer code from a product. |
 | Delete Product | `deleteProduct` | Permanently delete a product from the Gumroad account. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Resource Subscription | `deleteResourceSubscription` | Delete a webhook resource subscription by its ID. |
 | Delete Variant | `deleteVariant` | Delete a variant from a variant category. |
 | Delete Variant Category | `deleteVariantCategory` | Delete a variant category from a product. |
@@ -68,3 +75,5 @@ Add Gumroad from **Build → Integrations → Connectors** and connect an accoun
 | Update Variant | `updateVariant` | Update a variant's name, price difference, or maximum purchase count. |
 | Update Variant Category | `updateVariantCategory` | Update the title of a variant category. |
 | Verify License | `verifyLicense` | Verify a license key for a product and optionally increment its uses count. |
+
+</details>

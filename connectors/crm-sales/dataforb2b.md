@@ -5,6 +5,8 @@ hidden: true
 
 # DataForB2B
 
+<img src="../../.gitbook/assets/connectors/dataforb2b.png" alt="DataForB2B logo" width="64">
+
 DataForB2B is a B2B data API for searching and enriching people and companies. This connector covers the DataForB2B REST API: people, company, job and social post search; natural-language text-to-filters, one-shot and multi-turn reasoning search; result counts and filter typeahead; profile enrichment (full profile, work and personal email, phone, GitHub) and company enrichment; the signal catalog and monitors that push real-time signals such as post engagement to your webhook; and the account credit balance. Authenticates with an API key sent in the api_key header.
 
 | | |
@@ -12,8 +14,6 @@ DataForB2B is a B2B data API for searching and enriching people and companies. T
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [dataforb2b.ai](https://dataforb2b.ai) |
 | **Authentication** | API key |
-| **Actions** | 20 |
-| **Events** | 14 |
 | **Slug** | `dataforb2b` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DataForB2B from **Build → Integrations → Connectors** and connect an acc
 | Get Account | `getAccount` | Returns whether the API key is valid and the remaining credit balance of the DataForB2B account. Free; used to verify the connection. |
 | Get Filter Suggestions | `getFilterSuggestions` | Autocompletes canonical filter values (companies, industries, categories, locations, cities, regions, schools, titles, skills, investors) for use in search filters. Charges 0.01 credit per result returned. |
 | List Monitor Events | `listMonitorEvents` | Lists recent events delivered to a monitor, newest first, with limit and offset paging. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Monitors | `listMonitors` | Lists every monitor on the API key with its signal, watched targets, webhook URL, active state and filters. |
 | List Signals | `listSignals` | Returns the signal catalog: every signal you can monitor, its allowed target types, whether a target is required and its sub-event types. Free. |
 | Remove Monitor Targets | `removeMonitorTargets` | Removes one or more targets from a monitor by their URL or key. |
@@ -44,6 +51,8 @@ Add DataForB2B from **Build → Integrations → Connectors** and connect an acc
 | Search Jobs | `searchJobs` | Searches job postings on LinkedIn or Indeed by keyword, location, company, employment type, work arrangement, seniority and freshness, with optional full descriptions. Documented price is 1.5 credits per 10 postings returned; the API requires a balance of 0.75 credits per requested posting before running the search. |
 | Search People | `searchPeople` | Searches professional profiles with a structured filter group of column conditions (current company, title, location, skills, education, experience and more). Charges 0.75 credits per result with cached data or 1.5 credits per result with live enrichment. Unknown columns are rejected with 400. |
 | Search Social Posts | `searchSocialPosts` | Searches posts on LinkedIn, Twitter/X or Reddit by keyword with author, content-type and freshness filters, optionally attaching the people who reacted or commented, or fetches the engagers of one post by URL. Documented price is 1 credit per 10 posts and per 10 engagers returned; the API requires a balance of 0.75 credits per requested post before running the search. |
+
+</details>
 
 ## Events
 
@@ -61,7 +70,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Job Change: Company Changed | `company_changed` | A watched person changed company (signal job_change, listed by GET /signals). Set watch to profile URLs. The vendor documents only the unified envelope for this signal; the data body is not published. |
 | Job Change: Hiring Status Changed | `hiring_changed` | A watched person's hiring status changed (signal job_change). Envelope documented; data body not published by the vendor. |
 | Job Change: New Company | `new_company` | A watched person joined a new company (signal job_change). Envelope documented; data body not published by the vendor. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Job Change: Open To Work Changed | `open_to_work_changed` | A watched person's open-to-work status changed (signal job_change). Envelope documented; data body not published by the vendor. |
 | Job Change: Position Changed | `position_changed` | A watched person changed title (signal job_change). Envelope documented; data body not published by the vendor. |
 | Job Change: Position Ended | `position_ended` | A watched person's position ended (signal job_change). Envelope documented; data body not published by the vendor. |
 | Post Engagement | `post_engagement` | New reactors and commenters on a watched author's 10 most recent posts (signal post_engagement). Set the watch input to comma-separated author LinkedIn profile URLs. Usage-based: 0.2 credits per backlog engager, 0.5 per go-forward engager; the monitor pauses when credits run out. Deliveries are signed with X-Webhook-Signature sha256=HMAC-SHA256(secret, raw body) when a secret is set. |
+
+</details>

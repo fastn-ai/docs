@@ -5,6 +5,8 @@ hidden: true
 
 # thanks.io
 
+<img src="../../.gitbook/assets/connectors/thanks-io.png" alt="thanks.io logo" width="64">
+
 thanks.io is a direct-mail automation platform for sending handwritten-style postcards, letters, notecards, magnacards and gift cards. This connector covers the full thanks.io v2 REST API: recipients, mailing lists and radius search, the six send-mailer endpoints, orders with tracking, items, cancel and replay, message and image templates, sub-accounts, handwriting styles, gift card brands, image building and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ thanks.io is a direct-mail automation platform for sending handwritten-style pos
 | **Category** | [Marketing](README.md) |
 | **Website** | [thanks.io](https://thanks.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 44 |
-| **Events** | 4 |
 | **Slug** | `thanksIo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add thanks.io from **Build → Integrations → Connectors** and connect an acco
 | Create Sub-Account | `createSubAccount` | Creates a sub-account with its own return address, so an agency can keep a client's mailing lists, templates and orders separate. |
 | Create Webhook | `createWebhook` | Registers a webhook destination so thanks.io posts real-time events - order status changes, mail piece status changes, deliveries and QR code scans - to your URL. Webhooks are available on paid subscriptions only. |
 | Delete Mailing List | `deleteMailingList` | Permanently deletes a mailing list and the recipients it contains. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Message Template | `deleteMessageTemplate` | Permanently deletes a message template from the account. |
 | Delete Recipient | `deleteRecipient` | Permanently deletes a recipient from its mailing list by recipient id. |
 | Delete Recipient By Address | `deleteRecipientByAddress` | Deletes a recipient from a mailing list by matching their mailing address or email address instead of their recipient id. |
@@ -68,6 +75,8 @@ Add thanks.io from **Build → Integrations → Connectors** and connect an acco
 | Update Recipient | `updateRecipient` | Updates the details of an existing recipient. Only the fields supplied are sent, so untouched fields keep their current values. |
 | Update Sub-Account | `updateSubAccount` | Updates a sub-account's title and return address. Branding can only be changed in the thanks.io dashboard. |
 | Update Webhook | `updateWebhook` | Updates an existing webhook destination's URL, event type, HTTP verb or description. Webhooks are available on paid subscriptions only. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # AbstractAPI Phone Intelligence
 
+<img src="../../.gitbook/assets/connectors/abstract-api-phone-intelligence.png" alt="AbstractAPI Phone Intelligence logo" width="64">
+
 AbstractAPI Phone Intelligence validates a phone number and returns its formatting, carrier, line type, location, messaging, registration, and risk/breach data in a single lookup.
 
 | | |
@@ -12,8 +14,6 @@ AbstractAPI Phone Intelligence validates a phone number and returns its formatti
 | **Category** | [Search and web](README.md) |
 | **Website** | [abstractapi.com](https://abstractapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 1 |
-| **Events** | 0 |
 | **Slug** | `abstractApiPhoneIntelligence` |
 
 ## Use it

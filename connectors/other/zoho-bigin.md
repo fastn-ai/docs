@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Bigin
 
+<img src="../../.gitbook/assets/connectors/zoho-bigin.png" alt="Zoho Bigin logo" width="64">
+
 Zoho Bigin is a pipeline-centric CRM for small businesses. This connector provides full access to Bigin's REST API v2: contacts, companies (Accounts module), pipelines and deals, products, tasks, events, calls, notes, tags, users, roles, profiles, and module/field metadata.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Bigin is a pipeline-centric CRM for small businesses. This connector provid
 | **Category** | [Other](README.md) |
 | **Website** | [bigin.com](https://bigin.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 79 |
-| **Events** | 0 |
 | **Slug** | `zohoBigin` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Bigin from **Build → Integrations → Connectors** and connect an acc
 | Create Event | `createEvent` | Creates one or more event (meeting) records in Bigin, up to 100 per call. Event Title, Start DateTime, and End DateTime are required for every event. |
 | Create Note | `createNote` | Adds a note to a Contact, Company, or Pipeline record in Bigin. |
 | Create Pipeline Record | `createPipelineRecord` | Creates one or more pipeline records (deals) in Bigin, up to 100 per call. Deal Name, Stage, and Sub Pipeline are required for every record. |
+
+<details>
+
+<summary>See 69 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Product | `createProduct` | Creates one or more product records in Bigin, up to 100 per call. Product Name is required for every record. |
 | Create Tags | `createTags` | Creates one or more new tags for a specific Bigin module. The module is passed as a URL query parameter, not the body. |
 | Create Task | `createTask` | Creates one or more task records in Bigin, up to 100 per call. Subject is required for every task. Note: linking a task to a Contact/Company/Pipeline via Related_To at creation requires an internal $se_module discriminator whose accepted values could not be confirmed live; use Get Related Records / the module's own related-list APIs to associate a task with a parent record instead. |
@@ -103,3 +110,5 @@ Add Zoho Bigin from **Build → Integrations → Connectors** and connect an acc
 | Upload Attachment | `uploadAttachment` | Attaches a plain-text file to a record in Bigin. Only text content is supported - the underlying HTTP engine can corrupt binary file bytes, so this action cannot be used for images, PDFs, or other binary formats. |
 | Upload Bulk Write File | `uploadBulkWriteFile` | Uploads a zipped CSV file of records for a subsequent bulk write job, returning a file id. Requires the org's X-CRM-ORG id. The uploaded file must be a real zip archive; the connector engine's binary-upload path is unverified for zip content. |
 | Upsert Contacts | `upsertContacts` | Inserts or updates contact records in Bigin in a single call, matching existing records by the given duplicate-check fields (defaults to Email). |
+
+</details>

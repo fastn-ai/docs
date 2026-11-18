@@ -5,6 +5,8 @@ hidden: true
 
 # Moosend
 
+<img src="../../.gitbook/assets/connectors/moosend.png" alt="Moosend logo" width="64">
+
 Moosend email marketing and automation platform. Manage mailing lists, subscribers, custom fields, segments, campaigns, and sender addresses through the Moosend v3 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Moosend email marketing and automation platform. Manage mailing lists, subscribe
 | **Category** | [Marketing](README.md) |
 | **Website** | [moosend.com](https://moosend.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 52 |
-| **Events** | 0 |
 | **Slug** | `moosend` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Moosend from **Build → Integrations → Connectors** and connect an accoun
 | Create Segment | `createSegment` | Creates a new empty segment (without criteria) for a specific mailing list and returns its ID. |
 | Delete Campaign | `deleteCampaign` | Deletes a campaign (draft or sent) from your account. |
 | Delete Mailing List | `deleteMailingList` | Deletes a mailing list from your Moosend account. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Multiple Subscribers From Mailing List | `deleteSubscribersBatch` | Delete several subscribers from a mailing list by email (POST /subscribers/{MailingListID}/delete_many.json). Docs: https://doc.sitecore.com/send/en/developers/api-documentation/api-reference/subscribers/delete-multiple-subscribers-from-a-specific-mailing-list.html |
 | Delete Segment | `deleteSegment` | Deletes a segment and its criteria from a mailing list. Subscribers are not affected. |
 | Delete Subscriber From Account | `deleteSubscriberFromAccount` | Delete a subscriber (by email) from every mailing list in the account (POST /subscribers/delete.json). Docs: https://doc.sitecore.com/send/en/developers/api-documentation/api-reference/subscribers/delete-a-subscriber-from-an-account.html |
@@ -76,3 +83,5 @@ Add Moosend from **Build → Integrations → Connectors** and connect an accoun
 | Update Segment | `updateSegment` | Updates the name and match type of an existing segment. |
 | Update Segment Criteria | `updateSegmentCriteria` | Updates an existing filtering criterion on a specific segment. |
 | Update Subscriber | `updateSubscriber` | Updates an existing subscriber in a specific mailing list. |
+
+</details>

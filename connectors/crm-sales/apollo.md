@@ -5,6 +5,8 @@ hidden: true
 
 # Apollo
 
+<img src="../../.gitbook/assets/connectors/apollo.png" alt="Apollo logo" width="64">
+
 Apollo.io REST API (base https://api.apollo.io/v1). People & organization enrichment, people/contacts/accounts/organizations search and CRUD, sequences (emailer campaigns), deals (opportunities), tasks, users, email accounts, and labels. Auth: API key in the x-api-key header. Note: Apollo has no public webhook API.
 
 | | |
@@ -12,8 +14,6 @@ Apollo.io REST API (base https://api.apollo.io/v1). People & organization enrich
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [apollo.io](https://apollo.io) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 80 |
-| **Events** | 0 |
 | **Slug** | `apollo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Apollo from **Build → Integrations → Connectors** and connect an account
 | Bulk Enrich Organizations | `bulkEnrichOrganizations` | Bulk organization enrichment. Enriches up to 10 companies by domain, or by details objects combining domain, LinkedIn URL, website and name. Consumes 1 credit per organization. |
 | Bulk Enrich People | `bulkEnrichPeople` | Bulk people enrichment. Enriches up to 10 people in one call; each details entry accepts the same identifiers as Enrich Person. Credits are consumed per matched person when data is found. |
 | Bulk Update Accounts | `bulkUpdateAccounts` | Bulk update accounts. Updates many accounts at once, either applying the same name, owner or stage to a list of account_ids, or applying per-account changes via account_attributes. |
+
+<details>
+
+<summary>See 70 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Contacts | `bulkUpdateContacts` | Bulk update contacts. Updates many contacts at once, either applying the same field values to a list of contact_ids, or applying per-contact changes via contact_attributes. Automatically asynchronous above 100 contacts. |
 | Check Email Send Status | `checkEmailSendStatus` | Check email send status. Checks the current delivery status of an email message, typically after Send Email Now, since sending is asynchronous. Returns 404 if the message does not belong to your team. |
 | Complete Task | `completeTask` | Complete a task. Marks an existing task as completed, optionally recording a note. |
@@ -104,3 +111,5 @@ Add Apollo from **Build → Integrations → Connectors** and connect an account
 | Update List | `updateList` | Update a list. Renames an existing list or toggles its Book of Business status. A list's modality cannot be changed after creation. |
 | Update Sequence | `updateSequence` | Update a sequence. Changes an existing sequence's name, active state, owner, sending schedule, labels, daily cap, CC/BCC, sharing permission or steps. Only fields you send are changed; label_names replaces the existing labels. |
 | Update Task | `updateTask` | Update a task. Changes the details of an existing task. Most fields only apply to tasks with scheduled status; use Complete Task or Skip Task to close a task. Only the fields you send are changed, except priority and creator_id which Apollo resets to defaults on scheduled tasks when omitted. |
+
+</details>

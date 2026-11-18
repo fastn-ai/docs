@@ -5,6 +5,8 @@ hidden: true
 
 # Figma
 
+<img src="../../.gitbook/assets/connectors/figma.png" alt="Figma logo" width="64">
+
 Figma REST API connector. Read and manage files, comments, versions, components, styles, variables, dev resources, projects, and webhooks (v2). Base URL https://api.figma.com/v1.
 
 | | |
@@ -12,8 +14,6 @@ Figma REST API connector. Read and manage files, comments, versions, components,
 | **Category** | [Design](README.md) |
 | **Website** | [figma.com](https://figma.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 51 |
-| **Events** | 14 |
 | **Slug** | `figma` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Figma from **Build → Integrations → Connectors** and connect an account,
 | Delete Webhook | `deleteWebhook` | Deletes a webhook V2 by its ID. Returns the deleted webhook object. |
 | Get Activity Logs | `getActivityLogs` | Returns a list of activity log events for the organization. Org/Enterprise plan-gated. Requires a PlanAccessToken (or OrgOAuth2 org:activity_log_read) — a standard PAT will not work. |
 | Get Comment Reactions | `getCommentReactions` | Gets a paginated list of reactions left on a specific comment in a file. |
+
+<details>
+
+<summary>See 41 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Comments | `getComments` | Gets a list of comments left on the file referenced by file key. Set as_md to true to return comment text as markdown. |
 | Get Component | `getComponent` | Returns metadata for a single published component referenced by its key. |
 | Get Component Set | `getComponentSet` | Returns metadata for a single published component set referenced by its key. |
@@ -76,6 +83,8 @@ Add Figma from **Build → Integrations → Connectors** and connect an account,
 | Update Webhook | `putWebhook` | Updates an existing webhook V2. The event_type, endpoint and passcode are required; status and description are optional. The context cannot be changed after creation. Partial update: only the fields you send are changed. |
 | Update Webhook | `updateWebhook` | Updates an existing webhook by ID. Replaces the event type, endpoint, passcode, and optionally status/description. Partial update: only the fields you send are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -92,7 +101,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | File Update | `FILE_UPDATE` | Sent when there is a change to a file (debounced ~30 minutes after the last edit). Carries file_key, file_name, and triggered_by user. |
 | File Version Update | `FILE_VERSION_UPDATE` | Triggered when a named version is created in the file's version history. |
 | File Version Update | `FILE_VERSION_UPDATE` | Sent when a named version is created in the version history of a file. Carries version metadata. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Library Publish | `LIBRARY_PUBLISH` | Triggered when library components/styles are published from a file. |
 | Library Publish | `LIBRARY_PUBLISH` | Sent when a library file is published. Carries created/modified/deleted components and styles. |
 | Ping | `PING` | Sent immediately when a webhook is created, to confirm the endpoint is reachable. Carries no resource data. |
 | Ping | `PING` | Sent once when a webhook is created or pinged. Confirms the webhook endpoint is reachable. |
+
+</details>

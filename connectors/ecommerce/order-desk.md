@@ -5,6 +5,8 @@ hidden: true
 
 # Order Desk
 
+<img src="../../.gitbook/assets/connectors/order-desk.png" alt="Order Desk logo" width="64">
+
 Order Desk (order management) connector. Base https://app.orderdesk.me/api/v2. Two-header auth: ORDERDESK-STORE-ID + ORDERDESK-API-KEY. Full coverage (26 actions): test, store, orders CRUD + order history, order items CRUD, shipments CRUD + batch, move orders, inventory items CRUD + batch. Webhooks are UI/Rules-only (no management API).
 
 | | |
@@ -12,8 +14,6 @@ Order Desk (order management) connector. Base https://app.orderdesk.me/api/v2. T
 | **Category** | [E-commerce](README.md) |
 | **Website** | [orderdesk.me](https://orderdesk.me) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 26 |
-| **Events** | 0 |
 | **Slug** | `orderDesk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Order Desk from **Build → Integrations → Connectors** and connect an acc
 | Delete Inventory Item | `deleteInventoryItem` | Delete an inventory item by id. |
 | Delete Order | `deleteOrder` | Delete an order by id. |
 | Delete Order Item | `deleteOrderItem` | Delete an order item (DELETE /orders/{orderId}/order-items/{itemId}). |
+
+<details>
+
+<summary>See 16 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Shipment | `deleteShipment` | Delete a shipment (DELETE /orders/{orderId}/shipments/{shipmentId}). |
 | Get Inventory Item | `getInventoryItem` | Get an inventory item by id. |
 | Get Order | `getOrder` | Get an order by id. |
@@ -50,3 +57,5 @@ Add Order Desk from **Build → Integrations → Connectors** and connect an acc
 | Update Order | `updateOrder` | Update an order by id (partial). |
 | Update Order Item | `updateOrderItem` | Update an order item (PUT /orders/{orderId}/order-items/{itemId}). |
 | Update Shipment | `updateShipment` | Update a shipment (PUT /orders/{orderId}/shipments/{shipmentId}). |
+
+</details>

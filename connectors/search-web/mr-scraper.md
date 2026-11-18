@@ -5,6 +5,8 @@ hidden: true
 
 # MrScraper
 
+<img src="../../.gitbook/assets/connectors/mr-scraper.png" alt="MrScraper logo" width="64">
+
 MrScraper is an AI-powered web scraping platform with anti-bot bypass, browser rendering and residential proxies. Aligned with the MrScraper Python SDK v0.6.0: Scraper API (fetch a URL as HTML, Markdown or a screenshot), Web Search (Google SERP) and Account (identity, subscription, token usage and rate limits). Also covers Playground scraping (HTML, Markdown, screenshots, AI JSON extraction, listing pages, sitemap discovery), the Platform API (AI and manual scrapers, reruns, bulk cancellation, self-healing, results, analytics, proxy bandwidth), bulk submissions, and Marketplace sync and async scrapers such as Amazon product details and YouTube videos. Auth: MrScraper API token sent as x-api-token and Authorization: Bearer.
 
 | | |
@@ -12,8 +14,6 @@ MrScraper is an AI-powered web scraping platform with anti-bot bypass, browser r
 | **Category** | [Search and web](README.md) |
 | **Website** | [mrscraper.com](https://mrscraper.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 26 |
-| **Events** | 3 |
 | **Slug** | `mrScraper` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MrScraper from **Build → Integrations → Connectors** and connect an acco
 | Get Async Task Result | `getAsyncTaskResult` | Retrieves the result of an asynchronous Marketplace scraper task by task ID. While the task runs the response reports PENDING with success false; poll until data is returned. |
 | Get Bulk Submission | `getBulkSubmission` | Retrieves the progress and per-URL results of a bulk submission by its submission ID. |
 | Get Proxy Bandwidth Usage | `getProxyBandwidthUsage` | Returns residential proxy bandwidth usage aggregated per proxy username within a date range, optionally in a given timezone and filtered by region. |
+
+<details>
+
+<summary>See 16 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Result | `getResult` | Retrieves a single scraping result by its ID, including extracted data, status, token usage and file paths. Also used to poll bulk rerun results by their bulk result ID. |
 | Get Screenshot | `getScreenshot` | Renders a web page in a real browser and returns a base64-encoded JPEG screenshot of the full page, optionally with a full-page recording, HTML and Markdown. Consumes MrScraper tokens. |
 | List Results | `listResults` | Lists scraping results with their data, status, token usage and file paths, with sorting, pagination, full-text search and date-range filtering. |
@@ -50,6 +57,8 @@ Add MrScraper from **Build → Integrations → Connectors** and connect an acco
 | Scraper API | `scraperApi` | Fetch a known URL through the MrScraper stealth browser and return HTML, Markdown, a screenshot, or a combination, with browser rendering, geolocation, proxy and retry controls. Same request as the MrScraper Python SDK scraper_api (v0.6.0): POST https://api.mrscraper.com with page options as query parameters and url/maxRetries/tokenCap in the JSON body. |
 | Self-Heal Manual Scraper | `selfHealManualScraper` | Asks AI to repair a manual scraper's workflow after the target site changed its markup. The saved workflow is replaced only when a valid workflow is returned; check workflowUpdated in the response. Consumes MrScraper tokens. |
 | Web Search (Google SERP) | `searchGoogleSerp` | Runs the Marketplace Google SERP scraper synchronously for a search query and returns parsed results as JSON or the result-page HTML, with region, language and page controls. Consumes MrScraper tokens. Same call as the MrScraper Python SDK web_search() (v0.6.0). |
+
+</details>
 
 ## Events
 

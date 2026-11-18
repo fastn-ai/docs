@@ -5,6 +5,8 @@ hidden: true
 
 # OnePageCRM
 
+<img src="../../.gitbook/assets/connectors/onepagecrm.png" alt="OnePageCRM logo" width="64">
+
 OnePageCRM is an action-focused sales CRM. This connector wraps the OnePageCRM REST API v3 to manage contacts, companies, deals, next actions, notes, calls, meetings, relationships, attachments, pipelines, statuses, lead sources, custom fields, predefined actions and items, filters, notifications, users and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ OnePageCRM is an action-focused sales CRM. This connector wraps the OnePageCRM R
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [onepagecrm.com](https://onepagecrm.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 166 |
-| **Events** | 7 |
 | **Slug** | `onepagecrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OnePageCRM from **Build → Integrations → Connectors** and connect an acc
 | Close Contact Sales Cycle | `closeContactSalesCycle` | Closes the sales cycle for a contact when you are no longer actively selling to them, with an optional closing comment. Fails if the user has any open actions on the contact. |
 | Create Action | `createAction` | Creates a next action on a contact. contact_id and text are required (text max 140 characters). status sets the action type: asap, date, date_time, waiting or queued (default date); assignee_id defaults to the calling user. |
 | Create Attachment | `createAttachment` | Creates an attachment on a deal, note, call or meeting. Upload the file to S3 first using Get Attachment Upload Form, or pass an external Dropbox, Google Drive or Evernote link. |
+
+<details>
+
+<summary>See 156 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Call | `createCall` | Logs a phone call against a contact. contact_id is required; record the outcome with call_result (from the account's configured call results), plus the number dialled and an optional recording link. |
 | Create Company Field | `createCompanyField` | Creates a custom field for companies. Admin only. Choices are required for select_box and multiple_choice fields. |
 | Create Contact | `createContact` | Creates a contact. Provide last_name or company_name — one of the two is required. owner_id defaults to the calling user and status_id to lead. company_name links the contact to an existing company (matched case-insensitively) or creates one; company_id is ignored on create. |
@@ -190,6 +197,8 @@ Add OnePageCRM from **Build → Integrations → Connectors** and connect an acc
 | Update Relationship Type | `updateRelationshipType` | Renames a relationship type's variants: send the full set of existing variant IDs with new names. Variants cannot be added or removed. |
 | Update Status | `updateStatus` | Updates a contact status. Admin only. text and color are required unless partial=true is passed, and description is cleared if omitted on a non-partial update. |
 | Update User | `updateUser` | Updates a user's first name, last name, company name, or regenerates their BCC email address. Each team member can edit their own details; admins can update anyone's. bcc_email can only be regenerated for yourself. |
+
+</details>
 
 ## Events
 

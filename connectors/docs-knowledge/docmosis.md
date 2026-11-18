@@ -5,6 +5,8 @@ hidden: true
 
 # Docmosis
 
+<img src="../../.gitbook/assets/connectors/docmosis.png" alt="Docmosis logo" width="64">
+
 Docmosis Cloud (DWS4) document generation API. Render DOCX/ODT/PDF/RTF/HTML/TXT documents from stored templates and JSON data, manage the template and image libraries, convert files between formats, and read environment, render-queue and render-tag usage statistics.
 
 | | |
@@ -12,8 +14,6 @@ Docmosis Cloud (DWS4) document generation API. Render DOCX/ODT/PDF/RTF/HTML/TXT 
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [docmosis.com](https://docmosis.com) |
 | **Authentication** | API key |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `docmosis` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Docmosis from **Build → Integrations → Connectors** and connect an accou
 | Delete Image Folder | `deleteImageFolder` | Deletes a folder from the Docmosis Cloud image area together with every image inside it. Undocumented Docmosis Cloud route, verified live. This is irreversible. The service reports a non-zero deleted count even for a folder that never existed, so confirm with List Images. |
 | Delete Stored Files | `deleteFiles` | Deletes documents from the Docmosis file storage area. Undocumented Docmosis Cloud route, verified live. WARNING: unlike every other Docmosis delete route this one does not require a name, and a call with no file name returns success with a non-zero deleted count. Always supply an explicit file name and confirm the result with List Stored Files. |
 | Delete Template | `deleteTemplate` | Permanently deletes one or more templates from the Docmosis Cloud template area. This cannot be undone; any integration that renders from the named template will start failing. Pass every template name to remove in a single call. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Template Folder | `deleteTemplateFolder` | Deletes a folder from the Docmosis Cloud template area together with every template inside it. Undocumented Docmosis Cloud route, verified live. This is irreversible. Note that the service reports a non-zero deleted count even for a folder that never existed, so treat the count as advisory and confirm with List Templates. |
 | Download Image File | `getImage` | Downloads one or more stored images from the Docmosis Cloud image area. A single image is returned as its own binary stream; supplying several names returns a ZIP archive. The response is application/octet-stream, not JSON. |
 | Download Stored File | `getFile` | Downloads a document from the Docmosis file storage area by name. Undocumented Docmosis Cloud route, verified live. Requires the file storage entitlement; without it the service answers 'Docmosis file storage not permitted'. |
@@ -61,3 +68,5 @@ Add Docmosis from **Build → Integrations → Connectors** and connect an accou
 | Upload Image | `uploadImage` | Uploads an image into the Docmosis Cloud image area so templates can reference it by name. The image body is supplied as text, which covers ASCII-safe image formats such as SVG and Netpbm PPM. Binary formats (PNG, JPEG, GIF, BMP) cannot be sent through this action because the fastn engine cannot carry binary multipart parts; upload those through the Docmosis Cloud Console or a direct multipart call. |
 | Upload Template | `uploadTemplate` | Uploads a single plain-text template into the Docmosis Cloud template area and analyses it for mark-up errors. The template body is supplied as text, so this action covers text-based templates (.txt). Binary Word and OpenDocument templates (.docx, .doc, .odt) cannot be sent through this action because the fastn engine cannot carry binary multipart parts; upload those through the Docmosis Cloud Console or a direct multipart call. |
 | Upload Template Batch | `uploadTemplateBatch` | Starts an asynchronous bulk upload of many templates supplied as a single ZIP archive, optionally into a named folder. Returns a job identifier that Get Template Batch Status polls. The ZIP is binary, so this action cannot be driven through the fastn engine, which carries text multipart parts only; call it directly or use the Docmosis Cloud Console for bulk uploads. |
+
+</details>

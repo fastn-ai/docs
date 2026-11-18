@@ -5,6 +5,8 @@ hidden: true
 
 # NeverBounce
 
+<img src="../../.gitbook/assets/connectors/never-bounce.png" alt="NeverBounce logo" width="64">
+
 NeverBounce is a real-time email verification and bulk list-cleaning service. This connector covers the full NeverBounce v4 API: account information and credit balance, single email verification, bulk verification jobs (create, parse, start, search, status, results, download and delete) and Point-of-Entry widget token confirmation.
 
 | | |
@@ -12,8 +14,6 @@ NeverBounce is a real-time email verification and bulk list-cleaning service. Th
 | **Category** | [Search and web](README.md) |
 | **Website** | [neverbounce.com](https://neverbounce.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 11 |
-| **Events** | 10 |
 | **Slug** | `neverBounce` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add NeverBounce from **Build → Integrations → Connectors** and connect an ac
 | Parse Job | `parseJob` | Starts the indexing phase for a bulk verification job that was created without Auto Parse, and optionally begins verification as soon as indexing completes. Parsing does not consume credits. |
 | Search Jobs | `searchJobs` | Lists the bulk verification jobs in the account, newest first, with optional filters on job id, filename and job status. Returns paging metadata alongside each job's record counts and progress. This endpoint does not consume credits. |
 | Start Job | `startJob` | Begins verification of an indexed bulk job. A full run deducts one credit per billable record; setting Run Sample instead performs a free analysis that estimates the list's bounce rate without charging credits. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Verify Email | `verifyEmail` | Verifies a single email address in real time and returns its deliverability result (valid, invalid, disposable, catchall or unknown) together with any quality flags and a suggested spelling correction. Each verification consumes one NeverBounce credit. |
+
+</details>
 
 ## Events
 

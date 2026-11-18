@@ -5,6 +5,8 @@ hidden: true
 
 # Shipday
 
+<img src="../../.gitbook/assets/connectors/shipday.jpg" alt="Shipday logo" width="64">
+
 Shipday delivery management API — delivery orders, takeout/pickup orders, drivers (carriers), order assignment and status, on-demand 3rd-party delivery, order tracking progress, and partner/member endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Shipday delivery management API — delivery orders, takeout/pickup orders, driv
 | **Category** | [E-commerce](README.md) |
 | **Website** | [shipday.com](https://shipday.com) |
 | **Authentication** | API key |
-| **Actions** | 27 |
-| **Events** | 14 |
 | **Slug** | `shipday` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Shipday from **Build → Integrations → Connectors** and connect an accoun
 | Insert Order | `insertOrder` | Create a new delivery order in Shipday. Requires orderNumber, customer name/address/phone and restaurant (pickup) name/address. Returns success, a message and the new numeric orderId. |
 | Insert Pickup Order | `insertPickupOrder` | Create a takeout / pickup order (customer collects in person, no driver). Requires orderNumber plus restaurant {name,address,phone} and customer {name,phone,email}. |
 | On-Demand Assign | `onDemandAssign` | Dispatch an existing order to a named third-party delivery provider, usually after an estimate. WARNING: this books a real paid courier. Requires the 3rd-party delivery add-on. |
+
+<details>
+
+<summary>See 17 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | On-Demand Availability | `onDemandAvailability` | Check which third-party on-demand delivery providers can serve a pickup/delivery address pair, with quotes. Requires the 3rd-party delivery add-on. |
 | On-Demand Cancel | `onDemandCancel` | Cancel a third-party on-demand delivery previously assigned to an order. Requires the 3rd-party delivery add-on. |
 | On-Demand Details | `onDemandDetails` | Get the third-party on-demand delivery details (provider, courier, fee, tracking) for an order. Requires the 3rd-party delivery add-on. |
@@ -52,6 +59,8 @@ Add Shipday from **Build → Integrations → Connectors** and connect an accoun
 | Retrieve Pickup Order Details | `retrievePickupOrderDetails` | Get a takeout / pickup order by its numeric orderId. |
 | Unassign Order from Driver | `unassignOrderFromDriver` | Remove the currently assigned carrier (driver) from a delivery order, by numeric orderId. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -68,7 +77,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Order Inserted | `ORDER_INSERTED` | A new delivery order was created. SETUP (manual, one-time): Shipday has no public webhook-registration API — sign in at https://dispatch.shipday.com/dashboard#accountInfo (Account Info), re-enter your account password to unlock the API section, paste the fastn webhook URL into the Webhook / callback URL field and save. All order events are then delivered to that single URL. |
 | Order On The Way | `ORDER_ONTHEWAY` | The driver is en route to the customer. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
 | Order On The Way Removed | `ORDER_ONTHEWAY_REMOVED` | The on-the-way state was reverted. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Order Picked Up | `ORDER_PIKEDUP` | The driver picked the order up (Shipday spells the event ORDER_PIKEDUP). Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
 | Order Picked Up Removed | `ORDER_PIKEDUP_REMOVED` | The picked-up state was reverted. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
 | Order Unassigned | `ORDER_UNASSIGNED` | The carrier was removed from the order. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
 | Proof of Delivery Uploaded | `ORDER_POD_UPLOAD` | A proof-of-delivery photo or signature was uploaded; see order.podUrls. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
+
+</details>

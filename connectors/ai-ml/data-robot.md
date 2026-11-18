@@ -5,6 +5,8 @@ hidden: true
 
 # DataRobot
 
+<img src="../../.gitbook/assets/connectors/data-robot.png" alt="DataRobot logo" width="64">
+
 DataRobot is an enterprise AI platform for building, deploying and monitoring predictive and generative AI models. This connector wraps the DataRobot Public API v2 (app.datarobot.com/api/v2): projects, autopilot and leaderboard models, AI Catalog datasets, Use Cases, deployments, model registry, batch predictions, credentials and data connectivity, custom models and execution environments, GenAI playgrounds/LLM blueprints/chats/vector databases, tags, comments and (admin-gated) user management.
 
 | | |
@@ -12,8 +14,6 @@ DataRobot is an enterprise AI platform for building, deploying and monitoring pr
 | **Category** | [AI and ML](README.md) |
 | **Website** | [datarobot.com](https://datarobot.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 192 |
-| **Events** | 0 |
 | **Slug** | `dataRobot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DataRobot from **Build → Integrations → Connectors** and connect an acco
 | Compute Feature Impact | `computeFeatureImpact` | Starts feature impact computation for a model. Returns 202 with a job reference. |
 | Create Batch Prediction Job | `createBatchPredictionJob` | Creates a batch prediction job for a deployment with intake (e.g. dataset/URL/S3/JDBC) and output settings. Returns 202 with the job record. |
 | Create Batch Prediction Job Definition | `createBatchPredictionJobDefinition` | Creates a Batch Prediction job definition (a saved job configuration that can be run manually or on a cron schedule when enabled=true). Payload mirrors createBatchPredictionJob plus name, enabled and schedule. Returns 202 with the definition (id, name, enabled, schedule, batchPredictionJob). Docs: POST /api/v2/batchPredictionJobDefinitions/. |
+
+<details>
+
+<summary>See 182 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Chat | `createChat` | Creates a chat for an LLM blueprint. |
 | Create Comment | `createComment` | Posts a comment on an entity. For Use Cases pass entityType experimentContainer with the Use Case id (the API returns 404 for entityType useCase). |
 | Create Credential | `createCredential` | Stores a new credential set (basic user/password, api_token, bearer token, s3 keys, gcp key, azure, snowflake, ...). The type-specific secret fields are passed as additional keys. |
@@ -216,3 +223,5 @@ Add DataRobot from **Build → Integrations → Connectors** and connect an acco
 | Update Registered Model | `updateRegisteredModel` | Renames a registered model or updates its description / global flag. |
 | Update Use Case | `updateUseCase` | Updates the name or description of a Use Case. |
 | Upload Prediction Dataset From URL | `uploadPredictionDatasetFromUrl` | Uploads a prediction dataset to a project from a URL. Returns 202 (asynchronous; see List Prediction Datasets). |
+
+</details>

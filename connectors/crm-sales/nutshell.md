@@ -5,6 +5,8 @@ hidden: true
 
 # Nutshell
 
+<img src="../../.gitbook/assets/connectors/nutshell.png" alt="Nutshell logo" width="64">
+
 Nutshell CRM connector over the JSON-RPC 2.0 API (https://app.nutshell.com/api/v1/json). Full coverage of leads, contacts, accounts (companies), activities, tasks, notes, users, teams, products, sources, tags, emails, timeline, pipelines/stagesets, and CRM metadata. HTTP Basic auth (login email + API key).
 
 | | |
@@ -12,8 +14,6 @@ Nutshell CRM connector over the JSON-RPC 2.0 API (https://app.nutshell.com/api/v
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [nutshell.com](https://nutshell.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 84 |
-| **Events** | 0 |
 | **Slug** | `nutshell` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Nutshell from **Build → Integrations → Connectors** and connect an accou
 | Create Source | `newSource` | Create a new lead source by name. Returns the created source. |
 | Create Tag | `newTag` | Create a new tag. Provide the tag object with a name and the entityType it applies to (Leads/Contacts/Accounts). |
 | Create Task | `newTask` | Create a new task. title is required. Optionally link to an entity (lead/contact/account) and set dueTime/assignee. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Team | `newTeam` | Create a new team. name is required. Optionally include user refs. |
 | Create User | `newUser` | Invite/create a new Nutshell user. Provide emails (required). Optionally set isAdministrator/isEnabled. The display name derives from the email and is edited via editUser. Note: may consume a seat and send an invitation email. |
 | Delete Account | `deleteAccount` | Delete an account by id. Requires current rev. Returns true. |
@@ -108,3 +115,5 @@ Add Nutshell from **Build → Integrations → Connectors** and connect an accou
 | Search Sources | `searchSources` | Full-text search of lead sources by name. |
 | Search Universal | `searchUniversal` | Universal full-text search across leads, contacts, and accounts. |
 | Search Users And Teams | `searchUsersAndTeams` | Full-text search across users and teams. |
+
+</details>

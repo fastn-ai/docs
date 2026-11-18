@@ -5,6 +5,8 @@ hidden: true
 
 # UK Parliament Commons Votes API
 
+<img src="../../.gitbook/assets/connectors/uk-parliament-commons-votes.png" alt="UK Parliament Commons Votes API logo" width="64">
+
 The UK Parliament Commons Votes API gives open data on House of Commons divisions (votes): search divisions by title, date and member, get a division with every MP's Aye/No vote, count results, get an MP's voting record and results grouped by party. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The UK Parliament Commons Votes API gives open data on House of Commons division
 | **Category** | [Data and databases](README.md) |
 | **Website** | [parliament.uk](https://parliament.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `ukParliamentCommonsVotes` |
 
 ## Use it

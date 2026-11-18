@@ -5,6 +5,8 @@ hidden: true
 
 # Tidio
 
+<img src="../../.gitbook/assets/connectors/tidio.png" alt="Tidio logo" width="64">
+
 Tidio is a customer service platform combining live chat, ticketing and the Lyro AI agent. This connector covers the Tidio OpenAPI (api.tidio.com) and the read-only Analytics API (taa.data.tidio.com, PostgREST; same credentials; Plus/Premium only, returns 401 Unauthorized otherwise). IMPORTANT: the Tidio OpenAPI is a paid feature - Product (Lyro product recommendation) endpoints require a paid Lyro plan, and every other endpoint family (contacts, conversations, tickets, operators, departments, Lyro data sources, project) requires the Plus or Premium plan and returns 403 api_access_disabled otherwise. Credentials are the OpenAPI Client Id/Client Secret pair generated in Tidio Panel under Developer &gt; OpenAPI.
 
 | | |
@@ -12,8 +14,6 @@ Tidio is a customer service platform combining live chat, ticketing and the Lyro
 | **Category** | [Communication](README.md) |
 | **Website** | [tidio.com](https://tidio.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 47 |
-| **Events** | 0 |
 | **Slug** | `tidio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Tidio from **Build → Integrations → Connectors** and connect an account,
 | Delete Product | `deleteProduct` | Permanently removes a single product from the Lyro AI agent's product recommendations. Deletion is irreversible and processed asynchronously. Individual product deletions do not count against the 24-hour product source ingestion limit. |
 | Delete ticket | `deleteTicket` | Delete ticket. This API endpoint allows you to delete a specific ticket identified by ID. This feature can be used to delete requests that are no longer needed or have been resolved. Be careful when using this endpoint. Deleted data is usually irreversible. |
 | Get agent_details | `listAgentDetails` | Get agent_details. Raw data for human agents. Analytics API (read-only, PostgREST at taa.data.tidio.com). Filter any column with column=operator.value (eq, neq, gt, gte, lt, lte, like, ilike, in, is, not.), e.g. created_at=gte.2026-08-01T00:00:00Z. Paging: limit + offset (with an order). Plus/Premium plans only. |
+
+<details>
+
+<summary>See 37 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get agent_statistics_daily | `listAgentStatisticsDaily` | Get agent_statistics_daily. Statistics on human agent level in daily resolution. Analytics API (read-only, PostgREST at taa.data.tidio.com). Filter any column with column=operator.value (eq, neq, gt, gte, lt, lte, like, ilike, in, is, not.), e.g. created_at=gte.2026-08-01T00:00:00Z. Paging: limit + offset (with an order). Plus/Premium plans only. |
 | Get agent_thread_details | `listAgentThreadDetails` | Get agent_thread_details. Raw data regarding human agent threads. Lyro AI agent threads are not covered in this endpoint. Analytics API (read-only, PostgREST at taa.data.tidio.com). Filter any column with column=operator.value (eq, neq, gt, gte, lt, lte, like, ilike, in, is, not.), e.g. created_at=gte.2026-08-01T00:00:00Z. Paging: limit + offset (with an order). Plus/Premium plans only. |
 | Get agent_thread_intent_statistics_daily | `listAgentThreadIntentStatisticsDaily` | Get agent_thread_intent_statistics_daily. This endpoint provides you with data on human agent thread level in daily resolution. Analytics API (read-only, PostgREST at taa.data.tidio.com). Filter any column with column=operator.value (eq, neq, gt, gte, lt, lte, like, ilike, in, is, not.), e.g. created_at=gte.2026-08-01T00:00:00Z. Paging: limit + offset (with an order). Plus/Premium plans only. |
@@ -71,3 +78,5 @@ Add Tidio from **Build → Integrations → Connectors** and connect an account,
 | Update ticket | `updateTicket` | Update ticket. This API endpoint allows you to update a specific ticket identified by an ID. This functionality can be used to update parameters such as status, priority or assignment. |
 | Upsert Lyro data source | `upsertLyroDataSource` | Upsert Lyro data source. This API endpoint allows you to upload or update a data source for the Lyro AI Agent. Data sources provide knowledge that Lyro uses to answer customer questions. If a data source with the same URL already exists, it will be updated with the new content and title. Otherwise, a new data source will be created. The content should be provided as HTML and will be processed by the Lyro AI Agent. |
 | Upsert Products | `upsertProducts` | Uploads or updates up to 100 products used by the Lyro AI agent for product recommendations. Products are saved all-or-nothing, so every product in the batch must be valid, and processing is asynchronous - a successful call returns 204 No Content and the products become available after a short delay. To update a product, resend its complete data with the same id. |
+
+</details>

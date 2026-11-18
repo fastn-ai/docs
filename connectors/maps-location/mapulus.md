@@ -5,6 +5,8 @@ hidden: true
 
 # Mapulus
 
+<img src="../../.gitbook/assets/connectors/mapulus.png" alt="Mapulus logo" width="64">
+
 Mapulus is a location-intelligence platform for Australian geographies. This connector covers the Mapulus Studio API - maps, layers and the locations (pins, addresses, custom attributes and travel contours) that sit on them - together with the public service-health endpoints of the Mapulus Data API.
 
 | | |
@@ -12,8 +14,6 @@ Mapulus is a location-intelligence platform for Australian geographies. This con
 | **Category** | [Maps and location](README.md) |
 | **Website** | [mapulus.com](https://mapulus.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 34 |
-| **Events** | 0 |
 | **Slug** | `mapulus` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mapulus from **Build → Integrations → Connectors** and connect an accoun
 | Generate Meta Ads Targeting | `generateMetaTargeting` | Decomposes up to 20 statistical boundaries into inclusion and exclusion circles (or postcode targets) that approximate their shape for Meta Ads Manager location targeting. Results are cached by boundary hash; boundaries over 100 km2 are computed asynchronously and return a job to poll with Get Targeting Job. Requires an API key with access to the Mapulus Data API. |
 | Get Account | `getAccount` | Returns the Mapulus account the API key belongs to. Useful as a connection check and to confirm which workspace the key addresses. |
 | Get Boundary | `getBoundary` | Returns metadata for a single boundary by type and code. Requires an API key with access to the Mapulus Data API. |
+
+<details>
+
+<summary>See 24 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Boundary GeoJSON | `getBoundaryGeoJson` | Downloads a single boundary as a GeoJSON Feature with full geometry. Simplification defaults to full (none) for single boundaries. Requires an API key with access to the Mapulus Data API. |
 | Get Boundary Vector Tile | `getBoundaryVectorTile` | Returns a Mapbox Vector Tile (protobuf) of the boundary polygons of one layer that intersect the requested z/x/y tile, with boundary_id, name and state properties (plus flood_risk and flood_type for the flood layer). Empty tiles return 204 No Content. The tile is returned as a binary file. Requires an API key with access to the Mapulus Data API. |
 | Get Data Service Health | `getDataServiceHealth` | Returns the current health and version of the Mapulus Data API, including database and cache latency and the state of the background sync daemon. |
@@ -58,3 +65,5 @@ Add Mapulus from **Build → Integrations → Connectors** and connect an accoun
 | Search Demographic Fields | `searchDemographicFields` | Browses and searches the catalogue of 13,498 census fields across 25 topics. Filter by topic or search field names and labels, paginated. Requires an API key with access to the Mapulus Data API. |
 | Search Incidents By Polygon | `searchIncidents` | Searches for incidents intersecting a GeoJSON Polygon or MultiPolygon, with optional type, status, severity, source, state and time-range filters. Results default to closest-first from the polygon centroid and include the distance to each incident. Requires an API key with access to the Mapulus Data API. |
 | Update Location | `updateLocation` | Updates an existing location. Only the fields you supply are sent, so omitted fields keep their current values. The location must retain either an address or a latitude and longitude. Supplying a different Layer ID moves the location to that layer. |
+
+</details>

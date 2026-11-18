@@ -5,6 +5,8 @@ hidden: true
 
 # Float
 
+<img src="../../.gitbook/assets/connectors/float.jpg" alt="Float logo" width="64">
+
 Float resource scheduling and capacity planning API (v3). Covers people, roles, departments and accounts, clients, projects, phases, project stages, project tasks, project expenses, rate cards, currencies and project templates, scheduled allocations and milestones, logged time, time off and time off types, public and team holidays, the people and project reports, and the delete log. Authenticates with a Float API key sent as a Bearer token; Float also requires every request to carry a User-Agent header.
 
 | | |
@@ -12,8 +14,6 @@ Float resource scheduling and capacity planning API (v3). Covers people, roles, 
 | **Category** | [Project management](README.md) |
 | **Website** | [float.com](https://float.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 102 |
-| **Events** | 0 |
 | **Slug** | `float` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Float from **Build → Integrations → Connectors** and connect an account,
 | Create Phase | `createPhase` | Add a new phase. |
 | Create Project | `createProject` | Add a new project. |
 | Create Project Expense | `createProjectExpense` | Create a project expense. Create a new project expense for a project, to view the expenses for a project, use the expand=expenses parameter on the /projects endpoint. |
+
+<details>
+
+<summary>See 92 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project From Template | `createProjectFromTemplate` | Create a project from a template. Creates a new project from a project template. The template's phases, project tasks, milestones, expenses, and team members are copied into the new project, with relative scheduling derived from each item's duration and parent_offset against the request's start_date. Any project-level field included in the request body overrides the corresponding value in the template. Fields not provided fall back to the template's values. Nested entities (phases, project tasks, milestones, expenses, and team members) always come from the template. **Asynchronous behavior:** This endpoint returns 200 immediately with an opaque process ID string once the create job has been accepted. The process ID is not directly useful to API clients. To retrieve the created project, poll GET /projects?project_code={project_code} using the project_code you sent in the request body unti |
 | Create Project Stage | `createProjectStage` | Add a new project stage. |
 | Create Project Task | `createProjectTask` | Add a new project task. Create project tasks to pre-configure a project before scheduling. **Note:** project tasks may be created automatically through /tasks (allocations) and /logged-time when a new name is used in the request. |
@@ -126,3 +133,5 @@ Add Float from **Build → Integrations → Connectors** and connect an account,
 | Update Team Holiday | `updateTeamHoliday` | Update a holiday's details, read-only fields are ignored. Accepts the same fields as the create operation; omitted fields are left unchanged and read-only fields are ignored. |
 | Update Time Off | `updateTimeOff` | Update a time off's details, read-only fields are ignored. Accepts the same fields as the create operation; omitted fields are left unchanged and read-only fields are ignored. |
 | Update Time Off Type | `updateTimeOffType` | Update a time off type's details, read-only fields are ignored. Accepts the same fields as the create operation; omitted fields are left unchanged and read-only fields are ignored. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Google Programmable Search
 
+<img src="../../.gitbook/assets/connectors/google-programmable-search.png" alt="Google Programmable Search logo" width="64">
+
 Google Programmable Search (Custom Search JSON API) — run web and image queries against a Programmable Search Engine and read the ranked results with their titles, snippets and links.
 
 | | |
@@ -12,8 +14,6 @@ Google Programmable Search (Custom Search JSON API) — run web and image querie
 | **Category** | [Search and web](README.md) |
 | **Website** | [programmablesearchengine.google.com](https://programmablesearchengine.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `googleProgrammableSearch` |
 
 ## Use it

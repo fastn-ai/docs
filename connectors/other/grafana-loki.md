@@ -5,6 +5,8 @@ hidden: true
 
 # Grafana Loki
 
+<img src="../../.gitbook/assets/connectors/grafana-loki.png" alt="Grafana Loki logo" width="64">
+
 Grafana Loki log aggregation over the Loki HTTP API. Push log lines with stream labels and structured metadata, query them back with LogQL (range, instant, legacy and OTLP ingest), read labels, label values, series, detected fields and labels, index stats, volume and shards, manage log deletion requests, and manage Ruler alerting/recording rule groups. Works against self-hosted Loki and Grafana Cloud Logs. Auth is HTTP Basic: for self-hosted, the reverse-proxy username and password; for Grafana Cloud, the numeric instance/user ID as username and an access policy token (logs:write / logs:read) as password.
 
 | | |
@@ -12,8 +14,6 @@ Grafana Loki log aggregation over the Loki HTTP API. Push log lines with stream 
 | **Category** | [Other](README.md) |
 | **Website** | [grafana.net](https://grafana.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `grafanaLoki` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Grafana Loki from **Build → Integrations → Connectors** and connect an a
 | Get Cache Generation Numbers | `getCacheGenerationNumbers` | Returns the tenant's current query-result cache generation number, which Loki bumps whenever a delete request invalidates cached results. The response is a bare JSON string (empty string when no deletion has invalidated the cache), not an object. GET /loki/api/v1/cache/generation_numbers. |
 | Get Compactor Ring | `getCompactorRing` | Returns the compactor hash ring status, showing which instance owns compaction and retention. Operational endpoint; the response is an HTML page, not JSON. GET /compactor/ring. |
 | Get Detected Fields | `getDetectedFields` | Inspects the log lines matching a selector and returns the structured fields Loki can parse out of them, with type, cardinality, the parsers required and the JSON path. GET /loki/api/v1/detected_fields. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Detected Labels | `getDetectedLabels` | Returns the stream labels present in the time range together with their cardinality, so a UI can rank labels by usefulness. GET /loki/api/v1/detected_labels. |
 | Get Distributor Ring | `getDistributorRing` | Returns the distributor hash ring status - member instances, their state, tokens, zone and last heartbeat. Operational endpoint; the response is an HTML page, not JSON. GET /distributor/ring. |
 | Get Index Shards | `getIndexShards` | Returns the shard boundaries Loki would use to split a query, with per-shard stream, chunk, byte and entry statistics. Used to plan parallel query execution. GET /loki/api/v1/index/shards. |
@@ -63,3 +70,5 @@ Add Grafana Loki from **Build → Integrations → Connectors** and connect an a
 | Push Logs (OTLP) | `pushLogsOtlp` | Ingests logs in OpenTelemetry Protocol JSON form (resourceLogs / scopeLogs / logRecords). Loki maps configured resource attributes such as service.name to stream labels and the rest to structured metadata. Returns 204 with an empty body. POST /otlp/v1/logs. |
 | Query Instant | `queryInstant` | Runs a LogQL query at a single point in time. Loki only accepts METRIC queries here (e.g. sum(count_over_time({job=~\".+\"}[5m]))); a plain log-stream selector is rejected with 400 \"log queries are not supported as an instant query type\". Use Query Range for log lines. GET /loki/api/v1/query. |
 | Query Range | `queryRange` | Runs a LogQL query over a time range and returns matching log lines (resultType "streams") or metric samples (resultType "matrix"). This is the main read endpoint - use it to verify that a pushed entry is queryable. start and end accept nanosecond epoch strings, RFC3339, or a duration like 5m. GET /loki/api/v1/query_range. |
+
+</details>

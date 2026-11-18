@@ -5,6 +5,8 @@ hidden: true
 
 # CarsXE
 
+<img src="../../.gitbook/assets/connectors/carsxe.png" alt="CarsXE logo" width="64">
+
 CarsXE is a vehicle data API for decoding VINs and license plates and enriching vehicle records. This connector covers the complete CarsXE REST surface: vehicle specifications (VIN decoding), international VIN decoding, US and worldwide license plate decoding (v1 and v2), market value (v1 and v2), vehicle history, lien and theft checks, safety recalls by VIN, by year/make/model and in bulk batches, vehicle images, year/make/model lookups and dropdown options, OBD-II trouble code decoding, VIN and license plate image recognition, and the Enterprise ownership and identity-graph lookups. Every call spends account credits.
 
 | | |
@@ -12,8 +14,6 @@ CarsXE is a vehicle data API for decoding VINs and license plates and enriching 
 | **Category** | [Search and web](README.md) |
 | **Website** | [carsxe.com](https://carsxe.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `carsxe` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CarsXE from **Build → Integrations → Connectors** and connect an account
 | Get Lien And Theft Records | `getLienAndTheftRecords` | Checks a US VIN for active lien and theft records, returning the vehicle identity along with any lien or theft events on file. |
 | Get Market Value | `getMarketValue` | Returns the market value of a vehicle by VIN using the version 1 valuation, including retail, trade-in, loan and auction values plus historical trade-in values. |
 | Get Market Value V2 | `getMarketValueV2` | Returns detailed market values for a VIN, including wholesale and retail values across extra clean, clean, average and rough condition tiers, with optional adjustments for US state, mileage and condition. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Ownership By Address | `getOwnershipByAddress` | Finds everyone on file at a US street address in the CarsXE identity graph. Requires a CarsXE Enterprise plan. Charged per resident returned, only when a match is found. |
 | Get Ownership By Person | `getOwnershipByPerson` | Resolves contact details for a person you already have a name and address for, from the CarsXE identity graph. Requires a CarsXE Enterprise plan. Charged per match returned, only when a match is found. |
 | Get Ownership By Phone | `getOwnershipByPhone` | Resolves people and contact details from one or more US phone numbers in the CarsXE identity graph. Requires a CarsXE Enterprise plan. Charged per match returned, only when a match is found. |
@@ -52,3 +59,5 @@ Add CarsXE from **Build → Integrations → Connectors** and connect an account
 | Recognize License Plate From Image | `recognizePlateImage` | Extracts the license plate number from a photo of a vehicle using computer vision, returning each detected plate with its bounding box and region. |
 | Submit Recalls Batch | `submitRecallsBatch` | Submits up to 10,000 VINs for asynchronous safety recall processing. Supply the VINs as a list, as inline CSV text, or as an HTTPS link to a CSV file. Optionally supply a webhook URL that CarsXE will POST to when the batch finishes. Returns a batch ID to poll with Get Recalls Batch Status. |
 | Validate API Key | `validateApiKey` | Checks that the connected CarsXE API key is valid and the account is active, and returns the account owner's email and creation date. Use it to verify credentials before making calls that spend credits. |
+
+</details>

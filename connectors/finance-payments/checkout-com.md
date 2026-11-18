@@ -5,6 +5,8 @@ hidden: true
 
 # Checkout.com
 
+<img src="../../.gitbook/assets/connectors/checkout-com.png" alt="Checkout.com logo" width="64">
+
 Checkout.com Unified Payments API. Request, capture, void, refund and reverse card payments; manage customers, saved instruments, payment links, hosted payment pages, payment sessions (Flow), payment contexts and setups; look up payment methods and card metadata; handle disputes and evidence files; and build risk and notification workflows with events and reflows. The API base URL is per-merchant and per-environment, so it is supplied on the connection.
 
 | | |
@@ -12,8 +14,6 @@ Checkout.com Unified Payments API. Request, capture, void, refund and reverse ca
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [checkout.com](https://checkout.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `checkoutCom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Checkout.com from **Build → Integrations → Connectors** and connect an a
 | Create Customer | `createCustomer` | Create a customer that payment instruments and future payments can be associated with. |
 | Create Hosted Payments Page Session | `createHostedPaymentsPage` | Create a Hosted Payments Page session and receive the redirect URL to send the customer to in the _links.redirect field. |
 | Create Instrument | `createInstrument` | Save a payment instrument to the vault so it can be reused for future payments. Set type to token to store a Checkout.com token, or to card, bank_account, sepa or ach to store the underlying details. Provide either processing_channel_id or entity_id. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Payment Context | `createPaymentContext` | Create a payment context for an alternative payment method, returning the details needed to complete the customer's journey. |
 | Create Payment Link | `createPaymentLink` | Create a shareable payment link that a customer can open to complete a payment on a Checkout.com hosted page. Returns the redirect URL in the _links.redirect field. |
 | Create Payment Session | `createPaymentSession` | Create a Checkout.com Flow payment session, returning the session ID, token and secret used to render the Flow front-end component. |
@@ -88,3 +95,5 @@ Add Checkout.com from **Build → Integrations → Connectors** and connect an a
 | Update Workflow Condition | `updateWorkflowCondition` | Update an existing condition on a workflow. |
 | Upload File | `uploadFile` | Upload a file to use as dispute evidence. Returns the file ID to reference when providing evidence. |
 | Void a Payment | `voidPayment` | Void an authorized but uncaptured payment, releasing the funds held on the cardholder's card. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # BugHerd
 
+<img src="../../.gitbook/assets/connectors/bugherd.png" alt="BugHerd logo" width="64">
+
 BugHerd is a visual bug tracker and website feedback tool that pins client feedback directly onto a web page. This connector covers the BugHerd API v2: the organization, users, members and guests, projects, project membership, kanban columns, tasks with filtering and moving between projects, task comments, task attachments, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ BugHerd is a visual bug tracker and website feedback tool that pins client feedb
 | **Category** | [Developer tools](README.md) |
 | **Website** | [bugherd.com](https://bugherd.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 43 |
-| **Events** | 5 |
 | **Slug** | `bugherd` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BugHerd from **Build → Integrations → Connectors** and connect an accoun
 | Create Webhook | `createWebhook` | Registers a webhook so BugHerd posts to a target URL whenever the chosen event happens. Leave Project ID empty to receive the event for every project in the organization. |
 | Delete Column | `deleteColumn` | Removes a custom kanban column from a BugHerd project's taskboard. |
 | Delete Project | `deleteProject` | Permanently deletes a BugHerd project together with all of its tasks, comments and attachments. This cannot be undone. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Task | `deleteTask` | Deletes a task from a BugHerd project, along with its comments and attachments. |
 | Delete Task Attachment | `deleteTaskAttachment` | Removes one attachment from a BugHerd task. |
 | Delete Task Comment | `deleteTaskComment` | Deletes one comment from a BugHerd task. The comment id goes in the URL path; the published API reference shows it as a body field, which the API does not accept. |
@@ -67,6 +74,8 @@ Add BugHerd from **Build → Integrations → Connectors** and connect an accoun
 | Update Project | `updateProject` | Updates the settings of an existing BugHerd project. Only the attributes supplied are changed. |
 | Update Task | `updateTask` | Updates a task in a BugHerd project: its description, kanban column, priority, assignee, tags, external id or the page it points at. Only the attributes supplied are changed. To assign the task, the target user must already be a member of the project - add them with Add Member To Project first, otherwise the assignment fields are accepted and silently ignored. |
 | Update Webhook | `updateWebhook` | Changes the target URL, event or project scope of an existing BugHerd webhook. This endpoint is not listed in the published API reference but is served by the API. |
+
+</details>
 
 ## Events
 

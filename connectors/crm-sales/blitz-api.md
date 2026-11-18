@@ -5,6 +5,8 @@ hidden: true
 
 # Blitz API
 
+<img src="../../.gitbook/assets/connectors/blitz-api.png" alt="Blitz API logo" width="64">
+
 Blitz API is B2B go-to-market data infrastructure for growth and revenue teams. It provides verified contact data on 380M+ professionals: person and company enrichment (work email, mobile phone, reverse email/phone lookup, full company firmographics), ICP company and people search, waterfall decision-maker search, live job-posting search, and TAM-by-hiring-signal account lists. This connector uses the vendor's hosted Model Context Protocol server, so the tool surface is discovered live from Blitz and always matches the current API.
 
 | | |
@@ -12,8 +14,6 @@ Blitz API is B2B go-to-market data infrastructure for growth and revenue teams. 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [blitz-api.ai](https://blitz-api.ai) |
 | **Authentication** | API key |
-| **Actions** | 24 |
-| **Events** | 0 |
 | **Slug** | `blitzApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Blitz API from **Build → Integrations → Connectors** and connect an acco
 | company_tam_by_jobs | `company_tam_by_jobs` | Turn hiring demand into a target-account list: the distinct companies posting jobs that match your filters, deduped, each with a matched-jobs count. Input: `job` and `company` filters (optionally `job.min_per_company`), `max_results`, `cursor`. Returns: companies each with a `matched_jobs` count. Cost: 1 record per result. |
 | company_tam_by_people | `company_tam_by_people` | Turn a person-level ICP into a target-account list: the distinct companies whose current employees match your filters, deduped, each with a matched-employees count. Use when the account signal is workforce makeup (who works there); use company_tam_by_jobs when it's hiring demand. Input: `people` and `company` filters (optionally `people.min_per_company`), `max_results`, `cursor`. Returns: companies each with a `matched_people` count. Cost: 1 record per result. |
 | docs_read | `docs_read` | Read or browse specific Blitz documentation pages via a read-only, filesystem-style query rooted at '/'. Use after docs_search to open a page in full. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | docs_search | `docs_search` | Search the Blitz documentation (guides, concepts, API reference, and examples) and get matching snippets with titles and links. Use this to learn how a Blitz endpoint works before calling it. Returns a text list of matching snippets, each with the page title and a link to the page, cut to about 4,000 characters; open a page in full with docs_read. |
 | job_search | `job_search` | Search job postings across all companies by job filters (title, location, and more). Use for jobs across the market; use job_search_by_company to scope to one company. Input: a `job` filter block plus an optional `company` firmographic block, `max_results`, `cursor`. Returns: job postings. Cost: 1 record per result. |
 | job_search_by_company | `job_search_by_company` | Search the job postings of ONE company by job filters. Use to scope a job search to a single company; use job_search for the whole market. Input: `company_linkedin_url` plus `job` filters, `max_results`, `cursor`. Returns: job postings. Cost: 1 record per result. |
@@ -48,3 +55,5 @@ Add Blitz API from **Build → Integrations → Connectors** and connect an acco
 | send_feedback | `send_feedback` | Send feedback, a bug report, a feature request, or praise directly to the Blitz team — about the Blitz API, data quality, the docs, or this MCP server. Use whenever the user wants to reach the Blitz team. Returns a short text confirmation that the feedback was recorded; it returns no ticket id and no reply. |
 | util_changelog | `util_changelog` | Get Blitz API changelog entries, newest first. Input: optional `days` and `limit`. Returns: a list of entries, each with `date` (UTC, YYYY-MM-DD), `type` (breaking, feature, improvement, fix, deprecation or announcement), `title`, and optional `body` (markdown), `affected_endpoints` and `links`. Cost: 0 records. No API key required. |
 | util_current_date | `util_current_date` | Get the current date and time in a given timezone. Input: `region` (IANA timezone). Returns: `datetime` (YYYY-MM-DD HH:mm:ss in that zone), `timestamp` (Unix seconds), `timezone` and `timezone_name`. Cost: 0 records. |
+
+</details>

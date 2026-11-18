@@ -5,6 +5,8 @@ hidden: true
 
 # FreeCurrencyAPI
 
+<img src="../../.gitbook/assets/connectors/freecurrencyapi.png" alt="FreeCurrencyAPI logo" width="64">
+
 Free current and historical foreign-exchange rates from freecurrencyapi.com (the free tier of currencyapi.com). Covers the latest exchange rates, single-date historical rates, supported currency metadata, and account quota status. Authenticates with an API key sent as the 'apikey' request header. Base https://api.freecurrencyapi.com.
 
 | | |
@@ -12,8 +14,6 @@ Free current and historical foreign-exchange rates from freecurrencyapi.com (the
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [freecurrencyapi.com](https://freecurrencyapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `freecurrencyapi` |
 
 ## Use it

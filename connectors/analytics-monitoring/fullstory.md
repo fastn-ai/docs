@@ -5,14 +5,14 @@ hidden: true
 
 # Fullstory
 
+<img src="../../.gitbook/assets/connectors/fullstory.png" alt="Fullstory logo" width="64">
+
 Fullstory is a digital experience analytics platform that captures web and mobile sessions. This connector covers the documented Fullstory Server API v2: users with batch and streaming import, custom server events with batch import, sessions and the Anywhere Activation session endpoints, chart annotations, organization quotas, the beta datasets listing, and the beta extraction rules that pull structured data out of pages, URLs and network requests.
 
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `fullstory` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Fullstory from **Build → Integrations → Connectors** and connect an acco
 | Create User Stream | `createUserStream` | Opens a streaming user-import request and returns the request id used to poll its status. Streaming suits continuous ingestion where a batch job would be too coarse. |
 | Create Webhook Endpoint | `createWebhookEndpoint` | Registers a webhook endpoint so Fullstory posts the chosen events to it. The URL must use HTTPS, and the signing secret is what lets the receiver verify a delivery really came from Fullstory. Fullstory system webhooks are a paid feature; on a plan without them every endpoint under /webhooks/v1 answers 403 forbidden. |
 | Delete User | `deleteUser` | Deletes a single user, and the data captured for them, by their Fullstory id. Deletion is asynchronous, so the user reports as being deleted until it completes. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete User By UID | `deleteUserByUid` | Deletes a single user, and the data captured for them, by the application-specific identifier you gave them. |
 | Delete Webhook Endpoint | `deleteWebhookEndpoint` | Deletes a webhook endpoint so Fullstory stops delivering events to it. Fullstory system webhooks are a paid feature; on a plan without them every endpoint under /webhooks/v1 answers 403 forbidden. |
 | Generate Session Context | `generateSessionContext` | Returns the session's events lightly transformed and structured for consumption by a large language model you control. This endpoint belongs to Fullstory Anywhere: Activation. On a plan without that entitlement it answers 403 permission_denied. |
@@ -62,3 +69,5 @@ Add Fullstory from **Build → Integrations → Connectors** and connect an acco
 | Update Extraction Rule | `updateExtractionRule` | Updates part of an extraction rule, leaving everything else untouched. Supply at least one of name, description, source or mappings. This API is in beta and may change without notice. |
 | Update User | `updateUser` | Updates the details of an existing user identified by their Fullstory id. |
 | Update Webhook Endpoint | `updateWebhookEndpoint` | Changes a webhook endpoint's destination URL, subscribed events, signing secret or enabled state. Fullstory system webhooks are a paid feature; on a plan without them every endpoint under /webhooks/v1 answers 403 forbidden. |
+
+</details>

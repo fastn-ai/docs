@@ -5,6 +5,8 @@ hidden: true
 
 # WildApricot
 
+<img src="../../.gitbook/assets/connectors/wild-apricot.png" alt="WildApricot logo" width="64">
+
 WildApricot is a membership management platform for associations, clubs and non-profits. This connector covers the WildApricot Admin API v2.3: accounts, contacts and members, contact and donation fields, saved searches, membership levels, bundles and member groups, pending membership approvals, events, event registration types and registrations, check-in and waitlists, invoices, payments, refunds, tenders and allocations, donations, CEU records, audit log, email log, drafts and sending, attachments and pictures, and the online store (products and orders).
 
 | | |
@@ -12,8 +14,6 @@ WildApricot is a membership management platform for associations, clubs and non-
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [wildapricot.com](https://wildapricot.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 123 |
-| **Events** | 10 |
 | **Slug** | `wildApricot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WildApricot from **Build → Integrations → Connectors** and connect an ac
 | Count Unique Email Draft Recipients | `countUniqueEmailDraftRecipients` | Returns how many unique email addresses a WildApricot email draft would reach, so the audience size can be checked before sending. The published OpenAPI document specifies a bare integer request body, but the live endpoint rejects a bare integer with HTTP 400 and only accepts a JSON object, so the connector sends the draft identifier as an object in the same shape the other email-draft operations use. |
 | Count Unique Email Recipients | `countUniqueEmailRecipients` | Returns how many unique email addresses a given WildApricot recipient selection resolves to, so the audience size of an email can be checked before it is composed. |
 | Create CEU Record | `createCeuRecord` | Creates a continuing education unit (CEU) record in WildApricot for a contact, recording the activity, the credits earned and the period the credits cover. |
+
+<details>
+
+<summary>See 113 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Contact | `createContact` | Creates a new contact or member record in WildApricot. Provide first name, last name and email (must be unique in the account); optionally a membership level, membership status and field values. Note that WildApricot ignores the top-level Organization property on create - set organization, phone, notes and other fields through Field Values using their System Code (for example Organization, Phone, Notes). |
 | Create Contact Field | `createContactField` | Creates a new custom contact or membership field in WildApricot and returns the new field ID. Field name must be unique; choice fields take their options from Allowed Values. |
 | Create Donation | `createDonation` | Records a donation in WildApricot and returns the new donation ID. Link it to a contact, or supply the donor's name and email for an anonymous donation, and set values for any custom donation fields. |
@@ -147,6 +154,8 @@ Add WildApricot from **Build → Integrations → Connectors** and connect an ac
 | Upload Store Product Pictures | `uploadStoreProductPictures` | Uploads product images to the WildApricot online store and returns their identifiers, which can then be set in the Pictures list of a store product. Pass the images as a JSON array string; each entry carries the file name, MIME type and Base64 encoded data. |
 | Verify Two-Factor Code | `verifyTwoFactorCode` | Verifies a two-factor authentication code that was sent to the currently signed-in WildApricot user, returning true when the code is valid. Requires a token issued for a WildApricot user; API-key tokens receive 403. |
 | Void Invoice | `voidInvoice` | Voids a WildApricot invoice, cancelling it while keeping it on the financial record. Voided invoices are excluded from List Invoices unless Include Voided is set. |
+
+</details>
 
 ## Events
 

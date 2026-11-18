@@ -5,6 +5,8 @@ hidden: true
 
 # Groq
 
+<img src="../../.gitbook/assets/connectors/groq.png" alt="Groq logo" width="64">
+
 Groq API connector — ultra-fast LLM inference over an OpenAI-compatible API (base https://api.groq.com/openai/v1). Covers chat completions, responses, model management, audio transcription/translation/speech (TTS), and the Batch + Files APIs. Auth is a Bearer API key (gsk_ prefix).
 
 | | |
@@ -12,8 +14,6 @@ Groq API connector — ultra-fast LLM inference over an OpenAI-compatible API (b
 | **Category** | [AI and ML](README.md) |
 | **Website** | [groq.com](https://groq.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 17 |
-| **Events** | 0 |
 | **Slug** | `groq` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Groq from **Build → Integrations → Connectors** and connect an account, 
 | Delete File | `deleteFile` | Delete an uploaded file by ID. |
 | Delete Model | `deleteModel` | Delete a fine-tuned/custom model by ID. Only applies to deletable models owned by your org. |
 | Download File Content | `downloadFileContent` | Download the raw content of an uploaded or output file (e.g. batch results JSONL) by ID. |
+
+<details>
+
+<summary>See 7 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Batches | `listBatches` | List all batch jobs for your organization. |
 | List Files | `listFiles` | List all uploaded files for your organization. |
 | List Models | `listModels` | List all models available to your account, including context window and max completion tokens. |
@@ -41,3 +48,5 @@ Add Groq from **Build → Integrations → Connectors** and connect an account, 
 | Retrieve File | `retrieveFile` | Retrieve metadata for a single uploaded file by ID. |
 | Retrieve Model | `retrieveModel` | Retrieve metadata for a single model by ID. |
 | Upload File | `uploadFile` | Upload a JSONL file (max 100 MB) for batch processing. purpose must be 'batch'. |
+
+</details>

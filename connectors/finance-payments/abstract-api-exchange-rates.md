@@ -5,6 +5,8 @@ hidden: true
 
 # AbstractAPI Exchange Rates
 
+<img src="../../.gitbook/assets/connectors/abstract-api-exchange-rates.png" alt="AbstractAPI Exchange Rates logo" width="64">
+
 AbstractAPI Exchange Rates returns the latest exchange rates for 80+ fiat and crypto currencies, converts an arbitrary amount between two currencies, and looks up historical rates for a given date.
 
 | | |
@@ -12,8 +14,6 @@ AbstractAPI Exchange Rates returns the latest exchange rates for 80+ fiat and cr
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [abstractapi.com](https://abstractapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `abstractApiExchangeRates` |
 
 ## Use it

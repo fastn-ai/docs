@@ -5,6 +5,8 @@ hidden: true
 
 # Copper
 
+<img src="../../.gitbook/assets/connectors/copper.png" alt="Copper logo" width="64">
+
 Copper CRM Developer API v1 — leads, people, companies, opportunities, projects, tasks, activities, pipelines, custom fields, connect fields, related items, files, and webhook subscriptions. Base: https://api.copper.com/developer_api/v1
 
 | | |
@@ -12,8 +14,6 @@ Copper CRM Developer API v1 — leads, people, companies, opportunities, project
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [copper.com](https://copper.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 89 |
-| **Events** | 0 |
 | **Slug** | `copper` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Copper from **Build → Integrations → Connectors** and connect an account
 | Bulk Update People | `bulkUpdatePeople` | Update multiple people in one call (POST /people/bulk_update). Each person object must include its id. |
 | Convert Lead | `convertLead` | Convert a lead into a Person, optionally creating/attaching a Company and an Opportunity. |
 | Create Activity | `createActivity` | Log a new activity (e.g. note, phone call) on a record. type.category is 'user'; type.id 0 = note, or a user activity type id from listActivityTypes. |
+
+<details>
+
+<summary>See 79 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Company | `createCompany` | Create a new company. email_domain is a unique key for Companies. |
 | Create Connection | `createConnection` | Create a connect-field connection between two records (POST /related_links). |
 | Create Custom Activity Type | `createCustomActivityType` | Create a custom activity type. |
@@ -113,3 +120,5 @@ Add Copper from **Build → Integrations → Connectors** and connect an account
 | Update Task | `updateTask` | Update an existing task (partial update — only provided fields are sent). |
 | Update Webhook | `updateWebhook` | Update a webhook subscription (target, secret, headers, custom_field_computed_values). |
 | Upsert Lead | `upsertLead` | Atomically create or update a lead matched by a field (PUT /leads/upsert). match.field_name can be a standard field (e.g. email) or 'custom' with field_value {custom_field_definition_id, value}. 422 when 2+ records match. |
+
+</details>

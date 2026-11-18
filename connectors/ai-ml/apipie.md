@@ -5,6 +5,8 @@ hidden: true
 
 # APIpie.ai
 
+<img src="../../.gitbook/assets/connectors/apipie.png" alt="APIpie.ai logo" width="64">
+
 APIpie.ai is a unified gateway to hundreds of AI models from OpenAI, Anthropic, Google, Meta, Mistral and more behind an OpenAI-compatible API. This connector covers the complete APIpie REST API: chat completions with memory, RAG, integrity voting and inline web search, embeddings, image generation, text to speech, audio transcription, the model catalog, usage history, per-app and per-user state settings, web search, AI search answers, web scraping, text anonymization, document parsing, RAG tuning collections, vector collections, file sharing, and the job-search and real-estate data APIs.
 
 | | |
@@ -12,8 +14,6 @@ APIpie.ai is a unified gateway to hundreds of AI models from OpenAI, Anthropic, 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [apipie.ai](https://apipie.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `apipie` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add APIpie.ai from **Build → Integrations → Connectors** and connect an acco
 | Delete RAG Collection | `deleteRagCollection` | Deletes an entire RAG tuning collection, or only specific records in it by id or metadata filter. |
 | Delete State Settings | `deleteStateSettings` | Deletes stored state records. With user it deletes that end-user's state record; without user it deletes all state records for the current API key (app-level and every user). Use Update State Settings with delete for partial key removal instead. |
 | Delete Vectors | `deleteVectors` | Deletes specific vectors from a collection by id or metadata filter, or the entire collection when delete_all is true. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Fetch Vectors | `fetchVectors` | Fetches specific vectors from a collection by id, returning each vector's stored values and metadata (data and metatag). |
 | Generate Image | `generateImage` | Generates an image from a text prompt using an image model available through APIpie (DALL-E, Flux, Stable Diffusion, Leonardo and more; see List Models with type image), returning the image URL or base64 data. Model-specific options such as size, quality, style, seed, steps, LoRAs, strength and aspect ratio apply only where the chosen model supports them. Charges credits. |
 | Get Property by Address | `getPropertyByAddress` | Looks up detailed property information for a full street address, including price, estimates, size, status, listing details and photos. |
@@ -56,3 +63,5 @@ Add APIpie.ai from **Build → Integrations → Connectors** and connect an acco
 | Update State Settings | `updateStateSettings` | Creates or merges the stored state settings that are applied to chat completions by default, at app level or, with enable_user_states and user, per end-user. Only the settings keys you send are changed; list keys in delete to remove them. Returns the resulting state. |
 | Upload File for URL | `uploadFileForUrl` | Uploads an image file (PNG, JPG, JPEG, SVG, GIF, BMP, TIF, TIFF or WebP) as multipart form data and returns a shareable URL that can be passed to vision models and other APIpie endpoints. |
 | Upsert Vector | `upsertVector` | Inserts or updates a single vector in a collection, storing the embedding together with its text payload and an optional metadata tag. The embedding length must match the collection's dimension. |
+
+</details>

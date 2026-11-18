@@ -5,6 +5,8 @@ hidden: true
 
 # UK Parliament Members API
 
+<img src="../../.gitbook/assets/connectors/uk-parliament-members.png" alt="UK Parliament Members API logo" width="64">
+
 The UK Parliament Members API gives open data on MPs and Lords: search current and historical members, get biographies, contact details, experience, interests, voting records, written questions, early day motions and staff, constituencies with election results and boundaries, party strengths, government and opposition posts, and reference lists. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The UK Parliament Members API gives open data on MPs and Lords: search current a
 | **Category** | [Data and databases](README.md) |
 | **Website** | [parliament.uk](https://parliament.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `ukParliamentMembers` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add UK Parliament Members API from **Build → Integrations → Connectors** and
 | Get Member | `getMember` | Return member by ID. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/{id}) |
 | Get Member Areas of Focus | `getMemberFocus` | Return list of areas of focus of member by ID. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/{id}/Focus) |
 | Get Member Biography | `getMemberBiography` | Return biography of member by ID. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/{id}/Biography) |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Member Contact Details | `getMemberContact` | Return list of contact details of member by ID. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/{id}/Contact) |
 | Get Member Contribution Summary | `getMemberContributionSummary` | Return contribution summary of member by ID. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/{id}/ContributionSummary) |
 | Get Member History | `getMemberHistory` | Return members by ID with list of their historical names, parties and memberships. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/History) |
@@ -63,3 +70,5 @@ Add UK Parliament Members API from **Build → Integrations → Connectors** and
 | Search Historical Members | `searchHistoricalMembers` | Returns a list of members of the Commons or Lords. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/SearchHistorical) |
 | Search Lords Register of Interests | `searchLordsInterestsRegister` | Returns a list of registered interests. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/LordsInterests/Register) |
 | Search Members | `searchMembers` | Returns a list of current members of the Commons or Lords. Docs: https://members-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Members/Search) |
+
+</details>

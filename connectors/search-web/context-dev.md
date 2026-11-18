@@ -5,6 +5,8 @@ hidden: true
 
 # Context.dev
 
+<img src="../../.gitbook/assets/connectors/context-dev.png" alt="Context.dev logo" width="64">
+
 Context.dev is a web data API for AI agents and applications. This connector covers the complete Context.dev v1 REST surface: scraping webpages to Markdown, HTML, raw bytes, images, fonts, screenshots and design styleguides; crawling websites and sitemaps; extracting structured data against a JSON Schema; web search, company-news search and sourced research answers; document parsing; brand retrieval by domain, name, email, ticker, ISIN or transaction descriptor, brand search, AI website queries and product extraction; competitor discovery; NAICS and SIC industry classification; person enrichment and retrieval; company funding; prefetch warming; asynchronous batch jobs; website change monitors with runs, changes and signed webhooks; WebDB collections that keep extracted rows in sync with their source pages, with row history, snapshots, runs, rejections and WebDB webhooks; webhook delivery inspection and retries; and request logs.
 
 | | |
@@ -12,8 +14,6 @@ Context.dev is a web data API for AI agents and applications. This connector cov
 | **Category** | [Search and web](README.md) |
 | **Website** | [context.dev](https://context.dev) |
 | **Authentication** | Bearer token |
-| **Actions** | 89 |
-| **Events** | 2 |
 | **Slug** | `contextDev` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Context.dev from **Build → Integrations → Connectors** and connect an ac
 | Create Monitor | `createMonitor` | Creates a monitor that watches a page, a sitemap or a structured extract on a schedule and reports detected changes, optionally delivering signed change events to a webhook. The monitor runs immediately after creation to establish its baseline. |
 | Create WebDB Collection | `createWebdbCollection` | Creates a WebDB collection: a continuously synced table of rows extracted from web pages. Define the row schema as JSON Schema, the targets that supply pages (single URL, URL list, sitemap or crawl), and optional eligibility rules, sync schedule, change tracking, credit budget and stale-row handling. The initial sync consumes credits per page. |
 | Create WebDB Webhook | `createWebdbWebhook` | Registers an HTTPS endpoint that receives WebDB events (row.created, row.updated, row.removed, row.error, row.cap_consumed, run.completed, run.failed, credits.low, credits.exhausted) for one collection or for all collections, delivered instantly or in batches. The response includes the signing secret used to verify deliveries. |
+
+<details>
+
+<summary>See 79 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Batch | `deleteBatch` | VENDOR BLOCKER - do not call. Deletes a finished batch. DELETE /v1/batch/{batch_id} is documented but the DELETE verb is NOT routed by the live API: it returns 404 ENDPOINT_NOT_FOUND even for a batch id that GET /v1/batch/{batch_id} resolves successfully. Batches cannot be deleted through the API; their results expire on the vendor's own schedule. |
 | Delete Monitor | `deleteMonitor` | Permanently removes a monitor and stops all of its scheduled runs. |
 | Delete WebDB Collection | `deleteWebdbCollection` | Permanently deletes a WebDB collection together with its rows, runs and change history, and stops its scheduled syncs. |
@@ -113,6 +120,8 @@ Add Context.dev from **Build → Integrations → Connectors** and connect an ac
 | Update Monitor | `updateMonitor` | Updates a monitor's name, tags, status, target, change detection, schedule or webhook. Changing the target or change detection makes the monitor create a new baseline, and unsupported target and detection combinations are rejected. |
 | Update WebDB Collection | `updateWebdbCollection` | Updates a WebDB collection's name, description, row schema, eligibility, targets (complete replacement), sync schedule, change tracking, budgets, stale handling, or pauses and resumes syncing via status. Only the fields you pass are changed. |
 | Update WebDB Webhook | `updateWebdbWebhook` | Updates a WebDB webhook's URL, subscribed events, watched collection, field filter, delivery mode or batch settings. Only the fields you pass are changed. |
+
+</details>
 
 ## Events
 

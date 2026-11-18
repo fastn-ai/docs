@@ -5,6 +5,8 @@ hidden: true
 
 # Product Hunt
 
+<img src="../../.gitbook/assets/connectors/product-hunt.png" alt="Product Hunt logo" width="64">
+
 Product Hunt GraphQL API v2 for posts, comments, topics, collections, and users. Used to ingest pain-signal mentions from launches and product comments.
 
 | | |
@@ -12,8 +14,6 @@ Product Hunt GraphQL API v2 for posts, comments, topics, collections, and users.
 | **Category** | [Marketing](README.md) |
 | **Website** | [api.producthunt.com](https://api.producthunt.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 45 |
-| **Events** | 0 |
 | **Slug** | `productHunt` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Product Hunt from **Build → Integrations → Connectors** and connect an a
 | Get Post Media By Slug | `getPostMediaBySlug` | Preset GraphQL: fetch post media gallery + product links by slug. |
 | Get Post With Comments | `getPostWithComments` | Preset GraphQL: fetch a post with its top-level comment thread by slug. |
 | Get Topic | `getTopic` | Preset GraphQL: get a single topic by slug. |
+
+<details>
+
+<summary>See 35 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get User By Id | `getUserById` | Preset GraphQL: get a user by id. |
 | Get User By Username | `getUserByUsername` | Preset GraphQL: get a user by username. |
 | Get Viewer | `getViewer` | Preset GraphQL: get the authenticated viewer. |
@@ -69,3 +76,5 @@ Add Product Hunt from **Build → Integrations → Connectors** and connect an a
 | List User Voted Posts By Username | `listUserVotedPostsByUsername` | Preset GraphQL: posts a user upvoted, by username. |
 | Search Topics | `searchTopics` | Preset GraphQL: search topics by query. |
 | Unfollow User | `unfollowUser` | Unfollow a user. |
+
+</details>

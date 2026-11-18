@@ -5,6 +5,8 @@ hidden: true
 
 # Sanity
 
+<img src="../../.gitbook/assets/connectors/sanity.png" alt="Sanity logo" width="64">
+
 Sanity is a headless content operating system. Query and mutate content in the Content Lake with GROQ, manage documents, drafts, versions and Content Releases, upload assets, and administer projects, datasets, members, roles, tokens and webhooks through the Sanity Management API.
 
 | | |
@@ -12,8 +14,6 @@ Sanity is a headless content operating system. Query and mutate content in the C
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [sanity.io](https://sanity.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 228 |
-| **Events** | 3 |
 | **Slug** | `sanity` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Sanity from **Build → Integrations → Connectors** and connect an account
 | Assign Tag To Dataset | `assignTagToDataset` | Assigns a tag to a dataset. |
 | Check My Access Permissions | `checkMyAccessPermissions` | Checks whether the current user holds one permission on the given resource. Returns an object mapping the requested permission to true or false. Check one permission per call. |
 | Check Studio Host Availability | `checkStudioHostAvailability` | Check if a studio host is available. |
+
+<details>
+
+<summary>See 218 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Copy Dataset | `copyDataset` | Copies a dataset to a new dataset. This is a feature available to Business and Enterprise customers. |
 | Create Access Permission | `createAccessPermission` | Creates a custom permission on a resource. &lt;br /&gt; &lt;br /&gt; Requires permission: `sanity.{resourceType}.roles.create` &lt;br /&gt; Requires feature: `advancedRolesManagement` &lt;br /&gt; &lt;br /&gt; See Example. It creates a permission to allow a user to read legal documents in project `c7ja4siy` and dataset `production`. |
 | Create Access Request | `createAccessRequest` | Creates a new request for the given project/organization. Requires an authenticated user. |
@@ -252,6 +259,8 @@ Add Sanity from **Build → Integrations → Connectors** and connect an account
 | Upload Image Asset | `uploadImageAsset` | Upload an image asset to Content Lake. This uploads an image and creates a linked `sanity.imageAsset` document containing the image metadata. |
 | Upload Media Library Asset | `uploadMediaLibraryAsset` | Upload an asset to the media library. |
 | Upload Video Subtitle | `uploadVideoSubtitle` | Uploads a VTT or SRT subtitle file for the specified video. The subtitle file content is sent as the raw request body (not JSON). Metadata is passed via query parameters. |
+
+</details>
 
 ## Events
 

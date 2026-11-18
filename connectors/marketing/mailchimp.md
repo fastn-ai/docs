@@ -5,6 +5,8 @@ hidden: true
 
 # Mailchimp
 
+<img src="../../.gitbook/assets/connectors/mailchimp.png" alt="Mailchimp logo" width="64">
+
 Mailchimp Marketing API v3.0 (base https://{dc}.api.mailchimp.com/3.0). Manage audiences (lists), members + tags, merge fields, segments, campaigns (create/content/send/schedule/test), templates, reports, automations, and list webhooks. Auth: HTTP Basic (any username + API key as password); the datacenter prefix (e.g. us21) comes from the API key suffix.
 
 | | |
@@ -12,8 +14,6 @@ Mailchimp Marketing API v3.0 (base https://{dc}.api.mailchimp.com/3.0). Manage a
 | **Category** | [Marketing](README.md) |
 | **Website** | [mailchimp.com](https://mailchimp.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 34 |
-| **Events** | 6 |
 | **Slug** | `mailchimp` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mailchimp from **Build → Integrations → Connectors** and connect an acco
 | Create Segment | `createSegment` | Create a segment or static tag (POST /lists/{list_id}/segments). |
 | Delete Audience | `deleteAudience` | Delete an audience (DELETE /lists/{list_id}). Returns 204. |
 | Delete Audience Webhook | `deleteListWebhook` | Delete an audience webhook (DELETE /lists/{list_id}/webhooks/{webhook_id}). Returns 204. |
+
+<details>
+
+<summary>See 24 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Campaign | `deleteCampaign` | Delete a campaign (DELETE /campaigns/{campaign_id}). Returns 204. |
 | Delete Member Permanently | `deleteMemberPermanently` | Permanently delete all personally identifiable information for an audience member and remove them from the audience. The member cannot be re-imported afterwards (POST /lists/{list_id}/members/{subscriber_hash}/actions/delete-permanent). Returns 204 on success. |
 | Delete Merge Field | `deleteMergeField` | Delete a merge field from an audience (DELETE /lists/{list_id}/merge-fields/{merge_id}). Returns 204. |
@@ -58,6 +65,8 @@ Add Mailchimp from **Build → Integrations → Connectors** and connect an acco
 | Update Audience | `updateAudience` | Update an audience (PATCH /lists/{list_id}). |
 | Update Member | `updateMember` | Update an existing member (PATCH /lists/{list_id}/members/{subscriber_hash}). |
 | Upsert Member | `upsertMember` | Add or update a member (PUT /lists/{list_id}/members/{subscriber_hash}). |
+
+</details>
 
 ## Events
 

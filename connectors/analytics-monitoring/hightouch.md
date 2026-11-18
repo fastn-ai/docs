@@ -5,6 +5,8 @@ hidden: true
 
 # Hightouch
 
+<img src="../../.gitbook/assets/connectors/hightouch.png" alt="Hightouch logo" width="64">
+
 Hightouch Composable CDP and data activation platform. Manage sources, models, destinations, syncs, sync runs, audiences, event contracts, Decision Engine flows and messages, identity resolution (IDR), and sync sequences through the Hightouch Management REST API.
 
 | | |
@@ -12,8 +14,6 @@ Hightouch Composable CDP and data activation platform. Manage sources, models, d
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [hightouch.com](https://hightouch.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `hightouch` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Hightouch from **Build → Integrations → Connectors** and connect an acco
 | Get Decision Engine Flow | `getFlow` | Retrieve a single Decision Engine flow by its ID. |
 | Get Decision Engine Message | `getMessage` | Retrieve a single Decision Engine message by flow ID and message ID. |
 | Get Destination | `getDestination` | Retrieve a single Hightouch destination by its numeric ID. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Event Contract | `getEventContract` | Retrieve a single event contract by its ID, including its event definitions and event sources. |
 | Get IDR Reprocess Status | `getReprocessStatus` | Get the status of an IDR reprocessing request by graph ID and request ID. |
 | Get Model | `getModel` | Retrieve a single Hightouch model by its numeric ID, including its query definition. |
@@ -63,3 +70,5 @@ Add Hightouch from **Build → Integrations → Connectors** and connect an acco
 | Update Model | `updateModel` | Update an existing Hightouch model by its numeric ID. Only the provided fields are changed. |
 | Update Source | `updateSource` | Update an existing Hightouch data source's name or configuration by its numeric ID. |
 | Update Sync | `updateSync` | Update an existing Hightouch sync by its numeric ID. Only the provided fields are changed. |
+
+</details>

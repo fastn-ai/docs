@@ -5,6 +5,8 @@ hidden: true
 
 # Bonusly
 
+<img src="../../.gitbook/assets/connectors/bonusly.png" alt="Bonusly logo" width="64">
+
 Bonusly employee recognition and rewards platform. Covers the Bonusly REST API v1 (bonuses, users, achievements, redemptions, custom reward redemptions and company settings), the public API (awards, file uploads, profile settings and the analytics data warehouse with its snapshot exports) and SCIM user provisioning. Authenticates with a Bonusly personal access token sent as a Bearer token. Bonusly publishes no webhook or event API, so this connector has no event configuration and no bindable triggers; poll the list endpoints or the analytics datasets instead.
 
 | | |
@@ -12,8 +14,6 @@ Bonusly employee recognition and rewards platform. Covers the Bonusly REST API v
 | **Category** | [Marketing](README.md) |
 | **Website** | [bonus.ly](https://bonus.ly) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 77 |
-| **Events** | 0 |
 | **Slug** | `bonusly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bonusly from **Build → Integrations → Connectors** and connect an accoun
 | Create User (SCIM 2.0) | `scim2CreateUser` | Creates a new user in the authenticated company. Returns the created user in SCIM form with Location header pointing at /Users/{id}. Returns 409 Conflict with scimType: "uniqueness" if a user with the same userName (email) already exists in the company. The conflict response does not echo the conflicting email back to the IdP. New users automatically receive a Bonusly welcome email. The invitation flow used for self-signup is bypassed for SCIM-provisioned users. |
 | Create User Redemption | `createUserRedemption` | Create a User Redemption. |
 | Deactivate User | `deleteUser` | Soft-deletes (deactivates) a user. Requires admin auth. |
+
+<details>
+
+<summary>See 67 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Deactivate User (SCIM 1.1) | `scim1UpdateScimUserActivationStatus` | Sets the user's active state. Maps to DELETE / PATCH on the same path. |
 | Deactivate User (SCIM 2.0) | `scim2DeleteUser` | Deactivates the user. Bonusly does NOT hard-delete records — the user is preserved (for audit, balance history, and possible rehire) and marked inactive. To restore later, send PATCH or PUT with active: true. Activation policy refusals surface as 422. |
 | Delete Award | `deleteAward` | Soft-deletes the award and deactivates its bot user. The award will no longer appear in any list or show responses. Requires the awards:administer scope and awards admin permission. |
@@ -101,3 +108,5 @@ Add Bonusly from **Build → Integrations → Connectors** and connect an accoun
 | Update Company | `updateCompany` | Updates the authenticated admin's company. Admin token required. Sends name, show_bonus_amounts, and/or custom_user_properties; any other parameter is rejected with 400. |
 | Update Profile | `updateProfile` | Updates profile fields for the user associated with the bearer token. All fields are optional — only provided fields are updated. Avatar changes are subject to the company's avatar uploading policy. If the company disallows avatar uploads, providing image returns 403. Requires the user:write scope and a user-scoped token. |
 | Update User | `updateUser` | Updates a user. Requires an admin (or company-scoped) access token. Pass status: archived to deactivate or status: active to reactivate. |
+
+</details>

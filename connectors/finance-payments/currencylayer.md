@@ -5,6 +5,8 @@ hidden: true
 
 # Currencylayer
 
+<img src="../../.gitbook/assets/connectors/currencylayer.jpg" alt="Currencylayer logo" width="64">
+
 Currencylayer is a reliable, lightweight foreign exchange rates and currency data API by APILayer. It delivers JSON-formatted real-time and End-of-Day historical exchange rate data for 168 world currencies and precious metals, plus single-currency conversion, time-frame, and currency-change endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Currencylayer is a reliable, lightweight foreign exchange rates and currency dat
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [currencylayer.com](https://currencylayer.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `currencylayer` |
 
 ## Use it

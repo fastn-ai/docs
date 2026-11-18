@@ -5,6 +5,8 @@ hidden: true
 
 # Toggl Track
 
+<img src="../../.gitbook/assets/connectors/toggltrack.png" alt="Toggl Track logo" width="64">
+
 Toggl Track time tracking API. Manage time entries (including the running entry, start/stop and bulk edits), projects, project users and groups, tasks, clients, tags, workspaces, workspace users and memberships, organizations, groups, invitations, goals, alerts, favorites, timesheets and saved reports, and run detailed, summary, weekly and comparative reports through the Reports API v3, plus webhook subscription management.
 
 | | |
@@ -12,8 +14,6 @@ Toggl Track time tracking API. Manage time entries (including the running entry,
 | **Category** | [Productivity](README.md) |
 | **Website** | [toggl.com](https://toggl.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 247 |
-| **Events** | 22 |
 | **Slug** | `toggltrack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Toggl Track from **Build → Integrations → Connectors** and connect an ac
 | Bulk Update Project Users | `bulkUpdateProjectUsers` | Applies changes to multiple project user assignments in a single request. |
 | Bulk Update Projects | `bulkUpdateProjects` | Updates multiple projects in a single request in the specified workspace. |
 | Bulk Update Tasks | `bulkUpdateTasks` | Updates multiple tasks in a single request in the specified workspace. |
+
+<details>
+
+<summary>See 237 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Time Entries | `bulkUpdateTimeEntries` | Updates multiple time entries in a single request in the specified workspace. |
 | Bulk Update Timesheets | `bulkUpdateTimesheets` | Updates a batch of timesheets in a single request. |
 | Check Session Logged In | `checkLoggedIn` | Checks whether the current credentials correspond to a valid, logged-in session. |
@@ -272,6 +279,8 @@ Add Toggl Track from **Build → Integrations → Connectors** and connect an ac
 | Upload Workspace Logo | `uploadWorkspaceLogo` | Uploads a new logo image for the workspace. |
 | Validate Webhook Subscription | `validateWebhookSubscription` | Confirms a webhook subscription by submitting the validation code Toggl Track sent to the callback URL. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -288,6 +297,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Project Group Updated | `project_group.updated` | Maps to {"entity":"project_group","action":"updated"}. |
 | Project Updated | `project.updated` | Maps to {"entity":"project","action":"updated"}. |
 | Tag Created | `tag.created` | Maps to {"entity":"tag","action":"created"}. |
+
+<details>
+
+<summary>See 12 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Tag Deleted | `tag.deleted` | Maps to {"entity":"tag","action":"deleted"}. |
 | Tag Updated | `tag.updated` | Maps to {"entity":"tag","action":"updated"}. |
 | Task Created | `task.created` | Maps to {"entity":"task","action":"created"}. Note tasks are a paid Toggl feature; the free plan answers 403 "unauthorized to perform this action" on task writes. |
@@ -300,3 +316,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Workspace User Created | `workspace_user.created` | Maps to {"entity":"workspace_user","action":"created"}. |
 | Workspace User Deleted | `workspace_user.deleted` | Maps to {"entity":"workspace_user","action":"deleted"}. |
 | Workspace User Updated | `workspace_user.updated` | Maps to {"entity":"workspace_user","action":"updated"}. |
+
+</details>

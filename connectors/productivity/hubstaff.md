@@ -5,6 +5,8 @@ hidden: true
 
 # Hubstaff
 
+<img src="../../.gitbook/assets/connectors/hubstaff.png" alt="Hubstaff logo" width="64">
+
 Hubstaff V2 API. Manage organizations, projects, tasks, members, teams and clients; read time and activity data, daily activities, screenshots, timesheets and notes; administer time-off policies, requests and balances, overtime policies, attendance schedules and shifts, work breaks, job sites and GPS job-site visits, budgets, weekly limits, invoices, payments and rates; configure Insights smart-notification rules, tool classifications and network locations; and manage webhooks for real-time events.
 
 | | |
@@ -12,8 +14,6 @@ Hubstaff V2 API. Manage organizations, projects, tasks, members, teams and clien
 | **Category** | [Productivity](README.md) |
 | **Website** | [hubstaff.com](https://hubstaff.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 166 |
-| **Events** | 0 |
 | **Slug** | `hubstaff` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Hubstaff from **Build → Integrations → Connectors** and connect an accou
 | Create Client | `createClient` | Creates a new client. Returns the created client. |
 | Create Global To-Do | `createGlobalToDo` | Creates a global to-do. Returns the created global to-do. Global to-dos can be added to multiple projects. All members of those projects can track time to them, and they cannot be marked as complete. |
 | Create Invite | `createInvite` | Creates a new invite. Returns the created invite. Note: If there is an account for the email in Hubstaff, the invite will be auto accepted. Note: There is a rate limit on how many invites you may create. Available roles: - organization_manager - Invited as an organization manager - project_manager - Invited as a project manager - project_user - Invited as a project user - project_viewer - Invited as a project viewer If no project_ids are set, any project_* role will default to project_viewer (no projects assigned). |
+
+<details>
+
+<summary>See 156 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Job Site | `createJobSite` | Creates a new job site. Returns the created job site. |
 | Create Network Location | `createNetworkLocation` | Creates a new on_site or remote network location for the organization. on_site locations identify office networks (by IP range or MAC address). Remote locations identify non-office networks. Requires Owner or Organization Manager role. Requires the Insights add-on. |
 | Create Organization | `createOrganization` | Creates a new organization. Returns the created organization. |
@@ -190,3 +197,5 @@ Add Hubstaff from **Build → Integrations → Connectors** and connect an accou
 | Update Time Off Request Status | `updateTimeOffRequestStatus` | Approves or denies the time off request. Allowed transitions: submitted → approved, submitted → denied, approved → denied, denied → approved. Paid or partially paid time off requests cannot be modified through this endpoint. When approving, use remove_shifts to automatically remove overlapping attendance shifts. This parameter is ignored when denying. A response (reason) is required when denying a request. |
 | Update Timesheet | `updateTimesheet` | Updates a timesheet status or updates the denial reason on an already denied timesheet. Allowed statuses are open, submitted, approved, and denied. A denial_reason is required when transitioning a timesheet to denied. Approving a timesheet can require explicit confirmation when the period has pending manual time requests or pending time off requests. If pending manual time requests would be denied, the endpoint returns 422 with error_code 14905; repeat the request with confirm_pending_manual_time_request_denial set to true. If the period has pending time off requests, the endpoint returns 422 with error_code 14906; repeat the request with acknowledge_pending_time_off_requests set to true. |
 | Update Tool Classifications | `updateToolClassifications` | Batch updates productivity classifications and categories for up to 100 tools. Each item must include id and tool_type. Provide productivity and/or category to update. Use job_type to scope a productivity change to a specific role (see GET /organizations/:id/job_types). category and job_type are mutually exclusive within an item: category applies globally, so it can only be set when job_type is omitted. Changes are applied atomically — if any item fails validation, no changes are saved. On success, returns 204 No Content. Note: productivity changes only affect future tool usage data, not historical records. Requires Owner or Organization Manager role. Requires the Insights add-on. |
+
+</details>

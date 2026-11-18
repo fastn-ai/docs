@@ -5,6 +5,8 @@ hidden: true
 
 # Trigger.dev
 
+<img src="../../.gitbook/assets/connectors/triggerdev.png" alt="Trigger.dev logo" width="64">
+
 Trigger.dev v3 REST/Management API connector. Trigger and manage background task runs, batch triggers, schedules (CRUD + activate/deactivate), environment variables (CRUD + import), and queues (list/retrieve/concurrency override/reset/pause/resume). Base: https://api.trigger.dev. Auth: project-specific Secret API key (tr_...) as Bearer token.
 
 | | |
@@ -12,8 +14,6 @@ Trigger.dev v3 REST/Management API connector. Trigger and manage background task
 | **Category** | [Developer tools](README.md) |
 | **Website** | [trigger.dev](https://trigger.dev) |
 | **Authentication** | Bearer token |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `triggerdev` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Trigger.dev from **Build → Integrations → Connectors** and connect an ac
 | Delete env var | `deleteEnvVar` | Delete a specific environment variable for a project and environment. |
 | Delete schedule | `deleteSchedule` | Delete an IMPERATIVE schedule by its ID. |
 | Get timezones | `getTimezones` | Get all supported IANA timezones that scheduled tasks support. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Import env vars | `importEnvVars` | Upload multiple environment variables for a project and environment in one call. |
 | List env vars | `listEnvVars` | List all environment variables for a specific project and environment. Returns a JSON array of {name, value} objects. |
 | List queues | `listQueues` | List all queues in your environment with pagination support. |
@@ -53,3 +60,5 @@ Add Trigger.dev from **Build → Integrations → Connectors** and connect an ac
 | Update env var | `updateEnvVar` | Update the value of a specific environment variable for a project and environment. |
 | Update run metadata | `updateRunMetadata` | Update the metadata of a run. |
 | Update schedule | `updateSchedule` | Update an IMPERATIVE schedule by its ID. |
+
+</details>

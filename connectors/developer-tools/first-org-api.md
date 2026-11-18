@@ -5,6 +5,8 @@ hidden: true
 
 # FIRST.Org API
 
+<img src="../../.gitbook/assets/connectors/first-org-api.png" alt="FIRST.Org API logo" width="64">
+
 The FIRST.Org API is the free public API of the Forum of Incident Response and Security Teams. Get EPSS exploit-prediction scores for CVEs (current, historic and 30-day series), search FIRST member CSIRT/PSIRT teams and the Global IRT directory, and read FIRST news, news channels and the country list. No API key needed (1000 requests per minute).
 
 | | |
@@ -12,8 +14,6 @@ The FIRST.Org API is the free public API of the Forum of Incident Response and S
 | **Category** | [Developer tools](README.md) |
 | **Website** | [first.org](https://first.org) |
 | **Authentication** | No authentication |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `firstOrgApi` |
 
 ## Use it

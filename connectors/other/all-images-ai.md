@@ -5,6 +5,8 @@ hidden: true
 
 # All-Images.ai
 
+<img src="../../.gitbook/assets/connectors/all-images-ai.png" alt="All-Images.ai logo" width="64">
+
 All-Images.ai is an AI stock-image platform that generates royalty-free photos with Midjourney and sells ready-made images. This connector covers the complete All-Images.ai v1 API: API key check and credit balance, image search and purchase (direct URL or binary download), previously downloaded images, image display URLs, image generations (create, list, get, update, retry, delete) and webhook endpoint subscriptions for generation status events.
 
 | | |
@@ -12,8 +14,6 @@ All-Images.ai is an AI stock-image platform that generates royalty-free photos w
 | **Category** | [Other](README.md) |
 | **Website** | [all-images.ai](https://all-images.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 16 |
-| **Events** | 5 |
 | **Slug** | `allImagesAi` |
 
 ## Use it
@@ -34,12 +34,21 @@ Add All-Images.ai from **Build → Integrations → Connectors** and connect an 
 | Get Image Generation | `getImageGeneration` | Retrieves a single image generation by id, including its current status (0 Create, 1 Pending, 2 Processing, 3 Done, 4 Error), prompt, parameters and the generated images once complete. |
 | Get Webhook | `getWebhook` | Retrieves a webhook endpoint registered on the connected API key by its id, returning the endpoint URL and the API key it belongs to. |
 | List Downloaded Images | `listDownloadedImages` | Lists the images the connected account has already downloaded or purchased, with direct download links for the preview, full, upscaled and UHD versions. Supports offset pagination and a download-date range. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Image Generations | `listImageGenerations` | Lists the connected account's image generations with their status, prompt, parameters and generated images. Supports offset pagination, sorting and filtering by name or tag. |
 | Retry Image Generation | `retryImageGeneration` | Restarts an image generation that ended in the Error status, for example after correcting its prompt with Update Image Generation. |
 | Search Images | `searchImages` | Searches the All-Images.ai stock library by keywords and returns a page of matching images with preview and full-size URLs. Supports offset pagination and a free-images-only filter. |
 | Subscribe Webhook | `subscribeWebhook` | Registers an HTTPS endpoint on the connected API key so All-Images.ai posts image-generation status events to it. Returns the new webhook id, which is needed to look the webhook up or remove it later. |
 | Unsubscribe Webhook | `unsubscribeWebhook` | Removes a webhook endpoint from the connected API key by its id so it no longer receives image-generation events. |
 | Update Image Generation | `updateImageGeneration` | Updates an existing image generation's name, prompt, mode, parameters, tags or metadata. Only the fields you send are changed. A generation cannot be updated while it is Pending or Processing; update a failed generation and then call Retry Image Generation to run it again. |
+
+</details>
 
 ## Events
 

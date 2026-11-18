@@ -5,6 +5,8 @@ hidden: true
 
 # DeepL
 
+<img src="../../.gitbook/assets/connectors/deepl.png" alt="DeepL logo" width="64">
+
 DeepL language AI API: text translation, document translation, v2 and v3 multilingual glossaries, spoken terms, translation memories, style rules, DeepL Write (rephrase/correct), supported languages and character usage.
 
 | | |
@@ -12,8 +14,6 @@ DeepL language AI API: text translation, document translation, v2 and v3 multili
 | **Category** | [AI and ML](README.md) |
 | **Website** | [deepl.com](https://deepl.com) |
 | **Authentication** | API key |
-| **Actions** | 61 |
-| **Events** | 0 |
 | **Slug** | `deepl` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DeepL from **Build → Integrations → Connectors** and connect an account,
 | Create Voice Translation Job | `createVoiceTranslateJob` | DeepL Voice: creates an asynchronous job that transcribes and translates an audio file. Returns job_id, an upload_url for the audio and a short-lived signature. Requires a DeepL Voice entitlement; accounts without it get 403 Forbidden. |
 | Deactivate Admin Developer Key | `adminDeactivateDeveloperKey` | DESTRUCTIVE: permanently deactivates one DeepL developer key by key_id. If key_id is the key this connection authenticates with, the connector loses access immediately and DeepL offers no API undo - list the keys first and confirm the id. Requires a DeepL API Pro account with the Admin API entitlement; Pro host (api.deepl.com) only. Without the entitlement DeepL answers 403 Forbidden. |
 | Delete Glossary (v2) | `deleteGlossaryV2` | Permanently deletes a v2 glossary by id. Returns 204 No Content on success. |
+
+<details>
+
+<summary>See 51 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Glossary Dictionary (v3) | `deleteGlossaryDictionary` | Deletes one language-pair dictionary from a multilingual (v3) glossary, leaving the glossary itself in place. Returns 204 No Content. |
 | Delete Multilingual Glossary (v3) | `deleteMultilingualGlossary` | Permanently deletes a multilingual (v3) glossary and all of its dictionaries. Returns 204 No Content. |
 | Delete Spoken Terms Collection | `deleteSpokenTerms` | Permanently deletes a spoken terms collection and all of its term lists. Returns 204 No Content. |
@@ -85,3 +92,5 @@ Add DeepL from **Build → Integrations → Connectors** and connect an account,
 | Update Multilingual Glossary (v3) | `patchMultilingualGlossary` | Renames a multilingual (v3) glossary and/or merges dictionaries into it. Only the supplied fields change. |
 | Update Spoken Terms Collection | `patchSpokenTerms` | Renames a spoken terms collection and/or merges term lists into it. Only the supplied fields change. |
 | Upload Document For Translation | `translateDocument` | Uploads a document (txt, docx, pptx, xlsx, pdf, html, xlf) and starts its translation. Sends multipart/form-data. Returns document_id and document_key, which are both required to poll status and download the result. Billed per character of the document; the DeepL API Free plan also caps documents per month. |
+
+</details>

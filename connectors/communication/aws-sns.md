@@ -5,6 +5,8 @@ hidden: true
 
 # AWS Simple Notification Service
 
+<img src="../../.gitbook/assets/connectors/aws-sns.png" alt="AWS Simple Notification Service logo" width="64">
+
 Amazon Simple Notification Service (SNS) Query API. Create and manage topics and their subscriptions, publish messages to topics, phone numbers and mobile endpoints, manage topic and subscription attributes, tags and access policies, and administer SMS settings, the SMS sandbox and mobile push platform applications and endpoints. Requests are signed with AWS Signature Version 4 using the access key pair on the connection.
 
 | | |
@@ -12,8 +14,6 @@ Amazon Simple Notification Service (SNS) Query API. Create and manage topics and
 | **Category** | [Communication](README.md) |
 | **Website** | [aws.amazon.com](https://aws.amazon.com) |
 | **Authentication** | AWS Signature |
-| **Actions** | 42 |
-| **Events** | 0 |
 | **Slug** | `awsSns` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AWS Simple Notification Service from **Build → Integrations → Connectors
 | Create Topic | `createTopic` | Creates an Amazon SNS topic, or returns the ARN of the existing topic when one with the same name already exists. Standard topic names may contain letters, numbers, hyphens and underscores; FIFO topic names must end in .fifo and set the FifoTopic attribute to true. Requires the sns:CreateTopic permission. Returns the topic ARN. |
 | Delete Endpoint | `deleteEndpoint` | Deletes a mobile push device endpoint from its platform application. The call succeeds even when the endpoint does not exist. Requires the sns:DeleteEndpoint permission. |
 | Delete Platform Application | `deletePlatformApplication` | Deletes a mobile push platform application and every device endpoint registered under it. Requires the sns:DeletePlatformApplication permission. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete SMS Sandbox Phone Number | `deleteSmsSandboxPhoneNumber` | Removes a destination phone number from the SMS sandbox for the connection's account and Region, so it can no longer receive sandbox SMS messages. Requires the sns:DeleteSMSSandboxPhoneNumber permission. |
 | Delete Topic | `deleteTopic` | Deletes an Amazon SNS topic and every subscription attached to it. Messages published to the topic while it is being deleted may be lost, and deleting a topic that does not exist still succeeds. Requires the sns:DeleteTopic permission. |
 | Get Data Protection Policy | `getDataProtectionPolicy` | Returns the data protection policy attached to an Amazon SNS topic, which defines how sensitive data in published messages is audited, masked or redacted. Requires the sns:GetDataProtectionPolicy permission. |
@@ -66,3 +73,5 @@ Add AWS Simple Notification Service from **Build → Integrations → Connectors
 | Unsubscribe | `unsubscribe` | Deletes an Amazon SNS subscription so its endpoint stops receiving messages from the topic. If the subscription was confirmed with Authenticate On Unsubscribe set to true, only the topic owner or the subscription owner may call this and the request must be signed. Pending-confirmation subscriptions cannot be removed this way and expire on their own after three days. Requires the sns:Unsubscribe permission. |
 | Untag Resource | `untagResource` | Removes tags from an Amazon SNS topic by tag key. Requires the sns:UntagResource permission. |
 | Verify SMS Sandbox Phone Number | `verifySmsSandboxPhoneNumber` | Verifies a destination phone number in the SMS sandbox using the one-time password that Create SMS Sandbox Phone Number sent to it. Requires the sns:VerifySMSSandboxPhoneNumber permission. |
+
+</details>

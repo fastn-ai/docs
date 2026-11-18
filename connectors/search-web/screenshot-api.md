@@ -5,6 +5,8 @@ hidden: true
 
 # Screenshot API
 
+<img src="../../.gitbook/assets/connectors/screenshot-api.png" alt="Screenshot API logo" width="64">
+
 ScreenshotAPI.net renders any URL or raw HTML into a PNG, JPG, WebP or PDF, records scrolling screenshots as MP4/WebM/GIF, and scrapes page text, HTML, Markdown and image URLs. This connector covers the render endpoint on shot.screenshotapi.net/v3 with every documented capture family (viewport and full page, element capture and cropping, file type and quality, caching, lazy loading and delay, CSS and JavaScript injection, device and locale emulation, resource blocking, PDF rendering, scrolling video, proxying and bring-your-own-bucket storage) plus the account endpoint and the bulk screenshot API on api.screenshotapi.net/v1.
 
 | | |
@@ -12,8 +14,6 @@ ScreenshotAPI.net renders any URL or raw HTML into a PNG, JPG, WebP or PDF, reco
 | **Category** | [Search and web](README.md) |
 | **Website** | [screenshotapi.net](https://screenshotapi.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 53 |
-| **Events** | 1 |
 | **Slug** | `screenshotApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Screenshot API from **Build → Integrations → Connectors** and connect an
 | Capture To Your Own Storage Bucket | `captureToOwnBucket` | Captures a page and writes the file straight into your own Amazon S3, Wasabi or Google Cloud bucket instead of ScreenshotAPI storage. The bucket must already be configured and tested on the Storage Integrations tab of the dashboard. |
 | Capture Website Screenshot | `captureScreenshot` | Renders a URL in a real browser and returns the captured image. With output=JSON (the default) the response is metadata containing a public 'screenshot' URL; with output=image the raw PNG, JPG, WebP or PDF bytes are returned instead. Each successful capture consumes one screenshot from the account quota. |
 | Capture With Device And Locale Emulation | `captureWithEmulation` | Captures a page while emulating a specific browser identity and locale - user agent, accepted languages, time zone, geolocation, dark mode, grayscale, incognito mode, custom request headers and cookies - so localized or personalized variants of a page can be rendered. |
+
+<details>
+
+<summary>See 43 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Capture With Injected CSS And JavaScript | `captureWithInjectedCode` | Captures a page after injecting custom CSS and JavaScript, supplied either inline or as a remote file URL. Used to hide elements, restyle a page or dismiss overlays before the screenshot is taken. |
 | Capture With Resource Blocking | `captureWithResourceBlocking` | Captures a page while blocking selected network resource classes - ads, trackers, chat widgets, cookie banners, images, stylesheets, fonts, media, XHR, fetch, websockets and more - to produce a faster or cleaner screenshot. |
 | Create Billing Portal Session | `createBillingPortalSession` | Opens a Stripe customer billing portal session for the account and returns its one-time URL, which the account owner can follow to manage payment methods, invoices and the subscription. Creates no charge. |
@@ -77,6 +84,8 @@ Add Screenshot API from **Build → Integrations → Connectors** and connect an
 | Start Bulk Screenshot Job From URL List | `startBulkJsonJob` | Submits up to 50 URLs, each with its own rendering options, as a single bulk screenshot job and returns the job uuid. Bulk processing is a paid-plan feature; free-trial accounts receive 403 "Bulk processing is available on paid plans only". |
 | Start Sitemap Snapshot Job | `startSitemapSnapshotJob` | Submits a Sitemap Snapshot job, which captures every page listed for a site. Paid-plan feature; free-trial accounts get 403 "Sitemap Screenshot is available on paid plans only". |
 | Validate Billing Coupon | `validateBillingCoupon` | Checks a ScreenshotAPI promotional coupon code against the account's billing profile and returns the coupon's discount when it is valid. The endpoint always answers 200: an unusable code comes back as {"sucess":false,"coupon":null,"error":"Invalid coupon code"} (the misspelling of 'success' is the vendor's), so read the body rather than the status. |
+
+</details>
 
 ## Events
 

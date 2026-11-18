@@ -5,6 +5,8 @@ hidden: true
 
 # OpnForm
 
+<img src="../../.gitbook/assets/connectors/opnform.png" alt="OpnForm logo" width="64">
+
 OpnForm is an open-source form builder. This connector wraps the OpnForm Cloud REST API (https://api.opnform.com) covering forms, form submissions, form integrations (including outgoing webhooks), workspaces, workspace users and invites, form templates, public form viewing and answering, AI form generation and platform content endpoints.
 
 | | |
@@ -12,8 +14,6 @@ OpnForm is an open-source form builder. This connector wraps the OpnForm Cloud R
 | **Category** | [Productivity](README.md) |
 | **Website** | [opnform.com](https://opnform.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 52 |
-| **Events** | 1 |
 | **Slug** | `opnform` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OpnForm from **Build → Integrations → Connectors** and connect an accoun
 | Create Workspace | `createWorkspace` | Creates a new OpnForm workspace owned by the authenticated user, who becomes its admin. Returns { message, workspace_id, workspace }. Multiple workspaces require a Pro plan; on Free the API answers 403 'You have reached the workspace limit for Free plan.' Requires the 'workspaces-write' token ability. |
 | Delete Form | `deleteForm` | Permanently deletes an OpnForm form and all of its submissions. Returns a confirmation message. Requires the 'forms-write' token ability. |
 | Delete Form Integration | `deleteFormIntegration` | Removes an integration from a form, stopping it from running on future submissions. Requires the 'manage-integrations' token ability. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Form Submission | `deleteFormSubmission` | Permanently deletes a single submission from a form. Returns a confirmation message. Requires the 'forms-write' token ability. |
 | Delete Form Template | `deleteTemplate` | Permanently deletes a form template you own. Forms already created from it are unaffected. |
 | Delete Workspace | `deleteWorkspace` | Permanently deletes a workspace together with every form and submission it contains. Only a workspace admin may do this, and the call is irreversible. Returns { message, workspace_id }. Requires the 'workspaces-write' token ability. |
@@ -76,6 +83,8 @@ Add OpnForm from **Build → Integrations → Connectors** and connect an accoun
 | Update Workspace User Role | `updateWorkspaceUserRole` | Changes an existing workspace member's role between admin, user and readonly. Requires the 'workspace-users-write' token ability. |
 | Upload File | `uploadFile` | Uploads a text file to OpnForm's temporary storage as a multipart form-data 'file' part, returning the stored path to use as the answer to a form's file field. Supply the file name and its text content. For binary files (images, PDFs) use Create Signed Storage URL instead and PUT the bytes to S3 directly. |
 | Upload Form Asset | `uploadFormAsset` | Promotes a file already placed in OpnForm's temporary storage into permanent asset storage, returning the public asset URL to use as a form's logo_picture or cover_picture. Upload the file first with Upload File (or Create Signed Storage URL), then pass its uuid here - either the bare uuid, or 'name_{uuid}.{ext}' to keep a readable file name. Returns { message, url }. |
+
+</details>
 
 ## Events
 

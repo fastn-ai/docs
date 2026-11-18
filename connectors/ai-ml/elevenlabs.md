@@ -5,6 +5,8 @@ hidden: true
 
 # ElevenLabs
 
+<img src="../../.gitbook/assets/connectors/elevenlabs.png" alt="ElevenLabs logo" width="64">
+
 ElevenLabs AI audio API — text-to-speech, speech-to-text, voice changer (speech-to-speech), sound effects, voice design, voices/models/user management, history, dubbing, pronunciation dictionaries, and usage stats. Base URL https://api.elevenlabs.io.
 
 | | |
@@ -12,8 +14,6 @@ ElevenLabs AI audio API — text-to-speech, speech-to-text, voice changer (speec
 | **Category** | [AI and ML](README.md) |
 | **Website** | [elevenlabs.io](https://elevenlabs.io) |
 | **Authentication** | API key |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `elevenlabs` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ElevenLabs from **Build → Integrations → Connectors** and connect an acc
 | Design Voice (Text to Voice Preview) | `designVoice` | Generate candidate voice previews from a text description (voice design). Returns base64 audio previews + generated_voice_id values to use with Create Voice. COST: charges credits/characters for the preview generation. Keep text short to validate cheaply. |
 | Download History | `downloadHistory` | Download one or more history items as audio. A single ID returns one audio file; multiple IDs return a zip. FREE: no character cost. Returns binary. |
 | Edit Voice | `editVoice` | Update an existing voice's name, description, labels, or replace its sample files. Send multipart/form-data. FREE: no character cost. Returns { status }. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Edit Voice Settings | `editVoiceSettings` | Update the default settings (stability, similarity_boost, style, speed, use_speaker_boost) for a voice. FREE: no character cost. Returns { status }. |
 | Get Character Usage Stats | `getCharacterUsageStats` | Get character/credit usage metrics over a time window, optionally broken down by voice/model/etc. FREE: no character cost. start_unix/end_unix are UTC milliseconds. |
 | Get Dubbed Audio | `getDubbedAudio` | Download the dubbed audio/video for a completed dubbing job in a given language. FREE: no character cost. Returns binary. |
@@ -56,3 +63,5 @@ Add ElevenLabs from **Build → Integrations → Connectors** and connect an acc
 | Text to Speech (Convert) | `textToSpeech` | Convert text into speech audio with a chosen voice. Returns binary audio (application/octet-stream). Billed per character. COST: charges characters. To minimize cost when validating, use the cheapest model eleven_flash_v2_5 and a 1-2 word text (e.g. 'Hi'). |
 | Text to Speech Stream | `textToSpeechStream` | Stream synthesized speech as it is generated (text/event-stream of audio chunks). Lower time-to-first-byte for real-time playback. COST: charges characters. Cheapest model eleven_flash_v2_5; use a 1-2 word text to validate cheaply. |
 | Text to Speech with Timestamps | `textToSpeechWithTimestamps` | Convert text to speech and return JSON with base64 audio plus character-level timing alignment. Useful for captions/lip-sync. COST: charges characters. Cheapest model eleven_flash_v2_5; validate with a 1-2 word text. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Sentry
 
+<img src="../../.gitbook/assets/connectors/sentry.png" alt="Sentry logo" width="64">
+
 Sentry API v0 (default base https://sentry.io, configurable for self-hosted). Manage organizations, projects, issues (list/get/update/delete/assign/resolve), events, issue comments and tags, releases and deploys, teams, members, project client keys (DSNs), and service hooks (webhooks). Auth: Bearer auth token / internal integration token.
 
 | | |
@@ -12,8 +14,6 @@ Sentry API v0 (default base https://sentry.io, configurable for self-hosted). Ma
 | **Category** | [Developer tools](README.md) |
 | **Website** | [sentry.io](https://sentry.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 33 |
-| **Events** | 2 |
 | **Slug** | `sentry` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Sentry from **Build → Integrations → Connectors** and connect an account
 | Delete Project | `deleteProject` | Delete a project (DELETE /api/0/projects/{org}/{project}/). Returns 204. |
 | Delete Release | `deleteRelease` | Delete a release (DELETE /api/0/organizations/{org}/releases/{version}/). Returns 204. |
 | Delete Service Hook | `deleteServiceHook` | Delete a project service hook (DELETE /api/0/projects/{org}/{project}/hooks/{hookId}/). Returns 204. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Team | `deleteTeam` | Schedules a team for deletion in a Sentry organization. The team is marked pending deletion and removed asynchronously; its projects are not deleted and remain in the organization. Returns 204 No Content on success. |
 | Get Issue | `getIssue` | Get an issue by ID (GET /api/0/organizations/{org}/issues/{issueId}/). |
 | Get Issue Tag Values | `getIssueTagValues` | List values for a tag key on an issue (GET /api/0/organizations/{org}/issues/{issueId}/tags/{key}/values/). |
@@ -57,6 +64,8 @@ Add Sentry from **Build → Integrations → Connectors** and connect an account
 | Update Issue | `updateIssue` | Update an issue: resolve/ignore, assign, bookmark (PUT /api/0/organizations/{org}/issues/{issueId}/). |
 | Update Project | `updateProject` | Update a project (PUT /api/0/projects/{org}/{project}/). |
 | Update Release | `updateRelease` | Update a release (PUT /api/0/organizations/{org}/releases/{version}/). |
+
+</details>
 
 ## Events
 

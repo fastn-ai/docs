@@ -5,6 +5,8 @@ hidden: true
 
 # Airship
 
+<img src="../../.gitbook/assets/connectors/airship.png" alt="Airship logo" width="64">
+
 Airship (Urban Airship) customer engagement platform — send and schedule push notifications, manage channels and named users, segments, static lists, tags, attributes, subscription lists, automation, custom events, message center, templates, and reporting via the Airship Engage REST API.
 
 | | |
@@ -12,8 +14,6 @@ Airship (Urban Airship) customer engagement platform — send and schedule push 
 | **Category** | [Marketing](README.md) |
 | **Website** | [airship.com](https://airship.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 133 |
-| **Events** | 0 |
 | **Slug** | `airship` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Airship from **Build → Integrations → Connectors** and connect an accoun
 | Create Email Attachment | `createEmailAttachment` | Upload an attachment (base64-encoded) that can be referenced in email notifications. |
 | Create Experiment | `createExperiment` | Create an A/B test experiment with multiple message variants. |
 | Create Pipeline | `createPipeline` | Create an automation pipeline (automated message triggered by events or behavior). |
+
+<details>
+
+<summary>See 123 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Schedule | `createSchedule` | Schedule a push notification to be delivered at a specified time. |
 | Create Segment | `createSegment` | Create an audience segment from tag/attribute criteria. |
 | Create Static List | `createList` | Create a static list of channels or named users. |
@@ -157,3 +164,5 @@ Add Airship from **Build → Integrations → Connectors** and connect an accoun
 | Validate Pipeline | `validatePipeline` | Validate an automation pipeline definition without creating it. |
 | Validate Push | `validatePush` | Validate a push notification payload without sending it. |
 | Validate Template Push | `validateTemplatePush` | Validate a templated push without sending it. |
+
+</details>

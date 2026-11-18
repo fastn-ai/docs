@@ -5,6 +5,8 @@ hidden: true
 
 # Resend
 
+<img src="../../.gitbook/assets/connectors/resend.png" alt="Resend logo" width="64">
+
 Resend is the email platform for developers. Send transactional and marketing emails, manage domains, API keys, audiences, contacts, segments, topics, broadcasts, templates, automations, events and webhooks. — Public 2026-09-29: Send Email verified live (HTTP 200); other endpoints gated by a send-only API key, not a config defect.
 
 | | |
@@ -12,8 +14,6 @@ Resend is the email platform for developers. Send transactional and marketing em
 | **Category** | [Communication](README.md) |
 | **Website** | [resend.com](https://resend.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 83 |
-| **Events** | 17 |
 | **Slug** | `resend` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Resend from **Build → Integrations → Connectors** and connect an account
 | Create Contact Property | `createContactProperty` | Create a new custom contact property. |
 | Create Domain | `createDomain` | Create (register) a new sending domain. |
 | Create Event | `createEvent` | Create a custom event definition. |
+
+<details>
+
+<summary>See 73 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Segment | `createSegment` | Create a new segment. |
 | Create Template | `createTemplate` | Create a new email template. |
 | Create Topic | `createTopic` | Create a new topic for managing contact subscriptions. |
@@ -108,6 +115,8 @@ Add Resend from **Build → Integrations → Connectors** and connect an account
 | Update Webhook | `updateWebhook` | Update an existing webhook's endpoint, events or status. |
 | Verify Domain | `verifyDomain` | Trigger verification of an existing domain's DNS records. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -124,6 +133,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Email Clicked | `email.clicked` | The recipient clicked a link in the email (requires click tracking enabled). |
 | Email Complained | `email.complained` | The recipient marked the email as spam. |
 | Email Delivered | `email.delivered` | Resend successfully delivered the email to the recipient's mail server. |
+
+<details>
+
+<summary>See 7 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Email Delivery Delayed | `email.delivery_delayed` | The email couldn't be delivered to the recipient's mail server because of a temporary issue. |
 | Email Failed | `email.failed` | The email could not be sent due to a failure. |
 | Email Opened | `email.opened` | The recipient opened the email (requires open tracking enabled). |
@@ -131,3 +147,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Email Scheduled | `email.scheduled` | The email has been scheduled to be sent at a later time. |
 | Email Sent | `email.sent` | The API request was successful and Resend will attempt to deliver the message to the recipient's mail server. |
 | Email Suppressed | `email.suppressed` | The email was suppressed because the recipient is on the suppression list. |
+
+</details>

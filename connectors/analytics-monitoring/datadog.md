@@ -5,6 +5,8 @@ hidden: true
 
 # Datadog
 
+<img src="../../.gitbook/assets/connectors/datadog.png" alt="Datadog logo" width="64">
+
 Datadog monitoring and observability platform. Manage dashboards, monitors, downtimes, events, metrics, hosts, SLOs, tags, users, roles, notebooks, synthetics, and incidents via the Datadog v1 and v2 REST APIs.
 
 | | |
@@ -12,8 +14,6 @@ Datadog monitoring and observability platform. Manage dashboards, monitors, down
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [datadoghq.com](https://datadoghq.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 66 |
-| **Events** | 0 |
 | **Slug** | `datadog` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Datadog from **Build → Integrations → Connectors** and connect an accoun
 | Create Notebook | `createNotebook` | Creates a new notebook with the given name, cells, and global time settings (v1). |
 | Create SLO | `createSLO` | Creates a Service Level Objective (SLO). For monitor SLOs provide monitor_ids; for metric SLOs provide query with numerator and denominator (v1). |
 | Create Synthetic API Test | `createSyntheticApiTest` | Creates a new Synthetic API test with a request config, assertions, locations, and options (v1). |
+
+<details>
+
+<summary>See 56 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create User | `createUser` | Creates (invites) a new user in the organization by email (v2). |
 | Delete Dashboard | `deleteDashboard` | Deletes a dashboard by its ID. |
 | Delete Incident | `deleteIncident` | Deletes an incident by its ID (v2). Requires Incident Management. |
@@ -90,3 +97,5 @@ Add Datadog from **Build → Integrations → Connectors** and connect an accoun
 | Update User | `updateUser` | Updates a user's name by their ID (v2). |
 | Validate API Key | `validateApiKey` | Validates that the configured Datadog API key is valid. Returns {valid:true} on success. |
 | Validate Monitor | `validateMonitor` | Validates a monitor definition without creating it. Returns 200 with an empty body if the definition is valid. |
+
+</details>

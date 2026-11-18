@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Desk
 
+<img src="../../.gitbook/assets/connectors/zoho-desk.png" alt="Zoho Desk logo" width="64">
+
 Zoho Desk is Zoho's context-aware customer support / helpdesk ticketing platform. This connector provides access to Desk's REST API v1: tickets, threads/comments, contacts, accounts, agents, departments, teams, tasks, calls, custom views, business hours, holiday lists, and webhooks (notifications).
 
 | | |
@@ -12,8 +14,6 @@ Zoho Desk is Zoho's context-aware customer support / helpdesk ticketing platform
 | **Category** | [Other](README.md) |
 | **Website** | [zoho.com](https://zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 74 |
-| **Events** | 0 |
 | **Slug** | `zohoDesk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Desk from **Build → Integrations → Connectors** and connect an acco
 | Create Team | `createTeam` | Creates a new agent team. |
 | Create Ticket | `createTicket` | Creates a new support ticket. |
 | Create Ticket Task | `createTicketTask` | Creates a new task on a ticket. |
+
+<details>
+
+<summary>See 64 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | Creates a new outbound webhook that fires on a ticket/module event. |
 | Delete Account | `deleteAccount` | Deletes a customer account. |
 | Delete Business Hours | `deleteBusinessHours` | Deletes a business hours schedule. |
@@ -98,3 +105,5 @@ Add Zoho Desk from **Build → Integrations → Connectors** and connect an acco
 | Update Ticket | `updateTicket` | Updates fields on an existing ticket (status, priority, subject, assignee, etc). |
 | Update Ticket Comment | `updateTicketComment` | Updates the content of an existing ticket comment. |
 | Update Webhook | `updateWebhook` | Updates an existing outbound webhook. |
+
+</details>

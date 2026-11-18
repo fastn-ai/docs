@@ -5,6 +5,8 @@ hidden: true
 
 # Wafeq
 
+<img src="../../.gitbook/assets/connectors/wafeq.png" alt="Wafeq logo" width="64">
+
 Wafeq is cloud accounting software for the Middle East. This connector wraps the Wafeq Public API v1: invoices, simplified invoices, bills, quotes, purchase orders, credit and debit notes, payments, payment requests, expenses, contacts, items, accounts, bank accounts and transactions, manual journals, journal line items, employees, payslips, projects, cost centers, branches, warehouses, custom fields, files, tax rates, units of measure, amortizations, revenue recognitions and financial reports.
 
 | | |
@@ -12,8 +14,6 @@ Wafeq is cloud accounting software for the Middle East. This connector wraps the
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [wafeq.com](https://wafeq.com) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 264 |
-| **Events** | 0 |
 | **Slug** | `wafeq` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wafeq from **Build → Integrations → Connectors** and connect an account,
 | Create Bank Account | `bankAccountsCreate` | Create bank account. Endpoint for creating a new bank account. |
 | Create Bank Ledger Transaction | `bankAccountsLedgerTransactionsCreate` | Create bank ledger transaction. Endpoint for creating a new bank ledger transaction. |
 | Create Bank Statement Transaction | `bankAccountsStatementTransactionsCreate` | Create bank statement transaction. Endpoint for creating a new bank statement transaction. |
+
+<details>
+
+<summary>See 254 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Beneficiary | `beneficiariesCreate` | Create beneficiary. Endpoint for creating a new beneficiary. |
 | Create Bill | `billsCreate` | Create bill. Endpoint for creating a new bill. |
 | Create Bill Line Item | `billsLineItemsCreate` | Create bill line item. Endpoint for creating a new bill line item. |
@@ -288,3 +295,5 @@ Add Wafeq from **Build → Integrations → Connectors** and connect an account,
 | Update simplified invoice line item | `simplifiedInvoicesLineItemsUpdate` | Update simplified invoice line item. Endpoint for updating an existing simplified invoice line item. |
 | Update unit of measure | `unitsOfMeasureUpdate` | Update unit of measure. Endpoint for updating an existing unit of measure. |
 | Update warehouse | `warehousesUpdate` | Update warehouse. Endpoint for updating an existing warehouse. |
+
+</details>

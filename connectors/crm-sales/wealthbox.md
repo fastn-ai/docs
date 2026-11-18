@@ -5,6 +5,8 @@ hidden: true
 
 # Wealthbox
 
+<img src="../../.gitbook/assets/connectors/wealthbox.png" alt="Wealthbox logo" width="64">
+
 Wealthbox CRM — the CRM built for financial advisors and RIA firms. Wraps the Wealthbox v1 REST API at https://api.crmworkspace.com/v1 and covers contacts (people, households, organizations and trusts), household membership, tasks and subtasks, calendar events, opportunities with amounts and stages, projects, notes, comments, workflows, workflow templates and workflow steps, tags, custom fields, contact roles and every customizable category pick-list, plus users, teams and user groups and the firm-wide activity stream. Supports both a personal API access token (ACCESS_TOKEN header) and OAuth 2.0 authorization-code with refresh. Change detection is by polling: every list endpoint accepts updated_since/updated_before, contacts expose deleted/deleted_since tombstones, and the activity stream is a cursor-paginated change feed.
 
 | | |
@@ -12,8 +14,6 @@ Wealthbox CRM — the CRM built for financial advisors and RIA firms. Wraps the 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [wealthbox.com](https://wealthbox.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 51 |
-| **Events** | 0 |
 | **Slug** | `wealthbox` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wealthbox from **Build → Integrations → Connectors** and connect an acco
 | Create Task For Team | `createTaskForTeam` | Create a Wealthbox task assigned to a team rather than an individual. Requires name and due_date; assigned_to_team takes a team id (see List Teams). Otherwise identical to Create Task For User. |
 | Create Task For User | `createTaskForUser` | Create a Wealthbox task assigned to an individual user. Requires name and due_date; assigned_to takes a user id (see List Users). Link the task to contacts, projects or opportunities with linked_to, and attach subtasks and custom fields in the same call. To assign to a team instead, use Create Task For Team. |
 | Create Workflow | `createWorkflow` | Start a Wealthbox workflow from a workflow template. workflow_template is the template id (see List Workflow Templates). Link the workflow to a contact or other record with linked_to, schedule it with starts_at, and supply workflow_milestones for every milestone the template defines. |
+
+<details>
+
+<summary>See 41 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact | `deleteContact` | Delete a Wealthbox contact by id. Deleted contacts remain retrievable as tombstones through List Contacts with deleted=true, which returns id and deleted_at. |
 | Delete Event | `deleteEvent` | Delete a Wealthbox calendar event by id. |
 | Delete Opportunity | `deleteOpportunity` | Delete a Wealthbox opportunity by id. |
@@ -75,3 +82,5 @@ Add Wealthbox from **Build → Integrations → Connectors** and connect an acco
 | Update Project | `updateProject` | Update a Wealthbox project. The API requires name and description on every update, so send them even when unchanged. |
 | Update Task For Team | `updateTaskForTeam` | Update a Wealthbox task and assign it to a team. Set complete true to mark the task done. Fields you omit are not sent. |
 | Update Task For User | `updateTaskForUser` | Update a Wealthbox task and assign it to an individual user. Set complete true to mark the task done. Fields you omit are not sent. To assign to a team instead, use Update Task For Team. |
+
+</details>

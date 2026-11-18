@@ -5,6 +5,8 @@ hidden: true
 
 # npm Registry
 
+<img src="../../.gitbook/assets/connectors/npm-registry.png" alt="npm Registry logo" width="64">
+
 The npm Registry is the public JavaScript package registry. Search packages, get package metadata, versions and dist-tags, check versions against npm security advisories, and get download counts (totals, per day, per version, bulk). Public read APIs need no token.
 
 | | |
@@ -12,8 +14,6 @@ The npm Registry is the public JavaScript package registry. Search packages, get
 | **Category** | [Developer tools](README.md) |
 | **Website** | [npmjs.com](https://npmjs.com) |
 | **Authentication** | No authentication |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `npmRegistry` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add npm Registry from **Build → Integrations → Connectors** and connect an a
 | Get Package Version | `getPackageVersion` | Get the manifest of one version of a package, or of a dist-tag such as latest (GET /{package}/{version}). Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md |
 | Get Total Downloads | `getTotalDownloads` | Get total downloads of all npm packages for a period (GET /downloads/point/{period}). Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md |
 | Get Version Downloads Last Week | `getVersionDownloads` | Get downloads per version of a package for the previous 7 days (GET /versions/{package}/last-week). Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Packages | `searchPackages` | Search packages by text with optional weighting of quality, popularity and maintenance (GET /-/v1/search). Text supports qualifiers like author:, maintainer:, keywords:, scope:, not:unstable, is:insecure. Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md |
+
+</details>

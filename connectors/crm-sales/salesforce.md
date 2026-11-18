@@ -5,6 +5,8 @@ hidden: true
 
 # Salesforce
 
+<img src="../../.gitbook/assets/connectors/salesforce.png" alt="Salesforce logo" width="64">
+
 Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, Cases, and Tasks via the Salesforce REST API.
 
 | | |
@@ -12,8 +14,6 @@ Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [salesforce.com](https://salesforce.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 226 |
-| **Events** | 42 |
 | **Slug** | `salesforce` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Salesforce from **Build → Integrations → Connectors** and connect an acc
 | Create Account | `createAccount` | Create a new Salesforce Account. Every provided field is sent as the JSON body. The org's duplicate rules can reject a near-duplicate Name with DUPLICATES_DETECTED. Returns {id, success, errors} with HTTP 201. |
 | Create Apex Class | `createApexClass` | Create an Apex class in the org via the Tooling API. Pass the full class source as Body; Salesforce extracts the class name from the declaration. Use to provision a webhook-emitting Apex helper before binding it to a trigger. |
 | Create Apex Trigger | `createApexTrigger` | Create an Apex trigger via the Tooling API. Provide the trigger Name, the sObject it targets (TableEnumOrId), and the full trigger source (Body). Used to wire a webhook-emitting Apex class to record insert/update/delete events. |
+
+<details>
+
+<summary>See 216 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Asset | `createAsset` | Create an Asset (a purchased/installed product). Required: Name, AccountId. |
 | Create Attachment | `createAttachment` | Create a legacy Attachment on a parent record. Required: ParentId, Name, Body (base64-encoded file content). ContentType sets the MIME type (otherwise Salesforce infers it); IsPrivate true hides it from everyone but the owner and admins. Every provided field is sent as-is in the JSON body. For new integrations prefer createContentVersion (Files). Returns {id, success, errors}. |
 | Create Bulk Ingest Job | `createBulkIngestJob` | Create a Bulk API 2.0 ingest job for inserting, updating, upserting, or deleting records via CSV. All provided inputs are sent as the JSON body (contentType defaults to CSV). For operation upsert, externalIdFieldName is required by Salesforce. Returns the job metadata including the job id and contentUrl; next call uploadBulkIngestData, then closeBulkIngestJob. |
@@ -251,6 +258,8 @@ Add Salesforce from **Build → Integrations → Connectors** and connect an acc
 | Upsert Record by External Id | `upsertRecord` | Upsert a record by an external Id field (PATCH sobjects/{sobject}/{externalIdField}/{externalId}). Pass sobject, externalIdField, externalId (all consumed by the URL); pass each field value as a TOP-LEVEL property. Works with any idLookup field, including Id and Contact.Email. Send at least one field; an empty body is rejected by Salesforce with JSON_PARSER_ERROR. Returns 201 {id, success, errors, created:true} on create and 200 {..., created:false} on update. |
 | Upsert Records Collection | `upsertRecordsCollection` | Upsert up to 200 records of one sObject type in a single request via the sObject Collections API, matching on an external Id field (or Id). Records that match are updated, others are created. Each record must include attributes:{type} and the external Id field value. Returns a bare array of per-record results [{id, success, created, errors}]. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -267,6 +276,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Attachment Deleted | `attachment.deleted` | Fires after an Attachment record is deleted. |
 | Attachment Updated | `attachment.updated` | Fires after an Attachment record is updated. |
 | Case Created | `case.created` | Fires after a new Case record is inserted. |
+
+<details>
+
+<summary>See 32 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Case Deleted | `case.deleted` | Fires after a Case record is deleted. |
 | Case Updated | `case.updated` | Fires after a Case record is updated. |
 | Contact Created | `contact.created` | Fires after a new Contact record is inserted. |
@@ -299,3 +315,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task Created | `task.created` | Fires after a new Task record is inserted. |
 | Task Deleted | `task.deleted` | Fires after a Task record is deleted. |
 | Task Updated | `task.updated` | Fires after a Task record is updated. |
+
+</details>

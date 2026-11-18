@@ -5,6 +5,8 @@ hidden: true
 
 # Jira
 
+<img src="../../.gitbook/assets/connectors/jira.png" alt="Jira logo" width="64">
+
 Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk ops, comments, worklogs, attachments, links, remote links, watchers, votes), Projects (components, versions, categories, roles, types), Users/Groups/Permissions, Fields & custom field options, Issue types/Statuses/Priorities/Resolutions/Labels, Filters & sharing, Dashboards, Time tracking, dynamic Webhooks, plus the Jira Software Agile API (boards, sprints, epics, backlog). Platform REST v3 + Agile 1.0 via api.atlassian.com (OAuth 2.0 3LO).
 
 | | |
@@ -12,8 +14,6 @@ Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk o
 | **Category** | [Project management](README.md) |
 | **Website** | [atlassian.com](https://atlassian.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 647 |
-| **Events** | 8 |
 | **Slug** | `jira` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Jira from **Build → Integrations → Connectors** and connect an account, 
 | Add Gadget To Dashboard | `addGadget` | Adds a gadget to a dashboard. Provide either moduleKey or uri (not both). |
 | Add Issue Security Level Members | `addIssueSecurityLevelMembers` | Adds members to an issue security level. Requires Administer Jira global permission. |
 | Add Issue Security Levels | `addSecurityLevels` | Adds levels and levels' members to the issue security scheme. Requires Administer Jira global permission. |
+
+<details>
+
+<summary>See 637 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Issue Types To Context | `addIssueTypesToContext` | Adds issue types to a custom field context, making the context apply to those issue types. PUT /rest/api/3/field/{fieldId}/context/{contextId}/issuetype. Returns 204 on success. |
 | Add Issue Types To Issue Type Scheme | `addIssueTypesToIssueTypeScheme` | Adds issue types to an issue type scheme. PUT /rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype |
 | Add Notifications to Notification Scheme | `addNotificationsToScheme` | Adds notifications to a notification scheme. Requires Administer Jira global permission. |
@@ -671,6 +678,8 @@ Add Jira from **Build → Integrations → Connectors** and connect an account, 
 | Update Worklog | `updateWorklog` | Update a worklog on an issue. The comment field is Atlassian Document Format (ADF). |
 | Validate Create Workflows | `validateCreateWorkflows` | Validates a workflow creation request without executing it. Returns validation errors if any. |
 | Validate Update Workflows | `validateUpdateWorkflows` | Validates a workflow update request without executing it. |
+
+</details>
 
 ## Events
 

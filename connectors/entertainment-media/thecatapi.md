@@ -5,6 +5,8 @@ hidden: true
 
 # The Cat API
 
+<img src="../../.gitbook/assets/connectors/thecatapi.png" alt="The Cat API logo" width="64">
+
 The Cat API ("Cat as a Service") gives access to thousands of cat images, cat breed data, and, for authenticated users, the ability to upload images, tag breeds on images, favourite images, and vote on images.
 
 | | |
@@ -12,8 +14,6 @@ The Cat API ("Cat as a Service") gives access to thousands of cat images, cat br
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [thecatapi.com](https://thecatapi.com) |
 | **Authentication** | API key |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `thecatapi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add The Cat API from **Build → Integrations → Connectors** and connect an ac
 | Get Facts About a Breed | `getBreedFacts` | Returns one or more facts about a given breed. This is a premium feature of The Cat API and requires an upgraded/paid account; a free API key returns a 401 'premium feature' error. |
 | Get Favourite by ID | `getFavouriteById` | Fetches a single favourite record by its id, including the favourited image. |
 | Get Image Analysis | `getImageAnalysis` | Returns the raw computer-vision analysis results (object/label detections and moderation labels) for a previously uploaded image. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Image by ID | `getImageById` | Fetches a single cat image's metadata (URL, dimensions, and breed data if attached) by its image id. |
 | Get Random Cat Facts | `getRandomFacts` | Returns one or more random facts about cats. This is a premium feature of The Cat API and requires an upgraded/paid account; a free API key returns a 401 'premium feature' error. |
 | Get Vote by ID | `getVoteById` | Fetches a single vote record by its id, including the voted-on image. |
@@ -47,3 +54,5 @@ Add The Cat API from **Build → Integrations → Connectors** and connect an ac
 | Search Cat Images | `searchImages` | Searches for cat images, or returns a random selection if no filters are given. With an API key you can page through approved images in the order they were added using order and page. |
 | Tag a Breed on an Image | `tagImageBreed` | Tags a breed onto one of your own uploaded images, for now you can only tag your own images. |
 | Upload an Image | `uploadImage` | Uploads a new cat image file to your account. Optionally tag it with breed ids and a sub_id to segment images by your own end users. |
+
+</details>

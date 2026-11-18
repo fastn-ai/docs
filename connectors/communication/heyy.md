@@ -5,6 +5,8 @@ hidden: true
 
 # Heyy
 
+<img src="../../.gitbook/assets/connectors/heyy.png" alt="Heyy logo" width="64">
+
 Heyy customer-messaging platform (api.heyy.io v3). Manage contacts, labels, custom attributes, chats, channels, message templates, campaigns, journeys, automations, teams, files and API webhooks, and send WhatsApp/omnichannel messages.
 
 | | |
@@ -12,8 +14,6 @@ Heyy customer-messaging platform (api.heyy.io v3). Manage contacts, labels, cust
 | **Category** | [Communication](README.md) |
 | **Website** | [heyy.io](https://heyy.io) |
 | **Authentication** | API key |
-| **Actions** | 72 |
-| **Events** | 0 |
 | **Slug** | `heyy` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Heyy from **Build → Integrations → Connectors** and connect an account, 
 | Create Attribute | `createAttribute` | Define a new custom contact attribute of type text, number, single_select, multi_select, date or datetime, with visibility flags and (for select types) its options. |
 | Create Campaign | `createCampaign` | Create an outbound campaign that runs an existing automation against a recipient list, optionally scheduled or recurring. Creating a campaign does not send anything until Start Campaign is called. |
 | Create Contact | `createContact` | Create a contact from a first/last name, phone number, email, custom attribute values and labels. Fails if a contact with the same phone number or email already exists - use Upsert Contact to create-or-update. |
+
+<details>
+
+<summary>See 62 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Label | `createLabel` | Create a label with a name and a hex colour, for tagging contacts and chats. |
 | Create Message Template | `createMessageTemplate` | Submit a new WhatsApp message template on a channel, with its body/header/footer/buttons and vendor details (language and category). The template then goes to WhatsApp for approval. |
 | Create Team | `createTeam` | Create an agent team with a name, an emoji/icon and an optional list of member user ids. Requires a Heyy plan that includes Teams. |
@@ -96,3 +103,5 @@ Add Heyy from **Build → Integrations → Connectors** and connect an account, 
 | Update Team | `updateTeam` | Update an agent team's name, icon or member list. The users array replaces the existing membership. Requires a Heyy plan that includes Teams. |
 | Upload File | `uploadFile` | Upload a text-based file (document, image, video or audio classification) to Heyy's asset store so it can be attached to messages or templates. Returns the new file id and a time-limited download URL. Note: Heyy has no delete-file endpoint, so an uploaded file cannot be removed via the API. |
 | Upsert Contact | `upsertContact` | Create a contact, or update the existing one that matches the supplied phone number or email. Returns the resulting contact record. |
+
+</details>

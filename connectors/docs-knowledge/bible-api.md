@@ -12,8 +12,6 @@ bible-api.com is a free JSON API for Bible verses and passages in 16 public-doma
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [bible-api.com](https://bible-api.com) |
 | **Authentication** | No authentication |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `bibleApi` |
 
 ## Use it

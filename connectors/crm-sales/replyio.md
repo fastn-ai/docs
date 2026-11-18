@@ -5,6 +5,8 @@ hidden: true
 
 # Reply.io
 
+<img src="../../.gitbook/assets/connectors/replyio.png" alt="Reply.io logo" width="64">
+
 Reply.io sales engagement platform. Manage contacts, contact lists, custom fields, multichannel sequences (email/LinkedIn/calls/tasks), sequence steps and contacts, email templates, email/LinkedIn accounts, tasks, schedules, holiday calendars, unified inbox, reporting, blacklist rules, email validation, and webhooks via the Reply v3 REST API (plus legacy v1 campaigns).
 
 | | |
@@ -12,8 +14,6 @@ Reply.io sales engagement platform. Manage contacts, contact lists, custom field
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [reply.io](https://reply.io) |
 | **Authentication** | API key |
-| **Actions** | 108 |
-| **Events** | 0 |
 | **Slug** | `replyio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Reply.io from **Build → Integrations → Connectors** and connect an accou
 | Change Sequence Owner | `updateSequenceOwner` | Change the owner of a sequence. |
 | Clone Email Template | `cloneEmailTemplate` | Clone an existing email template. |
 | Complete Task | `completeTask` | Mark a single task as completed, optionally recording a call resolution and finishing the contact in its sequence. Reply rejects a body-less request, so finishProspectInSequence must always be supplied. |
+
+<details>
+
+<summary>See 98 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Contact | `createContact` | Create a contact in Reply. Company name, company size and industry live on the linked account, not the contact - pass accountId to link one. Free-text notes are added with the Add Contact Note action, not here. |
 | Create Contact List | `createContactList` | Create a new contact list. |
 | Create Custom Field | `createCustomField` | Create a custom contact field. 'title' is the field name/label (required). fieldType is text or number. 'metadata' is optional extra config. Set orgWide to make it available org-wide. |
@@ -132,3 +139,5 @@ Add Reply.io from **Build → Integrations → Connectors** and connect an accou
 | Update Sequence Step | `updateSequenceStep` | Update a sequence step. Same body shape as create. |
 | Update Task | `updateTask` | Replace an OPEN task in full (status 'new'). Reply.io only allows updating open tasks: a completed, failed or otherwise closed task returns 404 'Task not found or insufficient permissions' even though Get Task still returns it with 200. taskType, startAt, dueTo and the template body must be sent every time - omitted fields are cleared, not preserved. |
 | Update Webhook | `updateWebhook` | Update a webhook subscription (eventType, url, scope, payloadConfig). |
+
+</details>

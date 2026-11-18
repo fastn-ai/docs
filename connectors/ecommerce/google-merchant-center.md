@@ -5,6 +5,8 @@ hidden: true
 
 # Google Merchant Center
 
+<img src="../../.gitbook/assets/connectors/google-merchant-center.png" alt="Google Merchant Center logo" width="64">
+
 Google Merchant Center connector for the Content API for Shopping v2.1 — manage products, product statuses, inventory, orders, accounts, tax, shipping settings, datafeeds, POS, reports, return policies, regions, and promotions.
 
 | | |
@@ -12,8 +14,6 @@ Google Merchant Center connector for the Content API for Shopping v2.1 — manag
 | **Category** | [E-commerce](README.md) |
 | **Website** | [shoppingcontent.googleapis.com](https://shoppingcontent.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 164 |
-| **Events** | 0 |
 | **Slug** | `googleMerchantCenter` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Merchant Center from **Build → Integrations → Connectors** and co
 | Batch Datafeeds | `custombatchDatafeeds` | Deletes, fetches, gets, inserts, and updates multiple datafeeds in a single request. |
 | Batch LIA Settings | `custombatchLiaSettings` | Retrieves and/or updates the LIA settings of multiple accounts in a single request. |
 | Batch Local Inventory | `custombatchLocalInventory` | Updates local inventory for multiple products or stores in a single request. |
+
+<details>
+
+<summary>See 154 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Batch POS | `custombatchPos` | Batches multiple POS-related calls in a single request. |
 | Batch Product Statuses | `custombatchProductStatuses` | Gets the statuses of multiple products in a single request. |
 | Batch Products | `custombatchProducts` | Retrieves, inserts, and deletes multiple products in a single request. |
@@ -188,3 +195,5 @@ Add Google Merchant Center from **Build → Integrations → Connectors** and co
 | Update Shipment | `updateShipment` | Updates a shipment's status, carrier, and/or tracking ID for an order. |
 | Update Shipping Settings | `updateShippingSettings` | Updates the shipping settings of the specified Merchant Center account. This method supports full resource replacement. |
 | Verify Phone Number | `verifyPhoneNumber` | Validates a verification code that was sent to the merchant to verify their phone number. |
+
+</details>

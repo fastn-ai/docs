@@ -5,6 +5,8 @@ hidden: true
 
 # OneSignal
 
+<img src="../../.gitbook/assets/connectors/onesignal.png" alt="OneSignal logo" width="64">
+
 OneSignal customer engagement platform — send push notifications, emails, SMS, and Live Activities; manage users, subscriptions, aliases, segments, templates, custom events, outcomes, apps, and API keys via the OneSignal REST API.
 
 | | |
@@ -12,8 +14,6 @@ OneSignal customer engagement platform — send push notifications, emails, SMS,
 | **Category** | [Marketing](README.md) |
 | **Website** | [onesignal.com](https://onesignal.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 44 |
-| **Events** | 0 |
 | **Slug** | `onesignal` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OneSignal from **Build → Integrations → Connectors** and connect an acco
 | Create Message | `createNotification` | Send a push notification, email, or SMS through OneSignal. Target by segments, aliases, subscription IDs, or filters, and compose content, buttons, media, and scheduling options. |
 | Create Segment | `createSegment` | Create a segment in the OneSignal app using targeting filters. |
 | Create Subscription | `createSubscription` | Create a new subscription (push, email, or SMS channel) for a user identified by an alias label and value. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Template | `createTemplate` | Create a reusable message template in the OneSignal app. |
 | Create User | `createUser` | Create a user in the OneSignal app with identity aliases, custom properties, and subscriptions (push, email, or SMS). |
 | Delete Alias | `deleteAlias` | Delete a specific identity alias from a user. |
@@ -68,3 +75,5 @@ Add OneSignal from **Build → Integrations → Connectors** and connect an acco
 | View Template | `viewTemplate` | Retrieve the details of a single template by its template ID. |
 | View Templates | `viewTemplates` | Retrieve all message templates in the OneSignal app, with pagination. |
 | View User | `getUser` | Retrieve a user by an alias label and value (e.g. external_id), including their identity, properties, and subscriptions. |
+
+</details>

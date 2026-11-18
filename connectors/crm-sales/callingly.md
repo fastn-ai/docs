@@ -5,6 +5,8 @@ hidden: true
 
 # Callingly
 
+<img src="../../.gitbook/assets/connectors/callingly.png" alt="Callingly logo" width="64">
+
 Callingly is a lead response and speed-to-lead calling platform that instantly connects new inbound leads with available sales agents by phone and SMS. This connector covers the full Callingly REST API (v1): calls, leads, SMS, teams, team agent routing and caps, agents (users) and their availability schedules, agency client accounts, and outbound webhook subscriptions for call completed, lead created and lead updated events. Authenticates with a Callingly API key sent as a Bearer token.
 
 | | |
@@ -12,8 +14,6 @@ Callingly is a lead response and speed-to-lead calling platform that instantly c
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [callingly.com](https://callingly.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 32 |
-| **Events** | 4 |
 | **Slug** | `callingly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Callingly from **Build → Integrations → Connectors** and connect an acco
 | Delete Lead | `deleteLead` | Deletes a lead from Callingly. |
 | Delete Webhook | `deleteWebhook` | Deletes a Callingly webhook subscription so its target URL stops receiving events. |
 | Get Agent | `getAgent` | Retrieves a single Callingly agent (user) by id, including contact details, timezone, do-not-disturb flag and availability. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Agent Schedule | `getAgentSchedule` | Retrieves an agent's weekly availability schedule in Callingly, with the available time windows for each day of the week. |
 | Get Call | `getCall` | Retrieves a single Callingly call by id, including status, lead outcome, duration, recording and waveform URLs, transcript, the agent, the lead and the team. |
 | Get Lead | `getLead` | Retrieves a single Callingly lead by id, including contact details, status, result, team, tags, stage, scheduled call time and whether calling is stopped or the lead is blocked. |
@@ -56,6 +63,8 @@ Add Callingly from **Build → Integrations → Connectors** and connect an acco
 | Update Team Agent Settings | `updateTeamAgentSettings` | Updates an agent's routing priority and lead cap within a specific Callingly team. |
 | Update Team Agents | `updateTeamAgents` | Replaces the set of agents assigned to a Callingly team. Agents not included in the list are removed from the team, so always pass the complete list of agent ids. |
 | Update Webhook | `updateWebhook` | Partially updates a Callingly webhook subscription. Only the fields you pass are changed; when changing any event-specific filter (direction, call status, lead status, team, number, field or filter) also pass the webhook's event, because Callingly validates filters against the event in the same request. |
+
+</details>
 
 ## Events
 

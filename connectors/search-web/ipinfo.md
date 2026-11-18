@@ -5,6 +5,8 @@ hidden: true
 
 # IPinfo
 
+<img src="../../.gitbook/assets/connectors/ipinfo.png" alt="IPinfo logo" width="64">
+
 IPinfo.io provides IP address data - geolocation, hostname, and ASN/organization information - for a specific IP, the caller's own IP, an ASN, or a batch of IPs in one call.
 
 | | |
@@ -12,8 +14,6 @@ IPinfo.io provides IP address data - geolocation, hostname, and ASN/organization
 | **Category** | [Search and web](README.md) |
 | **Website** | [ipinfo.io](https://ipinfo.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `ipinfo` |
 
 ## Use it

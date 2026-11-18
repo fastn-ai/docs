@@ -5,6 +5,8 @@ hidden: true
 
 # Endorsal
 
+<img src="../../.gitbook/assets/connectors/endorsal.png" alt="Endorsal logo" width="64">
+
 Endorsal is testimonial and review collection software. This connector wraps the Endorsal Public REST API v1 (https://api.endorsal.io) and covers testimonials, contacts, tags, widgets, the Wall of Love, AutoRequest campaigns and properties.
 
 | | |
@@ -12,8 +14,6 @@ Endorsal is testimonial and review collection software. This connector wraps the
 | **Category** | [Marketing](README.md) |
 | **Website** | [endorsal.io](https://endorsal.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 31 |
-| **Events** | 1 |
 | **Slug** | `endorsal` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Endorsal from **Build → Integrations → Connectors** and connect an accou
 | Delete Testimonial | `deleteTestimonial` | Permanently delete an Endorsal testimonial by id. This cannot be undone. Returns a confirmation message. |
 | Get AutoRequest Campaign | `getCampaign` | Retrieve a single Endorsal AutoRequest campaign by id, including its delivery channel, live state, include and exclude rules and the message sequence it sends. Read-only. |
 | Get Contact | `getContact` | Retrieve a single Endorsal contact by its id, including custom attributes and engagement activity timestamps such as when the contact was last contacted, opened or clicked a request. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Property | `getProperty` | Retrieve a single Endorsal property by id, returning its name, domain and owning user id. Undocumented but live route. The API key is scoped to one property; requesting another property's id returns HTTP 200 with success=false and 'Invalid credentials'. |
 | Get Tag | `getTag` | Retrieve a single Endorsal tag or product tag by its id. Returns the Tag object with name, type, slug, description, image, link and sku. |
 | Get Testimonial | `getTestimonial` | Retrieve a single Endorsal testimonial by its id. Returns the full Testimonial object including rating, comments, avatar image URLs, approval state, featured flag, tag ids and the linked contact id. |
@@ -55,6 +62,8 @@ Add Endorsal from **Build → Integrations → Connectors** and connect an accou
 | Update Contact | `updateContact` | Update an existing Endorsal contact. Supply only the keys you want to change inside the fields object. Returns a confirmation message; follow with Get Contact to read the new values. |
 | Update Tag | `updateTag` | Update an existing Endorsal tag or product tag. Supply only the keys you want to change inside the fields object. Returns a confirmation message; follow with Get Tag to read the new values. |
 | Update Testimonial | `updateTestimonial` | Update an existing Endorsal testimonial. Supply only the fields you want to change inside the fields object, for example to approve a testimonial (approved = 1) or feature it (featured = 1). Returns a confirmation message rather than the updated object; follow with Get Testimonial to read the new values. |
+
+</details>
 
 ## Events
 

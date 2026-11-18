@@ -5,6 +5,8 @@ hidden: true
 
 # Cin7 Core
 
+<img src="../../.gitbook/assets/connectors/cin7core.jpg" alt="Cin7 Core logo" width="64">
+
 Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing, production and accounting management. Wraps the Cin7 Core External API V2 (https://inventory.dearsystems.com/externalapi/v2/).
 
 | | |
@@ -12,8 +14,6 @@ Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing, prod
 | **Category** | [E-commerce](README.md) |
 | **Website** | [dearsystems.com](https://dearsystems.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 306 |
-| **Events** | 32 |
 | **Slug** | `cin7core` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cin7 Core from **Build → Integrations → Connectors** and connect an acco
 | Create Advanced Purchase Manual Journal | `createAdvancedPurchaseManualJournal` | Create/update Advanced Purchase Manual Journal. POST /advanced-purchase/manualJournal. Body (JSON string): TaskID, Status (DRAFT\|AUTHORISED), Lines [{Reference,Amount,Date,Debit,Credit}]. IsSystem lines cannot be modified. |
 | Create Advanced Purchase Payment | `createAdvancedPurchasePayment` | Create an Advanced Purchase Payment/Prepayment/Refund. POST /advanced-purchase/payment. Body (JSON string): TaskID, Type (PREPAYMENT\|PAYMENT\|REFUND), Amount, DatePaid, Account, CurrencyRate, Reference, DepositID. |
 | Create Advanced Purchase Put Away | `createAdvancedPurchasePutAway` | Create an Advanced Purchase Put Away task. POST /advanced-purchase/put-away. Body (JSON string): PurchaseID, TaskID, Status (DRAFT\|AUTHORISED), Lines [{Date,Quantity,ProductID,SKU,Name,LocationID,Location,Received,BatchSN,SupplierSKU,ExpiryDate}]. |
+
+<details>
+
+<summary>See 296 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Advanced Purchase Stock Received | `createAdvancedPurchaseStock` | Create Advanced Purchase Stock Received task. POST /advanced-purchase/stock. Pass each field as its own input (the body is built from them). Required: PurchaseID, Status (DRAFT\|AUTHORISED), Lines [{Date,Quantity,ProductID,SKU,Name,LocationID,Location,Received,BatchSN,SupplierSKU,ExpiryDate}]. Optional: TaskID (the stock receiving task to add to or update). |
 | Create Attribute Set | `createAttributeSet` | Create an attribute set. POST /ref/attributeset. Pass the full JSON object as a string in body. Fields: Name (string, required), Attribute1Name..Attribute10Name (string), Attribute1Type..Attribute10Type (string: List, Checkbox, Text, Not used), Attribute1Values..Attribute10Values (string, comma-separated for List type). |
 | Create Bank Transfer | `createBankTransfer` | Create a Bank Transfer. Pass full JSON object as string in 'body'. Fields: Status(req DRAFT\|COMPLETED), FromAccount(req), ToAccount(req), FromAmount(req), ToAmount(req), Date(req), CurrencyConversionRate, Reference, Note. |
@@ -331,6 +338,8 @@ Add Cin7 Core from **Build → Integrations → Connectors** and connect an acco
 | Void Stock Take | `voidStockTake` | Void or Undo a Stock Take by ID. Set Void=true to void, false to undo. |
 | Void Stock Transfer | `voidStockTransfer` | Void or undo a Stock Transfer. DELETE /stockTransfer?ID=&Void=. Required: ID. Void defaults to true (voids the record); pass Void=false to undo it back to DRAFT. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -347,6 +356,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Opportunity Voided | `Opportunity/Voided` | Fires when a CRM opportunity is voided. |
 | Product Updated | `Product/Updated` | Fires when a product is created or updated. |
 | Purchase Credit Note Authorised | `Purchase/CreditNoteAuthorised` | Fires when a purchase credit note is authorised. |
+
+<details>
+
+<summary>See 22 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Purchase Invoice Authorised | `Purchase/InvoiceAuthorised` | Fires when a purchase invoice is authorised. |
 | Purchase Order Authorised | `Purchase/OrderAuthorised` | Fires when a purchase order is authorised. |
 | Purchase Stock Received Authorised | `Purchase/StockReceivedAuthorised` | Fires when purchase stock receipt is authorised. |
@@ -369,3 +385,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Sale Voided | `Sale/Voided` | Fires when a sale is voided/cancelled. |
 | Supplier Updated | `Supplier/Updated` | Fires when a supplier record is created or updated. |
 | Task Overdue | `Task/Overdue` | Fires when a CRM task becomes overdue. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # iLovePDF
 
+<img src="../../.gitbook/assets/connectors/ilovepdf.png" alt="iLovePDF logo" width="64">
+
 iLovePDF / iLoveAPI REST API v1 — PDF and image processing (merge, split, compress, OCR, convert, watermark, protect, edit, …) and electronic signature requests. Two-stage auth: the stored project public key mints a short-lived (1 hour) JWT via POST /v1/auth; that JWT must be passed as the `jwt` input to every other action. Task work runs on a per-task worker host returned by Start, passed as the `server` input.
 
 | | |
@@ -12,8 +14,6 @@ iLovePDF / iLoveAPI REST API v1 — PDF and image processing (merge, split, comp
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [ilovepdf.com](https://ilovepdf.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 24 |
-| **Events** | 4 |
 | **Slug** | `ilovepdf` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add iLovePDF from **Build → Integrations → Connectors** and connect an accou
 | Download Task Files | `downloadTaskFiles` | STEP 4 of the processing workflow. Downloads the output of a processed task. A single output file is served directly; multiple outputs are served as a ZIP. Binary body is returned by the engine as a base64 envelope. Requires the task to be in TaskSuccess; a waiting or empty task returns 400 DownloadError. |
 | Fix Receiver Email | `fixReceiverEmail` | Corrects a receiver's email address after a delivery failure and re-sends the invitation to the new address. Returns the updated receiver. |
 | Fix Signer Phone | `fixSignerPhone` | Corrects a signer's mobile number after an SMS delivery failure. Digits only, international prefix first and no punctuation (e.g. 34737105892). Only applies to receivers of type signer. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account Info | `getAccountInfo` | Returns the project's remaining credit balance. Useful as a cheap connection health check. |
 | Get Auth Token | `getAuthToken` | STEP 0 of every iLovePDF call. Exchanges the stored project public key for a short-lived signed JWT (valid 3660 seconds / ~1 hour). Returns { token }. Pass that token as the `jwt` input of every other action in this connector — the engine cannot chain calls, so the caller must carry it. |
 | Get Receiver Info | `getReceiverInfo` | Returns one receiver (signer, validator or witness) of a signature request by that receiver's own token: name, email, phone, type, status and notes. |
@@ -48,6 +55,8 @@ Add iLovePDF from **Build → Integrations → Connectors** and connect an accou
 | Start Task In Region | `startTaskInRegion` | Same as Start Task but pins the task to a data-residency region (eu or us). Returns the regional worker host and task id. |
 | Upload File From URL | `uploadFileFromUrl` | STEP 2 of the processing workflow. Adds a file to an existing task by fetching it from a publicly reachable URL (`cloud_file`). Returns the `server_filename` to reference in Process. Consumes no credits. NOTE: the same route also accepts a local binary multipart upload (fields file / chunk / chunks); the fastn engine cannot emit binary multipart parts, so use a public URL instead. |
 | Void Signature Request | `voidSignatureRequest` | Voids a signature request that is currently in progress. Once voided it is no longer accessible to any receiver. Returns the full signature object with status voided. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Mapflow
 
+<img src="../../.gitbook/assets/connectors/mapflow.png" alt="Mapflow logo" width="64">
+
 Mapflow is an AI mapping platform that extracts buildings, roads, forests and other features from satellite and aerial imagery. This connector covers the Mapflow Processing API and Data API: projects, processings and their results, cost estimation, processing history, custom imagery mosaics and images, storage usage, the satellite imagery catalog and account status.
 
 | | |
@@ -12,8 +14,6 @@ Mapflow is an AI mapping platform that extracts buildings, roads, forests and ot
 | **Category** | [Maps and location](README.md) |
 | **Website** | [mapflow.ai](https://mapflow.ai) |
 | **Authentication** | Basic auth |
-| **Actions** | 30 |
-| **Events** | 0 |
 | **Slug** | `mapflow` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mapflow from **Build → Integrations → Connectors** and connect an accoun
 | Delete Project | `deleteProject` | Deletes a project by its identifier. Processings that belong to the project are removed with it, so confirm the project is empty before calling this. |
 | Download Processing Results | `downloadProcessingResults` | Downloads a finished processing's results as a GeoJSON file. Optionally filter the output to a single area of interest by passing its identifier. The engine returns the file as a reference whose data is the base64-encoded GeoJSON FeatureCollection. |
 | Get Default Project | `getDefaultProject` | Retrieves the account's default project, the container Mapflow uses for processings that are not assigned to a project of their own. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Image | `getImage` | Retrieves detailed metadata for one uploaded image, including its raster properties, footprint and cloud-optimised GeoTIFF link. |
 | Get Image Preview | `getImagePreview` | Retrieves a JPEG thumbnail of an uploaded image, either small (256 x 256) or large (1024 x 1024). The image is returned as a file reference. |
 | Get Mosaic | `getMosaic` | Retrieves one imagery mosaic by its identifier, with its tags, combined footprint, stored size, tile layer URLs and a per-status summary of the images it contains. |
@@ -54,3 +61,5 @@ Add Mapflow from **Build → Integrations → Connectors** and connect an accoun
 | Update Mosaic | `updateMosaic` | Updates a mosaic's name and tags. A supplied tag list replaces the existing one. |
 | Update Processing | `updateProcessing` | Renames a processing, changes its description, or moves it to another project. Only the fields supplied are sent. |
 | Update Project | `updateProject` | Updates a project's name and description. Only the fields supplied are sent, so untouched fields keep their current values. |
+
+</details>

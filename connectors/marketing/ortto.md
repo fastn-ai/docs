@@ -5,6 +5,8 @@ hidden: true
 
 # Ortto
 
+<img src="../../.gitbook/assets/connectors/ortto.png" alt="Ortto logo" width="64">
+
 Ortto is an AI-native customer data platform (CDP) and marketing automation tool. This connector covers people/contacts, accounts (organizations), audiences, custom fields, custom activities and definitions, tags, campaigns, transactional email and push, reports, Talk conversations, knowledge base, and business fields via the Ortto public API (ap3api).
 
 | | |
@@ -12,8 +14,6 @@ Ortto is an AI-native customer data platform (CDP) and marketing automation tool
 | **Category** | [Marketing](README.md) |
 | **Website** | [ortto.com](https://ortto.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 54 |
-| **Events** | 0 |
 | **Slug** | `ortto` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ortto from **Build → Integrations → Connectors** and connect an account,
 | Create Business Field | `createBusinessField` | Creates a custom business field (company-level profile field) in Ortto's CDP. |
 | Create Custom Activity Definition | `createActivityDefinition` | Creates a custom activity definition (schema) in Ortto's CDP, including its attributes and display style. |
 | Create Custom Activity Event | `createActivityEvent` | Creates one or more custom activity events against people in Ortto's CDP. Each activity references an activity_id (act:cm:...), attributes keyed by field IDs, and person fields for matching. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create or Update Accounts | `mergeAccounts` | Creates or updates one or more account (organization) records in Ortto's CDP. Account fields use org field IDs (e.g. str:o:name, int:o:employees, geo:o:country). Also used to tag/untag accounts via tags and unset_tags. |
 | Create or Update People | `mergePerson` | Creates or updates one or more person (contact) records in Ortto's CDP using a merge strategy. Person fields use Ortto field IDs (e.g. str::first, str::last, str::email, phn::phone, geo::city, bol::p). |
 | Create Person Custom Field | `createPersonCustomField` | Creates a custom field on the person (contact) object in Ortto's CDP. single_select and multi_select types require the values array. |
@@ -78,3 +85,5 @@ Add Ortto from **Build → Integrations → Connectors** and connect an account,
 | Update Business Field | `updateBusinessField` | Updates the value of a business field in Ortto's CDP by its field ID. |
 | Update Contact Email Address | `updateContactEmail` | Updates a contact's email address by merging on the person ID with overwrite strategy. Provide the person's str::person_id and the new str::email in each people item. |
 | Update Person Custom Field | `updatePersonCustomField` | Updates a single_select or multi_select custom field on the person object by replacing, appending or removing option values. |
+
+</details>

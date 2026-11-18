@@ -5,6 +5,8 @@ hidden: true
 
 # NinjaPipe
 
+<img src="../../.gitbook/assets/connectors/ninjapipe.png" alt="NinjaPipe logo" width="64">
+
 NinjaPipe is an all-in-one CRM for small businesses. This connector wraps the NinjaPipe REST API to manage contacts and contact activities, client portal access, deals, products, projects and tasks, general tasks, orders, budgets and expenses, lists and list members, and workspace members.
 
 | | |
@@ -12,8 +14,6 @@ NinjaPipe is an all-in-one CRM for small businesses. This connector wraps the Ni
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [ninjapipe.com](https://ninjapipe.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `ninjapipe` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add NinjaPipe from **Build → Integrations → Connectors** and connect an acco
 | Create List | `createList` | Creates a contact or company list in NinjaPipe. |
 | Create Order | `createOrder` | Creates an order in NinjaPipe for a customer, optionally linked to a contact, with totals, status, payment status, dates and line items. |
 | Create Product | `createProduct` | Creates a product or service in the NinjaPipe catalog. The SKU must be unique within the workspace. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project | `createProject` | Creates a project in NinjaPipe with status, priority, due date, team, tags and optional metadata such as a linked contact. |
 | Create Project Task | `createProjectTask` | Creates a task, or a subtask when parent_id is set, inside a NinjaPipe project. |
 | Delete Budget | `deleteBudget` | Deletes a NinjaPipe budget by its ID. |
@@ -88,3 +95,5 @@ Add NinjaPipe from **Build → Integrations → Connectors** and connect an acco
 | Update Product | `updateProduct` | Updates a NinjaPipe product. Only the fields you pass are changed. |
 | Update Project | `updateProject` | Updates a NinjaPipe project. All fields are optional; pass due_date as null to clear it. |
 | Update Project Task | `updateProjectTask` | Updates a task within a NinjaPipe project. Setting parent_id to a descendant returns a TASK_PARENT_CYCLE conflict. |
+
+</details>

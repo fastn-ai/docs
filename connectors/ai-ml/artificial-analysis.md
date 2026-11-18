@@ -5,6 +5,8 @@ hidden: true
 
 # Artificial Analysis
 
+<img src="../../.gitbook/assets/connectors/artificial-analysis.png" alt="Artificial Analysis logo" width="64">
+
 Artificial Analysis provides independent benchmarks of AI models. This connector covers the free Artificial Analysis Data API: LLM intelligence, speed and pricing metrics, and Elo leaderboards for text-to-image, image-editing, text-to-speech, text-to-video and image-to-video models, plus the CritPt benchmark batch evaluation endpoint for approved research accounts.
 
 | | |
@@ -12,8 +14,6 @@ Artificial Analysis provides independent benchmarks of AI models. This connector
 | **Category** | [AI and ML](README.md) |
 | **Website** | [artificialanalysis.ai](https://artificialanalysis.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `artificialAnalysis` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # Postmark
 
+<img src="../../.gitbook/assets/connectors/postmark.png" alt="Postmark logo" width="64">
+
 Postmark transactional email API (base https://api.postmarkapp.com). Send single/batch email (raw or with templates), manage bounces, templates, message streams, suppressions, outbound/inbound messages, opens/clicks, delivery & engagement stats, webhooks, and data removals (all via the Server Token, header X-Postmark-Server-Token). Account-level operations — servers, domains (DKIM/return-path), and sender signatures — require the Account Token (header X-Postmark-Account-Token); supply it as the accountToken credential and it is injected on those actions. Requires Accept and Content-Type application/json.
 
 | | |
@@ -12,8 +14,6 @@ Postmark transactional email API (base https://api.postmarkapp.com). Send single
 | **Category** | [Communication](README.md) |
 | **Website** | [postmarkapp.com](https://postmarkapp.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 84 |
-| **Events** | 0 |
 | **Slug** | `postmark` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Postmark from **Build → Integrations → Connectors** and connect an accou
 | Create Sender Signature | `createSenderSignature` | Create a sender signature. ACCOUNT-LEVEL: requires the Account Token. FromEmail and Name required. |
 | Create Server | `createServer` | Create a new server. ACCOUNT-LEVEL: requires the Account Token. Name required; DeliveryType (Live/Sandbox) is immutable after creation. |
 | Create Suppression | `createSuppression` | Suppress one or more recipient addresses on a message stream (max 50). Server-level. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Template | `createTemplate` | Create a template or layout. Name required; provide HtmlBody and/or TextBody; Subject required for Standard templates. Server-level. |
 | Create Webhook | `createWebhook` | Create a webhook for delivery/bounce/open/click/spam/subscription events. Url required. Server-level. |
 | Delete Domain | `deleteDomain` | Delete a domain by ID. ACCOUNT-LEVEL: requires the Account Token. |
@@ -108,3 +115,5 @@ Add Postmark from **Build → Integrations → Connectors** and connect an accou
 | Verify Domain DKIM | `verifyDomainDkim` | Trigger DKIM verification for a domain. ACCOUNT-LEVEL: requires the Account Token. |
 | Verify Domain Return-Path | `verifyDomainReturnPath` | Trigger return-path verification for a domain. ACCOUNT-LEVEL: requires the Account Token. |
 | Verify Webhook | `verifyWebhook` | Test a webhook endpoint for each enabled event type. If every enabled event returns 200 the webhook is marked verified, otherwise unverified (and it won't receive events). Server-level. |
+
+</details>

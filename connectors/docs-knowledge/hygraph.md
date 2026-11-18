@@ -5,6 +5,8 @@ hidden: true
 
 # Hygraph
 
+<img src="../../.gitbook/assets/connectors/hygraph.png" alt="Hygraph logo" width="64">
+
 Hygraph headless CMS. GraphQL Management API for schema management (models, fields, enumerations, components, stages, locales, taxonomies), webhooks, and permanent auth tokens, plus Content API access. Auth via a Permanent Auth Token (Bearer).
 
 | | |
@@ -12,8 +14,6 @@ Hygraph headless CMS. GraphQL Management API for schema management (models, fiel
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [hygraph.com](https://hygraph.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `hygraph` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Hygraph from **Build → Integrations → Connectors** and connect an accoun
 | Create Relational Field | `createRelationalField` | Add a relation or asset-reference field to a model. Runs as an asynchronous schema migration. Provide variables.data with modelId, type (RELATION or ASSET), apiId, displayName, isList, and reverseSide (the related modelId and optional reverse field). |
 | Create Simple Field | `createSimpleField` | Add a scalar field (STRING, INT, FLOAT, BOOLEAN, DATETIME, DATE, JSON, RICHTEXT, LOCATION, COLOR, ID) to a model or component. Runs as an asynchronous schema migration. Provide variables.data with modelId (or parentId for a component), apiId, type, displayName, and the required boolean flags. |
 | Create Stage | `createStage` | Create a new content stage in an environment. Runs as an asynchronous schema migration. Provide variables.data with environmentId, apiId, displayName, and colorPaletteId. Note: free plans are limited to two stages (Draft, Published). |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Taxonomy | `createTaxonomy` | Create a new taxonomy in an environment. Runs as an asynchronous schema migration. Provide variables.data with environmentId, apiId, and displayName. |
 | Create Webhook | `createWebhook` | Register a webhook that fires on content events. Provide variables.data with environmentId, name, url, isActive, includePayload, models (array of model IDs, empty for all), stages (array of stage IDs), triggerType CONTENT_MODEL, and triggerActions (CREATE, UPDATE, DELETE, PUBLISH, UNPUBLISH, TRANSITION_STEP). |
 | Delete Component | `deleteComponent` | Delete a component definition by ID. Runs as an asynchronous schema migration. Provide variables.data.id. |
@@ -55,3 +62,5 @@ Add Hygraph from **Build → Integrations → Connectors** and connect an accoun
 | Update Model | `updateModel` | Update an existing content model's API IDs, display name, or description. Runs as an asynchronous schema migration. Provide variables.data with the model id and the fields to change. |
 | Update Simple Field | `updateSimpleField` | Update an existing scalar field's properties (display name, description, required/unique/list flags, etc.). Runs as an asynchronous schema migration. Provide variables.data with the field id. |
 | Update Webhook | `updateWebhook` | Update an existing webhook's configuration (URL, active state, trigger actions, scoped models/stages, etc.). Provide variables.data with the webhookId and the fields to change. |
+
+</details>

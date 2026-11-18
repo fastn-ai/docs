@@ -5,6 +5,8 @@ hidden: true
 
 # ChartMogul
 
+<img src="../../.gitbook/assets/connectors/chart-mogul.png" alt="ChartMogul logo" width="64">
+
 ChartMogul is a subscription analytics and revenue reporting platform for SaaS businesses. This connector covers the full ChartMogul REST API v1: account details, data sources, customers with custom attributes, tags, contacts and activities, plans and plan groups, invoices and invoice line items, transactions, subscriptions and subscription events, notes and call logs, opportunities, tasks, activities and activity exports, the Import API for pushing billing data, and all key metrics endpoints including MRR, ARR, ARPA, ASP, LTV, customer count and churn rates.
 
 | | |
@@ -12,8 +14,6 @@ ChartMogul is a subscription analytics and revenue reporting platform for SaaS b
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [chartmogul.com](https://chartmogul.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 105 |
-| **Events** | 1 |
 | **Slug** | `chartMogul` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ChartMogul from **Build → Integrations → Connectors** and connect an acc
 | Create Activities Export | `createActivitiesExport` | Requests the creation of an activities export. The export is generated asynchronously, so save the returned export ID and poll Retrieve Activities Export until the download URL becomes available. |
 | Create Contact | `createContact` | Creates a contact person against an existing ChartMogul customer. |
 | Create Customer | `createCustomer` | Creates a customer in ChartMogul under the specified data source, optionally with tags, custom attributes and a primary contact. |
+
+<details>
+
+<summary>See 95 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Line Item | `createLineItem` | Adds a line item to an existing invoice identified by its ChartMogul UUID. |
 | Create Line Item by External ID | `createLineItemByExternalId` | Adds a line item to an invoice identified by your own external invoice ID rather than its ChartMogul UUID. |
 | Create Note or Call Log | `createNoteOrCallLog` | Creates a note or a call log against a customer in ChartMogul CRM. |
@@ -129,6 +136,8 @@ Add ChartMogul from **Build → Integrations → Connectors** and connect an acc
 | Update Subscription Event | `updateSubscriptionEvent` | Updates a subscription event, identified either by its ChartMogul ID or by data source UUID plus your external event ID. |
 | Update Task | `updateTask` | Updates the supplied fields on an existing CRM task, for example to reassign it or mark it complete. |
 | Update Transaction | `updateTransaction` | Updates the supplied fields on an existing payment or refund transaction. |
+
+</details>
 
 ## Events
 

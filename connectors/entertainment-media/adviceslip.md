@@ -5,6 +5,8 @@ hidden: true
 
 # Advice Slip API
 
+<img src="../../.gitbook/assets/connectors/adviceslip.png" alt="Advice Slip API logo" width="64">
+
 Advice Slip API is a free, public, keyless service that returns short pieces of fortune-cookie style advice. Supports fetching a random advice slip, fetching a specific slip by its numeric id, and searching slips by keyword.
 
 | | |
@@ -12,8 +14,6 @@ Advice Slip API is a free, public, keyless service that returns short pieces of 
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [api.adviceslip.com](https://api.adviceslip.com) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `adviceslip` |
 
 ## Use it

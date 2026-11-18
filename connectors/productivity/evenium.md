@@ -5,6 +5,8 @@ hidden: true
 
 # Evenium
 
+<img src="../../.gitbook/assets/connectors/evenium.png" alt="Evenium logo" width="64">
+
 Evenium event registration and ticketing platform (Evenium Net / ConnectMe). Manage events, guests, participants, tickets, documents, sponsors, alerts, badges and the organisation-wide contact book through the Evenium REST API v1 at https://secure.evenium.com/api/1/.
 
 | | |
@@ -12,8 +14,6 @@ Evenium event registration and ticketing platform (Evenium Net / ConnectMe). Man
 | **Category** | [Productivity](README.md) |
 | **Website** | [evenium.com](https://evenium.com) |
 | **Authentication** | API key |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `evenium` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Evenium from **Build → Integrations → Connectors** and connect an accoun
 | Delete Contact | `deleteContact` | Delete a contact from the Evenium account contact book. Returns the deleted contact's id. A subsequent Get Contact for that id answers 404 CONTACT_NOT_FOUND. Do not delete the contact that represents the account owner - it is the organiser record of every event. |
 | Delete Event Guest | `deleteEventGuest` | Remove a guest from an Evenium event, identified by CONTACT id. Evenium answers 204 No Content with an empty body; confirm with Get Event Guest, which then answers 404 GUEST_NOT_FOUND. The underlying contact stays in the account contact book - only the event guest record is removed. |
 | Delete Event Logo | `deleteEventLogo` | Remove the logo image from an Evenium event's public site. Returns the full updated event. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Event Badges PDF | `generateEventBadgesPdf` | Generate the printable attendee badge sheet for an Evenium event as a PDF. The endpoint produces application/pdf only and rejects Accept: application/json. It returns a zero-byte PDF when the event has no badge template - badge templates are designed in the Evenium Net web app, not through the API. |
 | Get Contact | `getContact` | Retrieve one contact from the Evenium account contact book by numeric contact id. |
 | Get Event | `getEvent` | Retrieve a single Evenium event by its numeric id, including its dates, status, join code, public website URL, location and configuration fields. |
@@ -61,3 +68,5 @@ Add Evenium from **Build → Integrations → Connectors** and connect an accoun
 | Update Event | `updateEvent` | Update an existing Evenium event. Send only the fields you want to change; omitted fields are left untouched. Returns the full updated event. Note: Evenium accepts a status field but silently ignores it - the event lifecycle status cannot be changed through this endpoint, and there is no delete endpoint for events. |
 | Update Event Guest | `updateEventGuest` | Update one guest of an Evenium event, identified by CONTACT id. Send only the fields to change. Returns the full updated guest. Evenium rejects a status value here with REQUEST_ERROR - registration status is driven by the attendee's own registration and by ticket purchase, not by this endpoint. |
 | Upload Guest Photo | `uploadGuestPhoto` | Upload a profile photo for an event guest as a multipart file part. The part must be named "photo" - Evenium rejects any other part name with REQUEST_ERROR. Supply the raw image bytes in photoData and a matching boundary. Returns the updated guest. |
+
+</details>

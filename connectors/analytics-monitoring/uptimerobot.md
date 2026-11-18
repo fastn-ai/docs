@@ -5,6 +5,8 @@ hidden: true
 
 # UptimeRobot
 
+<img src="../../.gitbook/assets/connectors/uptimerobot.png" alt="UptimeRobot logo" width="64">
+
 UptimeRobot monitors websites, APIs, ports, and cron jobs for uptime and downtime, and sends alerts when a monitor goes down. This connector wraps UptimeRobot's v2 REST API, which is POST-only with a form-urlencoded body carrying the API key, covering monitors, alert contacts, maintenance windows, public status pages, and account details.
 
 | | |
@@ -12,8 +14,6 @@ UptimeRobot monitors websites, APIs, ports, and cron jobs for uptime and downtim
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [uptimerobot.com](https://uptimerobot.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 18 |
-| **Events** | 0 |
 | **Slug** | `uptimerobot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add UptimeRobot from **Build → Integrations → Connectors** and connect an ac
 | Delete Public Status Page | `deletePSP` | Permanently delete a public status page by id. |
 | Edit Alert Contact | `editAlertContact` | Rename an existing alert contact by id. UptimeRobot's editAlertContact endpoint also accepts optional type/value changes, but this connector only supports friendly_name: UptimeRobot's API rejects other templated fields when sent empty, and this connector's form-urlencoded body cannot conditionally omit a field the caller did not supply. |
 | Edit Maintenance Window | `editMWindow` | Rename an existing maintenance window by id. Note: this account's Free plan does not include Maintenance Windows, so no real window exists to edit - live-tested against a non-existent id and UptimeRobot returned a real not_found error ("Maintenance Window"), confirming the endpoint and request wiring are correct even though this account cannot hold real maintenance-window data without a paid plan. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Edit Monitor | `editMonitor` | Update a monitor's friendly name, URL, and pause/resume status. UptimeRobot's editMonitor endpoint treats all of these as optional, but this connector requires them together: UptimeRobot's API rejects any templated field sent with an empty value, and this connector's form-urlencoded body cannot conditionally omit a field the caller did not supply. Fetch the monitor's current values first with Get Monitors and pass through any field you do not want to change. |
 | Edit Public Status Page | `editPSP` | Rename an existing public status page by id. UptimeRobot's editPSP endpoint also accepts an optional url change, but this connector only supports friendly_name: UptimeRobot's API rejects other templated fields when sent empty, and this connector's form-urlencoded body cannot conditionally omit a field the caller did not supply. |
 | Get Account Details | `getAccountDetails` | Retrieve the connected UptimeRobot account's details: email, monitor limit, check interval, monitor counts by status, and subscription info. |
@@ -42,3 +49,5 @@ Add UptimeRobot from **Build → Integrations → Connectors** and connect an ac
 | Get Monitors | `getMonitors` | List all monitors on the account (up to 50 per page, UptimeRobot's default and maximum page size), with each monitor's id, friendly name, URL, type, status, interval, and timeout. Note: UptimeRobot's optional filter/detail-inclusion parameters (offset, limit, search, types, statuses, logs, ssl, alert_contacts, mwindows, response_times, custom_http_headers, etc.) are not exposed on this action - UptimeRobot's v2 API rejects any of these parameters when sent as an empty value, and this connector's form-urlencoded body template cannot conditionally omit a field the caller did not supply, so only the always-present api_key/format fields are templated (verified live: templating limit, types, or logs with no value each produced a real stat:fail invalid_parameter error). |
 | Get Public Status Pages | `getPSPs` | List all public status pages configured on the account, with each page's id, friendly name, and public status-page URL. |
 | Reset Monitor | `resetMonitor` | Reset a monitor's uptime/downtime statistics and event log, starting its history over from now. |
+
+</details>

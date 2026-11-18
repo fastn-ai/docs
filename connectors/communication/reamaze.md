@@ -5,6 +5,8 @@ hidden: true
 
 # Re:amaze
 
+<img src="../../.gitbook/assets/connectors/reamaze.png" alt="Re:amaze logo" width="64">
+
 Re:amaze is a helpdesk and customer messaging platform for support teams, combining a shared inbox, live chat, FAQ knowledge base, and status page. This connector covers the Re:amaze JSON API v1: conversations, messages, contacts, contact identities and notes, help articles, channels, staff, response templates, satisfaction ratings, reports, and status page incidents and systems.
 
 | | |
@@ -12,8 +14,6 @@ Re:amaze is a helpdesk and customer messaging platform for support teams, combin
 | **Category** | [Communication](README.md) |
 | **Website** | [reamaze.com](https://reamaze.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 42 |
-| **Events** | 0 |
 | **Slug** | `reamaze` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Re:amaze from **Build → Integrations → Connectors** and connect an accou
 | Create Message | `createMessage` | Adds a message or internal note to an existing conversation. Set Visibility to 1 to write an internal note, and use the suppression flags to avoid notifying customers. |
 | Create Response Template | `createResponseTemplate` | Creates a response template (saved reply) for the brand, or a personal template when the authenticated user has access to personal templates. |
 | Create Staff User | `createStaff` | Creates a staff user on the Re:amaze account with a temporary password, which the user is asked to change at first login. No invitation email is sent. Adding a staff user can change the account's subscription cost. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact Note | `deleteContactNote` | Deletes a note from a contact, identified by the contact's email address or phone number and the note ID. Returns the note that was deleted. |
 | Get Article | `getArticle` | Retrieves a single help article by its slug, including its body, visibility, author and topic. |
 | Get Channel | `getChannel` | Retrieves a single channel by its slug, including its type, visibility and reply settings. |
@@ -66,3 +73,5 @@ Add Re:amaze from **Build → Integrations → Connectors** and connect an accou
 | Update Conversation | `updateConversation` | Updates an existing conversation: its status, tags, assignee, custom data, or the channel and brand it belongs to. |
 | Update Incident | `updateIncident` | Updates a status page incident, which is also how a new update is appended to the incident's timeline and how affected systems are moved back to operational. |
 | Update Response Template | `updateResponseTemplate` | Updates the name, body or personal flag of an existing response template, identified by its numeric ID. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Twilio
 
+<img src="../../.gitbook/assets/connectors/twilio.png" alt="Twilio logo" width="64">
+
 Twilio communications API — send SMS/MMS, place voice calls, manage phone numbers, phone-number lookup, identity verification, and messaging services. Classic REST API (2010-04-01) plus Lookup v2, Verify v2, and Messaging v1.
 
 | | |
@@ -12,8 +14,6 @@ Twilio communications API — send SMS/MMS, place voice calls, manage phone numb
 | **Category** | [Communication](README.md) |
 | **Website** | [twilio.com](https://twilio.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `twilio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Twilio from **Build → Integrations → Connectors** and connect an account
 | Delete Message | `deleteMessage` | Delete a message and its media from the logs. Returns 204 No Content. |
 | Delete Messaging Service | `deleteMessagingService` | Delete a Messaging Service. Returns 204. |
 | Delete Recording | `deleteRecording` | Delete a recording. Returns 204. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account | `getAccount` | Fetch the authenticating account's details. Cheapest free read — ideal for connection validation. |
 | Get Call | `getCall` | Fetch a single call by its SID. |
 | Get Incoming Phone Number | `getIncomingPhoneNumber` | Fetch a single owned phone number by SID. |
@@ -53,3 +60,5 @@ Add Twilio from **Build → Integrations → Connectors** and connect an account
 | Start Verification | `startVerification` | Send a verification token to a recipient via a Verify service. Provide To and Channel. Body is form-urlencoded. |
 | Update Call | `updateCall` | Update a live call to end it (Status=completed/canceled) or redirect it (Url). Body is form-urlencoded. |
 | Update Incoming Phone Number | `updateIncomingPhoneNumber` | Update configuration of an owned phone number (friendly name, voice/SMS URLs). Body is form-urlencoded. |
+
+</details>

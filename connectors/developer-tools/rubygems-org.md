@@ -5,6 +5,8 @@ hidden: true
 
 # RubyGems.org
 
+<img src="../../.gitbook/assets/connectors/rubygems-org.png" alt="RubyGems.org logo" width="64">
+
 RubyGems.org is the Ruby community's gem hosting service. Its free public API gets gem and version details, searches and autocompletes gems, lists versions, reverse dependencies, file checksums, sigstore attestations, owners, user profiles, download counts and new or updated gems. No API key needed for these read endpoints.
 
 | | |
@@ -12,8 +14,6 @@ RubyGems.org is the Ruby community's gem hosting service. Its free public API ge
 | **Category** | [Developer tools](README.md) |
 | **Website** | [rubygems.org](https://rubygems.org) |
 | **Authentication** | No authentication |
-| **Actions** | 18 |
-| **Events** | 0 |
 | **Slug** | `rubygemsOrg` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add RubyGems.org from **Build → Integrations → Connectors** and connect an a
 | Get Version Downloads | `getVersionDownloads` | Get total downloads of a gem and of one of its versions (GET /api/v1/downloads/{gem}-{version}.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
 | List Gem Attestations | `listGemAttestations` | Get the sigstore attestation bundles published with a gem version; empty when none (GET /api/v1/attestations/{gem}-{version}.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
 | List Gem Owners | `listGemOwners` | List the owners and maintainers of a gem (GET /api/v1/gems/{gem}/owners.json). E-mail appears only when public. Docs: https://guides.rubygems.org/rubygems-org-api/ |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Gem Versions | `listGemVersions` | List every version of a gem with authors, build/created dates, downloads, platform, Ruby/RubyGems requirements, prerelease flag and SHA (GET /api/v1/versions/{gem}.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
 | List Most Downloaded Versions | `listTopDownloads` | List the 50 most downloaded gem versions, each as a [version record, download count] pair (GET /api/v1/downloads/all.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
 | List Newest Gems | `listLatestGems` | List the 50 gems most recently added to RubyGems.org for the first time (GET /api/v1/activity/latest.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
@@ -42,3 +49,5 @@ Add RubyGems.org from **Build → Integrations → Connectors** and connect an a
 | List Reverse Dependencies | `listReverseDependencies` | List gems whose latest version depends on a gem, optionally only runtime or development dependants (GET /api/v1/gems/{gem}/reverse_dependencies.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
 | List Versions In Timeframe | `listTimeframeVersions` | List gem versions created between two times (max 7-day span), 30 per page (GET /api/v1/timeframe_versions.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
 | Search Gems | `searchGems` | Search active gems like the site search; 30 results per page (GET /api/v1/search.json). Docs: https://guides.rubygems.org/rubygems-org-api/ |
+
+</details>

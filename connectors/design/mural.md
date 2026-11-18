@@ -5,6 +5,8 @@ hidden: true
 
 # Mural
 
+<img src="../../.gitbook/assets/connectors/mural.png" alt="Mural logo" width="64">
+
 Mural visual collaboration API. Manage murals and their content (sticky notes, textboxes, titles, shapes, images, files, comments, areas, arrows and tables), rooms and folders, workspaces, templates, tags, voting sessions, timers, private mode, visitor settings, exports and member permissions.
 
 | | |
@@ -12,8 +14,6 @@ Mural visual collaboration API. Manage murals and their content (sticky notes, t
 | **Category** | [Design](README.md) |
 | **Website** | [mural.co](https://mural.co) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 87 |
-| **Events** | 0 |
 | **Slug** | `mural` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mural from **Build → Integrations → Connectors** and connect an account,
 | Create Mural | `createMural` | Create a mural in a room owned by the authenticated user. Authorization scope: murals:write |
 | Create Mural From Template | `createMuralFromTemplate` | Create a mural in a room based on a template. Authorization scope: murals:write |
 | Create Mural Tag | `createMuralTag` | Create a tag in a mural. Tag text is limited to 25 characters. Authorization scope: murals:write |
+
+<details>
+
+<summary>See 77 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Room | `createRoom` | Create a room in a workspace that the authenticated user has write access to. Authorization scope: rooms:write |
 | Create Room Folder | `createRoomFolder` | Creates a new folder in a room that the authenticated user has write access to. Authorization scope: rooms:write |
 | Create Shape Widgets | `createShapeWidget` | Create one or more shape widgets on a mural. Limit 1000. Authorization scope: murals:write |
@@ -111,3 +118,5 @@ Add Mural from **Build → Integrations → Connectors** and connect an account,
 | Update Textbox | `updateTextbox` | Update a textbox widget on a mural. Authorization scope: murals:write |
 | Update Title | `updateTitle` | Update a title widget on a mural. Authorization scope: murals:write |
 | Vote For Widget In Voting Session | `voteWidgetMuralVotingSession` | Submit a vote for a widget in the active voting session of a mural. Required authorization scope: murals:write |
+
+</details>

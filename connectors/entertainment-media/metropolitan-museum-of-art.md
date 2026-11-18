@@ -5,6 +5,8 @@ hidden: true
 
 # Metropolitan Museum of Art
 
+<img src="../../.gitbook/assets/connectors/metropolitan-museum-of-art.png" alt="Metropolitan Museum of Art logo" width="64">
+
 The Metropolitan Museum of Art Collection API: free, keyless access to 470,000+ open-access artwork records - search the collection, list object ids by department or update date, read full object records with images, artists and dates, and list curatorial departments.
 
 | | |
@@ -12,8 +14,6 @@ The Metropolitan Museum of Art Collection API: free, keyless access to 470,000+ 
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [metmuseum.org](https://metmuseum.org) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `metropolitanMuseumOfArt` |
 
 ## Use it

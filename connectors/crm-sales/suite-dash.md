@@ -5,6 +5,8 @@ hidden: true
 
 # SuiteDash
 
+<img src="../../.gitbook/assets/connectors/suite-dash.png" alt="SuiteDash logo" width="64">
+
 SuiteDash is an all-in-one white-label client portal, CRM and business management platform. This connector wraps the SuiteDash Secure API (v1, https://app.suitedash.com/secure-api): CRM contacts (list with creation date filters, find by UID or email, create, update), CRM companies (list, find by UID or name, create with an optional primary contact, update), projects (list, find by UID, exact name, name substring or most recent, update), attribute metadata for contacts, companies and projects including custom fields, marketing audience subscriptions, and Worlds (WORLDS Power-up). Authentication uses the Public ID and Secret Key from Manage Account &gt; Secure API, sent as the X-Public-ID and X-Secret-Key headers.
 
 | | |
@@ -12,8 +14,6 @@ SuiteDash is an all-in-one white-label client portal, CRM and business managemen
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [suitedash.com](https://suitedash.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 16 |
-| **Events** | 8 |
 | **Slug** | `suiteDash` |
 
 ## Use it
@@ -34,12 +34,21 @@ Add SuiteDash from **Build → Integrations → Connectors** and connect an acco
 | Get Project Meta Attributes | `getProjectMetaAttributes` | Retrieves metadata for every SuiteDash project attribute: type, format, required and nullable flags, allowed values, field label and which operations (read, create, update) accept it. |
 | List Companies | `listCompanies` | Lists SuiteDash CRM companies (idle companies are excluded), 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by created or name, and optional attribute metadata. |
 | List Contacts | `listContacts` | Lists SuiteDash CRM contacts, 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by created or name, and optional attribute metadata. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Projects | `listProjects` | Lists SuiteDash projects, 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by name, created, start date or end date, and optional attribute metadata. |
 | List Worlds | `listWorlds` | Lists SuiteDash Worlds, 10 per page, ordered by key, title or created. Only available on accounts with the WORLDS Power-up. |
 | Subscribe Contacts To Marketing Audiences | `subscribeContactsToMarketingAudiences` | Subscribes one or more contacts (by email, with optional first and last name) to SuiteDash marketing audiences by audience ID. The top-level success is false if any item failed; per-item results and errors are returned in data. Subscribed contacts can receive that audience's marketing emails. |
 | Update Company | `updateCompany` | Updates a SuiteDash CRM company identified by UID or exact name: name, phones, category, website, address, tags, background info, quizzes, community membership, Worlds and public, private or target custom fields. Only the fields you pass are changed. |
 | Update Contact | `updateContact` | Updates a SuiteDash CRM contact identified by UID or email: name, emails, phones, title, website, address, company (optionally creating it), tags, circles, Worlds, background info, notes, quizzes, community membership and custom fields. Only the fields you pass are changed; send_welcome_email sends the portal welcome email only if it was never sent. |
 | Update Project | `updateProject` | Updates a SuiteDash project located by type (uid, name, contains_the_following or most_recent) and identifier: name, status (a value from Categories &gt; Project Statuses), start date, estimated completion date, due time, staff and client information, economics (business sector, estimated value and currency, time tracking requirement) and project custom fields. |
+
+</details>
 
 ## Events
 

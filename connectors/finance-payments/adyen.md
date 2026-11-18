@@ -5,6 +5,8 @@ hidden: true
 
 # Adyen
 
+<img src="../../.gitbook/assets/connectors/adyen.png" alt="Adyen logo" width="64">
+
 Adyen is an enterprise unified commerce payment platform. This connector covers the Checkout API (payments, payment methods, sessions, orders, payment links, stored payment methods, donations, modifications), the Management API (merchant accounts, companies, stores, users, API credentials, webhooks, terminals, payout and payment method settings, split configurations), and the Disputes API (dispute defense and evidence).
 
 | | |
@@ -12,8 +14,6 @@ Adyen is an enterprise unified commerce payment platform. This connector covers 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [adyen.com](https://adyen.com) |
 | **Authentication** | API key |
-| **Actions** | 172 |
-| **Events** | 0 |
 | **Slug** | `adyen` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Adyen from **Build → Integrations → Connectors** and connect an account,
 | Cancel Company Terminal Order | `cancelCompanyTerminalOrder` | Cancels a pending terminal hardware order under a company account. |
 | Cancel Merchant Terminal Order | `cancelMerchantTerminalOrder` | Cancels a pending terminal hardware order under a merchant account. |
 | Cancel Order | `cancelOrder` | Cancels an order created for partial payments, releasing any authorised amounts back to the shopper. |
+
+<details>
+
+<summary>See 162 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel Payment (Legacy) | `cancelPayment` | Cancels an authorised payment by its merchant reference instead of its pspReference, using the legacy top-level cancel endpoint. |
 | Capture Payment | `capturePayment` | Captures an authorised payment so that funds are collected from the shopper, for a merchant account configured with manual or delayed capture. |
 | Create Company API Credential | `createCompanyApiCredential` | Creates a new API credential (Web Service user) under a company account. |
@@ -196,3 +203,5 @@ Add Adyen from **Build → Integrations → Connectors** and connect an account,
 | Upload Company Android App | `uploadCompanyAndroidApp` | Uploads an Android APK file for deployment to Adyen Android smart terminals under a company account. |
 | Upload Company Android Certificate | `uploadCompanyAndroidCertificate` | Uploads an Android app signing certificate under a company account. |
 | Validate Shopper ID | `validateShopperId` | Validates a shopper's identifier for a payment method, such as a Pix or bank transfer account, before starting a payment. |
+
+</details>

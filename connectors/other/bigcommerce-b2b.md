@@ -5,6 +5,8 @@ hidden: true
 
 # BigCommerce B2B Edition
 
+<img src="../../.gitbook/assets/connectors/bigcommerce-b2b.png" alt="BigCommerce B2B Edition logo" width="64">
+
 BigCommerce B2B Edition Server-to-Server REST Management API (api-b2b.bigcommerce.com, base path /api/v3/io). Manage Companies (CRUD, extra fields, attachments, status, catalogs/price-list assignment, hierarchy), Company Users, Addresses, Quotes/RFQ (CRUD, products, shipping rates, checkout/order, email, PDF), B2B Orders, Shopping Lists (CRUD + items), Sales Reps (sales staff), Super Admins / user assignment, Roles & Permissions, Invoices & Payments, Channels, and Storefront/backend token generation. Authenticates with a store-level X-Auth-Token API token.
 
 | | |
@@ -12,8 +14,6 @@ BigCommerce B2B Edition Server-to-Server REST Management API (api-b2b.bigcommerc
 | **Category** | [Other](README.md) |
 | **Website** | [bigcommerce.com](https://bigcommerce.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 118 |
-| **Events** | 11 |
 | **Slug** | `bigcommerceB2b` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BigCommerce B2B Edition from **Build → Integrations → Connectors** and c
 | Checkout Quote | `checkoutQuote` | Create a checkout from a B2B quote so the buyer can complete payment. |
 | Convert Customer Group to Company | `convertCustomerGroupToCompany` | Convert a BigCommerce customer group into a B2B company. Provide the default company + admin details applied to the created company. |
 | Convert Customer Orders to B2B | `convertCustomerOrdersToB2b` | Convert a customer's existing BigCommerce orders into B2B orders. |
+
+<details>
+
+<summary>See 108 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Address | `createAddress` | Create a new address for a B2B company. Note: the httpConfig previously used a hardcoded JSON-string bodyTemplate that only forwarded the 7 required fields - every optional field (zipCode, isBilling, isShipping, phoneNumber, label, extraFields, stateCode, countryCode, externalId, isDefaultBilling, isDefaultShipping, addressLine2) was silently dropped regardless of what the caller sent (live-verified: sent zipCode/isBilling/isShipping, Get Address confirmed all three came back null/false). Fixed to a templated object bodyTemplate that forwards every field. |
 | Create B2B Order | `createOrder` | Associate an existing BigCommerce order with a B2B customer / company. |
 | Create Backend Token | `createBackendToken` | [DEPRECATED] Retired by BigCommerce. "As of September 30, 2025, the B2B Edition API authToken is deprecated and replaced by the standard BigCommerce API X-Auth-Token used together with a new header X-Store-Hash" (https://docs.bigcommerce.com/developer/docs/b2b-edition/getting-started/authentication) - the notice names "Get a Server to Server Token" explicitly. POST /api/v3/io/auth/backend now answers 404 Not Found. Use a store-level API account token via X-Auth-Token + X-Store-Hash instead; every other action on this connector already does. |
@@ -143,6 +150,8 @@ Add BigCommerce B2B Edition from **Build → Integrations → Connectors** and c
 | Update Super Admin | `updateSuperAdmin` | Update a B2B super admin's company assignments by super admin ID. Provide a companies array of {companyId, isAssigned} entries. |
 | Update Super Admin Info | `updateSuperAdminInfo` | Update profile details for a B2B super admin by super admin ID. Note: hardcoded string bodyTemplate previously dropped optional 'phone' field; fixed to a templated object. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -159,4 +168,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Company User Deleted | `store/company/user/deleted` | Fires when a Company user is removed. Payload data carries company_id and user_id. |
 | Company User Updated | `store/company/user/updated` | Fires when a Company user is updated. Payload data carries company_id and user_id. |
 | Quote Created | `store/quote/created` | Fires when a new B2B sales quote (RFQ) is created across storefront channels. Payload data carries quote_id and quote_uuid. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Quote Updated | `store/quote/updated` | Fires when a B2B sales quote is updated (e.g. by a sales rep or a change in quote status). Payload data carries quote_id and quote_uuid. |
+
+</details>

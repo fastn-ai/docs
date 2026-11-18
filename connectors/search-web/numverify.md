@@ -5,6 +5,8 @@ hidden: true
 
 # Numverify
 
+<img src="../../.gitbook/assets/connectors/numverify.png" alt="Numverify logo" width="64">
+
 Numverify is a real-time international and national phone number validation and lookup API by APILayer. It validates phone number format, and returns carrier, line type (mobile/landline/VoIP), and geographic location metadata for numbers across 232 countries.
 
 | | |
@@ -12,8 +14,6 @@ Numverify is a real-time international and national phone number validation and 
 | **Category** | [Search and web](README.md) |
 | **Website** | [numverify.com](https://numverify.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `numverify` |
 
 ## Use it

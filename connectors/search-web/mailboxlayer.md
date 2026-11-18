@@ -5,6 +5,8 @@ hidden: true
 
 # Mailboxlayer
 
+<img src="../../.gitbook/assets/connectors/mailboxlayer.png" alt="Mailboxlayer logo" width="64">
+
 Mailboxlayer is a real-time email validation and verification API by APILayer. It checks email syntax, typos, MX records, SMTP mailbox existence, catch-all configuration, role-based and disposable/free provider status, and returns a numeric deliverability score.
 
 | | |
@@ -12,8 +14,6 @@ Mailboxlayer is a real-time email validation and verification API by APILayer. I
 | **Category** | [Search and web](README.md) |
 | **Website** | [mailboxlayer.com](https://mailboxlayer.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `mailboxlayer` |
 
 ## Use it

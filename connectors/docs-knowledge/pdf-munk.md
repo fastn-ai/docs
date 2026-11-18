@@ -5,6 +5,8 @@ hidden: true
 
 # PDF Munk
 
+<img src="../../.gitbook/assets/connectors/pdf-munk.png" alt="PDF Munk logo" width="64">
+
 PDF Munk (pdfmunk.com) document and file automation API. Generate PDFs and PNG images from HTML/CSS or a live URL, render Chart.js charts as images, compress images and PDFs, merge and split PDFs, read PDF metadata, password-protect and unlock PDFs, apply watermarks, fetch rendered HTML from a URL, and manage reusable HTML templates.
 
 | | |
@@ -12,8 +14,6 @@ PDF Munk (pdfmunk.com) document and file automation API. Generate PDFs and PNG i
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdfmunk.com](https://pdfmunk.com) |
 | **Authentication** | API key |
-| **Actions** | 18 |
-| **Events** | 0 |
 | **Slug** | `pdfMunk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PDF Munk from **Build → Integrations → Connectors** and connect an accou
 | Generate Image | `generateImage` | Render a PNG image from raw HTML/CSS or by screenshotting a live URL. Provide either html_content or url (not both). Returns a hosted image_url and/or a base64 image depending on output_format, plus file size, deletion date, request id and execution time. |
 | Generate PDF | `generatePdf` | Create a PDF from raw HTML/CSS, from a live URL, or from a saved PDF Munk template. Supports paper size, orientation, custom paper dimensions, viewport, Google Fonts and dynamic placeholder substitution. Returns a hosted pdf_url plus file size and deletion date. |
 | Get PDF Info | `getPdfInfo` | Inspect a PDF and return its page count, file size, encryption state and document metadata. Supply the PDF as a URL or as a base64 string. Undocumented endpoint, verified live against the production API. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Template | `getTemplate` | Retrieve one saved template in full, including its html_content and css_content. SECURITY WARNING: the PDF Munk API currently echoes the account's own live API key back in the api_key field of this response. Do not log, store or forward the raw response, and strip api_key before passing it anywhere. Use List Templates instead where the body is not needed. Undocumented endpoint, verified live against the production API. |
 | List Templates | `listTemplates` | List every reusable HTML template saved on the account, with its id, name, default parameters, metadata and timestamps. Undocumented endpoint, verified live against the production API. |
 | Lock PDF With Password | `lockPdf` | Apply password protection to a PDF supplied as a URL or a base64 string. The endpoint responds with the encrypted PDF bytes directly (Content-Type application/pdf), not with a JSON link. Undocumented endpoint, verified live against the production API. |
@@ -42,3 +49,5 @@ Add PDF Munk from **Build → Integrations → Connectors** and connect an accou
 | Split PDF | `splitPdf` | Extract a page range from a PDF into a new document. The pages value accepts a single page (3), a range (1-5), several ranges (1-3,5,7-10) or an open-ended range (10-). Maximum 200 pages per PDF. Returns split_urls, an array of hosted PDFs, plus a split_zip_url containing all of them and the list of pages selected. |
 | Unlock PDF | `unlockPdf` | Remove password protection from a PDF, given the PDF as a URL or a base64 string together with its user or owner password. Maximum input size is 10 MB. Returns the unlocked PDF as a hosted link or as PDF bytes. |
 | Update Template Fields | `updateTemplate` | Partially update a saved template. Only the fields supplied are changed; every other field, including default_params and metadata, is preserved. Undocumented endpoint, verified live against the production API. |
+
+</details>

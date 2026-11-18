@@ -5,6 +5,8 @@ hidden: true
 
 # respond.io
 
+<img src="../../.gitbook/assets/connectors/respondio.png" alt="respond.io logo" width="64">
+
 respond.io is a conversational CRM and customer messaging platform. This connector wraps the respond.io Developer API v2: contacts (create, update, create-or-update, merge, list, delete), contact tags, contact channels and lifecycle stages, conversations (assign and open/close), messaging (send, get and list messages), comments, and workspace resources (users, custom fields, closing notes, channels, WhatsApp message templates and space tags). It also defines the respond.io webhook events (contact, conversation, message, comment, lifecycle, tag and call events) registered in Workspace Settings. Authenticates with a workspace API access token sent as a Bearer token.
 
 | | |
@@ -12,8 +14,6 @@ respond.io is a conversational CRM and customer messaging platform. This connect
 | **Category** | [Communication](README.md) |
 | **Website** | [respond.io](https://respond.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 28 |
-| **Events** | 11 |
 | **Slug** | `respondio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add respond.io from **Build → Integrations → Connectors** and connect an acc
 | Delete Contact | `deleteContact` | Deletes a contact by ID, email or phone identifier. |
 | Delete Space Tag | `deleteSpaceTag` | Deletes a workspace tag by name. |
 | Get Contact | `getContact` | Retrieves a contact by ID, email or phone identifier, including tags, custom fields, assignee, lifecycle and conversation status. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Custom Field | `getCustomField` | Retrieves a single workspace custom field by ID. |
 | Get Message | `getMessage` | Retrieves a single message of a contact by message ID, including delivery status and sender. |
 | Get Space User | `getSpaceUser` | Retrieves a single workspace user by ID, including role, team and restrictions. |
@@ -53,6 +60,8 @@ Add respond.io from **Build → Integrations → Connectors** and connect an acc
 | Update Contact Lifecycle | `updateContactLifecycle` | Sets a contact's lifecycle stage by name, or clears it when name is null. |
 | Update Space Tag | `updateSpaceTag` | Updates a workspace tag identified by its current name: rename it or change its description, color code or emoji. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -69,4 +78,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | New Comment | `comment.created` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Comment' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
 | New Contact | `contact.created` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Contact' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
 | New Incoming Message | `message.received` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Incoming Message' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | New Outgoing Message | `message.sent` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Outgoing Message' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
+
+</details>

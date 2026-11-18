@@ -5,6 +5,8 @@ hidden: true
 
 # Knock
 
+<img src="../../.gitbook/assets/connectors/knock.png" alt="Knock logo" width="64">
+
 Knock notification infrastructure API. Covers recipients (users and custom objects), channel data, preference sets and per-category, per-channel-type and per-workflow preferences, in-app feeds and feed settings, guides, messages and their content, activities, events and delivery logs, message engagement status changes in single and batch form, subscriptions and audiences, tenants, schedules, workflow triggers and cancellations, workflow recipient runs, bulk operations, Slack and Microsoft Teams provider endpoints, and the Census and Hightouch reverse-ETL integration endpoints. Authenticates with a Knock environment secret key sent as an Authorization Bearer token; keys are scoped to a single Knock environment.
 
 | | |
@@ -12,8 +14,6 @@ Knock notification infrastructure API. Covers recipients (users and custom objec
 | **Category** | [Communication](README.md) |
 | **Website** | [knock.app](https://knock.app) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 118 |
-| **Events** | 0 |
 | **Slug** | `knock` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Knock from **Build → Integrations → Connectors** and connect an account,
 | Batch Mark Messages As Seen | `batchMarkMessagesAsSeen` | Marks the given messages as seen. This indicates that the user has viewed the message in their feed or inbox. Read more about message engagement statuses here. |
 | Batch Mark Messages As Unarchived | `batchMarkMessagesAsUnarchived` | Marks the given messages as unarchived. This reverses the archived state. Archived messages are hidden from the default message list in the feed but can still be accessed and unarchived later. |
 | Batch Mark Messages As Unread | `batchMarkMessagesAsUnread` | Marks the given messages as unread. This reverses the read state. Read more about message engagement statuses here. |
+
+<details>
+
+<summary>See 108 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Batch Mark Messages As Unseen | `batchMarkMessagesAsUnseen` | Marks the given messages as unseen. This reverses the seen state. Read more about message engagement statuses here. |
 | Bulk Add Subscriptions | `bulkAddSubscriptions` | Add subscriptions for all objects in a single collection. If a subscription for an object in the collection already exists, it will be updated. This endpoint also handles inline identifications for the recipient field. |
 | Bulk Create Schedules | `bulkCreateSchedules` | Bulk creates up to 1,000 schedules at a time. This endpoint also handles inline identifications for the actor, recipient, and tenant fields. |
@@ -142,3 +149,5 @@ Add Knock from **Build → Integrations → Connectors** and connect an account,
 | Update User Preference Set | `updateUserPreferenceSet` | Updates a complete preference set for a user. By default, this is a destructive operation and will replace any existing preferences with the preferences given. Use '__persistence_strategy__': 'merge' to merge with existing preferences instead. |
 | Update User Preference Workflow | `updateUserPreferenceWorkflow` | Updates a single workflow in a specific user preference set. This operation is deprecated. This endpoint is marked deprecated in the Knock API specification. |
 | Update User Preference Workflows | `updateUserPreferenceWorkflows` | Updates the workflows in a specific user preference set. This operation is deprecated. This endpoint is marked deprecated in the Knock API specification. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Audioscrape
 
+<img src="../../.gitbook/assets/connectors/audioscrape.png" alt="Audioscrape logo" width="64">
+
 Audioscrape is an audio intelligence platform: a searchable, speaker-attributed record of 18M+ public podcast episodes plus your own uploaded calls, meetings and recordings. This connector covers the complete Audioscrape REST API (hybrid, text and semantic search; podcasts, episodes and transcripts; audio items and uploads; persons and speakers; knowledge-graph entities and trending; podcast charts and ranking history; libraries, datasets and workspaces; workspace data export; API keys; account, plan and usage) and every tool of the Audioscrape remote MCP server (mcp.audioscrape.com) called over JSON-RPC, including transcription jobs, upload URLs, entity relationship graphs, episode overviews and share links.
 
 | | |
@@ -12,8 +14,6 @@ Audioscrape is an audio intelligence platform: a searchable, speaker-attributed 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [audioscrape.com](https://audioscrape.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 57 |
-| **Events** | 1 |
 | **Slug** | `audioscrape` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Audioscrape from **Build → Integrations → Connectors** and connect an ac
 | Get Dataset | `getDataset` | Returns a dataset together with a reference to its parent library in a single response. Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
 | Get Entity | `getEntity` | Returns a knowledge-graph entity (person, organisation, place, topic or product) plus the episodes where it is most mentioned. Optionally count and list only episodes from one dataset. Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
 | Get Episode | `getEpisode` | Returns a podcast episode's metadata, its parent podcast and extracted entities. Heavy fields are opt-in through the include parameter (transcript, entities). Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Episode Transcript | `getEpisodeTranscript` | Returns a podcast episode's transcript on its own: speaker-attributed segments with start and end times plus the speaker list. A 206 response carries a partial object while transcription is still in progress. Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
 | Get Item | `getItem` | Returns one audio item of any source type (podcast episode, upload or other) with its parent podcast when present. Heavy fields are opt-in through the include parameter (transcript, entities). Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
 | Get Item Transcript | `getItemTranscript` | Returns the transcript of any audio item regardless of source type: speaker-attributed segments with timestamps plus the speaker list. A 206 response carries a partial object while transcription is still in progress. Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
@@ -81,6 +88,8 @@ Add Audioscrape from **Build → Integrations → Connectors** and connect an ac
 | Search Podcasts | `searchPodcasts` | Lists podcasts, optionally filtered by title substring or ISO 639-1 language, ordered by episode count then alphabetically. Data endpoint: requires a plan with data-API calls; the free plan returns DATA_CALLS_NOT_IN_PLAN. |
 | Send Agent Payment Link | `sendAgentPaymentLink` | Agent-initiated purchase: emails a Stripe checkout link for the given plan to the person's email address instead of returning it. Rate limited to 3 emails per address per day; sent is false when the cap was reached. This delivers a real email, so only use it with a person who asked for it. No API key is required by the vendor for this endpoint. |
 | Upload Audio To Dataset | `uploadAudioToDataset` | Uploads audio hosted at a public HTTPS URL into one of your datasets and queues it for transcription with speaker separation. Audioscrape downloads and stores a copy; transcription minutes count against the plan's monthly quota. The caller must be a member of the dataset's parent library. URLs resolving to private or internal IP ranges are rejected with 422. Multipart file uploads are not supported by this action; host the file and pass its URL. Poll Get Item for processing_status after upload. |
+
+</details>
 
 ## Events
 

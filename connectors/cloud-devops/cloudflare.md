@@ -5,6 +5,8 @@ hidden: true
 
 # Cloudflare
 
+<img src="../../.gitbook/assets/connectors/cloudflare.png" alt="Cloudflare logo" width="64">
+
 Cloudflare API v4 (base https://api.cloudflare.com/client/v4). Manage accounts, zones (CRUD + cache purge + settings), DNS records, page rules, Workers scripts, Workers KV namespaces and values, and notification webhook destinations/policies. Auth: Bearer API token. Responses use the standard {success, errors, messages, result, result_info} envelope.
 
 | | |
@@ -12,8 +14,6 @@ Cloudflare API v4 (base https://api.cloudflare.com/client/v4). Manage accounts, 
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloudflare.com](https://cloudflare.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 48 |
-| **Events** | 7 |
 | **Slug** | `cloudflare` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cloudflare from **Build → Integrations → Connectors** and connect an acc
 | Create Zone | `createZone` | Create a zone (POST /zones). |
 | Delete DNS Record | `deleteDnsRecord` | Delete a DNS record (DELETE /zones/{zone_id}/dns_records/{id}). |
 | Delete KV Namespace | `deleteKvNamespace` | Delete a Workers KV namespace (DELETE /accounts/{account_id}/storage/kv/namespaces/{namespace_id}). |
+
+<details>
+
+<summary>See 38 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete KV Value | `deleteKvValue` | Delete a key from a KV namespace (DELETE /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}). |
 | Delete Notification Policy | `deleteNotificationPolicy` | Delete a notification policy (DELETE /accounts/{account_id}/alerting/v3/policies/{policy_id}). |
 | Delete Page Rule | `deletePageRule` | Delete a page rule (DELETE /zones/{zone_id}/pagerules/{id}). |
@@ -72,6 +79,8 @@ Add Cloudflare from **Build → Integrations → Connectors** and connect an acc
 | Update Zone | `updateZone` | Edit zone properties such as paused or plan (PATCH /zones/{zone_id}). |
 | Verify Token | `verifyToken` | Verify the API token is valid (GET /user/tokens/verify). |
 | Write KV Value | `writeKvValue` | Write a value for a key in a KV namespace (PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}). Body is the raw value. |
+
+</details>
 
 ## Events
 

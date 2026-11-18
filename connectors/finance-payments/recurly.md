@@ -5,6 +5,8 @@ hidden: true
 
 # Recurly
 
+<img src="../../.gitbook/assets/connectors/recurly.png" alt="Recurly logo" width="64">
+
 Recurly subscription management and recurring billing platform. Manage accounts, subscriptions, plans, add-ons, invoices, transactions, coupons, items, gift cards, usage, and exports through the Recurly V3 API.
 
 | | |
@@ -12,8 +14,6 @@ Recurly subscription management and recurring billing platform. Manage accounts,
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [recurly.com](https://recurly.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 197 |
-| **Events** | 0 |
 | **Slug** | `recurly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Recurly from **Build → Integrations → Connectors** and connect an accoun
 | Create Account Note | `createAccountNote` | Create an account note. |
 | Create Authorize Purchase | `createAuthorizePurchase` | Authorize a purchase. A purchase is a hybrid checkout containing at least one or more subscriptions or one-time charges (adjustments) and supports both coupon and gift ca |
 | Create Billing Info | `createBillingInfo` | Add a new billing information record to an account's wallet. Available for sites using the Wallet feature. |
+
+<details>
+
+<summary>See 187 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Capture Purchase | `createCapturePurchase` | Capture a purchase. A purchase is a hybrid checkout containing at least one or more subscriptions or one-time charges (adjustments) and supports both coupon and gift card |
 | Create Coupon | `createCoupon` | Create a new coupon. |
 | Create Coupon Redemption | `createCouponRedemption` | Generate an active coupon redemption on an account or subscription. |
@@ -221,3 +228,5 @@ Add Recurly from **Build → Integrations → Connectors** and connect an accoun
 | Verify Billing Info | `verifyBillingInfo` | Verify an account's stored credit card by running a verification transaction through the payment gateway. |
 | Verify Billing Info CVV | `verifyBillingInfoCvv` | Verify the CVV of an account's stored credit card. |
 | Void Invoice | `voidInvoice` | Void a credit invoice. Invoice must be a credit invoice (type=credit) and cannot be closed (state=closed), processing (state=processing), or already voided. |
+
+</details>

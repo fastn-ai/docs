@@ -5,6 +5,8 @@ hidden: true
 
 # Tiny Talk AI
 
+<img src="../../.gitbook/assets/connectors/tiny-talk-ai.png" alt="Tiny Talk AI logo" width="64">
+
 Tiny Talk AI builds custom AI chat agents for websites: agents answer from a trained knowledge base, capture leads, and hand off to humans. This connector covers the documented chat API (POST /v1/chat/completions) plus Run Agent, Get Agent and the public agent settings, all authorised with the server API key (api-key header).
 
 | | |
@@ -12,8 +14,6 @@ Tiny Talk AI builds custom AI chat agents for websites: agents answer from a tra
 | **Category** | [AI and ML](README.md) |
 | **Website** | [tinytalk.ai](https://tinytalk.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 1 |
-| **Events** | 5 |
 | **Slug** | `tinyTalkAi` |
 
 ## Use it

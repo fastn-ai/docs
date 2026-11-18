@@ -5,6 +5,8 @@ hidden: true
 
 # TimelinesAI
 
+<img src="../../.gitbook/assets/connectors/timelines-ai.png" alt="TimelinesAI logo" width="64">
+
 TimelinesAI is a shared WhatsApp inbox and automation platform for teams. This connector covers the full TimelinesAI Public API: chats, chat history and chat updates, message sending to phone numbers, JIDs and existing chats, voice messages, internal notes, message details, delivery status history and reactions, chat labels, file uploads and downloads, connected WhatsApp accounts, workspace info and quotas, teammates and invitations, outbound webhooks, and the WhatsApp Business API (WABA) surface of accounts, templates, chats, messages, reactions, labels and account analytics.
 
 | | |
@@ -12,8 +14,6 @@ TimelinesAI is a shared WhatsApp inbox and automation platform for teams. This c
 | **Category** | [Communication](README.md) |
 | **Website** | [timelines.ai](https://timelines.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 50 |
-| **Events** | 32 |
 | **Slug** | `timelinesAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TimelinesAI from **Build → Integrations → Connectors** and connect an ac
 | Get File | `getFile` | Returns the details of an uploaded file in the TimelinesAI workspace together with a temporary download URL for its contents. |
 | Get Message | `getMessage` | Returns the details of a single WhatsApp message identified by its TimelinesAI message uid, including its text, direction, attachments and current delivery status. |
 | Get Message Reactions | `getMessageReactions` | Returns the current map of emoji reactions on a WhatsApp message, keyed by the participant who reacted. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Message Status History | `getMessageStatusHistory` | Returns the delivery status history of a WhatsApp message, showing each transition from queued through sent, delivered and read with its timestamp. |
 | Get WABA Account | `getWabaAccount` | Returns the details of a single WhatsApp Business API account connected to the TimelinesAI workspace, identified by its internal account id. |
 | Get WABA Chat | `getWabaChat` | Returns the details of a single WhatsApp Business API chat in the TimelinesAI workspace, identified by its numeric chat id. |
@@ -75,6 +82,8 @@ Add TimelinesAI from **Build → Integrations → Connectors** and connect an ac
 | Upload File | `uploadFile` | Uploads a file directly into the TimelinesAI workspace as a multipart form request and returns the file uid to attach to outgoing messages. Text content round-trips reliably; binary payloads should be uploaded with the Upload File From URL action instead. |
 | Upload File From URL | `uploadFileFromUrl` | Uploads a file into the TimelinesAI workspace by downloading it from a publicly accessible URL, and returns the file uid to attach to outgoing messages. Share links from services such as Google Drive or OneDrive are not accepted. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -91,6 +100,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | New Chat | `chat:new` | A new WhatsApp chat was created in the workspace. |
 | New Incoming Chat | `chat:incoming:new` | A new WhatsApp chat was started by a contact. |
 | New Incoming WABA Chat | `waba:chat:incoming` | A new WhatsApp Business API chat was started by a contact. |
+
+<details>
+
+<summary>See 22 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | New Message | `message:new` | Any new WhatsApp message, incoming or outgoing, on any WhatsApp account connected to the workspace. |
 | New Outgoing Chat | `chat:outgoing:new` | A new WhatsApp chat was started from the workspace. |
 | New Outgoing WABA Chat | `waba:chat:outgoing` | A new WhatsApp Business API chat was started from the workspace. |
@@ -113,3 +129,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | WhatsApp Account Disconnected | `whatsapp:account:disconnected` | A WhatsApp account was permanently disconnected from the workspace. |
 | WhatsApp Account Resumed | `whatsapp:account:resumed` | Message syncing resumed for a previously suspended WhatsApp account. |
 | WhatsApp Account Suspended | `whatsapp:account:suspended` | Message syncing for a WhatsApp account was paused, typically after a subscription cancellation or downgrade. |
+
+</details>

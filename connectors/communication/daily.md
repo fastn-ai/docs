@@ -5,6 +5,8 @@ hidden: true
 
 # Daily
 
+<img src="../../.gitbook/assets/connectors/daily.png" alt="Daily logo" width="64">
+
 Daily is a real-time video and audio conferencing API. Create and manage rooms, issue meeting tokens, control recordings, transcription and live streaming, inspect meetings, participants and presence, run dial-in and dial-out telephony, submit batch post-processing jobs, and manage webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Daily is a real-time video and audio conferencing API. Create and manage rooms, 
 | **Category** | [Communication](README.md) |
 | **Website** | [daily.co](https://daily.co) |
 | **Authentication** | Bearer token |
-| **Actions** | 65 |
-| **Events** | 0 |
 | **Slug** | `daily` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Daily from **Build → Integrations → Connectors** and connect an account,
 | Delete Dial-In Configuration | `deleteDomainDialinConfig` | Delete a dial-in configuration by its identifier. |
 | Delete Recording | `deleteRecording` | Delete a cloud recording and its stored media by identifier. |
 | Delete Room | `deleteRoom` | Delete a room by name. Participants currently in the room are disconnected. |
+
+<details>
+
+<summary>See 55 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Rooms In Batch | `batchRoomDelete` | Delete multiple rooms in a single request by room name. |
 | Delete Transcript | `deleteTranscript` | Delete a stored transcript by its identifier. |
 | Delete Webhook | `deleteWebhook` | Delete a webhook endpoint by its identifier. |
@@ -89,3 +96,5 @@ Add Daily from **Build → Integrations → Connectors** and connect an account,
 | Update Transcription | `roomTranscriptionUpdate` | Update which participants are included in an active live transcription. |
 | Update Webhook | `updateWebhookConfig` | Update the URL, event types, or authentication of an existing webhook. |
 | Validate Meeting Token | `validateMeetingToken` | Validate a meeting token and return the properties encoded within it. |
+
+</details>

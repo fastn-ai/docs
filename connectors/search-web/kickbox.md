@@ -5,6 +5,8 @@ hidden: true
 
 # Kickbox
 
+<img src="../../.gitbook/assets/connectors/kickbox.png" alt="Kickbox logo" width="64">
+
 Kickbox email verification API. Single and batch email address verification, account credit balance, and the free open disposable-domain check.
 
 | | |
@@ -12,8 +14,6 @@ Kickbox email verification API. Single and batch email address verification, acc
 | **Category** | [Search and web](README.md) |
 | **Website** | [kickbox.com](https://kickbox.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 8 |
-| **Events** | 2 |
 | **Slug** | `kickbox` |
 
 ## Use it

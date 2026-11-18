@@ -5,6 +5,8 @@ hidden: true
 
 # Iterate
 
+<img src="../../.gitbook/assets/connectors/iterate.png" alt="Iterate logo" width="64">
+
 Iterate (iteratehq.com) in-product, email and mobile surveys: surveys, questions, responses, response groups, stats, metrics, AI reports, themes, topics, recipients, projects, tags, permission groups, users and webhooks. REST API at https://iteratehq.com/api/v1 authenticated with an X-Api-Key header.
 
 | | |
@@ -12,8 +14,6 @@ Iterate (iteratehq.com) in-product, email and mobile surveys: surveys, questions
 | **Category** | [Marketing](README.md) |
 | **Website** | [iteratehq.com](https://iteratehq.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 93 |
-| **Events** | 1 |
 | **Slug** | `iterate` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Iterate from **Build → Integrations → Connectors** and connect an accoun
 | Create Permission Group | `createPermissionGroup` | Create a permission group. Iterate has no update route for permission groups (PUT returns 405) - to rename one, delete it and create another. |
 | Create Project | `createProject` | Create a project to group surveys. Returns the new project including its id. |
 | Create Question | `createQuestion` | Add a question to a survey. question_type must be one of csat, date, emoji, file_upload, freeform, legal, matrix, maxdiff, multiselect, nps_rating, number, ranking, rating, select, statement, user_info. options is a JSON string of type-specific settings. |
+
+<details>
+
+<summary>See 83 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Question Branch | `createQuestionBranch` | Add a conditional branch to a question, used for skip logic. Takes no body; returns the question with its branches array, each branch carrying the new branch id. |
 | Create Survey | `createSurvey` | Create a new (unpublished, draft) survey in a project. type is one of general, nps, csat. Returns the survey including its channel_id, which is the id required to delete it later. |
 | Create Survey Reminder | `createSurveyReminder` | Schedule a reminder email for recipients who have not answered the survey. delay is the number of days after the original send. Creating a reminder does not send anything on its own. |
@@ -117,6 +124,8 @@ Add Iterate from **Build → Integrations → Connectors** and connect an accoun
 | Update Survey Webhook | `updateSurveyWebhook` | Change the delivery URL of a survey webhook. KNOWN VENDOR DEFECT: Iterate answers 200 but does not persist the new URL - the response echoes the old URL and a follow-up list still shows it. To change a URL, delete the webhook and create a new one. |
 | Update Team Member | `updateTeamMember` | Update a team member's profile fields, such as their first or last name. Returns the updated user. |
 | Verify Klaviyo Connection | `verifyKlaviyoConnection` | Check whether this Iterate account has its Klaviyo integration connected. Returns status "connected" or "disconnected". Connecting Klaviyo itself is a browser OAuth flow in the Iterate web app and cannot be done through the API. |
+
+</details>
 
 ## Events
 

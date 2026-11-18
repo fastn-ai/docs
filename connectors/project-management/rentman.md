@@ -12,8 +12,6 @@ Rentman is rental and event-production management software covering projects, qu
 | **Category** | [Project management](README.md) |
 | **Website** | [rentman.net](https://rentman.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 314 |
-| **Events** | 0 |
 | **Slug** | `rentman` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Rentman from **Build → Integrations → Connectors** and connect an accoun
 | Create Crew Availability | `createCrewCrewavailability` | Creates an availability window for a crew member. 'id' is the numeric crew id; 'start' and 'end' are required ISO-8601 timestamps. Returns the created record under data with its id and updateHash. Reverse with Delete Crew Availability. |
 | Create Crew Task | `createCrewTask` | Creates a task attached to a crew member. 'id' is the numeric crew id; 'color' is required by Rentman. Returns the created task under data, including its id and updateHash. Reverse with Delete Task using the returned id. |
 | Create Equipment | `createEquipment` | Creates an equipment item, case or set in the Rentman catalogue, including its pricing, physical properties, stock behaviour and web shop presentation. Returns the stored item together with computed stock quantities. |
+
+<details>
+
+<summary>See 304 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Equipment Accessory | `createEquipmentAccessory` | Attaches an accessory to an equipment item. 'id' is the numeric parent equipment id; 'equipment' is the reference path of the accessory item, e.g. '/equipment/337'. Returns the created accessory link under data with its id and updateHash. Reverse with Delete Accessory. |
 | Create Equipment Alternative | `createEquipmentAlternative` | Registers an alternative equipment item for an equipment item. 'id' is the numeric parent equipment id; 'alternative' is the reference path of the substitute, e.g. '/equipment/337'. Returns the created link under data with its id and updateHash. Reverse with Delete Alternative. |
 | Create Equipment Serial Number | `createEquipmentSerialnumber` | Registers a serial number on an equipment item. 'id' is the numeric equipment id. Returns the created serial number under data with its id and updateHash. Reverse with Delete Serial Number using the returned id. |
@@ -338,3 +343,5 @@ Add Rentman from **Build → Integrations → Connectors** and connect an accoun
 | Update Task Status | `updateTaskStatus` | Updates a task status definition's label, colour, kind or sort position. Rentman revalidates the create schema on this route, so 'color' must be sent on every call and 'order' must be sent as a STRING. Writing task statuses needs the Task status permission on the API token: without it Rentman reports [404] Item with itemType 'TaskStatus' and id N not found on PUT even though GET /taskstatuses/N returns that same record with 200 (and POST /taskstatuses answers [401] You do not have permission to create this item: Task status). |
 | Update Time Registration | `updateTimeRegistration` | Updates a time registration entry - its period, duration, breaks, travel or remark. For worked hours Rentman recalculates 'duration' from 'start' and 'end'; 'status', 'leaverequest' and 'break_duration_with_start_end' are computed by Rentman. |
 | Update Vehicle | `updateVehicle` | Updates a vehicle in the Rentman transport fleet - its name, plate, dimensions, payload capacity, cost rate and planning behaviour. 'distance_cost' and 'fixed_cost' are resolved from the assigned cost rate and cannot be set directly. |
+
+</details>

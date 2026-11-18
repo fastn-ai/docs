@@ -5,6 +5,8 @@ hidden: true
 
 # OpenWeatherMap
 
+<img src="../../.gitbook/assets/connectors/openweathermap.png" alt="OpenWeatherMap logo" width="64">
+
 OpenWeatherMap provides current weather, 5-day/3-hour forecasts, city search, air pollution data (current, forecast and history), direct/reverse/ZIP geocoding, personal weather-station management with measurement upload, and weather map tiles. All requests authenticate with an API key passed as the appid query parameter.
 
 | | |
@@ -12,8 +14,6 @@ OpenWeatherMap provides current weather, 5-day/3-hour forecasts, city search, ai
 | **Category** | [Maps and location](README.md) |
 | **Website** | [openweathermap.org](https://openweathermap.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `openweathermap` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OpenWeatherMap from **Build → Integrations → Connectors** and connect an
 | Get Air Pollution Forecast | `getAirPollutionForecast` | Retrieves the hourly air quality forecast for the next four days for a geographic point. |
 | Get Air Pollution History | `getAirPollutionHistory` | Retrieves historical hourly air quality data for a geographic point over a given time range. History is available from 27 November 2020 onwards. |
 | Get Current Air Pollution | `getCurrentAirPollution` | Retrieves the current air quality index and pollutant concentrations for a geographic point. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Current Weather by City ID | `getCurrentWeatherByCityId` | Retrieves the current weather observation for a city identified by its OpenWeatherMap city id. |
 | Get Current Weather by City Name | `getCurrentWeatherByCityName` | Retrieves the current weather observation for a city identified by name, optionally narrowed by state and country code. |
 | Get Current Weather by Coordinates | `getCurrentWeatherByCoordinates` | Retrieves the current weather observation for an exact geographic point given by latitude and longitude. |
@@ -47,3 +54,5 @@ Add OpenWeatherMap from **Build → Integrations → Connectors** and connect an
 | Search Cities by Weather | `searchCities` | Searches for cities matching a name or surrounding a coordinate and returns the current weather observation for each match. |
 | Update Weather Station | `updateWeatherStation` | Updates the name, coordinates or altitude of a registered personal weather station. |
 | Upload Station Measurements | `uploadStationMeasurements` | Uploads one or more measurements for a registered personal weather station. The endpoint returns HTTP 204 with an empty body on success. |
+
+</details>

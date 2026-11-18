@@ -5,6 +5,8 @@ hidden: true
 
 # Veriphone
 
+<img src="../../.gitbook/assets/connectors/veriphone.png" alt="Veriphone logo" width="64">
+
 Veriphone phone number validation and carrier lookup API. Validate phone numbers, detect line types (mobile, fixed line, VoIP, toll free), identify the original and currently serving carrier via portability registries, format numbers to E.164/international/local, generate example numbers, check credit balance and payment history, and run bulk CSV verification jobs for 240+ countries.
 
 | | |
@@ -12,8 +14,6 @@ Veriphone phone number validation and carrier lookup API. Validate phone numbers
 | **Category** | [Search and web](README.md) |
 | **Website** | [veriphone.io](https://veriphone.io) |
 | **Authentication** | API key |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `veriphone` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Veriphone from **Build → Integrations → Connectors** and connect an acco
 | Get Account Profile | `getAccountProfile` | Returns the Veriphone account profile. This route is served only to the Veriphone web dashboard: it authenticates with a Firebase session, not an API key, and answers a valid API key with 401 "This endpoint requires Firebase authentication". It is included for completeness and will start working for any credential Veriphone later admits to this realm. |
 | Get Account Profile (v2) | `getAccountProfileV2` | Legacy v2 account-profile route, served only to the Veriphone web dashboard. It authenticates with a Firebase session, not an API key, and answers a valid API key with 401 "This endpoint requires Firebase authentication". |
 | Get Bulk Job Status | `getBulkJobStatus` | Polls the processing status of a bulk verification job and returns just the upload id and its status. Live values are new, ready, verifying, complete and deleted (the docs write complete as "completed"). Returns an empty status when the id does not exist or is not owned by your account. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Bulk Job Status (v2) | `getBulkJobStatusV2` | Legacy v2 endpoint that polls the processing status of a bulk verification job. Live status values are new, ready, verifying, complete and deleted. Returns an empty status when the id does not exist or is not owned by your account. |
 | Get Bulk Upload Details | `getBulkUpload` | Returns the full detail record for a single bulk upload, with the same fields as one entry of List Bulk Uploads. Returns an empty object when the id does not exist or is not owned by your account. |
 | Get Bulk Upload Details (v2) | `getBulkUploadV2` | Legacy v2 endpoint returning the full detail record for a single bulk upload. Returns an empty object when the id does not exist or is not owned by your account. |
@@ -52,3 +59,5 @@ Add Veriphone from **Build → Integrations → Connectors** and connect an acco
 | Upload Bulk CSV File (v2) | `uploadBulkFileV2` | Legacy v2 bulk upload endpoint. Uploads a CSV of phone numbers and returns the upload id used by the other v2 bulk operations. Maximum 100 MB and 1 million rows. Uploading does not consume credits. |
 | Verify Phone Number | `verifyPhoneNumber` | Validates a phone number and returns its validity, line type, carrier, region, country and formatted representations (E.164, international, local). Set mode to current to also resolve the carrier currently serving the number from national portability registries. Each successful verification deducts credits: 1 for static mode, 10 for current mode. |
 | Verify Phone Number (v2) | `verifyPhoneNumberV2` | Legacy v2 phone validation endpoint, kept for integrations already built against v2. Validates a number and returns validity, line type, carrier, region and formatted forms. Unlike v3 it has no lookup modes and reports an invalid number with status "error" rather than "success". Each successful call deducts 1 credit; inputs with fewer than 4 or more than 20 digits return status "syntax-error" and are not charged. New integrations should use Verify Phone Number. |
+
+</details>

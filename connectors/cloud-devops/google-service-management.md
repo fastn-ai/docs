@@ -5,6 +5,8 @@ hidden: true
 
 # Google Service Management
 
+<img src="../../.gitbook/assets/connectors/google-service-management.png" alt="Google Service Management logo" width="64">
+
 Google Service Management API (servicemanagement.googleapis.com v1). List managed API services (Google APIs and your own Cloud Endpoints / API Gateway services), read a service and its active or historical service configurations, and list the Service Management operations (config rollouts, service create/delete) for a service. Authorizes with Google OAuth 2.0 using the scopes service.management.readonly (read services and configs) and service.management (list service operations).
 
 | | |
@@ -12,8 +14,6 @@ Google Service Management API (servicemanagement.googleapis.com v1). List manage
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [servicemanagement.googleapis.com](https://servicemanagement.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `googleServiceManagement` |
 
 ## Use it

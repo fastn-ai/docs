@@ -5,6 +5,8 @@ hidden: true
 
 # Dovetail
 
+<img src="../../.gitbook/assets/connectors/dovetail.png" alt="Dovetail logo" width="64">
+
 Dovetail is a customer research and insights platform. This connector covers the Dovetail Public API v1/v2: projects, folders, docs, notes, data (videos, transcripts, files), highlights, tags, insights, comments, contacts, channels and topics, fields, files, transcripts, users, Magic Search and Magic Summarize, and token info.
 
 | | |
@@ -12,8 +14,6 @@ Dovetail is a customer research and insights platform. This connector covers the
 | **Category** | [Project management](README.md) |
 | **Website** | [dovetail.com](https://dovetail.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 108 |
-| **Events** | 0 |
 | **Slug** | `dovetail` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dovetail from **Build → Integrations → Connectors** and connect an accou
 | Create Contact | `createContact` | Creates a new contact in the workspace's contacts database with a name, email and optional custom fields. Returns the created contact. |
 | Create Data | `createData` | Creates a new data entry inside a project with optional title, plain-text or HTML content and custom fields. Returns the created data entry including its speakers. |
 | Create Dataset Data Point | `createDatasetDataPoint` | Sends a new data point directly to a dataset (one connection under a source) so a push-based source can ingest before any channel subscribes to it. Returns the created data point. |
+
+<details>
+
+<summary>See 98 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Doc | `createDoc` | Creates a new doc in the workspace, inside a project or a folder (not both), with optional initial content as HTML, Markdown or plain text, custom fields and a cover image. Returns the created doc. |
 | Create Doc Comment | `createDocComment` | Creates a comment on a doc (a comment thread is created automatically if none exists). Attributed to the authenticated user unless a workspace admin overrides the author. Returns the created comment. |
 | Create Field | `createField` | Creates a custom field in a project or workspace field group, in the data or doc field set, with a label, type and optional type-specific options and rank. Returns the created field. |
@@ -132,3 +139,5 @@ Add Dovetail from **Build → Integrations → Connectors** and connect an accou
 | Update Project | `updateProject` | Updates a project's properties (currently the title). Only supplied fields are modified. Returns the updated project. |
 | Update Topic | `updateTopic` | Updates a channel topic's title and/or description. Only supplied fields are modified; changing the description affects how future data points are classified. Returns the updated topic. |
 | Upload File (Deprecated) | `uploadFileDeprecated` | Uploads a text-based file (UTF-8 content such as .txt, .csv, .json, .md, .vtt or .srt) to the Dovetail workspace file store as multipart/form-data. Deprecated by Dovetail in favour of Initiate File Upload (POST /v2/files/upload) and Initiate Large File Upload (POST /v2/files/large-upload), which are also the only route for binary files (images, audio, video, PDF) because the multipart part here carries UTF-8 text. Returns the created file metadata. |
+
+</details>

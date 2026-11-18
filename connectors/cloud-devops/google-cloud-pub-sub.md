@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Pub/Sub
 
+<img src="../../.gitbook/assets/connectors/google-cloud-pub-sub.ico" alt="Google Cloud Pub/Sub logo" width="64">
+
 Google Cloud Pub/Sub REST API v1 connector (https://pubsub.googleapis.com/v1). Manage topics (create, get, list, patch, delete, publish messages, list attached subscriptions and snapshots, IAM policy), subscriptions (create, get, list, patch, delete, pull, acknowledge, modify ack deadline, modify push config, seek, detach, IAM policy), snapshots (create, get, list, patch, delete, IAM policy), and schemas (create, get, list, list revisions, commit, rollback, delete revision, delete, validate, validate message, IAM policy). Resource names are project-scoped (projects/{project}/topics/{topic}, etc.). OAuth 2.0 (Google) authorization-code auth with the single scope https://www.googleapis.com/auth/pubsub.
 
 | | |
@@ -12,8 +14,6 @@ Google Cloud Pub/Sub REST API v1 connector (https://pubsub.googleapis.com/v1). M
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloud.google.com](https://cloud.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 46 |
-| **Events** | 0 |
 | **Slug** | `googleCloudPubSub` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Pub/Sub from **Build → Integrations → Connectors** and conn
 | Delete Schema Revision | `deleteSchemaRevision` | Delete a specific revision of a schema. The most recent revision cannot be deleted while other revisions remain, and a schema's only revision cannot be deleted with this method. |
 | Delete Snapshot | `deleteSnapshot` | Delete a Pub/Sub snapshot. Subscriptions can no longer be sought to a deleted snapshot. |
 | Delete Subscription | `deleteSubscription` | Delete a Pub/Sub subscription. All messages retained in the subscription are immediately dropped and cannot be delivered. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Topic | `deleteTopic` | Delete a Pub/Sub topic. Existing subscriptions are not deleted but their topic field is set to _deleted-topic_. |
 | Detach Subscription | `detachSubscription` | Detach a subscription from its topic. All messages retained in the subscription are dropped and the subscription stops receiving new messages; publishers can continue publishing to the topic. |
 | Get Schema | `getSchema` | Retrieve a schema by its project and schema ID. Use the view parameter to control whether the definition is included. |
@@ -70,3 +77,5 @@ Add Google Cloud Pub/Sub from **Build → Integrations → Connectors** and conn
 | Update Topic | `updateTopic` | Update an existing Pub/Sub topic. Supply the fields to change inside the topic object and list their paths in updateMask; only the masked fields are modified. |
 | Validate Message | `validateMessage` | Validate a message against a schema, either an existing named schema or an inline schema definition, using the given encoding. Returns an empty success response if the message conforms. |
 | Validate Schema | `validateSchema` | Validate a schema definition without creating it. Returns an empty success response if the schema type and definition are well-formed, or an error describing the problem. |
+
+</details>

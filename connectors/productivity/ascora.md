@@ -5,6 +5,8 @@ hidden: true
 
 # Ascora
 
+<img src="../../.gitbook/assets/connectors/ascora.png" alt="Ascora logo" width="64">
+
 Ascora field service and job management platform. Manage enquiries, customers and contacts, inventory supplies, kits and categories, quotations and quote line items, jobs, job labour and timesheets, suppliers and supplier invoices, notes, attachments, accounting integration (invoices and payments to send), users, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Ascora field service and job management platform. Manage enquiries, customers an
 | **Category** | [Productivity](README.md) |
 | **Website** | [ascora.com.au](https://ascora.com.au) |
 | **Authentication** | API key |
-| **Actions** | 48 |
-| **Events** | 16 |
 | **Slug** | `ascora` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ascora from **Build → Integrations → Connectors** and connect an account
 | Create Job | `createJob` | Create a new job in Ascora. Only the site customer is required; when the job type, pricing method, billing customer or address are omitted, Ascora falls back to the defaults and to the site customer's own address. Returns the created job including its generated job number. |
 | Create Note | `createNote` | Add a note to an existing Ascora entity such as a job, quotation, enquiry, invoice or customer. Returns the id of the created note. |
 | Create or Update Contact | `createOrUpdateContact` | Create a contact against an Ascora customer, or update an existing contact when contactId is supplied. The contact role is matched by name and is created automatically if it does not already exist. |
+
+<details>
+
+<summary>See 38 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create or Update Customer | `createOrUpdateCustomer` | Create a new customer in Ascora, or update an existing one when customerId is supplied. Customer Type and Lead Source are entity links given by id or by name, and are created automatically if the name does not already exist. Returns the saved customer record. |
 | Create or Update Supplier | `createOrUpdateSupplier` | Create a new supplier in Ascora, or update an existing one when supplierId is supplied. Returns the saved supplier record. |
 | Create Payment | `createPayment` | Record a payment in Ascora against an existing customer invoice. This writes a payment record into Ascora; it does not take money. Validation codes returned are INVOICE-NOT-SPECIFIED, INVOICE-NOT-FOUND, PAYMENT-METHOD-NOT-FOUND and PAYMENT-EXCEEDS-BALANCE. |
@@ -73,6 +80,8 @@ Add Ascora from **Build → Integrations → Connectors** and connect an account
 | Update Quote Status | `updateQuoteStatus` | Change the status of an Ascora quotation, for example to mark it as sent to the client, lost or won. Marking a quote as WON creates the related job and returns its identifier in the message. |
 | Upload Attachment | `uploadAttachment` | Attach a text file to an existing Ascora record such as a job, quotation, enquiry, task, supplier invoice, invoice, supply or customer. The file is sent as a multipart/form-data part named file. Text content only: the request body is UTF-8 encoded, so binary files such as images or PDFs cannot be uploaded through this action. Returns the id of the created attachment. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -89,9 +98,18 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Enquiry Modified | `EnquiryModified` | Fires when an existing enquiry is changed in Ascora. The payload is the same shape as Enquiry Created. Schema modelled on the captured Enquiry Created delivery. |
 | Invoice Created | `InvoiceCreated` | Fires when a customer invoice is created in Ascora. Not exercised: no customer invoice exists in the test account and Ascora has no API to raise one, so the schema is modelled on the invoice record returned by List Invoices To Send. |
 | Invoice Modified | `InvoiceModified` | Fires when an existing customer invoice is changed in Ascora. Not exercised, for the same reason as Invoice Created; schema modelled on the invoice record returned by List Invoices To Send. |
+
+<details>
+
+<summary>See 6 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Job Created | `JobCreated` | Fires when a job is created in Ascora. The payload is the full job record. Payload schema captured from a real delivery. |
 | Job Modified | `JobModified` | Fires when an existing job is changed in Ascora. The payload is the full job record, in the same shape as Job Created. Schema modelled on the captured Job Created delivery. |
 | Job Status Changed | `JobStatusChanged` | Fires when the status of a job changes in Ascora. The payload is the full job record; read jobStatus and jobStatusText for the new status. Schema modelled on the captured Job Created delivery. |
 | Quote Created | `QuoteCreated` | Fires when a quotation is created in Ascora. The payload is the full quotation record. Payload schema captured from a real delivery. |
 | Quote Modified | `QuoteModified` | Fires when an existing quotation is changed in Ascora. The payload is the full quotation record, in the same shape as Quote Created. Schema modelled on the captured Quote Created delivery. |
 | Quote Status Changed | `QuoteStatusChanged` | Fires when the status of a quotation changes, for example when it is sent to the client, marked lost or won. The payload is the full quotation record; read quoteStatus and quoteStatusText for the new status, and quoteCloseDate when it is closed. Payload schema captured from a real delivery. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # NewsAPI
 
+<img src="../../.gitbook/assets/connectors/newsapi.png" alt="NewsAPI logo" width="64">
+
 NewsAPI indexes articles and breaking headlines from over 150,000 news sources and blogs worldwide. It exposes full-text article search with date, language, source and domain filters, country and category top headlines, and a catalogue of available publishers. Requests authenticate with an API key sent in the X-Api-Key header.
 
 | | |
@@ -12,8 +14,6 @@ NewsAPI indexes articles and breaking headlines from over 150,000 news sources a
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [newsapi.org](https://newsapi.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `newsapi` |
 
 ## Use it

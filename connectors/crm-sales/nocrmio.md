@@ -5,6 +5,8 @@ hidden: true
 
 # noCRM.io
 
+<img src="../../.gitbook/assets/connectors/nocrmio.png" alt="noCRM.io logo" width="64">
+
 noCRM.io lead management and sales CRM. Manage leads, prospecting lists and prospects, pipelines and steps, users, teams, client folders, categories, tags, custom fields, activities, comments, attachments, and webhooks via the noCRM.io API v2.
 
 | | |
@@ -12,8 +14,6 @@ noCRM.io lead management and sales CRM. Manage leads, prospecting lists and pros
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [nocrm.io](https://nocrm.io) |
 | **Authentication** | API key |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `nocrmio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add noCRM.io from **Build → Integrations → Connectors** and connect an accou
 | Convert Prospect To Lead | `convertProspectToLead` | Convert a prospect into a lead. |
 | Create Category | `createCategory` | Create a tag category. |
 | Create Client Folder | `createClient` | Create a client folder. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Custom Field | `createField` | Create a custom field. |
 | Create Lead | `createLead` | Create a new lead. title and description are required. |
 | Create Lead Comment | `createLeadComment` | Add a comment to a lead. |
@@ -88,3 +95,5 @@ Add noCRM.io from **Build → Integrations → Connectors** and connect an accou
 | Update Prospect | `updateProspect` | Update a prospect in a prospecting list. |
 | Update Prospect Fields | `updateProspectFields` | Update the custom fields of a prospect. |
 | Update Team | `updateTeam` | Update a team. |
+
+</details>

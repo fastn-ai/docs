@@ -5,6 +5,8 @@ hidden: true
 
 # Iress Xplan
 
+<img src="../../.gitbook/assets/connectors/iress-xplan.png" alt="Iress Xplan logo" width="64">
+
 Iress Xplan financial planning and advice platform, via the Iress Open Standard API 3.0 (the productised REST/JSON facade Iress hosts at api.iressopen.com.au / .co.uk / .co.za). Covers clients and entities, advisers, addresses and contacts, dependants, consents, document notes, assets and liabilities, income and expenses, retirement income, goals and objectives, estate planning (beneficiaries, executors, power of attorney), general/life/medical insurance, risk ratings, portfolio positions, superannuation with contributions and beneficiaries, and SMSF superfund members and trustees. Authentication is stateless HTTP Basic with the customer's Xplan user credentials, plus an Iress-issued integrator API key (x-xplan-app-id) and the target Xplan site domain (x-forwarded-host). Enterprise access only: an integration agreement with Iress is required. No webhook or event-subscription API exists; polling via a scheduler is the only trigger shape.
 
 | | |
@@ -12,8 +14,6 @@ Iress Xplan financial planning and advice platform, via the Iress Open Standard 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [iressopen.com.au](https://iressopen.com.au) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 151 |
-| **Events** | 0 |
 | **Slug** | `iressXplan` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Iress Xplan from **Build → Integrations → Connectors** and connect an ac
 | Create Client General Insurance Policy | `createGeneralInsurance` | Add a general insurance policy to a client. SumInsured and InstallmentPremium are objects carrying a numeric Value and an ISO 4217 currency Code. RenewalDate is a day and month only, since general policies renew annually. Use Get General Insurance Options for the allowed Type, Underwriter, Status and PremiumFrequency codes. The Open Standard API has no update or delete for general insurance - only create and read. Returns the new policy id as a bare JSON integer. |
 | Create Client Goal | `createGoal` | Add a financial goal to a client. TargetAmount is an object carrying a numeric Value and an ISO 4217 currency Code. Use Get Goal Options for the allowed Category and OwnerType codes. Returns the new goal id as a bare JSON integer. |
 | Create Client Income Item | `createIncome` | Add an income item to a client. Amount is an object carrying a numeric Value and an ISO 4217 currency Code. Use Get Income Options for the allowed Type, Frequency and OwnerType codes. Returns the new income id as a bare JSON integer. |
+
+<details>
+
+<summary>See 141 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Client Liability | `createLiability` | Add a liability to a client - a loan, mortgage or other debt. Balance and repayment amounts are objects carrying a numeric Value and an ISO 4217 currency Code. Use Get Liability Options for the allowed Type, Provider, Status, RepaymentFrequency and InterestRateType codes. Returns the new liability id as a bare JSON integer. |
 | Create Client Life Insurance Policy | `createLifeInsurance` | Add a life insurance policy to a client. Sum insured and premium fields are objects carrying a numeric Value and an ISO 4217 currency Code. The Post variants hold the post-advice recommended figures. Use Get Life Insurance Options for the allowed Type, Underwriter, Status and PremiumFrequency codes. Note the Open Standard API has no update or delete for life insurance - only create and read. Returns the new policy id as a bare JSON integer. |
 | Create Client Medical Insurance Policy | `createMedicalInsurance` | Add a medical or health insurance policy to a client. TotalPremium is an object carrying a numeric Value and an ISO 4217 currency Code. Cover takes the list of cover codes included in the plan. Use Get Medical Insurance Options for the allowed Type, Provider, Status, PremiumFrequency and Cover codes. The Open Standard API has no update or delete for medical insurance - only create and read. Returns the new policy id as a bare JSON integer. |
@@ -175,3 +182,5 @@ Add Iress Xplan from **Build → Integrations → Connectors** and connect an ac
 | Update Superannuation Contribution | `updateContribution` | Partially update a contribution on a superannuation fund. Only the fields you supply are changed. Returns no body on success. |
 | Update Superfund Member | `updateSuperfundMember` | Partially update a member of an SMSF superfund client - commonly used to refresh FundBalance and BalanceDate. Only the fields you supply are changed. Returns no body on success. |
 | Update Superfund Trustee | `updateSuperfundTrustee` | Partially update a trustee of an SMSF superfund client. Only the fields you supply are changed. Returns no body on success. |
+
+</details>

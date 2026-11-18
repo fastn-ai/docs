@@ -5,6 +5,8 @@ hidden: true
 
 # Docker Hub
 
+<img src="../../.gitbook/assets/connectors/docker-hub.png" alt="Docker Hub logo" width="64">
+
 Docker Hub API v2 connector — manage repositories, tags, image immutability rules, repository webhooks, personal access tokens, organizations, teams (groups), members, invites, and audit logs on hub.docker.com. Authenticates with a short-lived session JWT obtained from the Login action (username + password or PAT).
 
 | | |
@@ -12,8 +14,6 @@ Docker Hub API v2 connector — manage repositories, tags, image immutability ru
 | **Category** | [Developer tools](README.md) |
 | **Website** | [hub.docker.com](https://hub.docker.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 54 |
-| **Events** | 0 |
 | **Slug** | `dockerHub` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Docker Hub from **Build → Integrations → Connectors** and connect an acc
 | Create Organization Access Token | `createOrgAccessToken` | Create an organization access token scoped to specific repositories or the whole organization. Returns the token value once, on creation. |
 | Create Organization Group | `createOrgGroup` | Create a new group (team) in an organization with a name and optional description. |
 | Create Repository | `createRepository` | Create a new image repository in a namespace (a user or organization). The repository name must be 2-255 lowercase characters and may contain periods, underscores, or hyphens. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Repository Webhook | `createRepositoryWebhook` | Create a webhook pipeline on a repository. The pipeline fires the configured webhook URLs when a new image is pushed. Returns the created pipeline including its slug (used to delete it). |
 | Delete Access Token (PAT) | `deleteAccessToken` | Permanently delete a personal access token by its UUID. Returns HTTP 202 on success. |
 | Delete Organization Access Token | `deleteOrgAccessToken` | Delete an organization access token by its ID. |
@@ -78,3 +85,5 @@ Add Docker Hub from **Build → Integrations → Connectors** and connect an acc
 | Update Repository | `updateRepository` | Update a repository's short description and/or full description. Only the fields you provide are changed. |
 | Update Repository Immutable Tags | `updateRepositoryImmutableTags` | Enable or disable immutable-tag protection on a repository and set the tag name patterns (regular expressions) that are protected from being overwritten or deleted. |
 | Verify Repository Immutable Tags | `verifyRepositoryImmutableTags` | Preview which existing tags in a repository would match a proposed set of immutable-tag rules, without applying them. |
+
+</details>

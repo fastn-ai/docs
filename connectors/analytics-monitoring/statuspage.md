@@ -5,6 +5,8 @@ hidden: true
 
 # Statuspage
 
+<img src="../../.gitbook/assets/connectors/statuspage.png" alt="Statuspage logo" width="64">
+
 Atlassian Statuspage REST API v1. Manage status pages, components and component groups, incidents and incident updates, postmortems, scheduled maintenance, uptime reporting, custom metrics and metrics providers, page and incident subscribers, audience-specific page access users and groups, the status embed widget, and organization users and permissions. Single host https://api.statuspage.io/v1 with API key authentication sent as an Authorization: OAuth header.
 
 | | |
@@ -12,8 +14,6 @@ Atlassian Statuspage REST API v1. Manage status pages, components and component 
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [statuspage.io](https://statuspage.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 99 |
-| **Events** | 2 |
 | **Slug** | `statuspage` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Statuspage from **Build → Integrations → Connectors** and connect an acc
 | Create Component | `createComponent` | Create a component. Scoped to the Statuspage status page given by the Page ID input. |
 | Create Component Group | `createComponentGroup` | Create a component group. Scoped to the Statuspage status page given by the Page ID input. |
 | Create Incident | `createIncident` | Create an incident. Scoped to the Statuspage status page given by the Page ID input. |
+
+<details>
+
+<summary>See 89 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Incident Subscriber | `createIncidentSubscriber` | Create an incident subscriber. Scoped to the Statuspage status page given by the Page ID input. |
 | Create Incident Template | `createIncidentTemplate` | Create a template. Scoped to the Statuspage status page given by the Page ID input. |
 | Create Metric For Metrics Provider | `createMetricForMetricsProvider` | Create a metric for a metric provider. Scoped to the Statuspage status page given by the Page ID input. |
@@ -123,6 +130,8 @@ Add Statuspage from **Build → Integrations → Connectors** and connect an acc
 | Update Status Embed Config | `updateStatusEmbedConfig` | Update status embed config settings. Scoped to the Statuspage status page given by the Page ID input. |
 | Update Subscriber | `updateSubscriber` | Update a subscriber. Scoped to the Statuspage status page given by the Page ID input. |
 | Update User Role Permissions | `updateUserRolePermissions` | Update a user's role permissions. Payload should contain a mapping of pages to a set of the desired roles, if the page has Role Based Access Control. Otherwise, the pages should map to an empty hash. User will lose access to any pages omitted from the payload. Scoped to the Statuspage organization given by the Organization ID input. |
+
+</details>
 
 ## Events
 

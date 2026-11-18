@@ -5,6 +5,8 @@ hidden: true
 
 # Google Photos
 
+<img src="../../.gitbook/assets/connectors/google-photos.png" alt="Google Photos logo" width="64">
+
 Google Photos Library API v1 connector (https://photoslibrary.googleapis.com/v1). Manage app-created albums and media items: create/list/get/update albums, add enrichments, batch add/remove media items to albums; list/get/search/update media items, batchGet, batchCreate from upload tokens; raw byte uploads (/v1/uploads). Also includes the (deprecated as of 2025-03-31) sharing and sharedAlbums endpoints for completeness. OAuth 2.0 (Google) authorization-code auth using the shared Google OAuth app. Note: as of 2025-03-31 the API only accesses content the app itself created; the broad photoslibrary/photoslibrary.readonly/photoslibrary.sharing scopes were removed.
 
 | | |
@@ -12,8 +14,6 @@ Google Photos Library API v1 connector (https://photoslibrary.googleapis.com/v1)
 | **Category** | [Design](README.md) |
 | **Website** | [google.com](https://google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `googlePhotos` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Photos from **Build → Integrations → Connectors** and connect an 
 | Get Media Item | `getMediaItem` | Returns the app-created media item for the specified mediaItemId. Requires photoslibrary.readonly.appcreateddata scope. |
 | Get Shared Album | `getSharedAlbum` | DEPRECATED (removed 2025-03-31): Returns a shared album by its shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
 | Join Shared Album | `joinSharedAlbum` | DEPRECATED (removed 2025-03-31): Joins a shared album on behalf of the user via shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Leave Shared Album | `leaveSharedAlbum` | DEPRECATED (removed 2025-03-31): Leaves a previously joined shared album via shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
 | List Albums | `listAlbums` | Lists all albums created by this app in the user's library. Supports pagination. Requires photoslibrary.readonly.appcreateddata scope. |
 | List Media Items | `listMediaItems` | Lists all media items created by this app in the user's library, ordered newest first. Supports pagination. Requires photoslibrary.readonly.appcreateddata scope. |
@@ -44,3 +51,5 @@ Add Google Photos from **Build → Integrations → Connectors** and connect an 
 | Update Album | `updateAlbum` | Updates the title of an app-created album. updateMask controls which fields change (title and/or coverPhotoMediaItemId). Requires photoslibrary.edit.appcreateddata scope. |
 | Update Media Item | `updateMediaItem` | Updates the description of an app-created media item. updateMask must be 'description'. Requires photoslibrary.edit.appcreateddata scope. |
 | Upload Media Bytes | `uploadMedia` | Uploads raw image/video bytes to Google Photos and returns an upload token (plain-text body). Pass the file bytes as input.file and the file's MIME type as input.mimeType. The returned token is then used in Batch Create Media Items. Requires photoslibrary.appendonly scope. |
+
+</details>

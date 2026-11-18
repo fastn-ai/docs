@@ -5,6 +5,8 @@ hidden: true
 
 # FraudLabs Pro
 
+<img src="../../.gitbook/assets/connectors/fraud-labs-pro.png" alt="FraudLabs Pro logo" width="64">
+
 FraudLabs Pro fraud prevention API (v2). Screens e-commerce orders and user registrations for chargeback and fraud risk using IP geolocation, proxy detection, email/phone/username reputation, BIN and address checks; submits order, user and payment feedback to tune the scoring model; and runs SMS OTP verification. Auth is a FraudLabs Pro API license key.
 
 | | |
@@ -12,8 +14,6 @@ FraudLabs Pro fraud prevention API (v2). Screens e-commerce orders and user regi
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [fraudlabspro.com](https://fraudlabspro.com) |
 | **Authentication** | API key |
-| **Actions** | 11 |
-| **Events** | 2 |
 | **Slug** | `fraudLabsPro` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add FraudLabs Pro from **Build → Integrations → Connectors** and connect an 
 | Submit Order Feedback | `feedbackOrder` | Reports the merchant's final decision on a previously screened order back to FraudLabs Pro, moving it out of manual review and training the scoring model. Use APPROVE to accept the order, REJECT to decline it, or REJECT_BLACKLIST to decline it and add the order's IP, email, phone, card and device to your blacklist. Returns the fraudlabspro_id that was updated. Re-submitting the same decision returns error_code 10012 TRANSACTION IS ALREADY APPROVED/REJECTED. |
 | Submit Payment Status Feedback | `feedbackPayment` | Reports the final payment-gateway outcome for a transaction back to FraudLabs Pro, so declined-card and chargeback signals feed the risk model. Send the buyer's email, the gateway status (e.g. declined) and the gateway's own message, optionally tied to a fraudlabspro_id. Requires a FraudLabs Pro plan that includes the Payment Feedback API; other plans receive 401 error_code 10061 UNSUPPORTED PLAN. |
 | Submit User Screening Feedback | `feedbackUser` | Reports the merchant's final decision on a screened user registration back to FraudLabs Pro so the model learns from it. Use APPROVE to accept the account, REJECT to decline it, or REJECT_BLACKLIST to decline it and blacklist the user's identifying data. Returns the user_transaction_id that was updated. Requires a FraudLabs Pro Medium plan or above. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Verify SMS OTP Code | `getSmsVerificationResult` | Checks the one-time password a user entered against the SMS send identified by tran_id. Returns result 'Y' when the OTP is valid and unexpired. A wrong or expired code returns 400 error_code 10034 INVALID OTP. SECURITY: FraudLabs Pro has no header auth form, so this GET carries the API key in the query string and it will appear in the execution record's requestUrl. |
+
+</details>
 
 ## Events
 

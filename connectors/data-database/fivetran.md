@@ -5,6 +5,8 @@ hidden: true
 
 # Fivetran
 
+<img src="../../.gitbook/assets/connectors/fivetran.jpg" alt="Fivetran logo" width="64">
+
 Fivetran is a managed data-movement platform that replicates data from SaaS applications, databases and files into cloud data warehouses and lakes. This connector provides complete coverage of the Fivetran REST API v1 (https://api.fivetran.com/v1): connections and their sync, resync and setup tests, connection schema configuration, destinations, groups, users, roles, teams, user and team memberships, user API keys, system keys, webhooks, certificates and fingerprints, transformations and transformation projects, connector metadata, external log services, external secrets managers, private links, proxy agents, hybrid deployment agents, Connector SDK packages and account information.
 
 | | |
@@ -12,8 +14,6 @@ Fivetran is a managed data-movement platform that replicates data from SaaS appl
 | **Category** | [Data and databases](README.md) |
 | **Website** | [fivetran.com](https://fivetran.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 176 |
-| **Events** | 15 |
 | **Slug** | `fivetran` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Fivetran from **Build → Integrations → Connectors** and connect an accou
 | Approve a Certificate for the Connection | `approveConnectionCertificate` | Approves a certificate, so Fivetran trusts this certificate for a source database connection. The connection setup tests will fail if a non-approved certificate is provided. NOTE: This is only required for source connections based on the following databases: - MySQL (https://fivetran.com/docs/connectors/databases/mysql#supportedservices) - PostgreSQL (https://fivetran.com/docs/connectors/databases/postgresql#supportedservices) - SQLServer (https://fivetran.com/docs/connectors/databases/sql-server#supportedservices). |
 | Approve a Certificate for the Destination | `approveDestinationCertificate` | Approves a certificate, so Fivetran trusts this certificate for a destination database connection. The destination connection setup tests will fail if a non-approved certificate is provided. NOTE: This is only required for destination connections based on the following databases: - MySQL (https://fivetran.com/docs/destinations/mysql#supportedimplementations) - PostgreSQL (https://fivetran.com/docs/destinations/postgresql#supportedimplementations) - SQLServer (https://fivetran.com/docs/destinations/sql-server#supportedimplementations). |
 | Approve a Fingerprint for the Connection | `approveConnectionFingerprint` | Approves a fingerprint, enabling Fivetran to trust it for a source database and establish connections via an SSH tunnel. |
+
+<details>
+
+<summary>See 166 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Approve a Fingerprint for the Destination | `approveDestinationFingerprint` | Approves a fingerprint, enabling Fivetran to trust it for a destination database and establish connections via an SSH tunnel. |
 | Cancel Running Transformation | `cancelTransformation` | Cancels the execution of the transformation if a valid identifier is provided. |
 | Create a Connect Card | `connectCard` | Generates the Connect Card URI for the connection. |
@@ -201,6 +208,8 @@ Add Fivetran from **Build → Integrations → Connectors** and connect an accou
 | Update User Membership in a Team | `updateUserMembership` | Updates a user membership in a team. |
 | Upgrade Transformation Package | `upgradeTransformationPackage` | Upgrades the Quickstart transformation package to latest version if a valid identifier is provided. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -217,8 +226,17 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Connection Test Failed | `connection_failure` | Fires when a connection's setup tests fail. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
 | Connection Test Succeeded | `connection_successful` | Fires when a connection's setup tests complete successfully. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
 | Sync Finished | `sync_end` | Fires when a connection finishes a sync. `data.status` reports SUCCESSFUL, FAILURE or RESCHEDULED. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
+
+<details>
+
+<summary>See 5 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Sync Started | `sync_start` | Fires when a connection begins a sync. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
 | Table Re-sync Started | `resync_table` | Fires when a re-sync is triggered for specific tables of a connection. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
 | Transformation Failed | `transformation_failed` | Fires when a transformation run fails. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
 | Transformation Started | `transformation_start` | Fires when a transformation run begins. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
 | Transformation Succeeded | `transformation_succeeded` | Fires when a transformation run completes successfully. Registered through the Fivetran Webhook API as an account-level webhook; the delivered payload names the type in its `event` field. Fivetran can HMAC-SHA256 sign deliveries (hex digest in the `x-fivetran-signature-256` header) when a per-webhook `secret` is supplied at registration, but that secret is chosen per webhook and cannot be bound to this connector-level config, so deliveries are registered unsigned and verification is set to NONE. The Test a Webhook action sends a probe delivery whose `event` field is the literal `test_event` and which omits `connector_name`, `sync_id` and `data`; real deliveries carry the full documented payload. |
+
+</details>

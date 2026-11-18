@@ -5,6 +5,8 @@ hidden: true
 
 # JustGiving
 
+<img src="../../.gitbook/assets/connectors/justgiving.png" alt="JustGiving logo" width="64">
+
 JustGiving (Blackbaud) is the UK/global peer-to-peer and charity fundraising platform, and the product everydayhero customers were migrated onto. This connector wraps the public JustGiving v1 REST API at https://api.justgiving.com: fundraising pages (register, update, close, extend, cancel, story/title/summary, images, videos, microblog updates, attribution, QR code, SMS code), donations and donation totals by page, reference or id, charities (profile, donations, events, categories, leaderboard, page attribution), campaigns V2, crowdfunding pages, events and event types, teams (v2/v3 and legacy), user accounts, unclaimed pages, countries, currencies, projects and the search family (OneSearch, charity, event, fundraiser, team, campaign, tags, in-memory). The application key travels as the x-api-key header and user-scoped calls add HTTP Basic with a JustGiving account email and password. JustGiving publishes no webhook or event-subscription API, so change detection is polling.
 
 | | |
@@ -12,8 +14,6 @@ JustGiving (Blackbaud) is the UK/global peer-to-peer and charity fundraising pla
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [justgiving.com](https://justgiving.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 98 |
-| **Events** | 0 |
 | **Slug** | `justgiving` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add JustGiving from **Build → Integrations → Connectors** and connect an acc
 | Cancel Fundraising Page | `cancelFundraisingPage` | Cancels a fundraising page. This is destructive - prefer Close Fundraising Page when you only want to stop donations. Requires the App Key + JustGiving Account auth method and page ownership. |
 | Change Account Password | `changeAccountPassword` | Changes the password on a JustGiving account, verifying the caller with the current password in the request body. Resolves upstream to AccountApi:ChangePassword. VERIFIED LIVE on staging: it needs the application key ONLY - no HTTP Basic - and it answers HTTP 200 in BOTH the success and failure cases, signalling the outcome as {"success":true} or {"success":false}. Treat success:false as a failure; the HTTP status tells you nothing. A wrong current password returns 200 + success:false. |
 | Check Account Email Availability | `checkAccountAvailability` | Checks whether an email address is already registered with JustGiving, before calling Register Account. JustGiving documents this as a HEAD request; fastn's HTTP executor does not accept HEAD, so this action issues the equivalent GET against the same route and the answer is the status code - 200 means the email is already taken, 404 means it is free. Resolves upstream to AccountApi:AccountAvailabilityCheck. Application key only. |
+
+<details>
+
+<summary>See 88 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check Fundraising Page Url Availability | `checkFundraisingPageUrl` | Checks whether a fundraising page short name is already taken. JustGiving documents this as a HEAD on the page URL; fastn's HTTP executor does not accept HEAD, so this action issues the equivalent GET against the same route. The answer is the status code: 200 means the short name is already in use, 404 means it is available. Call before Register Fundraising Page, or use Suggest Page Short Names. Application key only. |
 | Check SMS Code Availability | `checkSmsCodeAvailability` | Checks whether a text-to-donate SMS code is available before assigning it with Update Fundraising Page SMS Code. Resolves upstream to SmsApi:CheckSmsCodeAvailability. Application key only. |
 | Claim Fundraising Page | `claimFundraisingPage` | Resolves an unclaimed fundraising page's claim link. JustGiving answers with a 302 to the JustGiving web claim flow; fastn FOLLOWS the redirect and returns the claim page's HTML as a string body, with HTTP 200 - verified live on 2026-09-16 (final URL https://www.justgiving.com/create-page/id/&lt;shortName&gt;). So the action is not blocked, but it returns an HTML document, not JSON, and there is no machine-readable claim data in it. Prefer the signOnUrl that Register Unclaimed Fundraising Page returns, which is the same destination with the claim token already appended. Application key only. |
@@ -122,3 +129,5 @@ Add JustGiving from **Build → Integrations → Connectors** and connect an acc
 | Update Fundraising Page Title | `updatePageTitle` | Changes the display title of a fundraising page. This does not change the page short name or URL. Requires the App Key + JustGiving Account auth method and page ownership. |
 | Update Page Attribution As Charity | `updateCharityPageAttribution` | Charity-side replace of the attribution on one of the charity's fundraising pages. Requires the App Key + JustGiving Account auth method with a charity account. Route verified live (401 without credentials). |
 | Update Team V2 | `updateTeam` | Updates a v2 team's name, story and cover photo. Note this endpoint is keyed on the team GUID, not the short name, unlike Get Team V2 and Leave Team. Requires the App Key + JustGiving Account auth method and team ownership. |
+
+</details>

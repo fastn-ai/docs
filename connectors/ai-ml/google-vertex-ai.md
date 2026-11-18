@@ -5,6 +5,8 @@ hidden: true
 
 # Google Vertex AI
 
+<img src="../../.gitbook/assets/connectors/google-vertex-ai.png" alt="Google Vertex AI logo" width="64">
+
 Run and manage generative AI and machine learning workloads on Google Vertex AI (aiplatform API v1). Covers publisher model and endpoint inference (generateContent, predict, rawPredict, embedContent, countTokens, computeTokens, OpenAI-compatible chat completions, embeddings and responses), endpoint and model registry management, datasets and dataset versions, batch prediction jobs, custom jobs, tuning jobs, pipeline jobs, training pipelines, IAM policies, and long-running operations.
 
 | | |
@@ -12,8 +14,6 @@ Run and manage generative AI and machine learning workloads on Google Vertex AI 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [aiplatform.googleapis.com](https://aiplatform.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 116 |
-| **Events** | 0 |
 | **Slug** | `googleVertexAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Vertex AI from **Build → Integrations → Connectors** and connect 
 | Cancel Training Pipeline | `cancelTrainingPipeline` | Starts asynchronous cancellation of a training pipeline. The server makes a best effort to cancel it but success is not guaranteed - use Get Training Pipeline to check whether cancellation succeeded or the pipeline completed anyway. On successful cancellation the pipeline is not deleted. The Location ID also selects the regional Vertex AI host (LOCATION-aiplatform.googleapis.com). |
 | Cancel Tuning Job | `cancelTuningJob` | Starts an asynchronous cancellation of a tuning job. Cancellation is best-effort; poll Get Tuning Job to see whether the state became CANCELLED or the job completed anyway. The Location ID also selects the regional Vertex AI host. |
 | Compute Tokens for Endpoint | `computeTokensEndpoint` | Returns the list of tokens and token ids that the input text would be split into on a Vertex AI endpoint. The Location ID also selects the regional Vertex AI host. |
+
+<details>
+
+<summary>See 106 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Compute Tokens for Publisher Model | `computeTokensPublisherModel` | Returns the list of tokens (and token ids) produced from the input text by a publisher model's tokenizer. The Location ID also selects the regional Vertex AI host (LOCATION-aiplatform.googleapis.com). |
 | Copy Model | `copyModel` | Copies an already existing Vertex AI model into the specified location. The source model must exist in the same project. When copying custom models, the caller is responsible for the model metadata being region-agnostic and for any resources it depends on remaining accessible. Returns a long-running operation. The Location ID also selects the regional Vertex AI host (LOCATION-aiplatform.googleapis.com). |
 | Count Tokens for Endpoint | `countTokensEndpoint` | Counts the tokens that a prompt would consume on a Vertex AI endpoint, returning the total token count and a per-modality breakdown. The Location ID also selects the regional Vertex AI host. |
@@ -140,3 +147,5 @@ Add Google Vertex AI from **Build → Integrations → Connectors** and connect 
 | Update Model | `updateModel` | Updates a model in the Vertex AI Model Registry. Update Mask is required and names the fields to change. The Location ID also selects the regional Vertex AI host. |
 | Upload Model | `uploadModel` | Uploads a model artifact into the Vertex AI Model Registry, optionally as a new version of an existing parent model. Returns a long-running operation. The Location ID also selects the regional Vertex AI host. |
 | Wait For Operation | `waitOperation` | Waits until a Vertex AI long-running operation is done or the given timeout elapses, then returns its latest state. The Location ID also selects the regional Vertex AI host. |
+
+</details>

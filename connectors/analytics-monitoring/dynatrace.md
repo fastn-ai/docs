@@ -5,6 +5,8 @@ hidden: true
 
 # Dynatrace
 
+<img src="../../.gitbook/assets/connectors/dynatrace.svg" alt="Dynatrace logo" width="64">
+
 Dynatrace is a unified observability and security platform for applications, infrastructure, logs, and digital experience. This connector covers the Dynatrace Environment API v2 and v1: monitored entities and entity types, problems and problem comments, events and event ingest, metrics (descriptors, data-point queries, and ingest), logs (ingest, search, export, aggregate), business events, OpenTelemetry logs/metrics/traces ingest, settings objects, schemas and object permissions, synthetic monitors, locations, nodes and on-demand executions, service-level objectives, credential vault entries, API tokens, ActiveGate tokens and tenant tokens, ActiveGates with auto-update and remote configuration, OneAgent deployment and remote configuration, Extensions 2.0, audit logs, network zones, releases, vulnerabilities and attacks, RUM JavaScript tags and mapping files, and Dynatrace Hub items.
 
 | | |
@@ -12,8 +14,6 @@ Dynatrace is a unified observability and security platform for applications, inf
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [dynatrace.com](https://dynatrace.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 303 |
-| **Events** | 3 |
 | **Slug** | `dynatrace` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dynatrace from **Build → Integrations → Connectors** and connect an acco
 | Convert Metric Unit | `convertMetricUnit` | Converts a value from a source unit into a target unit. If no target unit is set, the request finds an appropriate target unit automatically, taking into account the preferred number format (if specified). |
 | Create ActiveGate Remote Configuration Job | `createActiveGateRemoteConfigJob` | Creates a new remote configuration management job. |
 | Create ActiveGate Token | `createActiveGateToken` | Creates a new ActiveGate token. The newly created token will be owned by the same user who owns the token used for authentication of the call. |
+
+<details>
+
+<summary>See 293 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create API Token | `createApiToken` | Creates a new API token. The newly created token will be owned by the same user who owns the token used for authentication of the call. Creating personal access tokens requires the `environment:roles:viewer` permission. Creating access tokens requires the `environment:roles:manage-settings` permission. |
 | Create Credentials Set | `createCredentials` | Creates a new credentials set.. The body must not provide an ID. An ID is assigned automatically by the Dynatrace server. |
 | Create New Monitoring Configuration For Specified Extension 2.0 | `createMonitoringConfiguration` | Creates new monitoring configuration for the specified extension 2.0. Deprecated since version 1.342. Use the successor API /platform/extensions/v2 instead. |
@@ -327,6 +334,8 @@ Add Dynatrace from **Build → Integrations → Connectors** and connect an acco
 | Validate ActiveGate Update Job | `validateActiveGateUpdateJob` | Validates the payload for the `POST /activeGates/{agId}/updateJobs` request.. |
 | Validate OneAgent Remote Configuration Job | `validateOneAgentRemoteConfigJob` | Validates the payload for the `POST /oneagents/remoteConfigurationManagement` request.. |
 | Validates the given problem notification settings value by sending a test notification. | `sendTestProblemNotification` | Validates the given problem notification settings value by sending a test notification.. Validates the given problem notification settings value by sending a test notification. |
+
+</details>
 
 ## Events
 

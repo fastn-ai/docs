@@ -5,6 +5,8 @@ hidden: true
 
 # FuseDesk
 
+<img src="../../.gitbook/assets/connectors/fusedesk.png" alt="FuseDesk logo" width="64">
+
 FuseDesk help desk and messaging platform. Manage cases, case notes, case tags, contacts, companies, departments, reps, emails, chats, automations, snippets, integrations, webhooks, activity and reports in your FuseDesk app.
 
 | | |
@@ -12,8 +14,6 @@ FuseDesk help desk and messaging platform. Manage cases, case notes, case tags, 
 | **Category** | [Communication](README.md) |
 | **Website** | [fusedesk.com](https://fusedesk.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 94 |
-| **Events** | 11 |
 | **Slug** | `fusedesk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add FuseDesk from **Build → Integrations → Connectors** and connect an accou
 | Create Case | `createCase` | Create a new case in FuseDesk. Requires the name of who opened the case, a summary, details and the department the case belongs to. |
 | Create Case Tag | `createCaseTag` | Create a new case tag in FuseDesk so it can be applied to cases. |
 | Create Contact | `createContact` | Create a new contact in FuseDesk. At least one field must be supplied; an entirely empty contact is rejected. |
+
+<details>
+
+<summary>See 84 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Department | `createDepartment` | Create a new department in FuseDesk so cases can be routed to it. |
 | Create Department (API v2) | `createDepartmentV2` | Create a new FuseDesk department using the v2 API. KNOWN VENDOR ISSUE: as of September 2026 this route returns a 500 database error for every request; use Create Department (the v1 route) instead, which works. |
 | Create Integration | `createIntegration` | Create a third-party integration record in FuseDesk. Platform must be one FuseDesk recognises; unknown values are rejected with a platform is invalid error. |
@@ -119,6 +126,8 @@ Add FuseDesk from **Build → Integrations → Connectors** and connect an accou
 | Update Webhook | `updateWebhook` | Point an existing FuseDesk webhook at a different target URL. Only the URL can be changed; to watch a different object type or action, delete the webhook and create a new one. FuseDesk validates the new URL by calling it and rejects one that does not answer 2xx. Note that the response body is a snapshot taken before the change, so re-read with List Webhooks to see the new URL. SECURITY WARNING: the response echoes your FuseDesk API key in plaintext. |
 | Upload Attachment | `uploadCaseAttachment` | Upload a text file to FuseDesk so it can be attached to a case reply. Returns the stored file name and its download URL. Only text content is supported through this action; binary uploads are not. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -135,4 +144,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Department Created | `department.create` | Fires when a new department is created in FuseDesk. Payload schema is MODELLED from the live GET /api/v2/departments/{id} response shape, not captured from a real delivery. |
 | Department Updated | `department.update` | Fires when a department's settings change in FuseDesk. Payload schema is MODELLED from the live GET /api/v2/departments/{id} response shape, not captured from a real delivery. |
 | Rep Created | `rep.create` | Fires when a new rep (support user) is added to FuseDesk. Payload schema is MODELLED from the live GET /api/v2/reps/{id} response shape, not captured from a real delivery. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Rep Updated | `rep.update` | Fires when a rep's profile changes in FuseDesk. Payload schema is MODELLED from the live GET /api/v2/reps/{id} response shape, not captured from a real delivery. |
+
+</details>

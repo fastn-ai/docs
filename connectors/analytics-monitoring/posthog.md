@@ -5,6 +5,8 @@ hidden: true
 
 # PostHog
 
+<img src="../../.gitbook/assets/connectors/posthog.png" alt="PostHog logo" width="64">
+
 PostHog product analytics, feature flags, experiments, surveys, session replay, and data management. Wraps the PostHog public REST API (US cloud) plus the event capture/batch ingestion endpoints.
 
 | | |
@@ -12,8 +14,6 @@ PostHog product analytics, feature flags, experiments, surveys, session replay, 
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [posthog.com](https://posthog.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 80 |
-| **Events** | 0 |
 | **Slug** | `posthog` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PostHog from **Build → Integrations → Connectors** and connect an accoun
 | Create Feature Flag | `createFeatureFlag` | Create a new feature flag with release conditions. |
 | Create Insight | `createInsight` | Create a new insight from a query definition. |
 | Create Organization Invite | `createOrganizationInvite` | Invite a new member to the organization by email. |
+
+<details>
+
+<summary>See 70 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project | `createProject` | Create a new project (environment) within the organization. |
 | Create Role | `createRole` | Create a new RBAC role in the organization. |
 | Create Survey | `createSurvey` | Create a new survey with questions. |
@@ -104,3 +111,5 @@ Add PostHog from **Build → Integrations → Connectors** and connect an accoun
 | Update Project | `updateProject` | Update a project's settings such as its name. |
 | Update Role | `updateRole` | Update an RBAC role's name by ID. |
 | Update Survey | `updateSurvey` | Update a survey's name, description, questions, or schedule by ID. |
+
+</details>

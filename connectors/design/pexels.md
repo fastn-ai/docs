@@ -5,6 +5,8 @@ hidden: true
 
 # Pexels
 
+<img src="../../.gitbook/assets/connectors/pexels.png" alt="Pexels logo" width="64">
+
 Pexels stock photo and video API. Search and browse free-to-use photos, videos, and curated collections contributed by photographers and videographers on Pexels.
 
 | | |
@@ -12,8 +14,6 @@ Pexels stock photo and video API. Search and browse free-to-use photos, videos, 
 | **Category** | [Design](README.md) |
 | **Website** | [pexels.com](https://pexels.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `pexels` |
 
 ## Use it

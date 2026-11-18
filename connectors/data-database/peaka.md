@@ -5,6 +5,8 @@ hidden: true
 
 # Peaka
 
+<img src="../../.gitbook/assets/connectors/peaka.png" alt="Peaka logo" width="64">
+
 Peaka is a zero-ETL data integration platform that lets you connect APIs, databases and SaaS tools and query them together with SQL. This connector covers the complete Peaka Partner API: organizations, workspaces and projects, project API keys, connections and connection types, catalogs, schemas, tables and search, Peaka internal and BI tables and columns, saved and materialized queries, query folders, query execution and SQL transpilation, table and query exports, data caches, parametric and semantic catalogs, AI metadata and golden SQL, metadata refresh callbacks, the AI agent, embedded sessions and supported drivers.
 
 | | |
@@ -12,8 +14,6 @@ Peaka is a zero-ETL data integration platform that lets you connect APIs, databa
 | **Category** | [Data and databases](README.md) |
 | **Website** | [peaka.com](https://peaka.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 137 |
-| **Events** | 1 |
 | **Slug** | `peaka` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Peaka from **Build → Integrations → Connectors** and connect an account,
 | Cancel Materialized Query Refresh | `cancelMaterializedQuery` | Cancels the in-progress refresh of a materialized query, if any. |
 | Chat With AI Agent | `chatWithAgent` | Sends a message to the Peaka AI agent for a project and returns the conversation, including the generated SQL, reasoning and summary. Pass threadId to continue a conversation or omit it to start a new thread; set noExecute to true to generate SQL without running it. |
 | Chat With AI Agent (Stream) | `chatWithAgentStream` | Sends a message to the Peaka AI agent and streams the agent's intermediate and final responses as server-sent events. streamModes selects which event kinds are streamed. |
+
+<details>
+
+<summary>See 127 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check If Table Is Cached | `isTableCached` | Checks whether a table has an active cache in Peaka, and whether and with which schedule types (FULL_REFRESH, INCREMENTAL) a cache can be created for it. |
 | Complete OAuth2 Connection | `completeOAuth2Connection` | Completes an OAuth2-based connection after the user is redirected back from the third-party platform. Pass every query parameter received on the redirect as one string. See https://docs.peaka.com/how-to-guides/how-to-create-oauth2-based-connections-via-peaka. |
 | Create API Key | `createApiKey` | Creates a project API key used to authenticate project-scoped requests to the Peaka API. The full key value is returned only once, at creation time, and cannot be retrieved later. |
@@ -161,6 +168,8 @@ Add Peaka from **Build → Integrations → Connectors** and connect an account,
 | Update Schema Metadata AI Usage | `updateSchemaMetadataAiUsage` | Enables or disables use of a schema's metadata by the Peaka AI agent. |
 | Update Table Metadata | `updateTableMetadata` | Updates the AI metadata of a table: its description, column descriptions and attributes (categorical values, keys, lineage) and whether the AI agent uses the table. |
 | Update Workspace | `updateWorkspace` | Updates the name and description of a workspace within a Peaka organization. |
+
+</details>
 
 ## Events
 

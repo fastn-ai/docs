@@ -5,6 +5,8 @@ hidden: true
 
 # Folk
 
+<img src="../../.gitbook/assets/connectors/folk.png" alt="Folk logo" width="64">
+
 Folk CRM REST API v1 — manage people, companies, groups, deals (custom objects), notes, reminders, interactions, users, and webhooks. Base https://api.folk.app.
 
 | | |
@@ -12,8 +14,6 @@ Folk CRM REST API v1 — manage people, companies, groups, deals (custom objects
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [folk.app](https://folk.app) |
 | **Authentication** | Bearer token |
-| **Actions** | 57 |
-| **Events** | 0 |
 | **Slug** | `folk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Folk from **Build → Integrations → Connectors** and connect an account, 
 | Create Person | `createPerson` | Create a person. All fields optional; provide at least one name field. |
 | Create Reminder | `createReminder` | Create a reminder on a person/company/deal. entity, name, recurrenceRule, visibility required; assignedUsers required for public reminders. |
 | Create Task | `createTask` | Create a new task in the folk workspace and attach it to a person, company or deal. Tasks replace the deprecated reminders endpoints. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | Create a webhook that listens to folk workspace events. The target URL must be publicly reachable over HTTP or HTTPS. Verified on 2026-09-12 that folk answers this endpoint with HTTP 500 "Failed to create webhook." on the ops@fastn.ai workspace for every event combination and target URL, reproduced identically with a direct request outside fastn; the wiring is correct and the failure is server-side at folk. |
 | Delete Company | `deleteCompany` | Delete a company by ID. |
 | Delete Deal | `deleteDeal` | Delete a deal (custom object) by ID within a group. |
@@ -81,3 +88,5 @@ Add Folk from **Build → Integrations → Connectors** and connect an account, 
 | Update Reminder | `updateReminder` | Update a reminder by ID. |
 | Update Task | `updateTask` | Update an existing task in the folk workspace. Only the fields supplied are changed; omit a field to leave it untouched. |
 | Update Webhook | `updateWebhook` | Update a webhook by ID (name, targetUrl, subscribedEvents, status). |
+
+</details>

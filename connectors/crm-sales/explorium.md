@@ -5,6 +5,8 @@ hidden: true
 
 # Explorium
 
+<img src="../../.gitbook/assets/connectors/explorium.png" alt="Explorium logo" width="64">
+
 Explorium AgentSource is a B2B data platform for matching, searching and enriching companies and people. This connector covers the full AgentSource REST surface on api.explorium.ai: v1 (match/fetch/stats/autocomplete, 17 business enrichments and 3 prospect enrichments in single and bulk form, events, event enrollments, webhooks, credits and custom enrichments) and v2 (the re-cut API with one endpoint per enrichment, a synchronous /enrich and an asynchronous /job for each, AI-powered Research, async job infrastructure, tenant-scoped webhooks with rotatable secrets, events and enrollments, autocomplete and credits).
 
 | | |
@@ -12,8 +14,6 @@ Explorium AgentSource is a B2B data platform for matching, searching and enrichi
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [explorium.ai](https://explorium.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 144 |
-| **Events** | 0 |
 | **Slug** | `explorium` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Explorium from **Build → Integrations → Connectors** and connect an acco
 | Bulk Enrich Businesses Challenges 10-K (v1) | `bulkEnrichBusinessesChallenges10kV1` | v1 (legacy) - 10-K business challenges for up to 50 public companies. Costs Explorium credits per business. |
 | Bulk Enrich Businesses Company Hierarchies (v1) | `bulkEnrichBusinessesCompanyHierarchiesV1` | v1 (legacy) - corporate hierarchy for up to 50 business_ids. Costs Explorium credits per business. |
 | Bulk Enrich Businesses Company Ratings (v1) | `bulkEnrichBusinessesCompanyRatingsV1` | v1 (legacy) - employee-review ratings for up to 50 business_ids. Costs Explorium credits per business. |
+
+<details>
+
+<summary>See 134 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Enrich Businesses Competitive Landscape 10-K (v1) | `bulkEnrichBusinessesCompetitiveLandscape10kV1` | v1 (legacy) - 10-K competitive landscape for up to 50 public companies. Costs Explorium credits per business. |
 | Bulk Enrich Businesses Financial Indicators (v1) | `bulkEnrichBusinessesFinancialIndicatorsV1` | v1 (legacy) - financial metrics for up to 50 public companies. Costs Explorium credits per business. |
 | Bulk Enrich Businesses Firmographics (v1) | `bulkEnrichBusinessesFirmographicsV1` | v1 (legacy) - firmographics for up to 50 business_ids in one call. Costs Explorium credits per business. Prefer enrichBusinessesFirmographicsV2. |
@@ -168,3 +175,5 @@ Add Explorium from **Build → Integrations → Connectors** and connect an acco
 | Update Prospect Event Enrollments (v1) | `updateProspectEnrollmentsV1` | v1 (legacy) - change a prospect event enrollment; enrollment_id travels in the body. |
 | Update Webhook (v2) | `updateWebhookV2` | Change a registered webhook by webhook_id - its name, description, target URL, custom headers, payload format, or status (active/disabled). |
 | Upload Entity ID Dataset (v2) | `uploadEntityIdDatasetV2` | Upload a CSV of Explorium entity ids (business or prospect) and receive the list_id that every asynchronous /job enrichment takes as input. The CSV is one id per line under a header row; lists expire after two weeks. This endpoint is multipart/form-data, so the connector sends a hand-assembled multipart body with a fixed boundary - put only the raw CSV text in csvContent. |
+
+</details>

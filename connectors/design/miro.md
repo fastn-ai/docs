@@ -5,6 +5,8 @@ hidden: true
 
 # Miro
 
+<img src="../../.gitbook/assets/connectors/miro.png" alt="Miro logo" width="64">
+
 Miro REST API v2 connector — boards (CRUD/copy), board members & sharing, all item types (generic items, app cards, cards, documents, embeds, images, shapes, sticky notes, text, frames), connectors, tags, item groups, bulk operations, board export, mind-map & flowchart items (experimental), and webhook board subscriptions (experimental). Base https://api.miro.com/v2.
 
 | | |
@@ -12,8 +14,6 @@ Miro REST API v2 connector — boards (CRUD/copy), board members & sharing, all 
 | **Category** | [Design](README.md) |
 | **Website** | [miro.com](https://miro.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 123 |
-| **Events** | 3 |
 | **Slug** | `miro` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Miro from **Build → Integrations → Connectors** and connect an account, 
 | Create card item | `createCardItem` | Create a card item on a board. Cards hold a title, description, due date, and assignee. |
 | Create Code Widget Item | `createCodeWidgetItem` | Create a code widget item (experimental). POST /v2-experimental/boards/{board_id}/code_widgets. data {code, language, lineNumbersVisible, title}. |
 | Create Connector | `createConnector` | Create a connector (line) between two items on a board. POST /v2/boards/{board_id}/connectors. |
+
+<details>
+
+<summary>See 113 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create document item using URL | `createDocumentItemUsingUrl` | Create a document item on a board from a hosted document URL (e.g. a PDF). |
 | Create embed item | `createEmbedItem` | Create an embed item on a board from a valid content URL (e.g. a YouTube video). |
 | Create Flowchart Shape | `createFlowchartShape` | Create a flowchart shape item (experimental). POST /v2-experimental/boards/{board_id}/shapes. data {content, shape}. |
@@ -147,6 +154,8 @@ Add Miro from **Build → Integrations → Connectors** and connect an account, 
 | Update Tag | `updateTag` | Update a tag. PATCH /v2/boards/{board_id}/tags/{tag_id}. |
 | Update text item | `updateTextItem` | Update an existing text item's data, style, position, or geometry. |
 | Update Webhook Subscription | `updateWebhookSubscription` | BLOCKED: Miro discontinued the entire /v2-experimental/webhooks infrastructure on December 5, 2025. This endpoint returns 405 (method not supported) confirming the route no longer exists. All webhook subscription management (list/get/create/update/delete) is unavailable until Miro ships a stable replacement API. |
+
+</details>
 
 ## Events
 

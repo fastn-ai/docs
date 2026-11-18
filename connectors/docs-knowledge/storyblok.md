@@ -5,6 +5,8 @@ hidden: true
 
 # Storyblok
 
+<img src="../../.gitbook/assets/connectors/storyblok.png" alt="Storyblok logo" width="64">
+
 Storyblok headless CMS Management API. Manage spaces, stories, components, component groups, datasources, assets, tags, releases, workflows, collaborators, webhooks and more.
 
 | | |
@@ -12,8 +14,6 @@ Storyblok headless CMS Management API. Manage spaces, stories, components, compo
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [storyblok.com](https://storyblok.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 195 |
-| **Events** | 0 |
 | **Slug** | `storyblok` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Storyblok from **Build → Integrations → Connectors** and connect an acco
 | Check Conflict in Release | `checkReleaseConflicts` | Check if conflicts exist in a release GET /spaces/:space_id/releases/:release_id/check_conflicts. Docs: https://www.storyblok.com/docs/api/management/releases/check-conflict-in-release |
 | Compare a Story Version | `compareStoryVersion` | With this endpoint you can compare the changes between two versions of a story in Storyblok. You need to provide the story ID and version ID in the request to retrieve the comparison results. GET /spaces/:space_id/stories/:story_id/compare. Docs: https://www.storyblok.com/docs/api/management/stories/compare-a-story-version |
 | Complete an Experiment | `completeExperiment` | Complete a running experiment without selecting a winning variant. PUT /spaces/:space_id/experiments/:experiment_id/complete. Docs: https://www.storyblok.com/docs/api/management/experiments/complete-an-experiment |
+
+<details>
+
+<summary>See 185 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Complete an Experiment with a Winning Variant | `completeExperimentWithWinner` | Complete an experiment and select a winning variant. PATCH /spaces/:space_id/experiments/:experiment_id/complete_with_winner. Docs: https://www.storyblok.com/docs/api/management/experiments/complete-an-experiment-with-a-winning-variant |
 | Create a Branch | `createBranch` | This endpoint creates a new branch. POST /spaces/:space_id/branches. Docs: https://www.storyblok.com/docs/api/management/pipelines/create-a-branch |
 | Create a Branch Deployment | `createBranchDeployment` | Once you have set your Pipelines (via the Storyblok App or the Management API), you can start to trigger the deployment. The deployment could be triggered via Storyblok UI in the Content section by selecting the pipeline in the Pipelines dropdown. POST /spaces/:space_id/deployments. Docs: https://www.storyblok.com/docs/api/management/branch-deployments/create-a-branch-deployment |
@@ -219,3 +226,5 @@ Add Storyblok from **Build → Integrations → Connectors** and connect an acco
 | Update an Internal Tag | `updateInternalTag` | This endpoint allows updating an internal tag using the numeric ID. PUT /spaces/:space_id/internal_tags/:internal_tag_id. Docs: https://www.storyblok.com/docs/api/management/internal-tags/update-an-internal-tag |
 | Update Asset | `updateAsset` | Update an asset's metadata using its numeric ID PUT /spaces/:space_id/assets/:asset_id. Docs: https://www.storyblok.com/docs/api/management/assets/update-asset |
 | Update Installed Extension Settings | `updateAppProvision` | Update settings such as plugin properties inside Space Plugins and Tool Plugins. To do so, obtain an OAuth token or a Personal Access Token. PUT /spaces/:space_id/app_provisions/:app_id. Docs: https://www.storyblok.com/docs/api/management/extensions/update-install-plugin-settings |
+
+</details>

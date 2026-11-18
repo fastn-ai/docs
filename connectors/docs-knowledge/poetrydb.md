@@ -12,8 +12,6 @@ PoetryDB is a free API with thousands of classic English poems. List authors and
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [poetrydb.org](https://poetrydb.org) |
 | **Authentication** | No authentication |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `poetrydb` |
 
 ## Use it

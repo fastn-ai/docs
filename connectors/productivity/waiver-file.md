@@ -5,6 +5,8 @@ hidden: true
 
 # WaiverFile
 
+<img src="../../.gitbook/assets/connectors/waiver-file.png" alt="WaiverFile logo" width="64">
+
 WaiverFile digital waiver management. Manage waiver forms and signed waivers, events and event categories, event managers, SMS subscribers, and webhook subscriptions for new/edited waivers, events, check-ins and QR scans.
 
 | | |
@@ -12,8 +14,6 @@ WaiverFile digital waiver management. Manage waiver forms and signed waivers, ev
 | **Category** | [Productivity](README.md) |
 | **Website** | [waiverfile.com](https://waiverfile.com) |
 | **Authentication** | API key |
-| **Actions** | 50 |
-| **Events** | 7 |
 | **Slug** | `waiverFile` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WaiverFile from **Build → Integrations → Connectors** and connect an acc
 | Get All Waivers By Date Range Lite | `getAllWaiversByDateRangeLite` | Page through signed waivers in a date range without heavy payloads such as signature images and attachments. Use this instead of the full version for large exports. |
 | Get All Waivers By Date Range Page Count | `getAllWaiversByDateRangePageCount` | Return how many waiver records fall in a date range, so you can size the paging loop for Get All Waivers By Date Range. Returns a bare integer. |
 | Get Event Categories | `getEventCategories` | List the event categories defined on the site, optionally including categories that have been disabled. Returns an array of category objects. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Events By Category | `getEventsByCategory` | List events in a single event category whose start date falls between two UTC dates. Returns an array of event objects. |
 | Get Events By Date Range | `getEventsByDateRange` | List all events whose start date falls between two UTC dates. Returns an array of event objects. |
 | Get Opted Out SMS Subscribers By Opt Out Date | `getOptedOutSubscribersByOptOutDate` | List SMS subscribers who opted out between two UTC dates, so you can suppress them downstream. Returns an array of subscriber records. |
@@ -74,6 +81,8 @@ Add WaiverFile from **Build → Integrations → Connectors** and connect an acc
 | Unsubscribe From New Waiver Webhook | `unsubscribeNewWaiver` | Remove a previously registered new-waiver webhook target URL. The same target URL used to subscribe must be supplied. Returns "OK" on success. |
 | Update Event | `updateEvent` | Update an existing event's name, dates, all-day flag, category and the set of waiver forms attached to it. Returns the updated event. |
 | Update Event Category | `updateEventCategory` | Rename an existing event category or enable/disable it. Returns the updated category. |
+
+</details>
 
 ## Events
 

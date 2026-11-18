@@ -5,6 +5,8 @@ hidden: true
 
 # Emelia
 
+<img src="../../.gitbook/assets/connectors/emelia.png" alt="Emelia logo" width="64">
+
 Emelia cold-email and LinkedIn outreach platform. Manage multichannel campaigns, contact lists and contacts, email providers and warmup, webhooks, LinkedIn scrappers, and the Email Finder / Phone Finder / Email Verifier tools through the Emelia REST API at https://api.emelia.io.
 
 | | |
@@ -12,8 +14,6 @@ Emelia cold-email and LinkedIn outreach platform. Manage multichannel campaigns,
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [emelia.io](https://emelia.io) |
 | **Authentication** | API key |
-| **Actions** | 112 |
-| **Events** | 14 |
 | **Slug** | `emelia` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Emelia from **Build → Integrations → Connectors** and connect an account
 | Add Contacts in Bulk | `addContactsInBulk` | Adds up to 100 contacts to a list in one call. Each row is the same flat contact object as Add a Contact to a List. Rows are processed independently: a failing row is reported in results with its index and error and does not block the others. |
 | Add Contacts to a LinkedIn List | `addContactsToALinkedInList` | Adds a contact to a LEGACY LinkedIn contact list. The API resolves the LinkedIn profile URL against LinkedIn and rejects any URL that is not a real, reachable profile with "Invalid linkedin profile". |
 | Add Contacts to a Multichannel List | `addContactsToAList` | Adds a contact to a multichannel contact list. Both a LinkedIn profile URL and an email address are required on the contact. |
+
+<details>
+
+<summary>See 102 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Contacts to an Email List | `addContactsToAnEmailList` | Adds a contact to a LEGACY email contact list. Legacy email lists are a separate collection from the Lists endpoints: an id from List All Lists is rejected with "This contacts list doesn't exists". Legacy lists can only be created in the Emelia web app. |
 | Archive a Campaign | `archiveACampaign` | Archives a multichannel campaign. Its status becomes ARCHIVED and it stops being returned by List Multichannel Campaigns, while its contacts, activities and statistics are kept. The campaign must not be RUNNING: pause it first. |
 | Create a LinkedIn Campaign | `createALinkedInCampaign` | Creates an empty legacy LinkedIn-only campaign with the given name. |
@@ -137,6 +144,8 @@ Add Emelia from **Build → Integrations → Connectors** and connect an account
 | Update Tag | `updateTag` | Undocumented endpoint that renames or recolours an existing tag. |
 | Verify Email of a Single Contact | `verifyEmailOfASingleContact` | Submits an Email Verifier job for one address and returns a job id. Poll Get the Result of a Verify Email Job for the verdict. Consumes verification credits. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -153,7 +162,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | LinkedIn Invitation Sent | `INVITED` | A LinkedIn connection invitation was sent to a contact. LinkedIn-only campaigns (campaignType linkedin). |
 | LinkedIn Message Sent | `MESSAGE_SENT` | A LinkedIn message step was sent to a contact. |
 | LinkedIn Post Liked | `LIKED` | The campaign liked a contact LinkedIn post. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | LinkedIn Profile Visited | `VISITED` | The campaign visited a contact LinkedIn profile. |
 | LinkedIn Replied | `LINKEDIN_REPLIED` | A contact replied to a LinkedIn message of a multichannel campaign. |
 | Replied (Legacy Campaigns) | `REPLIED` | A contact replied. Emitted by legacy email campaigns (campaignType email) and legacy LinkedIn campaigns (campaignType linkedin). |
 | Sent (Legacy Email Campaigns) | `SENT` | An email was sent. Emitted by legacy email campaigns (campaignType email). |
+
+</details>

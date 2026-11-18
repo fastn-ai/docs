@@ -5,6 +5,8 @@ hidden: true
 
 # Go Module Mirror
 
+<img src="../../.gitbook/assets/connectors/go-module-mirror.png" alt="Go Module Mirror logo" width="64">
+
 The Go Module Mirror (proxy.golang.org), Module Index (index.golang.org) and Checksum Database (sum.golang.org) are free public services run by Google for the Go ecosystem. List module versions, get version info, go.mod files and the latest version, follow the feed of newly published module versions, and look up go.sum checksums. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The Go Module Mirror (proxy.golang.org), Module Index (index.golang.org) and Che
 | **Category** | [Developer tools](README.md) |
 | **Website** | [proxy.golang.org](https://proxy.golang.org) |
 | **Authentication** | No authentication |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `goModuleMirror` |
 
 ## Use it

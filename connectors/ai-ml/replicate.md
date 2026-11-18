@@ -5,6 +5,8 @@ hidden: true
 
 # Replicate
 
+<img src="../../.gitbook/assets/connectors/replicate.jpg" alt="Replicate logo" width="64">
+
 Replicate HTTP API (https://api.replicate.com/v1) — run ML models via predictions, manage models/versions, deployments, trainings, collections, hardware, account, and webhook secret. Auth: Bearer r8_ API token.
 
 | | |
@@ -12,8 +14,6 @@ Replicate HTTP API (https://api.replicate.com/v1) — run ML models via predicti
 | **Category** | [AI and ML](README.md) |
 | **Website** | [replicate.com](https://replicate.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `replicate` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Replicate from **Build → Integrations → Connectors** and connect an acco
 | Create Training | `createTraining` | Start a fine-tune training run for a trainable model version. Path requires model_owner, model_name, version_id. Body requires destination ({owner}/{name} for the trained model) and input (object of training params). |
 | Delete Deployment | `deleteDeployment` | Delete a deployment. Path requires deployment_owner and deployment_name. Returns 204 No Content. |
 | Delete Model | `deleteModel` | Delete a private model with no versions. Path requires model_owner and model_name. Returns 204 No Content. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Model Version | `deleteModelVersion` | Delete a specific version of a private model. Path requires model_owner, model_name, version_id. Returns 202 Accepted. |
 | Get Account | `getAccount` | Get the authenticated account (user or organization). Useful as a credential-validation / health-check action. |
 | Get Collection | `getCollection` | Get a collection by slug, including its nested models array. Path requires collection_slug. |
@@ -52,3 +59,5 @@ Add Replicate from **Build → Integrations → Connectors** and connect an acco
 | List Trainings | `listTrainings` | List trainings created by the authenticated account, newest first. Cursor-paginated via next. |
 | Search Models | `searchModels` | Search public models, collections, and docs by free-text query. Uses the current beta GET /v1/search endpoint (query param) — replaces the deprecated QUERY-method-override on /v1/models which the gateway forces to application/json (415). |
 | Update Deployment | `updateDeployment` | Update a deployment's configuration. Path requires deployment_owner and deployment_name. Body fields (version, hardware, min_instances, max_instances) are all optional — only send fields you wish to change. |
+
+</details>

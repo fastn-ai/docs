@@ -5,6 +5,8 @@ hidden: true
 
 # Cin7 Omni
 
+<img src="../../.gitbook/assets/connectors/cin7omni.jpg" alt="Cin7 Omni logo" width="64">
+
 Cin7 Omni (api.cin7.com) — cloud inventory, sales, purchasing, and retail management. Wraps the Cin7 Omni REST API v1 (https://api.cin7.com/api/v1). List endpoints use the fields/where/order/page/rows query pattern; POST/PUT bodies are JSON arrays of objects (bulk create/update). HTTP Basic auth with API Username + connection Key. Distinct from Cin7 Core.
 
 | | |
@@ -12,8 +14,6 @@ Cin7 Omni (api.cin7.com) — cloud inventory, sales, purchasing, and retail mana
 | **Category** | [Other](README.md) |
 | **Website** | [cin7.com](https://cin7.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 75 |
-| **Events** | 14 |
 | **Slug** | `cin7omni` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cin7 Omni from **Build → Integrations → Connectors** and connect an acco
 | Create Product Options | `createProductOptions` | Create Product Options (POST /api/v1/ProductOptions). Creates one or more product options (variants) in one call; send productOptions as a list. Returns one result per record with success, id and errors. |
 | Create Production Jobs | `createProductionJobs` | Create Production Jobs (POST /api/v1/ProductionJobs). Creates one or more production jobs in one call; send productionJobs as a list. Returns one result per record with success, id and errors. |
 | Create Products | `createProducts` | Create Products (POST /api/v1/Products). Creates one or more products (with their options) in one call; send products as a list. Returns one result per record with success, id and errors. |
+
+<details>
+
+<summary>See 65 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Purchase Orders | `createPurchaseOrders` | Create Purchase Orders (POST /api/v1/PurchaseOrders). Creates one or more purchase orders in one call; send purchaseOrders as a list. Optional loadboms=true loads bill-of-materials lines. Returns one result per record with success, id and errors. |
 | Create Quotes | `createQuotes` | Create Quotes (POST /api/v1/Quotes). Creates one or more quotes in one call; send quotes as a list. Optional loadboms=true loads bill-of-materials lines. Returns one result per record with success, id and errors. |
 | Create Sales Orders | `createSalesOrders` | Create Sales Orders (POST /api/v1/SalesOrders). Creates one or more sales orders in one call; send salesOrders as a list. Optional loadboms=true loads bill-of-materials lines. Returns one result per record with success, id and errors. |
@@ -100,6 +107,8 @@ Add Cin7 Omni from **Build → Integrations → Connectors** and connect an acco
 | Update Sales Orders | `updateSalesOrders` | Update Sales Orders (PUT /api/v1/SalesOrders). Updates one or more sales orders in one call. Send salesOrders as a list; each item needs id and only the fields to change, e.g. {"id": 123, "stage": "Dispatched", "internalComments": "Delivered 14 Nov", "customerOrderNo": "PO-55", "customFields": {"orders_1000": "OK"}}. Returns one result per order with success, id and errors. Setting isVoid true voids an order and cannot be undone. |
 | Upload Product Image | `uploadProductImage` | Upload an image for a product at a given priority slot. POST /ProductImages with productId and imagePriority (1-based image slot). Body is the image payload as documented by Cin7 (base64 or URL object). Pass it as a JSON-encoded string in 'payload'. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -116,7 +125,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Purchase Order Created | `PurchaseOrder/Created` | Fires when a new purchase order is created. |
 | Purchase Order Modified | `PurchaseOrder/Modified` | Fires when a purchase order is updated. |
 | Sales Order Created | `SalesOrder/Created` | Fires when a new sales order is created in Cin7 Omni. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Sales Order Dispatched | `SalesOrder/Dispatched` | Fires when a sales order is dispatched. |
 | Sales Order Modified | `SalesOrder/Modified` | Fires when an existing sales order is updated. |
 | Sales Order Voided | `SalesOrder/Voided` | Fires when a sales order is voided/cancelled. |
 | Stock Modified | `Stock/Modified` | Fires when stock levels change for a product option / branch. |
+
+</details>

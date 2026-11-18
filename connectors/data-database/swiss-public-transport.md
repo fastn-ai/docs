@@ -5,6 +5,8 @@ hidden: true
 
 # Swiss Public Transport (transport.opendata.ch)
 
+<img src="../../.gitbook/assets/connectors/swiss-public-transport.png" alt="Swiss Public Transport (transport.opendata.ch) logo" width="64">
+
 The Swiss public transport API (transport.opendata.ch) is a free, open API for Swiss trains, trams, buses and boats. Search stations and addresses, plan connections between two places with platforms and delays, and get live departure boards. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The Swiss public transport API (transport.opendata.ch) is a free, open API for S
 | **Category** | [Data and databases](README.md) |
 | **Website** | [transport.opendata.ch](https://transport.opendata.ch) |
 | **Authentication** | No authentication |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `swissPublicTransport` |
 
 ## Use it

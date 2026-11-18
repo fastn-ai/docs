@@ -5,6 +5,8 @@ hidden: true
 
 # Simplesat
 
+<img src="../../.gitbook/assets/connectors/simplesat.png" alt="Simplesat logo" width="64">
+
 Simplesat is a customer-satisfaction survey platform for CSAT, CES and NPS feedback. This connector covers the Simplesat public API: survey responses and individual answers, customers, team members, surveys, questions, email survey sends and satisfaction metrics.
 
 | | |
@@ -12,8 +14,6 @@ Simplesat is a customer-satisfaction survey platform for CSAT, CES and NPS feedb
 | **Category** | [Marketing](README.md) |
 | **Website** | [simplesat.io](https://simplesat.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `simplesat` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Simplesat from **Build → Integrations → Connectors** and connect an acco
 | Get Metrics | `getMetrics` | Returns aggregated satisfaction metrics for a date range. The allowed metric names come from the surveys configured on the account, so call List Surveys first to see which metrics exist. This endpoint is live on the Simplesat API but is not listed in their published reference. |
 | Get Response | `getResponseById` | Retrieves a complete survey response by its numeric Simplesat id, including every answer, the customer, the linked ticket and the team members involved. |
 | Get Team Member | `getTeamMemberById` | Retrieves a single Simplesat team member by its numeric Simplesat id. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Answers | `listAnswers` | Lists every survey answer in the account, newest first. This is Simplesat's simple paginated answers list; use Search Answers when you need date ranges or filters. |
 | List Customers | `listCustomers` | Lists the customers stored in Simplesat, newest first, with optional filtering by creation or modification date and by survey-email subscription status. |
 | List Questions | `listQuestions` | Lists the questions defined across the account's surveys, with their type, choices and follow-up rules. Filter by survey or by satisfaction metric. |
@@ -44,3 +51,5 @@ Add Simplesat from **Build → Integrations → Connectors** and connect an acco
 | Update Answer | `updateAnswerById` | Updates an existing survey answer by its numeric Simplesat id, for example to correct the selected rating or the comment left by the customer. |
 | Update Customer | `updateCustomerById` | Updates a Simplesat customer by its numeric Simplesat id. Only the fields you supply are changed; the email address cannot be changed here. |
 | Update Response | `updateResponseById` | Replaces an existing survey response by its numeric Simplesat id, including its answers, customer, ticket and team members. |
+
+</details>

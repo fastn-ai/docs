@@ -5,6 +5,8 @@ hidden: true
 
 # Easyship
 
+<img src="../../.gitbook/assets/connectors/easyship.png" alt="Easyship logo" width="64">
+
 Easyship global shipping API (v2024-09). Rate shopping across 550+ courier services, shipment and label creation, tracking, pickups, manifests, customs taxes and duties, insurance, address and box management, shipping rules, batches, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Easyship global shipping API (v2024-09). Rate shopping across 550+ courier servi
 | **Category** | [E-commerce](README.md) |
 | **Website** | [easyship.com](https://easyship.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 133 |
-| **Events** | 0 |
 | **Slug** | `easyship` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Easyship from **Build → Integrations → Connectors** and connect an accou
 | Cancel Pickup | `cancelPickup` | Cancels a previously scheduled courier pickup by its Easyship pickup ID. |
 | Cancel Shipment | `cancelShipment` | Cancels an existing shipment by its Easyship shipment ID. |
 | Confirm Credit Top-up | `confirmCreditTopup` | Confirm a credit top-up that requires 3D Secure authentication by submitting the payment intent identifier. |
+
+<details>
+
+<summary>See 123 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Confirm Payment Source | `confirmPaymentSource` | Confirm a payment source that requires additional authentication by submitting the payment intent identifier. |
 | Create Address | `createAddress` | Create a new address on the Easyship account, optionally marking it as the default for pickup, billing, sender, or return. |
 | Create App Access | `createAppAccess` | Create an app access link that grants entry to a specific Easyship application flow such as onboarding. |
@@ -157,3 +164,5 @@ Add Easyship from **Build → Integrations → Connectors** and connect an accou
 | Update Warehouse States | `updateWarehouseStates` | Updates the warehouse fulfillment state for a batch of shipments. |
 | Update Webhook | `updateWebhook` | Updates the endpoint, subscribed event types, version, or configuration of an existing webhook. |
 | Validate Address | `validateAddress` | Validate an address against carrier and postal databases, optionally replacing the input with the validated result. |
+
+</details>

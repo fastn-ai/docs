@@ -5,6 +5,8 @@ hidden: true
 
 # Brevo
 
+<img src="../../.gitbook/assets/connectors/brevo.png" alt="Brevo logo" width="64">
+
 Brevo (formerly Sendinblue) marketing platform: contacts, email and SMS campaigns, transactional email/SMS, CRM (companies, deals, tasks, notes, pipelines), ecommerce, senders, domains, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Brevo (formerly Sendinblue) marketing platform: contacts, email and SMS campaign
 | **Category** | [Marketing](README.md) |
 | **Website** | [brevo.com](https://brevo.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 143 |
-| **Events** | 0 |
 | **Slug** | `brevo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Brevo from **Build → Integrations → Connectors** and connect an account,
 | Create Contact Attribute | `createContactAttribute` | Create a new contact attribute in a given category. |
 | Create Coupon Collection | `createCouponCollection` | Create a new coupon collection. |
 | Create Coupons | `createCoupons` | Add coupon codes to an existing coupon collection. |
+
+<details>
+
+<summary>See 133 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Deal | `createDeal` | Create a new CRM deal. |
 | Create Domain | `createDomain` | Create a new sender domain. Returns the DNS records to configure. |
 | Create Email Campaign | `createEmailCampaign` | Create a new classic or trigger email campaign. |
@@ -167,3 +174,5 @@ Add Brevo from **Build → Integrations → Connectors** and connect an account,
 | Update WhatsApp Campaign | `updateWhatsappCampaign` | Update a WhatsApp campaign: name, status (scheduled or suspended), new send time, or recipients (lists and segments). |
 | Upload Email Campaign Image | `uploadEmailCampaignImage` | Upload an image to the Brevo image gallery for email campaigns, from a public image URL. |
 | Validate Sender | `validateSender` | Validate a sender using the OTP code sent to the sender email. |
+
+</details>

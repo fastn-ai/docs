@@ -5,6 +5,8 @@ hidden: true
 
 # LeadBoxer
 
+<img src="../../.gitbook/assets/connectors/leadboxer.png" alt="LeadBoxer logo" width="64">
+
 LeadBoxer is a B2B lead identification and behavioural analytics platform. This connector wraps the LeadBoxer Platform API: leads, sessions and events, lead tags and assignment, lead exclusions, IP and domain company lookup, credit grants, datasets and form tracking, users and dataset access, segments, custom tracking domains and onboarding signup, plus the Track API for server-side events and email-open tracking. Authenticates with an account API key sent in the x-api-key header.
 
 | | |
@@ -12,8 +14,6 @@ LeadBoxer is a B2B lead identification and behavioural analytics platform. This 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leadboxer.com](https://leadboxer.com) |
 | **Authentication** | API key |
-| **Actions** | 38 |
-| **Events** | 0 |
 | **Slug** | `leadboxer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add LeadBoxer from **Build → Integrations → Connectors** and connect an acco
 | Delete Dataset | `deleteDataset` | Deletes a dataset from the account. |
 | Delete Segment | `deleteSegment` | Deletes a segment by ID. |
 | Delete User | `deleteUser` | Removes a user from the LeadBoxer account and revokes their access to all associated datasets. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Export Leads CSV | `exportLeadsCsv` | Exports a filtered list of leads for a dataset as CSV text, with the same filters as List Leads plus separator, date format and columns. Anonymous leads have no default columns, so pass additionalCsvFields (for example use_id,lastEvent) to guarantee rows. |
 | Get Credit Grants | `getCreditGrants` | Retrieves the credit grants for the LeadBoxer account: credits granted, used and available per grant, with source and validity dates. |
 | Get Lead | `getLead` | Retrieves the full detail record of a single lead in a dataset by lead ID. |
@@ -62,3 +69,5 @@ Add LeadBoxer from **Build → Integrations → Connectors** and connect an acco
 | Update Segment User | `updateSegmentUser` | Changes the user associated with a segment, giving that user access to it. |
 | Update User Name | `updateUserName` | Updates the first and last name of an existing LeadBoxer user. |
 | Validate Custom Tracking Domain | `validateCustomTrackingDomain` | Validates a custom tracking domain for a dataset and returns DNS configuration suggestions. responseCode 0 means valid; messageType ERROR or WARNING describes problems. |
+
+</details>

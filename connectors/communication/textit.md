@@ -5,6 +5,8 @@ hidden: true
 
 # TextIt
 
+<img src="../../.gitbook/assets/connectors/textit.png" alt="TextIt logo" width="64">
+
 TextIt is a messaging and chatbot automation platform (RapidPro-based) for SMS, WhatsApp and social messaging campaigns. This connector wraps the TextIt API v2 at https://textit.com/api/v2 and covers contacts, groups, fields, globals, labels, messages, broadcasts, flows, flow starts, runs, campaigns, campaign events, channels, tickets, topics, users, archives, media, admin boundaries, flow definitions and resthook webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ TextIt is a messaging and chatbot automation platform (RapidPro-based) for SMS, 
 | **Category** | [Communication](README.md) |
 | **Website** | [textit.com](https://textit.com) |
 | **Authentication** | API key |
-| **Actions** | 55 |
-| **Events** | 1 |
 | **Slug** | `textit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TextIt from **Build → Integrations → Connectors** and connect an account
 | Create Ticket Topic | `createTopic` | Create a new ticket topic in the TextIt workspace with a unique name. Returns the created topic including its new UUID. Topics cannot be deleted through the API. |
 | Delete Campaign Event | `deleteCampaignEvent` | Delete the campaign event with the given UUID. Returns an empty 204 response on success, or 404 if no event matches. |
 | Delete Contact By URN | `deleteContactByUrn` | Permanently delete the contact that owns the given URN, e.g. tel:+250783835665. Returns an empty 204 response on success, or 404 if no contact matches. This cannot be undone. |
+
+<details>
+
+<summary>See 45 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact By UUID | `deleteContactByUuid` | Permanently delete the contact with the given UUID from the TextIt workspace. Returns an empty 204 response on success, or 404 if no contact matches. This cannot be undone. |
 | Delete Contact Group | `deleteGroup` | Delete the contact group with the given UUID. Returns an empty 204 response on success, or 404 if no group matches. Groups that still have active campaigns or triggers attached cannot be deleted through the API. |
 | Delete Message Label | `deleteLabel` | Delete the message label with the given UUID. Returns an empty 204 response on success, or 404 if no label matches. Messages carrying the label are not deleted. |
@@ -79,6 +86,8 @@ Add TextIt from **Build → Integrations → Connectors** and connect an account
 | Update Message Label | `updateLabel` | Rename an existing message label identified by its UUID. Returns the updated label. |
 | Update Ticket Topic | `updateTopic` | Rename an existing ticket topic identified by its UUID. Returns the updated topic. System topics cannot be modified. This update route is not covered by the published TextIt documentation but is live on the API. |
 | Upload Media File | `uploadMedia` | Upload a media file to the TextIt workspace and receive a media object UUID that Send Message and Send Broadcast can attach. Pass the file content as text; text-safe formats such as PDF and SVG work directly. SECURITY: the response contains a publicly reachable S3 URL for the uploaded file. |
+
+</details>
 
 ## Events
 

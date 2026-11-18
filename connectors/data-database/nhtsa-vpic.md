@@ -5,6 +5,8 @@ hidden: true
 
 # NHTSA vPIC
 
+<img src="../../.gitbook/assets/connectors/nhtsa-vpic.png" alt="NHTSA vPIC logo" width="64">
+
 NHTSA vPIC (Product Information Catalog and Vehicle Listing) is the US Department of Transportation's free vehicle API. Decode VINs (single, partial or batch of 50) and WMIs, and look up makes, models, manufacturers, vehicle types, equipment plant codes, vehicle variables and Canadian vehicle specifications. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ NHTSA vPIC (Product Information Catalog and Vehicle Listing) is the US Departmen
 | **Category** | [Data and databases](README.md) |
 | **Website** | [vpic.nhtsa.dot.gov](https://vpic.nhtsa.dot.gov) |
 | **Authentication** | No authentication |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `nhtsaVpic` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add NHTSA vPIC from **Build → Integrations → Connectors** and connect an acc
 | Get All Manufacturers | `getAllManufacturers` | List all manufacturers in the vPIC dataset, 100 per page, optionally filtered by manufacturer type (GET /GetAllManufacturers). Docs: https://vpic.nhtsa.dot.gov/api/ |
 | Get Canadian Vehicle Specifications | `getCanadianVehicleSpecifications` | Get Transport Canada vehicle dimension specifications (length, width, height, wheelbase, track, curb weight and more) for a year and make (GET /GetCanadianVehicleSpecifications). Docs: https://vpic.nhtsa.dot.gov/api/ |
 | Get Equipment Plant Codes | `getEquipmentPlantCodes` | List equipment plant (DOT) codes for tires, brake hoses, glazing or retread plants for a year (2016 and later), filtered by report type (GET /GetEquipmentPlantCodes). Docs: https://vpic.nhtsa.dot.gov/api/ |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Makes for Manufacturer | `getMakesForManufacturer` | List the makes of a manufacturer, by id or name (GET /GetMakeForManufacturer/{manufacturer}). Docs: https://vpic.nhtsa.dot.gov/api/ |
 | Get Makes for Manufacturer and Year | `getMakesForManufacturerAndYear` | List the makes of a manufacturer that were active in a given year (GET /GetMakesForManufacturerAndYear/{manufacturer}?year=). Docs: https://vpic.nhtsa.dot.gov/api/ |
 | Get Makes for Vehicle Type | `getMakesForVehicleType` | List the makes that build a vehicle type, matched by name or part of it (GET /GetMakesForVehicleType/{vehicleType}). Docs: https://vpic.nhtsa.dot.gov/api/ |
@@ -52,3 +59,5 @@ Add NHTSA vPIC from **Build → Integrations → Connectors** and connect an acc
 | Get Vehicle Variable Values | `getVehicleVariableValues` | List the allowed values of a look-up variable, by full variable name or id (GET /GetVehicleVariableValuesList/{variable}). Docs: https://vpic.nhtsa.dot.gov/api/ |
 | Get Vehicle Variables | `getVehicleVariables` | List every vehicle variable in vPIC with its id, name, data type and description (GET /GetVehicleVariableList). Docs: https://vpic.nhtsa.dot.gov/api/ |
 | Get WMIs for Manufacturer | `getWmisForManufacturer` | List the World Manufacturer Identifiers registered for a manufacturer, optionally for one vehicle type (GET /GetWMIsForManufacturer/{manufacturer}). Docs: https://vpic.nhtsa.dot.gov/api/ |
+
+</details>

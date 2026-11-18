@@ -5,6 +5,8 @@ hidden: true
 
 # Notion
 
+<img src="../../.gitbook/assets/connectors/notion.ico" alt="Notion logo" width="64">
+
 Notion REST API connector for managing pages, databases, blocks, users, comments, and search across a Notion workspace.
 
 | | |
@@ -12,8 +14,6 @@ Notion REST API connector for managing pages, databases, blocks, users, comments
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [notion.so](https://notion.so) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 36 |
-| **Events** | 17 |
 | **Slug** | `notion` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Notion from **Build → Integrations → Connectors** and connect an account
 | Create File Upload | `createFileUpload` | Start a file upload (POST file_uploads). Returns a file_upload object (status 'pending') whose upload_url is then used by sendFileUpload to transmit bytes. mode defaults to single_part; for files &gt;20MB use multi_part with filename + number_of_parts; for external_url provide an HTTPS external_url. Required body fields depend on mode; this action templates only the always-safe defaults (mode). Pass filename/content_type/number_of_parts/external_url via input as needed. |
 | Create Page | `createPage` | Create a new page in Notion as a child of another PAGE. Note: parentId is always sent as parent.page_id, so this action only supports page parents, not database parents. To create a row in a database use createPageRaw with a parent of {"data_source_id":"&lt;id&gt;"} (Notion 2025-09-03 and later) — a database parent is no longer addressed by database_id on current API versions. |
 | Create Page (Raw) | `createPageRaw` | Create a Notion page from a fully-formed request body. Unlike createPage (page parents only), this sends parent/properties/children verbatim and supports every parent type: {"page_id":"..."} for a child page, {"data_source_id":"..."} for a row in a data source (preferred on Notion 2025-09-03+), and {"database_id":"..."} which is still accepted and auto-resolves to that database's data source when it has only one. For a database or data source parent the title key MUST match that data source's real title column (resolve it with retrieveDataSource and pick the property whose type is "title") - a hardcoded "title" key returns validation_error. children accepts up to 100 fully-formed Notion block objects. Runs on Notion-Version 2026-03-11; all three parent forms verified live. Returns the created page object. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Block | `deleteBlock` | Archive (delete) a Notion block |
 | Get Block | `getBlock` | Retrieve a single block from Notion by its ID |
 | Get Block Children | `getBlockChildren` | Retrieve all child blocks of a Notion block or page |
@@ -61,6 +68,8 @@ Add Notion from **Build → Integrations → Connectors** and connect an account
 | Update Database Row Title | `updateDatabaseRowTitle` | Set the title of a Notion database row (page) from plain text. titleProperty is the database's title column (usually Name), title is the new text. Returns the updated page. To set several columns or rich values, use Update Database Row (Plain Text). |
 | Update Page | `updatePage` | Update a Notion page's properties or archive it. Deliberately pinned to Notion-Version 2022-06-28. Verified live: on 2026-03-11 this action's REQUIRED "archived" input is rejected with HTTP 400 validation_error ("body.archived should be not present") because Notion renamed that field to "in_trash" on newer versions. Keeping 2022-06-28 preserves the existing input contract. Moving this action forward would require accepting in_trash instead, which is a breaking input change and so needs a new action version rather than an edit. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -77,6 +86,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Database Schema Updated | `database.schema_updated` | The property schema of a database was changed. |
 | Database Undeleted | `database.undeleted` | A database was restored from trash. |
 | Page Content Updated | `page.content_updated` | The block content of a page was updated. |
+
+<details>
+
+<summary>See 7 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Page Created | `page.created` | A page was created in the workspace. |
 | Page Deleted | `page.deleted` | A page was moved to trash (deleted). |
 | Page Locked | `page.locked` | A page was locked. |
@@ -84,3 +100,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Page Properties Updated | `page.properties_updated` | One or more properties of a page were updated. |
 | Page Undeleted | `page.undeleted` | A page was restored from trash. |
 | Page Unlocked | `page.unlocked` | A page was unlocked. |
+
+</details>

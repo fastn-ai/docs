@@ -5,6 +5,8 @@ hidden: true
 
 # Honcho
 
+<img src="../../.gitbook/assets/connectors/honcho.ico" alt="Honcho logo" width="64">
+
 Honcho by Plastic Labs is a memory and social-cognition layer for AI agents. This connector covers the Honcho v3 REST API: workspaces, peers, sessions, messages, conclusions, scopes, peer cards, representations, session context and summaries, search, the dialectic chat endpoints, queue status, dreams, API keys and webhook endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Honcho by Plastic Labs is a memory and social-cognition layer for AI agents. Thi
 | **Category** | [AI and ML](README.md) |
 | **Website** | [honcho.dev](https://honcho.dev) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 54 |
-| **Events** | 2 |
 | **Slug** | `honcho` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Honcho from **Build → Integrations → Connectors** and connect an account
 | Delete Session | `deleteSession` | Deletes a session and all of its messages. The session is marked inactive immediately (202 Accepted) and its data is removed asynchronously. This cannot be undone. |
 | Delete Webhook Endpoint | `deleteWebhookEndpoint` | Deletes a webhook endpoint from a workspace by endpoint ID. Available on self-hosted Honcho; on Honcho Cloud (api.honcho.dev) this route returns 405 and endpoints are managed in the dashboard at https://app.honcho.dev/webhooks. |
 | Delete Workspace | `deleteWorkspace` | Permanently deletes a workspace and all of its peers, messages, conclusions and other resources. The request is accepted (202) and processed in the background. Returns 409 if the workspace still contains active sessions; delete all sessions first. This cannot be undone. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Deriver Metrics | `getDeriverMetrics` | Returns the server-wide background reasoning (deriver) backlog: seconds of outstanding work plus the raw counts behind it (eligible, claimed and pending work units, pending embeddings and dreams due). |
 | Get Message | `getMessage` | Retrieves a single message by ID from a session. |
 | Get Or Create Peer | `getOrCreatePeer` | Gets a peer by ID in a workspace, creating it if it does not exist yet. Optionally sets initial metadata and configuration. |
@@ -78,6 +85,8 @@ Add Honcho from **Build → Integrations → Connectors** and connect an account
 | Update Session | `updateSession` | Updates a session's metadata and/or reasoning configuration. Only the fields you pass are changed. |
 | Update Workspace | `updateWorkspace` | Updates a workspace's metadata and/or reasoning configuration. Only the fields you pass are changed. |
 | Workspace Chat | `workspaceChat` | Asks a natural-language question across an entire workspace (dialectic chat) and returns Honcho's answer. Optionally scope message tools to a session or restrict recall to named scopes (session_id and scope are mutually exclusive), choose a reasoning level, or request a JSON-schema-shaped answer. With stream false the response is {content}; with stream true the response is the raw server-sent-event text. |
+
+</details>
 
 ## Events
 

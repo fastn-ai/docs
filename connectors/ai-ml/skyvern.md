@@ -5,6 +5,8 @@ hidden: true
 
 # Skyvern
 
+<img src="../../.gitbook/assets/connectors/skyvern.jpg" alt="Skyvern logo" width="64">
+
 Skyvern AI browser automation. Run natural-language browser tasks and agents, manage workflows/agents, runs, schedules, browser sessions and browser profiles, credentials and TOTP, scripts, folders, tags, artifacts and files through the Skyvern Cloud REST API (https://api.skyvern.com).
 
 | | |
@@ -12,8 +14,6 @@ Skyvern AI browser automation. Run natural-language browser tasks and agents, ma
 | **Category** | [AI and ML](README.md) |
 | **Website** | [skyvern.com](https://skyvern.com) |
 | **Authentication** | API key |
-| **Actions** | 148 |
-| **Events** | 5 |
 | **Slug** | `skyvern` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Skyvern from **Build → Integrations → Connectors** and connect an accoun
 | Bulk Cancel Runs | `bulkCancelRuns` | Cancel several Skyvern runs in one call by passing a list of run ids. Returns per-run cancellation results. |
 | Buy Credit Pack | `buyCreditPack` | Purchase additional Skyvern credit packs for the organization. SPENDS REAL MONEY on the card on file - only run this when a top-up is genuinely intended. |
 | Cancel Run | `cancelRun` | Cancel a queued or running Skyvern run by id, stopping the browser session and any further credit spend. |
+
+<details>
+
+<summary>See 138 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel Task (Legacy API) | `cancelTaskLegacy` | Cancel a running task through Skyvern's original /api/v1 task API, stopping the browser and further credit spend. |
 | Cancel Workflow Run (Legacy API) | `cancelWorkflowRunLegacy` | Cancel a running workflow run through Skyvern's original /api/v1 workflow API, stopping the browser and further credit spend. |
 | Change Plan Tier | `changePlanTier` | Move the Skyvern organization to a different subscription tier. CHANGES RECURRING BILLING and can charge the card on file immediately - only run this when a plan change is genuinely intended. |
@@ -172,6 +179,8 @@ Add Skyvern from **Build → Integrations → Connectors** and connect an accoun
 | Update Tag Value Color | `updateTagValueColor` | Change the display colour of one value under a Skyvern tag key. |
 | Update Workflow (Legacy API) | `updateWorkflowLegacy` | Replace a workflow's YAML definition through Skyvern's original /api/v1 workflow API, creating a new version. |
 | Upload File | `uploadFile` | Upload a text file to Skyvern so a run can attach it to a form or read it. Returns a file id to pass in file_ids when starting a task or agent run. |
+
+</details>
 
 ## Events
 

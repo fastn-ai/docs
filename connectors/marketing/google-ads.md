@@ -5,6 +5,8 @@ hidden: true
 
 # Google Ads
 
+<img src="../../.gitbook/assets/connectors/google-ads.png" alt="Google Ads logo" width="64">
+
 Google Ads API v25 connector (https://googleads.googleapis.com/v25). Manage Google Ads accounts through the query+mutate API: list accessible customers, run GAQL reporting queries (googleAds:search / googleAds:searchStream), and mutate resources either heterogeneously (googleAds:mutate) or via per-resource mutate services for campaigns, campaign budgets, ad groups, ad group ads, keywords and other criteria, bid modifiers, conversion actions, bidding strategies, labels, shared sets, user lists, and assets. Includes keyword planning (generateKeywordIdeas / generateKeywordHistoricalMetrics), offline conversion uploads, and GoogleAdsFieldService metadata. Auth: Google OAuth 2.0 (scope https://www.googleapis.com/auth/adwords) PLUS a mandatory developer-token header, and a login-customer-id header for manager (MCC) accounts.
 
 | | |
@@ -12,8 +14,6 @@ Google Ads API v25 connector (https://googleads.googleapis.com/v25). Manage Goog
 | **Category** | [Marketing](README.md) |
 | **Website** | [ads.google.com](https://ads.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 171 |
-| **Events** | 0 |
 | **Slug** | `googleAds` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Ads from **Build → Integrations → Connectors** and connect an acc
 | Create Customer Client | `createCustomerClient` | Creates a new client under manager. The new client customer is returned. (POST v25/customers/{+customerId}:createCustomerClient) |
 | Create Data Links | `createDataLinks` | Creates a data link. The requesting Google Ads account name and account ID will be shared with the third party (such as YouTube creators for video links) to whom you are creating the link with. (POST v25/customers/{+customerId}/dataLinks:create) |
 | Create Offline User Data Jobs | `createOfflineUserDataJobs` | Creates an offline user data job. (POST v25/customers/{+customerId}/offlineUserDataJobs:create) |
+
+<details>
+
+<summary>See 161 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Product Link Invitations | `createProductLinkInvitations` | Creates a product link invitation. (POST v25/customers/{+customerId}/productLinkInvitations:create) |
 | Create Product Links | `createProductLinks` | Creates a product link. (POST v25/customers/{+customerId}/productLinks:create) |
 | Dismiss Recommendations | `dismissRecommendations` | Dismisses given recommendations. (POST v25/customers/{+customerId}/recommendations:dismiss) |
@@ -195,3 +202,5 @@ Add Google Ads from **Build → Integrations → Connectors** and connect an acc
 | Upload Conversion Adjustments | `uploadConversionAdjustments` | Processes the given conversion adjustments. (POST v25/customers/{+customerId}:uploadConversionAdjustments) |
 | Upload Media | `uploadMedia` | Uploads a video to Google-managed or advertiser owned (brand) YouTube channel. (POST v25/customers/{+customerId}/youTubeVideoUploads:create) |
 | Upload User Data | `uploadUserData` | Uploads the given user data. (POST v25/customers/{+customerId}:uploadUserData) |
+
+</details>

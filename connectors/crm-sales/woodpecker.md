@@ -5,6 +5,8 @@ hidden: true
 
 # Woodpecker
 
+<img src="../../.gitbook/assets/connectors/woodpecker.png" alt="Woodpecker logo" width="64">
+
 Woodpecker is a cold email and LinkedIn outreach platform for sales teams and agencies. This connector covers the full Woodpecker public REST API: campaigns and campaign steps, Bounce Shield, prospects and campaign prospect management, the blacklist, inbox messages and replies, mailboxes and Microsoft Graph credentials, manual tasks, Lead Finder search and enrichment, LinkedIn profile collection, purchased domains and mailboxes, predefined reports, users, the agency (multi-client) API, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Woodpecker is a cold email and LinkedIn outreach platform for sales teams and ag
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [woodpecker.co](https://woodpecker.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 104 |
-| **Events** | 26 |
 | **Slug** | `woodpecker` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Woodpecker from **Build → Integrations → Connectors** and connect an acc
 | Blacklist Domains | `blacklistDomains` | Adds domains to the account blacklist so prospects on those domains are no longer contacted. Up to 500 domains per request. Existing prospects keep their status until the campaign next processes them. |
 | Blacklist Emails | `blacklistEmails` | Adds email addresses to the account blacklist so those prospects are no longer contacted. Up to 500 addresses per request. |
 | Check Domain Availability | `checkDomainAvailability` | Checks a specific list of domain names against a provider and returns each one's availability and price. Use it when the exact domain names are already known. |
+
+<details>
+
+<summary>See 94 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clear Bounce Shield Threshold | `clearBounceShieldThreshold` | Removes the Bounce Shield Monitor bounce rate threshold from a campaign, disabling automatic pausing for it. |
 | Collect LinkedIn Profiles From Posts | `collectLinkedinProfilesFromPosts` | Collects the LinkedIn profiles of people who reacted to or commented on the given posts and saves them to a new list in Woodpecker. Processing is asynchronous and consumes account credits - 0.1 credit per collected reaction profile and 0.3 per comment profile. |
 | Connect Company LinkedIn Account | `connectCompanyLinkedinAccount` | Creates a LinkedIn account slot inside a client company and returns its identifier together with an authorization URL the user must open to finish connecting. The link is valid for 48 hours and an available LinkedIn slot is required. Requires the Agency add-on. |
@@ -129,6 +136,8 @@ Add Woodpecker from **Build → Integrations → Connectors** and connect an acc
 | Update Prospects In Campaign | `updateProspectsInCampaign` | Updates prospects already enrolled in a campaign - their campaign status, interest level, earliest sending date, tags and snippet data. Prospects that are not enrolled yet are added. Omitted fields are left unchanged. |
 | Update Prospects In Database | `updateProspectsInDatabase` | Updates the status and snippet data of prospects in the global prospect list, matching them by email address. Prospects that do not yet exist are created. Omitted fields are left unchanged. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -145,6 +154,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | LinkedIn Account Disconnected | `linkedin_automation_account_disconnected` | Fires when a LinkedIn account is disconnected from Woodpecker. |
 | LinkedIn Connection Request Accepted | `linkedin_automation_connection_request_accepted` | Fires when a prospect accepts a LinkedIn connection request sent through Woodpecker automation. |
 | LinkedIn Direct Message Sent | `linkedin_automation_direct_message_sent` | Fires when a LinkedIn direct message is sent through Woodpecker automation. |
+
+<details>
+
+<summary>See 16 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | LinkedIn Prospect Replied | `linkedin_automation_prospect_replied` | Fires when a prospect replies in a LinkedIn conversation tracked by automation, including direct messages, InMail and replies to connection requests. |
 | Manual Task Completed | `task_done` | Fires when a manual task is marked as done. |
 | Manual Task Created | `task_created` | Fires when a manual task is created for a prospect. |
@@ -161,3 +177,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Prospect Replied | `prospect_replied` | Fires when a prospect's reply is detected or their status is manually set to RESPONDED. |
 | Prospect Saved | `prospect_saved` | Fires when a prospect is added to the database or an existing prospect is updated. |
 | Secondary Response Received | `secondary_replied` | Fires when a secondary response is detected - a further reply after the first one. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Fish Audio
 
+<img src="../../.gitbook/assets/connectors/fish-audio.png" alt="Fish Audio logo" width="64">
+
 Fish Audio is an AI voice platform for text-to-speech, speech-to-text and voice cloning. This connector covers the full Fish Audio REST API at https://api.fish.audio: text to speech (including streaming with word timestamps), speech to text, voice design, voice model management (list, create, get, update, delete), wallet package and API credit, and the Fish Agents voice-agent platform (agents, draft configuration and publishing, versions, sessions and recordings, tools, knowledge sources, phone numbers and outbound phone calls). Post-call agent webhooks (call.ended, call.analyzed, phone_call.dial_finished) are supported as events.
 
 | | |
@@ -12,8 +14,6 @@ Fish Audio is an AI voice platform for text-to-speech, speech-to-text and voice 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [fish.audio](https://fish.audio) |
 | **Authentication** | Bearer token |
-| **Actions** | 46 |
-| **Events** | 3 |
 | **Slug** | `fishAudio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Fish Audio from **Build → Integrations → Connectors** and connect an acc
 | Delete Knowledge Source | `deleteKnowledgeSource` | Delete a knowledge source. Returns 409 while any agent still references it in its draft or published configuration; check List Agents Using Knowledge Source and detach it first. |
 | Delete Tool | `deleteTool` | Delete an agent tool. Returns 409 while any agent's draft configuration still references it; check List Agents Using Tool and detach it first. |
 | Delete Voice Model | `deleteModel` | Permanently delete a voice model you own by its ID. Fish Audio returns 204 No Content on success. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Design Voice | `voiceDesign` | Generate candidate voices from a natural-language description and return each candidate with base64-encoded preview audio. Billed against API credit. |
 | End Agent Session | `endAgentSession` | Hang up a live voice-agent session: the agent disconnects and the call terminates. The session record, transcript and recording are retained. |
 | Get Agent | `getAgent` | Retrieve one voice agent's profile fields (name, description, status, publication state and public-access settings). The draft configuration is read with Get Agent Draft Config. |
@@ -70,6 +77,8 @@ Add Fish Audio from **Build → Integrations → Connectors** and connect an acc
 | Update Phone Number | `updatePhoneNumber` | Change a phone number's label, repoint it at another agent (or unbind it), set the caller-ID policy for transfers on managed Twilio numbers, or retry a failed caller-ID synchronization. Omitted fields keep their value. |
 | Update Tool | `updateTool` | Patch an agent tool's fields; omitted fields keep their value (send an empty string to clear a text field). The headers list is replaced wholesale, so include credential values again whenever you send it. Attached agents' drafts pick up the change immediately. |
 | Update Voice Model | `updateModel` | Update the title, description, cover image, visibility or tags of a voice model you own. Only the fields you pass are changed. Fish Audio returns 204 No Content on success; call Get Voice Model to read the updated model. |
+
+</details>
 
 ## Events
 

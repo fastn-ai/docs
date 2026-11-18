@@ -5,6 +5,8 @@ hidden: true
 
 # Abyssale
 
+<img src="../../.gitbook/assets/connectors/abyssale.png" alt="Abyssale logo" width="64">
+
 Abyssale image, video and PDF generation API. Generate banners and visuals from designs (synchronously or asynchronously), manage projects and workspace templates, import designs from JSON, list fonts, read credit balances, and manage the webhook signing secret.
 
 | | |
@@ -12,8 +14,6 @@ Abyssale image, video and PDF generation API. Generate banners and visuals from 
 | **Category** | [Marketing](README.md) |
 | **Website** | [abyssale.com](https://abyssale.com) |
 | **Authentication** | API key |
-| **Actions** | 33 |
-| **Events** | 4 |
 | **Slug** | `abyssale` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Abyssale from **Build → Integrations → Connectors** and connect an accou
 | Export Generated Assets As ZIP | `exportBanners` | Queue a ZIP archive of already-generated files, identified by their ids. Returns an export_id; supply callback_url to receive a NEW_EXPORT webhook carrying the archive's public URL when it is ready. The NEW_EXPORT callback has no subscription behind it, so a delivery that exhausts its retries is simply dropped. |
 | Generate Image Synchronously | `generateImage` | Generate a single image from one format of a design and return the finished file in the response. Override any layer through elements, keyed by layer name - on this synchronous endpoint every value must be an object, a bare string answers 400 invalid_payload. Consumes one generation credit per render. For several formats at once use Generate Multiple Formats Asynchronously. |
 | Generate Multi-Page PDF | `generateMultiPagePdf` | Queue generation of a multi-page PDF from a printer_multipage design. Content is addressed per page rather than per format, so pages is required. Returns a generation_request_id to poll with Get Generation Request Status, or supply callback_url for a NEW_BANNER_BATCH webhook. Consumes generation credits. Do not set original_visual_id - visual versioning is not wired on this endpoint. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Multiple Formats Asynchronously | `generateMultiFormatMedia` | Queue generation of one or many formats of a design - images, animated GIF/MP4/HTML5 or print PDF. Returns a generation_request_id to poll with Get Generation Request Status, or supply callback_url to receive a NEW_BANNER_BATCH webhook when the batch is done. Consumes one generation credit per rendered format. image_file_type must match the design type or the request answers 400 invalid_filetype. |
 | Get Credit Balance | `getCredits` | Get the remaining generation credits and AI credits for the connected workspace for the current billing period. Generation credits cover image, video, PDF and HTML5 renders; AI credits cover AI features such as text-to-image and background removal. Each block reports available, limit, consumed and extra. |
 | Get Design Details | `getDesign` | Get the full details of one design by its UUID: name, type, project, its formats and its layer/property set. Pass i=advanced to receive the design's full layer set including group layers. A designId that is not a UUID does not match the route and answers 404. |
@@ -57,6 +64,8 @@ Add Abyssale from **Build → Integrations → Connectors** and connect an accou
 | Rotate Webhook Signing Secret | `rotateSigningSecret` | Mint a new webhook signing secret for the workspace. The previous secret stays valid for a short overlap so in-flight deliveries still verify; the response reports when it expires. Answers 409 if a rotation is already in progress - pass force=true to rotate anyway and revoke the previous secret immediately. Rotating also mints a secret, and so switches signing on, if none existed. |
 | Validate And Queue Design Import | `validateDesignImport` | Confirm that every presigned asset upload for an import has been completed, then validate the import and queue it for processing. Call it after uploading each file returned in the import's uploads array. An import with uploads still missing, or whose upload window has expired, is reported as failed. |
 | Verify API Key | `verifyApiKey` | Check that the connected Abyssale API key is usable and find out which workspace it belongs to. Returns 200 with the workspace (company) name only if the key exists, is still active and, for a workspace key, the plan includes API access. Every failure is a 401: id 'unauthorized' for an unknown or revoked key, id 'api_access_denied' when the plan excludes API access. Takes no request body. |
+
+</details>
 
 ## Events
 

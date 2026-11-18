@@ -5,6 +5,8 @@ hidden: true
 
 # Speechmatics
 
+<img src="../../.gitbook/assets/connectors/speechmatics.png" alt="Speechmatics logo" width="64">
+
 Speechmatics speech-to-text. Submit pre-recorded audio to the Batch Transcription (ASR) API, poll job status, retrieve transcripts in JSON, plain text or SRT, download the original media, read usage statistics, and administer workspace projects and API keys through the Management API.
 
 | | |
@@ -12,8 +14,6 @@ Speechmatics speech-to-text. Submit pre-recorded audio to the Batch Transcriptio
 | **Category** | [AI and ML](README.md) |
 | **Website** | [speechmatics.com](https://speechmatics.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 40 |
-| **Events** | 2 |
 | **Slug** | `speechmatics` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Speechmatics from **Build → Integrations → Connectors** and connect an a
 | Create Credit Pack Checkout | `createCreditPackCheckout` | Creates a Stripe Checkout Session for buying a Speechmatics credit pack as a one-off charge. Returns the hosted checkout URL; after the customer pays, call Confirm Credit Pack Checkout with the session id to have the credits granted. WARNING: completing the returned checkout charges a real payment method. Requires a Management Token. |
 | Create Payment Setup Intent | `createSetupIntent` | Creates a Stripe SetupIntent for the Speechmatics account and returns its client secret, so a card can be collected in your own front end with stripe.js rather than on a hosted Stripe page. Requires a Management Token. |
 | Create Project | `createProject` | Creates a new project on the Speechmatics contract. Projects group API keys and usage so that separate applications can be metered apart. Requires a Management Token with the 'Manage projects' permission; otherwise the call is refused with 403 'Forbidden operation'. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Temporary API Key | `createTemporaryApiKey` | Mints a short-lived Speechmatics API key that expires on its own after the given number of seconds, so an end-user device can talk to the Realtime or Batch API without ever holding a long-lived key. Unlike the rest of the Management API this legacy route accepts an ordinary project API key rather than a Management Token. SECURITY: the response is a live credential; treat every execution record of this action as a secret and do not log it. |
 | Create Transcription Job | `createJob` | Submits a new Speechmatics batch transcription job for audio hosted at a publicly reachable URL, which Speechmatics fetches itself. Returns the job id immediately; transcription is asynchronous, so poll Get Transcription Job until its status is 'done' and then call Get Transcript, or set Wait Seconds to block until the job finishes and have the transcript embedded in this response. To have Speechmatics call a webhook instead of polling, use Create Transcription Job With Notification. Speechmatics meters billing on the audio duration of every job submitted. |
 | Create Transcription Job With Notification | `createJobWithNotification` | Submits a Speechmatics batch transcription job and asks Speechmatics to POST the result to your own HTTPS endpoint when the job finishes, so no polling is needed. This is the action the Speechmatics connector's 'Transcription job completed' event uses: pass the fastn webhook URL as the Notification URL. Speechmatics calls the URL from a fixed set of egress IP addresses that a firewalled endpoint must allowlist, and retries for several minutes before recording a 'Sending notification failed' error on the job. |
@@ -64,6 +71,8 @@ Add Speechmatics from **Build → Integrations → Connectors** and connect an a
 | Submit Onboarding Survey | `submitOnboardingSurvey` | Records the answers to the Speechmatics onboarding survey for the signed-in user: who they are, what they are building and how they found Speechmatics. Runs once when a workspace is set up. Requires a Management Token. |
 | Subscribe To Package | `createSubscription` | Subscribes the Speechmatics account to a commercial package, or switches it to a different one. WARNING: this changes what the account is billed and an upgrade takes effect immediately. A downgrade is scheduled for the end of the current term. Requires a Management Token. |
 | Update Project | `updateProject` | Renames an existing Speechmatics project. Only the project name can be changed through this endpoint. Requires a Management Token with the 'Manage projects' permission; otherwise the call is refused with 403 'Forbidden operation'. |
+
+</details>
 
 ## Events
 

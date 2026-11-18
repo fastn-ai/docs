@@ -5,6 +5,8 @@ hidden: true
 
 # Google Compute Engine
 
+<img src="../../.gitbook/assets/connectors/google-compute-engine.png" alt="Google Compute Engine logo" width="64">
+
 Google Compute Engine API v1 (https://compute.googleapis.com/compute/v1). List zones, list and inspect VM instances, list persistent disks, create and delete persistent disks, and poll zonal operations. OAuth 2.0 (Google) authorization-code auth with the compute and compute.readonly scopes.
 
 | | |
@@ -12,8 +14,6 @@ Google Compute Engine API v1 (https://compute.googleapis.com/compute/v1). List z
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [compute.googleapis.com](https://compute.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `googleComputeEngine` |
 
 ## Use it

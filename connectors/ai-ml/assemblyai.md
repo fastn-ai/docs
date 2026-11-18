@@ -5,6 +5,8 @@ hidden: true
 
 # AssemblyAI
 
+<img src="../../.gitbook/assets/connectors/assemblyai.png" alt="AssemblyAI logo" width="64">
+
 AssemblyAI speech-to-text and audio intelligence API (https://api.assemblyai.com/v2). Upload audio, create/get/list/delete transcripts, retrieve sentences, paragraphs, word-search, SRT/VTT subtitles, and redacted audio. Audio Intelligence: speaker labels, sentiment analysis, entity detection, content safety, PII redaction, auto highlights, topic detection. LeMUR LLM framework (task, summary, question-answer, action-items) over transcripts. Auth: raw API key in the Authorization header (no Bearer prefix).
 
 | | |
@@ -12,8 +14,6 @@ AssemblyAI speech-to-text and audio intelligence API (https://api.assemblyai.com
 | **Category** | [AI and ML](README.md) |
 | **Website** | [assemblyai.com](https://assemblyai.com) |
 | **Authentication** | API key |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `assemblyai` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add AssemblyAI from **Build → Integrations → Connectors** and connect an acc
 | Get VTT Subtitles | `getVttSubtitles` | Export a completed transcript as WebVTT subtitles (text/plain). Optionally limit characters per caption. Free read. |
 | List Transcripts | `listTranscripts` | List your transcripts (paginated, newest first). Free read. Filter by status or date; use before_id/after_id to page. |
 | Upload Audio File | `uploadAudioFile` | Upload a local audio/video file (raw binary) to AssemblyAI. Returns an upload_url usable as audio_url in createTranscript. Pass the file bytes as input.file. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Word Search | `wordSearch` | Search a completed transcript for one or more keywords and get match counts plus timestamps. Free read. |
+
+</details>

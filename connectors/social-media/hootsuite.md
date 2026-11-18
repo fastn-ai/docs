@@ -5,6 +5,8 @@ hidden: true
 
 # Hootsuite
 
+<img src="../../.gitbook/assets/connectors/hootsuite.ico" alt="Hootsuite logo" width="64">
+
 Hootsuite is a social media management platform for scheduling, approving, and publishing content across connected social profiles. This connector covers the Hootsuite Platform REST API 1.0: outbound message scheduling and approval workflows, comment approvals, media uploads, social profiles, the authenticated member, organizations, teams, members and their permissions, and SCIM 2.0 user and group provisioning.
 
 | | |
@@ -12,8 +14,6 @@ Hootsuite is a social media management platform for scheduling, approving, and p
 | **Category** | [Social media](README.md) |
 | **Website** | [hootsuite.com](https://hootsuite.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 46 |
-| **Events** | 4 |
 | **Slug** | `hootsuite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Hootsuite from **Build → Integrations → Connectors** and connect an acco
 | Create Team | `createTeam` | Create team. Creates a team in an organization. |
 | Delete Message | `deleteMessage` | Delete message. Deletes a message. A message is always associated with a single social profile. |
 | List Member Organizations | `listMemberOrganizations` | Retrieve member's organizations. Retrieves the organizations that the member is in. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List My Ad Accounts | `retrieveMyAdAccounts` | Retrieve authenticated member's ad accounts. Retrieves the ad accounts that the authenticated user has permissions on. |
 | List My Organizations | `retrieveMyOrganizations` | Retrieve authenticated member's organizations. Retrieves the organizations that the authenticated member is in. |
 | List My Social Profiles | `retrieveMySocialProfiles` | Retrieve authenticated member's social profiles. Retrieves the social media profiles that the authenticated user has BASIC_USAGE permissions on. |
@@ -70,6 +77,8 @@ Add Hootsuite from **Build → Integrations → Connectors** and connect an acco
 | Retrieve Team | `retrieveTeam` | Retrieve team. Retrieves a team with a given team ID. |
 | Retrieve Team Member Permissions | `retrieveTeamMemberPermissions` | Retrieve team member's permissions. Retrieves team member's team permissions. |
 | Schedule Message | `scheduleMessage` | Schedule messages. Schedules a message to send on one or more social profiles (except Pinterest). Returns an array of uniquely identifiable messages (one per social profile requested).&lt;br/&gt;&lt;br/&gt;Scheduling a message to Pinterest can not be bundled with any other social profiles. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Fabric
 
+<img src="../../.gitbook/assets/connectors/microsoft-fabric.png" alt="Microsoft Fabric logo" width="64">
+
 Microsoft Fabric and Power BI analytics management. Spans two Microsoft APIs behind one Entra ID OAuth 2.0 connection: the Power BI REST API (https://api.powerbi.com/v1.0/myorg) for workspaces (groups), semantic models (datasets), push-dataset tables and rows, and embed tokens; and the Fabric REST API (https://api.fabric.microsoft.com/v1) for eventhouses, KQL databases and the long-running operation status of their creation. KQL queries are executed directly against the Kusto query service URI returned by the eventhouse or KQL database. Eventhouse and KQL database creation require the workspace to sit on a supported Fabric capacity.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Fabric and Power BI analytics management. Spans two Microsoft APIs beh
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [fabric.microsoft.com](https://fabric.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `microsoftFabric` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Fabric from **Build → Integrations → Connectors** and connect 
 | Execute Dataset Queries | `executeQueries` | Runs a DAX query against a semantic model (dataset) in the specified workspace and returns the result rows. Power BI REST API. One query per call, up to 100,000 rows or 1,000,000 values; datasets hosted in Azure Analysis Services are not supported. The tenant setting that allows the Dataset Execute Queries REST API must be enabled. Requires the Dataset.ReadWrite.All or Dataset.Read.All scope. |
 | Execute KQL Query | `executeKqlQuery` | Runs a Kusto Query Language query against a KQL database and returns the result tables. Kusto query endpoint (not the Fabric management API): the request goes straight to the cluster named by the Cluster Host input, which is the host name of the queryServiceUri returned by Get KQL Database or Get Eventhouse, so one action serves every cluster. Requires the KQLDatabase.Execute.All scope, and the token audience must be accepted by that Kusto endpoint. |
 | Generate Embed Token | `generateToken` | Generates a Power BI embed token covering one or more reports, datasets and target workspaces, for the embed-for-your-customers scenario. Power BI REST API. At most 50 reports, 50 datasets and 50 target workspaces per call, and all of them must reside in V2 workspaces. Requires Dataset.Read.All or Dataset.ReadWrite.All, plus Report.Read.All or Report.ReadWrite.All when reports are supplied and Content.Create when target workspaces are supplied. The returned token is a credential - do not log or store it in plain text. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Dataset | `getDataset` | Returns a single dataset (semantic model) from the specified Power BI workspace. Power BI REST API. The caller needs write permission on the dataset to see its full properties; read-only callers receive only the ID and name. Requires the Dataset.Read.All or Dataset.ReadWrite.All scope. |
 | Get Eventhouse | `getEventHouse` | Returns the properties of a single eventhouse, including its Kusto query and ingestion service URIs and the IDs of the KQL databases it contains. Fabric REST API. Requires the Eventhouse.Read.All, Eventhouse.ReadWrite.All, Item.Read.All or Item.ReadWrite.All scope. |
 | Get KQL Database | `getKQLDatabase` | Returns the properties of a single KQL database, including its parent eventhouse, database type and Kusto query and ingestion service URIs. Fabric REST API. The query service URI returned here is what the Execute KQL Query action targets. Requires the KQLDatabase.Read.All, KQLDatabase.ReadWrite.All, Item.Read.All or Item.ReadWrite.All scope. |
@@ -45,3 +52,5 @@ Add Microsoft Fabric from **Build → Integrations → Connectors** and connect 
 | List Push Dataset Tables | `listTables` | Returns the tables of a push dataset in the specified workspace, including each table's name and, where exposed, its columns and measures. Power BI REST API. This call only supports push datasets. Requires the Dataset.ReadWrite.All or Dataset.Read.All scope. |
 | List Workspaces | `listGroups` | Returns the list of Power BI workspaces (groups) the signed-in user has access to. Power BI REST API. Supports OData filtering and paging through the $filter, $top and $skip parameters. Requires the Workspace.Read.All or Workspace.ReadWrite.All scope. |
 | Upsert Table | `upsertTable` | Replaces the metadata and schema of a table inside a push dataset in the specified Power BI workspace. Power BI REST API (Push Datasets). This is a full replacement: columns and measures omitted from the request are removed from the table and its existing rows are cleared, so point it only at a push dataset you own. Requires the Dataset.ReadWrite.All scope. |
+
+</details>

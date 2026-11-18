@@ -5,6 +5,8 @@ hidden: true
 
 # Positionstack
 
+<img src="../../.gitbook/assets/connectors/positionstack.png" alt="Positionstack logo" width="64">
+
 Positionstack forward and reverse geocoding API by APILayer. Forward geocoding converts addresses/place names into latitude/longitude coordinates; reverse geocoding converts coordinates into human-readable addresses. Batch variants of both are available on paid plans only.
 
 | | |
@@ -12,8 +14,6 @@ Positionstack forward and reverse geocoding API by APILayer. Forward geocoding c
 | **Category** | [Maps and location](README.md) |
 | **Website** | [positionstack.com](https://positionstack.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `positionstack` |
 
 ## Use it

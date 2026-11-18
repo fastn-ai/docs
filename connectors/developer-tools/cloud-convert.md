@@ -5,6 +5,8 @@ hidden: true
 
 # CloudConvert
 
+<img src="../../.gitbook/assets/connectors/cloud-convert.png" alt="CloudConvert logo" width="64">
+
 CloudConvert is a file conversion and processing API. This connector covers the CloudConvert v2 API: jobs, tasks, the import, convert, optimize, merge, archive, thumbnail, watermark, capture-website, metadata and export task types, webhook registration, signed URLs, and the account and format metadata endpoints.
 
 | | |
@@ -12,8 +14,6 @@ CloudConvert is a file conversion and processing API. This connector covers the 
 | **Category** | [Developer tools](README.md) |
 | **Website** | [cloudconvert.com](https://cloudconvert.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 17 |
-| **Events** | 0 |
 | **Slug** | `cloudConvert` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CloudConvert from **Build → Integrations → Connectors** and connect an a
 | Get Current User | `getCurrentUser` | Retrieve the CloudConvert account the API key belongs to, including its remaining conversion credits, whether it is on a paid plan, and whether its email address has been verified. |
 | Get Job | `getJob` | Retrieve a single job by its identifier, including its status and, when requested, the tasks it contains. |
 | Get Task | `getTask` | Retrieve a single task by its identifier, including its status, the engine that ran it and, once finished, its result files and their download URLs. |
+
+<details>
+
+<summary>See 7 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Jobs | `listJobs` | List the conversion jobs on the account. Filter by status or tag, include the tasks of each job, and page through the results. |
 | List Supported Operations | `listOperations` | List every operation CloudConvert supports, as input format plus output format plus engine, with the credit cost of each. Use it to discover which conversions are possible before creating a task. |
 | List Tasks | `listTasks` | List the tasks on the account. Filter by job, status, operation or tag, include the job each task belongs to, and page through the results. |
@@ -41,3 +48,5 @@ Add CloudConvert from **Build → Integrations → Connectors** and connect an a
 | Retry Task | `retryTask` | Create a new task from the payload of another task (POST /v2/tasks/{id}/retry). Docs: https://cloudconvert.com/docs/raw/api-reference/tasks.md#retry-task |
 | Wait for Job | `waitForJob` | Wait until a job completes and return it (GET https://sync.api.cloudconvert.com/v2/jobs/{id}). Docs: https://cloudconvert.com/docs/raw/api-reference/jobs.md#wait-for-job |
 | Wait for Task | `waitForTask` | Wait until a task completes and return it (GET https://sync.api.cloudconvert.com/v2/tasks/{id}). Docs: https://cloudconvert.com/docs/raw/api-reference/tasks.md#wait-for-task |
+
+</details>

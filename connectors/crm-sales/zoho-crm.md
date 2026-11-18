@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho CRM
 
+<img src="../../.gitbook/assets/connectors/zoho-crm.png" alt="Zoho CRM logo" width="64">
+
 Zoho CRM is a cloud-based CRM platform. Manage leads, contacts, accounts, deals, tasks, events, calls, and notes via the Zoho CRM REST API v8.
 
 | | |
@@ -12,8 +14,6 @@ Zoho CRM is a cloud-based CRM platform. Manage leads, contacts, accounts, deals,
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [zoho.com](https://zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `zohoCrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho CRM from **Build → Integrations → Connectors** and connect an accou
 | Delete Contact | `deleteContact` | Delete a Contact by ID. |
 | Delete Deal | `deleteDeal` | Delete a Deal by ID. |
 | Delete Lead | `deleteLead` | Delete a Lead by ID. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Note | `deleteNote` | Delete a Note by ID. |
 | Delete Task | `deleteTask` | Delete a Task by ID. |
 | Get Record | `getRecord` | Retrieve a single record by id from any Zoho CRM module, such as Leads, Contacts, Accounts, Deals, Tasks or Notes. |
@@ -52,3 +59,5 @@ Add Zoho CRM from **Build → Integrations → Connectors** and connect an accou
 | Update Lead | `updateLead` | Update a Lead by ID. Only the fields you supply are sent, so this is a partial update. |
 | Update Note | `updateNote` | Update a Note by ID. Only the fields you supply are sent, so this is a partial update. |
 | Update Task | `updateTask` | Update a Task by ID. Only the fields you supply are sent, so this is a partial update. |
+
+</details>

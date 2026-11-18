@@ -5,6 +5,8 @@ hidden: true
 
 # FreshBooks
 
+<img src="../../.gitbook/assets/connectors/freshbooks.png" alt="FreshBooks logo" width="64">
+
 FreshBooks cloud accounting and invoicing platform. Manage clients and contacts, invoices, recurring invoice profiles, estimates and proposals, payments and checkout links, credit notes, expenses and recurring expenses, expense categories, bills and vendors, items and services, taxes, projects, tasks, time entries, retainers, staff and team members, ledger accounts, journal entries, other income, financial reports, and webhook callbacks via the FreshBooks REST API (https://api.freshbooks.com). OAuth 2.0 authorization code auth.
 
 | | |
@@ -12,8 +14,6 @@ FreshBooks cloud accounting and invoicing platform. Manage clients and contacts,
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [freshbooks.com](https://freshbooks.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 59 |
-| **Events** | 0 |
 | **Slug** | `freshbooks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add FreshBooks from **Build → Integrations → Connectors** and connect an acc
 | Create Payment | `createPayment` | Record a payment against an invoice on a FreshBooks account. |
 | Create Project | `createProject` | Create a new project on a FreshBooks business, optionally attaching the services that can be tracked against it. |
 | Create Tax | `createTax` | Create a tax on a FreshBooks account so it can be applied to invoice and expense lines. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Time Entry | `createTimeEntry` | Log a time entry against a project and service on a FreshBooks business. |
 | Delete Client | `deleteClient` | Delete a client on a FreshBooks account. FreshBooks performs a soft delete by setting the client's visibility state to deleted. |
 | Delete Client Contact | `deleteClientContact` | Delete a secondary contact belonging to a client on a FreshBooks account. |
@@ -83,3 +90,5 @@ Add FreshBooks from **Build → Integrations → Connectors** and connect an acc
 | Update Tax | `updateTax` | Update a tax on a FreshBooks account. Only the fields supplied in the tax object are changed. |
 | Update Time Entry | `updateTimeEntry` | Update a time entry on a FreshBooks business. Only the fields supplied in the time entry object are changed. |
 | Verify Webhook Callback | `verifyWebhookCallback` | Verify a FreshBooks webhook callback using the verifier code FreshBooks POSTed to the callback URL. FreshBooks only delivers events to verified callbacks. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # MemberVault
 
+<img src="../../.gitbook/assets/connectors/member-vault.png" alt="MemberVault logo" width="64">
+
 MemberVault is an online course and membership platform. This connector covers the complete MemberVault public API: listing the products in an account, granting a member access to a product, removing product access, and permanently deleting a member.
 
 | | |
@@ -12,8 +14,6 @@ MemberVault is an online course and membership platform. This connector covers t
 | **Category** | [E-commerce](README.md) |
 | **Website** | [membervault.co](https://membervault.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 4 |
-| **Events** | 4 |
 | **Slug** | `memberVault` |
 
 ## Use it

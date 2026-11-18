@@ -5,6 +5,8 @@ hidden: true
 
 # ContentStudio
 
+<img src="../../.gitbook/assets/connectors/content-studio.png" alt="ContentStudio logo" width="64">
+
 ContentStudio social media management platform. Manage workspaces, connected social accounts, posts, campaigns, labels, content categories, approval workflows, share links, team members, media library, automations (RSS/bulk CSV/evergreen), social inbox conversations, AI image and video generation, and cross-platform analytics for Facebook, Instagram, LinkedIn, X/Twitter, TikTok, YouTube, Pinterest, Threads, Bluesky, Google Business Profile, Meta Ads and Google Ads.
 
 | | |
@@ -12,8 +14,6 @@ ContentStudio social media management platform. Manage workspaces, connected soc
 | **Category** | [Social media](README.md) |
 | **Website** | [contentstudio.io](https://contentstudio.io) |
 | **Authentication** | API key |
-| **Actions** | 360 |
-| **Events** | 0 |
 | **Slug** | `contentStudio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ContentStudio from **Build → Integrations → Connectors** and connect an 
 | Add or replace a review reply (upsert) | `inboxReviewReply` | Add or replace a review reply (upsert). |
 | Add posts to an evergreen automation | `addEvergreenPosts` | Add posts to an evergreen automation. Appends one or more posts to the automation's recycling pool in a single atomic write, so concurrent callers cannot overwrite each other — safe to drive from a webhook or a no-code step. Each item becomes one pool entry with a single variation, the same shape create's `posts[]` produces. |
 | Ads with per-ad metrics | `googleAdsAnalyticsAds` | Ads with per-ad metrics. Scope with `campaign_id`, `ad_group_id`, both, or neither. |
+
+<details>
+
+<summary>See 350 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Ads with per-ad metrics and creative details | `metaAdsAnalyticsAds` | Ads with per-ad metrics and creative details. Scope with `campaign_id`, `ad_set_id`, both, or neither. Rows include the creative's name, title, body and thumbnail URL. |
 | AI-generated insights for an ad account | `googleAdsAnalyticsAiInsights` | AI-generated insights for an ad account. Two insight types over the same dataset, selected with `type`: `aiInsightsSummary` is a compact summary and `aiInsightsDetailed` is the full read-out. Generation is asynchronous: the first call returns a `generating` status, and repeating the same request returns the insight once it is ready. Results are cached for 24 hours, so a repeated call is normally immediate. |
 | AI-generated insights for an ad account | `metaAdsAnalyticsAiInsights` | AI-generated insights for an ad account. Two insight types over the same dataset, selected with `type`: `aiInsightsSummary` is a compact summary and `aiInsightsDetailed` is the full read-out. Generation is asynchronous: the first call returns a `generating` status, and repeating the same request returns the insight once it is ready. Results are cached for 24 hours, so a repeated call is normally immediate. |
@@ -384,3 +391,5 @@ Add ContentStudio from **Build → Integrations → Connectors** and connect an 
 | YouTube traffic source breakdown (how viewers found videos) | `youtubeAnalyticsFindVideo` | YouTube traffic source breakdown (how viewers found videos). |
 | YouTube video performance metrics grouped by publish date | `youtubeAnalyticsPerformanceSchedule` | YouTube video performance metrics grouped by publish date. |
 | YouTube videos sorted by a configurable metric | `youtubeAnalyticsSortedTopPosts` | YouTube videos sorted by a configurable metric. Video metrics come from two YouTube APIs. `impression_count` (views), `like_count`, `comment_count` and `favorites` are lifetime Data API counts. `average_view_duration` (seconds), `average_view_percentage`, `share_count`, `minutes_watched`, `red_minutes_watched`, `red_views`, `subscribers_gained` and `dislike_count` come from the YouTube Analytics API and cover the requested date range only. `duration` is the video length in whole seconds. `engagement_rate` is `post_engagement / impression_count * 100`. `favorites` is always 0 (deprecated by YouTube). Videos are selected by publish date falling inside the range, so a video published earlier is not returned however many views it received during the range. Unique viewers are not available from the YouTube API and are therefore not returned. |
+
+</details>

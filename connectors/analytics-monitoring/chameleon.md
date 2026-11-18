@@ -5,6 +5,8 @@ hidden: true
 
 # Chameleon
 
+<img src="../../.gitbook/assets/connectors/chameleon.png" alt="Chameleon logo" width="64">
+
 Chameleon is a product-adoption platform for in-product Tours, Microsurveys, Tooltips, Launchers, Embeddables, Product Demos and the HelpBar. This connector covers the full Chameleon v3 REST API: user profiles and companies with search and counting, segments, every Experience type, deliveries, tour interactions and microsurvey responses, themes, tags, domains and URL groups, data properties, event names, rate limit and alert groups, data imports, HelpBar search configuration and items, change history, webhook subscriptions, and the incoming data-push hooks for profiles, companies and events.
 
 | | |
@@ -12,8 +14,6 @@ Chameleon is a product-adoption platform for in-product Tours, Microsurveys, Too
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [chameleon.io](https://chameleon.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 98 |
-| **Events** | 27 |
 | **Slug** | `chameleon` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Chameleon from **Build → Integrations → Connectors** and connect an acco
 | Count User Profiles | `countUserProfiles` | Returns how many end-user profiles match a set of segmentation filters, without returning the profiles themselves. |
 | Create Data Import | `createDataImport` | Creates a Data Import definition that tags, updates or deletes User Profiles or Companies from a CSV or from segment filters. For CSV kinds, map the CSV headers to Chameleon properties here, then upload the CSV file (multipart, outside this connector) and set import_at to start it. Imports cannot be deleted once created. |
 | Create Data Property | `createDataProperty` | Declares a custom data property on user profiles or companies so it can be used for segmentation and personalization. |
+
+<details>
+
+<summary>See 88 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Delivery | `createDelivery` | Queues a specific Tour or Microsurvey to be shown to one specific end-user the next time they are in your product. Identify the user by Profile ID, User Identifier or Email. |
 | Create Domain | `createDomain` | Enables Chameleon on a new domain so Experiences may run there. |
 | Create Environment | `createEnvironment` | Creates an environment group that domains and Experiences can be organised under. |
@@ -123,6 +130,8 @@ Add Chameleon from **Build → Integrations → Connectors** and connect an acco
 | Update Tour | `updateTour` | Updates a Tour's domain group, tag or publication state. Set Published At to publish the Tour or to null to unpublish it. |
 | Upsert Search Item | `upsertSearchItem` | Creates or updates a HelpBar Search Item identified by your own uid, with its title, description, search group, targeting (profiles, companies, segments), icon and the actions run when it is selected. Note: when an existing uid is updated, the id in the response may not be the stored item's id; read stable ids from List Search Items. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -139,6 +148,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | HelpBar Item Actioned | `helpbar.item.action` | Sent when an item in the HelpBar is clicked or actioned. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
 | HelpBar Item Error | `helpbar.item.error` | Sent when an action from a HelpBar item throws an error when running. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
 | HelpBar Search | `helpbar.search` | Sent when a HelpBar search query displays its results. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
+
+<details>
+
+<summary>See 17 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Microsurvey Button Clicked | `survey.button.clicked` | Sent when a button in a Microsurvey Step is clicked; includes the Button. Payload sample follows Chameleon's tour button example (the doc links it for this topic); the model key is survey. kind carries the topic. |
 | Microsurvey Completed | `survey.completed` | Sent when a Microsurvey is completed with the Step the user completed. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
 | Microsurvey Exited | `survey.exited` | Sent when a Microsurvey is exited with the Step the user exited. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
@@ -156,3 +172,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Tour Exited | `tour.exited` | Sent when a Tour is exited; includes the Step the user exited. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
 | Tour Snoozed | `tour.snoozed` | Sent when a Tour is exited on a Step configured to snooze and re-display later. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
 | Tour Started | `tour.started` | Sent when a Tour is started; includes the first Step. Payload sample is Chameleon's own example from developers.chameleon.io/webhooks/outgoing; kind carries the topic. |
+
+</details>

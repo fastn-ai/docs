@@ -5,6 +5,8 @@ hidden: true
 
 # Ipregistry
 
+<img src="../../.gitbook/assets/connectors/ipregistry.png" alt="Ipregistry logo" width="64">
+
 Ipregistry is an IP geolocation, network and threat intelligence API. This connector covers all eight Ipregistry endpoints: single, batch and origin IP lookups, single, batch and origin autonomous system lookups, and user-agent parsing for both submitted and origin user agents, against the global, EU or GB base URL.
 
 | | |
@@ -12,8 +14,6 @@ Ipregistry is an IP geolocation, network and threat intelligence API. This conne
 | **Category** | [Search and web](README.md) |
 | **Website** | [ipregistry.co](https://ipregistry.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `ipregistry` |
 
 ## Use it

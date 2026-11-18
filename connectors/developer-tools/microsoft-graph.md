@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Graph
 
+<img src="../../.gitbook/assets/connectors/microsoft-graph.svg" alt="Microsoft Graph logo" width="64">
+
 Microsoft Graph API v1.0 — manage users, groups, mail, calendar events, and SharePoint sites across the Microsoft 365 ecosystem.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Graph API v1.0 — manage users, groups, mail, calendar events, and Sh
 | **Category** | [Developer tools](README.md) |
 | **Website** | [microsoft.com](https://microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 116 |
-| **Events** | 6 |
 | **Slug** | `microsoftGraph` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Graph from **Build → Integrations → Connectors** and connect a
 | Create Calendar | `createCalendar` | Create a new calendar in the default calendar group (POST /me/calendars). |
 | Create Contact | `createContact` | Create an Outlook contact (POST /me/contacts). Requires Contacts.ReadWrite. Returns 201. |
 | Create Drive Folder | `createDriveFolder` | Create a folder in OneDrive root (POST /me/drive/root/children). Requires Files.ReadWrite. Returns 201. |
+
+<details>
+
+<summary>See 106 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Event | `createEvent` | Create a new calendar event. |
 | Create Forward Draft | `createForward` | Create a draft forward of a message to recipients (POST /me/messages/{messageId}/createForward). Returns a draft message; does not send. |
 | Create Group | `createGroup` | Create a new Microsoft 365 or security group. |
@@ -140,6 +147,8 @@ Add Microsoft Graph from **Build → Integrations → Connectors** and connect a
 | Update Message | `updateMessage` | Update writable properties of a message, e.g. mark read/unread, change subject, importance, categories, or isDraft body (PATCH /me/messages/{messageId}). |
 | Update User | `updateUser` | Update properties of a user. |
 | Upload Drive File | `uploadDriveFile` | Upload (create/replace) a small file (&lt;=250MB) by path (PUT /me/drive/root:/{path}:/content). Body is raw file content. Requires Files.ReadWrite. Returns 200/201. |
+
+</details>
 
 ## Events
 

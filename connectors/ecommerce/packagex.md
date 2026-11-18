@@ -5,6 +5,8 @@ hidden: true
 
 # PackageX
 
+<img src="../../.gitbook/assets/connectors/packagex.png" alt="PackageX logo" width="64">
+
 PackageX is a logistics operations platform providing package and mail tracking, mailroom management, shipping label generation, carrier rate shopping, deliveries, inventory, and warehouse operations via a unified REST API.
 
 | | |
@@ -12,8 +14,6 @@ PackageX is a logistics operations platform providing package and mail tracking,
 | **Category** | [E-commerce](README.md) |
 | **Website** | [packagex.io](https://packagex.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `packagex` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PackageX from **Build → Integrations → Connectors** and connect an accou
 | Delete API Key | `deleteApiKey` | Permanently deletes a single API key by its id, immediately revoking its access. |
 | Delete Contact | `deleteContact` | Permanently deletes a contact by its id. |
 | Delete Group | `deleteGroup` | Permanently deletes a group by its id. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Location | `deleteLocation` | Permanently deletes a physical location by its id. |
 | Delete User | `deleteUser` | Permanently removes a user from your organization by their id. |
 | Geocode Address | `geocodeAddress` | Converts an address, or the id of an existing address or location, into geographical coordinates (latitude and longitude). |
@@ -59,3 +66,5 @@ Add PackageX from **Build → Integrations → Connectors** and connect an accou
 | Update Contact | `updateContact` | Updates an existing contact's name, contact details, or address. |
 | Update Group | `updateGroup` | Updates a group's name, or adds, removes, or replaces its member contact ids. |
 | Update Location | `updateLocation` | Updates an existing location's attributes such as name, code, contact info, address, or provider instructions. |
+
+</details>

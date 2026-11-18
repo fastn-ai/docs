@@ -5,6 +5,8 @@ hidden: true
 
 # OSRM
 
+<img src="../../.gitbook/assets/connectors/osrm.png" alt="OSRM logo" width="64">
+
 OSRM (Open Source Routing Machine) computes routes on OpenStreetMap data: fastest routes, nearest road snapping, distance/duration tables, GPS map matching, travelling-salesman trips and vector tiles. Point it at your own OSRM server, or at the public demo server router.project-osrm.org for light, non-commercial testing (no API key; best effort, ODbL attribution required).
 
 | | |
@@ -12,8 +14,6 @@ OSRM (Open Source Routing Machine) computes routes on OpenStreetMap data: fastes
 | **Category** | [Search and web](README.md) |
 | **Website** | [project-osrm.org](https://project-osrm.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `osrm` |
 
 ## Use it

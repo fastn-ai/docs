@@ -5,6 +5,8 @@ hidden: true
 
 # WebCrawlerAPI
 
+<img src="../../.gitbook/assets/connectors/webcrawlerapi.png" alt="WebCrawlerAPI logo" width="64">
+
 WebCrawlerAPI crawls whole websites and scrapes single pages into Markdown, cleaned text, HTML or link lists. This connector covers the complete WebCrawlerAPI: asynchronous crawl jobs with status, discovered URLs, combined Markdown output and cancellation; synchronous and asynchronous single-page scraping with optional LLM prompts; scheduled change-monitoring feeds with RSS and JSON Feed output, pause, resume, force-run, webhook resend and deletion; AI agent runs that extract structured data; and organization balance and usage statistics.
 
 | | |
@@ -12,8 +14,6 @@ WebCrawlerAPI crawls whole websites and scrapes single pages into Markdown, clea
 | **Category** | [Search and web](README.md) |
 | **Website** | [webcrawlerapi.com](https://webcrawlerapi.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 24 |
-| **Events** | 1 |
 | **Slug** | `webcrawlerapi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WebCrawlerAPI from **Build → Integrations → Connectors** and connect an 
 | Get Crawl Job URLs | `getCrawlJobUrls` | Returns every URL discovered by a completed crawl job as a flat list plus path-based clusters showing how many URLs sit under each site section. Only available once the job has completed. |
 | Get Feed | `getFeed` | Returns a feed's configuration, status, next and last run times, webhook delivery status and its recent run history with page counts and costs. |
 | Get Feed JSON | `getFeedJson` | Returns the changes detected by a feed in JSON Feed 1.1 format, one item per new, changed, unavailable or erroring page with a WebCrawlerAPI extension carrying the change type, page status code, content URL and size. Paginated, newest first. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Feed RSS | `getFeedRss` | Returns the changes detected by a feed as an Atom 1.0 XML document (RFC 5005 paginated), one entry per new, changed, unavailable or erroring page, newest first. |
 | Get Organization Balance | `getOrganizationBalance` | Returns the organization's current spendable balance in USD, combining prepaid credits and subscription credits. |
 | Get Organization Usage | `getOrganizationUsage` | Returns aggregated usage statistics for the organization over a date range (default: the last 30 days): total cost in USD and number of requests, optionally with a per-day breakdown. The range may not exceed one year. |
@@ -48,6 +55,8 @@ Add WebCrawlerAPI from **Build → Integrations → Connectors** and connect an 
 | Scrape Page | `scrapePage` | Scrapes a single web page synchronously and returns its content as Markdown, cleaned text, raw HTML and/or a list of links, optionally with structured data extracted by an LLM prompt. A failed scrape returns HTTP 200 with success false and an error code. Charged per page (plus tokens when a prompt is used). |
 | Start Async Scrape | `startAsyncScrape` | Queues a single-page scrape and returns a job id immediately instead of waiting for the result; retrieve the content later with Get Scrape Result. Accepts the same options as Scrape Page. Charged per page. |
 | Start Crawl Job | `startCrawlJob` | Starts an asynchronous crawl of a website from a seed URL, following links up to the page limit and depth you set and producing Markdown, cleaned text, HTML or link output for every page. Returns the job id; poll Get Crawl Job or supply a webhook URL to be notified when it finishes. Charged per page crawled. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # SimplyBook.me
 
+<img src="../../.gitbook/assets/connectors/simplybook-me.png" alt="SimplyBook.me logo" width="64">
+
 SimplyBook.me is an online appointment scheduling platform for service businesses. This connector covers the SimplyBook.me Admin REST API v2 and the JSON-RPC Company Administration Service: bookings and cancellations, clients and client fields, services and service categories, providers (performers) and locations, the schedule, timeline and available booking slots, calendar notes, memberships, packages, products, promotions, coupons and gift cards, invoices and payments, booking statuses, tickets, reports and statistics, company settings and working hours, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ SimplyBook.me is an online appointment scheduling platform for service businesse
 | **Category** | [Productivity](README.md) |
 | **Website** | [simplybook.me](https://simplybook.me) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 157 |
-| **Events** | 7 |
 | **Slug** | `simplybookMe` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SimplyBook.me from **Build → Integrations → Connectors** and connect an 
 | Authenticate With OpenID | `authenticateWithOpenID` | Authenticate via an OpenID provider (e.g. Google, Facebook) and receive an auth token. Verify the provider token, resolve the linked company, and return TokenEntity. If multiple companies are linked to the account and no login is specified, returns 422 with the list of available company logins so the client can choose. Accepts AdminOpenidLoginEntity data as body of request. |
 | Block Client | `blockClient` | Block client by id. Returns the updated client entity. Throws AccessDenied error in case user does not have access to perform this action. Throws BadRequest error in case client login plugin is not enabled. Throws NotFound error in case client is not found or is deleted. |
 | Calculate Booking End Time | `calculateBookingEndTime` | Calculates the end date and time of a booking from the selected service, provider, start date-time and optional add-ons, using the service duration and the provider's work schedule. |
+
+<details>
+
+<summary>See 147 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel Booking | `cancelBooking` | Cancel booking by booking id and return booking that was canceled (AdminBookingDetailsEntity). Throws AccessDenied error in case user does not have access to booking. Throws NotFound error in case booking is not found. |
 | Cancel Booking Batch | `cancelBookingBatch` | Cancel every booking in a batch. The first booking identifier in the list is the one used in the cancellation notification. Returns error -32080 when a booking identifier does not exist. Calls the JSON-RPC cancelBatch method on the SimplyBook.me Company Administration Service. A JSON-RPC failure is returned inside an HTTP 200 as an error object, so callers must check that result is present and error is absent. |
 | Cancel Client Membership | `cancelClientMembership` | Cancel membership. |
@@ -181,6 +188,8 @@ Add SimplyBook.me from **Build → Integrations → Connectors** and connect an 
 | Update Location | `updateLocation` | Updates the details of an existing location identified by its ID. Accepts a LocationEntity object in the request body. Throws BadRequest error if the provided data is invalid. |
 | Update Provider | `updateProvider` | Updates the details of an existing provider (ProviderEntity) identified by its ID. Accepts a ProviderWritableEntity object in the request body. Please note that this is simple update provider methods and does not support all available settings for provider. Throws BadRequest error if the provided data is invalid. |
 | Update Service | `updateService` | Updates the details of an existing service (ServiceEntity) identified by its ID. Accepts a ServiceWriteableEntity object in the request body. Please note that this is a simple update service method and does not support all available settings for a service. Throws BadRequest error if the provided data is invalid. Throws NotFound error if the service does not exist. Throws AccessDenied error if the user does not have access to update the service. |
+
+</details>
 
 ## Events
 

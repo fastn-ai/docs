@@ -5,6 +5,8 @@ hidden: true
 
 # Remarkety
 
+<img src="../../.gitbook/assets/connectors/remarkety.png" alt="Remarkety logo" width="64">
+
 Remarkety is an eCommerce email and SMS marketing automation platform. This connector wraps the store-scoped Remarkety REST API (https://app.remarkety.com/api/v2/stores/{storeId}) covering customers, contacts, products, orders, segments, campaigns, email senders, templates, recommendations, sync status and outbound webhook subscriptions, plus the Remarkety event ingestion endpoints on webhooks.remarkety.com.
 
 | | |
@@ -12,8 +14,6 @@ Remarkety is an eCommerce email and SMS marketing automation platform. This conn
 | **Category** | [Marketing](README.md) |
 | **Website** | [remarkety.com](https://remarkety.com) |
 | **Authentication** | API key |
-| **Actions** | 58 |
-| **Events** | 14 |
 | **Slug** | `remarkety` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Remarkety from **Build → Integrations → Connectors** and connect an acco
 | Delete Campaign | `deleteCampaign` | Deletes a campaign by numeric id. VENDOR LIMITATION: Remarkety answers 400 {"message":"Not implemented"} - campaign deletion is not available over the API; pause a campaign with Update Campaign mode='stop' instead. Included because the route exists and may be enabled later. |
 | Delete Customer | `deleteCustomer` | Deletes an eCommerce customer (shopper) by shopper hash. VENDOR LIMITATION: the route is routed but Remarkety answers 400 {"message":"Not implemented"} - customer deletion is not currently available over the API. Included for completeness and forward compatibility. |
 | Delete Product | `deleteProduct` | Removes a product from Remarkety's copy of the store catalogue by its NUMERIC Remarkety product id (the 'id' field from List Products). The route matches digits only. Returns 404 {"message":"Product not found"} when the id is unknown. |
+
+<details>
+
+<summary>See 48 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Segment | `deleteSegment` | Permanently deletes an audience segment by numeric segment id. Campaigns still targeting the segment will lose their audience, so check campaignsCount on the segment first. Returns 404 {"message":"Segment does not exists"} for an unknown id. |
 | Delete Sender | `deleteSender` | Removes a sender (from-address) from the connected store by numeric sender id. Campaigns still using it will need a new From address. Returns 404 {"message":"Not Found"} for an unknown id. |
 | Get Background Job | `getBackgroundJob` | Fetches one background job by id to check its progress or failure reason. ACCESS NOTE: entitlement-gated in the same way as List Background Jobs - a standard store API token receives 403 {"message":"Unauthorized Required"}. |
@@ -83,6 +90,8 @@ Add Remarkety from **Build → Integrations → Connectors** and connect an acco
 | Update Sender | `updateSender` | Renames a sender (from-address) or changes its from_name, by numeric sender id. Returns {"status":"success","message":"Sender has been updated"}. Returns 404 {"message":"Not Found"} for an unknown id. |
 | Verify Sender Address | `verifySenderAddress` | Completes verification of a sender from-address by submitting the code Remarkety emailed to it. Answers HTTP 200 for both outcomes - read the body: a missing code gives {"status":"error","message":"Empty verification code"} and a wrong code gives {"status":"error"}. The code can only be obtained from the sender's own mailbox. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -99,7 +108,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Email Suppression Removed | `email-suppression/removed` | An address was removed from the store's email suppression list. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
 | Email Unsubscribed | `email/unsubscribed` | A recipient unsubscribed from email marketing through a campaign email. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
 | Newsletter Subscribed | `newsletter/subscribed` | Someone signed up for the store's newsletter, with the sign-up and opt-in IPs and any captured properties. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | SMS Link Clicked | `sms/clicked` | A recipient clicked a link in a campaign SMS. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
 | SMS Replied | `sms/replied` | A recipient replied to a campaign SMS; the reply text is in the payload. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
 | SMS Sent | `sms/sent` | Remarkety sent a campaign SMS to a recipient. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
 | SMS Unsubscribed | `sms/unsubscribed` | A recipient opted out of SMS marketing. Registration is UI-only - app.remarkety.com -&gt; Settings -&gt; Integrations -&gt; Webhooks, paste the fastn webhook URL, save, copy the Shared Secret. |
+
+</details>

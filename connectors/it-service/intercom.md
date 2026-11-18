@@ -5,6 +5,8 @@ hidden: true
 
 # Intercom
 
+<img src="../../.gitbook/assets/connectors/intercom.png" alt="Intercom logo" width="64">
+
 Intercom customer messaging and support platform. Manage contacts, companies, conversations, messages, admins, tags, segments, notes, data events, articles, tickets, and data attributes via the Intercom REST API (api.intercom.io, Intercom-Version 2.15).
 
 | | |
@@ -12,8 +14,6 @@ Intercom customer messaging and support platform. Manage contacts, companies, co
 | **Category** | [IT and service management](README.md) |
 | **Website** | [intercom.com](https://intercom.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 82 |
-| **Events** | 44 |
 | **Slug** | `intercom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Intercom from **Build → Integrations → Connectors** and connect an accou
 | Create Contact | `createContact` | Create a new contact (user or lead) in Intercom. |
 | Create Conversation | `createConversation` | Create a conversation initiated by a contact. |
 | Create Data Attribute | `createDataAttribute` | Create a custom data attribute. |
+
+<details>
+
+<summary>See 72 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Help Center Collection | `createCollection` | Create a help center collection. |
 | Create Message | `createMessage` | Send an outbound in-app or email message from an admin to a contact. |
 | Create Note | `createNote` | Create a note on a contact. |
@@ -107,6 +114,8 @@ Add Intercom from **Build → Integrations → Connectors** and connect an accou
 | Update Ticket | `updateTicket` | Update a ticket (state, attributes, assignment). |
 | Update Ticket Type | `updateTicketType` | Update an existing ticket type. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -123,6 +132,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Article Updated | `article.updated` | A help center article was updated. |
 | Company Created | `company.created` | A company was created. |
 | Company Deleted | `company.deleted` | A company was deleted. |
+
+<details>
+
+<summary>See 34 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Company Updated | `company.updated` | A company was updated. |
 | Contact Archived | `contact.archived` | A contact was archived. |
 | Contact Attached to Company | `company.contact.attached` | A contact was attached to a company. |
@@ -157,3 +173,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Replied to Conversation | `conversation.user.replied` | A user or lead replied to a conversation. |
 | User Tagged | `contact.user.tag.created` | A tag was added to a user contact. |
 | User Untagged | `contact.user.tag.deleted` | A tag was removed from a user contact. |
+
+</details>

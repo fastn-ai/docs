@@ -5,6 +5,8 @@ hidden: true
 
 # Trengo
 
+<img src="../../.gitbook/assets/connectors/trengo.png" alt="Trengo logo" width="64">
+
 Trengo is a multichannel customer engagement and helpdesk platform unifying WhatsApp, email, SMS, live chat, voice, and social channels into one team inbox. This connector wraps the Trengo REST API v2 for tickets, contacts, profiles, messages, WhatsApp, SMS, team chat, labels, teams, users, custom fields, quick replies, help center, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Trengo is a multichannel customer engagement and helpdesk platform unifying What
 | **Category** | [Communication](README.md) |
 | **Website** | [trengo.com](https://trengo.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `trengo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Trengo from **Build → Integrations → Connectors** and connect an account
 | Delete Webhook | `deleteWebhook` | Delete a registered webhook subscription by its id. Returns an empty object on success. |
 | Get Contact | `getContact` | Get a single contact by id, including profile, channels, and notes. |
 | Get Ticket | `getTicket` | Get a single ticket (conversation) by id. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get User | `getUser` | Get a single user (agent) by id. |
 | Get Webhook | `getWebhook` | Get a single registered webhook subscription by its id, including its title, target URL, event type and signing secret. |
 | List Boards | `listBoards` | List all boards (kanban-style task boards) in the Trengo account. |
@@ -56,3 +63,5 @@ Add Trengo from **Build → Integrations → Connectors** and connect an account
 | Update Contact | `updateContact` | Update an existing contact's name. |
 | Update Label | `updateLabel` | Update an existing label's name or color. |
 | Update Webhook | `updateWebhook` | Update the name, target URL and event type of an existing webhook subscription. All three body fields are required by Trengo. |
+
+</details>

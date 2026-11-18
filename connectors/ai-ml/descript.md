@@ -5,6 +5,8 @@ hidden: true
 
 # Descript
 
+<img src="../../.gitbook/assets/connectors/descript.png" alt="Descript logo" width="64">
+
 Descript is an AI audio and video editing platform. This connector covers the complete Descript Public API v1 at https://descriptapi.com/v1: drive status, project listing, project detail, drive-wide search, job listing, job status and job cancellation, media import into new or existing projects (which triggers transcription), Underlord agent edits driven by a natural-language prompt, the list of available agent models, publishing a composition to a shareable rendered link, transcript export in txt, markdown, html, rtf, docx and srt, published-project metadata lookup, and Edit in Descript import URL creation. Authentication is a personal API token created in Descript under Settings &gt; API tokens, sent as Authorization: Bearer. Import, agent and publish jobs are asynchronous and metered (media minutes and AI credits) and accept an optional callback_url that Descript POSTs the finished job payload to.
 
 | | |
@@ -12,8 +14,6 @@ Descript is an AI audio and video editing platform. This connector covers the co
 | **Category** | [AI and ML](README.md) |
 | **Website** | [descriptapi.com](https://descriptapi.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 14 |
-| **Events** | 3 |
 | **Slug** | `descript` |
 
 ## Use it
@@ -34,10 +34,19 @@ Add Descript from **Build → Integrations → Connectors** and connect an accou
 | Import Project Media | `importProjectMedia` | Import media into a new or existing project and optionally create compositions. Omit project_id to create a new project named by project_name; supply project_id to add media to an existing one, where filenames must not collide. add_media is a map of display filename to either {url, language}, {content_type, file_size} for a direct upload (the response returns a signed upload_url to PUT bytes to), or {tracks:[{media, offset}]} for a multitrack sequence. add_compositions builds timelines from that media. Returns 201 immediately with job_id, project_id and project_url; poll Get Job, or pass callback_url to have Descript POST the finished payload to you. METERED: import triggers transcription, consumes media minutes, and returns 402 payment_required when the drive has too few. There is no API route to delete a project - every import leaves a project removable only from the Descript web app. |
 | List Agent Models | `listAgentModels` | List the agent models currently available to Underlord, and the aliases that resolve to them. Each entry carries an id and a relative cost band (low, medium, high). Any value from availableModels[].id or aliases[].id may be passed as the model input of the Run Agent Edit action; cost bands matter because agent edits are billed in AI credits. |
 | List Jobs | `listJobs` | List recent asynchronous jobs in the drive, optionally filtered by project_id and by type (import/project_media or agent). By default only jobs created in the last 7 days are returned; created_after and created_before widen or narrow that window up to a maximum lookback of 30 days. Results are cursor paginated via pagination.next_cursor. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Projects | `listProjects` | List the projects in the drive the API token is bound to. Supports filtering by name substring, folder_path, created_by, and created/updated time windows, plus sorting and cursor pagination. Returns data[] of project summaries and pagination.next_cursor - pass that value back as cursor for the next page. |
 | Publish Project | `publishProject` | Publish a project composition: renders it as video or audio and creates a shareable link plus a downloadable export file. If composition_id is omitted, the first composition that has content is used, skipping the empty placeholder that leads projects created by an agent or import job. Returns 201 with job_id; poll Get Job for result.share_url and result.download_url, or pass callback_url. access_level must be one the drive permits - a drive whose settings forbid a level returns 403 listing the allowed ones, e.g. Access level "drive" is not permitted by this drive's publish settings. Allowed levels: public, unlisted, private. METERED: rendering consumes export allowance. The published link has no API delete route - it can only be unpublished from the Descript web app. |
 | Run Agent Edit | `agentEditJob` | Run an Underlord background agent over a project using a natural-language prompt, for example "Add studio sound and captions". Supply exactly one of project_id (edit an existing project) or project_name (create a new one); add composition_id to target a specific composition. model accepts any id from List Agent Models. Returns 201 with job_id immediately; poll Get Job until job_state is stopped and read result.agent_response, or pass callback_url. METERED: agent edits consume AI credits and return 402 payment_required with the required and available credit counts when the drive has too few, or 403 when the drive admin has disabled agent usage. Credits consumed are reported as result.ai_credits_used on Get Job; there is no usage or quota endpoint to check beforehand. |
 | Search Drive | `searchDrive` | Search the drive tied to the personal API token. Matches project names, folder names, layout pack names, media file names, composition text and transcripts across projects, the drive media library and Brand Studio. Returns up to 100 results ranked by relevance, newest or oldest. |
+
+</details>
 
 ## Events
 

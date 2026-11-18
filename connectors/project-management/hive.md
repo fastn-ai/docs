@@ -5,14 +5,14 @@ hidden: true
 
 # Hive
 
+<img src="../../.gitbook/assets/connectors/hive.png" alt="Hive logo" width="64">
+
 Hive is a project management and collaboration platform. Manage projects, actions (tasks), subactions, comments, attachments, labels, statuses, custom fields, tags, resource assignments, workflows, and webhooks.
 
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 71 |
-| **Events** | 0 |
 | **Slug** | `hive` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Hive from **Build → Integrations → Connectors** and connect an account, 
 | Create Activity Feed Item | `createActivityFeedItem` | Creates an activity feed item (message) in the workspace, attached to an action or project. |
 | Create Custom Field | `createCustomField` | Creates a workspace custom field. |
 | Create Custom Tag | `createCustomTag` | Creates a custom tag with optional options. |
+
+<details>
+
+<summary>See 61 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Label | `createLabel` | Creates a workspace label. |
 | Create Project | `createProject` | Creates a project in the workspace. |
 | Create Project Status | `createProjectStatus` | Creates a project status in the workspace. |
@@ -94,3 +101,5 @@ Add Hive from **Build → Integrations → Connectors** and connect an account, 
 | Update Role Tag | `updateRoleTag` | Updates a role tag. |
 | Update User Role Tag | `updateUserRoleTag` | Assigns or changes a user's role tag. |
 | Update User Tag Assignment | `updateUserTagAssignment` | Updates the selected options for a user custom tag. |
+
+</details>

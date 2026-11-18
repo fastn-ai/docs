@@ -5,6 +5,8 @@ hidden: true
 
 # Weatherstack
 
+<img src="../../.gitbook/assets/connectors/weatherstack.png" alt="Weatherstack logo" width="64">
+
 Weatherstack by apilayer provides real-time weather, forecast, historical weather, marine forecast, and location-autocomplete data via a simple REST API, with astronomy and air-quality data embedded in weather responses. Endpoint access varies by subscription plan - this connector's free-tier account confirmed live access to current weather and a single-day forecast; historical, location search, and marine endpoints returned real plan-restriction errors on this account despite being listed as free-tier features on Weatherstack's pricing page.
 
 | | |
@@ -12,8 +14,6 @@ Weatherstack by apilayer provides real-time weather, forecast, historical weathe
 | **Category** | [Maps and location](README.md) |
 | **Website** | [weatherstack.com](https://weatherstack.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `weatherstack` |
 
 ## Use it

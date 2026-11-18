@@ -5,6 +5,8 @@ hidden: true
 
 # DynaPictures
 
+<img src="../../.gitbook/assets/connectors/dynapictures.png" alt="DynaPictures logo" width="64">
+
 DynaPictures generates personalized images, PDFs and animated countdown timers from reusable design templates. This connector covers image generation (JSON, binary, multipage and PDF), the batch PDF API, AI image generation, template and workspace management, the media library, generated-image cleanup and NEW_IMAGE webhooks.
 
 | | |
@@ -12,8 +14,6 @@ DynaPictures generates personalized images, PDFs and animated countdown timers f
 | **Category** | [Marketing](README.md) |
 | **Website** | [dynapictures.com](https://dynapictures.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 33 |
-| **Events** | 1 |
 | **Slug** | `dynapictures` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DynaPictures from **Build → Integrations → Connectors** and connect an a
 | Delete Workspace | `deleteWorkspace` | Permanently deletes a DynaPictures workspace. WARNING: all image templates, media library files and generated images in the workspace are permanently deleted and cannot be recovered. Workspace admin permissions are required. Returns the deleted workspace object. |
 | Generate Batch PDF | `generateBatchPdf` | Builds a PDF with an arbitrary number of pages, where each page may come from a different design template. The PDF file content is streamed directly in the response body (Content-Type: application/pdf). CONSUMES one image credit per PDF page. |
 | Generate Image From Template | `generateImage` | Renders a personalized image from a single-page DynaPictures template, replacing texts, images, colors, charts and gauges through the params array. With the default responseFormat json it returns the generated image id and the public image/thumbnail URLs; with responseFormat binary it instead returns the rendered file as a base64 envelope {name, mime, size, data}. CONSUMES one image credit from the plan quota per generated image. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Image Via Link URL | `generateImageViaLink` | Renders an image with a single GET whose layer overrides travel in the URL, returning the image bytes directly. Encode params as {layer}---{property}___{value}, joined with &lt;&gt;, URL-encoded. Identical URLs are served from cache and do not re-bill; each unique render consumes one image credit. SECURITY: this endpoint accepts requests WITHOUT any credential - anyone who knows the template UID can render images and consume the account's quota. |
 | Generate Multipage Images | `generateMultipageImages` | Renders several images at once from a multipage DynaPictures template, one image per page entry. Returns the list of generated pages with their public image URLs and pageIndex. CONSUMES one image credit per generated page. Set format to pdf to get a single PDF instead - see Generate PDF From Template. |
 | Generate PDF From Template | `generatePdfFromTemplate` | Renders a multipage DynaPictures template into a single PDF file, one PDF page per page entry. The response carries a pdfUrl pointing at the generated PDF. CONSUMES one image credit per PDF page. |
@@ -57,6 +64,8 @@ Add DynaPictures from **Build → Integrations → Connectors** and connect an a
 | Unsubscribe Webhook | `unsubscribeWebhook` | Removes a previously registered webhook. DynaPictures identifies the subscription by the same targetUrl, eventType and templateId triple that was used to create it, not by its uid. Returns {"error": false, "message": ""} on success. |
 | Update Design | `updateDesign` | Saves changes to a design - most usefully name and syncToZapier, the flag that makes a design visible to List Image Templates and the generation API. Load the design with Get Design first and send the whole object back with your changes, since omitted fields are cleared. Lives on the application API host (dynapictures.com/b/rest) and is not in the published API reference. |
 | Upload Media Library Asset | `uploadMediaAsset` | Uploads an image into the workspace media library as a multipart/form-data 'file' part and returns the created asset with its hosted URL. Uploading images here before referencing them in a generation call speeds up rendering. NOTE: the file part is sent as text, so text-based formats such as SVG work directly; binary formats (PNG, JPEG) cannot be carried through this action. |
+
+</details>
 
 ## Events
 

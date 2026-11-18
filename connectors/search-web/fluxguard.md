@@ -5,6 +5,8 @@ hidden: true
 
 # Fluxguard
 
+<img src="../../.gitbook/assets/connectors/fluxguard.png" alt="Fluxguard logo" width="64">
+
 Fluxguard is an AI-powered website change monitoring service. This connector covers the Fluxguard REST API: account details, adding pages to monitor, initiating crawls, reading page and session data, site and page deletion, site categories, and webhook endpoints that receive change notifications with links to captured HTML, screenshots and diffs.
 
 | | |
@@ -12,8 +14,6 @@ Fluxguard is an AI-powered website change monitoring service. This connector cov
 | **Category** | [Search and web](README.md) |
 | **Website** | [fluxguard.com](https://fluxguard.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 14 |
-| **Events** | 1 |
 | **Slug** | `fluxguard` |
 
 ## Use it
@@ -34,10 +34,19 @@ Add Fluxguard from **Build → Integrations → Connectors** and connect an acco
 | Get Account | `getAccount` | Retrieves your Fluxguard organization's account attributes, including plan, remaining credits, status, notification gap, site count and the configured change flags. |
 | Get Page | `getPage` | Retrieves the monitoring data for a single page identified by its site, session and page IDs, including its URL, path and captured version information. |
 | Get Sample Webhook | `getSampleWebhook` | Returns a sample webhook payload built from your account's data (or generic sample data on a new account) so you can see exactly what Fluxguard sends when a page change is detected. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Session | `getSession` | Retrieves a monitoring session identified by its site and session IDs, including its settings and pages. When the session does not exist Fluxguard responds with HTTP 200 and an error field. |
 | Initiate Crawl | `initiateCrawl` | Starts a crawl of every page in a monitoring session, identified by its site and session IDs. Each crawl consumes account credits and produces a new captured version of the pages. |
 | List Categories | `listCategories` | Returns all site and page categories in your Fluxguard organization as an object keyed by category ID, with each category's name, type and timestamps. |
 | List Webhooks | `listWebhooks` | Lists every webhook endpoint registered on your Fluxguard organization, with each webhook's URL, signing secret, API version and creation time. |
+
+</details>
 
 ## Events
 

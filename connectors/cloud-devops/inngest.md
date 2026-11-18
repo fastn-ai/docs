@@ -5,6 +5,8 @@ hidden: true
 
 # Inngest
 
+<img src="../../.gitbook/assets/connectors/inngest.png" alt="Inngest logo" width="64">
+
 Inngest is a durable execution platform for background jobs, step functions, scheduled workflows and AI agent orchestration. Send events to trigger functions, inspect and control function runs, manage apps, functions, environments, webhooks, experiments and sessions, and query run analytics with Insights.
 
 | | |
@@ -12,8 +14,6 @@ Inngest is a durable execution platform for background jobs, step functions, sch
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [inngest.com](https://inngest.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 66 |
-| **Events** | 0 |
 | **Slug** | `inngest` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Inngest from **Build → Integrations → Connectors** and connect an accoun
 | Create Sandbox | `createSandbox` | Creates a sandbox with the given name, CPU and memory allocation, and environment variables. |
 | Create Webhook | `createWebhook` | Creates a webhook endpoint that converts inbound HTTP requests into Inngest events using a JavaScript transform function. |
 | Delete Cancellation | `deleteCancellation` | Deletes a bulk cancellation so that it stops cancelling further function runs. |
+
+<details>
+
+<summary>See 56 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Webhook | `deleteWebhook` | Deletes a webhook endpoint. Requests to its URL stop producing Inngest events. |
 | Destroy Sandbox | `destroySandbox` | Destroys a sandbox and releases its compute resources. Running processes inside the sandbox are terminated. |
 | Execute Sandbox Command | `executeSandboxCommand` | Runs a command inside a sandbox and waits for it to finish, returning the exit code and the base64-encoded standard output and error. |
@@ -90,3 +97,5 @@ Add Inngest from **Build → Integrations → Connectors** and connect an accoun
 | Update Webhook | `updateWebhook` | Updates a webhook endpoint's name or transform function. The inbound URL is unchanged. |
 | Wait For Sandbox Process | `waitForSandboxProcess` | Waits for a sandbox process to exit and returns its final state and exit code. |
 | Write Sandbox File | `writeSandboxFile` | Writes a file into a sandbox's filesystem. The file contents are supplied base64-encoded. |
+
+</details>

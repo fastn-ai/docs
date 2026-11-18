@@ -5,6 +5,8 @@ hidden: true
 
 # Chargify (Maxio Advanced Billing)
 
+<img src="../../.gitbook/assets/connectors/chargify.png" alt="Chargify (Maxio Advanced Billing) logo" width="64">
+
 Chargify, now Maxio Advanced Billing, is a SaaS recurring billing and subscription management platform. This connector covers subscriptions, customers, products, product families, components and metered usage, invoices, payment profiles, coupons, credit notes, events, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Chargify, now Maxio Advanced Billing, is a SaaS recurring billing and subscripti
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [chargify.com](https://chargify.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 75 |
-| **Events** | 0 |
 | **Slug** | `chargify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Chargify (Maxio Advanced Billing) from **Build → Integrations → Connecto
 | Create Coupon | `createCoupon` | Creates a new coupon within a product family, offering a percentage or fixed-amount discount. |
 | Create Customer | `createCustomer` | Creates a new customer record used as the billing contact for subscriptions and payment profiles. |
 | Create Endpoint | `createEndpoint` | Registers a webhook endpoint URL and subscribes it to a set of webhook event topics. |
+
+<details>
+
+<summary>See 65 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Invoice | `createInvoice` | Creates an ad-hoc invoice for a subscription from a list of custom line items. |
 | Create Metered Component | `createMeteredComponent` | Creates a metered usage-based billing component within a product family, priced per unit consumed. |
 | Create On/Off Component | `createOnOffComponent` | Creates an on/off billing component within a product family, a flat recurring charge that is either fully applied or not applied to a subscription. |
@@ -99,3 +106,5 @@ Add Chargify (Maxio Advanced Billing) from **Build → Integrations → Connecto
 | Update Subscription | `updateSubscription` | Updates an existing subscription's payment collection method, billing date, or coupon. |
 | Validate Coupon | `validateCoupon` | Checks whether a coupon code is valid and currently usable, optionally scoped to a specific product. |
 | Void Invoice | `voidInvoice` | Voids an open invoice, cancelling any amount due on it. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Entur
 
+<img src="../../.gitbook/assets/connectors/entur.png" alt="Entur logo" width="64">
+
 Entur runs Norway's national public transport data platform. Read the National Stop Place Register (stop places, quays, parkings, fare and tariff zones, topographic places, scheduled stop points and their versions), search places with the geocoder, and plan journeys with the Journey Planner GraphQL API. Free and open; no API key needed (requests send a client name header).
 
 | | |
@@ -12,8 +14,6 @@ Entur runs Norway's national public transport data platform. Read the National S
 | **Category** | [Data and databases](README.md) |
 | **Website** | [entur.org](https://entur.org) |
 | **Authentication** | No authentication |
-| **Actions** | 34 |
-| **Events** | 0 |
 | **Slug** | `entur` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Entur from **Build → Integrations → Connectors** and connect an account,
 | Get quay by ID | `getQuayByID` | Get quay by ID. Retrieves detailed information about a specific quay by its unique identifier. Returns location, compass bearing, public code, accessibility features, and equipment. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /quays/{id}) |
 | Get scheduled stop point by ID | `getScheduledStopPointByID` | Get scheduled stop point by ID. Retrieves detailed information about a specific scheduled stop point by its unique identifier. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /scheduled-stop-points/{id}) |
 | Get scheduled stop points for stop place | `getScheduledStopPointsForStopPlace` | Get scheduled stop points for stop place. Retrieves all scheduled stop points associated with a specific stop place. Returns the logical timetable references that map to this physical location. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /stop-places/{id}/scheduled-stop-points) |
+
+<details>
+
+<summary>See 24 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get specific fare zone version | `getSpecificFareZoneVersion` | Get specific fare zone version. Retrieves a specific historical version of a fare zone by ID and version number. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /fare-zones/{id}/versions/{version}) |
 | Get specific parking facility version | `getSpecificParkingFacilityVersion` | Get specific parking facility version. Retrieves a specific historical version of a parking facility by ID and version number. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /parkings/{id}/versions/{version}) |
 | Get specific quay version | `getSpecificQuayVersion` | Get specific quay version. Retrieves a specific historical version of a quay by ID and version number. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /quays/{id}/versions/{version}) |
@@ -58,3 +65,5 @@ Add Entur from **Build → Integrations → Connectors** and connect an account,
 | List topographic places | `listTopographicPlaces` | List topographic places. Retrieves a paginated list of topographic places representing administrative and geographic areas such as municipalities, counties, and countries. Supports both JSON (default) and XML formats via Accept header. Docs: https://developer.entur.org/pages-nsr-nsr/ (OpenAPI https://api.entur.io/stop-places/v1/read/openapi.json) (GET /topographic-places) |
 | Query Journey Planner (GraphQL) | `journeyPlannerQuery` | Run a GraphQL query against the Entur Journey Planner v3 for trips, departures, stop places, lines and situations across all Norwegian public transport (POST /journey-planner/v3/graphql). Docs: https://developer.entur.org/pages-journeyplanner-journeyplanner |
 | Search Places (Autocomplete) | `geocoderAutocomplete` | Search Norwegian stop places, addresses and points of interest by text, for type-ahead search (GET /geocoder/v1/autocomplete). Docs: https://developer.entur.org/pages-geocoder-api |
+
+</details>

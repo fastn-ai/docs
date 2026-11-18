@@ -5,6 +5,8 @@ hidden: true
 
 # Vlocity (Salesforce Industries)
 
+<img src="../../.gitbook/assets/connectors/vlocity.ico" alt="Vlocity (Salesforce Industries) logo" width="64">
+
 Vlocity, now sold as Salesforce Industries, is a set of managed packages installed inside a Salesforce org (namespaces vlocity_cmt for Communications/Media/Energy, vlocity_ins for Insurance/Health, vlocity_ps for Public Sector, or omnistudio). This connector covers ONLY the Vlocity-specific Apex REST surface under /services/apexrest/ that the generic Salesforce connector cannot reach: Industries CPQ Cart APIs v2, Digital Commerce v3 and its admin catalog APIs, Enterprise Product Catalog v2, and parameterised invocation of OmniStudio Integration Procedures. Generic vlocity_* sObject CRUD, SOQL, composite, bulk and tooling are deliberately NOT duplicated here - use the Salesforce connector with sobject=vlocity_cmt__PriceList__c and friends. Auth is standard Salesforce OAuth 2.0 against a Connected App in the customer org; the package namespace is a per-connection credential because it is part of every URL path.
 
 | | |
@@ -12,8 +14,6 @@ Vlocity, now sold as Salesforce Industries, is a set of managed packages install
 | **Category** | [Other](README.md) |
 | **Website** | [salesforce.com](https://salesforce.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 41 |
-| **Events** | 0 |
 | **Slug** | `vlocity` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Vlocity (Salesforce Industries) from **Build → Integrations → Connectors
 | Create EPC Picklists | `createEpcPicklists` | Enterprise Product Catalog: create picklists, which supply the allowed values for EPC product attributes. Pass the picklist definitions in picklists; picklist versions and picklist items are managed through the same EPC resource family. |
 | Create EPC Products | `createEpcProducts` | Enterprise Product Catalog: create products in the Vlocity Product Console. Pass the product definitions in products. This is the EPC-aware create - it goes through the catalog's abstraction layer rather than writing Product2 directly, so product versions, child items and attribute assignments are handled consistently. For plain Product2 field writes the generic Salesforce connector is the simpler route. |
 | Create EPC Promotions | `createEpcPromotions` | Enterprise Product Catalog: create promotions and their promotion items. These are the promotions the CPQ cart and Digital Commerce offers surface later, so creating them here is the catalog-side counterpart to Apply Promotions to Cart. |
+
+<details>
+
+<summary>See 31 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Applied Promotions from Cart | `deleteCartPromotions` | Industries CPQ: remove one or more applied promotions from a cart. Pass id as a comma-separated list of applied promotion Ids (vlocity_cmt__OrderAppliedPromotion__c and its quote/opportunity equivalents). Depending on the org's delete-service setting, the promotion's products are removed along with the promotion. |
 | Delete Cart Discount | `deleteCartDiscounts` | Industries CPQ: remove cart-level discounts. METHOD CORRECTED - PUT, not DELETE. Salesforce answers DELETE on this path with 405 "HTTP Method 'DELETE' not allowed. Allowed are GET,HEAD,PUT", so the action as originally built could never work; as PUT it now routes and reaches Vlocity's handler. Pass id as a comma-separated list of discount Ids; omit to clear all. A JSON body is always sent (at minimum {}) because cartId is URL-consumed. PARTIALLY BLOCKED on org configuration, not on this contract: on Vlocity CMT 900.442 the underlying deleteCartsDiscounts handler throws an unconditional NullPointerException. Reproduced from Apex via CpqAppHandler.invokeMethod with FOUR different input shapes (id, discountId, items[], cartAddedDiscountIds), all failing identically inside managed code, and with a real vlocity_cmt__OpportunityDiscount__c present on the cart. Use Get Cart Discounts first. |
 | Delete EPC Products | `deleteEpcProducts` | Delete EPC product objects. Salesforce Industries documents DELETE on the EPC products resource and states the EPC object APIs support create, read, update and delete, but the reference page prints no request body for the DELETE, so the payload here mirrors Create and Update EPC Products (a products array). Confirm the payload against a live org before relying on it. |
@@ -65,3 +72,5 @@ Add Vlocity (Salesforce Industries) from **Build → Integrations → Connectors
 | Update EPC Products | `updateEpcProducts` | Enterprise Product Catalog: update product fields by Id. Each entry in products must carry the product Id plus the fields to change. Shares its resource URL with Create EPC Products - the Apex REST class dispatches on HTTP method. |
 | Update Items in Cart | `updateCartItems` | Industries CPQ putCartsItems: update one or more line items in a cart - quantity, attribute values, or any other updatable line field. Each entry in items.records must be a COMPLETE JSONRecord taken from the response of Get Cart Items or Add Items to Cart, edited in place; a partial record is not supported. WIRE SHAPE (verified both ways on a live org): items must be an OBJECT wrapping a records array - {"records":[ ... ]}. Sending items as a bare array returns 200 with the Vlocity error "Invalid conversion from runtime type List&lt;ANY&gt; to Map&lt;String,ANY&gt;". This differs from Add Items to Cart (POST), which genuinely does take a bare array. |
 | Update Product in Basket | `updateBasketProduct` | Digital Commerce v3: update a product already in a basket - change its quantity or its configured attributes. A JSON body is ALWAYS sent (at minimum {}): both required inputs are URL-consumed, so without a bodyTemplate fastn would send no body and Salesforce answers 500 JSONException - same defect class as Run Pricing on Cart. That transport defect is fixed. BLOCKED beyond that on org configuration, same root cause as Create Basket: the shipped VlocityAPIMetadata row for basketOperations carries a NULL APIHandler (only DefaultBasketOperationsRHandler), so Vlocity's router has no handler class and every basket call returns INVOKEMETHOD-405 "Method not found: null". A CME implementation supplies that handler; the managed package does not. |
+
+</details>

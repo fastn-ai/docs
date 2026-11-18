@@ -5,6 +5,8 @@ hidden: true
 
 # Teamhood
 
+<img src="../../.gitbook/assets/connectors/teamhood.png" alt="Teamhood logo" width="64">
+
 Teamhood public API v1 — work management: items (tasks/issues/projects), item types and fields, comments, attachments, time logs, resource allocations, availability and capacity profiles, teams, users, roles and the item changelog.
 
 | | |
@@ -12,8 +14,6 @@ Teamhood public API v1 — work management: items (tasks/issues/projects), item 
 | **Category** | [Project management](README.md) |
 | **Website** | [teamhood.com](https://teamhood.com) |
 | **Authentication** | API key |
-| **Actions** | 61 |
-| **Events** | 0 |
 | **Slug** | `teamhood` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Teamhood from **Build → Integrations → Connectors** and connect an accou
 | Create Team | `createTeam` | Create a team, optionally nested under an existing team via parentId, with a display colour. Returns 201 with the created team. |
 | Deactivate User | `deactivateUser` | Deactivate an account user by id, freeing their seat. WARNING: this removes a person's access. Deactivating the account owner, or the only remaining administrator, can lock the whole account out with no API route back. Never point it at the identity your API key authenticates as. Returns 204 No Content. |
 | Delete Allocation | `deleteAllocation` | Delete a resource allocation by id. Returns 204 No Content. |
+
+<details>
+
+<summary>See 51 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Attachment | `deleteAttachment` | Delete an attachment and its stored file by id. Returns 204 No Content. |
 | Delete Availability Entry | `deleteAvailability` | Delete an availability entry by id, restoring the principal's default working hours for that range. Returns 204 No Content. |
 | Delete Capacity Profile | `deleteCapacityProfile` | Delete a capacity profile by id. Returns 204 No Content. |
@@ -85,3 +92,5 @@ Add Teamhood from **Build → Integrations → Connectors** and connect an accou
 | Update Team | `updateTeam` | Partially update a team's name, parent team or colour. |
 | Update Time Log | `updateTimeLog` | Partially update a time-log entry's date, duration in seconds or description. |
 | Upload Attachment To Item | `uploadAttachment` | Upload a TEXT file as an attachment on an item (multipart/form-data). fileContent is sent verbatim as the file body, so this carries text formats (txt, csv, json, md, svg, ASCII PPM) only — raw binary such as PNG, ZIP or docx cannot be expressed here. Returns 201 with the attachment metadata. |
+
+</details>

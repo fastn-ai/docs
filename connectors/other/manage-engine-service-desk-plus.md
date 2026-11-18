@@ -5,6 +5,8 @@ hidden: true
 
 # ManageEngine ServiceDesk Plus
 
+<img src="../../.gitbook/assets/connectors/manage-engine-service-desk-plus.png" alt="ManageEngine ServiceDesk Plus logo" width="64">
+
 ManageEngine ServiceDesk Plus Cloud IT service management - requests, problems, changes, releases, projects, assets, CMDB, purchase orders, contracts, solutions, users and administration via the SDP Cloud API v3.
 
 | | |
@@ -12,8 +14,6 @@ ManageEngine ServiceDesk Plus Cloud IT service management - requests, problems, 
 | **Category** | [Other](README.md) |
 | **Website** | [manageengine.com](https://manageengine.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 429 |
-| **Events** | 38 |
 | **Slug** | `manageEngineServiceDeskPlus` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ManageEngine ServiceDesk Plus from **Build → Integrations → Connectors**
 | Copy Checklist Template | `copyChecklistTemplate` | Creates a copy of an existing checklist template. |
 | Create Announcement | `createAnnouncement` | Creates a new announcement in ManageEngine ServiceDesk Plus. |
 | Create Announcement Comment | `createAnnouncementComment` | Creates a new announcement comment in ManageEngine ServiceDesk Plus. |
+
+<details>
+
+<summary>See 419 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Asset | `createAsset` | Creates a new asset in ManageEngine ServiceDesk Plus. |
 | Create Change | `createChange` | Creates a new change in ManageEngine ServiceDesk Plus. |
 | Create Change Approval | `createChangeApproval` | Adds an approver to an approval level of a change. |
@@ -454,6 +461,8 @@ Add ManageEngine ServiceDesk Plus from **Build → Integrations → Connectors**
 | Update Topic | `updateTopic` | Updates an existing topic with the supplied field values. |
 | Update Unavailability | `updateUnavailability` | Updates an existing unavailability with the supplied field values. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -470,6 +479,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Change Updated | `change.edited` | Fires when an existing change is modified, including stage and status transitions through the change workflow. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "Changes", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "change.edited". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for Changes" in the module drop-down, click New Trigger. Set the execution event to Edited. Add a criteria on Stage or Status to narrow it to a specific transition, or leave it empty for all edits. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
 | Configuration Item Created | `ci.created` | Fires when a new configuration item is added to the CMDB. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "CMDB", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "ci.created". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for CMDB" in the module drop-down, click New Trigger. Set the execution event to Created. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
 | Configuration Item Deleted | `ci.deleted` | Fires when a configuration item is deleted from the CMDB. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "CMDB", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "ci.deleted". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for CMDB" in the module drop-down, click New Trigger. Set the execution event to Deleted. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
+
+<details>
+
+<summary>See 28 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Configuration Item Updated | `ci.edited` | Fires when a configuration item or one of its relationships is modified. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "CMDB", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "ci.edited". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for CMDB" in the module drop-down, click New Trigger. Set the execution event to Edited. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
 | Contract Created | `contract.created` | Fires when a new contract is created. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "Contracts", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "contract.created". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for Contracts" in the module drop-down, click New Trigger. Set the execution event to Created. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
 | Contract Deleted | `contract.deleted` | Fires when a contract is deleted. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "Contracts", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "contract.deleted". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for Contracts" in the module drop-down, click New Trigger. Set the execution event to Deleted. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
@@ -498,3 +514,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Solution Created | `solution.created` | Fires when a new knowledge-base solution article is created. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "Solutions", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "solution.created". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for Solutions" in the module drop-down, click New Trigger. Set the execution event to Created. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
 | Solution Deleted | `solution.deleted` | Fires when a solution article is deleted. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "Solutions", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "solution.deleted". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for Solutions" in the module drop-down, click New Trigger. Set the execution event to Deleted. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
 | Solution Updated | `solution.edited` | Fires when a solution article is modified, including approval status changes from Draft to Approved. Setup step 1 (webhook): Setup &gt; Automation &gt; Custom Actions &gt; Webhooks, pick module "Solutions", New Webhook. Method POST, API URL = this fastn webhook URL, Endpoint Type Cloud, Content Type application/json. Compose the Message Body from this schema (type $ to pick a variable), and add a literal event_type field set to "solution.edited". SDP does not sign calls - add the shared-secret header from setupNote. Step 2 (trigger): Setup &gt; Automation &gt; Triggers, choose "Triggers for Solutions" in the module drop-down, click New Trigger. Set the execution event to Edited. Under Actions choose Custom Actions &gt; Webhooks and select the webhook from step 1, then Save. |
+
+</details>

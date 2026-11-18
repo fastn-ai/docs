@@ -5,6 +5,8 @@ hidden: true
 
 # Perdoo
 
+<img src="../../.gitbook/assets/connectors/perdoo.jpg" alt="Perdoo logo" width="64">
+
 Perdoo OKR platform GraphQL API. Read objectives, key results, initiatives, KPIs, KPI targets, goals, progress updates, teams, users, cadences and company settings, and create, update or delete progress updates and check-ins.
 
 | | |
@@ -12,8 +14,6 @@ Perdoo OKR platform GraphQL API. Read objectives, key results, initiatives, KPIs
 | **Category** | [Project management](README.md) |
 | **Website** | [perdoo.com](https://perdoo.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 30 |
-| **Events** | 0 |
 | **Slug** | `perdoo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Perdoo from **Build → Integrations → Connectors** and connect an account
 | Get Current Company | `currentCompany` | Retrieve the company that the authenticated token belongs to, including plan, framework and check-in settings. |
 | Get Current User | `me` | Retrieve the user account that owns the API token used for this connection. |
 | Get Goal | `goal` | Retrieve a single Perdoo goal (Objective, Key Result, Initiative, KPI or Strategic Pillar) by its ID. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Key Result | `result` | Retrieve a single Key Result or Initiative by its ID. |
 | Get KPI | `kpi` | Retrieve a single KPI by its ID. |
 | Get KPI Target | `kpiTarget` | Retrieve a single KPI target by its ID. |
@@ -54,3 +61,5 @@ Add Perdoo from **Build → Integrations → Connectors** and connect an account
 | List Teams | `allGroups` | List teams (groups) with filtering, ordering and cursor or offset pagination. |
 | List Users | `allUsers` | List users in the company with filtering, ordering and cursor or offset pagination. |
 | Validate Password | `passwordValidator` | Score a candidate password against Perdoo password policy and return improvement recommendations. |
+
+</details>

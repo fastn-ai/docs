@@ -5,6 +5,8 @@ hidden: true
 
 # Gift Up
 
+<img src="../../.gitbook/assets/connectors/gift-up.png" alt="Gift Up logo" width="64">
+
 Gift Up is a gift card and gift certificate platform for small businesses. This connector covers the full Gift Up REST API: gift cards (issue, look up, update, redeem, top up, void, reactivate and transfer balances), orders, catalogue items and groups, promotions, locations, users, transaction reports, checkout, email, gift card, artwork and shipping settings, the Stripe integration, partner account provisioning and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Gift Up is a gift card and gift certificate platform for small businesses. This 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [giftup.com](https://giftup.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 54 |
-| **Events** | 4 |
 | **Slug** | `giftUp` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Gift Up from **Build → Integrations → Connectors** and connect an accoun
 | Delete Item Group | `deleteItemGroup` | Deletes an item group by its id. Gift Up rejects the request with HTTP 400 if the group still contains items, so move or delete those first. |
 | Delete User | `deleteUser` | Removes a staff user's access to the Gift Up account. Check the id belongs to the intended person before calling this - the removal takes effect immediately. |
 | Delete Webhook | `deleteWebhook` | Removes a webhook subscription by its id so Gift Up stops posting that event to the URL. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Checkout Settings | `getCheckoutSettings` | Retrieves the Gift Up checkout settings - branding, wording, tipping, custom fields, taxes and the other options that control how the purchase page behaves. |
 | Get Company | `getCompany` | Retrieves the Gift Up company that the stored API key belongs to, including its trading currency, onboarding progress, whether the checkout can render, and suspension state. |
 | Get Email Settings | `getEmailSettings` | Retrieves the Gift Up email settings - the sender identity, subject lines and body copy used for the emails sent to purchasers and recipients. |
@@ -78,6 +85,8 @@ Add Gift Up from **Build → Integrations → Connectors** and connect an accoun
 | Update User | `updateUser` | Updates a staff user of the Gift Up account using JSON Patch. Supply the patch operations as a JSON array string; read Get User first to see the exact property names available to patch. |
 | Upload Gift Card Artwork | `uploadGiftCardArtwork` | Adds a new gift card artwork design. Supply either a fully qualified image URL that Gift Up downloads, or a base64 data URI starting with data:image. Optionally replace one existing design or clear them all first. |
 | Void Gift Card | `voidGiftCard` | Voids a gift card so it can no longer be redeemed. Gift Up answers HTTP 422 with isRedeemed or isAlreadyVoided when the card cannot be voided. |
+
+</details>
 
 ## Events
 

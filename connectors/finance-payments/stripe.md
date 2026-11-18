@@ -5,6 +5,8 @@ hidden: true
 
 # Stripe
 
+<img src="../../.gitbook/assets/connectors/stripe.png" alt="Stripe logo" width="64">
+
 Stripe API (base https://api.stripe.com). Customers, payment intents, charges, refunds, products, prices, subscriptions, invoices, checkout sessions, payouts, balance, events, and webhook endpoints. Auth: Bearer secret key (sk_...). Write requests use application/x-www-form-urlencoded.
 
 | | |
@@ -12,8 +14,6 @@ Stripe API (base https://api.stripe.com). Customers, payment intents, charges, r
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [stripe.com](https://stripe.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 47 |
-| **Events** | 13 |
 | **Slug** | `stripe` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Stripe from **Build → Integrations → Connectors** and connect an account
 | Create Customer | `createCustomer` | Create a customer (POST /v1/customers). |
 | Create Customer On Clock | `createCustomerOnClock` | Create a customer on a test clock (POST /v1/customers). |
 | Create Invoice | `createInvoice` | Create a draft invoice for a customer (POST /v1/invoices). |
+
+<details>
+
+<summary>See 37 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Invoice For Customer | `createInvoiceForCustomer` | Create an invoice for a customer (POST /v1/invoices). |
 | Create Invoice Item | `createInvoiceItem` | Create an invoice item (POST /v1/invoice_items). |
 | Create Invoice Item Fixed | `createInvoiceItemFixed` | Create an invoice item (POST /v1/invoiceitems). |
@@ -72,6 +79,8 @@ Add Stripe from **Build → Integrations → Connectors** and connect an account
 | Update Customer | `updateCustomer` | Update a customer (POST /v1/customers/{id}). |
 | Update Customer Invoice Settings | `updateCustomerInvoiceSettings` | Update default payment method on customer invoice settings (POST /v1/customers/{id}). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -88,6 +97,15 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Payment Intent Succeeded | `payment_intent.succeeded` | A PaymentIntent successfully completed. |
 | Payout Paid | `payout.paid` | A payout was paid out. |
 | Refund Created | `refund.created` | A refund was created. |
+
+<details>
+
+<summary>See 3 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Subscription Canceled | `customer.subscription.deleted` | A subscription was canceled. |
 | Subscription Created | `customer.subscription.created` | A subscription was created. |
 | Subscription Updated | `customer.subscription.updated` | A subscription changed. |
+
+</details>

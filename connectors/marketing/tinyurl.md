@@ -5,14 +5,14 @@ hidden: true
 
 # TinyURL
 
+<img src="../../.gitbook/assets/connectors/tinyurl.png" alt="TinyURL logo" width="64">
+
 TinyURL is a link-management service for shortening long URLs into branded short links, organising them with aliases and tags, and measuring the clicks they receive. This connector covers the TinyURL v2 REST API: link create, update, repoint, archive, delete, list and count; bulk batch processing; per-link analytics settings; and the full click-analytics reporting family (raw logs, timeline, browser/OS/device, weekday and hourly popularity, top sources, top languages and geography).
 
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `tinyurl` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add TinyURL from **Build → Integrations → Connectors** and connect an accoun
 | Get Bulk Request Report | `getBulkRequestReport` | Returns the per-item outcome of a processed bulk request, including the resulting TinyURL and any failure comment for each row. |
 | Get Bulk Request Status | `getBulkRequestStatus` | Returns the processing status and success/failure counts of a previously submitted bulk request. |
 | Get Hourly Popularity Analytics | `getHourlyPopularityAnalytics` | Returns click counts grouped by hour of the day, as a twenty-four element array starting at midnight. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Location Analytics | `getLocationAnalytics` | Returns click counts by geography. Pass world to break clicks down by country, or a two-letter country code to break that country down by region. |
 | Get Raw Analytics Logs | `getRawAnalyticsLogs` | Returns the raw click log for the account's TinyURLs over a time window, one entry per click with referrer, IP, country, browser, operating system, device and language. |
 | Get Timeline Analytics | `getTimelineAnalytics` | Returns click totals over time for the account's TinyURLs, bucketed by minute, hour, day, week or month. |
@@ -44,3 +51,5 @@ Add TinyURL from **Build → Integrations → Connectors** and connect an accoun
 | Set Analytics Collection | `setAnalyticsCollection` | Enables or disables collection of click analytics for a single TinyURL. |
 | Set Analytics Sharing | `setAnalyticsSharing` | Makes a TinyURL's analytics report publicly viewable, or returns it to private. |
 | Update TinyURL | `updateTinyUrl` | Updates an existing TinyURL's alias, domain, tags, description, expiry or analytics collection setting. Tags supplied here overwrite the existing tags. |
+
+</details>

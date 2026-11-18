@@ -5,6 +5,8 @@ hidden: true
 
 # Unsplash
 
+<img src="../../.gitbook/assets/connectors/unsplash.png" alt="Unsplash logo" width="64">
+
 Unsplash stock photo / image API. Browse, search, and manage photos, collections, topics, and users on Unsplash. Public-scope reads use an application Access Key (Client-ID); a subset of write endpoints (own profile, own photos, own collections) require a full user-scoped OAuth Bearer token which this app does not currently mint.
 
 | | |
@@ -12,8 +14,6 @@ Unsplash stock photo / image API. Browse, search, and manage photos, collections
 | **Category** | [Design](README.md) |
 | **Website** | [unsplash.com](https://unsplash.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `unsplash` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Unsplash from **Build → Integrations → Connectors** and connect an accou
 | Get Photo | `getPhoto` | Retrieve full details of a single photo by its id. Public endpoint, Client-ID auth. |
 | Get Photo Statistics | `getPhotoStatistics` | Retrieve download/view/like statistics for a photo over a time window. Public endpoint, Client-ID auth. |
 | Get Random Photo | `getRandomPhoto` | Retrieve one or more random photos, optionally filtered by collections, topics, username, orientation, content filter, or a search query. Public endpoint, Client-ID auth. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Related Collections | `getRelatedCollections` | List collections related to a given collection. Public endpoint, Client-ID auth. |
 | Get Topic | `getTopic` | Retrieve a single topic by its id or slug. Public endpoint, Client-ID auth. |
 | Get Topic Photos | `getTopicPhotos` | List the photos in a topic. Public endpoint, Client-ID auth. |
@@ -53,3 +60,5 @@ Add Unsplash from **Build → Integrations → Connectors** and connect an accou
 | Update Collection | `updateCollection` | Update a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |
 | Update My Profile | `updateMyProfile` | Update the authenticated user's profile fields. REQUIRES a full user-scoped OAuth Bearer access token (write_user scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |
 | Update Photo | `updatePhoto` | Update metadata of a photo owned by the authenticated user (description, tags, EXIF, location, profile visibility). REQUIRES a full user-scoped OAuth Bearer access token (write_photos scope) for a photo the authenticated user owns - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # GetProspect
 
+<img src="../../.gitbook/assets/connectors/getprospect.png" alt="GetProspect logo" width="64">
+
 GetProspect is a B2B lead generation platform. This connector wraps the GetProspect REST API: v2 People and Company Search, People and Company Enrich (single and bulk), Email Finder, Email Verifier, search suggestions and filter enums, plus the workspace CRM API for contacts, companies, lists and properties. Authenticates with a workspace API key sent in the x-api-key header.
 
 | | |
@@ -12,8 +14,6 @@ GetProspect is a B2B lead generation platform. This connector wraps the GetProsp
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [getprospect.com](https://getprospect.com) |
 | **Authentication** | API key |
-| **Actions** | 47 |
-| **Events** | 0 |
 | **Slug** | `getprospect` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GetProspect from **Build → Integrations → Connectors** and connect an ac
 | Create Contact | `createContact` | Creates a new contact in the GetProspect CRM from property name/value pairs, optionally adding it to lists. firstName and lastName are required properties. |
 | Create Contact List | `createContactList` | Creates a new contact list in the GetProspect CRM with the given name. |
 | Delete Company | `deleteCompany` | Deletes a saved CRM company by its id. Returns 204 No Content. |
+
+<details>
+
+<summary>See 37 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact | `deleteContact` | Deletes a saved contact by its id. Returns 204 No Content. |
 | Delete Contact Lists | `deleteContactLists` | Deletes one or more contact lists by id. Returns 204 No Content. Warning: an empty listIds array permanently removes all lists already marked deleted. |
 | Enrich Company | `enrichCompany` | Retrieves the full profile of one company by GetProspect id, LinkedIn id or URL, domain, or name. Returns success false with a NOT_FOUND error when no company matches. |
@@ -71,3 +78,5 @@ Add GetProspect from **Build → Integrations → Connectors** and connect an ac
 | Update Contact | `updateContact` | Updates one or more properties of a saved contact, and optionally replaces its list relations. Properties not sent are left unchanged. |
 | Verify Email | `verifyEmail` | Verifies whether an email address is deliverable and returns its status, domain health and whether the mailbox is free or disposable. Costs 1 verification credit per check. |
 | Verify Email (Legacy) | `verifyEmailLegacy` | Verifies the deliverability of an email address using the v1 public API. Costs 1 verification credit. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # HeyGen
 
+<img src="../../.gitbook/assets/connectors/heygen.ico" alt="HeyGen logo" width="64">
+
 HeyGen is an AI video platform for avatar videos, voice cloning and text-to-speech, lip-sync, video translation and agentic video generation. This connector covers the HeyGen v3 API: videos and templates, video batches, Video Agent sessions, HyperFrames renders, avatars and looks, voices and speech, lipsyncs, video translations and proofread sessions, AI clipping, filler-word removal, background removal, assets, brand kits and glossaries, podcasts, workflows, video-quality comparisons, custom agents, users, API keys and webhook endpoints and events.
 
 | | |
@@ -12,8 +14,6 @@ HeyGen is an AI video platform for avatar videos, voice cloning and text-to-spee
 | **Category** | [AI and ML](README.md) |
 | **Website** | [heygen.com](https://heygen.com) |
 | **Authentication** | API key |
-| **Actions** | 140 |
-| **Events** | 34 |
 | **Slug** | `heygen` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HeyGen from **Build → Integrations → Connectors** and connect an account
 | Clone Voice | `cloneVoice` | Creates a voice clone from an audio file (URL, uploaded asset ID or base64 data). Returns a voice_clone_id to poll with Get Voice until its status is complete. Consumes a voice-clone slot. |
 | Complete Asset Upload | `completeAssetUpload` | Finalizes a direct-to-S3 upload into a reusable asset. Call after the upload PUT returns 200. Idempotent. |
 | Complete Asset Upload Batch | `completeAssetBatch` | Finalizes every uploaded file in an asset batch after all PUTs return 200; each file is validated and ingested independently. Returns the batch_id; poll Get Asset Batch. Idempotent. |
+
+<details>
+
+<summary>See 130 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create AI Clipping | `createAiClipping` | Submits a source video for AI clipping and returns a job id immediately (consumes credits). Produces one or more short clips per output_settings. Poll Get AI Clipping or subscribe to ai_clipping.success / ai_clipping.fail webhooks. |
 | Create Asset Upload | `createAssetUpload` | Begins a direct-to-S3 upload. Returns an asset_id and presigned upload_url plus headers; PUT the file bytes to upload_url, then call Complete Asset Upload. No bytes flow through the API. |
 | Create Asset Upload Batch | `createAssetUploadBatch` | Requests up to 100 presigned direct-to-S3 upload URLs in one call. Returns batch_id and one upload slot per file (asset_id, upload_url, headers). PUT each file, then call Complete Asset Upload Batch. |
@@ -165,6 +172,8 @@ Add HeyGen from **Build → Integrations → Connectors** and connect an account
 | Update Workflow Draft | `updateWorkflowDraft` | Replaces a workflow's mutable draft product graph. Rejected with 409 if expected_revision is stale and 422 graph_invalid for unavailable node types; the draft is unchanged in both cases. |
 | Upload Proofread SRT | `uploadProofreadSrt` | Replaces the proofread subtitles with an edited SRT file referenced by URL or asset id. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -181,6 +190,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Avatar Video Success | `avatar_video.success` | Fired when an avatar video completes rendering successfully. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
 | Batch Finished | `batch.finished` | Fired when a batch job finishes (all its items have reached a terminal created/failed state). Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
 | Filler Word Removal Fail | `filler_word_removal.fail` | Fired when a filler word removal job fails terminally; the charge is refunded. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
+
+<details>
+
+<summary>See 24 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Filler Word Removal Success | `filler_word_removal.success` | Fired when a filler word removal job completes. num_cuts=0 means the source was clean (charge auto-refunded). Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
 | Hyperframes Video Fail | `hyperframes_video.fail` | Fired when a HyperFrames render fails. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
 | Hyperframes Video Success | `hyperframes_video.success` | Fired when a HyperFrames render completes successfully. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
@@ -205,3 +221,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Video Translate Preflight Download Failed | `video_translate.preflight.download_failed` | Fired when the download-and-store phase of a video translation's media preflight fails. Only when media-preflight is enabled. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
 | Video Translate Preflight Validation Failed | `video_translate.preflight.validation_failed` | Fired when the pre-download URL validation phase of a video translation fails (HTTP 4xx/5xx, DNS failure, oversized asset). Only when media-preflight is enabled. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
 | Video Translate Success | `video_translate.success` | Fired when a video translation completes successfully. Schema modelled from docs (no captured delivery); HMAC-SHA256 `signature` header with per-endpoint secret, not verified by the trigger. |
+
+</details>

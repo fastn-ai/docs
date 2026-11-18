@@ -5,6 +5,8 @@ hidden: true
 
 # crates.io
 
+<img src="../../.gitbook/assets/connectors/crates-io.png" alt="crates.io logo" width="64">
+
 crates.io is the Rust community's package registry. Search and browse crates, versions, dependencies, reverse dependencies, download stats, readmes, owners, categories, keywords, users, teams and registry summary through its public API, and use the token-based routes for email confirmation, owner invitations and trusted publishing. Read routes need no API key; crates.io asks for a descriptive User-Agent and at most 1 request per second.
 
 | | |
@@ -12,8 +14,6 @@ crates.io is the Rust community's package registry. Search and browse crates, ve
 | **Category** | [Developer tools](README.md) |
 | **Website** | [crates.io](https://crates.io) |
 | **Authentication** | No authentication |
-| **Actions** | 26 |
-| **Events** | 0 |
 | **Slug** | `cratesIo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add crates.io from **Build → Integrations → Connectors** and connect an acco
 | Get Crate Version | `getCrateVersion` | Get crate version metadata. (GET /api/v1/crates/{name}/{version}). Docs: https://crates.io/api/openapi.json |
 | Get Keyword | `getKeyword` | Get keyword metadata. (GET /api/v1/keywords/{keyword}). Docs: https://crates.io/api/openapi.json |
 | Get Registry Summary | `getRegistrySummary` | Get front page data. This endpoint returns a summary of the most important data for the front page of crates.io. (GET /api/v1/summary). Docs: https://crates.io/api/openapi.json |
+
+<details>
+
+<summary>See 16 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Site Metadata | `getSiteMetadata` | Get crates.io metadata. Returns the current deployed commit SHA1 (or `unknown`), and whether the system is in read-only mode. (GET /api/v1/site_metadata). Docs: https://crates.io/api/openapi.json |
 | Get Team | `getTeam` | Find team by login. (GET /api/v1/teams/{team}). Docs: https://crates.io/api/openapi.json |
 | Get User | `getUser` | Find user by login. (GET /api/v1/users/{user}). Docs: https://crates.io/api/openapi.json |
@@ -50,3 +57,5 @@ Add crates.io from **Build → Integrations → Connectors** and connect an acco
 | List Keywords | `listKeywords` | List all keywords. (GET /api/v1/keywords). Docs: https://crates.io/api/openapi.json |
 | List Reverse Dependencies | `listReverseDependencies` | Lists reverse dependencies of a crate. (GET /api/v1/crates/{name}/reverse_dependencies). Docs: https://crates.io/api/openapi.json |
 | List Version Dependencies | `listVersionDependencies` | Get crate version dependencies. This information can also be obtained directly from the index. In addition to returning cached data from the index, this returns fields for `id`, `version_id`, and `downloads` (which appears to always be 0) (GET /api/v1/crates/{name}/{version}/dependencies). Docs: https://crates.io/api/openapi.json |
+
+</details>

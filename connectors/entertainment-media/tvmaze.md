@@ -5,6 +5,8 @@ hidden: true
 
 # TVmaze
 
+<img src="../../.gitbook/assets/connectors/tvmaze.png" alt="TVmaze logo" width="64">
+
 TVmaze public API: free, keyless TV metadata - search shows and people, TV schedules by country and date (including web/streaming), show details, episodes, seasons, cast, crew, alternate episode orders, images, people credits and change feeds. Data is CC BY-SA licensed.
 
 | | |
@@ -12,8 +14,6 @@ TVmaze public API: free, keyless TV metadata - search shows and people, TV sched
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [tvmaze.com](https://tvmaze.com) |
 | **Authentication** | No authentication |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `tvmaze` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TVmaze from **Build → Integrations → Connectors** and connect an account
 | Get TV Schedule | `getSchedule` | Returns the TV episodes airing on a date in a country (broadcast and cable). Docs: https://www.tvmaze.com/api |
 | Get Web/Streaming Schedule | `getWebSchedule` | Returns the web and streaming episodes released on a date, optionally for one country (empty country = global services only). Docs: https://www.tvmaze.com/api |
 | List Alternate Episodes | `listAlternateEpisodes` | Returns the episodes of an alternate list in that list's order; embed=episodes adds the episode details. Docs: https://www.tvmaze.com/api |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Episode Guest Cast | `listEpisodeGuestCast` | Returns the guest cast of an episode. Docs: https://www.tvmaze.com/api |
 | List Episode Guest Crew | `listEpisodeGuestCrew` | Returns the guest crew of an episode (e.g. writers, directors). Docs: https://www.tvmaze.com/api |
 | List Episodes by Date | `listEpisodesByDate` | Returns the episodes of a show that aired on a date. Docs: https://www.tvmaze.com/api |
@@ -55,3 +62,5 @@ Add TVmaze from **Build → Integrations → Connectors** and connect an account
 | Look Up Show by External ID | `lookupShow` | Finds a show by its TVRage, TheTVDB or IMDb id (give exactly one). Docs: https://www.tvmaze.com/api |
 | Search People | `searchPeople` | Searches people (actors, crew) by name. Docs: https://www.tvmaze.com/api |
 | Search Shows | `searchShows` | Fuzzy-searches shows by name and returns up to 10 matches with a relevance score. Docs: https://www.tvmaze.com/api |
+
+</details>

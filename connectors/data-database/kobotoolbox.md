@@ -5,6 +5,8 @@ hidden: true
 
 # KoboToolbox
 
+<img src="../../.gitbook/assets/connectors/kobotoolbox.png" alt="KoboToolbox logo" width="64">
+
 KoboToolbox is an open-source platform for field data collection. This connector covers the KoboToolbox KPI v2 API: projects and forms, form content and versions, deployment, submissions and their validation statuses, exports and export settings, media files, paired data, permission assignments, REST service hooks, organizations and members, project views, tags, imports, usage reporting and account logs.
 
 | | |
@@ -12,8 +14,6 @@ KoboToolbox is an open-source platform for field data collection. This connector
 | **Category** | [Data and databases](README.md) |
 | **Website** | [kobotoolbox.org](https://kobotoolbox.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 81 |
-| **Events** | 1 |
 | **Slug** | `kobotoolbox` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add KoboToolbox from **Build → Integrations → Connectors** and connect an ac
 | Create Export | `createExport` | Starts generating a data export of a form's submissions in CSV, XLSX, SPSS or GeoJSON. The export runs in the background, so poll Get Export until its status is complete and then download the result. |
 | Create Export Setting | `createExportSetting` | Saves a reusable export configuration on a form and returns stable CSV and XLSX download addresses that always reflect the latest submissions. |
 | Create Hook | `createHook` | Registers a REST service on a form so every new submission is posted to an external address. This is how a webhook subscription is created on KoboToolbox. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Paired Data | `createPairedData` | Pairs another project's submissions into this form as a dynamic data source under a chosen filename. The source project must have data sharing enabled and grant this account access. |
 | Create Permission Assignment | `createPermissionAssignment` | Grants one user a single permission on a form, for example letting a colleague view or add submissions. Granting a permission to the AnonymousUser account shares the project publicly. |
 | Delete Asset | `deleteAsset` | Permanently removes a project, form, block, question, template or collection and all of its submissions. This cannot be undone. |
@@ -105,6 +112,8 @@ Add KoboToolbox from **Build → Integrations → Connectors** and connect an ac
 | Set Submission Validation Status | `setSubmissionValidationStatus` | Sets the review state of one submission, marking it approved, not approved or on hold so reviewers can track which records have been checked. |
 | Update Asset | `updateAsset` | Partially updates a project, form or collection. Only the fields supplied are changed, so a form's questions can be replaced without touching its name or settings. Redeploy the form afterwards for content changes to reach data collectors. |
 | Update Hook | `updateHook` | Partially updates a REST service on a form. Only the fields supplied are changed, so a hook can be paused by setting active to false without disturbing its endpoint or settings. |
+
+</details>
 
 ## Events
 

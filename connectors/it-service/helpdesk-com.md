@@ -5,6 +5,8 @@ hidden: true
 
 # HelpDesk.com
 
+<img src="../../.gitbook/assets/connectors/helpdesk-com.png" alt="HelpDesk.com logo" width="64">
+
 HelpDesk.com is a ticketing and customer support platform from Text (LiveChat). This connector wraps the full HelpDesk.com REST API v1: tickets and ticket events, transactions and attachments, agents, teams, tags, views, macros, rules, canned responses, templates, custom fields, mailboxes, licenses, email domains, reply addresses, trusted and blocked emails, subscriptions, imported tickets, the audit log, webhooks and the full reporting suite.
 
 | | |
@@ -12,8 +14,6 @@ HelpDesk.com is a ticketing and customer support platform from Text (LiveChat). 
 | **Category** | [IT and service management](README.md) |
 | **Website** | [helpdesk.com](https://helpdesk.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 145 |
-| **Events** | 10 |
 | **Slug** | `helpdeskCom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HelpDesk.com from **Build → Integrations → Connectors** and connect an a
 | Create Contact Form | `contactFormsCreate` | Create an embeddable contact form whose submissions become tickets on the chosen team. |
 | Create Custom Field | `customFieldsCreate` | Create a ticket custom field. The API key you choose is how the field is addressed in the customFields object on a ticket. |
 | Create Custom Report | `reportsCreate` | Generate a raw ticket export for a date range and email the recipients a link to the resulting CSV file. |
+
+<details>
+
+<summary>See 135 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Email Domain | `emailDomainsCreate` | Register an email domain for outgoing replies. Supplying only a prefix creates a hosted prefix.helpdesk.com domain; supplying a full domain triggers ownership verification against a CNAME record during the call. |
 | Create Imported Ticket | `importedTicketsCreate` | Import a historical ticket from another helpdesk, including its past events with their original timestamps. |
 | Create Imported Ticket Transaction | `importedTicketsTransactionCreate` | Open a transaction that attachments for an imported ticket are uploaded into before the ticket itself is imported. |
@@ -169,6 +176,8 @@ Add HelpDesk.com from **Build → Integrations → Connectors** and connect an a
 | Upload Imported Ticket Attachment | `importedTicketsAttachmentsCreate` | Upload one text file into an imported-ticket transaction. Attachments must be uploaded here before an imported ticket that references them is created. The file is sent as a multipart/form-data part named attachments, alongside the transactionID part. Text content only: give the file's text in File Content and its name in File Name. |
 | Upload Transaction Attachment | `transactionAttachmentUpload` | Upload one text file into an attachment transaction, so it can be referenced by a ticket, agent avatar, template logo or canned response. The file is sent as a multipart/form-data part named attachments. Text content only: give the file's text in File Content and its name in File Name. |
 | Verify Email Domain | `emailDomainVerify` | Re-run ownership and DNS verification for an email domain and return its refreshed status. |
+
+</details>
 
 ## Events
 

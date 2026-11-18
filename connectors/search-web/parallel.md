@@ -5,14 +5,14 @@ hidden: true
 
 # Parallel
 
+<img src="../../.gitbook/assets/connectors/parallel.png" alt="Parallel logo" width="64">
+
 Parallel web research APIs on api.parallel.ai: Search and Extract, Task runs and Task Groups (deep research and enrichment), Responses (OpenAI-compatible), Chat Completions, FindAll entity discovery and Entity Search, Monitors for continuous web change tracking, and Memory. Authenticates with an API key sent as x-api-key.
 
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Authentication** | API key |
-| **Actions** | 35 |
-| **Events** | 10 |
 | **Slug** | `parallel` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Parallel from **Build → Integrations → Connectors** and connect an accou
 | Create Response | `createResponse` | Answers a question with live web research using the OpenAI-compatible Responses API. Model is always parallel; reasoning.effort low, medium or high selects the research depth. Supports structured output via text.format and multi-turn via previous_response_id. $10 to $250 per 1,000 requests by tier. |
 | Create Task Group | `createTaskGroup` | Creates a Task Group to batch and track many task runs, with optional metadata. |
 | Create Task Run | `createTaskRun` | Starts an asynchronous web-research task run with a processor (lite, base, core, pro, ultra and their -fast variants), an input and an optional task spec, webhook and metadata. Returns 202 with the run id; poll Get Task Run Result. Billed per successful run by processor ($5 per 1,000 for lite). |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Enrich FindAll Run | `enrichFindAllRun` | Adds an enrichment (a JSON output schema evaluated per matched candidate by a Task processor) to an existing FindAll run. Enrichments are billed per candidate at the processor's Task rate. |
 | Entity Search | `entitySearch` | Fast synchronous search for people or companies matching a natural-language objective, returning a ranked entity set. $5 per 1,000 requests including 100 results. |
 | Evict From Memory | `evictMemory` | Removes one task run, monitor or FindAll run from the selected memory without deleting the original resource. |
@@ -58,6 +65,8 @@ Add Parallel from **Build → Integrations → Connectors** and connect an accou
 | Search | `search` | Searches the web with natural-language objective and keyword queries and returns LLM-optimized page excerpts ranked by relevance. Synchronous; $1 to $5 per 1,000 requests depending on mode. |
 | Trigger Monitor Run | `triggerMonitorRun` | Triggers an immediate execution of a monitor outside its schedule. Counts as one check. |
 | Update Monitor | `updateMonitor` | Updates a monitor's frequency, processor, webhook, metadata or (event_stream only, with type set) settings such as the query. |
+
+</details>
 
 ## Events
 

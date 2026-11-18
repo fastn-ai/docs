@@ -5,6 +5,8 @@ hidden: true
 
 # ServiceNow
 
+<img src="../../.gitbook/assets/connectors/servicenow.png" alt="ServiceNow logo" width="64">
+
 ServiceNow ITSM platform connector. Full CRUD over the Table API (incident, problem, change_request, sc_request, task, sys_user, and any generic table), plus Attachment API, Aggregate/Stats API, dictionary field management, and Business-Rule-based outbound webhooks. Base URL https://{instance}.service-now.com/api/now
 
 | | |
@@ -12,8 +14,6 @@ ServiceNow ITSM platform connector. Full CRUD over the Table API (incident, prob
 | **Category** | [IT and service management](README.md) |
 | **Website** | [servicenow.com](https://servicenow.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 75 |
-| **Events** | 17 |
 | **Slug** | `servicenow` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ServiceNow from **Build → Integrations → Connectors** and connect an acc
 | Create Incident | `createIncident` | Create a new incident record in the ServiceNow incident table. Returns the created record including its sys_id and auto-generated number (INCxxxxxxx). |
 | Create Problem | `createProblem` | Create a new problem record in the problem table. Returns the created record including sys_id and number (PRBxxxxxxx). |
 | Create Service Request | `createServiceRequest` | Create a new service request (REQ) record in the sc_request table. Returns the created record including sys_id and number (REQxxxxxxx). |
+
+<details>
+
+<summary>See 65 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create System Property | `createSystemProperty` | Create a new system property (sys_properties) on the instance. System properties change how the instance behaves, so only create properties owned by your own integration and use a clearly namespaced name. |
 | Create Table Record | `createTableRecord` | Create a record in ANY ServiceNow table. Pass the field name/value pairs as the 'fields' object. Generic Table API insert. |
 | Create Task | `createTask` | Create a generic task record in the task table. Returns the created record including sys_id and number (TASKxxxxxxx). |
@@ -100,6 +107,8 @@ Add ServiceNow from **Build → Integrations → Connectors** and connect an acc
 | Update User | `updateUser` | Partially update an existing user (sys_user) by sys_id. Pass only the columns you want to change in the 'fields' JSON-object string; all other fields on the record are left untouched (PATCH). Returns the full updated user. |
 | Upload Attachment | `uploadAttachment` | Attach a file to a record on any table via the Attachment API (/api/now/attachment/file). The raw file content goes in the request body; table name, target record sys_id and file name are query params. Returns attachment metadata. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -116,6 +125,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Knowledge Article Deleted | `kb_knowledge.deleted` | Fires when a knowledge article is deleted. |
 | Knowledge Article Published | `kb_knowledge.published` | Fires when a knowledge article transitions to workflow_state=published. |
 | Knowledge Article Updated | `kb_knowledge.updated` | Fires when a knowledge article is updated. |
+
+<details>
+
+<summary>See 7 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Problem Created | `problem.created` | Fires when a new problem is inserted. |
 | Problem Updated | `problem.updated` | Fires when a problem is updated. |
 | Service Request Created | `sc_request.created` | Fires when a new service request (REQ) is inserted. |
@@ -123,3 +139,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task Created | `task.created` | Fires when a new task is inserted. |
 | Task Updated | `task.updated` | Fires when a task is updated. |
 | User Created | `sys_user.created` | Fires when a new user is created. |
+
+</details>

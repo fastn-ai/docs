@@ -5,6 +5,8 @@ hidden: true
 
 # Streak
 
+<img src="../../.gitbook/assets/connectors/streak.png" alt="Streak logo" width="64">
+
 Streak is a CRM that lives inside Gmail. This connector wraps the public Streak REST API (https://api.streak.com/api/v1 and /v2) and covers the full object model: pipelines, boxes, stages, pipeline fields and box field values, contacts, organizations and their team-level field definitions, email threads, tasks, comments, meeting notes and call logs, files, snippets, users, teams, search, newsfeeds, the box timeline, and webhook registration. Authentication is HTTP Basic with the Streak API key sent as the username and an empty password.
 
 | | |
@@ -12,8 +14,6 @@ Streak is a CRM that lives inside Gmail. This connector wraps the public Streak 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [streak.com](https://streak.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 80 |
-| **Events** | 20 |
 | **Slug** | `streak` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Streak from **Build → Integrations → Connectors** and connect an account
 | Create Pipeline | `createPipeline` | Create a pipeline in a team. This endpoint is form-urlencoded, not JSON. fieldNames/fieldTypes/stageNames are passed as JSON-array strings of equal length, e.g. fieldNames ["Owner","Close Date"] with fieldTypes ["TEXT_INPUT","DATE"]. Fields and stages can also be changed afterwards with the Field and Stage actions. |
 | Create Pipeline Field | `createPipelineField` | Add a custom field to a pipeline. This endpoint is form-urlencoded, not JSON. Streak allocates the field key (1001, 1002, ...) and returns it; that key is what box.fields is keyed by. |
 | Create Snippet | `createSnippet` | Create an email snippet (canned response). This endpoint is form-urlencoded, not JSON. Supplying pipelineKey scopes the snippet to that pipeline instead of the user. |
+
+<details>
+
+<summary>See 70 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Stage | `createStage` | Add a stage to a pipeline. This endpoint is form-urlencoded, not JSON. Streak allocates the new stage key and appends it; use Update Pipeline with stageOrder to reposition it. |
 | Create Task | `createTask` | Create a task on a box. New tasks always start with status NOT_DONE. Streak requires the box key both in the path and as key in the body; this action sends both from the single boxKey input. |
 | Create Webhook | `createWebhook` | Register a webhook that POSTs to targetUrl when an event fires. Exactly one of pipelineKey or teamKey must be supplied and it decides the scope: pipelineKey for BOX_*, STAGE_CREATE, COMMENT_CREATE, MEETING_* and TASK_* events, teamKey for CONTACT_* and ORG_* events. The optional token is echoed on every delivery as the X-Streak-Webhook-Token header. Streak deletes the webhook itself if a delivery is answered with 410 Gone, and retries with backoff on anything other than 200 or 410. |
@@ -105,6 +112,8 @@ Add Streak from **Build → Integrations → Connectors** and connect an account
 | Update Task | `updateTask` | Update a task: change its text, due date, assignees, or mark it complete by sending status DONE. Only supplied properties are changed. |
 | Update Webhook | `updateWebhook` | Update a registered webhook's event, target URL or token. Only supplied properties are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -121,6 +130,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Contact created | `CONTACT_CREATE` | A contact was created in the subscribed team. Team scoped: set teamKey on the trigger, or leave it empty to use the first team of the connected user. |
 | Contact deleted | `CONTACT_DELETE` | A contact was deleted from the subscribed team. Team scoped. |
 | Contact updated | `CONTACT_UPDATE` | A contact in the subscribed team changed. Team scoped. |
+
+<details>
+
+<summary>See 10 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Meeting note or call log created | `MEETING_CREATE` | A meeting note or call log was recorded on a box. Pipeline scoped. |
 | Meeting note or call log updated | `MEETING_UPDATE` | An existing meeting note or call log changed. Pipeline scoped. |
 | Organization created | `ORG_CREATE` | An organization was created in the subscribed team. Team scoped. |
@@ -131,3 +147,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task created | `TASK_CREATE` | A task was created on a box. Pipeline scoped. |
 | Task due | `TASK_DUE` | A task reached its due date. Pipeline scoped. |
 | Task updated | `TASK_UPDATED` | Anything about a task changed: text, due date, status or assignees. Pipeline scoped. |
+
+</details>

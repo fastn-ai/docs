@@ -5,6 +5,8 @@ hidden: true
 
 # Onpipeline
 
+<img src="../../.gitbook/assets/connectors/onpipeline.png" alt="Onpipeline logo" width="64">
+
 Onpipeline is a sales pipeline CRM. This connector covers the complete Onpipeline REST API: persons (contacts), organizations, deals (including undelete), calendar events, notes, invoices and invoice lines, users, teams, pipelines and stages, products, last-updated records, inbound leads, custom fields, action menu links, widgets, history log entries, call tracking and recording, and webhooks. Every Onpipeline endpoint is a POST with a JSON body, authenticated with a personal API token sent in the Authorization header.
 
 | | |
@@ -12,8 +14,6 @@ Onpipeline is a sales pipeline CRM. This connector covers the complete Onpipelin
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [onpipeline.com](https://onpipeline.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 38 |
-| **Events** | 4 |
 | **Slug** | `onpipeline` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Onpipeline from **Build → Integrations → Connectors** and connect an acc
 | Create Person | `createPerson` | Creates a new contact person in Onpipeline, optionally linked to an existing organization and with email addresses, phone numbers and custom field values. Returns the new person ID. |
 | Create Webhook | `createWebhook` | Registers a webhook in Onpipeline that POSTs the full record JSON to your HTTPS URL whenever a person, organization, deal or calendar event in the chosen zone changes. The response includes an X-Signature secret for verifying deliveries. In testing Onpipeline answered HTTP 500 with an empty body for some target URLs (for example a URL that returns 404 or one already registered before), so use a reachable, previously unused endpoint. |
 | Create Widget | `createWidget` | Adds an embedded frame widget to Onpipeline person, organization or deal pages. Each zone accepts at most 10 widgets. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Action Menu Link | `deleteActionMenuLink` | Removes a custom link from the Onpipeline actions menu by link ID. |
 | Delete Custom Field | `deleteCustomField` | Deletes a custom field from Onpipeline by field ID, removing its values from all records. |
 | Delete Deal | `deleteDeal` | Deletes a deal in Onpipeline by ID. This is a soft delete: the deal stays in the account with status "deleted" (visible through List Deals) and can be restored with Restore Deal. The API offers no permanent delete. |
@@ -62,6 +69,8 @@ Add Onpipeline from **Build → Integrations → Connectors** and connect an acc
 | Update Deal | `updateDeal` | Updates an existing Onpipeline deal, including its name, status (open, won or lost), value, probability, stage, owner, linked records, expected closing date, products and custom fields. Send only the fields you are changing: re-sending unchanged values is rejected with error 406. |
 | Update Organization | `updateOrganization` | Updates an existing organization in Onpipeline. Send only the fields you are changing: Onpipeline rejects a request that re-sends unchanged values with error 406. |
 | Update Person | `updatePerson` | Updates an existing contact person in Onpipeline. Send only the fields you are changing: Onpipeline rejects a request that re-sends unchanged values with error 406. Email, Phone and Extra replace the corresponding lists. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Knack
 
+<img src="../../.gitbook/assets/connectors/knack.png" alt="Knack logo" width="64">
+
 Knack is a no-code platform for building online databases and business apps. This connector covers the Knack REST API: application schema discovery, object-based record create, read, update and delete with filtering, sorting and pagination, view-based record operations for pages protected by logins, end-user session tokens, and asset downloads.
 
 | | |
@@ -12,8 +14,6 @@ Knack is a no-code platform for building online databases and business apps. Thi
 | **Category** | [Data and databases](README.md) |
 | **Website** | [knack.com](https://knack.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 17 |
-| **Events** | 3 |
 | **Slug** | `knack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Knack from **Build → Integrations → Connectors** and connect an account,
 | Get Application Schema | `getApplicationSchema` | Retrieves the complete schema of the connected Knack application, including every object, field, scene and view together with account, design and settings metadata. Use it to discover scene and view keys for the view-based record actions. |
 | Get Object | `getObject` | Retrieves the full definition of a single Knack object, including its inflections, identifier field, connections and every field it contains. |
 | Get Record | `getRecord` | Retrieves a single record from a Knack object by its record ID, returning every field value on the record. |
+
+<details>
+
+<summary>See 7 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get View Record | `getViewRecord` | Retrieves a single record through a view on a page, returning only the fields that view exposes. Views on pages protected by a login require a user token. |
 | List Object Fields | `listObjectFields` | Lists every field defined on a Knack object, returning each field's key, label, type and whether it is required. Use the field keys when building record payloads. |
 | List Objects | `listObjects` | Lists every object (table) defined in the connected Knack application, returning each object's name and key. Use the returned object key to address records with the object-based record actions. |
@@ -41,6 +48,8 @@ Add Knack from **Build → Integrations → Connectors** and connect an account,
 | List View Records | `listViewRecords` | Retrieves the records a specific view on a page returns, honouring that view's own source, filters and record rules. Views on pages protected by a login require a user token, which Create User Session returns. |
 | Update Record | `updateRecord` | Updates an existing record in a Knack object. Only the field keys present in the supplied JSON object are changed; every other field on the record is left untouched. |
 | Update View Record | `updateViewRecord` | Updates a record through a form or inline-edit view, so the view's record and submit rules are applied. Only the field keys present in the supplied JSON object are changed. |
+
+</details>
 
 ## Events
 

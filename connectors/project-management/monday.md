@@ -5,6 +5,8 @@ hidden: true
 
 # Monday.com
 
+<img src="../../.gitbook/assets/connectors/monday.png" alt="Monday.com logo" width="64">
+
 Monday.com Work OS GraphQL API connector. Single endpoint https://api.monday.com/v2 (all POST). Manage boards, groups, items, subitems, columns, updates, users, teams, workspaces, tags, docs, notifications and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Monday.com Work OS GraphQL API connector. Single endpoint https://api.monday.com
 | **Category** | [Project management](README.md) |
 | **Website** | [monday.com](https://monday.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 50 |
-| **Events** | 20 |
 | **Slug** | `monday` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Monday.com from **Build → Integrations → Connectors** and connect an acc
 | Change Single Column Value | `changeColumnValue` | Update a single column value of an item. value is a JSON-encoded string for that column type. Returns updated item. |
 | Create Board | `createBoard` | Create a new board. board_kind is one of public, private, share. Returns the new board id and name. |
 | Create Column | `createColumn` | Create a column on a board. column_type is a ColumnType enum (e.g. text, status, numbers, date, people, dropdown, checkbox, long_text, email, phone, link, timeline, tags). Returns the new column id, title and type. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Doc | `createDoc` | Creates a monday doc in a workspace, with its sharing kind set explicitly. |
 | Create Group | `createGroup` | Create a new group in a board. Returns the new group id and title. |
 | Create Item | `createItem` | Create a new item on a board. column_values is a JSON-encoded string mapping column ids to values (per monday column-value formats). Returns the new item id and name. |
@@ -75,6 +82,8 @@ Add Monday.com from **Build → Integrations → Connectors** and connect an acc
 | Update Board | `updateBoard` | Update a board attribute. board_attribute is one of name, description, communication. Returns a JSON string result. |
 | Update Group | `updateGroup` | Update a group attribute. group_attribute is one of title, color, position, relative_position_after, relative_position_before. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -91,6 +100,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Item Moved To Specific Group | `item_moved_to_specific_group` | An item is moved to a specific (chosen) group. |
 | Item Name Changed | `change_name` | An item's name changes. |
 | Specific Column Changed | `change_specific_column_value` | A specific column (chosen at subscription) value changes. |
+
+<details>
+
+<summary>See 10 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Status Column Changed | `change_status_column_value` | A status column value changes. |
 | Subitem Archived | `subitem_archived` | A subitem is archived. |
 | Subitem Column Changed | `change_subitem_column_value` | A subitem column value changes. |
@@ -101,3 +117,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Update Created | `create_update` | A new update/post is created on an item. |
 | Update Deleted | `delete_update` | An update is deleted. |
 | Update Edited | `edit_update` | An existing update is edited. |
+
+</details>

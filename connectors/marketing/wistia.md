@@ -5,6 +5,8 @@ hidden: true
 
 # Wistia
 
+<img src="../../.gitbook/assets/connectors/wistia.png" alt="Wistia logo" width="64">
+
 Wistia video hosting platform. Manage projects, medias, customizations, captions, project sharings, and access account and viewing statistics via the Wistia Data API and Stats API, plus media upload/import via the Upload API.
 
 | | |
@@ -12,8 +14,6 @@ Wistia video hosting platform. Manage projects, medias, customizations, captions
 | **Category** | [Marketing](README.md) |
 | **Website** | [wistia.com](https://wistia.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `wistia` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wistia from **Build → Integrations → Connectors** and connect an account
 | Delete Media | `deleteMedia` | Delete a media from the account. Returns an object representing the deleted media. |
 | Delete Media Customizations | `deleteCustomizations` | Delete all explicit embed customizations for a video, resetting it to defaults. |
 | Delete Project | `deleteProject` | Delete a project. Returns an object representing the deleted project. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Project Sharing | `deleteProjectSharing` | Delete a sharing on a project. Returns the deleted sharing object. |
 | Get Account | `getAccount` | Retrieve information about the authenticated Wistia account, including its name, URL, and total media count. |
 | Get Account Stats | `getAccountStats` | Retrieve account-wide aggregate statistics: total load count, play count, and hours watched. |
@@ -64,3 +71,5 @@ Add Wistia from **Build → Integrations → Connectors** and connect an account
 | Update Project | `updateProject` | Update the attributes of an existing project. |
 | Update Project Sharing | `updateProjectSharing` | Update the permissions of an existing sharing on a project. |
 | Upload Media | `uploadMedia` | Import a media into Wistia from a public web or FTP URL via the Upload API. To upload a local file, a multipart file part is required (not supported through this action; use URL import). |
+
+</details>

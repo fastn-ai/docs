@@ -5,6 +5,8 @@ hidden: true
 
 # AITable.ai
 
+<img src="../../.gitbook/assets/connectors/aitable.png" alt="AITable.ai logo" width="64">
+
 AITable.ai Fusion API — datasheets, records, fields, views, nodes, embed links, contacts (members/teams/roles), attachments and AI chat completions. Base https://aitable.ai/fusion. Auth: personal API token sent as Authorization: Bearer.
 
 | | |
@@ -12,8 +14,6 @@ AITable.ai Fusion API — datasheets, records, fields, views, nodes, embed links
 | **Category** | [Data and databases](README.md) |
 | **Website** | [aitable.ai](https://aitable.ai) |
 | **Authentication** | API key |
-| **Actions** | 32 |
-| **Events** | 4 |
 | **Slug** | `aitable` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AITable.ai from **Build → Integrations → Connectors** and connect an acc
 | Delete Embedded Link | `deleteEmbedLink` | Delete an embedded link from a node by link id. Requires a golden-level (paid) space — other spaces get 200 with code 1502 'sorry, it can only be invoked in golden-level space'. |
 | Delete Field | `deleteField` | Delete a field from a datasheet by field id. The primary field cannot be deleted. |
 | Delete Member | `deleteMember` | Remove a member from the space by unitId. Enterprise-plan only — other plans get 200 with code 1503 'This API is only available for the Enterprise plan'. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Records | `deleteRecords` | Delete up to 10 records from a datasheet. recordIds is a comma separated list of record ids. |
 | Delete Role | `deleteRole` | Delete a role by unitId. Enterprise-plan only — other plans get 200 with code 1503 'This API is only available for the Enterprise plan'. |
 | Delete Team | `deleteTeam` | Delete a team by unitId. Enterprise-plan only — other plans get 200 with code 1503 'This API is only available for the Enterprise plan'. |
@@ -56,6 +63,8 @@ Add AITable.ai from **Build → Integrations → Connectors** and connect an acc
 | Update Role | `updateRole` | Rename or reorder a role. Enterprise-plan only — other plans get 200 with code 1503 'This API is only available for the Enterprise plan'. |
 | Update Team | `updateTeam` | Update a team's name, parent, order or roles. Enterprise-plan only — other plans get 200 with code 1503 'This API is only available for the Enterprise plan'. |
 | Upload Attachment | `uploadAttachment` | Upload a text file as an attachment to a datasheet. Returns data.token / data.url which you then write into an Attachment field via Create Records or Update Records. Sends a multipart/form-data part named 'file'. Binary payloads are not supported by this action — pass text content only. |
+
+</details>
 
 ## Events
 

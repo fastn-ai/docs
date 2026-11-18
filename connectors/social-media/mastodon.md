@@ -5,6 +5,8 @@ hidden: true
 
 # Mastodon
 
+<img src="../../.gitbook/assets/connectors/mastodon.svg" alt="Mastodon logo" width="64">
+
 Mastodon is an open-source, self-hostable social network built on ActivityPub. This connector covers statuses, timelines, accounts, notifications, media, polls, lists, filters, search, trends, moderation and instance metadata on any Mastodon instance.
 
 | | |
@@ -12,8 +14,6 @@ Mastodon is an open-source, self-hostable social network built on ActivityPub. T
 | **Category** | [Social media](README.md) |
 | **Website** | [joinmastodon.org](https://joinmastodon.org) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 242 |
-| **Events** | 7 |
 | **Slug** | `mastodon` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mastodon from **Build → Integrations → Connectors** and connect an accou
 | Add Status To Filter | `addStatusToFilter` | Adds a specific status to a filter group so that one status is filtered regardless of keywords. |
 | Allow Domain | `adminCreateDomainAllow` | Adds a domain to the federation allowlist so this instance will exchange content with it. Requires a moderator or administrator role on the instance. |
 | Approve Account | `adminApproveAccount` | Approves a pending sign-up so the account can be used. Requires a moderator or administrator role on the instance. |
+
+<details>
+
+<summary>See 232 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Assign Report To Self | `adminAssignReportToSelf` | Assigns a moderation report to the connected moderator. Requires a moderator or administrator role on the instance. |
 | Block Account | `blockAccount` | Blocks an account. Blocking removes any follow relationship in both directions and hides the account's content. |
 | Block Canonical Email | `adminCreateCanonicalEmailBlock` | Blocks an email address and every alias that canonicalizes to it from creating new accounts. Supply either the plain address or a precomputed hash. Requires a moderator or administrator role on the instance. |
@@ -266,6 +273,8 @@ Add Mastodon from **Build → Integrations → Connectors** and connect an accou
 | Verify Account Credentials | `verifyCredentials` | Returns the account that owns the connected access token, including private fields such as the default posting settings and the account's role on the instance. |
 | Verify Application Credentials | `verifyApplicationCredentials` | Confirms that the connected token belongs to a valid application and returns that application's public details. |
 | Vote On Poll | `voteOnPoll` | Casts the connected account's vote on a poll. Choices are zero-based option indexes; single-choice polls accept exactly one. |
+
+</details>
 
 ## Events
 

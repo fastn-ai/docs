@@ -5,6 +5,8 @@ hidden: true
 
 # Odoo
 
+<img src="../../.gitbook/assets/connectors/odoo.png" alt="Odoo logo" width="64">
+
 Odoo is an open-source suite of business apps (CRM, Sales, Invoicing, Inventory, Purchase, Project, Employees, Calendar and more). This connector uses Odoo's JSON-2 external API (POST /json/2/&lt;model&gt;/&lt;method&gt;, Odoo 19+ and Odoo Online) with a user API key, so it can search, read, create, update and delete records in any Odoo model the API key's user can access.
 
 | | |
@@ -12,8 +14,6 @@ Odoo is an open-source suite of business apps (CRM, Sales, Invoicing, Inventory,
 | **Category** | [Other](README.md) |
 | **Website** | [odoo.com](https://odoo.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 1513 |
-| **Events** | 0 |
 | **Slug** | `odoo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Odoo from **Build → Integrations → Connectors** and connect an account, 
 | Confirm Purchase Order | `confirmPurchaseOrder` | Confirms a request for quotation into a purchase order. Runs button_confirm on Odoo purchase orders (purchase.order). Returns what Odoo returns (often true, null or an action description). |
 | Confirm Sales Order | `confirmSalesOrder` | Confirms a quotation and turns it into a sales order. Runs action_confirm on Odoo sales orders (sale.order). Returns what Odoo returns (often true, null or an action description). |
 | Count Records | `countRecords` | Counts the records of any Odoo model that match a domain filter (ORM search_count). Returns the number of matching records. |
+
+<details>
+
+<summary>See 1503 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create A Mixin That Contains The Generic Methods For All Models That Need To Be Embedded Record | `createIrAttachmentRecord` | Creates one or more Odoo a mixin that contains the generic methods for all models that need to be embedded records (ir.attachment). Each object in Records becomes one a mixin that contains the generic methods for all models that need to be embedded record. Required fields: name. Odoo model ir.attachment (A Mixin That Contains The Generic Methods For All Models That Need To Be Embedded). Returns the IDs of the new records. |
 | Create Account Audit Account Status Record | `createAccountAuditAccountStatusRecord` | Creates one or more Odoo account audit account status records (account.audit.account.status). Each object in Records becomes one account audit account status record. Required fields: audit_id, account_id. Odoo model account.audit.account.status (Account Audit Account Status). Returns the IDs of the new records. |
 | Create Account Cash Rounding Record | `createAccountCashRoundingRecord` | Creates one or more Odoo account cash rounding records (account.cash.rounding). Each object in Records becomes one account cash rounding record. Odoo model account.cash.rounding (Account Cash Rounding). Returns the IDs of the new records. |
@@ -1537,3 +1544,5 @@ Add Odoo from **Build → Integrations → Connectors** and connect an account, 
 | Update Work Detail Record | `updateResourceCalendarAttendanceRecord` | Updates one or more Odoo work detail records (resource.calendar.attendance) with the given field values. Only the fields you pass are changed. Odoo model resource.calendar.attendance (Work Detail). Returns true on success. |
 | Update Work Location Record | `updateHrWorkLocationRecord` | Updates one or more Odoo work location records (hr.work.location) with the given field values. Only the fields you pass are changed. Odoo model hr.work.location (Work Location). Returns true on success. |
 | Validate Transfer | `validateTransfer` | Validates a transfer and moves the stock (quantities must be set). Runs button_validate on Odoo transfers (stock.picking). Returns what Odoo returns (often true, null or an action description). |
+
+</details>

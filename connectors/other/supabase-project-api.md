@@ -5,6 +5,8 @@ hidden: true
 
 # Supabase
 
+<img src="../../.gitbook/assets/connectors/supabase-project-api.png" alt="Supabase logo" width="64">
+
 Supabase project data-plane API (https://&lt;projectRef&gt;.supabase.co): PostgREST table CRUD + RPC, Storage buckets/objects, and Auth Admin user management. Authenticates with the project reference + secret/service_role key. Management API operations (edge functions, SQL/DDL, project config) live in the separate supabaseManagementApi connector.
 
 | | |
@@ -12,8 +14,6 @@ Supabase project data-plane API (https://&lt;projectRef&gt;.supabase.co): PostgR
 | **Category** | [Other](README.md) |
 | **Website** | [supabase.co](https://supabase.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 38 |
-| **Events** | 3 |
 | **Slug** | `supabaseProjectApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Supabase from **Build → Integrations → Connectors** and connect an accou
 | Delete Object | `deleteObject` | Delete one or more objects from a bucket by exact path. Uses the Storage bulk-delete endpoint. |
 | Delete Rows | `deleteRows` | Delete rows matching a filter (filterColumn + operator + filterValue, REQUIRED to avoid deleting every row). Returns the deleted rows. |
 | Delete SSO Provider (Auth Admin) | `deleteSsoProvider` | Auth Admin: remove a SAML SSO provider by ID. Requires SAML SSO enabled (paid plans). |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete User | `deleteUser` | Delete an auth user by id. Optionally soft-delete. |
 | Delete User MFA Factor | `deleteUserFactor` | Auth Admin: delete (unenroll) an MFA factor from a user. |
 | Download Object | `downloadObject` | Download an object's contents from a bucket (authenticated). |
@@ -62,6 +69,8 @@ Add Supabase from **Build → Integrations → Connectors** and connect an accou
 | Upload Object | `uploadObject` | Upload a text object to a bucket at the given path. For binary files use the storage SDK; this action sends UTF-8 text content. |
 | Upsert Rows | `upsertRows` | Insert rows, updating existing ones on primary-key/unique conflict (merge-duplicates). Pass the row(s) as a JSON string (object or array of objects). Returns the affected rows. |
 | Upsert Rows On Conflict | `upsertRowsOnConflict` | Upsert rows with explicit on_conflict columns. Returns the affected rows. |
+
+</details>
 
 ## Events
 

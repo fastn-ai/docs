@@ -5,6 +5,8 @@ hidden: true
 
 # Jina AI
 
+<img src="../../.gitbook/assets/connectors/jinaai.png" alt="Jina AI logo" width="64">
+
 Jina AI search-foundation and frontier APIs: Embeddings, Reranker, Classifier, Segmenter, Reader (URL to LLM-friendly text), Search (web search), DeepSearch (OpenAI-compatible reasoning search), and Grounding/Factcheck. Auth via Bearer API key from jina.ai/api-dashboard.
 
 | | |
@@ -12,8 +14,6 @@ Jina AI search-foundation and frontier APIs: Embeddings, Reranker, Classifier, S
 | **Category** | [AI and ML](README.md) |
 | **Website** | [jina.ai](https://jina.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 10 |
-| **Events** | 0 |
 | **Slug** | `jinaai` |
 
 ## Use it

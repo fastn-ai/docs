@@ -5,6 +5,8 @@ hidden: true
 
 # Honeycomb
 
+<img src="../../.gitbook/assets/connectors/honeycomb.ico" alt="Honeycomb logo" width="64">
+
 Honeycomb is an observability platform for querying, alerting on and exploring event, trace and log data.
 
 | | |
@@ -12,8 +14,6 @@ Honeycomb is an observability platform for querying, alerting on and exploring e
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [honeycomb.io](https://honeycomb.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 85 |
-| **Events** | 3 |
 | **Slug** | `honeycomb` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Honeycomb from **Build → Integrations → Connectors** and connect an acco
 | Create Environment | `createEnvironment` | Create an environment on a team. Requires the environments:write scope. Uses the Honeycomb v2 management API, so the connection's optional Management API Key must be set - the environment Configuration API Key cannot call this endpoint. Requests and responses use the JSON:API media type application/vnd.api+json. |
 | Create Marker | `createMarker` | Create a marker in a dataset so that a deploy, incident or other notable moment is drawn on every query graph. Pass __all__ as the dataset slug to create an environment-wide marker. |
 | Create Marker Setting | `createMarkerSetting` | Assign a display colour to a marker type so that every marker of that type is drawn in the same colour across the dataset. |
+
+<details>
+
+<summary>See 75 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Query | `createQuery` | Create a saved query from a query specification. This stores the query and returns its ID; it does not run it. Use Create Query Result to execute the query and fetch data, or reference the ID from a board panel or trigger. Requires an API key with the Run Queries and Manage Queries and Columns permissions. |
 | Create Query Annotation | `createQueryAnnotation` | Give a saved query a name and description so it can be recognised on boards and in the query history. A query annotation is required by every query board panel. |
 | Create Recipient | `createRecipient` | Create a notification recipient for the Honeycomb team. Recipients belong to the team rather than to an environment or dataset, and are referenced by ID from triggers and burn alerts. Set Type and then fill in only the Details fields that type requires. A Slack recipient can only be created after the Slack OAuth flow is completed in the Honeycomb Integration Center. Requires an API key with the Manage Recipients permission. |
@@ -109,6 +116,8 @@ Add Honeycomb from **Build → Integrations → Connectors** and connect an acco
 | Update Recipient | `updateRecipient` | Update a recipient's destination details. Partial updates are not supported, so send the complete Details object. The recipient type cannot be changed. Changing a recipient re-points every trigger and burn alert that uses it, so check List Triggers For Recipient first. |
 | Update SLO | `updateSlo` | Update an SLO by supplying its full definition. Honeycomb replaces the SLO with what is sent, so include the name, SLI, time period and target you want it to keep. |
 | Update Trigger | `updateTrigger` | Update a trigger by supplying the same fields used to create it. Honeycomb replaces the trigger with what is sent, so include the query, threshold and recipient list you want it to keep. |
+
+</details>
 
 ## Events
 

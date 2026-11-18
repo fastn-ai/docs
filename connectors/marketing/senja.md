@@ -5,6 +5,8 @@ hidden: true
 
 # Senja
 
+<img src="../../.gitbook/assets/connectors/senja.png" alt="Senja logo" width="64">
+
 Senja is a testimonial collection, management and sharing platform. This connector covers the full Senja REST API v1: listing, creating, retrieving, updating and deleting testimonials, retrieving shareable link URLs for forms, widgets, walls of love, case studies, quick links and sizzle reels, and sending form invite emails to customers.
 
 | | |
@@ -12,8 +14,6 @@ Senja is a testimonial collection, management and sharing platform. This connect
 | **Category** | [Marketing](README.md) |
 | **Website** | [senja.io](https://senja.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 7 |
-| **Events** | 3 |
 | **Slug** | `senja` |
 
 ## Use it

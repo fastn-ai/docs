@@ -5,6 +5,8 @@ hidden: true
 
 # Siteleaf
 
+<img src="../../.gitbook/assets/connectors/siteleaf.png" alt="Siteleaf logo" width="64">
+
 Siteleaf is a Git-friendly, Jekyll-based content management system. This connector wraps the Siteleaf v2 REST API so you can manage sites, pages, collections, documents, collection files, raw Jekyll source files, site users and roles, publish jobs, tags and categories.
 
 | | |
@@ -12,8 +14,6 @@ Siteleaf is a Git-friendly, Jekyll-based content management system. This connect
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [siteleaf.com](https://siteleaf.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `siteleaf` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Siteleaf from **Build → Integrations → Connectors** and connect an accou
 | Create Role | `createRole` | Grants an existing Siteleaf user a role on a site, making them a collaborator. Pass the user's id and the role kind. Returns the created role including its id. |
 | Create Site | `createSite` | Creates a new Siteleaf site. Title and domain are required; the domain must be unique across Siteleaf (a free siteleaf.net subdomain such as my-site.siteleaf.net is accepted). Returns the created site including its id. |
 | Delete Collection | `deleteCollection` | Permanently deletes a collection and every document and file inside it. Returns the deleted collection id with deleted set to true. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Document | `deleteDocument` | Permanently deletes a document and its underlying source file. Returns the deleted document id with deleted set to true. |
 | Delete Page | `deletePage` | Permanently deletes a page and its underlying source file. Returns the deleted page id with deleted set to true. |
 | Delete Role | `deleteRole` | Revokes a site role, removing that user's access to the site. Take care when deleting a role that belongs to the authenticated account, as it can remove your own access. |
@@ -63,3 +70,5 @@ Add Siteleaf from **Build → Integrations → Connectors** and connect an accou
 | Update Page | `updatePage` | Updates a page by id. Only the fields you supply are changed, so you can edit just the body or just the front-matter metadata. Returns the updated page. |
 | Update Role | `updateRole` | Changes the level of access a site role grants. Take care when changing a role that belongs to the authenticated account, as lowering it can remove your own access to the site. |
 | Update Site | `updateSite` | Updates an existing Siteleaf site. Only the fields you supply are changed. Returns the updated site object. |
+
+</details>

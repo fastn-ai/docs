@@ -5,6 +5,8 @@ hidden: true
 
 # Zendesk Support
 
+<img src="../../.gitbook/assets/connectors/zendesk-support.png" alt="Zendesk Support logo" width="64">
+
 Zendesk Support customer service and ticketing platform. Manage tickets and comments, users and identities, organizations and memberships, groups, ticket fields and forms, macros, views, triggers, automations, SLA policies, satisfaction ratings, requests, brands, tags, ticket audits and metrics, search, file uploads, and webhooks. Base URL is https://{subdomain}.zendesk.com/api/v2.
 
 | | |
@@ -12,8 +14,6 @@ Zendesk Support customer service and ticketing platform. Manage tickets and comm
 | **Category** | [IT and service management](README.md) |
 | **Website** | [zendesk.com](https://zendesk.com) |
 | **Authentication** | Basic auth, OAuth 2.0 |
-| **Actions** | 143 |
-| **Events** | 0 |
 | **Slug** | `zendeskSupport` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zendesk Support from **Build → Integrations → Connectors** and connect a
 | Create Automation | `createAutomation` | Creates a new time-based automation that runs actions when its conditions are met. |
 | Create Brand | `createBrand` | Creates a new brand with a name and help center subdomain. |
 | Create Group | `createGroup` | Creates a new agent group with the provided name. |
+
+<details>
+
+<summary>See 133 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Group Membership | `createGroupMembership` | Adds an agent to a group by creating a group membership. |
 | Create Macro | `createMacro` | Creates a new macro with a title and a set of actions to apply to tickets. |
 | Create Many Tickets | `createManyTickets` | Creates up to 100 tickets in a single asynchronous job and returns a job status object. |
@@ -167,3 +174,5 @@ Add Zendesk Support from **Build → Integrations → Connectors** and connect a
 | Update View | `updateView` | Updates an existing view. |
 | Update Webhook | `updateWebhook` | Updates the configuration of an existing webhook. |
 | Upload File | `uploadFile` | Uploads a file and returns an upload token that can be attached to a ticket comment. Provide the raw file content and a file name. |
+
+</details>

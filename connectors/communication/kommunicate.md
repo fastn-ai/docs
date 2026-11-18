@@ -5,6 +5,8 @@ hidden: true
 
 # Kommunicate
 
+<img src="../../.gitbook/assets/connectors/kommunicate.png" alt="Kommunicate logo" width="64">
+
 Kommunicate customer messaging and support chat platform. Manage conversations (groups), messages, users/visitors, agents, teams, routing, analytics and app settings via the Kommunicate platform REST API at services.kommunicate.io.
 
 | | |
@@ -12,8 +14,6 @@ Kommunicate customer messaging and support chat platform. Manage conversations (
 | **Category** | [Communication](README.md) |
 | **Website** | [kommunicate.io](https://kommunicate.io) |
 | **Authentication** | API key |
-| **Actions** | 96 |
-| **Events** | 1 |
 | **Slug** | `kommunicate` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Kommunicate from **Build → Integrations → Connectors** and connect an ac
 | Bulk Upsert Custom Routing Rules | `bulkUpsertCustomRoutingRules` | Upload a CSV of custom routing rules (key,value,teamId) to create or update them in bulk. Returns 'Custom Routing file Import initiated'. |
 | Change Conversation Assignee | `changeConversationAssignee` | Reassign a conversation to a different agent. Set takeOverFromBot true to remove the AI agent from the chat at the same time, and sendNotifyMessage false to suppress the system message. |
 | Change Conversation Assignee (v2) | `changeConversationAssigneeV2` | Reassign a conversation using the v2 assignee route, which additionally supports handing the conversation to a team rather than a named agent. |
+
+<details>
+
+<summary>See 86 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Change Conversation Status | `changeConversationStatus` | Open, close or mark a conversation as spam. status 0 = open, 1 = assigned, 2 = closed/resolved, 3 = spam. Set sendNotifyMessage false to change the status without posting a system message into the chat. |
 | Change Status Of Multiple Conversations | `changeStatusOfMultipleConversations` | Bulk-change the status of many conversations at once. The body is a top-level JSON array of conversation ids, passed as a pre-stringified JSON string. Processing is asynchronous. |
 | Change User Password | `changeUserPassword` | Change the acting user's chat password. DANGEROUS: run against the account this connector authenticates as, it invalidates the stored credential and locks the connection out. |
@@ -120,6 +127,8 @@ Add Kommunicate from **Build → Integrations → Connectors** and connect an ac
 | Update User Profile | `updateUserProfile` | Update the profile of the user named in the Of-User-Id header: display name, email, image link and custom metadata shown to agents in the visitor sidebar. |
 | Upload Attachment | `uploadAttachment` | Upload a text-based file (CSV, TXT, SVG, ASCII PPM) to Kommunicate storage and receive its blobKey and S3 url for use as a message attachment. Binary formats such as PNG or ZIP are not supported by this transport. |
 | Upload Push Certificate | `uploadPushCertificate` | Upload the APNS push certificate for an app module. The vendor expects a binary .p12 part, which the connector transport cannot carry without corruption - use the Kommunicate dashboard for this upload. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Creator
 
+<img src="../../.gitbook/assets/connectors/zoho-creator.svg" alt="Zoho Creator logo" width="64">
+
 Zoho Creator is Zoho's low-code application development platform. This connector wraps the Zoho Creator REST API v2.1 (https://www.zohoapis.com/creator/v2.1): Data APIs to fetch, add, update and delete report records; Meta APIs for applications, forms, reports, pages, sections and form fields; File APIs to upload and download file, image, audio, video and signature field content; Bulk APIs for asynchronous large-volume record export; and Publish APIs for records in publicly published forms and reports. All operations are scoped to an account owner name, application link name and form or report link name.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Creator is Zoho's low-code application development platform. This connector
 | **Category** | [Other](README.md) |
 | **Website** | [zoho.com](https://zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 17 |
-| **Events** | 0 |
 | **Slug** | `zohoCreator` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Creator from **Build → Integrations → Connectors** and connect an a
 | Get Published Records | `getPublishedRecords` | Fetches records from a publicly published Zoho Creator report using the report's private link. Use this for reports shared outside the application rather than the standard Get Records action. |
 | Get Records | `getRecords` | Fetches the records displayed by a Zoho Creator report, optionally filtered by a criteria expression. Returns the data of the report's visible fields. A maximum of 1000 records can be fetched per request; when more records exist, a record cursor is returned in the response header for fetching the next batch. Targets the production environment. |
 | List Applications | `listApplications` | Lists every Zoho Creator application the authenticated user owns or has been shared access to, including each application's link name, display name, time zone and the account owner name required by all other actions in this connector. Targets the production environment. |
+
+<details>
+
+<summary>See 7 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Form Fields | `listFormFields` | Lists the meta information of every field in a Zoho Creator form, including each field's link name, display name, data type and whether it is mandatory. Use the returned field link names as the keys when setting values in the Add Records and Update Records actions. |
 | List Forms | `listForms` | Lists the meta information of every form in a Zoho Creator application, including each form's display name and link name. Use the returned link name as the form link name in the Add Records, List Form Fields and Add Published Records actions. |
 | List Pages | `listPages` | Lists the meta information of every page in a Zoho Creator application, including each page's display name and link name. |
@@ -41,3 +48,5 @@ Add Zoho Creator from **Build → Integrations → Connectors** and connect an a
 | List Sections | `listSections` | Lists the sections configured in a Zoho Creator application together with the forms, reports and pages grouped under each section. Use this to understand how an application's components are organised in its navigation. |
 | Update Records | `updateRecords` | Updates the records in a Zoho Creator report that match a criteria expression. The criteria is mandatory to prevent accidental mass updates; pass ID!=0 to update all matching records. A maximum of 200 records are updated per request, and Process Until Limit must be enabled when more than 200 records match. |
 | Upload File | `uploadFile` | Uploads a file into a file upload, image, audio, video or signature field of an existing Zoho Creator record. The file is sent as multipart form data under the field name file and must not exceed 50 MB. Binary uploads are not reliably supported through the connector engine; text-based files round-trip correctly. |
+
+</details>

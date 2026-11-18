@@ -5,6 +5,8 @@ hidden: true
 
 # CATS
 
+<img src="../../.gitbook/assets/connectors/cats.png" alt="CATS logo" width="64">
+
 CATS (CATSOne) applicant tracking system. Manage candidates, jobs, companies, contacts, pipelines, activities, tasks, tags, lists, custom fields, attachments and webhooks through the CATS v3 REST API.
 
 | | |
@@ -12,8 +14,6 @@ CATS (CATSOne) applicant tracking system. Manage candidates, jobs, companies, co
 | **Category** | [Productivity](README.md) |
 | **Website** | [catsone.com](https://catsone.com) |
 | **Authentication** | API key |
-| **Actions** | 225 |
-| **Events** | 24 |
 | **Slug** | `cats` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CATS from **Build → Integrations → Connectors** and connect an account, 
 | Change Company Status | `changeCompanyStatus` | Attaches a status from the company status workflow to a company. Returns HTTP 201 with an empty body. CATS rejects the call with 400 'That status is already present' if the company already has that status, so read the current status first. Omit triggers to fire the workflow defaults; if triggers is supplied every trigger attached to the status must be listed. |
 | Change Company Thumbnail | `changeCompanyThumbnail` | Sets a company's thumbnail source. attachment_id is required only when source is attachment, and must be an attachment on that company. KNOWN VENDOR FAULT: CATS answers 500 Internal server error on this route (reproduced for companies, contacts and candidates, via both the connector and raw HTTPS) even though the change IS applied - read it back with Get Company Thumbnail to confirm. |
 | Change Contact Status | `changeContactStatus` | Attaches a status from the contact status workflow to a contact. Returns HTTP 201 with an empty body. Set create_activity to true to also log an activity, mimicking the CATS UI. CATS rejects the call with 400 'That status is already present' when the contact already has that status, so the account needs more than one contact status configured in CATS Administration for this to be usable. |
+
+<details>
+
+<summary>See 215 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Change Contact Thumbnail | `changeContactThumbnail` | Sets a contact's thumbnail source. attachment_id is required only when source is attachment, and must be an attachment on that contact. KNOWN VENDOR FAULT: CATS answers 500 Internal server error on this route (reproduced for contacts, companies and candidates, via both the connector and raw HTTPS) even though the change IS applied - read it back with Get Contact Thumbnail to confirm. |
 | Change Job Status | `changeJobStatus` | Moves a job order to a new status. WARNING: if the target status has attached triggers, omitting the triggers array fires every required trigger, which can send notification emails. To fire nothing, pass triggers as an array of {id, fire:false} covering every trigger attached to that status - check Get Job Status first. Returns HTTP 201 with an empty body. |
 | Change Pipeline Status | `changePipelineStatus` | Moves a candidate's pipeline to a new workflow status. WARNING: this can email the candidate. If the target status has attached triggers and the triggers array is omitted, CATS fires every required trigger, which in a default CATS workflow includes "Email Candidate with Status Change Notification" on the Offered status. To fire nothing, call Get Workflow Status first and pass triggers as {id, fire:false} for every trigger attached to that status. Set create_activity to true to also log an activity. Returns HTTP 201 with an empty body. |
@@ -250,6 +257,8 @@ Add CATS from **Build → Integrations → Connectors** and connect an account, 
 | Upload Contact Attachment | `uploadContactAttachment` | Uploads a file and attaches it to a contact. The raw file content is sent as the request body and saved under the supplied filename. Text files round-trip correctly; binary content is corrupted by the fastn executor, so upload binary attachments outside the connector. Returns HTTP 201 with an empty body; call List Contact Attachments to recover the new attachment id. |
 | Upload Job Attachment | `uploadJobAttachment` | Uploads a file and attaches it to a job order. The raw file content is sent as the request body and saved under the supplied filename. Text files round-trip correctly; binary content is corrupted by the fastn executor, so upload binary attachments outside the connector. Returns HTTP 201 with an empty body; call List Job Attachments to recover the new attachment id. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -266,6 +275,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Company Deleted | `company.deleted` | Fires when a company record is deleted. |
 | Company Status Changed | `company.status_changed` | Fires when a company status changes. Carries previous_status_id and new_status_id. |
 | Company Updated | `company.updated` | Fires when a company record is updated. |
+
+<details>
+
+<summary>See 14 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Contact Created | `contact.created` | Fires when a contact record is created. |
 | Contact Deleted | `contact.deleted` | Fires when a contact record is deleted. |
 | Contact Status Changed | `contact.status_changed` | Fires when a contact status changes. Carries previous_status_id and new_status_id. |
@@ -280,3 +296,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Created | `user.created` | Fires when a CATS user account is created. |
 | User Deleted | `user.deleted` | Fires when a CATS user account is deleted. |
 | User Updated | `user.updated` | Fires when a CATS user account is updated. |
+
+</details>

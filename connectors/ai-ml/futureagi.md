@@ -5,6 +5,8 @@ hidden: true
 
 # Future AGI
 
+<img src="../../.gitbook/assets/connectors/futureagi.jpg" alt="Future AGI logo" width="64">
+
 Future AGI Agent Command Center gateway (https://gateway.futureagi.com): an OpenAI-compatible LLM gateway with routing, caching, guardrails and cost tracking. Covers chat and text completions, token counting, embeddings, reranking, search, OCR, audio (TTS, transcription, translation), image and video generation, files and vector stores, the Assistants API (assistants, threads, messages, runs, steps), the Responses API, async and scheduled jobs, Anthropic and Google native pass-through, model listing, MCP and A2A, plus the admin (/-/) endpoints for virtual keys, org config, provider key rotation, batches, health and MCP management.
 
 | | |
@@ -12,8 +14,6 @@ Future AGI Agent Command Center gateway (https://gateway.futureagi.com): an Open
 | **Category** | [AI and ML](README.md) |
 | **Website** | [futureagi.com](https://futureagi.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 108 |
-| **Events** | 5 |
 | **Slug** | `futureagi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Future AGI from **Build → Integrations → Connectors** and connect an acc
 | Cancel Video | `cancelVideo` | Cancel a queued or in-progress video generation job (DELETE /v1/videos/{video_id}). |
 | Count Anthropic Tokens | `countAnthropicTokens` | Count input tokens for an Anthropic-format message request (POST /v1/messages/count_tokens) without generating a response. |
 | Count Tokens | `countTokens` | Count the tokens a set of chat messages would consume for a given model, and how much of the model's context window remains (POST /v1/count_tokens). Does not call the model. |
+
+<details>
+
+<summary>See 98 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Anthropic Message | `createAnthropicMessage` | Anthropic Messages API in native format via the gateway (POST /v1/messages): model, max_tokens, messages, optional system prompt, tools, thinking and sampling settings. |
 | Create API Key (Admin) | `createApiKey` | Create a virtual API key with model/provider/IP/tool restrictions, rate limits, expiry and metadata (POST /-/keys). Requires an admin token. The raw key value is returned only once. |
 | Create Assistant | `createAssistant` | Create an assistant with instructions, an OpenAI model and optional tools (POST /v1/assistants). Threads and runs are stored on OpenAI, so the model must be an OpenAI model. |
@@ -132,6 +139,8 @@ Add Future AGI from **Build → Integrations → Connectors** and connect an acc
 | Update Thread Message | `updateThreadMessage` | Modify a message's metadata (POST /v1/threads/{id}/messages/{msg_id}). |
 | Update Vector Store | `updateVectorStore` | Update a vector store's name, expiry policy or metadata (POST /v1/vector_stores/{id}). |
 | Upload File | `uploadFile` | Upload a file (POST /v1/files, multipart/form-data) for use with assistants, fine-tuning or batch processing. Max 512 MB; the file is stored on the upstream provider (OpenAI). |
+
+</details>
 
 ## Events
 

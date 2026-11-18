@@ -5,6 +5,8 @@ hidden: true
 
 # Mixmax
 
+<img src="../../.gitbook/assets/connectors/mixmax.png" alt="Mixmax logo" width="64">
+
 Mixmax sales engagement platform — sequences, recipients, contacts, contact groups, snippets, meetings/summaries, file requests, and more via the Mixmax REST API v1.
 
 | | |
@@ -12,8 +14,6 @@ Mixmax sales engagement platform — sequences, recipients, contacts, contact gr
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [mixmax.com](https://mixmax.com) |
 | **Authentication** | API key |
-| **Actions** | 43 |
-| **Events** | 0 |
 | **Slug** | `mixmax` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mixmax from **Build → Integrations → Connectors** and connect an account
 | Delete Contact | `deleteContact` | Delete a contact (DELETE /contacts/:id). |
 | Delete Contact Group | `deleteContactGroup` | Delete a contact group (DELETE /contactgroups/:id). |
 | Delete Contact Note | `deleteContactNote` | Delete a contact note (DELETE /contacts/:id/notes/:noteId). Only the creator can delete. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Rule | `deleteRule` | Delete an automation rule (DELETE /rules/:id). Returns 204. |
 | Delete Snippet Tag | `deleteSnippetTag` | Delete a snippet tag (DELETE /snippettags/:id). Returns 204. |
 | Get Contact | `getContact` | Retrieve a contact by _id (GET /contacts/:id). |
@@ -67,3 +74,5 @@ Add Mixmax from **Build → Integrations → Connectors** and connect an account
 | Update Contact Note | `updateContactNote` | Edit a contact note (PATCH /contacts/:id/notes/:noteId). Only the creator can edit. |
 | Update Rule | `updateRule` | Update an automation rule (PATCH /rules/:id). Provide fields to change (e.g. name). |
 | Update Snippet Tag | `updateSnippetTag` | Rename a snippet tag (PATCH /snippettags/:id). |
+
+</details>

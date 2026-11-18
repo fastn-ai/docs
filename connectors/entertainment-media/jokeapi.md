@@ -5,6 +5,8 @@ hidden: true
 
 # JokeAPI
 
+<img src="../../.gitbook/assets/connectors/jokeapi.png" alt="JokeAPI logo" width="64">
+
 JokeAPI (v2) serves consistently formatted jokes in several languages. Get jokes by category with filters for type, text, id range, blacklist flags, safe mode and amount, read API info, categories, flags, formats and languages, look up language codes, and validate a joke submission. Free with no API key (120 requests per minute).
 
 | | |
@@ -12,8 +14,6 @@ JokeAPI (v2) serves consistently formatted jokes in several languages. Get jokes
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [jokeapi.dev](https://jokeapi.dev) |
 | **Authentication** | No authentication |
-| **Actions** | 10 |
-| **Events** | 0 |
 | **Slug** | `jokeapi` |
 
 ## Use it

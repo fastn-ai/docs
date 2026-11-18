@@ -5,6 +5,8 @@ hidden: true
 
 # AbstractAPI VAT Validation
 
+<img src="../../.gitbook/assets/connectors/abstract-api-vat-validation.png" alt="AbstractAPI VAT Validation logo" width="64">
+
 AbstractAPI VAT Validation and Rates validates EU VAT numbers and returns the registered company, calculates VAT-compliant prices for a country and goods category, and lists a country's current standard and reduced VAT rates.
 
 | | |
@@ -12,8 +14,6 @@ AbstractAPI VAT Validation and Rates validates EU VAT numbers and returns the re
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [abstractapi.com](https://abstractapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `abstractApiVatValidation` |
 
 ## Use it

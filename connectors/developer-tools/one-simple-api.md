@@ -5,6 +5,8 @@ hidden: true
 
 # OneSimpleAPI
 
+<img src="../../.gitbook/assets/connectors/one-simple-api.png" alt="OneSimpleAPI logo" width="64">
+
 OneSimpleAPI is a developer utility API toolkit: website screenshots, HTML/URL to PDF, QR code generation, email validation, currency exchange rates, URL shortening and expansion, web page metadata and status checks, image info and transformation, readability and sentiment analysis, colour conversion, purchasing-power-parity discount calculation and an HTTP response cache.
 
 | | |
@@ -12,8 +14,6 @@ OneSimpleAPI is a developer utility API toolkit: website screenshots, HTML/URL t
 | **Category** | [Developer tools](README.md) |
 | **Website** | [onesimpleapi.com](https://onesimpleapi.com) |
 | **Authentication** | API key |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `oneSimpleApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OneSimpleAPI from **Build → Integrations → Connectors** and connect an a
 | Expand Shortened URL | `expandShortUrl` | Safely resolves a shortened link (bit.ly, t.co, tinyurl and similar) without visiting it in a browser. Returns the full redirect chain, the final destination URL and a malicious-link risk verdict. Use it to unmask links before showing them to users. |
 | Fetch And Cache API Response | `cacheApiResponse` | Fetches a third-party HTTP endpoint through OneSimpleAPI and caches the response for a chosen number of minutes, so repeated reads do not hit the origin. Supports GET and POST with an optional JSON request body, and a force flag that bypasses the cache. Returns the fetched content plus size_in_bytes and the cache expiration timestamp. Point it only at endpoints you are entitled to call; the fetched content passes through OneSimpleAPI and is stored on their side for the cache duration. Note that some origins are unreachable from OneSimpleAPI's egress and answer HTTP 400 {"message":"Content could not be retrieved from the specified URL"} - verified live against raw.githubusercontent.com, while https://example.com fetched normally. |
 | Generate Or Convert Colour | `generateColor` | Deterministically generates a colour from an arbitrary string (so the same brand or user name always maps to the same colour) or converts a supplied hex or rgb() value. Returns the colour as hex, an RGB triple and an HSL triple, plus a suggested complementary palette. Optional hue, saturation and lightness steer text-based generation and are ignored when a colour value is supplied. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate PDF From URL Or HTML | `generatePdf` | Renders a web page (or a block of raw HTML) in a headless browser and returns the URL of the generated PDF. Supply either url or html. Paper size, custom injected CSS, a wait delay and whether to print background colours and images are configurable. Results are cached; set force to true to re-render. The returned PDF URL is on a public CDN and is reachable without authentication, so do not render private or confidential content. |
 | Generate QR Code | `generateQrCode` | Generates a QR code for any text or URL and returns the URL of the rendered image. Size, foreground colour, background colour and output format (PNG or SVG) are configurable. Note that the returned image URL is hosted on a public CDN and is reachable without authentication, so do not encode secrets. |
 | Get Account And Token Abilities | `getAccount` | Returns the OneSimpleAPI account that owns the credential: display name, e-mail, verification date, monthly reset day, storage used, badges, and the list of personal access tokens with the API abilities each one grants. Use it to confirm a credential works and to see which OneSimpleAPI tools the token is allowed to call. The response does not contain any token value, only token ids, names and abilities. |
@@ -45,3 +52,5 @@ Add OneSimpleAPI from **Build → Integrations → Connectors** and connect an a
 | List Stored Files | `listStoredFiles` | Lists the generated artefacts stored against the authenticated OneSimpleAPI account - the screenshots, PDFs, QR codes and transformed images produced by the other actions - with their public cdn.opq.to URLs, sizes, creation dates and a 24-hour expires_at, as a paginated collection. Use the page input to walk the pages; page numbers beyond the last return an empty data array with the real total. Rows removed with Delete Stored File remain listed with status "deleted" rather than disappearing, so filter on status when auditing what the account is actually storing. |
 | Transform Image | `transformImage` | Resizes, crops, rotates, flips, filters, borders, optimises and converts an image, and can AI-remove the background or upscale it. Accepts a public image URL or base64 data (prefix the value with base64=), and can also rasterise a page of a PDF. Returns the URL of the transformed image. The returned image URL is on a public CDN and is reachable without authentication. |
 | Validate Email Address | `validateEmail` | Validates an e-mail address: syntax, domain, MX records, whether the domain is a free or disposable provider, whether it is a role address such as support@, the canonical form of the address and an overall deliverability verdict (DELIVERABLE, CATCH-ALL, UNDELIVERABLE). Use it before accepting a sign-up or adding an address to a mailing list. It does not send any mail. |
+
+</details>

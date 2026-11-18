@@ -5,6 +5,8 @@ hidden: true
 
 # Little Green Light
 
+<img src="../../.gitbook/assets/connectors/little-green-light.png" alt="Little Green Light logo" width="64">
+
 Little Green Light donor-management CRM for nonprofits. Wraps the LGL REST API v1 (https://api.littlegreenlight.com/api/v1): constituents and their contact info, gifts and pledges, memberships, events and invitations, volunteer times, campaigns, funds, appeals and appeal requests, groups, relationships, notes, contact reports, categories/keywords, custom attributes, lists, mailing templates and account types. Authenticates with an LGL account API key over Bearer or HTTP Basic. Rate limit: 300 calls per 5 minutes. LGL has no outbound webhooks; poll the /search endpoints with updated_from for change detection.
 
 | | |
@@ -12,8 +14,6 @@ Little Green Light donor-management CRM for nonprofits. Wraps the LGL REST API v
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [littlegreenlight.com](https://littlegreenlight.com) |
 | **Authentication** | Basic auth, Bearer token |
-| **Actions** | 141 |
-| **Events** | 0 |
 | **Slug** | `littleGreenLight` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Little Green Light from **Build → Integrations → Connectors** and connec
 | Create Constituent Appeal Request | `createConstituentAppealRequest` | Add an appeal request (ask) to a constituent. The constituent comes from the path; appeal_id is required in the body. |
 | Create Constituent Class Affiliation | `createConstituentClassAffiliation` | Add a class affiliation (class year) to a constituent. Get class_affiliation_type_id from listClassAffiliationTypes. |
 | Create Constituent Contact Report | `createConstituentContactReport` | Log a contact report (call, email, meeting, mailing, proposal) against a constituent. text is required; identify the type with contact_report_type_id or contact_report_type_name, and the owner with team_member (id, email or "First Last"). |
+
+<details>
+
+<summary>See 131 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Constituent Email Address | `createConstituentEmailAddress` | Add an email address to a constituent. Set is_preferred to make it the primary address. |
 | Create Constituent Gift | `createConstituentGift` | Record a gift for a constituent: donation, pledge, pledge payment, in-kind, soft credit or other. gift_type_id AND gift_type_name are both required (read them from listGiftTypes). For a pledge payment, point parent_gift_id or parent_external_id at the pledge. ack_template_name selects the acknowledgement mailing template; pass "do_not_ack" to suppress. |
 | Create Constituent Group Membership | `createConstituentGroupMembership` | Add a constituent to a group. group_id is required in the body. |
@@ -165,3 +172,5 @@ Add Little Green Light from **Build → Integrations → Connectors** and connec
 | Update Street Address | `updateStreetAddress` | Update a street address record (PATCH, partial). |
 | Update Volunteer Time | `updateVolunteerTime` | Update a volunteer time record (PATCH, partial). constituent_id and volunteering_category_id are required by LGL's schema on every update. |
 | Update Web Address | `updateWebAddress` | Update a web address record (PATCH, partial). |
+
+</details>

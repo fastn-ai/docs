@@ -5,6 +5,8 @@ hidden: true
 
 # API Ninjas
 
+<img src="../../.gitbook/assets/connectors/api-ninjas.png" alt="API Ninjas logo" width="64">
+
 Aggregator of ~139 free micro-APIs from API Ninjas covering financial data lookups, identity/validation utilities (email, phone, IBAN, VIN, routing numbers), text and language processing, AI (sentiment, embeddings, image analysis), geography/weather, and a large catalog of fun/reference data (facts, quotes, animals, recipes) - all authenticated with a single API key.
 
 | | |
@@ -12,8 +14,6 @@ Aggregator of ~139 free micro-APIs from API Ninjas covering financial data looku
 | **Category** | [Search and web](README.md) |
 | **Website** | [api-ninjas.com](https://api-ninjas.com) |
 | **Authentication** | API key |
-| **Actions** | 136 |
-| **Events** | 0 |
 | **Slug** | `apiNinjas` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add API Ninjas from **Build → Integrations → Connectors** and connect an acc
 | Convert Currency | `convertCurrency` | Converts an amount from one currency to another using live exchange rates. Note: on the API Ninjas free tier most currency pairs on this endpoint are premium-gated and return an error. |
 | Convert Unit | `convertUnit` | Converts a numeric amount from one unit of measurement to all equivalent units in the same category. |
 | Detect Text Language | `detectTextLanguage` | Detects the language of a piece of text. |
+
+<details>
+
+<summary>See 126 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Filter Profanity | `filterProfanity` | Detects and censors profanity within a piece of text. |
 | Find EV Charging Stations | `findEvChargers` | Finds electric vehicle charging stations near a given latitude/longitude location. |
 | Find Hospitals | `findHospitals` | Searches for US hospitals by state and/or name. |
@@ -160,3 +167,5 @@ Add API Ninjas from **Build → Integrations → Connectors** and connect an acc
 | Validate Email Address | `validateEmail` | Validates an email address format and deliverability, and flags disposable addresses. |
 | Validate Phone Number | `validatePhone` | Validates a phone number and returns formatting, country, and timezone information. |
 | Validate VAT Number | `validateVat` | Validates a European VAT registration number and returns its format/checksum validity status. |
+
+</details>

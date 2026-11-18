@@ -5,6 +5,8 @@ hidden: true
 
 # HoneyHive
 
+<img src="../../.gitbook/assets/connectors/honeyhive.png" alt="HoneyHive logo" width="64">
+
 HoneyHive is an AI observability and evaluation platform for tracing, evaluating and monitoring LLM applications and agents. This connector covers the HoneyHive Data Plane API: sessions and trace events, event search, datasets and datapoints, evaluators (metrics) and metric versions, experiment runs with summaries and comparisons, annotation queues, charts and configurations.
 
 | | |
@@ -12,8 +14,6 @@ HoneyHive is an AI observability and evaluation platform for tracing, evaluating
 | **Category** | [AI and ML](README.md) |
 | **Website** | [honeyhive.ai](https://honeyhive.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 52 |
-| **Events** | 0 |
 | **Slug** | `honeyhive` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HoneyHive from **Build → Integrations → Connectors** and connect an acco
 | Create Datapoint | `createDatapoint` | Creates a single datapoint with inputs, conversation history, ground truth and metadata, optionally linked to a source event and to datasets. Returns the inserted datapoint ID. |
 | Create Datapoints From Events | `createDatapointsBatch` | Creates datapoints from existing trace events, using a field mapping of dotted event paths (e.g. inputs.chat_history, outputs.content) that become datapoint inputs, history and ground truth. List the event IDs in events and mark each selected one true in checkState (events without a checkState entry are skipped), or select by filters/dateRange with selectAll; optionally add the new datapoints to a dataset. |
 | Create Dataset | `createDataset` | Creates a dataset with an optional name, description and initial list of datapoint IDs. Returns the inserted dataset ID. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Event | `createEvent` | Creates a single trace event (span) of type model, tool, chain or session, with its inputs and optional outputs, configuration, timing, metadata, feedback and metrics. The server generates event_id, session_id and parent_id when omitted. Events cannot be deleted through the API. |
 | Create Events Batch | `createEventsBatch` | Creates multiple trace events in one request. Each event needs event_type and inputs. Set single_session to true to put all events into one new session described by session_properties. Returns the created event IDs and session ID. |
 | Create Experiment Run | `createRun` | Creates an experiment (evaluation) run to track an evaluation against a dataset, with a name, status, configuration, metadata, results and the linked event, session and datapoint IDs. Returns the run. |
@@ -76,3 +83,5 @@ Add HoneyHive from **Build → Integrations → Connectors** and connect an acco
 | Update Event | `updateEvent` | Updates an existing trace event: merges metadata, feedback, metrics, config and user properties, replaces outputs, and sets duration, end time or child event IDs. Only the fields you pass are modified. |
 | Update Experiment Run | `updateRun` | Updates an experiment run's name, description, status, metadata, results, configuration, linked IDs, evaluators or passing ranges. Only the fields you pass are modified. |
 | Update Metric | `updateMetric` | Updates an evaluator (metric) by ID. Only the fields you pass are modified. |
+
+</details>

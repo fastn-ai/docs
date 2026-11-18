@@ -5,6 +5,8 @@ hidden: true
 
 # Databricks
 
+<img src="../../.gitbook/assets/connectors/databricks.png" alt="Databricks logo" width="64">
+
 Databricks is a unified data intelligence platform for data engineering, analytics, machine learning and AI. This connector covers the Databricks workspace REST API: clusters and cluster policies, instance pools, libraries, jobs and job runs, Lakeflow Declarative Pipelines, SQL warehouses, queries, alerts, dashboards and statement execution, Unity Catalog (metastores, catalogs, schemas, tables, volumes, functions, models, grants, credentials, external locations and connections), the workspace file tree, DBFS and the Files API, Git folders and Git credentials, secrets, SCIM users, groups and service principals, object permissions, model serving endpoints, MLflow experiments and runs, Vector Search, Delta Sharing, Databricks Apps, AI/BI dashboards and Genie spaces, personal access tokens and workspace settings.
 
 | | |
@@ -12,8 +14,6 @@ Databricks is a unified data intelligence platform for data engineering, analyti
 | **Category** | [Data and databases](README.md) |
 | **Website** | [databricks.com](https://databricks.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 646 |
-| **Events** | 4 |
 | **Slug** | `databricks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Databricks from **Build → Integrations → Connectors** and connect an acc
 | Cancel Job All Runs | `cancelJobAllRuns` | Cancels all active runs of a job. The runs are canceled asynchronously, so it doesn't prevent new runs from being started. |
 | Cancel Job Run | `cancelJobRun` | Cancels a job run or a task run. The run is canceled asynchronously, so it may still be running when this request completes. |
 | Cancel Quality Monitor Refresh | `cancelQualityMonitorRefresh` | Deprecated: Use Data Quality Monitors API instead (/api/data-quality/v1/monitors). Cancels an already-initiated refresh job. |
+
+<details>
+
+<summary>See 636 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel SQL Statement Execution | `cancelSQLStatementExecution` | Requests that an executing statement be canceled. Callers must poll for status to see the terminal state. Cancel response is empty; receiving response indicates successful receipt. |
 | Change Cluster Owner | `changeClusterOwner` | Change the owner of the cluster. You must be an admin and the cluster must be terminated to perform this operation. The service principal application ID can be supplied as an argument to owner_username. |
 | Check Access Policy | `checkAccessPolicy` | Check access policy to a resource. |
@@ -670,6 +677,8 @@ Add Databricks from **Build → Integrations → Connectors** and connect an acc
 | Upsert Vector Search Index Data Vector Index | `upsertVectorSearchIndexDataVectorIndex` | Handles the upserting of data into a specified vector index. |
 | Validate Credential | `validateCredential` | Validates a credential. For service credentials (purpose is **SERVICE**), either the **credential_name** or the cloud-specific credential must be provided. For storage credentials (purpose is **STORAGE**), at least one of **external_location_name** and **url** need to be provided. If only one of them is provided, it will be used for validation. And if both are provided, the **url** will be used for validation, and **external_location_name** will be ignored when checking overlapping urls. Either the **credential_name** or the cloud-specific credential must be provided. The caller must be a metastore admin or the credential owner or have the required permission on the metastore and the credential (e.g., **CREATE_EXTERNAL_LOCATION** when purpose is **STORAGE**). |
 | Validate Storage Credential | `validateStorageCredential` | Validates a storage credential. At least one of **external_location_name** and **url** need to be provided. If only one of them is provided, it will be used for validation. And if both are provided, the **url** will be used for validation, and **external_location_name** will be ignored when checking overlapping urls. Either the **storage_credential_name** or the cloud-specific credential must be provided. The caller must be a metastore admin or the storage credential owner or have the **CREATE_EXTERNAL_LOCATION** privilege on the metastore and the storage credential. |
+
+</details>
 
 ## Events
 

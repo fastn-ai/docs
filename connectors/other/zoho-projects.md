@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Projects
 
+<img src="../../.gitbook/assets/connectors/zoho-projects.png" alt="Zoho Projects logo" width="64">
+
 Zoho Projects is Zoho's cloud project management suite. This connector provides access to Zoho Projects' REST API: portals, projects, dashboard/status updates, milestones, tasklists, tasks (with comments/subtasks), timesheets/time logs, bugs, tags, events/calendar, forums, users, client contacts, documents/folders, search, entity properties, and teams (user groups).
 
 | | |
@@ -12,8 +14,6 @@ Zoho Projects is Zoho's cloud project management suite. This connector provides 
 | **Category** | [Other](README.md) |
 | **Website** | [zoho.com](https://zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 101 |
-| **Events** | 0 |
 | **Slug** | `zohoProjects` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Projects from **Build → Integrations → Connectors** and connect an 
 | Add Project Status | `addProjectStatus` | Adds a new status update for a project. |
 | Add Task Comment | `addTaskComment` | Adds a comment to a task. |
 | Add Task Time Log | `addTaskTimeLog` | Adds a time log entry to a task. |
+
+<details>
+
+<summary>See 91 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add User to Team | `addUserToTeam` | Adds a single user to a team. |
 | Associate Contacts | `associateContacts` | Associates existing client contacts to a project. |
 | Associate Multiple Teams to Project | `associateMultipleTeams` | Associates more than one team to a project. |
@@ -125,3 +132,5 @@ Add Zoho Projects from **Build → Integrations → Connectors** and connect an 
 | Verify Team Email Alias | `verifyTeamEmailAlias` | Verifies the team's email alias using a verification code. |
 | View Team Details | `viewTeamDetails` | Fetches details of a particular team. |
 | View Team Summary | `viewTeamSummary` | Views the overall summary of a team. |
+
+</details>

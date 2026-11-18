@@ -5,6 +5,8 @@ hidden: true
 
 # Terraform Cloud
 
+<img src="../../.gitbook/assets/connectors/terraform-cloud.png" alt="Terraform Cloud logo" width="64">
+
 HashiCorp HCP Terraform (Terraform Cloud) API v2. Manage organizations, workspaces, projects, runs, plans, applies, configuration versions, state versions, variables, variable sets, teams, policies, registry modules, SSH keys, notifications, run triggers, agent pools, VCS OAuth clients, and memberships. Uses the JSON:API format.
 
 | | |
@@ -12,8 +14,6 @@ HashiCorp HCP Terraform (Terraform Cloud) API v2. Manage organizations, workspac
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [app.terraform.io](https://app.terraform.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 276 |
-| **Events** | 11 |
 | **Slug** | `terraformCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Terraform Cloud from **Build → Integrations → Connectors** and connect a
 | Apply Run | `applyRun` | Confirm and apply a run that is waiting for confirmation. This provisions real infrastructure and may incur cost. |
 | Apply Variable Set To Projects | `applyVariableSetToProjects` | Apply a variable set to one or more projects. |
 | Apply Variable Set To Workspaces | `applyVariableSetToWorkspaces` | Apply a variable set to one or more workspaces. |
+
+<details>
+
+<summary>See 266 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Archive Configuration Version | `archiveConfigurationVersion` | Archive a configuration version, deleting its uploaded tarball. Only API-created configuration versions can be archived. |
 | Assign Workspace SSH Key | `assignWorkspaceSshKey` | Assign an SSH key to a workspace so Terraform can clone private module repositories. Pass a null id to unassign. |
 | Attach Policy Set To Projects | `addProjectsToPolicySet` | Attach one or more projects to a policy set. |
@@ -301,6 +308,8 @@ Add Terraform Cloud from **Build → Integrations → Connectors** and connect a
 | Upload Policy Code | `uploadPolicy` | Upload the policy code for a policy. Send the raw Sentinel or Rego source as the request body. |
 | Verify Notification Configuration | `verifyNotificationConfiguration` | Send a verification request to a notification configuration's destination and record the response. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -317,4 +326,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Run Needs Attention | `run:needs_attention` | A run needs manual attention (e.g. a plan awaiting confirmation). |
 | Run Planning | `run:planning` | A run entered the planning phase. |
 | Workspace Auto Destroy Reminder | `workspace:auto_destroy_reminder` | A reminder that scheduled auto-destroy is approaching for the workspace. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Workspace Auto Destroy Run Results | `workspace:auto_destroy_run_results` | The results of a scheduled auto-destroy run for the workspace. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Spotlightr
 
+<img src="../../.gitbook/assets/connectors/spotlightr.png" alt="Spotlightr logo" width="64">
+
 Spotlightr (formerly vooPlayer) interactive video hosting and marketing platform. Create videos from a URL or upload, organise them into projects, replace video sources, delete videos, read per-video analytics and viewer-level view records, list top-performing videos, manage whitelisted embed domains, and create course/gallery students.
 
 | | |
@@ -12,8 +14,6 @@ Spotlightr (formerly vooPlayer) interactive video hosting and marketing platform
 | **Category** | [Marketing](README.md) |
 | **Website** | [spotlightr.com](https://spotlightr.com) |
 | **Authentication** | API key |
-| **Actions** | 19 |
-| **Events** | 2 |
 | **Slug** | `spotlightr` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Spotlightr from **Build → Integrations → Connectors** and connect an acc
 | Get Top Videos | `getTopVideos` | Returns your best-performing videos over a reporting window, as an array ordered by engagement. Use days to set the window (default 30) and total to set how many videos to return (default 3). |
 | Get Video Metrics | `getVideoMetrics` | Returns aggregate analytics for one video: loads, average percent watched, plays, play rate, completion rate and share count. SECURITY WARNING: this Spotlightr endpoint performs no authentication and no ownership check - it answers for any video ID on the platform, including other customers' videos, and returns fabricated numbers for a non-numeric ID. Treat its output as untrusted and never expose the videoID input to end users. |
 | List Course Students | `listCourseStudents` | Returns the students enrolled in your Spotlightr courses and galleries as an array. This route is not in Spotlightr's published documentation but is live on the API. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Playlists | `listPlaylists` | Returns the playlists in your Spotlightr account in a paginated envelope under "playlists". This route is not in Spotlightr's published documentation but is live on the API. |
 | List Projects | `listProjects` | Returns every project (video group) in your Spotlightr account as a flat array, including the built-in Uncategorized project with id 0. Each entry carries id, name, userID, numberOfVideos, created, updated, theme, archived, numberOfSeconds and numberOfGB. |
 | List Projects Paginated | `listProjectsPaginated` | Returns your Spotlightr projects in a paginated envelope with total, per_page, current_page, last_page and a data array of id/name/created. This route is not in Spotlightr's published documentation but is live on the API. Unlike List Projects it omits the built-in Uncategorized project and the per-project usage counters. |
@@ -43,6 +50,8 @@ Add Spotlightr from **Build → Integrations → Connectors** and connect an acc
 | List Whitelisted Domains | `listWhitelistedDomains` | Returns the list of domains whitelisted for embedding your Spotlightr videos, as an array of domain strings. |
 | Remove Whitelisted Domain | `removeWhitelistedDomain` | Removes a domain from the embed whitelist. This route is not in Spotlightr's published documentation but is live on the API. It returns an empty 200 body whether or not the domain was present, so confirm with List Whitelisted Domains afterwards. |
 | Replace Video Source | `setVideoSource` | Points an existing Spotlightr video at a new source URL, keeping the same video ID, player settings and embed code. Spotlightr implements this as a GET and returns an empty 200 body, so confirm the change with List Videos afterwards. |
+
+</details>
 
 ## Events
 

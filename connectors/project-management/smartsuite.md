@@ -5,6 +5,8 @@ hidden: true
 
 # SmartSuite
 
+<img src="../../.gitbook/assets/connectors/smartsuite.png" alt="SmartSuite logo" width="64">
+
 SmartSuite is a collaborative work management platform where data lives in solutions, applications (tables) and records. This connector wraps the SmartSuite REST API at app.smartsuite.com/api/v1, covering solutions, applications and their field schemas, and record retrieval and filtering.
 
 | | |
@@ -12,8 +14,6 @@ SmartSuite is a collaborative work management platform where data lives in solut
 | **Category** | [Project management](README.md) |
 | **Website** | [smartsuite.com](https://smartsuite.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 55 |
-| **Events** | 3 |
 | **Slug** | `smartsuite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SmartSuite from **Build → Integrations → Connectors** and connect an acc
 | Bulk Update Records | `bulkUpdateRecords` | Updates up to 25 records in one table in a single call. More than 25 items returns 422. Every item MUST carry its record 'id' alongside the field values to change. This action uses PATCH, so only the fields present on each item are changed — SmartSuite's PUT variant of the same route is destructive and clears unsent values on EVERY record in the batch. This endpoint answers with a BARE JSON ARRAY of the updated records; the 'items' wrapper in the output exists because an array cannot be declared at the root of an output contract. |
 | Create Record | `createRecord` | Creates one record in a table. 'title' is required — SmartSuite answers 400 {"title":["This field is required."]} without it. Record values are keyed by FIELD SLUG, and the fields below are SmartSuite's default set. To set ANY OTHER field, pass its slug as an extra input key and it is forwarded into the request body unchanged; read the table's 'structure' with Get Table to find the slugs. WARNING: SmartSuite silently IGNORES a slug that does not exist on the table — it answers 201 and simply does not store the value — so confirm your slugs before relying on them. |
 | Create Solution | `createSolution` | Creates a new solution in the workspace and answers 201. IMPORTANT: SmartSuite also auto-creates a starter table called 'Table 1' inside the new solution, returned in the 'applications' key — a new solution is never empty. The colour must be a hex value INCLUDING the leading '#'; the vendor's own documentation sample omits it and is rejected with 400 '"3A86FF" is not a valid choice.' Call Validate Solution Name first if the name must be unique. Deleting the solution with Delete Solution removes the auto-created table with it. |
+
+<details>
+
+<summary>See 45 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Table | `createTable` | Creates a new table (application) inside a solution. At least one field must be supplied in 'structure', and every field in that array MUST carry a 'params' object — the vendor's own documentation sample omits it and is rejected with 400 {"structure":[{"params":["This field is required."]}]}; an empty object {} is accepted. Give the table a 'recordtitlefield' as its first field so records have a primary label. SmartSuite also adds its own system fields (first_created, last_updated, comments_count, autonumber) on top of what you supply. |
 | Create Tag | `createTag` | Creates a tag in the workspace. Scope it to one solution by supplying Solution ID, or leave that out for a workspace-wide tag. This route is not in SmartSuite's published documentation but is exposed by the API and verified working. Remove a tag again with Delete Tag. |
 | Create View | `createView` | Creates a view (SmartSuite calls these 'reports' in the API) on a table. A view is a saved arrangement of a table's records — grid, kanban, calendar, chart and so on — with its own filter, sort and visible-field configuration held in 'state'. Two fields the vendor documents as writable are NOT offered here because they were proven to be silently discarded: 'autosave' and 'sharing_show_toolbar' are accepted with 201 but always come back true, on create and on update alike. 'is_dirty' is likewise documented but never returned. |
@@ -79,6 +86,8 @@ Add SmartSuite from **Build → Integrations → Connectors** and connect an acc
 | Update View | `updateView` | Changes a view's label, description, sharing settings or its 'state' — the filter, visible fields, sort and grouping it applies. This uses PATCH, so only the fields you send are changed. Replacing 'state' replaces the whole configuration object, so read the current state with Get View and send it back modified rather than partially. 'autosave' and 'sharing_show_toolbar' are NOT offered: they were sent as false and came back true, so SmartSuite silently discards them on update just as it does on create. This route is not in SmartSuite's published documentation but is exposed by the API and verified working. |
 | Update Webhook | `updateWebhook` | Changes which record events a webhook watches, and the scope it watches them over. Two behaviours verified live and easy to get wrong: (1) 'notification_status' is REQUIRED — omitting it returns 400 {"code":"invalid_argument","msg":"Webhook notification status is required"} — yet its VALUE is then SILENTLY DISCARDED: sending a new URL, or sending {"disabled": {}}, returns 200 with the original notification status unchanged. Send the webhook's existing notification_status to satisfy the validator; to actually repoint or switch off notifications you must delete the hook and create a new one. (2) This is a REPLACE, not a merge — resend locator, kinds and filter in full every time. |
 | Validate Solution Name | `validateSolutionName` | Checks whether a proposed solution name is still unused in the workspace. Call it before Create Solution when the name has to be unique. Returns is_unique true when no solution already carries the name. |
+
+</details>
 
 ## Events
 

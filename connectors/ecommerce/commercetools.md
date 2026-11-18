@@ -5,6 +5,8 @@ hidden: true
 
 # commercetools
 
+<img src="../../.gitbook/assets/connectors/commercetools.png" alt="commercetools logo" width="64">
+
 commercetools composable commerce HTTP API — manage products, categories, customers, carts, orders, inventory, discounts, shipping, payments, types, channels, stores, states, and subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ commercetools composable commerce HTTP API — manage products, categories, cust
 | **Category** | [E-commerce](README.md) |
 | **Website** | [commercetools.com](https://commercetools.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 144 |
-| **Events** | 0 |
 | **Slug** | `commercetools` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add commercetools from **Build → Integrations → Connectors** and connect an 
 | Create Customer Email Token | `createCustomerEmailToken` | Create a token for verifying a customer's email address. Provide the customer ID and a time-to-live in minutes. |
 | Create Customer Group | `createCustomerGroup` | Create a new customer group. The group name is required and must be unique within the project. |
 | Create Customer Password Reset Token | `createCustomerPasswordResetToken` | Create a token for resetting a customer's password, identified by email address. Optionally set a time-to-live in minutes. |
+
+<details>
+
+<summary>See 134 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Discount Code | `createDiscountCode` | Create a new discount code. Requires a unique code and one or more cart discount references (which must have requiresDiscountCode set to true). |
 | Create Inventory Entry | `createInventoryEntry` | Create a new inventory entry for a SKU. SKU and quantityOnStock are required. Optionally set a key, supply channel, restock days, and expected delivery. |
 | Create Order Edit | `createOrderEdit` | Create an order edit that stages a set of update actions against an order. Provide the order resource reference and the staged actions; apply the edit later to make the changes permanent. |
@@ -168,3 +175,5 @@ Add commercetools from **Build → Integrations → Connectors** and connect an 
 | Update Type | `updateType` | Update a custom-field Type by ID by applying an ordered array of update actions (e.g. changeName, addFieldDefinition, removeFieldDefinition, changeKey). Requires the current version. |
 | Update Zone | `updateZone` | Update a zone by ID by applying an ordered array of update actions (e.g. changeName, addLocation, removeLocation, setDescription, setKey). Requires the current version. |
 | Verify Customer Email | `verifyCustomerEmail` | Verify a customer's email address using a previously created email verification token. Sets isEmailVerified to true. |
+
+</details>

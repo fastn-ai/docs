@@ -5,6 +5,8 @@ hidden: true
 
 # Poper
 
+<img src="../../.gitbook/assets/connectors/poper.png" alt="Poper logo" width="64">
+
 Poper is an AI popup, form, quiz, survey and widget builder for websites. This connector wraps the Poper General API (https://api.poper.ai/general/v1) to list projects, domains and campaigns (popups, forms, quizzes, NPS surveys, widgets, games), read captured leads and responses, and pull domain- and campaign-level analytics. Authentication uses a Poper API key that the vendor requires in the request body.
 
 | | |
@@ -12,8 +14,6 @@ Poper is an AI popup, form, quiz, survey and widget builder for websites. This c
 | **Category** | [Marketing](README.md) |
 | **Website** | [poper.ai](https://poper.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `poper` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Poper from **Build → Integrations → Connectors** and connect an account,
 | Get Team Invitation | `getTeamInvitation` | Looks up a pending Poper workspace invitation by its invitation id, so an invited collaborator can see who invited them before accepting. Answers 'Invitation not found.' for an unknown id. |
 | Get Temporary Widget State | `getTemporaryWidgetState` | Reads back a draft widget configuration previously stored by Save Temporary Widget State. Answers 'Temporary widget state not found or expired' once the 24-hour window has passed or the state was deleted. |
 | Get Username By Email | `getUsernameByEmail` | Resolves a Poper account's internal username from the email address it was registered with, for use in Poper's sign-in and password-recovery flows. Answers 'No User Found.' when no account matches. NOTE: Poper serves this endpoint without authentication, so it is an account-enumeration surface; do not expose it to untrusted callers. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Username By OAuth Access Token | `getUsernameByOauthAccessToken` | Resolves the Poper user behind an OAuth access token issued by Poper's identity provider, used when a visitor signs in with a social provider instead of an email and password. Returns the account's internal username and its identity attributes. Answers 'Invalid Token.' when the token is rejected. WARNING: the access token is passed in the request body, so every execution record of this action stores a live credential. |
 | List Campaigns By Category | `listCampaignsByCategory` | Lists Poper campaigns of any kind, filtered by a broad category (popups, widgets, games, forms, quizzes, surveys or all) or by an explicit comma-separated list of campaign types. Also accepts project, domain and limit filters. Returns the matching campaigns, a count, a per-type breakdown and the list of campaign types the account supports. |
 | List Domains | `listDomains` | Lists every website domain registered to the Poper account the API key belongs to, grouped by the project each domain sits under. Use a domain returned here as the Domain input of the analytics actions. |
@@ -53,3 +60,5 @@ Add Poper from **Build → Integrations → Connectors** and connect an account,
 | Upload Public Asset | `uploadPublicAsset` | Uploads a text asset to Poper's public landing-uploads bucket and returns the CDN URL it is served from, for use inside popup and widget content. Only text file formats are supported here because the fastn engine cannot carry binary multipart parts. SECURITY: Poper does not authenticate this endpoint - it is gated only by an allow-listed Origin header - and the resulting URL is world-readable with no expiry, and Poper exposes no route that deletes it. |
 | Verify AppSumo Code | `verifyAppSumoCode` | Validates an AppSumo lifetime-deal redemption code against Poper before it is applied to an account. Returns the code's details when it is valid and 'Invalid Code.' when it is not. |
 | Verify Shopify HMAC Signature | `verifyShopifyHmacSignature` | Verifies the HMAC signature Shopify attaches to an app-install or app-proxy request, so a Poper embedded Shopify app can confirm the request really came from Shopify. Pass the raw query string and the hmac value Shopify supplied. Returns 'Hmac not verified.' when the signature does not match. |
+
+</details>

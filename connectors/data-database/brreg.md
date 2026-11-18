@@ -5,6 +5,8 @@ hidden: true
 
 # Brønnøysund Register Centre (Enhetsregisteret)
 
+<img src="../../.gitbook/assets/connectors/brreg.png" alt="Brønnøysund Register Centre (Enhetsregisteret) logo" width="64">
+
 The Brønnøysund Register Centre's open API for Norway's Central Coordinating Register for Legal Entities (Enhetsregisteret) and the Register of Non-Profit Organisations: search and get Norwegian companies and sub-units by name, org number, industry, size and address, read roles, group structures, municipalities, organisation forms and change feeds. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The Brønnøysund Register Centre's open API for Norway's Central Coordinating R
 | **Category** | [Data and databases](README.md) |
 | **Website** | [brreg.no](https://brreg.no) |
 | **Authentication** | No authentication |
-| **Actions** | 25 |
-| **Events** | 0 |
 | **Slug** | `brreg` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Brønnøysund Register Centre (Enhetsregisteret) from **Build → Integratio
 | Get Sub-Entity | `getSubEntity` | Hent underenhet på organisasjonsnummer. Hent underenhet på organisasjonsnummer. Hvis en underenhet er slettet vil responsen få statuskode 200 OK. HTTP Responsen vil da også inneholde færre attributter, som vist i eksempelet. En underenhet kan fjernes fra avgivelsen fra Enhetsregisteret for eksempel av juridiske årsaker. Hvis en underenhet er fjernet vil denne få statuskode 410 Gone. Dette bør også anses som en forespørsel om at eventuelle kopier/cacher også fjerner den aktuelle underenheten. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html (GET /enhetsregisteret/api/underenheter/{underenhetorgnr}) |
 | Get Voluntary Organization | `getVoluntaryOrganization` | Hent én frivillig organisasjon med organisasjonsnummer. Hent informasjon om en frivillig organisasjon fra frivillighetsregisteret. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html (GET /frivillighetsregisteret/api/frivillige-organisasjoner/{organisasjonsnummer}) |
 | List Entity Updates | `listEntityUpdates` | Hent alle oppdateringer på enheter. Vi anbefaler følgende bruk&colon; Filtrer på dato for første gangs uthenting, slik at man unngår enheter tidligere enn eventuell siste kopi. Filtrer så på updateid for å hente neste sett av resultater. (Her kan man trygt bruke updateid+1). Page+size kan benyttes for mer presis navigering i en updateid- eller dato-spørring. Endringstyper: \| Type \| Beskrivelse \| \|----------\|---------------------------------------------------------------------------------------------------------\| \| Ukjent \| Ukjent type endring. Ofte fordi endringen har skjedd før endringstype ble innført. \| \| Ny \| Enheten har blitt lagt til i Enhetsregisteret \| \| Endring \| Enheten har blitt endret i Enhetsregisteret \| \| Sletting \| Enheten har blitt slettet fra Enhetsregisteret \| \| Fjernet \| Enheten har blitt fjernet fra Åpne Data. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List ICNPO Categories | `listIcnpoCategories` | Hent ICNPO kategorier. Hent ICNPO kategorier (International Classification of Non-Profit Organisation). Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html (GET /frivillighetsregisteret/api/icnpo-kategorier) |
 | List Municipalities | `listMunicipalities` | Hent kommuner. Hent kommuner. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html (GET /enhetsregisteret/api/kommuner) |
 | List Organization Forms | `listOrganizationForms` | Hent organisasjonsformer. Hent organisasjonsformer. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html (GET /enhetsregisteret/api/organisasjonsformer) |
@@ -49,3 +56,5 @@ Add Brønnøysund Register Centre (Enhetsregisteret) from **Build → Integratio
 | List Voluntary Register Information Types | `listVoluntaryInfoTypes` | Hent informasjonstyper i Frivillighetsregisteret. Hent alle informasjonstyper i Frivillighetsregisteret. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html (GET /frivillighetsregisteret/api/informasjonstyper) |
 | Search Entities | `searchEntities` | Hent enheter som matcher søke filtere. Tjenesten tilbyr et søk på enheter i Enhetsregisteret. Søket kan spesifiseres med søkeparametere angitt som HTTP query-parametere, se under. Søkeresultatet er paginert med en standard sidestørrelse på 20 enheter. Resultatsettet er begrenset til 10 000 enheter per spørring. Se [enheter/lastned](#tag/enheter/operation/lastnedEnheter) for nedlasting av komplett datasett. Det kan forekomme at en hovedenhets overordnede enhet i offentlig sektor er slettet. Hvis dette er relevant informasjon for deg, anbefaler vi at du gjør en ny forespørsel for å hente overordnet enhet. Da kan du sjekke om enheten er slettet ved å sjekke om slettedato er satt. Tips&colon; Self-lenken viser hvor du kan hente overordnet enhet. Resultatet kan sorteres med sort parameteren. For eksempel med `sort=antallAnsatte,ASC`. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html |
 | Search Sub-Entities | `searchSubEntities` | Hent underenheter som matcher søke filtere. Tjenesten tilbyr et søk på underenheter i Enhetsregisteret. Søket kan spesifiseres med søkeparametere angitt som HTTP query-parametere, se beskrivelse. Søkeresultatet er paginert med en standard sidestørrelse på 20 enheter. Resultatsettet er begrenset til 10 000 underenheter per spørring. Se [underenheter/lastned](#tag/underenheter/operation/lastnedUnderenheter) for nedlasting av komplett datasett. Resultatet kan sorteres med sort parameteren. For eksempel med `sort=antallAnsatte,ASC`. Docs: https://data.brreg.no/enhetsregisteret/api/docs/index.html |
+
+</details>

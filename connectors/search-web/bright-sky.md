@@ -5,6 +5,8 @@ hidden: true
 
 # Bright Sky
 
+<img src="../../.gitbook/assets/connectors/bright-sky.png" alt="Bright Sky logo" width="64">
+
 Bright Sky is a free JSON API for open weather data from the German Weather Service (DWD). Get hourly historical weather, MOSMIX forecasts and current conditions for any location, raw SYNOP observations, rain radar, DWD weather alerts and the list of weather stations. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Bright Sky is a free JSON API for open weather data from the German Weather Serv
 | **Category** | [Search and web](README.md) |
 | **Website** | [brightsky.dev](https://brightsky.dev) |
 | **Authentication** | No authentication |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `brightSky` |
 
 ## Use it

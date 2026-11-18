@@ -5,6 +5,8 @@ hidden: true
 
 # Breezy HR
 
+<img src="../../.gitbook/assets/connectors/breezyhr.png" alt="Breezy HR logo" width="64">
+
 Breezy HR is a visual pipeline recruiting/ATS platform. This connector wraps the Breezy HR REST API v3 covering companies, positions, candidates, pipelines, questionnaires, templates, and webhook management.
 
 | | |
@@ -12,8 +14,6 @@ Breezy HR is a visual pipeline recruiting/ATS platform. This connector wraps the
 | **Category** | [Productivity](README.md) |
 | **Website** | [breezy.hr](https://breezy.hr) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 49 |
-| **Events** | 0 |
 | **Slug** | `breezyhr` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Breezy HR from **Build → Integrations → Connectors** and connect an acco
 | Get Candidate Conversation | `getCandidateConversation` | Get the email/message conversation thread with a candidate. |
 | Get Candidate Custom Fields | `getCandidateCustomFields` | Get custom field values set on a candidate. |
 | Get Candidate Documents | `getCandidateDocuments` | List documents uploaded/attached to a candidate. |
+
+<details>
+
+<summary>See 39 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Candidate Meta | `getCandidateMeta` | Get metadata (source, ratings, tags) for a candidate. |
 | Get Candidate Questionnaires | `getCandidateQuestionnaires` | List questionnaires sent to / completed by a candidate. |
 | Get Candidate Resume | `getCandidateResume` | Get the parsed/raw resume info for a candidate. |
@@ -73,3 +80,5 @@ Add Breezy HR from **Build → Integrations → Connectors** and connect an acco
 | Update Candidate | `updateCandidate` | Partially update a candidate's basic fields. |
 | Update Position | `updatePosition` | Partially update an existing position's fields. |
 | Update Webhook Endpoint | `updateWebhookEndpoint` | Update an existing webhook endpoint's URL, description, or subscribed events. |
+
+</details>

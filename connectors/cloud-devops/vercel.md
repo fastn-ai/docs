@@ -5,6 +5,8 @@ hidden: true
 
 # Vercel
 
+<img src="../../.gitbook/assets/connectors/vercel.png" alt="Vercel logo" width="64">
+
 Vercel REST API (base https://api.vercel.com). Manage projects, deployments (create/get/cancel/delete/events), environment variables, domains and project domains, DNS records, teams, the current user, and webhooks. Auth: Bearer access token. Team-scoped resources accept a teamId query param.
 
 | | |
@@ -12,8 +14,6 @@ Vercel REST API (base https://api.vercel.com). Manage projects, deployments (cre
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [vercel.com](https://vercel.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 31 |
-| **Events** | 8 |
 | **Slug** | `vercel` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Vercel from **Build → Integrations → Connectors** and connect an account
 | Create Webhook | `createWebhook` | Create a webhook (POST /v1/webhooks). Used by the webhook config. |
 | Delete Deployment | `deleteDeployment` | Delete a deployment (DELETE /v13/deployments/{id}). |
 | Delete DNS Record | `deleteDnsRecord` | Delete a DNS record (DELETE /v2/domains/{domain}/records/{recordId}). |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Project | `deleteProject` | Delete a project (DELETE /v9/projects/{idOrName}). Returns 204. |
 | Delete Project Env Var | `deleteProjectEnv` | Delete a project environment variable (DELETE /v9/projects/{idOrName}/env/{envId}). |
 | Delete Webhook | `deleteWebhook` | Delete a webhook (DELETE /v1/webhooks/{id}). Returns 204. |
@@ -55,6 +62,8 @@ Add Vercel from **Build → Integrations → Connectors** and connect an account
 | Remove Project Domain | `removeProjectDomain` | Remove a domain from a project (DELETE /v9/projects/{idOrName}/domains/{domain}). |
 | Update Project | `updateProject` | Update a project (PATCH /v9/projects/{idOrName}). |
 | Update Project Env Var | `updateProjectEnv` | Update a project environment variable (PATCH /v9/projects/{idOrName}/env/{envId}). |
+
+</details>
 
 ## Events
 

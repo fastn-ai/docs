@@ -5,6 +5,8 @@ hidden: true
 
 # NCBI E-utilities
 
+<img src="../../.gitbook/assets/connectors/ncbi-eutilities.png" alt="NCBI E-utilities logo" width="64">
+
 NCBI E-utilities (Entrez Programming Utilities) is the free public API to the 38 NCBI Entrez databases, including PubMed, PMC, Gene, Protein, Nucleotide and Taxonomy. Search databases, get summaries, fetch full records, find linked records, use the History server, check spelling and match citations to PubMed IDs. No API key needed (up to 3 requests per second).
 
 | | |
@@ -12,8 +14,6 @@ NCBI E-utilities (Entrez Programming Utilities) is the free public API to the 38
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [ncbi.nlm.nih.gov](https://ncbi.nlm.nih.gov) |
 | **Authentication** | No authentication |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `ncbiEutilities` |
 
 ## Use it

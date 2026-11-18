@@ -5,6 +5,8 @@ hidden: true
 
 # Gender-API.com
 
+<img src="../../.gitbook/assets/connectors/gender-api.png" alt="Gender-API.com logo" width="64">
+
 Gender-API.com determines the most likely gender behind a first name, full name or email address, optionally localised by country, locale or IP address, and can also infer a name's country of origin, ethnicity and meaning. This connector covers the full Gender-API.com Unified API v2: single and multiple-name gender lookups by first name, full name and email address, country-of-origin lookups, account usage statistics and free-tier sign-up.
 
 | | |
@@ -12,8 +14,6 @@ Gender-API.com determines the most likely gender behind a first name, full name 
 | **Category** | [Search and web](README.md) |
 | **Website** | [gender-api.com](https://gender-api.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `genderApi` |
 
 ## Use it

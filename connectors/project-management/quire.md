@@ -5,14 +5,14 @@ hidden: true
 
 # Quire
 
+<img src="../../.gitbook/assets/connectors/quire.png" alt="Quire logo" width="64">
+
 Quire is a collaborative task-management and project-planning tool. Manage organizations, projects, tasks, sublists, comments, tags, statuses, documents, and notifications.
 
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 92 |
-| **Events** | 0 |
 | **Slug** | `quire` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Quire from **Build → Integrations → Connectors** and connect an account,
 | Bulk Move Tasks | `bulkMoveTasks` | Moves multiple tasks at once within a project. Provide 'tasks' as a JSON array string of move instructions. |
 | Bulk Remove Tasks | `bulkRemoveTasks` | Deletes multiple tasks at once within a project. Provide 'tasks' as a JSON array string of task OIDs. |
 | Bulk Transfer Tasks | `bulkTransferTasks` | Transfers multiple tasks from a source project to a destination project. |
+
+<details>
+
+<summary>See 82 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Tasks | `bulkUpdateTasks` | Updates multiple tasks at once within a project. Provide 'tasks' as a JSON array string; each object must include the task oid or id. |
 | Create Chat | `createChat` | Creates a chatroom under an owner object (project or organization). |
 | Create Document | `createDocument` | Creates a document under an owner object (project or organization). |
@@ -115,3 +122,5 @@ Add Quire from **Build → Integrations → Connectors** and connect an account,
 | Update Tag | `updateTag` | Updates a tag. Only the fields you provide are changed. |
 | Update Task | `updateTask` | Updates a task's editable fields. Only the fields you provide are changed. |
 | Update Task Timelog | `updateTaskTimelog` | Updates an existing time-tracking log entry on a task. |
+
+</details>

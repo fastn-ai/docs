@@ -5,6 +5,8 @@ hidden: true
 
 # U.S. Census Bureau Data API
 
+<img src="../../.gitbook/assets/connectors/census-bureau.png" alt="U.S. Census Bureau Data API logo" width="64">
+
 The U.S. Census Bureau Data API exposes more than 1,800 datasets from the American Community Survey, Decennial Census, Population Estimates, County Business Patterns, Economic Indicators, International Trade and other programs. This connector covers the discovery endpoints (dataset catalog, dataset descriptors, variables, geography, groups, examples, tags and sorts), a generic data query for any dataset, and ready-made query actions for the most used datasets.
 
 | | |
@@ -12,8 +14,6 @@ The U.S. Census Bureau Data API exposes more than 1,800 datasets from the Americ
 | **Category** | [Data and databases](README.md) |
 | **Website** | [census.gov](https://census.gov) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 27 |
-| **Events** | 0 |
 | **Slug** | `censusBureau` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add U.S. Census Bureau Data API from **Build → Integrations → Connectors** a
 | List Groups | `listGroups` | Returns the variable groups (tables) defined in a dataset, each with its name, description, universe and a link to the variables it contains. A whole group can be requested in a data query with get=group(NAME). |
 | List Sorts | `listSorts` | Returns the sort options published for a dataset (the sorts link in its catalog descriptor). Many datasets publish an empty list. |
 | List Tags | `listTags` | Returns the topic tags (such as income, poverty, housing or employment) attached to a dataset's variables, useful for discovering which subjects the dataset covers. |
+
+<details>
+
+<summary>See 17 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Variables | `listVariables` | Returns every variable available in a dataset, keyed by variable name, with its label, concept, predicate type, group, whether it is required in queries and whether it can only be used as a predicate. Use the names in the get parameter of a data query. |
 | Query ACS 1-Year Data Product | `queryAcs1YearDataProduct` | Queries an American Community Survey 1-Year data product table set (data profiles, comparison profiles, subject tables, selected population profiles, or public use microdata) for a vintage year. Returns a JSON array of rows with a header row. |
 | Query ACS 1-Year Detailed Tables | `queryAcs1YearDetailedTables` | Queries the American Community Survey 1-Year Estimates detailed tables (dataset acs/acs1) for a vintage year. Covers geographies with 65,000 or more people. Returns a JSON array of rows with a header row. |
@@ -51,3 +58,5 @@ Add U.S. Census Bureau Data API from **Build → Integrations → Connectors** a
 | Query Small Area Health Insurance Estimates | `querySahie` | Queries the Small Area Health Insurance Estimates time series (timeseries/healthins/sahie): annual health insurance coverage estimates for states and counties by age, sex, race and income-to-poverty ratio. Returns a JSON array of rows with a header row. |
 | Query Small Area Income And Poverty Estimates | `querySaipe` | Queries the Small Area Income and Poverty Estimates time series (timeseries/poverty/saipe): annual median household income and poverty estimates for the nation, states and counties. For the school district variant use Query Dataset with vintage timeseries and path poverty/saipe/schdist. Returns a JSON array of rows with a header row. |
 | Query ZIP Code Business Patterns | `queryZipCodeBusinessPatterns` | Queries ZIP Code Business Patterns (dataset zbp) for a year: establishment counts, employment and payroll by industry and employment size for five-digit ZIP codes. Available for 1994 through 2018; later years are published as ZIP-level rows in County Business Patterns. Returns a JSON array of rows with a header row. |
+
+</details>

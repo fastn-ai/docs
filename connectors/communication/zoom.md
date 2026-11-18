@@ -5,6 +5,8 @@ hidden: true
 
 # Zoom
 
+<img src="../../.gitbook/assets/connectors/zoom.png" alt="Zoom logo" width="64">
+
 Zoom Meetings, Webinars, Cloud Recordings, Phone, Chat, Users, Groups, Roles, Reports and Tracking Fields via the Zoom REST API v2. OAuth 2.0 authorization-code auth.
 
 | | |
@@ -12,8 +14,6 @@ Zoom Meetings, Webinars, Cloud Recordings, Phone, Chat, Users, Groups, Roles, Re
 | **Category** | [Communication](README.md) |
 | **Website** | [zoom.us](https://zoom.us) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 89 |
-| **Events** | 24 |
 | **Slug** | `zoom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoom from **Build → Integrations → Connectors** and connect an account, 
 | Create Meeting | `createMeeting` | Create/schedule a meeting for a user. |
 | Create Meeting Poll | `createMeetingPoll` | Create a poll for a meeting. |
 | Create Role | `createRole` | Create a role on the account. |
+
+<details>
+
+<summary>See 79 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Tracking Field | `createTrackingField` | Create a tracking field. |
 | Create User | `createUser` | Create (add) a user on the account. action: create, autoCreate, custCreate, or ssoCreate. |
 | Create Webinar | `createWebinar` | Schedule a webinar for a user. |
@@ -114,6 +121,8 @@ Add Zoom from **Build → Integrations → Connectors** and connect an account, 
 | Update Webinar Registrant Status | `updateWebinarRegistrantStatus` | Approve, deny, or cancel webinar registrants. |
 | Update Webinar Status | `updateWebinarStatus` | End a webinar. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -130,6 +139,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Meeting Registration Created | `meeting.registration_created` | A registrant registered for a meeting. |
 | Meeting Started | `meeting.started` | A meeting has started. |
 | Meeting Updated | `meeting.updated` | A meeting was updated. |
+
+<details>
+
+<summary>See 14 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Phone Call Answered | `phone.callee_answered` | A Zoom Phone call was answered. |
 | Phone Recording Completed | `phone.recording_completed` | A Zoom Phone call recording completed. |
 | Recording Completed | `recording.completed` | A cloud recording finished processing and is available. |
@@ -144,3 +160,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Webinar Participant Left | `webinar.participant_left` | A participant left a webinar. |
 | Webinar Registration Created | `webinar.registration_created` | A registrant registered for a webinar. |
 | Webinar Started | `webinar.started` | A webinar has started. |
+
+</details>

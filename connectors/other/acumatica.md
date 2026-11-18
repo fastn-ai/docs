@@ -5,6 +5,8 @@ hidden: true
 
 # Acumatica
 
+<img src="../../.gitbook/assets/connectors/acumatica.png" alt="Acumatica logo" width="64">
+
 Acumatica Cloud ERP contract-based REST API. Access StockItem, NonStockItem, Customer, Vendor, SalesOrder, PurchaseOrder, Invoice, Bill, Payment, Shipment, InventoryReceipt, InventoryIssue, Account, JournalTransaction, Contact, Lead, Case, Project entities. Base URL: https://{instance}/entity/Default/{endpointVersion}. Auth via login session cookie (POST /entity/auth/login) or OAuth2.
 
 | | |
@@ -12,8 +14,6 @@ Acumatica Cloud ERP contract-based REST API. Access StockItem, NonStockItem, Cus
 | **Category** | [Other](README.md) |
 | **Website** | [acumatica.com](https://acumatica.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 112 |
-| **Events** | 14 |
 | **Slug** | `acumatica` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Acumatica from **Build → Integrations → Connectors** and connect an acco
 | Create/Update Inventory Issue | `putInventoryIssue` | Create or update an InventoryIssue (PUT). Fields use the {value:...} wrapper. |
 | Create/Update Inventory Receipt | `putInventoryReceipt` | Create or update an InventoryReceipt (PUT). Fields use the {value:...} wrapper. |
 | Create/Update Invoice | `putInvoice` | Create or update an AR Invoice (PUT). Fields use the {value:...} wrapper. |
+
+<details>
+
+<summary>See 102 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create/Update Journal Transaction | `putJournalTransaction` | Create or update a GL JournalTransaction batch (PUT). Fields use the {value:...} wrapper. |
 | Create/Update Lead | `putLead` | Create or update a Lead (PUT). Fields use the {value:...} wrapper. |
 | Create/Update Non-Stock Item | `putNonStockItem` | Create or update a NonStockItem (PUT). Fields use the {value:...} wrapper. |
@@ -137,6 +144,8 @@ Add Acumatica from **Build → Integrations → Connectors** and connect an acco
 | Login | `login` | Sign in to Acumatica and establish a session cookie. POST /entity/auth/login with name, password, company, branch. Phase 2 calls this before entity operations; the Set-Cookie session is carried on subsequent requests. |
 | Logout | `logout` | Sign out of Acumatica and release the API session. POST /entity/auth/logout. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -153,7 +162,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Project Changed | `Project` | Push notification for Project insert/update. |
 | Purchase Order Changed | `PurchaseOrder` | Push notification for PurchaseOrder insert/update. |
 | Push Notification | `push.notification` | Acumatica Push Notification delivered to the webhook destination configured on the Push Notifications screen (SM302000). The payload contains the Inserted rows (rows that newly satisfy the generic-inquiry condition) and Deleted rows (rows that no longer satisfy it). Comparing the Deleted and Inserted sets reveals updated fields. Each notification corresponds to one push-notification definition (Query Id). |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Sales Order Changed | `SalesOrder` | Push notification for SalesOrder insert/update. |
 | Shipment Changed | `Shipment` | Push notification for Shipment insert/update. |
 | Stock Item Changed | `StockItem` | Acumatica push notification fired when a StockItem record is inserted or updated. Configure a Push Notification in Acumatica (System Management &gt; Push Notifications) targeting the Stock Items generic inquiry/screen with this fastn webhook URL as the destination. Payload Inserted/Deleted arrays carry the changed field values. |
 | Vendor Changed | `Vendor` | Push notification for Vendor record insert/update. |
+
+</details>

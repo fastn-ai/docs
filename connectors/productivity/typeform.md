@@ -5,6 +5,8 @@ hidden: true
 
 # Typeform
 
+<img src="../../.gitbook/assets/connectors/typeform.png" alt="Typeform logo" width="64">
+
 Typeform Create, Responses, Webhooks, and Insights APIs. Manage forms, responses, themes, images, workspaces, webhooks, and insights via the api.typeform.com REST API.
 
 | | |
@@ -12,8 +14,6 @@ Typeform Create, Responses, Webhooks, and Insights APIs. Manage forms, responses
 | **Category** | [Productivity](README.md) |
 | **Website** | [typeform.com](https://typeform.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 30 |
-| **Events** | 0 |
 | **Slug** | `typeform` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Typeform from **Build → Integrations → Connectors** and connect an accou
 | Delete Image | `deleteImage` | Delete an image by ID. Returns 204 No Content. |
 | Delete Responses | `deleteResponses` | Delete responses from a form by their response/token IDs. Returns 200/204. |
 | Delete Theme | `deleteTheme` | Delete a theme by ID. Returns 204 No Content. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Webhook | `deleteWebhook` | Delete a webhook from a form by its tag. Returns 204 No Content. |
 | Delete Workspace | `deleteWorkspace` | Delete a workspace by ID. Returns 204 No Content. |
 | Get Form | `getForm` | Retrieve a single form by its unique ID, including all fields, logic, settings, theme and workspace references. |
@@ -54,3 +61,5 @@ Add Typeform from **Build → Integrations → Connectors** and connect an accou
 | Update Form Messages | `updateFormMessages` | Replace the customizable on-screen messages for a form. Pass a messages object of message keys to strings. |
 | Update Theme | `updateTheme` | Update an existing theme by ID. Replaces name, font, and colors. |
 | Update Workspace | `updateWorkspace` | Update a workspace using JSON Patch operations (e.g. rename). Pass an array of {op, path, value} operations. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # PDF.co
 
+<img src="../../.gitbook/assets/connectors/pdfco.png" alt="PDF.co logo" width="64">
+
 PDF.co is a document-automation API for converting, editing, splitting, merging, securing and extracting data from PDF and Office documents. This connector covers the whole PDF.co v1 API: PDF conversion to and from every supported format, merge and split, page editing, text and image search-and-replace, rotation, optimisation and compression, form field reading, barcode generation and reading, OCR (make searchable/unsearchable), the document parser and its templates, the AI invoice parser, document classification, attachments, email decoding, attachment extraction and sending, file upload and storage, presigned upload URLs, file hashing and deletion, HTML templates, background job status checks and the account credit balance.
 
 | | |
@@ -12,8 +14,6 @@ PDF.co is a document-automation API for converting, editing, splitting, merging,
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdf.co](https://pdf.co) |
 | **Authentication** | API key |
-| **Actions** | 68 |
-| **Events** | 2 |
 | **Slug** | `pdfco` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PDF.co from **Build → Integrations → Connectors** and connect an account
 | Convert Excel to CSV | `excelToCSV` | Converts one worksheet of an XLS or XLSX workbook into a CSV file, with a configurable separator and quotation symbol. |
 | Convert Excel to HTML | `excelToHtml` | Converts one worksheet of an XLS, XLSX or CSV file into HTML and returns a link to the result. |
 | Convert Excel to JSON | `excelToJson` | Converts one worksheet of an XLS, XLSX or CSV file into JSON and returns a link to the result. |
+
+<details>
+
+<summary>See 58 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Convert Excel to PDF | `excelToPDF` | Converts one worksheet of an XLS, XLSX or CSV file into a PDF, optionally sizing pages automatically to fit the content. |
 | Convert Excel to Text | `excelToText` | Converts one worksheet of an XLS, XLSX or CSV file into plain text and returns a link to the result. |
 | Convert Excel to XML | `excelToXML` | Converts one worksheet of an XLS, XLSX or CSV file into XML and returns a link to the result. |
@@ -92,6 +99,8 @@ Add PDF.co from **Build → Integrations → Connectors** and connect an account
 | Upload File from URL (GET) | `uploadFileFromURL` | Downloads a file from a source URL and stores it as a PDF.co temporary file, using the GET form of the endpoint. Temporary files are deleted automatically after one hour. |
 | Upload File Using Base64 | `uploadFileUsingBase64` | Stores a file supplied as Base64 content in PDF.co storage and returns a URL other actions can read. Temporary files are deleted automatically after one hour unless stored permanently. |
 | Upload Small File | `uploadSmallFile` | Stores a small file (up to 100 KB) in PDF.co temporary storage. This endpoint accepts multipart/form-data only, which the fastn executor cannot emit, so it answers 400 'No attached file found' when called from a workflow. Use Upload File Using Base64 or Upload File from URL instead; both return the same kind of temporary file URL. |
+
+</details>
 
 ## Events
 

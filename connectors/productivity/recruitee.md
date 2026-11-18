@@ -5,6 +5,8 @@ hidden: true
 
 # Recruitee
 
+<img src="../../.gitbook/assets/connectors/recruitee.png" alt="Recruitee logo" width="64">
+
 Recruitee (Tellent) is a collaborative recruitment and applicant tracking platform. This connector provides access to candidates, job offers, departments, talent pools, pipeline templates, notes, tags, admins, roles, disqualify reasons, and other Recruitee ATS resources.
 
 | | |
@@ -12,8 +14,6 @@ Recruitee (Tellent) is a collaborative recruitment and applicant tracking platfo
 | **Category** | [Productivity](README.md) |
 | **Website** | [recruitee.com](https://recruitee.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 42 |
-| **Events** | 0 |
 | **Slug** | `recruitee` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Recruitee from **Build → Integrations → Connectors** and connect an acco
 | Delete Candidate | `deleteCandidate` | Permanently deletes a candidate from the company's talent database. |
 | Delete Department | `deleteDepartment` | Deletes a department. |
 | Delete Note | `deleteNote` | Deletes a note from a candidate, offer, talent pool, or requisition. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Offer | `deleteOffer` | Permanently deletes a job offer (posting). |
 | Delete Talent Pool | `deleteTalentPool` | Deletes a talent pool. |
 | Get Candidate | `getCandidate` | Retrieves a single candidate by ID, including contact details, tags, custom fields, and job placements. |
@@ -66,3 +73,5 @@ Add Recruitee from **Build → Integrations → Connectors** and connect an acco
 | Update Note | `updateNote` | Updates the text of an existing note on a candidate, offer, talent pool, or requisition. |
 | Update Offer | `updateOffer` | Updates an existing job offer's title, description, department, requirements, or employment fields. Note: offer tags are not settable via this endpoint with this credential type (the API silently ignores a tags/offer_tags field on this resource); use List Offer Tags to read tags already applied through the Recruitee UI. |
 | Update Talent Pool | `updateTalentPool` | Updates an existing talent pool's title, description, or department. |
+
+</details>

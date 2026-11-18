@@ -5,6 +5,8 @@ hidden: true
 
 # Legal Data Hunter
 
+<img src="../../.gitbook/assets/connectors/legal-data-hunter.png" alt="Legal Data Hunter logo" width="64">
+
 Legal Data Hunter is a multi-jurisdictional legal research platform covering statutes, case law and doctrine across 230+ jurisdictions and 38M+ documents. This connector exposes the Legal Data Hunter MCP server's tools for hybrid semantic and keyword search, document retrieval, citation resolution, jurisdiction and source discovery, filter inspection and data-quality reporting.
 
 | | |
@@ -12,8 +14,6 @@ Legal Data Hunter is a multi-jurisdictional legal research platform covering sta
 | **Category** | [Search and web](README.md) |
 | **Website** | [legaldatahunter.com](https://legaldatahunter.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `legalDataHunter` |
 
 ## Use it

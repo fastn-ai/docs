@@ -5,6 +5,8 @@ hidden: true
 
 # LiveSession
 
+<img src="../../.gitbook/assets/connectors/livesession.jpg" alt="LiveSession logo" width="64">
+
 LiveSession is a product-analytics and session-replay platform. This connector covers the full LiveSession REST API: session search with visitor, device, geolocation and engagement detail; website management; alert rules and their notification providers; and webhook endpoint management, together with the session-event webhook surface.
 
 | | |
@@ -12,8 +14,6 @@ LiveSession is a product-analytics and session-replay platform. This connector c
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [livesession.io](https://livesession.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 10 |
-| **Events** | 5 |
 | **Slug** | `livesession` |
 
 ## Use it

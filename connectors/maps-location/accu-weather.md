@@ -5,6 +5,8 @@ hidden: true
 
 # AccuWeather
 
+<img src="../../.gitbook/assets/connectors/accu-weather.png" alt="AccuWeather logo" width="64">
+
 AccuWeather provides global weather data. This connector covers the AccuWeather APIs on dataservice.accuweather.com: location lookup by text, postal code, coordinates, IP address and point of interest, current conditions and past-24-hour observations, daily and hourly forecasts, MinuteCast precipitation, lifestyle indices, severe weather alerts and alarms, government tropical storm tracking, and phrase translations.
 
 | | |
@@ -12,8 +14,6 @@ AccuWeather provides global weather data. This connector covers the AccuWeather 
 | **Category** | [Maps and location](README.md) |
 | **Website** | [accuweather.com](https://accuweather.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 85 |
-| **Events** | 0 |
 | **Slug** | `accuWeather` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AccuWeather from **Build → Integrations → Connectors** and connect an ac
 | Get 1 Day Indices | `getDailyIndices1Day` | Returns today's AccuWeather lifestyle indices for a location, such as the UV index, flight delay risk, running and gardening conditions, each with a rating and a plain-language category. |
 | Get 1 Hour Hourly Forecast | `getHourlyForecast1Hour` | Returns the AccuWeather forecast for the next single hour at a location, with temperature, conditions and precipitation probability. |
 | Get 10 Day Daily Forecast | `getDailyForecast10Day` | Returns the AccuWeather ten-day daily forecast for a location, with a headline and a day and night summary for each of the ten days. |
+
+<details>
+
+<summary>See 75 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get 10 Day Indices | `getDailyIndices10Day` | Returns AccuWeather lifestyle indices for a location over the next ten days, one entry per index per day. |
 | Get 12 Hour Hourly Forecast | `getHourlyForecast12Hour` | Returns the AccuWeather hour-by-hour forecast for the next twelve hours at a location. |
 | Get 120 Hour Hourly Forecast | `getHourlyForecast120Hour` | Returns the AccuWeather hour-by-hour forecast for the next one hundred and twenty hours at a location, the longest hourly outlook available. |
@@ -109,3 +116,5 @@ Add AccuWeather from **Build → Integrations → Connectors** and connect an ac
 | Search Points Of Interest In Country | `searchPointsOfInterestInCountry` | Searches for points of interest by name within a specific country, returning matches with their location keys. |
 | Search Postal Codes | `searchPostalCodes` | Searches AccuWeather locations by postal code and returns the matches with their location keys. Postal code coverage varies by country. |
 | Search Postal Codes In Country | `searchPostalCodesInCountry` | Searches for a postal code within a specific country and returns the matching locations with their location keys. |
+
+</details>

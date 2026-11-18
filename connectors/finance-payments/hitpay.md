@@ -5,6 +5,8 @@ hidden: true
 
 # HitPay
 
+<img src="../../.gitbook/assets/connectors/hitpay.png" alt="HitPay logo" width="64">
+
 HitPay payments platform for APAC. Create hosted payment requests and checkout links, accept PayNow, FPX, QRIS, GrabPay, DuitNow, PromptPay and cards, issue refunds, run recurring billing on saved cards, manage customers, products, orders, invoices, locations, static QR codes, card readers, virtual accounts, balances, payouts (beneficiaries, remitters, transfers) and webhook event subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ HitPay payments platform for APAC. Create hosted payment requests and checkout l
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [hit-pay.com](https://hit-pay.com) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 98 |
-| **Events** | 31 |
 | **Slug** | `hitpay` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HitPay from **Build → Integrations → Connectors** and connect an account
 | Create Order | `createOrder` | Create an order in draft status against a customer and location. The channel must be one of point_of_sale, quick_sale or self_serve. |
 | Create Payment Request | `createPaymentRequest` | Create a HitPay payment request and receive a hosted checkout URL to redirect the buyer to. Supports cards, PayNow, FPX, GrabPay, ShopeePay, Atome and other local APMs, optional QR generation, expiry, admin fee, email/SMS receipts and arbitrary metadata. |
 | Create Product | `createProduct` | Create a catalogue product with a name and price. Optionally set description, SKU, barcode, stock quantity and alert level, category ids, sales channels, locations, weight and publish state. Product images must be uploaded from the HitPay dashboard. |
+
+<details>
+
+<summary>See 88 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Recurring Billing | `createRecurringBilling` | Start a recurring billing subscription for a customer, either from an existing subscription plan or with inline cycle and amount. Set save_payment_method to true to tokenise the customer's card or wallet for later charges. Returns a URL where the customer enters their payment details. |
 | Create Refund | `createRefund` | Refund a completed HitPay payment in full or in part. Moves money back to the payer, so supply the exact payment id and amount. Optionally send the customer an email receipt and receive a webhook when the refund settles. |
 | Create Remitter | `createRemitter` | Register a remitter for payout transfers, with the identity and address details required for compliance screening. Use entity_type company together with company_name for a business remitter. |
@@ -123,6 +130,8 @@ Add HitPay from **Build → Integrations → Connectors** and connect an account
 | Update Subscription Plan | `updateSubscriptionPlan` | Update a subscription plan's name, amount, cycle or settings. Changes do not affect subscriptions already running on the plan; use Update Recurring Billing for those. Name, cycle and amount must always be supplied. |
 | Update Webhook Event | `updateWebhookEvent` | Change a registered webhook endpoint's name, destination URL or subscribed event types. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -139,6 +148,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Invoice Updated | `invoice.updated` | An invoice changed, for example when it is paid. Hitpay-Event-Object: invoice. Payload schema modelled from HitPay's documented samples. |
 | Order Created | `order.created` | A new order was raised. Hitpay-Event-Object: order. Payload schema modelled from HitPay's documented samples. |
 | Order Updated | `order.updated` | An order changed. Hitpay-Event-Object: order. Payload schema modelled from HitPay's documented samples. |
+
+<details>
+
+<summary>See 21 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Payment Request Completed | `payment_request.completed` | A payment request was paid in full. Payload schema modelled from HitPay's documented samples. |
 | Payment Request Failed | `payment_request.failed` | A payment request could not be paid. Payload schema modelled from HitPay's documented samples. |
 | Payout Created | `payout.created` | A settlement payout to the business's bank account was created. Hitpay-Event-Object: payout. Payload schema modelled from HitPay's documented samples. |
@@ -160,3 +176,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Transfer Processing | `transfer.processing` | A payout transfer is being processed. Requires the payouts entitlement. |
 | Transfer Scheduled | `transfer.scheduled` | A payout transfer was scheduled. Requires the payouts entitlement. |
 | Transfer Updated | `transfer.updated` | A payout transfer changed. Requires the payouts entitlement. |
+
+</details>

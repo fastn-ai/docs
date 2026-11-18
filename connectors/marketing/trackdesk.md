@@ -5,6 +5,8 @@ hidden: true
 
 # Trackdesk
 
+<img src="../../.gitbook/assets/connectors/trackdesk.png" alt="Trackdesk logo" width="64">
+
 Trackdesk affiliate and partner tracking platform. Manage offers, affiliates, conversions, clicks, coupons, tracking links, tiers, tags, advertisers, billing settlements and reporting through the Trackdesk public API.
 
 | | |
@@ -12,8 +14,6 @@ Trackdesk affiliate and partner tracking platform. Manage offers, affiliates, co
 | **Category** | [Marketing](README.md) |
 | **Website** | [trackdesk.com](https://trackdesk.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 109 |
-| **Events** | 12 |
 | **Slug** | `trackdesk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Trackdesk from **Build → Integrations → Connectors** and connect an acco
 | Conversion report | `conversionReport` | Conversion report. Shows data related to conversions tracked by the system. |
 | Country overview | `countryOverviewReport` | Country overview. Deprecated: Displays performance data grouped by specific countries. |
 | Create a new payment method | `createPaymentMethod` | Create a new payment method. Creates a new payment method for the affiliate account. Once created, it can be set as a default payment method using `SetPaymentMethodAccountDefault` endpoint. |
+
+<details>
+
+<summary>See 99 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Account Note | `createAccountNote` | Create account note. Creates a new note attached to a specific affiliate account. - Errors: may use ERROR_CODE_ACCOUNT_NOT_FOUND when account_id does not exist. |
 | Create advertiser settlement | `claimBalances` | Create advertiser settlement. Generates a settlement for specific advertiser. |
 | Create Affiliate | `createAffiliate` | Create new affiliate. Creates a new affiliate in your system. |
@@ -134,6 +141,8 @@ Add Trackdesk from **Build → Integrations → Connectors** and connect an acco
 | Update payment method | `updatePaymentMethod` | Update payment method. Updates the data for selected payment method. |
 | Upload offer creative | `uploadOfferCreative` | Upload offer creative. Upload a promotional creative whose content is a file and attach it to the offer in a single request. This is the file-based counterpart to the offer creatives service, which manages the content-based creatives and also lists, edits and removes the creatives created here. Send the request as `multipart/form-data`, with the binary in the `file` field and the creative's metadata in the remaining fields. The file size is measured server-side; the pixel width and height may be supplied by the caller for image and video creatives. Set `creativeId` to replace the file of an existing creative instead of creating a new one. Returns the created or replaced creative together with its metadata. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -150,5 +159,14 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Click Created | `EVENT_TYPE_CLICK_CREATED` | Fires on every tracked click. Payload captured from Trackdesk's own test-event sample. |
 | Conversion Created | `EVENT_TYPE_CONVERSION_CREATED` | Fires when a conversion is recorded. Payload captured from Trackdesk's own test-event sample. |
 | Conversion Status Changed | `EVENT_TYPE_CONVERSION_STATUS_CHANGED` | Fires when a conversion is approved, rejected, refunded or otherwise re-statused. Payload captured from Trackdesk's own test-event sample. |
+
+<details>
+
+<summary>See 2 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Coupon Created | `EVENT_TYPE_COUPON_CREATED` | Fires when a coupon code is created for an affiliate on an offer. Payload captured from Trackdesk's own test-event sample. |
 | Settlement Created | `EVENT_TYPE_SETTLEMENT_CREATED` | Fires when an affiliate settlement (payout batch) is created. Payload captured from Trackdesk's own test-event sample. |
+
+</details>

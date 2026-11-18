@@ -5,6 +5,8 @@ hidden: true
 
 # Open Library
 
+<img src="../../.gitbook/assets/connectors/open-library.png" alt="Open Library logo" width="64">
+
 Open Library (Internet Archive) is a free, keyless catalog of millions of books: search books, authors, subjects, editions and lists, read work, edition, author, subject, publisher and series records, look up books by ISBN/OCLC/LCCN, and browse public reading lists and recent changes.
 
 | | |
@@ -12,8 +14,6 @@ Open Library (Internet Archive) is a free, keyless catalog of millions of books:
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [openlibrary.org](https://openlibrary.org) |
 | **Authentication** | No authentication |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `openLibrary` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Open Library from **Build → Integrations → Connectors** and connect an a
 | Get Publisher | `getPublisher` | Returns the works published by a publisher, with optional details. Docs: https://openlibrary.org/developers/api |
 | Get Series | `getSeries` | Returns a book series record (name, description, ordered seeds). Docs: https://openlibrary.org/developers/api |
 | Get Subject | `getSubject` | Returns the works for a subject (e.g. love, science_fiction, place:london, person:napoleon), with optional details on related subjects, authors and publishers. Docs: https://openlibrary.org/dev/docs/api/subjects |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get User Reading Log | `getUserReadingLog` | Returns a user's public reading-log shelf (want-to-read, currently-reading, already-read or stopped-reading). Only works when the user made the reading log public. Docs: https://openlibrary.org/dev/docs/api/mybooks |
 | Get Work | `getWork` | Returns a work record (the abstract book across all editions): title, authors, description, subjects, covers and links. Docs: https://openlibrary.org/dev/docs/api/books |
 | Get Work Bookshelves | `getWorkBookshelves` | Returns how many readers have the work on their want-to-read, currently-reading and already-read shelves. Docs: https://openlibrary.org/developers/api |
@@ -57,3 +64,5 @@ Add Open Library from **Build → Integrations → Connectors** and connect an a
 | Search Inside Books | `searchInside` | Full-text search inside the scanned text of digitised books; returns matching books with highlighted snippets. Docs: https://openlibrary.org/dev/docs/api/search_inside |
 | Search Lists | `searchLists` | Searches public reading lists by name. Docs: https://openlibrary.org/developers/api |
 | Search Subjects | `searchSubjects` | Searches subjects (topics, places, people, times) by name and returns their keys and work counts. Docs: https://openlibrary.org/developers/api |
+
+</details>

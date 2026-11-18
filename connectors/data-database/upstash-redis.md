@@ -5,6 +5,8 @@ hidden: true
 
 # Upstash Redis
 
+<img src="../../.gitbook/assets/connectors/upstash-redis.png" alt="Upstash Redis logo" width="64">
+
 Serverless Redis by Upstash. Run Redis commands over HTTP against your database's REST endpoint (strings, hashes, lists, sets, sorted sets, keys, pub/sub, pipelines and transactions), and manage your Upstash account's Redis databases (create, list, rename, delete, reset password, and view usage stats) via the Developer API.
 
 | | |
@@ -12,8 +14,6 @@ Serverless Redis by Upstash. Run Redis commands over HTTP against your database'
 | **Category** | [Data and databases](README.md) |
 | **Website** | [upstash.com](https://upstash.com) |
 | **Authentication** | Basic auth, Credentials you enter |
-| **Actions** | 81 |
-| **Events** | 0 |
 | **Slug** | `upstashRedis` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Upstash Redis from **Build → Integrations → Connectors** and connect an 
 | Create Database Backup | `createDatabaseBackup` | Takes an on-demand backup of an Upstash Redis database. Backups are a paid-plan feature. |
 | Create Redis Database | `createRedisDatabase` | Creates a new Redis database in your Upstash account, via the Developer (Management) API. |
 | Decrement Value | `decrementValue` | Decrements the integer value stored at a key by one. If the key does not exist, it is set to 0 before the decrement. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Database Backup | `deleteDatabaseBackup` | Deletes a single backup of an Upstash Redis database. The database itself is unaffected. |
 | Delete Hash Field | `deleteHashField` | Removes a field from a hash (HDEL). |
 | Delete JSON Value | `deleteJsonValue` | Deletes the JSON value at the given path within a JSON document key (JSON.DEL). Use path "$" to delete the whole document (removing the key). Requires a RedisJSON-capable database. |
@@ -105,3 +112,5 @@ Add Upstash Redis from **Build → Integrations → Connectors** and connect an 
 | Union Sets | `unionSets` | Returns the union of two sets (SUNION) - all members present in either set, with duplicates removed. |
 | Update Database Budget | `updateDatabaseBudget` | Updates the monthly spending budget of an Upstash Redis database, in US dollars. |
 | Update Database Regions | `updateDatabaseRegions` | Replaces the set of read regions on a global Upstash Redis database. The supplied list becomes the complete set of read replicas, so include every region the database should keep. |
+
+</details>

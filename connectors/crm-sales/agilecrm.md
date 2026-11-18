@@ -5,6 +5,8 @@ hidden: true
 
 # Agile CRM
 
+<img src="../../.gitbook/assets/connectors/agilecrm.png" alt="Agile CRM logo" width="64">
+
 Agile CRM - all-in-one CRM with sales, marketing and service automation. Full REST API coverage: contacts, companies, deals (opportunities), tasks, events, notes, tracks/milestones (pipelines), campaigns/workflows, documents and helpdesk tickets. HTTP Basic auth (account email + REST API key); per-account subdomain.
 
 | | |
@@ -12,8 +14,6 @@ Agile CRM - all-in-one CRM with sales, marketing and service automation. Full RE
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [agilecrm.com](https://agilecrm.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 77 |
-| **Events** | 0 |
 | **Slug** | `agilecrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Agile CRM from **Build → Integrations → Connectors** and connect an acco
 | Change Contact Owner | `changeContactOwner` | Reassign a contact to a different domain user by owner email. |
 | Create Company | `createCompany` | Create a company. Set type to COMPANY. Provide properties (name is the company name via SYSTEM property 'name'). |
 | Create Contact | `createContact` | Create a new contact. Provide contact properties (first_name is mandatory), plus optional tags, lead_score and star_value. |
+
+<details>
+
+<summary>See 67 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Deal | `createDeal` | Create a deal (opportunity). name, expected_value and milestone are mandatory. Optionally set pipeline_id, probability, close_date (epoch), owner_id, contact_ids and custom_data. |
 | Create Deal For Contact By Email | `createDealForContactByEmail` | Create a deal and relate it to the contact with the given email (path). |
 | Create Deal Note | `createDealNote` | Create a note and relate it to one or more deals. |
@@ -101,3 +108,5 @@ Add Agile CRM from **Build → Integrations → Connectors** and connect an acco
 | Update Star Value | `updateStarValue` | Update the star rating (0-5) of a contact by ID. |
 | Update Task | `updateTask` | Partial update of a task by ID. Only provided fields change. |
 | Update Track | `updateTrack` | Update a track by ID. name must not be 'Default'. |
+
+</details>

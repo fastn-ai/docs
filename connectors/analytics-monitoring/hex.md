@@ -5,6 +5,8 @@ hidden: true
 
 # Hex
 
+<img src="../../.gitbook/assets/connectors/hex.png" alt="Hex logo" width="64">
+
 Hex is a collaborative data workspace for notebooks, data apps and AI agents. This connector covers the Hex public API: projects and project runs, notebook cells and chart images, collections, groups and users, data connections, semantic models, guides, agent threads, suggestions and embedded app URLs.
 
 | | |
@@ -12,8 +14,6 @@ Hex is a collaborative data workspace for notebooks, data apps and AI agents. Th
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [hex.tech](https://hex.tech) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 57 |
-| **Events** | 0 |
 | **Slug** | `hex` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Hex from **Build → Integrations → Connectors** and connect an account, a
 | Create Project | `createProject` | Creates a new Hex project in the workspace with the given title and optional description. Rate limited by the hex-api group, by default 30 requests per minute. |
 | Create Thread | `createThread` | Starts a Hex agent thread from a prompt, optionally attaching data connections, tables, semantic datasets, semantic views or projects as context, and running it against an existing project or a new one. |
 | Deactivate User | `deactivateUser` | Deactivates a workspace user, revoking their access to Hex. This is an administrative action that cannot be undone through the API. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Cell | `deleteCell` | Deletes a notebook cell from its project. This cannot be undone through the API. |
 | Delete Group | `deleteGroup` | Deletes a user group from the workspace. Members keep their individual access; only the group and its group-level access are removed. |
 | Delete Guide Draft | `deleteGuideDraft` | Deletes the draft version of a guide file by its guide file id. |
@@ -81,3 +88,5 @@ Add Hex from **Build → Integrations → Connectors** and connect an account, a
 | Update Suggestion | `updateSuggestion` | Changes the status of an agent context suggestion, with an optional rejection reason when dismissing it. |
 | Update Suggestion Change | `updateSuggestionChange` | Accepts or dismisses one proposed change within an agent context suggestion, for either a guide file update or a data warehouse update. |
 | Upsert Guide Draft | `upsertGuideDraft` | Creates or updates draft guide files from their file path and contents, so agent context guides can be synced from an external source such as a git repository. |
+
+</details>

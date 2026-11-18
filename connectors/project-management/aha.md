@@ -5,6 +5,8 @@ hidden: true
 
 # Aha!
 
+<img src="../../.gitbook/assets/connectors/aha.png" alt="Aha! logo" width="64">
+
 Aha! product roadmap and idea management API (v1). Manage products/workspaces, features, releases and release phases, epics, requirements, ideas with categories/organizations/votes/comments, initiatives, goals and key results, to-dos, comments, users, competitors, personas, strategic models, notes, teams, integrations, record links, custom table records and custom fields.
 
 | | |
@@ -12,8 +14,6 @@ Aha! product roadmap and idea management API (v1). Manage products/workspaces, f
 | **Category** | [Project management](README.md) |
 | **Website** | [aha.io](https://aha.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 124 |
-| **Events** | 0 |
 | **Slug** | `aha` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Aha! from **Build → Integrations → Connectors** and connect an account, 
 | Create Feature Comment | `createFeatureComment` | Add a comment to a feature. |
 | Create Feature Record Link | `createFeatureRecordLink` | Create a link from a feature to another record. Returns 204 No Content on success. |
 | Create Goal | `createGoal` | Create a goal within a product/workspace. |
+
+<details>
+
+<summary>See 114 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Goal Comment | `createGoalComment` | Add a comment to a goal. |
 | Create Idea | `createIdea` | Create an idea within a product/workspace. |
 | Create Idea Category | `createIdeaCategory` | Create an idea category in a product/workspace. |
@@ -148,3 +155,5 @@ Add Aha! from **Build → Integrations → Connectors** and connect an account, 
 | Update Requirement | `updateRequirement` | Update a requirement's attributes. Only the fields you send are changed. |
 | Update To-Do | `updateToDo` | Update a to-do's attributes. |
 | Update User | `updateUser` | Update a user's attributes. |
+
+</details>

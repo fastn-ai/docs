@@ -5,6 +5,8 @@ hidden: true
 
 # Leexi
 
+<img src="../../.gitbook/assets/connectors/leexi.png" alt="Leexi logo" width="64">
+
 Leexi is a conversation-intelligence platform that records, transcribes and analyses sales and customer calls and meetings. This connector wraps the Leexi Public API v1: calls and call recordings, AI-generated call notes, meeting events and the meeting assistant bot, plus workspace users and teams.
 
 | | |
@@ -12,8 +14,6 @@ Leexi is a conversation-intelligence platform that records, transcribes and anal
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leexi.ai](https://leexi.ai) |
 | **Authentication** | Basic auth |
-| **Actions** | 23 |
-| **Events** | 1 |
 | **Slug** | `leexi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Leexi from **Build → Integrations → Connectors** and connect an account,
 | Delete Team | `deleteTeam` | Permanently delete a team. Leexi only allows this for a team that has no users and no calls; otherwise deactivate it with Update Team instead. Requires an API key with write_teams permission. |
 | Get Call | `getCall` | Retrieve one call or meeting by its uuid. Returns everything List Calls returns plus the detected call topics and the full word-level transcript; simple_transcript is always included here. Use it to fetch the transcript, AI summary, chapters and follow-up tasks of a single call. |
 | Get Call Note | `getCallNote` | Retrieve a single AI-generated call note by its uuid, including the prompt that produced it and every locale translation with both the original AI text and the current text. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Meeting Event | `getMeetingEvent` | Retrieve one meeting event by its uuid, with its meeting link, schedule, attendees, origin and whether the Leexi assistant is set to record it. Requires an API key with read_meeting_events permission. |
 | Get Team | `getTeam` | Retrieve a single team of the Leexi workspace by its uuid. Requires an API key with read_teams permission. |
 | Get User | `getUser` | Retrieve a single user of the Leexi workspace by their uuid, with their team, roles, license and active state. Requires an API key with read_users permission. |
@@ -47,6 +54,8 @@ Add Leexi from **Build → Integrations → Connectors** and connect an account,
 | Update Call Note | `updateCallNote` | Replace the text of one locale translation of an AI-generated call note. Both the locale to update and the new text are required. The original AI text is preserved separately in original_text. Requires an API key with write_calls permission. |
 | Update Team | `updateTeam` | Rename a team or activate and deactivate it. Only the attributes you supply are changed. A team can only be deactivated once it has no active users. Requires an API key with write_teams permission. |
 | Update User | `updateUser` | Change a user's name, email, team, roles or license, or reactivate a deactivated user by setting Active to true. Only the attributes you supply are changed. Requires an API key with write_users permission. |
+
+</details>
 
 ## Events
 

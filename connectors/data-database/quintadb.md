@@ -5,6 +5,8 @@ hidden: true
 
 # QuintaDB
 
+<img src="../../.gitbook/assets/connectors/quintadb.png" alt="QuintaDB logo" width="64">
+
 QuintaDB online database and form builder. Manage databases (apps), forms (tables), fields (columns), records, reports, file attachments, bulk updates and record search through the QuintaDB REST API.
 
 | | |
@@ -12,8 +14,6 @@ QuintaDB online database and form builder. Manage databases (apps), forms (table
 | **Category** | [Data and databases](README.md) |
 | **Website** | [quintadb.com](https://quintadb.com) |
 | **Authentication** | API key |
-| **Actions** | 39 |
-| **Events** | 2 |
 | **Slug** | `quintadb` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add QuintaDB from **Build → Integrations → Connectors** and connect an accou
 | Delete Field | `deleteField` | Permanently delete a QuintaDB field (column) and the data stored in it for every record. This cannot be undone. Returns the fields that remain on the form. |
 | Delete Form | `deleteForm` | Permanently delete a QuintaDB form (table) and every record in it. This cannot be undone. Returns the forms that remain in the database. |
 | Delete Multiple Records | `deleteMultipleRecords` | Permanently delete a chosen list of QuintaDB records. Pass the ids as json_dtype_ids (a JSON array string) or dtype_ids (an array). This cannot be undone. Returns {"success":"Records successfully deleted"}; confirm with List Records. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Record | `deleteRecord` | Permanently delete a single QuintaDB record by its id. This cannot be undone. Returns {"result":"Successfully deleted"}. |
 | Delete Webhook | `deleteWebhook` | Remove an outbound webhook from a QuintaDB database by its id. Served by QuintaDB's MCP endpoint (https://quintadb.com/mcp) because webhook management is absent from the documented REST API. Confirm with List Webhooks that the entry is gone. |
 | Get Column Total | `getColumnTotal` | Sum a numeric QuintaDB field across all records of a form, or across a saved report when view is supplied. Returns {"total": number}. |
@@ -63,6 +70,8 @@ Add QuintaDB from **Build → Integrations → Connectors** and connect an accou
 | Update Multiple Records | `updateMultipleRecords` | Set one field to the same value across a chosen list of QuintaDB records. Pass the record ids as json_dtype_ids (a JSON-encoded array string) or dtype_ids (an array). Returns {"success":"Done"}; confirm the change with List Records. |
 | Update Record | `updateRecord` | Update the values of a single QuintaDB record. Only the field ids present in the values object are changed; omitted fields keep their current value. |
 | Upload File To Record | `uploadFileToRecord` | Attach a text file to a QuintaDB file or image field. QuintaDB stores the upload against a record id that must be supplied up front, so the order is: generate a 22-character URL-safe base64 record id, call this action with it, then call Create Record (or Update Record) passing the same id inside values and the file name as the value of the file field. Only text content can be sent; binary uploads are not supported by the fastn HTTP engine. Returns {"error":"Uploaded"} - despite the key name that is the success response. |
+
+</details>
 
 ## Events
 

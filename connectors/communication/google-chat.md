@@ -5,6 +5,8 @@ hidden: true
 
 # Google Chat
 
+<img src="../../.gitbook/assets/connectors/google-chat.png" alt="Google Chat logo" width="64">
+
 Google Chat API v1 connector for managing spaces, members, messages, reactions, attachments, space events, read state, and notification settings in Google Chat.
 
 | | |
@@ -12,8 +14,6 @@ Google Chat API v1 connector for managing spaces, members, messages, reactions, 
 | **Category** | [Communication](README.md) |
 | **Website** | [chat.googleapis.com](https://chat.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 52 |
-| **Events** | 0 |
 | **Slug** | `googleChat` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Chat from **Build → Integrations → Connectors** and connect an ac
 | Delete Custom Emoji | `deleteCustomEmoji` | Deletes a custom emoji from the authenticated user's Google Workspace organization. Only the creator of the custom emoji or an organization emoji manager can delete it. |
 | Delete Membership | `deleteMembership` | Removes a member from a Google Chat space. The removed member no longer has access to the space's messages. |
 | Delete Message | `deleteMessage` | Deletes a message from a Google Chat space. Set force to true to also delete any threaded replies to the message. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Reaction | `deleteReaction` | Removes an emoji reaction from a message in a Google Chat space. |
 | Delete Section | `deleteSection` | Deletes one of the signed-in user's custom Google Chat sections (users.sections.delete); spaces in it move back to their default section. System sections cannot be deleted. Google scope: chat.users.sections. Returns an empty body on success. |
 | Delete Space | `deleteSpace` | Deletes a named Google Chat space and everything in it, including messages, memberships, and attachments. |
@@ -76,3 +83,5 @@ Add Google Chat from **Build → Integrations → Connectors** and connect an ac
 | Update Space Notification Setting | `updateSpaceNotificationSetting` | Updates the authenticated user's notification settings for a Google Chat space, such as the notification level or whether the space is muted. |
 | Update Space Read State | `updateSpaceReadState` | Updates the authenticated user's read state for a Google Chat space, marking messages as read or unread up to a given time. |
 | Upload Attachment | `uploadAttachment` | Uploads a file as an attachment to a Google Chat space. Returns an attachment data reference that can be included when creating a message. Binary uploads must be provided as a file reference. |
+
+</details>

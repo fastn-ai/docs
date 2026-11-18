@@ -5,6 +5,8 @@ hidden: true
 
 # The Companies API
 
+<img src="../../.gitbook/assets/connectors/the-companies-api.png" alt="The Companies API logo" width="64">
+
 The Companies API is a company data and enrichment platform. This connector covers the full v2 REST surface: company search by segmentation query, name, natural-language prompt or similarity; company enrichment from a domain, an email address or a social network URL; company context, email patterns and AI question answering; analytics and analytics exports; reference data for industries, technologies, cities, counties, states, countries and continents; job title enrichment; company list management and membership; background enrichment jobs (actions); saved prompts and prompt-to-segmentation conversion; and team and user account information.
 
 | | |
@@ -12,8 +14,6 @@ The Companies API is a company data and enrichment platform. This connector cove
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [thecompaniesapi.com](https://thecompaniesapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 49 |
-| **Events** | 2 |
 | **Slug** | `theCompaniesApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add The Companies API from **Build → Integrations → Connectors** and connect
 | Delete Prompt | `deletePrompt` | Permanently deletes a saved prompt from your team history, which also clears the cached response the platform would otherwise reuse for the same text. |
 | Delete Team Webhook | `deleteTeamWebhook` | Removes a webhook endpoint from a team so it stops receiving payloads, and returns the deleted webhook. This route is not part of the published OpenAPI document but is live on the v2 API and backs the Webhooks page in The Companies API settings. |
 | Enrich Company From Email | `fetchCompanyByEmail` | Identifies the company behind a work email address and returns its full record, alongside the parsed parts of the email and whether the address uses a free provider. Use it to enrich a sign-up the moment a user submits their email. |
+
+<details>
+
+<summary>See 39 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Enrich Company From Social Profile | `fetchCompanyBySocial` | Resolves a company from one of its social network profiles and returns its full company record. Supply the full profile URL for whichever network you hold, most commonly LinkedIn. Provide exactly one network per call. A profile the platform cannot match returns HTTP 404 with the message 'companyNotFound'. |
 | Enrich Job Title | `enrichJobTitles` | Normalises a raw job title and classifies it into a department and a seniority level, with Spanish and French variants. Use it to standardise job titles collected from sign-up forms or imported contact records before routing or scoring them. A title the platform does not recognise returns HTTP 404 with the message 'jobTitleNotFound'. |
 | Export Companies Analytics | `exportCompaniesAnalytics` | Exports the analytics breakdown of a segmentation query or a company list across several attributes at once, in the file format you choose. Use it to produce a market-sizing report covering industry, headcount, revenue and location in a single call. |
@@ -73,6 +80,8 @@ Add The Companies API from **Build → Integrations → Connectors** and connect
 | Update List | `updateList` | Updates a company list. Only the fields you supply are changed, so you can rename a list, change its segmentation query, switch it between dynamic and static, adjust its company cap or digest frequency, mark it as seen, or trigger a resynchronisation. |
 | Update Team | `updateTeam` | Updates the profile of a team. Only the fields you supply are changed, so you can set the team name, its country or its website independently. Credits and subscription state are managed by billing and cannot be changed here. |
 | Update Team Webhook | `updateTeamWebhook` | Updates a webhook endpoint on a team: rename it, change its destination URL or payload format, and attach or detach the company lists whose activity triggers it. A webhook only delivers events for the lists attached to it. This route is not part of the published OpenAPI document but is live on the v2 API and backs the Webhooks page in The Companies API settings. Returns the webhook with its attached lists. |
+
+</details>
 
 ## Events
 

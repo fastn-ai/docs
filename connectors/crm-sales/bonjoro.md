@@ -5,6 +5,8 @@ hidden: true
 
 # Bonjoro
 
+<img src="../../.gitbook/assets/connectors/bonjoro.svg" alt="Bonjoro logo" width="64">
+
 Bonjoro is a personal video messaging platform for sales follow-up, onboarding and customer appreciation. This connector wraps the Bonjoro REST API v2 (https://www.bonjoro.com/api/v2) to manage greets (video message tasks), campaigns, contact profiles, message templates, sender signatures, teams, users, stats and in-app automations.
 
 | | |
@@ -12,8 +14,6 @@ Bonjoro is a personal video messaging platform for sales follow-up, onboarding a
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [bonjoro.com](https://bonjoro.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 120 |
-| **Events** | 2 |
 | **Slug** | `bonjoro` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bonjoro from **Build → Integrations → Connectors** and connect an accoun
 | Create Automation Action | `createAutomationAction` | Adds an action, such as creating a Bonjoro, to an existing automation trigger. |
 | Create Automation Trigger | `createAutomationTrigger` | Adds a trigger of an automation service, such as bonjoro_created, to the team automations. |
 | Create Domain | `createDomain` | Adds a custom landing page domain to the team so greet landing pages can be served from it. |
+
+<details>
+
+<summary>See 110 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Feedback | `createFeedback` | Submits product feedback to Bonjoro about a page of the application. |
 | Create Greet | `createGreet` | Creates a greet (a video message task) for one or more contact profiles. Creating a greet does not deliver anything; the video is delivered only when the greet is completed. |
 | Create Invite | `createInvite` | Invites a person to join the team with a role. Bonjoro emails the invitation to the address given. |
@@ -144,6 +151,8 @@ Add Bonjoro from **Build → Integrations → Connectors** and connect an accoun
 | Update User Onboarding | `updateUserOnboarding` | Updates the onboarding details of a user and their team, such as industry, company name, timezone and default sender signature. The API applies the change to the authenticated user and their team regardless of the user ID in the path. |
 | Verify Domain | `verifyDomain` | Runs DNS verification for a custom domain and returns whether it is now verified. |
 | Verify Signature | `verifySignature` | Sends the verification email again for a sender signature so its owner can confirm it. |
+
+</details>
 
 ## Events
 

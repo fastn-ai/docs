@@ -5,6 +5,8 @@ hidden: true
 
 # Retently
 
+<img src="../../.gitbook/assets/connectors/retently.png" alt="Retently logo" width="64">
+
 Retently is a customer experience platform for running NPS, CSAT, CES and STAR surveys. This connector covers the full Retently CX REST API v2: account status, customers, companies, feedback responses, outbox records, survey templates, campaigns, campaign reports, metric scores, trend groups, transactional survey sending, historical feedback import, response tags and topics, subscription management, and email and domain suppression lists.
 
 | | |
@@ -12,8 +14,6 @@ Retently is a customer experience platform for running NPS, CSAT, CES and STAR s
 | **Category** | [Marketing](README.md) |
 | **Website** | [retently.com](https://retently.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 38 |
-| **Events** | 13 |
 | **Slug** | `retently` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Retently from **Build → Integrations → Connectors** and connect an accou
 | Delete Outbox Records | `deleteOutboxRecords` | Soft-deletes one or more sent-survey outbox records, identified either by survey ID or by email address. Email-based deletion removes every matching record unless narrowed by campaign or date range. |
 | Get Account Status | `getAccountStatus` | Returns a snapshot of the authenticated Retently account, including its identity and timezone, the current plan, the survey credit balance for the active billing period, and usage counters for contacts, feedback, outbox, queue and suppressions. Use it as a lightweight health check and to confirm survey credits are available before sending. |
 | Get Campaign Report | `getCampaignReport` | Retrieves the report for a single survey campaign, including trend data, delivery statistics and additional rating question statistics, optionally limited to a reporting window. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Company | `getCompany` | Retrieves a single company by its unique Retently company ID or by its domain name, including industry, tags, NPS, CSAT and CES metrics and customer count. |
 | Get Customer | `getCustomer` | Retrieves a single customer by their unique Retently customer ID, including profile fields, location, tags, custom properties, last survey sent and survey subscription status. Retently answers an unknown ID with HTTP 200 and a body whose code field is 404, so check the code field in the response. |
 | Get Feedback | `getFeedback` | Retrieves a single survey response by its unique feedback ID, including the score, comment, tags, topics and the customer snapshot captured at response time. Retently answers an unknown ID with HTTP 200 and a body whose code field is 404, so check the code field in the response. |
@@ -63,6 +70,8 @@ Add Retently from **Build → Integrations → Connectors** and connect an accou
 | Unsubscribe Customers | `unsubscribeCustomers` | Unsubscribes one or more customers from receiving future surveys, with an optional opt-out message. |
 | Update Feedback Tags (Deprecated) | `updateFeedbackTagsLegacy` | Deprecated by Retently in favour of Add Feedback Tags. Adds or replaces the tags on an NPS survey response. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -79,6 +88,15 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Response Marked Resolved | `response_updated_resolved` | Fires when a user in Retently marks a survey response as resolved. Save and switch the webhook ON. One such webhook delivers all seven response-action events. Retently does not sign deliveries. Schema modelled from Retently's documented default body plus the four response-action fields. |
 | Response Note Added or Edited | `response_updated_notes_updated` | Fires when a user in Retently adds or edits a note on a survey response. Save and switch the webhook ON. One such webhook delivers all seven response-action events. Retently does not sign deliveries. Schema modelled from Retently's documented default body plus the four response-action fields. |
 | Response Starred | `response_updated_starred` | Fires when a user in Retently stars a survey response. Save and switch the webhook ON. One such webhook delivers all seven response-action events. Retently does not sign deliveries. Schema modelled from Retently's documented default body plus the four response-action fields. |
+
+<details>
+
+<summary>See 3 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Response Unassigned | `response_updated_unassigned` | Fires when a user in Retently unassigns a survey response. Save and switch the webhook ON. One such webhook delivers all seven response-action events. Retently does not sign deliveries. Schema modelled from Retently's documented default body plus the four response-action fields. |
 | Response Unstarred | `response_updated_unstarred` | Fires when a user in Retently removes the star from a survey response. Save and switch the webhook ON. One such webhook delivers all seven response-action events. Retently does not sign deliveries. Schema modelled from Retently's documented default body plus the four response-action fields. |
 | Survey Bounced | `survey_bounced` | Fires when a survey email bounces. Retently has no webhook registration API, so this is configured by hand in each Retently survey campaign: open the campaign editor, go to Webhooks (Export), click '+ Create new webhook', choose the event 'Survey bounced', paste the fastn webhook URL as the Endpoint URL, and in the Request body keep the default fields and set the literal values "event": "survey_bounced" and "account_id": "&lt;your Retently account ID from Get Account Status&gt;". Save and switch the webhook ON. Repeat for every campaign that should deliver this event. Retently does not sign deliveries. The payload shape is admin-composed; the schema below is Retently's documented default request body. |
+
+</details>

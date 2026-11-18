@@ -5,6 +5,8 @@ hidden: true
 
 # Passcreator
 
+<img src="../../.gitbook/assets/connectors/passcreator.png" alt="Passcreator logo" width="64">
+
 Passcreator — Apple Wallet and Google Wallet pass platform. Manage pass templates, create/update/void/delete passes, bundles, push notifications, distribution links, app-scan validation, statistics and webhooks over the v1/v2/v3 REST API at app.passcreator.com.
 
 | | |
@@ -12,8 +14,6 @@ Passcreator — Apple Wallet and Google Wallet pass platform. Manage pass templa
 | **Category** | [Marketing](README.md) |
 | **Website** | [passcreator.com](https://passcreator.com) |
 | **Authentication** | API key |
-| **Actions** | 65 |
-| **Events** | 11 |
 | **Slug** | `passcreator` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Passcreator from **Build → Integrations → Connectors** and connect an ac
 | Create App Scan | `createAppScan` | Records a pass validation scan against an app configuration, as the Passcreator scanner app does, optionally voiding the pass. The API has no delete route for scans, so a scan written here is permanent. POST /api/appscan. |
 | Create iFrame Integration | `createIframeIntegration` | Creates an embeddable iFrame integration for a pass template so visitors can self-issue a pass. Returns 201 with integrationId. POST /api/integration/iframe/{template}. |
 | Create Or Update Pass Bundle | `upsertPassBundle` | Puts a set of passes into a bundle so they share one download link. Creates the bundle if the bundleId is new. POST /api/v2/pass-bundle/{bundleId}. |
+
+<details>
+
+<summary>See 55 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Pass | `createPass` | Creates a pass from a template using the legacy v1 route. Returns 201 with the pass identifier, the pkpass link and the pass page link. Any extra key you pass is forwarded as a template additional-property value (zapierStyle), e.g. "Points": "10". POST /api/pass?passtemplate={passtemplate}&zapierStyle=true. |
 | Create Pass (V3) | `createPassV3` | Creates a pass with the v3 API. The pass properties go inside a data object; extra keys inside data are template additional-property values. Set async=false to get the real barcodeValue back in the response. POST /api/v3/pass. |
 | Create Pass Template | `createPassTemplate` | Creates a new pass template. Requires name, description, organizationName, type, passTypeId, fields (at least one front field and one back field), barcode, images (logo and icon must be URLs, not null) and colors. Returns 201 with data.identifier. POST /api/v2/pass-template. |
@@ -90,6 +97,8 @@ Add Passcreator from **Build → Integrations → Connectors** and connect an ac
 | Update Pass Template (Legacy) | `updatePassTemplateLegacy` | Deprecated v1 route that updates a pass template's name, description or images. Prefer Patch Pass Template. POST /api/pass-template/{identifier}. |
 | Void Pass Bundle | `voidPassBundle` | Voids or un-voids every pass in a bundle in one call. PUT /api/v2/pass-bundle/void/{bundleId}. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -106,4 +115,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Pass Template Created | `pass_template_created` | A new pass template was created in the account. Schema modelled from the vendor's documented sample. |
 | Pass Template Updated | `pass_template_updated` | An existing pass template was changed. Schema modelled from the vendor's documented sample. |
 | Pass Updated | `pass_updated` | An existing pass was updated. Same payload shape as Pass Created, plus the personalised template properties in their new state. Schema modelled on the captured pass_created delivery and the vendor's documented sample. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Pass Voided | `pass_voided` | A pass was marked voided through an update. It does not fire when a pass merely expires. Same payload shape as Pass Updated. Schema modelled from the vendor's documented sample. |
+
+</details>

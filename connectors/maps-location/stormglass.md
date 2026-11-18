@@ -5,6 +5,8 @@ hidden: true
 
 # Stormglass
 
+<img src="../../.gitbook/assets/connectors/stormglass.png" alt="Stormglass logo" width="64">
+
 Stormglass provides global marine and land weather data. This connector covers the Stormglass v2 API: hourly weather forecasts, historical weather since 2014, ocean bio and soil data, tide extremes and hourly sea levels, tide station lists and area searches, sun and moon astronomy data, solar radiation and UV data, and elevation or bathymetry for any coordinate.
 
 | | |
@@ -12,8 +14,6 @@ Stormglass provides global marine and land weather data. This connector covers t
 | **Category** | [Maps and location](README.md) |
 | **Website** | [stormglass.io](https://stormglass.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 10 |
-| **Events** | 0 |
 | **Slug** | `stormglass` |
 
 ## Use it

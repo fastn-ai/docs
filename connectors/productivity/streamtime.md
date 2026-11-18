@@ -5,6 +5,8 @@ hidden: true
 
 # Streamtime
 
+<img src="../../.gitbook/assets/connectors/streamtime.png" alt="Streamtime logo" width="64">
+
 Streamtime is a job management, time tracking and quoting platform for creative agencies and studios. This connector covers the Streamtime public API: jobs, job items, phases, milestones, roles and users, companies and contacts, quotes, invoices and payments, logged time and expenses, labels, rate cards, branches, reporting and the universal search API.
 
 | | |
@@ -12,8 +14,6 @@ Streamtime is a job management, time tracking and quoting platform for creative 
 | **Category** | [Productivity](README.md) |
 | **Website** | [streamtime.net](https://streamtime.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 87 |
-| **Events** | 0 |
 | **Slug** | `streamtime` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Streamtime from **Build → Integrations → Connectors** and connect an acc
 | Create Job Item Sub-Item | `createJobItemSubItem` | Adds a to-do sub-item to a job item, so the work can be broken into checkable steps. |
 | Create Job Item User | `createJobItemUser` | Schedules a user onto a job item with a planned number of minutes, so the work appears on that person's schedule. A user can be scheduled onto a given job item only once; a second attempt is rejected with "Job item user already exists". |
 | Create Job Milestone | `createJobMilestone` | Creates a milestone on a job, marking a key date such as a client presentation or delivery deadline. |
+
+<details>
+
+<summary>See 77 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Job Phase | `createJobPhase` | Creates a phase on a job. Job items can then be assigned to the phase to group them into a stage of work. |
 | Create Label | `createLabel` | Attaches a label to a record, optionally also adding it to the master label list for that label type so it can be reused. |
 | Create Logged Expense | `createLoggedExpense` | Records a cost against a job, either as an expense or as a purchase order line. Streamtime has no logged expense delete endpoint, so an expense can only be superseded by updating it. |
@@ -111,3 +118,5 @@ Add Streamtime from **Build → Integrations → Connectors** and connect an acc
 | Update Job Status | `updateJobStatus` | Moves a job to a different status, for example from In Play to Complete or Archived. This is how a job is retired, since Streamtime has no job delete endpoint. A job must be completed before it can be archived, and an already-archived job is rejected with "This job can't be modified at the moment". |
 | Update Logged Expense | `updateLoggedExpense` | Updates a logged expense, changing its quantity, rates, supplier or status. Streamtime validates the full record, so send every required field. |
 | Update Logged Time | `updateLoggedTime` | Updates a logged time entry, changing its minutes, date, notes or status. Streamtime validates the full entry, so send every required field. |
+
+</details>

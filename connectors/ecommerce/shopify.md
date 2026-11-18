@@ -5,6 +5,8 @@ hidden: true
 
 # Shopify
 
+<img src="../../.gitbook/assets/connectors/shopify.png" alt="Shopify logo" width="64">
+
 Shopify Admin REST API connector for managing orders, products, customers, inventory, discounts, shipping, payments, and more.
 
 | | |
@@ -12,8 +14,6 @@ Shopify Admin REST API connector for managing orders, products, customers, inven
 | **Category** | [E-commerce](README.md) |
 | **Website** | [shopify.com](https://shopify.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 323 |
-| **Events** | 38 |
 | **Slug** | `shopify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Shopify from **Build → Integrations → Connectors** and connect an accoun
 | Browse Product Taxonomy | `browseProductTaxonomy` | Browse Shopify's Standard Product Taxonomy tree (GraphQL). Returns taxonomy categories with their GID, name, full path, level, and hierarchy - use these GIDs with Set Product Category, and to build a source-category to Shopify-taxonomy-GID mapping table. Pass a variables object: first (page size, required), and optionally search (text filter), childrenOf (a parent category GID to list its children), and after (pagination cursor from pageInfo.endCursor). With no search/childrenOf it returns top-level categories. |
 | Bulk Update Customer Addresses | `updateAddresseSetJson` | Performs bulk operations on a customer's addresses. Canonical version — updateSetJson is the duplicate. |
 | Calculate Refund | `createCalculateJson` | https://shopify.dev/docs/admin-api/rest/reference/orders/refund#calculate-2020-01 |
+
+<details>
+
+<summary>See 313 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel Fulfillment | `createFulfillmentCancelJson` | Cancels a fulfillment. |
 | Cancel Fulfillment Order | `createFulfillmentOrderCancelJson` | https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-01 |
 | Cancel Order | `createOrderCancelJson` | https://shopify.dev/docs/admin-api/rest/reference/orders/order#cancel-2020-04 |
@@ -348,6 +355,8 @@ Add Shopify from **Build → Integrations → Connectors** and connect an accoun
 | Update Theme Assets | `updateThemeAssetsJson` | https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#update-2020-04 |
 | Update Webhook | `update202004Webhook` | https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-04 |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -364,6 +373,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Customer Deleted | `customers/delete` | Emitted whenever a customer is deleted. |
 | Customer Updated | `customers/update` | Emitted whenever a customer is updated. |
 | Fulfillment Created | `fulfillments/create` | Emitted whenever a fulfillment is created. |
+
+<details>
+
+<summary>See 28 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Fulfillment Event Created | `fulfillment_events/create` | Emitted whenever a fulfillment event is created. |
 | Fulfillment Updated | `fulfillments/update` | Emitted whenever a fulfillment is updated. |
 | Inventory Item Created | `inventory_items/create` | Emitted whenever an inventory item is created. |
@@ -392,3 +408,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Return Updated | `returns/update` | Emitted when a return is updated, for example when return line items are removed. |
 | Reverse Delivery Deliverable Attached | `reverse_deliveries/attach_deliverable` | Emitted when a return shipping label or tracking details are attached to a reverse delivery. |
 | Reverse Fulfillment Order Disposed | `reverse_fulfillment_orders/dispose` | Emitted when items on a reverse fulfillment order are disposed (restocked, not restocked, missing or processing later), for example after goods are received back. |
+
+</details>

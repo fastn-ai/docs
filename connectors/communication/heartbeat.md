@@ -5,6 +5,8 @@ hidden: true
 
 # Heartbeat
 
+<img src="../../.gitbook/assets/connectors/heartbeat.jpg" alt="Heartbeat logo" width="64">
+
 Heartbeat is a community platform for creators, coaches and course businesses. This connector covers the full Heartbeat v0 REST API: users and pending users, roles, groups and group memberships, invitations, channels, channel categories and voice channels, threads, comments and chat channel messages, direct chats and direct messages, events with attendance and recurring instances, courses, lessons, documents, videos, notification counts and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Heartbeat is a community platform for creators, coaches and course businesses. T
 | **Category** | [Communication](README.md) |
 | **Website** | [heartbeat.chat](https://heartbeat.chat) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 53 |
-| **Events** | 11 |
 | **Slug** | `heartbeat` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Heartbeat from **Build → Integrations → Connectors** and connect an acco
 | Create Group | `createGroup` | Creates a new group in the Heartbeat community, optionally nested under a parent group and seeded with members by email. |
 | Create Invitation | `createInvitation` | Creates a new invitation link for the Heartbeat community. Members joining through the link receive the chosen role and are placed in the chosen groups. |
 | Create Lesson | `createLesson` | Creates a new lesson inside a module of a Heartbeat course cohort, with Markdown content, a hero media block, a publish status and optional community embed cards. |
+
+<details>
+
+<summary>See 43 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Pending User | `createPendingUser` | Creates a pending user in the Heartbeat community. The person does not yet exist in the community and is converted into a full member once they complete signup. |
 | Create Thread | `createThread` | Creates a new thread in a Heartbeat posts channel. The thread is visible to every member of the channel. |
 | Create User | `createUser` | Creates a new user in the Heartbeat community with a role and optional group memberships, profile picture and bio. The email address must be unique within the community. |
@@ -78,6 +85,8 @@ Add Heartbeat from **Build → Integrations → Connectors** and connect an acco
 | Update User | `updateUser` | Updates the profile of an existing Heartbeat community user, identified by email. Only the fields you supply are changed. |
 | Update Voice Channel | `updateVoiceChannel` | Updates an existing Heartbeat voice channel. Only the fields you supply are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -94,4 +103,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Thread Created | `THREAD_CREATE` | A thread was posted. Supply a filter of {"channelID": "..."} to watch a single channel, optionally with triggerOnMove. |
 | User Joined | `USER_JOIN` | A new member joined the Heartbeat community. |
 | User Joined Group | `GROUP_JOIN` | A member joined a group. Supply a filter of {"groupID": "..."} to watch a single group. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | User Updated | `USER_UPDATE` | A community member updated their profile. |
+
+</details>

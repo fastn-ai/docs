@@ -5,6 +5,8 @@ hidden: true
 
 # Google Meet
 
+<img src="../../.gitbook/assets/connectors/google-meet.png" alt="Google Meet logo" width="64">
+
 Google Meet REST API v2 connector (https://meet.googleapis.com/v2). Create and manage meeting spaces, end active conferences, and read conference records, participants, participant sessions, recordings, transcripts, and transcript entries. Also manages Google Workspace Events API subscriptions (https://workspaceevents.googleapis.com/v1) for Meet conference and participant events delivered to a Cloud Pub/Sub topic. OAuth 2.0 (Google) authorization-code auth.
 
 | | |
@@ -12,8 +14,6 @@ Google Meet REST API v2 connector (https://meet.googleapis.com/v2). Create and m
 | **Category** | [Communication](README.md) |
 | **Website** | [meet.google.com](https://meet.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 23 |
-| **Events** | 4 |
 | **Slug** | `googleMeet` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Meet from **Build → Integrations → Connectors** and connect an ac
 | Get Participant Session | `getParticipantSession` | Get a participant session by id. A participant session is one device-join interval of a participant. GET https://meet.googleapis.com/v2/conferenceRecords/{conferenceRecord}/participants/{participant}/participantSessions/{participantSession}. Requires scope meetings.space.created or meetings.space.readonly. |
 | Get Recording | `getRecording` | Get a recording of a conference record by id. GET https://meet.googleapis.com/v2/conferenceRecords/{conferenceRecord}/recordings/{recording}. Returns the recording metadata including the Drive file destination. Requires scope meetings.space.created or meetings.space.readonly. |
 | Get Space | `getSpace` | Get details about a meeting space by name or meetingCode. GET https://meet.googleapis.com/v2/spaces/{space}. The {space} path segment accepts either the space id, the meetingCode, or a full resource name segment. Requires scope meetings.space.created or meetings.space.readonly. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Subscription | `getSubscription` | Get details about a Workspace Events subscription by id. GET https://workspaceevents.googleapis.com/v1/subscriptions/{subscription}. |
 | Get Transcript | `getTranscript` | Get a transcript of a conference record by id. GET https://meet.googleapis.com/v2/conferenceRecords/{conferenceRecord}/transcripts/{transcript}. Returns transcript metadata including the Google Docs destination. Requires scope meetings.space.created or meetings.space.readonly. |
 | Get Transcript Entry | `getTranscriptEntry` | Get a transcript entry (one segment of transcribed speech by a participant) by id. GET https://meet.googleapis.com/v2/conferenceRecords/{conferenceRecord}/transcripts/{transcript}/entries/{entry}. Requires scope meetings.space.created or meetings.space.readonly. |
@@ -47,6 +54,8 @@ Add Google Meet from **Build → Integrations → Connectors** and connect an ac
 | Reactivate Subscription | `reactivateSubscription` | Reactivate a suspended Workspace Events subscription. POST https://workspaceevents.googleapis.com/v1/subscriptions/{subscription}:reactivate. Only works if the subscription is in the SUSPENDED state and not past its expiration. Returns a long-running operation. |
 | Update Space | `updateSpace` | Update details about a meeting space (its config). PATCH https://meet.googleapis.com/v2/spaces/{space}. Pass updateMask as a query param listing the config fields to update (e.g. config.moderation,config.accessType). Requires scope meetings.space.settings. |
 | Update Subscription | `updateSubscription` | Update a Workspace Events subscription (e.g. its eventTypes, payloadOptions, or ttl). PATCH https://workspaceevents.googleapis.com/v1/subscriptions/{subscription}. updateMask lists the fields to change. targetResource and notificationEndpoint.pubsubTopic are immutable. |
+
+</details>
 
 ## Events
 

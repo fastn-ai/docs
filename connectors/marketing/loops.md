@@ -5,6 +5,8 @@ hidden: true
 
 # Loops
 
+<img src="../../.gitbook/assets/connectors/loops.png" alt="Loops logo" width="64">
+
 Loops (loops.so) is an email platform for SaaS companies covering transactional email sending, contact management, custom contact properties, event-triggered emails, and mailing lists, all through one REST API.
 
 | | |
@@ -12,8 +14,6 @@ Loops (loops.so) is an email platform for SaaS companies covering transactional 
 | **Category** | [Marketing](README.md) |
 | **Website** | [loops.so](https://loops.so) |
 | **Authentication** | Bearer token |
-| **Actions** | 65 |
-| **Events** | 0 |
 | **Slug** | `loops` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Loops from **Build → Integrations → Connectors** and connect an account,
 | Create Component | `createComponent` | Creates a reusable email component from an LMX body, which can then be embedded in campaign and transactional emails. |
 | Create Contact | `createContact` | Creates a new contact in Loops. Returns an error if a contact with the same email or user ID already exists. |
 | Create Contact Property | `createContactProperty` | Creates a new custom contact property that can then be set on contacts and used to personalize emails and segment audiences. |
+
+<details>
+
+<summary>See 55 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Theme | `createTheme` | Creates a new email theme defining the colors, spacing, borders, fonts and heading styles applied across Loops emails. |
 | Create Transactional Email Template | `createTransactionalEmail` | Creates a new transactional email template. An empty draft email message is created automatically and its ID is returned; use Update Email Message to add content, then Publish Transactional Email Template before sending. |
 | Create Transactional Group | `createTransactionalGroup` | Creates a new transactional group for organising transactional email templates. The name cannot be the reserved value Unsorted. |
@@ -89,3 +96,5 @@ Add Loops from **Build → Integrations → Connectors** and connect an account,
 | Update Transactional Group | `updateTransactionalGroup` | Updates a transactional group's name or description. At least one field must be provided, and the reserved Unsorted group cannot be edited. |
 | Update Workflow Node | `updateWorkflowNode` | Updates the node-owned fields of a single workflow node, such as a trigger's event, a timer's delay or an experiment variant's sampling rate. Shared resources such as email messages and audience segments are updated through their own actions. |
 | Update Workflow Properties | `updateWorkflowProperties` | Updates a workflow's display properties. At least one of name or description must be provided. To change the workflow's mailing list use Change Workflow Mailing List instead. |
+
+</details>

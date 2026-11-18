@@ -5,6 +5,8 @@ hidden: true
 
 # Elasticsearch
 
+<img src="../../.gitbook/assets/connectors/elasticsearch.png" alt="Elasticsearch logo" width="64">
+
 Elasticsearch is a distributed search and analytics engine. This connector covers the Elasticsearch REST API as exposed by Elastic Cloud Serverless and Elastic Cloud deployments: index, alias, mapping, settings, index and component templates, data streams and lifecycle; document CRUD, bulk, multi-get, update/delete by query and reindex; search, multi-search, count, scroll, point-in-time, async search, search templates, field capabilities, term vectors, explain, rank evaluation and vector tiles; EQL, ES\|QL and SQL; ingest pipelines and simulation; enrich policies; synonyms, query rules, search applications and behavioral analytics; inference endpoints; transforms; Elastic connectors and sync jobs; Logstash pipelines; stored scripts; security (authenticate, API keys, roles, privileges); license, cluster info and cat APIs. Authenticates with an Elasticsearch API key sent as 'Authorization: ApiKey &lt;key&gt;'.
 
 | | |
@@ -12,8 +14,6 @@ Elasticsearch is a distributed search and analytics engine. This connector cover
 | **Category** | [Data and databases](README.md) |
 | **Website** | [elastic.co](https://elastic.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 213 |
-| **Events** | 0 |
 | **Slug** | `elasticsearch` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Elasticsearch from **Build → Integrations → Connectors** and connect an 
 | Check In Connector | `connectorCheckIn` | Update the last_seen field of an Elastic connector and set it to the current timestamp. |
 | Check User Privileges | `securityHasPrivileges` | Check whether a user holds a given set of cluster, index and application privileges. Any user may check their own privileges; checking another user's privileges requires the run-as feature. |
 | Clear an SQL Cursor | `sqlClearCursor` | Free the resources held by an SQL search cursor when the remaining pages are no longer needed. |
+
+<details>
+
+<summary>See 203 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clear Scroll Search | `clearScroll` | Clear the search context and results for one or more scrolling searches, freeing their resources before the scroll timeout expires. |
 | Close Point In Time | `closePointInTime` | Close a point in time (PIT) that was opened for search requests. A PIT is automatically closed when its keep_alive period elapses, but keeping points in time has a cost, so close them as soon as they are no longer required. |
 | Continue Scroll Search | `scroll` | Get the next batch of results from a scrolling search using the _scroll_id returned by a search request that set the scroll query parameter. The scroll API is no longer recommended for deep pagination; prefer search_after with a point in time (PIT) to page through more than 10,000 hits. |
@@ -237,3 +244,5 @@ Add Elasticsearch from **Build → Integrations → Connectors** and connect an 
 | Update the Connector Service Type | `connectorUpdateServiceType` | Update the service_type of a connector, which selects the data source the connector reads from. |
 | Update the Connector Status | `connectorUpdateStatus` | Update the lifecycle status of a connector. |
 | Validate Query | `indicesValidateQuery` | Validate a query without running it, reporting whether it is well formed and, with explain enabled, why it is not. Accepts a Query DSL body or a Lucene query string. |
+
+</details>

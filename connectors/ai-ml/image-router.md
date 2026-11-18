@@ -5,6 +5,8 @@ hidden: true
 
 # ImageRouter
 
+<img src="../../.gitbook/assets/connectors/image-router.jpg" alt="ImageRouter logo" width="64">
+
 ImageRouter is a unified, OpenAI-compatible API for AI image, video and text generation across dozens of providers (FLUX, Gemini, Imagen, GPT Image, Ideogram, Qwen, Seedream, Midjourney and more) behind one API key. This connector covers the complete ImageRouter API at https://api.imagerouter.io: image generation and editing, video generation, chat completions and responses for text models, the model catalog (v1 and v2 listings plus single-model lookup), credit balance and per-key usage, API key validation, and management-key API key creation.
 
 | | |
@@ -12,8 +14,6 @@ ImageRouter is a unified, OpenAI-compatible API for AI image, video and text gen
 | **Category** | [AI and ML](README.md) |
 | **Website** | [imagerouter.io](https://imagerouter.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `imageRouter` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add ImageRouter from **Build → Integrations → Connectors** and connect an ac
 | Get Model | `getModel` | Retrieves a single model by its full id (for example "google/gemini-2.5-flash" or "test/test"), returning its providers and pricing, release date, supported inputs (text, image, mask, quality, allowed sizes or seconds) and output types. Returns a 404 with code model_not_found when the id is unknown. |
 | List Models | `listModels` | Lists the models available on ImageRouter as an object keyed by model id (e.g. "openai/gpt-image-1"), with providers and pricing, release date, output types and supported parameters. Supports filtering by output type, provider, free tier and name, plus sorting and limiting. No authentication is required for this catalog. |
 | List Models V2 | `listModelsV2` | Lists the models available on ImageRouter using the v2 catalog format: a JSON array of model objects, each with its id, provider prefix, release date, output types, supported inputs (including allowed sizes) and an aggregated price range (min, average, max USD) across providers. Filter by provider, free tier or name, and sort or limit the result. To restrict by output type (image or video) use List Models, which supports the type filter. No authentication is required for this catalog. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Test API Key | `testApiKey` | Verifies that the connected ImageRouter API key is valid and active. Returns a success flag and the account's remaining credit balance in internal units (1/10000 USD). Useful as a connection health check. |
+
+</details>

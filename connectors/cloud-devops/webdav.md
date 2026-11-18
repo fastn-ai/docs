@@ -5,6 +5,8 @@ hidden: true
 
 # WebDAV
 
+<img src="../../.gitbook/assets/connectors/webdav.webp" alt="WebDAV logo" width="64">
+
 WebDAV (Web Distributed Authoring and Versioning) connector for remote file management over HTTP. Supports listing, reading, uploading, moving, copying, and deleting files and directories on any RFC 4918-compliant WebDAV server.
 
 | | |
@@ -12,8 +14,6 @@ WebDAV (Web Distributed Authoring and Versioning) connector for remote file mana
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [webdav.org](https://webdav.org) |
 | **Authentication** | Digest auth |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `webdav` |
 
 ## Use it

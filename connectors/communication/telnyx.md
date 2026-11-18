@@ -5,6 +5,8 @@ hidden: true
 
 # Telnyx
 
+<img src="../../.gitbook/assets/connectors/telnyx.png" alt="Telnyx logo" width="64">
+
 Telnyx CPaaS platform. Messaging (SMS/MMS), phone numbers and porting, Voice and Call Control, TeXML, Verify, Programmable Fax, Wireless/SIM, Storage, Email, AI Assistants, Video Rooms and account billing via the Telnyx v2 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Telnyx CPaaS platform. Messaging (SMS/MMS), phone numbers and porting, Voice and
 | **Category** | [Communication](README.md) |
 | **Website** | [telnyx.com](https://telnyx.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 1156 |
-| **Events** | 0 |
 | **Slug** | `telnyx` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Telnyx from **Build → Integrations → Connectors** and connect an account
 | Add Assistant Tool | `addassistanttool` | Add Assistant Tool |
 | Add Messages to AI Assistant | `callAddMessagesToAIAssistant` | Add messages to the conversation started by an AI assistant on the call. |
 | Add Phone Numbers to a DIR | `addDirPhoneNumbersSimplified` | Register phone numbers under a DIR. The enterprise is resolved server-side from the DIR id. Same body, failure modes, and batch semantics whichever path form you use. Pricing: This is a billable action. See https://telnyx.com/pricing/numbers for current pricing. |
+
+<details>
+
+<summary>See 1146 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add RCS Test Number | `inviteATestNumberToRCS` | Adds a test phone number to an RCS agent for testing purposes. |
 | Add SSL Certificate | `addStorageSSLCertificate` | Uploads an SSL certificate and its matching secret so that you can use Telnyx's storage as your CDN. |
 | Add Step(s) to Plan | `postpublicmissionsmissionsmissionidrunsrunidplansteps` | Add one or more steps to an existing plan |
@@ -1180,3 +1187,5 @@ Add Telnyx from **Build → Integrations → Connectors** and connect an account
 | View a Room Recording. | `viewRoomRecording` | View a room recording. |
 | View a Room Session. | `viewRoomSession` | View a room session. |
 | View a Room. | `viewRoom` | View a room. |
+
+</details>

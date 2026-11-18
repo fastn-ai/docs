@@ -5,6 +5,8 @@ hidden: true
 
 # BoxHero
 
+<img src="../../.gitbook/assets/connectors/box-hero.png" alt="BoxHero logo" width="64">
+
 BoxHero inventory management. Manage items, item attributes, locations, bundles, partners, purchase orders, sales orders, sales returns, price lists and inventory transactions (stock in, stock out, adjust, move) through the BoxHero Open API.
 
 | | |
@@ -12,8 +14,6 @@ BoxHero inventory management. Manage items, item attributes, locations, bundles,
 | **Category** | [E-commerce](README.md) |
 | **Website** | [boxhero.io](https://boxhero.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 85 |
-| **Events** | 6 |
 | **Slug** | `boxHero` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BoxHero from **Build → Integrations → Connectors** and connect an accoun
 | Create Sales Order | `createSalesOrder` | Creates a sales order against a customer with one or more order lines. Identify each line by exactly one of item_id, item_sku, bundle_id or bundle_sku. Set is_draft to keep the order in draft, or finalize_immediately with a location_id to ship every line and close the order at once. Returns the new order id. |
 | Create Sales Return | `createSalesReturn` | Creates a sales return against an existing sales order. Each return line references a source sales order line by its order_item_id, which you read from Get Sales Order. Set finalize_immediately with a location_id to receive the returned stock at once. Returns the new return id. |
 | Create Transaction | `createTransaction` | Records an inventory transaction that changes on-hand stock. Stock In (in) and Move Stock (move) take positive quantities, Stock Out (out) negative, Adjust Stock (adjust) signed. from_location_id is required on move and rejected on every other type; partner_id is allowed only on in and out; tx_time is rejected on adjust. Returns the new transaction id. |
+
+<details>
+
+<summary>See 75 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Bundle | `deleteBundle` | Permanently deletes a bundle by id. The component items themselves are not affected. Returns an empty object on success. |
 | Delete Bundle By SKU | `deleteBundleBySku` | Permanently deletes a bundle identified by its SKU (case-sensitive) rather than by id. The component items themselves are not affected. Returns an empty object on success. |
 | Delete Item | `deleteItem` | Permanently deletes an inventory item by id, together with its stock at every location. Transactions that referenced the item keep it as a deleted reference rather than disappearing. Returns an empty object on success. |
@@ -109,6 +116,8 @@ Add BoxHero from **Build → Integrations → Connectors** and connect an accoun
 | Update Sales Return | `updateSalesReturn` | Updates a sales return by id. Only the fields supplied are changed; supplying items replaces the full return line list. Returns the return id. |
 | Update Sales Return By Number | `updateSalesReturnByNumber` | Updates a sales return identified by its return number rather than by id. Only the fields supplied are changed; supplying items replaces the full return line list. Returns the return id. |
 | Update Transaction | `updateTransaction` | Edits an existing inventory transaction, creating a new revision and re-applying the stock change. The transaction type itself cannot be changed. Only the fields supplied are changed; supplying items replaces the full line list. Returns the transaction id. |
+
+</details>
 
 ## Events
 

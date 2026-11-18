@@ -5,6 +5,8 @@ hidden: true
 
 # Google BigQuery
 
+<img src="../../.gitbook/assets/connectors/bigquery.png" alt="Google BigQuery logo" width="64">
+
 Google BigQuery REST API v2 connector. Manage datasets, tables, jobs, queries, table data, routines, and models in Google Cloud BigQuery.
 
 | | |
@@ -12,8 +14,6 @@ Google BigQuery REST API v2 connector. Manage datasets, tables, jobs, queries, t
 | **Category** | [Data and databases](README.md) |
 | **Website** | [cloud.google.com](https://cloud.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 30 |
-| **Events** | 0 |
 | **Slug** | `bigquery` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google BigQuery from **Build → Integrations → Connectors** and connect a
 | Get Model | `getModel` | Gets the specified model resource by model ID. GET /projects/{projectId}/datasets/{datasetId}/models/{modelId}. |
 | Get Query Results | `getQueryResults` | Retrieves the results of a query job. GET /projects/{projectId}/queries/{jobId}. Useful to poll a previously started query/job. |
 | Get Routine | `getRoutine` | Gets the specified routine resource by routine ID. GET /projects/{projectId}/datasets/{datasetId}/routines/{routineId}. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Table | `getTable` | Gets the specified table resource by table ID, with full schema. GET /projects/{projectId}/datasets/{datasetId}/tables/{tableId}. |
 | Insert All Table Data | `insertAllTableData` | Streams data into BigQuery one record at a time without running a load job. POST /projects/{projectId}/datasets/{datasetId}/tables/{tableId}/insertAll. |
 | Insert Dataset | `insertDataset` | Creates a new empty dataset. POST /projects/{projectId}/datasets. |
@@ -54,3 +61,5 @@ Add Google BigQuery from **Build → Integrations → Connectors** and connect a
 | Update Dataset | `updateDataset` | Updates information in an existing dataset (full replacement of supplied resource). PUT /projects/{projectId}/datasets/{datasetId}. |
 | Update Routine | `updateRoutine` | Updates information in an existing routine (full replacement). PUT /projects/{projectId}/datasets/{datasetId}/routines/{routineId}. |
 | Update Table | `updateTable` | Updates information in an existing table (full replacement of supplied resource). PUT /projects/{projectId}/datasets/{datasetId}/tables/{tableId}. |
+
+</details>

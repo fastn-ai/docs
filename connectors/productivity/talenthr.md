@@ -5,6 +5,8 @@ hidden: true
 
 # TalentHR
 
+<img src="../../.gitbook/assets/connectors/talenthr.png" alt="TalentHR logo" width="64">
+
 TalentHR public API (v1) — all-in-one HR platform: employee directory and records, onboarding, time off, time tracking, attendance, documents, assets, benefits, applicant tracking, surveys, performance goals and HR reports.
 
 | | |
@@ -12,8 +14,6 @@ TalentHR public API (v1) — all-in-one HR platform: employee directory and reco
 | **Category** | [Productivity](README.md) |
 | **Website** | [talenthr.io](https://talenthr.io) |
 | **Authentication** | Basic auth |
-| **Actions** | 284 |
-| **Events** | 0 |
 | **Slug** | `talenthr` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TalentHR from **Build → Integrations → Connectors** and connect an accou
 | Change survey status | `changeSurveyStatus` | Change survey status Sets the workflow status of the survey identified in the path (for example draft, published, or archived). If the new status is not published and the survey is currently active, the survey is deactivated automatically. Requires permission to update this survey and a subscription that includes the Surveys feature. (PUT /v1/surveys/:survey/status) |
 | Clone a job position | `cloneAJobPosition` | API Endpoint to clone a specified job position. This endpoint allows for the cloning of an existing job position. The job position being cloned must be valid and must already exist within the system. When cloning a job position in a published status, the cloned job position will not retain the published status. Instead, it will be created as a draft one. When cloning an archived job position, the cloned job position will be in the active ones with 'draft' status. (POST /v1/job-positions/:jobPosition/clone) |
 | Clone an asset | `cloneAnAsset` | API endpoint to clone the specified asset. This endpoint allows for the cloning of an existing asset. The asset being cloned must be valid and must already exist within the system. (POST /v1/assets/:objectId) |
+
+<details>
+
+<summary>See 274 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clone survey | `cloneSurvey` | Clone a survey Creates a new draft copy of the survey identified in the path. The copy is inactive until published and retains the same structure as the source survey, including its questions, audience, and schedule settings. Requires permission to create a survey. There is no request body. Path parameters are documented under Params. (POST /v1/surveys/:survey/clone) |
 | Create a category for the inventory assets | `createACategoryForTheInventoryAssets` | API Endpoint to create a new category for the inventory assets. This endpoint facilitates the creation of a new inventory asset category. You should provide the name of the current category. (POST /v1/assets/inventory/categories) |
 | Create a category for the membership assets | `createACategoryForTheMembershipAssets` | API endpoint to create a new category for the membership assets. This endpoint facilitates the creation of a new membership asset category. You should provide the name of the current category. (POST /v1/assets/membership/categories) |
@@ -308,3 +315,5 @@ Add TalentHR from **Build → Integrations → Connectors** and connect an accou
 | Update Time Tracking Tag | `updateTimeTrackingTag` | Updates a time tracking tag's name or the population it applies to. |
 | Upload an employee's document | `uploadAnEmployeeDocument` | API Endpoint to upload a document in an employee’s folder. This endpoint facilitates the uploading of documents to the specified employee's private folder. Valid document formats include docx, doc, odt, odp, ods, xls, xlsx, ppt, pptx, pdf, png, jpg, jpeg, svg, csv, gif, webp, and tsv. The documents are exclusively accessible to the employee and are not visible to other employees. Also the Company Administrator and the Hr manager of the organization have access to the employees documents. The current document must not surpass 30MB. To upload a document into a specific employee folder, provide the folder_id request field. Filenames within the system must not start with any illegal character or symbol (e.g. @ (at sign), $ (dollar sign), % (percent), & (ampersand)) and should maintain a reasonable length, ensuring they do not exceed 250 characters. Request parameters: Name Type Required Desc (POST /v1/employees/:employee/documents) |
 | Upload employee's avatar | `uploadEmployeeAvatar` | API Endpoint to upload the avatar of the specified employee. This endpoint enables the update of the avatar (photo) for the specified employee. The uploaded image should be in one of the valid formats: png, jpg, jpeg, svg, or webp, and must not exceed 10MB in size. Filenames within the system must not start with any illegal character or symbol (e.g. @ (at sign), $ (dollar sign), % (percent), & (ampersand)) and should maintain a reasonable length, ensuring they do not exceed 250 characters. (POST /v1/employees/:employee/avatar) |
+
+</details>

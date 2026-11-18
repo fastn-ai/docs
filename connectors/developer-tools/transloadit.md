@@ -5,6 +5,8 @@ hidden: true
 
 # Transloadit
 
+<img src="../../.gitbook/assets/connectors/transloadit.png" alt="Transloadit logo" width="64">
+
 Transloadit API2 — file uploading and encoding: Assemblies, Templates, Template Credentials, Auth Keys, DAM (Storage) assets, queues, billing, assembly notifications and tus resumable uploads.
 
 | | |
@@ -12,8 +14,6 @@ Transloadit API2 — file uploading and encoding: Assemblies, Templates, Templat
 | **Category** | [Developer tools](README.md) |
 | **Website** | [transloadit.com](https://transloadit.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 37 |
-| **Events** | 8 |
 | **Slug** | `transloadit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Transloadit from **Build → Integrations → Connectors** and connect an ac
 | Create Resumable Upload | `createResumableUpload` | Start a tus resumable upload into a waiting Assembly. POST to the Assembly's tus host with Upload-Length and an Upload-Metadata header carrying base64 values for assembly_url, filename and fieldname. Answers 201 with the upload URL in the Location header. The Assembly must have been created with num_expected_upload_files above 0, otherwise the server replies "no active Assembly found". |
 | Create Template | `createTemplate` | Create a new Template. POST https://api2.transloadit.com/templates. Scope templates:write. `params` must contain name and template, e.g. {"name":"resize-images","template":{"steps":{...}}}. |
 | Create Template Credential | `createTemplateCredential` | Store a new Template Credential (e.g. an S3 bucket's keys) so Templates can reference it by name. POST https://api2.transloadit.com/template_credentials. Scope template_credentials:write. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Auth Key | `deleteAuthKey` | Delete an Auth Key. DELETE https://api2.transloadit.com/auth_keys/{auth_key_id}. Scope auth_keys:write. DANGEROUS: deleting the Auth Key your own connection uses permanently locks this connection out of the Workspace. Never pass the api_auth_key_id returned by your own Assembly responses. |
 | Delete Template | `deleteTemplate` | Delete a Template by id or name. DELETE https://api2.transloadit.com/templates/{template_id}. Scope templates:write. Irreversible. |
 | Delete Template Credential | `deleteTemplateCredential` | Delete a Template Credential by id. DELETE https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:write. Irreversible. |
@@ -61,6 +68,8 @@ Add Transloadit from **Build → Integrations → Connectors** and connect an ac
 | Update Template | `updateTemplate` | Edit an existing Template. PUT https://api2.transloadit.com/templates/{template_id}. Scope templates:write. `params` may contain name and/or template. |
 | Update Template Credential | `updateTemplateCredential` | Edit an existing Template Credential. PUT https://api2.transloadit.com/template_credentials/{credentials_id}. Scope template_credentials:write. |
 | Upload Resumable File Bytes | `uploadResumableFileBytes` | Send file bytes to a tus upload. PATCH https://{upload_host}/resumable/files/{upload_id} with Content-Type application/offset+octet-stream and the byte offset to continue from. Answers 204 with the new Upload-Offset. Note: the fastn HTTP engine sends the body as text, so this action is reliable for text-like payloads; true binary chunks are an engine limitation. |
+
+</details>
 
 ## Events
 

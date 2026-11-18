@@ -5,6 +5,8 @@ hidden: true
 
 # Rootly
 
+<img src="../../.gitbook/assets/connectors/rootly.png" alt="Rootly logo" width="64">
+
 Rootly incident management and on-call platform. Covers incidents, alerts, severities, teams, services, functionalities, environments, incident types, action items, retrospectives/post-mortems, workflows, schedules, escalation policies, on-call, catalogs, status pages and webhooks via the Rootly JSON:API v1 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Rootly incident management and on-call platform. Covers incidents, alerts, sever
 | **Category** | [IT and service management](README.md) |
 | **Website** | [rootly.com](https://rootly.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 578 |
-| **Events** | 33 |
 | **Slug** | `rootly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Rootly from **Build → Integrations → Connectors** and connect an account
 | Bulk delete Services | `bulkDeleteServices` | Bulk delete Services. Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes. |
 | Bulk delete Teams | `bulkDeleteGroups` | Bulk delete Teams. Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes. |
 | Bulk upsert Catalog Entities | `bulkUpsertCatalogEntities` | Bulk upsert Catalog Entities. Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. |
+
+<details>
+
+<summary>See 568 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk upsert Environments | `bulkUpsertEnvironments` | Bulk upsert Environments. Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists. |
 | Bulk upsert Functionalities | `bulkUpsertFunctionalities` | Bulk upsert Functionalities. Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists. |
 | Bulk upsert Services | `bulkUpsertServices` | Bulk upsert Services. Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists. |
@@ -603,6 +610,8 @@ Add Rootly from **Build → Integrations → Connectors** and connect an account
 | Updates the team's alert configuration | `updateAlertConfiguration` | Updates the team's alert configuration. |
 | Verifies an email address with token | `verifyUserEmailAddress` | Verifies an email address with token. Verifies an email address using a verification token |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -619,6 +628,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Incident Mitigated | `incident.mitigated` | An incident was mitigated. |
 | Incident Resolved | `incident.resolved` | An incident was resolved. |
 | Incident Timeline Event Created | `incident_event.created` | A timeline event was added to an incident. |
+
+<details>
+
+<summary>See 23 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Incident Timeline Event Deleted | `incident_event.deleted` | A timeline event was removed. |
 | Incident Timeline Event Updated | `incident_event.updated` | A timeline event changed. |
 | Incident Updated | `incident.updated` | An incident's attributes changed. |
@@ -642,3 +658,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Workflow Run Failed | `genius_workflow_run.failed` | A Rootly workflow run failed. |
 | Workflow Run Queued | `genius_workflow_run.queued` | A Rootly workflow run was queued. |
 | Workflow Run Started | `genius_workflow_run.started` | A Rootly workflow run started. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Entra ID
 
+<img src="../../.gitbook/assets/connectors/microsoft-entra-id.png" alt="Microsoft Entra ID logo" width="64">
+
 Microsoft Entra ID (formerly Azure Active Directory) identity and directory management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0). Manage users (create, read, update, delete, password change, licence assignment, manager and direct reports, sponsors, profile photo, sign-in session revocation), groups (create, read, update, delete, members, owners, settings, lifecycle policies, licences, mail senders), directory roles and role templates, administrative units and scoped role members, applications and service principals with their owners, keys, secrets and app role assignments, OAuth2 permission grants, organization branding and settings, verified domains, org contacts, devices, subscribed SKUs, and the directory audit and sign-in logs. Connect with a Microsoft work or school account using Entra ID OAuth 2.0. IMPORTANT: every directory permission this connector requests needs tenant administrator consent - a non-admin user cannot authorize it on their own.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Entra ID (formerly Azure Active Directory) identity and directory mana
 | **Category** | [IT and service management](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 107 |
-| **Events** | 0 |
 | **Slug** | `microsoftEntraId` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Entra ID from **Build → Integrations → Connectors** and connec
 | Add User App Role Assignment | `addUserAppRoleAssignment` | Grants a Microsoft Entra ID user an application role, which is how an application is assigned to a user. Use the app role's default GUID of all zeros when the application exposes no roles. |
 | Add User Sponsor | `addUserSponsor` | Assigns a user or group as a sponsor of a Microsoft Entra ID user, typically to attribute a guest account to an internal owner. |
 | Assign Group Licence | `assignGroupLicense` | Adds or removes subscription licences on a Microsoft Entra ID group, so that every member inherits them. Remove Licences is required and may be an empty array. |
+
+<details>
+
+<summary>See 97 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Assign User Licence | `assignUserLicense` | Adds or removes subscription licences for a Microsoft Entra ID user. The user must have a usageLocation set first. Remove Licences is required and may be an empty array. |
 | Assign User Manager | `assignUserManager` | Sets or replaces the manager of a Microsoft Entra ID user. The manager must be referenced by its full Graph read URL. |
 | Change My Password | `changeMyPassword` | Changes the password of the signed-in user, who must supply their current password. Microsoft Graph v1.0 offers this only for the signed-in user; to reset another user's password, set passwordProfile with Update User. |
@@ -131,3 +138,5 @@ Add Microsoft Entra ID from **Build → Integrations → Connectors** and connec
 | Update Service Principal | `updateServicePrincipal` | Updates a Microsoft Entra ID service principal, for example to disable it, require app role assignment or change its single sign-on settings. Only the properties you supply are sent. |
 | Update User | `updateUser` | Updates a Microsoft Entra ID user. Only the properties you supply are sent, so untouched attributes keep their values. Changing accountEnabled or passwordProfile requires a higher privileged administrator role than ordinary attribute edits. |
 | Verify Domain | `verifyDomain` | Verifies ownership of a domain after its DNS verification record has been published. Set Force Takeover only when taking over a domain currently linked to an unmanaged tenant that you own. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Coresignal
 
+<img src="../../.gitbook/assets/connectors/coresignal.png" alt="Coresignal logo" width="64">
+
 Coresignal B2B public web data API (CDAPI v2): search, collect and enrich company, employee, job and post records across Base, Clean and Multi-source datasets, plus Bulk Collect data requests, Agentic Search and employee-change webhook subscriptions. Metered by credits.
 
 | | |
@@ -12,8 +14,6 @@ Coresignal B2B public web data API (CDAPI v2): search, collect and enrich compan
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [coresignal.com](https://coresignal.com) |
 | **Authentication** | API key |
-| **Actions** | 76 |
-| **Events** | 3 |
 | **Slug** | `coresignal` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Coresignal from **Build → Integrations → Connectors** and connect an acc
 | Enrich Multi-source Company by Website or Social URL | `companyMultiSourceEnrich` | Look up an enriched Multi-source Company record from a company website or a company social-media profile URL. Supply EXACTLY ONE of website or social_url - supplying both returns 400. COSTS 20 CREDITS per successful call. |
 | Enrich Multi-source Employee by Profile URL | `employeeMultiSourceEnrich` | Look up an enriched Multi-source Employee record from a professional-network profile URL. COSTS 20 CREDITS per successful call. Returns personal data about a real person. |
 | Get Webhook Subscription | `getWebhookSubscription` | Retrieve the details of one webhook subscription: status, dates, watched entity, the query or filters it was created with, and when a notification was last sent. |
+
+<details>
+
+<summary>See 66 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Bulk Collect Files | `bulkCollectListFiles` | Check whether a Bulk Collect data request has finished and get the names of the prepared files. While processing it answers 202 with {\"message\":\"Data request is still being processed\"}; once ready it answers 200 with data_request_files. Free of credit charge; credits are deducted when the file becomes ready. |
 | List Webhook Subscriptions | `listWebhookSubscriptions` | List this account's webhook subscriptions with their status, creation and expiry dates. Defaults to active subscriptions only; set expired=true to include expired ones. About 1,000 rows per page. |
 | Map Legacy Base Job IDs | `jobBaseMapIds` | Translate up to 10,000 Base Job IDs from the current data structure into the IDs used by the new (version 2) structure. The endpoint takes a bare JSON array as its whole body, so job_ids is passed as JSON array text, e.g. '[419048934,418992857]'. Free of credit charge. |
@@ -100,6 +107,8 @@ Add Coresignal from **Build → Integrations → Connectors** and connect an acc
 | Subscribe to Experience Changes by Elasticsearch DSL | `subscribeExperienceChangesByEsDsl` | Create a 91-day webhook subscription for job starts, promotions and departures across every employee profile matching an Elasticsearch DSL query. No credits are charged for notifications. |
 | Subscribe to Experience Changes by ID List | `subscribeExperienceChangesByIds` | Create a 91-day webhook subscription that notifies your callback URL when any of the listed employees starts a job, is promoted or leaves a position. Experience webhooks are delivered daily. No credits are charged for notifications. |
 | Subscribe to Experience Changes by Search Filters | `subscribeExperienceChangesByFilter` | Create a 91-day webhook subscription for job starts, promotions and departures across every Base Employee profile matching simple search filters. This route is live but absent from Coresignal's published subscription-method table, which shows only ID-list and Elasticsearch DSL for experience changes. |
+
+</details>
 
 ## Events
 

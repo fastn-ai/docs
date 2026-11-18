@@ -5,6 +5,8 @@ hidden: true
 
 # Dropbox
 
+<img src="../../.gitbook/assets/connectors/dropbox.png" alt="Dropbox logo" width="64">
+
 Dropbox API v2 connector — files & folders (list, metadata, create, delete, move, copy, search, revisions, temporary links, upload/download), sharing (shared links, file/folder members), users (account, space usage), and file requests. RPC-style JSON over POST; content endpoints on content.dropboxapi.com. OAuth 2.0 with offline refresh.
 
 | | |
@@ -12,8 +14,6 @@ Dropbox API v2 connector — files & folders (list, metadata, create, delete, mo
 | **Category** | [Productivity](README.md) |
 | **Website** | [dropbox.com](https://dropbox.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 121 |
-| **Events** | 2 |
 | **Slug** | `dropbox` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dropbox from **Build → Integrations → Connectors** and connect an accoun
 | Check Job Status | `checkJobStatus` | ⛔ VERIFIED-BLOCKED 2026-06-05: app lacks scope sharing.write — enable in App Console + reconnect. sharing/check_job_status: poll async share/unshare job status. |
 | Check Remove Member Job Status | `checkRemoveMemberJobStatus` | ⛔ VERIFIED-BLOCKED 2026-06-05: app lacks scope sharing.write — enable in App Console + reconnect. sharing/check_remove_member_job_status: poll async member-removal job status. |
 | Check Share Job Status | `checkShareJobStatus` | ⛔ VERIFIED-BLOCKED 2026-06-05: app lacks scope sharing.write — enable in App Console + reconnect. sharing/check_share_job_status: poll async share-folder job status. |
+
+<details>
+
+<summary>See 111 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check User | `checkUser` | Performs User Authentication, validating the access token, and echoes back the supplied query string. An HTTP 200 with the supplied query indicates the Dropbox API infrastructure is reachable and the access token is valid. |
 | Copy | `copyFile` | Copy a file or folder to a different location in the user's Dropbox. If the source path is a folder all its contents will be copied. Returns the metadata of the copied entry. |
 | Copy Batch | `copyBatch` | Copy multiple files/folders to new locations at once (v2). POST files/copy_batch_v2. Returns synchronously (complete) or an async_job_id; poll with copyBatchCheck. |
@@ -145,6 +152,8 @@ Add Dropbox from **Build → Integrations → Connectors** and connect an accoun
 | Update Properties | `propertiesUpdate` | Add, update or remove properties associated with a file and templates via a delta. Unlike properties/overwrite, omitted fields are NOT deleted; only fields explicitly listed in remove_fields are removed. Returns an empty body on success. |
 | Update Template For User | `templatesUpdateForUser` | Update a user-owned template: change the template name, description, and/or add optional property field definitions. Returns the template_id. Cannot be called on a team member or admin's behalf. name, description and add_fields are all optional. |
 | Upload File | `uploadFile` | Create a new file with the contents provided in the request body. Use this single-request upload for files up to 150 MB. Content host endpoint: arguments are passed as a JSON string in the Dropbox-API-Arg header; the raw binary file content is sent as the request body. |
+
+</details>
 
 ## Events
 

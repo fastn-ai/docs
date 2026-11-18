@@ -5,6 +5,8 @@ hidden: true
 
 # Viral Loops
 
+<img src="../../.gitbook/assets/connectors/viral-loops.png" alt="Viral Loops logo" width="64">
+
 Viral Loops referral-marketing platform. Covers the full Backend API v3: campaign stats and campaign configuration, participant registration/edit/search/query/flag/convert, participant data, rank, order, referrals and referrer, pending and given rewards and reward redemption, plus the undocumented participant count, participant delete and campaign list routes. Participant records are personal data.
 
 | | |
@@ -12,8 +14,6 @@ Viral Loops referral-marketing platform. Covers the full Backend API v3: campaig
 | **Category** | [Marketing](README.md) |
 | **Website** | [viral-loops.com](https://viral-loops.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 19 |
-| **Events** | 3 |
 | **Slug** | `viralLoops` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Viral Loops from **Build → Integrations → Connectors** and connect an ac
 | Get Participant Count | `getParticipantCount` | Get the total number of participants in the campaign. Undocumented but live route. Takes no input. |
 | Get Participant Data | `getParticipantData` | Get a participant's full profile: name, email, referral code, rank, referral counts, points, referrer, redeemed and pending rewards. Identify the participant by either email or referralCode (supply exactly one). PERSONAL DATA: the response contains the participant's email address. |
 | Get Participant Order | `getParticipantOrder` | Get the join order of a participant (1 = joined first) together with the campaign lead count. Identify by email or referralCode. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Participant Rank | `getParticipantRank` | Get a participant's leaderboard rank, total referral count and points total. Identify by email or referralCode. Returns an empty object if the participant does not exist. |
 | Get Participant Referrals | `getParticipantReferrals` | List the people a participant has referred, with join date, conversion status and reward earned. Identify the referrer by email or referralCode; page with limit and offset and filter with conversionStatus. PERSONAL DATA: returns referred people's email addresses. |
 | Get Participant Referrer | `getParticipantReferrer` | Get the referrer record of a participant, including the referrer's referral code and the full campaign settings snapshot. Identify by email or referralCode. Returns 406 'Invalid Participant identifier' when the participant has no referrer or does not exist. PERSONAL DATA and SENSITIVE: the response embeds campaignSettingsJson, which includes the campaign captcha secret when one is configured. |
@@ -43,6 +50,8 @@ Add Viral Loops from **Build → Integrations → Connectors** and connect an ac
 | Redeem Reward | `redeemReward` | Mark one of a participant's pending rewards as redeemed. Get the rewardId from Get Pending Rewards. Identify the participant by email or referralCode. CAUTION: redemption is irreversible and, on a campaign with rewarding emails enabled, notifies the participant. |
 | Register Participant | `registerParticipant` | Register a new participant in the campaign and get their referral code back. Pass referrerReferralCode to record who referred them. CAUTION: this enrols a real person and, on a campaign with an email service configured, triggers the campaign's welcome/referral emails. Disposable-email domains are rejected with 451. |
 | Search Participants | `searchParticipants` | Search and page the campaign's participants, filtering by free-text search term, conversion status or acquisition source. PERSONAL DATA: returns email addresses, fraud/risk scores and custom fields. |
+
+</details>
 
 ## Events
 

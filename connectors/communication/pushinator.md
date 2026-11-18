@@ -5,6 +5,8 @@ hidden: true
 
 # Pushinator
 
+<img src="../../.gitbook/assets/connectors/pushinator.png" alt="Pushinator logo" width="64">
+
 Pushinator push notifications. Covers the public REST API (api.pushinator.com/api/v2 — send notifications, manage channels, current user) and the full console API (api.pushinator.com/api/console/v2 — channels, subscribers, notification drafts/history/deliveries, API tokens, inbound channel webhooks, domain-uptime alerts, Polymarket price alerts, plans and account).
 
 | | |
@@ -12,8 +14,6 @@ Pushinator push notifications. Covers the public REST API (api.pushinator.com/ap
 | **Category** | [Communication](README.md) |
 | **Website** | [pushinator.com](https://pushinator.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 63 |
-| **Events** | 0 |
 | **Slug** | `pushinator` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pushinator from **Build → Integrations → Connectors** and connect an acc
 | Create Notification Draft (Console API) | `consoleCreateNotification` | Console API: creates a notification in status "created" WITHOUT dispatching it. Dispatch it afterwards with Dispatch Notification (Console API). POST /api/console/v2/notifications. |
 | Create Polymarket Condition (Console API) | `consoleCreatePolymarketCondition` | Console API: adds a Polymarket price-alert condition to a channel. condition_type is price_threshold, price_change or resolution. POST /api/console/v2/channels/{channelId}/polymarket-alerts/conditions. |
 | Delete Channel (Console API) | `consoleDeleteChannel` | Console API: permanently deletes a channel with its subscribers and notification history. DELETE /api/console/v2/channels/{channelId}. |
+
+<details>
+
+<summary>See 53 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Channel (Public API) | `apiDeleteChannel` | Public API: permanently deletes a channel, its subscribers and its notification history. DELETE /api/v2/channels/{channelId} (undocumented but live). |
 | Delete Channel Inbound Webhook (Console API) | `consoleDeleteChannelWebhook` | Console API: removes a channel inbound webhook endpoint. DELETE /api/console/v2/channels/{channelId}/webhooks/{webhookId}. |
 | Delete Console Account (Console API) | `consoleDeleteAccount` | Console API: permanently deletes the signed-in Pushinator account with all its channels, subscribers, tokens and history. Irreversible and removes the identity this connection authenticates as. DELETE /api/console/v2/user. |
@@ -87,3 +94,5 @@ Add Pushinator from **Build → Integrations → Connectors** and connect an acc
 | Update Watched Domain (Console API) | `consoleUpdateDomainAlert` | Console API: changes the label, target domain or enabled alert types of a watched domain. The path segment is the CURRENT domain name, url-encoded. PUT /api/console/v2/channels/{channelId}/domain-alerts/domains/{domain}. |
 | Upgrade Plan (Console API) | `consoleUpgradePlan` | Console API: starts a paid plan change for the account. This spends real money - it is the checkout step for the Pro and Scale plans. POST /api/console/v2/upgrade. |
 | Watch Domain (Console API) | `consoleCreateDomainAlert` | Console API: starts watching a domain on this channel. alerts is a map keyed by alert type - expiry_threshold {enabled, threshold_days}, registrar_change {enabled}, ns_change {enabled}, available_now {enabled}. At least one must be enabled. POST /api/console/v2/channels/{channelId}/domain-alerts/domains. |
+
+</details>

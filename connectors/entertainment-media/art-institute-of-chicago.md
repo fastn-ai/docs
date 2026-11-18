@@ -5,6 +5,8 @@ hidden: true
 
 # Art Institute of Chicago
 
+<img src="../../.gitbook/assets/connectors/art-institute-of-chicago.png" alt="Art Institute of Chicago logo" width="64">
+
 The Art Institute of Chicago public API: free, keyless access to the museum's collection (artworks, artists, places, galleries, exhibitions, images, audio, texts), shop products, mobile tours, publications, events, website content and hours, with list, get-by-id and full-text search for each resource. Anonymous use is rate-limited to 60 requests per minute.
 
 | | |
@@ -12,8 +14,6 @@ The Art Institute of Chicago public API: free, keyless access to the museum's co
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [artic.edu](https://artic.edu) |
 | **Authentication** | No authentication |
-| **Actions** | 103 |
-| **Events** | 0 |
 | **Slug** | `artInstituteOfChicago` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Art Institute of Chicago from **Build → Integrations → Connectors** and 
 | Get Artwork Place Qualifier | `getArtworkPlaceQualifier` | Returns one of the artwork place qualifiers by id. Docs: https://api.artic.edu/docs |
 | Get Artwork Type | `getArtworkType` | Returns one of the artwork types by id. Docs: https://api.artic.edu/docs |
 | Get Category Term | `getCategoryTerm` | Returns one of the category terms (departments, themes, classifications, subjects, styles, techniques, materials) by id. Docs: https://api.artic.edu/docs |
+
+<details>
+
+<summary>See 93 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Digital Publication | `getDigitalPublication` | Returns one of the digital publications by id. Docs: https://api.artic.edu/docs |
 | Get Digital Publication Article | `getDigitalPublicationArticle` | Returns one of the digital publication articles by id. Docs: https://api.artic.edu/docs |
 | Get Educator Resource | `getEducatorResource` | Returns one of the educator resources by id. Docs: https://api.artic.edu/docs |
@@ -127,3 +134,5 @@ Add Art Institute of Chicago from **Build → Integrations → Connectors** and 
 | Search Texts | `searchTexts` | Full-text searches text assets; returns matching records with relevance score and optional facet counts. Docs: https://api.artic.edu/docs |
 | Search Tours | `searchTours` | Full-text searches mobile app tours; returns matching records with relevance score and optional facet counts. Docs: https://api.artic.edu/docs |
 | Search Videos | `searchVideos` | Full-text searches video assets; returns matching records with relevance score and optional facet counts. Docs: https://api.artic.edu/docs |
+
+</details>

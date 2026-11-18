@@ -5,14 +5,14 @@ hidden: true
 
 # SmartSurvey
 
+<img src="../../.gitbook/assets/connectors/smart-survey.png" alt="SmartSurvey logo" width="64">
+
 SmartSurvey is a UK-based online survey and feedback platform. This connector covers the documented SmartSurvey Public API v2: surveys and survey folders, pages, responses, tracking links and collectors, invitations and their recipients, contact lists and contacts, exports and downloads, filter groups, sharing permissions, themes, the file library, account users, API keys, and webhook registration.
 
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Authentication** | Basic auth |
-| **Actions** | 89 |
-| **Events** | 0 |
 | **Slug** | `smartSurvey` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add SmartSurvey from **Build → Integrations → Connectors** and connect an ac
 | Create Contact List | `createContactList` | Creates a new email contact list on the account. |
 | Create Contact List With Custom Columns | `createContactListWithColumns` | Creates a new email contact list together with the custom columns its contacts will carry. |
 | Create File Library Folder | `createFileLibraryFolder` | Creates a new folder in the account file library. |
+
+<details>
+
+<summary>See 79 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Survey | `createSurvey` | Creates a new survey on the account. |
 | Create Survey Folder | `createSurveyFolder` | Creates a new survey folder on the account. |
 | Create Survey Page | `createSurveyPage` | Adds a new page to the end of a survey. |
@@ -112,3 +119,5 @@ Add SmartSurvey from **Build → Integrations → Connectors** and connect an ac
 | Update Survey Tracking Link Auto Close Date | `updateSurveyTrackingLinkAutoCloseDate` | Sets the date on which a tracking link closes itself automatically. |
 | Update Survey Tracking Link Text | `updateSurveyTrackingLinkText` | Changes the vanity text of a web tracking link, provided the new text is available. |
 | Update Webhook | `updateWebhook` | Updates the endpoint URL, events or state of a registered webhook. |
+
+</details>

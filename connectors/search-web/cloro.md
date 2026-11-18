@@ -5,6 +5,8 @@ hidden: true
 
 # cloro
 
+<img src="../../.gitbook/assets/connectors/cloro.png" alt="cloro logo" width="64">
+
 cloro extracts structured data from AI answer engines and search results - ChatGPT, Google Gemini, Grok, Microsoft Copilot, Perplexity, Google AI Mode, Google Search (with AI Overview) and Google News - geo-targeted to any supported country. This connector covers the full cloro v1 API: synchronous monitoring endpoints, Google redirect resolution, asynchronous tasks and batches, queue status and clearing, credit balance, and supported countries and states.
 
 | | |
@@ -12,8 +14,6 @@ cloro extracts structured data from AI answer engines and search results - ChatG
 | **Category** | [Search and web](README.md) |
 | **Website** | [cloro.dev](https://cloro.dev) |
 | **Authentication** | Bearer token |
-| **Actions** | 17 |
-| **Events** | 0 |
 | **Slug** | `cloro` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add cloro from **Build → Integrations → Connectors** and connect an account,
 | List States | `listStates` | Returns the US states supported for state-level geo-targeting on the ChatGPT, Gemini, Grok, Copilot and Perplexity endpoints. Only the United States is supported; other countries return an empty list. |
 | Monitor ChatGPT | `monitorChatGpt` | Sends a prompt to ChatGPT from the chosen country and returns the structured answer: response text, cited sources, citation pills, brand entities and map entries, and optionally shopping cards, inline products, ads, query fan-out, Markdown, HTML and the raw response. Costs 5 credits (+2 for any of raw response, fan-out, ads or shopping; +2 for state targeting) plus a 2 credit synchronous surcharge. |
 | Monitor Gemini | `monitorGemini` | Sends a prompt to Google Gemini from the chosen country and returns the structured answer text, cited sources, citation pills and place cards, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge. |
+
+<details>
+
+<summary>See 7 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Monitor Google AI Mode | `monitorAiMode` | Sends a prompt to Google AI Mode and returns the structured answer text, sources, citation pills, places, shopping cards, ads, inline products, videos and map data, optionally with expanded merchant product results. Costs 4 credits (+1 per expanded product cluster) plus a 2 credit synchronous surcharge. |
 | Monitor Google News | `monitorGoogleNews` | Runs a Google News search and returns structured news articles with titles, links, snippets, sources, dates and thumbnails across up to 10 result pages. Costs 3 credits for page one, +2 per extra page, plus a 2 credit synchronous surcharge. |
 | Monitor Google Search | `monitorGoogleSearch` | Runs a Google web search and returns structured results: organic results, People Also Ask, related searches, sponsored ads, shopping cards, local pack, Knowledge Graph and, when requested, the AI Overview. Costs 3 credits for page one, +2 per extra page, +2 for AI Overview, plus a 2 credit synchronous surcharge. |
@@ -41,3 +48,5 @@ Add cloro from **Build → Integrations → Connectors** and connect an account,
 | Monitor Microsoft Copilot | `monitorCopilot` | Sends a prompt to Microsoft Copilot from the chosen country and returns the structured answer text, cited sources, citation pills, shopping cards, map entries and query fan-out, with optional Markdown, HTML and raw response. Costs 5 credits (+2 for state targeting) plus a 2 credit synchronous surcharge. |
 | Monitor Perplexity | `monitorPerplexity` | Sends a prompt to Perplexity from the chosen country and returns the structured answer text, cited sources, citation pills, related queries, videos, images, hotels, places and shopping cards, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge. |
 | Resolve Google Redirect Link | `resolveGoogleRedirectLink` | Resolves a Google /goto or /url redirect link (as returned in the redirectLink fields of Google Search, Google News and AI Mode results) to its final destination URL. |
+
+</details>

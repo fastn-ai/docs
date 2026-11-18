@@ -5,6 +5,8 @@ hidden: true
 
 # UK Parliament Lords Votes API
 
+<img src="../../.gitbook/assets/connectors/uk-parliament-lords-votes.png" alt="UK Parliament Lords Votes API logo" width="64">
+
 The UK Parliament Lords Votes API gives open data on House of Lords divisions (votes): search divisions by title, date and member, get a division with every Lord's vote, count results, get a member's voting record and results grouped by party. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The UK Parliament Lords Votes API gives open data on House of Lords divisions (v
 | **Category** | [Data and databases](README.md) |
 | **Website** | [parliament.uk](https://parliament.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `ukParliamentLordsVotes` |
 
 ## Use it

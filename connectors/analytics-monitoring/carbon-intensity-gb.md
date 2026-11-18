@@ -5,6 +5,8 @@ hidden: true
 
 # Carbon Intensity API (GB)
 
+<img src="../../.gitbook/assets/connectors/carbon-intensity-gb.png" alt="Carbon Intensity API (GB) logo" width="64">
+
 The Carbon Intensity API from National Energy System Operator (NESO) gives the carbon intensity (gCO2/kWh) of Great Britain's electricity: current, forecast, historic and statistics, nationally and for 14 regions, England, Scotland, Wales or an outward postcode, plus the generation mix and fuel intensity factors. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The Carbon Intensity API from National Energy System Operator (NESO) gives the c
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [carbonintensity.org.uk](https://carbonintensity.org.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `carbonIntensityGb` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Carbon Intensity API (GB) from **Build → Integrations → Connectors** and
 | Get Generation Mix Past 24h | `getGenerationMixPast24h` | Get the national generation mix for the 24 hours before a datetime (GET /generation/{fromDate}T{fromHour}:{fromMinute}Z/pt24h). Docs: https://carbon-intensity.github.io/api-definitions/ |
 | Get Generation Mix Range | `getGenerationMixRange` | Get the national generation mix between two datetimes (GET /generation/{fromDate}T{fromHour}:{fromMinute}Z/{toDate}T{toHour}:{toMinute}Z). Docs: https://carbon-intensity.github.io/api-definitions/ |
 | Get National Intensity at Time | `getIntensityAt` | Get national carbon intensity for the half hour containing a datetime (GET /intensity/{fromDate}T{fromHour}:{fromMinute}Z). Docs: https://carbon-intensity.github.io/api-definitions/ |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get National Intensity by Date | `getIntensityByDate` | Get national carbon intensity for every half hour of a date (GET /intensity/date/{date}). Docs: https://carbon-intensity.github.io/api-definitions/ |
 | Get National Intensity by Date and Period | `getIntensityByDatePeriod` | Get national carbon intensity for one settlement period of a date (GET /intensity/date/{date}/{period}). Docs: https://carbon-intensity.github.io/api-definitions/ |
 | Get National Intensity Forecast 24h | `getIntensityForward24h` | Get national carbon intensity for 24 hours forward from a datetime (GET /intensity/{fromDate}T{fromHour}:{fromMinute}Z/fw24h). Docs: https://carbon-intensity.github.io/api-definitions/ |
@@ -57,3 +64,5 @@ Add Carbon Intensity API (GB) from **Build → Integrations → Connectors** and
 | Get Scotland Intensity | `getScotlandIntensity` | Get current carbon intensity and generation mix for Scotland (GET /regional/scotland). Docs: https://carbon-intensity.github.io/api-definitions/ |
 | Get Today's National Intensity | `getTodayIntensity` | Get national carbon intensity for every half hour of today (GET /intensity/date). Docs: https://carbon-intensity.github.io/api-definitions/ |
 | Get Wales Intensity | `getWalesIntensity` | Get current carbon intensity and generation mix for Wales (GET /regional/wales). Docs: https://carbon-intensity.github.io/api-definitions/ |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Cohere
 
+<img src="../../.gitbook/assets/connectors/cohere.png" alt="Cohere logo" width="64">
+
 Cohere AI platform connector (api.cohere.com). Full coverage of v2 chat, embed, rerank and v1 classify, tokenize/detokenize, models, datasets, embed-jobs, and check-api-key. Cheapest chat model: command-r7b-12-2024.
 
 | | |
@@ -12,8 +14,6 @@ Cohere AI platform connector (api.cohere.com). Full coverage of v2 chat, embed, 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [cohere.com](https://cohere.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 25 |
-| **Events** | 0 |
 | **Slug** | `cohere` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cohere from **Build → Integrations → Connectors** and connect an account
 | Create Embed Job | `createEmbedJob` | Create an Embed Job. This API launches an async Embed job for a [Dataset](https://docs.cohere.com/docs/datasets) of type `embed-input`. The result of a completed embed job is new Dataset of type `embed-output`, which contains the original text entries and the corresponding embeddings. |
 | Delete Dataset | `deleteDataset` | Delete a Dataset. Delete a dataset by ID. Datasets are automatically deleted after 30 days, but they can also be deleted manually. |
 | Detokenize | `detokenize` | Detokenize. This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page. |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Embed | `embed` | Embed API (v2). This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents. Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page. If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search). |
 | Embed API (v1) | `embedV1` | Embed API (v1). This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents. Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page. If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search). |
 | Get Dataset | `getDataset` | Get a Dataset. Retrieve a dataset by ID. See ['Datasets'](https://docs.cohere.com/docs/datasets) for more information. |
@@ -49,3 +56,5 @@ Add Cohere from **Build → Integrations → Connectors** and connect an account
 | Rerank API (v1) | `rerankV1` | Rerank API (v1). This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score. |
 | Retrieve a batch | `getBatch` | Retrieve a batch. Retrieves a batch |
 | Tokenize | `tokenize` | Tokenize. This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page. |
+
+</details>

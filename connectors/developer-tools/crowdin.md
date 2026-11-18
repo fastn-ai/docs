@@ -5,6 +5,8 @@ hidden: true
 
 # Crowdin
 
+<img src="../../.gitbook/assets/connectors/crowdin.png" alt="Crowdin logo" width="64">
+
 Crowdin localization management platform (crowdin.com REST API v2). Manage projects, source files and directories, branches, source strings, translations and approvals, target languages, glossaries and terms, storages, and project webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Crowdin localization management platform (crowdin.com REST API v2). Manage proje
 | **Category** | [Developer tools](README.md) |
 | **Website** | [crowdin.com](https://crowdin.com) |
 | **Authentication** | API key |
-| **Actions** | 286 |
-| **Events** | 28 |
 | **Slug** | `crowdin` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Crowdin from **Build → Integrations → Connectors** and connect an accoun
 | Add Glossary | `addGlossary` | Creates a glossary in the organization for a given source language. Returns the created glossary with its id. |
 | Add Glossary Term | `addGlossaryTerm` | Adds a term to a glossary, optionally as a translation of an existing term or concept. Returns the created term with its id and concept id. |
 | Add Label | `addLabel` | Creates a label in a Crowdin project. Returns the created label with its numeric id, which is then used to assign the label to strings or screenshots. |
+
+<details>
+
+<summary>See 276 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Organization Webhook | `addOrganizationWebhook` | Creates an ORGANIZATION-level webhook (POST /webhooks) that fires on account-wide events such as project.created, project.deleted or project.restored. Crowdin does NOT sign these deliveries - there is no signature header, only the user-supplied headers map, so the receiving endpoint must authenticate by some other means. Some events require batchingEnabled=true (400 batchingRequired otherwise). |
 | Add Project | `addProject` | Creates a new Crowdin project. Requires a name and a source language id; target languages, visibility, QA and pre-translation settings are optional. Returns the created project object including its numeric id and identifier. |
 | Add Project File Format Settings | `addProjectFileFormatSettings` | Configures how Crowdin parses one file format inside a project. `format` is the Crowdin format key (properties, xml, json, docx, ...) and `settings` is the format-specific option object, e.g. {"escapeQuotes":3,"escapeSpecialCharacters":1} for Java Properties. Returns the created settings row with its id. |
@@ -311,6 +318,8 @@ Add Crowdin from **Build → Integrations → Connectors** and connect an accoun
 | Upload Translations | `uploadTranslations` | Uploads translations for ONE target language from a file already in Crowdin storage (use Add Storage first). Synchronous: returns 200 with an `info` block counting imported, approved and skipped strings. On a file-based project fileId says which source file the translations belong to. |
 | Validate Text by QA Checks | `validateTextByQaChecks` | Runs the project's QA checks against a candidate translation WITHOUT saving it, and returns every check that would fire with its category and description. LIMIT: the literal body template fixes the ARRAY LENGTH, so exactly ONE candidate translation is validated per call. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -327,6 +336,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Final Translation Updated | `translation.updated` | The final translation of a string changed via Replace in suggestions. Schema not captured in this pass. |
 | Project Build Finished | `project.built` | A translations build completed successfully. Schema not captured in this pass. |
 | Project Fully Approved | `project.approved` | Every string in the project is approved. Schema not captured in this pass. |
+
+<details>
+
+<summary>See 18 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Project Fully Translated | `project.translated` | Every string in the project is translated. Schema not captured in this pass. |
 | Project QA Check Finished | `project.qa.finished` | QA checks completed for the whole project. Schema not captured in this pass. |
 | Source String Added | `string.added` | A source string was added. Crowdin REQUIRES batchingEnabled for this event (400 batchingRequired otherwise), so deliveries arrive batched. Schema below is the default payload template Crowdin itself returned at registration, not a captured delivery. |
@@ -345,3 +361,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Translation Suggestion Added | `suggestion.added` | A translation was suggested for a source string. Schema below is the default payload template Crowdin itself returned at registration, not a captured delivery. |
 | Translation Suggestion Deleted | `suggestion.deleted` | A translation suggestion was deleted. Schema not captured in this pass. |
 | Translation Suggestion Updated | `suggestion.updated` | An existing translation suggestion was changed. Schema not captured in this pass. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Shippo
 
+<img src="../../.gitbook/assets/connectors/shippo.png" alt="Shippo logo" width="64">
+
 Shippo multi-carrier shipping API — create addresses, parcels, and shipments, shop rates across carriers, buy shipping labels, track packages, manage customs, refunds, orders, manifests, batches, carrier accounts, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Shippo multi-carrier shipping API — create addresses, parcels, and shipments, 
 | **Category** | [E-commerce](README.md) |
 | **Website** | [goshippo.com](https://goshippo.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 61 |
-| **Events** | 0 |
 | **Slug** | `shippo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Shippo from **Build → Integrations → Connectors** and connect an account
 | Create Order | `createOrder` | Create an order representing a customer purchase to be fulfilled, including recipient address and line items. |
 | Create Parcel | `createParcel` | Create a parcel object describing the dimensions and weight of a package to be shipped. |
 | Create Pickup | `createPickup` | Schedule a carrier pickup for one or more purchased transactions at a location within a requested time window. |
+
+<details>
+
+<summary>See 51 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Refund | `createRefund` | Request a refund for a purchased shipping label transaction. |
 | Create Service Group | `createServiceGroup` | Create a service group that bundles carrier service levels for presenting live checkout rates. |
 | Create Shipment | `createShipment` | Create a shipment from a sender address, recipient address, and one or more parcels. Returns available rates across all connected carriers. Pass async false to receive rates synchronously. |
@@ -85,3 +92,5 @@ Add Shippo from **Build → Integrations → Connectors** and connect an account
 | Update User Parcel Template | `updateUserParcelTemplate` | Update an existing user parcel template by its object ID. |
 | Update Webhook | `updateWebhook` | Update an existing webhook subscription, for example to change its URL, event, or active status. |
 | Validate Address | `validateAddress` | Validate an existing address object and return deliverability results and any corrections. |
+
+</details>

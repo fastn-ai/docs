@@ -5,6 +5,8 @@ hidden: true
 
 # TimeCamp
 
+<img src="../../.gitbook/assets/connectors/timecamp.png" alt="TimeCamp logo" width="64">
+
 TimeCamp time tracking and project management API. Track time entries and timers, manage tasks and projects, users, groups and roles, computer activities, attendance and approvals, tags and tag lists, billing rates, expenses, custom fields, clients, invoices and data exports.
 
 | | |
@@ -12,8 +14,6 @@ TimeCamp time tracking and project management API. Track time entries and timers
 | **Category** | [Productivity](README.md) |
 | **Website** | [timecamp.com](https://timecamp.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 154 |
-| **Events** | 0 |
 | **Slug** | `timecamp` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TimeCamp from **Build → Integrations → Connectors** and connect an accou
 | Assign Invoice to Expense | `assignInvoiceToExpense` | Links an invoice to one or more expenses. (TimeCamp API v3.) |
 | Assign Tag List to Task | `assignTagListToTask` | Assigns a tag list to a task or updates an existing assignment. (TimeCamp API v3.) |
 | Assign Users to Project | `assignUsersToProject` | Assigns one or more users to a project task. (TimeCamp API v3.) |
+
+<details>
+
+<summary>See 144 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Change Approval Status | `bulkChangeApprovalStatus` | Changes the status of multiple approvals at once. (TimeCamp API v3.) |
 | Change Approval Status | `changeApprovalStatus` | Changes the status of a single approval, such as approving or rejecting it. (TimeCamp API v3.) |
 | Change Task Parent | `changeTaskParent` | Moves a task under a different parent task. (TimeCamp API v3.) |
@@ -178,3 +185,5 @@ Add TimeCamp from **Build → Integrations → Connectors** and connect an accou
 | Update User | `updateUser` | Updates the profile of a user in the account. |
 | Update User Setting | `updateUserSetting` | Creates or updates a named setting for a user. |
 | Upload Expense Attachment | `uploadExpenseAttachment` | Uploads a receipt or document file and attaches it to an expense. (TimeCamp API v3.) |
+
+</details>

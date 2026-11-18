@@ -5,6 +5,8 @@ hidden: true
 
 # Murf
 
+<img src="../../.gitbook/assets/connectors/murf.png" alt="Murf logo" width="64">
+
 Murf AI — text-to-speech, voice changer, translation, instant voice cloning and Murf Dub automation. Wraps the Murf REST API at https://api.murf.ai (OpenAPI 3.1). Authenticates with the account api-key header.
 
 | | |
@@ -12,8 +14,6 @@ Murf AI — text-to-speech, voice changer, translation, instant voice cloning an
 | **Category** | [AI and ML](README.md) |
 | **Website** | [murf.ai](https://murf.ai) |
 | **Authentication** | API key |
-| **Actions** | 19 |
-| **Events** | 1 |
 | **Slug** | `murf` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Murf from **Build → Integrations → Connectors** and connect an account, 
 | Get Dub Job Status | `getDubJobStatus` | Poll a dubbing job by job_id: overall status, per-locale download_details with download_url and download_srt_url, credits_used, credits_remaining and any failure_reason. This is the same payload Murf delivers on the DUB_JOB webhook. Requires a Murf Dub API key. |
 | Get Voice Clone Creation Status | `getVoiceCloneCreationStatus` | Poll the status of an instant voice clone created by Create Instant Voice Clone, using the requestId that call returned. Requires the Instant Voice Cloning entitlement; accounts without it receive 403 {"error_message":"HTTP 403 Forbidden"}. |
 | List Cloned Voices | `listClonedVoices` | List the instant voice clones owned by this account, with their voiceId, tag and display name. Requires the Instant Voice Cloning entitlement; accounts without it receive 403 {"error_message":"HTTP 403 Forbidden"}. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Dub Destination Languages | `listDubDestinationLanguages` | List the target locales Murf Dub can dub INTO, for use as target_locales on a dub job or project. Requires a Murf Dub API key; a TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead". |
 | List Dub Projects | `listDubProjects` | List the Murf Dub projects on the account with their project_id, name, dubbing_type and target_locales. Requires a Murf Dub API key; a TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead". |
 | List Dub Source Languages | `listDubSourceLanguages` | List the source locales Murf Dub can dub FROM. Murf Dub Automation is a separate product with its own API key: connect this connector with a Dub API key to use the dubbing family. A TTS key returns 403 "Invalid 'api-key' header passed, this may be tts api key pls pass dub api key instead". |
@@ -43,6 +50,8 @@ Add Murf from **Build → Integrations → Connectors** and connect an account, 
 | Synthesize Speech | `synthesizeSpeech` | METERED — consumes the account's character quota. Convert text to a finished audio file with a Murf stock voice. Returns audioFile (a presigned, UNAUTHENTICATED download URL valid ~3 days), audioLengthInSeconds, wordDurations, consumedCharacterCount and remainingCharacterCount. remainingCharacterCount is the only place the API exposes the account balance. |
 | Translate Text | `translateText` | METERED — consumes the account's character quota. Translate one or more strings into a target language, returning the source and translated text per entry plus the character counts consumed and remaining. Pair with Synthesize Speech to voice the translation. |
 | Update Dub Project | `updateDubProject` | Change the target locales of an existing Murf Dub project, identified by project_id from List Dub Projects. Requires a Murf Dub API key. |
+
+</details>
 
 ## Events
 

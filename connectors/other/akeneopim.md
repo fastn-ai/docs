@@ -5,6 +5,8 @@ hidden: true
 
 # Akeneo PIM
 
+<img src="../../.gitbook/assets/connectors/akeneopim.png" alt="Akeneo PIM logo" width="64">
+
 Akeneo PIM REST API connector — products, product models, families, attributes, categories, channels, locales, reference entities, assets, catalogs, jobs, and webhooks. Full CRUD per resource.
 
 | | |
@@ -12,8 +14,6 @@ Akeneo PIM REST API connector — products, product models, families, attributes
 | **Category** | [Other](README.md) |
 | **Website** | [akeneo.com](https://akeneo.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 151 |
-| **Events** | 6 |
 | **Slug** | `akeneopim` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Akeneo PIM from **Build → Integrations → Connectors** and connect an acc
 | Bulk Upsert Channels | `bulkUpsertChannels` | Create or update several channels in one request using NDJSON (one JSON channel object per line). Content-Type application/vnd.akeneo.collection+json. Returns a line-by-line status report. |
 | Bulk Upsert Families | `bulkUpsertFamilies` | Update/create several families in one call (NDJSON bulk). Provide 'items' as newline-delimited JSON objects, one family per line. Uses Content-Type application/vnd.akeneo.collection+json. Returns one status line per submitted family. |
 | Bulk Upsert Family Variants | `bulkUpsertFamilyVariants` | Update/create several family variants for a given family in one call (NDJSON bulk). Provide 'items' as newline-delimited JSON objects, one variant per line. Uses Content-Type application/vnd.akeneo.collection+json. |
+
+<details>
+
+<summary>See 141 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Upsert Product Models | `bulkUpsertProductModels` | Update/create several product models at once. Body is newline-delimited JSON (one product model object per line), sent with the Akeneo collection content type. Each object must include code and family_variant. |
 | Bulk Upsert Products (UUID) | `bulkUpsertProductsUuid` | Update or create several products in one call via the UUID collection endpoint. Body is newline-delimited JSON (one product object per line) sent as application/vnd.akeneo.collection+json. Returns one HTTP-status line per submitted product. |
 | Create Asset Media File | `createAssetMediaFile` | Upload a new media file for an asset (multipart/form-data). The binary file is sent in the 'file' part. Note: fastn cannot emit binary multipart bodies, so this action is expected to be classified as blocked in the verify phase. |
@@ -175,6 +182,8 @@ Add Akeneo PIM from **Build → Integrations → Connectors** and connect an acc
 | Upsert Reference Entity Record | `upsertReferenceEntityRecord` | Create or update a single record of a given reference entity (PATCH upsert) identified by record code. Returns 201/204 with empty body. |
 | Upsert Reference Entity Records (Bulk) | `upsertReferenceEntityRecords` | Create or update several records of a reference entity in one call. The request body is a JSON array of record objects (each requires code and values). Returns a JSON array of per-record results. |
 | Upsert Rule Definition | `upsertRuleDefinition` | Create or update (PUT) a rule definition identified by its code. 'type' and 'actions' are required. Optionally provide conditions, labels, priority, enabled, execution_type, triggers and reference_entity_identifier (required for record rules). |
+
+</details>
 
 ## Events
 

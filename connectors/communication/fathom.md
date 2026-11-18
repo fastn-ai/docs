@@ -5,6 +5,8 @@ hidden: true
 
 # Fathom
 
+<img src="../../.gitbook/assets/connectors/fathom.png" alt="Fathom logo" width="64">
+
 Fathom AI meeting notetaker. Poll meetings, teams, and team members, fetch recording summaries and transcripts, and register webhooks for new meeting content. Wraps the Fathom External API (https://api.fathom.ai/external/v1).
 
 | | |
@@ -12,8 +14,6 @@ Fathom AI meeting notetaker. Poll meetings, teams, and team members, fetch recor
 | **Category** | [Communication](README.md) |
 | **Website** | [fathom.video](https://fathom.video) |
 | **Authentication** | API key |
-| **Actions** | 11 |
-| **Events** | 1 |
 | **Slug** | `fathom` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Fathom from **Build → Integrations → Connectors** and connect an account
 | List Team Members | `listTeamMembers` | List team members. |
 | List Teams | `listTeams` | List teams. |
 | List users and their permissions | `listUsers` | List users and their permissions. List all users in the account with their permissions. Admin only. Returns 403 Forbidden unless the API key belongs to a user with `settings_access` of `account_admin`. Results include active, deactivated, then pending members; page through with `next_cursor`, or filter with `status`. Invited users have no permissions object yet, and their `created_at` is the invite date. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Request a download | `createRecordingDownload` | Request a download. Starts async generation of a downloadable file and returns a `download_id` to poll. Video is generated in the background; audio-only recordings complete immediately, so the response may already return `status: completed` with the file payload. Downloads are private to the API client that created them, and URLs expire ~24 hours after generation—request a new one when it expires. Only the owner, teammates who can view the recording, and people it was shared with at standard or admin level can download it. Limited-access shares get `403 Forbidden`. |
+
+</details>
 
 ## Events
 

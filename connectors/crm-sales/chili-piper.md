@@ -5,6 +5,8 @@ hidden: true
 
 # Chili Piper
 
+<img src="../../.gitbook/assets/connectors/chili-piper.png" alt="Chili Piper logo" width="64">
+
 Chili Piper is a demand conversion and meeting scheduling platform. This connector uses the Chili Piper Edge API to manage workspaces, teams, users, distributions, routers, meeting types, meetings, availability, scheduling links, rules, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Chili Piper is a demand conversion and meeting scheduling platform. This connect
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [chilipiper.com](https://chilipiper.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 103 |
-| **Events** | 3 |
 | **Slug** | `chiliPiper` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Chili Piper from **Build → Integrations → Connectors** and connect an ac
 | Create Distribution | `createDistribution` | Creates and immediately publishes a distribution — a reusable assignment pool for round-robin/ownership routing. workspaceId and teamId must be a real team workspace/team of this tenant (edge.access-denied 401 for a personal or foreign workspace — use List Workspaces / List Teams to find real ids). |
 | Create Distro Router | `createDistroRouter` | Creates and publishes a Distro router (lead/record routing), left INACTIVE until Activate Distro Router is called. workspaceId must be a real team (managed) workspace of this tenant — personal workspaces are rejected with edge.router-workspace-not-manageable. Distro routes CRM records, not meetings: routing.catchAll needs a real distributionId (from Create Distribution) plus at least one action; routing.trigger needs objectType + a non-empty eventTypes array. |
 | Create Group Scheduling Link | `createGroupSchedulingLink` | Creates a group scheduling link (multiple hosts, one shared calendar) for a real meeting type. Requires hostUserId and real meetingTypeIds — blocked on tenants with no team workspace (see Create Meeting Type). |
+
+<details>
+
+<summary>See 93 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Handoff Router | `createHandoffRouter` | Creates and publishes a Handoff router live in one step. workspaceId must be a real team (managed) workspace of this tenant — personal workspaces are rejected. Handoff routers support ONLY Schedule outcomes (no Redirect): every route/catchAll outcome needs {type:"Schedule", assignment:{type:"User",userId}\|{type:"Distribution",distributionId}, meetingTypeId, crmActions?}, so a real meeting type (from Create Meeting Type, itself workspace-gated) is required even to create the router. |
 | Create Meeting Type | `createMeetingType` | Creates a reusable team meeting type with product defaults filled in. workspaceId must be a real team (managed) workspace of this tenant — a personal workspace is rejected with edge.meeting-type-workspace-not-manageable ("Workspace ... is a personal workspace and cannot have managed meeting types"). Creation is NOT atomic: description/inviteTitle/inviteDescription/location alternatives/sharedWith are applied by follow-up calls immediately after create, so a failed follow-up leaves a partially-configured meeting type — fix with Update Meeting Type rather than re-creating. |
 | Create Meeting Type Reminder | `createMeetingTypeReminder` | Creates a reminder that fires before or after a booked meeting. workspaceId must be a real team (managed) workspace of this tenant — a personal workspace is rejected the same way Create Meeting Type is (edge.meeting-type-workspace-not-manageable), since reminders live on managed meeting types. |
@@ -127,6 +134,8 @@ Add Chili Piper from **Build → Integrations → Connectors** and connect an ac
 | Update User Licenses | `updateUserLicenses` | Updates product licenses for one or more users. The update object maps user IDs to the licenses they should have. |
 | Update Web Experience | `updateWebExperience` | Updates a web experience by its ID, changing its name or enabled state. |
 | Update Webhook | `updateWebhook` | Updates an existing webhook subscription identified by its trigger type and URL, changing its enabled state or URL. |
+
+</details>
 
 ## Events
 

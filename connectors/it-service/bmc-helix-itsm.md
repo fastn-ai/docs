@@ -5,6 +5,8 @@ hidden: true
 
 # BMC Helix ITSM
 
+<img src="../../.gitbook/assets/connectors/bmc-helix-itsm.png" alt="BMC Helix ITSM logo" width="64">
+
 BMC Helix ITSM service management platform. Manage incidents, changes, problems, known errors, work orders, tasks, people, support groups, companies, configuration items and knowledge articles through the BMC Remedy AR System REST API.
 
 | | |
@@ -12,8 +14,6 @@ BMC Helix ITSM service management platform. Manage incidents, changes, problems,
 | **Category** | [IT and service management](README.md) |
 | **Website** | [bmc.com](https://bmc.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 42 |
-| **Events** | 9 |
 | **Slug** | `bmcHelixItsm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BMC Helix ITSM from **Build → Integrations → Connectors** and connect an
 | Get Company | `getCompany` | Retrieves a single company from the COM:Company form by its entry ID. |
 | Get Configuration Item | `getConfigurationItem` | Retrieves a single configuration item from the BMC.CORE:BMC_BaseElement class by its entry ID. |
 | Get Form Entry | `getFormEntry` | Retrieves a single entry from any AR System form by its entry ID. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Form Fields | `getFormFields` | Retrieves the field metadata for an AR System form, including each field's name, identifier, data type, default value, whether it is required, and the permitted values for selection fields. Use this to discover valid field names and values before creating or updating records. |
 | Get Incident | `getIncident` | Retrieves a single incident from the HPD:Help Desk form by its entry ID. |
 | Get Knowledge Article | `getKnowledgeArticle` | Retrieves a single knowledge article from the RKM:KnowledgeArticleManager form by its entry ID. |
@@ -66,6 +73,8 @@ Add BMC Helix ITSM from **Build → Integrations → Connectors** and connect an
 | Update Form Entry | `updateFormEntry` | Updates an entry on any AR System form. Only the fields supplied are modified; all other fields keep their current values. |
 | Update Incident | `updateIncident` | Updates an incident on the HPD:Help Desk form. Only the fields supplied are modified; all other fields keep their current values. |
 | Update Work Order | `updateWorkOrder` | Updates a work order on the WOI:WorkOrder form. Only the fields supplied are modified. |
+
+</details>
 
 ## Events
 

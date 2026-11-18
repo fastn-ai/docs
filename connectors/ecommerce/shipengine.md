@@ -5,6 +5,8 @@ hidden: true
 
 # ShipEngine
 
+<img src="../../.gitbook/assets/connectors/shipengine.png" alt="ShipEngine logo" width="64">
+
 ShipEngine (ShipStation API) multi-carrier shipping API. Manage carriers, validate and parse addresses, create shipments, compare and estimate rates, buy and void labels, track packages, schedule pickups, build manifests and batches, manage warehouses, custom package types, insurance, tags, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ ShipEngine (ShipStation API) multi-carrier shipping API. Manage carriers, valida
 | **Category** | [E-commerce](README.md) |
 | **Website** | [shipengine.com](https://shipengine.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 92 |
-| **Events** | 0 |
 | **Slug** | `shipengine` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ShipEngine from **Build → Integrations → Connectors** and connect an acc
 | Connect Carrier Account | `connectCarrierAccount` | Connect a carrier account to ShipEngine. The carrier_name path segment selects the carrier (e.g. stamps_com, ups, fedex). Required credential fields vary per carrier (e.g. nickname/username/password for stamps_com). |
 | Connect Shipsurance Insurer | `connectInsurer` | Connect a Shipsurance insurance account to ShipEngine using the account email and policy ID. |
 | Create Account Image | `createAccountImage` | Upload a new account label image (e.g. a logo) from base64-encoded image data. |
+
+<details>
+
+<summary>See 82 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Batch | `createBatch` | Create a batch of shipments and/or rates for bulk label processing. |
 | Create Combined Label Document | `createCombinedLabelDocument` | Combine up to 30 existing shipping labels into a single downloadable document (PDF). |
 | Create Custom Package Type | `createPackageType` | Create a custom package type with dimensions for use when creating shipments and labels. |
@@ -116,3 +123,5 @@ Add ShipEngine from **Build → Integrations → Connectors** and connect an acc
 | Update Webhook | `updateWebhook` | Update an existing webhook's URL, headers, name, or store ID by its webhook ID. |
 | Validate An Address | `validateAddress` | Validate one or more addresses against ShipEngine's address validation service, returning normalized addresses and validation messages. The body is a JSON array of address objects. |
 | Void Label | `voidLabel` | Void a shipping label and request a refund where supported. |
+
+</details>

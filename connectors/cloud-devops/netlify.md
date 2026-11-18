@@ -5,6 +5,8 @@ hidden: true
 
 # Netlify
 
+<img src="../../.gitbook/assets/connectors/netlify.png" alt="Netlify logo" width="64">
+
 Netlify web hosting and deployment platform. Manage sites, deploys, builds, forms and submissions, files, snippets, DNS zones and records, build hooks, deploy keys, environment variables, accounts and members, service instances, and split tests via the Netlify REST API.
 
 | | |
@@ -12,8 +14,6 @@ Netlify web hosting and deployment platform. Manage sites, deploys, builds, form
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [netlify.com](https://netlify.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 88 |
-| **Events** | 0 |
 | **Slug** | `netlify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Netlify from **Build → Integrations → Connectors** and connect an accoun
 | Create Service Instance | `createServiceInstance` | Provision an add-on service instance for a site by add-on slug. |
 | Create Site | `createSite` | Create a new site in the default account. All fields are optional; when name is omitted Netlify auto-generates one. |
 | Create Site Build | `createSiteBuild` | Trigger a new build for a site. Optionally clear the build cache. Requires the site to have a linked repository. |
+
+<details>
+
+<summary>See 78 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Site Deploy | `createSiteDeploy` | Create a new deploy for a site by supplying a file digest. Pass an empty files object to create a draft deploy. |
 | Create Site In Team | `createSiteInTeam` | Create a new site under a specific account/team identified by its slug. |
 | Create Site Snippet | `createSiteSnippet` | Create a custom code snippet injected into a site's pages. Title, general code, and its position are required. |
@@ -112,3 +119,5 @@ Add Netlify from **Build → Integrations → Connectors** and connect an accoun
 | Update Site Deploy | `updateSiteDeploy` | Update a deploy of a site with a new file digest. |
 | Update Site Snippet | `updateSiteSnippet` | Update an existing code snippet of a site. Returns no content on success. |
 | Update Split Test | `updateSplitTest` | Update the branch tests of an existing split test. |
+
+</details>

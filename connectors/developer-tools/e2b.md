@@ -5,6 +5,8 @@ hidden: true
 
 # E2B
 
+<img src="../../.gitbook/assets/connectors/e2b.png" alt="E2B logo" width="64">
+
 E2B provides secure cloud sandboxes (isolated Linux VMs) for AI agents and code execution. This connector covers the full E2B public API: sandbox lifecycle (create, list, get, connect, pause, resume, fork, timeout, refresh, network, kill), sandbox logs and metrics, snapshots, templates and builds, tags, volumes, team metrics, project secrets, the in-sandbox envd API (health, stats, environment, file download and upload, filesystem operations, process control) and sandbox lifecycle events with webhook management.
 
 | | |
@@ -12,8 +14,6 @@ E2B provides secure cloud sandboxes (isolated Linux VMs) for AI agents and code 
 | **Category** | [Developer tools](README.md) |
 | **Website** | [e2b.dev](https://e2b.dev) |
 | **Authentication** | API key |
-| **Actions** | 70 |
-| **Events** | 6 |
 | **Slug** | `e2b` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add E2B from **Build → Integrations → Connectors** and connect an account, a
 | Create Snapshot | `createSnapshot` | Creates a persistent snapshot template from the sandbox current state; snapshots can be used to create new sandboxes and outlive the sandbox. |
 | Create Template | `createTemplate` | Creates a new template (v3) with an optional name, tags, CPU and memory. Returns the template id and initial build id; use Start Build to build it. |
 | Create Volume | `createVolume` | Creates a team volume and returns its id and content access token. |
+
+<details>
+
+<summary>See 60 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook | `createWebhook` | Registers a webhook that receives sandbox lifecycle events for the project at the given HTTPS URL, signed with the provided secret (at least 32 characters). |
 | Delete Secret | `deleteSecret` | Revokes a secret and schedules its versions for cleanup. Returns no content on success. |
 | Delete Template | `deleteTemplate` | Deletes a template by id. Returns no content on success. |
@@ -94,6 +101,8 @@ Add E2B from **Build → Integrations → Connectors** and connect an account, a
 | Update Template (Legacy) | `updateTemplateLegacy` | Updates whether a template is public. Legacy endpoint; prefer Update Template. |
 | Update Webhook | `updateWebhook` | Updates a sandbox lifecycle webhook; provided fields replace the previous configuration. |
 | Upload Sandbox File | `uploadSandboxFile` | Writes text content to a file in a running sandbox at the given path, creating parent directories and overwriting an existing file. |
+
+</details>
 
 ## Events
 

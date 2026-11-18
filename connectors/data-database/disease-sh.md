@@ -5,6 +5,8 @@ hidden: true
 
 # Disease.sh
 
+<img src="../../.gitbook/assets/connectors/disease-sh.png" alt="Disease.sh logo" width="64">
+
 disease.sh is a free open API for disease statistics. Get COVID-19 totals by world, continent, country and US state, historical time series, NYT state data, Apple mobility, government-reported data, vaccine coverage and trials, therapeutics, ECDC variant data, and CDC influenza reports. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ disease.sh is a free open API for disease statistics. Get COVID-19 totals by wor
 | **Category** | [Data and databases](README.md) |
 | **Website** | [disease.sh](https://disease.sh) |
 | **Authentication** | No authentication |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `diseaseSh` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Disease.sh from **Build → Integrations → Connectors** and connect an acc
 | Get Country Vaccine Coverage | `getCountryVaccineCoverage` | Get COVID-19 vaccine doses administered for a country that has reported vaccination rollout. Sourced from https://covid.ourworldindata.org/. (GET /v3/covid-19/vaccine/coverage/countries/{country}). Docs: https://disease.sh/docs/ |
 | Get Country Variant Data | `getCountryVariants` | Get COVID-19 ECDC reported data for a specific country. (GET /v3/covid-19/variants/countries/{country}). Docs: https://disease.sh/docs/ |
 | Get Global COVID-19 History | `getGlobalHistory` | Get global accumulated COVID-19 time series data. (GET /v3/covid-19/historical/all). Docs: https://disease.sh/docs/ |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Global COVID-19 Totals | `getGlobalTotals` | Get global COVID-19 totals for today, yesterday and two days ago. (GET /v3/covid-19/all). Docs: https://disease.sh/docs/ |
 | Get Global Vaccine Coverage | `getGlobalVaccineCoverage` | Get total global COVID-19 vaccine doses administered. Sourced from https://covid.ourworldindata.org/. (GET /v3/covid-19/vaccine/coverage). Docs: https://disease.sh/docs/ |
 | Get Government Reported Data | `getGovCountry` | Get COVID-19 government reported data for a specific country. (GET /v3/covid-19/gov/{country}). Docs: https://disease.sh/docs/ |
@@ -56,3 +63,5 @@ Add Disease.sh from **Build → Integrations → Connectors** and connect an acc
 | List US State COVID-19 Totals | `listUsStates` | Get COVID-19 totals for all US States. (GET /v3/covid-19/states). Docs: https://disease.sh/docs/ |
 | List US State Vaccine Coverage | `listStateVaccineCoverage` | Get COVID-19 vaccine doses administered for all states that have reported rolling out vaccination. Sourced from https://covid.ourworldindata.org/. (GET /v3/covid-19/vaccine/coverage/states). Docs: https://disease.sh/docs/ |
 | List Variant Data Countries | `listVariantCountries` | Get a list of supported countries for ECDC specific data. Returns a list of supported country names (GET /v3/covid-19/variants/countries/). Docs: https://disease.sh/docs/ |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Mailjet
 
+<img src="../../.gitbook/assets/connectors/mailjet.png" alt="Mailjet logo" width="64">
+
 Send transactional and marketing email and SMS with Mailjet. Covers the Send API v3.1, contacts and contact lists, campaigns and drafts, templates, segmentation, statistics, sender and domain validation, event webhooks, and account settings.
 
 | | |
@@ -12,8 +14,6 @@ Send transactional and marketing email and SMS with Mailjet. Covers the Send API
 | **Category** | [Marketing](README.md) |
 | **Website** | [mailjet.com](https://mailjet.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 244 |
-| **Events** | 0 |
 | **Slug** | `mailjet` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mailjet from **Build → Integrations → Connectors** and connect an accoun
 | Create A/X Test | `createAXTest` | Create a new a/x test in your Mailjet account. |
 | Create API Key | `createAPIKey` | Create a new api key in your Mailjet account. |
 | Create API Token | `createAPIToken` | Create a new api token in your Mailjet account. |
+
+<details>
+
+<summary>See 234 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Batch Job | `createBatchJob` | Create a new batch job in your Mailjet account. |
 | Create Campaign Aggregate | `createCampaignAggregate` | Create a new campaign aggregate in your Mailjet account. |
 | Create Campaign Draft | `createCampaignDraft` | Create a new campaign draft in your Mailjet account. |
@@ -268,3 +275,5 @@ Add Mailjet from **Build → Integrations → Connectors** and connect an accoun
 | Update Workflow | `updateWorkflow` | Update an existing workflow. Only the properties you supply are changed. |
 | Validate Sender | `validateSender` | Trigger validation of a sender email address or domain and return the validation result. |
 | Verify Contact List | `verifyContactList` | Start an email-verification job for the contacts in a contact list. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # UniProt
 
+<img src="../../.gitbook/assets/connectors/uni-prot.png" alt="UniProt logo" width="64">
+
 UniProt is the free, comprehensive protein sequence and function database (UniProtKB/Swiss-Prot, TrEMBL, UniRef, UniParc, proteomes). Search and get protein entries, clusters, sequence archives, proteomes and gene-centric sets, taxonomy, keywords, subcellular locations, diseases, cross-reference databases and citations, read entry history, and map identifiers between databases. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ UniProt is the free, comprehensive protein sequence and function database (UniPr
 | **Category** | [Data and databases](README.md) |
 | **Website** | [uniprot.org](https://uniprot.org) |
 | **Authentication** | No authentication |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `uniProt` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add UniProt from **Build → Integrations → Connectors** and connect an accoun
 | Get ID Mapping Job Details | `getIdMappingDetails` | Get details of ID Mapping job. Docs: https://www.uniprot.org/api-documentation/ (GET /idmapping/details/{jobId}) |
 | Get ID Mapping Job Status | `getIdMappingStatus` | Get status of ID Mapping job. Docs: https://www.uniprot.org/api-documentation/ (GET /idmapping/status/{jobId}) |
 | Get ID Mapping Results | `getIdMappingResults` | Search result by a submitted job id.. The search endpoint uses a request query to return all entries associated with the search term in a paginated list of entries. Use ‘size’ to specify the number of entries per page of results. Specify &lt;tt&gt;fields&lt;/tt&gt; to return only data for specific sections of that entry that are of interest to you. Docs: https://www.uniprot.org/api-documentation/ (GET /idmapping/results/{jobId}) |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get ID Mapping Results (UniParc) | `getIdMappingUniParcResults` | Search result of UniParc sequence entry (or entries) by a submitted job id.. The search endpoint uses a request query to return all entries associated with the search term in a paginated list of entries. Use ‘size’ to specify the number of entries per page of results. Specify &lt;tt&gt;fields&lt;/tt&gt; to return only data for specific sections of that entry that are of interest to you. Docs: https://www.uniprot.org/api-documentation/ (GET /idmapping/uniparc/results/{jobId}) |
 | Get ID Mapping Results (UniProtKB) | `getIdMappingUniProtKBResults` | Search result for a UniProtKB protein entry (or entries) mapped by a submitted job id.. The search endpoint uses a request query to return all entries associated with the search term in a paginated list of entries. Use ‘size’ to specify the number of entries per page of results. Specify &lt;tt&gt;fields&lt;/tt&gt; to return only data for specific sections of that entry that are of interest to you. Docs: https://www.uniprot.org/api-documentation/ (GET /idmapping/uniprotkb/results/{jobId}) |
 | Get ID Mapping Results (UniRef) | `getIdMappingUniRefResults` | Search result of UniRef cluster (or clusters) by a submitted job id.. The search endpoint uses a request query to return all entries associated with the search term in a paginated list of entries. Use ‘size’ to specify the number of entries per page of results. Specify &lt;tt&gt;fields&lt;/tt&gt; to return only data for specific sections of that entry that are of interest to you. Docs: https://www.uniprot.org/api-documentation/ (GET /idmapping/uniref/results/{jobId}) |
@@ -61,3 +68,5 @@ Add UniProt from **Build → Integrations → Connectors** and connect an accoun
 | Search UniProtKB | `searchUniProtKB` | Retrieve UniProtKB entries by a search query.. The search endpoint uses a request query to return all entries associated with the search term in a paginated list of entries. Use ‘size’ to specify the number of entries per page of results. Specify &lt;tt&gt;fields&lt;/tt&gt; to return only data for specific sections of that entry that are of interest to you. Docs: https://www.uniprot.org/api-documentation/ (GET /uniprotkb/search) |
 | Search UniRef | `searchUniRef` | Retrieve light UniRef cluster entries by a search query.. The search endpoint uses a request query to return all entries associated with the search term in a paginated list of entries. Use ‘size’ to specify the number of entries per page of results. Specify &lt;tt&gt;fields&lt;/tt&gt; to return only data for specific sections of that entry that are of interest to you. Docs: https://www.uniprot.org/api-documentation/ (GET /uniref/search) |
 | Submit ID Mapping Job | `submitIdMappingJob` | Start a job that maps identifiers between databases, e.g. UniProtKB accessions to UniRef90, UniParc, Ensembl, PDB or GeneID (POST /idmapping/run). Returns a jobId; check it with Get ID Mapping Job Status and read it with the Get ID Mapping Results actions. Docs: https://www.uniprot.org/api-documentation/idmapping |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Google Analytics Admin
 
+<img src="../../.gitbook/assets/connectors/google-analytics-admin.jpg" alt="Google Analytics Admin logo" width="64">
+
 Manage Google Analytics 4 configuration through the Google Analytics Admin API v1beta: accounts, account summaries, properties, data streams, measurement protocol secrets, custom dimensions and metrics, key events, conversion events, Google Ads links, Firebase links, data retention and data sharing settings, change history search, and data access reporting.
 
 | | |
@@ -12,8 +14,6 @@ Manage Google Analytics 4 configuration through the Google Analytics Admin API v
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [analyticsadmin.googleapis.com](https://analyticsadmin.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 60 |
-| **Events** | 0 |
 | **Slug** | `googleAnalyticsAdmin` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Analytics Admin from **Build → Integrations → Connectors** and co
 | Create Property Custom Dimension | `createPropertyCustomDimension` | Creates a custom dimension on a property. Google warns that this method must not be used to collect data on individual users; sending user IDs in custom dimensions violates the Google Analytics Terms of Service. |
 | Create Property Custom Metric | `createPropertyCustomMetric` | Creates a custom metric on a property. Restricted Metric Type is required when the measurement unit is CURRENCY. |
 | Create Property Data Stream | `createPropertyDataStream` | Creates a data stream on a property. Populate Web Stream Data, Android App Stream Data or iOS App Stream Data to match the chosen stream Type. |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Property Data Stream Measurement Protocol Secret | `createPropertyDataStreamMeasurementProtocolSecret` | Creates a measurement protocol secret on a data stream. The property must have acknowledged user data collection before secrets can be created. |
 | Create Property Firebase Link | `createPropertyFirebaseLink` | Creates a Firebase link on a property, connecting it to a Firebase project. A property can have at most one Firebase link. |
 | Create Property Google Ads Link | `createPropertyGoogleAdsLink` | Creates a Google Ads link on a property, connecting it to the given Google Ads customer account. |
@@ -84,3 +91,5 @@ Add Google Analytics Admin from **Build → Integrations → Connectors** and co
 | Update Property Data Stream Measurement Protocol Secret | `updatePropertyDataStreamMeasurementProtocolSecret` | Updates a measurement protocol secret on a data stream. Update Mask is required and must list the fields to change. |
 | Update Property Google Ads Link | `updatePropertyGoogleAdsLink` | Updates a Google Ads link on a property. Update Mask is required and must list the snake_case field names to change, for example ads_personalization_enabled. |
 | Update Property Key Event | `updatePropertyKeyEvent` | Updates a key event on a property. Update Mask is required and must list the snake_case fields to change. |
+
+</details>

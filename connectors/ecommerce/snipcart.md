@@ -5,6 +5,8 @@ hidden: true
 
 # Snipcart
 
+<img src="../../.gitbook/assets/connectors/snipcart.png" alt="Snipcart logo" width="64">
+
 Snipcart headless e-commerce REST API — manage orders, subscriptions, customers, products, discounts, abandoned carts, custom shipping methods, refunds, order notifications, and store domain settings.
 
 | | |
@@ -12,8 +14,6 @@ Snipcart headless e-commerce REST API — manage orders, subscriptions, customer
 | **Category** | [E-commerce](README.md) |
 | **Website** | [snipcart.com](https://snipcart.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `snipcart` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Snipcart from **Build → Integrations → Connectors** and connect an accou
 | Create Order Refund | `createOrderRefund` | Issue a full or partial refund on an order, optionally auto-refunding taxes and notifying the customer. |
 | Create Shipping Method | `createShippingMethod` | Create a custom shipping method with one or more rates and optional conditions (country, postal-code, order total, shipping zone). |
 | Delete Discount | `deleteDiscount` | Permanently delete a discount by its id. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Shipping Method | `deleteShippingMethod` | Delete a custom shipping method by its id. |
 | Fetch Product From URL | `fetchProduct` | Fetch and register a product by crawling the given URL where the Snipcart buy-button markup is found. |
 | Get Abandoned Cart | `getAbandonedCart` | Retrieve a single abandoned cart by its token. |
@@ -64,3 +71,5 @@ Add Snipcart from **Build → Integrations → Connectors** and connect an accou
 | Update Product Inventory | `updateProduct` | Update the inventory management settings and stock levels of a product. |
 | Update Shipping Method | `updateShippingMethod` | Replace a custom shipping method by id with a new full definition. |
 | Update Store Domain | `updateStoreDomain` | Change your store's default domain and optionally its protocol. |
+
+</details>

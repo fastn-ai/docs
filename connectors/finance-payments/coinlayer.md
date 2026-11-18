@@ -5,6 +5,8 @@ hidden: true
 
 # Coinlayer
 
+<img src="../../.gitbook/assets/connectors/coinlayer.png" alt="Coinlayer logo" width="64">
+
 Coinlayer by APILayer delivers real-time and historical cryptocurrency exchange rate data for 385+ cryptocurrencies, sourced from 25+ exchanges. Endpoints cover the list of supported currencies, live rates, historical rates by date, currency conversion, time-series (time-frame) rates, and change (fluctuation) data.
 
 | | |
@@ -12,8 +14,6 @@ Coinlayer by APILayer delivers real-time and historical cryptocurrency exchange 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [coinlayer.com](https://coinlayer.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `coinlayer` |
 
 ## Use it

@@ -12,8 +12,6 @@ The Bored API (hosted by The App Brewery) suggests things to do when you are bor
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [bored-api.appbrewery.com](https://bored-api.appbrewery.com) |
 | **Authentication** | No authentication |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `boredApi` |
 
 ## Use it

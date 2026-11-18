@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Run
 
+<img src="../../.gitbook/assets/connectors/google-cloud-run.png" alt="Google Cloud Run logo" width="64">
+
 Deploy and operate serverless containers with the Google Cloud Run Admin API v2: services and revisions, jobs, executions and tasks, worker pools and worker pool revisions, instances, builds, source uploads, IAM policies, metadata and image export, and long-running operations.
 
 | | |
@@ -12,8 +14,6 @@ Deploy and operate serverless containers with the Google Cloud Run Admin API v2:
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [run.googleapis.com](https://run.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 63 |
-| **Events** | 0 |
 | **Slug** | `googleCloudRun` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Run from **Build → Integrations → Connectors** and connect 
 | Delete Job Execution | `deleteJobExecution` | Deletes an execution of a Cloud Run job. Returns a long-running operation to poll for completion. |
 | Delete Operation | `deleteOperation` | Deletes a Cloud Run long-running operation record, indicating the client is no longer interested in its result. This does not cancel the operation. |
 | Delete Service | `deleteService` | Deletes a Cloud Run service. The service stops serving traffic and all of its revisions are deleted. Returns a long-running operation. |
+
+<details>
+
+<summary>See 53 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Service Revision | `deleteServiceRevision` | Deletes a revision of a Cloud Run service. Returns a long-running operation to poll for completion. |
 | Delete Worker Pool | `deleteWorkerPool` | Deletes a Cloud Run worker pool. Returns a long-running operation to poll for completion. |
 | Delete Worker Pool Revision | `deleteWorkerPoolRevision` | Deletes a revision belonging to a Cloud Run worker pool. Returns a long-running operation to poll for completion. |
@@ -87,3 +94,5 @@ Add Google Cloud Run from **Build → Integrations → Connectors** and connect 
 | Update Worker Pool | `updateWorkerPool` | Updates a Cloud Run worker pool. Returns a long-running operation to poll for completion. |
 | Upload Source | `uploadSource` | Uploads a source archive to a Google Cloud Storage bucket through Cloud Run and returns the Cloud Storage path to reference in a deployment. You are responsible for the lifecycle of the uploaded object. |
 | Wait For Operation | `waitOperation` | Waits until a Cloud Run long-running operation is done or the given timeout elapses, then returns its latest state. If the operation is already done the state is returned immediately. |
+
+</details>

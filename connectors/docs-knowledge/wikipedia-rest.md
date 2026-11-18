@@ -5,6 +5,8 @@ hidden: true
 
 # Wikipedia
 
+<img src="../../.gitbook/assets/connectors/wikipedia-rest.png" alt="Wikipedia logo" width="64">
+
 Wikipedia's REST API (Wikimedia REST v1) for any language edition: page summaries, HTML and mobile HTML, revision metadata, media lists, talk pages, lint errors, wikitext/HTML transforms, citation generation (Citoid) and mobile app resources. No API key needed; Wikimedia asks for a descriptive User-Agent.
 
 | | |
@@ -12,8 +14,6 @@ Wikipedia's REST API (Wikimedia REST v1) for any language edition: page summarie
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [wikipedia.org](https://wikipedia.org) |
 | **Authentication** | No authentication |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `wikipediaRest` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wikipedia from **Build → Integrations → Connectors** and connect an acco
 | Get Page Media List | `getPageMediaList` | List the images, videos and audio used on a page (GET /api/rest_v1/page/media-list/{title}). Docs: https://en.wikipedia.org/api/rest_v1/ |
 | Get Page Mobile HTML | `getPageMobileHtml` | Get page HTML optimized for mobile apps (Page Content Service) (GET /api/rest_v1/page/mobile-html/{title}). Docs: https://en.wikipedia.org/api/rest_v1/ |
 | Get Page Revision HTML | `getPageRevisionHtml` | Get the Parsoid HTML of one revision of a page (GET /api/rest_v1/page/html/{title}/{revision}). Docs: https://en.wikipedia.org/api/rest_v1/ |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Page Revision Info | `getPageRevisionInfo` | Get metadata for one revision of a page (GET /api/rest_v1/page/title/{title}/{revision}). Docs: https://en.wikipedia.org/api/rest_v1/ |
 | Get Page Revision Lint Errors | `getPageRevisionLintErrors` | Get wikitext lint errors of one revision of a page (GET /api/rest_v1/page/lint/{title}/{revision}). Docs: https://en.wikipedia.org/api/rest_v1/ |
 | Get Page Revision Media List | `getPageRevisionMediaList` | List the media used on one revision of a page (GET /api/rest_v1/page/media-list/{title}/{revision}). Docs: https://en.wikipedia.org/api/rest_v1/ |
@@ -53,3 +60,5 @@ Add Wikipedia from **Build → Integrations → Connectors** and connect an acco
 | Transform Wikitext to Lint Errors for Page | `transformWikitextToLintForPage` | Transform wikitext to lint errors in the context of a page title (POST /api/rest_v1/transform/wikitext/to/lint/{title}). Docs: https://en.wikipedia.org/api/rest_v1/ |
 | Transform Wikitext to Lint Errors for Revision | `transformWikitextToLintForRevision` | Transform wikitext to lint errors in the context of a page revision (POST /api/rest_v1/transform/wikitext/to/lint/{title}/{revision}). Docs: https://en.wikipedia.org/api/rest_v1/ |
 | Transform Wikitext to Mobile HTML | `transformWikitextToMobileHtml` | Transform wikitext to mobile-optimized HTML for a page title (POST /api/rest_v1/transform/wikitext/to/mobile-html/{title}). Docs: https://en.wikipedia.org/api/rest_v1/ |
+
+</details>

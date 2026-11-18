@@ -5,6 +5,8 @@ hidden: true
 
 # IPLocate
 
+<img src="../../.gitbook/assets/connectors/iplocate.png" alt="IPLocate logo" width="64">
+
 IPLocate is an IP geolocation and threat intelligence platform. This connector covers the full IPLocate IP Intelligence API: single IP lookups, caller IP lookups, field- and object-filtered lookups (ASN, privacy and threat flags, hosting provider, company, abuse contact), batch lookups of up to 1,000 addresses, and the free current-IP echo endpoints.
 
 | | |
@@ -12,8 +14,6 @@ IPLocate is an IP geolocation and threat intelligence platform. This connector c
 | **Category** | [Search and web](README.md) |
 | **Website** | [iplocate.io](https://iplocate.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `iplocate` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add IPLocate from **Build → Integrations → Connectors** and connect an accou
 | Get IP Hosting Provider | `getIpHostingProvider` | Returns only the hosting or datacenter provider details for an IP address, including the provider name, domain, network range and, where published, the provider's region and service. Returns an empty result for addresses with no detailed hosting data. |
 | Get IP Privacy And Threat Flags | `getIpPrivacy` | Returns only the privacy and threat detection flags for an IP address, indicating whether it is a proxy, VPN, Tor exit node, iCloud Private Relay address, hosting address, bogon address or a reported abuser. |
 | Look Up Caller IP Address | `lookupCallerIpAddress` | Returns the full IPLocate intelligence record for the IP address the request originates from, without needing to supply an address. Use the include parameter to return only selected fields. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Look Up IP Address | `lookupIpAddress` | Returns the full IPLocate intelligence record for a single IPv4 or IPv6 address, including geolocation, autonomous system, privacy and threat flags, hosting provider, company and abuse contact data. Use the include parameter to return only selected fields. |
+
+</details>

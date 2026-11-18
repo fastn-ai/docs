@@ -5,6 +5,8 @@ hidden: true
 
 # Rick and Morty API
 
+<img src="../../.gitbook/assets/connectors/rick-and-morty-api.png" alt="Rick and Morty API logo" width="64">
+
 The Rick and Morty API is a free REST and GraphQL API with every character, location and episode of the Rick and Morty TV show: list with filters and pagination, get one or many by id, or run GraphQL queries. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The Rick and Morty API is a free REST and GraphQL API with every character, loca
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [rickandmortyapi.com](https://rickandmortyapi.com) |
 | **Authentication** | No authentication |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `rickAndMortyApi` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add Rick and Morty API from **Build → Integrations → Connectors** and connec
 | List Characters | `listCharacters` | List characters, 20 per page, optionally filtered (GET /api/character). Filters combine; when nothing matches the API returns 404 with error 'There is nothing here'. Docs: https://rickandmortyapi.com/documentation |
 | List Episodes | `listEpisodes` | List episodes, 20 per page, optionally filtered (GET /api/episode). Filters combine; when nothing matches the API returns 404 with error 'There is nothing here'. Docs: https://rickandmortyapi.com/documentation |
 | List Locations | `listLocations` | List locations, 20 per page, optionally filtered (GET /api/location). Filters combine; when nothing matches the API returns 404 with error 'There is nothing here'. Docs: https://rickandmortyapi.com/documentation |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Run GraphQL Query | `runGraphqlQuery` | Run a GraphQL query against the Rick and Morty GraphQL endpoint (POST /graphql). Queries include characters, character, charactersByIds, locations, location, locationsByIds, episodes, episode and episodesByIds with page and filter arguments. Docs: https://rickandmortyapi.com/documentation |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Modem Pay
 
+<img src="../../.gitbook/assets/connectors/modem-pay.png" alt="Modem Pay logo" width="64">
+
 Modem Pay is a payment infrastructure platform for businesses in The Gambia and West Africa, collecting payments through Wave, AfriMoney, QMoney and cards and sending mobile money payouts. This connector covers the Modem Pay REST API: balances, customers, payment intents, payment links, payment methods and mandates, coupons, transactions and refunds, transfers and bulk payouts with fee checks, split-payment sub-accounts, virtual terminals, invoices, and stablecoin payment requests and off-ramps.
 
 | | |
@@ -12,8 +14,6 @@ Modem Pay is a payment infrastructure platform for businesses in The Gambia and 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [modempay.com](https://modempay.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 60 |
-| **Events** | 22 |
 | **Slug** | `modemPay` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Modem Pay from **Build → Integrations → Connectors** and connect an acco
 | Create Off-Ramp | `createOffRamp` | Creates a crypto off-ramp that converts a USDT or USDC deposit into dalasi, settled to your Modem Pay balance or a mobile money account, with an optional reseller markup. Requires the crypto feature to be enabled on the account. |
 | Create Payment Intent | `createPaymentIntent` | Creates a payment intent and returns a hosted checkout link and intent secret. Only the amount is required; optionally restrict payment methods, link a customer, apply a coupon, split with a sub-account, or pass network and account number for a direct mobile-money charge. |
 | Create Payment Link | `createPaymentLink` | Creates a reusable hosted payment link with a title, description and optional fixed or minimum amount, redirect URLs and custom checkout fields. |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Payment Method | `createPaymentMethod` | Saves a mobile wallet payment method (such as Wave, AfriMoney or QMoney), optionally attached to a customer, for future payments. |
 | Create Stablecoin Payment Request | `createStablecoinPaymentRequest` | Creates a stablecoin (USDT or USDC) payment request with a hosted payment link for a USD or GMD amount. Requires the crypto feature to be enabled on the account and a live API key. |
 | Create Sub-Account | `createSubAccount` | Creates a split-payment sub-account that receives a percentage of each linked payment and settles to a Wave or AfriMoney account. |
@@ -85,6 +92,8 @@ Add Modem Pay from **Build → Integrations → Connectors** and connect an acco
 | Update Virtual Terminal | `updateVirtualTerminal` | Updates a virtual terminal's name, notification WhatsApp numbers or active status. |
 | Verify Payment Intent | `verifyPaymentIntent` | Retrieves a payment intent by its intent secret to confirm its current status after a checkout. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -101,6 +110,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Customer Deleted | `customer.deleted` | Fires when a customer is deleted. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the deleted customer is in payload. Payload modelled from the customer object. |
 | Customer Updated | `customer.updated` | Fires when a customer is updated. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the customer is in payload. Payload modelled from the live customer object. |
 | Invoice Created | `invoice.created` | Fires when an invoice is created. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the invoice is in payload. Payload modelled from the live invoice object. |
+
+<details>
+
+<summary>See 12 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Invoice Deleted | `invoice.deleted` | Fires when an invoice is deleted in the dashboard. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the invoice is in payload. Payload modelled from the invoice object. |
 | Invoice Overdue | `invoice.overdue` | Fires in live mode when an invoice passes its due date unpaid (test-mode invoices never go overdue). Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the invoice is in payload. Payload modelled from docs. |
 | Invoice Paid | `paymentrequest.success` | Fires when an invoice is paid (the vendor's event name is paymentrequest.success). Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the invoice is in payload. Payload modelled from the live paid invoice object. |
@@ -113,3 +129,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Transfer Flagged | `transfer.flagged` | Fires when a payout is flagged for review. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the transfer is in payload. Payload modelled from the SDK Transfer type. |
 | Transfer Reversed | `transfer.reversed` | Fires when a completed payout is reversed. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the transfer is in payload. Payload modelled from the SDK Transfer type. |
 | Transfer Succeeded | `transfer.succeeded` | Fires when a mobile money payout completes. Setup: Modem Pay dashboard &gt; Developers &gt; Webhooks, paste this fastn webhook URL. Event type is in the event field; the transfer is in payload. Payouts created with a callback_url deliver there instead. Payload modelled from the SDK Transfer type (no payout could be sent on this account). |
+
+</details>

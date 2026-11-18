@@ -5,6 +5,8 @@ hidden: true
 
 # Fillout
 
+<img src="../../.gitbook/assets/connectors/fillout.png" alt="Fillout logo" width="64">
+
 Fillout is an online form, survey and scheduling builder. This connector wraps the complete Fillout REST API (https://api.fillout.com/v1/api): listing forms, reading a form's questions, calculations, URL parameters, scheduling and payment fields, reading, filtering, creating and deleting submissions, and registering or removing submission webhooks. Authentication uses a Fillout API key sent as a Bearer token, enabled under Settings &gt; Developer.
 
 | | |
@@ -12,8 +14,6 @@ Fillout is an online form, survey and scheduling builder. This connector wraps t
 | **Category** | [Productivity](README.md) |
 | **Website** | [fillout.com](https://fillout.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `fillout` |
 
 ## Use it

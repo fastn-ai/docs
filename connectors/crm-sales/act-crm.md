@@ -5,6 +5,8 @@ hidden: true
 
 # Act! CRM
 
+<img src="../../.gitbook/assets/connectors/act-crm.png" alt="Act! CRM logo" width="64">
+
 Act! CRM (Act! Premium Cloud and Act! Premium Web) via the Act! Web API. Manage contacts, companies, groups, opportunities, activities, history, notes, products, users, teams, documents and metadata in an Act! database.
 
 | | |
@@ -12,8 +14,6 @@ Act! CRM (Act! Premium Cloud and Act! Premium Web) via the Act! Web API. Manage 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [act.com](https://act.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 397 |
-| **Events** | 0 |
 | **Slug** | `actCrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Act! CRM from **Build → Integrations → Connectors** and connect an accou
 | Associate Company With Contact | `associateCompanyWithContact` | Associates a single company with a contact. |
 | Associate Company With Opportunity | `associateCompanyWithOpportunity` | Associates a single company with an opportunity. |
 | Associate Contact With Company | `associateContactWithCompany` | Associates a single contact with a company. |
+
+<details>
+
+<summary>See 387 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Associate Contact With History | `associateContactWithHistory` | Associates a contact with a history item if it is not already associated. |
 | Associate Contact With Note | `associateContactWithNote` | Associates a contact with a note if it is not already associated. |
 | Associate Contact With Opportunity | `associateContactWithOpportunity` | Associates a single contact with an opportunity. |
@@ -421,3 +428,5 @@ Add Act! CRM from **Build → Integrations → Connectors** and connect an accou
 | Upload History Attachment | `uploadHistoryAttachment` | Uploads a file as the attachment of a history item (multipart form data). |
 | Upload Note Attachment | `uploadNoteAttachment` | Uploads a file as the attachment of a note (multipart form data). |
 | Upload Template | `uploadTemplate` | Uploads a document template file (multipart form data). |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Phone Validator
 
+<img src="../../.gitbook/assets/connectors/phone-validator.ico" alt="Phone Validator logo" width="64">
+
 Phone Validator (phonevalidator.com) worldwide phone number validation API. Returns line type (cell, landline, VOIP, toll-free), carrier, location, country and fake-number detection for any phone number. Authentication uses an API key passed in the query string.
 
 | | |
@@ -12,8 +14,6 @@ Phone Validator (phonevalidator.com) worldwide phone number validation API. Retu
 | **Category** | [Search and web](README.md) |
 | **Website** | [phonevalidator.com](https://phonevalidator.com) |
 | **Authentication** | API key |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `phoneValidator` |
 
 ## Use it

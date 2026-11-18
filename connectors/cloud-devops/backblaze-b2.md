@@ -5,14 +5,14 @@ hidden: true
 
 # Backblaze B2
 
+<img src="../../.gitbook/assets/connectors/backblaze-b2.png" alt="Backblaze B2 logo" width="64">
+
 Backblaze B2 Cloud Storage connector using the B2 Native API v3. Manage buckets, files and file versions, application keys, large-file uploads, download authorizations, and bucket event-notification rules.
 
 | | |
 | --- | --- |
 | **Category** | [Cloud and DevOps](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `backblazeB2` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Backblaze B2 from **Build → Integrations → Connectors** and connect an a
 | Delete Bucket | `deleteBucket` | Deletes the specified bucket. Only buckets that contain no files can be deleted. |
 | Delete File Version | `deleteFileVersion` | Deletes one version of a file. If it is the only version, the file is removed entirely. |
 | Download File By ID | `downloadFileById` | Downloads one file from B2 by its file id. The response body is the raw file content. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Download File By Name | `downloadFileByName` | Downloads one file by providing the bucket name and the file name. The response body is the raw file content. |
 | Finish Large File | `finishLargeFile` | Combines the uploaded parts into a single B2 file. |
 | Get Bucket Notification Rules | `getBucketNotificationRules` | Returns the event notification rules configured on a bucket. |
@@ -54,3 +61,5 @@ Add Backblaze B2 from **Build → Integrations → Connectors** and connect an a
 | Update File Retention | `updateFileRetention` | Modifies Object Lock retention for a file version. fileRetention is e.g. {"mode":"governance","retainUntilTimestamp":&lt;ms&gt;}. |
 | Upload File | `uploadFile` | Uploads a file to a bucket using an upload URL and token from Get Upload URL. The upload URL is a per-call dynamic host. |
 | Upload Part | `uploadPart` | Uploads one part of a large file using an upload URL from Get Upload Part URL. The upload URL is a per-call dynamic host. |
+
+</details>

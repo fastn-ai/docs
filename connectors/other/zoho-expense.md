@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Expense
 
+<img src="../../.gitbook/assets/connectors/zoho-expense.png" alt="Zoho Expense logo" width="64">
+
 Zoho Expense is Zoho's travel and expense management platform. This connector wraps the Zoho Expense REST API v1 (zohoapis.com/expense/v1): organizations, expenses, expense reports and their approval and reimbursement lifecycle, trips, employee advances, users, customers, projects, expense categories, currencies, taxes and reporting tags. Every request is scoped by an organization ID. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Expense is Zoho's travel and expense management platform. This connector wr
 | **Category** | [Other](README.md) |
 | **Website** | [expense.zoho.com](https://expense.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 81 |
-| **Events** | 0 |
 | **Slug** | `zohoExpense` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Expense from **Build → Integrations → Connectors** and connect an a
 | Cancel Trip | `cancelTrip` | Cancel a travel request in Zoho Expense, optionally recording why the trip is no longer going ahead. |
 | Close Trip | `closeTrip` | Close a completed travel request in Zoho Expense once all its expenses have been accounted for. |
 | Create Currency | `createCurrency` | Add a currency to a Zoho Expense organization so expenses can be recorded in it. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Customer | `createCustomer` | Create a customer in Zoho Expense that billable expenses and projects can be associated with. |
 | Create Employee Advance | `createEmployeeAdvance` | Record an advance payment made to an employee in Zoho Expense, optionally linked to a trip, customer or project. |
 | Create Expense | `createExpense` | Record a new expense in Zoho Expense. Each expense carries one or more line items describing the category and amount being claimed. |
@@ -105,3 +112,5 @@ Add Zoho Expense from **Build → Integrations → Connectors** and connect an a
 | Update Tax | `updateTax` | Update an existing tax rate in Zoho Expense. Only the fields supplied are sent. |
 | Update Trip | `updateTrip` | Update an existing Zoho Expense trip, including its itineraries. Only the fields supplied are sent. |
 | Update User | `updateUser` | Update a user's profile, role or spending limits in a Zoho Expense organization. Only the fields supplied are sent. |
+
+</details>

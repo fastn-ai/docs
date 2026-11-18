@@ -5,6 +5,8 @@ hidden: true
 
 # Cardly
 
+<img src="../../.gitbook/assets/connectors/cardly.png" alt="Cardly logo" width="64">
+
 Cardly is a print-and-post greeting card platform. Use this connector to manage artwork, contact lists and contacts, generate card previews, place card orders, manage organisation users and invitations, inspect account credit balance and history, and register webhooks for order and delivery events. Wraps the Cardly v2 REST API at https://api.card.ly/v2.
 
 | | |
@@ -12,8 +14,6 @@ Cardly is a print-and-post greeting card platform. Use this connector to manage 
 | **Category** | [Marketing](README.md) |
 | **Website** | [card.ly](https://card.ly) |
 | **Authentication** | API key |
-| **Actions** | 48 |
-| **Events** | 9 |
 | **Slug** | `cardly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cardly from **Build → Integrations → Connectors** and connect an account
 | Delete Contact By Identifier | `deleteContactByIdentifier` | Permanently delete a contact from a Cardly contact list by its email address or your own external identifier, without needing the Cardly contact ID. Supply exactly one of the two. |
 | Delete Contact List | `deleteContactList` | Permanently delete a Cardly contact list and every contact it holds. This cannot be undone, so confirm the list ID before calling. |
 | Delete Invitation | `deleteInvitation` | Revoke a pending Cardly organisation invitation by its unique ID. The acceptance link stops working immediately. |
+
+<details>
+
+<summary>See 38 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Invitation By Email | `deleteInvitationByEmail` | Revoke a pending Cardly organisation invitation by the email address it was sent to, without needing the invitation ID. |
 | Delete User | `deleteUser` | Revoke a user's access to your Cardly organisation by their unique user ID. The call succeeds with an empty data object whether or not a matching user existed, so confirm the user first with Retrieve User. Do not call this for the only administrator, as that would lock the organisation out. |
 | Delete User By Email | `deleteUserByEmail` | Revoke a user's access to your Cardly organisation by their email address. The call succeeds with an empty data object whether or not a matching user existed, so confirm the user first with Find User. Do not call this for the only administrator, as that would lock the organisation out. |
@@ -72,6 +79,8 @@ Add Cardly from **Build → Integrations → Connectors** and connect an account
 | Search Contacts | `searchContacts` | Find a single contact inside a Cardly contact list by its email address or your own external identifier. Returns the matching contact, or a 404 when nothing in the list matches. |
 | Sync Contact | `syncContact` | Upsert a contact into a Cardly contact list: the contact is matched on externalId or email and updated if it already exists, or created if it does not. At least one of externalId or email must be supplied. |
 | Update Webhook | `updateWebhook` | Update an existing Cardly webhook's target URL, subscribed events, description or metadata, or enable and disable it. The events list replaces the current subscription rather than adding to it. |
+
+</details>
 
 ## Events
 

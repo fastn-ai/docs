@@ -5,6 +5,8 @@ hidden: true
 
 # Basecamp
 
+<img src="../../.gitbook/assets/connectors/basecamp.jpg" alt="Basecamp logo" width="64">
+
 Basecamp 4 (Basecamp 3 API / bc3-api) connector. Project management, to-dos, messages, comments, documents, schedules, campfires, card tables, recordings, and webhooks. OAuth 2.0 via 37signals Launchpad. Account ID is supplied per-request in the URL path; every request requires a User-Agent header.
 
 | | |
@@ -12,8 +14,6 @@ Basecamp 4 (Basecamp 3 API / bc3-api) connector. Project management, to-dos, mes
 | **Category** | [Project management](README.md) |
 | **Website** | [basecamp.com](https://basecamp.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 292 |
-| **Events** | 0 |
 | **Slug** | `basecamp` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Basecamp from **Build → Integrations → Connectors** and connect an accou
 | Create Attachment | `createAttachment` | Upload raw file bytes to get an attachable_sgid for use in uploads, documents, or rich text. Pass the file name via the name query param; send the binary body with the correct Content-Type. |
 | Create Campfire Line | `createCampfireLine` | Create a new line (message) in a campfire |
 | Create Card | `createCard` | Create a card in a column |
+
+<details>
+
+<summary>See 282 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Card Step | `createCardStep` | Create a step on a card |
 | Create Card Table Column | `createCardTableColumn` | Create a column in a card table |
 | Create Comment | `createComment` | Create a new comment on a recording |
@@ -316,3 +323,5 @@ Add Basecamp from **Build → Integrations → Connectors** and connect an accou
 | UpdateTool | `updateTool` | Update (rename) an existing tool |
 | UpdateWormhole | `updateWormhole` | Point a card table's wormhole, its shortcut for sending cards to another card table, at a different destination column |
 | Watch Card Table Column | `watchCardTableColumn` | Subscribe to a card column (watch for changes) |
+
+</details>

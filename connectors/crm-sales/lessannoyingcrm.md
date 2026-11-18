@@ -5,6 +5,8 @@ hidden: true
 
 # Less Annoying CRM
 
+<img src="../../.gitbook/assets/connectors/lessannoyingcrm.png" alt="Less Annoying CRM logo" width="64">
+
 Less Annoying CRM (LACRM) v2 API. Single-endpoint JSON-RPC: POST https://api.lessannoyingcrm.com/v2/ with body {Function, Parameters}. Covers contacts, companies, pipelines, pipeline items/statuses, tasks, events, notes, emails, files, relationships, groups, group memberships, custom fields, calendars, teams, users, search, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Less Annoying CRM (LACRM) v2 API. Single-endpoint JSON-RPC: POST https://api.les
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [lessannoyingcrm.com](https://lessannoyingcrm.com) |
 | **Authentication** | API key |
-| **Actions** | 77 |
-| **Events** | 0 |
 | **Slug** | `lessannoyingcrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Less Annoying CRM from **Build → Integrations → Connectors** and connect
 | Create Pipeline | `createPipeline` | Create a new pipeline. Permissions is Public or TeamSharing; TeamIds required only for TeamSharing (pass []). |
 | Create Pipeline Item | `createPipelineItem` | Add a contact to a pipeline at a status (create a deal). Note is an optional history note (pass ''). |
 | Create Pipeline Status | `createPipelineStatus` | Add a status/step to a pipeline. |
+
+<details>
+
+<summary>See 67 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Relationship | `createRelationship` | Create a relationship link between two contacts with a descriptive note. |
 | Create Task | `createTask` | Create a task. DueDate YYYY-MM-DD. Attach to a contact via ContactId (pass '' if none). |
 | Create Team | `createTeam` | Create a team with an optional list of user Uids (pass []). |
@@ -101,3 +108,5 @@ Add Less Annoying CRM from **Build → Integrations → Connectors** and connect
 | Get Users | `getUsers` | Return all users you have access to see. Admins see all users. Response is an array of user objects. |
 | Get Webhook | `getWebhook` | Retrieve a single webhook by Uid. |
 | Get Webhooks | `getWebhooks` | List all webhooks on the account. Set IncludeArchived to include archived. Response is an array. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Runway
 
+<img src="../../.gitbook/assets/connectors/runway.png" alt="Runway logo" width="64">
+
 Runway generative AI API for video and image creation. Start generation tasks (text-to-image, image-to-video, video-to-video, upscaling, character performance), track task status, and query organization credit usage.
 
 | | |
@@ -12,8 +14,6 @@ Runway generative AI API for video and image creation. Start generation tasks (t
 | **Category** | [AI and ML](README.md) |
 | **Website** | [runwayml.com](https://runwayml.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `runway` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add Runway from **Build → Integrations → Connectors** and connect an account
 | Create Video Upscale Task | `videoUpscale` | Starts a new task that upscales and enhances an input video using a Runway video upscaling model. Returns a task id to poll with Get Task. Consumes organization credits when a valid job is submitted. |
 | Get Organization | `getOrganization` | Retrieves information about the Runway organization tied to the API key, including its tier and remaining credit balance. |
 | Get Organization Usage | `getOrganizationUsage` | Queries credit usage for the Runway organization over a date range, broken down by day and model. This is a free read that does not consume credits. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Task | `getTask` | Retrieves the status and result of a generation task by its id. Poll this until the task status is SUCCEEDED or FAILED. This is a free read that does not consume credits. |
+
+</details>

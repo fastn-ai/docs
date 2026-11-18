@@ -5,6 +5,8 @@ hidden: true
 
 # Felt
 
+<img src="../../.gitbook/assets/connectors/felt.png" alt="Felt logo" width="64">
+
 Felt is a collaborative web mapping platform. This connector covers the Felt REST API v2: maps (create, read, update, move, duplicate, delete, image export, embed tokens), map layers (upload, add from source, style, publish, refresh, export, duplicate, delete), layer components, layer groups, elements and element groups, comments, projects, data sources and source credentials, the layer library, and the current user.
 
 | | |
@@ -12,8 +14,6 @@ Felt is a collaborative web mapping platform. This connector covers the Felt RES
 | **Category** | [Maps and location](README.md) |
 | **Website** | [felt.com](https://felt.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 57 |
-| **Events** | 0 |
 | **Slug** | `felt` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Felt from **Build → Integrations → Connectors** and connect an account, 
 | Create Or Update Map Element Groups | `upsertMapElementGroups` | Creates or updates element groups on a map. Felt expects a raw JSON array as the request body, so element_groups is passed as a JSON-array string and emitted verbatim. An element without an id creates a new group. |
 | Create Or Update Map Elements | `upsertMapElements` | Creates or updates annotation elements on a map from a GeoJSON FeatureCollection. A feature whose properties carry felt:id updates that element; a feature without one creates a new element. felt:parentId places the element in an element group. Note: Felt's own OpenAPI document places felt:id inside geometry, but the live API returns and accepts it under properties. |
 | Create Project | `createProject` | Creates a project in the workspace with the given name and visibility. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Source | `createSource` | Connects a new data source to the workspace. Connecting and cataloguing the datasets happens asynchronously after the response - poll Get Source for sync_status. |
 | Create Source Credential | `createSourceCredential` | Adds an authentication credential to an existing data source, for example an S3 key pair or a STAC API token. Secret fields are returned as felt:redacted. |
 | Delete Layer Component | `deleteLayerComponent` | Permanently removes a component from a layer. |
@@ -81,3 +88,5 @@ Add Felt from **Build → Integrations → Connectors** and connect an account, 
 | Update Source | `updateSource` | Updates a source's name, connection settings or permissions. Reconnecting and re-cataloguing happen asynchronously after the response. |
 | Update Source Credential | `updateSourceCredential` | Updates an existing source credential's name, use case or secret material. Secret fields are returned as felt:redacted. |
 | Upload Map Layer | `uploadMapLayer` | Starts creating a new layer on a map, either by importing a public URL (import_url - one call is enough) or by uploading a file. For file uploads the response returns a presigned Amazon S3 url plus presigned_attributes that must be POSTed as multipart form data to finish the upload. |
+
+</details>

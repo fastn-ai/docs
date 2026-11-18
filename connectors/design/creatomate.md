@@ -5,6 +5,8 @@ hidden: true
 
 # Creatomate
 
+<img src="../../.gitbook/assets/connectors/creatomate.png" alt="Creatomate logo" width="64">
+
 Creatomate is a media automation platform for generating videos, images and GIFs from reusable templates or raw RenderScript. This connector covers the Creatomate REST API: creating and tracking renders, full template CRUD, and reading data feeds.
 
 | | |
@@ -12,8 +14,6 @@ Creatomate is a media automation platform for generating videos, images and GIFs
 | **Category** | [Design](README.md) |
 | **Website** | [creatomate.com](https://creatomate.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 11 |
-| **Events** | 2 |
 | **Slug** | `creatomate` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Creatomate from **Build → Integrations → Connectors** and connect an acc
 | Get Template | `getTemplate` | Retrieves a single Creatomate template by its id, including the full RenderScript source document that the list endpoint omits. Returns a 404 with the hint 'No template was found with that ID.' when the id does not exist in the project. |
 | List Feeds | `listFeeds` | Returns every data feed configured in the Creatomate project. Feeds are spreadsheet or API data sources that drive bulk generation, where each row becomes one render. Feeds are created and configured in the Creatomate dashboard, not through the API. |
 | List Templates | `listTemplates` | Returns every template in the Creatomate project the API key belongs to, as a compact list. The RenderScript source is never included in this list response - use Get Template to retrieve a single template with its source. Optionally filter the list to templates carrying specific tags. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Update Template | `updateTemplate` | Partially updates a Creatomate template. Only the fields you supply are changed - name, tags and the RenderScript source can each be updated independently. Replacing the source of a template that automations already use can break those automations, because modifications match on element names. |
+
+</details>
 
 ## Events
 

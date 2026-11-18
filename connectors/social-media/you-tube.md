@@ -5,6 +5,8 @@ hidden: true
 
 # YouTube
 
+<img src="../../.gitbook/assets/connectors/you-tube.png" alt="YouTube logo" width="64">
+
 YouTube Data API v3 — manage videos, channels, playlists, comments, subscriptions, and search YouTube content
 
 | | |
@@ -12,8 +14,6 @@ YouTube Data API v3 — manage videos, channels, playlists, comments, subscripti
 | **Category** | [Social media](README.md) |
 | **Website** | [youtube.com](https://youtube.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 70 |
-| **Events** | 0 |
 | **Slug** | `youTube` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add YouTube from **Build → Integrations → Connectors** and connect an accoun
 | Create Live Stream | `insertLiveStream` | Create a video stream with RTMP ingestion (liveStreams.insert). Returns stream key and ingestion address in cdn. |
 | Create Playlist | `createPlaylist` | Creates a playlist. |
 | Create Third-Party Link | `insertThirdPartyLink` | Creates a link between the authenticated YouTube channel and a third-party account (YouTube Data API thirdPartyLinks.insert), e.g. a Google Merchant Center store (channelToStoreLink) for YouTube Shopping or a partner affiliate program (channelToAffiliateProgramLink). Google scope: youtube.third-party-link.creator. Intended for approved YouTube Shopping/affiliate partners; other callers get a 403. Remove it with Delete Third-Party Link. Returns the created link with its linkingToken and status. |
+
+<details>
+
+<summary>See 60 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Caption | `deleteCaption` | Deletes one or more caption tracks. |
 | Delete Channel Section | `deleteChannelSection` | Deletes a channel section. |
 | Delete Comment | `deleteComment` | Deletes a comment. |
@@ -94,3 +101,5 @@ Add YouTube from **Build → Integrations → Connectors** and connect an accoun
 | Upload Caption | `insertCaption` | Upload a caption track (SRT, WebVTT or SBV text) to a video you own (captions.insert, multipart). Text-only, so it works under the 8 KB execute limit for short tracks. Returns the caption resource with its id. |
 | Upload Channel Banner | `insertChannelBanner` | Upload a channel banner image (channelBanners.insert, min 2048x1152, 16:9). Returns a url; apply it with Update Channel brandingSettings.image.bannerExternalUrl. Uploading alone does not change the channel. Image is sent base64 in a multipart/related body; fastn currently caps execute bodies at 8 KB, so only small images work today. |
 | Upload Video | `uploadVideo` | Uploads a video file to the authenticated user's YouTube channel with a title, description, category and privacy status. The video bytes are passed as a base64 string, so this action suits short clips; very large files exceed the action payload limit. |
+
+</details>

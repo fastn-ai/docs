@@ -5,6 +5,8 @@ hidden: true
 
 # PhantomBuster
 
+<img src="../../.gitbook/assets/connectors/phantombuster.png" alt="PhantomBuster logo" width="64">
+
 PhantomBuster is a cloud automation platform for lead generation and data extraction (Phantoms). This connector covers the PhantomBuster API v2 and the legacy v1 endpoints: agents (create, launch, schedule, stop, output, delete), containers and their output and result objects, scripts and branches, organization settings, resources, usage exports and agent groups, the current user, org storage for leads, lead lists, lead objects and company objects, identities, CRM access and contacts, AI completions and advice, ICPs, buyer personas, scoring definitions, SERP search, IP location and captcha solving.
 
 | | |
@@ -12,8 +14,6 @@ PhantomBuster is a cloud automation platform for lead generation and data extrac
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [phantombuster.com](https://phantombuster.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 78 |
-| **Events** | 0 |
 | **Slug** | `phantombuster` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PhantomBuster from **Build → Integrations → Connectors** and connect an 
 | Delete Leads | `deleteLeads` | Deletes leads from the organization's storage by their IDs. |
 | Delete Script | `deleteScript` | Deletes a script by ID, optionally scoped to a branch and environment. |
 | Export Agent Usage | `exportAgentUsage` | Exports a CSV file of agent usage for the current organization over the given number of days (up to six months). |
+
+<details>
+
+<summary>See 68 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Export Container Usage | `exportContainerUsage` | Exports a CSV file of container usage for the current organization over the given number of days (up to six months), optionally limited to one agent. |
 | Generate Identity Token | `generateIdentityToken` | Generates an identity token that lets an identity be saved with Save Identity With Token. Requires a validated email address on the account. |
 | Get Agent | `getAgent` | Gets an agent (Phantom) by its ID, optionally including its manifest, agent object, script code, slave agents and sub-slave agents. |
@@ -102,3 +109,5 @@ Add PhantomBuster from **Build → Integrations → Connectors** and connect an 
 | Update Organization | `updateOrganization` | Updates the current organization's name, display name, time zone, company and billing details, global object, proxies, invoice information, CRM integration options and custom prompt. PhantomBuster only allows web or MCP sessions to call this endpoint; API-key calls are rejected. |
 | Update Script Access List | `updateScriptAccessList` | Adds an organization or user to, or removes one from, the access list of a script branch. |
 | Update Script Visibility | `updateScriptVisibility` | Updates the visibility of a script branch: private, semi public, public, semi open source or open source. |
+
+</details>

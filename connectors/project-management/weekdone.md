@@ -5,6 +5,8 @@ hidden: true
 
 # Weekdone
 
+<img src="../../.gitbook/assets/connectors/weekdone.png" alt="Weekdone logo" width="64">
+
 Weekdone is a team OKR, weekly progress reporting, and check-in platform. This connector wraps the Weekdone REST API v1 (https://api.weekdone.com/1) covering weekly report items and their comments, likes and ordering, weekly reports, teams, users, report item types, tags, Objectives and Key Results, KPIs, and company configuration.
 
 | | |
@@ -12,8 +14,6 @@ Weekdone is a team OKR, weekly progress reporting, and check-in platform. This c
 | **Category** | [Project management](README.md) |
 | **Website** | [weekdone.com](https://weekdone.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `weekdone` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Weekdone from **Build → Integrations → Connectors** and connect an accou
 | Delete Key Result | `deleteObjectiveResult` | Delete a key result from an objective. Docs: https://weekdone.com/developer |
 | Delete KPI | `deleteKpi` | Delete a KPI. Docs: https://weekdone.com/developer |
 | Delete Objective | `deleteObjective` | Permanently deletes an Objective together with its Key Results and comments. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Objective Comment | `deleteObjectiveComment` | Delete a comment on an objective. Docs: https://weekdone.com/developer |
 | Delete Report Item | `deleteItem` | Permanently deletes a report item and everything attached to it, including its comments and likes. |
 | Delete Report Item Comment | `deleteItemComment` | Permanently deletes a single comment from a report item. |
@@ -61,3 +68,5 @@ Add Weekdone from **Build → Integrations → Connectors** and connect an accou
 | Update Report Item | `updateItem` | Updates an existing report item. Only the fields supplied are changed. When moving an item to a different category with type_id, the target reporting week must also be supplied in period. |
 | Update Tag Priority | `updateTagPriority` | Mark a tag as priority or not. Docs: https://weekdone.com/developer |
 | Update Tag Status | `updateTagStatus` | Set the status text of a tag. Docs: https://weekdone.com/developer |
+
+</details>

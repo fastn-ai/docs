@@ -5,6 +5,8 @@ hidden: true
 
 # Slack
 
+<img src="../../.gitbook/assets/connectors/slack.png" alt="Slack logo" width="64">
+
 Connect to Slack to send messages, manage channels, interact with users, and automate workflows directly in your Slack workspace.
 
 | | |
@@ -12,8 +14,6 @@ Connect to Slack to send messages, manage channels, interact with users, and aut
 | **Category** | [Communication](README.md) |
 | **Website** | [slack.com](https://slack.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 177 |
-| **Events** | 59 |
 | **Slug** | `slack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Slack from **Build → Integrations → Connectors** and connect an account,
 | Add Reaction | `createReactionsAdd` | Adds a reaction to an item. |
 | Add Reminder | `createRemindersAdd` | Creates a reminder. ⛔ VERIFIED-BLOCKED 2026-06-05: not_allowed_token_type — reminders.* require a user token even though reminders:read/write appear in bot grant. |
 | Add Remote File | `createFilesRemoteAdd` | Adds a file from a remote service. VERIFY 2026-06-05: BLOCKED — ok:false error="missing_scope" needed="remote_files:write" (not granted to the bot token). configHealthy:true, auth+routing OK. |
+
+<details>
+
+<summary>See 167 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Star | `createStarsAdd` | Adds a star to an item. ⛔ VERIFIED-BLOCKED 2026-06-05: missing_scope needed=stars:write — user-token-only scope, not grantable to bot. |
 | Approve Admin App | `createAdminAppsApprove` | Approve an app for installation on a workspace. |
 | Approve Admin Invite Request | `createAdminInviteRequestsApprove` | Approve a workspace invite request. |
@@ -202,6 +209,8 @@ Add Slack from **Build → Integrations → Connectors** and connect an account,
 | Update Workflow Step | `listWorkflowsUpdateStep` | [DEPRECATED] Retired by Slack. workflows.updateStep ceased functioning on 2024-09-26 with the Steps from Apps retirement (https://api.slack.com/legacy/workflows/steps/migration); Slack now answers ok:false / unknown_method. There is no direct replacement; use custom functions on the Slack automation platform. |
 | Upload File | `createFilesUpload` | DEPRECATED - do not use. Wraps Slack's files.upload, which Slack deprecated and sunset on November 12, 2025; it now always returns ok:false, error "method_deprecated" (re-verified live 2026-09-12). Use the replacement flow instead: 1) Get Upload URL External (filename, length) returns upload_url and file_id; 2) POST the raw file bytes to upload_url; 3) Complete Upload External (files=[{id, title}], optional channel_id, thread_ts, initial_comment). Kept only so existing callers are not broken. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -218,6 +227,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Channel ID Changed | `channel_id_changed` | A channel ID changed (e.g. due to a workspace migration) |
 | Channel Left | `channel_left` | You (the bot/authed user) left a public channel |
 | Channel Renamed | `channel_rename` | A channel was renamed in the workspace |
+
+<details>
+
+<summary>See 49 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Channel Shared | `channel_shared` | A channel was shared with an external workspace (Slack Connect) |
 | Channel Unarchived | `channel_unarchive` | A public channel was unarchived |
 | Channel Unshared | `channel_unshared` | A channel is no longer shared with an external workspace |
@@ -267,3 +283,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Huddle Changed | `user_huddle_changed` | A user's huddle status changed |
 | User Profile Changed | `user_profile_changed` | A user's profile changed |
 | User Status Changed | `user_status_changed` | A user's status changed |
+
+</details>

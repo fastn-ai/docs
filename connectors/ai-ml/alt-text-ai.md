@@ -5,6 +5,8 @@ hidden: true
 
 # AltText.ai
 
+<img src="../../.gitbook/assets/connectors/alt-text-ai.png" alt="AltText.ai logo" width="64">
+
 AltText.ai generates alt text for images using AI computer-vision models, so images can be made accessible and SEO-friendly without a human copywriter. This connector wraps the full AltText.ai REST API v1: account settings, the image library (create by public URL or base64 upload, read, update, delete, list, search), bulk CSV creation and web-page scraping, plus image webhook events.
 
 | | |
@@ -12,8 +14,6 @@ AltText.ai generates alt text for images using AI computer-vision models, so ima
 | **Category** | [AI and ML](README.md) |
 | **Website** | [alttext.ai](https://alttext.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 11 |
-| **Events** | 2 |
 | **Slug** | `altTextAi` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add AltText.ai from **Build → Integrations → Connectors** and connect an acc
 | Scrape Page Images | `scrapePageImages` | Crawl a web page URL, or parse a raw HTML document, and queue alt text generation for every img element found. The response lists the scraped image elements with their src, existing alt, width and height, plus a skip_reason for any that were not queued; the generated alt text itself arrives asynchronously, so poll Get Image or List Images for the results. The crawler does not execute JavaScript and must download and parse the page within 3 seconds. Each queued image consumes one credit. |
 | Search Images | `searchImages` | Search the AltText.ai image library. The query type is detected automatically: a query starting with http:// or https:// searches by URL substring, otherwise an exact asset ID match is tried first and the query then falls back to a full-text search of alt text supporting the operators & (AND), \| or OR, and - or ! (exclude). Supports pagination with page and limit. |
 | Update Account | `updateAccount` | Update the AltText.ai account settings that are editable through the API: the account name, the webhook notification URL that image events are POSTed to, and the notification email address. Other settings such as whitelabel, ending_period and no_quotes can only be changed on the AltText.ai website. On a validation failure the API returns 4xx with the offending field listed under errors. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Update Image | `updateImage` | Update an existing AltText.ai image: replace its alt text, rename its asset ID or replace its custom metadata. The image URL cannot be changed. Use the lang and overwrite query parameters to control which language the alt text is written to and whether existing alt text in that language is replaced. |
+
+</details>
 
 ## Events
 

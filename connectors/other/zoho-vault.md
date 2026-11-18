@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Vault
 
+<img src="../../.gitbook/assets/connectors/zoho-vault.png" alt="Zoho Vault logo" width="64">
+
 Zoho Vault is Zoho's workforce password management service. This connector wraps the Zoho Vault REST API v1 (vault.zoho.com/api/rest/json/v1): secrets (passwords), secret sharing with users, user groups and third parties, folders (chambers) and folder sharing, users and user groups, and the password, folder, user, misc and activity audit trails. Note that Vault secret payloads are client-side encrypted; secretdata, securenote, customcolumn and file values are exchanged as encrypted strings.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Vault is Zoho's workforce password management service. This connector wraps
 | **Category** | [Other](README.md) |
 | **Website** | [vault.zoho.com](https://vault.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `zohoVault` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Vault from **Build → Integrations → Connectors** and connect an acc
 | Get Folder | `getFolder` | Returns the details of a single folder (chamber) in Zoho Vault, including the passwords it contains, with optional sorting and pagination of those passwords. |
 | Get Folder User Group Sharing | `getFolderUserGroupSharing` | Returns the per-user-group sharing configuration of a folder (chamber), listing which user groups hold view, logon, modify or manage access and which groups the folder is not shared with. |
 | Get Folder User Sharing | `getFolderUserSharing` | Returns the per-user sharing configuration of a folder (chamber), listing which users hold view, logon, modify or manage access and which users the folder is not shared with. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Password | `getPassword` | Retrieves a single password (secret) from Zoho Vault by its password ID, including its encrypted secret data and sharing level. |
 | Get Password User Group Sharing | `getPasswordUserGroupSharing` | Returns the per-user-group sharing configuration of a password, listing which user groups hold view, logon, modify or manage access and which groups the password is not shared with. |
 | Get Password User Sharing | `getPasswordUserSharing` | Returns the per-user sharing configuration of a password, listing which users hold view, logon, modify or manage access and which users the password is not shared with. |
@@ -59,3 +66,5 @@ Add Zoho Vault from **Build → Integrations → Connectors** and connect an acc
 | Update Password User Sharing | `updatePasswordUserSharing` | Replaces the per-user sharing configuration of a password, setting which users hold logon, view, modify or manage access. |
 | Update Shared File Data | `updateSharedFileData` | Updates the encrypted file attachment data of a password that is encrypted with the organization key. The endpoint expects a top-level JSON array, so the file data must be supplied as a pre-serialized JSON array string. |
 | Update User Group | `updateUserGroup` | Updates an existing Zoho Vault user group, changing its name, description or membership. Only the fields supplied are sent. |
+
+</details>

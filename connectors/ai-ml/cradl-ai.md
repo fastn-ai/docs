@@ -5,6 +5,8 @@ hidden: true
 
 # Cradl AI
 
+<img src="../../.gitbook/assets/connectors/cradl-ai.png" alt="Cradl AI logo" width="64">
+
 Cradl AI document-AI / IDP platform. Build and run document agents, upload documents, run LLM field-extraction predictions, manage validation (human-in-the-loop) tasks, hooks, actions, models, roles, users, app clients, connections and secrets on https://api.cradl.ai/v1.
 
 | | |
@@ -12,8 +14,6 @@ Cradl AI document-AI / IDP platform. Build and run document agents, upload docum
 | **Category** | [AI and ML](README.md) |
 | **Website** | [cradl.ai](https://cradl.ai) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 128 |
-| **Events** | 6 |
 | **Slug** | `cradlAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cradl AI from **Build → Integrations → Connectors** and connect an accou
 | Create Dataset | `createDataset` | Create a training dataset that documents can be filed under. LEGACY "las" API family, entitlement-gated on api.cradl.ai/v1 - the body shape could not be confirmed live because the gate rejects the call before body validation. |
 | Create Document | `createDocument` | Upload a document to Cradl AI for extraction. "content" is the file as a base64 string (max 6,250,000 chars) and contentType must be one of application/pdf, image/jpeg, image/png, image/tiff, image/webp, message/rfc822. Returns the documentId plus signed file URLs. |
 | Create Function | `createFunction` | Create a custom function that automation actions and hooks can run. runtime must be python or nodejs. Returns the created function with its functionId. |
+
+<details>
+
+<summary>See 118 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Hook | `createHook` | Create a hook that reacts to a Cradl AI platform event. trigger must be one of "ActionRun has Completed", "Document is Created", "Email is Received", "Prediction is Created", "ValidationTask has Completed", "ValidationTask is Created". functionId must reference an existing function. |
 | Create Hook Run | `createHookRun` | Fire a hook manually. METERED: consumes one hook run from the monthly allowance. hookId, input and agentRunId are all REQUIRED by the live API - a hook run must belong to an agent run. The API rejects name/description fields even though the published OpenAPI lists them. |
 | Create Model | `createModel` | Create an extraction model. fieldConfig is REQUIRED and maps each field id to its type/description. llmVersion selects the underlying model (sonnet-4.0, sonnet-4.5, sonnet-4.6, qwen3-vl). |
@@ -152,6 +159,8 @@ Add Cradl AI from **Build → Integrations → Connectors** and connect an accou
 | Update Validation | `updateValidation` | Update a validation definition's name, description, config or metadata. At least one field must be supplied. |
 | Update Validation Task | `updateValidationTask` | Move a human review task through its lifecycle - set status to ready, in-progress, succeeded, failed or cancelled and attach the corrected field values as output. At least one field must be supplied. |
 | Update Workflow | `updateWorkflow` | Update a legacy workflow's name, description or notification configuration. LEGACY "las" API family, entitlement-gated on api.cradl.ai/v1 - the body shape could not be confirmed live because the gate rejects the call before body validation. |
+
+</details>
 
 ## Events
 

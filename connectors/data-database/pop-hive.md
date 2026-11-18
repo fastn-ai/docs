@@ -5,6 +5,8 @@ hidden: true
 
 # PopHIVE
 
+<img src="../../.gitbook/assets/connectors/pop-hive.png" alt="PopHIVE logo" width="64">
+
 PopHIVE is Yale School of Public Health's harmonized US public-health surveillance dataset, covering emergency-department visits, wastewater, hospitalizations, lab positivity, search trends and childhood vaccination coverage at national, state and county level. This connector exposes the PopHIVE MCP server's tools for current status, trends, geographic rankings, comparisons, coverage rates, cross-disease overviews and the raw data catalog.
 
 | | |
@@ -12,8 +14,6 @@ PopHIVE is Yale School of Public Health's harmonized US public-health surveillan
 | **Category** | [Data and databases](README.md) |
 | **Website** | [pophive.org](https://pophive.org) |
 | **Authentication** | API key |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `popHive` |
 
 ## Use it

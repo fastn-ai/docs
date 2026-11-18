@@ -5,6 +5,8 @@ hidden: true
 
 # Office for National Statistics (ONS) API
 
+<img src="../../.gitbook/assets/connectors/ons-api.png" alt="Office for National Statistics (ONS) API logo" width="64">
+
 The UK Office for National Statistics (ONS) open API: browse datasets, editions, versions, dimensions and metadata (e.g. CPIH inflation), code lists, dimension hierarchies, Census 2021 population types, areas and observations, plus search of ONS content, the release calendar and topics. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The UK Office for National Statistics (ONS) open API: browse datasets, editions,
 | **Category** | [Data and databases](README.md) |
 | **Website** | [ons.gov.uk](https://ons.gov.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 36 |
-| **Events** | 0 |
 | **Slug** | `onsApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Office for National Statistics (ONS) API from **Build → Integrations → C
 | Get Dataset Version | `getDatasetVersion` | Get one version: release date, dimensions, downloads (CSV/XLSX links) and usage notes (GET /datasets/{id}/editions/{edition}/versions/{version}). Docs: https://developer.ons.gov.uk/dataset/ |
 | Get Dimension Hierarchy | `getHierarchy` | Get the root of a hierarchical dimension of a dataset version instance, with its children (GET /hierarchies/{instance_id}/{dimension_name}). Docs: https://developer.ons.gov.uk/hierarchy/ |
 | Get Dimension Hierarchy Code | `getHierarchyCode` | Get one code in a dimension hierarchy with its parent breadcrumbs and children (GET /hierarchies/{instance_id}/{dimension_name}/{code_id}). Docs: https://developer.ons.gov.uk/hierarchy/ |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Navigation | `getNavigation` | Get the topic and subtopic tree used for the ONS website navigation (GET /navigation). Docs: https://developer.ons.gov.uk/topic/ |
 | Get Population Type | `getPopulationType` | Get one census population type (GET /population-types/{population-type}). Docs: https://developer.ons.gov.uk/population-types/ |
 | Get Topic | `getTopic` | Get one topic by id (GET /topics/{id}). Docs: https://developer.ons.gov.uk/topic/ |
@@ -60,3 +67,5 @@ Add Office for National Statistics (ONS) API from **Build → Integrations → C
 | Search by URIs | `searchByUris` | Get search results for specific ONS page URIs (POST /search/uris). Docs: https://developer.ons.gov.uk/search/ |
 | Search Dimension Options | `searchDimensionOptions` | Search the options of a dimension in a dataset version by text (GET /dimension-search/datasets/{id}/editions/{edition}/versions/{version}/dimensions/{name}). Docs: https://developer.ons.gov.uk/dimension-search/ |
 | Search Release Calendar | `searchReleases` | Search the ONS release calendar (upcoming, published, cancelled and census releases) (GET /search/releases). Docs: https://developer.ons.gov.uk/search/ |
+
+</details>

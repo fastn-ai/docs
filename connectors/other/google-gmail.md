@@ -5,6 +5,8 @@ hidden: true
 
 # Google Gmail
 
+<img src="../../.gitbook/assets/connectors/google-gmail.png" alt="Google Gmail logo" width="64">
+
 Google Gmail API connector for managing emails, drafts, labels, threads, history, attachments, settings, and push notifications via the Gmail REST API v1.
 
 | | |
@@ -12,8 +14,6 @@ Google Gmail API connector for managing emails, drafts, labels, threads, history
 | **Category** | [Other](README.md) |
 | **Website** | [gmail.com](https://gmail.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 60 |
-| **Events** | 1 |
 | **Slug** | `googleGmail` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Gmail from **Build → Integrations → Connectors** and connect an a
 | Delete Delegate | `deleteDelegate` | Removes a delegate from the signed-in user's mailbox via Gmail users.settings.delegates.delete, revoking that user's access to the mailbox. Google scope: gmail.settings.delegates (or gmail.settings.sharing). Google Workspace only. Returns an empty body on success. |
 | Delete Draft | `deleteDraft` | Permanently delete a draft message |
 | Delete Filter | `deleteFilter` | Permanently delete a mail filter |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Label | `deleteLabel` | Permanently delete a user-created label and remove it from all messages |
 | Delete Message | `deleteMessage` | Permanently delete a message (cannot be undone) |
 | Delete Send-As Alias | `deleteSendAs` | Deletes a custom send-as alias from the signed-in user's Gmail account via users.settings.sendAs.delete (the primary address cannot be deleted) and revokes any verification it needed. Google scope: gmail.settings.sendas (or gmail.settings.sharing). Returns an empty body on success. |
@@ -84,6 +91,8 @@ Add Google Gmail from **Build → Integrations → Connectors** and connect an a
 | Update Vacation Settings | `updateVacationSettings` | Update the vacation auto-reply settings |
 | Verify Send-As Alias | `verifySendAs` | Re-sends the ownership verification email for a pending custom send-as alias via users.settings.sendAs.verify. Google emails a verification link to the alias address, so only use it on an address you control. Google scope: gmail.settings.sendas (or gmail.settings.sharing). Returns an empty body on success. |
 | Watch Mailbox | `watchMailbox` | Starts (or renews) Gmail push notifications for the signed-in user's mailbox via users.watch. Gmail publishes a message to the given Cloud Pub/Sub topic whenever the mailbox changes (optionally only for certain labels). The topic must grant roles/pubsub.publisher to gmail-api-push@system.gserviceaccount.com. Watches expire after 7 days; call again to renew. Use Stop Watch to end notifications. Google scope: gmail.notifications (also accepted: gmail.readonly, gmail.modify, mail.google.com). Returns the current historyId and the expiration time in epoch ms. |
+
+</details>
 
 ## Events
 

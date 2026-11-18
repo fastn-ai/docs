@@ -5,6 +5,8 @@ hidden: true
 
 # Memberstack
 
+<img src="../../.gitbook/assets/connectors/memberstack.png" alt="Memberstack logo" width="64">
+
 Memberstack adds authentication, gated content, member profiles and Stripe-backed memberships to any website. This connector covers the Memberstack Admin REST API: member listing, retrieval, creation, update and deletion; custom fields, metadata and JSON storage; free-plan assignment and removal; member JWT verification; and the Data Tables API for listing tables and creating, querying, updating and deleting records.
 
 | | |
@@ -12,8 +14,6 @@ Memberstack adds authentication, gated content, member profiles and Stripe-backe
 | **Category** | [Developer tools](README.md) |
 | **Website** | [memberstack.com](https://memberstack.com) |
 | **Authentication** | API key |
-| **Actions** | 14 |
-| **Events** | 11 |
 | **Slug** | `memberstack` |
 
 ## Use it
@@ -34,10 +34,19 @@ Add Memberstack from **Build → Integrations → Connectors** and connect an ac
 | List Data Tables | `listDataTables` | Lists every data table in your Memberstack app together with its access rules and field definitions. Tables themselves are created in the Memberstack dashboard; the API manages their records. |
 | List Members | `listMembers` | Retrieves a cursor-paginated page of the members in your Memberstack app, each with their authentication email, verification status, custom fields, metadata, permissions and plan connections. |
 | Query Data Records | `queryDataRecords` | Queries the records of a Memberstack data table using a Prisma-style query object. Use Find Many with where, orderBy, select or include, take, skip or after and _count to search and page through records, or Find Unique with where.id to fetch exactly one. Find Many and Find Unique are mutually exclusive and one of them is required. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Remove Free Plan From Member | `removeFreePlanFromMember` | Removes a free plan from a member, immediately revoking the access that plan granted. Only free plans work here; a paid subscription must be cancelled through Stripe. A plan ID that does not resolve returns the plan-not-found error. |
 | Update Data Record | `updateDataRecord` | Updates an existing record in a Memberstack data table. The update is partial, so include only the fields you want to change; the Data object may not be empty. Unique constraints are re-validated excluding this record, and reference constraints are validated for relationship fields. |
 | Update Member | `updateMember` | Updates a member's email, verification status, profile image, login redirect, custom fields, metadata or JSON storage. Updates are partial. Custom Fields and Metadata are shallow-merged, so keys you omit are preserved and you can send a single key; Metadata additionally drops any key whose value is falsy. JSON is the exception and is replaced wholesale with the object you send. |
 | Verify Member Token | `verifyMemberToken` | Verifies a member JWT issued by Memberstack and returns its decoded payload, so a server can trust the member ID behind a request. Any token problem - invalid signature, expiry, audience mismatch, malformed token or a missing token field - returns 400 with the code INVALID_TOKEN, never 401, so treat every non-200 response as an authentication failure. |
+
+</details>
 
 ## Events
 
@@ -55,4 +64,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Member Plan Updated | `member.plan.updated` | Fires when a plan's status changes, for example trialing to active, active to past due, or a change of billing interval. Setup: Memberstack dashboard &gt; Dev Tools &gt; Webhooks &gt; add endpoint, paste the fastn trigger URL, subscribe to member.plan.updated. Payload schema modelled from Memberstack's documented member sample. |
 | Member Updated | `member.updated` | Fires when any member data changes - custom fields, email, metadata or verification status. Setup: Memberstack dashboard &gt; Dev Tools &gt; Webhooks &gt; add endpoint, paste the fastn trigger URL, subscribe to member.updated. Payload schema modelled from Memberstack's documented member sample. |
 | Team Member Added | `team.member.added` | Fires when a member joins a team through an invitation link. Setup: Memberstack dashboard &gt; Dev Tools &gt; Webhooks &gt; add endpoint, paste the fastn trigger URL, subscribe to team.member.added. Payload schema modelled from Memberstack's documented member sample. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Team Member Removed | `team.member.removed` | Fires when a member leaves or is removed from a team. Setup: Memberstack dashboard &gt; Dev Tools &gt; Webhooks &gt; add endpoint, paste the fastn trigger URL, subscribe to team.member.removed. Payload schema modelled from Memberstack's documented member sample. |
+
+</details>

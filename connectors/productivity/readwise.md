@@ -5,6 +5,8 @@ hidden: true
 
 # Readwise
 
+<img src="../../.gitbook/assets/connectors/readwise.png" alt="Readwise logo" width="64">
+
 Readwise saves, organizes and resurfaces the highlights you take across books, articles, podcasts and tweets, and its Reader companion is a read-later app for articles, RSS, email newsletters, PDFs, EPUBs and videos. This connector covers the full Readwise v2 API (highlights, books, tags, export, daily review, user info) and the Reader v3 API (documents, bulk updates, document tags).
 
 | | |
@@ -12,8 +14,6 @@ Readwise saves, organizes and resurfaces the highlights you take across books, a
 | **Category** | [Productivity](README.md) |
 | **Website** | [readwise.io](https://readwise.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 30 |
-| **Events** | 10 |
 | **Slug** | `readwise` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Readwise from **Build → Integrations → Connectors** and connect an accou
 | Delete Highlight | `deleteHighlight` | Permanently deletes a highlight from the Readwise library. Readwise answers HTTP 204 with an empty body on success. |
 | Delete Highlight Tag | `deleteHighlightTag` | Removes a tag from a Readwise highlight. Readwise answers HTTP 204 with an empty body on success. |
 | Export Highlights | `exportHighlights` | Exports every source in the Readwise library together with its highlights, ready for syncing into a note-taking app or a backup. Call it with no parameters for a full export, then page with the returned cursor; later pass Updated After to fetch only what changed. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Book | `getBook` | Retrieves a single Readwise source - a book, article, tweet or podcast - by its id, including its title, author, category, highlight count and tags. |
 | Get Book Tag | `getBookTag` | Retrieves a single tag attached to a Readwise source by the source id and the tag id. |
 | Get Daily Review | `getDailyReview` | Returns the highlights in the most recent Readwise daily review, along with the review id and whether it has been completed. Readwise answers HTTP 404 with "Review not found." when no daily review has been generated yet. |
@@ -54,6 +61,8 @@ Add Readwise from **Build → Integrations → Connectors** and connect an accou
 | Update Highlight | `updateHighlight` | Updates an existing Readwise highlight. Only the fields you supply are changed; omitted fields keep their current values. Returns the updated highlight. |
 | Update Highlight Tag | `updateHighlightTag` | Renames a tag attached to a Readwise highlight. Returns the updated tag. |
 | Validate Access Token | `validateAccessToken` | Checks that the configured Readwise access token is valid. Readwise answers HTTP 204 with an empty body for a valid token and HTTP 401 for an invalid one. |
+
+</details>
 
 ## Events
 

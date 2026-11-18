@@ -5,6 +5,8 @@ hidden: true
 
 # Brandfetch
 
+<img src="../../.gitbook/assets/connectors/brandfetch.jpg" alt="Brandfetch logo" width="64">
+
 Brandfetch is the brand data layer for products and AI agents. This connector covers the Brand API (brand records by domain, email, brand ID, stock/ETF ticker, ISIN or crypto symbol), the Brand Context API, the Transaction API, the Brand Search API, the Logo API CDN and the Brandfetch GraphQL API (webhooks, request logs, organizations, API keys and Brand Police trackers).
 
 | | |
@@ -12,8 +14,6 @@ Brandfetch is the brand data layer for products and AI agents. This connector co
 | **Category** | [Search and web](README.md) |
 | **Website** | [brandfetch.com](https://brandfetch.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 62 |
-| **Events** | 5 |
 | **Slug** | `brandfetch` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Brandfetch from **Build → Integrations → Connectors** and connect an acc
 | Create Organization | `gqlCreateOrganization` | Create a new Brandfetch organisation owned by the signed-in user, optionally setting the addresses that receive its notifications. Note that Brandfetch exposes no API route to delete an organisation's own credentials afterwards, so create sparingly. Requires a Brandfetch user access token. |
 | Create Shared Checkout Link | `gqlCreateSharedCheckoutLink` | Create a shareable, expiring Brandfetch checkout link for a priced plan, so a colleague who holds the payment method can complete the purchase. WARNING: this begins a real purchase flow. Requires a Brandfetch user access token. |
 | Create Webhook | `gqlCreateWebhook` | Register a webhook endpoint with Brandfetch so brand events are delivered to your own HTTPS URL. The response includes the webhook URN and its signing secret, which you need to verify deliveries and which can never be rotated. Requires an active paid Brandfetch subscription: on a free plan the mutation returns success false with code NO_ACTIVE_SUBSCRIPTION and creates nothing. SECURITY: the response body contains the webhook signing secret. |
+
+<details>
+
+<summary>See 52 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete API Client | `gqlDeleteApiClient` | Permanently delete a Brandfetch API client. DANGER: every Logo API image URL and Brand Search call using that client ID stops working immediately, including logos already embedded on live web pages. Requires a Brandfetch user access token. |
 | Delete API Key | `gqlDeleteApiKey` | Permanently revoke a Brandfetch API key. DANGER: every integration still using that key stops working immediately and the secret cannot be recovered. Deleting the key your own connection authenticates with will break this connector. Requires a Brandfetch user access token. |
 | Delete Brand Police Tracker | `gqlDeleteTracker` | Delete a Brand Police tracker and stop it watching the web. Its recorded hits go with it and the tracker quota it used is released. Requires a Brandfetch user access token. |
@@ -86,6 +93,8 @@ Add Brandfetch from **Build → Integrations → Connectors** and connect an acc
 | Update My Profile | `gqlUpdateProfile` | Update the signed-in Brandfetch user's own profile: display name, persona, primary use case, how they discovered Brandfetch, and which onboarding feature they have completed. Requires a Brandfetch user access token; an API-key credential cannot act as a user. |
 | Update Organization | `gqlUpdateOrganization` | Rename a Brandfetch organisation or replace the list of addresses that receive its notifications. Only the fields you supply are changed. Requires a Brandfetch user access token. |
 | Update Webhook | `gqlUpdateWebhook` | Change a registered Brandfetch webhook: its delivery URL, its Authorization delivery header, its event types, its description, or whether it is enabled. Only the fields you supply are changed. Note that the event list replaces the stored set rather than adding to it, and that an empty list is refused. Brand subscriptions are NOT managed here; use Add or Remove Webhook Subscriptions. |
+
+</details>
 
 ## Events
 

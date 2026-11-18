@@ -5,6 +5,8 @@ hidden: true
 
 # Moonshot AI (Kimi)
 
+<img src="../../.gitbook/assets/connectors/moonshotai.png" alt="Moonshot AI (Kimi) logo" width="64">
+
 Moonshot AI Kimi API (kimi-k2, kimi-latest, moonshot-v1) — OpenAI-compatible LLM platform. Chat completions, models, files (extract/QA), context caching, token estimation, and account balance. Base URL https://api.moonshot.ai/v1. Bearer API key auth.
 
 | | |
@@ -12,8 +14,6 @@ Moonshot AI Kimi API (kimi-k2, kimi-latest, moonshot-v1) — OpenAI-compatible L
 | **Category** | [AI and ML](README.md) |
 | **Website** | [moonshot.ai](https://moonshot.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 19 |
-| **Events** | 0 |
 | **Slug** | `moonshotai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Moonshot AI (Kimi) from **Build → Integrations → Connectors** and connec
 | List Batches | `listBatches` | List Batches. List batch tasks for your organization. |
 | List Files | `listFiles` | List Files. Lists all files uploaded by the current user. |
 | List Models | `listModels` | List Models. List all currently available models. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Messages API | `createAnthropicMessage` | Messages API. Call Kimi models with an Anthropic Messages API compatible format, supporting streaming, tool use, image input, thinking, and structured output. |
 | Retrieve Batch | `getBatch` | Retrieve Batch. Retrieve the status and details of a specific batch task. |
 | Retrieve File | `retrieveFile` | Get File Information. Retrieves metadata for a specific uploaded file. |
@@ -43,3 +50,5 @@ Add Moonshot AI (Kimi) from **Build → Integrations → Connectors** and connec
 | Verify Request Signature | `verifySignature` | Verify Request Signature. Verifies a request signature returned in the response headers of the Chat Completions, Responses, or Messages API, proving that the request was handled by the Kimi API for the specified model rather than routed elsewhere. Submit the nonce used in the call, the timestamp from the response headers, the request's model, and the signature; the endpoint returns `valid: true` when the signature matches these three attributes exactly, and `valid: false` otherwise. |
 | Web Search Basic | `webSearch` | Web Search Basic. Run a web search and get structured results with title, snippet, site, and URL. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools). |
 | Web Search Pro | `webSearchPro` | Web Search Pro. Web Search Basic with site and time-range constraints, plus structured content chunks (`chunks`) for each result. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools). |
+
+</details>

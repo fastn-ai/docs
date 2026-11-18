@@ -5,6 +5,8 @@ hidden: true
 
 # GoSquared
 
+<img src="../../.gitbook/assets/connectors/go-squared.png" alt="GoSquared logo" width="64">
+
 GoSquared is a website analytics and customer engagement platform. This connector covers the GoSquared REST API: real-time Now analytics (concurrents, visitors, pages, sources, geo, engagement and time series), account administration (sites, usage, shared users, blocked visitors, bots and IPs, tagged visitors), webhooks and their triggers, and entry points to the People CRM, Chat, Forms, Ecommerce and Trends products.
 
 | | |
@@ -12,8 +14,6 @@ GoSquared is a website analytics and customer engagement platform. This connecto
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [gosquared.com](https://gosquared.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 98 |
-| **Events** | 5 |
 | **Slug** | `goSquared` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GoSquared from **Build → Integrations → Connectors** and connect an acco
 | Create Webhook Trigger | `createWebhookTrigger` | Adds a trigger to an existing GoSquared webhook so that the chosen event type (chat message, Smart Group entry or exit, traffic spike or dip) is delivered to the webhook URL. Requires an API key with the Write Account scope. |
 | Delete Person | `deletePerson` | Permanently deletes a profile and all of its associated data from the GoSquared People CRM by person ID. Optionally blacklists the person's IDs and email so they are never re-created or sent to connected services. This action is irreversible and requires an API key with the Write People scope. |
 | Delete Webhook | `deleteWebhook` | Removes a webhook from a GoSquared site, stopping all event delivery to its URL. |
+
+<details>
+
+<summary>See 88 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Webhook Trigger | `deleteWebhookTrigger` | Detaches a trigger from a GoSquared webhook so that its events are no longer delivered. |
 | Export Smart Group Feed | `exportSmartGroupFeed` | Requests a CSV export of all pageview activity by the people in a Smart Group over a date range of up to 60 days, and returns a download link that stays valid for 15 minutes. Requires an API key with the Read People scope. |
 | Get Blocked Bots Setting | `getBlockedBots` | Returns whether known bots and crawlers are currently excluded from a GoSquared site's analytics. |
@@ -122,6 +129,8 @@ Add GoSquared from **Build → Integrations → Connectors** and connect an acco
 | Unblock IP Address | `unblockIpAddress` | Removes an IP address from a GoSquared site's block list so that its traffic is counted in analytics again. |
 | Unblock Visitor | `unblockVisitor` | Removes a visitor from a GoSquared site's block list so their activity is counted in analytics again. |
 | Untag Visitor | `untagVisitor` | Removes the tag from a visitor on a GoSquared site so they are no longer highlighted in the live visitor feed. |
+
+</details>
 
 ## Events
 

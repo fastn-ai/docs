@@ -5,6 +5,8 @@ hidden: true
 
 # TikTok Shop
 
+<img src="../../.gitbook/assets/connectors/tiktok-shop.png" alt="TikTok Shop logo" width="64">
+
 TikTok Shop Open API connector — products, orders, fulfillment, logistics, returns/refunds, finance, promotions, analytics, customer service, FBT, affiliate, and webhooks. Global region (open-api.tiktokglobalshop.com).
 
 | | |
@@ -12,8 +14,6 @@ TikTok Shop Open API connector — products, orders, fulfillment, logistics, ret
 | **Category** | [Other](README.md) |
 | **Website** | [tiktokglobalshop.com](https://tiktokglobalshop.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 172 |
-| **Events** | 8 |
 | **Slug** | `tiktokShop` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TikTok Shop from **Build → Integrations → Connectors** and connect an ac
 | Cancel Order (seller) | `cancelOrder` | Seller-initiated order cancellation. POST body. |
 | Cancel Order (seller) v2 | `cancelOrderV2` | Cancel Order, seller initiated (TikTok 202602). Side-by-side v2 of the action that stays on 202309. WRITE ACTION - cancels a real order. |
 | Check Listing Prerequisites | `checkListingPrerequisites` | Check whether the seller meets prerequisites to list products. |
+
+<details>
+
+<summary>See 162 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check Listing Prerequisites v2 | `checkListingPrerequisitesV2` | Check Listing Prerequisites (TikTok 202312). Side-by-side v2 of the action that stays on 202309. Returns per-item check results with failure reasons. |
 | Combine Packages | `combinePackages` | Combine multiple packages into one. POST body. |
 | Confirm Package Shipment (Supply Chain) | `confirmPackageShipment` | Sync/confirm package shipment with a 3PL warehouse provider (supply_chain v202309). POST body with package data. |
@@ -196,6 +203,8 @@ Add TikTok Shop from **Build → Integrations → Connectors** and connect an ac
 | Upload Buyer Messages Image | `uploadBuyerMessagesImage` | Upload an image to send in buyer messaging. POST body (customer_service v202309). |
 | Upload Product File | `uploadProductFile` | Upload a product document/file. Body JSON with base64 data and name. |
 | Upload Product Image | `uploadProductImage` | Upload a product image. Body JSON with base64 data or use_case. |
+
+</details>
 
 ## Events
 

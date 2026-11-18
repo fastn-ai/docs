@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Outlook Mail
 
+<img src="../../.gitbook/assets/connectors/microsoft-outlook-mail.svg" alt="Microsoft Outlook Mail logo" width="64">
+
 Microsoft Outlook Mail via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0). Messages (list, get, create draft, update, delete, copy, move, send), replies and forwards, MIME content, delta sync, attachments, mail folders, message rules, Outlook categories, Focused Inbox overrides and mailbox settings.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Outlook Mail via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.
 | **Category** | [Communication](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 52 |
-| **Events** | 0 |
 | **Slug** | `microsoftOutlookMail` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Outlook Mail from **Build → Integrations → Connectors** and co
 | Create Mail Folder | `createMailFolder` | Creates a new top-level mail folder in the signed-in user's mailbox. |
 | Create Message Rule | `createMessageRule` | Creates an inbox rule that moves incoming messages from a given sender into a destination folder. Outlook applies the rule to messages arriving in the Inbox. |
 | Create Outlook Category | `createOutlookCategory` | Creates an Outlook category that can then be applied to messages. Category display names must be unique within the mailbox. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Reply All Draft | `createReplyAllDraft` | Creates a draft reply to the sender and all other recipients of a message without sending it, so it can be edited and sent later with Send Draft Message. |
 | Create Reply Draft | `createReplyDraft` | Creates a draft reply to the sender of a message without sending it, so it can be edited and sent later with Send Draft Message. |
 | Delete Attachment | `deleteAttachment` | Removes an attachment from a message. |
@@ -76,3 +83,5 @@ Add Microsoft Outlook Mail from **Build → Integrations → Connectors** and co
 | Update Message | `updateMessage` | Updates writeable properties of a message. Only the properties you supply are sent, so untouched properties keep their current values. Draft messages accept subject, body and recipient changes; delivered messages accept only properties such as isRead, categories and flag. |
 | Update Message Rule | `updateMessageRule` | Updates the name, order or enabled state of an inbox rule. Only the properties you supply are sent, so the rule's conditions and actions are preserved. |
 | Update Outlook Category | `updateOutlookCategory` | Changes the colour of an Outlook category. The display name of an existing category cannot be changed through the API. |
+
+</details>

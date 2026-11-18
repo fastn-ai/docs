@@ -5,6 +5,8 @@ hidden: true
 
 # Zenodo
 
+<img src="../../.gitbook/assets/connectors/zenodo.jpg" alt="Zenodo logo" width="64">
+
 Zenodo is CERN's open research repository for datasets, software, papers and more, each with a DOI. Search and read published records, their versions, files and communities, and look up communities, licenses, funders, awards, affiliations, subjects and controlled vocabularies. Read-only public access, no API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Zenodo is CERN's open research repository for datasets, software, papers and mor
 | **Category** | [Data and databases](README.md) |
 | **Website** | [zenodo.org](https://zenodo.org) |
 | **Authentication** | No authentication |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `zenodo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zenodo from **Build → Integrations → Connectors** and connect an account
 | Get Record File Metadata | `getRecordFile` | Get metadata of one file of a record: size, checksum, mimetype, links to content (GET /api/records/{id}/files/{key}). Download the bytes from links.content. Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
 | Get Vocabulary Term | `getVocabularyTerm` | Get one term of a controlled vocabulary (GET /api/vocabularies/{type}/{id}). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
 | List Community Records | `listCommunityRecords` | Search the records included in a community (GET /api/communities/{id}/records). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Record Communities | `listRecordCommunities` | List the communities a record belongs to (GET /api/records/{id}/communities). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
 | List Record Files | `listRecordFiles` | List the files of a record with key, size, checksum, mimetype and download links (GET /api/records/{id}/files). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
 | List Record Versions | `listRecordVersions` | List all versions of a record, newest first (GET /api/records/{id}/versions). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
@@ -45,3 +52,5 @@ Add Zenodo from **Build → Integrations → Connectors** and connect an account
 | Search Records | `searchRecords` | Search published Zenodo records (datasets, software, papers...) with free text and filters for community, resource type, access and all versions (GET /api/records). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
 | Search Subjects | `searchSubjects` | Search subject terms (e.g. FAST, Euroscivoc) used to classify records (GET /api/subjects). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
 | Search Vocabulary | `searchVocabulary` | Search a controlled vocabulary such as resourcetypes, languages, creatorsroles, contributorsroles, relationtypes, datetypes, titletypes, descriptiontypes (GET /api/vocabularies/{type}). Docs: https://developers.zenodo.org/ (InvenioRDM REST API: https://inveniordm.docs.cern.ch/reference/rest_api_index/) |
+
+</details>

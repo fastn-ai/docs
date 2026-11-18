@@ -5,6 +5,8 @@ hidden: true
 
 # Cloudmersive
 
+<img src="../../.gitbook/assets/connectors/cloudmersive.png" alt="Cloudmersive logo" width="64">
+
 Cloudmersive is a multi-API platform providing document/data conversion, OCR, data validation, image recognition, virus scanning, NLP, and barcode generation through a single unified REST API.
 
 | | |
@@ -12,8 +14,6 @@ Cloudmersive is a multi-API platform providing document/data conversion, OCR, da
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloudmersive.com](https://cloudmersive.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `cloudmersive` |
 
 ## Use it

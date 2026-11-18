@@ -5,6 +5,8 @@ hidden: true
 
 # NESO Data Portal
 
+<img src="../../.gitbook/assets/connectors/neso-data-portal.png" alt="NESO Data Portal logo" width="64">
+
 The NESO Data Portal (Great Britain's National Energy System Operator, formerly National Grid ESO) is a free CKAN open data API for GB electricity system data: demand, generation, balancing, carbon intensity, interconnectors, network charges and more. Search and read datasets, organizations, tags and resources, and query records with DataStore search or SQL. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The NESO Data Portal (Great Britain's National Energy System Operator, formerly 
 | **Category** | [Data and databases](README.md) |
 | **Website** | [neso.energy](https://neso.energy) |
 | **Authentication** | No authentication |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `nesoDataPortal` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add NESO Data Portal from **Build → Integrations → Connectors** and connect 
 | Get Resource | `getResource` | Get one resource (file or API) by id: format, download URL and whether the DataStore can query it. (GET /api/3/action/resource_show) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
 | Get Site Status | `getStatus` | Get the the NESO Data Portal CKAN version, site title, URL and enabled extensions. (GET /api/3/action/status_show) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
 | Get Tag | `getTag` | Get one tag; include_datasets=true adds the datasets using it. (GET /api/3/action/tag_show) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Dataset Activity | `listDatasetActivity` | Get the change history of one dataset, newest first. (GET /api/3/action/package_activity_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
 | List Datasets | `listDatasets` | List the names (slugs) of all public datasets on the NESO Data Portal. (GET /api/3/action/package_list) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
 | List Datasets with Resources | `listDatasetsWithResources` | List datasets (newest first) with their resources in full. (GET /api/3/action/current_package_list_with_resources) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
@@ -47,3 +54,5 @@ Add NESO Data Portal from **Build → Integrations → Connectors** and connect 
 | Search Datasets | `searchDatasets` | Search datasets on the NESO Data Portal by keyword and Solr filters, with sorting, paging and facets. (GET /api/3/action/package_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
 | Search DataStore Records | `searchDatastore` | Read rows from a DataStore-enabled resource with full-text search, filters, field selection, sorting and paging (default 100 rows). (GET /api/3/action/datastore_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
 | Search Resources | `searchResources` | Search resources by field:term pairs, e.g. name:demand or format:CSV. (GET /api/3/action/resource_search) Docs: https://docs.ckan.org/en/latest/api/ (ckan.logic.action.get) NESO guidance: https://www.neso.energy/data-portal/api-guidance |
+
+</details>

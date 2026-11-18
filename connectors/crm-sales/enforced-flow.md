@@ -5,6 +5,8 @@ hidden: true
 
 # EnforcedFlow
 
+<img src="../../.gitbook/assets/connectors/enforced-flow.png" alt="EnforcedFlow logo" width="64">
+
 EnforcedFlow intelligent lead routing and advanced round-robin distribution. Manage round-robin groups, inspect their routing field configuration, list and upsert the agents in a group, and request the next agent the round-robin should assign work to, with MultiSelect, AI-classified, weighted and timezone-aware filtering.
 
 | | |
@@ -12,8 +14,6 @@ EnforcedFlow intelligent lead routing and advanced round-robin distribution. Man
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [enforcedflow.com](https://enforcedflow.com) |
 | **Authentication** | API key |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `enforcedFlow` |
 
 ## Use it

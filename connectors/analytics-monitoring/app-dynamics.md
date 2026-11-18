@@ -5,6 +5,8 @@ hidden: true
 
 # AppDynamics
 
+<img src="../../.gitbook/assets/connectors/app-dynamics.png" alt="AppDynamics logo" width="64">
+
 Cisco AppDynamics (Splunk AppDynamics) Controller REST API — full-stack application performance monitoring. Manage business applications, tiers, nodes, business transactions, metrics, transaction snapshots, health rules, policies, actions, schedules, action suppressions, events and health rule violations, custom dashboards, controller configuration, licensing, and role-based access control (users, groups, roles).
 
 | | |
@@ -12,8 +14,6 @@ Cisco AppDynamics (Splunk AppDynamics) Controller REST API — full-stack applic
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [appdynamics.com](https://appdynamics.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 84 |
-| **Events** | 0 |
 | **Slug** | `appDynamics` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AppDynamics from **Build → Integrations → Connectors** and connect an ac
 | Create Custom Event | `createCustomEvent` | Records a CUSTOM event against a business application, optionally attributed to a specific node, tier, or business transaction, for correlation on the AppDynamics timeline. |
 | Create Deployment Event | `createDeploymentEvent` | Records an APPLICATION_DEPLOYMENT event against a business application, useful for marking a release on the AppDynamics timeline. |
 | Create Group | `createGroup` | Creates a new user group on the Controller for organizing role assignments. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Health Rule | `createHealthRule` | Creates a health rule on a business application that evaluates a metric condition and raises a violation when it is met. |
 | Create License Allocation | `createLicenseAllocation` | Creates a new license allocation rule on the account, controlling how many agent license units a matching filter/tag scope may consume. |
 | Create Policy | `createPolicy` | Creates a policy on a business application that binds one or more events (health rule violations, transaction anomalies, or other events) to one or more actions. |
@@ -108,3 +115,5 @@ Add AppDynamics from **Build → Integrations → Connectors** and connect an ac
 | Update Role | `updateRole` | Updates the name or description of an existing RBAC role. |
 | Update Schedule | `updateSchedule` | Replaces the definition of an existing schedule. |
 | Update User | `updateUser` | Updates the display name or username of an existing Controller user. |
+
+</details>

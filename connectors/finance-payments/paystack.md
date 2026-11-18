@@ -5,6 +5,8 @@ hidden: true
 
 # Paystack
 
+<img src="../../.gitbook/assets/connectors/paystack.png" alt="Paystack logo" width="64">
+
 Paystack payments platform for Africa. Accept payments and manage transactions, charges and bulk charges, customers and direct debit mandates, dedicated virtual accounts, virtual terminals and POS terminals, plans and subscriptions, transfer recipients and transfers, payment requests and invoices, products, storefronts and orders, payment pages, subaccounts and transaction splits, settlements, refunds, disputes, balance and ledger, bank resolution and account verification via the Paystack REST API (https://api.paystack.co). Authenticates with your Paystack secret key as a Bearer token; the key itself selects test or live mode.
 
 | | |
@@ -12,8 +14,6 @@ Paystack payments platform for Africa. Accept payments and manage transactions, 
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [paystack.com](https://paystack.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 163 |
-| **Events** | 25 |
 | **Slug** | `paystack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Paystack from **Build → Integrations → Connectors** and connect an accou
 | Assign Destination to Virtual Terminal | `virtualTerminalDestinationAssign` | Add a destination (WhatsApp number) to a Virtual Terminal on your integration |
 | Balance Ledger | `balanceLedger` | Fetch all pay-ins and pay-outs that occured on your integration |
 | Bulk Create Transfer Recipient | `transferrecipientBulk` | Create multiple transfer recipients in batches. A duplicate account number will lead to the retrieval of the existing record. |
+
+<details>
+
+<summary>See 153 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Charge Authorization | `transactionChargeAuthorization` | Charge all authorizations marked as reusable with this endpoint whenever you need to receive payments |
 | Check pending charge | `chargeCheck` | When you get `pending` as a charge status or if there was an exception when calling any of the `/charge` endpoints, wait 10 seconds or more, then make a check to see if its status has changed. Don't call too early as you may get a lot more pending than you should. |
 | Check Slug Availability | `pageCheckSlugAvailability` | Check if a custom slug is available for use when creating a payment page |
@@ -188,6 +195,8 @@ Add Paystack from **Build → Integrations → Connectors** and connect an accou
 | Verify Transaction | `transactionVerify` | Verify a previously initiated transaction using it's reference |
 | Verify Transfer | `transferVerify` | Verify the status of a transfer on your integration |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -204,6 +213,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Dispute Created | `charge.dispute.create` | A dispute was logged against your business. |
 | Dispute Reminder | `charge.dispute.remind` | A logged dispute has not been resolved. |
 | Dispute Resolved | `charge.dispute.resolve` | A dispute has been resolved. |
+
+<details>
+
+<summary>See 15 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Invoice Created | `invoice.create` | An invoice has been created for a subscription, usually 3 days before the charge date. |
 | Invoice Payment Failed | `invoice.payment_failed` | A payment for a subscription invoice failed. |
 | Invoice Updated | `invoice.update` | An invoice has been updated, usually meaning the customer was charged successfully. |
@@ -219,3 +235,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Transfer Failed | `transfer.failed` | A transfer you attempted has failed. |
 | Transfer Reversed | `transfer.reversed` | A transfer you attempted has been reversed. |
 | Transfer Successful | `transfer.success` | A transfer has been completed successfully. |
+
+</details>

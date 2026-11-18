@@ -5,6 +5,8 @@ hidden: true
 
 # Gladia
 
+<img src="../../.gitbook/assets/connectors/gladia.png" alt="Gladia logo" width="64">
+
 Gladia is a speech-to-text and audio intelligence API for pre-recorded and real-time transcription with diarization, translation, summarization, subtitles, named entity recognition, sentiment analysis, PII redaction and custom vocabulary. This connector covers the Gladia v2 API: file upload from a URL, pre-recorded transcription jobs (initiate, get result, list, delete), live transcription sessions (initiate, get, list, delete), job history and the available models catalogue, plus the account-level webhook events.
 
 | | |
@@ -12,8 +14,6 @@ Gladia is a speech-to-text and audio intelligence API for pre-recorded and real-
 | **Category** | [AI and ML](README.md) |
 | **Website** | [gladia.io](https://gladia.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 14 |
-| **Events** | 7 |
 | **Slug** | `gladia` |
 
 ## Use it
@@ -34,10 +34,19 @@ Add Gladia from **Build → Integrations → Connectors** and connect an account
 | Initiate Live Session In Region | `initiateLiveSessionInRegion` | Creates a real-time transcription session pinned to a specific Gladia region (us-west or eu-west) and returns its id and a WebSocket URL (with a temporary token) to stream audio to. Accepts the same session configuration as Initiate Live Session: audio format, language detection, endpointing, real-time add-ons, post-processing summarization, WebSocket message selection and an optional callback URL. |
 | Initiate Pre-recorded Transcription | `initiatePreRecordedTranscription` | Starts an asynchronous pre-recorded transcription job for an audio or video file reachable by URL (a Gladia upload URL or any public URL). Optional audio-intelligence add-ons include speaker diarization, translation, summarization, subtitles, named entity recognition, sentiment analysis, PII redaction, custom vocabulary and spelling, audio-to-LLM prompts and a per-job callback. Returns the job id and result URL; poll Get Pre-recorded Transcription until the status is done. |
 | List Job History | `listJobHistory` | Lists the history of all your jobs across kinds (pre-recorded and live) with offset pagination and optional filters by kind, status, creation date and custom metadata. Returns the page items plus first, current and next page URLs. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Live Sessions | `listLiveSessions` | Lists your live (real-time) transcription sessions with offset pagination and optional filters by status, creation date and custom metadata. Returns the page items plus first, current and next page URLs. Each item has the same shape as Get Live Session. |
 | List Models | `listModels` | Lists Gladia's available transcription models with their supported modalities, pricing, readiness and datacenter locations, in the OpenRouter model-catalogue format. Requires no input; useful as a connection health check. |
 | List Pre-recorded Transcriptions | `listPreRecordedTranscriptions` | Lists your pre-recorded transcription jobs with offset pagination and optional filters by status, creation date and custom metadata. Returns the page items plus first, current and next page URLs. Each item has the same shape as Get Pre-recorded Transcription. |
 | Upload Audio File | `uploadAudioFile` | Imports an audio or video file into Gladia from a publicly reachable URL and returns a Gladia-hosted audio_url plus detected metadata (filename, extension, size, duration, channels). Use the returned audio_url in Initiate Pre-recorded Transcription. Direct multipart file upload is not supported by this action; provide a URL. |
+
+</details>
 
 ## Events
 

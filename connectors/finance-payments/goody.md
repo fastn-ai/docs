@@ -5,6 +5,8 @@ hidden: true
 
 # Goody
 
+<img src="../../.gitbook/assets/connectors/goody.png" alt="Goody logo" width="64">
+
 Goody corporate gifting platform. Browse the Goody catalog (products, brands, categories, greeting cards, collections), price and create gift order batches, track orders and shipments, manage payment methods, and register webhook endpoints for order and order-batch events. Supports both the Goody Automation API and Commerce API on the production and sandbox environments.
 
 | | |
@@ -12,8 +14,6 @@ Goody corporate gifting platform. Browse the Goody catalog (products, brands, ca
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [ongoody.com](https://ongoody.com) |
 | **Authentication** | API key |
-| **Actions** | 24 |
-| **Events** | 10 |
 | **Slug** | `goody` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Goody from **Build → Integrations → Connectors** and connect an account,
 | List Catalog Categories | `listCatalogCategories` | List the Goody catalog browse categories and occasions, such as All, New, Best Sellers, Employee Appreciation and seasonal collections. Each entry carries its id, display name, slug, inline SVG icon and whether it is featured. The endpoint returns the complete set in one response and accepts no pagination or filter parameters. Undocumented endpoint, verified live against the Goody API. |
 | List Collections | `listCollections` | List the curated product collections across every Goody workspace the API key can access. Automation API only. Set published to true to return only collections that have a published version. Collections are authored in the Goody web app; there is no API to create one. |
 | List Greeting Cards | `listGreetingCards` | List the digital greeting cards available to attach to a Goody gift, paginated. Use a returned card id as the card_id when creating an order batch; a card is required whenever a gift message is supplied. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Order Activities | `listOrderActivities` | List Goody order activity events across the account, newest first, with optional time-window and status filters. Use it to poll for order lifecycle changes such as gift opened, accepted, shipped, delivered, canceled or refunded when webhooks are not in use. |
 | List Order Batches | `listOrderBatches` | List the Goody order batches on the account, paginated. An order batch groups the orders created by one send: it carries the sender name, message, cart, send method, send status and a preview of the first ten orders. |
 | List Orders | `listOrders` | List the Goody orders on the account, paginated, optionally restricted to a creation-time window. Each order is one gift to one recipient and carries its status, recipient, gift link, shipments and the order batch it belongs to. |
@@ -48,6 +55,8 @@ Add Goody from **Build → Integrations → Connectors** and connect an account,
 | Retrieve Product | `retrieveProduct` | Retrieve one Goody catalog product by its id, including brand, full recipient-facing description, price in cents, variants and variant groups, images, restricted states and shipping country groups. Returns 404 with {"error":"Product not found"} when the id does not exist. |
 | Retrieve Recipients For Order Batch | `retrieveRecipientsForOrderBatch` | Page through the recipients attached to one Goody order batch, including each recipient's name, email, phone and mailing address as submitted. Returns 404 with {"error":"Order batch not found"} for an unknown batch id. |
 | Update Order Expiration | `updateOrderExpiration` | Change the date and time at which an unaccepted Goody gift expires, extending or shortening how long the recipient has to accept it. Returns 404 with {"error":"Order not found"} for an unknown order id. |
+
+</details>
 
 ## Events
 

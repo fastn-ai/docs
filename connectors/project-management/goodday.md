@@ -5,6 +5,8 @@ hidden: true
 
 # GoodDay
 
+<img src="../../.gitbook/assets/connectors/goodday.png" alt="GoodDay logo" width="64">
+
 GoodDay work management platform — projects, tasks, users, time reports, events, custom fields, CRM, expenses, attendance, dependencies and documents via the GoodDay API v2.0 (https://api.goodday.work/2.0).
 
 | | |
@@ -12,8 +14,6 @@ GoodDay work management platform — projects, tasks, users, time reports, event
 | **Category** | [Project management](README.md) |
 | **Website** | [goodday.work](https://goodday.work) |
 | **Authentication** | API key |
-| **Actions** | 73 |
-| **Events** | 0 |
 | **Slug** | `goodday` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GoodDay from **Build → Integrations → Connectors** and connect an accoun
 | Create CRM Account | `createCrmAccount` | Create a CRM account. |
 | Create CRM Contact | `createCrmContact` | Create a CRM contact. |
 | Create Dependency | `createDependency` | Create a dependency between tasks, events or projects. Provide predecessor and successor IDs of the relevant type. |
+
+<details>
+
+<summary>See 63 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Event | `createEvent` | Create a calendar event (personal or project event). |
 | Create Expense | `createExpense` | Create a project expense, optionally linked to a task. |
 | Create Folder | `createFolder` | Create a new folder (folder-type project) under an optional parent project. |
@@ -97,3 +104,5 @@ Add GoodDay from **Build → Integrations → Connectors** and connect an accoun
 | Update Task | `updateTask` | Update a task's attributes such as title, project, dates, priority, progress and assignee. Also used to link CRM contacts/account. |
 | Update Task Custom Fields | `updateTaskCustomFields` | Set custom field values on a task. Pass an array of {id, value} objects; use null value to reset a field. |
 | Update Task Status | `updateTaskStatus` | Change a task's status, optionally with a message. |
+
+</details>

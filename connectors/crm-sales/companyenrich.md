@@ -5,6 +5,8 @@ hidden: true
 
 # CompanyEnrich
 
+<img src="../../.gitbook/assets/connectors/companyenrich.png" alt="CompanyEnrich logo" width="64">
+
 CompanyEnrich is a real-time B2B data API for company enrichment, company and people search, lookalike (similar company) discovery, workforce insights, reverse email lookup and work-email resolution. This connector covers the full CompanyEnrich REST API: enrichment by domain, properties, batch and bulk jobs; company search, preview, count, scroll and async exports; similar companies; people lookup, search, scroll, email resolution, education and exports; jobs; company lists; geo, industry, keyword, technology and position lookups; and the current user's credit balance.
 
 | | |
@@ -12,8 +14,6 @@ CompanyEnrich is a real-time B2B data API for company enrichment, company and pe
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [companyenrich.com](https://companyenrich.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 48 |
-| **Events** | 0 |
 | **Slug** | `companyenrich` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CompanyEnrich from **Build → Integrations → Connectors** and connect an 
 | Create Bulk Email Enrichment Job | `createBulkEmailEnrichmentJob` | Creates an asynchronous bulk work-email enrichment job for up to 1,000 people (person id plus optional domain) and returns its job id. Track it with Get Bulk Email Enrichment Job; an optional webhook URL is called on completion. Beta endpoint. Costs up to 10 credits per item, charged on completion for newly accessed found emails only. |
 | Create Bulk Enrichment Job | `createBulkEnrichmentJob` | Creates an asynchronous bulk enrichment job for up to 10,000 domains and returns its job id immediately. Track progress with Get Bulk Enrichment Job; an optional webhook URL is called when processing completes. Costs 1 credit per domain successfully enriched, charged on completion. |
 | Create Company Export Job | `createCompanyExportJob` | Creates an asynchronous export job for up to 50,000 companies from either a standard company search ('search' filters) or a similar-company search ('similar' filters) and returns its job id immediately. Track it with Get Company Export Job; an optional webhook URL is called on completion. Costs 1 credit per company returned, reserved when the job is created and settled on completion. |
+
+<details>
+
+<summary>See 38 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Company List | `createCompanyList` | Creates a saved company list from a standard search ('search' filters, 1 credit per company) or a similar-company search ('similar' filters, 5 credits per company), adding up to the first 5,000 results. The list is not created when no companies match. Requires a plan with the 'lists' capability; other plans receive a 403. |
 | Create People Export Job | `createPeopleExportJob` | Creates an asynchronous export job for up to 50,000 people matching the given people search filters (same fields as Search People) and returns its job id immediately. Track it with Get People Export Job; an optional webhook URL is called on completion. Costs 2 credits per person returned, reserved when the job is created and settled on completion. |
 | Delete Company List | `deleteCompanyList` | Deletes a saved company list and all of its entries. Requires a plan with the 'lists' capability; other plans receive a 403. |
@@ -72,3 +79,5 @@ Add CompanyEnrich from **Build → Integrations → Connectors** and connect an 
 | Search People | `searchPeople` | Searches people by company domains or company filters, job position queries, seniority, department, country, tenure dates and education, with page-based pagination (at most 100 per page, page * pageSize up to 10,000; use Scroll People beyond that). Costs 2 credits per person returned, minimum 2 credits. |
 | Search States | `searchStates` | Searches states and provinces by name or country codes and returns up to 100 per page with the ids used in the states filter of company searches. |
 | Update Company List | `updateCompanyList` | Renames a saved company list. Requires a plan with the 'lists' capability; other plans receive a 403. |
+
+</details>

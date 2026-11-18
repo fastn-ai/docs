@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Functions
 
+<img src="../../.gitbook/assets/connectors/google-cloud-functions.png" alt="Google Cloud Functions logo" width="64">
+
 Manage Google Cloud Functions (2nd gen) through the Cloud Functions API v2: create, update, list, get and delete functions, generate signed upload and download URLs, manage IAM policies, list supported runtimes and locations, run the 1st-gen to 2nd-gen upgrade workflow, and poll long-running operations.
 
 | | |
@@ -12,8 +14,6 @@ Manage Google Cloud Functions (2nd gen) through the Cloud Functions API v2: crea
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloudfunctions.googleapis.com](https://cloudfunctions.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `googleCloudFunctions` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Functions from **Build → Integrations → Connectors** and co
 | Generate Upload URL for Function | `generateUploadUrlFunction` | Returns a signed Google Cloud Storage URL for uploading function source code as a zip archive. Once the upload completes, pass the returned storage source in a Create Function or Update Function request. |
 | Get Function | `getFunction` | Returns the Cloud Function with the given name from the requested project and location, including its build configuration, service configuration, event trigger and deployment state. |
 | Get IAM Policy for Function | `getIamPolicyFunction` | Gets the access control policy for a Cloud Function. Returns an empty policy if the function exists and has no policy set. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Operation | `getOperation` | Gets the latest state of a Cloud Functions long-running operation. Poll this at the interval recommended by the API to learn when a function deployment has finished. |
 | List Functions | `listFunction` | Returns the list of Cloud Functions that belong to the requested project and location, with optional filtering, ordering and pagination. |
 | List Locations | `listLocations` | Lists information about the supported Cloud Functions locations for a project. Returns the location id, display name and labels for each region where functions can be deployed. |
@@ -45,3 +52,5 @@ Add Google Cloud Functions from **Build → Integrations → Connectors** and co
 | Setup Function Upgrade Config | `setupFunctionUpgradeConfig` | Creates a 2nd gen copy of the configuration of the named 1st gen function. This is the first step of the multi-step upgrade; only the 2nd gen configuration is set up and traffic continues to be served by the 1st gen function. |
 | Test IAM Permissions for Function | `testIamPermissionsFunction` | Returns the subset of the supplied permissions that the caller holds on a function. If the function does not exist this returns an empty set rather than a NOT_FOUND error, so it is intended for building permission-aware UIs rather than for authorization checks. |
 | Update Function | `updateFunction` | Updates an existing Cloud Function. Supply Update Mask to restrict the change to specific fields; if no field mask is provided every field is updated. Returns a long-running operation. |
+
+</details>

@@ -5,14 +5,14 @@ hidden: true
 
 # NocoDB
 
+<img src="../../.gitbook/assets/connectors/nocodb.png" alt="NocoDB logo" width="64">
+
 NocoDB is an open-source no-code database and Airtable alternative. Manage workspaces, bases, tables, columns, views, records, links, filters, sorts, shared views, comments, and webhooks via the NocoDB v2 REST API.
 
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 105 |
-| **Events** | 0 |
 | **Slug** | `nocodb` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add NocoDB from **Build → Integrations → Connectors** and connect an account
 | Create Column | `createColumn` | Add a new column (field) to a table. |
 | Create Form View | `createFormView` | Create a form view on a table for data entry. |
 | Create Gallery View | `createGalleryView` | Create a gallery view on a table. |
+
+<details>
+
+<summary>See 95 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Grid View | `createGridView` | Create a grid (spreadsheet) view on a table. |
 | Create Kanban View | `createKanbanView` | Create a kanban view on a table, grouped by a single-select column. |
 | Create Shared Base | `createSharedBase` | Enable public sharing of a base and return its shared link UUID. |
@@ -128,3 +135,5 @@ Add NocoDB from **Build → Integrations → Connectors** and connect an account
 | Update Workspace | `updateWorkspace` | Update a workspace's title or metadata (NocoDB Cloud). |
 | Update Workspace User | `updateWorkspaceUser` | Change a workspace member's role (NocoDB Cloud). |
 | Upload Attachment By URL | `uploadAttachmentByUrl` | Upload one or more attachments to NocoDB storage from public URLs. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Baserow
 
+<img src="../../.gitbook/assets/connectors/baserow.png" alt="Baserow logo" width="64">
+
 Baserow is an open-source no-code database platform (an Airtable alternative). This connector manages rows, fields, and tables through Baserow's database-token-authenticated REST API: list, get, create, update, delete, move, and batch rows; list and create fields; discover tables accessible to the token; and validate the token or a row's password field.
 
 | | |
@@ -12,8 +14,6 @@ Baserow is an open-source no-code database platform (an Airtable alternative). T
 | **Category** | [Data and databases](README.md) |
 | **Website** | [baserow.io](https://baserow.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 36 |
-| **Events** | 10 |
 | **Slug** | `baserow` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Baserow from **Build → Integrations → Connectors** and connect an accoun
 | Create Row | `createRow` | Creates a new row in a Baserow table. Pass the table id plus one top-level input property per field you want to set (field name as key, recommended - call List Fields first to see exact field names, types, and select-option ids for this table). Fields you omit keep their default value. |
 | Create Table | `createTable` | Creates a new table inside a Baserow database, optionally seeded with initial row data. If "data" is omitted, Baserow creates the table with its own example data. Requires the JWT (user session) auth method - table creation is not available through a database token. |
 | Create Table Webhook | `createTableWebhook` | Creates a webhook subscription on a Baserow table: Baserow will POST (or another configured method) to your URL whenever the selected events occur (rows created/updated/deleted, field created/updated/deleted, view created/updated/deleted, view rows entered). Requires the JWT (user session) auth method - the webhook subscription API does not accept a database token. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create View | `createView` | Creates a new view on a Baserow table. Set "type" to grid, gallery, form, kanban, calendar, or timeline; each type accepts its own additional settings beyond the common fields listed here (e.g. a grid view's row_height_size, a kanban view's single_select_field) - pass any such type-specific setting as an extra top-level property and Baserow will apply it (undocumented-here properties are accepted directly, per Baserow's per-type view schemas). Requires the JWT (user session) auth method. |
 | Delete Field | `deleteField` | Permanently deletes a field (column) and all of its data from a Baserow table. Requires the JWT (user session) auth method. |
 | Delete Row | `deleteRow` | Permanently deletes a single row from a Baserow table. |
@@ -60,6 +67,8 @@ Add Baserow from **Build → Integrations → Connectors** and connect an accoun
 | Update Table | `updateTable` | Renames an existing Baserow table. Requires the JWT (user session) auth method. |
 | Update Table Webhook | `updateTableWebhook` | Updates an existing table webhook. Only the fields you pass are changed. Use "active":false to pause a webhook without deleting it (Baserow also auto-deactivates a webhook after repeated delivery failures). Requires the JWT (user session) auth method. |
 | Update View | `updateView` | Updates an existing Baserow view. Only the fields you pass are changed. Accepts the same common settings as Create View plus any type-specific extra property for that view's own type (grid/gallery/form/kanban/calendar/timeline). Requires the JWT (user session) auth method. |
+
+</details>
 
 ## Events
 

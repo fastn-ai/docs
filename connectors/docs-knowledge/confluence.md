@@ -5,6 +5,8 @@ hidden: true
 
 # Confluence
 
+<img src="../../.gitbook/assets/connectors/confluence.png" alt="Confluence logo" width="64">
+
 Atlassian Confluence Cloud connector (REST API v2) — pages, blog posts, comments (footer/inline), attachments, custom content, labels, likes, versions, children/ancestors/descendants, spaces & space/content properties, tasks, users, whiteboards, databases, folders, smart links. Via api.atlassian.com OAuth 2.0 (3LO); cloudId input on every action.
 
 | | |
@@ -12,8 +14,6 @@ Atlassian Confluence Cloud connector (REST API v2) — pages, blog posts, commen
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [atlassian.com](https://atlassian.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 177 |
-| **Events** | 58 |
 | **Slug** | `confluence` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Confluence from **Build → Integrations → Connectors** and connect an acc
 | Create Custom Content | `createCustomContent` | Create a custom content item of a given type, attached to a space/page/blogpost/custom content, with a storage or atlas_doc_format body. |
 | Create Custom Content Content Property | `createCustomContentProperty` | Create a content property (key/value) on a custom content. |
 | Create Database | `createDatabase` | Create a database in a space. Optionally place it under a parent. |
+
+<details>
+
+<summary>See 167 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Database Content Property | `createDatabaseProperty` | Create a content property (key/value) on a database. |
 | Create Folder | `createFolder` | Create a folder in a space. Optionally place it under a parent. |
 | Create Folder Content Property | `createFolderProperty` | Create a content property (key/value) on a folder. |
@@ -202,6 +209,8 @@ Add Confluence from **Build → Integrations → Connectors** and connect an acc
 | Update Task | `updateTask` | Update a task's status (complete/incomplete). status is required. |
 | Update Whiteboard Content Property By ID | `updateWhiteboardPropertyById` | Update a content property of a whiteboard by its id. Requires the new version number. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -218,6 +227,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Attachment Viewed | `attachment_viewed` | An attachment was viewed or downloaded. Atlassian does not publish the payload for this event; the schema below models the documented Confluence content webhook shape as the default and the exact key set may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event avi:confluence:viewed:attachment and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "attachment_viewed", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["attachment_viewed"]}. |
 | Blog Post Created | `blog_created` | A new blog post was created in a space. Atlassian does not publish the payload for this event; the schema below models the documented Confluence content webhook shape as the default and the exact key set may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event avi:confluence:created:blogpost and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "blog_created", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["blog_created"]}; or (4) no-code, a Confluence Automation rule with the 'Blog published' trigger and a 'Send web request' action posting to the fastn URL. |
 | Blog Post Moved | `blog_moved` | A blog post was moved to a different space. Atlassian does not publish the payload for this event; the schema below models the documented Confluence content webhook shape as the default and the exact key set may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "blog_moved", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["blog_moved"]}. |
+
+<details>
+
+<summary>See 48 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Blog Post Removed | `blog_removed` | A blog post was permanently deleted. Atlassian does not publish the payload for this event; the schema below models the documented Confluence content webhook shape as the default and the exact key set may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event avi:confluence:deleted:blogpost and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "blog_removed", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["blog_removed"]}. |
 | Blog Post Restored | `blog_restored` | A blog post was restored from the space trash. Atlassian does not publish the payload for this event; the schema below models the documented Confluence content webhook shape as the default and the exact key set may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event avi:confluence:restored:blogpost and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "blog_restored", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["blog_restored"]}. |
 | Blog Post Trashed | `blog_trashed` | A blog post was moved to the space trash. Atlassian does not publish the payload for this event; the schema below models the documented Confluence content webhook shape as the default and the exact key set may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event avi:confluence:trashed:blogpost and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "blog_trashed", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["blog_trashed"]}. |
@@ -266,3 +282,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Theme Enabled | `theme_enabled` | A theme was enabled on the site or on a space. Atlassian does not publish the payload for this event; only the common envelope (userAccountId, accountType, timestamp) is guaranteed and the event object shape may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "theme_enabled", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["theme_enabled"]}. |
 | User Reactivated | `user_reactivated` | A previously deactivated user account was reactivated. Atlassian does not publish the payload for this event; only the common envelope (userAccountId, accountType, timestamp) is guaranteed and the event object shape may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "user_reactivated", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["user_reactivated"]}. |
 | User Removed | `user_removed` | A user account was removed from the site. Atlassian does not publish the payload for this event; only the common envelope (userAccountId, accountType, timestamp) is guaranteed and the event object shape may vary. Setup (customer side): Confluence Cloud has no supported REST API for managing webhooks, so this event cannot be subscribed to programmatically by fastn. The customer must route it to the fastn webhook URL by one of: (1) a Forge app whose trigger module subscribes to the product event and forwards the payload to the fastn URL (the supported path — Connect is closed to new Marketplace apps since 2025-09-17); (2) an Atlassian Connect descriptor already installed on the site declaring {"event": "user_removed", "url": "&lt;fastn webhook URL&gt;"} in modules.webhooks; (3) the unsupported internal endpoint POST /wiki/rest/webhooks/1.0/webhook with {"name":"fastn","url":"&lt;fastn webhook URL&gt;","events":["user_removed"]}. |
+
+</details>

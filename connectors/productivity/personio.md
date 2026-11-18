@@ -5,6 +5,8 @@ hidden: true
 
 # Personio
 
+<img src="../../.gitbook/assets/connectors/personio.png" alt="Personio logo" width="64">
+
 Personio is a European HR platform for SMBs covering people data, time off, attendances, compensation, recruiting, and org structure. This connector wraps Personio's v2 Public API (OAuth 2.0 client credentials) plus select v1 endpoints not yet available in v2.
 
 | | |
@@ -12,8 +14,6 @@ Personio is a European HR platform for SMBs covering people data, time off, atte
 | **Category** | [Productivity](README.md) |
 | **Website** | [personio.de](https://personio.de) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 79 |
-| **Events** | 0 |
 | **Slug** | `personio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Personio from **Build → Integrations → Connectors** and connect an accou
 | Create Project | `createProject` | Creates a time-tracking project that attendance periods can reference. |
 | Create Webhook | `createWebhook` | Creates a new webhook subscription that Personio will POST event deliveries to. Requires the personio:webhooks:write scope. If auth_type is TOKEN (the default), a token is required; if CUSTOM, custom_headers is required instead. |
 | Delete Absence Period | `deleteAbsencePeriod` | Deletes an absence period by its ID. |
+
+<details>
+
+<summary>See 69 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Attendance Period | `deleteAttendancePeriod` | Deletes an attendance period by its ID. |
 | Delete Document | `deleteDocument` | Deletes a document by its ID. |
 | Delete Person | `deletePerson` | Permanently deletes a Person resource and its associated Employment resources using the v2 Persons API. |
@@ -103,3 +110,5 @@ Add Personio from **Build → Integrations → Connectors** and connect an accou
 | Update Person | `updatePerson` | Updates fields of an existing Person resource, such as name, gender, language, or custom attributes, using the v2 Persons API. |
 | Update Project | `updateProject` | Updates fields of an existing time-tracking project, such as its name, status, or description. |
 | Update Webhook | `updateWebhook` | Updates a webhook configuration, such as its URL, description, status, or enabled events. Requires the personio:webhooks:write scope. |
+
+</details>

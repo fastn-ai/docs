@@ -5,6 +5,8 @@ hidden: true
 
 # Open Topo Data
 
+<img src="../../.gitbook/assets/connectors/open-topo-data.png" alt="Open Topo Data logo" width="64">
+
 Open Topo Data is an open-source elevation API with a free public server (api.opentopodata.org) serving open datasets such as SRTM, ASTER, EU-DEM, NED, ETOPO1, GEBCO bathymetry and Mapzen. Get elevations for points or sampled paths as JSON or GeoJSON. No API key needed; the public server allows 100 points per request, 1 call per second and 1000 calls per day.
 
 | | |
@@ -12,8 +14,6 @@ Open Topo Data is an open-source elevation API with a free public server (api.op
 | **Category** | [Data and databases](README.md) |
 | **Website** | [opentopodata.org](https://opentopodata.org) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `openTopoData` |
 
 ## Use it

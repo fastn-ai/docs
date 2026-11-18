@@ -5,6 +5,8 @@ hidden: true
 
 # Composio Browser Tool
 
+<img src="../../.gitbook/assets/connectors/composio-browser-tool.png" alt="Composio Browser Tool logo" width="64">
+
 Composio Browser Tool lets AI agents run cloud-browser automation tasks (navigate sites, fill forms, extract data) through the Composio Connect Tool Router. This connector calls the Tool Router MCP endpoint over HTTPS (JSON-RPC): create, watch and stop Browser Tool tasks, get the live browser session and download output files, plus the router's own tools for searching tools, fetching tool schemas, executing any Composio tool, managing app connections, remote bash and Python workbench, and organization skills.
 
 | | |
@@ -12,8 +14,6 @@ Composio Browser Tool lets AI agents run cloud-browser automation tasks (navigat
 | **Category** | [Search and web](README.md) |
 | **Website** | [composio.dev](https://composio.dev) |
 | **Authentication** | API key |
-| **Actions** | 16 |
-| **Events** | 0 |
 | **Slug** | `composioBrowserTool` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add Composio Browser Tool from **Build → Integrations → Connectors** and con
 | Manage Skill | `manageSkill` | Creates, updates or deletes an organization Skill (COMPOSIO_MANAGE_SKILL). create needs title and skill_markdown; update needs the exact existing skill id plus title and skill_markdown; delete needs only the id. Send only the fields that apply to the chosen action. |
 | Run Remote Bash Command | `runRemoteBashCommand` | Executes a bash command in Composio's remote sandbox (COMPOSIO_REMOTE_BASH_TOOL), for example to process large tool responses saved there with jq, awk or grep. Commands run from /home/user with a hard 3-minute limit. |
 | Run Remote Workbench Code | `runRemoteWorkbenchCode` | Runs Python code in Composio's persistent remote Jupyter workbench (COMPOSIO_REMOTE_WORKBENCH) to process files saved there or script bulk tool executions with the preloaded helpers (run_composio_tool, invoke_llm, upload_local_file, proxy_execute, web_search). Hard 3-minute limit per cell. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Skills | `searchSkills` | Searches the reusable Skills (saved workflows) of your Composio organization by query (COMPOSIO_SEARCH_SKILLS) and returns matching skills with their ids and slugs. |
 | Search Tools | `searchTools` | Searches the Composio catalog for tools that fit a use case (COMPOSIO_SEARCH_TOOLS) and returns a recommended execution plan, known pitfalls, the matching tool slugs with input schemas, toolkit connection status and a session_id to reuse in later router calls. |
 | Stop Browser Task | `stopBrowserTask` | Stops a running browser task and its cloud browser session (BROWSER_TOOL_STOP_TASK). Use it when a task is stuck, looping or heading in the wrong direction, or before starting a new task in the same session. |
 | Use Skill | `useSkill` | Loads one organization Skill by its exact slug (COMPOSIO_USE_SKILL) and returns its Markdown instructions. |
 | Wait For Connections | `waitForConnections` | Waits for pending toolkit authorizations started with Manage Connections to reach an active or failed state, or times out (COMPOSIO_WAIT_FOR_CONNECTIONS). Mode any returns when one toolkit finishes; all waits for every toolkit. |
 | Watch Browser Task | `watchBrowserTask` | Polls a browser task for progress and results (BROWSER_TOOL_WATCH_TASK). While status is started the task is still running; when it is finished, check isSuccess and read output, the executed steps, the current URL and any outputFiles. Pass lastStepSeen to receive only steps after that number. |
+
+</details>

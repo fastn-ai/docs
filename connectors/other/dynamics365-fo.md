@@ -5,6 +5,8 @@ hidden: true
 
 # Dynamics 365 Finance & Operations
 
+<img src="../../.gitbook/assets/connectors/dynamics365-fo.png" alt="Dynamics 365 Finance & Operations logo" width="64">
+
 Microsoft Dynamics 365 Finance & Operations connector via the OData v4 data-entity REST API (base https://{instance}.operations.dynamics.com/data). Covers Customers, Vendors, Sales/Purchase orders, Released products, General journal entries, Customer payment journals, Ledger journals, Invoices plus a generic OData CRUD pattern and metadata. Auth: Azure AD OAuth 2.0 (authorization_code or client_credentials).
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Dynamics 365 Finance & Operations connector via the OData v4 data-enti
 | **Category** | [Other](README.md) |
 | **Website** | [dynamics.microsoft.com](https://dynamics.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 203 |
-| **Events** | 64 |
 | **Slug** | `dynamics365Fo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dynamics 365 Finance & Operations from **Build → Integrations → Connecto
 | Create Customer Postal Address (Customer Location) | `createCustomerPostalAddress` | Create a new customer location (postal address) in the CustomerPostalAddresses data entity. Returns the created record including the generated AddressLocationId. Enum flags use 'Yes'/'No'. |
 | Create Department | `createDepartment` | Create a department (OMDepartment operating unit). BLOCKED: the Departments OData entity rejects direct POST - it requires an internal 'Record type' field that is not settable via the public entity (OrganizationType/OperatingUnitTypes do not satisfy it). Departments are normally created through the D365 org-hierarchy designer. URL/entity is correct; left in test pending a settable record-type path. |
 | Create Depreciation Profile (AssetDepreciationProfiles) | `createDepreciationProfile` | Create a new asset depreciation profile defining the calculation method for asset depreciation. |
+
+<details>
+
+<summary>See 193 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Exchange Rate | `createExchangeRate` | Create an exchange rate. BLOCKED: posting a dated rate to ExchangeRateCurrencyPairs fails - in D365 the currency PAIR entity defines the pair (ExchangeRateTypeName/From/To) while the dated rate VALUE lives in a separate ExchangeRates entity; the single-POST shape here is rejected. Left in test pending the correct two-entity create path (create pair, then post dated rate). |
 | Create Fixed Asset (FixedAssetsV2) | `createFixedAsset` | Create a new fixed asset record in the FixedAssetsV2 entity set. AssetId can be auto-assigned by number sequence if left blank. |
 | Create Fixed Asset Book (FixedAssetBooks) | `createFixedAssetBook` | Create a new fixed asset book record linking a fixed asset to a depreciation book. Acquisition details are optional. |
@@ -228,6 +235,8 @@ Add Dynamics 365 Finance & Operations from **Build → Integrations → Connecto
 | Update Worker | `updateWorker` | Update an existing worker's details by PersonnelNumber (PATCH — sends only changed fields). |
 | Update Worker Employment | `updateWorkerEmployment` | Update an existing worker employment record (e.g. set end date for termination). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -244,6 +253,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Customer Payment Journal Posted | `CustPaymentJournalPostedBusinessEvent` | Fires when a customer payment journal is posted in D365 FO. |
 | Department Created | `HcmDepartmentCreatedBusinessEvent` | Fires when a new department is created in the organizational hierarchy. |
 | Department Created | `HcmDepartmentCreatedBusinessEvent` | Fires when a new department is created in D365 FO HCM. |
+
+<details>
+
+<summary>See 54 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Department Updated | `HcmDepartmentUpdatedBusinessEvent` | Fires when a department record is updated (e.g. name or manager change). |
 | Department Updated | `HcmDepartmentUpdatedBusinessEvent` | Fires when a department is updated in D365 FO HCM. |
 | Employment Created | `HcmEmploymentCreatedBusinessEvent` | Fires when a new worker employment record is created (worker hired into a legal entity). |
@@ -298,3 +314,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Worker Created | `HcmWorkerCreatedBusinessEvent` | Fires when a new worker is created in D365 FO HCM. |
 | Worker Updated | `HcmWorkerUpdatedBusinessEvent` | Fires when a worker record is updated in the HCM module. |
 | Worker Updated | `HcmWorkerUpdatedBusinessEvent` | Fires when a worker record is updated in D365 FO HCM. |
+
+</details>

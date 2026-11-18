@@ -5,6 +5,8 @@ hidden: true
 
 # Vikunja
 
+<img src="../../.gitbook/assets/connectors/vikunja.png" alt="Vikunja logo" width="64">
+
 Vikunja is an open-source, self-hostable to-do and task-management app. This connector covers projects, tasks, labels, teams, task relations/comments/attachments metadata, kanban views/buckets, project sharing (link shares, per-project users/teams), saved filters, project webhooks, and notifications via the REST API, authenticated with a Vikunja Personal Access Token.
 
 | | |
@@ -12,8 +14,6 @@ Vikunja is an open-source, self-hostable to-do and task-management app. This con
 | **Category** | [Project management](README.md) |
 | **Website** | [vikunja.io](https://vikunja.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 84 |
-| **Events** | 0 |
 | **Slug** | `vikunja` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Vikunja from **Build → Integrations → Connectors** and connect an accoun
 | Bulk Update Tasks | `bulkUpdateTasks` | Applies the same field change to multiple tasks at once, e.g. marking several tasks as done. |
 | Create Filter | `createFilter` | Creates a saved filter, which appears alongside projects as a pseudo-project showing tasks matching a Vikunja filter query. |
 | Create Kanban Bucket | `createKanbanBucket` | Creates a new kanban bucket (column) on a project's kanban view. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Label | `createLabel` | Creates a new label that can be attached to tasks. |
 | Create Project | `createProject` | Creates a new project. Projects organize tasks and can be nested under a parent project. |
 | Create Project Share | `createProjectShare` | Creates a public link share for a project, optionally password-protected, so it can be viewed without an account. |
@@ -108,3 +115,5 @@ Add Vikunja from **Build → Integrations → Connectors** and connect an accoun
 | Update Task Comment | `updateTaskComment` | Edits the text of an existing task comment. |
 | Update Task Position | `updateTaskPosition` | Updates a task's sort position within its current view. |
 | Update Team | `updateTeam` | Updates an existing team's name, description, or public visibility. |
+
+</details>

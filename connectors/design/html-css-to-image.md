@@ -5,6 +5,8 @@ hidden: true
 
 # HTML/CSS to Image
 
+<img src="../../.gitbook/assets/connectors/html-css-to-image.png" alt="HTML/CSS to Image logo" width="64">
+
 HTML/CSS to Image (HCTI) renders images and PDFs from HTML and CSS, captures screenshots of public URLs, and generates templated graphics such as Open Graph social cards. This connector covers the full hcti.io v1 REST API: image creation and batches, image rendering and cropping, reusable Handlebars templates and their versions, storage-destination stores, signed create-and-render URLs, Open Graph configurations, proxies, storage destinations, API keys and organization usage.
 
 | | |
@@ -12,8 +14,6 @@ HTML/CSS to Image (HCTI) renders images and PDFs from HTML and CSS, captures scr
 | **Category** | [Design](README.md) |
 | **Website** | [htmlcsstoimage.com](https://htmlcsstoimage.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 38 |
-| **Events** | 0 |
 | **Slug** | `htmlCssToImage` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HTML/CSS to Image from **Build → Integrations → Connectors** and connect
 | Create Template | `createTemplate` | Creates a reusable image template from HTML, optionally styled with CSS, and returns its template id and first version number. Creating a template does not consume an image credit, but plans cap how many templates an organization may hold - exceeding it returns 429 'The &lt;plan&gt; plan is limited to N templates'. Handlebars expressions are not supported inside CSS. Note that 'storage_destination_id' set here is inherited by every image rendered from the template, which copies those images out of HCTI, and that 'jumbo_max_width'/'jumbo_max_height' make every render from this template consume additional image credits. |
 | Create Templated Image | `createTemplatedImage` | Renders an image from a saved template, substituting your values for the template's Handlebars placeholders, and returns the new image's id and hosted URL. CONSUMES AN IMAGE CREDIT per render. Deduplication does not apply to templated images - they are identified by template id and values - so repeating a call with the same values still bills a render. The template's own saved settings (device scale, viewport, fonts, storage destination, jumbo mode) apply to every render; check them with List Template Versions before calling, because a template carrying jumbo settings consumes additional credits and one carrying a storage destination copies each render out of HCTI. Requires the images:create permission. This route is documented in the vendor's template guide but is absent from its OpenAPI specification. |
 | Delete API Key | `deleteApiKey` | Disables an API key so it can no longer authenticate requests. Per the vendor's permissions documentation this DELETE disables the key rather than erasing it, and a disabled key can be re-enabled with Update API Key. Any integration still using that key stops working immediately, so confirm which key an api_id belongs to with Get API Key first. You must be authorised to grant the target key's existing permissions. Requires the api_keys:delete permission. |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Image | `deleteImage` | Permanently deletes a created image so its hosted URL stops serving and returns 410 Gone instead. Verified live: the API answers 202 Accepted with an EMPTY body, so confirm the deletion by re-requesting the image URL and expecting 410. Deleting does not refund the image credit the render consumed and cannot be undone. Requires the images:delete permission. |
 | Delete Image Batch | `deleteImageBatch` | Permanently deletes up to 25 created images in one request, so their hosted URLs stop serving and return 410 Gone. Verified live: the API answers 202 Accepted with an EMPTY body and no result detail, and it answers 202 for unknown ids too, so the response cannot tell you which ids existed - confirm a deletion by re-requesting the image URL and expecting 410. Deleting does not refund the image credits the renders consumed and cannot be undone. Requires the images:delete permission. |
 | Delete OG Configuration | `deleteOgConfig` | Permanently removes an Open Graph configuration, so the site stops having social sharing images generated for it. Pages that already reference a generated HCTI image URL may stop resolving. To pause generation without losing the configuration, use Update OG Configuration with disabled set to true instead. This cannot be undone. Requires the og_configs:delete permission. |
@@ -62,3 +69,5 @@ Add HTML/CSS to Image from **Build → Integrations → Connectors** and connect
 | Update Proxy | `updateProxy` | Updates a proxy server's configuration and returns it. 'name' and 'url' must be sent on every update, so resend the current values for anything you are not changing. Because 'disabled' defaults to false, omitting it RE-ENABLES a disabled proxy. To keep the stored password, send authentication.retain_password true rather than resending the password. Requires the proxies:create_update permission. |
 | Update Storage Destination | `updateStorageDestination` | Updates an external storage destination and returns it. 'name' and 'connection_info' must be sent on every update, so resend the current values for anything you are not changing. Because 'disabled' defaults to false, omitting it RE-ENABLES a disabled destination. To keep the stored secret access key, set connection_info.retain_secret_access_key to true - omitting it or sending false CLEARS the stored secret. Changing 'hcti_storage_disabled' to true removes the public HCTI URLs for images saved here. Requires the storage_destinations:create_update permission. |
 | Update Template | `createTemplateVersion` | Updates an existing image template and returns its template id and version number. IMPORTANT, verified against the live API: despite the vendor documenting this route as 'create a new version', it UPDATES THE TEMPLATE IN PLACE - the version number and created_at do not change and List Template Versions still returns a single row; only updated_at advances. Its field semantics are mixed, so read them before calling: 'name' and 'description' are MERGED (omit them and the previous values are kept), but every render setting - css, device_scale, google_fonts, selector, viewport_*, ms_delay, max_wait_ms, render_when_ready, color_scheme, media_type, timezone, disable_twemoji, transparent_background, jumbo_*, proxy_id, storage_destination_id - is REPLACED, so any one you omit is reset to null. To change a single render setting, resend all the render settings you want to keep. Requires the templates:create_update permission. |
+
+</details>

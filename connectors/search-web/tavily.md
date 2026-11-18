@@ -5,6 +5,8 @@ hidden: true
 
 # Tavily
 
+<img src="../../.gitbook/assets/connectors/tavily.png" alt="Tavily logo" width="64">
+
 Tavily web search, extract, crawl, and map API for AI agents. Real-time web search optimized for LLMs, content extraction from URLs, site crawling, and URL mapping. Base URL https://api.tavily.com.
 
 | | |
@@ -12,8 +14,6 @@ Tavily web search, extract, crawl, and map API for AI agents. Real-time web sear
 | **Category** | [Search and web](README.md) |
 | **Website** | [tavily.com](https://tavily.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `tavily` |
 
 ## Use it

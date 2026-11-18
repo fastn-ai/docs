@@ -5,6 +5,8 @@ hidden: true
 
 # Craft
 
+<img src="../../.gitbook/assets/connectors/craft.png" alt="Craft logo" width="64">
+
 Craft is a document and note-taking workspace. This connector wraps the Craft Connect Space API to manage documents, folders, blocks (document content), tasks, collections (structured tables) with their items, views and schemas, comments, and whiteboards across an entire Craft space.
 
 | | |
@@ -12,8 +14,6 @@ Craft is a document and note-taking workspace. This connector wraps the Craft Co
 | **Category** | [Productivity](README.md) |
 | **Website** | [craft.do](https://craft.do) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `craft` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Craft from **Build → Integrations → Connectors** and connect an account,
 | Create Folders | `createFolders` | Creates one or more folders at the root level or nested inside an existing folder. Cannot create inside built-in locations. |
 | Create Whiteboard | `createWhiteboard` | Creates a new empty whiteboard block at a target position. Use Add Whiteboard Elements to populate it. Experimental Craft endpoint. |
 | Delete Blocks | `deleteBlocks` | Deletes blocks from any document in the space by their IDs. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Collection Items | `deleteCollectionItems` | Deletes items (rows) from a collection, including the content inside each item. |
 | Delete Collection View | `deleteCollectionView` | Deletes one collection view definition by view ID. Cannot delete the last stored view. If the active view is deleted, the first remaining view becomes active. Experimental Craft endpoint. |
 | Delete Documents | `deleteDocuments` | Soft-deletes documents by moving them to trash. Use Move Documents to restore them. |
@@ -64,3 +71,5 @@ Add Craft from **Build → Integrations → Connectors** and connect an account,
 | Update Tasks | `updateTasks` | Updates existing tasks across the space - content, state, schedule dates, deadlines, repeat, and location (to move tasks). Marking inbox tasks done/canceled moves them to the logbook. |
 | Update Whiteboard Elements | `updateWhiteboardElements` | Updates specific Excalidraw elements in a whiteboard by their ID. Elements not included remain unchanged. Experimental Craft endpoint. |
 | Upload File | `uploadFile` | Uploads a file and inserts it at a target position (a page, a Daily Note date, or relative to a sibling block). Send the file's raw bytes as the request body. Note: the fastn executor sends the body as text, so binary files may be corrupted - reliable for text-based files. |
+
+</details>

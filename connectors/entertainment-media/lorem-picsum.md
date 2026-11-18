@@ -5,6 +5,8 @@ hidden: true
 
 # Lorem Picsum
 
+<img src="../../.gitbook/assets/connectors/lorem-picsum.png" alt="Lorem Picsum logo" width="64">
+
 Lorem Picsum is a free placeholder photo service built on Unsplash images. List the available images with paging and get details for an image by id or by seed. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Lorem Picsum is a free placeholder photo service built on Unsplash images. List 
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [picsum.photos](https://picsum.photos) |
 | **Authentication** | No authentication |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `loremPicsum` |
 
 ## Use it

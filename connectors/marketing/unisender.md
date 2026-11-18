@@ -5,6 +5,8 @@ hidden: true
 
 # Unisender
 
+<img src="../../.gitbook/assets/connectors/unisender.png" alt="Unisender logo" width="64">
+
 Unisender email and SMS marketing platform. Single-URL RPC API at https://api.unisender.com/ru/api/&lt;method&gt; covering contact lists, subscribers, custom fields, tags, notes, email/SMS messages, campaigns, templates and delivery statistics.
 
 | | |
@@ -12,8 +14,6 @@ Unisender email and SMS marketing platform. Single-URL RPC API at https://api.un
 | **Category** | [Marketing](README.md) |
 | **Website** | [unisender.com](https://unisender.com) |
 | **Authentication** | API key |
-| **Actions** | 60 |
-| **Events** | 8 |
 | **Slug** | `unisender` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Unisender from **Build → Integrations → Connectors** and connect an acco
 | Create Email Message | `createEmailMessage` | Creates a reusable email message tied to a list. The message is stored only; nothing is sent until Create Campaign schedules it. The sender email must already be a confirmed return address on the account. Returns the new message_id. |
 | Create Email Template | `createEmailTemplate` | Creates a reusable email template that Create Email Message can later be based on. Returns the new template id. |
 | Create SMS Message | `createSmsMessage` | Creates a reusable SMS message tied to a list. The message is stored only; nothing is sent until Create Campaign schedules it. The sender alias must be registered with Unisender. Returns the new message_id. |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Subscriber Note | `createSubscriberNote` | Attaches a free-text note to one contact. Returns the new note id. |
 | Delete Contact List | `deleteList` | Permanently deletes a contact list. Contacts themselves are not deleted, only their membership of this list. Returns an empty result object on success. |
 | Delete Contact Tag | `deleteTag` | Permanently deletes a contact tag and removes it from every contact it was applied to. |
@@ -84,6 +91,8 @@ Add Unisender from **Build → Integrations → Connectors** and connect an acco
 | Update Email Template | `updateEmailTemplate` | Edits an existing email template. Only the supplied fields are changed; everything else keeps its current value. |
 | Update Opt-In Confirmation Email | `updateOptInEmail` | Replaces the double opt-in confirmation email that Unisender sends to new subscribers of one list. |
 | Update Subscriber Note | `updateSubscriberNote` | Replaces the text of an existing contact note. |
+
+</details>
 
 ## Events
 

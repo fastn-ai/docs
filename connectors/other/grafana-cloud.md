@@ -5,6 +5,8 @@ hidden: true
 
 # Grafana Cloud
 
+<img src="../../.gitbook/assets/connectors/grafana-cloud.png" alt="Grafana Cloud logo" width="64">
+
 Grafana Cloud connector for the Grafana instance HTTP API — manage dashboards, folders, data sources, alerting, annotations, teams, users, service accounts, library elements, playlists, and snapshots on a Grafana Cloud stack.
 
 | | |
@@ -12,8 +14,6 @@ Grafana Cloud connector for the Grafana instance HTTP API — manage dashboards,
 | **Category** | [Other](README.md) |
 | **Website** | [grafana.com](https://grafana.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 72 |
-| **Events** | 0 |
 | **Slug** | `grafanaCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Grafana Cloud from **Build → Integrations → Connectors** and connect an 
 | Create Playlist | `createPlaylist` | Create a playlist that cycles through a set of dashboards at a fixed interval. Requires the playlists write permission. |
 | Create Service Account | `createServiceAccount` | Create a new service account in the organization with a name and optional org role. Requires serviceaccounts:create. |
 | Create Short URL | `createShortUrl` | Create a short link for a Grafana path such as a dashboard, panel or Explore query, so a long deep link can be shared compactly. Pass the path relative to the Grafana root, without a leading slash. |
+
+<details>
+
+<summary>See 62 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Silence | `createSilence` | Create a silence in the built-in Grafana Alertmanager so that notifications for alerts matching the given labels are suppressed between the start and end times. Passing an existing silence id recreates that silence with the new values. Requires the alert.silences:create permission. |
 | Create Snapshot | `createSnapshot` | Create a dashboard snapshot, a point-in-time copy of a dashboard and its data that can be shared without granting access to the datasources. Returns the access key and the delete key. Requires the snapshots:create permission. |
 | Create Team | `createTeam` | Create a new team in the organization. Requires a name; email is optional. Requires teams:create. |
@@ -96,3 +103,5 @@ Add Grafana Cloud from **Build → Integrations → Connectors** and connect an 
 | Update Datasource | `updateDatasource` | Update an existing datasource identified by its UID. Datasources provisioned from a file are read only and reject this call. Requires the datasources:write permission. |
 | Update Folder | `updateFolder` | Update a folder's title. Provide the current version, or set overwrite to true to bypass optimistic locking. Requires folders:write. |
 | Update Notification Policy Tree | `updateNotificationPolicyTree` | Replace the entire Grafana-managed alerting notification policy tree. This overwrites every existing route, so send the complete tree including the default receiver. Requires the alert.provisioning:write permission. |
+
+</details>

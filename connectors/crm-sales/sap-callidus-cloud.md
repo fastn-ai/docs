@@ -5,6 +5,8 @@ hidden: true
 
 # SAP Incentive Management (CallidusCloud Commissions)
 
+<img src="../../.gitbook/assets/connectors/sap-callidus-cloud.png" alt="SAP Incentive Management (CallidusCloud Commissions) logo" width="64">
+
 SAP SuccessFactors Incentive Management - the incentive compensation product formerly sold as SAP Commissions and, before SAP acquired CallidusCloud in 2018, as Callidus Commissions / TrueComp. Its REST API is still served per tenant from https://&lt;tenant&gt;.callidusondemand.com (newer tenants: https://&lt;tenant&gt;.app.commissions.cloud.sap). Covers the shipped v2 API: credits, sales transactions and orders, deposits, balances, commissions, incentives, measurements, payments, participants, positions, titles, business units, users and groups, quotas, calendars and periods, customers, products, categories and classifiers, territories, variables, earning codes, event types, reasons, audit and message logs, and pipeline jobs (classify, allocate, reward, pay, compensate and pay, import, reset, purge). CallidusCloud CPQ (now SAP CPQ) and Litmos (divested 2022) are separate products needing separate connectors. No webhook API exists - poll with $filter or audit logs.
 
 | | |
@@ -12,8 +14,6 @@ SAP SuccessFactors Incentive Management - the incentive compensation product for
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [callidusondemand.com](https://callidusondemand.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 204 |
-| **Events** | 0 |
 | **Slug** | `sapCallidusCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SAP Incentive Management (CallidusCloud Commissions) from **Build → Integr
 | Create Credit Type | `createCreditType` | Create a credit type. creditTypeId is the logical key credits reference. |
 | Create Customer | `createCustomer` | Create an effective-dated customer classifier. classifierId is the logical key that sales transactions reference. |
 | Create Deposit | `createDeposit` | Create a deposit against a position for a period - for example a manual bonus or draw. The deposit date must fall inside the period. |
+
+<details>
+
+<summary>See 194 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Earning Code | `createEarningCode` | Create an earning code that deposits and payments can be classified with. |
 | Create Earning Group | `createEarningGroup` | Create an earning group that deposits, balances and payments accumulate into. |
 | Create Event Type | `createEventType` | Create an event type that sales transactions can be classified with. |
@@ -228,3 +235,5 @@ Add SAP Incentive Management (CallidusCloud Commissions) from **Build → Integr
 | Update Title | `updateTitle` | Update an existing title by its seq. |
 | Update User | `updateUser` | Update a tenant user by its userSeq. |
 | Update Variable | `updateVariable` | Update a plan variable by ruleElementSeq. Effective dates are deliberately not sent: SAP answers Change_EffectiveDates "Update doesn't allow to change versions", so date changes go through the variable's versions endpoint instead. SAP does not publish a typed request body for any v2 write, so the field names are taken from the GetVariable response contract. |
+
+</details>

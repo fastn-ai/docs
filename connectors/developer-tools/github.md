@@ -5,6 +5,8 @@ hidden: true
 
 # GitHub
 
+<img src="../../.gitbook/assets/connectors/github.png" alt="GitHub logo" width="64">
+
 GitHub REST API v3 connector — repositories, contents, branches/commits/git-data, issues & comments & labels & milestones, pull requests & reviews, releases, users & orgs & teams, Actions (workflows/runs), search, and repository webhooks. OAuth 2.0.
 
 | | |
@@ -12,8 +14,6 @@ GitHub REST API v3 connector — repositories, contents, branches/commits/git-da
 | **Category** | [Developer tools](README.md) |
 | **Website** | [github.com](https://github.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 253 |
-| **Events** | 101 |
 | **Slug** | `github` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GitHub from **Build → Integrations → Connectors** and connect an account
 | Add Organization Access To Enterprise Runner Group | `addEnterpriseRunnerGroupOrg` | Adds an organization to the list of organizations that have access to a self-hosted runner group in an enterprise. Returns 204 No Content. |
 | Add Repositories To Enterprise Org App Installation | `addEnterpriseOrgAppInstallationRepositories` | Add repositories to an app installation's selected-repository set in an org. Pass a pre-stringified JSON body of the form {"repositories":["repo-a","repo-b"]}. |
 | Add Runner To Enterprise Runner Group | `addEnterpriseRunnerGroupRunner` | Adds a self-hosted runner to a runner group for an enterprise. Returns 204 No Content. |
+
+<details>
+
+<summary>See 243 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Teams To Enterprise Copilot Subscription | `addEnterpriseCopilotTeams` | Adds enterprise teams to the Copilot subscription for an enterprise. |
 | Add Users To Enterprise Copilot Subscription | `addEnterpriseCopilotUsers` | Adds users to the Copilot subscription for an enterprise. |
 | Assign Enterprise Role To Team | `assignEnterpriseRoleToTeam` | Assign a specific enterprise role to a team. Returns 204 No Content. |
@@ -278,6 +285,8 @@ Add GitHub from **Build → Integrations → Connectors** and connect an account
 | Update SCIM User (Enterprise) | `updateScimUser` | Partially updates a SCIM user (PATCH with SCIM Operations) in an enterprise. Commonly used to activate/deactivate a user. Returns the updated user resource. |
 | Upsert Enterprise Custom Property | `upsertEnterpriseCustomProperty` | Create or update a single custom property definition for an enterprise. Pass a pre-stringified JSON body, e.g. {"value_type":"single_select","required":true,"default_value":"production","description":"Deployment env","allowed_values":["production","staging"]}. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -294,6 +303,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Commit Comment Created | `commit_comment.created` | A commit comment was created. GitHub sends event type 'commit_comment'; payload 'action' is 'created'. |
 | Deployment Created | `deployment.created` | A deployment was created. GitHub sends event type 'deployment'; payload 'action' is 'created'. |
 | Deployment Status Created | `deployment_status.created` | A deployment status was created. GitHub sends event type 'deployment_status'; payload 'action' is 'created'. |
+
+<details>
+
+<summary>See 91 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Discussion Answered | `discussion.answered` | A comment on a discussion was marked as the answer. |
 | Discussion Comment Created | `discussion_comment.created` | A comment on a discussion was created. GitHub sends event type 'discussion_comment'. |
 | Discussion Created | `discussion.created` | A discussion was created. GitHub sends event type 'discussion'. |
@@ -385,3 +401,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Workflow Run Completed | `workflow_run.completed` | A workflow run finished. |
 | Workflow Run In Progress | `workflow_run.in_progress` | A workflow run is in progress. |
 | Workflow Run Requested | `workflow_run.requested` | A workflow run was requested. GitHub sends event type 'workflow_run'. |
+
+</details>

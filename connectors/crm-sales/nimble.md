@@ -5,6 +5,8 @@ hidden: true
 
 # Nimble
 
+<img src="../../.gitbook/assets/connectors/nimble.png" alt="Nimble logo" width="64">
+
 Nimble CRM connector. Relationship-focused CRM: contacts (person and company records with a rich fields structure), contact custom fields/tabs/groups/choices, contact pipelines and lead transitions, notes, proceedings/activities, deals (v2) with pipelines/stages/fields/groups/tags/files/notes, message drafts, and current-user info. REST API over https://app.nimble.com, Bearer API-key auth.
 
 | | |
@@ -12,8 +14,6 @@ Nimble CRM connector. Relationship-focused CRM: contacts (person and company rec
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [nimble.com](https://nimble.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 86 |
-| **Events** | 0 |
 | **Slug** | `nimble` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Nimble from **Build → Integrations → Connectors** and connect an account
 | Contact ids list | `listContactsIds` | Contact ids list. Has same parameters as a regular contacts list, but returns only contact ids. Works faster than regular contact list. |
 | Contact List | `listContacts` | Contact List. Returns list of contacts filtered by specified parameters. Allows filters by advanced search query, tags, keyword. |
 | Create a draft message | `postMessageDraft` | Create a draft message (email). recipients/cc/bcc are arrays of participant objects; sender is a participant object. |
+
+<details>
+
+<summary>See 76 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create choice for field | `postContactChoiceField` | Create a choice for a contact custom field. |
 | Create choice in deals pipeline field | `postDealsPipelineFieldChoice` | Create a choice in a deals pipeline custom field. choice is an object {id, value}. |
 | Create contact field | `postContactField` | Create a new contact custom field. field_type is an object describing the field kind; presentation must match the field_type. |
@@ -110,3 +117,5 @@ Add Nimble from **Build → Integrations → Connectors** and connect an account
 | Update the successful exit transition | `putLeadExitSuccessful` | Updates the won 'exit' transition with new notes and/or actual_exit_date. |
 | Update the unsuccessful exit transition | `putLeadExitUnsuccessful` | Updates the lost 'exit' transition with new notes, actual_exit_date and/or lost_reason. |
 | Won deals sum last month | `getWonLastMonthDealsSum` | Returns the sum and count of all deal amounts won last month. |
+
+</details>

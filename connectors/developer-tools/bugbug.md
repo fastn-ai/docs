@@ -5,6 +5,8 @@ hidden: true
 
 # BugBug
 
+<img src="../../.gitbook/assets/connectors/bugbug.png" alt="BugBug logo" width="64">
+
 BugBug browser test automation. Public API v2: tests, suites, test runs, suite runs, steps, groups, components, folders, variables, profiles, projects, project settings, backups, visual regression reference screenshots, and YAML/ZIP import-export.
 
 | | |
@@ -12,8 +14,6 @@ BugBug browser test automation. Public API v2: tests, suites, test runs, suite r
 | **Category** | [Developer tools](README.md) |
 | **Website** | [bugbug.io](https://bugbug.io) |
 | **Authentication** | API key |
-| **Actions** | 81 |
-| **Events** | 6 |
 | **Slug** | `bugbug` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BugBug from **Build → Integrations → Connectors** and connect an account
 | Create Suite | `createSuite` | Creates a test suite. runProfileId is required. Optionally pass the list of test UUIDs and before-all/after-all hooks. |
 | Create Test | `createTest` | Creates a new, empty test in the project. Returns the created test with its UUID. Add steps afterwards with Create Step. |
 | Create Variable | `createVariable` | Undocumented but live v2 route. NOTE: the API exposes no DELETE for variables - a variable created here can only be removed in the BugBug web app. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Visual Regression Reference Screenshot | `createReferenceScreenshot` | Stores a reference screenshot for a visual-regression step. The API requires a real multipart image upload in the 'screenshot' part (a URL string is rejected with "The submitted data was not a file"), so imageContent must carry the raw image bytes. |
 | Delete Folder | `deleteFolder` | Permanently removes a folder. Undocumented but live v2 route. Returns 204 with no body. |
 | Delete Group | `deleteGroup` | Permanently removes a step group and the steps inside it. Returns 204 with no body. NOTE: this does NOT delete components - a component created by Create Component is not addressable here (its id returns 404 "Group Not found") and the v2 API exposes no delete route for components at all. |
@@ -105,6 +112,8 @@ Add BugBug from **Build → Integrations → Connectors** and connect an account
 | Update Variable | `updateVariable` | Updates a project variable's value or description. The path identifier is the variable KEY (not a UUID). Undocumented but live v2 route (PATCH only; the API exposes no DELETE for variables). |
 | Update Visual Regression Reference Screenshot | `updateReferenceScreenshot` | Partially updates a stored reference screenshot. The only mutable field is the image itself and the API still requires the multipart 'screenshot' file part - an empty PATCH returns 400 "No file was submitted". |
 | Validate Project Import | `validateProjectImport` | Uploads and validates a project export ZIP and returns an uploadId. Pass that uploadId to Run Project Import to actually perform the import. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # HubSpot
 
+<img src="../../.gitbook/assets/connectors/hubspot.png" alt="HubSpot logo" width="64">
+
 HubSpot CRM connector — full CRUD, search and batch operations across contacts, companies, deals, tickets, products, line items, quotes, and engagements (notes, tasks, calls, emails, meetings), plus owners, pipelines, properties, associations and lists. Webhooks via HubSpot app subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ HubSpot CRM connector — full CRUD, search and batch operations across contacts
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [hubspot.com](https://hubspot.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 300 |
-| **Events** | 28 |
 | **Slug** | `hubspot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HubSpot from **Build → Integrations → Connectors** and connect an accoun
 | Archive Course | `archiveCourse` | Archive (soft-delete) a course by record ID. Returns 204 No Content. Requires the crm.objects.courses.write scope. |
 | Archive Deal | `archiveDeal` | Archive (soft-delete) a deal by record ID. Returns 204. |
 | Archive Email | `archiveEmail` | Archive (soft-delete) an email engagement by record ID. Returns 204. |
+
+<details>
+
+<summary>See 290 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Archive Form | `archiveForm` | Archive a marketing form by ID. Returns 204. Requires the forms scope. |
 | Archive Invoice | `archiveInvoice` | Archive (delete) an invoice by record ID. HubSpot only allows this for draft invoices, and for open invoices when enabled in account settings. Returns 204 No Content. Requires the crm.objects.invoices.write scope. |
 | Archive Line Item | `archiveLineItem` | Archive (soft-delete) a line item by record ID. Returns 204. |
@@ -325,6 +332,8 @@ Add HubSpot from **Build → Integrations → Connectors** and connect an accoun
 | Upload Text File | `uploadTextFile` | Upload a text file (e.g. a .txt or .csv transcript) to HubSpot Files as multipart/form-data. Pass the file name, its text content, a folder path and access (PRIVATE by default). Returns the file id and URL to use as a note attachment (hs_attachment_ids). Requires the files scope. |
 | uploadFile | `uploadFile` |  |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -341,6 +350,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Contact Merged | `contact.merge` | A contact was merged with another contact. HubSpot delivers events as an array of notification objects. |
 | Contact Property Changed | `contact.propertyChange` | A specified property changed on a contact. HubSpot delivers events as an array of notification objects. |
 | Contact Restored | `contact.restore` | A previously deleted contact was restored. HubSpot delivers events as an array of notification objects. |
+
+<details>
+
+<summary>See 18 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Conversation Created | `conversation.creation` | A new conversation thread was started. HubSpot delivers events as an array of notification objects. |
 | Conversation Deleted | `conversation.deletion` | A conversation thread was deleted. HubSpot delivers events as an array of notification objects. |
 | Conversation New Message | `conversation.newMessage` | A new message was received on a conversation thread. HubSpot delivers events as an array of notification objects. |
@@ -359,3 +375,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Ticket Created | `ticket.creation` | A ticket was created. HubSpot delivers events as an array of notification objects. |
 | Ticket Deleted | `ticket.deletion` | A ticket was deleted. HubSpot delivers events as an array of notification objects. |
 | Ticket Property Changed | `ticket.propertyChange` | A specified property changed on a ticket. HubSpot delivers events as an array of notification objects. |
+
+</details>

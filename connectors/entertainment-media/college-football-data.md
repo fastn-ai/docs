@@ -5,6 +5,8 @@ hidden: true
 
 # College Football Data
 
+<img src="../../.gitbook/assets/connectors/college-football-data.png" alt="College Football Data logo" width="64">
+
 CollegeFootballData.com (CFBD) provides historical and advanced college football data. This connector covers the full CFBD REST API: games, box scores, drives, plays, rushing and passing analytics, team and player stats, ratings (SP+, SRS, Elo, FPI), polls, recruiting, rosters, coaches, venues, betting lines, NFL draft, College Football Playoff data, and API usage.
 
 | | |
@@ -12,8 +14,6 @@ CollegeFootballData.com (CFBD) provides historical and advanced college football
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [collegefootballdata.com](https://collegefootballdata.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 93 |
-| **Events** | 0 |
 | **Slug** | `collegeFootballData` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add College Football Data from **Build → Integrations → Connectors** and con
 | Get Aggregated Team Recruiting Ratings | `getAggregatedTeamRecruitingRatings` | Returns recruiting ratings aggregated by team and position group. |
 | Get API Key Info | `getUserInfo` | Returns the authenticated API key's Patreon tier, enabled premium features, monthly call limit, and remaining calls. |
 | Get Calendar | `getCalendar` | Returns the week-by-week season calendar. |
+
+<details>
+
+<summary>See 83 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Cfp Games | `getCfpGames` | Returns College Football Playoff matchups for a season. |
 | Get Cfp Participants | `getCfpParticipants` | Returns College Football Playoff participants for a season. |
 | Get Cfp Playoff | `getCfpPlayoff` | Returns the complete College Football Playoff bracket for a season. |
@@ -117,3 +124,5 @@ Add College Football Data from **Build → Integrations → Connectors** and con
 | List Teams | `listTeams` | Returns team information, including mascots, colors, logos, venue location, and conference affiliations. |
 | List Venues | `listVenues` | Returns all college football venues with location, capacity, construction year, surface, and dome details. |
 | Search Players | `searchPlayers` | Returns up to 100 players whose names match the search term. |
+
+</details>

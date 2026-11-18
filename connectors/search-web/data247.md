@@ -5,6 +5,8 @@ hidden: true
 
 # Data247
 
+<img src="../../.gitbook/assets/connectors/data247.png" alt="Data247 logo" width="64">
+
 Data247 is a real-time data enrichment and verification API (by LogicTree, Inc.) for phone carrier lookups and email-to-SMS gateways, phone/email/postal-address verification, name/phone/email/zip append, property data, IP geolocation, Do-Not-Call and TCPA litigator checks, and signup fraud scoring (Trust247). This connector covers every service code in the Data247 API v3.0 user manual plus account balance, rate-card and usage queries and batch JSON posting.
 
 | | |
@@ -12,8 +14,6 @@ Data247 is a real-time data enrichment and verification API (by LogicTree, Inc.)
 | **Category** | [Search and web](README.md) |
 | **Website** | [data247.com](https://data247.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `data247` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Data247 from **Build → Integrations → Connectors** and connect an accoun
 | Append ZIP Code | `appendZipCode` | Append247 (Zipcode): returns the ZIP+4 and full postal metadata (parsed street components, county, FIPS, congressional district, area code, timezone, DPBC) for a US city/state and optional street address. Always billed (service code AZ). |
 | Batch Lookup Phone Numbers | `batchLookupPhoneNumbers` | Runs one phone-based service against up to ten phone numbers in a single call (the API itself accepts up to 99 as p1...p99). Supported services: Text@ (MT), Carrier247 USA (CU), Carrier247 International (CI), Carrier Type (CT), Do-Not-Call check/add/remove (DC/DA/DR) and Reverse Phone (APR). Each result carries its own status, and each number is billed by that service's own rate. |
 | Check Do-Not-Call Status | `checkDoNotCall` | Do-Not-Call (Check): tells you whether a phone number appears on the Federal DNC registry or your own internal do-not-call list before you dial it. Federal results require a subscription to the number's area code, otherwise the result is UNAUTHORIZED. Always billed (service code DC). |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Check Phone Trust | `checkPhoneTrust` | Trust247 (Phone Check): a low-cost risk screen on a phone number supplied at signup, flagging numbers that are not safe to trust (for example invalid, out of service or high-risk VOIP). Always billed (service code TPC). |
 | Check TCPA Litigator | `checkTcpaLitigator` | TCPA Litigator Check: screens a phone number or name against known TCPA litigators and serial plaintiffs before you call or text. Always billed (service code DT). |
 | Get Account Balance | `getAccountBalance` | Returns the current prepaid balance of the account in USD. Free; service code B. |
@@ -56,3 +63,5 @@ Add Data247 from **Build → Integrations → Connectors** and connect an accoun
 | Verify Phone Number | `verifyPhone` | Verify247 (Phone): checks whether a phone number is in service and accepts inbound calls, with a confidence level. Billed per hit (service code VP). |
 | Verify Phone Owner | `verifyPhoneOwner` | Verify247 (Verify Owner): confirms whether a phone number is registered to the person or company you name, returning the actual subscriber name, line type and whether the line is in service. Billed per hit (service code VO). |
 | Verify Postal Address | `verifyPostalAddress` | Verify247 (Postal Address): validates a US postal address and returns the USPS-standardised version with parsed components, ZIP+4, county, FIPS, congressional district, area code, timezone and delivery point barcode. Always billed (service code VA). |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Contentful
 
+<img src="../../.gitbook/assets/connectors/contentful.png" alt="Contentful logo" width="64">
+
 Manage and deliver structured content with Contentful. Covers the Content Management API (spaces, environments, content types, entries, assets, locales, webhooks, roles, API keys, uploads, tags, and content releases) and the Content Delivery API for reading published content.
 
 | | |
@@ -12,8 +14,6 @@ Manage and deliver structured content with Contentful. Covers the Content Manage
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [contentful.com](https://contentful.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 207 |
-| **Events** | 0 |
 | **Slug** | `contentful` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Contentful from **Build → Integrations → Connectors** and connect an acc
 | Complete Workflow | `completeWorkflow` | Complete a workflow. Docs: https://www.contentful.com/developers/docs/references/content-management-api/ |
 | Create API Key | `createApiKey` | Creates a new Content Delivery API key for a space, along with a matching Preview API key. |
 | Create Asset | `createAsset` | Creates a new media asset from a source file URL. The asset must be processed and published before it is usable. |
+
+<details>
+
+<summary>See 197 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Asset Key | `createAssetKey` | Create a key for signing embargoed asset URLs. Docs: https://www.contentful.com/developers/docs/references/content-management-api/ |
 | Create Content Type | `createContentType` | Creates a new content type model in a space environment, defining its display name and field schema. |
 | Create Entry | `createEntry` | Creates a new entry of the given content type. Field values are keyed by field ID, and each field value is keyed by locale code. |
@@ -231,3 +238,5 @@ Add Contentful from **Build → Integrations → Connectors** and connect an acc
 | Update Workflow Definition | `updateWorkflowDefinition` | Update a workflow definition. Docs: https://www.contentful.com/developers/docs/references/content-management-api/ |
 | Upsert Webhook Signing Secret | `upsertWebhookSigningSecret` | Set the webhook signing secret (64 chars). Docs: https://www.contentful.com/developers/docs/references/content-management-api/ |
 | Validate Release | `validateRelease` | Asynchronously validates that every entity in a release can be published. Only one validation can run per release at a time; poll Get Release Action for the result. |
+
+</details>

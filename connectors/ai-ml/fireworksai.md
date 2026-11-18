@@ -5,6 +5,8 @@ hidden: true
 
 # Fireworks AI
 
+<img src="../../.gitbook/assets/connectors/fireworksai.png" alt="Fireworks AI logo" width="64">
+
 Fireworks AI — fast generative AI inference and platform management. Covers the OpenAI-compatible Inference API (chat/text completions, embeddings, image generation, audio transcription/translation) at https://api.fireworks.ai/inference/v1 and the Control Plane (models, deployments, datasets, supervised fine-tuning jobs, batch jobs) at https://api.fireworks.ai/v1. Auth: API key as Bearer token.
 
 | | |
@@ -12,8 +14,6 @@ Fireworks AI — fast generative AI inference and platform management. Covers th
 | **Category** | [AI and ML](README.md) |
 | **Website** | [fireworks.ai](https://fireworks.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `fireworksai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Fireworks AI from **Build → Integrations → Connectors** and connect an a
 | Delete Deployment | `deleteDeployment` | Delete an on-demand deployment by id. Control-plane base https://api.fireworks.ai/v1. |
 | Delete Supervised Fine-tuning Job | `deleteSupervisedFineTuningJob` | Delete a supervised fine-tuning job by id. Control-plane base https://api.fireworks.ai/v1. |
 | Generate Image (FLUX Schnell) | `generateImageFluxSchnell` | [DEPRECATED] Retired by Fireworks AI. The changelog entry "Audio inference and image generation are deprecated" (https://docs.fireworks.ai/updates/changelog) removed image generation from the platform; the flux-1-schnell-fp8 workflow now answers {"error":{"message":"Model not found, inaccessible, and/or not deployed","code":"NOT_FOUND"}}. No supported replacement on this connector. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account | `getAccount` | Get account details (display name, state, billing tier). Control-plane base https://api.fireworks.ai/v1. |
 | Get Batch Job | `getBatchJob` | Get a single batch inference job by id, including state and output dataset. Control-plane base https://api.fireworks.ai/v1. |
 | Get Dataset | `getDataset` | Get a single dataset by id. Control-plane base https://api.fireworks.ai/v1. |
@@ -47,3 +54,5 @@ Add Fireworks AI from **Build → Integrations → Connectors** and connect an a
 | List Supervised Fine-tuning Jobs | `listSupervisedFineTuningJobs` | List supervised fine-tuning (SFT) jobs in an account. Control-plane base https://api.fireworks.ai/v1. |
 | Transcribe Audio | `transcribeAudio` | [DEPRECATED] Retired by Fireworks AI. The changelog entry "Audio inference and image generation are deprecated" (https://docs.fireworks.ai/updates/changelog) removed audio inference from the platform; the audio-prod.api.fireworks.ai host is decommissioned and answers 401 Unauthorized on every path even with a key that authenticates fine against api.fireworks.ai. No supported replacement on this connector. |
 | Translate Audio | `translateAudio` | [DEPRECATED] Retired by Fireworks AI. The changelog entry "Audio inference and image generation are deprecated" (https://docs.fireworks.ai/updates/changelog) removed audio inference from the platform; the audio-prod.api.fireworks.ai host is decommissioned and answers 401 Unauthorized on every path even with a key that authenticates fine against api.fireworks.ai. No supported replacement on this connector. |
+
+</details>

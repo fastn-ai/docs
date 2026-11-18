@@ -5,6 +5,8 @@ hidden: true
 
 # Webling
 
+<img src="../../.gitbook/assets/connectors/webling.png" alt="Webling logo" width="64">
+
 Webling association/club management (members, finances, documents, articles, letters, users). REST API v1 authenticated with an apikey header.
 
 | | |
@@ -12,8 +14,6 @@ Webling association/club management (members, finances, documents, articles, let
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [webling.ch](https://webling.ch) |
 | **Authentication** | API key |
-| **Actions** | 146 |
-| **Events** | 0 |
 | **Slug** | `webling` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Webling from **Build → Integrations → Connectors** and connect an accoun
 | Create Comment | `createComment` | Create a comment. links.member links it to member ids. |
 | Create Cost Center | `createCostCenter` | Create a costcenter. Requires exactly one parent (a period id). |
 | Create Debitor | `createDebitor` | Create a debitor (invoice). parents = [PERIOD id]; links.debitorcategory names the invoice run and links.member the member billed. Write title, comment, date, duedate, address and invoiceitems only - totalamount, remainingamount, paidamount, writeoffamount, state and debitorid are computed by Webling and are not writable. |
+
+<details>
+
+<summary>See 136 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Debitor Category | `createDebitorCategory` | Create a debitorcategory (invoice run). Requires exactly one parent and it must be a PERIODGROUP id, not a period. |
 | Create Document | `createDocument` | Create a document. properties.file is {name, content} with base64 content; parents is one documentgroup id. |
 | Create Document Group | `createDocumentGroup` | Create a documentgroup (folder). |
@@ -170,3 +177,5 @@ Add Webling from **Build → Integrations → Connectors** and connect an accoun
 | Update User | `updateUser` | Update a Webling user account by id. |
 | Update User Group | `updateUserGroup` | Update a usergroup by id. |
 | Update VAT Rate | `updateVatRate` | Update a VAT rate by id. |
+
+</details>

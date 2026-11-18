@@ -5,6 +5,8 @@ hidden: true
 
 # webCRM
 
+<img src="../../.gitbook/assets/connectors/web-crm-api.png" alt="webCRM logo" width="64">
+
 webCRM via the webCRM REST API (api.webcrm.com). Manage organisations, persons, B2C persons, opportunities, deliveries, activities, events, meetings, support cases, products, quotation lines, documents, users, price groups, VAT and account settings, and register per-entity webhooks (hooks) for create, update and delete events. Access tokens are minted from the webCRM API token and renewed automatically.
 
 | | |
@@ -12,8 +14,6 @@ webCRM via the webCRM REST API (api.webcrm.com). Manage organisations, persons, 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [webcrm.com](https://webcrm.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 334 |
-| **Events** | 42 |
 | **Slug** | `webCrmApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add webCRM from **Build → Integrations → Connectors** and connect an account
 | Create B2C Person Hook | `createB2CPersonHook` | Registers a webhook that webCRM calls at the target URL when a b2c person is created, updated or deleted, and returns the assigned hook ID. Send 0 as the ID for a new hook. |
 | Create B2C Person Linked Data Item | `createB2CPersonLinkedDataItem` | Creates a linked data item for b2c persons in webCRM and returns the assigned ID. Send 0 as the ID for a new item. |
 | Create Delivery | `createDelivery` | Adds a new delivery to webCRM and returns the assigned ID. |
+
+<details>
+
+<summary>See 324 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Delivery Hook | `createDeliveryHook` | Registers a webhook that webCRM calls at the target URL when a delivery is created, updated or deleted, and returns the assigned hook ID. Send 0 as the ID for a new hook. |
 | Create Delivery Linked Data Item | `createDeliveryLinkedDataItem` | Creates a linked data item for deliveries in webCRM and returns the assigned ID. Send 0 as the ID for a new item. |
 | Create Document | `createDocument` | Adds a new document record to webCRM and returns the assigned ID. The file content is sent Base64-encoded in the File field. |
@@ -359,6 +366,8 @@ Add webCRM from **Build → Integrations → Connectors** and connect an account
 | Upsert Support Cases | `upsertSupportCases` | Updates or inserts the submitted support cases in webCRM. Records with an ID of 0 are inserted and others are updated. webCRM answers HTTP 200 even when individual records fail, so check each returned string for an error message. |
 | Upsert Users | `upsertUsers` | Updates or inserts the submitted users in webCRM. Records with an ID of 0 are inserted and others are updated. webCRM answers HTTP 200 even when individual records fail, so check each returned string for an error message. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -375,6 +384,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Delivery Deleted | `deliveryDeleted` | Fires when a delivery is deleted in webCRM (Deliveries/Hooks with EventType Delete). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
 | Delivery Updated | `deliveryUpdated` | Fires when a delivery is updated in webCRM (Deliveries/Hooks with EventType Update). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
 | Document Created | `documentCreated` | Fires when a document is created in webCRM (Documents/Hooks with EventType Create). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
+
+<details>
+
+<summary>See 32 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Document Deleted | `documentDeleted` | Fires when a document is deleted in webCRM (Documents/Hooks with EventType Delete). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
 | Document Updated | `documentUpdated` | Fires when a document is updated in webCRM (Documents/Hooks with EventType Update). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
 | Event Created | `eventCreated` | Fires when an event is created in webCRM (Events/Hooks with EventType Create). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
@@ -407,3 +423,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Created | `userCreated` | Fires when a user is created in webCRM (Users/Hooks with EventType Create). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
 | User Deleted | `userDeleted` | Fires when a user is deleted in webCRM (Users/Hooks with EventType Delete). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
 | User Updated | `userUpdated` | Fires when a user is updated in webCRM (Users/Hooks with EventType Update). webCRM does not publish the delivery payload, so the schema stays open until a real delivery is captured. |
+
+</details>

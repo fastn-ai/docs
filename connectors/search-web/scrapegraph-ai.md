@@ -5,6 +5,8 @@ hidden: true
 
 # ScrapeGraphAI
 
+<img src="../../.gitbook/assets/connectors/scrapegraph-ai.png" alt="ScrapeGraphAI logo" width="64">
+
 ScrapeGraphAI is an AI-powered web data extraction API. This connector covers the ScrapeGraphAI v2 API: multi-format page scraping, natural-language structured extraction, web search with inline content, asynchronous crawls with status, paginated pages, stop, resume and delete, scheduled monitors with change detection and webhook delivery, request history, credits, API key validation and health, plus the agent payment, offering discovery and agent enrollment endpoints.
 
 | | |
@@ -12,8 +14,6 @@ ScrapeGraphAI is an AI-powered web data extraction API. This connector covers th
 | **Category** | [Search and web](README.md) |
 | **Website** | [scrapegraphai.com](https://scrapegraphai.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 43 |
-| **Events** | 1 |
 | **Slug** | `scrapegraphAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ScrapeGraphAI from **Build → Integrations → Connectors** and connect an 
 | Extract Data | `extractData` | Extracts structured JSON from a URL, raw HTML or markdown using a natural-language prompt and an optional JSON Schema, returning the typed result with raw model output, token usage and chunking metadata. Provide exactly one source: url, html or markdown. |
 | Get AEP Document | `getAepDocument` | Returns the Agent Enrollment Protocol (AEP 1.0) inspect document: supported authentication and identity methods, commands, grant types, signing algorithms and the HTTP endpoint base. |
 | Get Agent Payment Protocols | `getAgentPaymentProtocols` | Returns the agent payment discovery document: supported payment protocols and methods, keyless access, subscription, refill, balance and subscription management endpoints, available USDC credit packs and subscription plans. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Agent Subscription | `getAgentSubscription` | Returns the InFlow agent subscription tied to the connected API key: status, plan, billing period, paid-through date, cancellation, renewal flag and separate subscription and top-up credit balances. Returns not found when the key has no agent subscription. |
 | Get Crawl Pages | `getCrawlPages` | Returns a cursor-paginated slice of a crawl job's pages with each page's metadata and its resolved scrape result, such as markdown or links. Use pagination.nextCursor to fetch the next slice until it is null. |
 | Get Crawl Status | `getCrawlStatus` | Returns the status, progress counters and lightweight per-page metadata of a crawl job, including each page's URL, depth, links and scrape reference ID. Poll every few seconds until the status is completed, failed or stopped. |
@@ -67,6 +74,8 @@ Add ScrapeGraphAI from **Build → Integrations → Connectors** and connect an 
 | Subscribe With MPP For Billing Period | `subscribeWithMppBillingPeriod` | Keyless monthly or yearly agent subscription through InFlow MPP for a chosen plan, provisioning a separate account with a stable API key; yearly billing grants twelve months of credits at once. Without a payment credential the API answers 402 with a subscription challenge. |
 | Update Monitor | `updateMonitor` | Updates a monitor's name, cron interval, formats, webhook URL or fetch options. Only the fields you send are changed. |
 | Validate API Key | `validateApiKey` | Validates the connected API key and returns the email of the user who owns it. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # NextDNS
 
+<img src="../../.gitbook/assets/connectors/next-dns.png" alt="NextDNS logo" width="64">
+
 NextDNS is a cloud DNS firewall that blocks ads, trackers and threats and provides parental controls and DNS analytics. This connector covers the NextDNS API: profiles; security, privacy, parental control and settings (logs, log dropping, block page, performance); denylist, allowlist, security TLDs, privacy blocklists and native trackers, parental control services and categories; DNS rewrites; setup and linked IP; query logs (list, download, clear, stream); and analytics by status, domain, reason, IP, device, protocol, query type, IP version, DNSSEC, encryption and destination, each also as a time series.
 
 | | |
@@ -12,8 +14,6 @@ NextDNS is a cloud DNS firewall that blocks ads, trackers and threats and provid
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [nextdns.io](https://nextdns.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 84 |
-| **Events** | 0 |
 | **Slug** | `nextDns` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add NextDNS from **Build → Integrations → Connectors** and connect an accoun
 | Clear Logs | `clearLogs` | Permanently deletes all DNS query logs stored for a profile. |
 | Create Profile | `createProfile` | Creates a NextDNS profile with a name and optional initial security, privacy, parental control, denylist, allowlist and settings configuration. Returns the new profile ID. |
 | Create Rewrite | `createRewrite` | Adds a DNS rewrite to a profile so a domain resolves to a custom IP address or hostname. The record type (A, AAAA or CNAME) is inferred from the answer. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Profile | `deleteProfile` | Permanently deletes a NextDNS profile and its logs. |
 | Delete Rewrite | `deleteRewrite` | Deletes a DNS rewrite from a profile by its rewrite ID. |
 | Get Block Page Settings | `getBlockPageSettings` | Retrieves whether a profile shows a block page instead of failing silently when a domain is blocked. |
@@ -108,3 +115,5 @@ Add NextDNS from **Build → Integrations → Connectors** and connect an accoun
 | Update Profile | `updateProfile` | Updates a NextDNS profile's name. Use the dedicated security, privacy, parental control and settings actions to change nested configuration. |
 | Update Security Settings | `updateSecurity` | Turns individual security protections on or off for a profile. Only the protections you provide are changed. Manage blocked TLDs with the Security TLD actions. |
 | Update Settings | `updateSettings` | Turns bypass age verification and Web3 domain resolution on or off for a profile. Use the logs, block page and performance settings actions for those groups. |
+
+</details>

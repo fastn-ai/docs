@@ -5,6 +5,8 @@ hidden: true
 
 # Zulip
 
+<img src="../../.gitbook/assets/connectors/zulip.jpg" alt="Zulip logo" width="64">
+
 Zulip is an open-source team chat application organised by topic. This connector covers the Zulip REST API: messages (send, fetch, edit, delete, react, flag, schedule, remind, render, read receipts), channels and their subscriptions, topics and topic preferences, users, bots, user groups and their members and subgroups, drafts and saved snippets, invitations, real-time event queues, presence and status, attachments, navigation views, channel folders, and organization settings including custom emoji, linkifiers, code playgrounds, allowed domains, custom profile fields and data exports. Works with both Zulip Cloud and self-hosted servers; authentication is HTTP Basic with your email address as the username and your Zulip API key as the password.
 
 | | |
@@ -12,8 +14,6 @@ Zulip is an open-source team chat application organised by topic. This connector
 | **Category** | [Communication](README.md) |
 | **Website** | [zulip.com](https://zulip.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 159 |
-| **Events** | 0 |
 | **Slug** | `zulip` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zulip from **Build → Integrations → Connectors** and connect an account,
 | Add Navigation View | `addNavigationView` | Adds a left-sidebar navigation view for the acting user. Use it either to add a custom view pointing at any Zulip narrow, or to record a preference for one of the built-in views. Built-in views cannot be given a custom name. |
 | Add Reaction | `addReaction` | Adds an emoji reaction to a message on behalf of the current user. For standard Unicode emoji, supplying just the emoji name is enough; Zulip fills in the code and reaction type. |
 | Archive Channel | `archiveChannel` | Archives a channel, removing it from the active channel list while preserving its message history. Archived channels can be unarchived with Update Channel by setting Is Archived to false. |
+
+<details>
+
+<summary>See 149 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Subscription Settings | `updateSubscriptionSettings` | Changes several personal subscription settings across several channels in one request. |
 | Check If Messages Match Narrow | `checkMessagesMatchNarrow` | Checks which of the given messages match a narrow, and returns search-highlighted versions of the matching ones. Clients use it to decide whether a newly arrived message belongs in the view they are showing. |
 | Check Thumbnail Status | `checkThumbnailStatus` | Reports whether Zulip has finished generating thumbnails for an uploaded image. Clients poll this after uploading to know when the thumbnail is ready. Split the attachment's path_id the same way as for Get File Temporary URL. |
@@ -183,3 +190,5 @@ Add Zulip from **Build → Integrations → Connectors** and connect an account,
 | Update Your Presence | `updatePresence` | Reports the acting user's presence on this client as active or idle, and in the same round trip returns the organization's current presence data. Clients call this periodically as their presence heartbeat. |
 | Update Your Profile Data | `updateProfileData` | Sets values for the acting user's custom profile fields. Field IDs come from Get Custom Profile Fields. |
 | Update Your Status | `updateStatus` | Sets or clears the acting user's own status message and status emoji. Sending an empty status text clears the status. |
+
+</details>

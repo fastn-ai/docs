@@ -5,6 +5,8 @@ hidden: true
 
 # Laposta
 
+<img src="../../.gitbook/assets/connectors/laposta.png" alt="Laposta logo" width="64">
+
 Laposta is a Dutch email marketing platform. This connector covers the full Laposta v2 REST API: mailing lists and their members, custom fields, segments, campaigns and campaign content, delivery reports, member and campaign history, and webhook management.
 
 | | |
@@ -12,8 +14,6 @@ Laposta is a Dutch email marketing platform. This connector covers the full Lapo
 | **Category** | [Marketing](README.md) |
 | **Website** | [laposta.nl](https://laposta.nl) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 41 |
-| **Events** | 3 |
 | **Slug** | `laposta` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Laposta from **Build → Integrations → Connectors** and connect an accoun
 | Delete Campaign | `deleteCampaign` | Permanently deletes a Laposta campaign. This cannot be undone. Delivery statistics for a campaign that was already sent go with it, so read them with Get Report first if you need to keep them. |
 | Delete Field | `deleteField` | Permanently deletes a custom field from a Laposta list, along with the values every subscriber held in it. This cannot be undone. A list's automatic 'labels' field cannot be deleted through the API and such a request returns error code 203. The response is the field object with state 'deleted'. |
 | Delete List | `deleteList` | Permanently deletes a Laposta mailing list together with everything attached to it - its subscribers, its custom fields, its segments and its webhooks all go with it. This cannot be undone. The response is the list object with state 'deleted'. |
+
+<details>
+
+<summary>See 31 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Member | `deleteMember` | Permanently deletes a subscriber from a Laposta list. This cannot be undone and the subscriber can no longer be requested afterwards. To stop mailing someone while keeping their record, use Update Member with State set to 'unsubscribed' instead. The Member ID may be either the subscriber's id or their email address. The response is the member object with state 'deleted'. |
 | Delete Segment | `deleteSegment` | Permanently deletes a segment from a Laposta list. This cannot be undone and the segment cannot be retrieved afterwards. Subscribers are not affected - only the saved selection is removed. |
 | Delete Webhook | `deleteWebhook` | Permanently deletes a webhook from a Laposta list, so Laposta stops calling that URL. Deliveries already queued are still completed. The response is the webhook object with state 'deleted'. |
@@ -65,6 +72,8 @@ Add Laposta from **Build → Integrations → Connectors** and connect an accoun
 | Update Member | `updateMember` | Partially updates a subscriber on a Laposta list. Fields you omit keep their current value. Setting State to 'unsubscribed' unsubscribes the subscriber. The Member ID may be either the subscriber's id or their email address. Passing a labels array in Custom Fields REPLACES the subscriber's current labels rather than adding to them. |
 | Update Segment | `updateSegment` | Partially updates a segment on a Laposta list. Only the fields you supply are changed; anything omitted keeps its current value. Changing the definition immediately changes which subscribers any campaign targeting this segment will reach. |
 | Update Webhook | `updateWebhook` | Partially updates a webhook on a Laposta list - its target URL, the event it listens for, or whether it is temporarily blocked. Fields you omit keep their current value. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Hellotracks
 
+<img src="../../.gitbook/assets/connectors/hellotracks.png" alt="Hellotracks logo" width="64">
+
 Hellotracks field-workforce management: jobs and dispatch, places, zones, members/workers, real-time locate, GPS tracks, forms, reports, API keys and webhooks. Wraps both the Hellotracks REST API (/v1) and the legacy JSON-RPC-style /api surface.
 
 | | |
@@ -12,8 +14,6 @@ Hellotracks field-workforce management: jobs and dispatch, places, zones, member
 | **Category** | [Productivity](README.md) |
 | **Website** | [hellotracks.com](https://hellotracks.com) |
 | **Authentication** | API key |
-| **Actions** | 47 |
-| **Events** | 12 |
 | **Slug** | `hellotracks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Hellotracks from **Build → Integrations → Connectors** and connect an ac
 | Create Member | `legacyCreateMember` | Add a new member. Without a password the member is invited by email/SMS. Docs: https://api-docs.hellotracks.com/api-reference/endpoint/createaccount (POST https://api.hellotracks.com/api/createaccount). |
 | Create Place | `createPlace` | Creates a place (a fixed site such as a customer location, warehouse or office) with an address, geofence radius and optional team assignment. Returns the created place including its generated id. |
 | Create Place | `legacyCreatePlace` | Create a place (location/site). Docs: https://api-docs.hellotracks.com/api-reference/endpoint/createplace (POST https://api.hellotracks.com/api/createplace). |
+
+<details>
+
+<summary>See 37 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Report | `legacyCreateReport` | Generate a report file (returns a download URL). Docs: https://api-docs.hellotracks.com/api-reference/endpoint/createreport (POST https://api.hellotracks.com/api/createreport). |
 | Delete API Key | `deleteApiKey` | Permanently deletes an API key by its key id (the public prefix shown by List API Keys). Returns the remaining keys. Never pass the id of the key this connection authenticates with - that would break every action in this connector. |
 | Delete Job | `deleteJob` | Permanently deletes a job by id. This cannot be undone - use Archive Job instead when the job should stay recoverable. Returns the deleted job in data.items. |
@@ -72,6 +79,8 @@ Add Hellotracks from **Build → Integrations → Connectors** and connect an ac
 | Update Member | `updateMember` | Updates an existing organization member identified by UID in the path. Send only the fields to change. Changing role or password affects the member's access immediately. |
 | Update Place | `updatePlace` | Updates an existing place identified by id in the path. Send only the fields to change, such as a new name, address, geofence radius or team assignment. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -88,5 +97,14 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Job Updated | `jobupdated` | Fires when an existing job is updated. Registered under the job_updated webhook key. |
 | Place Checked In | `placecheckin` | Fires when a member automatically checks in at a place geofence. Registered under the place_checked webhook key. |
 | Place Checked Out | `placecheckout` | Fires when a member automatically checks out of a place geofence. Registered under the place_checked webhook key. |
+
+<details>
+
+<summary>See 2 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Worker Clocked In | `clockin` | Fires when a worker turns tracking on, which Hellotracks treats as a clock-in. Registered under the clock_in_out webhook key. The id field carries the member UID, the timestamp and the action. |
 | Worker Clocked Out | `clockout` | Fires when a worker turns tracking off, which Hellotracks treats as a clock-out. Registered under the clock_in_out webhook key. |
+
+</details>

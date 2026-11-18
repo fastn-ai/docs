@@ -5,6 +5,8 @@ hidden: true
 
 # Ticket Tailor
 
+<img src="../../.gitbook/assets/connectors/ticket-tailor.png" alt="Ticket Tailor logo" width="64">
+
 Ticket Tailor is a low-fee event ticketing and box office platform. This connector covers the Ticket Tailor API v1: event series and their event occurrences, ticket types, ticket groups, bundles and overrides, events, orders and offline payment confirmation, issued tickets and voiding, check-ins, discount codes, vouchers and voucher codes, memberships (types, issued memberships and redemptions), products and stores, checkout forms, waitlist signups, and the box office overview.
 
 | | |
@@ -12,8 +14,6 @@ Ticket Tailor is a low-fee event ticketing and box office platform. This connect
 | **Category** | [Productivity](README.md) |
 | **Website** | [tickettailor.com](https://tickettailor.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 80 |
-| **Events** | 8 |
 | **Slug** | `ticketTailor` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ticket Tailor from **Build → Integrations → Connectors** and connect an 
 | Create Event Series Override | `createEventSeriesOverride` | Create an override on an event series so one ticket type, ticket group or bundle is sold at a different price, quantity or status than its default. Each call sets one override line; create additional overrides for additional lines. |
 | Create Hold | `createHold` | Hold back tickets of one ticket type on an event occurrence so they are removed from public sale and can be issued later. Each call holds one ticket type; create additional holds for additional ticket types. |
 | Create Issued Membership | `createIssuedMembership` | Issue a membership to a named member from an existing membership type. Validity dates and redemption limits default to the membership type's settings unless you override them. Member photos must be uploaded in the Ticket Tailor dashboard. |
+
+<details>
+
+<summary>See 70 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Issued Membership Redemption | `createIssuedMembershipRedemption` | Redeem a membership at an event, recording that the member used it for entry. The redemption counts towards the membership's redemption limit. |
 | Create Issued Ticket | `createIssuedTicket` | Issue a ticket directly from an event's inventory or from a hold, without going through checkout. Supply event_id and ticket_type_id to issue from ticket type inventory, or hold_id to issue from a hold. Ticket Tailor charges one credit per ticket issued through the API, even when the ticket is free. |
 | Create Membership Type | `createMembershipType` | Create a membership type: the template that issued memberships are created from, defining how long they last, how many times they can be redeemed and what benefits they carry. |
@@ -104,6 +111,8 @@ Add Ticket Tailor from **Build → Integrations → Connectors** and connect an 
 | Void Issued Membership | `voidIssuedMembershipById` | Void an issued membership so it can no longer be redeemed. This cannot be undone. |
 | Void Issued Ticket | `voidIssuedTicketById` | Mark an issued ticket as voided so it is no longer valid for entry. This is irreversible, and it does not cancel the rest of the order or issue a refund. Set Void To Hold to convert the voided ticket into a hold instead of releasing it. |
 | Void Voucher Code | `voidVoucherCodeById` | Mark a single voucher code as voided so it can no longer be redeemed. This is irreversible and does not affect the other codes on the same voucher. |
+
+</details>
 
 ## Events
 

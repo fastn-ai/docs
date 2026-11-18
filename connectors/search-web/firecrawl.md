@@ -5,6 +5,8 @@ hidden: true
 
 # Firecrawl
 
+<img src="../../.gitbook/assets/connectors/firecrawl.png" alt="Firecrawl logo" width="64">
+
 Firecrawl web scraping, crawling, mapping, search, and structured-data extraction API (v2). Turns any website into clean markdown, HTML, or structured JSON for AI applications.
 
 | | |
@@ -12,8 +14,6 @@ Firecrawl web scraping, crawling, mapping, search, and structured-data extractio
 | **Category** | [Search and web](README.md) |
 | **Website** | [firecrawl.dev](https://firecrawl.dev) |
 | **Authentication** | Bearer token |
-| **Actions** | 20 |
-| **Events** | 8 |
 | **Slug** | `firecrawl` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Firecrawl from **Build → Integrations → Connectors** and connect an acco
 | Get Batch Scrape Errors | `getBatchScrapeErrors` | List per-URL errors and robots.txt-blocked URLs for a batch scrape job by id. |
 | Get Batch Scrape Status | `getBatchScrapeStatus` | Get the status and accumulated page data of a batch scrape job by id. Use the 'next' URL to page through results larger than 10MB. |
 | Get Crawl Errors | `getCrawlErrors` | List per-URL errors and robots.txt-blocked URLs for a crawl job by id. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Crawl Status | `getCrawlStatus` | Get the status and accumulated page data of a crawl job by id. Use the 'next' URL to page through results larger than 10MB. |
 | Get Credit Usage | `getCreditUsage` | Get the remaining credits on the account/team associated with the API key. |
 | Get Credit Usage Historical | `getCreditUsageHistorical` | Get historical credit usage per billing period for the team associated with the API key. Optionally filter by number of billing periods. |
@@ -44,6 +51,8 @@ Add Firecrawl from **Build → Integrations → Connectors** and connect an acco
 | Map | `map` | Quickly get a complete list of URLs from a website. Optionally order results by relevance to a search query. |
 | Scrape | `scrape` | Scrape a single URL and return clean content in markdown, HTML, links, screenshot, or structured JSON. Supports browser actions, tag filtering, and main-content extraction. |
 | Search | `search` | Search the web (web, news, images) and optionally scrape full page content of the results in any format. |
+
+</details>
 
 ## Events
 

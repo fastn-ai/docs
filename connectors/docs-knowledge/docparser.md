@@ -5,6 +5,8 @@ hidden: true
 
 # Docparser
 
+<img src="../../.gitbook/assets/connectors/docparser.jpg" alt="Docparser logo" width="64">
+
 Docparser extracts structured data from PDFs, invoices, purchase orders and scanned documents using Document Parsers. This connector covers the full Docparser API: listing Document Parsers and their model layouts, importing documents by upload or from a URL, checking document processing status, reading parsed data for one or many documents, re-parsing and re-integrating documents, and fetching a document's stored media.
 
 | | |
@@ -12,8 +14,6 @@ Docparser extracts structured data from PDFs, invoices, purchase orders and scan
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [docparser.com](https://docparser.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 10 |
-| **Events** | 1 |
 | **Slug** | `docparser` |
 
 ## Use it

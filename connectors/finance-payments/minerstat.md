@@ -5,6 +5,8 @@ hidden: true
 
 # Minerstat
 
+<img src="../../.gitbook/assets/connectors/minerstat.png" alt="Minerstat logo" width="64">
+
 Minerstat is a crypto-mining intelligence platform. This connector covers the full Minerstat Data API (v3) plus the legacy v2 contract: mineable coins with live network and market data, coin history snapshots, the hardware catalogue (ASICs, GPUs, CPUs and FPGAs) with manufacturer specs, mining algorithms with their coins and benchmarks, the mining-pool directory with fees and payout schemes, and ranked profitability opportunities.
 
 | | |
@@ -12,8 +14,6 @@ Minerstat is a crypto-mining intelligence platform. This connector covers the fu
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [minerstat.com](https://minerstat.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 13 |
-| **Events** | 0 |
 | **Slug** | `minerstat` |
 
 ## Use it
@@ -34,6 +34,15 @@ Add Minerstat from **Build → Integrations → Connectors** and connect an acco
 | List Coins | `listCoins` | Lists all active mineable coins with live network data, market data and freshness metadata. Optionally filter by algorithm slug or restrict the list to high-confidence coins. Row counts are capped by the account's Minerstat plan. |
 | List Coins (Legacy v2) | `listCoinsLegacy` | Lists coins using the legacy Minerstat v2 contract: a bare JSON array with stable identifiers and -1 in place of missing values. Optionally filter by ticker list or legacy algorithm name. Retained for existing integrations; new work should use List Coins. The v2 API retires on 31 December 2026. |
 | List Hardware | `listHardware` | Lists the mining hardware catalogue with identity, device type, rated power draw and release date. Optionally filter to a single device type. Row counts are capped by the account's Minerstat plan. |
+
+<details>
+
+<summary>See 3 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Hardware (Legacy v2) | `listHardwareLegacy` | Lists mining hardware using the legacy Minerstat v2 contract: a bare JSON array carrying per-algorithm benchmarked speeds. Retained for existing integrations; new work should use List Hardware. The v2 API retires on 31 December 2026. |
 | List Pools | `listPools` | Lists the mining-pool directory with default fees, the number of coins each pool serves and the result of the most recent liveness check. Row counts are capped by the account's Minerstat plan. |
 | List Pools (Legacy v2) | `listLegacyPools` | Lists mining pools using the legacy Minerstat v2 contract: a bare JSON array with stable sha1 identifiers, an editorial description and a per-ticker map of pool terms. Retained for existing integrations; new work should use List Pools. The v2 API retires on 31 December 2026. |
+
+</details>

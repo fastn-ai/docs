@@ -5,6 +5,8 @@ hidden: true
 
 # Formbricks
 
+<img src="../../.gitbook/assets/connectors/formbricks.png" alt="Formbricks logo" width="64">
+
 Open-source Experience Management platform for surveys, forms, and in-product feedback. Manage surveys, responses, contacts, action classes, webhooks, teams, and contact attributes via the Formbricks Management API.
 
 | | |
@@ -12,8 +14,6 @@ Open-source Experience Management platform for surveys, forms, and in-product fe
 | **Category** | [Marketing](README.md) |
 | **Website** | [formbricks.com](https://formbricks.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 42 |
-| **Events** | 0 |
 | **Slug** | `formbricks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Formbricks from **Build → Integrations → Connectors** and connect an acc
 | Create Webhook | `createWebhook` | Registers a new webhook that posts a notification to your URL when survey response events occur. The response includes a one-time signing secret used to verify deliveries. |
 | Delete Action Class | `deleteActionClass` | Deletes an action class. Fails if it is still referenced as a trigger on any survey. |
 | Delete Contact | `deleteContact` | Deletes a contact. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact Attribute Key | `deleteContactAttributeKey` | Deletes a contact attribute key definition and removes it from all contacts. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
 | Delete Response | `deleteResponse` | Permanently deletes a single survey response. |
 | Delete Survey | `deleteSurvey` | Permanently deletes a survey and its responses. |
@@ -66,3 +73,5 @@ Add Formbricks from **Build → Integrations → Connectors** and connect an acc
 | Update Team | `updateTeam` | Renames an existing team within an organization. |
 | Update Webhook | `updateWebhook` | Fully replaces a webhook's name, URL, source, triggers, and survey scoping (PUT is a full replace, not a partial patch). |
 | Upload File | `uploadFile` | Requests a signed upload URL for a public file (such as a survey image or logo) in a workspace's file storage. |
+
+</details>

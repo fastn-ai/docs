@@ -5,6 +5,8 @@ hidden: true
 
 # Whop
 
+<img src="../../.gitbook/assets/connectors/whop.png" alt="Whop logo" width="64">
+
 Whop is a commerce platform for selling digital products, memberships and communities. This connector covers the Whop REST API v1 (both the Current versioned surface and the supported Legacy surface): accounts and companies, users and team members, products, plans and checkout configurations, memberships and members, payments, invoices, refunds, disputes and dispute alerts, resolution center cases, promo codes, payouts, transfers, ledgers and cards, experiences, courses, forums, chats and messages, reviews, entries, leads, affiliates, apps and app builds, files and media, notifications, exports, stats and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Whop is a commerce platform for selling digital products, memberships and commun
 | **Category** | [E-commerce](README.md) |
 | **Website** | [whop.com](https://whop.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 413 |
-| **Events** | 86 |
 | **Slug** | `whop` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Whop from **Build → Integrations → Connectors** and connect an account, 
 | Approve Entry | `approveEntry` | Approves a pending waitlist entry, which TRIGGERS THE CHECKOUT PROCESS to grant the applicant access to the plan - on a paid plan that means the applicant is charged. The work runs asynchronously and the response is only a job id, not the finished entry, so poll Retrieve Entry to see the outcome. Needs plan:waitlist:manage. |
 | Archive Affiliate | `archiveAffiliate` | Archives an affiliate so they stop earning new commission. Whop has no delete for affiliates, so this is how you retire one; it is reversible with Unarchive Affiliate. Returns the bare JSON boolean true on success; this route does not return an object, so read the affiliate back with List Affiliates filtered to archived if you need the updated record. Requires the affiliate:update permission. |
 | Attach Experience to Product | `attachExperience` | Attaches an experience to a product, making it reachable by that product's customers. An experience can be attached to several products. Requires the experience:attach permission. |
+
+<details>
+
+<summary>See 403 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Calculate Plan Tax | `calculatePlanTax` | Previews the tax on a plan before checkout, based on the buyer's billing address or IP address. Supply either an address with a country or an IP address. |
 | Cancel Bounty | `cancelBounty` | Cancels a bounty and REFUNDS THE ESCROWED POOL to the funder. With no in-flight work it cancels immediately; otherwise it stops new submissions and cancels once the in-flight work resolves and pays out, with cancel_requested_at set meanwhile. Repeating the request is a no-op. A bounty that already paid out every slot returns 400. |
 | Cancel Bounty Submission | `cancelBountySubmission` | Cancels the caller's own active attempt on a bounty and DISCARDS any accumulated capture clips, which cannot be recovered. Only the worker who started the attempt can cancel it; an account API key cannot. |
@@ -438,6 +445,8 @@ Add Whop from **Build → Integrations → Connectors** and connect an account, 
 | Void Payment | `voidPayment` | Voids a payment that has not yet settled, cancelling it before the processor captures it. Only works while the payment's Voidable flag is true. This is irreversible and affects real money. |
 | Withdraw Resolution Center Case | `withdrawResolutionCenterCase` | Withdraws a case you opened, as the customer. Only possible while the case is still open, and it closes the case with outcome withdrawn — there is no way to reopen it afterwards. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -454,6 +463,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Card Application Created | `card_application.created` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
 | Card Application Denied | `card_application.denied` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
 | Card Application Updated | `card_application.updated` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
+
+<details>
+
+<summary>See 76 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Card Canceled | `card.canceled` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
 | Card Created | `card.created` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
 | Card Frozen | `card.frozen` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
@@ -530,3 +546,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Withdrawal Created | `withdrawal.created` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
 | Withdrawal Reversed | `withdrawal.reversed` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
 | Withdrawal Updated | `withdrawal.updated` | Whop wraps every event in one envelope {id, type, api_version, api_version_date, timestamp, data}; only data differs by type. Envelope captured from a real delivery; this type's data body is not individually captured. |
+
+</details>

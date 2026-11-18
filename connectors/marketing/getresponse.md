@@ -5,6 +5,8 @@ hidden: true
 
 # GetResponse
 
+<img src="../../.gitbook/assets/connectors/getresponse.jpg" alt="GetResponse logo" width="64">
+
 GetResponse email marketing and automation platform. Manage contacts, campaigns (lists), custom fields, tags, from-fields, autoresponders, newsletters, RSS newsletters, forms, webforms, segments (search-contacts), statistics, ecommerce (shops, products, categories, carts, orders), account settings, and webhook callbacks via the GetResponse REST API v3.
 
 | | |
@@ -12,8 +14,6 @@ GetResponse email marketing and automation platform. Manage contacts, campaigns 
 | **Category** | [Marketing](README.md) |
 | **Website** | [getresponse.com](https://getresponse.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 219 |
-| **Events** | 0 |
 | **Slug** | `getresponse` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GetResponse from **Build → Integrations → Connectors** and connect an ac
 | Create a folder | `createFolder` | Create a folder. |
 | Create a new A/B test | `createSubjectAbTest` | Create a new A/B test. |
 | Create a predefined field | `createPredefinedField` | Create a predefined field. Makes it possible to create a new predefined field. |
+
+<details>
+
+<summary>See 209 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Account Callbacks | `createAccountCallbacks` | Enable or update callbacks configuration. |
 | Create address | `createAddress` | Create address. |
 | Create Autoresponder | `createAutoresponder` | Create a time-based autoresponder message that sends on a given day of the subscriber cycle. Requires name, subject, from-field, content, campaign, and trigger settings. |
@@ -243,3 +250,5 @@ Add GetResponse from **Build → Integrations → Connectors** and connect an ac
 | Upsert product meta fields | `upsertMetaFields` | Upsert product meta fields. This method makes it possible to assign meta fields. It doesn't remove or unassign meta fields. It returns a list of product meta fields. |
 | Upsert the custom fields of a contact | `upsertContactCustoms` | Upsert the custom fields of a contact. Upsert (add or update) the custom fields of a contact. This method doesn't remove (unassign) custom fields. |
 | Upsert the tags of a contact | `upsertTags` | Upsert the tags of a contact. Upsert (add or update) the tags of a contact. This method doesn't remove (unassign) tags. |
+
+</details>

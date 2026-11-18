@@ -5,6 +5,8 @@ hidden: true
 
 # OpenAlex
 
+<img src="../../.gitbook/assets/connectors/openalex.png" alt="OpenAlex logo" width="64">
+
 OpenAlex is the open catalog of the global research system. This connector covers the OpenAlex REST API: works, authors, sources, institutions, publishers, funders, awards, topics and the rest of the subject hierarchy, keywords, SDGs, concepts, locations and every vocabulary endpoint, each with filtering, search, sorting, grouping, sampling and paging; plus autocomplete, OQL query execution and translation, the properties registry, usage and rate-limit status, full-text content downloads, private collections and author curations.
 
 | | |
@@ -12,8 +14,6 @@ OpenAlex is the open catalog of the global research system. This connector cover
 | **Category** | [Data and databases](README.md) |
 | **Website** | [openalex.org](https://openalex.org) |
 | **Authentication** | Bearer token |
-| **Actions** | 87 |
-| **Events** | 0 |
 | **Slug** | `openalex` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OpenAlex from **Build → Integrations → Connectors** and connect an accou
 | Create Collection | `createCollection` | Creates a private named collection of OpenAlex entities of one type, optionally seeded with entity IDs. The returned col_ ID can be used in the collection: filter on list actions. Requires an API key. |
 | Create Curation | `createCuration` | Submits one author curation: claim a work authorship, remove yourself from a work, or set/detach display_name, full_name or ORCID on an author profile. Only claimed-profile owners, organization curators or site curators may submit; others receive 403. Changes apply within about 24 hours. |
 | Delete Collection | `deleteCollection` | Deletes one of the connected user's collections and all of its entity memberships. Requires an API key. |
+
+<details>
+
+<summary>See 77 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Download Work Grobid XML | `downloadWorkGrobidXml` | Downloads the Grobid TEI XML full text of a work from the OpenAlex content archive as a gzip file reference (name ending .xml.gz, base64 data). Only works with has_content.grobid_xml true are available; costs $0.01 per download. |
 | Download Work PDF | `downloadWorkPdf` | Downloads the cached full-text PDF of a work from the OpenAlex content archive. Only works with has_content.pdf true are available; costs $0.01 per download. Returns a file reference with base64 data. |
 | Get Author | `getAuthor` | Returns a single OpenAlex author by OpenAlex ID or ORCID. Single-entity lookups are free. |
@@ -111,3 +118,5 @@ Add OpenAlex from **Build → Integrations → Connectors** and connect an accou
 | Translate Query (POST) | `translateQuery` | Translates a query given as OQL, OQO or a classic OpenAlex URL (oxurl) into all three forms and validates it, without executing it. Use this for the classic-URL form and for long queries. Send exactly one of the three. Free. |
 | Update Collection | `updateCollection` | Updates the name, description or (only while empty) the entity type of one of the connected user's collections. Requires an API key. |
 | Validate OQL | `validateOql` | Lints an OQL string and returns rich diagnostics with stable error codes, spans and fix-its. Always returns 200; check the valid flag. Free. |
+
+</details>

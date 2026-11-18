@@ -5,6 +5,8 @@ hidden: true
 
 # DealCloud
 
+<img src="../../.gitbook/assets/connectors/deal-cloud.png" alt="DealCloud logo" width="64">
+
 DealCloud by Intapp - CRM and deal management for private capital, investment banking and professional services. Its data model is configured per customer: every site defines its own objects ("entry types") and fields, addressed by numeric id or apiName, so this connector is schema-driven rather than object-specific. Schema-discovery actions (entry types, fields, choice values, field types, currencies, filter operations, site users) pair with generic entry-data actions parameterised by entryTypeId: the Rows API for whole records (read, query, create, update, saved views), the Cells API for field-level create/upsert and filtering, plus delete, merge, change history for delta sync, point-in-time data, file download and template reports. Also user management, Relationship Intelligence import, site backups and the Publications event stream. Host is per tenant (https://{site}.dealcloud.com); auth is OAuth2 client credentials. DealCloud has no outbound webhooks - Publications is long-polled.
 
 | | |
@@ -12,8 +14,6 @@ DealCloud by Intapp - CRM and deal management for private capital, investment ba
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [dealcloud.com](https://dealcloud.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 61 |
-| **Events** | 0 |
 | **Slug** | `dealCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DealCloud from **Build → Integrations → Connectors** and connect an acco
 | Delete Entries | `deleteEntries` | Delete whole entries of an entry type, by entry id. This removes the entire record - to clear a single field instead, update it with null or an empty string. Deletion can be confirmed through Get Entry History, which is the only place deleted entries surface (isDeleted true). |
 | Delete Site Backup | `deleteBackup` | Delete a site backup by name. Note two quirks: the operation is a POST, not a DELETE, and the name must be given WITHOUT the .zip extension - take the name from List Site Backups and strip the suffix. |
 | Delete User | `deleteUser` | Remove a user from the DealCloud site by user id. Needs the user_management scope and a user group with user-management capability. Consider deactivating via Update User instead when audit history should stay attributable. |
+
+<details>
+
+<summary>See 51 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Download Entry File | `downloadEntryFile` | Download the binary stored in a Binary (fieldType 13) or Image (fieldType 16) field. The two-step trap: with the exception of the Documents object, files do not live on the record you found them on - the record's Attachments field is a reference into the Attachment object, and the binary sits there. So first read the record's attachment field with Get Cell Data to get the attachment entry id, then call this with THAT id plus the field id of the binary field on the Attachment object. Using the reference field's id gives 400 "Field with Id does not exist"; using the right entry but the wrong field gives 404 "File not found". Note that fastn's HTTP executor cannot reliably relay binary bodies, so this action may fail at the platform layer even when DealCloud answers correctly. |
 | Filter Entries | `filterEntries` | Return just the entry ids of an entry type that match a Cells-API filter. Filters are an array of {fieldId, value, filterOperation} criteria which are ANDed together, using the NUMERIC operator codes (0 equals, 1 contains, 2 greater, 3 greaterOrEqual, 4 less, 5 lessOrEqual, 6 startsWith, 7 in, 8 between, 9 notIn, 10 notEqualTo, 11 doesntContain, 12 noData, 13 notNoData) - not the $-prefixed Rows-API syntax. Use it to resolve a set of ids cheaply, then feed them to Get Cell Data or Get Entry Rows. |
 | Generate Report | `generateReport` | Queue a template report for generation. This is asynchronous: a 200 means the request was accepted onto the queue and returns a single requestID, NOT that the report was produced - poll Get Report with that id to find out. Entry reports need the entries array, user reports need userIds; object reports need neither. Step two of the three-step report flow. |
@@ -85,3 +92,5 @@ Add DealCloud from **Build → Integrations → Connectors** and connect an acco
 | Update Entry Rows | `updateEntryRows` | Update existing records of any entry type, in bulk, with PATCH. The body is a JSON array of up to 1000 entries, each carrying the real positive EntryId plus only the fields to change. PATCH does not upsert - every EntryId must already exist; use Create Entry Rows for new records. Choice and reference values must be numeric ids, not names. To clear a field pass null or "" rather than deleting the record. |
 | Update User | `updateUser` | Update an existing user's details - name, email, password, SSO federation id and user group membership. The user id goes in the body, not the URL. Group membership is what governs API reach, so changing groups changes what that user's API key can do. |
 | Upsert Cell Entries | `upsertCellEntries` | Create or update entries field by field using the Cells API with PUT, which upserts: a negative entryId creates a new record, a positive one updates that existing record. This is the action to use for field-level syncs where a record may or may not already exist. Up to 10000 fields per payload, and an invalid item fails the whole payload. To clear a field send an empty value rather than deleting the entry. |
+
+</details>

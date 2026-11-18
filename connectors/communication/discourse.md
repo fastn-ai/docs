@@ -5,6 +5,8 @@ hidden: true
 
 # Discourse
 
+<img src="../../.gitbook/assets/connectors/discourse.png" alt="Discourse logo" width="64">
+
 Discourse is an open-source community discussion platform. This connector covers the Discourse REST API: topics, posts, categories, tags and tag groups, users and user preferences, groups and memberships, badges, invites, notifications, private messages, search, site settings, uploads, backups, admin user management and web hooks.
 
 | | |
@@ -12,8 +14,6 @@ Discourse is an open-source community discussion platform. This connector covers
 | **Category** | [Communication](README.md) |
 | **Website** | [discourse.org](https://discourse.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 100 |
-| **Events** | 43 |
 | **Slug** | `discourse` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Discourse from **Build → Integrations → Connectors** and connect an acco
 | Complete External Upload | `completeExternalUpload` | Finishes a direct external upload started with Generate Presigned Put. Moves the file from its temporary location to permanent external storage, verifies the size and optional checksum, and creates the Discourse upload record that is returned. Requires the site to have external (S3) file storage with direct uploads enabled. |
 | Complete Multipart Upload | `completeMultipart` | Finishes a multipart upload once every chunk has been sent, assembles the file in external storage and creates the Discourse upload record that is returned. Supply every part number with the ETag the storage provider returned for it. Requires the site to have external (S3) file storage with direct uploads enabled. |
 | Create Backup | `createBackup` | Starts a backup of the site. The backup runs in the background and appears in List Backups when it finishes. Requires an admin API key. |
+
+<details>
+
+<summary>See 90 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Badge | `createBadge` | Creates a new badge. Requires an admin API key. |
 | Create Category | `createCategory` | Creates a new category on the site. |
 | Create Group | `createGroup` | Creates a new group. Requires an admin API key. |
@@ -125,6 +132,8 @@ Add Discourse from **Build → Integrations → Connectors** and connect an acco
 | Update Username | `updateUsername` | Renames a user. The new username must be available and meet the site's format rules; links and mentions using the old name are updated automatically. Returns the account's id and its new username. |
 | Update Web Hook | `updateWebHook` | Updates an existing web hook, for example its payload URL, subscribed event types or active state. Requires an admin API key. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -141,6 +150,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Chat Message Trashed | `chat_message_trashed` | A chat message was deleted. Requires the Discourse Chat plugin. |
 | Group Created | `group_created` | A group was created. |
 | Group Destroyed | `group_destroyed` | A group was deleted. |
+
+<details>
+
+<summary>See 33 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Group Updated | `group_updated` | A group was updated. |
 | Notification Created | `notification_created` | A notification was created for a user. |
 | Post Created | `post_created` | A new post was created in a topic. |
@@ -174,3 +190,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Suspended | `user_suspended` | A user was suspended. |
 | User Unsuspended | `user_unsuspended` | A suspended user was unsuspended. |
 | User Updated | `user_updated` | A user profile was updated. |
+
+</details>

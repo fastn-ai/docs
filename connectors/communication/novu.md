@@ -5,6 +5,8 @@ hidden: true
 
 # Novu
 
+<img src="../../.gitbook/assets/connectors/novu.png" alt="Novu logo" width="64">
+
 Novu is an open-source notification infrastructure platform that lets teams orchestrate Email, SMS, Push, In-App, and Chat notifications through code-defined workflows, manage subscribers and their channel preferences, group subscribers into topics, and trigger or broadcast workflow events from any backend.
 
 | | |
@@ -12,8 +14,6 @@ Novu is an open-source notification infrastructure platform that lets teams orch
 | **Category** | [Communication](README.md) |
 | **Website** | [novu.co](https://novu.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 50 |
-| **Events** | 0 |
 | **Slug** | `novu` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Novu from **Build → Integrations → Connectors** and connect an account, 
 | Create Environment | `createEnvironment` | Creates a new environment (e.g. a Staging environment) under the current organization. |
 | Create Integration | `createIntegration` | Connects a new provider integration (e.g. an email, SMS, push, or chat provider) to the current environment, storing its credentials for use by workflow steps on that channel. |
 | Create Subscriber | `createSubscriber` | Creates a new subscriber in the current Novu environment, identified by a unique subscriber ID, with optional profile fields such as name, email, phone, locale, timezone, and custom data. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Topic | `createTopic` | Creates a new topic, a named group used to send notifications to many subscribers at once by adding them as topic subscriptions. |
 | Create Workflow | `createWorkflow` | Creates a new notification workflow made of one or more steps (e.g. in-app, email, SMS, push, chat, delay, digest), which can later be triggered to deliver notifications to subscribers. |
 | Delete Environment | `deleteEnvironment` | Permanently deletes a custom (non-default) environment. The built-in Development and Production environments cannot be deleted. |
@@ -74,3 +81,5 @@ Add Novu from **Build → Integrations → Connectors** and connect an account, 
 | Update Topic Subscription | `updateTopicSubscription` | Updates a topic subscription's per-workflow notification preferences for the subscribed subscriber. |
 | Update Workflow | `updateWorkflow` | Fully replaces an existing workflow's name, description, tags, active state, and steps. |
 | Upsert Subscriber Channel Credentials | `upsertSubscriberCredentials` | Creates or partially updates a subscriber's credentials for a specific push or chat provider, merging with any existing credentials for that provider instead of replacing them entirely. |
+
+</details>

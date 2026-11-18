@@ -5,6 +5,8 @@ hidden: true
 
 # Lusha
 
+<img src="../../.gitbook/assets/connectors/lusha.png" alt="Lusha logo" width="64">
+
 Lusha B2B sales intelligence API (V3). Search, enrich, and prospect contacts and companies; AI lookalikes; real-time buying signals; decision makers; website-visit intent; prospecting/signal filter discovery; account usage/credits; and webhook subscription management for signal notifications. Base https://api.lusha.com, API key in the api_key header.
 
 | | |
@@ -12,8 +14,6 @@ Lusha B2B sales intelligence API (V3). Search, enrich, and prospect contacts and
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [lusha.com](https://lusha.com) |
 | **Authentication** | API key |
-| **Actions** | 34 |
-| **Events** | 0 |
 | **Slug** | `lusha` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Lusha from **Build → Integrations → Connectors** and connect an account,
 | Enrich Companies | `enrichCompanies` | Reveal full firmographic data (size, revenue, industry, locations, technologies, funding, intent, social) for company ids from Search Companies. Pass up to 100 ids. Optional 'reveal' unlocks extra fields (employeesByDepartment/Location/Seniority, competitors, intent), each charged separately. Base charge revealCompany 1 credit per result. |
 | Enrich Contacts | `enrichContacts` | Reveal full contact data (emails, phones, employment) for contact ids obtained from Search Contacts. Pass up to 100 ids. Use 'reveal' to control what to unlock (emails and/or phones); omit for both. Charged per revealed field: revealEmail 1 credit, revealPhone 5 credits. |
 | Get Account Secret | `getAccountSecret` | Retrieve the current account webhook secret used to sign webhook deliveries (HMAC-SHA256). No credit cost. |
+
+<details>
+
+<summary>See 24 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account Usage | `getAccountUsage` | Returns a full snapshot of your Lusha account: credits (total/used/remaining), rate limit windows (daily/hourly/minute), plan details, and per-action credit pricing. Does not consume credits. Rate limited to 5 requests/minute. |
 | Get Audit Log Statistics | `getAuditLogStats` | Get webhook delivery statistics for your account (total, success, failed, successRate). Optionally filter by subscriptionId. No credit cost. |
 | Get Audit Logs | `getAuditLogs` | Retrieve webhook delivery logs for your account (success and failures, status codes, response times, errors). Filter by subscriptionId and status. Paginate with limit (1-100) and offset. Logs retained 90 days (success) / 180 days (failed). No credit cost. |
@@ -58,3 +65,5 @@ Add Lusha from **Build → Integrations → Connectors** and connect an account,
 | Search Contacts | `searchContacts` | Look up contacts by identifier (Lusha id, linkedinUrl, email, or firstName+lastName+companyName/companyDomain). Returns a non-PII preview per profile with 'has' and 'canReveal'. Up to 100 contacts per request. Charged per successful result via api_search (1 credit per 25 results). |
 | Test Subscription | `testSubscription` | Send a test signal to a webhook subscription. Modes: direct (HTTP check only), kafka (fanout handler), full (end-to-end, default). Test deliveries use mock data and do NOT consume credits. |
 | Update Subscription | `updateSubscription` | Update an existing webhook subscription (all body fields optional). Set isActive true to reactivate a disabled subscription (clears block reason and resets retries). Set regenerateSecret true to mint a new account webhook secret (returned once). No credit cost. |
+
+</details>

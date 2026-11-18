@@ -5,6 +5,8 @@ hidden: true
 
 # Browse AI
 
+<img src="../../.gitbook/assets/connectors/browse-ai.png" alt="Browse AI logo" width="64">
+
 Browse AI extracts and monitors data from any website with no-code robots. This connector covers the complete Browse AI REST API v2: infrastructure status, teams, robots (list, get, update cookies), on-demand robot tasks (run, list with filters, get captured data), monitors (create, list, get, update, delete), bulk runs (create, list, get), robot webhooks (create, list, delete) and the robot event webhooks (task finished, task finished successfully or with error, captured data changed, table export finished) as bindable events.
 
 | | |
@@ -12,8 +14,6 @@ Browse AI extracts and monitors data from any website with no-code robots. This 
 | **Category** | [Search and web](README.md) |
 | **Website** | [browse.ai](https://browse.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 18 |
-| **Events** | 5 |
 | **Slug** | `browseAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Browse AI from **Build → Integrations → Connectors** and connect an acco
 | Get Robot Monitor | `getRobotMonitor` | Retrieves one monitor of a robot with its schedule, notification settings, input parameters and status. |
 | Get Robot Task | `getRobotTask` | Retrieves a task's details and captured data (texts, lists, screenshots), its status, timing, input parameters and, when available, a temporary URL for the captured data and the run video. |
 | Get System Status | `getSystemStatus` | Returns the real-time operational status of the Browse AI infrastructure, including whether the tasks queue is running normally or under maintenance. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Bulk Runs | `listBulkRuns` | Lists a robot's bulk runs with their status and task counts, paginated. |
 | List Robot Monitors | `listRobotMonitors` | Lists the monitors configured on a robot with their schedules, notification settings, input parameters and active or paused status. |
 | List Robot Tasks | `listRobotTasks` | Lists a robot's tasks with pagination and filters by status, bulk run, creation date range and retried tasks, sorted by the given fields. Each task carries its status, input parameters and captured texts, lists and screenshots. |
@@ -42,6 +49,8 @@ Add Browse AI from **Build → Integrations → Connectors** and connect an acco
 | Run Robot | `runRobot` | Runs a robot on demand with optional input parameter overrides and optional video recording, creating a task. The response contains the new task; receive the captured data through the robot's webhooks or poll Get Robot Task until the task finishes. Consumes Browse AI credits; returns 403 credits_limit_reached when the team is out of credits. |
 | Update Robot Cookies | `updateRobotCookies` | Replaces the cookies a robot uses when it runs, for example to keep it logged in to a site. The request body is an array of cookie objects (name and value required; domain, path, expirationDate, hostOnly, httpOnly and secure optional). Returns the updated cookie list. |
 | Update Robot Monitor | `updateRobotMonitor` | Updates a robot monitor: name, input parameters, notification settings, schedule, or status (paused to stop it, active to resume). Only the fields you pass are changed. |
+
+</details>
 
 ## Events
 

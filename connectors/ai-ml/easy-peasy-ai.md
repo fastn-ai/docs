@@ -5,6 +5,8 @@ hidden: true
 
 # Easy-Peasy.AI
 
+<img src="../../.gitbook/assets/connectors/easy-peasy-ai.png" alt="Easy-Peasy.AI logo" width="64">
+
 Easy-Peasy.AI generative content API. Text generation from 100+ presets/templates, image generation and editing, video and talking-video generation, music and sound-effect generation, audio transcription with speaker detection, AI content from transcriptions, text-to-speech with 150+ voices, an OpenAI-compatible chat completions endpoint, and custom bot chat on the separate bots.easy-peasy.ai host. Authentication is a single x-api-key header. METERED: most generation routes consume account credits and word quota.
 
 | | |
@@ -12,8 +14,6 @@ Easy-Peasy.AI generative content API. Text generation from 100+ presets/template
 | **Category** | [AI and ML](README.md) |
 | **Website** | [easy-peasy.ai](https://easy-peasy.ai) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `easyPeasyAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Easy-Peasy.AI from **Build → Integrations → Connectors** and connect an 
 | Generate Song | `generateSong` | Generate an AI song from a description or lyrics. UNDOCUMENTED route found by live sweep (absent from the vendor OpenAPI spec, docs and sitemap). PROVEN TO EXIST: POST-only, other verbs return 405 "Method not allowed" while a nonsense sibling path returns a 404 HTML page. LIMITATION PROVEN LIVE: a fully-formed POST with a valid x-api-key returns 401 {"error":"Unauthorized"} - byte-distinct from the API-key rejection {"error":"Invalid API key"} - so this route belongs to the Easy-Peasy.AI web app's browser-SESSION auth realm and is not reachable with an API key. Kept for coverage and for the day the vendor opens it to API keys. METERED if enabled. |
 | Generate Sound Effect | `generateSound` | Generate an AI sound effect from a text description using ElevenLabs. Synchronous: the audio URL is returned immediately. METERED: each call consumes sound-generation credits. SECURITY: the returned audio URL is publicly reachable. |
 | Generate Talking Video | `generateTalkingVideo` | Animate a face image or video so it speaks. Supply either text plus voiceID to synthesise the speech, or your own audio file URL. Asynchronous: poll the returned id with Get Video. METERED and expensive: avatar video consumes a large credit allowance, and the premium avatarModel costs more than standard. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Text | `generateText` | Generate text with one of the Easy-Peasy.AI templates. Pass the preset slug from List Presets plus that preset's fields; call Get Preset Details first to learn which extra1..extra14 fields a preset expects. RESPONSE SHAPE: the vendor returns a TOP-LEVEL JSON ARRAY of generation objects, one per requested output, each {id, text} - it is exposed here as items because the platform rejects a bare-array output contract. METERED: every call consumes the account word quota and API token allowance, and each extra output bills again. |
 | Generate Text To Speech | `generateTextToSpeech` | Convert text to speech with one of the 150+ AI voices. Pass a voiceID from Get Text To Speech Voices. The generated audio is returned as a URL. METERED: consumes the account's text-to-speech character allowance. SECURITY: the returned audio URL is publicly reachable without authentication. |
 | Generate Video | `generateVideo` | Start an asynchronous video generation from text, a first/last frame image, or reference media, using an exact model title such as Veo 3.1 Fast, MiniMax H3 Max, Seedance 2.5, Kling or WAN 3.0 (see the vendor's video model reference for supported durations and resolutions). Returns an id to poll with Get Video. METERED and expensive: video is the highest credit cost on the platform, and resubmitting after a local timeout creates a second billable job. |
@@ -45,3 +52,5 @@ Add Easy-Peasy.AI from **Build → Integrations → Connectors** and connect an 
 | Get Transcription Result | `getTranscription` | Retrieve a transcription by its UUID. Fields are returned at the top level (there is no audio wrapper). Poll every 15-30 seconds while processing: transcription_status 'done' means complete, including a no-speech result with empty content; 'failed' means stop polling. FREE: reading an existing transcription consumes no credits. |
 | Get Video | `getVideo` | Retrieve the status and result of a video generation job. Video generation is asynchronous and typically takes 1-5 minutes: poll every 15-30 seconds until status is completed and the url field holds the video URL. FREE: polling consumes no generation credits. SECURITY: the returned url is a publicly reachable link to account content. |
 | List Presets | `listPresets` | List every available text-generation preset (template) with its slug, title, description, categories and isFree flag. Use the returned slug with Generate Text. Optionally filter by category. FREE: this route consumes no credits. |
+
+</details>

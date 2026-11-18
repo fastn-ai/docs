@@ -5,6 +5,8 @@ hidden: true
 
 # MailerLite
 
+<img src="../../.gitbook/assets/connectors/mailerlite.png" alt="MailerLite logo" width="64">
+
 MailerLite (new API) connector: subscribers (CRUD + group assign), groups, campaigns (create/schedule), fields, automations, and webhooks. Bearer token auth. Base https://connect.mailerlite.com/api.
 
 | | |
@@ -12,8 +14,6 @@ MailerLite (new API) connector: subscribers (CRUD + group assign), groups, campa
 | **Category** | [Marketing](README.md) |
 | **Website** | [mailerlite.com](https://mailerlite.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 21 |
-| **Events** | 13 |
 | **Slug** | `mailerlite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MailerLite from **Build → Integrations → Connectors** and connect an acc
 | Delete Subscriber | `deleteSubscriber` | Delete a subscriber by id. |
 | Delete Webhook | `deleteWebhook` | Delete a webhook by id. |
 | Get Campaign | `getCampaign` | Get a campaign by id. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Subscriber | `getSubscriber` | Get a subscriber by id or email. |
 | List Automations | `listAutomations` | List automations. |
 | List Campaigns | `listCampaigns` | List campaigns. |
@@ -45,6 +52,8 @@ Add MailerLite from **Build → Integrations → Connectors** and connect an acc
 | Schedule Campaign | `scheduleCampaign` | Schedule a campaign for delivery. |
 | Unassign Subscriber From Group | `unassignFromGroup` | Remove a subscriber from a group. |
 | Update Subscriber | `updateSubscriber` | Update a subscriber by id. |
+
+</details>
 
 ## Events
 
@@ -62,6 +71,15 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Subscriber Created | `subscriber.created` | Fires when a new subscriber is created. |
 | Subscriber Deleted | `subscriber.deleted` | Fires when a subscriber is deleted. Batchable event. |
 | Subscriber Removed From Group | `subscriber.removed_from_group` | Fires when a subscriber is removed from a group. |
+
+<details>
+
+<summary>See 3 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Subscriber Spam Reported | `subscriber.spam_reported` | Fires when a subscriber reports a campaign as spam. |
 | Subscriber Unsubscribed | `subscriber.unsubscribed` | Fires when a subscriber unsubscribes. |
 | Subscriber Updated | `subscriber.updated` | Fires when a subscriber is updated. |
+
+</details>

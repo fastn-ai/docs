@@ -5,6 +5,8 @@ hidden: true
 
 # OneDesk
 
+<img src="../../.gitbook/assets/connectors/onedesk.png" alt="OneDesk logo" width="64">
+
 OneDesk combines helpdesk and project management: tickets, tasks, projects, portfolios, timesheets, timers, customers, users, teams, conversations, invoices and quotes. Wraps the OneDesk Public REST API (https://app.onedesk.com/rest/public) authenticated with the OD-Public-API-Key header.
 
 | | |
@@ -12,8 +14,6 @@ OneDesk combines helpdesk and project management: tickets, tasks, projects, port
 | **Category** | [Project management](README.md) |
 | **Website** | [onedesk.com](https://onedesk.com) |
 | **Authentication** | API key |
-| **Actions** | 93 |
-| **Events** | 0 |
 | **Slug** | `onedesk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OneDesk from **Build → Integrations → Connectors** and connect an accoun
 | Create Customer | `createCustomer` | Creates a OneDesk customer (an end user who can submit tickets). 'email' is required and must be unique. Optionally set first/last name, customer type and the customer organization to attach them to. NOTE: the OneDesk public API has no delete endpoint - created customers are permanent, though they can later be deactivated via Update Customer. |
 | Create Customer Organization | `createCustomerOrganization` | Creates a OneDesk customer organization - the company record that groups customers. 'name' is required; 'domains' auto-assigns customers whose email matches, 'customers' seeds membership with customer external ids. NOTE: the OneDesk public API has no delete endpoint - created customer organizations are permanent. |
 | Create Portfolio | `createPortfolio` | Creates a OneDesk portfolio - the folder used to group projects. 'name' is required; 'type' is a portfolio label from Get Organization Container Types. NOTE: the OneDesk public API has no delete endpoint - created portfolios are permanent. |
+
+<details>
+
+<summary>See 83 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project | `createProject` | Creates a OneDesk project. 'name' is required; 'type' is a non-portfolio label from Get Organization Container Types. Optionally nest it under portfolios, attach files, add user/customer followers, set the billing customer requester, invoice type, planned start and due date. NOTE: the OneDesk public API has no delete endpoint - created projects are permanent. |
 | Create Timesheet | `createTimesheet` | Logs work against a OneDesk work item. userExternalId, taskExternalId, works (hours), percentCompleted and finish are required. Optionally mark it billable, add a note, set the lifecycle status it moves the item to, and a start timestamp. NOTE: the OneDesk public API has no delete endpoint - created timesheets are permanent. |
 | Create User | `createUser` | Invites a new internal OneDesk user (agent). 'email' is required and OneDesk emails an invitation to it, so only pass a real colleague's address. Optionally set first/last name, user type, team membership and admin rights. WARNING: this consumes a paid OneDesk seat and the public API has no delete endpoint - created users are permanent. |
@@ -117,3 +124,5 @@ Add OneDesk from **Build → Integrations → Connectors** and connect an accoun
 | Update User by Organizational ID | `updateUserByOrganizationalId` | Updates a OneDesk internal user addressed by the short organizational (friendly) id shown in the UI. Same body as Update User by External ID. |
 | Update User Team by External ID | `updateUserTeamByExternalId` | Renames a OneDesk user team and/or changes its membership. 'users' takes an object with add / remove / newValue / replace holding user external ids. |
 | Upload Attachment | `createAttachment` | Uploads a standalone file to OneDesk and returns its attachment external id, which can then be passed to Create Work Item, Create Project or any of the Attach File To ... actions. Send the file as UTF-8 text in fileContent with a fileName; binary formats are not supported by this transport. NOTE: the OneDesk public API has no delete endpoint - uploaded attachments are permanent. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Dwolla
 
+<img src="../../.gitbook/assets/connectors/dwolla.png" alt="Dwolla logo" width="64">
+
 Dwolla's Payments API for ACH bank transfers in the United States. Create and verify Customers, attach and verify bank funding sources, initiate transfers and mass payments, allocate funds with Labels, connect external accounts via Exchanges, and subscribe to webhook events.
 
 | | |
@@ -12,8 +14,6 @@ Dwolla's Payments API for ACH bank transfers in the United States. Create and ve
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [dwolla.com](https://dwolla.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 81 |
-| **Events** | 48 |
 | **Slug** | `dwolla` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dwolla from **Build → Integrations → Connectors** and connect an account
 | Create Customer Beneficial Owner | `createCustomerBeneficialOwner` | Creates a new beneficial owner for a business verified customer. Beneficial owners are individuals who own 25% or more of the company's equity. Requires personal information, address, and SSN or passport for identity verification. |
 | Create Customer Document | `createCustomerDocument` | Uploads an identity verification document for a customer using multipart form-data. Required when a customer has "document" status during the verification process. |
 | Create Customer Exchange | `createCustomerExchange` | Creates an exchange connection between a customer and Dwolla. Request body varies by partner (Plaid, MX, Flinks, Finicity, Checkout.com). For bank accounts, use Plaid, MX, Flinks, or Finicity to establish secure access to the customer's bank account data. For debit cards (Push to Card), use Checkout.com and pass the payment ID from Checkout.com Flow. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Customer Exchange Session | `createCustomerExchangeSession` | Creates an exchange session for a customer. Use cases include: - **Plaid / MX**: Instant bank account verification (open banking). For faster verification as compared to traditional micro-deposits. - **Checkout.com**: Debit card capture for Push to Card. Create a session, then retrieve it to get `externalProviderSessionData` (payment session) for the Checkout.com Flow component. |
 | Create Customer Funding Source | `createCustomerFundingSource` | Creates a bank account or debit card funding source for a customer. Supports multiple methods including manual entry with routing/account numbers, instant verification using existing open banking connections, debit card addition via Exchange, and virtual account numbers. Bank funding sources require verification before transfers can be initiated. |
 | Create Customer Label | `createCustomerLabel` | Creates a new label for a Verified Customer with a specified amount. Labels help organize and track funds within a customer's balance. Returns the location of the created label resource in the response header. |
@@ -106,6 +113,8 @@ Add Dwolla from **Build → Integrations → Connectors** and connect an account
 | Update or Remove Funding Source | `updateFundingSource` | Updates a bank funding source's details or soft deletes it. When updating, you can change the name (any status) or modify routing/account numbers and account type (unverified status only). When removing, the funding source is soft deleted and can still be accessed but marked as removed. |
 | Verify KBA Answers | `verifyKbaAnswers` | Submits customer answers to KBA questions for identity verification. Requires four question-answer pairs with questionId and answerId values. Returns verification status indicating whether the customer passed or failed the KBA authentication. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -122,6 +131,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Beneficial Owner Created | `customer_beneficial_owner_created` | A beneficial owner was added to a business customer. |
 | Beneficial Owner Removed | `customer_beneficial_owner_removed` | A beneficial owner was removed from a business customer. |
 | Beneficial Owner Reverification Needed | `customer_beneficial_owner_reverification_needed` | A beneficial owner needs to reverify their identity. |
+
+<details>
+
+<summary>See 38 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Beneficial Owner Verification Document Approved | `customer_beneficial_owner_verification_document_approved` | A beneficial owner's verification document was approved. |
 | Beneficial Owner Verification Document Failed | `customer_beneficial_owner_verification_document_failed` | A beneficial owner's verification document failed review. |
 | Beneficial Owner Verification Document Needed | `customer_beneficial_owner_verification_document_needed` | A beneficial owner needs to upload a verification document. |
@@ -160,3 +176,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Verification Document Needed | `customer_verification_document_needed` | A customer needs to upload a verification document. |
 | Verification Document Uploaded | `customer_verification_document_uploaded` | A customer uploaded a verification document. |
 | Verified | `customer_verified` | A customer completed identity verification. |
+
+</details>

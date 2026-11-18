@@ -5,6 +5,8 @@ hidden: true
 
 # Detrack
 
+<img src="../../.gitbook/assets/connectors/detrack.png" alt="Detrack logo" width="64">
+
 Detrack delivery management and real-time vehicle tracking (API v2). Create, update and track delivery and collection jobs, manage vehicles/drivers, driver groups, sub-accounts, geofences, depots, routes, rate cards, invoices, exports, and account-wide job/notification/webhook settings.
 
 | | |
@@ -12,8 +14,6 @@ Detrack delivery management and real-time vehicle tracking (API v2). Create, upd
 | **Category** | [E-commerce](README.md) |
 | **Website** | [detrack.com](https://detrack.com) |
 | **Authentication** | API key |
-| **Actions** | 80 |
-| **Events** | 10 |
 | **Slug** | `detrack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Detrack from **Build → Integrations → Connectors** and connect an accoun
 | Create Or Update Depot | `createDepot` | Create a Detrack depot (warehouse / dispatch origin), or update an existing one. This endpoint UPSERTS BY NAME: posting a name that already exists returns that depot's existing id with the supplied fields applied, rather than creating a duplicate. WARNING: Detrack exposes no PUT and no DELETE on depots (both return 405), so a depot created here can only be removed from the Detrack web app under Settings. Only `name` is required; supply an address to have it geocoded. |
 | Create Rate Card | `createRateCard` | Create a Detrack rate card (job pricing rule). Detrack requires name, service_type, item_type, fee_structure and calculation_type; the accepted values for service_type and calculation_type are defined by the rate card add-on, which is not enabled on accounts without the entitlement. |
 | Create Rate Card Chargeable | `createRateCardChargeable` | Apply a rate card to a selection of jobs, producing rate card chargeables. Detrack answers 400 bad_request "No jobs selected" when the job selection does not resolve, which is what an account without the rate card add-on receives. |
+
+<details>
+
+<summary>See 70 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Sub Account | `createSubAccount` | Create a sub-account user in the Detrack organisation. Detrack only accepts the role "manager" on this endpoint (any other value returns 422 role "is not included in the list"). Creating a sub-account invites the email address, so use a mailbox you control. The call is idempotent by email. |
 | Create Vehicle | `createVehicle` | Create a vehicle (driver) in Detrack. `detrack_id` must be a Detrack ID that already exists for the account - Detrack answers 422 detrack_id "not found" for an unknown one, and 422 "cannot be blank" if it is omitted. |
 | Create Vehicle Checklist | `createVehicleChecklist` | Create a vehicle checklist in Detrack - the inspection form drivers complete at the start or end of a shift. Only `name` is required. Checklist items and the email notification mode are part of the paid vehicle_checklist add-on and are silently ignored by this endpoint on accounts without it (profile addons.vehicle_checklist.has_addon = false), so they are deliberately not offered here. |
@@ -104,6 +111,8 @@ Add Detrack from **Build → Integrations → Connectors** and connect an accoun
 | Update Vehicle Checklist | `updateVehicleChecklist` | Update a Detrack vehicle checklist by id - rename it, reassign vehicles or change when it is mandatory. Only the fields supplied inside `data` change. Checklist items and the email notification mode belong to the paid vehicle_checklist add-on and are silently ignored on accounts without it, so they are deliberately not offered here. |
 | Update Vehicle Settings | `updateVehicleSettings` | Update the Detrack account-wide vehicle settings - the GPS ping interval, the ETA route time factor and the dashboard display options. Only the keys supplied inside `data` change. |
 | Update Webhook Settings | `updateWebhookSettings` | Register, change or clear the Detrack account-wide webhook. Set `webhook_url` plus `webhook_triggers` to subscribe to job status events; send webhook_url null to unsubscribe. This is the endpoint a fastn event subscription uses to register and deregister itself. |
+
+</details>
 
 ## Events
 

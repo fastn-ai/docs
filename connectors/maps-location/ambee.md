@@ -5,6 +5,8 @@ hidden: true
 
 # Ambee
 
+<img src="../../.gitbook/assets/connectors/ambee.png" alt="Ambee logo" width="64">
+
 Ambee provides real-time and forecast environmental intelligence. This connector covers the Ambee REST API: air quality (latest, history and forecast), weather (latest, history and forecast), pollen (latest, history and 48/120-hour forecasts), wildfires and fire risk, natural disasters (latest, history and event lookup), geocoding and reverse geocoding, elevation, and influenza-like illness forecasts.
 
 | | |
@@ -12,8 +14,6 @@ Ambee provides real-time and forecast environmental intelligence. This connector
 | **Category** | [Maps and location](README.md) |
 | **Website** | [getambee.com](https://getambee.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 37 |
-| **Events** | 7 |
 | **Slug** | `ambee` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ambee from **Build → Integrations → Connectors** and connect an account,
 | Get Air Quality History By Postal Code | `getAirQualityHistoryByPostalCode` | Returns hourly historical air quality records for a postal code within a country over a time range. The range available depends on your Ambee plan; the trial plan serves only the past two days. |
 | Get Disaster By Event ID | `getDisasterByEventId` | Returns the full record for a single natural disaster event by its Ambee event ID, including per-episode detail such as magnitude, depth and alert level, and optionally the affected-area geometry. |
 | Get Disaster History By Continent | `getDisasterHistoryByContinent` | Returns natural disaster events that occurred across a continent within a past time range. Results are paginated. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Disaster History By Coordinates | `getDisasterHistoryByCoordinates` | Returns natural disaster events that occurred near a latitude and longitude within a past time range. Results are paginated. |
 | Get Disaster History By Country | `getDisasterHistoryByCountry` | Returns natural disaster events that occurred within a country over a past time range. Results are paginated. |
 | Get Elevation By Coordinates | `getElevationByCoordinates` | Returns the ground elevation at a latitude and longitude. Elevation coverage is limited to the regions included in your Ambee plan; locations outside coverage return an empty result set. |
@@ -61,6 +68,8 @@ Add Ambee from **Build → Integrations → Connectors** and connect an account,
 | Get Wildfire Risk By Coordinates | `getWildfireRiskByCoordinates` | Returns a four-week weekly wildfire risk forecast for a latitude and longitude, with the predicted risk score and category alongside the fire weather and fuel moisture drivers behind it. |
 | Get Wildfire Risk By Place | `getWildfireRiskByPlace` | Returns a four-week weekly wildfire risk forecast for a named place, with the predicted risk score and category alongside the fire weather and fuel moisture drivers behind it. |
 | Reverse Geocode Coordinates | `reverseGeocodeCoordinates` | Converts a latitude and longitude into a human readable address, with a structured breakdown into street, city, state, postal code and country. |
+
+</details>
 
 ## Events
 

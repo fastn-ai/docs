@@ -5,6 +5,8 @@ hidden: true
 
 # Beebole
 
+<img src="../../.gitbook/assets/connectors/beebole.png" alt="Beebole logo" width="64">
+
 Beebole is a time-tracking, project-costing, absence and resource-planning platform for teams. This connector wraps Beebole's single GraphQL endpoint (POST https://app.beebole.com/graphql), exposing its people, roles, projects, tasks, tags, time records, expense records, absence types, schedule types, custom fields, approvals, budgets, reports, holidays, journal messages and integration-webhook operations as individual actions.
 
 | | |
@@ -12,8 +14,6 @@ Beebole is a time-tracking, project-costing, absence and resource-planning platf
 | **Category** | [Productivity](README.md) |
 | **Website** | [beebole.com](https://beebole.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 36 |
-| **Events** | 23 |
 | **Slug** | `beebole` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Beebole from **Build → Integrations → Connectors** and connect an accoun
 | Delete Project | `deleteProject` | Permanently deletes a project and its sub-projects. DESTRUCTIVE AND IRREVERSIBLE - pass check:true first to report which time records, budgets and assignments reference it without deleting anything. Prefer Archive Project for projects that have simply finished. |
 | Delete Time Records | `deleteTimeRecords` | Deletes one or more logged time entries by id. DESTRUCTIVE AND IRREVERSIBLE - only delete entries you created, and confirm removal with a follow-up Get Time Records call over the same window. Entries inside an approved or locked period may be refused. |
 | Edit Integration Webhook Active | `editIntegrationWebhookActive` | Enables or disables an existing integration webhook without deleting it. A disabled webhook keeps its id, URL, secret and event list but receives no deliveries. Beebole returns the PRE-change state here; confirm with a follow-up Get Current Organisation call. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Edit Integration Webhook Events | `editIntegrationWebhookEvents` | Replaces the event subscription list of an existing integration webhook. Use ["*"] for all events. WARNING: Beebole does NOT validate event names - an unrecognised name is accepted, persisted, and simply never fires, so use only the names in the enum. Beebole also returns the PRE-change state here; confirm with a follow-up Get Current Organisation call. |
 | Edit Integration Webhook Name | `editIntegrationWebhookName` | Renames an existing integration webhook. IMPORTANT: Beebole returns the PRE-change state in this mutation's own response, so confirm the new name with a follow-up Get Current Organisation call. The response also carries every webhook's signing secret. |
 | Edit Integration Webhook URL | `editIntegrationWebhookUrl` | Changes the delivery URL of an existing integration webhook. IMPORTANT: Beebole returns the PRE-change state in this mutation's own response, so confirm the new URL with a follow-up Get Current Organisation call. |
@@ -61,6 +68,8 @@ Add Beebole from **Build → Integrations → Connectors** and connect an accoun
 | Regenerate Integration Webhook Secret | `regenerateIntegrationWebhookSecret` | Rotates the signing secret of an existing integration webhook. Deliveries signed with the previous secret stop verifying immediately, so update the receiving endpoint first. SECURITY: the response contains every webhook's signing secret in clear text. |
 | Run Report | `runReport` | Executes a saved report by id and returns its computed result matrix, optionally overriding the report's period and filters. Use Get Reports to find the id. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -77,6 +86,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Custom field value changed | `customFieldValueUpdate` | A custom field value on an entity was set, changed or cleared. |
 | Expense record changed | `expenseRecordUpdate` | An expense record was created, edited or deleted. |
 | Expense type changed | `expenseTypeUpdate` | An expense type was created, edited, archived or deleted. |
+
+<details>
+
+<summary>See 13 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Organisation changed | `organisationUpdate` | Organisation settings, localisation, availability or integrations changed. |
 | Person changed | `personUpdate` | A person was created, edited, archived or deleted. |
 | Planning changed | `planningUpdate` | The resource planning (task assignment or scheduling) changed. |
@@ -90,3 +106,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task changed | `taskUpdate` | A planning task was created, edited, moved, archived or deleted. |
 | Task settings changed | `taskSettingsUpdate` | Task-related settings on the organisation, a tag, a project or a person changed. |
 | Time record changed | `timeRecordUpdate` | A time entry or absence record was created, edited or deleted. |
+
+</details>

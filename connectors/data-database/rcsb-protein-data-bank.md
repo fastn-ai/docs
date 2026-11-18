@@ -5,6 +5,8 @@ hidden: true
 
 # RCSB Protein Data Bank
 
+<img src="../../.gitbook/assets/connectors/rcsb-protein-data-bank.jpg" alt="RCSB Protein Data Bank logo" width="64">
+
 The RCSB Protein Data Bank (PDB) offers free APIs for 3D structures of proteins, nucleic acids and complexes. Get entries, assemblies, entities, chains, interfaces, ligands (chemical components), DrugBank, PubMed and UniProt annotations, groups, repository holdings and data schemas; run GraphQL queries and search structures by text, attributes, sequence or chemistry. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The RCSB Protein Data Bank (PDB) offers free APIs for 3D structures of proteins,
 | **Category** | [Data and databases](README.md) |
 | **Website** | [rcsb.org](https://rcsb.org) |
 | **Authentication** | No authentication |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `rcsbProteinDataBank` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add RCSB Protein Data Bank from **Build → Integrations → Connectors** and co
 | Get Chem Comp Schema | `getChemCompSchema` | Get chemical component/BIRD schema. Returns the JSON schema. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/schema/chem_comp) |
 | Get Chemical Component | `getChemicalComponent` | Get chemical component (ligands, small molecules and monomers) by CCD ID. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/core/chemcomp/{comp_id}) |
 | Get DrugBank Annotations | `getDrugBankAnnotations` | Get DrugBank annotations (integrated from DrugBank resource) for a given chemical component (identified by CHEM COMP ID) . Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/core/drugbank/{comp_id}) |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Drugbank Schema | `getDrugbankSchema` | Get DrugBank (integrated data) schema. Returns the JSON schema. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/schema/drugbank) |
 | Get Entries Status | `getEntriesStatus` | Get the status and status code of a list of entry IDs. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/holdings/status) |
 | Get Entry | `getEntry` | Get structure by ENTRY ID. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/core/entry/{entry_id}) |
@@ -64,3 +71,5 @@ Add RCSB Protein Data Bank from **Build → Integrations → Connectors** and co
 | List Removed Entry IDs | `listRemovedEntryIds` | Get the list of removed entry IDs. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/holdings/removed/entry_ids) |
 | List Unreleased Entry IDs | `listUnreleasedEntryIds` | Get the list of unreleased entry IDs. Docs: https://data.rcsb.org/redoc/index.html (GET /rest/v1/holdings/unreleased/entry_ids) |
 | Search Structures | `searchStructures` | Search the PDB with the RCSB Search API: full text, attribute, sequence, structure, sequence motif, chemical and grouped queries, with paging, sorting and facets (POST /rcsbsearch/v2/query). Returns matching identifiers and scores. Docs: https://search.rcsb.org/ |
+
+</details>

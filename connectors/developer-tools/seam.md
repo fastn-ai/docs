@@ -5,6 +5,8 @@ hidden: true
 
 # Seam
 
+<img src="../../.gitbook/assets/connectors/seam.png" alt="Seam logo" width="64">
+
 Seam is a universal API for smart locks, thermostats, access control systems, sensors and other connected building devices. This connector covers the Seam Connect API: devices, locks, thermostats, access codes, access grants, access methods, spaces, user identities, ACS systems and credentials, connected accounts, Connect Webviews, client sessions, phones, instant keys, noise sensors, events, action attempts, webhooks and workspaces.
 
 | | |
@@ -12,8 +14,6 @@ Seam is a universal API for smart locks, thermostats, access control systems, se
 | **Category** | [Developer tools](README.md) |
 | **Website** | [getseam.com](https://getseam.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 202 |
-| **Events** | 114 |
 | **Slug** | `seam` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Seam from **Build → Integrations → Connectors** and connect an account, 
 | Assign Card To Access Method | `assignCardToAccessMethod` | Assigns a pre-registered card credential, identified by its card number, to a card-mode access method. |
 | Assign Credential To ACS User | `assignAcsCredential` | Assigns a specified credential to a specified access system user. Provide either acs_user_id or user_identity_id, not both. |
 | Configure Auto Lock | `configureAutoLock` | Enables or disables the auto-lock setting on a lock and sets the delay before it locks itself. When enabling auto-lock, auto_lock_delay_seconds is required. |
+
+<details>
+
+<summary>See 192 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Convert Unmanaged Access Code To Managed | `convertUnmanagedAccessCodeToManaged` | Converts an unmanaged access code into an access code managed by Seam, enabling the full set of access code operations and lifecycle events for it. |
 | Convert Unmanaged User Identity To Managed | `updateUnmanagedUserIdentity` | Converts an unmanaged user identity into a managed one by setting is_managed to true. The conversion cannot be reversed. |
 | Create Access Code | `createAccessCode` | Creates a new access code on a single device. For granting access to a person, Seam recommends Access Grants instead; use this low-level endpoint when you need direct control over a code on one device, such as setting a custom PIN. |
@@ -227,6 +234,8 @@ Add Seam from **Build → Integrations → Connectors** and connect an account, 
 | Update Webhook | `updateWebhook` | Updates the event types that a webhook endpoint subscribes to. |
 | Update Workspace | `updateWorkspace` | Updates the workspace that the configured API key belongs to, for example its name, Connect Webview branding or publishable key setting. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -243,6 +252,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Access Code Deleted | `access_code.deleted` | An access code was deleted. |
 | Access Code Deleted External To Seam | `access_code.deleted_external_to_seam` | An access code was deleted outside of Seam. |
 | Access Code Failed To Issue | `access_code.failed_to_issue` | Seam was unable to issue this access code before its start time. |
+
+<details>
+
+<summary>See 104 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Access Code Failed To Remove | `access_code.failed_to_remove` | An access code is still active on the device even though its end time has passed. |
 | Access Code Failed To Remove From Device | `access_code.failed_to_remove_from_device` | An access code failed to be removed from a device. |
 | Access Code Failed To Set On Device | `access_code.failed_to_set_on_device` | An access code failed to be set on a device. |
@@ -347,3 +363,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Unmanaged Device Connected | `device.unmanaged.connected` | The status of an unmanaged device changed from offline to online. |
 | Unmanaged Device Converted To Managed | `device.unmanaged.converted_to_managed` | An unmanaged device was successfully converted to a managed device. |
 | Unmanaged Device Disconnected | `device.unmanaged.disconnected` | The status of an unmanaged device changed from online to offline. |
+
+</details>

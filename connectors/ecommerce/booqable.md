@@ -5,6 +5,8 @@ hidden: true
 
 # Booqable
 
+<img src="../../.gitbook/assets/connectors/booqable.png" alt="Booqable logo" width="64">
+
 Booqable is rental management software for equipment and inventory rental businesses. This connector covers the Booqable Boomerang API (v4): orders, customers, products and product groups, bundles, stock items and inventory levels, plannings, documents and invoices, payments and refunds, coupons and price rules, collections, employees and users, tax configuration, reports, settings and webhook endpoints.
 
 | | |
@@ -12,8 +14,6 @@ Booqable is rental management software for equipment and inventory rental busine
 | **Category** | [E-commerce](README.md) |
 | **Website** | [booqable.com](https://booqable.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 298 |
-| **Events** | 45 |
 | **Slug** | `booqable` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Booqable from **Build → Integrations → Connectors** and connect an accou
 | Archive a Price Rule | `archivePriceRule` | Archive a Price Rule. The DELETE verb removes the rule from its ruleset. Booqable answers with media type application/vnd.api+json, which the fastn engine returns as a file reference; 'data' holds the base64-encoded JSON:API body. |
 | Archive a Price Ruleset | `archivePriceRuleset` | Archive a Price Ruleset. The DELETE verb performs a soft archive: archived=true and archived_at are set and the record keeps its id. Booqable answers with media type application/vnd.api+json, which the fastn engine returns as a file reference; 'data' holds the base64-encoded JSON:API body. |
 | Archive a Product | `archiveProduct` | Archive a product variation. Booqable does not hard-delete products; the record is flagged as archived and removed from the online store. |
+
+<details>
+
+<summary>See 288 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Archive a Product Group | `archiveProductGroup` | Archive a product group. Booqable does not hard-delete product groups; the group and its products are flagged as archived and removed from the online store. |
 | Archive a Stock Item | `archiveStockItem` | Archive a Stock Item. Booqable has no hard delete for stock items; archiving takes the item out of stock permanently. Booqable answers with media type application/vnd.api+json, which the fastn engine returns as a file reference; 'data' holds the base64-encoded JSON:API body. |
 | Calculate Bundle Prices | `calculateAggregatedPriceOfOneOrMoreBundles` | Calculate the aggregated price of one or more bundles, from their nested bundle items, for a period. filter[bundle_ids] must be an ARRAY - the connector sends filter[bundle_ids][]; a scalar value is rejected with 400 "Failed typecasting bundle_ids". |
@@ -323,6 +330,8 @@ Add Booqable from **Build → Integrations → Connectors** and connect an accou
 | Update Webhook Events | `updateWebhookEvents` | Update a registered webhook endpoint - change the destination URL, the payload version, or the list of events it is subscribed to. |
 | Upsert Bulk Data | `upsertBulkData` | Create many records of one model in a single request. type selects the model (coupons or operating_rules) and data is the array of records, each shaped exactly as that model's own create body attributes. IMPORTANT, verified live: despite the name this route only CREATES. Passing an id does not update the existing record - Booqable still tries to create, so a partial record fails with "can't be blank" per field, and a complete record fails with "identifier has already been taken". Use the model's own PUT route to update. Errors come back per row under meta, keyed data[0], data[1], ... Booqable answers with media type application/vnd.api+json, which the fastn engine returns as a file reference; 'data' holds the base64-encoded JSON:API body. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -339,6 +348,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Bundle Item Created | `bundle_item.created` | Fires when a bundle item is created. The payload carries the bundle item plus its bundle, product and product_group. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
 | Bundle Item Updated | `bundle_item.updated` | Fires when a bundle item is updated. The payload carries the bundle item plus its bundle, product and product_group. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
 | Bundle Updated | `bundle.updated` | Fires when a bundle is updated. The payload carries the bundle plus its bundle_items, bundle_items.product and bundle_items.product_group. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
+
+<details>
+
+<summary>See 35 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Cart Completed Checkout | `cart.completed_checkout` | Fires when a checkout completes in the online store. The payload carries the cart plus its customer, lines, lines.item and order. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
 | Company Destroyed | `company.destroyed` | Fires when the company is destroyed. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
 | Company Updated | `company.updated` | Fires when the company settings are updated. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
@@ -374,3 +390,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Quote Created | `quote.created` | Fires when a quote is created. The payload carries the quote plus its coupon, customer, lines, order and tax_values. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
 | Quote Signed | `quote.signed` | Fires when a quote is signed by the customer. The payload carries the quote plus its coupon, customer, lines, order and tax_values. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
 | Quote Updated | `quote.updated` | Fires when a quote is updated. The payload carries the quote plus its coupon, customer, lines, order and tax_values. Payload schema modelled from the vendor's documented version 4 sample, not captured from a live delivery. |
+
+</details>

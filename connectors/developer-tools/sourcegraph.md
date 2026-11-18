@@ -5,6 +5,8 @@ hidden: true
 
 # Sourcegraph
 
+<img src="../../.gitbook/assets/connectors/sourcegraph.png" alt="Sourcegraph logo" width="64">
+
 Sourcegraph is a code search and code intelligence platform. This connector talks to the Sourcegraph Model Context Protocol server (https://sourcegraph.com/.api/mcp, or /.api/mcp on a self-hosted instance), so its tools - keyword, natural-language, commit and diff search over indexed repositories, listing repositories and files, reading file contents, and the search evaluator - are discovered live from Sourcegraph. Authenticate with a Sourcegraph access token.
 
 | | |
@@ -12,8 +14,6 @@ Sourcegraph is a code search and code intelligence platform. This connector talk
 | **Category** | [Developer tools](README.md) |
 | **Website** | [sourcegraph.com](https://sourcegraph.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `sourcegraph` |
 
 ## Use it

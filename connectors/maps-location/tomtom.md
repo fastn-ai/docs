@@ -5,6 +5,8 @@ hidden: true
 
 # TomTom
 
+<img src="../../.gitbook/assets/connectors/tomtom.png" alt="TomTom logo" width="64">
+
 TomTom location services. This connector covers the TomTom Maps REST APIs on api.tomtom.com: fuzzy, POI, category, geometry, nearby, along-route and routed search, autocomplete, place by ID, POI categories and additional data, geocoding and reverse geocoding, batch search, route and reachable-range calculation, batch and matrix routing, traffic incident details, viewport and flow data with traffic tiles, plus the Geofencing (projects, fences, objects, transitions, reports, alert rules, archives), Location History and Notifications (contact groups, history) services.
 
 | | |
@@ -12,8 +14,6 @@ TomTom location services. This connector covers the TomTom Maps REST APIs on api
 | **Category** | [Maps and location](README.md) |
 | **Website** | [tomtom.com](https://tomtom.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 104 |
-| **Events** | 4 |
 | **Slug** | `tomtom` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TomTom from **Build → Integrations → Connectors** and connect an account
 | Calculate Matrix | `calculateMatrix` | Synchronously calculates route summaries (distance, travel time, traffic delay) for every origin and destination pair, for matrices of up to 100 cells (200 with historical traffic settings). |
 | Calculate Reachable Range | `calculateReachableRange` | Calculates the polygon of locations reachable from an origin within a time, distance, fuel or energy budget, using the given travel mode, vehicle and consumption model. |
 | Calculate Reachable Range With Constraints | `calculateReachableRangePost` | Calculates the area reachable from an origin within a time, distance, fuel or energy budget, with request-body constraints such as areas to avoid and vignette restrictions. |
+
+<details>
+
+<summary>See 94 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Calculate Route | `calculateRoute` | Calculates a route between an origin and destination through optional waypoints, returning distance, travel time, traffic delay, route geometry, guidance instructions and alternatives. Supports car, truck, bicycle and pedestrian modes plus vehicle dimensions and consumption models. |
 | Calculate Route With Constraints | `calculateRoutePost` | Calculates a route using request-body options that the GET form cannot carry: supporting points to reconstruct a known route, rectangular areas to avoid, and vignette country restrictions. |
 | Category Search | `categorySearch` | Searches points of interest by category name, such as parking or petrol station, with optional position bias, area restriction and POI filters. |
@@ -128,6 +135,8 @@ Add TomTom from **Build → Integrations → Connectors** and connect an account
 | Update Geofencing Settings | `updateGeofencingSettings` | Sets the Geofencing privacy consents for storing object position history and transition history. Both consents are required before positions and transitions are recorded. Requires the Admin Key. |
 | Update Location History Object | `updateLocationHistoryObject` | Updates a Location History object's name or properties; only supplied fields change. Requires the Admin Key. |
 | Update Location History Settings | `updateLocationHistorySettings` | Sets consent for storing object position history, which is required before Send Position works. Requires the Admin Key. |
+
+</details>
 
 ## Events
 

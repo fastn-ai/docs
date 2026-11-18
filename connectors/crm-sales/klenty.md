@@ -5,6 +5,8 @@ hidden: true
 
 # Klenty
 
+<img src="../../.gitbook/assets/connectors/klenty.png" alt="Klenty logo" width="64">
+
 Klenty sales engagement platform. Manage prospects, lists, cadences/sequences, tags, custom fields, call and email engagement reports, and webhooks via the Klenty REST API.
 
 | | |
@@ -12,8 +14,6 @@ Klenty sales engagement platform. Manage prospects, lists, cadences/sequences, t
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [klenty.com](https://klenty.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 30 |
-| **Events** | 0 |
 | **Slug** | `klenty` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Klenty from **Build → Integrations → Connectors** and connect an account
 | Get All Webhooks | `getAllWebhooks` | Get all webhook subscriptions configured for the user. |
 | Get Call Completion Report | `getCallCompletion` | Retrieve call completion records for the account over a date range. Klenty rejects any range wider than the last 30 days with error K2002, and answers HTTP 200 with status false and error K2003 when no call records match. |
 | Get Company Cadences | `getCompanyCadences` | Get all company/team cadences (sequences). Uses the Company API Key. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Email Engagements Report | `getEmailEngagements` | Get aggregate email engagement metrics for a cadence within a date range. |
 | Get Lists | `getLists` | Get all prospect lists in the Klenty account. |
 | Get Prospect | `getProspect` | Get full details of a single prospect by email address. Pass customFields=true to include custom field values. |
@@ -54,3 +61,5 @@ Add Klenty from **Build → Integrations → Connectors** and connect an account
 | Unsubscribe Prospect | `unsubscribeProspect` | Unsubscribe a prospect by email. |
 | Update Prospect | `updateProspect` | Update an existing prospect by email. Only prospectEmail is required; include any fields to change. Fields not sent are left unchanged. |
 | Update Webhook | `updateWebhook` | Update an existing webhook subscription. |
+
+</details>

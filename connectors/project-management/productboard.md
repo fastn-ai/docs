@@ -5,14 +5,14 @@ hidden: true
 
 # Productboard
 
+<img src="../../.gitbook/assets/connectors/productboard.jpg" alt="Productboard logo" width="64">
+
 Productboard is a product management platform for capturing customer feedback, prioritizing features, and building product roadmaps. This connector covers the Productboard REST API v2: notes (customer feedback) with search and relationships; the unified Entities API for products, components, features, subfeatures, initiatives, objectives, key results, releases, release groups, companies, and users (including configuration discovery, relationships, and select-field values); members and member activity; teams and team membership; Jira integrations; plugin (push) integrations and their connections; and webhook subscriptions.
 
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Authentication** | Bearer token |
-| **Actions** | 57 |
-| **Events** | 0 |
 | **Slug** | `productboard` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Productboard from **Build → Integrations → Connectors** and connect an a
 | Create Webhook Subscription | `createWebhook` | Creates a webhook subscription that notifies a URL on each change to the subscribed event types. The notification URL must be HTTPS and publicly resolvable. |
 | Delete Entity | `deleteEntity` | Permanently deletes an entity by ID. Any child entities (e.g. a product's components, a feature's subfeatures) are deleted as part of a cascading delete. This is irreversible. |
 | Delete Entity Relationship | `deleteEntityRelationship` | Removes a relationship of the given type between an entity and a target entity. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Field Value | `deleteEntityFieldValue` | Deletes an option value from a select-type field. By default deletion is rejected if the value is in use; use force to unset it everywhere, or replaceWith to reassign to another value. |
 | Delete Note | `deleteNote` | Permanently deletes a note and all of its content, metadata, and relationships. This is irreversible; use Update Note with archived=true for a soft delete. |
 | Delete Note Relationship | `deleteNoteRelationship` | Removes a relationship between a note and a target entity (a customer or a product link). |
@@ -80,3 +87,5 @@ Add Productboard from **Build → Integrations → Connectors** and connect an a
 | Update Note | `updateNote` | Updates one or more field values of an existing note. Provide the fields object to replace values (set a value to null to clear it). |
 | Update Plugin Integration | `updatePluginIntegration` | Partially updates a plugin integration. Omitted fields keep their current value. Updating the action URL while enabled triggers a new probe. |
 | Update Team | `updateTeam` | Updates a team's fields and/or its members. Use fields to change name/handle/description, and patch to add, remove, set, or clear members. |
+
+</details>

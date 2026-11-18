@@ -5,6 +5,8 @@ hidden: true
 
 # Coda
 
+<img src="../../.gitbook/assets/connectors/coda.png" alt="Coda logo" width="64">
+
 Coda API (v1) connector — programmatically interact with Coda docs, pages, tables, columns, rows, formulas, controls, permissions (ACL), doc analytics, and automation webhook triggers. Base: https://coda.io/apis/v1
 
 | | |
@@ -12,8 +14,6 @@ Coda API (v1) connector — programmatically interact with Coda docs, pages, tab
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [coda.io](https://coda.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 46 |
-| **Events** | 6 |
 | **Slug** | `coda` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Coda from **Build → Integrations → Connectors** and connect an account, 
 | Delete Row | `deleteRow` | Deletes the specified row from the table. |
 | Delete Rows | `deleteRows` | Deletes multiple rows by ID from the specified table. |
 | Get ACL Settings | `getAclSettings` | Returns the ACL settings (e.g. comment/copy/share permission policies) of the specified doc. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Column | `getColumn` | Returns details about a column in a table. |
 | Get Control | `getControl` | Returns info on a control in the doc, including its current value. |
 | Get Doc | `getDoc` | Returns metadata for the specified doc. |
@@ -70,6 +77,8 @@ Add Coda from **Build → Integrations → Connectors** and connect an account, 
 | Update Row | `updateRow` | Updates the specified row in the table. The 'row' object contains a 'cells' array of {column, value} objects. |
 | Upsert Rows | `upsertRows` | Inserts rows and/or upserts rows into a table. Each row is an object with a 'cells' array of {column, value} objects. Pass keyColumns to upsert (update rows that match on those columns) instead of always inserting. |
 | Who Am I | `whoami` | Returns the user associated with the API token, including name, login id, workspace, and scoped status. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # AlgoDocs
 
+<img src="../../.gitbook/assets/connectors/algodocs.png" alt="AlgoDocs logo" width="64">
+
 AlgoDocs document data extraction API. Upload invoices, receipts, bank statements, purchase orders and other PDFs or images to a trained extractor, then read back the structured fields plus JSON, Excel, XML, TXT and CSV outputs. Base URL https://api.algodocs.com/v1.
 
 | | |
@@ -12,8 +14,6 @@ AlgoDocs document data extraction API. Upload invoices, receipts, bank statement
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [algodocs.com](https://algodocs.com) |
 | **Authentication** | API key, Basic auth |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `algodocs` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add AlgoDocs from **Build → Integrations → Connectors** and connect an accou
 | List Folders Including All Bucket | `listFoldersIncludingAll` | Undocumented AlgoDocs variant of the folder list that takes a numeric flag. Passing 1 prepends the synthetic "All" bucket (id "all") that aggregates every folder; any other number returns the same list as List Folders. Proven live against api.algodocs.com; a nonsense sibling path returns the host's 404, so this route is real. |
 | Upload Document As Base64 | `uploadDocumentBase64` | Submits a document to an AlgoDocs extractor as a base64-encoded string plus a filename. Returns the new document id, file size, MD5 checksum and upload timestamp. Extraction is asynchronous - poll Get Extracted Data By Document with the returned id until its data object is populated. Use this route when the file is not reachable by URL. |
 | Upload Document From URL | `uploadDocumentFromUrl` | Submits a publicly reachable PDF or image URL to an AlgoDocs extractor for extraction. Returns the new document id, file size, MD5 checksum and upload timestamp. Extraction is asynchronous - poll Get Extracted Data By Document with the returned id until its data object is populated. This is the preferred upload route because it needs no binary file transfer. |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Upload Local Document File | `uploadLocalDocument` | Uploads a document to an AlgoDocs extractor as a multipart file part. Returns the new document id, file size, MD5 checksum and upload timestamp; extraction is asynchronous, so poll Get Extracted Data By Document afterwards. LIMITATION: the fastn engine can only carry text multipart parts, so this route works for text-safe payloads (for example an ASCII-only PDF) but not for raw binary PDF, PNG or JPEG bytes. For binary files use Upload Document As Base64 or Upload Document From URL instead. |
+
+</details>

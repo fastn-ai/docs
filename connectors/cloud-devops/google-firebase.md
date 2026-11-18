@@ -5,6 +5,8 @@ hidden: true
 
 # Google Firebase
 
+<img src="../../.gitbook/assets/connectors/google-firebase.png" alt="Google Firebase logo" width="64">
+
 Firebase Management API — list and inspect Firebase projects, their Android, iOS and Web apps, app configuration, admin SDK config, and available project locations.
 
 | | |
@@ -12,8 +14,6 @@ Firebase Management API — list and inspect Firebase projects, their Android, i
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [firebase.google.com](https://firebase.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 37 |
-| **Events** | 0 |
 | **Slug** | `googleFirebase` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Firebase from **Build → Integrations → Connectors** and connect a
 | Finalize Default Location | `finalizeDefaultLocation` | Sets the permanent location for a project's default Google Cloud resources. Google has decommissioned this endpoint and it now always returns 404; set the location through each product's own API instead. The choice was irreversible once made. |
 | Get Admin SDK Config | `getAdminSdkConfig` | Retrieves the configuration values a server uses to initialise the Firebase Admin SDK for a project. |
 | Get Analytics Details | `getAnalyticsDetails` | Retrieves the Google Analytics property linked to a Firebase project together with the Analytics data stream mapped to each Firebase app. |
+
+<details>
+
+<summary>See 27 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Android App | `getAndroidApp` | Retrieves a single Android app, including its display name, API key ID and lifecycle state. |
 | Get Android App Config | `getAndroidAppConfig` | Retrieves the configuration artifact a Android client uses to initialise the Firebase SDK for this app. |
 | Get Firebase Project | `getFirebaseProject` | Retrieves a single Firebase project, including its display name, project number, annotations and lifecycle state. |
@@ -61,3 +68,5 @@ Add Google Firebase from **Build → Integrations → Connectors** and connect a
 | Update Firebase Project | `updateFirebaseProject` | Updates the mutable attributes of a Firebase project. The fields to change must be named in the update mask; 'name', 'projectId' and 'projectNumber' are immutable. |
 | Update iOS App | `updateIosApp` | Updates the mutable attributes of a iOS app. The fields to change must be named in the update mask; the app ID, project ID and platform identifier are immutable. |
 | Update Web App | `updateWebApp` | Updates the mutable attributes of a web app. The fields to change must be named in the update mask; the app ID, project ID and platform identifier are immutable. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Copyleaks
 
+<img src="../../.gitbook/assets/connectors/copyleaks.png" alt="Copyleaks logo" width="64">
+
 Copyleaks is an AI-powered content authenticity platform: plagiarism detection, AI-generated text, image and video detection, grammar checking, text moderation, object detection and image plagiarism search. This connector covers the Copyleaks REST API (https://api.copyleaks.com): account login, credit balance and usage history, submitting files, URLs and OCR images for authenticity scans, starting, deleting and re-notifying scans, exporting reports, the synchronous AI text, AI image, image plagiarism, object detection, grammar and text moderation checks, the asynchronous AI image and video detectors, supported languages and file types, and Private Cloud Hub repository information.
 
 | | |
@@ -12,8 +14,6 @@ Copyleaks is an AI-powered content authenticity platform: plagiarism detection, 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [copyleaks.com](https://copyleaks.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 23 |
-| **Events** | 4 |
 | **Slug** | `copyleaks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Copyleaks from **Build → Integrations → Connectors** and connect an acco
 | Get Credit Balance | `getCreditBalance` | Returns the number of scan credits currently available in the account. |
 | Get Repository Information | `getRepositoryInformation` | Returns information about a Private Cloud Hub repository: name, description, permission, status, credit consumption and masking policy. The repository ID comes from the Copyleaks admin dashboard. |
 | Get Usage History | `getUsageHistory` | Returns the account's scan usage history between two dates (inclusive) as a CSV file (columns Time, ScanID, Product, Units, Price), surfaced as a file object with base64 data. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List AI Text Detection File Types | `listAiTextDetectionFileTypes` | Lists the file extensions accepted by the AI text detection features (Detect AI Text file submissions and authenticity scans with aiGeneratedText.detect). |
 | List Cross-Language Pairs | `listCrossLanguagePairs` | Lists the source and target languages supported for cross-language plagiarism detection (properties.scanning.crossLanguages). |
 | List OCR Languages | `listOcrLanguages` | Lists the languages the Copyleaks OCR engine supports for extracting text from images and scanned documents, with the language codes accepted by Submit OCR Scan. |
@@ -47,6 +54,8 @@ Add Copyleaks from **Build → Integrations → Connectors** and connect an acco
 | Submit File Scan | `submitFileScan` | Submits a base64-encoded file (or plain text encoded as base64) for an authenticity scan under a scan ID you choose, with a file name that determines the file type. Progress and results are reported to the webhook URLs in properties.webhooks (status 0 completed / 1 error / 2 creditsChecked / 3 indexed); set properties.sandbox to true for free mock results. Returns 201 with an empty body on acceptance, or 409 when the scan ID already exists. |
 | Submit OCR Scan | `submitOcrScan` | Submits a base64-encoded image containing text (pdf, docx, gif, png, bmp, jpg, jpeg) for an OCR authenticity scan under a scan ID you choose, with the language of the text. Progress and results are reported to the webhook URLs in properties.webhooks (status 0 completed / 1 error / 2 creditsChecked / 3 indexed); set properties.sandbox to true for free mock results. Returns 201 with an empty body on acceptance, or 409 when the scan ID already exists. |
 | Submit URL Scan | `submitUrlScan` | Submits a public URL for an authenticity scan (plagiarism, AI-generated text detection, grammar feedback and more) under a scan ID you choose. Copyleaks crawls the URL and reports progress and results to the webhook URLs in properties.webhooks (status webhook payload: status 0 completed / 1 error / 2 creditsChecked / 3 indexed with scannedDocument and results); set properties.sandbox to true for free mock results. Returns 201 with an empty body on acceptance, or 409 when the scan ID already exists. |
+
+</details>
 
 ## Events
 

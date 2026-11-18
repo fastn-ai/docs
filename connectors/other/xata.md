@@ -5,6 +5,8 @@ hidden: true
 
 # Xata
 
+<img src="../../.gitbook/assets/connectors/xata.png" alt="Xata logo" width="64">
+
 Xata is a serverless PostgreSQL platform with instant copy-on-write database branches, scale to zero, backups and zero-downtime schema changes. This connector covers the complete Xata control-plane API (api.xata.tech): organizations, members, roles and invitations, organization and user API keys, SSO domains and identity providers, billing customer, invoices and checkout sessions, regions, instance types, images and extensions, resource limits, projects, branches with credentials, metrics, logs, PostgreSQL configuration and backup restores, GitHub App installations and repository mappings, plus the MCP endpoint and the branch SQL gateway.
 
 | | |
@@ -12,8 +14,6 @@ Xata is a serverless PostgreSQL platform with instant copy-on-write database bra
 | **Category** | [Other](README.md) |
 | **Website** | [xata.io](https://xata.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 69 |
-| **Events** | 0 |
 | **Slug** | `xata` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Xata from **Build → Integrations → Connectors** and connect an account, 
 | Create Organization API Key | `createOrganizationApiKey` | Creates a new API key for an organization, optionally limited to specific scopes, projects or branches and with an expiry date. The key token is returned only in this response. |
 | Create Organization Invitation | `createOrganizationInvitation` | Sends an invitation email asking a user to join the organization. This delivers mail to a real person; use with care. |
 | Create Project | `createProject` | Creates a new project in an organization. Projects are containers for database branches. Optionally set the scale-to-zero defaults for base and child branches and IP filtering. |
+
+<details>
+
+<summary>See 59 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create SSO Provider | `createSsoProvider` | Registers an identity provider (Google, Microsoft or generic OIDC) for a verified SSO domain. OIDC and Microsoft need an issuer URL; the client secret is write-only. |
 | Create User API Key | `createUserApiKey` | Creates a personal API key for the authenticated user, optionally limited to scopes, projects or branches and with an expiry. The token is returned only once. Only available when connected with a personal (user) API key. |
 | Delete Branch | `deleteBranch` | Permanently deletes a branch and all of its data. This cannot be undone. |
@@ -93,3 +100,5 @@ Add Xata from **Build → Integrations → Connectors** and connect an account, 
 | Update Project | `updateProject` | Updates a project's name or configuration (scale-to-zero defaults, IP filtering). Only the fields sent are changed. |
 | Update SSO Provider | `updateSsoProvider` | Replaces an identity provider's credentials (and re-discovers OIDC endpoints from the issuer). The domain and enforcement setting are carried over unchanged. |
 | Verify SSO Domain | `verifySsoDomain` | Looks up the DNS challenge TXT record for a claimed SSO domain. A missing or stale record is reported as verified false on a 200 so the check can be retried while DNS propagates. |
+
+</details>

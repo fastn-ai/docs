@@ -5,6 +5,8 @@ hidden: true
 
 # PartnerStack
 
+<img src="../../.gitbook/assets/connectors/partner-stack.png" alt="PartnerStack logo" width="64">
+
 PartnerStack is a partner relationship management (PRM) platform for affiliate, referral, reseller and ambassador programs. This connector covers the full PartnerStack REST API v2 at https://api.partnerstack.com/api — primarily the Vendor API: partnerships (partners) and partner teams, partner applications, groups, tiers and tier collections, referral links, customers, transactions, rewards, actions, leads and deals (including convert, files and form templates), product books and products, sales-cycle stages, custom reports and record exports, and webhook management. It also covers the three Partner API endpoints that have no vendor equivalent: payouts and the partner marketplace of programs. Two auth methods: Vendor API keys over HTTP Basic (public key as username, secret key as password) and a Partner API key sent as a Bearer token; each action's description states which one it needs. Events are delivered through PartnerStack's webhook registration API.
 
 | | |
@@ -12,8 +14,6 @@ PartnerStack is a partner relationship management (PRM) platform for affiliate, 
 | **Category** | [Marketing](README.md) |
 | **Website** | [partnerstack.com](https://partnerstack.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 79 |
-| **Events** | 23 |
 | **Slug** | `partnerStack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PartnerStack from **Build → Integrations → Connectors** and connect an a
 | Bulk Move Partnerships To Group | `bulkUpdatePartnerships` | Vendor API (Basic auth). Moves a set of partners to a different group in one call. Pass the partner_keys to move and the destination group_key. Use updatePartnership instead when changing a single partner or when you also need to set a tier, manager or custom fields. |
 | Convert Deal | `convertDeal` | Vendor API (Basic auth). Converts a won deal into a tracked customer, carrying the attribution to the registering partner across so later transactions generate their rewards. email is required; customer_key defaults to the email of the deal being converted. |
 | Convert Lead | `convertLead` | Vendor API (Basic auth). Converts a lead into a tracked customer, preserving the attribution to the partner who submitted it, so subsequent transactions on that customer generate their rewards. If customer_key or email are omitted, the lead's external_key is used for both. |
+
+<details>
+
+<summary>See 69 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Application | `createApplication` | Vendor API (Basic auth). Submits a partner-program application on behalf of an applicant - the API equivalent of your public application form, for when applications are captured on your own site. group_slug names the group applied to (the slug, not the key; see listGroups). The application lands as pending and is decided with decisionApplication. |
 | Create Customer | `createCustomer` | Vendor API (Basic auth). Creates a customer and attributes it to a partner via partner_key. Important limitation stated by PartnerStack: this endpoint cannot associate the signup with a referral link or click, so landing-page and partner attribution for signups, paid customers and revenue will be incomplete. For attributed signups use Server-to-Server tracking instead; use this endpoint for backfills, imports and customers whose attribution you already know. Creating with Test API keys marks the customer as a test customer. |
 | Create Deal | `createDeal` | Vendor API (Basic auth). Registers a deal. account_name, amount (in CENTS), close_date, contact_first_name, contact_last_name and stage are all required. stage must be a value from the Deal Stage list in the relevant group's settings - list the valid ones with listSalesCycleStages using object_type deal. Name the submitting partner team member with either personal_stack_key or team_member_email, not both. |
@@ -104,6 +111,8 @@ Add PartnerStack from **Build → Integrations → Connectors** and connect an a
 | Update Tier Collection | `updateTierCollection` | Vendor API (Basic auth). Updates a tier collection - rename it, activate or deactivate it, or set the evaluation cycle that decides how often partners are re-tiered. The cycle is a length plus a unit, with an optional delay before it starts and a repeat count. |
 | Update Webhook | `updateWebhook` | Vendor API (Basic auth). Updates a registered webhook's target URL or its event subscriptions. events replaces the existing list wholesale rather than adding to it, so send the complete set you want the webhook to end up with. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -120,6 +129,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Deal created | `deal.created` | A partner registered a new deal. data is the deal object; amount is in CENTS and close_date is a date string. |
 | Deal updated | `deal.updated` | A registered deal changed stage, amount or close date. data is the deal object. |
 | Lead created | `lead.created` | A partner submitted a new lead. data is the lead object; meta holds the prospect details and amount is in CENTS. |
+
+<details>
+
+<summary>See 13 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Lead updated | `lead.updated` | An existing lead changed status or stage. data is the lead object. |
 | Message created | `message.created` | A partner sent a message. Messages from the same sender within two minutes are bundled into one event. |
 | Partner team member added | `partner_team.member_created` | Someone was added to a partner's team. data is the team member object. |
@@ -133,3 +149,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Training course completed | `training.course_completed` | A partner finished a training course. data identifies the partner who completed it. |
 | Training learning path completed | `training.learning_path_completed` | A partner finished a whole learning path. data identifies the partner who completed it. |
 | Transaction created | `transaction.created` | A payment by a tracked customer was recorded. data is the transaction object; amount is in CENTS. |
+
+</details>

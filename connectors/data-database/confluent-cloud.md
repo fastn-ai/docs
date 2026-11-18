@@ -5,6 +5,8 @@ hidden: true
 
 # Confluent Cloud
 
+<img src="../../.gitbook/assets/connectors/confluent-cloud.png" alt="Confluent Cloud logo" width="64">
+
 Manage Confluent Cloud infrastructure through the Confluent Cloud Control Plane REST API. Covers organizations, environments, Kafka and Schema Registry clusters, Flink compute pools, service accounts, users, API keys, role bindings, IP filtering, networking, stream sharing, notifications, encryption keys, and billing.
 
 | | |
@@ -12,8 +14,6 @@ Manage Confluent Cloud infrastructure through the Confluent Cloud Control Plane 
 | **Category** | [Data and databases](README.md) |
 | **Website** | [confluent.cloud](https://confluent.cloud) |
 | **Authentication** | Basic auth |
-| **Actions** | 322 |
-| **Events** | 0 |
 | **Slug** | `confluentCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Confluent Cloud from **Build → Integrations → Connectors** and connect a
 | Create a Connect Cluster | `createUsmV1ConnectCluster` | Create a Connect Cluster. [![Preview](https://img.shields.io/badge/Lifecycle%20Stage-Preview-%2300afba)](#section/Versioning/API-Lifecycle-Policy) Make a request to create a connect cluster. |
 | Create a Connector | `createConnectv1Connector` | Create a Connector. [![General Availability](https://img.shields.io/badge/Lifecycle%20Stage-General%20Availability-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) Create a new connector. Returns the new connector information if successful. |
 | Create a Custom Code Logging | `createCclV1CustomCodeLogging` | Create a Custom Code Logging. [![Early Access](https://img.shields.io/badge/Lifecycle%20Stage-Early%20Access-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) [![Request Access To Custom Code Logging API EA](https://img.shields.io/badge/-Request%20Access%20To%20Custom%20Code%20Logging%20API%20EA-%23bc8540)](mailto:ccloud-api-access+ccl-v1-early-access@confluent.io?subject=Request%20to%20join%20ccl/v1%20API%20Early%20Access&body=I%E2%80%99d%20like%20to%20join%20the%20Confluent%20Cloud%20API%20Early%20Access%20for%20ccl/v1%20to%20provide%20early%20feedback%21%20My%20Cloud%20Organization%20ID%20is%20%3Cretrieve%20from%20https%3A//confluent.cloud/settings/billing/payment%3E.) Make a request to create a custom code logging. |
+
+<details>
+
+<summary>See 312 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a Custom Connect Plugin | `createCcpmV1CustomConnectPlugin` | Create a Custom Connect Plugin. [![General Availability](https://img.shields.io/badge/Lifecycle%20Stage-General%20Availability-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) Make a request to create a custom connect plugin. |
 | Create a Custom Connect Plugin Version | `createCcpmV1CustomConnectPluginVersion` | Create a Custom Connect Plugin Version. [![General Availability](https://img.shields.io/badge/Lifecycle%20Stage-General%20Availability-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) Make a request to create a custom connect plugin version. |
 | Create a Custom Connector Plugin | `createConnectV1CustomConnectorPlugin` | Create a Custom Connector Plugin. [![General Availability](https://img.shields.io/badge/Lifecycle%20Stage-General%20Availability-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) Make a request to create a custom connector plugin. |
@@ -346,3 +353,5 @@ Add Confluent Cloud from **Build → Integrations → Connectors** and connect a
 | Validate a Managed Connector Plugin | `validateConnectv1ConnectorPlugin` | Validate a Managed Connector Plugin. [![General Availability](https://img.shields.io/badge/Lifecycle%20Stage-General%20Availability-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) Validate the provided configuration values against the configuration definition. This API performs per config validation and returns suggested values and validation error messages. |
 | Validate an Integration | `validatePimV2Integration` | Validate an Integration. [![Early Access](https://img.shields.io/badge/Lifecycle%20Stage-Early%20Access-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) [![Request Access To Provider Integration](https://img.shields.io/badge/-Request%20Access%20To%20Provider%20Integration-%23bc8540)](mailto:ccloud-api-access+pim-v2-early-access@confluent.io?subject=Request%20to%20join%20pim/v2%20API%20Early%20Access&body=I%E2%80%99d%20like%20to%20join%20the%20Confluent%20Cloud%20API%20Early%20Access%20for%20pim/v2%20to%20provide%20early%20feedback%21%20My%20Cloud%20Organization%20ID%20is%20%3Cretrieve%20from%20https%3A//confluent.cloud/settings/billing/payment%3E.) Validate the provider integration configuration. |
 | Validate token to view shared resources | `resourcesCdxV1SharedToken` | Validate token to view shared resources. [![General Availability](https://img.shields.io/badge/Lifecycle%20Stage-General%20Availability-%2345c6e8)](#section/Versioning/API-Lifecycle-Policy) Validate and decrypt the shared token and view token's shared resources |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Statistics Sweden (SCB)
 
+<img src="../../.gitbook/assets/connectors/statistics-sweden-scb.png" alt="Statistics Sweden (SCB) logo" width="64">
+
 Statistics Sweden (SCB) publishes Sweden's official statistics through the free PxWebApi 2.0 (Statistikdatabasen): search statistical tables on population, economy, labour, prices, environment and more, read table metadata and default selections, get data as JSON-stat, CSV or PX for any selection, read codelists, and create and reuse saved queries. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Statistics Sweden (SCB) publishes Sweden's official statistics through the free 
 | **Category** | [Data and databases](README.md) |
 | **Website** | [scb.se](https://scb.se) |
 | **Authentication** | No authentication |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `statisticsSwedenScb` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add Statistics Sweden (SCB) from **Build → Integrations → Connectors** and c
 | Get Table Data (Default Selection) | `getTableDataDefault` | Get Table Data (Default Selection). Docs: https://www.scb.se/en/services/open-data-api/pxwebapi/ (GET /tables/{id}/data) |
 | Get Table Default Selection | `getTableDefaultSelection` | Get Table Default Selection. Docs: https://www.scb.se/en/services/open-data-api/pxwebapi/ (GET /tables/{id}/defaultselection) |
 | Get Table Metadata | `getTableMetadata` | Get Table Metadata. Docs: https://www.scb.se/en/services/open-data-api/pxwebapi/ (GET /tables/{id}/metadata) |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Query Table Data | `queryTableData` | Get data from a table for an explicit selection of variables and values (POST /tables/{id}/data). Returns JSON-stat 2.0 by default. Docs: https://www.scb.se/en/services/open-data-api/pxwebapi/ |
 | Search Tables | `searchTables` | Search Tables. Docs: https://www.scb.se/en/services/open-data-api/pxwebapi/ (GET /tables) |
+
+</details>

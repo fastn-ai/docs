@@ -11,8 +11,6 @@ Stitch is a cloud ETL service that replicates data from SaaS applications and da
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 43 |
-| **Events** | 0 |
 | **Slug** | `stitchData` |
 
 ## Use it
@@ -33,6 +31,13 @@ Add Stitch from **Build → Integrations → Connectors** and connect an account
 | Delete Custom Email Notification Recipient | `deleteCustomEmailNotificationRecipient` | Permanently removes an email address from the account notification recipient list. |
 | Delete Destination | `deleteDestination` | Deletes a destination from the Stitch account. |
 | Delete Post-Load Hook Notification | `deleteHookNotification` | Permanently deletes a post-load webhook so Stitch stops calling it. |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Source | `deleteSource` | Deletes a source. Stitch stops replicating it and stamps the record with a deletion timestamp. |
 | Disable Custom Email Notification Recipient | `disableCustomEmailNotificationRecipient` | Disables a custom notification recipient so Stitch stops emailing them, without removing the record. |
 | Disable Post-Load Hook Notification | `disableHookNotification` | Disables a post-load webhook so Stitch stops delivering notifications to it. |
@@ -66,3 +71,5 @@ Add Stitch from **Build → Integrations → Connectors** and connect an account
 | Update Source | `updateSource` | Updates the display name, destination or connection properties of an existing source. |
 | Update Streams Metadata | `updateStreamsMetadata` | Selects streams and fields for replication and sets their replication method. This is the endpoint that drives field selection on a source. |
 | Validate Import API Records | `validateImportApiRecords` | Validates a batch of Import API records against Stitch's structural rules without persisting anything. Requires an Import API access token created for an Import API source, not a Connect API token. |
+
+</details>

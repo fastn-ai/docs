@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Power BI
 
+<img src="../../.gitbook/assets/connectors/powerbi.png" alt="Microsoft Power BI logo" width="64">
+
 Microsoft Power BI REST API connector. Manage workspaces (groups), datasets, reports, dashboards, tiles, dataflows, imports, gateways, apps, capacities, and admin resources. Auth via Azure AD OAuth 2.0.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Power BI REST API connector. Manage workspaces (groups), datasets, rep
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [powerbi.com](https://powerbi.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 95 |
-| **Events** | 0 |
 | **Slug** | `powerbi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Power BI from **Build → Integrations → Connectors** and connec
 | Admin: List Dataflows | `adminListDataflows` | Admin: Returns a list of dataflows for the organization. |
 | Admin: List Datasets | `adminListDatasets` | Admin: Returns a list of datasets for the organization. |
 | Admin: List Groups | `adminListGroups` | Admin: Returns a list of workspaces for the organization. |
+
+<details>
+
+<summary>See 85 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Admin: List Imports | `adminListImports` | Admin: Returns a list of imports for the organization. |
 | Admin: List Reports | `adminListReports` | Admin: Returns a list of reports for the organization. |
 | Bind Dataset To Gateway In Group | `bindToGatewayInGroup` | Binds the specified dataset from the specified workspace to the specified gateway, optionally with a given set of datasource IDs. |
@@ -119,3 +126,5 @@ Add Microsoft Power BI from **Build → Integrations → Connectors** and connec
 | Update Group User | `updateGroupUser` | Updates the specified user permissions to the workspace (group). |
 | Update Refresh Schedule In Group | `updateRefreshScheduleInGroup` | Updates the scheduled refresh configuration of the specified semantic model in the given workspace. Only the supplied properties are changed; at least one property must be provided. |
 | Update Report Content In Group | `updateReportContentInGroup` | Updates the content of the specified report from the specified workspace with the content of a specified source report. |
+
+</details>

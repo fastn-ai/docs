@@ -5,6 +5,8 @@ hidden: true
 
 # TheSportsDB
 
+<img src="../../.gitbook/assets/connectors/the-sports-db.png" alt="TheSportsDB logo" width="64">
+
 TheSportsDB is an open, crowd-sourced sports database with artwork. Search teams, players, events and venues; look up leagues, tables, teams, kits, players (honours, contracts, results, stats), events (results, lineups, timelines, stats, TV); list sports, countries, leagues, seasons and teams; and get schedules, TV listings and video highlights. Use the free key 123 or your own premium key.
 
 | | |
@@ -12,8 +14,6 @@ TheSportsDB is an open, crowd-sourced sports database with artwork. Search teams
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [thesportsdb.com](https://thesportsdb.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 38 |
-| **Events** | 0 |
 | **Slug** | `theSportsDb` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TheSportsDB from **Build → Integrations → Connectors** and connect an ac
 | Get League Table | `getLeagueTable` | Get a league's points table, optionally for a season (featured soccer leagues only) (GET /lookuptable.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
 | Get Player | `getPlayer` | Get a player's details by id (GET /lookupplayer.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
 | Get Player Contracts | `getPlayerContracts` | List a player's contracts by player id (GET /lookupcontracts.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
+
+<details>
+
+<summary>See 28 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Player Former Teams | `getPlayerFormerTeams` | List a player's former teams by player id (GET /lookupformerteams.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
 | Get Player Honours | `getPlayerHonours` | List a player's honours by player id (GET /lookuphonours.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
 | Get Player Milestones | `getPlayerMilestones` | List a player's milestones by player id (GET /lookupmilestones.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
@@ -62,3 +69,5 @@ Add TheSportsDB from **Build → Integrations → Connectors** and connect an ac
 | Search Players | `searchPlayers` | Search players by main or alternate name (GET /searchplayers.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
 | Search Teams | `searchTeams` | Search sports teams by name. The free key only matches Arsenal (GET /searchteams.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
 | Search Venues | `searchVenues` | Search venues by name or alternate name (GET /searchvenues.php). The free key 123 returns a limited number of rows (premium keys return more). Docs: https://www.thesportsdb.com/documentation |
+
+</details>

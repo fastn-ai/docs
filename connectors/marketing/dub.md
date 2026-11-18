@@ -5,6 +5,8 @@ hidden: true
 
 # Dub
 
+<img src="../../.gitbook/assets/connectors/dub.png" alt="Dub logo" width="64">
+
 Dub is the modern link attribution platform for short links, conversion tracking, and affiliate (partner) programs. This connector covers the complete Dub REST API (https://api.dub.co): links (create, retrieve, list, count, update, upsert, delete, bulk create/update/delete), analytics and events, tags, folders, domains (create, list, update, delete, register, availability check), conversion tracking (lead, sale, open), customers, partners and partner applications, partner links and analytics, discount codes, commissions, payouts, bounties, referral embed tokens, QR codes, workspace info, and webhook management (list, create, get, update, delete). Authentication is a workspace API key sent as a Bearer token. Partner-program, customer, discount-code, webhook and analytics endpoints require a paid Dub plan.
 
 | | |
@@ -12,8 +14,6 @@ Dub is the modern link attribution platform for short links, conversion tracking
 | **Category** | [Marketing](README.md) |
 | **Website** | [dub.co](https://dub.co) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 64 |
-| **Events** | 15 |
 | **Slug** | `dub` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dub from **Build → Integrations → Connectors** and connect an account, a
 | Check domain availability | `checkDomainStatus` | Check if one or more .link domain names are available for purchase. |
 | Create a commission | `createCommission` | Create a custom, lead or sale commission for a partner. Custom commissions accept a negative amount to create a clawback. Creation is asynchronous (202 Accepted) - poll List all commissions or use the commission.created webhook to see the result. Requires a Dub plan with partner programs. Warning: commissions are real partner earnings. |
 | Create a discount code | `createDiscountCode` | Create a discount code for a partner. The partner's group must already have a discount assigned, and the target link must not already have a discount code. Requires a Dub plan with partner programs. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a domain | `createDomain` | Create (add) a custom domain for the authenticated workspace. The domain must then be verified via DNS before links on it resolve. |
 | Create a folder | `createFolder` | Create a folder for the authenticated workspace. |
 | Create a link | `createLink` | Create a link for the authenticated workspace. |
@@ -89,6 +96,8 @@ Add Dub from **Build → Integrations → Connectors** and connect an account, a
 | Upsert a link | `upsertLink` | Upsert a link for the authenticated workspace by its destination URL. If a link with the same URL already exists it is returned (or updated if there are changes); otherwise a new link is created. |
 | Upsert a link for a partner | `upsertPartnerLink` | Upsert a referral link for a partner enrolled in your program. If a link with the same URL already exists it is returned (or updated); otherwise a new link is created. Requires a Dub plan with partner programs. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -105,8 +114,17 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Link created | `link.created` | Occurs whenever a link is created (POST /links or PUT /links/upsert). Bulk link endpoints do not fire webhooks. Payload schema modelled from the documented sample at https://dub.co/docs/webhooks/events/link-created. |
 | Link deleted | `link.deleted` | Occurs whenever a link is deleted (DELETE /links/{linkId}). Bulk link endpoints do not fire webhooks. Payload is the deleted link object. Modelled from the documented sample at https://dub.co/docs/webhooks/events/link-deleted. |
 | Link updated | `link.updated` | Occurs whenever a link is updated (PATCH /links/{linkId}). Bulk link endpoints do not fire webhooks. Payload is the same link object as link.created. Modelled from the documented sample at https://dub.co/docs/webhooks/events/link-updated. |
+
+<details>
+
+<summary>See 5 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Partner application submitted | `partner.application_submitted` | Occurs whenever a partner submits an application to your program. Payload schema captured from the documented sample at https://dub.co/docs/webhooks/events/partner-application-submitted. |
 | Partner enrolled | `partner.enrolled` | Occurs whenever a partner is enrolled in your program (application approved, invite accepted, or created via the API). Payload schema captured from the documented sample at https://dub.co/docs/webhooks/events/partner-enrolled. |
 | Partner merged | `partner.merged` | Occurs when two partner accounts are merged. Payload schema captured from the documented sample at https://dub.co/docs/webhooks/events/partner-merged. |
 | Payout confirmed | `payout.confirmed` | Occurs whenever a payout in your program is confirmed. Accepted by the API (WEBHOOK_TRIGGERS in dubinc/dub apps/web/lib/webhook/constants.ts) but Dub publishes no payload sample, so no payloadSchema is declared - capture one from a real delivery before relying on its shape. |
 | Sale created | `sale.created` | Occurs whenever a sale conversion event is tracked (POST /track/sale). Requires conversion tracking on the workspace. Payload schema captured from the documented sample at https://dub.co/docs/webhooks/events/sale-created. |
+
+</details>

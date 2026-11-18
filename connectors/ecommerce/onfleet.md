@@ -5,6 +5,8 @@ hidden: true
 
 # Onfleet
 
+<img src="../../.gitbook/assets/connectors/onfleet.png" alt="Onfleet logo" width="64">
+
 Onfleet is a last-mile delivery management platform. This connector covers the Onfleet v2 REST API: organizations and delegatees, administrators, workers and their schedules, teams and auto-dispatch, hubs, destinations, recipients, tasks (create, batch, clone, complete, auto-assign and metadata search), containers, task custom-field groups, route plans, route optimization and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Onfleet is a last-mile delivery management platform. This connector covers the O
 | **Category** | [E-commerce](README.md) |
 | **Website** | [onfleet.com](https://onfleet.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 86 |
-| **Events** | 29 |
 | **Slug** | `onfleet` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Onfleet from **Build → Integrations → Connectors** and connect an accoun
 | Complete Task | `completeTask` | Force-completes an active task on the driver's behalf, recording whether the delivery succeeded and any completion notes. Completed tasks can no longer be updated. |
 | Create Administrator | `createAdministrator` | Creates a new administrator in the organization. Onfleet emails the address supplied so the administrator can confirm and configure their account. |
 | Create Destination | `createDestination` | Creates a destination from a parsed or unparsed street address. Onfleet geocodes the address unless explicit coordinates are supplied. Destinations cannot be deleted through the Onfleet API once created. |
+
+<details>
+
+<summary>See 76 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Hub | `createHub` | Creates a hub at the supplied address. Hubs act as the start and end point of team routes and cannot be deleted through the Onfleet API once created. |
 | Create Order | `createOrder` | Creates a delivery order as a linked pickup and drop-off task pair and sends it to the courier organization for assignment. Requires an Onfleet Connections relationship between the client and the courier. |
 | Create Recipient | `createRecipient` | Creates a recipient who can be attached to tasks and receive delivery notifications. Recipients cannot be deleted through the Onfleet API once created. |
@@ -111,6 +118,8 @@ Add Onfleet from **Build → Integrations → Connectors** and connect an accoun
 | Update Worker | `updateWorker` | Updates an existing driver (worker), changing their name, team membership, vehicle, capacity, display name or metadata. Only the fields supplied are modified. |
 | Update Worker Container Tasks | `updateWorkerContainerTasks` | Sets the tasks on a driver's route. Provide the complete ordered list of task ids to replace the route, or put an insertion index as the first element followed by the task ids to insert at that position. Use -1 as the index to append. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -127,6 +136,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Route Plan Started | `routePlanStarted` | Fires when a driver starts a route plan (trigger 23). Payload schema modelled on the captured taskCreated delivery. |
 | Route Plan Unassigned | `routePlanUnassigned` | Fires when a route plan is taken away from a driver (trigger 27). Payload schema modelled on the captured taskCreated delivery. |
 | Route Plan Updated | `routePlanUpdated` | Fires when a route plan changes (trigger 26). Payload schema modelled on the captured taskCreated delivery. |
+
+<details>
+
+<summary>See 19 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | SMS Recipient Opted Out | `SMSRecipientOptOut` | Fires when a recipient opts out of Onfleet delivery texts (trigger 17). Payload schema modelled on the captured taskCreated delivery. |
 | SMS Recipient Response Missed | `smsRecipientResponseMissed` | Fires when a recipient replies to a delivery SMS and no one answers (trigger 14). Payload schema modelled on the captured taskCreated delivery. |
 | Task Arrival | `taskArrival` | Fires when the driver comes within the distance threshold in metres set on the webhook (trigger 2). Set the Threshold input when subscribing. Payload schema modelled on the captured taskCreated delivery. |
@@ -146,3 +162,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Worker Deleted | `workerDeleted` | Fires when a driver is removed from the organization (trigger 16). Payload schema modelled on the captured taskCreated delivery. |
 | Worker Duty Changed | `workerDuty` | Fires when a driver goes on or off duty (trigger 5). Payload schema modelled on the captured taskCreated delivery. |
 | Worker Updated | `workerUpdated` | Fires when a driver record changes (trigger 25). Payload schema modelled on the captured taskCreated delivery. |
+
+</details>

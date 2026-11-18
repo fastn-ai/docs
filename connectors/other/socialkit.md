@@ -5,6 +5,8 @@ hidden: true
 
 # SocialKit
 
+<img src="../../.gitbook/assets/connectors/socialkit.png" alt="SocialKit logo" width="64">
+
 SocialKit is a unified REST API for extracting public data from social video and social network URLs: transcripts, AI summaries, comments, engagement stats, channel/profile data, keyword search, and direct or asynchronous media download URLs across YouTube, TikTok, Instagram, Facebook, Twitter/X, LinkedIn and Reddit.
 
 | | |
@@ -12,8 +14,6 @@ SocialKit is a unified REST API for extracting public data from social video and
 | **Category** | [Other](README.md) |
 | **Website** | [socialkit.dev](https://socialkit.dev) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 63 |
-| **Events** | 0 |
 | **Slug** | `socialkit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SocialKit from **Build → Integrations → Connectors** and connect an acco
 | Bulk Get YouTube Comments | `bulkYoutubeComments` | Fetch comments for up to five YouTube videos in one call. Returns a per-URL result array plus a summary with the credits actually used; failed items are not billed. |
 | Bulk Get YouTube Transcripts | `bulkYoutubeTranscripts` | Extract transcripts for up to five YouTube videos in one call. Returns a per-URL result array plus a summary with the credits actually used; failed items are not billed. |
 | Bulk Get YouTube Video Stats | `bulkYoutubeStats` | Get metadata and engagement statistics for up to five YouTube videos in one call. Returns a per-URL result array and a summary of successes and failures. Each successful item costs one SocialKit credit. |
+
+<details>
+
+<summary>See 53 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Summarize Instagram Videos | `bulkInstagramSummaries` | Produce AI summaries for up to five Instagram videos or reels in one call. Returns a per-URL result array plus a summary with the credits actually used; failed items are not billed. |
 | Bulk Summarize TikTok Videos | `bulkTiktokSummaries` | Produce AI summaries for up to five TikTok videos in one call. Returns a per-URL result array plus a summary with the credits actually used; failed items are not billed. |
 | Bulk Summarize YouTube Videos | `bulkYoutubeSummaries` | Produce AI summaries for up to five YouTube videos in one call. Returns a per-URL result array plus a summary with the credits actually used; failed items are not billed. |
@@ -87,3 +94,5 @@ Add SocialKit from **Build → Integrations → Connectors** and connect an acco
 | Summarize TikTok Video | `summarizeTiktokVideo` | Produce an AI summary of a TikTok video, returning a narrative summary plus main topics, key points, tone, target audience and notable quotes. Costs SocialKit credits per successful request. |
 | Summarize Video File URL | `summarizeVideoFile` | Produce an AI summary of any publicly accessible video file URL, returning a narrative summary plus main topics, key points, tone, target audience and notable quotes. Costs SocialKit credits per successful request. |
 | Summarize YouTube Video | `summarizeYoutubeVideo` | Produce an AI summary of a YouTube video, returning a narrative summary plus main topics, key points, tone, target audience and notable quotes. Costs SocialKit credits per successful request. |
+
+</details>

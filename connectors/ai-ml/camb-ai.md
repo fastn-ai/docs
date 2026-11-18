@@ -5,6 +5,8 @@ hidden: true
 
 # CAMB.AI
 
+<img src="../../.gitbook/assets/connectors/camb-ai.png" alt="CAMB.AI logo" width="64">
+
 CAMB.AI is an AI speech and localization platform. This connector covers the full CAMB.AI REST API: text-to-speech and streaming TTS, translated TTS, translation, transcription, subtitles, end-to-end dubbing, stories (audiobooks), sound and music generation, audio separation, voice cloning and voice design, project setup, dictionaries, folders, languages, and the live streaming API (streams, SRT flows and templates). Most generation endpoints are asynchronous: create a task, poll its status for a run_id, then fetch the result.
 
 | | |
@@ -12,8 +14,6 @@ CAMB.AI is an AI speech and localization platform. This connector covers the ful
 | **Category** | [AI and ML](README.md) |
 | **Website** | [camb.ai](https://camb.ai) |
 | **Authentication** | API key |
-| **Actions** | 80 |
-| **Events** | 0 |
 | **Slug** | `cambAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CAMB.AI from **Build → Integrations → Connectors** and connect an accoun
 | Create Sound And Music Task | `createTextToSound` | Creates a task that generates an audio file, either a sound effect or music, from a text prompt with a chosen duration. Returns a task_id; poll Get Sound And Music Task Status for the run_id, then fetch the audio with Get Sound And Music Result. Consumes credits. |
 | Create SRT Flow | `createFlow` | Creates a stream flow: a standing SRT endpoint, independent of any stream, usable as the source or a target of streams. In listener mode CAMB.AI hosts an endpoint your encoder pushes to; in caller mode CAMB.AI pulls from your upstream SRT URL and re-serves it. Returns the flow with its play and push URLs. |
 | Create Story Task | `createStory` | Creates a task that turns an uploaded text (.txt) or Word (.docx) document into a narrated audiobook story with the chosen narrator voice. The endpoint requires a multipart file upload. Returns a task_id; poll Get Story Task Status for the run_id, then fetch outputs with Get Story Result. Consumes credits. |
+
+<details>
+
+<summary>See 70 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Stream | `createStream` | Creates a live stream that ingests a source feed (for example SRT), processes it in real time with AI pipelines (demixing, transcribing, translating, revoicing) and publishes dubbed, translated or transcribed outputs to one or more targets. Returns the stream id, playback URLs per language and a setup task id. Consumes credits while live. |
 | Create Stream Template | `createStreamTemplate` | Saves a created stream's configuration as a named template in your workspace so it can be replayed later. Template names are unique per workspace and a workspace holds at most 20 templates. |
 | Create Subtitle Task | `createSubtitle` | Creates a task that generates subtitle-ready segments from a media URL in the source language and one or more target languages, with optional cue formatting rules. Returns a task_id; poll Get Subtitle Task Status for the run_id, then fetch the cues with Get Subtitle Result. Consumes credits. |
@@ -104,3 +111,5 @@ Add CAMB.AI from **Build → Integrations → Connectors** and connect an accoun
 | Update Dictionary Term | `updateDictionaryTerm` | Updates the translations of an existing term in a dictionary, identified by dictionary id and term id, to refine accuracy or add language variants. |
 | Update SRT Flow | `updateFlow` | Renames a stream flow or brings its relay endpoint online or offline. Only the fields you send are changed. |
 | Update Stream | `updateStream` | Updates a stream's configuration (entries are merged by id, never removed) and applies live runtime adjustments such as toggling dubbing on or off, changing mix gains or nudging A/V sync. Allowed while the stream is scheduled, setting up or started. Only the fields you send are changed. |
+
+</details>

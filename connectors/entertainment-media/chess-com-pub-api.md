@@ -5,6 +5,8 @@ hidden: true
 
 # Chess.com Published-Data API
 
+<img src="../../.gitbook/assets/connectors/chess-com-pub-api.png" alt="Chess.com Published-Data API logo" width="64">
+
 The Chess.com Published-Data API (PubAPI) is a free read-only API with public Chess.com data: player profiles, stats, current and archived games (JSON and PGN), clubs, team matches, tournaments, titled players, countries, daily puzzles, streamers and leaderboards. No API key needed; requests should be made one at a time.
 
 | | |
@@ -12,8 +14,6 @@ The Chess.com Published-Data API (PubAPI) is a free read-only API with public Ch
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [chess.com](https://chess.com) |
 | **Authentication** | No authentication |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `chessComPubApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Chess.com Published-Data API from **Build → Integrations → Connectors** 
 | Get Live Team Match Board | `getLiveTeamMatchBoard` | Get one board of a Live Chess team match with its scores and games (GET /pub/match/live/{match_id}/{board}). Docs: https://www.chess.com/news/view/published-data-api |
 | Get Player Monthly Games | `getPlayerMonthlyGames` | Get all finished Live and Daily games of a player for one month (GET /pub/player/{username}/games/{year}/{month}). Docs: https://www.chess.com/news/view/published-data-api |
 | Get Player Monthly Games PGN | `getPlayerMonthlyGamesPgn` | Download all of a player's finished games for one month as a multi-game PGN file (GET /pub/player/{username}/games/{year}/{month}/pgn). Docs: https://www.chess.com/news/view/published-data-api |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Player Profile | `getPlayer` | Get a player's profile: name, title, avatar, country, followers, status, joined and last online (GET /pub/player/{username}). Docs: https://www.chess.com/news/view/published-data-api |
 | Get Player Stats | `getPlayerStats` | Get a player's ratings, win/loss/draw records and best results per game type, plus puzzle and puzzle rush scores (GET /pub/player/{username}/stats). Docs: https://www.chess.com/news/view/published-data-api |
 | Get Random Puzzle | `getRandomPuzzle` | Get a random daily puzzle (cached about 15 seconds) (GET /pub/puzzle/random). Docs: https://www.chess.com/news/view/published-data-api |
@@ -53,3 +60,5 @@ Add Chess.com Published-Data API from **Build → Integrations → Connectors** 
 | List Player Tournaments | `listPlayerTournaments` | List a player's finished, in-progress and registered tournaments (GET /pub/player/{username}/tournaments). Docs: https://www.chess.com/news/view/published-data-api |
 | List Streamers | `listStreamers` | List Chess.com streamers with their Twitch and other platform URLs and live status (GET /pub/streamers). Docs: https://www.chess.com/news/view/published-data-api |
 | List Titled Players | `listTitledPlayers` | List the usernames of all players holding a title (GET /pub/titled/{title}). Docs: https://www.chess.com/news/view/published-data-api |
+
+</details>

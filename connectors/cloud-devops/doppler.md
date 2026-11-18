@@ -5,6 +5,8 @@ hidden: true
 
 # Doppler
 
+<img src="../../.gitbook/assets/connectors/doppler.jpg" alt="Doppler logo" width="64">
+
 Doppler is a secrets management platform for storing, syncing, and rotating environment variables, API keys, and secrets across projects, environments, and services. This connector wraps Doppler's v3 REST API covering workplace settings, projects, environments, configs, secrets, activity/config logs, service tokens, integrations, syncs, webhooks, and Doppler Share.
 
 | | |
@@ -12,8 +14,6 @@ Doppler is a secrets management platform for storing, syncing, and rotating envi
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [doppler.com](https://doppler.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 59 |
-| **Events** | 0 |
 | **Slug** | `doppler` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Doppler from **Build → Integrations → Connectors** and connect an accoun
 | Create Sync | `createSync` | Creates a secret sync from a config to a configured third-party integration destination. |
 | Delete Config | `deleteConfig` | Permanently deletes a branch config and its secrets. |
 | Delete Config Trusted IP | `deleteConfigTrustedIp` | Removes a trusted IP address or CIDR range from a config. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Environment | `deleteEnvironment` | Permanently deletes an environment and all of its configs and secrets. |
 | Delete Project | `deleteProject` | Permanently deletes a Doppler project and all of its environments, configs, and secrets. |
 | Delete Secret | `deleteSecret` | Deletes a single secret from a config. |
@@ -83,3 +90,5 @@ Add Doppler from **Build → Integrations → Connectors** and connect an accoun
 | Update Webhook | `updateWebhook` | Updates an existing webhook's URL, name, signing secret, payload, or enabled configs. |
 | Update Workplace | `updateWorkplace` | Updates the workplace's name and/or billing/security contact emails. |
 | Update Workplace User | `updateWorkplaceUser` | Updates a workplace user's role/access level. |
+
+</details>

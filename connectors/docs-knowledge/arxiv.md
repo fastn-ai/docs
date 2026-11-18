@@ -5,6 +5,8 @@ hidden: true
 
 # arXiv
 
+<img src="../../.gitbook/assets/connectors/arxiv.png" alt="arXiv logo" width="64">
+
 arXiv APIs: free, keyless access to 2.5M+ scholarly preprints in physics, mathematics, computer science and more - search papers (Atom XML), harvest metadata through OAI-PMH, and read daily RSS/Atom announcement feeds per category. arXiv asks clients to wait 3 seconds between calls. Responses are XML, returned as text.
 
 | | |
@@ -12,8 +14,6 @@ arXiv APIs: free, keyless access to 2.5M+ scholarly preprints in physics, mathem
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [arxiv.org](https://arxiv.org) |
 | **Authentication** | No authentication |
-| **Actions** | 9 |
-| **Events** | 0 |
 | **Slug** | `arxiv` |
 
 ## Use it

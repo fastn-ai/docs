@@ -5,6 +5,8 @@ hidden: true
 
 # redirect.pizza
 
+<img src="../../.gitbook/assets/connectors/redirect-pizza.png" alt="redirect.pizza logo" width="64">
+
 redirect.pizza is a DNS-based hosted redirect service: point a domain's DNS at redirect.pizza and it serves 301/302/307/308 redirects with automatically provisioned Let's Encrypt HTTPS, no server required. This connector wraps the complete redirect.pizza REST API v1 (https://redirect.pizza/api/v1): redirect CRUD, pause/resume of whole redirects and of individual source URLs, bulk CSV/JSON import and import status, email forwards and their delivery logs, redirect analytics (total hits, time series, dimension breakdowns and raw hits), domain listing, per-domain security/edge settings, DNS propagation checks and automatic DNS configuration, team quota and default settings, team member management, plus the unauthenticated redirect tester and QR code generator.
 
 | | |
@@ -12,8 +14,6 @@ redirect.pizza is a DNS-based hosted redirect service: point a domain's DNS at r
 | **Category** | [Developer tools](README.md) |
 | **Website** | [redirect.pizza](https://redirect.pizza) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `redirectPizza` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add redirect.pizza from **Build → Integrations → Connectors** and connect an
 | Generate QR Code | `generateQrCode` | Generate a QR code image that points at a given URL, for printing on signage or handing out alongside a vanity redirect. Use format 'json' (the default): the response is JSON metadata containing a base64 data URI of the PNG plus a suggested filename. The 'png', 'svg' and 'eps' formats return raw image data rather than JSON - verified live, 'svg' comes back as parsed XML rather than usable markup, so prefer 'json' and decode the data URI yourself. This endpoint does not require authentication. |
 | Get Analytics Dimension Breakdown | `getAnalyticsDimension` | Return aggregated redirect analytics broken down by one dimension - for example countries, sources, destinations, referrers or device types - within a date range, as a paginated list of key/count pairs. Optionally narrow with a filter query such as 'redirect:1234567890', 'tag:marketing' or 'traffic_type:human'. The Analytics API is in beta. Analytics is a paid feature: teams below the Basic plan receive HTTP 402 with the message 'Analytics is available from the Basic plan and up.' |
 | Get Hits Time Series | `getHitsTimeSeries` | Return redirect hits as a time series over the given date range, as an array of key/count points suitable for plotting a traffic graph. Optionally narrow with a filter query such as 'redirect:1234567890'. The Analytics API is in beta. Analytics is a paid feature: teams below the Basic plan receive HTTP 402 with the message 'Analytics is available from the Basic plan and up.' |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Team Details | `getTeam` | Retrieve the team that the API token belongs to, including its name, current and maximum hostname count, current, projected and maximum monthly hit count, current and maximum number of users, the redirect.pizza nameservers to delegate to, summary email preferences and the team-wide default security settings. Use this to check quota before creating redirects. |
 | Get Total Hits | `getTotalHits` | Return the total number of redirect hits recorded in a given period, optionally narrowed with a filter query such as 'redirect:1234567890'. Returns a data object with a count plus the filters that were applied. The Analytics API is in beta. Analytics is a paid feature: teams below the Basic plan receive HTTP 402 with the message 'Analytics is available from the Basic plan and up.' |
 | Import Redirects | `importRedirects` | Bulk-import redirects from either an array of row objects or a CSV string, using the same columns as the dashboard importer: source, destination, redirect_type, uri_forwarding, keep_query_string, tracking, tags and notes. Existing sources are updated to the row destination. A maximum of 5000 rows can be imported per API call. Returns 202 with an import object whose id you can poll with Retrieve Redirect Import to watch success, error and pending row counts. |
@@ -59,3 +66,5 @@ Add redirect.pizza from **Build → Integrations → Connectors** and connect an
 | Update Redirect | `updateRedirect` | Replace an existing redirect's configuration. This is a full update: sources, destination and redirect_type are all required, and any source not listed is removed from the redirect. Returns 200 with the updated redirect. Use Create Redirect with upsert instead if you want to add sources without tracking redirect ids. |
 | Update Team Member | `updateTeamMember` | Change the role and tag access of an active team member or a pending invitation. CAUTION: this can change your own access - demoting the account your API token belongs to may lock you out of the API, and the last owner of a team cannot be demoted (the API answers 422 'Cannot demote the last owner of the team.'). Returns 200 with the updated member. |
 | Update Team Settings | `updateTeam` | Update the team name, the summary email schedule and recipients, and the team-wide default security settings that individual domains inherit: broken destination monitoring, CNAME flattening, web application firewall, HSTS, prevent foreign embedding, short-lived ACME certificates, referrer policy and robots.txt. Only the fields you send are changed. Returns 200 with the updated team. |
+
+</details>

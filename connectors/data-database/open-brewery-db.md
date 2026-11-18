@@ -5,6 +5,8 @@ hidden: true
 
 # Open Brewery DB
 
+<img src="../../.gitbook/assets/connectors/open-brewery-db.png" alt="Open Brewery DB logo" width="64">
+
 Open Brewery DB is a free, keyless dataset of breweries, cideries, brewpubs and bottle shops worldwide: list and filter breweries by city, state, country, postal code, type, name or distance, search by name, get one brewery or random ones, and count matches.
 
 | | |
@@ -12,8 +14,6 @@ Open Brewery DB is a free, keyless dataset of breweries, cideries, brewpubs and 
 | **Category** | [Data and databases](README.md) |
 | **Website** | [openbrewerydb.org](https://openbrewerydb.org) |
 | **Authentication** | No authentication |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `openBreweryDb` |
 
 ## Use it

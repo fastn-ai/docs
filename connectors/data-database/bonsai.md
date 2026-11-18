@@ -5,6 +5,8 @@ hidden: true
 
 # Bonsai
 
+<img src="../../.gitbook/assets/connectors/bonsai.png" alt="Bonsai logo" width="64">
+
 Bonsai is a fully managed Elasticsearch and OpenSearch hosting service. This connector works directly against a Bonsai cluster's search REST API: create and manage indices, mappings, settings and aliases; index, get, update, bulk load and delete documents; run searches, counts, multi-searches, scrolls, point-in-time searches, explain and validation; analyze text; manage ingest pipelines, stored scripts, templates and data streams; and read cluster, node and cat health and statistics. Endpoints that Bonsai restricts on shared (multi-tenant) plans return a permission error explaining the restriction. Authenticates with the cluster access key and access secret over HTTP Basic auth.
 
 | | |
@@ -12,8 +14,6 @@ Bonsai is a fully managed Elasticsearch and OpenSearch hosting service. This con
 | **Category** | [Data and databases](README.md) |
 | **Website** | [bonsai.io](https://bonsai.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 92 |
-| **Events** | 0 |
 | **Slug** | `bonsai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bonsai from **Build → Integrations → Connectors** and connect an account
 | Cat Count | `catCount` | Returns a one-row document count for one or more indices (or all indices). |
 | Cat Health | `catHealth` | Returns a one-row summary of cluster health: status, node counts and shard counts. |
 | Cat Indices | `catIndices` | Returns a compact table (as JSON rows) of indices with health, status, primary and replica counts, document counts and store size. |
+
+<details>
+
+<summary>See 82 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cat Node Attributes | `catNodeAttributes` | Returns table rows of custom node attributes (such as zone or region) for each node. |
 | Cat Nodes | `catNodes` | Returns table rows of cluster nodes with IP, heap and RAM usage, CPU, load averages, roles and whether each is the cluster manager. |
 | Cat Plugins | `catPlugins` | Returns table rows of plugins installed on each node, with component name and version. |
@@ -116,3 +123,5 @@ Add Bonsai from **Build → Integrations → Connectors** and connect an account
 | Update Index Mapping | `putMapping` | Adds new fields to an index mapping or updates compatible options of existing fields. Existing field types cannot be changed. |
 | Update Index Settings | `updateIndexSettings` | Changes dynamic settings of one or more indices, such as refresh interval, number of replicas or max result window. |
 | Validate Query | `validateQuery` | Checks whether a Query DSL query is valid for an index without running it, optionally explaining why it is invalid or how it is rewritten. |
+
+</details>

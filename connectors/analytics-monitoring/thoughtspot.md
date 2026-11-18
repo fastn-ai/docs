@@ -5,6 +5,8 @@ hidden: true
 
 # ThoughtSpot
 
+<img src="../../.gitbook/assets/connectors/thoughtspot.png" alt="ThoughtSpot logo" width="64">
+
 ThoughtSpot analytics platform — REST API v2. Search and AI-driven analytics over Liveboards, Answers, Metadata (worksheets, tables, models), Users, Groups, Roles, Tags, Data Objects, Connections, Orgs, Security/Sharing, Version Control (Git/TML), Reports, and Webhooks. Authenticates with a username/password login exchanged for a bearer access token against a per-tenant cluster URL (Cloud multi-tenant or self-hosted).
 
 | | |
@@ -12,8 +14,6 @@ ThoughtSpot analytics platform — REST API v2. Search and AI-driven analytics o
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [thoughtspot.com](https://thoughtspot.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 44 |
-| **Events** | 0 |
 | **Slug** | `thoughtspot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ThoughtSpot from **Build → Integrations → Connectors** and connect an ac
 | Deactivate User | `deactivateUser` | Deactivates one or more ThoughtSpot user accounts, blocking sign-in without deleting the account. |
 | Delete Group | `deleteGroup` | Permanently deletes a ThoughtSpot user group. |
 | Delete Metadata Object | `deleteMetadataObject` | Permanently deletes one or more ThoughtSpot metadata objects (Liveboards, Answers, Worksheets, Models, or Connections) identified by GUID and type. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Role | `deleteRole` | Permanently deletes a ThoughtSpot role. |
 | Delete Tag | `deleteTag` | Permanently deletes a ThoughtSpot tag. |
 | Delete User | `deleteUser` | Permanently deletes a ThoughtSpot user account. |
@@ -68,3 +75,5 @@ Add ThoughtSpot from **Build → Integrations → Connectors** and connect an ac
 | Update User | `updateUser` | Updates the profile, contact details, or group memberships of an existing ThoughtSpot user. |
 | Update Webhook | `updateWebhook` | Updates the name, destination URL, or enabled state of an existing ThoughtSpot webhook. Untested against a live webhook because Create Webhook could not be certified (undocumented 'events' enum); the request/URL wiring mirrors the other webhook actions. |
 | Validate Token | `validateToken` | Validates whether a ThoughtSpot bearer access token is currently active and returns the identity it is valid for. |
+
+</details>

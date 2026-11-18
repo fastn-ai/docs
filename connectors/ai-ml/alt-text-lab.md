@@ -5,6 +5,8 @@ hidden: true
 
 # AltTextLab
 
+<img src="../../.gitbook/assets/connectors/alt-text-lab.png" alt="AltTextLab logo" width="64">
+
 AltTextLab generates accessible, SEO-friendly alt text for images with AI. This connector covers the AltTextLab REST API: generate alt text for a public image URL or for base64 image data, in 130+ languages, with configurable writing style, SEO keywords, e-commerce product metadata, page context and pass-through custom fields.
 
 | | |
@@ -12,8 +14,6 @@ AltTextLab generates accessible, SEO-friendly alt text for images with AI. This 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [alttextlab.com](https://alttextlab.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `altTextLab` |
 
 ## Use it

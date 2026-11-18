@@ -5,6 +5,8 @@ hidden: true
 
 # Piggy
 
+<img src="../../.gitbook/assets/connectors/piggy.png" alt="Piggy logo" width="64">
+
 Piggy (now Leat) is a loyalty, marketing and gift-card platform. This connector wraps the Piggy/Leat Public API v3: contacts and contact identifiers, loyalty programs, credits, rewards, tiers and perks, promotions and vouchers, gift cards and gift-card transactions, prepaid balances, orders, products and categories, shops, shifts, bookings, visits, forms, automations, portal sessions and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Piggy (now Leat) is a loyalty, marketing and gift-card platform. This connector 
 | **Category** | [Marketing](README.md) |
 | **Website** | [piggy.eu](https://piggy.eu) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 152 |
-| **Events** | 27 |
 | **Slug** | `piggy` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Piggy from **Build → Integrations → Connectors** and connect an account,
 | Create Anonymous Contact | `createAnonymousContact` | Create a Contact without a real email address, identified by an existing Contact Identifier such as a card number. The Contact Identifier must already exist - create it first with Create Contact Identifier, otherwise Piggy answers 'Contact identifier not found'. The Contact can later be claimed with a real email address. |
 | Create Automation Run | `createAutomationRun` | Trigger an Automation for a specific Contact. Optional data is passed into the Automation and can be used by its steps. |
 | Create Batch Of Vouchers | `createBatchOfVouchers` | Generate many Vouchers from one Promotion in a single call, between 1 and 500 at a time. |
+
+<details>
+
+<summary>See 142 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Booking | `createBooking` | Create a Booking in Piggy as a replica of a reservation made in your own reservation system, linked to a Contact and a Shop. |
 | Create Contact | `createContact` | Create a Contact from an email address. Optionally pass a referral code so the new Contact is attributed to Piggy's referral programme. |
 | Create Contact Asynchronously | `createContactAsync` | Queue the creation of a Contact from an email address. The call returns immediately and Piggy creates the Contact in the background, which suits high-volume imports. |
@@ -177,6 +184,8 @@ Add Piggy from **Build → Integrations → Connectors** and connect an account,
 | Use Contact Session Token | `useContactSessionToken` | Consume a Contact Session Token, marking it as used so it cannot be redeemed a second time. |
 | Verify Contact Login Code | `verifyContactLoginCode` | Verify the one-time login code a Contact received by email. A valid code confirms the Contact's identity for the Contacts Portal. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -193,6 +202,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Contact Was Unsubscribed | `contact_was_unsubscribed` | Contact has been unsubscribed from a subscription type. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
 | Credit Reception Created | `credit_reception_created` | New credit reception has been created for a contact. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
 | Form Submission Completed | `form_submission_completed` | Contact has submitted and completed a form. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
+
+<details>
+
+<summary>See 17 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Giftcard Created | `giftcard_created` | New giftcard has been created. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
 | Giftcard Transaction Created | `giftcard_transaction_created` | New giftcard transaction has been created. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
 | Giftcard Updated | `giftcard_updated` | Giftcard has been updated, including when its balance changes. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
@@ -210,3 +226,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Voucher Expired | `voucher_expired` | Voucher has passed its expiration date. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
 | Voucher Redeemed | `voucher_redeemed` | Contact has redeemed a voucher. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
 | Voucher Updated | `voucher_updated` | Voucher has been updated. Sample is Piggy's documented V1 payload, abridged below level 2; not a captured delivery. |
+
+</details>

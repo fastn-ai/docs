@@ -5,6 +5,8 @@ hidden: true
 
 # Sympla
 
+<img src="../../.gitbook/assets/connectors/sympla.png" alt="Sympla logo" width="64">
+
 Sympla is Brazil's largest event ticketing and registration platform. This connector wraps the Sympla Public API v1.6.0 for event organizers: list and fetch events, list event presentations (sessions), list and fetch orders, list and fetch participants (attendees) by id or ticket number, and perform attendee check-in by participant id, ticket number or QR code.
 
 | | |
@@ -12,8 +14,6 @@ Sympla is Brazil's largest event ticketing and registration platform. This conne
 | **Category** | [Productivity](README.md) |
 | **Website** | [sympla.com.br](https://sympla.com.br) |
 | **Authentication** | API key |
-| **Actions** | 15 |
-| **Events** | 0 |
 | **Slug** | `sympla` |
 
 ## Use it
@@ -34,8 +34,17 @@ Add Sympla from **Build → Integrations → Connectors** and connect an account
 | Get Presentation | `getPresentation` | Fetch one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}. |
 | List Event Orders | `listEventOrders` | List the orders of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/orders. Cursor-paginated. |
 | List Event Participants | `listEventParticipants` | List the participants (attendees) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/participants. Cursor-paginated. |
+
+<details>
+
+<summary>See 5 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Events | `listEvents` | List the organizer's events. Sympla Public API v1.6.0 GET /public/v1.6.0/events. Cursor-paginated; returns {data:[...],pagination:{...},sort:{...}}. |
 | List Order Participants | `listOrderParticipants` | List the participants (tickets) belonging to one order. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/orders/{orderSk}/participants. |
 | List Presentation Orders | `listPresentationOrders` | List the orders placed for one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}/orders. |
 | List Presentation Participants | `listPresentationParticipants` | List the participants (attendees) of one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}/participants. |
 | List Presentations | `listPresentations` | List the presentations (sessions / dates) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Lumify
 
+<img src="../../.gitbook/assets/connectors/lumify.png" alt="Lumify logo" width="64">
+
 Lumify is an agent-ready sports intelligence API covering MLB, NBA, NFL, NHL, NCAAF, NCAAB, tennis and soccer. This connector covers the full Lumify v1 API: sports, seasons, teams, players and events; live scores and event statistics; betting odds, line-movement history, period odds, player props, team props and public betting splits; bet intelligence, expected-value scans and forecasts; natural-language search and entity resolution; slip grading; credit and API-key management; and signed webhook subscriptions with delivery history.
 
 | | |
@@ -12,8 +14,6 @@ Lumify is an agent-ready sports intelligence API covering MLB, NBA, NFL, NHL, NC
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [lumify.ai](https://lumify.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 42 |
-| **Events** | 4 |
 | **Slug** | `lumify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Lumify from **Build → Integrations → Connectors** and connect an account
 | Get Event Intelligence | `getEventIntelligence` | Returns Lumify's bet intelligence for an event: per-bet confidence scores, signal breakdowns, vig-stripped fair prices, line-shopping edges by book and structured rationale, plus a match overview and any forecasted wagers. |
 | Get Event Odds | `getEventOdds` | Returns current moneyline, spread and total betting odds for an event across the requested sportsbooks. Defaults to Pinnacle; pass 'all' or a comma-separated list for multiple books, and set Include Alternates to add alternate spread and total rungs. |
 | Get Event Period Odds | `getEventPeriodOdds` | Returns first-half, first-five-innings or first-set lines for an event and grades them against the live period score. Supported for NFL, NCAAF, NBA, NCAAB, MLB, soccer and tennis; other sports return HTTP 400. |
+
+<details>
+
+<summary>See 32 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Event Player Props | `getEventPlayerProps` | Returns player-prop lines for an event and grades each over, under or push against the live player box score. Supported for NFL, NCAAF, NBA, NCAAB, NHL, MLB and soccer; other sports return HTTP 400. |
 | Get Event Score | `getEventScore` | Returns the current score for an event, with per-participant totals, period-by-period scoring and the live period and clock. |
 | Get Event Splits | `getEventSplits` | Returns public betting splits for an event: the percentage of tickets and of handle on each side of the moneyline, spread and total, as a cross-book consensus and per bookmaker. Available for MLB, NBA, NHL, NFL, NCAAF and NCAAB; tennis and soccer are not covered. |
@@ -66,6 +73,8 @@ Add Lumify from **Build → Integrations → Connectors** and connect an account
 | Revoke API Key | `revokeApiKey` | Revokes a Lumify API key so it can no longer authenticate. Returns 404 when the key does not belong to the caller. Revoking is immediate and cannot be undone. |
 | Search Events By Query | `searchEventsByQuery` | Maps a natural-language phrase such as 'live nfl games today' onto the same filters List Events accepts and runs that query. Results are identical to calling List Events directly with the parsed filters. |
 | Stream Event Score Updates | `streamEventScoreUpdates` | Opens a Server-Sent Events stream of live score and status changes for an event. Each API key may hold up to five concurrent streams and a connection closes after five minutes, sending a reconnect frame first. This endpoint returns an open event stream rather than a single JSON document, so it suits a long-lived client rather than a one-shot call. |
+
+</details>
 
 ## Events
 

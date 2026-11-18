@@ -5,6 +5,8 @@ hidden: true
 
 # Follow Up Boss
 
+<img src="../../.gitbook/assets/connectors/follow-up-boss.png" alt="Follow Up Boss logo" width="64">
+
 Follow Up Boss is a real-estate CRM (Zillow Group) for lead follow-up, agent assignment and deal tracking. This connector covers the Follow Up Boss REST API v1 at https://api.followupboss.com/v1: people (contacts) with search, duplicate checking, unclaimed-lead claiming, relationships and attachments; lead activity events; notes; calls; text messages; tasks; appointments with their types and outcomes; deals, deal attachments, deal custom fields and pipelines; lead stages and custom fields; users, teams, groups, ponds and team inboxes; smart lists, action plans, automations and timeframes; email and text message templates with merge; email marketing campaigns and events; reactions and threaded replies; identity and current-user lookups; rate-limit introspection; and full webhook subscription management for every Follow Up Boss event type.
 
 | | |
@@ -12,8 +14,6 @@ Follow Up Boss is a real-estate CRM (Zillow Group) for lead follow-up, agent ass
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [followupboss.com](https://followupboss.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 145 |
-| **Events** | 53 |
 | **Slug** | `followUpBoss` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Follow Up Boss from **Build → Integrations → Connectors** and connect an
 | Create Call | `createCall` | Logs a call against a contact. Use this to push call activity from an external phone or dialer system into the contact timeline, optionally with a note, disposition, duration and recording link. |
 | Create Custom Field | `createCustomField` | Defines a new custom field on people. Supply choices when type is a dropdown, and set isRecurring for an annually repeating date such as a birthday. Follow Up Boss derives the machine name from the label - read it back from the response before writing values to people. |
 | Create Deal | `createDeal` | Creates a deal (transaction). Name and stageId are required - the stage determines which pipeline the deal lands in, so read it from List Pipelines. Attach contacts with peopleIds and agents with userIds. Deal custom fields are set with their customField keys - see List Deal Custom Fields. |
+
+<details>
+
+<summary>See 135 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Deal Attachment | `createDealAttachment` | Attaches a file to a deal by reference. Follow Up Boss does not accept a file upload here - host the file yourself and pass a publicly reachable uri. Note that the dealsUpdated webhook does not fire for file changes. Requires the X-System and X-System-Key headers, which the connection supplies automatically. |
 | Create Deal Custom Field | `createDealCustomField` | Defines a new custom field on deals. Supply choices when type is a dropdown. Follow Up Boss derives the machine name from the label - read it back from the response before writing values to deals. |
 | Create Email Marketing Campaign | `createEmCampaign` | Registers an email marketing campaign in Follow Up Boss so that marketing events can be attributed to it. Set origin to your system's name and originId to your own campaign id, which is how you find it again with List Email Marketing Campaigns. |
@@ -170,6 +177,8 @@ Add Follow Up Boss from **Build → Integrations → Connectors** and connect an
 | Update Text Message Template | `updateTextMessageTemplate` | Updates a text message template by id. Only the supplied fields change. |
 | Update Webhook | `updateWebhook` | Updates a webhook registration by id - typically to repoint it at a new HTTPS callback URL. Restricted to the account owner and to the registered system that created it. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -186,6 +195,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Deal Custom Field Created | `dealCustomFieldsCreated` | A custom field DEFINITION was added to deals. Field configuration only, not values. Hydrate with Get Deal Custom Field. |
 | Deal Custom Field Deleted | `dealCustomFieldsDeleted` | A deal custom field definition was deleted, removing its values from every deal. |
 | Deal Custom Field Updated | `dealCustomFieldsUpdated` | A deal custom field definition changed. Changing its order weight can cascade extra dealCustomFieldsUpdated events for other fields whose weights shift. |
+
+<details>
+
+<summary>See 43 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Deal Deleted | `dealsDeleted` | A deal was deleted. Still readable through List Deals with includeDeleted set to true. |
 | Deal Updated | `dealsUpdated` | A deal changed - stage, price, dates, people or commission. Does NOT fire when only files on the deal change. |
 | Email Created | `emailsCreated` | An email was logged against a contact. Follow Up Boss exposes no REST resource for email bodies, so use the resourceIds for correlation only. |
@@ -229,3 +245,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Threaded Reply Created (beta) | `threadedReplyCreated` | A user replied in-thread to a note or other entity. The data block names the refType, refId and a refUri that hydrates the parent with its replies. |
 | Threaded Reply Deleted (beta) | `threadedReplyDeleted` | A threaded reply was deleted. |
 | Threaded Reply Updated (beta) | `threadedReplyUpdated` | A threaded reply was edited. |
+
+</details>

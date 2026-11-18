@@ -5,6 +5,8 @@ hidden: true
 
 # Clerk
 
+<img src="../../.gitbook/assets/connectors/clerk.png" alt="Clerk logo" width="64">
+
 Clerk (clerk.com) user authentication and identity platform. Wraps the Clerk BACKEND API (https://api.clerk.com/v1), the server-side surface authenticated with an instance Secret Key (sk_test_/sk_live_): users, organizations, org memberships/invitations/domains/roles/permissions, sessions and session tokens, invitations, allowlist/blocklist, sign-in tokens, actor tokens, JWT templates, email addresses, phone numbers, waitlist entries, clients, redirect URLs, instance settings. EXCLUDED: the Clerk FRONTEND API (separate per-instance host, browser session tokens / Publishable Key) - different surface, different credential. PRIVACY: user/email/phone/session/client routes return real end-user PII. Some routes return live credentials in the body (session tokens, sign-in tokens, actor tokens, OAuth access tokens, Svix dashboard URL). EVENTS: delivered via Svix; webhook endpoints CANNOT be registered through the Backend API - only in the Clerk Dashboard (Configure &gt; Webhooks &gt; Add Endpoint).
 
 | | |
@@ -12,8 +14,6 @@ Clerk (clerk.com) user authentication and identity platform. Wraps the Clerk BAC
 | **Category** | [Developer tools](README.md) |
 | **Website** | [clerk.com](https://clerk.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 64 |
-| **Events** | 30 |
 | **Slug** | `clerk` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Clerk from **Build → Integrations → Connectors** and connect an account,
 | Create Organization | `createOrganization` | Create an organization. name is required. If created_by is supplied that user is added as the organization's first admin member; without it the organization has no members. slug must be unique within the instance AND requires organization slugs to be enabled on the instance - if they are not, supplying slug fails with 403 {"code":"organization_slugs_disabled","message":"organization slugs not enabled"} and you must omit it (Clerk then auto-generates one). Requires the Organizations feature to be enabled on the instance, otherwise every organization route returns 403 organization_not_enabled_in_instance. |
 | Create Organization Invitation | `createOrganizationInvitation` | Invite an email address to join an organization with a role. WARNING: with notify omitted or true Clerk SENDS A REAL EMAIL to the address. Set notify=false to create the invitation record without dispatching mail. Use Create Organization Membership instead when the user already exists and should simply be added. |
 | Create Organization Membership | `createOrganizationMembership` | Add an existing Clerk user to an organization with a role. This adds the member DIRECTLY and sends no email - use Create Organization Invitation when the person should be emailed instead. role is a role key such as org:admin or org:member. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Redirect URL | `createRedirectUrl` | Allow-list a redirect URL on the instance so it can be used as a redirect_url in invitations and OAuth flows. SECURITY: every URL added here is a permitted post-auth redirect target - add only URLs you control, never a wildcard or a third-party host. |
 | Create Session | `createSession` | Create a new ACTIVE session for a user server-side, bypassing the normal sign-in flow. SECURITY: this grants authenticated access as that user - restrict who can run it. Intended for impersonation, testing and server-driven sign-in. |
 | Create User | `createUser` | Create a new user in the Clerk instance. At least one identifier (email_address, phone_number or username) is normally required, subject to the instance's configured identifiers. Emails and phone numbers supplied here are NOT verified and NO verification message is sent. Use only synthetic example.com addresses when testing. Note: the Clerk API takes email_address and phone_number as ARRAYS; this action exposes the first (primary) value of each. |
@@ -89,6 +96,8 @@ Add Clerk from **Build → Integrations → Connectors** and connect an account,
 | Update User Metadata | `updateUserMetadata` | Deep-MERGE metadata into a user. Top-level keys present in the payload are merged into the existing metadata; set a key to null to remove it. Unlike Update User this does not replace the whole metadata object. |
 | Verify User Password | `verifyUserPassword` | Check a plaintext password against a user's stored password digest. Returns 200 {"verified":true} on match, 404 if the user has no password, 422 if the password does not match. SECURITY: the plaintext password is sent in the request body - do not log the request. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -105,6 +114,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Organization Invitation Created | `organizationInvitation.created` | Fires when an organization invitation is created. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'organizationInvitation.created' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
 | Organization Invitation Revoked | `organizationInvitation.revoked` | Fires when an organization invitation is revoked. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'organizationInvitation.revoked' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
 | Organization Membership Created | `organizationMembership.created` | Fires when an organization membership is created. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'organizationMembership.created' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
+
+<details>
+
+<summary>See 20 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Organization Membership Deleted | `organizationMembership.deleted` | Fires when an organization membership is deleted. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'organizationMembership.deleted' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
 | Organization Membership Updated | `organizationMembership.updated` | Fires when an organization membership is updated. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'organizationMembership.updated' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
 | Organization Updated | `organization.updated` | Fires when an organization is updated. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'organization.updated' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
@@ -125,3 +141,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Updated | `user.updated` | Fires when a user is updated. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'user.updated' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. PRIVACY: the payload carries end-user PII. |
 | Waitlist Entry Created | `waitlistEntry.created` | Fires when a waitlist entry is created. REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'waitlistEntry.created' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
 | Waitlist Entry Updated | `waitlistEntry.updated` | Fires when a waitlist entry is updated (for example invited or rejected). REGISTER IN THE CLERK DASHBOARD (the Backend API has no webhook-endpoint route): Dashboard &gt; your instance &gt; Configure &gt; Webhooks &gt; Endpoints &gt; Add Endpoint &gt; paste the fastn trigger URL &gt; tick 'waitlistEntry.updated' &gt; Create. Or open the Svix portal via POST /v1/webhooks/svix_url. payloadSchema spec-derived from Clerk's published webhook example; NOT captured from a real delivery. |
+
+</details>

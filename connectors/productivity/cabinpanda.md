@@ -5,6 +5,8 @@ hidden: true
 
 # CabinPanda
 
+<img src="../../.gitbook/assets/connectors/cabinpanda.png" alt="CabinPanda logo" width="64">
+
 CabinPanda is a data collection platform for building online forms, surveys and popups. This connector covers the CabinPanda REST API: forms (list, get, create, update, rename, duplicate, delete, fields), submissions (list, get, delete, public submit), form types and templates, webhooks (create, update, enable/disable, delete, activities, test and redelivery), workspaces, notifications, API tokens and the current user.
 
 | | |
@@ -12,8 +14,6 @@ CabinPanda is a data collection platform for building online forms, surveys and 
 | **Category** | [Productivity](README.md) |
 | **Website** | [cabinpanda.com](https://cabinpanda.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 28 |
-| **Events** | 1 |
 | **Slug** | `cabinpanda` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CabinPanda from **Build → Integrations → Connectors** and connect an acc
 | Get Form | `getForm` | Returns the full details of a single form by its key, including its settings, template and the list of fields with their keys, types and options. |
 | Get Form Submission | `getFormSubmission` | Returns a single submission of a form by the submission's uid, including all submitted field values and files. |
 | List API Tokens | `listApiTokens` | Lists the personal API tokens of the current user with their names, creation and expiry dates. Token values are never returned. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Field Types | `listFieldTypes` | Lists the available form field types (short answer, long answer, email, name, dropdown, file and so on) with their numeric ids and the attributes each type accepts, including validation rules and defaults. Field type ids are required when defining fields in Update Form. |
 | List Form Fields | `listFormFields` | Returns the field keys and labels of a form. Field keys are needed to build the 'fields' map when submitting a form. |
 | List Form Submissions | `listFormSubmissions` | Lists the submissions received by a form, newest first, with pagination. Each submission includes its id, uid and the submitted field values. |
@@ -52,6 +59,8 @@ Add CabinPanda from **Build → Integrations → Connectors** and connect an acc
 | Submit Form | `submitForm` | Submits a response to a form through the public submit endpoint. Pass the form key and a map of field key to value (field keys come from List Form Fields). Returns the uid of the new submission and triggers the form's notifications, integrations and webhooks. |
 | Update Form | `updateForm` | Replaces the definition of a form by key: its name, design template, settings ('detail') and fields, creating a new revision and optionally publishing it. This is a full replacement, so send the complete settings, template id and field list you want to keep (read them with Get Form first); omitted settings are reset to defaults, an omitted template clears the design and an omitted field list clears the fields. |
 | Update Webhook | `updateWebhook` | Replaces the settings of a form webhook: URL, delivery method, secret and SSL verification. This is a full replacement, so send every value you want to keep; an omitted secret is cleared and an omitted ssl flag resets to 1. Returns the updated webhook. |
+
+</details>
 
 ## Events
 

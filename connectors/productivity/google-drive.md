@@ -5,6 +5,8 @@ hidden: true
 
 # Google Drive
 
+<img src="../../.gitbook/assets/connectors/google-drive.png" alt="Google Drive logo" width="64">
+
 Google Drive API v3 — list, upload, download, copy, move, and manage files and folders. Supports shared drives, permissions, comments, and revisions.
 
 | | |
@@ -12,8 +14,6 @@ Google Drive API v3 — list, upload, download, copy, move, and manage files and
 | **Category** | [Productivity](README.md) |
 | **Website** | [drive.google.com](https://drive.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 66 |
-| **Events** | 7 |
 | **Slug** | `googleDrive` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Drive from **Build → Integrations → Connectors** and connect an a
 | Create Folder | `createFolder` | Create a new folder in Google Drive. |
 | Create Public Permission | `createPermission` | Create a public ("anyone") or domain-wide sharing permission on a file or folder. For sharing with a specific user or group by email, use Share With User instead. |
 | Create Reply | `createReply` | Add a reply to a comment on a file. |
+
+<details>
+
+<summary>See 56 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Decline Approval | `declineApproval` | Declines an approval. POST to files/{fileId}/approvals/{approvalId}:decline. Updates the requesting user's ReviewerResponse. Returns the drive#approval. |
 | Delete Comment | `deleteComment` | Delete a comment from a file. |
 | Delete Drive | `deleteDrive` | Permanently deletes a shared drive for which the user is an organizer. The shared drive cannot contain any untrashed items unless allowItemDeletion is true. driveId is a required path param. |
@@ -90,6 +97,8 @@ Add Google Drive from **Build → Integrations → Connectors** and connect an a
 | Upload File With Content | `uploadFile` | Create a new Drive file AND write its real byte content in a single multipart upload. Sets name, mimeType, parent folder, and the file body together. Use this instead of createFile whenever the file should contain content. Returns the created file's id, name, mimeType, size, and md5Checksum. |
 | Watch Changes | `watchChanges` | Subscribe to a drive-wide changes notification channel. POST changes/watch with a required pageToken (obtain via getStartPageToken) and a Channel body (id, type='web_hook', address). Google delivers X-Goog-Resource-State notifications to the address. Returns the Channel including resourceId, which together with the channel id is required to stop the channel. |
 | Watch File | `watchFile` | Subscribe to a notification channel for changes to a single file. POST files/{fileId}/watch with a Channel body (id, type='web_hook', address). Google delivers X-Goog-Resource-State notifications to the address. Returns the Channel including resourceId, which together with the channel id is required to stop the channel. |
+
+</details>
 
 ## Events
 

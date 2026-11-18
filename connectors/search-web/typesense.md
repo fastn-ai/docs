@@ -5,6 +5,8 @@ hidden: true
 
 # Typesense
 
+<img src="../../.gitbook/assets/connectors/typesense.png" alt="Typesense logo" width="64">
+
 Typesense is an open-source, typo-tolerant search engine. This connector wraps the Typesense Server API (v30.x) for managing collections, documents (index/upsert/update/import/export/search/multi_search), aliases, API keys, synonym sets, curation/override sets, stopwords, analytics rules and events, and cluster operations. Base URL is per-cluster; supply your cluster host and API key.
 
 | | |
@@ -12,8 +14,6 @@ Typesense is an open-source, typo-tolerant search engine. This connector wraps t
 | **Category** | [Search and web](README.md) |
 | **Website** | [typesense.org](https://typesense.org) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 82 |
-| **Events** | 0 |
 | **Slug** | `typesense` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Typesense from **Build → Integrations → Connectors** and connect an acco
 | Create NL Search Model | `createNlSearchModel` | Create a new NL search model. POST /nl_search_models |
 | Create Snapshot | `createSnapshot` | Create a point-in-time snapshot of the data directory for backups. POST /operations/snapshot?snapshot_path=... |
 | Debug | `debug` | Print debugging information including the Typesense server version. GET /debug |
+
+<details>
+
+<summary>See 72 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Alias | `deleteAlias` | Delete an alias. DELETE /aliases/{aliasName} |
 | Delete Analytics Rule | `deleteAnalyticsRule` | Delete an analytics rule by name. DELETE /analytics/rules/{ruleName} |
 | Delete API Key | `deleteApiKey` | Delete an API key by id. DELETE /keys/{keyId} |
@@ -106,3 +113,5 @@ Add Typesense from **Build → Integrations → Connectors** and connect an acco
 | Upsert Stopwords Set | `upsertStopwordsSet` | Create or update a stopwords set. PUT /stopwords/{setId} |
 | Upsert Synonym Set | `upsertSynonymSet` | Create or update a synonym set (top-level, shareable across collections, v30+). PUT /synonym_sets/{synonymSetName} |
 | Upsert Synonym Set Item | `upsertSynonymItem` | Create or update a single synonym item within a set. PUT /synonym_sets/{synonymSetName}/items/{itemId} |
+
+</details>

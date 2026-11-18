@@ -12,8 +12,6 @@ Open Trivia DB is a free, keyless, user-contributed trivia question database: ge
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [opentdb.com](https://opentdb.com) |
 | **Authentication** | No authentication |
-| **Actions** | 6 |
-| **Events** | 0 |
 | **Slug** | `openTriviaDb` |
 
 ## Use it

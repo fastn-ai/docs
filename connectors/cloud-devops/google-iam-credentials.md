@@ -5,6 +5,8 @@ hidden: true
 
 # Google IAM Service Account Credentials
 
+<img src="../../.gitbook/assets/connectors/google-iam-credentials.png" alt="Google IAM Service Account Credentials logo" width="64">
+
 Google IAM Service Account Credentials API (iamcredentials.googleapis.com v1). Creates short-lived credentials for a Google Cloud service account: OAuth 2.0 access tokens (generateAccessToken), OpenID Connect ID tokens (generateIdToken) and signatures over arbitrary bytes (signBlob). These actions act only on service accounts the connected user is allowed to impersonate (the user needs roles/iam.serviceAccountTokenCreator on the target service account). Authorizes with Google OAuth 2.0 using the scope https://www.googleapis.com/auth/iam.
 
 | | |
@@ -12,8 +14,6 @@ Google IAM Service Account Credentials API (iamcredentials.googleapis.com v1). C
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [iamcredentials.googleapis.com](https://iamcredentials.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `googleIamCredentials` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # Oracle Aconex
 
+<img src="../../.gitbook/assets/connectors/oracle-aconex.png" alt="Oracle Aconex logo" width="64">
+
 Oracle Aconex construction project management REST API (XML responses): projects, project and global directory, own user, document register search, document metadata, schema and event log. Auth: Basic Auth with an Aconex login + Integration ID (X-Application-Key header) on the user's Aconex instance host. Lobby OAuth (https://constructionandengineering.oraclecloud.com, resource https://api.aconex.com) needs an OAuth client registered by an Aconex customer or Oracle partner and is not added yet.
 
 | | |
@@ -12,8 +14,6 @@ Oracle Aconex construction project management REST API (XML responses): projects
 | **Category** | [Project management](README.md) |
 | **Website** | [aconex.com](https://aconex.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `oracleAconex` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Oracle Aconex from **Build → Integrations → Connectors** and connect an 
 | Get Open Task Count | `getTaskCount` | Get the number of tasks for the connected user across projects (GET /api/tasks/count). |
 | Get Organization | `getOrganization` | Get an organization's details (GET /api/organizations/{organizationId}). Use OrganizationId from Get Current User. |
 | Get Project User | `getProjectUser` | Get one user's details as seen in a project directory (GET /api/projects/{projectId}/users/{userId}). |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Documents | `listDocuments` | Search a project's document register (GET /api/projects/{projectId}/register). search_query is Lucene (e.g. doctype:Drawing). return_fields picks fields (e.g. docno,title,revision,statusid). Use search_type PAGED with page_number and page_size. |
 | List Mail | `listMail` | Search a project mailbox (GET /api/projects/{projectId}/mail, Mail API v2). mail_box is inbox, sentbox or draftbox. search_query is Lucene (e.g. corrtypeid:23). return_fields e.g. subject,fromuserfullname,sentdate,docno,corrtypeid. Use search_type PAGED with page_number and page_size. |
 | List Organization Users | `listOrganizationUsers` | List users of an organization (GET /api/organizations/{organizationId}/users). Needs organization admin rights. |
@@ -44,3 +51,5 @@ Add Oracle Aconex from **Build → Integrations → Connectors** and connect an 
 | Search Global Directory | `searchGlobalDirectory` | Search users in the Aconex global directory (GET /api/directory). Filters are optional wildcard matches; email is exact. Paged with page_number and page_size. |
 | Search Project Directory | `searchProjectDirectory` | Search users and groups in one Aconex project's directory (GET /api/projects/{projectId}/directory). Filters are optional; set show_groups false to return users only. |
 | Search Workflows By Number | `searchWorkflows` | Find workflows by number (GET /api/projects/{projectId}/workflows/search). workflow_number is a comma-separated list of up to 10, e.g. WF-000020,WF-000021. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Google Street View Publish
 
+<img src="../../.gitbook/assets/connectors/google-street-view-publish.png" alt="Google Street View Publish logo" width="64">
+
 Google Street View Publish API (streetviewpublish.googleapis.com v1). List and read the 360 photos a user has published to Google Street View / Google Maps (with places, pose, view counts and Maps publish status) and request an upload reference for a new 360 photo. Authorizes with Google OAuth 2.0 using the scope https://www.googleapis.com/auth/streetviewpublish.
 
 | | |
@@ -12,8 +14,6 @@ Google Street View Publish API (streetviewpublish.googleapis.com v1). List and r
 | **Category** | [Maps and location](README.md) |
 | **Website** | [streetviewpublish.googleapis.com](https://streetviewpublish.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `googleStreetViewPublish` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # CodeREADr
 
+<img src="../../.gitbook/assets/connectors/codereadr.png" alt="CodeREADr logo" width="64">
+
 CodeREADr is a barcode scanning platform for data collection, validation and ticket/asset tracking. This connector covers the complete CodeREADr API: services (scan workflows) with user authorizations and questions, validation databases and their barcode values (add, upsert, edit, delete, search, CSV upload), scan records and scan search, scan uploads, scan properties, app users, devices, questions and answer options, API limits, and the barcode generator. Responses are returned as the raw XML documents CodeREADr produces.
 
 | | |
@@ -12,8 +14,6 @@ CodeREADr is a barcode scanning platform for data collection, validation and tic
 | **Category** | [Productivity](README.md) |
 | **Website** | [codereadr.com](https://codereadr.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `codereadr` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CodeREADr from **Build → Integrations → Connectors** and connect an acco
 | Create Service | `createService` | Creates a new service (scan workflow) with the chosen validation method: record scans online or on-device, validate scans against a database online or on-device, forward scans to a postback URL, or display web content. Supports active periods, duplicate handling, upload emails, symbologies, auto-next scan, GPS, camera and manual entry restrictions, auto sync and scanner configuration. Responds with raw XML containing the new service id. |
 | Create User | `createUser` | Creates an app user. If the username is an email address the password is ignored and the user receives an invitation email to set their own; otherwise a password is required. Optionally limit how many devices the user may activate per billing period. Responds with raw XML containing the new user id. |
 | Delete Answer Options | `deleteAnswerOptions` | Removes one or more answer options from a question by answer ID. Responds with raw XML status. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Database | `deleteDatabase` | Deletes a validation database and all of its values. Responds with raw XML status. |
 | Delete Database Value | `deleteDatabaseValue` | Deletes a barcode value from a validation database. Responds with raw XML status. |
 | Delete Questions | `deleteQuestions` | Deletes one or more questions by ID (comma-separated list supported; the keyword all deletes every question). Responds with raw XML status. |
@@ -64,3 +71,5 @@ Add CodeREADr from **Build → Integrations → Connectors** and connect an acco
 | Upsert Database Value | `upsertDatabaseValue` | Inserts a barcode value into a validation database, or updates its response text and validity if it already exists, without checking its current state first. Responds with raw XML status. |
 | Upsert Multiple Database Values | `upsertMultipleDatabaseValues` | Inserts or updates up to 100 barcode values in one request. Global database_id and trim_value apply to every value that does not set its own. Responds with raw XML status. |
 | Validate User | `validateUser` | Checks an app user's username and password and, when valid, returns the user's ID, authorized services, device limit and creation date. Responds with raw XML. |
+
+</details>

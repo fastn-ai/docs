@@ -5,6 +5,8 @@ hidden: true
 
 # Tableau
 
+<img src="../../.gitbook/assets/connectors/tableau.png" alt="Tableau logo" width="64">
+
 Tableau Cloud and Tableau Server REST API. Manage sites, projects, workbooks, views, data sources, users, groups, extract refresh jobs and tasks, flows, subscriptions, favorites and webhooks. Sign in with username and password, or with a personal access token; fastn signs in and renews the Tableau session for you.
 
 | | |
@@ -12,8 +14,6 @@ Tableau Cloud and Tableau Server REST API. Manage sites, projects, workbooks, vi
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [tableau.com](https://tableau.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 67 |
-| **Events** | 22 |
 | **Slug** | `tableau` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Tableau from **Build → Integrations → Connectors** and connect an accoun
 | Create Webhook | `createWebhook` | Creates a webhook on the site that POSTs to a destination URL when the specified Tableau event fires. The event is specified via webhook-source (e.g. webhook-source-event-workbook-created) or the preferred 'event' attribute. |
 | Delete Data Source | `deleteDataSource` | Deletes the specified published data source from the site. Returns 204 No Content. |
 | Delete Extract Refresh Task | `deleteExtractRefreshTask` | Deletes the specified extract refresh task from the site. Returns 204 No Content. |
+
+<details>
+
+<summary>See 57 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Flow | `deleteFlow` | Deletes the specified flow from the site. Returns 204 No Content. |
 | Delete Group | `deleteGroup` | Deletes the specified group from the site. Returns 204 No Content. |
 | Delete Project | `deleteProject` | Deletes the specified project and all content within it. Returns 204 No Content. |
@@ -92,6 +99,8 @@ Add Tableau from **Build → Integrations → Connectors** and connect an accoun
 | Update User | `updateUser` | Updates a user's site role, full name or email. |
 | Update Workbook | `updateWorkbook` | Updates a workbook's name or whether sheets show as tabs. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -108,6 +117,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Data Source Updated | `DatasourceUpdated` | Fires when a data source is updated. |
 | Label Created | `LabelCreated` | Fires when a data quality/sensitivity label is created on a workbook or data source. |
 | Label Deleted | `LabelDeleted` | Fires when a label is deleted. |
+
+<details>
+
+<summary>See 12 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Label Updated | `LabelUpdated` | Fires when a label is updated. |
 | Site Created | `SiteCreated` | Fires when a site is created. |
 | Site Deleted | `SiteDeleted` | Fires when a site is deleted. |
@@ -120,3 +136,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Workbook Refresh Started | `WorkbookRefreshStarted` | Fires when an extract refresh for a workbook starts. |
 | Workbook Refresh Succeeded | `WorkbookRefreshSucceeded` | Fires when an extract refresh for a workbook completes successfully. |
 | Workbook Updated | `WorkbookUpdated` | Fires when a workbook is updated. |
+
+</details>

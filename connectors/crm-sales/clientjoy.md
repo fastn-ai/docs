@@ -5,6 +5,8 @@ hidden: true
 
 # Clientjoy
 
+<img src="../../.gitbook/assets/connectors/clientjoy.png" alt="Clientjoy logo" width="64">
+
 Clientjoy is an all-in-one client relationship suite for agencies and freelancers covering leads, clients, proposals, invoices and payments. This connector wraps the Clientjoy Public API v1: leads with stages and sources, customers, custom fields, items, taxes, currencies, workspace owners, proposals and proposal templates, invoices with payment modes and payment recording, cross-module search and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Clientjoy is an all-in-one client relationship suite for agencies and freelancer
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [clientjoy.io](https://clientjoy.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 34 |
-| **Events** | 8 |
 | **Slug** | `clientjoy` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Clientjoy from **Build → Integrations → Connectors** and connect an acco
 | Delete Lead | `deleteLead` | Permanently deletes a lead from the connected Clientjoy workspace. The lead id must belong to that workspace. Note a Clientjoy defect: the delete is applied but the API answers HTTP 500 with an HTML error page instead of a JSON envelope, so treat a 500 here as success and confirm with List Leads. A lead id that does not exist returns HTTP 400 with error_code internal_server_error and message 'response.Not found'. |
 | Delete Proposal | `deleteProposal` | Permanently deletes a proposal from the connected Clientjoy workspace. The proposal id must belong to that workspace. |
 | Delete Webhook | `deleteWebhook` | Removes a webhook subscription from the connected Clientjoy workspace so it stops delivering events. Use the id returned by Create Webhook. |
+
+<details>
+
+<summary>See 24 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Currencies | `listCurrencies` | Lists the currencies enabled in the connected Clientjoy workspace, flagging the default one. Use the ISO codes when creating leads, customers, proposals or invoices. |
 | List Custom Fields | `listCustomFields` | Lists the custom fields defined for one module in the connected Clientjoy workspace. The returned ids are what you pass in the custom_fields array when creating or updating leads and customers. |
 | List Customers | `listCustomers` | Lists the customers in the connected Clientjoy workspace with their contact, company, billing and shipping details. Results are paginated, ten customers per page. |
@@ -58,6 +65,8 @@ Add Clientjoy from **Build → Integrations → Connectors** and connect an acco
 | Update Lead | `updateLead` | Updates a lead in the connected Clientjoy workspace. Clientjoy replaces the lead with the object you send, so always submit the complete lead: currency, assignee and the primary contact name are rejected when missing, and any other field you leave out is cleared. |
 | Update Proposal | `updateProposal` | Updates a proposal in the connected Clientjoy workspace. Clientjoy replaces the proposal with the object you send, so always submit the complete record - module, recipient, title, discount settings, adjustment and send_email are rejected when missing. |
 | Update Proposal Status | `updateProposalStatus` | Changes the status of a proposal in the connected Clientjoy workspace, for example to mark it accepted, declined or expired. Setting the status to SENT can trigger Clientjoy's proposal email to the recipient. |
+
+</details>
 
 ## Events
 

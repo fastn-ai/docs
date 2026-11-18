@@ -5,6 +5,8 @@ hidden: true
 
 # Asana
 
+<img src="../../.gitbook/assets/connectors/asana.png" alt="Asana logo" width="64">
+
 Asana is a work management platform. Build, manage, and automate tasks, projects, goals, portfolios, teams, and workspaces via the Asana REST API v1.0.
 
 | | |
@@ -12,8 +14,6 @@ Asana is a work management platform. Build, manage, and automate tasks, projects
 | **Category** | [Project management](README.md) |
 | **Website** | [asana.com](https://asana.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 159 |
-| **Events** | 5 |
 | **Slug** | `asana` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Asana from **Build → Integrations → Connectors** and connect an account,
 | Add Item to Portfolio | `addItemForPortfolio` | Add a project or portfolio item to a portfolio. Returns an empty data object. |
 | Add Members to Portfolio | `addMembersForPortfolio` | Add members to a portfolio. Returns the full portfolio. |
 | Add Members to Project | `addMembersForProject` | Add members to a project. Returns the full project. |
+
+<details>
+
+<summary>See 149 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Project to Task | `addProjectForTask` | Add the task to a project, optionally at a specific position or section. Returns an empty data object. |
 | Add Supporting Relationship to Goal | `addSupportingRelationship` | Add a supporting resource (goal, project, task, or portfolio) to a goal. A goal gid yields a subgoal relationship; others yield supporting_work. Returns the goal relationship. |
 | Add Tag to Task | `addTagForTask` | Add a tag to a task. Returns an empty data object. |
@@ -183,6 +190,8 @@ Add Asana from **Build → Integrations → Connectors** and connect an account,
 | Update Tag | `updateTag` | Update an existing tag's name, color, or notes. |
 | Update Task | `updateTask` | Update an existing task. Only provided fields are changed (sparse update). Set nullable fields to clear them. |
 | Upload External Attachment | `createAttachmentForObject` | Attach an external file (by URL) to a task, project, or project_brief. Uses multipart/form-data with resource_subtype=external. For binary file uploads, use the Asana file-upload flow directly. Returns the attachment. |
+
+</details>
 
 ## Events
 

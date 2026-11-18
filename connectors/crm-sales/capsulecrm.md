@@ -5,6 +5,8 @@ hidden: true
 
 # Capsule CRM
 
+<img src="../../.gitbook/assets/connectors/capsulecrm.png" alt="Capsule CRM logo" width="64">
+
 Capsule CRM (API v2) connector: manage parties (people & organisations), opportunities, cases/projects, tasks, notes/entries, pipelines, milestones, users, teams, tags, custom field definitions, categories, tracks, boards, activity types, and REST hook webhooks. Base URL https://api.capsulecrm.com/api/v2.
 
 | | |
@@ -12,8 +14,6 @@ Capsule CRM (API v2) connector: manage parties (people & organisations), opportu
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [capsulecrm.com](https://capsulecrm.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 82 |
-| **Events** | 0 |
 | **Slug** | `capsulecrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Capsule CRM from **Build → Integrations → Connectors** and connect an ac
 | Create Opportunity | `createOpportunity` | Create a sales opportunity. Requires a linked party and a milestone. Body wrapped under 'opportunity'. |
 | Create Party | `createParty` | Create a person or organisation. For type=person supply firstName/lastName; for type=organisation supply name. Body is wrapped under 'party'. |
 | Create Pipeline | `createPipeline` | Create a sales pipeline with its milestones. Body wrapped under 'pipeline'. |
+
+<details>
+
+<summary>See 72 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create REST Hook | `createRestHook` | Subscribe a REST hook (webhook). When the event fires, Capsule POSTs a payload to targetUrl. Body wrapped under 'restHook'. Max 20 hooks per account. |
 | Create Tag | `createTag` | Create a tag definition for an entity type. Body wrapped under 'tag'. |
 | Create Task | `createTask` | Create a task, optionally linked to a party, opportunity or case. Requires description. Body wrapped under 'task'. |
@@ -106,3 +113,5 @@ Add Capsule CRM from **Build → Integrations → Connectors** and connect an ac
 | Update Pipeline | `updatePipeline` | Update a pipeline by id. Body wrapped under 'pipeline'. |
 | Update Tag | `updateTag` | Update a tag definition by id for an entity type. Body wrapped under 'tag'. |
 | Update Task | `updateTask` | Update a task by id. Set status to COMPLETED to mark it done. Body wrapped under 'task'. |
+
+</details>

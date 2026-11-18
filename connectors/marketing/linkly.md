@@ -5,6 +5,8 @@ hidden: true
 
 # Linkly
 
+<img src="../../.gitbook/assets/connectors/linkly.png" alt="Linkly logo" width="64">
+
 Linkly URL shortener and click analytics. Create, update, list and delete branded short links; read click analytics and breakdown counters; manage workspaces, workspace members, custom domains and click webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Linkly URL shortener and click analytics. Create, update, list and delete brande
 | **Category** | [Marketing](README.md) |
 | **Website** | [linklyhq.com](https://linklyhq.com) |
 | **Authentication** | API key |
-| **Actions** | 24 |
-| **Events** | 4 |
 | **Slug** | `linkly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Linkly from **Build → Integrations → Connectors** and connect an account
 | Delete Workspace Webhook | `deleteWorkspaceWebhook` | Unsubscribes a workspace webhook endpoint. Linkly identifies a webhook by its own URL, so pass the endpoint URL exactly as List Workspace Webhooks returns it (for example https://example.com/hook); it is percent-encoded into the path automatically. Linkly answers 200 with an empty body whether or not anything matched, so confirm removal with List Workspace Webhooks. |
 | Get Click Analytics | `getClickAnalytics` | Returns click analytics for a workspace as a time series. Without a pivot Linkly returns {"traffic":[{"t":date,"y":clicks}]}; with pivot=link_id it returns {"data":[{"date","clicks":{link_id:count}}],"links":[...]} so each link can be charted separately. Filter by link, date range, country, platform, referer or ISP, exclude or include bots, count unique visitors only, and choose JSON or CSV output. |
 | Get Click Counter | `getClickCounter` | Returns a click breakdown for a workspace grouped by one dimension, as a total plus a list of values with their click counts. Supply start and end: without an explicit window this route reports total 0 even when clicks exist. Linkly accepts only these counter names and answers 400 {"error":"Invalid counter"} for anything else: country, city, region, platform, referer, isp, link_id, utm_source, utm_medium, utm_campaign, utm_term, utm_content. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Current User | `getCurrentUser` | Returns the Linkly user account that owns the API key, including id, name, email, language and account attribution. Useful as a connection health check because it needs no inputs. |
 | Get Link | `getLink` | Retrieves a single short link by id. The workspace_id query parameter is mandatory; omitting it returns 400 with code 'workspace_required'. |
 | Get Workspace | `getWorkspace` | Retrieves one Linkly workspace by id, including its plan usage counters, enabled feature flags, configured webhook endpoints, link and domain counts, and onboarding state. |
@@ -48,6 +55,8 @@ Add Linkly from **Build → Integrations → Connectors** and connect an account
 | Remove Workspace User | `removeWorkspaceUser` | Removes a member from a Linkly workspace by workspace membership id (the 'id' field from List Workspace Users, not the underlying user id). Removing the last remaining member also removes the workspace itself, which is the only API-side way to tear down a workspace created by Create Workspace. |
 | Save Link | `saveLink` | Creates a short link, or updates an existing one when 'id' is supplied. Returns the full link record including its generated short URL in 'full_url'. Fields belonging to paid Linkly features (UTM and Open Graph overrides, link expiry, cloaking, public analytics, tracking pixels, HTML injection, app deep links, custom slugs) are silently ignored on plans where the matching flag in the workspace 'features' map is false; call Get Workspace to see which are enabled. |
 | Save Links Bulk | `saveLinksBulk` | Creates or updates many short links in one request. Linkly requires a bare JSON array as the request body here, so pass the array serialized as a string in links_json. Each entry accepts the same fields as Save Link; an entry with 'id' updates that link, one without creates a new link. Returns one result per entry with its index, status and the resulting link record. |
+
+</details>
 
 ## Events
 

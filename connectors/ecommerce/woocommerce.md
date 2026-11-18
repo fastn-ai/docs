@@ -5,6 +5,8 @@ hidden: true
 
 # WooCommerce
 
+<img src="../../.gitbook/assets/connectors/woocommerce.png" alt="WooCommerce logo" width="64">
+
 WooCommerce is the open-source e-commerce plugin for WordPress. This connector covers the WooCommerce REST API v3 (wp-json/wc/v3) of your own store: products, variations, attributes and terms, categories, tags, shipping classes, reviews, custom fields, orders, order notes, refunds, order actions, coupons, customers, reports, tax rates and classes, webhooks, settings, payment gateways, shipping zones, locations and methods, system status and tools, and store data (continents, countries, currencies).
 
 | | |
@@ -12,8 +14,6 @@ WooCommerce is the open-source e-commerce plugin for WordPress. This connector c
 | **Category** | [E-commerce](README.md) |
 | **Website** | [woocommerce.com](https://woocommerce.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 139 |
-| **Events** | 15 |
 | **Slug** | `woocommerce` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WooCommerce from **Build → Integrations → Connectors** and connect an ac
 | Batch Update Product Reviews | `batchUpdateProductReviews` | Creates, updates and deletes up to 100 product reviews in one request. |
 | Batch Update Product Shipping Classes | `batchUpdateProductShippingClasses` | Creates, updates and deletes up to 100 product shipping classes in one request. |
 | Batch Update Product Tags | `batchUpdateProductTags` | Creates, updates and deletes up to 100 product tags in one request. |
+
+<details>
+
+<summary>See 129 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Batch Update Product Variations | `batchUpdateProductVariations` | Creates, updates and deletes up to 100 variations of one variable product in a single request. |
 | Batch Update Products | `batchUpdateProducts` | Creates, updates and deletes up to 100 products in one request. |
 | Batch Update Setting Options | `batchUpdateSettingOptions` | Updates several setting options of one settings group in a single request. |
@@ -164,6 +171,8 @@ Add WooCommerce from **Build → Integrations → Connectors** and connect an ac
 | Update Tax Rate | `updateTaxRate` | Makes changes to a tax rate. Only the fields you send are changed. |
 | Update Webhook | `updateWebhook` | Makes changes to a webhook, such as pausing it or changing its topic. Only the fields you send are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -180,8 +189,17 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Order Created | `order.created` | Sent when an order is created. The body is the full order object, as returned by Get Order. Captured from a live WooCommerce 11.3 delivery. Headers carry X-WC-Webhook-Topic (order.created) and X-WC-Webhook-Signature (base64 HMAC-SHA256 of the body with the webhook secret). |
 | Order Deleted | `order.deleted` | Sent when an order is deleted (trashed or deleted permanently). The body holds only the order ID. Captured from a live WooCommerce 11.3 delivery. |
 | Order Restored | `order.restored` | Sent when an order is restored from the trash. Per the WooCommerce docs the body is the full order object (same fields as order.updated). Not captured live in testing. |
+
+<details>
+
+<summary>See 5 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Order Updated | `order.updated` | Sent when an order is updated (including status changes and refunds). The body is the full order object, as returned by Get Order. Captured from a live WooCommerce 11.3 delivery. Headers carry X-WC-Webhook-Topic (order.updated) and X-WC-Webhook-Signature. |
 | Product Created | `product.created` | Sent when a product is created. The body is the full product object, as returned by Get Product. Captured from a live WooCommerce 11.3 delivery. Headers carry X-WC-Webhook-Topic (product.created) and X-WC-Webhook-Signature (base64 HMAC-SHA256 of the body with the webhook secret). |
 | Product Deleted | `product.deleted` | Sent when a product is deleted (trashed or deleted permanently). The body holds only the product ID. Captured from a live WooCommerce 11.3 delivery. |
 | Product Restored | `product.restored` | Sent when a product is restored from the trash. Per the WooCommerce docs the body is the full product object (same fields as product.updated). Not captured live in testing. |
 | Product Updated | `product.updated` | Sent when a product is updated. The body is the full product object, as returned by Get Product. Captured from a live WooCommerce 11.3 delivery. Headers carry X-WC-Webhook-Topic (product.updated) and X-WC-Webhook-Signature. |
+
+</details>

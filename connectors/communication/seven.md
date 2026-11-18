@@ -5,6 +5,8 @@ hidden: true
 
 # seven
 
+<img src="../../.gitbook/assets/connectors/seven.png" alt="seven logo" width="64">
+
 seven (seven.io) is a European SMS, RCS, WhatsApp Business and voice messaging gateway. Send SMS, RCS and WhatsApp messages, place text-to-speech voice calls, manage contacts and groups, look up and validate phone numbers (format, HLR, MNP, CNAM, RCS capabilities), book and manage virtual numbers, query logbooks, delivery status reports, pricing, analytics and account balance, administer subaccounts, and register webhooks for inbound messages and delivery events.
 
 | | |
@@ -12,8 +14,6 @@ seven (seven.io) is a European SMS, RCS, WhatsApp Business and voice messaging g
 | **Category** | [Communication](README.md) |
 | **Website** | [seven.io](https://seven.io) |
 | **Authentication** | API key |
-| **Actions** | 50 |
-| **Events** | 9 |
 | **Slug** | `seven` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add seven from **Build → Integrations → Connectors** and connect an account,
 | Delete Group | `deleteGroup` | Delete a contact group from your seven account. By default the contacts in the group are kept and only lose their membership; set delete_contacts to true to delete the member contacts as well. This cannot be undone. |
 | Delete Scheduled SMS | `deleteScheduledSms` | Cancel one or more SMS that were scheduled with a delay and have not yet been dispatched, so they are never sent. Pass the message ids returned by Send SMS. Returns the ids that were actually deleted. |
 | Delete Subaccount | `deleteSubaccount` | Permanently delete a subaccount of your seven main account by its id. This cannot be undone. |
+
+<details>
+
+<summary>See 40 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Webhook | `deleteWebhook` | Remove a webhook from your seven account so it stops receiving deliveries. Identify it by its id, or alternatively by the same target_url, event_type and request_method it was created with. |
 | Delete WhatsApp Message | `deleteWhatsappMessage` | Delete a WhatsApp message previously sent through seven, identified by its message id. Returns error code 404 when the id does not exist or does not belong to your account. |
 | Format Phone Number | `formatPhoneNumber` | Normalise a phone number and return it in national and international format together with its country and the carrier the number range belongs to (without porting information). This lookup is free of charge and does not query the mobile network. Multiple numbers can be passed comma-separated. |
@@ -74,6 +81,8 @@ Add seven from **Build → Integrations → Connectors** and connect an account,
 | Update Contact | `updateContact` | Change one or more properties of an existing seven contact and return the updated contact. IMPORTANT: seven clears mobile_number and home_number whenever they are not included in the request, even though every other omitted field is preserved. Always resend the contact's phone numbers along with your changes, or they will be wiped. This is seven API behaviour, reproducible outside this connector. Group membership is sent as a repeated groups[] form field and replaces the existing membership, so this action sets exactly one group per call. |
 | Update Group | `updateGroup` | Rename an existing contact group in your seven account. Returns the updated group object. |
 | Validate Sender For Voice | `validateSenderForVoice` | Start validation of a phone number so it can be used as a caller ID for voice calls. seven places a call to the number and returns a code that must then be entered on the telephone keypad using DTMF. Calling this rings a real phone. If the number is already validated the response carries its id together with the message that the sender ID is already saved. |
+
+</details>
 
 ## Events
 

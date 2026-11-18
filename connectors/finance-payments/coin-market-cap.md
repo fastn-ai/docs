@@ -5,6 +5,8 @@ hidden: true
 
 # CoinMarketCap
 
+<img src="../../.gitbook/assets/connectors/coin-market-cap.png" alt="CoinMarketCap logo" width="64">
+
 CoinMarketCap is the most-referenced source of cryptocurrency market data, covering real-time and historical prices, market capitalisation, OHLCV candles, exchange and on-chain DEX data, derivatives, tokenised real-world assets and CMC's proprietary indices. This connector covers the CoinMarketCap Pro API: cryptocurrency listings, quotes, metadata, market pairs, OHLCV, categories, airdrops and trending; exchange listings, quotes, market pairs and assets; global metrics, Fear and Greed and Altcoin Season indices; the CMC 100 and CMC 20 indices; content and community feeds; DEX token, pool, holder, liquidity and K-line data; derivatives and liquidations; real-world assets; CMC AI insights; and the fiat map, price conversion and API key utilities.
 
 | | |
@@ -12,8 +14,6 @@ CoinMarketCap is the most-referenced source of cryptocurrency market data, cover
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [coinmarketcap.com](https://coinmarketcap.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 90 |
-| **Events** | 0 |
 | **Slug** | `coinMarketCap` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CoinMarketCap from **Build → Integrations → Connectors** and connect an 
 | Get Cryptocurrency Category | `getCryptocurrencyCategory` | Returns a single cryptocurrency category with its aggregate market statistics and a paginated list of the coins it contains, each with the latest market quote. |
 | Get Cryptocurrency ID Map | `getCryptocurrencyIdMap` | Returns a mapping of all cryptocurrencies to their unique CoinMarketCap ids, along with name, symbol, slug, listing status and the first and last dates historical data is available for. Use these ids rather than symbols to identify assets on the other endpoints. |
 | Get Cryptocurrency Metadata | `getCryptocurrencyMetadata` | Returns static metadata for one or more cryptocurrencies, including logo, description, official website and social links, technical documentation, category, tags and contract addresses. |
+
+<details>
+
+<summary>See 80 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Cryptocurrency Price Performance Stats | `getCryptocurrencyPricePerformanceStats` | Returns price performance statistics for one or more cryptocurrencies over the requested time periods, including the open, high, low and close prices, percent change and return on investment for each window. |
 | Get DEX Platform Detail | `getDexPlatformDetail` | Returns detail for a single blockchain platform supported by the DEX endpoints, including its native currency, explorer and aggregate on-chain activity. |
 | Get DEX Token Detail | `getDexTokenDetail` | Returns the full on-chain profile of a DEX token by blockchain platform and contract address, including price, liquidity, market cap, holder count and pool information. |
@@ -114,3 +121,5 @@ Add CoinMarketCap from **Build → Integrations → Connectors** and connect an 
 | List Trending Gainers And Losers | `listTrendingGainersAndLosers` | Returns the biggest cryptocurrency gainers and losers over the selected time window, ranked by percent change, with their latest market data. |
 | Query DEX Token Liquidity | `queryDexTokenLiquidity` | Returns a time series of a DEX token's pooled liquidity at the requested interval, for charting how liquidity has moved. |
 | Search DEX Tokens | `searchDexTokens` | Searches DEX tokens by name, symbol or contract address across supported blockchains and returns the matching tokens with their platform and market data. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Buildkite
 
+<img src="../../.gitbook/assets/connectors/buildkite.png" alt="Buildkite logo" width="64">
+
 Buildkite is a CI/CD platform that runs build pipelines on your own or Buildkite-hosted agents. This connector covers the Buildkite REST API v2: organizations, members, invitations, API and pipeline settings, notification services, repository connections and audit events; pipelines, pipeline schedules, pipeline templates and rules; builds, jobs, job logs, job environment variables, annotations and artifacts; agents; clusters with their queues, agent tokens, agent images, secrets, maintainers, network ranges and cache volumes; teams with their members, pipelines and suites; package registries, registry tokens and packages; Test Engine suites, tests, runs, quarantine and execution tags; plus emojis, rate limits, meta information and access-token management.
 
 | | |
@@ -12,8 +14,6 @@ Buildkite is a CI/CD platform that runs build pipelines on your own or Buildkite
 | **Category** | [Developer tools](README.md) |
 | **Website** | [buildkite.com](https://buildkite.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 190 |
-| **Events** | 18 |
 | **Slug** | `buildkite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Buildkite from **Build → Integrations → Connectors** and connect an acco
 | Create Agent Image | `createAgentImage` | Creates a custom hosted agent image for a cluster by layering a Dockerfile on top of the Buildkite-managed base image. The Dockerfile must not contain a FROM instruction. |
 | Create Agent Token | `createAgentToken` | Creates an agent token that agents use to register with a cluster. The token secret is returned once, in this response only, so store it immediately. |
 | Create Build | `createBuild` | Triggers a new build on a pipeline for the given commit and branch. |
+
+<details>
+
+<summary>See 180 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Build Annotation | `createBuildAnnotation` | Creates an annotation on a build, shown at the top of the build page. Reuse a context value with Append to add to an existing annotation instead of creating another one. |
 | Create Cluster | `createCluster` | Creates a cluster to group agent queues, agent tokens and the pipelines permitted to run on them. |
 | Create Cluster Maintainer | `createClusterMaintainer` | Grants cluster maintainer permissions to a user or a team. Supply either User UUID or Team UUID, not both. |
@@ -215,6 +222,8 @@ Add Buildkite from **Build → Integrations → Connectors** and connect an acco
 | Update Test Labels | `updateTestLabels` | Adds labels to, or removes labels from, a test in a Test Engine suite. |
 | Update Test Suite | `updateTestSuite` | Updates a Test Engine suite's name, default branch, appearance or OIDC policy. Only the fields you supply are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -231,6 +240,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Build Failing | `build.failing` | A build has entered a failing state because one of its jobs failed, while other jobs are still running. |
 | Build Finished | `build.finished` | A build has finished. Check the build state for the outcome, and blocked: true to tell a build waiting on a manual step apart from a completed one. |
 | Build Running | `build.running` | A build has started running. |
+
+<details>
+
+<summary>See 8 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Build Scheduled | `build.scheduled` | A build has been scheduled and is waiting for an agent. |
 | Build Skipped | `build.skipped` | A build has been skipped, which happens when intermediate build skipping is enabled and a newer build supersedes it. |
 | Job Activated | `job.activated` | A block step job has been unblocked through the Buildkite interface or the API. |
@@ -239,3 +255,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Job Scheduled | `job.scheduled` | A job has been scheduled and is waiting to be dispatched to an agent. |
 | Job Started | `job.started` | A command step job has started running on an agent. |
 | Ping | `ping` | Sent when the webhook notification service settings are changed, and when the service is first created. Use it to confirm the endpoint is reachable. |
+
+</details>

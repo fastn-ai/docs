@@ -5,6 +5,8 @@ hidden: true
 
 # Payhip
 
+<img src="../../.gitbook/assets/connectors/payhip.png" alt="Payhip logo" width="64">
+
 Payhip is an e-commerce platform for selling digital downloads, courses, memberships and coupons. This connector covers the complete Payhip public REST API: coupon management (create, list, retrieve) and software license key enforcement on both the current product-secret-key API (v2) and the legacy account API key API (v1) - verify, enable, disable and adjust usage counters. Payhip store events (paid, refunded, subscription.created, subscription.deleted) are delivered as webhooks configured in the Payhip dashboard.
 
 | | |
@@ -12,8 +14,6 @@ Payhip is an e-commerce platform for selling digital downloads, courses, members
 | **Category** | [E-commerce](README.md) |
 | **Website** | [payhip.com](https://payhip.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 13 |
-| **Events** | 4 |
 | **Slug** | `payhip` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add Payhip from **Build → Integrations → Connectors** and connect an account
 | Get Coupon | `getCoupon` | Retrieves a single discount coupon from your Payhip account by its numeric coupon ID. |
 | Increase Legacy License Key Usage | `increaseLegacyLicenseKeyUsage` | Increments the usage counter of a software license key through Payhip's legacy (v1) license system. Authenticates with your account API key and requires the product link alongside the key. |
 | Increase License Key Usage | `increaseLicenseKeyUsage` | Increments the usage counter of a Payhip software license key by one, so you can enforce how many times a customer may activate your software. Authenticate with the Product Secret Key auth method for the product that issued the key; the account API key is also accepted. |
+
+<details>
+
+<summary>See 3 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Coupons | `listCoupons` | Retrieves a paginated list of all discount coupons created on your Payhip account. Use limit and offset to page through the results. |
 | Verify Legacy License Key | `verifyLegacyLicenseKey` | Verifies a software license key through Payhip's legacy (v1) license system, which authenticates with your account API key and requires the product link alongside the key. Use this when your products predate the product secret key system. When the key cannot be verified Payhip returns an empty data array instead of an error. |
 | Verify License Key | `verifyLicenseKey` | Verifies a software license key issued by Payhip and returns the purchase it belongs to. Authenticate the connection with the Product Secret Key auth method for the product that issued the key; the account API key is also accepted. When the key cannot be verified Payhip returns an empty data array instead of an error. |
+
+</details>
 
 ## Events
 

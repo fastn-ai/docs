@@ -5,6 +5,8 @@ hidden: true
 
 # TaxJar
 
+<img src="../../.gitbook/assets/connectors/taxjar.png" alt="TaxJar logo" width="64">
+
 Sales tax automation with TaxJar. Calculate sales tax for orders, record order and refund transactions, manage exempt customers, look up tax rates and nexus regions, browse product tax categories, and validate customer addresses.
 
 | | |
@@ -12,8 +14,6 @@ Sales tax automation with TaxJar. Calculate sales tax for orders, record order a
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [taxjar.com](https://taxjar.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `taxjar` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add TaxJar from **Build → Integrations → Connectors** and connect an account
 | List Customers | `listCustomers` | Lists the unique identifiers of all exempt customers stored in TaxJar. Use Show Customer to retrieve the full details of any returned customer. |
 | List Nexus Regions | `listNexusRegions` | Lists the regions where you have nexus configured in TaxJar, meaning you are obliged to collect and remit sales tax there. |
 | List Order Transactions | `listOrderTransactions` | Lists the unique identifiers of order transactions recorded in TaxJar. Filter by an exact transaction date or a date range. Either transaction_date or both from_transaction_date and to_transaction_date must be supplied. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Refund Transactions | `listRefundTransactions` | Lists the unique identifiers of refund transactions recorded in TaxJar. Filter by an exact transaction date or a date range. Either transaction_date or both from_transaction_date and to_transaction_date must be supplied. |
 | List Tax Categories | `listTaxCategories` | Lists all product tax categories supported by TaxJar. Use the returned product_tax_code on order line items so items such as clothing, food, or software are taxed at the correct reduced or exempt rate. |
 | Show Customer | `showCustomer` | Retrieves a single exempt customer from TaxJar by its unique identifier, including the exemption type and the regions where the customer is exempt. |
@@ -45,3 +52,5 @@ Add TaxJar from **Build → Integrations → Connectors** and connect an account
 | Update Order Transaction | `updateOrderTransaction` | Updates an existing order transaction in TaxJar. Only the fields you supply are sent, so you can amend individual amounts, addresses, or line items without resubmitting the whole order. |
 | Update Refund Transaction | `updateRefundTransaction` | Updates an existing refund transaction in TaxJar. Only the fields you supply are sent, so you can amend individual amounts, addresses, or line items without resubmitting the whole refund. |
 | Validate Address | `validateAddress` | Validates a customer address and returns a collection of matching, corrected addresses with ZIP+4 precision. Only US addresses can be validated. Requires a TaxJar Professional or higher subscription, and this endpoint is not available in the sandbox environment. |
+
+</details>

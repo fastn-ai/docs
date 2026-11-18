@@ -5,6 +5,8 @@ hidden: true
 
 # EmailOctopus
 
+<img src="../../.gitbook/assets/connectors/emailoctopus.png" alt="EmailOctopus logo" width="64">
+
 EmailOctopus is an email marketing and newsletter sending platform. This connector covers the EmailOctopus v2 REST API: list and contact management (including custom fields), campaign retrieval and reporting, and automation triggering.
 
 | | |
@@ -12,8 +14,6 @@ EmailOctopus is an email marketing and newsletter sending platform. This connect
 | **Category** | [Marketing](README.md) |
 | **Website** | [emailoctopus.com](https://emailoctopus.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 25 |
-| **Events** | 0 |
 | **Slug** | `emailoctopus` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add EmailOctopus from **Build → Integrations → Connectors** and connect an a
 | Delete Field | `deleteField` | Permanently deletes a custom contact field from a list. |
 | Delete List | `deleteList` | Permanently deletes a contact list and all of its contacts. |
 | Delete Tag | `deleteTag` | Permanently deletes a contact tag from a list, removing it from every contact that carries it. |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Campaign | `getCampaign` | Retrieves a single email campaign by its ID. |
 | Get Campaign Contact Reports | `getCampaignContactReports` | Retrieves the list of contacts matching a specific engagement status (e.g. opened, clicked, bounced) for a campaign, paginated. |
 | Get Campaign Links Report | `getCampaignLinksReport` | Retrieves the click counts for each link contained in a campaign's content. |
@@ -49,3 +56,5 @@ Add EmailOctopus from **Build → Integrations → Connectors** and connect an a
 | Update Field | `updateField` | Updates an existing custom contact field's label, tag, type, or fallback value. |
 | Update List | `updateList` | Updates the name of an existing contact list. |
 | Update Tag | `updateTag` | Renames an existing contact tag on a list. The rename applies to every contact currently carrying the tag. |
+
+</details>

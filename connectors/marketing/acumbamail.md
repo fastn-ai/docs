@@ -5,6 +5,8 @@ hidden: true
 
 # Acumbamail
 
+<img src="../../.gitbook/assets/connectors/acumbamail.png" alt="Acumbamail logo" width="64">
+
 Acumbamail is a Spanish email and SMS marketing platform. This connector covers the full Acumbamail v1 API: subscriber lists, subscribers and merge fields, email campaigns and their statistics, templates, SMS campaigns, transactional SMTP email, and list and SMTP webhook configuration.
 
 | | |
@@ -12,8 +14,6 @@ Acumbamail is a Spanish email and SMS marketing platform. This connector covers 
 | **Category** | [Marketing](README.md) |
 | **Website** | [acumbamail.com](https://acumbamail.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 54 |
-| **Events** | 7 |
 | **Slug** | `acumbamail` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Acumbamail from **Build → Integrations → Connectors** and connect an acc
 | Create List | `createList` | Creates a new subscriber list. Acumbamail requires the sender's postal identity on the list for anti-spam compliance, so company, country, city, address and phone are part of the call. Rate limit applies. Requires a paid Acumbamail plan. |
 | Create Template | `createTemplate` | Creates a reusable email template from HTML. Note that the Acumbamail API exposes no delete-template endpoint, so a template created here can only be removed from the Acumbamail web interface. Rate limit: 10 requests per minute. |
 | Delete All Subscribers | `deleteAllSubscribers` | DANGER - removes EVERY subscriber from a list in one call, irreversibly. The list itself is kept. There is no selective form of this call and no confirmation step. Acumbamail runs it in the background and it can take minutes on a large list; poll Get List Stats until total_subscribers reaches 0 to know it has finished. Rate limit: 10 requests per minute. Requires a paid Acumbamail plan. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete List | `deleteList` | Permanently deletes a subscriber list and everything in it. This cannot be undone. Rate limit: 10 requests per minute. Requires a paid Acumbamail plan. |
 | Delete Subscriber | `deleteSubscriber` | Permanently removes one subscriber from a list by email address. To stop mailing someone while keeping their record, use Unsubscribe Subscriber instead. Requires a paid Acumbamail plan. |
 | Duplicate Template | `duplicateTemplate` | Creates a copy of an existing template under a new name. Note that the Acumbamail API exposes no delete-template endpoint, so the copy can only be removed from the Acumbamail web interface. Rate limit: 10 requests per minute. Requires a paid Acumbamail plan. |
@@ -78,6 +85,8 @@ Add Acumbamail from **Build → Integrations → Connectors** and connect an acc
 | Send Transactional Email | `sendOne` | DANGER - sends one real transactional email to a real inbox and consumes an SMTP credit. It cannot be recalled. Supply either Body as HTML or a Template ID. Setting Program Date schedules it instead of sending immediately, so omitting that field means the message goes out now. Acumbamail requires the SMTP service to be activated on the account. Requires a paid Acumbamail plan. |
 | Send Transactional Emails | `sendTransactionalEmails` | DANGER - sends one or more real transactional emails through Acumbamail's SMTP service. Every message in the batch is delivered to a real inbox and cannot be recalled, and each consumes an SMTP credit. Acumbamail requires the SMTP service to be activated on the account before this works. Requires a paid Acumbamail plan. |
 | Unsubscribe Subscriber | `unsubscribeSubscriber` | Marks a subscriber as unsubscribed on a list so they stop receiving campaigns, while keeping their record. Prefer this over Delete Subscriber when you need to retain the suppression. Requires a paid Acumbamail plan. |
+
+</details>
 
 ## Events
 

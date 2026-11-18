@@ -5,6 +5,8 @@ hidden: true
 
 # Sendcloud
 
+<img src="../../.gitbook/assets/connectors/sendcloud.png" alt="Sendcloud logo" width="64">
+
 Sendcloud shipping and parcel automation platform. Create and manage parcels, shipping methods and products, labels, tracking, sender addresses, returns, integrations, invoices, brands, and webhook (integration) configuration via the Sendcloud v2 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Sendcloud shipping and parcel automation platform. Create and manage parcels, sh
 | **Category** | [E-commerce](README.md) |
 | **Website** | [sendcloud.com](https://sendcloud.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 47 |
-| **Events** | 0 |
 | **Slug** | `sendcloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Sendcloud from **Build → Integrations → Connectors** and connect an acco
 | Create Parcel | `createParcel` | Create a single parcel (shipment). Optionally announce it and request a shipping label by setting request_label to true. The parcel object is sent under the required 'parcel' wrapper. |
 | Create Parcels (Bulk) | `createParcelsBulk` | Create multiple parcels in one request. The parcels are sent under the required 'parcels' array wrapper. Each parcel has the same shape as Create Parcel. |
 | Delete Integration Shipment | `deleteIntegrationShipment` | Delete a shipment from an integration's feed. Provide either shipment_uuid, or both external_order_id and external_shipment_id. |
+
+<details>
+
+<summary>See 37 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Order (v3) | `deleteOrder` | Delete an order by its Sendcloud ID via the API v3. |
 | Get Brand | `getBrand` | Retrieve a single brand by its ID, including branding colors, logos, domain, and enabled tracking/returns features. |
 | Get Integration | `getIntegration` | Retrieve a single integration by its ID, including webhook and service point configuration. |
@@ -71,3 +78,5 @@ Add Sendcloud from **Build → Integrations → Connectors** and connect an acco
 | Update Integration | `updateIntegration` | Fully update an integration (all fields required). Replaces the integration's shop details, webhook configuration and service point settings. Use Partially Update Integration for partial changes. |
 | Update Order (v3) | `updateOrder` | Partially update an order via the API v3. Only the fields you provide are updated. To add or remove order items, use Create or Update Orders instead. |
 | Update Parcel | `updateParcel` | Update an existing, unannounced parcel. Provide the parcel object including its id. Can also announce and request a label by setting request_label to true. The parcel object is sent under the required 'parcel' wrapper. |
+
+</details>

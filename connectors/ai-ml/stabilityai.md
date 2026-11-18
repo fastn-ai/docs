@@ -5,6 +5,8 @@ hidden: true
 
 # Stability AI
 
+<img src="../../.gitbook/assets/connectors/stabilityai.png" alt="Stability AI logo" width="64">
+
 Stability AI generative media API. Text-to-image (Stable Image Ultra, Core, SD3.5), image editing (inpaint, outpaint, erase, search-and-replace, search-and-recolor, remove-background, replace-background-and-relight), upscaling (fast, conservative, creative), structural/style control, async results polling, Stable Audio 2 text-to-audio and audio-to-audio, 3D generation (Stable Fast 3D, Stable Point Aware 3D), plus v1 legacy generation and account/balance reads.
 
 | | |
@@ -12,8 +14,6 @@ Stability AI generative media API. Text-to-image (Stable Image Ultra, Core, SD3.
 | **Category** | [AI and ML](README.md) |
 | **Website** | [stability.ai](https://stability.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 27 |
-| **Events** | 0 |
 | **Slug** | `stabilityai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Stability AI from **Build → Integrations → Connectors** and connect an a
 | Control - Style Transfer | `controlStyleTransfer` | Apply the visual aesthetic of a style image onto an init (subject) image without generating new content. Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary); every field declared in the input contract is now sent. KNOWN LIMITATION: binary multipart parts are UTF-8-expanded by the executor. |
 | Edit - Erase | `editErase` | Remove unwanted objects using the image's alpha channel as the mask. Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary). NOTE: the separate mask file is not exposed - the engine cannot omit an unset multipart part, so an unused mask would be sent as an empty file and rejected. KNOWN LIMITATION: binary multipart parts are UTF-8-expanded by the executor. |
 | Edit - Inpaint | `editInpaint` | Intelligently modify images by filling in or replacing the area masked by the image's alpha channel. Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary). NOTE: the separate mask file and style_preset are not exposed - the engine cannot omit an unset multipart part. KNOWN LIMITATION: binary multipart parts are UTF-8-expanded by the executor. |
+
+<details>
+
+<summary>See 17 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Edit - Outpaint | `editOutpaint` | Extend an image in any direction (left/right/up/down). Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary); every field declared in the input contract is now sent. KNOWN LIMITATION: binary multipart parts are UTF-8-expanded by the executor. |
 | Edit - Remove Background | `editRemoveBackground` | Segment the foreground subject and remove the background. Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary). KNOWN LIMITATION: the fastn executor UTF-8-expands binary multipart parts, so the image part cannot be delivered byte-accurately. |
 | Edit - Replace Background and Relight (async) | `editReplaceBackgroundAndRelight` | Async: replace the background of a subject and relight to match. Returns 202 with an id; poll Get Result. Sent as multipart/form-data (raw body with explicit boundary). NOTE: the optional reference images (light_reference, background_reference), light_source_direction and keep_original_background are not exposed - the engine cannot omit an unset multipart part, and Stability rejects an empty file, enum or boolean. KNOWN LIMITATION: binary multipart parts are UTF-8-expanded by the executor. |
@@ -51,3 +58,5 @@ Add Stability AI from **Build → Integrations → Connectors** and connect an a
 | Upscale - Conservative | `upscaleConservative` | Conservative upscale to ~4K preserving original content with minimal alteration. Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary). KNOWN LIMITATION: the fastn executor UTF-8-expands binary multipart parts, so the image part cannot be delivered byte-accurately. |
 | Upscale - Creative (async) | `upscaleCreative` | Async creative upscale to 4K, adds detail. Returns 202 with an id; poll Get Result. Sent as multipart/form-data (raw body with explicit boundary). NOTE: style_preset is not exposed - the engine cannot omit an unset multipart part and Stability rejects an empty enum. KNOWN LIMITATION: binary multipart parts are UTF-8-expanded by the executor. |
 | Upscale - Fast | `upscaleFast` | Fast 4x upscale (lightweight). Returns base64 image in JSON. Sent as multipart/form-data (raw body with explicit boundary). KNOWN LIMITATION: the fastn executor UTF-8-expands binary multipart parts, so the image part cannot be delivered byte-accurately. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Handwrytten
 
+<img src="../../.gitbook/assets/connectors/handwrytten.png" alt="Handwrytten logo" width="64">
+
 Handwrytten sends real handwritten notes and cards on your behalf, written by robots holding real pens. This connector covers the Handwrytten v2 API: the card, font, template, insert, bundle, gift-card and stamp catalogue, custom card design and QR codes, sender and recipient address books, basket and order management, outbound prospecting, and account, credit-card and subscription information.
 
 | | |
@@ -12,8 +14,6 @@ Handwrytten sends real handwritten notes and cards on your behalf, written by ro
 | **Category** | [Marketing](README.md) |
 | **Website** | [handwrytten.com](https://handwrytten.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 58 |
-| **Events** | 1 |
 | **Slug** | `handwrytten` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Handwrytten from **Build → Integrations → Connectors** and connect an ac
 | Clear Basket | `clearBasket` | Empties the account's basket, discarding every order in it before payment, and returns the items that were removed. |
 | Create Custom Card | `createCustomCard` | Designs a branded card from an uploaded or preset cover image plus header, footer, inside and back text or logos, and saves it to the account's private Custom Cards category. Set Is Update with a Card ID to change an existing design. |
 | Create Outbound Order | `createOutboundOrder` | Places an outbound prospecting campaign into the basket: Handwrytten buys the matching prospect addresses and queues a handwritten note for each. The basket is charged and mailed when Send Basket is called. |
+
+<details>
+
+<summary>See 48 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create QR Code | `createQrCode` | Creates a trackable QR code that redirects to the URL you supply and returns its id, ready to be placed on a custom card design. |
 | Create Single Step Order | `createSingleStepOrder` | Creates and immediately submits a handwritten note in one call, supplying the card, message, handwriting style and both addresses inline. This charges the account and physically mails a real letter. |
 | Delete Custom Card | `deleteCustomCard` | Deletes a custom card design from the account's private Custom Cards category. |
@@ -82,6 +89,8 @@ Add Handwrytten from **Build → Integrations → Connectors** and connect an ac
 | Sign In With Password | `signInWithPassword` | Exchanges a Handwrytten e-mail address and password for a session token. Most integrations should use an API key instead; this is for flows that sign a user in on their behalf. |
 | Update Recipient Address | `updateRecipientAddress` | Updates a saved recipient in the account's address book. Only the fields you supply are changed. |
 | Update Sender Address | `updateSenderAddress` | Updates a saved return address on the account and returns the account's addresses after the change. |
+
+</details>
 
 ## Events
 

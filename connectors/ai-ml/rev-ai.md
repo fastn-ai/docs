@@ -5,6 +5,8 @@ hidden: true
 
 # Rev AI
 
+<img src="../../.gitbook/assets/connectors/rev-ai.jpg" alt="Rev AI logo" width="64">
+
 Rev AI is a speech-to-text and voice-intelligence platform. This connector covers the full Rev AI REST surface on api.rev.ai: asynchronous speech-to-text jobs (submit, list, get, delete) with transcripts in JSON or plain text, SRT and VTT captions, AI summaries, and machine translation of transcripts and captions; custom vocabularies (submit, list, get, delete); language identification jobs and results; sentiment analysis jobs and results; topic extraction jobs and results; forced alignment jobs and aligned transcripts; and developer account balance. Transcription of audio is billed per minute; jobs submitted with transcriber "human" and test_mode true are not charged. Real-time streaming speech-to-text is WebSocket-only and is not covered.
 
 | | |
@@ -12,8 +14,6 @@ Rev AI is a speech-to-text and voice-intelligence platform. This connector cover
 | **Category** | [AI and ML](README.md) |
 | **Website** | [rev.ai](https://rev.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 39 |
-| **Events** | 3 |
 | **Slug** | `revAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Rev AI from **Build → Integrations → Connectors** and connect an account
 | Get Alignment Job By Id | `getAlignmentJobById` | Returns a single forced alignment job and its current status. Poll this until Status is completed before calling Get Alignment Transcript By Id. |
 | Get Alignment Transcript By Id | `getAlignmentTranscriptById` | Returns the time-aligned transcript of a completed forced alignment job. Rev AI serves it with the vendor media type application/vnd.rev.transcript.v1.0+json, so fastn returns it as a base64 download envelope: decode the Data field to get {"monologues":[{"speaker":N,"elements":[{"type":"text"\|"punct","value":"...","ts":N,"end_ts":N}]}]}, where ts and end_ts are the timestamps computed for each word. Returns 409 if the job has not finished. |
 | Get Captions As SRT | `getCaptionsAsSrt` | Returns the caption output of a completed transcription job in SubRip (SRT) format. Rev AI serves it as application/x-subrip, so fastn returns it as a base64 download envelope: decode the Data field to get the SRT text. Use Get Captions As VTT if you want the caption text returned directly as a string. Speaker Channel is only accepted on jobs submitted with Speaker Channels Count; passing it on a single-channel job returns 400. Returns 409 if the job is not yet transcribed. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Captions As VTT | `getCaptionsAsVtt` | Returns the caption output of a completed transcription job in Web Video Text Tracks (VTT) format, with speakers rendered as &lt;v Speaker N&gt; cues. Speaker Channel is only accepted on multichannel jobs. Returns 409 if the job is not yet transcribed. |
 | Get Custom Vocabularies | `getCustomVocabularies` | Lists custom vocabularies submitted in the last 30 days, newest first. Returns a JSON array of objects, each with id, status (in_progress \| complete \| failed), created_on, completed_on, metadata and strict. |
 | Get Custom Vocabulary | `getCustomVocabulary` | Returns the processing state of a single custom vocabulary. The vocabulary can only be used on a transcription job once its Status is complete. |
@@ -63,6 +70,8 @@ Add Rev AI from **Build → Integrations → Connectors** and connect an account
 | Submit Sentiment Analysis Job | `submitSentimentAnalysisJob` | Starts an asynchronous sentiment analysis job over text. Supply either Text for plain text (no timestamps in the result) or JSON for a Rev AI transcript object (timestamps preserved) - exactly one of the two. No audio is processed, so this is not billed per minute of media. Returns the created job with its id; poll Get Sentiment Analysis Job By Id, then read Get Sentiment Analysis Result By Id. |
 | Submit Topic Extraction Job | `submitTopicExtractionJob` | Starts an asynchronous topic extraction job over text. Supply either Text for plain text (no timestamps in the result) or JSON for a Rev AI transcript object (timestamps preserved) - exactly one of the two. No audio is processed, so this is not billed per minute of media. Returns the created job with its id; poll Get Topic Extraction Job By Id, then read Get Topic Extraction Result By Id. |
 | Submit Transcription Job | `submitTranscriptionJob` | Starts an asynchronous speech-to-text job for a media file referenced by a public download URL. BILLING: machine and human transcription are charged per minute of audio. Set Transcriber to "human" together with Test Mode true to run a free, non-charged mock job that returns a dummy transcript. Returns the created job with its id and status in_progress; poll Get Job By Id or supply Notification Config to receive a callback. |
+
+</details>
 
 ## Events
 

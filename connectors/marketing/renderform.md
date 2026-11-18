@@ -5,6 +5,8 @@ hidden: true
 
 # RenderForm
 
+<img src="../../.gitbook/assets/connectors/renderform.png" alt="RenderForm logo" width="64">
+
 RenderForm generates images, PDFs and videos from reusable templates. This connector covers the full v1 and v2 REST surface: template CRUD and HTML content, single and batch rendering, screenshots, URL-to-PDF, render results, uploads, tags, fonts, organization settings, credit usage and webhook registration.
 
 | | |
@@ -12,8 +14,6 @@ RenderForm generates images, PDFs and videos from reusable templates. This conne
 | **Category** | [Marketing](README.md) |
 | **Website** | [renderform.io](https://renderform.io) |
 | **Authentication** | API key |
-| **Actions** | 44 |
-| **Events** | 4 |
 | **Slug** | `renderform` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add RenderForm from **Build → Integrations → Connectors** and connect an acc
 | Delete Legacy Template | `deleteLegacyTemplate` | Permanently deletes a template through the legacy v1 endpoint. Equivalent to Delete Template but on the v1 route. |
 | Delete Render Request | `deleteRenderRequest` | Deletes a render request and its stored output through the legacy v1 route. Equivalent to Delete Render Result on the v2 route. |
 | Delete Render Result | `deleteRenderResult` | Permanently deletes a rendered file and its result record by request identifier. Use it to remove output from the public CDN once it is no longer needed. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Template | `deleteTemplate` | Permanently deletes a template by its identifier. Renders already produced from the template are not removed. Returns an empty body on success. |
 | Delete Template Tag | `deleteTemplateTag` | Removes a tag from the account, detaching it from every template that carries it. The templates themselves are not deleted. |
 | Delete Uploaded File | `deleteUploadedFile` | Deletes a file from the upload library by its upload id, which is the UUID segment of the file's fileKey (organisation/uploads/UUID/filename). VENDOR DEFECT: this route is currently broken and answers 500 'Unexpected error' for every identifier, including ids that definitely exist and ids that definitely do not, so uploaded files cannot be removed through the API at present. Verified against the vendor directly, outside fastn. Files must be deleted from the RenderForm web app until the vendor fixes it. |
@@ -68,6 +75,8 @@ Add RenderForm from **Build → Integrations → Connectors** and connect an acc
 | Update Template HTML Content | `updateTemplateHtmlContent` | Replaces the html, css and sampleData of an html-editor template and returns what was persisted. Merge fields written as double curly braces in the html become renderable properties on the template. |
 | Update Template Metadata | `updateTemplateMetadata` | Updates the name, canvas size, output format and/or tags of an existing template. Only the fields supplied are changed, except tags, which replaces the whole tag set when provided. |
 | Upload File | `uploadFile` | Uploads a text-based asset (SVG, CSV, JSON, plain text) to the RenderForm upload library and returns its public URL, which can then be used as an image source inside a template. Supply the file body as text; binary formats such as PNG or JPEG cannot be sent through this action. |
+
+</details>
 
 ## Events
 

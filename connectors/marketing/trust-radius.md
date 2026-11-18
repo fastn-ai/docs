@@ -5,6 +5,8 @@ hidden: true
 
 # TrustRadius
 
+<img src="../../.gitbook/assets/connectors/trust-radius.png" alt="TrustRadius logo" width="64">
+
 TrustRadius software review data. Reads the public TrustRadius JSON catalogue API for products, product reviews, categories and vendors, returning structured records with ratings, reviewer verbatims and firmographics. Read-only and requires no credentials.
 
 | | |
@@ -12,8 +14,6 @@ TrustRadius software review data. Reads the public TrustRadius JSON catalogue AP
 | **Category** | [Marketing](README.md) |
 | **Website** | [trustradius.com](https://trustradius.com) |
 | **Authentication** | No authentication |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `trustRadius` |
 
 ## Use it

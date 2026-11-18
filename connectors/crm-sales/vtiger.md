@@ -5,6 +5,8 @@ hidden: true
 
 # Vtiger
 
+<img src="../../.gitbook/assets/connectors/vtiger.png" alt="Vtiger logo" width="64">
+
 Vtiger CRM Cloud REST API connector. Generic record operations (create, retrieve, update, revise, delete, query with VTQL) across all CRM modules (Contacts, Leads, Organizations/Accounts, Potentials/Deals, Cases, Products, Services, Quotes, SalesOrder, Invoice, Events, Documents...), module metadata (listtypes, describe, picklist dependency), related-record management, tags, lookup, sync, lead conversion, and file retrieval.
 
 | | |
@@ -12,8 +14,6 @@ Vtiger CRM Cloud REST API connector. Generic record operations (create, retrieve
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [vtiger.com](https://vtiger.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 24 |
-| **Events** | 0 |
 | **Slug** | `vtiger` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Vtiger from **Build → Integrations → Connectors** and connect an account
 | Describe Module | `describeModule` | Get full metadata of a module: fields (name, label, mandatory, type, picklist values, references), permissions (createable/updateable/deleteable/retrieveable), idPrefix and label fields. Endpoint: GET /describe. |
 | Get Account Hierarchy | `getAccountHierarchy` | Get the parent/child hierarchy an Account (Organization) belongs to. Endpoint: GET /get_account_hierarchy. |
 | Get Current User | `getMe` | Get the logged-in user profile (id, name, email, role, currency and locale preferences). Useful to obtain the user id (e.g. 19x1) for assigned_user_id fields. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Picklist Dependency | `getPicklistDependency` | Get the value dependency mapping between two picklist fields of a module (e.g. Contacts contacttype -&gt; contactstatus). Endpoint: GET /picklist_dependency. |
 | List Modules | `listModules` | List all accessible CRM modules (types) with basic metadata (isEntity, label, singular). Endpoint: GET /listtypes. |
 | List Related Types | `listRelatedTypes` | Get the modules related to a given module, with relationship labels and allowed actions (add/select). Use the returned names/labels for Add Related Record, Retrieve Related Records and Query Related Records. Endpoint: GET /relatedtypes. |
@@ -48,3 +55,5 @@ Add Vtiger from **Build → Integrations → Connectors** and connect an account
 | Revise Record | `reviseRecord` | Partial update of an existing record — only send the id and the fields to change (mandatory fields do NOT need to be re-stated). Closed records cannot be revised (400 'record is closed'); use Reopen Record first. Endpoint: POST /revise. |
 | Sync Records | `syncRecords` | Fetch records created/updated/deleted since a UNIX timestamp for incremental sync. Does not work for Users or non-entity modules (Currency, Groups). Endpoint: GET /sync. |
 | Update Record | `updateRecord` | Full update of an existing record. IMPORTANT: all mandatory fields of the module must be re-stated in element along with the id, otherwise the call fails. For partial updates use Revise Record instead. Endpoint: POST /update. |
+
+</details>

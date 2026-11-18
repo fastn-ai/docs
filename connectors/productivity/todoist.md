@@ -5,6 +5,8 @@ hidden: true
 
 # Todoist
 
+<img src="../../.gitbook/assets/connectors/todoist.png" alt="Todoist logo" width="64">
+
 Todoist unified API v1 (base https://api.todoist.com/api/v1). Manage projects, sections, tasks (create/get/update/close/reopen/delete), comments, labels (personal + shared), and collaborators. List endpoints are cursor-paginated ({results, next_cursor}). Auth: Bearer API token (Settings &gt; Integrations &gt; Developer) or OAuth 2.
 
 | | |
@@ -12,8 +14,6 @@ Todoist unified API v1 (base https://api.todoist.com/api/v1). Manage projects, s
 | **Category** | [Productivity](README.md) |
 | **Website** | [todoist.com](https://todoist.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 31 |
-| **Events** | 19 |
 | **Slug** | `todoist` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Todoist from **Build → Integrations → Connectors** and connect an accoun
 | Delete Label | `deleteLabel` | Delete a personal label (DELETE /labels/{id}). Returns 204. |
 | Delete Project | `deleteProject` | Delete a project (DELETE /projects/{id}). Returns 204. |
 | Delete Section | `deleteSection` | Delete a section and its tasks (DELETE /sections/{id}). Returns 204. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Task | `deleteTask` | Delete a task (DELETE /tasks/{id}). Returns 204. |
 | Get Comment | `getComment` | Get a comment by ID (GET /comments/{id}). |
 | Get Label | `getLabel` | Get a personal label by ID (GET /labels/{id}). |
@@ -56,6 +63,8 @@ Add Todoist from **Build → Integrations → Connectors** and connect an accoun
 | Update Section | `updateSection` | Rename a section (POST /sections/{id}). |
 | Update Task | `updateTask` | Update a task (POST /tasks/{id}). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -72,6 +81,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Project Archived | `project:archived` | A project was archived. |
 | Project Deleted | `project:deleted` | A project was deleted. |
 | Project Updated | `project:updated` | A project was updated. |
+
+<details>
+
+<summary>See 9 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Reminder Fired | `reminder:fired` | A reminder fired. |
 | Section Added | `section:added` | A section was created. |
 | Section Deleted | `section:deleted` | A section was deleted. |
@@ -81,3 +97,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task Deleted | `item:deleted` | A task was deleted. |
 | Task Uncompleted | `item:uncompleted` | A completed task was reopened. |
 | Task Updated | `item:updated` | A task was updated. |
+
+</details>

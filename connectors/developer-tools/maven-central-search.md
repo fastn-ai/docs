@@ -5,6 +5,8 @@ hidden: true
 
 # Maven Central Search
 
+<img src="../../.gitbook/assets/connectors/maven-central-search.png" alt="Maven Central Search logo" width="64">
+
 Maven Central Search is the free public search API of the Central Repository (run by Sonatype) for Java/JVM artifacts. Search artifacts, list all versions of an artifact, and search by coordinates, class name, fully qualified class name, SHA-1 checksum or tag. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Maven Central Search is the free public search API of the Central Repository (ru
 | **Category** | [Developer tools](README.md) |
 | **Website** | [search.maven.org](https://search.maven.org) |
 | **Authentication** | No authentication |
-| **Actions** | 7 |
-| **Events** | 0 |
 | **Slug** | `mavenCentralSearch` |
 
 ## Use it

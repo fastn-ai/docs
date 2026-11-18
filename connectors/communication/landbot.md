@@ -5,14 +5,14 @@ hidden: true
 
 # Landbot
 
+<img src="../../.gitbook/assets/connectors/landbot.png" alt="Landbot logo" width="64">
+
 Landbot is a no-code conversational app builder for websites, WhatsApp and Messenger. This connector covers the Landbot Platform API v1: listing and retrieving messaging channels, browsing bots and agents, reading and managing customers and their message history, archiving, blocking, assigning and unassigning conversations to agents or bots, sending text, image, location and WhatsApp template messages, managing WhatsApp opt-out, reading and writing custom customer fields, and registering message hooks that deliver conversation events to an external endpoint.
 
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `landbot` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Landbot from **Build → Integrations → Connectors** and connect an accoun
 | Delete Customer | `deleteCustomer` | Permanently deletes a Landbot customer and their entire conversation history. This cannot be undone. |
 | Delete Customer Field | `deleteCustomerField` | Removes a custom field and its value from a Landbot customer's profile. |
 | Delete Message Hook | `deleteMessageHook` | Removes a message hook from a Landbot channel, stopping further deliveries to its endpoint. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Bot | `getBot` | Retrieves a single Landbot bot by its numeric identifier. |
 | Get Channel | `getChannel` | Retrieves a single Landbot messaging channel by its numeric identifier. |
 | Get Customer | `getCustomer` | Retrieves a single Landbot customer by numeric identifier, including their custom fields, assigned agent and conversation state. |
@@ -54,3 +61,5 @@ Add Landbot from **Build → Integrations → Connectors** and connect an accoun
 | Unassign Customer | `unassignCustomer` | Removes the current agent or bot assignment from a Landbot conversation, returning it to the unassigned queue. |
 | Unblock Customer | `unblockCustomer` | Unblocks a previously blocked Landbot customer, allowing them to message again. |
 | Update Customer Field | `updateCustomerField` | Updates the value of an existing custom field on a Landbot customer's profile. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # CentralStationCRM
 
+<img src="../../.gitbook/assets/connectors/central-station-crm.png" alt="CentralStationCRM logo" width="64">
+
 CentralStationCRM is a German customer relationship management platform for small and mid-sized teams. This connector covers the full CentralStationCRM REST API: people, companies, deals, projects, tasks, protocols, comments, tags, addresses, contact details, custom fields, calendar events, attachments, avatars, external emails, filter groups, users and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ CentralStationCRM is a German customer relationship management platform for smal
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [centralstationcrm.net](https://centralstationcrm.net) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 201 |
-| **Events** | 15 |
 | **Slug** | `centralStationCrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CentralStationCRM from **Build → Integrations → Connectors** and connect
 | Count Deals | `countDeals` | Returns the total number of deals in the CentralStationCRM account, optionally narrowed by tag or by field filters. This endpoint accepts the same filter[field][operator] query parameters as List Deals; the most commonly used field filters are modelled here. |
 | Count External Emails | `countExternalEmails` | Returns the total number of external emails filed in the CentralStationCRM account. |
 | Count Filter Group Records | `countFilterGroupRecords` | Returns the number of records matching the given CentralStationCRM filter group. |
+
+<details>
+
+<summary>See 191 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Count People | `countPeople` | Returns the total number of people in the CentralStationCRM account, optionally narrowed by tag or by field filters. This endpoint accepts the same filter[field][operator] query parameters as List People; the most commonly used field filters are modelled here. |
 | Count Person External Emails | `countPersonExternalEmails` | Returns the number of external emails filed against the given person in CentralStationCRM. |
 | Count Project External Emails | `countProjectExternalEmails` | Returns the number of external emails filed against the given project in CentralStationCRM. |
@@ -226,6 +233,8 @@ Add CentralStationCRM from **Build → Integrations → Connectors** and connect
 | Update Protocol | `updateProtocol` | Updates an existing protocol in CentralStationCRM. Only the fields you supply are changed. |
 | Update Task | `updateTask` | Updates an existing task in CentralStationCRM, for example to mark it finished. Only the fields you supply are changed. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -242,8 +251,17 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Note Deleted | `protocol.destroy` | Fires when a protocol (note, call log or email record) is deleted in CentralStationCRM. Registered as model Protocol, event destroy; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only. The record no longer exists, so capture what you need from the payload. |
 | Note Updated | `protocol.update` | Fires when a protocol (note, call log or email record) is updated in CentralStationCRM. Registered as model Protocol, event update; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only, so follow it with Get Protocol. |
 | Person Created | `person.create` | Fires when a person (contact) is created in CentralStationCRM. Registered through the CentralStationCRM hooks API as model Person, event create; each hook targets exactly one model and event pair, so routing is per subscription rather than by a discriminator field in the payload. The body below is the 'lean' shape confirmed against a real delivery captured on 2026-09-15: it carries only the identifier, so follow it with the matching Get action to read the record. Set the Object Type input to 'api' to receive the full record instead, to 'nested' to include related records, or to 'hook_with_structure_and_record' for both. |
+
+<details>
+
+<summary>See 5 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Person Deleted | `person.destroy` | Fires when a person (contact) is deleted in CentralStationCRM. Registered as model Person, event destroy; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only. The record no longer exists, so capture what you need from the payload. |
 | Person Updated | `person.update` | Fires when a person (contact) is updated in CentralStationCRM. Registered as model Person, event update; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only, so follow it with Get Person. Set Object Type to 'api' for the full record, 'nested' for related records, or 'hook_with_structure_and_record' for both. |
 | Project Created | `project.create` | Fires when a project is created in CentralStationCRM. Registered as model Project, event create; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only, so follow it with Get Project. |
 | Project Deleted | `project.destroy` | Fires when a project is deleted in CentralStationCRM. Registered as model Project, event destroy; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only. The record no longer exists, so capture what you need from the payload. |
 | Project Updated | `project.update` | Fires when a project is updated in CentralStationCRM. Registered as model Project, event update; routing is per subscription. The body is the 'lean' shape confirmed against a real delivery captured on 2026-09-15 - identifier only, so follow it with Get Project. |
+
+</details>

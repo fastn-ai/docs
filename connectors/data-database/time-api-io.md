@@ -5,6 +5,8 @@ hidden: true
 
 # TimeAPI.io
 
+<img src="../../.gitbook/assets/connectors/time-api-io.png" alt="TimeAPI.io logo" width="64">
+
 TimeAPI.io is a free time and time zone API. Get the current time as Unix timestamps or in UTC, look up the current time for an IANA time zone, a latitude/longitude or an IP address, list all IANA time zones and get time zone details such as UTC offset and daylight saving periods. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ TimeAPI.io is a free time and time zone API. Get the current time as Unix timest
 | **Category** | [Data and databases](README.md) |
 | **Website** | [timeapi.io](https://timeapi.io) |
 | **Authentication** | No authentication |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `timeApiIo` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add TimeAPI.io from **Build → Integrations → Connectors** and connect an acc
 | Get Current Unix Time (Nanoseconds) | `getCurrentUnixTimeNs` | Gets the current unix timestamp (nanoseconds since 1970-01-01 UTC). Due to limitations in the OS clock resolution, the last 3 digits will often be zero. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/time/current/unix_ns) |
 | Get Current UTC Time | `getCurrentUtcTime` | Gets the current UTC time. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/time/current/utc) |
 | Get Time Zone Info | `getTimeZoneInfo` | Gets the timezone info and current time by IANA time zone name. Includes UTC offsets and the current DST period. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/zone) |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Time Zone Info by Coordinates | `getTimeZoneInfoByCoordinate` | Get the timezone info and current time by geo coordinates. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/coordinate) |
 | List Available Time Zones | `listTimeZones` | Gets all the available IANA time zones. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/availabletimezones) |
+
+</details>

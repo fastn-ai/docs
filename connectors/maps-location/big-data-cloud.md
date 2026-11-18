@@ -5,6 +5,8 @@ hidden: true
 
 # BigDataCloud
 
+<img src="../../.gitbook/assets/connectors/big-data-cloud.png" alt="BigDataCloud logo" width="64">
+
 BigDataCloud provides location intelligence APIs. This connector covers the server-side BigDataCloud REST APIs on api-bdc.net: IP geolocation with confidence areas and hazard reports, country, time zone and user-agent lookups, user risk, reverse geocoding, phone number and email verification, and network engineering data (ASN details and peers, BGP prefixes, networks by CIDR, IPv4 address space, Tor exit nodes, ASN rankings), plus GraphQL queries for each API package.
 
 | | |
@@ -12,8 +14,6 @@ BigDataCloud provides location intelligence APIs. This connector covers the serv
 | **Category** | [Maps and location](README.md) |
 | **Website** | [bigdatacloud.com](https://bigdatacloud.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `bigDataCloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BigDataCloud from **Build → Integrations → Connectors** and connect an a
 | Get IP Geolocation | `getIpGeolocation` | Resolves an IPv4 or IPv6 address to its geographic location using BigDataCloud's patented router-topology geolocation, returning country, locality, coordinates, time zone and the announcing network. Omit the IP address to geolocate the caller's own address. |
 | Get IP Geolocation Full | `getIpGeolocationFull` | Returns the complete IP intelligence record for an address: geolocation, confidence area, announcing network, a plain-language security threat summary and the full Hazard Report of reactive and proactive risk signals. This is the most comprehensive IP Geolocation endpoint and consumes one request for all of it. |
 | Get IP Geolocation With Confidence Area | `getIpGeolocationWithConfidence` | Returns the same geolocation data as Get IP Geolocation plus a confidence rating and a confidence area polygon estimating where else the IP address may be found when it is dynamically assigned or shared. Useful for fraud detection, risk scoring and compliance checks. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get IP Hazard Report | `getIpHazardReport` | Returns a risk assessment for an IPv4 or IPv6 address combining reactive signals (Tor, VPN and proxy detection, Spamhaus and other blocklists) with proactive indicators such as hosting likelihood, hosting ASN, cellular network and iCloud Private Relay. |
 | Get IPv4 Address Space Stats | `getIpv4AddressSpaceStats` | Returns a consolidated status report for the entire IPv4 address space, combining regional registry allocation data with live BGP announcement status. BGP data is refreshed every two hours. |
 | Get Network By IP | `getNetworkByIp` | Returns the active network an IPv4 or IPv6 address belongs to: registry, registration status, BGP prefix, address range, total addresses and the carrier Autonomous Systems announcing it, with their upstream peers. |
@@ -59,3 +66,5 @@ Add BigDataCloud from **Build → Integrations → Connectors** and connect an a
 | Validate Phone Number | `validatePhoneNumber` | Normalises and validates a phone number against the E.164 international standard for a given country, returning the canonical E.164 form, international and national display formats, the detected line type and full country context such as calling code, currency and languages. |
 | Validate Phone Number By IP | `validatePhoneNumberByIp` | Validates a phone number by inferring the expected country from an IP address instead of requiring an explicit country code, which suits signup and checkout forms that have no country selector. Returns the same normalised formats, line type and country context as Validate Phone Number. |
 | Verify Email Address | `verifyEmailAddress` | Verifies an email address: syntax validity, whether the domain has a mail server, whether the domain is a known spammer and whether it is a disposable email provider. No email is sent. |
+
+</details>

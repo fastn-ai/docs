@@ -5,6 +5,8 @@ hidden: true
 
 # Paddle Billing
 
+<img src="../../.gitbook/assets/connectors/paddle-billing.png" alt="Paddle Billing logo" width="64">
+
 Paddle Billing API connector. Merchant of record for payments, tax, subscriptions, and metrics. Covers products, prices, discounts, customers (addresses, businesses, payment methods, credit balances), transactions (incl. invoice PDF and preview), subscriptions (pause/resume/cancel/charge/preview), adjustments, reports, events, event-types, notifications and notification-settings. Bearer auth with a pdl_ API key.
 
 | | |
@@ -12,8 +14,6 @@ Paddle Billing API connector. Merchant of record for payments, tax, subscription
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [paddle.com](https://paddle.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 126 |
-| **Events** | 0 |
 | **Slug** | `paddleBilling` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Paddle Billing from **Build → Integrations → Connectors** and connect an
 | Create Adjustment | `createAdjustment` | Create an adjustment. Creates an adjustment for one or more transaction items. You can create adjustments to refund or credit all or part of a transaction and its items: * Refunds return an amount to a customer's original payment method. You can create refund adjustments for transactions that are `completed`. * Credits reduce the amount that a customer has to pay for a transaction. You can create credit adjustments for manually-collected transactions that are `billed` or `past_due`. You can create adjustments to refund transactions that are `completed`, or to reduce the amount to due on manually-collected transactions that are `billed` or `past_due`. Most refunds for live accounts are created with the status of `pending_approval` until reviewed by Paddle, but [some are automatically approved](https://developer.paddle.com/build/transactions/create-transaction-adjustments#background-refunds). For sandbox accounts, Paddle automatically approves refunds every ten minutes. Adjustments ca... |
 | Create Customer | `createCustomer` | Create a customer. Creates a new customer. If successful, your response includes a copy of the new customer entity. |
 | Create Customer Address | `createCustomerAddress` | Create an address for a customer. Creates a new address for a customer. For tax calculation, fraud prevention, and compliance purposes, you must include a `postal_code` when creating addresses for some countries. For example, ZIP codes in the USA and postcodes in the UK. See: [Supported countries](https://developer.paddle.com/concepts/sell/supported-countries-locales) If successful, your response includes a copy of the new address entity. |
+
+<details>
+
+<summary>See 116 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Customer Business | `createCustomerBusiness` | Create a business for a customer. Creates a new business for a customer. If successful, your response includes a copy of the new business entity. |
 | Create Discount | `createDiscount` | Create a discount. Creates a new discount. If successful, your response includes a copy of the new discount entity. |
 | Create Notification Setting | `createNotificationSetting` | Create a notification setting. Creates a new notification setting (notification destination). Pass an array of event type names to `subscribed_events` to say which events you'd like to subscribe to. Paddle responds with the full event type object for each event type. If successful, your response includes a copy of the new notification setting entity. Use the returned `endpoint_secret_key` for webhook signature verification. |
@@ -150,3 +157,5 @@ Add Paddle Billing from **Build → Integrations → Connectors** and connect an
 | Update tax settings | `updateTaxSettings` | Update tax settings. Updates the tax settings for your account. If successful, your response includes a copy of the updated tax settings entity. |
 | Update Transaction | `updateTransaction` | Update a transaction. Updates a transaction using its ID. You can update transactions that are `draft` or `ready`. `billed` and `completed` transactions are considered records for tax and legal purposes, so they can't be changed. You can either: * Create [an adjustment](https://developer.paddle.com/api-reference/adjustments/overview) to record a refund or credit for a transaction. * Cancel a `billed` transaction by sending a PATCH request to set `status` to `canceled`. You can cancel transactions that are `draft`, `ready`, `billed`, or `past_due`. When canceling, only include `status` in your request. You can't use the API to cancel transactions that Paddle created for a subscription, where `origin` starts with `subscription_`, or automatically-collected transactions that are `past_due`. Cancel transactions created for a subscription using the Paddle dashboard. The transaction `status` may only be set to `billed` or `canceled`. Other statuses are set automatically by Paddle. Set a m... |
 | Verify a payment method for a checkout domain | `verifyCheckoutDomainPaymentMethod` | Verify a payment method for a checkout domain. Triggers payment method verification for a checkout domain. Currently supports Apple Pay only. Before verifying, the checkout domain must be in `approved` status and the domain association file must be correctly hosted. |
+
+</details>

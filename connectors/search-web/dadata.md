@@ -5,6 +5,8 @@ hidden: true
 
 # Dadata
 
+<img src="../../.gitbook/assets/connectors/dadata.png" alt="Dadata logo" width="64">
+
 Dadata is a Russian data quality service for suggestions, standardization and enrichment. This connector covers the Dadata Suggestions API (companies, banks, addresses, names, emails, countries, currencies, courts, tax and customs offices, postal units, metro, classifiers), the findById and geolocation lookups, the Cleaner (standardization) API for addresses, phones, emails, names, passports and vehicles, brand and company-by-email enrichment, and profile balance, usage statistics and reference-data versions.
 
 | | |
@@ -12,8 +14,6 @@ Dadata is a Russian data quality service for suggestions, standardization and en
 | **Category** | [Search and web](README.md) |
 | **Website** | [dadata.ru](https://dadata.ru) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 59 |
-| **Events** | 0 |
 | **Slug** | `dadata` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dadata from **Build → Integrations → Connectors** and connect an account
 | Find Address By ID | `findAddressById` | Looks up a Russian address by its FIAS/GAR ID, KLADR code or cadastral number and returns the fully structured address with codes and coordinates. |
 | Find Affiliated Parties | `findAffiliatedParties` | Finds companies affiliated with a person or organization by INN: organizations where the given INN appears among founders and/or managers. |
 | Find Bank By ID | `findBankById` | Looks up a Russian bank by BIC, SWIFT, INN, INN/KPP or registration number and returns its payment details and address. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Find Belarus Party By ID | `findPartyByById` | Looks up a Belarusian company or individual entrepreneur by its UNP (taxpayer number) and returns its registry details. |
 | Find Brand By INN | `findBrandByInn` | Finds the brand of a company or individual entrepreneur by INN and returns its name, website, logo, business summary and social links. Requires the secret key and is billed per request by Dadata. |
 | Find Car Brand By ID | `findCarBrandById` | Looks up a car brand by its identifier (Latin brand code such as FORD) and returns its names. |
@@ -83,3 +90,5 @@ Add Dadata from **Build → Integrations → Connectors** and connect an account
 | Suggest Party | `suggestParty` | Searches Russian companies and individual entrepreneurs by INN, INN/KPP, OGRN, name, manager name or address and returns up to 20 matching suggestions with core registry data from the EGRUL/EGRIP registers. |
 | Suggest Postal Unit | `suggestPostalUnit` | Suggests Russian Post offices by postal code or address and returns their code, address, type, opening hours and coordinates. Supports filtering by city KLADR code, unit type and closed status. |
 | Suggest Tax Office | `suggestFnsUnit` | Suggests Russian tax offices (FNS inspectorates) by code, name or address and returns their code, name, address, payment details and contact information. |
+
+</details>

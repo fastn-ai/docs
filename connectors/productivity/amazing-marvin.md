@@ -12,8 +12,6 @@ Amazing Marvin is a personal task manager and productivity system. This connecto
 | **Category** | [Productivity](README.md) |
 | **Website** | [amazingmarvin.com](https://amazingmarvin.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `amazingMarvin` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Amazing Marvin from **Build → Integrations → Connectors** and connect an
 | Delete Reminders | `deleteReminders` | Removes one or more scheduled push reminders by their IDs. Also clear the matching reminder details from the corresponding tasks so the Marvin interface stays accurate. |
 | Get Document | `getDocument` | Retrieves any single document from the Amazing Marvin sync database by its ID - a task, project, label, habit, time block or settings document. Requires the Full Access Token. The whole document is returned, including the CouchDB _id and _rev. A missing or deleted ID still answers HTTP 200, with an error envelope instead of a document, so always check the Error field before reading the rest. |
 | Get Habit | `getHabit` | Retrieves the habit tracking record for one habit ID, including its full recording history and its sharing and reminder schedule. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Marvin Kudos | `getMarvinKudos` | Retrieves the connected user's Marvin Kudos standing: the current Kudos total, the Kudos level reached, and how many Kudos remain before the next level. |
 | Get My Account | `getMyAccount` | Retrieves the Amazing Marvin account profile for the connected user, including email, subscription billing period and paid-through date, reward point balances, Pomodoro ("tomato") counters and current time-tracking state. |
 | Get Time Tracks | `getTimeTracks` | Returns the authoritative time-tracking timestamps for up to 100 tasks at once. Use this when a task's cached times or duration fields are missing or out of date. Amazing Marvin also serves this endpoint at /api/times for environments where 'track' is blocked by an extension blacklist. |
@@ -59,3 +64,5 @@ Add Amazing Marvin from **Build → Integrations → Connectors** and connect an
 | Update Document | `updateDocument` | Applies a list of field setters to an existing document in the Amazing Marvin sync database. Requires the Full Access Token. Also set the matching fieldUpdates.FIELD and updatedAt timestamps so Marvin resolves sync conflicts and renders the change correctly. |
 | Update Habit | `updateHabit` | Records a habit value, undoes the most recent recording, or rewrites a habit's whole history. Supply Time and Value to record, Undo to remove the last entry, or History to replace every entry. By default only the backend database changes - set Update Database to have Marvin write the change into the habit document as well. |
 | Update Tracker | `updateTracker` | Records a value against a Marvin tracker, undoes the last recording, or rewrites the tracker's history. This endpoint is live on Amazing Marvin's API but is not covered by the published API wiki; its request shape was read from the Marvin web client. It answers with the literal text OK, and Amazing Marvin exposes no public endpoint for reading tracker history back. |
+
+</details>

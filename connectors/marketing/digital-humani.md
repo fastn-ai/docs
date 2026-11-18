@@ -5,6 +5,8 @@ hidden: true
 
 # Digital Humani
 
+<img src="../../.gitbook/assets/connectors/digital-humani.png" alt="Digital Humani logo" width="64">
+
 Digital Humani RaaS (Reforestation as a Service) API. Plant trees with trusted reforestation organizations, browse reforestation projects, count trees planted by user/enterprise/month, manage the enterprise profile and its users, and drive the dashboard auth surface. Supports both the Production host (api.digitalhumani.com, $1 per tree, real money) and the free Sandbox host (api.sandbox.digitalhumani.com).
 
 | | |
@@ -12,8 +14,6 @@ Digital Humani RaaS (Reforestation as a Service) API. Plant trees with trusted r
 | **Category** | [Marketing](README.md) |
 | **Website** | [digitalhumani.com](https://digitalhumani.com) |
 | **Authentication** | API key |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `digitalHumani` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Digital Humani from **Build → Integrations → Connectors** and connect an
 | Delete Enterprise | `deleteEnterprise` | DESTRUCTIVE AND IRREVERSIBLE. Delete an enterprise and everything attached to it. DELETE /enterprise/{id}. Undocumented admin-only route: an ordinary client API key receives 403 Forbidden. Deleting the enterprise your own API key belongs to would permanently lock the account out, so never point this at your own enterpriseId. |
 | Delete Reforestation Project | `deleteReforestationProject` | DESTRUCTIVE. Remove a reforestation project from the Digital Humani catalogue. DELETE /project/{id}. Undocumented admin-only route: an ordinary client API key receives 403 Forbidden. Projects are shared across every enterprise on the platform. |
 | Delete Tree Planting Request | `deleteTreePlantingRequest` | Cancel and permanently remove a tree-planting request by uuid. DELETE /tree/{uuid}. Undocumented but live. Returns 200 with an empty object on success and 404 'Operation failed - item does not exist.' for an unknown uuid. Confirm with Get Tree Planting Request, which should then 404. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Custom Certificate PDF | `generateCustomCertificatePdf` | Render a branded reforestation certificate PDF from a named template and free-form parameters (recipient name, number of trees, date, location). POST /certificate. Undocumented; certificate generation is an entitlement Digital Humani enables per enterprise, and without it the route answers 403 Forbidden. Known template keys include default, weforest, theoodie, earthfuneral and modern-xmas-tree. |
 | Get Authenticated User | `getAuthenticatedUser` | Retrieve the details of the user the API key authenticates as, including the internal user id, name, email and the enterpriseId needed by almost every other Digital Humani action. GET /user/whoami. Takes no input. |
 | Get Enterprise | `getEnterprise` | Retrieve the details of an enterprise: name, contact block, creation/update timestamps. GET /enterprise/{id}. Returns 403 Forbidden for any enterprise other than the one your API key belongs to. |
@@ -57,3 +64,5 @@ Add Digital Humani from **Build → Integrations → Connectors** and connect an
 | Update My User Profile | `updateMyUserProfile` | Update the authenticated dashboard user's own name and email address. PUT /user/update. Undocumented but live and reachable with X-Api-Key (found in the my.digitalhumani.com dashboard bundle). All three fields are required by the API - send the current values for the ones you are not changing. Returns 200 with an EMPTY body, and note the route does NOT bump the user's 'updated' timestamp, so neither the status code nor 'updated' proves anything: confirm the change by re-reading firstName/lastName/email with List Enterprise Users. Changing email changes the address the account signs in with. |
 | Update Reforestation Project | `updateReforestationProject` | Update a reforestation project in the Digital Humani catalogue, for example to toggle its active flag. PATCH /project/{id}. Undocumented admin-only route: an ordinary client API key receives 403 Forbidden. |
 | Verify Dashboard User Email | `verifyDashboardUserEmail` | Confirm a newly registered dashboard user's email address with the activation token from their signup email, which activates the account. POST /auth/verify. Undocumented but live. An unknown address returns 404 'User with provided email not found. Could not send any email.' Note the pending token is also readable as the activationToken field of List Enterprise Users. |
+
+</details>

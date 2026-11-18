@@ -5,6 +5,8 @@ hidden: true
 
 # NamSor
 
+<img src="../../.gitbook/assets/connectors/namsor.png" alt="NamSor logo" width="64">
+
 NamSor is a name-classification API that infers demographic attributes from personal names. This connector covers the NamSor API v2 classification surface: gender, country of origin and residence, ethnicity and diaspora, US race and ethnicity, religion, Indian caste and regional subclassification, phone country-code inference, name parsing, name-type detection, Chinese and Japanese romanization, transliteration and matching, and migration corridors, plus API key and usage reporting. Single-name and batch variants are provided for every classifier.
 
 | | |
@@ -12,8 +14,6 @@ NamSor is a name-classification API that infers demographic attributes from pers
 | **Category** | [Search and web](README.md) |
 | **Website** | [namsor.com](https://namsor.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 104 |
-| **Events** | 0 |
 | **Slug** | `namsor` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add NamSor from **Build → Integrations → Connectors** and connect an account
 | Infer Community Engagement Profiles (Batch) | `communityEngageBatch` | Infers ethnicity or diaspora, country of origin, country of residence, gender and US race and ethnicity for up to 100 people in a single request. Costs 20 units per name classified. |
 | Infer Community Engagement Profiles From Full Names (Batch) | `communityEngageFullBatch` | Infers ethnicity or diaspora, country of origin, country of residence, gender and US race and ethnicity for up to 100 people from their full names. Costs 20 units per name classified. |
 | Infer Countries Of Origin (Batch) | `originBatch` | Infers the likely country of origin of up to 100 people from their first and last names in a single request. Costs 10 units per name classified. |
+
+<details>
+
+<summary>See 94 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Infer Countries Of Origin From Full Names (Batch) | `originFullBatch` | Infers the likely country of origin of up to 100 people from their full names in a single request. Costs 10 units per name classified. |
 | Infer Countries Of Residence (Batch) | `countryFnLnBatch` | Infers the likely country of residence of up to 100 people from their first and last names in a single request. Costs 10 units per name classified. |
 | Infer Countries Of Residence From Full Names (Batch) | `countryBatch` | Infers the likely country of residence of up to 100 people from their full names in a single request. Costs 10 units per name classified. |
@@ -128,3 +135,5 @@ Add NamSor from **Build → Integrations → Connectors** and connect an account
 | Suggest Japanese Kanji Name Candidates (Batch) | `japaneseNameKanjiCandidatesBatch` | Suggests the most likely Kanji spellings for up to 100 romanized Japanese names in a single request. |
 | Suggest Japanese Kanji Name Candidates By Gender | `japaneseNameKanjiCandidatesByGender` | Suggests the most likely Kanji spellings for a romanized Japanese name, narrowed by the person's known gender. |
 | Suggest Japanese Kanji Name Candidates By Gender (Batch) | `japaneseNameGenderKanjiCandidatesBatch` | Suggests the most likely Kanji spellings for up to 100 romanized Japanese names, each narrowed by the person's known gender. |
+
+</details>

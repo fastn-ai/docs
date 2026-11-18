@@ -5,6 +5,8 @@ hidden: true
 
 # Composio Search
 
+<img src="../../.gitbook/assets/connectors/composio-search.png" alt="Composio Search logo" width="64">
+
 Composio Search is Composio's hosted search toolkit: web, news, image, scholar, shopping, finance, trends, events, flights, hotels, maps, travel and SEC-filing search, plus page-content extraction and fast LLM inference, all without connecting a third-party account. This connector calls the Composio Connect Tool Router over HTTPS (JSON-RPC) and exposes every COMPOSIO_SEARCH tool as its own action.
 
 | | |
@@ -12,8 +14,6 @@ Composio Search is Composio's hosted search toolkit: web, news, image, scholar, 
 | **Category** | [Search and web](README.md) |
 | **Website** | [composio.dev](https://composio.dev) |
 | **Authentication** | API key |
-| **Actions** | 22 |
-| **Events** | 0 |
 | **Slug** | `composioSearch` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Composio Search from **Build → Integrations → Connectors** and connect a
 | Search Finance | `searchFinance` | Returns real-time quotes, market data and company information for stocks, indices, cryptocurrencies, currency pairs and ETFs, with a selectable historical window. Use exact ticker formats - natural-language names return empty results even when the call succeeds. |
 | Search Flights | `searchFlights` | Finds available flights between cities or airports with pricing, schedules and airlines. Either give a natural-language query, or give the origin and destination airport codes; the airport codes are required when no query is supplied. |
 | Search Google Maps | `searchGoogleMaps` | Searches Google Maps for places and local businesses. Include the city or region and a category in the query to avoid ambiguous or wrong-region matches, and always check the name and full address of a result before using it. |
+
+<details>
+
+<summary>See 12 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Hotels | `searchHotels` | Searches hotels and vacation rentals for a location and date range, with guest counts, price bounds, star rating, free-cancellation and sort filters. If very few results come back, widen the location before changing anything else. |
 | Search Images | `searchImages` | Searches Google Images and returns image metadata and URLs, not the binary image data. Supports a result count and page-based pagination. |
 | Search News | `searchNews` | Searches news-oriented sources for recent articles and current events, with country, language, recency and pagination filters. Blogs, documentation and company pages are excluded. A call can succeed and still report no results, so widen the query or relax the time filter before concluding there is no coverage. |
@@ -46,3 +53,5 @@ Add Composio Search from **Build → Integrations → Connectors** and connect a
 | Search Web | `searchWeb` | Runs a web search through Composio and returns a narrative answer with cited sources. Include qualifiers such as year, region, platform or intent for better results; very broad queries return generic content and excessive site: or quoted-term filters can return nothing. |
 | Search With DuckDuckGo | `searchWithDuckDuckGo` | Runs a web search through DuckDuckGo and returns the organic result list. Supports offset pagination for walking past the first page of results. |
 | Search With Tavily | `searchWithTavily` | Runs a search through the Tavily engine with domain include and exclude lists, a choice of search depth, and optional direct answers, images and raw page content. Use it when you need finer control over the result set than Search Web offers. |
+
+</details>

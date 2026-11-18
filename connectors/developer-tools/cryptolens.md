@@ -5,6 +5,8 @@ hidden: true
 
 # Cryptolens
 
+<img src="../../.gitbook/assets/connectors/cryptolens.png" alt="Cryptolens logo" width="64">
+
 Cryptolens software licensing (Web API 3): license keys, products, customers, data objects, machine-code activations, messages, resellers, user auth and usage analytics. Base https://app.cryptolens.io/api/. Authenticates with a Cryptolens Access Token; this connector sends it in the undocumented `token` HTTP header so it never lands in request URLs or bodies (three key routes require it in the body and are marked in their descriptions).
 
 | | |
@@ -12,8 +14,6 @@ Cryptolens software licensing (Web API 3): license keys, products, customers, da
 | **Category** | [Developer tools](README.md) |
 | **Website** | [cryptolens.io](https://cryptolens.io) |
 | **Authentication** | API key |
-| **Actions** | 76 |
-| **Events** | 0 |
 | **Slug** | `cryptolens` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Cryptolens from **Build → Integrations → Connectors** and connect an acc
 | Associate User With Customer | `associateUser` | Link an existing end-user login to a customer record so their licenses resolve. Needs the Associate permission. |
 | Block License Key | `blockKey` | Mark a license key as blocked so Get Key and Activate refuse it. DESTRUCTIVE: blocking a key in use breaks that customer's software activation. Requires the BlockKey permission. |
 | Change Key Customer | `changeCustomer` | Assign a license key to a customer, or clear the assignment by omitting CustomerId. Requires the ChangeCustomer permission. |
+
+<details>
+
+<summary>See 66 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Change Key Notes | `changeNotes` | Replace the free-text notes field on a license key. Requires the ChangeNotes permission. |
 | Change Key Reseller | `changeReseller` | Assign a license key to a reseller, or clear the assignment by omitting ResellerId. Requires the ChangeReseller permission. |
 | Change User Password | `changeUserPassword` | Change an end user's password, either with their old password, with a reset token, or in admin mode. Needs the ChangePassword permission. |
@@ -100,3 +107,5 @@ Add Cryptolens from **Build → Integrations → Connectors** and connect an acc
 | Unblock License Key | `unblockKey` | Clear the blocked flag on a license key so it can be read and activated again. Requires the UnblockKey permission. |
 | Upload Data Object Values For Key | `uploadValuesToKey` | Upload a base64 usage log produced by a Cryptolens SDK into a key-scoped data object, replaying up to 1000 recorded value changes. |
 | User Login | `userLogin` | Authenticate an end user by username and password and return the license keys attached to their customer record. Needs the Login permission. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Marketstack
 
+<img src="../../.gitbook/assets/connectors/marketstack.png" alt="Marketstack logo" width="64">
+
 Marketstack by APILayer delivers real-time, intraday, and historical stock market data (EOD, intraday bars, splits, dividends) across 70+ global exchanges, plus SEC company-fundamentals data (submissions, company facts, XBRL frames), ETF holdings, government bond yields, commodity prices, market indices, and analyst ratings, via its V2 REST API. Built against V2 because V1 is documented as deprecated for use after June 30, 2025 (though it still responded live during testing).
 
 | | |
@@ -12,8 +14,6 @@ Marketstack by APILayer delivers real-time, intraday, and historical stock marke
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [marketstack.com](https://marketstack.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 46 |
-| **Events** | 0 |
 | **Slug** | `marketstack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Marketstack from **Build → Integrations → Connectors** and connect an ac
 | Get End-of-Day Data | `getEndOfDayData` | Returns end-of-day data for one or multiple stock tickers. |
 | Get End-of-Day Data for a Date | `getEndOfDayDataByDate` | Returns end-of-day data for a specific date for one or multiple stock tickers. |
 | Get ETF Holdings | `getEtfHoldings` | Returns the holdings disclosed in SEC filings for a specific ETF, identified by its ticker. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Exchange End-of-Day Data | `getExchangeEod` | Returns end-of-day data for symbols on a specific exchange, identified by its MIC. |
 | Get Exchange End-of-Day Data for a Date | `getExchangeEodByDate` | Returns end-of-day data for a specific date for symbols on a specific exchange. |
 | Get Exchange Intraday Data | `getExchangeIntraday` | Returns intraday data for symbols on a specific exchange. |
@@ -70,3 +77,5 @@ Add Marketstack from **Build → Integrations → Connectors** and connect an ac
 | List Tickers | `listTickers` | Returns the full paginated list of stock ticker symbols supported by Marketstack. |
 | List Tickers for an Exchange | `listExchangeTickers` | Returns all tickers listed on a specific stock exchange, identified by its MIC. |
 | Search CIK Code by Company Name | `searchCikByCompanyName` | Searches for SEC Central Index Key (CIK) codes by company name or a partial match of the name. |
+
+</details>

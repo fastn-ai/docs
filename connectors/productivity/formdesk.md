@@ -12,8 +12,6 @@ Formdesk online forms platform. Manage forms, form entries (results), uploaded f
 | **Category** | [Productivity](README.md) |
 | **Website** | [formdesk.com](https://formdesk.com) |
 | **Authentication** | API key |
-| **Actions** | 39 |
-| **Events** | 1 |
 | **Slug** | `formdesk` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Formdesk from **Build → Integrations → Connectors** and connect an accou
 | Get Connect Host | `getConnectHost` | SECURITY WARNING: the response of this endpoint contains the account's own Formdesk API Key in clear text. Do not log, store or forward the response. Determines which Formdesk server hosts the account: always call it on www.formdesk.com and use the returned host for every other call. Free of charge (costs no Formdesk credits). |
 | Get File | `getFile` | Returns the details (filename, size, location and metadata) of a single stored file by file id. Use Get File Content to download the bytes. Costs 1 Formdesk API credit. |
 | Get File Content | `getFileContent` | Downloads the raw binary content of a stored file by file id. The bytes can be written straight to disk without conversion. Obtain the file id from List Files or from a form result. Costs 1 Formdesk API credit. |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Form Entry | `getFormEntry` | Returns all answers and Formdesk system variables of one form result entry by entry id. System variables include _fd_id, _fd_seqno, _fd_source, _fd_status, _fd_add, _fd_edit, _fd_compl and _fd_deleted. Deleted entries are still returned for 30 days, but their uploaded files are gone. Costs 1 Formdesk API credit. |
 | Get Form Entry PDF | `getFormEntryPdf` | Generates a PDF copy of a completed form for one result entry and returns it as binary data; the filename is in the Content-Disposition header. Content options control which questions appear, PDF options control paper size, orientation, scaling, margins and password protection. Costs 1 Formdesk API credit. |
 | Get User | `getUser` | SECURITY WARNING: if the user is of type 'api' the response includes that user's Formdesk API Key in clear text. Do not log, store or forward it. Returns all properties of a single Formdesk user by numeric user id. Costs 1 Formdesk API credit. |
@@ -63,6 +68,8 @@ Add Formdesk from **Build → Integrations → Connectors** and connect an accou
 | Update Form Entry | `updateFormEntry` | Updates the answers of one form result entry by entry id. Supply the answers to change as top-level properties whose names are the form's item Identifiers; a file upload item takes an object {filename, content} with base64 content. Set process_messages to true to have Formdesk send the form's email and SMS messages after the update, which delivers real messages to real people. Costs 1 Formdesk API credit. |
 | Update User | `updateUser` | Updates properties of an existing Formdesk user by numeric user id. Requires Supervisor rights. Only the properties supplied are changed. Costs 1 Formdesk API credit. |
 | Update Visitor | `updateVisitor` | Updates properties of an existing form visitor by numeric visitor id. Requires Supervisor rights. Only the properties supplied are changed. Costs 1 Formdesk API credit. |
+
+</details>
 
 ## Events
 

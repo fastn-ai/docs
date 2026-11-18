@@ -5,6 +5,8 @@ hidden: true
 
 # MusicBrainz
 
+<img src="../../.gitbook/assets/connectors/musicbrainz.png" alt="MusicBrainz logo" width="64">
+
 MusicBrainz is the open music encyclopedia. Keyless read access to its Web Service v2: look up, browse and search artists, releases, release groups, recordings, works, labels, areas, places, events, instruments, series, URLs and genres, plus lookups by disc ID, ISRC and ISWC. Rate limit: 1 request per second per client.
 
 | | |
@@ -12,8 +14,6 @@ MusicBrainz is the open music encyclopedia. Keyless read access to its Web Servi
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [musicbrainz.org](https://musicbrainz.org) |
 | **Authentication** | No authentication |
-| **Actions** | 43 |
-| **Events** | 0 |
 | **Slug** | `musicbrainz` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MusicBrainz from **Build → Integrations → Connectors** and connect an ac
 | Browse Releases | `browseRelease` | Lists the releases linked to another entity (give exactly one of: area, artist, collection, label, track, track_artist, recording, release-group), paged. Docs: https://musicbrainz.org/doc/MusicBrainz_API |
 | Browse Works | `browseWork` | Lists the works linked to another entity (give exactly one of: artist, collection), paged. Docs: https://musicbrainz.org/doc/MusicBrainz_API |
 | Get Area | `getArea` | Looks up one area by MusicBrainz ID (MBID); use inc to add related data. Docs: https://musicbrainz.org/doc/MusicBrainz_API |
+
+<details>
+
+<summary>See 33 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Artist | `getArtist` | Looks up one artist by MusicBrainz ID (MBID); use inc to add related data. Docs: https://musicbrainz.org/doc/MusicBrainz_API |
 | Get Collection | `getCollection` | Looks up a public collection by MBID. Docs: https://musicbrainz.org/doc/MusicBrainz_API |
 | Get Event | `getEvent` | Looks up one event by MusicBrainz ID (MBID); use inc to add related data. Docs: https://musicbrainz.org/doc/MusicBrainz_API |
@@ -67,3 +74,5 @@ Add MusicBrainz from **Build → Integrations → Connectors** and connect an ac
 | Search Tags | `searchTag` | Searches tags with Lucene query syntax (fields and operators per the search docs) and returns scored results. Docs: https://musicbrainz.org/doc/MusicBrainz_API/Search |
 | Search URLs | `searchUrl` | Searches urls with Lucene query syntax (fields and operators per the search docs) and returns scored results. Docs: https://musicbrainz.org/doc/MusicBrainz_API/Search |
 | Search Works | `searchWork` | Searches works with Lucene query syntax (fields and operators per the search docs) and returns scored results. Docs: https://musicbrainz.org/doc/MusicBrainz_API/Search |
+
+</details>

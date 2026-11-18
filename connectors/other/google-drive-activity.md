@@ -5,6 +5,8 @@ hidden: true
 
 # Google Drive Activity
 
+<img src="../../.gitbook/assets/connectors/google-drive-activity.jpg" alt="Google Drive Activity logo" width="64">
+
 Query the activity record of files and folders in Google Drive using the Google Drive Activity API v2. Returns consolidated activity events such as creates, edits, moves, renames, comments, permission changes and deletions for a Drive item or an entire folder hierarchy.
 
 | | |
@@ -12,8 +14,6 @@ Query the activity record of files and folders in Google Drive using the Google 
 | **Category** | [Other](README.md) |
 | **Website** | [driveactivity.googleapis.com](https://driveactivity.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 1 |
-| **Events** | 0 |
 | **Slug** | `googleDriveActivity` |
 
 ## Use it

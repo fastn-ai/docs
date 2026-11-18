@@ -5,6 +5,8 @@ hidden: true
 
 # Teable
 
+<img src="../../.gitbook/assets/connectors/teable.png" alt="Teable logo" width="64">
+
 Teable is an open-source, Airtable-style no-code database (spaces &gt; bases &gt; tables &gt; fields &gt; records &gt; views). This connector wraps the Teable Cloud REST API at https://app.teable.ai/api for base, table, field, record, view, aggregation, comment and trash operations.
 
 | | |
@@ -12,8 +14,6 @@ Teable is an open-source, Airtable-style no-code database (spaces &gt; bases &gt
 | **Category** | [Data and databases](README.md) |
 | **Website** | [teable.ai](https://teable.ai) |
 | **Authentication** | API key |
-| **Actions** | 63 |
-| **Events** | 0 |
 | **Slug** | `teable` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Teable from **Build → Integrations → Connectors** and connect an account
 | Create View | `createView` | Add a view to a table. type is grid, calendar, kanban, form, gallery or plugin. Returns the created view with its generated id. |
 | Delete Base | `deleteBase` | Move a base to the space trash. Its tables and records go with it; it can be restored from the trash until it is permanently deleted. Returns 200 with an empty body. |
 | Delete Field | `deleteField` | Remove a field (column) and all of its cell values from a table. Returns 200 with an empty body; list the fields again to confirm it is gone. |
+
+<details>
+
+<summary>See 53 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Multiple Records | `deleteRecords` | Delete up to five rows of a table in one call. Teable expects the qs array form recordIds[0..n]; the fastn engine comma-joins an array-typed query parameter, so each id is passed in its own numbered slot. Returns {records:[...]} listing the rows that were deleted - an empty array means nothing matched. |
 | Delete Record | `deleteRecord` | Delete one row from a table by record id. Returns 200 with an empty body; read the record back (it 404s) or re-list to confirm. |
 | Delete Record Comment | `deleteRecordComment` | Delete one comment from a record's thread by comment id. Returns 200 with an empty body; list the comments to confirm. |
@@ -87,3 +94,5 @@ Add Teable from **Build → Integrations → Connectors** and connect an account
 | Update Table Description | `updateTableDescription` | Set the description text shown under a table. Returns 200 with an empty body; read the table back to confirm. |
 | Update Table Icon | `updateTableIcon` | Set the emoji icon shown next to a table in the sidebar. Returns 200 with an empty body; read the table back to confirm. |
 | Update View Description | `updateViewDescription` | Set the description text of a view. Returns 200 with an empty body; read the view back to confirm. |
+
+</details>

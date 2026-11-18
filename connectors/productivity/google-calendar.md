@@ -5,6 +5,8 @@ hidden: true
 
 # Google Calendar
 
+<img src="../../.gitbook/assets/connectors/google-calendar.svg" alt="Google Calendar logo" width="64">
+
 Google Calendar API v3 connector — manage calendars, events, ACLs, free/busy queries, and push notification channels.
 
 | | |
@@ -12,8 +14,6 @@ Google Calendar API v3 connector — manage calendars, events, ACLs, free/busy q
 | **Category** | [Productivity](README.md) |
 | **Website** | [calendar.google.com](https://calendar.google.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 32 |
-| **Events** | 3 |
 | **Slug** | `googleCalendar` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Calendar from **Build → Integrations → Connectors** and connect a
 | Delete Event | `deleteEvent` | Delete an event from a calendar. |
 | Get ACL Rule | `getAclRule` | Get a specific ACL rule for a calendar. |
 | Get Calendar | `getCalendar` | Get metadata for a calendar by ID. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Colors | `getColors` | Get the color IDs and hex codes available for calendars and events. |
 | Get Event | `getEvent` | Get a single event by ID from a calendar. |
 | Get Event Instances | `getEventInstances` | List all instances of a recurring event. |
@@ -56,6 +63,8 @@ Add Google Calendar from **Build → Integrations → Connectors** and connect a
 | Update Event | `updateEvent` | Replace an event (full update). Fields you leave out are cleared, including guests: send the full attendees list to keep them. To change only some fields (e.g. reschedule) use Patch Event (advanced). sendUpdates is not sent unless set. |
 | Watch Calendar Events | `watchCalendarEvents` | Register a push notification channel to watch for changes on a calendar's events. |
 | Watch Settings | `watchSettings` | Registers a push notification channel that calls your HTTPS webhook whenever the signed-in user's Calendar settings change (Google Calendar settings.watch). Google scope: calendar.settings or calendar.settings.readonly (calendar/calendar.readonly also work). Stop the channel with Stop Watch Channel using the returned id and resourceId. Returns the Channel with id, resourceId and expiration. |
+
+</details>
 
 ## Events
 

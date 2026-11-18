@@ -5,6 +5,8 @@ hidden: true
 
 # Google Tag Manager
 
+<img src="../../.gitbook/assets/connectors/google-tag-manager.jpg" alt="Google Tag Manager logo" width="64">
+
 Google Tag Manager API v2 — manage accounts, containers, workspaces, tags, triggers, variables, templates, clients, transformations, zones, folders, environments, container versions, and user permissions.
 
 | | |
@@ -12,8 +14,6 @@ Google Tag Manager API v2 — manage accounts, containers, workspaces, tags, tri
 | **Category** | [Marketing](README.md) |
 | **Website** | [tagmanager.googleapis.com](https://tagmanager.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 106 |
-| **Events** | 0 |
 | **Slug** | `googleTagManager` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Tag Manager from **Build → Integrations → Connectors** and connec
 | Create Tag | `createTag` | Creates a tag in a Google Tag Manager workspace. The tag type determines which parameters are required, for example an html tag needs a html parameter and a Google Analytics event tag needs measurement and event parameters. |
 | Create Template | `createTemplate` | Creates a custom template in a Google Tag Manager workspace from a template definition, which declares the template's fields, permissions, and sandboxed JavaScript. |
 | Create Transformation | `createTransformation` | Creates a transformation in a Google Tag Manager server-side workspace, which rewrites or redacts event data before tags receive it. |
+
+<details>
+
+<summary>See 96 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Trigger | `createTrigger` | Creates a trigger in a Google Tag Manager workspace. The trigger type determines which conditions and timing options apply, for example a pageview trigger uses filters while a timer trigger uses interval and limit. |
 | Create User Permission | `createUserPermission` | Grants a user access to a Google Tag Manager account, setting their account-level role and optionally per-container permissions. |
 | Create Variable | `createVariable` | Creates a user-defined variable in a Google Tag Manager workspace. The variable type determines the required parameters, for example a data layer variable of type v needs a name parameter naming the data layer key. |
@@ -130,3 +137,5 @@ Add Google Tag Manager from **Build → Integrations → Connectors** and connec
 | Update Variable | `updateVariable` | Updates a user-defined variable in a Google Tag Manager workspace. The supplied fields replace the existing ones, so send the complete parameter list. Supply the variable's current fingerprint to guard against concurrent modification. |
 | Update Workspace | `updateWorkspace` | Updates a workspace's name and description. Supply the workspace's current fingerprint to guard against concurrent modification. |
 | Update Zone | `updateZone` | Updates a zone in a Google Tag Manager workspace. The supplied fields replace the existing ones, so send the complete child container and boundary configuration. Supply the zone's current fingerprint to guard against concurrent modification. |
+
+</details>

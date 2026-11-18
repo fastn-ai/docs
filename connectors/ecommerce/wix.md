@@ -5,6 +5,8 @@ hidden: true
 
 # Wix
 
+<img src="../../.gitbook/assets/connectors/wix.png" alt="Wix logo" width="64">
+
 Wix REST API connector (www.wixapis.com). Stores (products/inventory/categories), eCommerce (orders/cart/checkout), CRM contacts, members, bookings, Wix Data/CMS, media, site properties, locations. Account-level API key auth: Authorization header (raw key) + wix-site-id (site APIs) / wix-account-id (account APIs).
 
 | | |
@@ -12,8 +14,6 @@ Wix REST API connector (www.wixapis.com). Stores (products/inventory/categories)
 | **Category** | [E-commerce](README.md) |
 | **Website** | [wix.com](https://wix.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 412 |
-| **Events** | 0 |
 | **Slug** | `wix` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wix from **Build → Integrations → Connectors** and connect an account, a
 | Add To Cart | `addToCart` | Add catalog line items to an existing cart. POST /ecom/v1/carts/{cartId}/add-to-cart with body {lineItems:[{catalogReference,quantity}]}. |
 | Add To Checkout | `addToCheckout` | Add line items to an existing checkout. POST /ecom/v1/checkouts/{id}/add-to-checkout. |
 | Add To Current Cart | `addToCurrentCart` | Add line items to the current cart. POST /ecom/v1/carts/current/add-to-cart with body {lineItems}. |
+
+<details>
+
+<summary>See 402 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Aggregate Data Items | `aggregateItems` | Run grouping/aggregation (sum/avg/min/max/count) over a Wix Data collection. |
 | Approve Member | `approveMember` | Approve a pending member so they can log in. |
 | Archive Location | `archiveLocation` | Archive a business location. POST /locations/v1/locations/{id}/archive. The default location cannot be archived. |
@@ -436,3 +443,5 @@ Add Wix from **Build → Integrations → Connectors** and connect an account, a
 | Update Staff Member | `updateStaffMember` | Update a staff member (Staff Members v1). Requires id and revision. |
 | Update Task | `updateTask` | Update a CRM task by GUID (Tasks V2, PATCH). The task body must include id and the current revision (string) from Get Task. Returns the updated task. |
 | Void Gift Card Transaction | `voidGiftCardTransaction` | Void a gift card transaction. POST /ecom/v1/gift-cards/void with body {transactionId,appId}. |
+
+</details>

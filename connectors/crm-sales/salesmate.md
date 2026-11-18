@@ -5,6 +5,8 @@ hidden: true
 
 # Salesmate
 
+<img src="../../.gitbook/assets/connectors/salesmate.png" alt="Salesmate logo" width="64">
+
 Salesmate is a sales CRM for contacts, companies, deals, activities, notes, products and custom modules. This connector covers the Salesmate Public API: contact, company, deal and activity records with their search endpoints, notes across every module, custom module records, product catalogue management, lookup field associations and user directory. The API host is your own Salesmate tenant, https://&lt;link name&gt;.salesmate.io, and is derived from the link name you supply when connecting.
 
 | | |
@@ -12,8 +14,6 @@ Salesmate is a sales CRM for contacts, companies, deals, activities, notes, prod
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [salesmate.io](https://salesmate.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 63 |
-| **Events** | 21 |
 | **Slug** | `salesmate` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Salesmate from **Build → Integrations → Connectors** and connect an acco
 | Create Contact | `createContact` | Creates a contact in Salesmate. Last name and owner are the only fields Salesmate requires; every other field is optional and is sent only when you supply it. Custom fields defined on the Contact module can be passed by their field API name. Returns the new contact id. |
 | Create Custom Module Record | `createCustomModuleRecord` | Creates a record in a Salesmate custom module. Name and owner are required. Pipeline and stage apply only to custom modules configured with a pipeline. Resolve the module id with Get Module ID. |
 | Create Deal | `createDeal` | Creates a deal in Salesmate. Title, primary contact, owner, pipeline, status and stage are required; every other field is optional and is sent only when you supply it. Products can be attached as line items via Associated Products. Returns the new deal id. |
+
+<details>
+
+<summary>See 53 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Product | `createProduct` | Creates a product in the Salesmate product catalogue. Salesmate serves the Product module only on its legacy v1 API, so this action authenticates with the session token rather than the access token; supply one on the connection. Returns the new product with its default price entry. |
 | Create Product Variation | `createProductVariation` | Adds a variation of an existing Salesmate product, such as a different size or colour with its own price. Salesmate serves the Product module only on its legacy v1 API, so this action authenticates with the session token. |
 | Delete Activity | `deleteActivity` | Deletes a Salesmate activity by id. Leave Hard Delete false to move the activity to the recycle bin, or set it true to remove it permanently. Salesmate answers HTTP 200 even when no such activity exists, returning Status "failure" with error code 4005 ObjectNotFound, so always assert Status. |
@@ -88,6 +95,8 @@ Add Salesmate from **Build → Integrations → Connectors** and connect an acco
 | Update Module Record Note | `updateModuleRecordNote` | Updates the content of a note on a record in any Salesmate module, including custom modules, tickets and quotes. Salesmate keeps the previous text in the note's history. The note body is HTML, so wrap plain text in a div. |
 | Update Product | `updateProduct` | Updates a product in the Salesmate product catalogue. Only the fields you supply are sent, so untouched fields keep their current values. Salesmate serves the Product module only on its legacy v1 API, so this action authenticates with the session token. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -104,6 +113,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | File Uploaded | `file.uploaded` | Fires when a file is uploaded against a record. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'File Uploaded' (CRM) &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "file.uploaded" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
 | Form Submitted | `form.submitted` | Fires when a Salesmate web form is submitted. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Form Submitted Event' (CRM) and pick the form &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "form.submitted" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
 | Note Added | `note.added` | Fires when a note is added to a record. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Note Added' (CRM) &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "note.added" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
+
+<details>
+
+<summary>See 11 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Order Placed | `order.placed` | Fires when an order is placed, for accounts using Salesmate's e-commerce triggers. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Order Placed' (E-Commerce category) &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "order.placed" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
 | Page Visited | `page.visited` | Fires when a tracked contact visits a page on your site. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Page Visited Event' (CRM) &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "page.visited" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
 | Record Created | `record.created` | Fires when a record is created in the chosen Salesmate module. Salesmate has no webhook registration API - the customer wires this up once per flow in the Salesmate UI: Smart Flows (left sidebar) &gt; New Flow &gt; Trigger-based Flow &gt; select the trigger 'Record Created' (CRM category) and the module &gt; add the action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: Salesmate sends no event-type discriminator, so the body MUST include a literal field "eventType" with the value "record.created" or this event is silently dropped. Every other field is chosen by the admin from Salesmate merge fields; the schema below is the recommended shape, not a fixed vendor contract. |
@@ -115,3 +131,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Tag Removed | `tag.removed` | Fires when a tag is removed from a record. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Tag Removed' (CRM) and the module &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "tag.removed" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
 | Text Message Received | `sms.received` | Fires when a text message is received in Salesmate. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Text (SMS) Received' (Communication category) &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "sms.received" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
 | Text Message Sent | `sms.sent` | Fires when a text message is sent from Salesmate. Wire it up in the Salesmate UI: Smart Flows &gt; New Flow &gt; Trigger-based Flow &gt; trigger 'Text (SMS) Sent' (Communication category) &gt; action 'API Call/ Webhook' &gt; Method POST, URL = this trigger's fastn URL &gt; Body: raw JSON &gt; Save and Publish. IMPORTANT: the body MUST include a literal field "eventType" with the value "sms.sent" or this event is silently dropped. Payload fields are admin-composed; the schema below is the recommended shape. |
+
+</details>

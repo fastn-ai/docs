@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Sheet
 
+<img src="../../.gitbook/assets/connectors/zoho-sheet.png" alt="Zoho Sheet logo" width="64">
+
 Zoho Sheet online spreadsheet application, part of the Zoho suite. Programmatic access via Zoho Sheet Data APIs (sheet.zoho.com/api/v2) to manage workbooks, worksheets, tabular data, charts, pivot tables, cell/range content, formatting, named ranges, picklists, data validation, merge templates and premium high-throughput record APIs. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Sheet online spreadsheet application, part of the Zoho suite. Programmatic 
 | **Category** | [Other](README.md) |
 | **Website** | [sheet.zoho.com](https://sheet.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 120 |
-| **Events** | 0 |
 | **Slug** | `zohoSheet` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Sheet from **Build → Integrations → Connectors** and connect an acc
 | Clear Contents of Range | `clearContentsOfRange` | Clear only the contents of a range. Any style or format applied to the range remains intact. |
 | Clear Data Validation from Range | `clearDataValidationFromRange` | Clear data validation rules from one or more ranges on a worksheet. |
 | Clear Filters | `clearFilters` | Reset or clear all applied filters in a worksheet. |
+
+<details>
+
+<summary>See 110 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clear Range | `clearRange` | Clear everything in a range, including style, format, and content. |
 | Clone Chart | `cloneChart` | Duplicate an existing chart. The clone is placed on the same worksheet as the original and its new chart id is returned. |
 | Convert Index to Range | `convertIndexToRange` | Convert start row, start column, end row, and end column indexes into an A1-style range address such as A1:D3. |
@@ -144,3 +151,5 @@ Add Zoho Sheet from **Build → Integrations → Connectors** and connect an acc
 | Update Records in Worksheet | `updateRecordsInWorksheet` | Update worksheet records matching a criteria expression, e.g. "Month"="March". If no criteria, all rows are updated. |
 | Update Rows with JSON Data | `updateRowsJson` | Update multiple discontinuous rows by row index. The key of each JSON object represents the column header; each object must include row_index. |
 | Upload Workbook | `uploadWorkbook` | Import a spreadsheet file (.xls, .xlsm, .csv, .tsv, .sxc, .ods, max 10MB) from a URL into a new Zoho Sheet workbook, or insert it as new worksheets into an existing workbook. |
+
+</details>

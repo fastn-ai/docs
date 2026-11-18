@@ -12,8 +12,6 @@ Gutendex is a free, keyless JSON API for Project Gutenberg ebook metadata: searc
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [gutendex.com](https://gutendex.com) |
 | **Authentication** | No authentication |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `gutendex` |
 
 ## Use it

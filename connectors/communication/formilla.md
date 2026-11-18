@@ -5,6 +5,8 @@ hidden: true
 
 # Formilla
 
+<img src="../../.gitbook/assets/connectors/formilla.png" alt="Formilla logo" width="64">
+
 Formilla is a live chat, chatbot and customer messaging platform. This connector wraps the Formilla REST API, which pushes customer data from your own systems into Formilla so you can target automatic email and in-app messages on that data. It covers creating or updating a contact with custom attributes, and recording a customer event against a contact.
 
 | | |
@@ -12,8 +14,6 @@ Formilla is a live chat, chatbot and customer messaging platform. This connector
 | **Category** | [Communication](README.md) |
 | **Website** | [formilla.com](https://formilla.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 2 |
-| **Events** | 0 |
 | **Slug** | `formilla` |
 
 ## Use it

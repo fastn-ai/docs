@@ -5,6 +5,8 @@ hidden: true
 
 # CometAPI
 
+<img src="../../.gitbook/assets/connectors/comet-api.png" alt="CometAPI logo" width="64">
+
 CometAPI is a unified gateway to 500+ AI models from OpenAI, Anthropic, Google, xAI, DeepSeek, Kling, Midjourney, Runway, Bria, Flux, Replicate and more behind one API key. This connector covers the documented CometAPI REST surface at https://api.cometapi.com: the OpenAI-compatible chat completions, responses, embeddings, moderation, speech and image endpoints; Anthropic Messages and Gemini native formats; the model catalog and key usage; and the vendor-specific image, video and audio task APIs for Kling, Midjourney, Runway, Bria, Flux, Grok and Replicate with their task-status queries.
 
 | | |
@@ -12,8 +14,6 @@ CometAPI is a unified gateway to 500+ AI models from OpenAI, Anthropic, Google, 
 | **Category** | [AI and ML](README.md) |
 | **Website** | [cometapi.com](https://cometapi.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 69 |
-| **Events** | 0 |
 | **Slug** | `cometApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CometAPI from **Build → Integrations → Connectors** and connect an accou
 | Create Kling Image To Video | `createKlingImageToVideo` | Creates a Kling image-to-video task from a source image with an optional motion prompt, tail frame, static and dynamic motion masks, model, mode, duration, prompt adherence and generated sound. Returns a task ID to poll with Get Kling Task (videos/image2video). |
 | Create Kling Motion Control Video | `createKlingMotionControlVideo` | Creates a Kling motion-control video that animates a character image with the motion from a reference video (MP4 or MOV up to 100 MB), with orientation, mode, sound and element options. Returns a task ID to poll with Get Kling Task (videos/motion-control). |
 | Create Kling Multi-Element Edit | `createKlingMultiElementEdit` | Submits the final Kling multi-element video edit for a prepared selection session: add an element, swap the selected element for a reference image, or remove it, driven by a prompt that references the source video as &lt;&lt;&lt;video_1&gt;&gt;&gt; and images as &lt;&lt;&lt;image_1&gt;&gt;&gt;. Returns a task ID to poll with Get Kling Task (videos/multi-elements). |
+
+<details>
+
+<summary>See 59 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Kling Multi-Image To Image | `createKlingMultiImageToImage` | Generates a Kling image from one to four subject reference images plus optional scene and style images and a prompt. Returns an asynchronous task ID to poll with Get Kling Task. |
 | Create Kling Multi-Image To Video | `createKlingMultiImageToVideo` | Creates a Kling video from one to four reference images plus a motion prompt, with mode, duration and aspect ratio options. Returns a task ID to poll with Get Kling Task (videos/multi-image2video). |
 | Create Kling Omni Image | `createKlingOmniImage` | Creates an asynchronous Kling Omni Image task from a prompt that can cite reference images with &lt;&lt;&lt;image_1&gt;&gt;&gt; placeholders, with resolution, aspect ratio, count and watermark options. Poll Get Kling Omni Image for the result. |
@@ -93,3 +100,5 @@ Add CometAPI from **Build → Integrations → Connectors** and connect an accou
 | Submit Midjourney Imagine | `submitMidjourneyImagine` | Submits the primary Midjourney generation request from a prompt (standard Midjourney parameters such as --v, --ar and --stylize are supported), with optional reference images, bot type and account speed-mode filter. The response is an envelope: code 1 means submitted and result carries the task ID to poll with Get Midjourney Task; code 4 is a parameter error. |
 | Submit Midjourney Modal | `submitMidjourneyModal` | Completes a Midjourney modal action such as Vary (Region) inpainting or custom zoom by supplying the parent task ID, the button customId that opened the modal, and an optional prompt and mask. Envelope response: code 1 submitted with the new task ID in result. |
 | Submit Midjourney Video | `submitMidjourneyVideo` | Submits a Midjourney video task that animates a first-frame image with low or high motion and an optional prompt, or performs a follow-up action on an existing video task. Envelope response: code 1 submitted with the task ID in result to poll with Get Midjourney Task. |
+
+</details>

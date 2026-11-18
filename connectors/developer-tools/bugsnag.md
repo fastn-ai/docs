@@ -5,6 +5,8 @@ hidden: true
 
 # BugSnag
 
+<img src="../../.gitbook/assets/connectors/bugsnag.svg" alt="BugSnag logo" width="64">
+
 BugSnag (now SmartBear Insight Hub) is an error monitoring and application stability platform. This connector covers the BugSnag Data Access API: organizations, projects and project settings, errors and error triage, events and event fields, pivots, trends and stability trend, releases and release groups, feature flags and variants, collaborators, teams and project access, saved searches, configured integrations and integration connections, error assignment rules, network endpoint grouping, spans, span groups and traces, SCIM user and group provisioning, and event data export and deletion requests.
 
 | | |
@@ -12,8 +14,6 @@ BugSnag (now SmartBear Insight Hub) is an error monitoring and application stabi
 | **Category** | [Developer tools](README.md) |
 | **Website** | [bugsnag.com](https://bugsnag.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 135 |
-| **Events** | 11 |
 | **Slug** | `bugsnag` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BugSnag from **Build → Integrations → Connectors** and connect an accoun
 | Confirm Project Event Data Deletion | `confirmProjectEventDataDeletion` | Confirm a pending project event deletion request so that the matching events are permanently deleted. This cannot be undone. |
 | Create Custom Event Field | `createEventField` | Create a custom event field on a project so that a value inside your events' metadata becomes filterable and pivotable. Requires an organization administrator or project owner role. |
 | Create Organization | `createOrganization` | Create a new BugSnag organization and add the authenticated user to it as an administrator. |
+
+<details>
+
+<summary>See 125 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Organization Event Data Deletion | `createOrganizationEventDataDeletion` | Request asynchronous deletion of the events across an organization that match the supplied filters, for example to satisfy a data subject erasure request. Unless Skip Confirmation is true, the deletion only proceeds after Confirm Organization Event Data Deletion is called. Prefer the exact `user.id` filter over `user.email` or `user.name`, which match substrings. |
 | Create Organization Event Data Request | `createOrganizationEventDataRequest` | Start an asynchronous export of the events across an organization that match the supplied filters. Poll Get Organization Event Data Request with the returned ID until the report is ready to download. |
 | Create Project | `createProject` | Create a project in a BugSnag organization. The response contains the project's notifier API key, which the BugSnag SDK needs in order to report errors. |
@@ -160,6 +167,8 @@ Add BugSnag from **Build → Integrations → Connectors** and connect an accoun
 | Update Span Group | `updateSpanGroup` | Star or unstar a span group for the authenticated user, pinning it in the performance dashboard. This endpoint is part of BugSnag Performance and requires performance monitoring to be enabled for the project. |
 | Update Team | `updateTeam` | Rename a team. Its membership and project access are unchanged. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -176,4 +185,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Power Of Ten Milestone | `powerTen` | Fires when an error reaches an occurrence milestone of 10, 100, 1000 and so on. Registered through the BugSnag Data Access API as a `webhook` data-forwarding configured integration on the project, with the `power_ten_config` trigger enabled. The payload arrives with `trigger.type` set to `powerTen`. |
 | Project Approaching Rate Limit | `projectApproachingRateLimit` | Fires when the project approaches its event rate limit. Registered through the BugSnag Data Access API as a `webhook` data-forwarding configured integration on the project, with the `project_approaching_rate_limit_config` trigger enabled. The payload arrives with `trigger.type` set to `projectApproachingRateLimit`. |
 | Project Sampling Started | `projectSamplingStarted` | Fires when the project starts being rate-limited and BugSnag begins sampling its events. Registered through the BugSnag Data Access API as a `webhook` data-forwarding configured integration on the project, with the `project_sampling_started_config` trigger enabled. The payload arrives with `trigger.type` set to `projectSamplingStarted`. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Project Spiking | `projectSpiking` | Fires when BugSnag detects a spike in the errors matching the integration's filters. Registered through the BugSnag Data Access API as a `webhook` data-forwarding configured integration on the project, with the `project_spiking_config` trigger enabled. The payload arrives with `trigger.type` set to `projectSpiking`. |
+
+</details>

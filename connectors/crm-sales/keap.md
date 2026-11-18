@@ -5,6 +5,8 @@ hidden: true
 
 # Keap
 
+<img src="../../.gitbook/assets/connectors/keap.png" alt="Keap logo" width="64">
+
 Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform. Contacts, companies, opportunities, orders, subscriptions, products, tasks, appointments, notes, emails, tags, campaigns, automations, affiliates, files, users, and REST Hook webhooks over the Keap v1 + v2 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform. Cont
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [keap.com](https://keap.com) |
 | **Authentication** | API key |
-| **Actions** | 206 |
-| **Events** | 0 |
 | **Slug** | `keap` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Keap from **Build → Integrations → Connectors** and connect an account, 
 | Batch Add Email Records | `batchAddEmails` | Create a set of email records (max 1000) |
 | Batch Remove Email Records | `batchRemoveEmails` | Delete a set of email records |
 | Cancel a Subscription | `cancelSubscription` | Deactivate/cancel a subscription |
+
+<details>
+
+<summary>See 196 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a Company | `createCompany` | Create a Company (company_name required) |
 | Create a Contact | `createContact` | Create a Contact. Provide duplicate_option (Email/EmailAndName/EmailAndNameAndCompany) to upsert on a match; at minimum supply an email address or given_name/family_name. |
 | Create a Contact Credit Card | `createContactCreditCard` | Add a credit card to a contact (v1) |
@@ -230,3 +237,5 @@ Add Keap from **Build → Integrations → Connectors** and connect an account, 
 | Updates an account profile | `updateAccountProfile` | Updates an account profile |
 | Verify a Hook Subscription | `verifyHook` | Verify a REST Hook subscription (immediate) |
 | Verify a Hook Subscription (Delayed) | `verifyHookDelayed` | Verify a REST Hook subscription using the delayed X-Hook-Secret handshake |
+
+</details>

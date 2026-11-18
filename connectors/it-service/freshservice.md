@@ -5,6 +5,8 @@ hidden: true
 
 # Freshservice
 
+<img src="../../.gitbook/assets/connectors/freshservice.png" alt="Freshservice logo" width="64">
+
 Freshservice IT service management — tickets, problems, changes, releases, assets, service catalog, knowledge base, and administration via the Freshservice API v2.
 
 | | |
@@ -12,8 +14,6 @@ Freshservice IT service management — tickets, problems, changes, releases, ass
 | **Category** | [IT and service management](README.md) |
 | **Website** | [freshservice.com](https://freshservice.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 409 |
-| **Events** | 17 |
 | **Slug** | `freshservice` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Freshservice from **Build → Integrations → Connectors** and connect an a
 | Cancel Change Approval | `cancelChangeApproval` | Cancels a pending approval on a change. |
 | Cancel Journey Request | `cancelJourneyRequest` | Cancels an in-progress employee journey request. Requires an employee journey to be configured under Admin &gt; Employee Journeys. Journey configurations cannot be created through the API. |
 | Cancel Ticket Approval | `cancelTicketApproval` | Cancels a pending approval on a ticket. |
+
+<details>
+
+<summary>See 399 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Change Contract Status | `changeContractStatus` | Submits a contract for approval, or approves or rejects a submitted contract. Requires the Contract Management capability on the Freshservice plan, and a vendor record, which is itself part of Asset Management (CMDB). |
 | Convert Agent To Requester | `convertAgentToRequester` | Converts an agent into a requester, releasing their agent licence. |
 | Convert Requester To Agent | `convertRequesterToAgent` | Converts a requester into an agent, consuming an agent licence. |
@@ -434,6 +441,8 @@ Add Freshservice from **Build → Integrations → Connectors** and connect an a
 | Update User Delegation | `updateUserDelegation` | Updates the approval delegation configured for a user. |
 | Update Vendor | `updateVendor` | Updates an existing vendor. Requires the Asset Management (CMDB) capability on the Freshservice plan; accounts without it receive HTTP 403 require_feature. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -450,6 +459,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Release Updated | `releaseUpdated` | Fires when a release record is updated. SETUP: Workflow Automator &gt; New Automator &gt; Release module. Event = 'Release is updated' (optionally scoped to the Status property), then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced) with this fastn webhook URL. PAYLOAD IS RULE-DEFINED; set "event_type": "releaseUpdated". |
 | Service Request Approval Updated | `ticketApprovalUpdated` | Fires when an approval on a service request is approved or rejected. SETUP: Workflow Automator &gt; New Automator &gt; Ticket module. Event = 'Request approval is approved' or 'Request approval is rejected' (add one rule per outcome, or one rule with both events), then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced) with this fastn webhook URL. PAYLOAD IS RULE-DEFINED - map the approver and approval-status placeholders yourself; Set "event_type": "ticketApprovalUpdated". |
 | Task Updated | `taskUpdated` | Fires when a task attached to a ticket, problem, change or release is created, reassigned or completed. SETUP: Workflow Automator &gt; New Automator &gt; pick the parent module (Ticket, Problem, Change or Release). Event = the task event for that module, for example 'Task is added' or 'Task status is updated', then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced) with this fastn webhook URL. PAYLOAD IS RULE-DEFINED - the task fields are only present if you map the task placeholders; set "event_type": "taskUpdated" and include parent_type/parent_id so the consumer knows what the task belongs to. Task automations for Problem, Change and Release require an Estate or Forest plan. |
+
+<details>
+
+<summary>See 7 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Ticket Closed | `ticketClosed` | Fires when a ticket is closed. SETUP: Workflow Automator &gt; New Automator &gt; Ticket module. Event = 'Ticket is updated' on the Status property with a Condition 'Status is Closed', then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced) with this fastn webhook URL. PAYLOAD IS RULE-DEFINED; set "event_type": "ticketClosed". |
 | Ticket Created | `ticketCreated` | Fires when a new ticket (incident or service request) is raised in Freshservice. SETUP: Admin &gt; Automation & Productivity &gt; Automation &gt; Workflow Automator &gt; New Automator &gt; choose the Ticket module. Set the Event to 'Ticket is raised', add any Conditions you want to narrow the rule, then add an Action &gt; 'Trigger Webhook'. Set Request Type = POST, Callback URL = this fastn webhook URL, Encoding = JSON, and Content = Advanced (Custom JSON). PAYLOAD IS RULE-DEFINED: Freshservice does not send a fixed payload - whatever JSON you compose in the rule (Simple mode = the ticket properties you tick; Advanced mode = your own JSON built from placeholders) is exactly what arrives. To route this event correctly you MUST include the literal field "event_type": "ticketCreated" in the Advanced JSON, because fastn reads the event type from the 'event_type' payload field. The schema below is the recommended field set built from the Freshservice v2 Ticket object - map each key from the matching placeholder (e.g. AUTH: optionally tick 'Requires Authentication' on the webhook and supply Username/Password (HTTP Basic) or an API key header. Freshservice does not HMAC-sign outbound webhooks. LIMITS: 1000 webhook calls per hour; a non-2xx/3xx response or a response slower than 15s is retried up to 4 times at 3, 5, 9 and 17 minute intervals. |
 | Ticket Note Added | `ticketNoteAdded` | Fires when a public reply or private note is added to a ticket. SETUP: Workflow Automator &gt; New Automator &gt; Ticket module. Event = 'Note is added' (choose public, private or both), then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced) with this fastn webhook URL. PAYLOAD IS RULE-DEFINED - the note body and author are only delivered if you map the note placeholders into the Advanced JSON. Set "event_type": "ticketNoteAdded". |
@@ -457,3 +473,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Ticket Resolved | `ticketResolved` | Fires when a ticket is marked Resolved. SETUP: Workflow Automator &gt; New Automator &gt; Ticket module. Event = 'Ticket is updated' on the Status property, add a Condition 'Status is Resolved', then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced) with this fastn webhook URL. PAYLOAD IS RULE-DEFINED; set "event_type": "ticketResolved" and include the resolution/closure fields you need. |
 | Ticket Status Changed | `ticketStatusChanged` | Fires when a ticket moves between statuses (for example Open to Pending). SETUP: Workflow Automator &gt; New Automator &gt; Ticket module. Event = 'Ticket is updated' and select the 'Status' property so the rule only runs on status transitions; then Action &gt; 'Trigger Webhook' (POST, JSON, Advanced content) pointing at this fastn webhook URL. PAYLOAD IS RULE-DEFINED. Freshservice does not automatically include the previous value, so add it explicitly in the Advanced JSON using the from/to placeholders exposed by the status event, and set "event_type": "ticketStatusChanged". |
 | Ticket Updated | `ticketUpdated` | Fires when any ticket property is changed. SETUP: Admin &gt; Automation & Productivity &gt; Automation &gt; Workflow Automator &gt; New Automator &gt; Ticket module. Event = 'Ticket is updated' (optionally scope it to the specific properties you care about), then Action &gt; 'Trigger Webhook' with Request Type = POST, Callback URL = this fastn webhook URL, Encoding = JSON, Content = Advanced. PAYLOAD IS RULE-DEFINED - it contains exactly the fields you place in the rule's JSON, nothing more. Include "event_type": "ticketUpdated" so fastn can identify the event. The schema below is the recommended field set from the Freshservice v2 Ticket object. |
+
+</details>

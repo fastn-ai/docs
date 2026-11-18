@@ -5,6 +5,8 @@ hidden: true
 
 # DocuSeal
 
+<img src="../../.gitbook/assets/connectors/docuseal.png" alt="DocuSeal logo" width="64">
+
 DocuSeal is a document signing platform. This connector covers the DocuSeal API: document templates built from PDF, DOCX or HTML, signature requests (submissions), submitters and their filled values, signed document downloads, and webhook endpoints for signing events.
 
 | | |
@@ -12,8 +14,6 @@ DocuSeal is a document signing platform. This connector covers the DocuSeal API:
 | **Category** | [Productivity](README.md) |
 | **Website** | [docuseal.com](https://docuseal.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 30 |
-| **Events** | 11 |
 | **Slug** | `docuseal` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DocuSeal from **Build → Integrations → Connectors** and connect an accou
 | Create Submission From PDF | `createSubmissionFromPdf` | Creates a signature request directly from one or more PDF files, without first saving a template. By default DocuSeal emails every submitter; set Send Email to false to create the request silently and use the returned signing links. |
 | Create Template From DOCX | `createTemplateFromDocx` | Creates a fillable DocuSeal template from one or more Microsoft Word DOCX files. |
 | Create Template From HTML | `createTemplateFromHtml` | Generates a DocuSeal PDF template from HTML content, with fillable fields declared as custom field tags such as &lt;text-field name="Full Name" role="First Party"&gt;. Use the Documents array to build a multi-document template, or the top-level HTML for a single document. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Template From PDF | `createTemplateFromPdf` | Creates a fillable DocuSeal template from one or more PDF files. Supply each file as base64 content or a public download URL. |
 | Create Webhook URL | `createWebhookUrl` | Registers a webhook endpoint so DocuSeal posts signing events to your URL. New endpoints default to the four form.* events; pass Events to choose exactly which ones. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
 | Delete Webhook URL | `deleteWebhookUrl` | Permanently removes a DocuSeal webhook endpoint so DocuSeal stops posting events to it. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
@@ -55,6 +62,8 @@ Add DocuSeal from **Build → Integrations → Connectors** and connect an accou
 | Update Template Documents | `updateTemplateDocuments` | Adds, replaces or removes the documents attached to a DocuSeal template. Supply each document as a base64 file, a download URL or HTML content; pass an existing document position to replace it, or list the documents to keep. |
 | Update Webhook URL | `updateWebhookUrl` | Changes the target URL or subscribed events of a DocuSeal webhook endpoint. The Events array replaces the existing subscription rather than adding to it. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -71,4 +80,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Submission Expired | `submission.expired` | Fires when a submission passes its expiry date without being completed. Envelope captured from a real DocuSeal delivery. |
 | Template Archived | `template.archived` | Fires when a document template is archived. The data object is the template, with archived_at set. Envelope captured from a real DocuSeal delivery. |
 | Template Created | `template.created` | Fires when a document template is created. The data object is the template. Envelope captured from a real DocuSeal delivery. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Template Updated | `template.updated` | Fires when a document template is changed. The data object is the template. Envelope captured from a real DocuSeal delivery. |
+
+</details>

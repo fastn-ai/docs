@@ -5,6 +5,8 @@ hidden: true
 
 # DataForSEO
 
+<img src="../../.gitbook/assets/connectors/dataforseo.png" alt="DataForSEO logo" width="64">
+
 DataForSEO provides SEO and marketing data through the DataForSEO API v3: SERP results for Google, Bing, Yahoo, Baidu, Naver and YouTube; Keywords Data (Google Ads, Bing, Clickstream and DataForSEO Trends); DataForSEO Labs keyword, domain and competitor research; Backlinks; OnPage crawling and audits; Content Analysis; Merchant (Google Shopping and Amazon); App Data (Apple App Store and Google Play); Business Data (Google Business, Trustpilot, Tripadvisor, social media); Domain Analytics (Whois and Technologies); and AI Optimization (LLM mentions, LLM responses, AI keyword data). Requests use the DataForSEO API login and password over HTTP Basic auth; each action submits one task per call.
 
 | | |
@@ -12,8 +14,6 @@ DataForSEO provides SEO and marketing data through the DataForSEO API v3: SERP r
 | **Category** | [Marketing](README.md) |
 | **Website** | [dataforseo.com](https://dataforseo.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 565 |
-| **Events** | 0 |
 | **Slug** | `dataforseo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DataForSEO from **Build → Integrations → Connectors** and connect an acc
 | Ai Optimization Chat Gpt Llm Responses Tasks Ready | `aiOptimizationChatGptLlmResponsesTasksReady` | ‌ This endpoint is designed to provide you with a list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. |
 | Ai Optimization Chat Gpt Llm Scraper Languages | `aiOptimizationChatGptLlmScraperLanguages` | You will receive the list of languages by calling this API. |
 | Ai Optimization Chat Gpt Llm Scraper Live Advanced | `aiOptimizationChatGptLlmScraperLiveAdvanced` | ‌‌ Live ChatGPT LLM Scraper endpoint provides results from ChatGPT searches. The results are specific to the selected location (see the List of Locations) and language (see the List of Languages) parameters. |
+
+<details>
+
+<summary>See 555 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Ai Optimization Chat Gpt Llm Scraper Live Html | `aiOptimizationChatGptLlmScraperLiveHtml` | ‌ Live ChatGPT LLM Scraper API HTML provides a raw HTML page of the results for the specified keyword, language, and location. |
 | Ai Optimization Chat Gpt Llm Scraper Locations | `aiOptimizationChatGptLlmScraperLocations` | You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. |
 | Ai Optimization Chat Gpt Llm Scraper Locations Country | `aiOptimizationChatGptLlmScraperLocationsCountry` | You will receive the list of locations by this API call. You can filter the list of locations by country when setting a task. |
@@ -589,3 +596,5 @@ Add DataForSEO from **Build → Integrations → Connectors** and connect an acc
 | SERP Youtube Video Subtitles Task Post | `serpYoutubeVideoSubtitlesTaskPost` | YouTube Subtitles API provides data on all subtitles in the video you specify in the POST request. You will get data from the watching page containing subtitled text, its language, and duration in the video. Docs: https://docs.dataforseo.com/v3/serp/youtube/video_subtitles/task_post/ |
 | SERP Youtube Video Subtitles Tasks Fixed | `serpYoutubeVideoSubtitlesTasksFixed` | ‌ The ‘Tasks Fixed’ endpoint is designed to provide you with the list of re-parsed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed re-parsed tasks using this endpoint. Then, you can re-collect the fixed results using the ‘Task GET’ endpoint. |
 | SERP Youtube Video Subtitles Tasks Ready | `serpYoutubeVideoSubtitlesTasksReady` | ‌ The ‘Tasks Ready’ endpoint is designed to provide you with the list of completed tasks, which haven’t been collected yet. If you use the Standard method without specifying the postback_url, you can receive the list of id for all completed tasks using this endpoint. Then, you can collect the results using the ‘Task GET’ endpoint. Learn more about task completion and obtaining a list of completed tasks in this help center article. |
+
+</details>

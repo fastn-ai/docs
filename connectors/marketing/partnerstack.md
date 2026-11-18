@@ -5,6 +5,8 @@ hidden: true
 
 # PartnerStack
 
+<img src="../../.gitbook/assets/connectors/partnerstack.png" alt="PartnerStack logo" width="64">
+
 PartnerStack is a partner relationship management platform for affiliate, referral and reseller programs. This connector covers the complete PartnerStack Partner API v2 (https://api.partnerstack.com/api/v2), the read API available to partners: partnerships with the programs you promote, the customers you referred, transactions and actions attributed to you, the rewards you earned, your payouts, and the PartnerStack marketplace of programs you can join. Partner-side events are delivered by PartnerStack Postbacks. The separate PartnerStack Vendor API, which uses Basic authentication with a vendor public/secret key pair, is not covered here.
 
 | | |
@@ -12,8 +14,6 @@ PartnerStack is a partner relationship management platform for affiliate, referr
 | **Category** | [Marketing](README.md) |
 | **Website** | [partnerstack.com](https://partnerstack.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 8 |
-| **Events** | 10 |
 | **Slug** | `partnerstack` |
 
 ## Use it

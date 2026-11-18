@@ -5,6 +5,8 @@ hidden: true
 
 # Open-Meteo
 
+<img src="../../.gitbook/assets/connectors/open-meteo.png" alt="Open-Meteo logo" width="64">
+
 Open-Meteo is a free, keyless weather API: forecasts from national weather models, historical weather back to 1940, marine, air quality, flood, climate, ensemble and seasonal data, plus geocoding and elevation. Free for non-commercial use (under 10,000 calls per day); commercial use needs an Open-Meteo API subscription.
 
 | | |
@@ -12,8 +14,6 @@ Open-Meteo is a free, keyless weather API: forecasts from national weather model
 | **Category** | [Search and web](README.md) |
 | **Website** | [open-meteo.com](https://open-meteo.com) |
 | **Authentication** | No authentication |
-| **Actions** | 22 |
-| **Events** | 0 |
 | **Slug** | `openMeteo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Open-Meteo from **Build → Integrations → Connectors** and connect an acc
 | Get GEM Forecast | `getGemForecast` | Returns forecast data from the GEM model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/gem-api |
 | Get GFS and HRRR Forecast | `getGfsForecast` | Returns forecast data from the GFS and HRRR model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/gfs-api |
 | Get Historical Forecast | `getHistoricalForecast` | Returns archived high-resolution forecasts (from 2022 onwards) for a date range, built from the first hours of each model run. Docs: https://open-meteo.com/en/docs/historical-forecast-api |
+
+<details>
+
+<summary>See 12 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Historical Weather | `getHistoricalWeather` | Returns historical weather (reanalysis) data from 1940 to a few days ago for a date range and coordinates. Docs: https://open-meteo.com/en/docs/historical-weather-api |
 | Get JMA Forecast | `getJmaForecast` | Returns forecast data from the JMA model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/jma-api |
 | Get Location | `getLocation` | Returns one geocoding location by its id (as returned by Search Locations). Docs: https://open-meteo.com/en/docs/geocoding-api |
@@ -46,3 +53,5 @@ Add Open-Meteo from **Build → Integrations → Connectors** and connect an acc
 | Get Single Model Run Forecast | `getSingleRunForecast` | Returns the forecast of one specific model run (run time in UTC). Docs: https://open-meteo.com/en/docs/single-runs-api |
 | Get Weather Forecast | `getForecast` | Returns hourly, daily, 15-minutely and current weather forecast data for one or more coordinates, combining the best national weather models (up to 16 days). Docs: https://open-meteo.com/en/docs |
 | Search Locations | `searchLocations` | Searches places by name or postal code and returns coordinates, time zone, country, population and admin areas (geocoding). Docs: https://open-meteo.com/en/docs/geocoding-api |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Dart
 
+<img src="../../.gitbook/assets/connectors/dart.png" alt="Dart logo" width="64">
+
 Dart (dartai.com) is an AI-native project and task management tool. This connector wraps the Dart Public API v0: tasks, docs, comments, dartboards, folders, views, agents, skills, webhooks and workspace configuration.
 
 | | |
@@ -12,8 +14,6 @@ Dart (dartai.com) is an AI-native project and task management tool. This connect
 | **Category** | [Project management](README.md) |
 | **Website** | [dartai.com](https://dartai.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 40 |
-| **Events** | 9 |
 | **Slug** | `dart` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dart from **Build → Integrations → Connectors** and connect an account, 
 | Create Webhook | `createWebhook` | Registers an outgoing webhook so Dart posts the selected workspace events to your URL. The destination URL and at least one event kind are required. Dart will start delivering immediately, so point it at an endpoint you control. |
 | Delete Agent | `deleteAgent` | Retires a Dart AI agent by its 12-character id. VERIFIED BEHAVIOUR: despite the name, Dart does not remove the agent - the call returns 200 with the agent body and sets enabled to false, but the agent stays readable through Get Agent and stays in List Agents indefinitely, and repeating the call changes nothing further. Treat this as "disable", not "delete". Tasks previously assigned to the agent are unaffected. |
 | Delete Doc | `deleteDoc` | Moves a Dart doc to the trash by its 12-character id and returns the doc as it was before deletion. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Skill | `deleteSkill` | Deletes a Dart skill by its 12-character id and returns the skill as it was before deletion. |
 | Delete Task | `deleteTask` | Moves a Dart task to the trash by its 12-character id and returns the trashed task. Any comments and attachments on the task go with it. |
 | Delete Webhook | `deleteWebhook` | Removes a registered Dart webhook by its 12-character id so it stops receiving events, and returns the webhook as it was before deletion. |
@@ -64,6 +71,8 @@ Add Dart from **Build → Integrations → Connectors** and connect an account, 
 | Update Task | `updateTask` | Updates an existing Dart task. Only the fields you supply are changed; item.id identifies the task and is required. Changing the assignee notifies that person in Dart. |
 | Update Task Description | `updateTaskDescription` | Applies targeted text edits to a Dart task's description without resending the whole body. Each update replaces, deletes, or inserts text before or after an anchor string. Use this to patch a long description safely. |
 | Update Webhook | `updateWebhook` | Updates a registered Dart webhook's title, destination URL, event kinds or enabled flag. item.id identifies the webhook and must match the path id; only the fields you supply are changed. |
+
+</details>
 
 ## Events
 

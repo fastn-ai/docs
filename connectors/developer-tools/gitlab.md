@@ -5,6 +5,8 @@ hidden: true
 
 # GitLab
 
+<img src="../../.gitbook/assets/connectors/gitlab.png" alt="GitLab logo" width="64">
+
 GitLab REST API v4 (default base https://gitlab.com, configurable for self-managed). Manage projects, issues, merge requests, branches, commits, repository files, tags, pipelines, jobs, labels, milestones, notes/comments, users, groups, and project webhooks (hooks). Auth: Bearer personal/project access token; set baseUrl for self-managed instances.
 
 | | |
@@ -12,8 +14,6 @@ GitLab REST API v4 (default base https://gitlab.com, configurable for self-manag
 | **Category** | [Developer tools](README.md) |
 | **Website** | [gitlab.com](https://gitlab.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 35 |
-| **Events** | 10 |
 | **Slug** | `gitlab` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add GitLab from **Build → Integrations → Connectors** and connect an account
 | Create Project | `createProject` | Create a project (POST /projects). |
 | Create Project Hook | `createProjectHook` | Create a project webhook (POST /projects/{id}/hooks). Used by the webhook config subscription code; per-event flags toggle delivery. |
 | Create Repository File | `createRepositoryFile` | Create a new file in the repository (POST /projects/{id}/repository/files/{file_path}). |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Branch | `deleteBranch` | Delete a branch (DELETE /projects/{id}/repository/branches/{branch}). Returns 204. |
 | Delete Project | `deleteProject` | Delete a project (DELETE /projects/{id}). Returns 202. |
 | Delete Project Hook | `deleteProjectHook` | Delete a project webhook (DELETE /projects/{id}/hooks/{hook_id}). Returns 204. |
@@ -59,6 +66,8 @@ Add GitLab from **Build → Integrations → Connectors** and connect an account
 | Update Issue | `updateIssue` | Update or close an issue (PUT /projects/{id}/issues/{iid}). Use state_event close/reopen. |
 | Update Project | `updateProject` | Update a project (PUT /projects/{id}). |
 | Update Repository File | `updateRepositoryFile` | Update an existing file (PUT /projects/{id}/repository/files/{file_path}). |
+
+</details>
 
 ## Events
 

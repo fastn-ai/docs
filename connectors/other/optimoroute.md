@@ -5,6 +5,8 @@ hidden: true
 
 # OptimoRoute
 
+<img src="../../.gitbook/assets/connectors/optimoroute.png" alt="OptimoRoute logo" width="64">
+
 OptimoRoute Web Service API connector for route planning and delivery/field-service management: create/update/get/delete orders, plan and stop routing, get routes and scheduling info, completion details, mobile events, and driver parameter/position updates. Auth via API key passed as the `key` query parameter.
 
 | | |
@@ -12,8 +14,6 @@ OptimoRoute Web Service API connector for route planning and delivery/field-serv
 | **Category** | [Other](README.md) |
 | **Website** | [optimoroute.com](https://optimoroute.com) |
 | **Authentication** | API key |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `optimoroute` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OptimoRoute from **Build → Integrations → Connectors** and connect an ac
 | Get Events | `getEvents` | Get Events (GET /v1/get_events). Returns driver app events for the live routes, oldest first, up to 500 per call: on_duty, off_duty, start_service, success, failed, rejected, start_route, end_route, start_time_changed. Pass the returned tag as after_tag to get only newer events. If no routes were sent to drivers, OptimoRoute answers success false with ERR_JOB_NO_ACTIVE_PLAN. |
 | Get Orders | `getOrders` | Retrieve one or more orders by orderNo or id (max 500). POST /v1/get_orders. |
 | Get Planning Status | `getPlanningStatus` | Get the status of a planning run. GET /v1/get_planning_status. status is N/R/C/F/E. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Routes | `getRoutes` | Get planned routes for a date, including drivers, stops and optional polyline. GET /v1/get_routes. |
 | Get Scheduling Info | `getSchedulingInfo` | Get scheduling information (assigned driver, ETA, live estimate) for one order. GET /v1/get_scheduling_info. |
 | Search Orders | `searchOrders` | Search Orders (POST /v1/search_orders). Find orders by a date range (at most 35 days) and/or a list of orders (orderNo or id, max 500), optionally filtered by status. Give at least one of dateRange or orders. Returns up to 500 orders per call; when after_tag comes back, call again with the same inputs plus that after_tag to get the next page. Set includeOrderData for full order data and includeScheduleInformation for driver/ETA info. |
@@ -44,3 +51,5 @@ Add OptimoRoute from **Build → Integrations → Connectors** and connect an ac
 | Update Drivers Parameters (Bulk) | `updateDriversParameters` | Update Drivers Parameters (POST /v1/update_drivers_parameters). Changes settings for up to 500 driver-date pairs in one call. Each update names a driver by serial or externalId and a date, plus any of: enabled, workTime {from,to}, assignedVehicle, vehicle capacities, startLocation, endLocation. Fields left out stay unchanged. Returns success and a result per update. |
 | Update Drivers Positions (Bulk) | `updateDriversPositions` | Update Drivers Positions (POST /v1/update_drivers_positions). Sends GPS positions for one or more drivers. Each update names a driver by serial or externalId and lists up to 100 positions (timestamp, latitude, longitude required; accuracy, speed, heading optional). One update per driver. Returns success and a result per driver. |
 | Update Order Completion | `updateOrderCompletion` | Update Order Completion (POST /v1/update_completion_details). Sets the completion status of up to 500 orders, each named by orderNo or id, with optional start and end time. Status values: unscheduled, scheduled, on_route, servicing, success, failed, rejected, cancelled. The order must be on routes that were sent to drivers, otherwise OptimoRoute answers "order not part of any dispatch plan". Returns success and a result per order. |
+
+</details>

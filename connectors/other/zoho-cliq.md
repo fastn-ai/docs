@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho Cliq
 
+<img src="../../.gitbook/assets/connectors/zoho-cliq.png" alt="Zoho Cliq logo" width="64">
+
 Zoho Cliq is Zoho's team chat/messaging platform. This connector provides access to Cliq's REST API v2: channels, chats (1:1/group), messages, threads, reactions, users, user status, teams, departments, designations, bots, scheduled messages, and organization/profile data.
 
 | | |
@@ -12,8 +14,6 @@ Zoho Cliq is Zoho's team chat/messaging platform. This connector provides access
 | **Category** | [Other](README.md) |
 | **Website** | [zoho.com](https://zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 64 |
-| **Events** | 0 |
 | **Slug** | `zohoCliq` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zoho Cliq from **Build → Integrations → Connectors** and connect an acco
 | Archive Channel | `archiveChannel` | Archive a channel. |
 | Create Channel | `createChannel` | Create a new channel in Zoho Cliq. |
 | Create Team | `createTeam` | Create a new team within the organization. |
+
+<details>
+
+<summary>See 54 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Thread Message | `createThreadMessage` | Start a new thread by posting a message in a channel with a thread_message_id. |
 | Delete Channel | `deleteChannel` | Delete a channel. |
 | Delete Ephemeral Status | `deleteEphemeralStatus` | Remove the current transient status before it expires. |
@@ -88,3 +95,5 @@ Add Zoho Cliq from **Build → Integrations → Connectors** and connect an acco
 | Update Current Status | `updateCurrentStatus` | Set the authenticated user's current status to a previously saved status by ID. |
 | Update Team | `updateTeam` | Update a team's name or description. |
 | Update User | `updateUser` | Update details of an existing user. |
+
+</details>

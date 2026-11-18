@@ -5,6 +5,8 @@ hidden: true
 
 # Popupsmart
 
+<img src="../../.gitbook/assets/connectors/popupsmart.png" alt="Popupsmart logo" width="64">
+
 Popupsmart popup builder. Public Leads API (GET /api/leads, x-token + x-campaign-id headers) plus the app.popupsmart.com GraphQL dashboard API (campaigns, websites, folders, segments, leads, analytics, templates, webhook integrations) authenticated with a dashboard access token.
 
 | | |
@@ -12,8 +14,6 @@ Popupsmart popup builder. Public Leads API (GET /api/leads, x-token + x-campaign
 | **Category** | [Marketing](README.md) |
 | **Website** | [popupsmart.com](https://popupsmart.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 30 |
-| **Events** | 1 |
 | **Slug** | `popupsmart` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Popupsmart from **Build → Integrations → Connectors** and connect an acc
 | Delete Website | `deleteWebsite` | DESTRUCTIVE. Remove a website (domain) from the Popupsmart account. Campaigns targeting only that domain are orphaned. Dashboard Access Token connection. |
 | Get Account Stats | `getAccountStats` | Return the connected Popupsmart account's usage against plan limits: page views, emails, extension totals and the blocked flag. Dashboard Access Token connection. |
 | Get Campaign | `getCampaign` | Fetch one Popupsmart campaign (popup) by numeric id, including its status, publish version, domains, targeting rules, layout and settings. Dashboard Access Token connection. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Campaign Counts | `getCampaignCounts` | Return how many Popupsmart campaigns the account has in total, active and passive. Dashboard Access Token connection. |
 | Get Current User | `getMe` | Return the signed-in Popupsmart dashboard user and their account plan. Uses the Dashboard Access Token connection. NOTE: the vendor's own `me` query also exposes the account's raw API key (`apiToken`); this action deliberately does NOT request that field. |
 | Get Leads | `getLeads` | Download the leads (popup form submissions) collected by the connected Popupsmart campaign. Uses the public Leads API. Default window is 1 day; maximum window is 90 days. Returns { leads: [...] } where each lead carries submission data plus session, location, page, device and user-agent metadata. |
@@ -54,6 +61,8 @@ Add Popupsmart from **Build → Integrations → Connectors** and connect an acc
 | Search Templates | `searchTemplates` | Search the Popupsmart popup-template gallery by tag ids (get the ids from List Template Tags). Returns template id, name, thumbnail and device type. Dashboard Access Token connection. |
 | Update Folder | `updateFolder` | Rename a campaign folder. Paid-plan feature (see Create Folder). Dashboard Access Token connection. |
 | Update Webhook Integration | `updateWebhookIntegration` | Change the name, target URL or campaign of an existing Popupsmart webhook integration. Dashboard Access Token connection. |
+
+</details>
 
 ## Events
 

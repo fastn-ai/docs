@@ -5,6 +5,8 @@ hidden: true
 
 # CompanyCam
 
+<img src="../../.gitbook/assets/connectors/company-cam.png" alt="CompanyCam logo" width="64">
+
 CompanyCam is a photo documentation and project collaboration app for contractors. This connector covers the CompanyCam Core API v2: projects (create, update, archive, restore, delete, notepad, labels, comments, documents, collaborators, invitations, assigned users and checklists), photos (upload by URI, update, delete, comments, tags and descriptions), videos, tags, users, groups, checklists and checklist templates, the current company and user, and webhook subscriptions for real-time project, photo, comment, document, video, checklist and task events.
 
 | | |
@@ -12,8 +14,6 @@ CompanyCam is a photo documentation and project collaboration app for contractor
 | **Category** | [Productivity](README.md) |
 | **Website** | [companycam.com](https://companycam.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 62 |
-| **Events** | 29 |
 | **Slug** | `companyCam` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CompanyCam from **Build → Integrations → Connectors** and connect an acc
 | Create Group | `createGroup` | Create a user group (crew) and optionally add members to it. |
 | Create Project | `createProject` | Create a project, the container CompanyCam uses to group photos, documents, checklists and comments for one job site. Supply an address or coordinates so the project appears on the map. |
 | Create Project Checklist | `createProjectChecklist` | Add a checklist to a project by copying an existing checklist template. Use List Checklist Templates to find the template identifier. |
+
+<details>
+
+<summary>See 52 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project Invitation | `createInvitation` | Create a collaboration invitation for a project and return its shareable acceptance URL. CompanyCam does not send the invitation itself, so no email or text message is dispatched. |
 | Create Tag | `createTag` | Create a tag in the company so it can be applied to photos and projects. |
 | Create User | `createUser` | Invite a new user into the company. The new user receives CompanyCam credentials, so only run this for a real teammate you intend to add. |
@@ -87,6 +94,8 @@ Add CompanyCam from **Build → Integrations → Connectors** and connect an acc
 | Update Webhook | `updateWebhook` | Change a webhook's endpoint, subscribed scopes, signing token or enabled state. |
 | Upload Project Document | `createProjectDocument` | Attach a document to a project by sending its contents Base64 encoded in the request body. The file must be 30 MB or smaller. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -103,6 +112,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | All Video Events | `video.*` | Fires for every video event. |
 | Checklist Completed | `todo_list.completed` | Fires when every task on a checklist has been completed. |
 | Checklist Created | `todo_list.created` | Fires when a checklist is created on a project. |
+
+<details>
+
+<summary>See 19 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Checklist Deleted | `todo_list.deleted` | Fires when a checklist is deleted. |
 | Checklist Task Completed | `task.completed` | Fires when a checklist task is completed. This does not apply to project tasks. |
 | Comment Created | `comment.created` | Fires when a comment is created on a photo or a project. |
@@ -122,3 +138,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Project Updated | `project.updated` | Fires when a project is updated. |
 | Video Created | `video.created` | Fires when a video is added to a project. |
 | Video Updated | `video.updated` | Fires when a video is updated, including when processing finishes and playback_url becomes the HLS stream. |
+
+</details>

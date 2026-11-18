@@ -5,6 +5,8 @@ hidden: true
 
 # Whereby
 
+<img src="../../.gitbook/assets/connectors/whereby.png" alt="Whereby logo" width="64">
+
 Whereby Embedded is a video meeting API for embedding branded video rooms into your product. Create and manage transient meeting rooms, retrieve cloud recordings, transcriptions and AI summaries with time-limited access links, customize room branding, and query quality and usage insights for rooms, sessions and participants.
 
 | | |
@@ -12,8 +14,6 @@ Whereby Embedded is a video meeting API for embedding branded video rooms into y
 | **Category** | [Communication](README.md) |
 | **Website** | [whereby.com](https://whereby.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 27 |
-| **Events** | 0 |
 | **Slug** | `whereby` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Whereby from **Build → Integrations → Connectors** and connect an accoun
 | Delete Summary | `deleteSummary` | Permanently deletes a single AI summary by its summary ID. Returns no content on success. |
 | Delete Transcription | `deleteTranscription` | Permanently deletes a single transcription by its transcription ID. Returns no content on success. |
 | Get Meeting | `getMeeting` | Retrieves a single meeting by its meeting ID. |
+
+<details>
+
+<summary>See 17 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Recording | `getRecording` | Retrieves the metadata of a single cloud recording by its recording ID. |
 | Get Recording Access Link | `getRecordingAccessLink` | Generates a time-limited download link for a cloud recording stored in Whereby-hosted storage. |
 | Get Session Participant | `getSessionParticipant` | Retrieves detailed connection and quality insights for a single participant in a room session. |
@@ -51,3 +58,5 @@ Add Whereby from **Build → Integrations → Connectors** and connect an accoun
 | Set Room Background | `setRoomBackground` | Sets a room's background to a predefined color palette and image. Uploading a custom background image is only supported through the Whereby Embedded dashboard. Returns no content on success. |
 | Set Room Colors | `setRoomColors` | Sets the primary, secondary and focus colors of a room, or resets them to the organization defaults. Returns no content on success. |
 | Set Room Knock Page Background | `setRoomKnockPageBackground` | Sets the background of a room's knock (waiting room) page to a predefined color palette and image. Uploading a custom image is only supported through the Whereby Embedded dashboard. Returns no content on success. |
+
+</details>

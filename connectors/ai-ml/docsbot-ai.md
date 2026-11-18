@@ -5,6 +5,8 @@ hidden: true
 
 # DocsBot AI
 
+<img src="../../.gitbook/assets/connectors/docsbot-ai.png" alt="DocsBot AI logo" width="64">
+
 DocsBot AI is a documentation-chatbot and AI agent platform. This connector covers the full DocsBot Admin API (teams, team members and invites, bots, sources, source tags, questions, conversations, leads, statistics, reports, deep-research jobs, skills, workspace agent and webhooks) on https://docsbot.ai/api, and the full DocsBot Chat API (chat agent, legacy chat and ask, semantic search, document fetch, answer rating, support escalation, lead capture, conversation summaries and tickets, deep research and voice sessions) on https://api.docsbot.ai.
 
 | | |
@@ -12,8 +14,6 @@ DocsBot AI is a documentation-chatbot and AI agent platform. This connector cove
 | **Category** | [AI and ML](README.md) |
 | **Website** | [docsbot.ai](https://docsbot.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 84 |
-| **Events** | 4 |
 | **Slug** | `docsbotAi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add DocsBot AI from **Build → Integrations → Connectors** and connect an acc
 | Continue Deep Research Job | `continueDeepResearchJob` | Answers the clarifying questions of a DocsBot deep research job and queues the job to run. Returns the updated job record. The research itself completes asynchronously; poll Get Deep Research Job Status or subscribe to the deep_research.done webhook. |
 | Create Bot | `createBot` | Creates a new DocsBot chatbot in a team. The number of bots is capped by the team plan, so this returns HTTP 402 with an upgrade message once the bot limit is reached. Pass copyFrom to clone an existing bot together with its sources. Returns the created bot object including its id and signature key. |
 | Create Bot Image Upload URL | `createBotImageUploadUrl` | Creates a short-lived signed URL for uploading a bot widget image such as a chat bubble icon, chat avatar or header logo. Upload the raw bytes to the returned uploadUrl with a PUT and the exact returned content type, then save the returned public CDN URL on the bot with Update Bot. Only raster formats (png, jpg, jpeg, gif, webp) are accepted; SVG is rejected. |
+
+<details>
+
+<summary>See 74 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Bot Skill | `createBotSkill` | Creates a new DocsBot Skill draft on a bot. Skills bundle a SKILL.md instruction file with optional reference material and executable functions. This endpoint requires the Standard plan or higher and returns HTTP 403 with an upgrade message otherwise. |
 | Create Bot Voice Session | `createBotVoiceSession` | Opens a WebRTC voice session with a DocsBot bot for the embeddable voice widget. The request body must be a raw SDP offer sent with Content-Type application/sdp, and DocsBot answers with the matching SDP answer. Voice conversations consume AI credits. |
 | Create Source | `createSource` | Adds a new training source to a DocsBot bot and starts indexing it. Use type url, sitemap, rss or youtube with a url; type qa with a faqs array; and type document, urls or csv with a file or fileDir path obtained from Create Source File Upload URL. Returns the created source object with its id and indexing status. |
@@ -108,6 +115,8 @@ Add DocsBot AI from **Build → Integrations → Connectors** and connect an acc
 | Update Workspace Agent Conversation | `updateWorkspaceAgentConversation` | Renames a DocsBot workspace agent conversation. Returns an ok flag confirming the change. The conversation icon is chosen by DocsBot and cannot be set through this endpoint. |
 | Update Workspace Agent File | `updateWorkspaceAgentFile` | Confirms an upload against a DocsBot workspace agent conversation once the bytes have been PUT to the signed URL, finalising the attachment so a later agent message can reference it. Requires a valid conversation, the attachment id from Upload Workspace Agent Files, and the file metadata. |
 | Upload Workspace Agent Files | `uploadWorkspaceAgentFiles` | Reserves signed upload slots for between one and five files on a DocsBot workspace agent conversation. Returns one entry per file carrying an attachmentId and an uploadUrl; PUT the bytes to that URL with the same content type, then confirm each upload with Update Workspace Agent File before referencing it in a message. |
+
+</details>
 
 ## Events
 

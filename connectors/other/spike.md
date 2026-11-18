@@ -5,6 +5,8 @@ hidden: true
 
 # Spike
 
+<img src="../../.gitbook/assets/connectors/spike.png" alt="Spike logo" width="64">
+
 Spike.sh incident management and on-call platform, through Spike's official MCP server (https://mcp.spike.sh/mcp). Read incident payloads and activity, acknowledge, resolve and prioritise incidents, see who is on call, and create or change on-call schedules, overrides and escalation policies. Connects with OAuth 2.1 (PKCE) to your Spike account.
 
 | | |
@@ -12,8 +14,6 @@ Spike.sh incident management and on-call platform, through Spike's official MCP 
 | **Category** | [Other](README.md) |
 | **Website** | [spike.sh](https://spike.sh) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 59 |
-| **Events** | 0 |
 | **Slug** | `spike` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Spike from **Build → Integrations → Connectors** and connect an account,
 | create_incident | `create_incident` | Raise a new incident against an integration. `integration_token` is the `token` field from list_integrations — not the integration `_id` and not its name. The incident is routed by that integration's configured escalation policy, so WHICH integration matters. Never pick one yourself: unless the user explicitly named an integration, or the organisation has exactly one, first show the user the options from list_integrations and ask them to choose. Do not default to the first, newest, or most recently used integration. |
 | create_integration | `create_integration` | Connect a monitoring source to Spike. `slug` is an integration type from list_integration_types — there are 80+ types, so unless the user already named one, ask them which type to connect before creating; do not guess or default to a generic webhook. An integration always gets an escalation policy: pass the one the user named, or omit `escalation_id` and the team's first policy is attached automatically (the result flags it `defaulted` — tell the user which policy was attached and that update_integration can change it). `team_ids` are team `_id`s. The response contains the `token` and `webhookUrl` — the token is what create_incident needs, and the webhook URL is what you give the monitoring tool. |
 | create_oncall_schedule | `create_oncall_schedule` | Create an on-call schedule. Provide one or more `layers`; each layer rotates its `user_ids` (in order) on a `rotation` cadence. Add a `restriction` to a layer to make it a day or night shift (only page those people inside the window) — a `daily` window (same hours every day) or a `weekly` set of day/time ranges. Two layers with complementary restrictions give you a full day/night split. Requires `team_id` from list_teams. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | create_outbound_webhook | `create_outbound_webhook` | Create an outbound webhook: an endpoint Spike calls when incidents fire or change. `teams` are team `_id` values from list_teams. Test it first with test_outbound_webhook. Only available when signed in with OAuth. |
 | create_override | `create_override` | Put someone on call for a fixed window, overriding the normal rotation — e.g. "cover tonight for Alice". `user_id` is a user `_id` from list_users (an email will not work). Times are ISO 8601; a naive time is interpreted in `timezone`. To be unambiguous, send an offset (2026-07-11T21:00:00+05:30). |
 | create_service | `create_service` | Create a service (a component of your system that incidents are attributed to). Requires `team_id` from list_teams. The returned `counterId` — not the `_id` — is what update_service takes. |
@@ -83,3 +90,5 @@ Add Spike from **Build → Integrations → Connectors** and connect an account,
 | who_is_on_call | `who_is_on_call` | Who is on call right now, one entry per active shift. Defaults to the whole organisation; pass `team_id` to narrow it to one team. Note: this does NOT substitute for vacation or cooldown, so it can name someone who is away. For the authoritative answer for one schedule — the person who would actually be paged — use get_active_shift. |
 | who_is_on_call_next | `who_is_on_call_next` | The next shift on a schedule, within the coming 7 days. Returns the user id only — resolve the name with list_users if the user asks who that is. |
 | who_owns_incident | `who_owns_incident` | Who would actually be paged for an incident right now: walks the incident to its escalation policy and resolves the LIVE on-call person at each step (not just the policy definition). Use for "who do I contact about X", "who is responsible for this", "who gets paged". Takes the incident counterId or _id. |
+
+</details>

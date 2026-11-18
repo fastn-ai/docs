@@ -5,6 +5,8 @@ hidden: true
 
 # V&A Collections
 
+<img src="../../.gitbook/assets/connectors/va-collections.png" alt="V&A Collections logo" width="64">
+
 The V&A Collections API (v2) is the free public API of the Victoria and Albert Museum, London. Search and browse more than a million collection objects and archive records by keyword, maker, place, material, technique, date and more, get full object records, group results into clusters, browse controlled terms and look up authorities. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The V&A Collections API (v2) is the free public API of the Victoria and Albert M
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [vam.ac.uk](https://vam.ac.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `vaCollections` |
 
 ## Use it

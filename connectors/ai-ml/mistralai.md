@@ -5,6 +5,8 @@ hidden: true
 
 # Mistral AI
 
+<img src="../../.gitbook/assets/connectors/mistralai.png" alt="Mistral AI logo" width="64">
+
 Mistral AI platform API (api.mistral.ai/v1): chat completions, FIM code completion, embeddings, models management, files, fine-tuning jobs, batch jobs, OCR, moderation/classification, and the Conversations + Agents APIs. Bearer API-key auth.
 
 | | |
@@ -12,8 +14,6 @@ Mistral AI platform API (api.mistral.ai/v1): chat completions, FIM code completi
 | **Category** | [AI and ML](README.md) |
 | **Website** | [mistral.ai](https://mistral.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `mistralai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mistral AI from **Build → Integrations → Connectors** and connect an acc
 | Create Chat Moderation | `createChatModeration` | Classify conversation messages against safety policies. POST /v1/chat/moderations. Model: mistral-moderation-latest. input is a list of chat messages. |
 | Create Classification | `createClassification` | Run a classifier model on raw text. POST /v1/classifications. Requires a classifier model (e.g. a fine-tuned classifier). |
 | Create Embeddings | `createEmbeddings` | Create embedding vectors for input text. POST /v1/embeddings. Model: mistral-embed (text) or codestral-embed (code). |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create FIM Completion | `createFimCompletion` | Fill-in-the-middle code completion. POST /v1/fim/completions. Use a code model such as codestral-latest. Provide prompt (prefix) and optional suffix. |
 | Create Moderation | `createModeration` | Classify raw text against safety policies. POST /v1/moderations. Model: mistral-moderation-latest. Returns per-category booleans and scores. |
 | Delete File | `deleteFile` | Delete an uploaded file. DELETE /v1/files/{file_id}. |
@@ -59,3 +66,5 @@ Add Mistral AI from **Build → Integrations → Connectors** and connect an acc
 | Update Agent Version | `updateAgentVersion` | Switch an agent's active version. PATCH /v1/agents/{agent_id}/version. |
 | Update Fine-Tuned Model | `updateFineTunedModel` | Update name/description of a fine-tuned model. PATCH /v1/fine_tuning/models/{model_id}. |
 | Upload File | `uploadFile` | Upload a file (max 512MB) for fine-tune, batch, or ocr purposes. POST /v1/files (multipart/form-data). Pass the file via input.file and purpose. |
+
+</details>

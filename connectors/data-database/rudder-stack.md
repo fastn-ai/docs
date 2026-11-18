@@ -5,6 +5,8 @@ hidden: true
 
 # RudderStack
 
+<img src="../../.gitbook/assets/connectors/rudder-stack.png" alt="RudderStack logo" width="64">
+
 RudderStack is a warehouse-native customer data platform. This connector covers the RudderStack Management (Config Plane) API: workspace details, event stream sources and their write keys, destinations with their transformation links, source-to-destination connections, cloud accounts, JavaScript transformations and shared libraries with versioning, publishing and test runs, the data catalog of events, properties, categories and custom types, tracking plans with their events and source connections, observed event schemas, Reverse ETL sources, connections and syncs, Profiles runs, data graphs, audit logs, user suppression and data regulation requests, and source/destination connectivity tests.
 
 | | |
@@ -12,8 +14,6 @@ RudderStack is a warehouse-native customer data platform. This connector covers 
 | **Category** | [Data and databases](README.md) |
 | **Website** | [rudderstack.com](https://rudderstack.com) |
 | **Authentication** | Basic auth, Credentials you enter |
-| **Actions** | 121 |
-| **Events** | 6 |
 | **Slug** | `rudderStack` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add RudderStack from **Build → Integrations → Connectors** and connect an ac
 | Create Catalog Property | `createCatalogProperty` | Add a property definition to the data catalog so it can be attached to events in a tracking plan and used to validate incoming payloads. |
 | Create Connection | `createConnection` | Connect a source to a destination so that events collected by the source are routed to the destination. |
 | Create Data Regulation | `createDataRegulation` | Submit a user suppression or suppression-and-delete request so RudderStack stops forwarding events for the given users and optionally deletes their existing data. This is an Enterprise data governance feature. |
+
+<details>
+
+<summary>See 111 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Destination | `createDestination` | Create a new destination in the workspace. The configuration keys required depend on the destination type; consult the RudderStack setup guide for that destination. |
 | Create Event Stream Source | `createEventStreamSource` | Create an SDK event stream source and claim it under a caller-owned external ID. RudderStack returns the write key that the SDK uses to send events. |
 | Create Reverse ETL Connection | `createReverseEtlConnection` | Create a Reverse ETL connection that syncs rows from a warehouse source to a destination on a schedule. RudderStack detects the flow from the destination definition: JSON Mapper destinations such as webhooks additionally require mappings and restrict identifier targets to user_id and anonymous_id. A destination cannot be shared between Reverse ETL sources and event stream sources. |
@@ -145,6 +152,8 @@ Add RudderStack from **Build → Integrations → Connectors** and connect an ac
 | Upsert Tracking Plan Event With Identifiers | `upsertTrackingPlanEventWithIdentifiers` | Add or replace one event in a tracking plan by referencing data catalog entries that already exist, supplying only the event ID and property IDs. Use this when the catalog is managed separately from the plan. |
 | Upsert Tracking Plan Event With Properties | `upsertTrackingPlanEventWithProperties` | Add or replace one event in a tracking plan by describing its properties directly. RudderStack creates or reuses the matching data catalog entries and builds the validation schema from them. Changes are queued and typically apply within a few minutes. |
 | Upsert Tracking Plan Event With Rules | `upsertTrackingPlanEventWithRules` | Add or replace one event in a tracking plan by supplying a raw JSON Schema for its payload. RudderStack has announced that this endpoint will be deprecated; prefer Upsert Tracking Plan Event With Properties for new work. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Trello
 
+<img src="../../.gitbook/assets/connectors/trello.png" alt="Trello logo" width="64">
+
 Trello connector for boards, lists, cards, checklists, labels, members, organizations, actions, search, and webhooks via the Trello REST API (v1). Auth uses an API key + token sent as query parameters on every request.
 
 | | |
@@ -12,8 +14,6 @@ Trello connector for boards, lists, cards, checklists, labels, members, organiza
 | **Category** | [Project management](README.md) |
 | **Website** | [trello.com](https://trello.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 68 |
-| **Events** | 18 |
 | **Slug** | `trello` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Trello from **Build → Integrations → Connectors** and connect an account
 | Create Card | `createCard` | Create a new card on a list. |
 | Create Check Item | `createCheckItem` | Create a check item in a checklist. |
 | Create Checklist On Card | `createChecklistOnCard` | Create a new checklist on a card. |
+
+<details>
+
+<summary>See 58 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Label | `createLabel` | Create a new label on a board. |
 | Create List | `createList` | Create a new list on a board. |
 | Create Organization | `createOrganization` | Create a new organization (workspace). |
@@ -93,6 +100,8 @@ Add Trello from **Build → Integrations → Connectors** and connect an account
 | Update Organization | `updateOrganization` | Update an existing organization (workspace). |
 | Update Webhook | `updateWebhook` | Update an existing webhook (callback URL, model, active state). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -109,6 +118,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Check Item State Updated | `updateCheckItemStateOnCard` | A check item was marked complete/incomplete. |
 | Checklist Added To Card | `addChecklistToCard` | A checklist was added to a card. |
 | Comment Added To Card | `commentCard` | A comment was added to a card. |
+
+<details>
+
+<summary>See 8 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Label Added To Card | `addLabelToCard` | A label was added to a card. |
 | Label Removed From Card | `removeLabelFromCard` | A label was removed from a card. |
 | List Created | `createList` | A list was created on the watched board. |
@@ -117,3 +133,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Member Added To Card | `addMemberToCard` | A member was added to a card. |
 | Member Removed From Board | `removeMemberFromBoard` | A member was removed from a board. |
 | Member Removed From Card | `removeMemberFromCard` | A member was removed from a card. |
+
+</details>

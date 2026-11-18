@@ -5,6 +5,8 @@ hidden: true
 
 # Azure Synapse Analytics
 
+<img src="../../.gitbook/assets/connectors/azure-synapse-analytics.png" alt="Azure Synapse Analytics logo" width="64">
+
 Connect to Azure Synapse Analytics data-plane APIs — pipelines, datasets, linked services, data flows, triggers, notebooks, Spark jobs (Livy), SQL pools, role assignments, managed private endpoints, link connections, KQL scripts, and more.
 
 | | |
@@ -12,8 +14,6 @@ Connect to Azure Synapse Analytics data-plane APIs — pipelines, datasets, link
 | **Category** | [Data and databases](README.md) |
 | **Website** | [azure.microsoft.com](https://azure.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 132 |
-| **Events** | 0 |
 | **Slug** | `azureSynapseAnalytics` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Azure Synapse Analytics from **Build → Integrations → Connectors** and c
 | Create Data Flow Debug Session | `createDataFlowDebugSession` | Creates a data flow debug session. Returns sessionId on completion (long-running operation). |
 | Create Library | `createLibrary` | Creates a library with the given library name in the Synapse workspace. This is a long-running operation. |
 | Create Managed Private Endpoint | `createManagedPrivateEndpoint` | Create or update a managed private endpoint in a managed virtual network. Requires the privateLinkResourceId and groupId of the target Azure resource. |
+
+<details>
+
+<summary>See 122 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create or Update Credential | `createOrUpdateCredential` | Creates or updates a managed identity credential in the Synapse workspace. |
 | Create Or Update Dataflow | `createOrUpdateDataflow` | Creates or updates a data flow in the workspace. |
 | Create or Update Dataset | `createOrUpdateDataset` | Creates or updates a dataset in the Azure Synapse workspace. For update, provide ifMatch with the dataset ETag or '*' for unconditional update. |
@@ -156,3 +163,5 @@ Add Azure Synapse Analytics from **Build → Integrations → Connectors** and c
 | Subscribe Trigger To Events | `subscribeTriggerToEvents` | Subscribes an event trigger to events (e.g. BlobEventsTrigger or CustomEventsTrigger). Returns the subscription operation status. |
 | Unsubscribe Trigger From Events | `unsubscribeTriggerFromEvents` | Unsubscribes an event trigger from events. |
 | Update Link Connection Landing Zone Credential | `updateLinkConnectionLandingZoneCredential` | Update the landing zone SAS token credential for a link connection. Use this to refresh expiring landing zone credentials. |
+
+</details>

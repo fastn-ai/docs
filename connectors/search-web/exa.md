@@ -5,6 +5,8 @@ hidden: true
 
 # Exa
 
+<img src="../../.gitbook/assets/connectors/exa.png" alt="Exa logo" width="64">
+
 Exa AI web search API — neural/keyword/auto search, content extraction, find similar links, LLM answers with citations, and Websets (async agentic search collections with webhooks).
 
 | | |
@@ -12,8 +14,6 @@ Exa AI web search API — neural/keyword/auto search, content extraction, find s
 | **Category** | [Search and web](README.md) |
 | **Website** | [exa.ai](https://exa.ai) |
 | **Authentication** | API key |
-| **Actions** | 46 |
-| **Events** | 19 |
 | **Slug** | `exa` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Exa from **Build → Integrations → Connectors** and connect an account, a
 | Create Research | `createResearch` | Create an async Exa Agent run. Provide instructions (the research task) and optionally effort and outputSchema. Returns an agent_run_... id; poll Get Research for completion. REPOINTED 2026-09-01: Exa retired the Research API (POST https://api.exa.ai/research/v1 now returns HTTP 410 tag RESEARCH_RETIRED) and replaced it with the Agent API, so this action now calls POST https://api.exa.ai/agent/runs. The slug and the instructions input name are unchanged - instructions is mapped to the Agent API query field by the body template. The old model enum (exa-research-fast/exa-research/exa-research-pro) no longer exists and is replaced by effort. Verified live 2026-09-01: HTTP 200, run completed with a real answer. |
 | Create Webhook | `createWebhook` | Register a Websets webhook. Provide a delivery URL and the events to subscribe to. Returns the webhook including a secret (only shown on creation) for signature verification. |
 | Create Webset | `createWebset` | Create a Webset — an async agentic search collection. Provide a search object (query, count, entity, criteria) and optional enrichments, externalId, and metadata. Status progresses from pending to idle as items are found. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webset Search | `createWebsetSearch` | Add a new search to an existing Webset. Requires query and count. Requires an Exa Pro plan. |
 | Delete Enrichment | `deleteEnrichment` | Delete a Webset enrichment by ID. Requires an Exa Pro plan. |
 | Delete Import | `deleteImport` | Delete an import by ID. Requires an Exa Pro plan. |
@@ -71,6 +78,8 @@ Add Exa from **Build → Integrations → Connectors** and connect an account, a
 | Update Webhook | `updateWebhook` | Update a Websets webhook's url, events, or metadata. Requires an Exa Pro plan. |
 | Update Webset | `updateWebset` | Update a Webset's title and/or metadata. Requires an Exa Pro plan. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -87,6 +96,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Webset Created | `webset.created` | A new Webset was created. |
 | Webset Deleted | `webset.deleted` | A Webset was deleted. |
 | Webset Export Completed | `webset.export.completed` | A Webset export completed and is ready for download. |
+
+<details>
+
+<summary>See 9 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Webset Export Created | `webset.export.created` | A Webset export was created. |
 | Webset Idle | `webset.idle` | A Webset finished processing and is now idle. |
 | Webset Item Created | `webset.item.created` | A new item was found and added to a Webset. |
@@ -96,3 +112,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Webset Search Completed | `webset.search.completed` | A Webset search completed. |
 | Webset Search Created | `webset.search.created` | A search within a Webset was created. |
 | Webset Search Updated | `webset.search.updated` | A Webset search progress was updated. |
+
+</details>

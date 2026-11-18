@@ -5,6 +5,8 @@ hidden: true
 
 # USGS Earthquake Catalog
 
+<img src="../../.gitbook/assets/connectors/usgs-earthquake-catalog.png" alt="USGS Earthquake Catalog logo" width="64">
+
 The USGS Earthquake Catalog (ComCat) API, an FDSN event web service from the U.S. Geological Survey. Search and count earthquakes worldwide by time, place, magnitude, depth and alert level, get single events with all products, list catalogs and contributors, and read real-time GeoJSON feeds. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The USGS Earthquake Catalog (ComCat) API, an FDSN event web service from the U.S
 | **Category** | [Data and databases](README.md) |
 | **Website** | [earthquake.usgs.gov](https://earthquake.usgs.gov) |
 | **Authentication** | No authentication |
-| **Actions** | 8 |
-| **Events** | 0 |
 | **Slug** | `usgsEarthquakeCatalog` |
 
 ## Use it

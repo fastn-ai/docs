@@ -5,6 +5,8 @@ hidden: true
 
 # Clari
 
+<img src="../../.gitbook/assets/connectors/clari.png" alt="Clari logo" width="64">
+
 Clari is a revenue operations and forecasting platform. This connector wraps the public Clari API (api.clari.com, OpenAPI 5.0.0): queue and retrieve bulk exports of forecast data (submitted calls, quota, manager adjustments, CRM totals, week-over-week history), sales activity (meetings, emails, attachments mapped to accounts and opportunities) and audit events; read opportunity records with Clari's CRM score and field trend history; check your org's export quota; and, for Clari integration partners, ingest field extensions and sub-objects onto Clari Accounts and Opportunities. Clari Copilot (formerly Wingman) is a separate product with a separate API host and credential and is not covered here.
 
 | | |
@@ -12,8 +14,6 @@ Clari is a revenue operations and forecasting platform. This connector wraps the
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [clari.com](https://clari.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 14 |
-| **Events** | 0 |
 | **Slug** | `clari` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Clari from **Build → Integrations → Connectors** and connect an account,
 | Get Export Job | `getExportJob` | Read the status of one export job by its jobId. This is step 2 of Clari's three-step bulk export and the only way to learn that an export has finished - Clari sends no completion notification, so poll this until status is DONE and only then call Get Export Job Results. Status values: SCHEDULED (queued), STARTED (running), DONE (ready to download), FAILED, CANCELLED (cancelled before it ran), ABORTED (cancelled while running). Also check rowsTruncated and cellsTruncated before trusting a DONE payload as complete. |
 | Get Export Job Results | `getExportJobResults` | Download the contents of a finished export. Step 3 of Clari's three-step bulk export - call it only once Get Export Job reports status DONE, and before the job's expiredTime. The payload shape depends on which export produced it and on the exportFormat requested: a forecast export yields rows keyed by user, role, timeframe, forecast field, week and data type (Forecast Value, Forecast Updated, Quota, ...); an activity export yields an activities array; an audit export yields items plus actors. Large exports will exceed fastn's response truncation limit - the call still succeeds, so read the payload in the workflow rather than the test console. |
 | Get Ingest Job Status | `getIngestJobStatus` | Check the status of an asynchronous Clari data ingestion job by its jobId. Partner integration endpoint - needs a partnerkey in addition to the API token. Poll until status leaves QUEUED and IN_PROGRESS. VALIDATION_FAILED means Clari rejected the payload's shape or values and nothing was written; FAILED means the job broke while running. Note that ingestion validation is all-or-nothing: if any record in a batch fails, the whole batch is rejected and has to be resubmitted after fixing the errors, so a FAILED or VALIDATION_FAILED job never leaves partial data behind. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Opportunities | `getOpportunities` | Fetch Clari's view of one or more opportunities by CRM opportunity id, up to 100 per call. This is the only synchronous record read in the Clari API - everything else about opportunities comes out through an export job. What you get back that the CRM does not have is Clari's crmScore (a health score with an explanation message) and, per field, the trend and trendHistory showing how that field's value moved over time. Use it to enrich a CRM record with Clari's signal, or to check a single deal's health inside a workflow without queueing an export. |
 | Ingest Entity Data | `ingestEntityData` | Push field extensions and sub-objects onto Clari's Account and Opportunity entities so they surface in Clari's Accounts and Opportunities views. This is the Clari partner integration path and needs a partnerkey in addition to the API token - it is synchronous, takes up to 100 records per request, and is the working alternative to Clari's bulk file upload (which fastn cannot send, because it is multipart/form-data only). Records are matched on Salesforce Account or Opportunity id. Any custom field can be sent alongside the three mandatory keys; picklist-typed fields must have their allowed values registered first with Add Entity Field Values. |
 | List Audit Events | `listAuditEvents` | Read Clari audit events synchronously, with filtering and pagination - who changed what in your Clari instance and when. This is the only read endpoint in the Clari API that pages: set limit (1-1000) and follow the returned nextLink for the next page. Because Clari has no webhooks, polling this with an advancing dateFrom is the supported way to drive change-triggered automation. The response also carries an actors array that resolves each actorId to a name and email, so you do not have to look users up separately. For volumes beyond a page-by-page read, use Create Audit Events Export instead. |
 | List Export Jobs | `listExportJobs` | List every export job initiated by the user whose API token this connection uses - complete, cancelled and in-progress alike. Jobs from other users in the same org are not returned. Use it to find the jobId of an export you queued earlier, or to reconcile which exports have already been downloaded. Each entry carries the generated fileName, fileType, the module it came from (FORECAST, ACTIVITY, AUDIT), start and end times in epoch milliseconds, and an expiredTime after which the payload is no longer retrievable. |
+
+</details>

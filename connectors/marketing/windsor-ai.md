@@ -5,6 +5,8 @@ hidden: true
 
 # Windsor.ai
 
+<img src="../../.gitbook/assets/connectors/windsor-ai.png" alt="Windsor.ai logo" width="64">
+
 Windsor.ai is a marketing data platform that unifies data from 350+ advertising, analytics, CRM and e-commerce sources behind one API. This connector covers the complete Windsor.ai Connectors API and account-management API: querying any connector (or all sources at once) with field selection, date presets, filters and account selection; discovering connectors, fields and connector options; listing and executing write actions; listing connected accounts and custom fields; connector connect-info; and generating, listing and unlinking co-user authorization links.
 
 | | |
@@ -12,8 +14,6 @@ Windsor.ai is a marketing data platform that unifies data from 350+ advertising,
 | **Category** | [Marketing](README.md) |
 | **Website** | [windsor.ai](https://windsor.ai) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `windsorAi` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add Windsor.ai from **Build → Integrations → Connectors** and connect an acc
 | List Connected Accounts | `listConnectedAccounts` | Returns the data source accounts connected to the Windsor.ai workspace, for all data sources or for one specific source, with account name, id and status. |
 | List Connectors | `listConnectors` | Returns the identifiers of every data source connector available through the Windsor.ai API (e.g. facebook, google_ads, googleanalytics4), including the special all connector that queries every connected source at once. |
 | List Custom Fields | `listCustomFields` | Returns the custom fields defined in the Windsor.ai workspace, which can be referenced in data queries and enrichments across supported data sources. |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Write Actions | `listWriteActions` | Lists the write actions a data source connector supports (for example pause_campaign or create_campaign), each with a JSON Schema describing its parameters. Use connector = all to list the actions of every connector, each tagged with its connector. |
 | Unlink Co-User Account | `unlinkCoUserAccount` | Removes an account that was connected through a co-user authorization link from your team, identified by its data source and account id (as returned by List Co-User Linked Accounts). OAuth-selected accounts are deselected rather than erased; other accounts are deleted and need a new authorization to reconnect. Team owner only; returns 404 when no linked account matches. |
+
+</details>

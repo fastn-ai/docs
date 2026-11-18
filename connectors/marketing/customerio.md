@@ -5,6 +5,8 @@ hidden: true
 
 # Customer.io
 
+<img src="../../.gitbook/assets/connectors/customerio.png" alt="Customer.io logo" width="64">
+
 Customer.io marketing automation and customer messaging platform. Covers the Track API (people, events, devices, manual segments, merge, suppression, v2 entity/batch) using HTTP Basic auth, and the App/Journeys API (transactional send, broadcasts, customers, campaigns, newsletters, segments, messages, activities, exports, collections, snippets, sender identities, transactional templates, reporting webhooks) using Bearer auth.
 
 | | |
@@ -12,8 +14,6 @@ Customer.io marketing automation and customer messaging platform. Covers the Tra
 | **Category** | [Marketing](README.md) |
 | **Website** | [customer.io](https://customer.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 92 |
-| **Events** | 0 |
 | **Slug** | `customerio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Customer.io from **Build → Integrations → Connectors** and connect an ac
 | Delete Device | `deleteDevice` | Remove a device token from a person. |
 | Delete Person | `deleteCustomer` | Delete a person from the Customer.io workspace via the Track API. |
 | Delete Reporting Webhook | `deleteReportingWebhook` | Delete a reporting webhook configuration. |
+
+<details>
+
+<summary>See 82 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Segment | `deleteSegment` | Delete a manual segment. |
 | Delete Snippet | `deleteSnippet` | Delete a content snippet by name. |
 | Download Export | `downloadExport` | Get a signed download URL for a completed export. |
@@ -116,3 +123,5 @@ Add Customer.io from **Build → Integrations → Connectors** and connect an ac
 | Update Collection | `updateCollection` | Update a data collection's name and inline data. |
 | Update Collection Content | `updateCollectionContent` | Replace the data rows stored in a collection. |
 | Update Reporting Webhook | `updateReportingWebhook` | Update a reporting webhook's endpoint, event subscriptions, or state. |
+
+</details>

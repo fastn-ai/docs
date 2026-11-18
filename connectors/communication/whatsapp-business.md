@@ -5,6 +5,8 @@ hidden: true
 
 # WhatsApp Business
 
+<img src="../../.gitbook/assets/connectors/whatsapp-business.jpg" alt="WhatsApp Business logo" width="64">
+
 WhatsApp Business Cloud API via Meta Graph API v23.0 (base https://graph.facebook.com/v23.0). Send messages (text, template, media, interactive, location, contacts, reaction), mark read, manage media, phone numbers, business profile, message templates, registration, and webhook app subscriptions. Auth: Bearer access token (system user / app token). phone_number_id and waba_id are per-request inputs.
 
 | | |
@@ -12,8 +14,6 @@ WhatsApp Business Cloud API via Meta Graph API v23.0 (base https://graph.faceboo
 | **Category** | [Communication](README.md) |
 | **Website** | [graph.facebook.com](https://graph.facebook.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 39 |
-| **Events** | 8 |
 | **Slug** | `whatsappBusiness` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WhatsApp Business from **Build → Integrations → Connectors** and connect
 | Get Call Settings | `getCallSettings` | Get the phone number's settings, including WhatsApp Calling configuration (GET /{phoneNumberId}/settings): calling status, call icon visibility, callback permission, call hours and SIP. Set include_sip_credentials=true to also return SIP credentials. |
 | Get Media URL | `getMediaUrl` | Retrieve a temporary download URL and metadata for a media ID (GET /{mediaId}). |
 | Get Phone Number | `getPhoneNumber` | Get details of a WhatsApp business phone number (GET /{phoneNumberId}). |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get WhatsApp Business Account | `getWhatsAppBusinessAccount` | Get one WhatsApp Business Account (GET /{wabaId}): name, currency, timezone, template namespace, plus optional fields like account_review_status, business_verification_status, health_status, ownership_type, status. Use List Owned WhatsApp Business Accounts to find wabaId. |
 | List Business System Users | `listBusinessSystemUsers` | List the system users of a Meta Business (GET /{businessId}/system_users), with their role (e.g. ADMIN, EMPLOYEE). System users own the long-lived tokens used for WhatsApp Cloud API. Requires business_management and admin access to the business. |
 | List Businesses | `listBusinesses` | List the Meta Businesses the connected token can see (GET /me/businesses). This is the discovery entry point: every other WhatsApp action needs a WABA id, and a WABA is found by listing a business's owned WhatsApp Business Accounts. |
@@ -63,6 +70,8 @@ Add WhatsApp Business from **Build → Integrations → Connectors** and connect
 | Update Business Profile | `updateBusinessProfile` | Update the WhatsApp business profile (POST /{phoneNumberId}/whatsapp_business_profile). |
 | Update Call Settings | `updateCallSettings` | Enable, disable or configure WhatsApp Calling on a business phone number (POST /{phoneNumberId}/settings). Send only the calling fields you want to change. Enabling requires a messaging limit of 2,000 or more. Returns {success:true}. |
 | Upload Media | `uploadMedia` | Upload a media file and get a media ID (POST /{phoneNumberId}/media). The returned id is what Send Media Message, Get Media URL and Delete Media consume - nothing else in this connector could create one. Sent as raw multipart/form-data. LIMITATION: the fastn executor UTF-8-expands binary payloads, so true binary files (JPEG, MP4, PDF) can corrupt in transit; text-based media and vendor-hosted links are reliable. For binary, prefer sending by public `link` on Send Media Message. |
+
+</details>
 
 ## Events
 

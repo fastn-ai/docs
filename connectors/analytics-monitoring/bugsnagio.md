@@ -5,6 +5,8 @@ hidden: true
 
 # Bugsnag
 
+<img src="../../.gitbook/assets/connectors/bugsnagio.svg" alt="Bugsnag logo" width="64">
+
 Bugsnag (now part of SmartBear Insight Hub) is an error monitoring and application stability platform. This connector covers the full Bugsnag Data Access API v2 - organizations, projects, errors, events, event fields, pivots, trends, stability trend, releases and release groups, feature flags and variants, collaborators, teams and project access, saved searches, configured integrations (including webhook data-forwarding), error assignment rules, network endpoint grouping, spans, span groups and traces, SCIM user and group provisioning, event data export and deletion requests - plus the Error Reporting (notify) API for sending error events into a project.
 
 | | |
@@ -12,8 +14,6 @@ Bugsnag (now part of SmartBear Insight Hub) is an error monitoring and applicati
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [bugsnag.com](https://bugsnag.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 136 |
-| **Events** | 0 |
 | **Slug** | `bugsnagio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bugsnag from **Build → Integrations → Connectors** and connect an accoun
 | Confirm Project Event Data Deletion | `confirmProjectEventDataDeletion` | Confirm a pending project event deletion request so that the matching events are permanently deleted. This cannot be undone. |
 | Create Custom Event Field | `createEventField` | Create a custom event field on a project so that a value inside your events' metadata becomes filterable and pivotable. Requires an organization administrator or project owner role. |
 | Create Organization | `createOrganization` | Create a new BugSnag organization and add the authenticated user to it as an administrator. |
+
+<details>
+
+<summary>See 126 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Organization Event Data Deletion | `createOrganizationEventDataDeletion` | Request asynchronous deletion of the events across an organization that match the supplied filters, for example to satisfy a data subject erasure request. Unless Skip Confirmation is true, the deletion only proceeds after Confirm Organization Event Data Deletion is called. |
 | Create Organization Event Data Request | `createOrganizationEventDataRequest` | Start an asynchronous export of the events across an organization that match the supplied filters. Poll Get Organization Event Data Request with the returned ID until the report is ready to download. |
 | Create Project | `createProject` | Create a project in a BugSnag organization. The response contains the project's notifier API key, which the BugSnag SDK needs in order to report errors. |
@@ -160,3 +167,5 @@ Add Bugsnag from **Build → Integrations → Connectors** and connect an accoun
 | Update Saved Search | `updateSavedSearch` | Update a saved search's name, filters, sort order, sharing or default setting. Only the fields supplied are changed. |
 | Update Span Group | `updateSpanGroup` | Star or unstar a span group for the authenticated user, pinning it in the performance dashboard. This endpoint is part of BugSnag Performance and requires performance monitoring to be enabled for the project. |
 | Update Team | `updateTeam` | Rename a team. Its membership and project access are unchanged. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Rebrandly
 
+<img src="../../.gitbook/assets/connectors/rebrandly.png" alt="Rebrandly logo" width="64">
+
 Rebrandly is a branded link management platform for creating, organizing, and analyzing custom short links, QR codes, tags, and scripts across domains and workspaces.
 
 | | |
@@ -12,8 +14,6 @@ Rebrandly is a branded link management platform for creating, organizing, and an
 | **Category** | [Marketing](README.md) |
 | **Website** | [rebrandly.com](https://rebrandly.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `rebrandly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Rebrandly from **Build → Integrations → Connectors** and connect an acco
 | Create Express Link | `createExpressLink` | Quickly creates a branded short link using a single GET request with query-string parameters instead of a JSON body. Useful for one-off link creation from a browser or simple integration. Counts against the account's per-cycle link quota, same as Create Link. |
 | Create Link | `createLink` | Creates a new branded short link pointing to a destination URL, optionally with a custom slashtag, title, and branded domain. Counts against the account's per-cycle link quota. |
 | Create Script | `createScript` | Creates a new custom JavaScript script that can be attached to branded short links to run tracking or redirect code. Counts against the account's script quota, which is 0 on the Free plan. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Tag | `createTag` | Creates a new tag that can be attached to branded short links for categorization. Counts against the account's tag quota. |
 | Delete Link | `deleteLink` | Permanently deletes a single branded short link by its unique ID. This does not free up the account's per-cycle link quota - deleted links still count toward the cycle total. |
 | Delete Script | `deleteScript` | Permanently deletes a custom script by its unique ID. Not included on the free plan. |
@@ -56,3 +63,5 @@ Add Rebrandly from **Build → Integrations → Connectors** and connect an acco
 | Update Link | `updateLink` | Updates the destination URL and/or title of an existing branded short link. The link's domain and slashtag cannot be changed after creation; create a new link instead. |
 | Update Script | `updateScript` | Updates the name and/or JavaScript value of an existing script. Not included on the free plan. |
 | Update Tag | `updateTag` | Updates the name and/or color of an existing tag. |
+
+</details>

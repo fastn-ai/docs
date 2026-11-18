@@ -5,6 +5,8 @@ hidden: true
 
 # Placid
 
+<img src="../../.gitbook/assets/connectors/placid.png" alt="Placid logo" width="64">
+
 Placid is a creative-automation platform that renders images, PDFs and videos from templates you design once and fill with data. This connector covers the Placid REST API v2: template and collection management, custom fonts, and the image, PDF and video generation endpoints with their polling and delete routes.
 
 | | |
@@ -12,8 +14,6 @@ Placid is a creative-automation platform that renders images, PDFs and videos fr
 | **Category** | [Marketing](README.md) |
 | **Website** | [placid.app](https://placid.app) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 23 |
-| **Events** | 3 |
 | **Slug** | `placid` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Placid from **Build → Integrations → Connectors** and connect an account
 | Delete Image | `deleteImage` | Permanently deletes a generated Placid image. Placid answers HTTP 204 with an empty body on success and HTTP 404 when no image has that id. Once deleted the image cannot be retrieved again. |
 | Delete PDF | `deletePdf` | Permanently deletes a generated Placid PDF. Once deleted the file cannot be retrieved again. |
 | Delete Template | `deleteTemplate` | Permanently deletes a Placid template. Placid answers HTTP 200 on success. Creatives already generated from the template are not affected. |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Video | `deleteVideo` | Permanently deletes a generated Placid video. Once deleted the file cannot be retrieved again. |
 | Get Collection | `getCollection` | Retrieves a single Placid template collection by its id, including the list of template UUIDs it holds. |
 | Get Font | `getFont` | Retrieves a single custom font by its uuid. Placid answers HTTP 404 with "Font not found" when the project has no font with that uuid. |
@@ -47,6 +54,8 @@ Add Placid from **Build → Integrations → Connectors** and connect an account
 | Update Collection | `updateCollection` | Updates a Placid template collection. Template UUIDs replaces the whole membership list, while Add Template UUIDs and Remove Template UUIDs adjust it incrementally. Only the fields you supply change. |
 | Update Font | `updateFont` | Renames a custom font in the Placid project. The font file itself cannot be replaced - upload a new font instead. |
 | Update Template | `updateTemplate` | Updates a Placid template's title, tags or custom reference data. Only the fields you supply change. The template's design is edited in the Placid editor, not through this endpoint. |
+
+</details>
 
 ## Events
 

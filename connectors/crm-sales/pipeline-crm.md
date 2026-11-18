@@ -5,6 +5,8 @@ hidden: true
 
 # Pipeline CRM
 
+<img src="../../.gitbook/assets/connectors/pipeline-crm.png" alt="Pipeline CRM logo" width="64">
+
 Pipeline CRM (formerly PipelineDeals) is a sales CRM for small and mid-sized teams. This connector wraps the Pipeline API v3 to manage deals, people, companies, activities, calendar entries, files, projects and milestones, saved searches, account notifications, admin settings such as stages, custom fields, tags, users and teams, and webhook subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Pipeline CRM (formerly PipelineDeals) is a sales CRM for small and mid-sized tea
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [pipelinecrm.com](https://pipelinecrm.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 235 |
-| **Events** | 9 |
 | **Slug** | `pipelineCrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pipeline CRM from **Build → Integrations → Connectors** and connect an a
 | Create Activity | `createActivity` | Creates an activity (note) in Pipeline CRM attached to a deal, company or person. |
 | Create Calendar Entry | `createCalendarEntry` | Creates a calendar entry (CalendarTask or CalendarEvent) in Pipeline CRM. category_id is required by the backend. |
 | Create Calendar Entry Priority | `createCalendarEntryPriority` | Creates a calendar event and task priority in Pipeline CRM. |
+
+<details>
+
+<summary>See 225 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Calendar Entry Status | `createCalendarEntryStatus` | Creates a custom calendar event/task status in Pipeline CRM. New custom statuses are inserted before the Done system status. |
 | Create Comment | `createComment` | Creates a comment on an activity (note) in Pipeline CRM. |
 | Create Company | `createCompany` | Creates a company in Pipeline CRM. Optionally applies a todo template and checks for duplicates. |
@@ -259,6 +266,8 @@ Add Pipeline CRM from **Build → Integrations → Connectors** and connect an a
 | Update Todo Template | `updateTodoTemplate` | Updates a todo (task) template in Pipeline CRM. |
 | Update Todo Template Item | `updateTodoTemplateItem` | Updates a todo template item in Pipeline CRM. |
 | Update User | `updateUser` | Updates a user of the Pipeline CRM account. |
+
+</details>
 
 ## Events
 

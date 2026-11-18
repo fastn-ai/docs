@@ -5,6 +5,8 @@ hidden: true
 
 # LiveChat
 
+<img src="../../.gitbook/assets/connectors/livechat.png" alt="LiveChat logo" width="64">
+
 LiveChat (Text) API v3.6. Manage agents, bots, groups, tags, greetings, auto access rules, customer bans, properties and webhooks via the Configuration API; work with chats, threads, events, transfers, customers and routing statuses via the Agent Chat API; and pull chat, agent, customer and tag analytics from the Reports API.
 
 | | |
@@ -12,8 +14,6 @@ LiveChat (Text) API v3.6. Manage agents, bots, groups, tags, greetings, auto acc
 | **Category** | [Communication](README.md) |
 | **Website** | [livechat.com](https://livechat.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 124 |
-| **Events** | 0 |
 | **Slug** | `livechat` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add LiveChat from **Build → Integrations → Connectors** and connect an accou
 | Create Agents (Batch) | `batchCreateAgents` | Creates several agents in one request. Each entry takes the same payload as Create Agent. |
 | Create Bot | `createBot` | Creates a new bot agent on the license. Use Set Routing Status afterwards to make it available for chats. |
 | Create Bot Template | `createBotTemplate` | Creates a bot template for an application. A bot based on the template is created automatically on every license that installs the application. One Client ID can hold up to five templates. |
+
+<details>
+
+<summary>See 114 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Bots (Batch) | `batchCreateBots` | Creates several bot agents in one request. Each entry takes the same payload as Create Bot. |
 | Create Greeting | `createGreeting` | Creates a greeting campaign that is shown to customers when its rules match. |
 | Create Group | `createGroup` | Creates a new group of agents. |
@@ -148,3 +155,5 @@ Add LiveChat from **Build → Integrations → Connectors** and connect an accou
 | Update Tag | `updateTag` | Updates the groups a chat tag is assigned to. The tag name is matched case sensitively. |
 | Update Thread Properties | `updateThreadProperties` | Sets property values on a thread. |
 | Upload File | `uploadFile` | Uploads a file and returns a temporary URL valid for 24 hours. The URL becomes permanent once it is used in a file event sent with Send Event. Maximum size 10MB; executable files are rejected. |
+
+</details>

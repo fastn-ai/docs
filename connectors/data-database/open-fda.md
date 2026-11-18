@@ -5,6 +5,8 @@ hidden: true
 
 # openFDA
 
+<img src="../../.gitbook/assets/connectors/open-fda.png" alt="openFDA logo" width="64">
+
 openFDA (U.S. Food and Drug Administration) offers free APIs over FDA public data: drug, device, food, animal, cosmetic and tobacco adverse events, recalls and enforcement reports, drug labels, NDC directory, Drugs@FDA, shortages, Orange Book, device clearances, approvals, classifications, registrations and UDI, substances, UNII, complete response letters and research datasets. Works without an API key (lower daily limits per IP).
 
 | | |
@@ -12,8 +14,6 @@ openFDA (U.S. Food and Drug Administration) offers free APIs over FDA public dat
 | **Category** | [Data and databases](README.md) |
 | **Website** | [fda.gov](https://fda.gov) |
 | **Authentication** | No authentication |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `openFda` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add openFDA from **Build → Integrations → Connectors** and connect an accoun
 | Search Device Adverse Events | `searchDeviceAdverseEvents` | Search medical device adverse event (MAUDE) reports (GET /device/event.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/device/event/ |
 | Search Device Classifications | `searchDeviceClassifications` | Search medical device classification records (GET /device/classification.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/device/classification/ |
 | Search Device Premarket Approvals | `searchDevicePremarketApprovals` | Search premarket approval (PMA) records (GET /device/pma.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/device/pma/ |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Device Recall Enforcement Reports | `searchDeviceRecallEnforcementReports` | Search device recall enforcement reports (GET /device/enforcement.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/device/enforcement/ |
 | Search Device Recalls | `searchDeviceRecalls` | Search device recall records (GET /device/recall.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/device/recall/ |
 | Search Device Registrations and Listings | `searchDeviceRegistrationsAndListings` | Search establishment registrations and device listings (GET /device/registrationlisting.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/device/registrationlisting/ |
@@ -56,3 +63,5 @@ Add openFDA from **Build → Integrations → Connectors** and connect an accoun
 | Search Tobacco Product Problem Reports | `searchTobaccoProductProblemReports` | Search tobacco product problem reports (GET /tobacco/problem.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/tobacco/problem/ |
 | Search Tobacco Smoke-Free Research | `searchTobaccoSmokeFreeResearch` | Search smoke-free tobacco research data (GET /research/tobaccosmokefree.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/research/tobaccosmokefree/ |
 | Search UNII Records | `searchUNIIRecords` | Search Unique Ingredient Identifier (UNII) records (GET /other/unii.json). Use search with field:term syntax (AND, OR, [a TO b] ranges, _exists_; use spaces, not +), count to tally a field, sort, limit and skip. Docs: https://open.fda.gov/apis/other/unii/ |
+
+</details>

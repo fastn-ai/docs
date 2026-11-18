@@ -5,6 +5,8 @@ hidden: true
 
 # VideoDB
 
+<img src="../../.gitbook/assets/connectors/videodb.png" alt="VideoDB logo" width="64">
+
 VideoDB is a video database for AI: upload video, audio and image media, index spoken word and scenes, run semantic/keyword/agentic search over media, generate streams, clips, thumbnails, dubs and subtitles, run real-time streams (RTStream), record meetings, and manage collections. Wraps the VideoDB REST API at https://api.videodb.io.
 
 | | |
@@ -12,8 +14,6 @@ VideoDB is a video database for AI: upload video, audio and image media, index s
 | **Category** | [AI and ML](README.md) |
 | **Website** | [videodb.io](https://videodb.io) |
 | **Authentication** | API key |
-| **Actions** | 136 |
-| **Events** | 2 |
 | **Slug** | `videodb` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add VideoDB from **Build → Integrations → Connectors** and connect an accoun
 | Compile Timeline | `compileTimeline` | Compile a multi-asset VideoDB timeline (inline video assets plus audio, image and text overlays) into a single playable stream. |
 | Connect Real-Time Stream | `createRtstream` | Connect a live RTSP or HLS source to VideoDB as a real-time stream so it can be indexed, transcribed and searched continuously. Billed per hour of real-time compute and storage; VideoDB has no route to delete a stream, only to stop it. |
 | Control Real-Time Stream Transcription | `startRtstreamTranscription` | Start or stop continuous speech-to-text on a real-time stream. The stream must have been created with audio in media_types. Billed per minute transcribed while running. |
+
+<details>
+
+<summary>See 126 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Capture Session | `createCaptureSession` | Open a real-time capture session in a collection so a browser or device client can stream microphone, screen and system audio into VideoDB over its WebSocket. |
 | Create Collection | `createCollection` | Create a new VideoDB collection to group videos, audio files and images. Returns the new collection id. |
 | Create Real-Time Index Alert | `createRtstreamIndexAlert` | Register an alert on a real-time stream index using the legacy /index path, so VideoDB calls your webhook whenever indexed content matches an event prompt. |
@@ -160,6 +167,8 @@ Add VideoDB from **Build → Integrations → Connectors** and connect an accoun
 | Update Collection | `updateCollection` | Rename a VideoDB collection, change its description, or toggle whether it is publicly readable. |
 | Update Video | `updateVideo` | Change the stored name or description of a video in VideoDB. |
 | Upload Media From URL | `uploadMedia` | Ingest a video, audio file or image into a VideoDB collection from a publicly reachable URL (direct file link or a supported platform link). Ingestion is asynchronous: the response carries an async job id that Get Async Response polls until the media id is available. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Harvest
 
+<img src="../../.gitbook/assets/connectors/harvest.svg" alt="Harvest logo" width="64">
+
 Harvest time tracking, invoicing and project profitability API (v2). Covers clients and contacts, projects with task and user assignments, tasks, time entries including running timers, expenses and expense categories, invoices with payments, messages and item categories, estimates with messages and item categories, users with billable rates, cost rates, teammates and project assignments, roles, company settings, and the time, expense, project budget and uninvoiced reports. Authenticates with a Harvest personal access token sent as a Bearer token together with the Harvest account ID header.
 
 | | |
@@ -12,8 +14,6 @@ Harvest time tracking, invoicing and project profitability API (v2). Covers clie
 | **Category** | [Productivity](README.md) |
 | **Website** | [getharvest.com](https://getharvest.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 123 |
-| **Events** | 0 |
 | **Slug** | `harvest` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Harvest from **Build → Integrations → Connectors** and connect an accoun
 | Create Invoice From Tracked Time And Expenses | `createInvoiceFromTrackedTime` | Create an invoice by importing uninvoiced tracked time and expenses from the client's projects. |
 | Create Invoice Item Category | `createInvoiceItemCategory` | Create an invoice item category for use as the kind of an invoice line item. |
 | Create Invoice Payment | `createInvoicePayment` | Record a payment against an invoice. |
+
+<details>
+
+<summary>See 113 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Project | `createProject` | Create a project for a client, including its billing and budgeting configuration. |
 | Create Role | `createRole` | Create a business role and optionally assign users to it. |
 | Create Task | `createTask` | Create a task that can be assigned to projects for time tracking. |
@@ -147,3 +154,5 @@ Add Harvest from **Build → Integrations → Connectors** and connect an accoun
 | Update User | `updateUser` | Update a teammate's details, capacity, business roles or access roles. Archive a teammate by setting is active to false. |
 | Update User Assignment | `updateUserAssignment` | Update the rate, budget or project manager flag of a project user assignment. |
 | Update User Teammates | `updateUserTeammates` | Replace the full list of teammates assigned to a manager. |
+
+</details>

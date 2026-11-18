@@ -5,6 +5,8 @@ hidden: true
 
 # xAI (Grok)
 
+<img src="../../.gitbook/assets/connectors/xai.png" alt="xAI (Grok) logo" width="64">
+
 xAI Grok API — OpenAI-compatible and Anthropic-compatible inference (chat completions, messages, responses, deferred completions, legacy completions), image generation, model discovery (models + language-models), text tokenization, and API key info. Base https://api.x.ai/v1. Auth: Authorization: Bearer xai- key.
 
 | | |
@@ -12,8 +14,6 @@ xAI Grok API — OpenAI-compatible and Anthropic-compatible inference (chat comp
 | **Category** | [AI and ML](README.md) |
 | **Website** | [x.ai](https://x.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 62 |
-| **Events** | 0 |
 | **Slug** | `xai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add xAI (Grok) from **Build → Integrations → Connectors** and connect an acc
 | Create Collection | `createCollection` | Create a document collection that groups uploaded files so Grok can search across them. Field Definitions declares the metadata schema documents in this collection carry, and is required even when empty. |
 | Create Completion (Legacy) | `createCompletion` | Create a legacy text completion from a single prompt string using the OpenAI-compatible Completions endpoint. Prefer Create Chat Completion for new work. The OpenAI echo and suffix parameters are not exposed because xAI rejects them with "Argument not supported". |
 | Create Embeddings | `createEmbeddings` | Create embedding vectors for one or more input strings using an xAI embedding model, for semantic search and retrieval. |
+
+<details>
+
+<summary>See 52 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Message (Anthropic-compatible) | `createMessage` | Create a model response for a conversation using the Anthropic-compatible Messages endpoint. Maximum Tokens is required. Supports system prompts, tool use and stop sequences. The Anthropic top_k parameter is not exposed because xAI rejects it with "Argument not supported". |
 | Create Realtime Client Secret | `createRealtimeClientSecret` | Mint a short-lived client secret that a browser or mobile client can use to open a Realtime voice session directly, without exposing the account API key. |
 | Create Response | `createResponse` | Create a model response through the Responses API. Supports conversation persistence via Store, system-level Instructions, tool calling and structured outputs. |
@@ -86,3 +93,5 @@ Add xAI (Grok) from **Build → Integrations → Connectors** and connect an acc
 | Update Collection | `updateCollection` | Rename a document collection and add, change or remove entries in its metadata field schema. The API requires the collection identifier in the request body as well as the path, and requires a Field Definition Updates list even when it is empty. |
 | Update Collection Document | `updateCollectionDocument` | Update the user-defined metadata fields stored against a document inside a collection. These fields drive the metadata filters available in Search Documents. The API requires the collection and file identifiers in the request body as well as the path. |
 | Update Custom Voice | `updateCustomVoice` | Update the descriptive labels of a custom text-to-speech voice, such as its display name, description, gender, accent, age and language. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Pushwoosh
 
+<img src="../../.gitbook/assets/connectors/pushwoosh.png" alt="Pushwoosh logo" width="64">
+
 Pushwoosh customer engagement platform — send push notifications, emails, and multichannel messages; manage devices, tags, segments, presets, events, campaigns, and delivery statistics via the Pushwoosh Messaging and Device APIs (json/1.3 and api/v2).
 
 | | |
@@ -12,8 +14,6 @@ Pushwoosh customer engagement platform — send push notifications, emails, and 
 | **Category** | [Communication](README.md) |
 | **Website** | [pushwoosh.com](https://pushwoosh.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 60 |
-| **Events** | 0 |
 | **Slug** | `pushwoosh` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pushwoosh from **Build → Integrations → Connectors** and connect an acco
 | Create Campaign | `createCampaign` | Creates a new push campaign for the application. Messages can be grouped under a campaign for reporting. |
 | Create Email Message | `createEmailMessage` | Creates and sends an email message based on an email preset. The notifications array carries per-message subject, content, recipients, and scheduling. |
 | Create Event | `createEvent` | Creates an event type for the application that can later be posted from devices to trigger automations. |
+
+<details>
+
+<summary>See 50 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Filter | `createFilter` | Creates a segment (filter) from a segmentation expression that can be reused to target messages. |
 | Create Message | `createMessage` | Creates and sends one or more push notifications to the application audience. The notifications array carries per-message content, targeting, scheduling, and platform options. |
 | Create Preset | `createPreset` | Creates a reusable message preset with predefined content and segmentation for the application. |
@@ -84,3 +91,5 @@ Add Pushwoosh from **Build → Integrations → Connectors** and connect an acco
 | Unregister Device | `unregisterDevice` | Removes a device's push token from the application so it stops receiving notifications. |
 | Update Application | `updateApplication` | Updates settings of an existing application, such as its title. |
 | Update Inbox Status | `inboxStatus` | Updates the status of a specific Message Inbox item (delivered, read, opened, or deleted) for a user/device. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Airtable
 
+<img src="../../.gitbook/assets/connectors/airtable.png" alt="Airtable logo" width="64">
+
 Airtable connector — manage bases, tables, fields, records and webhooks via the Airtable Web API (https://api.airtable.com/v0). Connect with OAuth 2.0 (authorization code + PKCE), or with a Personal Access Token (Bearer).
 
 | | |
@@ -12,8 +14,6 @@ Airtable connector — manage bases, tables, fields, records and webhooks via th
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [airtable.com](https://airtable.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 26 |
-| **Events** | 9 |
 | **Slug** | `airtable` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Airtable from **Build → Integrations → Connectors** and connect an accou
 | Delete Single Record | `deleteSingleRecord` | Delete a single record by ID. DELETE /{baseId}/{tableIdOrName}/{recordId}. |
 | Delete Webhook | `deleteWebhook` | Delete a webhook from a base. DELETE /bases/{baseId}/webhooks/{webhookId}. |
 | Get Base Schema | `getBaseSchema` | Get the schema (tables, fields, views) of a base. GET /meta/bases/{baseId}/tables. |
+
+<details>
+
+<summary>See 16 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Record | `getRecord` | Retrieve a single record by ID. GET /{baseId}/{tableIdOrName}/{recordId}. |
 | List Bases | `listBases` | List all bases the token can access. GET /meta/bases. Supports pagination via offset. |
 | List Record Comments | `listComments` | List comments on a record. GET /{baseId}/{tableIdOrName}/{recordId}/comments. Requires data.recordComments:read scope. Supports pageSize (max 100) and offset pagination. |
@@ -50,6 +57,8 @@ Add Airtable from **Build → Integrations → Connectors** and connect an accou
 | Update Table | `updateTable` | Update a table's name and/or description. PATCH /meta/bases/{baseId}/tables/{tableId}. Requires schema.bases:write scope. |
 | Upsert Records (Bulk) | `upsertRecords` | Bulk create-or-update (upsert). PATCH /{baseId}/{tableIdOrName} with performUpsert.fieldsToMergeOn. Records matching on the merge fields are updated; others are created. |
 | Who Am I | `whoami` | Get the current user's ID, email, and granted OAuth scopes for the authenticated token. GET /meta/whoami. No scopes required; email requires user.email:read; scopes array only present for OAuth tokens. |
+
+</details>
 
 ## Events
 

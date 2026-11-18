@@ -5,6 +5,8 @@ hidden: true
 
 # Genderize
 
+<img src="../../.gitbook/assets/connectors/genderize.png" alt="Genderize logo" width="64">
+
 Genderize predicts the most likely gender behind a personal name, returning a gender, a confidence probability and the number of records behind the prediction, optionally scoped to a country. This connector covers the full Genderize API together with its sister Demografix services that share the same API key: Agify (predict age from a name) and Nationalize (predict nationality from a name), including single-name and batch lookups.
 
 | | |
@@ -12,8 +14,6 @@ Genderize predicts the most likely gender behind a personal name, returning a ge
 | **Category** | [Search and web](README.md) |
 | **Website** | [genderize.io](https://genderize.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 3 |
-| **Events** | 0 |
 | **Slug** | `genderize` |
 
 ## Use it

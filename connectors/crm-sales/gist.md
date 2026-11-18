@@ -5,14 +5,14 @@ hidden: true
 
 # Gist
 
+<img src="../../.gitbook/assets/connectors/gist.jpg" alt="Gist logo" width="64">
+
 Gist is an all-in-one customer engagement platform covering live chat, email marketing, knowledge base and marketing automation. This connector covers the documented Gist API: contacts and batch contact imports, tags, segments, custom events, forms and form submissions, campaigns and subscriptions, subscription types, the conversations inbox with messages, assignment, priority and tagging, teams and teammates, knowledge base articles and collections, workspace metadata, and the ecommerce surface of stores, customers, products, variants, categories, carts and orders.
 
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 75 |
-| **Events** | 0 |
 | **Slug** | `gist` |
 
 ## Use it
@@ -33,6 +33,13 @@ Add Gist from **Build → Integrations → Connectors** and connect an account, 
 | Create Ecommerce Product Variant | `createEcommerceProductVariant` | Adds a purchasable variant to a product in a connected ecommerce store. |
 | Create Ecommerce Store | `createEcommerceStore` | Connects an ecommerce store to the workspace so its customers, products and orders can be synced. |
 | Create Or Update Cart | `createOrUpdateCart` | Create or update the cart of an ecommerce customer (POST /ecommerce/stores/{store_id}/customers/{customer_id}/cart). Body keys follow the Gist API reference "Create or update a cart": checkout_url, currency_code, order_total, discount_total, line_items. |
+
+<details>
+
+<summary>See 65 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Or Update Collection | `createOrUpdateCollection` | Creates a knowledge base collection, or updates the existing one when an identifier is supplied. Content is supplied per locale. |
 | Create Or Update Contact | `createOrUpdateContact` | Creates a contact, or updates the existing one when the email address already exists. Gist treats the email address as the primary identifier and de-duplicates on it. |
 | Create Or Update Contacts In Batch | `createOrUpdateContactsBatch` | Creates or updates many contacts in one request and returns a job the batch is processed under. |
@@ -98,3 +105,5 @@ Add Gist from **Build → Integrations → Connectors** and connect an account, 
 | Update Ecommerce Product Category | `updateEcommerceProductCategory` | Updates a product category within a connected ecommerce store. |
 | Update Ecommerce Product Variant | `updateEcommerceProductVariant` | Updates a product variant within a connected ecommerce store. |
 | Update Ecommerce Store | `updateEcommerceStore` | Updates the details of a connected ecommerce store. |
+
+</details>

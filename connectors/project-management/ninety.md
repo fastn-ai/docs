@@ -5,6 +5,8 @@ hidden: true
 
 # Ninety
 
+<img src="../../.gitbook/assets/connectors/ninety.png" alt="Ninety logo" width="64">
+
 Ninety is a business operating system for teams running EOS. This connector covers the full Ninety public API: Issues, To-Dos, Rocks and Milestones, Headlines and Cascading Messages, the Scorecard with its Measurables, scores and notes, Teams, Users, Meetings, the Vision/Traction Organizer and the Accountability Chart.
 
 | | |
@@ -12,8 +14,6 @@ Ninety is a business operating system for teams running EOS. This connector cove
 | **Category** | [Project management](README.md) |
 | **Website** | [ninety.io](https://ninety.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 46 |
-| **Events** | 0 |
 | **Slug** | `ninety` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ninety from **Build → Integrations → Connectors** and connect an account
 | Delete Issue | `deleteIssue` | Permanently deletes an Issue. This cannot be undone; mark an Issue completed instead if you only want it off the active list. |
 | Delete Measurable Note | `deleteMeasurableNote` | Removes the note recorded against a Measurable for one period. The score for that period is left untouched. |
 | Delete Measurable Score | `deleteMeasurableScore` | Removes a Measurable's recorded score for one period, leaving the period blank on the Scorecard. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Rock | `deleteRock` | Soft-deletes a Rock the same way the Ninety app does: the Rock is flagged deleted and stamped with who deleted it and when, its linked items are cleared, and it stops appearing in reads. Returns the deleted Rock. |
 | Delete To-Do | `deleteTodo` | Deletes a To-Do. Unlike Delete Issue this is a soft delete: Ninety answers 204, flags the To-Do deleted and stamps who deleted it and when, and it stops appearing in queries and lists - but Get To-Do still returns the record with deleted set to true. Archive the To-Do instead if you only want it off the active list. |
 | Get Accountability Chart | `getAccountabilityChart` | Returns the company's Accountability Chart: every Seat, what that Seat is accountable for, and the people sitting in it. The seats array is flat and ordered top-down, so rebuild the hierarchy from parentSeatId, which is absent on the top Seat. A Seat with no holders is a real state, not an error. |
@@ -70,3 +77,5 @@ Add Ninety from **Build → Integrations → Connectors** and connect an account
 | Update Milestone | `updateMilestone` | Partially updates a Milestone. Only the fields you supply are changed. Provide a completion date alongside Is Done when marking a Milestone complete. |
 | Update Rock | `updateRock` | Partially updates a Rock and returns the complete Rock as it now stands. Only the fields you supply are changed. Completion is tracked from the status: setting it to DONE marks the Rock completed and stamps the completion date, and moving off DONE clears both - completed and completedDate are not writable directly. |
 | Update To-Do | `updateTodo` | Partially updates a To-Do. Only the fields you supply are changed; everything you leave out keeps its current value. Two fields Ninety documents for this endpoint are deliberately not offered, because both misbehave: linkedItemId and linkedItemType make Ninety reject the whole request with a 400, losing the rest of the update, and repeat is accepted but silently discarded. Set the recurrence when you create the To-Do instead. |
+
+</details>

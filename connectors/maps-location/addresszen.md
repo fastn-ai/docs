@@ -5,6 +5,8 @@ hidden: true
 
 # AddressZen
 
+<img src="../../.gitbook/assets/connectors/addresszen.png" alt="AddressZen logo" width="64">
+
 AddressZen address autocomplete, verification and data quality API. Search and verify US and international addresses (USPS CASS-certified), autocomplete and retrieve addresses, look up UK postcodes/UDPRN/UMPRN, find and resolve geographic places, validate email addresses and phone numbers, and manage API keys, licensees, configurations and usage.
 
 | | |
@@ -12,8 +14,6 @@ AddressZen address autocomplete, verification and data quality API. Search and v
 | **Category** | [Maps and location](README.md) |
 | **Website** | [addresszen.com](https://addresszen.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `addresszen` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add AddressZen from **Build → Integrations → Connectors** and connect an acc
 | Get Key Availability | `getKeyAvailability` | Returns public information about the connected API key: whether it is currently usable for lookups, the search contexts (countries) it can serve, and the context most likely to apply. Needs no user token, so this is the cheapest way to confirm a key is live. NOTE: the key is carried in the URL path by the vendor's route design, so it appears in this action's request URL. |
 | Get Key Details | `getKeyDetails` | Returns private settings for the connected API key: its name, remaining lookup balance, daily, monthly and per-IP limits, allowed URLs, licensed datasets, search contexts, data redaction period and email notification settings. Requires the account User Token; without it the API returns 401 code 4011 Forbidden. NOTE: both the key and the user token are carried in the URL by the vendor's route design, so they appear in this action's request URL. |
 | Get Key Usage Statistics | `getKeyUsage` | Reports the number of lookups consumed on the connected API key over a range of days, optionally broken down by tag or restricted to a single licensee. Requires the account User Token; without it the API returns 401 code 4011 Forbidden. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Configurations | `listConfigurations` | Lists the named configuration objects stored against the connected API key. Configurations hold serialized settings for AddressZen front-end integrations such as the Address Lookup widget, so a deployed page can fetch its options by name. Requires the account User Token; without it the API returns 401 code 4011 Forbidden. |
 | List Licensees | `listLicensees` | Lists the licensees attached to the connected API key, with paging and an optional name search. Requires the account User Token; without it the API returns 401 code 4011 Forbidden. SECURITY: each licensee record contains that licensee's own usable lookup key, so this response carries live credentials - do not log or forward it. |
 | Look Up Postcode | `lookupPostcode` | Returns every address at a UK postcode. Undocumented in the AddressZen OpenAPI specification but live on the v1 API. Requires a key licensed for the UK Postcode Address File - an unlicensed key returns 4015 Inadequate licence. Each page of addresses counts against your lookup balance. |
@@ -55,3 +62,5 @@ Add AddressZen from **Build → Integrations → Connectors** and connect an acc
 | Validate Email Address | `validateEmail` | Validates a single email address: syntax, domain and mailbox checks, plus flags for disposable, role and free-provider addresses. Queries longer than 320 characters are rejected. Each query counts as one paid lookup, including addresses that turn out to be invalid. |
 | Validate Phone Number | `validatePhoneNumber` | Validates a single phone number and returns its line type, country, formatting variants and network operator. The number must include a country code, e.g. '+442071128019'. Each query counts as one paid lookup, including a number that fails to parse. |
 | Verify Address | `verifyAddress` | Validates, corrects and standardizes a US address against USPS CASS-certified data. Accepts either a single freeform address string or a first address line plus ZIP code, or city and state. Returns the standardized address, a deliverability verdict and the corrections applied. Each verified address counts as one paid lookup. |
+
+</details>

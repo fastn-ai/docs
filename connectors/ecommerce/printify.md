@@ -5,6 +5,8 @@ hidden: true
 
 # Printify
 
+<img src="../../.gitbook/assets/connectors/printify.png" alt="Printify logo" width="64">
+
 Printify print-on-demand API. Manage shops, browse the product catalog (blueprints, print providers, variants, shipping), create and publish products, submit and manage orders, upload artwork, and manage webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Printify print-on-demand API. Manage shops, browse the product catalog (blueprin
 | **Category** | [E-commerce](README.md) |
 | **Website** | [printify.com](https://printify.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `printify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Printify from **Build → Integrations → Connectors** and connect an accou
 | Delete Product | `deleteProduct` | Delete a product from the shop by its ID. |
 | Delete Webhook | `deleteWebhook` | Delete a webhook subscription from the shop. |
 | Disconnect Shop | `disconnectShop` | Disconnect the current shop from the Printify account. Destructive: removes the store connection. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Blueprint | `getBlueprint` | Retrieve a specific catalog blueprint by its ID. |
 | Get Economy Shipping | `getEconomyShipping` | Retrieve economy shipping rates (v2) for a blueprint and print provider. |
 | Get Express Shipping | `getExpressShipping` | Retrieve express shipping rates (v2) for a blueprint and print provider. |
@@ -64,3 +71,5 @@ Add Printify from **Build → Integrations → Connectors** and connect an accou
 | Update Product | `updateProduct` | Update an existing product. Only the fields you send are changed (partial update). |
 | Update Webhook | `updateWebhook` | Update the destination URL of an existing webhook subscription. |
 | Upload Image | `uploadImage` | Upload an image to the merchant's media library by URL or base64 contents. Provide file_name plus either url or contents. |
+
+</details>

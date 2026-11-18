@@ -12,8 +12,6 @@ Billsby subscription billing and recurring payments. Manage products, plans, cyc
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [billsby.com](https://billsby.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 58 |
-| **Events** | 9 |
 | **Slug** | `billsby` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Billsby from **Build → Integrations → Connectors** and connect an accoun
 | Create Cycle | `createCycle` | Creates one or more billing cycles on a Billsby plan and optionally attaches add-ons and allowances. A cycle defines the frequency, price, free trial and contract term customers are billed on. |
 | Create One-Time Charge | `createOneTimeCharge` | Raises an ad-hoc invoice against a Billsby customer and attempts to collect it from their stored payment card. This charges the customer for real, so only run it for a charge you intend to take. |
 | Create Plan | `createPlan` | Creates a new plan under an existing Billsby product. A plan defines the pricing model and feature tags; billing cycles are added separately with Create Cycle. |
+
+<details>
+
+<summary>See 48 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Product | `createProduct` | Creates a new product in the Billsby account. A product is the top-level container that holds plans and cycles. Name, billing currency and product type are required by the API. |
 | Create Subscription For New Customer | `createSubscription` | Creates a new Billsby customer and their first subscription in a single call. Billing starts immediately unless the cycle has a free trial, so this charges the supplied payment card. Card details must be a token from the Billsby checkout, never a raw card number. |
 | Delete Customer | `deleteCustomer` | Permanently deletes a Billsby customer and their subscription history. This cannot be undone, so use Clear Customer Data For GDPR instead when billing records must be retained. |
@@ -82,6 +87,8 @@ Add Billsby from **Build → Integrations → Connectors** and connect an accoun
 | Update Subscription Shipping Address | `updateSubscriptionShippingAddress` | Replaces the shipping address held against a Billsby subscription. Every address line supplied overwrites the stored value. |
 | Update Usage Counter | `updateCounter` | Records usage against a counter on a Billsby subscription by incrementing, decrementing or setting its value. Usage recorded here drives allowance overage charges on the next invoice. |
 | Write Off Invoice | `markInvoiceWrittenOff` | Writes off a Billsby invoice as bad debt so it is no longer chased for payment. The invoice remains on the customer's record marked as written off. |
+
+</details>
 
 ## Events
 

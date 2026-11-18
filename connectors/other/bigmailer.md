@@ -5,6 +5,8 @@ hidden: true
 
 # BigMailer
 
+<img src="../../.gitbook/assets/connectors/bigmailer.png" alt="BigMailer logo" width="64">
+
 BigMailer email marketing platform. Manage brands, contacts, lists, fields, segments, templates, senders, message types, suppression lists, users and bulk/RSS/transactional campaigns via the BigMailer v1 REST API.
 
 | | |
@@ -12,8 +14,6 @@ BigMailer email marketing platform. Manage brands, contacts, lists, fields, segm
 | **Category** | [Other](README.md) |
 | **Website** | [bigmailer.io](https://bigmailer.io) |
 | **Authentication** | API key |
-| **Actions** | 81 |
-| **Events** | 0 |
 | **Slug** | `bigmailer` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BigMailer from **Build → Integrations → Connectors** and connect an acco
 | Create Message Type | `createMessageType` | Create a message type in a BigMailer brand so contacts can subscribe or unsubscribe per category. |
 | Create Or Update Contact | `upsertContact` | Create a contact, or update it if a contact with the same email already exists in the brand. |
 | Create RSS Campaign | `createRssCampaign` | Create an RSS campaign in a BigMailer brand that mails new feed items on a schedule. The campaign stays a draft unless ready is true. |
+
+<details>
+
+<summary>See 71 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Segment | `createSegment` | Create a contact segment in a BigMailer brand from a set of conditions. |
 | Create Sender | `createSender` | Add a sending identity (a domain or a single email address) to a BigMailer brand. The response carries the DNS records that must be published before the sender can be verified. |
 | Create Template | `createTemplate` | Create an email or page template in a BigMailer brand. |
@@ -105,3 +112,5 @@ Add BigMailer from **Build → Integrations → Connectors** and connect an acco
 | Upload Contact Batch | `createContactBatch` | Upload a batch of up to 1,000 contacts to be created or updated asynchronously. Returns a batch id whose progress is polled with Get Contact Batch Status. |
 | Verify Bounce Domain | `verifyBounceDomain` | Ask BigMailer to re-check the DNS records for a sender's bounce domain. Publish the records under bounce_dns_records from Get Sender first. |
 | Verify Sender | `verifySender` | Ask BigMailer to re-check the DNS records for a sending identity. Publish the records under dns_records from Get Sender first; the response reports whether verification succeeded. |
+
+</details>

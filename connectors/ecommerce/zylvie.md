@@ -5,6 +5,8 @@ hidden: true
 
 # Zylvie
 
+<img src="../../.gitbook/assets/connectors/zylvie.png" alt="Zylvie logo" width="64">
+
 Zylvie is creator-commerce cart software for selling digital products, subscriptions and lead magnets. This connector wraps the Zylvie REST API (https://api.zylvie.com) covering the authenticated brand, products, coupons and per-email coupon grants, license keys, subscriptions, transactions and webhook workflow subscriptions.
 
 | | |
@@ -12,8 +14,6 @@ Zylvie is creator-commerce cart software for selling digital products, subscript
 | **Category** | [E-commerce](README.md) |
 | **Website** | [zylvie.com](https://zylvie.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 19 |
-| **Events** | 5 |
 | **Slug** | `zylvie` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zylvie from **Build → Integrations → Connectors** and connect an account
 | List Coupons | `listCoupons` | Lists every coupon belonging to the authenticated brand, with its discount type, amount, validity window and current redemption count. Set archived to true to list archived coupons instead of active ones. |
 | List Subscriptions | `listSubscriptions` | Lists paginated subscriptions for the authenticated brand, newest first, with status, trial window, product and subscriber. Monetary amounts are in the currency's major unit (unlike Verify Subscription, which returns cents). |
 | List Transactions | `listTransactions` | Lists paginated transactions for the authenticated brand, newest first, covering one-time purchases, subscription sign-ups and renewals, with payment and refund status. Monetary amounts are in the currency's major unit. |
+
+<details>
+
+<summary>See 9 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Uploaded License Codes | `listUploadedLicenseCodes` | Inspects the pool of license codes you uploaded by CSV for a product: which codes are still unused and which have been assigned to buyers, with the redeem and refund status of each assigned code. |
 | Redeem License Key | `redeemLicenseKey` | Marks a buyer's license key as redeemed/used. If the key was already redeemed, Zylvie returns HTTP 200 with an error envelope carrying error = 'Already redeemed' plus the original redeemed_at - check the body, not just the status code. |
 | Refund License Key | `refundLicenseKey` | Marks a buyer's license key as refunded/invalidated. This only flags the key inside Zylvie; it does not move any money. If the key was already refunded, Zylvie returns HTTP 200 with an error envelope carrying error = 'Already refunded' plus the original refunded_at - check the body, not just the status code. |
@@ -43,6 +50,8 @@ Add Zylvie from **Build → Integrations → Connectors** and connect an account
 | Update Product | `updateProduct` | Updates a product by id. NOTE, proven live and contrary to Zylvie's docs: this is a REPLACE, not a merge - id, title, url, currency, price and pricing_model are all rejected as required if omitted, and fields you leave out are reset to their defaults. Send the product's full current state with your changes applied. categories, tags, productimages and productfiles likewise replace the existing values. |
 | Verify License Key | `verifyLicenseKey` | Verifies that a license key supplied by a buyer is valid, paid for, and belongs to the given product. Returns the key with its buyer email and redeem/refund status. Zylvie answers with a 404 page when the key is not found for that product. |
 | Verify Subscription By Email | `verifySubscriptionByEmail` | Checks whether an email address has any subscriptions and returns their status. The response is a TOP-LEVEL JSON ARRAY of subscription objects, each with subscription_id, created_at, cancel_at, canceled_at, trial_start, trial_end, currency, amount (in CENTS, unlike List Subscriptions), interval, interval_count, status, product.title and a subscriber block. Zylvie answers 404 {"status":"error","message":"No subscriptions found"} when the email has none. No outputContract is declared because the fastn engine rejects a top-level array output schema. |
+
+</details>
 
 ## Events
 

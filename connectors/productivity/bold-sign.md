@@ -5,6 +5,8 @@ hidden: true
 
 # BoldSign
 
+<img src="../../.gitbook/assets/connectors/bold-sign.png" alt="BoldSign logo" width="64">
+
 BoldSign is an electronic signature platform for sending, signing and managing legally binding documents. This connector covers the full BoldSign REST API: documents (send, draft, edit, remind, revoke, download, audit logs, tags, authentication, access codes, recipient changes, prefilled fields, expiry, embedded URLs), templates (create, edit, send, merge and send, share, tags, embedded URLs), contacts and contact groups, custom fields, brands, sender identities, teams, users, identity verification and API credit usage.
 
 | | |
@@ -12,8 +14,6 @@ BoldSign is an electronic signature platform for sending, signing and managing l
 | **Category** | [Productivity](README.md) |
 | **Website** | [boldsign.com](https://boldsign.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 87 |
-| **Events** | 34 |
 | **Slug** | `boldSign` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BoldSign from **Build → Integrations → Connectors** and connect an accou
 | Change User Team | `changeUserTeam` | Moves a user to a different team, optionally transferring their documents to another user. |
 | Create Brand | `createBrand` | Creates a branding profile that controls the logo, colours, disclaimer and email behaviour applied to signature requests. The logo must be supplied as SVG markup; BoldSign also accepts JPG, JPEG and PNG logos, but binary uploads cannot be sent through this connector. |
 | Create Contact | `createContact` | Adds a contact to the BoldSign address book so it can be selected as a recipient on future signature requests. |
+
+<details>
+
+<summary>See 77 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Contact Group | `createContactGroup` | Creates a contact group so a named set of recipients can be added to signature requests in one step. |
 | Create Custom Field | `createCustomField` | Creates a reusable custom form field on a brand so senders can drop the same pre-configured field onto any document or template. BoldSign accepts a background colour only on Label fields. |
 | Create Embedded Custom Field URL | `createEmbeddedCustomFieldUrl` | Generates a short-lived URL that embeds the BoldSign custom field designer for a brand inside your own application. |
@@ -112,6 +119,8 @@ Add BoldSign from **Build → Integrations → Connectors** and connect an accou
 | Update User | `updateUser` | Changes a user's role, or activates or deactivates them. When deactivating, their documents can be transferred to another user. |
 | Update User Metadata | `updateUserMetadata` | Replaces the custom metadata stored against a BoldSign user. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -128,6 +137,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Document Revoked | `Revoked` | Fires when the sender withdraws a signature request. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Revoked, save. |
 | Document Send Failed | `SendFailed` | Fires when BoldSign could not send a signature request. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Send Failed, save. |
 | Document Sent | `Sent` | Fires when a signature request is sent to its recipients. Setup (per BoldSign account): sign in at https://app.boldsign.com, open Settings &gt; API &gt; Webhooks, select Add Webhook, paste the fastn trigger URL as the endpoint, tick Sent under Document events, and save. Payload schema modelled from BoldSign's published WebhookEvent / DocumentEvent models in its OpenAPI specification, not from a captured delivery. |
+
+<details>
+
+<summary>See 24 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Document Viewed | `Viewed` | Fires when a recipient opens the document for the first time. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Viewed, save. |
 | Draft Created | `DraftCreated` | Fires when a document is saved as a draft. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Draft Created, save. |
 | Identity Verification Failed | `IdentityVerificationFailed` | Fires when a recipient fails identity verification. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Identity Verification Failed, save. |
@@ -152,3 +168,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Template Draft Created | `TemplateDraftCreated` | Fires when a template is saved as a draft. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Template Draft Created, save. |
 | Template Edited | `TemplateEdited` | Fires when a template is edited. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Template Edited, save. |
 | Template Send Failed | `TemplateSendFailed` | Fires when a document could not be sent from a template. Setup: BoldSign web app &gt; Settings &gt; API &gt; Webhooks &gt; Add Webhook, paste the fastn trigger URL, tick Template Send Failed, save. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Dynatrace
 
+<img src="../../.gitbook/assets/connectors/dynatrace-oauth.svg" alt="Dynatrace logo" width="64">
+
 Dynatrace unified observability platform, accessed through an Account Management OAuth2 client (client_credentials). Covers the Account Management Environment Management API (list environments, list Managed clusters, read the environment IP allowlist) and the Grail Query Execution API (execute, poll, cancel, verify, parse, and autocomplete Dynatrace Query Language queries against the metrics and entities tables). Scoped strictly to the OAuth client scopes account-env-read, storage:metrics:read, and storage:entities:read - the classic per-environment Environment API v2 (problems, events, synthetic, SLO, settings, users) requires a classic API token or different OAuth scopes and is out of scope for this credential.
 
 | | |
@@ -12,8 +14,6 @@ Dynatrace unified observability platform, accessed through an Account Management
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [dynatrace.com](https://dynatrace.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 10 |
-| **Events** | 0 |
 | **Slug** | `dynatraceOAuth` |
 
 ## Use it

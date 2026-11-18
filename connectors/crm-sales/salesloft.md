@@ -5,6 +5,8 @@ hidden: true
 
 # Salesloft
 
+<img src="../../.gitbook/assets/connectors/salesloft.png" alt="Salesloft logo" width="64">
+
 Salesloft Revenue Orchestration Platform (sales engagement). Wraps the Salesloft Platform REST API v2 at https://api.salesloft.com/v2 — people, accounts, cadences and cadence memberships, steps and step groups, actions, tasks, notes, calls and call data records, emails and email templates, meetings and calendar events, conversations and transcriptions, opportunities, users, teams and groups, custom fields, imports, bulk jobs, saved list views, successes, CRM activities, person/account stages and tiers, data-control (GDPR) operations, and the webhook subscription API. Supports OAuth 2.0 authorization code, OAuth 2.0 client credentials, and customer API keys.
 
 | | |
@@ -12,8 +14,6 @@ Salesloft Revenue Orchestration Platform (sales engagement). Wraps the Salesloft
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [salesloft.com](https://salesloft.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 200 |
-| **Events** | 37 |
 | **Slug** | `salesloft` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Salesloft from **Build → Integrations → Connectors** and connect an acco
 | Create Bulk Job | `createBulkJob` | Create a bulk job. The type fixes what the job does (for example bulk person upsert). Flow: create the job, POST job data in batches of up to 5,000, then mark it ready_to_execute, then poll results. |
 | Create Bulk Job Data | `createBulkJobData` | Upload job data to a bulk job. data is an array of objects, each holding the parameters for one individual call. Up to 5,000 records per request; call repeatedly to load more. |
 | Create Cadence Bulk Membership | `createCadenceBulkMembership` | Add many people to a cadence at once. The people are selected by a listing filter (people_filter uses the same parameter shape as List People). Person records that may not be added to the cadence are ignored. Returns the filter that was applied, the number of people found, and the cadence and user. Scope: cadences:write. |
+
+<details>
+
+<summary>See 190 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Cadence Collection Export Download | `createCadenceCollectionExportDownload` | Request an asynchronous bulk export of cadence collections and their cadences. The download link is emailed to the requesting user. Scope: cadences:read. |
 | Create Cadence Collection Import | `createCadenceCollectionImport` | Create a cadence collection from JSON settings. The import format mirrors the cadence collection export format. Requires team admin access. Scope: cadences:write. |
 | Create Cadence Export Download | `createCadenceExportDownload` | Request an asynchronous bulk export of cadences matching the given filters. The download link is emailed to the requesting user. Scope: cadences:read. |
@@ -225,6 +232,8 @@ Add Salesloft from **Build → Integrations → Connectors** and connect an acco
 | Upsert Calendar Event | `upsertCalendarEvent` | Upsert a calendar event. The upsert key is the combination of id and i_cal_uid scoped to calendar_id (override with upsert_key). Used for bulk calendar synchronisation from an external provider. For an External Calendar connection use calendar_id "external_{salesloft_user_guid}". Scope: meetings:write. |
 | Upsert Person | `upsertPerson` | Upsert a Salesloft person. upsert_key selects the match field (id, email_address, phone, crm_id). Create and update behaviour is identical to the individual endpoints. Returns upsert_type ("create" or "update") plus the person. Scope: people:write. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -241,6 +250,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Cadence Membership Updated | `cadence_membership_updated` | A cadence membership changed. Required scope: cadences:read. |
 | Cadence Updated | `cadence_updated` | A cadence was updated. Needs Personal Cadences: View & Copy and Public/Team Cadences: View. Required scope: cadences:read. |
 | Call Created | `call_created` | A call was logged; delivers the new call object. Needs the View Team Calls permission. Required scope: calls:read. |
+
+<details>
+
+<summary>See 27 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Call Data Record Created | `call_data_record_created` | A dialer call data record was created. Needs the View Team Calls permission. Required scope: calls:read. |
 | Call Data Record Updated | `call_data_record_updated` | A dialer call data record was updated. Needs the View Team Calls permission. Required scope: calls:read. |
 | Call Updated | `call_updated` | A logged call was updated. Needs the View Team Calls permission. Required scope: calls:read. |
@@ -268,3 +284,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Task Updated | `task_updated` | A task was updated. Required scope: tasks:read. |
 | User Created | `user_created` | A user was created on the team. Required scope: team:read. |
 | User Updated | `user_updated` | A user was updated. Required scope: team:read. |
+
+</details>

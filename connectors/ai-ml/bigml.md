@@ -5,6 +5,8 @@ hidden: true
 
 # BigML
 
+<img src="../../.gitbook/assets/connectors/bigml.png" alt="BigML logo" width="64">
+
 BigML is a machine learning platform. This connector covers the full BigML.io REST API (andromeda version, https://bigml.io/andromeda): list / get / create / update / delete for every resource type — projects, external connectors, sources, composites, datasets, samples, correlations, statistical tests, configurations, models, ensembles, linear and logistic regressions, deepnets, fusions, OptiMLs, time series, PCAs, clusters, anomaly detectors, associations, topic models, predictions, batch predictions, centroids, batch centroids, anomaly scores, batch anomaly scores, association sets, topic distributions, batch topic distributions, projections, batch projections, forecasts, evaluations, and WhizzML scripts, libraries and executions. Resource creation is asynchronous (poll status.code == 5). Authenticates with username + API key as query parameters.
 
 | | |
@@ -12,8 +14,6 @@ BigML is a machine learning platform. This connector covers the full BigML.io RE
 | **Category** | [AI and ML](README.md) |
 | **Website** | [bigml.com](https://bigml.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 196 |
-| **Events** | 2 |
 | **Slug** | `bigml` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add BigML from **Build → Integrations → Connectors** and connect an account,
 | Create Batch Projection | `createBatchProjection` | Projects every row of a dataset onto the components of a PCA, producing a CSV (and optionally a dataset with output_dataset=true). Options: max_components, variance_threshold, all_fields, output_fields. Consumes credits. Asynchronous: HTTP 201 with status.code 1; poll Get Batch Projection until status.code is 5, then Download Batch Projection. |
 | Create Batch Topic Distribution | `createBatchTopicDistribution` | Computes topic probabilities for every row of a dataset using a finished topic model, producing a CSV (and optionally a dataset with output_dataset=true). Options: all_fields, output_fields, header, separator, newline, fields_map. Consumes credits. Asynchronous: HTTP 201 with status.code 1; poll Get Batch Topic Distribution until status.code is 5, then Download Batch Topic Distribution. |
 | Create Centroid | `createCentroid` | Assigns input_data to its closest cluster centroid using a cluster (cluster/id). Returns HTTP 201 with the centroid (centroid_id, centroid_name, distance); usually finished immediately. |
+
+<details>
+
+<summary>See 186 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Cluster | `createCluster` | Creates a cluster (k-means when k is given, G-means otherwise) from a dataset, several datasets, or by cloning (origin / shared_hash). Options: k, critical_value, balance_fields, field_scales, model_clusters, summary_fields, sampling, weight_field. Consumes credits. Asynchronous: HTTP 201 with status.code 1; poll Get Cluster until status.code is 5. |
 | Create Composite | `createComposite` | Groups previously built models (model, ensemble, logisticregression, deepnet, cluster, anomaly, association, timeseries, topicmodel, fusion, optiml, composite...) into a composite resource. models is a list of resource ids or {id, ...} maps. Returns HTTP 201; poll Get Composite until status.code is 5. |
 | Create Configuration | `createConfiguration` | Creates a configuration: a named set of default creation arguments keyed by resource type (e.g. {"any": {...}, "model": {...}}) that can later be passed as configuration=configuration/id when creating resources. Also clones with origin. Returns HTTP 201 (synchronous, status.code 5). |
@@ -220,6 +227,8 @@ Add BigML from **Build → Integrations → Connectors** and connect an account,
 | Update Time Series | `updateTimeSeries` | Updates the updatable properties of the time series (name, description, category, tags, private, project, price, shared, shared_clonable). Returns HTTP 202 with the updated resource. |
 | Update Topic Distribution | `updateTopicDistribution` | Updates the updatable properties of the topic distribution (name, description, category, tags, private, project). Returns HTTP 202 with the updated resource. |
 | Update Topic Model | `updateTopicModel` | Updates the updatable properties of the topic model (name, description, category, tags, private, project, price, shared, shared_clonable). Returns HTTP 202 with the updated resource. |
+
+</details>
 
 ## Events
 

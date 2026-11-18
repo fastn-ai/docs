@@ -5,6 +5,8 @@ hidden: true
 
 # Square
 
+<img src="../../.gitbook/assets/connectors/square.png" alt="Square logo" width="64">
+
 Square commerce platform connector. Take and manage payments, refunds, customers, catalog, orders, invoices, locations, payment links, and webhook subscriptions via Square's v2 REST API (Square-Version 2026-05-20). OAuth 2.0 primary auth; switchable sandbox/live host.
 
 | | |
@@ -12,8 +14,6 @@ Square commerce platform connector. Take and manage payments, refunds, customers
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [squareup.com](https://squareup.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 49 |
-| **Events** | 12 |
 | **Slug** | `square` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Square from **Build → Integrations → Connectors** and connect an account
 | Create Invoice | `createInvoice` | Create a draft invoice for an order. POST /v2/invoices. |
 | Create Location | `createLocation` | Create a new location. POST /v2/locations. |
 | Create Order | `createOrder` | Create a new order. POST /v2/orders. |
+
+<details>
+
+<summary>See 39 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Payment | `createPayment` | Create (take) a payment using a source (payment token or card on file). POST /v2/payments. |
 | Create Payment Link | `createPaymentLink` | Create a Square Online checkout payment link. POST /v2/online-checkout/payment-links. |
 | Create Refund | `createRefund` | Refund a payment. POST /v2/refunds. |
@@ -74,6 +81,8 @@ Add Square from **Build → Integrations → Connectors** and connect an account
 | Update Webhook Subscription | `updateWebhookSubscription` | Update a webhook subscription (name, event types, url, enabled). PUT /v2/webhooks/subscriptions/{subscription_id}. |
 | Upsert Catalog Object | `upsertCatalogObject` | Create or update a catalog object (item, variation, etc.). POST /v2/catalog/object. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -90,5 +99,14 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Order Updated | `order.updated` | An order was updated. |
 | Payment Created | `payment.created` | A payment was created. |
 | Payment Updated | `payment.updated` | A payment changed status (e.g. completed). |
+
+<details>
+
+<summary>See 2 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Refund Created | `refund.created` | A refund was created. |
 | Refund Updated | `refund.updated` | A refund changed status. |
+
+</details>

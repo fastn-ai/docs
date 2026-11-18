@@ -5,6 +5,8 @@ hidden: true
 
 # Google Cloud Translation
 
+<img src="../../.gitbook/assets/connectors/google-cloud-translation.png" alt="Google Cloud Translation logo" width="64">
+
 Translate text and documents, detect languages, romanize text, and manage glossaries, custom AutoML models, datasets, Adaptive MT resources and long-running operations using the Google Cloud Translation API v3.
 
 | | |
@@ -12,8 +14,6 @@ Translate text and documents, detect languages, romanize text, and manage glossa
 | **Category** | [AI and ML](README.md) |
 | **Website** | [translation.googleapis.com](https://translation.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 54 |
-| **Events** | 0 |
 | **Slug** | `googleCloudTranslation` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Cloud Translation from **Build → Integrations → Connectors** and 
 | Create Model | `createModel` | Starts training a custom AutoML Translation model from an existing dataset. Returns a long-running operation that completes when training has finished. |
 | Delete Adaptive MT Dataset | `deleteAdaptiveMtDataset` | Permanently deletes an Adaptive MT dataset and all of the files and sentences it contains. Returns an empty response on success. |
 | Delete Adaptive MT File | `deleteAdaptiveMtFile` | Permanently deletes a file and its sentences from an Adaptive MT dataset. Returns an empty response on success. |
+
+<details>
+
+<summary>See 44 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Dataset | `deleteDataset` | Permanently deletes an AutoML Translation dataset and all of its examples. Returns a long-running operation. |
 | Delete Glossary | `deleteGlossary` | Permanently deletes a glossary and all of its entries. Returns a long-running operation that completes once the glossary has been removed. |
 | Delete Glossary Entry | `deleteGlossaryEntry` | Permanently deletes a single entry from a glossary. Returns an empty response on success. glossaryEntryId is the numeric id Google assigns. |
@@ -78,3 +85,5 @@ Add Google Cloud Translation from **Build → Integrations → Connectors** and 
 | Update Glossary | `updateGlossary` | Updates the mutable fields of an existing glossary. Only the fields named in updateMask are changed; the API currently supports updating displayName and inputConfig. Returns a long-running operation. |
 | Update Glossary Entry | `updateGlossaryEntry` | Updates an existing glossary entry, replacing its terms and description. Supply termsPair for a unidirectional glossary or termsSet for an equivalent term set glossary. glossaryEntryId is the numeric id Google assigns. |
 | Wait For Operation | `waitOperation` | Blocks until a long-running Translation API operation completes or the requested timeout elapses, then returns its latest state. This is a best-effort convenience over polling Get Operation. |
+
+</details>

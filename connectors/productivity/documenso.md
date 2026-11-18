@@ -5,6 +5,8 @@ hidden: true
 
 # Documenso
 
+<img src="../../.gitbook/assets/connectors/documenso.png" alt="Documenso logo" width="64">
+
 Documenso open-source e-signature platform. Covers the v1 REST API (documents, recipients, fields, templates) and the v2 API (documents, envelopes, folders, templates, attachments, embedding presign tokens).
 
 | | |
@@ -12,8 +14,6 @@ Documenso open-source e-signature platform. Covers the v1 REST API (documents, r
 | **Category** | [Productivity](README.md) |
 | **Website** | [documenso.com](https://documenso.com) |
 | **Authentication** | API key |
-| **Actions** | 109 |
-| **Events** | 14 |
 | **Slug** | `documenso` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Documenso from **Build → Integrations → Connectors** and connect an acco
 | Create Document With File Upload | `createDocumentWithFile` | Documenso v2: create a document by posting the PDF directly (multipart/form-data: payload JSON string + one or more file parts). The connector engine cannot emit binary multipart parts, so the file part cannot be sent from here and the vendor rejects the call with "Input not instance of File". Use Create Document (JSON) instead and PUT the PDF to the uploadUrl it returns. |
 | Create Embedding Presign Token | `createEmbeddingPresignToken` | Documenso v2: mint a short-lived presign token for the embedded signing/authoring widgets. WARNING: the response contains a live credential - handle and log with care. |
 | Create Envelope Attachment | `createEnvelopeAttachment` | Documenso v2: attach a labelled link to an envelope. data = {label, data}. |
+
+<details>
+
+<summary>See 99 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Envelope Fields | `createEnvelopeFields` | Documenso v2: place one or more fields on an envelope. data = [{type, recipientId, envelopeItemId, page, positionX, positionY, width, height}]. |
 | Create Envelope Items | `createEnvelopeItems` | Documenso v2: add documents to an envelope. multipart/form-data: payload is a JSON string {"envelopeId":"envelope_..."}. File parts are not supported by the connector engine, so this call adds no binary files; it returns the envelope's item list. |
 | Create Envelope Recipients | `createEnvelopeRecipients` | Documenso v2: add one or more recipients to an envelope. data = [{email, name, role, signingOrder?}]. |
@@ -134,6 +141,8 @@ Add Documenso from **Build → Integrations → Connectors** and connect an acco
 | V1 Update Document Recipient | `v1UpdateDocumentRecipient` | Documenso v1: update a recipient's name, email, role or signing order on a draft document. |
 | Verify Embedding Presign Token | `verifyEmbeddingPresignToken` | Documenso v2: check whether an embedding presign token is still valid. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -150,7 +159,16 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Document Sent | `DOCUMENT_SENT` | A document was distributed to its recipients. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. No API registration exists for API tokens. |
 | Document Signed | `DOCUMENT_SIGNED` | A recipient signed the document. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. |
 | Recipient Expired | `RECIPIENT_EXPIRED` | A recipient's signing window expired. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. |
+
+<details>
+
+<summary>See 4 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Template Created | `TEMPLATE_CREATED` | A template was created. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. |
 | Template Deleted | `TEMPLATE_DELETED` | A template was deleted. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. |
 | Template Updated | `TEMPLATE_UPDATED` | A template was updated. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. |
 | Template Used | `TEMPLATE_USED` | A template was turned into a document. Register at app.documenso.com &gt; avatar menu &gt; Team settings &gt; Webhooks &gt; Create Webhook, paste the fastn URL and tick this event. |
+
+</details>

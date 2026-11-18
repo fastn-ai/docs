@@ -5,6 +5,8 @@ hidden: true
 
 # SuperSaaS
 
+<img src="../../.gitbook/assets/connectors/supersaas.png" alt="SuperSaaS logo" width="64">
+
 SuperSaaS is an online appointment scheduling and booking platform. This connector wraps the SuperSaaS REST API at https://www.supersaas.com/api: the user database (create, read, update and delete users, with groups and the account field list), schedules and form definitions, submitted form data, promotional coupon codes, resources and services, appointments (bookings, recent changes, date-range listing, per-user agenda and availability), and the REST-hooks webhook subscriptions that drive SuperSaaS event notifications.
 
 | | |
@@ -12,8 +14,6 @@ SuperSaaS is an online appointment scheduling and booking platform. This connect
 | **Category** | [Productivity](README.md) |
 | **Website** | [supersaas.com](https://supersaas.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 32 |
-| **Events** | 0 |
 | **Slug** | `supersaas` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SuperSaaS from **Build → Integrations → Connectors** and connect an acco
 | Delete User | `deleteUser` | Delete a user (DELETE /api/users/{id}.json). Docs: https://www.supersaas.com/info/dev/user_api |
 | Duplicate Promotion | `duplicatePromotion` | Create a new promotion code copied from an existing template code (POST /api/promotions.json). Docs: https://www.supersaas.com/info/dev/promotion_api |
 | Get Availability | `getAvailability` | List free time (resource type) or free slots (capacity type) after a time (GET /api/free/{schedule_id}.json). Not for service schedules. Docs: https://www.supersaas.com/info/dev/appointment_api |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Booking | `getBooking` | Read one appointment (GET /api/bookings/{id}.json). Docs: https://www.supersaas.com/info/dev/appointment_api |
 | Get Field List | `getFieldList` | Get the list of fields on bookings of a schedule, or on User objects when schedule_id is omitted (GET /api/field_list.json). Docs: https://www.supersaas.com/info/dev/information_api |
 | Get Form | `getForm` | Read one filled-in form by ID (GET /api/forms.json?id=). Docs: https://www.supersaas.com/info/dev/form_api |
@@ -56,3 +63,5 @@ Add SuperSaaS from **Build → Integrations → Connectors** and connect an acco
 | Update Booking | `updateBooking` | Update an appointment (PUT /api/bookings/{id}.json). Only sent fields change. Docs: https://www.supersaas.com/info/dev/appointment_api |
 | Update Slot | `updateSlot` | Update a slot (PUT /api/slots/{id}.json). Only sent fields change. Docs: https://www.supersaas.com/info/dev/appointment_api |
 | Update User | `updateUser` | Update a user (PUT /api/users/{id}.json). Without notfound a missing user is created. Docs: https://www.supersaas.com/info/dev/user_api |
+
+</details>

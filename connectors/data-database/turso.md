@@ -5,6 +5,8 @@ hidden: true
 
 # Turso
 
+<img src="../../.gitbook/assets/connectors/turso.png" alt="Turso logo" width="64">
+
 Turso is a managed SQLite-compatible edge database platform built on libSQL. This connector wraps the Turso Platform API to manage databases, database tokens, instances, groups, locations, organizations, members, invites, API tokens and audit logs.
 
 | | |
@@ -12,8 +14,6 @@ Turso is a managed SQLite-compatible edge database platform built on libSQL. Thi
 | **Category** | [Data and databases](README.md) |
 | **Website** | [turso.tech](https://turso.tech) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 49 |
-| **Events** | 0 |
 | **Slug** | `turso` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Turso from **Build → Integrations → Connectors** and connect an account,
 | Delete Database | `deleteDatabase` | Delete a database belonging to the organization or user. Calls DELETE /v1/organizations/{organizationSlug}/databases/{databaseName} on the Turso API. |
 | Delete Group | `deleteGroup` | Delete a group belonging to the organization or user. Calls DELETE /v1/organizations/{organizationSlug}/groups/{groupName} on the Turso API. |
 | Delete Invite | `deleteInvite` | Delete a pending invite for the organization by email. Calls DELETE /v2/organizations/{organizationSlug}/invites/{email} on the Turso API. |
+
+<details>
+
+<summary>See 39 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Database Auth Token | `generateDatabaseAuthToken` | Generates an authorization token for the specified database. Calls POST /v1/organizations/{organizationSlug}/databases/{databaseName}/auth/tokens on the Turso API. |
 | Get Current User | `getCurrentUser` | Returns information about the currently authenticated user. Calls GET /v1/user on the Turso API. |
 | Invalidate All Database Auth Tokens | `invalidateAllDatabaseAuthTokens` | Invalidates all authorization tokens for the specified database. Calls POST /v1/organizations/{organizationSlug}/databases/{databaseName}/auth/rotate on the Turso API. |
@@ -73,3 +80,5 @@ Add Turso from **Build → Integrations → Connectors** and connect an account,
 | Update Member Role | `updateMemberRole` | Update the role of an organization member. Only organization admins or owners can perform this action. Calls PATCH /v1/organizations/{organizationSlug}/members/{username} on the Turso API. |
 | Update Organization | `updateOrganization` | Update an organization you own or are a member of. Calls PATCH /v1/organizations/{organizationSlug} on the Turso API. |
 | Validate API Token | `validateApiToken` | Validates an API token belonging to a user. Calls GET /v1/auth/validate on the Turso API. |
+
+</details>

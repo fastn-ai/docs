@@ -5,6 +5,8 @@ hidden: true
 
 # Budibase
 
+<img src="../../.gitbook/assets/connectors/budibase.jpg" alt="Budibase logo" width="64">
+
 Budibase low-code platform public API (v1). Covers workspaces and applications including publish, unpublish, import and export, tables and their schemas, rows with create, update, delete, retrieve and search, views and view row search, data-source queries, users, role assignment and unassignment, and tenant metrics. Authenticates with a Budibase user API key sent in the x-budibase-api-key header; app-scoped calls also take the target app or workspace ID in the x-budibase-app-id header.
 
 | | |
@@ -12,8 +14,6 @@ Budibase low-code platform public API (v1). Covers workspaces and applications i
 | **Category** | [Developer tools](README.md) |
 | **Website** | [budibase.com](https://budibase.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 44 |
-| **Events** | 0 |
 | **Slug** | `budibase` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Budibase from **Build → Integrations → Connectors** and connect an accou
 | Delete Application | `deleteApplication` | Delete an application. Budibase marks this endpoint deprecated in favour of the equivalent workspace endpoint; it still works on current Budibase versions. Returns the deleted record on success. |
 | Delete Row | `deleteRow` | Delete a row. Deletes a row within the specified table. Requires the target app or workspace ID, sent as the x-budibase-app-id header. Returns the deleted record on success. |
 | Delete Table | `deleteTable` | Delete a table. Delete a table, this could be internal or external. Requires the target app or workspace ID, sent as the x-budibase-app-id header. Returns the deleted record on success. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete User | `deleteUser` | Delete a user. Returns the deleted record on success. |
 | Delete View | `deleteView` | Delete a view. Delete a view, this can be against an internal or external table. Requires the target app or workspace ID, sent as the x-budibase-app-id header. Returns the deleted record on success. |
 | Delete Workspace | `deleteWorkspace` | Delete a workspace. Returns the deleted record on success. |
@@ -68,3 +75,5 @@ Add Budibase from **Build → Integrations → Connectors** and connect an accou
 | Update User | `updateUser` | Update a user. |
 | Update View | `updateView` | Update a view. Update a view, this can be against an internal or external table. Requires the target app or workspace ID, sent as the x-budibase-app-id header. |
 | Update Workspace | `updateWorkspace` | Update a workspace. |
+
+</details>

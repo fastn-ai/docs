@@ -5,6 +5,8 @@ hidden: true
 
 # SurveyMonkey
 
+<img src="../../.gitbook/assets/connectors/surveymonkey.png" alt="SurveyMonkey logo" width="64">
+
 SurveyMonkey API v3. Create and manage surveys, pages, questions, collectors, invite messages and recipients, responses, contacts and contact lists, webhooks, survey folders, templates, translations, benchmarks, teams/groups, workgroups, roles and organizations. Supports the US, EU and Canadian datacenters via a configurable API access URL.
 
 | | |
@@ -12,8 +14,6 @@ SurveyMonkey API v3. Create and manage surveys, pages, questions, collectors, in
 | **Category** | [Productivity](README.md) |
 | **Website** | [surveymonkey.com](https://surveymonkey.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 145 |
-| **Events** | 0 |
 | **Slug** | `surveymonkey` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SurveyMonkey from **Build → Integrations → Connectors** and connect an a
 | Create Contact In List | `createContactInList` | Create a contact in a contact list. |
 | Create Contact List | `createContactList` | Create a contact list. |
 | Create Contacts In Bulk | `createContactsBulk` | Create several contacts in the user's account in a single request. |
+
+<details>
+
+<summary>See 135 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Contacts In List In Bulk | `createContactsInListBulk` | Create several contacts in a contact list in a single request. |
 | Create Message Recipient | `createMessageRecipient` | Add a recipient to an invite message, either by supplying contact details or by referencing an existing contact ID. |
 | Create Message Recipients In Bulk | `createMessageRecipientsBulk` | Add several recipients to an invite message in a single request, by contact IDs, contact list IDs, or new contact details. |
@@ -169,3 +176,5 @@ Add SurveyMonkey from **Build → Integrations → Connectors** and connect an a
 | Update Webhook | `updateWebhook` | Update a webhook. Only the supplied fields are modified, but SurveyMonkey re-validates the object filter on every update, so object_type and object_ids must be resent alongside the fields being changed. |
 | Update Workgroup | `updateWorkgroup` | Update a workgroup's name, description, visibility or metadata. Requires a paid plan (workgroups_write scope). |
 | Update Workgroup Member | `updateWorkgroupMember` | Update a workgroup member, for example to grant or revoke workgroup ownership. Requires a paid plan (workgroups_members_write scope). |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # UK Police Data
 
+<img src="../../.gitbook/assets/connectors/uk-police-data.png" alt="UK Police Data logo" width="64">
+
 data.police.uk is the UK Home Office's open police data API for England, Wales and Northern Ireland. Get forces and senior officers, street-level crimes and outcomes by point, area or location, crime categories, neighbourhoods with teams, events, priorities and boundaries, and stop and search records. No API key needed (15 requests per second).
 
 | | |
@@ -12,8 +14,6 @@ data.police.uk is the UK Home Office's open police data API for England, Wales a
 | **Category** | [Data and databases](README.md) |
 | **Website** | [data.police.uk](https://data.police.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 22 |
-| **Events** | 0 |
 | **Slug** | `ukPoliceData` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add UK Police Data from **Build → Integrations → Connectors** and connect an
 | List Crimes at Location | `listCrimesAtLocation` | List crimes mapped to one location id, or to the location nearest a point, for a month (GET /crimes-at-location). Docs: https://data.police.uk/docs/method/crimes-at-location/ |
 | List Crimes with No Location | `listCrimesWithNoLocation` | List crimes a force reported that could not be mapped to a location, for a category and month (GET /crimes-no-location). Docs: https://data.police.uk/docs/method/crimes-no-location/ |
 | List Forces | `listForces` | List all police forces in England, Wales and Northern Ireland with their ids (GET /forces). Docs: https://data.police.uk/docs/method/forces/ |
+
+<details>
+
+<summary>See 12 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Neighbourhood Events | `listNeighbourhoodEvents` | List upcoming events in a neighbourhood (GET /{force}/{neighbourhood}/events). Docs: https://data.police.uk/docs/method/neighbourhood-events/ |
 | List Neighbourhood Priorities | `listNeighbourhoodPriorities` | List a neighbourhood's policing priorities and the action taken (GET /{force}/{neighbourhood}/priorities). Docs: https://data.police.uk/docs/method/neighbourhood-priorities/ |
 | List Neighbourhood Team | `listNeighbourhoodTeam` | List the officers in a neighbourhood's policing team (GET /{force}/{neighbourhood}/people). Docs: https://data.police.uk/docs/method/neighbourhood-team/ |
@@ -46,3 +53,5 @@ Add UK Police Data from **Build → Integrations → Connectors** and connect an
 | List Street-Level Crimes | `listStreetCrimes` | List street-level crimes in a category within 1 mile of a point, or inside a custom polygon, for a month (GET /crimes-street/{category}). Docs: https://data.police.uk/docs/method/crime-street/ |
 | List Street-Level Outcomes | `listStreetOutcomes` | List outcomes of crimes at a location id, within 1 mile of a point, or in a custom polygon, for a month (GET /outcomes-at-location). Docs: https://data.police.uk/docs/method/outcomes-at-location/ |
 | Locate Neighbourhood | `locateNeighbourhood` | Find the force and neighbourhood responsible for a point (GET /locate-neighbourhood?q=lat,lng). Docs: https://data.police.uk/docs/method/neighbourhood-locate/ |
+
+</details>

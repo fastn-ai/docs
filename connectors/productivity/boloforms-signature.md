@@ -5,6 +5,8 @@ hidden: true
 
 # BoloForms Signature
 
+<img src="../../.gitbook/assets/connectors/boloforms-signature.png" alt="BoloForms Signature logo" width="64">
+
 BoloForms Signature (BoloSign) e-signature API. List signature documents and PDF templates, send PDF/form templates for signing, fetch template respondents and form responses, void documents, and send reminders to pending signers.
 
 | | |
@@ -12,8 +14,6 @@ BoloForms Signature (BoloSign) e-signature API. List signature documents and PDF
 | **Category** | [Productivity](README.md) |
 | **Website** | [boloforms.com](https://boloforms.com) |
 | **Authentication** | API key |
-| **Actions** | 7 |
-| **Events** | 7 |
 | **Slug** | `boloformsSignature` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # Deck of Cards
 
+<img src="../../.gitbook/assets/connectors/deck-of-cards.png" alt="Deck of Cards logo" width="64">
+
 Deck of Cards is a free API that simulates decks of playing cards: create and shuffle decks (single or multiple, partial, with Jokers), draw cards, manage named piles (add, list, shuffle, draw, return) and get card images. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Deck of Cards is a free API that simulates decks of playing cards: create and sh
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [deckofcardsapi.com](https://deckofcardsapi.com) |
 | **Authentication** | No authentication |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `deckOfCards` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add Deck of Cards from **Build → Integrations → Connectors** and connect an 
 | Reshuffle Deck | `reshuffleDeck` | Shuffle an existing deck (GET /api/deck/{deck_id}/shuffle/). By default all cards return to the deck; set remaining=true to shuffle only the cards left in the main stack. Docs: https://deckofcardsapi.com/ |
 | Return Cards to Deck | `returnCardsToDeck` | Return drawn cards to the main deck (GET /api/deck/{deck_id}/return/). Give cards to return only those cards; otherwise all drawn cards return. Docs: https://deckofcardsapi.com/ |
 | Return Pile to Deck | `returnPileToDeck` | Return cards from a named pile to the main deck (GET /api/deck/{deck_id}/pile/{pile_name}/return/). Give cards to return only those cards; otherwise the whole pile returns. Docs: https://deckofcardsapi.com/ |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Shuffle New Deck | `shuffleNewDeck` | Create a new shuffled deck (GET /api/deck/new/shuffle/). Set deck_count for several decks, cards for a partial deck, or jokers_enabled to add two Jokers. Returns the new deck_id. Docs: https://deckofcardsapi.com/ |
 | Shuffle Pile | `shufflePile` | Shuffle the cards in a named pile (GET /api/deck/{deck_id}/pile/{pile_name}/shuffle/). Does not work with multi-deck decks. Docs: https://deckofcardsapi.com/ |
+
+</details>

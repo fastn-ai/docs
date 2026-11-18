@@ -5,6 +5,8 @@ hidden: true
 
 # ProvenExpert
 
+<img src="../../.gitbook/assets/connectors/proven-expert.png" alt="ProvenExpert logo" width="64">
+
 ProvenExpert review-collection platform. Manage ProvenExpert profiles and profile settings, create and manage surveys, generate personalised survey invitation links, send survey invitation e-mails and check their delivery status, read ratings and rating summaries, and generate rating-seal / widget HTML. All calls are POST to https://www.provenexpert.com/api/v1 and authenticate with HTTP Basic using the account's API-ID and API-Key.
 
 | | |
@@ -12,8 +14,6 @@ ProvenExpert review-collection platform. Manage ProvenExpert profiles and profil
 | **Category** | [Marketing](README.md) |
 | **Website** | [provenexpert.com](https://provenexpert.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 24 |
-| **Events** | 0 |
 | **Slug** | `provenExpert` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ProvenExpert from **Build → Integrations → Connectors** and connect an a
 | Get Profile | `getProfile` | Returns the full ProvenExpert profile of the authenticated account: company or person name, description, public flag, contact details, websites, social links, opening hours, imprint and external data. |
 | Get Profile Settings | `getProfileSettings` | Returns the current profile settings of the authenticated ProvenExpert account: whether the profile is public, all privacy switches, notification preferences and the newsletter and reporting e-mail settings. |
 | Get Rating Summary | `getRatingSummary` | Returns the overall rating value, the number of reviews and the recommendation rate of the authenticated ProvenExpert profile. Available on every ProvenExpert plan. Pass proxyUser to read the summary of a managed sub-profile instead. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Rating Summary Rich Snippet | `getRatingSummaryRichSnippet` | Returns the overall rating value, the review count and ready-to-embed schema.org rich-snippet HTML for the authenticated ProvenExpert profile. Paste the returned html into a web page so search engines can show the star rating. |
 | Get Single Sign-On URL | `getSingleSignOnUrl` | Generates a one-time Single Sign-On URL that logs straight into the ProvenExpert profile without an e-mail address or password. The link is valid for 10 minutes by default. SECURITY: the returned url grants full account access to anyone holding it - never log it, store it or forward it. ENTERPRISE plan only. |
 | List Child Profile API Credentials | `listChildProfileApiCredentials` | Returns the API-ID and API-Key of every sub-profile one level below the authenticated Enterprise account, keyed by the child profile's e-mail address. SECURITY: the response contains live API keys in plain text - do not log, cache or display the result. ENTERPRISE plan only. |
@@ -48,3 +55,5 @@ Add ProvenExpert from **Build → Integrations → Connectors** and connect an a
 | Update Profile | `updateProfile` | Edits an existing ProvenExpert profile. Only the supplied fields change; sending an empty string clears a field. Numerically indexed lists such as websites, social and externalRatings are replaced as a whole, while contact and openingHours can be edited field by field. Returns the updated profile. Requires an ENTERPRISE plan. |
 | Update Profile Settings | `updateProfileSettings` | Changes the profile settings of a ProvenExpert account: whether the profile is public, the privacy switches that control what visitors see, which events trigger a notification, and the newsletter and reporting e-mail preferences. Only the supplied values change; all current settings are returned. Requires an ENTERPRISE plan. |
 | Update Survey | `updateSurvey` | Activates or deactivates an existing ProvenExpert survey and updates its Point of Sale label and logo. The survey is selected by its code; only the supplied fields change. Requires an ENTERPRISE plan. |
+
+</details>

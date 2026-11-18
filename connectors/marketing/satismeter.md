@@ -5,6 +5,8 @@ hidden: true
 
 # SatisMeter
 
+<img src="../../.gitbook/assets/connectors/satismeter.png" alt="SatisMeter logo" width="64">
+
 SatisMeter is a customer-feedback platform for NPS, CSAT, CES, PMF and custom in-app, email and mobile surveys. This connector covers the whole SatisMeter REST API: project details, surveys, survey statistics, project-level and survey-level responses, the legacy response export with dashboard summary counts, response insertion, user creation and updates, user event tracking, user listing, lookup and deletion, and the project email unsubscribe list. Survey completion and dismissal are available as events.
 
 | | |
@@ -12,8 +14,6 @@ SatisMeter is a customer-feedback platform for NPS, CSAT, CES, PMF and custom in
 | **Category** | [Marketing](README.md) |
 | **Website** | [satismeter.com](https://satismeter.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 15 |
-| **Events** | 2 |
 | **Slug** | `satismeter` |
 
 ## Use it
@@ -34,11 +34,20 @@ Add SatisMeter from **Build → Integrations → Connectors** and connect an acc
 | Insert Response | `insertResponse` | Records a survey response collected outside SatisMeter against one of the project's surveys. Authenticates with the connection's Write Key rather than the API key. Identify the respondent with User ID, or with Anonymous ID when the survey allows anonymous responses. Question and survey identifiers are listed in SatisMeter under Settings, then Integrations, then API keys. |
 | List Project Responses | `listProjectResponses` | Returns survey responses recorded across every survey in the connected project, newest first, using cursor pagination. Without a date range it returns the last 30 days. |
 | List Survey Responses | `listSurveyResponses` | Returns the survey responses recorded in one specific survey, using cursor pagination. Without a date range it returns the last 30 days. |
+
+<details>
+
+<summary>See 5 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Surveys | `listSurveys` | Returns every survey in the connected SatisMeter project, with each survey's identifier, name, template type and state. Use the returned identifier with Get Survey, List Survey Responses and Get Survey Statistics. |
 | List Unsubscribed Emails | `listUnsubscribedEmails` | Returns the email addresses that are unsubscribed from survey emails in the connected project. Takes no inputs: the project is taken from the connection's Project ID. |
 | List Users | `listUsers` | Returns the users tracked in the connected SatisMeter project, with their traits, recorded events and survey subscription state. Supply External User ID to return only the single user that matches it. |
 | Track User Event | `trackUserEvent` | Records a named event against a user in the connected project, so surveys can be targeted at people who have performed it. Returns 204 No Content on success. |
 | Update Unsubscribed Emails | `updateUnsubscribedEmails` | Replaces the project's list of email addresses that are excluded from survey emails. The list you supply becomes the whole list, so read the current list with List Unsubscribed Emails first and send it back with your additions. There is no limit on the number of addresses. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Heyzine Flipbooks
 
+<img src="../../.gitbook/assets/connectors/heyzine.png" alt="Heyzine Flipbooks logo" width="64">
+
 Heyzine turns PDF, Word, PowerPoint and OpenDocument files into interactive online flipbooks. This connector converts documents synchronously or asynchronously, lists and inspects flipbooks, updates their design and social sharing metadata, deletes them, manages password protection and per-user access lists, organizes flipbooks on bookshelves, and retrieves oEmbed embed codes.
 
 | | |
@@ -12,8 +14,6 @@ Heyzine turns PDF, Word, PowerPoint and OpenDocument files into interactive onli
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [heyzine.com](https://heyzine.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 18 |
-| **Events** | 2 |
 | **Slug** | `heyzine` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Heyzine Flipbooks from **Build → Integrations → Connectors** and connect
 | Get Flipbook Details | `getFlipbookDetails` | Returns all available information about one flipbook: title, subtitle, description, private note, page count, tags, the public links to the flipbook page, cover thumbnail and source PDF, and the full oEmbed object containing ready-to-use embed HTML. The identifier must be the full one that ends in .pdf; the short id from the public link, the link itself and a custom URL path are all rejected with 'Unauthorized'. Use List Flipbooks to find the full identifier. |
 | Get Flipbook Embed Code | `getFlipbookEmbedCode` | Returns the standard oEmbed 1.0 data for a public flipbook URL, including a ready-to-paste iframe embed code, the flipbook dimensions and its cover thumbnail. This is Heyzine's public oEmbed endpoint and works for any publicly visible flipbook. |
 | Get Flipbook ID From Link | `getFlipbookIdFromLink` | Looks up the full flipbook identifier behind a public Heyzine flipbook link. Heyzine authenticates this endpoint with a signed-in browser session rather than an API key, so API key connections receive 'Login or register to get access to the endpoint'. Use List Flipbooks instead, which returns the full identifier of every flipbook in the account alongside its public link. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Bookshelf Flipbooks | `listBookshelfFlipbooks` | Returns every flipbook placed on one bookshelf, ordered by its display position, with the full flipbook metadata and public links. Requires a Heyzine plan that includes bookshelves. |
 | List Bookshelves | `listBookshelves` | Returns every bookshelf (library) in the Heyzine account with its identifier, creation date, title, subtitle, description, flipbook count and public links. Takes no input. Requires a Heyzine plan that includes bookshelves. |
 | List Flipbooks | `listFlipbooks` | Returns every flipbook in the Heyzine account, most recent first, with its identifier, creation date, title, subtitle, description, private note, page count, file size and the public links to the flipbook page, cover thumbnail and source PDF. Takes no input. |
@@ -42,6 +49,8 @@ Add Heyzine Flipbooks from **Build → Integrations → Connectors** and connect
 | Set Bookshelf Social Metadata | `setBookshelfSocial` | Sets the title, description and thumbnail image used when a bookshelf (library) is shared on social networks and messaging apps. Only the fields supplied are changed. Requires a Heyzine plan that includes bookshelves. |
 | Set Flipbook Social Metadata | `setFlipbookSocial` | Sets the title, description and thumbnail image used when a flipbook is shared on social networks and messaging apps. Only the fields supplied are changed. |
 | Update Flipbook Design | `updateFlipbookDesign` | Changes the look, metadata and publication settings of an existing flipbook. Only the fields supplied are changed. Supplying a template flipbook copies its logo, page effect, background, controls and styles first, and any field supplied alongside the template overrides the copied value. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # OpenAI
 
+<img src="../../.gitbook/assets/connectors/openai.png" alt="OpenAI logo" width="64">
+
 OpenAI API connector — chat completions, responses, embeddings, models, files, images, audio, moderations, fine-tuning, batches, vector stores, and the assistants/threads/messages/runs beta. Auth via Bearer API key.
 
 | | |
@@ -12,8 +14,6 @@ OpenAI API connector — chat completions, responses, embeddings, models, files,
 | **Category** | [AI and ML](README.md) |
 | **Website** | [openai.com](https://openai.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 44 |
-| **Events** | 15 |
 | **Slug** | `openai` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OpenAI from **Build → Integrations → Connectors** and connect an account
 | Create Image | `createImage` | Creates an image given a text prompt. POST /images/generations. |
 | Create Image Edit | `createImageEdit` | Creates an edited or extended image given source image(s) and a prompt. POST /images/edits (multipart/form-data). |
 | Create Moderation | `createModeration` | Classifies if text and/or image inputs are potentially harmful. POST /moderations. |
+
+<details>
+
+<summary>See 34 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Response | `createResponse` | Create a model response using the Responses API. POST /responses. |
 | Create Speech | `createSpeech` | Generates audio from the input text (text-to-speech). POST /audio/speech. Returns binary audio. |
 | Create Transcription | `createTranscription` | Transcribes audio into the input language. POST /audio/transcriptions (multipart/form-data). |
@@ -69,6 +76,8 @@ Add OpenAI from **Build → Integrations → Connectors** and connect an account
 | Update Vector Store | `updateVectorStore` | Modifies a vector store. POST /vector_stores/{vector_store_id}. |
 | Upload File | `uploadFile` | Upload a file that can be used across endpoints (assistants, fine-tuning, batch, vision). POST /files (multipart/form-data). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -85,8 +94,17 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Fine-tuning Job Cancelled | `fine_tuning.job.cancelled` | A fine-tuning job was cancelled. |
 | Fine-tuning Job Failed | `fine_tuning.job.failed` | A fine-tuning job failed. |
 | Fine-tuning Job Succeeded | `fine_tuning.job.succeeded` | A fine-tuning job completed successfully. |
+
+<details>
+
+<summary>See 5 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Realtime Call Incoming | `realtime.call.incoming` | An incoming Realtime SIP call was received. |
 | Response Cancelled | `response.cancelled` | A background Response request was cancelled. |
 | Response Completed | `response.completed` | A background Response request completed successfully. |
 | Response Failed | `response.failed` | A background Response request failed. |
 | Response Incomplete | `response.incomplete` | A background Response request finished incomplete. |
+
+</details>

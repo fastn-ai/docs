@@ -5,6 +5,8 @@ hidden: true
 
 # OpenRegister
 
+<img src="../../.gitbook/assets/connectors/openregister.jpg" alt="OpenRegister logo" width="64">
+
 OpenRegister provides programmatic access to official German company data from the Handelsregister, Bundesanzeiger, Transparenzregister and Insolvenzregister. This connector covers company search and lookup, ownership and beneficial owners, holdings, financial statements, contact and web data, official register documents, person search and holdings, insolvency proceedings, Transparenzregister extracts, and register change monitors.
 
 | | |
@@ -12,8 +14,6 @@ OpenRegister provides programmatic access to official German company data from t
 | **Category** | [Search and web](README.md) |
 | **Website** | [openregister.de](https://openregister.de) |
 | **Authentication** | Bearer token |
-| **Actions** | 31 |
-| **Events** | 1 |
 | **Slug** | `openregister` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OpenRegister from **Build → Integrations → Connectors** and connect an a
 | Get Company Contact | `getCompanyContact` | Returns contact information extracted from the company's own website, including the email address, phone number and VAT identification number, along with the page the data was found on. |
 | Get Company Details | `getCompanyDetails` | Returns company information from the original v0 endpoint, where history, financials and document metadata are each switched on with a flag. For the full current profile use Get Company. |
 | Get Company Financials | `getCompanyFinancials` | Returns the annual accounts a company has published in the Bundesanzeiger: the balance sheet (Aktiva and Passiva), the profit and loss statement (GuV) and a normalised set of financial indicators per reporting period. Monetary indicator values are in cents. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Company Shareholders | `getCompanyShareholders` | Returns the shareholders recorded in a company's latest shareholder list (the original v0 endpoint), with nominal and percentage shares and the document the data was taken from. For richer owner data use List Company Owners. |
 | Get Credit Usage | `getCreditUsage` | Returns the API credit usage for the current billing period, including used, included, remaining and overage credits, whether the account is on a paid plan and when the period resets. Takes no inputs, so it also works as a connection check. |
 | Get Document Information | `getDocumentInformation` | Returns metadata and a 15-minute download URL for a stored register document using the original v0 endpoint. Equivalent to Get Stored Document. |
@@ -55,6 +62,8 @@ Add OpenRegister from **Build → Integrations → Connectors** and connect an a
 | Search Insolvency Proceedings | `searchInsolvencyProceedings` | Searches German insolvency proceedings by debtor name, case number, administrator or court, with structured filters on status, proceeding kind, court, city and the relevant dates. |
 | Search People | `searchPeople` | Searches for people recorded in the German registers by name, optionally narrowed by date of birth, city or active status, with pagination. |
 | Store Transparenzregister Credentials | `storeTransparenzregisterCredentials` | Stores a Transparenzregister portal username and password under a name so that extract requests can be made with them. Credentials are validated against the Transparenzregister before being saved. The name 'sandbox' is reserved for test-mode extracts and cannot be used. |
+
+</details>
 
 ## Events
 

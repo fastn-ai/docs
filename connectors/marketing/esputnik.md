@@ -5,6 +5,8 @@ hidden: true
 
 # eSputnik (Yespo)
 
+<img src="../../.gitbook/assets/connectors/esputnik.png" alt="eSputnik (Yespo) logo" width="64">
+
 eSputnik, now branded Yespo, is an omnichannel marketing automation platform for Email, SMS, Web Push, Mobile Push, Viber, Telegram and App Inbox campaigns. This connector wraps the full Yespo REST API v1/v2/v3: contact and segment management, message templates for every channel, broadcasts and transactional sends, orders and behavioural events, promo codes, product feeds, site and web-push domains, account balance and billing history.
 
 | | |
@@ -12,8 +14,6 @@ eSputnik, now branded Yespo, is an omnichannel marketing automation platform for
 | **Category** | [Marketing](README.md) |
 | **Website** | [yespo.io](https://yespo.io) |
 | **Authentication** | Basic auth |
-| **Actions** | 116 |
-| **Events** | 8 |
 | **Slug** | `esputnik` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add eSputnik (Yespo) from **Build → Integrations → Connectors** and connect 
 | Add Or Update SMS Message Translation | `upsertSmsMessageTranslation` | Adds or replaces a language version of a base SMS message. The language is an ISO 639-1 code and the full message content for that language must be supplied. |
 | Add Or Update Telegram Message Translation | `upsertTelegramMessageTranslation` | Adds or replaces a language version of a base Telegram bot message. The language is an ISO 639-1 code and the full message content for that language must be supplied. |
 | Add Or Update Viber Message Translation | `upsertViberMessageTranslation` | Adds or replaces a language version of a base Viber message. The language is an ISO 639-1 code and the full message content for that language must be supplied. |
+
+<details>
+
+<summary>See 106 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Add Orders | `addOrders` | Transfers up to 1000 orders into Yespo. Sending an order again with the same external order id updates the existing record instead of creating a duplicate. Each order must identify its customer by external customer id, email or phone. This endpoint only writes orders; reading them back requires a BigQuery export. Returns the orders that could not be stored. |
 | Add Site Domain | `addSiteDomain` | Registers a website domain for the organization so the web tracking script and widgets can be generated for it. Only one domain can be registered per organization, and Yespo provides no API to remove it; posting again replaces the existing domain. |
 | Add Web Push Domain | `addWebPushDomain` | Registers a single HTTPS domain for web push notifications, together with the service worker file name, path and scope that Yespo should expect on that site. Returns the domains that were accepted and those that were rejected. |
@@ -140,6 +147,8 @@ Add eSputnik (Yespo) from **Build → Integrations → Connectors** and connect 
 | Update Viber Message | `updateViberMessage` | Updates a base Viber message identified by its internal id. The API replaces the message, so name, sender and text must all be supplied. |
 | Upload Preprocessor File | `uploadPreprocessorFile` | Loads a preprocessor data file from an external repository so message content can be personalised from it. The link must end in .json and be publicly reachable. Choose Key to look rows up by a key, or Random to pick a row at random. Returns the file id and the async session id. |
 | Upload Promo Codes | `uploadPromoCodes` | Uploads promotional codes to the organization's promo code pool as a JSON list. Codes that already exist are updated rather than duplicated. The expiration date and discount amount apply to every code in the batch. |
+
+</details>
 
 ## Events
 

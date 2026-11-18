@@ -5,6 +5,8 @@ hidden: true
 
 # Erskine May API
 
+<img src="../../.gitbook/assets/connectors/erskine-may-api.png" alt="Erskine May API logo" width="64">
+
 The Erskine May API gives open access to Erskine May, the authoritative guide to UK parliamentary practice: list parts and chapters, read sections and page between them, look up a paragraph reference, browse and search the index, and full-text search paragraphs and sections. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The Erskine May API gives open access to Erskine May, the authoritative guide to
 | **Category** | [Data and databases](README.md) |
 | **Website** | [parliament.uk](https://parliament.uk) |
 | **Authentication** | No authentication |
-| **Actions** | 11 |
-| **Events** | 0 |
 | **Slug** | `erskineMayApi` |
 
 ## Use it
@@ -34,4 +34,13 @@ Add Erskine May API from **Build → Integrations → Connectors** and connect a
 | List Parts | `listParts` | Returns a list of all parts. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Part) |
 | Search Index Terms | `searchIndexTerms` | Returns a list of index terms which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/IndexTermSearchResults/{searchTerm}) |
 | Search Paragraphs | `searchParagraphs` | Returns a list of paragraphs which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/ParagraphSearchResults/{searchTerm}) |
+
+<details>
+
+<summary>See 1 more action</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Search Sections | `searchSections` | Returns a list of sections which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/SectionSearchResults/{searchTerm}) |
+
+</details>

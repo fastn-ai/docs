@@ -5,6 +5,8 @@ hidden: true
 
 # Cube Cloud
 
+<img src="../../.gitbook/assets/connectors/cube-cloud.ico" alt="Cube Cloud logo" width="64">
+
 Cube Cloud is a universal semantic layer that serves governed metrics and data models to BI tools, applications and AI agents. This connector runs analytical queries against a Cube deployment over its REST, SQL and GraphQL data APIs, inspects the deployment's data model, and manages pre-aggregation builds.
 
 | | |
@@ -12,8 +14,6 @@ Cube Cloud is a universal semantic layer that serves governed metrics and data m
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cube.dev](https://cube.dev) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 16 |
-| **Events** | 0 |
 | **Slug** | `cubeCloud` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add Cube Cloud from **Build → Integrations → Connectors** and connect an acc
 | Get Data Model | `getDataModel` | Retrieve the deployment's data model: every cube and view that is exposed to this API token, together with its measures, dimensions, segments, hierarchies and folders. Use this to discover the exact measure and dimension names that the query actions require. |
 | Get Generated SQL | `getGeneratedSql` | Return the SQL that Cube would generate for a query, without executing it against the database. Useful for debugging the semantic layer and for confirming whether a pre-aggregation will be used. Requires the data API scope. |
 | Get Pre-Aggregation Job Status | `getPreAggregationJobStatus` | Look up the status of pre-aggregation build jobs by the tokens returned from the Trigger Pre-Aggregation Build action. Requires the jobs API scope, which is off by default: enable it on the deployment by setting the CUBEJS_DEFAULT_API_SCOPES environment variable to meta,data,graphql,jobs. |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Run Blended Query | `runBlendedQuery` | Run several Cube queries in a single request and return their results side by side, which is how Cube supports data blending across cubes that do not share a join path. Every query in the request must carry a time dimension at the same granularity, otherwise Cube rejects the request with 'Failed to generate blending query key'. Results are returned in the order the queries were submitted. Requires the data API scope. |
 | Run GraphQL Query | `runGraphqlQuery` | Run a GraphQL query against the deployment's GraphQL API, which exposes every cube and view as a GraphQL type. Returns the standard GraphQL envelope with a data object and, on failure, an errors array. Requires the graphql API scope. |
 | Run Query | `runQuery` | Run an analytical query against the deployment's semantic layer and return the aggregated rows. This is the main data endpoint: supply measures, dimensions, time dimensions, filters and segments and Cube generates and executes the SQL, serving the result from a pre-aggregation where one matches. Requires the data API scope. |
 | Run SQL Query | `runSqlQuery` | Execute a SQL statement against the deployment's SQL API, where cubes and views are exposed as tables and their measures must be wrapped in MEASURE(). The response is not a JSON object: Cube streams newline delimited JSON, whose first line is an object holding the column schema and lastRefreshTime and whose following lines each hold a data array of positional row arrays. The connector returns that stream verbatim as a string, so the caller parses it line by line. Requires the data API scope. |
 | Subscribe To Query Updates | `subscribeToQueryUpdates` | Poll a query for real-time updates. This endpoint returns the same result as Run Query together with the lastRefreshTime that identifies the underlying data version, so a caller can re-run it on an interval and detect when the result has changed. Cube's push based real-time transport is a WebSocket and is not reachable over HTTP, so this polling endpoint is the HTTP equivalent. Requires the data API scope. |
 | Trigger Pre-Aggregation Build | `triggerPreAggregationBuild` | Queue pre-aggregation builds and return one job token per queued build, which can then be polled with the Get Pre-Aggregation Job Status action. Use the selector to narrow the build to particular pre-aggregations, cubes, data sources, time zones or partition date ranges. Requires the jobs API scope, which is off by default: enable it on the deployment by setting the CUBEJS_DEFAULT_API_SCOPES environment variable to meta,data,graphql,jobs. |
+
+</details>

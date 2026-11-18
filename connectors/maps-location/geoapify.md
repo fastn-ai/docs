@@ -5,6 +5,8 @@ hidden: true
 
 # Geoapify
 
+<img src="../../.gitbook/assets/connectors/geoapify.png" alt="Geoapify logo" width="64">
+
 Geoapify is a location platform built on OpenStreetMap data. This connector covers the Geoapify REST APIs: forward, reverse and batch geocoding, address autocomplete, places search and place details, postcodes, boundaries, routing, route matrix, route planner optimization, isochrones and isodistances, map matching, elevation, geometry storage and geometry operations, IP geolocation, generic batch jobs, and map rendering (static maps, map tiles, MapLibre styles and marker icons).
 
 | | |
@@ -12,8 +14,6 @@ Geoapify is a location platform built on OpenStreetMap data. This connector cove
 | **Category** | [Maps and location](README.md) |
 | **Website** | [geoapify.com](https://geoapify.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `geoapify` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Geoapify from **Build → Integrations → Connectors** and connect an accou
 | Get Batch Job Result | `getBatchJob` | Retrieves the status or results of a generic batch job by its 32-character id. Geoapify answers HTTP 202 with status pending while the job is still processing, and HTTP 200 with one result per input once it has finished. |
 | Get Batch Reverse Geocode Job Result | `getBatchReverseGeocodeJob` | Retrieves the status or results of a batch reverse geocoding job by its id. Geoapify answers HTTP 202 with status pending while the job is still processing, and HTTP 200 with the resolved addresses once it has finished. |
 | Get Boundaries Containing Place | `getBoundariesPartOf` | Finds the administrative, postal, political and other boundaries that contain a place, identified by a Geoapify place id, coordinates, or an OpenStreetMap id and type. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Boundaries Within Place | `getBoundariesConsistsOf` | Lists the sub-boundaries contained by a boundary, for example the districts of a city or the municipalities of a region, for a boundary identified by its Geoapify place id. |
 | Get Elevations | `getElevations` | Returns the ground elevation for up to 1000 ordered locations, optionally with the distance from the previous location, in metric or imperial units. Results preserve the input order. |
 | Get High Resolution Map Tile | `getHighResolutionMapTile` | Downloads a 2x or 3x pixel-density raster PNG map tile for a style at Slippy Map zoom, x and y coordinates, returned as a base64 file reference. The geographic area covered is the same as the standard tile. |
@@ -55,3 +62,5 @@ Add Geoapify from **Build → Integrations → Connectors** and connect an accou
 | Submit Batch Geocode Job | `submitBatchGeocodeJob` | Submits up to 1000 free-form addresses for asynchronous forward geocoding and returns a job id to poll with Get Batch Geocode Job Result. The optional parameters apply to every address in the batch. |
 | Submit Batch Job | `submitBatchJob` | Submits a generic batch job that runs any supported Geoapify API (geocoding, places, routing, isolines, boundaries and more) for up to 1000 inputs asynchronously, and returns a job id to poll with Get Batch Job Result. |
 | Submit Batch Reverse Geocode Job | `submitBatchReverseGeocodeJob` | Submits up to 1000 coordinate pairs for asynchronous reverse geocoding and returns a job id to poll with Get Batch Reverse Geocode Job Result. |
+
+</details>

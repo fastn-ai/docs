@@ -5,6 +5,8 @@ hidden: true
 
 # SendPulse
 
+<img src="../../.gitbook/assets/connectors/send-pulse.png" alt="SendPulse logo" width="64">
+
 SendPulse is a multi-channel marketing platform for email campaigns, transactional email (SMTP), SMS, Viber, web push notifications, email verification and Automation 360 flows. This connector covers the SendPulse Email and Messaging REST API: mailing lists, contacts, campaigns, templates, senders, tags, blacklist, webhooks, transactional email, SMS and Viber campaigns, web push, email verification and automation statistics.
 
 | | |
@@ -12,8 +14,6 @@ SendPulse is a multi-channel marketing platform for email campaigns, transaction
 | **Category** | [Marketing](README.md) |
 | **Website** | [sendpulse.com](https://sendpulse.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 141 |
-| **Events** | 10 |
 | **Slug** | `sendPulse` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SendPulse from **Build → Integrations → Connectors** and connect an acco
 | Add Sender | `addSender` | Registers a new sender email address on the SendPulse account. SendPulse emails an activation code to the address, which must then be confirmed with Activate Sender. |
 | Add Sender Domain | `addSenderDomain` | Registers a sending domain on the SendPulse account. The DKIM and SPF records must then be published in the domain's DNS before SendPulse will send from it. |
 | Assign Tag to Email Address | `pinTagToEmail` | Assigns one or more existing SendPulse tags to an email contact. |
+
+<details>
+
+<summary>See 131 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Assign Tag to Phone Number | `pinTagToPhone` | Assigns one or more existing SendPulse tags to a phone contact. |
 | Cancel Campaign | `cancelCampaign` | Cancels a scheduled SendPulse campaign or deletes a draft before it is sent. |
 | Cancel SMS Campaign | `cancelSmsCampaign` | Cancels a scheduled SMS campaign before sending has started. |
@@ -165,6 +172,8 @@ Add SendPulse from **Build → Integrations → Connectors** and connect an acco
 | Verify Email Address | `verifyEmailAddress` | Submits a single email address to the SendPulse verification service. Read the verdict afterwards with Get Email Address Verification Result. |
 | Verify Mailing List | `verifyMailingList` | Submits a mailing list to the SendPulse email verification service. Only one verification can run against a list at a time, and the list must not have been used in a campaign. |
 | View Mailing List Verification Report | `viewMailingListVerificationReport` | Returns the contents of a previously generated mailing list verification report, with the verdict for every address it covers. |
+
+</details>
 
 ## Events
 

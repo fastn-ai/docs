@@ -5,6 +5,8 @@ hidden: true
 
 # Findymail
 
+<img src="../../.gitbook/assets/connectors/findymail.png" alt="Findymail logo" width="64">
+
 Findymail via MCP — find and verify B2B email addresses and phone numbers, find employees, enrich companies, reverse email lookup, lookalike search, lead lists and exclusion lists. Exposes 14 MCP tools.
 
 | | |
@@ -12,8 +14,6 @@ Findymail via MCP — find and verify B2B email addresses and phone numbers, fin
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [findymail.com](https://findymail.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 14 |
-| **Events** | 0 |
 | **Slug** | `findymail` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Findymail from **Build → Integrations → Connectors** and connect an acco
 | get_lead_list_results | `get_lead_list_results` | Retrieve results from a lead list search started with `generate_lead_list`. Takes the hash returned by `generate_lead_list`. Polls the search status for up to 60 seconds. If the search completes within that time, returns the full data. If still processing after 60s, returns the current progress — call again to continue waiting. Consumes no credits: the run itself was charged by `generate_lead_list`. |
 | list_exclusion_domains | `list_exclusion_domains` | List the domains held by an exclusion list, paginated. Each domain is returned with its own id — those ids are what `remove_exclusion_domains` needs, so call this first when you want to remove domains. Omitting list_id does NOT return only your global exclusions: it returns EVERY domain you can reach — your global ones, every list you own, AND every list shared with your team. To act on the global exclusions only, keep the entries whose `excluded_domain_list_id` is null. Always pass an explicit list_id before deleting anything. Results are ordered by domain name alone, so an entry can move between pages — re-read the page before using an id. Consumes no credits. |
 | list_exclusion_lists | `list_exclusion_lists` | List the exclusion lists you can use (lists you own plus lists shared with your team). An exclusion list holds company domains that should never show up in search results. Returns each list's id, name, owner and sharing status — use those ids with `generate_lead_list` (exclusion_list_ids / add_to_exclusion_list_id), with `lookalike_search`, or with the other exclusion tools. Consumes no credits. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | lookalike_search | `lookalike_search` | Find companies similar to a given seed company. Given a company domain (e.g. "stripe.com"), returns a list of lookalike companies that share similar business characteristics using semantic similarity. Results can be filtered by same country and/or same company size. Exclusion lists can be provided to remove already-known companies from results. Costs 1 finder credit per 10 results returned. |
 | remove_exclusion_domains | `remove_exclusion_domains` | Remove domains from an exclusion list, making them eligible for search results again. Takes domain ids, NOT domain names — call `list_exclusion_domains` first to resolve names into ids. Deletion is permanent: there is no undo and no soft delete. If none of the ids are yours to delete the call fails with a 403 rather than reporting a count of zero; if only some are, the others are dropped silently and the response does not say which. On a team-shared list you are allowed to delete domains added by teammates, so check the list before deleting. Ids obtained right after a large `add_exclusion_domains` may be stale. Consumes no credits. |
 | reverse_email_lookup | `reverse_email_lookup` | Identify the person behind an email address. Returns their LinkedIn profile URL; set with_profile to also return the full LinkedIn profile (name, job title, company etc.). Use it to put a name and a company on an address that arrived without context — an inbound reply, a CRM row, an imported list — and chain the returned LinkedIn URL into `find_phone` when you need to reach them by phone. It says nothing about deliverability: use `verify_email` for that. Costs 1 finder credit per contact found, or 2 finder credits when with_profile returns complete profile data; an address that matches nobody is not charged. |
 | verify_email | `verify_email` | Check whether an email address is deliverable, without sending anything to it. Use it on addresses that came from elsewhere (a CRM export, a spreadsheet, the user) before adding them to an outreach sequence. Addresses returned by `find_email` and `generate_lead_list` are already verified and do not need a second pass. Costs 1 verifier credit per address checked — verifier credits are a separate pool from the finder credits the lookup tools spend. |
+
+</details>

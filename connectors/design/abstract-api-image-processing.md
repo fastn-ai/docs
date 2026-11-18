@@ -5,6 +5,8 @@ hidden: true
 
 # AbstractAPI Image Processing
 
+<img src="../../.gitbook/assets/connectors/abstract-api-image-processing.png" alt="AbstractAPI Image Processing logo" width="64">
+
 AbstractAPI Image Processing and Optimization compresses an image hosted at a URL, with lossless or lossy compression, and returns the size savings and a download link to the optimized image.
 
 | | |
@@ -12,8 +14,6 @@ AbstractAPI Image Processing and Optimization compresses an image hosted at a UR
 | **Category** | [Design](README.md) |
 | **Website** | [abstractapi.com](https://abstractapi.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 1 |
-| **Events** | 0 |
 | **Slug** | `abstractApiImageProcessing` |
 
 ## Use it

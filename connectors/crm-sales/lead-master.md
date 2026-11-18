@@ -5,6 +5,8 @@ hidden: true
 
 # LeadMaster
 
+<img src="../../.gitbook/assets/connectors/lead-master.png" alt="LeadMaster logo" width="64">
+
 LeadMaster CRM (leadmaster.com) — lead management, sales and marketing automation. Wraps the LeadMaster Web API at webapi.leadmaster.com: leads and account records, contacts, opportunities and opportunity products, cases, quotes, callbacks/activities, campaigns, partners, users and workgroups, custom fields and custom forms, plus the webhook subscription API for entity create/update events. Authentication is an access_token query parameter minted from a LeadMaster username, password and company id.
 
 | | |
@@ -12,8 +14,6 @@ LeadMaster CRM (leadmaster.com) — lead management, sales and marketing automat
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leadmaster.com](https://leadmaster.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 85 |
-| **Events** | 10 |
 | **Slug** | `leadMaster` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add LeadMaster from **Build → Integrations → Connectors** and connect an acc
 | Create Opportunity | `addOpportunity` | Create an opportunity against a LeadMaster lead record. rECDNOField is the parent lead RecordID. Add line items separately with Create Product / the opportunity product endpoints. |
 | Create Product | `addProduct` | Add a product to the LeadMaster catalog so it can be used as an opportunity line item. Carries the access token in the JSON body rather than the query string. |
 | Create Quote | `addQuote` | Create a quote on a LeadMaster lead record. RECDNO is the parent lead; refOppID links the quote to an opportunity. |
+
+<details>
+
+<summary>See 75 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Webhook Subscription | `addWebhookSubscription` | Register a webhook URL against a LeadMaster entity event and return the new SubscriptionID. The event catalogue is account, contact, opportunity, case and quote, each created and updated. LeadMaster does not publish the literal SubscriptionEvent strings - confirm the accepted format with List Webhook Subscriptions before relying on this. Note the query parameter is accesstoken, with no underscore. |
 | Delete Case | `deleteCase` | Delete a LeadMaster support case by CaseID. POST, not DELETE. |
 | Delete Contact | `deleteContact` | Delete a LeadMaster contact by ContactID. POST, not DELETE. |
@@ -109,6 +116,8 @@ Add LeadMaster from **Build → Integrations → Connectors** and connect an acc
 | Update Product | `updateProduct` | Update a product in the LeadMaster catalog by ProductId. Carries the access token in the JSON body. |
 | Update Quote | `updateQuote` | Update a LeadMaster quote by QuoteID. Only the fields you supply are sent. |
 | Validate Logon | `validateLogon` | Validate a LeadMaster username, password and legacy API key pair without minting a token. Useful to confirm API access has been enabled on the account before troubleshooting anything else. |
+
+</details>
 
 ## Events
 

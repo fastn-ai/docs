@@ -5,6 +5,8 @@ hidden: true
 
 # MongoDB Atlas
 
+<img src="../../.gitbook/assets/connectors/mongo-db-atlas.png" alt="MongoDB Atlas logo" width="64">
+
 Manage MongoDB Atlas resources through the Atlas Administration API v2 — organizations, projects, clusters, database users, IP access lists, network peering, backups, alerts, events, teams, and more.
 
 | | |
@@ -12,8 +14,6 @@ Manage MongoDB Atlas resources through the Atlas Administration API v2 — organ
 | **Category** | [Data and databases](README.md) |
 | **Website** | [cloud.mongodb.com](https://cloud.mongodb.com) |
 | **Authentication** | Digest auth |
-| **Actions** | 92 |
-| **Events** | 0 |
 | **Slug** | `mongoDbAtlas` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add MongoDB Atlas from **Build → Integrations → Connectors** and connect an 
 | Create Network Peering Connection | `createNetworkPeeringConnection` | Creates one network peering connection in the specified project. The required body fields depend on the cloud provider (AWS, GCP, or AZURE). |
 | Create Network Peering Container | `createNetworkPeeringContainer` | Creates one network peering container in the specified project. A container reserves a CIDR block for one cloud provider region. |
 | Create Organization API Key | `createOrganizationApiKey` | Creates one programmatic API key for the specified organization with the given roles. The private key is returned only once. |
+
+<details>
+
+<summary>See 82 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Organization Invitation | `createOrganizationInvitation` | Invites one user to join the specified organization with the given roles. |
 | Create Project | `createProject` | Creates one project (group) in the specified organization. Requires the API key to have the Organization Owner or Project Creator role. |
 | Create Team | `createTeam` | Creates one team in the specified organization and adds the given users to it. |
@@ -116,3 +123,5 @@ Add MongoDB Atlas from **Build → Integrations → Connectors** and connect an 
 | Update Project | `updateProject` | Updates the name of one project (group). |
 | Update Project Settings | `updateProjectSettings` | Updates the settings for the specified project. Only the fields you provide are changed. |
 | Update Third-Party Integration | `updateThirdPartyIntegration` | Replaces the configuration of one third-party service integration in the specified project. Provide the full set of fields for the integration type. |
+
+</details>

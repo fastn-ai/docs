@@ -5,6 +5,8 @@ hidden: true
 
 # CommCare HQ
 
+<img src="../../.gitbook/assets/connectors/commcare-hq.png" alt="CommCare HQ logo" width="64">
+
 CommCare HQ by Dimagi — mobile data collection and case management for frontline programs. Read and manage cases, form submissions, mobile workers, web users, groups, applications, lookup tables, locations, device logs, user-configurable reports and OData feeds within a CommCare project space.
 
 | | |
@@ -12,8 +14,6 @@ CommCare HQ by Dimagi — mobile data collection and case management for frontli
 | **Category** | [Data and databases](README.md) |
 | **Website** | [commcarehq.org](https://commcarehq.org) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 94 |
-| **Events** | 7 |
 | **Slug** | `commcareHq` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CommCare HQ from **Build → Integrations → Connectors** and connect an ac
 | Create Lookup Table Row (v2) | `createLookupTableItemV2` | Add a row to a lookup table using the version 2 resource, supplying field values as a flat name-to-value map. Requires a CommCare plan that includes API access. |
 | Create Mobile Worker | `createMobileWorker` | Create a new mobile worker (CommCare user) in the project space. The username must be unique within the project and is stored with the @project.commcarehq.org suffix appended automatically. Requires a CommCare plan that includes API access. |
 | Create Or Update Cases (v2) | `createOrUpdateCasesV2` | Create or update one or more cases through the version 2 Case API. Each entry needs a create flag: when true, case_name, case_type and owner_id are required; when false, case_id or external_id identifies the case to update. Requires a CommCare plan that includes API access. |
+
+<details>
+
+<summary>See 84 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Single Sign On Session | `createSingleSignOn` | Authenticate a CommCare user with a username and password and return their user record plus a session cookie, so an external system can sign the user in without a browser redirect. Requires a CommCare plan that includes API access. |
 | Delete Group | `deleteGroup` | Permanently delete a group from the project space. Members are not deleted, only their membership of this group. This cannot be undone. Requires a CommCare plan that includes API access. |
 | Delete Lookup Table | `deleteLookupTable` | Permanently delete a lookup table definition and all of its rows from the project space. This cannot be undone. Requires a CommCare plan that includes API access. |
@@ -118,6 +125,8 @@ Add CommCare HQ from **Build → Integrations → Connectors** and connect an ac
 | Update Mobile Worker | `updateMobileWorker` | Update an existing mobile worker. Only the fields supplied are changed; omitted fields keep their current values. Requires a CommCare plan that includes API access. |
 | Update Report Data Source | `updateDataSource` | Replace a user-configurable report data source definition, changing which documents it aggregates and which indicators it builds. Rebuilds the underlying report table. Requires a CommCare plan that includes API access. |
 | Update Web User Role | `updateWebUser` | Change a web user's role in the project space. Only the role field can be modified through this endpoint. Requires a CommCare plan that includes API access. |
+
+</details>
 
 ## Events
 

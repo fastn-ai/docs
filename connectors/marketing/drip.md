@@ -5,6 +5,8 @@ hidden: true
 
 # Drip
 
+<img src="../../.gitbook/assets/connectors/drip.png" alt="Drip logo" width="64">
+
 Drip is an ecommerce marketing automation platform (email, SMS, subscribers, campaigns, workflows, broadcasts, and shopper activity). This connector covers the Drip REST API v2/v3.
 
 | | |
@@ -12,8 +14,6 @@ Drip is an ecommerce marketing automation platform (email, SMS, subscribers, cam
 | **Category** | [Marketing](README.md) |
 | **Website** | [getdrip.com](https://getdrip.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 59 |
-| **Events** | 0 |
 | **Slug** | `drip` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Drip from **Build → Integrations → Connectors** and connect an account, 
 | Batch Product Activity | `batchProductActivity` | Records up to 1000 product shopper-activity events in one batch (Shopper Activity API v3). |
 | Batch Record Events | `batchRecordEvents` | Records up to 1000 custom events in a single batch request. |
 | Batch Unsubscribe Subscribers | `batchUnsubscribe` | Unsubscribes up to 1000 subscribers from all mailings in a single batch request. |
+
+<details>
+
+<summary>See 49 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Broadcast | `createBroadcast` | Creates a draft single-email campaign (broadcast). Content is an object with an 'html' key (and optional 'text'). |
 | Create or Update Cart Activity | `createCartActivity` | Records a cart shopper-activity event (Shopper Activity API v3). Action is one of created, updated, deleted. |
 | Create or Update Order (Legacy) | `createOrder` | Creates or updates an order via the legacy Orders API. Prefer Order Activity (Shopper Activity v3) for new integrations. |
@@ -83,3 +90,5 @@ Add Drip from **Build → Integrations → Connectors** and connect an account, 
 | Unsubscribe Subscriber From All Mailings | `unsubscribeSubscriberFromAll` | Unsubscribes a subscriber from all mailings (email marketing and campaigns) by ID or email. |
 | Update Broadcast | `updateBroadcast` | Updates a draft broadcast (single-email campaign). Only draft broadcasts can be updated. |
 | Update Workflow Trigger | `updateWorkflowTrigger` | Updates an existing trigger on a workflow. |
+
+</details>

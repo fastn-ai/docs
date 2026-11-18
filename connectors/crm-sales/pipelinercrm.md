@@ -5,6 +5,8 @@ hidden: true
 
 # Pipeliner CRM (Coevera)
 
+<img src="../../.gitbook/assets/connectors/pipelinercrm.png" alt="Pipeliner CRM (Coevera) logo" width="64">
+
 Coevera (formerly Pipeliner CRM), a sales CRM by Pipelinersales Inc. This connector provides full REST API access to accounts, contacts, leads, opportunities, pipelines, activities (tasks, calls, appointments), products, quotes, custom fields and custom entities, documents, notes, emails, tags, targets, projects, approvals, webhooks, and organization/reference data.
 
 | | |
@@ -12,8 +14,6 @@ Coevera (formerly Pipeliner CRM), a sales CRM by Pipelinersales Inc. This connec
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [coevera.com](https://coevera.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 1558 |
-| **Events** | 0 |
 | **Slug** | `pipelinercrm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pipeliner CRM (Coevera) from **Build → Integrations → Connectors** and c
 | AccountSocialRelations.batch_restore | `batchRestoreAccountSocialRelations` | AccountSocialRelations.batch_restore. Restores AccountSocialRelations with given list of ids |
 | AccountSocialRelations.create | `createAccountSocialRelation` | AccountSocialRelations.create. Creates new AccountSocialRelation |
 | AccountSocialRelations.delete | `deleteAccountSocialRelation` | AccountSocialRelations.delete. Removes AccountSocialRelation with given id |
+
+<details>
+
+<summary>See 1548 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | AccountSocialRelations.update | `updateAccountSocialRelation` | AccountSocialRelations.update. Modifies AccountSocialRelation or AccountSocialRelations with given id(s) |
 | AccountTypes.batch_create_or_update | `batchUpsertAccountTypes` | AccountTypes.batch_create_or_update. Create or update an batch of AccountTypes |
 | AccountTypes.batch_delete | `batchDeleteAccountTypes` | AccountTypes.batch_delete. Removes AccountTypes with given list of ids |
@@ -1582,3 +1589,5 @@ Add Pipeliner CRM (Coevera) from **Build → Integrations → Connectors** and c
 | Webresources.get | `getWebresource` | Webresources.get. Returns Webresource with given id |
 | Webresources.list | `listWebresources` | Webresources.list. Returns all defined Webresources |
 | Webresources.update | `updateWebresource` | Webresources.update. Modifies Webresource or Webresources with given id(s) |
+
+</details>

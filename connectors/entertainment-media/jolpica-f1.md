@@ -12,8 +12,6 @@ Jolpica F1 is the free, open-source successor to the Ergast Formula 1 API, with 
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [jolpi.ca](https://jolpi.ca) |
 | **Authentication** | No authentication |
-| **Actions** | 39 |
-| **Events** | 0 |
 | **Slug** | `jolpicaF1` |
 
 ## Use it
@@ -34,6 +32,13 @@ Add Jolpica F1 from **Build → Integrations → Connectors** and connect an acc
 | Get Driver Standing for Driver | `getDriverStandingForDriver` | Get one driver's championship standing in a season (GET /ergast/f1/{season}/drivers/{driverId}/driverstandings.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/driverStandings.md |
 | Get Driver Standings | `getDriverStandings` | Get the drivers' championship standings at the end of a season (or now, for current) (GET /ergast/f1/{season}/driverstandings.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/driverStandings.md |
 | Get Driver Standings After Round | `getDriverStandingsAfterRound` | Get the drivers' championship standings after a given round (GET /ergast/f1/{season}/{round}/driverstandings.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/driverStandings.md |
+
+<details>
+
+<summary>See 29 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Lap | `getLap` | Get every driver's timing for one lap of a race (GET /ergast/f1/{season}/{round}/laps/{lapNumber}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/laps.md |
 | Get Laps | `getLaps` | Get lap-by-lap timings of every driver in one race (data from 1996 onward) (GET /ergast/f1/{season}/{round}/laps.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/laps.md |
 | Get Pit Stops | `getPitStops` | Get every pit stop of one race (data from 2011 onward) (GET /ergast/f1/{season}/{round}/pitstops.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/pitstops.md |
@@ -63,3 +68,5 @@ Add Jolpica F1 from **Build → Integrations → Connectors** and connect an acc
 | List Season Sprint Results | `listSeasonSprintResults` | List the sprint race results of one season (GET /ergast/f1/{season}/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md |
 | List Seasons | `listSeasons` | List every Formula 1 season with its Wikipedia link (GET /ergast/f1/seasons.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/seasons.md |
 | List Sprint Results | `listSprintResults` | List sprint race results across all seasons (GET /ergast/f1/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md |
+
+</details>

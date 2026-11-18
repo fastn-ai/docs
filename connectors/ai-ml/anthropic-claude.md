@@ -5,6 +5,8 @@ hidden: true
 
 # Anthropic (Claude)
 
+<img src="../../.gitbook/assets/connectors/anthropic-claude.png" alt="Anthropic (Claude) logo" width="64">
+
 Anthropic Claude API connector. Messages (create, count tokens), Models (list, get), Message Batches (create, list, get, results, cancel, delete), and Files API (upload, list, get, delete, download). Base URL https://api.anthropic.com/v1. API-key auth via x-api-key + anthropic-version header.
 
 | | |
@@ -12,8 +14,6 @@ Anthropic Claude API connector. Messages (create, count tokens), Models (list, g
 | **Category** | [AI and ML](README.md) |
 | **Website** | [anthropic.com](https://anthropic.com) |
 | **Authentication** | API key |
-| **Actions** | 15 |
-| **Events** | 0 |
 | **Slug** | `anthropicClaude` |
 
 ## Use it
@@ -34,8 +34,17 @@ Add Anthropic (Claude) from **Build → Integrations → Connectors** and connec
 | Get File Metadata | `getFileMetadata` | Get metadata for a file by id. Beta endpoint. GET /v1/files/{file_id}. |
 | Get Message Batch | `getMessageBatch` | Retrieve the status and metadata of a Message Batch. GET /v1/messages/batches/{message_batch_id}. |
 | Get Message Batch Results | `getMessageBatchResults` | Stream the results of a Message Batch as a .jsonl file (one result per line), available once processing has ended. GET /v1/messages/batches/{message_batch_id}/results. |
+
+<details>
+
+<summary>See 5 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Model | `getModel` | Get details of a specific model by id. GET /v1/models/{model_id}. |
 | List Files | `listFiles` | List files within a Workspace, most recently uploaded first. Beta endpoint. GET /v1/files. |
 | List Message Batches | `listMessageBatches` | List all Message Batches within a Workspace, most recently created first. GET /v1/messages/batches. |
 | List Models | `listModels` | List available models, most recently released first. GET /v1/models. |
 | Upload File | `uploadFile` | Upload a file for use in Messages API requests (referenced later by file_id). Beta endpoint. POST /v1/files (multipart/form-data). |
+
+</details>

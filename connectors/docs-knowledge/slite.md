@@ -5,6 +5,8 @@ hidden: true
 
 # Slite
 
+<img src="../../.gitbook/assets/connectors/slite.png" alt="Slite logo" width="64">
+
 Slite knowledge base and docs API. Create, read, update, delete and search notes (docs), traverse the doc tree, manage note lifecycle (verify, flag outdated, archive, owner, tiles), ask AI questions over the knowledge base, and look up users and groups. Base URL https://api.slite.com/v1.
 
 | | |
@@ -12,8 +14,6 @@ Slite knowledge base and docs API. Create, read, update, delete and search notes
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [slite.com](https://slite.com) |
 | **Authentication** | API key |
-| **Actions** | 25 |
-| **Events** | 0 |
 | **Slug** | `slite` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Slite from **Build → Integrations → Connectors** and connect an account,
 | Get Note | `getNote` | Return a note. Return a note by id |
 | Get Note Children | `getNoteChildren` | Return note children by parent note id. Return note children by parent note id |
 | Get User | `getUser` | Get user by ID. Get a user by ID |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | KM List Empty Notes | `kmListEmptyNotes` | List empty notes for knowledge management. List empty notes for knowledge management. |
 | KM List Inactive Notes | `kmListInactiveNotes` | List inactive notes for knowledge management. List inactive notes for knowledge management. |
 | KM List Notes | `kmListNotes` | List notes for knowledge management. List notes for knowledge management. |
@@ -49,3 +56,5 @@ Add Slite from **Build → Integrations → Connectors** and connect an account,
 | Update Note Owner | `updateNoteOwner` | Update note owner. Update the owner of a note, it can be a user or a group |
 | Update Tile | `updateTile` | Update a tile in a note. Update or create tile. A tile is rendered with a structured header and a markdown content. You can create a tile by copying a tile id from Slite by clicking on `Copy block id` on an empty line setting in the editor. |
 | Verify Note | `verifyNote` | Verify a note. Set Verified status on a note with optional verification expiration |
+
+</details>

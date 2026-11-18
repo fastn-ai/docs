@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Excel
 
+<img src="../../.gitbook/assets/connectors/microsoft-excel.svg" alt="Microsoft Excel logo" width="64">
+
 Microsoft Excel workbooks stored in OneDrive or SharePoint, via the Microsoft Graph Excel (workbook) API at https://graph.microsoft.com/v1.0. Read and write worksheets, cell ranges and their formats, tables with rows and columns, charts and chart formatting, named items, pivot tables, comments, sorting, filtering, worksheet protection and workbook sessions. Every action addresses a workbook by its OneDrive drive item ID under /me/drive/items/{itemId}/workbook. Connect with a Microsoft work, school or personal account using Entra ID OAuth 2.0; the signed-in user needs the delegated Files.ReadWrite permission.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Excel workbooks stored in OneDrive or SharePoint, via the Microsoft Gr
 | **Category** | [Data and databases](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 156 |
-| **Events** | 0 |
 | **Slug** | `microsoftExcel` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Excel from **Build → Integrations → Connectors** and connect a
 | Add Worksheet Named Item | `addWorksheetNamedItem` | Creates a named item scoped to a single worksheet, pointing at a range or formula on that sheet. |
 | Add Worksheet Table | `addWorksheetTable` | Creates an Excel table over a range on a specific worksheet. Because the worksheet is named in the path, the address needs no sheet prefix, for example "A1:D4". |
 | Apply Table Column Filter | `applyTableColumnFilter` | Applies a filter to one column of an Excel table so only matching rows stay visible. The criteria object selects the filter kind, such as a list of allowed values, a custom comparison, a dynamic date range, or a top or bottom N selection. |
+
+<details>
+
+<summary>See 146 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Apply Table Sort | `applyTableSort` | Sorts the rows of an Excel table using one or more sort fields. Each sort field names a zero-based column index within the table and a sort direction. |
 | Autofit Range Columns | `autofitRangeColumns` | Resizes the columns of a range so that each column is wide enough for its longest cell value. |
 | Autofit Range Rows | `autofitRangeRows` | Resizes the rows of a range so that each row is tall enough for its tallest cell content. |
@@ -180,3 +187,5 @@ Add Microsoft Excel from **Build → Integrations → Connectors** and connect a
 | Update Table Column | `updateTableColumn` | Overwrites the values of one column of an Excel table. The values array must include the header cell when the table shows headers. |
 | Update Table Row | `updateTableRow` | Overwrites the values of one data row of an Excel table, identified by its zero-based index. |
 | Update Worksheet | `updateWorksheet` | Updates a worksheet's name, its zero-based position in the workbook, or its visibility. Only the properties you supply are changed. |
+
+</details>

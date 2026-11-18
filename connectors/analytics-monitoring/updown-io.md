@@ -5,6 +5,8 @@ hidden: true
 
 # Updown.io
 
+<img src="../../.gitbook/assets/connectors/updown-io.png" alt="Updown.io logo" width="64">
+
 Updown.io website and uptime monitoring. Create and manage HTTP/HTTPS, ICMP, TCP and pulse checks, read uptime metrics and downtime history, manage alert recipients and public status pages, and list the monitoring node IP addresses.
 
 | | |
@@ -12,8 +14,6 @@ Updown.io website and uptime monitoring. Create and manage HTTP/HTTPS, ICMP, TCP
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [updown.io](https://updown.io) |
 | **Authentication** | API key |
-| **Actions** | 18 |
-| **Events** | 7 |
 | **Slug** | `updownIo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Updown.io from **Build → Integrations → Connectors** and connect an acco
 | Get Check Metrics | `getCheckMetrics` | Get aggregated performance metrics for an Updown.io check: uptime, APDEX, request counts bucketed by response time, and timing breakdown (redirect, DNS lookup, connection, TLS handshake, response, total) in milliseconds. Stats are aggregated hourly, by day after 2 days and by month after 40 days, so the range must span at least one hour. The uptime attribute is not returned when grouping. |
 | List Check Downtimes | `listCheckDowntimes` | List all recorded downtimes of an Updown.io check, newest first, 100 per page. Each entry carries the downtime id, details URL, error reason, start and end timestamps, duration in seconds and whether it was partial. |
 | List Checks | `listChecks` | List every monitoring check on your Updown.io account, including its token, monitored URL, current up/down state, uptime percentage, check interval, SSL certificate status and domain expiry information. Takes no parameters. Note that monitored URLs only include HTTP basic-auth credentials when a read-write API key is used. |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Node IPs | `listNodeIps` | List every Updown.io monitoring server IP address, both IPv4 and IPv6, as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
 | List Node IPv4 Addresses | `listNodeIpv4` | List the IPv4 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
 | List Node IPv6 Addresses | `listNodeIpv6` | List the IPv6 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
@@ -42,6 +49,8 @@ Add Updown.io from **Build → Integrations → Connectors** and connect an acco
 | List Status Pages | `listStatusPages` | List all Updown.io status pages on the account. Each page gives its token, public URL, name, description, visibility (public, protected or private), access key and the ordered list of check tokens it shows. Takes no parameters. |
 | Update Check | `updateCheck` | Update an existing Updown.io check identified by its token. Only the fields you supply are changed. Returns the updated check. Requires a read-write API key. |
 | Update Status Page | `updateStatusPage` | Update an existing Updown.io status page by token. Only the fields you supply are changed. Returns the updated status page. Requires a read-write API key. |
+
+</details>
 
 ## Events
 

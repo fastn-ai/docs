@@ -5,6 +5,8 @@ hidden: true
 
 # Zigpoll
 
+<img src="../../.gitbook/assets/connectors/zigpoll.png" alt="Zigpoll logo" width="64">
+
 Zigpoll is a survey platform for post-purchase, on-site, email and SMS surveys. This connector covers the complete Zigpoll Web API v1: the current user and accounts, surveys (polls) and their slides (questions) including create, update, dry-run staging and commit, slide reordering, translations, action logic, responses, response metadata, location, device and trend breakdowns, attribution reports, participants, captured emails, AI insights, synthetic research, email and SMS campaign sends, trackable survey links and signed webhooks. API access requires a Zigpoll Premium plan or higher.
 
 | | |
@@ -12,8 +14,6 @@ Zigpoll is a survey platform for post-purchase, on-site, email and SMS surveys. 
 | **Category** | [Marketing](README.md) |
 | **Website** | [zigpoll.com](https://zigpoll.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 36 |
-| **Events** | 2 |
 | **Slug** | `zigpoll` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Zigpoll from **Build → Integrations → Connectors** and connect an accoun
 | Generate Survey Link | `generateSurveyLink` | Generates a unique, trackable survey link for a poll. Each call creates a new activity record and returns a URL to hand to one respondent; optional metadata is attached to the activity for tracking. Counts against the plan's monthly survey link limit. |
 | Get Account | `getAccount` | Returns one Zigpoll account by id, with its plan, poll ids, team and the account-level response, answer and write-in counters. Requires a plan with API access. |
 | Get Attribution Report | `getAttributionReport` | Returns attributed revenue, orders, average order value and share per answer for a "How did you hear about us?" style question, bucketed by day, week or month, with the previous window of equal length for comparison and a cross-tab of answers against one traffic field. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Current User | `getCurrentUser` | Returns the Zigpoll user that owns the connected API key, including the ids of the accounts they belong to. |
 | Get Device Breakdown | `getDeviceBreakdown` | Returns the distribution of respondents by device type, browser and operating system for an account, poll or slide. truncated is true when more distinct user agents existed than distinctUserAgentLimit. |
 | Get Location Breakdown | `getLocationBreakdown` | Returns the country, region and city distribution of respondents for an account, poll or slide, derived from participant IP geolocation. Each list is a top 25; truncated flags any list that was cut. |
@@ -60,6 +67,8 @@ Add Zigpoll from **Build → Integrations → Connectors** and connect an accoun
 | Update Poll | `updatePoll` | Updates an existing poll (survey). Only the fields you include are changed; counters, timestamps and the slides list are system-managed and ignored. A poll cannot be made visible while it has no slides or is archived. |
 | Update Poll Translations | `updatePollTranslations` | Writes translations for one language of a poll without touching other languages. By default the translations are deep-merged into the language's existing layer (set a key to null to delete it); set replace to swap the whole layer or remove to delete the language. |
 | Update Slide | `updateSlide` | Updates an existing slide (question). Only the fields you include are changed; counters, insights and timestamps are system-managed and ignored. The handle is regenerated from the title. Send -1 for a field to remove it from the slide. |
+
+</details>
 
 ## Events
 

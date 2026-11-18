@@ -5,6 +5,8 @@ hidden: true
 
 # CircleCI
 
+<img src="../../.gitbook/assets/connectors/circleci.ico" alt="CircleCI logo" width="64">
+
 CircleCI is a continuous integration and delivery platform for building, testing and deploying software. This connector covers the CircleCI API v2: projects, pipelines, workflows, jobs, contexts, environment variables, checkout keys, schedules, triggers, insights, deploys, policies, OIDC claims, usage exports and outbound webhooks.
 
 | | |
@@ -12,8 +14,6 @@ CircleCI is a continuous integration and delivery platform for building, testing
 | **Category** | [Developer tools](README.md) |
 | **Website** | [circleci.com](https://circleci.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 114 |
-| **Events** | 2 |
 | **Slug** | `circleci` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add CircleCI from **Build → Integrations → Connectors** and connect an accou
 | Create Context | `createContext` | Creates a new context in the specified organization. |
 | Create Context Restriction | `createContextRestriction` | Creates project or expression restriction on a context. |
 | Create Organization | `createOrganization` | Create a new organization. For VCS providers (GitHub/Bitbucket), this validates access and syncs org data. For standalone orgs, this creates a new CircleCI organization. |
+
+<details>
+
+<summary>See 104 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Organization Group | `createOrganizationGroup` | Create a new group under the organization. Currently only supported for standalone organizations. |
 | Create OTLP Exporter | `createOtelExporter` | [__EXPERIMENTAL__] Creates a new OTLP exporter configuration for the given organization. A maximum of 5 exporter configurations are allowed per organization. |
 | Create Pipeline Definition | `createPipelineDefinition` | Create a pipeline definition for a given project. Currently only supported for pipeline definitions where `config_source.provider` is `github_app` or `github_server`. [Share feedback](https://circleci.canny.io/cloud-feature-requests/p/project-administration-apis) about our Project Administration APIs. |
@@ -138,6 +145,8 @@ Add CircleCI from **Build → Integrations → Connectors** and connect an accou
 | Update Schedule | `updateSchedule` | Updates a schedule and returns the updated schedule. Available only on schedules associated with GitHub OAuth or Bitbucket Cloud pipeline definitions. To update schedule triggers for GitHub App pipeline definitions, use the [Update trigger](https://circleci.com/docs/api/v2/index.html#tag/Trigger/operation/updateTrigger) endpoint. |
 | Update Trigger | `updateTrigger` | Update a trigger. Currently only supported for triggers where `event_source.provider` is `github_oauth`, `github_app`, `github_server`, `bitbucket_dc`, `webhook`, or `schedule`. [Share feedback](https://circleci.canny.io/cloud-feature-requests/p/project-administration-apis) about our Project Administration APIs. |
 | Update Webhook | `updateWebhook` | Updates an existing outbound webhook by its unique ID. |
+
+</details>
 
 ## Events
 

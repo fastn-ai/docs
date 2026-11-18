@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Intune
 
+<img src="../../.gitbook/assets/connectors/microsoft-intune.png" alt="Microsoft Intune logo" width="64">
+
 Microsoft Intune device management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/deviceManagement). Reads Intune managed devices, detected apps, compliance policies, device configuration profiles and their state summaries, enrolment configurations, terms and conditions, RBAC role definitions, connectors, troubleshooting events and mobile apps. Also manages the Microsoft Entra ID groups Intune targets (list, filter to security groups, count, read, create, delete, add a device member, delta and transitive members), reads the organization profile, manages Microsoft Graph change-notification subscriptions and issues JSON batch requests. Device management scripts use the Microsoft Graph beta endpoint because deviceManagementScripts is not available in v1.0. Connect with a Microsoft work or school account using Entra ID OAuth 2.0; the Intune permissions require tenant administrator consent and an active Intune licence.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Intune device management via the Microsoft Graph v1.0 API (https://gra
 | **Category** | [IT and service management](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 35 |
-| **Events** | 0 |
 | **Slug** | `microsoftIntune` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Intune from **Build → Integrations → Connectors** and connect 
 | Execute Batch | `executeBatch` | Combines up to 20 Microsoft Graph requests into a single JSON batch call, cutting network round trips when reading several Intune or directory resources at once. Each entry needs a unique id, a method and a service-root-relative url such as /deviceManagement/managedDevices. The outer call returns 200 even when individual requests fail, so always check the status of each entry in the responses array. |
 | Get Device Compliance Policy Device State Summary | `getDeviceCompliancePolicyDeviceStateSummary` | Retrieves the tenant-wide summary of device compliance, counting how many devices are compliant, non-compliant, in a grace period, in conflict, in error or not yet evaluated against their Intune compliance policies. |
 | Get Group By ID | `getGroupById` | Retrieves a single Microsoft Entra ID group by its object ID. Use the Select input to request properties that are not returned by default. |
+
+<details>
+
+<summary>See 25 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Managed Device | `getManagedDevice` | Retrieves a single Intune managed device by its identifier, returning its owner, platform, compliance state, enrolment details and hardware identifiers. |
 | Get Managed Device Overview | `getManagedDeviceOverview` | Retrieves the tenant-wide summary of Intune enrolment, including total enrolled device count, dual-enrolled devices and the breakdown of devices by operating system and by management agent. |
 | Get Organization | `getOrganization` | Retrieves the organization (tenant) profile, including the tenant ID, display name, verified domains, country and the service plans provisioned for the tenant. Useful for confirming that an Intune service plan is present before calling the device management endpoints. |
@@ -59,3 +66,5 @@ Add Microsoft Intune from **Build → Integrations → Connectors** and connect 
 | List Transitive Members | `listTransitiveMembers` | Lists every member of a Microsoft Entra ID group as a flat list, including members inherited through nested groups. Use it to see the full effective target of an Intune assignment. Query parameters other than $expand require the ConsistencyLevel header set to eventual, which is sent automatically. |
 | List Troubleshooting Events | `listTroubleshootingEvents` | Lists the Intune device management troubleshooting events recorded for the tenant, each with its event date, correlation ID and the user and device it relates to. |
 | Reauthorize Subscription | `reauthorizeSubscription` | Reauthorizes a Microsoft Graph change-notification subscription after a reauthorizationRequired lifecycle notification, proving the app still holds valid permissions on the watched resource. Takes no request body and returns 204 No Content on success; renew the subscription separately if it is also close to expiry. |
+
+</details>

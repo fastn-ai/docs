@@ -5,6 +5,8 @@ hidden: true
 
 # NASA Open APIs
 
+<img src="../../.gitbook/assets/connectors/nasa.png" alt="NASA Open APIs logo" width="64">
+
 NASA Open APIs (api.nasa.gov) give programmatic access to NASA data: the Astronomy Picture of the Day, near-Earth asteroids (NeoWs), DONKI space-weather events and notifications, EONET natural events, EPIC Earth imagery metadata, the Exoplanet Archive, InSight Mars weather, the NASA Image and Video Library, the Open Science Data Repository, the Satellite Situation Center, JPL SSD/CNEOS close-approach, fireball, Sentry, Scout, NHATS and mission-design data, TechPort projects, Technology Transfer patents, software and spinoffs, and two-line element sets.
 
 | | |
@@ -12,8 +14,6 @@ NASA Open APIs (api.nasa.gov) give programmatic access to NASA data: the Astrono
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [api.nasa.gov](https://api.nasa.gov) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 76 |
-| **Events** | 0 |
 | **Slug** | `nasa` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add NASA Open APIs from **Build → Integrations → Connectors** and connect an
 | Get EPIC Image | `getEpicImage` | Downloads one DSCOVR EPIC Earth image file from the EPIC archive by collection, capture date, format (full-size png, jpg or thumbnail) and image name as returned by the EPIC metadata actions. The response is the binary image file. |
 | Get EPIC Imagery By Date | `getEpicImageryByDate` | Retrieves metadata for all DSCOVR EPIC Earth images captured on a given date in the chosen collection (natural, enhanced, aerosol or cloud), including image names, captions, centroid coordinates and spacecraft positions. Returns an empty array for dates with no imagery. |
 | Get GIBS WMTS Capabilities | `getGibsWmtsCapabilities` | Retrieves the OGC WMTS GetCapabilities XML document for NASA Global Imagery Browse Services (GIBS) in one map projection, listing all satellite imagery layers, their tile matrix sets, time dimensions and tile URL templates. The document is large (several megabytes). Tile images are binary and are requested with the templates it describes. |
+
+<details>
+
+<summary>See 66 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get InSight Mars Weather | `getInsightMarsWeather` | Retrieves per-Sol weather summaries (temperature, wind, pressure) from NASA's InSight Mars lander for the last seven available Sols. The InSight mission ended in December 2022, so the service returns a fixed historical data set (Sols 675 to 681 from October 2020); it is retained for compatibility. |
 | Get Latest EPIC Imagery | `getLatestEpicImagery` | Retrieves metadata for the most recent date of DSCOVR EPIC Earth imagery in the chosen collection (natural colour, enhanced colour, aerosol index or cloud fraction): image names, captions, centroid coordinates and spacecraft, lunar and sun positions. |
 | Get Media Album | `getMediaAlbum` | Lists the contents of a named NASA Image and Video Library album (case-sensitive name, e.g. apollo) as paginated Collection+JSON items with metadata and preview links. |
@@ -100,3 +107,5 @@ Add NASA Open APIs from **Build → Integrations → Connectors** and connect an
 | Search Technology Transfer | `searchTechnologyTransfer` | Searches NASA's Technology Transfer (T2) portfolio of patents, software or spinoff examples by keyword, returning matching records as positional arrays (id, case number, title, description, resource key, category, images, center) with paging counts. Served directly by technology.nasa.gov because the api.nasa.gov techtransfer proxy currently returns the landing page instead of JSON. No API key needed. |
 | Search TechPort Projects | `searchTechportProjects` | Searches NASA TechPort technology projects by free-text query, returning matching project summaries with status, program, mission directorate, dates, taxonomy and technology readiness levels. A query is required: the endpoint returns the whole catalogue when none is given. |
 | Search TLE Records | `searchTleRecords` | Searches the TLE API (daily CelesTrak two-line element sets) by satellite name, returning a paginated Hydra collection of TLE records with satellite id, name, epoch date and the two element lines. No API key needed. |
+
+</details>

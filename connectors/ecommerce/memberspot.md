@@ -5,6 +5,8 @@ hidden: true
 
 # Memberspot
 
+<img src="../../.gitbook/assets/connectors/memberspot.png" alt="Memberspot logo" width="64">
+
 Memberspot is a German online course and membership platform. This connector covers the full Memberspot public API: member lookup and listing, granting and revoking offer access by email or user id, order state management, custom user properties, chapter access, course progress reporting, offers and exam results.
 
 | | |
@@ -12,8 +14,6 @@ Memberspot is a German online course and membership platform. This connector cov
 | **Category** | [E-commerce](README.md) |
 | **Website** | [memberspot.de](https://memberspot.de) |
 | **Authentication** | API key |
-| **Actions** | 30 |
-| **Events** | 6 |
 | **Slug** | `memberspot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Memberspot from **Build → Integrations → Connectors** and connect an acc
 | Get School | `getSchool` | Returns the Memberspot school that the configured API key belongs to, including its school id and name. Use this to verify credentials and to obtain the school id. |
 | Get User Course Progress By Email | `getUserCourseProgressByEmail` | Returns the user's progress in one specific course, identified by email address and course id. |
 | Get User Course Progress By UID | `getUserCourseProgressByUid` | Returns the user's progress in one specific course, identified by Memberspot user id and course id. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Grant Chapter Access By Email | `grantChapterAccessByEmail` | Grants a user access to a single chapter of a course, identified by email address. Use this to unlock individual lessons without granting a whole offer. |
 | Grant Chapter Access By UID | `grantChapterAccessByUid` | Grants a user access to a single chapter of a course, identified by Memberspot user id. |
 | Grant User Offer By Email | `grantUserOfferByEmail` | Grants a user access to an offer, identified by email address. If no user with that email exists in the school, Memberspot creates one using the supplied first and last name. |
@@ -54,6 +61,8 @@ Add Memberspot from **Build → Integrations → Connectors** and connect an acc
 | Set Order State By UID | `setOrderStateByUid` | Activates or deactivates every offer a user received under a specific order id, identified by Memberspot user id. |
 | Set Single Custom Property By Email | `setCustomProperty` | Sets one custom user property for the user with the given email address. When Value is omitted the property is set to an empty string. |
 | Set Single Custom Property By UID | `setCustomPropertyByUid` | Sets one custom user property for the user with the given Memberspot user id. When Value is omitted the property is set to an empty string. |
+
+</details>
 
 ## Events
 

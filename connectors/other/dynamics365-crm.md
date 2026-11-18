@@ -5,6 +5,8 @@ hidden: true
 
 # Dynamics 365 CRM (Dataverse)
 
+<img src="../../.gitbook/assets/connectors/dynamics365-crm.png" alt="Dynamics 365 CRM (Dataverse) logo" width="64">
+
 Microsoft Dynamics 365 Customer Engagement / Sales via the Dataverse Web API (OData v4, base https://{org}.crm.dynamics.com/api/data/v9.2). Covers accounts, contacts, leads, opportunities, quotes, sales orders, invoices, products, cases (incidents), tasks/activities, plus a generic OData CRUD pattern, WhoAmI, and $metadata. Auth: Azure AD (Entra ID) OAuth 2.0 (authorization_code).
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Dynamics 365 Customer Engagement / Sales via the Dataverse Web API (OD
 | **Category** | [Other](README.md) |
 | **Website** | [dynamics.com](https://dynamics.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 287 |
-| **Events** | 30 |
 | **Slug** | `dynamics365Crm` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Dynamics 365 CRM (Dataverse) from **Build → Integrations → Connectors** 
 | Associate Records (N:N or 1:N) | `associateRecords` | Link two records through a collection-valued navigation property (POST /{entitySet}(id)/{navigationProperty}/$ref), e.g. accounts(id)/contact_customer_accounts/$ref, systemusers(id)/systemuserroles_association/$ref, teams(id)/teammembership_association/$ref, opportunities(id)/opportunitycompetitors_association/$ref, lists(id)/listcontact_association/$ref. |
 | Calculate Price | `calculatePrice` | Recalculate totals of an opportunity, quote, order or invoice (POST /CalculatePrice). Returns 204. |
 | Cancel Case | `cancelIncident` | Cancel a case (PATCH statecode 2 / statuscode 6 Cancelled or 2000 Merged). |
+
+<details>
+
+<summary>See 277 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Clear Lookup (single-valued) | `clearLookup` | Clear a single-valued lookup on a record (DELETE /{entitySet}(id)/{navigationProperty}/$ref), e.g. accounts(id)/primarycontactid/$ref. |
 | Close (resolve) Case | `closeIncident` | Resolve a case (POST /CloseIncident). Status 5 = Problem Solved, 1000 = Information Provided. timespent is billable minutes. |
 | Close Quote (lost/canceled/revised) | `closeQuote` | Close a quote without winning it (POST /CloseQuote). Status 5 Lost, 6 Canceled, 7 Revised. Returns 204. |
@@ -312,6 +319,8 @@ Add Dynamics 365 CRM (Dataverse) from **Build → Integrations → Connectors** 
 | Win Opportunity | `winOpportunity` | Close an opportunity as Won (POST /WinOpportunity). Status 3 = Won. Returns 204. |
 | Win Quote | `winQuote` | Mark an active quote as Won (POST /WinQuote). Status 4 = Won. Quote must be Active (activateQuote first). Returns 204. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -328,6 +337,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Contact | `contact` | Fires on contact Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
 | Email | `email` | Fires on email Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
 | Entitlement | `entitlement` | Fires on entitlement Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
+
+<details>
+
+<summary>See 20 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Goal | `goal` | Fires on goal Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
 | Invoice | `invoice` | Fires on invoice Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
 | Invoice Line | `invoicedetail` | Fires on invoice line Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
@@ -348,3 +364,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | System User | `systemuser` | Fires on system user Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
 | Task | `task` | Fires on task Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
 | Team | `team` | Fires on team Create, Update and Delete (Dataverse webhook, async post-operation). Branch on MessageName. Update carries changed columns in InputParameters.Target plus the full row in PostEntityImages.PostImage; Delete carries the deleted row in PreEntityImages.PreImage. |
+
+</details>

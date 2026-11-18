@@ -5,6 +5,8 @@ hidden: true
 
 # Val Town
 
+<img src="../../.gitbook/assets/connectors/val-town.png" alt="Val Town logo" width="64">
+
 Val Town is a social platform for writing and hosting serverless TypeScript and JavaScript. This connector covers vals, val branches and files, environment variables and environment variable groups, users and organizations, blob storage, the hosted SQLite database, transactional email and OpenTelemetry traces and logs through the Val Town REST API.
 
 | | |
@@ -12,8 +14,6 @@ Val Town is a social platform for writing and hosting serverless TypeScript and 
 | **Category** | [Developer tools](README.md) |
 | **Website** | [val.town](https://val.town) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 52 |
-| **Events** | 0 |
 | **Slug** | `valTown` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Val Town from **Build → Integrations → Connectors** and connect an accou
 | Delete Blob | `deleteBlob` | Permanently delete a blob by key. |
 | Delete Blob (v1) | `deleteBlobV1` | Permanently delete a blob by key using the v1 endpoint. |
 | Delete Environment Variable Group | `deleteEnvironmentVariableGroup` | Delete an account-level environment variable group and all of its variables. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Group Environment Variable | `deleteGroupEnvironmentVariable` | Delete an environment variable from an environment variable group by key. |
 | Delete Val | `deleteVal` | Permanently delete a val and all of its files and branches. |
 | Delete Val Branch | `deleteValBranch` | Delete a branch from a val. |
@@ -76,3 +83,5 @@ Add Val Town from **Build → Integrations → Connectors** and connect an accou
 | Update Val Environment Variable | `updateValEnvironmentVariable` | Update the value of an existing environment variable on a val. |
 | Update Val File | `updateValFile` | Update the contents, name, type or parent directory of a file inside a val. |
 | Upsert Group Environment Variable | `upsertGroupEnvironmentVariable` | Create or replace an environment variable inside an environment variable group by key. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # LaunchDarkly
 
+<img src="../../.gitbook/assets/connectors/launchdarkly.png" alt="LaunchDarkly logo" width="64">
+
 LaunchDarkly feature management platform. Wraps the LaunchDarkly REST API v2: projects, environments, feature flags, segments, metrics, experiments, teams, account members, custom roles, access tokens, webhooks, audit log, code references, contexts, approvals, scheduled changes, workflows and AI Configs.
 
 | | |
@@ -12,8 +14,6 @@ LaunchDarkly feature management platform. Wraps the LaunchDarkly REST API v2: pr
 | **Category** | [Developer tools](README.md) |
 | **Website** | [launchdarkly.com](https://launchdarkly.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 403 |
-| **Events** | 28 |
 | **Slug** | `launchdarkly` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add LaunchDarkly from **Build → Integrations → Connectors** and connect an a
 | Complete Warehouse Destination Setup | `postCompleteWarehouseDestinationSetup` | Finish setting up a warehouse Data Export destination after the generated setup script has been run in the warehouse. LaunchDarkly opens a live connection to the warehouse, so this only succeeds against a real, already-provisioned warehouse. kind is snowflake-v2, bigquery, clickhouse, redshift or databricks. |
 | Copy Feature Flag Settings | `copyFeatureFlag` | Copy a flag's targeting configuration from a source environment to a target environment within the same project. Use Included Actions or Excluded Actions to copy only part of the configuration. |
 | Create Access Token | `createAccessToken` | Create a new LaunchDarkly API access token. The response contains the secret token value exactly once, so store it securely straight away. Choose either a base role, a list of custom role IDs, or an inline policy. |
+
+<details>
+
+<summary>See 393 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Adaptive Trigger | `createAdaptiveTrigger` | Creates a LaunchDarkly adaptive trigger that applies flag targeting instructions automatically when the named observability alert fires. Returns the created trigger with its ID. |
 | Create Agent Graph | `postAgentGraph` | Create an agent graph. If edges or rootConfigKey is supplied, both must be. Sends the required LD-API-Version: beta header. |
 | Create Agent Optimization | `postAgentOptimization` | Create an agent optimization for an AI Config. Requires key, aiConfigKey, maxAttempts and judgeModel. |
@@ -428,6 +435,8 @@ Add LaunchDarkly from **Build → Integrations → Connectors** and connect an a
 | Upsert Code Reference Branch | `putBranch` | Create or replace the code references recorded for one branch of a repository. Head is the branch HEAD commit SHA, Sync Time is Unix epoch milliseconds, and References is the array of flag references found on the branch, each with path, hint and hunks. Returns 200 with an empty body. |
 | Validate Integration Delivery Configuration | `validateIntegrationDeliveryConfiguration` | Beta. Ask LaunchDarkly to make a test call to the third-party store behind an integration delivery configuration. Returns 200 with { statusCode, timestamp, responseBody } describing the third party's answer. Only integrations whose manifest declares a validation request support this; others return 404 "No validation request in manifest" (cloudflare supports it, fastly and vercel-native do not). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -444,6 +453,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Environment SDK Key Reset | `updateApiKey` | An environment's server-side SDK key was rotated. Verified present in this account's audit log. |
 | Feature Flag Created | `createFlag` | A feature flag was created in a project. Scope with the Resource Scope input, for example proj/my-project:env/*:flag/*. |
 | Feature Flag Default Rule Changed | `updateFallthrough` | A feature flag's default (fallthrough) variation was changed in an environment. |
+
+<details>
+
+<summary>See 18 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Feature Flag Deleted | `deleteFlag` | A feature flag was permanently deleted from a project. |
 | Feature Flag Individual Targets Changed | `updateTargets` | Individual context targets were added to or removed from a feature flag in an environment. |
 | Feature Flag Targeting Rules Changed | `updateRules` | A feature flag's targeting rules were changed in an environment. |
@@ -462,3 +478,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Segment Included Contexts Changed | `updateIncluded` | The contexts explicitly included in a segment were changed. |
 | Webhook Created | `createWebhook` | A webhook was created on the account. Verified present in this account's audit log. Scope with Resource Scope webhook/*. |
 | Webhook Deleted | `deleteWebhook` | A webhook was deleted from the account. Verified present in this account's audit log. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Google Contacts
 
+<img src="../../.gitbook/assets/connectors/google-contacts.png" alt="Google Contacts logo" width="64">
+
 Google People API v1 — manage the authenticated user's contacts, contact groups, other contacts, and read domain directory profiles.
 
 | | |
@@ -12,8 +14,6 @@ Google People API v1 — manage the authenticated user's contacts, contact group
 | **Category** | [Communication](README.md) |
 | **Website** | [people.googleapis.com](https://people.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 24 |
-| **Events** | 0 |
 | **Slug** | `googleContacts` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Contacts from **Build → Integrations → Connectors** and connect a
 | Create Contact Group | `createContactGroup` | Creates a new contact group owned by the authenticated user. Group names must be unique within the user's contact groups, and a duplicate name returns an HTTP 409 error. |
 | Delete Contact | `deleteContact` | Deletes a contact from the authenticated user's contacts. Profile data that is not contact data is not deleted. |
 | Delete Contact Group | `deleteContactGroup` | Deletes a contact group owned by the authenticated user, and optionally deletes the contacts that belong to it. System contact groups cannot be deleted. |
+
+<details>
+
+<summary>See 14 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Contact Photo | `deleteContactPhoto` | Removes a contact's photo, reverting the contact to the default placeholder image. |
 | Get Contact Group | `getContactGroup` | Retrieves a single contact group owned by the authenticated user, optionally including the resource names of its members. |
 | Get Person | `getPerson` | Retrieves a single person by id. Use the person id 'me' to fetch the authenticated user's own profile. A field mask is required, and the request fails with 400 if it is omitted. |
@@ -48,3 +55,5 @@ Add Google Contacts from **Build → Integrations → Connectors** and connect a
 | Update Contact | `updateContact` | Updates an existing contact in the authenticated user's contacts. Every field family named in the update mask is replaced wholesale, so send the complete desired set of entries for each one. The contact's current etag must be supplied. |
 | Update Contact Group | `updateContactGroup` | Renames an existing contact group owned by the authenticated user. The new name must be unique among the user's contact groups, and the group's current etag must be supplied. |
 | Update Contact Photo | `updateContactPhoto` | Sets or replaces a contact's photo from raw image bytes. The image must be supplied base64-encoded and be a JPEG, PNG, or similar raster format. |
+
+</details>

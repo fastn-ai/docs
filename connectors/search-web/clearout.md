@@ -5,6 +5,8 @@ hidden: true
 
 # Clearout
 
+<img src="../../.gitbook/assets/connectors/clearout.png" alt="Clearout logo" width="64">
+
 Clearout email verification, email finder, reverse lookup, name validation and domain MX/WHOIS APIs (api.clearout.io/v2). API-token authentication.
 
 | | |
@@ -12,8 +14,6 @@ Clearout email verification, email finder, reverse lookup, name validation and d
 | **Category** | [Search and web](README.md) |
 | **Website** | [clearout.io](https://clearout.io) |
 | **Authentication** | API key |
-| **Actions** | 31 |
-| **Events** | 7 |
 | **Slug** | `clearout` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Clearout from **Build → Integrations → Connectors** and connect an accou
 | Get Available Credits | `getAvailableCredits` | Returns the Clearout account's available email-verification credits, daily limit and low-balance threshold. Takes no input. Does not consume credits. |
 | Get Bulk Finder Progress | `getBulkFinderProgress` | Returns progress and result counts for a bulk Email Finder list, by list_id returned from Find Email Bulk. |
 | Get Bulk Verify Progress | `getBulkVerifyProgress` | Returns progress and result counts for a bulk email-verification list, by list_id returned from Verify Email Bulk. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Instant Finder Queue Status | `getInstantFinderQueueStatus` | Retrieves the result of a queued instant Email Finder request using the qid returned when the instant call timed out. |
 | Get Plans And Addons | `getPlansAndAddons` | Account API: returns the current subscription plan, pay-as-you-go plans and purchased addons. Takes no input. Does not consume credits. |
 | Get Service Limits | `getServiceLimits` | Account API: returns the account's per-service rate and usage limits. Takes no input. Does not consume credits. |
@@ -55,6 +62,8 @@ Add Clearout from **Build → Integrations → Connectors** and connect an accou
 | Verify Free Account | `verifyFreeAccount` | Checks whether an email address belongs to a free mail provider (gmail, yahoo, ...). Returns a yes/no free flag. |
 | Verify Gibberish Account | `verifyGibberishAccount` | Checks whether the local part of an email address is gibberish / randomly generated. Returns a yes/no gibberish flag. |
 | Verify Role Account | `verifyRoleAccount` | Checks whether an email address is a role account (info@, support@, sales@ ...). Returns a yes/no role flag. |
+
+</details>
 
 ## Events
 

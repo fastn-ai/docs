@@ -5,6 +5,8 @@ hidden: true
 
 # WhoisFreaks
 
+<img src="../../.gitbook/assets/connectors/whoisfreaks.png" alt="WhoisFreaks logo" width="64">
+
 WhoisFreaks provides domain, DNS, IP and certificate intelligence: live, historical and reverse WHOIS, live, historical, reverse and bulk DNS, domain availability and TLD suggestions, typosquatting discovery, SSL certificate lookup, IP geolocation and reputation, subdomain discovery, domain reputation, ASN and IP WHOIS, plus account usage and the downloadable newly registered, expiring and dropped domain, WHOIS, DNS, subdomain, IP snapshot and threat feed database files.
 
 | | |
@@ -12,8 +14,6 @@ WhoisFreaks provides domain, DNS, IP and certificate intelligence: live, histori
 | **Category** | [Search and web](README.md) |
 | **Website** | [whoisfreaks.com](https://whoisfreaks.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 61 |
-| **Events** | 0 |
 | **Slug** | `whoisfreaks` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WhoisFreaks from **Build → Integrations → Connectors** and connect an ac
 | Download Dropped Domains | `downloadDroppedDomains` | Downloads the daily CSV file of domains that were dropped (deleted from the registry) on a date, either with full WHOIS records or as a plain domain list. Requires the Domainer package. |
 | Download Dropped Domains With Backlinks | `downloadDroppedDomainsWithBacklinks` | Downloads the daily CSV file of dropped domains enriched with backlink metrics for a date, optionally including their WHOIS records. Requires the Domainer package. |
 | Download Expiring Domains | `downloadExpiringDomains` | Downloads the daily CSV file of domains that are about to expire for a date, either with full WHOIS records or as a plain domain list. Requires the Domainer package. |
+
+<details>
+
+<summary>See 51 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Download Expiring Domains With Cleaned WHOIS | `downloadExpiringDomainsCleanedWhois` | Downloads the daily CSV file of expiring domains with cleaned, normalised WHOIS records for a date. Requires the Domainer package. |
 | Download IP Security Snapshot | `downloadIpSecuritySnapshot` | Downloads the IP Security (reputation) database snapshot (a gzip-compressed CSV file) created on the given date. Use Get IP Security Snapshot Status to find the latest snapshot date. Requires an active IP Security database subscription. |
 | Download IP To City Snapshot | `downloadIpToCitySnapshot` | Downloads the IP-to-City geolocation database snapshot (a ZIP file) created on the given date. Use Get IP To City Snapshot Status to find the latest snapshot date. Requires an active IP Geolocation database subscription. |
@@ -85,3 +92,5 @@ Add WhoisFreaks from **Build → Integrations → Connectors** and connect an ac
 | Rotate API Key | `rotateApiKey` | Rotates the account's API key: the current key is revoked immediately and a new key is returned as plain text. After calling this, update the WhoisFreaks connection with the new key, since every subsequent request with the old key will be rejected. |
 | Search Reverse DNS | `searchReverseDns` | Finds every domain whose DNS records point at a given value, such as an IP address or CIDR (A/AAAA), a mail server (MX), a name server (NS), a CNAME target or a TXT string. Paginated. Costs 5 credits per page. |
 | Search Reverse WHOIS | `searchReverseWhois` | Searches the WHOIS database backwards and returns every domain connected to an owner attribute. Provide exactly one search dimension: a domain keyword, a registrant email address, an owner name or a company name. Paginated; 'mini' mode returns compact rows, 'default' mode returns full WHOIS records. Costs credits per page. |
+
+</details>

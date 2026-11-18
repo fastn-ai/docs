@@ -5,6 +5,8 @@ hidden: true
 
 # Winston AI
 
+<img src="../../.gitbook/assets/connectors/winston-ai.png" alt="Winston AI logo" width="64">
+
 Winston AI is an AI-content-detection and plagiarism platform. This connector covers the full public v2 REST API (AI text detection, AI image detection, advanced image forensics, plagiarism, fact checking and text comparison), the legacy v1 detection routes, the hosted Model Context Protocol server, and the developer-dashboard account endpoint. All endpoints are metered in credits.
 
 | | |
@@ -12,8 +14,6 @@ Winston AI is an AI-content-detection and plagiarism platform. This connector co
 | **Category** | [AI and ML](README.md) |
 | **Website** | [gowinston.ai](https://gowinston.ai) |
 | **Authentication** | Bearer token |
-| **Actions** | 14 |
-| **Events** | 0 |
 | **Slug** | `winstonAi` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Winston AI from **Build → Integrations → Connectors** and connect an acc
 | Detect AI Generated Text (Legacy v1) | `detectAiTextV1` | Legacy version 1 of the AI text detection endpoint, kept live by Winston AI but absent from the published documentation. It scans text, a public document URL or a public web page and returns a Human Score. Prefer Detect AI Generated Text, which is the supported version 2 route; use this only for backwards compatibility with existing v1 integrations. Metered: one credit per word scanned. |
 | Fact Check Text | `factCheckText` | Extracts the factual claims from text, a public document URL or a public web page and verifies each one against trusted sources, returning a per-claim verdict, confidence score, explanation and supporting links plus an overall accuracy score. Supply exactly one of Text, File or Website. At most 12 claims are checked per request. Metered: two credits per word scanned. |
 | Get Developer Account | `getDeveloperAccount` | Retrieves the Winston AI developer-dashboard account that owns the API key, including the user id, name, email, team id, locale, country, role and currency. This is the only non-metered read on the platform and consumes no credits; use it to validate a stored API key. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Initialize MCP Session | `initializeMcpSession` | Performs the JSON-RPC 2.0 initialize handshake with the Winston AI hosted Model Context Protocol server and returns the negotiated protocol version, the server capabilities and the server name and version. Consumes no credits. |
 | List MCP Tools | `listMcpTools` | Lists the tools exposed by the Winston AI hosted Model Context Protocol server, with each tool's title, description, credit cost and JSON Schema for its arguments. This is a JSON-RPC 2.0 tools/list call and consumes no credits. |
 | Ping MCP Server | `pingMcpServer` | Sends a JSON-RPC 2.0 ping to the Winston AI hosted Model Context Protocol server to confirm it is reachable and the API key is accepted. Returns an empty result object and consumes no credits. |
 | Run Advanced Image Forensics | `runAdvancedImageForensics` | Runs a deep forensic analysis on a public image URL using error-level analysis, residual noise maps, edge anomaly heat maps, CFA pattern analysis and metadata extraction, and returns a classification label, confidence, authenticity assessment, a written conclusion and the per-tool findings. The URL must be a public HTTP or HTTPS image address; localhost, private or reserved IP addresses and URLs carrying embedded credentials are rejected. SECURITY NOTE: the per-tool results for the image-rendering tools are returned as time-limited presigned Amazon S3 links that require no authentication, so anyone holding the link can view the forensic renderings of the submitted image until they expire. Metered: 500 credits per successful analysis, the most expensive endpoint on the platform. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Hugging Face
 
+<img src="../../.gitbook/assets/connectors/huggingface.png" alt="Hugging Face logo" width="64">
+
 Hugging Face connector covering the Hub API (whoami, models, datasets, spaces, repos, refs, commits) and Inference Providers router (OpenAI-compatible chat completions, feature-extraction embeddings). Auth: bearer hf_ token.
 
 | | |
@@ -12,8 +14,6 @@ Hugging Face connector covering the Hub API (whoami, models, datasets, spaces, r
 | **Category** | [AI and ML](README.md) |
 | **Website** | [huggingface.co](https://huggingface.co) |
 | **Authentication** | Bearer token |
-| **Actions** | 14 |
-| **Events** | 0 |
 | **Slug** | `huggingface` |
 
 ## Use it
@@ -34,7 +34,16 @@ Add Hugging Face from **Build → Integrations → Connectors** and connect an a
 | List Datasets | `listDatasets` | List/search datasets on the Hub. FREE / zero-cost. Supports search, author, filter, sort, direction, limit, full. |
 | List Model Commits | `listModelCommits` | List commits on a given revision (branch, tag or commit) of a model repo, identified by owner namespace and repository name. |
 | List Model Refs | `listModelRefs` | List git refs (branches, tags, converts and, with includePrs, pull-request refs) for a model repo, identified by owner namespace and repository name. |
+
+<details>
+
+<summary>See 4 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Models | `listModels` | List/search models on the Hub. FREE / zero-cost. Supports search, author, filter (tags), sort, direction, limit, full, config. |
 | List Router Models | `listRouterModels` | List models available through the Inference Providers router (OpenAI /v1/models style), including per-provider pricing/context. |
 | List Spaces | `listSpaces` | List/search Spaces on the Hub. FREE / zero-cost. Supports search, author, filter, sort, direction, limit, full. |
 | Who Am I | `whoami` | Return the authenticated user/org info for the hf_ token. FREE / zero-cost — ideal for validating a connection. |
+
+</details>

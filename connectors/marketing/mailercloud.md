@@ -5,6 +5,8 @@ hidden: true
 
 # Mailercloud
 
+<img src="../../.gitbook/assets/connectors/mailercloud.png" alt="Mailercloud logo" width="64">
+
 Mailercloud email marketing platform. Manage lists, contacts, custom properties, segments, tags, senders, webforms, templates, automations and campaigns; send transactional and personalized email; and subscribe to delivery webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Mailercloud email marketing platform. Manage lists, contacts, custom properties,
 | **Category** | [Marketing](README.md) |
 | **Website** | [mailercloud.com](https://mailercloud.com) |
 | **Authentication** | API key |
-| **Actions** | 65 |
-| **Events** | 7 |
 | **Slug** | `mailercloud` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Mailercloud from **Build → Integrations → Connectors** and connect an ac
 | Create Contacts In Batch | `createBatchContacts` | Add many contacts to one list in a single call. Returns how many rows were submitted, inserted, updated and skipped. |
 | Create List | `createList` | Create a new contact list. A list is where Mailercloud stores and manages the contacts you send campaigns to. |
 | Create Or Update Contact | `upsertContact` | Create a contact if it does not exist in the list, or update it if it does. Returns the contact id and whether it was created or updated. |
+
+<details>
+
+<summary>See 55 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Segment | `createSegment` | Create a contact segment: a saved filter over one or more lists built from contact-detail, contact-property, tag or activity rules. The lists array takes list NAMES, not list ids. |
 | Create Tag | `createTag` | Create a contact tag. Tags group contacts across lists and can be used as segment criteria. |
 | Create Template | `createTemplate` | Create a reusable email template from HTML and plain text, filed under a template category. |
@@ -89,6 +96,8 @@ Add Mailercloud from **Build → Integrations → Connectors** and connect an ac
 | Update Tag | `updateTag` | Rename an existing contact tag by id. |
 | Update Template | `updateTemplate` | Update an existing email template's name, HTML, plain text or category. name is always required. Identify the template by its id or by its current name. VENDOR BLOCKER: as of 2026-09-22 this endpoint returns HTTP 500 for every well-formed request, including with a nonexistent id, while every other template endpoint works. |
 | Update Webhook | `updateWebhook` | Replace a webhook's name, delivery URL and subscribed event list. |
+
+</details>
 
 ## Events
 

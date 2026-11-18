@@ -5,6 +5,8 @@ hidden: true
 
 # HP Workforce Experience
 
+<img src="../../.gitbook/assets/connectors/hp-workforce-experience.png" alt="HP Workforce Experience logo" width="64">
+
 HP Workforce Experience Platform (WXP) — device analytics, health scores, warranty, Windows 11 readiness, app performance, and incident management via the TechPulse Analytics and Incident Integration APIs.
 
 | | |
@@ -12,8 +14,6 @@ HP Workforce Experience Platform (WXP) — device analytics, health scores, warr
 | **Category** | [IT and service management](README.md) |
 | **Website** | [hp.com](https://hp.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 70 |
-| **Events** | 3 |
 | **Slug** | `hpWorkforceExperience` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HP Workforce Experience from **Build → Integrations → Connectors** and c
 | Get Asset Service Status | `getAssetServiceStatus` | Check the status of the TechPulse asset management query service for the configured environment, to confirm connectivity and credentials before running asset searches. |
 | Get Battery Replacement Report | `getBatteryReplacementReport` | Retrieve batteries due for replacement (batteryrep/details), with battery health, serial number, replacement timeframe and reason, plus the device's warranty status. |
 | Get Battery Status And Risk Factors Report | `getBatteryRiskFactorsReport` | Retrieve battery status with its risk factors (batteryStatRiskFact/batteryRepAndRiskFact), combining battery health, HP Battery Health Manager settings, installed versus recommended BIOS version and the replacement reason per device. |
+
+<details>
+
+<summary>See 60 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Battery Usage Optimization Report | `getBatteryUsageOptimizationReport` | Retrieve battery usage optimization detail per device (batteryUsageOpt/details), showing HP Battery Health Manager configuration and the BIOS level required to apply the recommended battery setting. |
 | Get BIOS Inventory Report | `getBiosInventoryReport` | Retrieve installed versus latest BIOS versions per device (biosinventory/details), including criticality of the available update, release dates, SoftPaq numbers and download links, so out-of-date firmware can be targeted. |
 | Get Blue Screen Details Report | `getBlueScreenDetailsReport` | Retrieve Windows blue-screen (stop error) events per device (hwbluescreen/details), including the bug check code, the driver that caused the crash, its version and the hardware health indicators recorded at the time. |
@@ -94,6 +101,8 @@ Add HP Workforce Experience from **Build → Integrations → Connectors** and c
 | Search Tenant Notification Workflows | `searchTenantNotificationWorkflows` | Search a tenant's Workforce Experience notification workflow assignments, the rules that decide who is notified when a condition is detected. |
 | Update Incident | `updateIncident` | Partially update an incident. Supports status, priority, and assigneeId. Note: incidentId is a numeric integer, not a UUID. |
 | Update Incident Subscription Settings | `updateIncidentSubscriptions` | Subscribe or unsubscribe a tenant's incident types and subtypes and set how often HP emails about incidents. Read the current settings with Get Incident Subscription Settings first and send back the full type list, because the call replaces the tenant's subscription selection. |
+
+</details>
 
 ## Events
 

@@ -5,6 +5,8 @@ hidden: true
 
 # Google Slides
 
+<img src="../../.gitbook/assets/connectors/google-slides.png" alt="Google Slides logo" width="64">
+
 Google Slides API v1 — create presentations, read presentation and page content, generate page thumbnails, and apply batch updates to slides, shapes, text, tables, and images.
 
 | | |
@@ -12,8 +14,6 @@ Google Slides API v1 — create presentations, read presentation and page conten
 | **Category** | [Productivity](README.md) |
 | **Website** | [slides.googleapis.com](https://slides.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 40 |
-| **Events** | 0 |
 | **Slug** | `googleSlides` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Google Slides from **Build → Integrations → Connectors** and connect an 
 | Create Slide | `createSlide` | Adds a new slide to a presentation at the given index, using a predefined layout such as TITLE_AND_BODY or BLANK. |
 | Create Table | `createTable` | Creates a table with the given number of rows and columns on a page of a presentation. The table is created with a default style and empty cells. |
 | Create Video | `createVideo` | Embeds a YouTube or Google Drive video on a page of a presentation. Drive videos require the requesting user to have access to the file. |
+
+<details>
+
+<summary>See 30 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Object | `deleteObject` | Deletes a page or page element from a presentation. Deleting a group also deletes all of its child elements, and placeholders inherited from a layout cannot be deleted individually. |
 | Delete Paragraph Bullets | `deleteParagraphBullets` | Removes bullets from a range of paragraphs in a shape or table cell. The paragraph indentation applied by the bullets is preserved as explicit indentation. |
 | Delete Table Column | `deleteTableColumn` | Deletes the table column containing the given reference cell. A table must always keep at least one column, so deleting the final column fails. |
@@ -64,3 +71,5 @@ Add Google Slides from **Build → Integrations → Connectors** and connect an 
 | Update Slide Properties | `updateSlideProperties` | Updates the properties of a slide, such as whether the slide is skipped during presentation. |
 | Update Slides Position | `updateSlidesPosition` | Reorders slides in a presentation by moving the given slides to a new position. The slides must be listed in their existing presentation order and must be contiguous. |
 | Update Text Style | `updateTextStyle` | Applies character formatting such as bold, italic, font family, font size, and colour to a range of text in a shape or table cell. Only the properties named in the field mask are applied, so send the full set of style inputs and use the mask to select which of them take effect. |
+
+</details>

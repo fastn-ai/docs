@@ -5,6 +5,8 @@ hidden: true
 
 # Kartverket
 
+<img src="../../.gitbook/assets/connectors/kartverket.png" alt="Kartverket logo" width="64">
+
 Kartverket (the Norwegian Mapping Authority) offers free open APIs for Norway: search official addresses by text or near a point, search place names (stedsnavn) in Norwegian and Sami, get counties and municipalities with boundaries and neighbours, find the municipality at a coordinate, and get terrain elevation for points. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ Kartverket (the Norwegian Mapping Authority) offers free open APIs for Norway: s
 | **Category** | [Search and web](README.md) |
 | **Website** | [kartverket.no](https://kartverket.no) |
 | **Authentication** | No authentication |
-| **Actions** | 23 |
-| **Events** | 0 |
 | **Slug** | `kartverket` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Kartverket from **Build → Integrations → Connectors** and connect an acc
 | Get Municipality at a Point | `getMunicipalityAtPoint` | Finn kommune og fylke for et gitt geografisk punkt. Finn kommune og fylke for et gitt geografisk punkt. Docs: https://api.kartverket.no/kommuneinfo/v1/ (GET /punkt) |
 | Get Municipality Illustration Map | `getMunicipalityIllustrationMap` | Illustrasjonskart over kommuner i Norge.. En geojson-featurecollection med grovt forenklede kommunegrenser. Hver kommune er en feature og har kommunenavn og kommunenummer i properties-elementet. Kun ment til å brukes som et illustrasjonskart. Docs: https://api.kartverket.no/kommuneinfo/v1/ (GET /kommuner/illustrasjonskart) |
 | List Counties | `listCounties` | Fylker i Norge.. Oversikt over alle fylker i Norge med fylkesnavn og fylkesnummer. Docs: https://api.kartverket.no/kommuneinfo/v1/ (GET /fylker) |
+
+<details>
+
+<summary>See 13 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Counties With Municipalities | `listCountiesWithMunicipalities` | Full informasjon om alle fylker og alle kommuner.. Henter avgrensningsboks, nummer og navn for alle fylker og kommuner i fylket. Inkluderer informasjon for kommuner som fått i /kommuner/{kommunenummer}. Docs: https://api.kartverket.no/kommuneinfo/v1/ (GET /fylkerkommuner) |
 | List Elevation Data Sources | `listElevationSources` | Alle datakilder man kan hente høyder/dybder fra.. Informasjon om datakildene som benyttes for å finne høydene og dybdene. Docs: https://ws.geonorge.no/hoydedata/v1/ (GET /datakilder) |
 | List Municipalities | `listMunicipalities` | Kommuner i Norge.. Kommunenavn og kommunenummer for alle kommuner i Norge. Docs: https://api.kartverket.no/kommuneinfo/v1/ (GET /kommuner) |
@@ -47,3 +54,5 @@ Add Kartverket from **Build → Integrations → Connectors** and connect an acc
 | Search Place Names | `searchPlaceNames` | Søk etter et spesifikt navn (skrivemåte/stedsnavn).. Søk etter et spesifikt navn (skrivemåte/stedsnavn). Returen er sortert etter stedets kategorisering innenfor Sentralt stedsnavnsregister (et fylke kommer f.eks. før en bekk). Innenfor hver kategori er så returen sortert etter hvor godt det matcher søkebegrepet. &lt;p&gt;For eksempel ?sok=Trondheim*&fuzzy=false&lt;/p&gt;. Docs: https://api.kartverket.no/stedsnavn/v1/ (GET /navn) |
 | Search Place Names Near a Point | `searchPlaceNamesNearPoint` | Finn steder nær et gitt geografisk punkt.. Gjør et geografisk søk etter de nærmeste stedene. Vær obs på at et sted kan ha flere stedsnavn og at hvert stedsnavn kan ha flere likestilte skrivemåter. Returen er sortert etter stedets kategorisering innenfor Sentralt stedsnavnsregister slik at det mest "nærliggende" stedet kommer først (en bekk kommer f.eks. før et fylke). Innenfor hver kategori er så returen sortert etter distanse til punktet som man søkte etter. &lt;p&gt;For eksempel ?nord=60.5&ost=11.12&koordsys=4258&radius=1000&lt;/p&gt;. Docs: https://api.kartverket.no/stedsnavn/v1/ (GET /punkt) |
 | Search Places | `searchPlaces` | Søk etter et sted. Et sted kan ha flere navn og hvert navn kan ha flere skrivemåter.. Søk etter et sted. Et sted kan ha flere stedsnavn, hvert navn kan ha flere skrivemåter. Returen er sortert etter stedets kategorisering innenfor Sentralt stedsnavnsregister (et fylke kommer f.eks. før en bekk). Innenfor hver kategori er så returen sortert etter hvor godt det matcher søkebegrepet. &lt;p&gt;For eksempel ?sok=Trondheim*&knr=5001&lt;/p&gt;. Docs: https://api.kartverket.no/stedsnavn/v1/ (GET /sted) |
+
+</details>

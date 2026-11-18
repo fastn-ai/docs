@@ -5,6 +5,8 @@ hidden: true
 
 # Wrike
 
+<img src="../../.gitbook/assets/connectors/wrike.png" alt="Wrike logo" width="64">
+
 Wrike work management and project collaboration platform. Manage tasks, folders, projects, timelogs, comments, and account resources via the Wrike API v4.
 
 | | |
@@ -12,8 +14,6 @@ Wrike work management and project collaboration platform. Manage tasks, folders,
 | **Category** | [Project management](README.md) |
 | **Website** | [wrike.com](https://wrike.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 82 |
-| **Events** | 0 |
 | **Slug** | `wrike` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Wrike from **Build → Integrations → Connectors** and connect an account,
 | Create Space | `createSpace` | Creates a new space in the account. |
 | Create Task | `createTask` | Creates a new task inside a folder or project. |
 | Create Task Approval | `createTaskApproval` | Creates an approval on a task, assigning approvers and an optional due date. |
+
+<details>
+
+<summary>See 72 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Task Comment | `createTaskComment` | Adds a comment to a task. |
 | Create Timelog | `createTimelog` | Logs time against a task. |
 | Create Webhook | `createWebhook` | Registers an account-level webhook that delivers event notifications to a URL. |
@@ -106,3 +113,5 @@ Add Wrike from **Build → Integrations → Connectors** and connect an account,
 | Modify Timelog | `modifyTimelog` | Updates a time-log record's hours, date, comment, or category. |
 | Modify Webhook | `modifyWebhook` | Suspends or resumes a webhook by changing its status. |
 | Modify Workflow | `modifyWorkflow` | Updates a workflow's name, hidden state, or a custom status. |
+
+</details>

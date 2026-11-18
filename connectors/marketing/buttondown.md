@@ -5,6 +5,8 @@ hidden: true
 
 # Buttondown
 
+<img src="../../.gitbook/assets/connectors/buttondown.png" alt="Buttondown logo" width="64">
+
 Buttondown is newsletter software for writers and creators. This connector covers subscriber management, draft email lifecycle, tags, automations (read-only), registration forms, newsletter settings, and webhook event subscriptions via the Buttondown v1 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Buttondown is newsletter software for writers and creators. This connector cover
 | **Category** | [Marketing](README.md) |
 | **Website** | [buttondown.com](https://buttondown.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 28 |
-| **Events** | 0 |
 | **Slug** | `buttondown` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Buttondown from **Build → Integrations → Connectors** and connect an acc
 | Delete Webhook | `deleteWebhook` | Permanently delete a webhook from the connected Buttondown newsletter by its id. |
 | Get Automation | `getAutomation` | Retrieve a single automation on the connected Buttondown newsletter by its id, including its trigger, actions, and filters. Read-only. |
 | Get Automation Analytics | `getAutomationAnalytics` | Retrieve aggregate analytics (e.g. runs, opens, clicks) for a single automation on the connected Buttondown newsletter by its id. |
+
+<details>
+
+<summary>See 18 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Email | `getEmail` | Retrieve a single email on the connected Buttondown newsletter by its id. |
 | Get Form | `getForm` | Retrieve a single registration form on the connected Buttondown newsletter by its id. |
 | Get Newsletter | `getNewsletter` | Retrieve the current settings for a single newsletter on the connected Buttondown account by its id, including branding, template, timezone, and delivery configuration. |
@@ -52,3 +59,5 @@ Add Buttondown from **Build → Integrations → Connectors** and connect an acc
 | Update Subscriber | `updateSubscriber` | Partially update a subscriber on the connected Buttondown newsletter, identified by their id or email address. Only supplied fields are changed. |
 | Update Tag | `updateTag` | Partially update a tag on the connected Buttondown newsletter by its id. Only supplied fields are changed. |
 | Update Webhook | `updateWebhook` | Update a webhook on the connected Buttondown newsletter by its id. Buttondown's API treats this as a full replacement of the webhook's url and event_types, so both must be supplied even though the HTTP method is PATCH. |
+
+</details>

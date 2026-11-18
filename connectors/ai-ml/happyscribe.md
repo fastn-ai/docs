@@ -5,6 +5,8 @@ hidden: true
 
 # HappyScribe
 
+<img src="../../.gitbook/assets/connectors/happyscribe.png" alt="HappyScribe logo" width="64">
+
 HappyScribe transcription, subtitling and translation platform. Submit media for automatic or human transcription, manage transcriptions, folders, glossaries and style guides, export transcripts to 20+ formats, order translations, dispatch an AI notetaker to Zoom/Google Meet/Microsoft Teams calls, and manage workspace members. Wraps the HappyScribe REST API v1 at https://www.happyscribe.com/api/v1.
 
 | | |
@@ -12,8 +14,6 @@ HappyScribe transcription, subtitling and translation platform. Submit media for
 | **Category** | [AI and ML](README.md) |
 | **Website** | [happyscribe.com](https://happyscribe.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 30 |
-| **Events** | 6 |
 | **Slug** | `happyscribe` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add HappyScribe from **Build → Integrations → Connectors** and connect an ac
 | Create Translation Task (Deprecated) | `createTranslationTask` | DEPRECATED by HappyScribe - use Create Translation Order instead, which supports several target languages and a confirmation step. Starts a machine translation of an existing transcription into one target language and creates a new transcription holding the result. BILLABLE: there is no confirm step, so this charges as soon as it is called. Poll Get Translation Task until state is done, then read translatedTranscriptionId. |
 | Delete Transcription | `deleteTranscription` | Delete a HappyScribe transcription. By default it is moved to the Trash and can be restored; pass permanent=true to delete it irreversibly. Deleting a transcription that is still processing cancels it and refunds the credits it consumed. Late pipeline stages (aligning, retrying, unlocked, automatic_transcribing_second_part, pro_transcribing, human_translating) cannot be cancelled and return 409 Conflict naming the state. |
 | Get Company | `getCompany` | HappyScribe Intelligence API: retrieve a single company discovered from your workspace's transcripts, by its integer id. REQUIRES ENROLMENT - the Intelligence API is in private beta and a workspace that is not enrolled gets 404, as does a company id belonging to another workspace. |
+
+<details>
+
+<summary>See 20 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Export | `getExport` | Retrieve a HappyScribe export by id to check whether it has finished and to obtain its download_link. Poll this after Create Export until state is ready; expired means the file is no longer available and a new export must be created. |
 | Get Meeting | `getMeeting` | Retrieve a HappyScribe notetaker meeting by id, including its lifecycle status, the effective recording settings, and - once ready - the linked transcription id, the full transcript, the plain-text summary, and any associated People and Companies. Poll this when not using meeting webhooks. |
 | Get Order | `getOrder` | Retrieve a HappyScribe order by id: its state, the operations it performs, the full pricing breakdown, per-file ingestion progress, and - once fulfilled - outputsIds holding the resulting transcription ids. Use it to price an unconfirmed order before submitting it and to track a submitted one to completion. |
@@ -54,6 +61,8 @@ Add HappyScribe from **Build → Integrations → Connectors** and connect an ac
 | Update Organization Membership Role | `updateOrganizationMembershipRole` | Change a HappyScribe workspace member's role to admin or member. Get the membership id from List Organization Memberships. The workspace owner's role cannot be changed here, the caller must be an owner or admin, and the plan must allow the requested role. |
 | Update Transcription | `updateTranscription` | Rename a HappyScribe transcription, move it to another folder in the same workspace, and/or toggle "anyone with the link" sharing. Any combination of the three can be changed in one call. When sharing is enabled the response carries the publicUrl to share; set it back to false to revoke public access. |
 | Upload File To Signed URL | `uploadFileToSignedUrl` | Upload media bytes to the pre-signed AWS S3 URL returned by Get Upload URL. Split the signed URL into its path segments and query parameters and pass them here with the file content. KNOWN LIMITATION: the fastn engine injects the connection's Authorization header on every request and AWS rejects a pre-signed URL that also carries one ("Only one auth mechanism allowed"), so this action cannot currently complete - the same request succeeds with plain curl. Prefer the supported alternative: host the media at any publicly reachable URL and pass that URL straight to Create Order or Create Transcription; HappyScribe accepts YouTube and Vimeo links too. |
+
+</details>
 
 ## Events
 

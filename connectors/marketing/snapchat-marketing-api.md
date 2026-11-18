@@ -5,6 +5,8 @@ hidden: true
 
 # Snapchat Marketing API
 
+<img src="../../.gitbook/assets/connectors/snapchat-marketing-api.ico" alt="Snapchat Marketing API logo" width="64">
+
 Snapchat Marketing API connector covering the Ads API (organizations, ad accounts, funding sources, billing centers, members and roles, campaigns, ad squads, ads, creatives, creative elements, media, catalogs, product feeds and product sets, audience segments, pixels, mobile apps, lead generation forms, interaction zones, dynamic templates, targeting reference data, measurement and stats reporting, invoices and transactions, and the Ads Library), the Public Profile API (profiles, stories, saved stories, spotlights, lenses, snaps, metrics, roles, sharing policies, and messaging), and the Conversions API for server-to-server event tracking.
 
 | | |
@@ -12,8 +14,6 @@ Snapchat Marketing API connector covering the Ads API (organizations, ad account
 | **Category** | [Marketing](README.md) |
 | **Website** | [snapchat.com](https://snapchat.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 255 |
-| **Events** | 1 |
 | **Slug** | `snapchatMarketingApi` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Snapchat Marketing API from **Build → Integrations → Connectors** and co
 | Copy Media | `copyMedia` | Copies up to 20 READY video or image media objects into another ad account in the same organization. Lens media cannot be copied. The request is not atomic, so a partial success is possible and the response lists a status per requested copy in the order they were sent. |
 | Create Ad | `createAd` | Creates an ad inside an ad squad by pairing a creative with that squad. Create it PAUSED and activate it deliberately, because an ACTIVE ad in an ACTIVE squad starts delivering as soon as review passes. Creating many ads from the same creative within a second is rate limited, so use bulk requests instead. |
 | Create Ad Account | `createAdAccount` | Creates an ad account inside the specified organization. Set regulations.restricted_delivery_signals for credit, housing or employment advertising, payingAdvertiserName for political advertising, and the agency fields when an agency buys on behalf of a client based in or targeting France. |
+
+<details>
+
+<summary>See 245 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Ad Account Role | `createAdAccountRole` | Assigns an ad account role to a member. The member must already hold the member role in the organization that owns the ad account. |
 | Create Ad Engagement Audience | `createAdEngagementSegment` | Creates an audience of Snapchatters who took a specific action on ads in this ad account, campaign or ad squad. Each engagement spec is combined with OR, which is the only supported operator. |
 | Create Ad Squad | `createAdSquad` | Creates an ad squad inside a campaign. The ad squad owns the targeting, budget, bid, placement and schedule for the ads beneath it. Create it PAUSED and activate it deliberately, because an ACTIVE ad squad with a budget begins spending as soon as its ads are approved. |
@@ -279,6 +286,8 @@ Add Snapchat Marketing API from **Build → Integrations → Connectors** and co
 | Upload Media | `uploadMedia` | Uploads the asset file into a media container created with Create Media. Videos must be 1080 by 1920 pixels, MP4 or MOV, 3 to 1800 seconds and at most 32 MB; larger videos need the chunked upload actions. Top snap images are 1080 by 1920 pixels PNG or JPG up to 5 MB, and playables are a ZIP containing index.html and config.json up to 5 MB. |
 | Validate App Conversion Events | `validateAppConversionEvents` | Checks that a mobile app conversion payload is well formed without recording the events. Use this to test an integration before sending live traffic. |
 | Validate Web Conversion Events | `validateWebConversionEvents` | Checks that a web or offline conversion payload is well formed without recording the events. Use this to test an integration before sending live traffic. |
+
+</details>
 
 ## Events
 

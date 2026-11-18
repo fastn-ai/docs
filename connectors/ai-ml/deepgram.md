@@ -5,6 +5,8 @@ hidden: true
 
 # Deepgram
 
+<img src="../../.gitbook/assets/connectors/deepgram.jpg" alt="Deepgram logo" width="64">
+
 Deepgram voice AI platform: speech-to-text transcription (listen), text-to-speech (speak), text intelligence (read), and full management API (projects, keys, members, invitations, usage, balances, models, auth grant). Auth: Authorization: Token &lt;api_key&gt;.
 
 | | |
@@ -12,8 +14,6 @@ Deepgram voice AI platform: speech-to-text transcription (listen), text-to-speec
 | **Category** | [AI and ML](README.md) |
 | **Website** | [deepgram.com](https://deepgram.com) |
 | **Authentication** | API key |
-| **Actions** | 31 |
-| **Events** | 0 |
 | **Slug** | `deepgram` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Deepgram from **Build → Integrations → Connectors** and connect an accou
 | Get Model | `getModel` | Get a single public Deepgram model by id. Free read. |
 | Get Project | `getProject` | Get a single Deepgram project by id. Free read — credit-safe for validation. |
 | Get Project Balance | `getProjectBalance` | Get a single credit balance for a project by balance id. Free read. |
+
+<details>
+
+<summary>See 21 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Project Balances | `getProjectBalances` | List credit balances for a project. Free read — credit-safe for validation. |
 | Get Project Billing Breakdown | `getProjectBillingBreakdown` | Get a billing (dollars) breakdown for a project. Free read. |
 | Get Project Key | `getProjectKey` | Get a single API key for a project by key id. Free read. |
@@ -55,3 +62,5 @@ Add Deepgram from **Build → Integrations → Connectors** and connect an accou
 | Transcribe Pre-recorded Audio (URL) | `transcribeUrl` | Transcribe pre-recorded audio from a hosted URL using Deepgram speech-to-text. Supply the audio url and optional feature flags (model, smart_format, diarize, summarize, etc.). Costs credits per audio second. |
 | Update Member Scopes | `updateMemberScopes` | Update the scope assigned to a project member. |
 | Update Project | `updateProject` | Update a Deepgram project's name. |
+
+</details>

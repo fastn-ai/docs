@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Teams
 
+<img src="../../.gitbook/assets/connectors/microsoft-teams.png" alt="Microsoft Teams logo" width="64">
+
 Microsoft Teams via Microsoft Graph API v1.0 — manage teams, channels, channel messages, replies, chats, chat messages, and members.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Teams via Microsoft Graph API v1.0 — manage teams, channels, channel
 | **Category** | [Communication](README.md) |
 | **Website** | [teams.microsoft.com](https://teams.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 27 |
-| **Events** | 0 |
 | **Slug** | `microsoftTeams` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Teams from **Build → Integrations → Connectors** and connect a
 | Get Me | `getMe` | Get the profile of the currently signed-in user. |
 | Get Team | `getTeam` | Get details of a specific team by team ID. |
 | Get User | `getUser` | Get the profile of a single user by object id or userPrincipalName, for resolving the person behind a chat or channel message (GET /users/{userId}). Requires User.ReadBasic.All or User.Read.All. |
+
+<details>
+
+<summary>See 17 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Channel Messages | `listChannelMessages` | List messages in a team channel. |
 | List Channels | `listChannels` | List all channels in a team (GET /teams/{teamId}/channels). Supports $filter and $select, e.g. filter to private channels only. Requires Channel.ReadBasic.All. |
 | List Channels Flat | `listChannelsFlat` | List channels in a team with optional OData filtering (GET /teams/{teamId}/channels), for example only private channels. Returns the standard Microsoft Graph collection envelope. Requires Channel.ReadBasic.All. |
@@ -51,3 +58,5 @@ Add Microsoft Teams from **Build → Integrations → Connectors** and connect a
 | Send Chat Message | `sendChatMessage` | Send a message to a chat. |
 | Update Channel | `updateChannel` | Update the display name and/or description of a channel (PATCH /teams/{teamId}/channels/{channelId}). Only the fields you pass are sent, so omitted fields keep their current value. Returns 204 No Content. Requires Channel.ReadWrite.All. |
 | Update Team | `updateTeam` | Update settings of a team such as description or member permissions. |
+
+</details>

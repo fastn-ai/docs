@@ -5,6 +5,8 @@ hidden: true
 
 # Ideal Postcodes
 
+<img src="../../.gitbook/assets/connectors/ideal-postcodes.png" alt="Ideal Postcodes logo" width="64">
+
 Ideal Postcodes provides UK and international address data: postcode lookup, address search and autocomplete, UDPRN and UMPRN retrieval, reverse geocoding, address cleansing, place search, and email and phone number validation, plus API key management for usage, limits, licensees and configurations. This connector covers the full Ideal Postcodes v1 REST API.
 
 | | |
@@ -12,8 +14,6 @@ Ideal Postcodes provides UK and international address data: postcode lookup, add
 | **Category** | [Maps and location](README.md) |
 | **Website** | [ideal-postcodes.co.uk](https://ideal-postcodes.co.uk) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `idealPostcodes` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Ideal Postcodes from **Build → Integrations → Connectors** and connect a
 | Get Key Availability | `getKeyAvailability` | Reports whether the connected API key is currently able to serve lookups, along with the contexts and country datasets it can search. Requires no user token. |
 | Get Key Details | `getKeyDetails` | Retrieves the configuration of the connected API key, including its name, lookup balance, daily, monthly and individual limits, allowed URLs, notification settings, enabled datasets and automated top-up configuration. Requires the account user token. |
 | Get Key Lookup Logs | `getKeyLookupLogs` | Downloads the lookup history for the connected API key as CSV over an optional time window, optionally filtered by licensee. Requires the account user token. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Key Usage | `getKeyUsage` | Returns lookup usage statistics for the connected API key over an optional time window, broken down by day and resource, and optionally filtered by tags or licensee. Requires the account user token. |
 | List Configurations | `listConfigurations` | Lists the stored configuration payloads associated with the connected API key, used to drive hosted address-capture integrations. Requires the account user token. |
 | List Licensees | `listLicensees` | Lists the licensees registered against the connected API key, with cursor pagination and an optional search query. Requires the account user token. |
@@ -53,3 +60,5 @@ Add Ideal Postcodes from **Build → Integrations → Connectors** and connect a
 | Update Licensee | `updateLicensee` | Updates a licensee registered against the connected API key, changing its name, address, postcode, allowed URLs or daily lookup limit. Requires the account user token. Note: the live API routes this update over POST; the PUT method documented in the OpenAPI specification returns a router-level 404. |
 | Validate Email Address | `validateEmailAddress` | Validates an email address and reports whether it is deliverable, a catch-all, a free provider, a role account or disposable, with spelling suggestions where available. |
 | Validate Phone Number | `validatePhoneNumber` | Validates a phone number and returns national and international formats, country details and carrier information, optionally performing a live current-carrier lookup. |
+
+</details>

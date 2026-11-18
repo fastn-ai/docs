@@ -5,6 +5,8 @@ hidden: true
 
 # Didit
 
+<img src="../../.gitbook/assets/connectors/didit.png" alt="Didit logo" width="64">
+
 Didit identity infrastructure: KYC verification sessions, KYB business verification, AML screening and monitoring, transaction monitoring (KYT), wallet screening, Travel Rule, case management, regulatory reports, workflows, questionnaires, webhooks and billing, over the Didit REST API at verification.didit.me.
 
 | | |
@@ -12,8 +14,6 @@ Didit identity infrastructure: KYC verification sessions, KYB business verificat
 | **Category** | [Search and web](README.md) |
 | **Website** | [didit.me](https://didit.me) |
 | **Authentication** | API key, OAuth 2.0 |
-| **Actions** | 222 |
-| **Events** | 11 |
 | **Slug** | `didit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Didit from **Build → Integrations → Connectors** and connect an account,
 | Approve Staged Resolution 4 Eyes | `approveCaseResolution` | Apply a resolution staged by resolve on a maker blueprint. The caller must be a different user than the one who submitted it, otherwise 403. |
 | Arm A Sandbox Scenario On A Session | `postV3SessionSandboxArm` | Persist a sandbox scenario on a `Not Started` session and expand its bundled magic values (email, phone, or `expected_details` fields) onto the session, so the mocked providers reproduce the scenario's outcome once the flow runs. This is the endpoint the pre-flow scenario picker in Didit's hosted verification UI calls when a tester chooses an outcome before starting capture. Build your own picker against it, or call it directly from a sandbox test harness. Authenticate with the session's own `Session-Token` (returned in `session_token` by [Create Session](/sessions-api/create-session)), not your application `x-api-key`: this endpoint is meant to be called from the client, not your backend. A scenario is only accepted while `status` is `Not Started`. Calling it again while still `Not Started` re-arms the session: it swaps in the new scenario's magic values and clears only the values the *previous* scenario wrote, so any value the user already typed by hand (email, first name, |
 | Assign Or Unassign Case | `assignCase` | Assign the case to a user, or unassign it by sending assignee_user_id: null. assignee_email/assignee_name auto-provision a User row when the assignee does not exist yet. |
+
+<details>
+
+<summary>See 212 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Backtest Rule Configuration | `backtestTransactionRules` | Evaluate a hypothetical rule configuration against your recent transactions (most recent first, up to the backtest cap) without creating a rule or touching any transaction. Use it before activating a rule to see how often it would have matched and how many subjects it would have affected. |
 | Batch Delete Businesses | `batchDeleteBusinesses` | **Permanently delete** businesses — this cannot be undone. For blocking prefer [Update Business Status](#patch-/v3/businesses/-vendor_data-/update-status/) with `BLOCKED`. |
 | Batch Delete Users | `batchDeleteUsers` | **Permanently delete** users — the user records are removed permanently. For everyday blocking prefer [Update User Status](#patch-/v3/users/-vendor_data-/update-status/) with `BLOCKED`. Select users with `vendor_data_list`, with `didit_internal_id_list`, or with both at once; or pass `delete_all: true`. The Console's `filter_*` batch params are rejected with a `400` rather than ignored, so a narrowed intent can never turn into a full wipe. **Biometric templates:** every image-free biometric template retained for these users after session deletion (see `/v3/biometric-templates/`) is purged before the user is deleted, so the person stops matching in duplicate detection and Face Search. If a template cannot be purged because a biometric store is unavailable, the call returns `503`, no user in the request is deleted, and repeating the request finishes the job. |
@@ -247,6 +254,8 @@ Add Didit from **Build → Integrations → Connectors** and connect an account,
 | Validate Report | `validateRegulatoryReport` | Check the report against the obligatory goAML header fields (reporting entity ID, submission code, local currency, action taken, submission date), plus at least one attached transaction and a 2-letter jurisdiction, without generating any files. Also stores the result on the report: validation_errors and validated_at are updated, and a non-finalized report's status moves to VALIDATED (no errors) or back to DRAFT (errors). |
 | Verify Email And Get Credentials | `authVerifyEmail` | Step 2 of programmatic onboarding. Exchanges the 6 character emailed code for a verified Didit account, a default organization and application, and an RS256 JWT pair. The response contains the new application api_key - treat it as a secret. Unauthenticated. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -263,4 +272,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | User Data Updated | `user.data.updated` | A vendor user entity profile changed. Payload schema MODELLED from Didit published sample payloads (docs.didit.me/integration/webhooks); not captured from a live delivery, because completing a verification session requires the hosted browser flow. |
 | User Status Updated | `user.status.updated` | A vendor user entity moved between ACTIVE, IN_REVIEW, FLAGGED or BLOCKED, including as a consequence of transaction activity or ongoing AML monitoring. Payload schema MODELLED from Didit published sample payloads (docs.didit.me/integration/webhooks); not captured from a live delivery, because completing a verification session requires the hosted browser flow. |
 | Verification Session Data Updated | `data.updated` | Extracted or reviewer-corrected data on a verification session changed (OCR fields, POA data, KYB registry fields). Payload schema MODELLED from Didit published sample payloads (docs.didit.me/integration/webhooks); not captured from a live delivery, because completing a verification session requires the hosted browser flow. |
+
+<details>
+
+<summary>See 1 more event</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Verification Session Status Updated | `status.updated` | A KYC or KYB verification session reached a new status. The payload carries the full decision object for terminal statuses (Approved, Declined, In Review, Abandoned); a Resubmitted event carries resubmit_info instead. KYB sessions carry session_kind "business". Payload schema MODELLED from Didit published sample payloads (docs.didit.me/integration/webhooks); not captured from a live delivery, because completing a verification session requires the hosted browser flow. |
+
+</details>

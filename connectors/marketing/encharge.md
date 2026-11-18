@@ -5,6 +5,8 @@ hidden: true
 
 # Encharge
 
+<img src="../../.gitbook/assets/connectors/encharge.png" alt="Encharge logo" width="64">
+
 Encharge marketing automation — manage people, segments, tags, custom person fields, webhooks (event subscriptions), send transactional emails, and ingest events/identify/alias/group objects.
 
 | | |
@@ -12,8 +14,6 @@ Encharge marketing automation — manage people, segments, tags, custom person f
 | **Category** | [Marketing](README.md) |
 | **Website** | [encharge.io](https://encharge.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `encharge` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Encharge from **Build → Integrations → Connectors** and connect an accou
 | Delete Person Field | `deleteField` | Delete a person field from your Encharge account, identified by its field name. |
 | Delete Webhook Subscription | `deleteWebhook` | Delete an existing Encharge event subscription (webhook) by its id. |
 | Get Account Info | `getAccountInfo` | Retrieve information about the connected Encharge account, including people count, status, timezone, active services, and site. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get People | `getPeople` | Retrieve one or more specific people from your Encharge account by email, userId, or Encharge id. |
 | Get People in Segment | `getPeopleInSegment` | Retrieve the people that belong to a given segment, with optional pagination and sorting. |
 | Get Person Fields | `getFields` | Retrieve all person fields (custom and system properties) defined in your Encharge account. |
@@ -44,3 +51,5 @@ Add Encharge from **Build → Integrations → Connectors** and connect an accou
 | Track Event | `trackEvent` | Record a custom event for a person via the Encharge Ingest API. The person is created if they do not exist. |
 | Unsubscribe Person | `unsubscribePerson` | Unsubscribe a person so they no longer receive emails. Identify the person by email, userId, or Encharge id. |
 | Update Person Field | `updateField` | Modify an existing person field, identified by its field name. |
+
+</details>

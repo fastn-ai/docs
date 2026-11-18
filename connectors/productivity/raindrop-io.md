@@ -5,6 +5,8 @@ hidden: true
 
 # Raindrop.io
 
+<img src="../../.gitbook/assets/connectors/raindrop-io.png" alt="Raindrop.io logo" width="64">
+
 Raindrop.io is a bookmark manager for saving, organising and sharing links, articles, photos and files. This connector covers the full Raindrop.io v1 REST API: collections with nested structure, sharing and covers, raindrops (bookmarks) singly and in bulk, highlights, tags, filters, the authenticated user, URL and file import, export and backups.
 
 | | |
@@ -12,8 +14,6 @@ Raindrop.io is a bookmark manager for saving, organising and sharing links, arti
 | **Category** | [Productivity](README.md) |
 | **Website** | [raindrop.io](https://raindrop.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 52 |
-| **Events** | 0 |
 | **Slug** | `raindropIo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Raindrop.io from **Build → Integrations → Connectors** and connect an ac
 | Delete Collection | `deleteCollection` | Removes a collection. The raindrops it held are moved to Trash rather than deleted outright. |
 | Delete Many Raindrops | `deleteManyRaindrops` | Removes many bookmarks from a collection at once. They are moved to Trash unless the collection is Trash (-99), in which case they are deleted permanently. Supply Raindrop IDs to target specific bookmarks, or omit it to remove every bookmark in the collection. |
 | Delete Multiple Collections | `deleteMultipleCollections` | Removes several collections at once. The raindrops they held are moved to Trash rather than deleted outright. |
+
+<details>
+
+<summary>See 42 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Raindrop | `deleteRaindrop` | Removes a bookmark. It is moved to Trash first; calling this on a bookmark already in Trash deletes it permanently. |
 | Disconnect Social Account | `disconnectSocialAccount` | Unlinks a social login provider from the Raindrop.io account, so it can no longer be used to sign in. |
 | Download Backup | `downloadBackup` | Downloads a generated backup in the chosen format. Raindrop.io redirects to signed storage and fastn follows the redirect, returning the file body as a plain string. |
@@ -76,3 +83,5 @@ Add Raindrop.io from **Build → Integrations → Connectors** and connect an ac
 | Update Many Raindrops | `updateManyRaindrops` | Applies the same change to many bookmarks in a collection at once - move them, tag them, favourite them or send them to Trash. Supply Raindrop IDs to target specific bookmarks, or omit it to apply the change to every bookmark in the collection. |
 | Update Raindrop | `updateRaindrop` | Updates an existing bookmark. Only the fields supplied are sent, so untouched fields keep their current values. Set In Trash to true to move it to Trash, or false to restore it. |
 | Update User | `updateUser` | Updates the authenticated user's own profile and app configuration - name, email, password and the Raindrop.io interface settings held in config. |
+
+</details>

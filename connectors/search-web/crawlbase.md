@@ -5,6 +5,8 @@ hidden: true
 
 # Crawlbase
 
+<img src="../../.gitbook/assets/connectors/crawlbase.png" alt="Crawlbase logo" width="64">
+
 Crawlbase is a web crawling and scraping platform with headless-browser rendering, residential proxies, anti-bot bypass and built-in scrapers. This connector covers the Crawlbase REST API: the Crawling API (GET, POST and PUT crawls with JSON, HTML or Markdown output, screenshots, scrapers and async mode), the Enterprise Crawler queue and its management endpoints (create, get, update, stats, pause, unpause, purge, delete, delete job, find job by RID, push URLs), Cloud Storage (get, bulk get, delete, bulk delete, list RIDs, total count), the Account usage API, the free User Agents API and the legacy Scraper, Screenshots and Leads APIs.
 
 | | |
@@ -12,8 +14,6 @@ Crawlbase is a web crawling and scraping platform with headless-browser renderin
 | **Category** | [Search and web](README.md) |
 | **Website** | [crawlbase.com](https://crawlbase.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 25 |
-| **Events** | 1 |
 | **Slug** | `crawlbase` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Crawlbase from **Build → Integrations → Connectors** and connect an acco
 | Delete Crawler Job | `deleteCrawlerJob` | Drops a single queued URL from a crawler by its request id (rid). |
 | Delete Stored Page | `deleteStoredPage` | Deletes a single stored page from Cloud Storage by request id. Returns a success message, or an error of 'Not Found' when the RID is not in storage. |
 | Find Crawler Job By RID | `findCrawlerJobByRid` | Looks up where a pushed request stands in a crawler: QUEUED with its queued metadata while pending, or NOT_QUEUED once it has been crawled or was never enqueued. |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Account Usage | `getAccountUsage` | Returns the current month's usage statistics for one Crawlbase product: successful and failed requests, amount due, remaining credits (subscription products) and per-domain success rates, optionally with the previous month for comparison. Rate-limited to one request per five minutes; cache the result. |
 | Get Crawler | `getCrawler` | Returns a crawler's configuration, status (active or paused) and queue statistics. |
 | Get Crawler Stats | `getCrawlerStats` | Returns a summary across all your crawlers: concurrency, queue depth, completed and failed counts and a history breakdown, optionally limited to a date range. |
@@ -49,6 +56,8 @@ Add Crawlbase from **Build → Integrations → Connectors** and connect an acco
 | Take Screenshot (Legacy) | `takeScreenshotLegacy` | Legacy standalone Screenshots API: renders a URL in headless Chrome and returns the image bytes (PNG by default) for the viewport or the full page. Requires a JavaScript token and is closed to accounts created after 1 November 2024, which receive a 403; new integrations should use Crawl URL with screenshot=true. |
 | Unpause Crawler | `unpauseCrawler` | Resumes a paused crawler so it starts processing its queue again. |
 | Update Crawler | `updateCrawler` | Changes a crawler's callback URL without restarting it. |
+
+</details>
 
 ## Events
 

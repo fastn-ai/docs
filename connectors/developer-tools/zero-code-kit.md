@@ -5,6 +5,8 @@ hidden: true
 
 # 0CodeKit
 
+<img src="../../.gitbook/assets/connectors/zero-code-kit.png" alt="0CodeKit logo" width="64">
+
 0CodeKit is a utility toolbox API for no-code and low-code automation, exposing stateless helpers for generation, conversion, PDF and image manipulation, text and AI processing, business validation, cryptography, date and time maths, storage bins and code execution.
 
 | | |
@@ -12,8 +14,6 @@ hidden: true
 | **Category** | [Developer tools](README.md) |
 | **Website** | [0codekit.com](https://0codekit.com) |
 | **Authentication** | API key |
-| **Actions** | 169 |
-| **Events** | 0 |
 | **Slug** | `zeroCodeKit` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add 0CodeKit from **Build → Integrations → Connectors** and connect an accou
 | Build UTM Link | `operatorUtmBuild` | Append UTM campaign parameters to a URL and return the tagged tracking link. |
 | Calculate BMI | `calculateBmi` | Calculate body mass index from weight and height, with a classification, desirable body weight, daily calories and macronutrient split. |
 | Calculate Geographical Distance | `calculateGeodistanceV2` | Calculate the travel distance and duration between two addresses or coordinate pairs for a given travel mode. |
+
+<details>
+
+<summary>See 159 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Call a 0CodeKit Endpoint | `mcpCall` | Invoke any 0CodeKit endpoint indirectly by naming its path and supplying its request body. |
 | Check Auth Status | `saasAuth` | Verify that the stored API key is accepted by 0CodeKit. Useful as a lightweight connection health check. |
 | Check Content Policy | `aiCheckcontentpolicy` | Check a piece of text against the AI content policy and report whether it is considered safe. |
@@ -193,3 +200,5 @@ Add 0CodeKit from **Build → Integrations → Connectors** and connect an accou
 | Validate an IBAN | `businessValidateIban` | Check that an IBAN has a valid structure and checksum. |
 | Validate Geolocation | `businessValidateGeolocation` | Check that a postal address exists and return it in a normalised form. |
 | Verify a Domain | `businessVerifyDomain` | Check that a domain resolves and return its registrable main domain. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Bookingmood
 
+<img src="../../.gitbook/assets/connectors/bookingmood.png" alt="Bookingmood logo" width="64">
+
 Bookingmood vacation-rental and booking management API (PostgREST v11.1 at https://api.bookingmood.com/v1). Manage products, bookings, calendar events, guests/contacts, coupons, rates, availability, invoices, payments, tasks, sites, widgets and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Bookingmood vacation-rental and booking management API (PostgREST v11.1 at https
 | **Category** | [Productivity](README.md) |
 | **Website** | [bookingmood.com](https://bookingmood.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 82 |
-| **Events** | 24 |
 | **Slug** | `bookingmood` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Bookingmood from **Build → Integrations → Connectors** and connect an ac
 | Delete Coupon | `deleteCoupon` | Permanently delete one coupon, selected by its id. The id filter is mandatory so an unfiltered DELETE can never wipe the coupons table. |
 | Delete Product | `deleteProduct` | Permanently delete one product, selected by its id. The id filter is mandatory so an unfiltered DELETE can never wipe the table. Returns the deleted row. |
 | Delete Webhook | `deleteWebhook` | Unregister one webhook endpoint, selected by its id, so Bookingmood stops delivering events to it. The id filter is mandatory so an unfiltered DELETE can never remove every webhook. |
+
+<details>
+
+<summary>See 72 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Attribute options | `listAttributeOptions` | Possible options per attribute. Lists attribute options rows visible to the API key (GET /v1/attribute_options); every column can be filtered with PostgREST operators. |
 | List Attributes | `listAttributes` | Attributes to segment and filter units by. Lists attributes rows visible to the API key (GET /v1/attributes); every column can be filtered with PostgREST operators. |
 | List Booking details | `listBookingDetails` | Booking details as filled in by guests in the booking form. Lists booking details rows visible to the API key (GET /v1/booking_details); every column can be filtered with PostgREST operators. |
@@ -107,6 +114,8 @@ Add Bookingmood from **Build → Integrations → Connectors** and connect an ac
 | Update Webhook | `updateWebhook` | Update one registered webhook, selected by its id - for example to change its delivery URL or its event subscription list. The id filter is mandatory so an unfiltered PATCH is impossible. |
 | Validate Cart | `validateCart` | Validate a cart of items by checking availability and occupancy of each item, before booking with Cart Checkout (POST /v1/cart-validate). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -123,6 +132,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Calendar Event Task Updated | `calendar_event_tasks.updated` | A task attached to a calendar event was updated. |
 | Calendar Event Updated | `calendar_events.updated` | A calendar event was updated. |
 | Contact Created | `contacts.created` | A contact (guest) was created. Payload schema below was CAPTURED from a real Bookingmood delivery. |
+
+<details>
+
+<summary>See 14 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Contact Updated | `contacts.updated` | A contact was updated. Payload carries both the new and the old row. |
 | Invoice Created | `invoices.created` | An invoice was created. |
 | Invoice Updated | `invoices.updated` | An invoice was updated. |
@@ -137,3 +153,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Site Updated | `sites.updated` | A booking site was updated. |
 | Widget Created | `widgets.created` | A booking widget was created. |
 | Widget Updated | `widgets.updated` | A booking widget was updated. |
+
+</details>

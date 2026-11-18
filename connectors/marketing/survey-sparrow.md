@@ -5,6 +5,8 @@ hidden: true
 
 # SurveySparrow
 
+<img src="../../.gitbook/assets/connectors/survey-sparrow.png" alt="SurveySparrow logo" width="64">
+
 SurveySparrow experience management platform. Wraps the complete SurveySparrow REST API v3: surveys, sections, questions, variables and expressions, responses and batch response import, contacts, contact lists and contact properties, share channels and reminders, NPS/CES/CSAT metrics and reports, tickets, ticket comments, ticket fields and templates, users, roles and teams, survey folders, translations and languages, audit logs, reputation management, Employee 360 invites, and webhooks. Authenticates with a private-app access token sent as a Bearer token, against the regional API host for the account's data center.
 
 | | |
@@ -12,8 +14,6 @@ SurveySparrow experience management platform. Wraps the complete SurveySparrow R
 | **Category** | [Marketing](README.md) |
 | **Website** | [surveysparrow.com](https://surveysparrow.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 116 |
-| **Events** | 0 |
 | **Slug** | `surveySparrow` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add SurveySparrow from **Build → Integrations → Connectors** and connect an 
 | Create Contact | `createContact` | Creates a contact or employee record that surveys can be shared with. |
 | Create Contact List | `createContactList` | Creates a contact list that contacts can be grouped into for sharing surveys. |
 | Create Contact Property | `createContactProperty` | Creates a custom contact property so extra data can be stored against contacts. |
+
+<details>
+
+<summary>See 106 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Contacts | `createContacts` | Imports a batch of contacts asynchronously, optionally adding each one to contact lists. Returns a token to poll with Get Contact Batch Status. |
 | Create Custom Language | `createCustomLanguage` | Creates a custom language in the account so surveys can be translated into a dialect SurveySparrow does not ship by default. |
 | Create Question | `createQuestion` | Adds a question to a survey, optionally inside a specific section. The question object carries the text, type, answer choices, matrix rows and columns, type-specific display properties and display logic. |
@@ -140,3 +147,5 @@ Add SurveySparrow from **Build → Integrations → Connectors** and connect an 
 | Update Translation | `updateTranslation` | Re-runs the automatic translation of a survey language. The endpoint also accepts an uploaded translation spreadsheet, but binary file uploads are not supported through this connector, so only the Google Translate path is available here. SurveySparrow accepts this endpoint only as multipart/form-data, optionally with an Excel translation file. Sent as multipart/form-data text fields; the optional Excel translation file (binary) cannot be sent by this action. |
 | Update User | `updateUser` | Renames an account user or changes the role assigned to them. |
 | Update Webhook | `updateWebhook` | Changes a webhook's endpoint, name, delivery method, custom headers or payload template. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Gorgias
 
+<img src="../../.gitbook/assets/connectors/gorgias.png" alt="Gorgias logo" width="64">
+
 Gorgias helpdesk connector: tickets, messages, customers, tags, users, account, and HTTP integration (webhook) management. Subdomain-based (https://{subdomain}.gorgias.com/api). HTTP Basic auth (email + API key) primary.
 
 | | |
@@ -12,8 +14,6 @@ Gorgias helpdesk connector: tickets, messages, customers, tags, users, account, 
 | **Category** | [Communication](README.md) |
 | **Website** | [gorgias.com](https://gorgias.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 16 |
-| **Events** | 0 |
 | **Slug** | `gorgias` |
 
 ## Use it
@@ -34,9 +34,18 @@ Add Gorgias from **Build → Integrations → Connectors** and connect an accoun
 | Get Ticket | `getTicket` | Get a ticket by id. |
 | List Customers | `listCustomers` | List customers. |
 | List Integrations | `listIntegrations` | List HTTP integrations (outbound webhooks). |
+
+<details>
+
+<summary>See 6 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Messages | `listMessages` | List messages, optionally for a ticket. |
 | List Tags | `listTags` | List tags. |
 | List Tickets | `listTickets` | List tickets (cursor-paginated). |
 | List Users | `listUsers` | List agents/users. |
 | Update Customer | `updateCustomer` | Update a customer. |
 | Update Ticket | `updateTicket` | Update a ticket (status, priority, assignee, tags, subject). |
+
+</details>

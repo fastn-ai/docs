@@ -5,6 +5,8 @@ hidden: true
 
 # Nobel Prize API
 
+<img src="../../.gitbook/assets/connectors/nobel-prize-api.jpg" alt="Nobel Prize API logo" width="64">
+
 The official Nobel Prize API (Nobel Prize Outreach, v2.1) gives open data on every Nobel Prize and laureate since 1901: list and filter prizes by year and category, get one prize, search laureates by name, gender, birth/death place and date, affiliation and motivation, and get full laureate records, as JSON or CSV. No API key needed.
 
 | | |
@@ -12,8 +14,6 @@ The official Nobel Prize API (Nobel Prize Outreach, v2.1) gives open data on eve
 | **Category** | [Data and databases](README.md) |
 | **Website** | [nobelprize.org](https://nobelprize.org) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `nobelPrizeApi` |
 
 ## Use it

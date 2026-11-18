@@ -5,6 +5,8 @@ hidden: true
 
 # Corrently
 
+<img src="../../.gitbook/assets/connectors/corrently.png" alt="Corrently logo" width="64">
+
 Corrently Energy APIs by STROMDAO provide regional green-electricity, CO2, price and scheduling signals for Germany: GrünstromIndex forecasts, CO2 Advisor, CO2 Meter, best-hour search, renewable dispatch, day-ahead market data, Strommix production mix, merit-order analysis, PHEV charge-or-fuel advice, photovoltaic generation forecasts, energy schedules and tariff lookups. All requests are authenticated with a Corrently access token from https://console.corrently.io/.
 
 | | |
@@ -12,8 +14,6 @@ Corrently Energy APIs by STROMDAO provide regional green-electricity, CO2, price
 | **Category** | [Search and web](README.md) |
 | **Website** | [corrently.io](https://corrently.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 21 |
-| **Events** | 0 |
 | **Slug** | `corrently` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Corrently from **Build → Integrations → Connectors** and connect an acco
 | Get GrünstromIndex Prediction | `getGsiPrediction` | Returns the GrünstromIndex (Green Power Index) forecast for a German postal code: hourly forecast elements with the regional renewable share, wind and solar contributions, CO2 emissions per kWh and price signals for the upcoming days. |
 | Get Market Data | `getMarketData` | Returns electricity market data for a German postal code: the national day-ahead spot market price and the local price (including congestion-management costs) per 15-minute period in EUR/MWh. |
 | Get Merit Order Analysis | `getMeritOrderAnalysis` | Returns the Merit Order List analysis for Germany: price buckets of the day-ahead market with, for each bucket, the number of samples, the mid price, the capacity utilisation percentage and the actual generation in MW per production technology. The response is a bare array, exposed here as items. |
+
+<details>
+
+<summary>See 11 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get PHEV Charge Or Fuel Advice | `getPhevChargeOrFuel` | Advises whether a plug-in hybrid vehicle should be driven on electricity or on fuel at a German postal code, based on the vehicle's electric and fuel consumption and the current regional green-electricity and CO2 situation. |
 | Get Renewable Dispatch | `getDispatch` | Returns the physical renewable-energy dispatch for a German postal code: the local energy mix before and after dispatch, the neighbouring locations that feed energy in or receive energy, the average transport distance and a per-day history of the mix. |
 | Get Solar Generation Forecast | `getSolarPrediction` | Returns a photovoltaic generation forecast (watt-hours per period) for a solar installation located by German postal code or by latitude/longitude, taking panel capacity, tilt, azimuth, technology and system losses into account. Passing a previously returned plant id reuses the stored plant configuration. |
@@ -45,3 +52,5 @@ Add Corrently from **Build → Integrations → Connectors** and connect an acco
 | Report Schedule Consumption | `reportScheduleConsumption` | Reports the actual consumption of a running energy schedule (a status_update) so that Corrently can track progress and adjust the remaining time slots. Returns the updated schedule. |
 | Request Access Token | `requestAccessToken` | Requests a new Corrently access token (JWT) and its expiry timestamp. Without an appid an anonymous token is issued; an appid obtained from dev@stromdao.com yields an application-bound token. Use the returned token to renew the connection before it expires. |
 | Update Schedule Requirements | `updateScheduleRequirements` | Changes the optimisation requirements (law, active hours, energy demand, load limits) of an existing energy schedule (a requirement_update) and returns the re-planned schedule. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Lemlist
 
+<img src="../../.gitbook/assets/connectors/lemlist.png" alt="Lemlist logo" width="64">
+
 Lemlist sales engagement and cold outreach automation. Manage campaigns, leads, sequences, schedules, activities, unsubscribes, contacts, companies, tasks, inbox, people database, enrichment, lemwarm, and webhooks.
 
 | | |
@@ -12,8 +14,6 @@ Lemlist sales engagement and cold outreach automation. Manage campaigns, leads, 
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [lemlist.com](https://lemlist.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 122 |
-| **Events** | 0 |
 | **Slug** | `lemlist` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Lemlist from **Build → Integrations → Connectors** and connect an accoun
 | Associate Schedule with Campaign | `associateScheduleWithCampaign` | Associate an existing schedule with a campaign. |
 | Attach Labels to Conversations | `attachLabelsToConversations` | Attach one or more labels to one or more conversations for a contact. |
 | Bulk Enrich Data | `bulkEnrichData` | Batch enrichment for up to 500 entities. Provide a pre-stringified JSON array of enrichment requests in 'body'. Route is under /v2/enrichments/bulk. |
+
+<details>
+
+<summary>See 112 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Unsubscribe Variables | `bulkUnsubscribeVariables` | Unsubscribe up to 10,000 variables in a single request. Provide a JSON array of variable values as a string in 'body'. |
 | Connect Email Account | `connectEmailAccount` | Connect a custom SMTP/IMAP email account as a campaign sender. Gmail SMTP/IMAP not allowed (use OAuth). |
 | Create Campaign | `createCampaign` | Create a new campaign with an auto-generated empty sequence and default schedule. Returns campaign, sequence and schedule ids. |
@@ -146,3 +153,5 @@ Add Lemlist from **Build → Integrations → Connectors** and connect an accoun
 | Update Schedule | `updateSchedule` | Update an existing schedule's parameters. Only provided fields are changed. |
 | Update Sequence Step | `updateSequenceStep` | Update an existing step in a sequence. type must be included (cannot be changed). Only provided fields updated. |
 | Update Task | `updateTask` | Update an existing task (title, message, priority, assignee) or mark it complete. The task id is required. The due date cannot be changed through this endpoint - create a new task instead. |
+
+</details>

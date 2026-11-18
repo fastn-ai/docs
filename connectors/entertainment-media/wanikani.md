@@ -5,6 +5,8 @@ hidden: true
 
 # WaniKani
 
+<img src="../../.gitbook/assets/connectors/wanikani.png" alt="WaniKani logo" width="64">
+
 WaniKani API v2 — Japanese kanji learning SRS. Read your assignments, subjects (radicals/kanji/vocabulary), reviews, review statistics, level progressions, resets, study materials, spaced repetition systems, voice actors, summary and user profile; start lessons, submit reviews and manage study materials.
 
 | | |
@@ -12,8 +14,6 @@ WaniKani API v2 — Japanese kanji learning SRS. Read your assignments, subjects
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [wanikani.com](https://wanikani.com) |
 | **Authentication** | API key |
-| **Actions** | 25 |
-| **Events** | 0 |
 | **Slug** | `wanikani` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add WaniKani from **Build → Integrations → Connectors** and connect an accou
 | Get Spaced Repetition System | `getSpacedRepetitionSystem` | Returns a single spaced repetition system by its id, including every SRS stage with its review interval and the positions at which subjects unlock, pass and burn. |
 | Get Study Material | `getStudyMaterial` | Returns a single study material by its id, with the meaning note, reading note and user synonyms the learner saved for that subject. |
 | Get Subject | `getSubject` | Returns a single WaniKani subject by its id — a radical, kanji, vocabulary or kana vocabulary item — with its characters, meanings, readings, mnemonics and related subject ids. |
+
+<details>
+
+<summary>See 15 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Summary | `getSummary` | Returns the study summary report: the subject ids available for lessons right now, the reviews available in each of the next 24 hourly windows, and the timestamp of the next review. |
 | Get User | `getUser` | Returns the profile of the WaniKani user who owns the personal access token, including username, current level, subscription status, preferences and the account start date. |
 | Get Voice Actor | `getVoiceActor` | Returns a single voice actor by its id, with the name, gender and description of the person who records WaniKani's vocabulary audio. |
@@ -49,3 +56,5 @@ Add WaniKani from **Build → Integrations → Connectors** and connect an accou
 | Start Assignment | `startAssignment` | Marks an assignment's lesson as started, moving the subject out of the lesson queue and into the review queue. This permanently changes the learner's study schedule — call it only when the user really means to begin that lesson. Requires a token with the assignments:start scope. |
 | Update Study Material | `updateStudyMaterial` | Updates an existing study material by id, replacing the meaning note, reading note and user synonyms. Requires a token with the study_materials:update scope. |
 | Update User Preferences | `updateUserPreferences` | Updates the signed-in user's study preferences: lesson batch size and presentation order, review presentation order, SRS indicator display, default voice actor and audio autoplay settings for lessons, reviews and extra study. Requires a token with the user:update scope. |
+
+</details>

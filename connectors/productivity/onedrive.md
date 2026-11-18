@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft OneDrive
 
+<img src="../../.gitbook/assets/connectors/onedrive.png" alt="Microsoft OneDrive logo" width="64">
+
 Microsoft OneDrive via Microsoft Graph v1.0 — drives, driveItems (upload, download, list children, move, copy, delete, search), file versions, thumbnails, sharing links and permissions, shared-with-me, special folders, delta sync, and change-notification subscriptions (webhooks).
 
 | | |
@@ -12,8 +14,6 @@ Microsoft OneDrive via Microsoft Graph v1.0 — drives, driveItems (upload, down
 | **Category** | [Productivity](README.md) |
 | **Website** | [onedrive.com](https://onedrive.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 55 |
-| **Events** | 3 |
 | **Slug** | `onedrive` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft OneDrive from **Build → Integrations → Connectors** and connec
 | Delete Item | `deleteItem` | Delete a driveItem (moves it to the recycle bin). DELETE /me/drive/items/{item-id}. Returns 204 No Content. |
 | Delete Permission | `deletePermission` | Remove a permission (unshare) from a driveItem (DELETE /me/drive/items/{item-id}/permissions/{perm-id}). Returns 204 No Content. |
 | Delete Subscription | `deleteSubscription` | DEPENDENCY-BLOCKED (no constructible subscription id). DELETE /subscriptions/{id} to remove a Graph subscription (cleanup). Returns 204 No Content. Cannot reach 204: createSubscription is BLOCKED (fastn cannot echo Graph's validationToken handshake), so no real subscription GUID exists to delete. Tested with all-zeros placeholder GUID -&gt; 400 InvalidRequest 'SubscriptionId Guid format is invalid'. Will work once a real subscription id is available. |
+
+<details>
+
+<summary>See 45 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Download Converted File (PDF/JPG/HTML) | `downloadConverted` | Download a converted representation of a file (e.g. PDF, JPG, HTML) by item ID using the format query parameter. width and height are required when format=jpg. Responds with 302 Found + Location header. ⛔ VERIFIED-BLOCKED 2026-06-05 (fastn-limitation): executor cannot relay the binary/302-redirect response — 502 'Body is unusable: Body has already been read'. Same class as downloadThumbnailContent/downloadVersionContent. Workaround: fetch the item's @microsoft.graph.downloadUrl via getItem and download out-of-band. |
 | Download File Content (by ID) | `downloadContent` | Get a pre-authenticated download URL for a driveItem's content by item ID. Hitting /content directly returns a 302 redirect to a binary stream that cannot be relayed as JSON, so this action fetches the item itself and reads the short-lived pre-authenticated @microsoft.graph.downloadUrl from the response (no auth header is needed on that URL). Leave the Select input empty: Graph drops the download-URL annotation from any $select-filtered response. GET /me/drive/items/{item-id}. |
 | Download File Content (by Path) | `downloadContentByPath` | Get a pre-authenticated download URL for a driveItem's content addressed by its path relative to the drive root. Hitting /content returns a 302 redirect to a binary stream that fastn cannot relay, so this action fetches the path item and reads the short-lived pre-authenticated @microsoft.graph.downloadUrl from the response. Leave the Select input empty: Graph drops the download-URL annotation from any $select-filtered response. GET /me/drive/root:/{path}. |
@@ -79,6 +86,8 @@ Add Microsoft OneDrive from **Build → Integrations → Connectors** and connec
 | Update Subscription (renew) | `updateSubscription` | DEPENDENCY-BLOCKED (no constructible subscription id). PATCH /subscriptions/{id} to renew/extend a Graph subscription's expirationDateTime. Cannot reach 200: createSubscription is BLOCKED (fastn cannot echo Graph's validationToken handshake), so no real subscription GUID exists to update. Tested with all-zeros placeholder GUID -&gt; 400 InvalidRequest 'SubscriptionId Guid format is invalid'. Will work once a real subscription id is available. |
 | Upload File Content (Replace by ID) | `uploadReplace` | Upload (replace) the content of an existing file by item ID, up to 250 MB. Body is the raw file content. Optional @microsoft.graph.conflictBehavior query param controls fail/replace/rename. Returns the updated driveItem. NOTE: fastn write actions send the body as text — raw binary uploads are limited. |
 | Upload New File (by Path) | `uploadNewByPath` | Upload a new file into a parent folder addressed by parent ID + filename using the colon-escape path syntax /items/{parent-id}:/{filename}:/content, up to 250 MB. Body is the raw file content. Optional @microsoft.graph.conflictBehavior. Returns the created driveItem. NOTE: fastn write actions send the body as text — raw binary uploads are limited. |
+
+</details>
 
 ## Events
 

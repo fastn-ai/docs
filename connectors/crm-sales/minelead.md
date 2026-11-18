@@ -5,6 +5,8 @@ hidden: true
 
 # Minelead
 
+<img src="../../.gitbook/assets/connectors/minelead.svg" alt="Minelead logo" width="64">
+
 Minelead is a B2B lead generation and email intelligence platform. This connector wraps the Minelead REST API v1 to find company and professional emails, verify and enrich email addresses, detect disposable emails, analyze buying intent, generate leads from tags, and manage saved leads, search history, campaigns and recipient lists.
 
 | | |
@@ -12,8 +14,6 @@ Minelead is a B2B lead generation and email intelligence platform. This connecto
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [minelead.io](https://minelead.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 18 |
-| **Events** | 0 |
 | **Slug** | `minelead` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Minelead from **Build → Integrations → Connectors** and connect an accou
 | Generate Leads From Tags | `generateLeadsFromTags` | Generates a list of company domains matching keyword tags such as an industry and a location (for example "hotel" and "new york"). On the Free plan part of the returned domains are masked. Consumes Minelead credits. |
 | Get Account | `getAccount` | Retrieves the authenticated Minelead account's details, including email, username, subscription plan, remaining lead credits and recipient lists. Useful for verifying that the API key is valid. |
 | Get Buying Intent | `getBuyingIntent` | Analyzes a company's buying intent by scanning news, job postings, company website and LinkedIn signals. Returns an intent score from 0 to 100, an intent level, categorised signals with evidence, a recommended pitch angle and suggested solutions. Each call costs 5 Minelead credits; accounts with fewer credits receive HTTP 402 "Insufficient credits". |
+
+<details>
+
+<summary>See 8 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | List Campaigns | `listCampaigns` | Lists the email campaigns in your Minelead account with their status flags (active, paused, archived, completed, running). |
 | List Leads | `listLeads` | Lists all leads saved to your Minelead account with their id, name, company, email and verification details. Returns status "not-found" when the account has no saved leads. |
 | List Recipient Lists | `listRecipientLists` | Lists the campaign recipient lists in your Minelead account, including each list's name, recipient count and recipient emails. |
@@ -42,3 +49,5 @@ Add Minelead from **Build → Integrations → Connectors** and connect an accou
 | Update Leads | `updateLeads` | Updates the first name, last name or company of one or more existing leads in your Minelead leads list, matched by email address. |
 | Update Recipient List | `updateRecipientList` | Adds emails to or removes emails from an existing campaign recipient list. |
 | Validate Email | `validateEmail` | Checks the validity and deliverability of an email address: format, webmail, MX record and mailbox existence, and whether it belongs to a disposable email provider. Consumes Minelead credits. |
+
+</details>

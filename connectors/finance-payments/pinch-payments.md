@@ -5,6 +5,8 @@ hidden: true
 
 # Pinch Payments
 
+<img src="../../.gitbook/assets/connectors/pinch-payments.png" alt="Pinch Payments logo" width="64">
+
 Pinch Payments is an Australian payments platform for credit card and direct debit collection. This connector covers payers, payment sources, scheduled and realtime payments, payment links, plans and subscriptions, refunds, transfers and settlement line items, events, webhooks, contacts, fee schedules, tokenisation, and managed-merchant (PayFac) administration. Requests run against either the test or live environment, selected per connection.
 
 | | |
@@ -12,8 +14,6 @@ Pinch Payments is an Australian payments platform for credit card and direct deb
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [getpinch.com.au](https://getpinch.com.au) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 72 |
-| **Events** | 16 |
 | **Slug** | `pinchPayments` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pinch Payments from **Build → Integrations → Connectors** and connect an
 | Create or Update Contact | `saveContact` | Create a compliance Contact for the merchant, or update an existing one by supplying its con_ id. Contacts record the owners, directors, shareholders and executives that Pinch requires for KYC, including identity document details. |
 | Create or Update Payer | `savePayer` | Create a new Payer, or update an existing one when an id is supplied. A Payer represents the customer that Payments, Payment Links and Subscriptions are taken against. Optionally attaches a payment source in the same call using a token from CaptureJS. Returns the saved payer record including its pyr_ id. |
 | Create or Update Plan | `savePlan` | Create a billing Plan describing the schedule of payments a Subscription will generate: any number of fixed point-in-time payments, at most one recurring payment, and optional free periods. Amounts may be fixed in cents or a percentage of a subscription total. |
+
+<details>
+
+<summary>See 62 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create or Update Scheduled Payment | `savePayment` | Schedule a Payment to be taken from a Payer on a given transaction date, or update an existing scheduled payment by supplying its id. The payer must already have a stored payment source unless a sourceId is given. WARNING: in live mode this debits a real customer. Amounts are in cents. |
 | Create or Update Webhook | `saveWebhook` | Register a callback URI to receive Pinch Events, or update an existing one by supplying its wbk_ id. Choose the payload casing and which event types to subscribe to, or leave eventTypes empty for all. The response includes a whsec_ signing secret used to verify the pinch-signature header on every delivery; store it and never expose it. |
 | Create Payment Link | `createPaymentLink` | Create a hosted payment page for a Payer and return its shareable URL, so a customer can pay by card or direct debit without any frontend work. Choose which payment methods are allowed, which are surcharged, an optional expiry, and the URL the payer is returned to after paying. |
@@ -97,6 +104,8 @@ Add Pinch Payments from **Build → Integrations → Connectors** and connect an
 | Update Merchant | `updateMerchant` | Update the calling merchant's own company details, addresses, compliance contacts and settlement bank account. WARNING: this replaces the merchant profile, including the bank account settlements are paid into. Send the complete desired state, not a partial patch. |
 | Upload Compliance Document | `uploadComplianceDocument` | Upload a supporting document for merchant compliance, such as an identity document, business registration or financial statement. The Pinch route takes a multipart/form-data body with a File part, a DocumentType and, for identity documents, the ContactId the document belongs to. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -113,9 +122,18 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Payment Created | `payment-created` | Fires when a Payment is created, whether scheduled or realtime. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Realtime Payment Processed | `realtime-payment` | Fires when a realtime card payment is processed. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Refund Created | `refund-created` | Fires when a Refund is issued against a Payment. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
+
+<details>
+
+<summary>See 6 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Refund Updated | `refund-updated` | Fires when a Refund changes status, for example from pending to processed. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Scheduled Payments Processed | `scheduled-process` | Fires each business day when the scheduled Payment run completes. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Settlement Transfer Made | `transfer` | Fires when Pinch transfers settled funds to the merchant's bank account. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Subscription Cancelled | `subscription-cancelled` | Fires when a Subscription is cancelled before it completes. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Subscription Completed | `subscription-complete` | Fires when a Subscription reaches the end of its Plan schedule. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
 | Subscription Created | `subscription-created` | Fires when a Payer is subscribed to a Plan. payloadSchema modelled from the Pinch Events documentation. Verify the pinch-signature HMAC-SHA256 over "{t}.{raw body}" using the webhook's whsec_ secret. |
+
+</details>

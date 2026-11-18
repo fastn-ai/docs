@@ -5,6 +5,8 @@ hidden: true
 
 # Instatus
 
+<img src="../../.gitbook/assets/connectors/instatus.png" alt="Instatus logo" width="64">
+
 Instatus status pages, uptime monitoring and incident communication. Manage status pages, workspaces, components, incidents and incident updates, scheduled maintenances, templates, general notices, outages, uptime metrics, audience groups, subscribers, teammates, HTTP and cron monitors, monitor alerts and groups, routing rules, escalation policies, on-call schedules and monitoring integrations.
 
 | | |
@@ -12,8 +14,6 @@ Instatus status pages, uptime monitoring and incident communication. Manage stat
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [instatus.com](https://instatus.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 117 |
-| **Events** | 3 |
 | **Slug** | `instatus` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Instatus from **Build → Integrations → Connectors** and connect an accou
 | Create Cron Monitor | `createCronMonitor` | Create a cron monitor for a scheduled job. Instatus returns a slug used to build the job's ping URLs and marks the job down when no ping arrives within the period plus grace window. WARNING: onFail.notifySubscribers notifies every subscriber of the page. |
 | Create Escalation Policy | `createEscalationPolicy` | Create an escalation policy: ordered rules that notify successive responders after a delay while an alert stays unacknowledged, with optional repeat and auto-resolve. |
 | Create General Notice | `createGeneralNotice` | Publish a general notice banner on a status page - used for announcements that are not incidents, such as an upcoming provider migration. WARNING: notify true emails every subscriber of the page. |
+
+<details>
+
+<summary>See 107 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Incident | `createIncident` | Publish a new incident on a status page and set the status of the affected components. WARNING: when notify is true Instatus emails, SMSes and webhooks every confirmed subscriber of that page. Set notify to false unless you intend to notify real subscribers. |
 | Create Incident From Template | `createIncidentFromTemplate` | Publish a new incident using a saved incident template, passing the template ID in the path. Verified behaviour: the template's own name, message, status and notify flag WIN - a name or message sent in the body is ignored, so edit the template (or use Create Incident) when you need different wording. components/statuses in the body are applied. WARNING: templates may carry notify=true, which emails, SMSes and webhooks every subscriber of the page. |
 | Create Incident Update | `createIncidentUpdate` | Post a new update on an existing incident and optionally move the affected components to a new status. WARNING: notify true sends the update to every subscriber of the page. |
@@ -141,6 +148,8 @@ Add Instatus from **Build → Integrations → Connectors** and connect an accou
 | Update Routing Rule | `updateRoutingRule` | Edit an on-call routing rule: change its match assertions, its routing actions or its evaluation order. |
 | Update Status Page | `updateStatusPage` | Update a status page's name, subdomain, custom domain, branding colours, language, custom HTML or CSS, and SMS settings. |
 | Update Template | `updateTemplate` | Edit a saved incident or maintenance template: change its name, default message, default status or per-component impact. |
+
+</details>
 
 ## Events
 

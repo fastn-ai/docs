@@ -5,6 +5,8 @@ hidden: true
 
 # Meilisearch
 
+<img src="../../.gitbook/assets/connectors/meilisearch.png" alt="Meilisearch logo" width="64">
+
 Meilisearch is an open-source, lightning-fast search engine. This connector manages indexes and their settings, adds and queries documents, runs search and multi-search (including facet search and similar-documents), tracks asynchronous tasks, manages API keys, triggers dumps and snapshots, reads instance/index statistics, and manages task-completion webhooks on a self-hosted Meilisearch instance.
 
 | | |
@@ -12,8 +14,6 @@ Meilisearch is an open-source, lightning-fast search engine. This connector mana
 | **Category** | [Search and web](README.md) |
 | **Website** | [meilisearch.com](https://meilisearch.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 137 |
-| **Events** | 0 |
 | **Slug** | `meilisearch` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Meilisearch from **Build → Integrations → Connectors** and connect an ac
 | Create Index | `createIndex` | Create index. Create a new index with an optional [primary key](https://www.meilisearch.com/docs/learn/getting_started/primary_key). If no primary key is provided, Meilisearch will [infer one](https://www.meilisearch.com/docs/learn/getting_started/primary_key#meilisearch-guesses-your-primary-key) from the first batch of documents. |
 | Create Key | `createKey` | Create API key. Create a new API key with the specified name, description, actions, and index scopes. The key value is returned only once at creation time; store it securely. **Required fields:** `actions`, `indexes`, `expiresAt`. **Optional fields:** `name`, `description`, `uid`. Set `expiresAt` to `null` to create a key that never expires. Use `"*"` in the `actions` array to grant all permissions (not recommended for production). Use `["*"]` in the `indexes` array to grant access to all indexes. |
 | Create or update a search rule | `upsertDynamicSearchRule` | Create or update a search rule. Partially update a search rule by replacing the provided fields. If the rule doesn't exist, it will be created. |
+
+<details>
+
+<summary>See 127 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Snapshot | `createSnapshot` | Create snapshot. Trigger a snapshot creation process. When complete, a snapshot file is written to the snapshot directory. The directory is created if it does not exist. |
 | Create Webhook | `createWebhook` | Create webhook. Register a new webhook to receive task completion notifications. You can optionally set custom headers (e.g. for authentication) and configure the callback URL. |
 | Delete a chat workspace | `deleteChatWorkspace` | Delete a chat workspace. Delete a chat workspace and its settings by its unique identifier. This route is only available when the `chatCompletions` [experimental feature](https://www.meilisearch.com/docs/resources/help/experimental_features_overview) is enabled. |
@@ -161,3 +168,5 @@ Add Meilisearch from **Build → Integrations → Connectors** and connect an ac
 | Update synonyms | `updateSynonyms` | Update synonyms for an index (PUT/PATCH /indexes/{index_uid}/settings/synonyms). Docs: https://www.meilisearch.com/docs/reference/api/settings |
 | Update Typo Tolerance | `updateTypoTolerance` | Update typoTolerance. Updates the `typoTolerance` setting for the index. Send the new value in the request body; send null to reset to default. |
 | Update Webhook | `updateWebhook` | Update webhook. Update the URL or headers of an existing webhook identified by its UUID. |
+
+</details>

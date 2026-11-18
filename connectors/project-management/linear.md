@@ -5,6 +5,8 @@ hidden: true
 
 # Linear
 
+<img src="../../.gitbook/assets/connectors/linear.jpg" alt="Linear logo" width="64">
+
 Linear issue tracking connector (GraphQL API) — issues (CRUD/search/archive), comments, projects & milestones, initiatives, teams, users, labels, cycles, workflow states, attachments, documents, customers & needs, favorites, reactions, plus webhook management (webhookCreate/Update/Delete). Single endpoint https://api.linear.app/graphql.
 
 | | |
@@ -12,8 +14,6 @@ Linear issue tracking connector (GraphQL API) — issues (CRUD/search/archive), 
 | **Category** | [Project management](README.md) |
 | **Website** | [linear.app](https://linear.app) |
 | **Authentication** | API key |
-| **Actions** | 63 |
-| **Events** | 12 |
 | **Slug** | `linear` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Linear from **Build → Integrations → Connectors** and connect an account
 | Create Favorite | `createFavorite` | Create a favorite. Provide exactly ONE target id (issueId, projectId, documentId, cycleId, customViewId, etc). Required here: issueId is templated; for other target types use updateFavorite or reconcile at verify. |
 | Create Initiative | `createInitiative` | Create an initiative. Required: name. Optional: description, content, ownerId, color, icon, targetDate, status (reconciled at verify). |
 | Create Issue | `createIssue` | Create an issue. Required: teamId, title. Optional: description, priority, assigneeId, stateId, labelIds, projectId, cycleId, estimate, dueDate, parentId - each is sent only when provided. |
+
+<details>
+
+<summary>See 53 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Issue Label | `createIssueLabel` | Create an issue label. Required: name. Optional: teamId, color, description, parentId, isGroup (reconciled at verify). |
 | Create Project | `createProject` | Create a project. Required: name, teamIds (array of team ids). Optional: description, content, leadId, targetDate, startDate, memberIds, color, icon, labelIds — documented, reconciled at verify. |
 | Create Project Milestone | `createProjectMilestone` | Create a project milestone. Required: projectId, name. Optional: description, targetDate, sortOrder (reconciled at verify). |
@@ -88,6 +95,8 @@ Add Linear from **Build → Integrations → Connectors** and connect an account
 | Update Project Milestone | `updateProjectMilestone` | Update a project milestone. Required: id, name. Optional: description, targetDate, sortOrder (reconciled at verify). |
 | Update Webhook | `updateWebhook` | Update a webhook. Required: id, enabled. Optional: url, resourceTypes, label, secret. Used for resubscription (re-enable a disabled webhook). |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -104,5 +113,14 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Issue | `Issue` | Issue created, updated, or removed. The payload's 'action' field (create\|update\|remove) distinguishes the operation; 'data' holds the issue. |
 | Issue Label | `IssueLabel` | Issue label created, updated, or removed. The 'action' field distinguishes the operation; 'data' holds the label. |
 | Project | `Project` | Project created, updated, or removed. The 'action' field distinguishes the operation; 'data' holds the project. |
+
+<details>
+
+<summary>See 2 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Project Update | `ProjectUpdate` | Project status update created or updated. The 'action' field distinguishes create\|update; 'data' holds the project update. |
 | Reaction | `Reaction` | Reaction created or removed. The 'action' field distinguishes create\|remove; 'data' holds the reaction. |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Zoho People
 
+<img src="../../.gitbook/assets/connectors/zoho-people.png" alt="Zoho People logo" width="64">
+
 Zoho People is Zoho's HR management system. This connector wraps the Zoho People REST API (people.zoho.com): forms and form records including employee data, leave tracking (leave records, leave types and balances), attendance check-in and check-out with attendance reports, and the time tracker module covering clients, projects, jobs, time logs and timesheets. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
@@ -12,8 +14,6 @@ Zoho People is Zoho's HR management system. This connector wraps the Zoho People
 | **Category** | [Other](README.md) |
 | **Website** | [people.zoho.com](https://people.zoho.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 12 |
-| **Events** | 0 |
 | **Slug** | `zohoPeople` |
 
 ## Use it
@@ -34,5 +34,14 @@ Add Zoho People from **Build → Integrations → Connectors** and connect an ac
 | List Forms | `listForms` | Retrieve every form configured in your Zoho People account, including its display name and form link name. The form link name is required by the record actions. |
 | List Leave Records | `listLeaveRecords` | Retrieve leave records within a date range from Zoho People, optionally filtered by employee, leave type or approval status. |
 | List Time Logs | `listTimeLogs` | Retrieve time logs from the Zoho People time tracker for a date range, optionally filtered by user, job, project or billing status. |
+
+<details>
+
+<summary>See 2 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Record Attendance | `recordAttendance` | Record an attendance check-in or check-out for an employee in Zoho People. At least one of employee ID, email address or map ID must be supplied to identify the employee. |
 | Update Form Record | `updateFormRecord` | Update an existing record in a Zoho People form. Only the fields included in the input data are changed. |
+
+</details>

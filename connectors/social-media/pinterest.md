@@ -5,6 +5,8 @@ hidden: true
 
 # Pinterest
 
+<img src="../../.gitbook/assets/connectors/pinterest.png" alt="Pinterest logo" width="64">
+
 Pinterest API v5 connector: user account, boards (CRUD + sections), pins (CRUD), board pins, and pin analytics. OAuth 2.0 (authorization code) primary. Poll-only (no public webhook subscription API).
 
 | | |
@@ -12,8 +14,6 @@ Pinterest API v5 connector: user account, boards (CRUD + sections), pins (CRUD),
 | **Category** | [Social media](README.md) |
 | **Website** | [pinterest.com](https://pinterest.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 266 |
-| **Events** | 0 |
 | **Slug** | `pinterest` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Pinterest from **Build → Integrations → Connectors** and connect an acco
 | Create a Brand Account | `brandAccountsCreate` | Create a Brand Account. Create a Brand Account that will be a child business of a business hierarchy. Request must contain name, username, and country. |
 | Create a conversion deletion request | `conversionDeletionRequestCreate` | Create a conversion deletion request. **This endpoint is currently in beta and not available to all apps.** [Learn more](/docs/key-concepts/using-beta-and-restricted-features/). Create a request to delete conversion data for a list of user emails and/or EPIKs, limited to the specified `ad_account_id`. After 72 hours the request is processed and submitted to our deletion process. Then the deletion process ensures deletion within a 30 days period, once the request is submitted to the deletion process it cannot be canceled. |
 | Create a new asset group. | `assetGroupCreate` | Create a new asset group.. Create a new asset group with the specified parameters. - An [asset group](https://help.pinterest.com/en/business/article/asset-groups) is a custom group of assets based on how you would like to manage your accounts. |
+
+<details>
+
+<summary>See 256 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create a request for a brand, category, SKU report | `analyticsCreateConversionProductReport` | Create a request for a brand, category, SKU report. [Restricted](/docs/getting-started/using-beta-and-restricted-features/) This creates an asynchronous brand, category, SKU report based on the given request. This request returns a token that you can use to download the report when it is ready. |
 | Create a request for a Marketing Mix Modeling (MMM) report | `analyticsCreateMmmReport` | Create a request for a Marketing Mix Modeling (MMM) report. This creates an asynchronous mmm report based on the given request. It returns a token that you can use to download the report when it is ready. NOTE: An additional limit of 5 queries per minute per advertiser applies to this endpoint while it's in beta release. For the ADVERTISER_PAID_SPEND_IN_DOLLAR, ADVERTISER_PAID_ECPC_IN_DOLLAR, and ADVERTISER_PAID_ECPM_IN_DOLLAR columns: if you receive bonus media, this value still includes that spend, and it will need to be removed manually with support from your Pinterest account team for a fully netted value. Over time, we'll also subtract bonus media and other incentives as data becomes available. Production and other non-media fees are excluded. |
 | Create a request to access an existing partner's assets. | `assetAccessRequestsCreate` | Create a request to access an existing partner's assets.. Create a request to access an existing partner's assets with the specified permissions. The request will be sent to the partner for approval. The assets that can be requested are ad accounts and profiles. |
@@ -290,3 +297,5 @@ Add Pinterest from **Build → Integrations → Connectors** and connect an acco
 | Update single product group | `catalogsProductGroupsUpdate` | Update single product group. Update product group owned by the "operation user_account" to use in Catalogs. - By default, the "operation user_account" is the token user_account. Optional: Business Access: Specify an `ad_account_id` (obtained via [List ad accounts](/docs/api/v5/#operation/ad_accounts/list)) to use the owner of that ad_account as the "operation user_account". In order to do this, the token user_account must have one of the following [Business Access](https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts) roles on the ad_account: Owner, Admin, Catalogs Manager. "Catalog-based product groups" can include items from all data sources (feeds and API) and are available to both non-retail catalogs with any data sources and retail catalogs with API-created items. If your catalog only contains retail items created via feeds, you should use the "retail feed-based" option. [Learn more](/docs/api-features/shopping-overview/) Note: Access to th... |
 | Update targeting templates | `targetingTemplateUpdate` | Update targeting templates. Update the targeting template given advertiser ID and targeting template ID |
 | Verify website | `verifyWebsiteUpdate` | Verify website. Verify a website as a signed-in user. |
+
+</details>

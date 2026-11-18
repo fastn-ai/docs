@@ -5,6 +5,8 @@ hidden: true
 
 # OctoLens
 
+<img src="../../.gitbook/assets/connectors/octolens.png" alt="OctoLens logo" width="64">
+
 OctoLens social listening — query brand mentions across Reddit, Twitter, LinkedIn, YouTube, HackerNews, GitHub and other platforms. Used to ingest pain-signal mentions.
 
 | | |
@@ -12,8 +14,6 @@ OctoLens social listening — query brand mentions across Reddit, Twitter, Linke
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [octolens.com](https://octolens.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 86 |
-| **Events** | 0 |
 | **Slug** | `octolens` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add OctoLens from **Build → Integrations → Connectors** and connect an accou
 | Apply a setup proposal | `applySetupProposal` | Apply a setup proposal. **Beta — behind the `sonar-onboarding` feature flag.** Workspaces the flag is off for get `404 FEATURE_DISABLED`. Creates the proposal's kept keywords with only their **quiet** settings (tag, exact match, skipped words, excluded authors, platforms, context — the brand's term set waits for the Clean up) and turns off the non-core sources the proposal flags (P2). Every hard gate runs again first: a failure returns `400 SETUP_GATE_VIOLATION` with the violations and writes nothing. A proposal made before the company profile was last edited is stale: `409 SETUP_PROPOSAL_STALE` (propose again first). Idempotent — a second call creates nothing and returns the same keyword ids, and a retry after a failure part-way resumes where it stopped. Once an apply has started, the attempt is locked: a retry must use the same selections (or none), and different ones return `409 SETUP_APPLY_IN_PROGRESS` with the recorded selections; a concurrent apply gets the same 409 and writes... |
 | Build an app deep link | `getAppLink` | Build an app deep link. Builds a link into the Octolens app with filters prefilled: `mentions` (optional `feedId`, `keywordId`, `source`, `sentiment`), `keywords`, `feeds`, or `settings` (optional `tab`). Answers the relative `path` and the absolute `url`. Pure — reads and changes nothing. |
 | Clean up an applied setup | `cleanupSetupProposal` | Clean up an applied setup. **Beta — behind the `sonar-onboarding` feature flag.** Workspaces the flag is off for get `404 FEATURE_DISABLED`. After the first collection, applies the whole clean-up proposal (`decision: cleanup`, the default): writes its settings through the keyword update path, removes the collected posts they cover (the usage meter is unchanged — first-collection posts are not billed) and writes the setup's feeds. `keep` records Keep everything and changes no setting (always allowed — nothing about the collection's size can refuse it); both write the feeds. `undo` restores the settings and the removed posts and deletes the feeds the decision created (never a view that was there before or one you made) while the draft lives; deciding again writes them again. Idempotent — repeating a decision returns the same result and creates nothing. A setup that was never applied returns `412 SETUP_NOT_APPLIED`; before every collected post is scored the clean-up is not ready and `c... |
+
+<details>
+
+<summary>See 76 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Composite dashboard overview | `getAnalyticsDashboard` | Composite dashboard overview. Volume trend, per-keyword breakdown, sentiment split, and plan usage in one response. Each section matches the corresponding focused endpoint (`/analytics/volume`, `/analytics/keywords`, `/analytics/sentiment`, `/org/usage`) exactly, but the whole dashboard costs one request and one rate-limit token. |
 | Create a notification | `createNotification` | Create a notification. Create a notification for an existing feed (a feed can have at most one). Slack destinations are validated against the workspace's Slack connection — every channel id must resolve; webhook URLs must be public http(s) endpoints (a URL whose host is, or resolves to, a private/loopback address is refused, on create and at every delivery). |
 | Create an agency workspace | `createAgencyWorkspace` | Create an agency workspace. Provision a new child workspace: Clerk organization, workspace settings (onboarding skipped), company profile enriched from the domain, and superadmin access for every agency superadmin. Fails with 403 AGENCY_WORKSPACE_LIMIT at the workspace cap. `companyEnriched: false` means enrichment failed and the profile needs manual completion. |
@@ -110,3 +117,5 @@ Add OctoLens from **Build → Integrations → Connectors** and connect an accou
 | Update Organization | `updateOrganization` | Update organization. Update editable workspace settings. Currently: `name` and `platforms`. Other fields (plan, billing, global filters, company profile, members) have their own endpoints. |
 | Update workspace limits / flex | `updateAgencyWorkspace` | Update workspace limits / flex. Partial update: only the provided concerns are touched. `mentionsLimitOverride` / `keywordsLimitOverride` accept `null` to clear the override (back to the shared pool / plan default). Enabling flex requires a saved mentions cap, a positive budget, and configured agency Stripe billing (412 `AGENCY_BILLING_NOT_CONFIGURED` otherwise). Returns the fresh workspace. |
 | Volume over time (day / week / month, optional split) | `getAnalyticsVolumeOverTime` | Volume over time (day / week / month, optional split). Counts mentions per `day`, `week` or `month` bucket over an inclusive `YYYY-MM-DD` window (default: the last 30 days), optionally split by `keyword`, `source` or `sentiment`. `total` counts distinct mentions in the window. Relevant mentions only unless `includeAll=true`. |
+
+</details>

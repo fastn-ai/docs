@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Outlook Calendar
 
+<img src="../../.gitbook/assets/connectors/microsoft-outlook-calendar.svg" alt="Microsoft Outlook Calendar logo" width="64">
+
 Microsoft Outlook Calendar via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0). Calendars and calendar groups, calendar sharing permissions, events (create, read, update, delete, permanent delete), calendar view and recurring-event instances, delta sync, meeting responses (accept, tentatively accept, decline, cancel, forward), event reminders (reminder view, snooze, dismiss), event attachments, free/busy schedule lookup and meeting time suggestions.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Outlook Calendar via Microsoft Graph v1.0 (https://graph.microsoft.com
 | **Category** | [Productivity](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 46 |
-| **Events** | 0 |
 | **Slug** | `microsoftOutlookCalendar` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Outlook Calendar from **Build → Integrations → Connectors** an
 | Create Calendar Permission | `createCalendarPermission` | Share the signed-in user's default calendar with another person by creating a calendar permission at the requested access level. |
 | Create Event | `createEvent` | Create an event in the signed-in user's default calendar. When attendees are supplied, Microsoft Graph sends meeting invitations to all of them automatically. |
 | Decline Event | `declineEvent` | Decline a meeting invitation in the signed-in user's calendar, optionally proposing an alternative time and sending a comment to the organiser. |
+
+<details>
+
+<summary>See 36 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Calendar | `deleteCalendar` | Delete one of the signed-in user's calendars and move it to the Deleted Items folder. Returns an empty body on success. |
 | Delete Calendar Group | `deleteCalendarGroup` | Delete a calendar group from the signed-in user's mailbox. Returns an empty body on success. |
 | Delete Calendar Permission | `deleteCalendarPermission` | Stop sharing the signed-in user's default calendar with a person by removing their calendar permission. |
@@ -70,3 +77,5 @@ Add Microsoft Outlook Calendar from **Build → Integrations → Connectors** an
 | Update Calendar Permission | `updateCalendarPermission` | Change the access level of an existing share recipient or delegate on the signed-in user's default calendar. |
 | Update Default Calendar | `updateDefaultCalendar` | Update the signed-in user's default calendar. Only the colour can be changed: Exchange rejects a rename of the default calendar with 400 ErrorInvalidRequest "The default calendar cannot be renamed." |
 | Update Event | `updateEvent` | Update an existing event in the signed-in user's mailbox. Only the properties supplied are changed; everything omitted keeps its current value. |
+
+</details>

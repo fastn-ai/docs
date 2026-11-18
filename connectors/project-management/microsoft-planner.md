@@ -5,6 +5,8 @@ hidden: true
 
 # Microsoft Planner
 
+<img src="../../.gitbook/assets/connectors/microsoft-planner.png" alt="Microsoft Planner logo" width="64">
+
 Microsoft Planner task management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/planner). Create and manage plans, buckets and tasks, read and update task details (description, checklist, references, preview type) and plan details (category descriptions, sharedWith), and set the three task board formats - assignedTo, bucket and progress. Also lists the plans and tasks of the signed-in user, of another user, and of a Microsoft 365 group. Connect with a Microsoft work or school account using Entra ID OAuth 2.0; the delegated Tasks.ReadWrite permission is user-consentable and needs no tenant administrator approval. Every PATCH and DELETE requires the target object's current ETag in the If-Match header, which each action exposes as an input.
 
 | | |
@@ -12,8 +14,6 @@ Microsoft Planner task management via the Microsoft Graph v1.0 API (https://grap
 | **Category** | [Project management](README.md) |
 | **Website** | [graph.microsoft.com](https://graph.microsoft.com) |
 | **Authentication** | OAuth 2.0 |
-| **Actions** | 33 |
-| **Events** | 0 |
 | **Slug** | `microsoftPlanner` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Microsoft Planner from **Build → Integrations → Connectors** and connect
 | Get Bucket | `getBucket` | Retrieves a single Planner bucket by its ID. The @odata.etag in the response is the value to pass as If-Match when updating or deleting the bucket. |
 | Get Bucket Task Board Format | `getBucketTaskBoardFormat` | Retrieves the bucketTaskBoardFormat of a task, which controls where the task sits in the Bucket view of the plan's task board. |
 | Get Plan | `getPlan` | Retrieves a single Planner plan by its ID, including its title, container and creation metadata. The @odata.etag in the response is the value to pass as If-Match when updating or deleting the plan. |
+
+<details>
+
+<summary>See 23 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Plan Details | `getPlanDetails` | Retrieves the plannerPlanDetails of a plan: the label names for the 25 task categories and the set of user IDs the plan is shared with. |
 | Get Progress Task Board Format | `getProgressTaskBoardFormat` | Retrieves the progressTaskBoardFormat of a task, which controls where the task sits in the Progress view of the plan's task board. |
 | Get Task | `getTask` | Retrieves a single Planner task by its ID, including its assignments, dates, priority and completion percentage. The @odata.etag in the response is the value to pass as If-Match when updating or deleting the task. |
@@ -57,3 +64,5 @@ Add Microsoft Planner from **Build → Integrations → Connectors** and connect
 | Update Progress Task Board Format | `updateProgressTaskBoardFormat` | Repositions a task within the Progress view of the plan's task board. Requires the format's current ETag, which Get Progress Task Board Format returns as @odata.etag. |
 | Update Task | `updateTask` | Updates a Planner task. Only the properties you supply are sent, so untouched fields keep their values. Requires the task's current ETag, which Get Task returns as @odata.etag. For tasks replicated from Project, only percentComplete can be updated. |
 | Update Task Details | `updateTaskDetails` | Updates a task's details: its long description, checklist items, external references and which of them is shown as the task preview. Requires the task details' current ETag, which Get Task Details returns as @odata.etag. |
+
+</details>

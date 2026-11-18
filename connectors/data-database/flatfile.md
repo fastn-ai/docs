@@ -5,6 +5,8 @@ hidden: true
 
 # Flatfile
 
+<img src="../../.gitbook/assets/connectors/flatfile.png" alt="Flatfile logo" width="64">
+
 Flatfile is a data onboarding and import platform. This connector covers the Flatfile REST API v1: account and environment management, spaces and their documents, guidance and drafts, workbooks, sheets, records and cell values, files and uploads, jobs and their execution plans, agents and agent logs, events and event acknowledgement, secrets, apps and app constraints, actions, guests and users with their roles, views, snapshots, commits, mapping programs and rules, data clips, data retention policies, canvas areas, routines, runbooks, flags, entitlements and assistant prompts.
 
 | | |
@@ -12,8 +14,6 @@ Flatfile is a data onboarding and import platform. This connector covers the Fla
 | **Category** | [Data and databases](README.md) |
 | **Website** | [flatfile.com](https://flatfile.com) |
 | **Authentication** | Bearer token |
-| **Actions** | 222 |
-| **Events** | 82 |
 | **Slug** | `flatfile` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Flatfile from **Build → Integrations → Connectors** and connect an accou
 | Assign User Role | `assignUserRole` | Assigns a role to a dashboard user for a given resource, granting them that role's permissions. |
 | Bulk Create Space Actions | `bulkCreateActions` | Creates several space actions in one request. The request body is a JSON array of action definitions, supplied as a pre-serialised JSON string. |
 | Bulk Mutate Workbook Flags | `bulkMutateFlags` | Applies, updates, replaces or removes a flag across many records at once, selected by id list, search or filter. Runs as a job and returns its job id. |
+
+<details>
+
+<summary>See 212 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Bulk Update Records | `bulkUpdateRecords` | Applies the same field values to every record matching the given filter, search or FFQL query, in the manner of a SQL UPDATE. |
 | Cancel Job | `cancelJob` | Cancels a job that has not yet finished, optionally recording the reason. |
 | Clone File | `cloneFile` | Creates a copy of an uploaded file in the same space, optionally with a custom name prefix. Flatfile requires the environment and space ids in the body even though its reference omits them. |
@@ -247,6 +254,8 @@ Add Flatfile from **Build → Integrations → Connectors** and connect an accou
 | Upsert Secret | `upsertSecret` | Creates or updates a secret by name, scoped to an environment or to a single space. Agents read these at run time. |
 | Validate Sheet | `validateSheet` | Re-runs data hooks and validation across every record in a sheet. |
 
+</details>
+
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
@@ -263,6 +272,13 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Canvas Area Deleted | `canvas-area:deleted` |  |
 | Canvas Area Updated | `canvas-area:updated` |  |
 | Canvas Created | `canvas:created` |  |
+
+<details>
+
+<summary>See 72 more events</summary>
+
+| Event | Id | When it fires |
+| --- | --- | --- |
 | Canvas Deleted | `canvas:deleted` |  |
 | Canvas Updated | `canvas:updated` |  |
 | Commit Completed | `commit:completed` |  |
@@ -335,3 +351,5 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Workbook Expired | `workbook:expired` |  |
 | Workbook Thawed | `workbook:thawed` |  |
 | Workbook Updated | `workbook:updated` |  |
+
+</details>

@@ -5,6 +5,8 @@ hidden: true
 
 # Parsio
 
+<img src="../../.gitbook/assets/connectors/parsio.png" alt="Parsio logo" width="64">
+
 Parsio extracts structured data from emails, PDFs and other documents. This connector covers the Parsio public API: mailboxes, document import and parsing, parsed data, extraction templates, webhooks, collected email addresses and account settings.
 
 | | |
@@ -12,8 +14,6 @@ Parsio extracts structured data from emails, PDFs and other documents. This conn
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [parsio.io](https://parsio.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 32 |
-| **Events** | 5 |
 | **Slug** | `parsio` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Parsio from **Build → Integrations → Connectors** and connect an account
 | Delete Webhooks | `deleteWebhooks` | Permanently deletes the given Parsio webhooks so Parsio stops posting events to them. |
 | Disable Templates | `disableTemplates` | Disables the given Parsio extraction templates so they are no longer used when parsing new documents. |
 | Disable Webhooks | `disableWebhooks` | Disables the given Parsio webhooks so Parsio stops posting events to them without deleting them. This endpoint is live on the Parsio API but is not listed in their published reference. |
+
+<details>
+
+<summary>See 22 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Enable Templates | `enableTemplates` | Enables the given Parsio extraction templates so they are used when parsing new documents. |
 | Enable Webhooks | `enableWebhooks` | Enables the given Parsio webhooks so Parsio resumes posting events to them. This endpoint is live on the Parsio API but is not listed in their published reference. |
 | Get Account Settings | `getAccountSettings` | Returns the Parsio account profile settings: display name, timezone, time format and weekly digest preference. Note that Parsio also returns the account's own API key in this response. This endpoint is live on the Parsio API but is not listed in their published reference. |
@@ -56,6 +63,8 @@ Add Parsio from **Build → Integrations → Connectors** and connect an account
 | Update Account Settings | `updateAccountSettings` | Updates the Parsio account profile: display name, timezone, time format and weekly digest preference. Parsio answers HTTP 201 for both success and validation failure, so check Is Error in the response. This endpoint is live on the Parsio API but is not listed in their published reference. |
 | Update Mailbox | `updateMailbox` | Updates a Parsio mailbox. This is a full replace of the mailbox settings, not a partial patch: any boolean you omit is reset to false, so send every setting you want to keep. Name and Email Prefix are both required. |
 | Update Webhook | `updateWebhook` | Updates an existing Parsio webhook: its name, target URL, subscribed event or enabled state. The webhook id goes in the body as Webhook ID, not in the path. Parsio requires Enabled and Table Field ID on every update; send Table Field ID as an empty string unless the event is table.parsed. |
+
+</details>
 
 ## Events
 

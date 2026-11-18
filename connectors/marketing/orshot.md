@@ -5,6 +5,8 @@ hidden: true
 
 # Orshot
 
+<img src="../../.gitbook/assets/connectors/orshot.png" alt="Orshot logo" width="64">
+
 Orshot generates images, PDFs and videos from reusable templates. This connector wraps the Orshot v1 REST API: studio and library (utility) template rendering, signed render URLs, async render jobs, brand assets (images, videos, audio, colors, fonts), template folders, sharing and versions, AI video generation, social publishing and analytics, workflows, and workspace profile and logs.
 
 | | |
@@ -12,8 +14,6 @@ Orshot generates images, PDFs and videos from reusable templates. This connector
 | **Category** | [Marketing](README.md) |
 | **Website** | [orshot.com](https://orshot.com) |
 | **Authentication** | Bearer token, OAuth 2.0 |
-| **Actions** | 89 |
-| **Events** | 1 |
 | **Slug** | `orshot` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Orshot from **Build → Integrations → Connectors** and connect an account
 | Delete Brand Audio | `deleteBrandAudio` | Permanently remove a stored brand audio file from the workspace. |
 | Delete Brand Color | `deleteBrandColor` | Permanently remove a saved brand color from the workspace. Templates already rendered are unaffected. |
 | Delete Brand Image | `deleteBrandImage` | Permanently remove a stored brand image from the workspace. |
+
+<details>
+
+<summary>See 79 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Brand Video | `deleteBrandVideo` | Permanently remove a stored brand video from the workspace. |
 | Delete Custom Font | `deleteCustomFont` | Permanently remove an uploaded custom font from the workspace. Templates still referencing it fall back to a default font. |
 | Delete Studio Template | `deleteStudioTemplate` | Permanently delete a studio template from the workspace. Images already rendered from it remain available at their stored URLs. |
@@ -113,6 +120,8 @@ Add Orshot from **Build → Integrations → Connectors** and connect an account
 | Upload Brand Image | `uploadBrandImage` | Store an image in the workspace brand library so templates can reference it. The file may be supplied as a public URL or as a base64 data string. |
 | Upload Brand Video | `uploadBrandVideo` | Store a video in the workspace brand library. Supply the file as a publicly reachable URL; Orshot downloads it server-side. The docs describe a multipart upload, but the endpoint also accepts this JSON form. |
 | Upload Custom Font | `uploadCustomFont` | Upload a custom font to the workspace so templates can use it. Supply the font as a publicly reachable URL pointing directly at a font file. The docs describe a multipart upload, but the endpoint also accepts this JSON form. |
+
+</details>
 
 ## Events
 

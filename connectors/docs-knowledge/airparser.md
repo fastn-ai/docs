@@ -5,6 +5,8 @@ hidden: true
 
 # Airparser
 
+<img src="../../.gitbook/assets/connectors/airparser.png" alt="Airparser logo" width="64">
+
 Airparser is an AI-powered document and email parser that extracts structured data from PDFs, emails, images and spreadsheets. This connector covers the Airparser public API: inboxes, extraction schemas, documents and parsed results, post-processing, document review, integrations (webhooks, Zapier, Make, n8n, Google Sheets), team, account settings and billing information.
 
 | | |
@@ -12,8 +14,6 @@ Airparser is an AI-powered document and email parser that extracts structured da
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [airparser.com](https://airparser.com) |
 | **Authentication** | API key |
-| **Actions** | 62 |
-| **Events** | 3 |
 | **Slug** | `airparser` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Airparser from **Build → Integrations → Connectors** and connect an acco
 | Delete Webhooks | `deleteWebhooks` | Permanently removes the named webhooks from Airparser. At least one webhook id must be supplied. |
 | Disable Make Integrations | `disableMakeIntegrations` | Switches the named Make subscriptions off so they stop receiving parsed documents. |
 | Disable n8n Integrations | `disableN8nIntegrations` | Switches the named n8n subscriptions off so they stop receiving parsed documents. |
+
+<details>
+
+<summary>See 52 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Disable Webhooks | `disableWebhooks` | Switches the named webhooks off so they stop delivering parsed documents, without deleting them. |
 | Disable Zapier Integrations | `disableZapierIntegrations` | Switches the named Zapier subscriptions off so they stop receiving parsed documents. |
 | Enable Google Sheets Integration | `enableGoogleSheetsIntegration` | Switches one Google Sheets integration on or off without deleting it. |
@@ -86,6 +93,8 @@ Add Airparser from **Build → Integrations → Connectors** and connect an acco
 | Update Webhook | `updateWebhook` | Updates an existing Airparser webhook's name, target URL, event or enabled state. |
 | Upload Document | `uploadDocument` | Uploads a document to an Airparser inbox and returns its id immediately; parsing continues in the background. Accepts EML, PDF, HTML, TXT, MD, DOCX, XLSX, CSV, JPG, PNG, BMP and ZIP files up to 20 MB. The endpoint requires a multipart/form-data body, which the fastn HTTP engine cannot emit today, so this action cannot currently send a real file. |
 | Upload Document And Wait | `uploadDocumentSync` | Uploads a document to an Airparser inbox, waits up to about 60 seconds for parsing to finish and returns the extracted data in the same response. ZIP files are not supported in this mode. The endpoint requires a multipart/form-data body, which the fastn HTTP engine cannot emit today, so this action cannot currently send a real file. |
+
+</details>
 
 ## Events
 

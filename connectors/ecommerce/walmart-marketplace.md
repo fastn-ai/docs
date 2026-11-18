@@ -5,6 +5,8 @@ hidden: true
 
 # Walmart Marketplace
 
+<img src="../../.gitbook/assets/connectors/walmart-marketplace.png" alt="Walmart Marketplace logo" width="64">
+
 Walmart Marketplace (US) Seller API — environment-switchable (production or sandbox). Orders, items, prices, inventory (single/multi-node/WFS), feeds, reports, reconciliation, returns, refunds, rules/repricer, insights, fulfillment/WFS, and webhook management. OAuth2 client_credentials; Default host is PRODUCTION (marketplace.walmartapis.com).
 
 | | |
@@ -12,8 +14,6 @@ Walmart Marketplace (US) Seller API — environment-switchable (production or sa
 | **Category** | [E-commerce](README.md) |
 | **Website** | [walmart.com](https://walmart.com) |
 | **Authentication** | Credentials you enter, OAuth 2.0 |
-| **Actions** | 215 |
-| **Events** | 5 |
 | **Slug** | `walmartMarketplace` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Walmart Marketplace from **Build → Integrations → Connectors** and conne
 | Available Recon Files | `availableReconFiles` |  |
 | Cancel Customer Return Order | `cancelCustomerReturnOrder` | Cancel a return order created by the seller for the Walmart Multichannel Solutions (MCF) flow. |
 | Cancel Order Lines | `cancelOrderLines` |  |
+
+<details>
+
+<summary>See 205 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Cancel Order Lines (Dynamic Sandbox) | `dynSandboxCancelOrderLines` | Cancel Order Lines (Dynamic Sandbox) Dynamic sandbox only: sends WM_SANDBOX: v2 so Walmart routes the call to the Marketplace dynamic sandbox (stateful test data). Use with a sandbox connection. |
 | CAP Program Reference | `capProgramReference` |  |
 | Catalog Search | `catalogSearch` |  |
@@ -239,6 +246,8 @@ Add Walmart Marketplace from **Build → Integrations → Connectors** and conne
 | WFS Update Shipment Quantities | `wfsUpdateShipmentQuantities` |  |
 | WFS Update Shipment Tracking | `wfsUpdateShipmentTracking` |  |
 | WFS Void Carrier Rate Quote | `wfsVoidCarrierRateQuote` |  |
+
+</details>
 
 ## Events
 

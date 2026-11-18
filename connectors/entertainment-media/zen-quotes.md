@@ -5,6 +5,8 @@ hidden: true
 
 # ZenQuotes
 
+<img src="../../.gitbook/assets/connectors/zen-quotes.jpg" alt="ZenQuotes logo" width="64">
+
 Free, keyless public quotes API by ZenQuotes.io. Uses the free anonymous tier at zenquotes.io/api - no signup or API key required for a random quote, the quote of the day, a batch of random quotes, or a random inspirational image. Author-specific quotes, the author list, keyword-filtered quotes, custom quote lists, and keyword listing all require a paid ZenQuotes API key and are out of scope on this free tier (confirmed live: these return HTTP 200 with body "Unauthorized API request, key required").
 
 | | |
@@ -12,8 +14,6 @@ Free, keyless public quotes API by ZenQuotes.io. Uses the free anonymous tier at
 | **Category** | [Entertainment and media](README.md) |
 | **Website** | [zenquotes.io](https://zenquotes.io) |
 | **Authentication** | No authentication |
-| **Actions** | 4 |
-| **Events** | 0 |
 | **Slug** | `zenQuotes` |
 
 ## Use it

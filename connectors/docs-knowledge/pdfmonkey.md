@@ -5,6 +5,8 @@ hidden: true
 
 # PDFMonkey
 
+<img src="../../.gitbook/assets/connectors/pdfmonkey.jpg" alt="PDFMonkey logo" width="64">
+
 PDFMonkey generates PDF and image documents from reusable Liquid or drag-and-drop templates. This connector covers the PDFMonkey v1 API: document generation (asynchronous and synchronous), documents and document cards, document templates and template cards, template folders, snippets and snippet folders, PDF rendering engines, workspaces, invoices and the current user account.
 
 | | |
@@ -12,8 +14,6 @@ PDFMonkey generates PDF and image documents from reusable Liquid or drag-and-dro
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdfmonkey.io](https://pdfmonkey.io) |
 | **Authentication** | Bearer token |
-| **Actions** | 36 |
-| **Events** | 2 |
 | **Slug** | `pdfmonkey` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add PDFMonkey from **Build → Integrations → Connectors** and connect an acco
 | Delete Snippet | `deleteSnippet` | Deletes a reusable code snippet by its unique identifier. Templates that still reference the snippet will fail to render until they are updated. |
 | Delete Snippet Folder | `deleteSnippetFolder` | Deletes a snippet folder by its unique identifier. Snippets inside the folder are not deleted; they are moved back to the workspace root. |
 | Delete Template Folder | `deleteTemplateFolder` | Deletes a template folder by its unique identifier. Templates inside the folder are not deleted; they are moved back to the workspace root. |
+
+<details>
+
+<summary>See 26 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Generate Document Synchronously | `generateDocumentSync` | Generates a document and waits for rendering to finish before responding, returning a Document Card that already carries the download URL. Use this when the caller needs the finished file immediately rather than polling. |
 | Get Current User | `getCurrentUser` | Retrieves the PDFMonkey account that owns the API key, including the current plan, document quota and remaining document allowance. |
 | Get Document | `getDocument` | Retrieves a single generated document by its unique identifier, including the merge payload, generation logs and the download URL once rendering has succeeded. |
@@ -60,6 +67,8 @@ Add PDFMonkey from **Build → Integrations → Connectors** and connect an acco
 | Update Snippet | `updateSnippet` | Updates a reusable code snippet. Only the fields supplied are changed, so the snippet can be renamed, re-coded or moved into a different snippet folder independently. |
 | Update Snippet Folder | `updateSnippetFolder` | Renames a snippet folder by its unique identifier. |
 | Update Template Folder | `updateTemplateFolder` | Renames a template folder by its unique identifier. |
+
+</details>
 
 ## Events
 

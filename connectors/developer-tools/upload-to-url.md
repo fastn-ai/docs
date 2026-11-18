@@ -5,6 +5,8 @@ hidden: true
 
 # Upload to URL
 
+<img src="../../.gitbook/assets/connectors/upload-to-url.png" alt="Upload to URL logo" width="64">
+
 Upload to URL (uploadtourl.com) turns any file into an instant public CDN link. Covers the API-key surface of https://uploadtourl.com/api - upload a file and get a CDN URL, get a file by id, delete it, check custom-filename availability, verify the key and read remaining credits, list supported formats, publish a standalone HTML page - plus the credential-free surface: service info and health, the anonymous upload-token and upload flow, the live OpenAPI document and the discovery documents. Dashboard, API-key management and billing endpoints are excluded on purpose: they accept only a Clerk end-user session and answer an API key with 401 'Not authenticated'. SECURITY: every uploaded file and published page is served from an unauthenticated public URL, and a published page cannot be unpublished - set a retention period instead. The vendor publishes no customer-facing webhook or event API, so this connector is poll-only.
 
 | | |
@@ -12,8 +14,6 @@ Upload to URL (uploadtourl.com) turns any file into an instant public CDN link. 
 | **Category** | [Developer tools](README.md) |
 | **Website** | [uploadtourl.com](https://uploadtourl.com) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 20 |
-| **Events** | 0 |
 | **Slug** | `uploadToUrl` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Upload to URL from **Build → Integrations → Connectors** and connect an 
 | Get File By Id | `getFileById` | Looks up one previously uploaded file by its id and returns its public CDN URL, stored file name, size in bytes, upload time and expiry time. Returns 404 'File not found' when the id does not belong to the connected API key. |
 | Get MCP Server Card | `getMcpServerCard` | Returns the Model Context Protocol server card for Upload to URL: the MCP version, server name, transport endpoint and the tools the MCP server exposes (upload_file, get_file_status). |
 | Get OAuth Authorization Server Metadata | `getOauthServerMetadata` | Returns the RFC 8414 OAuth 2.0 authorization server metadata for Upload to URL, naming the Clerk issuer and its authorization, token and userinfo endpoints and the supported grant types. |
+
+<details>
+
+<summary>See 10 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get OAuth Protected Resource Metadata | `getProtectedResourceMetadata` | Returns the RFC 9728 protected-resource metadata for the Upload to URL API: the resource identifier, the authorization servers that may issue tokens for it, and the supported scopes. |
 | Get OpenAPI Specification | `getOpenapiSpecification` | Returns the live OpenAPI 3.1 document describing every Upload to URL API operation, its parameters and its schemas. Useful for discovering endpoints added after this connector was built. |
 | Get OpenID Connect Discovery Document | `getOpenidDiscoveryDocument` | Returns the OpenID Connect discovery document for the Clerk identity provider that backs Upload to URL user sign-in, including issuer, JWKS, authorization, token and userinfo endpoints. |
@@ -44,3 +51,5 @@ Add Upload to URL from **Build → Integrations → Connectors** and connect an 
 | Upload File Anonymously | `uploadFileAnonymously` | Uploads a text-based file without an API key, using a single-use token from Get Anonymous Upload Token, and returns a public CDN URL. Spends no account upload credits but is rate limited by caller IP. WARNING: an anonymous upload is not owned by any account, so Get File By Id and Delete File cannot see or remove it - the file stays public until its retention period expires. The returned URL is served with no authentication; never send confidential content. |
 | Upload File With Custom Name | `uploadFileWithCustomName` | Uploads a text-based file under a custom, human-readable name instead of the random prefixed name, optionally overwriting an existing file of the same name. Custom file naming is a paid feature: Free accounts get HTTP 403 'Custom file naming is exclusive to Pro and Business plans.' SECURITY: a custom name makes the unauthenticated public CDN URL fully predictable. |
 | Verify API Key And Get Credits | `verifyApiKey` | Validates the connected Upload to URL API key and returns the account's remaining upload credits. Use it as a health check before an upload run and to read how many credits are left. Returns valid, credits and credits_used. |
+
+</details>

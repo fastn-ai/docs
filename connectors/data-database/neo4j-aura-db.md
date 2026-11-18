@@ -5,6 +5,8 @@ hidden: true
 
 # Neo4j AuraDB
 
+<img src="../../.gitbook/assets/connectors/neo4j-aura-db.png" alt="Neo4j AuraDB logo" width="64">
+
 Execute Cypher queries and manage read/write transactions against a Neo4j AuraDB graph database instance through Neo4j's official HTTP Query API (the REST successor to the legacy Cypher transactional endpoint).
 
 | | |
@@ -12,8 +14,6 @@ Execute Cypher queries and manage read/write transactions against a Neo4j AuraDB
 | **Category** | [Data and databases](README.md) |
 | **Website** | [neo4j.com](https://neo4j.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 5 |
-| **Events** | 0 |
 | **Slug** | `neo4jAuraDB` |
 
 ## Use it

@@ -5,6 +5,8 @@ hidden: true
 
 # Close
 
+<img src="../../.gitbook/assets/connectors/close.png" alt="Close logo" width="64">
+
 Close CRM connector. Full REST coverage of the Close API (https://api.close.com/api/v1): leads, contacts, opportunities, activities (calls/emails/notes/sms/meetings/custom), tasks, comments, users, organizations, memberships, roles, groups, pipelines, lead/opportunity statuses, custom fields, custom objects, smart views, email/SMS templates, sequences, reporting, bulk actions, exports, webhooks and events. Covers both Close and Close.io (same product). Auth: HTTP Basic with the API key as username and an empty password.
 
 | | |
@@ -12,8 +14,6 @@ Close CRM connector. Full REST coverage of the Close API (https://api.close.com/
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [close.com](https://close.com) |
 | **Authentication** | Basic auth |
-| **Actions** | 213 |
-| **Events** | 0 |
 | **Slug** | `close` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add Close from **Build → Integrations → Connectors** and connect an account,
 | Create Contact Custom Field | `createContactCustomField` | Create a contact custom field definition. |
 | Create Custom Activity | `createCustomActivity` | Create a custom activity of a given type on a lead. Set custom field values with top-level custom.&lt;field_id&gt; keys. |
 | Create Custom Activity Type | `createCustomActivityType` | Create a custom activity type. |
+
+<details>
+
+<summary>See 203 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Create Custom Object | `createCustomObject` | Create a custom object instance. |
 | Create Custom Object Type | `createCustomObjectType` | Create a custom object type. Add its fields afterwards with the custom object custom field actions. |
 | Create Delete Bulk Action | `createBulkDelete` | Bulk-delete leads matching a query. Use with care. |
@@ -237,3 +244,5 @@ Add Close from **Build → Integrations → Connectors** and connect an account,
 | Update SMS Template | `updateSmsTemplate` | Update an SMS template. |
 | Update Task | `updateTask` | Update a task (e.g. mark complete). |
 | Update Webhook | `updateWebhook` | Update a webhook subscription (e.g. pause/resume or change events). |
+
+</details>

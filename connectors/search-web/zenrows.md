@@ -5,6 +5,8 @@ hidden: true
 
 # ZenRows
 
+<img src="../../.gitbook/assets/connectors/zenrows.png" alt="ZenRows logo" width="64">
+
 ZenRows web scraping platform: the Fetch universal scraper API (JS rendering, premium residential proxies, screenshots, markdown/plaintext/PDF output, CSS and AI extraction), the Batch/Jobs async scraping API, Extract prepared-domain management, HMAC webhook signing keys and account credit usage.
 
 | | |
@@ -12,8 +14,6 @@ ZenRows web scraping platform: the Fetch universal scraper API (JS rendering, pr
 | **Category** | [Search and web](README.md) |
 | **Website** | [zenrows.com](https://zenrows.com) |
 | **Authentication** | API key |
-| **Actions** | 57 |
-| **Events** | 1 |
 | **Slug** | `zenrows` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add ZenRows from **Build → Integrations → Connectors** and connect an accoun
 | Create Scraping Job | `createJob` | Submit a batch scraping job to the ZenRows async Batch API. ZenRows fetches every task URL on its own infrastructure and stores the result for 14 days. Returns 201 for fewer than 10,000 inline tasks and 202 for larger or CSV-fed submissions; both carry job_id and latest_run. Each successful task costs the normal Fetch credit tier (1 basic, 5 js_render, 10 premium_proxy, 25 both). |
 | Delete Job Run | `deleteJobRun` | Delete one run's stored result bodies while keeping the job and its other runs. Use it once you have downloaded what you need; results are removed automatically 14 days after a run finishes anyway. Idempotent. Costs no credits. |
 | Delete Job Webhook | `deleteJobWebhook` | Detach the webhook receiver from a batch scraping job so ZenRows stops posting run.completed events for it. Idempotent. Costs no credits. |
+
+<details>
+
+<summary>See 47 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Delete Scraping Job | `deleteJob` | Delete an entire batch scraping job including every run and every stored result. Deleting a job with an active run stops it first. After this the job 404s and disappears from List Scraping Jobs. Costs no credits and cannot be undone. |
 | Download Task Content | `getTaskContent` | Download the scraped body ZenRows stored for a single task of a job, without going through the presigned link in the results page. Returns the page content exactly as the scraper produced it. Costs no credits; the stored body is kept for 14 days after the run finishes. |
 | Finalize HMAC Key Rotation | `finalizeHmacKeyRotation` | Promote the staged candidate webhook signing key to active and retire the previous one. Run it only once every receiver accepts signatures made with the candidate secret. Costs no credits. |
@@ -81,6 +88,8 @@ Add ZenRows from **Build → Integrations → Connectors** and connect an accoun
 | Start Run Export | `createRunExport` | Bundle every stored result body of one run into a single ZIP archive. Returns an export_id and a status to poll with Get Run Export. Exports expire 12 hours after creation and a run whose results exceed 100 GiB fails rather than producing a partial archive. Costs no credits. |
 | Stop Job Run | `stopJobRun` | Terminally stop the current run of a batch scraping job. No new tasks are picked up; tasks already in flight may still record a result and pending tasks are left untouched. Idempotent on an already stopped run, 409 if the run is completed or deleted. Costs no credits. |
 | Test Webhook Receiver | `testWebhookReceiver` | Send a probe delivery to an HTTPS receiver before wiring it to a job, and read back whether ZenRows could deliver it and what status code the receiver returned. Use it to validate a webhook endpoint and its HMAC signature handling. Costs no credits. |
+
+</details>
 
 ## Events
 

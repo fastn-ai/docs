@@ -5,6 +5,8 @@ hidden: true
 
 # IPGeolocation.io
 
+<img src="../../.gitbook/assets/connectors/ipgeolocation-io.png" alt="IPGeolocation.io logo" width="64">
+
 IPGeolocation.io provides real-time IP intelligence: IP geolocation for IPv4, IPv6 and domain names, IP security and threat signals, ASN and abuse-contact lookups, time zone and time-conversion data, astronomy (sun and moon) data, and user-agent parsing.
 
 | | |
@@ -12,8 +14,6 @@ IPGeolocation.io provides real-time IP intelligence: IP geolocation for IPv4, IP
 | **Category** | [Search and web](README.md) |
 | **Website** | [ipgeolocation.io](https://ipgeolocation.io) |
 | **Authentication** | Credentials you enter |
-| **Actions** | 29 |
-| **Events** | 0 |
 | **Slug** | `ipgeolocationIo` |
 
 ## Use it
@@ -34,6 +34,13 @@ Add IPGeolocation.io from **Build → Integrations → Connectors** and connect 
 | Get ASN Details By IP Address | `getAsnDetailsByIpAddress` | Resolves an IPv4 or IPv6 address to its Autonomous System and returns the same registration and routing details as a lookup by AS number, including optional peers, upstreams, downstreams, announced prefixes and raw WHOIS record. Costs 1 credit per successful lookup and requires a paid subscription. |
 | Get Astronomy By Address | `getAstronomyByAddress` | Returns sunrise, sunset, moonrise, moonset, twilight boundaries, moon phase and the current position of the sun and moon for a free-text address such as 'New York, USA'. Costs 1 credit per successful lookup. |
 | Get Astronomy By Coordinates | `getAstronomyByCoordinates` | Returns sunrise, sunset, moonrise, moonset, twilight boundaries, moon phase and the current position of the sun and moon for a pair of geographic coordinates. Costs 1 credit per successful lookup. |
+
+<details>
+
+<summary>See 19 more actions</summary>
+
+| Action | Slug | What it does |
+| --- | --- | --- |
 | Get Astronomy By IP Address | `getAstronomyByIpAddress` | Returns sunrise, sunset, moonrise, moonset, twilight boundaries, moon phase and the current position of the sun and moon for the location of an IPv4 or IPv6 address. Omit the IP address to use the public IP address the request originates from. Costs 1 credit per successful lookup. |
 | Get Astronomy By Time Zone | `getAstronomyByTimeZone` | Returns astronomical event times for the caller's location expressed in a specific IANA time zone, so that sunrise, sunset and twilight timestamps are reported against that zone rather than local time. Costs 1 credit per successful lookup. |
 | Get Astronomy Time Series | `getAstronomyTimeSeries` | Returns one set of astronomical values per day across a date range of up to 90 days, for a location given as coordinates, an address or an IP address. Costs 1 credit per successful request. |
@@ -53,3 +60,5 @@ Add IPGeolocation.io from **Build → Integrations → Connectors** and connect 
 | Parse Bulk User Agent Strings | `parseBulkUserAgentStrings` | Parses up to 50,000 user-agent strings in a single request and returns one parsed result per string, in the order supplied. Costs 1 credit per user-agent string and requires a paid subscription. |
 | Parse Custom User Agent String | `parseCustomUserAgentString` | Parses a user-agent string supplied in the request body into browser, device, layout engine and operating system details. Intended for server-side use where the string cannot be sent in the User-Agent header. Costs 1 credit per successful parse and requires a paid subscription. |
 | Parse User Agent | `parseUserAgent` | Parses a user-agent string sent in the User-Agent request header into browser, device, layout engine and operating system details, and classifies robots, crawlers and malformed strings. Available on every plan and costs 1 credit per successful parse. |
+
+</details>
