@@ -27,11 +27,20 @@ This guide shows how to create your own Atlassian OAuth 2.0 app for Jira and add
 ### Create your Jira app
 1. Go to https://developer.atlassian.com, select your profile icon in the top right, and choose **Developer console**.
 2. Open the **Create** menu and choose **OAuth 2.0 integration**.
-3. Enter a name for the app and choose a grant type: **Account-level** (one consent covers every site the app is installed on) or **Resource-level** (consent covers only the sites the user picks). Create the app.
-4. In the left menu, select **Authorization**. Next to **OAuth 2.0 (3LO)**, select **Configure**.
-5. In **Callback URL**, enter `https://oauth.live.fastn.ai` exactly as shown, with no trailing slash, and select **Save changes**.
-6. In the left menu, select **Permissions**. Next to **Jira API**, select **Add**, then select **Configure**.
-7. Add each scope fastn requests:
+
+<figure><img src="../../.gitbook/assets/connector-guides/jira/create-app.png" alt="The Create menu in the Atlassian developer console."><figcaption><p>The Create menu in the Atlassian developer console.</p></figcaption></figure>
+
+3. Enter a **Name** for the app and choose an **Access type**: **Account-level** (one consent covers every site in the customer's account) or **Resource-level** (only the site the customer picks). Tick the box to agree to Atlassian's developer terms, then select **Create**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/jira/name-and-access.png" alt="Name the app and choose its access type."><figcaption><p>Name the app and choose its access type.</p></figcaption></figure>
+
+4. In the left menu, select **Authorization**. Next to **OAuth 2.0 (3LO)**, select **Add**.
+5. In **Callback URLs**, enter `https://oauth.live.fastn.ai` exactly as shown, with no trailing slash, and select **Save changes**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/jira/redirect-url.png" alt="fastn's callback URL in the app's Authorization settings."><figcaption><p>fastn's callback URL in the app's Authorization settings.</p></figcaption></figure>
+
+6. In the left menu, select **Permissions**. Next to **Jira API**, select **Add**, then **Configure**.
+7. On the **Classic scopes** tab, select **Edit Scopes** under **Jira platform REST API**, tick each scope fastn requests, and select **Save**:
    - `read:jira-work`
    - `write:jira-work`
    - `manage:jira-project`
@@ -40,8 +49,16 @@ This guide shows how to create your own Atlassian OAuth 2.0 app for Jira and add
    - `manage:jira-webhook`
 
    fastn also asks for `offline_access` when a customer signs in, so Jira returns a refresh token. You do not add it in the developer console.
-8. In the left menu, select **Distribution**. Turn on sharing in the **Enable sharing** section. Apps are private by default, so without this only you can authorize the app. Until Atlassian reviews the app, people who sign in see a notice that it has not been reviewed.
-9. In the left menu, select **Settings** and copy the **Client ID** and **Secret**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/jira/scopes.png" alt="The Jira scopes fastn needs, on the Classic scopes tab."><figcaption><p>The Jira scopes fastn needs, on the Classic scopes tab.</p></figcaption></figure>
+
+8. In the left menu, select **Distribution**, then **Edit** under **Distribution controls**. Change the status to **Sharing** and fill in the vendor and privacy details Atlassian asks for. Apps are private by default, so until you share it only you and the app's contributors can authorize it.
+
+<figure><img src="../../.gitbook/assets/connector-guides/jira/distribution.png" alt="Distribution controls: the app is private until you share it."><figcaption><p>Distribution controls: the app is private until you share it.</p></figcaption></figure>
+
+9. In the left menu, select **Settings** and copy the **Client ID** and **Secret** under **Authentication details**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/jira/credentials.png" alt="Your Client ID and Secret are under Authentication details in Settings."><figcaption><p>Your Client ID and Secret are under Authentication details in Settings.</p></figcaption></figure>
 
 ### Add your app to fastn
 1. Go to **Build** → **Integrations** → **Connectors** and open **Jira**.
