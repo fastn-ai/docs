@@ -169,6 +169,7 @@
   * [Any other operation](reference/sdk/any-operation.md)
 * [Workflow runtime API](reference/workflow-runtime.md)
 * [Errors and failure states](reference/errors.md)
+* [Security and compliance](reference/security.md)
 * [FAQs](reference/faqs.md)
 * [Glossary](reference/glossary.md)
 * [Changelog](reference/changelog.md)
