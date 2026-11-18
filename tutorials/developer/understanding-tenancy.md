@@ -17,7 +17,7 @@ A token minted without a customer is refused (`400`, code `EMBED_TOKEN_REQUIRES_
 Within a customer, per-user isolation keys on the **user id**:
 
 * send `userId` in the token request body, or
-* send `x-user-id` on the token request, attested with an identity hash when the API key has identity verification turned on (see [API keys](../../manage/api-keys.md)).
+* send `x-user-id` on the token request, attested with an identity hash when the API key has identity verification turned on (see [Verify caller identity](../../manage/identity-verification.md)).
 
 `userEmail` and `userName` are for display only; they do not decide whose session it is. If you send no user id at all, each token gets a random `embed_usr…` id, so nothing a person does carries over to their next session. Send a stable id from your own user table.
 

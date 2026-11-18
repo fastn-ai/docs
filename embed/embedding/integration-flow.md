@@ -18,7 +18,7 @@ Before you start, you need an API key. We also recommend two optional security m
 
 #### Creating an API key
 
-1. Go to **Embed** → **API keys and MCP** → **API keys** (`/access`).
+1. Go to **Embed → API keys and MCP → API keys** (`/access`).
 
 2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:

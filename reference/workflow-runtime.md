@@ -207,4 +207,4 @@ Whatever you return becomes the workflow's output, and must match the output con
 
 ## Errors
 
-Throwing marks the execution **Failed**. A `throw` from your code is recorded as a user code error and never retries, whatever the retry policy says. Where the workflow's retry policy allows more than one attempt, only transient failures retry: for example a connector call that escapes your code still failing with a 429 or 5xx after the connector's own retries, or a transient database error. Out of memory, a result that is too large, and a cancelled run never retry.
+Throwing marks the execution **Failed**. A `throw` from your code is recorded as a user code error and never retries, whatever the retry policy says. Where the workflow's retry policy allows more than one attempt, only transient failures retry: for example a connector call that escapes your code still failing with a 429 or 5xx after the connector's own retries, or a transient database error. Out of memory, a result that is too large, and a canceled run never retry.

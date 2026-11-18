@@ -103,7 +103,7 @@ Scroll down in the dialog to continue. The **Create** button stays disabled unti
 
 **Step 5: Set the endpoints and grant types**
 
-Scroll to the lower half of the dialog. The grey placeholders in the fields are examples only; replace them with the endpoints published in the service's OAuth documentation.
+Scroll to the lower half of the dialog. The gray placeholders in the fields are examples only; replace them with the endpoints published in the service's OAuth documentation.
 
 | Field | What to enter |
 | --- | --- |
@@ -132,7 +132,7 @@ To change credentials later, click **Edit** on your provider's row. **Delete** i
 
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
-| **Create** button is greyed out | A required field is empty | Fill **Name**, **Client ID** and **Client Secret**, then retry |
+| **Create** button is grayed out | A required field is empty | Fill **Name**, **Client ID** and **Client Secret**, then retry |
 | The service shows a redirect URI error | fastn's callback URL is not registered in your developer app | Add the exact callback URL in the app's OAuth settings on the service. Some services, such as Airtable, expect it with a trailing slash (`https://oauth.live.fastn.ai/`). If the error persists with the URL registered exactly, contact fastn |
 | The service shows an invalid scope error | A scope in fastn is not enabled on the developer app | Make the scope lists match in both places |
 | Consent screen still shows the community app | Both apps show **Preferred app**, and the connect dialog picked the community app | For a test connection in the dashboard, pick your app under **⋯** → **Change provider**. Customers connecting in the widget can't choose, so if they keep getting the community app, contact fastn |

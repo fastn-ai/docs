@@ -4,11 +4,11 @@ description: >-
   contact support.
 ---
 
-# Viewing Sync Status & History
+# View sync status and history
 
 Once your integrations are connected and running, the widget shows you how they're doing: what's running, what succeeded or failed, and what needs attention. The overview lives in **Insights**, which you open from the **⋯** menu in the widget header. Each integration's own run history is in its detail view.
 
-**Prerequisites:** At least one app connected via the widget. See [Connecting Apps via Widget](connecting-apps-via-widget.md).
+**Prerequisites:** At least one app connected via the widget. See [Connect apps](connecting-apps-via-widget.md).
 
 ***
 
@@ -16,7 +16,7 @@ Once your integrations are connected and running, the widget shows you how they'
 
 In the widget header, open the **⋯** menu and choose **Insights**. A range selector lets you switch between **Today**, **7 days** (the default), **30 days**, and **Custom** (pick your own from and to dates).
 
-If there is no **⋯** menu, your provider has hidden the widget header; if the menu is there without Insights, your provider's widget setup has it turned off. In either case, contact the product's support team.
+If there is no **⋯** menu, the product has hidden the widget header; if the menu is there without Insights, the product's widget setup has it turned off. In either case, contact the product's support team.
 
 #### Panels
 
@@ -65,7 +65,7 @@ The workflow details have these tabs:
 
 | Tab            | Shows                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| **Diagram**    | A visual graph of the workflow's steps. Shown only if your provider turned on the workflow diagram; otherwise the details open on Executions. |
+| **Diagram**    | A visual graph of the workflow's steps. Shown only if the product turned on the workflow diagram; otherwise the details open on Executions. |
 | **Executions** | Run history for this workflow, one row per run with its status, duration and time                                           |
 | **Errors**     | Errors with a count badge. Each shows a short explanation or its category (user\_data, configuration, dependency, system, Unknown Outcome), the message, and the time |
 | **Test Cases** | The test scenarios for the workflow, with a count badge                                                                     |

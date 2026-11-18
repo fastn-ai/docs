@@ -1,4 +1,5 @@
 ---
+description: "Common errors when embedding fastn, with their causes and fixes."
 ---
 
 # Troubleshooting
@@ -41,7 +42,7 @@ Requests made with a `fsk_test_` key require the header `X-fastn-Test-Mode: true
 
 **Most likely cause:** a tenancy or token mismatch.
 
-This can appear when the iframe URL's tenancy shape doesn't match how the token was minted - for example, a single-tenant embed where the `tenant-id` and token identity don't line up.
+This can appear when the iframe URL's tenancy shape doesn't match how the token was minted: for example, an embed for one customer where the iframe URL's `tenant-id` (the customer) and the token's identity don't line up.
 
 **Fix:** Confirm the iframe URL matches your intended tenancy (see [Tenancy](understanding-tenancy.md)), and that the token was generated with the correct `x-org-id` and identity fields. Confirm the backend token pattern is being used rather than a hardcoded token.
 

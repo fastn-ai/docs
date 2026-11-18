@@ -88,6 +88,7 @@
   * [Customer MCP URL](embed/embedding/customer-mcp-url.md)
 * [Go-live checklist](embed/embedding/production-checklist.md)
 * [API keys and MCP](manage/api-keys.md)
+  * [Verify caller identity](manage/identity-verification.md)
   * [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md)
   * [Find your org identifier](tutorials/developer/finding-your-org-identifier.md)
 
@@ -144,6 +145,7 @@
 
 * [HTTP API](reference/api.md)
   * [REST API reference](reference/rest/README.md)
+    * [OpenAPI spec and Postman collection](reference/rest/tools.md)
     * [Workflows](reference/rest/workflows.md)
     * [Installations and configs](reference/rest/installations.md)
     * [Widgets and embedding](reference/rest/widgets.md)

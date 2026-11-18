@@ -36,15 +36,24 @@ There is a **Was this diagnosis helpful?** rating under it. It is worth answerin
 
 ---
 
+## How each entry reads
+
+Every entry below has the same shape:
+
+* **What it means:** what went wrong, and why it usually happens.
+* **How to fix it:** what to do, and the screen or header to check first.
+
+---
+
 ## Dependency Error
 
 The tag you will see most. It appears beside **Failed** in the Executions list.
 
-**A dependency the workflow called did not do its job.** The workflow's own code ran; something it depended on (almost always a connector action), failed or refused. That is why the run is usually fast: it dies at the first call that will not work, not after a long timeout.
+**What it means:** a dependency the workflow called did not do its job. The workflow's own code ran; something it depended on (almost always a connector action) failed or refused. That is why the run is usually fast: it stops at the first call that fails, not after a long timeout.
 
 A real example, from a daily schedule that failed identically for nine consecutive days:
 
-> **Failed at** `connector.tiktokShop.getAuthorizedShops` - Step 2 of 2
+> **Failed at** `connector.tiktokShop.getAuthorizedShops`, Step 2 of 2
 >
 > **Diagnosis:** The TikTok Shop connector needs to be connected.
 >
@@ -52,12 +61,12 @@ A real example, from a daily schedule that failed identically for nine consecuti
 >
 > **Raw:** `tiktokShop.getAuthorizedShops failed: Pinned connection "…" is not usable or does not belong to this org for connector "tiktokShop"`
 
-The usual causes, in rough order of frequency:
+**How to fix it:** open the run's **Error** tab, then match the cause. The usual causes, in rough order of frequency:
 
-| Cause | How to confirm it | Fix |
-| ----- | ----------------- | --- |
+| Cause | Where to confirm it | Fix |
+| ----- | ------------------- | --- |
 | The connection is **Expired** or **Failed** | [Connections](../build/connections/README.md), filtered to that customer | The customer re-authorizes through your widget |
-| The connection is **pinned and no longer usable**, or belongs to another org | The raw message names a pinned connection id | Re-authenticate, then select the active connection |
+| The connection is **pinned and no longer usable**, or belongs to another organization | The raw message names a pinned connection id | Re-authenticate, then select the active connection |
 | The customer never connected that system | No row for them in Connections | They connect it |
 | A scope is missing from the grant | The action fails where others on the same connector succeed | Reconnect with the scope the action needs |
 | The upstream API changed | [Pending updates](../build/connector-updates.md) has a proposal for that connector | Accept the proposal |
@@ -72,21 +81,23 @@ The usual causes, in rough order of frequency:
 
 Every run ends in one of these. They are the filter chips on [Executions](../operate/executions.md).
 
-| Status | Means | Where to look next |
-| ------ | ----- | ------------------ |
+| Status | What it means | How to fix it, and where to look |
+| ------ | ------------- | -------------------------------- |
 | **Pending** | Accepted, not yet queued | Nothing to do |
 | **Queued** | Waiting for a runner | Nothing to do |
-| **Running** | In progress | - |
-| **Completed** | Finished successfully | [Sync reports](../operate/sync-reports.md), if the data looks wrong |
-| **Failed** | Threw, or a dependency refused | The Error tab, as above |
-| **Timed out** | The tier's budget ran out | [Traces](../operate/traces.md): one slow call, or hundreds? |
-| **Cancelled** | Stopped before finishing | - |
+| **Running** | In progress | Nothing to do yet |
+| **Completed** | Finished successfully | If the data looks wrong, check [Sync reports](../operate/sync-reports.md) |
+| **Failed** | Threw, or a dependency refused | Read the run's **Error** tab, as above |
+| **Timed out** | The tier's budget ran out | Check [Traces](../operate/traces.md): one slow call, or hundreds? |
+| **Cancelled** | Stopped before finishing | Nothing to fix; run it again if you still need it |
 
 **Failed and Timed out are different problems.** Failed means something was wrong; Timed out means nothing was necessarily wrong except the clock. Do not raise the timeout on a Failed run. It will fail identically, just later.
 
 ### Out of memory
 
-A run that hit the memory ceiling reports **Failed** with no obvious error. Expand it and read `peakSandboxMB` against `sandboxMemoryLimitMB` in the Summary tab: the default ceiling is 512 MB. **Out-of-memory never retries**, so it stops rather than recovering on the next attempt.
+**What it means:** the run hit its sandbox memory limit and stopped. It reports **Failed**, with a `Memory Limit` tag in the Executions list. **Out-of-memory never retries**, so it stops rather than recovering on the next attempt.
+
+**How to fix it:** expand the run and compare `peakSandboxMB` (the most memory the run was seen using, sampled during the run) with `sandboxMemoryLimitMB` (the limit it ran under) in the **Summary** tab. The default limit is 512 MB. If the peak is at or near the limit, fetch less data per call and process smaller batches. See [Troubleshooting](../operate/troubleshooting.md).
 
 ---
 
@@ -94,9 +105,9 @@ A run that hit the memory ceiling reports **Failed** with no obvious error. Expa
 
 Returned by the [HTTP API](api.md).
 
-| Response | Means | Fix |
-| -------- | ----- | --- |
-| `WORKFLOW_NOT_PUBLISHED` | No snapshot has ever been published for that workflow, so there is no version to run | Publish a snapshot from the editor. **This is the single most common cause of "the API did nothing"**: every call returns it until you publish |
+| Response | What it means | How to fix it |
+| -------- | ------------- | ------------- |
+| `WORKFLOW_NOT_PUBLISHED` | No snapshot has ever been published for that workflow, so there is no version to run. **This is the single most common cause of "the API did nothing"**: every call returns it until you publish | Publish a snapshot from the editor |
 | `401` / `403` | The key is wrong, revoked, expired, outside its IP allowlist, or lacks the permission for what you called | Check the key on [API keys](../manage/api-keys.md). Key permissions are a preset plus a per-resource matrix on the key itself; [Roles](../manage/roles.md) govern people, not keys |
 | A test key is rejected | `X-fastn-Test-Mode: true` was not sent. A test key is refused without it | Send the header, or use a live key |
 | The wrong code ran | `x-fastn-env` decides. `test` runs the latest published version; any other slug runs the version deployed to that environment | Set the header deliberately |
@@ -142,79 +153,79 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 
 **Shared: any endpoint can return these**
 
-| Code | HTTP | Means |
-| ---- | ---- | ----- |
-| `AUTH_INVALID` | 401 | Invalid authentication credentials |
-| `AUTH_EXPIRED` | 401 | Credentials have expired |
-| `FORBIDDEN` | 403 | Permission denied |
-| `NOT_FOUND` | 404 | Resource not found |
-| `VALIDATION_ERROR` | 400 | Request validation failed: check `details` for the offending field |
-| `CONFLICT` | 409 | Resource conflict |
-| `RATE_LIMITED` | 429 | Rate limit exceeded: honor `retryAfter` |
-| `QUOTA_EXCEEDED` | 429 | Plan quota exceeded. Unlike `RATE_LIMITED`, waiting will not clear it |
-| `PAYMENT_REQUIRED` | 402 | Quota exhausted and billing action is needed. See [Billing and limits](../manage/billing.md) |
-| `METHOD_NOT_ALLOWED` | 405 | Wrong HTTP method for that route |
-| `PAYLOAD_TOO_LARGE` | 413 | Request body over the size limit |
-| `INTERNAL_ERROR` | 500 | Unhandled server error: safe to retry once, then report |
-| `SERVICE_UNAVAILABLE` | 503 | Service temporarily unavailable: retry with backoff |
-| `DB_POOL_EXHAUSTED` | 503 | Database busy, retry shortly. Sent with `Retry-After` |
-| `UPSTREAM_ERROR` | 502 | A service fastn depends on failed |
-| `DB_ERROR` | 500 | Database operation failed |
-| `TIMEOUT` | 504 | Operation timed out |
+| Code | HTTP | What it means | How to fix it |
+| ---- | ---- | ------------- | ------------- |
+| `AUTH_INVALID` | 401 | Invalid authentication credentials | Check the key or token you sent. See [API keys](../manage/api-keys.md) |
+| `AUTH_EXPIRED` | 401 | Credentials have expired | Send a current key or a fresh token |
+| `FORBIDDEN` | 403 | Permission denied | Check the key's permissions on [API keys](../manage/api-keys.md) |
+| `NOT_FOUND` | 404 | Resource not found | Check the id or slug in the request |
+| `VALIDATION_ERROR` | 400 | Request validation failed | Fix the field named in `details` |
+| `CONFLICT` | 409 | Resource conflict | Read the current state of the resource, then retry against it |
+| `RATE_LIMITED` | 429 | Rate limit exceeded | Wait `retryAfter` seconds, then retry |
+| `QUOTA_EXCEEDED` | 429 | Plan quota exceeded | Waiting will not clear it, unlike `RATE_LIMITED`. See [Billing and limits](../manage/billing.md) |
+| `PAYMENT_REQUIRED` | 402 | Quota exhausted and billing action is needed | See [Billing and limits](../manage/billing.md) |
+| `METHOD_NOT_ALLOWED` | 405 | Wrong HTTP method for that route | Use the method the [HTTP API](api.md) reference lists |
+| `PAYLOAD_TOO_LARGE` | 413 | Request body over the size limit | Send a smaller body |
+| `INTERNAL_ERROR` | 500 | Unhandled server error | Safe to retry once, then report |
+| `SERVICE_UNAVAILABLE` | 503 | Service temporarily unavailable | Retry with backoff |
+| `DB_POOL_EXHAUSTED` | 503 | Database busy | Retry after the `Retry-After` header's delay |
+| `UPSTREAM_ERROR` | 502 | A service fastn depends on failed | Retry with backoff; report it if it persists |
+| `DB_ERROR` | 500 | Database operation failed | Retry once, then report |
+| `TIMEOUT` | 504 | Operation timed out | Retry; report it if it persists |
 
-**Connector**: see [Connection statuses](#connection-statuses) for the fix in each case.
+**Connector**: [Connection statuses](#connection-statuses) has the fix for each connection state.
 
-| Code | HTTP | Means |
-| ---- | ---- | ----- |
-| `CONN-AUTH-FAILED` | 401 | The connection's credential was rejected by the provider |
-| `CONN-REFRESH-FAILED` | 401 | An OAuth token could not be refreshed. Reconnect. This will not recover on its own |
-| `CONN-EXEC-FAILED` | 502 | The connector ran but the provider call failed |
-| `CONN-PROTOCOL-UNAVAILABLE` | 503 | A protocol action (database, SFTP, FTPS, MSSQL, MongoDB) reached a runtime that cannot run it. Retrying the same call will not help |
+| Code | HTTP | What it means | How to fix it |
+| ---- | ---- | ------------- | ------------- |
+| `CONN-AUTH-FAILED` | 401 | The connection's credential was rejected by the provider | The customer reconnects |
+| `CONN-REFRESH-FAILED` | 401 | An OAuth token could not be refreshed. This will not recover on its own | Reconnect |
+| `CONN-EXEC-FAILED` | 502 | The connector ran but the provider call failed | Read the provider's raw message in the run's **Error Details**, and the call in [Traces](../operate/traces.md) |
+| `CONN-PROTOCOL-UNAVAILABLE` | 503 | A protocol action (database, SFTP, FTPS, MSSQL, MongoDB) reached a runtime that cannot run it | Retrying the same call will not help: report it |
 
 **Workflow**
 
-| Code | HTTP | Means |
-| ---- | ---- | ----- |
-| `WF-EXEC-FAILED` | 500 | The run threw. The detail is in [Executions](../operate/executions.md), not this response |
-| `WF-TIMEOUT` | 504 | The run exceeded its tier's time budget |
-| `WF-LABEL-LIMIT` | 400 | Too many labels for one workflow |
-| `WF-CODE-READONLY` | 403 | Your organization can read workflow code but not change it |
-| `WF-CODE-ERROR` | 422 | A test run failed because of the workflow code itself |
-| `WF-TEST-TIMEOUT` | 408 | A test run timed out |
-| `WF-MEMORY-LIMIT` | 422 | The workflow exceeded the sandbox memory limit |
-| `WF-RESULT-TOO-LARGE` | 413 | The workflow returned a result over the size limit |
+| Code | HTTP | What it means | How to fix it |
+| ---- | ---- | ------------- | ------------- |
+| `WF-EXEC-FAILED` | 500 | The run threw | Read the run in [Executions](../operate/executions.md); the detail is there, not in this response |
+| `WF-TIMEOUT` | 504 | The run exceeded its tier's time budget | Check [Traces](../operate/traces.md), then see [Troubleshooting](../operate/troubleshooting.md) |
+| `WF-LABEL-LIMIT` | 400 | Too many labels for one workflow | Remove labels until it has 5 or fewer |
+| `WF-CODE-READONLY` | 403 | Your organization can read workflow code but not change it | Changes that send no code still work. To edit code, ask fastn support to turn on code editing for your organization |
+| `WF-CODE-ERROR` | 422 | A test run failed because of the workflow code itself | Fix the code, then test again |
+| `WF-TEST-TIMEOUT` | 408 | A test run timed out | Test with less data, or check [Traces](../operate/traces.md) for the slow call |
+| `WF-MEMORY-LIMIT` | 422 | The workflow exceeded the sandbox memory limit | See [Out of memory](#out-of-memory) |
+| `WF-RESULT-TOO-LARGE` | 413 | The workflow returned a result over the size limit | Return less data from the workflow |
 
 **Agent**
 
-| Code | HTTP | Means |
-| ---- | ---- | ----- |
-| `AGT-LLM-ERROR` | 502 | The model provider returned an error |
-| `AGT-TIMEOUT` | 504 | The agent request timed out |
+| Code | HTTP | What it means | How to fix it |
+| ---- | ---- | ------------- | ------------- |
+| `AGT-LLM-ERROR` | 502 | The model provider returned an error | Retry; report it if it persists |
+| `AGT-TIMEOUT` | 504 | The agent request timed out | Retry; report it if it persists |
 
 **Unified API**
 
-| Code | HTTP | Means |
-| ---- | ---- | ----- |
-| `API-UNIFIED-ENTITY-UNSUPPORTED` | 404 | No such unified entity |
-| `API-UNIFIED-OPERATION-UNSUPPORTED` | 404 | That entity does not support the operation |
-| `API-UNIFIED-NO-PROVIDER` | 404 | Nothing is connected that can serve the entity |
-| `API-UNIFIED-MULTIPLE-PROVIDERS` | 409 | More than one provider is connected: name the one you want |
-| `API-UNIFIED-CONNECTION-NOT-FOUND` | 404 | No such connection for this provider |
-| `API-UNIFIED-CONNECTION-EXPIRED` | 409 | The connection needs a new sign-in |
-| `API-UNIFIED-CURSOR-INVALID` | 400 | The pagination cursor is malformed or expired |
-| `API-UNIFIED-VALIDATION-FAILED` | 400 | The record failed the unified schema |
-| `API-UNIFIED-PROVIDER-AUTH-FAILED` | 401 | The underlying provider rejected the credential |
-| `API-UNIFIED-PROVIDER-RATE-LIMITED` | 429 | The provider throttled the call, not fastn |
-| `API-UNIFIED-PROVIDER-NOT-FOUND` | 404 | The provider could not find the requested record |
-| `API-UNIFIED-PROVIDER-REJECTED` | 400 | The provider rejected the request |
-| `API-UNIFIED-PROVIDER-ERROR` | 502 | The provider request failed |
+| Code | HTTP | What it means | How to fix it |
+| ---- | ---- | ------------- | ------------- |
+| `API-UNIFIED-ENTITY-UNSUPPORTED` | 404 | No such unified entity | Check the entity name |
+| `API-UNIFIED-OPERATION-UNSUPPORTED` | 404 | That entity does not support the operation | Use an operation the entity supports |
+| `API-UNIFIED-NO-PROVIDER` | 404 | Nothing is connected that can serve the entity | Connect a system that serves the entity |
+| `API-UNIFIED-MULTIPLE-PROVIDERS` | 409 | More than one provider is connected | Name the provider you want |
+| `API-UNIFIED-CONNECTION-NOT-FOUND` | 404 | No such connection for this provider | Check the connection id |
+| `API-UNIFIED-CONNECTION-EXPIRED` | 409 | The connection needs a new sign-in | The customer reconnects |
+| `API-UNIFIED-CURSOR-INVALID` | 400 | The pagination cursor is malformed or expired | Start the listing again without a cursor |
+| `API-UNIFIED-VALIDATION-FAILED` | 400 | The record failed the unified schema | Fix the record to match the schema |
+| `API-UNIFIED-PROVIDER-AUTH-FAILED` | 401 | The underlying provider rejected the credential | The customer reconnects |
+| `API-UNIFIED-PROVIDER-RATE-LIMITED` | 429 | The provider throttled the call, not fastn | Retry later, with backoff |
+| `API-UNIFIED-PROVIDER-NOT-FOUND` | 404 | The provider could not find the requested record | Check the record id |
+| `API-UNIFIED-PROVIDER-REJECTED` | 400 | The provider rejected the request | Read the provider's message in the response, and fix the request |
+| `API-UNIFIED-PROVIDER-ERROR` | 502 | The provider request failed | Retry; report it if it persists |
 
 **Events**: these two reach a caller; the remaining event codes are operational and surface in [Trigger failure states](#trigger-failure-states) rather than an API response.
 
-| Code | HTTP | Means |
-| ---- | ---- | ----- |
-| `EVT-WEBHOOK-AUTH-FAILED` | 401 | An inbound webhook failed its signature or secret check |
-| `EVT-WEBHOOK-DELIVERY-FAILED` | 502 | An outbound delivery failed |
+| Code | HTTP | What it means | How to fix it |
+| ---- | ---- | ------------- | ------------- |
+| `EVT-WEBHOOK-AUTH-FAILED` | 401 | An inbound webhook failed its signature or secret check | Check the sender uses the secret or key the trigger expects. See [Webhook triggers](../build/triggers/webhooks.md) |
+| `EVT-WEBHOOK-DELIVERY-FAILED` | 502 | An outbound delivery failed | Check the receiving endpoint, then replay from [Events](../operate/events.md) |
 
 ### Older code names
 
@@ -235,23 +246,28 @@ Some routes return a bare status with no explicit code. One is then derived from
 `400` and `422` → `VALIDATION_ERROR` · `401` → `AUTH_INVALID` · `402` → `PAYMENT_REQUIRED` · `403` → `FORBIDDEN` · `404` → `NOT_FOUND` · `405` → `METHOD_NOT_ALLOWED` · `408` and `504` → `TIMEOUT` · `409` → `CONFLICT` · `429` → `RATE_LIMITED` · `500` → `INTERNAL_ERROR` · `502` → `UPSTREAM_ERROR` · `503` → `SERVICE_UNAVAILABLE`
 
 Any status outside that list yields `HTTP_<status>`.
+
+---
+
 ## Trigger failure states
 
 ### App events: `Subscription: Failed`
 
-On the [App events](../build/triggers/app-events.md) list, `Subscription` is a separate column from `Status`, and it is the one that matters. **A trigger can read `Active` and still never fire**, because *Status* is whether you enabled it and *Subscription* is whether fastn managed to register for events with the provider.
+**What it means:** fastn could not register for events with the provider, so the trigger never fires. On the [App events](../build/triggers/app-events.md) list, `Subscription` is a separate column from `Status`, and it is the one that matters. **A trigger can read `Active` and still never fire**, because *Status* is whether you enabled it and *Subscription* is whether fastn managed to register for events with the provider.
 
-Recover with **Retry Subscription** from the row menu. If it fails again the problem is upstream: check the connection is live and still carries the scopes the event needs.
+**How to fix it:** use **Retry Subscription** from the row menu. If it fails again the problem is upstream: check the connection is live and still carries the scopes the event needs.
 
 ### Schedules: auto-disabled
 
-fastn disables a schedule trigger that keeps failing. The `Failures` column counts *consecutive* failures and resets on a success; a climbing number is the warning. Once disabled, a re-enable cooldown applies, and the reason is recorded in **Status history** on the trigger's detail panel.
+**What it means:** fastn disables a schedule trigger that keeps failing. The `Failures` column counts *consecutive* failures and resets on a success; a climbing number is the warning. So a nightly job that stopped may have been switched off by the platform rather than by a colleague.
 
-So a nightly job that stopped may have been switched off by the platform rather than by a colleague. See [Triggers](../build/triggers/README.md#when-fastn-disables-a-trigger-for-you).
+**How to fix it:** read the reason in **Status history** on the trigger's detail panel and fix the failing workflow. Once disabled, a re-enable cooldown applies. See [Triggers](../build/triggers/README.md#when-fastn-disables-a-trigger-for-you).
 
 ### Webhooks: delivery exhausted
 
-When the delivery attempts run out, the event is recorded as failed and can be replayed from [Events](../operate/events.md). Note that Events filters by *source*, not status, so on a busy org you will need to search by the trigger's name rather than filter for failures.
+**What it means:** the delivery attempts ran out, and the event is recorded as failed.
+
+**How to fix it:** fix the cause, then replay the event from [Events](../operate/events.md). Events filters by *source*, not status, so on a busy organization search by the trigger's name rather than filtering for failures.
 
 {% hint style="warning" %}
 **Replay re-runs the workflow for real.** Without a deduplication key on the trigger and an idempotency guard in the workflow, replaying writes the record twice. See [Troubleshooting](../operate/troubleshooting.md#duplicates-after-a-replay).
@@ -263,27 +279,27 @@ When the delivery attempts run out, the event is recorded as failed and can be r
 
 From [Connections](../build/connections/README.md). A connection that is not healthy is the root cause of most Dependency Errors.
 
-| Status | Means | Fix |
-| ------ | ----- | --- |
-| **Active** | Working | - |
+| Status | What it means | How to fix it |
+| ------ | ------------- | ------------- |
+| **Active** | Working | Nothing to fix |
 | **Expired** | The credential ran out and could not be refreshed | The customer re-authorizes through your widget |
 | **Failed** | Access was revoked, a password changed, or a key was rotated | Same: the customer reconnects |
-| **Inactive** | Not currently in use | The row menu offers **Reconnect** and **Disconnect**; there is no re-enable |
+| **Inactive** | Not currently in use | The row menu offers **Reconnect** and **Disconnect**; there is no re-enable, so reconnect it |
 
 ---
 
 ## Embed and widget
 
-| What you see | Means |
-| ------------ | ----- |
-| `fastn:session-expired` posted to the parent window | The embed session hit the **seven-day refresh cap**. Refreshing again will not extend it: listen for this message and mint a fresh token |
-| The widget renders blank | Usually an expired or hard-coded token. Fetch a fresh one on each load |
+| What you see | What it means | How to fix it |
+| ------------ | ------------- | ------------- |
+| `fastn:session-expired` posted to the parent window | The embed session hit the **seven-day refresh cap**. Refreshing again will not extend it | Listen for this message and mint a fresh token |
+| The widget renders blank | Usually an expired or hard-coded token | Fetch a fresh token on each load |
 
 ---
 
 ## What is not covered here
 
-Being straight about the boundary: this page documents the failure states reachable through the product's own screens. It is **not** a generated list of every error string the platform can emit: fastn does not publish one, and inventing codes would be worse than omitting them.
+This page documents the failure states reachable through the product's own screens. It is **not** a generated list of every error string the platform can emit: fastn does not publish one, and inventing codes would be worse than omitting them.
 
 If you hit an error that is not here:
 

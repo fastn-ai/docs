@@ -81,9 +81,7 @@ fastn separates *what the code is* from *where it runs*.
 * **Environments** are where versions are deployed. `test` and `live` are built in and protected; you can add named ones such as `staging`, and mark any environment **Requires review** so promoting to it opens a pull request on a connected GitHub repository instead of deploying straight away.
 * **API keys** carry a mode, `Test` or `Live`. A Test key is refused unless the caller sends `X-fastn-Test-Mode: true`.
 
-{% hint style="warning" %}
-Test mode is not a sandbox. A test key reaches the same live connections as a live key and causes the same real writes. It is a separate credential, not a safe one.
-{% endhint %}
+Test keys act on real data. See [API keys](../manage/api-keys.md).
 
 ### Triggers
 
@@ -95,7 +93,7 @@ Three kinds, covered fully in [Triggers](../build/triggers/README.md).
 
 ### Unified APIs
 
-Where several providers do the same job (HubSpot, Salesforce and Zoho all hold contacts), fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/api/v1/unified/crm/contact` and does not branch on the CRM.
+Where several providers do the same job (HubSpot, Salesforce and Zoho all hold contacts), fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/v1/unified/crm/contact` and does not branch on the CRM.
 
 The categories and entities available depend on the unified API catalog in your workspace, and the list grows over time; CRM contacts are a typical example. See [Unified APIs](../build/unified-apis/README.md) for how to browse what is available.
 

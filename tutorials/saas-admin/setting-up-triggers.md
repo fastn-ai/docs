@@ -1,14 +1,22 @@
 ---
 description: >-
-  Create webhook, schedule, and app event triggers under Integrations →
+  Create webhook, schedule, and app event triggers under Build → Integrations →
   Triggers and route them to your workflows.
 ---
 
 # Setting Up Triggers
 
-Triggers are what start your workflows. In fastn, triggers are managed **separately from workflows**: you create a trigger under **Integrations → Triggers**, then route it to one or more workflows.
+Triggers are what start your workflows. In fastn, triggers are managed **separately from workflows**: you create a trigger under **Build → Integrations → Triggers**, then route it to one or more workflows.
 
-1. Go to **Integrations** and open the **Triggers** tab.
+### Before you start
+
+* **Who this is for:** an Owner, Admin or Developer. Operators can pause, resume and replay triggers but cannot create them.
+* **A workflow to route to.** Every route names a workflow, so build one first ([Build with AI](creating-a-workflow-via-ai.md)).
+* **For an app event trigger:** a connection to the app the event comes from.
+
+### Create a trigger
+
+1. Go to **Build → Integrations → Triggers**.
 2. The page has three tabs:
    * **Webhooks** - HTTP POST endpoints for external events
    * **Schedulers** - Time-based triggers (interval, daily, weekly, monthly, custom cron)
@@ -117,7 +125,7 @@ Click a trigger's row to open its detail panel, then **Edit** to change its conf
 
 ### What you've learned
 
-* Triggers are managed separately from workflows under Integrations → Triggers
+* Triggers are managed separately from workflows under **Build → Integrations → Triggers**
 * Three trigger types: Webhook (with routes), Schedule (with modes), App event (with connector event subscription)
 * A single trigger can route to multiple workflows, and each route picks the environment it runs in
 * Schedules use friendly modes (not raw cron by default)

@@ -4,7 +4,7 @@ description: The code that runs on a trigger, a schedule, or an API call.
 
 # Workflows
 
-**Integrations → Workflows** · `/integrations?tab=workflows`
+**Build → Integrations → Workflows** · `/integrations?tab=workflows`
 
 A workflow is JavaScript. One file, `<slug>.js`, exporting one function:
 

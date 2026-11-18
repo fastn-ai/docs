@@ -16,7 +16,7 @@ VS Code runs fastn as an MCP server for GitHub Copilot's **Agent** mode. Add it 
 {% step %}
 #### Click Install in VS Code
 
-In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP** → **MCP server**), pick the **VS Code** tile and click **Install in VS Code**. When your browser asks to open Visual Studio Code, allow it.
+In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP → MCP server**), pick the **VS Code** tile and click **Install in VS Code**. When your browser asks to open Visual Studio Code, allow it.
 
 <figure><img src="../../.gitbook/assets/mcp-fastn-tab-vscode.webp" alt="fastn's MCP server page with the VS Code tile selected, showing an Install in VS Code button, a note that VS Code keys this object servers not mcpServers, a code --add-mcp command and a .vscode/mcp.json snippet"><figcaption>The VS Code tile also has a command and a file, if you prefer those.</figcaption></figure>
 {% endstep %}

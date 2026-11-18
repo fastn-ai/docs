@@ -97,7 +97,7 @@ Sent on the request; readable at `ctx.headers`.
 
 ## HTTP API
 
-Production base URL: `https://api.fastn.dev`. Your workflow's **API** tab shows the URL for your workspace. Examples below use `YOUR_FASTN_HOST`.
+Base URL: `https://api.fastn.dev`. Every path starts `/v1` (the same routes also answer under `/api/v1`). Your workflow's **API** tab shows the full URL for that workflow.
 
 ### Auth
 
@@ -116,21 +116,21 @@ Authorization: Bearer fsk_live_<key>
 `x-fastn-env: test` runs the latest published version; any other slug runs the version deployed to that environment. Omit the header and it follows the key: a test key gets `test`, a live key gets `live`.
 
 {% hint style="danger" %}
-A test key is **not** a sandbox. It reaches the same live connections as a live key and causes the same real writes. Never present test mode to a user as safe.
+Test keys act on real data. Never present test mode to a user as safe. See [API keys](../manage/api-keys.md).
 {% endhint %}
 
 ### Endpoints
 
 ```http
-POST /api/v1/workflows/{workflowId}/execute
+POST /v1/workflows/{workflowId}/execute
 
-GET  /api/v1/unified/{category}/{entity}?page_size=50
-GET  /api/v1/unified/{category}/{entity}/{recordId}
-POST /api/v1/unified/{category}/{entity}
+GET  /v1/unified/{category}/{entity}?page_size=50
+GET  /v1/unified/{category}/{entity}/{recordId}
+POST /v1/unified/{category}/{entity}
 
-POST /api/v1/embed/token
-POST /api/v1/embed/token/refresh
-GET  /api/v1/embed/iframe?token=emb_…
+POST /v1/embed/token
+POST /v1/embed/token/refresh
+GET  /v1/embed/iframe?token=emb_…
 ```
 
 Workflow ids look like `wf_b5880b29eb25`; execution ids like `exec_…`; embed tokens like `emb_…`.
@@ -143,7 +143,7 @@ Execute request body: the `input` object becomes `ctx.input`:
 
 ### Unified API categories
 
-The categories, entities and providers are catalog data and change over time, so do not hard-code a list. Read them from the API: `GET /api/v1/unified/categories`, and `GET /api/v1/unified/{category}/{entity}/providers` for the providers behind one entity. Examples of categories: `CRM`, `Documents`, `Messaging`; examples of CRM entities: `Account`, `Contact`, `Lead`, `Opportunity`. Note and message entities are create-only.
+The categories, entities and providers are catalog data and change over time, so do not hard-code a list. Read them from the API: `GET /v1/unified/categories`, and `GET /v1/unified/{category}/{entity}/providers` for the providers behind one entity. Examples of categories: `CRM`, `Documents`, `Messaging`; examples of CRM entities: `Account`, `Contact`, `Lead`, `Opportunity`. Note and message entities are create-only.
 
 ### Errors
 
@@ -158,7 +158,7 @@ A workflow that runs and throws is a **Failed execution**, not a transport error
 Polling depends on the tier:
 
 * **Instant** answers `200` with the workflow's return value. The execution id is in the `X-Execution-Id` response header. Nothing to poll.
-* **Standard** and **Long** answer `202` with `data.executionId`. Poll `GET /api/v1/workflows/{workflowId}/executions/{executionId}` for the result.
+* **Standard** and **Long** answer `202` with `data.executionId`. Poll `GET /v1/workflows/{workflowId}/executions/{executionId}` for the result.
 
 ---
 

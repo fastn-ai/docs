@@ -4,7 +4,7 @@ description: Everything moving in and out of your customers' systems, newest fir
 
 # Events
 
-**Activity → Events**
+**Operate → Activity → Events**
 
 An event is one inbound arrival: a webhook fired, a schedule reached, or a manual run. This is the first place to look when something did not happen.
 

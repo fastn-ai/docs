@@ -42,7 +42,7 @@ Request the SOC 2 Type II report, the ISO/IEC 27001 certificate, the PCI DSS rep
 
 * **Roles.** Everyone in your organization has a role (Owner, Admin, Developer, Operator, Viewer), and the platform enforces what each can do. See [Roles](../manage/roles.md).
 * **API keys** are scoped by permission, by customer, by IP address and by expiry, and can be revoked at once. See [API keys](../manage/api-keys.md).
-* **Caller identity.** Turn on identity verification on a key so that a caller cannot change which customer or user it claims to act for: each request carries an HMAC your backend computes. See [Identity hash](../manage/api-keys.md#identity-hash).
+* **Caller identity.** Turn on identity verification on a key so that a caller cannot change which customer or user it claims to act for: each request carries an HMAC your backend computes. See [Verify caller identity](../manage/identity-verification.md).
 * **Audit log.** Who did what, and when, across your organization. See [Audit log](../manage/audit-log.md).
 * **AI agents act with permissions.** Agent and MCP tool calls run with the same permissions as the person or key behind them, and every call is logged.
 

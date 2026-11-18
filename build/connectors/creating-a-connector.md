@@ -6,6 +6,12 @@ description: "The Create a connector dialog field by field: identity, protocol, 
 
 **Create connector → From scratch** (top right of the catalog) opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.* The **+** at the top of the connector rail on a detail page opens a separate create dialog. Its footer stays blank once you enter a name, and its **Protocol** list offers only `REST` and `MCP` for most users.
 
+### Before you start
+
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot create connectors.
+* **The app's API details**: its base URL, how it authenticates, and for OAuth, a client ID and secret from an OAuth app you registered with the vendor.
+* **Check the [catalog](the-catalogue.md) first.** If fastn already has the app, connect to it instead.
+
 {% hint style="info" %}
 You rarely need to build a connector by hand. Describe the app to [Build with AI](../agent/README.md) (**Create connector → Build with AI**) and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions and its auth method, then tests them.
 {% endhint %}

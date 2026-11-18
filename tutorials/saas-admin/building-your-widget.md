@@ -8,7 +8,10 @@ description: >-
 
 The widget is what your customers see: the integrations panel embedded inside your product, where they connect apps and turn integrations on. You configure it visually in the widget builder; your development team handles the embed code separately.
 
-**Prerequisites:** Complete [Quickstart](../../getting-started/quickstart.md). This tutorial covers building or customizing your widget beyond that initial setup.
+### Before you start
+
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers can open the builder but not change the widget.
+* **Something to offer:** connectors or workflows to add as integrations. The [Quickstart](../../getting-started/quickstart.md) gets you one; this tutorial covers building or customizing your widget beyond that first setup.
 
 ***
 

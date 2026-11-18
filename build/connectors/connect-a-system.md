@@ -6,6 +6,14 @@ description: "Making a connection step by step: open the connect dialog, choose 
 
 A connection is what lets a connector call an app as a specific account. Connecting here signs in **your own** account, for your organization's workflows and for testing. Your customers connect their own accounts through the [widget](../../embed/README.md) you embed.
 
+## Before you start
+
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot connect.
+* **The connector** for the app, in the [catalog](the-catalogue.md) or [created by you](creating-a-connector.md).
+* **Access to the app's account**: a sign-in that can approve access for OAuth, or the API key or other credential the auth method asks for.
+
+## Where to connect from
+
 These all open the same connect dialog:
 
 * **Connect** on a connector's card in the [catalog](the-catalogue.md);
@@ -34,7 +42,7 @@ What the dialog asks for depends on the method.
 
 **API key, bearer token and other keyed methods**: the dialog shows one field per credential, for example **API Key**. Paste the value and click **Connect**.
 
-**OAuth 2.0**: the dialog shows *You will authorise in a new window*, the **Auth provider** it will use, and **Scopes**. Click **Authorise**, sign in to the app in the new window and approve access.
+**OAuth 2.0**: the dialog shows *You will authorise in a new window*, the **Auth provider** it will use, and **Scopes**. Click **Authorize**, sign in to the app in the new window and approve access.
 
 The scope and provider options are explained in [Creating a connection](../connections/creating-a-connection.md#connecting-with-oauth).
 {% endstep %}

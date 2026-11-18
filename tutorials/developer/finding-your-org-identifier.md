@@ -1,4 +1,5 @@
 ---
+description: "Which customer identifier the token request takes in x-org-id, and where to find it."
 ---
 
 # Finding Your Org Identifier

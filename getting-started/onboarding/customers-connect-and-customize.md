@@ -52,7 +52,7 @@ This step is for what your customers do: connect their own accounts in the widge
 * **First-time setup.** A configurable integration needs its first configuration made once by your team (Operator role or higher). Until then, the customer's **Configure** shows "No configuration found for this widget".
 * **Changes apply on the next run.** Records already synced keep their old values.
 * **The AI assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add a system you don't offer, re-sync old records, change the schedule or add custom logic.
-* **Limits.** Customers share your plan's limits. Change one customer's in **Settings** → **Billing** → **Customize customer limits**.
+* **Limits.** Customers share your plan's limits. Change one customer's in **Settings → Billing**, with **Customize customer limits**.
 
 ### In the onboarding
 
@@ -60,4 +60,4 @@ You open your product where the widget is embedded, as a test customer, then con
 
 ### Related docs
 
-[Customers](../../operate/customers.md) · [Managing customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customizing your integrations](../../tutorials/end-user/customizing-your-integrations.md) · [Extending a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Getting alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)
+[Customers](../../operate/customers.md) · [Managing customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customize an integration](../../tutorials/end-user/customizing-your-integrations.md) · [Extend a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Get alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)

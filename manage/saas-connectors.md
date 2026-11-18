@@ -24,7 +24,7 @@ With nothing registered the page reads:
 
 | Field | Notes |
 | ----- | ----- |
-| **Connector \*** | A picker over every connector you can see, except ones already registered here (*Select your product's connector…*). Its helper text is the important part: *"The connector for your own product, through its API or webhooks: the one your customers' connections are made against."* This is not the system you are integrating **with**; it is the one representing **you**. If your product is not in the catalog yet, create its connector first from **Integrations → Connectors → Create connector**. |
+| **Connector \*** | A picker over every connector you can see, except ones already registered here (*Select your product's connector…*). Its helper text is the important part: *"The connector for your own product, through its API or webhooks: the one your customers' connections are made against."* This is not the system you are integrating **with**; it is the one representing **you**. If your product is not in the catalog yet, create its connector first from **Build → Integrations → Connectors**, with **Create connector**. |
 | **Connection scopes** | A free-text field with an **Add** button beside it (press Enter or click **Add**). The list starts empty; `inventory` is only the placeholder text. Scopes are lowercased and can be at most 50 characters. Add as many as you need. |
 
 The panel closes with **Cancel** and **Add connector**.

@@ -4,7 +4,7 @@ description: A trigger that fires when another system calls a URL you give it.
 
 # Webhook triggers
 
-**Integrations → Triggers** - in your dashboard, `/integrations?tab=triggers`.
+**Build → Integrations → Triggers** · `/integrations?tab=triggers`
 
 A webhook trigger fires when another system calls a URL you give it. Nothing is polled.
 

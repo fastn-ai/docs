@@ -60,7 +60,7 @@ Work through it in this order:
 Open **Test**, click **Use contract** to populate a sample `ctx.input`, and choose a mode beside the run button. The button's label follows the mode: **Run Live**, **Run Partial Mock** or **Run Fully Mock**.
 
 {% hint style="info" %}
-Test with **Fully Mock** first. It serves every connector call from stored mock stubs, so nothing reaches HubSpot, QuickBooks or Slack. **Partial Mock** runs live wherever the connector has an active connection and mocks only the connectors that are not connected, so it can still write to a connected system. **Run Live** calls the real systems, and so do test API keys: a test key is a separate credential, not a sandbox (see [API keys](../manage/api-keys.md)).
+Test with **Fully Mock** first. It serves every connector call from stored mock stubs, so nothing reaches HubSpot, QuickBooks or Slack. **Partial Mock** runs live wherever the connector has an active connection and mocks only the connectors that are not connected, so it can still write to a connected system. **Run Live** calls the real systems. Test keys act on real data. See [API keys](../manage/api-keys.md).
 {% endhint %}
 
 If something is wrong, tell the agent rather than patching by hand. For example, type "Skip deals under $500" or "Add error handling when QuickBooks is down", and the agent rewrites the code, mappings and test cases together.

@@ -10,7 +10,7 @@ description: >-
 
 ### Ways to create a connector
 
-Go to **Integrations → Connectors** and open the **Create connector** menu (top right). It offers **From scratch**, **Build with AI**, **Build from Claude or any MCP client** and **Import from file**. This tutorial covers the first two.
+Go to **Build → Integrations → Connectors** and open the **Create connector** menu (top right). It offers **From scratch**, **Build with AI**, **Build from Claude or any MCP client** and **Import from file**. This tutorial covers the first two.
 
 #### From scratch
 
@@ -78,8 +78,8 @@ A connector defines the integration. A **connection** is an authenticated instan
 |                   | Connector                                                 | Connection                                        |
 | ----------------- | --------------------------------------------------------- | ------------------------------------------------- |
 | **What it is**    | The integration definition (auth config, actions, events) | An authenticated instance with stored credentials |
-| **How many**      | One per app                                               | Many - one per user/customer who connects         |
-| **Where managed** | Integrations → Connectors                                 | Operate → Connections                             |
+| **How many**      | One per app                                               | Many: one per customer (or end user) who connects         |
+| **Where managed** | Build → Integrations → Connectors                                 | Operate → Connections                             |
 | **Created by**    | You (manual or AI)                                        | You (for testing) or your customers (via widget)  |
 
 #### Connector card states

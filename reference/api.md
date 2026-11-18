@@ -6,7 +6,7 @@ description: Calling workflows and unified endpoints over HTTP.
 
 ### Base URL
 
-Production base URL: `https://api.fastn.dev`. Your workflow's **API** tab shows the URL for your workspace. Examples below use `YOUR_FASTN_HOST`.
+Base URL: `https://api.fastn.dev`. Every path starts `/v1`, for example `https://api.fastn.dev/v1/workflows/{workflowId}/execute`. The same routes also answer under `/api/v1`, which older examples use. Your workflow's **API** tab shows the full URL for that workflow.
 
 From Node.js or TypeScript, the [SDK](sdk/README.md) (`@fastn-ai/sdk`) wraps the same API in typed methods. Every other endpoint, including installations, triggers and alerts, is in the [REST API reference](rest/README.md).
 
@@ -24,7 +24,21 @@ Authorization: Bearer fsk_live_<your-key>
 X-API-Key: fsk_live_<your-key>
 ```
 
-These two are the only headers this API reads a key from. A webhook trigger URL takes them too, and also `x-fastn-access-key` (see [Webhook endpoints](#webhook-endpoints)). No endpoint reads `x-fastn-api-key`: a call that sends the key there is answered `401`.
+These two are the only headers the platform API reads a key from. Webhook URLs accept others, listed below.
+
+### Which header carries the key
+
+Every key starts `fsk_live_` or `fsk_test_`. The header it goes in depends on what you call:
+
+| You call | Send the key as |
+| -------- | --------------- |
+| The platform API, `https://api.fastn.dev/v1/…` (a workflow's `/execute`, `/embed/token`, every other route) | `Authorization: Bearer fsk_…` or `X-API-Key: fsk_…` |
+| A [webhook trigger](../build/triggers/webhooks.md)'s URL | `X-API-Key: fsk_…`, `Authorization: Bearer fsk_…` or `x-fastn-access-key: fsk_…` |
+| A [connector's webhook URL](../build/connectors/webhook-config.md), with **Require API key** on | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
+
+`X-API-Key` works on all three. `x-fastn-access-key` on the platform API, or `Authorization` on a connector's webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
+
+### Test and live keys
 
 Keys are created under [Embed → API keys and MCP](../manage/api-keys.md) and come in two modes.
 
@@ -49,22 +63,20 @@ Which environments a key may name:
 
 When `x-fastn-env` is omitted, a test key runs `test` and a live key runs `live` (a pinned live key runs its pinned environment).
 
-{% hint style="danger" %}
-A test key is not a sandbox. It reaches the same live connections as a live key and causes the same real writes.
-{% endhint %}
+Test keys act on real data. See [API keys](../manage/api-keys.md).
 
 ---
 
 ## Execute a workflow
 
 ```
-POST /api/v1/workflows/{workflowId}/execute
+POST /v1/workflows/{workflowId}/execute
 ```
 
 The workflow id is shown on the workflow's API tab, in the form `wf_b5880b29eb25`.
 
 ```bash
-curl -X POST https://YOUR_FASTN_HOST/api/v1/workflows/WORKFLOW_ID/execute \
+curl -X POST https://api.fastn.dev/v1/workflows/WORKFLOW_ID/execute \
   -H "Authorization: Bearer fsk_test_<your-key>" \
   -H "X-fastn-Test-Mode: true" \
   -H "x-fastn-env: test" \
@@ -105,7 +117,7 @@ The workflow's return value comes back inline, synchronously, as a `200`. The ru
 To get the outcome of a Standard or Long run, poll:
 
 ```
-GET /api/v1/workflows/{workflowId}/executions/{executionId}
+GET /v1/workflows/{workflowId}/executions/{executionId}
 ```
 
 The workflow id is part of the path.
@@ -123,7 +135,7 @@ The same workflow serves all of your customers, and headers on the request are w
 | `x-fastn-connections`           | The connections the installation uses.                         |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.    |
 
-**Naming the customer:** `x-org-id` is the one header that names a customer. Send your own id for the customer (the `orgId` you gave it when you created it) or fastn's id for it. It must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. A partner backend can sign it: send `x-user-id` too, with `x-identity-hmac`. A key set to Enforce must send them on every call (`401 IDENTITY_HEADERS_REQUIRED`). On a key pinned to one customer, `x-org-id` naming any other customer is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is a request whose `x-org-id` and `?orgId=` name two different customers. On a key limited to some customers, a customer outside that list is refused with `403 API_KEY_SCOPE_MISMATCH`, and a key that covers several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS`). Leave `x-org-id` out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
+**Naming the customer:** `x-org-id` is the one header that names a customer. Send your own id for the customer (the `orgId` you gave it when you created it) or fastn's id for it. It must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. A partner backend can sign it: send `x-user-id` too, with `x-identity-hmac` (see [Verify caller identity](../manage/identity-verification.md)). A key set to Enforce must send them on every call (`401 IDENTITY_HEADERS_REQUIRED`). On a key pinned to one customer, `x-org-id` naming any other customer is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is a request whose `x-org-id` and `?orgId=` name two different customers. On a key limited to some customers, a customer outside that list is refused with `403 API_KEY_SCOPE_MISMATCH`, and a key that covers several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS`). Leave `x-org-id` out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
 
 `x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On `/execute`, fastn reloads the named installation and overlays its stored connections and configuration on the headers, so callers name an installation; they cannot pick connections by sending them.
 
@@ -136,10 +148,10 @@ Inside the workflow these arrive on `ctx.headers`. See [Workflow runtime API](wo
 Where a [unified API](../build/unified-apis/README.md) covers an entity, call it directly rather than a specific connector.
 
 ```http
-GET  /api/v1/unified/crm/account?page_size=50
-GET  /api/v1/unified/crm/account/{recordId}
-POST /api/v1/unified/crm/account
-POST /api/v1/unified/crm/note
+GET  /v1/unified/crm/account?page_size=50
+GET  /v1/unified/crm/account/{recordId}
+POST /v1/unified/crm/account
+POST /v1/unified/crm/note
 ```
 
 fastn routes to whichever provider the customer authorized. Each endpoint on the Unified APIs page has a **Copy curl** button with the correct headers filled in.
@@ -166,7 +178,7 @@ Tokens that scope the widget to one customer. Mint them from your backend with y
 ### Mint a token
 
 ```
-POST /api/v1/embed/token
+POST /v1/embed/token
 ```
 
 | Header            | Value                    |
@@ -199,7 +211,7 @@ Every body field and error: [Generate embed tokens](../tutorials/developer/gener
 ### Refresh
 
 ```
-POST /api/v1/embed/token/refresh
+POST /v1/embed/token/refresh
 ```
 
 The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer carries `data.token`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` is the seconds the new token has left, below 28800 near the seven-day cap.
@@ -213,7 +225,7 @@ The body is `{"token": "emb_…"}`, and no API key is sent: the token is the cre
 The iframe endpoint takes it on the query string:
 
 ```
-https://YOUR_FASTN_HOST/api/v1/embed/iframe?token=emb_…
+https://api.fastn.dev/v1/embed/iframe?token=emb_…
 ```
 
 That URL carries a live credential. Treat it like one: build it server-side per session, and do not log or share it. Full setup in [Embedding the widget](../embed/embedding/README.md).
@@ -227,7 +239,7 @@ That URL carries a live credential. Treat it like one: build it server-side per 
 | `WORKFLOW_NOT_PUBLISHED`  | The workflow has never had a snapshot published, so there is no version to run. **Every call returns this until you publish one**. It is the most common cause of "the API did nothing". Publish from the workflow editor. |
 | `401` / `403`             | The key is wrong, revoked, expired, outside its IP allowlist, or lacks the permission for what you called. Check the key on [Embed → API keys and MCP](../manage/api-keys.md). |
 | Test key rejected         | The key is a test key and `X-fastn-Test-Mode: true` was not sent.                |
-| `ENV_NOT_PERMITTED` (`403`) | The key may not run the environment named in `x-fastn-env`. See [Authentication](#authentication). |
+| `ENV_NOT_PERMITTED` (`403`) | The key may not run the environment named in `x-fastn-env`. See [Test and live keys](#test-and-live-keys). |
 
 A workflow that runs and throws is a **Failed** execution rather than a transport error: look for it in [Executions](../operate/executions.md), not in the HTTP response.
 

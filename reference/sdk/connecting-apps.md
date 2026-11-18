@@ -110,7 +110,7 @@ The SDK fills in the customer for you. If the customer does not exist yet, the l
 | ----- | ------- |
 | `setupUrl` | The link to send to the customer. It carries a live credential: do not log it or share it beyond the customer. |
 | `setupId` | The link's id, to check or cancel it. |
-| `status` | `pending` (new), `complete` (used) or `revoked` (cancelled). |
+| `status` | `pending` (new), `complete` (used) or `revoked` (canceled). |
 | `expiresAt` | When the link stops working. |
 | `orgId` | Your customer id. The link belongs to the customer you created it for. |
 

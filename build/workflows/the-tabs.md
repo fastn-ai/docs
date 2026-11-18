@@ -69,7 +69,7 @@ None of this is the [Test](#test) tab above. **Test** runs one payload you type,
 
 #### Executions
 
-This workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Activity → Executions](../../operate/executions.md).
+This workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Operate → Activity → Executions](../../operate/executions.md).
 
 #### Sync reports
 

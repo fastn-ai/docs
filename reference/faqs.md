@@ -26,7 +26,7 @@ No. [Build with AI](../build/agent/README.md) (or your AI tool) writes workflows
 
 <summary>What is the difference between a customer and a tenant?</summary>
 
-They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example the second segment of a connection id, `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`.
+They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example in a connection id, `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`, where the customer is the segment after the workspace.
 
 If an identifier says tenant, it means one of your customers.
 
@@ -58,7 +58,7 @@ Use your own OAuth application. You set it on the connector's **Auth** tab, whic
 
 Not by re-entering the credential. It belongs to the customer, and they re-authorize through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
 
-The precise meaning of each status is not documented here; treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect" and read the connection's own **Token and activity** section for `Expires`, `Last refreshed` and `Last used`.
+See [Statuses](../build/connections/statuses.md) for what each status means and what to do. The connection's own **Token and activity** section shows `Expires`, `Last refreshed` and `Last used`.
 
 </details>
 
@@ -144,7 +144,7 @@ Check whether the workflow has ever been published. Until a snapshot exists, eve
 
 <summary>Is a test API key a sandbox?</summary>
 
-No. A test key reaches the same live connections as a live key and causes the same real writes. It is a separate, separately revocable credential, not a safe one. It is also refused unless the caller sends `X-fastn-Test-Mode: true`.
+No. Test keys act on real data. See [API keys](../manage/api-keys.md). A test key is also refused unless the caller sends `X-fastn-Test-Mode: true`.
 
 </details>
 
@@ -206,7 +206,7 @@ Secret if exposure would be an incident (tokens, passwords, keys). Config if you
 
 New work stops rather than being charged for, and nothing already running is interrupted. Check [Billing](../manage/billing.md): a sync that stops because of a quota looks exactly like a broken sync until you do.
 
-Customer connections are the exception on Scale: past the 10 included, each extra one is billed at $50 a month and is never refused. On Launch, the fourth customer connection is refused.
+Customer connections are the exception on Scale, the paid self-serve plan: past the connections the plan includes, each extra one is billed and never refused. On Launch, the free plan, a customer connection past the plan's limit is refused. Limits and prices are on [Billing and limits](../manage/billing.md).
 
 </details>
 
@@ -214,7 +214,7 @@ Customer connections are the exception on Scale: past the 10 included, each extr
 
 <summary>I deleted something by mistake.</summary>
 
-Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (widgets and their integrations among them), are deleted immediately and cannot be restored from that page.
+Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources, including widgets and their integrations, are deleted immediately and cannot be restored.
 
 </details>
 
@@ -228,7 +228,7 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 Because two entries exist for one system: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
 
-The practical consequence: the connector count is a count of *entries*, not of distinct systems, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
+So the total on the Connectors page counts entries, not distinct systems. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
 
 </details>
 

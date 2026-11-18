@@ -45,7 +45,7 @@ Read the token as `response.data.token`. `expiresIn` is 28800 seconds: eight hou
 
 #### Signed headers or not: your key decides
 
-Your API key's **Verify caller identity (HMAC)** setting (see [API keys](../../manage/api-keys.md)) decides how you name the customer:
+Your API key's **Verify caller identity (HMAC)** setting (see [Verify caller identity](../../manage/identity-verification.md)) decides how you name the customer:
 
 | Your API key | Name the customer with |
 | --- | --- |

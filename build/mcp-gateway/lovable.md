@@ -7,7 +7,7 @@ description: Add fastn to Lovable as a custom MCP server, sign in, and use your 
 In Lovable, fastn is a chat connector. It gives Lovable's chat your fastn tools while you build. It attaches to you and your chats, not to the app you publish.
 
 {% hint style="info" %}
-**Before you start:** custom MCP servers work on every Lovable plan. On Business and Enterprise, a workspace admin can turn them off; if **MCP server** is greyed out, ask your admin.
+**Before you start:** custom MCP servers work on every Lovable plan. On Business and Enterprise, a workspace admin can turn them off; if **MCP server** is grayed out, ask your admin.
 {% endhint %}
 
 ## Add fastn

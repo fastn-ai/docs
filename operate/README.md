@@ -14,7 +14,7 @@ Build tells you what should happen. Operate tells you what did.
 | [Executions](executions.md)     | `/activity/executions`    | Which runs happened, and how did each end?                        |
 | [Sync reports](sync-reports.md) | `/activity/sync-reports`  | What actually changed, record by record?                          |
 
-[Traces](traces.md) is not on the tab strip; the page still answers at `/activity/traces` if you open it by URL. [Alerts](alerts.md) live under **Health → Alerts** (`/health?tab=alerts`), and the old `/activity/alerts` address redirects there.
+[Traces](traces.md) is not on the tab strip; the page still answers at `/activity/traces` if you open it by URL. [Alerts](alerts.md) live under **Operate → Health → Alerts** (`/health?tab=alerts`), and the old `/activity/alerts` address redirects there.
 
 Also under Operate: **[Health](health.md)**, what needs attention across every customer; **[Customers](customers.md)**, who is using your embedded integrations; and **[Connections](../build/connections/README.md)**, every signed-in account.
 

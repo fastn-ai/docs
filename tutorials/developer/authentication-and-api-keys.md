@@ -1,4 +1,5 @@
 ---
+description: "Find, create and use fastn API keys, and the extra header test keys need."
 ---
 
 # Authentication & API Keys

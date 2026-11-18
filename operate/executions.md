@@ -4,7 +4,7 @@ description: Every workflow run, newest first.
 
 # Executions
 
-**Activity → Executions**
+**Operate → Activity → Executions**
 
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 

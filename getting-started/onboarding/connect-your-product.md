@@ -53,8 +53,8 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 ### Before you go live
 
 1. **Test it.** Connect your own test account and run each action until it shows Live tested.
-2. **Publish it to Live.** **Integrations** → **Connectors** → your connector → **Overview** → **Versions** → **Publish to live**. Customers only run the Live version.
-3. **Register it as your SaaS connector.** **Build** → **Connect your product** → **Connect your product** (or **Add another product connector** once one exists). In the **Connect your product** panel, pick your connector, add its connection scopes, then click **Add connector**.
+2. **Publish it to Live.** In **Build → Integrations → Connectors**, open your connector, then **Overview** → **Versions** → **Publish to live**. Customers only run the Live version.
+3. **Register it as your SaaS connector.** In **Build → Connect your product**, click **Connect your product** (or **Add another product connector** once one exists). In the **Connect your product** panel, pick your connector, add its connection scopes, then click **Add connector**.
 
 ### In the onboarding
 

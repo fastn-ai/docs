@@ -4,11 +4,11 @@ description: "What starts a workflow: an inbound webhook, a schedule, or an even
 
 # Triggers
 
-**Integrations → Triggers** · `/integrations?tab=triggers`
+**Build → Integrations → Triggers** · `/integrations?tab=triggers`
 
 A workflow with no trigger only runs when something calls it. A trigger is what makes it run on its own.
 
-The page splits into three sub-tabs (**Webhooks**, **Schedulers** (`?trigger=scheduler`) and **App events** (`?trigger=app`)), with a status select offering `All statuses`, `Active` and `Disabled`.
+The page has three tabs: **Webhooks**, **Schedulers** and **App events**. Filter any of them by status (**All statuses**, **Active** or **Disabled**).
 
 Each list paginates, with a footer reading `Page 1 of 4 · 30 total` and Previous/Next controls. **A trigger you just created may be on a later page rather than missing**: check the count before you conclude it failed. Every table also carries a leading select-all checkbox.
 
@@ -18,13 +18,15 @@ Each list paginates, with a footer reading `Page 1 of 4 · 30 total` and Previou
 
 ### Choosing a type
 
-<figure><img src="../../.gitbook/assets/add-trigger-dialog.jpg" alt="The Add a trigger dialog asking What should start the workflow?, offering Webhook, Schedule and App event as three rows, each with a sentence of explanation and a forward arrow"><figcaption>Each option carries its own one-line description, reproduced nowhere below, so read them here.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/add-trigger-dialog.jpg" alt="The Add a trigger dialog asking What should start the workflow?, offering Webhook, Schedule and App event as three rows, each with a sentence of explanation and a forward arrow"><figcaption>The Add a trigger dialog</figcaption></figure>
 
-| Type          | Reach for it when                                            |
-| ------------- | -------------------------------------------------------------- |
-| **Webhook**   | The sender can push, and you want it immediate.               |
-| **Schedule**  | Nightly reconciliation, hourly pulls, anything time-based.    |
-| **App event** | A HubSpot deal moves, a GitHub PR merges, and the connector supports events. |
+Click **Add trigger** and the dialog asks *What should start the workflow?* It offers three types, each with its own description:
+
+| Type | What the dialog says | Reach for it when |
+| --- | --- | --- |
+| **Webhook** | *Another system calls a URL you give it. Nothing is polled, so it fires the moment the event happens.* | The sender can push, and you want it immediate. |
+| **Schedule** | *Runs on a clock you set. Good for nightly reconciliation or hourly pulls.* | Nightly reconciliation, hourly pulls, anything time-based. |
+| **App event** | *Fires on an event from a connected system, like a HubSpot deal changing or a GitHub pull request merging.* | A HubSpot deal moves, a GitHub PR merges, and the connector supports events. |
 
 ### Inspecting a trigger
 

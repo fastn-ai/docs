@@ -1,4 +1,5 @@
 ---
+description: "The shortest path to a working embed: generate a token on your backend, render the iframe and see a connection."
 ---
 
 # Embedding Quickstart
@@ -7,11 +8,10 @@ This walks through the shortest path to a working embed: generate a token from y
 
 ### Before you start
 
-You'll need:
-
-* **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md). This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
-* **The customer identifier** - fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
-* **A backend** - Any server environment where you can make an HTTP request with a secret API key.
+* **Who this is for:** the developer wiring the embed into your product.
+* **An API key** from **Embed → API keys and MCP → API keys**. Creating one needs the Owner or Admin role. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md). This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
+* **The customer identifier**: fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **A backend**: any server environment where you can make an HTTP request with a secret API key.
 
 ### Step 1: Generate a token from your backend
 

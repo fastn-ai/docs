@@ -87,7 +87,7 @@ Each row: `id`, `correlationId`, `orgId`, `category`, `entity`, `operation`, `co
 
 ## Errors
 
-Every non-2xx answer throws a `FastnApiError`. A request that never got an answer (network failure, time limit, cancelled) throws a `FastnNetworkError`.
+Every non-2xx answer throws a `FastnApiError`. A request that never got an answer (network failure, time limit, canceled) throws a `FastnNetworkError`.
 
 ```typescript
 import { FastnApiError, FastnNetworkError } from "@fastn-ai/sdk";

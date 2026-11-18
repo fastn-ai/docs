@@ -4,7 +4,7 @@ description: One canonical endpoint per business entity, served by whichever pro
 
 # Unified APIs
 
-**Integrations → Unified APIs** · `/integrations?tab=unified`
+**Build → Integrations → Unified APIs** · `/integrations?tab=unified`
 
 <figure><img src="../../.gitbook/assets/unified-apis.jpg" alt="The Unified APIs page showing a grid of category cards (CRM, Documents, Knowledge Base, Messaging, Project Management), each stacking its provider icons"><figcaption>The icons on each card are the providers currently serving that category.</figcaption></figure>
 

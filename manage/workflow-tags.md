@@ -33,7 +33,7 @@ Each row then shows how many workflows use that tag, reading **Not used yet** un
 
 ### When a panel is full
 
-The name field is replaced by a line saying so, rather than being greyed out. Delete a tag to make room.
+The name field is replaced by a line saying so, rather than being grayed out. Delete a tag to make room.
 
 Changing plan never deletes a tag. If a new plan allows fewer than you already have, **you keep all of them** and simply cannot add another until you delete down to the new number. The panel says how many that is.
 

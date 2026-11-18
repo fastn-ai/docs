@@ -4,7 +4,7 @@ description: Symptom, where to look, and what usually fixes it.
 
 # Troubleshooting
 
-Work down this page in order. Most problems resolve at the first or second step, and each step tells you which screen holds the answer.
+Find your symptom in the table below, then go to its section. Each section names the screen that holds the answer.
 
 ### Start here
 
@@ -60,7 +60,7 @@ Expand the execution row and open the **Error** tab (**AI Diagnosis** and **Erro
 
 ### Status: Failed with a `Dependency Error` tag
 
-The commonest failure of all, and it means something the workflow *called* refused: nearly always a connector action, not your code. Runs usually die in under a second, because they stop at the first call that will not work.
+This is the most common failure. It means a system the workflow *called* rejected the request. The cause is almost always a connector action, not your code. These runs usually stop in under a second, at the first call that fails.
 
 Expand the row and open the **Error** tab. The **AI Diagnosis** names the step that broke and, usually, the fix; **Error Details** beside it carries the raw message. Most of the time the answer is a connection that is expired, revoked, pinned to something unusable, or belonging to another organization.
 
@@ -76,11 +76,22 @@ The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 * **Hundreds of calls**: batch them, or move to the Long tier.
 * **A Pending trace that never resolved**: the upstream system accepted the request and never answered.
 
-**Escalate on timeout** retries one tier up (instant to standard), which buys time without redesigning. It returns a queued execution id to poll, so the caller's response shape changes; the option is hidden on the Long tier, which has nothing above it.
+**Escalate on timeout** (in the workflow's settings) retries a timed-out run one tier up, Instant to Standard or Standard to Long, with the higher tier's full time budget. It buys time without redesigning, subject to your plan. The option isn't available on the Long tier, which has nothing above it.
 
-### Status: Failed with no obvious error
+{% hint style="warning" %}
+With this on, an Instant run that times out and escalates returns a queued execution id to poll instead of the result, so your caller must handle both responses.
+{% endhint %}
 
-Expand the row and read `peakSandboxMB` against `sandboxMemoryLimitMB`. Out-of-memory never retries, so a run that hit the ceiling simply stops rather than recovering on the next attempt.
+### Status: Failed with a `Memory Limit` tag, or no obvious error
+
+A run that ran out of memory carries a `Memory Limit` tag in the Executions list, and **Error Details** on its **Error** tab names the limit it exceeded: `Execution exceeded the <N>MB sandbox memory limit`.
+
+To confirm, or when a failed run has no tag, expand the row and compare two fields:
+
+* `peakSandboxMB`: the most memory the run was seen using. It is sampled during the run, so the true peak can be a little higher.
+* `sandboxMemoryLimitMB`: the memory limit the run ran under.
+
+If `peakSandboxMB` is at or near `sandboxMemoryLimitMB`, the run ran out of memory. Fetch less data per call and process smaller batches. Out-of-memory never retries, so a run that hit the limit simply stops rather than recovering on the next attempt.
 
 ### Retries
 
@@ -109,7 +120,7 @@ Common causes:
 
 Replay re-runs the workflow for real. Without protection it will write twice.
 
-Two defences, and you want both:
+Two defenses, and you want both:
 
 1. A **deduplication key** on the webhook trigger: a field that uniquely identifies each event, so a retried delivery from the sender does not run the workflow twice.
 2. An **idempotency guard** in the workflow using `fastn.state`:
@@ -153,7 +164,7 @@ Also check whether that customer is **pinned to an older connector version**. Se
 
 ## You deleted something by mistake
 
-Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (as the product puts it, "widgets and their integrations among them"), are deleted immediately and cannot be restored from that page.
+Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources, including widgets and their integrations, are deleted immediately and can't be restored from Trash.
 
 ---
 

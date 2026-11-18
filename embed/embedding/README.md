@@ -1,5 +1,5 @@
 ---
-description: Three ways to put the widget in your product, and how to hand it a token safely.
+description: Embed the widget with an iframe or the SDK, use a shareable link when you cannot embed, and pass tokens safely.
 ---
 
 # Embedding the widget
@@ -8,7 +8,7 @@ description: Three ways to put the widget in your product, and how to hand it a 
 
 ## Pick the customer first
 
-The widget is always scoped to **one** of your customers, so the dropdown labelled **User** at the top is not a preview toggle. It decides who the generated snippet is for.
+The widget is always scoped to **one** of your customers, so the dropdown labeled **User** (the customer) at the top is not a preview toggle. It decides who the generated snippet is for.
 
 The dropdown lists the customers on your account by name. Selecting one does two things at once:
 

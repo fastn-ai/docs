@@ -1,4 +1,5 @@
 ---
+description: "The full reference for the embed token request: endpoint, headers, body and how to name the customer."
 ---
 
 # Generating Embed Tokens
@@ -6,6 +7,13 @@
 Embed tokens are short-lived credentials that scope the fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
 
 This page is the full reference for the token request. [Embed the widget](../../getting-started/onboarding/embed-the-widget.md) and [Token API](../../embed/embedding/token-api.md) show the same request in short.
+
+### Before you start
+
+* **Who this is for:** the developer wiring the embed into your backend.
+* **An API key.** Creating one under **Embed → API keys and MCP → API keys** needs the Owner or Admin role. See [Authentication & API Keys](authentication-and-api-keys.md).
+* **The customer's identifier**, fastn's id or your own. See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **A backend** that can make an HTTP request with a secret key. Tokens are never minted in the browser.
 
 ### The token endpoint
 
@@ -21,7 +29,7 @@ Content-Type: application/json
 X-fastn-Test-Mode: true                   (only for fsk_test_ keys; omit for fsk_live_)
 ```
 
-The token is for one of your customers and, optionally, one person at that customer. Your API key's **Verify caller identity (HMAC)** setting (see [API keys](../../manage/api-keys.md)) decides how you name them:
+The token is for one of your customers and, optionally, one person at that customer. Your API key's **Verify caller identity (HMAC)** setting (see [Verify caller identity](../../manage/identity-verification.md)) decides how you name them:
 
 | Your API key | Name the customer with | Body |
 | ------------ | ---------------------- | ---- |

@@ -92,7 +92,7 @@ This workflow's own run history, filtered by the HTTP-status pills `All`, `200`,
 
 ### The editor
 
-Opening a workflow opens a drawer laid out as **configuration on the left, the tool tabs on the right, and (where code editing is enabled), the code editor between them**. That middle column is labelled `<slug>.js` and `JavaScript · export default async function(ctx)`. An organization without code editing gets the same drawer minus that column.
+Opening a workflow opens a drawer laid out as **configuration on the left, the tool tabs on the right, and (where code editing is enabled), the code editor between them**. That middle column is labeled `<slug>.js` and `JavaScript · export default async function(ctx)`. An organization without code editing gets the same drawer minus that column.
 
 Along the top: **Discard**, the workflow name, **Close tab**, **Save workflow** and **Publish**. Closing with unsaved edits asks first: *Discard unsaved changes?* / "\"\<name>\" has edits that have not been saved. Closing this tab throws them away." / **Keep editing** / **Discard changes**.
 

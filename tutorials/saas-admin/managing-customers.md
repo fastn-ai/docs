@@ -59,15 +59,15 @@ Use this for:
 
 ### Monitoring customer activity
 
-#### Activity → Executions
+#### Operate → Activity → Executions
 
-1. Go to **Activity → Executions**.
+1. Go to **Operate → Activity → Executions**.
 2. Use the **"All workflows"** dropdown to filter.
 3. Each execution row shows **Triggered by**, which tells you what started the execution: API key, Embed, Webhook, Schedule, Agent, Replay, Manual, or a person's name.
 
-#### Activity → Events
+#### Operate → Activity → Events
 
-1. Go to **Activity → Events**.
+1. Go to **Operate → Activity → Events**.
 2. Filter by type: **All | Webhook | Scheduled | Manual**.
 3. See incoming and outgoing events for your customers.
 

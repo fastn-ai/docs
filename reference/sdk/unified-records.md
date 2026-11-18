@@ -169,7 +169,7 @@ const removed = await contacts.delete("51234567890", { idempotencyKey: "signup_9
 | `update(id, fields)` | `id` (required). `fields`: only the fields that change. | `{ id, provider, data }` |
 | `delete(id)` | `id` (required). | `{ id, provider, deleted: true }` |
 
-What delete means is up to the app. Some archive or remove the record, so a later `get` fails. Others mark it cancelled, so a later `get` still works and shows the cancelled status. Check what your connected app does before relying on either.
+What delete means is up to the app. Some archive or remove the record, so a later `get` fails. Others mark it canceled, so a later `get` still works and shows the canceled status. Check what your connected app does before relying on either.
 
 ---
 

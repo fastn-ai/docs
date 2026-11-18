@@ -4,7 +4,7 @@ description: What changed on the last run of each sync, record by record.
 
 # Sync reports
 
-**Activity → Sync reports**
+**Operate → Activity → Sync reports**
 
 Executions tell you a run succeeded. Sync reports tell you what it did, record by record.
 

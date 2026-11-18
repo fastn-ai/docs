@@ -35,9 +35,9 @@ The sidebar starts with **Home**, then follows the three steps of putting fastn 
 | Embed | Widget | `/widgets` | [Widget](../embed/README.md) |
 | | API keys and MCP → API keys | `/access?tab=api-keys` | [API keys](../manage/api-keys.md) |
 | | API keys and MCP → MCP server | `/access?tab=mcp` | [Build from Claude, Cursor or any agent](../build/mcp-gateway/README.md) |
-| Operate | Customers | `/customers` | [Customers](../operate/customers.md) |
+| Operate | Health → Needs attention, Overview, Pending updates, Alerts | `/health` | [Health](../operate/health.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
+| | Customers | `/customers` | [Customers](../operate/customers.md) |
 | | Connections | `/connections` | [Connections](../build/connections/README.md) |
-| | Health → Needs attention, Overview, Pending updates, Alerts | `/health` | [Operate](../operate/README.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
 | | Activity → Events, Executions, Sync reports | `/activity/*` | [Activity](../operate/README.md) |
 | (own group) | Settings | `/settings/*` | [Settings](../manage/README.md) |
 
@@ -59,7 +59,7 @@ Setup has four steps, the same four that onboarding at `/onboarding` walks you t
 
 | Step | Done when |
 | --- | --- |
-| **1. Connect your product** | Your own product is registered under **Build** → **Connect your product**. This is admin work: a Developer sees it waiting on an admin and carries on with step 2. |
+| **1. Connect your product** | Your own product is registered under **Build → Connect your product**. This is admin work: a Developer sees it waiting on an admin and carries on with step 2. |
 | **2. Choose integrations** | Your widget offers at least one connector, **Catalog connectors** is on in the widget, or a workflow exists. |
 | **3. Embed the widget** | The widget has loaded on a page of your own product, or a customer has connected (which can only happen through the widget). |
 | **4. Customers connect and customize** | A customer has connected an app in the widget (a connection to anything other than your own product), or a customer's installation is active. |
@@ -87,21 +87,15 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 
 ### Embed → Widget
 
-The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits) and **Save and publish**. **Reset** publishes the defaults to every customer using the widget straight away, after you type `RESET` to confirm; **Widget actions** → **Reset to defaults** does the same. A **Live** badge appears once the widget is saved.
+The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet and desktop widths. A sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits) and **Save and publish**. **Widget actions** → **Reset to defaults** opens the same confirmation as **Reset**. A **Live** badge appears once the widget is saved.
+
+{% hint style="warning" %}
+**Reset** replaces your widget's whole configuration (sections, integrations, templates and theme) with the defaults and publishes them to every customer using the widget, immediately. There is no draft step and it cannot be undone. You are asked to type `RESET` to confirm. If a custom page is your widget, your customers keep seeing the custom page; the reset defaults reach them only after you use **Switch back to fastn's widget**.
+{% endhint %}
 
 ### Embed → API keys and MCP
 
 Two tabs. **API keys** are what your backend uses to mint embed tokens and call the API. **MCP server** adds fastn's integrations to Claude, Cursor, Codex or any MCP client. See [Build from Claude, Cursor or any agent](../build/mcp-gateway/README.md).
-
-### Operate → Customers
-
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers list holding a single row (testing, identifier testing, 1 connection, Active) beside an All tiers filter, with Create customer top-right and View connections on the row"><figcaption>Every customer using your embedded integrations; this workspace has only a test one.</figcaption></figure>
-
-**Customers** lists everyone using your embedded integrations, with columns *Customer*, *Connections* and *Status* (`Active` or `Pending admin activation`), plus **Create customer**, a search box, and **View connections** on each row. Documented with [Operate](../operate/customers.md).
-
-### Operate → Connections
-
-Every connection your customers have made on your connectors, across every customer, with its status. The **My organization** view shows the connections your own organization holds, which your workflows act through. Documented under [Connections](../build/connections/README.md).
 
 ### Operate → Health
 
@@ -110,9 +104,19 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | Tab | Answers |
 | --- | --- |
 | **Needs attention** | Opens first. Every vendor change waiting for review, every customer connection that expired or failed, and every workflow that failed today, each with its action: **Review**, **Open connection**, or **Runs** and **Fix with AI**. |
-| **Overview** | Every customer's integration health in one place: who needs attention, runs and records over time, connection health, what is failing and why. See [Operate](../operate/README.md). |
+| **Overview** | Every customer's integration health in one place: who needs attention, runs and records over time, connection health, what is failing and why. See [Health](../operate/health.md). |
 | **Pending updates** | The full review of each vendor patch the maintainer agent proposes: the diff, accept or refuse. Nothing is applied until you accept it. See [Pending connector updates](../build/connector-updates.md). |
-| **Alerts** | What should page us, and where. See [Alerts](../operate/alerts.md). |
+| **Alerts** | Who gets notified when something fails or crosses a limit you set, and how. See [Alerts](../operate/alerts.md). |
+
+### Operate → Customers
+
+<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers list holding a single row (testing, identifier testing, 1 connection, Active) beside an All tiers filter, with Create customer top-right and View connections on the row"><figcaption>Every customer using your embedded integrations; this workspace has only a test one.</figcaption></figure>
+
+**Customers** lists everyone using your embedded integrations, with columns *Customer*, *Connections* and *Status* (`Active` or `Pending admin activation`), plus **Create customer**, a search box, and **View connections** on each row. See [Customers](../operate/customers.md).
+
+### Operate → Connections
+
+Every connection your customers have made on your connectors, across every customer, with its status. The **My organization** view shows the connections your own organization holds, which your workflows act through. Documented under [Connections](../build/connections/README.md).
 
 ### Operate → Activity
 
@@ -132,7 +136,7 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | **Admin** (and Owner) | People, General, Billing, Roles, Audit log |
 | **Developer** and above | Environments, Secrets, Configs, Database, Workflow tags, Trash |
 
-Two capabilities are gated by role rather than by permission: using the builder, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
+Some things depend only on your role and cannot be granted or taken away with a custom role, such as using **Build with AI** and reading the audit log. See [Roles](../manage/roles.md). Each screen has its own page under [Settings](../manage/README.md).
 
 ### The account card
 
