@@ -22,95 +22,12 @@ Add PagerDuty from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add User To Team | `addUserToTeam` | Adds a user to a team with a given role. |
-| Create Business Service | `createBusinessService` | Creates a new business service. |
-| Create Escalation Policy | `createEscalationPolicy` | Creates a new escalation policy with a single rule targeting a user. |
-| Create Event Orchestration | `createEventOrchestration` | Creates a new event orchestration (global event router). |
-| Create Extension | `createExtension` | Creates a new extension (outbound integration) attached to a service. |
-| Create Incident | `createIncident` | Creates (triggers) a new incident on a service. Requires a valid user email as the From header. |
-| Create Incident Note | `createIncidentNote` | Adds a note to an incident. |
-| Create Maintenance Window | `createMaintenanceWindow` | Creates a maintenance window that suppresses notifications for a service. |
-| Create Ruleset | `createRuleset` | Creates a new global event ruleset. |
-| Create Schedule | `createSchedule` | Creates a new on-call schedule with a single layer and one user. |
-| Create Schedule Override | `createScheduleOverride` | Creates a temporary schedule override. |
-| Create Service | `createService` | Creates a new service. |
-| Create Tag | `createTag` | Creates a new tag. |
-| Create Team | `createTeam` | Creates a new team. |
-| Create User | `createUser` | Creates a new user and sends an invitation email. |
-| Create Webhook Subscription | `createWebhookSubscription` | Creates a v3 webhook subscription scoped to a service. |
-| Delete Addon | `deleteAddon` | Deletes (uninstalls) an addon. |
-| Delete Business Service | `deleteBusinessService` | Deletes a business service. |
-| Delete Escalation Policy | `deleteEscalationPolicy` | Deletes an escalation policy. |
-| Delete Event Orchestration | `deleteEventOrchestration` | Deletes an event orchestration. |
-| Delete Extension | `deleteExtension` | Deletes an extension. |
-| Delete Maintenance Window | `deleteMaintenanceWindow` | Deletes a maintenance window. |
-| Delete Ruleset | `deleteRuleset` | Deletes a global event ruleset. |
-| Delete Schedule | `deleteSchedule` | Deletes an on-call schedule. |
-| Delete Service | `deleteService` | Deletes a service. |
-| Delete Tag | `deleteTag` | Deletes a tag. |
-| Delete Team | `deleteTeam` | Deletes a team. |
-| Delete User | `deleteUser` | Deletes a user. |
-| Delete Webhook Subscription | `deleteWebhookSubscription` | Deletes a webhook subscription. |
-| Get Addon | `getAddon` | Retrieves a single addon by ID. |
-| Get Alert | `getAlert` | Retrieves a single alert on an incident. |
-| Get Business Service | `getBusinessService` | Retrieves a single business service by ID. |
-| Get Current User | `getCurrentUser` | Returns the user profile associated with the API key used to authenticate this request. Used to verify connectivity and identify the authenticated PagerDuty user. |
-| Get Escalation Policy | `getEscalationPolicy` | Retrieves a single escalation policy by ID. |
-| Get Event Orchestration | `getEventOrchestration` | Retrieves a single event orchestration by ID. |
-| Get Event Orchestration Router | `getEventOrchestrationRouter` | Retrieves the router rules for an event orchestration. |
-| Get Extension | `getExtension` | Retrieves a single extension by ID. |
-| Get Incident | `getIncident` | Retrieves a single incident by ID. |
-| Get Incident Analytics | `getIncidentAnalytics` | Returns aggregate incident analytics/metrics for a date range. |
-| Get Log Entry | `getLogEntry` | Retrieves a single log entry by ID. |
-| Get Maintenance Window | `getMaintenanceWindow` | Retrieves a single maintenance window by ID. |
-| Get Ruleset | `getRuleset` | Retrieves a single global event ruleset by ID. |
-| Get Schedule | `getSchedule` | Retrieves a single on-call schedule by ID. |
-| Get Service | `getService` | Retrieves a single service by ID. |
-| Get Tag | `getTag` | Retrieves a single tag by ID. |
-| Get Team | `getTeam` | Retrieves a single team by ID. |
-| Get User | `getUser` | Retrieves a single user by ID. |
-| Get Webhook Subscription | `getWebhookSubscription` | Retrieves a single webhook subscription by ID. |
-| Install Addon | `installAddon` | Installs a full-page add-on. |
-| List Abilities | `listAbilitiesKeyCheck` | Lists the abilities (features/entitlements) enabled for the PagerDuty account. |
-| List Addons | `listAddons` | Lists installed add-ons (UI-embedded third-party links). |
-| List Business Services | `listBusinessServices` | Lists business services (higher-level services representing business capabilities). |
-| List Escalation Policies | `listEscalationPolicies` | Lists existing escalation policies. |
-| List Event Orchestrations | `listEventOrchestrations` | Lists existing event orchestrations (global event routing/processing rulesets). |
-| List Extension Schemas | `listExtensionSchemas` | Lists the vendor extension schemas available for creating extensions. |
-| List Extensions | `listExtensions` | Lists existing extensions (outbound integrations wired to services, e.g. Slack, ServiceNow). |
-| List Incident Alerts | `listIncidentAlerts` | Lists alerts attached to an incident. |
-| List Incident Log Entries | `listIncidentLogEntries` | Lists log entries for a specific incident. |
-| List Incident Notes | `listIncidentNotes` | Lists notes added to an incident. |
-| List Incidents | `listIncidents` | Lists existing incidents, optionally filtered by status, service, date range, or urgency. |
-| List Log Entries | `listLogEntries` | Lists log entries across the account (audit trail of incident-related activity). |
-| List Maintenance Windows | `listMaintenanceWindows` | Lists maintenance windows (scheduled periods to disable notifications for a set of services). |
-| List Notifications | `listNotifications` | Lists notifications sent to users during a given time range. |
-| List On-Calls | `listOnCalls` | Lists the on-call entries during a given time range, showing which user is on-call for which escalation policy/schedule. |
-| List Ruleset Rules | `listRulesetRules` | Lists the rules within a global event ruleset. |
-| List Rulesets | `listRulesets` | Lists global event rulesets (legacy Event Rules, superseded by Event Orchestrations but still supported). |
-| List Schedule Overrides | `listScheduleOverrides` | Lists overrides for a schedule within a given time range. |
-| List Schedules | `listSchedules` | Lists existing on-call schedules. |
-| List Services | `listServices` | Lists existing services (technical or business services monitored by PagerDuty). |
-| List Tag Users | `listTagUsers` | Lists users assigned to a tag. |
-| List Tags | `listTags` | Lists tags defined in the account. |
-| List Teams | `listTeams` | Lists teams in the PagerDuty account. |
-| List User Contact Methods | `listUserContactMethods` | Lists contact methods (email/phone/SMS) for a user. |
-| List User Notification Rules | `listUserNotificationRules` | Lists notification rules for a user. |
-| List Users | `listUsers` | Lists users in the PagerDuty account. |
-| List Webhook Subscriptions | `listWebhookSubscriptions` | Lists v3 webhook subscriptions (event destinations for account activity). |
-| Merge Incidents | `mergeIncidents` | Merges one or more source incidents into a target incident. |
-| Remove User From Team | `removeUserFromTeam` | Removes a user from a team. |
-| Update Alert | `updateAlert` | Updates (resolves) an individual alert on an incident. |
-| Update Business Service | `updateBusinessService` | Updates a business service. |
-| Update Escalation Policy | `updateEscalationPolicy` | Updates an existing escalation policy. |
-| Update Event Orchestration | `updateEventOrchestration` | Updates an event orchestration. |
-| Update Incident | `updateIncident` | Updates an incident's status (acknowledge or resolve). |
-| Update Maintenance Window | `updateMaintenanceWindow` | Updates a maintenance window. |
-| Update Ruleset | `updateRuleset` | Updates a global event ruleset. |
-| Update Schedule | `updateSchedule` | Updates an existing on-call schedule. |
-| Update Service | `updateService` | Updates an existing service. |
-| Update Team | `updateTeam` | Updates an existing team. |
-| Update User | `updateUser` | Updates an existing user. |
-| Update Webhook Subscription | `updateWebhookSubscription` | Updates a webhook subscription. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add User To Team</td><td><code>addUserToTeam</code></td><td>Adds a user to a team with a given role.</td></tr><tr><td>Create Business Service</td><td><code>createBusinessService</code></td><td>Creates a new business service.</td></tr><tr><td>Create Escalation Policy</td><td><code>createEscalationPolicy</code></td><td>Creates a new escalation policy with a single rule targeting a user.</td></tr><tr><td>Create Event Orchestration</td><td><code>createEventOrchestration</code></td><td>Creates a new event orchestration (global event router).</td></tr><tr><td>Create Extension</td><td><code>createExtension</code></td><td>Creates a new extension (outbound integration) attached to a service.</td></tr><tr><td>Create Incident</td><td><code>createIncident</code></td><td>Creates (triggers) a new incident on a service. Requires a valid user email as the From header.</td></tr><tr><td>Create Incident Note</td><td><code>createIncidentNote</code></td><td>Adds a note to an incident.</td></tr><tr><td>Create Maintenance Window</td><td><code>createMaintenanceWindow</code></td><td>Creates a maintenance window that suppresses notifications for a service.</td></tr><tr><td>Create Ruleset</td><td><code>createRuleset</code></td><td>Creates a new global event ruleset.</td></tr><tr><td>Create Schedule</td><td><code>createSchedule</code></td><td>Creates a new on-call schedule with a single layer and one user.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 80 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Schedule Override</td><td><code>createScheduleOverride</code></td><td>Creates a temporary schedule override.</td></tr><tr><td>Create Service</td><td><code>createService</code></td><td>Creates a new service.</td></tr><tr><td>Create Tag</td><td><code>createTag</code></td><td>Creates a new tag.</td></tr><tr><td>Create Team</td><td><code>createTeam</code></td><td>Creates a new team.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Creates a new user and sends an invitation email.</td></tr><tr><td>Create Webhook Subscription</td><td><code>createWebhookSubscription</code></td><td>Creates a v3 webhook subscription scoped to a service.</td></tr><tr><td>Delete Addon</td><td><code>deleteAddon</code></td><td>Deletes (uninstalls) an addon.</td></tr><tr><td>Delete Business Service</td><td><code>deleteBusinessService</code></td><td>Deletes a business service.</td></tr><tr><td>Delete Escalation Policy</td><td><code>deleteEscalationPolicy</code></td><td>Deletes an escalation policy.</td></tr><tr><td>Delete Event Orchestration</td><td><code>deleteEventOrchestration</code></td><td>Deletes an event orchestration.</td></tr><tr><td>Delete Extension</td><td><code>deleteExtension</code></td><td>Deletes an extension.</td></tr><tr><td>Delete Maintenance Window</td><td><code>deleteMaintenanceWindow</code></td><td>Deletes a maintenance window.</td></tr><tr><td>Delete Ruleset</td><td><code>deleteRuleset</code></td><td>Deletes a global event ruleset.</td></tr><tr><td>Delete Schedule</td><td><code>deleteSchedule</code></td><td>Deletes an on-call schedule.</td></tr><tr><td>Delete Service</td><td><code>deleteService</code></td><td>Deletes a service.</td></tr><tr><td>Delete Tag</td><td><code>deleteTag</code></td><td>Deletes a tag.</td></tr><tr><td>Delete Team</td><td><code>deleteTeam</code></td><td>Deletes a team.</td></tr><tr><td>Delete User</td><td><code>deleteUser</code></td><td>Deletes a user.</td></tr><tr><td>Delete Webhook Subscription</td><td><code>deleteWebhookSubscription</code></td><td>Deletes a webhook subscription.</td></tr><tr><td>Get Addon</td><td><code>getAddon</code></td><td>Retrieves a single addon by ID.</td></tr><tr><td>Get Alert</td><td><code>getAlert</code></td><td>Retrieves a single alert on an incident.</td></tr><tr><td>Get Business Service</td><td><code>getBusinessService</code></td><td>Retrieves a single business service by ID.</td></tr><tr><td>Get Current User</td><td><code>getCurrentUser</code></td><td>Returns the user profile associated with the API key used to authenticate this request. Used to verify connectivity and identify the authenticated PagerDuty user.</td></tr><tr><td>Get Escalation Policy</td><td><code>getEscalationPolicy</code></td><td>Retrieves a single escalation policy by ID.</td></tr><tr><td>Get Event Orchestration</td><td><code>getEventOrchestration</code></td><td>Retrieves a single event orchestration by ID.</td></tr><tr><td>Get Event Orchestration Router</td><td><code>getEventOrchestrationRouter</code></td><td>Retrieves the router rules for an event orchestration.</td></tr><tr><td>Get Extension</td><td><code>getExtension</code></td><td>Retrieves a single extension by ID.</td></tr><tr><td>Get Incident</td><td><code>getIncident</code></td><td>Retrieves a single incident by ID.</td></tr><tr><td>Get Incident Analytics</td><td><code>getIncidentAnalytics</code></td><td>Returns aggregate incident analytics/metrics for a date range.</td></tr><tr><td>Get Log Entry</td><td><code>getLogEntry</code></td><td>Retrieves a single log entry by ID.</td></tr><tr><td>Get Maintenance Window</td><td><code>getMaintenanceWindow</code></td><td>Retrieves a single maintenance window by ID.</td></tr><tr><td>Get Ruleset</td><td><code>getRuleset</code></td><td>Retrieves a single global event ruleset by ID.</td></tr><tr><td>Get Schedule</td><td><code>getSchedule</code></td><td>Retrieves a single on-call schedule by ID.</td></tr><tr><td>Get Service</td><td><code>getService</code></td><td>Retrieves a single service by ID.</td></tr><tr><td>Get Tag</td><td><code>getTag</code></td><td>Retrieves a single tag by ID.</td></tr><tr><td>Get Team</td><td><code>getTeam</code></td><td>Retrieves a single team by ID.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Retrieves a single user by ID.</td></tr><tr><td>Get Webhook Subscription</td><td><code>getWebhookSubscription</code></td><td>Retrieves a single webhook subscription by ID.</td></tr><tr><td>Install Addon</td><td><code>installAddon</code></td><td>Installs a full-page add-on.</td></tr><tr><td>List Abilities</td><td><code>listAbilitiesKeyCheck</code></td><td>Lists the abilities (features/entitlements) enabled for the PagerDuty account.</td></tr><tr><td>List Addons</td><td><code>listAddons</code></td><td>Lists installed add-ons (UI-embedded third-party links).</td></tr><tr><td>List Business Services</td><td><code>listBusinessServices</code></td><td>Lists business services (higher-level services representing business capabilities).</td></tr><tr><td>List Escalation Policies</td><td><code>listEscalationPolicies</code></td><td>Lists existing escalation policies.</td></tr><tr><td>List Event Orchestrations</td><td><code>listEventOrchestrations</code></td><td>Lists existing event orchestrations (global event routing/processing rulesets).</td></tr><tr><td>List Extension Schemas</td><td><code>listExtensionSchemas</code></td><td>Lists the vendor extension schemas available for creating extensions.</td></tr><tr><td>List Extensions</td><td><code>listExtensions</code></td><td>Lists existing extensions (outbound integrations wired to services, e.g. Slack, ServiceNow).</td></tr><tr><td>List Incident Alerts</td><td><code>listIncidentAlerts</code></td><td>Lists alerts attached to an incident.</td></tr><tr><td>List Incident Log Entries</td><td><code>listIncidentLogEntries</code></td><td>Lists log entries for a specific incident.</td></tr><tr><td>List Incident Notes</td><td><code>listIncidentNotes</code></td><td>Lists notes added to an incident.</td></tr><tr><td>List Incidents</td><td><code>listIncidents</code></td><td>Lists existing incidents, optionally filtered by status, service, date range, or urgency.</td></tr><tr><td>List Log Entries</td><td><code>listLogEntries</code></td><td>Lists log entries across the account (audit trail of incident-related activity).</td></tr><tr><td>List Maintenance Windows</td><td><code>listMaintenanceWindows</code></td><td>Lists maintenance windows (scheduled periods to disable notifications for a set of services).</td></tr><tr><td>List Notifications</td><td><code>listNotifications</code></td><td>Lists notifications sent to users during a given time range.</td></tr><tr><td>List On-Calls</td><td><code>listOnCalls</code></td><td>Lists the on-call entries during a given time range, showing which user is on-call for which escalation policy/schedule.</td></tr><tr><td>List Ruleset Rules</td><td><code>listRulesetRules</code></td><td>Lists the rules within a global event ruleset.</td></tr><tr><td>List Rulesets</td><td><code>listRulesets</code></td><td>Lists global event rulesets (legacy Event Rules, superseded by Event Orchestrations but still supported).</td></tr><tr><td>List Schedule Overrides</td><td><code>listScheduleOverrides</code></td><td>Lists overrides for a schedule within a given time range.</td></tr><tr><td>List Schedules</td><td><code>listSchedules</code></td><td>Lists existing on-call schedules.</td></tr><tr><td>List Services</td><td><code>listServices</code></td><td>Lists existing services (technical or business services monitored by PagerDuty).</td></tr><tr><td>List Tag Users</td><td><code>listTagUsers</code></td><td>Lists users assigned to a tag.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>Lists tags defined in the account.</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>Lists teams in the PagerDuty account.</td></tr><tr><td>List User Contact Methods</td><td><code>listUserContactMethods</code></td><td>Lists contact methods (email/phone/SMS) for a user.</td></tr><tr><td>List User Notification Rules</td><td><code>listUserNotificationRules</code></td><td>Lists notification rules for a user.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>Lists users in the PagerDuty account.</td></tr><tr><td>List Webhook Subscriptions</td><td><code>listWebhookSubscriptions</code></td><td>Lists v3 webhook subscriptions (event destinations for account activity).</td></tr><tr><td>Merge Incidents</td><td><code>mergeIncidents</code></td><td>Merges one or more source incidents into a target incident.</td></tr><tr><td>Remove User From Team</td><td><code>removeUserFromTeam</code></td><td>Removes a user from a team.</td></tr><tr><td>Update Alert</td><td><code>updateAlert</code></td><td>Updates (resolves) an individual alert on an incident.</td></tr><tr><td>Update Business Service</td><td><code>updateBusinessService</code></td><td>Updates a business service.</td></tr><tr><td>Update Escalation Policy</td><td><code>updateEscalationPolicy</code></td><td>Updates an existing escalation policy.</td></tr><tr><td>Update Event Orchestration</td><td><code>updateEventOrchestration</code></td><td>Updates an event orchestration.</td></tr><tr><td>Update Incident</td><td><code>updateIncident</code></td><td>Updates an incident's status (acknowledge or resolve).</td></tr><tr><td>Update Maintenance Window</td><td><code>updateMaintenanceWindow</code></td><td>Updates a maintenance window.</td></tr><tr><td>Update Ruleset</td><td><code>updateRuleset</code></td><td>Updates a global event ruleset.</td></tr><tr><td>Update Schedule</td><td><code>updateSchedule</code></td><td>Updates an existing on-call schedule.</td></tr><tr><td>Update Service</td><td><code>updateService</code></td><td>Updates an existing service.</td></tr><tr><td>Update Team</td><td><code>updateTeam</code></td><td>Updates an existing team.</td></tr><tr><td>Update User</td><td><code>updateUser</code></td><td>Updates an existing user.</td></tr><tr><td>Update Webhook Subscription</td><td><code>updateWebhookSubscription</code></td><td>Updates a webhook subscription.</td></tr></tbody></table>
+
+</details>

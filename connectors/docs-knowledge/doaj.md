@@ -22,9 +22,4 @@ Add DOAJ (Directory of Open Access Journals) from **Build → Integrations → C
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Article | `getArticle` | Get one article's DOAJ record by its DOAJ id (GET /api/v4/articles/{article_id}). Docs: https://doaj.org/api/v4/docs |
-| Get Journal | `getJournal` | Get one journal's DOAJ record by its DOAJ id (GET /api/v4/journals/{journal_id}). Docs: https://doaj.org/api/v4/docs |
-| Search Articles | `searchArticles` | Search DOAJ article metadata (title, abstract, authors, DOI, journal, keywords, links) with a query string, paging and sort (GET /api/v4/search/articles/{search_query}). Docs: https://doaj.org/api/v4/docs |
-| Search Journals | `searchJournals` | Search DOAJ-indexed open access journals (title, ISSN, publisher, licence, APCs, subjects, editorial policy) with a query string, paging and sort (GET /api/v4/search/journals/{search_query}). Docs: https://doaj.org/api/v4/docs |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Article</td><td><code>getArticle</code></td><td>Get one article's DOAJ record by its DOAJ id (GET /api/v4/articles/{article_id}). Docs: https://doaj.org/api/v4/docs</td></tr><tr><td>Get Journal</td><td><code>getJournal</code></td><td>Get one journal's DOAJ record by its DOAJ id (GET /api/v4/journals/{journal_id}). Docs: https://doaj.org/api/v4/docs</td></tr><tr><td>Search Articles</td><td><code>searchArticles</code></td><td>Search DOAJ article metadata (title, abstract, authors, DOI, journal, keywords, links) with a query string, paging and sort (GET /api/v4/search/articles/{search_query}). Docs: https://doaj.org/api/v4/docs</td></tr><tr><td>Search Journals</td><td><code>searchJournals</code></td><td>Search DOAJ-indexed open access journals (title, ISSN, publisher, licence, APCs, subjects, editorial policy) with a query string, paging and sort (GET /api/v4/search/journals/{search_query}). Docs: https://doaj.org/api/v4/docs</td></tr></tbody></table>

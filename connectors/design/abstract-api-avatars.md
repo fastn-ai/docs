@@ -22,6 +22,4 @@ Add AbstractAPI Avatars from **Build → Integrations → Connectors** and conne
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Generate Avatar | `generateAvatar` | Generates an initials avatar image for a person's name and returns the image file (PNG by default, or SVG). Size, colors, font size, number of letters, rounding, case, italics, and bold are all configurable. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Generate Avatar</td><td><code>generateAvatar</code></td><td>Generates an initials avatar image for a person's name and returns the image file (PNG by default, or SVG). Size, colors, font size, number of letters, rounding, case, italics, and bold are all configurable.</td></tr></tbody></table>

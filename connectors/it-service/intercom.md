@@ -22,138 +22,26 @@ Add Intercom from **Build → Integrations → Connectors** and connect an accou
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Archive Contact | `archiveContact` | Archive a contact by id. |
-| Assign Conversation | `assignConversation` | Assign a conversation to an admin and/or team via the parts endpoint. |
-| Attach Contact to Company | `attachContactToCompany` | Attach a contact to a company. |
-| Attach Contact to Conversation | `attachContactToConversation` | Add a contact participant to a conversation. |
-| Close Conversation | `closeConversation` | Close a conversation via the parts endpoint. |
-| Convert Conversation to Ticket | `convertConversationToTicket` | Convert a conversation into a ticket of a given ticket type. |
-| Create Article | `createArticle` | Create a help center article. |
-| Create Contact | `createContact` | Create a new contact (user or lead) in Intercom. |
-| Create Conversation | `createConversation` | Create a conversation initiated by a contact. |
-| Create Data Attribute | `createDataAttribute` | Create a custom data attribute. |
-| Create Help Center Collection | `createCollection` | Create a help center collection. |
-| Create Message | `createMessage` | Send an outbound in-app or email message from an admin to a contact. |
-| Create Note | `createNote` | Create a note on a contact. |
-| Create or Update Company | `createOrUpdateCompany` | Create a company, or update it if company_id already exists. |
-| Create or Update Tag | `createTag` | Create a new tag or update an existing one by passing its id. |
-| Create Ticket | `createTicket` | Create a ticket. |
-| Create Ticket Type | `createTicketType` | Create a new ticket type. |
-| Delete Article | `deleteArticle` | Delete an article by id. |
-| Delete Company | `deleteCompany` | Delete a company by id. |
-| Delete Contact | `deleteContact` | Permanently delete a contact by id. |
-| Delete Conversation | `deleteConversation` | Permanently delete a conversation by id. |
-| Delete Help Center Collection | `deleteCollection` | Delete a help center collection by id. |
-| Delete Tag | `deleteTag` | Delete a tag by id. |
-| Find Contact by External ID | `findContactByExternalId` | Retrieve a contact by its external_id. |
-| Get Admin | `getAdmin` | Retrieve a single admin by id. |
-| Get Article | `getArticle` | Retrieve an article by id. |
-| Get Company | `getCompany` | Retrieve a company by Intercom company id. |
-| Get Contact | `getContact` | Retrieve a single contact by Intercom contact id. |
-| Get Conversation | `getConversation` | Retrieve a single conversation by id. |
-| Get Help Center Collection | `getCollection` | Retrieve a help center collection by id. |
-| Get Note | `getNote` | Retrieve a single note by id. |
-| Get Segment | `getSegment` | Retrieve a single segment by id. |
-| Get Team | `getTeam` | Retrieve a single team by id. |
-| Get Ticket | `getTicket` | Retrieve a ticket by id. |
-| Get Ticket Type | `getTicketType` | Retrieve a single ticket type by id. |
-| Identify Admin (Me) | `getMe` | Identify the admin/workspace that owns the current access token. |
-| List Admin Activity Logs | `listActivityLogs` | List admin activity logs within a date range (created_at_after required, unix timestamp). |
-| List Admins | `listAdmins` | List all admins in the workspace. |
-| List Articles | `listArticles` | List all help center articles with pagination. |
-| List Attached Contacts | `listAttachedContacts` | List contacts attached to a company. |
-| List Away Status Reasons | `listAwayStatusReasons` | List all away status reasons for the workspace. |
-| List Companies | `listCompanies` | List companies with pagination. |
-| List Company Contacts | `listCompanyContacts` | List contacts attached to a company. |
-| List Company Segments | `listCompanySegments` | List segments associated with a company. |
-| List Contact Companies | `listContactCompanies` | List companies attached to a contact. |
-| List Contact Segments | `listContactSegments` | List segments a contact belongs to. |
-| List Contact Subscriptions | `listContactSubscriptions` | List subscription types a contact is opted into. |
-| List Contact Tags | `listContactTags` | List tags attached to a contact. |
-| List Contacts | `listContacts` | List all contacts with cursor pagination. |
-| List Conversations | `listConversations` | Search conversations. Intercom's GET /conversations list is plan-restricted on some workspaces; this uses the always-available search endpoint. Pass an Intercom search query AST and optional pagination. |
-| List Data Attributes | `listDataAttributes` | List data attributes for contacts/companies/conversations. |
-| List Data Events | `listEvents` | List data events for a contact. |
-| List Help Center Collections | `listCollections` | List all help center collections. |
-| List News Items | `listNewsItems` | List all news items. |
-| List Newsfeeds | `listNewsfeeds` | List all newsfeeds. |
-| List Notes | `listNotes` | List notes for a contact. |
-| List Segments | `listSegments` | List all contact/company segments. |
-| List Subscription Types | `listSubscriptionTypes` | List all subscription types in the workspace. |
-| List Tags | `listTags` | List all tags in the workspace. |
-| List Teams | `listTeams` | List all teams in the workspace. |
-| List Ticket Types | `listTicketTypes` | List all ticket types for the workspace. |
-| List Webhook Subscriptions | `listWebhookSubscriptions` | List webhook subscriptions for the app. Note: topic subscriptions are primarily managed in the Developer Hub; this read endpoint surfaces current subscriptions where supported. |
-| Merge Contacts | `mergeContacts` | Merge a lead into a user contact. |
-| Open Conversation | `openConversation` | Open (reopen) a snoozed or closed conversation. |
-| Reply to Conversation | `replyConversation` | Reply to a conversation as an admin or as a contact/user. |
-| Search Articles | `searchArticles` | Search help center articles by phrase or state. |
-| Search Contacts | `searchContacts` | Search contacts using a query object with operators and cursor pagination. |
-| Search Conversations | `searchConversations` | Search conversations using a query object with cursor pagination (per_page and the starting_after cursor from pages.next). |
-| Set Admin Away | `setAdminAway` | Set an admin to away mode. |
-| Snooze Conversation | `snoozeConversation` | Snooze a conversation until a future unix timestamp. |
-| Submit Data Event | `submitEvent` | Submit a data event for a contact (returns 202 with empty body). |
-| Tag Contact | `tagContact` | Add a tag to a contact. |
-| Tag Conversation | `tagConversation` | Add a tag to a conversation. |
-| Unarchive Contact | `unarchiveContact` | Unarchive a previously archived contact. |
-| Untag Contact | `untagContact` | Remove a tag from a contact. |
-| Untag Conversation | `untagConversation` | Remove a tag from a conversation. |
-| Update Article | `updateArticle` | Update an existing article. |
-| Update Contact | `updateContact` | Update an existing contact by id. |
-| Update Data Attribute | `updateDataAttribute` | Update a custom data attribute by id. |
-| Update Help Center Collection | `updateCollection` | Update a help center collection by id. |
-| Update Ticket | `updateTicket` | Update a ticket (state, attributes, assignment). |
-| Update Ticket Type | `updateTicketType` | Update an existing ticket type. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Archive Contact</td><td><code>archiveContact</code></td><td>Archive a contact by id.</td></tr><tr><td>Assign Conversation</td><td><code>assignConversation</code></td><td>Assign a conversation to an admin and/or team via the parts endpoint.</td></tr><tr><td>Attach Contact to Company</td><td><code>attachContactToCompany</code></td><td>Attach a contact to a company.</td></tr><tr><td>Attach Contact to Conversation</td><td><code>attachContactToConversation</code></td><td>Add a contact participant to a conversation.</td></tr><tr><td>Close Conversation</td><td><code>closeConversation</code></td><td>Close a conversation via the parts endpoint.</td></tr><tr><td>Convert Conversation to Ticket</td><td><code>convertConversationToTicket</code></td><td>Convert a conversation into a ticket of a given ticket type.</td></tr><tr><td>Create Article</td><td><code>createArticle</code></td><td>Create a help center article.</td></tr><tr><td>Create Contact</td><td><code>createContact</code></td><td>Create a new contact (user or lead) in Intercom.</td></tr><tr><td>Create Conversation</td><td><code>createConversation</code></td><td>Create a conversation initiated by a contact.</td></tr><tr><td>Create Data Attribute</td><td><code>createDataAttribute</code></td><td>Create a custom data attribute.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 72 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Help Center Collection</td><td><code>createCollection</code></td><td>Create a help center collection.</td></tr><tr><td>Create Message</td><td><code>createMessage</code></td><td>Send an outbound in-app or email message from an admin to a contact.</td></tr><tr><td>Create Note</td><td><code>createNote</code></td><td>Create a note on a contact.</td></tr><tr><td>Create or Update Company</td><td><code>createOrUpdateCompany</code></td><td>Create a company, or update it if company_id already exists.</td></tr><tr><td>Create or Update Tag</td><td><code>createTag</code></td><td>Create a new tag or update an existing one by passing its id.</td></tr><tr><td>Create Ticket</td><td><code>createTicket</code></td><td>Create a ticket.</td></tr><tr><td>Create Ticket Type</td><td><code>createTicketType</code></td><td>Create a new ticket type.</td></tr><tr><td>Delete Article</td><td><code>deleteArticle</code></td><td>Delete an article by id.</td></tr><tr><td>Delete Company</td><td><code>deleteCompany</code></td><td>Delete a company by id.</td></tr><tr><td>Delete Contact</td><td><code>deleteContact</code></td><td>Permanently delete a contact by id.</td></tr><tr><td>Delete Conversation</td><td><code>deleteConversation</code></td><td>Permanently delete a conversation by id.</td></tr><tr><td>Delete Help Center Collection</td><td><code>deleteCollection</code></td><td>Delete a help center collection by id.</td></tr><tr><td>Delete Tag</td><td><code>deleteTag</code></td><td>Delete a tag by id.</td></tr><tr><td>Find Contact by External ID</td><td><code>findContactByExternalId</code></td><td>Retrieve a contact by its external_id.</td></tr><tr><td>Get Admin</td><td><code>getAdmin</code></td><td>Retrieve a single admin by id.</td></tr><tr><td>Get Article</td><td><code>getArticle</code></td><td>Retrieve an article by id.</td></tr><tr><td>Get Company</td><td><code>getCompany</code></td><td>Retrieve a company by Intercom company id.</td></tr><tr><td>Get Contact</td><td><code>getContact</code></td><td>Retrieve a single contact by Intercom contact id.</td></tr><tr><td>Get Conversation</td><td><code>getConversation</code></td><td>Retrieve a single conversation by id.</td></tr><tr><td>Get Help Center Collection</td><td><code>getCollection</code></td><td>Retrieve a help center collection by id.</td></tr><tr><td>Get Note</td><td><code>getNote</code></td><td>Retrieve a single note by id.</td></tr><tr><td>Get Segment</td><td><code>getSegment</code></td><td>Retrieve a single segment by id.</td></tr><tr><td>Get Team</td><td><code>getTeam</code></td><td>Retrieve a single team by id.</td></tr><tr><td>Get Ticket</td><td><code>getTicket</code></td><td>Retrieve a ticket by id.</td></tr><tr><td>Get Ticket Type</td><td><code>getTicketType</code></td><td>Retrieve a single ticket type by id.</td></tr><tr><td>Identify Admin (Me)</td><td><code>getMe</code></td><td>Identify the admin/workspace that owns the current access token.</td></tr><tr><td>List Admin Activity Logs</td><td><code>listActivityLogs</code></td><td>List admin activity logs within a date range (created_at_after required, unix timestamp).</td></tr><tr><td>List Admins</td><td><code>listAdmins</code></td><td>List all admins in the workspace.</td></tr><tr><td>List Articles</td><td><code>listArticles</code></td><td>List all help center articles with pagination.</td></tr><tr><td>List Attached Contacts</td><td><code>listAttachedContacts</code></td><td>List contacts attached to a company.</td></tr><tr><td>List Away Status Reasons</td><td><code>listAwayStatusReasons</code></td><td>List all away status reasons for the workspace.</td></tr><tr><td>List Companies</td><td><code>listCompanies</code></td><td>List companies with pagination.</td></tr><tr><td>List Company Contacts</td><td><code>listCompanyContacts</code></td><td>List contacts attached to a company.</td></tr><tr><td>List Company Segments</td><td><code>listCompanySegments</code></td><td>List segments associated with a company.</td></tr><tr><td>List Contact Companies</td><td><code>listContactCompanies</code></td><td>List companies attached to a contact.</td></tr><tr><td>List Contact Segments</td><td><code>listContactSegments</code></td><td>List segments a contact belongs to.</td></tr><tr><td>List Contact Subscriptions</td><td><code>listContactSubscriptions</code></td><td>List subscription types a contact is opted into.</td></tr><tr><td>List Contact Tags</td><td><code>listContactTags</code></td><td>List tags attached to a contact.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>List all contacts with cursor pagination.</td></tr><tr><td>List Conversations</td><td><code>listConversations</code></td><td>Search conversations. Intercom's GET /conversations list is plan-restricted on some workspaces; this uses the always-available search endpoint. Pass an Intercom search query AST and optional pagination.</td></tr><tr><td>List Data Attributes</td><td><code>listDataAttributes</code></td><td>List data attributes for contacts/companies/conversations.</td></tr><tr><td>List Data Events</td><td><code>listEvents</code></td><td>List data events for a contact.</td></tr><tr><td>List Help Center Collections</td><td><code>listCollections</code></td><td>List all help center collections.</td></tr><tr><td>List News Items</td><td><code>listNewsItems</code></td><td>List all news items.</td></tr><tr><td>List Newsfeeds</td><td><code>listNewsfeeds</code></td><td>List all newsfeeds.</td></tr><tr><td>List Notes</td><td><code>listNotes</code></td><td>List notes for a contact.</td></tr><tr><td>List Segments</td><td><code>listSegments</code></td><td>List all contact/company segments.</td></tr><tr><td>List Subscription Types</td><td><code>listSubscriptionTypes</code></td><td>List all subscription types in the workspace.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>List all tags in the workspace.</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>List all teams in the workspace.</td></tr><tr><td>List Ticket Types</td><td><code>listTicketTypes</code></td><td>List all ticket types for the workspace.</td></tr><tr><td>List Webhook Subscriptions</td><td><code>listWebhookSubscriptions</code></td><td>List webhook subscriptions for the app. Note: topic subscriptions are primarily managed in the Developer Hub; this read endpoint surfaces current subscriptions where supported.</td></tr><tr><td>Merge Contacts</td><td><code>mergeContacts</code></td><td>Merge a lead into a user contact.</td></tr><tr><td>Open Conversation</td><td><code>openConversation</code></td><td>Open (reopen) a snoozed or closed conversation.</td></tr><tr><td>Reply to Conversation</td><td><code>replyConversation</code></td><td>Reply to a conversation as an admin or as a contact/user.</td></tr><tr><td>Search Articles</td><td><code>searchArticles</code></td><td>Search help center articles by phrase or state.</td></tr><tr><td>Search Contacts</td><td><code>searchContacts</code></td><td>Search contacts using a query object with operators and cursor pagination.</td></tr><tr><td>Search Conversations</td><td><code>searchConversations</code></td><td>Search conversations using a query object with cursor pagination (per_page and the starting_after cursor from pages.next).</td></tr><tr><td>Set Admin Away</td><td><code>setAdminAway</code></td><td>Set an admin to away mode.</td></tr><tr><td>Snooze Conversation</td><td><code>snoozeConversation</code></td><td>Snooze a conversation until a future unix timestamp.</td></tr><tr><td>Submit Data Event</td><td><code>submitEvent</code></td><td>Submit a data event for a contact (returns 202 with empty body).</td></tr><tr><td>Tag Contact</td><td><code>tagContact</code></td><td>Add a tag to a contact.</td></tr><tr><td>Tag Conversation</td><td><code>tagConversation</code></td><td>Add a tag to a conversation.</td></tr><tr><td>Unarchive Contact</td><td><code>unarchiveContact</code></td><td>Unarchive a previously archived contact.</td></tr><tr><td>Untag Contact</td><td><code>untagContact</code></td><td>Remove a tag from a contact.</td></tr><tr><td>Untag Conversation</td><td><code>untagConversation</code></td><td>Remove a tag from a conversation.</td></tr><tr><td>Update Article</td><td><code>updateArticle</code></td><td>Update an existing article.</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Update an existing contact by id.</td></tr><tr><td>Update Data Attribute</td><td><code>updateDataAttribute</code></td><td>Update a custom data attribute by id.</td></tr><tr><td>Update Help Center Collection</td><td><code>updateCollection</code></td><td>Update a help center collection by id.</td></tr><tr><td>Update Ticket</td><td><code>updateTicket</code></td><td>Update a ticket (state, attributes, assignment).</td></tr><tr><td>Update Ticket Type</td><td><code>updateTicketType</code></td><td>Update an existing ticket type.</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Admin Added to Workspace | `admin.added_to_workspace` | An admin was added to the workspace. |
-| Admin Away Mode Updated | `admin.away_mode_updated` | An admin's away status changed. |
-| Admin Created Conversation | `conversation.admin.single.created` | An admin started a new outbound conversation. |
-| Admin Replied to Conversation | `conversation.admin.replied` | An admin replied to a conversation. |
-| Article Created | `article.created` | A help center article was created. |
-| Article Deleted | `article.deleted` | A help center article was deleted. |
-| Article Published | `article.published` | A help center article was published. |
-| Article Updated | `article.updated` | A help center article was updated. |
-| Company Created | `company.created` | A company was created. |
-| Company Deleted | `company.deleted` | A company was deleted. |
-| Company Updated | `company.updated` | A company was updated. |
-| Contact Archived | `contact.archived` | A contact was archived. |
-| Contact Attached to Company | `company.contact.attached` | A contact was attached to a company. |
-| Contact Attached to Conversation | `conversation.contact.attached` | A contact was added as a participant to a conversation. |
-| Contact Deleted | `contact.deleted` | A contact was permanently deleted. |
-| Contact Detached from Company | `company.contact.detached` | A contact was detached from a company. |
-| Contact Detached from Conversation | `conversation.contact.detached` | A contact was removed from a conversation. |
-| Contact Email Updated | `contact.email.updated` | A contact's email address changed. |
-| Contact Subscribed | `contact.subscribed` | A contact subscribed to a subscription type. |
-| Contact Unarchived | `contact.unarchive` | A contact was unarchived. |
-| Contact Unsubscribed | `contact.unsubscribed` | A contact unsubscribed from a subscription type. |
-| Contacts Merged | `contact.merged` | A lead was merged into a user contact. |
-| Conversation Assigned | `conversation.admin.assigned` | A conversation was assigned to an admin or team. |
-| Conversation Closed | `conversation.admin.closed` | An admin closed a conversation. |
-| Conversation Created by User | `conversation.user.created` | A user or lead started a new conversation. |
-| Conversation Opened | `conversation.admin.opened` | An admin reopened a conversation. |
-| Conversation Rating Added | `conversation.rating.added` | A user rated a conversation. |
-| Conversation Snoozed | `conversation.admin.snoozed` | An admin snoozed a conversation. |
-| Conversation Tagged | `conversation_part.tag.created` | A tag was added to a conversation part. |
-| Conversation Unsnoozed | `conversation.admin.unsnoozed` | A snoozed conversation reopened. |
-| Lead Added Email | `contact.lead.added_email` | An email was added to a lead. |
-| Lead Contact Created | `contact.lead.created` | A new lead-type contact was created. |
-| Lead Contact Updated | `contact.lead.updated` | A lead-type contact was updated. |
-| Lead Signed Up | `contact.lead.signed_up` | A lead converted/signed up as a user. |
-| Lead Tagged | `contact.lead.tag.created` | A tag was added to a lead contact. |
-| Note Added to Conversation | `conversation.admin.noted` | An admin added a note to a conversation. |
-| Ticket Assigned | `ticket.admin.assigned` | A ticket was assigned to an admin or team. |
-| Ticket Created | `ticket.created` | A ticket was created. |
-| Ticket State Updated | `ticket.state.updated` | A ticket's state changed. |
-| User Contact Created | `contact.user.created` | A new user-type contact was created. |
-| User Contact Updated | `contact.user.updated` | A user-type contact was updated. |
-| User Replied to Conversation | `conversation.user.replied` | A user or lead replied to a conversation. |
-| User Tagged | `contact.user.tag.created` | A tag was added to a user contact. |
-| User Untagged | `contact.user.tag.deleted` | A tag was removed from a user contact. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Admin Added to Workspace</td><td><code>admin.added_to_workspace</code></td><td>An admin was added to the workspace.</td></tr><tr><td>Admin Away Mode Updated</td><td><code>admin.away_mode_updated</code></td><td>An admin's away status changed.</td></tr><tr><td>Admin Created Conversation</td><td><code>conversation.admin.single.created</code></td><td>An admin started a new outbound conversation.</td></tr><tr><td>Admin Replied to Conversation</td><td><code>conversation.admin.replied</code></td><td>An admin replied to a conversation.</td></tr><tr><td>Article Created</td><td><code>article.created</code></td><td>A help center article was created.</td></tr><tr><td>Article Deleted</td><td><code>article.deleted</code></td><td>A help center article was deleted.</td></tr><tr><td>Article Published</td><td><code>article.published</code></td><td>A help center article was published.</td></tr><tr><td>Article Updated</td><td><code>article.updated</code></td><td>A help center article was updated.</td></tr><tr><td>Company Created</td><td><code>company.created</code></td><td>A company was created.</td></tr><tr><td>Company Deleted</td><td><code>company.deleted</code></td><td>A company was deleted.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 34 more events</summary>
+
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Company Updated</td><td><code>company.updated</code></td><td>A company was updated.</td></tr><tr><td>Contact Archived</td><td><code>contact.archived</code></td><td>A contact was archived.</td></tr><tr><td>Contact Attached to Company</td><td><code>company.contact.attached</code></td><td>A contact was attached to a company.</td></tr><tr><td>Contact Attached to Conversation</td><td><code>conversation.contact.attached</code></td><td>A contact was added as a participant to a conversation.</td></tr><tr><td>Contact Deleted</td><td><code>contact.deleted</code></td><td>A contact was permanently deleted.</td></tr><tr><td>Contact Detached from Company</td><td><code>company.contact.detached</code></td><td>A contact was detached from a company.</td></tr><tr><td>Contact Detached from Conversation</td><td><code>conversation.contact.detached</code></td><td>A contact was removed from a conversation.</td></tr><tr><td>Contact Email Updated</td><td><code>contact.email.updated</code></td><td>A contact's email address changed.</td></tr><tr><td>Contact Subscribed</td><td><code>contact.subscribed</code></td><td>A contact subscribed to a subscription type.</td></tr><tr><td>Contact Unarchived</td><td><code>contact.unarchive</code></td><td>A contact was unarchived.</td></tr><tr><td>Contact Unsubscribed</td><td><code>contact.unsubscribed</code></td><td>A contact unsubscribed from a subscription type.</td></tr><tr><td>Contacts Merged</td><td><code>contact.merged</code></td><td>A lead was merged into a user contact.</td></tr><tr><td>Conversation Assigned</td><td><code>conversation.admin.assigned</code></td><td>A conversation was assigned to an admin or team.</td></tr><tr><td>Conversation Closed</td><td><code>conversation.admin.closed</code></td><td>An admin closed a conversation.</td></tr><tr><td>Conversation Created by User</td><td><code>conversation.user.created</code></td><td>A user or lead started a new conversation.</td></tr><tr><td>Conversation Opened</td><td><code>conversation.admin.opened</code></td><td>An admin reopened a conversation.</td></tr><tr><td>Conversation Rating Added</td><td><code>conversation.rating.added</code></td><td>A user rated a conversation.</td></tr><tr><td>Conversation Snoozed</td><td><code>conversation.admin.snoozed</code></td><td>An admin snoozed a conversation.</td></tr><tr><td>Conversation Tagged</td><td><code>conversation_part.tag.created</code></td><td>A tag was added to a conversation part.</td></tr><tr><td>Conversation Unsnoozed</td><td><code>conversation.admin.unsnoozed</code></td><td>A snoozed conversation reopened.</td></tr><tr><td>Lead Added Email</td><td><code>contact.lead.added_email</code></td><td>An email was added to a lead.</td></tr><tr><td>Lead Contact Created</td><td><code>contact.lead.created</code></td><td>A new lead-type contact was created.</td></tr><tr><td>Lead Contact Updated</td><td><code>contact.lead.updated</code></td><td>A lead-type contact was updated.</td></tr><tr><td>Lead Signed Up</td><td><code>contact.lead.signed_up</code></td><td>A lead converted/signed up as a user.</td></tr><tr><td>Lead Tagged</td><td><code>contact.lead.tag.created</code></td><td>A tag was added to a lead contact.</td></tr><tr><td>Note Added to Conversation</td><td><code>conversation.admin.noted</code></td><td>An admin added a note to a conversation.</td></tr><tr><td>Ticket Assigned</td><td><code>ticket.admin.assigned</code></td><td>A ticket was assigned to an admin or team.</td></tr><tr><td>Ticket Created</td><td><code>ticket.created</code></td><td>A ticket was created.</td></tr><tr><td>Ticket State Updated</td><td><code>ticket.state.updated</code></td><td>A ticket's state changed.</td></tr><tr><td>User Contact Created</td><td><code>contact.user.created</code></td><td>A new user-type contact was created.</td></tr><tr><td>User Contact Updated</td><td><code>contact.user.updated</code></td><td>A user-type contact was updated.</td></tr><tr><td>User Replied to Conversation</td><td><code>conversation.user.replied</code></td><td>A user or lead replied to a conversation.</td></tr><tr><td>User Tagged</td><td><code>contact.user.tag.created</code></td><td>A tag was added to a user contact.</td></tr><tr><td>User Untagged</td><td><code>contact.user.tag.deleted</code></td><td>A tag was removed from a user contact.</td></tr></tbody></table>
+
+</details>

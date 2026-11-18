@@ -22,69 +22,12 @@ Add Taskade from **Build → Integrations → Connectors** and connect an accoun
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add Media to Agent Knowledge | `agentKnowledgeMediaCreate` | Adds a media item to an AI agent's knowledge base. |
-| Add Project to Agent Knowledge | `agentKnowledgeProjectCreate` | Adds a project to an AI agent's knowledge base. |
-| Clear Task Date | `taskDeleteDate` | Removes the date from a task. |
-| Clear Task Field Value | `taskFieldValueDelete` | Removes a custom field value from a task. |
-| Clear Task Note | `taskNoteDelete` | Removes the note from a task. |
-| Complete Project | `projectComplete` | Marks a project as complete. |
-| Complete Task | `taskComplete` | Marks a task as complete. |
-| Copy Project | `projectCopy` | Copies a project into a folder, optionally with a new title. |
-| Create Agent in Folder | `folderCreateAgent` | Creates a new AI agent in a folder from configuration data or a predefined template. |
-| Create Project | `projectCreate` | Creates a new project from Markdown content in the specified folder. |
-| Create Project from Template | `projectFromTemplate` | Creates a new project in a folder from an existing template. |
-| Create Project in Workspace | `workspaceCreateProject` | Creates a new project directly in a workspace from Markdown content. |
-| Create Tasks | `taskCreate` | Creates one or more tasks in a project (up to 20 per request). |
-| Delete Agent | `deleteAgent` | Permanently deletes an AI agent. |
-| Delete Media | `mediaDelete` | Permanently deletes a media item. |
-| Delete Task | `taskDelete` | Permanently deletes a task from a project. |
-| Download All Space Media | `mediaDownloadAll` | Downloads all media items in a space as a single archive. |
-| Download Media | `mediaDownload` | Downloads the file content of a media item. |
-| Enable Agent Public Access | `agentPublicAccessEnable` | Enables public access for an AI agent and returns its public URL. |
-| Enable Project Share Link | `projectShareLinkEnable` | Enables sharing for a project and returns its check, edit, and view share links. |
-| Export Space Bundle | `bundleExport` | Exports a space (workspace, folder, or subspace) as a Workspace DNA bundle in JSON form. |
-| Export Space Bundle as Archive | `bundleExportZip` | Exports a space as a downloadable .zip or .tsk archive file. |
-| Generate Agent in Folder | `folderAgentGenerate` | Generates a new AI agent in a folder from a natural-language description. |
-| Get Agent | `agentGet` | Retrieves an AI agent by its ID, including its configuration and metadata. |
-| Get Agent Conversation | `agentConvoGet` | Retrieves a single AI agent conversation by its ID. |
-| Get Agent Public Settings | `agentPublicGet` | Retrieves the public sharing settings and public URL for an AI agent. |
-| Get Media | `mediaGet` | Retrieves a media item's metadata by its ID. |
-| Get Project | `projectGet` | Retrieves a project by its ID. |
-| Get Project Share Link | `projectShareLinkGet` | Retrieves the share links for a project. |
-| Get Public Agent | `publicAgentGet` | Retrieves a publicly shared AI agent by its public ID. |
-| Get Task | `taskGet` | Retrieves a single task by its ID. |
-| Get Task Date | `taskGetDate` | Retrieves the start and end date of a task. |
-| Get Task Field Value | `taskFieldValueGet` | Retrieves a single custom field value on a task. |
-| Get Task Note | `taskNoteGet` | Retrieves the note attached to a task. |
-| Import Space Bundle | `bundleImport` | Imports a Workspace DNA bundle (JSON) into a target workspace. |
-| Import Space Bundle Archive | `bundleImportZip` | Imports a .zip or .tsk bundle archive into a target workspace. |
-| List Agent Conversations | `agentConvosGet` | Retrieves the conversations belonging to an AI agent. |
-| List Folder Agents | `folderAgentGet` | Retrieves the AI agents contained in a folder. |
-| List Folder Media | `mediasGet` | Retrieves the media items contained in a folder. |
-| List Folder Project Templates | `folderProjectTemplatesGet` | Retrieves the project templates available in a folder. |
-| List Folder Projects | `folderProjectsGet` | Retrieves the projects in a folder, workspace, or space. |
-| List My Projects | `meProjectsGet` | Retrieves the authenticated user's projects, ordered by most recently viewed. |
-| List Project Blocks | `projectBlocksGet` | Retrieves the content blocks of a project using cursor-based pagination. |
-| List Project Fields | `projectFieldsGet` | Retrieves the custom fields defined on a project. |
-| List Project Members | `projectMembersGet` | Retrieves the members of a project. |
-| List Project Tasks | `projectTasksGet` | Retrieves the tasks of a project using cursor-based pagination. |
-| List Task Assignees | `taskAssigneesGet` | Retrieves the users assigned to a task. |
-| List Task Field Values | `taskFieldsValueGet` | Retrieves all custom field values on a task. |
-| List Workspace Folders | `workspaceFoldersGet` | Retrieves the folders in a workspace. |
-| List Workspaces | `listWorkspaces` | Retrieves all workspaces the authenticated user belongs to. |
-| Move Task | `taskMove` | Moves a task to a new position relative to another task. |
-| Remove Media from Agent Knowledge | `agentKnowledgeMediaRemove` | Removes a media item from an AI agent's knowledge base. |
-| Remove Project from Agent Knowledge | `agentKnowledgeProjectRemove` | Removes a project from an AI agent's knowledge base. |
-| Remove Task Assignee | `taskDeleteAssignees` | Removes a single assignee from a task by their handle. |
-| Restore Project | `projectRestore` | Restores a completed or archived project to active status. |
-| Set Task Assignees | `taskPutAssignees` | Sets the assignees of a task by their handles. |
-| Set Task Date | `taskPutDate` | Sets the start date (and optional end date) of a task. |
-| Set Task Field Value | `taskFieldValuePut` | Sets a custom field value on a task. |
-| Set Task Note | `taskNotePut` | Sets the note on a task as plain text or Markdown. |
-| Uncomplete Task | `taskUncomplete` | Marks a completed task as incomplete. |
-| Update Agent | `agentUpdate` | Updates an AI agent's name and configuration data. |
-| Update Agent Public Settings | `agentPublicUpdate` | Updates the public sharing preferences for an AI agent. |
-| Update Task Content | `taskPut` | Replaces the content of a task with new Markdown or plain text. |
-| Upload Media to Space | `mediaUpload` | Uploads a media file into a space. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Media to Agent Knowledge</td><td><code>agentKnowledgeMediaCreate</code></td><td>Adds a media item to an AI agent's knowledge base.</td></tr><tr><td>Add Project to Agent Knowledge</td><td><code>agentKnowledgeProjectCreate</code></td><td>Adds a project to an AI agent's knowledge base.</td></tr><tr><td>Clear Task Date</td><td><code>taskDeleteDate</code></td><td>Removes the date from a task.</td></tr><tr><td>Clear Task Field Value</td><td><code>taskFieldValueDelete</code></td><td>Removes a custom field value from a task.</td></tr><tr><td>Clear Task Note</td><td><code>taskNoteDelete</code></td><td>Removes the note from a task.</td></tr><tr><td>Complete Project</td><td><code>projectComplete</code></td><td>Marks a project as complete.</td></tr><tr><td>Complete Task</td><td><code>taskComplete</code></td><td>Marks a task as complete.</td></tr><tr><td>Copy Project</td><td><code>projectCopy</code></td><td>Copies a project into a folder, optionally with a new title.</td></tr><tr><td>Create Agent in Folder</td><td><code>folderCreateAgent</code></td><td>Creates a new AI agent in a folder from configuration data or a predefined template.</td></tr><tr><td>Create Project</td><td><code>projectCreate</code></td><td>Creates a new project from Markdown content in the specified folder.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 54 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Project from Template</td><td><code>projectFromTemplate</code></td><td>Creates a new project in a folder from an existing template.</td></tr><tr><td>Create Project in Workspace</td><td><code>workspaceCreateProject</code></td><td>Creates a new project directly in a workspace from Markdown content.</td></tr><tr><td>Create Tasks</td><td><code>taskCreate</code></td><td>Creates one or more tasks in a project (up to 20 per request).</td></tr><tr><td>Delete Agent</td><td><code>deleteAgent</code></td><td>Permanently deletes an AI agent.</td></tr><tr><td>Delete Media</td><td><code>mediaDelete</code></td><td>Permanently deletes a media item.</td></tr><tr><td>Delete Task</td><td><code>taskDelete</code></td><td>Permanently deletes a task from a project.</td></tr><tr><td>Download All Space Media</td><td><code>mediaDownloadAll</code></td><td>Downloads all media items in a space as a single archive.</td></tr><tr><td>Download Media</td><td><code>mediaDownload</code></td><td>Downloads the file content of a media item.</td></tr><tr><td>Enable Agent Public Access</td><td><code>agentPublicAccessEnable</code></td><td>Enables public access for an AI agent and returns its public URL.</td></tr><tr><td>Enable Project Share Link</td><td><code>projectShareLinkEnable</code></td><td>Enables sharing for a project and returns its check, edit, and view share links.</td></tr><tr><td>Export Space Bundle</td><td><code>bundleExport</code></td><td>Exports a space (workspace, folder, or subspace) as a Workspace DNA bundle in JSON form.</td></tr><tr><td>Export Space Bundle as Archive</td><td><code>bundleExportZip</code></td><td>Exports a space as a downloadable .zip or .tsk archive file.</td></tr><tr><td>Generate Agent in Folder</td><td><code>folderAgentGenerate</code></td><td>Generates a new AI agent in a folder from a natural-language description.</td></tr><tr><td>Get Agent</td><td><code>agentGet</code></td><td>Retrieves an AI agent by its ID, including its configuration and metadata.</td></tr><tr><td>Get Agent Conversation</td><td><code>agentConvoGet</code></td><td>Retrieves a single AI agent conversation by its ID.</td></tr><tr><td>Get Agent Public Settings</td><td><code>agentPublicGet</code></td><td>Retrieves the public sharing settings and public URL for an AI agent.</td></tr><tr><td>Get Media</td><td><code>mediaGet</code></td><td>Retrieves a media item's metadata by its ID.</td></tr><tr><td>Get Project</td><td><code>projectGet</code></td><td>Retrieves a project by its ID.</td></tr><tr><td>Get Project Share Link</td><td><code>projectShareLinkGet</code></td><td>Retrieves the share links for a project.</td></tr><tr><td>Get Public Agent</td><td><code>publicAgentGet</code></td><td>Retrieves a publicly shared AI agent by its public ID.</td></tr><tr><td>Get Task</td><td><code>taskGet</code></td><td>Retrieves a single task by its ID.</td></tr><tr><td>Get Task Date</td><td><code>taskGetDate</code></td><td>Retrieves the start and end date of a task.</td></tr><tr><td>Get Task Field Value</td><td><code>taskFieldValueGet</code></td><td>Retrieves a single custom field value on a task.</td></tr><tr><td>Get Task Note</td><td><code>taskNoteGet</code></td><td>Retrieves the note attached to a task.</td></tr><tr><td>Import Space Bundle</td><td><code>bundleImport</code></td><td>Imports a Workspace DNA bundle (JSON) into a target workspace.</td></tr><tr><td>Import Space Bundle Archive</td><td><code>bundleImportZip</code></td><td>Imports a .zip or .tsk bundle archive into a target workspace.</td></tr><tr><td>List Agent Conversations</td><td><code>agentConvosGet</code></td><td>Retrieves the conversations belonging to an AI agent.</td></tr><tr><td>List Folder Agents</td><td><code>folderAgentGet</code></td><td>Retrieves the AI agents contained in a folder.</td></tr><tr><td>List Folder Media</td><td><code>mediasGet</code></td><td>Retrieves the media items contained in a folder.</td></tr><tr><td>List Folder Project Templates</td><td><code>folderProjectTemplatesGet</code></td><td>Retrieves the project templates available in a folder.</td></tr><tr><td>List Folder Projects</td><td><code>folderProjectsGet</code></td><td>Retrieves the projects in a folder, workspace, or space.</td></tr><tr><td>List My Projects</td><td><code>meProjectsGet</code></td><td>Retrieves the authenticated user's projects, ordered by most recently viewed.</td></tr><tr><td>List Project Blocks</td><td><code>projectBlocksGet</code></td><td>Retrieves the content blocks of a project using cursor-based pagination.</td></tr><tr><td>List Project Fields</td><td><code>projectFieldsGet</code></td><td>Retrieves the custom fields defined on a project.</td></tr><tr><td>List Project Members</td><td><code>projectMembersGet</code></td><td>Retrieves the members of a project.</td></tr><tr><td>List Project Tasks</td><td><code>projectTasksGet</code></td><td>Retrieves the tasks of a project using cursor-based pagination.</td></tr><tr><td>List Task Assignees</td><td><code>taskAssigneesGet</code></td><td>Retrieves the users assigned to a task.</td></tr><tr><td>List Task Field Values</td><td><code>taskFieldsValueGet</code></td><td>Retrieves all custom field values on a task.</td></tr><tr><td>List Workspace Folders</td><td><code>workspaceFoldersGet</code></td><td>Retrieves the folders in a workspace.</td></tr><tr><td>List Workspaces</td><td><code>listWorkspaces</code></td><td>Retrieves all workspaces the authenticated user belongs to.</td></tr><tr><td>Move Task</td><td><code>taskMove</code></td><td>Moves a task to a new position relative to another task.</td></tr><tr><td>Remove Media from Agent Knowledge</td><td><code>agentKnowledgeMediaRemove</code></td><td>Removes a media item from an AI agent's knowledge base.</td></tr><tr><td>Remove Project from Agent Knowledge</td><td><code>agentKnowledgeProjectRemove</code></td><td>Removes a project from an AI agent's knowledge base.</td></tr><tr><td>Remove Task Assignee</td><td><code>taskDeleteAssignees</code></td><td>Removes a single assignee from a task by their handle.</td></tr><tr><td>Restore Project</td><td><code>projectRestore</code></td><td>Restores a completed or archived project to active status.</td></tr><tr><td>Set Task Assignees</td><td><code>taskPutAssignees</code></td><td>Sets the assignees of a task by their handles.</td></tr><tr><td>Set Task Date</td><td><code>taskPutDate</code></td><td>Sets the start date (and optional end date) of a task.</td></tr><tr><td>Set Task Field Value</td><td><code>taskFieldValuePut</code></td><td>Sets a custom field value on a task.</td></tr><tr><td>Set Task Note</td><td><code>taskNotePut</code></td><td>Sets the note on a task as plain text or Markdown.</td></tr><tr><td>Uncomplete Task</td><td><code>taskUncomplete</code></td><td>Marks a completed task as incomplete.</td></tr><tr><td>Update Agent</td><td><code>agentUpdate</code></td><td>Updates an AI agent's name and configuration data.</td></tr><tr><td>Update Agent Public Settings</td><td><code>agentPublicUpdate</code></td><td>Updates the public sharing preferences for an AI agent.</td></tr><tr><td>Update Task Content</td><td><code>taskPut</code></td><td>Replaces the content of a task with new Markdown or plain text.</td></tr><tr><td>Upload Media to Space</td><td><code>mediaUpload</code></td><td>Uploads a media file into a space.</td></tr></tbody></table>
+
+</details>

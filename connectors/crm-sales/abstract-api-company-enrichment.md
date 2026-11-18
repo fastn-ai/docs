@@ -22,6 +22,4 @@ Add AbstractAPI Company Enrichment from **Build → Integrations → Connectors*
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Enrich Company | `enrichCompany` | Looks up a company by its website domain and returns its name, logo, description, founding year, headquarters address and coordinates, SIC/NAICS codes, industry, headcount, revenue, phone numbers, emails, public listing, technologies, and social profile URLs. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Enrich Company</td><td><code>enrichCompany</code></td><td>Looks up a company by its website domain and returns its name, logo, description, founding year, headquarters address and coordinates, SIC/NAICS codes, industry, headcount, revenue, phone numbers, emails, public listing, technologies, and social profile URLs.</td></tr></tbody></table>

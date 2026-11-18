@@ -22,6 +22,4 @@ Add AbstractAPI Phone Intelligence from **Build → Integrations → Connectors*
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Validate Phone Number | `validatePhoneNumber` | Validates and enriches a phone number, returning its formatting, carrier and line type, geographic location, SMS messaging address, registration name, risk level, and any known data breaches associated with it. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Validate Phone Number</td><td><code>validatePhoneNumber</code></td><td>Validates and enriches a phone number, returning its formatting, carrier and line type, geographic location, SMS messaging address, registration name, risk level, and any known data breaches associated with it.</td></tr></tbody></table>

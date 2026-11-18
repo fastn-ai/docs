@@ -22,7 +22,4 @@ Add Numverify from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| List Supported Countries | `listSupportedCountries` | Returns the full list of countries the Numverify API supports for phone number validation, keyed by ISO 3166-1 alpha-2 country code, with each entry's country name and international dialling code. |
-| Validate Phone Number | `validatePhoneNumber` | Validates a phone number and returns its format, carrier, line type, and geographic location. Accepts numbers in international (E.164) format directly, or in national format when paired with a country code. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Supported Countries</td><td><code>listSupportedCountries</code></td><td>Returns the full list of countries the Numverify API supports for phone number validation, keyed by ISO 3166-1 alpha-2 country code, with each entry's country name and international dialling code.</td></tr><tr><td>Validate Phone Number</td><td><code>validatePhoneNumber</code></td><td>Validates a phone number and returns its format, carrier, line type, and geographic location. Accepts numbers in international (E.164) format directly, or in national format when paired with a country code.</td></tr></tbody></table>

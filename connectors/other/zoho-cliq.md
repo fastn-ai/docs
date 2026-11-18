@@ -22,69 +22,12 @@ Add Zoho Cliq from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add Bot to Channel | `addBotToChannel` | Associate a bot with a channel. |
-| Add Channel Members | `addChannelMembers` | Add members to a channel. |
-| Add Reaction | `addReaction` | Add an emoji reaction to a message. |
-| Add Status | `addStatus` | Create a new saved custom status message for the authenticated user. |
-| Add Team Members | `addTeamMembers` | Add members to a team. |
-| Add Thread Followers | `addThreadFollowers` | Add followers to a thread. |
-| Add Users | `addUsers` | Invite/add new users to the Zoho Cliq organization. |
-| Archive Channel | `archiveChannel` | Archive a channel. |
-| Create Channel | `createChannel` | Create a new channel in Zoho Cliq. |
-| Create Team | `createTeam` | Create a new team within the organization. |
-| Create Thread Message | `createThreadMessage` | Start a new thread by posting a message in a channel with a thread_message_id. |
-| Delete Channel | `deleteChannel` | Delete a channel. |
-| Delete Ephemeral Status | `deleteEphemeralStatus` | Remove the current transient status before it expires. |
-| Delete Message | `deleteMessage` | Delete a message from a chat. |
-| Delete Reaction | `deleteReaction` | Remove your emoji reaction from a message. |
-| Delete Status | `deleteStatus` | Delete a saved custom status. |
-| Delete Sticky Message | `deleteStickyMessage` | Remove the sticky (pinned) message of a chat. |
-| Delete Team | `deleteTeam` | Delete a team. |
-| Delete Team Member | `deleteTeamMember` | Remove a specific member from a team. |
-| Edit Message | `editMessage` | Edit the text of an existing message. |
-| Follow Thread | `followThread` | Follow a thread as the authenticated user. |
-| Get Bot Subscribers | `getBotSubscribers` | Get the list of users subscribed to a bot. |
-| Get Channel | `getChannel` | Retrieve details of a specific channel. |
-| Get Channel Members | `getChannelMembers` | Get the list of members in a channel. |
-| Get Channel Threads | `getChannelThreads` | Get threads within a channel. |
-| Get Chat Members | `getChatMembers` | Get the members of a chat. |
-| Get Current Status | `getCurrentStatus` | Get the current chat status (available, busy, away, etc.) of the authenticated user. |
-| Get File | `getFile` | Get metadata/content for a file shared in Zoho Cliq by its file ID. |
-| Get Message | `getMessage` | Retrieve a specific message from a chat. |
-| Get Messages | `getMessages` | Retrieve messages of a chat within a time range. |
-| Get Reactions | `getReactions` | Get the reactions on a message. |
-| Get Sticky Message | `getStickyMessage` | Get the sticky (pinned) message of a chat. |
-| Get Team | `getTeam` | Retrieve details of a specific team. |
-| Get Team Members | `getTeamMembers` | Get the list of members in a team. |
-| Get Thread Followers | `getThreadFollowers` | Get the followers of a thread. |
-| Get Thread Non-Followers | `getThreadNonFollowers` | Get the users who are not following a thread. |
-| Get User | `getUser` | Retrieve details of a specific user. |
-| Get User Teams | `getUserTeams` | Fetch the list of teams a user belongs to. |
-| Join Channel | `joinChannel` | Join a channel as the authenticated user. |
-| Leave Channel | `leaveChannel` | Leave a channel as the authenticated user. |
-| Leave Chat | `leaveChat` | Leave a group chat. |
-| List Channels | `listChannels` | List channels in the Zoho Cliq organization. |
-| List Chats | `listChats` | List chats (1:1, group chats, channels) for the authenticated user. |
-| List Statuses | `listStatuses` | List all saved custom status messages for the authenticated user. |
-| List Teams | `listTeams` | List teams in the organization. |
-| List User Field Layouts | `listUserFieldLayouts` | List the user profile field layout definitions. |
-| List Users | `listUsers` | List all users in the Zoho Cliq organization. |
-| Mute Chat | `muteChat` | Mute a chat. |
-| Post Message to Bot | `postMessageToBot` | Post a text message to a bot. |
-| Post Message to Channel | `postMessageToChannel` | Post a text message into a channel by channel ID. |
-| Post Message to Chat | `postMessageToChat` | Post a text message into a chat (1:1, group, or channel) by chat ID. |
-| Post Message to User | `postMessageToUser` | Post a direct message to a user (buddy) by email or ZUID. |
-| Remove Channel Members | `removeChannelMembers` | Remove members from a channel. |
-| Remove Thread Followers | `removeThreadFollowers` | Remove followers from a thread. |
-| Set Ephemeral Status | `setEphemeralStatus` | Set a temporary (transient) chat status that auto-expires. |
-| Set Sticky Message | `setStickyMessage` | Pin a message as the sticky message of a chat. |
-| Trigger Bot Call | `triggerBotCall` | Trigger a bot to place a call and dictate a message to one or more users. |
-| Unarchive Channel | `unarchiveChannel` | Unarchive a previously archived channel. |
-| Unfollow Thread | `unfollowThread` | Unfollow a thread as the authenticated user. |
-| Unmute Chat | `unmuteChat` | Unmute a chat. |
-| Update Channel | `updateChannel` | Update a channel's name, description or configuration. |
-| Update Current Status | `updateCurrentStatus` | Set the authenticated user's current status to a previously saved status by ID. |
-| Update Team | `updateTeam` | Update a team's name or description. |
-| Update User | `updateUser` | Update details of an existing user. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Bot to Channel</td><td><code>addBotToChannel</code></td><td>Associate a bot with a channel.</td></tr><tr><td>Add Channel Members</td><td><code>addChannelMembers</code></td><td>Add members to a channel.</td></tr><tr><td>Add Reaction</td><td><code>addReaction</code></td><td>Add an emoji reaction to a message.</td></tr><tr><td>Add Status</td><td><code>addStatus</code></td><td>Create a new saved custom status message for the authenticated user.</td></tr><tr><td>Add Team Members</td><td><code>addTeamMembers</code></td><td>Add members to a team.</td></tr><tr><td>Add Thread Followers</td><td><code>addThreadFollowers</code></td><td>Add followers to a thread.</td></tr><tr><td>Add Users</td><td><code>addUsers</code></td><td>Invite/add new users to the Zoho Cliq organization.</td></tr><tr><td>Archive Channel</td><td><code>archiveChannel</code></td><td>Archive a channel.</td></tr><tr><td>Create Channel</td><td><code>createChannel</code></td><td>Create a new channel in Zoho Cliq.</td></tr><tr><td>Create Team</td><td><code>createTeam</code></td><td>Create a new team within the organization.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 54 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Thread Message</td><td><code>createThreadMessage</code></td><td>Start a new thread by posting a message in a channel with a thread_message_id.</td></tr><tr><td>Delete Channel</td><td><code>deleteChannel</code></td><td>Delete a channel.</td></tr><tr><td>Delete Ephemeral Status</td><td><code>deleteEphemeralStatus</code></td><td>Remove the current transient status before it expires.</td></tr><tr><td>Delete Message</td><td><code>deleteMessage</code></td><td>Delete a message from a chat.</td></tr><tr><td>Delete Reaction</td><td><code>deleteReaction</code></td><td>Remove your emoji reaction from a message.</td></tr><tr><td>Delete Status</td><td><code>deleteStatus</code></td><td>Delete a saved custom status.</td></tr><tr><td>Delete Sticky Message</td><td><code>deleteStickyMessage</code></td><td>Remove the sticky (pinned) message of a chat.</td></tr><tr><td>Delete Team</td><td><code>deleteTeam</code></td><td>Delete a team.</td></tr><tr><td>Delete Team Member</td><td><code>deleteTeamMember</code></td><td>Remove a specific member from a team.</td></tr><tr><td>Edit Message</td><td><code>editMessage</code></td><td>Edit the text of an existing message.</td></tr><tr><td>Follow Thread</td><td><code>followThread</code></td><td>Follow a thread as the authenticated user.</td></tr><tr><td>Get Bot Subscribers</td><td><code>getBotSubscribers</code></td><td>Get the list of users subscribed to a bot.</td></tr><tr><td>Get Channel</td><td><code>getChannel</code></td><td>Retrieve details of a specific channel.</td></tr><tr><td>Get Channel Members</td><td><code>getChannelMembers</code></td><td>Get the list of members in a channel.</td></tr><tr><td>Get Channel Threads</td><td><code>getChannelThreads</code></td><td>Get threads within a channel.</td></tr><tr><td>Get Chat Members</td><td><code>getChatMembers</code></td><td>Get the members of a chat.</td></tr><tr><td>Get Current Status</td><td><code>getCurrentStatus</code></td><td>Get the current chat status (available, busy, away, etc.) of the authenticated user.</td></tr><tr><td>Get File</td><td><code>getFile</code></td><td>Get metadata/content for a file shared in Zoho Cliq by its file ID.</td></tr><tr><td>Get Message</td><td><code>getMessage</code></td><td>Retrieve a specific message from a chat.</td></tr><tr><td>Get Messages</td><td><code>getMessages</code></td><td>Retrieve messages of a chat within a time range.</td></tr><tr><td>Get Reactions</td><td><code>getReactions</code></td><td>Get the reactions on a message.</td></tr><tr><td>Get Sticky Message</td><td><code>getStickyMessage</code></td><td>Get the sticky (pinned) message of a chat.</td></tr><tr><td>Get Team</td><td><code>getTeam</code></td><td>Retrieve details of a specific team.</td></tr><tr><td>Get Team Members</td><td><code>getTeamMembers</code></td><td>Get the list of members in a team.</td></tr><tr><td>Get Thread Followers</td><td><code>getThreadFollowers</code></td><td>Get the followers of a thread.</td></tr><tr><td>Get Thread Non-Followers</td><td><code>getThreadNonFollowers</code></td><td>Get the users who are not following a thread.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Retrieve details of a specific user.</td></tr><tr><td>Get User Teams</td><td><code>getUserTeams</code></td><td>Fetch the list of teams a user belongs to.</td></tr><tr><td>Join Channel</td><td><code>joinChannel</code></td><td>Join a channel as the authenticated user.</td></tr><tr><td>Leave Channel</td><td><code>leaveChannel</code></td><td>Leave a channel as the authenticated user.</td></tr><tr><td>Leave Chat</td><td><code>leaveChat</code></td><td>Leave a group chat.</td></tr><tr><td>List Channels</td><td><code>listChannels</code></td><td>List channels in the Zoho Cliq organization.</td></tr><tr><td>List Chats</td><td><code>listChats</code></td><td>List chats (1:1, group chats, channels) for the authenticated user.</td></tr><tr><td>List Statuses</td><td><code>listStatuses</code></td><td>List all saved custom status messages for the authenticated user.</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>List teams in the organization.</td></tr><tr><td>List User Field Layouts</td><td><code>listUserFieldLayouts</code></td><td>List the user profile field layout definitions.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List all users in the Zoho Cliq organization.</td></tr><tr><td>Mute Chat</td><td><code>muteChat</code></td><td>Mute a chat.</td></tr><tr><td>Post Message to Bot</td><td><code>postMessageToBot</code></td><td>Post a text message to a bot.</td></tr><tr><td>Post Message to Channel</td><td><code>postMessageToChannel</code></td><td>Post a text message into a channel by channel ID.</td></tr><tr><td>Post Message to Chat</td><td><code>postMessageToChat</code></td><td>Post a text message into a chat (1:1, group, or channel) by chat ID.</td></tr><tr><td>Post Message to User</td><td><code>postMessageToUser</code></td><td>Post a direct message to a user (buddy) by email or ZUID.</td></tr><tr><td>Remove Channel Members</td><td><code>removeChannelMembers</code></td><td>Remove members from a channel.</td></tr><tr><td>Remove Thread Followers</td><td><code>removeThreadFollowers</code></td><td>Remove followers from a thread.</td></tr><tr><td>Set Ephemeral Status</td><td><code>setEphemeralStatus</code></td><td>Set a temporary (transient) chat status that auto-expires.</td></tr><tr><td>Set Sticky Message</td><td><code>setStickyMessage</code></td><td>Pin a message as the sticky message of a chat.</td></tr><tr><td>Trigger Bot Call</td><td><code>triggerBotCall</code></td><td>Trigger a bot to place a call and dictate a message to one or more users.</td></tr><tr><td>Unarchive Channel</td><td><code>unarchiveChannel</code></td><td>Unarchive a previously archived channel.</td></tr><tr><td>Unfollow Thread</td><td><code>unfollowThread</code></td><td>Unfollow a thread as the authenticated user.</td></tr><tr><td>Unmute Chat</td><td><code>unmuteChat</code></td><td>Unmute a chat.</td></tr><tr><td>Update Channel</td><td><code>updateChannel</code></td><td>Update a channel's name, description or configuration.</td></tr><tr><td>Update Current Status</td><td><code>updateCurrentStatus</code></td><td>Set the authenticated user's current status to a previously saved status by ID.</td></tr><tr><td>Update Team</td><td><code>updateTeam</code></td><td>Update a team's name or description.</td></tr><tr><td>Update User</td><td><code>updateUser</code></td><td>Update details of an existing user.</td></tr></tbody></table>
+
+</details>

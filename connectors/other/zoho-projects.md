@@ -22,106 +22,12 @@ Add Zoho Projects from **Build → Integrations → Connectors** and connect an 
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add Bug Time Log | `addBugTimeLog` | Adds a time log entry to a bug. |
-| Add Event | `addEvent` | Adds a calendar event to a project. |
-| Add Folder | `addFolder` | Adds a document folder to a project. |
-| Add Forum | `addForum` | Adds a forum post to a project. |
-| Add Forum Category | `addForumCategory` | Adds a forum category to a project. |
-| Add Forum Comment | `addForumComment` | Adds a comment to a forum post. |
-| Add General Time Log | `addGeneralTimeLog` | Adds a general (non-task, non-bug) time log entry to a project. |
-| Add Project Status | `addProjectStatus` | Adds a new status update for a project. |
-| Add Task Comment | `addTaskComment` | Adds a comment to a task. |
-| Add Task Time Log | `addTaskTimeLog` | Adds a time log entry to a task. |
-| Add User to Team | `addUserToTeam` | Adds a single user to a team. |
-| Associate Contacts | `associateContacts` | Associates existing client contacts to a project. |
-| Associate Multiple Teams to Project | `associateMultipleTeams` | Associates more than one team to a project. |
-| Associate Project to Team | `associateProjectToTeam` | Associates a project to a team. |
-| Associate Tag | `associateTag` | Associates a tag with an entity (project=2, milestone=3, tasklist=4, task=5, bug=6, forum=7, status=8) in a project. |
-| Convert Contact to Client User | `convertContactToClientUser` | Converts a client contact into a full client user. |
-| Create Bug | `createBug` | Creates a bug (issue) in a project. |
-| Create Contacts | `createContacts` | Creates one or more client contacts in a portal. |
-| Create Milestone | `createMilestone` | Creates a milestone in a project. |
-| Create Project | `createProject` | Creates a new project in the given portal. |
-| Create Tags | `createTags` | Creates one or more tags in a portal. |
-| Create Task | `createTask` | Creates a task in a project. |
-| Create Tasklist | `createTasklist` | Creates a tasklist in a project. |
-| Create Team | `createTeam` | Creates a new team (usergroup) in the portal. |
-| Delete Bug | `deleteBug` | Deletes a bug. |
-| Delete Bug Time Log | `deleteBugTimeLog` | Deletes a time log entry from a bug. |
-| Delete Contact | `deleteContact` | Deletes a client contact from a portal. |
-| Delete Document | `deleteDocument` | Deletes a document. |
-| Delete Event | `deleteEvent` | Deletes a calendar event. |
-| Delete Folder | `deleteFolder` | Deletes a document folder. |
-| Delete Forum | `deleteForum` | Deletes a forum post. |
-| Delete General Time Log | `deleteGeneralTimeLog` | Deletes a general time log entry. |
-| Delete Milestone | `deleteMilestone` | Deletes a milestone. |
-| Delete Project | `deleteProject` | Deletes a project. |
-| Delete Tag | `deleteTag` | Deletes a tag from a portal. |
-| Delete Task | `deleteTask` | Deletes a task. |
-| Delete Task Comment | `deleteTaskComment` | Deletes a task comment. |
-| Delete Task Time Log | `deleteTaskTimeLog` | Deletes a time log entry from a task. |
-| Delete Tasklist | `deleteTasklist` | Deletes a tasklist. |
-| Delete Team | `deleteTeam` | Deletes a team from a project. |
-| Dissociate Contact | `dissociateContact` | Dissociates a client contact from a project. |
-| Dissociate Tag | `dissociateTag` | Dissociates a tag from an entity in a project. |
-| Get Bug | `getBug` | Gets the details of a bug. |
-| Get Document Version Details | `getDocumentVersion` | Gets the version details of a document. |
-| Get Milestone | `getMilestone` | Gets the details of a milestone. |
-| Get Project | `getProject` | Gets the details of a specific project. |
-| Get Task | `getTask` | Gets all the details of a task. |
-| List Bug Custom Fields | `listBugCustomFields` | Gets all the custom fields configured for bugs in a project. |
-| List Bug Default Fields | `listBugDefaultFields` | Gets all the default fields (severity, module, reproducible, etc.) configured for bugs in a project. |
-| List Bugs | `listBugs` | Gets all the bugs (issues) in a project. |
-| List Contacts | `listContacts` | Fetches all client contacts from a portal. |
-| List Documents | `listDocuments` | Gets all the documents in a project. |
-| List Events | `listEvents` | Gets all the calendar events in a project. |
-| List Folders | `listFolders` | Gets all the document folders in a project. |
-| List Forum Categories | `listForumCategories` | Gets all the forum categories in a project. |
-| List Forum Comments | `listForumComments` | Gets all the comments on a forum post. |
-| List Forums | `listForums` | Gets all the forum posts in a project. |
-| List Milestones | `listMilestones` | Gets all the milestones in a project. |
-| List Portal Teams | `listPortalTeams` | Gets team (usergroup) details from the portal. |
-| List Portals | `listPortals` | Gets all the portals accessible to the logged-in user. A portal is the top-level Zoho Projects workspace/organization; every other resource (projects, tasks, etc.) is scoped under a portalId returned here. |
-| List Project Activities | `listProjectActivities` | Lists the recent activities (activity feed) of a project. |
-| List Project Contacts | `listProjectContacts` | Fetches all client contacts associated with a project. |
-| List Project Statuses | `listProjectStatuses` | Gets the status updates posted for a project. |
-| List Project Teams | `listProjectTeams` | Gets team (usergroup) details from a project. |
-| List Projects | `listProjects` | Gets all the projects in the portal for the logged-in user. |
-| List Subtasks | `listSubtasks` | Gets all the subtasks of a task. |
-| List Tags | `listTags` | Fetches all tags present in a portal. |
-| List Task Comments | `listTaskComments` | Gets all the comments on a task. |
-| List Tasklist Tasks | `listTasklistTasks` | Gets all the tasks in a given tasklist. |
-| List Tasklists | `listTasklists` | Gets all the tasklists in a project. |
-| List Tasks | `listTasks` | Gets all the tasks in a project. |
-| List Time Logs | `listTimeLogs` | Gets all the time logs in a project. |
-| List Users | `listUsers` | Gets all the users in a project. |
-| Remove Entity Properties | `removeEntityProperties` | Deletes key-value data stored against an entity. |
-| Remove Team from Project | `removeTeamFromProject` | Removes a team from a project. |
-| Remove User from Team | `removeUserFromTeam` | Removes a user from a team. |
-| Resend Team Verification Code | `resendTeamVerificationCode` | Resends the verification code for a team's email alias. |
-| Retrieve Entity Properties | `retrieveEntityProperties` | Retrieves key-value data stored against a project/task/bug entity. |
-| Search Across Portal | `searchPortal` | Searches across all modules (projects, milestones, tasks, tasklists, forums, forumcomments, taskcomments, bugs, users, documents, events, all) in the portal. |
-| Search Across Project | `searchProject` | Searches within a specific project. |
-| Search Tag Results | `searchTagResults` | Fetches the tag results (entities tagged) across the portal. |
-| Select Team Lead | `selectTeamLead` | Updates the team lead. |
-| Store Entity Properties | `storeEntityProperties` | Stores key-value data against a project/task/bug entity. |
-| Update Bug | `updateBug` | Updates a bug. |
-| Update Bug Time Log | `updateBugTimeLog` | Updates a time log entry on a bug. |
-| Update Contact | `updateContact` | Updates a client contact in a portal. |
-| Update Entity Properties | `updateEntityProperties` | Updates key-value data stored against an entity. |
-| Update Event | `updateEvent` | Updates a calendar event. |
-| Update Folder | `updateFolder` | Renames a document folder. |
-| Update Forum | `updateForum` | Updates a forum post. |
-| Update General Time Log | `updateGeneralTimeLog` | Updates a general time log entry. |
-| Update Milestone | `updateMilestone` | Updates a milestone. |
-| Update Milestone Status | `updateMilestoneStatus` | Marks a milestone as completed or not completed. |
-| Update Project | `updateProject` | Updates a project's name, description, or status (active/archived). |
-| Update Tag | `updateTag` | Updates a tag's name or color. |
-| Update Task | `updateTask` | Updates a task. |
-| Update Task Time Log | `updateTaskTimeLog` | Updates a time log entry on a task. |
-| Update Tasklist | `updateTasklist` | Updates a tasklist. |
-| Verify Team Email Alias | `verifyTeamEmailAlias` | Verifies the team's email alias using a verification code. |
-| View Team Details | `viewTeamDetails` | Fetches details of a particular team. |
-| View Team Summary | `viewTeamSummary` | Views the overall summary of a team. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Bug Time Log</td><td><code>addBugTimeLog</code></td><td>Adds a time log entry to a bug.</td></tr><tr><td>Add Event</td><td><code>addEvent</code></td><td>Adds a calendar event to a project.</td></tr><tr><td>Add Folder</td><td><code>addFolder</code></td><td>Adds a document folder to a project.</td></tr><tr><td>Add Forum</td><td><code>addForum</code></td><td>Adds a forum post to a project.</td></tr><tr><td>Add Forum Category</td><td><code>addForumCategory</code></td><td>Adds a forum category to a project.</td></tr><tr><td>Add Forum Comment</td><td><code>addForumComment</code></td><td>Adds a comment to a forum post.</td></tr><tr><td>Add General Time Log</td><td><code>addGeneralTimeLog</code></td><td>Adds a general (non-task, non-bug) time log entry to a project.</td></tr><tr><td>Add Project Status</td><td><code>addProjectStatus</code></td><td>Adds a new status update for a project.</td></tr><tr><td>Add Task Comment</td><td><code>addTaskComment</code></td><td>Adds a comment to a task.</td></tr><tr><td>Add Task Time Log</td><td><code>addTaskTimeLog</code></td><td>Adds a time log entry to a task.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 91 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add User to Team</td><td><code>addUserToTeam</code></td><td>Adds a single user to a team.</td></tr><tr><td>Associate Contacts</td><td><code>associateContacts</code></td><td>Associates existing client contacts to a project.</td></tr><tr><td>Associate Multiple Teams to Project</td><td><code>associateMultipleTeams</code></td><td>Associates more than one team to a project.</td></tr><tr><td>Associate Project to Team</td><td><code>associateProjectToTeam</code></td><td>Associates a project to a team.</td></tr><tr><td>Associate Tag</td><td><code>associateTag</code></td><td>Associates a tag with an entity (project=2, milestone=3, tasklist=4, task=5, bug=6, forum=7, status=8) in a project.</td></tr><tr><td>Convert Contact to Client User</td><td><code>convertContactToClientUser</code></td><td>Converts a client contact into a full client user.</td></tr><tr><td>Create Bug</td><td><code>createBug</code></td><td>Creates a bug (issue) in a project.</td></tr><tr><td>Create Contacts</td><td><code>createContacts</code></td><td>Creates one or more client contacts in a portal.</td></tr><tr><td>Create Milestone</td><td><code>createMilestone</code></td><td>Creates a milestone in a project.</td></tr><tr><td>Create Project</td><td><code>createProject</code></td><td>Creates a new project in the given portal.</td></tr><tr><td>Create Tags</td><td><code>createTags</code></td><td>Creates one or more tags in a portal.</td></tr><tr><td>Create Task</td><td><code>createTask</code></td><td>Creates a task in a project.</td></tr><tr><td>Create Tasklist</td><td><code>createTasklist</code></td><td>Creates a tasklist in a project.</td></tr><tr><td>Create Team</td><td><code>createTeam</code></td><td>Creates a new team (usergroup) in the portal.</td></tr><tr><td>Delete Bug</td><td><code>deleteBug</code></td><td>Deletes a bug.</td></tr><tr><td>Delete Bug Time Log</td><td><code>deleteBugTimeLog</code></td><td>Deletes a time log entry from a bug.</td></tr><tr><td>Delete Contact</td><td><code>deleteContact</code></td><td>Deletes a client contact from a portal.</td></tr><tr><td>Delete Document</td><td><code>deleteDocument</code></td><td>Deletes a document.</td></tr><tr><td>Delete Event</td><td><code>deleteEvent</code></td><td>Deletes a calendar event.</td></tr><tr><td>Delete Folder</td><td><code>deleteFolder</code></td><td>Deletes a document folder.</td></tr><tr><td>Delete Forum</td><td><code>deleteForum</code></td><td>Deletes a forum post.</td></tr><tr><td>Delete General Time Log</td><td><code>deleteGeneralTimeLog</code></td><td>Deletes a general time log entry.</td></tr><tr><td>Delete Milestone</td><td><code>deleteMilestone</code></td><td>Deletes a milestone.</td></tr><tr><td>Delete Project</td><td><code>deleteProject</code></td><td>Deletes a project.</td></tr><tr><td>Delete Tag</td><td><code>deleteTag</code></td><td>Deletes a tag from a portal.</td></tr><tr><td>Delete Task</td><td><code>deleteTask</code></td><td>Deletes a task.</td></tr><tr><td>Delete Task Comment</td><td><code>deleteTaskComment</code></td><td>Deletes a task comment.</td></tr><tr><td>Delete Task Time Log</td><td><code>deleteTaskTimeLog</code></td><td>Deletes a time log entry from a task.</td></tr><tr><td>Delete Tasklist</td><td><code>deleteTasklist</code></td><td>Deletes a tasklist.</td></tr><tr><td>Delete Team</td><td><code>deleteTeam</code></td><td>Deletes a team from a project.</td></tr><tr><td>Dissociate Contact</td><td><code>dissociateContact</code></td><td>Dissociates a client contact from a project.</td></tr><tr><td>Dissociate Tag</td><td><code>dissociateTag</code></td><td>Dissociates a tag from an entity in a project.</td></tr><tr><td>Get Bug</td><td><code>getBug</code></td><td>Gets the details of a bug.</td></tr><tr><td>Get Document Version Details</td><td><code>getDocumentVersion</code></td><td>Gets the version details of a document.</td></tr><tr><td>Get Milestone</td><td><code>getMilestone</code></td><td>Gets the details of a milestone.</td></tr><tr><td>Get Project</td><td><code>getProject</code></td><td>Gets the details of a specific project.</td></tr><tr><td>Get Task</td><td><code>getTask</code></td><td>Gets all the details of a task.</td></tr><tr><td>List Bug Custom Fields</td><td><code>listBugCustomFields</code></td><td>Gets all the custom fields configured for bugs in a project.</td></tr><tr><td>List Bug Default Fields</td><td><code>listBugDefaultFields</code></td><td>Gets all the default fields (severity, module, reproducible, etc.) configured for bugs in a project.</td></tr><tr><td>List Bugs</td><td><code>listBugs</code></td><td>Gets all the bugs (issues) in a project.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>Fetches all client contacts from a portal.</td></tr><tr><td>List Documents</td><td><code>listDocuments</code></td><td>Gets all the documents in a project.</td></tr><tr><td>List Events</td><td><code>listEvents</code></td><td>Gets all the calendar events in a project.</td></tr><tr><td>List Folders</td><td><code>listFolders</code></td><td>Gets all the document folders in a project.</td></tr><tr><td>List Forum Categories</td><td><code>listForumCategories</code></td><td>Gets all the forum categories in a project.</td></tr><tr><td>List Forum Comments</td><td><code>listForumComments</code></td><td>Gets all the comments on a forum post.</td></tr><tr><td>List Forums</td><td><code>listForums</code></td><td>Gets all the forum posts in a project.</td></tr><tr><td>List Milestones</td><td><code>listMilestones</code></td><td>Gets all the milestones in a project.</td></tr><tr><td>List Portal Teams</td><td><code>listPortalTeams</code></td><td>Gets team (usergroup) details from the portal.</td></tr><tr><td>List Portals</td><td><code>listPortals</code></td><td>Gets all the portals accessible to the logged-in user. A portal is the top-level Zoho Projects workspace/organization; every other resource (projects, tasks, etc.) is scoped under a portalId returned here.</td></tr><tr><td>List Project Activities</td><td><code>listProjectActivities</code></td><td>Lists the recent activities (activity feed) of a project.</td></tr><tr><td>List Project Contacts</td><td><code>listProjectContacts</code></td><td>Fetches all client contacts associated with a project.</td></tr><tr><td>List Project Statuses</td><td><code>listProjectStatuses</code></td><td>Gets the status updates posted for a project.</td></tr><tr><td>List Project Teams</td><td><code>listProjectTeams</code></td><td>Gets team (usergroup) details from a project.</td></tr><tr><td>List Projects</td><td><code>listProjects</code></td><td>Gets all the projects in the portal for the logged-in user.</td></tr><tr><td>List Subtasks</td><td><code>listSubtasks</code></td><td>Gets all the subtasks of a task.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>Fetches all tags present in a portal.</td></tr><tr><td>List Task Comments</td><td><code>listTaskComments</code></td><td>Gets all the comments on a task.</td></tr><tr><td>List Tasklist Tasks</td><td><code>listTasklistTasks</code></td><td>Gets all the tasks in a given tasklist.</td></tr><tr><td>List Tasklists</td><td><code>listTasklists</code></td><td>Gets all the tasklists in a project.</td></tr><tr><td>List Tasks</td><td><code>listTasks</code></td><td>Gets all the tasks in a project.</td></tr><tr><td>List Time Logs</td><td><code>listTimeLogs</code></td><td>Gets all the time logs in a project.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>Gets all the users in a project.</td></tr><tr><td>Remove Entity Properties</td><td><code>removeEntityProperties</code></td><td>Deletes key-value data stored against an entity.</td></tr><tr><td>Remove Team from Project</td><td><code>removeTeamFromProject</code></td><td>Removes a team from a project.</td></tr><tr><td>Remove User from Team</td><td><code>removeUserFromTeam</code></td><td>Removes a user from a team.</td></tr><tr><td>Resend Team Verification Code</td><td><code>resendTeamVerificationCode</code></td><td>Resends the verification code for a team's email alias.</td></tr><tr><td>Retrieve Entity Properties</td><td><code>retrieveEntityProperties</code></td><td>Retrieves key-value data stored against a project/task/bug entity.</td></tr><tr><td>Search Across Portal</td><td><code>searchPortal</code></td><td>Searches across all modules (projects, milestones, tasks, tasklists, forums, forumcomments, taskcomments, bugs, users, documents, events, all) in the portal.</td></tr><tr><td>Search Across Project</td><td><code>searchProject</code></td><td>Searches within a specific project.</td></tr><tr><td>Search Tag Results</td><td><code>searchTagResults</code></td><td>Fetches the tag results (entities tagged) across the portal.</td></tr><tr><td>Select Team Lead</td><td><code>selectTeamLead</code></td><td>Updates the team lead.</td></tr><tr><td>Store Entity Properties</td><td><code>storeEntityProperties</code></td><td>Stores key-value data against a project/task/bug entity.</td></tr><tr><td>Update Bug</td><td><code>updateBug</code></td><td>Updates a bug.</td></tr><tr><td>Update Bug Time Log</td><td><code>updateBugTimeLog</code></td><td>Updates a time log entry on a bug.</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Updates a client contact in a portal.</td></tr><tr><td>Update Entity Properties</td><td><code>updateEntityProperties</code></td><td>Updates key-value data stored against an entity.</td></tr><tr><td>Update Event</td><td><code>updateEvent</code></td><td>Updates a calendar event.</td></tr><tr><td>Update Folder</td><td><code>updateFolder</code></td><td>Renames a document folder.</td></tr><tr><td>Update Forum</td><td><code>updateForum</code></td><td>Updates a forum post.</td></tr><tr><td>Update General Time Log</td><td><code>updateGeneralTimeLog</code></td><td>Updates a general time log entry.</td></tr><tr><td>Update Milestone</td><td><code>updateMilestone</code></td><td>Updates a milestone.</td></tr><tr><td>Update Milestone Status</td><td><code>updateMilestoneStatus</code></td><td>Marks a milestone as completed or not completed.</td></tr><tr><td>Update Project</td><td><code>updateProject</code></td><td>Updates a project's name, description, or status (active/archived).</td></tr><tr><td>Update Tag</td><td><code>updateTag</code></td><td>Updates a tag's name or color.</td></tr><tr><td>Update Task</td><td><code>updateTask</code></td><td>Updates a task.</td></tr><tr><td>Update Task Time Log</td><td><code>updateTaskTimeLog</code></td><td>Updates a time log entry on a task.</td></tr><tr><td>Update Tasklist</td><td><code>updateTasklist</code></td><td>Updates a tasklist.</td></tr><tr><td>Verify Team Email Alias</td><td><code>verifyTeamEmailAlias</code></td><td>Verifies the team's email alias using a verification code.</td></tr><tr><td>View Team Details</td><td><code>viewTeamDetails</code></td><td>Fetches details of a particular team.</td></tr><tr><td>View Team Summary</td><td><code>viewTeamSummary</code></td><td>Views the overall summary of a team.</td></tr></tbody></table>
+
+</details>

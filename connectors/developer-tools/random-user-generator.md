@@ -22,7 +22,4 @@ Add Random User Generator from **Build → Integrations → Connectors** and con
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Generate Random Users | `generateUsers` | Generate random fake user profiles (name, address, email, login, phone, photo and more) for testing, using the latest API version (GET /api/). Filter by gender and nationality, use a seed for repeatable results, and include or exclude fields. Docs: https://randomuser.me/documentation |
-| Generate Random Users for Version | `generateUsersForVersion` | Generate random fake user profiles from a fixed API version so results do not change with new releases (GET /api/{version}/). Docs: https://randomuser.me/documentation |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Generate Random Users</td><td><code>generateUsers</code></td><td>Generate random fake user profiles (name, address, email, login, phone, photo and more) for testing, using the latest API version (GET /api/). Filter by gender and nationality, use a seed for repeatable results, and include or exclude fields. Docs: https://randomuser.me/documentation</td></tr><tr><td>Generate Random Users for Version</td><td><code>generateUsersForVersion</code></td><td>Generate random fake user profiles from a fixed API version so results do not change with new releases (GET /api/{version}/). Docs: https://randomuser.me/documentation</td></tr></tbody></table>

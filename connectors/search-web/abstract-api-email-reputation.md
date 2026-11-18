@@ -22,6 +22,4 @@ Add AbstractAPI Email Reputation from **Build → Integrations → Connectors** 
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Check Email Reputation | `checkEmailReputation` | Validates and enriches an email address, returning deliverability status, MX/SMTP checks, a quality score, sender and domain details, risk status, and any known data breaches associated with the address. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Check Email Reputation</td><td><code>checkEmailReputation</code></td><td>Validates and enriches an email address, returning deliverability status, MX/SMTP checks, a quality score, sender and domain details, risk status, and any known data breaches associated with the address.</td></tr></tbody></table>

@@ -22,72 +22,26 @@ Add Stripe from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Advance Test Clock | `advanceTestClock` | Advance a Stripe test clock to a future timestamp (POST /v1/test_helpers/test_clocks/{id}/advance). |
-| Attach Payment Method | `attachPaymentMethod` | Attach a payment method to a customer (POST /v1/payment_methods/{id}/attach). |
-| Cancel Payment Intent | `cancelPaymentIntent` | Cancel a payment intent (POST /v1/payment_intents/{id}/cancel). |
-| Cancel Subscription | `cancelSubscription` | Cancel a subscription immediately (DELETE /v1/subscriptions/{id}). |
-| Capture Payment Intent | `capturePaymentIntent` | Capture an authorized payment intent (POST /v1/payment_intents/{id}/capture). |
-| Confirm Payment Intent | `confirmPaymentIntent` | Confirm a payment intent (POST /v1/payment_intents/{id}/confirm). |
-| Create Checkout Session | `createCheckoutSession` | Create a Checkout Session with a single line item (POST /v1/checkout/sessions). |
-| Create Customer | `createCustomer` | Create a customer (POST /v1/customers). |
-| Create Customer On Clock | `createCustomerOnClock` | Create a customer on a test clock (POST /v1/customers). |
-| Create Invoice | `createInvoice` | Create a draft invoice for a customer (POST /v1/invoices). |
-| Create Invoice For Customer | `createInvoiceForCustomer` | Create an invoice for a customer (POST /v1/invoices). |
-| Create Invoice Item | `createInvoiceItem` | Create an invoice item (POST /v1/invoice_items). |
-| Create Invoice Item Fixed | `createInvoiceItemFixed` | Create an invoice item (POST /v1/invoiceitems). |
-| Create Payment Intent | `createPaymentIntent` | Create a payment intent (POST /v1/payment_intents). |
-| Create Price | `createPrice` | Create a price for a product (POST /v1/prices). |
-| Create Product | `createProduct` | Create a product (POST /v1/products). |
-| Create Recurring Price | `createPriceRecurring` | Create a recurring price (POST /v1/prices). |
-| Create Refund | `createRefund` | Refund a charge or payment intent (POST /v1/refunds). |
-| Create Subscription | `createSubscription` | Create a subscription (POST /v1/subscriptions). Provide a single price via priceId. |
-| Create Subscription Custom | `createSubCustom` | Create a subscription with customer and price (POST /v1/subscriptions). |
-| Create Webhook Endpoint | `createWebhookEndpoint` | Create a webhook endpoint subscribed to a single event (POST /v1/webhook_endpoints). Used by the webhook config. |
-| Delete Customer | `deleteCustomer` | Delete a customer (DELETE /v1/customers/{id}). |
-| Delete Webhook Endpoint | `deleteWebhookEndpoint` | Delete a webhook endpoint (DELETE /v1/webhook_endpoints/{id}). |
-| Finalize Invoice | `finalizeInvoice` | Finalize a draft invoice (POST /v1/invoices/{id}/finalize). |
-| Get Balance | `getBalance` | Retrieve the account balance (GET /v1/balance). |
-| Get Charge | `getCharge` | Retrieve a charge (GET /v1/charges/{id}). |
-| Get Checkout Session | `getCheckoutSession` | Retrieve a Checkout Session (GET /v1/checkout/sessions/{id}). |
-| Get Customer | `getCustomer` | Retrieve a customer (GET /v1/customers/{id}). |
-| Get Event | `getEvent` | Retrieve a Stripe event (GET /v1/events/{id}). |
-| Get Payment Intent | `getPaymentIntent` | Retrieve a payment intent (GET /v1/payment_intents/{id}). |
-| Get Subscription | `getSubscription` | Retrieve a subscription (GET /v1/subscriptions/{id}). |
-| List Charges | `listCharges` | List charges (GET /v1/charges). |
-| List Customers | `listCustomers` | List customers (GET /v1/customers). |
-| List Events | `listEvents` | List Stripe events (GET /v1/events). |
-| List Invoices | `listInvoices` | List invoices (GET /v1/invoices). |
-| List Payment Intents | `listPaymentIntents` | List payment intents (GET /v1/payment_intents). |
-| List Payouts | `listPayouts` | List payouts (GET /v1/payouts). |
-| List Prices | `listPrices` | List prices (GET /v1/prices). |
-| List Products | `listProducts` | List products (GET /v1/products). |
-| List Refunds | `listRefunds` | List refunds (GET /v1/refunds). |
-| List Subscriptions | `listSubscriptions` | List subscriptions (GET /v1/subscriptions). |
-| List Webhook Endpoints | `listWebhookEndpoints` | List webhook endpoints (GET /v1/webhook_endpoints). |
-| Pay Invoice | `payInvoice` | Pay an invoice (POST /v1/invoices/{id}/pay). |
-| Pay Invoice With Method | `payInvoiceWithMethod` | Pay an invoice with a specific payment method (POST /v1/invoices/{id}/pay). |
-| Search Customers | `searchCustomers` | Search customers with a query (GET /v1/customers/search). |
-| Update Customer | `updateCustomer` | Update a customer (POST /v1/customers/{id}). |
-| Update Customer Invoice Settings | `updateCustomerInvoiceSettings` | Update default payment method on customer invoice settings (POST /v1/customers/{id}). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Advance Test Clock</td><td><code>advanceTestClock</code></td><td>Advance a Stripe test clock to a future timestamp (POST /v1/test_helpers/test_clocks/{id}/advance).</td></tr><tr><td>Attach Payment Method</td><td><code>attachPaymentMethod</code></td><td>Attach a payment method to a customer (POST /v1/payment_methods/{id}/attach).</td></tr><tr><td>Cancel Payment Intent</td><td><code>cancelPaymentIntent</code></td><td>Cancel a payment intent (POST /v1/payment_intents/{id}/cancel).</td></tr><tr><td>Cancel Subscription</td><td><code>cancelSubscription</code></td><td>Cancel a subscription immediately (DELETE /v1/subscriptions/{id}).</td></tr><tr><td>Capture Payment Intent</td><td><code>capturePaymentIntent</code></td><td>Capture an authorized payment intent (POST /v1/payment_intents/{id}/capture).</td></tr><tr><td>Confirm Payment Intent</td><td><code>confirmPaymentIntent</code></td><td>Confirm a payment intent (POST /v1/payment_intents/{id}/confirm).</td></tr><tr><td>Create Checkout Session</td><td><code>createCheckoutSession</code></td><td>Create a Checkout Session with a single line item (POST /v1/checkout/sessions).</td></tr><tr><td>Create Customer</td><td><code>createCustomer</code></td><td>Create a customer (POST /v1/customers).</td></tr><tr><td>Create Customer On Clock</td><td><code>createCustomerOnClock</code></td><td>Create a customer on a test clock (POST /v1/customers).</td></tr><tr><td>Create Invoice</td><td><code>createInvoice</code></td><td>Create a draft invoice for a customer (POST /v1/invoices).</td></tr></tbody></table>
+
+<details>
+
+<summary>View 37 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Invoice For Customer</td><td><code>createInvoiceForCustomer</code></td><td>Create an invoice for a customer (POST /v1/invoices).</td></tr><tr><td>Create Invoice Item</td><td><code>createInvoiceItem</code></td><td>Create an invoice item (POST /v1/invoice_items).</td></tr><tr><td>Create Invoice Item Fixed</td><td><code>createInvoiceItemFixed</code></td><td>Create an invoice item (POST /v1/invoiceitems).</td></tr><tr><td>Create Payment Intent</td><td><code>createPaymentIntent</code></td><td>Create a payment intent (POST /v1/payment_intents).</td></tr><tr><td>Create Price</td><td><code>createPrice</code></td><td>Create a price for a product (POST /v1/prices).</td></tr><tr><td>Create Product</td><td><code>createProduct</code></td><td>Create a product (POST /v1/products).</td></tr><tr><td>Create Recurring Price</td><td><code>createPriceRecurring</code></td><td>Create a recurring price (POST /v1/prices).</td></tr><tr><td>Create Refund</td><td><code>createRefund</code></td><td>Refund a charge or payment intent (POST /v1/refunds).</td></tr><tr><td>Create Subscription</td><td><code>createSubscription</code></td><td>Create a subscription (POST /v1/subscriptions). Provide a single price via priceId.</td></tr><tr><td>Create Subscription Custom</td><td><code>createSubCustom</code></td><td>Create a subscription with customer and price (POST /v1/subscriptions).</td></tr><tr><td>Create Webhook Endpoint</td><td><code>createWebhookEndpoint</code></td><td>Create a webhook endpoint subscribed to a single event (POST /v1/webhook_endpoints). Used by the webhook config.</td></tr><tr><td>Delete Customer</td><td><code>deleteCustomer</code></td><td>Delete a customer (DELETE /v1/customers/{id}).</td></tr><tr><td>Delete Webhook Endpoint</td><td><code>deleteWebhookEndpoint</code></td><td>Delete a webhook endpoint (DELETE /v1/webhook_endpoints/{id}).</td></tr><tr><td>Finalize Invoice</td><td><code>finalizeInvoice</code></td><td>Finalize a draft invoice (POST /v1/invoices/{id}/finalize).</td></tr><tr><td>Get Balance</td><td><code>getBalance</code></td><td>Retrieve the account balance (GET /v1/balance).</td></tr><tr><td>Get Charge</td><td><code>getCharge</code></td><td>Retrieve a charge (GET /v1/charges/{id}).</td></tr><tr><td>Get Checkout Session</td><td><code>getCheckoutSession</code></td><td>Retrieve a Checkout Session (GET /v1/checkout/sessions/{id}).</td></tr><tr><td>Get Customer</td><td><code>getCustomer</code></td><td>Retrieve a customer (GET /v1/customers/{id}).</td></tr><tr><td>Get Event</td><td><code>getEvent</code></td><td>Retrieve a Stripe event (GET /v1/events/{id}).</td></tr><tr><td>Get Payment Intent</td><td><code>getPaymentIntent</code></td><td>Retrieve a payment intent (GET /v1/payment_intents/{id}).</td></tr><tr><td>Get Subscription</td><td><code>getSubscription</code></td><td>Retrieve a subscription (GET /v1/subscriptions/{id}).</td></tr><tr><td>List Charges</td><td><code>listCharges</code></td><td>List charges (GET /v1/charges).</td></tr><tr><td>List Customers</td><td><code>listCustomers</code></td><td>List customers (GET /v1/customers).</td></tr><tr><td>List Events</td><td><code>listEvents</code></td><td>List Stripe events (GET /v1/events).</td></tr><tr><td>List Invoices</td><td><code>listInvoices</code></td><td>List invoices (GET /v1/invoices).</td></tr><tr><td>List Payment Intents</td><td><code>listPaymentIntents</code></td><td>List payment intents (GET /v1/payment_intents).</td></tr><tr><td>List Payouts</td><td><code>listPayouts</code></td><td>List payouts (GET /v1/payouts).</td></tr><tr><td>List Prices</td><td><code>listPrices</code></td><td>List prices (GET /v1/prices).</td></tr><tr><td>List Products</td><td><code>listProducts</code></td><td>List products (GET /v1/products).</td></tr><tr><td>List Refunds</td><td><code>listRefunds</code></td><td>List refunds (GET /v1/refunds).</td></tr><tr><td>List Subscriptions</td><td><code>listSubscriptions</code></td><td>List subscriptions (GET /v1/subscriptions).</td></tr><tr><td>List Webhook Endpoints</td><td><code>listWebhookEndpoints</code></td><td>List webhook endpoints (GET /v1/webhook_endpoints).</td></tr><tr><td>Pay Invoice</td><td><code>payInvoice</code></td><td>Pay an invoice (POST /v1/invoices/{id}/pay).</td></tr><tr><td>Pay Invoice With Method</td><td><code>payInvoiceWithMethod</code></td><td>Pay an invoice with a specific payment method (POST /v1/invoices/{id}/pay).</td></tr><tr><td>Search Customers</td><td><code>searchCustomers</code></td><td>Search customers with a query (GET /v1/customers/search).</td></tr><tr><td>Update Customer</td><td><code>updateCustomer</code></td><td>Update a customer (POST /v1/customers/{id}).</td></tr><tr><td>Update Customer Invoice Settings</td><td><code>updateCustomerInvoiceSettings</code></td><td>Update default payment method on customer invoice settings (POST /v1/customers/{id}).</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Charge Refunded | `charge.refunded` | A charge was refunded. |
-| Charge Succeeded | `charge.succeeded` | A charge succeeded. |
-| Checkout Completed | `checkout.session.completed` | A Checkout Session completed. |
-| Checkout Expired | `checkout.session.expired` | A Checkout Session expired. |
-| Invoice Paid | `invoice.paid` | An invoice was paid. |
-| Invoice Payment Failed | `invoice.payment_failed` | An invoice payment failed. |
-| Payment Intent Failed | `payment_intent.payment_failed` | A PaymentIntent failed. |
-| Payment Intent Succeeded | `payment_intent.succeeded` | A PaymentIntent successfully completed. |
-| Payout Paid | `payout.paid` | A payout was paid out. |
-| Refund Created | `refund.created` | A refund was created. |
-| Subscription Canceled | `customer.subscription.deleted` | A subscription was canceled. |
-| Subscription Created | `customer.subscription.created` | A subscription was created. |
-| Subscription Updated | `customer.subscription.updated` | A subscription changed. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Charge Refunded</td><td><code>charge.refunded</code></td><td>A charge was refunded.</td></tr><tr><td>Charge Succeeded</td><td><code>charge.succeeded</code></td><td>A charge succeeded.</td></tr><tr><td>Checkout Completed</td><td><code>checkout.session.completed</code></td><td>A Checkout Session completed.</td></tr><tr><td>Checkout Expired</td><td><code>checkout.session.expired</code></td><td>A Checkout Session expired.</td></tr><tr><td>Invoice Paid</td><td><code>invoice.paid</code></td><td>An invoice was paid.</td></tr><tr><td>Invoice Payment Failed</td><td><code>invoice.payment_failed</code></td><td>An invoice payment failed.</td></tr><tr><td>Payment Intent Failed</td><td><code>payment_intent.payment_failed</code></td><td>A PaymentIntent failed.</td></tr><tr><td>Payment Intent Succeeded</td><td><code>payment_intent.succeeded</code></td><td>A PaymentIntent successfully completed.</td></tr><tr><td>Payout Paid</td><td><code>payout.paid</code></td><td>A payout was paid out.</td></tr><tr><td>Refund Created</td><td><code>refund.created</code></td><td>A refund was created.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 3 more events</summary>
+
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Subscription Canceled</td><td><code>customer.subscription.deleted</code></td><td>A subscription was canceled.</td></tr><tr><td>Subscription Created</td><td><code>customer.subscription.created</code></td><td>A subscription was created.</td></tr><tr><td>Subscription Updated</td><td><code>customer.subscription.updated</code></td><td>A subscription changed.</td></tr></tbody></table>
+
+</details>

@@ -22,29 +22,18 @@ Add ShipStation from **Build → Integrations → Connectors** and connect an ac
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Label | `createLabel` | Create a shipping label for a shipment. |
-| Create Or Update Order | `createOrder` | Create or update an order. Provide orderKey matching an existing order to update. |
-| Delete Order | `deleteOrder` | Delete (inactivate) an order by id. |
-| Get Order | `getOrder` | Get an order by id. |
-| List Carriers | `listCarriers` | List carriers connected to the account. |
-| List Customers | `listCustomers` | List customers. |
-| List Orders | `listOrders` | List orders with optional filters. |
-| List Products | `listProducts` | List products. |
-| List Shipments | `listShipments` | List shipments with optional filters. |
-| List Webhooks | `listWebhooks` | List webhook subscriptions. |
-| Mark As Shipped | `markAsShipped` | Mark an order as shipped with tracking info. |
-| Subscribe Webhook | `subscribeWebhook` | Subscribe to a webhook event. |
-| Unsubscribe Webhook | `unsubscribeWebhook` | Delete a webhook subscription by id. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Label</td><td><code>createLabel</code></td><td>Create a shipping label for a shipment.</td></tr><tr><td>Create Or Update Order</td><td><code>createOrder</code></td><td>Create or update an order. Provide orderKey matching an existing order to update.</td></tr><tr><td>Delete Order</td><td><code>deleteOrder</code></td><td>Delete (inactivate) an order by id.</td></tr><tr><td>Get Order</td><td><code>getOrder</code></td><td>Get an order by id.</td></tr><tr><td>List Carriers</td><td><code>listCarriers</code></td><td>List carriers connected to the account.</td></tr><tr><td>List Customers</td><td><code>listCustomers</code></td><td>List customers.</td></tr><tr><td>List Orders</td><td><code>listOrders</code></td><td>List orders with optional filters.</td></tr><tr><td>List Products</td><td><code>listProducts</code></td><td>List products.</td></tr><tr><td>List Shipments</td><td><code>listShipments</code></td><td>List shipments with optional filters.</td></tr><tr><td>List Webhooks</td><td><code>listWebhooks</code></td><td>List webhook subscriptions.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 3 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Mark As Shipped</td><td><code>markAsShipped</code></td><td>Mark an order as shipped with tracking info.</td></tr><tr><td>Subscribe Webhook</td><td><code>subscribeWebhook</code></td><td>Subscribe to a webhook event.</td></tr><tr><td>Unsubscribe Webhook</td><td><code>unsubscribeWebhook</code></td><td>Delete a webhook subscription by id.</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Item Order Notify | `ITEM_ORDER_NOTIFY` | Fires for order item-level notifications. |
-| Item Ship Notify | `ITEM_SHIP_NOTIFY` | Fires for shipment item-level notifications. |
-| Order Notify | `ORDER_NOTIFY` | Fires when an order is created or imported into ShipStation. |
-| Ship Notify | `SHIP_NOTIFY` | Fires when a shipment is created (label printed) for an order. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Item Order Notify</td><td><code>ITEM_ORDER_NOTIFY</code></td><td>Fires for order item-level notifications.</td></tr><tr><td>Item Ship Notify</td><td><code>ITEM_SHIP_NOTIFY</code></td><td>Fires for shipment item-level notifications.</td></tr><tr><td>Order Notify</td><td><code>ORDER_NOTIFY</code></td><td>Fires when an order is created or imported into ShipStation.</td></tr><tr><td>Ship Notify</td><td><code>SHIP_NOTIFY</code></td><td>Fires when a shipment is created (label printed) for an order.</td></tr></tbody></table>

@@ -22,7 +22,4 @@ Add Mailboxlayer from **Build → Integrations → Connectors** and connect an a
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Bulk Validate Emails | `bulkValidateEmails` | Validates multiple email addresses in a single request, returning the same syntax, MX, SMTP, catch-all, role, disposable/free, and score checks as single validation for each address. Only available on Pro Plus and Enterprise Plus subscription plans. |
-| Validate Email | `validateEmail` | Validates a single email address, checking syntax, MX records, SMTP mailbox existence, catch-all configuration, role-based and free/disposable provider status, and returning a numeric deliverability score. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Bulk Validate Emails</td><td><code>bulkValidateEmails</code></td><td>Validates multiple email addresses in a single request, returning the same syntax, MX, SMTP, catch-all, role, disposable/free, and score checks as single validation for each address. Only available on Pro Plus and Enterprise Plus subscription plans.</td></tr><tr><td>Validate Email</td><td><code>validateEmail</code></td><td>Validates a single email address, checking syntax, MX records, SMTP mailbox existence, catch-all configuration, role-based and free/disposable provider status, and returning a numeric deliverability score.</td></tr></tbody></table>

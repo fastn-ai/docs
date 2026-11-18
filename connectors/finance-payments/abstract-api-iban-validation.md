@@ -22,6 +22,4 @@ Add AbstractAPI IBAN Validation from **Build → Integrations → Connectors** a
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Validate IBAN | `validateIban` | Checks whether an International Bank Account Number (IBAN) is valid. Spaces in the IBAN are accepted. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Validate IBAN</td><td><code>validateIban</code></td><td>Checks whether an International Bank Account Number (IBAN) is valid. Spaces in the IBAN are accepted.</td></tr></tbody></table>

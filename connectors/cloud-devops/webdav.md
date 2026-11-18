@@ -22,13 +22,4 @@ Add WebDAV from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Copy Resource | `copyResource` |  |
-| Create Directory | `createDirectory` |  |
-| Delete Resource | `deleteResource` |  |
-| Download File | `downloadFile` |  |
-| Get File Properties | `getFileProperties` |  |
-| List Directory | `listDirectory` |  |
-| Move or Rename | `moveResource` |  |
-| Upload File | `uploadFile` |  |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Copy Resource</td><td><code>copyResource</code></td><td></td></tr><tr><td>Create Directory</td><td><code>createDirectory</code></td><td></td></tr><tr><td>Delete Resource</td><td><code>deleteResource</code></td><td></td></tr><tr><td>Download File</td><td><code>downloadFile</code></td><td></td></tr><tr><td>Get File Properties</td><td><code>getFileProperties</code></td><td></td></tr><tr><td>List Directory</td><td><code>listDirectory</code></td><td></td></tr><tr><td>Move or Rename</td><td><code>moveResource</code></td><td></td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td></td></tr></tbody></table>

@@ -20,7 +20,4 @@ Add Gutendex from **Build → Integrations → Connectors** and connect an accou
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Book | `getBook` | Returns one book by Project Gutenberg id: title, authors, translators, subjects, bookshelves, summaries, languages, copyright, download count and format download links. Docs: https://gutendex.com/ |
-| List Books | `listBooks` | Searches and lists Project Gutenberg books (32 per page, most popular first by default) with filters for words in title/author, topic, languages, author lifetime, copyright status, ids and MIME type. Docs: https://gutendex.com/ |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Book</td><td><code>getBook</code></td><td>Returns one book by Project Gutenberg id: title, authors, translators, subjects, bookshelves, summaries, languages, copyright, download count and format download links. Docs: https://gutendex.com/</td></tr><tr><td>List Books</td><td><code>listBooks</code></td><td>Searches and lists Project Gutenberg books (32 per page, most popular first by default) with filters for words in title/author, topic, languages, author lifetime, copyright status, ids and MIME type. Docs: https://gutendex.com/</td></tr></tbody></table>

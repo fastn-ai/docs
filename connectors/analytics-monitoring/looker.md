@@ -22,82 +22,12 @@ Add Looker from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add User To Group | `addUserToGroup` | Add a user to a group. |
-| Create Alert | `createAlert` | Create a dashboard-element alert that fires when a value crosses a threshold and delivers to destinations. |
-| Create Connection | `createConnection` | Create a new database connection. |
-| Create Content Favorite | `createContentFavorite` | Mark a Look or dashboard as a favorite for a content metadata id. |
-| Create Dashboard | `createDashboard` | Create a new user-defined dashboard in a folder. |
-| Create Dashboard Render Task | `createDashboardRenderTask` | Start an asynchronous render of a dashboard to a file format (pdf, png, jpg). Poll the render task for completion, then fetch results. |
-| Create Folder | `createFolder` | Create a new folder under a parent folder. |
-| Create Group | `createGroup` | Create a new group. |
-| Create Look | `createLook` | Create a new Look from an existing query in a folder. |
-| Create Look Render Task | `createLookRenderTask` | Start an asynchronous render of a Look to a file format (png, jpg). |
-| Create Query | `createQuery` | Create a query definition (model + view/explore + fields) that can then be run. Returns the query with its id. |
-| Create Role | `createRole` | Create a new role from a permission set and a model set. |
-| Create Scheduled Plan | `createScheduledPlan` | Create a scheduled plan that delivers a dashboard on a crontab to one or more destinations. |
-| Create User | `createUser` | Create a new user (first/last name). Set credentials separately. |
-| Delete Alert | `deleteAlert` | Delete an alert by id. |
-| Delete Content Favorite | `deleteContentFavorite` | Remove a content favorite by id. |
-| Delete Dashboard | `deleteDashboard` | Delete a dashboard by id. |
-| Delete Folder | `deleteFolder` | Delete a folder by id. |
-| Delete Group | `deleteGroup` | Delete a group by id. |
-| Delete Look | `deleteLook` | Delete a Look by id. |
-| Delete Role | `deleteRole` | Delete a role by id. |
-| Delete Scheduled Plan | `deleteScheduledPlan` | Delete a scheduled plan by id. |
-| Delete User | `deleteUser` | Delete a user by id. |
-| Get Alert | `getAlert` | Get a single alert by id. |
-| Get API Versions | `getApiVersions` | Get the API and server version information for this Looker instance. |
-| Get Connection | `getConnection` | Get a single database connection by name. |
-| Get Current User | `getCurrentUser` | Get the user account associated with the API credentials (the 'me' user). |
-| Get Dashboard | `getDashboard` | Get a single dashboard by id. |
-| Get Folder | `getFolder` | Get a single folder by id. |
-| Get Group | `getGroup` | Get a single group by id. |
-| Get Look | `getLook` | Get a single Look by id. |
-| Get LookML Model | `getLookmlModel` | Get a single LookML model by name. |
-| Get LookML Model Explore | `getLookmlModelExplore` | Get the detailed definition (fields, joins) of an explore within a LookML model. |
-| Get Project | `getProject` | Get a single LookML project by id. |
-| Get Query | `getQuery` | Get a query definition by id. |
-| Get Query By Slug | `getQueryBySlug` | Get a query definition by its slug. |
-| Get Render Task | `getRenderTask` | Get the status of a render task. |
-| Get Render Task Results | `getRenderTaskResults` | Download the rendered document/image once the render task has completed. |
-| Get Role | `getRole` | Get a single role by id. |
-| Get Role Users | `getRoleUsers` | Get the users assigned to a role. |
-| Get Scheduled Plan | `getScheduledPlan` | Get a single scheduled plan by id. |
-| Get Session | `getSession` | Get information about the current API session, including the active workspace id. |
-| Get User | `getUser` | Get a single user by id. |
-| Get User Roles | `getUserRoles` | Get the roles assigned to a user. |
-| List Connections | `listConnections` | Get all database connections configured in Looker. |
-| List Dashboard Elements | `listDashboardElements` | Get all elements (tiles) of a dashboard. |
-| List Dashboards | `listDashboards` | Get all dashboards (user-defined and LookML). |
-| List Folder Children | `listFolderChildren` | Get the child folders of a folder. |
-| List Folder Looks | `listFolderLooks` | Get the Looks contained in a folder. |
-| List Folders | `listFolders` | Get all folders. |
-| List Groups | `listGroups` | Get all groups. |
-| List LookML Models | `listLookmlModels` | Get all LookML models. |
-| List Looks | `listLooks` | Get all Looks (saved visualizations). Optionally narrow returned fields. |
-| List Projects | `listProjects` | Get all LookML projects. |
-| List Roles | `listRoles` | Get all roles. |
-| List Scheduled Plans | `listScheduledPlans` | Get scheduled plans, optionally filtered to all users (admin) or the current user. |
-| List Users | `listUsers` | Get all users. |
-| Login | `login` | Exchange API3 client_id + client_secret for a short-lived access_token. Returns access_token to send on every other action as 'Authorization: token &lt;access_token&gt;'. |
-| Run Inline Query | `runInlineQuery` | Create and run a query in a single call. Provide model, view, and fields; returns data in the requested result format. |
-| Run Look | `runLook` | Run a saved Look and return its data in the requested result format (json, json_detail, csv, txt, html, md, xlsx, png). |
-| Run Query | `runQuery` | Run a previously created query by id and return data in the requested result format. |
-| Run Scheduled Plan Once | `runScheduledPlanOnce` | Immediately run a scheduled-plan definition once without saving it. |
-| Search Alerts | `searchAlerts` | Search alerts by group, owner, fields, and other filters. |
-| Search Content Favorites | `searchContentFavorites` | Search content favorites by user, look, dashboard, or content metadata id. |
-| Search Dashboards | `searchDashboards` | Search dashboards by title, folder, user, and other filters. |
-| Search Folders | `searchFolders` | Search folders by name, parent, and other filters. |
-| Search Groups | `searchGroups` | Search groups by name and other filters. |
-| Search Looks | `searchLooks` | Search Looks by title, folder, user, and other filters. |
-| Search Users | `searchUsers` | Search users by name, email, id, and other filters. |
-| Test Connection | `testConnection` | Run connectivity tests against a configured database connection. |
-| Update Connection | `updateConnection` | Update settings of an existing database connection. |
-| Update Dashboard | `updateDashboard` | Update a dashboard's title and/or description. |
-| Update Folder | `updateFolder` | Rename or move a folder. |
-| Update Look | `updateLook` | Update a Look's title and/or description. |
-| Update Role | `updateRole` | Update a role's name. |
-| Update Scheduled Plan | `updateScheduledPlan` | Update a scheduled plan's name or schedule. |
-| Update User | `updateUser` | Update a user's name or disabled state. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add User To Group</td><td><code>addUserToGroup</code></td><td>Add a user to a group.</td></tr><tr><td>Create Alert</td><td><code>createAlert</code></td><td>Create a dashboard-element alert that fires when a value crosses a threshold and delivers to destinations.</td></tr><tr><td>Create Connection</td><td><code>createConnection</code></td><td>Create a new database connection.</td></tr><tr><td>Create Content Favorite</td><td><code>createContentFavorite</code></td><td>Mark a Look or dashboard as a favorite for a content metadata id.</td></tr><tr><td>Create Dashboard</td><td><code>createDashboard</code></td><td>Create a new user-defined dashboard in a folder.</td></tr><tr><td>Create Dashboard Render Task</td><td><code>createDashboardRenderTask</code></td><td>Start an asynchronous render of a dashboard to a file format (pdf, png, jpg). Poll the render task for completion, then fetch results.</td></tr><tr><td>Create Folder</td><td><code>createFolder</code></td><td>Create a new folder under a parent folder.</td></tr><tr><td>Create Group</td><td><code>createGroup</code></td><td>Create a new group.</td></tr><tr><td>Create Look</td><td><code>createLook</code></td><td>Create a new Look from an existing query in a folder.</td></tr><tr><td>Create Look Render Task</td><td><code>createLookRenderTask</code></td><td>Start an asynchronous render of a Look to a file format (png, jpg).</td></tr></tbody></table>
+
+<details>
+
+<summary>View 67 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Query</td><td><code>createQuery</code></td><td>Create a query definition (model + view/explore + fields) that can then be run. Returns the query with its id.</td></tr><tr><td>Create Role</td><td><code>createRole</code></td><td>Create a new role from a permission set and a model set.</td></tr><tr><td>Create Scheduled Plan</td><td><code>createScheduledPlan</code></td><td>Create a scheduled plan that delivers a dashboard on a crontab to one or more destinations.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Create a new user (first/last name). Set credentials separately.</td></tr><tr><td>Delete Alert</td><td><code>deleteAlert</code></td><td>Delete an alert by id.</td></tr><tr><td>Delete Content Favorite</td><td><code>deleteContentFavorite</code></td><td>Remove a content favorite by id.</td></tr><tr><td>Delete Dashboard</td><td><code>deleteDashboard</code></td><td>Delete a dashboard by id.</td></tr><tr><td>Delete Folder</td><td><code>deleteFolder</code></td><td>Delete a folder by id.</td></tr><tr><td>Delete Group</td><td><code>deleteGroup</code></td><td>Delete a group by id.</td></tr><tr><td>Delete Look</td><td><code>deleteLook</code></td><td>Delete a Look by id.</td></tr><tr><td>Delete Role</td><td><code>deleteRole</code></td><td>Delete a role by id.</td></tr><tr><td>Delete Scheduled Plan</td><td><code>deleteScheduledPlan</code></td><td>Delete a scheduled plan by id.</td></tr><tr><td>Delete User</td><td><code>deleteUser</code></td><td>Delete a user by id.</td></tr><tr><td>Get Alert</td><td><code>getAlert</code></td><td>Get a single alert by id.</td></tr><tr><td>Get API Versions</td><td><code>getApiVersions</code></td><td>Get the API and server version information for this Looker instance.</td></tr><tr><td>Get Connection</td><td><code>getConnection</code></td><td>Get a single database connection by name.</td></tr><tr><td>Get Current User</td><td><code>getCurrentUser</code></td><td>Get the user account associated with the API credentials (the 'me' user).</td></tr><tr><td>Get Dashboard</td><td><code>getDashboard</code></td><td>Get a single dashboard by id.</td></tr><tr><td>Get Folder</td><td><code>getFolder</code></td><td>Get a single folder by id.</td></tr><tr><td>Get Group</td><td><code>getGroup</code></td><td>Get a single group by id.</td></tr><tr><td>Get Look</td><td><code>getLook</code></td><td>Get a single Look by id.</td></tr><tr><td>Get LookML Model</td><td><code>getLookmlModel</code></td><td>Get a single LookML model by name.</td></tr><tr><td>Get LookML Model Explore</td><td><code>getLookmlModelExplore</code></td><td>Get the detailed definition (fields, joins) of an explore within a LookML model.</td></tr><tr><td>Get Project</td><td><code>getProject</code></td><td>Get a single LookML project by id.</td></tr><tr><td>Get Query</td><td><code>getQuery</code></td><td>Get a query definition by id.</td></tr><tr><td>Get Query By Slug</td><td><code>getQueryBySlug</code></td><td>Get a query definition by its slug.</td></tr><tr><td>Get Render Task</td><td><code>getRenderTask</code></td><td>Get the status of a render task.</td></tr><tr><td>Get Render Task Results</td><td><code>getRenderTaskResults</code></td><td>Download the rendered document/image once the render task has completed.</td></tr><tr><td>Get Role</td><td><code>getRole</code></td><td>Get a single role by id.</td></tr><tr><td>Get Role Users</td><td><code>getRoleUsers</code></td><td>Get the users assigned to a role.</td></tr><tr><td>Get Scheduled Plan</td><td><code>getScheduledPlan</code></td><td>Get a single scheduled plan by id.</td></tr><tr><td>Get Session</td><td><code>getSession</code></td><td>Get information about the current API session, including the active workspace id.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Get a single user by id.</td></tr><tr><td>Get User Roles</td><td><code>getUserRoles</code></td><td>Get the roles assigned to a user.</td></tr><tr><td>List Connections</td><td><code>listConnections</code></td><td>Get all database connections configured in Looker.</td></tr><tr><td>List Dashboard Elements</td><td><code>listDashboardElements</code></td><td>Get all elements (tiles) of a dashboard.</td></tr><tr><td>List Dashboards</td><td><code>listDashboards</code></td><td>Get all dashboards (user-defined and LookML).</td></tr><tr><td>List Folder Children</td><td><code>listFolderChildren</code></td><td>Get the child folders of a folder.</td></tr><tr><td>List Folder Looks</td><td><code>listFolderLooks</code></td><td>Get the Looks contained in a folder.</td></tr><tr><td>List Folders</td><td><code>listFolders</code></td><td>Get all folders.</td></tr><tr><td>List Groups</td><td><code>listGroups</code></td><td>Get all groups.</td></tr><tr><td>List LookML Models</td><td><code>listLookmlModels</code></td><td>Get all LookML models.</td></tr><tr><td>List Looks</td><td><code>listLooks</code></td><td>Get all Looks (saved visualizations). Optionally narrow returned fields.</td></tr><tr><td>List Projects</td><td><code>listProjects</code></td><td>Get all LookML projects.</td></tr><tr><td>List Roles</td><td><code>listRoles</code></td><td>Get all roles.</td></tr><tr><td>List Scheduled Plans</td><td><code>listScheduledPlans</code></td><td>Get scheduled plans, optionally filtered to all users (admin) or the current user.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>Get all users.</td></tr><tr><td>Login</td><td><code>login</code></td><td>Exchange API3 client_id + client_secret for a short-lived access_token. Returns access_token to send on every other action as 'Authorization: token &lt;access_token&gt;'.</td></tr><tr><td>Run Inline Query</td><td><code>runInlineQuery</code></td><td>Create and run a query in a single call. Provide model, view, and fields; returns data in the requested result format.</td></tr><tr><td>Run Look</td><td><code>runLook</code></td><td>Run a saved Look and return its data in the requested result format (json, json_detail, csv, txt, html, md, xlsx, png).</td></tr><tr><td>Run Query</td><td><code>runQuery</code></td><td>Run a previously created query by id and return data in the requested result format.</td></tr><tr><td>Run Scheduled Plan Once</td><td><code>runScheduledPlanOnce</code></td><td>Immediately run a scheduled-plan definition once without saving it.</td></tr><tr><td>Search Alerts</td><td><code>searchAlerts</code></td><td>Search alerts by group, owner, fields, and other filters.</td></tr><tr><td>Search Content Favorites</td><td><code>searchContentFavorites</code></td><td>Search content favorites by user, look, dashboard, or content metadata id.</td></tr><tr><td>Search Dashboards</td><td><code>searchDashboards</code></td><td>Search dashboards by title, folder, user, and other filters.</td></tr><tr><td>Search Folders</td><td><code>searchFolders</code></td><td>Search folders by name, parent, and other filters.</td></tr><tr><td>Search Groups</td><td><code>searchGroups</code></td><td>Search groups by name and other filters.</td></tr><tr><td>Search Looks</td><td><code>searchLooks</code></td><td>Search Looks by title, folder, user, and other filters.</td></tr><tr><td>Search Users</td><td><code>searchUsers</code></td><td>Search users by name, email, id, and other filters.</td></tr><tr><td>Test Connection</td><td><code>testConnection</code></td><td>Run connectivity tests against a configured database connection.</td></tr><tr><td>Update Connection</td><td><code>updateConnection</code></td><td>Update settings of an existing database connection.</td></tr><tr><td>Update Dashboard</td><td><code>updateDashboard</code></td><td>Update a dashboard's title and/or description.</td></tr><tr><td>Update Folder</td><td><code>updateFolder</code></td><td>Rename or move a folder.</td></tr><tr><td>Update Look</td><td><code>updateLook</code></td><td>Update a Look's title and/or description.</td></tr><tr><td>Update Role</td><td><code>updateRole</code></td><td>Update a role's name.</td></tr><tr><td>Update Scheduled Plan</td><td><code>updateScheduledPlan</code></td><td>Update a scheduled plan's name or schedule.</td></tr><tr><td>Update User</td><td><code>updateUser</code></td><td>Update a user's name or disabled state.</td></tr></tbody></table>
+
+</details>

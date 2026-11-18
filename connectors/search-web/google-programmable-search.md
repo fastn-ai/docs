@@ -22,7 +22,4 @@ Add Google Programmable Search from **Build → Integrations → Connectors** an
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search | `search` | Runs a query against a Programmable Search Engine and returns ranked results with title, snippet, display link and full link. |
-| Search Site Restricted | `searchSiteRestricted` | Same as Search but against an engine configured to cover only specific sites; it has no daily query limit. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search</td><td><code>search</code></td><td>Runs a query against a Programmable Search Engine and returns ranked results with title, snippet, display link and full link.</td></tr><tr><td>Search Site Restricted</td><td><code>searchSiteRestricted</code></td><td>Same as Search but against an engine configured to cover only specific sites; it has no daily query limit.</td></tr></tbody></table>

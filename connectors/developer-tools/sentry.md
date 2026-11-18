@@ -22,47 +22,18 @@ Add Sentry from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Issue Comment | `createIssueComment` | Add a comment (note) to an issue (POST /api/0/organizations/{org}/issues/{issueId}/comments/). |
-| Create Project | `createProject` | Create a project under a team (POST /api/0/teams/{org}/{team}/projects/). |
-| Create Release | `createRelease` | Create a release (POST /api/0/organizations/{org}/releases/). |
-| Create Release Deploy | `createReleaseDeploy` | Create a deploy for a release (POST /api/0/organizations/{org}/releases/{version}/deploys/). |
-| Create Service Hook | `createServiceHook` | Create a project service hook/webhook (POST /api/0/projects/{org}/{project}/hooks/). Used by the webhook config. |
-| Create Team | `createTeam` | Create a team (POST /api/0/organizations/{org}/teams/). |
-| Delete Issue | `deleteIssue` | Delete an issue (DELETE /api/0/organizations/{org}/issues/{issueId}/). Returns 202. |
-| Delete Project | `deleteProject` | Delete a project (DELETE /api/0/projects/{org}/{project}/). Returns 204. |
-| Delete Release | `deleteRelease` | Delete a release (DELETE /api/0/organizations/{org}/releases/{version}/). Returns 204. |
-| Delete Service Hook | `deleteServiceHook` | Delete a project service hook (DELETE /api/0/projects/{org}/{project}/hooks/{hookId}/). Returns 204. |
-| Delete Team | `deleteTeam` | Schedules a team for deletion in a Sentry organization. The team is marked pending deletion and removed asynchronously; its projects are not deleted and remain in the organization. Returns 204 No Content on success. |
-| Get Issue | `getIssue` | Get an issue by ID (GET /api/0/organizations/{org}/issues/{issueId}/). |
-| Get Issue Tag Values | `getIssueTagValues` | List values for a tag key on an issue (GET /api/0/organizations/{org}/issues/{issueId}/tags/{key}/values/). |
-| Get Latest Event | `getLatestEvent` | Get the latest event for an issue (GET /api/0/organizations/{org}/issues/{issueId}/events/latest/). |
-| Get Organization | `getOrganization` | Get an organization by slug (GET /api/0/organizations/{org}/). |
-| Get Project | `getProject` | Get a project (GET /api/0/projects/{org}/{project}/). |
-| Get Project Event | `getProjectEvent` | Get a specific event in a project (GET /api/0/projects/{org}/{project}/events/{eventId}/). |
-| Get Release | `getRelease` | Get a release by version (GET /api/0/organizations/{org}/releases/{version}/). |
-| List Issue Comments | `listIssueComments` | List activity notes/comments on an issue (GET /api/0/organizations/{org}/issues/{issueId}/comments/). |
-| List Issue Events | `listIssueEvents` | List events for an issue (GET /api/0/organizations/{org}/issues/{issueId}/events/). |
-| List Issue Tags | `listIssueTags` | List tag keys for an issue (GET /api/0/organizations/{org}/issues/{issueId}/tags/). |
-| List Issues | `listIssues` | List a project's issues (GET /api/0/projects/{org}/{project}/issues/). |
-| List Members | `listMembers` | List organization members (GET /api/0/organizations/{org}/members/). |
-| List Organization Projects | `listOrganizationProjects` | List projects in an organization (GET /api/0/organizations/{org}/projects/). |
-| List Organizations | `listOrganizations` | List organizations the user belongs to (GET /api/0/organizations/). |
-| List Project Events | `listProjectEvents` | List events for a project (GET /api/0/projects/{org}/{project}/events/). |
-| List Project Keys | `listProjectKeys` | List a project's client keys (DSNs) (GET /api/0/projects/{org}/{project}/keys/). |
-| List Releases | `listReleases` | List releases for an organization (GET /api/0/organizations/{org}/releases/). |
-| List Service Hooks | `listServiceHooks` | List a project's service hooks (GET /api/0/projects/{org}/{project}/hooks/). |
-| List Teams | `listTeams` | List teams in an organization (GET /api/0/organizations/{org}/teams/). |
-| Update Issue | `updateIssue` | Update an issue: resolve/ignore, assign, bookmark (PUT /api/0/organizations/{org}/issues/{issueId}/). |
-| Update Project | `updateProject` | Update a project (PUT /api/0/projects/{org}/{project}/). |
-| Update Release | `updateRelease` | Update a release (PUT /api/0/organizations/{org}/releases/{version}/). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Issue Comment</td><td><code>createIssueComment</code></td><td>Add a comment (note) to an issue (POST /api/0/organizations/{org}/issues/{issueId}/comments/).</td></tr><tr><td>Create Project</td><td><code>createProject</code></td><td>Create a project under a team (POST /api/0/teams/{org}/{team}/projects/).</td></tr><tr><td>Create Release</td><td><code>createRelease</code></td><td>Create a release (POST /api/0/organizations/{org}/releases/).</td></tr><tr><td>Create Release Deploy</td><td><code>createReleaseDeploy</code></td><td>Create a deploy for a release (POST /api/0/organizations/{org}/releases/{version}/deploys/).</td></tr><tr><td>Create Service Hook</td><td><code>createServiceHook</code></td><td>Create a project service hook/webhook (POST /api/0/projects/{org}/{project}/hooks/). Used by the webhook config.</td></tr><tr><td>Create Team</td><td><code>createTeam</code></td><td>Create a team (POST /api/0/organizations/{org}/teams/).</td></tr><tr><td>Delete Issue</td><td><code>deleteIssue</code></td><td>Delete an issue (DELETE /api/0/organizations/{org}/issues/{issueId}/). Returns 202.</td></tr><tr><td>Delete Project</td><td><code>deleteProject</code></td><td>Delete a project (DELETE /api/0/projects/{org}/{project}/). Returns 204.</td></tr><tr><td>Delete Release</td><td><code>deleteRelease</code></td><td>Delete a release (DELETE /api/0/organizations/{org}/releases/{version}/). Returns 204.</td></tr><tr><td>Delete Service Hook</td><td><code>deleteServiceHook</code></td><td>Delete a project service hook (DELETE /api/0/projects/{org}/{project}/hooks/{hookId}/). Returns 204.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 23 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Team</td><td><code>deleteTeam</code></td><td>Schedules a team for deletion in a Sentry organization. The team is marked pending deletion and removed asynchronously; its projects are not deleted and remain in the organization. Returns 204 No Content on success.</td></tr><tr><td>Get Issue</td><td><code>getIssue</code></td><td>Get an issue by ID (GET /api/0/organizations/{org}/issues/{issueId}/).</td></tr><tr><td>Get Issue Tag Values</td><td><code>getIssueTagValues</code></td><td>List values for a tag key on an issue (GET /api/0/organizations/{org}/issues/{issueId}/tags/{key}/values/).</td></tr><tr><td>Get Latest Event</td><td><code>getLatestEvent</code></td><td>Get the latest event for an issue (GET /api/0/organizations/{org}/issues/{issueId}/events/latest/).</td></tr><tr><td>Get Organization</td><td><code>getOrganization</code></td><td>Get an organization by slug (GET /api/0/organizations/{org}/).</td></tr><tr><td>Get Project</td><td><code>getProject</code></td><td>Get a project (GET /api/0/projects/{org}/{project}/).</td></tr><tr><td>Get Project Event</td><td><code>getProjectEvent</code></td><td>Get a specific event in a project (GET /api/0/projects/{org}/{project}/events/{eventId}/).</td></tr><tr><td>Get Release</td><td><code>getRelease</code></td><td>Get a release by version (GET /api/0/organizations/{org}/releases/{version}/).</td></tr><tr><td>List Issue Comments</td><td><code>listIssueComments</code></td><td>List activity notes/comments on an issue (GET /api/0/organizations/{org}/issues/{issueId}/comments/).</td></tr><tr><td>List Issue Events</td><td><code>listIssueEvents</code></td><td>List events for an issue (GET /api/0/organizations/{org}/issues/{issueId}/events/).</td></tr><tr><td>List Issue Tags</td><td><code>listIssueTags</code></td><td>List tag keys for an issue (GET /api/0/organizations/{org}/issues/{issueId}/tags/).</td></tr><tr><td>List Issues</td><td><code>listIssues</code></td><td>List a project's issues (GET /api/0/projects/{org}/{project}/issues/).</td></tr><tr><td>List Members</td><td><code>listMembers</code></td><td>List organization members (GET /api/0/organizations/{org}/members/).</td></tr><tr><td>List Organization Projects</td><td><code>listOrganizationProjects</code></td><td>List projects in an organization (GET /api/0/organizations/{org}/projects/).</td></tr><tr><td>List Organizations</td><td><code>listOrganizations</code></td><td>List organizations the user belongs to (GET /api/0/organizations/).</td></tr><tr><td>List Project Events</td><td><code>listProjectEvents</code></td><td>List events for a project (GET /api/0/projects/{org}/{project}/events/).</td></tr><tr><td>List Project Keys</td><td><code>listProjectKeys</code></td><td>List a project's client keys (DSNs) (GET /api/0/projects/{org}/{project}/keys/).</td></tr><tr><td>List Releases</td><td><code>listReleases</code></td><td>List releases for an organization (GET /api/0/organizations/{org}/releases/).</td></tr><tr><td>List Service Hooks</td><td><code>listServiceHooks</code></td><td>List a project's service hooks (GET /api/0/projects/{org}/{project}/hooks/).</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>List teams in an organization (GET /api/0/organizations/{org}/teams/).</td></tr><tr><td>Update Issue</td><td><code>updateIssue</code></td><td>Update an issue: resolve/ignore, assign, bookmark (PUT /api/0/organizations/{org}/issues/{issueId}/).</td></tr><tr><td>Update Project</td><td><code>updateProject</code></td><td>Update a project (PUT /api/0/projects/{org}/{project}/).</td></tr><tr><td>Update Release</td><td><code>updateRelease</code></td><td>Update a release (PUT /api/0/organizations/{org}/releases/{version}/).</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Event Alert | `event.alert` | An event triggered an alert rule. |
-| Event Created | `event.created` | A new event was ingested in the project. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Event Alert</td><td><code>event.alert</code></td><td>An event triggered an alert rule.</td></tr><tr><td>Event Created</td><td><code>event.created</code></td><td>A new event was ingested in the project.</td></tr></tbody></table>

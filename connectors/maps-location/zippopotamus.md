@@ -22,7 +22,4 @@ Add Zippopotam.us from **Build → Integrations → Connectors** and connect an 
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Look Up City Postal Codes | `lookupCity` | Returns the postal codes and coordinates of a city in a state/region of a country. Docs: https://docs.zippopotam.us/docs/getting-started/ |
-| Look Up Postal Code | `lookupPostalCode` | Returns the places (name, state, latitude, longitude) for a postal code in a country. Docs: https://docs.zippopotam.us/docs/getting-started/ |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Look Up City Postal Codes</td><td><code>lookupCity</code></td><td>Returns the postal codes and coordinates of a city in a state/region of a country. Docs: https://docs.zippopotam.us/docs/getting-started/</td></tr><tr><td>Look Up Postal Code</td><td><code>lookupPostalCode</code></td><td>Returns the places (name, state, latitude, longitude) for a postal code in a country. Docs: https://docs.zippopotam.us/docs/getting-started/</td></tr></tbody></table>

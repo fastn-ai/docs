@@ -22,22 +22,12 @@ Add Stackby from **Build → Integrations → Connectors** and connect an accoun
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Column | `createColumn` | Create a new column (field) on a table. The column type is supplied in the path (e.g. shortText, number, date, link). |
-| Create Rows | `createRows` | Create one or more rows in a table. Each record supplies a field map keyed by column name. |
-| Create Stack | `createStack` | Create a new stack (database) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential. |
-| Create Table | `createTable` | Create a new table in a stack. |
-| Delete Column | `deleteColumn` | Delete a column (field) from a table. |
-| Delete Row | `deleteRow` | Delete a single row from a table by its row ID. |
-| Delete Stack | `deleteStack` | Delete a stack (database) from a workspace. |
-| Delete Table | `deleteTable` | Delete a table from a stack. |
-| List Columns | `listColumns` | List all columns (fields) defined on a table, including each column's type. |
-| List New Rows in View | `listNewRowsInView` | List rows in a specific view flagged as new. Useful for polling a view for recently added records. |
-| List Rows | `listRows` | List rows from a table in a stack. Supports optional row limit, view scoping, and latest-first ordering. |
-| List Stacks | `listStacks` | List all stacks (databases) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential, so no input is required. |
-| List Tables | `listTables` | List all tables in a stack. |
-| List Views | `listViews` | List all views defined on a table. |
-| Retrieve Row | `retrieveRow` | Retrieve a single row from a table by its row ID. |
-| Update Rows | `updateRows` | Update one or more existing rows in a table. Each record supplies its row ID and the field values to change. |
-| Upload File | `uploadFile` | Upload a file to Stackby and receive a hosted URL that can be stored in a file/attachment column. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Column</td><td><code>createColumn</code></td><td>Create a new column (field) on a table. The column type is supplied in the path (e.g. shortText, number, date, link).</td></tr><tr><td>Create Rows</td><td><code>createRows</code></td><td>Create one or more rows in a table. Each record supplies a field map keyed by column name.</td></tr><tr><td>Create Stack</td><td><code>createStack</code></td><td>Create a new stack (database) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential.</td></tr><tr><td>Create Table</td><td><code>createTable</code></td><td>Create a new table in a stack.</td></tr><tr><td>Delete Column</td><td><code>deleteColumn</code></td><td>Delete a column (field) from a table.</td></tr><tr><td>Delete Row</td><td><code>deleteRow</code></td><td>Delete a single row from a table by its row ID.</td></tr><tr><td>Delete Stack</td><td><code>deleteStack</code></td><td>Delete a stack (database) from a workspace.</td></tr><tr><td>Delete Table</td><td><code>deleteTable</code></td><td>Delete a table from a stack.</td></tr><tr><td>List Columns</td><td><code>listColumns</code></td><td>List all columns (fields) defined on a table, including each column's type.</td></tr><tr><td>List New Rows in View</td><td><code>listNewRowsInView</code></td><td>List rows in a specific view flagged as new. Useful for polling a view for recently added records.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 7 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Rows</td><td><code>listRows</code></td><td>List rows from a table in a stack. Supports optional row limit, view scoping, and latest-first ordering.</td></tr><tr><td>List Stacks</td><td><code>listStacks</code></td><td>List all stacks (databases) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential, so no input is required.</td></tr><tr><td>List Tables</td><td><code>listTables</code></td><td>List all tables in a stack.</td></tr><tr><td>List Views</td><td><code>listViews</code></td><td>List all views defined on a table.</td></tr><tr><td>Retrieve Row</td><td><code>retrieveRow</code></td><td>Retrieve a single row from a table by its row ID.</td></tr><tr><td>Update Rows</td><td><code>updateRows</code></td><td>Update one or more existing rows in a table. Each record supplies its row ID and the field values to change.</td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td>Upload a file to Stackby and receive a hosted URL that can be stored in a file/attachment column.</td></tr></tbody></table>
+
+</details>

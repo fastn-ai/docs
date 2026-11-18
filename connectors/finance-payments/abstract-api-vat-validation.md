@@ -22,8 +22,4 @@ Add AbstractAPI VAT Validation from **Build → Integrations → Connectors** an
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Calculate VAT | `calculateVat` | Calculates a VAT-compliant price for an amount in a given country, optionally applying a reduced-rate goods category or splitting VAT out of an amount that already includes it. |
-| List VAT Categories | `listVatCategories` | Lists the current VAT rates for a country, including the standard rate and every reduced-rate goods category with its description. |
-| Validate VAT Number | `validateVatNumber` | Checks whether a VAT number is valid and, if it is, returns the registered company name and address and the country it belongs to. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Calculate VAT</td><td><code>calculateVat</code></td><td>Calculates a VAT-compliant price for an amount in a given country, optionally applying a reduced-rate goods category or splitting VAT out of an amount that already includes it.</td></tr><tr><td>List VAT Categories</td><td><code>listVatCategories</code></td><td>Lists the current VAT rates for a country, including the standard rate and every reduced-rate goods category with its description.</td></tr><tr><td>Validate VAT Number</td><td><code>validateVatNumber</code></td><td>Checks whether a VAT number is valid and, if it is, returns the registered company name and address and the country it belongs to.</td></tr></tbody></table>

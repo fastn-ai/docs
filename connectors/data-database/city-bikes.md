@@ -22,7 +22,4 @@ Add CityBikes from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Bike Share Network | `getNetwork` | Get one bike sharing network with live station availability (free bikes, empty slots) and free-floating vehicles (GET /v2/networks/{network_id}). Unknown ids return 404 'Not Found'. Large networks can return several hundred KB - use fields to limit it. Docs: https://api.citybik.es/v2/ |
-| List Bike Share Networks | `listNetworks` | List every bike sharing network CityBikes tracks (about 800 systems worldwide) with id, name, operator and location (GET /v2/networks). Use fields to trim the response. Docs: https://api.citybik.es/v2/ |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Bike Share Network</td><td><code>getNetwork</code></td><td>Get one bike sharing network with live station availability (free bikes, empty slots) and free-floating vehicles (GET /v2/networks/{network_id}). Unknown ids return 404 'Not Found'. Large networks can return several hundred KB - use fields to limit it. Docs: https://api.citybik.es/v2/</td></tr><tr><td>List Bike Share Networks</td><td><code>listNetworks</code></td><td>List every bike sharing network CityBikes tracks (about 800 systems worldwide) with id, name, operator and location (GET /v2/networks). Use fields to trim the response. Docs: https://api.citybik.es/v2/</td></tr></tbody></table>

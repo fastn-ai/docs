@@ -22,8 +22,4 @@ Add Kanye Rest from **Build → Integrations → Connectors** and connect an acc
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Random Quote | `getRandomQuote` | Get one random Kanye West quote as JSON (GET /). Docs: https://github.com/ajzbc/kanye.rest#usage |
-| Get Random Quote as Text | `getRandomQuoteText` | Get one random Kanye West quote as plain text (GET /text). Docs: https://github.com/ajzbc/kanye.rest#usage |
-| List All Quotes | `listQuotes` | Get every quote in the collection as a list of strings (GET /quotes). The vendor notes this response format may change. Docs: https://github.com/ajzbc/kanye.rest#usage |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Random Quote</td><td><code>getRandomQuote</code></td><td>Get one random Kanye West quote as JSON (GET /). Docs: https://github.com/ajzbc/kanye.rest#usage</td></tr><tr><td>Get Random Quote as Text</td><td><code>getRandomQuoteText</code></td><td>Get one random Kanye West quote as plain text (GET /text). Docs: https://github.com/ajzbc/kanye.rest#usage</td></tr><tr><td>List All Quotes</td><td><code>listQuotes</code></td><td>Get every quote in the collection as a list of strings (GET /quotes). The vendor notes this response format may change. Docs: https://github.com/ajzbc/kanye.rest#usage</td></tr></tbody></table>

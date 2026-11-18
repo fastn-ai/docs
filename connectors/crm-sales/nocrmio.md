@@ -22,69 +22,12 @@ Add noCRM.io from **Build → Integrations → Connectors** and connect an accou
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Activate Webhook | `activateWebhook` | Enable a webhook. |
-| Add Prospecting List Comment | `addProspectingListComment` | Add a comment to a prospecting list. |
-| Add Prospects | `addProspects` | Add one or more prospects to a prospecting list. |
-| Add Team User | `addTeamUser` | Add a user to a team. |
-| Assign Lead | `assignLead` | Assign a lead to a user. |
-| Assign Prospecting List | `assignProspectingList` | Assign a prospecting list to a user. |
-| Bulk Delete Leads | `bulkDeleteLeads` | Delete multiple leads by id array. |
-| Convert Prospect To Lead | `convertProspectToLead` | Convert a prospect into a lead. |
-| Create Category | `createCategory` | Create a tag category. |
-| Create Client Folder | `createClient` | Create a client folder. |
-| Create Custom Field | `createField` | Create a custom field. |
-| Create Lead | `createLead` | Create a new lead. title and description are required. |
-| Create Lead Comment | `createLeadComment` | Add a comment to a lead. |
-| Create Predefined Tag | `createPredefinedTag` | Create a predefined tag within a category. |
-| Create Prospecting List | `createProspectingList` | Create a prospecting list. |
-| Create Team | `createTeam` | Create a team. |
-| Create User | `createUser` | Create a new user in the account. |
-| Create Webhook | `createWebhook` | Create a webhook subscription for one or more events. |
-| Delete Client Folder | `deleteClient` | Delete a client folder. |
-| Delete Lead | `deleteLead` | Delete a single lead by id. |
-| Delete Lead Attachment | `deleteLeadAttachment` | Delete an attachment from a lead. |
-| Delete Lead Comment | `deleteLeadComment` | Delete a comment from a lead. |
-| Delete Prospect | `deleteProspect` | Delete a prospect from a prospecting list. |
-| Delete Team | `deleteTeam` | Delete a team. |
-| Disable User | `disableUser` | Disable a user account. |
-| Disable Webhook | `disableWebhook` | Disable a webhook. |
-| Duplicate Lead | `duplicateLead` | Duplicate an existing lead. |
-| Get Client Folder | `getClient` | Retrieve a client folder by id. |
-| Get Lead | `getLead` | Retrieve a lead by id. |
-| Get Lead Attachment | `getLeadAttachment` | Retrieve a single lead attachment's details. |
-| Get Lead Business Card | `getLeadBusinessCard` | Retrieve the business card (contact) info of a lead. |
-| Get Prospecting List | `getProspectingList` | Retrieve a prospecting list (with prospects). |
-| Get Step | `getStep` | Retrieve a single pipeline step by id or name. |
-| Get Team | `getTeam` | Retrieve a team by id. |
-| Get User | `getUser` | Retrieve a user by id. |
-| Get Webhook Event | `getWebhookEvent` | Retrieve details of a webhook event type. |
-| List Activities | `listActivities` | List activity types. |
-| List Called Prospects | `listCalledProspects` | List prospects that have been called. |
-| List Categories | `listCategories` | List tag categories, optionally including their tags. |
-| List Client Folders | `listClients` | List client folders. |
-| List Custom Fields | `listFields` | List custom fields (lead or client). |
-| List Lead Action Histories | `listLeadActionHistories` | List the action history of a lead. |
-| List Lead Attachments | `listLeadAttachments` | List attachments on a lead. |
-| List Lead Comments | `listLeadComments` | List comments on a lead. |
-| List Lead Duplicates | `listLeadDuplicates` | List potential duplicate leads for a lead. |
-| List Leads | `listLeads` | List leads with optional filters (status, step, user, tags, dates, pagination). |
-| List Pipelines | `listPipelines` | List all pipelines. |
-| List Predefined Tags | `listPredefinedTags` | List all predefined tags. |
-| List Prospecting Lists | `listProspectingLists` | List prospecting lists. |
-| List Steps | `listSteps` | List all pipeline steps. |
-| List Teams | `listTeams` | List all teams. |
-| List Unassigned Leads | `listUnassignedLeads` | List leads not assigned to any user. |
-| List Users | `listUsers` | List account users. |
-| List Webhook Events | `listWebhookEvents` | List available webhook event types. |
-| List Webhooks | `listWebhooks` | List configured webhooks. |
-| Ping | `ping` | Verify API authentication. Returns account/user info for the API key. |
-| Remove Team User | `removeTeamUser` | Remove a user from a team. |
-| Send User Activation | `sendUserActivation` | Send (or resend) the activation email to a user so they can set up their account. |
-| Update Client Folder | `updateClient` | Update a client folder. |
-| Update Lead | `updateLead` | Update a lead. Send only the fields to change (partial update). |
-| Update Lead Comment | `updateLeadComment` | Update a comment on a lead. |
-| Update Prospect | `updateProspect` | Update a prospect in a prospecting list. |
-| Update Prospect Fields | `updateProspectFields` | Update the custom fields of a prospect. |
-| Update Team | `updateTeam` | Update a team. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Activate Webhook</td><td><code>activateWebhook</code></td><td>Enable a webhook.</td></tr><tr><td>Add Prospecting List Comment</td><td><code>addProspectingListComment</code></td><td>Add a comment to a prospecting list.</td></tr><tr><td>Add Prospects</td><td><code>addProspects</code></td><td>Add one or more prospects to a prospecting list.</td></tr><tr><td>Add Team User</td><td><code>addTeamUser</code></td><td>Add a user to a team.</td></tr><tr><td>Assign Lead</td><td><code>assignLead</code></td><td>Assign a lead to a user.</td></tr><tr><td>Assign Prospecting List</td><td><code>assignProspectingList</code></td><td>Assign a prospecting list to a user.</td></tr><tr><td>Bulk Delete Leads</td><td><code>bulkDeleteLeads</code></td><td>Delete multiple leads by id array.</td></tr><tr><td>Convert Prospect To Lead</td><td><code>convertProspectToLead</code></td><td>Convert a prospect into a lead.</td></tr><tr><td>Create Category</td><td><code>createCategory</code></td><td>Create a tag category.</td></tr><tr><td>Create Client Folder</td><td><code>createClient</code></td><td>Create a client folder.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 54 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Custom Field</td><td><code>createField</code></td><td>Create a custom field.</td></tr><tr><td>Create Lead</td><td><code>createLead</code></td><td>Create a new lead. title and description are required.</td></tr><tr><td>Create Lead Comment</td><td><code>createLeadComment</code></td><td>Add a comment to a lead.</td></tr><tr><td>Create Predefined Tag</td><td><code>createPredefinedTag</code></td><td>Create a predefined tag within a category.</td></tr><tr><td>Create Prospecting List</td><td><code>createProspectingList</code></td><td>Create a prospecting list.</td></tr><tr><td>Create Team</td><td><code>createTeam</code></td><td>Create a team.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Create a new user in the account.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Create a webhook subscription for one or more events.</td></tr><tr><td>Delete Client Folder</td><td><code>deleteClient</code></td><td>Delete a client folder.</td></tr><tr><td>Delete Lead</td><td><code>deleteLead</code></td><td>Delete a single lead by id.</td></tr><tr><td>Delete Lead Attachment</td><td><code>deleteLeadAttachment</code></td><td>Delete an attachment from a lead.</td></tr><tr><td>Delete Lead Comment</td><td><code>deleteLeadComment</code></td><td>Delete a comment from a lead.</td></tr><tr><td>Delete Prospect</td><td><code>deleteProspect</code></td><td>Delete a prospect from a prospecting list.</td></tr><tr><td>Delete Team</td><td><code>deleteTeam</code></td><td>Delete a team.</td></tr><tr><td>Disable User</td><td><code>disableUser</code></td><td>Disable a user account.</td></tr><tr><td>Disable Webhook</td><td><code>disableWebhook</code></td><td>Disable a webhook.</td></tr><tr><td>Duplicate Lead</td><td><code>duplicateLead</code></td><td>Duplicate an existing lead.</td></tr><tr><td>Get Client Folder</td><td><code>getClient</code></td><td>Retrieve a client folder by id.</td></tr><tr><td>Get Lead</td><td><code>getLead</code></td><td>Retrieve a lead by id.</td></tr><tr><td>Get Lead Attachment</td><td><code>getLeadAttachment</code></td><td>Retrieve a single lead attachment's details.</td></tr><tr><td>Get Lead Business Card</td><td><code>getLeadBusinessCard</code></td><td>Retrieve the business card (contact) info of a lead.</td></tr><tr><td>Get Prospecting List</td><td><code>getProspectingList</code></td><td>Retrieve a prospecting list (with prospects).</td></tr><tr><td>Get Step</td><td><code>getStep</code></td><td>Retrieve a single pipeline step by id or name.</td></tr><tr><td>Get Team</td><td><code>getTeam</code></td><td>Retrieve a team by id.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Retrieve a user by id.</td></tr><tr><td>Get Webhook Event</td><td><code>getWebhookEvent</code></td><td>Retrieve details of a webhook event type.</td></tr><tr><td>List Activities</td><td><code>listActivities</code></td><td>List activity types.</td></tr><tr><td>List Called Prospects</td><td><code>listCalledProspects</code></td><td>List prospects that have been called.</td></tr><tr><td>List Categories</td><td><code>listCategories</code></td><td>List tag categories, optionally including their tags.</td></tr><tr><td>List Client Folders</td><td><code>listClients</code></td><td>List client folders.</td></tr><tr><td>List Custom Fields</td><td><code>listFields</code></td><td>List custom fields (lead or client).</td></tr><tr><td>List Lead Action Histories</td><td><code>listLeadActionHistories</code></td><td>List the action history of a lead.</td></tr><tr><td>List Lead Attachments</td><td><code>listLeadAttachments</code></td><td>List attachments on a lead.</td></tr><tr><td>List Lead Comments</td><td><code>listLeadComments</code></td><td>List comments on a lead.</td></tr><tr><td>List Lead Duplicates</td><td><code>listLeadDuplicates</code></td><td>List potential duplicate leads for a lead.</td></tr><tr><td>List Leads</td><td><code>listLeads</code></td><td>List leads with optional filters (status, step, user, tags, dates, pagination).</td></tr><tr><td>List Pipelines</td><td><code>listPipelines</code></td><td>List all pipelines.</td></tr><tr><td>List Predefined Tags</td><td><code>listPredefinedTags</code></td><td>List all predefined tags.</td></tr><tr><td>List Prospecting Lists</td><td><code>listProspectingLists</code></td><td>List prospecting lists.</td></tr><tr><td>List Steps</td><td><code>listSteps</code></td><td>List all pipeline steps.</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>List all teams.</td></tr><tr><td>List Unassigned Leads</td><td><code>listUnassignedLeads</code></td><td>List leads not assigned to any user.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List account users.</td></tr><tr><td>List Webhook Events</td><td><code>listWebhookEvents</code></td><td>List available webhook event types.</td></tr><tr><td>List Webhooks</td><td><code>listWebhooks</code></td><td>List configured webhooks.</td></tr><tr><td>Ping</td><td><code>ping</code></td><td>Verify API authentication. Returns account/user info for the API key.</td></tr><tr><td>Remove Team User</td><td><code>removeTeamUser</code></td><td>Remove a user from a team.</td></tr><tr><td>Send User Activation</td><td><code>sendUserActivation</code></td><td>Send (or resend) the activation email to a user so they can set up their account.</td></tr><tr><td>Update Client Folder</td><td><code>updateClient</code></td><td>Update a client folder.</td></tr><tr><td>Update Lead</td><td><code>updateLead</code></td><td>Update a lead. Send only the fields to change (partial update).</td></tr><tr><td>Update Lead Comment</td><td><code>updateLeadComment</code></td><td>Update a comment on a lead.</td></tr><tr><td>Update Prospect</td><td><code>updateProspect</code></td><td>Update a prospect in a prospecting list.</td></tr><tr><td>Update Prospect Fields</td><td><code>updateProspectFields</code></td><td>Update the custom fields of a prospect.</td></tr><tr><td>Update Team</td><td><code>updateTeam</code></td><td>Update a team.</td></tr></tbody></table>
+
+</details>

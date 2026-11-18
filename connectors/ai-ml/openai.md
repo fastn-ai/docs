@@ -22,71 +22,26 @@ Add OpenAI from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Cancel Batch | `cancelBatch` | Cancels an in-progress batch. POST /batches/{batch_id}/cancel. |
-| Cancel Fine-tuning Job | `cancelFineTuningJob` | Immediately cancel a fine-tune job. POST /fine_tuning/jobs/{fine_tuning_job_id}/cancel. |
-| Cancel Vector Store File Batch | `cancelVectorStoreFileBatch` | Cancel a vector store file batch (files in progress will be cancelled). POST /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel. |
-| Create Batch | `createBatch` | Creates and executes a batch from an uploaded file of requests. POST /batches. |
-| Create Chat Completion | `createChatCompletion` | Create a model response for the given chat conversation. POST /chat/completions. |
-| Create Embeddings | `createEmbeddings` | Creates an embedding vector representing the input text. POST /embeddings. |
-| Create Fine-tuning Job | `createFineTuningJob` | Creates a fine-tuning job which begins the process of training a model from a dataset. POST /fine_tuning/jobs. |
-| Create Image | `createImage` | Creates an image given a text prompt. POST /images/generations. |
-| Create Image Edit | `createImageEdit` | Creates an edited or extended image given source image(s) and a prompt. POST /images/edits (multipart/form-data). |
-| Create Moderation | `createModeration` | Classifies if text and/or image inputs are potentially harmful. POST /moderations. |
-| Create Response | `createResponse` | Create a model response using the Responses API. POST /responses. |
-| Create Speech | `createSpeech` | Generates audio from the input text (text-to-speech). POST /audio/speech. Returns binary audio. |
-| Create Transcription | `createTranscription` | Transcribes audio into the input language. POST /audio/transcriptions (multipart/form-data). |
-| Create Translation | `createTranslation` | Translates audio into English. POST /audio/translations (multipart/form-data). |
-| Create Vector Store | `createVectorStore` | Create a vector store. POST /vector_stores. |
-| Create Vector Store File | `createVectorStoreFile` | Attach a file to a vector store. POST /vector_stores/{vector_store_id}/files. |
-| Create Vector Store File Batch | `createVectorStoreFileBatch` | Create a vector store file batch to attach multiple files at once. POST /vector_stores/{vector_store_id}/file_batches. |
-| Delete File | `deleteFile` | Delete a file. DELETE /files/{file_id}. |
-| Delete Model | `deleteModel` | Delete a fine-tuned model (requires Owner role). DELETE /models/{model}. |
-| Delete Response | `deleteResponse` | Delete a model response with the given ID. DELETE /responses/{response_id}. |
-| Delete Vector Store | `deleteVectorStore` | Delete a vector store. DELETE /vector_stores/{vector_store_id}. |
-| Delete Vector Store File | `deleteVectorStoreFile` | Delete a vector store file (removes association; does not delete the file). DELETE /vector_stores/{vector_store_id}/files/{file_id}. |
-| Get Batch | `getBatch` | Retrieves a batch. GET /batches/{batch_id}. |
-| Get File | `getFile` | Returns information about a specific file. GET /files/{file_id}. |
-| Get File Content | `getFileContent` | Returns the contents of the specified file. GET /files/{file_id}/content. |
-| Get Fine-tuning Job | `getFineTuningJob` | Get info about a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}. |
-| Get Model | `getModel` | Retrieves a model instance by ID. GET /models/{model}. |
-| Get Response | `getResponse` | Retrieve a model response with the given ID. GET /responses/{response_id}. |
-| Get Vector Store | `getVectorStore` | Retrieves a vector store. GET /vector_stores/{vector_store_id}. |
-| Get Vector Store File | `getVectorStoreFile` | Retrieves a vector store file. GET /vector_stores/{vector_store_id}/files/{file_id}. |
-| Get Vector Store File Batch | `getVectorStoreFileBatch` | Retrieves a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}. |
-| List Batches | `listBatches` | List your organization's batches. GET /batches. |
-| List Files | `listFiles` | Returns a list of files. GET /files. |
-| List Fine-tuning Checkpoints | `listFineTuningCheckpoints` | List checkpoints for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints. |
-| List Fine-tuning Events | `listFineTuningEvents` | Get status updates for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/events. |
-| List Fine-tuning Jobs | `listFineTuningJobs` | List your organization's fine-tuning jobs. GET /fine_tuning/jobs. |
-| List Models | `listModels` | Lists the currently available models. GET /models. |
-| List Response Input Items | `listResponseInputItems` | Returns a list of input items for a given response. GET /responses/{response_id}/input_items. |
-| List Vector Store File Batch Files | `listVectorStoreFileBatchFiles` | Returns a list of files in a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files. |
-| List Vector Store Files | `listVectorStoreFiles` | Returns a list of vector store files. GET /vector_stores/{vector_store_id}/files. |
-| List Vector Stores | `listVectorStores` | Returns a list of vector stores. GET /vector_stores. |
-| Search Vector Store | `searchVectorStore` | Search a vector store for relevant chunks based on a query. POST /vector_stores/{vector_store_id}/search. |
-| Update Vector Store | `updateVectorStore` | Modifies a vector store. POST /vector_stores/{vector_store_id}. |
-| Upload File | `uploadFile` | Upload a file that can be used across endpoints (assistants, fine-tuning, batch, vision). POST /files (multipart/form-data). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Cancel Batch</td><td><code>cancelBatch</code></td><td>Cancels an in-progress batch. POST /batches/{batch_id}/cancel.</td></tr><tr><td>Cancel Fine-tuning Job</td><td><code>cancelFineTuningJob</code></td><td>Immediately cancel a fine-tune job. POST /fine_tuning/jobs/{fine_tuning_job_id}/cancel.</td></tr><tr><td>Cancel Vector Store File Batch</td><td><code>cancelVectorStoreFileBatch</code></td><td>Cancel a vector store file batch (files in progress will be cancelled). POST /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel.</td></tr><tr><td>Create Batch</td><td><code>createBatch</code></td><td>Creates and executes a batch from an uploaded file of requests. POST /batches.</td></tr><tr><td>Create Chat Completion</td><td><code>createChatCompletion</code></td><td>Create a model response for the given chat conversation. POST /chat/completions.</td></tr><tr><td>Create Embeddings</td><td><code>createEmbeddings</code></td><td>Creates an embedding vector representing the input text. POST /embeddings.</td></tr><tr><td>Create Fine-tuning Job</td><td><code>createFineTuningJob</code></td><td>Creates a fine-tuning job which begins the process of training a model from a dataset. POST /fine_tuning/jobs.</td></tr><tr><td>Create Image</td><td><code>createImage</code></td><td>Creates an image given a text prompt. POST /images/generations.</td></tr><tr><td>Create Image Edit</td><td><code>createImageEdit</code></td><td>Creates an edited or extended image given source image(s) and a prompt. POST /images/edits (multipart/form-data).</td></tr><tr><td>Create Moderation</td><td><code>createModeration</code></td><td>Classifies if text and/or image inputs are potentially harmful. POST /moderations.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 34 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Response</td><td><code>createResponse</code></td><td>Create a model response using the Responses API. POST /responses.</td></tr><tr><td>Create Speech</td><td><code>createSpeech</code></td><td>Generates audio from the input text (text-to-speech). POST /audio/speech. Returns binary audio.</td></tr><tr><td>Create Transcription</td><td><code>createTranscription</code></td><td>Transcribes audio into the input language. POST /audio/transcriptions (multipart/form-data).</td></tr><tr><td>Create Translation</td><td><code>createTranslation</code></td><td>Translates audio into English. POST /audio/translations (multipart/form-data).</td></tr><tr><td>Create Vector Store</td><td><code>createVectorStore</code></td><td>Create a vector store. POST /vector_stores.</td></tr><tr><td>Create Vector Store File</td><td><code>createVectorStoreFile</code></td><td>Attach a file to a vector store. POST /vector_stores/{vector_store_id}/files.</td></tr><tr><td>Create Vector Store File Batch</td><td><code>createVectorStoreFileBatch</code></td><td>Create a vector store file batch to attach multiple files at once. POST /vector_stores/{vector_store_id}/file_batches.</td></tr><tr><td>Delete File</td><td><code>deleteFile</code></td><td>Delete a file. DELETE /files/{file_id}.</td></tr><tr><td>Delete Model</td><td><code>deleteModel</code></td><td>Delete a fine-tuned model (requires Owner role). DELETE /models/{model}.</td></tr><tr><td>Delete Response</td><td><code>deleteResponse</code></td><td>Delete a model response with the given ID. DELETE /responses/{response_id}.</td></tr><tr><td>Delete Vector Store</td><td><code>deleteVectorStore</code></td><td>Delete a vector store. DELETE /vector_stores/{vector_store_id}.</td></tr><tr><td>Delete Vector Store File</td><td><code>deleteVectorStoreFile</code></td><td>Delete a vector store file (removes association; does not delete the file). DELETE /vector_stores/{vector_store_id}/files/{file_id}.</td></tr><tr><td>Get Batch</td><td><code>getBatch</code></td><td>Retrieves a batch. GET /batches/{batch_id}.</td></tr><tr><td>Get File</td><td><code>getFile</code></td><td>Returns information about a specific file. GET /files/{file_id}.</td></tr><tr><td>Get File Content</td><td><code>getFileContent</code></td><td>Returns the contents of the specified file. GET /files/{file_id}/content.</td></tr><tr><td>Get Fine-tuning Job</td><td><code>getFineTuningJob</code></td><td>Get info about a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}.</td></tr><tr><td>Get Model</td><td><code>getModel</code></td><td>Retrieves a model instance by ID. GET /models/{model}.</td></tr><tr><td>Get Response</td><td><code>getResponse</code></td><td>Retrieve a model response with the given ID. GET /responses/{response_id}.</td></tr><tr><td>Get Vector Store</td><td><code>getVectorStore</code></td><td>Retrieves a vector store. GET /vector_stores/{vector_store_id}.</td></tr><tr><td>Get Vector Store File</td><td><code>getVectorStoreFile</code></td><td>Retrieves a vector store file. GET /vector_stores/{vector_store_id}/files/{file_id}.</td></tr><tr><td>Get Vector Store File Batch</td><td><code>getVectorStoreFileBatch</code></td><td>Retrieves a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}.</td></tr><tr><td>List Batches</td><td><code>listBatches</code></td><td>List your organization's batches. GET /batches.</td></tr><tr><td>List Files</td><td><code>listFiles</code></td><td>Returns a list of files. GET /files.</td></tr><tr><td>List Fine-tuning Checkpoints</td><td><code>listFineTuningCheckpoints</code></td><td>List checkpoints for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints.</td></tr><tr><td>List Fine-tuning Events</td><td><code>listFineTuningEvents</code></td><td>Get status updates for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/events.</td></tr><tr><td>List Fine-tuning Jobs</td><td><code>listFineTuningJobs</code></td><td>List your organization's fine-tuning jobs. GET /fine_tuning/jobs.</td></tr><tr><td>List Models</td><td><code>listModels</code></td><td>Lists the currently available models. GET /models.</td></tr><tr><td>List Response Input Items</td><td><code>listResponseInputItems</code></td><td>Returns a list of input items for a given response. GET /responses/{response_id}/input_items.</td></tr><tr><td>List Vector Store File Batch Files</td><td><code>listVectorStoreFileBatchFiles</code></td><td>Returns a list of files in a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files.</td></tr><tr><td>List Vector Store Files</td><td><code>listVectorStoreFiles</code></td><td>Returns a list of vector store files. GET /vector_stores/{vector_store_id}/files.</td></tr><tr><td>List Vector Stores</td><td><code>listVectorStores</code></td><td>Returns a list of vector stores. GET /vector_stores.</td></tr><tr><td>Search Vector Store</td><td><code>searchVectorStore</code></td><td>Search a vector store for relevant chunks based on a query. POST /vector_stores/{vector_store_id}/search.</td></tr><tr><td>Update Vector Store</td><td><code>updateVectorStore</code></td><td>Modifies a vector store. POST /vector_stores/{vector_store_id}.</td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td>Upload a file that can be used across endpoints (assistants, fine-tuning, batch, vision). POST /files (multipart/form-data).</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Batch Cancelled | `batch.cancelled` | A batch job was cancelled. |
-| Batch Completed | `batch.completed` | A batch job completed. |
-| Batch Expired | `batch.expired` | A batch job expired before completing. |
-| Batch Failed | `batch.failed` | A batch job failed. |
-| Eval Run Canceled | `eval.run.canceled` | An evaluation run was canceled. |
-| Eval Run Failed | `eval.run.failed` | An evaluation run failed. |
-| Eval Run Succeeded | `eval.run.succeeded` | An evaluation run completed successfully. |
-| Fine-tuning Job Cancelled | `fine_tuning.job.cancelled` | A fine-tuning job was cancelled. |
-| Fine-tuning Job Failed | `fine_tuning.job.failed` | A fine-tuning job failed. |
-| Fine-tuning Job Succeeded | `fine_tuning.job.succeeded` | A fine-tuning job completed successfully. |
-| Realtime Call Incoming | `realtime.call.incoming` | An incoming Realtime SIP call was received. |
-| Response Cancelled | `response.cancelled` | A background Response request was cancelled. |
-| Response Completed | `response.completed` | A background Response request completed successfully. |
-| Response Failed | `response.failed` | A background Response request failed. |
-| Response Incomplete | `response.incomplete` | A background Response request finished incomplete. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Batch Cancelled</td><td><code>batch.cancelled</code></td><td>A batch job was cancelled.</td></tr><tr><td>Batch Completed</td><td><code>batch.completed</code></td><td>A batch job completed.</td></tr><tr><td>Batch Expired</td><td><code>batch.expired</code></td><td>A batch job expired before completing.</td></tr><tr><td>Batch Failed</td><td><code>batch.failed</code></td><td>A batch job failed.</td></tr><tr><td>Eval Run Canceled</td><td><code>eval.run.canceled</code></td><td>An evaluation run was canceled.</td></tr><tr><td>Eval Run Failed</td><td><code>eval.run.failed</code></td><td>An evaluation run failed.</td></tr><tr><td>Eval Run Succeeded</td><td><code>eval.run.succeeded</code></td><td>An evaluation run completed successfully.</td></tr><tr><td>Fine-tuning Job Cancelled</td><td><code>fine_tuning.job.cancelled</code></td><td>A fine-tuning job was cancelled.</td></tr><tr><td>Fine-tuning Job Failed</td><td><code>fine_tuning.job.failed</code></td><td>A fine-tuning job failed.</td></tr><tr><td>Fine-tuning Job Succeeded</td><td><code>fine_tuning.job.succeeded</code></td><td>A fine-tuning job completed successfully.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 5 more events</summary>
+
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Realtime Call Incoming</td><td><code>realtime.call.incoming</code></td><td>An incoming Realtime SIP call was received.</td></tr><tr><td>Response Cancelled</td><td><code>response.cancelled</code></td><td>A background Response request was cancelled.</td></tr><tr><td>Response Completed</td><td><code>response.completed</code></td><td>A background Response request completed successfully.</td></tr><tr><td>Response Failed</td><td><code>response.failed</code></td><td>A background Response request failed.</td></tr><tr><td>Response Incomplete</td><td><code>response.incomplete</code></td><td>A background Response request finished incomplete.</td></tr></tbody></table>
+
+</details>

@@ -22,8 +22,4 @@ Add Webflow from **Build → Integrations → Connectors** and connect an accoun
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Authorized User | `getAuthorizedUser` | Retrieves the Webflow user who authorized the current access token. Useful for identifying the connected account. Requires the authorized_user:read scope. |
-| Introspect Token | `introspectToken` | Retrieves information about the current authorization, including the granted scopes, rate limit, and the sites, workspaces, and users the token is authorized to access, along with details of the Webflow application. |
-| List Sites | `listSites` | Lists all Webflow sites the authorized token has access to. Returns an empty list when the token is not authorized to any site. Requires the sites:read scope. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Authorized User</td><td><code>getAuthorizedUser</code></td><td>Retrieves the Webflow user who authorized the current access token. Useful for identifying the connected account. Requires the authorized_user:read scope.</td></tr><tr><td>Introspect Token</td><td><code>introspectToken</code></td><td>Retrieves information about the current authorization, including the granted scopes, rate limit, and the sites, workspaces, and users the token is authorized to access, along with details of the Webflow application.</td></tr><tr><td>List Sites</td><td><code>listSites</code></td><td>Lists all Webflow sites the authorized token has access to. Returns an empty list when the token is not authorized to any site. Requires the sites:read scope.</td></tr></tbody></table>

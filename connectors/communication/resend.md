@@ -22,112 +22,26 @@ Add Resend from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add Contact To Segment | `addContactToSegment` | Add a contact to a segment. |
-| Cancel Email | `cancelEmail` | Cancel the scheduled send of an email. |
-| Create API Key | `createApiKey` | Create a new Resend API key. |
-| Create Audience | `createAudience` | Create a new audience (a list of contacts). |
-| Create Automation | `createAutomation` | Create an automation workflow. Provide steps and connections as JSON arrays. |
-| Create Broadcast | `createBroadcast` | Create a broadcast (an email sent to a segment). |
-| Create Contact | `createContact` | Create a new contact. |
-| Create Contact Property | `createContactProperty` | Create a new custom contact property. |
-| Create Domain | `createDomain` | Create (register) a new sending domain. |
-| Create Event | `createEvent` | Create a custom event definition. |
-| Create Segment | `createSegment` | Create a new segment. |
-| Create Template | `createTemplate` | Create a new email template. |
-| Create Topic | `createTopic` | Create a new topic for managing contact subscriptions. |
-| Create Webhook | `createWebhook` | Register a new webhook endpoint subscribed to a set of event types. |
-| Delete API Key | `deleteApiKey` | Remove an existing API key. |
-| Delete Audience | `deleteAudience` | Remove an existing audience. |
-| Delete Automation | `deleteAutomation` | Delete an automation. |
-| Delete Broadcast | `deleteBroadcast` | Remove a broadcast that is in draft status. |
-| Delete Contact | `deleteContact` | Remove an existing contact by ID or email. |
-| Delete Contact Property | `deleteContactProperty` | Remove an existing contact property. |
-| Delete Domain | `deleteDomain` | Remove an existing domain. |
-| Delete Event | `deleteEvent` | Delete a custom event definition. |
-| Delete Segment | `deleteSegment` | Remove an existing segment. |
-| Delete Template | `deleteTemplate` | Remove an existing template. |
-| Delete Topic | `deleteTopic` | Remove an existing topic. |
-| Delete Webhook | `deleteWebhook` | Remove an existing webhook. |
-| Duplicate Template | `duplicateTemplate` | Duplicate an existing template. |
-| Get Contact Topics | `getContactTopics` | Retrieve the topic subscriptions for a contact. |
-| Get Email Attachment | `getEmailAttachment` | Retrieve a single attachment for a sent email. |
-| Get Received Email | `getReceivedEmail` | Retrieve a single received (inbound) email by ID. |
-| Get Received Email Attachment | `getReceivedEmailAttachment` | Retrieve a single attachment for a received email. |
-| List API Keys | `listApiKeys` | Retrieve a list of all API keys. |
-| List Audiences | `listAudiences` | Retrieve a list of all audiences. |
-| List Automation Runs | `listAutomationRuns` | Retrieve a list of runs for an automation. |
-| List Automations | `listAutomations` | Retrieve a list of automations. |
-| List Broadcasts | `listBroadcasts` | Retrieve a list of broadcasts. |
-| List Contact Properties | `listContactProperties` | Retrieve a list of contact properties. |
-| List Contact Segments | `listContactSegments` | Retrieve the list of segments a contact belongs to. |
-| List Contacts | `listContacts` | Retrieve a paginated list of contacts, optionally filtered by segment. |
-| List Domains | `listDomains` | Retrieve a list of all domains in the account. |
-| List Email Attachments | `listEmailAttachments` | Retrieve the list of attachments for a sent email. |
-| List Emails | `listEmails` | Retrieve a paginated list of sent emails. |
-| List Events | `listEvents` | Retrieve a list of custom event definitions. |
-| List Logs | `listLogs` | Retrieve a list of API request logs. |
-| List Received Email Attachments | `listReceivedEmailAttachments` | Retrieve the list of attachments for a received email. |
-| List Received Emails | `listReceivedEmails` | Retrieve a paginated list of received (inbound) emails. |
-| List Segments | `listSegments` | Retrieve a list of segments. |
-| List Templates | `listTemplates` | Retrieve a list of templates. |
-| List Topics | `listTopics` | Retrieve a list of topics. |
-| List Webhooks | `listWebhooks` | Retrieve a list of registered webhooks. |
-| Publish Template | `publishTemplate` | Publish a template so it can be used to send emails. |
-| Remove Contact From Segment | `removeContactFromSegment` | Remove a contact from a segment. |
-| Retrieve Audience | `getAudience` | Retrieve a single audience by its ID. |
-| Retrieve Automation | `getAutomation` | Retrieve a single automation by its ID. |
-| Retrieve Automation Run | `getAutomationRun` | Retrieve a single automation run by its ID. |
-| Retrieve Broadcast | `getBroadcast` | Retrieve a single broadcast by its ID. |
-| Retrieve Contact | `getContact` | Retrieve a single contact by its ID or email address. |
-| Retrieve Contact Property | `getContactProperty` | Retrieve a single contact property by its ID. |
-| Retrieve Domain | `getDomain` | Retrieve a single domain by its ID. |
-| Retrieve Email | `getEmail` | Retrieve a single sent email by its ID. |
-| Retrieve Event | `getEvent` | Retrieve a single custom event by its identifier. |
-| Retrieve Log | `getLog` | Retrieve a single API request log by its ID. |
-| Retrieve Segment | `getSegment` | Retrieve a single segment by its ID. |
-| Retrieve Template | `getTemplate` | Retrieve a single template by its ID. |
-| Retrieve Topic | `getTopic` | Retrieve a single topic by its ID. |
-| Retrieve Webhook | `getWebhook` | Retrieve a single webhook by its ID. |
-| Send Batch Emails | `sendBatchEmails` | Send up to 100 emails in a single request. Pass a JSON-encoded array of email objects as the emails input. |
-| Send Broadcast | `sendBroadcast` | Send or schedule a broadcast. |
-| Send Email | `sendEmail` | Send a transactional email through Resend. Requires from, to and subject; provide html or text (or a published template). |
-| Send Event | `sendEvent` | Send (emit) a custom event for a contact or email address. |
-| Stop Automation | `stopAutomation` | Stop a running automation, setting its status to disabled. |
-| Update Automation | `updateAutomation` | Update an automation. At least one of name, status, or steps+connections must be provided. |
-| Update Broadcast | `updateBroadcast` | Update an existing broadcast (draft). |
-| Update Contact | `updateContact` | Update a single contact by ID or email. Provide the fields you wish to change. |
-| Update Contact Property | `updateContactProperty` | Update an existing contact property's fallback value. |
-| Update Contact Topics | `updateContactTopics` | Update the topic subscriptions for a contact. Pass topics as a JSON array of {id, subscription} objects. |
-| Update Domain | `updateDomain` | Update settings of an existing domain such as tracking and TLS. |
-| Update Email | `updateEmail` | Update a scheduled email, e.g. reschedule its send time. |
-| Update Event | `updateEvent` | Update a custom event's payload schema. |
-| Update Template | `updateTemplate` | Update an existing template. |
-| Update Topic | `updateTopic` | Update an existing topic. |
-| Update Webhook | `updateWebhook` | Update an existing webhook's endpoint, events or status. |
-| Verify Domain | `verifyDomain` | Trigger verification of an existing domain's DNS records. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Contact To Segment</td><td><code>addContactToSegment</code></td><td>Add a contact to a segment.</td></tr><tr><td>Cancel Email</td><td><code>cancelEmail</code></td><td>Cancel the scheduled send of an email.</td></tr><tr><td>Create API Key</td><td><code>createApiKey</code></td><td>Create a new Resend API key.</td></tr><tr><td>Create Audience</td><td><code>createAudience</code></td><td>Create a new audience (a list of contacts).</td></tr><tr><td>Create Automation</td><td><code>createAutomation</code></td><td>Create an automation workflow. Provide steps and connections as JSON arrays.</td></tr><tr><td>Create Broadcast</td><td><code>createBroadcast</code></td><td>Create a broadcast (an email sent to a segment).</td></tr><tr><td>Create Contact</td><td><code>createContact</code></td><td>Create a new contact.</td></tr><tr><td>Create Contact Property</td><td><code>createContactProperty</code></td><td>Create a new custom contact property.</td></tr><tr><td>Create Domain</td><td><code>createDomain</code></td><td>Create (register) a new sending domain.</td></tr><tr><td>Create Event</td><td><code>createEvent</code></td><td>Create a custom event definition.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 73 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Segment</td><td><code>createSegment</code></td><td>Create a new segment.</td></tr><tr><td>Create Template</td><td><code>createTemplate</code></td><td>Create a new email template.</td></tr><tr><td>Create Topic</td><td><code>createTopic</code></td><td>Create a new topic for managing contact subscriptions.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Register a new webhook endpoint subscribed to a set of event types.</td></tr><tr><td>Delete API Key</td><td><code>deleteApiKey</code></td><td>Remove an existing API key.</td></tr><tr><td>Delete Audience</td><td><code>deleteAudience</code></td><td>Remove an existing audience.</td></tr><tr><td>Delete Automation</td><td><code>deleteAutomation</code></td><td>Delete an automation.</td></tr><tr><td>Delete Broadcast</td><td><code>deleteBroadcast</code></td><td>Remove a broadcast that is in draft status.</td></tr><tr><td>Delete Contact</td><td><code>deleteContact</code></td><td>Remove an existing contact by ID or email.</td></tr><tr><td>Delete Contact Property</td><td><code>deleteContactProperty</code></td><td>Remove an existing contact property.</td></tr><tr><td>Delete Domain</td><td><code>deleteDomain</code></td><td>Remove an existing domain.</td></tr><tr><td>Delete Event</td><td><code>deleteEvent</code></td><td>Delete a custom event definition.</td></tr><tr><td>Delete Segment</td><td><code>deleteSegment</code></td><td>Remove an existing segment.</td></tr><tr><td>Delete Template</td><td><code>deleteTemplate</code></td><td>Remove an existing template.</td></tr><tr><td>Delete Topic</td><td><code>deleteTopic</code></td><td>Remove an existing topic.</td></tr><tr><td>Delete Webhook</td><td><code>deleteWebhook</code></td><td>Remove an existing webhook.</td></tr><tr><td>Duplicate Template</td><td><code>duplicateTemplate</code></td><td>Duplicate an existing template.</td></tr><tr><td>Get Contact Topics</td><td><code>getContactTopics</code></td><td>Retrieve the topic subscriptions for a contact.</td></tr><tr><td>Get Email Attachment</td><td><code>getEmailAttachment</code></td><td>Retrieve a single attachment for a sent email.</td></tr><tr><td>Get Received Email</td><td><code>getReceivedEmail</code></td><td>Retrieve a single received (inbound) email by ID.</td></tr><tr><td>Get Received Email Attachment</td><td><code>getReceivedEmailAttachment</code></td><td>Retrieve a single attachment for a received email.</td></tr><tr><td>List API Keys</td><td><code>listApiKeys</code></td><td>Retrieve a list of all API keys.</td></tr><tr><td>List Audiences</td><td><code>listAudiences</code></td><td>Retrieve a list of all audiences.</td></tr><tr><td>List Automation Runs</td><td><code>listAutomationRuns</code></td><td>Retrieve a list of runs for an automation.</td></tr><tr><td>List Automations</td><td><code>listAutomations</code></td><td>Retrieve a list of automations.</td></tr><tr><td>List Broadcasts</td><td><code>listBroadcasts</code></td><td>Retrieve a list of broadcasts.</td></tr><tr><td>List Contact Properties</td><td><code>listContactProperties</code></td><td>Retrieve a list of contact properties.</td></tr><tr><td>List Contact Segments</td><td><code>listContactSegments</code></td><td>Retrieve the list of segments a contact belongs to.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>Retrieve a paginated list of contacts, optionally filtered by segment.</td></tr><tr><td>List Domains</td><td><code>listDomains</code></td><td>Retrieve a list of all domains in the account.</td></tr><tr><td>List Email Attachments</td><td><code>listEmailAttachments</code></td><td>Retrieve the list of attachments for a sent email.</td></tr><tr><td>List Emails</td><td><code>listEmails</code></td><td>Retrieve a paginated list of sent emails.</td></tr><tr><td>List Events</td><td><code>listEvents</code></td><td>Retrieve a list of custom event definitions.</td></tr><tr><td>List Logs</td><td><code>listLogs</code></td><td>Retrieve a list of API request logs.</td></tr><tr><td>List Received Email Attachments</td><td><code>listReceivedEmailAttachments</code></td><td>Retrieve the list of attachments for a received email.</td></tr><tr><td>List Received Emails</td><td><code>listReceivedEmails</code></td><td>Retrieve a paginated list of received (inbound) emails.</td></tr><tr><td>List Segments</td><td><code>listSegments</code></td><td>Retrieve a list of segments.</td></tr><tr><td>List Templates</td><td><code>listTemplates</code></td><td>Retrieve a list of templates.</td></tr><tr><td>List Topics</td><td><code>listTopics</code></td><td>Retrieve a list of topics.</td></tr><tr><td>List Webhooks</td><td><code>listWebhooks</code></td><td>Retrieve a list of registered webhooks.</td></tr><tr><td>Publish Template</td><td><code>publishTemplate</code></td><td>Publish a template so it can be used to send emails.</td></tr><tr><td>Remove Contact From Segment</td><td><code>removeContactFromSegment</code></td><td>Remove a contact from a segment.</td></tr><tr><td>Retrieve Audience</td><td><code>getAudience</code></td><td>Retrieve a single audience by its ID.</td></tr><tr><td>Retrieve Automation</td><td><code>getAutomation</code></td><td>Retrieve a single automation by its ID.</td></tr><tr><td>Retrieve Automation Run</td><td><code>getAutomationRun</code></td><td>Retrieve a single automation run by its ID.</td></tr><tr><td>Retrieve Broadcast</td><td><code>getBroadcast</code></td><td>Retrieve a single broadcast by its ID.</td></tr><tr><td>Retrieve Contact</td><td><code>getContact</code></td><td>Retrieve a single contact by its ID or email address.</td></tr><tr><td>Retrieve Contact Property</td><td><code>getContactProperty</code></td><td>Retrieve a single contact property by its ID.</td></tr><tr><td>Retrieve Domain</td><td><code>getDomain</code></td><td>Retrieve a single domain by its ID.</td></tr><tr><td>Retrieve Email</td><td><code>getEmail</code></td><td>Retrieve a single sent email by its ID.</td></tr><tr><td>Retrieve Event</td><td><code>getEvent</code></td><td>Retrieve a single custom event by its identifier.</td></tr><tr><td>Retrieve Log</td><td><code>getLog</code></td><td>Retrieve a single API request log by its ID.</td></tr><tr><td>Retrieve Segment</td><td><code>getSegment</code></td><td>Retrieve a single segment by its ID.</td></tr><tr><td>Retrieve Template</td><td><code>getTemplate</code></td><td>Retrieve a single template by its ID.</td></tr><tr><td>Retrieve Topic</td><td><code>getTopic</code></td><td>Retrieve a single topic by its ID.</td></tr><tr><td>Retrieve Webhook</td><td><code>getWebhook</code></td><td>Retrieve a single webhook by its ID.</td></tr><tr><td>Send Batch Emails</td><td><code>sendBatchEmails</code></td><td>Send up to 100 emails in a single request. Pass a JSON-encoded array of email objects as the emails input.</td></tr><tr><td>Send Broadcast</td><td><code>sendBroadcast</code></td><td>Send or schedule a broadcast.</td></tr><tr><td>Send Email</td><td><code>sendEmail</code></td><td>Send a transactional email through Resend. Requires from, to and subject; provide html or text (or a published template).</td></tr><tr><td>Send Event</td><td><code>sendEvent</code></td><td>Send (emit) a custom event for a contact or email address.</td></tr><tr><td>Stop Automation</td><td><code>stopAutomation</code></td><td>Stop a running automation, setting its status to disabled.</td></tr><tr><td>Update Automation</td><td><code>updateAutomation</code></td><td>Update an automation. At least one of name, status, or steps+connections must be provided.</td></tr><tr><td>Update Broadcast</td><td><code>updateBroadcast</code></td><td>Update an existing broadcast (draft).</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Update a single contact by ID or email. Provide the fields you wish to change.</td></tr><tr><td>Update Contact Property</td><td><code>updateContactProperty</code></td><td>Update an existing contact property's fallback value.</td></tr><tr><td>Update Contact Topics</td><td><code>updateContactTopics</code></td><td>Update the topic subscriptions for a contact. Pass topics as a JSON array of {id, subscription} objects.</td></tr><tr><td>Update Domain</td><td><code>updateDomain</code></td><td>Update settings of an existing domain such as tracking and TLS.</td></tr><tr><td>Update Email</td><td><code>updateEmail</code></td><td>Update a scheduled email, e.g. reschedule its send time.</td></tr><tr><td>Update Event</td><td><code>updateEvent</code></td><td>Update a custom event's payload schema.</td></tr><tr><td>Update Template</td><td><code>updateTemplate</code></td><td>Update an existing template.</td></tr><tr><td>Update Topic</td><td><code>updateTopic</code></td><td>Update an existing topic.</td></tr><tr><td>Update Webhook</td><td><code>updateWebhook</code></td><td>Update an existing webhook's endpoint, events or status.</td></tr><tr><td>Verify Domain</td><td><code>verifyDomain</code></td><td>Trigger verification of an existing domain's DNS records.</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Contact Created | `contact.created` | A new contact was created. |
-| Contact Deleted | `contact.deleted` | A contact was deleted. |
-| Contact Updated | `contact.updated` | A contact was updated. |
-| Domain Created | `domain.created` | A new domain was created. |
-| Domain Deleted | `domain.deleted` | A domain was deleted. |
-| Domain Updated | `domain.updated` | A domain was updated. |
-| Email Bounced | `email.bounced` | The recipient's mail server permanently rejected the email. |
-| Email Clicked | `email.clicked` | The recipient clicked a link in the email (requires click tracking enabled). |
-| Email Complained | `email.complained` | The recipient marked the email as spam. |
-| Email Delivered | `email.delivered` | Resend successfully delivered the email to the recipient's mail server. |
-| Email Delivery Delayed | `email.delivery_delayed` | The email couldn't be delivered to the recipient's mail server because of a temporary issue. |
-| Email Failed | `email.failed` | The email could not be sent due to a failure. |
-| Email Opened | `email.opened` | The recipient opened the email (requires open tracking enabled). |
-| Email Received | `email.received` | An inbound email was received for a configured receiving domain. |
-| Email Scheduled | `email.scheduled` | The email has been scheduled to be sent at a later time. |
-| Email Sent | `email.sent` | The API request was successful and Resend will attempt to deliver the message to the recipient's mail server. |
-| Email Suppressed | `email.suppressed` | The email was suppressed because the recipient is on the suppression list. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Contact Created</td><td><code>contact.created</code></td><td>A new contact was created.</td></tr><tr><td>Contact Deleted</td><td><code>contact.deleted</code></td><td>A contact was deleted.</td></tr><tr><td>Contact Updated</td><td><code>contact.updated</code></td><td>A contact was updated.</td></tr><tr><td>Domain Created</td><td><code>domain.created</code></td><td>A new domain was created.</td></tr><tr><td>Domain Deleted</td><td><code>domain.deleted</code></td><td>A domain was deleted.</td></tr><tr><td>Domain Updated</td><td><code>domain.updated</code></td><td>A domain was updated.</td></tr><tr><td>Email Bounced</td><td><code>email.bounced</code></td><td>The recipient's mail server permanently rejected the email.</td></tr><tr><td>Email Clicked</td><td><code>email.clicked</code></td><td>The recipient clicked a link in the email (requires click tracking enabled).</td></tr><tr><td>Email Complained</td><td><code>email.complained</code></td><td>The recipient marked the email as spam.</td></tr><tr><td>Email Delivered</td><td><code>email.delivered</code></td><td>Resend successfully delivered the email to the recipient's mail server.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 7 more events</summary>
+
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Email Delivery Delayed</td><td><code>email.delivery_delayed</code></td><td>The email couldn't be delivered to the recipient's mail server because of a temporary issue.</td></tr><tr><td>Email Failed</td><td><code>email.failed</code></td><td>The email could not be sent due to a failure.</td></tr><tr><td>Email Opened</td><td><code>email.opened</code></td><td>The recipient opened the email (requires open tracking enabled).</td></tr><tr><td>Email Received</td><td><code>email.received</code></td><td>An inbound email was received for a configured receiving domain.</td></tr><tr><td>Email Scheduled</td><td><code>email.scheduled</code></td><td>The email has been scheduled to be sent at a later time.</td></tr><tr><td>Email Sent</td><td><code>email.sent</code></td><td>The API request was successful and Resend will attempt to deliver the message to the recipient's mail server.</td></tr><tr><td>Email Suppressed</td><td><code>email.suppressed</code></td><td>The email was suppressed because the recipient is on the suppression list.</td></tr></tbody></table>
+
+</details>

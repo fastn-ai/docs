@@ -22,6 +22,4 @@ Add Google Drive Activity from **Build → Integrations → Connectors** and con
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Query Drive Activity | `queryDriveActivity` | Queries the Google Drive activity record and returns a page of activities. Supply either itemName to scope the query to a single Drive item or ancestorName to scope it to a folder and all of its descendants; exactly one of the two must be provided. Results can be narrowed with a filter expression on time and action type, consolidated with a consolidation strategy, and paged with pageSize and pageToken. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Query Drive Activity</td><td><code>queryDriveActivity</code></td><td>Queries the Google Drive activity record and returns a page of activities. Supply either itemName to scope the query to a single Drive item or ancestorName to scope it to a folder and all of its descendants; exactly one of the two must be provided. Results can be narrowed with a filter expression on time and action type, consolidated with a consolidation strategy, and paged with pageSize and pageToken.</td></tr></tbody></table>

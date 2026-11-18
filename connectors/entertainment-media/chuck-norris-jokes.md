@@ -22,9 +22,4 @@ Add Chuck Norris Jokes from **Build → Integrations → Connectors** and connec
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Joke | `getJoke` | Get one joke by its id, the permalink given in each joke's url field (GET /jokes/{id}). Unknown ids return 404. Docs: https://api.chucknorris.io/ |
-| Get Random Joke | `getRandomJoke` | Get one random Chuck Norris joke, optionally from a given category (GET /jokes/random). An unknown category returns 404. Docs: https://api.chucknorris.io/ |
-| List Categories | `listCategories` | List all joke categories (GET /jokes/categories). Docs: https://api.chucknorris.io/ |
-| Search Jokes | `searchJokes` | Free-text search across all jokes (GET /jokes/search). The query must be 3 to 120 characters. Docs: https://api.chucknorris.io/ |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Joke</td><td><code>getJoke</code></td><td>Get one joke by its id, the permalink given in each joke's url field (GET /jokes/{id}). Unknown ids return 404. Docs: https://api.chucknorris.io/</td></tr><tr><td>Get Random Joke</td><td><code>getRandomJoke</code></td><td>Get one random Chuck Norris joke, optionally from a given category (GET /jokes/random). An unknown category returns 404. Docs: https://api.chucknorris.io/</td></tr><tr><td>List Categories</td><td><code>listCategories</code></td><td>List all joke categories (GET /jokes/categories). Docs: https://api.chucknorris.io/</td></tr><tr><td>Search Jokes</td><td><code>searchJokes</code></td><td>Free-text search across all jokes (GET /jokes/search). The query must be 3 to 120 characters. Docs: https://api.chucknorris.io/</td></tr></tbody></table>

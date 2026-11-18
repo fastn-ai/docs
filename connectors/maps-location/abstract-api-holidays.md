@@ -22,6 +22,4 @@ Add AbstractAPI Holidays from **Build → Integrations → Connectors** and conn
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Holidays | `getHolidays` | Returns the public, religious, and observance holidays for a country on a given date. The free plan only accepts a single exact day (country, year, month, and day all supplied together) - a year-only or month-only query returns a 402 payment_required error and requires a paid plan. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Holidays</td><td><code>getHolidays</code></td><td>Returns the public, religious, and observance holidays for a country on a given date. The free plan only accepts a single exact day (country, year, month, and day all supplied together) - a year-only or month-only query returns a 402 payment_required error and requires a paid plan.</td></tr></tbody></table>

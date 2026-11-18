@@ -22,7 +22,4 @@ Add Open-Elevation from **Build → Integrations → Connectors** and connect an
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Lookup Elevation | `lookupElevation` | Get the elevation in metres for one or more latitude/longitude points (GET /api/v1/lookup?locations=lat,lng\|lat,lng). The GET request line is limited to 1024 bytes - use Lookup Elevation (POST) for many points. Invalid input returns 400 invalid_locations. Docs: https://github.com/Jorl17/open-elevation/blob/master/docs/api.md |
-| Lookup Elevation (POST) | `lookupElevationPost` | Get the elevation in metres for a list of points sent as JSON - no size limit on the request (POST /api/v1/lookup). Docs: https://github.com/Jorl17/open-elevation/blob/master/docs/api.md |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Lookup Elevation</td><td><code>lookupElevation</code></td><td>Get the elevation in metres for one or more latitude/longitude points (GET /api/v1/lookup?locations=lat,lng|lat,lng). The GET request line is limited to 1024 bytes - use Lookup Elevation (POST) for many points. Invalid input returns 400 invalid_locations. Docs: https://github.com/Jorl17/open-elevation/blob/master/docs/api.md</td></tr><tr><td>Lookup Elevation (POST)</td><td><code>lookupElevationPost</code></td><td>Get the elevation in metres for a list of points sent as JSON - no size limit on the request (POST /api/v1/lookup). Docs: https://github.com/Jorl17/open-elevation/blob/master/docs/api.md</td></tr></tbody></table>

@@ -22,21 +22,12 @@ Add RocketReach from **Build → Integrations → Connectors** and connect an ac
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Bulk People Lookup API | `bulkLookupPeople` | Bulk People Lookup API. Bulk People Lookup by Criteria |
-| Company Lookup API | `lookupCompany` | Company Lookup API. Search Companies by Criteria |
-| Company Search API | `searchCompanies` | Company Search API. Search Companies by Criteria |
-| Email Verify API | `verifyEmail` | Email Verify API. Verify whether one email address can receive mail. Charges one email verification credit, refunded when the result is `unknown` or the email is incorrectly formatted. |
-| Look Up Person | `lookupPerson` | People Lookup API. Person Enrichment API |
-| People and Company Lookup API | `lookupPersonAndCompany` | People and Company Lookup API. Person and Company Lookup |
-| People Lookup Status API | `checkPersonLookupStatus` | People Lookup Status API. Check Person Lookup Status |
-| People Search API | `searchPeople` | People Search API. Search People by Criteria |
-| Retrieve Account | `getAccount` | RocketReach API Account. Retrieve & Manage Account Details |
-| ⭐ RocketReach Universal API Account | `getUniversalAccount` | ⭐ RocketReach Universal API Account. Retrieve & Manage Account Details |
-| ⭐ Universal Bulk People Lookup API | `bulkLookupPeopleUniversal` | ⭐ Universal Bulk People Lookup API. Bulk People Lookup by Criteria |
-| ⭐ Universal Company Lookup API | `lookupCompanyUniversal` | ⭐ Universal Company Lookup API. Search Companies by Criteria |
-| ⭐ Universal Company Search API | `searchCompaniesUniversal` | ⭐ Universal Company Search API. Search Companies by Criteria |
-| ⭐ Universal People Lookup API | `lookupPersonUniversal` | ⭐ Universal People Lookup API. Person Enrichment API |
-| ⭐ Universal People Lookup Status API | `checkPersonLookupStatusUniversal` | ⭐ Universal People Lookup Status API. Check Universal Person Lookup Status |
-| ⭐ Universal People Search API | `searchPeopleUniversal` | ⭐ Universal People Search API. Search People by Criteria |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Bulk People Lookup API</td><td><code>bulkLookupPeople</code></td><td>Bulk People Lookup API. Bulk People Lookup by Criteria</td></tr><tr><td>Company Lookup API</td><td><code>lookupCompany</code></td><td>Company Lookup API. Search Companies by Criteria</td></tr><tr><td>Company Search API</td><td><code>searchCompanies</code></td><td>Company Search API. Search Companies by Criteria</td></tr><tr><td>Email Verify API</td><td><code>verifyEmail</code></td><td>Email Verify API. Verify whether one email address can receive mail. Charges one email verification credit, refunded when the result is `unknown` or the email is incorrectly formatted.</td></tr><tr><td>Look Up Person</td><td><code>lookupPerson</code></td><td>People Lookup API. Person Enrichment API</td></tr><tr><td>People and Company Lookup API</td><td><code>lookupPersonAndCompany</code></td><td>People and Company Lookup API. Person and Company Lookup</td></tr><tr><td>People Lookup Status API</td><td><code>checkPersonLookupStatus</code></td><td>People Lookup Status API. Check Person Lookup Status</td></tr><tr><td>People Search API</td><td><code>searchPeople</code></td><td>People Search API. Search People by Criteria</td></tr><tr><td>Retrieve Account</td><td><code>getAccount</code></td><td>RocketReach API Account. Retrieve &amp; Manage Account Details</td></tr><tr><td>⭐ RocketReach Universal API Account</td><td><code>getUniversalAccount</code></td><td>⭐ RocketReach Universal API Account. Retrieve &amp; Manage Account Details</td></tr></tbody></table>
+
+<details>
+
+<summary>View 6 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>⭐ Universal Bulk People Lookup API</td><td><code>bulkLookupPeopleUniversal</code></td><td>⭐ Universal Bulk People Lookup API. Bulk People Lookup by Criteria</td></tr><tr><td>⭐ Universal Company Lookup API</td><td><code>lookupCompanyUniversal</code></td><td>⭐ Universal Company Lookup API. Search Companies by Criteria</td></tr><tr><td>⭐ Universal Company Search API</td><td><code>searchCompaniesUniversal</code></td><td>⭐ Universal Company Search API. Search Companies by Criteria</td></tr><tr><td>⭐ Universal People Lookup API</td><td><code>lookupPersonUniversal</code></td><td>⭐ Universal People Lookup API. Person Enrichment API</td></tr><tr><td>⭐ Universal People Lookup Status API</td><td><code>checkPersonLookupStatusUniversal</code></td><td>⭐ Universal People Lookup Status API. Check Universal Person Lookup Status</td></tr><tr><td>⭐ Universal People Search API</td><td><code>searchPeopleUniversal</code></td><td>⭐ Universal People Search API. Search People by Criteria</td></tr></tbody></table>
+
+</details>

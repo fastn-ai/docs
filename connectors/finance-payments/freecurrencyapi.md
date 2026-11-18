@@ -22,9 +22,4 @@ Add FreeCurrencyAPI from **Build → Integrations → Connectors** and connect a
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Account Status | `getAccountStatus` | Returns the account ID and current monthly quota usage for the connected API key. Calling this action does not count against the quota. |
-| Get Historical Exchange Rates | `getHistoricalRates` | Returns foreign-exchange rates for a single past date. Requesting a date range is a paid currencyapi.com feature and is not available on this free-tier API. |
-| Get Latest Exchange Rates | `getLatestRates` | Returns the latest foreign-exchange rates for a base currency, optionally limited to a specific list of currency codes. |
-| List Supported Currencies | `listCurrencies` | Returns metadata (symbol, name, decimal digits, and type) for the currencies supported by the API, optionally filtered to a specific list of currency codes. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Account Status</td><td><code>getAccountStatus</code></td><td>Returns the account ID and current monthly quota usage for the connected API key. Calling this action does not count against the quota.</td></tr><tr><td>Get Historical Exchange Rates</td><td><code>getHistoricalRates</code></td><td>Returns foreign-exchange rates for a single past date. Requesting a date range is a paid currencyapi.com feature and is not available on this free-tier API.</td></tr><tr><td>Get Latest Exchange Rates</td><td><code>getLatestRates</code></td><td>Returns the latest foreign-exchange rates for a base currency, optionally limited to a specific list of currency codes.</td></tr><tr><td>List Supported Currencies</td><td><code>listCurrencies</code></td><td>Returns metadata (symbol, name, decimal digits, and type) for the currencies supported by the API, optionally filtered to a specific list of currency codes.</td></tr></tbody></table>

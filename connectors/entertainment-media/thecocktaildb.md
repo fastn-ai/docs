@@ -22,19 +22,12 @@ Add TheCocktailDB from **Build → Integrations → Connectors** and connect an 
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Filter Cocktails by Alcoholic | `filterByAlcoholic` | List cocktails by alcohol content (GET /filter.php?a=). Docs: https://www.thecocktaildb.com/api.php |
-| Filter Cocktails by Category | `filterByCategory` | List cocktails in a category (GET /filter.php?c=). Docs: https://www.thecocktaildb.com/api.php |
-| Filter Cocktails by Glass | `filterByGlass` | List cocktails served in a glass type (GET /filter.php?g=). Docs: https://www.thecocktaildb.com/api.php |
-| Filter Cocktails by Ingredient | `filterByIngredient` | List cocktails that use an ingredient (GET /filter.php?i=). Use underscores for spaces, e.g. Dry_Vermouth. Multi-ingredient filtering needs a premium key. Docs: https://www.thecocktaildb.com/api.php |
-| Get Cocktail | `getCocktail` | Get full details of one cocktail by id (GET /lookup.php?i=). Docs: https://www.thecocktaildb.com/api.php |
-| Get Ingredient | `getIngredient` | Get one ingredient by id (GET /lookup.php?iid=). Docs: https://www.thecocktaildb.com/api.php |
-| Get Random Cocktail | `getRandomCocktail` | Get one random cocktail with full details (GET /random.php). Docs: https://www.thecocktaildb.com/api.php |
-| List Alcoholic Filters | `listAlcoholicFilters` | List the alcoholic filter values (GET /list.php?a=list). Docs: https://www.thecocktaildb.com/api.php |
-| List Categories | `listCategoryNames` | List all cocktail category names (GET /list.php?c=list). Docs: https://www.thecocktaildb.com/api.php |
-| List Cocktails by First Letter | `listCocktailsByFirstLetter` | List all cocktails whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.thecocktaildb.com/api.php |
-| List Glasses | `listGlasses` | List all glass types (GET /list.php?g=list). Docs: https://www.thecocktaildb.com/api.php |
-| List Ingredients | `listIngredients` | List all ingredient names (GET /list.php?i=list). Docs: https://www.thecocktaildb.com/api.php |
-| Search Cocktails by Name | `searchCocktailsByName` | Search cocktails by name and get full details (GET /search.php?s=). Docs: https://www.thecocktaildb.com/api.php |
-| Search Ingredients by Name | `searchIngredientsByName` | Search ingredients by name and get description, type and alcohol details (GET /search.php?i=). Docs: https://www.thecocktaildb.com/api.php |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Filter Cocktails by Alcoholic</td><td><code>filterByAlcoholic</code></td><td>List cocktails by alcohol content (GET /filter.php?a=). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Filter Cocktails by Category</td><td><code>filterByCategory</code></td><td>List cocktails in a category (GET /filter.php?c=). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Filter Cocktails by Glass</td><td><code>filterByGlass</code></td><td>List cocktails served in a glass type (GET /filter.php?g=). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Filter Cocktails by Ingredient</td><td><code>filterByIngredient</code></td><td>List cocktails that use an ingredient (GET /filter.php?i=). Use underscores for spaces, e.g. Dry_Vermouth. Multi-ingredient filtering needs a premium key. Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Get Cocktail</td><td><code>getCocktail</code></td><td>Get full details of one cocktail by id (GET /lookup.php?i=). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Get Ingredient</td><td><code>getIngredient</code></td><td>Get one ingredient by id (GET /lookup.php?iid=). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Get Random Cocktail</td><td><code>getRandomCocktail</code></td><td>Get one random cocktail with full details (GET /random.php). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>List Alcoholic Filters</td><td><code>listAlcoholicFilters</code></td><td>List the alcoholic filter values (GET /list.php?a=list). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>List Categories</td><td><code>listCategoryNames</code></td><td>List all cocktail category names (GET /list.php?c=list). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>List Cocktails by First Letter</td><td><code>listCocktailsByFirstLetter</code></td><td>List all cocktails whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.thecocktaildb.com/api.php</td></tr></tbody></table>
+
+<details>
+
+<summary>View 4 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Glasses</td><td><code>listGlasses</code></td><td>List all glass types (GET /list.php?g=list). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>List Ingredients</td><td><code>listIngredients</code></td><td>List all ingredient names (GET /list.php?i=list). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Search Cocktails by Name</td><td><code>searchCocktailsByName</code></td><td>Search cocktails by name and get full details (GET /search.php?s=). Docs: https://www.thecocktaildb.com/api.php</td></tr><tr><td>Search Ingredients by Name</td><td><code>searchIngredientsByName</code></td><td>Search ingredients by name and get description, type and alcohol details (GET /search.php?i=). Docs: https://www.thecocktaildb.com/api.php</td></tr></tbody></table>
+
+</details>

@@ -22,48 +22,12 @@ Add GitBook from **Build → Integrations → Connectors** and connect an accoun
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Change Request | `createChangeRequest` | Create a new change request in a space. |
-| Create Collection | `createCollection` | Create a new collection in an organization. |
-| Create Space | `createSpace` | Create a new space in an organization. Provide title (optional) and optional parent collection ID. |
-| Delete Collection | `deleteCollection` | Delete a collection by its ID. |
-| Delete Space | `deleteSpace` | Delete a space (kept for 7-day retention; can be restored). |
-| Duplicate Space | `duplicateSpace` | Create a copy of an existing space. |
-| Get Change Request | `getChangeRequest` | Get a change request by its ID. |
-| Get Change Request Content | `getChangeRequestContent` | Get the latest content revision of a change request. |
-| Get Collection | `getCollection` | Get a collection by its ID. |
-| Get Current User | `getCurrentUser` | Get details about the user associated with the API token. FREE read — ideal for credential validation. |
-| Get Organization | `getOrganization` | Get an organization by its ID. |
-| Get Organization Team | `getOrganizationTeam` | Get a team in an organization by its ID. |
-| Get Page By ID | `getPageById` | Get a page in the current revision of a space by its page ID. |
-| Get Page By Path | `getPageByPath` | Get a page in the current revision of a space by its path. |
-| Get Revision | `getRevision` | Get a specific revision of a space by its revision ID. |
-| Get Revision Page By ID | `getRevisionPageById` | Get a page in a specific revision of a space by its page ID. |
-| Get Space | `getSpace` | Get a space by its ID. |
-| Get Space Content | `getSpaceContent` | Get the current (primary) revision content of a space, including its page tree. |
-| Get User By ID | `getUserById` | Fetch public information about a user by their user ID. |
-| Import Content | `importContent` | Import content into a space from a Git repository. |
-| List Change Request Comments | `listChangeRequestComments` | List the comments on a change request. |
-| List Change Request Pages | `listChangeRequestPages` | List all pages in a change request's content. |
-| List Change Requests | `listChangeRequests` | List the change requests of a space. |
-| List Collection Spaces | `listCollectionSpaces` | List the spaces contained in a collection. |
-| List Organization Collections | `listOrganizationCollections` | List the collections in an organization. |
-| List Organization Members | `listOrganizationMembers` | List the members of an organization. |
-| List Organization Spaces | `listOrganizationSpaces` | List the spaces in an organization. |
-| List Organization Teams | `listOrganizationTeams` | List the teams in an organization. |
-| List Organizations | `listOrganizations` | List the organizations the authenticated user is a member of. FREE read — credit-safe for validation. |
-| List Pages | `listPages` | List all pages in the current revision of a space. |
-| List Revision Files | `listRevisionFiles` | List the files in a specific revision of a space. |
-| List Revision Pages | `listRevisionPages` | List the pages in a specific revision of a space. |
-| List Space Files | `listSpaceFiles` | List all files (images, assets) in the current revision of a space. |
-| List Team Members | `listTeamMembers` | List members of an organization team. |
-| Merge Change Request | `mergeChangeRequest` | Merge a change request into the primary revision of its space. |
-| Move Space | `moveSpace` | Move a space to a new parent collection and/or position. |
-| Post Change Request Comment | `postChangeRequestComment` | Post a comment on a change request. |
-| Restore Space | `restoreSpace` | Restore a deleted space within the 7-day retention window. |
-| Search Organization Content | `searchOrganizationContent` | Search content across an organization's spaces. |
-| Search Space Content | `searchSpaceContent` | Full-text search content within a single space. |
-| Update Change Request | `updateChangeRequest` | Update a change request's subject and/or status. |
-| Update Collection | `updateCollection` | Update a collection's title, description, or default permission level. |
-| Update Space | `updateSpace` | Update a space's properties (title, edit mode, language, emoji). Send only the fields you want to change. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Change Request</td><td><code>createChangeRequest</code></td><td>Create a new change request in a space.</td></tr><tr><td>Create Collection</td><td><code>createCollection</code></td><td>Create a new collection in an organization.</td></tr><tr><td>Create Space</td><td><code>createSpace</code></td><td>Create a new space in an organization. Provide title (optional) and optional parent collection ID.</td></tr><tr><td>Delete Collection</td><td><code>deleteCollection</code></td><td>Delete a collection by its ID.</td></tr><tr><td>Delete Space</td><td><code>deleteSpace</code></td><td>Delete a space (kept for 7-day retention; can be restored).</td></tr><tr><td>Duplicate Space</td><td><code>duplicateSpace</code></td><td>Create a copy of an existing space.</td></tr><tr><td>Get Change Request</td><td><code>getChangeRequest</code></td><td>Get a change request by its ID.</td></tr><tr><td>Get Change Request Content</td><td><code>getChangeRequestContent</code></td><td>Get the latest content revision of a change request.</td></tr><tr><td>Get Collection</td><td><code>getCollection</code></td><td>Get a collection by its ID.</td></tr><tr><td>Get Current User</td><td><code>getCurrentUser</code></td><td>Get details about the user associated with the API token. FREE read — ideal for credential validation.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 33 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Organization</td><td><code>getOrganization</code></td><td>Get an organization by its ID.</td></tr><tr><td>Get Organization Team</td><td><code>getOrganizationTeam</code></td><td>Get a team in an organization by its ID.</td></tr><tr><td>Get Page By ID</td><td><code>getPageById</code></td><td>Get a page in the current revision of a space by its page ID.</td></tr><tr><td>Get Page By Path</td><td><code>getPageByPath</code></td><td>Get a page in the current revision of a space by its path.</td></tr><tr><td>Get Revision</td><td><code>getRevision</code></td><td>Get a specific revision of a space by its revision ID.</td></tr><tr><td>Get Revision Page By ID</td><td><code>getRevisionPageById</code></td><td>Get a page in a specific revision of a space by its page ID.</td></tr><tr><td>Get Space</td><td><code>getSpace</code></td><td>Get a space by its ID.</td></tr><tr><td>Get Space Content</td><td><code>getSpaceContent</code></td><td>Get the current (primary) revision content of a space, including its page tree.</td></tr><tr><td>Get User By ID</td><td><code>getUserById</code></td><td>Fetch public information about a user by their user ID.</td></tr><tr><td>Import Content</td><td><code>importContent</code></td><td>Import content into a space from a Git repository.</td></tr><tr><td>List Change Request Comments</td><td><code>listChangeRequestComments</code></td><td>List the comments on a change request.</td></tr><tr><td>List Change Request Pages</td><td><code>listChangeRequestPages</code></td><td>List all pages in a change request's content.</td></tr><tr><td>List Change Requests</td><td><code>listChangeRequests</code></td><td>List the change requests of a space.</td></tr><tr><td>List Collection Spaces</td><td><code>listCollectionSpaces</code></td><td>List the spaces contained in a collection.</td></tr><tr><td>List Organization Collections</td><td><code>listOrganizationCollections</code></td><td>List the collections in an organization.</td></tr><tr><td>List Organization Members</td><td><code>listOrganizationMembers</code></td><td>List the members of an organization.</td></tr><tr><td>List Organization Spaces</td><td><code>listOrganizationSpaces</code></td><td>List the spaces in an organization.</td></tr><tr><td>List Organization Teams</td><td><code>listOrganizationTeams</code></td><td>List the teams in an organization.</td></tr><tr><td>List Organizations</td><td><code>listOrganizations</code></td><td>List the organizations the authenticated user is a member of. FREE read — credit-safe for validation.</td></tr><tr><td>List Pages</td><td><code>listPages</code></td><td>List all pages in the current revision of a space.</td></tr><tr><td>List Revision Files</td><td><code>listRevisionFiles</code></td><td>List the files in a specific revision of a space.</td></tr><tr><td>List Revision Pages</td><td><code>listRevisionPages</code></td><td>List the pages in a specific revision of a space.</td></tr><tr><td>List Space Files</td><td><code>listSpaceFiles</code></td><td>List all files (images, assets) in the current revision of a space.</td></tr><tr><td>List Team Members</td><td><code>listTeamMembers</code></td><td>List members of an organization team.</td></tr><tr><td>Merge Change Request</td><td><code>mergeChangeRequest</code></td><td>Merge a change request into the primary revision of its space.</td></tr><tr><td>Move Space</td><td><code>moveSpace</code></td><td>Move a space to a new parent collection and/or position.</td></tr><tr><td>Post Change Request Comment</td><td><code>postChangeRequestComment</code></td><td>Post a comment on a change request.</td></tr><tr><td>Restore Space</td><td><code>restoreSpace</code></td><td>Restore a deleted space within the 7-day retention window.</td></tr><tr><td>Search Organization Content</td><td><code>searchOrganizationContent</code></td><td>Search content across an organization's spaces.</td></tr><tr><td>Search Space Content</td><td><code>searchSpaceContent</code></td><td>Full-text search content within a single space.</td></tr><tr><td>Update Change Request</td><td><code>updateChangeRequest</code></td><td>Update a change request's subject and/or status.</td></tr><tr><td>Update Collection</td><td><code>updateCollection</code></td><td>Update a collection's title, description, or default permission level.</td></tr><tr><td>Update Space</td><td><code>updateSpace</code></td><td>Update a space's properties (title, edit mode, language, emoji). Send only the fields you want to change.</td></tr></tbody></table>
+
+</details>

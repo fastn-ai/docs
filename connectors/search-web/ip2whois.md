@@ -22,7 +22,4 @@ Add IP2WHOIS from **Build → Integrations → Connectors** and connect an accou
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Domain WHOIS | `getDomainWhois` | Retrieves the WHOIS record for a domain name, including domain ID and status, creation, update and expiration dates, domain age, WHOIS server, registrar details, registrant, admin, technical and billing contacts, and name servers. |
-| List Hosted Domains | `listHostedDomains` | Lists the domain names hosted on an IPv4 or IPv6 address, with the total number of hosted domains and page-based pagination. Increment the page parameter to walk through all pages. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Domain WHOIS</td><td><code>getDomainWhois</code></td><td>Retrieves the WHOIS record for a domain name, including domain ID and status, creation, update and expiration dates, domain age, WHOIS server, registrar details, registrant, admin, technical and billing contacts, and name servers.</td></tr><tr><td>List Hosted Domains</td><td><code>listHostedDomains</code></td><td>Lists the domain names hosted on an IPv4 or IPv6 address, with the total number of hosted domains and page-based pagination. Increment the page parameter to walk through all pages.</td></tr></tbody></table>

@@ -22,70 +22,12 @@ Add Snowflake from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Abort All Queries on Warehouse | `abortAllQueriesOnWarehouse` | Abort all running and queued queries on a warehouse. |
-| Cancel Statement | `cancelStatement` | Cancel the execution of a running SQL statement by its handle. |
-| Create Database | `createDatabase` | Create a new database. Use createMode query param (errorIfExists / orReplace / ifNotExists). |
-| Create or Alter Database | `createOrAlterDatabase` | Create a database or alter it to match the specified definition (PUT idempotent). |
-| Create or Alter Schema | `createOrAlterSchema` | Create or alter a schema to match the definition (PUT idempotent). |
-| Create or Alter Table | `createOrAlterTable` | Create or alter a table to match the definition (PUT idempotent). |
-| Create or Alter Task | `createOrAlterTask` | Create or alter a task to match the definition (PUT idempotent). |
-| Create or Alter User | `createOrAlterUser` | Create or alter a user to match the definition (PUT idempotent). |
-| Create or Alter Warehouse | `createOrAlterWarehouse` | Create or alter a warehouse to match the definition (PUT idempotent). |
-| Create Pipe | `createPipe` | Create a pipe with a COPY INTO statement for continuous data loading. |
-| Create Role | `createRole` | Create an account-level role. |
-| Create Schema | `createSchema` | Create a schema in a database. createMode query param controls existing-object behavior. |
-| Create Table | `createTable` | Create a table with columns in a schema. columns is an array of {name,datatype,...} objects. |
-| Create Task | `createTask` | Create a task with a SQL definition. Provide warehouse (or use serverless), optional schedule. |
-| Create User | `createUser` | Create a user. Only name is required. |
-| Create Warehouse | `createWarehouse` | Create a warehouse. Only name is required; size/type and other settings default per the account. |
-| Delete Database | `deleteDatabase` | Drop a database by name. Set ifExists=true to avoid error if it does not exist. |
-| Delete Pipe | `deletePipe` | Drop a pipe. ifExists avoids error when absent. |
-| Delete Role | `deleteRole` | Drop an account-level role. ifExists avoids error when absent. |
-| Delete Schema | `deleteSchema` | Drop a schema. ifExists avoids error when absent. |
-| Delete Table | `deleteTable` | Drop a table. ifExists avoids error when absent. |
-| Delete Task | `deleteTask` | Drop a task. ifExists avoids error when absent. |
-| Delete User | `deleteUser` | Drop a user. ifExists avoids error when absent. |
-| Delete Warehouse | `deleteWarehouse` | Drop a warehouse. ifExists avoids error when absent. |
-| Disable Warehouse | `disableWarehouse` | Disable a warehouse so it cannot be resumed/used. |
-| Enable Warehouse | `enableWarehouse` | Enable a disabled warehouse. |
-| Execute Task | `executeTask` | Manually trigger a single run of a task (and optionally its graph). |
-| Get Database | `getDatabase` | Fetch a single database by name. |
-| Get Pipe | `getPipe` | Fetch a single pipe by name. |
-| Get Schema | `getSchema` | Fetch a single schema by name within a database. |
-| Get Statement Status | `getStatementStatus` | Check the status of (and retrieve results/partition for) a previously submitted SQL statement by its handle. |
-| Get Table | `getTable` | Fetch a single table by name. |
-| Get Task | `getTask` | Fetch a single task by name. |
-| Get Task Complete Graphs | `getTaskCompleteGraphs` | Get completed task-graph runs for a task within the retention window. |
-| Get Task Current Graphs | `getTaskCurrentGraphs` | Get currently scheduled/running task-graph runs for a task. |
-| Get Task Dependents | `getTaskDependents` | Fetch the child (dependent) tasks of a task in its DAG. |
-| Get User | `getUser` | Fetch a single user by name. |
-| Get Warehouse | `getWarehouse` | Fetch a single warehouse by name. |
-| Grant Future Privileges to Role | `grantFuturePrivilegesToRole` | Grant future privileges to a role on objects of a type within a container. |
-| Grant Privileges to Role | `grantPrivilegesToRole` | Grant privileges (or roles) to a role on a securable. |
-| Grant Role to User | `grantRoleToUser` | Grant a role to a user. |
-| List Databases | `listDatabases` | List databases in the account. Supports like/startsWith/showLimit/fromName filters. |
-| List Future Grants | `listFutureGrants` | List future grants associated with a role. |
-| List Grants Of Role | `listGrantsOfRole` | List the users and roles that this role has been granted to. |
-| List Grants On Role | `listGrantsOnRole` | List grants on this role object (privileges held on the role securable). |
-| List Pipes | `listPipes` | List pipes in a schema. |
-| List Role Grants | `listRoleGrants` | List privileges/roles granted to a role. |
-| List Roles | `listRoles` | List account-level roles. |
-| List Schemas | `listSchemas` | List schemas in a database. |
-| List Tables | `listTables` | List tables in a schema. |
-| List Tasks | `listTasks` | List tasks in a schema. |
-| List User Grants | `listUserGrants` | List roles granted to a user. |
-| List Users | `listUsers` | List users in the account. |
-| List Warehouses | `listWarehouses` | List warehouses in the account. |
-| Refresh Pipe | `refreshPipe` | Refresh a pipe to copy a set of staged data files to the target table. |
-| Rename Warehouse | `renameWarehouse` | Rename a warehouse. |
-| Resume Task | `resumeTask` | Resume a suspended task so it runs on its schedule. |
-| Resume Warehouse | `resumeWarehouse` | Resume (start) a suspended warehouse. |
-| Revoke Future Grants from Role | `revokeFutureGrants` | Revoke future privileges from a role. |
-| Revoke Grants from Role | `revokeRoleGrants` | Revoke privileges (or roles) from a role. |
-| Revoke Grants from User | `revokeUserGrants` | Revoke a role grant from a user. |
-| Submit SQL Statement | `submitStatement` | Submit one or more SQL statements (query, DML, DDL) for execution via the Snowflake SQL API. Returns a ResultSet with status, metadata, and rows. Set async=true to run asynchronously and poll with getStatementStatus. |
-| Suspend Task | `suspendTask` | Suspend a task so it stops running on its schedule. |
-| Suspend Warehouse | `suspendWarehouse` | Suspend (stop) a running warehouse. |
-| Use Warehouse | `useWarehouse` | Set the warehouse as the current warehouse for the session. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Abort All Queries on Warehouse</td><td><code>abortAllQueriesOnWarehouse</code></td><td>Abort all running and queued queries on a warehouse.</td></tr><tr><td>Cancel Statement</td><td><code>cancelStatement</code></td><td>Cancel the execution of a running SQL statement by its handle.</td></tr><tr><td>Create Database</td><td><code>createDatabase</code></td><td>Create a new database. Use createMode query param (errorIfExists / orReplace / ifNotExists).</td></tr><tr><td>Create or Alter Database</td><td><code>createOrAlterDatabase</code></td><td>Create a database or alter it to match the specified definition (PUT idempotent).</td></tr><tr><td>Create or Alter Schema</td><td><code>createOrAlterSchema</code></td><td>Create or alter a schema to match the definition (PUT idempotent).</td></tr><tr><td>Create or Alter Table</td><td><code>createOrAlterTable</code></td><td>Create or alter a table to match the definition (PUT idempotent).</td></tr><tr><td>Create or Alter Task</td><td><code>createOrAlterTask</code></td><td>Create or alter a task to match the definition (PUT idempotent).</td></tr><tr><td>Create or Alter User</td><td><code>createOrAlterUser</code></td><td>Create or alter a user to match the definition (PUT idempotent).</td></tr><tr><td>Create or Alter Warehouse</td><td><code>createOrAlterWarehouse</code></td><td>Create or alter a warehouse to match the definition (PUT idempotent).</td></tr><tr><td>Create Pipe</td><td><code>createPipe</code></td><td>Create a pipe with a COPY INTO statement for continuous data loading.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 55 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Role</td><td><code>createRole</code></td><td>Create an account-level role.</td></tr><tr><td>Create Schema</td><td><code>createSchema</code></td><td>Create a schema in a database. createMode query param controls existing-object behavior.</td></tr><tr><td>Create Table</td><td><code>createTable</code></td><td>Create a table with columns in a schema. columns is an array of {name,datatype,...} objects.</td></tr><tr><td>Create Task</td><td><code>createTask</code></td><td>Create a task with a SQL definition. Provide warehouse (or use serverless), optional schedule.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Create a user. Only name is required.</td></tr><tr><td>Create Warehouse</td><td><code>createWarehouse</code></td><td>Create a warehouse. Only name is required; size/type and other settings default per the account.</td></tr><tr><td>Delete Database</td><td><code>deleteDatabase</code></td><td>Drop a database by name. Set ifExists=true to avoid error if it does not exist.</td></tr><tr><td>Delete Pipe</td><td><code>deletePipe</code></td><td>Drop a pipe. ifExists avoids error when absent.</td></tr><tr><td>Delete Role</td><td><code>deleteRole</code></td><td>Drop an account-level role. ifExists avoids error when absent.</td></tr><tr><td>Delete Schema</td><td><code>deleteSchema</code></td><td>Drop a schema. ifExists avoids error when absent.</td></tr><tr><td>Delete Table</td><td><code>deleteTable</code></td><td>Drop a table. ifExists avoids error when absent.</td></tr><tr><td>Delete Task</td><td><code>deleteTask</code></td><td>Drop a task. ifExists avoids error when absent.</td></tr><tr><td>Delete User</td><td><code>deleteUser</code></td><td>Drop a user. ifExists avoids error when absent.</td></tr><tr><td>Delete Warehouse</td><td><code>deleteWarehouse</code></td><td>Drop a warehouse. ifExists avoids error when absent.</td></tr><tr><td>Disable Warehouse</td><td><code>disableWarehouse</code></td><td>Disable a warehouse so it cannot be resumed/used.</td></tr><tr><td>Enable Warehouse</td><td><code>enableWarehouse</code></td><td>Enable a disabled warehouse.</td></tr><tr><td>Execute Task</td><td><code>executeTask</code></td><td>Manually trigger a single run of a task (and optionally its graph).</td></tr><tr><td>Get Database</td><td><code>getDatabase</code></td><td>Fetch a single database by name.</td></tr><tr><td>Get Pipe</td><td><code>getPipe</code></td><td>Fetch a single pipe by name.</td></tr><tr><td>Get Schema</td><td><code>getSchema</code></td><td>Fetch a single schema by name within a database.</td></tr><tr><td>Get Statement Status</td><td><code>getStatementStatus</code></td><td>Check the status of (and retrieve results/partition for) a previously submitted SQL statement by its handle.</td></tr><tr><td>Get Table</td><td><code>getTable</code></td><td>Fetch a single table by name.</td></tr><tr><td>Get Task</td><td><code>getTask</code></td><td>Fetch a single task by name.</td></tr><tr><td>Get Task Complete Graphs</td><td><code>getTaskCompleteGraphs</code></td><td>Get completed task-graph runs for a task within the retention window.</td></tr><tr><td>Get Task Current Graphs</td><td><code>getTaskCurrentGraphs</code></td><td>Get currently scheduled/running task-graph runs for a task.</td></tr><tr><td>Get Task Dependents</td><td><code>getTaskDependents</code></td><td>Fetch the child (dependent) tasks of a task in its DAG.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Fetch a single user by name.</td></tr><tr><td>Get Warehouse</td><td><code>getWarehouse</code></td><td>Fetch a single warehouse by name.</td></tr><tr><td>Grant Future Privileges to Role</td><td><code>grantFuturePrivilegesToRole</code></td><td>Grant future privileges to a role on objects of a type within a container.</td></tr><tr><td>Grant Privileges to Role</td><td><code>grantPrivilegesToRole</code></td><td>Grant privileges (or roles) to a role on a securable.</td></tr><tr><td>Grant Role to User</td><td><code>grantRoleToUser</code></td><td>Grant a role to a user.</td></tr><tr><td>List Databases</td><td><code>listDatabases</code></td><td>List databases in the account. Supports like/startsWith/showLimit/fromName filters.</td></tr><tr><td>List Future Grants</td><td><code>listFutureGrants</code></td><td>List future grants associated with a role.</td></tr><tr><td>List Grants Of Role</td><td><code>listGrantsOfRole</code></td><td>List the users and roles that this role has been granted to.</td></tr><tr><td>List Grants On Role</td><td><code>listGrantsOnRole</code></td><td>List grants on this role object (privileges held on the role securable).</td></tr><tr><td>List Pipes</td><td><code>listPipes</code></td><td>List pipes in a schema.</td></tr><tr><td>List Role Grants</td><td><code>listRoleGrants</code></td><td>List privileges/roles granted to a role.</td></tr><tr><td>List Roles</td><td><code>listRoles</code></td><td>List account-level roles.</td></tr><tr><td>List Schemas</td><td><code>listSchemas</code></td><td>List schemas in a database.</td></tr><tr><td>List Tables</td><td><code>listTables</code></td><td>List tables in a schema.</td></tr><tr><td>List Tasks</td><td><code>listTasks</code></td><td>List tasks in a schema.</td></tr><tr><td>List User Grants</td><td><code>listUserGrants</code></td><td>List roles granted to a user.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List users in the account.</td></tr><tr><td>List Warehouses</td><td><code>listWarehouses</code></td><td>List warehouses in the account.</td></tr><tr><td>Refresh Pipe</td><td><code>refreshPipe</code></td><td>Refresh a pipe to copy a set of staged data files to the target table.</td></tr><tr><td>Rename Warehouse</td><td><code>renameWarehouse</code></td><td>Rename a warehouse.</td></tr><tr><td>Resume Task</td><td><code>resumeTask</code></td><td>Resume a suspended task so it runs on its schedule.</td></tr><tr><td>Resume Warehouse</td><td><code>resumeWarehouse</code></td><td>Resume (start) a suspended warehouse.</td></tr><tr><td>Revoke Future Grants from Role</td><td><code>revokeFutureGrants</code></td><td>Revoke future privileges from a role.</td></tr><tr><td>Revoke Grants from Role</td><td><code>revokeRoleGrants</code></td><td>Revoke privileges (or roles) from a role.</td></tr><tr><td>Revoke Grants from User</td><td><code>revokeUserGrants</code></td><td>Revoke a role grant from a user.</td></tr><tr><td>Submit SQL Statement</td><td><code>submitStatement</code></td><td>Submit one or more SQL statements (query, DML, DDL) for execution via the Snowflake SQL API. Returns a ResultSet with status, metadata, and rows. Set async=true to run asynchronously and poll with getStatementStatus.</td></tr><tr><td>Suspend Task</td><td><code>suspendTask</code></td><td>Suspend a task so it stops running on its schedule.</td></tr><tr><td>Suspend Warehouse</td><td><code>suspendWarehouse</code></td><td>Suspend (stop) a running warehouse.</td></tr><tr><td>Use Warehouse</td><td><code>useWarehouse</code></td><td>Set the warehouse as the current warehouse for the session.</td></tr></tbody></table>
+
+</details>

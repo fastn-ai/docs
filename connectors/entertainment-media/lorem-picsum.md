@@ -22,8 +22,4 @@ Add Lorem Picsum from **Build → Integrations → Connectors** and connect an a
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Image Details | `getImageInfo` | Get author, size and links for one image by its id (GET /id/{id}/info). Docs: https://picsum.photos/ |
-| Get Seeded Image Details | `getSeedImageInfo` | Get details of the image that a given seed always maps to (GET /seed/{seed}/info). Docs: https://picsum.photos/ |
-| List Images | `listImages` | List the images available on Lorem Picsum with author, size and links, 30 per page by default (GET /v2/list). Docs: https://picsum.photos/ |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Image Details</td><td><code>getImageInfo</code></td><td>Get author, size and links for one image by its id (GET /id/{id}/info). Docs: https://picsum.photos/</td></tr><tr><td>Get Seeded Image Details</td><td><code>getSeedImageInfo</code></td><td>Get details of the image that a given seed always maps to (GET /seed/{seed}/info). Docs: https://picsum.photos/</td></tr><tr><td>List Images</td><td><code>listImages</code></td><td>List the images available on Lorem Picsum with author, size and links, 30 per page by default (GET /v2/list). Docs: https://picsum.photos/</td></tr></tbody></table>

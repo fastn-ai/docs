@@ -22,19 +22,12 @@ Add Google Tasks from **Build → Integrations → Connectors** and connect an a
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Clear Completed Tasks | `clearTasks` | Clears all completed tasks from the specified task list (POST /lists/{tasklist}/clear). The affected tasks are marked hidden; they are not deleted. |
-| Create Task | `createTask` | Creates a new task on the specified task list (POST /lists/{tasklist}/tasks). Optionally place it as a subtask (parent) or after a sibling (previous). |
-| Create Task List | `createTaskList` | Creates a new task list and adds it to the authenticated user's task lists (POST /users/@me/lists). |
-| Delete Task | `deleteTask` | Deletes the specified task from the task list (DELETE /lists/{tasklist}/tasks/{task}). |
-| Delete Task List | `deleteTaskList` | Deletes the specified task list (DELETE /users/@me/lists/{tasklist}). This also deletes all tasks in it. The default task list cannot be deleted. |
-| Get Task | `getTask` | Returns the specified task (GET /lists/{tasklist}/tasks/{task}). |
-| Get Task List | `getTaskList` | Returns the specified task list (GET /users/@me/lists/{tasklist}). |
-| List Task Lists | `listTaskLists` | Returns all the authenticated user's task lists (GET /users/@me/lists). Supports pagination via maxResults/pageToken. |
-| List Tasks | `listTasks` | Returns all tasks in the specified task list (GET /lists/{tasklist}/tasks). Supports filtering by due/completed/updated date ranges and pagination. |
-| Move Task | `moveTask` | Moves the specified task to another position in the destination task list (POST /lists/{tasklist}/tasks/{task}/move). Reposition among siblings, re-parent as a subtask, or move to a different task list. |
-| Patch Task | `patchTask` | Partially updates the specified task; only the fields provided are changed (PATCH /lists/{tasklist}/tasks/{task}). Typical use: mark a task completed by setting status. |
-| Patch Task List | `patchTaskList` | Partially updates the specified task list; only the fields provided are changed (PATCH /users/@me/lists/{tasklist}). |
-| Update Task | `updateTask` | Updates the specified task, replacing it with the supplied resource (PUT /lists/{tasklist}/tasks/{task}). |
-| Update Task List | `updateTaskList` | Updates the specified task list, replacing it with the supplied resource (PUT /users/@me/lists/{tasklist}). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Clear Completed Tasks</td><td><code>clearTasks</code></td><td>Clears all completed tasks from the specified task list (POST /lists/{tasklist}/clear). The affected tasks are marked hidden; they are not deleted.</td></tr><tr><td>Create Task</td><td><code>createTask</code></td><td>Creates a new task on the specified task list (POST /lists/{tasklist}/tasks). Optionally place it as a subtask (parent) or after a sibling (previous).</td></tr><tr><td>Create Task List</td><td><code>createTaskList</code></td><td>Creates a new task list and adds it to the authenticated user's task lists (POST /users/@me/lists).</td></tr><tr><td>Delete Task</td><td><code>deleteTask</code></td><td>Deletes the specified task from the task list (DELETE /lists/{tasklist}/tasks/{task}).</td></tr><tr><td>Delete Task List</td><td><code>deleteTaskList</code></td><td>Deletes the specified task list (DELETE /users/@me/lists/{tasklist}). This also deletes all tasks in it. The default task list cannot be deleted.</td></tr><tr><td>Get Task</td><td><code>getTask</code></td><td>Returns the specified task (GET /lists/{tasklist}/tasks/{task}).</td></tr><tr><td>Get Task List</td><td><code>getTaskList</code></td><td>Returns the specified task list (GET /users/@me/lists/{tasklist}).</td></tr><tr><td>List Task Lists</td><td><code>listTaskLists</code></td><td>Returns all the authenticated user's task lists (GET /users/@me/lists). Supports pagination via maxResults/pageToken.</td></tr><tr><td>List Tasks</td><td><code>listTasks</code></td><td>Returns all tasks in the specified task list (GET /lists/{tasklist}/tasks). Supports filtering by due/completed/updated date ranges and pagination.</td></tr><tr><td>Move Task</td><td><code>moveTask</code></td><td>Moves the specified task to another position in the destination task list (POST /lists/{tasklist}/tasks/{task}/move). Reposition among siblings, re-parent as a subtask, or move to a different task list.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 4 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Patch Task</td><td><code>patchTask</code></td><td>Partially updates the specified task; only the fields provided are changed (PATCH /lists/{tasklist}/tasks/{task}). Typical use: mark a task completed by setting status.</td></tr><tr><td>Patch Task List</td><td><code>patchTaskList</code></td><td>Partially updates the specified task list; only the fields provided are changed (PATCH /users/@me/lists/{tasklist}).</td></tr><tr><td>Update Task</td><td><code>updateTask</code></td><td>Updates the specified task, replacing it with the supplied resource (PUT /lists/{tasklist}/tasks/{task}).</td></tr><tr><td>Update Task List</td><td><code>updateTaskList</code></td><td>Updates the specified task list, replacing it with the supplied resource (PUT /users/@me/lists/{tasklist}).</td></tr></tbody></table>
+
+</details>

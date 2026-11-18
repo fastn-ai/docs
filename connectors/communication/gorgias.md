@@ -22,21 +22,12 @@ Add Gorgias from **Build → Integrations → Connectors** and connect an accoun
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Customer | `createCustomer` | Create a customer. Requires a channels array. |
-| Create Integration | `createIntegration` | Create an HTTP integration (outbound webhook) with event triggers. |
-| Create Message | `createMessage` | Create a message on a ticket. |
-| Create Ticket | `createTicket` | Create a ticket. Requires a messages array. |
-| Delete Integration | `deleteIntegration` | Delete an HTTP integration (webhook) by id. |
-| Get Account | `getAccount` | Get the current Gorgias account (use as whoami/test-connection). |
-| Get Customer | `getCustomer` | Get a customer by id. |
-| Get Ticket | `getTicket` | Get a ticket by id. |
-| List Customers | `listCustomers` | List customers. |
-| List Integrations | `listIntegrations` | List HTTP integrations (outbound webhooks). |
-| List Messages | `listMessages` | List messages, optionally for a ticket. |
-| List Tags | `listTags` | List tags. |
-| List Tickets | `listTickets` | List tickets (cursor-paginated). |
-| List Users | `listUsers` | List agents/users. |
-| Update Customer | `updateCustomer` | Update a customer. |
-| Update Ticket | `updateTicket` | Update a ticket (status, priority, assignee, tags, subject). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Customer</td><td><code>createCustomer</code></td><td>Create a customer. Requires a channels array.</td></tr><tr><td>Create Integration</td><td><code>createIntegration</code></td><td>Create an HTTP integration (outbound webhook) with event triggers.</td></tr><tr><td>Create Message</td><td><code>createMessage</code></td><td>Create a message on a ticket.</td></tr><tr><td>Create Ticket</td><td><code>createTicket</code></td><td>Create a ticket. Requires a messages array.</td></tr><tr><td>Delete Integration</td><td><code>deleteIntegration</code></td><td>Delete an HTTP integration (webhook) by id.</td></tr><tr><td>Get Account</td><td><code>getAccount</code></td><td>Get the current Gorgias account (use as whoami/test-connection).</td></tr><tr><td>Get Customer</td><td><code>getCustomer</code></td><td>Get a customer by id.</td></tr><tr><td>Get Ticket</td><td><code>getTicket</code></td><td>Get a ticket by id.</td></tr><tr><td>List Customers</td><td><code>listCustomers</code></td><td>List customers.</td></tr><tr><td>List Integrations</td><td><code>listIntegrations</code></td><td>List HTTP integrations (outbound webhooks).</td></tr></tbody></table>
+
+<details>
+
+<summary>View 6 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Messages</td><td><code>listMessages</code></td><td>List messages, optionally for a ticket.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>List tags.</td></tr><tr><td>List Tickets</td><td><code>listTickets</code></td><td>List tickets (cursor-paginated).</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List agents/users.</td></tr><tr><td>Update Customer</td><td><code>updateCustomer</code></td><td>Update a customer.</td></tr><tr><td>Update Ticket</td><td><code>updateTicket</code></td><td>Update a ticket (status, priority, assignee, tags, subject).</td></tr></tbody></table>
+
+</details>

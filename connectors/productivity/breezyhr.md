@@ -22,54 +22,12 @@ Add Breezy HR from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Add Candidate | `addCandidate` | Add a new candidate to a position's pipeline. |
-| Create Position | `createPosition` | Create a new open position or candidate pool for a company. |
-| Create Webhook Endpoint | `createWebhookEndpoint` | Register a new HTTPS webhook endpoint for a company to receive event notifications (candidate/position/note changes). |
-| Delete Webhook Endpoint | `deleteWebhookEndpoint` | Delete a webhook endpoint by id. |
-| Get Candidate | `getCandidate` | Get a single candidate by id within a position. |
-| Get Candidate Assessments | `getCandidateAssessments` | List skills assessment results for a candidate. |
-| Get Candidate Background Checks | `getCandidateBackgroundChecks` | List background check results for a candidate. |
-| Get Candidate Conversation | `getCandidateConversation` | Get the email/message conversation thread with a candidate. |
-| Get Candidate Custom Fields | `getCandidateCustomFields` | Get custom field values set on a candidate. |
-| Get Candidate Documents | `getCandidateDocuments` | List documents uploaded/attached to a candidate. |
-| Get Candidate Meta | `getCandidateMeta` | Get metadata (source, ratings, tags) for a candidate. |
-| Get Candidate Questionnaires | `getCandidateQuestionnaires` | List questionnaires sent to / completed by a candidate. |
-| Get Candidate Resume | `getCandidateResume` | Get the parsed/raw resume info for a candidate. |
-| Get Candidate Stream | `getCandidateStream` | Get the activity stream (notes, stage moves, emails) for a candidate. |
-| Get Company | `getCompany` | Get a single company by id. |
-| Get Company Custom Attributes | `getCompanyCustomAttributes` | Get a company-level custom attribute definition by id. |
-| Get Company Custom Fields | `getCompanyCustomFields` | Get a company-level custom field definition by id. |
-| Get Current User | `getUser` | Get the authenticated user's basic info. |
-| Get Health | `getHealth` | Health check endpoint. Does not require authentication. |
-| Get Pipeline | `getPipeline` | Get a single recruiting pipeline (with its stages) by id. |
-| Get Position | `getPosition` | Get a single position/candidate pool by id. |
-| Get Position Custom Fields | `getPositionCustomFields` | Get custom field values set on a position. |
-| Get Position Stream | `getPositionStream` | Get the activity stream (notes/events) for a position. |
-| Get Position Team | `getPositionTeam` | Get the hiring team members assigned to a position. |
-| Get Questionnaire | `getQuestionnaire` | Get a single candidate questionnaire by id. |
-| Get Template | `getTemplate` | Get a single position/email template by id. |
-| Get User Details | `getUserDetails` | Get detailed profile info for the authenticated user. |
-| Get Webhook Endpoint | `getWebhookEndpoint` | Get a single webhook endpoint by id. |
-| List Candidates | `listCandidates` | List candidates in a position's pipeline. |
-| List Categories | `listCategories` | List position categories configured for a company. |
-| List Companies | `listCompanies` | List all companies (organizations) the authenticated user has access to. |
-| List Departments | `listDepartments` | List departments configured for a company. |
-| List Pipelines | `listPipelines` | List recruiting pipelines (stage templates) configured for a company. |
-| List Positions | `listPositions` | List open/closed positions and candidate pools for a company. |
-| List Questionnaires | `listQuestionnaires` | List candidate questionnaires configured for a company. |
-| List Templates | `listTemplates` | List position/email templates configured for a company. |
-| List Webhook Endpoints | `listWebhookEndpoints` | List webhook endpoints configured for a company. |
-| Move Candidate | `moveCandidate` | Move a candidate to a different position/pool and stage. |
-| Pause Webhook Endpoint | `pauseWebhookEndpoint` | Pause an active webhook endpoint. |
-| Post Candidate Note | `postCandidateNote` | Post a note to a candidate's activity stream. |
-| Resume Webhook Endpoint | `resumeWebhookEndpoint` | Resume a paused webhook endpoint. |
-| Search Candidates | `searchCandidates` | Search all candidates across a company by query string. |
-| Search Company Candidates | `searchCompanyCandidates` | Search/list candidates across the whole company by free-text query or exact email, paginated. |
-| Send Candidate Message | `sendCandidateMessage` | Send an email message to a candidate. |
-| Set Candidate Stage | `setCandidateStage` | Move a candidate to a different stage within their current pipeline. |
-| Set Position State | `setPositionState` | Change a position's lifecycle state (e.g. activate, put on hold, close/fill, cancel). |
-| Update Candidate | `updateCandidate` | Partially update a candidate's basic fields. |
-| Update Position | `updatePosition` | Partially update an existing position's fields. |
-| Update Webhook Endpoint | `updateWebhookEndpoint` | Update an existing webhook endpoint's URL, description, or subscribed events. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Candidate</td><td><code>addCandidate</code></td><td>Add a new candidate to a position's pipeline.</td></tr><tr><td>Create Position</td><td><code>createPosition</code></td><td>Create a new open position or candidate pool for a company.</td></tr><tr><td>Create Webhook Endpoint</td><td><code>createWebhookEndpoint</code></td><td>Register a new HTTPS webhook endpoint for a company to receive event notifications (candidate/position/note changes).</td></tr><tr><td>Delete Webhook Endpoint</td><td><code>deleteWebhookEndpoint</code></td><td>Delete a webhook endpoint by id.</td></tr><tr><td>Get Candidate</td><td><code>getCandidate</code></td><td>Get a single candidate by id within a position.</td></tr><tr><td>Get Candidate Assessments</td><td><code>getCandidateAssessments</code></td><td>List skills assessment results for a candidate.</td></tr><tr><td>Get Candidate Background Checks</td><td><code>getCandidateBackgroundChecks</code></td><td>List background check results for a candidate.</td></tr><tr><td>Get Candidate Conversation</td><td><code>getCandidateConversation</code></td><td>Get the email/message conversation thread with a candidate.</td></tr><tr><td>Get Candidate Custom Fields</td><td><code>getCandidateCustomFields</code></td><td>Get custom field values set on a candidate.</td></tr><tr><td>Get Candidate Documents</td><td><code>getCandidateDocuments</code></td><td>List documents uploaded/attached to a candidate.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 39 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Candidate Meta</td><td><code>getCandidateMeta</code></td><td>Get metadata (source, ratings, tags) for a candidate.</td></tr><tr><td>Get Candidate Questionnaires</td><td><code>getCandidateQuestionnaires</code></td><td>List questionnaires sent to / completed by a candidate.</td></tr><tr><td>Get Candidate Resume</td><td><code>getCandidateResume</code></td><td>Get the parsed/raw resume info for a candidate.</td></tr><tr><td>Get Candidate Stream</td><td><code>getCandidateStream</code></td><td>Get the activity stream (notes, stage moves, emails) for a candidate.</td></tr><tr><td>Get Company</td><td><code>getCompany</code></td><td>Get a single company by id.</td></tr><tr><td>Get Company Custom Attributes</td><td><code>getCompanyCustomAttributes</code></td><td>Get a company-level custom attribute definition by id.</td></tr><tr><td>Get Company Custom Fields</td><td><code>getCompanyCustomFields</code></td><td>Get a company-level custom field definition by id.</td></tr><tr><td>Get Current User</td><td><code>getUser</code></td><td>Get the authenticated user's basic info.</td></tr><tr><td>Get Health</td><td><code>getHealth</code></td><td>Health check endpoint. Does not require authentication.</td></tr><tr><td>Get Pipeline</td><td><code>getPipeline</code></td><td>Get a single recruiting pipeline (with its stages) by id.</td></tr><tr><td>Get Position</td><td><code>getPosition</code></td><td>Get a single position/candidate pool by id.</td></tr><tr><td>Get Position Custom Fields</td><td><code>getPositionCustomFields</code></td><td>Get custom field values set on a position.</td></tr><tr><td>Get Position Stream</td><td><code>getPositionStream</code></td><td>Get the activity stream (notes/events) for a position.</td></tr><tr><td>Get Position Team</td><td><code>getPositionTeam</code></td><td>Get the hiring team members assigned to a position.</td></tr><tr><td>Get Questionnaire</td><td><code>getQuestionnaire</code></td><td>Get a single candidate questionnaire by id.</td></tr><tr><td>Get Template</td><td><code>getTemplate</code></td><td>Get a single position/email template by id.</td></tr><tr><td>Get User Details</td><td><code>getUserDetails</code></td><td>Get detailed profile info for the authenticated user.</td></tr><tr><td>Get Webhook Endpoint</td><td><code>getWebhookEndpoint</code></td><td>Get a single webhook endpoint by id.</td></tr><tr><td>List Candidates</td><td><code>listCandidates</code></td><td>List candidates in a position's pipeline.</td></tr><tr><td>List Categories</td><td><code>listCategories</code></td><td>List position categories configured for a company.</td></tr><tr><td>List Companies</td><td><code>listCompanies</code></td><td>List all companies (organizations) the authenticated user has access to.</td></tr><tr><td>List Departments</td><td><code>listDepartments</code></td><td>List departments configured for a company.</td></tr><tr><td>List Pipelines</td><td><code>listPipelines</code></td><td>List recruiting pipelines (stage templates) configured for a company.</td></tr><tr><td>List Positions</td><td><code>listPositions</code></td><td>List open/closed positions and candidate pools for a company.</td></tr><tr><td>List Questionnaires</td><td><code>listQuestionnaires</code></td><td>List candidate questionnaires configured for a company.</td></tr><tr><td>List Templates</td><td><code>listTemplates</code></td><td>List position/email templates configured for a company.</td></tr><tr><td>List Webhook Endpoints</td><td><code>listWebhookEndpoints</code></td><td>List webhook endpoints configured for a company.</td></tr><tr><td>Move Candidate</td><td><code>moveCandidate</code></td><td>Move a candidate to a different position/pool and stage.</td></tr><tr><td>Pause Webhook Endpoint</td><td><code>pauseWebhookEndpoint</code></td><td>Pause an active webhook endpoint.</td></tr><tr><td>Post Candidate Note</td><td><code>postCandidateNote</code></td><td>Post a note to a candidate's activity stream.</td></tr><tr><td>Resume Webhook Endpoint</td><td><code>resumeWebhookEndpoint</code></td><td>Resume a paused webhook endpoint.</td></tr><tr><td>Search Candidates</td><td><code>searchCandidates</code></td><td>Search all candidates across a company by query string.</td></tr><tr><td>Search Company Candidates</td><td><code>searchCompanyCandidates</code></td><td>Search/list candidates across the whole company by free-text query or exact email, paginated.</td></tr><tr><td>Send Candidate Message</td><td><code>sendCandidateMessage</code></td><td>Send an email message to a candidate.</td></tr><tr><td>Set Candidate Stage</td><td><code>setCandidateStage</code></td><td>Move a candidate to a different stage within their current pipeline.</td></tr><tr><td>Set Position State</td><td><code>setPositionState</code></td><td>Change a position's lifecycle state (e.g. activate, put on hold, close/fill, cancel).</td></tr><tr><td>Update Candidate</td><td><code>updateCandidate</code></td><td>Partially update a candidate's basic fields.</td></tr><tr><td>Update Position</td><td><code>updatePosition</code></td><td>Partially update an existing position's fields.</td></tr><tr><td>Update Webhook Endpoint</td><td><code>updateWebhookEndpoint</code></td><td>Update an existing webhook endpoint's URL, description, or subscribed events.</td></tr></tbody></table>
+
+</details>

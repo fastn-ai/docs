@@ -22,8 +22,4 @@ Add AbstractAPI Exchange Rates from **Build → Integrations → Connectors** an
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Convert Currency | `convertCurrency` | Converts an amount from a base currency into a single target currency at the latest rate, or at the rate of a given historical date, and returns the converted amount and the rate used. |
-| Get Historical Exchange Rates | `getHistoricalExchangeRates` | Returns the exchange rates from a base currency to one or more target currencies on a specific past date. AbstractAPI documents this endpoint as a closed beta, so it may not be enabled on every account. |
-| Get Live Exchange Rates | `getLiveExchangeRates` | Returns the most recent exchange rates from a base currency to one or more target currencies. If no target is given, rates for every supported currency are returned. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Convert Currency</td><td><code>convertCurrency</code></td><td>Converts an amount from a base currency into a single target currency at the latest rate, or at the rate of a given historical date, and returns the converted amount and the rate used.</td></tr><tr><td>Get Historical Exchange Rates</td><td><code>getHistoricalExchangeRates</code></td><td>Returns the exchange rates from a base currency to one or more target currencies on a specific past date. AbstractAPI documents this endpoint as a closed beta, so it may not be enabled on every account.</td></tr><tr><td>Get Live Exchange Rates</td><td><code>getLiveExchangeRates</code></td><td>Returns the most recent exchange rates from a base currency to one or more target currencies. If no target is given, rates for every supported currency are returned.</td></tr></tbody></table>

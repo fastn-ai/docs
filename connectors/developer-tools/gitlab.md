@@ -22,57 +22,18 @@ Add GitLab from **Build → Integrations → Connectors** and connect an account
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Create Branch | `createBranch` | Create a branch from a ref (POST /projects/{id}/repository/branches). |
-| Create Commit | `createCommit` | Create a commit with multiple file actions (POST /projects/{id}/repository/commits). |
-| Create Issue | `createIssue` | Create an issue in a project (POST /projects/{id}/issues). |
-| Create Issue Note | `createIssueNote` | Add a note (comment) to an issue (POST /projects/{id}/issues/{iid}/notes). |
-| Create Label | `createLabel` | Create a project label (POST /projects/{id}/labels). |
-| Create Merge Request | `createMergeRequest` | Create a merge request (POST /projects/{id}/merge_requests). |
-| Create Pipeline | `createPipeline` | Trigger a new pipeline on a ref (POST /projects/{id}/pipeline). |
-| Create Project | `createProject` | Create a project (POST /projects). |
-| Create Project Hook | `createProjectHook` | Create a project webhook (POST /projects/{id}/hooks). Used by the webhook config subscription code; per-event flags toggle delivery. |
-| Create Repository File | `createRepositoryFile` | Create a new file in the repository (POST /projects/{id}/repository/files/{file_path}). |
-| Delete Branch | `deleteBranch` | Delete a branch (DELETE /projects/{id}/repository/branches/{branch}). Returns 204. |
-| Delete Project | `deleteProject` | Delete a project (DELETE /projects/{id}). Returns 202. |
-| Delete Project Hook | `deleteProjectHook` | Delete a project webhook (DELETE /projects/{id}/hooks/{hook_id}). Returns 204. |
-| Delete Repository File | `deleteRepositoryFile` | Delete a file (DELETE /projects/{id}/repository/files/{file_path}). Returns 204. |
-| Get Current User | `getCurrentUser` | Get the authenticated user (GET /user). |
-| Get Issue | `getIssue` | Get a project issue by IID (GET /projects/{id}/issues/{iid}). |
-| Get Merge Request | `getMergeRequest` | Get a merge request by IID (GET /projects/{id}/merge_requests/{iid}). |
-| Get Project | `getProject` | Get a project by ID or URL-encoded path (GET /projects/{id}). |
-| Get Repository File | `getRepositoryFile` | Get a file's metadata and base64 content (GET /projects/{id}/repository/files/{file_path}). |
-| List Branches | `listBranches` | List repository branches (GET /projects/{id}/repository/branches). |
-| List Commits | `listCommits` | List repository commits (GET /projects/{id}/repository/commits). |
-| List Groups | `listGroups` | List groups visible to the user (GET /groups). |
-| List Issue Notes | `listIssueNotes` | List notes (comments) on an issue (GET /projects/{id}/issues/{iid}/notes). |
-| List Issues | `listIssues` | List issues in a project (GET /projects/{id}/issues). |
-| List Labels | `listLabels` | List project labels (GET /projects/{id}/labels). |
-| List Merge Requests | `listMergeRequests` | List merge requests in a project (GET /projects/{id}/merge_requests). |
-| List Pipelines | `listPipelines` | List pipelines for a project (GET /projects/{id}/pipelines). |
-| List Project Hooks | `listProjectHooks` | List project webhooks (GET /projects/{id}/hooks). |
-| List Projects | `listProjects` | List projects visible to the user (GET /projects). |
-| List Repository Tree | `listRepositoryTree` | List files and directories in a project repository tree. Returns blobs (files) and trees (directories) for a given ref and path. Supports recursive listing. |
-| List Users | `listUsers` | List users (GET /users). |
-| Merge Merge Request | `mergeMergeRequest` | Accept and merge a merge request (PUT /projects/{id}/merge_requests/{iid}/merge). |
-| Update Issue | `updateIssue` | Update or close an issue (PUT /projects/{id}/issues/{iid}). Use state_event close/reopen. |
-| Update Project | `updateProject` | Update a project (PUT /projects/{id}). |
-| Update Repository File | `updateRepositoryFile` | Update an existing file (PUT /projects/{id}/repository/files/{file_path}). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Branch</td><td><code>createBranch</code></td><td>Create a branch from a ref (POST /projects/{id}/repository/branches).</td></tr><tr><td>Create Commit</td><td><code>createCommit</code></td><td>Create a commit with multiple file actions (POST /projects/{id}/repository/commits).</td></tr><tr><td>Create Issue</td><td><code>createIssue</code></td><td>Create an issue in a project (POST /projects/{id}/issues).</td></tr><tr><td>Create Issue Note</td><td><code>createIssueNote</code></td><td>Add a note (comment) to an issue (POST /projects/{id}/issues/{iid}/notes).</td></tr><tr><td>Create Label</td><td><code>createLabel</code></td><td>Create a project label (POST /projects/{id}/labels).</td></tr><tr><td>Create Merge Request</td><td><code>createMergeRequest</code></td><td>Create a merge request (POST /projects/{id}/merge_requests).</td></tr><tr><td>Create Pipeline</td><td><code>createPipeline</code></td><td>Trigger a new pipeline on a ref (POST /projects/{id}/pipeline).</td></tr><tr><td>Create Project</td><td><code>createProject</code></td><td>Create a project (POST /projects).</td></tr><tr><td>Create Project Hook</td><td><code>createProjectHook</code></td><td>Create a project webhook (POST /projects/{id}/hooks). Used by the webhook config subscription code; per-event flags toggle delivery.</td></tr><tr><td>Create Repository File</td><td><code>createRepositoryFile</code></td><td>Create a new file in the repository (POST /projects/{id}/repository/files/{file_path}).</td></tr></tbody></table>
+
+<details>
+
+<summary>View 25 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Branch</td><td><code>deleteBranch</code></td><td>Delete a branch (DELETE /projects/{id}/repository/branches/{branch}). Returns 204.</td></tr><tr><td>Delete Project</td><td><code>deleteProject</code></td><td>Delete a project (DELETE /projects/{id}). Returns 202.</td></tr><tr><td>Delete Project Hook</td><td><code>deleteProjectHook</code></td><td>Delete a project webhook (DELETE /projects/{id}/hooks/{hook_id}). Returns 204.</td></tr><tr><td>Delete Repository File</td><td><code>deleteRepositoryFile</code></td><td>Delete a file (DELETE /projects/{id}/repository/files/{file_path}). Returns 204.</td></tr><tr><td>Get Current User</td><td><code>getCurrentUser</code></td><td>Get the authenticated user (GET /user).</td></tr><tr><td>Get Issue</td><td><code>getIssue</code></td><td>Get a project issue by IID (GET /projects/{id}/issues/{iid}).</td></tr><tr><td>Get Merge Request</td><td><code>getMergeRequest</code></td><td>Get a merge request by IID (GET /projects/{id}/merge_requests/{iid}).</td></tr><tr><td>Get Project</td><td><code>getProject</code></td><td>Get a project by ID or URL-encoded path (GET /projects/{id}).</td></tr><tr><td>Get Repository File</td><td><code>getRepositoryFile</code></td><td>Get a file's metadata and base64 content (GET /projects/{id}/repository/files/{file_path}).</td></tr><tr><td>List Branches</td><td><code>listBranches</code></td><td>List repository branches (GET /projects/{id}/repository/branches).</td></tr><tr><td>List Commits</td><td><code>listCommits</code></td><td>List repository commits (GET /projects/{id}/repository/commits).</td></tr><tr><td>List Groups</td><td><code>listGroups</code></td><td>List groups visible to the user (GET /groups).</td></tr><tr><td>List Issue Notes</td><td><code>listIssueNotes</code></td><td>List notes (comments) on an issue (GET /projects/{id}/issues/{iid}/notes).</td></tr><tr><td>List Issues</td><td><code>listIssues</code></td><td>List issues in a project (GET /projects/{id}/issues).</td></tr><tr><td>List Labels</td><td><code>listLabels</code></td><td>List project labels (GET /projects/{id}/labels).</td></tr><tr><td>List Merge Requests</td><td><code>listMergeRequests</code></td><td>List merge requests in a project (GET /projects/{id}/merge_requests).</td></tr><tr><td>List Pipelines</td><td><code>listPipelines</code></td><td>List pipelines for a project (GET /projects/{id}/pipelines).</td></tr><tr><td>List Project Hooks</td><td><code>listProjectHooks</code></td><td>List project webhooks (GET /projects/{id}/hooks).</td></tr><tr><td>List Projects</td><td><code>listProjects</code></td><td>List projects visible to the user (GET /projects).</td></tr><tr><td>List Repository Tree</td><td><code>listRepositoryTree</code></td><td>List files and directories in a project repository tree. Returns blobs (files) and trees (directories) for a given ref and path. Supports recursive listing.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List users (GET /users).</td></tr><tr><td>Merge Merge Request</td><td><code>mergeMergeRequest</code></td><td>Accept and merge a merge request (PUT /projects/{id}/merge_requests/{iid}/merge).</td></tr><tr><td>Update Issue</td><td><code>updateIssue</code></td><td>Update or close an issue (PUT /projects/{id}/issues/{iid}). Use state_event close/reopen.</td></tr><tr><td>Update Project</td><td><code>updateProject</code></td><td>Update a project (PUT /projects/{id}).</td></tr><tr><td>Update Repository File</td><td><code>updateRepositoryFile</code></td><td>Update an existing file (PUT /projects/{id}/repository/files/{file_path}).</td></tr></tbody></table>
+
+</details>
 
 ## Events
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-| Event | Id | When it fires |
-| --- | --- | --- |
-| Deployment | `deployment` | A deployment status changed. |
-| Issue | `issue` | Issue created, updated, closed, or reopened. |
-| Job | `job` | A CI job status changed. |
-| Merge Request | `merge_request` | MR created, updated, merged, or closed. |
-| Note (Comment) | `note` | A comment was added to a commit, issue, MR, or snippet. |
-| Pipeline | `pipeline` | Pipeline status changed. |
-| Push | `push` | Code pushed to the repository. |
-| Release | `release` | A release was created or updated. |
-| Tag Push | `tag_push` | A tag was pushed. |
-| Wiki Page | `wiki_page` | A wiki page was created, updated, or deleted. |
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Deployment</td><td><code>deployment</code></td><td>A deployment status changed.</td></tr><tr><td>Issue</td><td><code>issue</code></td><td>Issue created, updated, closed, or reopened.</td></tr><tr><td>Job</td><td><code>job</code></td><td>A CI job status changed.</td></tr><tr><td>Merge Request</td><td><code>merge_request</code></td><td>MR created, updated, merged, or closed.</td></tr><tr><td>Note (Comment)</td><td><code>note</code></td><td>A comment was added to a commit, issue, MR, or snippet.</td></tr><tr><td>Pipeline</td><td><code>pipeline</code></td><td>Pipeline status changed.</td></tr><tr><td>Push</td><td><code>push</code></td><td>Code pushed to the repository.</td></tr><tr><td>Release</td><td><code>release</code></td><td>A release was created or updated.</td></tr><tr><td>Tag Push</td><td><code>tag_push</code></td><td>A tag was pushed.</td></tr><tr><td>Wiki Page</td><td><code>wiki_page</code></td><td>A wiki page was created, updated, or deleted.</td></tr></tbody></table>

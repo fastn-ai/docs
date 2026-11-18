@@ -22,8 +22,4 @@ Add UK Bank Holidays from **Build → Integrations → Connectors** and connect 
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get Bank Holidays Calendar (ICS) | `getBankHolidaysCalendar` | Get a division's bank holidays as an iCalendar (.ics) file to import into calendar apps (GET https://www.gov.uk/bank-holidays/{division}.ics). Docs: https://www.gov.uk/bank-holidays |
-| List Bank Holidays | `listBankHolidays` | List UK bank holidays for England and Wales, Scotland and Northern Ireland, past and upcoming (GET https://www.gov.uk/bank-holidays.json). Docs: https://www.gov.uk/bank-holidays |
-| List Division Bank Holidays | `listDivisionBankHolidays` | List bank holidays for one UK division (GET https://www.gov.uk/bank-holidays/{division}.json). Docs: https://www.gov.uk/bank-holidays |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Bank Holidays Calendar (ICS)</td><td><code>getBankHolidaysCalendar</code></td><td>Get a division's bank holidays as an iCalendar (.ics) file to import into calendar apps (GET https://www.gov.uk/bank-holidays/{division}.ics). Docs: https://www.gov.uk/bank-holidays</td></tr><tr><td>List Bank Holidays</td><td><code>listBankHolidays</code></td><td>List UK bank holidays for England and Wales, Scotland and Northern Ireland, past and upcoming (GET https://www.gov.uk/bank-holidays.json). Docs: https://www.gov.uk/bank-holidays</td></tr><tr><td>List Division Bank Holidays</td><td><code>listDivisionBankHolidays</code></td><td>List bank holidays for one UK division (GET https://www.gov.uk/bank-holidays/{division}.json). Docs: https://www.gov.uk/bank-holidays</td></tr></tbody></table>

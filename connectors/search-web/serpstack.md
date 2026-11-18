@@ -22,7 +22,4 @@ Add Serpstack from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Google Results | `searchGoogleResults` | Runs a real-time Google search and returns structured SERP data: organic results, local results, answer box, related searches and questions, and pagination. Supports web, image, and news search modes plus device, location, language, and date-range targeting. Output can be returned as JSON or CSV. |
-| Search Locations | `searchLocations` | Looks up canonical Serpstack location strings matching a free-text place name, for use as the location parameter on Search Google Results. Returns each match's display name, canonical name, country code, target type, and reach. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search Google Results</td><td><code>searchGoogleResults</code></td><td>Runs a real-time Google search and returns structured SERP data: organic results, local results, answer box, related searches and questions, and pagination. Supports web, image, and news search modes plus device, location, language, and date-range targeting. Output can be returned as JSON or CSV.</td></tr><tr><td>Search Locations</td><td><code>searchLocations</code></td><td>Looks up canonical Serpstack location strings matching a free-text place name, for use as the location parameter on Search Google Results. Returns each match's display name, canonical name, country code, target type, and reach.</td></tr></tbody></table>

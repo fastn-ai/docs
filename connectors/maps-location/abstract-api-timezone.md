@@ -22,7 +22,4 @@ Add AbstractAPI Timezone from **Build → Integrations → Connectors** and conn
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Convert Time | `convertTime` | Converts a date and time at a base location into the corresponding date and time at a target location, returning timezone details for both. Converts the current time unless a base date and time is given. |
-| Get Current Time | `getCurrentTime` | Returns the current date, time, and timezone details (name, abbreviation, GMT offset, daylight saving status, and coordinates) for a location given as a place name, latitude/longitude pair, or IP address. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Convert Time</td><td><code>convertTime</code></td><td>Converts a date and time at a base location into the corresponding date and time at a target location, returning timezone details for both. Converts the current time unless a base date and time is given.</td></tr><tr><td>Get Current Time</td><td><code>getCurrentTime</code></td><td>Returns the current date, time, and timezone details (name, abbreviation, GMT offset, daylight saving status, and coordinates) for a location given as a place name, latitude/longitude pair, or IP address.</td></tr></tbody></table>

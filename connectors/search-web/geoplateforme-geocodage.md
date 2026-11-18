@@ -22,8 +22,4 @@ Add Géoplateforme Geocoding (IGN) from **Build → Integrations → Connectors*
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Geocode (Search) | `geocode` | Recherche par géocodage direct. Docs: https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage (OpenAPI https://data.geopf.fr/geocodage/openapi.yaml) (GET /search) |
-| Get Capabilities | `getCapabilities` | Découvrir le service. Découvrir le service: les opérations possibles, les ressources disponibles et les options proposées. Docs: https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage (OpenAPI https://data.geopf.fr/geocodage/openapi.yaml) (GET /getCapabilities) |
-| Reverse Geocode | `reverseGeocode` | Recherche par géocodage inverse. Docs: https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage (OpenAPI https://data.geopf.fr/geocodage/openapi.yaml) (GET /reverse) |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Geocode (Search)</td><td><code>geocode</code></td><td>Recherche par géocodage direct. Docs: https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage (OpenAPI https://data.geopf.fr/geocodage/openapi.yaml) (GET /search)</td></tr><tr><td>Get Capabilities</td><td><code>getCapabilities</code></td><td>Découvrir le service. Découvrir le service: les opérations possibles, les ressources disponibles et les options proposées. Docs: https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage (OpenAPI https://data.geopf.fr/geocodage/openapi.yaml) (GET /getCapabilities)</td></tr><tr><td>Reverse Geocode</td><td><code>reverseGeocode</code></td><td>Recherche par géocodage inverse. Docs: https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage (OpenAPI https://data.geopf.fr/geocodage/openapi.yaml) (GET /reverse)</td></tr></tbody></table>

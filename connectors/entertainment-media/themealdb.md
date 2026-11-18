@@ -22,16 +22,12 @@ Add TheMealDB from **Build → Integrations → Connectors** and connect an acco
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Filter Meals by Area | `filterByArea` | List meals from an area (cuisine) (GET /filter.php?a=). Docs: https://www.themealdb.com/api.php |
-| Filter Meals by Category | `filterByCategory` | List meals in a category (GET /filter.php?c=). Docs: https://www.themealdb.com/api.php |
-| Filter Meals by Ingredient | `filterByMainIngredient` | List meals that use an ingredient (GET /filter.php?i=). Use underscores for spaces, e.g. chicken_breast. Multi-ingredient filtering needs a premium key. Docs: https://www.themealdb.com/api.php |
-| Get Meal | `getMeal` | Get full details of one meal by id (GET /lookup.php?i=). Docs: https://www.themealdb.com/api.php |
-| Get Random Meal | `getRandomMeal` | Get one random meal with full details (GET /random.php). Docs: https://www.themealdb.com/api.php |
-| List Areas | `listAreas` | List all areas (cuisines) with their country (GET /list.php?a=list). Docs: https://www.themealdb.com/api.php |
-| List Categories | `listCategories` | List all meal categories with description and image (GET /categories.php). Docs: https://www.themealdb.com/api.php |
-| List Category Names | `listCategoryNames` | List the names of all meal categories (GET /list.php?c=list). Docs: https://www.themealdb.com/api.php |
-| List Ingredients | `listIngredients` | List all ingredients with id and description (GET /list.php?i=list). Docs: https://www.themealdb.com/api.php |
-| List Meals by First Letter | `listMealsByFirstLetter` | List all meals whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.themealdb.com/api.php |
-| Search Meals by Name | `searchMealsByName` | Search meals by name and get full details (GET /search.php?s=). Docs: https://www.themealdb.com/api.php |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Filter Meals by Area</td><td><code>filterByArea</code></td><td>List meals from an area (cuisine) (GET /filter.php?a=). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>Filter Meals by Category</td><td><code>filterByCategory</code></td><td>List meals in a category (GET /filter.php?c=). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>Filter Meals by Ingredient</td><td><code>filterByMainIngredient</code></td><td>List meals that use an ingredient (GET /filter.php?i=). Use underscores for spaces, e.g. chicken_breast. Multi-ingredient filtering needs a premium key. Docs: https://www.themealdb.com/api.php</td></tr><tr><td>Get Meal</td><td><code>getMeal</code></td><td>Get full details of one meal by id (GET /lookup.php?i=). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>Get Random Meal</td><td><code>getRandomMeal</code></td><td>Get one random meal with full details (GET /random.php). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>List Areas</td><td><code>listAreas</code></td><td>List all areas (cuisines) with their country (GET /list.php?a=list). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>List Categories</td><td><code>listCategories</code></td><td>List all meal categories with description and image (GET /categories.php). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>List Category Names</td><td><code>listCategoryNames</code></td><td>List the names of all meal categories (GET /list.php?c=list). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>List Ingredients</td><td><code>listIngredients</code></td><td>List all ingredients with id and description (GET /list.php?i=list). Docs: https://www.themealdb.com/api.php</td></tr><tr><td>List Meals by First Letter</td><td><code>listMealsByFirstLetter</code></td><td>List all meals whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.themealdb.com/api.php</td></tr></tbody></table>
+
+<details>
+
+<summary>View 1 more action</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search Meals by Name</td><td><code>searchMealsByName</code></td><td>Search meals by name and get full details (GET /search.php?s=). Docs: https://www.themealdb.com/api.php</td></tr></tbody></table>
+
+</details>

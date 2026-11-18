@@ -22,6 +22,4 @@ Add AbstractAPI IP Intelligence from **Build → Integrations → Connectors** a
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Get IP Intelligence | `getIpIntelligence` | Looks up an IPv4 or IPv6 address (or the caller's own public IP when none is given) and returns its security signals (VPN/proxy/Tor/hosting/relay/mobile/abuse), ASN and company/ISP details, associated domains, geolocation, timezone, country flag, and currency. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get IP Intelligence</td><td><code>getIpIntelligence</code></td><td>Looks up an IPv4 or IPv6 address (or the caller's own public IP when none is given) and returns its security signals (VPN/proxy/Tor/hosting/relay/mobile/abuse), ASN and company/ISP details, associated domains, geolocation, timezone, country flag, and currency.</td></tr></tbody></table>

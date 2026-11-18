@@ -22,6 +22,4 @@ Add ImgBB from **Build → Integrations → Connectors** and connect an account,
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Upload Image | `uploadImage` | Uploads an image to ImgBB and returns hosted URLs. Accepts the image as base64-encoded data or as a publicly reachable image URL (max 32MB). Optional 'name' sets the filename; optional 'expiration' (60-15552000 seconds) auto-deletes the image after that many seconds. This is the ONLY endpoint ImgBB's public API documents. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Upload Image</td><td><code>uploadImage</code></td><td>Uploads an image to ImgBB and returns hosted URLs. Accepts the image as base64-encoded data or as a publicly reachable image URL (max 32MB). Optional 'name' sets the filename; optional 'expiration' (60-15552000 seconds) auto-deletes the image after that many seconds. This is the ONLY endpoint ImgBB's public API documents.</td></tr></tbody></table>

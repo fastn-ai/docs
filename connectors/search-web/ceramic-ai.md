@@ -22,6 +22,4 @@ Add Ceramic AI from **Build → Integrations → Connectors** and connect an acc
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Search Web | `searchWeb` | Searches the web with Ceramic Search and returns ranked results, each with a page title, URL and a content snippet. The query should be in keyword form and contain between 1 and 50 words. Each call consumes one search credit. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search Web</td><td><code>searchWeb</code></td><td>Searches the web with Ceramic Search and returns ranked results, each with a page title, URL and a content snippet. The query should be in keyword form and contain between 1 and 50 words. Each call consumes one search credit.</td></tr></tbody></table>

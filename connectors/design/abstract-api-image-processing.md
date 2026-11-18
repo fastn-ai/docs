@@ -22,6 +22,4 @@ Add AbstractAPI Image Processing from **Build → Integrations → Connectors** 
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Optimize Image From URL | `optimizeImageFromUrl` | Compresses an image hosted at a public URL (up to 32 MB) using lossless or lossy compression, and returns the original and final size and dimensions, the bytes saved, and a URL to download the optimized image. Quality and resize options are not exposed by this action. |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Optimize Image From URL</td><td><code>optimizeImageFromUrl</code></td><td>Compresses an image hosted at a public URL (up to 32 MB) using lossless or lossy compression, and returns the original and final size and dimensions, the bytes saved, and a URL to download the optimized image. Quality and resize options are not exposed by this action.</td></tr></tbody></table>

@@ -22,59 +22,12 @@ Add Avoma from **Build → Integrations → Connectors** and connect an account,
 
 ## Actions
 
-| Action | Slug | What it does |
-| --- | --- | --- |
-| Clear Webhook Signing Secret | `clearWebhookSigningSecret` | Clear/delete the webhook signing secret. |
-| Create Call | `createCall` | Create an external call record in Avoma from a dialer/telephony system. |
-| Create Meeting Outcome | `createMeetingOutcome` | Create a meeting outcome. |
-| Create Meeting Type | `createMeetingType` | Create a meeting type (purpose). |
-| Create Smart Category | `createSmartCategory` | Create a smart category with settings, prompts and keywords. |
-| Create Template | `createTemplate` | Create a note template from categories and meeting types. |
-| Create Webhook | `createWebhook` | Register a webhook subscription for an event type. Event types: AINOTE, new_conversation. |
-| Delete Meeting Outcome | `deleteMeetingOutcome` | Delete a meeting outcome by UUID. |
-| Delete Meeting Type | `deleteMeetingType` | Delete a meeting type by UUID. |
-| Delete Webhook | `deleteWebhook` | Delete a webhook subscription by UUID. |
-| Drop Meeting Bot | `dropMeetingBot` | Drop the Avoma recording bot from an ongoing meeting. |
-| Get Call | `getCall` | Retrieve a single call by its external_id. |
-| Get Custom Category | `getCustomCategory` | Retrieve a single custom category by UUID. |
-| Get Engagement Summary | `getEngagementSummary` | Get overall engagement summary for all users within a date range. |
-| Get Meeting | `getMeeting` | Retrieve a single meeting by UUID. |
-| Get Meeting Insights | `getMeetingInsights` | Get AI-generated notes and keyword insights for a meeting. |
-| Get Meeting Outcome | `getMeetingOutcome` | Retrieve a single meeting outcome by UUID. |
-| Get Meeting Sentiments | `getMeetingSentiments` | Get sentiment analysis (positive/negative/neutral tone) for a meeting. |
-| Get Meeting Type | `getMeetingType` | Retrieve a single meeting type by UUID. |
-| Get Recording | `getRecording` | Retrieve a single recording by UUID. |
-| Get Revenue Intel Timeline | `getRevenueTimeline` | Get aggregated timeline engagement metrics for a CRM entity. |
-| Get Revenue Intel Timeline Details | `getRevenueTimelineDetails` | Get detailed engagement records (meetings/calls/emails) for a CRM entity with pagination. |
-| Get Scorecard | `getScorecard` | Retrieve a single scorecard by UUID. |
-| Get Smart Category | `getSmartCategory` | Retrieve a single smart category by UUID. |
-| Get Template | `getTemplate` | Retrieve a single note template by UUID. |
-| Get Transcription | `getTranscription` | Retrieve a single transcription by UUID. |
-| Get User | `getUser` | Retrieve a single user by UUID. |
-| Get User Engagement Metrics | `getUserEngagement` | Get engagement metrics for a specific user within a date range. |
-| Get User Engagement Summary | `getUserEngagementSummary` | Get engagement summary for a specific user's participants within a date range. |
-| Get Webhook Signing Secret | `getWebhookSigningSecret` | Get the current webhook signing secret used to verify payloads. |
-| List Calls | `listCalls` | List calls in the organization within a date range. Returns paginated results. |
-| List Custom Categories | `listCustomCategories` | List custom (smart) categories used to extract AI notes. |
-| List Engagement Metrics | `listEngagement` | List engagement metrics for all users within a date range. |
-| List Meeting Outcomes | `listMeetingOutcomes` | List meeting outcomes. |
-| List Meeting Segments | `listMeetingSegments` | List AI-generated smart chapters/segments for a meeting. |
-| List Meeting Types | `listMeetingTypes` | List meeting types (purposes). |
-| List Meetings | `listMeetings` | List meetings in the organization within a date range (paginated). |
-| List Notes | `listNotes` | List AI-generated meeting notes within a date range (paginated). |
-| List Recordings | `listRecordings` | List recordings for a meeting. |
-| List Scorecard Evaluations | `listScorecardEvaluations` | List scorecard evaluations (call scoring results). |
-| List Scorecards | `listScorecards` | List scorecard definitions used for call scoring. |
-| List Smart Categories | `listSmartCategories` | List smart categories (AI note extraction categories). |
-| List Snippets | `listSnippets` | List meeting snippets (soundbites), optionally filtered. |
-| List Templates | `listTemplates` | List note templates. |
-| List Transcriptions | `listTranscriptions` | List meeting transcriptions within a date range (paginated). |
-| List Users | `listUsers` | List users in the organization. |
-| List Webhooks | `listWebhooks` | List registered webhook subscriptions. |
-| Rotate Webhook Signing Secret | `rotateWebhookSigningSecret` | Rotate (regenerate) the webhook signing secret. |
-| Set Webhook Signing Secret | `setWebhookSigningSecret` | Set/update the webhook signing secret. |
-| Update Call | `updateCall` | Partially update a call by external_id. Only provided fields are updated. |
-| Update Meeting Outcome | `updateMeetingOutcome` | Partially update a meeting outcome. |
-| Update Meeting Type | `updateMeetingType` | Partially update a meeting type. |
-| Update Smart Category | `updateSmartCategory` | Partially update a smart category's settings, prompts, or keywords. |
-| Update Template | `updateTemplate` | Replace a note template (full update). |
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Clear Webhook Signing Secret</td><td><code>clearWebhookSigningSecret</code></td><td>Clear/delete the webhook signing secret.</td></tr><tr><td>Create Call</td><td><code>createCall</code></td><td>Create an external call record in Avoma from a dialer/telephony system.</td></tr><tr><td>Create Meeting Outcome</td><td><code>createMeetingOutcome</code></td><td>Create a meeting outcome.</td></tr><tr><td>Create Meeting Type</td><td><code>createMeetingType</code></td><td>Create a meeting type (purpose).</td></tr><tr><td>Create Smart Category</td><td><code>createSmartCategory</code></td><td>Create a smart category with settings, prompts and keywords.</td></tr><tr><td>Create Template</td><td><code>createTemplate</code></td><td>Create a note template from categories and meeting types.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Register a webhook subscription for an event type. Event types: AINOTE, new_conversation.</td></tr><tr><td>Delete Meeting Outcome</td><td><code>deleteMeetingOutcome</code></td><td>Delete a meeting outcome by UUID.</td></tr><tr><td>Delete Meeting Type</td><td><code>deleteMeetingType</code></td><td>Delete a meeting type by UUID.</td></tr><tr><td>Delete Webhook</td><td><code>deleteWebhook</code></td><td>Delete a webhook subscription by UUID.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 44 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Drop Meeting Bot</td><td><code>dropMeetingBot</code></td><td>Drop the Avoma recording bot from an ongoing meeting.</td></tr><tr><td>Get Call</td><td><code>getCall</code></td><td>Retrieve a single call by its external_id.</td></tr><tr><td>Get Custom Category</td><td><code>getCustomCategory</code></td><td>Retrieve a single custom category by UUID.</td></tr><tr><td>Get Engagement Summary</td><td><code>getEngagementSummary</code></td><td>Get overall engagement summary for all users within a date range.</td></tr><tr><td>Get Meeting</td><td><code>getMeeting</code></td><td>Retrieve a single meeting by UUID.</td></tr><tr><td>Get Meeting Insights</td><td><code>getMeetingInsights</code></td><td>Get AI-generated notes and keyword insights for a meeting.</td></tr><tr><td>Get Meeting Outcome</td><td><code>getMeetingOutcome</code></td><td>Retrieve a single meeting outcome by UUID.</td></tr><tr><td>Get Meeting Sentiments</td><td><code>getMeetingSentiments</code></td><td>Get sentiment analysis (positive/negative/neutral tone) for a meeting.</td></tr><tr><td>Get Meeting Type</td><td><code>getMeetingType</code></td><td>Retrieve a single meeting type by UUID.</td></tr><tr><td>Get Recording</td><td><code>getRecording</code></td><td>Retrieve a single recording by UUID.</td></tr><tr><td>Get Revenue Intel Timeline</td><td><code>getRevenueTimeline</code></td><td>Get aggregated timeline engagement metrics for a CRM entity.</td></tr><tr><td>Get Revenue Intel Timeline Details</td><td><code>getRevenueTimelineDetails</code></td><td>Get detailed engagement records (meetings/calls/emails) for a CRM entity with pagination.</td></tr><tr><td>Get Scorecard</td><td><code>getScorecard</code></td><td>Retrieve a single scorecard by UUID.</td></tr><tr><td>Get Smart Category</td><td><code>getSmartCategory</code></td><td>Retrieve a single smart category by UUID.</td></tr><tr><td>Get Template</td><td><code>getTemplate</code></td><td>Retrieve a single note template by UUID.</td></tr><tr><td>Get Transcription</td><td><code>getTranscription</code></td><td>Retrieve a single transcription by UUID.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Retrieve a single user by UUID.</td></tr><tr><td>Get User Engagement Metrics</td><td><code>getUserEngagement</code></td><td>Get engagement metrics for a specific user within a date range.</td></tr><tr><td>Get User Engagement Summary</td><td><code>getUserEngagementSummary</code></td><td>Get engagement summary for a specific user's participants within a date range.</td></tr><tr><td>Get Webhook Signing Secret</td><td><code>getWebhookSigningSecret</code></td><td>Get the current webhook signing secret used to verify payloads.</td></tr><tr><td>List Calls</td><td><code>listCalls</code></td><td>List calls in the organization within a date range. Returns paginated results.</td></tr><tr><td>List Custom Categories</td><td><code>listCustomCategories</code></td><td>List custom (smart) categories used to extract AI notes.</td></tr><tr><td>List Engagement Metrics</td><td><code>listEngagement</code></td><td>List engagement metrics for all users within a date range.</td></tr><tr><td>List Meeting Outcomes</td><td><code>listMeetingOutcomes</code></td><td>List meeting outcomes.</td></tr><tr><td>List Meeting Segments</td><td><code>listMeetingSegments</code></td><td>List AI-generated smart chapters/segments for a meeting.</td></tr><tr><td>List Meeting Types</td><td><code>listMeetingTypes</code></td><td>List meeting types (purposes).</td></tr><tr><td>List Meetings</td><td><code>listMeetings</code></td><td>List meetings in the organization within a date range (paginated).</td></tr><tr><td>List Notes</td><td><code>listNotes</code></td><td>List AI-generated meeting notes within a date range (paginated).</td></tr><tr><td>List Recordings</td><td><code>listRecordings</code></td><td>List recordings for a meeting.</td></tr><tr><td>List Scorecard Evaluations</td><td><code>listScorecardEvaluations</code></td><td>List scorecard evaluations (call scoring results).</td></tr><tr><td>List Scorecards</td><td><code>listScorecards</code></td><td>List scorecard definitions used for call scoring.</td></tr><tr><td>List Smart Categories</td><td><code>listSmartCategories</code></td><td>List smart categories (AI note extraction categories).</td></tr><tr><td>List Snippets</td><td><code>listSnippets</code></td><td>List meeting snippets (soundbites), optionally filtered.</td></tr><tr><td>List Templates</td><td><code>listTemplates</code></td><td>List note templates.</td></tr><tr><td>List Transcriptions</td><td><code>listTranscriptions</code></td><td>List meeting transcriptions within a date range (paginated).</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List users in the organization.</td></tr><tr><td>List Webhooks</td><td><code>listWebhooks</code></td><td>List registered webhook subscriptions.</td></tr><tr><td>Rotate Webhook Signing Secret</td><td><code>rotateWebhookSigningSecret</code></td><td>Rotate (regenerate) the webhook signing secret.</td></tr><tr><td>Set Webhook Signing Secret</td><td><code>setWebhookSigningSecret</code></td><td>Set/update the webhook signing secret.</td></tr><tr><td>Update Call</td><td><code>updateCall</code></td><td>Partially update a call by external_id. Only provided fields are updated.</td></tr><tr><td>Update Meeting Outcome</td><td><code>updateMeetingOutcome</code></td><td>Partially update a meeting outcome.</td></tr><tr><td>Update Meeting Type</td><td><code>updateMeetingType</code></td><td>Partially update a meeting type.</td></tr><tr><td>Update Smart Category</td><td><code>updateSmartCategory</code></td><td>Partially update a smart category's settings, prompts, or keywords.</td></tr><tr><td>Update Template</td><td><code>updateTemplate</code></td><td>Replace a note template (full update).</td></tr></tbody></table>
+
+</details>
