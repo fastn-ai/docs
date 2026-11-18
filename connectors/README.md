@@ -34,6 +34,7 @@ A connector is the definition. When one of your customers signs in to the app th
 | <img src="../.gitbook/assets/connectors/sm/walmart-marketplace.png" alt=""> | [Walmart Marketplace](ecommerce/walmart-marketplace.md) | [E-commerce](ecommerce/README.md) | Walmart Marketplace (US) Seller API — environment-switchable (production or sandbox). |
 | <img src="../.gitbook/assets/connectors/sm/zendesk-support.png" alt=""> | [Zendesk Support](it-service/zendesk-support.md) | [IT and service management](it-service/README.md) | Zendesk Support customer service and ticketing platform. |
 | <img src="../.gitbook/assets/connectors/sm/servicenow.png" alt=""> | [ServiceNow](it-service/servicenow.md) | [IT and service management](it-service/README.md) | ServiceNow ITSM platform connector. |
+| <img src="../.gitbook/assets/connectors/sm/jira.png" alt=""> | [Jira](project-management/jira.md) | [IT and service management](it-service/README.md) | Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk ops, comments, worklogs,… |
 | <img src="../.gitbook/assets/connectors/sm/intercom.png" alt=""> | [Intercom](it-service/intercom.md) | [IT and service management](it-service/README.md) | Intercom customer messaging and support platform. |
 | <img src="../.gitbook/assets/connectors/sm/freshservice.png" alt=""> | [Freshservice](it-service/freshservice.md) | [IT and service management](it-service/README.md) | Freshservice IT service management — tickets, problems, changes, releases, assets, service catalog,… |
 
@@ -57,7 +58,7 @@ Every other connector is in its category, the most used first. Your workspace ma
 <tr><td><strong>Project management</strong></td><td>Jira, Asana, Rentman</td><td><a href="project-management/README.md">project-management/README.md</a></td></tr>
 <tr><td><strong>Docs and knowledge</strong></td><td>Notion, Confluence, WordPress.com</td><td><a href="docs-knowledge/README.md">docs-knowledge/README.md</a></td></tr>
 <tr><td><strong>Analytics and monitoring</strong></td><td>Datadog, Kibana, Dynatrace</td><td><a href="analytics-monitoring/README.md">analytics-monitoring/README.md</a></td></tr>
-<tr><td><strong>IT and service management</strong></td><td>Zendesk Support, Intercom, ServiceNow</td><td><a href="it-service/README.md">it-service/README.md</a></td></tr>
+<tr><td><strong>IT and service management</strong></td><td>Jira, Zendesk Support, Intercom</td><td><a href="it-service/README.md">it-service/README.md</a></td></tr>
 <tr><td><strong>Design</strong></td><td>Figma, Miro, Mural</td><td><a href="design/README.md">design/README.md</a></td></tr>
 <tr><td><strong>Maps and location</strong></td><td>TomTom, AccuWeather, Felt</td><td><a href="maps-location/README.md">maps-location/README.md</a></td></tr>
 <tr><td><strong>Entertainment and media</strong></td><td>Sanity, Contentful, Vimeo</td><td><a href="entertainment-media/README.md">entertainment-media/README.md</a></td></tr>

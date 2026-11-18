@@ -8,6 +8,7 @@ IT and service management apps you can connect to with fastn, the most used firs
 
 | | Connector | Authentication | About |
 | --- | --- | --- | --- |
+| <img src="../../.gitbook/assets/connectors/sm/jira.png" alt=""> | [Jira](../project-management/jira.md) | OAuth 2.0 | Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk ops, comments, worklogs, attachments, links, remote links, watchers, votes),… |
 | <img src="../../.gitbook/assets/connectors/sm/zendesk-support.png" alt=""> | [Zendesk Support](zendesk-support.md) | Basic auth, OAuth 2.0 | Zendesk Support customer service and ticketing platform. |
 | <img src="../../.gitbook/assets/connectors/sm/bmc-helix-itsm.png" alt=""> | [BMC Helix ITSM](bmc-helix-itsm.md) | Credentials you enter | BMC Helix ITSM service management platform. |
 | <img src="../../.gitbook/assets/connectors/sm/freshservice.png" alt=""> | [Freshservice](freshservice.md) | Basic auth | Freshservice IT service management — tickets, problems, changes, releases, assets, service catalog, knowledge base, and administration via the Freshservice… |
