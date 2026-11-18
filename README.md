@@ -16,7 +16,7 @@ The result: you close the deals you were losing to a missing integration, keep t
 **Want to know if fastn fits your use case?** Ask your AI agent. [Find out if fastn fits your use case](getting-started/plan-your-integration.md) shows how, in four steps. Or copy this line into your AI tool and it sets itself up for fastn:
 
 ```
-Fetch and execute the instructions to set me up for fastn from https://docs.fastn.ai/get-started/agent-setup.md
+Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
 ```
 
 ## The problem fastn solves

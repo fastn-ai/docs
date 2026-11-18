@@ -9,7 +9,7 @@ Your AI agent can tell you whether fastn fits what your product needs to do with
 **Quickest way:** copy this line into your AI tool. Your agent sets itself up for fastn and then asks what you want to build.
 
 ```
-Fetch and execute the instructions to set me up for fastn from https://docs.fastn.ai/get-started/agent-setup.md
+Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
 ```
 
 **No account yet? You can still ask.** With the [fastn plugin](#optional-the-fastn-plugin-for-claude), your agent can tell you whether fastn fits your use case and how it would work, based on what fastn offers. Create an account and connect it (steps 1 and 2) when you want the agent to look at your own setup and help you build it.
