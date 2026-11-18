@@ -92,17 +92,18 @@ You cannot change these settings yourself. Give the user these steps: **Plugins*
 
 Add `https://mcp.fastn.dev/fastn-workspace` as a remote (HTTP) MCP server in the tool's MCP settings, with OAuth sign-in and no API key. Steps for more tools: https://docs.fastn.ai/build/building-from-your-ai-agent/mcp-gateway.md
 
-### 3. Sign in
+### 3. Sign in, or skip it
 
-Signing in needs a fastn account. Tell the user:
+**Always tell the user, in these words or close to them: "You don't need a fastn account to ask whether fastn fits your use case. Say so and we'll go straight to that."** If they want that, go to step 4 now.
+
+Signing in lets you look at their own fastn setup and help them build it. It needs a fastn account:
 
 * No account yet: sign up free at https://app.fastn.dev/?signup=1 (the Launch plan is free).
-* They can also skip this for now. You can still tell them whether fastn fits their use case and how it would work, based on what fastn offers. Signing in lets you look at their own fastn setup and help them build it.
 * Their fastn user needs the **Developer** role or higher to connect an AI tool. An Owner or Admin can change it in **Settings** → **People**.
 
 ### 4. Ask what they want to build
 
-When the connection is set up (or the user chose to skip it), ask: "What does your product do, and what should it do with your customers' apps?" Then help them work out whether fastn fits and how to set it up. If the fastn skills are loaded, use the `fastn-solution-architect` skill for this.
+When the connection is set up (or the user chose to skip it), end your message with: "No account needed to ask whether fastn fits. What does your product do, and what should it do with your customers' apps?" Then help them work out whether fastn fits and how to set it up. If the fastn skills are loaded, use the `fastn-solution-architect` skill for this.
 
 ## Resources
 
