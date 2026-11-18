@@ -27,15 +27,38 @@ This guide shows you how to get the WildApricot account ID and API key that fast
 fastn connects to WildApricot with an API key from an authorized server application. When you connect, you enter three values: `accountId`, `clientId` and `clientSecret`.
 
 1. Sign in to the WildApricot admin view as a full account administrator.
-2. Go to **Apps** > **Integrations** > **Authorized applications** and click **Authorize application**.
-3. Choose **Server application**. This is the option for apps that read and write data without a person signing in.
-4. Give the application a name. Leave access set to full access if your workflows need to create or update records; with **Read only**, the app cannot add to or change your WildApricot data.
-5. Copy the **API key** shown on the screen, then click **Save**. The key works only after the authorization is saved.
-6. Find your numeric account ID under **Settings** > **Account**, or in the URL of the **Authorized applications** page.
-7. In fastn, enter the values as follows:
+2. In the left menu, select **Apps**, scroll to **Integrations** and open **Authorized applications**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/integrations.png" alt="The Integrations section of the Apps page, with Authorized applications"><figcaption><p>The Integrations section of the Apps page, with Authorized applications</p></figcaption></figure>
+
+3. Click **Authorize application**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/authorized-applications.png" alt="The Authorized applications page with the Authorize application button"><figcaption><p>The Authorized applications page with the Authorize application button</p></figcaption></figure>
+
+4. Choose **Server application**, then click **Continue**. This is the option for apps that read and write data without a person signing in.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/server-application.png" alt="Server application selected on the Application authorization page"><figcaption><p>Server application selected on the Application authorization page</p></figcaption></figure>
+
+5. In **Application name**, give the application a name.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/create-app.png" alt="The Application name field on the Application details page"><figcaption><p>The Application name field on the Application details page</p></figcaption></figure>
+
+6. Under the **API key**, change the access level from **Read only** (the default) to **Full access** if your workflows need to create or update records. With **Read only**, the app cannot add to or change your WildApricot data.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/access-level.png" alt="Full access selected for the API key"><figcaption><p>Full access selected for the API key</p></figcaption></figure>
+
+7. Copy the **API key** shown on the page, then click **Save**. The key works only after the authorization is saved, and the application then appears in the **Authorized applications** list.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/saved-app.png" alt="The saved application in the Authorized applications list"><figcaption><p>The saved application in the Authorized applications list</p></figcaption></figure>
+
+8. Find your numeric account ID: select **Account** in the left menu, open the **Account details** tab, and copy the **Account number** under **General**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/wildApricot/account-id.png" alt="The Account number in the General section of Account details"><figcaption><p>The Account number in the General section of Account details</p></figcaption></figure>
+
+9. In fastn, enter the values as follows:
    - **accountId**: your numeric WildApricot account ID.
    - **clientId**: leave this as `APIKEY`. WildApricot uses this literal value as the client ID for API key integrations.
-   - **clientSecret**: the API key you copied in step 5.
+   - **clientSecret**: the API key you copied in step 7.
 
 ### Connect in fastn
 Your customers enter these values when they connect WildApricot in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **WildApricot**. fastn exchanges the API key for an access token with WildApricot, so there is no redirect or sign-in screen.

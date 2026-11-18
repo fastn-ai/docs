@@ -29,11 +29,22 @@ This guide shows how to create your own Intercom app so your customers sign in t
 ### Create your Intercom app
 
 1. Sign in to the Intercom Developer Hub and open **Your Apps**.
-2. Click **New App**, enter a name, pick the workspace to install it in (or create a development workspace from the same list), and click **Create app**.
-3. In your app, go to **Configure → Authentication** and select **Use OAuth**.
-4. In the redirect URL field, enter `https://oauth.live.fastn.ai` exactly, with no trailing slash. Use **Add redirect URL** if you already have another one.
-5. Under the permissions on the same page, select the data your workflows need. Intercom groups them as **People & conversation data** and **Workspace data**. fastn does not request extra scopes in the sign-in link, so the permissions you select here are what customers grant. Select only what you need, because Intercom reviews them if you publish the app.
-6. Open the app's **Basic Information** page and copy the **Client ID** and **Client Secret**.
+2. Click **New app**, enter an **App name**, pick the **Workspace** to install it in (or create a development workspace from the same list), and click **Create app**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/intercom/create-app.png" alt="The New app dialog with the app name and workspace"><figcaption><p>The New app dialog with the app name and workspace</p></figcaption></figure>
+
+3. In your app, go to **Configure → Authentication**, click **Edit** and select **Use OAuth**.
+4. Under **Redirect URLs**, click **Add redirect URL** and enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
+
+<figure><img src="../../.gitbook/assets/connector-guides/intercom/redirect-url.png" alt="Use OAuth selected, with fastn's redirect URL"><figcaption><p>Use OAuth selected, with fastn's redirect URL</p></figcaption></figure>
+
+5. Under **Permissions** on the same page, select the data your workflows need. Intercom groups them as **People and conversation data** and **Workspace data**, and most are selected by default. fastn does not request extra scopes in the sign-in link, so the permissions you select here are what customers grant. Select only what you need, because Intercom reviews them if you publish the app. Click **Save**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/intercom/scopes.png" alt="The Permissions list on the Authentication page"><figcaption><p>The Permissions list on the Authentication page</p></figcaption></figure>
+
+6. Open the app's **Basic information** page and copy the **Client ID** and **Client secret**. Until Intercom has reviewed the app, it shows a notice that you must submit the app for review to access other people's Intercom data with OAuth.
+
+<figure><img src="../../.gitbook/assets/connector-guides/intercom/credentials.png" alt="The Basic information page, where the Client ID and Client secret are listed"><figcaption><p>The Basic information page, where the Client ID and Client secret are listed</p></figcaption></figure>
 
 ### Add your app to fastn
 

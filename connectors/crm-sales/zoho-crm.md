@@ -27,12 +27,24 @@ This guide shows you how to register your own Zoho CRM OAuth client in the Zoho 
 ### Create your Zoho CRM app
 1. Go to the Zoho API Console at https://api-console.zoho.com/ and click **GET STARTED** (or **Add Client** if you already have clients).
 2. Choose the **Server-based Applications** client type and click **CREATE NOW**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/client-type.png" alt="Choose Server-based Applications as the client type"><figcaption><p>Choose Server-based Applications as the client type</p></figcaption></figure>
+
 3. Fill in the client details:
    - **Client Name**: a name your customers will recognize, such as your product name.
    - **Homepage URL**: your product's website.
    - **Authorized Redirect URIs**: enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
-4. Click **CREATE**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/create-app.png" alt="The Create New Client form with the fastn redirect URI"><figcaption><p>The Create New Client form with the fastn redirect URI</p></figcaption></figure>
+
+4. Click **CREATE**. You can check or change the redirect URI later on the client's **Client Details** tab.
+
+<figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/redirect-url.png" alt="The client's Client Details tab with the authorized redirect URI"><figcaption><p>The client's Client Details tab with the authorized redirect URI</p></figcaption></figure>
+
 5. Open the **Client Secret** tab and copy the **Client ID** and **Client Secret**. Keep the secret private.
+
+<figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/credentials.png" alt="The Client Secret tab, where the Client ID and Client Secret are shown"><figcaption><p>The Client Secret tab, where the Client ID and Client Secret are shown</p></figcaption></figure>
+
 6. Note the scopes fastn requests for Zoho CRM. Zoho takes scopes on the sign-in request, so you add them in fastn in the next section:
    - `ZohoCRM.modules.ALL`
    - `ZohoCRM.settings.ALL`

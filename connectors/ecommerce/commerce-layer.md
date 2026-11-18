@@ -22,19 +22,30 @@ This guide shows you how to create a Commerce Layer integration credential and a
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need access to the Commerce Layer dashboard for the organization you want to connect, with permission to create API credentials.
-- Decide whether fastn should only read data (Read-only role) or also create, update and delete it (Admin role). Most actions, such as Create Order or Create Customer, need Admin.
+- fastn's actions create, update and delete data, so the credential needs the **Admin** role.
 
 ### Create your Commerce Layer app
 fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. This grant has no sign-in screen, so you do not need a redirect URL. In Commerce Layer, the app is called an integration.
 
 1. Sign in to the Commerce Layer dashboard and select your organization.
 2. In the left sidebar, open **Developers** and click **API credentials**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/commerceLayer/api-credentials.png" alt="The API credentials list under Developers"><figcaption><p>The API credentials list under Developers</p></figcaption></figure>
+
 3. Click **+ New** at the top right of the list.
-4. Choose the **Integration** card. Integrations are confidential clients and come with a client secret. Sales channel credentials do not.
-5. Enter a name you will recognize later, such as `fastn`.
-6. Pick a role: **Read-only** allows only reads. **Admin** allows creating, reading, updating and deleting any resource.
+4. Under **Select type**, choose the **Integration** card. Integrations provide confidential credentials, with a client secret. Sales channel credentials are public.
+
+<figure><img src="../../.gitbook/assets/connector-guides/commerceLayer/select-type.png" alt="Choose the Integration type"><figcaption><p>Choose the Integration type</p></figcaption></figure>
+
+5. In **Name**, enter a name you will recognize later, such as `fastn`.
+6. Pick a **Role**. **Admin** allows creating, reading, updating and deleting any resource; most actions, such as Create Order or Create Customer, need it. Custom API roles are an Enterprise-only setting.
 7. Click **Create**.
-8. On the details page, copy the **Client ID** and **Client secret**. Also note the **Base endpoint**, for example `https://acme-sandbox.commercelayer.io`. The part before `.commercelayer.io` is your organization slug.
+
+<figure><img src="../../.gitbook/assets/connector-guides/commerceLayer/create-app.png" alt="The New integration form with a name and the Admin role"><figcaption><p>The New integration form with a name and the Admin role</p></figcaption></figure>
+
+8. The integration's details panel opens. Copy the **Client ID** and **Client secret** with the copy buttons next to them. Also note the **Core API endpoint**, for example `https://acme-sandbox.commercelayer.io`. The part before `.commercelayer.io` is your organization slug.
+
+<figure><img src="../../.gitbook/assets/connector-guides/commerceLayer/credentials.png" alt="The Credentials section, with the client ID and secret hidden"><figcaption><p>The Credentials section, with the client ID and secret hidden</p></figcaption></figure>
 
 ### Add your app to fastn
 1. In fastn, go to **Build → Integrations → Connectors** and open **Commerce Layer**.
@@ -50,7 +61,7 @@ fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. Th
 5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the Commerce Layer connector's **Auth provider** setting to this app.
 
-When you or your customers connect Commerce Layer, enter the **organization slug**. This is the subdomain of the API base URL. For `https://acme-sandbox.commercelayer.io`, enter `acme-sandbox`.
+When you or your customers connect Commerce Layer, enter the **organization slug**. This is the subdomain of the Core API endpoint. For `https://acme-sandbox.commercelayer.io`, enter `acme-sandbox`.
 
 ### Events
 To run a workflow when something happens in Commerce Layer, such as `orders.place`, `shipments.ship` or `returns.approve`, add an App event trigger. Go to **Build → Integrations → Triggers → Add trigger → App events** and choose Commerce Layer. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Commerce Layer.
