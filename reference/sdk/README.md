@@ -67,7 +67,7 @@ console.log(me.role, me.org?.id);
 
 You are the SaaS company using fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
 
-You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. Answers name the customer by your id too, as `orgId`.
+You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. Responses name the customer by your id too, in `orgId`.
 
 {% hint style="warning" %}
 To act for your customers, use a key that can act for your customers (one not pinned to a single customer).

@@ -3,6 +3,9 @@
 ## Get started
 
 * [Welcome to fastn](README.md)
+* [How fastn works](getting-started/README.md)
+  * [Core concepts](getting-started/concepts.md)
+  * [Platform tour](getting-started/platform-tour.md)
 * [Quickstart: your first integration](getting-started/quickstart.md)
 * [Set up fastn](getting-started/onboarding/README.md)
   * [Step 1: Connect your product](getting-started/onboarding/connect-your-product.md)
@@ -10,9 +13,6 @@
   * [Step 3: Embed the widget](getting-started/onboarding/embed-the-widget.md)
   * [Step 4: Customers connect and customize](getting-started/onboarding/customers-connect-and-customize.md)
   * [Set up your organization](tutorials/saas-admin/setting-up-your-organization.md)
-* [How fastn works](getting-started/README.md)
-  * [Core concepts](getting-started/concepts.md)
-  * [Platform tour](getting-started/platform-tour.md)
 
 ## Build
 
@@ -171,6 +171,7 @@
 * [Errors and failure states](reference/errors.md)
 * [FAQs](reference/faqs.md)
 * [Glossary](reference/glossary.md)
+* [Changelog](reference/changelog.md)
 * [Tutorials](tutorials/README.md)
   * [SaaS Admin](tutorials/saas-admin/README.md)
   * [Developer](tutorials/developer/README.md)

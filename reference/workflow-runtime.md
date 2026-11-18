@@ -96,7 +96,7 @@ const created = await fastn.connector.trackstar.createOrder({ ... });
 ```
 
 {% hint style="warning" %}
-**Use `fastn.connector.<slug>.<action>()`, singular.** The plural `fastn.connectors.<slug>.<action>()` fails at run time. Saving the workflow extracts bound connectors from both spellings, so seeing your calls picked up on the **Connectors** tab does not prove the spelling is right.
+**Use `fastn.connector.<slug>.<action>()`, singular.** The plural `fastn.connectors.<slug>.<action>()` is an alias for the same object and also works at run time, and saving the workflow extracts bound connectors from both spellings. Prefer the singular so your code matches these docs.
 {% endhint %}
 
 The slug is the one on the connector's Overview tab. Available actions and their versions are pinned on the workflow's **Connectors** tab, and each connector there is marked *per customer* or workspace, which decides whose credential the call uses.
