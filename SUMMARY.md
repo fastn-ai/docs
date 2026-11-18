@@ -4,6 +4,7 @@
 
 * [Welcome to fastn](README.md)
 * [Quickstart: your first integration](getting-started/quickstart.md)
+* [Find out if fastn fits your use case](getting-started/plan-your-integration.md)
 * [Set up fastn](getting-started/onboarding/README.md)
   * [Step 1: Connect your product](getting-started/onboarding/connect-your-product.md)
   * [Step 2: Choose integrations](getting-started/onboarding/choose-integrations.md)

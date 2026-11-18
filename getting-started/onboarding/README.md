@@ -23,6 +23,8 @@ Screenshots on these pages come from the onboarding screens, so the live app may
 
 To build a first integration outside onboarding, see [Quickstart: your first integration](../quickstart.md).
 
+To find out if fastn fits your use case before you build, see [Find out if fastn fits your use case](../plan-your-integration.md).
+
 **Get help:** ask fastn's agent (**Build** → **Build with AI**), or contact the fastn team from the help menu in fastn.
 
 ### In this section
