@@ -34,13 +34,6 @@ Add SWAPI (Star Wars API) from **Build → Integrations → Connectors** and con
 | List Films | `listFilms` | List films 10 per page, optionally filtered by a case-insensitive partial match on title (GET /api/films/). Docs: https://swapi.dev/documentation |
 | List People | `listPeople` | List people 10 per page, optionally filtered by a case-insensitive partial match on name (GET /api/people/). Docs: https://swapi.dev/documentation |
 | List Planets | `listPlanets` | List planets 10 per page, optionally filtered by a case-insensitive partial match on name (GET /api/planets/). Docs: https://swapi.dev/documentation |
-
-<details>
-
-<summary>See 3 more actions</summary>
-
-* **List Species** `listSpecies`: List species 10 per page, optionally filtered by a case-insensitive partial match on name (GET /api/species/). Docs: https://swapi.dev/documentation
-* **List Starships** `listStarships`: List starships 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/starships/). Docs: https://swapi.dev/documentation
-* **List Vehicles** `listVehicles`: List vehicles 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/vehicles/). Docs: https://swapi.dev/documentation
-
-</details>
+| List Species | `listSpecies` | List species 10 per page, optionally filtered by a case-insensitive partial match on name (GET /api/species/). Docs: https://swapi.dev/documentation |
+| List Starships | `listStarships` | List starships 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/starships/). Docs: https://swapi.dev/documentation |
+| List Vehicles | `listVehicles` | List vehicles 10 per page, optionally filtered by a case-insensitive partial match on name or model (GET /api/vehicles/). Docs: https://swapi.dev/documentation |

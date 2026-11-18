@@ -34,21 +34,14 @@ Add Browse AI from **Build → Integrations → Connectors** and connect an acco
 | Get Robot Monitor | `getRobotMonitor` | Retrieves one monitor of a robot with its schedule, notification settings, input parameters and status. |
 | Get Robot Task | `getRobotTask` | Retrieves a task's details and captured data (texts, lists, screenshots), its status, timing, input parameters and, when available, a temporary URL for the captured data and the run video. |
 | Get System Status | `getSystemStatus` | Returns the real-time operational status of the Browse AI infrastructure, including whether the tasks queue is running normally or under maintenance. |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List Bulk Runs** `listBulkRuns`: Lists a robot's bulk runs with their status and task counts, paginated.
-* **List Robot Monitors** `listRobotMonitors`: Lists the monitors configured on a robot with their schedules, notification settings, input parameters and active or paused status.
-* **List Robot Tasks** `listRobotTasks`: Lists a robot's tasks with pagination and filters by status, bulk run, creation date range and retried tasks, sorted by the given fields. Each task carries its status, input parameters and captured texts, lists and screenshots.
-* **List Robot Webhooks** `listRobotWebhooks`: Lists the webhooks registered on a robot with their target URL and subscribed event type.
-* **List Robots** `listRobots`: Lists all robots under your team with their ids, names, creation timestamps and input parameter definitions. Robots are created in the Browse AI dashboard; use the returned ids with the task, monitor, bulk run and webhook actions.
-* **Run Robot** `runRobot`: Runs a robot on demand with optional input parameter overrides and optional video recording, creating a task. The response contains the new task; receive the captured data through the robot's webhooks or poll Get Robot Task until the task finishes. Consumes Browse AI credits; returns 403 credits_limit_reached when the team is out of credits.
-* **Update Robot Cookies** `updateRobotCookies`: Replaces the cookies a robot uses when it runs, for example to keep it logged in to a site. The request body is an array of cookie objects (name and value required; domain, path, expirationDate, hostOnly, httpOnly and secure optional). Returns the updated cookie list.
-* **Update Robot Monitor** `updateRobotMonitor`: Updates a robot monitor: name, input parameters, notification settings, schedule, or status (paused to stop it, active to resume). Only the fields you pass are changed.
-
-</details>
+| List Bulk Runs | `listBulkRuns` | Lists a robot's bulk runs with their status and task counts, paginated. |
+| List Robot Monitors | `listRobotMonitors` | Lists the monitors configured on a robot with their schedules, notification settings, input parameters and active or paused status. |
+| List Robot Tasks | `listRobotTasks` | Lists a robot's tasks with pagination and filters by status, bulk run, creation date range and retried tasks, sorted by the given fields. Each task carries its status, input parameters and captured texts, lists and screenshots. |
+| List Robot Webhooks | `listRobotWebhooks` | Lists the webhooks registered on a robot with their target URL and subscribed event type. |
+| List Robots | `listRobots` | Lists all robots under your team with their ids, names, creation timestamps and input parameter definitions. Robots are created in the Browse AI dashboard; use the returned ids with the task, monitor, bulk run and webhook actions. |
+| Run Robot | `runRobot` | Runs a robot on demand with optional input parameter overrides and optional video recording, creating a task. The response contains the new task; receive the captured data through the robot's webhooks or poll Get Robot Task until the task finishes. Consumes Browse AI credits; returns 403 credits_limit_reached when the team is out of credits. |
+| Update Robot Cookies | `updateRobotCookies` | Replaces the cookies a robot uses when it runs, for example to keep it logged in to a site. The request body is an array of cookie objects (name and value required; domain, path, expirationDate, hostOnly, httpOnly and secure optional). Returns the updated cookie list. |
+| Update Robot Monitor | `updateRobotMonitor` | Updates a robot monitor: name, input parameters, notification settings, schedule, or status (paused to stop it, active to resume). Only the fields you pass are changed. |
 
 ## Events
 

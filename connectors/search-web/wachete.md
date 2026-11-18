@@ -34,18 +34,11 @@ Add Wachete from **Build → Integrations → Connectors** and connect an accoun
 | Invalidate All API Tokens | `invalidateTokens` | Revokes every bearer token previously issued for the Wachete account, including the token this connection uses. After calling this you must mint a new token with Get API Token and update the connection. |
 | List Folders | `listFolders` | Lists the contents of a Wachete folder: its subfolders, the monitoring jobs (wachets) it contains and the breadcrumb path to it. Omit Parent Folder ID to list the root folder. |
 | List Notifications | `listNotifications` | Lists the change and error notifications raised by Wachete, newest first. Filter to one monitoring job with Wachet ID, or to a time window with From and To. |
-
-<details>
-
-<summary>See 5 more actions</summary>
-
-* **List Wachet Data History** `listWachetData`: Returns the history of values captured by a monitoring job, newest first, optionally limited to a time window. Set Return Diff to true to receive a Google-diff breakdown of each change instead of the plain captured value.
-* **List Wachet Pages** `listWachetPages`: Lists the individual pages discovered by a Portal (crawling) monitoring job, each with its own latest captured content. A SinglePage wachet has no sub-pages and returns an empty list.
-* **Log In With Email And Password** `loginWithPassword`: Exchanges a Wachete account email and password for a bearer token. Prefer Get API Token, which uses a revocable API key instead of account credentials.
-* **Move Wachets And Folders** `moveToFolder`: Moves the given monitoring jobs (wachets) and folders into a target folder. Supply at least one wachet id or folder id; leave Target Folder ID empty to move the items to the root.
-* **Search Wachets** `searchWachets`: Searches every monitoring job on the account and returns those whose name, URL or captured content matches the query. Matching is on word prefixes, so a partial term such as 'price' matches while a full hyphenated name may not.
-
-</details>
+| List Wachet Data History | `listWachetData` | Returns the history of values captured by a monitoring job, newest first, optionally limited to a time window. Set Return Diff to true to receive a Google-diff breakdown of each change instead of the plain captured value. |
+| List Wachet Pages | `listWachetPages` | Lists the individual pages discovered by a Portal (crawling) monitoring job, each with its own latest captured content. A SinglePage wachet has no sub-pages and returns an empty list. |
+| Log In With Email And Password | `loginWithPassword` | Exchanges a Wachete account email and password for a bearer token. Prefer Get API Token, which uses a revocable API key instead of account credentials. |
+| Move Wachets And Folders | `moveToFolder` | Moves the given monitoring jobs (wachets) and folders into a target folder. Supply at least one wachet id or folder id; leave Target Folder ID empty to move the items to the root. |
+| Search Wachets | `searchWachets` | Searches every monitoring job on the account and returns those whose name, URL or captured content matches the query. Matching is on word prefixes, so a partial term such as 'price' matches while a full hyphenated name may not. |
 
 ## Events
 

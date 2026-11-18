@@ -34,11 +34,4 @@ Add Erskine May API from **Build → Integrations → Connectors** and connect a
 | List Parts | `listParts` | Returns a list of all parts. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Part) |
 | Search Index Terms | `searchIndexTerms` | Returns a list of index terms which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/IndexTermSearchResults/{searchTerm}) |
 | Search Paragraphs | `searchParagraphs` | Returns a list of paragraphs which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/ParagraphSearchResults/{searchTerm}) |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Search Sections** `searchSections`: Returns a list of sections which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/SectionSearchResults/{searchTerm})
-
-</details>
+| Search Sections | `searchSections` | Returns a list of sections which contain the search term. Docs: https://erskinemay-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Search/SectionSearchResults/{searchTerm}) |

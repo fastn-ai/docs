@@ -34,33 +34,26 @@ Add DocuSeal from **Build → Integrations → Connectors** and connect an accou
 | Create Submission From PDF | `createSubmissionFromPdf` | Creates a signature request directly from one or more PDF files, without first saving a template. By default DocuSeal emails every submitter; set Send Email to false to create the request silently and use the returned signing links. |
 | Create Template From DOCX | `createTemplateFromDocx` | Creates a fillable DocuSeal template from one or more Microsoft Word DOCX files. |
 | Create Template From HTML | `createTemplateFromHtml` | Generates a DocuSeal PDF template from HTML content, with fillable fields declared as custom field tags such as &lt;text-field name="Full Name" role="First Party"&gt;. Use the Documents array to build a multi-document template, or the top-level HTML for a single document. |
-
-<details>
-
-<summary>See 20 more actions</summary>
-
-* **Create Template From PDF** `createTemplateFromPdf`: Creates a fillable DocuSeal template from one or more PDF files. Supply each file as base64 content or a public download URL.
-* **Create Webhook URL** `createWebhookUrl`: Registers a webhook endpoint so DocuSeal posts signing events to your URL. New endpoints default to the four form.* events; pass Events to choose exactly which ones. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-* **Delete Webhook URL** `deleteWebhookUrl`: Permanently removes a DocuSeal webhook endpoint so DocuSeal stops posting events to it. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-* **Get Current User** `getCurrentUser`: Returns the DocuSeal account the API key belongs to. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-* **Get Submission** `getSubmission`: Retrieves one DocuSeal submission by id, including every submitter, the values they filled in, the signed documents and the audit log link.
-* **Get Submission Documents** `getSubmissionDocuments`: Returns download links for the signed documents of a completed DocuSeal submission.
-* **Get Submitter** `getSubmitter`: Retrieves one DocuSeal submitter by id, with their signing status, the values they filled in and their signed documents.
-* **Get Template** `getTemplate`: Retrieves one DocuSeal template by id, including its documents, submitter roles, fields and field coordinates.
-* **Get Webhook URL** `getWebhookUrl`: Retrieves one DocuSeal webhook endpoint by id, with the events it is subscribed to. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-* **Initialise Submission** `initSubmission`: Creates a signature request and returns just the submission id, its submitters and their signing links, instead of the full submission object. Useful for embedded signing flows. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-* **List Submissions** `listSubmissions`: Lists DocuSeal submissions (signature requests) with their submitters, template and signing status, filtered by template, status, folder or search text.
-* **List Submitters** `listSubmitters`: Lists DocuSeal submitters (signers) with their status and the values they filled in, filtered by submission, search text or completion date.
-* **List Templates** `listTemplates`: Lists the DocuSeal document templates available to the account, with their fields, submitter roles and attached documents.
-* **List Webhook URLs** `listWebhookUrls`: Lists the webhook endpoints registered on the DocuSeal account, with the events each one is subscribed to. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-* **Merge Templates** `mergeTemplates`: Combines several DocuSeal templates, with all their documents and fields, into one new template. DocuSeal appends "(Merged)" to the first template's name when no name is given. The merged template starts with no submitter roles; set them afterwards with Update Template.
-* **Update Submission** `updateSubmission`: Renames a DocuSeal submission, changes its expiration date, or archives and unarchives it.
-* **Update Submitter** `updateSubmitter`: Updates a DocuSeal submitter: their contact details, pre-filled field values, or completion state. Setting Send Email to true re-sends the signature request email to this person, so leave it false unless you intend that.
-* **Update Template** `updateTemplate`: Renames a DocuSeal template, moves it to a different folder, changes its submitter role names, or unarchives it. Only the fields you supply are changed.
-* **Update Template Documents** `updateTemplateDocuments`: Adds, replaces or removes the documents attached to a DocuSeal template. Supply each document as a base64 file, a download URL or HTML content; pass an existing document position to replace it, or list the documents to keep.
-* **Update Webhook URL** `updateWebhookUrl`: Changes the target URL or subscribed events of a DocuSeal webhook endpoint. The Events array replaces the existing subscription rather than adding to it. This endpoint is live on the DocuSeal API but is not listed in their published reference.
-
-</details>
+| Create Template From PDF | `createTemplateFromPdf` | Creates a fillable DocuSeal template from one or more PDF files. Supply each file as base64 content or a public download URL. |
+| Create Webhook URL | `createWebhookUrl` | Registers a webhook endpoint so DocuSeal posts signing events to your URL. New endpoints default to the four form.* events; pass Events to choose exactly which ones. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
+| Delete Webhook URL | `deleteWebhookUrl` | Permanently removes a DocuSeal webhook endpoint so DocuSeal stops posting events to it. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
+| Get Current User | `getCurrentUser` | Returns the DocuSeal account the API key belongs to. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
+| Get Submission | `getSubmission` | Retrieves one DocuSeal submission by id, including every submitter, the values they filled in, the signed documents and the audit log link. |
+| Get Submission Documents | `getSubmissionDocuments` | Returns download links for the signed documents of a completed DocuSeal submission. |
+| Get Submitter | `getSubmitter` | Retrieves one DocuSeal submitter by id, with their signing status, the values they filled in and their signed documents. |
+| Get Template | `getTemplate` | Retrieves one DocuSeal template by id, including its documents, submitter roles, fields and field coordinates. |
+| Get Webhook URL | `getWebhookUrl` | Retrieves one DocuSeal webhook endpoint by id, with the events it is subscribed to. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
+| Initialise Submission | `initSubmission` | Creates a signature request and returns just the submission id, its submitters and their signing links, instead of the full submission object. Useful for embedded signing flows. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
+| List Submissions | `listSubmissions` | Lists DocuSeal submissions (signature requests) with their submitters, template and signing status, filtered by template, status, folder or search text. |
+| List Submitters | `listSubmitters` | Lists DocuSeal submitters (signers) with their status and the values they filled in, filtered by submission, search text or completion date. |
+| List Templates | `listTemplates` | Lists the DocuSeal document templates available to the account, with their fields, submitter roles and attached documents. |
+| List Webhook URLs | `listWebhookUrls` | Lists the webhook endpoints registered on the DocuSeal account, with the events each one is subscribed to. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
+| Merge Templates | `mergeTemplates` | Combines several DocuSeal templates, with all their documents and fields, into one new template. DocuSeal appends "(Merged)" to the first template's name when no name is given. The merged template starts with no submitter roles; set them afterwards with Update Template. |
+| Update Submission | `updateSubmission` | Renames a DocuSeal submission, changes its expiration date, or archives and unarchives it. |
+| Update Submitter | `updateSubmitter` | Updates a DocuSeal submitter: their contact details, pre-filled field values, or completion state. Setting Send Email to true re-sends the signature request email to this person, so leave it false unless you intend that. |
+| Update Template | `updateTemplate` | Renames a DocuSeal template, moves it to a different folder, changes its submitter role names, or unarchives it. Only the fields you supply are changed. |
+| Update Template Documents | `updateTemplateDocuments` | Adds, replaces or removes the documents attached to a DocuSeal template. Supply each document as a base64 file, a download URL or HTML content; pass an existing document position to replace it, or list the documents to keep. |
+| Update Webhook URL | `updateWebhookUrl` | Changes the target URL or subscribed events of a DocuSeal webhook endpoint. The Events array replaces the existing subscription rather than adding to it. This endpoint is live on the DocuSeal API but is not listed in their published reference. |
 
 ## Events
 
@@ -78,11 +71,4 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Submission Expired | `submission.expired` | Fires when a submission passes its expiry date without being completed. Envelope captured from a real DocuSeal delivery. |
 | Template Archived | `template.archived` | Fires when a document template is archived. The data object is the template, with archived_at set. Envelope captured from a real DocuSeal delivery. |
 | Template Created | `template.created` | Fires when a document template is created. The data object is the template. Envelope captured from a real DocuSeal delivery. |
-
-<details>
-
-<summary>See 1 more event</summary>
-
-* **Template Updated** `template.updated`: Fires when a document template is changed. The data object is the template. Envelope captured from a real DocuSeal delivery.
-
-</details>
+| Template Updated | `template.updated` | Fires when a document template is changed. The data object is the template. Envelope captured from a real DocuSeal delivery. |

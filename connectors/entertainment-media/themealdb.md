@@ -34,11 +34,4 @@ Add TheMealDB from **Build → Integrations → Connectors** and connect an acco
 | List Category Names | `listCategoryNames` | List the names of all meal categories (GET /list.php?c=list). Docs: https://www.themealdb.com/api.php |
 | List Ingredients | `listIngredients` | List all ingredients with id and description (GET /list.php?i=list). Docs: https://www.themealdb.com/api.php |
 | List Meals by First Letter | `listMealsByFirstLetter` | List all meals whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.themealdb.com/api.php |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Search Meals by Name** `searchMealsByName`: Search meals by name and get full details (GET /search.php?s=). Docs: https://www.themealdb.com/api.php
-
-</details>
+| Search Meals by Name | `searchMealsByName` | Search meals by name and get full details (GET /search.php?s=). Docs: https://www.themealdb.com/api.php |

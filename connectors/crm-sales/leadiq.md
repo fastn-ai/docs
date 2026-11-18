@@ -34,13 +34,6 @@ Add LeadIQ from **Build → Integrations → Connectors** and connect an account
 | Get Prospect List | `getList` | Fetch a single prospect list by ID, including its metadata and the prospects it contains (paginated). |
 | List Prospect Lists | `listLists` | List the account's prospect lists (paginated). Returns list metadata and a nextCursor for pagination. limit is required (default 50). |
 | Search Company | `searchCompany` | Company Search: find a single company by name, domain, LinkedIn ID or URL. Returns firmographics (industry, size, revenue, location, social URLs). Provide domain, name, linkedinId, or linkedinUrl inside input. |
-
-<details>
-
-<summary>See 3 more actions</summary>
-
-* **Search People (Contact Search)** `searchPeople`: Contact Search: find one person and reveal verified work/personal emails and phones by name+company, LinkedIn URL/ID, email, or phone. Consumes a credit when contact info is returned. Provide firstName+lastName+company OR linkedinUrl OR email inside input.
-* **Search People Preview** `searchPeoplePreview`: Preview whether a person has an available email/phone in LeadIQ WITHOUT spending a credit. Returns personId and hasEmail/hasPhone booleans. Provide fullName+companyName, or linkedinUrl, or email inside input.
-* **Submit Person Feedback** `submitPersonFeedback`: Submit a correction/feedback on a person's contact info (mark an email/phone Correct or Invalid). Provide input.value (the contact value) plus type and status; identify the person via personId or linkedinUrl. Returns a feedback ID.
-
-</details>
+| Search People (Contact Search) | `searchPeople` | Contact Search: find one person and reveal verified work/personal emails and phones by name+company, LinkedIn URL/ID, email, or phone. Consumes a credit when contact info is returned. Provide firstName+lastName+company OR linkedinUrl OR email inside input. |
+| Search People Preview | `searchPeoplePreview` | Preview whether a person has an available email/phone in LeadIQ WITHOUT spending a credit. Returns personId and hasEmail/hasPhone booleans. Provide fullName+companyName, or linkedinUrl, or email inside input. |
+| Submit Person Feedback | `submitPersonFeedback` | Submit a correction/feedback on a person's contact info (mark an email/phone Correct or Invalid). Provide input.value (the contact value) plus type and status; identify the person via personId or linkedinUrl. Returns a feedback ID. |

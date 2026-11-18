@@ -34,22 +34,15 @@ Add UK Police Data from **Build → Integrations → Connectors** and connect an
 | List Crimes at Location | `listCrimesAtLocation` | List crimes mapped to one location id, or to the location nearest a point, for a month (GET /crimes-at-location). Docs: https://data.police.uk/docs/method/crimes-at-location/ |
 | List Crimes with No Location | `listCrimesWithNoLocation` | List crimes a force reported that could not be mapped to a location, for a category and month (GET /crimes-no-location). Docs: https://data.police.uk/docs/method/crimes-no-location/ |
 | List Forces | `listForces` | List all police forces in England, Wales and Northern Ireland with their ids (GET /forces). Docs: https://data.police.uk/docs/method/forces/ |
-
-<details>
-
-<summary>See 12 more actions</summary>
-
-* **List Neighbourhood Events** `listNeighbourhoodEvents`: List upcoming events in a neighbourhood (GET /{force}/{neighbourhood}/events). Docs: https://data.police.uk/docs/method/neighbourhood-events/
-* **List Neighbourhood Priorities** `listNeighbourhoodPriorities`: List a neighbourhood's policing priorities and the action taken (GET /{force}/{neighbourhood}/priorities). Docs: https://data.police.uk/docs/method/neighbourhood-priorities/
-* **List Neighbourhood Team** `listNeighbourhoodTeam`: List the officers in a neighbourhood's policing team (GET /{force}/{neighbourhood}/people). Docs: https://data.police.uk/docs/method/neighbourhood-team/
-* **List Neighbourhoods** `listNeighbourhoods`: List a force's neighbourhoods (GET /{force}/neighbourhoods). Docs: https://data.police.uk/docs/method/neighbourhoods/
-* **List Senior Officers** `listSeniorOfficers`: List a force's senior officers with rank, bio and contact links (GET /forces/{force}/people). Docs: https://data.police.uk/docs/method/senior-officers/
-* **List Stop and Searches at Location** `listStopsAtLocation`: List stop and searches at a location id for a month (GET /stops-at-location). Docs: https://data.police.uk/docs/method/stops-at-location/
-* **List Stop and Searches by Area** `listStopsByArea`: List stop and searches within 1 mile of a point, or in a custom polygon, for a month (GET /stops-street). Docs: https://data.police.uk/docs/method/stops-street/
-* **List Stop and Searches by Force** `listStopsByForce`: List all stop and searches reported by a force for a month (GET /stops-force). Docs: https://data.police.uk/docs/method/stops-force/
-* **List Stop and Searches with No Location** `listStopsWithNoLocation`: List a force's stop and searches that could not be mapped to a location, for a month (GET /stops-no-location). Docs: https://data.police.uk/docs/method/stops-no-location/
-* **List Street-Level Crimes** `listStreetCrimes`: List street-level crimes in a category within 1 mile of a point, or inside a custom polygon, for a month (GET /crimes-street/{category}). Docs: https://data.police.uk/docs/method/crime-street/
-* **List Street-Level Outcomes** `listStreetOutcomes`: List outcomes of crimes at a location id, within 1 mile of a point, or in a custom polygon, for a month (GET /outcomes-at-location). Docs: https://data.police.uk/docs/method/outcomes-at-location/
-* **Locate Neighbourhood** `locateNeighbourhood`: Find the force and neighbourhood responsible for a point (GET /locate-neighbourhood?q=lat,lng). Docs: https://data.police.uk/docs/method/neighbourhood-locate/
-
-</details>
+| List Neighbourhood Events | `listNeighbourhoodEvents` | List upcoming events in a neighbourhood (GET /{force}/{neighbourhood}/events). Docs: https://data.police.uk/docs/method/neighbourhood-events/ |
+| List Neighbourhood Priorities | `listNeighbourhoodPriorities` | List a neighbourhood's policing priorities and the action taken (GET /{force}/{neighbourhood}/priorities). Docs: https://data.police.uk/docs/method/neighbourhood-priorities/ |
+| List Neighbourhood Team | `listNeighbourhoodTeam` | List the officers in a neighbourhood's policing team (GET /{force}/{neighbourhood}/people). Docs: https://data.police.uk/docs/method/neighbourhood-team/ |
+| List Neighbourhoods | `listNeighbourhoods` | List a force's neighbourhoods (GET /{force}/neighbourhoods). Docs: https://data.police.uk/docs/method/neighbourhoods/ |
+| List Senior Officers | `listSeniorOfficers` | List a force's senior officers with rank, bio and contact links (GET /forces/{force}/people). Docs: https://data.police.uk/docs/method/senior-officers/ |
+| List Stop and Searches at Location | `listStopsAtLocation` | List stop and searches at a location id for a month (GET /stops-at-location). Docs: https://data.police.uk/docs/method/stops-at-location/ |
+| List Stop and Searches by Area | `listStopsByArea` | List stop and searches within 1 mile of a point, or in a custom polygon, for a month (GET /stops-street). Docs: https://data.police.uk/docs/method/stops-street/ |
+| List Stop and Searches by Force | `listStopsByForce` | List all stop and searches reported by a force for a month (GET /stops-force). Docs: https://data.police.uk/docs/method/stops-force/ |
+| List Stop and Searches with No Location | `listStopsWithNoLocation` | List a force's stop and searches that could not be mapped to a location, for a month (GET /stops-no-location). Docs: https://data.police.uk/docs/method/stops-no-location/ |
+| List Street-Level Crimes | `listStreetCrimes` | List street-level crimes in a category within 1 mile of a point, or inside a custom polygon, for a month (GET /crimes-street/{category}). Docs: https://data.police.uk/docs/method/crime-street/ |
+| List Street-Level Outcomes | `listStreetOutcomes` | List outcomes of crimes at a location id, within 1 mile of a point, or in a custom polygon, for a month (GET /outcomes-at-location). Docs: https://data.police.uk/docs/method/outcomes-at-location/ |
+| Locate Neighbourhood | `locateNeighbourhood` | Find the force and neighbourhood responsible for a point (GET /locate-neighbourhood?q=lat,lng). Docs: https://data.police.uk/docs/method/neighbourhood-locate/ |

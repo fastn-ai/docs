@@ -34,23 +34,16 @@ Add DataForB2B from **Build → Integrations → Connectors** and connect an acc
 | Get Account | `getAccount` | Returns whether the API key is valid and the remaining credit balance of the DataForB2B account. Free; used to verify the connection. |
 | Get Filter Suggestions | `getFilterSuggestions` | Autocompletes canonical filter values (companies, industries, categories, locations, cities, regions, schools, titles, skills, investors) for use in search filters. Charges 0.01 credit per result returned. |
 | List Monitor Events | `listMonitorEvents` | Lists recent events delivered to a monitor, newest first, with limit and offset paging. |
-
-<details>
-
-<summary>See 10 more actions</summary>
-
-* **List Monitors** `listMonitors`: Lists every monitor on the API key with its signal, watched targets, webhook URL, active state and filters.
-* **List Signals** `listSignals`: Returns the signal catalog: every signal you can monitor, its allowed target types, whether a target is required and its sub-event types. Free.
-* **Remove Monitor Targets** `removeMonitorTargets`: Removes one or more targets from a monitor by their URL or key.
-* **Run Reasoning Search** `runReasoningSearch`: Runs the multi-turn AI search agent: send a query, answer any clarifying questions with the returned session id, or refine a previous search. Returns either needs_input questions or complete results. Charges 2 credits per completed search plus 0.75 or 1.5 credits per result.
-* **Run Reasoning Search Stream** `runReasoningSearchStream`: Runs the multi-turn AI search agent and streams its progress as server-sent events (thinking, searching, questions and a final result event). Accepts the same inputs as Run Reasoning Search and charges the same credits.
-* **Search By Natural Language** `searchByNaturalLanguage`: Runs a one-shot search from a natural-language query: generates the filters and returns matching people or companies in a single call. Charges 1 credit for filter generation plus 0.75 or 1.5 credits per result depending on live enrichment.
-* **Search Companies** `searchCompanies`: Searches companies with a structured filter group of column conditions (name, domain, industry, size, headquarters, offices, growth, funding and more). Charges 0.75 credits per result with cached data or 1.5 credits per result with live enrichment.
-* **Search Jobs** `searchJobs`: Searches job postings on LinkedIn or Indeed by keyword, location, company, employment type, work arrangement, seniority and freshness, with optional full descriptions. Documented price is 1.5 credits per 10 postings returned; the API requires a balance of 0.75 credits per requested posting before running the search.
-* **Search People** `searchPeople`: Searches professional profiles with a structured filter group of column conditions (current company, title, location, skills, education, experience and more). Charges 0.75 credits per result with cached data or 1.5 credits per result with live enrichment. Unknown columns are rejected with 400.
-* **Search Social Posts** `searchSocialPosts`: Searches posts on LinkedIn, Twitter/X or Reddit by keyword with author, content-type and freshness filters, optionally attaching the people who reacted or commented, or fetches the engagers of one post by URL. Documented price is 1 credit per 10 posts and per 10 engagers returned; the API requires a balance of 0.75 credits per requested post before running the search.
-
-</details>
+| List Monitors | `listMonitors` | Lists every monitor on the API key with its signal, watched targets, webhook URL, active state and filters. |
+| List Signals | `listSignals` | Returns the signal catalog: every signal you can monitor, its allowed target types, whether a target is required and its sub-event types. Free. |
+| Remove Monitor Targets | `removeMonitorTargets` | Removes one or more targets from a monitor by their URL or key. |
+| Run Reasoning Search | `runReasoningSearch` | Runs the multi-turn AI search agent: send a query, answer any clarifying questions with the returned session id, or refine a previous search. Returns either needs_input questions or complete results. Charges 2 credits per completed search plus 0.75 or 1.5 credits per result. |
+| Run Reasoning Search Stream | `runReasoningSearchStream` | Runs the multi-turn AI search agent and streams its progress as server-sent events (thinking, searching, questions and a final result event). Accepts the same inputs as Run Reasoning Search and charges the same credits. |
+| Search By Natural Language | `searchByNaturalLanguage` | Runs a one-shot search from a natural-language query: generates the filters and returns matching people or companies in a single call. Charges 1 credit for filter generation plus 0.75 or 1.5 credits per result depending on live enrichment. |
+| Search Companies | `searchCompanies` | Searches companies with a structured filter group of column conditions (name, domain, industry, size, headquarters, offices, growth, funding and more). Charges 0.75 credits per result with cached data or 1.5 credits per result with live enrichment. |
+| Search Jobs | `searchJobs` | Searches job postings on LinkedIn or Indeed by keyword, location, company, employment type, work arrangement, seniority and freshness, with optional full descriptions. Documented price is 1.5 credits per 10 postings returned; the API requires a balance of 0.75 credits per requested posting before running the search. |
+| Search People | `searchPeople` | Searches professional profiles with a structured filter group of column conditions (current company, title, location, skills, education, experience and more). Charges 0.75 credits per result with cached data or 1.5 credits per result with live enrichment. Unknown columns are rejected with 400. |
+| Search Social Posts | `searchSocialPosts` | Searches posts on LinkedIn, Twitter/X or Reddit by keyword with author, content-type and freshness filters, optionally attaching the people who reacted or commented, or fetches the engagers of one post by URL. Documented price is 1 credit per 10 posts and per 10 engagers returned; the API requires a balance of 0.75 credits per requested post before running the search. |
 
 ## Events
 
@@ -68,14 +61,7 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Job Change: Company Changed | `company_changed` | A watched person changed company (signal job_change, listed by GET /signals). Set watch to profile URLs. The vendor documents only the unified envelope for this signal; the data body is not published. |
 | Job Change: Hiring Status Changed | `hiring_changed` | A watched person's hiring status changed (signal job_change). Envelope documented; data body not published by the vendor. |
 | Job Change: New Company | `new_company` | A watched person joined a new company (signal job_change). Envelope documented; data body not published by the vendor. |
-
-<details>
-
-<summary>See 4 more events</summary>
-
-* **Job Change: Open To Work Changed** `open_to_work_changed`: A watched person's open-to-work status changed (signal job_change). Envelope documented; data body not published by the vendor.
-* **Job Change: Position Changed** `position_changed`: A watched person changed title (signal job_change). Envelope documented; data body not published by the vendor.
-* **Job Change: Position Ended** `position_ended`: A watched person's position ended (signal job_change). Envelope documented; data body not published by the vendor.
-* **Post Engagement** `post_engagement`: New reactors and commenters on a watched author's 10 most recent posts (signal post_engagement). Set the watch input to comma-separated author LinkedIn profile URLs. Usage-based: 0.2 credits per backlog engager, 0.5 per go-forward engager; the monitor pauses when credits run out. Deliveries are signed with X-Webhook-Signature sha256=HMAC-SHA256(secret, raw body) when a secret is set.
-
-</details>
+| Job Change: Open To Work Changed | `open_to_work_changed` | A watched person's open-to-work status changed (signal job_change). Envelope documented; data body not published by the vendor. |
+| Job Change: Position Changed | `position_changed` | A watched person changed title (signal job_change). Envelope documented; data body not published by the vendor. |
+| Job Change: Position Ended | `position_ended` | A watched person's position ended (signal job_change). Envelope documented; data body not published by the vendor. |
+| Post Engagement | `post_engagement` | New reactors and commenters on a watched author's 10 most recent posts (signal post_engagement). Set the watch input to comma-separated author LinkedIn profile URLs. Usage-based: 0.2 credits per backlog engager, 0.5 per go-forward engager; the monitor pauses when credits run out. Deliveries are signed with X-Webhook-Signature sha256=HMAC-SHA256(secret, raw body) when a secret is set. |

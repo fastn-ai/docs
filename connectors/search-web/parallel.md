@@ -33,38 +33,31 @@ Add Parallel from **Build → Integrations → Connectors** and connect an accou
 | Create Response | `createResponse` | Answers a question with live web research using the OpenAI-compatible Responses API. Model is always parallel; reasoning.effort low, medium or high selects the research depth. Supports structured output via text.format and multi-turn via previous_response_id. $10 to $250 per 1,000 requests by tier. |
 | Create Task Group | `createTaskGroup` | Creates a Task Group to batch and track many task runs, with optional metadata. |
 | Create Task Run | `createTaskRun` | Starts an asynchronous web-research task run with a processor (lite, base, core, pro, ultra and their -fast variants), an input and an optional task spec, webhook and metadata. Returns 202 with the run id; poll Get Task Run Result. Billed per successful run by processor ($5 per 1,000 for lite). |
-
-<details>
-
-<summary>See 25 more actions</summary>
-
-* **Enrich FindAll Run** `enrichFindAllRun`: Adds an enrichment (a JSON output schema evaluated per matched candidate by a Task processor) to an existing FindAll run. Enrichments are billed per candidate at the processor's Task rate.
-* **Entity Search** `entitySearch`: Fast synchronous search for people or companies matching a natural-language objective, returning a ranked entity set. $5 per 1,000 requests including 100 results.
-* **Evict From Memory** `evictMemory`: Removes one task run, monitor or FindAll run from the selected memory without deleting the original resource.
-* **Extend FindAll Run** `extendFindAllRun`: Raises the match limit of an existing FindAll run by the given number of additional matches so it keeps searching without changing the query.
-* **Extract** `extract`: Extracts clean, LLM-optimized content and excerpts from up to 20 public URLs, optionally focused by an objective and search queries. Synchronous; $1 per 1,000 URLs.
-* **Get FindAll Run** `getFindAllRun`: Retrieves the status and candidate metrics of a FindAll run.
-* **Get FindAll Run Events** `getFindAllRunEvents`: Streams FindAll run and candidate events as server-sent events. The stream stays open while the run is active; pass a short timeout (seconds) to get a bounded response, and last_event_id to resume.
-* **Get FindAll Run Result** `getFindAllRunResult`: Retrieves the FindAll run result at the time of the request: the run status plus every evaluated candidate with match status, conditions and enrichments.
-* **Get FindAll Run Schema** `getFindAllRunSchema`: Retrieves the spec of a FindAll run: objective, entity type, match conditions, enrichments, generator and match limit.
-* **Get Monitor** `getMonitor`: Retrieves a monitor by id including its settings, webhook, metadata and (for snapshot monitors) current output.
-* **Get Task Group** `getTaskGroup`: Retrieves aggregated status across all runs in a Task Group.
-* **Get Task Group Events** `getTaskGroupEvents`: Streams Task Group status updates and run completions as server-sent events. The stream stays open while runs are active; pass a short timeout (seconds) to get a bounded response.
-* **Get Task Group Run** `getTaskGroupRun`: Retrieves the status of one run inside a Task Group.
-* **Get Task Run** `getTaskRun`: Retrieves the status of a task run by run id.
-* **Get Task Run Events** `getTaskRunEvents`: Streams progress events for a task run as server-sent events (requires enable_events on the run). The stream stays open while the run is active (up to 570 seconds) and closes with a final task_run.state event once the run is non-active, so call it on a completed run to get a bounded response.
-* **Get Task Run Input** `getTaskRunInput`: Retrieves the original input, task spec and settings of a task run by run id.
-* **Get Task Run Result** `getTaskRunResult`: Retrieves the result of a task run, blocking until the run completes or the timeout elapses. Returns the run object plus the output with its research basis.
-* **Ingest FindAll Objective** `ingestFindAllObjective`: Transforms a natural-language search objective into a structured FindAll spec (entity type, match conditions, generator, match limit) that can be passed to Create FindAll Run.
-* **List Monitor Events** `listMonitorEvents`: Lists a monitor's events newest first (event_stream, snapshot, completion, error), optionally for one execution via event_group_id, with cursor paging. Pass include_completions to include no-change runs.
-* **List Monitors** `listMonitors`: Lists monitors newest first, optionally filtered by type and status, with cursor paging.
-* **List Task Group Runs** `listTaskGroupRuns`: Returns a snapshot of the runs in a Task Group as a server-sent event stream (one task_run.state event per run, then the stream closes), optionally including each run's input and output and filtered by status. Resume with last_event_id.
-* **Retrieve Memory** `retrieveMemory`: Retrieves relevant or recent past task, monitor and FindAll runs from the selected memory. Provide a query to rank by relevance; leave it empty for the most recent runs.
-* **Search** `search`: Searches the web with natural-language objective and keyword queries and returns LLM-optimized page excerpts ranked by relevance. Synchronous; $1 to $5 per 1,000 requests depending on mode.
-* **Trigger Monitor Run** `triggerMonitorRun`: Triggers an immediate execution of a monitor outside its schedule. Counts as one check.
-* **Update Monitor** `updateMonitor`: Updates a monitor's frequency, processor, webhook, metadata or (event_stream only, with type set) settings such as the query.
-
-</details>
+| Enrich FindAll Run | `enrichFindAllRun` | Adds an enrichment (a JSON output schema evaluated per matched candidate by a Task processor) to an existing FindAll run. Enrichments are billed per candidate at the processor's Task rate. |
+| Entity Search | `entitySearch` | Fast synchronous search for people or companies matching a natural-language objective, returning a ranked entity set. $5 per 1,000 requests including 100 results. |
+| Evict From Memory | `evictMemory` | Removes one task run, monitor or FindAll run from the selected memory without deleting the original resource. |
+| Extend FindAll Run | `extendFindAllRun` | Raises the match limit of an existing FindAll run by the given number of additional matches so it keeps searching without changing the query. |
+| Extract | `extract` | Extracts clean, LLM-optimized content and excerpts from up to 20 public URLs, optionally focused by an objective and search queries. Synchronous; $1 per 1,000 URLs. |
+| Get FindAll Run | `getFindAllRun` | Retrieves the status and candidate metrics of a FindAll run. |
+| Get FindAll Run Events | `getFindAllRunEvents` | Streams FindAll run and candidate events as server-sent events. The stream stays open while the run is active; pass a short timeout (seconds) to get a bounded response, and last_event_id to resume. |
+| Get FindAll Run Result | `getFindAllRunResult` | Retrieves the FindAll run result at the time of the request: the run status plus every evaluated candidate with match status, conditions and enrichments. |
+| Get FindAll Run Schema | `getFindAllRunSchema` | Retrieves the spec of a FindAll run: objective, entity type, match conditions, enrichments, generator and match limit. |
+| Get Monitor | `getMonitor` | Retrieves a monitor by id including its settings, webhook, metadata and (for snapshot monitors) current output. |
+| Get Task Group | `getTaskGroup` | Retrieves aggregated status across all runs in a Task Group. |
+| Get Task Group Events | `getTaskGroupEvents` | Streams Task Group status updates and run completions as server-sent events. The stream stays open while runs are active; pass a short timeout (seconds) to get a bounded response. |
+| Get Task Group Run | `getTaskGroupRun` | Retrieves the status of one run inside a Task Group. |
+| Get Task Run | `getTaskRun` | Retrieves the status of a task run by run id. |
+| Get Task Run Events | `getTaskRunEvents` | Streams progress events for a task run as server-sent events (requires enable_events on the run). The stream stays open while the run is active (up to 570 seconds) and closes with a final task_run.state event once the run is non-active, so call it on a completed run to get a bounded response. |
+| Get Task Run Input | `getTaskRunInput` | Retrieves the original input, task spec and settings of a task run by run id. |
+| Get Task Run Result | `getTaskRunResult` | Retrieves the result of a task run, blocking until the run completes or the timeout elapses. Returns the run object plus the output with its research basis. |
+| Ingest FindAll Objective | `ingestFindAllObjective` | Transforms a natural-language search objective into a structured FindAll spec (entity type, match conditions, generator, match limit) that can be passed to Create FindAll Run. |
+| List Monitor Events | `listMonitorEvents` | Lists a monitor's events newest first (event_stream, snapshot, completion, error), optionally for one execution via event_group_id, with cursor paging. Pass include_completions to include no-change runs. |
+| List Monitors | `listMonitors` | Lists monitors newest first, optionally filtered by type and status, with cursor paging. |
+| List Task Group Runs | `listTaskGroupRuns` | Returns a snapshot of the runs in a Task Group as a server-sent event stream (one task_run.state event per run, then the stream closes), optionally including each run's input and output and filtered by status. Resume with last_event_id. |
+| Retrieve Memory | `retrieveMemory` | Retrieves relevant or recent past task, monitor and FindAll runs from the selected memory. Provide a query to rank by relevance; leave it empty for the most recent runs. |
+| Search | `search` | Searches the web with natural-language objective and keyword queries and returns LLM-optimized page excerpts ranked by relevance. Synchronous; $1 to $5 per 1,000 requests depending on mode. |
+| Trigger Monitor Run | `triggerMonitorRun` | Triggers an immediate execution of a monitor outside its schedule. Counts as one check. |
+| Update Monitor | `updateMonitor` | Updates a monitor's frequency, processor, webhook, metadata or (event_stream only, with type set) settings such as the query. |
 
 ## Events
 

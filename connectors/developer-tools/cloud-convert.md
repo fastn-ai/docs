@@ -34,17 +34,10 @@ Add CloudConvert from **Build → Integrations → Connectors** and connect an a
 | Get Current User | `getCurrentUser` | Retrieve the CloudConvert account the API key belongs to, including its remaining conversion credits, whether it is on a paid plan, and whether its email address has been verified. |
 | Get Job | `getJob` | Retrieve a single job by its identifier, including its status and, when requested, the tasks it contains. |
 | Get Task | `getTask` | Retrieve a single task by its identifier, including its status, the engine that ran it and, once finished, its result files and their download URLs. |
-
-<details>
-
-<summary>See 7 more actions</summary>
-
-* **List Jobs** `listJobs`: List the conversion jobs on the account. Filter by status or tag, include the tasks of each job, and page through the results.
-* **List Supported Operations** `listOperations`: List every operation CloudConvert supports, as input format plus output format plus engine, with the credit cost of each. Use it to discover which conversions are possible before creating a task.
-* **List Tasks** `listTasks`: List the tasks on the account. Filter by job, status, operation or tag, include the job each task belongs to, and page through the results.
-* **List Webhooks** `listWebhooks`: List the account's webhooks (GET /v2/users/me/webhooks). Docs: https://cloudconvert.com/docs/raw/api-reference/webhooks.md#list-webhooks
-* **Retry Task** `retryTask`: Create a new task from the payload of another task (POST /v2/tasks/{id}/retry). Docs: https://cloudconvert.com/docs/raw/api-reference/tasks.md#retry-task
-* **Wait for Job** `waitForJob`: Wait until a job completes and return it (GET https://sync.api.cloudconvert.com/v2/jobs/{id}). Docs: https://cloudconvert.com/docs/raw/api-reference/jobs.md#wait-for-job
-* **Wait for Task** `waitForTask`: Wait until a task completes and return it (GET https://sync.api.cloudconvert.com/v2/tasks/{id}). Docs: https://cloudconvert.com/docs/raw/api-reference/tasks.md#wait-for-task
-
-</details>
+| List Jobs | `listJobs` | List the conversion jobs on the account. Filter by status or tag, include the tasks of each job, and page through the results. |
+| List Supported Operations | `listOperations` | List every operation CloudConvert supports, as input format plus output format plus engine, with the credit cost of each. Use it to discover which conversions are possible before creating a task. |
+| List Tasks | `listTasks` | List the tasks on the account. Filter by job, status, operation or tag, include the job each task belongs to, and page through the results. |
+| List Webhooks | `listWebhooks` | List the account's webhooks (GET /v2/users/me/webhooks). Docs: https://cloudconvert.com/docs/raw/api-reference/webhooks.md#list-webhooks |
+| Retry Task | `retryTask` | Create a new task from the payload of another task (POST /v2/tasks/{id}/retry). Docs: https://cloudconvert.com/docs/raw/api-reference/tasks.md#retry-task |
+| Wait for Job | `waitForJob` | Wait until a job completes and return it (GET https://sync.api.cloudconvert.com/v2/jobs/{id}). Docs: https://cloudconvert.com/docs/raw/api-reference/jobs.md#wait-for-job |
+| Wait for Task | `waitForTask` | Wait until a task completes and return it (GET https://sync.api.cloudconvert.com/v2/tasks/{id}). Docs: https://cloudconvert.com/docs/raw/api-reference/tasks.md#wait-for-task |

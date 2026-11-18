@@ -34,47 +34,40 @@ Add OpenAI from **Build → Integrations → Connectors** and connect an account
 | Create Image | `createImage` | Creates an image given a text prompt. POST /images/generations. |
 | Create Image Edit | `createImageEdit` | Creates an edited or extended image given source image(s) and a prompt. POST /images/edits (multipart/form-data). |
 | Create Moderation | `createModeration` | Classifies if text and/or image inputs are potentially harmful. POST /moderations. |
-
-<details>
-
-<summary>See 34 more actions</summary>
-
-* **Create Response** `createResponse`: Create a model response using the Responses API. POST /responses.
-* **Create Speech** `createSpeech`: Generates audio from the input text (text-to-speech). POST /audio/speech. Returns binary audio.
-* **Create Transcription** `createTranscription`: Transcribes audio into the input language. POST /audio/transcriptions (multipart/form-data).
-* **Create Translation** `createTranslation`: Translates audio into English. POST /audio/translations (multipart/form-data).
-* **Create Vector Store** `createVectorStore`: Create a vector store. POST /vector_stores.
-* **Create Vector Store File** `createVectorStoreFile`: Attach a file to a vector store. POST /vector_stores/{vector_store_id}/files.
-* **Create Vector Store File Batch** `createVectorStoreFileBatch`: Create a vector store file batch to attach multiple files at once. POST /vector_stores/{vector_store_id}/file_batches.
-* **Delete File** `deleteFile`: Delete a file. DELETE /files/{file_id}.
-* **Delete Model** `deleteModel`: Delete a fine-tuned model (requires Owner role). DELETE /models/{model}.
-* **Delete Response** `deleteResponse`: Delete a model response with the given ID. DELETE /responses/{response_id}.
-* **Delete Vector Store** `deleteVectorStore`: Delete a vector store. DELETE /vector_stores/{vector_store_id}.
-* **Delete Vector Store File** `deleteVectorStoreFile`: Delete a vector store file (removes association; does not delete the file). DELETE /vector_stores/{vector_store_id}/files/{file_id}.
-* **Get Batch** `getBatch`: Retrieves a batch. GET /batches/{batch_id}.
-* **Get File** `getFile`: Returns information about a specific file. GET /files/{file_id}.
-* **Get File Content** `getFileContent`: Returns the contents of the specified file. GET /files/{file_id}/content.
-* **Get Fine-tuning Job** `getFineTuningJob`: Get info about a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}.
-* **Get Model** `getModel`: Retrieves a model instance by ID. GET /models/{model}.
-* **Get Response** `getResponse`: Retrieve a model response with the given ID. GET /responses/{response_id}.
-* **Get Vector Store** `getVectorStore`: Retrieves a vector store. GET /vector_stores/{vector_store_id}.
-* **Get Vector Store File** `getVectorStoreFile`: Retrieves a vector store file. GET /vector_stores/{vector_store_id}/files/{file_id}.
-* **Get Vector Store File Batch** `getVectorStoreFileBatch`: Retrieves a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}.
-* **List Batches** `listBatches`: List your organization's batches. GET /batches.
-* **List Files** `listFiles`: Returns a list of files. GET /files.
-* **List Fine-tuning Checkpoints** `listFineTuningCheckpoints`: List checkpoints for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints.
-* **List Fine-tuning Events** `listFineTuningEvents`: Get status updates for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/events.
-* **List Fine-tuning Jobs** `listFineTuningJobs`: List your organization's fine-tuning jobs. GET /fine_tuning/jobs.
-* **List Models** `listModels`: Lists the currently available models. GET /models.
-* **List Response Input Items** `listResponseInputItems`: Returns a list of input items for a given response. GET /responses/{response_id}/input_items.
-* **List Vector Store File Batch Files** `listVectorStoreFileBatchFiles`: Returns a list of files in a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files.
-* **List Vector Store Files** `listVectorStoreFiles`: Returns a list of vector store files. GET /vector_stores/{vector_store_id}/files.
-* **List Vector Stores** `listVectorStores`: Returns a list of vector stores. GET /vector_stores.
-* **Search Vector Store** `searchVectorStore`: Search a vector store for relevant chunks based on a query. POST /vector_stores/{vector_store_id}/search.
-* **Update Vector Store** `updateVectorStore`: Modifies a vector store. POST /vector_stores/{vector_store_id}.
-* **Upload File** `uploadFile`: Upload a file that can be used across endpoints (assistants, fine-tuning, batch, vision). POST /files (multipart/form-data).
-
-</details>
+| Create Response | `createResponse` | Create a model response using the Responses API. POST /responses. |
+| Create Speech | `createSpeech` | Generates audio from the input text (text-to-speech). POST /audio/speech. Returns binary audio. |
+| Create Transcription | `createTranscription` | Transcribes audio into the input language. POST /audio/transcriptions (multipart/form-data). |
+| Create Translation | `createTranslation` | Translates audio into English. POST /audio/translations (multipart/form-data). |
+| Create Vector Store | `createVectorStore` | Create a vector store. POST /vector_stores. |
+| Create Vector Store File | `createVectorStoreFile` | Attach a file to a vector store. POST /vector_stores/{vector_store_id}/files. |
+| Create Vector Store File Batch | `createVectorStoreFileBatch` | Create a vector store file batch to attach multiple files at once. POST /vector_stores/{vector_store_id}/file_batches. |
+| Delete File | `deleteFile` | Delete a file. DELETE /files/{file_id}. |
+| Delete Model | `deleteModel` | Delete a fine-tuned model (requires Owner role). DELETE /models/{model}. |
+| Delete Response | `deleteResponse` | Delete a model response with the given ID. DELETE /responses/{response_id}. |
+| Delete Vector Store | `deleteVectorStore` | Delete a vector store. DELETE /vector_stores/{vector_store_id}. |
+| Delete Vector Store File | `deleteVectorStoreFile` | Delete a vector store file (removes association; does not delete the file). DELETE /vector_stores/{vector_store_id}/files/{file_id}. |
+| Get Batch | `getBatch` | Retrieves a batch. GET /batches/{batch_id}. |
+| Get File | `getFile` | Returns information about a specific file. GET /files/{file_id}. |
+| Get File Content | `getFileContent` | Returns the contents of the specified file. GET /files/{file_id}/content. |
+| Get Fine-tuning Job | `getFineTuningJob` | Get info about a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}. |
+| Get Model | `getModel` | Retrieves a model instance by ID. GET /models/{model}. |
+| Get Response | `getResponse` | Retrieve a model response with the given ID. GET /responses/{response_id}. |
+| Get Vector Store | `getVectorStore` | Retrieves a vector store. GET /vector_stores/{vector_store_id}. |
+| Get Vector Store File | `getVectorStoreFile` | Retrieves a vector store file. GET /vector_stores/{vector_store_id}/files/{file_id}. |
+| Get Vector Store File Batch | `getVectorStoreFileBatch` | Retrieves a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}. |
+| List Batches | `listBatches` | List your organization's batches. GET /batches. |
+| List Files | `listFiles` | Returns a list of files. GET /files. |
+| List Fine-tuning Checkpoints | `listFineTuningCheckpoints` | List checkpoints for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints. |
+| List Fine-tuning Events | `listFineTuningEvents` | Get status updates for a fine-tuning job. GET /fine_tuning/jobs/{fine_tuning_job_id}/events. |
+| List Fine-tuning Jobs | `listFineTuningJobs` | List your organization's fine-tuning jobs. GET /fine_tuning/jobs. |
+| List Models | `listModels` | Lists the currently available models. GET /models. |
+| List Response Input Items | `listResponseInputItems` | Returns a list of input items for a given response. GET /responses/{response_id}/input_items. |
+| List Vector Store File Batch Files | `listVectorStoreFileBatchFiles` | Returns a list of files in a vector store file batch. GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files. |
+| List Vector Store Files | `listVectorStoreFiles` | Returns a list of vector store files. GET /vector_stores/{vector_store_id}/files. |
+| List Vector Stores | `listVectorStores` | Returns a list of vector stores. GET /vector_stores. |
+| Search Vector Store | `searchVectorStore` | Search a vector store for relevant chunks based on a query. POST /vector_stores/{vector_store_id}/search. |
+| Update Vector Store | `updateVectorStore` | Modifies a vector store. POST /vector_stores/{vector_store_id}. |
+| Upload File | `uploadFile` | Upload a file that can be used across endpoints (assistants, fine-tuning, batch, vision). POST /files (multipart/form-data). |
 
 ## Events
 
@@ -92,15 +85,8 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Fine-tuning Job Cancelled | `fine_tuning.job.cancelled` | A fine-tuning job was cancelled. |
 | Fine-tuning Job Failed | `fine_tuning.job.failed` | A fine-tuning job failed. |
 | Fine-tuning Job Succeeded | `fine_tuning.job.succeeded` | A fine-tuning job completed successfully. |
-
-<details>
-
-<summary>See 5 more events</summary>
-
-* **Realtime Call Incoming** `realtime.call.incoming`: An incoming Realtime SIP call was received.
-* **Response Cancelled** `response.cancelled`: A background Response request was cancelled.
-* **Response Completed** `response.completed`: A background Response request completed successfully.
-* **Response Failed** `response.failed`: A background Response request failed.
-* **Response Incomplete** `response.incomplete`: A background Response request finished incomplete.
-
-</details>
+| Realtime Call Incoming | `realtime.call.incoming` | An incoming Realtime SIP call was received. |
+| Response Cancelled | `response.cancelled` | A background Response request was cancelled. |
+| Response Completed | `response.completed` | A background Response request completed successfully. |
+| Response Failed | `response.failed` | A background Response request failed. |
+| Response Incomplete | `response.incomplete` | A background Response request finished incomplete. |

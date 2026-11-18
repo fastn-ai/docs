@@ -34,29 +34,22 @@ Add WhatConverts from **Build → Integrations → Connectors** and connect an a
 | Delete Web Form | `deleteWebForm` | Stop tracking a web form. Existing leads captured from it are kept; future submissions are no longer recorded. |
 | Get Account | `getAccount` | Retrieve a single account and its profiles by account_id. Requires an Agency (master account) API key. |
 | Get Account Info | `getAccountInfo` | Identify which WhatConverts account and profile this connection's API key belongs to. Takes no input: it reads the single most recent lead and returns its account_id, account, profile_id and profile. Used as the account-mapping action for webhook (app event) triggers, and as a cheap connection health check. Returns an empty leads array if the profile has never captured a lead. |
-
-<details>
-
-<summary>See 16 more actions</summary>
-
-* **Get Call Recording** `getRecording`: Download the call recording for a phone call lead. The response body is a raw MP3 file, not JSON, so fastn's HTTP executor may fail on it with a body-already-read error; for audio prefer the absolute recording / play_recording / voicemail / play_voicemail URLs already returned on the lead object by Get Lead.
-* **Get Lead** `getLead`: Retrieve a single lead by its lead_id, including attribution, contact details, call recording links and transcriptions, form submissions and custom fields.
-* **Get Profile** `getProfile`: Retrieve a single profile inside an account. Requires an Agency (master account) API key.
-* **Get Role** `getRole`: Retrieve a single role with its full permission matrix (none, view or edit per area: integrations, leads, profiles, reports, settings, tracking, accounts, billing, security, users) and whether it receives lead notifications. Requires an Agency (master account) API key. The API returns the role inside a paginated envelope whose array is named users.
-* **Get User** `getUser`: Retrieve a single dashboard user, including their lead-notification preferences and the accounts they can access. Requires an Agency (master account) API key. Note the API returns this single user inside the same paginated envelope as the list endpoint.
-* **List Accounts** `listAccounts`: Retrieve a paginated list of accounts with their profiles. Requires an Agency (master account) API key; a profile key is rejected.
-* **List Leads** `listLeads`: Retrieve a paginated list of leads with full marketing attribution. Supports filtering by lead type, status, date range, quotable state, value, contact details and every UTM dimension. account_id and profile_id filters require an Agency (master account) key. Date ranges span at most 400 days.
-* **List Profiles** `listProfiles`: Retrieve a paginated list of the profiles inside one account. Requires an Agency (master account) API key. Use this to populate a profile picker before creating leads.
-* **List Roles** `listRoles`: Retrieve the user roles available on the master account. Use this to resolve the role_id needed when creating or editing a user. Requires an Agency (master account) API key.
-* **List Tracking Numbers** `listTrackingNumbers`: Retrieve the call tracking phone numbers on the connection, with their destination, swap number, pool trigger, source/medium assignment, recording and messaging flags and last-used date. account_id and profile_id filters require an Agency (master account) key.
-* **List Users** `listUsers`: Retrieve a paginated list of dashboard users with their role and activation state. Requires an Agency (master account) API key.
-* **List Web Forms** `listWebForms`: Retrieve the web forms WhatConverts is tracking (the form report), with the DOM attribute and submit-button selector each one is matched on. account_id and profile_id filters require an Agency (master account) key.
-* **Update Account** `updateAccount`: Rename an existing account. Requires an Agency (master account) API key.
-* **Update Lead** `updateLead`: Edit an existing lead: qualify it (quotable), attach quote and sales values, correct the lead URL, or write additional/custom fields. Only the fields you supply are changed. This is the endpoint behind "qualify" and "value" a lead in the WhatConverts Lead Manager.
-* **Update Profile** `updateProfile`: Rename an existing profile. Requires an Agency (master account) API key.
-* **Update User** `updateUser`: Edit an existing dashboard user: change their master-account role, their default notifications, or their per-account access. Same path as Create User - the presence of user_id in the body is what makes it an edit. Set an entry's role_id to false in the accounts array to revoke access to that account. Requires an Agency (master account) API key.
-
-</details>
+| Get Call Recording | `getRecording` | Download the call recording for a phone call lead. The response body is a raw MP3 file, not JSON, so fastn's HTTP executor may fail on it with a body-already-read error; for audio prefer the absolute recording / play_recording / voicemail / play_voicemail URLs already returned on the lead object by Get Lead. |
+| Get Lead | `getLead` | Retrieve a single lead by its lead_id, including attribution, contact details, call recording links and transcriptions, form submissions and custom fields. |
+| Get Profile | `getProfile` | Retrieve a single profile inside an account. Requires an Agency (master account) API key. |
+| Get Role | `getRole` | Retrieve a single role with its full permission matrix (none, view or edit per area: integrations, leads, profiles, reports, settings, tracking, accounts, billing, security, users) and whether it receives lead notifications. Requires an Agency (master account) API key. The API returns the role inside a paginated envelope whose array is named users. |
+| Get User | `getUser` | Retrieve a single dashboard user, including their lead-notification preferences and the accounts they can access. Requires an Agency (master account) API key. Note the API returns this single user inside the same paginated envelope as the list endpoint. |
+| List Accounts | `listAccounts` | Retrieve a paginated list of accounts with their profiles. Requires an Agency (master account) API key; a profile key is rejected. |
+| List Leads | `listLeads` | Retrieve a paginated list of leads with full marketing attribution. Supports filtering by lead type, status, date range, quotable state, value, contact details and every UTM dimension. account_id and profile_id filters require an Agency (master account) key. Date ranges span at most 400 days. |
+| List Profiles | `listProfiles` | Retrieve a paginated list of the profiles inside one account. Requires an Agency (master account) API key. Use this to populate a profile picker before creating leads. |
+| List Roles | `listRoles` | Retrieve the user roles available on the master account. Use this to resolve the role_id needed when creating or editing a user. Requires an Agency (master account) API key. |
+| List Tracking Numbers | `listTrackingNumbers` | Retrieve the call tracking phone numbers on the connection, with their destination, swap number, pool trigger, source/medium assignment, recording and messaging flags and last-used date. account_id and profile_id filters require an Agency (master account) key. |
+| List Users | `listUsers` | Retrieve a paginated list of dashboard users with their role and activation state. Requires an Agency (master account) API key. |
+| List Web Forms | `listWebForms` | Retrieve the web forms WhatConverts is tracking (the form report), with the DOM attribute and submit-button selector each one is matched on. account_id and profile_id filters require an Agency (master account) key. |
+| Update Account | `updateAccount` | Rename an existing account. Requires an Agency (master account) API key. |
+| Update Lead | `updateLead` | Edit an existing lead: qualify it (quotable), attach quote and sales values, correct the lead URL, or write additional/custom fields. Only the fields you supply are changed. This is the endpoint behind "qualify" and "value" a lead in the WhatConverts Lead Manager. |
+| Update Profile | `updateProfile` | Rename an existing profile. Requires an Agency (master account) API key. |
+| Update User | `updateUser` | Edit an existing dashboard user: change their master-account role, their default notifications, or their per-account access. Same path as Create User - the presence of user_id in the body is what makes it an edit. Set an entry's role_id to false in the accounts array to revoke access to that account. Requires an Agency (master account) API key. |
 
 ## Events
 

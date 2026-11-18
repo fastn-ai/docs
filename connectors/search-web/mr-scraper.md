@@ -34,29 +34,22 @@ Add MrScraper from **Build → Integrations → Connectors** and connect an acco
 | Get Async Task Result | `getAsyncTaskResult` | Retrieves the result of an asynchronous Marketplace scraper task by task ID. While the task runs the response reports PENDING with success false; poll until data is returned. |
 | Get Bulk Submission | `getBulkSubmission` | Retrieves the progress and per-URL results of a bulk submission by its submission ID. |
 | Get Proxy Bandwidth Usage | `getProxyBandwidthUsage` | Returns residential proxy bandwidth usage aggregated per proxy username within a date range, optionally in a given timezone and filtered by region. |
-
-<details>
-
-<summary>See 16 more actions</summary>
-
-* **Get Result** `getResult`: Retrieves a single scraping result by its ID, including extracted data, status, token usage and file paths. Also used to poll bulk rerun results by their bulk result ID.
-* **Get Screenshot** `getScreenshot`: Renders a web page in a real browser and returns a base64-encoded JPEG screenshot of the full page, optionally with a full-page recording, HTML and Markdown. Consumes MrScraper tokens.
-* **List Results** `listResults`: Lists scraping results with their data, status, token usage and file paths, with sorting, pagination, full-text search and date-range filtering.
-* **Rerun AI Scraper** `rerunAiScraper`: Reruns an existing AI scraper on a URL, reusing cached results to reduce token usage. Map-agent scrapers also accept crawl depth, page and URL limits and include or exclude patterns. Consumes MrScraper tokens.
-* **Rerun Manual Scraper** `rerunManualScraper`: Reruns an existing manual scraper on a URL, optionally overriding its workflow steps (extract, click, delay, wait, input, scroll, script, listen_network, follow_urls). Reuses cached results to reduce token usage. Consumes MrScraper tokens.
-* **Run Bulk Submission** `runBulkSubmission`: Submits a custom scraper workflow to run against many URLs in one bulk job and returns a submission ID to poll with Get Bulk Submission. Consumes MrScraper tokens.
-* **Scrape Amazon Product Details** `scrapeAmazonProduct`: Runs the Marketplace Amazon Product Details scraper synchronously on an Amazon product page URL and returns structured product information. Consumes MrScraper tokens.
-* **Scrape HTML With Web Unblocker** `scrapeHtml`: Fetches the raw HTML of any web page through the Web Unblocker, with optional browser rendering, anti-bot bypass (super mode), geo-targeting, resource blocking and waiting for a CSS selector. Consumes MrScraper tokens.
-* **Scrape JSON** `scrapeJson`: Extracts structured JSON from a single page with the AI general agent, guided by a natural-language prompt (optionally with an appended JSON schema) instead of CSS selectors. Consumes MrScraper tokens.
-* **Scrape Listing Page** `scrapeListingPage`: Extracts repeating items from a multi-page listing, catalog or search results page with the AI listing agent, following numbered pagination, infinite scroll and Load More up to a page limit. Requires super mode. Consumes MrScraper tokens.
-* **Scrape Markdown** `scrapeMarkdown`: Scrapes a web page and returns its content as clean, LLM-friendly Markdown with navigation, scripts and ads stripped. Supports browser rendering, super mode, screenshots, geo-targeting and a token cap. Consumes MrScraper tokens.
-* **Scrape Sitemap** `scrapeSitemap`: Crawls a website's link structure with the AI map agent and returns the discovered URLs, controlled by crawl depth, page and URL limits and include or exclude patterns. Consumes MrScraper tokens.
-* **Scrape YouTube Video** `scrapeYoutubeVideo`: Runs the Marketplace YouTube scraper synchronously on a video URL and returns the video title, author, duration, thumbnails, available formats and a download URL. Consumes MrScraper tokens.
-* **Scraper API** `scraperApi`: Fetch a known URL through the MrScraper stealth browser and return HTML, Markdown, a screenshot, or a combination, with browser rendering, geolocation, proxy and retry controls. Same request as the MrScraper Python SDK scraper_api (v0.6.0): POST https://api.mrscraper.com with page options as query parameters and url/maxRetries/tokenCap in the JSON body.
-* **Self-Heal Manual Scraper** `selfHealManualScraper`: Asks AI to repair a manual scraper's workflow after the target site changed its markup. The saved workflow is replaced only when a valid workflow is returned; check workflowUpdated in the response. Consumes MrScraper tokens.
-* **Web Search (Google SERP)** `searchGoogleSerp`: Runs the Marketplace Google SERP scraper synchronously for a search query and returns parsed results as JSON or the result-page HTML, with region, language and page controls. Consumes MrScraper tokens. Same call as the MrScraper Python SDK web_search() (v0.6.0).
-
-</details>
+| Get Result | `getResult` | Retrieves a single scraping result by its ID, including extracted data, status, token usage and file paths. Also used to poll bulk rerun results by their bulk result ID. |
+| Get Screenshot | `getScreenshot` | Renders a web page in a real browser and returns a base64-encoded JPEG screenshot of the full page, optionally with a full-page recording, HTML and Markdown. Consumes MrScraper tokens. |
+| List Results | `listResults` | Lists scraping results with their data, status, token usage and file paths, with sorting, pagination, full-text search and date-range filtering. |
+| Rerun AI Scraper | `rerunAiScraper` | Reruns an existing AI scraper on a URL, reusing cached results to reduce token usage. Map-agent scrapers also accept crawl depth, page and URL limits and include or exclude patterns. Consumes MrScraper tokens. |
+| Rerun Manual Scraper | `rerunManualScraper` | Reruns an existing manual scraper on a URL, optionally overriding its workflow steps (extract, click, delay, wait, input, scroll, script, listen_network, follow_urls). Reuses cached results to reduce token usage. Consumes MrScraper tokens. |
+| Run Bulk Submission | `runBulkSubmission` | Submits a custom scraper workflow to run against many URLs in one bulk job and returns a submission ID to poll with Get Bulk Submission. Consumes MrScraper tokens. |
+| Scrape Amazon Product Details | `scrapeAmazonProduct` | Runs the Marketplace Amazon Product Details scraper synchronously on an Amazon product page URL and returns structured product information. Consumes MrScraper tokens. |
+| Scrape HTML With Web Unblocker | `scrapeHtml` | Fetches the raw HTML of any web page through the Web Unblocker, with optional browser rendering, anti-bot bypass (super mode), geo-targeting, resource blocking and waiting for a CSS selector. Consumes MrScraper tokens. |
+| Scrape JSON | `scrapeJson` | Extracts structured JSON from a single page with the AI general agent, guided by a natural-language prompt (optionally with an appended JSON schema) instead of CSS selectors. Consumes MrScraper tokens. |
+| Scrape Listing Page | `scrapeListingPage` | Extracts repeating items from a multi-page listing, catalog or search results page with the AI listing agent, following numbered pagination, infinite scroll and Load More up to a page limit. Requires super mode. Consumes MrScraper tokens. |
+| Scrape Markdown | `scrapeMarkdown` | Scrapes a web page and returns its content as clean, LLM-friendly Markdown with navigation, scripts and ads stripped. Supports browser rendering, super mode, screenshots, geo-targeting and a token cap. Consumes MrScraper tokens. |
+| Scrape Sitemap | `scrapeSitemap` | Crawls a website's link structure with the AI map agent and returns the discovered URLs, controlled by crawl depth, page and URL limits and include or exclude patterns. Consumes MrScraper tokens. |
+| Scrape YouTube Video | `scrapeYoutubeVideo` | Runs the Marketplace YouTube scraper synchronously on a video URL and returns the video title, author, duration, thumbnails, available formats and a download URL. Consumes MrScraper tokens. |
+| Scraper API | `scraperApi` | Fetch a known URL through the MrScraper stealth browser and return HTML, Markdown, a screenshot, or a combination, with browser rendering, geolocation, proxy and retry controls. Same request as the MrScraper Python SDK scraper_api (v0.6.0): POST https://api.mrscraper.com with page options as query parameters and url/maxRetries/tokenCap in the JSON body. |
+| Self-Heal Manual Scraper | `selfHealManualScraper` | Asks AI to repair a manual scraper's workflow after the target site changed its markup. The saved workflow is replaced only when a valid workflow is returned; check workflowUpdated in the response. Consumes MrScraper tokens. |
+| Web Search (Google SERP) | `searchGoogleSerp` | Runs the Marketplace Google SERP scraper synchronously for a search query and returns parsed results as JSON or the result-page HTML, with region, language and page controls. Consumes MrScraper tokens. Same call as the MrScraper Python SDK web_search() (v0.6.0). |
 
 ## Events
 

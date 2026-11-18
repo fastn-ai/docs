@@ -34,18 +34,11 @@ Add Uplisting from **Build → Integrations → Connectors** and connect an acco
 | List Custom Booking Attributes | `listCustomBookingAttributes` | Lists the custom booking attributes available on the account, which are the attributes that Update Booking Attributes can set on an individual booking and that hosts can reference in automated message templates. Requires a partner client ID to be set on the connection. |
 | List Properties | `listProperties` | Retrieves every property on the connected Uplisting account. Uplisting serves this endpoint as application/vnd.api+json, which fastn returns as a file reference whose data field is the Base64-encoded JSON:API document; decode it to get an object with a data array of properties and an included array carrying each property's address, photos, multi-units, fees, taxes, discounts, suitabilities, policies, channel commissions and amenities. |
 | List Webhooks | `listWebhooks` | Retrieves every webhook registered on the connected Uplisting account in JSON:API format, showing the target URL and event type each one is subscribed to. |
-
-<details>
-
-<summary>See 5 more actions</summary>
-
-* **Ping API** `pingApi`: Checks that the Uplisting API is reachable, returning the literal text 'pong'. This is a liveness probe only and does not validate credentials, so use Verify API Key to confirm a connection is authenticated.
-* **Search Availability** `searchAvailability`: Searches the connected Uplisting account for properties available under the supplied criteria. Every criterion is optional and they combine with AND. Uplisting serves this endpoint as application/vnd.api+json, which fastn returns as a file reference whose data field is the Base64-encoded JSON:API document; decode it to get the matching properties plus their addresses, photos and amenities in the included array.
-* **Update Booking Attributes** `updateBookingAttributes`: Sets values for custom booking attributes on one booking. Only attributes returned by List Custom Booking Attributes can be set, and values are stored as strings for use in the host's automated message tags. Requires a partner client ID to be set on the connection.
-* **Update Calendar** `updateCalendar`: Updates nightly rates, availability and minimum length of stay for a property across a date range, and broadcasts the change to every channel the property is connected to. Uplisting schedules the payload and applies it asynchronously, usually within a minute, returning a request identifier immediately; supply a notification URL to be told whether the update succeeded.
-* **Verify API Key** `verifyApiKey`: Verifies that the configured Uplisting API key is valid and returns the name and unique identifier of the Uplisting account it belongs to. Use this to confirm a connection before running any other action.
-
-</details>
+| Ping API | `pingApi` | Checks that the Uplisting API is reachable, returning the literal text 'pong'. This is a liveness probe only and does not validate credentials, so use Verify API Key to confirm a connection is authenticated. |
+| Search Availability | `searchAvailability` | Searches the connected Uplisting account for properties available under the supplied criteria. Every criterion is optional and they combine with AND. Uplisting serves this endpoint as application/vnd.api+json, which fastn returns as a file reference whose data field is the Base64-encoded JSON:API document; decode it to get the matching properties plus their addresses, photos and amenities in the included array. |
+| Update Booking Attributes | `updateBookingAttributes` | Sets values for custom booking attributes on one booking. Only attributes returned by List Custom Booking Attributes can be set, and values are stored as strings for use in the host's automated message tags. Requires a partner client ID to be set on the connection. |
+| Update Calendar | `updateCalendar` | Updates nightly rates, availability and minimum length of stay for a property across a date range, and broadcasts the change to every channel the property is connected to. Uplisting schedules the payload and applies it asynchronously, usually within a minute, returning a request identifier immediately; supply a notification URL to be told whether the update succeeded. |
+| Verify API Key | `verifyApiKey` | Verifies that the configured Uplisting API key is valid and returns the name and unique identifier of the Uplisting account it belongs to. Use this to confirm a connection before running any other action. |
 
 ## Events
 

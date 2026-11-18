@@ -34,16 +34,9 @@ Add RocketReach from **Build → Integrations → Connectors** and connect an ac
 | People Search API | `searchPeople` | People Search API. Search People by Criteria |
 | Retrieve Account | `getAccount` | RocketReach API Account. Retrieve & Manage Account Details |
 | ⭐ RocketReach Universal API Account | `getUniversalAccount` | ⭐ RocketReach Universal API Account. Retrieve & Manage Account Details |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **⭐ Universal Bulk People Lookup API** `bulkLookupPeopleUniversal`: ⭐ Universal Bulk People Lookup API. Bulk People Lookup by Criteria
-* **⭐ Universal Company Lookup API** `lookupCompanyUniversal`: ⭐ Universal Company Lookup API. Search Companies by Criteria
-* **⭐ Universal Company Search API** `searchCompaniesUniversal`: ⭐ Universal Company Search API. Search Companies by Criteria
-* **⭐ Universal People Lookup API** `lookupPersonUniversal`: ⭐ Universal People Lookup API. Person Enrichment API
-* **⭐ Universal People Lookup Status API** `checkPersonLookupStatusUniversal`: ⭐ Universal People Lookup Status API. Check Universal Person Lookup Status
-* **⭐ Universal People Search API** `searchPeopleUniversal`: ⭐ Universal People Search API. Search People by Criteria
-
-</details>
+| ⭐ Universal Bulk People Lookup API | `bulkLookupPeopleUniversal` | ⭐ Universal Bulk People Lookup API. Bulk People Lookup by Criteria |
+| ⭐ Universal Company Lookup API | `lookupCompanyUniversal` | ⭐ Universal Company Lookup API. Search Companies by Criteria |
+| ⭐ Universal Company Search API | `searchCompaniesUniversal` | ⭐ Universal Company Search API. Search Companies by Criteria |
+| ⭐ Universal People Lookup API | `lookupPersonUniversal` | ⭐ Universal People Lookup API. Person Enrichment API |
+| ⭐ Universal People Lookup Status API | `checkPersonLookupStatusUniversal` | ⭐ Universal People Lookup Status API. Check Universal Person Lookup Status |
+| ⭐ Universal People Search API | `searchPeopleUniversal` | ⭐ Universal People Search API. Search People by Criteria |

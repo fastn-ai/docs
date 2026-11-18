@@ -34,11 +34,4 @@ Add Rick and Morty API from **Build → Integrations → Connectors** and connec
 | List Characters | `listCharacters` | List characters, 20 per page, optionally filtered (GET /api/character). Filters combine; when nothing matches the API returns 404 with error 'There is nothing here'. Docs: https://rickandmortyapi.com/documentation |
 | List Episodes | `listEpisodes` | List episodes, 20 per page, optionally filtered (GET /api/episode). Filters combine; when nothing matches the API returns 404 with error 'There is nothing here'. Docs: https://rickandmortyapi.com/documentation |
 | List Locations | `listLocations` | List locations, 20 per page, optionally filtered (GET /api/location). Filters combine; when nothing matches the API returns 404 with error 'There is nothing here'. Docs: https://rickandmortyapi.com/documentation |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Run GraphQL Query** `runGraphqlQuery`: Run a GraphQL query against the Rick and Morty GraphQL endpoint (POST /graphql). Queries include characters, character, charactersByIds, locations, location, locationsByIds, episodes, episode and episodesByIds with page and filter arguments. Docs: https://rickandmortyapi.com/documentation
-
-</details>
+| Run GraphQL Query | `runGraphqlQuery` | Run a GraphQL query against the Rick and Morty GraphQL endpoint (POST /graphql). Queries include characters, character, charactersByIds, locations, location, locationsByIds, episodes, episode and episodesByIds with page and filter arguments. Docs: https://rickandmortyapi.com/documentation |

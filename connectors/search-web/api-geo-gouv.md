@@ -34,13 +34,6 @@ Add API Géo from **Build → Integrations → Connectors** and connect an accou
 | List Region Departments | `listRegionDepartements` | List the departments of a French region (GET /regions/{code}/departements). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
 | Search Associated and Delegated Communes | `searchAssociatedDelegatedCommunes` | Search associated and delegated communes (former communes merged into a new one) by coordinates, name, code, EPCI, department or region (GET /communes_associees_deleguees). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
 | Search Communes | `searchCommunes` | Search French communes by postcode, coordinates, name (fuzzy, use boost=population to rank big towns first), INSEE code, SIREN, EPCI, department or region (GET /communes). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
-
-<details>
-
-<summary>See 3 more actions</summary>
-
-* **Search Departments** `searchDepartements`: List or search French departments by code, region or name (GET /departements). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml)
-* **Search EPCIs** `searchEpcis`: Search EPCIs (French inter-municipal cooperation bodies) by name, code, department or region (GET /epcis). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml)
-* **Search Regions** `searchRegions`: List or search French regions by code or name (GET /regions). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml)
-
-</details>
+| Search Departments | `searchDepartements` | List or search French departments by code, region or name (GET /departements). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
+| Search EPCIs | `searchEpcis` | Search EPCIs (French inter-municipal cooperation bodies) by name, code, department or region (GET /epcis). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |
+| Search Regions | `searchRegions` | List or search French regions by code or name (GET /regions). Docs: https://geo.api.gouv.fr/decoupage-administratif (OpenAPI https://geo.api.gouv.fr/definition.yml) |

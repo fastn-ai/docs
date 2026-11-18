@@ -34,11 +34,4 @@ Add Ecologi from **Build → Integrations → Connectors** and connect an accoun
 | Purchase Carbon Removal | `purchaseCarbonRemoval` | Funds permanent carbon removal such as biochar or enhanced rock weathering, billed by the kilogram with a 1 kg minimum. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false. |
 | Purchase Habitat Restoration | `purchaseHabitatRestoration` | Funds the restoration of natural habitat such as wildflower meadow or seagrass bed, billed by the square metre with a 0.1 m2 minimum and one decimal place of precision. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false. |
 | Purchase Local Trees | `purchaseLocalTrees` | Funds tree planting in a specific country, each of which has its own reforestation project and pricing. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Purchase Trees** `purchaseTrees`: Funds the planting of 1 to 250,000 trees, which are added to your Ecologi forest as pending until your next monthly invoice is paid. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false.
-
-</details>
+| Purchase Trees | `purchaseTrees` | Funds the planting of 1 to 250,000 trees, which are added to your Ecologi forest as pending until your next monthly invoice is paid. Set Test Mode to true to validate a request and receive the expected response without being charged. This action spends real money against your Ecologi account balance when Test Mode is false. |

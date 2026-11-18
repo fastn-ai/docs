@@ -34,26 +34,19 @@ Add Placid from **Build → Integrations → Connectors** and connect an account
 | Delete Image | `deleteImage` | Permanently deletes a generated Placid image. Placid answers HTTP 204 with an empty body on success and HTTP 404 when no image has that id. Once deleted the image cannot be retrieved again. |
 | Delete PDF | `deletePdf` | Permanently deletes a generated Placid PDF. Once deleted the file cannot be retrieved again. |
 | Delete Template | `deleteTemplate` | Permanently deletes a Placid template. Placid answers HTTP 200 on success. Creatives already generated from the template are not affected. |
-
-<details>
-
-<summary>See 13 more actions</summary>
-
-* **Delete Video** `deleteVideo`: Permanently deletes a generated Placid video. Once deleted the file cannot be retrieved again.
-* **Get Collection** `getCollection`: Retrieves a single Placid template collection by its id, including the list of template UUIDs it holds.
-* **Get Font** `getFont`: Retrieves a single custom font by its uuid. Placid answers HTTP 404 with "Font not found" when the project has no font with that uuid.
-* **Get Template** `getTemplate`: Retrieves a single Placid template by its UUID, including its canvas size, tags, collections and the dynamic layers you fill when generating a creative.
-* **List Collections** `listCollections`: Lists the template collections in the Placid project. By default every collection is returned; set Per Page to switch on cursor pagination.
-* **List Fonts** `listFonts`: Lists the custom fonts available to the Placid project, 20 per page with cursor pagination. Each font's uuid is the font code you set as fontFamily on a text layer.
-* **List Templates** `listTemplates`: Lists the templates in the Placid project the API token belongs to, 20 per page with cursor pagination. Each template carries its UUID, title, tags, thumbnail and the dynamic layers you fill when generating a creative. Optionally filter by collection, title or tag and choose the sort order.
-* **Retrieve Image** `getImage`: Retrieves a generated Placid image by its id. Poll this while the status is queued; once it turns finished the image URL is populated.
-* **Retrieve PDF** `getPdf`: Retrieves a generated Placid PDF by its id. Poll this while the status is queued; once it turns finished the PDF URL is populated.
-* **Retrieve Video** `getVideo`: Retrieves a generated Placid video by its id. Poll this while the status is queued; once it turns finished the video URL is populated.
-* **Update Collection** `updateCollection`: Updates a Placid template collection. Template UUIDs replaces the whole membership list, while Add Template UUIDs and Remove Template UUIDs adjust it incrementally. Only the fields you supply change.
-* **Update Font** `updateFont`: Renames a custom font in the Placid project. The font file itself cannot be replaced - upload a new font instead.
-* **Update Template** `updateTemplate`: Updates a Placid template's title, tags or custom reference data. Only the fields you supply change. The template's design is edited in the Placid editor, not through this endpoint.
-
-</details>
+| Delete Video | `deleteVideo` | Permanently deletes a generated Placid video. Once deleted the file cannot be retrieved again. |
+| Get Collection | `getCollection` | Retrieves a single Placid template collection by its id, including the list of template UUIDs it holds. |
+| Get Font | `getFont` | Retrieves a single custom font by its uuid. Placid answers HTTP 404 with "Font not found" when the project has no font with that uuid. |
+| Get Template | `getTemplate` | Retrieves a single Placid template by its UUID, including its canvas size, tags, collections and the dynamic layers you fill when generating a creative. |
+| List Collections | `listCollections` | Lists the template collections in the Placid project. By default every collection is returned; set Per Page to switch on cursor pagination. |
+| List Fonts | `listFonts` | Lists the custom fonts available to the Placid project, 20 per page with cursor pagination. Each font's uuid is the font code you set as fontFamily on a text layer. |
+| List Templates | `listTemplates` | Lists the templates in the Placid project the API token belongs to, 20 per page with cursor pagination. Each template carries its UUID, title, tags, thumbnail and the dynamic layers you fill when generating a creative. Optionally filter by collection, title or tag and choose the sort order. |
+| Retrieve Image | `getImage` | Retrieves a generated Placid image by its id. Poll this while the status is queued; once it turns finished the image URL is populated. |
+| Retrieve PDF | `getPdf` | Retrieves a generated Placid PDF by its id. Poll this while the status is queued; once it turns finished the PDF URL is populated. |
+| Retrieve Video | `getVideo` | Retrieves a generated Placid video by its id. Poll this while the status is queued; once it turns finished the video URL is populated. |
+| Update Collection | `updateCollection` | Updates a Placid template collection. Template UUIDs replaces the whole membership list, while Add Template UUIDs and Remove Template UUIDs adjust it incrementally. Only the fields you supply change. |
+| Update Font | `updateFont` | Renames a custom font in the Placid project. The font file itself cannot be replaced - upload a new font instead. |
+| Update Template | `updateTemplate` | Updates a Placid template's title, tags or custom reference data. Only the fields you supply change. The template's design is edited in the Placid editor, not through this endpoint. |
 
 ## Events
 

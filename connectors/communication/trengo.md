@@ -34,32 +34,25 @@ Add Trengo from **Build → Integrations → Connectors** and connect an account
 | Delete Webhook | `deleteWebhook` | Delete a registered webhook subscription by its id. Returns an empty object on success. |
 | Get Contact | `getContact` | Get a single contact by id, including profile, channels, and notes. |
 | Get Ticket | `getTicket` | Get a single ticket (conversation) by id. |
-
-<details>
-
-<summary>See 22 more actions</summary>
-
-* **Get User** `getUser`: Get a single user (agent) by id.
-* **Get Webhook** `getWebhook`: Get a single registered webhook subscription by its id, including its title, target URL, event type and signing secret.
-* **List Boards** `listBoards`: List all boards (kanban-style task boards) in the Trengo account.
-* **List Business Hours** `listBusinessHours`: List all business hours schedules configured in the Trengo account.
-* **List Contact Groups** `listContactGroups`: List all contact groups in the Trengo account.
-* **List Contacts** `listContacts`: List all contacts in the Trengo account.
-* **List CSAT Ratings** `listCsat`: List customer satisfaction (CSAT) ratings collected in the Trengo account.
-* **List Custom Fields** `listCustomFields`: List all custom fields defined for tickets, contacts, or profiles.
-* **List Help Centers** `listHelpCenters`: List all help center articles/pages configured in the Trengo account.
-* **List Labels** `listLabels`: List all labels available in the Trengo account.
-* **List Profiles** `listProfiles`: List all profiles (merged contact identities) in the Trengo account.
-* **List Quick Replies** `listQuickReplies`: List all quick replies (canned responses) in the Trengo account.
-* **List SMS Messages** `getSmsBalance`: List all outbound SMS messages sent from the Trengo account.
-* **List Teams** `listTeams`: List all teams in the Trengo account.
-* **List Ticket Messages** `listTicketMessages`: List all messages within a ticket (conversation).
-* **List Ticket Results** `listTicketResults`: List ticket results (outcome tags used when closing tickets).
-* **List Tickets** `listTickets`: List tickets (conversations) in the Trengo account.
-* **List Users** `listUsers`: List all users (agents) in the Trengo account. Supports pagination and sorting.
-* **List Webhooks** `listWebhooks`: List all registered webhook subscriptions in the Trengo account.
-* **Update Contact** `updateContact`: Update an existing contact's name.
-* **Update Label** `updateLabel`: Update an existing label's name or color.
-* **Update Webhook** `updateWebhook`: Update the name, target URL and event type of an existing webhook subscription. All three body fields are required by Trengo.
-
-</details>
+| Get User | `getUser` | Get a single user (agent) by id. |
+| Get Webhook | `getWebhook` | Get a single registered webhook subscription by its id, including its title, target URL, event type and signing secret. |
+| List Boards | `listBoards` | List all boards (kanban-style task boards) in the Trengo account. |
+| List Business Hours | `listBusinessHours` | List all business hours schedules configured in the Trengo account. |
+| List Contact Groups | `listContactGroups` | List all contact groups in the Trengo account. |
+| List Contacts | `listContacts` | List all contacts in the Trengo account. |
+| List CSAT Ratings | `listCsat` | List customer satisfaction (CSAT) ratings collected in the Trengo account. |
+| List Custom Fields | `listCustomFields` | List all custom fields defined for tickets, contacts, or profiles. |
+| List Help Centers | `listHelpCenters` | List all help center articles/pages configured in the Trengo account. |
+| List Labels | `listLabels` | List all labels available in the Trengo account. |
+| List Profiles | `listProfiles` | List all profiles (merged contact identities) in the Trengo account. |
+| List Quick Replies | `listQuickReplies` | List all quick replies (canned responses) in the Trengo account. |
+| List SMS Messages | `getSmsBalance` | List all outbound SMS messages sent from the Trengo account. |
+| List Teams | `listTeams` | List all teams in the Trengo account. |
+| List Ticket Messages | `listTicketMessages` | List all messages within a ticket (conversation). |
+| List Ticket Results | `listTicketResults` | List ticket results (outcome tags used when closing tickets). |
+| List Tickets | `listTickets` | List tickets (conversations) in the Trengo account. |
+| List Users | `listUsers` | List all users (agents) in the Trengo account. Supports pagination and sorting. |
+| List Webhooks | `listWebhooks` | List all registered webhook subscriptions in the Trengo account. |
+| Update Contact | `updateContact` | Update an existing contact's name. |
+| Update Label | `updateLabel` | Update an existing label's name or color. |
+| Update Webhook | `updateWebhook` | Update the name, target URL and event type of an existing webhook subscription. All three body fields are required by Trengo. |

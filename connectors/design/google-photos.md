@@ -34,20 +34,13 @@ Add Google Photos from **Build → Integrations → Connectors** and connect an 
 | Get Media Item | `getMediaItem` | Returns the app-created media item for the specified mediaItemId. Requires photoslibrary.readonly.appcreateddata scope. |
 | Get Shared Album | `getSharedAlbum` | DEPRECATED (removed 2025-03-31): Returns a shared album by its shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
 | Join Shared Album | `joinSharedAlbum` | DEPRECATED (removed 2025-03-31): Joins a shared album on behalf of the user via shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
-
-<details>
-
-<summary>See 10 more actions</summary>
-
-* **Leave Shared Album** `leaveSharedAlbum`: DEPRECATED (removed 2025-03-31): Leaves a previously joined shared album via shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness.
-* **List Albums** `listAlbums`: Lists all albums created by this app in the user's library. Supports pagination. Requires photoslibrary.readonly.appcreateddata scope.
-* **List Media Items** `listMediaItems`: Lists all media items created by this app in the user's library, ordered newest first. Supports pagination. Requires photoslibrary.readonly.appcreateddata scope.
-* **List Shared Albums** `listSharedAlbums`: DEPRECATED (removed 2025-03-31): Lists shared albums the user is a member of. Requires the removed photoslibrary.sharing/readonly scope and will return 403. Kept for endpoint-inventory completeness.
-* **Search Media Items** `searchMediaItems`: Searches app-created media items within a specific album. Provide albumId and pageSize (albumId cannot be combined with content filters). Requires photoslibrary.readonly.appcreateddata scope.
-* **Share Album** `shareAlbum`: DEPRECATED (removed 2025-03-31): Marks an app-created album as shared and returns share info. Requires the removed photoslibrary.sharing scope and will return 403 PERMISSION_DENIED. Kept for endpoint-inventory completeness.
-* **Unshare Album** `unshareAlbum`: DEPRECATED (removed 2025-03-31): Stops sharing an app-created album. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness.
-* **Update Album** `updateAlbum`: Updates the title of an app-created album. updateMask controls which fields change (title and/or coverPhotoMediaItemId). Requires photoslibrary.edit.appcreateddata scope.
-* **Update Media Item** `updateMediaItem`: Updates the description of an app-created media item. updateMask must be 'description'. Requires photoslibrary.edit.appcreateddata scope.
-* **Upload Media Bytes** `uploadMedia`: Uploads raw image/video bytes to Google Photos and returns an upload token (plain-text body). Pass the file bytes as input.file and the file's MIME type as input.mimeType. The returned token is then used in Batch Create Media Items. Requires photoslibrary.appendonly scope.
-
-</details>
+| Leave Shared Album | `leaveSharedAlbum` | DEPRECATED (removed 2025-03-31): Leaves a previously joined shared album via shareToken. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
+| List Albums | `listAlbums` | Lists all albums created by this app in the user's library. Supports pagination. Requires photoslibrary.readonly.appcreateddata scope. |
+| List Media Items | `listMediaItems` | Lists all media items created by this app in the user's library, ordered newest first. Supports pagination. Requires photoslibrary.readonly.appcreateddata scope. |
+| List Shared Albums | `listSharedAlbums` | DEPRECATED (removed 2025-03-31): Lists shared albums the user is a member of. Requires the removed photoslibrary.sharing/readonly scope and will return 403. Kept for endpoint-inventory completeness. |
+| Search Media Items | `searchMediaItems` | Searches app-created media items within a specific album. Provide albumId and pageSize (albumId cannot be combined with content filters). Requires photoslibrary.readonly.appcreateddata scope. |
+| Share Album | `shareAlbum` | DEPRECATED (removed 2025-03-31): Marks an app-created album as shared and returns share info. Requires the removed photoslibrary.sharing scope and will return 403 PERMISSION_DENIED. Kept for endpoint-inventory completeness. |
+| Unshare Album | `unshareAlbum` | DEPRECATED (removed 2025-03-31): Stops sharing an app-created album. Requires the removed photoslibrary.sharing scope and will return 403. Kept for endpoint-inventory completeness. |
+| Update Album | `updateAlbum` | Updates the title of an app-created album. updateMask controls which fields change (title and/or coverPhotoMediaItemId). Requires photoslibrary.edit.appcreateddata scope. |
+| Update Media Item | `updateMediaItem` | Updates the description of an app-created media item. updateMask must be 'description'. Requires photoslibrary.edit.appcreateddata scope. |
+| Upload Media Bytes | `uploadMedia` | Uploads raw image/video bytes to Google Photos and returns an upload token (plain-text body). Pass the file bytes as input.file and the file's MIME type as input.mimeType. The returned token is then used in Batch Create Media Items. Requires photoslibrary.appendonly scope. |

@@ -34,17 +34,10 @@ Add Simplescraper from **Build → Integrations → Connectors** and connect an 
 | Get Results | `getResults` | Retrieves the data and progress of a specific scrape run by its results ID. Poll this action after an asynchronous run until the status reads 'completed'. Supports cursor pagination and ordering by row index or scrape timestamp. |
 | Get Smart Extract Result | `getSmartExtractResult` | Polls a Smart Extract task by its extract UID and returns the extracted data and generated selectors once it finishes. A status of 'success' or 'completed' means the extraction is done, 'running' means it is still processing, and 'error' means it failed. |
 | List Recipes | `listRecipes` | Lists the scrape recipes in your Simplescraper account, with optional keyword search, host filtering, sorting and pagination. Returns the total number of matching recipes and a page of recipe summaries. |
-
-<details>
-
-<summary>See 4 more actions</summary>
-
-* **Run Recipe** `runRecipe`: Runs a saved scrape recipe and returns the extracted data. Optionally override the source URL, scrape the recipe's crawler URL list, supply a list of URLs to scrape in one call, or request a markdown version of each page. Runs that exceed 90 seconds, and any run using the urls list, return a results ID with status 'running' that can be polled with Get Results. Consumes scrape credits.
-* **Smart Extract** `smartExtract`: Uses AI to extract named data points from any page and returns both the data and reusable CSS selectors, without writing selectors yourself. Describe the fields you want as a comma-separated schema. Extractions taking longer than two minutes return a running status and an extract ID to poll with Get Smart Extract Result. Consumes scrape credits.
-* **Update Batch URLs** `updateBatchUrls`: Adds to or replaces the batch (crawler) URL list of a scrape recipe, so the recipe can scrape many pages in one run. Returns a summary of new, existing and invalid URLs. A recipe can hold at most 5000 batch URLs. Run the recipe with the crawler option enabled to scrape this list.
-* **Update Recipe** `updateRecipe`: Updates an existing scrape recipe. Any combination of name, source URL and selectors can be changed. Use update mode 'merge' to update selectors that share a name and add the new ones, or 'replace' to swap the selector list entirely.
-
-</details>
+| Run Recipe | `runRecipe` | Runs a saved scrape recipe and returns the extracted data. Optionally override the source URL, scrape the recipe's crawler URL list, supply a list of URLs to scrape in one call, or request a markdown version of each page. Runs that exceed 90 seconds, and any run using the urls list, return a results ID with status 'running' that can be polled with Get Results. Consumes scrape credits. |
+| Smart Extract | `smartExtract` | Uses AI to extract named data points from any page and returns both the data and reusable CSS selectors, without writing selectors yourself. Describe the fields you want as a comma-separated schema. Extractions taking longer than two minutes return a running status and an extract ID to poll with Get Smart Extract Result. Consumes scrape credits. |
+| Update Batch URLs | `updateBatchUrls` | Adds to or replaces the batch (crawler) URL list of a scrape recipe, so the recipe can scrape many pages in one run. Returns a summary of new, existing and invalid URLs. A recipe can hold at most 5000 batch URLs. Run the recipe with the crawler option enabled to scrape this list. |
+| Update Recipe | `updateRecipe` | Updates an existing scrape recipe. Any combination of name, source URL and selectors can be changed. Use update mode 'merge' to update selectors that share a name and add the new ones, or 'replace' to swap the selector list entirely. |
 
 ## Events
 

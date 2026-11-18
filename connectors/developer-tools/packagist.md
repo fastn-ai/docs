@@ -34,11 +34,4 @@ Add Packagist from **Build → Integrations → Connectors** and connect an acco
 | List Package Names | `listPackageNames` | List all package names on Packagist, optionally only one vendor's or one package type's. With a field set, returns an object keyed by package name with that field (GET /packages/list.json). Docs: https://packagist.org/apidoc |
 | List Popular Packages | `listPopularPackages` | List the most popular packages, ranked by downloads over the last week (GET /explore/popular.json). Docs: https://packagist.org/apidoc |
 | List Security Advisories | `listSecurityAdvisories` | List security advisories for a package, or all advisories updated since a unix timestamp (GET /api/security-advisories/). Pass a package name or updatedSince. Docs: https://packagist.org/apidoc |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Search Packages** `searchPackages`: Search packages by name/keyword, optionally narrowed by tag and package type, paginated (GET /search.json). Docs: https://packagist.org/apidoc
-
-</details>
+| Search Packages | `searchPackages` | Search packages by name/keyword, optionally narrowed by tag and package type, paginated (GET /search.json). Docs: https://packagist.org/apidoc |

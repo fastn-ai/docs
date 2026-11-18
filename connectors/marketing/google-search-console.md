@@ -34,12 +34,5 @@ Add Google Search Console from **Build → Integrations → Connectors** and con
 | List Sites | `listSites` | Lists every Search Console property the authenticated user has access to, along with their permission level. |
 | Query Search Analytics | `querySearchAnalytics` | Queries Search Analytics performance data for a Search Console property over a date range, returning clicks, impressions, click-through rate, and average position grouped by the requested dimensions. |
 | Query Search Analytics With Filters | `querySearchAnalyticsWithFilters` | Queries Search Analytics performance data for a Search Console property and restricts the results with a single dimension filter, for example only rows whose query contains a keyword or whose country equals a given code. |
-
-<details>
-
-<summary>See 2 more actions</summary>
-
-* **Run Mobile Friendly Test** `runMobileFriendlyTest`: Runs the Mobile-Friendly Test against any public URL and returns the mobile-friendliness verdict, any usability issues found, and optionally a screenshot of the rendered page. The URL does not have to belong to a Search Console property.
-* **Submit Sitemap** `submitSitemap`: Submits a sitemap for a Search Console property so that Google discovers the URLs it contains. Returns an empty body on success.
-
-</details>
+| Run Mobile Friendly Test | `runMobileFriendlyTest` | Runs the Mobile-Friendly Test against any public URL and returns the mobile-friendliness verdict, any usability issues found, and optionally a screenshot of the rendered page. The URL does not have to belong to a Search Console property. |
+| Submit Sitemap | `submitSitemap` | Submits a sitemap for a Search Console property so that Google discovers the URLs it contains. Returns an empty body on success. |

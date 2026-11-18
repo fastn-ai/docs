@@ -34,42 +34,35 @@ Add Formbricks from **Build → Integrations → Connectors** and connect an acc
 | Create Webhook | `createWebhook` | Registers a new webhook that posts a notification to your URL when survey response events occur. The response includes a one-time signing secret used to verify deliveries. |
 | Delete Action Class | `deleteActionClass` | Deletes an action class. Fails if it is still referenced as a trigger on any survey. |
 | Delete Contact | `deleteContact` | Deletes a contact. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
-
-<details>
-
-<summary>See 32 more actions</summary>
-
-* **Delete Contact Attribute Key** `deleteContactAttributeKey`: Deletes a contact attribute key definition and removes it from all contacts. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **Delete Response** `deleteResponse`: Permanently deletes a single survey response.
-* **Delete Survey** `deleteSurvey`: Permanently deletes a survey and its responses.
-* **Delete Team** `deleteTeam`: Deletes a team from an organization.
-* **Delete Webhook** `deleteWebhook`: Deletes a webhook so it stops receiving event notifications.
-* **Get Action Class** `getActionClass`: Retrieves a single action class (user action/trigger) by its ID.
-* **Get API Key Info** `getApiKeyInfo`: Returns the workspace and project that this API key belongs to. Useful for verifying which environment a connection is scoped to.
-* **Get Contact** `getContact`: Retrieves a single contact by its ID, including its attributes. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **Get Contact Attribute Key** `getContactAttributeKey`: Retrieves a single contact attribute key by its ID. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **Get Current Permissions** `getCurrentPermissions`: Returns this API key's workspace and organization-level permissions, including which workspaces it can manage and its organization access level.
-* **Get Response** `getResponse`: Retrieves a single survey response by its ID.
-* **Get Survey** `getSurvey`: Retrieves a single survey by its ID, including its full question/block structure, welcome card, endings, and settings.
-* **Get Survey Single-Use Links** `getSurveySingleUseLinks`: Generates single-use survey links for a link survey, each usable for exactly one response. Useful for sending personalized, one-time survey invitations.
-* **Get Team** `getTeam`: Retrieves a single team within an organization by its ID.
-* **Get Webhook** `getWebhook`: Retrieves a single webhook by its ID.
-* **List Action Classes** `listActionClasses`: Lists all action classes (user actions/triggers that can start a survey) across every workspace the API key can access.
-* **List Contact Attribute Keys** `listContactAttributeKeys`: Lists all contact attribute keys (definitions used to segment contacts, e.g. email, plan, company) across every workspace the API key can access. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **List Contact Attributes** `listContactAttributes`: Lists all contact attribute values (the actual data stored per contact) across every workspace the API key can access. Read-only. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **List Contacts** `listContacts`: Lists contacts (survey respondents) across every workspace the API key can access. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **List Organization Users** `listOrganizationUsers`: Lists the members of an organization. Note: on Formbricks Cloud, inviting or removing organization members via the API is not available - use the dashboard for member management.
-* **List Responses** `listResponses`: Lists survey responses, optionally filtered by survey, contact, or a date range, with sorting and pagination.
-* **List Roles** `listRoles`: Lists the organization role identifiers available to assign to members (e.g. owner, manager, member, billing).
-* **List Surveys** `listSurveys`: Lists all surveys the API key can access, across every workspace it has permission for. Supports pagination via limit and offset.
-* **List Teams** `listTeams`: Lists all teams within an organization.
-* **List Webhooks** `listWebhooks`: Lists webhooks across every workspace the API key can access, optionally filtered to specific surveys.
-* **Update Action Class** `updateActionClass`: Updates the name, description, or configuration of an existing action class.
-* **Update Contact Attribute Key** `updateContactAttributeKey`: Updates the display name, description, or uniqueness constraint of a contact attribute key. Contacts is an Enterprise Edition feature and requires an upgraded plan.
-* **Update Response** `updateResponse`: Fully replaces an existing survey response. Formbricks treats this as a full PUT replace, not a partial patch: every field below must be sent (use null for fields with no value) or the API returns 422 for the missing ones.
-* **Update Survey** `updateSurvey`: Replaces an existing survey's fields, such as its name, status, or questions. Use status to publish (inProgress), pause, or complete a survey.
-* **Update Team** `updateTeam`: Renames an existing team within an organization.
-* **Update Webhook** `updateWebhook`: Fully replaces a webhook's name, URL, source, triggers, and survey scoping (PUT is a full replace, not a partial patch).
-* **Upload File** `uploadFile`: Requests a signed upload URL for a public file (such as a survey image or logo) in a workspace's file storage.
-
-</details>
+| Delete Contact Attribute Key | `deleteContactAttributeKey` | Deletes a contact attribute key definition and removes it from all contacts. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| Delete Response | `deleteResponse` | Permanently deletes a single survey response. |
+| Delete Survey | `deleteSurvey` | Permanently deletes a survey and its responses. |
+| Delete Team | `deleteTeam` | Deletes a team from an organization. |
+| Delete Webhook | `deleteWebhook` | Deletes a webhook so it stops receiving event notifications. |
+| Get Action Class | `getActionClass` | Retrieves a single action class (user action/trigger) by its ID. |
+| Get API Key Info | `getApiKeyInfo` | Returns the workspace and project that this API key belongs to. Useful for verifying which environment a connection is scoped to. |
+| Get Contact | `getContact` | Retrieves a single contact by its ID, including its attributes. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| Get Contact Attribute Key | `getContactAttributeKey` | Retrieves a single contact attribute key by its ID. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| Get Current Permissions | `getCurrentPermissions` | Returns this API key's workspace and organization-level permissions, including which workspaces it can manage and its organization access level. |
+| Get Response | `getResponse` | Retrieves a single survey response by its ID. |
+| Get Survey | `getSurvey` | Retrieves a single survey by its ID, including its full question/block structure, welcome card, endings, and settings. |
+| Get Survey Single-Use Links | `getSurveySingleUseLinks` | Generates single-use survey links for a link survey, each usable for exactly one response. Useful for sending personalized, one-time survey invitations. |
+| Get Team | `getTeam` | Retrieves a single team within an organization by its ID. |
+| Get Webhook | `getWebhook` | Retrieves a single webhook by its ID. |
+| List Action Classes | `listActionClasses` | Lists all action classes (user actions/triggers that can start a survey) across every workspace the API key can access. |
+| List Contact Attribute Keys | `listContactAttributeKeys` | Lists all contact attribute keys (definitions used to segment contacts, e.g. email, plan, company) across every workspace the API key can access. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| List Contact Attributes | `listContactAttributes` | Lists all contact attribute values (the actual data stored per contact) across every workspace the API key can access. Read-only. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| List Contacts | `listContacts` | Lists contacts (survey respondents) across every workspace the API key can access. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| List Organization Users | `listOrganizationUsers` | Lists the members of an organization. Note: on Formbricks Cloud, inviting or removing organization members via the API is not available - use the dashboard for member management. |
+| List Responses | `listResponses` | Lists survey responses, optionally filtered by survey, contact, or a date range, with sorting and pagination. |
+| List Roles | `listRoles` | Lists the organization role identifiers available to assign to members (e.g. owner, manager, member, billing). |
+| List Surveys | `listSurveys` | Lists all surveys the API key can access, across every workspace it has permission for. Supports pagination via limit and offset. |
+| List Teams | `listTeams` | Lists all teams within an organization. |
+| List Webhooks | `listWebhooks` | Lists webhooks across every workspace the API key can access, optionally filtered to specific surveys. |
+| Update Action Class | `updateActionClass` | Updates the name, description, or configuration of an existing action class. |
+| Update Contact Attribute Key | `updateContactAttributeKey` | Updates the display name, description, or uniqueness constraint of a contact attribute key. Contacts is an Enterprise Edition feature and requires an upgraded plan. |
+| Update Response | `updateResponse` | Fully replaces an existing survey response. Formbricks treats this as a full PUT replace, not a partial patch: every field below must be sent (use null for fields with no value) or the API returns 422 for the missing ones. |
+| Update Survey | `updateSurvey` | Replaces an existing survey's fields, such as its name, status, or questions. Use status to publish (inProgress), pause, or complete a survey. |
+| Update Team | `updateTeam` | Renames an existing team within an organization. |
+| Update Webhook | `updateWebhook` | Fully replaces a webhook's name, URL, source, triggers, and survey scoping (PUT is a full replace, not a partial patch). |
+| Upload File | `uploadFile` | Requests a signed upload URL for a public file (such as a survey image or logo) in a workspace's file storage. |

@@ -34,15 +34,8 @@ Add Nuclino from **Build → Integrations → Connectors** and connect an accoun
 | Get Team | `getTeam` | Retrieves a single team by its ID. |
 | Get User | `getUser` | Retrieves a single user by their ID. |
 | Get Workspace | `getWorkspace` | Retrieves a single workspace by its ID, including its custom fields and top-level child item IDs. |
-
-<details>
-
-<summary>See 5 more actions</summary>
-
-* **List Items and Collections** `listItems`: Lists items (documents/pages) and collections (folders). Filter by either a team or a workspace (mutually exclusive). Content is not included in list results; use Get Item for full content.
-* **List Teams** `listTeams`: Lists all teams the API key has access to. Supports cursor pagination via the 'after' parameter.
-* **List Workspaces** `listWorkspaces`: Lists workspaces, optionally filtered by team. Supports cursor pagination via 'after'.
-* **Update Field** `updateField`: Updates a custom field definition. Destructive type changes may delete existing values across all items.
-* **Update Item or Collection** `updateItem`: Updates an existing item or collection. Provide at least one of title, content, or fields. Set a value to null to clear it.
-
-</details>
+| List Items and Collections | `listItems` | Lists items (documents/pages) and collections (folders). Filter by either a team or a workspace (mutually exclusive). Content is not included in list results; use Get Item for full content. |
+| List Teams | `listTeams` | Lists all teams the API key has access to. Supports cursor pagination via the 'after' parameter. |
+| List Workspaces | `listWorkspaces` | Lists workspaces, optionally filtered by team. Supports cursor pagination via 'after'. |
+| Update Field | `updateField` | Updates a custom field definition. Destructive type changes may delete existing values across all items. |
+| Update Item or Collection | `updateItem` | Updates an existing item or collection. Provide at least one of title, content, or fields. Set a value to null to clear it. |

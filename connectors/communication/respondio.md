@@ -34,31 +34,24 @@ Add respond.io from **Build → Integrations → Connectors** and connect an acc
 | Delete Contact | `deleteContact` | Deletes a contact by ID, email or phone identifier. |
 | Delete Space Tag | `deleteSpaceTag` | Deletes a workspace tag by name. |
 | Get Contact | `getContact` | Retrieves a contact by ID, email or phone identifier, including tags, custom fields, assignee, lifecycle and conversation status. |
-
-<details>
-
-<summary>See 18 more actions</summary>
-
-* **Get Custom Field** `getCustomField`: Retrieves a single workspace custom field by ID.
-* **Get Message** `getMessage`: Retrieves a single message of a contact by message ID, including delivery status and sender.
-* **Get Space User** `getSpaceUser`: Retrieves a single workspace user by ID, including role, team and restrictions.
-* **List Closing Notes** `listClosingNotes`: Retrieves the conversation closing note categories configured in the workspace.
-* **List Contact Channels** `listContactChannels`: Retrieves the messaging channels a contact is connected through, with last message times.
-* **List Contacts** `listContacts`: Lists contacts matching a search term and filter conditions on contact fields, tags or lifecycle, with cursor paging.
-* **List Custom Fields** `listCustomFields`: Retrieves the contact custom fields defined in the workspace, with cursor paging.
-* **List Message Templates** `listMessageTemplates`: Retrieves the WhatsApp message templates of a workspace channel, with components, language and approval status.
-* **List Messages** `listMessages`: Retrieves the messages exchanged with a contact, newest first, with cursor paging.
-* **List Space Channels** `listSpaceChannels`: Retrieves the messaging channels connected to the workspace, such as WhatsApp, Facebook Messenger, Telegram or email.
-* **List Space Users** `listSpaceUsers`: Retrieves the users (agents, managers and owners) of the respond.io workspace, with cursor paging.
-* **Merge Contacts** `mergeContacts`: Merges two contacts into one, keeping the first contact and optionally overriding its fields with the values sent.
-* **Open Or Close Conversation** `openOrCloseConversation`: Opens or closes a contact's conversation. When closing, a closing note category and summary can be recorded.
-* **Remove Contact Tags** `removeContactTags`: Removes one or more tags from a contact; the workspace tags themselves are not deleted. The tags input is a JSON array text, for example ["vip"].
-* **Send Message** `sendMessage`: Sends a message to a contact through a channel (or the contact's last interacted channel): text, attachment, custom payload, quick reply, email or WhatsApp template.
-* **Update Contact** `updateContact`: Updates an existing contact's name, phone, email, language, profile picture, country code or custom field values. Only fields sent are changed.
-* **Update Contact Lifecycle** `updateContactLifecycle`: Sets a contact's lifecycle stage by name, or clears it when name is null.
-* **Update Space Tag** `updateSpaceTag`: Updates a workspace tag identified by its current name: rename it or change its description, color code or emoji.
-
-</details>
+| Get Custom Field | `getCustomField` | Retrieves a single workspace custom field by ID. |
+| Get Message | `getMessage` | Retrieves a single message of a contact by message ID, including delivery status and sender. |
+| Get Space User | `getSpaceUser` | Retrieves a single workspace user by ID, including role, team and restrictions. |
+| List Closing Notes | `listClosingNotes` | Retrieves the conversation closing note categories configured in the workspace. |
+| List Contact Channels | `listContactChannels` | Retrieves the messaging channels a contact is connected through, with last message times. |
+| List Contacts | `listContacts` | Lists contacts matching a search term and filter conditions on contact fields, tags or lifecycle, with cursor paging. |
+| List Custom Fields | `listCustomFields` | Retrieves the contact custom fields defined in the workspace, with cursor paging. |
+| List Message Templates | `listMessageTemplates` | Retrieves the WhatsApp message templates of a workspace channel, with components, language and approval status. |
+| List Messages | `listMessages` | Retrieves the messages exchanged with a contact, newest first, with cursor paging. |
+| List Space Channels | `listSpaceChannels` | Retrieves the messaging channels connected to the workspace, such as WhatsApp, Facebook Messenger, Telegram or email. |
+| List Space Users | `listSpaceUsers` | Retrieves the users (agents, managers and owners) of the respond.io workspace, with cursor paging. |
+| Merge Contacts | `mergeContacts` | Merges two contacts into one, keeping the first contact and optionally overriding its fields with the values sent. |
+| Open Or Close Conversation | `openOrCloseConversation` | Opens or closes a contact's conversation. When closing, a closing note category and summary can be recorded. |
+| Remove Contact Tags | `removeContactTags` | Removes one or more tags from a contact; the workspace tags themselves are not deleted. The tags input is a JSON array text, for example ["vip"]. |
+| Send Message | `sendMessage` | Sends a message to a contact through a channel (or the contact's last interacted channel): text, attachment, custom payload, quick reply, email or WhatsApp template. |
+| Update Contact | `updateContact` | Updates an existing contact's name, phone, email, language, profile picture, country code or custom field values. Only fields sent are changed. |
+| Update Contact Lifecycle | `updateContactLifecycle` | Sets a contact's lifecycle stage by name, or clears it when name is null. |
+| Update Space Tag | `updateSpaceTag` | Updates a workspace tag identified by its current name: rename it or change its description, color code or emoji. |
 
 ## Events
 
@@ -76,11 +69,4 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | New Comment | `comment.created` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Comment' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
 | New Contact | `contact.created` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Contact' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
 | New Incoming Message | `message.received` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Incoming Message' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |
-
-<details>
-
-<summary>See 1 more event</summary>
-
-* **New Outgoing Message** `message.sent`: In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Outgoing Message' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds.
-
-</details>
+| New Outgoing Message | `message.sent` | In respond.io open Workspace Settings &gt; Integrations &gt; Webhooks, click Connect, then Add Webhook: paste the fastn trigger URL as Endpoint URL and select the 'New Outgoing Message' event. Requires the Advanced plan. The endpoint must answer 200 within 5 seconds. |

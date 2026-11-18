@@ -34,31 +34,24 @@ Add TVmaze from **Build → Integrations → Connectors** and connect an account
 | Get TV Schedule | `getSchedule` | Returns the TV episodes airing on a date in a country (broadcast and cable). Docs: https://www.tvmaze.com/api |
 | Get Web/Streaming Schedule | `getWebSchedule` | Returns the web and streaming episodes released on a date, optionally for one country (empty country = global services only). Docs: https://www.tvmaze.com/api |
 | List Alternate Episodes | `listAlternateEpisodes` | Returns the episodes of an alternate list in that list's order; embed=episodes adds the episode details. Docs: https://www.tvmaze.com/api |
-
-<details>
-
-<summary>See 21 more actions</summary>
-
-* **List Episode Guest Cast** `listEpisodeGuestCast`: Returns the guest cast of an episode. Docs: https://www.tvmaze.com/api
-* **List Episode Guest Crew** `listEpisodeGuestCrew`: Returns the guest crew of an episode (e.g. writers, directors). Docs: https://www.tvmaze.com/api
-* **List Episodes by Date** `listEpisodesByDate`: Returns the episodes of a show that aired on a date. Docs: https://www.tvmaze.com/api
-* **List People** `listPeople`: Returns the full people index, 1000 people per page sorted by id; page 0 is the first page. A 404 means there are no more pages. Docs: https://www.tvmaze.com/api
-* **List People Updates** `listPeopleUpdates`: Returns a map of person id to last-updated Unix timestamp; since=day|week|month limits to recent changes. Docs: https://www.tvmaze.com/api
-* **List Person Cast Credits** `listPersonCastCredits`: Returns the shows and characters a person has played. Docs: https://www.tvmaze.com/api
-* **List Person Crew Credits** `listPersonCrewCredits`: Returns the shows a person worked on as crew, with crew type. Docs: https://www.tvmaze.com/api
-* **List Person Guest Cast Credits** `listPersonGuestCastCredits`: Returns the episodes a person appeared in as guest cast. Docs: https://www.tvmaze.com/api
-* **List Season Episodes** `listSeasonEpisodes`: Returns the episodes of one season (by season id). Docs: https://www.tvmaze.com/api
-* **List Show AKAs** `listShowAkas`: Returns the alternative names (AKAs) of a show per country. Docs: https://www.tvmaze.com/api
-* **List Show Alternate Episode Lists** `listShowAlternateLists`: Returns the alternate episode orders of a show (DVD order, story order, broadcast order...). Docs: https://www.tvmaze.com/api
-* **List Show Cast** `listShowCast`: Returns the main cast of a show: person and character pairs. Docs: https://www.tvmaze.com/api
-* **List Show Crew** `listShowCrew`: Returns the main crew of a show with their crew type (creator, producer...). Docs: https://www.tvmaze.com/api
-* **List Show Episodes** `listShowEpisodes`: Returns all episodes of a show in airing order; specials=1 includes specials. Docs: https://www.tvmaze.com/api
-* **List Show Images** `listShowImages`: Returns all images of a show (posters, banners, backgrounds) with resolutions. Docs: https://www.tvmaze.com/api
-* **List Show Seasons** `listShowSeasons`: Returns the seasons of a show with episode counts, premiere/end dates and networks. Docs: https://www.tvmaze.com/api
-* **List Show Updates** `listShowUpdates`: Returns a map of show id to last-updated Unix timestamp; since=day|week|month limits to recent changes. Docs: https://www.tvmaze.com/api
-* **List Shows** `listShows`: Returns the full show index, 250 shows per page sorted by id; page 0 is the first page. A 404 means there are no more pages. Docs: https://www.tvmaze.com/api
-* **Look Up Show by External ID** `lookupShow`: Finds a show by its TVRage, TheTVDB or IMDb id (give exactly one). Docs: https://www.tvmaze.com/api
-* **Search People** `searchPeople`: Searches people (actors, crew) by name. Docs: https://www.tvmaze.com/api
-* **Search Shows** `searchShows`: Fuzzy-searches shows by name and returns up to 10 matches with a relevance score. Docs: https://www.tvmaze.com/api
-
-</details>
+| List Episode Guest Cast | `listEpisodeGuestCast` | Returns the guest cast of an episode. Docs: https://www.tvmaze.com/api |
+| List Episode Guest Crew | `listEpisodeGuestCrew` | Returns the guest crew of an episode (e.g. writers, directors). Docs: https://www.tvmaze.com/api |
+| List Episodes by Date | `listEpisodesByDate` | Returns the episodes of a show that aired on a date. Docs: https://www.tvmaze.com/api |
+| List People | `listPeople` | Returns the full people index, 1000 people per page sorted by id; page 0 is the first page. A 404 means there are no more pages. Docs: https://www.tvmaze.com/api |
+| List People Updates | `listPeopleUpdates` | Returns a map of person id to last-updated Unix timestamp; since=day\|week\|month limits to recent changes. Docs: https://www.tvmaze.com/api |
+| List Person Cast Credits | `listPersonCastCredits` | Returns the shows and characters a person has played. Docs: https://www.tvmaze.com/api |
+| List Person Crew Credits | `listPersonCrewCredits` | Returns the shows a person worked on as crew, with crew type. Docs: https://www.tvmaze.com/api |
+| List Person Guest Cast Credits | `listPersonGuestCastCredits` | Returns the episodes a person appeared in as guest cast. Docs: https://www.tvmaze.com/api |
+| List Season Episodes | `listSeasonEpisodes` | Returns the episodes of one season (by season id). Docs: https://www.tvmaze.com/api |
+| List Show AKAs | `listShowAkas` | Returns the alternative names (AKAs) of a show per country. Docs: https://www.tvmaze.com/api |
+| List Show Alternate Episode Lists | `listShowAlternateLists` | Returns the alternate episode orders of a show (DVD order, story order, broadcast order...). Docs: https://www.tvmaze.com/api |
+| List Show Cast | `listShowCast` | Returns the main cast of a show: person and character pairs. Docs: https://www.tvmaze.com/api |
+| List Show Crew | `listShowCrew` | Returns the main crew of a show with their crew type (creator, producer...). Docs: https://www.tvmaze.com/api |
+| List Show Episodes | `listShowEpisodes` | Returns all episodes of a show in airing order; specials=1 includes specials. Docs: https://www.tvmaze.com/api |
+| List Show Images | `listShowImages` | Returns all images of a show (posters, banners, backgrounds) with resolutions. Docs: https://www.tvmaze.com/api |
+| List Show Seasons | `listShowSeasons` | Returns the seasons of a show with episode counts, premiere/end dates and networks. Docs: https://www.tvmaze.com/api |
+| List Show Updates | `listShowUpdates` | Returns a map of show id to last-updated Unix timestamp; since=day\|week\|month limits to recent changes. Docs: https://www.tvmaze.com/api |
+| List Shows | `listShows` | Returns the full show index, 250 shows per page sorted by id; page 0 is the first page. A 404 means there are no more pages. Docs: https://www.tvmaze.com/api |
+| Look Up Show by External ID | `lookupShow` | Finds a show by its TVRage, TheTVDB or IMDb id (give exactly one). Docs: https://www.tvmaze.com/api |
+| Search People | `searchPeople` | Searches people (actors, crew) by name. Docs: https://www.tvmaze.com/api |
+| Search Shows | `searchShows` | Fuzzy-searches shows by name and returns up to 10 matches with a relevance score. Docs: https://www.tvmaze.com/api |

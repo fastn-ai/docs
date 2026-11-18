@@ -34,17 +34,10 @@ Add Layerre from **Build → Integrations → Connectors** and connect an accoun
 | Delete Variant | `deleteVariant` | Soft-delete one rendered variant. Returns 204 with an empty body on success and 404 'Template not found for user.' when the ids do not belong to the account. WARNING: deleting the record does not necessarily invalidate any pre-signed download URL already handed out for that file. |
 | Get API Health | `getApiHealth` | Service health probe for the Layerre API. Returns the status string, a human-readable message and the running API version. Undocumented but live; useful as a cheap liveness check that consumes no render quota. |
 | Get Layer | `getLayer` | Get one layer of a template by id, with all of its properties. Refreshes the layer's signed image URL if it has expired. NOTE: for image layers the response contains a time-limited pre-signed storage URL that grants direct read access without an API key. |
-
-<details>
-
-<summary>See 7 more actions</summary>
-
-* **Get Template** `getTemplate`: Get one Layerre template by id, including every layer with its full properties (text, fonts, geometry, image URLs). Refreshes the signed image URLs on all image layers. NOTE: the response embeds time-limited pre-signed storage URLs that grant direct read access to the template's images without any API key.
-* **Get Variant** `getVariant`: Get one rendered variant by id and obtain a fresh download URL for it, regenerating the signed URL if it has expired. NOTE: the download URL returned is pre-signed and can be fetched by anyone who has it, with no API key.
-* **List Template Tags** `listTemplateTags`: List every distinct tag used across the account's templates together with how many templates carry each one, sorted by count descending then alphabetically. Use it to populate a tag picker before calling List Templates with a tag filter.
-* **List Template Variants** `listTemplateVariants`: List every variant rendered from a template, with pagination via skip and limit. Refreshes the signed download URL on each variant. NOTE: the returned download URLs are pre-signed and readable without an API key until they expire.
-* **List Templates** `listTemplates`: List all templates for the authenticated Layerre account, sorted by last modified, with variant counts. Supports pagination (skip/limit), filtering by tag, and case-insensitive name search via q. Set include_layers=true to embed each template's layers (slower).
-* **Update Layer** `updateLayer`: Update a single layer on a template: change its text, swap its img_url, or adjust any styling or geometry property. Edits the template itself, so every later variant inherits the change. Returns the updated layer.
-* **Update Template** `updateTemplate`: Update a template's metadata (name, width, height, background colour, per-page backgrounds, tags) and/or replace layer properties in bulk. Only the fields you send are changed. Returns the updated template.
-
-</details>
+| Get Template | `getTemplate` | Get one Layerre template by id, including every layer with its full properties (text, fonts, geometry, image URLs). Refreshes the signed image URLs on all image layers. NOTE: the response embeds time-limited pre-signed storage URLs that grant direct read access to the template's images without any API key. |
+| Get Variant | `getVariant` | Get one rendered variant by id and obtain a fresh download URL for it, regenerating the signed URL if it has expired. NOTE: the download URL returned is pre-signed and can be fetched by anyone who has it, with no API key. |
+| List Template Tags | `listTemplateTags` | List every distinct tag used across the account's templates together with how many templates carry each one, sorted by count descending then alphabetically. Use it to populate a tag picker before calling List Templates with a tag filter. |
+| List Template Variants | `listTemplateVariants` | List every variant rendered from a template, with pagination via skip and limit. Refreshes the signed download URL on each variant. NOTE: the returned download URLs are pre-signed and readable without an API key until they expire. |
+| List Templates | `listTemplates` | List all templates for the authenticated Layerre account, sorted by last modified, with variant counts. Supports pagination (skip/limit), filtering by tag, and case-insensitive name search via q. Set include_layers=true to embed each template's layers (slower). |
+| Update Layer | `updateLayer` | Update a single layer on a template: change its text, swap its img_url, or adjust any styling or geometry property. Edits the template itself, so every later variant inherits the change. Returns the updated layer. |
+| Update Template | `updateTemplate` | Update a template's metadata (name, width, height, background colour, per-page backgrounds, tags) and/or replace layer properties in bulk. Only the fields you send are changed. Returns the updated template. |

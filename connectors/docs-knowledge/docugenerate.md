@@ -34,11 +34,4 @@ Add DocuGenerate from **Build → Integrations → Connectors** and connect an a
 | List Documents | `listDocuments` | List every document generated from a given DocuGenerate template, ordered by creation time descending. Returns an array of document objects with id, name, format, filename, data row count and download link. |
 | List Templates | `listTemplates` | List all DocuGenerate templates in the account, ordered by creation time descending. Optionally filter to one exact folder path by filling the folder level fields from root to leaf. Returns an array of template objects with id, name, merge tags, delimiters, format, region, folder and download links. |
 | Rename Document | `renameDocument` | Change the logical name of a generated DocuGenerate document. The name is the only updatable field on a document; the generated file itself and its download link are unchanged. Returns the updated document. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Update Template** `updateTemplate`: Update an existing DocuGenerate template by id. Any field left empty is unchanged. Supplying new template content replaces the stored template file and re-extracts the merge tags; supplying new delimiters re-processes the existing content. Returns the updated template.
-
-</details>
+| Update Template | `updateTemplate` | Update an existing DocuGenerate template by id. Any field left empty is unchanged. Supplying new template content replaces the stored template file and re-extracts the merge tags; supplying new delimiters re-processes the existing content. Returns the updated template. |

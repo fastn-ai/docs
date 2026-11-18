@@ -34,19 +34,12 @@ Add Sendspark from **Build → Integrations → Connectors** and connect an acco
 | Get Dynamic Video Campaign | `getDynamicCampaign` | Fetch one dynamic video campaign by id, including its video, buttons, calendar and prospect configuration. GET /v1/workspaces/{workspaceId}/dynamics/{dynamicId}. |
 | Get Dynamics Workspace Settings | `getDynamicsSettings` | Get the workspace-level dynamic video settings (supported languages, greeting placeholders, fallbacks). GET /v1/workspaces/{workspaceId}/dynamics/settings. |
 | Get Prospect By Email | `getProspectByEmail` | Fetch the prospect record (and its generated personalised video data) for one contact email inside a dynamic campaign. GET /v1/workspaces/{workspaceId}/dynamics/{dynamicId}/prospects/{contactEmail}. |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **Get Webhook** `getWebhook`: Fetch a single webhook subscription by its id. GET /v1/workspaces/{workspaceId}/webhooks/{webhookId}.
-* **Get Workspace Id From Api Key** `getWorkspaceIdentifier`: Resolve the workspace id that the supplied API key belongs to. GET /v1/workspaces/identifier.
-* **List Dynamic Video Campaigns** `listDynamicCampaigns`: List the dynamic video campaigns in the connected workspace, paginated. offset is 1-based - the vendor returns HTTP 500 for offset=0. GET /v1/workspaces/{workspaceId}/dynamics.
-* **List Webhooks** `listWebhooks`: List all webhook subscriptions registered on the connected workspace. The raw vendor response is a JSON array of webhook objects. GET /v1/workspaces/{workspaceId}/webhooks.
-* **List Workspaces** `listWorkspaces`: List the Sendspark workspaces the authenticated user belongs to, with plan and member details. GET /v1/workspaces.
-* **Update Webhook** `updateWebhook`: Modify an existing webhook subscription: rename it, change the delivery url, change subscribed events or enable/disable it. PATCH /v1/workspaces/{workspaceId}/webhooks/{webhookId}.
-
-</details>
+| Get Webhook | `getWebhook` | Fetch a single webhook subscription by its id. GET /v1/workspaces/{workspaceId}/webhooks/{webhookId}. |
+| Get Workspace Id From Api Key | `getWorkspaceIdentifier` | Resolve the workspace id that the supplied API key belongs to. GET /v1/workspaces/identifier. |
+| List Dynamic Video Campaigns | `listDynamicCampaigns` | List the dynamic video campaigns in the connected workspace, paginated. offset is 1-based - the vendor returns HTTP 500 for offset=0. GET /v1/workspaces/{workspaceId}/dynamics. |
+| List Webhooks | `listWebhooks` | List all webhook subscriptions registered on the connected workspace. The raw vendor response is a JSON array of webhook objects. GET /v1/workspaces/{workspaceId}/webhooks. |
+| List Workspaces | `listWorkspaces` | List the Sendspark workspaces the authenticated user belongs to, with plan and member details. GET /v1/workspaces. |
+| Update Webhook | `updateWebhook` | Modify an existing webhook subscription: rename it, change the delivery url, change subscribed events or enable/disable it. PATCH /v1/workspaces/{workspaceId}/webhooks/{webhookId}. |
 
 ## Events
 

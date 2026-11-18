@@ -34,12 +34,5 @@ Add Zoho People from **Build → Integrations → Connectors** and connect an ac
 | List Forms | `listForms` | Retrieve every form configured in your Zoho People account, including its display name and form link name. The form link name is required by the record actions. |
 | List Leave Records | `listLeaveRecords` | Retrieve leave records within a date range from Zoho People, optionally filtered by employee, leave type or approval status. |
 | List Time Logs | `listTimeLogs` | Retrieve time logs from the Zoho People time tracker for a date range, optionally filtered by user, job, project or billing status. |
-
-<details>
-
-<summary>See 2 more actions</summary>
-
-* **Record Attendance** `recordAttendance`: Record an attendance check-in or check-out for an employee in Zoho People. At least one of employee ID, email address or map ID must be supplied to identify the employee.
-* **Update Form Record** `updateFormRecord`: Update an existing record in a Zoho People form. Only the fields included in the input data are changed.
-
-</details>
+| Record Attendance | `recordAttendance` | Record an attendance check-in or check-out for an employee in Zoho People. At least one of employee ID, email address or map ID must be supplied to identify the employee. |
+| Update Form Record | `updateFormRecord` | Update an existing record in a Zoho People form. Only the fields included in the input data are changed. |

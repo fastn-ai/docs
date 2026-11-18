@@ -34,11 +34,4 @@ Add AssemblyAI from **Build → Integrations → Connectors** and connect an acc
 | Get VTT Subtitles | `getVttSubtitles` | Export a completed transcript as WebVTT subtitles (text/plain). Optionally limit characters per caption. Free read. |
 | List Transcripts | `listTranscripts` | List your transcripts (paginated, newest first). Free read. Filter by status or date; use before_id/after_id to page. |
 | Upload Audio File | `uploadAudioFile` | Upload a local audio/video file (raw binary) to AssemblyAI. Returns an upload_url usable as audio_url in createTranscript. Pass the file bytes as input.file. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Word Search** `wordSearch`: Search a completed transcript for one or more keywords and get match counts plus timestamps. Free read.
-
-</details>
+| Word Search | `wordSearch` | Search a completed transcript for one or more keywords and get match counts plus timestamps. Free read. |

@@ -34,25 +34,18 @@ Add Cohere from **Build → Integrations → Connectors** and connect an account
 | Create Embed Job | `createEmbedJob` | Create an Embed Job. This API launches an async Embed job for a [Dataset](https://docs.cohere.com/docs/datasets) of type `embed-input`. The result of a completed embed job is new Dataset of type `embed-output`, which contains the original text entries and the corresponding embeddings. |
 | Delete Dataset | `deleteDataset` | Delete a Dataset. Delete a dataset by ID. Datasets are automatically deleted after 30 days, but they can also be deleted manually. |
 | Detokenize | `detokenize` | Detokenize. This endpoint takes tokens using byte-pair encoding and returns their text representation. To learn more about tokenization and byte pair encoding, see the tokens page. |
-
-<details>
-
-<summary>See 15 more actions</summary>
-
-* **Embed** `embed`: Embed API (v2). This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents. Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page. If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
-* **Embed API (v1)** `embedV1`: Embed API (v1). This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents. Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page. If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search).
-* **Get Dataset** `getDataset`: Get a Dataset. Retrieve a dataset by ID. See ['Datasets'](https://docs.cohere.com/docs/datasets) for more information.
-* **Get Dataset Usage** `getDatasetUsage`: Get Dataset Usage. View the dataset storage usage for your Organization. Each Organization can have up to 10GB of storage across all their users.
-* **Get Embed Job** `getEmbedJob`: Fetch an Embed Job. This API retrieves the details about an embed job started by the same user.
-* **Get Model** `getModel`: Get a Model. Returns the details of a model, provided its name.
-* **List batches** `listBatches`: List batches. List the batches for the current user
-* **List Datasets** `listDatasets`: List Datasets. List datasets that have been created.
-* **List Embed Jobs** `listEmbedJobs`: List Embed Jobs. The list embed job endpoint allows users to view all embed jobs history for that specific user.
-* **List Models** `listModels`: List Models. Returns a list of models available for use.
-* **Parse API (v2)** `parseDocument`: Parse API (v2). Parse a document image into structured output. Use `output_format` to select blocks or markdown (default). Currently supports `document.type = image_url` only (data URI or remote http(s) image URL). PDF / file URL inputs are not yet supported. Image limits: 20 MB file size; 50 megapixels or 200 MB decoded (whichever is exceeded first).
-* **Rerank** `rerank`: Rerank API (v2). This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
-* **Rerank API (v1)** `rerankV1`: Rerank API (v1). This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score.
-* **Retrieve a batch** `getBatch`: Retrieve a batch. Retrieves a batch
-* **Tokenize** `tokenize`: Tokenize. This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page.
-
-</details>
+| Embed | `embed` | Embed API (v2). This endpoint returns text embeddings. An embedding is a list of floating point numbers that captures semantic information about the text that it represents. Embeddings can be used to create text classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page. If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search). |
+| Embed API (v1) | `embedV1` | Embed API (v1). This endpoint returns text and image embeddings. An embedding is a list of floating point numbers that captures semantic information about the content that it represents. Embeddings can be used to create classifiers as well as empower semantic search. To learn more about embeddings, see the embedding page. If you want to learn more how to use the embedding model, have a look at the [Semantic Search Guide](https://docs.cohere.com/docs/semantic-search). |
+| Get Dataset | `getDataset` | Get a Dataset. Retrieve a dataset by ID. See ['Datasets'](https://docs.cohere.com/docs/datasets) for more information. |
+| Get Dataset Usage | `getDatasetUsage` | Get Dataset Usage. View the dataset storage usage for your Organization. Each Organization can have up to 10GB of storage across all their users. |
+| Get Embed Job | `getEmbedJob` | Fetch an Embed Job. This API retrieves the details about an embed job started by the same user. |
+| Get Model | `getModel` | Get a Model. Returns the details of a model, provided its name. |
+| List batches | `listBatches` | List batches. List the batches for the current user |
+| List Datasets | `listDatasets` | List Datasets. List datasets that have been created. |
+| List Embed Jobs | `listEmbedJobs` | List Embed Jobs. The list embed job endpoint allows users to view all embed jobs history for that specific user. |
+| List Models | `listModels` | List Models. Returns a list of models available for use. |
+| Parse API (v2) | `parseDocument` | Parse API (v2). Parse a document image into structured output. Use `output_format` to select blocks or markdown (default). Currently supports `document.type = image_url` only (data URI or remote http(s) image URL). PDF / file URL inputs are not yet supported. Image limits: 20 MB file size; 50 megapixels or 200 MB decoded (whichever is exceeded first). |
+| Rerank | `rerank` | Rerank API (v2). This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score. |
+| Rerank API (v1) | `rerankV1` | Rerank API (v1). This endpoint takes in a query and a list of texts and produces an ordered array with each text assigned a relevance score. |
+| Retrieve a batch | `getBatch` | Retrieve a batch. Retrieves a batch |
+| Tokenize | `tokenize` | Tokenize. This endpoint splits input text into smaller units called tokens using byte-pair encoding (BPE). To learn more about tokenization and byte pair encoding, see the tokens page. |

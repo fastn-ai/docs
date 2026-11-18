@@ -34,29 +34,22 @@ Add Unsplash from **Build → Integrations → Connectors** and connect an accou
 | Get Photo | `getPhoto` | Retrieve full details of a single photo by its id. Public endpoint, Client-ID auth. |
 | Get Photo Statistics | `getPhotoStatistics` | Retrieve download/view/like statistics for a photo over a time window. Public endpoint, Client-ID auth. |
 | Get Random Photo | `getRandomPhoto` | Retrieve one or more random photos, optionally filtered by collections, topics, username, orientation, content filter, or a search query. Public endpoint, Client-ID auth. |
-
-<details>
-
-<summary>See 19 more actions</summary>
-
-* **Get Related Collections** `getRelatedCollections`: List collections related to a given collection. Public endpoint, Client-ID auth.
-* **Get Topic** `getTopic`: Retrieve a single topic by its id or slug. Public endpoint, Client-ID auth.
-* **Get Topic Photos** `getTopicPhotos`: List the photos in a topic. Public endpoint, Client-ID auth.
-* **Get Total Stats** `getTotalStats`: Retrieve total Unsplash platform statistics (all-time photo/download/view totals). Public endpoint, Client-ID auth.
-* **Get User Collections** `getUserCollections`: List a user's public collections. Public endpoint, Client-ID auth.
-* **Get User Photos** `getUserPhotos`: List a user's public photos. Public endpoint, Client-ID auth.
-* **Get User Public Profile** `getUserPublicProfile`: Retrieve a user's public profile. Public endpoint, Client-ID auth.
-* **Get User Statistics** `getUserStatistics`: Retrieve download/view statistics for a user over a time window. Public endpoint, Client-ID auth.
-* **List Collections** `listCollections`: List all public collections, most recently updated first. Public endpoint, Client-ID auth.
-* **List Photos** `listPhotos`: List photos from Unsplash's editorial feed, most recent first. Public endpoint, Client-ID auth.
-* **List Topics** `listTopics`: List curated topics. Public endpoint, Client-ID auth.
-* **Remove Photo From Collection** `removePhotoFromCollection`: Remove a photo from a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.
-* **Search Collections** `searchCollections`: Search for collections by keyword. Public endpoint, Client-ID auth.
-* **Search Photos** `searchPhotos`: Search for photos by keyword, with optional filters for order, orientation, collections, color, content filter, and language. Public endpoint, Client-ID auth.
-* **Search Users** `searchUsers`: Search for users by keyword. Public endpoint, Client-ID auth.
-* **Track Photo Download** `trackPhotoDownload`: Trigger a download event for a photo, as required by Unsplash API guidelines whenever a photo's download link is used by your application. Public endpoint, Client-ID auth. Returns a temporary download link.
-* **Update Collection** `updateCollection`: Update a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.
-* **Update My Profile** `updateMyProfile`: Update the authenticated user's profile fields. REQUIRES a full user-scoped OAuth Bearer access token (write_user scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.
-* **Update Photo** `updatePhoto`: Update metadata of a photo owned by the authenticated user (description, tags, EXIF, location, profile visibility). REQUIRES a full user-scoped OAuth Bearer access token (write_photos scope) for a photo the authenticated user owns - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.
-
-</details>
+| Get Related Collections | `getRelatedCollections` | List collections related to a given collection. Public endpoint, Client-ID auth. |
+| Get Topic | `getTopic` | Retrieve a single topic by its id or slug. Public endpoint, Client-ID auth. |
+| Get Topic Photos | `getTopicPhotos` | List the photos in a topic. Public endpoint, Client-ID auth. |
+| Get Total Stats | `getTotalStats` | Retrieve total Unsplash platform statistics (all-time photo/download/view totals). Public endpoint, Client-ID auth. |
+| Get User Collections | `getUserCollections` | List a user's public collections. Public endpoint, Client-ID auth. |
+| Get User Photos | `getUserPhotos` | List a user's public photos. Public endpoint, Client-ID auth. |
+| Get User Public Profile | `getUserPublicProfile` | Retrieve a user's public profile. Public endpoint, Client-ID auth. |
+| Get User Statistics | `getUserStatistics` | Retrieve download/view statistics for a user over a time window. Public endpoint, Client-ID auth. |
+| List Collections | `listCollections` | List all public collections, most recently updated first. Public endpoint, Client-ID auth. |
+| List Photos | `listPhotos` | List photos from Unsplash's editorial feed, most recent first. Public endpoint, Client-ID auth. |
+| List Topics | `listTopics` | List curated topics. Public endpoint, Client-ID auth. |
+| Remove Photo From Collection | `removePhotoFromCollection` | Remove a photo from a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |
+| Search Collections | `searchCollections` | Search for collections by keyword. Public endpoint, Client-ID auth. |
+| Search Photos | `searchPhotos` | Search for photos by keyword, with optional filters for order, orientation, collections, color, content filter, and language. Public endpoint, Client-ID auth. |
+| Search Users | `searchUsers` | Search for users by keyword. Public endpoint, Client-ID auth. |
+| Track Photo Download | `trackPhotoDownload` | Trigger a download event for a photo, as required by Unsplash API guidelines whenever a photo's download link is used by your application. Public endpoint, Client-ID auth. Returns a temporary download link. |
+| Update Collection | `updateCollection` | Update a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |
+| Update My Profile | `updateMyProfile` | Update the authenticated user's profile fields. REQUIRES a full user-scoped OAuth Bearer access token (write_user scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |
+| Update Photo | `updatePhoto` | Update metadata of a photo owned by the authenticated user (description, tags, EXIF, location, profile visibility). REQUIRES a full user-scoped OAuth Bearer access token (write_photos scope) for a photo the authenticated user owns - a plain Client-ID (app-level) credential is NOT sufficient and will return 401. |

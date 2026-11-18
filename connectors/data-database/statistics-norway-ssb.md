@@ -34,12 +34,5 @@ Add Statistics Norway (SSB) from **Build → Integrations → Connectors** and c
 | Get Table Data (Default Selection) | `getTableDataDefault` | Get Table Data (Default Selection). Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables/{id}/data) |
 | Get Table Default Selection | `getTableDefaultSelection` | Get Table Default Selection. Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables/{id}/defaultselection) |
 | Get Table Metadata | `getTableMetadata` | Get Table Metadata. Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables/{id}/metadata) |
-
-<details>
-
-<summary>See 2 more actions</summary>
-
-* **Query Table Data** `queryTableData`: Get data from a table for an explicit selection of variables and values (POST /tables/{id}/data). Returns JSON-stat 2.0 by default. Docs: https://www.ssb.no/en/api/pxwebapi
-* **Search Tables** `searchTables`: Search Tables. Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables)
-
-</details>
+| Query Table Data | `queryTableData` | Get data from a table for an explicit selection of variables and values (POST /tables/{id}/data). Returns JSON-stat 2.0 by default. Docs: https://www.ssb.no/en/api/pxwebapi |
+| Search Tables | `searchTables` | Search Tables. Docs: https://www.ssb.no/en/api/pxwebapi (GET /tables) |

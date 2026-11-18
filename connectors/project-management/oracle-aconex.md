@@ -34,20 +34,13 @@ Add Oracle Aconex from **Build → Integrations → Connectors** and connect an 
 | Get Open Task Count | `getTaskCount` | Get the number of tasks for the connected user across projects (GET /api/tasks/count). |
 | Get Organization | `getOrganization` | Get an organization's details (GET /api/organizations/{organizationId}). Use OrganizationId from Get Current User. |
 | Get Project User | `getProjectUser` | Get one user's details as seen in a project directory (GET /api/projects/{projectId}/users/{userId}). |
-
-<details>
-
-<summary>See 10 more actions</summary>
-
-* **List Documents** `listDocuments`: Search a project's document register (GET /api/projects/{projectId}/register). search_query is Lucene (e.g. doctype:Drawing). return_fields picks fields (e.g. docno,title,revision,statusid). Use search_type PAGED with page_number and page_size.
-* **List Mail** `listMail`: Search a project mailbox (GET /api/projects/{projectId}/mail, Mail API v2). mail_box is inbox, sentbox or draftbox. search_query is Lucene (e.g. corrtypeid:23). return_fields e.g. subject,fromuserfullname,sentdate,docno,corrtypeid. Use search_type PAGED with page_number and page_size.
-* **List Organization Users** `listOrganizationUsers`: List users of an organization (GET /api/organizations/{organizationId}/users). Needs organization admin rights.
-* **List Projects** `listProjects`: List the Aconex projects the connected user can access (GET /api/projects). Returns XML ProjectResults with ProjectId, ProjectName, status and dates. Use the ProjectId in other actions.
-* **List Workflows** `listWorkflows`: List a project's document review workflows (GET /api/projects/{projectId}/workflows). Filter by update time; page_size is a multiple of 25.
-* **Mark Mail As Read** `markMailRead`: Mark a mail as read for the connected user (PUT /api/projects/{projectId}/mail/{mailId}/markRead).
-* **Mark Mail As Unread** `markMailUnread`: Mark a mail as unread for the connected user (PUT /api/projects/{projectId}/mail/{mailId}/markUnread).
-* **Search Global Directory** `searchGlobalDirectory`: Search users in the Aconex global directory (GET /api/directory). Filters are optional wildcard matches; email is exact. Paged with page_number and page_size.
-* **Search Project Directory** `searchProjectDirectory`: Search users and groups in one Aconex project's directory (GET /api/projects/{projectId}/directory). Filters are optional; set show_groups false to return users only.
-* **Search Workflows By Number** `searchWorkflows`: Find workflows by number (GET /api/projects/{projectId}/workflows/search). workflow_number is a comma-separated list of up to 10, e.g. WF-000020,WF-000021.
-
-</details>
+| List Documents | `listDocuments` | Search a project's document register (GET /api/projects/{projectId}/register). search_query is Lucene (e.g. doctype:Drawing). return_fields picks fields (e.g. docno,title,revision,statusid). Use search_type PAGED with page_number and page_size. |
+| List Mail | `listMail` | Search a project mailbox (GET /api/projects/{projectId}/mail, Mail API v2). mail_box is inbox, sentbox or draftbox. search_query is Lucene (e.g. corrtypeid:23). return_fields e.g. subject,fromuserfullname,sentdate,docno,corrtypeid. Use search_type PAGED with page_number and page_size. |
+| List Organization Users | `listOrganizationUsers` | List users of an organization (GET /api/organizations/{organizationId}/users). Needs organization admin rights. |
+| List Projects | `listProjects` | List the Aconex projects the connected user can access (GET /api/projects). Returns XML ProjectResults with ProjectId, ProjectName, status and dates. Use the ProjectId in other actions. |
+| List Workflows | `listWorkflows` | List a project's document review workflows (GET /api/projects/{projectId}/workflows). Filter by update time; page_size is a multiple of 25. |
+| Mark Mail As Read | `markMailRead` | Mark a mail as read for the connected user (PUT /api/projects/{projectId}/mail/{mailId}/markRead). |
+| Mark Mail As Unread | `markMailUnread` | Mark a mail as unread for the connected user (PUT /api/projects/{projectId}/mail/{mailId}/markUnread). |
+| Search Global Directory | `searchGlobalDirectory` | Search users in the Aconex global directory (GET /api/directory). Filters are optional wildcard matches; email is exact. Paged with page_number and page_size. |
+| Search Project Directory | `searchProjectDirectory` | Search users and groups in one Aconex project's directory (GET /api/projects/{projectId}/directory). Filters are optional; set show_groups false to return users only. |
+| Search Workflows By Number | `searchWorkflows` | Find workflows by number (GET /api/projects/{projectId}/workflows/search). workflow_number is a comma-separated list of up to 10, e.g. WF-000020,WF-000021. |

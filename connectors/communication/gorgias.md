@@ -34,16 +34,9 @@ Add Gorgias from **Build → Integrations → Connectors** and connect an accoun
 | Get Ticket | `getTicket` | Get a ticket by id. |
 | List Customers | `listCustomers` | List customers. |
 | List Integrations | `listIntegrations` | List HTTP integrations (outbound webhooks). |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **List Messages** `listMessages`: List messages, optionally for a ticket.
-* **List Tags** `listTags`: List tags.
-* **List Tickets** `listTickets`: List tickets (cursor-paginated).
-* **List Users** `listUsers`: List agents/users.
-* **Update Customer** `updateCustomer`: Update a customer.
-* **Update Ticket** `updateTicket`: Update a ticket (status, priority, assignee, tags, subject).
-
-</details>
+| List Messages | `listMessages` | List messages, optionally for a ticket. |
+| List Tags | `listTags` | List tags. |
+| List Tickets | `listTickets` | List tickets (cursor-paginated). |
+| List Users | `listUsers` | List agents/users. |
+| Update Customer | `updateCustomer` | Update a customer. |
+| Update Ticket | `updateTicket` | Update a ticket (status, priority, assignee, tags, subject). |

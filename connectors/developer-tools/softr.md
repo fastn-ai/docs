@@ -34,29 +34,22 @@ Add Softr from **Build → Integrations → Connectors** and connect an account,
 | Delete App User | `deleteAppUser` | Delete a user from a published Softr application, identified by their email address. The user is removed permanently. |
 | Delete Database | `deleteDatabase` | Delete a specific database by its ID. It can only be deleted if it is empty, unless the 'force' parameter is used. The record is removed permanently and cannot be recovered. |
 | Delete Record | `deleteRecord` | Delete a specific record by its ID. The record is removed permanently and cannot be recovered. |
-
-<details>
-
-<summary>See 19 more actions</summary>
-
-* **Delete Table** `deleteTable`: Delete a specific table by its ID. It can only be deleted if it is empty, unless the 'force' parameter is used. The record is removed permanently and cannot be recovered.
-* **Delete Table Field** `deleteTableField`: Delete a specific field from a table. The record is removed permanently and cannot be recovered.
-* **Generate User Magic Link** `generateUserMagicLink`: Generate a magic link that signs the given user into a published Softr application without a password.
-* **Get Database** `getDatabase`: Retrieve details of a specific database by its ID.
-* **Get Record** `getRecord`: Retrieve details of a specific record by its ID.
-* **Get Table** `getTable`: Retrieve details of a specific table by its ID.
-* **Get Table Field** `getTableField`: Retrieve details of a specific field.
-* **Invite App User** `inviteAppUser`: Send an invitation email to an existing user of a published Softr application and move their status to Invited. The application must be published for the invitation to be delivered.
-* **List Databases** `listDatabases`: Retrieve a list of all databases accessible to the authenticated user.
-* **List Records** `listRecords`: Retrieve a list of all records in the specified table.
-* **List Table Views** `listTableViews`: Retrieve a list of views for a specific table.
-* **List Tables** `listTables`: Retrieve a list of all tables in the specified database.
-* **Search Records** `searchRecords`: Search for records in the specified table based on filter, sort, and pagination criteria.
-* **Sync App Users** `syncAppUsers`: Trigger a user sync for a published Softr application. Supply a JSON array of email addresses as a string to sync specific users, for example ["a@example.com","b@example.com"], or the literal [] to sync every user.
-* **Update Database** `updateDatabase`: Update the details of an existing database.
-* **Update Record** `updateRecord`: Partially update a specific record by its ID. Only the fields provided in the request body will be changed.
-* **Update Table** `updateTable`: Update a table's name and/or description. To modify fields, use the field-specific endpoints.
-* **Update Table Field** `updateTableField`: Update the properties of a specific field.
-* **Validate User Token** `validateUserToken`: Validate a Softr user authentication JWT against the application's own domain. This endpoint is served by the published application rather than the Softr studio API and takes no API key, so external systems can confirm a Softr session before trusting the user identity it carries.
-
-</details>
+| Delete Table | `deleteTable` | Delete a specific table by its ID. It can only be deleted if it is empty, unless the 'force' parameter is used. The record is removed permanently and cannot be recovered. |
+| Delete Table Field | `deleteTableField` | Delete a specific field from a table. The record is removed permanently and cannot be recovered. |
+| Generate User Magic Link | `generateUserMagicLink` | Generate a magic link that signs the given user into a published Softr application without a password. |
+| Get Database | `getDatabase` | Retrieve details of a specific database by its ID. |
+| Get Record | `getRecord` | Retrieve details of a specific record by its ID. |
+| Get Table | `getTable` | Retrieve details of a specific table by its ID. |
+| Get Table Field | `getTableField` | Retrieve details of a specific field. |
+| Invite App User | `inviteAppUser` | Send an invitation email to an existing user of a published Softr application and move their status to Invited. The application must be published for the invitation to be delivered. |
+| List Databases | `listDatabases` | Retrieve a list of all databases accessible to the authenticated user. |
+| List Records | `listRecords` | Retrieve a list of all records in the specified table. |
+| List Table Views | `listTableViews` | Retrieve a list of views for a specific table. |
+| List Tables | `listTables` | Retrieve a list of all tables in the specified database. |
+| Search Records | `searchRecords` | Search for records in the specified table based on filter, sort, and pagination criteria. |
+| Sync App Users | `syncAppUsers` | Trigger a user sync for a published Softr application. Supply a JSON array of email addresses as a string to sync specific users, for example ["a@example.com","b@example.com"], or the literal [] to sync every user. |
+| Update Database | `updateDatabase` | Update the details of an existing database. |
+| Update Record | `updateRecord` | Partially update a specific record by its ID. Only the fields provided in the request body will be changed. |
+| Update Table | `updateTable` | Update a table's name and/or description. To modify fields, use the field-specific endpoints. |
+| Update Table Field | `updateTableField` | Update the properties of a specific field. |
+| Validate User Token | `validateUserToken` | Validate a Softr user authentication JWT against the application's own domain. This endpoint is served by the published application rather than the Softr studio API and takes no API key, so external systems can confirm a Softr session before trusting the user identity it carries. |

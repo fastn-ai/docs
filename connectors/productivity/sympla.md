@@ -34,15 +34,8 @@ Add Sympla from **Build → Integrations → Connectors** and connect an account
 | Get Presentation | `getPresentation` | Fetch one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}. |
 | List Event Orders | `listEventOrders` | List the orders of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/orders. Cursor-paginated. |
 | List Event Participants | `listEventParticipants` | List the participants (attendees) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/participants. Cursor-paginated. |
-
-<details>
-
-<summary>See 5 more actions</summary>
-
-* **List Events** `listEvents`: List the organizer's events. Sympla Public API v1.6.0 GET /public/v1.6.0/events. Cursor-paginated; returns {data:[...],pagination:{...},sort:{...}}.
-* **List Order Participants** `listOrderParticipants`: List the participants (tickets) belonging to one order. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/orders/{orderSk}/participants.
-* **List Presentation Orders** `listPresentationOrders`: List the orders placed for one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}/orders.
-* **List Presentation Participants** `listPresentationParticipants`: List the participants (attendees) of one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}/participants.
-* **List Presentations** `listPresentations`: List the presentations (sessions / dates) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations.
-
-</details>
+| List Events | `listEvents` | List the organizer's events. Sympla Public API v1.6.0 GET /public/v1.6.0/events. Cursor-paginated; returns {data:[...],pagination:{...},sort:{...}}. |
+| List Order Participants | `listOrderParticipants` | List the participants (tickets) belonging to one order. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/orders/{orderSk}/participants. |
+| List Presentation Orders | `listPresentationOrders` | List the orders placed for one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}/orders. |
+| List Presentation Participants | `listPresentationParticipants` | List the participants (attendees) of one presentation (session) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations/{presentationId}/participants. |
+| List Presentations | `listPresentations` | List the presentations (sessions / dates) of an event. Sympla Public API v1.6.0 GET /public/v1.6.0/events/{eventIdHash}/presentations. |

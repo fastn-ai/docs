@@ -34,16 +34,9 @@ Add Google Cloud Scheduler from **Build → Integrations → Connectors** and co
 | Get Operation | `getOperation` | Retrieves the current state of a single Cloud Scheduler long-running operation, including whether it has completed and its result or error. |
 | List Jobs | `listJobs` | Lists the Cloud Scheduler jobs in a project and location, including each job's schedule, target configuration, state and last attempt status. |
 | List Locations | `listLocations` | Lists the Google Cloud regions in which Cloud Scheduler is available for the given project. Use the returned locationId values when addressing jobs, operations and CMEK configuration. |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **List Operations** `listOperations`: Lists the long-running operations in a Cloud Scheduler project and location, such as pending CMEK configuration updates.
-* **Pause Job** `pauseJob`: Pauses a Cloud Scheduler job so that it stops executing on its schedule. The job must be in the ENABLED state; after pausing its state becomes PAUSED.
-* **Resume Job** `resumeJob`: Resumes a paused Cloud Scheduler job so that it executes on its schedule again. The job must be in the PAUSED state; after resuming its state becomes ENABLED.
-* **Run Job** `runJob`: Forces a Cloud Scheduler job to run immediately, outside its normal schedule. The job's regular schedule is unaffected and the updated job resource is returned.
-* **Update CMEK Config** `updateCmekConfig`: Updates the customer-managed encryption key (CMEK) configuration for Cloud Scheduler in a project and location. Returns a long-running operation. Supply an empty kmsKeyName to disable CMEK for the location.
-* **Update Job** `updateJob`: Updates a Cloud Scheduler job. Only the fields named in updateMask are changed, so list exactly the fields you are modifying, for example 'schedule,description'. If the job is paused it remains paused after the update.
-
-</details>
+| List Operations | `listOperations` | Lists the long-running operations in a Cloud Scheduler project and location, such as pending CMEK configuration updates. |
+| Pause Job | `pauseJob` | Pauses a Cloud Scheduler job so that it stops executing on its schedule. The job must be in the ENABLED state; after pausing its state becomes PAUSED. |
+| Resume Job | `resumeJob` | Resumes a paused Cloud Scheduler job so that it executes on its schedule again. The job must be in the PAUSED state; after resuming its state becomes ENABLED. |
+| Run Job | `runJob` | Forces a Cloud Scheduler job to run immediately, outside its normal schedule. The job's regular schedule is unaffected and the updated job resource is returned. |
+| Update CMEK Config | `updateCmekConfig` | Updates the customer-managed encryption key (CMEK) configuration for Cloud Scheduler in a project and location. Returns a long-running operation. Supply an empty kmsKeyName to disable CMEK for the location. |
+| Update Job | `updateJob` | Updates a Cloud Scheduler job. Only the fields named in updateMask are changed, so list exactly the fields you are modifying, for example 'schedule,description'. If the job is paused it remains paused after the update. |

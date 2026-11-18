@@ -34,15 +34,8 @@ Add Bitly from **Build → Integrations → Connectors** and connect an account,
 | Get Bitlink Clicks Summary | `getBitlinkClicksSummary` | Retrieves the total click count for a Bitlink over a given time window (e.g. the last 7 days, or all time). |
 | Get Current User | `getCurrentUser` | Retrieves the profile of the Bitly account authenticated by the connected access token, including login, name, email addresses, 2FA status, and the default group GUID. |
 | Get Group | `getGroup` | Retrieves a single Bitly group by its GUID, including its name, role, organization, and active status. |
-
-<details>
-
-<summary>See 5 more actions</summary>
-
-* **Get QR Code** `getQrCode`: Retrieves the full details of a single QR Code by its ID, including its title, destination, type, and customization settings.
-* **List Bitlinks by Group** `listBitlinksByGroup`: Retrieves the Bitlinks belonging to a group, with optional search, tag, and archived-state filters. Supports pagination via size and search_after.
-* **List Groups** `listGroups`: Retrieves all Bitly groups the authenticated user belongs to, optionally filtered to a single organization. A group is the container used when creating Bitlinks and QR Codes.
-* **List QR Codes by Group** `listQrCodesByGroup`: Retrieves the QR Codes belonging to a group, with optional search, tag, and archived-state filters. Supports pagination via size and search_after.
-* **Update Bitlink** `updateBitlink`: Updates an existing Bitlink's title, tags, destination URL, archived state, deep links, or expiration timestamp.
-
-</details>
+| Get QR Code | `getQrCode` | Retrieves the full details of a single QR Code by its ID, including its title, destination, type, and customization settings. |
+| List Bitlinks by Group | `listBitlinksByGroup` | Retrieves the Bitlinks belonging to a group, with optional search, tag, and archived-state filters. Supports pagination via size and search_after. |
+| List Groups | `listGroups` | Retrieves all Bitly groups the authenticated user belongs to, optionally filtered to a single organization. A group is the container used when creating Bitlinks and QR Codes. |
+| List QR Codes by Group | `listQrCodesByGroup` | Retrieves the QR Codes belonging to a group, with optional search, tag, and archived-state filters. Supports pagination via size and search_after. |
+| Update Bitlink | `updateBitlink` | Updates an existing Bitlink's title, tags, destination URL, archived state, deep links, or expiration timestamp. |

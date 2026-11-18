@@ -34,34 +34,27 @@ Add Clearout from **Build → Integrations → Connectors** and connect an accou
 | Get Available Credits | `getAvailableCredits` | Returns the Clearout account's available email-verification credits, daily limit and low-balance threshold. Takes no input. Does not consume credits. |
 | Get Bulk Finder Progress | `getBulkFinderProgress` | Returns progress and result counts for a bulk Email Finder list, by list_id returned from Find Email Bulk. |
 | Get Bulk Verify Progress | `getBulkVerifyProgress` | Returns progress and result counts for a bulk email-verification list, by list_id returned from Verify Email Bulk. |
-
-<details>
-
-<summary>See 21 more actions</summary>
-
-* **Get Instant Finder Queue Status** `getInstantFinderQueueStatus`: Retrieves the result of a queued instant Email Finder request using the qid returned when the instant call timed out.
-* **Get Plans And Addons** `getPlansAndAddons`: Account API: returns the current subscription plan, pay-as-you-go plans and purchased addons. Takes no input. Does not consume credits.
-* **Get Service Limits** `getServiceLimits`: Account API: returns the account's per-service rate and usage limits. Takes no input. Does not consume credits.
-* **List Email Finder Lists** `listEmailFinderLists`: Lists bulk Email Finder lists with cursor pagination. Optional filters: date_range and processing status.
-* **List Email Verifier Lists** `listEmailVerifierLists`: Lists bulk email-verification lists with cursor pagination. Optional filters: date_range, verified status, source type.
-* **Remove Bulk Finder List** `removeBulkFinderList`: Permanently removes a bulk Email Finder list and its results by list_id. Set ignoreResult true when a download is in progress.
-* **Remove Bulk Verify List** `removeBulkVerifyList`: Permanently removes a bulk email-verification list and its results by list_id. Set ignoreResult true when a download is in progress.
-* **Resolve Domain MX** `resolveDomainMx`: Misc Domain API: resolves and returns the MX records for a domain.
-* **Resolve Domain Whois** `resolveDomainWhois`: Misc Domain API: returns WHOIS registration data for a domain (registrar, created/expiry dates, name servers).
-* **Reverse Lookup Domain** `reverseLookupDomain`: Reverse Lookup: returns the company profile associated with a domain or company name.
-* **Reverse Lookup Email** `reverseLookupEmail`: Reverse Lookup: returns the person and company profile associated with an email address.
-* **Reverse Lookup LinkedIn** `reverseLookupLinkedin`: Reverse Lookup: returns the person profile associated with a LinkedIn profile URL.
-* **Validate Name** `validateName`: AI name validation: judges whether a supplied full name is a genuine human name, splits first/last, and flags gibberish. gibberishThreshold tunes sensitivity (off, medium, high).
-* **Verify Business Account** `verifyBusinessAccount`: Checks whether an email address is a business (non-free) account. Returns a yes/no business flag.
-* **Verify Catch All** `verifyCatchAll`: Checks whether an email address belongs to a catch-all (accept-all) domain. Returns a yes/no catch_all flag.
-* **Verify Disposable** `verifyDisposable`: Checks whether an email address is a disposable/temporary mailbox. Returns a yes/no disposable flag.
-* **Verify Email Bulk** `verifyEmailBulk`: Uploads a CSV/TXT list of email addresses for bulk verification and returns a list_id to poll with Get Bulk Verify Progress. fileContent is the raw text of the file (one email per line, optional header row). Consumes 1 credit per non-test address.
-* **Verify Email Instant** `verifyEmailInstant`: Real-time single email address verification. Returns status (valid/invalid/catch_all/unknown), safe_to_send, sub_status, MX and SMTP detail, plus disposable/free/role/gibberish flags. Consumes 1 credit per non-test address.
-* **Verify Free Account** `verifyFreeAccount`: Checks whether an email address belongs to a free mail provider (gmail, yahoo, ...). Returns a yes/no free flag.
-* **Verify Gibberish Account** `verifyGibberishAccount`: Checks whether the local part of an email address is gibberish / randomly generated. Returns a yes/no gibberish flag.
-* **Verify Role Account** `verifyRoleAccount`: Checks whether an email address is a role account (info@, support@, sales@ ...). Returns a yes/no role flag.
-
-</details>
+| Get Instant Finder Queue Status | `getInstantFinderQueueStatus` | Retrieves the result of a queued instant Email Finder request using the qid returned when the instant call timed out. |
+| Get Plans And Addons | `getPlansAndAddons` | Account API: returns the current subscription plan, pay-as-you-go plans and purchased addons. Takes no input. Does not consume credits. |
+| Get Service Limits | `getServiceLimits` | Account API: returns the account's per-service rate and usage limits. Takes no input. Does not consume credits. |
+| List Email Finder Lists | `listEmailFinderLists` | Lists bulk Email Finder lists with cursor pagination. Optional filters: date_range and processing status. |
+| List Email Verifier Lists | `listEmailVerifierLists` | Lists bulk email-verification lists with cursor pagination. Optional filters: date_range, verified status, source type. |
+| Remove Bulk Finder List | `removeBulkFinderList` | Permanently removes a bulk Email Finder list and its results by list_id. Set ignoreResult true when a download is in progress. |
+| Remove Bulk Verify List | `removeBulkVerifyList` | Permanently removes a bulk email-verification list and its results by list_id. Set ignoreResult true when a download is in progress. |
+| Resolve Domain MX | `resolveDomainMx` | Misc Domain API: resolves and returns the MX records for a domain. |
+| Resolve Domain Whois | `resolveDomainWhois` | Misc Domain API: returns WHOIS registration data for a domain (registrar, created/expiry dates, name servers). |
+| Reverse Lookup Domain | `reverseLookupDomain` | Reverse Lookup: returns the company profile associated with a domain or company name. |
+| Reverse Lookup Email | `reverseLookupEmail` | Reverse Lookup: returns the person and company profile associated with an email address. |
+| Reverse Lookup LinkedIn | `reverseLookupLinkedin` | Reverse Lookup: returns the person profile associated with a LinkedIn profile URL. |
+| Validate Name | `validateName` | AI name validation: judges whether a supplied full name is a genuine human name, splits first/last, and flags gibberish. gibberishThreshold tunes sensitivity (off, medium, high). |
+| Verify Business Account | `verifyBusinessAccount` | Checks whether an email address is a business (non-free) account. Returns a yes/no business flag. |
+| Verify Catch All | `verifyCatchAll` | Checks whether an email address belongs to a catch-all (accept-all) domain. Returns a yes/no catch_all flag. |
+| Verify Disposable | `verifyDisposable` | Checks whether an email address is a disposable/temporary mailbox. Returns a yes/no disposable flag. |
+| Verify Email Bulk | `verifyEmailBulk` | Uploads a CSV/TXT list of email addresses for bulk verification and returns a list_id to poll with Get Bulk Verify Progress. fileContent is the raw text of the file (one email per line, optional header row). Consumes 1 credit per non-test address. |
+| Verify Email Instant | `verifyEmailInstant` | Real-time single email address verification. Returns status (valid/invalid/catch_all/unknown), safe_to_send, sub_status, MX and SMTP detail, plus disposable/free/role/gibberish flags. Consumes 1 credit per non-test address. |
+| Verify Free Account | `verifyFreeAccount` | Checks whether an email address belongs to a free mail provider (gmail, yahoo, ...). Returns a yes/no free flag. |
+| Verify Gibberish Account | `verifyGibberishAccount` | Checks whether the local part of an email address is gibberish / randomly generated. Returns a yes/no gibberish flag. |
+| Verify Role Account | `verifyRoleAccount` | Checks whether an email address is a role account (info@, support@, sales@ ...). Returns a yes/no role flag. |
 
 ## Events
 

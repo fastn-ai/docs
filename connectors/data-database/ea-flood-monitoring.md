@@ -34,12 +34,5 @@ Add Environment Agency Flood Monitoring from **Build → Integrations → Connec
 | List Measures | `listMeasures` | List measures across all stations, filtered by parameter, qualifier or station (GET /id/measures). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |
 | List Readings | `listReadings` | List readings across all measures and stations: latest, today, a day or a date range, filtered by parameter or station (GET /data/readings). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |
 | List Station Measures | `listStationMeasures` | List the measures (level, flow and so on) available from one station (GET /id/stations/{id}/measures). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |
-
-<details>
-
-<summary>See 2 more actions</summary>
-
-* **List Station Readings** `listStationReadings`: List readings of all measures at one station: latest, today, a day, a date range or since a time (GET /id/stations/{id}/readings). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference
-* **List Stations** `listStations`: List water level, flow, rainfall and other monitoring stations, filtered by parameter, river, catchment, town, type, status, label search or distance (GET /id/stations). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference
-
-</details>
+| List Station Readings | `listStationReadings` | List readings of all measures at one station: latest, today, a day, a date range or since a time (GET /id/stations/{id}/readings). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |
+| List Stations | `listStations` | List water level, flow, rainfall and other monitoring stations, filtered by parameter, river, catchment, town, type, status, label search or distance (GET /id/stations). Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference |

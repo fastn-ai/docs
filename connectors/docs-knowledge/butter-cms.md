@@ -34,22 +34,15 @@ Add ButterCMS from **Build → Integrations → Connectors** and connect an acco
 | Get Sitemap | `getSitemap` | Retrieve the blog's XML sitemap (returned as a string) listing published post URLs. |
 | List Authors | `listAuthors` | Retrieve all blog authors. Optionally include each author's recent posts. |
 | List Categories | `listCategories` | Retrieve all blog categories. Optionally include each category's recent posts. |
-
-<details>
-
-<summary>See 12 more actions</summary>
-
-* **List Pages** `listPages`: Retrieve a paginated list of pages of a given page type. Use '*' as the page type to list pages of all types.
-* **List Posts** `listPosts`: Retrieve a paginated list of published blog posts, sorted by publication date (newest first). Supports filtering by author, category, or tag slug.
-* **List Tags** `listTags`: Retrieve all blog tags. Optionally include each tag's recent posts.
-* **Retrieve Author** `retrieveAuthor`: Retrieve a single blog author by slug, including profile details and optionally their recent posts.
-* **Retrieve Category** `retrieveCategory`: Retrieve a single blog category by slug, optionally including its recent posts.
-* **Retrieve Page** `retrievePage`: Retrieve a single page by its page type and page slug, including all field values. Use '*' as the page type when the type is unknown.
-* **Retrieve Post** `retrievePost`: Retrieve a single blog post by its slug, including full body HTML, author, tags, categories, and SEO metadata.
-* **Retrieve Tag** `retrieveTag`: Retrieve a single blog tag by slug, optionally including its recent posts.
-* **Search Pages** `searchPages`: Full-text search across all pages by keyword. Returns a paginated list of matching pages.
-* **Search Posts** `searchPosts`: Full-text search of published blog posts by keyword across title and body. Returns a paginated list of matching posts.
-* **Update Page** `updatePage`: Update an existing page's field values via the Write API, identified by page type and page slug. Use '*' as the page type for single (type-less) pages. The write is processed asynchronously and returns a pending status.
-* **Update Post** `updatePost`: Update an existing blog post identified by its slug via the Write API. Only the fields provided are changed; the write is processed asynchronously and returns a pending status.
-
-</details>
+| List Pages | `listPages` | Retrieve a paginated list of pages of a given page type. Use '*' as the page type to list pages of all types. |
+| List Posts | `listPosts` | Retrieve a paginated list of published blog posts, sorted by publication date (newest first). Supports filtering by author, category, or tag slug. |
+| List Tags | `listTags` | Retrieve all blog tags. Optionally include each tag's recent posts. |
+| Retrieve Author | `retrieveAuthor` | Retrieve a single blog author by slug, including profile details and optionally their recent posts. |
+| Retrieve Category | `retrieveCategory` | Retrieve a single blog category by slug, optionally including its recent posts. |
+| Retrieve Page | `retrievePage` | Retrieve a single page by its page type and page slug, including all field values. Use '*' as the page type when the type is unknown. |
+| Retrieve Post | `retrievePost` | Retrieve a single blog post by its slug, including full body HTML, author, tags, categories, and SEO metadata. |
+| Retrieve Tag | `retrieveTag` | Retrieve a single blog tag by slug, optionally including its recent posts. |
+| Search Pages | `searchPages` | Full-text search across all pages by keyword. Returns a paginated list of matching pages. |
+| Search Posts | `searchPosts` | Full-text search of published blog posts by keyword across title and body. Returns a paginated list of matching posts. |
+| Update Page | `updatePage` | Update an existing page's field values via the Write API, identified by page type and page slug. Use '*' as the page type for single (type-less) pages. The write is processed asynchronously and returns a pending status. |
+| Update Post | `updatePost` | Update an existing blog post identified by its slug via the Write API. Only the fields provided are changed; the write is processed asynchronously and returns a pending status. |

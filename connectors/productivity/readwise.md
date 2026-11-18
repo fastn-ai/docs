@@ -34,33 +34,26 @@ Add Readwise from **Build → Integrations → Connectors** and connect an accou
 | Delete Highlight | `deleteHighlight` | Permanently deletes a highlight from the Readwise library. Readwise answers HTTP 204 with an empty body on success. |
 | Delete Highlight Tag | `deleteHighlightTag` | Removes a tag from a Readwise highlight. Readwise answers HTTP 204 with an empty body on success. |
 | Export Highlights | `exportHighlights` | Exports every source in the Readwise library together with its highlights, ready for syncing into a note-taking app or a backup. Call it with no parameters for a full export, then page with the returned cursor; later pass Updated After to fetch only what changed. |
-
-<details>
-
-<summary>See 20 more actions</summary>
-
-* **Get Book** `getBook`: Retrieves a single Readwise source - a book, article, tweet or podcast - by its id, including its title, author, category, highlight count and tags.
-* **Get Book Tag** `getBookTag`: Retrieves a single tag attached to a Readwise source by the source id and the tag id.
-* **Get Daily Review** `getDailyReview`: Returns the highlights in the most recent Readwise daily review, along with the review id and whether it has been completed. Readwise answers HTTP 404 with "Review not found." when no daily review has been generated yet.
-* **Get Highlight** `getHighlight`: Retrieves a single Readwise highlight by its id, including its text, note, colour, location, tags and the id of the book it belongs to.
-* **Get Highlight Tag** `getHighlightTag`: Retrieves a single tag attached to a Readwise highlight by the highlight id and the tag id.
-* **Get User Info** `getUserInfo`: Returns the Readwise account that owns the access token, including the user id, the sign-in email address and the associated profile id. Useful for confirming which account a connection is bound to.
-* **List All Tags** `listAllTags`: Lists every tag used anywhere in the Readwise library, across all books and highlights. Readwise returns this as a bare JSON array.
-* **List Book Tags** `listBookTags`: Lists the tags attached to a single Readwise source. Readwise returns this endpoint as a bare JSON array with no pagination, so all tags on the source come back in one call.
-* **List Books** `listBooks`: Lists the sources in the Readwise library - books, articles, tweets, supplementals and podcasts - with pagination metadata. Optionally filter by category, import source or update/highlight timestamps. Rate limited by Readwise to 20 requests per minute.
-* **List Document Tags** `listDocumentTags`: Lists every tag used across Readwise Reader documents, returning the tag key to pass to the Tag filter on List Documents. Rate limited by Readwise to 20 requests per minute.
-* **List Documents** `listDocuments`: Lists documents in Readwise Reader with pagination metadata. Highlights and notes made in Reader are documents too and carry a parent id. Filter by id, location, category, tag or last-updated time. Rate limited by Readwise to 20 requests per minute.
-* **List Highlight Tags** `listHighlightTags`: Lists the tags attached to a single Readwise highlight, with pagination metadata.
-* **List Highlights** `listHighlights`: Lists the highlights in the Readwise library, newest first, with pagination metadata. Optionally filter by the source book/article, by last-updated time or by the time the highlight was taken. Rate limited by Readwise to 20 requests per minute.
-* **Save Document** `saveDocument`: Saves a document into Readwise Reader. Supply the HTML yourself or let Reader scrape the URL. Setting Parent ID instead turns the request into a highlight on an existing document, in which case Content is required. Rate limited by Readwise to 50 requests per minute.
-* **Update Book** `updateBook`: Overrides the title, author and category of a Readwise source. The category override is required by the API on every call. Returns the updated source.
-* **Update Book Tag** `updateBookTag`: Renames a tag attached to a Readwise source. Returns the updated tag.
-* **Update Document** `updateDocument`: Updates a single document in Readwise Reader. Only the fields you supply are changed; omitted fields keep their current values. Rate limited by Readwise to 50 requests per minute.
-* **Update Highlight** `updateHighlight`: Updates an existing Readwise highlight. Only the fields you supply are changed; omitted fields keep their current values. Returns the updated highlight.
-* **Update Highlight Tag** `updateHighlightTag`: Renames a tag attached to a Readwise highlight. Returns the updated tag.
-* **Validate Access Token** `validateAccessToken`: Checks that the configured Readwise access token is valid. Readwise answers HTTP 204 with an empty body for a valid token and HTTP 401 for an invalid one.
-
-</details>
+| Get Book | `getBook` | Retrieves a single Readwise source - a book, article, tweet or podcast - by its id, including its title, author, category, highlight count and tags. |
+| Get Book Tag | `getBookTag` | Retrieves a single tag attached to a Readwise source by the source id and the tag id. |
+| Get Daily Review | `getDailyReview` | Returns the highlights in the most recent Readwise daily review, along with the review id and whether it has been completed. Readwise answers HTTP 404 with "Review not found." when no daily review has been generated yet. |
+| Get Highlight | `getHighlight` | Retrieves a single Readwise highlight by its id, including its text, note, colour, location, tags and the id of the book it belongs to. |
+| Get Highlight Tag | `getHighlightTag` | Retrieves a single tag attached to a Readwise highlight by the highlight id and the tag id. |
+| Get User Info | `getUserInfo` | Returns the Readwise account that owns the access token, including the user id, the sign-in email address and the associated profile id. Useful for confirming which account a connection is bound to. |
+| List All Tags | `listAllTags` | Lists every tag used anywhere in the Readwise library, across all books and highlights. Readwise returns this as a bare JSON array. |
+| List Book Tags | `listBookTags` | Lists the tags attached to a single Readwise source. Readwise returns this endpoint as a bare JSON array with no pagination, so all tags on the source come back in one call. |
+| List Books | `listBooks` | Lists the sources in the Readwise library - books, articles, tweets, supplementals and podcasts - with pagination metadata. Optionally filter by category, import source or update/highlight timestamps. Rate limited by Readwise to 20 requests per minute. |
+| List Document Tags | `listDocumentTags` | Lists every tag used across Readwise Reader documents, returning the tag key to pass to the Tag filter on List Documents. Rate limited by Readwise to 20 requests per minute. |
+| List Documents | `listDocuments` | Lists documents in Readwise Reader with pagination metadata. Highlights and notes made in Reader are documents too and carry a parent id. Filter by id, location, category, tag or last-updated time. Rate limited by Readwise to 20 requests per minute. |
+| List Highlight Tags | `listHighlightTags` | Lists the tags attached to a single Readwise highlight, with pagination metadata. |
+| List Highlights | `listHighlights` | Lists the highlights in the Readwise library, newest first, with pagination metadata. Optionally filter by the source book/article, by last-updated time or by the time the highlight was taken. Rate limited by Readwise to 20 requests per minute. |
+| Save Document | `saveDocument` | Saves a document into Readwise Reader. Supply the HTML yourself or let Reader scrape the URL. Setting Parent ID instead turns the request into a highlight on an existing document, in which case Content is required. Rate limited by Readwise to 50 requests per minute. |
+| Update Book | `updateBook` | Overrides the title, author and category of a Readwise source. The category override is required by the API on every call. Returns the updated source. |
+| Update Book Tag | `updateBookTag` | Renames a tag attached to a Readwise source. Returns the updated tag. |
+| Update Document | `updateDocument` | Updates a single document in Readwise Reader. Only the fields you supply are changed; omitted fields keep their current values. Rate limited by Readwise to 50 requests per minute. |
+| Update Highlight | `updateHighlight` | Updates an existing Readwise highlight. Only the fields you supply are changed; omitted fields keep their current values. Returns the updated highlight. |
+| Update Highlight Tag | `updateHighlightTag` | Renames a tag attached to a Readwise highlight. Returns the updated tag. |
+| Validate Access Token | `validateAccessToken` | Checks that the configured Readwise access token is valid. Readwise answers HTTP 204 with an empty body for a valid token and HTTP 401 for an invalid one. |
 
 ## Events
 

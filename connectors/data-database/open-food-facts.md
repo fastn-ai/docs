@@ -34,17 +34,10 @@ Add Open Food Facts from **Build → Integrations → Connectors** and connect a
 | Get Tag Knowledge Panels | `getTagKnowledgePanels` | Returns knowledge panels for a tag (e.g. packaging statistics for a category). Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/ |
 | Get Tag Suggestions | `getSuggestions` | Returns taxonomy entries of a tag type that contain a term (autocomplete for categories, labels, packaging shapes...). Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/ |
 | Get Taxonomy Display Tags | `getDisplayTags` | Returns display names in a language for canonical taxonomy tag ids. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/ |
-
-<details>
-
-<summary>See 7 more actions</summary>
-
-* **Get Taxonomy Suggestions** `getTaxonomySuggestions`: Returns taxonomy suggestions for a tag type, optionally filtered by a starting string, categories or packaging shape. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/
-* **List Attribute Groups** `listAttributeGroups`: Returns the product attribute groups (nutritional quality, allergens, processing, labels, environment) used for personal search scoring. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/
-* **List Attribute Groups (API v3.4)** `listAttributeGroupsV3`: Returns attribute groups and attributes using API v3.4. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/
-* **List External Knowledge Panel Sources** `listExternalSources`: Returns the external knowledge panel sources configured on the server. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/
-* **List Preference Weights** `listPreferences`: Returns the importance levels (not important, important, very important, mandatory) and their weights used to compute personal product scores. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/
-* **List Preference Weights (API v3)** `listPreferencesV3`: Returns the preference importance values using API v3. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/
-* **Search Products** `searchProducts`: Searches products by tag filters (category, brand, label, country, Nutri-Score...), sorted and paged. Limited to 10 requests per minute. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/
-
-</details>
+| Get Taxonomy Suggestions | `getTaxonomySuggestions` | Returns taxonomy suggestions for a tag type, optionally filtered by a starting string, categories or packaging shape. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/ |
+| List Attribute Groups | `listAttributeGroups` | Returns the product attribute groups (nutritional quality, allergens, processing, labels, environment) used for personal search scoring. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/ |
+| List Attribute Groups (API v3.4) | `listAttributeGroupsV3` | Returns attribute groups and attributes using API v3.4. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/ |
+| List External Knowledge Panel Sources | `listExternalSources` | Returns the external knowledge panel sources configured on the server. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/ |
+| List Preference Weights | `listPreferences` | Returns the importance levels (not important, important, very important, mandatory) and their weights used to compute personal product scores. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/ |
+| List Preference Weights (API v3) | `listPreferencesV3` | Returns the preference importance values using API v3. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/ |
+| Search Products | `searchProducts` | Searches products by tag filters (category, brand, label, country, Nutri-Score...), sorted and paged. Limited to 10 requests per minute. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/ |

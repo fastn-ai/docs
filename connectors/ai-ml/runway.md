@@ -34,11 +34,4 @@ Add Runway from **Build → Integrations → Connectors** and connect an account
 | Create Video Upscale Task | `videoUpscale` | Starts a new task that upscales and enhances an input video using a Runway video upscaling model. Returns a task id to poll with Get Task. Consumes organization credits when a valid job is submitted. |
 | Get Organization | `getOrganization` | Retrieves information about the Runway organization tied to the API key, including its tier and remaining credit balance. |
 | Get Organization Usage | `getOrganizationUsage` | Queries credit usage for the Runway organization over a date range, broken down by day and model. This is a free read that does not consume credits. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Get Task** `getTask`: Retrieves the status and result of a generation task by its id. Poll this until the task status is SUCCEEDED or FAILED. This is a free read that does not consume credits.
-
-</details>
+| Get Task | `getTask` | Retrieves the status and result of a generation task by its id. Poll this until the task status is SUCCEEDED or FAILED. This is a free read that does not consume credits. |

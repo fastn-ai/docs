@@ -34,33 +34,26 @@ Add AI/ML API from **Build → Integrations → Connectors** and connect an acco
 | Create Speech | `createSpeech` | Converts text to speech with any text-to-speech model in the catalogue and returns the audio URL. Voice, format and other model-specific settings are passed as documented per model at docs.aimlapi.com. Billed against the account balance. |
 | Create Transcription | `createTranscription` | Starts an asynchronous speech-to-text transcription of an audio file given by URL with any speech-to-text model in the catalogue. Returns a generation id; poll Get Transcription for the result, which is kept for one hour. Billed against the account balance. |
 | Delete API Key | `deleteApiKey` | Permanently deletes an API key identified by its 8-character prefix. The calling key must have the key-management endpoint permission enabled. |
-
-<details>
-
-<summary>See 23 more actions</summary>
-
-* **Edit Image** `editImage`: Edits one or more existing images according to a text prompt using an image-editing model, optionally with a mask marking the region to change. Images are passed as public URLs. Billed against the account balance.
-* **Generate Audio** `generateAudio`: Starts an asynchronous music or audio generation from a text prompt, optionally with lyrics, a reference audio URL or a preprocessed cover feature id. Returns a generation id and status; poll Get Audio Generation until completed. Billed against the account balance.
-* **Generate Image** `generateImage`: Generates one or more images from a text prompt with any image model in the catalogue (also used for 3D-generating models). Returns image URLs or base64 data. Model-specific parameters beyond the common ones are documented per model at docs.aimlapi.com. Billed against the account balance.
-* **Generate Video** `generateVideo`: Starts an asynchronous video generation from a text prompt, optionally seeded with reference images, a source video or audio. Returns a generation id and status; poll Get Video Generation until the status is completed. Model-specific parameters are documented per model at docs.aimlapi.com. Billed against the account balance.
-* **Get Account Balance (Legacy)** `getAccountBalanceLegacy`: Legacy balance endpoint. Returns the credit balance associated with the API key, the low-balance flag and threshold, the auto top-up status and the plan status. Prefer Get Balance for new integrations.
-* **Get API Key Usage** `getApiKeyUsage`: Returns the total spend and charged request count of an API key over a time window given as a relative period or an explicit start and end. Defaults to the calling key.
-* **Get API Key Usage Detail** `getApiKeyUsageDetail`: Returns an API key's spend and request count over a window broken down per model, optionally grouped by day, by model or by both, with a configurable time zone for day boundaries.
-* **Get Audio Generation** `getAudioGeneration`: Returns the status of a music or audio generation and, once completed, the URL of the generated audio file.
-* **Get Balance** `getBalance`: Returns the account's current balance in USD.
-* **Get Billing Details** `getBillingDetails`: Returns detailed billing information for the account: user id, email, current balance and auto top-up settings.
-* **Get Current API Key** `getCurrentApiKey`: Returns the details of the API key used for the request: its name, prefix, enabled state, model access scopes, spending limit and timestamps.
-* **Get Message Batch** `getMessageBatch`: Returns the processing status, request counts and results URL of an Anthropic message batch by id.
-* **Get Model Metrics** `getModelMetrics`: Returns recent performance percentiles (latency, time to first token, throughput) per model over a sliding window, computed from successful requests. Optionally restrict to specific model aliases.
-* **Get Transcription** `getTranscription`: Returns the status of a speech-to-text task and, once finished, the transcription result. Results are stored for one hour after creation.
-* **Get Video Generation** `getVideoGeneration`: Returns the status of a video generation and, once completed, the URL of the generated video.
-* **List API Keys** `listApiKeys`: Lists all API keys on the account with their prefix, name, enabled state, scopes and spending limits. The calling key must have the key-management endpoint permission enabled.
-* **List Billing Transactions** `listBillingTransactions`: Returns the account's balance ledger (payments, bonuses, refunds, adjustments, model usage charges and expired credits) with cursor pagination and optional date, direction and type filters.
-* **List Model Deprecations** `listModelDeprecations`: Returns models that are deprecated, superseded or withdrawn, newest first, with their deprecation and shutdown dates and the recommended replacement.
-* **List Models** `listModels`: Returns the AI/ML API model catalogue with each model's id, aliases, endpoint type, identity and tags. Filter by id, endpoint type, tags, modalities or capabilities and attach pricing, modality or capability sections with include.
-* **List Usage Logs** `listUsageLogs`: Returns the individual requests made with an API key over a window, with model, outcome, origin, cost and token counts, filterable by model and status and paginated by limit and offset.
-* **Preprocess Reference Audio** `preprocessReferenceAudio`: Analyses a reference audio track for a music-cover model and returns a cover feature id (valid 24 hours) plus the recognised, formatted lyrics, to be passed to Generate Audio. Billed against the account balance.
-* **Run OCR** `runOcr`: Extracts text from a document or image with an OCR model, returning page-level Markdown, extracted images and optional structured annotations driven by JSON schemas. Billed against the account balance.
-* **Update API Key** `updateApiKey`: Updates an API key identified by its 8-character prefix: rename it, enable or disable it, change its spending limit or its model access scopes. Only the fields sent are changed. The calling key must have the key-management endpoint permission enabled.
-
-</details>
+| Edit Image | `editImage` | Edits one or more existing images according to a text prompt using an image-editing model, optionally with a mask marking the region to change. Images are passed as public URLs. Billed against the account balance. |
+| Generate Audio | `generateAudio` | Starts an asynchronous music or audio generation from a text prompt, optionally with lyrics, a reference audio URL or a preprocessed cover feature id. Returns a generation id and status; poll Get Audio Generation until completed. Billed against the account balance. |
+| Generate Image | `generateImage` | Generates one or more images from a text prompt with any image model in the catalogue (also used for 3D-generating models). Returns image URLs or base64 data. Model-specific parameters beyond the common ones are documented per model at docs.aimlapi.com. Billed against the account balance. |
+| Generate Video | `generateVideo` | Starts an asynchronous video generation from a text prompt, optionally seeded with reference images, a source video or audio. Returns a generation id and status; poll Get Video Generation until the status is completed. Model-specific parameters are documented per model at docs.aimlapi.com. Billed against the account balance. |
+| Get Account Balance (Legacy) | `getAccountBalanceLegacy` | Legacy balance endpoint. Returns the credit balance associated with the API key, the low-balance flag and threshold, the auto top-up status and the plan status. Prefer Get Balance for new integrations. |
+| Get API Key Usage | `getApiKeyUsage` | Returns the total spend and charged request count of an API key over a time window given as a relative period or an explicit start and end. Defaults to the calling key. |
+| Get API Key Usage Detail | `getApiKeyUsageDetail` | Returns an API key's spend and request count over a window broken down per model, optionally grouped by day, by model or by both, with a configurable time zone for day boundaries. |
+| Get Audio Generation | `getAudioGeneration` | Returns the status of a music or audio generation and, once completed, the URL of the generated audio file. |
+| Get Balance | `getBalance` | Returns the account's current balance in USD. |
+| Get Billing Details | `getBillingDetails` | Returns detailed billing information for the account: user id, email, current balance and auto top-up settings. |
+| Get Current API Key | `getCurrentApiKey` | Returns the details of the API key used for the request: its name, prefix, enabled state, model access scopes, spending limit and timestamps. |
+| Get Message Batch | `getMessageBatch` | Returns the processing status, request counts and results URL of an Anthropic message batch by id. |
+| Get Model Metrics | `getModelMetrics` | Returns recent performance percentiles (latency, time to first token, throughput) per model over a sliding window, computed from successful requests. Optionally restrict to specific model aliases. |
+| Get Transcription | `getTranscription` | Returns the status of a speech-to-text task and, once finished, the transcription result. Results are stored for one hour after creation. |
+| Get Video Generation | `getVideoGeneration` | Returns the status of a video generation and, once completed, the URL of the generated video. |
+| List API Keys | `listApiKeys` | Lists all API keys on the account with their prefix, name, enabled state, scopes and spending limits. The calling key must have the key-management endpoint permission enabled. |
+| List Billing Transactions | `listBillingTransactions` | Returns the account's balance ledger (payments, bonuses, refunds, adjustments, model usage charges and expired credits) with cursor pagination and optional date, direction and type filters. |
+| List Model Deprecations | `listModelDeprecations` | Returns models that are deprecated, superseded or withdrawn, newest first, with their deprecation and shutdown dates and the recommended replacement. |
+| List Models | `listModels` | Returns the AI/ML API model catalogue with each model's id, aliases, endpoint type, identity and tags. Filter by id, endpoint type, tags, modalities or capabilities and attach pricing, modality or capability sections with include. |
+| List Usage Logs | `listUsageLogs` | Returns the individual requests made with an API key over a window, with model, outcome, origin, cost and token counts, filterable by model and status and paginated by limit and offset. |
+| Preprocess Reference Audio | `preprocessReferenceAudio` | Analyses a reference audio track for a music-cover model and returns a cover feature id (valid 24 hours) plus the recognised, formatted lyrics, to be passed to Generate Audio. Billed against the account balance. |
+| Run OCR | `runOcr` | Extracts text from a document or image with an OCR model, returning page-level Markdown, extracted images and optional structured annotations driven by JSON schemas. Billed against the account balance. |
+| Update API Key | `updateApiKey` | Updates an API key identified by its 8-character prefix: rename it, enable or disable it, change its spending limit or its model access scopes. Only the fields sent are changed. The calling key must have the key-management endpoint permission enabled. |

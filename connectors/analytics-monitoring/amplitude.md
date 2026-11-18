@@ -34,15 +34,8 @@ Add Amplitude from **Build → Integrations → Connectors** and connect an acco
 | Get User Activity | `getUserActivity` | Get a user's event stream (GET amplitude.com/api/2/useractivity). |
 | Get User Counts | `getUserCounts` | Get active or new user counts (GET amplitude.com/api/2/users). |
 | Identify User | `identifyUser` | Set user properties via the Identify API (POST api2.amplitude.com/identify, form-urlencoded). |
-
-<details>
-
-<summary>See 5 more actions</summary>
-
-* **List Cohorts** `listCohorts`: List all behavioral cohorts (GET amplitude.com/api/3/cohorts).
-* **List Event Types** `listEventTypes`: List event types from the Taxonomy API (GET amplitude.com/api/2/taxonomy/event).
-* **Request Cohort** `requestCohort`: Request a cohort membership export; returns a request_id to poll (GET amplitude.com/api/5/cohorts/request/{cohortId}).
-* **Search Users** `searchUsers`: Find Amplitude IDs matching a user (GET amplitude.com/api/2/usersearch).
-* **Upload Events** `uploadEvents`: Send events via the HTTP V2 API (POST api2.amplitude.com/2/httpapi).
-
-</details>
+| List Cohorts | `listCohorts` | List all behavioral cohorts (GET amplitude.com/api/3/cohorts). |
+| List Event Types | `listEventTypes` | List event types from the Taxonomy API (GET amplitude.com/api/2/taxonomy/event). |
+| Request Cohort | `requestCohort` | Request a cohort membership export; returns a request_id to poll (GET amplitude.com/api/5/cohorts/request/{cohortId}). |
+| Search Users | `searchUsers` | Find Amplitude IDs matching a user (GET amplitude.com/api/2/usersearch). |
+| Upload Events | `uploadEvents` | Send events via the HTTP V2 API (POST api2.amplitude.com/2/httpapi). |

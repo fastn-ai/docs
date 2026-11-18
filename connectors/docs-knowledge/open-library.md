@@ -34,33 +34,26 @@ Add Open Library from **Build → Integrations → Connectors** and connect an a
 | Get Publisher | `getPublisher` | Returns the works published by a publisher, with optional details. Docs: https://openlibrary.org/developers/api |
 | Get Series | `getSeries` | Returns a book series record (name, description, ordered seeds). Docs: https://openlibrary.org/developers/api |
 | Get Subject | `getSubject` | Returns the works for a subject (e.g. love, science_fiction, place:london, person:napoleon), with optional details on related subjects, authors and publishers. Docs: https://openlibrary.org/dev/docs/api/subjects |
-
-<details>
-
-<summary>See 23 more actions</summary>
-
-* **Get User Reading Log** `getUserReadingLog`: Returns a user's public reading-log shelf (want-to-read, currently-reading, already-read or stopped-reading). Only works when the user made the reading log public. Docs: https://openlibrary.org/dev/docs/api/mybooks
-* **Get Work** `getWork`: Returns a work record (the abstract book across all editions): title, authors, description, subjects, covers and links. Docs: https://openlibrary.org/dev/docs/api/books
-* **Get Work Bookshelves** `getWorkBookshelves`: Returns how many readers have the work on their want-to-read, currently-reading and already-read shelves. Docs: https://openlibrary.org/developers/api
-* **Get Work Ratings** `getWorkRatings`: Returns the reader rating summary (average, count, distribution) of a work. Docs: https://openlibrary.org/developers/api
-* **List Author Works** `listAuthorWorks`: Returns the works written by an author (paged). Docs: https://openlibrary.org/dev/docs/api/authors
-* **List Languages** `listLanguages`: Returns the languages in the catalog with their edition counts. Docs: https://openlibrary.org/developers/api
-* **List List Editions** `listListEditions`: Returns the editions in a reading list (paged). Docs: https://openlibrary.org/dev/docs/api/lists
-* **List List Seeds** `listListSeeds`: Returns the seeds (works, editions, authors, subjects) of a reading list. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List List Subjects** `listListSubjects`: Returns the most common subjects, places, people and times of the books in a reading list. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List Lists Containing Author** `listAuthorLists`: Returns public reading lists that contain an author. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List Lists Containing Edition** `listEditionLists`: Returns public reading lists that contain an edition. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List Lists Containing Work** `listWorkLists`: Returns public reading lists that contain a work. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List Lists for Subject** `listSubjectLists`: Returns public reading lists that contain a subject. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List Recent Changes** `listRecentChanges`: Returns the most recent edits to the catalog (all kinds), newest first. Docs: https://openlibrary.org/dev/docs/api/recentchanges
-* **List Recent Changes by Kind** `listRecentChangesByKind`: Returns recent catalog edits of one kind (e.g. add-book, edit-book, merge-authors, new-account, add-cover). Docs: https://openlibrary.org/dev/docs/api/recentchanges
-* **List Recent Edit Activity** `listEditActivity`: Returns a feed of recent book edits with titles, authors, cover and editor names. Docs: https://openlibrary.org/openapi.json
-* **List User Lists** `listUserLists`: Returns the public reading lists of a user. Docs: https://openlibrary.org/dev/docs/api/lists
-* **List Work Editions** `listWorkEditions`: Returns the editions of a work (paged). Docs: https://openlibrary.org/dev/docs/api/books
-* **Search Authors** `searchAuthors`: Searches authors by name and returns author keys, birth dates, top work and work count. Docs: https://openlibrary.org/dev/docs/api/search
-* **Search Books** `searchBooks`: Searches works by free text or by title, author, subject, ISBN, publisher and other fields; returns matching works with author, edition, cover and e-book data. Docs: https://openlibrary.org/dev/docs/api/search
-* **Search Inside Books** `searchInside`: Full-text search inside the scanned text of digitised books; returns matching books with highlighted snippets. Docs: https://openlibrary.org/dev/docs/api/search_inside
-* **Search Lists** `searchLists`: Searches public reading lists by name. Docs: https://openlibrary.org/developers/api
-* **Search Subjects** `searchSubjects`: Searches subjects (topics, places, people, times) by name and returns their keys and work counts. Docs: https://openlibrary.org/developers/api
-
-</details>
+| Get User Reading Log | `getUserReadingLog` | Returns a user's public reading-log shelf (want-to-read, currently-reading, already-read or stopped-reading). Only works when the user made the reading log public. Docs: https://openlibrary.org/dev/docs/api/mybooks |
+| Get Work | `getWork` | Returns a work record (the abstract book across all editions): title, authors, description, subjects, covers and links. Docs: https://openlibrary.org/dev/docs/api/books |
+| Get Work Bookshelves | `getWorkBookshelves` | Returns how many readers have the work on their want-to-read, currently-reading and already-read shelves. Docs: https://openlibrary.org/developers/api |
+| Get Work Ratings | `getWorkRatings` | Returns the reader rating summary (average, count, distribution) of a work. Docs: https://openlibrary.org/developers/api |
+| List Author Works | `listAuthorWorks` | Returns the works written by an author (paged). Docs: https://openlibrary.org/dev/docs/api/authors |
+| List Languages | `listLanguages` | Returns the languages in the catalog with their edition counts. Docs: https://openlibrary.org/developers/api |
+| List List Editions | `listListEditions` | Returns the editions in a reading list (paged). Docs: https://openlibrary.org/dev/docs/api/lists |
+| List List Seeds | `listListSeeds` | Returns the seeds (works, editions, authors, subjects) of a reading list. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List List Subjects | `listListSubjects` | Returns the most common subjects, places, people and times of the books in a reading list. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List Lists Containing Author | `listAuthorLists` | Returns public reading lists that contain an author. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List Lists Containing Edition | `listEditionLists` | Returns public reading lists that contain an edition. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List Lists Containing Work | `listWorkLists` | Returns public reading lists that contain a work. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List Lists for Subject | `listSubjectLists` | Returns public reading lists that contain a subject. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List Recent Changes | `listRecentChanges` | Returns the most recent edits to the catalog (all kinds), newest first. Docs: https://openlibrary.org/dev/docs/api/recentchanges |
+| List Recent Changes by Kind | `listRecentChangesByKind` | Returns recent catalog edits of one kind (e.g. add-book, edit-book, merge-authors, new-account, add-cover). Docs: https://openlibrary.org/dev/docs/api/recentchanges |
+| List Recent Edit Activity | `listEditActivity` | Returns a feed of recent book edits with titles, authors, cover and editor names. Docs: https://openlibrary.org/openapi.json |
+| List User Lists | `listUserLists` | Returns the public reading lists of a user. Docs: https://openlibrary.org/dev/docs/api/lists |
+| List Work Editions | `listWorkEditions` | Returns the editions of a work (paged). Docs: https://openlibrary.org/dev/docs/api/books |
+| Search Authors | `searchAuthors` | Searches authors by name and returns author keys, birth dates, top work and work count. Docs: https://openlibrary.org/dev/docs/api/search |
+| Search Books | `searchBooks` | Searches works by free text or by title, author, subject, ISBN, publisher and other fields; returns matching works with author, edition, cover and e-book data. Docs: https://openlibrary.org/dev/docs/api/search |
+| Search Inside Books | `searchInside` | Full-text search inside the scanned text of digitised books; returns matching books with highlighted snippets. Docs: https://openlibrary.org/dev/docs/api/search_inside |
+| Search Lists | `searchLists` | Searches public reading lists by name. Docs: https://openlibrary.org/developers/api |
+| Search Subjects | `searchSubjects` | Searches subjects (topics, places, people, times) by name and returns their keys and work counts. Docs: https://openlibrary.org/developers/api |

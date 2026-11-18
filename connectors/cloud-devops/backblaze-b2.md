@@ -33,31 +33,24 @@ Add Backblaze B2 from **Build → Integrations → Connectors** and connect an a
 | Delete Bucket | `deleteBucket` | Deletes the specified bucket. Only buckets that contain no files can be deleted. |
 | Delete File Version | `deleteFileVersion` | Deletes one version of a file. If it is the only version, the file is removed entirely. |
 | Download File By ID | `downloadFileById` | Downloads one file from B2 by its file id. The response body is the raw file content. |
-
-<details>
-
-<summary>See 21 more actions</summary>
-
-* **Download File By Name** `downloadFileByName`: Downloads one file by providing the bucket name and the file name. The response body is the raw file content.
-* **Finish Large File** `finishLargeFile`: Combines the uploaded parts into a single B2 file.
-* **Get Bucket Notification Rules** `getBucketNotificationRules`: Returns the event notification rules configured on a bucket.
-* **Get Download Authorization** `getDownloadAuthorization`: Generates a token to download files with the given prefix from a private bucket.
-* **Get File Info** `getFileInfo`: Gets information about one file stored in Backblaze B2.
-* **Get Upload Part URL** `getUploadPartUrl`: Gets a URL and token for uploading parts of a large file.
-* **Get Upload URL** `getUploadUrl`: Gets a URL and authorization token to use for uploading files to the given bucket.
-* **Hide File** `hideFile`: Hides a file so that downloading by name will not find it, while keeping older versions.
-* **List Application Keys** `listKeys`: Lists application keys associated with an account.
-* **List Buckets** `listBuckets`: Lists buckets associated with the account, in alphabetical order by bucket name. Optionally filter by bucket id, bucket name, or bucket types.
-* **List File Names** `listFileNames`: Lists the names of all files in a bucket, starting at a given name, returning one entry per file.
-* **List File Versions** `listFileVersions`: Lists all versions of all files in a bucket, in alphabetical order by file name and reverse-chronological order per version.
-* **List Parts** `listParts`: Lists the parts uploaded for a large file that has not been finished.
-* **List Unfinished Large Files** `listUnfinishedLargeFiles`: Lists large-file uploads that have been started but not finished or canceled.
-* **Set Bucket Notification Rules** `setBucketNotificationRules`: Sets the event notification rules on a bucket. Each rule has name, eventTypes, isEnabled, objectNamePrefix, and targetConfiguration.
-* **Start Large File** `startLargeFile`: Prepares to upload the parts of a large file.
-* **Update Bucket** `updateBucket`: Updates settings on an existing bucket such as its type, metadata, CORS rules, lifecycle rules, default retention, and encryption.
-* **Update File Legal Hold** `updateFileLegalHold`: Turns the legal hold on or off for a file version. The bucket must have Object Lock enabled.
-* **Update File Retention** `updateFileRetention`: Modifies Object Lock retention for a file version. fileRetention is e.g. {"mode":"governance","retainUntilTimestamp":&lt;ms&gt;}.
-* **Upload File** `uploadFile`: Uploads a file to a bucket using an upload URL and token from Get Upload URL. The upload URL is a per-call dynamic host.
-* **Upload Part** `uploadPart`: Uploads one part of a large file using an upload URL from Get Upload Part URL. The upload URL is a per-call dynamic host.
-
-</details>
+| Download File By Name | `downloadFileByName` | Downloads one file by providing the bucket name and the file name. The response body is the raw file content. |
+| Finish Large File | `finishLargeFile` | Combines the uploaded parts into a single B2 file. |
+| Get Bucket Notification Rules | `getBucketNotificationRules` | Returns the event notification rules configured on a bucket. |
+| Get Download Authorization | `getDownloadAuthorization` | Generates a token to download files with the given prefix from a private bucket. |
+| Get File Info | `getFileInfo` | Gets information about one file stored in Backblaze B2. |
+| Get Upload Part URL | `getUploadPartUrl` | Gets a URL and token for uploading parts of a large file. |
+| Get Upload URL | `getUploadUrl` | Gets a URL and authorization token to use for uploading files to the given bucket. |
+| Hide File | `hideFile` | Hides a file so that downloading by name will not find it, while keeping older versions. |
+| List Application Keys | `listKeys` | Lists application keys associated with an account. |
+| List Buckets | `listBuckets` | Lists buckets associated with the account, in alphabetical order by bucket name. Optionally filter by bucket id, bucket name, or bucket types. |
+| List File Names | `listFileNames` | Lists the names of all files in a bucket, starting at a given name, returning one entry per file. |
+| List File Versions | `listFileVersions` | Lists all versions of all files in a bucket, in alphabetical order by file name and reverse-chronological order per version. |
+| List Parts | `listParts` | Lists the parts uploaded for a large file that has not been finished. |
+| List Unfinished Large Files | `listUnfinishedLargeFiles` | Lists large-file uploads that have been started but not finished or canceled. |
+| Set Bucket Notification Rules | `setBucketNotificationRules` | Sets the event notification rules on a bucket. Each rule has name, eventTypes, isEnabled, objectNamePrefix, and targetConfiguration. |
+| Start Large File | `startLargeFile` | Prepares to upload the parts of a large file. |
+| Update Bucket | `updateBucket` | Updates settings on an existing bucket such as its type, metadata, CORS rules, lifecycle rules, default retention, and encryption. |
+| Update File Legal Hold | `updateFileLegalHold` | Turns the legal hold on or off for a file version. The bucket must have Object Lock enabled. |
+| Update File Retention | `updateFileRetention` | Modifies Object Lock retention for a file version. fileRetention is e.g. {"mode":"governance","retainUntilTimestamp":&lt;ms&gt;}. |
+| Upload File | `uploadFile` | Uploads a file to a bucket using an upload URL and token from Get Upload URL. The upload URL is a per-call dynamic host. |
+| Upload Part | `uploadPart` | Uploads one part of a large file using an upload URL from Get Upload Part URL. The upload URL is a per-call dynamic host. |

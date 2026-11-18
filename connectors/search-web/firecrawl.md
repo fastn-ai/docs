@@ -34,23 +34,16 @@ Add Firecrawl from **Build → Integrations → Connectors** and connect an acco
 | Get Batch Scrape Errors | `getBatchScrapeErrors` | List per-URL errors and robots.txt-blocked URLs for a batch scrape job by id. |
 | Get Batch Scrape Status | `getBatchScrapeStatus` | Get the status and accumulated page data of a batch scrape job by id. Use the 'next' URL to page through results larger than 10MB. |
 | Get Crawl Errors | `getCrawlErrors` | List per-URL errors and robots.txt-blocked URLs for a crawl job by id. |
-
-<details>
-
-<summary>See 10 more actions</summary>
-
-* **Get Crawl Status** `getCrawlStatus`: Get the status and accumulated page data of a crawl job by id. Use the 'next' URL to page through results larger than 10MB.
-* **Get Credit Usage** `getCreditUsage`: Get the remaining credits on the account/team associated with the API key.
-* **Get Credit Usage Historical** `getCreditUsageHistorical`: Get historical credit usage per billing period for the team associated with the API key. Optionally filter by number of billing periods.
-* **Get Extract Status** `getExtractStatus`: Get the status and extracted data of an extract job by id.
-* **Get Queue Status** `getQueueStatus`: Get the current job queue status for the team associated with the API key: total/active/waiting jobs, max concurrency, and most recent success time.
-* **Get Token Usage** `getTokenUsage`: Get the remaining tokens on the account/team associated with the API key (used by Extract and json-format scrapes).
-* **Get Token Usage Historical** `getTokenUsageHistorical`: Get historical token usage per billing period for the team associated with the API key.
-* **Map** `map`: Quickly get a complete list of URLs from a website. Optionally order results by relevance to a search query.
-* **Scrape** `scrape`: Scrape a single URL and return clean content in markdown, HTML, links, screenshot, or structured JSON. Supports browser actions, tag filtering, and main-content extraction.
-* **Search** `search`: Search the web (web, news, images) and optionally scrape full page content of the results in any format.
-
-</details>
+| Get Crawl Status | `getCrawlStatus` | Get the status and accumulated page data of a crawl job by id. Use the 'next' URL to page through results larger than 10MB. |
+| Get Credit Usage | `getCreditUsage` | Get the remaining credits on the account/team associated with the API key. |
+| Get Credit Usage Historical | `getCreditUsageHistorical` | Get historical credit usage per billing period for the team associated with the API key. Optionally filter by number of billing periods. |
+| Get Extract Status | `getExtractStatus` | Get the status and extracted data of an extract job by id. |
+| Get Queue Status | `getQueueStatus` | Get the current job queue status for the team associated with the API key: total/active/waiting jobs, max concurrency, and most recent success time. |
+| Get Token Usage | `getTokenUsage` | Get the remaining tokens on the account/team associated with the API key (used by Extract and json-format scrapes). |
+| Get Token Usage Historical | `getTokenUsageHistorical` | Get historical token usage per billing period for the team associated with the API key. |
+| Map | `map` | Quickly get a complete list of URLs from a website. Optionally order results by relevance to a search query. |
+| Scrape | `scrape` | Scrape a single URL and return clean content in markdown, HTML, links, screenshot, or structured JSON. Supports browser actions, tag filtering, and main-content extraction. |
+| Search | `search` | Search the web (web, news, images) and optionally scrape full page content of the results in any format. |
 
 ## Events
 

@@ -34,14 +34,7 @@ Add NeverBounce from **Build → Integrations → Connectors** and connect an ac
 | Parse Job | `parseJob` | Starts the indexing phase for a bulk verification job that was created without Auto Parse, and optionally begins verification as soon as indexing completes. Parsing does not consume credits. |
 | Search Jobs | `searchJobs` | Lists the bulk verification jobs in the account, newest first, with optional filters on job id, filename and job status. Returns paging metadata alongside each job's record counts and progress. This endpoint does not consume credits. |
 | Start Job | `startJob` | Begins verification of an indexed bulk job. A full run deducts one credit per billable record; setting Run Sample instead performs a free analysis that estimates the list's bounce rate without charging credits. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Verify Email** `verifyEmail`: Verifies a single email address in real time and returns its deliverability result (valid, invalid, disposable, catchall or unknown) together with any quality flags and a suggested spelling correction. Each verification consumes one NeverBounce credit.
-
-</details>
+| Verify Email | `verifyEmail` | Verifies a single email address in real time and returns its deliverability result (valid, invalid, disposable, catchall or unknown) together with any quality flags and a suggested spelling correction. Each verification consumes one NeverBounce credit. |
 
 ## Events
 

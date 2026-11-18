@@ -34,18 +34,11 @@ Add Viva Engage from **Build → Integrations → Connectors** and connect an ac
 | List Communities | `listCommunities` | Lists the Viva Engage communities in the tenant. Each community carries the ID of the Microsoft 365 group that backs its membership. |
 | List Community Admins | `listCommunityAdmins` | Lists the administrators of a Viva Engage community by reading the owners of its connected Microsoft 365 group. Take the Group ID from Get Community. |
 | List Community Members | `listCommunityMembers` | Lists the members of a Viva Engage community by reading the members of its connected Microsoft 365 group. Take the Group ID from Get Community. |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List Engagement Role Members** `listEngagementRoleMembers`: Lists the users who hold a specific Viva Engage role, together with the date each assignment was made.
-* **List Engagement Roles** `listEngagementRoles`: Lists the predefined Viva Engage roles that can be assigned to users, such as Network Administrator and Verified Administrator. These roles are fixed by Viva Engage and cannot be created or deleted.
-* **List My Assigned Roles** `listMyAssignedRoles`: Lists the Viva Engage roles assigned to the signed-in user. Uses the least privileged EngagementRole.Read permission rather than a tenant-wide one.
-* **List User Assigned Roles** `listUserAssignedRoles`: Lists the Viva Engage roles assigned to a specified user. Use List My Assigned Roles for the signed-in user.
-* **Remove Community Admin** `removeCommunityAdmin`: Removes a user's Viva Engage community administrator rights by removing them as an owner of the connected Microsoft 365 group. The last remaining owner cannot be removed.
-* **Remove Community Member** `removeCommunityMember`: Removes a user from a Viva Engage community by removing them from its connected Microsoft 365 group. The community's membership updates automatically.
-* **Revoke Engagement Role** `revokeEngagementRole`: Revokes a Viva Engage role from a user by deleting their engagementRoleMember entry.
-* **Update Community** `updateCommunity`: Updates the name, description or privacy level of a Viva Engage community. Only the properties you supply are sent. Microsoft Graph returns 204 No Content on success.
-
-</details>
+| List Engagement Role Members | `listEngagementRoleMembers` | Lists the users who hold a specific Viva Engage role, together with the date each assignment was made. |
+| List Engagement Roles | `listEngagementRoles` | Lists the predefined Viva Engage roles that can be assigned to users, such as Network Administrator and Verified Administrator. These roles are fixed by Viva Engage and cannot be created or deleted. |
+| List My Assigned Roles | `listMyAssignedRoles` | Lists the Viva Engage roles assigned to the signed-in user. Uses the least privileged EngagementRole.Read permission rather than a tenant-wide one. |
+| List User Assigned Roles | `listUserAssignedRoles` | Lists the Viva Engage roles assigned to a specified user. Use List My Assigned Roles for the signed-in user. |
+| Remove Community Admin | `removeCommunityAdmin` | Removes a user's Viva Engage community administrator rights by removing them as an owner of the connected Microsoft 365 group. The last remaining owner cannot be removed. |
+| Remove Community Member | `removeCommunityMember` | Removes a user from a Viva Engage community by removing them from its connected Microsoft 365 group. The community's membership updates automatically. |
+| Revoke Engagement Role | `revokeEngagementRole` | Revokes a Viva Engage role from a user by deleting their engagementRoleMember entry. |
+| Update Community | `updateCommunity` | Updates the name, description or privacy level of a Viva Engage community. Only the properties you supply are sent. Microsoft Graph returns 204 No Content on success. |

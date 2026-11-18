@@ -34,17 +34,10 @@ Add Groq from **Build → Integrations → Connectors** and connect an account, 
 | Delete File | `deleteFile` | Delete an uploaded file by ID. |
 | Delete Model | `deleteModel` | Delete a fine-tuned/custom model by ID. Only applies to deletable models owned by your org. |
 | Download File Content | `downloadFileContent` | Download the raw content of an uploaded or output file (e.g. batch results JSONL) by ID. |
-
-<details>
-
-<summary>See 7 more actions</summary>
-
-* **List Batches** `listBatches`: List all batch jobs for your organization.
-* **List Files** `listFiles`: List all uploaded files for your organization.
-* **List Models** `listModels`: List all models available to your account, including context window and max completion tokens.
-* **Retrieve Batch** `retrieveBatch`: Retrieve a single batch job by ID, including status and output/error file IDs.
-* **Retrieve File** `retrieveFile`: Retrieve metadata for a single uploaded file by ID.
-* **Retrieve Model** `retrieveModel`: Retrieve metadata for a single model by ID.
-* **Upload File** `uploadFile`: Upload a JSONL file (max 100 MB) for batch processing. purpose must be 'batch'.
-
-</details>
+| List Batches | `listBatches` | List all batch jobs for your organization. |
+| List Files | `listFiles` | List all uploaded files for your organization. |
+| List Models | `listModels` | List all models available to your account, including context window and max completion tokens. |
+| Retrieve Batch | `retrieveBatch` | Retrieve a single batch job by ID, including status and output/error file IDs. |
+| Retrieve File | `retrieveFile` | Retrieve metadata for a single uploaded file by ID. |
+| Retrieve Model | `retrieveModel` | Retrieve metadata for a single model by ID. |
+| Upload File | `uploadFile` | Upload a JSONL file (max 100 MB) for batch processing. purpose must be 'batch'. |

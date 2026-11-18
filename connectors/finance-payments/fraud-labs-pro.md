@@ -34,14 +34,7 @@ Add FraudLabs Pro from **Build → Integrations → Connectors** and connect an 
 | Submit Order Feedback | `feedbackOrder` | Reports the merchant's final decision on a previously screened order back to FraudLabs Pro, moving it out of manual review and training the scoring model. Use APPROVE to accept the order, REJECT to decline it, or REJECT_BLACKLIST to decline it and add the order's IP, email, phone, card and device to your blacklist. Returns the fraudlabspro_id that was updated. Re-submitting the same decision returns error_code 10012 TRANSACTION IS ALREADY APPROVED/REJECTED. |
 | Submit Payment Status Feedback | `feedbackPayment` | Reports the final payment-gateway outcome for a transaction back to FraudLabs Pro, so declined-card and chargeback signals feed the risk model. Send the buyer's email, the gateway status (e.g. declined) and the gateway's own message, optionally tied to a fraudlabspro_id. Requires a FraudLabs Pro plan that includes the Payment Feedback API; other plans receive 401 error_code 10061 UNSUPPORTED PLAN. |
 | Submit User Screening Feedback | `feedbackUser` | Reports the merchant's final decision on a screened user registration back to FraudLabs Pro so the model learns from it. Use APPROVE to accept the account, REJECT to decline it, or REJECT_BLACKLIST to decline it and blacklist the user's identifying data. Returns the user_transaction_id that was updated. Requires a FraudLabs Pro Medium plan or above. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Verify SMS OTP Code** `getSmsVerificationResult`: Checks the one-time password a user entered against the SMS send identified by tran_id. Returns result 'Y' when the OTP is valid and unexpired. A wrong or expired code returns 400 error_code 10034 INVALID OTP. SECURITY: FraudLabs Pro has no header auth form, so this GET carries the API key in the query string and it will appear in the execution record's requestUrl.
-
-</details>
+| Verify SMS OTP Code | `getSmsVerificationResult` | Checks the one-time password a user entered against the SMS send identified by tran_id. Returns result 'Y' when the OTP is valid and unexpired. A wrong or expired code returns 400 error_code 10034 INVALID OTP. SECURITY: FraudLabs Pro has no header auth form, so this GET carries the API key in the query string and it will appear in the execution record's requestUrl. |
 
 ## Events
 

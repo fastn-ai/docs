@@ -34,23 +34,16 @@ Add Tink from **Build → Integrations → Connectors** and connect an account, 
 | Get Credential | `getCredential` | Retrieves a single set of bank credentials of the connected user by its credentials identifier, including its current aggregation status. |
 | Get User | `getUser` | Retrieves the Tink user associated with the current access token, including the user's ID, external user ID, app ID, feature flags, and profile settings. |
 | Get User Profile | `getUserProfile` | Retrieves the profile settings of the current Tink user, including market, locale, currency, time zone, period configuration, and notification preferences. |
-
-<details>
-
-<summary>See 13 more actions</summary>
-
-* **List Accounts** `listAccounts`: Lists the connected user's bank accounts with their identifiers, type, name, and balances. Returns an empty list until the user has connected a bank via Tink Link.
-* **List Accounts (Legacy)** `listAccountsLegacy`: Lists the connected user's accounts using Tink's legacy v1 accounts endpoint. Prefer the List Accounts action, which uses the current Data API v2.
-* **List Budgets** `listBudgets`: Lists the budgets defined for the connected user, including each budget's target amount, periodicity, and the filter that selects the transactions it tracks.
-* **List Categories** `listCategories`: Lists Tink's transaction category tree for the connected user's locale, including each category's code, identifier, and display name.
-* **List Credentials** `listCredentials`: Lists the bank credentials of the connected user, showing each connected provider, its aggregation status, and when it was last refreshed.
-* **List Loans** `listLoans`: Lists the connected user's loan accounts with balances, interest rates, and the weighted average interest rate across all loans.
-* **List Provider Consents** `listProviderConsents`: Lists the connected user's bank consents, showing each consent's status, the accounts it covers, and when it expires. Use this to detect consents that need renewal.
-* **List Providers** `listProviders`: Lists the financial institution providers available to the connected user's market, including each provider's authentication type, access type, capabilities, and the credential fields it requires.
-* **List Providers by Market** `listProvidersByMarket`: Lists the financial institution providers available in a specific market, identified by its ISO 3166-1 alpha-2 country code.
-* **List Transactions** `listTransactions`: Lists the connected user's bank transactions with amounts, dates, descriptions, and categorization. Returns an empty list until the user has connected a bank via Tink Link.
-* **Query Statistics** `queryStatistics`: Queries aggregated financial statistics for the connected user, such as expenses by category, income by category, balances by account, or left-to-spend, over one or more periods.
-* **Refresh Credential** `refreshCredential`: Triggers a new aggregation run for a set of bank credentials, fetching the latest accounts and transactions from the bank. Returns an empty body; poll the Get Credential action until the status becomes UPDATED.
-* **Search Transactions** `searchTransactions`: Searches the connected user's transactions using free-text, account, category, amount, and date filters, and returns matching transactions together with aggregate metrics such as count, sum, and average.
-
-</details>
+| List Accounts | `listAccounts` | Lists the connected user's bank accounts with their identifiers, type, name, and balances. Returns an empty list until the user has connected a bank via Tink Link. |
+| List Accounts (Legacy) | `listAccountsLegacy` | Lists the connected user's accounts using Tink's legacy v1 accounts endpoint. Prefer the List Accounts action, which uses the current Data API v2. |
+| List Budgets | `listBudgets` | Lists the budgets defined for the connected user, including each budget's target amount, periodicity, and the filter that selects the transactions it tracks. |
+| List Categories | `listCategories` | Lists Tink's transaction category tree for the connected user's locale, including each category's code, identifier, and display name. |
+| List Credentials | `listCredentials` | Lists the bank credentials of the connected user, showing each connected provider, its aggregation status, and when it was last refreshed. |
+| List Loans | `listLoans` | Lists the connected user's loan accounts with balances, interest rates, and the weighted average interest rate across all loans. |
+| List Provider Consents | `listProviderConsents` | Lists the connected user's bank consents, showing each consent's status, the accounts it covers, and when it expires. Use this to detect consents that need renewal. |
+| List Providers | `listProviders` | Lists the financial institution providers available to the connected user's market, including each provider's authentication type, access type, capabilities, and the credential fields it requires. |
+| List Providers by Market | `listProvidersByMarket` | Lists the financial institution providers available in a specific market, identified by its ISO 3166-1 alpha-2 country code. |
+| List Transactions | `listTransactions` | Lists the connected user's bank transactions with amounts, dates, descriptions, and categorization. Returns an empty list until the user has connected a bank via Tink Link. |
+| Query Statistics | `queryStatistics` | Queries aggregated financial statistics for the connected user, such as expenses by category, income by category, balances by account, or left-to-spend, over one or more periods. |
+| Refresh Credential | `refreshCredential` | Triggers a new aggregation run for a set of bank credentials, fetching the latest accounts and transactions from the bank. Returns an empty body; poll the Get Credential action until the status becomes UPDATED. |
+| Search Transactions | `searchTransactions` | Searches the connected user's transactions using free-text, account, category, amount, and date filters, and returns matching transactions together with aggregate metrics such as count, sum, and average. |

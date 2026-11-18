@@ -34,35 +34,28 @@ Add Parsio from **Build → Integrations → Connectors** and connect an account
 | Delete Webhooks | `deleteWebhooks` | Permanently deletes the given Parsio webhooks so Parsio stops posting events to them. |
 | Disable Templates | `disableTemplates` | Disables the given Parsio extraction templates so they are no longer used when parsing new documents. |
 | Disable Webhooks | `disableWebhooks` | Disables the given Parsio webhooks so Parsio stops posting events to them without deleting them. This endpoint is live on the Parsio API but is not listed in their published reference. |
-
-<details>
-
-<summary>See 22 more actions</summary>
-
-* **Enable Templates** `enableTemplates`: Enables the given Parsio extraction templates so they are used when parsing new documents.
-* **Enable Webhooks** `enableWebhooks`: Enables the given Parsio webhooks so Parsio resumes posting events to them. This endpoint is live on the Parsio API but is not listed in their published reference.
-* **Get Account Settings** `getAccountSettings`: Returns the Parsio account profile settings: display name, timezone, time format and weekly digest preference. Note that Parsio also returns the account's own API key in this response. This endpoint is live on the Parsio API but is not listed in their published reference.
-* **Get Billing Details** `getBillingDetails`: Returns the Parsio account's billing address, saved payment cards and VAT rate. This endpoint is live on the Parsio API but is not listed in their published reference.
-* **Get Current User** `getCurrentUser`: Returns the Parsio account the API key belongs to, with its role, verification state and the mailboxes it owns. This endpoint is live on the Parsio API but is not listed in their published reference.
-* **Get Document** `getDocument`: Retrieves a parsed Parsio document by id. The response uses the same JSON shape Parsio sends to webhooks, so use it to collect the result of an asynchronous import.
-* **Get Mailbox** `getMailbox`: Retrieves one Parsio mailbox by id, with its full parser settings, field configuration and document statistics.
-* **Get Parsed Data** `getParsedData`: Returns the extracted data for the documents in a Parsio mailbox, one record per parsed document, optionally limited to a date range.
-* **Get Template** `getTemplate`: Retrieves one Parsio extraction template by id, including the fields it extracts and the document it was built from.
-* **Get Webhook** `getWebhook`: Retrieves one Parsio webhook by id, with its target URL, subscribed event and enabled state.
-* **List Collected Emails** `listCollectedEmails`: Lists the email addresses Parsio has collected from documents received by a mailbox. Only populated when the mailbox has Collect Email Addresses enabled.
-* **List Documents** `listDocuments`: Lists the documents in a Parsio mailbox, newest first, with optional filtering by date range, name search and document status.
-* **List Mailbox Integrations** `listMailboxIntegrations`: Lists the data-export integrations configured on a Parsio mailbox, such as Google Sheets exports and the Zapier, Make, n8n and Pabbly connections. This endpoint is live on the Parsio API but is not listed in their published reference.
-* **List Mailboxes** `listMailboxes`: Lists every Parsio mailbox available to the authenticated account, with each mailbox's parser settings, extracted-field configuration and document statistics.
-* **List Table Fields** `listTableFields`: Lists the table fields configured on a Parsio mailbox. Table fields hold repeating rows such as invoice line items, and their ids are what the table.parsed webhook event is bound to.
-* **List Templates** `listTemplates`: Lists the extraction templates defined on a Parsio mailbox. Templates map the layout of an incoming document to the fields Parsio extracts.
-* **List Webhooks** `listWebhooks`: Lists the webhooks registered on a Parsio mailbox, with the URL and event each one is subscribed to.
-* **Reparse Document** `reparseDocument`: Queues a Parsio document to be parsed again, for example after changing the mailbox's templates or extraction fields.
-* **Skip Documents** `skipDocuments`: Marks the given Parsio documents as skipped so they are not parsed and do not consume parsing credits.
-* **Update Account Settings** `updateAccountSettings`: Updates the Parsio account profile: display name, timezone, time format and weekly digest preference. Parsio answers HTTP 201 for both success and validation failure, so check Is Error in the response. This endpoint is live on the Parsio API but is not listed in their published reference.
-* **Update Mailbox** `updateMailbox`: Updates a Parsio mailbox. This is a full replace of the mailbox settings, not a partial patch: any boolean you omit is reset to false, so send every setting you want to keep. Name and Email Prefix are both required.
-* **Update Webhook** `updateWebhook`: Updates an existing Parsio webhook: its name, target URL, subscribed event or enabled state. The webhook id goes in the body as Webhook ID, not in the path. Parsio requires Enabled and Table Field ID on every update; send Table Field ID as an empty string unless the event is table.parsed.
-
-</details>
+| Enable Templates | `enableTemplates` | Enables the given Parsio extraction templates so they are used when parsing new documents. |
+| Enable Webhooks | `enableWebhooks` | Enables the given Parsio webhooks so Parsio resumes posting events to them. This endpoint is live on the Parsio API but is not listed in their published reference. |
+| Get Account Settings | `getAccountSettings` | Returns the Parsio account profile settings: display name, timezone, time format and weekly digest preference. Note that Parsio also returns the account's own API key in this response. This endpoint is live on the Parsio API but is not listed in their published reference. |
+| Get Billing Details | `getBillingDetails` | Returns the Parsio account's billing address, saved payment cards and VAT rate. This endpoint is live on the Parsio API but is not listed in their published reference. |
+| Get Current User | `getCurrentUser` | Returns the Parsio account the API key belongs to, with its role, verification state and the mailboxes it owns. This endpoint is live on the Parsio API but is not listed in their published reference. |
+| Get Document | `getDocument` | Retrieves a parsed Parsio document by id. The response uses the same JSON shape Parsio sends to webhooks, so use it to collect the result of an asynchronous import. |
+| Get Mailbox | `getMailbox` | Retrieves one Parsio mailbox by id, with its full parser settings, field configuration and document statistics. |
+| Get Parsed Data | `getParsedData` | Returns the extracted data for the documents in a Parsio mailbox, one record per parsed document, optionally limited to a date range. |
+| Get Template | `getTemplate` | Retrieves one Parsio extraction template by id, including the fields it extracts and the document it was built from. |
+| Get Webhook | `getWebhook` | Retrieves one Parsio webhook by id, with its target URL, subscribed event and enabled state. |
+| List Collected Emails | `listCollectedEmails` | Lists the email addresses Parsio has collected from documents received by a mailbox. Only populated when the mailbox has Collect Email Addresses enabled. |
+| List Documents | `listDocuments` | Lists the documents in a Parsio mailbox, newest first, with optional filtering by date range, name search and document status. |
+| List Mailbox Integrations | `listMailboxIntegrations` | Lists the data-export integrations configured on a Parsio mailbox, such as Google Sheets exports and the Zapier, Make, n8n and Pabbly connections. This endpoint is live on the Parsio API but is not listed in their published reference. |
+| List Mailboxes | `listMailboxes` | Lists every Parsio mailbox available to the authenticated account, with each mailbox's parser settings, extracted-field configuration and document statistics. |
+| List Table Fields | `listTableFields` | Lists the table fields configured on a Parsio mailbox. Table fields hold repeating rows such as invoice line items, and their ids are what the table.parsed webhook event is bound to. |
+| List Templates | `listTemplates` | Lists the extraction templates defined on a Parsio mailbox. Templates map the layout of an incoming document to the fields Parsio extracts. |
+| List Webhooks | `listWebhooks` | Lists the webhooks registered on a Parsio mailbox, with the URL and event each one is subscribed to. |
+| Reparse Document | `reparseDocument` | Queues a Parsio document to be parsed again, for example after changing the mailbox's templates or extraction fields. |
+| Skip Documents | `skipDocuments` | Marks the given Parsio documents as skipped so they are not parsed and do not consume parsing credits. |
+| Update Account Settings | `updateAccountSettings` | Updates the Parsio account profile: display name, timezone, time format and weekly digest preference. Parsio answers HTTP 201 for both success and validation failure, so check Is Error in the response. This endpoint is live on the Parsio API but is not listed in their published reference. |
+| Update Mailbox | `updateMailbox` | Updates a Parsio mailbox. This is a full replace of the mailbox settings, not a partial patch: any boolean you omit is reset to false, so send every setting you want to keep. Name and Email Prefix are both required. |
+| Update Webhook | `updateWebhook` | Updates an existing Parsio webhook: its name, target URL, subscribed event or enabled state. The webhook id goes in the body as Webhook ID, not in the path. Parsio requires Enabled and Table Field ID on every update; send Table Field ID as an empty string unless the event is table.parsed. |
 
 ## Events
 

@@ -34,12 +34,5 @@ Add endoflife.date from **Build → Integrations → Connectors** and connect an
 | List Products | `listProducts` | List all products. List all the products referenced on endoflife.date. Only a summary of each product is returned by this endpoint. Docs: https://endoflife.date/docs/api/v1/ (GET /products) |
 | List Products by Category | `listProductsByCategory` | List all products in a category. List all the products referenced on endoflife.date for the given category. Only a summary of each product is returned by this endpoint. Docs: https://endoflife.date/docs/api/v1/ (GET /categories/{category}) |
 | List Products by Tag | `listProductsByTag` | List all products with a tag. List all the products referenced on endoflife.date for the given tag. Only a summary of each product is returned by this endpoint. Docs: https://endoflife.date/docs/api/v1/ (GET /tags/{tag}) |
-
-<details>
-
-<summary>See 2 more actions</summary>
-
-* **List Products With Full Details** `listProductsFull`: List all products (full). List all the products referenced on endoflife.date, with all their details. The full products data is returned by this endpoint, making the result a dump of nearly all endoflife.date data. Preferably, use the /products endpoint to get a summary of the products and reduce the amount of data transferred. Returns about 3 MB. Docs: https://endoflife.date/docs/api/v1/ (GET /products/full)
-* **List Tags** `listTags`: List all tags. List all endoflife.date tags. Docs: https://endoflife.date/docs/api/v1/ (GET /tags)
-
-</details>
+| List Products With Full Details | `listProductsFull` | List all products (full). List all the products referenced on endoflife.date, with all their details. The full products data is returned by this endpoint, making the result a dump of nearly all endoflife.date data. Preferably, use the /products endpoint to get a summary of the products and reduce the amount of data transferred. Returns about 3 MB. Docs: https://endoflife.date/docs/api/v1/ (GET /products/full) |
+| List Tags | `listTags` | List all tags. List all endoflife.date tags. Docs: https://endoflife.date/docs/api/v1/ (GET /tags) |

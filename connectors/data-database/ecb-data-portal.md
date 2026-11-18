@@ -34,13 +34,6 @@ Add ECB Data Portal from **Build → Integrations → Connectors** and connect a
 | Get Data Schema | `getSchema` | Get the XML schema (XSD) that describes structure-specific data for a dataflow, data structure or provision agreement (GET /service/schema/{context}/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/schemas |
 | Get Data Structure Definitions | `getDataStructures` | Get SDMX data structure definitions (dimensions and attributes of a dataflow) by agency, id and version; use all/latest as wildcards (GET /service/datastructure/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata |
 | Get Dataflows | `listDataflows` | Get SDMX dataflows (statistical domains such as EXR exchange rates) by agency, id and version; use all/latest as wildcards (GET /service/dataflow/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata |
-
-<details>
-
-<summary>See 3 more actions</summary>
-
-* **Get Organisation Schemes** `getOrganisationSchemes`: Get SDMX organisation schemes by agency, id and version; use all/latest as wildcards (GET /service/organisationscheme/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata
-* **Get Statistical Data** `getData`: Get time series data for a dataflow and series key (dimension codes joined by '.', blank to wildcard, '+' for OR), with date range, updates since a time, detail level, first/last N observations, history and format (GET /service/data/{flowRef}/{key}). Docs: https://data.ecb.europa.eu/help/api/data
-* **Get Structure Sets** `getStructureSets`: Get SDMX structure sets (mappings between structures) by agency, id and version; use all/latest as wildcards (GET /service/structureset/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata
-
-</details>
+| Get Organisation Schemes | `getOrganisationSchemes` | Get SDMX organisation schemes by agency, id and version; use all/latest as wildcards (GET /service/organisationscheme/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata |
+| Get Statistical Data | `getData` | Get time series data for a dataflow and series key (dimension codes joined by '.', blank to wildcard, '+' for OR), with date range, updates since a time, detail level, first/last N observations, history and format (GET /service/data/{flowRef}/{key}). Docs: https://data.ecb.europa.eu/help/api/data |
+| Get Structure Sets | `getStructureSets` | Get SDMX structure sets (mappings between structures) by agency, id and version; use all/latest as wildcards (GET /service/structureset/{agencyID}/{resourceID}/{version}). Docs: https://data.ecb.europa.eu/help/api/metadata |

@@ -34,19 +34,12 @@ Add Clay from **Build → Integrations → Connectors** and connect an account, 
 | Get Search Query Reference | `getSearchQueryReference` | Returns the Clay advanced search query reference as markdown, covering the queryable people and company fields and the query grammar. Use it to author a query before creating a query-mode search. |
 | Get Workflow Run Query Reference | `getWorkflowRunQueryReference` | Returns the Clay workflow-run query reference (beta) as markdown, covering queryable run fields, node predicates, content search and the query grammar. |
 | List Search Filter Fields | `listSearchFilterFields` | Deprecated by Clay in favor of query-mode search. Returns every filter field accepted by Create Filters Search for a source type, with type, description, allowed values and usage guidance. |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **Query Tables** `queryTables`: Runs a structured query across one to five known Clay tables (Enterprise plans) with selected fields or aggregates, filters, joins, grouping and ordering, returning records with per-cell status and field metadata. Page with the returned cursor; custom-ordered, grouped or aggregated queries do not paginate.
-* **Query Workflow Runs** `queryWorkflowRuns`: Executes a Clay workflow-run query (beta). A select query returns matching runs newest first with a cursor; a count query returns the number of matching runs. Results come from an eventually-consistent replica. See Get Workflow Run Query Reference for the grammar.
-* **Run Filters Search** `runFiltersSearch`: Deprecated by Clay; remains available to page searches created in filters mode. Returns the next page of records for an existing filters-mode search; call again while has_more is true.
-* **Run Query Search** `runQuerySearch`: Returns the next page of people or company records for an existing query-mode search. The search is a stateful iterator: call again while has_more is true. Results count against the workspace search result limits for its plan.
-* **Run Routine** `runRoutine`: Starts an asynchronous run of a Clay-managed or custom function routine against 1 to 100 input items and returns the routine run id. Fetch results with Get Routine Run Results, or pass a registered webhook id to be notified when the run finishes. Runs consume Clay credits.
-* **Start Batch Routine Run** `startBatchRoutineRun`: Starts an asynchronous batch routine run over a previously uploaded JSONL file and returns the routine run id. Fetch progress with Get Batch Routine Run Results. Runs consume Clay credits.
-
-</details>
+| Query Tables | `queryTables` | Runs a structured query across one to five known Clay tables (Enterprise plans) with selected fields or aggregates, filters, joins, grouping and ordering, returning records with per-cell status and field metadata. Page with the returned cursor; custom-ordered, grouped or aggregated queries do not paginate. |
+| Query Workflow Runs | `queryWorkflowRuns` | Executes a Clay workflow-run query (beta). A select query returns matching runs newest first with a cursor; a count query returns the number of matching runs. Results come from an eventually-consistent replica. See Get Workflow Run Query Reference for the grammar. |
+| Run Filters Search | `runFiltersSearch` | Deprecated by Clay; remains available to page searches created in filters mode. Returns the next page of records for an existing filters-mode search; call again while has_more is true. |
+| Run Query Search | `runQuerySearch` | Returns the next page of people or company records for an existing query-mode search. The search is a stateful iterator: call again while has_more is true. Results count against the workspace search result limits for its plan. |
+| Run Routine | `runRoutine` | Starts an asynchronous run of a Clay-managed or custom function routine against 1 to 100 input items and returns the routine run id. Fetch results with Get Routine Run Results, or pass a registered webhook id to be notified when the run finishes. Runs consume Clay credits. |
+| Start Batch Routine Run | `startBatchRoutineRun` | Starts an asynchronous batch routine run over a previously uploaded JSONL file and returns the routine run id. Fetch progress with Get Batch Routine Run Results. Runs consume Clay credits. |
 
 ## Events
 

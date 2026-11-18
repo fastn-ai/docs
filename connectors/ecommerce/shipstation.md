@@ -34,16 +34,9 @@ Add ShipStation from **Build → Integrations → Connectors** and connect an ac
 | List Products | `listProducts` | List products. |
 | List Shipments | `listShipments` | List shipments with optional filters. |
 | List Webhooks | `listWebhooks` | List webhook subscriptions. |
-
-<details>
-
-<summary>See 3 more actions</summary>
-
-* **Mark As Shipped** `markAsShipped`: Mark an order as shipped with tracking info.
-* **Subscribe Webhook** `subscribeWebhook`: Subscribe to a webhook event.
-* **Unsubscribe Webhook** `unsubscribeWebhook`: Delete a webhook subscription by id.
-
-</details>
+| Mark As Shipped | `markAsShipped` | Mark an order as shipped with tracking info. |
+| Subscribe Webhook | `subscribeWebhook` | Subscribe to a webhook event. |
+| Unsubscribe Webhook | `unsubscribeWebhook` | Delete a webhook subscription by id. |
 
 ## Events
 

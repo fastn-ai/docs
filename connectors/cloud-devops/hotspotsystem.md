@@ -34,21 +34,14 @@ Add HotspotSystem from **Build → Integrations → Connectors** and connect an 
 | List Newsletter Subscribers | `getSubscribers` | List every WiFi user across all of the operator's locations who opted in to the newsletter, with their contact details and social profile where available. Supports field selection, sorting and pagination. Returns end-user personal data. |
 | List Newsletter Subscribers By Location | `getSubscribersByLocationId` | List the newsletter opt-ins captured at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. Returns end-user personal data. |
 | List Paid Transactions | `getPaidTransactions` | List paid WiFi access transactions (credit card and other paid packages) across all of the operator's hotspot locations, with amount, currency and the purchasing customer's details. |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List Paid Transactions By Location** `getPaidTransactionsByLocationId`: List paid WiFi access transactions recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location.
-* **List Social Login Transactions** `getSocialTransactions`: List WiFi connections authenticated through a social network login (Facebook, Twitter, Google and similar) across all of the operator's hotspot locations, with the linked social profile data captured at login.
-* **List Social Login Transactions By Location** `getSocialTransactionsByLocationId`: List social network WiFi logins recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location.
-* **List Voucher Transactions** `getVoucherTransactions`: List WiFi access transactions redeemed with a prepaid voucher across all of the operator's hotspot locations, with the voucher value and the redeeming customer's details.
-* **List Voucher Transactions By Location** `getVoucherTransactionsByLocationId`: List voucher redemption transactions recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location.
-* **List Vouchers** `getVouchers`: List the prepaid WiFi vouchers generated across all of the operator's locations, with their code, usage limits, validity and price. Note: the HotspotSystem API returns HTTP 500 "Cannot read property 'currency' of undefined" for accounts that have no voucher currency configured in the Control Center.
-* **List Vouchers By Location** `getVouchersByLocationId`: List the prepaid WiFi vouchers generated for one specific hotspot location. Pass the location id from List Locations, or '0' for every location. Note: the HotspotSystem API returns HTTP 500 "Cannot read property 'currency' of undefined" for accounts that have no voucher currency configured in the Control Center.
-* **Ping API** `getPing`: Health check for the HotspotSystem API v2.0. Returns {"ping":"pong"} when the service is reachable and the supplied API key is accepted. Use it to validate a connection before running other actions.
-
-</details>
+| List Paid Transactions By Location | `getPaidTransactionsByLocationId` | List paid WiFi access transactions recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. |
+| List Social Login Transactions | `getSocialTransactions` | List WiFi connections authenticated through a social network login (Facebook, Twitter, Google and similar) across all of the operator's hotspot locations, with the linked social profile data captured at login. |
+| List Social Login Transactions By Location | `getSocialTransactionsByLocationId` | List social network WiFi logins recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. |
+| List Voucher Transactions | `getVoucherTransactions` | List WiFi access transactions redeemed with a prepaid voucher across all of the operator's hotspot locations, with the voucher value and the redeeming customer's details. |
+| List Voucher Transactions By Location | `getVoucherTransactionsByLocationId` | List voucher redemption transactions recorded at one specific hotspot location. Pass the location id from List Locations, or '0' for every location. |
+| List Vouchers | `getVouchers` | List the prepaid WiFi vouchers generated across all of the operator's locations, with their code, usage limits, validity and price. Note: the HotspotSystem API returns HTTP 500 "Cannot read property 'currency' of undefined" for accounts that have no voucher currency configured in the Control Center. |
+| List Vouchers By Location | `getVouchersByLocationId` | List the prepaid WiFi vouchers generated for one specific hotspot location. Pass the location id from List Locations, or '0' for every location. Note: the HotspotSystem API returns HTTP 500 "Cannot read property 'currency' of undefined" for accounts that have no voucher currency configured in the Control Center. |
+| Ping API | `getPing` | Health check for the HotspotSystem API v2.0. Returns {"ping":"pong"} when the service is reachable and the supplied API key is accepted. Use it to validate a connection before running other actions. |
 
 ## Events
 

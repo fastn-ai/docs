@@ -33,31 +33,24 @@ Add Landbot from **Build → Integrations → Connectors** and connect an accoun
 | Delete Customer | `deleteCustomer` | Permanently deletes a Landbot customer and their entire conversation history. This cannot be undone. |
 | Delete Customer Field | `deleteCustomerField` | Removes a custom field and its value from a Landbot customer's profile. |
 | Delete Message Hook | `deleteMessageHook` | Removes a message hook from a Landbot channel, stopping further deliveries to its endpoint. |
-
-<details>
-
-<summary>See 21 more actions</summary>
-
-* **Get Bot** `getBot`: Retrieves a single Landbot bot by its numeric identifier.
-* **Get Channel** `getChannel`: Retrieves a single Landbot messaging channel by its numeric identifier.
-* **Get Customer** `getCustomer`: Retrieves a single Landbot customer by numeric identifier, including their custom fields, assigned agent and conversation state.
-* **Get Customer Field** `getCustomerField`: Retrieves the value of a single custom field on a Landbot customer's profile.
-* **Get Message Hook** `getMessageHook`: Retrieves a single message hook registered on a Landbot channel.
-* **List Agents** `listAgents`: Retrieves the human agents on the Landbot account who can be assigned conversations, including their name, email address and role.
-* **List Bots** `listBots`: Retrieves every bot built in the Landbot account, including its identifier and name.
-* **List Channels** `listChannels`: Retrieves every messaging channel connected to the Landbot account, such as WhatsApp, web chat and Messenger channels.
-* **List Customer Messages** `listCustomerMessages`: Retrieves the message history of a Landbot customer's conversation, newest first.
-* **List Customers** `listCustomers`: Retrieves the customers (contacts) on the Landbot account, with optional filtering by channel, assigned agent, archive status, WhatsApp opt-in status, and a prefix search over name, email or phone.
-* **List Message Hooks** `listMessageHooks`: Retrieves the message hooks registered on a Landbot channel. Each hook receives an HTTP POST for every message that moves through the channel.
-* **List WhatsApp Templates** `listWhatsappTemplates`: Retrieves the WhatsApp message templates approved for the account, which are required to open a conversation outside the 24-hour customer service window.
-* **Opt Out Customer** `optOutCustomer`: Marks a Landbot customer as opted out of WhatsApp messaging. Once opted out, template messages can no longer be delivered to them.
-* **Send Image Message** `sendImageMessage`: Sends an image to a Landbot customer through their channel, referenced by a publicly reachable URL.
-* **Send Location Message** `sendLocationMessage`: Sends a geographic location to a Landbot customer through their channel, rendered as a map pin.
-* **Send Template Message** `sendTemplateMessage`: Sends an approved WhatsApp template message to a Landbot customer. This is the only way to open a WhatsApp conversation outside the 24-hour customer service window.
-* **Send Text Message** `sendTextMessage`: Sends a plain text message to a Landbot customer through their channel. On WhatsApp this only succeeds inside the 24-hour customer service window; outside it, use Send Template Message instead.
-* **Unarchive Customer** `unarchiveCustomer`: Returns a previously archived Landbot conversation to the active inbox.
-* **Unassign Customer** `unassignCustomer`: Removes the current agent or bot assignment from a Landbot conversation, returning it to the unassigned queue.
-* **Unblock Customer** `unblockCustomer`: Unblocks a previously blocked Landbot customer, allowing them to message again.
-* **Update Customer Field** `updateCustomerField`: Updates the value of an existing custom field on a Landbot customer's profile.
-
-</details>
+| Get Bot | `getBot` | Retrieves a single Landbot bot by its numeric identifier. |
+| Get Channel | `getChannel` | Retrieves a single Landbot messaging channel by its numeric identifier. |
+| Get Customer | `getCustomer` | Retrieves a single Landbot customer by numeric identifier, including their custom fields, assigned agent and conversation state. |
+| Get Customer Field | `getCustomerField` | Retrieves the value of a single custom field on a Landbot customer's profile. |
+| Get Message Hook | `getMessageHook` | Retrieves a single message hook registered on a Landbot channel. |
+| List Agents | `listAgents` | Retrieves the human agents on the Landbot account who can be assigned conversations, including their name, email address and role. |
+| List Bots | `listBots` | Retrieves every bot built in the Landbot account, including its identifier and name. |
+| List Channels | `listChannels` | Retrieves every messaging channel connected to the Landbot account, such as WhatsApp, web chat and Messenger channels. |
+| List Customer Messages | `listCustomerMessages` | Retrieves the message history of a Landbot customer's conversation, newest first. |
+| List Customers | `listCustomers` | Retrieves the customers (contacts) on the Landbot account, with optional filtering by channel, assigned agent, archive status, WhatsApp opt-in status, and a prefix search over name, email or phone. |
+| List Message Hooks | `listMessageHooks` | Retrieves the message hooks registered on a Landbot channel. Each hook receives an HTTP POST for every message that moves through the channel. |
+| List WhatsApp Templates | `listWhatsappTemplates` | Retrieves the WhatsApp message templates approved for the account, which are required to open a conversation outside the 24-hour customer service window. |
+| Opt Out Customer | `optOutCustomer` | Marks a Landbot customer as opted out of WhatsApp messaging. Once opted out, template messages can no longer be delivered to them. |
+| Send Image Message | `sendImageMessage` | Sends an image to a Landbot customer through their channel, referenced by a publicly reachable URL. |
+| Send Location Message | `sendLocationMessage` | Sends a geographic location to a Landbot customer through their channel, rendered as a map pin. |
+| Send Template Message | `sendTemplateMessage` | Sends an approved WhatsApp template message to a Landbot customer. This is the only way to open a WhatsApp conversation outside the 24-hour customer service window. |
+| Send Text Message | `sendTextMessage` | Sends a plain text message to a Landbot customer through their channel. On WhatsApp this only succeeds inside the 24-hour customer service window; outside it, use Send Template Message instead. |
+| Unarchive Customer | `unarchiveCustomer` | Returns a previously archived Landbot conversation to the active inbox. |
+| Unassign Customer | `unassignCustomer` | Removes the current agent or bot assignment from a Landbot conversation, returning it to the unassigned queue. |
+| Unblock Customer | `unblockCustomer` | Unblocks a previously blocked Landbot customer, allowing them to message again. |
+| Update Customer Field | `updateCustomerField` | Updates the value of an existing custom field on a Landbot customer's profile. |

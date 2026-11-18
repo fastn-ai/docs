@@ -34,35 +34,28 @@ Add HeyReach from **Build → Integrations → Connectors** and connect an accou
 | Delete Webhook | `deleteWebhook` | Permanently delete a HeyReach webhook subscription. The webhook must first be deactivated with Update Webhook (isActive set to false), otherwise the API rejects the request. |
 | Get Campaign | `getCampaign` | Get a single campaign by ID (query param campaignId). |
 | Get Campaigns For Lead | `getCampaignsForLead` | Get all campaigns a lead belongs to. Body: { profileUrl }. |
-
-<details>
-
-<summary>See 22 more actions</summary>
-
-* **Get Chatroom** `getChatroom`: Retrieve a single LinkedIn conversation thread, including all of its messages, for a given sender account and conversation.
-* **Get Companies From List** `getCompaniesFromList`: Get companies from a company list. Body: { listId, offset, limit }.
-* **Get Conversations** `getConversations`: Get inbox conversations with filters. Body: { offset, limit, filters:{ linkedInAccountIds, campaignIds, seen } }.
-* **Get Lead** `getLead`: Get details for a single lead by LinkedIn profile URL. Body: { profileUrl }.
-* **Get Lead Tags** `getLeadTags`: Get the tags assigned to a lead by LinkedIn profile URL. Body: { profileUrl }.
-* **Get Leads From Campaign** `getLeadsFromCampaign`: Get leads in a campaign with status filters. Body: { campaignId, offset, limit }.
-* **Get Leads From List** `getLeadsFromList`: Get leads from a list with pagination. Body: { listId, offset, limit }.
-* **Get LinkedIn Account** `getLinkedInAccount`: Get a LinkedIn sender account by ID (query param accountId).
-* **Get List** `getList`: Get a list by ID (query param listId).
-* **Get My Network For Sender** `getMyNetworkForSender`: Retrieve the LinkedIn network (first-degree connections) visible to a specific sender account, with paging controlled by page number and page size.
-* **Get Overall Stats** `getOverallStats`: Get aggregate analytics (sends, connections, replies, etc). Body: { accountIds, campaignIds, startDate, endDate }.
-* **Get Overall Stats By Campaign** `getOverallStatsByCampaign`: Get aggregate analytics broken down per campaign. Body: { accountIds:[], campaignIds:[], startDate?, endDate? }.
-* **List Campaigns** `listCampaigns`: List all campaigns with pagination. Body: { offset, limit }. Optional statuses/accountIds filters.
-* **List LinkedIn Accounts** `listLinkedInAccounts`: List LinkedIn sender accounts with pagination. Body: { offset, limit }.
-* **List Lists** `listLists`: List all lead/company lists with pagination. Body: { offset, limit }.
-* **List Webhooks** `listWebhooks`: List all configured webhooks. Body: { offset, limit }.
-* **Pause Campaign** `pauseCampaign`: Pause an active campaign (query param campaignId).
-* **Replace Lead Tags** `replaceLeadTags`: Replace ALL tags on a lead with the provided set. Body: { leadProfileUrl, tags:[] }. Optionally createTagIfNotExisting.
-* **Resume Campaign** `resumeCampaign`: Resume a paused campaign (query param campaignId).
-* **Send Message** `sendMessage`: Send a message in a conversation. Body: { conversationId, linkedInAccountId, message, subject? }.
-* **Stop Lead In Campaign** `stopLeadInCampaign`: Stop an individual lead's progress in a campaign so no further outreach steps are executed for that lead. Identify the lead by LinkedIn profile URL or by LinkedIn member id.
-* **Update Webhook** `updateWebhook`: Update an existing HeyReach webhook subscription. Only the fields you supply are changed; omitted fields keep their current values.
-
-</details>
+| Get Chatroom | `getChatroom` | Retrieve a single LinkedIn conversation thread, including all of its messages, for a given sender account and conversation. |
+| Get Companies From List | `getCompaniesFromList` | Get companies from a company list. Body: { listId, offset, limit }. |
+| Get Conversations | `getConversations` | Get inbox conversations with filters. Body: { offset, limit, filters:{ linkedInAccountIds, campaignIds, seen } }. |
+| Get Lead | `getLead` | Get details for a single lead by LinkedIn profile URL. Body: { profileUrl }. |
+| Get Lead Tags | `getLeadTags` | Get the tags assigned to a lead by LinkedIn profile URL. Body: { profileUrl }. |
+| Get Leads From Campaign | `getLeadsFromCampaign` | Get leads in a campaign with status filters. Body: { campaignId, offset, limit }. |
+| Get Leads From List | `getLeadsFromList` | Get leads from a list with pagination. Body: { listId, offset, limit }. |
+| Get LinkedIn Account | `getLinkedInAccount` | Get a LinkedIn sender account by ID (query param accountId). |
+| Get List | `getList` | Get a list by ID (query param listId). |
+| Get My Network For Sender | `getMyNetworkForSender` | Retrieve the LinkedIn network (first-degree connections) visible to a specific sender account, with paging controlled by page number and page size. |
+| Get Overall Stats | `getOverallStats` | Get aggregate analytics (sends, connections, replies, etc). Body: { accountIds, campaignIds, startDate, endDate }. |
+| Get Overall Stats By Campaign | `getOverallStatsByCampaign` | Get aggregate analytics broken down per campaign. Body: { accountIds:[], campaignIds:[], startDate?, endDate? }. |
+| List Campaigns | `listCampaigns` | List all campaigns with pagination. Body: { offset, limit }. Optional statuses/accountIds filters. |
+| List LinkedIn Accounts | `listLinkedInAccounts` | List LinkedIn sender accounts with pagination. Body: { offset, limit }. |
+| List Lists | `listLists` | List all lead/company lists with pagination. Body: { offset, limit }. |
+| List Webhooks | `listWebhooks` | List all configured webhooks. Body: { offset, limit }. |
+| Pause Campaign | `pauseCampaign` | Pause an active campaign (query param campaignId). |
+| Replace Lead Tags | `replaceLeadTags` | Replace ALL tags on a lead with the provided set. Body: { leadProfileUrl, tags:[] }. Optionally createTagIfNotExisting. |
+| Resume Campaign | `resumeCampaign` | Resume a paused campaign (query param campaignId). |
+| Send Message | `sendMessage` | Send a message in a conversation. Body: { conversationId, linkedInAccountId, message, subject? }. |
+| Stop Lead In Campaign | `stopLeadInCampaign` | Stop an individual lead's progress in a campaign so no further outreach steps are executed for that lead. Identify the lead by LinkedIn profile URL or by LinkedIn member id. |
+| Update Webhook | `updateWebhook` | Update an existing HeyReach webhook subscription. Only the fields you supply are changed; omitted fields keep their current values. |
 
 ## Events
 

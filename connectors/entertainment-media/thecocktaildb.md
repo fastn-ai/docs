@@ -34,14 +34,7 @@ Add TheCocktailDB from **Build → Integrations → Connectors** and connect an 
 | List Alcoholic Filters | `listAlcoholicFilters` | List the alcoholic filter values (GET /list.php?a=list). Docs: https://www.thecocktaildb.com/api.php |
 | List Categories | `listCategoryNames` | List all cocktail category names (GET /list.php?c=list). Docs: https://www.thecocktaildb.com/api.php |
 | List Cocktails by First Letter | `listCocktailsByFirstLetter` | List all cocktails whose name starts with a letter, with full details (GET /search.php?f=). Docs: https://www.thecocktaildb.com/api.php |
-
-<details>
-
-<summary>See 4 more actions</summary>
-
-* **List Glasses** `listGlasses`: List all glass types (GET /list.php?g=list). Docs: https://www.thecocktaildb.com/api.php
-* **List Ingredients** `listIngredients`: List all ingredient names (GET /list.php?i=list). Docs: https://www.thecocktaildb.com/api.php
-* **Search Cocktails by Name** `searchCocktailsByName`: Search cocktails by name and get full details (GET /search.php?s=). Docs: https://www.thecocktaildb.com/api.php
-* **Search Ingredients by Name** `searchIngredientsByName`: Search ingredients by name and get description, type and alcohol details (GET /search.php?i=). Docs: https://www.thecocktaildb.com/api.php
-
-</details>
+| List Glasses | `listGlasses` | List all glass types (GET /list.php?g=list). Docs: https://www.thecocktaildb.com/api.php |
+| List Ingredients | `listIngredients` | List all ingredient names (GET /list.php?i=list). Docs: https://www.thecocktaildb.com/api.php |
+| Search Cocktails by Name | `searchCocktailsByName` | Search cocktails by name and get full details (GET /search.php?s=). Docs: https://www.thecocktaildb.com/api.php |
+| Search Ingredients by Name | `searchIngredientsByName` | Search ingredients by name and get description, type and alcohol details (GET /search.php?i=). Docs: https://www.thecocktaildb.com/api.php |

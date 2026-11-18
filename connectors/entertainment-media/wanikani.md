@@ -34,25 +34,18 @@ Add WaniKani from **Build → Integrations → Connectors** and connect an accou
 | Get Spaced Repetition System | `getSpacedRepetitionSystem` | Returns a single spaced repetition system by its id, including every SRS stage with its review interval and the positions at which subjects unlock, pass and burn. |
 | Get Study Material | `getStudyMaterial` | Returns a single study material by its id, with the meaning note, reading note and user synonyms the learner saved for that subject. |
 | Get Subject | `getSubject` | Returns a single WaniKani subject by its id — a radical, kanji, vocabulary or kana vocabulary item — with its characters, meanings, readings, mnemonics and related subject ids. |
-
-<details>
-
-<summary>See 15 more actions</summary>
-
-* **Get Summary** `getSummary`: Returns the study summary report: the subject ids available for lessons right now, the reviews available in each of the next 24 hourly windows, and the timestamp of the next review.
-* **Get User** `getUser`: Returns the profile of the WaniKani user who owns the personal access token, including username, current level, subscription status, preferences and the account start date.
-* **Get Voice Actor** `getVoiceActor`: Returns a single voice actor by its id, with the name, gender and description of the person who records WaniKani's vocabulary audio.
-* **List Assignments** `listAssignments`: Returns a paginated collection of assignments — the link between the user and a subject, carrying the SRS stage and the next available review time. Supports filtering by level, SRS stage, subject, lifecycle state and update time.
-* **List Level Progressions** `listLevelProgressions`: Returns a paginated collection of level progressions, one per WaniKani level the user has unlocked, with the timestamps at which the level was unlocked, started, passed, completed or abandoned.
-* **List Resets** `listResets`: Returns a paginated collection of resets, recording every time the user reset their WaniKani progress back to an earlier level, with the original and target levels.
-* **List Review Statistics** `listReviewStatistics`: Returns a paginated collection of review statistics, one per subject the user has reviewed, summarising correct and incorrect meaning and reading answers, current and maximum streaks and the overall percentage correct.
-* **List Reviews** `listReviews`: Returns a paginated collection of reviews the user has completed, each recording the incorrect meaning and reading counts and the SRS stage the subject moved from and to.
-* **List Spaced Repetition Systems** `listSpacedRepetitionSystems`: Returns a paginated collection of the spaced repetition systems WaniKani uses, each listing every SRS stage with its interval, the unlocking stage position and the burning stage position.
-* **List Study Materials** `listStudyMaterials`: Returns a paginated collection of the user's study materials — the personal meaning notes, reading notes and user synonyms attached to individual subjects.
-* **List Subjects** `listSubjects`: Returns a paginated collection of WaniKani subjects — radicals, kanji, vocabulary and kana vocabulary — with their characters, meanings, readings, mnemonics, component subject ids and level. Filter by type, level, slug or id.
-* **List Voice Actors** `listVoiceActors`: Returns a paginated collection of the voice actors who record WaniKani's vocabulary audio, with their name, gender and description.
-* **Start Assignment** `startAssignment`: Marks an assignment's lesson as started, moving the subject out of the lesson queue and into the review queue. This permanently changes the learner's study schedule — call it only when the user really means to begin that lesson. Requires a token with the assignments:start scope.
-* **Update Study Material** `updateStudyMaterial`: Updates an existing study material by id, replacing the meaning note, reading note and user synonyms. Requires a token with the study_materials:update scope.
-* **Update User Preferences** `updateUserPreferences`: Updates the signed-in user's study preferences: lesson batch size and presentation order, review presentation order, SRS indicator display, default voice actor and audio autoplay settings for lessons, reviews and extra study. Requires a token with the user:update scope.
-
-</details>
+| Get Summary | `getSummary` | Returns the study summary report: the subject ids available for lessons right now, the reviews available in each of the next 24 hourly windows, and the timestamp of the next review. |
+| Get User | `getUser` | Returns the profile of the WaniKani user who owns the personal access token, including username, current level, subscription status, preferences and the account start date. |
+| Get Voice Actor | `getVoiceActor` | Returns a single voice actor by its id, with the name, gender and description of the person who records WaniKani's vocabulary audio. |
+| List Assignments | `listAssignments` | Returns a paginated collection of assignments — the link between the user and a subject, carrying the SRS stage and the next available review time. Supports filtering by level, SRS stage, subject, lifecycle state and update time. |
+| List Level Progressions | `listLevelProgressions` | Returns a paginated collection of level progressions, one per WaniKani level the user has unlocked, with the timestamps at which the level was unlocked, started, passed, completed or abandoned. |
+| List Resets | `listResets` | Returns a paginated collection of resets, recording every time the user reset their WaniKani progress back to an earlier level, with the original and target levels. |
+| List Review Statistics | `listReviewStatistics` | Returns a paginated collection of review statistics, one per subject the user has reviewed, summarising correct and incorrect meaning and reading answers, current and maximum streaks and the overall percentage correct. |
+| List Reviews | `listReviews` | Returns a paginated collection of reviews the user has completed, each recording the incorrect meaning and reading counts and the SRS stage the subject moved from and to. |
+| List Spaced Repetition Systems | `listSpacedRepetitionSystems` | Returns a paginated collection of the spaced repetition systems WaniKani uses, each listing every SRS stage with its interval, the unlocking stage position and the burning stage position. |
+| List Study Materials | `listStudyMaterials` | Returns a paginated collection of the user's study materials — the personal meaning notes, reading notes and user synonyms attached to individual subjects. |
+| List Subjects | `listSubjects` | Returns a paginated collection of WaniKani subjects — radicals, kanji, vocabulary and kana vocabulary — with their characters, meanings, readings, mnemonics, component subject ids and level. Filter by type, level, slug or id. |
+| List Voice Actors | `listVoiceActors` | Returns a paginated collection of the voice actors who record WaniKani's vocabulary audio, with their name, gender and description. |
+| Start Assignment | `startAssignment` | Marks an assignment's lesson as started, moving the subject out of the lesson queue and into the review queue. This permanently changes the learner's study schedule — call it only when the user really means to begin that lesson. Requires a token with the assignments:start scope. |
+| Update Study Material | `updateStudyMaterial` | Updates an existing study material by id, replacing the meaning note, reading note and user synonyms. Requires a token with the study_materials:update scope. |
+| Update User Preferences | `updateUserPreferences` | Updates the signed-in user's study preferences: lesson batch size and presentation order, review presentation order, SRS indicator display, default voice actor and audio autoplay settings for lessons, reviews and extra study. Requires a token with the user:update scope. |

@@ -34,18 +34,11 @@ Add Minelead from **Build → Integrations → Connectors** and connect an accou
 | Generate Leads From Tags | `generateLeadsFromTags` | Generates a list of company domains matching keyword tags such as an industry and a location (for example "hotel" and "new york"). On the Free plan part of the returned domains are masked. Consumes Minelead credits. |
 | Get Account | `getAccount` | Retrieves the authenticated Minelead account's details, including email, username, subscription plan, remaining lead credits and recipient lists. Useful for verifying that the API key is valid. |
 | Get Buying Intent | `getBuyingIntent` | Analyzes a company's buying intent by scanning news, job postings, company website and LinkedIn signals. Returns an intent score from 0 to 100, an intent level, categorised signals with evidence, a recommended pitch angle and suggested solutions. Each call costs 5 Minelead credits; accounts with fewer credits receive HTTP 402 "Insufficient credits". |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List Campaigns** `listCampaigns`: Lists the email campaigns in your Minelead account with their status flags (active, paused, archived, completed, running).
-* **List Leads** `listLeads`: Lists all leads saved to your Minelead account with their id, name, company, email and verification details. Returns status "not-found" when the account has no saved leads.
-* **List Recipient Lists** `listRecipientLists`: Lists the campaign recipient lists in your Minelead account, including each list's name, recipient count and recipient emails.
-* **List Search History** `listSearchHistory`: Lists your Minelead search history with the date, result status and query of each search, paginated with a start offset and a limit.
-* **Search Company Emails** `searchCompanyEmails`: Searches for email addresses belonging to a company by domain (or by company name when no domain is known). Optionally limits the number of results, prioritises generic role-based emails, enriches emails with professional profile data, or runs an AI Deep Search for employee emails. Consumes Minelead credits; the Free plan allows 2 search requests per minute.
-* **Update Leads** `updateLeads`: Updates the first name, last name or company of one or more existing leads in your Minelead leads list, matched by email address.
-* **Update Recipient List** `updateRecipientList`: Adds emails to or removes emails from an existing campaign recipient list.
-* **Validate Email** `validateEmail`: Checks the validity and deliverability of an email address: format, webmail, MX record and mailbox existence, and whether it belongs to a disposable email provider. Consumes Minelead credits.
-
-</details>
+| List Campaigns | `listCampaigns` | Lists the email campaigns in your Minelead account with their status flags (active, paused, archived, completed, running). |
+| List Leads | `listLeads` | Lists all leads saved to your Minelead account with their id, name, company, email and verification details. Returns status "not-found" when the account has no saved leads. |
+| List Recipient Lists | `listRecipientLists` | Lists the campaign recipient lists in your Minelead account, including each list's name, recipient count and recipient emails. |
+| List Search History | `listSearchHistory` | Lists your Minelead search history with the date, result status and query of each search, paginated with a start offset and a limit. |
+| Search Company Emails | `searchCompanyEmails` | Searches for email addresses belonging to a company by domain (or by company name when no domain is known). Optionally limits the number of results, prioritises generic role-based emails, enriches emails with professional profile data, or runs an AI Deep Search for employee emails. Consumes Minelead credits; the Free plan allows 2 search requests per minute. |
+| Update Leads | `updateLeads` | Updates the first name, last name or company of one or more existing leads in your Minelead leads list, matched by email address. |
+| Update Recipient List | `updateRecipientList` | Adds emails to or removes emails from an existing campaign recipient list. |
+| Validate Email | `validateEmail` | Checks the validity and deliverability of an email address: format, webmail, MX record and mailbox existence, and whether it belongs to a disposable email provider. Consumes Minelead credits. |

@@ -34,19 +34,12 @@ Add SuiteDash from **Build → Integrations → Connectors** and connect an acco
 | Get Project Meta Attributes | `getProjectMetaAttributes` | Retrieves metadata for every SuiteDash project attribute: type, format, required and nullable flags, allowed values, field label and which operations (read, create, update) accept it. |
 | List Companies | `listCompanies` | Lists SuiteDash CRM companies (idle companies are excluded), 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by created or name, and optional attribute metadata. |
 | List Contacts | `listContacts` | Lists SuiteDash CRM contacts, 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by created or name, and optional attribute metadata. |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **List Projects** `listProjects`: Lists SuiteDash projects, 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by name, created, start date or end date, and optional attribute metadata.
-* **List Worlds** `listWorlds`: Lists SuiteDash Worlds, 10 per page, ordered by key, title or created. Only available on accounts with the WORLDS Power-up.
-* **Subscribe Contacts To Marketing Audiences** `subscribeContactsToMarketingAudiences`: Subscribes one or more contacts (by email, with optional first and last name) to SuiteDash marketing audiences by audience ID. The top-level success is false if any item failed; per-item results and errors are returned in data. Subscribed contacts can receive that audience's marketing emails.
-* **Update Company** `updateCompany`: Updates a SuiteDash CRM company identified by UID or exact name: name, phones, category, website, address, tags, background info, quizzes, community membership, Worlds and public, private or target custom fields. Only the fields you pass are changed.
-* **Update Contact** `updateContact`: Updates a SuiteDash CRM contact identified by UID or email: name, emails, phones, title, website, address, company (optionally creating it), tags, circles, Worlds, background info, notes, quizzes, community membership and custom fields. Only the fields you pass are changed; send_welcome_email sends the portal welcome email only if it was never sent.
-* **Update Project** `updateProject`: Updates a SuiteDash project located by type (uid, name, contains_the_following or most_recent) and identifier: name, status (a value from Categories &gt; Project Statuses), start date, estimated completion date, due time, staff and client information, economics (business sector, estimated value and currency, time tracking requirement) and project custom fields.
-
-</details>
+| List Projects | `listProjects` | Lists SuiteDash projects, 10 per page, with optional creation date-time range filters (createdMin/createdMax, exclusive, RFC3339 with offset), ordering by name, created, start date or end date, and optional attribute metadata. |
+| List Worlds | `listWorlds` | Lists SuiteDash Worlds, 10 per page, ordered by key, title or created. Only available on accounts with the WORLDS Power-up. |
+| Subscribe Contacts To Marketing Audiences | `subscribeContactsToMarketingAudiences` | Subscribes one or more contacts (by email, with optional first and last name) to SuiteDash marketing audiences by audience ID. The top-level success is false if any item failed; per-item results and errors are returned in data. Subscribed contacts can receive that audience's marketing emails. |
+| Update Company | `updateCompany` | Updates a SuiteDash CRM company identified by UID or exact name: name, phones, category, website, address, tags, background info, quizzes, community membership, Worlds and public, private or target custom fields. Only the fields you pass are changed. |
+| Update Contact | `updateContact` | Updates a SuiteDash CRM contact identified by UID or email: name, emails, phones, title, website, address, company (optionally creating it), tags, circles, Worlds, background info, notes, quizzes, community membership and custom fields. Only the fields you pass are changed; send_welcome_email sends the portal welcome email only if it was never sent. |
+| Update Project | `updateProject` | Updates a SuiteDash project located by type (uid, name, contains_the_following or most_recent) and identifier: name, status (a value from Categories &gt; Project Statuses), start date, estimated completion date, due time, staff and client information, economics (business sector, estimated value and currency, time tracking requirement) and project custom fields. |
 
 ## Events
 

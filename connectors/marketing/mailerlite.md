@@ -34,24 +34,17 @@ Add MailerLite from **Build → Integrations → Connectors** and connect an acc
 | Delete Subscriber | `deleteSubscriber` | Delete a subscriber by id. |
 | Delete Webhook | `deleteWebhook` | Delete a webhook by id. |
 | Get Campaign | `getCampaign` | Get a campaign by id. |
-
-<details>
-
-<summary>See 11 more actions</summary>
-
-* **Get Subscriber** `getSubscriber`: Get a subscriber by id or email.
-* **List Automations** `listAutomations`: List automations.
-* **List Campaigns** `listCampaigns`: List campaigns.
-* **List Fields** `listFields`: List custom fields.
-* **List Groups** `listGroups`: List groups.
-* **List Segments** `listSegments`: List the segments defined in the account.
-* **List Subscribers** `listSubscribers`: List subscribers (cursor pagination).
-* **List Webhooks** `listWebhooks`: List webhooks.
-* **Schedule Campaign** `scheduleCampaign`: Schedule a campaign for delivery.
-* **Unassign Subscriber From Group** `unassignFromGroup`: Remove a subscriber from a group.
-* **Update Subscriber** `updateSubscriber`: Update a subscriber by id.
-
-</details>
+| Get Subscriber | `getSubscriber` | Get a subscriber by id or email. |
+| List Automations | `listAutomations` | List automations. |
+| List Campaigns | `listCampaigns` | List campaigns. |
+| List Fields | `listFields` | List custom fields. |
+| List Groups | `listGroups` | List groups. |
+| List Segments | `listSegments` | List the segments defined in the account. |
+| List Subscribers | `listSubscribers` | List subscribers (cursor pagination). |
+| List Webhooks | `listWebhooks` | List webhooks. |
+| Schedule Campaign | `scheduleCampaign` | Schedule a campaign for delivery. |
+| Unassign Subscriber From Group | `unassignFromGroup` | Remove a subscriber from a group. |
+| Update Subscriber | `updateSubscriber` | Update a subscriber by id. |
 
 ## Events
 
@@ -69,13 +62,6 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Subscriber Created | `subscriber.created` | Fires when a new subscriber is created. |
 | Subscriber Deleted | `subscriber.deleted` | Fires when a subscriber is deleted. Batchable event. |
 | Subscriber Removed From Group | `subscriber.removed_from_group` | Fires when a subscriber is removed from a group. |
-
-<details>
-
-<summary>See 3 more events</summary>
-
-* **Subscriber Spam Reported** `subscriber.spam_reported`: Fires when a subscriber reports a campaign as spam.
-* **Subscriber Unsubscribed** `subscriber.unsubscribed`: Fires when a subscriber unsubscribes.
-* **Subscriber Updated** `subscriber.updated`: Fires when a subscriber is updated.
-
-</details>
+| Subscriber Spam Reported | `subscriber.spam_reported` | Fires when a subscriber reports a campaign as spam. |
+| Subscriber Unsubscribed | `subscriber.unsubscribed` | Fires when a subscriber unsubscribes. |
+| Subscriber Updated | `subscriber.updated` | Fires when a subscriber is updated. |

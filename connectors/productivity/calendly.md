@@ -34,39 +34,32 @@ Add Calendly from **Build → Integrations → Connectors** and connect an accou
 | Delete Invitee No Show | `deleteInviteeNoShow` | Undo an invitee no-show (DELETE /invitee_no_shows/{uuid}). Returns 204. |
 | Delete Webhook Subscription | `deleteWebhookSubscription` | Delete a webhook subscription (DELETE /webhook_subscriptions/{uuid}). Returns 204. |
 | Get Current User | `getCurrentUser` | Get the current authenticated user (GET /users/me). |
-
-<details>
-
-<summary>See 26 more actions</summary>
-
-* **Get Event Invitee** `getEventInvitee`: Get a single invitee of a scheduled event (GET /scheduled_events/{event_uuid}/invitees/{invitee_uuid}).
-* **Get Event Type** `getEventType`: Get an event type by UUID (GET /event_types/{uuid}).
-* **Get Invitee No Show** `getInviteeNoShow`: Get an invitee no-show by UUID (GET /invitee_no_shows/{uuid}).
-* **Get Organization Invitation** `getOrganizationInvitation`: Get an organization invitation (GET /organizations/{org_uuid}/invitations/{uuid}).
-* **Get Organization Membership** `getOrganizationMembership`: Get an organization membership by UUID (GET /organization_memberships/{uuid}).
-* **Get Routing Form** `getRoutingForm`: Get a routing form by UUID (GET /routing_forms/{uuid}).
-* **Get Routing Form Submission** `getRoutingFormSubmission`: Get a routing form submission by UUID (GET /routing_form_submissions/{uuid}).
-* **Get Scheduled Event** `getScheduledEvent`: Get a scheduled event by UUID (GET /scheduled_events/{uuid}).
-* **Get User** `getUser`: Get a user by UUID (GET /users/{uuid}).
-* **Get User Availability Schedule** `getUserAvailabilitySchedule`: Get a user availability schedule by UUID (GET /user_availability_schedules/{uuid}).
-* **Get Webhook Subscription** `getWebhookSubscription`: Get a webhook subscription by UUID (GET /webhook_subscriptions/{uuid}).
-* **List Activity Log Entries** `listActivityLogEntries`: List organization activity log entries (GET /activity_log_entries).
-* **List Event Invitees** `listEventInvitees`: List invitees of a scheduled event (GET /scheduled_events/{uuid}/invitees).
-* **List Event Type Available Times** `listEventTypeAvailableTimes`: List available start times for an event type within a window (GET /event_type_available_times).
-* **List Event Types** `listEventTypes`: List event types for a user or organization (GET /event_types).
-* **List My Scheduled Events** `listMyScheduledEvents`: Lists the scheduled events (bookings) of the connected Calendly user, without needing the user URI. Filter by invitee email, status or a start-time window. Returns events with their URI, name, start and end time, status and location, plus a page token.
-* **List Organization Invitations** `listOrganizationInvitations`: List invitations for an organization (GET /organizations/{org_uuid}/invitations).
-* **List Organization Memberships** `listOrganizationMemberships`: List organization memberships (GET /organization_memberships).
-* **List Routing Form Submissions** `listRoutingFormSubmissions`: List submissions for a routing form (GET /routing_form_submissions).
-* **List Routing Forms** `listRoutingForms`: List routing forms for an organization (GET /routing_forms).
-* **List Scheduled Events** `listScheduledEvents`: List scheduled events for a user or organization (GET /scheduled_events).
-* **List User Availability Schedules** `listUserAvailabilitySchedules`: List a user's availability schedules (GET /user_availability_schedules).
-* **List User Busy Times** `listUserBusyTimes`: List a user's busy times in a window (GET /user_busy_times).
-* **List Webhook Subscriptions** `listWebhookSubscriptions`: List webhook subscriptions (GET /webhook_subscriptions).
-* **Remove Organization Membership** `removeOrganizationMembership`: Remove a user from an organization (DELETE /organization_memberships/{uuid}). Returns 204.
-* **Revoke Organization Invitation** `revokeOrganizationInvitation`: Revoke an organization invitation (DELETE /organizations/{org_uuid}/invitations/{uuid}). Returns 204.
-
-</details>
+| Get Event Invitee | `getEventInvitee` | Get a single invitee of a scheduled event (GET /scheduled_events/{event_uuid}/invitees/{invitee_uuid}). |
+| Get Event Type | `getEventType` | Get an event type by UUID (GET /event_types/{uuid}). |
+| Get Invitee No Show | `getInviteeNoShow` | Get an invitee no-show by UUID (GET /invitee_no_shows/{uuid}). |
+| Get Organization Invitation | `getOrganizationInvitation` | Get an organization invitation (GET /organizations/{org_uuid}/invitations/{uuid}). |
+| Get Organization Membership | `getOrganizationMembership` | Get an organization membership by UUID (GET /organization_memberships/{uuid}). |
+| Get Routing Form | `getRoutingForm` | Get a routing form by UUID (GET /routing_forms/{uuid}). |
+| Get Routing Form Submission | `getRoutingFormSubmission` | Get a routing form submission by UUID (GET /routing_form_submissions/{uuid}). |
+| Get Scheduled Event | `getScheduledEvent` | Get a scheduled event by UUID (GET /scheduled_events/{uuid}). |
+| Get User | `getUser` | Get a user by UUID (GET /users/{uuid}). |
+| Get User Availability Schedule | `getUserAvailabilitySchedule` | Get a user availability schedule by UUID (GET /user_availability_schedules/{uuid}). |
+| Get Webhook Subscription | `getWebhookSubscription` | Get a webhook subscription by UUID (GET /webhook_subscriptions/{uuid}). |
+| List Activity Log Entries | `listActivityLogEntries` | List organization activity log entries (GET /activity_log_entries). |
+| List Event Invitees | `listEventInvitees` | List invitees of a scheduled event (GET /scheduled_events/{uuid}/invitees). |
+| List Event Type Available Times | `listEventTypeAvailableTimes` | List available start times for an event type within a window (GET /event_type_available_times). |
+| List Event Types | `listEventTypes` | List event types for a user or organization (GET /event_types). |
+| List My Scheduled Events | `listMyScheduledEvents` | Lists the scheduled events (bookings) of the connected Calendly user, without needing the user URI. Filter by invitee email, status or a start-time window. Returns events with their URI, name, start and end time, status and location, plus a page token. |
+| List Organization Invitations | `listOrganizationInvitations` | List invitations for an organization (GET /organizations/{org_uuid}/invitations). |
+| List Organization Memberships | `listOrganizationMemberships` | List organization memberships (GET /organization_memberships). |
+| List Routing Form Submissions | `listRoutingFormSubmissions` | List submissions for a routing form (GET /routing_form_submissions). |
+| List Routing Forms | `listRoutingForms` | List routing forms for an organization (GET /routing_forms). |
+| List Scheduled Events | `listScheduledEvents` | List scheduled events for a user or organization (GET /scheduled_events). |
+| List User Availability Schedules | `listUserAvailabilitySchedules` | List a user's availability schedules (GET /user_availability_schedules). |
+| List User Busy Times | `listUserBusyTimes` | List a user's busy times in a window (GET /user_busy_times). |
+| List Webhook Subscriptions | `listWebhookSubscriptions` | List webhook subscriptions (GET /webhook_subscriptions). |
+| Remove Organization Membership | `removeOrganizationMembership` | Remove a user from an organization (DELETE /organization_memberships/{uuid}). Returns 204. |
+| Revoke Organization Invitation | `revokeOrganizationInvitation` | Revoke an organization invitation (DELETE /organizations/{org_uuid}/invitations/{uuid}). Returns 204. |
 
 ## Events
 

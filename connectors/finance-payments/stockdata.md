@@ -34,16 +34,9 @@ Add StockData.org from **Build → Integrations → Connectors** and connect an 
 | Get Similar News Articles | `getSimilarNews` | Returns news articles similar to a given article, identified by its UUID, using the same entity, sentiment, source, language, and date filters as the news search endpoint. |
 | Get Trending News Entities | `getTrendingEntities` | Returns the entities (symbols, exchanges, industries, or countries) currently trending in the news, ranked by relevance and document volume. |
 | List Entity Types | `listEntityTypes` | Returns the list of entity types supported by the entity search and news filters (e.g. equity, index, etf). |
-
-<details>
-
-<summary>See 6 more actions</summary>
-
-* **List Industries** `listIndustries`: Returns the list of industry classifications supported by the entity search and news filters.
-* **List News Sources** `listNewsSources`: Returns the list of news source domains and IDs available for filtering news search results, optionally grouped by distinct domain and filtered by language.
-* **List Stock Dividends** `listStockDividends`: Returns the historical dividend payout events (ex-dividend date, amount per share) for one or more stock symbols.
-* **List Stock Splits** `listStockSplits`: Returns the historical stock split events (date, ratio) for one or more stock symbols.
-* **Search Finance And Market News** `searchNews`: Searches finance and market news articles with entity, sentiment, source, language, and date filters, returning identified entities, sentiment scores, and highlights for each article.
-* **Search Stock Entities** `searchEntities`: Searches the entity directory (stocks, indices, and other tracked entities) by name, symbol, exchange, type, industry, or country and returns matching entity metadata.
-
-</details>
+| List Industries | `listIndustries` | Returns the list of industry classifications supported by the entity search and news filters. |
+| List News Sources | `listNewsSources` | Returns the list of news source domains and IDs available for filtering news search results, optionally grouped by distinct domain and filtered by language. |
+| List Stock Dividends | `listStockDividends` | Returns the historical dividend payout events (ex-dividend date, amount per share) for one or more stock symbols. |
+| List Stock Splits | `listStockSplits` | Returns the historical stock split events (date, ratio) for one or more stock symbols. |
+| Search Finance And Market News | `searchNews` | Searches finance and market news articles with entity, sentiment, source, language, and date filters, returning identified entities, sentiment scores, and highlights for each article. |
+| Search Stock Entities | `searchEntities` | Searches the entity directory (stocks, indices, and other tracked entities) by name, symbol, exchange, type, industry, or country and returns matching entity metadata. |

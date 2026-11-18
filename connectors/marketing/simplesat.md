@@ -34,20 +34,13 @@ Add Simplesat from **Build → Integrations → Connectors** and connect an acco
 | Get Metrics | `getMetrics` | Returns aggregated satisfaction metrics for a date range. The allowed metric names come from the surveys configured on the account, so call List Surveys first to see which metrics exist. This endpoint is live on the Simplesat API but is not listed in their published reference. |
 | Get Response | `getResponseById` | Retrieves a complete survey response by its numeric Simplesat id, including every answer, the customer, the linked ticket and the team members involved. |
 | Get Team Member | `getTeamMemberById` | Retrieves a single Simplesat team member by its numeric Simplesat id. |
-
-<details>
-
-<summary>See 10 more actions</summary>
-
-* **List Answers** `listAnswers`: Lists every survey answer in the account, newest first. This is Simplesat's simple paginated answers list; use Search Answers when you need date ranges or filters.
-* **List Customers** `listCustomers`: Lists the customers stored in Simplesat, newest first, with optional filtering by creation or modification date and by survey-email subscription status.
-* **List Questions** `listQuestions`: Lists the questions defined across the account's surveys, with their type, choices and follow-up rules. Filter by survey or by satisfaction metric.
-* **List Surveys** `listSurveys`: Lists the surveys configured in the Simplesat account, including each survey's token, which is needed to send it by email.
-* **Search Answers** `searchAnswers`: Searches survey answers by date range and by attribute filters such as sentiment, survey or team member. Returns a paginated list of matching answers.
-* **Search Responses** `searchResponses`: Searches complete survey responses by submission, creation or modification date range and by attribute filters such as customer email or team member. Returns a paginated list of matching responses.
-* **Send Survey By Email** `sendSurveyByEmail`: Sends a Simplesat survey to a customer by email. This delivers a real email to the address you supply, so only use it with addresses you control.
-* **Update Answer** `updateAnswerById`: Updates an existing survey answer by its numeric Simplesat id, for example to correct the selected rating or the comment left by the customer.
-* **Update Customer** `updateCustomerById`: Updates a Simplesat customer by its numeric Simplesat id. Only the fields you supply are changed; the email address cannot be changed here.
-* **Update Response** `updateResponseById`: Replaces an existing survey response by its numeric Simplesat id, including its answers, customer, ticket and team members.
-
-</details>
+| List Answers | `listAnswers` | Lists every survey answer in the account, newest first. This is Simplesat's simple paginated answers list; use Search Answers when you need date ranges or filters. |
+| List Customers | `listCustomers` | Lists the customers stored in Simplesat, newest first, with optional filtering by creation or modification date and by survey-email subscription status. |
+| List Questions | `listQuestions` | Lists the questions defined across the account's surveys, with their type, choices and follow-up rules. Filter by survey or by satisfaction metric. |
+| List Surveys | `listSurveys` | Lists the surveys configured in the Simplesat account, including each survey's token, which is needed to send it by email. |
+| Search Answers | `searchAnswers` | Searches survey answers by date range and by attribute filters such as sentiment, survey or team member. Returns a paginated list of matching answers. |
+| Search Responses | `searchResponses` | Searches complete survey responses by submission, creation or modification date range and by attribute filters such as customer email or team member. Returns a paginated list of matching responses. |
+| Send Survey By Email | `sendSurveyByEmail` | Sends a Simplesat survey to a customer by email. This delivers a real email to the address you supply, so only use it with addresses you control. |
+| Update Answer | `updateAnswerById` | Updates an existing survey answer by its numeric Simplesat id, for example to correct the selected rating or the comment left by the customer. |
+| Update Customer | `updateCustomerById` | Updates a Simplesat customer by its numeric Simplesat id. Only the fields you supply are changed; the email address cannot be changed here. |
+| Update Response | `updateResponseById` | Replaces an existing survey response by its numeric Simplesat id, including its answers, customer, ticket and team members. |

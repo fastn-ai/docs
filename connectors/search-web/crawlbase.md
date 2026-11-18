@@ -34,28 +34,21 @@ Add Crawlbase from **Build → Integrations → Connectors** and connect an acco
 | Delete Crawler Job | `deleteCrawlerJob` | Drops a single queued URL from a crawler by its request id (rid). |
 | Delete Stored Page | `deleteStoredPage` | Deletes a single stored page from Cloud Storage by request id. Returns a success message, or an error of 'Not Found' when the RID is not in storage. |
 | Find Crawler Job By RID | `findCrawlerJobByRid` | Looks up where a pushed request stands in a crawler: QUEUED with its queued metadata while pending, or NOT_QUEUED once it has been crawled or was never enqueued. |
-
-<details>
-
-<summary>See 15 more actions</summary>
-
-* **Get Account Usage** `getAccountUsage`: Returns the current month's usage statistics for one Crawlbase product: successful and failed requests, amount due, remaining credits (subscription products) and per-domain success rates, optionally with the previous month for comparison. Rate-limited to one request per five minutes; cache the result.
-* **Get Crawler** `getCrawler`: Returns a crawler's configuration, status (active or paused) and queue statistics.
-* **Get Crawler Stats** `getCrawlerStats`: Returns a summary across all your crawlers: concurrency, queue depth, completed and failed counts and a history breakdown, optionally limited to a date range.
-* **Get Domain Leads (Legacy)** `getDomainLeadsLegacy`: Legacy Leads API: returns publicly visible email addresses associated with a bare domain, with source URLs. Billed at 1 credit per 10 emails. Closed to accounts created after 1 October 2024, which receive a 403; the email-extractor scraper on Crawl URL is the modern alternative.
-* **Get Storage Total Count** `getStorageTotalCount`: Returns how many pages are currently held in your Cloud Storage area.
-* **Get Stored Page** `getStoredPage`: Retrieves a page persisted in Cloud Storage by its request id (rid) or by its original URL (most recent version), as raw HTML or as a JSON envelope with metadata. Retrieval is free; stored pages are kept for 14 days by default.
-* **Get User Agents** `getUserAgents`: Returns random User-Agent strings optimised for web crawling, optionally filtered by device class. Free on every plan; rate-limited to 1 request per second.
-* **List Stored RIDs** `listStoredRids`: Lists the request ids currently in your Cloud Storage area, newest first by default, with optional scroll-based pagination: pass scroll=true on the first call and replay the returned scroll_id on follow-ups (scroll sessions expire after about 15 seconds of inactivity).
-* **Pause Crawler** `pauseCrawler`: Stops a crawler from picking up new work while keeping its queue; pushed URLs continue to enqueue until the crawler is unpaused.
-* **Purge Crawler Queue** `purgeCrawlerQueue`: Empties a crawler's queue immediately, dropping every still-pending URL, while keeping the crawler itself. There is no undo.
-* **Push URL To Crawler** `pushUrlToCrawler`: Enqueues a URL into a named Enterprise Crawler queue and returns its request id (rid) immediately. The crawl runs in the background and the result is delivered to the crawler's callback URL or persisted to Cloud Storage, depending on how the crawler was created. Accepts the same rendering, geo and scraper options as Crawl URL.
-* **Scrape URL (Legacy)** `scrapeUrlLegacy`: Legacy standalone Scraper API: applies a named built-in scraper (e.g. amazon-product-details, google-serp, linkedin-profile) to a URL and returns parsed JSON. Closed to accounts created after 1 October 2024, which receive a 403; new integrations should use Crawl URL with the scraper parameter.
-* **Take Screenshot (Legacy)** `takeScreenshotLegacy`: Legacy standalone Screenshots API: renders a URL in headless Chrome and returns the image bytes (PNG by default) for the viewport or the full page. Requires a JavaScript token and is closed to accounts created after 1 November 2024, which receive a 403; new integrations should use Crawl URL with screenshot=true.
-* **Unpause Crawler** `unpauseCrawler`: Resumes a paused crawler so it starts processing its queue again.
-* **Update Crawler** `updateCrawler`: Changes a crawler's callback URL without restarting it.
-
-</details>
+| Get Account Usage | `getAccountUsage` | Returns the current month's usage statistics for one Crawlbase product: successful and failed requests, amount due, remaining credits (subscription products) and per-domain success rates, optionally with the previous month for comparison. Rate-limited to one request per five minutes; cache the result. |
+| Get Crawler | `getCrawler` | Returns a crawler's configuration, status (active or paused) and queue statistics. |
+| Get Crawler Stats | `getCrawlerStats` | Returns a summary across all your crawlers: concurrency, queue depth, completed and failed counts and a history breakdown, optionally limited to a date range. |
+| Get Domain Leads (Legacy) | `getDomainLeadsLegacy` | Legacy Leads API: returns publicly visible email addresses associated with a bare domain, with source URLs. Billed at 1 credit per 10 emails. Closed to accounts created after 1 October 2024, which receive a 403; the email-extractor scraper on Crawl URL is the modern alternative. |
+| Get Storage Total Count | `getStorageTotalCount` | Returns how many pages are currently held in your Cloud Storage area. |
+| Get Stored Page | `getStoredPage` | Retrieves a page persisted in Cloud Storage by its request id (rid) or by its original URL (most recent version), as raw HTML or as a JSON envelope with metadata. Retrieval is free; stored pages are kept for 14 days by default. |
+| Get User Agents | `getUserAgents` | Returns random User-Agent strings optimised for web crawling, optionally filtered by device class. Free on every plan; rate-limited to 1 request per second. |
+| List Stored RIDs | `listStoredRids` | Lists the request ids currently in your Cloud Storage area, newest first by default, with optional scroll-based pagination: pass scroll=true on the first call and replay the returned scroll_id on follow-ups (scroll sessions expire after about 15 seconds of inactivity). |
+| Pause Crawler | `pauseCrawler` | Stops a crawler from picking up new work while keeping its queue; pushed URLs continue to enqueue until the crawler is unpaused. |
+| Purge Crawler Queue | `purgeCrawlerQueue` | Empties a crawler's queue immediately, dropping every still-pending URL, while keeping the crawler itself. There is no undo. |
+| Push URL To Crawler | `pushUrlToCrawler` | Enqueues a URL into a named Enterprise Crawler queue and returns its request id (rid) immediately. The crawl runs in the background and the result is delivered to the crawler's callback URL or persisted to Cloud Storage, depending on how the crawler was created. Accepts the same rendering, geo and scraper options as Crawl URL. |
+| Scrape URL (Legacy) | `scrapeUrlLegacy` | Legacy standalone Scraper API: applies a named built-in scraper (e.g. amazon-product-details, google-serp, linkedin-profile) to a URL and returns parsed JSON. Closed to accounts created after 1 October 2024, which receive a 403; new integrations should use Crawl URL with the scraper parameter. |
+| Take Screenshot (Legacy) | `takeScreenshotLegacy` | Legacy standalone Screenshots API: renders a URL in headless Chrome and returns the image bytes (PNG by default) for the viewport or the full page. Requires a JavaScript token and is closed to accounts created after 1 November 2024, which receive a 403; new integrations should use Crawl URL with screenshot=true. |
+| Unpause Crawler | `unpauseCrawler` | Resumes a paused crawler so it starts processing its queue again. |
+| Update Crawler | `updateCrawler` | Changes a crawler's callback URL without restarting it. |
 
 ## Events
 

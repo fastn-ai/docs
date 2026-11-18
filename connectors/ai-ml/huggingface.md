@@ -34,14 +34,7 @@ Add Hugging Face from **Build → Integrations → Connectors** and connect an a
 | List Datasets | `listDatasets` | List/search datasets on the Hub. FREE / zero-cost. Supports search, author, filter, sort, direction, limit, full. |
 | List Model Commits | `listModelCommits` | List commits on a given revision (branch, tag or commit) of a model repo, identified by owner namespace and repository name. |
 | List Model Refs | `listModelRefs` | List git refs (branches, tags, converts and, with includePrs, pull-request refs) for a model repo, identified by owner namespace and repository name. |
-
-<details>
-
-<summary>See 4 more actions</summary>
-
-* **List Models** `listModels`: List/search models on the Hub. FREE / zero-cost. Supports search, author, filter (tags), sort, direction, limit, full, config.
-* **List Router Models** `listRouterModels`: List models available through the Inference Providers router (OpenAI /v1/models style), including per-provider pricing/context.
-* **List Spaces** `listSpaces`: List/search Spaces on the Hub. FREE / zero-cost. Supports search, author, filter, sort, direction, limit, full.
-* **Who Am I** `whoami`: Return the authenticated user/org info for the hf_ token. FREE / zero-cost — ideal for validating a connection.
-
-</details>
+| List Models | `listModels` | List/search models on the Hub. FREE / zero-cost. Supports search, author, filter (tags), sort, direction, limit, full, config. |
+| List Router Models | `listRouterModels` | List models available through the Inference Providers router (OpenAI /v1/models style), including per-provider pricing/context. |
+| List Spaces | `listSpaces` | List/search Spaces on the Hub. FREE / zero-cost. Supports search, author, filter, sort, direction, limit, full. |
+| Who Am I | `whoami` | Return the authenticated user/org info for the hf_ token. FREE / zero-cost — ideal for validating a connection. |

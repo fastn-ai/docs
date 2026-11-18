@@ -34,18 +34,11 @@ Add Crossref from **Build → Integrations → Connectors** and connect an accou
 | List Funder Works | `listFunderWorks` | Searches and filters the works funded by a funder. Docs: https://api.crossref.org/swagger-ui/index.html |
 | List Funders | `listFunders` | Searches the Open Funder Registry; filter by location. Docs: https://api.crossref.org/swagger-ui/index.html |
 | List Journal Works | `listJournalWorks` | Searches and filters the works published in a journal. Docs: https://api.crossref.org/swagger-ui/index.html |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List Journals** `listJournals`: Searches journals by title. Docs: https://api.crossref.org/swagger-ui/index.html
-* **List Licenses** `listLicenses`: Returns the license URLs used by works, with work counts. Docs: https://api.crossref.org/swagger-ui/index.html
-* **List Member Works** `listMemberWorks`: Searches and filters the works deposited by a member. Docs: https://api.crossref.org/swagger-ui/index.html
-* **List Members** `listMembers`: Searches Crossref members (organisations that register content, mostly publishers). Docs: https://api.crossref.org/swagger-ui/index.html
-* **List Prefix Works** `listPrefixWorks`: Searches and filters the works registered under a DOI prefix. Docs: https://api.crossref.org/swagger-ui/index.html
-* **List Work Types** `listTypes`: Returns the valid work types (journal-article, book-chapter, posted-content, dataset...). Docs: https://api.crossref.org/swagger-ui/index.html
-* **List Works by Type** `listTypeWorks`: Searches and filters the works of one type. Docs: https://api.crossref.org/swagger-ui/index.html
-* **Search Works** `listWorks`: Searches and filters all registered works (journal articles, books, chapters, conference papers, datasets, preprints...), with field queries, filters, sorting, facets and paging. Docs: https://api.crossref.org/swagger-ui/index.html
-
-</details>
+| List Journals | `listJournals` | Searches journals by title. Docs: https://api.crossref.org/swagger-ui/index.html |
+| List Licenses | `listLicenses` | Returns the license URLs used by works, with work counts. Docs: https://api.crossref.org/swagger-ui/index.html |
+| List Member Works | `listMemberWorks` | Searches and filters the works deposited by a member. Docs: https://api.crossref.org/swagger-ui/index.html |
+| List Members | `listMembers` | Searches Crossref members (organisations that register content, mostly publishers). Docs: https://api.crossref.org/swagger-ui/index.html |
+| List Prefix Works | `listPrefixWorks` | Searches and filters the works registered under a DOI prefix. Docs: https://api.crossref.org/swagger-ui/index.html |
+| List Work Types | `listTypes` | Returns the valid work types (journal-article, book-chapter, posted-content, dataset...). Docs: https://api.crossref.org/swagger-ui/index.html |
+| List Works by Type | `listTypeWorks` | Searches and filters the works of one type. Docs: https://api.crossref.org/swagger-ui/index.html |
+| Search Works | `listWorks` | Searches and filters all registered works (journal articles, books, chapters, conference papers, datasets, preprints...), with field queries, filters, sorting, facets and paging. Docs: https://api.crossref.org/swagger-ui/index.html |

@@ -34,30 +34,23 @@ Add Shipday from **Build → Integrations → Connectors** and connect an accoun
 | Insert Order | `insertOrder` | Create a new delivery order in Shipday. Requires orderNumber, customer name/address/phone and restaurant (pickup) name/address. Returns success, a message and the new numeric orderId. |
 | Insert Pickup Order | `insertPickupOrder` | Create a takeout / pickup order (customer collects in person, no driver). Requires orderNumber plus restaurant {name,address,phone} and customer {name,phone,email}. |
 | On-Demand Assign | `onDemandAssign` | Dispatch an existing order to a named third-party delivery provider, usually after an estimate. WARNING: this books a real paid courier. Requires the 3rd-party delivery add-on. |
-
-<details>
-
-<summary>See 17 more actions</summary>
-
-* **On-Demand Availability** `onDemandAvailability`: Check which third-party on-demand delivery providers can serve a pickup/delivery address pair, with quotes. Requires the 3rd-party delivery add-on.
-* **On-Demand Cancel** `onDemandCancel`: Cancel a third-party on-demand delivery previously assigned to an order. Requires the 3rd-party delivery add-on.
-* **On-Demand Details** `onDemandDetails`: Get the third-party on-demand delivery details (provider, courier, fee, tracking) for an order. Requires the 3rd-party delivery add-on.
-* **On-Demand Estimate** `onDemandEstimate`: Get third-party on-demand delivery quotes (fee and ETA per provider) for an existing Shipday order. Requires the 3rd-party delivery add-on.
-* **On-Demand Services** `onDemandServices`: List the third-party on-demand delivery services (DoorDash Drive, Uber Direct, Roadie, ...) enabled for this Shipday account. Requires the 3rd-party delivery add-on.
-* **Order Delivery Progress** `orderDeliveryProgress`: Public real-time delivery progress and ETA for an order, keyed by its trackingId (the token in the order's trackingLink). Requires the BUSINESS ADVANCED plan; rate limited to 3 requests/minute per trackingId.
-* **Order Ready to Pickup** `orderReadyToPickup`: Flag an order as ready (or not ready) to be picked up, by numeric orderId. Sets the readyToPickup meta flag.
-* **Order Status Update** `orderStatusUpdate`: Update the delivery state of an order by numeric orderId. status is one of ACTIVE, NOT_ACCEPTED, NOT_STARTED_YET, STARTED, PICKED_UP, ALREADY_DELIVERED, FAILED_DELIVERY, INCOMPLETE.
-* **Orders Query** `ordersQuery`: Search delivery orders by time window, status and cursor. startTime/endTime must be local ISO date-time without a zone, e.g. 2026-09-01T00:00:00. Returns an array of order objects.
-* **Partner Orders Query** `partnerOrdersQuery`: Partner API: search orders across a member company by time window, status, carrier or pickup location. Requires the Shipday Partner API Key auth method (PARTNER-API-KEY header).
-* **Retrieve Active Orders** `retrieveActiveOrders`: List all currently active (not yet completed) delivery orders in the Shipday account. Returns an array of delivery order objects.
-* **Retrieve Carriers** `retrieveCarriers`: List all carriers (drivers) in the Shipday account, with their id, name, email, phone and current status.
-* **Retrieve Member Completed Orders (Partner)** `retrieveMemberOrders`: Partner API: list completed orders for one member company. Requires the Shipday Partner API Key auth method (PARTNER-API-KEY header).
-* **Retrieve Members (Partner)** `retrieveMembers`: Partner API: list the member companies linked to a Shipday platform partner. Requires the Shipday Partner API Key auth method (PARTNER-API-KEY header), not an ordinary company API key.
-* **Retrieve Order Details** `retrieveOrderDetails`: Get the full details of a delivery order by its order number. Returns an array containing the matching delivery order object(s).
-* **Retrieve Pickup Order Details** `retrievePickupOrderDetails`: Get a takeout / pickup order by its numeric orderId.
-* **Unassign Order from Driver** `unassignOrderFromDriver`: Remove the currently assigned carrier (driver) from a delivery order, by numeric orderId.
-
-</details>
+| On-Demand Availability | `onDemandAvailability` | Check which third-party on-demand delivery providers can serve a pickup/delivery address pair, with quotes. Requires the 3rd-party delivery add-on. |
+| On-Demand Cancel | `onDemandCancel` | Cancel a third-party on-demand delivery previously assigned to an order. Requires the 3rd-party delivery add-on. |
+| On-Demand Details | `onDemandDetails` | Get the third-party on-demand delivery details (provider, courier, fee, tracking) for an order. Requires the 3rd-party delivery add-on. |
+| On-Demand Estimate | `onDemandEstimate` | Get third-party on-demand delivery quotes (fee and ETA per provider) for an existing Shipday order. Requires the 3rd-party delivery add-on. |
+| On-Demand Services | `onDemandServices` | List the third-party on-demand delivery services (DoorDash Drive, Uber Direct, Roadie, ...) enabled for this Shipday account. Requires the 3rd-party delivery add-on. |
+| Order Delivery Progress | `orderDeliveryProgress` | Public real-time delivery progress and ETA for an order, keyed by its trackingId (the token in the order's trackingLink). Requires the BUSINESS ADVANCED plan; rate limited to 3 requests/minute per trackingId. |
+| Order Ready to Pickup | `orderReadyToPickup` | Flag an order as ready (or not ready) to be picked up, by numeric orderId. Sets the readyToPickup meta flag. |
+| Order Status Update | `orderStatusUpdate` | Update the delivery state of an order by numeric orderId. status is one of ACTIVE, NOT_ACCEPTED, NOT_STARTED_YET, STARTED, PICKED_UP, ALREADY_DELIVERED, FAILED_DELIVERY, INCOMPLETE. |
+| Orders Query | `ordersQuery` | Search delivery orders by time window, status and cursor. startTime/endTime must be local ISO date-time without a zone, e.g. 2026-09-01T00:00:00. Returns an array of order objects. |
+| Partner Orders Query | `partnerOrdersQuery` | Partner API: search orders across a member company by time window, status, carrier or pickup location. Requires the Shipday Partner API Key auth method (PARTNER-API-KEY header). |
+| Retrieve Active Orders | `retrieveActiveOrders` | List all currently active (not yet completed) delivery orders in the Shipday account. Returns an array of delivery order objects. |
+| Retrieve Carriers | `retrieveCarriers` | List all carriers (drivers) in the Shipday account, with their id, name, email, phone and current status. |
+| Retrieve Member Completed Orders (Partner) | `retrieveMemberOrders` | Partner API: list completed orders for one member company. Requires the Shipday Partner API Key auth method (PARTNER-API-KEY header). |
+| Retrieve Members (Partner) | `retrieveMembers` | Partner API: list the member companies linked to a Shipday platform partner. Requires the Shipday Partner API Key auth method (PARTNER-API-KEY header), not an ordinary company API key. |
+| Retrieve Order Details | `retrieveOrderDetails` | Get the full details of a delivery order by its order number. Returns an array containing the matching delivery order object(s). |
+| Retrieve Pickup Order Details | `retrievePickupOrderDetails` | Get a takeout / pickup order by its numeric orderId. |
+| Unassign Order from Driver | `unassignOrderFromDriver` | Remove the currently assigned carrier (driver) from a delivery order, by numeric orderId. |
 
 ## Events
 
@@ -75,14 +68,7 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 | Order Inserted | `ORDER_INSERTED` | A new delivery order was created. SETUP (manual, one-time): Shipday has no public webhook-registration API — sign in at https://dispatch.shipday.com/dashboard#accountInfo (Account Info), re-enter your account password to unlock the API section, paste the fastn webhook URL into the Webhook / callback URL field and save. All order events are then delivered to that single URL. |
 | Order On The Way | `ORDER_ONTHEWAY` | The driver is en route to the customer. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
 | Order On The Way Removed | `ORDER_ONTHEWAY_REMOVED` | The on-the-way state was reverted. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
-
-<details>
-
-<summary>See 4 more events</summary>
-
-* **Order Picked Up** `ORDER_PIKEDUP`: The driver picked the order up (Shipday spells the event ORDER_PIKEDUP). Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section).
-* **Order Picked Up Removed** `ORDER_PIKEDUP_REMOVED`: The picked-up state was reverted. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section).
-* **Order Unassigned** `ORDER_UNASSIGNED`: The carrier was removed from the order. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section).
-* **Proof of Delivery Uploaded** `ORDER_POD_UPLOAD`: A proof-of-delivery photo or signature was uploaded; see order.podUrls. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section).
-
-</details>
+| Order Picked Up | `ORDER_PIKEDUP` | The driver picked the order up (Shipday spells the event ORDER_PIKEDUP). Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
+| Order Picked Up Removed | `ORDER_PIKEDUP_REMOVED` | The picked-up state was reverted. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
+| Order Unassigned | `ORDER_UNASSIGNED` | The carrier was removed from the order. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |
+| Proof of Delivery Uploaded | `ORDER_POD_UPLOAD` | A proof-of-delivery photo or signature was uploaded; see order.podUrls. Manual one-time setup: register the fastn webhook URL at https://dispatch.shipday.com/dashboard#accountInfo (Account Info, password-unlocked API section). |

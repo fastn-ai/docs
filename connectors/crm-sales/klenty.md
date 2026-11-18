@@ -34,30 +34,23 @@ Add Klenty from **Build → Integrations → Connectors** and connect an account
 | Get All Webhooks | `getAllWebhooks` | Get all webhook subscriptions configured for the user. |
 | Get Call Completion Report | `getCallCompletion` | Retrieve call completion records for the account over a date range. Klenty rejects any range wider than the last 30 days with error K2002, and answers HTTP 200 with status false and error K2003 when no call records match. |
 | Get Company Cadences | `getCompanyCadences` | Get all company/team cadences (sequences). Uses the Company API Key. |
-
-<details>
-
-<summary>See 20 more actions</summary>
-
-* **Get Email Engagements Report** `getEmailEngagements`: Get aggregate email engagement metrics for a cadence within a date range.
-* **Get Lists** `getLists`: Get all prospect lists in the Klenty account.
-* **Get Prospect** `getProspect`: Get full details of a single prospect by email address. Pass customFields=true to include custom field values.
-* **Get Prospect Status By Email** `getProspectStatusByEmail`: Get the cadence status and prospect status for a prospect by email.
-* **Get Prospect Status By Id** `getProspectStatusById`: Get the cadence status and prospect status for a prospect by Klenty prospect id.
-* **Get Step Wise Engagements Report** `getStepWiseEngagements`: Get per-step engagement metrics for a cadence within a date range.
-* **Get User Cadences** `getUserCadences`: Get the cadences owned by a specific user, filtered by owner email (username query param).
-* **List Prospects By Created Date** `listProspectsByCreatedDate`: Get prospects created within a date range. Dates MUST be yyyy/mm/dd (slash-separated); yyyy-mm-dd is rejected by Klenty with K06101027 'Invalid startDate in payload'.
-* **List Prospects By List** `listProspectsByList`: Get prospects belonging to a specific Klenty list, with pagination.
-* **List Prospects By Updated Date** `listProspectsByUpdatedDate`: Get prospects last updated within a date range. Dates MUST be yyyy/mm/dd (slash-separated); yyyy-mm-dd is rejected by Klenty with K06101027 'Invalid startDate in payload'.
-* **Mark Do Not Contact** `markDoNotContact`: Change a prospect's status to Do Not Contact.
-* **Remove Tags From Prospect** `removeTagsFromProspect`: Remove one or more tags from a prospect by email.
-* **Resume Cadence** `resumeCadence`: Resume a paused cadence for a prospect by email. ACCOUNT PREREQUISITE: the Klenty user must have a connected sending email account, otherwise Klenty returns HTTP 200 with an error body - K06102045 'You dont have a connected email account to add to cadence' - and nothing is resumed. Always inspect response.errors; a 200 does not mean the cadence resumed. Endpoint matches Klenty's documented POST /apis/v1/user/{email}/cadences/resume.
-* **Revert Do Not Contact** `revertDoNotContact`: Revert a prospect's status from Do Not Contact.
-* **Start Cadence** `startCadence`: Add a prospect to a cadence (start the cadence) by email and cadence name.
-* **Stop Cadence** `stopCadence`: Stop a cadence for a prospect by email and cadence name.
-* **Stop Mails** `stopMails`: Stop all scheduled mails for a prospect by email.
-* **Unsubscribe Prospect** `unsubscribeProspect`: Unsubscribe a prospect by email.
-* **Update Prospect** `updateProspect`: Update an existing prospect by email. Only prospectEmail is required; include any fields to change. Fields not sent are left unchanged.
-* **Update Webhook** `updateWebhook`: Update an existing webhook subscription.
-
-</details>
+| Get Email Engagements Report | `getEmailEngagements` | Get aggregate email engagement metrics for a cadence within a date range. |
+| Get Lists | `getLists` | Get all prospect lists in the Klenty account. |
+| Get Prospect | `getProspect` | Get full details of a single prospect by email address. Pass customFields=true to include custom field values. |
+| Get Prospect Status By Email | `getProspectStatusByEmail` | Get the cadence status and prospect status for a prospect by email. |
+| Get Prospect Status By Id | `getProspectStatusById` | Get the cadence status and prospect status for a prospect by Klenty prospect id. |
+| Get Step Wise Engagements Report | `getStepWiseEngagements` | Get per-step engagement metrics for a cadence within a date range. |
+| Get User Cadences | `getUserCadences` | Get the cadences owned by a specific user, filtered by owner email (username query param). |
+| List Prospects By Created Date | `listProspectsByCreatedDate` | Get prospects created within a date range. Dates MUST be yyyy/mm/dd (slash-separated); yyyy-mm-dd is rejected by Klenty with K06101027 'Invalid startDate in payload'. |
+| List Prospects By List | `listProspectsByList` | Get prospects belonging to a specific Klenty list, with pagination. |
+| List Prospects By Updated Date | `listProspectsByUpdatedDate` | Get prospects last updated within a date range. Dates MUST be yyyy/mm/dd (slash-separated); yyyy-mm-dd is rejected by Klenty with K06101027 'Invalid startDate in payload'. |
+| Mark Do Not Contact | `markDoNotContact` | Change a prospect's status to Do Not Contact. |
+| Remove Tags From Prospect | `removeTagsFromProspect` | Remove one or more tags from a prospect by email. |
+| Resume Cadence | `resumeCadence` | Resume a paused cadence for a prospect by email. ACCOUNT PREREQUISITE: the Klenty user must have a connected sending email account, otherwise Klenty returns HTTP 200 with an error body - K06102045 'You dont have a connected email account to add to cadence' - and nothing is resumed. Always inspect response.errors; a 200 does not mean the cadence resumed. Endpoint matches Klenty's documented POST /apis/v1/user/{email}/cadences/resume. |
+| Revert Do Not Contact | `revertDoNotContact` | Revert a prospect's status from Do Not Contact. |
+| Start Cadence | `startCadence` | Add a prospect to a cadence (start the cadence) by email and cadence name. |
+| Stop Cadence | `stopCadence` | Stop a cadence for a prospect by email and cadence name. |
+| Stop Mails | `stopMails` | Stop all scheduled mails for a prospect by email. |
+| Unsubscribe Prospect | `unsubscribeProspect` | Unsubscribe a prospect by email. |
+| Update Prospect | `updateProspect` | Update an existing prospect by email. Only prospectEmail is required; include any fields to change. Fields not sent are left unchanged. |
+| Update Webhook | `updateWebhook` | Update an existing webhook subscription. |

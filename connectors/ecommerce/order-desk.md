@@ -34,26 +34,19 @@ Add Order Desk from **Build → Integrations → Connectors** and connect an acc
 | Delete Inventory Item | `deleteInventoryItem` | Delete an inventory item by id. |
 | Delete Order | `deleteOrder` | Delete an order by id. |
 | Delete Order Item | `deleteOrderItem` | Delete an order item (DELETE /orders/{orderId}/order-items/{itemId}). |
-
-<details>
-
-<summary>See 16 more actions</summary>
-
-* **Delete Shipment** `deleteShipment`: Delete a shipment (DELETE /orders/{orderId}/shipments/{shipmentId}).
-* **Get Inventory Item** `getInventoryItem`: Get an inventory item by id.
-* **Get Order** `getOrder`: Get an order by id.
-* **Get Order Item** `getOrderItem`: Get a single order item (GET /orders/{orderId}/order-items/{itemId}).
-* **Get Shipment** `getShipment`: Get a single shipment (GET /orders/{orderId}/shipments/{shipmentId}).
-* **Get Store** `getStore`: Get store metadata, settings, and folder id-&gt;name map.
-* **List Inventory Items** `listInventoryItems`: List inventory items.
-* **List Order Items** `listOrderItems`: List all items on an order (GET /orders/{orderId}/order-items).
-* **List Orders** `listOrders`: List orders with optional filters.
-* **List Shipments** `listShipments`: List shipments for an order.
-* **Move Orders** `moveOrders`: Move one or more orders to a folder (by name or id).
-* **Test Connection** `testConnection`: Validate the store credentials.
-* **Update Inventory Item** `updateInventoryItem`: Update an inventory item. Send all fields to retain (omitted fields are blanked).
-* **Update Order** `updateOrder`: Update an order by id (partial).
-* **Update Order Item** `updateOrderItem`: Update an order item (PUT /orders/{orderId}/order-items/{itemId}).
-* **Update Shipment** `updateShipment`: Update a shipment (PUT /orders/{orderId}/shipments/{shipmentId}).
-
-</details>
+| Delete Shipment | `deleteShipment` | Delete a shipment (DELETE /orders/{orderId}/shipments/{shipmentId}). |
+| Get Inventory Item | `getInventoryItem` | Get an inventory item by id. |
+| Get Order | `getOrder` | Get an order by id. |
+| Get Order Item | `getOrderItem` | Get a single order item (GET /orders/{orderId}/order-items/{itemId}). |
+| Get Shipment | `getShipment` | Get a single shipment (GET /orders/{orderId}/shipments/{shipmentId}). |
+| Get Store | `getStore` | Get store metadata, settings, and folder id-&gt;name map. |
+| List Inventory Items | `listInventoryItems` | List inventory items. |
+| List Order Items | `listOrderItems` | List all items on an order (GET /orders/{orderId}/order-items). |
+| List Orders | `listOrders` | List orders with optional filters. |
+| List Shipments | `listShipments` | List shipments for an order. |
+| Move Orders | `moveOrders` | Move one or more orders to a folder (by name or id). |
+| Test Connection | `testConnection` | Validate the store credentials. |
+| Update Inventory Item | `updateInventoryItem` | Update an inventory item. Send all fields to retain (omitted fields are blanked). |
+| Update Order | `updateOrder` | Update an order by id (partial). |
+| Update Order Item | `updateOrderItem` | Update an order item (PUT /orders/{orderId}/order-items/{itemId}). |
+| Update Shipment | `updateShipment` | Update a shipment (PUT /orders/{orderId}/shipments/{shipmentId}). |

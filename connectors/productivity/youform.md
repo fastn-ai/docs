@@ -34,14 +34,7 @@ Add Youform from **Build → Integrations → Connectors** and connect an accoun
 | List Forms | `listForms` | Returns every form belonging to the authenticated Youform account, as a paginated list of 100 forms per page. Each form carries its slug, name, field blocks, design settings and integration configuration. Use the slug with Get Form and List Form Submissions. |
 | List Template Categories | `listTemplateCategories` | Returns the list of category names used to group the Youform form template gallery, such as Application, Booking, Business and Lead generation. Use them to filter the result of List Form Templates client-side. |
 | List Themes | `listThemes` | Returns the built-in Youform form themes, each with its name and the background, text, button and button text colours it applies to a form. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Set Submission Refill Link** `setSubmissionRefillLink`: Enables or disables the refill link for a submission, which lets the respondent reopen and edit their answers. This feature requires a Youform Pro plan; on lower plans Youform returns 403 'Only PRO users can use this feature.'
-
-</details>
+| Set Submission Refill Link | `setSubmissionRefillLink` | Enables or disables the refill link for a submission, which lets the respondent reopen and edit their answers. This feature requires a Youform Pro plan; on lower plans Youform returns 403 'Only PRO users can use this feature.' |
 
 ## Events
 

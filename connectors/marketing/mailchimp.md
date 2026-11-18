@@ -34,37 +34,30 @@ Add Mailchimp from **Build → Integrations → Connectors** and connect an acco
 | Create Segment | `createSegment` | Create a segment or static tag (POST /lists/{list_id}/segments). |
 | Delete Audience | `deleteAudience` | Delete an audience (DELETE /lists/{list_id}). Returns 204. |
 | Delete Audience Webhook | `deleteListWebhook` | Delete an audience webhook (DELETE /lists/{list_id}/webhooks/{webhook_id}). Returns 204. |
-
-<details>
-
-<summary>See 24 more actions</summary>
-
-* **Delete Campaign** `deleteCampaign`: Delete a campaign (DELETE /campaigns/{campaign_id}). Returns 204.
-* **Delete Member Permanently** `deleteMemberPermanently`: Permanently delete all personally identifiable information for an audience member and remove them from the audience. The member cannot be re-imported afterwards (POST /lists/{list_id}/members/{subscriber_hash}/actions/delete-permanent). Returns 204 on success.
-* **Delete Merge Field** `deleteMergeField`: Delete a merge field from an audience (DELETE /lists/{list_id}/merge-fields/{merge_id}). Returns 204.
-* **Delete Segment** `deleteSegment`: Delete a segment or static tag from an audience (DELETE /lists/{list_id}/segments/{segment_id}). Returns 204.
-* **Get Audience** `getAudience`: Get an audience by id (GET /lists/{list_id}).
-* **Get Campaign** `getCampaign`: Get a campaign (GET /campaigns/{campaign_id}).
-* **Get Member** `getMember`: Get a member by subscriber hash or email (GET /lists/{list_id}/members/{subscriber_hash}).
-* **Get Report** `getReport`: Get a campaign report (GET /reports/{campaign_id}).
-* **List Audience Webhooks** `listListWebhooks`: List webhooks for an audience (GET /lists/{list_id}/webhooks).
-* **List Audiences** `listAudiences`: List audiences (lists) (GET /lists).
-* **List Campaigns** `listCampaigns`: List campaigns (GET /campaigns).
-* **List Members** `listMembers`: List members of an audience (GET /lists/{list_id}/members).
-* **List Merge Fields** `listMergeFields`: List merge fields for an audience (GET /lists/{list_id}/merge-fields).
-* **List Reports** `listReports`: List campaign reports (GET /reports).
-* **List Segments** `listSegments`: List segments/tags for an audience (GET /lists/{list_id}/segments).
-* **List Templates** `listTemplates`: List templates (GET /templates).
-* **Ping** `ping`: Health check / verify credentials (GET /ping).
-* **Schedule Campaign** `scheduleCampaign`: Schedule a campaign (POST /campaigns/{campaign_id}/actions/schedule). Returns 204.
-* **Send Campaign** `sendCampaign`: Send a campaign immediately (POST /campaigns/{campaign_id}/actions/send). Returns 204.
-* **Send Test Email** `sendTestEmail`: Send a test email for a campaign (POST /campaigns/{campaign_id}/actions/test). Returns 204.
-* **Set Campaign Content** `setCampaignContent`: Set a campaign's HTML or template content (PUT /campaigns/{campaign_id}/content).
-* **Update Audience** `updateAudience`: Update an audience (PATCH /lists/{list_id}).
-* **Update Member** `updateMember`: Update an existing member (PATCH /lists/{list_id}/members/{subscriber_hash}).
-* **Upsert Member** `upsertMember`: Add or update a member (PUT /lists/{list_id}/members/{subscriber_hash}).
-
-</details>
+| Delete Campaign | `deleteCampaign` | Delete a campaign (DELETE /campaigns/{campaign_id}). Returns 204. |
+| Delete Member Permanently | `deleteMemberPermanently` | Permanently delete all personally identifiable information for an audience member and remove them from the audience. The member cannot be re-imported afterwards (POST /lists/{list_id}/members/{subscriber_hash}/actions/delete-permanent). Returns 204 on success. |
+| Delete Merge Field | `deleteMergeField` | Delete a merge field from an audience (DELETE /lists/{list_id}/merge-fields/{merge_id}). Returns 204. |
+| Delete Segment | `deleteSegment` | Delete a segment or static tag from an audience (DELETE /lists/{list_id}/segments/{segment_id}). Returns 204. |
+| Get Audience | `getAudience` | Get an audience by id (GET /lists/{list_id}). |
+| Get Campaign | `getCampaign` | Get a campaign (GET /campaigns/{campaign_id}). |
+| Get Member | `getMember` | Get a member by subscriber hash or email (GET /lists/{list_id}/members/{subscriber_hash}). |
+| Get Report | `getReport` | Get a campaign report (GET /reports/{campaign_id}). |
+| List Audience Webhooks | `listListWebhooks` | List webhooks for an audience (GET /lists/{list_id}/webhooks). |
+| List Audiences | `listAudiences` | List audiences (lists) (GET /lists). |
+| List Campaigns | `listCampaigns` | List campaigns (GET /campaigns). |
+| List Members | `listMembers` | List members of an audience (GET /lists/{list_id}/members). |
+| List Merge Fields | `listMergeFields` | List merge fields for an audience (GET /lists/{list_id}/merge-fields). |
+| List Reports | `listReports` | List campaign reports (GET /reports). |
+| List Segments | `listSegments` | List segments/tags for an audience (GET /lists/{list_id}/segments). |
+| List Templates | `listTemplates` | List templates (GET /templates). |
+| Ping | `ping` | Health check / verify credentials (GET /ping). |
+| Schedule Campaign | `scheduleCampaign` | Schedule a campaign (POST /campaigns/{campaign_id}/actions/schedule). Returns 204. |
+| Send Campaign | `sendCampaign` | Send a campaign immediately (POST /campaigns/{campaign_id}/actions/send). Returns 204. |
+| Send Test Email | `sendTestEmail` | Send a test email for a campaign (POST /campaigns/{campaign_id}/actions/test). Returns 204. |
+| Set Campaign Content | `setCampaignContent` | Set a campaign's HTML or template content (PUT /campaigns/{campaign_id}/content). |
+| Update Audience | `updateAudience` | Update an audience (PATCH /lists/{list_id}). |
+| Update Member | `updateMember` | Update an existing member (PATCH /lists/{list_id}/members/{subscriber_hash}). |
+| Upsert Member | `upsertMember` | Add or update a member (PUT /lists/{list_id}/members/{subscriber_hash}). |
 
 ## Events
 

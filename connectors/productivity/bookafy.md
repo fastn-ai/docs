@@ -34,25 +34,18 @@ Add Bookafy from **Build → Integrations → Connectors** and connect an accoun
 | Get Account Email | `getAccountEmail` | Retrieve the email address of the Bookafy admin account that owns the API key. Useful as a connection health check and to obtain the staff email required by List Appointments. |
 | Get API Key | `getApiKey` | Exchange a Bookafy admin email and password for that account's API key. Bookafy issues a long-lived key that does not expire, so this is normally only needed once when setting up an integration; the same key is also shown in Bookafy under Settings &gt; Integrations &gt; API. |
 | Get Available Time Slots | `getAvailableTimeSlots` | Fetch the bookable start times for a staff member and service on a given date, expressed in the requested time zone. Use a returned slot as the appointment_start_time for Create Appointment. This endpoint is served only from your own booking-page host, which is why the connection asks for that URL. |
-
-<details>
-
-<summary>See 12 more actions</summary>
-
-* **Get Class** `getClass`: Retrieve one class or one-off group event by id, with every session and the attendees booked into each session. The optional filters narrow which sessions are returned. Returns 'Class not found' when the id does not belong to the account.
-* **Get Customer** `getCustomer`: Retrieve a single customer by id, including soft-deleted customers. Pass softDelete 'true' to include customers that have been soft deleted; the soft_delete field on the returned record tells you which state it is in.
-* **List Appointment Types** `listAppointmentTypes`: List the account's appointment-type categories and the services inside each one, together with the public booking-page link for every category and service. Use this to surface bookable links to customers.
-* **List Appointments** `listAppointments`: List the appointments booked with a specific staff member, optionally restricted to a date range. Results are paginated and sorted by creation date descending. The staff member's email is required - an unfiltered call returns no appointments.
-* **List Classes** `listClasses`: List every class and one-off group event configured on the account, with each class's scheduled sessions, seat counts and public booking link. Returns an empty list when the account has no classes.
-* **List Customers** `listCustomers`: List every customer record in the authenticated Bookafy account, including their booking-form answers. Soft-deleted customers are included - check the soft_delete flag on each record to tell them apart.
-* **List Services** `listServices`: List every service (appointment type) offered by the account, with its full configuration: duration, price, buffers, scheduling mode, online-meeting settings and booking-page slug.
-* **List Session Attendees** `listSessionAttendees`: Retrieve the attendees booked into a single class session. The session id comes from List Classes or Get Class - an id that does not exist returns a server error rather than an empty list.
-* **List Staff Members** `listStaffMembers`: List every staff member in the account with their id, name, email and personal booking-page URL. The id is what Create Appointment and Get Available Time Slots expect as user_id.
-* **List Webhook Subscriptions** `listWebhookSubscriptions`: List every webhook subscription registered on the account, with the callback URL and event type each one listens for.
-* **Update Appointment** `updateAppointment`: Reschedule or edit an existing appointment. Bookafy replaces the appointment with the values supplied, so send the full staff member, service and time details even when only one of them changes, and re-send the customer's booking-form details.
-* **Update Customer** `updateCustomer`: Update an existing customer's booking-form details. Bookafy replaces the stored details with the values supplied, so send every field you want to keep.
-
-</details>
+| Get Class | `getClass` | Retrieve one class or one-off group event by id, with every session and the attendees booked into each session. The optional filters narrow which sessions are returned. Returns 'Class not found' when the id does not belong to the account. |
+| Get Customer | `getCustomer` | Retrieve a single customer by id, including soft-deleted customers. Pass softDelete 'true' to include customers that have been soft deleted; the soft_delete field on the returned record tells you which state it is in. |
+| List Appointment Types | `listAppointmentTypes` | List the account's appointment-type categories and the services inside each one, together with the public booking-page link for every category and service. Use this to surface bookable links to customers. |
+| List Appointments | `listAppointments` | List the appointments booked with a specific staff member, optionally restricted to a date range. Results are paginated and sorted by creation date descending. The staff member's email is required - an unfiltered call returns no appointments. |
+| List Classes | `listClasses` | List every class and one-off group event configured on the account, with each class's scheduled sessions, seat counts and public booking link. Returns an empty list when the account has no classes. |
+| List Customers | `listCustomers` | List every customer record in the authenticated Bookafy account, including their booking-form answers. Soft-deleted customers are included - check the soft_delete flag on each record to tell them apart. |
+| List Services | `listServices` | List every service (appointment type) offered by the account, with its full configuration: duration, price, buffers, scheduling mode, online-meeting settings and booking-page slug. |
+| List Session Attendees | `listSessionAttendees` | Retrieve the attendees booked into a single class session. The session id comes from List Classes or Get Class - an id that does not exist returns a server error rather than an empty list. |
+| List Staff Members | `listStaffMembers` | List every staff member in the account with their id, name, email and personal booking-page URL. The id is what Create Appointment and Get Available Time Slots expect as user_id. |
+| List Webhook Subscriptions | `listWebhookSubscriptions` | List every webhook subscription registered on the account, with the callback URL and event type each one listens for. |
+| Update Appointment | `updateAppointment` | Reschedule or edit an existing appointment. Bookafy replaces the appointment with the values supplied, so send the full staff member, service and time details even when only one of them changes, and re-send the customer's booking-form details. |
+| Update Customer | `updateCustomer` | Update an existing customer's booking-form details. Bookafy replaces the stored details with the values supplied, so send every field you want to keep. |
 
 ## Events
 

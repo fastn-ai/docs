@@ -34,14 +34,7 @@ Add MailerCheck from **Build → Integrations → Connectors** and connect an ac
 | Get List Results | `getListResults` | Return the individual emails of a list with their verification result, paginated and optionally filtered by result type (valid, catch_all, unknown, etc). Spends no credits. |
 | Get Platform Stats | `getPlatformStats` | Undocumented public MailerCheck endpoint returning platform-wide verification counters (total, totalToday, totalOrders, totalTodayOrders). It is NOT account-scoped and must be called WITHOUT an Authorization header: sending a valid API token switches it to an admin-only mode that answers 401 'Please provide account id in header X-Acc-Id.' for every account id. No credentials are sent by this action. |
 | Get Single Email Result (Async) | `getSingleEmailResult` | Retrieve the result of an asynchronous single-email verification by its verification id. Spends no credits. |
-
-<details>
-
-<summary>See 4 more actions</summary>
-
-* **Get User** `getUser`: Return the MailerCheck user that created the API token.
-* **List Lists** `listLists`: Return all email verification lists belonging to the account, paginated. Spends no credits.
-* **Upload List** `uploadList`: Create an email verification list from an uploaded CSV or TXT file, sent as multipart/form-data under the field name 'file'. Pass the file's text content in fileContent and its name in filename. Uploading spends no credits; verifying the resulting list does.
-* **Verify List** `verifyList`: Start verification of every email in the given list. Returns HTTP 202 with the list object. SPENDS ONE VERIFICATION CREDIT PER EMAIL in the list; returns HTTP 402 with {"error":"Not enough credits. Credits required: N"} when the balance is too low.
-
-</details>
+| Get User | `getUser` | Return the MailerCheck user that created the API token. |
+| List Lists | `listLists` | Return all email verification lists belonging to the account, paginated. Spends no credits. |
+| Upload List | `uploadList` | Create an email verification list from an uploaded CSV or TXT file, sent as multipart/form-data under the field name 'file'. Pass the file's text content in fileContent and its name in filename. Uploading spends no credits; verifying the resulting list does. |
+| Verify List | `verifyList` | Start verification of every email in the given list. Returns HTTP 202 with the list object. SPENDS ONE VERIFICATION CREDIT PER EMAIL in the list; returns HTTP 402 with {"error":"Not enough credits. Credits required: N"} when the balance is too low. |

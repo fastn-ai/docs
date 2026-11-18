@@ -34,11 +34,4 @@ Add npm Registry from **Build → Integrations → Connectors** and connect an a
 | Get Package Version | `getPackageVersion` | Get the manifest of one version of a package, or of a dist-tag such as latest (GET /{package}/{version}). Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md |
 | Get Total Downloads | `getTotalDownloads` | Get total downloads of all npm packages for a period (GET /downloads/point/{period}). Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md |
 | Get Version Downloads Last Week | `getVersionDownloads` | Get downloads per version of a package for the previous 7 days (GET /versions/{package}/last-week). Docs: https://github.com/npm/registry/blob/main/docs/download-counts.md |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Search Packages** `searchPackages`: Search packages by text with optional weighting of quality, popularity and maintenance (GET /-/v1/search). Text supports qualifiers like author:, maintainer:, keywords:, scope:, not:unstable, is:insecure. Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md
-
-</details>
+| Search Packages | `searchPackages` | Search packages by text with optional weighting of quality, popularity and maintenance (GET /-/v1/search). Text supports qualifiers like author:, maintainer:, keywords:, scope:, not:unstable, is:insecure. Docs: https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md |

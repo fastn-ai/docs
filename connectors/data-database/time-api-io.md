@@ -34,12 +34,5 @@ Add TimeAPI.io from **Build → Integrations → Connectors** and connect an acc
 | Get Current Unix Time (Nanoseconds) | `getCurrentUnixTimeNs` | Gets the current unix timestamp (nanoseconds since 1970-01-01 UTC). Due to limitations in the OS clock resolution, the last 3 digits will often be zero. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/time/current/unix_ns) |
 | Get Current UTC Time | `getCurrentUtcTime` | Gets the current UTC time. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/time/current/utc) |
 | Get Time Zone Info | `getTimeZoneInfo` | Gets the timezone info and current time by IANA time zone name. Includes UTC offsets and the current DST period. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/zone) |
-
-<details>
-
-<summary>See 2 more actions</summary>
-
-* **Get Time Zone Info by Coordinates** `getTimeZoneInfoByCoordinate`: Get the timezone info and current time by geo coordinates. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/coordinate)
-* **List Available Time Zones** `listTimeZones`: Gets all the available IANA time zones. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/availabletimezones)
-
-</details>
+| Get Time Zone Info by Coordinates | `getTimeZoneInfoByCoordinate` | Get the timezone info and current time by geo coordinates. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/coordinate) |
+| List Available Time Zones | `listTimeZones` | Gets all the available IANA time zones. Docs: https://timeapi.io/swagger/index.html (GET /api/v1/timezone/availabletimezones) |

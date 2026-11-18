@@ -34,19 +34,12 @@ Add Moonshot AI (Kimi) from **Build → Integrations → Connectors** and connec
 | List Batches | `listBatches` | List Batches. List batch tasks for your organization. |
 | List Files | `listFiles` | List Files. Lists all files uploaded by the current user. |
 | List Models | `listModels` | List Models. List all currently available models. |
-
-<details>
-
-<summary>See 9 more actions</summary>
-
-* **Messages API** `createAnthropicMessage`: Messages API. Call Kimi models with an Anthropic Messages API compatible format, supporting streaming, tool use, image input, thinking, and structured output.
-* **Retrieve Batch** `getBatch`: Retrieve Batch. Retrieve the status and details of a specific batch task.
-* **Retrieve File** `retrieveFile`: Get File Information. Retrieves metadata for a specific uploaded file.
-* **Retrieve File Content** `retrieveFileContent`: Get File Content. Retrieves the extracted content for files uploaded with purpose `file-extract`, returned as Markdown-formatted text.
-* **Upload File** `uploadFile`: Upload a text file (POST /v1/files, multipart) for file-extract or batch. Docs: https://platform.kimi.ai/docs
-* **URL Fetch** `webFetch`: URL Fetch. Fetch the content of a URL and get the page title and body text in Markdown (text and images concatenated in order). Only http and https URLs are supported. You are charged once per successful call that extracts content; failed or empty-content calls are free. See [WebSearch Pricing](/pricing/tools).
-* **Verify Request Signature** `verifySignature`: Verify Request Signature. Verifies a request signature returned in the response headers of the Chat Completions, Responses, or Messages API, proving that the request was handled by the Kimi API for the specified model rather than routed elsewhere. Submit the nonce used in the call, the timestamp from the response headers, the request's model, and the signature; the endpoint returns `valid: true` when the signature matches these three attributes exactly, and `valid: false` otherwise.
-* **Web Search Basic** `webSearch`: Web Search Basic. Run a web search and get structured results with title, snippet, site, and URL. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools).
-* **Web Search Pro** `webSearchPro`: Web Search Pro. Web Search Basic with site and time-range constraints, plus structured content chunks (`chunks`) for each result. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools).
-
-</details>
+| Messages API | `createAnthropicMessage` | Messages API. Call Kimi models with an Anthropic Messages API compatible format, supporting streaming, tool use, image input, thinking, and structured output. |
+| Retrieve Batch | `getBatch` | Retrieve Batch. Retrieve the status and details of a specific batch task. |
+| Retrieve File | `retrieveFile` | Get File Information. Retrieves metadata for a specific uploaded file. |
+| Retrieve File Content | `retrieveFileContent` | Get File Content. Retrieves the extracted content for files uploaded with purpose `file-extract`, returned as Markdown-formatted text. |
+| Upload File | `uploadFile` | Upload a text file (POST /v1/files, multipart) for file-extract or batch. Docs: https://platform.kimi.ai/docs |
+| URL Fetch | `webFetch` | URL Fetch. Fetch the content of a URL and get the page title and body text in Markdown (text and images concatenated in order). Only http and https URLs are supported. You are charged once per successful call that extracts content; failed or empty-content calls are free. See [WebSearch Pricing](/pricing/tools). |
+| Verify Request Signature | `verifySignature` | Verify Request Signature. Verifies a request signature returned in the response headers of the Chat Completions, Responses, or Messages API, proving that the request was handled by the Kimi API for the specified model rather than routed elsewhere. Submit the nonce used in the call, the timestamp from the response headers, the request's model, and the signature; the endpoint returns `valid: true` when the signature matches these three attributes exactly, and `valid: false` otherwise. |
+| Web Search Basic | `webSearch` | Web Search Basic. Run a web search and get structured results with title, snippet, site, and URL. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools). |
+| Web Search Pro | `webSearchPro` | Web Search Pro. Web Search Basic with site and time-range constraints, plus structured content chunks (`chunks`) for each result. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools). |

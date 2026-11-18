@@ -34,25 +34,18 @@ Add EmailOctopus from **Build → Integrations → Connectors** and connect an a
 | Delete Field | `deleteField` | Permanently deletes a custom contact field from a list. |
 | Delete List | `deleteList` | Permanently deletes a contact list and all of its contacts. |
 | Delete Tag | `deleteTag` | Permanently deletes a contact tag from a list, removing it from every contact that carries it. |
-
-<details>
-
-<summary>See 15 more actions</summary>
-
-* **Get Campaign** `getCampaign`: Retrieves a single email campaign by its ID.
-* **Get Campaign Contact Reports** `getCampaignContactReports`: Retrieves the list of contacts matching a specific engagement status (e.g. opened, clicked, bounced) for a campaign, paginated.
-* **Get Campaign Links Report** `getCampaignLinksReport`: Retrieves the click counts for each link contained in a campaign's content.
-* **Get Campaign Summary Report** `getCampaignSummaryReport`: Retrieves aggregate engagement statistics (sent, opened, clicked, bounced, complained, unsubscribed) for a campaign.
-* **Get Contact** `getContact`: Retrieves a single contact from a list by its ID (a UUID, or the MD5 hash of the contact's lowercased email address).
-* **Get List** `getList`: Retrieves a single contact list by its ID.
-* **List Campaigns** `listCampaigns`: Retrieves all email campaigns in the account, paginated.
-* **List Contacts** `listContacts`: Retrieves the contacts belonging to a list, with optional filtering by tag, status, and creation/update date ranges.
-* **List Lists** `listLists`: Retrieves all contact lists (audiences) in the EmailOctopus account, paginated.
-* **List Tags** `listTags`: Retrieves all contact tags defined on a list, paginated.
-* **Start Automation For Contact** `startAutomation`: Queues a contact to start a specific automation (drip sequence) built in the EmailOctopus dashboard.
-* **Update Contact** `updateContact`: Updates an existing contact's email address, custom fields, tags, or subscription status.
-* **Update Field** `updateField`: Updates an existing custom contact field's label, tag, type, or fallback value.
-* **Update List** `updateList`: Updates the name of an existing contact list.
-* **Update Tag** `updateTag`: Renames an existing contact tag on a list. The rename applies to every contact currently carrying the tag.
-
-</details>
+| Get Campaign | `getCampaign` | Retrieves a single email campaign by its ID. |
+| Get Campaign Contact Reports | `getCampaignContactReports` | Retrieves the list of contacts matching a specific engagement status (e.g. opened, clicked, bounced) for a campaign, paginated. |
+| Get Campaign Links Report | `getCampaignLinksReport` | Retrieves the click counts for each link contained in a campaign's content. |
+| Get Campaign Summary Report | `getCampaignSummaryReport` | Retrieves aggregate engagement statistics (sent, opened, clicked, bounced, complained, unsubscribed) for a campaign. |
+| Get Contact | `getContact` | Retrieves a single contact from a list by its ID (a UUID, or the MD5 hash of the contact's lowercased email address). |
+| Get List | `getList` | Retrieves a single contact list by its ID. |
+| List Campaigns | `listCampaigns` | Retrieves all email campaigns in the account, paginated. |
+| List Contacts | `listContacts` | Retrieves the contacts belonging to a list, with optional filtering by tag, status, and creation/update date ranges. |
+| List Lists | `listLists` | Retrieves all contact lists (audiences) in the EmailOctopus account, paginated. |
+| List Tags | `listTags` | Retrieves all contact tags defined on a list, paginated. |
+| Start Automation For Contact | `startAutomation` | Queues a contact to start a specific automation (drip sequence) built in the EmailOctopus dashboard. |
+| Update Contact | `updateContact` | Updates an existing contact's email address, custom fields, tags, or subscription status. |
+| Update Field | `updateField` | Updates an existing custom contact field's label, tag, type, or fallback value. |
+| Update List | `updateList` | Updates the name of an existing contact list. |
+| Update Tag | `updateTag` | Renames an existing contact tag on a list. The rename applies to every contact currently carrying the tag. |

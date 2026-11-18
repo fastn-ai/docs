@@ -34,35 +34,28 @@ Add Mistral AI from **Build → Integrations → Connectors** and connect an acc
 | Create Chat Moderation | `createChatModeration` | Classify conversation messages against safety policies. POST /v1/chat/moderations. Model: mistral-moderation-latest. input is a list of chat messages. |
 | Create Classification | `createClassification` | Run a classifier model on raw text. POST /v1/classifications. Requires a classifier model (e.g. a fine-tuned classifier). |
 | Create Embeddings | `createEmbeddings` | Create embedding vectors for input text. POST /v1/embeddings. Model: mistral-embed (text) or codestral-embed (code). |
-
-<details>
-
-<summary>See 25 more actions</summary>
-
-* **Create FIM Completion** `createFimCompletion`: Fill-in-the-middle code completion. POST /v1/fim/completions. Use a code model such as codestral-latest. Provide prompt (prefix) and optional suffix.
-* **Create Moderation** `createModeration`: Classify raw text against safety policies. POST /v1/moderations. Model: mistral-moderation-latest. Returns per-category booleans and scores.
-* **Delete File** `deleteFile`: Delete an uploaded file. DELETE /v1/files/{file_id}.
-* **Delete Model** `deleteModel`: Delete a fine-tuned model. DELETE /v1/models/{model_id}.
-* **Get Agent** `getAgent`: Retrieve an agent. GET /v1/agents/{agent_id}. Optional agent_version query.
-* **Get Batch Job** `getBatchJob`: Retrieve a batch job. GET /v1/batch/jobs/{job_id}.
-* **Get Conversation** `getConversation`: Retrieve a conversation's metadata. GET /v1/conversations/{conversation_id}.
-* **Get Conversation History** `getConversationHistory`: Retrieve all entries of a conversation in chronological order. GET /v1/conversations/{conversation_id}/history.
-* **Get Conversation Messages** `getConversationMessages`: Retrieve only the message entries of a conversation. GET /v1/conversations/{conversation_id}/messages.
-* **Get File Signed URL** `getFileSignedUrl`: Get a temporary signed download URL for a file. GET /v1/files/{file_id}/url. expiry in hours (1-168, default 24).
-* **List Agents** `listAgents`: List agents. GET /v1/agents. Returns a JSON array of agent objects (wrapped under 'data' in this contract).
-* **List Batch Jobs** `listBatchJobs`: List batch jobs. GET /v1/batch/jobs. Filter by model, status, metadata, created_after, created_by_me.
-* **List Conversations** `listConversations`: List conversations sorted by creation time. GET /v1/conversations.
-* **List Files** `listFiles`: List uploaded files. GET /v1/files. Supports pagination and filtering by purpose/source/sample_type/search.
-* **List Models** `listModels`: List all models available to your account (base + fine-tuned). GET /v1/models.
-* **Process OCR** `processOcr`: Run OCR on a document or image. POST /v1/ocr. Model: mistral-ocr-latest. Provide document as {document_url} (DocumentURLChunk), {image_url} (ImageURLChunk), or {file_id} (FileChunk).
-* **Restart Conversation** `restartConversation`: Restart a conversation from a given entry. POST /v1/conversations/{conversation_id}/restart.
-* **Retrieve File** `retrieveFile`: Retrieve metadata for an uploaded file. GET /v1/files/{file_id}.
-* **Retrieve Model** `retrieveModel`: Retrieve a single model's metadata and capabilities. GET /v1/models/{model_id}.
-* **Start Conversation** `startConversation`: Start a conversation (beta Conversations API). POST /v1/conversations. Provide inputs plus either model or agent_id.
-* **Unarchive Fine-Tuned Model** `unarchiveFineTunedModel`: Unarchive a fine-tuned model. DELETE /v1/fine_tuning/models/{model_id}/archive.
-* **Update Agent** `updateAgent`: Update an agent (creates a new version). PATCH /v1/agents/{agent_id}.
-* **Update Agent Version** `updateAgentVersion`: Switch an agent's active version. PATCH /v1/agents/{agent_id}/version.
-* **Update Fine-Tuned Model** `updateFineTunedModel`: Update name/description of a fine-tuned model. PATCH /v1/fine_tuning/models/{model_id}.
-* **Upload File** `uploadFile`: Upload a file (max 512MB) for fine-tune, batch, or ocr purposes. POST /v1/files (multipart/form-data). Pass the file via input.file and purpose.
-
-</details>
+| Create FIM Completion | `createFimCompletion` | Fill-in-the-middle code completion. POST /v1/fim/completions. Use a code model such as codestral-latest. Provide prompt (prefix) and optional suffix. |
+| Create Moderation | `createModeration` | Classify raw text against safety policies. POST /v1/moderations. Model: mistral-moderation-latest. Returns per-category booleans and scores. |
+| Delete File | `deleteFile` | Delete an uploaded file. DELETE /v1/files/{file_id}. |
+| Delete Model | `deleteModel` | Delete a fine-tuned model. DELETE /v1/models/{model_id}. |
+| Get Agent | `getAgent` | Retrieve an agent. GET /v1/agents/{agent_id}. Optional agent_version query. |
+| Get Batch Job | `getBatchJob` | Retrieve a batch job. GET /v1/batch/jobs/{job_id}. |
+| Get Conversation | `getConversation` | Retrieve a conversation's metadata. GET /v1/conversations/{conversation_id}. |
+| Get Conversation History | `getConversationHistory` | Retrieve all entries of a conversation in chronological order. GET /v1/conversations/{conversation_id}/history. |
+| Get Conversation Messages | `getConversationMessages` | Retrieve only the message entries of a conversation. GET /v1/conversations/{conversation_id}/messages. |
+| Get File Signed URL | `getFileSignedUrl` | Get a temporary signed download URL for a file. GET /v1/files/{file_id}/url. expiry in hours (1-168, default 24). |
+| List Agents | `listAgents` | List agents. GET /v1/agents. Returns a JSON array of agent objects (wrapped under 'data' in this contract). |
+| List Batch Jobs | `listBatchJobs` | List batch jobs. GET /v1/batch/jobs. Filter by model, status, metadata, created_after, created_by_me. |
+| List Conversations | `listConversations` | List conversations sorted by creation time. GET /v1/conversations. |
+| List Files | `listFiles` | List uploaded files. GET /v1/files. Supports pagination and filtering by purpose/source/sample_type/search. |
+| List Models | `listModels` | List all models available to your account (base + fine-tuned). GET /v1/models. |
+| Process OCR | `processOcr` | Run OCR on a document or image. POST /v1/ocr. Model: mistral-ocr-latest. Provide document as {document_url} (DocumentURLChunk), {image_url} (ImageURLChunk), or {file_id} (FileChunk). |
+| Restart Conversation | `restartConversation` | Restart a conversation from a given entry. POST /v1/conversations/{conversation_id}/restart. |
+| Retrieve File | `retrieveFile` | Retrieve metadata for an uploaded file. GET /v1/files/{file_id}. |
+| Retrieve Model | `retrieveModel` | Retrieve a single model's metadata and capabilities. GET /v1/models/{model_id}. |
+| Start Conversation | `startConversation` | Start a conversation (beta Conversations API). POST /v1/conversations. Provide inputs plus either model or agent_id. |
+| Unarchive Fine-Tuned Model | `unarchiveFineTunedModel` | Unarchive a fine-tuned model. DELETE /v1/fine_tuning/models/{model_id}/archive. |
+| Update Agent | `updateAgent` | Update an agent (creates a new version). PATCH /v1/agents/{agent_id}. |
+| Update Agent Version | `updateAgentVersion` | Switch an agent's active version. PATCH /v1/agents/{agent_id}/version. |
+| Update Fine-Tuned Model | `updateFineTunedModel` | Update name/description of a fine-tuned model. PATCH /v1/fine_tuning/models/{model_id}. |
+| Upload File | `uploadFile` | Upload a file (max 512MB) for fine-tune, batch, or ocr purposes. POST /v1/files (multipart/form-data). Pass the file via input.file and purpose. |

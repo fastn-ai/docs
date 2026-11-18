@@ -34,11 +34,4 @@ Add IPLocate from **Build → Integrations → Connectors** and connect an accou
 | Get IP Hosting Provider | `getIpHostingProvider` | Returns only the hosting or datacenter provider details for an IP address, including the provider name, domain, network range and, where published, the provider's region and service. Returns an empty result for addresses with no detailed hosting data. |
 | Get IP Privacy And Threat Flags | `getIpPrivacy` | Returns only the privacy and threat detection flags for an IP address, indicating whether it is a proxy, VPN, Tor exit node, iCloud Private Relay address, hosting address, bogon address or a reported abuser. |
 | Look Up Caller IP Address | `lookupCallerIpAddress` | Returns the full IPLocate intelligence record for the IP address the request originates from, without needing to supply an address. Use the include parameter to return only selected fields. |
-
-<details>
-
-<summary>See 1 more action</summary>
-
-* **Look Up IP Address** `lookupIpAddress`: Returns the full IPLocate intelligence record for a single IPv4 or IPv6 address, including geolocation, autonomous system, privacy and threat flags, hosting provider, company and abuse contact data. Use the include parameter to return only selected fields.
-
-</details>
+| Look Up IP Address | `lookupIpAddress` | Returns the full IPLocate intelligence record for a single IPv4 or IPv6 address, including geolocation, autonomous system, privacy and threat flags, hosting provider, company and abuse contact data. Use the include parameter to return only selected fields. |

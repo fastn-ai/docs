@@ -34,18 +34,11 @@ Add BotMape from **Build → Integrations → Connectors** and connect an accoun
 | Get AI Agent Analytics | `getAiAgentAnalytics` | Returns usage analytics for a single AI agent: total conversations, total messages and the number of currently active conversations. |
 | Get Current User | `getCurrentUser` | Returns the BotMape account that owns the API key, including the account id, email, name and subscription plan. Useful for verifying credentials. |
 | Get Platform Analytics | `getPlatformAnalytics` | Returns aggregate analytics across all AI agents in the account: total conversations and messages, daily trends and a per-agent breakdown. |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List AI Agents** `listAiAgents`: Returns all AI agents (chatbots) owned by the authenticated BotMape account, with their configuration, widget appearance and integration settings.
-* **List Appointments** `listAppointments`: Returns all appointments booked in the account, whether scheduled by an AI agent during a conversation or added manually, with customer details, date, time, service and status.
-* **List Captured Leads For Agent** `listCapturedLeadsForAgent`: Returns the visitor contact details captured during conversations with a specific AI agent, one entry per conversation that supplied a name, email or phone.
-* **List Conversations** `listConversations`: Returns all conversations held with an AI agent, newest first, with visitor details and timestamps of the first and latest message.
-* **List Knowledge Entries** `listKnowledgeEntries`: Returns every knowledge base entry that trains an AI agent's responses, including the stored content, metadata and embedding vector for each entry.
-* **List Leads** `listLeads`: Returns all CRM leads in the account, whether captured by an AI agent during a conversation or added manually, with status, source, score and notes.
-* **Send Chat Message** `sendChatMessage`: Sends a visitor message to an AI agent and returns the AI-generated reply together with the conversation id. Pass the returned conversation id on later calls to continue the same conversation.
-* **Update AI Agent** `updateAiAgent`: Updates an existing AI agent's name, description, welcome message, system prompt, widget color, website URL or active status. Only the fields you supply are changed. Returns the updated agent.
-
-</details>
+| List AI Agents | `listAiAgents` | Returns all AI agents (chatbots) owned by the authenticated BotMape account, with their configuration, widget appearance and integration settings. |
+| List Appointments | `listAppointments` | Returns all appointments booked in the account, whether scheduled by an AI agent during a conversation or added manually, with customer details, date, time, service and status. |
+| List Captured Leads For Agent | `listCapturedLeadsForAgent` | Returns the visitor contact details captured during conversations with a specific AI agent, one entry per conversation that supplied a name, email or phone. |
+| List Conversations | `listConversations` | Returns all conversations held with an AI agent, newest first, with visitor details and timestamps of the first and latest message. |
+| List Knowledge Entries | `listKnowledgeEntries` | Returns every knowledge base entry that trains an AI agent's responses, including the stored content, metadata and embedding vector for each entry. |
+| List Leads | `listLeads` | Returns all CRM leads in the account, whether captured by an AI agent during a conversation or added manually, with status, source, score and notes. |
+| Send Chat Message | `sendChatMessage` | Sends a visitor message to an AI agent and returns the AI-generated reply together with the conversation id. Pass the returned conversation id on later calls to continue the same conversation. |
+| Update AI Agent | `updateAiAgent` | Updates an existing AI agent's name, description, welcome message, system prompt, widget color, website URL or active status. Only the fields you supply are changed. Returns the updated agent. |

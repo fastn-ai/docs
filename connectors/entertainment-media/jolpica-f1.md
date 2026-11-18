@@ -32,39 +32,32 @@ Add Jolpica F1 from **Build → Integrations → Connectors** and connect an acc
 | Get Driver Standing for Driver | `getDriverStandingForDriver` | Get one driver's championship standing in a season (GET /ergast/f1/{season}/drivers/{driverId}/driverstandings.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/driverStandings.md |
 | Get Driver Standings | `getDriverStandings` | Get the drivers' championship standings at the end of a season (or now, for current) (GET /ergast/f1/{season}/driverstandings.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/driverStandings.md |
 | Get Driver Standings After Round | `getDriverStandingsAfterRound` | Get the drivers' championship standings after a given round (GET /ergast/f1/{season}/{round}/driverstandings.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/driverStandings.md |
-
-<details>
-
-<summary>See 29 more actions</summary>
-
-* **Get Lap** `getLap`: Get every driver's timing for one lap of a race (GET /ergast/f1/{season}/{round}/laps/{lapNumber}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/laps.md
-* **Get Laps** `getLaps`: Get lap-by-lap timings of every driver in one race (data from 1996 onward) (GET /ergast/f1/{season}/{round}/laps.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/laps.md
-* **Get Pit Stops** `getPitStops`: Get every pit stop of one race (data from 2011 onward) (GET /ergast/f1/{season}/{round}/pitstops.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/pitstops.md
-* **Get Pit Stops by Stop Number** `getPitStopsByNumber`: Get the nth pit stop of every driver in one race (GET /ergast/f1/{season}/{round}/pitstops/{stopNumber}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/pitstops.md
-* **Get Qualifying Results** `getQualifyingResults`: Get the qualifying results (Q1, Q2, Q3) of one round (GET /ergast/f1/{season}/{round}/qualifying.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/qualifying.md
-* **Get Race** `getRace`: Get the schedule of one race (round) in a season (GET /ergast/f1/{season}/{round}/races.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/races.md
-* **Get Race Result by Position** `getRaceResultByPosition`: Get the result for one finishing position in a race (GET /ergast/f1/{season}/{round}/results/{position}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **Get Race Results** `getRaceResults`: Get the results of one race (GET /ergast/f1/{season}/{round}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **Get Sprint Results** `getSprintResults`: Get the sprint results of one round (GET /ergast/f1/{season}/{round}/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md
-* **List Circuits** `listCircuits`: List every circuit that has hosted a Formula 1 race, with location (GET /ergast/f1/circuits.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/circuits.md
-* **List Constructor Season Results** `listConstructorSeasonResults`: List one constructor's race results in one season (GET /ergast/f1/{season}/constructors/{constructorId}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **List Constructors** `listConstructors`: List every Formula 1 constructor (team) (GET /ergast/f1/constructors.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/constructors.md
-* **List Driver Results** `listDriverResults`: List all race results of one driver across their career (GET /ergast/f1/drivers/{driverId}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **List Driver Season Results** `listDriverSeasonResults`: List one driver's race results in one season (GET /ergast/f1/{season}/drivers/{driverId}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **List Drivers** `listDrivers`: List every Formula 1 driver (GET /ergast/f1/drivers.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/drivers.md
-* **List Finishing Statuses** `listStatuses`: List every finishing status (Finished, +1 Lap, Engine, Accident...) with how often it occurred (GET /ergast/f1/status.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/status.md
-* **List Qualifying Results** `listQualifyingResults`: List qualifying results across all seasons (GET /ergast/f1/qualifying.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/qualifying.md
-* **List Races** `listRaces`: List every Formula 1 race with circuit, date and session times (GET /ergast/f1/races.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/races.md
-* **List Results** `listResults`: List race results across all seasons, page by page (GET /ergast/f1/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **List Season Circuits** `listSeasonCircuits`: List the circuits used in one season (GET /ergast/f1/{season}/circuits.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/circuits.md
-* **List Season Constructors** `listSeasonConstructors`: List the constructors that raced in one season (GET /ergast/f1/{season}/constructors.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/constructors.md
-* **List Season Drivers** `listSeasonDrivers`: List the drivers who raced in one season (GET /ergast/f1/{season}/drivers.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/drivers.md
-* **List Season Finishing Statuses** `listSeasonStatuses`: List finishing statuses and counts for one season (GET /ergast/f1/{season}/status.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/status.md
-* **List Season Qualifying Results** `listSeasonQualifyingResults`: List the qualifying results of one season (GET /ergast/f1/{season}/qualifying.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/qualifying.md
-* **List Season Races** `listSeasonRaces`: List the race calendar of one season with session times (GET /ergast/f1/{season}/races.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/races.md
-* **List Season Results** `listSeasonResults`: List the race results of every round in one season (GET /ergast/f1/{season}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md
-* **List Season Sprint Results** `listSeasonSprintResults`: List the sprint race results of one season (GET /ergast/f1/{season}/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md
-* **List Seasons** `listSeasons`: List every Formula 1 season with its Wikipedia link (GET /ergast/f1/seasons.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/seasons.md
-* **List Sprint Results** `listSprintResults`: List sprint race results across all seasons (GET /ergast/f1/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md
-
-</details>
+| Get Lap | `getLap` | Get every driver's timing for one lap of a race (GET /ergast/f1/{season}/{round}/laps/{lapNumber}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/laps.md |
+| Get Laps | `getLaps` | Get lap-by-lap timings of every driver in one race (data from 1996 onward) (GET /ergast/f1/{season}/{round}/laps.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/laps.md |
+| Get Pit Stops | `getPitStops` | Get every pit stop of one race (data from 2011 onward) (GET /ergast/f1/{season}/{round}/pitstops.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/pitstops.md |
+| Get Pit Stops by Stop Number | `getPitStopsByNumber` | Get the nth pit stop of every driver in one race (GET /ergast/f1/{season}/{round}/pitstops/{stopNumber}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/pitstops.md |
+| Get Qualifying Results | `getQualifyingResults` | Get the qualifying results (Q1, Q2, Q3) of one round (GET /ergast/f1/{season}/{round}/qualifying.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/qualifying.md |
+| Get Race | `getRace` | Get the schedule of one race (round) in a season (GET /ergast/f1/{season}/{round}/races.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/races.md |
+| Get Race Result by Position | `getRaceResultByPosition` | Get the result for one finishing position in a race (GET /ergast/f1/{season}/{round}/results/{position}.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| Get Race Results | `getRaceResults` | Get the results of one race (GET /ergast/f1/{season}/{round}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| Get Sprint Results | `getSprintResults` | Get the sprint results of one round (GET /ergast/f1/{season}/{round}/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md |
+| List Circuits | `listCircuits` | List every circuit that has hosted a Formula 1 race, with location (GET /ergast/f1/circuits.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/circuits.md |
+| List Constructor Season Results | `listConstructorSeasonResults` | List one constructor's race results in one season (GET /ergast/f1/{season}/constructors/{constructorId}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| List Constructors | `listConstructors` | List every Formula 1 constructor (team) (GET /ergast/f1/constructors.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/constructors.md |
+| List Driver Results | `listDriverResults` | List all race results of one driver across their career (GET /ergast/f1/drivers/{driverId}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| List Driver Season Results | `listDriverSeasonResults` | List one driver's race results in one season (GET /ergast/f1/{season}/drivers/{driverId}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| List Drivers | `listDrivers` | List every Formula 1 driver (GET /ergast/f1/drivers.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/drivers.md |
+| List Finishing Statuses | `listStatuses` | List every finishing status (Finished, +1 Lap, Engine, Accident...) with how often it occurred (GET /ergast/f1/status.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/status.md |
+| List Qualifying Results | `listQualifyingResults` | List qualifying results across all seasons (GET /ergast/f1/qualifying.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/qualifying.md |
+| List Races | `listRaces` | List every Formula 1 race with circuit, date and session times (GET /ergast/f1/races.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/races.md |
+| List Results | `listResults` | List race results across all seasons, page by page (GET /ergast/f1/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| List Season Circuits | `listSeasonCircuits` | List the circuits used in one season (GET /ergast/f1/{season}/circuits.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/circuits.md |
+| List Season Constructors | `listSeasonConstructors` | List the constructors that raced in one season (GET /ergast/f1/{season}/constructors.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/constructors.md |
+| List Season Drivers | `listSeasonDrivers` | List the drivers who raced in one season (GET /ergast/f1/{season}/drivers.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/drivers.md |
+| List Season Finishing Statuses | `listSeasonStatuses` | List finishing statuses and counts for one season (GET /ergast/f1/{season}/status.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/status.md |
+| List Season Qualifying Results | `listSeasonQualifyingResults` | List the qualifying results of one season (GET /ergast/f1/{season}/qualifying.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/qualifying.md |
+| List Season Races | `listSeasonRaces` | List the race calendar of one season with session times (GET /ergast/f1/{season}/races.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/races.md |
+| List Season Results | `listSeasonResults` | List the race results of every round in one season (GET /ergast/f1/{season}/results.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/results.md |
+| List Season Sprint Results | `listSeasonSprintResults` | List the sprint race results of one season (GET /ergast/f1/{season}/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md |
+| List Seasons | `listSeasons` | List every Formula 1 season with its Wikipedia link (GET /ergast/f1/seasons.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/seasons.md |
+| List Sprint Results | `listSprintResults` | List sprint race results across all seasons (GET /ergast/f1/sprint.json). Docs: https://github.com/jolpica/jolpica-f1/blob/main/docs/endpoints/sprint.md |

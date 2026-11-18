@@ -34,26 +34,19 @@ Add Leexi from **Build → Integrations → Connectors** and connect an account,
 | Delete Team | `deleteTeam` | Permanently delete a team. Leexi only allows this for a team that has no users and no calls; otherwise deactivate it with Update Team instead. Requires an API key with write_teams permission. |
 | Get Call | `getCall` | Retrieve one call or meeting by its uuid. Returns everything List Calls returns plus the detected call topics and the full word-level transcript; simple_transcript is always included here. Use it to fetch the transcript, AI summary, chapters and follow-up tasks of a single call. |
 | Get Call Note | `getCallNote` | Retrieve a single AI-generated call note by its uuid, including the prompt that produced it and every locale translation with both the original AI text and the current text. |
-
-<details>
-
-<summary>See 13 more actions</summary>
-
-* **Get Meeting Event** `getMeetingEvent`: Retrieve one meeting event by its uuid, with its meeting link, schedule, attendees, origin and whether the Leexi assistant is set to record it. Requires an API key with read_meeting_events permission.
-* **Get Team** `getTeam`: Retrieve a single team of the Leexi workspace by its uuid. Requires an API key with read_teams permission.
-* **Get User** `getUser`: Retrieve a single user of the Leexi workspace by their uuid, with their team, roles, license and active state. Requires an API key with read_users permission.
-* **Launch Meeting Assistant** `launchMeetingAssistant`: Send the Leexi assistant bot into the meeting of a meeting event so it starts recording immediately, or set Stop Task to true to pull an already running bot back out. Requires an API key with write_meeting_events permission.
-* **List Call Notes** `listCallNotes`: List the AI-generated notes of one call. Only notes produced by prompts in the summary or text categories are returned. Call UUID is required; optionally narrow the result to a single prompt. Each note carries one translation per locale, with the original AI text and the current, possibly edited, text.
-* **List Calls** `listCalls`: List the calls and meetings that the API key can access, newest first by default. Supports paging, ordering, date-range filtering and filtering by integration source, owner, participating user, conversation type, customer phone number and customer email address. Returns a data array of call objects plus a pagination block.
-* **List Meeting Events** `listMeetingEvents`: List the meeting events in the workspace: the scheduled Zoom, Teams or Google Meet meetings that the Leexi assistant can join. Supports paging, ordering, filtering by origin (calendar, manual or api) and by a start or end time range. Requires an API key with read_meeting_events permission.
-* **List Teams** `listTeams`: List the teams of the Leexi workspace, page by page. Requires an API key with read_teams permission.
-* **List Users** `listUsers`: List the users of the Leexi workspace, page by page, with their team, roles, license and active state. Use it to resolve the user uuid needed by Create Call and Create Meeting Event. Requires an API key with read_users permission.
-* **Request Presigned Recording URL** `requestPresignedRecordingUrl`: Request a presigned S3 URL to upload a call recording, the first step of importing a call into Leexi. Pass the file extension; Leexi returns the upload URL, the headers to send with the PUT, and the recording_s3_key you must then pass to Create Call. Requires an API key with write_calls permission.
-* **Update Call Note** `updateCallNote`: Replace the text of one locale translation of an AI-generated call note. Both the locale to update and the new text are required. The original AI text is preserved separately in original_text. Requires an API key with write_calls permission.
-* **Update Team** `updateTeam`: Rename a team or activate and deactivate it. Only the attributes you supply are changed. A team can only be deactivated once it has no active users. Requires an API key with write_teams permission.
-* **Update User** `updateUser`: Change a user's name, email, team, roles or license, or reactivate a deactivated user by setting Active to true. Only the attributes you supply are changed. Requires an API key with write_users permission.
-
-</details>
+| Get Meeting Event | `getMeetingEvent` | Retrieve one meeting event by its uuid, with its meeting link, schedule, attendees, origin and whether the Leexi assistant is set to record it. Requires an API key with read_meeting_events permission. |
+| Get Team | `getTeam` | Retrieve a single team of the Leexi workspace by its uuid. Requires an API key with read_teams permission. |
+| Get User | `getUser` | Retrieve a single user of the Leexi workspace by their uuid, with their team, roles, license and active state. Requires an API key with read_users permission. |
+| Launch Meeting Assistant | `launchMeetingAssistant` | Send the Leexi assistant bot into the meeting of a meeting event so it starts recording immediately, or set Stop Task to true to pull an already running bot back out. Requires an API key with write_meeting_events permission. |
+| List Call Notes | `listCallNotes` | List the AI-generated notes of one call. Only notes produced by prompts in the summary or text categories are returned. Call UUID is required; optionally narrow the result to a single prompt. Each note carries one translation per locale, with the original AI text and the current, possibly edited, text. |
+| List Calls | `listCalls` | List the calls and meetings that the API key can access, newest first by default. Supports paging, ordering, date-range filtering and filtering by integration source, owner, participating user, conversation type, customer phone number and customer email address. Returns a data array of call objects plus a pagination block. |
+| List Meeting Events | `listMeetingEvents` | List the meeting events in the workspace: the scheduled Zoom, Teams or Google Meet meetings that the Leexi assistant can join. Supports paging, ordering, filtering by origin (calendar, manual or api) and by a start or end time range. Requires an API key with read_meeting_events permission. |
+| List Teams | `listTeams` | List the teams of the Leexi workspace, page by page. Requires an API key with read_teams permission. |
+| List Users | `listUsers` | List the users of the Leexi workspace, page by page, with their team, roles, license and active state. Use it to resolve the user uuid needed by Create Call and Create Meeting Event. Requires an API key with read_users permission. |
+| Request Presigned Recording URL | `requestPresignedRecordingUrl` | Request a presigned S3 URL to upload a call recording, the first step of importing a call into Leexi. Pass the file extension; Leexi returns the upload URL, the headers to send with the PUT, and the recording_s3_key you must then pass to Create Call. Requires an API key with write_calls permission. |
+| Update Call Note | `updateCallNote` | Replace the text of one locale translation of an AI-generated call note. Both the locale to update and the new text are required. The original AI text is preserved separately in original_text. Requires an API key with write_calls permission. |
+| Update Team | `updateTeam` | Rename a team or activate and deactivate it. Only the attributes you supply are changed. A team can only be deactivated once it has no active users. Requires an API key with write_teams permission. |
+| Update User | `updateUser` | Change a user's name, email, team, roles or license, or reactivate a deactivated user by setting Active to true. Only the attributes you supply are changed. Requires an API key with write_users permission. |
 
 ## Events
 

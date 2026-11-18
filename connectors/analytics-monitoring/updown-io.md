@@ -34,21 +34,14 @@ Add Updown.io from **Build → Integrations → Connectors** and connect an acco
 | Get Check Metrics | `getCheckMetrics` | Get aggregated performance metrics for an Updown.io check: uptime, APDEX, request counts bucketed by response time, and timing breakdown (redirect, DNS lookup, connection, TLS handshake, response, total) in milliseconds. Stats are aggregated hourly, by day after 2 days and by month after 40 days, so the range must span at least one hour. The uptime attribute is not returned when grouping. |
 | List Check Downtimes | `listCheckDowntimes` | List all recorded downtimes of an Updown.io check, newest first, 100 per page. Each entry carries the downtime id, details URL, error reason, start and end timestamps, duration in seconds and whether it was partial. |
 | List Checks | `listChecks` | List every monitoring check on your Updown.io account, including its token, monitored URL, current up/down state, uptime percentage, check interval, SSL certificate status and domain expiry information. Takes no parameters. Note that monitored URLs only include HTTP basic-auth credentials when a read-write API key is used. |
-
-<details>
-
-<summary>See 8 more actions</summary>
-
-* **List Node IPs** `listNodeIps`: List every Updown.io monitoring server IP address, both IPv4 and IPv6, as an array of strings. Useful for firewall allow-listing. Takes no parameters.
-* **List Node IPv4 Addresses** `listNodeIpv4`: List the IPv4 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters.
-* **List Node IPv6 Addresses** `listNodeIpv6`: List the IPv6 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters.
-* **List Nodes** `listNodes`: List all Updown.io monitoring and webhook servers, keyed by short node name (e.g. tok, fra, mia). Each node carries its IPv4 and IPv6 address, city, country, country code, latitude and longitude. Takes no parameters.
-* **List Recipients** `listRecipients`: List every alert recipient / notification channel on the Updown.io account - email, SMS, Slack, Telegram, webhook, Zapier and similar. Each entry gives the id (used to select recipients on a check), type, name and value. Takes no parameters.
-* **List Status Pages** `listStatusPages`: List all Updown.io status pages on the account. Each page gives its token, public URL, name, description, visibility (public, protected or private), access key and the ordered list of check tokens it shows. Takes no parameters.
-* **Update Check** `updateCheck`: Update an existing Updown.io check identified by its token. Only the fields you supply are changed. Returns the updated check. Requires a read-write API key.
-* **Update Status Page** `updateStatusPage`: Update an existing Updown.io status page by token. Only the fields you supply are changed. Returns the updated status page. Requires a read-write API key.
-
-</details>
+| List Node IPs | `listNodeIps` | List every Updown.io monitoring server IP address, both IPv4 and IPv6, as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
+| List Node IPv4 Addresses | `listNodeIpv4` | List the IPv4 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
+| List Node IPv6 Addresses | `listNodeIpv6` | List the IPv6 addresses of all Updown.io monitoring servers as an array of strings. Useful for firewall allow-listing. Takes no parameters. |
+| List Nodes | `listNodes` | List all Updown.io monitoring and webhook servers, keyed by short node name (e.g. tok, fra, mia). Each node carries its IPv4 and IPv6 address, city, country, country code, latitude and longitude. Takes no parameters. |
+| List Recipients | `listRecipients` | List every alert recipient / notification channel on the Updown.io account - email, SMS, Slack, Telegram, webhook, Zapier and similar. Each entry gives the id (used to select recipients on a check), type, name and value. Takes no parameters. |
+| List Status Pages | `listStatusPages` | List all Updown.io status pages on the account. Each page gives its token, public URL, name, description, visibility (public, protected or private), access key and the ordered list of check tokens it shows. Takes no parameters. |
+| Update Check | `updateCheck` | Update an existing Updown.io check identified by its token. Only the fields you supply are changed. Returns the updated check. Requires a read-write API key. |
+| Update Status Page | `updateStatusPage` | Update an existing Updown.io status page by token. Only the fields you supply are changed. Returns the updated status page. Requires a read-write API key. |
 
 ## Events
 

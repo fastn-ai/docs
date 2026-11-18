@@ -34,41 +34,34 @@ Add Onpipeline from **Build → Integrations → Connectors** and connect an acc
 | Create Person | `createPerson` | Creates a new contact person in Onpipeline, optionally linked to an existing organization and with email addresses, phone numbers and custom field values. Returns the new person ID. |
 | Create Webhook | `createWebhook` | Registers a webhook in Onpipeline that POSTs the full record JSON to your HTTPS URL whenever a person, organization, deal or calendar event in the chosen zone changes. The response includes an X-Signature secret for verifying deliveries. In testing Onpipeline answered HTTP 500 with an empty body for some target URLs (for example a URL that returns 404 or one already registered before), so use a reachable, previously unused endpoint. |
 | Create Widget | `createWidget` | Adds an embedded frame widget to Onpipeline person, organization or deal pages. Each zone accepts at most 10 widgets. |
-
-<details>
-
-<summary>See 28 more actions</summary>
-
-* **Delete Action Menu Link** `deleteActionMenuLink`: Removes a custom link from the Onpipeline actions menu by link ID.
-* **Delete Custom Field** `deleteCustomField`: Deletes a custom field from Onpipeline by field ID, removing its values from all records.
-* **Delete Deal** `deleteDeal`: Deletes a deal in Onpipeline by ID. This is a soft delete: the deal stays in the account with status "deleted" (visible through List Deals) and can be restored with Restore Deal. The API offers no permanent delete.
-* **Delete Organization** `deleteOrganization`: Permanently deletes an organization in Onpipeline by ID. This cannot be undone.
-* **Delete Person** `deletePerson`: Permanently deletes a contact person in Onpipeline by ID. This cannot be undone.
-* **Delete Webhook** `deleteWebhook`: Deletes a webhook from Onpipeline by webhook ID.
-* **Delete Widget** `deleteWidget`: Removes an embedded frame widget from Onpipeline by widget ID.
-* **List Action Menu Links** `listActionMenuLinks`: Lists the custom links added to the Onpipeline actions menu of persons, organizations and deals.
-* **List Custom Fields** `listCustomFields`: Lists the custom fields defined for persons, organizations or deals in Onpipeline. The returned IDs are used in the Extra arrays of create, update and list actions.
-* **List Deals** `listDeals`: Lists deals in Onpipeline, optionally filtered by deal ID, status, owner, linked person or organization, pipeline name, stage name, product, or closing, creation and next-event date ranges. Pass a DealID to fetch a single deal.
-* **List Events** `listEvents`: Lists calendar events (tasks, calls, emails, meetings and deadlines) in Onpipeline, optionally filtered by event ID, owner, name, time, type, linked deal, person or organization, and creation date range.
-* **List Invoice Lines** `listInvoiceLines`: Lists the line items of one Onpipeline invoice, with description, unit price, quantity, discount, tax and line total.
-* **List Invoices** `listInvoices`: Lists Onpipeline invoice headers issued within an invoice date range, including client, totals, tax, due date and paid amount. Use List Invoice Lines with an invoice ID to get its line items.
-* **List Notes** `listNotes`: Lists notes attached to persons, organizations or deals in Onpipeline, optionally filtered by record type, linked record ID and creation date range.
-* **List Organizations** `listOrganizations`: Lists organizations in Onpipeline, optionally filtered by ID, name, address fields or creation date range. Pass an OrgID to fetch a single organization. Returns the matching organizations with address, deal counts and custom field values.
-* **List Persons** `listPersons`: Lists contact persons in Onpipeline, optionally filtered by person ID, organization ID or name, full name, creation date or next event date. Pass a PersonID to fetch a single person, or an OrgID to list the people of one organization.
-* **List Pipelines** `listPipelines`: Lists the sales pipelines of the Onpipeline account with their stages. Pipeline and stage IDs are required to create deals.
-* **List Products** `listProducts`: Lists the product names (deal categories) defined in the Onpipeline account, which can be linked to deals.
-* **List Recently Updated Records** `listRecentlyUpdatedRecords`: Lists persons, organizations or deals that were updated within the last 3, 6, 12 or 24 hours, for syncing changes to other applications. The records have the same shape as the corresponding list action.
-* **List Teams** `listTeams`: Lists the teams of the Onpipeline account with their members and team leaders.
-* **List Users** `listUsers`: Lists the users of the Onpipeline account with their status, administrator flag and permissions. User IDs are used as deal and event owners.
-* **List Webhooks** `listWebhooks`: Lists the webhooks registered in Onpipeline, with the zone (person, org, deal or event), target URL, creation time and last run time.
-* **List Widgets** `listWidgets`: Lists the embedded frame widgets added to Onpipeline person, organization and deal pages.
-* **Record Call** `recordCall`: Logs an inbound or outbound phone call in Onpipeline, optionally with the base64-encoded MP3 recording (up to 70 MB) and a comment. The phone numbers are matched by digits to attach the call to the right person, organization and deal; unrecognized numbers are rejected with error 406.
-* **Restore Deal** `restoreDeal`: Restores a previously deleted Onpipeline deal by ID and sets its status back to open.
-* **Update Deal** `updateDeal`: Updates an existing Onpipeline deal, including its name, status (open, won or lost), value, probability, stage, owner, linked records, expected closing date, products and custom fields. Send only the fields you are changing: re-sending unchanged values is rejected with error 406.
-* **Update Organization** `updateOrganization`: Updates an existing organization in Onpipeline. Send only the fields you are changing: Onpipeline rejects a request that re-sends unchanged values with error 406.
-* **Update Person** `updatePerson`: Updates an existing contact person in Onpipeline. Send only the fields you are changing: Onpipeline rejects a request that re-sends unchanged values with error 406. Email, Phone and Extra replace the corresponding lists.
-
-</details>
+| Delete Action Menu Link | `deleteActionMenuLink` | Removes a custom link from the Onpipeline actions menu by link ID. |
+| Delete Custom Field | `deleteCustomField` | Deletes a custom field from Onpipeline by field ID, removing its values from all records. |
+| Delete Deal | `deleteDeal` | Deletes a deal in Onpipeline by ID. This is a soft delete: the deal stays in the account with status "deleted" (visible through List Deals) and can be restored with Restore Deal. The API offers no permanent delete. |
+| Delete Organization | `deleteOrganization` | Permanently deletes an organization in Onpipeline by ID. This cannot be undone. |
+| Delete Person | `deletePerson` | Permanently deletes a contact person in Onpipeline by ID. This cannot be undone. |
+| Delete Webhook | `deleteWebhook` | Deletes a webhook from Onpipeline by webhook ID. |
+| Delete Widget | `deleteWidget` | Removes an embedded frame widget from Onpipeline by widget ID. |
+| List Action Menu Links | `listActionMenuLinks` | Lists the custom links added to the Onpipeline actions menu of persons, organizations and deals. |
+| List Custom Fields | `listCustomFields` | Lists the custom fields defined for persons, organizations or deals in Onpipeline. The returned IDs are used in the Extra arrays of create, update and list actions. |
+| List Deals | `listDeals` | Lists deals in Onpipeline, optionally filtered by deal ID, status, owner, linked person or organization, pipeline name, stage name, product, or closing, creation and next-event date ranges. Pass a DealID to fetch a single deal. |
+| List Events | `listEvents` | Lists calendar events (tasks, calls, emails, meetings and deadlines) in Onpipeline, optionally filtered by event ID, owner, name, time, type, linked deal, person or organization, and creation date range. |
+| List Invoice Lines | `listInvoiceLines` | Lists the line items of one Onpipeline invoice, with description, unit price, quantity, discount, tax and line total. |
+| List Invoices | `listInvoices` | Lists Onpipeline invoice headers issued within an invoice date range, including client, totals, tax, due date and paid amount. Use List Invoice Lines with an invoice ID to get its line items. |
+| List Notes | `listNotes` | Lists notes attached to persons, organizations or deals in Onpipeline, optionally filtered by record type, linked record ID and creation date range. |
+| List Organizations | `listOrganizations` | Lists organizations in Onpipeline, optionally filtered by ID, name, address fields or creation date range. Pass an OrgID to fetch a single organization. Returns the matching organizations with address, deal counts and custom field values. |
+| List Persons | `listPersons` | Lists contact persons in Onpipeline, optionally filtered by person ID, organization ID or name, full name, creation date or next event date. Pass a PersonID to fetch a single person, or an OrgID to list the people of one organization. |
+| List Pipelines | `listPipelines` | Lists the sales pipelines of the Onpipeline account with their stages. Pipeline and stage IDs are required to create deals. |
+| List Products | `listProducts` | Lists the product names (deal categories) defined in the Onpipeline account, which can be linked to deals. |
+| List Recently Updated Records | `listRecentlyUpdatedRecords` | Lists persons, organizations or deals that were updated within the last 3, 6, 12 or 24 hours, for syncing changes to other applications. The records have the same shape as the corresponding list action. |
+| List Teams | `listTeams` | Lists the teams of the Onpipeline account with their members and team leaders. |
+| List Users | `listUsers` | Lists the users of the Onpipeline account with their status, administrator flag and permissions. User IDs are used as deal and event owners. |
+| List Webhooks | `listWebhooks` | Lists the webhooks registered in Onpipeline, with the zone (person, org, deal or event), target URL, creation time and last run time. |
+| List Widgets | `listWidgets` | Lists the embedded frame widgets added to Onpipeline person, organization and deal pages. |
+| Record Call | `recordCall` | Logs an inbound or outbound phone call in Onpipeline, optionally with the base64-encoded MP3 recording (up to 70 MB) and a comment. The phone numbers are matched by digits to attach the call to the right person, organization and deal; unrecognized numbers are rejected with error 406. |
+| Restore Deal | `restoreDeal` | Restores a previously deleted Onpipeline deal by ID and sets its status back to open. |
+| Update Deal | `updateDeal` | Updates an existing Onpipeline deal, including its name, status (open, won or lost), value, probability, stage, owner, linked records, expected closing date, products and custom fields. Send only the fields you are changing: re-sending unchanged values is rejected with error 406. |
+| Update Organization | `updateOrganization` | Updates an existing organization in Onpipeline. Send only the fields you are changing: Onpipeline rejects a request that re-sends unchanged values with error 406. |
+| Update Person | `updatePerson` | Updates an existing contact person in Onpipeline. Send only the fields you are changing: Onpipeline rejects a request that re-sends unchanged values with error 406. Email, Phone and Extra replace the corresponding lists. |
 
 ## Events
 

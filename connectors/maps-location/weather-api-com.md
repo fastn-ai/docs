@@ -34,13 +34,6 @@ Add WeatherAPI.com from **Build → Integrations → Connectors** and connect an
 | Get Sports Events | `getSportsEvents` | Lists upcoming football, cricket, and golf events scheduled near a given location. |
 | Get Time Zone | `getTimeZone` | Retrieves the IANA time zone identifier and current local time for a location. |
 | Get Weather Alerts | `getWeatherAlerts` | Retrieves active government-issued weather alerts and warnings for a location. |
-
-<details>
-
-<summary>See 3 more actions</summary>
-
-* **Get Weather Forecast** `getForecast`: Retrieves a daily and hourly weather forecast of up to 14 days for a location, optionally including air quality, government weather alerts, and pollen data for a specific date.
-* **Look Up IP Address** `lookupIpAddress`: Retrieves geolocation, time zone, and network details for a given IP address.
-* **Search Locations** `searchLocations`: Searches for matching cities and towns for a partial location name, useful for building autocomplete or location-picker experiences.
-
-</details>
+| Get Weather Forecast | `getForecast` | Retrieves a daily and hourly weather forecast of up to 14 days for a location, optionally including air quality, government weather alerts, and pollen data for a specific date. |
+| Look Up IP Address | `lookupIpAddress` | Retrieves geolocation, time zone, and network details for a given IP address. |
+| Search Locations | `searchLocations` | Searches for matching cities and towns for a partial location name, useful for building autocomplete or location-picker experiences. |
