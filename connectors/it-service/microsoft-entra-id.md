@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Entra ID (formerly Azure Active Directory) identity and directory management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0)."
+hidden: true
 ---
 
 # Microsoft Entra ID

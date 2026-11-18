@@ -1,5 +1,6 @@
 ---
 description: "Kontent.ai headless CMS Management API v2 connector."
+hidden: true
 ---
 
 # Kontent.ai

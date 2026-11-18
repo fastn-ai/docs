@@ -1,5 +1,6 @@
 ---
 description: "Personio is a European HR platform for SMBs covering people data, time off, attendances, compensation, recruiting, and org structure."
+hidden: true
 ---
 
 # Personio

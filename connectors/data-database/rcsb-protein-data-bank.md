@@ -1,5 +1,6 @@
 ---
 description: "The RCSB Protein Data Bank (PDB) offers free APIs for 3D structures of proteins, nucleic acids and complexes."
+hidden: true
 ---
 
 # RCSB Protein Data Bank

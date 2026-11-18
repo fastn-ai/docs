@@ -1,5 +1,6 @@
 ---
 description: "PDF-API.io generates PDF documents from pre-defined templates."
+hidden: true
 ---
 
 # PDF-API.io

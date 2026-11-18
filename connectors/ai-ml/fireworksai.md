@@ -1,5 +1,6 @@
 ---
 description: "Fireworks AI — fast generative AI inference and platform management."
+hidden: true
 ---
 
 # Fireworks AI

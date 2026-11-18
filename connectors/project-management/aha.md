@@ -1,5 +1,6 @@
 ---
 description: "Aha!"
+hidden: true
 ---
 
 # Aha!

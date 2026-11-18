@@ -1,5 +1,6 @@
 ---
 description: "BugHerd is a visual bug tracker and website feedback tool that pins client feedback directly onto a web page."
+hidden: true
 ---
 
 # BugHerd

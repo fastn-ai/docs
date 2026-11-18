@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Storage JSON API connector."
+hidden: true
 ---
 
 # Google Cloud Storage

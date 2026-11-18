@@ -1,5 +1,6 @@
 ---
 description: "The Erskine May API gives open access to Erskine May, the authoritative guide to UK parliamentary practice: list parts and chapters, read sections and page…"
+hidden: true
 ---
 
 # Erskine May API

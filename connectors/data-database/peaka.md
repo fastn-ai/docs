@@ -1,5 +1,6 @@
 ---
 description: "Peaka is a zero-ETL data integration platform that lets you connect APIs, databases and SaaS tools and query them together with SQL."
+hidden: true
 ---
 
 # Peaka

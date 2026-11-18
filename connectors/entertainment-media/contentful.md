@@ -1,5 +1,6 @@
 ---
 description: "Manage and deliver structured content with Contentful."
+hidden: true
 ---
 
 # Contentful

@@ -1,5 +1,6 @@
 ---
 description: "WebDAV (Web Distributed Authoring and Versioning) connector for remote file management over HTTP."
+hidden: true
 ---
 
 # WebDAV

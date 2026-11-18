@@ -1,5 +1,6 @@
 ---
 description: "BTCPay Server Greenfield API v1."
+hidden: true
 ---
 
 # BTCPay Server

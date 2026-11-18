@@ -1,5 +1,6 @@
 ---
 description: "Gradium is a low-latency speech API for text-to-speech, speech-to-text, voice design and voice cloning."
+hidden: true
 ---
 
 # Gradium

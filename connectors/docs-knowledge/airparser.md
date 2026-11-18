@@ -1,5 +1,6 @@
 ---
 description: "Airparser is an AI-powered document and email parser that extracts structured data from PDFs, emails, images and spreadsheets."
+hidden: true
 ---
 
 # Airparser

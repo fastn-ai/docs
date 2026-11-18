@@ -1,5 +1,6 @@
 ---
 description: "ServiceM8 is a job management platform for trade and service businesses."
+hidden: true
 ---
 
 # ServiceM8

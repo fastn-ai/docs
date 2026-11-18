@@ -1,5 +1,6 @@
 ---
 description: "Hootsuite is a social media management platform for scheduling, approving, and publishing content across connected social profiles."
+hidden: true
 ---
 
 # Hootsuite

@@ -1,5 +1,6 @@
 ---
 description: "Ideal Postcodes provides UK and international address data: postcode lookup, address search and autocomplete, UDPRN and UMPRN retrieval, reverse geocoding,…"
+hidden: true
 ---
 
 # Ideal Postcodes

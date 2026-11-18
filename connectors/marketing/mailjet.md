@@ -1,5 +1,6 @@
 ---
 description: "Send transactional and marketing email and SMS with Mailjet."
+hidden: true
 ---
 
 # Mailjet

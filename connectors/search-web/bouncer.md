@@ -1,5 +1,6 @@
 ---
 description: "Bouncer email verification API."
+hidden: true
 ---
 
 # Bouncer

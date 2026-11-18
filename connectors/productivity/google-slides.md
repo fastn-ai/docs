@@ -1,5 +1,6 @@
 ---
 description: "Google Slides API v1 — create presentations, read presentation and page content, generate page thumbnails, and apply batch updates to slides, shapes, text,…"
+hidden: true
 ---
 
 # Google Slides

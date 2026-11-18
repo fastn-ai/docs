@@ -1,5 +1,6 @@
 ---
 description: "DocuPotion document automation API."
+hidden: true
 ---
 
 # DocuPotion

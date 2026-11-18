@@ -1,5 +1,6 @@
 ---
 description: "ChatBotKit is an AI agent infrastructure platform for building, deploying and operating production AI agents."
+hidden: true
 ---
 
 # ChatBotKit

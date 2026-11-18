@@ -1,5 +1,6 @@
 ---
 description: "Google Calendar API v3 connector — manage calendars, events, ACLs, free/busy queries, and push notification channels."
+hidden: true
 ---
 
 # Google Calendar

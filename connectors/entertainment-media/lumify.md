@@ -1,5 +1,6 @@
 ---
 description: "Lumify is an agent-ready sports intelligence API covering MLB, NBA, NFL, NHL, NCAAF, NCAAB, tennis and soccer."
+hidden: true
 ---
 
 # Lumify

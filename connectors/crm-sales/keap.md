@@ -1,5 +1,6 @@
 ---
 description: "Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform."
+hidden: true
 ---
 
 # Keap

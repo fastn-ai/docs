@@ -1,5 +1,6 @@
 ---
 description: "Vlocity, now sold as Salesforce Industries, is a set of managed packages installed inside a Salesforce org (namespaces vlocity_cmt for…"
+hidden: true
 ---
 
 # Vlocity (Salesforce Industries)

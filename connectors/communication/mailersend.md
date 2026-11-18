@@ -1,5 +1,6 @@
 ---
 description: "MailerSend is a transactional email and SMS platform."
+hidden: true
 ---
 
 # MailerSend

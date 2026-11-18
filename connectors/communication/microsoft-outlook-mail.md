@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Outlook Mail via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0)."
+hidden: true
 ---
 
 # Microsoft Outlook Mail

@@ -1,5 +1,6 @@
 ---
 description: "Beebole is a time-tracking, project-costing, absence and resource-planning platform for teams."
+hidden: true
 ---
 
 # Beebole

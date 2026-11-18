@@ -1,5 +1,6 @@
 ---
 description: "Flatfile is a data onboarding and import platform."
+hidden: true
 ---
 
 # Flatfile

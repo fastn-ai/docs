@@ -1,5 +1,6 @@
 ---
 description: "Looker Studio (formerly Google Data Studio) — the Data Studio REST API v1 (https://datastudio.googleapis.com/v1)."
+hidden: true
 ---
 
 # Looker Studio

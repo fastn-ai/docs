@@ -1,5 +1,6 @@
 ---
 description: "Checkvist is an online outliner and hierarchical task/list manager."
+hidden: true
 ---
 
 # Checkvist

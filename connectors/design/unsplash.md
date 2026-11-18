@@ -1,5 +1,6 @@
 ---
 description: "Unsplash stock photo / image API."
+hidden: true
 ---
 
 # Unsplash

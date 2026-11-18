@@ -1,5 +1,6 @@
 ---
 description: "PDFgen generates pixel-perfect PDFs from saved Handlebars templates, raw HTML, Markdown, or an AI prompt through a single REST call."
+hidden: true
 ---
 
 # PDFgen

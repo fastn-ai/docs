@@ -1,5 +1,6 @@
 ---
 description: "disease.sh is a free open API for disease statistics."
+hidden: true
 ---
 
 # Disease.sh

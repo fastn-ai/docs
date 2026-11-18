@@ -1,5 +1,6 @@
 ---
 description: "FraudLabs Pro fraud prevention API (v2)."
+hidden: true
 ---
 
 # FraudLabs Pro

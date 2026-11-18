@@ -1,5 +1,6 @@
 ---
 description: "Adyen is an enterprise unified commerce payment platform."
+hidden: true
 ---
 
 # Adyen

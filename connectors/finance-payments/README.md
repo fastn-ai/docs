@@ -1,10 +1,10 @@
 ---
-description: "Finance and payments connectors fastn manages: 49 in all."
+description: "Finance and payments connectors fastn manages, with their auth, actions and events."
 ---
 
 # Finance and payments
 
-49 connectors. Back to the [connector catalog](../README.md).
+Finance and payments apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

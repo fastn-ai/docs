@@ -1,5 +1,6 @@
 ---
 description: "Passcreator — Apple Wallet and Google Wallet pass platform."
+hidden: true
 ---
 
 # Passcreator

@@ -1,5 +1,6 @@
 ---
 description: "Google Photos Library API v1 connector (https://photoslibrary.googleapis.com/v1)."
+hidden: true
 ---
 
 # Google Photos

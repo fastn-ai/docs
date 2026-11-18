@@ -1,5 +1,6 @@
 ---
 description: "Pushwoosh customer engagement platform — send push notifications, emails, and multichannel messages; manage devices, tags, segments, presets, events,…"
+hidden: true
 ---
 
 # Pushwoosh

@@ -1,5 +1,6 @@
 ---
 description: "Hightouch Composable CDP and data activation platform."
+hidden: true
 ---
 
 # Hightouch

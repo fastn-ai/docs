@@ -1,5 +1,6 @@
 ---
 description: "Paddle Billing API connector."
+hidden: true
 ---
 
 # Paddle Billing

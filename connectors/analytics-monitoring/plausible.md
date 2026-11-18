@@ -1,5 +1,6 @@
 ---
 description: "Plausible Analytics is a privacy-friendly, cookie-free web analytics platform."
+hidden: true
 ---
 
 # Plausible Analytics

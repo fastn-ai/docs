@@ -1,5 +1,6 @@
 ---
 description: "Close CRM connector."
+hidden: true
 ---
 
 # Close

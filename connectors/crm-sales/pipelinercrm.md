@@ -1,5 +1,6 @@
 ---
 description: "Coevera (formerly Pipeliner CRM), a sales CRM by Pipelinersales Inc."
+hidden: true
 ---
 
 # Pipeliner CRM (Coevera)

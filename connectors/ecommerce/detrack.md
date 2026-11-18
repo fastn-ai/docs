@@ -1,5 +1,6 @@
 ---
 description: "Detrack delivery management and real-time vehicle tracking (API v2)."
+hidden: true
 ---
 
 # Detrack

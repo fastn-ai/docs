@@ -1,5 +1,6 @@
 ---
 description: "Dog CEO's Dog API is a free, open API with 20,000+ dog images from the Stanford Dogs Dataset."
+hidden: true
 ---
 
 # Dog CEO

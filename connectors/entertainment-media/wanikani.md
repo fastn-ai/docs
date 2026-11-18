@@ -1,5 +1,6 @@
 ---
 description: "WaniKani API v2 — Japanese kanji learning SRS."
+hidden: true
 ---
 
 # WaniKani

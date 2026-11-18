@@ -1,5 +1,6 @@
 ---
 description: "TRIGGERcmd is a cloud service that securely runs commands on your registered computers."
+hidden: true
 ---
 
 # TRIGGERcmd

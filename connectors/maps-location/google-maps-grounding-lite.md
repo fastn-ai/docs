@@ -1,5 +1,6 @@
 ---
 description: "Google Maps Platform Grounding Lite MCP server (https://mapstools.googleapis.com/mcp), Google's hosted remote Model Context Protocol server (Streamable HTTP)…"
+hidden: true
 ---
 
 # Google Maps Grounding Lite

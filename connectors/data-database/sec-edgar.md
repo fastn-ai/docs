@@ -1,5 +1,6 @@
 ---
 description: "SEC EDGAR APIs from the U.S."
+hidden: true
 ---
 
 # SEC EDGAR

@@ -1,5 +1,6 @@
 ---
 description: "Mapflow is an AI mapping platform that extracts buildings, roads, forests and other features from satellite and aerial imagery."
+hidden: true
 ---
 
 # Mapflow

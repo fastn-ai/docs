@@ -1,5 +1,6 @@
 ---
 description: "CityBikes is a free, open API for bike sharing data."
+hidden: true
 ---
 
 # CityBikes

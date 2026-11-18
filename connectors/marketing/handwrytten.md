@@ -1,5 +1,6 @@
 ---
 description: "Handwrytten sends real handwritten notes and cards on your behalf, written by robots holding real pens."
+hidden: true
 ---
 
 # Handwrytten

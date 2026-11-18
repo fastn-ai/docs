@@ -1,5 +1,6 @@
 ---
 description: "Webpushr web push notification platform."
+hidden: true
 ---
 
 # Webpushr

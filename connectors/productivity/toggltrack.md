@@ -1,5 +1,6 @@
 ---
 description: "Toggl Track time tracking API."
+hidden: true
 ---
 
 # Toggl Track

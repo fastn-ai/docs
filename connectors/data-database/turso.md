@@ -1,5 +1,6 @@
 ---
 description: "Turso is a managed SQLite-compatible edge database platform built on libSQL."
+hidden: true
 ---
 
 # Turso

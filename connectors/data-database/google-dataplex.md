@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Dataplex Universal Catalog (dataplex.googleapis.com v1)."
+hidden: true
 ---
 
 # Google Dataplex

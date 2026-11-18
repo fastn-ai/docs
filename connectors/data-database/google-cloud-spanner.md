@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Spanner API v1 (https://spanner.googleapis.com/v1)."
+hidden: true
 ---
 
 # Google Cloud Spanner

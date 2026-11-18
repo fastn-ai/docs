@@ -1,5 +1,6 @@
 ---
 description: "SmartSuite is a collaborative work management platform where data lives in solutions, applications (tables) and records."
+hidden: true
 ---
 
 # SmartSuite

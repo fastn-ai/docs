@@ -1,5 +1,6 @@
 ---
 description: "Encharge marketing automation — manage people, segments, tags, custom person fields, webhooks (event subscriptions), send transactional emails, and ingest…"
+hidden: true
 ---
 
 # Encharge

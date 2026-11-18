@@ -1,5 +1,6 @@
 ---
 description: "Layerre design-automation API."
+hidden: true
 ---
 
 # Layerre

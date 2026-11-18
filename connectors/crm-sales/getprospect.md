@@ -1,5 +1,6 @@
 ---
 description: "GetProspect is a B2B lead generation platform."
+hidden: true
 ---
 
 # GetProspect

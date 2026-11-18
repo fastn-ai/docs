@@ -1,5 +1,6 @@
 ---
 description: "WebScraping.AI is a web scraping API with rotating datacenter, residential and stealth proxies and headless Chromium rendering."
+hidden: true
 ---
 
 # WebScraping.AI

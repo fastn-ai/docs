@@ -1,5 +1,6 @@
 ---
 description: "IPstack is a real-time IP geolocation and IP intelligence API by apilayer."
+hidden: true
 ---
 
 # IPstack

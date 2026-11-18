@@ -1,5 +1,6 @@
 ---
 description: "IP2WHOIS provides domain WHOIS lookups returning registrar, registrant, admin, technical and billing contacts, creation, update and expiration dates, domain…"
+hidden: true
 ---
 
 # IP2WHOIS

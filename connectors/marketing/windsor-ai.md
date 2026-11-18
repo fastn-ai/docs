@@ -1,5 +1,6 @@
 ---
 description: "Windsor.ai is a marketing data platform that unifies data from 350+ advertising, analytics, CRM and e-commerce sources behind one API."
+hidden: true
 ---
 
 # Windsor.ai

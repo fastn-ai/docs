@@ -1,5 +1,6 @@
 ---
 description: "Serply provides real-time search engine results and web scraping over a simple REST API."
+hidden: true
 ---
 
 # Serply

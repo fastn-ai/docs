@@ -1,5 +1,6 @@
 ---
 description: "Zoho Bigin is a pipeline-centric CRM for small businesses."
+hidden: true
 ---
 
 # Zoho Bigin

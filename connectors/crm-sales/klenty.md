@@ -1,5 +1,6 @@
 ---
 description: "Klenty sales engagement platform."
+hidden: true
 ---
 
 # Klenty

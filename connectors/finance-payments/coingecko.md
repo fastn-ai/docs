@@ -1,5 +1,6 @@
 ---
 description: "CoinGecko is the world's largest independent cryptocurrency data aggregator."
+hidden: true
 ---
 
 # CoinGecko

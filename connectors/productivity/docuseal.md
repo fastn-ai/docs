@@ -1,5 +1,6 @@
 ---
 description: "DocuSeal is a document signing platform."
+hidden: true
 ---
 
 # DocuSeal

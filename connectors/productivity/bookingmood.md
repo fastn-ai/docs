@@ -1,5 +1,6 @@
 ---
 description: "Bookingmood vacation-rental and booking management API (PostgREST v11.1 at https://api.bookingmood.com/v1)."
+hidden: true
 ---
 
 # Bookingmood

@@ -1,5 +1,6 @@
 ---
 description: "Breezy HR is a visual pipeline recruiting/ATS platform."
+hidden: true
 ---
 
 # Breezy HR

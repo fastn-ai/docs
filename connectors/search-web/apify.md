@@ -1,5 +1,6 @@
 ---
 description: "Apify is a cloud platform for web scraping, browser automation and data extraction."
+hidden: true
 ---
 
 # Apify

@@ -1,5 +1,6 @@
 ---
 description: "BMC Helix ITSM service management platform."
+hidden: true
 ---
 
 # BMC Helix ITSM

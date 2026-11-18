@@ -1,5 +1,6 @@
 ---
 description: "The UK Parliament Lords Votes API gives open data on House of Lords divisions (votes): search divisions by title, date and member, get a division with every…"
+hidden: true
 ---
 
 # UK Parliament Lords Votes API

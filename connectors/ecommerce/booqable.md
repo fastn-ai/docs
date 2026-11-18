@@ -1,5 +1,6 @@
 ---
 description: "Booqable is rental management software for equipment and inventory rental businesses."
+hidden: true
 ---
 
 # Booqable

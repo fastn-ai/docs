@@ -1,5 +1,6 @@
 ---
 description: "Push by Techulus sends push notifications to your iOS, Android, desktop and web devices from any script, webhook or automation."
+hidden: true
 ---
 
 # Push by Techulus

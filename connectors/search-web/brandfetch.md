@@ -1,5 +1,6 @@
 ---
 description: "Brandfetch is the brand data layer for products and AI agents."
+hidden: true
 ---
 
 # Brandfetch

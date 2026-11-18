@@ -1,5 +1,6 @@
 ---
 description: "Trello connector for boards, lists, cards, checklists, labels, members, organizations, actions, search, and webhooks via the Trello REST API (v1)."
+hidden: true
 ---
 
 # Trello

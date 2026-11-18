@@ -1,5 +1,6 @@
 ---
 description: "Snapchat Marketing API connector covering the Ads API (organizations, ad accounts, funding sources, billing centers, members and roles, campaigns, ad squads,…"
+hidden: true
 ---
 
 # Snapchat Marketing API

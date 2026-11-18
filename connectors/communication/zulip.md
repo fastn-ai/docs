@@ -1,5 +1,6 @@
 ---
 description: "Zulip is an open-source team chat application organised by topic."
+hidden: true
 ---
 
 # Zulip

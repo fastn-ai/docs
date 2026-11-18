@@ -1,5 +1,6 @@
 ---
 description: "Where the ISS at?"
+hidden: true
 ---
 
 # Where the ISS at

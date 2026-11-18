@@ -1,5 +1,6 @@
 ---
 description: "Google Merchant Center connector for the Content API for Shopping v2.1 — manage products, product statuses, inventory, orders, accounts, tax, shipping…"
+hidden: true
 ---
 
 # Google Merchant Center

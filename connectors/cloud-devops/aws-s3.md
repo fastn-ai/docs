@@ -1,5 +1,6 @@
 ---
 description: "Amazon Simple Storage Service (S3) REST API."
+hidden: true
 ---
 
 # AWS S3

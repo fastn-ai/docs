@@ -1,5 +1,6 @@
 ---
 description: "Legal Data Hunter is a multi-jurisdictional legal research platform covering statutes, case law and doctrine across 230+ jurisdictions and 38M+ documents."
+hidden: true
 ---
 
 # Legal Data Hunter

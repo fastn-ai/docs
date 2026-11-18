@@ -1,5 +1,6 @@
 ---
 description: "Blitz API is B2B go-to-market data infrastructure for growth and revenue teams."
+hidden: true
 ---
 
 # Blitz API

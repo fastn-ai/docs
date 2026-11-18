@@ -1,5 +1,6 @@
 ---
 description: "LiveSession is a product-analytics and session-replay platform."
+hidden: true
 ---
 
 # LiveSession

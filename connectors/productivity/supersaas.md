@@ -1,5 +1,6 @@
 ---
 description: "SuperSaaS is an online appointment scheduling and booking platform."
+hidden: true
 ---
 
 # SuperSaaS

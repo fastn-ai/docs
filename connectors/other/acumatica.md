@@ -1,5 +1,6 @@
 ---
 description: "Acumatica Cloud ERP contract-based REST API."
+hidden: true
 ---
 
 # Acumatica

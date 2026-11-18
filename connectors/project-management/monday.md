@@ -1,5 +1,6 @@
 ---
 description: "Monday.com Work OS GraphQL API connector."
+hidden: true
 ---
 
 # Monday.com

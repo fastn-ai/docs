@@ -1,5 +1,6 @@
 ---
 description: "Cal.com API v2 connector."
+hidden: true
 ---
 
 # Cal.com

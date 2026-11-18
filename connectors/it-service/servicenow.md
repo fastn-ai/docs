@@ -1,5 +1,6 @@
 ---
 description: "ServiceNow ITSM platform connector."
+hidden: true
 ---
 
 # ServiceNow

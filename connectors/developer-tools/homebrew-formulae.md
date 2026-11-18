@@ -1,5 +1,6 @@
 ---
 description: "Homebrew Formulae (formulae.brew.sh) is the free public JSON API of the Homebrew package manager."
+hidden: true
 ---
 
 # Homebrew Formulae

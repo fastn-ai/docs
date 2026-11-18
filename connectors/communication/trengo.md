@@ -1,5 +1,6 @@
 ---
 description: "Trengo is a multichannel customer engagement and helpdesk platform unifying WhatsApp, email, SMS, live chat, voice, and social channels into one team inbox."
+hidden: true
 ---
 
 # Trengo

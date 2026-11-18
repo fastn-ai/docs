@@ -1,5 +1,6 @@
 ---
 description: "Userflow builds in-app onboarding flows, checklists, surveys and resource centres without code."
+hidden: true
 ---
 
 # Userflow

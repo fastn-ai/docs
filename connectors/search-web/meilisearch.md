@@ -1,5 +1,6 @@
 ---
 description: "Meilisearch is an open-source, lightning-fast search engine."
+hidden: true
 ---
 
 # Meilisearch

@@ -1,5 +1,6 @@
 ---
 description: "Cloutly is a customer review and online reputation management platform."
+hidden: true
 ---
 
 # Cloutly

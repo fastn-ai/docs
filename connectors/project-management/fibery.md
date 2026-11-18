@@ -1,5 +1,6 @@
 ---
 description: "Fibery work-management workspace API."
+hidden: true
 ---
 
 # Fibery

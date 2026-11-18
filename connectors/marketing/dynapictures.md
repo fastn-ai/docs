@@ -1,5 +1,6 @@
 ---
 description: "DynaPictures generates personalized images, PDFs and animated countdown timers from reusable design templates."
+hidden: true
 ---
 
 # DynaPictures

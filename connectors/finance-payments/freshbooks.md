@@ -1,5 +1,6 @@
 ---
 description: "FreshBooks cloud accounting and invoicing platform."
+hidden: true
 ---
 
 # FreshBooks

@@ -1,5 +1,6 @@
 ---
 description: "Print Autopilot (printautopilot.com) automatically prints PDF documents on your own remote printers."
+hidden: true
 ---
 
 # Print Autopilot

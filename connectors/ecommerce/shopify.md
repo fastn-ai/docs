@@ -1,5 +1,6 @@
 ---
 description: "Shopify Admin REST API connector for managing orders, products, customers, inventory, discounts, shipping, payments, and more."
+hidden: true
 ---
 
 # Shopify

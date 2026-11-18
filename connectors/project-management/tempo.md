@@ -1,5 +1,6 @@
 ---
 description: "Tempo Cloud REST API v4 for Jira Time Tracking, Resourcing and Financial Management."
+hidden: true
 ---
 
 # Tempo

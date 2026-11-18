@@ -1,5 +1,6 @@
 ---
 description: "Mailercloud email marketing platform."
+hidden: true
 ---
 
 # Mailercloud

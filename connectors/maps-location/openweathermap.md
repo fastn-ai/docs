@@ -1,5 +1,6 @@
 ---
 description: "OpenWeatherMap provides current weather, 5-day/3-hour forecasts, city search, air pollution data (current, forecast and history), direct/reverse/ZIP…"
+hidden: true
 ---
 
 # OpenWeatherMap

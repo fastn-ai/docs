@@ -1,5 +1,6 @@
 ---
 description: "Shortcut (formerly Clubhouse) project management."
+hidden: true
 ---
 
 # Shortcut

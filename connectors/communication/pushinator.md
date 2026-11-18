@@ -1,5 +1,6 @@
 ---
 description: "Pushinator push notifications."
+hidden: true
 ---
 
 # Pushinator

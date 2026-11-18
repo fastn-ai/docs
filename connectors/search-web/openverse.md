@@ -1,5 +1,6 @@
 ---
 description: "Openverse (by WordPress) is a free search engine for openly licensed images and audio, with hundreds of millions of works from Creative Commons and public…"
+hidden: true
 ---
 
 # Openverse

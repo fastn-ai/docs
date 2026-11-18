@@ -1,5 +1,6 @@
 ---
 description: "Grafana Loki log aggregation over the Loki HTTP API."
+hidden: true
 ---
 
 # Grafana Loki

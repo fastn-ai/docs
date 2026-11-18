@@ -1,5 +1,6 @@
 ---
 description: "Wolfram|Alpha is a computational knowledge engine that answers free-form natural-language questions across mathematics, science, geography, history, finance…"
+hidden: true
 ---
 
 # Wolfram\|Alpha

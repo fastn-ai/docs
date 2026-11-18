@@ -1,5 +1,6 @@
 ---
 description: "Hive is a project management and collaboration platform."
+hidden: true
 ---
 
 # Hive

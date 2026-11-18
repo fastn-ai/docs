@@ -1,5 +1,6 @@
 ---
 description: "Invalid Bounce is an email verification and list-hygiene platform."
+hidden: true
 ---
 
 # Invalid Bounce

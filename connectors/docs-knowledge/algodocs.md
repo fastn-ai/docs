@@ -1,5 +1,6 @@
 ---
 description: "AlgoDocs document data extraction API."
+hidden: true
 ---
 
 # AlgoDocs

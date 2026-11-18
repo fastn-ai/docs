@@ -1,5 +1,6 @@
 ---
 description: "Certifier is a platform for issuing digital certificates and badges."
+hidden: true
 ---
 
 # Certifier

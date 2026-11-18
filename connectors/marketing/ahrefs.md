@@ -1,5 +1,6 @@
 ---
 description: "Ahrefs is an SEO and marketing intelligence platform."
+hidden: true
 ---
 
 # Ahrefs

@@ -1,5 +1,6 @@
 ---
 description: "A free, public, fully keyless API (catfact.ninja) that returns random cat facts and a list of cat breeds with their attributes."
+hidden: true
 ---
 
 # Cat Facts API

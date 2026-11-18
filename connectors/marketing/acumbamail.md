@@ -1,5 +1,6 @@
 ---
 description: "Acumbamail is a Spanish email and SMS marketing platform."
+hidden: true
 ---
 
 # Acumbamail

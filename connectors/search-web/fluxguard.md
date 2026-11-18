@@ -1,5 +1,6 @@
 ---
 description: "Fluxguard is an AI-powered website change monitoring service."
+hidden: true
 ---
 
 # Fluxguard

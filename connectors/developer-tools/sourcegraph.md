@@ -1,5 +1,6 @@
 ---
 description: "Sourcegraph is a code search and code intelligence platform."
+hidden: true
 ---
 
 # Sourcegraph

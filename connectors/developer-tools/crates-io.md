@@ -1,5 +1,6 @@
 ---
 description: "crates.io is the Rust community's package registry."
+hidden: true
 ---
 
 # crates.io

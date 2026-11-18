@@ -1,5 +1,6 @@
 ---
 description: "Amazon Simple Notification Service (SNS) Query API."
+hidden: true
 ---
 
 # AWS Simple Notification Service

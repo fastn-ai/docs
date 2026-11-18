@@ -1,5 +1,6 @@
 ---
 description: "Figma REST API connector."
+hidden: true
 ---
 
 # Figma

@@ -1,5 +1,6 @@
 ---
 description: "Pinch Payments is an Australian payments platform for credit card and direct debit collection."
+hidden: true
 ---
 
 # Pinch Payments

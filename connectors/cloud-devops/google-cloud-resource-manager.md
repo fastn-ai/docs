@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Resource Manager API v3 connector (https://cloudresourcemanager.googleapis.com/v3)."
+hidden: true
 ---
 
 # Google Cloud Resource Manager

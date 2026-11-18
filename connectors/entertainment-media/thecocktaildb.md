@@ -1,5 +1,6 @@
 ---
 description: "TheCocktailDB is an open, crowd-sourced database of drinks and cocktails."
+hidden: true
 ---
 
 # TheCocktailDB

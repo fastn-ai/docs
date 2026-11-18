@@ -1,5 +1,6 @@
 ---
 description: "LeadIQ sales intelligence — GraphQL API for contact/person search, company search, advanced people search, prospect enrichment, and prospect-list management."
+hidden: true
 ---
 
 # LeadIQ

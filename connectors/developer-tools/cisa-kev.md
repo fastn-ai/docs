@@ -1,5 +1,6 @@
 ---
 description: "The CISA Known Exploited Vulnerabilities (KEV) catalog is the US Cybersecurity and Infrastructure Security Agency's authoritative, free list of…"
+hidden: true
 ---
 
 # CISA Known Exploited Vulnerabilities

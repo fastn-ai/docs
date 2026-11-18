@@ -1,5 +1,6 @@
 ---
 description: "Iterate (iteratehq.com) in-product, email and mobile surveys: surveys, questions, responses, response groups, stats, metrics, AI reports, themes, topics,…"
+hidden: true
 ---
 
 # Iterate

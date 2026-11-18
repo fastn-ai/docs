@@ -1,5 +1,6 @@
 ---
 description: "Elastic Email is an email delivery and marketing platform."
+hidden: true
 ---
 
 # Elastic Email

@@ -1,5 +1,6 @@
 ---
 description: "Google Programmable Search (Custom Search JSON API) — run web and image queries against a Programmable Search Engine and read the ranked results with their…"
+hidden: true
 ---
 
 # Google Programmable Search

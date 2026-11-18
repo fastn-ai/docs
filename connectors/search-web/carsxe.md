@@ -1,5 +1,6 @@
 ---
 description: "CarsXE is a vehicle data API for decoding VINs and license plates and enriching vehicle records."
+hidden: true
 ---
 
 # CarsXE

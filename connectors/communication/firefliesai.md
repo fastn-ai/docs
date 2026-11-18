@@ -1,5 +1,6 @@
 ---
 description: "Fireflies.ai connector — GraphQL API (single POST https://api.fireflies.ai/graphql) for the AI meeting notetaker."
+hidden: true
 ---
 
 # Fireflies.ai

@@ -1,5 +1,6 @@
 ---
 description: "Velocify LeadManager and Dial-IQ by ICE Mortgage Technology - sales acceleration and lead management for mortgage and high-velocity sales teams."
+hidden: true
 ---
 
 # Velocify

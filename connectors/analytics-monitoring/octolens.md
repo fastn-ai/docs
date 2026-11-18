@@ -1,5 +1,6 @@
 ---
 description: "OctoLens social listening — query brand mentions across Reddit, Twitter, LinkedIn, YouTube, HackerNews, GitHub and other platforms."
+hidden: true
 ---
 
 # OctoLens

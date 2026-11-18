@@ -1,5 +1,6 @@
 ---
 description: "Copyleaks is an AI-powered content authenticity platform: plagiarism detection, AI-generated text, image and video detection, grammar checking, text…"
+hidden: true
 ---
 
 # Copyleaks

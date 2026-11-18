@@ -1,5 +1,6 @@
 ---
 description: "OpenF1 is an open-source Formula 1 data API with telemetry, timing and session data from 2023 onward."
+hidden: true
 ---
 
 # OpenF1

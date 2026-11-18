@@ -1,5 +1,6 @@
 ---
 description: "Nominatim is the search engine for OpenStreetMap data."
+hidden: true
 ---
 
 # OpenStreetMap Nominatim

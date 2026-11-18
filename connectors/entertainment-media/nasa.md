@@ -1,5 +1,6 @@
 ---
 description: "NASA Open APIs (api.nasa.gov) give programmatic access to NASA data: the Astronomy Picture of the Day, near-Earth asteroids (NeoWs), DONKI space-weather…"
+hidden: true
 ---
 
 # NASA Open APIs

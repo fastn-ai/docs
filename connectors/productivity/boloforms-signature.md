@@ -1,5 +1,6 @@
 ---
 description: "BoloForms Signature (BoloSign) e-signature API."
+hidden: true
 ---
 
 # BoloForms Signature

@@ -1,5 +1,6 @@
 ---
 description: "Rootly incident management and on-call platform."
+hidden: true
 ---
 
 # Rootly

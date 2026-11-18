@@ -1,5 +1,6 @@
 ---
 description: "Airship (Urban Airship) customer engagement platform — send and schedule push notifications, manage channels and named users, segments, static lists, tags,…"
+hidden: true
 ---
 
 # Airship

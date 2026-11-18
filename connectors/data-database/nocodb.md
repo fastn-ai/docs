@@ -1,5 +1,6 @@
 ---
 description: "NocoDB is an open-source no-code database and Airtable alternative."
+hidden: true
 ---
 
 # NocoDB

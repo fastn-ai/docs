@@ -1,5 +1,6 @@
 ---
 description: "Odoo is an open-source suite of business apps (CRM, Sales, Invoicing, Inventory, Purchase, Project, Employees, Calendar and more)."
+hidden: true
 ---
 
 # Odoo

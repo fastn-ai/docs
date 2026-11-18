@@ -1,5 +1,6 @@
 ---
 description: "Alpaca commission-free stock, options and crypto trading."
+hidden: true
 ---
 
 # Alpaca

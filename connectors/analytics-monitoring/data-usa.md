@@ -1,5 +1,6 @@
 ---
 description: "Data USA (by Datawheel and Deloitte) publishes US public data - census, economy, education, health and more - through its Tesseract API."
+hidden: true
 ---
 
 # Data USA

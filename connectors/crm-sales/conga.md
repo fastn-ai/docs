@@ -1,5 +1,6 @@
 ---
 description: "Conga Advantage Platform (formerly Apttus Intelligent Cloud) — Conga's standalone Revenue Lifecycle Management REST API, covering CRM records (Account,…"
+hidden: true
 ---
 
 # Conga Advantage Platform

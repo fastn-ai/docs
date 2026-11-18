@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI Company Enrichment returns firmographic data for a company domain, including name, logo, description, headquarters, industry codes, headcount,…"
+hidden: true
 ---
 
 # AbstractAPI Company Enrichment

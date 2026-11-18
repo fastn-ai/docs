@@ -1,5 +1,6 @@
 ---
 description: "Heyzine turns PDF, Word, PowerPoint and OpenDocument files into interactive online flipbooks."
+hidden: true
 ---
 
 # Heyzine Flipbooks

@@ -1,5 +1,6 @@
 ---
 description: "Daily is a real-time video and audio conferencing API."
+hidden: true
 ---
 
 # Daily

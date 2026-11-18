@@ -1,5 +1,6 @@
 ---
 description: "Popupsmart popup builder."
+hidden: true
 ---
 
 # Popupsmart

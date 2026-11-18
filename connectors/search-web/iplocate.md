@@ -1,5 +1,6 @@
 ---
 description: "IPLocate is an IP geolocation and threat intelligence platform."
+hidden: true
 ---
 
 # IPLocate

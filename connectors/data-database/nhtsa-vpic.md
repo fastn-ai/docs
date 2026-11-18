@@ -1,5 +1,6 @@
 ---
 description: "NHTSA vPIC (Product Information Catalog and Vehicle Listing) is the US Department of Transportation's free vehicle API."
+hidden: true
 ---
 
 # NHTSA vPIC

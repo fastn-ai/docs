@@ -1,5 +1,6 @@
 ---
 description: "Parseur is an AI-powered document parser that extracts structured data from emails, PDFs and spreadsheets."
+hidden: true
 ---
 
 # Parseur

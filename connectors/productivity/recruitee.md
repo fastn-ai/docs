@@ -1,5 +1,6 @@
 ---
 description: "Recruitee (Tellent) is a collaborative recruitment and applicant tracking platform."
+hidden: true
 ---
 
 # Recruitee

@@ -1,5 +1,6 @@
 ---
 description: "Attio CRM API v2 (base https://api.attio.com/v2)."
+hidden: true
 ---
 
 # Attio

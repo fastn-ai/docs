@@ -1,5 +1,6 @@
 ---
 description: "Spotlightr (formerly vooPlayer) interactive video hosting and marketing platform."
+hidden: true
 ---
 
 # Spotlightr

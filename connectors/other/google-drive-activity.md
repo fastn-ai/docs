@@ -1,5 +1,6 @@
 ---
 description: "Query the activity record of files and folders in Google Drive using the Google Drive Activity API v2."
+hidden: true
 ---
 
 # Google Drive Activity

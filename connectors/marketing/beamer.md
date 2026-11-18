@@ -1,5 +1,6 @@
 ---
 description: "Beamer is a changelog, feedback, NPS and user-onboarding platform for announcing product updates in-app."
+hidden: true
 ---
 
 # Beamer

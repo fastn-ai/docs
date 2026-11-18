@@ -1,5 +1,6 @@
 ---
 description: "BigMailer email marketing platform."
+hidden: true
 ---
 
 # BigMailer

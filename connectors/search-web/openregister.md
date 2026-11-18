@@ -1,5 +1,6 @@
 ---
 description: "OpenRegister provides programmatic access to official German company data from the Handelsregister, Bundesanzeiger, Transparenzregister and Insolvenzregister."
+hidden: true
 ---
 
 # OpenRegister

@@ -1,5 +1,6 @@
 ---
 description: "Poper is an AI popup, form, quiz, survey and widget builder for websites."
+hidden: true
 ---
 
 # Poper

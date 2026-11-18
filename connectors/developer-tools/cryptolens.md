@@ -1,5 +1,6 @@
 ---
 description: "Cryptolens software licensing (Web API 3): license keys, products, customers, data objects, machine-code activations, messages, resellers, user auth and usage…"
+hidden: true
 ---
 
 # Cryptolens

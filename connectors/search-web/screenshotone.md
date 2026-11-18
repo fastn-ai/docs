@@ -1,5 +1,6 @@
 ---
 description: "ScreenshotOne is a screenshot and website-rendering API that turns any URL, raw HTML or Markdown into a PNG, JPEG, WebP, GIF, MP4/WebM video or PDF."
+hidden: true
 ---
 
 # ScreenshotOne

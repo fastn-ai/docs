@@ -1,5 +1,6 @@
 ---
 description: "Cube Cloud is a universal semantic layer that serves governed metrics and data models to BI tools, applications and AI agents."
+hidden: true
 ---
 
 # Cube Cloud

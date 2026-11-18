@@ -1,5 +1,6 @@
 ---
 description: "Pdfless generates PDF documents from HTML/CSS templates designed in the Pdfless web app, merged with JSON payload data."
+hidden: true
 ---
 
 # Pdfless

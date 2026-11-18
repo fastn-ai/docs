@@ -1,5 +1,6 @@
 ---
 description: "Zoho Cliq is Zoho's team chat/messaging platform."
+hidden: true
 ---
 
 # Zoho Cliq

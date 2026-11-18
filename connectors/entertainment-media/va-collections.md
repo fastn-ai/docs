@@ -1,5 +1,6 @@
 ---
 description: "The V&A Collections API (v2) is the free public API of the Victoria and Albert Museum, London."
+hidden: true
 ---
 
 # V&A Collections

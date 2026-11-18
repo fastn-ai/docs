@@ -1,5 +1,6 @@
 ---
 description: "kanye.rest is a free REST API of Kanye West quotes."
+hidden: true
 ---
 
 # Kanye Rest

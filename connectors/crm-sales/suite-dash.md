@@ -1,5 +1,6 @@
 ---
 description: "SuiteDash is an all-in-one white-label client portal, CRM and business management platform."
+hidden: true
 ---
 
 # SuiteDash

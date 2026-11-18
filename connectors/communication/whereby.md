@@ -1,5 +1,6 @@
 ---
 description: "Whereby Embedded is a video meeting API for embedding branded video rooms into your product."
+hidden: true
 ---
 
 # Whereby

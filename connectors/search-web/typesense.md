@@ -1,5 +1,6 @@
 ---
 description: "Typesense is an open-source, typo-tolerant search engine."
+hidden: true
 ---
 
 # Typesense

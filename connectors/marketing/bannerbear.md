@@ -1,5 +1,6 @@
 ---
 description: "Bannerbear is an API for automatically generating images, videos, screenshots, animated GIFs, movies and PDFs at scale for marketing automation, ad creative,…"
+hidden: true
 ---
 
 # Bannerbear

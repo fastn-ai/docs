@@ -1,5 +1,6 @@
 ---
 description: "Perdoo OKR platform GraphQL API."
+hidden: true
 ---
 
 # Perdoo

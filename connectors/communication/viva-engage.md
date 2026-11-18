@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Viva Engage (formerly Yammer) communities and roles via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/employeeExperience)."
+hidden: true
 ---
 
 # Viva Engage

@@ -1,5 +1,6 @@
 ---
 description: "eTermin is an online appointment scheduling and booking platform."
+hidden: true
 ---
 
 # eTermin

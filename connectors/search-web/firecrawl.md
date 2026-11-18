@@ -1,5 +1,6 @@
 ---
 description: "Firecrawl web scraping, crawling, mapping, search, and structured-data extraction API (v2)."
+hidden: true
 ---
 
 # Firecrawl

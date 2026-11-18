@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Scheduler is a fully managed enterprise-grade cron job scheduler."
+hidden: true
 ---
 
 # Google Cloud Scheduler

@@ -1,5 +1,6 @@
 ---
 description: "Sympla is Brazil's largest event ticketing and registration platform."
+hidden: true
 ---
 
 # Sympla

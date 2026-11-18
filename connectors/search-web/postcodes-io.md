@@ -1,5 +1,6 @@
 ---
 description: "Postcodes.io is a free, open-source API for UK postcodes and geolocation, built on Office for National Statistics and Ordnance Survey open data."
+hidden: true
 ---
 
 # Postcodes.io

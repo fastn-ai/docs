@@ -1,5 +1,6 @@
 ---
 description: "Skyvern AI browser automation."
+hidden: true
 ---
 
 # Skyvern

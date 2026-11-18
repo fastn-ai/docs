@@ -1,5 +1,6 @@
 ---
 description: "Callingly is a lead response and speed-to-lead calling platform that instantly connects new inbound leads with available sales agents by phone and SMS."
+hidden: true
 ---
 
 # Callingly

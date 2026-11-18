@@ -1,5 +1,6 @@
 ---
 description: "Gladia is a speech-to-text and audio intelligence API for pre-recorded and real-time transcription with diarization, translation, summarization, subtitles,…"
+hidden: true
 ---
 
 # Gladia

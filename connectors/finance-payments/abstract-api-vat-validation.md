@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI VAT Validation and Rates validates EU VAT numbers and returns the registered company, calculates VAT-compliant prices for a country and goods…"
+hidden: true
 ---
 
 # AbstractAPI VAT Validation

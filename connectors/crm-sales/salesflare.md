@@ -1,5 +1,6 @@
 ---
 description: "Salesflare CRM — accounts, contacts, opportunities, tasks, meetings, calls, notes, tags, custom fields, pipelines, stages, users, groups, workflows (email…"
+hidden: true
 ---
 
 # Salesflare

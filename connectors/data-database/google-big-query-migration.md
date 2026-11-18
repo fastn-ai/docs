@@ -1,5 +1,6 @@
 ---
 description: "Google BigQuery Migration API (bigquerymigration.googleapis.com v2)."
+hidden: true
 ---
 
 # Google BigQuery Migration

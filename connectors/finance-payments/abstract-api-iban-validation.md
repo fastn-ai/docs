@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI IBAN Validation checks whether an International Bank Account Number (IBAN) is valid."
+hidden: true
 ---
 
 # AbstractAPI IBAN Validation

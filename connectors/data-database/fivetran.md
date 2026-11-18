@@ -1,5 +1,6 @@
 ---
 description: "Fivetran is a managed data-movement platform that replicates data from SaaS applications, databases and files into cloud data warehouses and lakes."
+hidden: true
 ---
 
 # Fivetran

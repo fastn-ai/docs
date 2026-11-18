@@ -1,5 +1,6 @@
 ---
 description: "SignWell is an electronic signature platform for sending, tracking and completing legally binding documents."
+hidden: true
 ---
 
 # SignWell

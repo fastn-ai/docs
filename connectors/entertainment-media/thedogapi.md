@@ -1,5 +1,6 @@
 ---
 description: "Dog images, breed data, breed facts, health tips, legislation/breed-ban lookups, favourites, votes, and AI-powered pet analysis (portraits, genealogy, body…"
+hidden: true
 ---
 
 # The Dog API

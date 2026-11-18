@@ -1,5 +1,6 @@
 ---
 description: "Statistics Finland (Tilastokeskus) publishes Finland's official statistics through its free PxWeb API: browse and search the StatFin and other databases, read…"
+hidden: true
 ---
 
 # Statistics Finland (StatFin)

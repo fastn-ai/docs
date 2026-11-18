@@ -1,5 +1,6 @@
 ---
 description: "Google Pay & Wallet Developer MCP server (https://paydeveloper.googleapis.com/mcp), Google's hosted remote Model Context Protocol server for Google Pay and…"
+hidden: true
 ---
 
 # Google Pay & Wallet Developer

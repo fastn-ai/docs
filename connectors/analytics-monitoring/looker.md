@@ -1,5 +1,6 @@
 ---
 description: "Looker (Google Cloud) BI platform — Looker API 4.0."
+hidden: true
 ---
 
 # Looker

@@ -1,5 +1,6 @@
 ---
 description: "OpenAI API connector — chat completions, responses, embeddings, models, files, images, audio, moderations, fine-tuning, batches, vector stores, and the…"
+hidden: true
 ---
 
 # OpenAI

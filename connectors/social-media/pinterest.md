@@ -1,5 +1,6 @@
 ---
 description: "Pinterest API v5 connector: user account, boards (CRUD + sections), pins (CRUD), board pins, and pin analytics."
+hidden: true
 ---
 
 # Pinterest

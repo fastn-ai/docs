@@ -1,5 +1,6 @@
 ---
 description: "The U.S."
+hidden: true
 ---
 
 # U.S. Census Bureau Data API

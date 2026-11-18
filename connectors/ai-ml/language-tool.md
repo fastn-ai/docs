@@ -1,5 +1,6 @@
 ---
 description: "Grammar, spelling, and style checker API by LanguageTool."
+hidden: true
 ---
 
 # LanguageTool

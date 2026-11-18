@@ -1,5 +1,6 @@
 ---
 description: "Taskade is an AI-native productivity platform for organizing work into workspaces, folders, projects, and tasks, and for building and running AI agents."
+hidden: true
 ---
 
 # Taskade

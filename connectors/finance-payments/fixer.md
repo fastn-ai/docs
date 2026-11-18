@@ -1,5 +1,6 @@
 ---
 description: "Fixer is a reliable, lightweight foreign exchange rates and currency conversion API by APILayer."
+hidden: true
 ---
 
 # Fixer

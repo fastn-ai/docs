@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI Holidays returns public, religious, and observance holidays for 200+ countries by date."
+hidden: true
 ---
 
 # AbstractAPI Holidays

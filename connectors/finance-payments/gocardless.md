@@ -1,5 +1,6 @@
 ---
 description: "Collect and manage bank-to-bank payments with GoCardless — customers, mandates, payments, subscriptions, refunds, payouts, billing requests and webhook events…"
+hidden: true
 ---
 
 # GoCardless

@@ -1,5 +1,6 @@
 ---
 description: "Easy-Peasy.AI generative content API."
+hidden: true
 ---
 
 # Easy-Peasy.AI

@@ -1,5 +1,6 @@
 ---
 description: "Open-source Experience Management platform for surveys, forms, and in-product feedback."
+hidden: true
 ---
 
 # Formbricks

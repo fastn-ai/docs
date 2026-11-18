@@ -1,5 +1,6 @@
 ---
 description: "ManageEngine ServiceDesk Plus Cloud IT service management - requests, problems, changes, releases, projects, assets, CMDB, purchase orders, contracts,…"
+hidden: true
 ---
 
 # ManageEngine ServiceDesk Plus

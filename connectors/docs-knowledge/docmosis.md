@@ -1,5 +1,6 @@
 ---
 description: "Docmosis Cloud (DWS4) document generation API."
+hidden: true
 ---
 
 # Docmosis

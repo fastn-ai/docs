@@ -1,5 +1,6 @@
 ---
 description: "Act!"
+hidden: true
 ---
 
 # Act! CRM

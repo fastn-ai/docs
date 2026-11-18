@@ -1,5 +1,6 @@
 ---
 description: "BigML is a machine learning platform."
+hidden: true
 ---
 
 # BigML

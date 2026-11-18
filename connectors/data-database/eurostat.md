@@ -1,5 +1,6 @@
 ---
 description: "Eurostat is the statistical office of the European Union."
+hidden: true
 ---
 
 # Eurostat

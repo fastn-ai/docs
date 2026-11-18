@@ -1,5 +1,6 @@
 ---
 description: "Connect to Azure Synapse Analytics data-plane APIs — pipelines, datasets, linked services, data flows, triggers, notebooks, Spark jobs (Livy), SQL pools, role…"
+hidden: true
 ---
 
 # Azure Synapse Analytics

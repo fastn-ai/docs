@@ -1,5 +1,6 @@
 ---
 description: "Minelead is a B2B lead generation and email intelligence platform."
+hidden: true
 ---
 
 # Minelead

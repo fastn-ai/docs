@@ -1,5 +1,6 @@
 ---
 description: "CurrencyFreaks provides real-time and historical foreign exchange rates and currency conversion for over 1,000 world currencies and metals, plus IP-based…"
+hidden: true
 ---
 
 # CurrencyFreaks

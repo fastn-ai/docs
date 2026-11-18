@@ -1,5 +1,6 @@
 ---
 description: "Zixflow is a CRM and multichannel campaign platform."
+hidden: true
 ---
 
 # Zixflow

@@ -1,5 +1,6 @@
 ---
 description: "Google Tasks API - manage Google Workspace task lists and tasks (create, read, update, delete, move, and clear completed tasks)."
+hidden: true
 ---
 
 # Google Tasks

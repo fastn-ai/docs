@@ -1,5 +1,6 @@
 ---
 description: "TomTom location services."
+hidden: true
 ---
 
 # TomTom

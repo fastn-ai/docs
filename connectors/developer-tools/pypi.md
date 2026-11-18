@@ -1,5 +1,6 @@
 ---
 description: "PyPI, the Python Package Index, is the official package registry for Python."
+hidden: true
 ---
 
 # PyPI

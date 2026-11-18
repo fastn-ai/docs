@@ -1,5 +1,6 @@
 ---
 description: "Manage Google Analytics 4 configuration through the Google Analytics Admin API v1beta: accounts, account summaries, properties, data streams, measurement…"
+hidden: true
 ---
 
 # Google Analytics Admin

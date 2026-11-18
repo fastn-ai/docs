@@ -1,5 +1,6 @@
 ---
 description: "TikTok Shop Open API connector — products, orders, fulfillment, logistics, returns/refunds, finance, promotions, analytics, customer service, FBT, affiliate,…"
+hidden: true
 ---
 
 # TikTok Shop

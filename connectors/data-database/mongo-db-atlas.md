@@ -1,5 +1,6 @@
 ---
 description: "Manage MongoDB Atlas resources through the Atlas Administration API v2 — organizations, projects, clusters, database users, IP access lists, network peering,…"
+hidden: true
 ---
 
 # MongoDB Atlas

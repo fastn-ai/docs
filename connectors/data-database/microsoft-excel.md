@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Excel workbooks stored in OneDrive or SharePoint, via the Microsoft Graph Excel (workbook) API at https://graph.microsoft.com/v1.0."
+hidden: true
 ---
 
 # Microsoft Excel

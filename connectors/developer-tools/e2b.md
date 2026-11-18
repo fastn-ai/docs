@@ -1,5 +1,6 @@
 ---
 description: "E2B provides secure cloud sandboxes (isolated Linux VMs) for AI agents and code execution."
+hidden: true
 ---
 
 # E2B

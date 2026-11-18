@@ -1,5 +1,6 @@
 ---
 description: "Square commerce platform connector."
+hidden: true
 ---
 
 # Square

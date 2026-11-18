@@ -1,10 +1,10 @@
 ---
-description: "Developer tools connectors fastn manages: 56 in all."
+description: "Developer tools connectors fastn manages, with their auth, actions and events."
 ---
 
 # Developer tools
 
-56 connectors. Back to the [connector catalog](../README.md).
+Developer tools apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

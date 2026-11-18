@@ -1,5 +1,6 @@
 ---
 description: "AltTextLab generates accessible, SEO-friendly alt text for images with AI."
+hidden: true
 ---
 
 # AltTextLab

@@ -1,5 +1,6 @@
 ---
 description: "Photoroom AI image editing API."
+hidden: true
 ---
 
 # Photoroom

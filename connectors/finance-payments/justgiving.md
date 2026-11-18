@@ -1,5 +1,6 @@
 ---
 description: "JustGiving (Blackbaud) is the UK/global peer-to-peer and charity fundraising platform, and the product everydayhero customers were migrated onto."
+hidden: true
 ---
 
 # JustGiving

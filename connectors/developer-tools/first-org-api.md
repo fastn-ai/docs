@@ -1,5 +1,6 @@
 ---
 description: "The FIRST.Org API is the free public API of the Forum of Incident Response and Security Teams."
+hidden: true
 ---
 
 # FIRST.Org API

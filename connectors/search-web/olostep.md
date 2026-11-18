@@ -1,5 +1,6 @@
 ---
 description: "Olostep is a web search, scraping and crawling API built for AI applications."
+hidden: true
 ---
 
 # Olostep

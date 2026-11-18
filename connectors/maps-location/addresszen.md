@@ -1,5 +1,6 @@
 ---
 description: "AddressZen address autocomplete, verification and data quality API."
+hidden: true
 ---
 
 # AddressZen

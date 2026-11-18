@@ -1,5 +1,6 @@
 ---
 description: "Snowflake Data Cloud connector using the Snowflake SQL REST API (/api/v2/statements) and the resource-management REST APIs (databases, schemas, tables,…"
+hidden: true
 ---
 
 # Snowflake

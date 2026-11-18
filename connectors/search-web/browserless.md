@@ -1,5 +1,6 @@
 ---
 description: "Browserless is a hosted headless-browser platform."
+hidden: true
 ---
 
 # Browserless

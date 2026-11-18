@@ -1,5 +1,6 @@
 ---
 description: "Composio Search is Composio's hosted search toolkit: web, news, image, scholar, shopping, finance, trends, events, flights, hotels, maps, travel and…"
+hidden: true
 ---
 
 # Composio Search

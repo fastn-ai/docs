@@ -1,5 +1,6 @@
 ---
 description: "Zoho Books cloud accounting and invoicing platform."
+hidden: true
 ---
 
 # Zoho Books

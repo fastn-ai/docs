@@ -1,5 +1,6 @@
 ---
 description: "Trackstar Unified API for Supply Chain Logistics (WMS / 3PL)."
+hidden: true
 ---
 
 # Trackstar

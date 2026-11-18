@@ -1,5 +1,6 @@
 ---
 description: "SavvyCal is a scheduling platform for booking meetings on your own terms."
+hidden: true
 ---
 
 # SavvyCal

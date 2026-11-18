@@ -1,5 +1,6 @@
 ---
 description: "Wrike work management and project collaboration platform."
+hidden: true
 ---
 
 # Wrike

@@ -1,5 +1,6 @@
 ---
 description: "Zoom Meetings, Webinars, Cloud Recordings, Phone, Chat, Users, Groups, Roles, Reports and Tracking Fields via the Zoom REST API v2."
+hidden: true
 ---
 
 # Zoom

@@ -1,10 +1,10 @@
 ---
-description: "Entertainment and media connectors fastn manages: 42 in all."
+description: "Entertainment and media connectors fastn manages, with their auth, actions and events."
 ---
 
 # Entertainment and media
 
-42 connectors. Back to the [connector catalog](../README.md).
+Entertainment and media apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

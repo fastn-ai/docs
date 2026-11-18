@@ -1,5 +1,6 @@
 ---
 description: "The Swiss public transport API (transport.opendata.ch) is a free, open API for Swiss trains, trams, buses and boats."
+hidden: true
 ---
 
 # Swiss Public Transport (transport.opendata.ch)

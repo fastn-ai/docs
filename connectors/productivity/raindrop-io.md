@@ -1,5 +1,6 @@
 ---
 description: "Raindrop.io is a bookmark manager for saving, organising and sharing links, articles, photos and files."
+hidden: true
 ---
 
 # Raindrop.io

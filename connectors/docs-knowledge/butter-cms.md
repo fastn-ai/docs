@@ -1,5 +1,6 @@
 ---
 description: "ButterCMS headless CMS."
+hidden: true
 ---
 
 # ButterCMS

@@ -1,5 +1,6 @@
 ---
 description: "Dart (dartai.com) is an AI-native project and task management tool."
+hidden: true
 ---
 
 # Dart

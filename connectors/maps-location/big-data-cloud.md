@@ -1,5 +1,6 @@
 ---
 description: "BigDataCloud provides location intelligence APIs."
+hidden: true
 ---
 
 # BigDataCloud

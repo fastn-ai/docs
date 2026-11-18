@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Planner task management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/planner)."
+hidden: true
 ---
 
 # Microsoft Planner

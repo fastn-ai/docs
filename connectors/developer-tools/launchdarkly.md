@@ -1,5 +1,6 @@
 ---
 description: "LaunchDarkly feature management platform."
+hidden: true
 ---
 
 # LaunchDarkly

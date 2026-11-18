@@ -1,5 +1,6 @@
 ---
 description: "Hacker News search via the Algolia HN Search API."
+hidden: true
 ---
 
 # Hacker News

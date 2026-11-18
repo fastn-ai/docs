@@ -1,5 +1,6 @@
 ---
 description: "Deepgram voice AI platform: speech-to-text transcription (listen), text-to-speech (speak), text intelligence (read), and full management API (projects, keys,…"
+hidden: true
 ---
 
 # Deepgram

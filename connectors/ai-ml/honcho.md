@@ -1,5 +1,6 @@
 ---
 description: "Honcho by Plastic Labs is a memory and social-cognition layer for AI agents."
+hidden: true
 ---
 
 # Honcho

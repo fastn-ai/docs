@@ -1,5 +1,6 @@
 ---
 description: "Webling association/club management (members, finances, documents, articles, letters, users)."
+hidden: true
 ---
 
 # Webling

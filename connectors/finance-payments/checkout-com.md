@@ -1,5 +1,6 @@
 ---
 description: "Checkout.com Unified Payments API."
+hidden: true
 ---
 
 # Checkout.com

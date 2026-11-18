@@ -1,5 +1,6 @@
 ---
 description: "Domo is a cloud business intelligence platform for connecting, visualizing, and acting on data."
+hidden: true
 ---
 
 # Domo

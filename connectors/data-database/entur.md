@@ -1,5 +1,6 @@
 ---
 description: "Entur runs Norway's national public transport data platform."
+hidden: true
 ---
 
 # Entur

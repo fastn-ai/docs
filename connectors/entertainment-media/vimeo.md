@@ -1,5 +1,6 @@
 ---
 description: "Vimeo video platform API."
+hidden: true
 ---
 
 # Vimeo

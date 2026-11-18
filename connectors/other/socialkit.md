@@ -1,5 +1,6 @@
 ---
 description: "SocialKit is a unified REST API for extracting public data from social video and social network URLs: transcripts, AI summaries, comments, engagement stats,…"
+hidden: true
 ---
 
 # SocialKit

@@ -1,5 +1,6 @@
 ---
 description: "Postmark transactional email API (base https://api.postmarkapp.com)."
+hidden: true
 ---
 
 # Postmark

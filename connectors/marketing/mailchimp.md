@@ -1,5 +1,6 @@
 ---
 description: "Mailchimp Marketing API v3.0 (base https://{dc}.api.mailchimp.com/3.0)."
+hidden: true
 ---
 
 # Mailchimp

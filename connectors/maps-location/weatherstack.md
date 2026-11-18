@@ -1,5 +1,6 @@
 ---
 description: "Weatherstack by apilayer provides real-time weather, forecast, historical weather, marine forecast, and location-autocomplete data via a simple REST API, with…"
+hidden: true
 ---
 
 # Weatherstack

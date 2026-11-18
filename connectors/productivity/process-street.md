@@ -1,5 +1,6 @@
 ---
 description: "Process Street is a workflow and process management platform for recurring checklists, approvals and standard operating procedures."
+hidden: true
 ---
 
 # Process Street

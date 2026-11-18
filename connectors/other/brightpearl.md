@@ -1,5 +1,6 @@
 ---
 description: "Connect to Brightpearl's retail operations platform to manage orders, products, contacts, warehouse, and accounting data via the Brightpearl REST API."
+hidden: true
 ---
 
 # Brightpearl

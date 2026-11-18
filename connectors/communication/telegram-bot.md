@@ -1,5 +1,6 @@
 ---
 description: "Telegram Bot API connector."
+hidden: true
 ---
 
 # Telegram Bot API

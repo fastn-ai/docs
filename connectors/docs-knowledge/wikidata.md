@@ -1,5 +1,6 @@
 ---
 description: "Wikidata is the free, collaborative knowledge base of the Wikimedia projects."
+hidden: true
 ---
 
 # Wikidata

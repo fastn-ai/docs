@@ -1,5 +1,6 @@
 ---
 description: "Transloadit API2 — file uploading and encoding: Assemblies, Templates, Template Credentials, Auth Keys, DAM (Storage) assets, queues, billing, assembly…"
+hidden: true
 ---
 
 # Transloadit

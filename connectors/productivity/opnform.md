@@ -1,5 +1,6 @@
 ---
 description: "OpnForm is an open-source form builder."
+hidden: true
 ---
 
 # OpnForm

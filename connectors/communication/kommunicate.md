@@ -1,5 +1,6 @@
 ---
 description: "Kommunicate customer messaging and support chat platform."
+hidden: true
 ---
 
 # Kommunicate

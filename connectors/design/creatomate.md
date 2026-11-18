@@ -1,5 +1,6 @@
 ---
 description: "Creatomate is a media automation platform for generating videos, images and GIFs from reusable templates or raw RenderScript."
+hidden: true
 ---
 
 # Creatomate

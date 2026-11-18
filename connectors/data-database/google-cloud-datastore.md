@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Datastore API v1 (https://datastore.googleapis.com/v1), also used by Firestore in Datastore mode."
+hidden: true
 ---
 
 # Google Cloud Datastore

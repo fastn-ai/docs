@@ -1,5 +1,6 @@
 ---
 description: "HoneyHive is an AI observability and evaluation platform for tracing, evaluating and monitoring LLM applications and agents."
+hidden: true
 ---
 
 # HoneyHive

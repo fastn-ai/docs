@@ -1,5 +1,6 @@
 ---
 description: "Postalytics is a direct mail automation platform for sending trackable postcards, letters and self-mailers triggered from marketing and CRM workflows."
+hidden: true
 ---
 
 # Postalytics

@@ -1,5 +1,6 @@
 ---
 description: "Lorem Picsum is a free placeholder photo service built on Unsplash images."
+hidden: true
 ---
 
 # Lorem Picsum

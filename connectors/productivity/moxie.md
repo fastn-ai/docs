@@ -1,5 +1,6 @@
 ---
 description: "Moxie is a business management platform for freelancers and agencies."
+hidden: true
 ---
 
 # Moxie

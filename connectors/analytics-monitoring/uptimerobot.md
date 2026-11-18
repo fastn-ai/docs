@@ -1,5 +1,6 @@
 ---
 description: "UptimeRobot monitors websites, APIs, ports, and cron jobs for uptime and downtime, and sends alerts when a monitor goes down."
+hidden: true
 ---
 
 # UptimeRobot

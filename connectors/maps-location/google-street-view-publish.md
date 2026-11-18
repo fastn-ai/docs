@@ -1,5 +1,6 @@
 ---
 description: "Google Street View Publish API (streetviewpublish.googleapis.com v1)."
+hidden: true
 ---
 
 # Google Street View Publish

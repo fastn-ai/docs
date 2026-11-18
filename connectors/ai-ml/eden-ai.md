@@ -1,5 +1,6 @@
 ---
 description: "Eden AI is a unified AI gateway giving access to 500+ models from 50+ providers through one API."
+hidden: true
 ---
 
 # Eden AI

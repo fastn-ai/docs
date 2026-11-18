@@ -1,5 +1,6 @@
 ---
 description: "Hex is a collaborative data workspace for notebooks, data apps and AI agents."
+hidden: true
 ---
 
 # Hex

@@ -1,5 +1,6 @@
 ---
 description: "Atlassian Statuspage REST API v1."
+hidden: true
 ---
 
 # Statuspage

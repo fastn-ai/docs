@@ -1,5 +1,6 @@
 ---
 description: "PDF.co is a document-automation API for converting, editing, splitting, merging, securing and extracting data from PDF and Office documents."
+hidden: true
 ---
 
 # PDF.co

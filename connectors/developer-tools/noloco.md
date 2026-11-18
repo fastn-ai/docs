@@ -1,5 +1,6 @@
 ---
 description: "Noloco is a no-code platform for building internal tools, client portals and business apps on top of your existing data."
+hidden: true
 ---
 
 # Noloco

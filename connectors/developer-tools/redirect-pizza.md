@@ -1,5 +1,6 @@
 ---
 description: "redirect.pizza is a DNS-based hosted redirect service: point a domain's DNS at redirect.pizza and it serves 301/302/307/308 redirects with automatically…"
+hidden: true
 ---
 
 # redirect.pizza

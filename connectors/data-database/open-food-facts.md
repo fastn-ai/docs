@@ -1,5 +1,6 @@
 ---
 description: "Open Food Facts is a free, open database of 3M+ food products from around the world."
+hidden: true
 ---
 
 # Open Food Facts

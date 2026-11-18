@@ -1,5 +1,6 @@
 ---
 description: "RocketReach is a contact-data and sales-intelligence platform covering emails, phone numbers and social profiles for 700M+ professionals and 35M+ companies."
+hidden: true
 ---
 
 # RocketReach

@@ -1,5 +1,6 @@
 ---
 description: "Inngest is a durable execution platform for background jobs, step functions, scheduled workflows and AI agent orchestration."
+hidden: true
 ---
 
 # Inngest

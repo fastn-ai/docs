@@ -1,5 +1,6 @@
 ---
 description: "OSRM (Open Source Routing Machine) computes routes on OpenStreetMap data: fastest routes, nearest road snapping, distance/duration tables, GPS map matching,…"
+hidden: true
 ---
 
 # OSRM

@@ -1,5 +1,6 @@
 ---
 description: "Paystack payments platform for Africa."
+hidden: true
 ---
 
 # Paystack

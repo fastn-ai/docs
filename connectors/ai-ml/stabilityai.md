@@ -1,5 +1,6 @@
 ---
 description: "Stability AI generative media API."
+hidden: true
 ---
 
 # Stability AI

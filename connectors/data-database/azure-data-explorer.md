@@ -1,5 +1,6 @@
 ---
 description: "Azure Data Explorer (Kusto) — run KQL management and query commands against a cluster for real-time analytics on large datasets."
+hidden: true
 ---
 
 # Azure Data Explorer

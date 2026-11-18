@@ -1,5 +1,6 @@
 ---
 description: "Bulk Email Checker is an email verification service that validates email addresses in real time, returning deliverability status, SMTP handshake result,…"
+hidden: true
 ---
 
 # Bulk Email Checker

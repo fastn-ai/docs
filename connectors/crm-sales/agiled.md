@@ -1,5 +1,6 @@
 ---
 description: "Agiled is an all-in-one business management platform for agencies and service businesses."
+hidden: true
 ---
 
 # Agiled

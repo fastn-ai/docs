@@ -1,5 +1,6 @@
 ---
 description: "The Go Module Mirror (proxy.golang.org), Module Index (index.golang.org) and Checksum Database (sum.golang.org) are free public services run by Google for the…"
+hidden: true
 ---
 
 # Go Module Mirror

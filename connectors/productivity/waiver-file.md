@@ -1,5 +1,6 @@
 ---
 description: "WaiverFile digital waiver management."
+hidden: true
 ---
 
 # WaiverFile

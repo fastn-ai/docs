@@ -1,5 +1,6 @@
 ---
 description: "Commerce Layer is a headless, API-first commerce platform."
+hidden: true
 ---
 
 # Commerce Layer

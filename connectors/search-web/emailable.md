@@ -1,5 +1,6 @@
 ---
 description: "Emailable email verification API."
+hidden: true
 ---
 
 # Emailable

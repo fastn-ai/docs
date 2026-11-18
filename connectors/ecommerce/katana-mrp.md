@@ -1,5 +1,6 @@
 ---
 description: "Katana Cloud Inventory (Katana MRP) — manufacturing resource planning and inventory management."
+hidden: true
 ---
 
 # Katana MRP

@@ -1,5 +1,6 @@
 ---
 description: "BigCommerce B2B Edition Server-to-Server REST Management API (api-b2b.bigcommerce.com, base path /api/v3/io)."
+hidden: true
 ---
 
 # BigCommerce B2B Edition

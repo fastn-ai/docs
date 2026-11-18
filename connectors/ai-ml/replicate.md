@@ -1,5 +1,6 @@
 ---
 description: "Replicate HTTP API (https://api.replicate.com/v1) — run ML models via predictions, manage models/versions, deployments, trainings, collections, hardware,…"
+hidden: true
 ---
 
 # Replicate

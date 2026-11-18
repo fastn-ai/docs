@@ -1,5 +1,6 @@
 ---
 description: "ContactOut is a contact-data and recruitment-outreach platform that finds verified email addresses and phone numbers for professionals."
+hidden: true
 ---
 
 # ContactOut

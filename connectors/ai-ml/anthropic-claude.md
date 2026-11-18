@@ -1,5 +1,6 @@
 ---
 description: "Anthropic Claude API connector."
+hidden: true
 ---
 
 # Anthropic (Claude)

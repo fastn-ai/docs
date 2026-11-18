@@ -1,5 +1,6 @@
 ---
 description: "Artificial Analysis provides independent benchmarks of AI models."
+hidden: true
 ---
 
 # Artificial Analysis

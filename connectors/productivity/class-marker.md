@@ -1,5 +1,6 @@
 ---
 description: "ClassMarker is an online testing and quiz platform for exams, training assessments and certification."
+hidden: true
 ---
 
 # ClassMarker

@@ -1,5 +1,6 @@
 ---
 description: "Execute Cypher queries and manage read/write transactions against a Neo4j AuraDB graph database instance through Neo4j's official HTTP Query API (the REST…"
+hidden: true
 ---
 
 # Neo4j AuraDB

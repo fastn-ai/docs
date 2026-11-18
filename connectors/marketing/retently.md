@@ -1,5 +1,6 @@
 ---
 description: "Retently is a customer experience platform for running NPS, CSAT, CES and STAR surveys."
+hidden: true
 ---
 
 # Retently

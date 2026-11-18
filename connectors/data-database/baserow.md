@@ -1,5 +1,6 @@
 ---
 description: "Baserow is an open-source no-code database platform (an Airtable alternative)."
+hidden: true
 ---
 
 # Baserow

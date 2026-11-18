@@ -1,5 +1,6 @@
 ---
 description: "Stitch is a cloud ETL service that replicates data from SaaS applications and databases into a data warehouse."
+hidden: true
 ---
 
 # Stitch

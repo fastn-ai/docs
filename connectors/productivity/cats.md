@@ -1,5 +1,6 @@
 ---
 description: "CATS (CATSOne) applicant tracking system."
+hidden: true
 ---
 
 # CATS

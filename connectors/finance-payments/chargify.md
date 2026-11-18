@@ -1,5 +1,6 @@
 ---
 description: "Chargify, now Maxio Advanced Billing, is a SaaS recurring billing and subscription management platform."
+hidden: true
 ---
 
 # Chargify (Maxio Advanced Billing)

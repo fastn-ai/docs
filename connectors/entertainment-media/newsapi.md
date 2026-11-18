@@ -1,5 +1,6 @@
 ---
 description: "NewsAPI indexes articles and breaking headlines from over 150,000 news sources and blogs worldwide."
+hidden: true
 ---
 
 # NewsAPI

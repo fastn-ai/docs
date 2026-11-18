@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI Phone Intelligence validates a phone number and returns its formatting, carrier, line type, location, messaging, registration, and risk/breach…"
+hidden: true
 ---
 
 # AbstractAPI Phone Intelligence

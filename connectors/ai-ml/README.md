@@ -1,10 +1,10 @@
 ---
-description: "AI and ML connectors fastn manages: 71 in all."
+description: "AI and ML connectors fastn manages, with their auth, actions and events."
 ---
 
 # AI and ML
 
-71 connectors. Back to the [connector catalog](../README.md).
+AI and ML apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

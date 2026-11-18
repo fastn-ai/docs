@@ -1,5 +1,6 @@
 ---
 description: "Follow Up Boss is a real-estate CRM (Zillow Group) for lead follow-up, agent assignment and deal tracking."
+hidden: true
 ---
 
 # Follow Up Boss

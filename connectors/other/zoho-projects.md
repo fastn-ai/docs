@@ -1,5 +1,6 @@
 ---
 description: "Zoho Projects is Zoho's cloud project management suite."
+hidden: true
 ---
 
 # Zoho Projects

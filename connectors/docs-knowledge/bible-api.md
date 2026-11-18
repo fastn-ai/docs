@@ -1,5 +1,6 @@
 ---
 description: "bible-api.com is a free JSON API for Bible verses and passages in 16 public-domain translations."
+hidden: true
 ---
 
 # Bible API

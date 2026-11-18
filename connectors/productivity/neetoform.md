@@ -1,5 +1,6 @@
 ---
 description: "NeetoForm is a form builder from the neeto suite."
+hidden: true
 ---
 
 # NeetoForm

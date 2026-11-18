@@ -1,10 +1,10 @@
 ---
-description: "Cloud and DevOps connectors fastn manages: 31 in all."
+description: "Cloud and DevOps connectors fastn manages, with their auth, actions and events."
 ---
 
 # Cloud and DevOps
 
-31 connectors. Back to the [connector catalog](../README.md).
+Cloud and DevOps apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

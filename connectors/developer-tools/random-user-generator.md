@@ -1,5 +1,6 @@
 ---
 description: "Random User Generator is a free API that creates realistic fake user profiles for testing: names, addresses, emails, logins, phones and photos."
+hidden: true
 ---
 
 # Random User Generator

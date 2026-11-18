@@ -1,5 +1,6 @@
 ---
 description: "Knock notification infrastructure API."
+hidden: true
 ---
 
 # Knock

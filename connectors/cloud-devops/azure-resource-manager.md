@@ -1,5 +1,6 @@
 ---
 description: "Azure Resource Manager (ARM) control-plane API at https://management.azure.com."
+hidden: true
 ---
 
 # Azure Resource Manager

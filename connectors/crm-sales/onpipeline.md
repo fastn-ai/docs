@@ -1,5 +1,6 @@
 ---
 description: "Onpipeline is a sales pipeline CRM."
+hidden: true
 ---
 
 # Onpipeline

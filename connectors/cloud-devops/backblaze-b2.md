@@ -1,5 +1,6 @@
 ---
 description: "Backblaze B2 Cloud Storage connector using the B2 Native API v3."
+hidden: true
 ---
 
 # Backblaze B2

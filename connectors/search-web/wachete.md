@@ -1,5 +1,6 @@
 ---
 description: "Wachete is a website-change monitoring service."
+hidden: true
 ---
 
 # Wachete

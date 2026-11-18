@@ -1,5 +1,6 @@
 ---
 description: "SurveySparrow experience management platform."
+hidden: true
 ---
 
 # SurveySparrow

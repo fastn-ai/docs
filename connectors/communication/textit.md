@@ -1,5 +1,6 @@
 ---
 description: "TextIt is a messaging and chatbot automation platform (RapidPro-based) for SMS, WhatsApp and social messaging campaigns."
+hidden: true
 ---
 
 # TextIt

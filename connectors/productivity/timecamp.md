@@ -1,5 +1,6 @@
 ---
 description: "TimeCamp time tracking and project management API."
+hidden: true
 ---
 
 # TimeCamp

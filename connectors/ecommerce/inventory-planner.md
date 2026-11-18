@@ -1,5 +1,6 @@
 ---
 description: "Inventory Planner by Sage — smart forecasting and replenishment recommendations."
+hidden: true
 ---
 
 # Inventory Planner

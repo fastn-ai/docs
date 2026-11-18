@@ -1,5 +1,6 @@
 ---
 description: "Serverless Redis by Upstash."
+hidden: true
 ---
 
 # Upstash Redis

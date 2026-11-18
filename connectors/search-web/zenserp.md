@@ -1,5 +1,6 @@
 ---
 description: "Zenserp is a search engine results page (SERP) scraping API by APILayer."
+hidden: true
 ---
 
 # Zenserp

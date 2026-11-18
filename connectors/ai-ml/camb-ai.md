@@ -1,5 +1,6 @@
 ---
 description: "CAMB.AI is an AI speech and localization platform."
+hidden: true
 ---
 
 # CAMB.AI

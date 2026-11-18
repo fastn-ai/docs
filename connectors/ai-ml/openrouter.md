@@ -1,5 +1,6 @@
 ---
 description: "OpenRouter unified LLM API (https://openrouter.ai/api/v1) — OpenAI-compatible access to hundreds of models from many providers behind one API."
+hidden: true
 ---
 
 # OpenRouter

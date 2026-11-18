@@ -1,5 +1,6 @@
 ---
 description: "Jotform online form builder API."
+hidden: true
 ---
 
 # Jotform

@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Trace API (https://cloudtrace.googleapis.com)."
+hidden: true
 ---
 
 # Google Cloud Trace

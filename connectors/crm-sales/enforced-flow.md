@@ -1,5 +1,6 @@
 ---
 description: "EnforcedFlow intelligent lead routing and advanced round-robin distribution."
+hidden: true
 ---
 
 # EnforcedFlow

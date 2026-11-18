@@ -1,5 +1,6 @@
 ---
 description: "Conversion Tools is a file-conversion API covering 100+ formats (XML, JSON, CSV, Excel, PDF, Word, images, audio/video, OCR)."
+hidden: true
 ---
 
 # Conversion Tools

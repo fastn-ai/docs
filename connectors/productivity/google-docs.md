@@ -1,5 +1,6 @@
 ---
 description: "Google Docs API v1 — create, read, and edit Google Documents programmatically using batchUpdate operations."
+hidden: true
 ---
 
 # Google Docs

@@ -1,5 +1,6 @@
 ---
 description: "NamSor is a name-classification API that infers demographic attributes from personal names."
+hidden: true
 ---
 
 # NamSor

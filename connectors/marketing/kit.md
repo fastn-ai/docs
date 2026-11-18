@@ -1,5 +1,6 @@
 ---
 description: "Kit (formerly ConvertKit) email marketing platform for creators."
+hidden: true
 ---
 
 # Kit

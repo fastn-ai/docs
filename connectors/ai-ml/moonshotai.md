@@ -1,5 +1,6 @@
 ---
 description: "Moonshot AI Kimi API (kimi-k2, kimi-latest, moonshot-v1) — OpenAI-compatible LLM platform."
+hidden: true
 ---
 
 # Moonshot AI (Kimi)

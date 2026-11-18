@@ -1,5 +1,6 @@
 ---
 description: "Google Analytics 4 — Data API v1 (analyticsdata.googleapis.com: runReport, batchRunReports, runRealtimeReport, runPivotReport, checkCompatibility, metadata,…"
+hidden: true
 ---
 
 # Google Analytics GA4

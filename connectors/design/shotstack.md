@@ -1,5 +1,6 @@
 ---
 description: "Shotstack cloud video, image and audio editing API."
+hidden: true
 ---
 
 # Shotstack

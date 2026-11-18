@@ -1,5 +1,6 @@
 ---
 description: "Customer.io marketing automation and customer messaging platform."
+hidden: true
 ---
 
 # Customer.io

@@ -1,5 +1,6 @@
 ---
 description: "NetHunt CRM is a CRM that runs inside Gmail and organises data into folders (Contacts, Companies, Deals, Tasks and custom folders)."
+hidden: true
 ---
 
 # NetHunt CRM

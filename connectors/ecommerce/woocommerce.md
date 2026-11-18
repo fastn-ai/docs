@@ -1,5 +1,6 @@
 ---
 description: "WooCommerce is the open-source e-commerce plugin for WordPress."
+hidden: true
 ---
 
 # WooCommerce

@@ -1,5 +1,6 @@
 ---
 description: "PagerDuty is an incident response and digital operations platform."
+hidden: true
 ---
 
 # PagerDuty

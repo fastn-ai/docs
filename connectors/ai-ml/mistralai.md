@@ -1,5 +1,6 @@
 ---
 description: "Mistral AI platform API (api.mistral.ai/v1): chat completions, FIM code completion, embeddings, models management, files, fine-tuning jobs, batch jobs, OCR,…"
+hidden: true
 ---
 
 # Mistral AI

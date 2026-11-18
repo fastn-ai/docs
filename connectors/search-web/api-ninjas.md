@@ -1,5 +1,6 @@
 ---
 description: "Aggregator of ~139 free micro-APIs from API Ninjas covering financial data lookups, identity/validation utilities (email, phone, IBAN, VIN, routing numbers),…"
+hidden: true
 ---
 
 # API Ninjas

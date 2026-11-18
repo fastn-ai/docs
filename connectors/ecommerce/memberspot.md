@@ -1,5 +1,6 @@
 ---
 description: "Memberspot is a German online course and membership platform."
+hidden: true
 ---
 
 # Memberspot

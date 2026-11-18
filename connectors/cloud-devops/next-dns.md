@@ -1,5 +1,6 @@
 ---
 description: "NextDNS is a cloud DNS firewall that blocks ads, trackers and threats and provides parental controls and DNS analytics."
+hidden: true
 ---
 
 # NextDNS

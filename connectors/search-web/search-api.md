@@ -1,5 +1,6 @@
 ---
 description: "SearchApi is a real-time SERP and marketplace scraping API that returns structured JSON for Google, Bing, YouTube, Amazon, Walmart, eBay, app stores, maps,…"
+hidden: true
 ---
 
 # SearchApi

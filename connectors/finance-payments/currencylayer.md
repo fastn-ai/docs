@@ -1,5 +1,6 @@
 ---
 description: "Currencylayer is a reliable, lightweight foreign exchange rates and currency data API by APILayer."
+hidden: true
 ---
 
 # Currencylayer

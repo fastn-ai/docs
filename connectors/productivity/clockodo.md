@@ -1,5 +1,6 @@
 ---
 description: "Clockodo time tracking, absence management and project reporting."
+hidden: true
 ---
 
 # Clockodo

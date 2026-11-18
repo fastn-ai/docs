@@ -1,5 +1,6 @@
 ---
 description: "Open Brewery DB is a free, keyless dataset of breweries, cideries, brewpubs and bottle shops worldwide: list and filter breweries by city, state, country,…"
+hidden: true
 ---
 
 # Open Brewery DB

@@ -1,5 +1,6 @@
 ---
 description: "Europe PMC is a free database of over 45 million life science publications (PubMed abstracts, PubMed Central full text, preprints, patents and more) run by…"
+hidden: true
 ---
 
 # Europe PMC

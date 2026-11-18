@@ -1,5 +1,6 @@
 ---
 description: "ScrapeGraphAI is an AI-powered web data extraction API."
+hidden: true
 ---
 
 # ScrapeGraphAI

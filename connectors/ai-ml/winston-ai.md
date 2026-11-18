@@ -1,5 +1,6 @@
 ---
 description: "Winston AI is an AI-content-detection and plagiarism platform."
+hidden: true
 ---
 
 # Winston AI

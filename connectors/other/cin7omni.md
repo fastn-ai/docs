@@ -1,5 +1,6 @@
 ---
 description: "Cin7 Omni (api.cin7.com) — cloud inventory, sales, purchasing, and retail management."
+hidden: true
 ---
 
 # Cin7 Omni

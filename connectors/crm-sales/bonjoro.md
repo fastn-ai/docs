@@ -1,5 +1,6 @@
 ---
 description: "Bonjoro is a personal video messaging platform for sales follow-up, onboarding and customer appreciation."
+hidden: true
 ---
 
 # Bonjoro

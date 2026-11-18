@@ -1,5 +1,6 @@
 ---
 description: "eSputnik, now branded Yespo, is an omnichannel marketing automation platform for Email, SMS, Web Push, Mobile Push, Viber, Telegram and App Inbox campaigns."
+hidden: true
 ---
 
 # eSputnik (Yespo)

@@ -1,5 +1,6 @@
 ---
 description: "Zoho People is Zoho's HR management system."
+hidden: true
 ---
 
 # Zoho People

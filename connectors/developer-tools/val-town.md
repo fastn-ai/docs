@@ -1,5 +1,6 @@
 ---
 description: "Val Town is a social platform for writing and hosting serverless TypeScript and JavaScript."
+hidden: true
 ---
 
 # Val Town

@@ -1,5 +1,6 @@
 ---
 description: "thanks.io is a direct-mail automation platform for sending handwritten-style postcards, letters, notecards, magnacards and gift cards."
+hidden: true
 ---
 
 # thanks.io

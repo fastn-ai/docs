@@ -1,5 +1,6 @@
 ---
 description: "Snipcart headless e-commerce REST API — manage orders, subscriptions, customers, products, discounts, abandoned carts, custom shipping methods, refunds, order…"
+hidden: true
 ---
 
 # Snipcart

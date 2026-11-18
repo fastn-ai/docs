@@ -1,5 +1,6 @@
 ---
 description: "Azure Cosmos DB management over the Microsoft.DocumentDB Azure Resource Manager API at https://management.azure.com."
+hidden: true
 ---
 
 # Azure Cosmos DB

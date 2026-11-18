@@ -1,5 +1,6 @@
 ---
 description: "Little Green Light donor-management CRM for nonprofits."
+hidden: true
 ---
 
 # Little Green Light

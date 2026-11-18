@@ -1,10 +1,10 @@
 ---
-description: "Data and databases connectors fastn manages: 87 in all."
+description: "Data and databases connectors fastn manages, with their auth, actions and events."
 ---
 
 # Data and databases
 
-87 connectors. Back to the [connector catalog](../README.md).
+Data and databases apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

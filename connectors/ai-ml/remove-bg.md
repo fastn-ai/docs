@@ -1,5 +1,6 @@
 ---
 description: "remove.bg Background Removal API (https://api.remove.bg/v1.0)."
+hidden: true
 ---
 
 # remove.bg

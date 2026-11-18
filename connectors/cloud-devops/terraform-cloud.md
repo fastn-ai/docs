@@ -1,5 +1,6 @@
 ---
 description: "HashiCorp HCP Terraform (Terraform Cloud) API v2."
+hidden: true
 ---
 
 # Terraform Cloud

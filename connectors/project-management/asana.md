@@ -1,5 +1,6 @@
 ---
 description: "Asana is a work management platform."
+hidden: true
 ---
 
 # Asana

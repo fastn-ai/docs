@@ -1,5 +1,6 @@
 ---
 description: "Storyblok headless CMS Management API."
+hidden: true
 ---
 
 # Storyblok

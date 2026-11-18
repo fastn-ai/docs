@@ -1,5 +1,6 @@
 ---
 description: "verifi.email is an email validation and deliverability API."
+hidden: true
 ---
 
 # verifi.email

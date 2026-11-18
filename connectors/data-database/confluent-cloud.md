@@ -1,5 +1,6 @@
 ---
 description: "Manage Confluent Cloud infrastructure through the Confluent Cloud Control Plane REST API."
+hidden: true
 ---
 
 # Confluent Cloud

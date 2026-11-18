@@ -1,5 +1,6 @@
 ---
 description: "Pointagram sales gamification platform."
+hidden: true
 ---
 
 # Pointagram

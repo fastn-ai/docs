@@ -1,5 +1,6 @@
 ---
 description: "Contractbook contract lifecycle management (CLM)."
+hidden: true
 ---
 
 # Contractbook

@@ -1,5 +1,6 @@
 ---
 description: "Sanity is a headless content operating system."
+hidden: true
 ---
 
 # Sanity

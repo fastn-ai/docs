@@ -1,5 +1,6 @@
 ---
 description: "Coresignal B2B public web data API (CDAPI v2): search, collect and enrich company, employee, job and post records across Base, Clean and Multi-source…"
+hidden: true
 ---
 
 # Coresignal

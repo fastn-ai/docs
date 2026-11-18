@@ -1,5 +1,6 @@
 ---
 description: "SWAPI, the Star Wars API, is a free read-only API with Star Wars people, films, starships, vehicles, species and planets: list with search and pagination or…"
+hidden: true
 ---
 
 # SWAPI (Star Wars API)

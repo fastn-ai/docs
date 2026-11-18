@@ -1,5 +1,6 @@
 ---
 description: "Azure DevOps — accounts and profile, projects, Git repositories, branches/refs, repository items (content) and commit changes, via the Azure DevOps REST API…"
+hidden: true
 ---
 
 # Azure DevOps

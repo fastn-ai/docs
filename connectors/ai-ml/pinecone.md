@@ -1,5 +1,6 @@
 ---
 description: "Pinecone vector database connector (API version 2026-04)."
+hidden: true
 ---
 
 # Pinecone

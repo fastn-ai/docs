@@ -1,5 +1,6 @@
 ---
 description: "Wafeq is cloud accounting software for the Middle East."
+hidden: true
 ---
 
 # Wafeq

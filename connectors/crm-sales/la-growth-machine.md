@@ -1,5 +1,6 @@
 ---
 description: "La Growth Machine is a multichannel B2B outreach platform combining LinkedIn, email and Twitter sequences."
+hidden: true
 ---
 
 # La Growth Machine

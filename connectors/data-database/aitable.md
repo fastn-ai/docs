@@ -1,5 +1,6 @@
 ---
 description: "AITable.ai Fusion API — datasheets, records, fields, views, nodes, embed links, contacts (members/teams/roles), attachments and AI chat completions."
+hidden: true
 ---
 
 # AITable.ai

@@ -1,5 +1,6 @@
 ---
 description: "Nager.Date is a free, keyless public holiday API covering 100+ countries: public holidays per year, upcoming holidays, long weekends, 'is today a holiday'…"
+hidden: true
 ---
 
 # Nager.Date

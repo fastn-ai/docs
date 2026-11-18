@@ -1,5 +1,6 @@
 ---
 description: "Docparser extracts structured data from PDFs, invoices, purchase orders and scanned documents using Document Parsers."
+hidden: true
 ---
 
 # Docparser

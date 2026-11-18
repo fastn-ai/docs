@@ -1,5 +1,6 @@
 ---
 description: "Walmart Marketplace (US) Seller API — environment-switchable (production or sandbox)."
+hidden: true
 ---
 
 # Walmart Marketplace

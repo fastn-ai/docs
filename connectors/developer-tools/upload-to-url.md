@@ -1,5 +1,6 @@
 ---
 description: "Upload to URL (uploadtourl.com) turns any file into an instant public CDN link."
+hidden: true
 ---
 
 # Upload to URL

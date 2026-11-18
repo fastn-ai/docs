@@ -1,5 +1,6 @@
 ---
 description: "Botdog is a LinkedIn outreach and automation platform."
+hidden: true
 ---
 
 # Botdog

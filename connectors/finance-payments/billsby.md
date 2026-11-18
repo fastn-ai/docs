@@ -1,5 +1,6 @@
 ---
 description: "Billsby subscription billing and recurring payments."
+hidden: true
 ---
 
 # Billsby

@@ -1,5 +1,6 @@
 ---
 description: "Cutt.ly URL shortener and link analytics."
+hidden: true
 ---
 
 # Cutt.ly

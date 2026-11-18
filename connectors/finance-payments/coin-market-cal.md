@@ -1,5 +1,6 @@
 ---
 description: "CoinMarketCal is the leading crypto events calendar, tracking upcoming and historical announcements - listings, hard forks, token unlocks, airdrops, AMAs and…"
+hidden: true
 ---
 
 # CoinMarketCal

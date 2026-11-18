@@ -1,5 +1,6 @@
 ---
 description: "Free current and historical foreign-exchange rates from freecurrencyapi.com (the free tier of currencyapi.com)."
+hidden: true
 ---
 
 # FreeCurrencyAPI

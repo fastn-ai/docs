@@ -1,5 +1,6 @@
 ---
 description: "The UK Parliament Register of Members' Financial Interests API gives open data on MPs' declared interests: list interest categories and published registers,…"
+hidden: true
 ---
 
 # UK Parliament Register of Interests API

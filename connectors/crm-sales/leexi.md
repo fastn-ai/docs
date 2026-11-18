@@ -1,5 +1,6 @@
 ---
 description: "Leexi is a conversation-intelligence platform that records, transcribes and analyses sales and customer calls and meetings."
+hidden: true
 ---
 
 # Leexi

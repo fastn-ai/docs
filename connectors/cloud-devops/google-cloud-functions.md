@@ -1,5 +1,6 @@
 ---
 description: "Manage Google Cloud Functions (2nd gen) through the Cloud Functions API v2: create, update, list, get and delete functions, generate signed upload and…"
+hidden: true
 ---
 
 # Google Cloud Functions

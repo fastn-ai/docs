@@ -1,5 +1,6 @@
 ---
 description: "Salesforce CPQ (formerly Steelbrick) — the configure-price-quote managed package that runs inside a Salesforce org."
+hidden: true
 ---
 
 # Salesforce CPQ

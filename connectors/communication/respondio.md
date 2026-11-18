@@ -1,5 +1,6 @@
 ---
 description: "respond.io is a conversational CRM and customer messaging platform."
+hidden: true
 ---
 
 # respond.io

@@ -1,5 +1,6 @@
 ---
 description: "Loyverse is a point-of-sale and retail management platform for small businesses."
+hidden: true
 ---
 
 # Loyverse

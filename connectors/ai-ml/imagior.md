@@ -1,5 +1,6 @@
 ---
 description: "Imagior automated image generation."
+hidden: true
 ---
 
 # Imagior

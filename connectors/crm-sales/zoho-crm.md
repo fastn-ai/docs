@@ -1,5 +1,6 @@
 ---
 description: "Zoho CRM is a cloud-based CRM platform."
+hidden: true
 ---
 
 # Zoho CRM

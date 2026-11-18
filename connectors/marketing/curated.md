@@ -1,5 +1,6 @@
 ---
 description: "Curated is a newsletter publishing platform for curating links into email issues."
+hidden: true
 ---
 
 # Curated

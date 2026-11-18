@@ -1,5 +1,6 @@
 ---
 description: "Prismic headless CMS connector."
+hidden: true
 ---
 
 # Prismic

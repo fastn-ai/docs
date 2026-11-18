@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Intune device management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/deviceManagement)."
+hidden: true
 ---
 
 # Microsoft Intune

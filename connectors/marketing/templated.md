@@ -1,5 +1,6 @@
 ---
 description: "Templated (templated.io) generates images, PDFs and videos from reusable design templates."
+hidden: true
 ---
 
 # Templated

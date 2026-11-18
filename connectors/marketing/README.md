@@ -1,10 +1,10 @@
 ---
-description: "Marketing connectors fastn manages: 86 in all."
+description: "Marketing connectors fastn manages, with their auth, actions and events."
 ---
 
 # Marketing
 
-86 connectors. Back to the [connector catalog](../README.md).
+Marketing apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

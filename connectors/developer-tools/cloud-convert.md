@@ -1,5 +1,6 @@
 ---
 description: "CloudConvert is a file conversion and processing API."
+hidden: true
 ---
 
 # CloudConvert

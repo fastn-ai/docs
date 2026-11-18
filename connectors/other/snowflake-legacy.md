@@ -1,5 +1,6 @@
 ---
 description: "Legacy Snowflake connector providing SQL-driven access to the Snowflake Data Cloud: databases, schemas, tables, views, columns, warehouses, users, roles,…"
+hidden: true
 ---
 
 # Snowflake (Legacy)

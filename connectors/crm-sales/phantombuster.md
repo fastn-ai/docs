@@ -1,5 +1,6 @@
 ---
 description: "PhantomBuster is a cloud automation platform for lead generation and data extraction (Phantoms)."
+hidden: true
 ---
 
 # PhantomBuster

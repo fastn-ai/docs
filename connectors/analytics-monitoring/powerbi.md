@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Power BI REST API connector."
+hidden: true
 ---
 
 # Microsoft Power BI

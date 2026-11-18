@@ -1,5 +1,6 @@
 ---
 description: "Generic PostgreSQL database connector with full introspection coverage."
+hidden: true
 ---
 
 # PostgreSQL

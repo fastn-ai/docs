@@ -1,5 +1,6 @@
 ---
 description: "Docker Hub API v2 connector — manage repositories, tags, image immutability rules, repository webhooks, personal access tokens, organizations, teams (groups),…"
+hidden: true
 ---
 
 # Docker Hub

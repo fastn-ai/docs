@@ -1,5 +1,6 @@
 ---
 description: "PDFShift is an HTML/URL to PDF, PNG, JPEG, and WEBP conversion API."
+hidden: true
 ---
 
 # PDFShift

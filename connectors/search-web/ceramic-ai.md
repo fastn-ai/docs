@@ -1,5 +1,6 @@
 ---
 description: "Ceramic AI is a web-scale search API built for LLMs and AI agents."
+hidden: true
 ---
 
 # Ceramic AI

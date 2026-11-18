@@ -1,5 +1,6 @@
 ---
 description: "GTmetrix is a web page performance testing service."
+hidden: true
 ---
 
 # GTmetrix

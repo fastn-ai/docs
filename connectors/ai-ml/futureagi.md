@@ -1,5 +1,6 @@
 ---
 description: "Future AGI Agent Command Center gateway (https://gateway.futureagi.com): an OpenAI-compatible LLM gateway with routing, caching, guardrails and cost tracking."
+hidden: true
 ---
 
 # Future AGI

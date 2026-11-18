@@ -1,5 +1,6 @@
 ---
 description: "SatisMeter is a customer-feedback platform for NPS, CSAT, CES, PMF and custom in-app, email and mobile surveys."
+hidden: true
 ---
 
 # SatisMeter

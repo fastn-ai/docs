@@ -1,5 +1,6 @@
 ---
 description: "Vercel REST API (base https://api.vercel.com)."
+hidden: true
 ---
 
 # Vercel

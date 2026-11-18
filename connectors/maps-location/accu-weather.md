@@ -1,5 +1,6 @@
 ---
 description: "AccuWeather provides global weather data."
+hidden: true
 ---
 
 # AccuWeather

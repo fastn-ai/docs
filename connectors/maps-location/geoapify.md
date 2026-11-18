@@ -1,5 +1,6 @@
 ---
 description: "Geoapify is a location platform built on OpenStreetMap data."
+hidden: true
 ---
 
 # Geoapify

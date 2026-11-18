@@ -1,5 +1,6 @@
 ---
 description: "The UK Parliament Members API gives open data on MPs and Lords: search current and historical members, get biographies, contact details, experience,…"
+hidden: true
 ---
 
 # UK Parliament Members API

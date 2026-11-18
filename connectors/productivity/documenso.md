@@ -1,5 +1,6 @@
 ---
 description: "Documenso open-source e-signature platform."
+hidden: true
 ---
 
 # Documenso

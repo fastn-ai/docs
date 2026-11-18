@@ -1,5 +1,6 @@
 ---
 description: "Simple Analytics is a privacy-friendly web analytics platform."
+hidden: true
 ---
 
 # Simple Analytics

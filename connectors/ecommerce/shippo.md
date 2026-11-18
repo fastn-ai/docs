@@ -1,5 +1,6 @@
 ---
 description: "Shippo multi-carrier shipping API — create addresses, parcels, and shipments, shop rates across carriers, buy shipping labels, track packages, manage customs,…"
+hidden: true
 ---
 
 # Shippo

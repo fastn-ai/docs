@@ -1,5 +1,6 @@
 ---
 description: "Salesmate is a sales CRM for contacts, companies, deals, activities, notes, products and custom modules."
+hidden: true
 ---
 
 # Salesmate

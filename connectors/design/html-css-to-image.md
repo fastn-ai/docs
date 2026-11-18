@@ -1,5 +1,6 @@
 ---
 description: "HTML/CSS to Image (HCTI) renders images and PDFs from HTML and CSS, captures screenshots of public URLs, and generates templated graphics such as Open Graph…"
+hidden: true
 ---
 
 # HTML/CSS to Image

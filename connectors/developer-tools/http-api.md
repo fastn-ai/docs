@@ -1,5 +1,6 @@
 ---
 description: "Generic HTTP request tools for calling any HTTPS REST endpoint that has no dedicated connector: GET, POST, PUT, PATCH and DELETE."
+hidden: true
 ---
 
 # HTTP API

@@ -1,5 +1,6 @@
 ---
 description: "NeverBounce is a real-time email verification and bulk list-cleaning service."
+hidden: true
 ---
 
 # NeverBounce

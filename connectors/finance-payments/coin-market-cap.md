@@ -1,5 +1,6 @@
 ---
 description: "CoinMarketCap is the most-referenced source of cryptocurrency market data, covering real-time and historical prices, market capitalisation, OHLCV candles,…"
+hidden: true
 ---
 
 # CoinMarketCap

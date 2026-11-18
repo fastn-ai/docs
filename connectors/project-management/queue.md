@@ -1,5 +1,6 @@
 ---
 description: "Queue (app.usequeue.com) is a client-portal and project-management platform for agencies and productized-service businesses."
+hidden: true
 ---
 
 # Queue

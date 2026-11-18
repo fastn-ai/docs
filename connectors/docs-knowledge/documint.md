@@ -1,5 +1,6 @@
 ---
 description: "Documint turns structured data into pixel-perfect PDFs from templates you design in its drag-and-drop editor."
+hidden: true
 ---
 
 # Documint

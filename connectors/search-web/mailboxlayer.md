@@ -1,5 +1,6 @@
 ---
 description: "Mailboxlayer is a real-time email validation and verification API by APILayer."
+hidden: true
 ---
 
 # Mailboxlayer

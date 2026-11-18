@@ -1,5 +1,6 @@
 ---
 description: "Placid is a creative-automation platform that renders images, PDFs and videos from templates you design once and fill with data."
+hidden: true
 ---
 
 # Placid

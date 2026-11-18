@@ -1,5 +1,6 @@
 ---
 description: "Loops (loops.so) is an email platform for SaaS companies covering transactional email sending, contact management, custom contact properties, event-triggered…"
+hidden: true
 ---
 
 # Loops

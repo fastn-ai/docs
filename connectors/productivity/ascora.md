@@ -1,5 +1,6 @@
 ---
 description: "Ascora field service and job management platform."
+hidden: true
 ---
 
 # Ascora

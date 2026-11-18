@@ -1,5 +1,6 @@
 ---
 description: "SAP SuccessFactors Incentive Management - the incentive compensation product formerly sold as SAP Commissions and, before SAP acquired CallidusCloud in 2018,…"
+hidden: true
 ---
 
 # SAP Incentive Management (CallidusCloud Commissions)

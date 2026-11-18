@@ -1,5 +1,6 @@
 ---
 description: "Landbot is a no-code conversational app builder for websites, WhatsApp and Messenger."
+hidden: true
 ---
 
 # Landbot

@@ -1,5 +1,6 @@
 ---
 description: "Readwise saves, organizes and resurfaces the highlights you take across books, articles, podcasts and tweets, and its Reader companion is a read-later app for…"
+hidden: true
 ---
 
 # Readwise

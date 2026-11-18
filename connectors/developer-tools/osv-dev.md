@@ -1,5 +1,6 @@
 ---
 description: "OSV (osv.dev, by Google) is a free, open database of vulnerabilities in open-source packages across PyPI, npm, Go, Maven, crates.io, Debian, Ubuntu and more."
+hidden: true
 ---
 
 # OSV

@@ -1,5 +1,6 @@
 ---
 description: "Moosend email marketing and automation platform."
+hidden: true
 ---
 
 # Moosend

@@ -1,5 +1,6 @@
 ---
 description: "Base44 is an AI app-building platform."
+hidden: true
 ---
 
 # Base44

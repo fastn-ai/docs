@@ -1,5 +1,6 @@
 ---
 description: "Emelia cold-email and LinkedIn outreach platform."
+hidden: true
 ---
 
 # Emelia

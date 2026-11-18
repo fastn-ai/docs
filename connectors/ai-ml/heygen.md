@@ -1,5 +1,6 @@
 ---
 description: "HeyGen is an AI video platform for avatar videos, voice cloning and text-to-speech, lip-sync, video translation and agentic video generation."
+hidden: true
 ---
 
 # HeyGen

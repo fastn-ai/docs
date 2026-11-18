@@ -1,5 +1,6 @@
 ---
 description: "Minerstat is a crypto-mining intelligence platform."
+hidden: true
 ---
 
 # Minerstat

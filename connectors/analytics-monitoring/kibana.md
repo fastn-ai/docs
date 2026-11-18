@@ -1,5 +1,6 @@
 ---
 description: "Kibana is the management and visualization layer for the Elastic Stack."
+hidden: true
 ---
 
 # Kibana

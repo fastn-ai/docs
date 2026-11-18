@@ -1,5 +1,6 @@
 ---
 description: "Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing, production and accounting management."
+hidden: true
 ---
 
 # Cin7 Core

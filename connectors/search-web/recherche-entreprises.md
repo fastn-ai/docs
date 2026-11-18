@@ -1,5 +1,6 @@
 ---
 description: "Recherche d'entreprises is the French government's free company search API (Annuaire des Entreprises): find French companies, associations and public bodies…"
+hidden: true
 ---
 
 # Recherche d'entreprises

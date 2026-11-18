@@ -1,5 +1,6 @@
 ---
 description: "Buffer is a social media management platform for planning, scheduling, and publishing content across social channels."
+hidden: true
 ---
 
 # Buffer

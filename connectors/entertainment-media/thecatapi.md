@@ -1,5 +1,6 @@
 ---
 description: "The Cat API (\"Cat as a Service\") gives access to thousands of cat images, cat breed data, and, for authenticated users, the ability to upload images, tag…"
+hidden: true
 ---
 
 # The Cat API

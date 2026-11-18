@@ -1,5 +1,6 @@
 ---
 description: "The Federal Register API (U.S."
+hidden: true
 ---
 
 # Federal Register

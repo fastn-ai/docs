@@ -1,5 +1,6 @@
 ---
 description: "Lemlist sales engagement and cold outreach automation."
+hidden: true
 ---
 
 # Lemlist

@@ -1,5 +1,6 @@
 ---
 description: "iLovePDF / iLoveAPI REST API v1 — PDF and image processing (merge, split, compress, OCR, convert, watermark, protect, edit, …) and electronic signature…"
+hidden: true
 ---
 
 # iLovePDF

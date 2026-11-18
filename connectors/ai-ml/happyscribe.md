@@ -1,5 +1,6 @@
 ---
 description: "HappyScribe transcription, subtitling and translation platform."
+hidden: true
 ---
 
 # HappyScribe

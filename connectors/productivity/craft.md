@@ -1,5 +1,6 @@
 ---
 description: "Craft is a document and note-taking workspace."
+hidden: true
 ---
 
 # Craft

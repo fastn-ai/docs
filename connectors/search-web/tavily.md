@@ -1,5 +1,6 @@
 ---
 description: "Tavily web search, extract, crawl, and map API for AI agents."
+hidden: true
 ---
 
 # Tavily

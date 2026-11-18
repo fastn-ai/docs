@@ -1,5 +1,6 @@
 ---
 description: "MagicalAPI provides LinkedIn profile and company scraping plus resume parsing, review and job-match scoring for recruiting and sales prospecting."
+hidden: true
 ---
 
 # MagicalAPI

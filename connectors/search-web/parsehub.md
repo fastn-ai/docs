@@ -1,5 +1,6 @@
 ---
 description: "ParseHub is a visual web scraping service that turns websites without an API into structured data."
+hidden: true
 ---
 
 # ParseHub

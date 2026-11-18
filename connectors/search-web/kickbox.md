@@ -1,5 +1,6 @@
 ---
 description: "Kickbox email verification API."
+hidden: true
 ---
 
 # Kickbox

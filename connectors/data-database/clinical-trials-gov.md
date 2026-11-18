@@ -1,5 +1,6 @@
 ---
 description: "ClinicalTrials.gov (U.S."
+hidden: true
 ---
 
 # ClinicalTrials.gov

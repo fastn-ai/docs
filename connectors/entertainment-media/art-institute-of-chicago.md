@@ -1,5 +1,6 @@
 ---
 description: "The Art Institute of Chicago public API: free, keyless access to the museum's collection (artworks, artists, places, galleries, exhibitions, images, audio,…"
+hidden: true
 ---
 
 # Art Institute of Chicago

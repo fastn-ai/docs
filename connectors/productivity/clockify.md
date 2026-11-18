@@ -1,5 +1,6 @@
 ---
 description: "Clockify time-tracking integration."
+hidden: true
 ---
 
 # Clockify

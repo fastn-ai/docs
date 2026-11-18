@@ -1,5 +1,6 @@
 ---
 description: "Browse AI extracts and monitors data from any website with no-code robots."
+hidden: true
 ---
 
 # Browse AI

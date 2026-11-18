@@ -1,5 +1,6 @@
 ---
 description: "CollegeFootballData.com (CFBD) provides historical and advanced college football data."
+hidden: true
 ---
 
 # College Football Data

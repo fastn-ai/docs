@@ -1,5 +1,6 @@
 ---
 description: "Sequenzy email marketing and automation platform."
+hidden: true
 ---
 
 # Sequenzy

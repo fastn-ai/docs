@@ -1,5 +1,6 @@
 ---
 description: "cloro extracts structured data from AI answer engines and search results - ChatGPT, Google Gemini, Grok, Microsoft Copilot, Perplexity, Google AI Mode, Google…"
+hidden: true
 ---
 
 # cloro

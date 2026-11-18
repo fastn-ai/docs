@@ -1,5 +1,6 @@
 ---
 description: "Google Ads API v25 connector (https://googleads.googleapis.com/v25)."
+hidden: true
 ---
 
 # Google Ads

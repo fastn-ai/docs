@@ -1,5 +1,6 @@
 ---
 description: "RenderForm generates images, PDFs and videos from reusable templates."
+hidden: true
 ---
 
 # RenderForm

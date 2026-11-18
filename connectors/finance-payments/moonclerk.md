@@ -1,5 +1,6 @@
 ---
 description: "MoonClerk is a recurring-payments and checkout platform built on Stripe."
+hidden: true
 ---
 
 # MoonClerk

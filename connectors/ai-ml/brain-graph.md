@@ -1,5 +1,6 @@
 ---
 description: "BrainGraph is an AI digital brain platform that turns documents, transcripts, web pages, YouTube videos and voice notes into a personal knowledge graph that…"
+hidden: true
 ---
 
 # BrainGraph

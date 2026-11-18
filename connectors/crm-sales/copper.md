@@ -1,5 +1,6 @@
 ---
 description: "Copper CRM Developer API v1 — leads, people, companies, opportunities, projects, tasks, activities, pipelines, custom fields, connect fields, related items,…"
+hidden: true
 ---
 
 # Copper

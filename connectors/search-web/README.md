@@ -1,10 +1,10 @@
 ---
-description: "Search and web connectors fastn manages: 101 in all."
+description: "Search and web connectors fastn manages, with their auth, actions and events."
 ---
 
 # Search and web
 
-101 connectors. Back to the [connector catalog](../README.md).
+Search and web apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

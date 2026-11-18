@@ -1,5 +1,6 @@
 ---
 description: "Planyo online booking / reservation system."
+hidden: true
 ---
 
 # Planyo Online Booking

@@ -1,5 +1,6 @@
 ---
 description: "Rev AI is a speech-to-text and voice-intelligence platform."
+hidden: true
 ---
 
 # Rev AI

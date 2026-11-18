@@ -1,5 +1,6 @@
 ---
 description: "GIPHY is a library of GIFs, stickers, animated emoji and short video clips, searchable through a public REST API."
+hidden: true
 ---
 
 # GIPHY

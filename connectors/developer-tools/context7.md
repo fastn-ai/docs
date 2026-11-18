@@ -1,5 +1,6 @@
 ---
 description: "Context7 delivers up-to-date, version-specific library documentation and code examples to AI coding agents."
+hidden: true
 ---
 
 # Context7

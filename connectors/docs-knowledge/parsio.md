@@ -1,5 +1,6 @@
 ---
 description: "Parsio extracts structured data from emails, PDFs and other documents."
+hidden: true
 ---
 
 # Parsio

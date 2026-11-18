@@ -1,5 +1,6 @@
 ---
 description: "Google People API v1 — manage the authenticated user's contacts, contact groups, other contacts, and read domain directory profiles."
+hidden: true
 ---
 
 # Google Contacts

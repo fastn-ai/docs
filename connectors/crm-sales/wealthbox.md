@@ -1,5 +1,6 @@
 ---
 description: "Wealthbox CRM — the CRM built for financial advisors and RIA firms."
+hidden: true
 ---
 
 # Wealthbox

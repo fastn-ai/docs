@@ -1,5 +1,6 @@
 ---
 description: "Bitbucket Cloud (Atlassian) REST API v2.0 connector."
+hidden: true
 ---
 
 # Bitbucket

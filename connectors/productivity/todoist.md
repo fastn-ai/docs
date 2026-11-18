@@ -1,5 +1,6 @@
 ---
 description: "Todoist unified API v1 (base https://api.todoist.com/api/v1)."
+hidden: true
 ---
 
 # Todoist

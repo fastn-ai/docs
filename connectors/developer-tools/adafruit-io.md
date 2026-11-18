@@ -1,5 +1,6 @@
 ---
 description: "Adafruit IO is a cloud platform for Internet of Things projects."
+hidden: true
 ---
 
 # Adafruit IO

@@ -1,5 +1,6 @@
 ---
 description: "OneSimpleAPI is a developer utility API toolkit: website screenshots, HTML/URL to PDF, QR code generation, email validation, currency exchange rates, URL…"
+hidden: true
 ---
 
 # OneSimpleAPI

@@ -1,5 +1,6 @@
 ---
 description: "SerpAPI — scrape Google and other search engines in real time and get structured JSON results."
+hidden: true
 ---
 
 # SerpAPI

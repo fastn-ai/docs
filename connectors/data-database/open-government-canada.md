@@ -1,5 +1,6 @@
 ---
 description: "Open Government Canada (open.canada.ca) is the Government of Canada's free open data portal with tens of thousands of federal datasets from Statistics Canada,…"
+hidden: true
 ---
 
 # Open Government Canada

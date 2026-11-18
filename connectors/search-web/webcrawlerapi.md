@@ -1,5 +1,6 @@
 ---
 description: "WebCrawlerAPI crawls whole websites and scrapes single pages into Markdown, cleaned text, HTML or link lists."
+hidden: true
 ---
 
 # WebCrawlerAPI

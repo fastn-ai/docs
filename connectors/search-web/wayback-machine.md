@@ -1,5 +1,6 @@
 ---
 description: "The Internet Archive Wayback Machine holds over a trillion archived web pages."
+hidden: true
 ---
 
 # Wayback Machine

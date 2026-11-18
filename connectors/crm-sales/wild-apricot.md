@@ -1,5 +1,6 @@
 ---
 description: "WildApricot is a membership management platform for associations, clubs and non-profits."
+hidden: true
 ---
 
 # WildApricot

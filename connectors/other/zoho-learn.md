@@ -1,5 +1,6 @@
 ---
 description: "Zoho Learn is Zoho's knowledge management and online training platform."
+hidden: true
 ---
 
 # Zoho Learn

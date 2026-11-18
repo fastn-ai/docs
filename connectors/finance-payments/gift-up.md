@@ -1,5 +1,6 @@
 ---
 description: "Gift Up is a gift card and gift certificate platform for small businesses."
+hidden: true
 ---
 
 # Gift Up

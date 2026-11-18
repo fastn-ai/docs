@@ -1,5 +1,6 @@
 ---
 description: "Knack is a no-code platform for building online databases and business apps."
+hidden: true
 ---
 
 # Knack

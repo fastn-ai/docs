@@ -1,5 +1,6 @@
 ---
 description: "The Odds API v4 - live and upcoming sports betting odds, scores and fixtures aggregated from bookmakers across the US, UK, Australian and European regions."
+hidden: true
 ---
 
 # The Odds API

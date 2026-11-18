@@ -1,5 +1,6 @@
 ---
 description: "Visualping website-change monitoring — create and manage monitoring jobs that fire a webhook when a page changes."
+hidden: true
 ---
 
 # Visualping

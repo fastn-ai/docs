@@ -1,5 +1,6 @@
 ---
 description: "OKZest generates personalised images from visual design templates."
+hidden: true
 ---
 
 # OKZest

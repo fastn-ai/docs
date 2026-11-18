@@ -1,5 +1,6 @@
 ---
 description: "Ambee provides real-time and forecast environmental intelligence."
+hidden: true
 ---
 
 # Ambee

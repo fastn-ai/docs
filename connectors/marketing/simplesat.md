@@ -1,5 +1,6 @@
 ---
 description: "Simplesat is a customer-satisfaction survey platform for CSAT, CES and NPS feedback."
+hidden: true
 ---
 
 # Simplesat

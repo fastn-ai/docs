@@ -1,5 +1,6 @@
 ---
 description: "Databricks is a unified data intelligence platform for data engineering, analytics, machine learning and AI."
+hidden: true
 ---
 
 # Databricks

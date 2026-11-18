@@ -1,5 +1,6 @@
 ---
 description: "Sales tax automation with TaxJar."
+hidden: true
 ---
 
 # TaxJar

@@ -1,5 +1,6 @@
 ---
 description: "TVmaze public API: free, keyless TV metadata - search shows and people, TV schedules by country and date (including web/streaming), show details, episodes,…"
+hidden: true
 ---
 
 # TVmaze

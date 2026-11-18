@@ -1,5 +1,6 @@
 ---
 description: "The UK Parliament Treaties API gives open data on treaties laid before Parliament under the CRaG Act: search treaties by text, lead government department,…"
+hidden: true
 ---
 
 # UK Parliament Treaties API

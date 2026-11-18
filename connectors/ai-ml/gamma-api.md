@@ -1,5 +1,6 @@
 ---
 description: "Gamma Generate API — programmatically generate presentations, documents, webpages, and social posts from text or templates, manage themes/folders, and…"
+hidden: true
 ---
 
 # Gamma API

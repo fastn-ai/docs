@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Bookings appointment scheduling via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/solutions/bookingBusinesses)."
+hidden: true
 ---
 
 # Microsoft Bookings

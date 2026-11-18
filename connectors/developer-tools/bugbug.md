@@ -1,5 +1,6 @@
 ---
 description: "BugBug browser test automation."
+hidden: true
 ---
 
 # BugBug

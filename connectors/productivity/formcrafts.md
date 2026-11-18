@@ -1,5 +1,6 @@
 ---
 description: "Formcrafts is an online form builder for lead capture, surveys, support requests, payments and registrations."
+hidden: true
 ---
 
 # Formcrafts

@@ -1,5 +1,6 @@
 ---
 description: "Maven Central Search is the free public search API of the Central Repository (run by Sonatype) for Java/JVM artifacts."
+hidden: true
 ---
 
 # Maven Central Search

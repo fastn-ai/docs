@@ -1,5 +1,6 @@
 ---
 description: "ShipStation V1 (ssapi) connector: orders (list/get/create/update/mark-shipped/delete), shipments (list/create label), carriers, products, customers, and…"
+hidden: true
 ---
 
 # ShipStation

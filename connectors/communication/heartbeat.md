@@ -1,5 +1,6 @@
 ---
 description: "Heartbeat is a community platform for creators, coaches and course businesses."
+hidden: true
 ---
 
 # Heartbeat

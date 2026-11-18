@@ -1,5 +1,6 @@
 ---
 description: "Chili Piper is a demand conversion and meeting scheduling platform."
+hidden: true
 ---
 
 # Chili Piper

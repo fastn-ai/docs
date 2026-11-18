@@ -1,5 +1,6 @@
 ---
 description: "Firebase Management API — list and inspect Firebase projects, their Android, iOS and Web apps, app configuration, admin SDK config, and available project…"
+hidden: true
 ---
 
 # Google Firebase

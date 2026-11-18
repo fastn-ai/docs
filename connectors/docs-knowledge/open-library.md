@@ -1,5 +1,6 @@
 ---
 description: "Open Library (Internet Archive) is a free, keyless catalog of millions of books: search books, authors, subjects, editions and lists, read work, edition,…"
+hidden: true
 ---
 
 # Open Library

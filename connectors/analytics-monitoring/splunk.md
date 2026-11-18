@@ -1,5 +1,6 @@
 ---
 description: "Splunk Enterprise / Splunk Cloud REST API connector."
+hidden: true
 ---
 
 # Splunk

@@ -1,5 +1,6 @@
 ---
 description: "Refiner is a customer survey platform for in-product, web and link surveys."
+hidden: true
 ---
 
 # Refiner

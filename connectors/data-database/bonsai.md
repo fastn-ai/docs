@@ -1,5 +1,6 @@
 ---
 description: "Bonsai is a fully managed Elasticsearch and OpenSearch hosting service."
+hidden: true
 ---
 
 # Bonsai

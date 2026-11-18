@@ -1,5 +1,6 @@
 ---
 description: "Notion REST API connector for managing pages, databases, blocks, users, comments, and search across a Notion workspace."
+hidden: true
 ---
 
 # Notion

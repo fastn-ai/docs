@@ -1,5 +1,6 @@
 ---
 description: "Unisender email and SMS marketing platform."
+hidden: true
 ---
 
 # Unisender

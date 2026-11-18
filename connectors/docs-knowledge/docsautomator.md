@@ -1,5 +1,6 @@
 ---
 description: "DocsAutomator document automation API: generate PDFs and Google Docs from Google Docs / Word / PDF templates, manage automations, inspect template…"
+hidden: true
 ---
 
 # DocsAutomator

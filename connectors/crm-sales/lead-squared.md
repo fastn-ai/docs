@@ -1,5 +1,6 @@
 ---
 description: "LeadSquared sales and marketing CRM."
+hidden: true
 ---
 
 # LeadSquared

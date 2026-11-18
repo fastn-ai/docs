@@ -1,5 +1,6 @@
 ---
 description: "Heyy customer-messaging platform (api.heyy.io v3)."
+hidden: true
 ---
 
 # Heyy

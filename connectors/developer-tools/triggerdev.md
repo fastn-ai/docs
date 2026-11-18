@@ -1,5 +1,6 @@
 ---
 description: "Trigger.dev v3 REST/Management API connector."
+hidden: true
 ---
 
 # Trigger.dev

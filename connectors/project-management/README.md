@@ -1,10 +1,10 @@
 ---
-description: "Project management connectors fastn manages: 34 in all."
+description: "Project management connectors fastn manages, with their auth, actions and events."
 ---
 
 # Project management
 
-34 connectors. Back to the [connector catalog](../README.md).
+Project management apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

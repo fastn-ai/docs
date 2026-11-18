@@ -1,5 +1,6 @@
 ---
 description: "UK Bank Holidays is the free GOV.UK data feed of bank holidays in England and Wales, Scotland and Northern Ireland, including substitute days."
+hidden: true
 ---
 
 # UK Bank Holidays

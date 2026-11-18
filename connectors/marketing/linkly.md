@@ -1,5 +1,6 @@
 ---
 description: "Linkly URL shortener and click analytics."
+hidden: true
 ---
 
 # Linkly

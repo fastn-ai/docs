@@ -1,5 +1,6 @@
 ---
 description: "The Géoplateforme geocoding service from IGN (the French national mapping agency, successor of api-adresse.data.gouv.fr) geocodes and reverse geocodes French…"
+hidden: true
 ---
 
 # Géoplateforme Geocoding (IGN)

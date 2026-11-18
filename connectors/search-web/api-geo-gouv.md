@@ -1,5 +1,6 @@
 ---
 description: "API Géo is the French government's free API for administrative boundaries: search communes by postcode, name or GPS point, and get communes,…"
+hidden: true
 ---
 
 # API Géo

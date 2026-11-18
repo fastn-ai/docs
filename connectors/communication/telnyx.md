@@ -1,5 +1,6 @@
 ---
 description: "Telnyx CPaaS platform."
+hidden: true
 ---
 
 # Telnyx

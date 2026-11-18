@@ -1,5 +1,6 @@
 ---
 description: "Drip is an ecommerce marketing automation platform (email, SMS, subscribers, campaigns, workflows, broadcasts, and shopper activity)."
+hidden: true
 ---
 
 # Drip

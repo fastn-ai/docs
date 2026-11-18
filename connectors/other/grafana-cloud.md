@@ -1,5 +1,6 @@
 ---
 description: "Grafana Cloud connector for the Grafana instance HTTP API — manage dashboards, folders, data sources, alerting, annotations, teams, users, service accounts,…"
+hidden: true
 ---
 
 # Grafana Cloud

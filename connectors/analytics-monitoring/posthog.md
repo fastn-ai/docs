@@ -1,5 +1,6 @@
 ---
 description: "PostHog product analytics, feature flags, experiments, surveys, session replay, and data management."
+hidden: true
 ---
 
 # PostHog

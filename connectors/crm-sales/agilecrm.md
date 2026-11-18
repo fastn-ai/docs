@@ -1,5 +1,6 @@
 ---
 description: "Agile CRM - all-in-one CRM with sales, marketing and service automation."
+hidden: true
 ---
 
 # Agile CRM

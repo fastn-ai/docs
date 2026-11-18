@@ -1,5 +1,6 @@
 ---
 description: "PackageX is a logistics operations platform providing package and mail tracking, mailroom management, shipping label generation, carrier rate shopping,…"
+hidden: true
 ---
 
 # PackageX

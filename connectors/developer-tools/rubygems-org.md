@@ -1,5 +1,6 @@
 ---
 description: "RubyGems.org is the Ruby community's gem hosting service."
+hidden: true
 ---
 
 # RubyGems.org

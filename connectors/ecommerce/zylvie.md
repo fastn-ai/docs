@@ -1,5 +1,6 @@
 ---
 description: "Zylvie is creator-commerce cart software for selling digital products, subscriptions and lead magnets."
+hidden: true
 ---
 
 # Zylvie

@@ -1,5 +1,6 @@
 ---
 description: "Zippopotam.us is a free, keyless postal code API for 60+ countries (GeoNames data): look up the places, state and coordinates for a postal code, or the postal…"
+hidden: true
 ---
 
 # Zippopotam.us

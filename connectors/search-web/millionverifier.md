@@ -1,5 +1,6 @@
 ---
 description: "MillionVerifier email verification."
+hidden: true
 ---
 
 # MillionVerifier

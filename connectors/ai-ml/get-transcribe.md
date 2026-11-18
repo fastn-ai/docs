@@ -1,5 +1,6 @@
 ---
 description: "GetTranscribe transcribes and analyzes social videos from Instagram, TikTok, YouTube, Facebook, X, Pinterest, Google Drive and direct video URLs."
+hidden: true
 ---
 
 # GetTranscribe

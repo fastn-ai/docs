@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Dynamics 365 Finance & Operations connector via the OData v4 data-entity REST API (base https://{instance}.operations.dynamics.com/data)."
+hidden: true
 ---
 
 # Dynamics 365 Finance & Operations

@@ -1,5 +1,6 @@
 ---
 description: "Twilio communications API — send SMS/MMS, place voice calls, manage phone numbers, phone-number lookup, identity verification, and messaging services."
+hidden: true
 ---
 
 # Twilio

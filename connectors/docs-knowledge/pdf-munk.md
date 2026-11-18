@@ -1,5 +1,6 @@
 ---
 description: "PDF Munk (pdfmunk.com) document and file automation API."
+hidden: true
 ---
 
 # PDF Munk

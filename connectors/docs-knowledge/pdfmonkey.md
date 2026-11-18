@@ -1,5 +1,6 @@
 ---
 description: "PDFMonkey generates PDF and image documents from reusable Liquid or drag-and-drop templates."
+hidden: true
 ---
 
 # PDFMonkey

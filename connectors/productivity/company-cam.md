@@ -1,5 +1,6 @@
 ---
 description: "CompanyCam is a photo documentation and project collaboration app for contractors."
+hidden: true
 ---
 
 # CompanyCam

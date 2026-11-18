@@ -1,5 +1,6 @@
 ---
 description: "Felt is a collaborative web mapping platform."
+hidden: true
 ---
 
 # Felt

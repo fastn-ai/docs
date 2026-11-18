@@ -1,5 +1,6 @@
 ---
 description: "Referral Rock is a referral, affiliate and partner marketing platform."
+hidden: true
 ---
 
 # Referral Rock

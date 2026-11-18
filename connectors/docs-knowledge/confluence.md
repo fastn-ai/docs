@@ -1,5 +1,6 @@
 ---
 description: "Atlassian Confluence Cloud connector (REST API v2) — pages, blog posts, comments (footer/inline), attachments, custom content, labels, likes, versions,…"
+hidden: true
 ---
 
 # Confluence

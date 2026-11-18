@@ -1,5 +1,6 @@
 ---
 description: "Cloudinary media management — Admin API and Upload API."
+hidden: true
 ---
 
 # Cloudinary

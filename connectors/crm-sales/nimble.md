@@ -1,5 +1,6 @@
 ---
 description: "Nimble CRM connector."
+hidden: true
 ---
 
 # Nimble

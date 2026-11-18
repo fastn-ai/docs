@@ -1,5 +1,6 @@
 ---
 description: "GetResponse email marketing and automation platform."
+hidden: true
 ---
 
 # GetResponse

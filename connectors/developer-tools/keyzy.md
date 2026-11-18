@@ -1,5 +1,6 @@
 ---
 description: "KEYZY software licensing platform."
+hidden: true
 ---
 
 # KEYZY

@@ -1,5 +1,6 @@
 ---
 description: "Abyssale image, video and PDF generation API."
+hidden: true
 ---
 
 # Abyssale

@@ -1,5 +1,6 @@
 ---
 description: "Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, Cases, and Tasks via the Salesforce REST API."
+hidden: true
 ---
 
 # Salesforce

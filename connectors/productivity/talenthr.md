@@ -1,5 +1,6 @@
 ---
 description: "TalentHR public API (v1) — all-in-one HR platform: employee directory and records, onboarding, time off, time tracking, attendance, documents, assets,…"
+hidden: true
 ---
 
 # TalentHR

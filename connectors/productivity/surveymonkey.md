@@ -1,5 +1,6 @@
 ---
 description: "SurveyMonkey API v3."
+hidden: true
 ---
 
 # SurveyMonkey

@@ -1,5 +1,6 @@
 ---
 description: "Microsoft OneNote via Microsoft Graph v1.0."
+hidden: true
 ---
 
 # Microsoft OneNote

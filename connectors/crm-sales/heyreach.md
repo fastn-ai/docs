@@ -1,5 +1,6 @@
 ---
 description: "HeyReach LinkedIn outreach automation."
+hidden: true
 ---
 
 # HeyReach

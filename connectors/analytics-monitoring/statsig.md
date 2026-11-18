@@ -1,5 +1,6 @@
 ---
 description: "Statsig is a feature flagging, experimentation and product analytics platform."
+hidden: true
 ---
 
 # Statsig

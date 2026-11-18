@@ -1,5 +1,6 @@
 ---
 description: "Harvest time tracking, invoicing and project profitability API (v2)."
+hidden: true
 ---
 
 # Harvest

@@ -1,5 +1,6 @@
 ---
 description: "KoboToolbox is an open-source platform for field data collection."
+hidden: true
 ---
 
 # KoboToolbox

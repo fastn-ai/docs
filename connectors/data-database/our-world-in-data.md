@@ -1,5 +1,6 @@
 ---
 description: "Our World in Data publishes free research and data on global problems - health, population, energy, CO2, economy, poverty and more - as thousands of charts."
+hidden: true
 ---
 
 # Our World in Data

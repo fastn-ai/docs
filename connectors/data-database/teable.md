@@ -1,5 +1,6 @@
 ---
 description: "Teable is an open-source, Airtable-style no-code database (spaces > bases > tables > fields > records > views)."
+hidden: true
 ---
 
 # Teable

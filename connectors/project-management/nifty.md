@@ -1,5 +1,6 @@
 ---
 description: "Nifty project management platform."
+hidden: true
 ---
 
 # Nifty

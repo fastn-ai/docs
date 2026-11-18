@@ -1,5 +1,6 @@
 ---
 description: "PopHIVE is Yale School of Public Health's harmonized US public-health surveillance dataset, covering emergency-department visits, wastewater,…"
+hidden: true
 ---
 
 # PopHIVE

@@ -1,5 +1,6 @@
 ---
 description: "Typeform Create, Responses, Webhooks, and Insights APIs."
+hidden: true
 ---
 
 # Typeform

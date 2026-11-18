@@ -1,5 +1,6 @@
 ---
 description: "Remarkety is an eCommerce email and SMS marketing automation platform."
+hidden: true
 ---
 
 # Remarkety

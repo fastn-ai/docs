@@ -1,5 +1,6 @@
 ---
 description: "Lokalise translation management platform."
+hidden: true
 ---
 
 # Lokalise

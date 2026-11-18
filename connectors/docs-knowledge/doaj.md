@@ -1,5 +1,6 @@
 ---
 description: "DOAJ (Directory of Open Access Journals) is a community-curated index of peer-reviewed open access journals and their articles."
+hidden: true
 ---
 
 # DOAJ (Directory of Open Access Journals)

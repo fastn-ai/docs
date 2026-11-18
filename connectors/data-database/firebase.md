@@ -1,5 +1,6 @@
 ---
 description: "Google Firebase app development platform."
+hidden: true
 ---
 
 # Firebase

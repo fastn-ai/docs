@@ -1,5 +1,6 @@
 ---
 description: "Frankfurter is a free, keyless, open-source exchange rates API with daily mid-market rates for 200+ currencies from central banks and official sources,…"
+hidden: true
 ---
 
 # Frankfurter

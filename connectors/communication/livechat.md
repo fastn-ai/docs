@@ -1,5 +1,6 @@
 ---
 description: "LiveChat (Text) API v3.6."
+hidden: true
 ---
 
 # LiveChat

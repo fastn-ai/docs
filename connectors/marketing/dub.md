@@ -1,5 +1,6 @@
 ---
 description: "Dub is the modern link attribution platform for short links, conversion tracking, and affiliate (partner) programs."
+hidden: true
 ---
 
 # Dub

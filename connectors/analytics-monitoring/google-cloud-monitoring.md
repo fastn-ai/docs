@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Monitoring API v3 (https://monitoring.googleapis.com/v3)."
+hidden: true
 ---
 
 # Google Cloud Monitoring

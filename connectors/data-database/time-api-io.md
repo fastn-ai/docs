@@ -1,5 +1,6 @@
 ---
 description: "TimeAPI.io is a free time and time zone API."
+hidden: true
 ---
 
 # TimeAPI.io

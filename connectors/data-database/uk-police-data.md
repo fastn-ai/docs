@@ -1,5 +1,6 @@
 ---
 description: "data.police.uk is the UK Home Office's open police data API for England, Wales and Northern Ireland."
+hidden: true
 ---
 
 # UK Police Data

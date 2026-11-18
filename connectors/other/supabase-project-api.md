@@ -1,5 +1,6 @@
 ---
 description: "Supabase project data-plane API (https://<projectRef>.supabase.co): PostgREST table CRUD + RPC, Storage buckets/objects, and Auth Admin user management."
+hidden: true
 ---
 
 # Supabase

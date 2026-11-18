@@ -1,5 +1,6 @@
 ---
 description: "Doppler is a secrets management platform for storing, syncing, and rotating environment variables, API keys, and secrets across projects, environments, and…"
+hidden: true
 ---
 
 # Doppler

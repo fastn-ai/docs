@@ -1,5 +1,6 @@
 ---
 description: "Viral Loops referral-marketing platform."
+hidden: true
 ---
 
 # Viral Loops

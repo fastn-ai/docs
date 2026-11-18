@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Logging API v2 for writing, reading and managing logs across projects, organizations, folders and billing accounts."
+hidden: true
 ---
 
 # Google Cloud Logging

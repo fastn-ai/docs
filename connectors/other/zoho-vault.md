@@ -1,5 +1,6 @@
 ---
 description: "Zoho Vault is Zoho's workforce password management service."
+hidden: true
 ---
 
 # Zoho Vault

@@ -1,5 +1,6 @@
 ---
 description: "Zoho Sheet online spreadsheet application, part of the Zoho suite."
+hidden: true
 ---
 
 # Zoho Sheet

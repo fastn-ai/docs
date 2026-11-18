@@ -1,5 +1,6 @@
 ---
 description: "NuGet is the package manager for .NET."
+hidden: true
 ---
 
 # NuGet

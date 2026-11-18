@@ -1,5 +1,6 @@
 ---
 description: "Mailgun transactional email and email automation API."
+hidden: true
 ---
 
 # Mailgun

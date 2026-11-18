@@ -1,5 +1,6 @@
 ---
 description: "Tableau Cloud and Tableau Server REST API."
+hidden: true
 ---
 
 # Tableau

@@ -1,5 +1,6 @@
 ---
 description: "SmartSurvey is a UK-based online survey and feedback platform."
+hidden: true
 ---
 
 # SmartSurvey

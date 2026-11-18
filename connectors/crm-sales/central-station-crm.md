@@ -1,5 +1,6 @@
 ---
 description: "CentralStationCRM is a German customer relationship management platform for small and mid-sized teams."
+hidden: true
 ---
 
 # CentralStationCRM

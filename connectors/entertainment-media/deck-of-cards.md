@@ -1,5 +1,6 @@
 ---
 description: "Deck of Cards is a free API that simulates decks of playing cards: create and shuffle decks (single or multiple, partial, with Jokers), draw cards, manage…"
+hidden: true
 ---
 
 # Deck of Cards

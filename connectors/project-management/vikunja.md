@@ -1,5 +1,6 @@
 ---
 description: "Vikunja is an open-source, self-hostable to-do and task-management app."
+hidden: true
 ---
 
 # Vikunja

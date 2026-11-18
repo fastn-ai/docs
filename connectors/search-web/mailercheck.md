@@ -1,5 +1,6 @@
 ---
 description: "MailerCheck email verification API."
+hidden: true
 ---
 
 # MailerCheck

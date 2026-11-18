@@ -1,5 +1,6 @@
 ---
 description: "Truelist is an email validation platform."
+hidden: true
 ---
 
 # Truelist

@@ -1,5 +1,6 @@
 ---
 description: "Slite knowledge base and docs API."
+hidden: true
 ---
 
 # Slite

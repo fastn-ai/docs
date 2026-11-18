@@ -1,5 +1,6 @@
 ---
 description: "Folk CRM REST API v1 — manage people, companies, groups, deals (custom objects), notes, reminders, interactions, users, and webhooks."
+hidden: true
 ---
 
 # Folk

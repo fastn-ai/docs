@@ -1,5 +1,6 @@
 ---
 description: "Ninety is a business operating system for teams running EOS."
+hidden: true
 ---
 
 # Ninety

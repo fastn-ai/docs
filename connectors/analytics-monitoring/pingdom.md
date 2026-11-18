@@ -1,5 +1,6 @@
 ---
 description: "SolarWinds Pingdom website and transaction monitoring."
+hidden: true
 ---
 
 # Pingdom

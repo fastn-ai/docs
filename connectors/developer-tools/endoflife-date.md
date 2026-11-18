@@ -1,5 +1,6 @@
 ---
 description: "endoflife.date tracks end-of-life dates and support lifecycles for 400+ products: languages, frameworks, databases, operating systems, cloud services and…"
+hidden: true
 ---
 
 # endoflife.date

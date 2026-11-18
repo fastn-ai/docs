@@ -1,10 +1,10 @@
 ---
-description: "Other connectors fastn manages: 44 in all."
+description: "Other connectors fastn manages, with their auth, actions and events."
 ---
 
 # Other
 
-44 connectors. Back to the [connector catalog](../README.md).
+Other apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

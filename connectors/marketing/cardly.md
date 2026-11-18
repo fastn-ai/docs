@@ -1,5 +1,6 @@
 ---
 description: "Cardly is a print-and-post greeting card platform."
+hidden: true
 ---
 
 # Cardly

@@ -1,5 +1,6 @@
 ---
 description: "Azure Table Storage — NoSQL key-value store for structured, non-relational data."
+hidden: true
 ---
 
 # Azure Table Storage

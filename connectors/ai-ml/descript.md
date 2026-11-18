@@ -1,5 +1,6 @@
 ---
 description: "Descript is an AI audio and video editing platform."
+hidden: true
 ---
 
 # Descript

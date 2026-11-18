@@ -1,5 +1,6 @@
 ---
 description: "Fullstory is a digital experience analytics platform that captures web and mobile sessions."
+hidden: true
 ---
 
 # Fullstory

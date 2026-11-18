@@ -1,5 +1,6 @@
 ---
 description: "Google Search Console API — manage verified sites and sitemaps, query Search Analytics performance data, inspect URL indexing status, and run the…"
+hidden: true
 ---
 
 # Google Search Console

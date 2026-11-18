@@ -1,5 +1,6 @@
 ---
 description: "FuseDesk help desk and messaging platform."
+hidden: true
 ---
 
 # FuseDesk

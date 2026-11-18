@@ -1,5 +1,6 @@
 ---
 description: "Senja is a testimonial collection, management and sharing platform."
+hidden: true
 ---
 
 # Senja

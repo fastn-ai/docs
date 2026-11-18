@@ -1,5 +1,6 @@
 ---
 description: "DeepSeek AI API connector (OpenAI-compatible)."
+hidden: true
 ---
 
 # DeepSeek

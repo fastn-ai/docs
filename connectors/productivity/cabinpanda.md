@@ -1,5 +1,6 @@
 ---
 description: "CabinPanda is a data collection platform for building online forms, surveys and popups."
+hidden: true
 ---
 
 # CabinPanda

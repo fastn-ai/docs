@@ -1,5 +1,6 @@
 ---
 description: "TrustRadius software review data."
+hidden: true
 ---
 
 # TrustRadius

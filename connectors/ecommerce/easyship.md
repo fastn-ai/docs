@@ -1,5 +1,6 @@
 ---
 description: "Easyship global shipping API (v2024-09)."
+hidden: true
 ---
 
 # Easyship

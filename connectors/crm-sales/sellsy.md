@@ -1,5 +1,6 @@
 ---
 description: "Sellsy CRM, invoicing and sales platform via the Sellsy API v2."
+hidden: true
 ---
 
 # Sellsy

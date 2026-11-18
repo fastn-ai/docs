@@ -1,5 +1,6 @@
 ---
 description: "UniProt is the free, comprehensive protein sequence and function database (UniProtKB/Swiss-Prot, TrEMBL, UniRef, UniParc, proteomes)."
+hidden: true
 ---
 
 # UniProt

@@ -1,5 +1,6 @@
 ---
 description: "The Carbon Intensity API from National Energy System Operator (NESO) gives the carbon intensity (gCO2/kWh) of Great Britain's electricity: current, forecast,…"
+hidden: true
 ---
 
 # Carbon Intensity API (GB)

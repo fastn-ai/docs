@@ -1,5 +1,6 @@
 ---
 description: "LeadBoxer is a B2B lead identification and behavioural analytics platform."
+hidden: true
 ---
 
 # LeadBoxer

@@ -1,5 +1,6 @@
 ---
 description: "The Companies API is a company data and enrichment platform."
+hidden: true
 ---
 
 # The Companies API

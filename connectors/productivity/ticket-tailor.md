@@ -1,5 +1,6 @@
 ---
 description: "Ticket Tailor is a low-fee event ticketing and box office platform."
+hidden: true
 ---
 
 # Ticket Tailor

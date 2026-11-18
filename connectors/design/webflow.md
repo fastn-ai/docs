@@ -1,5 +1,6 @@
 ---
 description: "Webflow Data API v2 connector — manage sites, CMS collections and items, pages, forms, assets, custom code, and site configuration via OAuth 2.0."
+hidden: true
 ---
 
 # Webflow

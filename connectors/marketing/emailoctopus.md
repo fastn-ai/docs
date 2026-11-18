@@ -1,5 +1,6 @@
 ---
 description: "EmailOctopus is an email marketing and newsletter sending platform."
+hidden: true
 ---
 
 # EmailOctopus

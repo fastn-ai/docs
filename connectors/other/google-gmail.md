@@ -1,5 +1,6 @@
 ---
 description: "Google Gmail API connector for managing emails, drafts, labels, threads, history, attachments, settings, and push notifications via the Gmail REST API v1."
+hidden: true
 ---
 
 # Google Gmail

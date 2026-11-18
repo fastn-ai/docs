@@ -1,5 +1,6 @@
 ---
 description: "Dovetail is a customer research and insights platform."
+hidden: true
 ---
 
 # Dovetail

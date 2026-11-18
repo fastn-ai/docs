@@ -1,5 +1,6 @@
 ---
 description: "Google Forms API v1 connector (forms.googleapis.com)."
+hidden: true
 ---
 
 # Google Forms

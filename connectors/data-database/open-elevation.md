@@ -1,5 +1,6 @@
 ---
 description: "Open-Elevation is a free, open-source elevation API."
+hidden: true
 ---
 
 # Open-Elevation

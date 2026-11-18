@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Outlook Contacts (personal contacts in Outlook and Microsoft 365) via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0)."
+hidden: true
 ---
 
 # Microsoft Outlook Contacts

@@ -1,5 +1,6 @@
 ---
 description: "Google Compute Engine API v1 (https://compute.googleapis.com/compute/v1)."
+hidden: true
 ---
 
 # Google Compute Engine

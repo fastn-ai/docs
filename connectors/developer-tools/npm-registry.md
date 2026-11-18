@@ -1,5 +1,6 @@
 ---
 description: "The npm Registry is the public JavaScript package registry."
+hidden: true
 ---
 
 # npm Registry

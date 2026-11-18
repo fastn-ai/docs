@@ -1,5 +1,6 @@
 ---
 description: "Nuclino is a unified workspace for team knowledge, docs, and projects."
+hidden: true
 ---
 
 # Nuclino

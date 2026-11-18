@@ -1,5 +1,6 @@
 ---
 description: "Diffbot turns web pages into structured data and exposes a Knowledge Graph of organizations, people, articles and products."
+hidden: true
 ---
 
 # Diffbot

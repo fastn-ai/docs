@@ -1,5 +1,6 @@
 ---
 description: "Clientjoy is an all-in-one client relationship suite for agencies and freelancers covering leads, clients, proposals, invoices and payments."
+hidden: true
 ---
 
 # Clientjoy

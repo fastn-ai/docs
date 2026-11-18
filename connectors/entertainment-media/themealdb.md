@@ -1,5 +1,6 @@
 ---
 description: "TheMealDB is an open, crowd-sourced database of recipes from around the world."
+hidden: true
 ---
 
 # TheMealDB

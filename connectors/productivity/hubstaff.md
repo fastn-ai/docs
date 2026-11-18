@@ -1,5 +1,6 @@
 ---
 description: "Hubstaff V2 API."
+hidden: true
 ---
 
 # Hubstaff

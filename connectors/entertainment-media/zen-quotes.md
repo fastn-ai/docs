@@ -1,5 +1,6 @@
 ---
 description: "Free, keyless public quotes API by ZenQuotes.io."
+hidden: true
 ---
 
 # ZenQuotes

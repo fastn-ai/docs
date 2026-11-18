@@ -1,5 +1,6 @@
 ---
 description: "Wistia video hosting platform."
+hidden: true
 ---
 
 # Wistia

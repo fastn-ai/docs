@@ -1,5 +1,6 @@
 ---
 description: "Carbone Cloud document generation API (api.carbone.io)."
+hidden: true
 ---
 
 # Carbone

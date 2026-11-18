@@ -1,5 +1,6 @@
 ---
 description: "Linear issue tracking connector (GraphQL API) — issues (CRUD/search/archive), comments, projects & milestones, initiatives, teams, users, labels, cycles,…"
+hidden: true
 ---
 
 # Linear

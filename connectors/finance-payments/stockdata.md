@@ -1,5 +1,6 @@
 ---
 description: "Real-time and historical stock market data, financial news, and market sentiment analytics from StockData.org."
+hidden: true
 ---
 
 # StockData.org

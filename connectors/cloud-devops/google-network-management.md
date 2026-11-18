@@ -1,5 +1,6 @@
 ---
 description: "Google Network Management API (networkmanagement.googleapis.com v1), part of Network Intelligence Center."
+hidden: true
 ---
 
 # Google Network Management

@@ -1,5 +1,6 @@
 ---
 description: "Klaviyo marketing automation platform."
+hidden: true
 ---
 
 # Klaviyo

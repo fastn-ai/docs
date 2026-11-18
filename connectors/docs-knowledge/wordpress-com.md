@@ -1,5 +1,6 @@
 ---
 description: "WordPress.com is Automattic's hosted WordPress platform."
+hidden: true
 ---
 
 # WordPress.com

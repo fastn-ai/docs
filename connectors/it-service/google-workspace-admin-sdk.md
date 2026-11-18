@@ -1,5 +1,6 @@
 ---
 description: "Administer a Google Workspace account with the Admin SDK."
+hidden: true
 ---
 
 # Google Workspace Admin SDK

@@ -1,5 +1,6 @@
 ---
 description: "Orshot generates images, PDFs and videos from reusable templates."
+hidden: true
 ---
 
 # Orshot

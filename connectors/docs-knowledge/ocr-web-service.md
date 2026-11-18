@@ -1,5 +1,6 @@
 ---
 description: "OCR Web Service (OCR.space) converts images and PDFs into machine-readable text."
+hidden: true
 ---
 
 # OCR Web Service

@@ -1,5 +1,6 @@
 ---
 description: "ApiFlash is a Chrome-based screenshot API that renders any web page to a JPEG, PNG or WebP image."
+hidden: true
 ---
 
 # ApiFlash

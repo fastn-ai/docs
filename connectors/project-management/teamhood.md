@@ -1,5 +1,6 @@
 ---
 description: "Teamhood public API v1 — work management: items (tasks/issues/projects), item types and fields, comments, attachments, time logs, resource allocations,…"
+hidden: true
 ---
 
 # Teamhood

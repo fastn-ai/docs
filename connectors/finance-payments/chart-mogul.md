@@ -1,5 +1,6 @@
 ---
 description: "ChartMogul is a subscription analytics and revenue reporting platform for SaaS businesses."
+hidden: true
 ---
 
 # ChartMogul

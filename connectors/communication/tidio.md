@@ -1,5 +1,6 @@
 ---
 description: "Tidio is a customer service platform combining live chat, ticketing and the Lyro AI agent."
+hidden: true
 ---
 
 # Tidio

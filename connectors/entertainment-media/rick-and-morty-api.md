@@ -1,5 +1,6 @@
 ---
 description: "The Rick and Morty API is a free REST and GraphQL API with every character, location and episode of the Rick and Morty TV show: list with filters and…"
+hidden: true
 ---
 
 # Rick and Morty API

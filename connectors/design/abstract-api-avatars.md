@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI Avatars generates a customizable initials avatar image (PNG or SVG) from a person's name, with control over size, colors, font, shape, and letter…"
+hidden: true
 ---
 
 # AbstractAPI Avatars

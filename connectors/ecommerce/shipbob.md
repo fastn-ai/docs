@@ -1,5 +1,6 @@
 ---
 description: "ShipBob fulfillment (3PL) connector covering the full 2026-01 API surface: orders and shipments, products and variants, inventory, receiving (WROs), returns,…"
+hidden: true
 ---
 
 # ShipBob

@@ -1,5 +1,6 @@
 ---
 description: "Jina AI search-foundation and frontier APIs: Embeddings, Reranker, Classifier, Segmenter, Reader (URL to LLM-friendly text), Search (web search), DeepSearch…"
+hidden: true
 ---
 
 # Jina AI

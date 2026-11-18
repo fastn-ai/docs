@@ -1,5 +1,6 @@
 ---
 description: "The USGS Earthquake Catalog (ComCat) API, an FDSN event web service from the U.S."
+hidden: true
 ---
 
 # USGS Earthquake Catalog

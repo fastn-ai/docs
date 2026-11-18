@@ -1,5 +1,6 @@
 ---
 description: "DocuGenerate document automation API."
+hidden: true
 ---
 
 # DocuGenerate

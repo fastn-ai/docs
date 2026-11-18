@@ -1,5 +1,6 @@
 ---
 description: "GitHub REST API v3 connector — repositories, contents, branches/commits/git-data, issues & comments & labels & milestones, pull requests & reviews, releases,…"
+hidden: true
 ---
 
 # GitHub

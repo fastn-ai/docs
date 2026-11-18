@@ -1,5 +1,6 @@
 ---
 description: "GitLab REST API v4 (default base https://gitlab.com, configurable for self-managed)."
+hidden: true
 ---
 
 # GitLab

@@ -1,5 +1,6 @@
 ---
 description: "ImageRouter is a unified, OpenAI-compatible API for AI image, video and text generation across dozens of providers (FLUX, Gemini, Imagen, GPT Image, Ideogram,…"
+hidden: true
 ---
 
 # ImageRouter

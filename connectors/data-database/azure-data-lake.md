@@ -1,5 +1,6 @@
 ---
 description: "Azure Data Lake Storage Gen2 DataLake REST API."
+hidden: true
 ---
 
 # Azure Data Lake

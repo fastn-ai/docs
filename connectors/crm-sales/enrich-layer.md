@@ -1,5 +1,6 @@
 ---
 description: "Enrich Layer is a B2B data enrichment API with structured data on people, companies, jobs and schools."
+hidden: true
 ---
 
 # Enrich Layer

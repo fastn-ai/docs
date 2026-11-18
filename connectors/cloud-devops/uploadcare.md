@@ -1,5 +1,6 @@
 ---
 description: "Uploadcare file uploading, storage, CDN delivery, and processing platform."
+hidden: true
 ---
 
 # Uploadcare

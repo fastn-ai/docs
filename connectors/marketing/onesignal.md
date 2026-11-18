@@ -1,5 +1,6 @@
 ---
 description: "OneSignal customer engagement platform — send push notifications, emails, SMS, and Live Activities; manage users, subscriptions, aliases, segments, templates,…"
+hidden: true
 ---
 
 # OneSignal

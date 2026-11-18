@@ -1,5 +1,6 @@
 ---
 description: "CodeREADr is a barcode scanning platform for data collection, validation and ticket/asset tracking."
+hidden: true
 ---
 
 # CodeREADr

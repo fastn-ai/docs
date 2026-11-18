@@ -1,5 +1,6 @@
 ---
 description: "Groq API connector — ultra-fast LLM inference over an OpenAI-compatible API (base https://api.groq.com/openai/v1)."
+hidden: true
 ---
 
 # Groq

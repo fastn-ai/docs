@@ -1,5 +1,6 @@
 ---
 description: "Youform is an online form builder for surveys, quizzes and lead capture."
+hidden: true
 ---
 
 # Youform

@@ -1,5 +1,6 @@
 ---
 description: "WhatsApp Business Cloud API via Meta Graph API v23.0 (base https://graph.facebook.com/v23.0)."
+hidden: true
 ---
 
 # WhatsApp Business

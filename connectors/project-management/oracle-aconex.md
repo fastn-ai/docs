@@ -1,5 +1,6 @@
 ---
 description: "Oracle Aconex construction project management REST API (XML responses): projects, project and global directory, own user, document register search, document…"
+hidden: true
 ---
 
 # Oracle Aconex

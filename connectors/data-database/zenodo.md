@@ -1,5 +1,6 @@
 ---
 description: "Zenodo is CERN's open research repository for datasets, software, papers and more, each with a DOI."
+hidden: true
 ---
 
 # Zenodo

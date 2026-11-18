@@ -1,5 +1,6 @@
 ---
 description: "Gumroad is a commerce platform for creators to sell digital products, memberships and subscriptions."
+hidden: true
 ---
 
 # Gumroad

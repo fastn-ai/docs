@@ -1,5 +1,6 @@
 ---
 description: "Cisco AppDynamics (Splunk AppDynamics) Controller REST API — full-stack application performance monitoring."
+hidden: true
 ---
 
 # AppDynamics

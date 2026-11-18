@@ -1,5 +1,6 @@
 ---
 description: "Murf AI — text-to-speech, voice changer, translation, instant voice cloning and Murf Dub automation."
+hidden: true
 ---
 
 # Murf

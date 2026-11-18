@@ -1,5 +1,6 @@
 ---
 description: "Wufoo is an online form builder for collecting submissions, payments and survey responses."
+hidden: true
 ---
 
 # Wufoo

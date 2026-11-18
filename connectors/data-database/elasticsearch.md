@@ -1,5 +1,6 @@
 ---
 description: "Elasticsearch is a distributed search and analytics engine."
+hidden: true
 ---
 
 # Elasticsearch

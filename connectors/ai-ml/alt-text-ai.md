@@ -1,5 +1,6 @@
 ---
 description: "AltText.ai generates alt text for images using AI computer-vision models, so images can be made accessible and SEO-friendly without a human copywriter."
+hidden: true
 ---
 
 # AltText.ai

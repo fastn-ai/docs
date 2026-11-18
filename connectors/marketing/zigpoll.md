@@ -1,5 +1,6 @@
 ---
 description: "Zigpoll is a survey platform for post-purchase, on-site, email and SMS surveys."
+hidden: true
 ---
 
 # Zigpoll

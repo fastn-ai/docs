@@ -1,5 +1,6 @@
 ---
 description: "Less Annoying CRM (LACRM) v2 API."
+hidden: true
 ---
 
 # Less Annoying CRM

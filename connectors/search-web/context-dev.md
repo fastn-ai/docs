@@ -1,5 +1,6 @@
 ---
 description: "Context.dev is a web data API for AI agents and applications."
+hidden: true
 ---
 
 # Context.dev

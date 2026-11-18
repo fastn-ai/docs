@@ -1,5 +1,6 @@
 ---
 description: "The UK Office for National Statistics (ONS) open API: browse datasets, editions, versions, dimensions and metadata (e.g."
+hidden: true
 ---
 
 # Office for National Statistics (ONS) API

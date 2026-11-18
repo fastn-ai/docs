@@ -1,5 +1,6 @@
 ---
 description: "NinjaPipe is an all-in-one CRM for small businesses."
+hidden: true
 ---
 
 # NinjaPipe

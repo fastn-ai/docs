@@ -1,5 +1,6 @@
 ---
 description: "Resend is the email platform for developers."
+hidden: true
 ---
 
 # Resend

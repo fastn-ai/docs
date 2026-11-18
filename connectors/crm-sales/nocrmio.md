@@ -1,5 +1,6 @@
 ---
 description: "noCRM.io lead management and sales CRM."
+hidden: true
 ---
 
 # noCRM.io

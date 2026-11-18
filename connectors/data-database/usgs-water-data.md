@@ -1,5 +1,6 @@
 ---
 description: "The USGS Water Data OGC APIs (successor of the legacy NWIS Water Services) give free US water data: continuous (instantaneous) and daily values, field…"
+hidden: true
 ---
 
 # USGS Water Data APIs

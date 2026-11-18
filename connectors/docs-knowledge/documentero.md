@@ -1,5 +1,6 @@
 ---
 description: "Documentero Cloud API - generate Word/Excel/PDF documents from templates, list account document templates, and validate API credentials."
+hidden: true
 ---
 
 # Documentero

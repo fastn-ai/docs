@@ -1,5 +1,6 @@
 ---
 description: "MeisterTask is a task and project management tool."
+hidden: true
 ---
 
 # MeisterTask

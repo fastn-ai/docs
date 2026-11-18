@@ -1,5 +1,6 @@
 ---
 description: "Zoho Assist is Zoho's remote support and unattended remote access platform."
+hidden: true
 ---
 
 # Zoho Assist

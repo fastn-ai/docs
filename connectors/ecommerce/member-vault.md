@@ -1,5 +1,6 @@
 ---
 description: "MemberVault is an online course and membership platform."
+hidden: true
 ---
 
 # MemberVault

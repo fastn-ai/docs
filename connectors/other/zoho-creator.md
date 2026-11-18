@@ -1,5 +1,6 @@
 ---
 description: "Zoho Creator is Zoho's low-code application development platform."
+hidden: true
 ---
 
 # Zoho Creator

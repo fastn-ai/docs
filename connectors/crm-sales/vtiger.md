@@ -1,5 +1,6 @@
 ---
 description: "Vtiger CRM Cloud REST API connector."
+hidden: true
 ---
 
 # Vtiger

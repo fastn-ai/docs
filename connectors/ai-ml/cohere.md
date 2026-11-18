@@ -1,5 +1,6 @@
 ---
 description: "Cohere AI platform connector (api.cohere.com)."
+hidden: true
 ---
 
 # Cohere

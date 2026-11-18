@@ -1,5 +1,6 @@
 ---
 description: "Airtable connector — manage bases, tables, fields, records and webhooks via the Airtable Web API (https://api.airtable.com/v0)."
+hidden: true
 ---
 
 # Airtable

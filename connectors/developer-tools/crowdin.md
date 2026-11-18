@@ -1,5 +1,6 @@
 ---
 description: "Crowdin localization management platform (crowdin.com REST API v2)."
+hidden: true
 ---
 
 # Crowdin

@@ -1,5 +1,6 @@
 ---
 description: "Bonusly employee recognition and rewards platform."
+hidden: true
 ---
 
 # Bonusly

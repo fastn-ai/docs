@@ -1,5 +1,6 @@
 ---
 description: "ClickUp project management REST API connector for managing workspaces, spaces, folders, lists, tasks, subtasks, comments, members, goals, tags, time tracking,…"
+hidden: true
 ---
 
 # ClickUp

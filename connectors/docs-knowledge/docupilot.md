@@ -1,5 +1,6 @@
 ---
 description: "Docupilot is a document automation platform that generates PDF, DOCX, XLSX and PPTX documents from reusable templates and structured merge data."
+hidden: true
 ---
 
 # Docupilot

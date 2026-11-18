@@ -1,5 +1,6 @@
 ---
 description: "BotMape is an AI agent platform for training custom chat agents on your own content and deploying them on the web, WhatsApp, Slack and Telegram, with built-in…"
+hidden: true
 ---
 
 # BotMape

@@ -1,5 +1,6 @@
 ---
 description: "BoldSign is an electronic signature platform for sending, signing and managing legally binding documents."
+hidden: true
 ---
 
 # BoldSign

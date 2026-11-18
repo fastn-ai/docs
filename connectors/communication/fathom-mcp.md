@@ -1,5 +1,6 @@
 ---
 description: "Fathom AI meeting notetaker."
+hidden: true
 ---
 
 # Fathom MCP

@@ -1,5 +1,6 @@
 ---
 description: "Ecologi lets businesses fund verified climate action - tree planting, carbon avoidance, permanent carbon removal and habitat restoration - directly from their…"
+hidden: true
 ---
 
 # Ecologi

@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud SQL Admin API v1 (https://sqladmin.googleapis.com/v1)."
+hidden: true
 ---
 
 # Google Cloud SQL Admin

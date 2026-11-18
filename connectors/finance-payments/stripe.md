@@ -1,5 +1,6 @@
 ---
 description: "Stripe API (base https://api.stripe.com)."
+hidden: true
 ---
 
 # Stripe

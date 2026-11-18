@@ -1,5 +1,6 @@
 ---
 description: "Wix REST API connector (www.wixapis.com)."
+hidden: true
 ---
 
 # Wix

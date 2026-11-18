@@ -1,5 +1,6 @@
 ---
 description: "Currency exchange rate and conversion API (v6) from exchangerate-api.com."
+hidden: true
 ---
 
 # ExchangeRate-API

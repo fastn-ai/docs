@@ -1,5 +1,6 @@
 ---
 description: "SimpleKPI is a KPI tracking and dashboard platform."
+hidden: true
 ---
 
 # SimpleKPI

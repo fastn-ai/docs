@@ -1,5 +1,6 @@
 ---
 description: "Apollo.io REST API (base https://api.apollo.io/v1)."
+hidden: true
 ---
 
 # Apollo

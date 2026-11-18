@@ -1,5 +1,6 @@
 ---
 description: "InfluxDB Cloud is InfluxData's managed time series platform."
+hidden: true
 ---
 
 # InfluxDB Cloud

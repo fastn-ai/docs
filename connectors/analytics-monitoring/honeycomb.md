@@ -1,5 +1,6 @@
 ---
 description: "Honeycomb is an observability platform for querying, alerting on and exploring event, trace and log data."
+hidden: true
 ---
 
 # Honeycomb

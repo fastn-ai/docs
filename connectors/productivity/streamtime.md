@@ -1,5 +1,6 @@
 ---
 description: "Streamtime is a job management, time tracking and quoting platform for creative agencies and studios."
+hidden: true
 ---
 
 # Streamtime

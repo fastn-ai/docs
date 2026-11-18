@@ -1,5 +1,6 @@
 ---
 description: "The Cleveland Museum of Art Open Access API offers CC0 data on over 64,000 artworks and images for over 37,000 of them."
+hidden: true
 ---
 
 # Cleveland Museum of Art Open Access

@@ -1,5 +1,6 @@
 ---
 description: "Intercom customer messaging and support platform."
+hidden: true
 ---
 
 # Intercom

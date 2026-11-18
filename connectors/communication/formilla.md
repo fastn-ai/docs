@@ -1,5 +1,6 @@
 ---
 description: "Formilla is a live chat, chatbot and customer messaging platform."
+hidden: true
 ---
 
 # Formilla

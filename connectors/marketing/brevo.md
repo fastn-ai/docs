@@ -1,5 +1,6 @@
 ---
 description: "Brevo (formerly Sendinblue) marketing platform: contacts, email and SMS campaigns, transactional email/SMS, CRM (companies, deals, tasks, notes, pipelines),…"
+hidden: true
 ---
 
 # Brevo

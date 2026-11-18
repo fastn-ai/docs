@@ -1,5 +1,6 @@
 ---
 description: "Mixmax sales engagement platform — sequences, recipients, contacts, contact groups, snippets, meetings/summaries, file requests, and more via the Mixmax REST…"
+hidden: true
 ---
 
 # Mixmax

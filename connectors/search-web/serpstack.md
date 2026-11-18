@@ -1,5 +1,6 @@
 ---
 description: "Serpstack is a real-time Google Search Results (SERP) scraping API by APILayer."
+hidden: true
 ---
 
 # Serpstack

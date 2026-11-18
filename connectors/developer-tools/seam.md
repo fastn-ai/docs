@@ -1,5 +1,6 @@
 ---
 description: "Seam is a universal API for smart locks, thermostats, access control systems, sensors and other connected building devices."
+hidden: true
 ---
 
 # Seam

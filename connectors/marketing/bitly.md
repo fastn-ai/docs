@@ -1,5 +1,6 @@
 ---
 description: "Bitly is a URL shortening, QR code, and link analytics platform."
+hidden: true
 ---
 
 # Bitly

@@ -1,5 +1,6 @@
 ---
 description: "DocsBot AI is a documentation-chatbot and AI agent platform."
+hidden: true
 ---
 
 # DocsBot AI

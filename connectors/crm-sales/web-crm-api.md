@@ -1,5 +1,6 @@
 ---
 description: "webCRM via the webCRM REST API (api.webcrm.com)."
+hidden: true
 ---
 
 # webCRM

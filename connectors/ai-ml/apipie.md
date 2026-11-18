@@ -1,5 +1,6 @@
 ---
 description: "APIpie.ai is a unified gateway to hundreds of AI models from OpenAI, Anthropic, Google, Meta, Mistral and more behind an OpenAI-compatible API."
+hidden: true
 ---
 
 # APIpie.ai

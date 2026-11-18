@@ -1,5 +1,6 @@
 ---
 description: "Simla.com (RetailCRM) is an omnichannel CRM for e-commerce and retail businesses."
+hidden: true
 ---
 
 # Simla.com

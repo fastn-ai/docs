@@ -1,5 +1,6 @@
 ---
 description: "Google Drive API v3 — list, upload, download, copy, move, and manage files and folders."
+hidden: true
 ---
 
 # Google Drive

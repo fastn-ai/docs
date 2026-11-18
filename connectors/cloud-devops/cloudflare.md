@@ -1,5 +1,6 @@
 ---
 description: "Cloudflare API v4 (base https://api.cloudflare.com/client/v4)."
+hidden: true
 ---
 
 # Cloudflare

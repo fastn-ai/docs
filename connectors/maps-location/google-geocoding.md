@@ -1,5 +1,6 @@
 ---
 description: "Google Maps Platform Geocoding API connector."
+hidden: true
 ---
 
 # Google Geocoding

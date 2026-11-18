@@ -1,5 +1,6 @@
 ---
 description: "Eventbrite events platform connector for the Eventbrite API v3."
+hidden: true
 ---
 
 # Eventbrite

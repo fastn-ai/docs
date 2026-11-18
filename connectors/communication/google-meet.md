@@ -1,5 +1,6 @@
 ---
 description: "Google Meet REST API v2 connector (https://meet.googleapis.com/v2)."
+hidden: true
 ---
 
 # Google Meet

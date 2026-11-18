@@ -1,5 +1,6 @@
 ---
 description: "Pipeline CRM (formerly PipelineDeals) is a sales CRM for small and mid-sized teams."
+hidden: true
 ---
 
 # Pipeline CRM

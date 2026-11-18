@@ -1,5 +1,6 @@
 ---
 description: "Zoho Campaigns is Zoho's email marketing automation platform."
+hidden: true
 ---
 
 # Zoho Campaigns

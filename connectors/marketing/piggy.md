@@ -1,5 +1,6 @@
 ---
 description: "Piggy (now Leat) is a loyalty, marketing and gift-card platform."
+hidden: true
 ---
 
 # Piggy

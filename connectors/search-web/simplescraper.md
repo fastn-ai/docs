@@ -1,5 +1,6 @@
 ---
 description: "Simplescraper turns any website into structured data and APIs."
+hidden: true
 ---
 
 # Simplescraper

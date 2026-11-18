@@ -1,5 +1,6 @@
 ---
 description: "LeadMaster CRM (leadmaster.com) — lead management, sales and marketing automation."
+hidden: true
 ---
 
 # LeadMaster

@@ -1,5 +1,6 @@
 ---
 description: "Dadata is a Russian data quality service for suggestions, standardization and enrichment."
+hidden: true
 ---
 
 # Dadata

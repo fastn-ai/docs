@@ -1,5 +1,6 @@
 ---
 description: "Budibase low-code platform public API (v1)."
+hidden: true
 ---
 
 # Budibase

@@ -1,5 +1,6 @@
 ---
 description: "screenshot.fyi is a simple hosted screenshot API: one call renders any public web page and returns a hosted image URL on blob.screenshot.fyi."
+hidden: true
 ---
 
 # screenshot.fyi

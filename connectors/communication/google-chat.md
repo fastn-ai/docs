@@ -1,5 +1,6 @@
 ---
 description: "Google Chat API v1 connector for managing spaces, members, messages, reactions, attachments, space events, read state, and notification settings in Google Chat."
+hidden: true
 ---
 
 # Google Chat

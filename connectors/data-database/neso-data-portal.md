@@ -1,5 +1,6 @@
 ---
 description: "The NESO Data Portal (Great Britain's National Energy System Operator, formerly National Grid ESO) is a free CKAN open data API for GB electricity system…"
+hidden: true
 ---
 
 # NESO Data Portal

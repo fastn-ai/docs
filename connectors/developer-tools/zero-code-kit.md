@@ -1,5 +1,6 @@
 ---
 description: "0CodeKit is a utility toolbox API for no-code and low-code automation, exposing stateless helpers for generation, conversion, PDF and image manipulation, text…"
+hidden: true
 ---
 
 # 0CodeKit

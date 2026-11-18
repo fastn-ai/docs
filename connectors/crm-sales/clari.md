@@ -1,5 +1,6 @@
 ---
 description: "Clari is a revenue operations and forecasting platform."
+hidden: true
 ---
 
 # Clari

@@ -1,5 +1,6 @@
 ---
 description: "Xata is a serverless PostgreSQL platform with instant copy-on-write database branches, scale to zero, backups and zero-downtime schema changes."
+hidden: true
 ---
 
 # Xata

@@ -1,5 +1,6 @@
 ---
 description: "Packagist is the main PHP package repository used by Composer."
+hidden: true
 ---
 
 # Packagist

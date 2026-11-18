@@ -1,5 +1,6 @@
 ---
 description: "Softr no-code app builder API."
+hidden: true
 ---
 
 # Softr

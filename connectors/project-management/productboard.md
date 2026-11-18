@@ -1,5 +1,6 @@
 ---
 description: "Productboard is a product management platform for capturing customer feedback, prioritizing features, and building product roadmaps."
+hidden: true
 ---
 
 # Productboard

@@ -1,5 +1,6 @@
 ---
 description: "GitBook documentation platform API connector."
+hidden: true
 ---
 
 # GitBook

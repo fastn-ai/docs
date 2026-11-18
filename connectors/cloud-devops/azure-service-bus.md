@@ -1,5 +1,6 @@
 ---
 description: "Azure Service Bus messaging."
+hidden: true
 ---
 
 # Azure Service Bus

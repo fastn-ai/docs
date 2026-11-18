@@ -1,5 +1,6 @@
 ---
 description: "Digital Humani RaaS (Reforestation as a Service) API."
+hidden: true
 ---
 
 # Digital Humani

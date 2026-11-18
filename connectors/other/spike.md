@@ -1,5 +1,6 @@
 ---
 description: "Spike.sh incident management and on-call platform, through Spike's official MCP server (https://mcp.spike.sh/mcp)."
+hidden: true
 ---
 
 # Spike

@@ -1,10 +1,10 @@
 ---
-description: "Design connectors fastn manages: 17 in all."
+description: "Design connectors fastn manages, with their auth, actions and events."
 ---
 
 # Design
 
-17 connectors. Back to the [connector catalog](../README.md).
+Design apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

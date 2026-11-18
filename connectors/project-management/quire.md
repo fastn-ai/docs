@@ -1,5 +1,6 @@
 ---
 description: "Quire is a collaborative task-management and project-planning tool."
+hidden: true
 ---
 
 # Quire

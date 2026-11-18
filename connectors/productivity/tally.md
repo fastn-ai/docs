@@ -1,5 +1,6 @@
 ---
 description: "Tally is an online form builder."
+hidden: true
 ---
 
 # Tally

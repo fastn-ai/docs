@@ -1,5 +1,6 @@
 ---
 description: "TheSportsDB is an open, crowd-sourced sports database with artwork."
+hidden: true
 ---
 
 # TheSportsDB

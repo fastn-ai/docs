@@ -1,5 +1,6 @@
 ---
 description: "Mastodon is an open-source, self-hostable social network built on ActivityPub."
+hidden: true
 ---
 
 # Mastodon

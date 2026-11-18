@@ -1,5 +1,6 @@
 ---
 description: "Goody corporate gifting platform."
+hidden: true
 ---
 
 # Goody

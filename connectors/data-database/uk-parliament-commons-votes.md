@@ -1,5 +1,6 @@
 ---
 description: "The UK Parliament Commons Votes API gives open data on House of Commons divisions (votes): search divisions by title, date and member, get a division with…"
+hidden: true
 ---
 
 # UK Parliament Commons Votes API

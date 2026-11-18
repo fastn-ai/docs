@@ -1,5 +1,6 @@
 ---
 description: "DeBounce email validation and list-hygiene API."
+hidden: true
 ---
 
 # DeBounce

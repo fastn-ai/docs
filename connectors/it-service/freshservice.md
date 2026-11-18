@@ -1,5 +1,6 @@
 ---
 description: "Freshservice IT service management — tickets, problems, changes, releases, assets, service catalog, knowledge base, and administration via the Freshservice…"
+hidden: true
 ---
 
 # Freshservice

@@ -1,5 +1,6 @@
 ---
 description: "Dwolla's Payments API for ACH bank transfers in the United States."
+hidden: true
 ---
 
 # Dwolla

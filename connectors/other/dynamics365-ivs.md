@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Dynamics 365 Supply Chain Management - Inventory Visibility Service (IVS)."
+hidden: true
 ---
 
 # Dynamics 365 Inventory Visibility

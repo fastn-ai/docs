@@ -1,5 +1,6 @@
 ---
 description: "MrScraper is an AI-powered web scraping platform with anti-bot bypass, browser rendering and residential proxies."
+hidden: true
 ---
 
 # MrScraper

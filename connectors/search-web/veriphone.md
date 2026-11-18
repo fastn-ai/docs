@@ -1,5 +1,6 @@
 ---
 description: "Veriphone phone number validation and carrier lookup API."
+hidden: true
 ---
 
 # Veriphone

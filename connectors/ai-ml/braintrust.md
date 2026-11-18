@@ -1,5 +1,6 @@
 ---
 description: "Braintrust is an AI evaluation and observability platform for building, evaluating and monitoring LLM applications."
+hidden: true
 ---
 
 # Braintrust

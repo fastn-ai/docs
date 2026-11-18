@@ -1,5 +1,6 @@
 ---
 description: "Datadog monitoring and observability platform."
+hidden: true
 ---
 
 # Datadog

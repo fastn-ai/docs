@@ -1,5 +1,6 @@
 ---
 description: "ShipEngine (ShipStation API) multi-carrier shipping API."
+hidden: true
 ---
 
 # ShipEngine

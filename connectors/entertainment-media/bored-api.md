@@ -1,5 +1,6 @@
 ---
 description: "The Bored API (hosted by The App Brewery) suggests things to do when you are bored: get a random activity, filter activities by type and number of…"
+hidden: true
 ---
 
 # Bored API

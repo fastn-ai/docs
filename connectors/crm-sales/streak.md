@@ -1,5 +1,6 @@
 ---
 description: "Streak is a CRM that lives inside Gmail."
+hidden: true
 ---
 
 # Streak

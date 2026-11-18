@@ -1,5 +1,6 @@
 ---
 description: "Grist is a modern relational spreadsheet."
+hidden: true
 ---
 
 # Grist

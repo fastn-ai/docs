@@ -1,5 +1,6 @@
 ---
 description: "BoxHero inventory management."
+hidden: true
 ---
 
 # BoxHero

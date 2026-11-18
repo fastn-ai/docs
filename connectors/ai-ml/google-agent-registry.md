@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Agent Registry API (agentregistry.googleapis.com v1), a central catalog for discovering and governing AI agents, MCP servers and endpoints in…"
+hidden: true
 ---
 
 # Google Agent Registry

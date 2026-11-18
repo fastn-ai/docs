@@ -1,5 +1,6 @@
 ---
 description: "DealCloud by Intapp - CRM and deal management for private capital, investment banking and professional services."
+hidden: true
 ---
 
 # DealCloud

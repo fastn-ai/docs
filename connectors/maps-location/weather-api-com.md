@@ -1,5 +1,6 @@
 ---
 description: "WeatherAPI.com provides real-time weather, multi-day and hourly forecasts, historical weather back to 2010, long-range future forecasts, astronomy, marine…"
+hidden: true
 ---
 
 # WeatherAPI.com

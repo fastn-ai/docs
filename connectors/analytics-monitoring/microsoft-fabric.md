@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Fabric and Power BI analytics management."
+hidden: true
 ---
 
 # Microsoft Fabric

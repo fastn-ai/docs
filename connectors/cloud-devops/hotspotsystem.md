@@ -1,5 +1,6 @@
 ---
 description: "HotspotSystem cloud WiFi hotspot management."
+hidden: true
 ---
 
 # HotspotSystem

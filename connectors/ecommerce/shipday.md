@@ -1,5 +1,6 @@
 ---
 description: "Shipday delivery management API — delivery orders, takeout/pickup orders, drivers (carriers), order assignment and status, on-demand 3rd-party delivery, order…"
+hidden: true
 ---
 
 # Shipday

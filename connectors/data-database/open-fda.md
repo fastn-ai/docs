@@ -1,5 +1,6 @@
 ---
 description: "openFDA (U.S."
+hidden: true
 ---
 
 # openFDA

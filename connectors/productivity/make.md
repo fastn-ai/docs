@@ -1,5 +1,6 @@
 ---
 description: "Make (formerly Integromat) is a visual workflow automation and iPaaS platform."
+hidden: true
 ---
 
 # Make

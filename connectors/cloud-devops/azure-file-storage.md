@@ -1,5 +1,6 @@
 ---
 description: "Azure File Storage — cloud file shares over SMB/NFS."
+hidden: true
 ---
 
 # Azure File Storage

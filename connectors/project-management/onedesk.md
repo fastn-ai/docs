@@ -1,5 +1,6 @@
 ---
 description: "OneDesk combines helpdesk and project management: tickets, tasks, projects, portfolios, timesheets, timers, customers, users, teams, conversations, invoices…"
+hidden: true
 ---
 
 # OneDesk

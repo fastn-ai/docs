@@ -1,5 +1,6 @@
 ---
 description: "Instatus status pages, uptime monitoring and incident communication."
+hidden: true
 ---
 
 # Instatus

@@ -1,5 +1,6 @@
 ---
 description: "Addressfinder provides address autocomplete, address verification, location and points-of-interest lookup, reverse geocoding, email verification and phone…"
+hidden: true
 ---
 
 # Addressfinder

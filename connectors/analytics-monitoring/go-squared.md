@@ -1,5 +1,6 @@
 ---
 description: "GoSquared is a website analytics and customer engagement platform."
+hidden: true
 ---
 
 # GoSquared

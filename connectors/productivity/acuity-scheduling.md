@@ -1,5 +1,6 @@
 ---
 description: "Acuity Scheduling (a Squarespace company) is an online appointment scheduling platform."
+hidden: true
 ---
 
 # Acuity Scheduling

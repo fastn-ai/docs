@@ -1,5 +1,6 @@
 ---
 description: "Run and manage generative AI and machine learning workloads on Google Vertex AI (aiplatform API v1)."
+hidden: true
 ---
 
 # Google Vertex AI

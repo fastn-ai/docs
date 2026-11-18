@@ -1,5 +1,6 @@
 ---
 description: "Google Tag Manager API v2 — manage accounts, containers, workspaces, tags, triggers, variables, templates, clients, transformations, zones, folders,…"
+hidden: true
 ---
 
 # Google Tag Manager

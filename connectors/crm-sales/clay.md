@@ -1,5 +1,6 @@
 ---
 description: "Clay is a GTM data platform for finding, enriching and acting on companies and people."
+hidden: true
 ---
 
 # Clay

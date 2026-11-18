@@ -1,5 +1,6 @@
 ---
 description: "Cradl AI document-AI / IDP platform."
+hidden: true
 ---
 
 # Cradl AI

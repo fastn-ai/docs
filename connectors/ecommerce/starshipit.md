@@ -1,5 +1,6 @@
 ---
 description: "Starshipit is a multi-carrier shipping and fulfilment platform for ecommerce retailers."
+hidden: true
 ---
 
 # Starshipit

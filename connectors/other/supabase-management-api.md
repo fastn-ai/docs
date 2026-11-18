@@ -1,5 +1,6 @@
 ---
 description: "Supabase Management API (api.supabase.com/v1): edge functions, SQL/DDL queries, migrations, PostgREST config, project & API key management."
+hidden: true
 ---
 
 # Supabase Management

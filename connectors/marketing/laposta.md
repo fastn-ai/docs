@@ -1,5 +1,6 @@
 ---
 description: "Laposta is a Dutch email marketing platform."
+hidden: true
 ---
 
 # Laposta

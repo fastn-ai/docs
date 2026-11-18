@@ -1,5 +1,6 @@
 ---
 description: "Marketstack by APILayer delivers real-time, intraday, and historical stock market data (EOD, intraday bars, splits, dividends) across 70+ global exchanges,…"
+hidden: true
 ---
 
 # Marketstack

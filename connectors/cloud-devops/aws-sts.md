@@ -1,5 +1,6 @@
 ---
 description: "AWS Security Token Service (STS) Query API."
+hidden: true
 ---
 
 # AWS Security Token Service

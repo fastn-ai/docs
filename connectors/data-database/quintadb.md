@@ -1,5 +1,6 @@
 ---
 description: "QuintaDB online database and form builder."
+hidden: true
 ---
 
 # QuintaDB

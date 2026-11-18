@@ -1,5 +1,6 @@
 ---
 description: "GoDial is a telecalling CRM and auto dialer."
+hidden: true
 ---
 
 # GoDial

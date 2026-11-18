@@ -1,5 +1,6 @@
 ---
 description: "DNSFilter is a cloud-based DNS security and content filtering platform."
+hidden: true
 ---
 
 # DNSFilter

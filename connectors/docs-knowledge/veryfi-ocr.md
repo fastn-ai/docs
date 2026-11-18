@@ -1,5 +1,6 @@
 ---
 description: "Veryfi is a document AI / OCR platform."
+hidden: true
 ---
 
 # Veryfi OCR

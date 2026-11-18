@@ -1,5 +1,6 @@
 ---
 description: "Everhour time tracking, project management and billing API."
+hidden: true
 ---
 
 # Everhour

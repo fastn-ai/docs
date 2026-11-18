@@ -1,5 +1,6 @@
 ---
 description: "Product Hunt GraphQL API v2 for posts, comments, topics, collections, and users."
+hidden: true
 ---
 
 # Product Hunt

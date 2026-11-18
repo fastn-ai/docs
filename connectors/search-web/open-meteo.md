@@ -1,5 +1,6 @@
 ---
 description: "Open-Meteo is a free, keyless weather API: forecasts from national weather models, historical weather back to 1940, marine, air quality, flood, climate,…"
+hidden: true
 ---
 
 # Open-Meteo

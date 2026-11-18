@@ -1,5 +1,6 @@
 ---
 description: "Short.io is a branded link-management platform for creating and tracking short links on your own domains."
+hidden: true
 ---
 
 # Short.io

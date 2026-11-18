@@ -1,5 +1,6 @@
 ---
 description: "Dynatrace is a unified observability and security platform for applications, infrastructure, logs, and digital experience."
+hidden: true
 ---
 
 # Dynatrace

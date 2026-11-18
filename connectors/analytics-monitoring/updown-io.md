@@ -1,5 +1,6 @@
 ---
 description: "Updown.io website and uptime monitoring."
+hidden: true
 ---
 
 # Updown.io

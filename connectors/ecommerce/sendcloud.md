@@ -1,5 +1,6 @@
 ---
 description: "Sendcloud shipping and parcel automation platform."
+hidden: true
 ---
 
 # Sendcloud

@@ -1,5 +1,6 @@
 ---
 description: "Clerk (clerk.com) user authentication and identity platform."
+hidden: true
 ---
 
 # Clerk

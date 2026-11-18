@@ -1,5 +1,6 @@
 ---
 description: "Google Cloud Pub/Sub REST API v1 connector (https://pubsub.googleapis.com/v1)."
+hidden: true
 ---
 
 # Google Cloud Pub/Sub

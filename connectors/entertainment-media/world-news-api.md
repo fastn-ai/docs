@@ -1,5 +1,6 @@
 ---
 description: "World News API provides unified access to global news from thousands of sources in 86+ languages and 210+ countries, with full text, summaries, sentiment and…"
+hidden: true
 ---
 
 # World News API

@@ -1,5 +1,6 @@
 ---
 description: "Amazing Marvin is a personal task manager and productivity system."
+hidden: true
 ---
 
 # Amazing Marvin

@@ -1,5 +1,6 @@
 ---
 description: "Crawlbase is a web crawling and scraping platform with headless-browser rendering, residential proxies, anti-bot bypass and built-in scrapers."
+hidden: true
 ---
 
 # Crawlbase

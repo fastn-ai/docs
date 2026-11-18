@@ -1,5 +1,6 @@
 ---
 description: "Sentry API v0 (default base https://sentry.io, configurable for self-hosted)."
+hidden: true
 ---
 
 # Sentry

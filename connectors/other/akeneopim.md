@@ -1,5 +1,6 @@
 ---
 description: "Akeneo PIM REST API connector — products, product models, families, attributes, categories, channels, locales, reference entities, assets, catalogs, jobs, and…"
+hidden: true
 ---
 
 # Akeneo PIM

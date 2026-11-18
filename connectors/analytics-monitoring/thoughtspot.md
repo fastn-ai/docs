@@ -1,5 +1,6 @@
 ---
 description: "ThoughtSpot analytics platform — REST API v2."
+hidden: true
 ---
 
 # ThoughtSpot

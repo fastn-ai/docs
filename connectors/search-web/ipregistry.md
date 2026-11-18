@@ -1,5 +1,6 @@
 ---
 description: "Ipregistry is an IP geolocation, network and threat intelligence API."
+hidden: true
 ---
 
 # Ipregistry

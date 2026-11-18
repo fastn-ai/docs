@@ -1,5 +1,6 @@
 ---
 description: "seven (seven.io) is a European SMS, RCS, WhatsApp Business and voice messaging gateway."
+hidden: true
 ---
 
 # seven

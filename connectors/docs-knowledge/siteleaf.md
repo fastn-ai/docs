@@ -1,5 +1,6 @@
 ---
 description: "Siteleaf is a Git-friendly, Jekyll-based content management system."
+hidden: true
 ---
 
 # Siteleaf

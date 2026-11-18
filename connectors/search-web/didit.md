@@ -1,5 +1,6 @@
 ---
 description: "Didit identity infrastructure: KYC verification sessions, KYB business verification, AML screening and monitoring, transaction monitoring (KYT), wallet…"
+hidden: true
 ---
 
 # Didit

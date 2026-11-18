@@ -1,5 +1,6 @@
 ---
 description: "You.com API — real-time web intelligence for AI apps."
+hidden: true
 ---
 
 # You.com

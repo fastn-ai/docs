@@ -1,5 +1,6 @@
 ---
 description: "Mapulus is a location-intelligence platform for Australian geographies."
+hidden: true
 ---
 
 # Mapulus

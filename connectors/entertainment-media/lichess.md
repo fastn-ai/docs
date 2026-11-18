@@ -1,5 +1,6 @@
 ---
 description: "Lichess is a free, open-source chess server."
+hidden: true
 ---
 
 # Lichess

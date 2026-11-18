@@ -1,5 +1,6 @@
 ---
 description: "Connect to Slack to send messages, manage channels, interact with users, and automate workflows directly in your Slack workspace."
+hidden: true
 ---
 
 # Slack

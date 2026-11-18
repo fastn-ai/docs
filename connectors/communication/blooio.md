@@ -1,5 +1,6 @@
 ---
 description: "Blooio multi-channel messaging API (v4): iMessage, SMS, RCS and WhatsApp."
+hidden: true
 ---
 
 # Blooio

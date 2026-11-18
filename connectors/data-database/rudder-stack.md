@@ -1,5 +1,6 @@
 ---
 description: "RudderStack is a warehouse-native customer data platform."
+hidden: true
 ---
 
 # RudderStack

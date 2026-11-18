@@ -1,5 +1,6 @@
 ---
 description: "New Relic observability platform."
+hidden: true
 ---
 
 # New Relic

@@ -1,5 +1,6 @@
 ---
 description: "icanhazdadjoke is the largest free collection of dad jokes online."
+hidden: true
 ---
 
 # icanhazdadjoke

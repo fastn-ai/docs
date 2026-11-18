@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Graph API v1.0 — manage users, groups, mail, calendar events, and SharePoint sites across the Microsoft 365 ecosystem."
+hidden: true
 ---
 
 # Microsoft Graph

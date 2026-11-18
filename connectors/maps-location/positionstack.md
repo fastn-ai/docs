@@ -1,5 +1,6 @@
 ---
 description: "Positionstack forward and reverse geocoding API by APILayer."
+hidden: true
 ---
 
 # Positionstack

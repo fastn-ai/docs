@@ -1,5 +1,6 @@
 ---
 description: "Woodpecker is a cold email and LinkedIn outreach platform for sales teams and agencies."
+hidden: true
 ---
 
 # Woodpecker

@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI Image Processing and Optimization compresses an image hosted at a URL, with lossless or lossy compression, and returns the size savings and a…"
+hidden: true
 ---
 
 # AbstractAPI Image Processing

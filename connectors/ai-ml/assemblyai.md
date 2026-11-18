@@ -1,5 +1,6 @@
 ---
 description: "AssemblyAI speech-to-text and audio intelligence API (https://api.assemblyai.com/v2)."
+hidden: true
 ---
 
 # AssemblyAI

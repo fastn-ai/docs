@@ -1,5 +1,6 @@
 ---
 description: "Zendesk Support customer service and ticketing platform."
+hidden: true
 ---
 
 # Zendesk Support

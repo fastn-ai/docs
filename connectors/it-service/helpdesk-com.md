@@ -1,5 +1,6 @@
 ---
 description: "HelpDesk.com is a ticketing and customer support platform from Text (LiveChat)."
+hidden: true
 ---
 
 # HelpDesk.com

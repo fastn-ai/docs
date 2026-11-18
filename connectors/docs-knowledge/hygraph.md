@@ -1,5 +1,6 @@
 ---
 description: "Hygraph headless CMS."
+hidden: true
 ---
 
 # Hygraph

@@ -1,5 +1,6 @@
 ---
 description: "SendPulse is a multi-channel marketing platform for email campaigns, transactional email (SMTP), SMS, Viber, web push notifications, email verification and…"
+hidden: true
 ---
 
 # SendPulse

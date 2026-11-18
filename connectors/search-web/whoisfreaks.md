@@ -1,5 +1,6 @@
 ---
 description: "WhoisFreaks provides domain, DNS, IP and certificate intelligence: live, historical and reverse WHOIS, live, historical, reverse and bulk DNS, domain…"
+hidden: true
 ---
 
 # WhoisFreaks

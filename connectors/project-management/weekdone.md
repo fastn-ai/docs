@@ -1,5 +1,6 @@
 ---
 description: "Weekdone is a team OKR, weekly progress reporting, and check-in platform."
+hidden: true
 ---
 
 # Weekdone

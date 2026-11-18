@@ -1,5 +1,6 @@
 ---
 description: "Google Classroom API for managing courses, rosters, coursework and grades."
+hidden: true
 ---
 
 # Google Classroom

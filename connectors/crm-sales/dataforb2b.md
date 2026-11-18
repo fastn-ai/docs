@@ -1,5 +1,6 @@
 ---
 description: "DataForB2B is a B2B data API for searching and enriching people and companies."
+hidden: true
 ---
 
 # DataForB2B

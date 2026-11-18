@@ -1,5 +1,6 @@
 ---
 description: "1CRM all-in-one CRM and ERP via the 1CRM REST API."
+hidden: true
 ---
 
 # 1CRM

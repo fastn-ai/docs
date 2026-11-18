@@ -1,5 +1,6 @@
 ---
 description: "Extracta.ai (Extracta LABS) AI document data extraction and document classification."
+hidden: true
 ---
 
 # Extracta.ai

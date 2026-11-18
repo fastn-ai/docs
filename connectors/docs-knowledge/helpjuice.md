@@ -1,5 +1,6 @@
 ---
 description: "Helpjuice knowledge base platform."
+hidden: true
 ---
 
 # Helpjuice

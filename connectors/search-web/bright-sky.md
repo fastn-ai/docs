@@ -1,5 +1,6 @@
 ---
 description: "Bright Sky is a free JSON API for open weather data from the German Weather Service (DWD)."
+hidden: true
 ---
 
 # Bright Sky

@@ -1,5 +1,6 @@
 ---
 description: "Nutshell CRM connector over the JSON-RPC 2.0 API (https://app.nutshell.com/api/v1/json)."
+hidden: true
 ---
 
 # Nutshell

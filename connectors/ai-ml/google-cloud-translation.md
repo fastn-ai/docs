@@ -1,5 +1,6 @@
 ---
 description: "Translate text and documents, detect languages, romanize text, and manage glossaries, custom AutoML models, datasets, Adaptive MT resources and long-running…"
+hidden: true
 ---
 
 # Google Cloud Translation

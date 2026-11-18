@@ -1,5 +1,6 @@
 ---
 description: "Buildkite is a CI/CD platform that runs build pipelines on your own or Buildkite-hosted agents."
+hidden: true
 ---
 
 # Buildkite

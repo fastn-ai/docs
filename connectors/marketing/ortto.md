@@ -1,5 +1,6 @@
 ---
 description: "Ortto is an AI-native customer data platform (CDP) and marketing automation tool."
+hidden: true
 ---
 
 # Ortto

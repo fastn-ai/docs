@@ -1,5 +1,6 @@
 ---
 description: "OnePageCRM is an action-focused sales CRM."
+hidden: true
 ---
 
 # OnePageCRM

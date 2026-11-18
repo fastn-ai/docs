@@ -1,5 +1,6 @@
 ---
 description: "CircleCI is a continuous integration and delivery platform for building, testing and deploying software."
+hidden: true
 ---
 
 # CircleCI

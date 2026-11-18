@@ -1,5 +1,6 @@
 ---
 description: "Dropbox Sign (formerly HelloSign) is an electronic signature platform for preparing, sending, signing and tracking legally binding documents."
+hidden: true
 ---
 
 # Dropbox Sign

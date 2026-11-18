@@ -1,5 +1,6 @@
 ---
 description: "MusicBrainz is the open music encyclopedia."
+hidden: true
 ---
 
 # MusicBrainz

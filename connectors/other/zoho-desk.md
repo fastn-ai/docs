@@ -1,5 +1,6 @@
 ---
 description: "Zoho Desk is Zoho's context-aware customer support / helpdesk ticketing platform."
+hidden: true
 ---
 
 # Zoho Desk

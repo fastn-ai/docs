@@ -1,5 +1,6 @@
 ---
 description: "Netlify web hosting and deployment platform."
+hidden: true
 ---
 
 # Netlify

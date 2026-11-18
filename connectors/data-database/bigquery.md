@@ -1,5 +1,6 @@
 ---
 description: "Google BigQuery REST API v2 connector."
+hidden: true
 ---
 
 # Google BigQuery

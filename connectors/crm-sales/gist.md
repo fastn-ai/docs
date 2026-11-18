@@ -1,5 +1,6 @@
 ---
 description: "Gist is an all-in-one customer engagement platform covering live chat, email marketing, knowledge base and marketing automation."
+hidden: true
 ---
 
 # Gist

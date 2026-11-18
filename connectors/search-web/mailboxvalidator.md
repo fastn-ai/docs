@@ -1,5 +1,6 @@
 ---
 description: "MailboxValidator real-time email validation API."
+hidden: true
 ---
 
 # MailboxValidator

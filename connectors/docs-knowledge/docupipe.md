@@ -1,5 +1,6 @@
 ---
 description: "DocuPipe document parsing and structured data extraction API."
+hidden: true
 ---
 
 # DocuPipe

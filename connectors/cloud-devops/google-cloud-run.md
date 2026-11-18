@@ -1,5 +1,6 @@
 ---
 description: "Deploy and operate serverless containers with the Google Cloud Run Admin API v2: services and revisions, jobs, executions and tasks, worker pools and worker…"
+hidden: true
 ---
 
 # Google Cloud Run

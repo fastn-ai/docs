@@ -1,5 +1,6 @@
 ---
 description: "Vatlayer is a lightweight EU VAT compliance API by APILayer."
+hidden: true
 ---
 
 # Vatlayer

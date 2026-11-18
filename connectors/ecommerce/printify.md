@@ -1,5 +1,6 @@
 ---
 description: "Printify print-on-demand API."
+hidden: true
 ---
 
 # Printify

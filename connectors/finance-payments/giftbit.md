@@ -1,5 +1,6 @@
 ---
 description: "Giftbit is a digital rewards platform for sending, managing and tracking gift cards and prepaid cards in bulk for incentives, disbursements and employee…"
+hidden: true
 ---
 
 # Giftbit

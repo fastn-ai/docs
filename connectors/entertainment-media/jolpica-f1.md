@@ -1,5 +1,6 @@
 ---
 description: "Jolpica F1 is the free, open-source successor to the Ergast Formula 1 API, with data from 1950 to today."
+hidden: true
 ---
 
 # Jolpica F1

@@ -1,5 +1,6 @@
 ---
 description: "Order Desk (order management) connector."
+hidden: true
 ---
 
 # Order Desk

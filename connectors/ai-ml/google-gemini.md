@@ -1,5 +1,6 @@
 ---
 description: "Google Gemini Developer API (generativelanguage.googleapis.com/v1beta)."
+hidden: true
 ---
 
 # Google Gemini

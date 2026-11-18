@@ -1,5 +1,6 @@
 ---
 description: "Google Apps Script API for managing Apps Script projects programmatically."
+hidden: true
 ---
 
 # Google Apps Script

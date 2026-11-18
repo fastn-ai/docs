@@ -1,5 +1,6 @@
 ---
 description: "Uplisting is a vacation-rental and short-term-let property management platform."
+hidden: true
 ---
 
 # Uplisting

@@ -1,5 +1,6 @@
 ---
 description: "Deep-Image.ai is an AI image enhancement and generation API."
+hidden: true
 ---
 
 # Deep Image

@@ -1,5 +1,6 @@
 ---
 description: "Coda API (v1) connector — programmatically interact with Coda docs, pages, tables, columns, rows, formulas, controls, permissions (ACL), doc analytics, and…"
+hidden: true
 ---
 
 # Coda

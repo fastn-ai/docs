@@ -1,5 +1,6 @@
 ---
 description: "Supadata turns videos and websites into structured data."
+hidden: true
 ---
 
 # Supadata

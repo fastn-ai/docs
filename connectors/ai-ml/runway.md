@@ -1,5 +1,6 @@
 ---
 description: "Runway generative AI API for video and image creation."
+hidden: true
 ---
 
 # Runway

@@ -1,5 +1,6 @@
 ---
 description: "Prospeo B2B contact data API."
+hidden: true
 ---
 
 # Prospeo

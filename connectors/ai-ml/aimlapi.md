@@ -1,5 +1,6 @@
 ---
 description: "AI/ML API (aimlapi.com) gives access to hundreds of AI models from one OpenAI-compatible endpoint."
+hidden: true
 ---
 
 # AI/ML API

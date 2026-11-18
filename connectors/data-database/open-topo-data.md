@@ -1,5 +1,6 @@
 ---
 description: "Open Topo Data is an open-source elevation API with a free public server (api.opentopodata.org) serving open datasets such as SRTM, ASTER, EU-DEM, NED,…"
+hidden: true
 ---
 
 # Open Topo Data

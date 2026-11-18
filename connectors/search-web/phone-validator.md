@@ -1,5 +1,6 @@
 ---
 description: "Phone Validator (phonevalidator.com) worldwide phone number validation API."
+hidden: true
 ---
 
 # Phone Validator

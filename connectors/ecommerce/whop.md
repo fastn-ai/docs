@@ -1,5 +1,6 @@
 ---
 description: "Whop is a commerce platform for selling digital products, memberships and communities."
+hidden: true
 ---
 
 # Whop

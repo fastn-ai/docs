@@ -1,5 +1,6 @@
 ---
 description: "Hugging Face connector covering the Hub API (whoami, models, datasets, spaces, repos, refs, commits) and Inference Providers router (OpenAI-compatible chat…"
+hidden: true
 ---
 
 # Hugging Face

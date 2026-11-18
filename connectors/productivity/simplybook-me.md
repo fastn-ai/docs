@@ -1,5 +1,6 @@
 ---
 description: "SimplyBook.me is an online appointment scheduling platform for service businesses."
+hidden: true
 ---
 
 # SimplyBook.me

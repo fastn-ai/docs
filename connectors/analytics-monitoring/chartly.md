@@ -1,5 +1,6 @@
 ---
 description: "Chartly renders Chart.js configurations into PNG or SVG chart images over a simple HTTP API, for embedding charts in emails, Slack messages, PDFs and low-code…"
+hidden: true
 ---
 
 # Chartly

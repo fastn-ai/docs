@@ -1,5 +1,6 @@
 ---
 description: "CommCare HQ by Dimagi — mobile data collection and case management for frontline programs."
+hidden: true
 ---
 
 # CommCare HQ

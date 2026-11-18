@@ -1,5 +1,6 @@
 ---
 description: "ZeroBounce is an email validation and deliverability platform: verify single or batch email addresses in real time, validate large lists in bulk, check inbox…"
+hidden: true
 ---
 
 # ZeroBounce

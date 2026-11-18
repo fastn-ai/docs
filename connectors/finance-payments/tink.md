@@ -1,5 +1,6 @@
 ---
 description: "Tink is an open banking platform for accessing bank account, balance, transaction, and financial insight data across European financial institutions."
+hidden: true
 ---
 
 # Tink

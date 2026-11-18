@@ -1,5 +1,6 @@
 ---
 description: "Stackby is a no-code database and spreadsheet work platform."
+hidden: true
 ---
 
 # Stackby

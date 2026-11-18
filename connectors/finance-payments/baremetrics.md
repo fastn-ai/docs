@@ -1,5 +1,6 @@
 ---
 description: "Baremetrics is a subscription analytics and revenue insights platform."
+hidden: true
 ---
 
 # Baremetrics

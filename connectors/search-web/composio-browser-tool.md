@@ -1,5 +1,6 @@
 ---
 description: "Composio Browser Tool lets AI agents run cloud-browser automation tasks (navigate sites, fill forms, extract data) through the Composio Connect Tool Router."
+hidden: true
 ---
 
 # Composio Browser Tool

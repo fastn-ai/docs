@@ -1,5 +1,6 @@
 ---
 description: "HitPay payments platform for APAC."
+hidden: true
 ---
 
 # HitPay

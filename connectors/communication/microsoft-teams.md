@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Teams via Microsoft Graph API v1.0 — manage teams, channels, channel messages, replies, chats, chat messages, and members."
+hidden: true
 ---
 
 # Microsoft Teams

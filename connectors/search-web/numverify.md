@@ -1,5 +1,6 @@
 ---
 description: "Numverify is a real-time international and national phone number validation and lookup API by APILayer."
+hidden: true
 ---
 
 # Numverify

@@ -1,5 +1,6 @@
 ---
 description: "Microsoft Dynamics 365 Customer Engagement / Sales via the Dataverse Web API (OData v4, base https://{org}.crm.dynamics.com/api/data/v9.2)."
+hidden: true
 ---
 
 # Dynamics 365 CRM (Dataverse)

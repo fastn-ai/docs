@@ -1,5 +1,6 @@
 ---
 description: "Dynatrace unified observability platform, accessed through an Account Management OAuth2 client (client_credentials)."
+hidden: true
 ---
 
 # Dynatrace

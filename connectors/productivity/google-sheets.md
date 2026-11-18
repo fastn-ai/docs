@@ -1,5 +1,6 @@
 ---
 description: "Read, write, and manage Google Sheets spreadsheets via the Sheets API v4."
+hidden: true
 ---
 
 # Google Sheets

@@ -1,5 +1,6 @@
 ---
 description: "Buttondown is newsletter software for writers and creators."
+hidden: true
 ---
 
 # Buttondown

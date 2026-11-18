@@ -1,5 +1,6 @@
 ---
 description: "Mixpanel product analytics — Query API (segmentation, funnels, retention, insights, activity stream, profiles), Lexicon schemas, annotations, cohorts, service…"
+hidden: true
 ---
 
 # Mixpanel

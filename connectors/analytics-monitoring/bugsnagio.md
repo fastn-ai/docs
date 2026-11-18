@@ -1,5 +1,6 @@
 ---
 description: "Bugsnag (now part of SmartBear Insight Hub) is an error monitoring and application stability platform."
+hidden: true
 ---
 
 # Bugsnag

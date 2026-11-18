@@ -1,5 +1,6 @@
 ---
 description: "Float resource scheduling and capacity planning API (v3)."
+hidden: true
 ---
 
 # Float

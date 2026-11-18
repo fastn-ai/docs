@@ -1,5 +1,6 @@
 ---
 description: "JokeAPI (v2) serves consistently formatted jokes in several languages."
+hidden: true
 ---
 
 # JokeAPI

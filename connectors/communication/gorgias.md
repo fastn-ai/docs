@@ -1,5 +1,6 @@
 ---
 description: "Gorgias helpdesk connector: tickets, messages, customers, tags, users, account, and HTTP integration (webhook) management."
+hidden: true
 ---
 
 # Gorgias

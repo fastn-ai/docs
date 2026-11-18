@@ -1,5 +1,6 @@
 ---
 description: "DataRobot is an enterprise AI platform for building, deploying and monitoring predictive and generative AI models."
+hidden: true
 ---
 
 # DataRobot

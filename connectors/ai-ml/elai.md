@@ -1,5 +1,6 @@
 ---
 description: "Elai is an AI video generation platform that turns text, presentations and outlines into avatar-presented videos."
+hidden: true
 ---
 
 # Elai

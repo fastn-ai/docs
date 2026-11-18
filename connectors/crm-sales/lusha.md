@@ -1,5 +1,6 @@
 ---
 description: "Lusha B2B sales intelligence API (V3)."
+hidden: true
 ---
 
 # Lusha

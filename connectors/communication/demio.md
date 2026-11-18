@@ -1,5 +1,6 @@
 ---
 description: "Demio is a webinar platform for live, automated, and on-demand virtual events."
+hidden: true
 ---
 
 # Demio

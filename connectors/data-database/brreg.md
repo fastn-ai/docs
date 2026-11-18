@@ -1,5 +1,6 @@
 ---
 description: "The Brønnøysund Register Centre's open API for Norway's Central Coordinating Register for Legal Entities (Enhetsregisteret) and the Register of Non-Profit…"
+hidden: true
 ---
 
 # Brønnøysund Register Centre (Enhetsregisteret)

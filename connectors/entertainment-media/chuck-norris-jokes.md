@@ -1,5 +1,6 @@
 ---
 description: "chucknorris.io is a free JSON API of hand-curated Chuck Norris facts."
+hidden: true
 ---
 
 # Chuck Norris Jokes

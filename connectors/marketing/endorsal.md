@@ -1,5 +1,6 @@
 ---
 description: "Endorsal is testimonial and review collection software."
+hidden: true
 ---
 
 # Endorsal

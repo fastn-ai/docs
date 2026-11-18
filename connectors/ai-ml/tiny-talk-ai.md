@@ -1,5 +1,6 @@
 ---
 description: "Tiny Talk AI builds custom AI chat agents for websites: agents answer from a trained knowledge base, capture leads, and hand off to humans."
+hidden: true
 ---
 
 # Tiny Talk AI

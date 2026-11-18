@@ -1,5 +1,6 @@
 ---
 description: "Mural visual collaboration API."
+hidden: true
 ---
 
 # Mural

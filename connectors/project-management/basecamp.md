@@ -1,5 +1,6 @@
 ---
 description: "Basecamp 4 (Basecamp 3 API / bc3-api) connector."
+hidden: true
 ---
 
 # Basecamp

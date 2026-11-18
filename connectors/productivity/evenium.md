@@ -1,5 +1,6 @@
 ---
 description: "Evenium event registration and ticketing platform (Evenium Net / ConnectMe)."
+hidden: true
 ---
 
 # Evenium

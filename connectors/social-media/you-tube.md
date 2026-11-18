@@ -1,5 +1,6 @@
 ---
 description: "YouTube Data API v3 — manage videos, channels, playlists, comments, subscriptions, and search YouTube content"
+hidden: true
 ---
 
 # YouTube

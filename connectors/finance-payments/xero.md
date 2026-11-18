@@ -1,5 +1,6 @@
 ---
 description: "Xero Accounting API connector."
+hidden: true
 ---
 
 # Xero

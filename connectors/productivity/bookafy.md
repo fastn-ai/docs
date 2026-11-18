@@ -1,5 +1,6 @@
 ---
 description: "Bookafy is an online appointment scheduling platform for booking meetings, consultations, classes and group events."
+hidden: true
 ---
 
 # Bookafy

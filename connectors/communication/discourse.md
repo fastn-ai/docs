@@ -1,5 +1,6 @@
 ---
 description: "Discourse is an open-source community discussion platform."
+hidden: true
 ---
 
 # Discourse

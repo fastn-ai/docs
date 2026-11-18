@@ -1,5 +1,6 @@
 ---
 description: "Cisco Webex video conferencing, messaging, and collaboration platform."
+hidden: true
 ---
 
 # Cisco Webex

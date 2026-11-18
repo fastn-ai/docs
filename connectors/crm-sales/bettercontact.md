@@ -1,5 +1,6 @@
 ---
 description: "BetterContact is a waterfall enrichment platform that finds verified work emails and mobile phone numbers by querying many data providers in sequence."
+hidden: true
 ---
 
 # BetterContact

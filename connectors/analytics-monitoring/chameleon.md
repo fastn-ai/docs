@@ -1,5 +1,6 @@
 ---
 description: "Chameleon is a product-adoption platform for in-product Tours, Microsurveys, Tooltips, Launchers, Embeddables, Product Demos and the HelpBar."
+hidden: true
 ---
 
 # Chameleon

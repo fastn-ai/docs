@@ -1,5 +1,6 @@
 ---
 description: "Rollbar is a real-time error tracking and crash reporting platform for web, server and mobile applications."
+hidden: true
 ---
 
 # Rollbar

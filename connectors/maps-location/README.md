@@ -1,10 +1,10 @@
 ---
-description: "Maps and location connectors fastn manages: 23 in all."
+description: "Maps and location connectors fastn manages, with their auth, actions and events."
 ---
 
 # Maps and location
 
-23 connectors. Back to the [connector catalog](../README.md).
+Maps and location apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

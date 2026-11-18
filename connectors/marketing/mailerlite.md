@@ -1,5 +1,6 @@
 ---
 description: "MailerLite (new API) connector: subscribers (CRUD + group assign), groups, campaigns (create/schedule), fields, automations, and webhooks."
+hidden: true
 ---
 
 # MailerLite

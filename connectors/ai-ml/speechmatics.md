@@ -1,5 +1,6 @@
 ---
 description: "Speechmatics speech-to-text."
+hidden: true
 ---
 
 # Speechmatics

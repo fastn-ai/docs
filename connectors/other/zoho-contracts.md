@@ -1,5 +1,6 @@
 ---
 description: "Zoho Contracts is Zoho's contract lifecycle management (CLM) application."
+hidden: true
 ---
 
 # Zoho Contracts

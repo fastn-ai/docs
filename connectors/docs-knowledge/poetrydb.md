@@ -1,5 +1,6 @@
 ---
 description: "PoetryDB is a free API with thousands of classic English poems."
+hidden: true
 ---
 
 # PoetryDB

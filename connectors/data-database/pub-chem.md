@@ -1,5 +1,6 @@
 ---
 description: "PubChem (NCBI) is the world's largest free chemistry database."
+hidden: true
 ---
 
 # PubChem

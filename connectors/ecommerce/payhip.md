@@ -1,5 +1,6 @@
 ---
 description: "Payhip is an e-commerce platform for selling digital downloads, courses, memberships and coupons."
+hidden: true
 ---
 
 # Payhip

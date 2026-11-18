@@ -1,5 +1,6 @@
 ---
 description: "Advice Slip API is a free, public, keyless service that returns short pieces of fortune-cookie style advice."
+hidden: true
 ---
 
 # Advice Slip API

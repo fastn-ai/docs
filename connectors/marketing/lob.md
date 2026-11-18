@@ -1,5 +1,6 @@
 ---
 description: "Lob is a direct-mail and address-verification platform."
+hidden: true
 ---
 
 # Lob

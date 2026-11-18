@@ -1,5 +1,6 @@
 ---
 description: "Mediastack by APILayer delivers real-time and historical worldwide news data in JSON format, aggregated from over 7,500 sources across 50 countries."
+hidden: true
 ---
 
 # Mediastack

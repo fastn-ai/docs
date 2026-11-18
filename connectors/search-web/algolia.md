@@ -1,5 +1,6 @@
 ---
 description: "Algolia is a hosted search and discovery platform."
+hidden: true
 ---
 
 # Algolia

@@ -1,5 +1,6 @@
 ---
 description: "Pexels stock photo and video API."
+hidden: true
 ---
 
 # Pexels

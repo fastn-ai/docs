@@ -1,5 +1,6 @@
 ---
 description: "Cognito Forms is a free online form builder for collecting submissions, managing entries, and generating documents."
+hidden: true
 ---
 
 # Cognito Forms

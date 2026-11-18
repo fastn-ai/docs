@@ -1,5 +1,6 @@
 ---
 description: "Pumble is a team messaging platform by CAKE.com."
+hidden: true
 ---
 
 # Pumble

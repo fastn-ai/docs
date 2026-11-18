@@ -1,5 +1,6 @@
 ---
 description: "Zoho Expense is Zoho's travel and expense management platform."
+hidden: true
 ---
 
 # Zoho Expense

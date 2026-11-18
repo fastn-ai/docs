@@ -1,5 +1,6 @@
 ---
 description: "ipdata is an IP geolocation and threat intelligence API."
+hidden: true
 ---
 
 # ipdata

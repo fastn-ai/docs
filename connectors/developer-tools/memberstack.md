@@ -1,5 +1,6 @@
 ---
 description: "Memberstack adds authentication, gated content, member profiles and Stripe-backed memberships to any website."
+hidden: true
 ---
 
 # Memberstack

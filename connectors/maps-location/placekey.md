@@ -1,5 +1,6 @@
 ---
 description: "Placekey is a free, universal standard identifier for any physical place."
+hidden: true
 ---
 
 # Placekey

@@ -1,5 +1,6 @@
 ---
 description: "Moneybird is a Dutch online accounting and invoicing platform."
+hidden: true
 ---
 
 # Moneybird

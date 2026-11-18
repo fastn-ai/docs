@@ -1,5 +1,6 @@
 ---
 description: "The Humanitarian Data Exchange (HDX), run by UN OCHA, is a free open platform with over 20,000 humanitarian datasets (population, displacement, food security,…"
+hidden: true
 ---
 
 # Humanitarian Data Exchange (HDX)

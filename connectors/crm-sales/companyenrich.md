@@ -1,5 +1,6 @@
 ---
 description: "CompanyEnrich is a real-time B2B data API for company enrichment, company and people search, lookalike (similar company) discovery, workforce insights,…"
+hidden: true
 ---
 
 # CompanyEnrich

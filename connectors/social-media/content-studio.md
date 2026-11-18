@@ -1,5 +1,6 @@
 ---
 description: "ContentStudio social media management platform."
+hidden: true
 ---
 
 # ContentStudio

@@ -1,5 +1,6 @@
 ---
 description: "PartnerStack is a partner relationship management platform for affiliate, referral and reseller programs."
+hidden: true
 ---
 
 # PartnerStack

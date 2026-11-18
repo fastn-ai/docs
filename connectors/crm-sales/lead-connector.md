@@ -1,5 +1,6 @@
 ---
 description: "GoHighLevel (HighLevel) is an all-in-one CRM, marketing-automation and agency platform."
+hidden: true
 ---
 
 # GoHighLevel

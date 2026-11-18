@@ -1,5 +1,6 @@
 ---
 description: "SeekTable is a self-service BI tool for pivot tables, charts and reports over CSV files, SQL databases, MongoDB, ElasticSearch and OLAP cubes."
+hidden: true
 ---
 
 # SeekTable

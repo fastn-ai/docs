@@ -1,5 +1,6 @@
 ---
 description: "Recurly subscription management and recurring billing platform."
+hidden: true
 ---
 
 # Recurly

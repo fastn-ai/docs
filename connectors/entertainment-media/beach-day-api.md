@@ -1,5 +1,6 @@
 ---
 description: "Beach Day API provides beach data for more than 36,000 beaches in over 100 countries: beach profiles with location and access details, water quality grades,…"
+hidden: true
 ---
 
 # Beach Day API

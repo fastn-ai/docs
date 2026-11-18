@@ -1,5 +1,6 @@
 ---
 description: "ImgBB image hosting and upload API."
+hidden: true
 ---
 
 # ImgBB

@@ -1,5 +1,6 @@
 ---
 description: "OpenAlex is the open catalog of the global research system."
+hidden: true
 ---
 
 # OpenAlex

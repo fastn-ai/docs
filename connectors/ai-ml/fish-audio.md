@@ -1,5 +1,6 @@
 ---
 description: "Fish Audio is an AI voice platform for text-to-speech, speech-to-text and voice cloning."
+hidden: true
 ---
 
 # Fish Audio

@@ -1,5 +1,6 @@
 ---
 description: "Google Service Management API (servicemanagement.googleapis.com v1)."
+hidden: true
 ---
 
 # Google Service Management

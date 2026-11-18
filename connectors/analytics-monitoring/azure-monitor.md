@@ -1,5 +1,6 @@
 ---
 description: "Azure Monitor over the Microsoft.Insights Azure Resource Manager API at https://management.azure.com."
+hidden: true
 ---
 
 # Azure Monitor

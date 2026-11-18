@@ -1,5 +1,6 @@
 ---
 description: "Explorium AgentSource is a B2B data platform for matching, searching and enriching companies and people."
+hidden: true
 ---
 
 # Explorium

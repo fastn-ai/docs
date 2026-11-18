@@ -1,5 +1,6 @@
 ---
 description: "Findymail via MCP — find and verify B2B email addresses and phone numbers, find employees, enrich companies, reverse email lookup, lookalike search, lead…"
+hidden: true
 ---
 
 # Findymail

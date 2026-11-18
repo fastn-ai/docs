@@ -1,5 +1,6 @@
 ---
 description: "Timely automatic time tracking API."
+hidden: true
 ---
 
 # Timely

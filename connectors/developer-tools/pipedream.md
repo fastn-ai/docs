@@ -1,5 +1,6 @@
 ---
 description: "Pipedream is a workflow automation and integration platform for developers."
+hidden: true
 ---
 
 # Pipedream

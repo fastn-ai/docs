@@ -1,5 +1,6 @@
 ---
 description: "Capsule CRM (API v2) connector: manage parties (people & organisations), opportunities, cases/projects, tasks, notes/entries, pipelines, milestones, users,…"
+hidden: true
 ---
 
 # Capsule CRM

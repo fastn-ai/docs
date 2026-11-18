@@ -1,5 +1,6 @@
 ---
 description: "Microsoft OneDrive via Microsoft Graph v1.0 — drives, driveItems (upload, download, list children, move, copy, delete, search), file versions, thumbnails,…"
+hidden: true
 ---
 
 # Microsoft OneDrive

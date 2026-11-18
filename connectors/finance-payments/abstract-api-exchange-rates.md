@@ -1,5 +1,6 @@
 ---
 description: "AbstractAPI Exchange Rates returns the latest exchange rates for 80+ fiat and crypto currencies, converts an arbitrary amount between two currencies, and…"
+hidden: true
 ---
 
 # AbstractAPI Exchange Rates

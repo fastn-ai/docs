@@ -1,5 +1,6 @@
 ---
 description: "Stormglass provides global marine and land weather data."
+hidden: true
 ---
 
 # Stormglass

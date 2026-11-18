@@ -1,5 +1,6 @@
 ---
 description: "TimelinesAI is a shared WhatsApp inbox and automation platform for teams."
+hidden: true
 ---
 
 # TimelinesAI

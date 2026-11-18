@@ -1,5 +1,6 @@
 ---
 description: "Salesloft Revenue Orchestration Platform (sales engagement)."
+hidden: true
 ---
 
 # Salesloft

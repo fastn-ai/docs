@@ -1,10 +1,10 @@
 ---
-description: "E-commerce connectors fastn manages: 34 in all."
+description: "E-commerce connectors fastn manages, with their auth, actions and events."
 ---
 
 # E-commerce
 
-34 connectors. Back to the [connector catalog](../README.md).
+E-commerce apps you can connect to with fastn. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
 
 | Connector | Authentication | Actions | Events | About |
 | --- | --- | --- | --- | --- |

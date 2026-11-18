@@ -1,5 +1,6 @@
 ---
 description: "The NOAA/NWS Aviation Weather Center Data API gives free aviation weather: METAR observations, TAF forecasts, PIREPs, SIGMETs, AIRMETs and G-AIRMETs,…"
+hidden: true
 ---
 
 # Aviation Weather Center (aviationweather.gov)

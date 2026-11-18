@@ -1,5 +1,6 @@
 ---
 description: "Coinlayer by APILayer delivers real-time and historical cryptocurrency exchange rate data for 385+ cryptocurrencies, sourced from 25+ exchanges."
+hidden: true
 ---
 
 # Coinlayer

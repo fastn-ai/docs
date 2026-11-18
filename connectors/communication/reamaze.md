@@ -1,5 +1,6 @@
 ---
 description: "Re:amaze is a helpdesk and customer messaging platform for support teams, combining a shared inbox, live chat, FAQ knowledge base, and status page."
+hidden: true
 ---
 
 # Re:amaze
