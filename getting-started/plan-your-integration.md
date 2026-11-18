@@ -6,6 +6,8 @@ description: "Find out if fastn fits your use case: create a free account, conne
 
 Your AI agent can tell you whether fastn fits what your product needs to do with your customers' apps. The agent will be able to guide you on how your integration can be implemented using Fastn's capabilities. It takes four steps and no call with fastn.
 
+**No account yet? You can still ask.** With the [fastn plugin](#optional-the-fastn-plugin-for-claude), your agent can tell you whether fastn fits your use case and how it would work, based on what fastn offers. Create an account and connect it (steps 1 and 2) when you want the agent to look at your own setup and help you build it.
+
 ### Step 1: Create a fastn account
 
 Sign up at [app.fastn.dev](https://app.fastn.dev/?signup=1). The Launch plan is free: no card and no sales call. See [pricing](https://fastn.ai/pricing) for the other plans.
@@ -40,13 +42,16 @@ When the agent cannot confirm something, it says so. It never asks for a passwor
 
 The agent says so, offers a workaround if there is one, and helps you write a request to fastn. Send it from the fastn dashboard: **Help (?)** → **Contact support**. To talk it through with a person, use the same place and include the agent's summary.
 
-### Optional: the fastn plugin for Claude Code
+### Optional: the fastn plugin for Claude
 
-If you use Claude Code, you can install the `connect` plugin from the [fastn Claude plugins](https://github.com/fastn-ai/fastn-claude-plugins) repository instead. It adds the fastn skills and the fastn connection in one go:
+The fastn plugin (`connect`, from the [fastn Claude plugins](https://github.com/fastn-ai/fastn-claude-plugins) repository) adds the fastn skills and the fastn connection in one go. It works before you have an account.
 
-```
-/plugin marketplace add fastn-ai/fastn-claude-plugins
-/plugin install connect@fastn
-```
+* **Claude desktop app or claude.ai:** go to **Settings** → **Customize** → **Plugins** → **Add** → **Add marketplace**, paste `fastn-ai/fastn-claude-plugins`, select **Sync**, then turn on **fastn Connect**.
+* **Claude Code:** run these two commands, then start a new session.
+
+  ```
+  /plugin marketplace add fastn-ai/fastn-claude-plugins
+  /plugin install connect@fastn
+  ```
 
 To learn what each part of fastn does, read [Concepts](concepts.md).
