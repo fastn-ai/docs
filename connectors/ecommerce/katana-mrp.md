@@ -27,9 +27,19 @@ This guide shows where to find the Katana API key that fastn needs, and how it i
 fastn asks for one value, **token**: a Katana API key. fastn sends it to Katana as a bearer token in the `Authorization` header.
 
 1. Sign in to your Katana account.
-2. Go to **Settings > API**.
-3. Click **Add new API key**.
-4. Copy the key and keep it somewhere safe. Use it as the **token** value in fastn.
+2. Go to **Settings > API**. The **API keys** section lists your existing keys.
+
+<figure><img src="../../.gitbook/assets/connector-guides/katanaMrp/api-keys-page.png" alt="The API keys section in Katana's settings"><figcaption><p>The API keys section in Katana's settings</p></figcaption></figure>
+
+3. Click **+ Add new API key**. Katana creates the key right away and shows it in an **API key created** window.
+
+<figure><img src="../../.gitbook/assets/connector-guides/katanaMrp/api-key-created.png" alt="The API key created window, with the key itself cropped out"><figcaption><p>The API key created window, with the key itself cropped out</p></figcaption></figure>
+
+4. Optionally change the **Description** so you can recognise the key later.
+
+<figure><img src="../../.gitbook/assets/connector-guides/katanaMrp/api-key-description.png" alt="The Description field and the reminder that the key is shown only once"><figcaption><p>The Description field and the reminder that the key is shown only once</p></figcaption></figure>
+
+5. Copy the key before you click **Done**. Katana does not show it again after the window closes. Use it as the **token** value in fastn.
 
 Katana recommends that you limit who can see the key and rotate keys from time to time. If you rotate a key, update the connection in fastn with the new one.
 

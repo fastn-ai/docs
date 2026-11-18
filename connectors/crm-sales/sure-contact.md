@@ -28,10 +28,21 @@ This guide shows how to get the SureContact API key that fastn uses to connect t
 fastn asks for one value, **API Key** (`apiKey`).
 
 1. Sign in to SureContact.
-2. In the top bar, open your profile and go to **API Keys**.
+2. In the top bar, open your profile menu and, under **Developer**, click **API Keys**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/sureContact/profile-menu.png" alt="The profile menu, with API Keys under Developer"><figcaption><p>The profile menu, with API Keys under Developer</p></figcaption></figure>
+
 3. Click **Create API Key**.
-4. Choose the abilities the key needs: **read**, **write** and **delete**. Pick only the ones your workflows use. For example, actions such as `create-contact-tool` or `create-campaign-tool` need write access.
+
+<figure><img src="../../.gitbook/assets/connector-guides/sureContact/api-keys.png" alt="The API Keys page in SureContact"><figcaption><p>The API Keys page in SureContact</p></figcaption></figure>
+
+4. Enter a **Name** for the key, such as `fastn`. Under **Permissions**, choose what the key can do: **Read** (GET endpoints), **Write** (POST and PUT endpoints) and **Delete** (DELETE endpoints). Pick only the ones your workflows use. For example, actions such as `create-contact-tool` or `create-campaign-tool` need **Write**. You can also set an **Expires At** date. Click **Create API Key**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/sureContact/create-api-key.png" alt="The Create API Key form, with a name and permissions"><figcaption><p>The Create API Key form, with a name and permissions</p></figcaption></figure>
+
 5. Copy the key right away. SureContact shows it only once, so store it somewhere safe. If you lose it, create a new key.
+
+<figure><img src="../../.gitbook/assets/connector-guides/sureContact/key-created.png" alt="SureContact shows the new key only once"><figcaption><p>SureContact shows the new key only once</p></figcaption></figure>
 
 ### Connect in fastn
 Your customers enter their API key when they connect SureContact in your widget. You can also enter it yourself under Build → Integrations → Connectors → SureContact. After the connection is set up, call the connector's actions from workflow code as `fastn.connector.sureContact.<actionSlug>()`, for example `fastn.connector.sureContact.createContactTool()`.

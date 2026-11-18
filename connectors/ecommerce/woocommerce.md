@@ -29,13 +29,21 @@ This guide shows you how to generate WooCommerce REST API keys on your WordPress
 fastn asks for three values: **storeUrl**, **username** (the consumer key) and **password** (the consumer secret).
 
 1. Note your store address for **storeUrl**: the HTTPS address of your WordPress site with no trailing slash, for example `https://shop.example.com`.
-2. Sign in to your WordPress admin and go to **WooCommerce > Settings > Advanced > REST API**.
-3. Select **Add key**.
+2. Sign in to your WordPress admin and go to **WooCommerce > Settings > Advanced > REST API keys**.
+3. Select **Add key** (or **Create an API key** if the store has no keys yet).
+
+<figure><img src="../../.gitbook/assets/connector-guides/woocommerce/rest-api-keys.png" alt="The REST API keys page under WooCommerce > Settings > Advanced"><figcaption><p>The REST API keys page under WooCommerce > Settings > Advanced</p></figcaption></figure>
+
 4. Enter a **Description**, such as `fastn`, and choose the **User** the key belongs to.
 5. Set **Permissions** to **Read/Write**, so fastn can both read and change store data.
 6. Select **Generate API key**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/woocommerce/add-key.png" alt="Key details with a description, user and Read/Write permissions"><figcaption><p>Key details with a description, user and Read/Write permissions</p></figcaption></figure>
+
 7. Copy the **Consumer key** (it starts with `ck_`). This is the **username** value.
 8. Copy the **Consumer secret** (it starts with `cs_`). This is the **password** value. WooCommerce shows it only once, so save it before you leave the page. If you lose it, revoke the key and create a new one.
+
+<figure><img src="../../.gitbook/assets/connector-guides/woocommerce/key-generated.png" alt="WooCommerce confirms the key was generated; copy both values before leaving the page"><figcaption><p>WooCommerce confirms the key was generated; copy both values before leaving the page</p></figcaption></figure>
 
 ### Connect in fastn
 Your customers enter the store URL, consumer key and consumer secret when they connect WooCommerce in your widget. You can also enter them yourself under Build → Integrations → Connectors → WooCommerce. In workflow code, call an action as `fastn.connector.woocommerce.<actionSlug>()`.

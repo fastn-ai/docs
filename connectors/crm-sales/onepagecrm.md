@@ -26,10 +26,16 @@ This guide shows you where to find the OnePageCRM user ID and API key that fastn
 
 ### Get your OnePageCRM credentials
 1. Sign in to OnePageCRM.
-2. Open the API settings page under **Apps > API & Integrations** (you can also go straight to `https://app.onepagecrm.com/app/api`).
-3. Open the **Configuration** tab.
+2. Open the **API** app from **Apps and Integrations** (you can also go straight to `https://app.onepagecrm.com/app/api`). It is listed under **Developer and Automation** and comes pre-installed.
+
+<figure><img src="../../.gitbook/assets/connector-guides/onepagecrm/api-app.png" alt="The API app in OnePageCRM's Apps and Integrations"><figcaption><p>The API app in OnePageCRM's Apps and Integrations</p></figcaption></figure>
+
+3. Open the **Configuration** tab. It shows the **Endpoint**, **User ID** and **API key**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/onepagecrm/configuration.png" alt="The Configuration tab with the Endpoint, User ID and API key fields"><figcaption><p>The Configuration tab with the Endpoint, User ID and API key fields</p></figcaption></figure>
+
 4. Copy the **User ID**. In fastn, enter it in the **username** field.
-5. Copy the **API key** from the same page. In fastn, enter it in the **password** field.
+5. Copy the **API key** from the same tab. In fastn, enter it in the **password** field. If you need a new key, click **Generate new API key**.
 
 Keep the API key private. Anyone who has it can call the OnePageCRM API as you.
 

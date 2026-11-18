@@ -27,11 +27,18 @@ This guide shows you where to find the Reply.io API key that fastn needs to conn
 fastn asks for one value, **apiKey**: your Reply.io API key. The same key works for Reply's current and legacy API endpoints.
 
 1. Sign in to Reply.io at run.reply.io.
-2. Go to **Settings → API Key**.
-3. Create a new key, or copy the existing one.
-4. Paste it into the **apiKey** field when you connect.
+2. Open **Settings** and select **API keys** in the menu. Your personal keys are listed under **My API keys**.
 
-Use your user API key here. Reply.io's team and organization keys need extra headers that name the user to act as, which this connection does not send.
+<figure><img src="../../.gitbook/assets/connector-guides/replyio/api-keys-page.png" alt="The API keys page in Reply.io settings"><figcaption><p>The API keys page in Reply.io settings</p></figcaption></figure>
+
+3. Click **Create My API key**. Enter a **Name**, and optionally an **Expires at** date (leave it empty for a key that never expires).
+4. Set the access level for each area: **Legacy v1/v2 api**, **Contacts**, **Sequences** and **Channels**. Moving the **All** slider to **Full** sets every area at once. The key can only do what you allow here.
+
+<figure><img src="../../.gitbook/assets/connector-guides/replyio/create-api-key.png" alt="The Create My API key window with its name, expiry and access levels"><figcaption><p>The Create My API key window with its name, expiry and access levels</p></figcaption></figure>
+
+5. Click **Create key**, copy the key, and paste it into the **apiKey** field when you connect.
+
+Use a key from **My API keys** here. Reply.io's team and organization keys need extra headers that name the user to act as, which this connection does not send.
 
 ### Connect in fastn
 Your customers enter the API key when they connect Reply.io in your widget, or you enter it under Build → Integrations → Connectors → Reply.io.

@@ -26,10 +26,19 @@ This guide shows where you and your customers find the Cin7 Core values fastn as
 
 ### Get your Cin7 Core credentials
 1. Sign in to Cin7 Core at https://inventory.dearsystems.com.
-2. Go to **Integrations** → **API**, the API setup page (https://inventory.dearsystems.com/ExternalAPI).
-3. Create an API application for fastn. You can have more than one API application on the same Cin7 Core account, and Cin7 Core applies API limits to each application separately, so a separate one for fastn keeps its usage apart from your other add-ons.
-4. Copy the **Account ID**. This is the `accountId` value. It identifies your Cin7 Core company.
-5. Copy the **API Application Key** for the application you created. This is the `applicationKey` value.
+2. Go to **Integrations** → **API**, the API setup page (https://inventory.dearsystems.com/ExternalAPI). It lists your API applications.
+
+<figure><img src="../../.gitbook/assets/connector-guides/cin7core/api-page.png" alt="The Cin7 Core API page with its list of API applications"><figcaption><p>The Cin7 Core API page with its list of API applications</p></figcaption></figure>
+
+3. Click the **+** tab, type a **Name** for the new application, such as `fastn`, and click **Create**. You can have more than one API application on the same Cin7 Core account, and Cin7 Core applies API limits to each application separately, so a separate one for fastn keeps its usage apart from your other add-ons.
+
+<figure><img src="../../.gitbook/assets/connector-guides/cin7core/create-app.png" alt="Creating a new API application in Cin7 Core"><figcaption><p>Creating a new API application in Cin7 Core</p></figcaption></figure>
+
+4. Open the application's **Setup** page. Copy the **Account ID**. This is the `accountId` value. It identifies your Cin7 Core company.
+5. Copy the **Key** shown on the same page. This is the `applicationKey` value. Leave **Is active** turned on.
+
+<figure><img src="../../.gitbook/assets/connector-guides/cin7core/credentials.png" alt="The application's Setup page, with the Account ID and Key fields"><figcaption><p>The application's Setup page, with the Account ID and Key fields</p></figcaption></figure>
+
 6. Leave `baseUrl` empty to connect to production. Fill it in only if you connect to another Cin7 Core API host, such as a test environment.
 
 Treat the Account ID and Application Key like a username and password. If a key is exposed, remove that API application in Cin7 Core and create a new one.

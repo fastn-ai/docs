@@ -16,9 +16,23 @@ SAP SuccessFactors Incentive Management - the incentive compensation product for
 | **Authentication** | Credentials you enter |
 | **Slug** | `sapCallidusCloud` |
 
-## Use it
+## Setup guide
+This guide explains which values fastn needs to connect SAP Incentive Management (formerly SAP Commissions and CallidusCloud Commissions), and where to find them. The connector offers two ways to sign in: an API user with a password, or a JWT access token.
 
-Add SAP Incentive Management (CallidusCloud Commissions) from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.sapCallidusCloud.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need access to an SAP Incentive Management tenant. SAP provisions these per customer, so there is no self-service sign-up.
+- Ask your SAP Incentive Management administrator for a user that holds an API role. Without that role, calls to the REST API are refused.
+
+### Get your SAP Incentive Management credentials
+1. Find your tenant's base URL. Open the address you use to sign in to the SalesPortal and keep only the origin. For example, if you sign in at `https://cald-prd.callidusondemand.com/SalesPortal/`, the base URL is `https://cald-prd.callidusondemand.com`. Newer tenants use an address of the form `https://<tenant>.app.commissions.cloud.sap`. Enter it without a trailing slash as **baseUrl**.
+2. Choose how fastn signs in:
+   - **Tenant API User (HTTP Basic):** enter the API user's name as **username** and its password as **password**. fastn sends them as HTTP Basic credentials on every request.
+   - **Tenant JWT Access Token (Bearer):** request an access token from `{baseUrl}/CallidusPortal/services/v2/Tokenization/access_token` with the API user's name and password, and enter it as **token**. fastn sends it as a bearer token. Access tokens expire, so you need to issue a new one when it does.
+3. If your administrator has set the API user to sign in through single sign-on, ask them to allow password sign-in for that user, since API calls with basic credentials depend on it.
+
+### Connect in fastn
+Your customers enter the base URL and their credentials when they connect SAP Incentive Management in your widget. You can also enter them yourself under Build → Integrations → Connectors → SAP Incentive Management. Workflow code calls its actions as `fastn.connector.sapCallidusCloud.<actionSlug>()`.
 
 ## Actions
 
