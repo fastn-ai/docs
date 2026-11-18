@@ -16,9 +16,29 @@ Coevera (formerly Pipeliner CRM), a sales CRM by Pipelinersales Inc. This connec
 | **Authentication** | Credentials you enter |
 | **Slug** | `pipelinercrm` |
 
-## Use it
+## Setup guide
+This guide shows you where to find the API credentials fastn needs to connect to Pipeliner CRM (Coevera), and where to enter them.
 
-Add Pipeliner CRM (Coevera) from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.pipelinercrm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Coevera account with administrator access to the team space you want to connect, because only an administrator can create an API application.
+
+### Get your Pipeliner CRM (Coevera) credentials
+fastn asks for four values: **region**, **spaceId**, **username** and **password**. Coevera calls the username and password the API application's user name and password.
+
+1. Sign in to Coevera as an administrator and go to **Administration › Units, Users & Roles › Applications**.
+2. Create a new application for the integration.
+3. Select **Edit Permissions** and set each entry on the **Records**, **Administration** and **Misc** tabs to **Full Access**, **Read Only Access** or **No Access**. The connection can only reach the data you allow here.
+4. Open the application and select **Show Access**. This shows the credentials, the space ID and the base URL.
+5. Copy the user name into **username**. It starts with your space ID, followed by an underscore and a 40-character string, and works only in that space.
+6. Copy the password into **password**. Coevera shows the full password only when the application is created or its credentials are regenerated, so copy it right away.
+7. Copy the space ID into **spaceId**.
+8. For **region**, use the data-center region at the start of the base URL host (for example, `eu-central` in `eu-central.api.coevera.com`). Coevera lists four regions: `us-east`, `eu-central`, `ca-central` and `ap-southeast`.
+
+If you later select **Generate New** under **Show Access**, both the user name and the password change and the old pair stops working right away. Update both values in fastn when that happens.
+
+### Connect in fastn
+Your customers enter these values when they connect Pipeliner CRM (Coevera) in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Pipeliner CRM (Coevera)**.
 
 ## Actions
 

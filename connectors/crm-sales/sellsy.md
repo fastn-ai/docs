@@ -16,9 +16,29 @@ Sellsy CRM, invoicing and sales platform via the Sellsy API v2. Manage companies
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `sellsy` |
 
-## Use it
+## Setup guide
+This guide shows you how to create a Sellsy Personal API access and where to enter its client ID and client secret in fastn.
 
-Add Sellsy from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.sellsy.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Sellsy account that can open **Settings → Developer portal**. The API access uses the rights and license of the Sellsy user it belongs to, so use an account that can see the data you want to work with.
+
+### Get your Sellsy credentials
+fastn connects to Sellsy with a Personal API access, which is meant for server-to-server connections. It does not use a redirect URL. fastn asks for two values: **clientId** and **clientSecret**.
+
+1. In Sellsy, go to **Settings → Developer portal**.
+2. Create a new API access and choose the **Personal** type.
+3. Select the scopes the access may use. Select all scopes for unrestricted access, or only the ones your workflows need.
+4. Save the access. Sellsy generates a client ID and a client secret.
+5. Copy the client ID into **clientId** and the client secret into **clientSecret**. Sellsy shows the client secret only once. If you lose it, create a new access.
+
+You can find your existing accesses later under **Settings → Developer portal → API v2**.
+
+### Connect in fastn
+Your customers enter these values when they connect Sellsy in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Sellsy**.
+
+### Events
+To start a workflow when something changes in Sellsy, such as a new client, an updated opportunity or a new invoice, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and pick the Sellsy event. See [App event triggers](../../build/triggers/app-events.md). Contact fastn support to set up events for Sellsy.
 
 ## Actions
 

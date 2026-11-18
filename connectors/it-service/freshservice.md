@@ -16,9 +16,32 @@ Freshservice IT service management — tickets, problems, changes, releases, ass
 | **Authentication** | Basic auth |
 | **Slug** | `freshservice` |
 
-## Use it
+## Setup guide
 
-Add Freshservice from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.freshservice.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows where to find the two values fastn needs to connect to Freshservice: your account's subdomain and your personal API key.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn to configure the connector.
+- You need a Freshservice account that you can sign in to. fastn acts with the permissions of the person whose API key is used, so use an account that can see the tickets, assets and other records your workflows work with.
+
+### Get your Freshservice credentials
+
+1. Find your **domain**. Look at the address you use to open Freshservice. For `https://acme.freshservice.com`, the value is `acme`. Enter only this subdomain, not the full address.
+2. Sign in to your Freshservice support portal.
+3. Click your profile picture in the upper-right corner and open your profile settings.
+4. On the right side of the page, below the **Delegate Approvals** section, copy **Your API key**.
+5. Use this API key in the **username** field fastn shows. Do not enter your sign-in email or password: Freshservice no longer accepts them for API access.
+
+### Connect in fastn
+
+Your customers enter their domain and API key when they connect Freshservice in your widget. You can also enter them yourself under Build → Integrations → Connectors → Freshservice.
+
+### Events
+
+fastn can start a workflow when something happens in Freshservice, such as a ticket being created, updated, resolved or closed, or a change, problem, release or asset being created or updated. Add an App event trigger under Build → Integrations → Triggers → Add trigger → App events, pick Freshservice and the event, and choose the workflow to run. See [App event triggers](../../build/triggers/app-events.md).
+
+Contact fastn support to set up events for Freshservice.
 
 ## Actions
 

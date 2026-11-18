@@ -16,9 +16,25 @@ Pipeline CRM (formerly PipelineDeals) is a sales CRM for small and mid-sized tea
 | **Authentication** | Credentials you enter |
 | **Slug** | `pipelineCrm` |
 
-## Use it
+## Setup guide
+This guide shows where to find the two Pipeline CRM keys fastn asks for, the user API key and the App Key, and how to start workflows from Pipeline CRM events.
 
-Add Pipeline CRM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.pipelineCrm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Pipeline CRM account with API access turned on. A Pipeline CRM admin turns it on under **Settings** > **API**.
+- To create the App Key, you need admin access in Pipeline CRM. In Pipeline CRM, any user can read their own API key.
+
+### Get your Pipeline CRM credentials
+1. Sign in to Pipeline CRM as an admin, open **Settings** in the lower-left corner, then select the **API** tab.
+2. Open **API Integrations** (`https://app.pipelinecrm.com/admin/modern/api`) and create a new integration. Pipeline CRM generates an App Key for it. Copy this value as **appKey**. It tells Pipeline CRM which integration is making the request.
+3. On the same **API** tab, open **API Keys** (`https://app.pipelinecrm.com/admin/modern/keys_api`). Find the user that fastn should act as and copy that user's key as **userApiKey**. Requests run with that user's access, so pick a user who can see the records your workflows need. The list shows keys only for users at or below your role and on your team. Users with the Executive role see every key.
+4. Keep both values private. If you reset a user's API key, as an admin can on the **API Keys** page or a user can when changing their password, update the key in fastn too.
+
+### Connect in fastn
+Your customers enter the user API key and the App Key when they connect Pipeline CRM in your widget. You can also enter them yourself under **Build** > **Integrations** > **Connectors** > **Pipeline CRM**. After that, workflow code calls actions as `fastn.connector.pipelineCrm.<actionSlug>()`.
+
+### Events
+To start a workflow when a deal, person or company is created, updated or deleted in Pipeline CRM, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events**. See [App events](../../build/triggers/app-events.md). Pipeline CRM sends these events as webhooks. You subscribe a URL through its webhooks API or through an automation's **Call an API** action, and creating that subscription needs a Pipeline CRM admin's credentials. Contact fastn support to set up events for Pipeline CRM.
 
 ## Actions
 

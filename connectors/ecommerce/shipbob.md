@@ -16,9 +16,68 @@ ShipBob fulfillment (3PL) connector covering the full 2026-01 API surface: order
 | **Authentication** | Credentials you enter, OAuth 2.0 |
 | **Slug** | `shipbob` |
 
-## Use it
+## Setup guide
+This guide covers how to connect ShipBob to fastn, either with your own ShipBob OAuth app or with a Personal Access Token, and how to start workflows from ShipBob events.
 
-Add ShipBob from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.shipbob.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a ShipBob account. ShipBob ties API access to the account's root user, so sign in as the root user to generate a token or install an OAuth app.
+- fastn's Connect with ShipBob (OAuth) option uses ShipBob's sandbox environment. For it, you need a ShipBob sandbox account, which is separate from a production account. You can sign up for one from ShipBob's sandbox setup page.
+
+### Create your ShipBob app
+1. Sign in to the ShipBob sandbox dashboard (webstage.shipbob.dev) as the root user.
+2. Go to **Integrations** > **OAuth Apps** and select **Create App**.
+3. In the redirect URL field, enter `https://oauth.live.fastn.ai` exactly as written, with no trailing slash, and select **Add**. ShipBob only accepts a redirect URI that matches one you added here.
+4. Grant the app the scopes fastn requests:
+   - `openid`
+   - `offline_access`
+   - `channels_read`
+   - `orders_read`, `orders_write`
+   - `products_read`, `products_write`
+   - `inventory_read`, `inventory_write`
+   - `fulfillments_read`, `fulfillments_write`
+   - `receiving_read`, `receiving_write`
+   - `returns_read`, `returns_write`
+   - `locations_read`
+   - `billing_read`
+   - `pricing_read`
+   - `webhooks_read`, `webhooks_write`
+
+   `offline_access` is what lets fastn receive a refresh token, so keep it.
+5. Save the app, then copy its client ID and client secret.
+
+### Add your app to fastn
+1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **ShipBob**.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**, then paste the **Client ID** and **Client Secret** from ShipBob.
+5. In **Scopes**, enter the scopes listed in the previous section.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+6. Save the provider, then choose **Use this app** so it becomes the preferred app.
+7. In your widget, set the ShipBob connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who connect without your own app sign in through fastn's shared ShipBob app.
+
+### Get your ShipBob credentials
+If you or your customers connect with a Personal Access Token instead of OAuth, you need two values:
+
+1. **token**: in the ShipBob dashboard, go to **Integrations** > **API Tokens**, select **Generate New Token**, and copy the token. Generate it in the same environment you plan to use: a sandbox token does not work against production, and a production token does not work against sandbox.
+2. **baseUrl**: the ShipBob API host that matches the token. Use `https://sandbox-api.shipbob.com` for a sandbox token or `https://api.shipbob.com` for a production token.
+
+Personal Access Tokens do not expire, but you can revoke them from the same page and generate new ones.
+
+### Connect in fastn
+Your customers enter these values when they connect ShipBob in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **ShipBob**.
+
+### Events
+To run a workflow when something happens in ShipBob, such as `order.shipped`, `return.created` or `wro.completed`, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the ShipBob event. See [App events](../../build/triggers/app-events.md).
+
+Contact fastn support to set up events for ShipBob.
 
 ## Actions
 

@@ -16,9 +16,32 @@ WooCommerce is the open-source e-commerce plugin for WordPress. This connector c
 | **Authentication** | Basic auth |
 | **Slug** | `woocommerce` |
 
-## Use it
+## Setup guide
+This guide shows you how to generate WooCommerce REST API keys on your WordPress site and connect your store to fastn with them.
 
-Add WooCommerce from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.woocommerce.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a WordPress site running WooCommerce, and a WordPress user who can manage WooCommerce settings. Each API key is tied to one WordPress user, and the key stops working if that user is deleted.
+- WooCommerce's REST API requires pretty permalinks. In WordPress, check **Settings > Permalinks** and make sure a setting other than the default (Plain) is selected.
+- Your store should be served over HTTPS, because the key and secret are sent with every request.
+
+### Get your WooCommerce credentials
+fastn asks for three values: **storeUrl**, **username** (the consumer key) and **password** (the consumer secret).
+
+1. Note your store address for **storeUrl**: the HTTPS address of your WordPress site with no trailing slash, for example `https://shop.example.com`.
+2. Sign in to your WordPress admin and go to **WooCommerce > Settings > Advanced > REST API**.
+3. Select **Add key**.
+4. Enter a **Description**, such as `fastn`, and choose the **User** the key belongs to.
+5. Set **Permissions** to **Read/Write**, so fastn can both read and change store data.
+6. Select **Generate API key**.
+7. Copy the **Consumer key** (it starts with `ck_`). This is the **username** value.
+8. Copy the **Consumer secret** (it starts with `cs_`). This is the **password** value. WooCommerce shows it only once, so save it before you leave the page. If you lose it, revoke the key and create a new one.
+
+### Connect in fastn
+Your customers enter the store URL, consumer key and consumer secret when they connect WooCommerce in your widget. You can also enter them yourself under Build → Integrations → Connectors → WooCommerce. In workflow code, call an action as `fastn.connector.woocommerce.<actionSlug>()`.
+
+### Events
+fastn supports WooCommerce order, product, customer and coupon events, such as `order.created`, `product.updated` and `customer.deleted`. To start a workflow from one of them, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events; see [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for WooCommerce.
 
 ## Actions
 

@@ -16,9 +16,59 @@ Microsoft Intune device management via the Microsoft Graph v1.0 API (https://gra
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `microsoftIntune` |
 
-## Use it
+## Setup guide
+This guide shows how to register your own Microsoft Entra app for Microsoft Intune and add it to fastn, so your customers sign in to Intune through your app.
 
-Add Microsoft Intune from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.microsoftIntune.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Microsoft Entra ID tenant where you can register apps. Microsoft lists Cloud Application Administrator as the least privileged role that can register an app.
+- The customers who connect need Microsoft Intune to be correctly licensed in their tenant. Microsoft states that using the Graph API to configure Intune still requires a licensed Intune service.
+
+### Create your Microsoft Intune app
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If you have several tenants, use the **Settings** icon and the **Directories + subscriptions** menu to switch to the tenant you want to register the app in.
+2. Go to **Identity** > **Applications** > **App registrations** and select **New registration**.
+3. Enter a **Name** for the app.
+4. Under **Supported account types**, select **Accounts in any organizational directory** so users from your customers' Microsoft Entra tenants can sign in.
+5. Leave **Redirect URI (optional)** empty and select **Register**.
+6. On the app's **Overview** page, copy the **Application (client) ID**.
+7. Under **Manage**, select **Authentication**, then **Add a platform**, and choose **Web**. In **Redirect URI**, enter `https://oauth.live.fastn.ai` exactly, with no trailing slash, and select **Configure**.
+8. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Delegated permissions**. Select these permissions, then select **Add permissions**:
+   - `offline_access`
+   - `openid`
+   - `User.Read`
+   - `Organization.Read.All`
+   - `Group.Read.All`
+   - `Group.ReadWrite.All`
+   - `GroupMember.ReadWrite.All`
+   - `Device.Read.All`
+   - `DeviceManagementManagedDevices.Read.All`
+   - `DeviceManagementConfiguration.ReadWrite.All`
+   - `DeviceManagementServiceConfig.Read.All`
+   - `DeviceManagementRBAC.Read.All`
+   - `DeviceManagementApps.Read.All`
+9. If any of these permissions require admin consent in your tenant, an admin can select **Grant admin consent for <your tenant>** on the **API permissions** page. Admins in your customers' tenants may also need to consent before their users can connect.
+10. Select **Certificates & secrets** > **Client secrets** > **New client secret**. Add a description, pick an expiration (24 months or less), and select **Add**.
+11. Copy the secret's **Value** right away. Microsoft does not show it again after you leave the page. Note the expiration date, because you need to create a new secret and update fastn before it expires.
+
+### Add your app to fastn
+1. In fastn, go to Build → Integrations → Connectors and open **Microsoft Intune**.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**.
+5. Paste the **Application (client) ID** into **Client ID** and the secret **Value** into **Client Secret**.
+6. In **Scopes**, enter the permissions you added in step 8 of the previous section.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+7. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+8. In your widget, set the Microsoft Intune connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who skip this setup sign in through fastn's shared app for Microsoft Intune.
+
+After connecting, call actions from workflow code as `fastn.connector.microsoftIntune.<actionSlug>()`.
 
 ## Actions
 

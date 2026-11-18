@@ -16,9 +16,25 @@ Katana Cloud Inventory (Katana MRP) — manufacturing resource planning and inve
 | **Authentication** | Bearer token |
 | **Slug** | `katanaMrp` |
 
-## Use it
+## Setup guide
+This guide shows where to find the Katana API key that fastn needs, and how it is entered when you connect Katana.
 
-Add Katana MRP from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.katanaMrp.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need a Katana account where you can open **Settings > API** and create API keys.
+
+### Get your Katana credentials
+fastn asks for one value, **token**: a Katana API key. fastn sends it to Katana as a bearer token in the `Authorization` header.
+
+1. Sign in to your Katana account.
+2. Go to **Settings > API**.
+3. Click **Add new API key**.
+4. Copy the key and keep it somewhere safe. Use it as the **token** value in fastn.
+
+Katana recommends that you limit who can see the key and rotate keys from time to time. If you rotate a key, update the connection in fastn with the new one.
+
+### Connect in fastn
+Your customers enter their Katana API key when they connect Katana in your widget. You can also enter it yourself under **Build → Integrations → Connectors → Katana MRP**. After the connection is saved, workflows can call Katana actions, for example `fastn.connector.katanaMrp.<actionSlug>()`.
 
 ## Actions
 

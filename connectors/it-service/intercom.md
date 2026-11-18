@@ -16,9 +16,51 @@ Intercom customer messaging and support platform. Manage contacts, companies, co
 | **Authentication** | Bearer token, OAuth 2.0 |
 | **Slug** | `intercom` |
 
-## Use it
+## Setup guide
 
-Add Intercom from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.intercom.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows how to create your own Intercom app so your customers sign in to Intercom through it, and how to add that app to fastn.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn.
+- You need access to the Intercom Developer Hub. If you do not have a workspace to build in, Intercom lets you create a free development workspace when you create the app. Development workspaces are for testing only and are US-region only.
+- OAuth is for apps that connect to other people's Intercom workspaces. If you only need to connect your own workspace, you can use an access token instead (see the end of this guide).
+
+### Create your Intercom app
+
+1. Sign in to the Intercom Developer Hub and open **Your Apps**.
+2. Click **New App**, enter a name, pick the workspace to install it in (or create a development workspace from the same list), and click **Create app**.
+3. In your app, go to **Configure → Authentication** and select **Use OAuth**.
+4. In the redirect URL field, enter `https://oauth.live.fastn.ai` exactly, with no trailing slash. Use **Add redirect URL** if you already have another one.
+5. Under the permissions on the same page, select the data your workflows need. Intercom groups them as **People & conversation data** and **Workspace data**. fastn does not request extra scopes in the sign-in link, so the permissions you select here are what customers grant. Select only what you need, because Intercom reviews them if you publish the app.
+6. Open the app's **Basic Information** page and copy the **Client ID** and **Client Secret**.
+
+### Add your app to fastn
+
+1. In fastn, go to Build → Integrations → Connectors and open Intercom.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the New Auth Provider form, enter a **Name** and an optional **Description**, then paste the **Client ID** and **Client Secret** from Intercom. Leave **Scopes** empty unless you have a reason to set them; Intercom uses the permissions selected on your app.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set Intercom's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who skip this setup sign in through fastn's shared Intercom app.
+
+#### Using an access token instead
+
+To connect a single workspace without OAuth, open your app in the Developer Hub, go to **Configure → Authentication**, and copy the access token shown there. Enter it as the **accessToken** when you connect Intercom in your widget, or under Build → Integrations → Connectors → Intercom. The token acts with the access of the teammate who installed the app, so keep it private.
+
+### Events
+
+fastn can start a workflow when something happens in Intercom, such as a new conversation, an admin reply, a contact being created or updated, a company change, an article being published or a ticket being created. Add an App event trigger under Build → Integrations → Triggers → Add trigger → App events, pick Intercom and the event, and choose the workflow to run. See [App event triggers](../../build/triggers/app-events.md).
+
+Intercom sends events to the endpoint set on an app's **Configure → Webhooks** page, and each topic needs the matching permission on the app's **Authentication** page. Contact fastn support to set up events for Intercom when customers connect through your own app.
 
 ## Actions
 

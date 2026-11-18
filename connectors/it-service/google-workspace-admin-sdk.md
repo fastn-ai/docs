@@ -16,9 +16,78 @@ Administer a Google Workspace account with the Admin SDK. Provision and manage u
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleWorkspaceAdminSdk` |
 
-## Use it
+## Setup guide
+This guide shows you how to create your own Google OAuth client for the Google Workspace Admin SDK and add it to fastn, so your customers sign in to Google through your app.
 
-Add Google Workspace Admin SDK from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.googleWorkspaceAdminSdk.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Google Cloud project where you can create OAuth clients.
+- The people who connect need a Google Workspace account with administrator privileges for the operations your workflows run. Google's Directory API supports delegated administrators as well.
+- Device actions need extra setup in the Google Admin console: ChromeOS devices need the ChromeOS service set up, and mobile devices need Mobile Management.
+
+### Create your Google Workspace Admin SDK app
+1. In the Google Cloud console, open **Menu > APIs & Services > Library > Google Workspace**, select **Admin SDK API**, and click **Enable**.
+2. Open **Menu > Google Auth platform > Branding**. If you see that the Google Auth platform is not configured yet, click **Get Started** and enter an app name, a user support email, your audience and a contact email, then accept the Google API Services User Data Policy.
+3. Under **Audience**, choose who can use the app. If you choose **External**, add your test accounts under **Test users > Add users** and click **Save**.
+4. Open **Data Access > Add or Remove Scopes** and add the scopes fastn requests, then click **Save**:
+   - `https://www.googleapis.com/auth/admin.directory.user`
+   - `https://www.googleapis.com/auth/admin.directory.user.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.user.security`
+   - `https://www.googleapis.com/auth/admin.directory.user.alias`
+   - `https://www.googleapis.com/auth/admin.directory.user.alias.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.group`
+   - `https://www.googleapis.com/auth/admin.directory.group.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.group.member`
+   - `https://www.googleapis.com/auth/admin.directory.group.member.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.orgunit`
+   - `https://www.googleapis.com/auth/admin.directory.orgunit.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.rolemanagement`
+   - `https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.domain`
+   - `https://www.googleapis.com/auth/admin.directory.domain.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.device.chromeos`
+   - `https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.device.mobile`
+   - `https://www.googleapis.com/auth/admin.directory.device.mobile.action`
+   - `https://www.googleapis.com/auth/admin.directory.device.mobile.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.device.chromebrowsers`
+   - `https://www.googleapis.com/auth/admin.directory.device.chromebrowsers.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.userschema`
+   - `https://www.googleapis.com/auth/admin.directory.userschema.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.resource.calendar`
+   - `https://www.googleapis.com/auth/admin.directory.resource.calendar.readonly`
+   - `https://www.googleapis.com/auth/admin.directory.customer`
+   - `https://www.googleapis.com/auth/admin.directory.customer.readonly`
+   - `https://www.googleapis.com/auth/admin.datatransfer`
+   - `https://www.googleapis.com/auth/admin.datatransfer.readonly`
+   - `https://www.googleapis.com/auth/admin.chrome.printers`
+   - `https://www.googleapis.com/auth/admin.chrome.printers.readonly`
+   - `https://www.googleapis.com/auth/admin.contact.delegation`
+   - `https://www.googleapis.com/auth/admin.contact.delegation.readonly`
+   - `https://www.googleapis.com/auth/admin.reports.audit.readonly`
+   - `https://www.googleapis.com/auth/admin.reports.usage.readonly`
+5. Open **Menu > Google Auth platform > Clients** and click **Create Client**.
+6. Under **Application type**, select **Web application** and enter a **Name**.
+7. Under **Authorized redirect URIs**, click **Add URI** and enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
+8. Click **Create**. Copy the client ID and client secret of the new client, listed under **OAuth 2.0 Client IDs**.
+
+Many of these scopes are sensitive or restricted. An **Internal** app, used only inside your own Google Workspace organization, does not need Google's review for them; an **External** app may.
+
+### Add your app to fastn
+1. In fastn, go to Build → Integrations → Connectors and open Google Workspace Admin SDK.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**, paste the **Client ID** and **Client Secret** from Google, and enter the scopes listed above in **Scopes**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the connector's **Auth provider** to your app instead of **Use platform default**.
+
+In workflow code, call an action as `fastn.connector.googleWorkspaceAdminSdk.<actionSlug>()`. Customers who skip this setup sign in through fastn's shared app for Google Workspace Admin SDK.
 
 ## Actions
 

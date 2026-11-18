@@ -16,9 +16,49 @@ commercetools composable commerce HTTP API — manage products, categories, cust
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `commercetools` |
 
-## Use it
+## Setup guide
 
-Add commercetools from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.commercetools.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows how to create a commercetools API client and add it to fastn, so your customers' connections use credentials from your own commercetools project.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn.
+- You need access to a commercetools project in the Merchant Center, with a team role that lets you create API clients under **Developer settings**.
+- Note your project key and the region your project runs in. The API URL depends on the region, for example `https://api.us-central1.gcp.commercetools.com` or `https://api.europe-west1.gcp.commercetools.com`.
+
+### Create your commercetools app
+
+In commercetools, the app is an API client. fastn signs in with the OAuth 2.0 client credentials flow, so there is no sign-in page and no redirect URL to register.
+
+1. Sign in to the Merchant Center and open your project.
+2. In the main menu, go to **Settings** > **Developer settings**.
+3. On the **API clients** tab, click **Create new API client**.
+4. In **Name**, enter a name that is unique in the project, such as `fastn`.
+5. Under **Scopes**, select the scope fastn requests: `manage_project:<your project key>`. This gives the client access to the whole project.
+6. Click **Create API client**.
+7. Copy the values shown in the **Client credential flow** section: client ID, secret, scope, API URL and Auth URL. commercetools shows them only once, so save them now. You can also download them as an **Environment Variables (.env)** file.
+
+### Add your app to fastn
+
+1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **commercetools**.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**.
+5. Paste the client ID into **Client ID** and the secret into **Client Secret**.
+6. In **Scopes**, enter `manage_project:<your project key>`.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+7. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+8. In your widget, set the commercetools connector's **Auth provider** setting to your app.
+9. When the connection is made, enter the two values fastn asks for: **baseUrl**, your regional API host (for example `https://api.us-central1.gcp.commercetools.com`), and **projectKey**, your commercetools project key.
+
+Customers who skip this sign in through fastn's shared app for commercetools.
+
+After you connect, call actions from workflow code as `fastn.connector.commercetools.<actionSlug>()`.
 
 ## Actions
 

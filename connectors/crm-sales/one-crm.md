@@ -16,9 +16,31 @@ hidden: true
 | **Authentication** | Basic auth |
 | **Slug** | `oneCrm` |
 
-## Use it
+## Setup guide
+This guide shows which 1CRM details fastn needs to connect to your 1CRM instance, and where to find them.
 
-Add 1CRM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.oneCrm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a 1CRM user account on a Pro or Enterprise edition. 1CRM's REST API is not available on the Startup or Startup+ editions and returns 403 Forbidden there.
+- fastn signs in with HTTP Basic authentication. If your 1CRM administrator has turned Basic authentication off, ask them to allow it before you connect.
+- fastn acts as the user you sign in with, so it can only see and change the records that user can see and change in 1CRM.
+
+### Get your 1CRM credentials
+fastn asks for three values.
+
+1. **instanceUrl**: Open 1CRM in your browser and copy the address up to the host name, for example `https://yourcompany.1crmcloud.com`. Leave off the trailing slash and any path. The address must start with `https://`, because 1CRM rejects API calls over plain `http://` by default. To confirm the URL is right, open `/api.php` on it in your browser; 1CRM shows its live API documentation there.
+2. **username**: The user name you use to sign in to 1CRM.
+3. **password**: The password for that user.
+
+Use a user whose access rights cover the modules and records your integration needs, since 1CRM applies the same rules to API calls as to its web interface.
+
+### Connect in fastn
+Your customers enter these values when they connect 1CRM in your widget, or you enter them under Build → Integrations → Connectors → 1CRM.
+
+### Events
+fastn supports the 1CRM events `create`, `update` and `create_update`, which match 1CRM's webhook types for a new record, an updated record, or both. To run a workflow when one of them happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events. See [App events](../../build/triggers/app-events.md).
+
+1CRM sends a webhook only for records that the user who created the webhook can read. Contact fastn support to set up events for 1CRM.
 
 ## Actions
 

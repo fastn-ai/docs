@@ -16,9 +16,24 @@ ShipEngine (ShipStation API) multi-carrier shipping API. Manage carriers, valida
 | **Authentication** | Credentials you enter |
 | **Slug** | `shipengine` |
 
-## Use it
+## Setup guide
+This guide shows you where to find the ShipEngine API key that fastn asks for and how to connect ShipEngine in fastn.
 
-Add ShipEngine from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.shipengine.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need a ShipEngine account that can sign in to the ShipEngine dashboard at dashboard.shipengine.com.
+- Decide whether to connect with a sandbox key for testing or a production key. Calls made with a production key can cost money.
+
+### Get your ShipEngine credentials
+1. Sign in to the ShipEngine dashboard at dashboard.shipengine.com.
+2. Switch to the environment you want. Use **Sandbox** for development and testing, or **Production** for live shipping.
+3. Open the API keys area of the dashboard and copy a key. Sandbox keys always start with `TEST_`. Enter this value as **apiKey**.
+4. For **headerName**, enter `API-Key`. ShipEngine reads the key from this HTTP header on every request.
+
+If the key is wrong, expired or missing, ShipEngine returns a 401 Unauthorized error.
+
+### Connect in fastn
+Your customers enter these values when they connect ShipEngine in your widget. You can also enter them yourself under **Build → Integrations → Connectors → ShipEngine**. After that, workflow code can call actions such as `fastn.connector.shipengine.<actionSlug>()`.
 
 ## Actions
 

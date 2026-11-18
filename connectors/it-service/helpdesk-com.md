@@ -16,9 +16,35 @@ HelpDesk.com is a ticketing and customer support platform from Text (LiveChat). 
 | **Authentication** | Basic auth |
 | **Slug** | `helpdeskCom` |
 
-## Use it
+## Setup guide
+This guide shows you where to find the account ID and personal access token that fastn uses to connect to HelpDesk.com, and how to start workflows from HelpDesk.com ticket events.
 
-Add HelpDesk.com from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.helpdeskCom.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a HelpDesk.com account. You sign in to the Text Developer Console with the same HelpDesk.com credentials.
+- A personal access token runs with the permissions of the HelpDesk.com account that creates it, so use an account that can reach the tickets and settings your workflows need.
+
+### Get your HelpDesk.com credentials
+fastn connects to HelpDesk.com with HTTP Basic authentication: your account ID is the username and a personal access token is the password.
+
+1. Open the Developer Console at platform.text.com/console and sign in with your HelpDesk.com credentials.
+2. Go to **Settings > Authorization > Personal Access Tokens**.
+3. Select the scopes your workflows need. Each HelpDesk.com API method lists the scopes it requires in the HelpDesk.com API reference. You cannot change the scopes after the token is created, so choose them carefully.
+4. Select **Create token +**.
+5. Copy the values the console shows after the token is created:
+   - **username**: your Account ID.
+   - **password**: the Personal Access Token.
+6. Store the token somewhere safe. Treat it like a password and do not share it in public scripts or tickets.
+
+### Connect in fastn
+Your customers enter the account ID as **username** and the personal access token as **password** when they connect HelpDesk.com in your widget. You can also enter them yourself under Build → Integrations → Connectors → HelpDesk.com. In workflow code, call an action as `fastn.connector.helpdeskCom.<actionSlug>()`.
+
+### Events
+fastn supports these HelpDesk.com events: `tickets.create`, `tickets.update`, `tickets.statusChange`, `tickets.events.status`, `tickets.events.priority`, `tickets.events.message`, `tickets.events.tags`, `tickets.events.followers`, `tickets.events.assignment` and `tickets.events.customFields`. To run a workflow when one of them happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events. See [App events](../../build/triggers/app-events.md).
+
+HelpDesk.com marks `tickets.statusChange` as deprecated and recommends `tickets.events.status` instead.
+
+Contact fastn support to set up events for HelpDesk.com.
 
 ## Actions
 

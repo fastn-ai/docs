@@ -16,9 +16,34 @@ CentralStationCRM is a German customer relationship management platform for smal
 | **Authentication** | Credentials you enter |
 | **Slug** | `centralStationCrm` |
 
-## Use it
+## Setup guide
 
-Add CentralStationCRM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.centralStationCrm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows where to find the account name and API key that fastn needs to connect to CentralStationCRM, and how to start workflows from CentralStationCRM events.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn.
+- You need a CentralStationCRM account and a user who can sign in to it and create API keys.
+
+### Get your CentralStationCRM credentials
+
+fastn asks for two values: `accountName` and `apiKey`.
+
+1. Sign in to CentralStationCRM in your browser.
+2. Look at the address bar. Your account name is the subdomain before `.centralstationcrm.net`. For example, if the address is `https://acme.centralstationcrm.net`, your account name is `acme`. Enter it as **accountName**.
+3. Open your settings and go to the API section (Einstellungen > API).
+4. Create a new API key and copy it. Enter it as **apiKey**.
+5. Store the key somewhere safe. Anyone who has it can call the CentralStationCRM API for your account.
+
+### Connect in fastn
+
+Your customers enter these values when they connect CentralStationCRM in your widget. You can also enter them yourself under Build → Integrations → Connectors → CentralStationCRM.
+
+### Events
+
+fastn supports CentralStationCRM events for when people, companies, deals, projects and protocols are created, updated or deleted, such as `person.create`, `deal.update` and `company.destroy`. To run a workflow when one of these happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events. See [App events](../../build/triggers/app-events.md).
+
+Contact fastn support to set up events for CentralStationCRM.
 
 ## Actions
 

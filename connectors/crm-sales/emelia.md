@@ -16,9 +16,26 @@ Emelia cold-email and LinkedIn outreach platform. Manage multichannel campaigns,
 | **Authentication** | API key |
 | **Slug** | `emelia` |
 
-## Use it
+## Setup guide
+This guide covers creating an Emelia API key and using it to connect Emelia to fastn.
 
-Add Emelia from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.emelia.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need an Emelia account with access to **Settings** in the Emelia app.
+
+### Get your Emelia credentials
+fastn asks for one value, **emeliaKey**: your Emelia API key. fastn sends it as-is in the `Authorization` header, with no `Bearer` prefix.
+
+1. Sign in to the Emelia app.
+2. Go to **Settings** → **API & Webhooks**.
+3. Click **Create new key**.
+4. Copy the key and store it somewhere safe. You can create more than one key, and disable or delete a key from the same page later.
+
+### Connect in fastn
+Your customers paste the API key into the **emeliaKey** field when they connect Emelia in your widget. You can also enter it yourself under Build → Integrations → Connectors → Emelia. After that, workflows call Emelia actions as `fastn.connector.emelia.<actionSlug>()`.
+
+### Events
+fastn supports Emelia campaign activity events such as `MAIL_SENT`, `MAIL_REPLIED`, `OPENED`, `CLICKED`, `BOUNCED`, `UNSUBSCRIBED` and LinkedIn events such as `LINKEDIN_REPLIED`, `INVITED` and `ACCEPTED`. To run a workflow when one happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event (see [App events](../../build/triggers/app-events.md)). Emelia sends events through webhooks, which are managed on the same **API & Webhooks** settings page and through its API. Contact fastn support to set up events for Emelia.
 
 ## Actions
 

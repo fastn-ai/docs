@@ -16,9 +16,32 @@ Booqable is rental management software for equipment and inventory rental busine
 | **Authentication** | Credentials you enter |
 | **Slug** | `booqable` |
 
-## Use it
+## Setup guide
 
-Add Booqable from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.booqable.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows you where to find the Booqable company slug and access token that fastn asks for, and how to use Booqable events in your workflows.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Booqable user account in the company you want to connect. A token has the same permissions as the user who creates it, so create it as a user who can see and change the data your workflows need.
+
+### Get your Booqable credentials
+
+1. Find your **companySlug**. It is the first part of the address you use to open Booqable. For `https://acme.booqable.com` the slug is `acme`.
+2. In Booqable, move your cursor over your avatar in the lower-left corner and select **User settings**. You can also go straight to `https://<company slug>.booqable.com/employees/current`.
+3. Scroll down to the **Authentication Methods** section.
+4. Click **New Authentication Method** and type a short name that tells you where the key is used, for example `fastn`.
+5. Click **Save**, then copy the generated key. Enter it in fastn as **token**.
+
+### Connect in fastn
+
+Your customers enter the company slug and token when they connect Booqable in your widget, or you enter them yourself under **Build → Integrations → Connectors → Booqable**. fastn sends requests to `https://<company slug>.booqable.com` with the token as a bearer token, and workflows then call Booqable actions as `fastn.connector.booqable.<actionSlug>()`.
+
+### Events
+
+To run a workflow when something happens in Booqable, such as `order.reserved`, `customer.created` or `payment.completed`, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and pick the Booqable event. See [App events](../../build/triggers/app-events.md).
+
+Contact fastn support to set up events for Booqable.
 
 ## Actions
 

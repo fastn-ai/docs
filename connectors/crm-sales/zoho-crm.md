@@ -16,9 +16,45 @@ Zoho CRM is a cloud-based CRM platform. Manage leads, contacts, accounts, deals,
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `zohoCrm` |
 
-## Use it
+## Setup guide
+This guide shows you how to register your own Zoho CRM OAuth client in the Zoho API Console and add it to fastn, so your customers sign in to Zoho CRM through your app.
 
-Add Zoho CRM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.zohoCrm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Zoho account that can sign in to the Zoho API Console at https://api-console.zoho.com/.
+- Have fastn's redirect URL ready: `https://oauth.live.fastn.ai`
+
+### Create your Zoho CRM app
+1. Go to the Zoho API Console at https://api-console.zoho.com/ and click **GET STARTED** (or **Add Client** if you already have clients).
+2. Choose the **Server-based Applications** client type and click **CREATE NOW**.
+3. Fill in the client details:
+   - **Client Name**: a name your customers will recognize, such as your product name.
+   - **Homepage URL**: your product's website.
+   - **Authorized Redirect URIs**: enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
+4. Click **CREATE**.
+5. Open the **Client Secret** tab and copy the **Client ID** and **Client Secret**. Keep the secret private.
+6. Note the scopes fastn requests for Zoho CRM. Zoho takes scopes on the sign-in request, so you add them in fastn in the next section:
+   - `ZohoCRM.modules.ALL`
+   - `ZohoCRM.settings.ALL`
+   - `ZohoCRM.users.ALL`
+   - `ZohoCRM.org.ALL`
+
+### Add your app to fastn
+1. In fastn, go to **Build → Integrations → Connectors** and open **Zoho CRM**.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**, then paste the **Client ID** and **Client Secret** you copied from Zoho.
+5. In **Scopes**, add `ZohoCRM.modules.ALL`, `ZohoCRM.settings.ALL`, `ZohoCRM.users.ALL` and `ZohoCRM.org.ALL`.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+6. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+7. In your widget, set the Zoho CRM connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who connect without your own app sign in through fastn's shared Zoho CRM app.
 
 ## Actions
 

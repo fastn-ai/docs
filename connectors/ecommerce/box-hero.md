@@ -16,9 +16,25 @@ BoxHero inventory management. Manage items, item attributes, locations, bundles,
 | **Authentication** | Bearer token |
 | **Slug** | `boxHero` |
 
-## Use it
+## Setup guide
+This guide shows you how to get a BoxHero API token and connect BoxHero to fastn. BoxHero uses a bearer token, so you don't need to create an OAuth app.
 
-Add BoxHero from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.boxHero.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a BoxHero account with access to the team you want to connect. BoxHero says its API is available on every plan, including the free Personal plan.
+- Each BoxHero API token works for one team only. To connect more than one team, issue a token in each team.
+
+### Get your BoxHero credentials
+1. Sign in to the BoxHero desktop web app and switch to the team you want to connect.
+2. Go to **Settings > Integrations** and open the API section.
+3. Issue an API token and copy it.
+4. In fastn, enter the token in the **token** field.
+
+### Connect in fastn
+Your customers enter this token when they connect BoxHero in your widget. You can also enter it yourself under **Build → Integrations → Connectors → BoxHero**. Once BoxHero is connected, a workflow can call its actions as `fastn.connector.boxHero.<actionSlug>()`.
+
+### Events
+The BoxHero connector supports transaction events (`txs/new`, `txs/edit`, `txs/delete`) and item events (`item/new`, `item/edit`, `item/delete`). To start a workflow from one of them, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md). BoxHero does not send item events for some bulk operations, such as Excel imports, adding item variants, bulk edits and bulk deletions. Contact fastn support to set up events for BoxHero.
 
 ## Actions
 

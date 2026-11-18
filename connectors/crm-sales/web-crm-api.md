@@ -16,9 +16,35 @@ webCRM via the webCRM REST API (api.webcrm.com). Manage organisations, persons, 
 | **Authentication** | Credentials you enter |
 | **Slug** | `webCrmApi` |
 
-## Use it
+## Setup guide
 
-Add webCRM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.webCrmApi.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows how to create the webCRM API token that fastn needs to connect webCRM, and how to start workflows from webCRM events.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need a webCRM user who can open the system configuration in webCRM and create API tokens.
+
+### Get your webCRM credentials
+
+fastn asks for one value, **authCode**, which is your webCRM API token.
+
+1. Sign in to webCRM.
+2. Go to **Configurations → Integration → API**.
+3. Create a new API token and copy it. Treat the token like a password and do not share it.
+4. Paste the token into the **authCode** field in fastn.
+
+fastn exchanges the API token for a short-lived webCRM access token (valid for about one hour) and renews it automatically, so you do not need to enter it again. webCRM limits each API token to its own request quota, so a dedicated token for fastn keeps its traffic separate from your other integrations.
+
+### Connect in fastn
+
+Your customers enter their API token when they connect webCRM in your widget, or you enter it under **Build → Integrations → Connectors → webCRM**. After the connection is saved, your workflows can call webCRM actions, for example `fastn.connector.webCrmApi.<actionSlug>()`.
+
+### Events
+
+fastn supports webCRM events for created, updated and deleted records, including activities, deliveries, documents, events, meetings, opportunities, organisations, persons, B2C persons, products, quotation lines, relations and support cases, plus new users. To start a workflow from one of them, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and choose the webCRM event. See [App events](../../build/triggers/app-events.md).
+
+webCRM delivers events through hooks, which are registered per record type with a target URL. Contact fastn support to set up events for webCRM.
 
 ## Actions
 

@@ -16,9 +16,37 @@ Whop is a commerce platform for selling digital products, memberships and commun
 | **Authentication** | Credentials you enter |
 | **Slug** | `whop` |
 
-## Use it
+## Setup guide
 
-Add Whop from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.whop.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows you where to find the Whop API key and base URL that fastn asks for, and how to use Whop events in your workflows.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Whop account with access to the Developer page of the Whop dashboard, where API keys are created.
+- Decide whether you are connecting to Whop production or to the Whop sandbox. The two environments share no accounts, keys, products or webhooks, so a key from one does not work in the other.
+
+### Get your Whop credentials
+
+1. Sign in to Whop and open the Developer page of your dashboard. For production this is `whop.com/dashboard/developer`; for the sandbox it is `sandbox.whop.com/dashboard/developer`.
+2. In **Account API Keys**, select **Create** to make a new account API key.
+3. Choose the permissions for the key. Whop recommends giving the key a custom permission set that covers only the endpoints you use, rather than leaving it at Admin.
+4. Copy the key. An account key starts with `apik_`. Enter it in fastn as **token**.
+5. For **baseUrl**, enter the API address that matches where you created the key:
+   - Production: `https://api.whop.com/api/v1`
+   - Sandbox: `https://sandbox-api.whop.com/api/v1`
+
+Production and sandbox keys look the same, so check that the key and the base URL come from the same environment.
+
+### Connect in fastn
+
+Your customers enter the API key and base URL when they connect Whop in your widget, or you enter them yourself under **Build → Integrations → Connectors → Whop**. fastn sends the key as a bearer token on every request, and workflows then call Whop actions as `fastn.connector.whop.<actionSlug>()`.
+
+### Events
+
+To run a workflow when something happens in Whop, such as `payment.succeeded`, `membership.activated` or `invoice.paid`, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and pick the Whop event. See [App events](../../build/triggers/app-events.md).
+
+Contact fastn support to set up events for Whop.
 
 ## Actions
 

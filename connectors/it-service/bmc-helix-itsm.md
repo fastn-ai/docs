@@ -16,9 +16,26 @@ BMC Helix ITSM service management platform. Manage incidents, changes, problems,
 | **Authentication** | Credentials you enter |
 | **Slug** | `bmcHelixItsm` |
 
-## Use it
+## Setup guide
+This guide covers the values you need to connect BMC Helix ITSM to fastn and how to start workflows from BMC Helix ITSM records.
 
-Add BMC Helix ITSM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.bmcHelixItsm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a BMC Helix ITSM user account. BMC's REST API acts on behalf of an AR System user, which can be a local user or an LDAP user.
+- That user's existing BMC Helix ITSM permissions decide what fastn can read and change, so use an account that can access the forms your workflows need (for example incidents, changes or work orders).
+
+### Get your BMC Helix ITSM credentials
+1. **baseUrl**: copy the address of your BMC Helix ITSM / AR System server, starting with `https://` and without a trailing slash, for example `https://acme-demo-is.onbmc.com`. If you are not sure which address serves the REST API, ask your BMC Helix administrator. BMC's REST API requires HTTPS by default.
+2. **username**: the BMC Helix ITSM / AR System user name of the account you chose above.
+3. **password**: the password for that user. fastn uses it only to request a session token from BMC, and requests a new token on its own when the current one expires.
+
+### Connect in fastn
+Your customers enter these three values when they connect BMC Helix ITSM in your widget. You can also enter them yourself under Build → Integrations → Connectors → BMC Helix ITSM. After connecting, call actions from workflow code as `fastn.connector.bmcHelixItsm.<actionSlug>()`.
+
+### Events
+fastn supports events for these BMC Helix ITSM forms: `HPD:Help Desk`, `CHG:Infrastructure Change`, `PBM:Problem Investigation`, `PBM:Known Error`, `WOI:WorkOrder`, `TMS:Task`, `RKM:KnowledgeArticleManager`, `CTM:People` and `BMC.CORE:BMC_BaseElement`. To start a workflow from one of them, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events. See [App events](../../build/triggers/app-events.md).
+
+Contact fastn support to set up events for BMC Helix ITSM.
 
 ## Actions
 

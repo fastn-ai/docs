@@ -16,9 +16,44 @@ Commerce Layer is a headless, API-first commerce platform. This connector covers
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `commerceLayer` |
 
-## Use it
+## Setup guide
+This guide shows you how to create a Commerce Layer integration credential and add it to fastn. fastn uses it to call the Commerce Layer Core API for your organization.
 
-Add Commerce Layer from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.commerceLayer.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need access to the Commerce Layer dashboard for the organization you want to connect, with permission to create API credentials.
+- Decide whether fastn should only read data (Read-only role) or also create, update and delete it (Admin role). Most actions, such as Create Order or Create Customer, need Admin.
+
+### Create your Commerce Layer app
+fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. This grant has no sign-in screen, so you do not need a redirect URL. In Commerce Layer, the app is called an integration.
+
+1. Sign in to the Commerce Layer dashboard and select your organization.
+2. In the left sidebar, open **Developers** and click **API credentials**.
+3. Click **+ New** at the top right of the list.
+4. Choose the **Integration** card. Integrations are confidential clients and come with a client secret. Sales channel credentials do not.
+5. Enter a name you will recognize later, such as `fastn`.
+6. Pick a role: **Read-only** allows only reads. **Admin** allows creating, reading, updating and deleting any resource.
+7. Click **Create**.
+8. On the details page, copy the **Client ID** and **Client secret**. Also note the **Base endpoint**, for example `https://acme-sandbox.commercelayer.io`. The part before `.commercelayer.io` is your organization slug.
+
+### Add your app to fastn
+1. In fastn, go to **Build → Integrations → Connectors** and open **Commerce Layer**.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**. Paste the **Client ID** and **Client Secret** you copied from Commerce Layer, and leave **Scopes** empty.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the Commerce Layer connector's **Auth provider** setting to this app.
+
+When you or your customers connect Commerce Layer, enter the **organization slug**. This is the subdomain of the API base URL. For `https://acme-sandbox.commercelayer.io`, enter `acme-sandbox`.
+
+### Events
+To run a workflow when something happens in Commerce Layer, such as `orders.place`, `shipments.ship` or `returns.approve`, add an App event trigger. Go to **Build → Integrations → Triggers → Add trigger → App events** and choose Commerce Layer. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Commerce Layer.
 
 ## Actions
 

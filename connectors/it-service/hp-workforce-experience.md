@@ -16,9 +16,52 @@ HP Workforce Experience Platform (WXP) — device analytics, health scores, warr
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `hpWorkforceExperience` |
 
-## Use it
+## Setup guide
+This guide shows you how to request your own OAuth app on the HP Developers portal and add it to fastn, and which regional URLs your customers enter when they connect HP Workforce Experience.
 
-Add HP Workforce Experience from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.hpWorkforceExperience.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need an HP Proactive Insights (Workforce Experience) account, set up by HP for your company as a customer or as a partner. HP sets up these accounts on request.
+- You need an account on the [HP Developers portal](https://developers.hp.com) that signs in with your Proactive Insights login. Your HP representative has to add you to the HP Proactive Insights Group before you can create an app.
+- HP reviews each new app request, so plan for a wait before you get the credentials.
+
+### Create your HP Workforce Experience app
+1. Go to the [HP Developers portal](https://developers.hp.com) and select **Login**, using your Proactive Insights login. If you have no portal account yet, select **Register** first.
+2. Start a new app request from the portal (from **APIs** > **Get Credentials**, or from **My Apps** > **Add a new App**, depending on your portal view).
+3. For the product, choose the HP Proactive Insights / TechPulse Analytics product.
+4. Under **Product Scope**, select **Read**. This is the scope fastn requests.
+5. Enter an **App Name**. The **App Unique Name** is filled in for you.
+6. In the redirect field, enter `https://oauth.live.fastn.ai`.
+7. Select **Create**. The request stays in the Pending state until HP approves it, and HP emails you when it does.
+8. After approval, open your dashboard or **My Apps**, select the approved app, and copy the **API Key** (the client ID) and **API Secret** (the client secret). HP expires the secret after 365 days, so note the date and reset it before then.
+
+### Add your app to fastn
+1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **HP Workforce Experience**.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**, paste the API Key into **Client ID** and the API Secret into **Client Secret**, and enter `Read` in **Scopes**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+If you skip these steps, your customers sign in through fastn's shared app for HP Workforce Experience.
+
+### Values your customers enter
+When a customer connects, fastn also asks for the base URLs of their HP region:
+- **daasUrl**: the TechPulse (DaaS) Analytics and Incident Integration API for their region. For US tenants this is `https://daas.api.hp.com`; for EU tenants it is `https://eu.daas.api.hp.com`.
+- **wxpUrl**: the Workforce Experience Platform API used for insights, asset queries and reports. In production this is `https://api.workforceexperience.hp.com`.
+- **authzUrl**: the base URL of the Workforce Experience platform services (tenant search, roles, entitlements, asset queries) for their region.
+- **alertsUrl**: the base URL of the Workforce Experience custom device alerts service.
+
+Customers who are unsure of their region's URLs can get them from their HP representative.
+
+### Events
+fastn supports HP Workforce Experience `critical`, `warn` and `info` events. To start a workflow from one, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for HP Workforce Experience.
 
 ## Actions
 

@@ -16,9 +16,30 @@ Detrack delivery management and real-time vehicle tracking (API v2). Create, upd
 | **Authentication** | API key |
 | **Slug** | `detrack` |
 
-## Use it
+## Setup guide
+This guide covers where to find the Detrack API key that fastn uses to connect, and how to start workflows from Detrack job status events.
 
-Add Detrack from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.detrack.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Detrack account that can sign in to the Detrack web app and open the **Integrations** menu.
+- Detrack advises against handing out the account owner's key. If you connect on behalf of someone else, consider creating a separate sub-user in Detrack and generating that sub-user's API key.
+
+### Get your Detrack credentials
+fastn asks for one value, **detrackApiKey**:
+
+1. Sign in to the Detrack web app.
+2. Go to **Integrations** and select **API Key**.
+3. Select **Generate a new API Key**, then copy the key.
+
+fastn sends this key to Detrack in the `X-API-KEY` header. Anyone with the key can reach your Detrack data, so store it the way you would a password.
+
+### Connect in fastn
+Your customers enter this API key when they connect Detrack in your widget, or you enter it under **Build** > **Integrations** > **Connectors** > **Detrack**.
+
+### Events
+To run a workflow when a Detrack job changes status, such as `dispatched`, `completed`, `failed` or `on_hold`, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Detrack event. See [App events](../../build/triggers/app-events.md).
+
+Detrack sends job status updates to a webhook URL set in the Detrack web app. Contact fastn support to set up events for Detrack.
 
 ## Actions
 

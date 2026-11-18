@@ -16,9 +16,30 @@ OnePageCRM is an action-focused sales CRM. This connector wraps the OnePageCRM R
 | **Authentication** | Basic auth |
 | **Slug** | `onepagecrm` |
 
-## Use it
+## Setup guide
+This guide shows you where to find the OnePageCRM user ID and API key that fastn uses to connect to a OnePageCRM account, and how to start workflows from OnePageCRM events.
 
-Add OnePageCRM from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.onepagecrm.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a OnePageCRM account you can sign in to. The user ID and API key belong to that user, so fastn acts as that user.
+- To set up events, you need to be an administrator of the OnePageCRM account.
+
+### Get your OnePageCRM credentials
+1. Sign in to OnePageCRM.
+2. Open the API settings page under **Apps > API & Integrations** (you can also go straight to `https://app.onepagecrm.com/app/api`).
+3. Open the **Configuration** tab.
+4. Copy the **User ID**. In fastn, enter it in the **username** field.
+5. Copy the **API key** from the same page. In fastn, enter it in the **password** field.
+
+Keep the API key private. Anyone who has it can call the OnePageCRM API as you.
+
+### Connect in fastn
+Your customers enter these values when they connect OnePageCRM in your widget, or you enter them under **Build → Integrations → Connectors → OnePageCRM**. After the connection is saved, you can call OnePageCRM actions in workflow code as `fastn.connector.onepagecrm.<actionSlug>()`.
+
+### Events
+fastn supports OnePageCRM events for contacts, companies, deals, actions, notes, calls and meetings. To start a workflow when one of these happens, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md).
+
+OnePageCRM sends events through its **Webhooks** app, which an account administrator turns on from the **Apps** page. Contact fastn support to set up events for OnePageCRM.
 
 ## Actions
 

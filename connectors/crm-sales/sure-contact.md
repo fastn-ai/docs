@@ -16,9 +16,25 @@ SureContact CRM via MCP — manage contacts, tags, lists, notes, activities, cam
 | **Authentication** | API key |
 | **Slug** | `sureContact` |
 
-## Use it
+## Setup guide
+This guide shows how to get the SureContact API key that fastn uses to connect to a SureContact workspace, and where that key goes in fastn.
 
-Add SureContact from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.sureContact.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a SureContact account that can sign in to the workspace you want to connect.
+- The API key's abilities control what fastn can do in SureContact, so decide whether workflows only read data or also create, update and delete it.
+
+### Get your SureContact credentials
+fastn asks for one value, **API Key** (`apiKey`).
+
+1. Sign in to SureContact.
+2. In the top bar, open your profile and go to **API Keys**.
+3. Click **Create API Key**.
+4. Choose the abilities the key needs: **read**, **write** and **delete**. Pick only the ones your workflows use. For example, actions such as `create-contact-tool` or `create-campaign-tool` need write access.
+5. Copy the key right away. SureContact shows it only once, so store it somewhere safe. If you lose it, create a new key.
+
+### Connect in fastn
+Your customers enter their API key when they connect SureContact in your widget. You can also enter it yourself under Build → Integrations → Connectors → SureContact. After the connection is set up, call the connector's actions from workflow code as `fastn.connector.sureContact.<actionSlug>()`, for example `fastn.connector.sureContact.createContactTool()`.
 
 ## Actions
 

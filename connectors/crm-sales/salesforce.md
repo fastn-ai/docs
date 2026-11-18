@@ -16,9 +16,47 @@ Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, 
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `salesforce` |
 
-## Use it
+## Setup guide
+This guide shows how to create your own Salesforce external client app for OAuth and add it to fastn, so your customers sign in to Salesforce through your app.
 
-Add Salesforce from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.salesforce.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Salesforce org where you can open Setup and create apps, such as a Developer Edition org or an org where you are a Salesforce administrator.
+- Have the fastn redirect URL ready: `https://oauth.live.fastn.ai`.
+
+### Create your Salesforce app
+1. In Salesforce, open **Setup**. In the **Quick Find** box, enter `external client`, then select **External Client App Manager**.
+2. Click **New External Client App** and fill in the basic information, such as the app name and a contact email.
+3. In the **API (Enable OAuth Settings)** section, select **Enable OAuth**.
+4. In **Callback URL**, enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
+5. Under **OAuth Scopes**, add these scopes to **Selected OAuth Scopes**:
+   - Manage user data via APIs (`api`)
+   - Full access (`full`)
+   - Perform requests at any time (`refresh_token`, `offline_access`)
+6. Save the app.
+7. Open the app's **Settings** tab, expand **OAuth Settings**, and click **Consumer Key and Secret**. Salesforce emails you a verification code; enter it to see the values.
+8. Copy the **Consumer Key** (your client ID) and the **Consumer Secret** (your client secret).
+
+### Add your app to fastn
+1. In fastn, go to Build → Integrations → Connectors and open Salesforce.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the New Auth Provider form, enter a **Name** and an optional **Description**.
+5. Paste the Consumer Key into **Client ID** and the Consumer Secret into **Client Secret**.
+6. In **Scopes**, enter `api`, `full`, `refresh_token` and `offline_access`.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+7. Create the provider, then choose **Use this app** so it becomes the Preferred app.
+8. In your widget, set the Salesforce connector's **Auth provider** setting to your app instead of "Use platform default".
+
+Customers who skip this setup sign in through fastn's shared Salesforce app.
+
+### Events
+fastn can start a workflow when Salesforce records change, for example when an account, contact, lead, opportunity or case is created, updated or deleted. To use one of these events, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the Salesforce event. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Salesforce.
 
 ## Actions
 

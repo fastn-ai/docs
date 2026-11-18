@@ -16,9 +16,52 @@ Shopify Admin REST API connector for managing orders, products, customers, inven
 | **Authentication** | Credentials you enter, OAuth 2.0 |
 | **Slug** | `shopify` |
 
-## Use it
+## Setup guide
+This guide shows how to connect Shopify to fastn, either with your own Shopify app on OAuth or with an Admin API access token that a merchant enters, and how to start workflows from Shopify events.
 
-Add Shopify from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.shopify.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- For your own OAuth app, you need access to the Shopify Dev Dashboard. To install the app on stores outside your own organization, the app must belong to a Partner organization so that you can pick a distribution method.
+- For the access token method, the merchant needs a custom app that was created in the Shopify admin and has the Admin API scopes their workflows need. Shopify no longer allows new custom apps to be created in the admin.
+
+### Create your Shopify app
+1. Open the Dev Dashboard at dev.shopify.com. Under **Apps**, click **Create app**.
+2. Select **Start from Dev Dashboard**, enter a name, and click **Create**.
+3. On the app's **Versions** page, fill in the version:
+   - **App URL**: if the app isn't embedded in the Shopify admin, use `https://shopify.dev/apps/default-app-home`.
+   - **Webhooks API version**: usually the newest version.
+   - **Scopes**: select the Admin API access scopes for the data your workflows read and write, such as orders, products, customers or inventory. Some customer data needs Shopify's approval.
+   - **Redirect URLs**: enter `https://oauth.live.fastn.ai`. It must match exactly.
+4. Click **Release**.
+5. To install the app on merchants' stores, open the app's **Home** page, find the **Distribution** card, and click **Select distribution method**. Choose **Public** (listed on the Shopify App Store) or **Custom** (a private install link for one store, or several stores in one Plus organization). You can't change this choice later.
+6. Click **Settings** in your app and copy the **Client ID** and **Client secret**.
+
+### Add your app to fastn
+1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **Shopify**.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**. Paste your **Client ID** and **Client Secret**, and in **Scopes**, enter the same scopes you selected in your app version.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the preferred app.
+6. In your widget, set the Shopify connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who skip this sign in through fastn's shared Shopify app.
+
+### Get your Shopify credentials
+The access token method asks for two values:
+1. **shop**: the store subdomain, the part before `.myshopify.com`. For `acme-store.myshopify.com`, enter `acme-store`.
+2. **accessToken**: the Admin API access token of a custom app created in the Shopify admin. In the Shopify admin, go to **Settings** > **Apps and sales channels** > **Develop apps** and click the app. On the **Admin API access token** card (under the **API credentials** tab if the page has tabs), click **Reveal token once** and copy the token. Shopify shows it only once. If you lose it, uninstall and reinstall the app to get a new one.
+
+### Connect in fastn
+Your customers enter these values when they connect Shopify in your widget. You can also enter them yourself under **Build** > **Integrations** > **Connectors** > **Shopify**.
+
+### Events
+To run a workflow when something happens in a store, such as `orders/create`, `products/update` or `customers/create`, add an App event trigger: go to **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Shopify event. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Shopify.
 
 ## Actions
 

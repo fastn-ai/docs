@@ -16,9 +16,27 @@ Bonjoro is a personal video messaging platform for sales follow-up, onboarding a
 | **Authentication** | Bearer token |
 | **Slug** | `bonjoro` |
 
-## Use it
+## Setup guide
+This guide covers getting a Bonjoro API access token and using it to connect Bonjoro to fastn.
 
-Add Bonjoro from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.bonjoro.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Bonjoro account that can sign in to the Bonjoro web app.
+- Bonjoro's API V2 issues access tokens through its OAuth token endpoint, which also asks for a client ID and client secret. If you do not have these, ask Bonjoro support for API access.
+
+### Get your Bonjoro credentials
+fastn asks for one value, **token**: your Bonjoro API access token. fastn sends it as `Authorization: Bearer <token>`.
+
+1. Get API client credentials (a client ID and client secret) from Bonjoro.
+2. Request a token from Bonjoro's token endpoint, `POST https://www.bonjoro.com/api/v2/oauth/2/token`, with a JSON body that sets `grant_type` (for example `password`, with your Bonjoro `username` and `password`) along with your `client_id` and `client_secret`.
+3. From the response, copy the value of `access_token`. Bonjoro returns it with `token_type` `Bearer`.
+4. Keep the token somewhere safe. The sample response in Bonjoro's API docs shows an `expires_in` of one year, so plan to request a new token before it expires.
+
+### Connect in fastn
+Your customers paste the access token into the **token** field when they connect Bonjoro in your widget. You can also enter it yourself under Build → Integrations → Connectors → Bonjoro. After that, workflows call Bonjoro actions as `fastn.connector.bonjoro.<actionSlug>()`.
+
+### Events
+fastn supports the Bonjoro events `bonjoro_created` and `bonjoro_interacted`. To run a workflow when one happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for Bonjoro.
 
 ## Actions
 

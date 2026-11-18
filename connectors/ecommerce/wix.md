@@ -16,9 +16,37 @@ Wix REST API connector (www.wixapis.com). Stores (products/inventory/categories)
 | **Authentication** | Credentials you enter, OAuth 2.0 |
 | **Slug** | `wix` |
 
-## Use it
+## Setup guide
+This guide shows where your customers find the Wix values fastn asks for when they connect Wix, using either a Wix API key or a Wix headless OAuth client.
 
-Add Wix from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.wix.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn to configure the connector.
+- To create a Wix API key, you must be the owner or a co-owner of the Wix account.
+- Site-level calls work only with a key created in the account that owns the site, so create the key in the site owner's account.
+- To use OAuth instead, you need a Wix headless project with a headless OAuth client.
+
+### Get your Wix credentials
+Fastn's **Wix API Key** method asks for `apiKey`, `siteId` and an optional `accountId`.
+
+1. In Wix, go to **Account Settings** and open **API Keys**.
+2. Click **Generate API Key**.
+3. Under **Key details**, enter a name for the key.
+4. Select the permissions the key needs for the actions you plan to run (for example Stores, eCommerce, Contacts or Bookings). Limit site access to the sites you need.
+5. Click **Generate Key**, then click **Send Code** and enter the 6-digit code Wix emails you in the **Verify your account** pop-up.
+6. Click **Verify & Generate Key**, then **Copy Token & Close**. This is your `apiKey`. Wix shows the token only once, so store it safely.
+7. On the same **API Keys** page, click **Copy ID** under **Account ID**. This is your `accountId`, used for account-level actions such as Query Sites.
+8. Open the site's dashboard and look at the browser address bar. The ID after `/dashboard/` (for example `manage.wix.com/dashboard/<site-id>/home`) is your `siteId`. You can also list site IDs with the Query Sites action.
+
+Fastn's **Wix OAuth 2.0** method uses the client credentials flow and asks for `clientId`, `clientSecret`, `siteId` and `accountId`.
+
+1. In your headless project's dashboard, go to **Settings** > **Development & integrations** > **Headless Settings**.
+2. Next to your headless client, open the more actions menu to open the client's settings.
+3. Copy the client's ID. This is your `clientId`.
+4. In the **Client info** section, under **Client secret**, click **Generate Client Secret** and copy it. This is your `clientSecret`. Wix shows it only once.
+5. Find `siteId` and `accountId` as described in steps 7 and 8 above.
+
+### Connect in fastn
+Your customers enter these values when they connect Wix in your widget, or you can enter them yourself under **Build → Integrations → Connectors → Wix**.
 
 ## Actions
 

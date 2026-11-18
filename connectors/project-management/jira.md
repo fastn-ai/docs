@@ -16,9 +16,53 @@ Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk o
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `jira` |
 
-## Use it
+## Setup guide
+This guide shows how to create your own Atlassian OAuth 2.0 app for Jira and add it to fastn, so your customers sign in to Jira through your app.
 
-Add Jira from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.jira.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need an Atlassian account to sign in to the Atlassian developer console.
+- Your customers need a Jira Cloud site to connect.
+
+### Create your Jira app
+1. Go to https://developer.atlassian.com, select your profile icon in the top right, and choose **Developer console**.
+2. Open the **Create** menu and choose **OAuth 2.0 integration**.
+3. Enter a name for the app and choose a grant type: **Account-level** (one consent covers every site the app is installed on) or **Resource-level** (consent covers only the sites the user picks). Create the app.
+4. In the left menu, select **Authorization**. Next to **OAuth 2.0 (3LO)**, select **Configure**.
+5. In **Callback URL**, enter `https://oauth.live.fastn.ai` exactly as shown, with no trailing slash, and select **Save changes**.
+6. In the left menu, select **Permissions**. Next to **Jira API**, select **Add**, then select **Configure**.
+7. Add each scope fastn requests:
+   - `read:jira-work`
+   - `write:jira-work`
+   - `manage:jira-project`
+   - `manage:jira-configuration`
+   - `read:jira-user`
+   - `manage:jira-webhook`
+
+   fastn also asks for `offline_access` when a customer signs in, so Jira returns a refresh token. You do not add it in the developer console.
+8. In the left menu, select **Distribution**. Turn on sharing in the **Enable sharing** section. Apps are private by default, so without this only you can authorize the app. Until Atlassian reviews the app, people who sign in see a notice that it has not been reviewed.
+9. In the left menu, select **Settings** and copy the **Client ID** and **Secret**.
+
+### Add your app to fastn
+1. Go to **Build** → **Integrations** → **Connectors** and open **Jira**.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and, if you like, a **Description**. Paste the **Client ID** and **Secret** from Atlassian into **Client ID** and **Client Secret**, and enter the scopes from the list above in **Scopes**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the Jira connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+If you skip this section, your customers sign in to Jira through fastn's shared app.
+
+After a customer connects, you can call actions from workflow code, for example `fastn.connector.jira.<actionSlug>()`.
+
+### Events
+To run a workflow when an issue or comment is created, updated or deleted in Jira, add an App event trigger under **Build** → **Integrations** → **Triggers** → **Add trigger** → **App events** (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for Jira.
 
 ## Actions
 

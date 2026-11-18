@@ -16,9 +16,59 @@ GoHighLevel (HighLevel) is an all-in-one CRM, marketing-automation and agency pl
 | **Authentication** | Credentials you enter, OAuth 2.0 |
 | **Slug** | `leadConnector` |
 
-## Use it
+## Setup guide
+This guide shows how to connect GoHighLevel to fastn, either with your own GoHighLevel marketplace app (OAuth) or with a Private Integration Token from a sub-account.
 
-Add GoHighLevel from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.leadConnector.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- To use your own OAuth app, you need a GoHighLevel Marketplace developer account at marketplace.gohighlevel.com.
+- To use a Private Integration Token, you need a GoHighLevel user who can manage Private Integrations. Agency admins can do this by default; other users need the permission under Settings > Users > Roles & Permissions.
+- Some endpoints depend on your GoHighLevel plan and the token's scopes, not only on the connection.
+
+### Create your GoHighLevel app
+1. Sign in to the GoHighLevel Marketplace, open **My Apps**, and click **Create App**.
+2. Enter an **APP Name**, choose the **APP Type** (Private is a good start for testing), and pick the **Target User** and **Who can install** settings. Choose Sub-account for the sub-account (location) connection, or Agency for the agency (company) connection.
+3. Go to **Advanced Settings > Auth**.
+4. In the **Redirect URL** field, enter `https://oauth.live.fastn.ai` and click **Add**. Enter it exactly, with no trailing slash.
+5. In the **Select Scope** dropdown, add the scopes fastn requests.
+   - For the sub-account connection: `contacts.readonly`, `contacts.write`, `conversations.readonly`, `conversations.write`, `conversations/message.readonly`, `conversations/message.write`, `opportunities.readonly`, `opportunities.write`, `calendars.readonly`, `calendars.write`, `calendars/events.readonly`, `calendars/events.write`, `calendars/groups.readonly`, `calendars/groups.write`, `calendars/resources.readonly`, `calendars/resources.write`, `forms.readonly`, `surveys.readonly`, `workflows.readonly`, `campaigns.readonly`, `links.readonly`, `links.write`, `locations.readonly`, `locations/customFields.readonly`, `locations/customFields.write`, `locations/customValues.readonly`, `locations/customValues.write`, `locations/tags.readonly`, `locations/tags.write`, `locations/tasks.readonly`, `locations/templates.readonly`, `users.readonly`, `users.write`, `businesses.readonly`, `businesses.write`, `medias.readonly`, `medias.write`, `invoices.readonly`, `invoices.write`, `invoices/estimate.readonly`, `invoices/estimate.write`, `invoices/schedule.readonly`, `invoices/schedule.write`, `invoices/template.readonly`, `invoices/template.write`, `products.readonly`, `products.write`, `products/prices.readonly`, `products/prices.write`, `products/collection.readonly`, `products/collection.write`, `payments/orders.readonly`, `payments/orders.write`, `payments/transactions.readonly`, `payments/subscriptions.readonly`, `payments/coupons.readonly`, `payments/coupons.write`, `payments/integration.readonly`, `payments/integration.write`, `objects/schema.readonly`, `objects/schema.write`, `objects/record.readonly`, `objects/record.write`, `associations.readonly`, `associations.write`, `associations/relation.readonly`, `associations/relation.write`.
+   - For the agency connection: `companies.readonly`, `locations.readonly`, `locations.write`, `users.readonly`, `users.write`, `snapshots.readonly`, `oauth.readonly`, `oauth.write`, `saas/company.write`, `saas/location.read`, `saas/location.write`, `emails/schedule.readonly`.
+6. Under **Client Keys**, click **Add**, name the key pair, and save it. Copy the Client ID and Client Secret right away. GoHighLevel does not show the secret again after you close the dialog.
+
+Scopes can only be changed while the app is a draft, so add them all before you publish.
+
+### Add your app to fastn
+1. In fastn, go to **Build → Integrations → Connectors** and open **GoHighLevel**.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and **Description**, paste the **Client ID** and **Client Secret** from GoHighLevel, and enter the **Scopes** you added to the app.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the connector's **Auth provider** to your app instead of **Use platform default**.
+
+Customers who skip this sign in through fastn's shared GoHighLevel app.
+
+### Get your GoHighLevel credentials
+To connect with a Private Integration Token instead of OAuth, fastn asks for one value, **token**.
+
+1. In the GoHighLevel sub-account, go to **Settings > Private Integrations**.
+2. Click **Create New Integration**.
+3. Enter a name and description.
+4. Select the scopes the integration needs. The token can only call endpoints its scopes allow.
+5. Generate the token and copy it. It starts with `pit-`. GoHighLevel may show it only once, so store it somewhere safe.
+
+You can change the token's scopes later by editing the integration, without creating a new token.
+
+### Connect in fastn
+Your customers enter the token when they connect GoHighLevel in your widget, or you enter it under **Build → Integrations → Connectors → GoHighLevel**.
+
+### Events
+fastn supports GoHighLevel events such as contact, opportunity, appointment, task, note, message and order changes. To run a workflow when one happens, add an [App event trigger](../../build/triggers/app-events.md) under **Build → Integrations → Triggers → Add trigger → App events**. Contact fastn support to set up events for GoHighLevel.
 
 ## Actions
 

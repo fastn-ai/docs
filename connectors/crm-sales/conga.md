@@ -14,9 +14,40 @@ Conga Advantage Platform (formerly Apttus Intelligent Cloud) — Conga's standal
 | **Authentication** | Credentials you enter, OAuth 2.0 |
 | **Slug** | `conga` |
 
-## Use it
+## Setup guide
+This guide shows how your customers get Conga Advantage Platform API credentials and enter them in fastn. Conga uses a client ID and client secret from its client-credentials flow, so no redirect URL is needed.
 
-Add Conga Advantage Platform from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.conga.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- Your customer needs a Conga Advantage Platform account and must sign in as an administrator to create API credentials.
+- An External Integration must already exist in the Conga org. The connection form lists its external identifiers.
+- Know which Conga region the org runs in: North America, Europe or Australia.
+
+### Get your Conga Advantage Platform credentials
+fastn offers two methods: **Conga OAuth 2.0 (Client Credentials)**, which fastn recommends for anything long-running, and **Conga Bearer Token (manual)**.
+
+1. Sign in to the Conga Advantage Platform as an administrator.
+2. Click the **App Launcher** icon in the top-left corner, then go to **Admin Console > Organization**.
+3. Open the **Conga API Connections** tab and click **Add API-to-API Connection**.
+4. Fill in the fields:
+   - **External Identifier:** the external integration this connection is for.
+   - **Client Name:** a name that helps you find this connection in the list.
+   - **Description:** an optional note about what the connection is for.
+5. Save the connection and generate the client secret. Conga shows the **Client ID** and **Client Secret**.
+6. Copy both values now. You can't view the client secret again. If you lose it, open the connection from the list and regenerate the secret. A new secret can take up to 10 minutes to start working.
+7. Find your Conga platform user ID by signing in to the Conga Advantage Platform. The API-to-API flow needs it so that Conga can apply that user's permissions.
+8. Enter these values in fastn:
+   - **baseUrl:** the API host for your region, with no trailing slash. Use `https://rls.congacloud.com` for North America, `https://rls.congacloud.eu` for Europe or `https://rls.congacloud.au` for Australia.
+   - **authUrl:** the token host for your region, with no trailing slash. Use `https://login-rls.congacloud.com` for North America, `https://login.congacloud.eu` for Europe or `https://login.congacloud.au` for Australia.
+   - **clientId** and **clientSecret:** the values you copied in step 6.
+   - **userId:** your Conga platform user ID.
+
+Conga also lets you get a client ID and secret from an Integration User, and its docs recommend that flow over an API-to-API connection. Either pair works in the **clientId** and **clientSecret** fields.
+
+If you use **Conga Bearer Token (manual)**, enter **baseUrl** and **userId** as described above. In **accessToken**, enter a token that you already requested from your region's token endpoint (`<authUrl>/api/v1/auth/connect/token`). Conga access tokens are short-lived, so this method suits short tests only.
+
+### Connect in fastn
+Your customers enter these values when they connect Conga Advantage Platform in your widget. You can also enter them yourself under Build → Integrations → Connectors → Conga Advantage Platform. After the connection works, you can call its actions in workflow code as `fastn.connector.conga.<actionSlug>()`.
 
 ## Actions
 

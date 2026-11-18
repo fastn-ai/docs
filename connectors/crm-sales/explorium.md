@@ -16,9 +16,26 @@ Explorium AgentSource is a B2B data platform for matching, searching and enrichi
 | **Authentication** | Credentials you enter |
 | **Slug** | `explorium` |
 
-## Use it
+## Setup guide
+This guide shows where to find the Explorium API key that fastn needs to connect to Explorium AgentSource.
 
-Add Explorium from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.explorium.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need access to the Explorium Admin Portal for your company.
+- Explorium assigns an API key when your company buys a subscription package. One key is shared by everyone in your organization.
+
+### Get your Explorium credentials
+fastn asks for one value, **apiToken**: your Explorium AgentSource API key.
+
+1. Sign in to the Explorium Admin Portal at [admin.explorium.ai](https://admin.explorium.ai/).
+2. Go to **Access & Authentication** > **Getting Your API Key**.
+3. The key is shown masked. Click **Show Key** to reveal it.
+4. Click **Copy Key** and paste the value into the **apiToken** field in fastn.
+
+If you cannot see the key, ask your Explorium administrator for access.
+
+### Connect in fastn
+Your customers enter their API key when they connect Explorium in your widget, or you enter it under Build → Integrations → Connectors → Explorium. fastn sends the key with each request, so there is nothing else to set up at Explorium.
 
 ## Actions
 

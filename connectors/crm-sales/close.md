@@ -16,9 +16,22 @@ Close CRM connector. Full REST coverage of the Close API (https://api.close.com/
 | **Authentication** | Basic auth |
 | **Slug** | `close` |
 
-## Use it
+## Setup guide
+This guide shows where to find the Close API key that fastn uses to connect to a Close account, and how to enter it in fastn.
 
-Add Close from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.close.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Close account in the organization you want to connect. The API key acts as the user who creates it, in that user's organization.
+
+### Get your Close credentials
+1. Sign in to Close.
+2. Go to **Settings** > **Developer** > **API Keys**.
+3. Generate a new API key and copy it. Keep it somewhere safe.
+4. In fastn, enter the key in the **username** field. Close uses the API key as the HTTP Basic username.
+5. Leave the **password** field empty. Close expects a blank password.
+
+### Connect in fastn
+Your customers enter these values when they connect Close in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **Close**. Because each key belongs to one Close user, actions run with that user's access in Close. You can delete a key on the same Close settings page if you need to revoke access.
 
 ## Actions
 

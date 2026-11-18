@@ -16,9 +16,26 @@ Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform. Cont
 | **Authentication** | API key |
 | **Slug** | `keap` |
 
-## Use it
+## Setup guide
+This guide shows how to get a Keap API key and use it to connect Keap to fastn.
 
-Add Keap from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.keap.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Keap user account. Any Keap user can create a Personal Access Token (PAT), which acts with that user's permissions.
+- To create a Service Account Key (SAK), you must be a Keap admin. A SAK gives admin access to all the data in the Keap account.
+
+### Get your Keap credentials
+fastn asks for one value, **apiKey**: a Keap Personal Access Token or Service Account Key.
+
+1. Sign in to Keap and open the **Settings** menu. In Keap Classic, open the **Profile** menu instead.
+2. Select **API Settings**. This page lists your existing keys and lets you create a new one.
+3. Create a new Personal Access Token or Service Account Key and give it a unique name.
+4. Copy the full key right away. Keap shows it in full only once.
+
+If you used Keap's Legacy API Key in the past, it no longer works. Create a Service Account Key instead.
+
+### Connect in fastn
+Your customers enter this key when they connect Keap in your widget, or you enter it under **Build → Integrations → Connectors → Keap**.
 
 ## Actions
 

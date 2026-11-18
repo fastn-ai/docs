@@ -16,9 +16,27 @@ Onfleet is a last-mile delivery management platform. This connector covers the O
 | **Authentication** | Basic auth |
 | **Slug** | `onfleet` |
 
-## Use it
+## Setup guide
+This guide shows you how to get an Onfleet API key and connect Onfleet to fastn. Onfleet uses HTTP Basic authentication with the API key as the username, so you don't need to create an OAuth app.
 
-Add Onfleet from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.onfleet.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need an Onfleet account with administrator access. Only Onfleet administrators can create API keys.
+
+### Get your Onfleet credentials
+1. Sign in to the Onfleet dashboard as an administrator.
+2. Click the **Settings** icon in the upper-right corner and choose **API & Webhooks**.
+3. In the **API Keys** section, click **+** to create a key. If you want the key to reach only the tasks it creates, turn on that option under the key's name.
+4. Copy the key. In fastn, enter it in the **username** field.
+5. Onfleet ignores the password. In the **password** field, enter a placeholder value such as `x`.
+
+Onfleet limits each organization to 20 requests per second across all of its API keys.
+
+### Connect in fastn
+Your customers enter these values when they connect Onfleet in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Onfleet**. Once Onfleet is connected, a workflow can call its actions as `fastn.connector.onfleet.<actionSlug>()`.
+
+### Events
+The Onfleet connector supports task, worker, route plan and job events, for example `taskCreated`, `taskCompleted`, `taskFailed`, `workerDuty` and `routePlanCompleted`. To start a workflow from one of them, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Onfleet.
 
 ## Actions
 

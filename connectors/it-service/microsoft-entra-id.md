@@ -16,9 +16,58 @@ Microsoft Entra ID (formerly Azure Active Directory) identity and directory mana
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `microsoftEntraId` |
 
-## Use it
+## Setup guide
+This guide shows you how to register your own Microsoft Entra ID app for Microsoft Graph and add it to fastn, so your customers sign in to Microsoft Entra ID through your app.
 
-Add Microsoft Entra ID from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.microsoftEntraId.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Microsoft Entra ID tenant and an account that can register apps there. Microsoft lists Cloud Application Administrator as the least privileged role for registering an app for Microsoft Graph.
+- Many of the permissions fastn requests can only be granted by a tenant administrator, so each customer who connects needs an admin to consent, either at sign-in or ahead of time.
+
+### Create your Microsoft Entra ID app
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If you can reach more than one tenant, use the **Settings** icon in the top menu to switch to the tenant where the app should live.
+2. Go to **Entra ID** > **App registrations** and select **New registration**.
+3. Enter a **Name** for the app. Your customers see this name when they sign in.
+4. Under **Supported account types**, pick a multitenant option, such as **Multiple Entra ID tenants**, so users from your customers' tenants can sign in. fastn signs users in through Microsoft's common endpoint, which serves users from any tenant.
+5. Select **Register**. On the **Overview** page, copy the **Application (client) ID**.
+6. Under **Manage**, select **Authentication**, then add a redirect URI. Choose the **Web** platform, enter `https://oauth.live.fastn.ai` as the **Redirect URI**, and select **Configure**.
+7. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Delegated permissions**. Add each permission fastn requests, then select **Add permissions**:
+   - `offline_access`
+   - `User.Read`
+   - `User.ReadWrite.All`
+   - `Group.ReadWrite.All`
+   - `GroupMember.ReadWrite.All`
+   - `Directory.ReadWrite.All`
+   - `Directory.Read.All`
+   - `RoleManagement.ReadWrite.Directory`
+   - `AdministrativeUnit.ReadWrite.All`
+   - `Application.ReadWrite.All`
+   - `DelegatedPermissionGrant.ReadWrite.All`
+   - `Organization.ReadWrite.All`
+   - `Domain.ReadWrite.All`
+   - `Device.Read.All`
+   - `ProfilePhoto.ReadWrite.All`
+   - `LicenseAssignment.ReadWrite.All`
+   - `AuditLog.Read.All`
+   - `Policy.Read.All`
+8. If you are an admin and want to connect your own tenant, select **Grant admin consent for <tenant name>** and confirm.
+9. Select **Certificates & secrets** > **Client secrets** > **New client secret**. Add a description, choose an expiry, and select **Add**. Copy the secret **Value** right away, because Microsoft does not show it again after you leave the page. Secrets last at most 24 months, so plan to replace it before it expires.
+
+### Add your app to fastn
+1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **Microsoft Entra ID**.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**, paste the application (client) ID into **Client ID** and the secret value into **Client Secret**, and enter the scopes listed above in **Scopes**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+If you skip these steps, your customers sign in through fastn's shared app for Microsoft Entra ID.
 
 ## Actions
 

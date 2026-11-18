@@ -16,9 +16,23 @@ Webling association/club management (members, finances, documents, articles, let
 | **Authentication** | API key |
 | **Slug** | `webling` |
 
-## Use it
+## Setup guide
+This guide shows how to find the Webling database address and API key that fastn needs to connect to a Webling account.
 
-Add Webling from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.webling.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need a Webling account with administrator access, because only administrators can create API keys in Webling.
+- Decide what the key should be allowed to do. Webling API keys are either administrator keys with full access, or keys limited per area (members, finance, calendar, articles).
+
+### Get your Webling credentials
+1. Open your Webling database in a browser and look at the address. For `https://mycluborg.webling.ch`, the part before the first dot (`mycluborg`) is your **subdomain**.
+2. The rest of the host after the subdomain (for example `webling.ch`) is the Webling domain your database is hosted on. Enter it as the **domainSuffix**.
+3. In the Webling web app, go to **Administration > API**.
+4. Create a new API key. Turn on the administrator setting for full access, or set the access level for each area (members, finance, calendar, articles) so the key can reach only what your workflows need.
+5. Copy the key. This is the **weblingApiKey** value. Store it somewhere safe, because anyone with the key can access your Webling data within its permissions.
+
+### Connect in fastn
+Your customers enter the subdomain, domain and API key when they connect Webling in your widget. You can also enter them yourself under Build → Integrations → Connectors → Webling. fastn sends the key with every request, and workflow code calls Webling actions as `fastn.connector.webling.<actionSlug>()`.
 
 ## Actions
 

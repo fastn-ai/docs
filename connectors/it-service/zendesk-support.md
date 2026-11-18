@@ -16,9 +16,54 @@ Zendesk Support customer service and ticketing platform. Manage tickets and comm
 | **Authentication** | Basic auth, OAuth 2.0 |
 | **Slug** | `zendeskSupport` |
 
-## Use it
+## Setup guide
+This guide shows how to connect Zendesk Support to fastn, either with your own Zendesk OAuth client or with an API token that each customer enters.
 
-Add Zendesk Support from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.zendeskSupport.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Zendesk account where you are an admin. Zendesk only lets admins create OAuth clients and API tokens.
+- For customers on Zendesk accounts other than your own, Zendesk requires a global OAuth client, which you request from Zendesk through the Zendesk Marketplace portal. Zendesk only accepts that request from a sponsored developer account whose subdomain starts with `d3v-`.
+- API tokens are available on Zendesk Support Team, Professional and Enterprise, and on Suite Team, Growth, Professional, Enterprise and Enterprise Plus.
+
+### Create your Zendesk Support app
+1. Sign in to Zendesk and open **Admin Center**.
+2. Go to **Apps and integrations** > **APIs** > **OAuth clients**, then click **Add OAuth client**.
+3. In **Name**, enter the name your customers see when they grant access. Fill in **Description**, **Company** and **Logo** as well. Zendesk asks for every field when you later request a global client.
+4. In **Identifier**, enter a unique value. If you plan to request a global client, start it with `zdg-`.
+5. Set **Client kind** to **Confidential**.
+6. In **Redirect URLs**, enter `https://oauth.live.fastn.ai`.
+7. In **Scopes**, select `read` and `write`, the scopes fastn requests. You can also leave the list empty, which allows every scope.
+8. Click **Save**. A **Secret** field appears.
+9. Copy the full **Secret** right away. Zendesk shows it only once and afterwards shows only the first nine characters. Then click **Save** again.
+10. Note the **Identifier**. It is your client ID.
+11. If your customers use their own Zendesk accounts, sign in to the Zendesk Marketplace portal at apps.zendesk.com, select **Global OAuth**, click **Request new OAuth** and submit the form. Zendesk emails you when it has reviewed the request, and on approval it turns your client into a global client. Once that happens you can no longer open the client's admin page, so keep the identifier and secret from steps 9 and 10.
+
+### Add your app to fastn
+1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **Zendesk Support**.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and an optional **Description**. Paste the Zendesk identifier into **Client ID** and the secret into **Client Secret**. In **Scopes**, enter `read` and `write`.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Save the provider, then choose **Use this app** so it becomes the preferred app.
+6. In your widget, set the Zendesk Support connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who skip this sign in through fastn's shared Zendesk Support app.
+
+### Get your Zendesk Support credentials
+You can also connect with Basic Auth and an API token. Zendesk has deprecated API tokens and recommends OAuth instead. It plans to delete tokens unused for 30 days starting July 28, 2026, and to turn off all API tokens by April 30, 2027.
+
+fastn asks for three values:
+1. **subdomain**: your Zendesk subdomain, the part before `.zendesk.com`. For `acme.zendesk.com`, enter `acme`.
+2. **password**: a Zendesk API token. As a Zendesk admin, open **Admin Center**, go to **Apps and integrations** > **APIs** > **API tokens** and click **Add API token**. Optionally add a **Description**, then click **Save**. Copy the token before you close the window, because Zendesk does not show it again, and click **Save** once more. If you can't create tokens, turn on API token access for the account first.
+3. **username**: your Zendesk email address followed by `/token`, for example `jdoe@example.com/token`.
+
+### Connect in fastn
+Your customers enter these values when they connect Zendesk Support in your widget. You can also enter them yourself under **Build** > **Integrations** > **Connectors** > **Zendesk Support**.
 
 ## Actions
 

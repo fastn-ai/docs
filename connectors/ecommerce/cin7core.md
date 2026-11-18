@@ -16,9 +16,29 @@ Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing, prod
 | **Authentication** | Credentials you enter |
 | **Slug** | `cin7core` |
 
-## Use it
+## Setup guide
+This guide shows where you and your customers find the Cin7 Core values fastn asks for, and how to connect Cin7 Core in fastn.
 
-Add Cin7 Core from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.cin7core.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- Whoever connects needs a Cin7 Core account they can sign in to. Cin7 Core trial accounts can use the API too.
+- Each Cin7 Core company has its own Account ID. If you work with more than one company, use the Account ID of the company you want to connect.
+
+### Get your Cin7 Core credentials
+1. Sign in to Cin7 Core at https://inventory.dearsystems.com.
+2. Go to **Integrations** → **API**, the API setup page (https://inventory.dearsystems.com/ExternalAPI).
+3. Create an API application for fastn. You can have more than one API application on the same Cin7 Core account, and Cin7 Core applies API limits to each application separately, so a separate one for fastn keeps its usage apart from your other add-ons.
+4. Copy the **Account ID**. This is the `accountId` value. It identifies your Cin7 Core company.
+5. Copy the **API Application Key** for the application you created. This is the `applicationKey` value.
+6. Leave `baseUrl` empty to connect to production. Fill it in only if you connect to another Cin7 Core API host, such as a test environment.
+
+Treat the Account ID and Application Key like a username and password. If a key is exposed, remove that API application in Cin7 Core and create a new one.
+
+### Connect in fastn
+Your customers enter these values when they connect Cin7 Core in your widget, or you enter them yourself under **Build** → **Integrations** → **Connectors** → **Cin7 Core**. After connecting, you can call actions from workflow code, for example `fastn.connector.cin7core.<actionSlug>()`.
+
+### Events
+To run a workflow when something happens in Cin7 Core, such as a sale being created or a product being updated, add an App event trigger under **Build** → **Integrations** → **Triggers** → **Add trigger** → **App events** (see [App events](../../build/triggers/app-events.md)). Cin7 Core sends webhooks only when the Automation module is part of the Cin7 Core subscription; contact Cin7 support to add it. Contact fastn support to set up events for Cin7 Core.
 
 ## Actions
 

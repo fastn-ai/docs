@@ -16,9 +16,51 @@ Walmart Marketplace (US) Seller API — environment-switchable (production or sa
 | **Authentication** | Credentials you enter, OAuth 2.0 |
 | **Slug** | `walmartMarketplace` |
 
-## Use it
+## Setup guide
+This guide covers how to register your own Walmart Marketplace app for OAuth 2.0 and add it to fastn, and where a seller finds the values for the Custom connection method.
 
-Add Walmart Marketplace from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.walmartMarketplace.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- To use your own OAuth app, you need access to Walmart's Solution Provider Center. Walmart reviews each app before it can be published, which includes a kickoff call and a demo of your integration.
+- Your customers need an approved Walmart Marketplace seller account. They sign in to Walmart's Developer Portal with their Seller Center credentials.
+- For testing, Walmart provides sandbox credentials. fastn has a separate OAuth 2.0 (Sandbox - testing only) method for this.
+
+### Create your Walmart Marketplace app
+1. In the Solution Provider Center, start a new app and choose the **Solution Provider** (API access) listing type. The Agency type has no API access.
+2. Select an **App Category** and fill in the app's general information: name, description and **App contact email**.
+3. In **Technical details**, enter `https://oauth.live.fastn.ai` in **App Callback/redirect URL**. Enter it exactly, with no trailing slash.
+4. Fill in **App Login URL** and **Client URL** (your app's website), and choose the **API Scopes** your integration needs. fastn does not request extra OAuth scopes, so the access your customers grant comes from the scopes you pick here.
+5. Save the technical details and complete the **Marketing details** section.
+6. Copy the **Client ID** and **Client Secret** from your app's credentials once Walmart makes them available.
+7. Submit the app. It moves to **In Review**, and after Walmart approves it, to **Ready to Publish**.
+
+### Add your app to fastn
+1. In fastn, go to **Build → Integrations → Connectors** and open **Walmart Marketplace**.
+2. Open the **Auth** tab and select **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Select **+ Create Provider**.
+4. In the **New Auth Provider** form, enter a **Name** and optional **Description**, then paste your **Client ID** and **Client Secret**. Leave **Scopes** empty.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+5. Create the provider, then choose **Use this app** so it becomes the Preferred app.
+6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
+
+Customers who skip this sign in through fastn's shared app for Walmart Marketplace.
+
+### Get your Walmart Marketplace credentials
+If you use the Custom method instead of OAuth, the seller enters three values:
+1. **baseUrl**: the Walmart API host. Production sellers use `https://marketplace.walmartapis.com`.
+2. **accessToken**: a Walmart access token. To get one, the seller goes to the API Integration page in Seller Center (`https://seller.walmart.com/api-key`), selects **API Key Management** to open the Developer Portal, and copies the **Client ID** and **Client Secret** from their personal key pair (marked with a lock icon). They then call Walmart's Token API at `{baseUrl}/v3/token` with those values. Walmart access tokens expire after 15 minutes, so this method suits short tests.
+3. **sellerId**: the seller's WM Partner ID. It is shown on the Walmart authorization screen and on the credentials page.
+
+### Connect in fastn
+Your customers enter these values when they connect Walmart Marketplace in your widget, or you enter them under **Build → Integrations → Connectors → Walmart Marketplace**.
+
+### Events
+fastn supports these Walmart Marketplace events: PO_CREATED, PO_LINE_AUTOCANCELLED, BUY_BOX_CHANGED, OFFER_UNPUBLISHED and REPORT_STATUS. To start a workflow from one, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for Walmart Marketplace.
 
 ## Actions
 

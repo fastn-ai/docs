@@ -16,9 +16,34 @@ WildApricot is a membership management platform for associations, clubs and non-
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `wildApricot` |
 
-## Use it
+## Setup guide
+This guide shows you how to get the WildApricot account ID and API key that fastn uses to connect to a WildApricot account, and how to start workflows from WildApricot events.
 
-Add WildApricot from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.wildApricot.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a WildApricot account. Only a full account administrator can authorize an external application in WildApricot.
+
+### Get your WildApricot credentials
+fastn connects to WildApricot with an API key from an authorized server application. When you connect, you enter three values: `accountId`, `clientId` and `clientSecret`.
+
+1. Sign in to the WildApricot admin view as a full account administrator.
+2. Go to **Apps** > **Integrations** > **Authorized applications** and click **Authorize application**.
+3. Choose **Server application**. This is the option for apps that read and write data without a person signing in.
+4. Give the application a name. Leave access set to full access if your workflows need to create or update records; with **Read only**, the app cannot add to or change your WildApricot data.
+5. Copy the **API key** shown on the screen, then click **Save**. The key works only after the authorization is saved.
+6. Find your numeric account ID under **Settings** > **Account**, or in the URL of the **Authorized applications** page.
+7. In fastn, enter the values as follows:
+   - **accountId**: your numeric WildApricot account ID.
+   - **clientId**: leave this as `APIKEY`. WildApricot uses this literal value as the client ID for API key integrations.
+   - **clientSecret**: the API key you copied in step 5.
+
+### Connect in fastn
+Your customers enter these values when they connect WildApricot in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **WildApricot**. fastn exchanges the API key for an access token with WildApricot, so there is no redirect or sign-in screen.
+
+### Events
+fastn supports these WildApricot events: Contact, Membership, MembershipLevel, MembershipRenewed, Event, EventRegistration, Invoice, Payment, Refund and LoggedEmail. To start a workflow from one, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events**. See [App events](../../build/triggers/app-events.md).
+
+WildApricot sends these notifications through webhooks that an administrator adds in the admin view under **Apps** > **Integrations** > **Webhooks**, with a target URL, the change types to send, and the **Enable** toggle turned on. Contact fastn support to set up events for WildApricot.
 
 ## Actions
 

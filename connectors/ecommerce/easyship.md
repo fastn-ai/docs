@@ -16,9 +16,29 @@ Easyship global shipping API (v2024-09). Rate shopping across 550+ courier servi
 | **Authentication** | Bearer token |
 | **Slug** | `easyship` |
 
-## Use it
+## Setup guide
 
-Add Easyship from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.easyship.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+This guide shows where to find the Easyship API access token that fastn needs to connect to an Easyship account.
+
+### Before you start
+
+- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need an Easyship account you can sign in to at app.easyship.com.
+
+### Get your Easyship credentials
+
+fastn asks for one value, **token**: the Easyship API access token, which fastn sends as a Bearer token.
+
+1. Sign in to the Easyship dashboard.
+2. In the menu, click **APIs & Webhooks** (app.easyship.com/api-connections).
+3. Click **Create API Connection**. If you already have connections, click **Add API Connection**.
+4. Enter a name for the connection, such as `fastn`, and click **Connect**.
+5. Select the API scopes the token can use. Choose the scopes that cover the actions you plan to run, such as shipments, rates and tracking.
+6. Copy the access token. Easyship gives you a production token, which starts with `prod_`, and a sandbox token, which starts with `sand_`. Use the sandbox token for testing and the production token for live shipments.
+
+### Connect in fastn
+
+Your customers paste their token into the **token** field when they connect Easyship in your widget, or you enter it under **Build** > **Integrations** > **Connectors** > **Easyship**. After you connect, call actions from workflow code as `fastn.connector.easyship.<actionSlug>()`.
 
 ## Actions
 

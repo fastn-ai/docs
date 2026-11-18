@@ -16,9 +16,25 @@ Reply.io sales engagement platform. Manage contacts, contact lists, custom field
 | **Authentication** | API key |
 | **Slug** | `replyio` |
 
-## Use it
+## Setup guide
+This guide shows you where to find the Reply.io API key that fastn needs to connect a Reply.io account.
 
-Add Reply.io from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.replyio.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a Reply.io account you can sign in to at run.reply.io.
+
+### Get your Reply.io credentials
+fastn asks for one value, **apiKey**: your Reply.io API key. The same key works for Reply's current and legacy API endpoints.
+
+1. Sign in to Reply.io at run.reply.io.
+2. Go to **Settings → API Key**.
+3. Create a new key, or copy the existing one.
+4. Paste it into the **apiKey** field when you connect.
+
+Use your user API key here. Reply.io's team and organization keys need extra headers that name the user to act as, which this connection does not send.
+
+### Connect in fastn
+Your customers enter the API key when they connect Reply.io in your widget, or you enter it under Build → Integrations → Connectors → Reply.io.
 
 ## Actions
 
