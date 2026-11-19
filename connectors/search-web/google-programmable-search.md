@@ -1,0 +1,25 @@
+---
+description: "Google Programmable Search (Custom Search JSON API) — run web and image queries against a Programmable Search Engine and read the ranked results with their…"
+hidden: true
+---
+
+# Google Programmable Search
+
+<img src="../../.gitbook/assets/connectors/lg/google-programmable-search.png" alt="Google Programmable Search logo">
+
+Google Programmable Search (Custom Search JSON API) — run web and image queries against a Programmable Search Engine and read the ranked results with their titles, snippets and links.
+
+| | |
+| --- | --- |
+| **Category** | [Search and web](README.md) |
+| **Website** | [programmablesearchengine.google.com](https://programmablesearchengine.google.com) |
+| **Authentication** | OAuth 2.0 |
+| **Slug** | `googleProgrammableSearch` |
+
+## Use it
+
+Add Google Programmable Search from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.googleProgrammableSearch.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search</td><td><code>search</code></td><td>Runs a query against a Programmable Search Engine and returns ranked results with title, snippet, display link and full link.</td></tr><tr><td>Search Site Restricted</td><td><code>searchSiteRestricted</code></td><td>Same as Search but against an engine configured to cover only specific sites; it has no daily query limit.</td></tr></tbody></table>

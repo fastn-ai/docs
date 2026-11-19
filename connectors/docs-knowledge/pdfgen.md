@@ -1,0 +1,33 @@
+---
+description: "PDFgen generates pixel-perfect PDFs from saved Handlebars templates, raw HTML, Markdown, or an AI prompt through a single REST call."
+hidden: true
+---
+
+# PDFgen
+
+<img src="../../.gitbook/assets/connectors/lg/pdfgen.png" alt="PDFgen logo">
+
+PDFgen generates pixel-perfect PDFs from saved Handlebars templates, raw HTML, Markdown, or an AI prompt through a single REST call. This connector covers the full v1 API: PDF generation, template CRUD, account/quota lookup and usage logs.
+
+| | |
+| --- | --- |
+| **Category** | [Docs and knowledge](README.md) |
+| **Website** | [pdfgen.com](https://pdfgen.com) |
+| **Authentication** | API key |
+| **Slug** | `pdfgen` |
+
+## Use it
+
+Add PDFgen from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.pdfgen.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Check Service Health</td><td><code>checkServiceHealth</code></td><td>Checks whether the PDFgen service and its database are reachable. Returns an overall status, the database status and the server time. This endpoint is undocumented and requires no API key; use it for uptime monitoring before submitting a generation job.</td></tr><tr><td>Create PDF From Template (Legacy)</td><td><code>createPdfFromTemplateLegacy</code></td><td>Legacy endpoint POST /api/v1/create that renders a saved template and forwards to the current generate endpoint. Kept for compatibility with older PDFgen integrations - prefer Generate PDF for new work. METERED: successful generations consume PDF credits at 1 credit per 5 pages.</td></tr><tr><td>Create Template</td><td><code>createTemplate</code></td><td>Returns 201 with the new template id, which you pass as template_id to Generate PDF. Creating templates does not count against your PDF quota.</td></tr><tr><td>Delete Template</td><td><code>deleteTemplate</code></td><td>Permanently deletes a saved PDF template by id and returns a confirmation of the form { data: { id, deleted: true } }. This cannot be undone and any integration still passing that template_id to Generate PDF will start receiving 404 not_found. Does not count against your PDF quota.</td></tr><tr><td>Generate PDF</td><td><code>generatePdf</code></td><td>Renders a PDF from exactly one source: a saved template (template_id), raw HTML (html), Markdown (markdown), or a plain-English AI prompt (prompt). With export_type "url" the response is { url } - a link to the rendered PDF. With export_type "file" (the API default) the PDF binary is returned and this connector surfaces it as { name, mime, size, data } where data is base64. METERED: successful generations cost credits at 1 credit per 5 pages, doubled for the prompt source; check Get Account for remaining quota first. SECURITY: the returned URL is an object in a public Amazon S3 bucket - it is readable by anyone with the path even after the signature expires, so treat it as a public link.</td></tr><tr><td>Get Account</td><td><code>getAccount</code></td><td>Returns the PDFgen account behind the API key, including the user id and email, the organization, the current plan and the monthly PDF credit usage (used vs limit). Useful for verifying a connection and for checking remaining quota before generating PDFs. Does not count against the PDF quota.</td></tr><tr><td>Get Template</td><td><code>getTemplate</code></td><td>Retrieves one saved PDF template by id, including its full HTML content and templating engine. Templates are scoped to your account; a template you do not own returns 404 not_found. Reading templates does not count against your PDF quota.</td></tr><tr><td>Get Usage Log Entry</td><td><code>getUsageLogEntry</code></td><td>Retrieves a single PDFgen usage log entry by its id, as returned by List Usage Logs. The detail view is richer than the list row: it adds the organization and user ids, the caller's IP address and user agent, and requestParams - a verbatim copy of the JSON body that was sent. Note that requestParams therefore stores whatever the original call contained, so treat it as sensitive. This route is undocumented but live; an unknown id returns 404 not_found.</td></tr><tr><td>List Templates</td><td><code>listTemplates</code></td><td>Lists the saved PDF templates in your PDFgen account, newest first, with paging. Each row carries the template id, name, templating engine and timestamps but not the HTML content - use Get Template for that. Template management does not count against your PDF quota.</td></tr><tr><td>List Usage Logs</td><td><code>listUsageLogs</code></td><td>Lists recent PDFgen API calls made with your key, newest first, with paging. Each entry records the endpoint, HTTP method, status code, duration, whether the call was billed and the template used. Useful for debugging and for auditing credit spend. Reading logs does not count against your PDF quota.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 3 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Render PDF From HTML (Legacy)</td><td><code>renderPdfFromHtmlLegacy</code></td><td>Legacy endpoint POST /api/v1/render that renders raw HTML and forwards to the current generate endpoint. Kept for compatibility with older PDFgen integrations - prefer Generate PDF for new work. METERED: successful generations consume PDF credits at 1 credit per 5 pages.</td></tr><tr><td>Replace Template</td><td><code>replaceTemplate</code></td><td>Replaces a saved PDF template using HTTP PUT. Accepts any of name, content and engine, and returns the updated template. Use Update Template if you prefer PATCH semantics. Templates are scoped to your account; an unknown id returns 404 not_found. Does not count against your PDF quota.</td></tr><tr><td>Update Template</td><td><code>updateTemplate</code></td><td>Partially updates a saved PDF template using HTTP PATCH. Send only the fields you want to change - any of name, content and engine - and the updated template is returned. Templates are scoped to your account; an unknown id returns 404 not_found. Does not count against your PDF quota.</td></tr></tbody></table>
+
+</details>
