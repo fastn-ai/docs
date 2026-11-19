@@ -1,5 +1,5 @@
 ---
-description: "Connect Open Library to your product with fastn."
+description: "Open Library is a free catalog of millions of books. Get books, editions, authors, subjects, lists and availability."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/open-library.png" alt="Open Library logo">
 
-Open Library (Internet Archive) is a free, keyless catalog of millions of books: search books, authors, subjects, editions and lists, read work, edition, author, subject, publisher and series records, look up books by ISBN/OCLC/LCCN, and browse public reading lists and recent changes.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [openlibrary.org](https://openlibrary.org) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `openLibrary` |
+
+## Setup
+
+Open Library needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Open Library from **Build → Integrations → Connectors** and connect an a
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get User Reading Log</td><td><code>getUserReadingLog</code></td><td>Returns a user's public reading-log shelf (want-to-read, currently-reading, already-read or stopped-reading). Only works when the user made the reading log public. Docs: https://openlibrary.org/dev/docs/api/mybooks</td></tr><tr><td>Get Work</td><td><code>getWork</code></td><td>Returns a work record (the abstract book across all editions): title, authors, description, subjects, covers and links. Docs: https://openlibrary.org/dev/docs/api/books</td></tr><tr><td>Get Work Bookshelves</td><td><code>getWorkBookshelves</code></td><td>Returns how many readers have the work on their want-to-read, currently-reading and already-read shelves. Docs: https://openlibrary.org/developers/api</td></tr><tr><td>Get Work Ratings</td><td><code>getWorkRatings</code></td><td>Returns the reader rating summary (average, count, distribution) of a work. Docs: https://openlibrary.org/developers/api</td></tr><tr><td>List Author Works</td><td><code>listAuthorWorks</code></td><td>Returns the works written by an author (paged). Docs: https://openlibrary.org/dev/docs/api/authors</td></tr><tr><td>List Languages</td><td><code>listLanguages</code></td><td>Returns the languages in the catalog with their edition counts. Docs: https://openlibrary.org/developers/api</td></tr><tr><td>List List Editions</td><td><code>listListEditions</code></td><td>Returns the editions in a reading list (paged). Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List List Seeds</td><td><code>listListSeeds</code></td><td>Returns the seeds (works, editions, authors, subjects) of a reading list. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List List Subjects</td><td><code>listListSubjects</code></td><td>Returns the most common subjects, places, people and times of the books in a reading list. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List Lists Containing Author</td><td><code>listAuthorLists</code></td><td>Returns public reading lists that contain an author. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List Lists Containing Edition</td><td><code>listEditionLists</code></td><td>Returns public reading lists that contain an edition. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List Lists Containing Work</td><td><code>listWorkLists</code></td><td>Returns public reading lists that contain a work. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List Lists for Subject</td><td><code>listSubjectLists</code></td><td>Returns public reading lists that contain a subject. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List Recent Changes</td><td><code>listRecentChanges</code></td><td>Returns the most recent edits to the catalog (all kinds), newest first. Docs: https://openlibrary.org/dev/docs/api/recentchanges</td></tr><tr><td>List Recent Changes by Kind</td><td><code>listRecentChangesByKind</code></td><td>Returns recent catalog edits of one kind (e.g. add-book, edit-book, merge-authors, new-account, add-cover). Docs: https://openlibrary.org/dev/docs/api/recentchanges</td></tr><tr><td>List Recent Edit Activity</td><td><code>listEditActivity</code></td><td>Returns a feed of recent book edits with titles, authors, cover and editor names. Docs: https://openlibrary.org/openapi.json</td></tr><tr><td>List User Lists</td><td><code>listUserLists</code></td><td>Returns the public reading lists of a user. Docs: https://openlibrary.org/dev/docs/api/lists</td></tr><tr><td>List Work Editions</td><td><code>listWorkEditions</code></td><td>Returns the editions of a work (paged). Docs: https://openlibrary.org/dev/docs/api/books</td></tr><tr><td>Search Authors</td><td><code>searchAuthors</code></td><td>Searches authors by name and returns author keys, birth dates, top work and work count. Docs: https://openlibrary.org/dev/docs/api/search</td></tr><tr><td>Search Books</td><td><code>searchBooks</code></td><td>Searches works by free text or by title, author, subject, ISBN, publisher and other fields; returns matching works with author, edition, cover and e-book data. Docs: https://openlibrary.org/dev/docs/api/search</td></tr><tr><td>Search Inside Books</td><td><code>searchInside</code></td><td>Full-text search inside the scanned text of digitised books; returns matching books with highlighted snippets. Docs: https://openlibrary.org/dev/docs/api/search_inside</td></tr><tr><td>Search Lists</td><td><code>searchLists</code></td><td>Searches public reading lists by name. Docs: https://openlibrary.org/developers/api</td></tr><tr><td>Search Subjects</td><td><code>searchSubjects</code></td><td>Searches subjects (topics, places, people, times) by name and returns their keys and work counts. Docs: https://openlibrary.org/developers/api</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Open Library has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

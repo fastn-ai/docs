@@ -1,5 +1,5 @@
 ---
-description: "Connect Google Search Console to your product with fastn."
+description: "Google Search Console reports how sites perform in Google Search. Manage sites and sitemaps, and inspect URL indexing."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-search-console.png" alt="Google Search Console logo">
 
-Google Search Console API — manage verified sites and sitemaps, query Search Analytics performance data, inspect URL indexing status, and run the Mobile-Friendly Test.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [searchconsole.googleapis.com](https://searchconsole.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleSearchConsole` |
+
+## Setup
+
+Your customers sign in to Google Search Console through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Google Search Console from **Build → Integrations → Connectors** and con
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Run Mobile Friendly Test</td><td><code>runMobileFriendlyTest</code></td><td>Runs the Mobile-Friendly Test against any public URL and returns the mobile-friendliness verdict, any usability issues found, and optionally a screenshot of the rendered page. The URL does not have to belong to a Search Console property.</td></tr><tr><td>Submit Sitemap</td><td><code>submitSitemap</code></td><td>Submits a sitemap for a Search Console property so that Google discovers the URLs it contains. Returns an empty body on success.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Google Search Console has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Connect Open-Meteo to your product with fastn."
+description: "Open-Meteo is a free weather service. Get weather forecasts, air quality, flood and climate data, and elevation for any location."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/open-meteo.png" alt="Open-Meteo logo">
 
-Open-Meteo is a free, keyless weather API: forecasts from national weather models, historical weather back to 1940, marine, air quality, flood, climate, ensemble and seasonal data, plus geocoding and elevation. Free for non-commercial use (under 10,000 calls per day); commercial use needs an Open-Meteo API subscription.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [open-meteo.com](https://open-meteo.com) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `openMeteo` |
+
+## Setup
+
+Open-Meteo needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Open-Meteo from **Build → Integrations → Connectors** and connect an acc
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Historical Weather</td><td><code>getHistoricalWeather</code></td><td>Returns historical weather (reanalysis) data from 1940 to a few days ago for a date range and coordinates. Docs: https://open-meteo.com/en/docs/historical-weather-api</td></tr><tr><td>Get JMA Forecast</td><td><code>getJmaForecast</code></td><td>Returns forecast data from the JMA model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/jma-api</td></tr><tr><td>Get Location</td><td><code>getLocation</code></td><td>Returns one geocoding location by its id (as returned by Search Locations). Docs: https://open-meteo.com/en/docs/geocoding-api</td></tr><tr><td>Get Marine Forecast</td><td><code>getMarineForecast</code></td><td>Returns marine weather (wave height, swell, wave period, sea surface temperature, ocean currents) for coordinates at sea. Docs: https://open-meteo.com/en/docs/marine-weather-api</td></tr><tr><td>Get MET Norway Forecast</td><td><code>getMetNoForecast</code></td><td>Returns forecast data from the MET Norway model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/metno-api</td></tr><tr><td>Get Meteo-France Forecast</td><td><code>getMeteoFranceForecast</code></td><td>Returns forecast data from the Meteo-France model family only (same parameters as Get Weather Forecast; models narrows to a specific model of this family). Docs: https://open-meteo.com/en/docs/meteofrance-api</td></tr><tr><td>Get Previous Model Runs</td><td><code>getPreviousModelRuns</code></td><td>Returns forecasts from previous model runs (variables with suffix _previous_day1 to _previous_day7) to compare forecast accuracy by lead time. Docs: https://open-meteo.com/en/docs/previous-runs-api</td></tr><tr><td>Get Satellite Radiation</td><td><code>getSatelliteRadiation</code></td><td>Returns solar radiation from geostationary satellites (shortwave, direct, diffuse, tilted irradiance) at native or hourly resolution. Docs: https://open-meteo.com/en/docs/satellite-radiation-api</td></tr><tr><td>Get Seasonal Forecast</td><td><code>getSeasonalForecast</code></td><td>Returns long-range seasonal forecasts (ECMWF EC46/SEAS5, up to 7 months) as 6-hourly, daily or monthly values. Docs: https://open-meteo.com/en/docs/seasonal-forecast-api</td></tr><tr><td>Get Single Model Run Forecast</td><td><code>getSingleRunForecast</code></td><td>Returns the forecast of one specific model run (run time in UTC). Docs: https://open-meteo.com/en/docs/single-runs-api</td></tr><tr><td>Get Weather Forecast</td><td><code>getForecast</code></td><td>Returns hourly, daily, 15-minutely and current weather forecast data for one or more coordinates, combining the best national weather models (up to 16 days). Docs: https://open-meteo.com/en/docs</td></tr><tr><td>Search Locations</td><td><code>searchLocations</code></td><td>Searches places by name or postal code and returns coordinates, time zone, country, population and admin areas (geocoding). Docs: https://open-meteo.com/en/docs/geocoding-api</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Open-Meteo has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Zoho People is Zoho's HR management system."
+description: "Zoho People is an HR system. Read and add form records, leave records, attendance reports, timesheets and time logs."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-people.png" alt="Zoho People logo">
 
-This connector wraps the Zoho People REST API (people.zoho.com): forms and form records including employee data, leave tracking (leave records, leave types and balances), attendance check-in and check-out with attendance reports, and the time tracker module covering clients, projects, jobs, time logs and timesheets. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
-
 | | |
 | --- | --- |
 | **Category** | [Other](README.md) |
 | **Website** | [people.zoho.com](https://people.zoho.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `zohoPeople` |
+
+## Setup
+
+Your customers sign in to Zoho People through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Zoho People from **Build → Integrations → Connectors** and connect an ac
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Record Attendance</td><td><code>recordAttendance</code></td><td>Record an attendance check-in or check-out for an employee in Zoho People. At least one of employee ID, email address or map ID must be supplied to identify the employee.</td></tr><tr><td>Update Form Record</td><td><code>updateFormRecord</code></td><td>Update an existing record in a Zoho People form. Only the fields included in the input data are changed.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Zoho People has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

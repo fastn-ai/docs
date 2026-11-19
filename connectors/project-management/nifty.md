@@ -1,5 +1,5 @@
 ---
-description: "Nifty project management platform."
+description: "Nifty is a project management platform. Manage tasks, statuses, labels, custom fields, documents, files, members and webhooks."
 hidden: true
 ---
 
@@ -7,13 +7,15 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nifty.png" alt="Nifty logo">
 
-Manage projects, tasks, task groups (statuses), milestones, documents, files, tags, messages, team members, portfolios, custom fields, time tracking, folders, and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `nifty` |
+
+## Setup
+
+Your customers sign in to Nifty through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

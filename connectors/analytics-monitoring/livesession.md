@@ -1,5 +1,5 @@
 ---
-description: "LiveSession is a product-analytics and session-replay platform."
+description: "LiveSession records user sessions for product analytics. List websites and sessions, and manage alerts and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/livesession.png" alt="LiveSession logo">
 
-This connector covers the full LiveSession REST API: session search with visitor, device, geolocation and engagement detail; website management; alert rules and their notification providers; and webhook endpoint management, together with the session-event webhook surface.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [livesession.io](https://livesession.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access token |
 | **Slug** | `livesession` |
+
+## Setup
+
+Your customers enter their access token for LiveSession when they connect. Nothing else needs setting up.
 
 ## Use it
 

@@ -1,5 +1,5 @@
 ---
-description: "EmailOctopus is an email marketing and newsletter sending platform."
+description: "EmailOctopus is an email marketing platform. Manage lists, contacts, fields and tags."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/emailoctopus.png" alt="EmailOctopus logo">
 
-This connector covers the EmailOctopus v2 REST API: list and contact management (including custom fields), campaign retrieval and reporting, and automation triggering.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [emailoctopus.com](https://emailoctopus.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `emailoctopus` |
+
+## Setup
+
+Your customers enter their access token for EmailOctopus when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add EmailOctopus from **Build → Integrations → Connectors** and connect an a
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Campaign</td><td><code>getCampaign</code></td><td>Retrieves a single email campaign by its ID.</td></tr><tr><td>Get Campaign Contact Reports</td><td><code>getCampaignContactReports</code></td><td>Retrieves the list of contacts matching a specific engagement status (e.g. opened, clicked, bounced) for a campaign, paginated.</td></tr><tr><td>Get Campaign Links Report</td><td><code>getCampaignLinksReport</code></td><td>Retrieves the click counts for each link contained in a campaign's content.</td></tr><tr><td>Get Campaign Summary Report</td><td><code>getCampaignSummaryReport</code></td><td>Retrieves aggregate engagement statistics (sent, opened, clicked, bounced, complained, unsubscribed) for a campaign.</td></tr><tr><td>Get Contact</td><td><code>getContact</code></td><td>Retrieves a single contact from a list by its ID (a UUID, or the MD5 hash of the contact's lowercased email address).</td></tr><tr><td>Get List</td><td><code>getList</code></td><td>Retrieves a single contact list by its ID.</td></tr><tr><td>List Campaigns</td><td><code>listCampaigns</code></td><td>Retrieves all email campaigns in the account, paginated.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>Retrieves the contacts belonging to a list, with optional filtering by tag, status, and creation/update date ranges.</td></tr><tr><td>List Lists</td><td><code>listLists</code></td><td>Retrieves all contact lists (audiences) in the EmailOctopus account, paginated.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>Retrieves all contact tags defined on a list, paginated.</td></tr><tr><td>Start Automation For Contact</td><td><code>startAutomation</code></td><td>Queues a contact to start a specific automation (drip sequence) built in the EmailOctopus dashboard.</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Updates an existing contact's email address, custom fields, tags, or subscription status.</td></tr><tr><td>Update Field</td><td><code>updateField</code></td><td>Updates an existing custom contact field's label, tag, type, or fallback value.</td></tr><tr><td>Update List</td><td><code>updateList</code></td><td>Updates the name of an existing contact list.</td></tr><tr><td>Update Tag</td><td><code>updateTag</code></td><td>Renames an existing contact tag on a list. The rename applies to every contact currently carrying the tag.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+EmailOctopus has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

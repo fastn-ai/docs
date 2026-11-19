@@ -1,5 +1,5 @@
 ---
-description: "Peaka is a zero-ETL data integration platform that lets you connect APIs, databases and SaaS tools and query them together with SQL."
+description: "Peaka is a data integration platform that lets you query many sources together. Manage queries, columns, metadata and caches, and chat with its AI agent."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/peaka.png" alt="Peaka logo">
 
-This connector covers the complete Peaka Partner API: organizations, workspaces and projects, project API keys, connections and connection types, catalogs, schemas, tables and search, Peaka internal and BI tables and columns, saved and materialized queries, query folders, query execution and SQL transpilation, table and query exports, data caches, parametric and semantic catalogs, AI metadata and golden SQL, metadata refresh callbacks, the AI agent, embedded sessions and supported drivers.
-
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Website** | [peaka.com](https://peaka.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `peaka` |
+
+## Setup
+
+Your customers enter their API key for Peaka when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Peaka from **Build → Integrations → Connectors** and connect an account,
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Metadata Refresh Completed</td><td><code>metadataRefreshCompleted</code></td><td>Fires when a metadata refresh job finishes for the project (started by Refresh Project Metadata or by Peaka itself). On subscribe, fastn registers the trigger URL as the project's metadata refresh callback (POST /metadata/{projectId}/refresh/callback) with a generated callbackToken, then verifies the registration with Get Metadata Refresh Callback; on unsubscribe it removes the callback and verifies it is gone. Peaka keeps one callback per project, so subscribing replaces any callback registered outside fastn. Peaka does not publish the delivery payload; the schema below is modelled on the refresh job status object (Get Metadata Refresh Job Status) and is not captured from a real delivery. The callbackToken is stored as the trigger's secret; Peaka does not document how the token is presented on delivery, so verification is not configured.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Metadata Refresh Completed</td><td><code>metadataRefreshCompleted</code></td><td>Fires when a metadata refresh job finishes for the project (started by Refresh Project Metadata or by Peaka itself). On subscribe, fastn registers the trigger URL as the project's metadata refresh callback with a generated callbackToken, then verifies the registration with Get Metadata Refresh Callback; on unsubscribe it removes the callback and verifies it is gone. Peaka keeps one callback per project, so subscribing replaces any callback registered outside fastn. The callbackToken is stored as the trigger's secret; Peaka does not document how the token is presented on delivery, so verification is not configured.</td></tr></tbody></table>

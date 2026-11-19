@@ -1,5 +1,5 @@
 ---
-description: "Chameleon is a product-adoption platform for in-product Tours, Microsurveys, Tooltips, Launchers, Embeddables, Product Demos and the HelpBar."
+description: "Chameleon runs in-product tours, surveys and tooltips. Manage user profiles, companies, tags, domains and data imports."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/chameleon.png" alt="Chameleon logo">
 
-This connector covers the full Chameleon v3 REST API: user profiles and companies with search and counting, segments, every Experience type, deliveries, tour interactions and microsurvey responses, themes, tags, domains and URL groups, data properties, event names, rate limit and alert groups, data imports, HelpBar search configuration and items, change history, webhook subscriptions, and the incoming data-push hooks for profiles, companies and events.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [chameleon.io](https://chameleon.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `chameleon` |
+
+## Setup
+
+Your customers enter their API key for Chameleon when they connect. Nothing else needs setting up.
 
 ## Use it
 

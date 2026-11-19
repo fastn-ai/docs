@@ -1,5 +1,5 @@
 ---
-description: "Mapflow is an AI mapping platform that extracts buildings, roads, forests and other features from satellite and aerial imagery."
+description: "Mapflow extracts features from satellite and aerial imagery. Manage projects, mosaics and processings, and calculate processing costs."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mapflow.png" alt="Mapflow logo">
 
-This connector covers the Mapflow Processing API and Data API: projects, processings and their results, cost estimation, processing history, custom imagery mosaics and images, storage usage, the satellite imagery catalog and account status.
-
 | | |
 | --- | --- |
 | **Category** | [Maps and location](README.md) |
 | **Website** | [mapflow.ai](https://mapflow.ai) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `mapflow` |
+
+## Setup
+
+Your customers enter their username and password for Mapflow when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Mapflow from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Image</td><td><code>getImage</code></td><td>Retrieves detailed metadata for one uploaded image, including its raster properties, footprint and cloud-optimised GeoTIFF link.</td></tr><tr><td>Get Image Preview</td><td><code>getImagePreview</code></td><td>Retrieves a JPEG thumbnail of an uploaded image, either small (256 x 256) or large (1024 x 1024). The image is returned as a file reference.</td></tr><tr><td>Get Mosaic</td><td><code>getMosaic</code></td><td>Retrieves one imagery mosaic by its identifier, with its tags, combined footprint, stored size, tile layer URLs and a per-status summary of the images it contains.</td></tr><tr><td>Get Processing</td><td><code>getProcessing</code></td><td>Retrieves one processing by its identifier, including its current status, percentage complete, model, imagery source parameters and cost. Poll this to follow a running job.</td></tr><tr><td>Get Processing History</td><td><code>getProcessingHistory</code></td><td>Returns the account's processing history with pagination, sorting and filtering, for usage reporting and billing reconciliation.</td></tr><tr><td>Get Project</td><td><code>getProject</code></td><td>Retrieves a single project by its identifier, including its processing progress summary and area of interest count.</td></tr><tr><td>Get Storage Usage</td><td><code>getStorageUsage</code></td><td>Returns the account's imagery storage usage and limits, including the maximum upload file size and pixel count Mapflow will accept.</td></tr><tr><td>Get User Status</td><td><code>getUserStatus</code></td><td>Retrieves the authenticated Mapflow account's status, including remaining credits and processing area, account limits, the AI models and workflow definitions available to the account, team membership and linked data providers.</td></tr><tr><td>Link Image To Mosaic</td><td><code>linkImageToMosaic</code></td><td>Links an image that already sits in S3 to a mosaic by its URL, without uploading the file through Mapflow.</td></tr><tr><td>List Mosaic Images</td><td><code>listMosaicImages</code></td><td>Lists the images inside a mosaic with their file metadata, footprint and preview links.</td></tr><tr><td>List Mosaics</td><td><code>listMosaics</code></td><td>Lists the imagery mosaics in the account, each one a collection of georeferenced images that can be used as a processing source.</td></tr><tr><td>List Processings</td><td><code>listProcessings</code></td><td>Lists every processing in the account with its status, model, area of interest and cost.</td></tr><tr><td>List Project Processings</td><td><code>listProjectProcessings</code></td><td>Lists the processings that belong to one project, with status, model and cost for each.</td></tr><tr><td>List Projects</td><td><code>listProjects</code></td><td>Lists every project in the Mapflow account, with each project's processing progress summary, area of interest count and creation date.</td></tr><tr><td>Restart Processing</td><td><code>restartProcessing</code></td><td>Restarts a processing, re-running only the partitions that failed. Successful partitions are kept, so no credits are spent on work already completed.</td></tr><tr><td>Search Imagery Catalog</td><td><code>searchImageryCatalog</code></td><td>Searches satellite imagery from the commercial providers linked to the account, filtered by area of interest, acquisition date, resolution, cloud cover and off-nadir angle. Returned image identifiers can be used as a processing source.</td></tr><tr><td>Update Image Name</td><td><code>updateImageName</code></td><td>Renames an uploaded image. The new name is sent as a query parameter, as the Mapflow Data API expects.</td></tr><tr><td>Update Mosaic</td><td><code>updateMosaic</code></td><td>Updates a mosaic's name and tags. A supplied tag list replaces the existing one.</td></tr><tr><td>Update Processing</td><td><code>updateProcessing</code></td><td>Renames a processing, changes its description, or moves it to another project. Only the fields supplied are sent.</td></tr><tr><td>Update Project</td><td><code>updateProject</code></td><td>Updates a project's name and description. Only the fields supplied are sent, so untouched fields keep their current values.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Mapflow has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

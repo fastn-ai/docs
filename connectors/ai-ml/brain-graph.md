@@ -1,5 +1,5 @@
 ---
-description: "Connect BrainGraph to your product with fastn."
+description: "BrainGraph turns documents, web pages and videos into a searchable knowledge graph. Ingest content, track processing and find patterns and communities."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/brain-graph.png" alt="BrainGraph logo">
 
-BrainGraph is an AI digital brain platform that turns documents, transcripts, web pages, YouTube videos and voice notes into a personal knowledge graph that AI agents can query. This connector covers the BrainGraph public API: document ingestion (text, base64 files, web URLs, YouTube, audio URLs), processing status, brains, document library, natural-language search, entity resolution, pattern discovery, document images, answer-graph rendering and async job polling.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [itsbraingraph.ai](https://itsbraingraph.ai) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `brainGraph` |
+
+## Setup
+
+Your customers enter their API key for BrainGraph when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add BrainGraph from **Build → Integrations → Connectors** and connect an acc
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Brains</td><td><code>listBrains</code></td><td>Lists the separate brains (knowledge sub-graphs) in the account, default brain first, with their ids, names and document counts. Use a brain id with brainIds on search or brainId on uploads to target a specific brain. Accounts without multiple brains enabled receive a 404.</td></tr><tr><td>List Documents</td><td><code>listDocuments</code></td><td>Lists the documents uploaded to the account, newest first, with filename, upload time, ingestion status, source URL and the brain each landed in. Filter by a filename or notes substring with query; this is a library lookup, not a content search. Supports paging with limit and offset.</td></tr><tr><td>Render Answer Graph Image</td><td><code>renderAnswerGraphImage</code></td><td>Renders an answer graph (the nodes, edges and queries returned by Search Brain with includeGraph) to a PNG image. This is a pure renderer over the payload you send; it reads nothing from the brain. Returns the image as base64 with its dimensions.</td></tr><tr><td>Resolve Entity</td><td><code>resolveEntity</code></td><td>Finds a person, company, topic or project in the knowledge graph by exact name and returns its canonical uuid, type, role, organization and summary. Returns found false with reason ambiguous (plus a matches list) or not_found when the name does not resolve to exactly one entity.</td></tr><tr><td>Search Brain</td><td><code>searchBrain</code></td><td>Asks a natural-language question across everything captured in the brain. Returns matching facts with relevance scores and the source and target entities involved. Set includeGraph to true to also receive the entities, relationships and source documents behind the answer.</td></tr><tr><td>Transcribe Audio URL</td><td><code>transcribeAudioUrl</code></td><td>Transcribes an audio recording that lives at a public URL (mp3, m4a, wav, ogg, webm, aac, flac, opus) with speaker diarization and ingests the transcript into the brain. Returns immediately with status transcribing; poll Get Document Progress as it advances to processing and analyzed. A failed transcription refunds the upload slot.</td></tr><tr><td>Upload Text Document</td><td><code>uploadTextDocument</code></td><td>Uploads a document as JSON: plain text in content, or a base64-encoded PDF/DOCX/PPTX/EML/HTML file in pdfBase64 with isPdf set to true. Returns immediately with the document id and status processing; poll Get Document Progress until the status is analyzed. Counts against the plan's upload cap.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+BrainGraph has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

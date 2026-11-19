@@ -1,5 +1,5 @@
 ---
-description: "Connect cloro to your product with fastn."
+description: "cloro extracts structured answers from AI answer engines and search results. Run monitoring tasks for ChatGPT, Gemini and Google AI Mode."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cloro.png" alt="cloro logo">
 
-cloro extracts structured data from AI answer engines and search results - ChatGPT, Google Gemini, Grok, Microsoft Copilot, Perplexity, Google AI Mode, Google Search (with AI Overview) and Google News - geo-targeted to any supported country. This connector covers the full cloro v1 API: synchronous monitoring endpoints, Google redirect resolution, asynchronous tasks and batches, queue status and clearing, credit balance, and supported countries and states.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [cloro.dev](https://cloro.dev) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `cloro` |
+
+## Setup
+
+Your customers enter their access token for cloro when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add cloro from **Build → Integrations → Connectors** and connect an account,
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Monitor Google AI Mode</td><td><code>monitorAiMode</code></td><td>Sends a prompt to Google AI Mode and returns the structured answer text, sources, citation pills, places, shopping cards, ads, inline products, videos and map data, optionally with expanded merchant product results. Costs 4 credits (+1 per expanded product cluster) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Google News</td><td><code>monitorGoogleNews</code></td><td>Runs a Google News search and returns structured news articles with titles, links, snippets, sources, dates and thumbnails across up to 10 result pages. Costs 3 credits for page one, +2 per extra page, plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Google Search</td><td><code>monitorGoogleSearch</code></td><td>Runs a Google web search and returns structured results: organic results, People Also Ask, related searches, sponsored ads, shopping cards, local pack, Knowledge Graph and, when requested, the AI Overview. Costs 3 credits for page one, +2 per extra page, +2 for AI Overview, plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Grok</td><td><code>monitorGrok</code></td><td>Sends a prompt to Grok from the chosen country and returns the answer text, cited sources (including X/Twitter references) and query fan-out, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge. cloro currently lists Grok as temporarily unavailable, so calls fail with a 500 until the provider is restored.</td></tr><tr><td>Monitor Microsoft Copilot</td><td><code>monitorCopilot</code></td><td>Sends a prompt to Microsoft Copilot from the chosen country and returns the structured answer text, cited sources, citation pills, shopping cards, map entries and query fan-out, with optional Markdown, HTML and raw response. Costs 5 credits (+2 for state targeting) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Perplexity</td><td><code>monitorPerplexity</code></td><td>Sends a prompt to Perplexity from the chosen country and returns the structured answer text, cited sources, citation pills, related queries, videos, images, hotels, places and shopping cards, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Resolve Google Redirect Link</td><td><code>resolveGoogleRedirectLink</code></td><td>Resolves a Google /goto or /url redirect link (as returned in the redirectLink fields of Google Search, Google News and AI Mode results) to its final destination URL.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+cloro has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

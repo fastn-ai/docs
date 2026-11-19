@@ -1,5 +1,5 @@
 ---
-description: "Connect SendPulse to your product with fastn."
+description: "SendPulse is a marketing platform for email, SMS and Viber. Manage mailing lists, senders, blacklists and campaigns."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/send-pulse.png" alt="SendPulse logo">
 
-SendPulse is a multi-channel marketing platform for email campaigns, transactional email (SMTP), SMS, Viber, web push notifications, email verification and Automation 360 flows. This connector covers the SendPulse Email and Messaging REST API: mailing lists, contacts, campaigns, templates, senders, tags, blacklist, webhooks, transactional email, SMS and Viber campaigns, web push, email verification and automation statistics.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [sendpulse.com](https://sendpulse.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `sendPulse` |
+
+## Setup
+
+Your customers sign in to SendPulse through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

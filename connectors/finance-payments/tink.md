@@ -1,5 +1,5 @@
 ---
-description: "Tink is an open banking platform for accessing bank account, balance, transaction, and financial insight data across European financial institutions."
+description: "Tink is an open banking platform for Europe. Read bank accounts and transactions, and manage credentials and budgets."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tink.png" alt="Tink logo">
 
-Connect an end user's bank via Tink Link to read accounts, balances, transactions, categories, budgets, statistics, loans, and consent status.
-
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [tink.com](https://tink.com) |
-| **Authentication** | Credentials you enter, OAuth 2.0 |
+| **Authentication** | Client ID and secret, OAuth 2.0 |
 | **Slug** | `tink` |
+
+## Setup
+
+Your customers sign in to Tink through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Tink from **Build → Integrations → Connectors** and connect an account, 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Accounts</td><td><code>listAccounts</code></td><td>Lists the connected user's bank accounts with their identifiers, type, name, and balances. Returns an empty list until the user has connected a bank via Tink Link.</td></tr><tr><td>List Accounts (Legacy)</td><td><code>listAccountsLegacy</code></td><td>Lists the connected user's accounts using Tink's legacy v1 accounts endpoint. Prefer the List Accounts action, which uses the current Data API v2.</td></tr><tr><td>List Budgets</td><td><code>listBudgets</code></td><td>Lists the budgets defined for the connected user, including each budget's target amount, periodicity, and the filter that selects the transactions it tracks.</td></tr><tr><td>List Categories</td><td><code>listCategories</code></td><td>Lists Tink's transaction category tree for the connected user's locale, including each category's code, identifier, and display name.</td></tr><tr><td>List Credentials</td><td><code>listCredentials</code></td><td>Lists the bank credentials of the connected user, showing each connected provider, its aggregation status, and when it was last refreshed.</td></tr><tr><td>List Loans</td><td><code>listLoans</code></td><td>Lists the connected user's loan accounts with balances, interest rates, and the weighted average interest rate across all loans.</td></tr><tr><td>List Provider Consents</td><td><code>listProviderConsents</code></td><td>Lists the connected user's bank consents, showing each consent's status, the accounts it covers, and when it expires. Use this to detect consents that need renewal.</td></tr><tr><td>List Providers</td><td><code>listProviders</code></td><td>Lists the financial institution providers available to the connected user's market, including each provider's authentication type, access type, capabilities, and the credential fields it requires.</td></tr><tr><td>List Providers by Market</td><td><code>listProvidersByMarket</code></td><td>Lists the financial institution providers available in a specific market, identified by its ISO 3166-1 alpha-2 country code.</td></tr><tr><td>List Transactions</td><td><code>listTransactions</code></td><td>Lists the connected user's bank transactions with amounts, dates, descriptions, and categorization. Returns an empty list until the user has connected a bank via Tink Link.</td></tr><tr><td>Query Statistics</td><td><code>queryStatistics</code></td><td>Queries aggregated financial statistics for the connected user, such as expenses by category, income by category, balances by account, or left-to-spend, over one or more periods.</td></tr><tr><td>Refresh Credential</td><td><code>refreshCredential</code></td><td>Triggers a new aggregation run for a set of bank credentials, fetching the latest accounts and transactions from the bank. Returns an empty body; poll the Get Credential action until the status becomes UPDATED.</td></tr><tr><td>Search Transactions</td><td><code>searchTransactions</code></td><td>Searches the connected user's transactions using free-text, account, category, amount, and date filters, and returns matching transactions together with aggregate metrics such as count, sum, and average.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Tink has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

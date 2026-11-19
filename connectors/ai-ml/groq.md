@@ -1,5 +1,5 @@
 ---
-description: "Groq API connector — ultra-fast LLM inference over an OpenAI-compatible API (base https://api.groq.com/openai/v1)."
+description: "Groq runs AI models with fast inference. Create chat completions, speech, transcriptions and translations, and manage batches, files and models."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/groq.png" alt="Groq logo">
 
-Covers chat completions, responses, model management, audio transcription/translation/speech (TTS), and the Batch + Files APIs. Auth is a Bearer API key (gsk_ prefix).
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [groq.com](https://groq.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `groq` |
+
+## Setup
+
+Your customers enter their access token for Groq when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Groq from **Build → Integrations → Connectors** and connect an account, 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Batches</td><td><code>listBatches</code></td><td>List all batch jobs for your organization.</td></tr><tr><td>List Files</td><td><code>listFiles</code></td><td>List all uploaded files for your organization.</td></tr><tr><td>List Models</td><td><code>listModels</code></td><td>List all models available to your account, including context window and max completion tokens.</td></tr><tr><td>Retrieve Batch</td><td><code>retrieveBatch</code></td><td>Retrieve a single batch job by ID, including status and output/error file IDs.</td></tr><tr><td>Retrieve File</td><td><code>retrieveFile</code></td><td>Retrieve metadata for a single uploaded file by ID.</td></tr><tr><td>Retrieve Model</td><td><code>retrieveModel</code></td><td>Retrieve metadata for a single model by ID.</td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td>Upload a JSONL file (max 100 MB) for batch processing. purpose must be 'batch'.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Groq has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

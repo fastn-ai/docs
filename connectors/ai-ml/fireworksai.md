@@ -1,5 +1,5 @@
 ---
-description: "Fireworks AI — fast generative AI inference and platform management."
+description: "Fireworks AI runs fast generative AI models. Create chat and text completions, embeddings and images, and manage deployments, datasets and fine-tuning."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fireworksai.png" alt="Fireworks AI logo">
 
-Covers the OpenAI-compatible Inference API (chat/text completions, embeddings, image generation, audio transcription/translation) at https://api.fireworks.ai/inference/v1 and the Control Plane (models, deployments, datasets, supervised fine-tuning jobs, batch jobs) at https://api.fireworks.ai/v1. Auth: API key as Bearer token.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [fireworks.ai](https://fireworks.ai) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `fireworksai` |
+
+## Setup
+
+Your customers enter their access token for Fireworks AI when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,6 +30,10 @@ Add Fireworks AI from **Build → Integrations → Connectors** and connect an a
 
 <summary>View 13 more actions</summary>
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Account</td><td><code>getAccount</code></td><td>Get account details (display name, state, billing tier). Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Batch Job</td><td><code>getBatchJob</code></td><td>Get a single batch inference job by id, including state and output dataset. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Dataset</td><td><code>getDataset</code></td><td>Get a single dataset by id. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Deployment</td><td><code>getDeployment</code></td><td>Get a single deployment's configuration and state by id. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Model</td><td><code>getModel</code></td><td>Get a single model's metadata and capabilities by id. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Supervised Fine-tuning Job</td><td><code>getSupervisedFineTuningJob</code></td><td>Get a single supervised fine-tuning job by id, including state and progress. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Batch Jobs</td><td><code>listBatchJobs</code></td><td>List batch inference jobs in an account. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Datasets</td><td><code>listDatasets</code></td><td>List datasets in an account (used for fine-tuning and batch jobs). Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Deployments</td><td><code>listDeployments</code></td><td>List on-demand deployments in an account. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Models</td><td><code>listModels</code></td><td>List models available to an account. Control-plane base https://api.fireworks.ai/v1. Returns paginated model objects with capability flags. Use accountId 'fireworks' to browse public serverless models.</td></tr><tr><td>List Supervised Fine-tuning Jobs</td><td><code>listSupervisedFineTuningJobs</code></td><td>List supervised fine-tuning (SFT) jobs in an account. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Transcribe Audio</td><td><code>transcribeAudio</code></td><td>[DEPRECATED] Retired by Fireworks AI. The changelog entry "Audio inference and image generation are deprecated" (https://docs.fireworks.ai/updates/changelog) removed audio inference from the platform; the audio-prod.api.fireworks.ai host is decommissioned and answers 401 Unauthorized on every path even with a key that authenticates fine against api.fireworks.ai. No supported replacement on this connector.</td></tr><tr><td>Translate Audio</td><td><code>translateAudio</code></td><td>[DEPRECATED] Retired by Fireworks AI. The changelog entry "Audio inference and image generation are deprecated" (https://docs.fireworks.ai/updates/changelog) removed audio inference from the platform; the audio-prod.api.fireworks.ai host is decommissioned and answers 401 Unauthorized on every path even with a key that authenticates fine against api.fireworks.ai. No supported replacement on this connector.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Account</td><td><code>getAccount</code></td><td>Get account details (display name, state, billing tier). Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Batch Job</td><td><code>getBatchJob</code></td><td>Get a single batch inference job by id, including state and output dataset. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Dataset</td><td><code>getDataset</code></td><td>Get a single dataset by id. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Deployment</td><td><code>getDeployment</code></td><td>Get a single deployment's configuration and state by id. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Model</td><td><code>getModel</code></td><td>Get a single model's metadata and capabilities by id. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Get Supervised Fine-tuning Job</td><td><code>getSupervisedFineTuningJob</code></td><td>Get a single supervised fine-tuning job by id, including state and progress. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Batch Jobs</td><td><code>listBatchJobs</code></td><td>List batch inference jobs in an account. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Datasets</td><td><code>listDatasets</code></td><td>List datasets in an account (used for fine-tuning and batch jobs). Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Deployments</td><td><code>listDeployments</code></td><td>List on-demand deployments in an account. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>List Models</td><td><code>listModels</code></td><td>List models available to an account. Control-plane base https://api.fireworks.ai/v1. Returns paginated model objects with capability flags. Use accountId 'fireworks' to browse public serverless models.</td></tr><tr><td>List Supervised Fine-tuning Jobs</td><td><code>listSupervisedFineTuningJobs</code></td><td>List supervised fine-tuning (SFT) jobs in an account. Control-plane base https://api.fireworks.ai/v1.</td></tr><tr><td>Transcribe Audio</td><td><code>transcribeAudio</code></td><td>[DEPRECATED] Retired by Fireworks AI. No supported replacement on this connector.</td></tr><tr><td>Translate Audio</td><td><code>translateAudio</code></td><td>[DEPRECATED] Retired by Fireworks AI. No supported replacement on this connector.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Fireworks AI has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

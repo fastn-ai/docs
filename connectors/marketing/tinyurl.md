@@ -1,5 +1,5 @@
 ---
-description: "Connect TinyURL to your product with fastn."
+description: "TinyURL shortens and tracks links. Create, update, archive and delete short links, run bulk requests and read click analytics."
 hidden: true
 ---
 
@@ -7,13 +7,15 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tinyurl.png" alt="TinyURL logo">
 
-TinyURL is a link-management service for shortening long URLs into branded short links, organising them with aliases and tags, and measuring the clicks they receive. This connector covers the TinyURL v2 REST API: link create, update, repoint, archive, delete, list and count; bulk batch processing; per-link analytics settings; and the full click-analytics reporting family (raw logs, timeline, browser/OS/device, weekday and hourly popularity, top sources, top languages and geography).
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `tinyurl` |
+
+## Setup
+
+Your customers enter their API token for TinyURL when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -30,3 +32,7 @@ Add TinyURL from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Location Analytics</td><td><code>getLocationAnalytics</code></td><td>Returns click counts by geography. Pass world to break clicks down by country, or a two-letter country code to break that country down by region.</td></tr><tr><td>Get Raw Analytics Logs</td><td><code>getRawAnalyticsLogs</code></td><td>Returns the raw click log for the account's TinyURLs over a time window, one entry per click with referrer, IP, country, browser, operating system, device and language.</td></tr><tr><td>Get Timeline Analytics</td><td><code>getTimelineAnalytics</code></td><td>Returns click totals over time for the account's TinyURLs, bucketed by minute, hour, day, week or month.</td></tr><tr><td>Get TinyURL</td><td><code>getTinyUrl</code></td><td>Returns a single TinyURL's configuration, destination URL, tags, analytics settings and click counts.</td></tr><tr><td>Get Top Languages</td><td><code>getTopLanguagesAnalytics</code></td><td>Returns the visitor languages that produced the most clicks on the account's TinyURLs.</td></tr><tr><td>Get Top Traffic Sources</td><td><code>getTopSourcesAnalytics</code></td><td>Returns the referring domains that sent the most clicks to the account's TinyURLs, along with the direct-traffic count.</td></tr><tr><td>Get Weekday Popularity Analytics</td><td><code>getWeekdayPopularityAnalytics</code></td><td>Returns click counts grouped by day of the week, as a seven-element array starting with Monday.</td></tr><tr><td>List TinyURLs</td><td><code>listTinyUrls</code></td><td>Lists the account's available or archived TinyURLs, optionally filtered by creation date range or by an alias or tag search term.</td></tr><tr><td>Set Analytics Collection</td><td><code>setAnalyticsCollection</code></td><td>Enables or disables collection of click analytics for a single TinyURL.</td></tr><tr><td>Set Analytics Sharing</td><td><code>setAnalyticsSharing</code></td><td>Makes a TinyURL's analytics report publicly viewable, or returns it to private.</td></tr><tr><td>Update TinyURL</td><td><code>updateTinyUrl</code></td><td>Updates an existing TinyURL's alias, domain, tags, description, expiry or analytics collection setting. Tags supplied here overwrite the existing tags.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+TinyURL has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

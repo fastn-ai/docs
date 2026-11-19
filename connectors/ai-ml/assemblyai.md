@@ -1,5 +1,5 @@
 ---
-description: "AssemblyAI speech-to-text and audio intelligence API (https://api.assemblyai.com/v2)."
+description: "AssemblyAI is a speech-to-text service. Upload audio, create and list transcripts, and get paragraphs, sentences, subtitles and redacted audio."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/assemblyai.png" alt="AssemblyAI logo">
 
-Upload audio, create/get/list/delete transcripts, retrieve sentences, paragraphs, word-search, SRT/VTT subtitles, and redacted audio. Audio Intelligence: speaker labels, sentiment analysis, entity detection, content safety, PII redaction, auto highlights, topic detection. LeMUR LLM framework (task, summary, question-answer, action-items) over transcripts. Auth: raw API key in the Authorization header (no Bearer prefix).
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [assemblyai.com](https://assemblyai.com) |
 | **Authentication** | API key |
 | **Slug** | `assemblyai` |
+
+## Setup
+
+Your customers enter their API key for AssemblyAI when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add AssemblyAI from **Build → Integrations → Connectors** and connect an acc
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Word Search</td><td><code>wordSearch</code></td><td>Search a completed transcript for one or more keywords and get match counts plus timestamps. Free read.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+AssemblyAI has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

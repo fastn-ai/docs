@@ -1,13 +1,11 @@
 ---
-description: "Zoho CRM is a cloud-based CRM platform."
+description: "Zoho CRM is a cloud CRM. Create, update and delete leads, contacts, accounts, deals, tasks and notes."
 hidden: true
 ---
 
 # Zoho CRM
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-crm.png" alt="Zoho CRM logo">
-
-Manage leads, contacts, accounts, deals, tasks, events, calls, and notes via the Zoho CRM REST API v8.
 
 | | |
 | --- | --- |
@@ -79,3 +77,7 @@ Customers who connect without your own app sign in through fastn's shared Zoho C
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Note</td><td><code>deleteNote</code></td><td>Delete a Note by ID.</td></tr><tr><td>Delete Task</td><td><code>deleteTask</code></td><td>Delete a Task by ID.</td></tr><tr><td>Get Record</td><td><code>getRecord</code></td><td>Retrieve a single record by id from any Zoho CRM module, such as Leads, Contacts, Accounts, Deals, Tasks or Notes.</td></tr><tr><td>Get Users</td><td><code>getUsers</code></td><td>List org users. Pass type = AllUsers, ActiveUsers, DeactiveUsers, etc.</td></tr><tr><td>List Accounts</td><td><code>listAccounts</code></td><td>List Account records with pagination.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>List Contact records with pagination.</td></tr><tr><td>List Deals</td><td><code>listDeals</code></td><td>List Deal records with pagination.</td></tr><tr><td>List Leads</td><td><code>listLeads</code></td><td>List Lead records. Returns a page of records with pagination info.</td></tr><tr><td>List Modules</td><td><code>listModules</code></td><td>List all modules available in the Zoho CRM org (metadata).</td></tr><tr><td>List Notes</td><td><code>listNotes</code></td><td>List Note records with pagination.</td></tr><tr><td>List Tasks</td><td><code>listTasks</code></td><td>List Task records with pagination.</td></tr><tr><td>Search Records</td><td><code>searchRecords</code></td><td>Search records in a Zoho CRM module by criteria, email address, phone number or a free-text word. Exactly one of criteria, email, phone or word must be supplied.</td></tr><tr><td>Update Account</td><td><code>updateAccount</code></td><td>Update an Account by ID. Only the fields you supply are sent, so this is a partial update.</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Update a Contact by ID. Only the fields you supply are sent, so this is a partial update.</td></tr><tr><td>Update Deal</td><td><code>updateDeal</code></td><td>Update a Deal by ID. Only the fields you supply are sent, so this is a partial update.</td></tr><tr><td>Update Lead</td><td><code>updateLead</code></td><td>Update a Lead by ID. Only the fields you supply are sent, so this is a partial update.</td></tr><tr><td>Update Note</td><td><code>updateNote</code></td><td>Update a Note by ID. Only the fields you supply are sent, so this is a partial update.</td></tr><tr><td>Update Task</td><td><code>updateTask</code></td><td>Update a Task by ID. Only the fields you supply are sent, so this is a partial update.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Zoho CRM has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

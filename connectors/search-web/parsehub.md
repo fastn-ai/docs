@@ -1,5 +1,5 @@
 ---
-description: "ParseHub is a visual web scraping service that turns websites without an API into structured data."
+description: "ParseHub is a visual web scraping tool. Run scraping projects, check runs and download their data."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/parsehub.png" alt="ParseHub logo">
 
-This connector covers the complete ParseHub API v2: listing and retrieving scraping projects, starting cloud runs with optional start URL, template and value overrides, polling run status, downloading extracted run data as JSON or CSV, retrieving the data of a project's most recent ready run, and cancelling or deleting runs.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [parsehub.com](https://parsehub.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `parsehub` |
+
+## Setup
+
+Your customers enter their API key for ParseHub when they connect. Nothing else needs setting up.
 
 ## Use it
 

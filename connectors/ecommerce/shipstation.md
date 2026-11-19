@@ -1,5 +1,5 @@
 ---
-description: "Connect ShipStation to your product with fastn."
+description: "ShipStation is an order shipping platform. Create and update orders, create labels, and list carriers, customers and products."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shipstation.png" alt="ShipStation logo">
 
-ShipStation V1 (ssapi) connector: orders (list/get/create/update/mark-shipped/delete), shipments (list/create label), carriers, products, customers, and webhooks. HTTP Basic auth (API Key + API Secret). Base https://ssapi.shipstation.com.
-
 | | |
 | --- | --- |
 | **Category** | [E-commerce](README.md) |
 | **Website** | [shipstation.com](https://shipstation.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `shipstation` |
+
+## Setup
+
+Your customers enter their username and password for ShipStation when they connect. Nothing else needs setting up.
 
 ## Use it
 

@@ -1,5 +1,5 @@
 ---
-description: "Stackby is a no-code database and spreadsheet work platform."
+description: "Stackby is a no-code database and spreadsheet platform. Manage stacks, tables, columns and rows."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/stackby.png" alt="Stackby logo">
 
-This connector manages stacks (databases), tables, columns, views, and rows - list, retrieve, create, update, and delete records - plus file uploads, via the Stackby Web API v1.
-
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Website** | [stackby.com](https://stackby.com) |
 | **Authentication** | API key |
 | **Slug** | `stackby` |
+
+## Setup
+
+Your customers enter their API key for Stackby when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Stackby from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Rows</td><td><code>listRows</code></td><td>List rows from a table in a stack. Supports optional row limit, view scoping, and latest-first ordering.</td></tr><tr><td>List Stacks</td><td><code>listStacks</code></td><td>List all stacks (databases) in the workspace configured on the connection. The workspace identifier comes from the connection's Workspace ID credential, so no input is required.</td></tr><tr><td>List Tables</td><td><code>listTables</code></td><td>List all tables in a stack.</td></tr><tr><td>List Views</td><td><code>listViews</code></td><td>List all views defined on a table.</td></tr><tr><td>Retrieve Row</td><td><code>retrieveRow</code></td><td>Retrieve a single row from a table by its row ID.</td></tr><tr><td>Update Rows</td><td><code>updateRows</code></td><td>Update one or more existing rows in a table. Each record supplies its row ID and the field values to change.</td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td>Upload a file to Stackby and receive a hosted URL that can be stored in a file/attachment column.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Stackby has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

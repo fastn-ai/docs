@@ -1,5 +1,5 @@
 ---
-description: "1CRM all-in-one CRM and ERP via the 1CRM REST API."
+description: "1CRM is an all-in-one CRM and business management tool. Work with records in any module, link related records, and manage dashboards and layouts."
 hidden: true
 ---
 
@@ -7,13 +7,11 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/one-crm.png" alt="1CRM logo">
 
-Work with any 1CRM module (accounts, contacts, leads, opportunities, cases, quotes, invoices, projects and more) through generic record, relationship, search and metadata endpoints, plus calendars, files, reports, dashboards, audit logs and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [1crm.com](https://1crm.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `oneCrm` |
 
 ## Setup guide

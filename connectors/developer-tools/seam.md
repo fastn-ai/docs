@@ -1,5 +1,5 @@
 ---
-description: "Seam is a universal API for smart locks, thermostats, access control systems, sensors and other connected building devices."
+description: "Seam connects smart locks, thermostats and access control systems. Manage devices, spaces, access codes, credentials and users."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/seam.png" alt="Seam logo">
 
-This connector covers the Seam Connect API: devices, locks, thermostats, access codes, access grants, access methods, spaces, user identities, ACS systems and credentials, connected accounts, Connect Webviews, client sessions, phones, instant keys, noise sensors, events, action attempts, webhooks and workspaces.
-
 | | |
 | --- | --- |
 | **Category** | [Developer tools](README.md) |
 | **Website** | [getseam.com](https://getseam.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `seam` |
+
+## Setup
+
+Your customers enter their API key for Seam when they connect. Nothing else needs setting up.
 
 ## Use it
 

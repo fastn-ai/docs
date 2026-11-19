@@ -1,5 +1,5 @@
 ---
-description: "Parseur is an AI-powered document parser that extracts structured data from emails, PDFs and spreadsheets."
+description: "Parseur extracts data from emails, PDFs and spreadsheets with AI. Manage parsers, documents, templates, exports and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/parseur.png" alt="Parseur logo">
 
-This connector covers the Parseur REST API: parsers (mailboxes), documents and their processing lifecycle, templates, extraction schemas, export configurations, webhooks, account and subscription details.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [parseur.com](https://parseur.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `parseur` |
+
+## Setup
+
+Your customers enter their API key for Parseur when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Parseur from **Build → Integrations → Connectors** and connect an accoun
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Document Export Failed</td><td><code>document.export_failed</code></td><td>Fires when Parseur parsed a document but could not deliver it to a configured export destination. Use it to catch broken downstream integrations. Set the Parser ID input to the parser to watch. Payload schema is modelled from the Parseur document object, not captured live.</td></tr><tr><td>Document Processed</td><td><code>document.processed</code></td><td>Fires when Parseur finishes parsing a document and the extracted fields are ready. Set the Parser ID input to the parser (mailbox) whose documents should trigger this. Payload schema is modelled from the Parseur document object; no live delivery was captured because the sandbox account has no parsing credits to spend.</td></tr><tr><td>Document Processed (Flattened)</td><td><code>document.processed.flattened</code></td><td>Same as Document Processed but with nested table data flattened into a single level, which is easier to map into spreadsheet-shaped destinations. Set the Parser ID input to the parser whose documents should trigger this. Payload schema is modelled from the Parseur document object, not captured live.</td></tr><tr><td>Table Processed</td><td><code>table.processed</code></td><td>Fires once per extracted table row rather than once per document, for documents whose template defines a table. Set the Parser ID input to the parser to watch. Payload schema is modelled from the Parseur table row shape, not captured live.</td></tr><tr><td>Template Needed</td><td><code>document.template_needed</code></td><td>Fires when a document arrives that no existing template matches, so a human needs to create one. Use it to alert an operator. Set the Parser ID input to the parser to watch. Payload schema is modelled from the Parseur document object, not captured live.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Document Export Failed</td><td><code>document.export_failed</code></td><td>Fires when Parseur parsed a document but could not deliver it to a configured export destination. Use it to catch broken downstream integrations. Set the Parser ID input to the parser to watch.</td></tr><tr><td>Document Processed</td><td><code>document.processed</code></td><td>Fires when Parseur finishes parsing a document and the extracted fields are ready. Set the Parser ID input to the parser (mailbox) whose documents should trigger this.</td></tr><tr><td>Document Processed (Flattened)</td><td><code>document.processed.flattened</code></td><td>Same as Document Processed but with nested table data flattened into a single level, which is easier to map into spreadsheet-shaped destinations. Set the Parser ID input to the parser whose documents should trigger this.</td></tr><tr><td>Table Processed</td><td><code>table.processed</code></td><td>Fires once per extracted table row rather than once per document, for documents whose template defines a table. Set the Parser ID input to the parser to watch.</td></tr><tr><td>Template Needed</td><td><code>document.template_needed</code></td><td>Fires when a document arrives that no existing template matches, so a human needs to create one. Use it to alert an operator. Set the Parser ID input to the parser to watch.</td></tr></tbody></table>

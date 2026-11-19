@@ -1,5 +1,5 @@
 ---
-description: "SolarWinds Pingdom website and transaction monitoring."
+description: "Pingdom monitors website uptime and performance. Manage uptime and transaction checks, maintenance windows, alert contacts and teams, and read results."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pingdom.png" alt="Pingdom logo">
 
-Manage uptime checks, transaction (TMS) checks, maintenance windows, alerting contacts and teams, and read alerting actions, root-cause analysis, raw results, summary reports, probe servers and account credits via the Pingdom REST API 3.1.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [pingdom.com](https://pingdom.com) |
 | **Authentication** | API key |
 | **Slug** | `pingdom` |
+
+## Setup
+
+Your customers enter their API key for Pingdom when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Pingdom from **Build → Integrations → Connectors** and connect an accoun
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Check Recovered</td><td><code>UP</code></td><td>A Pingdom uptime or transaction check changed state back to UP. Registration is manual and identical to the DOWN event: My Pingdom &gt; Integrations &gt; Integrations &gt; Add integration &gt; Type: Webhook &gt; paste the fastn trigger URL &gt; name it &gt; Active &gt; Save; then Edit each check &gt; Connect integrations &gt; tick the webhook &gt; Save. The check must also have 'Notify when back up again' enabled or Pingdom never sends the recovery call. Payload schema is modelled from Pingdom's documented webhook sample, not captured from a live delivery.</td></tr><tr><td>Check Went Down</td><td><code>DOWN</code></td><td>A Pingdom uptime or transaction check changed state to DOWN. Pingdom has NO REST API for creating webhook integrations (GET /api/3.1/integrations, /api/3.1/webhooks and /api/3.1/alerting/integrations all return 404 'Please specify a valid API resource.'), so the customer must register this URL by hand: log in to My Pingdom &gt; Integrations &gt; Integrations &gt; Add integration &gt; Type: Webhook &gt; paste the fastn trigger URL as the URL &gt; give it a name &gt; Active &gt; Save. Then open each check that should fire this trigger (Experience Monitoring &gt; Uptime, or Synthetics &gt; Transaction) &gt; Edit check &gt; Connect integrations &gt; tick the new webhook &gt; Save. Without that second step Pingdom sends nothing. Payload schema is modelled from Pingdom's documented webhook sample, not captured from a live delivery - this account's plan grants zero uptime check slots and its API token is read-only, so no check could be created to fire one.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Check Recovered</td><td><code>UP</code></td><td>A Pingdom uptime or transaction check changed state back to UP. Registration is manual and identical to the DOWN event: My Pingdom &gt; Integrations &gt; Integrations &gt; Add integration &gt; Type: Webhook &gt; paste the fastn trigger URL &gt; name it &gt; Active &gt; Save; then Edit each check &gt; Connect integrations &gt; tick the webhook &gt; Save. The check must also have 'Notify when back up again' enabled or Pingdom never sends the recovery call.</td></tr><tr><td>Check Went Down</td><td><code>DOWN</code></td><td>A Pingdom uptime or transaction check changed state to DOWN. Pingdom has NO REST API for creating webhook integrations, /api/3.1/webhooks and /api/3.1/alerting/integrations all return 404 'Please specify a valid API resource.'), so the customer must register this URL by hand: log in to My Pingdom &gt; Integrations &gt; Integrations &gt; Add integration &gt; Type: Webhook &gt; paste the fastn trigger URL as the URL &gt; give it a name &gt; Active &gt; Save. Then open each check that should fire this trigger (Experience Monitoring &gt; Uptime, or Synthetics &gt; Transaction) &gt; Edit check &gt; Connect integrations &gt; tick the new webhook &gt; Save. Without that second step Pingdom sends nothing.</td></tr></tbody></table>

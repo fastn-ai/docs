@@ -1,5 +1,5 @@
 ---
-description: "Hygraph headless CMS."
+description: "Hygraph is a headless content management system. Manage models, fields, components, enumerations, locales and stages."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hygraph.png" alt="Hygraph logo">
 
-GraphQL Management API for schema management (models, fields, enumerations, components, stages, locales, taxonomies), webhooks, and permanent auth tokens, plus Content API access. Auth via a Permanent Auth Token (Bearer).
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [hygraph.com](https://hygraph.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access token |
 | **Slug** | `hygraph` |
+
+## Setup
+
+Your customers enter their access token for Hygraph when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Hygraph from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Taxonomy</td><td><code>createTaxonomy</code></td><td>Create a new taxonomy in an environment. Runs as an asynchronous schema migration. Provide variables.data with environmentId, apiId, and displayName.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Register a webhook that fires on content events. Provide variables.data with environmentId, name, url, isActive, includePayload, models (array of model IDs, empty for all), stages (array of stage IDs), triggerType CONTENT_MODEL, and triggerActions (CREATE, UPDATE, DELETE, PUBLISH, UNPUBLISH, TRANSITION_STEP).</td></tr><tr><td>Delete Component</td><td><code>deleteComponent</code></td><td>Delete a component definition by ID. Runs as an asynchronous schema migration. Provide variables.data.id.</td></tr><tr><td>Delete Enumeration</td><td><code>deleteEnumeration</code></td><td>Delete an enumeration by ID. Runs as an asynchronous schema migration. Provide variables.data.id.</td></tr><tr><td>Delete Field</td><td><code>deleteField</code></td><td>Delete a field from a model or component by field ID. Runs as an asynchronous schema migration. Provide variables.data.id.</td></tr><tr><td>Delete Locale</td><td><code>deleteLocale</code></td><td>Delete a locale by ID. Runs as an asynchronous schema migration. Provide variables.data.id and optionally force.</td></tr><tr><td>Delete Model</td><td><code>deleteModel</code></td><td>Delete a content model by ID. Runs as an asynchronous schema migration. Provide variables.data.id.</td></tr><tr><td>Delete Permanent Auth Token</td><td><code>deletePermanentAuthToken</code></td><td>Delete a Permanent Auth Token by ID. Provide variables.data.id. Returns the deleted token ID.</td></tr><tr><td>Delete Stage</td><td><code>deleteStage</code></td><td>Delete a content stage by ID. Runs as an asynchronous schema migration. Provide variables.data.id and optionally force.</td></tr><tr><td>Delete Taxonomy</td><td><code>deleteTaxonomy</code></td><td>Delete a taxonomy by ID. Runs as an asynchronous schema migration. Provide variables.data.id.</td></tr><tr><td>Delete Webhook</td><td><code>deleteWebhook</code></td><td>Delete a webhook by ID. Provide variables.data.webhookId. Returns the deleted webhook ID.</td></tr><tr><td>Get Content Model</td><td><code>getContentModel</code></td><td>Retrieve the full content model for a project environment: all models, stages, locales, enumerations, and components with their IDs and API IDs. Use these IDs when creating fields, webhooks, or other schema resources. Requires the project ID and environment name.</td></tr><tr><td>Get Meta Info</td><td><code>getMetaInfo</code></td><td>Retrieve Hygraph Management API meta information, including the server version.</td></tr><tr><td>Get Viewer</td><td><code>getViewer</code></td><td>Retrieve the authenticated viewer and a project's metadata, including its name, description, and environments (id, name, display name, endpoint). Requires the project ID.</td></tr><tr><td>Retrigger Webhook</td><td><code>retriggerWebhook</code></td><td>Retrigger a previously delivered webhook event by its log ID. Provide variables.data with the webhookId and the logId of the delivery to replay. Returns the new log ID.</td></tr><tr><td>Run Content GraphQL</td><td><code>runContentGraphql</code></td><td>Execute any GraphQL query or mutation against the Hygraph Content API for the connected project and environment. Use this to query or mutate content entries whose types are specific to the project schema. Pass the query string and an optional variables object.</td></tr><tr><td>Run Management GraphQL</td><td><code>runManagementGraphql</code></td><td>Execute any GraphQL query or mutation against the Hygraph Management API. Generic passthrough for management operations not covered by a dedicated action (roles, workflows, extensions, apps, integrations, remote sources, content views, members, environments). Pass the query string and an optional variables object.</td></tr><tr><td>Update Enumeration</td><td><code>updateEnumeration</code></td><td>Update an enumeration: rename it or add, update, or remove its values. Runs as an asynchronous schema migration. Provide variables.data with the enumeration id and any of valuesToCreate, valuesToUpdate, or valuesToDelete.</td></tr><tr><td>Update Model</td><td><code>updateModel</code></td><td>Update an existing content model's API IDs, display name, or description. Runs as an asynchronous schema migration. Provide variables.data with the model id and the fields to change.</td></tr><tr><td>Update Simple Field</td><td><code>updateSimpleField</code></td><td>Update an existing scalar field's properties (display name, description, required/unique/list flags, etc.). Runs as an asynchronous schema migration. Provide variables.data with the field id.</td></tr><tr><td>Update Webhook</td><td><code>updateWebhook</code></td><td>Update an existing webhook's configuration (URL, active state, trigger actions, scoped models/stages, etc.). Provide variables.data with the webhookId and the fields to change.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Hygraph has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

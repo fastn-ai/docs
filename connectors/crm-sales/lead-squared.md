@@ -1,5 +1,5 @@
 ---
-description: "LeadSquared sales and marketing CRM."
+description: "LeadSquared is a sales and marketing CRM. Create and update leads, log activities, capture opportunities and manage notes, tasks and lists."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lead-squared.png" alt="LeadSquared logo">
 
-Wraps the LeadSquared v2 REST API (apidocs.leadsquared.com): leads and their custom fields, notes, activities and activity types, tasks and appointments, opportunities, static and dynamic lists, users, sales groups, email campaigns and one-off lead emails, and webhook registration. The API host is region-specific (Singapore, US, India Mumbai/Hyderabad, Middle East, Ireland, Canada), so the host is supplied per connection alongside the access key and secret key; credentials are sent on every request as the x-LSQ-AccessKey and x-LSQ-SecretKey headers.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leadsquared.com](https://leadsquared.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access key and secret key |
 | **Slug** | `leadSquared` |
+
+## Setup
+
+Your customers enter their access key and secret key for LeadSquared when they connect. Nothing else needs setting up.
 
 ## Use it
 

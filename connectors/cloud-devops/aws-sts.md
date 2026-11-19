@@ -1,5 +1,5 @@
 ---
-description: "AWS Security Token Service (STS) Query API."
+description: "AWS Security Token Service issues temporary credentials. Assume roles, get federation tokens, and identify the caller behind a set of credentials."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aws-sts.png" alt="AWS Security Token Service logo">
 
-Identify the caller behind the connection's credentials and mint temporary, limited-privilege credentials by assuming an IAM role, with support for session duration, external IDs, MFA, session policies and session tags. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported.
-
 | | |
 | --- | --- |
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [aws.amazon.com](https://aws.amazon.com) |
-| **Authentication** | AWS Signature V4 |
+| **Authentication** | API key or token |
 | **Slug** | `awsSts` |
+
+## Setup
+
+Your customers enter their API key or token for AWS Security Token Service when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add AWS Security Token Service from **Build → Integrations → Connectors** an
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Session Token</td><td><code>getSessionToken</code></td><td>Returns a set of temporary credentials for the IAM user whose long-term keys the connection holds, optionally after MFA. The temporary credentials carry the same permissions as the user except that they cannot call IAM or most STS operations. Sessions last 900 to 129,600 seconds (12 hours by default). Returns the GetSessionTokenResponse envelope with the Credentials.</td></tr><tr><td>Get Web Identity Token</td><td><code>getWebIdentityToken</code></td><td>Issues a short-lived JSON Web Token (JWT) signed by AWS STS that represents the calling IAM identity, for presenting to an external service that validates AWS-issued tokens. The audience populates the aud claim and up to 5 tags can be added as custom claims through this action. Tokens last 60 to 3,600 seconds (300 by default). Returns the GetWebIdentityTokenResponse envelope with the JWT.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+AWS Security Token Service has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

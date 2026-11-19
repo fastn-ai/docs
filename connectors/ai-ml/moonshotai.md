@@ -1,5 +1,5 @@
 ---
-description: "Moonshot AI Kimi API (kimi-k2, kimi-latest, moonshot-v1) — OpenAI-compatible LLM platform."
+description: "Moonshot AI provides the Kimi language models. Create chat completions and responses, estimate tokens, run batches, manage files and check your balance."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/moonshotai.png" alt="Moonshot AI (Kimi) logo">
 
-Chat completions, models, files (extract/QA), context caching, token estimation, and account balance. Base URL https://api.moonshot.ai/v1. Bearer API key auth.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [moonshot.ai](https://moonshot.ai) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `moonshotai` |
+
+## Setup
+
+Your customers enter their access token for Moonshot AI (Kimi) when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,6 +30,10 @@ Add Moonshot AI (Kimi) from **Build → Integrations → Connectors** and connec
 
 <summary>View 9 more actions</summary>
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Messages API</td><td><code>createAnthropicMessage</code></td><td>Messages API. Call Kimi models with an Anthropic Messages API compatible format, supporting streaming, tool use, image input, thinking, and structured output.</td></tr><tr><td>Retrieve Batch</td><td><code>getBatch</code></td><td>Retrieve Batch. Retrieve the status and details of a specific batch task.</td></tr><tr><td>Retrieve File</td><td><code>retrieveFile</code></td><td>Get File Information. Retrieves metadata for a specific uploaded file.</td></tr><tr><td>Retrieve File Content</td><td><code>retrieveFileContent</code></td><td>Get File Content. Retrieves the extracted content for files uploaded with purpose `file-extract`, returned as Markdown-formatted text.</td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td>Upload a text file (POST /v1/files, multipart) for file-extract or batch. Docs: https://platform.kimi.ai/docs</td></tr><tr><td>URL Fetch</td><td><code>webFetch</code></td><td>URL Fetch. Fetch the content of a URL and get the page title and body text in Markdown (text and images concatenated in order). Only http and https URLs are supported. You are charged once per successful call that extracts content; failed or empty-content calls are free. See [WebSearch Pricing](/pricing/tools).</td></tr><tr><td>Verify Request Signature</td><td><code>verifySignature</code></td><td>Verify Request Signature. Verifies a request signature returned in the response headers of the Chat Completions, Responses, or Messages API, proving that the request was handled by the Kimi API for the specified model rather than routed elsewhere. Submit the nonce used in the call, the timestamp from the response headers, the request's model, and the signature; the endpoint returns `valid: true` when the signature matches these three attributes exactly, and `valid: false` otherwise.</td></tr><tr><td>Web Search Basic</td><td><code>webSearch</code></td><td>Web Search Basic. Run a web search and get structured results with title, snippet, site, and URL. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools).</td></tr><tr><td>Web Search Pro</td><td><code>webSearchPro</code></td><td>Web Search Pro. Web Search Basic with site and time-range constraints, plus structured content chunks (`chunks`) for each result. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools).</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Messages API</td><td><code>createAnthropicMessage</code></td><td>Messages API. Call Kimi models with an Anthropic Messages API compatible format, supporting streaming, tool use, image input, thinking, and structured output.</td></tr><tr><td>Retrieve Batch</td><td><code>getBatch</code></td><td>Retrieve Batch. Retrieve the status and details of a specific batch task.</td></tr><tr><td>Retrieve File</td><td><code>retrieveFile</code></td><td>Get File Information. Retrieves metadata for a specific uploaded file.</td></tr><tr><td>Retrieve File Content</td><td><code>retrieveFileContent</code></td><td>Get File Content. Retrieves the extracted content for files uploaded with purpose `file-extract`, returned as Markdown-formatted text.</td></tr><tr><td>Upload File</td><td><code>uploadFile</code></td><td>Upload a text file, multipart) for file-extract or batch. Docs: https://platform.kimi.ai/docs</td></tr><tr><td>URL Fetch</td><td><code>webFetch</code></td><td>URL Fetch. Fetch the content of a URL and get the page title and body text in Markdown (text and images concatenated in order). Only http and https URLs are supported. You are charged once per successful call that extracts content; failed or empty-content calls are free. See [WebSearch Pricing](/pricing/tools).</td></tr><tr><td>Verify Request Signature</td><td><code>verifySignature</code></td><td>Verify Request Signature. Verifies a request signature returned in the response headers of the Chat Completions, Responses, or Messages API, proving that the request was handled by the Kimi API for the specified model rather than routed elsewhere. Submit the nonce used in the call, the timestamp from the response headers, the request's model, and the signature; the endpoint returns `valid: true` when the signature matches these three attributes exactly, and `valid: false` otherwise.</td></tr><tr><td>Web Search Basic</td><td><code>webSearch</code></td><td>Web Search Basic. Run a web search and get structured results with title, snippet, site, and URL. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools).</td></tr><tr><td>Web Search Pro</td><td><code>webSearchPro</code></td><td>Web Search Pro. Web Search Basic with site and time-range constraints, plus structured content chunks (`chunks`) for each result. You are charged once per successful call that returns at least one result; failed or empty-result calls are free. See [WebSearch Pricing](/pricing/tools).</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Moonshot AI (Kimi) has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

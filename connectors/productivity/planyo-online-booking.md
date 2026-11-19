@@ -1,5 +1,5 @@
 ---
-description: "Planyo online booking / reservation system."
+description: "Planyo is an online booking and reservation system. Manage products, agents, coupons, pricing rules, custom properties and notifications."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/planyo-online-booking.png" alt="Planyo Online Booking logo">
 
-Single-URL RPC REST API at https://www.planyo.com/rest/ where every operation is ?method=&lt;name&gt;&api_key=&lt;key&gt;. HTTP status is always 200; success is indicated by response_code:0 in the body.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [planyo.com](https://planyo.com) |
 | **Authentication** | API key |
 | **Slug** | `planyoOnlineBooking` |
+
+## Setup
+
+Your customers enter their API key for Planyo Online Booking when they connect. Nothing else needs setting up.
 
 ## Use it
 

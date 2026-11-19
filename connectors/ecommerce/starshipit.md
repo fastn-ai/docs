@@ -1,5 +1,5 @@
 ---
-description: "Starshipit is a multi-carrier shipping and fulfilment platform for ecommerce retailers."
+description: "Starshipit is a shipping and fulfillment platform. Manage orders, address books, delivery services and carrier manifests."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/starshipit.png" alt="Starshipit logo">
 
-This connector wraps the Starshipit REST API: orders and order search, label printing and manifesting, shipments, tracking, live rates and delivery services, the address book, manifests and the product catalogue.
-
 | | |
 | --- | --- |
 | **Category** | [E-commerce](README.md) |
 | **Website** | [starshipit.com](https://starshipit.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key and subscription key |
 | **Slug** | `starshipit` |
+
+## Setup
+
+Your customers enter their API key and subscription key for Starshipit when they connect. Nothing else needs setting up.
 
 ## Use it
 

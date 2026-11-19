@@ -1,13 +1,11 @@
 ---
-description: "Sellsy CRM, invoicing and sales platform via the Sellsy API v2."
+description: "Sellsy is a CRM and invoicing platform. Manage companies, contacts, opportunities, estimates, orders, invoices and subscriptions."
 hidden: true
 ---
 
 # Sellsy
 
 <img src="../../.gitbook/assets/connectors/lg/sellsy.png" alt="Sellsy logo">
-
-Manage companies, contacts, individuals, opportunities, estimates, orders, invoices, credit notes, payments, items, tasks, calendar events, comments, custom fields, files, staff and webhooks.
 
 | | |
 | --- | --- |

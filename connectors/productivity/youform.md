@@ -1,5 +1,5 @@
 ---
-description: "Youform is an online form builder for surveys, quizzes and lead capture."
+description: "Youform is an online form builder. List forms, templates and themes, read form submissions, and create and delete form webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/youform.png" alt="Youform logo">
 
-This connector covers the full Youform REST API: reading the authenticated account profile, listing forms, reading a single form by slug, reading complete and partial submissions for a form, creating and deleting per-form submission webhooks, and enabling or disabling a submission refill link.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [youform.com](https://youform.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `youform` |
+
+## Setup
+
+Your customers enter their access token for Youform when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,7 +30,7 @@ Add Youform from **Build → Integrations → Connectors** and connect an accoun
 
 <summary>View 1 more action</summary>
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Set Submission Refill Link</td><td><code>setSubmissionRefillLink</code></td><td>Enables or disables the refill link for a submission, which lets the respondent reopen and edit their answers. This feature requires a Youform Pro plan; on lower plans Youform returns 403 'Only PRO users can use this feature.'</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Set Submission Refill Link</td><td><code>setSubmissionRefillLink</code></td><td>Enables or disables the refill link for a submission, which lets the respondent reopen and edit their answers. This feature requires a Youform Pro plan; on lower plans Youform'</td></tr></tbody></table>
 
 </details>
 
@@ -36,4 +38,4 @@ Add Youform from **Build → Integrations → Connectors** and connect an accoun
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Submission Received</td><td><code>submission_created</code></td><td>Fires when a new submission is received by the Youform form named in the form_id input. Youform webhooks are registered per form through POST /api/webhooks and removed through DELETE /api/webhooks/{id}; this connector does that automatically. Supply the form's slug (for example 'kyir3qrg', from List Forms) as the form_id input when creating the trigger. Youform's API exposes exactly one webhook event: a new submission. The payload schema below is modelled from Youform's documented submission object, not captured from a live delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Submission Received</td><td><code>submission_created</code></td><td>Fires when a new submission is received by the Youform form named in the form_id input. Youform webhooks are registered per form through and removed through; this connector does that automatically. Supply the form's slug (for example 'kyir3qrg', from List Forms) as the form_id input when creating the trigger. Youform's API exposes exactly one webhook event: a new submission.</td></tr></tbody></table>

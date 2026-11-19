@@ -1,5 +1,5 @@
 ---
-description: "Wufoo is an online form builder for collecting submissions, payments and survey responses."
+description: "Wufoo is an online form builder. Read forms, fields, entry counts and reports, and create and delete form webhooks."
 hidden: true
 ---
 
@@ -7,13 +7,15 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wufoo.png" alt="Wufoo logo">
 
-This connector covers the Wufoo REST API v3: listing and retrieving forms and their field definitions, reading and submitting form entries, entry counts, entry comments and comment counts, reports with their entries, fields and widgets, account users, the login endpoint that exchanges account details for an API key, and the WebHook API for registering and removing per-form webhook subscriptions.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Subdomain and API key |
 | **Slug** | `wufoo` |
+
+## Setup
+
+Your customers enter their subdomain and api key for Wufoo when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -30,3 +32,7 @@ Add Wufoo from **Build → Integrations → Connectors** and connect an account,
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Form Comments</td><td><code>listFormComments</code></td><td>Retrieves the comments left on a Wufoo form's entries, optionally narrowed to a single entry.</td></tr><tr><td>List Form Entries</td><td><code>listFormEntries</code></td><td>Retrieves the entries submitted to a Wufoo form, with optional sorting and column filtering. Entry keys are the form's field identifiers, so pair this with Get Form Fields to interpret the values.</td></tr><tr><td>List Forms</td><td><code>listForms</code></td><td>Retrieves every form in the Wufoo account the API key belongs to, including each form's name, description, settings and hashed identifier.</td></tr><tr><td>List Report Entries</td><td><code>listReportEntries</code></td><td>Retrieves the entries included in a Wufoo report, after the report's own filters have been applied.</td></tr><tr><td>List Report Widgets</td><td><code>listReportWidgets</code></td><td>Retrieves the widgets that make up a Wufoo report, such as charts, graphs and number totals, along with their type and size.</td></tr><tr><td>List Reports</td><td><code>listReports</code></td><td>Retrieves every report in the Wufoo account, including each report's name, description and hashed identifier.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>Retrieves every user on the Wufoo account, including their username, email address, role and administrative permissions.</td></tr><tr><td>Submit Form Entry</td><td><code>submitFormEntry</code></td><td>Submits a new entry to a Wufoo form. Supply the values as form-encoded field identifiers such as Field1 and Field2, which you can discover with Get Form Fields. Wufoo runs the form's own validation and returns per-field errors when it rejects the submission. Note that a successful submission fires the form's configured email notifications.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Wufoo has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

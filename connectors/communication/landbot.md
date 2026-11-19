@@ -1,5 +1,5 @@
 ---
-description: "Landbot is a no-code conversational app builder for websites, WhatsApp and Messenger."
+description: "Landbot builds chatbots for websites and WhatsApp. Manage customers and customer fields, assign customers to agents or bots, and manage message hooks."
 hidden: true
 ---
 
@@ -7,13 +7,15 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/landbot.png" alt="Landbot logo">
 
-This connector covers the Landbot Platform API v1: listing and retrieving messaging channels, browsing bots and agents, reading and managing customers and their message history, archiving, blocking, assigning and unassigning conversations to agents or bots, sending text, image, location and WhatsApp template messages, managing WhatsApp opt-out, reading and writing custom customer fields, and registering message hooks that deliver conversation events to an external endpoint.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `landbot` |
+
+## Setup
+
+Your customers enter their API token for Landbot when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -30,3 +32,7 @@ Add Landbot from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Bot</td><td><code>getBot</code></td><td>Retrieves a single Landbot bot by its numeric identifier.</td></tr><tr><td>Get Channel</td><td><code>getChannel</code></td><td>Retrieves a single Landbot messaging channel by its numeric identifier.</td></tr><tr><td>Get Customer</td><td><code>getCustomer</code></td><td>Retrieves a single Landbot customer by numeric identifier, including their custom fields, assigned agent and conversation state.</td></tr><tr><td>Get Customer Field</td><td><code>getCustomerField</code></td><td>Retrieves the value of a single custom field on a Landbot customer's profile.</td></tr><tr><td>Get Message Hook</td><td><code>getMessageHook</code></td><td>Retrieves a single message hook registered on a Landbot channel.</td></tr><tr><td>List Agents</td><td><code>listAgents</code></td><td>Retrieves the human agents on the Landbot account who can be assigned conversations, including their name, email address and role.</td></tr><tr><td>List Bots</td><td><code>listBots</code></td><td>Retrieves every bot built in the Landbot account, including its identifier and name.</td></tr><tr><td>List Channels</td><td><code>listChannels</code></td><td>Retrieves every messaging channel connected to the Landbot account, such as WhatsApp, web chat and Messenger channels.</td></tr><tr><td>List Customer Messages</td><td><code>listCustomerMessages</code></td><td>Retrieves the message history of a Landbot customer's conversation, newest first.</td></tr><tr><td>List Customers</td><td><code>listCustomers</code></td><td>Retrieves the customers (contacts) on the Landbot account, with optional filtering by channel, assigned agent, archive status, WhatsApp opt-in status, and a prefix search over name, email or phone.</td></tr><tr><td>List Message Hooks</td><td><code>listMessageHooks</code></td><td>Retrieves the message hooks registered on a Landbot channel. Each hook receives an HTTP POST for every message that moves through the channel.</td></tr><tr><td>List WhatsApp Templates</td><td><code>listWhatsappTemplates</code></td><td>Retrieves the WhatsApp message templates approved for the account, which are required to open a conversation outside the 24-hour customer service window.</td></tr><tr><td>Opt Out Customer</td><td><code>optOutCustomer</code></td><td>Marks a Landbot customer as opted out of WhatsApp messaging. Once opted out, template messages can no longer be delivered to them.</td></tr><tr><td>Send Image Message</td><td><code>sendImageMessage</code></td><td>Sends an image to a Landbot customer through their channel, referenced by a publicly reachable URL.</td></tr><tr><td>Send Location Message</td><td><code>sendLocationMessage</code></td><td>Sends a geographic location to a Landbot customer through their channel, rendered as a map pin.</td></tr><tr><td>Send Template Message</td><td><code>sendTemplateMessage</code></td><td>Sends an approved WhatsApp template message to a Landbot customer. This is the only way to open a WhatsApp conversation outside the 24-hour customer service window.</td></tr><tr><td>Send Text Message</td><td><code>sendTextMessage</code></td><td>Sends a plain text message to a Landbot customer through their channel. On WhatsApp this only succeeds inside the 24-hour customer service window; outside it, use Send Template Message instead.</td></tr><tr><td>Unarchive Customer</td><td><code>unarchiveCustomer</code></td><td>Returns a previously archived Landbot conversation to the active inbox.</td></tr><tr><td>Unassign Customer</td><td><code>unassignCustomer</code></td><td>Removes the current agent or bot assignment from a Landbot conversation, returning it to the unassigned queue.</td></tr><tr><td>Unblock Customer</td><td><code>unblockCustomer</code></td><td>Unblocks a previously blocked Landbot customer, allowing them to message again.</td></tr><tr><td>Update Customer Field</td><td><code>updateCustomerField</code></td><td>Updates the value of an existing custom field on a Landbot customer's profile.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Landbot has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

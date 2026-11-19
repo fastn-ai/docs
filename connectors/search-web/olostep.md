@@ -1,5 +1,5 @@
 ---
-description: "Olostep is a web search, scraping and crawling API built for AI applications."
+description: "Olostep is a web scraping and search service for AI apps. Scrape pages, run batches, crawl and map sites, and get answers."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/olostep.png" alt="Olostep logo">
 
-This connector covers single-page scrapes, large asynchronous batches, website crawls and URL maps, AI answers and web search, stored content retrieval, change monitors, JSON context files, scheduled API calls, AirOps enrichment batches and credit balance information.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [olostep.com](https://olostep.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `olostep` |
+
+## Setup
+
+Your customers enter their access token for Olostep when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Olostep from **Build → Integrations → Connectors** and connect an accoun
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Batch Completed</td><td><code>event.batch.completed</code></td><td>Fires when a batch finishes processing, with all items completed or failed. Olostep sends this per batch rather than through a standing subscription: pass this trigger's webhook URL as the Webhook URL input of Create Batch. Deliveries are retried up to 5 times over 30 minutes and are not signed; deduplicate on id. The schema below was captured from a real delivery.</td></tr><tr><td>Crawl Completed</td><td><code>event.crawl.completed</code></td><td>Fires when a crawl finishes and all discovered pages have been processed. Olostep sends this per crawl: pass this trigger's webhook URL as the Webhook URL input of Create Crawl. Deliveries are retried up to 5 times over 30 minutes and are not signed; deduplicate on id. The schema below was captured from a real delivery.</td></tr><tr><td>Monitor Fired</td><td><code>monitor.run</code></td><td>Fires when an Olostep monitor created for this trigger posts to its webhook after a scheduled run. Subscribing creates a monitor from the monitorQuery input (and optional monitorFrequency) with this trigger's URL as its webhook; unsubscribing deletes that monitor. Olostep does not document the monitor webhook body and no run completed during validation, so the schema below is a recommended minimum modelled on the monitor resource, not a captured delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Batch Completed</td><td><code>event.batch.completed</code></td><td>Fires when a batch finishes processing, with all items completed or failed. Olostep sends this per batch rather than through a standing subscription: pass this trigger's webhook URL as the Webhook URL input of Create Batch. Deliveries are retried up to 5 times over 30 minutes and are not signed; deduplicate on id.</td></tr><tr><td>Crawl Completed</td><td><code>event.crawl.completed</code></td><td>Fires when a crawl finishes and all discovered pages have been processed. Olostep sends this per crawl: pass this trigger's webhook URL as the Webhook URL input of Create Crawl. Deliveries are retried up to 5 times over 30 minutes and are not signed; deduplicate on id.</td></tr><tr><td>Monitor Fired</td><td><code>monitor.run</code></td><td>Fires when an Olostep monitor created for this trigger posts to its webhook after a scheduled run. Subscribing creates a monitor from the monitorQuery input (and optional monitorFrequency) with this trigger's URL as its webhook; unsubscribing deletes that monitor.</td></tr></tbody></table>

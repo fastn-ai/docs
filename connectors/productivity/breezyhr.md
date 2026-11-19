@@ -1,5 +1,5 @@
 ---
-description: "Breezy HR is a visual pipeline recruiting/ATS platform."
+description: "Breezy HR is a recruiting and applicant tracking system. Create positions, add candidates and read candidate details."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/breezyhr.png" alt="Breezy HR logo">
 
-This connector wraps the Breezy HR REST API v3 covering companies, positions, candidates, pipelines, questionnaires, templates, and webhook management.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [breezy.hr](https://breezy.hr) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Email and password |
 | **Slug** | `breezyhr` |
+
+## Setup
+
+Your customers enter their email and password for Breezy HR when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Breezy HR from **Build → Integrations → Connectors** and connect an acco
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Candidate Meta</td><td><code>getCandidateMeta</code></td><td>Get metadata (source, ratings, tags) for a candidate.</td></tr><tr><td>Get Candidate Questionnaires</td><td><code>getCandidateQuestionnaires</code></td><td>List questionnaires sent to / completed by a candidate.</td></tr><tr><td>Get Candidate Resume</td><td><code>getCandidateResume</code></td><td>Get the parsed/raw resume info for a candidate.</td></tr><tr><td>Get Candidate Stream</td><td><code>getCandidateStream</code></td><td>Get the activity stream (notes, stage moves, emails) for a candidate.</td></tr><tr><td>Get Company</td><td><code>getCompany</code></td><td>Get a single company by id.</td></tr><tr><td>Get Company Custom Attributes</td><td><code>getCompanyCustomAttributes</code></td><td>Get a company-level custom attribute definition by id.</td></tr><tr><td>Get Company Custom Fields</td><td><code>getCompanyCustomFields</code></td><td>Get a company-level custom field definition by id.</td></tr><tr><td>Get Current User</td><td><code>getUser</code></td><td>Get the authenticated user's basic info.</td></tr><tr><td>Get Health</td><td><code>getHealth</code></td><td>Health check endpoint. Does not require authentication.</td></tr><tr><td>Get Pipeline</td><td><code>getPipeline</code></td><td>Get a single recruiting pipeline (with its stages) by id.</td></tr><tr><td>Get Position</td><td><code>getPosition</code></td><td>Get a single position/candidate pool by id.</td></tr><tr><td>Get Position Custom Fields</td><td><code>getPositionCustomFields</code></td><td>Get custom field values set on a position.</td></tr><tr><td>Get Position Stream</td><td><code>getPositionStream</code></td><td>Get the activity stream (notes/events) for a position.</td></tr><tr><td>Get Position Team</td><td><code>getPositionTeam</code></td><td>Get the hiring team members assigned to a position.</td></tr><tr><td>Get Questionnaire</td><td><code>getQuestionnaire</code></td><td>Get a single candidate questionnaire by id.</td></tr><tr><td>Get Template</td><td><code>getTemplate</code></td><td>Get a single position/email template by id.</td></tr><tr><td>Get User Details</td><td><code>getUserDetails</code></td><td>Get detailed profile info for the authenticated user.</td></tr><tr><td>Get Webhook Endpoint</td><td><code>getWebhookEndpoint</code></td><td>Get a single webhook endpoint by id.</td></tr><tr><td>List Candidates</td><td><code>listCandidates</code></td><td>List candidates in a position's pipeline.</td></tr><tr><td>List Categories</td><td><code>listCategories</code></td><td>List position categories configured for a company.</td></tr><tr><td>List Companies</td><td><code>listCompanies</code></td><td>List all companies (organizations) the authenticated user has access to.</td></tr><tr><td>List Departments</td><td><code>listDepartments</code></td><td>List departments configured for a company.</td></tr><tr><td>List Pipelines</td><td><code>listPipelines</code></td><td>List recruiting pipelines (stage templates) configured for a company.</td></tr><tr><td>List Positions</td><td><code>listPositions</code></td><td>List open/closed positions and candidate pools for a company.</td></tr><tr><td>List Questionnaires</td><td><code>listQuestionnaires</code></td><td>List candidate questionnaires configured for a company.</td></tr><tr><td>List Templates</td><td><code>listTemplates</code></td><td>List position/email templates configured for a company.</td></tr><tr><td>List Webhook Endpoints</td><td><code>listWebhookEndpoints</code></td><td>List webhook endpoints configured for a company.</td></tr><tr><td>Move Candidate</td><td><code>moveCandidate</code></td><td>Move a candidate to a different position/pool and stage.</td></tr><tr><td>Pause Webhook Endpoint</td><td><code>pauseWebhookEndpoint</code></td><td>Pause an active webhook endpoint.</td></tr><tr><td>Post Candidate Note</td><td><code>postCandidateNote</code></td><td>Post a note to a candidate's activity stream.</td></tr><tr><td>Resume Webhook Endpoint</td><td><code>resumeWebhookEndpoint</code></td><td>Resume a paused webhook endpoint.</td></tr><tr><td>Search Candidates</td><td><code>searchCandidates</code></td><td>Search all candidates across a company by query string.</td></tr><tr><td>Search Company Candidates</td><td><code>searchCompanyCandidates</code></td><td>Search/list candidates across the whole company by free-text query or exact email, paginated.</td></tr><tr><td>Send Candidate Message</td><td><code>sendCandidateMessage</code></td><td>Send an email message to a candidate.</td></tr><tr><td>Set Candidate Stage</td><td><code>setCandidateStage</code></td><td>Move a candidate to a different stage within their current pipeline.</td></tr><tr><td>Set Position State</td><td><code>setPositionState</code></td><td>Change a position's lifecycle state (e.g. activate, put on hold, close/fill, cancel).</td></tr><tr><td>Update Candidate</td><td><code>updateCandidate</code></td><td>Partially update a candidate's basic fields.</td></tr><tr><td>Update Position</td><td><code>updatePosition</code></td><td>Partially update an existing position's fields.</td></tr><tr><td>Update Webhook Endpoint</td><td><code>updateWebhookEndpoint</code></td><td>Update an existing webhook endpoint's URL, description, or subscribed events.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Breezy HR has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

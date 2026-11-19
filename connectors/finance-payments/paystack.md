@@ -1,5 +1,5 @@
 ---
-description: "Paystack payments platform for Africa."
+description: "Paystack is a payments platform for Africa. Manage transactions, customers, balances and bank accounts, and verify account numbers."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/paystack.png" alt="Paystack logo">
 
-Accept payments and manage transactions, charges and bulk charges, customers and direct debit mandates, dedicated virtual accounts, virtual terminals and POS terminals, plans and subscriptions, transfer recipients and transfers, payment requests and invoices, products, storefronts and orders, payment pages, subaccounts and transaction splits, settlements, refunds, disputes, balance and ledger, bank resolution and account verification via the Paystack REST API (https://api.paystack.co). Authenticates with your Paystack secret key as a Bearer token; the key itself selects test or live mode.
-
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [paystack.com](https://paystack.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `paystack` |
+
+## Setup
+
+Your customers enter their access token for Paystack when they connect. Nothing else needs setting up.
 
 ## Use it
 

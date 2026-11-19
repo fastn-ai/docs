@@ -1,5 +1,5 @@
 ---
-description: "MillionVerifier email verification."
+description: "MillionVerifier verifies email addresses. Verify single emails, upload bulk files, download reports and check credit balance."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/millionverifier.png" alt="MillionVerifier logo">
 
-Wraps the Single API (real-time single email verification and credit balance on api.millionverifier.com/api/v3) and the Bulk API v2 (file upload, file info, file list, report download, stop and delete on bulkapi.millionverifier.com). Authenticates with a MillionVerifier API key sent as a query parameter (the vendor ignores auth headers entirely).
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [millionverifier.com](https://millionverifier.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `millionverifier` |
+
+## Setup
+
+Your customers enter their API key for MillionVerifier when they connect. Nothing else needs setting up.
 
 ## Use it
 

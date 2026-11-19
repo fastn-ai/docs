@@ -1,5 +1,5 @@
 ---
-description: "Connect Snapchat Marketing API to your product with fastn."
+description: "Snapchat Marketing lets you run Snapchat ads. Manage ad accounts, campaigns, ads, media and audience segments."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/snapchat-marketing-api.png" alt="Snapchat Marketing API logo">
 
-Snapchat Marketing API connector covering the Ads API (organizations, ad accounts, funding sources, billing centers, members and roles, campaigns, ad squads, ads, creatives, creative elements, media, catalogs, product feeds and product sets, audience segments, pixels, mobile apps, lead generation forms, interaction zones, dynamic templates, targeting reference data, measurement and stats reporting, invoices and transactions, and the Ads Library), the Public Profile API (profiles, stories, saved stories, spotlights, lenses, snaps, metrics, roles, sharing policies, and messaging), and the Conversions API for server-to-server event tracking.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [snapchat.com](https://snapchat.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `snapchatMarketingApi` |
+
+## Setup
+
+Your customers sign in to Snapchat Marketing API through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

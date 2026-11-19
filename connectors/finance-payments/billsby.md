@@ -1,18 +1,22 @@
 ---
-description: "Billsby subscription billing and recurring payments."
+description: "Billsby is a subscription billing platform. Manage customers, subscriptions, plans, cycles, feature tags and custom fields."
 hidden: true
 ---
 
 # Billsby
 
-Manage products, plans, cycles, customers, subscriptions, add-ons, allowances, feature tags, custom fields, invoices, credit notes, refunds, payment details and usage counters through the Billsby public REST API.
+<img src="../../.gitbook/assets/connectors/lg/billsby.png" alt="Billsby logo">
 
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [billsby.com](https://billsby.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Company domain and API key |
 | **Slug** | `billsby` |
+
+## Setup
+
+Your customers enter their company domain and api key for Billsby when they connect. Nothing else needs setting up.
 
 ## Use it
 

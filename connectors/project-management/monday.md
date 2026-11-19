@@ -1,5 +1,5 @@
 ---
-description: "Monday.com Work OS GraphQL API connector."
+description: "monday.com is a work management platform. Create and archive boards, groups and items, and add or change columns and column values."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/monday.png" alt="Monday.com logo">
 
-Single endpoint https://api.monday.com/v2 (all POST). Manage boards, groups, items, subitems, columns, updates, users, teams, workspaces, tags, docs, notifications and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Website** | [monday.com](https://monday.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `monday` |
+
+## Setup
+
+Your customers enter their access token for Monday.com when they connect. Nothing else needs setting up.
 
 ## Use it
 

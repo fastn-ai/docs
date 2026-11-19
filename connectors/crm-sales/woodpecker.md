@@ -1,5 +1,5 @@
 ---
-description: "Woodpecker is a cold email and LinkedIn outreach platform for sales teams and agencies."
+description: "Woodpecker is a cold email and LinkedIn outreach platform. Manage campaigns, prospects, mailboxes and blacklists."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/woodpecker.png" alt="Woodpecker logo">
 
-This connector covers the full Woodpecker public REST API: campaigns and campaign steps, Bounce Shield, prospects and campaign prospect management, the blacklist, inbox messages and replies, mailboxes and Microsoft Graph credentials, manual tasks, Lead Finder search and enrichment, LinkedIn profile collection, purchased domains and mailboxes, predefined reports, users, the agency (multi-client) API, and webhook subscriptions.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [woodpecker.co](https://woodpecker.co) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `woodpecker` |
+
+## Setup
+
+Your customers enter their API key for Woodpecker when they connect. Nothing else needs setting up.
 
 ## Use it
 

@@ -1,5 +1,5 @@
 ---
-description: "Connect to Slack to send messages, manage channels, interact with users, and automate workflows directly in your Slack workspace."
+description: "Slack is a team messaging app. Send messages, manage channels and users, upload files, and run workspace admin tasks."
 hidden: true
 ---
 
@@ -13,6 +13,10 @@ hidden: true
 | **Website** | [slack.com](https://slack.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `slack` |
+
+## Setup
+
+Your customers sign in to Slack through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

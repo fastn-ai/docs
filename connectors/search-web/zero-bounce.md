@@ -1,5 +1,5 @@
 ---
-description: "Connect ZeroBounce to your product with fastn."
+description: "ZeroBounce validates email addresses. Verify emails singly or in bulk, score lists, find email formats and check credits."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zero-bounce.png" alt="ZeroBounce logo">
 
-ZeroBounce is an email validation and deliverability platform: verify single or batch email addresses in real time, validate large lists in bulk, check inbox activity, score catch-all emails with AI, find and search email formats by domain or company, and evaluate list quality before sending campaigns.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [zerobounce.net](https://zerobounce.net) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `zeroBounce` |
+
+## Setup
+
+Your customers enter their API key for ZeroBounce when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,6 +30,10 @@ Add ZeroBounce from **Build → Integrations → Connectors** and connect an acc
 
 <summary>View 8 more actions</summary>
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get List Evaluation Status</td><td><code>getListEvaluationStatus</code></td><td>Check the processing status and quality-risk percentages for a list submitted with Submit List for Evaluation.</td></tr><tr><td>Score Email</td><td><code>scoreEmail</code></td><td>Return an A.I.-generated quality score for a single email address, useful for ranking catch-all or unverifiable addresses that standard validation cannot definitively classify.</td></tr><tr><td>Send Evaluated File for Full Validation</td><td><code>sendEvaluatedFileForValidation</code></td><td>Promote a completed list-evaluation job to a full bulk email validation run, consuming 1 credit per email. The file_id must come from a Submit List for Evaluation job whose status is already complete.</td></tr><tr><td>Send File for Bulk A.I. Scoring</td><td><code>sendFileForScoring</code></td><td>Upload a CSV or TXT file of email addresses for asynchronous bulk A.I. quality scoring. Returns a file_id used with Get Bulk Scoring File Status, Get Bulk Scoring Result File, and Delete Bulk Scoring File.</td></tr><tr><td>Send File for Bulk Email Validation</td><td><code>sendFileForValidation</code></td><td>Upload a CSV or TXT file of email addresses for asynchronous bulk validation. Consumes 1 credit per email once processed. Returns a file_id used with Get Bulk Validation File Status, Get Bulk Validation Result File, and Delete Bulk Validation File.</td></tr><tr><td>Submit List for Evaluation</td><td><code>submitListForEvaluation</code></td><td>Upload a CSV or TXT file of at least 100 email addresses to estimate list quality (invalid, catch-all, spam trap, and risky percentages) before committing to a full paid validation. Returns a file_id used with Get List Evaluation Status and Send Evaluated File for Full Validation.</td></tr><tr><td>Validate Email</td><td><code>validateEmail</code></td><td>Validate a single email address in real time and return its deliverability status, sub-status, and enrichment details such as domain age, MX record, and free-email/catch-all flags. Consumes 1 credit per call.</td></tr><tr><td>Validate Email Batch</td><td><code>validateEmailBatch</code></td><td>Validate up to 100 email addresses in a single real-time call, each optionally paired with the IP address it signed up from. Consumes 1 credit per email in the batch. BLOCKED on this account: ZeroBounce's /v2/validatebatch endpoint returns HTTP 200 with an envelope error {\"errors\":[{\"error\":\"Invalid API Key or your account ran out of credits\",\"email_address\":\"all\"}],\"email_batch\":[]} for every call on this free-tier API key, confirmed identical via a raw curl request outside the platform (same key that succeeds on /v2/validate, /v2/getcredits, etc). This is an account/plan entitlement gate on the free tier, not a wiring defect - the api_key correctly resolves into the JSON body (required here since ZeroBounce's Cloudflare WAF 403s a query-param key on this specific POST route). Re-test once the account is upgraded to a plan with batch API access.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get List Evaluation Status</td><td><code>getListEvaluationStatus</code></td><td>Check the processing status and quality-risk percentages for a list submitted with Submit List for Evaluation.</td></tr><tr><td>Score Email</td><td><code>scoreEmail</code></td><td>Return an A.I.-generated quality score for a single email address, useful for ranking catch-all or unverifiable addresses that standard validation cannot definitively classify.</td></tr><tr><td>Send Evaluated File for Full Validation</td><td><code>sendEvaluatedFileForValidation</code></td><td>Promote a completed list-evaluation job to a full bulk email validation run, consuming 1 credit per email. The file_id must come from a Submit List for Evaluation job whose status is already complete.</td></tr><tr><td>Send File for Bulk A.I. Scoring</td><td><code>sendFileForScoring</code></td><td>Upload a CSV or TXT file of email addresses for asynchronous bulk A.I. quality scoring. Returns a file_id used with Get Bulk Scoring File Status, Get Bulk Scoring Result File, and Delete Bulk Scoring File.</td></tr><tr><td>Send File for Bulk Email Validation</td><td><code>sendFileForValidation</code></td><td>Upload a CSV or TXT file of email addresses for asynchronous bulk validation. Consumes 1 credit per email once processed. Returns a file_id used with Get Bulk Validation File Status, Get Bulk Validation Result File, and Delete Bulk Validation File.</td></tr><tr><td>Submit List for Evaluation</td><td><code>submitListForEvaluation</code></td><td>Upload a CSV or TXT file of at least 100 email addresses to estimate list quality (invalid, catch-all, spam trap, and risky percentages) before committing to a full paid validation. Returns a file_id used with Get List Evaluation Status and Send Evaluated File for Full Validation.</td></tr><tr><td>Validate Email</td><td><code>validateEmail</code></td><td>Validate a single email address in real time and return its deliverability status, sub-status, and enrichment details such as domain age, MX record, and free-email/catch-all flags. Consumes 1 credit per call.</td></tr><tr><td>Validate Email Batch</td><td><code>validateEmailBatch</code></td><td>Validate up to 100 email addresses in a single real-time call, each optionally paired with the IP address it signed up from. Consumes 1 credit per email in the batch. BLOCKED on this account: ZeroBounce's /v2/validatebatch endpoint This is an account/plan entitlement gate on the free tier, not a wiring defect - the api_key correctly resolves into the JSON body (required here since ZeroBounce's Cloudflare WAF 403s a query-param key on this specific POST route). Re-test once the account is upgraded to a plan with batch API access.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+ZeroBounce has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

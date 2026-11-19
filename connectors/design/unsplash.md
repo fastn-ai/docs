@@ -1,5 +1,5 @@
 ---
-description: "Unsplash stock photo / image API."
+description: "Unsplash is a library of free stock photos. Search and get photos, manage collections and read photo statistics."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/unsplash.png" alt="Unsplash logo">
 
-Browse, search, and manage photos, collections, topics, and users on Unsplash. Public-scope reads use an application Access Key (Client-ID); a subset of write endpoints (own profile, own photos, own collections) require a full user-scoped OAuth Bearer token which this app does not currently mint.
-
 | | |
 | --- | --- |
 | **Category** | [Design](README.md) |
 | **Website** | [unsplash.com](https://unsplash.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access key |
 | **Slug** | `unsplash` |
+
+## Setup
+
+Your customers enter their access key for Unsplash when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Unsplash from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Related Collections</td><td><code>getRelatedCollections</code></td><td>List collections related to a given collection. Public endpoint, Client-ID auth.</td></tr><tr><td>Get Topic</td><td><code>getTopic</code></td><td>Retrieve a single topic by its id or slug. Public endpoint, Client-ID auth.</td></tr><tr><td>Get Topic Photos</td><td><code>getTopicPhotos</code></td><td>List the photos in a topic. Public endpoint, Client-ID auth.</td></tr><tr><td>Get Total Stats</td><td><code>getTotalStats</code></td><td>Retrieve total Unsplash platform statistics (all-time photo/download/view totals). Public endpoint, Client-ID auth.</td></tr><tr><td>Get User Collections</td><td><code>getUserCollections</code></td><td>List a user's public collections. Public endpoint, Client-ID auth.</td></tr><tr><td>Get User Photos</td><td><code>getUserPhotos</code></td><td>List a user's public photos. Public endpoint, Client-ID auth.</td></tr><tr><td>Get User Public Profile</td><td><code>getUserPublicProfile</code></td><td>Retrieve a user's public profile. Public endpoint, Client-ID auth.</td></tr><tr><td>Get User Statistics</td><td><code>getUserStatistics</code></td><td>Retrieve download/view statistics for a user over a time window. Public endpoint, Client-ID auth.</td></tr><tr><td>List Collections</td><td><code>listCollections</code></td><td>List all public collections, most recently updated first. Public endpoint, Client-ID auth.</td></tr><tr><td>List Photos</td><td><code>listPhotos</code></td><td>List photos from Unsplash's editorial feed, most recent first. Public endpoint, Client-ID auth.</td></tr><tr><td>List Topics</td><td><code>listTopics</code></td><td>List curated topics. Public endpoint, Client-ID auth.</td></tr><tr><td>Remove Photo From Collection</td><td><code>removePhotoFromCollection</code></td><td>Remove a photo from a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.</td></tr><tr><td>Search Collections</td><td><code>searchCollections</code></td><td>Search for collections by keyword. Public endpoint, Client-ID auth.</td></tr><tr><td>Search Photos</td><td><code>searchPhotos</code></td><td>Search for photos by keyword, with optional filters for order, orientation, collections, color, content filter, and language. Public endpoint, Client-ID auth.</td></tr><tr><td>Search Users</td><td><code>searchUsers</code></td><td>Search for users by keyword. Public endpoint, Client-ID auth.</td></tr><tr><td>Track Photo Download</td><td><code>trackPhotoDownload</code></td><td>Trigger a download event for a photo, as required by Unsplash API guidelines whenever a photo's download link is used by your application. Public endpoint, Client-ID auth. Returns a temporary download link.</td></tr><tr><td>Update Collection</td><td><code>updateCollection</code></td><td>Update a collection owned by the authenticated user. REQUIRES a full user-scoped OAuth Bearer access token (write_collections scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.</td></tr><tr><td>Update My Profile</td><td><code>updateMyProfile</code></td><td>Update the authenticated user's profile fields. REQUIRES a full user-scoped OAuth Bearer access token (write_user scope) - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.</td></tr><tr><td>Update Photo</td><td><code>updatePhoto</code></td><td>Update metadata of a photo owned by the authenticated user (description, tags, EXIF, location, profile visibility). REQUIRES a full user-scoped OAuth Bearer access token (write_photos scope) for a photo the authenticated user owns - a plain Client-ID (app-level) credential is NOT sufficient and will return 401.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Unsplash has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

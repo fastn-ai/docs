@@ -1,5 +1,5 @@
 ---
-description: "Simplescraper turns any website into structured data and APIs."
+description: "Simplescraper turns websites into structured data. Extract pages and URLs, capture screenshots and manage scraping recipes and results."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/simplescraper.png" alt="Simplescraper logo">
 
-This connector covers the full Simplescraper Extract API v1: create, list, read and update scrape recipes, run them on demand or in bulk, manage the batch (crawler) URL list, read run results and run history, extract markdown, HTML, screenshots and structured data from a single URL, run AI-powered Smart Extract, capture page screenshots, and discover every URL on a site from its sitemap.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [simplescraper.io](https://simplescraper.io) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `simplescraper` |
+
+## Setup
+
+Your customers enter their access token for Simplescraper when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Simplescraper from **Build → Integrations → Connectors** and connect an 
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Scrape Completed</td><td><code>scrape.completed</code></td><td>Fires after each URL in a scrape recipe finishes and its results are saved; a recipe scraping several pages sends one delivery per page. Registration is manual and per recipe, in the Simplescraper dashboard: open https://simplescraper.io/dashboard, select the recipe, open the Integrations tab, paste the fastn trigger URL into the webhook field and press Enter to save, then run the recipe. Simplescraper has no webhook registration API, so fastn cannot subscribe on the customer's behalf. The delivery is a POST with Content-Type application/json whose body is a bare JSON array of scraped rows; it carries no event-type discriminator and no signature, so this connector declares a single event and does not set an event key. The payload schema below is modelled from Simplescraper's documented sample at https://simplescraper.io/docs/sending-data-to-webhook, not from a captured delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Scrape Completed</td><td><code>scrape.completed</code></td><td>Fires after each URL in a scrape recipe finishes and its results are saved; a recipe scraping several pages sends one delivery per page. Registration is manual and per recipe, in the Simplescraper dashboard: open https://simplescraper.io/dashboard, select the recipe, open the Integrations tab, paste the fastn trigger URL into the webhook field and press Enter to save, then run the recipe. Simplescraper has no webhook registration API, so fastn cannot subscribe on the customer's behalf. The delivery is a POST with Content-Type application/json whose body is a bare JSON array of scraped rows; it carries no event-type discriminator and no signature, so this connector declares a single event and does not set an event key.</td></tr></tbody></table>

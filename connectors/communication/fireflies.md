@@ -1,5 +1,5 @@
 ---
-description: "Fireflies.ai connector — GraphQL API for AI meeting notetaker."
+description: "Fireflies.ai is an AI meeting notetaker. Manage transcripts, soundbites and AskFred threads, add the bot to live meetings, and upload audio."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fireflies.png" alt="Fireflies logo">
 
-Manage transcripts, summaries, soundbites (bites), users, channels, AskFred AI threads, live meetings, and audio uploads. Auth via Bearer API key.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Website** | [fireflies.ai](https://fireflies.ai) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `fireflies` |
+
+## Setup
+
+Your customers enter their access token for Fireflies when they connect. Nothing else needs setting up.
 
 ## Use it
 

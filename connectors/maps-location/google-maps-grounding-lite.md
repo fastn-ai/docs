@@ -1,13 +1,11 @@
 ---
-description: "Connect Google Maps Grounding Lite to your product with fastn."
+description: "Google Maps Grounding Lite gives AI agents Google Maps data. Search places, look up weather, compute routes and resolve place names."
 hidden: true
 ---
 
 # Google Maps Grounding Lite
 
 <img src="../../.gitbook/assets/connectors/lg/google-maps-grounding-lite.png" alt="Google Maps Grounding Lite logo">
-
-Google Maps Platform Grounding Lite MCP server (https://mapstools.googleapis.com/mcp), Google's hosted remote Model Context Protocol server (Streamable HTTP) that grounds AI answers in Google Maps data. Its tools are discovered live from the server and include search_places (find places, businesses and addresses), lookup_weather (current conditions and hourly/daily forecasts), compute_routes (DRIVE or WALK routes between an origin and destination), resolve_names (batch-resolve place names or addresses to place IDs) and resolve_maps_urls (convert Google Maps URLs to place IDs). Authorizes with Google OAuth 2.0 using the scope https://www.googleapis.com/auth/maps-platform.mapstools.
 
 | | |
 | --- | --- |
@@ -16,6 +14,14 @@ Google Maps Platform Grounding Lite MCP server (https://mapstools.googleapis.com
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleMapsGroundingLite` |
 
+## Setup
+
+Your customers sign in to Google Maps Grounding Lite through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
+
 ## Use it
 
 Add Google Maps Grounding Lite from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.googleMapsGroundingLite.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Events
+
+Google Maps Grounding Lite has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

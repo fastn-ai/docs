@@ -1,5 +1,5 @@
 ---
-description: "Uploadcare file uploading, storage, CDN delivery, and processing platform."
+description: "Uploadcare handles file uploads, storage and delivery. Manage files, groups and metadata, convert documents and videos, and manage webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uploadcare.png" alt="Uploadcare logo">
 
-Manage files, groups, file metadata, webhooks, document and video conversion, and AI add-ons (AWS Rekognition, virus scanning, background removal) via the Uploadcare REST API v0.7, plus uploading via the Upload API.
-
 | | |
 | --- | --- |
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [uploadcare.com](https://uploadcare.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Public key and secret key |
 | **Slug** | `uploadcare` |
+
+## Setup
+
+Your customers enter their public key and secret key for Uploadcare when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -22,7 +24,7 @@ Add Uploadcare from **Build → Integrations → Connectors** and connect an acc
 
 ## Actions
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Convert Document</td><td><code>convertDocument</code></td><td>Convert one or more documents to another format (e.g. PDF to PNG, DOCX to PDF). Each path uses the form uuid/document/-/format/target/. Returns a conversion token to poll for status.</td></tr><tr><td>Convert Video</td><td><code>convertVideo</code></td><td>Convert or transcode one or more videos (format, quality, size, cut, thumbnails). Each path uses the form uuid/video/-/format/target/... . Returns a conversion token to poll for status.</td></tr><tr><td>Copy File To Local Storage</td><td><code>copyFileToLocalStorage</code></td><td>Create a copy of a file in the project's local Uploadcare storage. Accepts a file UUID or CDN URL as the source.</td></tr><tr><td>Copy File To Remote Storage</td><td><code>copyFileToRemoteStorage</code></td><td>Copy a file to a custom (remote) storage backend configured for the project, such as an S3 bucket. Requires a custom storage target to be set up in the project settings.</td></tr><tr><td>Create Group</td><td><code>createGroup</code></td><td>Create a group from a set of previously uploaded files via the Upload API. Provide file UUIDs in the indexed files[0], files[1], ... fields. At least one file is required.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Subscribe a target URL to a project event so Uploadcare sends a webhook notification when that event occurs.</td></tr><tr><td>Delete File</td><td><code>deleteFile</code></td><td>Remove a single file from the project by its UUID. The file becomes inaccessible and is scheduled for permanent deletion.</td></tr><tr><td>Delete File Metadata Key</td><td><code>deleteFileMetadataKey</code></td><td>Remove a single custom metadata key from a file.</td></tr><tr><td>Delete Files Batch</td><td><code>deleteFilesBatch</code></td><td>Remove multiple files in one request. Provide a JSON array of file UUIDs (up to 100).</td></tr><tr><td>Delete Group</td><td><code>deleteGroup</code></td><td>Delete a file group by its ID. The files that belonged to the group are not deleted.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Convert Document</td><td><code>convertDocument</code></td><td>Convert one or more documents to another format (e.g. PDF to PNG, DOCX to PDF). Each path uses the form uuid/document/-/format/target/. Returns a conversion token to poll for status.</td></tr><tr><td>Convert Video</td><td><code>convertVideo</code></td><td>Convert or transcode one or more videos (format, quality, size, cut, thumbnails). Each path uses the form uuid/video/-/format/target/.... Returns a conversion token to poll for status.</td></tr><tr><td>Copy File To Local Storage</td><td><code>copyFileToLocalStorage</code></td><td>Create a copy of a file in the project's local Uploadcare storage. Accepts a file UUID or CDN URL as the source.</td></tr><tr><td>Copy File To Remote Storage</td><td><code>copyFileToRemoteStorage</code></td><td>Copy a file to a custom (remote) storage backend configured for the project, such as an S3 bucket. Requires a custom storage target to be set up in the project settings.</td></tr><tr><td>Create Group</td><td><code>createGroup</code></td><td>Create a group from a set of previously uploaded files via the Upload API. Provide file UUIDs in the indexed files[0], files[1],... fields. At least one file is required.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Subscribe a target URL to a project event so Uploadcare sends a webhook notification when that event occurs.</td></tr><tr><td>Delete File</td><td><code>deleteFile</code></td><td>Remove a single file from the project by its UUID. The file becomes inaccessible and is scheduled for permanent deletion.</td></tr><tr><td>Delete File Metadata Key</td><td><code>deleteFileMetadataKey</code></td><td>Remove a single custom metadata key from a file.</td></tr><tr><td>Delete Files Batch</td><td><code>deleteFilesBatch</code></td><td>Remove multiple files in one request. Provide a JSON array of file UUIDs (up to 100).</td></tr><tr><td>Delete Group</td><td><code>deleteGroup</code></td><td>Delete a file group by its ID. The files that belonged to the group are not deleted.</td></tr></tbody></table>
 
 <details>
 

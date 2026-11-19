@@ -1,5 +1,5 @@
 ---
-description: "SerpAPI — scrape Google and other search engines in real time and get structured JSON results."
+description: "SerpAPI returns search engine results as structured data. Search Google, Bing, Amazon, eBay, app stores and more."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/serpapi.png" alt="SerpAPI logo">
 
-Wraps the SerpAPI Search API (GET /search with an engine selector), Search Archive, Account, and Locations endpoints. Covers Google web/maps/images/news/scholar/jobs/shopping/trends/local/patents/play, plus Bing, DuckDuckGo, Yahoo, Baidu, YouTube, eBay, Walmart, Amazon, Home Depot, and the Apple App Store.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [serpapi.com](https://serpapi.com) |
 | **Authentication** | API key |
 | **Slug** | `serpapi` |
+
+## Setup
+
+Your customers enter their API key for SerpAPI when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add SerpAPI from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Google Local Search</td><td><code>googleLocalSearch</code></td><td>Google Local results via SerpAPI (engine=google_local). Returns local_results (the local pack). Consumes 1 credit.</td></tr><tr><td>Google Maps Search</td><td><code>googleMapsSearch</code></td><td>Google Maps search via SerpAPI (engine=google_maps). type=search returns local_results; type=place returns place_results. Consumes 1 credit.</td></tr><tr><td>Google News Search</td><td><code>googleNewsSearch</code></td><td>Google News via SerpAPI (engine=google_news). Use q for keyword search, or topic_token/publication_token/story_token/section_token to browse. Returns news_results. Consumes 1 credit.</td></tr><tr><td>Google Patents Search</td><td><code>googlePatentsSearch</code></td><td>Google Patents via SerpAPI (engine=google_patents). Returns organic_results of patents. Consumes 1 credit.</td></tr><tr><td>Google Play Search</td><td><code>googlePlaySearch</code></td><td>Google Play Store via SerpAPI (engine=google_play). store selects apps/games/movies/books. Returns organic_results / top_charts. Consumes 1 credit.</td></tr><tr><td>Google Scholar Search</td><td><code>googleScholarSearch</code></td><td>Google Scholar via SerpAPI (engine=google_scholar). Returns scholarly organic_results with citation info. Consumes 1 credit.</td></tr><tr><td>Google Search</td><td><code>googleSearch</code></td><td>Google web search via SerpAPI (engine=google). Returns organic results, knowledge graph, ads, related searches/questions. Consumes 1 credit.</td></tr><tr><td>Google Shopping Search</td><td><code>googleShoppingSearch</code></td><td>Google Shopping via SerpAPI (engine=google_shopping). Returns shopping_results and filters. Consumes 1 credit.</td></tr><tr><td>Google Trends</td><td><code>googleTrends</code></td><td>Google Trends via SerpAPI (engine=google_trends). data_type selects TIMESERIES/GEO_MAP/RELATED_TOPICS/RELATED_QUERIES. Consumes 1 credit.</td></tr><tr><td>Home Depot Search</td><td><code>homeDepotSearch</code></td><td>Home Depot product search via SerpAPI (engine=home_depot). Returns products. Consumes 1 credit.</td></tr><tr><td>Search (Generic)</td><td><code>search</code></td><td>Generic SerpAPI search. Select the source with the 'engine' parameter (e.g. google, bing, google_maps, youtube, amazon). Supports all universal SERP parameters. Consumes 1 search credit per call. Use engine-specific convenience actions when available for clearer parameter modeling.</td></tr><tr><td>Search Locations</td><td><code>searchLocations</code></td><td>Look up supported locations for use in the 'location' search parameter. FREE — does not consume search credits. Returns an array of locations ordered by reach (top-level JSON array).</td></tr><tr><td>Walmart Search</td><td><code>walmartSearch</code></td><td>Walmart search via SerpAPI (engine=walmart). NOTE: query param is 'query'. Returns organic_results. Consumes 1 credit.</td></tr><tr><td>Yahoo Search</td><td><code>yahooSearch</code></td><td>Yahoo web search via SerpAPI (engine=yahoo). NOTE: query param is 'p'. Returns organic_results, related_searches. Consumes 1 credit.</td></tr><tr><td>YouTube Search</td><td><code>youtubeSearch</code></td><td>YouTube search via SerpAPI (engine=youtube). NOTE: query param is 'search_query'. Returns video_results, channel_results, etc. Consumes 1 credit.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+SerpAPI has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

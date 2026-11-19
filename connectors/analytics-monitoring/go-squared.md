@@ -1,5 +1,5 @@
 ---
-description: "GoSquared is a website analytics and customer engagement platform."
+description: "GoSquared is a website analytics and live chat platform. Manage sites, people, smart groups, chats, webhooks and blocked visitors."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/go-squared.png" alt="GoSquared logo">
 
-This connector covers the GoSquared REST API: real-time Now analytics (concurrents, visitors, pages, sources, geo, engagement and time series), account administration (sites, usage, shared users, blocked visitors, bots and IPs, tagged visitors), webhooks and their triggers, and entry points to the People CRM, Chat, Forms, Ecommerce and Trends products.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [gosquared.com](https://gosquared.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `goSquared` |
+
+## Setup
+
+Your customers enter their API key for GoSquared when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add GoSquared from **Build → Integrations → Connectors** and connect an acco
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Chat Message Received</td><td><code>chat_message</code></td><td>Fires when a message is posted in a GoSquared Chat conversation. Payload: the message and the person who sent it. Sample taken from GoSquared's own GET /account/v1/triggerTypes example.</td></tr><tr><td>Person Entered Smart Group</td><td><code>entered_smart_group</code></td><td>Fires when a People CRM profile enters the Smart Group whose ID is given as the trigger value when subscribing. Payload: group, boundary 'enter' and the full person profile. Sample taken from GoSquared's own GET /account/v1/triggerTypes example.</td></tr><tr><td>Person Exited Smart Group</td><td><code>exited_smart_group</code></td><td>Fires when a People CRM profile leaves the Smart Group whose ID is given as the trigger value when subscribing. Payload: group, boundary 'exit' and the full person profile. Sample taken from GoSquared's own GET /account/v1/triggerTypes example.</td></tr><tr><td>Traffic Dip</td><td><code>traffic_dip</code></td><td>Fires when the number of concurrent visitors falls below the threshold given as the trigger value when subscribing. Payload: the alert that fired (triggeredAlert), site details and a snapshot of real-time analytics. Sample taken from GoSquared's own GET /account/v1/triggerTypes example.</td></tr><tr><td>Traffic Spike</td><td><code>traffic_spike</code></td><td>Fires when the number of concurrent visitors rises above the threshold given as the trigger value when subscribing. Payload: the alert that fired (triggeredAlert), site details and a snapshot of real-time analytics. Sample taken from GoSquared's own GET /account/v1/triggerTypes example.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Chat Message Received</td><td><code>chat_message</code></td><td>Fires when a message is posted in a GoSquared Chat conversation. Payload: the message and the person who sent it.</td></tr><tr><td>Person Entered Smart Group</td><td><code>entered_smart_group</code></td><td>Fires when a People CRM profile enters the Smart Group whose ID is given as the trigger value when subscribing. Payload: group, boundary 'enter' and the full person profile.</td></tr><tr><td>Person Exited Smart Group</td><td><code>exited_smart_group</code></td><td>Fires when a People CRM profile leaves the Smart Group whose ID is given as the trigger value when subscribing. Payload: group, boundary 'exit' and the full person profile.</td></tr><tr><td>Traffic Dip</td><td><code>traffic_dip</code></td><td>Fires when the number of concurrent visitors falls below the threshold given as the trigger value when subscribing. Payload: the alert that fired (triggeredAlert), site details and a snapshot of real-time analytics.</td></tr><tr><td>Traffic Spike</td><td><code>traffic_spike</code></td><td>Fires when the number of concurrent visitors rises above the threshold given as the trigger value when subscribing. Payload: the alert that fired (triggeredAlert), site details and a snapshot of real-time analytics.</td></tr></tbody></table>

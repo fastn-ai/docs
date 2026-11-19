@@ -1,5 +1,5 @@
 ---
-description: "Firecrawl web scraping, crawling, mapping, search, and structured-data extraction API (v2)."
+description: "Firecrawl turns websites into clean data. Scrape pages, crawl and map sites, run batch scrapes and extract structured data."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/firecrawl.png" alt="Firecrawl logo">
 
-Turns any website into clean markdown, HTML, or structured JSON for AI applications.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [firecrawl.dev](https://firecrawl.dev) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `firecrawl` |
+
+## Setup
+
+Your customers enter their access token for Firecrawl when they connect. Nothing else needs setting up.
 
 ## Use it
 

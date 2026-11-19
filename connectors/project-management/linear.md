@@ -1,5 +1,5 @@
 ---
-description: "Connect Linear to your product with fastn."
+description: "Linear is an issue tracking tool for software teams. Create and archive issues and projects, and manage comments, documents, initiatives and customers."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/linear.png" alt="Linear logo">
 
-Linear issue tracking connector (GraphQL API) — issues (CRUD/search/archive), comments, projects & milestones, initiatives, teams, users, labels, cycles, workflow states, attachments, documents, customers & needs, favorites, reactions, plus webhook management (webhookCreate/Update/Delete). Single endpoint https://api.linear.app/graphql.
-
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Website** | [linear.app](https://linear.app) |
 | **Authentication** | API key |
 | **Slug** | `linear` |
+
+## Setup
+
+Your customers enter their API key for Linear when they connect. Nothing else needs setting up.
 
 ## Use it
 

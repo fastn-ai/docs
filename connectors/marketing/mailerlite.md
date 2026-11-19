@@ -1,5 +1,5 @@
 ---
-description: "MailerLite (new API) connector: subscribers (CRUD + group assign), groups, campaigns (create/schedule), fields, automations, and webhooks."
+description: "MailerLite is an email marketing platform. Manage subscribers, groups, campaigns and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailerlite.png" alt="MailerLite logo">
 
-Bearer token auth. Base https://connect.mailerlite.com/api.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [mailerlite.com](https://mailerlite.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `mailerlite` |
+
+## Setup
+
+Your customers enter their access token for MailerLite when they connect. Nothing else needs setting up.
 
 ## Use it
 

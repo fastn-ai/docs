@@ -1,5 +1,5 @@
 ---
-description: "Dwolla's Payments API for ACH bank transfers in the United States."
+description: "Dwolla is a platform for US bank transfers. Create and verify customers, add funding sources, and send and cancel transfers."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dwolla.png" alt="Dwolla logo">
 
-Create and verify Customers, attach and verify bank funding sources, initiate transfers and mass payments, allocate funds with Labels, connect external accounts via Exchanges, and subscribe to webhook events.
-
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [dwolla.com](https://dwolla.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `dwolla` |
+
+## Setup
+
+Your customers sign in to Dwolla through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

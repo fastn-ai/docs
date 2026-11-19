@@ -1,5 +1,5 @@
 ---
-description: "WaiverFile digital waiver management."
+description: "WaiverFile is a digital waiver platform. Read waiver forms and signed waivers by date range, and manage events and event categories."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/waiver-file.png" alt="WaiverFile logo">
 
-Manage waiver forms and signed waivers, events and event categories, event managers, SMS subscribers, and webhook subscriptions for new/edited waivers, events, check-ins and QR scans.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [waiverfile.com](https://waiverfile.com) |
 | **Authentication** | API key |
 | **Slug** | `waiverFile` |
+
+## Setup
+
+Your customers enter their API key for WaiverFile when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add WaiverFile from **Build → Integrations → Connectors** and connect an acc
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Check In Edited</td><td><code>editcheckin</code></td><td>Fires when an existing check-in is edited. MODELLED, not captured: WaiverFile publishes no sampledata endpoint for this event and no check-ins exist on this account. No signature header is sent.</td></tr><tr><td>Event Edited</td><td><code>editevent</code></td><td>Fires when an existing event is edited. CAPTURED from a real delivery on 2026-09-21: a SINGLE JSON object identical in shape to the newevent delivery, with no signature header.</td></tr><tr><td>New Check In</td><td><code>newcheckin</code></td><td>Fires when a participant checks in at an event. MODELLED, not captured: no waivers exist on this account to check in, and GET /api/v1/sampledata/newcheckin returns an empty array. No signature header is sent.</td></tr><tr><td>New Event Created</td><td><code>newevent</code></td><td>Fires when a new event is created on the site. CAPTURED from a real delivery on 2026-09-21: WaiverFile POSTs a SINGLE JSON object (not an array) with Content-Type application/json; charset=utf-8 and no signature header. There is no event-type discriminator in the body, which is why each event type is registered against its own target URL.</td></tr><tr><td>New QR Scan</td><td><code>newqrscan</code></td><td>Fires when a waiver QR code is scanned. MODELLED, not captured: WaiverFile publishes no sampledata endpoint for this event and no waivers exist on this account to scan. No signature header is sent.</td></tr><tr><td>New Waiver Signed</td><td><code>newwaiver</code></td><td>Fires when a participant signs a new waiver. MODELLED, not captured: this account has zero waiver forms so no waiver can be signed, and GET /api/v1/sampledata/newwaiver returns an empty array. Shape follows the vendor's Waiver definition and the single-object delivery convention proven on the event webhooks. No signature header is sent.</td></tr><tr><td>Waiver Edited</td><td><code>editwaiver</code></td><td>Fires when an existing waiver is edited. MODELLED, not captured: this account has zero waivers and GET /api/v1/sampledata/editwaiver returns an empty array. No signature header is sent.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Check In Edited</td><td><code>editcheckin</code></td><td>Fires when an existing check-in is edited. No signature header is sent.</td></tr><tr><td>Event Edited</td><td><code>editevent</code></td><td>Fires when an existing event is edited.</td></tr><tr><td>New Check In</td><td><code>newcheckin</code></td><td>Fires when a participant checks in at an event. No signature header is sent.</td></tr><tr><td>New Event Created</td><td><code>newevent</code></td><td>Fires when a new event is created on the site. There is no event-type discriminator in the body, which is why each event type is registered against its own target URL.</td></tr><tr><td>New QR Scan</td><td><code>newqrscan</code></td><td>Fires when a waiver QR code is scanned. No signature header is sent.</td></tr><tr><td>New Waiver Signed</td><td><code>newwaiver</code></td><td>Fires when a participant signs a new waiver. Shape follows the vendor's Waiver definition and the single-object delivery convention proven on the event webhooks. No signature header is sent.</td></tr><tr><td>Waiver Edited</td><td><code>editwaiver</code></td><td>Fires when an existing waiver is edited. No signature header is sent.</td></tr></tbody></table>

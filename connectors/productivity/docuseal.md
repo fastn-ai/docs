@@ -1,5 +1,5 @@
 ---
-description: "DocuSeal is a document signing platform."
+description: "DocuSeal is a document signing platform. Create templates and signature requests from PDF, Word or HTML files."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docuseal.png" alt="DocuSeal logo">
 
-This connector covers the DocuSeal API: document templates built from PDF, DOCX or HTML, signature requests (submissions), submitters and their filled values, signed document downloads, and webhook endpoints for signing events.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [docuseal.com](https://docuseal.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `docuseal` |
+
+## Setup
+
+Your customers enter their API key for DocuSeal when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,12 +38,12 @@ Add DocuSeal from **Build → Integrations → Connectors** and connect an accou
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Signing Form Completed</td><td><code>form.completed</code></td><td>Fires when one submitter finishes signing. The data object is the submitter, with the values they entered and links to their signed documents. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Signing Form Declined</td><td><code>form.declined</code></td><td>Fires when a submitter declines to sign. The data object is the submitter, with declined_at set. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Signing Form Started</td><td><code>form.started</code></td><td>Fires when a submitter begins filling the form. The data object is the submitter. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Signing Form Viewed</td><td><code>form.viewed</code></td><td>Fires the first time a submitter opens the signing form. The data object is the submitter, not the submission. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Submission Archived</td><td><code>submission.archived</code></td><td>Fires when a submission is archived. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Submission Completed</td><td><code>submission.completed</code></td><td>Fires when every party has signed the submission. The data object then carries the signed documents and the audit log URL. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Submission Created</td><td><code>submission.created</code></td><td>Fires when a signature request is created. Payload schema captured from a real DocuSeal delivery.</td></tr><tr><td>Submission Expired</td><td><code>submission.expired</code></td><td>Fires when a submission passes its expiry date without being completed. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Template Archived</td><td><code>template.archived</code></td><td>Fires when a document template is archived. The data object is the template, with archived_at set. Envelope captured from a real DocuSeal delivery.</td></tr><tr><td>Template Created</td><td><code>template.created</code></td><td>Fires when a document template is created. The data object is the template. Envelope captured from a real DocuSeal delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Signing Form Completed</td><td><code>form.completed</code></td><td>Fires when one submitter finishes signing. The data object is the submitter, with the values they entered and links to their signed documents.</td></tr><tr><td>Signing Form Declined</td><td><code>form.declined</code></td><td>Fires when a submitter declines to sign. The data object is the submitter, with declined_at set.</td></tr><tr><td>Signing Form Started</td><td><code>form.started</code></td><td>Fires when a submitter begins filling the form. The data object is the submitter.</td></tr><tr><td>Signing Form Viewed</td><td><code>form.viewed</code></td><td>Fires the first time a submitter opens the signing form. The data object is the submitter, not the submission.</td></tr><tr><td>Submission Archived</td><td><code>submission.archived</code></td><td>Fires when a submission is archived.</td></tr><tr><td>Submission Completed</td><td><code>submission.completed</code></td><td>Fires when every party has signed the submission. The data object then carries the signed documents and the audit log URL.</td></tr><tr><td>Submission Created</td><td><code>submission.created</code></td><td>Fires when a signature request is created.</td></tr><tr><td>Submission Expired</td><td><code>submission.expired</code></td><td>Fires when a submission passes its expiry date without being completed.</td></tr><tr><td>Template Archived</td><td><code>template.archived</code></td><td>Fires when a document template is archived. The data object is the template, with archived_at set.</td></tr><tr><td>Template Created</td><td><code>template.created</code></td><td>Fires when a document template is created. The data object is the template.</td></tr></tbody></table>
 
 <details>
 
 <summary>View 1 more event</summary>
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Template Updated</td><td><code>template.updated</code></td><td>Fires when a document template is changed. The data object is the template. Envelope captured from a real DocuSeal delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Template Updated</td><td><code>template.updated</code></td><td>Fires when a document template is changed. The data object is the template.</td></tr></tbody></table>
 
 </details>

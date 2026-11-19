@@ -1,5 +1,5 @@
 ---
-description: "Handwrytten sends real handwritten notes and cards on your behalf, written by robots holding real pens."
+description: "Handwrytten sends handwritten notes and cards. Manage sender and recipient addresses, place and cancel orders, and check images."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/handwrytten.png" alt="Handwrytten logo">
 
-This connector covers the Handwrytten v2 API: the card, font, template, insert, bundle, gift-card and stamp catalogue, custom card design and QR codes, sender and recipient address books, basket and order management, outbound prospecting, and account, credit-card and subscription information.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [handwrytten.com](https://handwrytten.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key or token |
 | **Slug** | `handwrytten` |
+
+## Setup
+
+Your customers enter their API key or token for Handwrytten when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Handwrytten from **Build → Integrations → Connectors** and connect an ac
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Order Status Changed</td><td><code>order_status_change</code></td><td>Handwrytten reports a change in the state of an order it is writing and mailing. There is no webhook-registration API, so the customer supplies this trigger's URL themselves, in one of two places: per order, as the Webhook URL input on the Create Single Step Order action; or for every order, by setting a default webhook URL in the Handwrytten dashboard under Account &gt; Settings (it is then returned as Default Webhook URL by Get User Info). IMPORTANT: no payload schema is declared because Handwrytten documents none and a real delivery could not be captured - triggering one requires placing an order, which physically mails a card and charges the account. Treat the incoming body as untyped until a live delivery has been inspected.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Order Status Changed</td><td><code>order_status_change</code></td><td>Handwrytten reports a change in the state of an order it is writing and mailing. There is no webhook-registration API, so the customer supplies this trigger's URL themselves, in one of two places: per order, as the Webhook URL input on the Create Single Step Order action; or for every order, by setting a default webhook URL in the Handwrytten dashboard under Account &gt; Settings (it is then returned as Default Webhook URL by Get User Info). IMPORTANT: no payload schema is declared because Handwrytten documents none and a real delivery could not be captured - triggering one requires placing an order, which physically mails a card and charges the account.</td></tr></tbody></table>

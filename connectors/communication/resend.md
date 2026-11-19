@@ -1,5 +1,5 @@
 ---
-description: "Resend is the email platform for developers."
+description: "Resend is an email platform for developers. Send and cancel emails, and manage domains, audiences, contacts, broadcasts and automations."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/resend.png" alt="Resend logo">
 
-Send transactional and marketing emails, manage domains, API keys, audiences, contacts, segments, topics, broadcasts, templates, automations, events and webhooks. — Public 2026-09-29: Send Email verified live (HTTP 200); other endpoints gated by a send-only API key, not a config defect.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Website** | [resend.com](https://resend.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `resend` |
+
+## Setup
+
+Your customers enter their access token for Resend when they connect. Nothing else needs setting up.
 
 ## Use it
 

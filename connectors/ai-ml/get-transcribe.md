@@ -1,5 +1,5 @@
 ---
-description: "GetTranscribe transcribes and analyzes social videos from Instagram, TikTok, YouTube, Facebook, X, Pinterest, Google Drive and direct video URLs."
+description: "GetTranscribe transcribes videos from social platforms. Create transcription jobs, download videos, and organize transcriptions in folders."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/get-transcribe.png" alt="GetTranscribe logo">
 
-This connector covers the full GetTranscribe REST API: asynchronous transcription jobs (create, poll, list), finished transcriptions with word-level timing and media URLs, direct video download URL resolution, folder organization, and account and usage information.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [gettranscribe.ai](https://gettranscribe.ai) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `getTranscribe` |
+
+## Setup
+
+Your customers enter their API key for GetTranscribe when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add GetTranscribe from **Build → Integrations → Connectors** and connect an 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Folders</td><td><code>listFolders</code></td><td>Lists your transcription folders with pagination and sorting, optionally filtered to the subfolders of a given parent. Returns a paginated envelope with total, limit, skip and the folder records.</td></tr><tr><td>List Transcription Jobs</td><td><code>listTranscriptionJobs</code></td><td>Lists the transcription jobs belonging to your account with pagination, sorting and optional status or id filters. Returns a paginated envelope with total, limit, skip and the job records. Completed jobs carry a transcription_id for Get Transcription.</td></tr><tr><td>List Transcriptions</td><td><code>listTranscriptions</code></td><td>Lists your transcriptions as a lightweight index with pagination, sorting and optional folder or platform filters. List rows do not include the transcript text or download URLs; use Get Transcription for the full record.</td></tr><tr><td>Update Folder</td><td><code>updateFolder</code></td><td>Updates a transcription folder's name and/or moves it under a different parent folder. Only the fields you pass are changed; pass parent_id as null to move the folder to the root level. Returns the updated folder record.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+GetTranscribe has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

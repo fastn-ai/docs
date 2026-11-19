@@ -1,5 +1,5 @@
 ---
-description: "BoloForms Signature (BoloSign) e-signature API."
+description: "BoloForms Signature collects electronic signatures. Send templates for signing, send reminders and read form responses."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/boloforms-signature.png" alt="BoloForms Signature logo">
 
-List signature documents and PDF templates, send PDF/form templates for signing, fetch template respondents and form responses, void documents, and send reminders to pending signers.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [boloforms.com](https://boloforms.com) |
 | **Authentication** | API key |
 | **Slug** | `boloformsSignature` |
+
+## Setup
+
+Your customers enter their API key for BoloForms Signature when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,4 +30,4 @@ Add BoloForms Signature from **Build → Integrations → Connectors** and conne
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Response</td><td><code>new_form_response</code></td><td>A signer completed and submitted a signature form. Registration is UI-only: BoloForms Dashboard &gt; Settings &gt; Developers/Webhooks &gt; Add Webhook, enter your webhook URL, choose the Form Response event, and select the form(s) to track. Payload is an array of objects, one per selected document. Fields modelled from BoloSign docs (not captured from a live delivery). HMAC-SHA256 signature in x-bolosign-signature over `${x-bolosign-timestamp}.${JSON.stringify(payload)}`.</td></tr><tr><td>Signature Completed</td><td><code>new_signature_pdf_completed</code></td><td>All signers finished a single signature PDF (document fully completed). Registration is UI-only: Dashboard &gt; Webhooks &gt; Add Webhook, choose Signature Completed, select the PDF document(s). Fields modelled from BoloSign docs.</td></tr><tr><td>Signature PDF Individual Signed</td><td><code>new_signature_pdf_individual_signed</code></td><td>An individual signer completed their signature on a single signature PDF. Registration is UI-only (Dashboard &gt; Webhooks). Fields modelled from BoloSign docs.</td></tr><tr><td>Signature PDF Individual Viewed</td><td><code>new_signature_pdf_individual_viewed</code></td><td>An individual signer opened a single signature PDF. Registration is UI-only (Dashboard &gt; Webhooks &gt; Add Webhook, select a signature event and the PDF document(s)). Fields modelled from BoloSign docs.</td></tr><tr><td>Template Individual Signed</td><td><code>new_template_response_individual_signed</code></td><td>An individual signer completed their signature on a template-based document. Registration is UI-only (Dashboard &gt; Webhooks). Fields modelled from BoloSign docs.</td></tr><tr><td>Template Individual Viewed</td><td><code>new_template_response_individual_viewed</code></td><td>An individual signer opened a template-based document. Registration is UI-only (Dashboard &gt; Webhooks). Fields modelled from BoloSign docs.</td></tr><tr><td>Template Response</td><td><code>new_template_response</code></td><td>A response was received for a template-based document (e.g. a contract or agreement). Registration is UI-only: Dashboard &gt; Webhooks &gt; Add Webhook, choose Template Response, select the template(s). Fields modelled from BoloSign docs.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Response</td><td><code>new_form_response</code></td><td>A signer completed and submitted a signature form. Registration is UI-only: BoloForms Dashboard &gt; Settings &gt; Developers/Webhooks &gt; Add Webhook, enter your webhook URL, choose the Form Response event, and select the form(s) to track. Payload is an array of objects, one per selected document. HMAC-SHA256 signature in x-bolosign-signature over `${x-bolosign-timestamp}.${JSON.stringify(payload)}`.</td></tr><tr><td>Signature Completed</td><td><code>new_signature_pdf_completed</code></td><td>All signers finished a single signature PDF (document fully completed). Registration is UI-only: Dashboard &gt; Webhooks &gt; Add Webhook, choose Signature Completed, select the PDF document(s).</td></tr><tr><td>Signature PDF Individual Signed</td><td><code>new_signature_pdf_individual_signed</code></td><td>An individual signer completed their signature on a single signature PDF. Registration is UI-only (Dashboard &gt; Webhooks).</td></tr><tr><td>Signature PDF Individual Viewed</td><td><code>new_signature_pdf_individual_viewed</code></td><td>An individual signer opened a single signature PDF. Registration is UI-only (Dashboard &gt; Webhooks &gt; Add Webhook, select a signature event and the PDF document(s)).</td></tr><tr><td>Template Individual Signed</td><td><code>new_template_response_individual_signed</code></td><td>An individual signer completed their signature on a template-based document. Registration is UI-only (Dashboard &gt; Webhooks).</td></tr><tr><td>Template Individual Viewed</td><td><code>new_template_response_individual_viewed</code></td><td>An individual signer opened a template-based document. Registration is UI-only (Dashboard &gt; Webhooks).</td></tr><tr><td>Template Response</td><td><code>new_template_response</code></td><td>A response was received for a template-based document (e.g. a contract or agreement). Registration is UI-only: Dashboard &gt; Webhooks &gt; Add Webhook, choose Template Response, select the template(s).</td></tr></tbody></table>

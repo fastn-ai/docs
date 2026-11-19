@@ -1,5 +1,5 @@
 ---
-description: "OnePageCRM is an action-focused sales CRM."
+description: "OnePageCRM is an action-focused sales CRM. Manage contacts, companies, deals, next actions, calls, meetings and notes."
 hidden: true
 ---
 
@@ -7,13 +7,11 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/onepagecrm.png" alt="OnePageCRM logo">
 
-This connector wraps the OnePageCRM REST API v3 to manage contacts, companies, deals, next actions, notes, calls, meetings, relationships, attachments, pipelines, statuses, lead sources, custom fields, predefined actions and items, filters, notifications, users and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [onepagecrm.com](https://onepagecrm.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `onepagecrm` |
 
 ## Setup guide

@@ -1,5 +1,5 @@
 ---
-description: "Trengo is a multichannel customer engagement and helpdesk platform unifying WhatsApp, email, SMS, live chat, voice, and social channels into one team inbox."
+description: "Trengo is a multichannel customer engagement platform. Manage contacts, labels, teams and webhooks, and read SMS messages."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/trengo.png" alt="Trengo logo">
 
-This connector wraps the Trengo REST API v2 for tickets, contacts, profiles, messages, WhatsApp, SMS, team chat, labels, teams, users, custom fields, quick replies, help center, and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Website** | [trengo.com](https://trengo.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `trengo` |
+
+## Setup
+
+Your customers enter their API token for Trengo when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Trengo from **Build → Integrations → Connectors** and connect an account
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get User</td><td><code>getUser</code></td><td>Get a single user (agent) by id.</td></tr><tr><td>Get Webhook</td><td><code>getWebhook</code></td><td>Get a single registered webhook subscription by its id, including its title, target URL, event type and signing secret.</td></tr><tr><td>List Boards</td><td><code>listBoards</code></td><td>List all boards (kanban-style task boards) in the Trengo account.</td></tr><tr><td>List Business Hours</td><td><code>listBusinessHours</code></td><td>List all business hours schedules configured in the Trengo account.</td></tr><tr><td>List Contact Groups</td><td><code>listContactGroups</code></td><td>List all contact groups in the Trengo account.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>List all contacts in the Trengo account.</td></tr><tr><td>List CSAT Ratings</td><td><code>listCsat</code></td><td>List customer satisfaction (CSAT) ratings collected in the Trengo account.</td></tr><tr><td>List Custom Fields</td><td><code>listCustomFields</code></td><td>List all custom fields defined for tickets, contacts, or profiles.</td></tr><tr><td>List Help Centers</td><td><code>listHelpCenters</code></td><td>List all help center articles/pages configured in the Trengo account.</td></tr><tr><td>List Labels</td><td><code>listLabels</code></td><td>List all labels available in the Trengo account.</td></tr><tr><td>List Profiles</td><td><code>listProfiles</code></td><td>List all profiles (merged contact identities) in the Trengo account.</td></tr><tr><td>List Quick Replies</td><td><code>listQuickReplies</code></td><td>List all quick replies (canned responses) in the Trengo account.</td></tr><tr><td>List SMS Messages</td><td><code>getSmsBalance</code></td><td>List all outbound SMS messages sent from the Trengo account.</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>List all teams in the Trengo account.</td></tr><tr><td>List Ticket Messages</td><td><code>listTicketMessages</code></td><td>List all messages within a ticket (conversation).</td></tr><tr><td>List Ticket Results</td><td><code>listTicketResults</code></td><td>List ticket results (outcome tags used when closing tickets).</td></tr><tr><td>List Tickets</td><td><code>listTickets</code></td><td>List tickets (conversations) in the Trengo account.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>List all users (agents) in the Trengo account. Supports pagination and sorting.</td></tr><tr><td>List Webhooks</td><td><code>listWebhooks</code></td><td>List all registered webhook subscriptions in the Trengo account.</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Update an existing contact's name.</td></tr><tr><td>Update Label</td><td><code>updateLabel</code></td><td>Update an existing label's name or color.</td></tr><tr><td>Update Webhook</td><td><code>updateWebhook</code></td><td>Update the name, target URL and event type of an existing webhook subscription. All three body fields are required by Trengo.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Trengo has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

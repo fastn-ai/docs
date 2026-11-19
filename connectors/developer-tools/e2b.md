@@ -1,5 +1,5 @@
 ---
-description: "E2B provides secure cloud sandboxes (isolated Linux VMs) for AI agents and code execution."
+description: "E2B provides secure cloud sandboxes for AI agents to run code. Create and connect to sandboxes, and manage templates, snapshots, volumes and secrets."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/e2b.png" alt="E2B logo">
 
-This connector covers the full E2B public API: sandbox lifecycle (create, list, get, connect, pause, resume, fork, timeout, refresh, network, kill), sandbox logs and metrics, snapshots, templates and builds, tags, volumes, team metrics, project secrets, the in-sandbox envd API (health, stats, environment, file download and upload, filesystem operations, process control) and sandbox lifecycle events with webhook management.
-
 | | |
 | --- | --- |
 | **Category** | [Developer tools](README.md) |
 | **Website** | [e2b.dev](https://e2b.dev) |
 | **Authentication** | API key |
 | **Slug** | `e2b` |
+
+## Setup
+
+Your customers enter their API key for E2B when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add E2B from **Build → Integrations → Connectors** and connect an account, a
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Sandbox checkpointed</td><td><code>sandbox.lifecycle.checkpointed</code></td><td>A snapshot/fork checkpoint of the sandbox was taken. Captured live 2026-09-15.</td></tr><tr><td>Sandbox created</td><td><code>sandbox.lifecycle.created</code></td><td>A sandbox was created. Payload modelled from the vendor's lifecycle event record returned by GET /events/sandboxes (captured live on 2026-09-15); webhook delivery body has the same shape (id, type, version, timestamp, sandboxId, sandboxTemplateId, sandboxBuildId, sandboxTeamId, sandboxExecutionId, eventCategory, eventLabel, eventData).</td></tr><tr><td>Sandbox killed</td><td><code>sandbox.lifecycle.killed</code></td><td>A sandbox was killed (explicit kill or timeout). eventData carries execution stats and kill_reason. Captured live from GET /events/sandboxes on 2026-09-15.</td></tr><tr><td>Sandbox paused</td><td><code>sandbox.lifecycle.paused</code></td><td>A sandbox was paused. Captured live 2026-09-15.</td></tr><tr><td>Sandbox resumed</td><td><code>sandbox.lifecycle.resumed</code></td><td>A paused sandbox was resumed. Captured live 2026-09-15.</td></tr><tr><td>Sandbox updated</td><td><code>sandbox.lifecycle.updated</code></td><td>Sandbox timeout or network config changed (eventData.set_timeout or eventData.network_egress). Captured live 2026-09-15.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Sandbox checkpointed</td><td><code>sandbox.lifecycle.checkpointed</code></td><td>A snapshot/fork checkpoint of the sandbox was taken. Captured live 2026-09-15.</td></tr><tr><td>Sandbox created</td><td><code>sandbox.lifecycle.created</code></td><td>A sandbox was created.</td></tr><tr><td>Sandbox killed</td><td><code>sandbox.lifecycle.killed</code></td><td>A sandbox was killed (explicit kill or timeout). eventData carries execution stats and kill_reason. Captured live from on 2026-09-15.</td></tr><tr><td>Sandbox paused</td><td><code>sandbox.lifecycle.paused</code></td><td>A sandbox was paused. Captured live 2026-09-15.</td></tr><tr><td>Sandbox resumed</td><td><code>sandbox.lifecycle.resumed</code></td><td>A paused sandbox was resumed. Captured live 2026-09-15.</td></tr><tr><td>Sandbox updated</td><td><code>sandbox.lifecycle.updated</code></td><td>Sandbox timeout or network config changed (eventData.set_timeout or eventData.network_egress). Captured live 2026-09-15.</td></tr></tbody></table>

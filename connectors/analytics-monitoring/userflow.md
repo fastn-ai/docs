@@ -1,5 +1,5 @@
 ---
-description: "Userflow builds in-app onboarding flows, checklists, surveys and resource centres without code."
+description: "Userflow builds in-app onboarding flows, checklists and surveys. Sync users and groups, and read content, content versions and sessions."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/userflow.png" alt="Userflow logo">
 
-This connector covers the Userflow REST API: syncing users, groups and group memberships, tracking events, reading event and attribute definitions, and reading content, content versions and content sessions - plus the Personal-API-Key Accounts API for team members.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [userflow.com](https://userflow.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `userflow` |
+
+## Setup
+
+Your customers enter their API key for Userflow when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Userflow from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get User</td><td><code>getUser</code></td><td>Retrieves a single Userflow user by the id you synced them with. Optionally expand the user's groups and memberships inline.</td></tr><tr><td>List Attribute Definitions</td><td><code>listAttributeDefinitions</code></td><td>Lists every attribute Userflow knows about in this environment, with its data type and the scope it applies to - user, group, membership or event. Use it to discover the attribute names available for segmentation.</td></tr><tr><td>List Content</td><td><code>listContent</code></td><td>Lists the content built in Userflow - flows, checklists, launchers, resource centres, banners, NPS surveys, announcements and tooltips - with the ids of their draft and published versions. Filter by Type to fetch one kind.</td></tr><tr><td>List Content Sessions</td><td><code>listContentSessions</code></td><td>Lists content sessions - the record of a user actually seeing a flow, checklist or survey, and how far they got. Use it to check whether a specific user has already been shown a specific piece of content.</td></tr><tr><td>List Content Versions</td><td><code>listContentVersions</code></td><td>Lists the saved versions of one piece of Userflow content, including its steps or checklist tasks. Content ID is mandatory - Userflow rejects the call with code invalid_params if you omit it.</td></tr><tr><td>List Event Definitions</td><td><code>listEventDefinitions</code></td><td>Lists every event name Userflow knows about in this environment, including the built-in Userflow events and the custom ones created automatically the first time you tracked them.</td></tr><tr><td>List Groups</td><td><code>listGroups</code></td><td>Lists the groups - companies - synced into the Userflow environment, using cursor pagination.</td></tr><tr><td>List Members</td><td><code>listMembers</code></td><td>Lists the team members of a Userflow account. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>Lists the users synced into the Userflow environment, using cursor pagination. Follow next_page_url, or pass the last id you saw as Starting After, to walk the whole list.</td></tr><tr><td>Remove Member</td><td><code>removeMember</code></td><td>Removes a team member from a Userflow account, revoking their access to it. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. This cannot be undone without re-inviting the person.</td></tr><tr><td>Remove User From Group</td><td><code>removeUserFromGroup</code></td><td>Removes a single user from a single Userflow group, leaving both the user and the group intact. The call is idempotent - it succeeds even if the user was not a member. Memberships are created through Create Or Update User, not through this resource.</td></tr><tr><td>Track Event</td><td><code>trackEvent</code></td><td>Records an event a user or company performed, so Userflow can target flows and checklists on it. At least one of User ID and Group ID is required. Userflow creates the matching event definition automatically the first time it sees a new event name.</td></tr><tr><td>Update Member</td><td><code>updateMember</code></td><td>Changes a team member's role or permissions on a Userflow account. This is part of the Accounts API and needs a Personal API Key (one starting with pak_); an environment-scoped key is rejected with code invalid_pak. Changing a role alters what that person can do in Userflow, so check the member before you write.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Userflow has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

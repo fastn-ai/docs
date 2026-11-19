@@ -1,5 +1,5 @@
 ---
-description: "ProvenExpert review-collection platform."
+description: "ProvenExpert collects customer reviews. Manage profiles and surveys, create survey invitation links and read rating summaries."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/proven-expert.png" alt="ProvenExpert logo">
 
-Manage ProvenExpert profiles and profile settings, create and manage surveys, generate personalised survey invitation links, send survey invitation e-mails and check their delivery status, read ratings and rating summaries, and generate rating-seal / widget HTML. All calls are POST to https://www.provenexpert.com/api/v1 and authenticate with HTTP Basic using the account's API-ID and API-Key.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [provenexpert.com](https://provenexpert.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `provenExpert` |
+
+## Setup
+
+Your customers enter their username and password for ProvenExpert when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add ProvenExpert from **Build → Integrations → Connectors** and connect an a
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Rating Summary Rich Snippet</td><td><code>getRatingSummaryRichSnippet</code></td><td>Returns the overall rating value, the review count and ready-to-embed schema.org rich-snippet HTML for the authenticated ProvenExpert profile. Paste the returned html into a web page so search engines can show the star rating.</td></tr><tr><td>Get Single Sign-On URL</td><td><code>getSingleSignOnUrl</code></td><td>Generates a one-time Single Sign-On URL that logs straight into the ProvenExpert profile without an e-mail address or password. The link is valid for 10 minutes by default. SECURITY: the returned url grants full account access to anyone holding it - never log it, store it or forward it. ENTERPRISE plan only.</td></tr><tr><td>List Child Profile API Credentials</td><td><code>listChildProfileApiCredentials</code></td><td>Returns the API-ID and API-Key of every sub-profile one level below the authenticated Enterprise account, keyed by the child profile's e-mail address. SECURITY: the response contains live API keys in plain text - do not log, cache or display the result. ENTERPRISE plan only.</td></tr><tr><td>List Child Profile Rating Summaries</td><td><code>listChildProfileRatingSummaries</code></td><td>Returns the overall rating value and review count for every sub-profile one level below the authenticated Enterprise account, keyed by the child profile's e-mail address. ENTERPRISE plan only.</td></tr><tr><td>List Child Profile Ratings</td><td><code>listChildProfileRatings</code></td><td>Retrieves the reviews of every sub-profile one level below the authenticated Enterprise account. Takes the same filters as List Ratings and additionally returns user.profileEmail so each review can be attributed to its child profile. ENTERPRISE plan only.</td></tr><tr><td>List Child Profile Surveys</td><td><code>listChildProfileSurveys</code></td><td>Returns the surveys of every sub-profile one level below the authenticated Enterprise account. This route is live but absent from the published ProvenExpert API reference. ENTERPRISE plan only; other plans receive the error body "Not an enterprise account.".</td></tr><tr><td>List Child Profiles</td><td><code>listChildProfiles</code></td><td>Returns the sub-profiles one level below the authenticated Enterprise account, with each child profile's core data. ENTERPRISE plan only; other plans receive a permission-denied error body.</td></tr><tr><td>List Ratings</td><td><code>listRatings</code></td><td>Retrieves the individual reviews of a single ProvenExpert profile, newest first, with per-category scores, per-question detail and the reviewer's feedback text. Filter by publication status, rating value range or creation date. Requires a PREMIUM plan or higher.</td></tr><tr><td>List Survey Invitation Links</td><td><code>listSurveyInvitationLinks</code></td><td>Returns every personalised invitation link already created for one survey, keyed by the reviewer's e-mail address, together with when it was created, whether it has been opened and whether a review has been submitted through it. Requires a PLUS plan or higher.</td></tr><tr><td>List Surveys</td><td><code>listSurveys</code></td><td>Returns every survey of the authenticated ProvenExpert profile, keyed by survey code, with its name, active flag, public survey URL, QR-code image link and printable business-card templates. Requires a PLUS plan or higher.</td></tr><tr><td>Send Survey Invitation Emails</td><td><code>sendSurveyInvitationEmails</code></td><td>Creates personalised survey invitations for up to 100 recipients and sends them by e-mail from the profile's address, with an optional reminder after 7 days. Subject, salutation and body may be set per recipient and must be plain text. Returns a mailing id for Get Invitation Mailing Status. CAUTION: this sends real e-mail to real people a few minutes after the call, and only recipients who consented may be contacted. Requires a PLUS plan or higher.</td></tr><tr><td>Update Profile</td><td><code>updateProfile</code></td><td>Edits an existing ProvenExpert profile. Only the supplied fields change; sending an empty string clears a field. Numerically indexed lists such as websites, social and externalRatings are replaced as a whole, while contact and openingHours can be edited field by field. Returns the updated profile. Requires an ENTERPRISE plan.</td></tr><tr><td>Update Profile Settings</td><td><code>updateProfileSettings</code></td><td>Changes the profile settings of a ProvenExpert account: whether the profile is public, the privacy switches that control what visitors see, which events trigger a notification, and the newsletter and reporting e-mail preferences. Only the supplied values change; all current settings are returned. Requires an ENTERPRISE plan.</td></tr><tr><td>Update Survey</td><td><code>updateSurvey</code></td><td>Activates or deactivates an existing ProvenExpert survey and updates its Point of Sale label and logo. The survey is selected by its code; only the supplied fields change. Requires an ENTERPRISE plan.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+ProvenExpert has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

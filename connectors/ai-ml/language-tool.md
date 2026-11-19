@@ -1,5 +1,5 @@
 ---
-description: "Grammar, spelling, and style checker API by LanguageTool."
+description: "LanguageTool checks grammar, spelling and style. Check text, list supported languages and manage your personal dictionary."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/language-tool.png" alt="LanguageTool logo">
 
-Uses the free, public, anonymous API tier at api.languagetool.org - no signup or API key required for text checking and language listing. Personal-dictionary endpoints (list/add/delete words) require a separate Premium account with username + API key and are not usable on this free tier.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [languagetool.org](https://languagetool.org) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `languageTool` |
+
+## Setup
+
+LanguageTool needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -23,3 +25,7 @@ Add LanguageTool from **Build → Integrations → Connectors** and connect an a
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Dictionary Word</td><td><code>addDictionaryWord</code></td><td>Add a word to one of a user's personal LanguageTool dictionaries so it is no longer flagged as a spelling error. Requires a LanguageTool Premium account (username + API key) - not available on the free public tier used by this connector's default setup. Personal dictionaries are capped at 500 words.</td></tr><tr><td>Check Text</td><td><code>checkText</code></td><td>Check a piece of text for grammar, spelling, and style issues using LanguageTool's free public checker. Returns detected language, and an array of matches with the issue message, offset/length in the text, suggested replacements, and the rule/category that triggered.</td></tr><tr><td>Delete Dictionary Word</td><td><code>deleteDictionaryWord</code></td><td>Remove a word from one of a user's personal LanguageTool dictionaries. Requires a LanguageTool Premium account (username + API key) - not available on the free public tier used by this connector's default setup.</td></tr><tr><td>Get Supported Languages</td><td><code>getSupportedLanguages</code></td><td>List all languages and language variants supported by LanguageTool for text checking, each with a display name, short code, and long code.</td></tr><tr><td>List Dictionary Words</td><td><code>listDictionaryWords</code></td><td>List the words stored in a user's personal LanguageTool dictionaries. Requires a LanguageTool Premium account (username + API key) - not available on the free public tier used by this connector's default setup.</td></tr></tbody></table>
+
+## Events
+
+LanguageTool has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

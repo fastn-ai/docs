@@ -1,5 +1,5 @@
 ---
-description: "BMC Helix ITSM service management platform."
+description: "BMC Helix ITSM is an IT service management platform. Create and manage incidents, changes, work orders, companies and form entries."
 hidden: true
 ---
 
@@ -7,13 +7,11 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bmc-helix-itsm.png" alt="BMC Helix ITSM logo">
 
-Manage incidents, changes, problems, known errors, work orders, tasks, people, support groups, companies, configuration items and knowledge articles through the BMC Remedy AR System REST API.
-
 | | |
 | --- | --- |
 | **Category** | [IT and service management](README.md) |
 | **Website** | [bmc.com](https://bmc.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Host, username and password |
 | **Slug** | `bmcHelixItsm` |
 
 ## Setup guide

@@ -1,5 +1,5 @@
 ---
-description: "Connect AbstractAPI Email Reputation to your product with fastn."
+description: "AbstractAPI Email Reputation checks an email address. Get its deliverability, quality score, risk and known data breaches."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/abstract-api-email-reputation.png" alt="AbstractAPI Email Reputation logo">
 
-AbstractAPI Email Reputation validates and enriches an email address, returning deliverability, domain, sender, quality-score, risk, and known-breach data in a single lookup.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [abstractapi.com](https://abstractapi.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `abstractApiEmailReputation` |
+
+## Setup
+
+Your customers enter their API key for AbstractAPI Email Reputation when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -23,3 +25,7 @@ Add AbstractAPI Email Reputation from **Build → Integrations → Connectors** 
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Check Email Reputation</td><td><code>checkEmailReputation</code></td><td>Validates and enriches an email address, returning deliverability status, MX/SMTP checks, a quality score, sender and domain details, risk status, and any known data breaches associated with the address.</td></tr></tbody></table>
+
+## Events
+
+AbstractAPI Email Reputation has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

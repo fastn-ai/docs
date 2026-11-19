@@ -1,5 +1,5 @@
 ---
-description: "Baserow is an open-source no-code database platform (an Airtable alternative)."
+description: "Baserow is an open-source no-code database. Create, update and delete rows, fields, tables and views."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/baserow.png" alt="Baserow logo">
 
-This connector manages rows, fields, and tables through Baserow's database-token-authenticated REST API: list, get, create, update, delete, move, and batch rows; list and create fields; discover tables accessible to the token; and validate the token or a row's password field.
-
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Website** | [baserow.io](https://baserow.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Database token or email and password |
 | **Slug** | `baserow` |
+
+## Setup
+
+Your customers enter their database token or email and password for Baserow when they connect. Nothing else needs setting up.
 
 ## Use it
 

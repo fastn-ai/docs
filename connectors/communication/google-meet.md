@@ -1,5 +1,5 @@
 ---
-description: "Google Meet REST API v2 connector (https://meet.googleapis.com/v2)."
+description: "Google Meet is Google's video meeting service. Create meeting spaces, end active conferences, and read conference records, participants and recordings."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-meet.png" alt="Google Meet logo">
 
-Create and manage meeting spaces, end active conferences, and read conference records, participants, participant sessions, recordings, transcripts, and transcript entries. Also manages Google Workspace Events API subscriptions (https://workspaceevents.googleapis.com/v1) for Meet conference and participant events delivered to a Cloud Pub/Sub topic. OAuth 2.0 (Google) authorization-code auth.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Website** | [meet.google.com](https://meet.google.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleMeet` |
+
+## Setup
+
+Your customers sign in to Google Meet through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

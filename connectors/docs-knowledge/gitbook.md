@@ -1,5 +1,5 @@
 ---
-description: "GitBook documentation platform API connector."
+description: "GitBook is a documentation platform. Manage spaces, collections, page content and change requests."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gitbook.png" alt="GitBook logo">
 
-Manage organizations, spaces, collections, pages/content, revisions, and change requests via the GitBook REST API (https://api.gitbook.com/v1). Authenticates with a GitBook personal access token (gb_api_ ...) via Bearer auth.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [gitbook.com](https://gitbook.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `gitbook` |
+
+## Setup
+
+Your customers enter their access token for GitBook when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add GitBook from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Organization</td><td><code>getOrganization</code></td><td>Get an organization by its ID.</td></tr><tr><td>Get Organization Team</td><td><code>getOrganizationTeam</code></td><td>Get a team in an organization by its ID.</td></tr><tr><td>Get Page By ID</td><td><code>getPageById</code></td><td>Get a page in the current revision of a space by its page ID.</td></tr><tr><td>Get Page By Path</td><td><code>getPageByPath</code></td><td>Get a page in the current revision of a space by its path.</td></tr><tr><td>Get Revision</td><td><code>getRevision</code></td><td>Get a specific revision of a space by its revision ID.</td></tr><tr><td>Get Revision Page By ID</td><td><code>getRevisionPageById</code></td><td>Get a page in a specific revision of a space by its page ID.</td></tr><tr><td>Get Space</td><td><code>getSpace</code></td><td>Get a space by its ID.</td></tr><tr><td>Get Space Content</td><td><code>getSpaceContent</code></td><td>Get the current (primary) revision content of a space, including its page tree.</td></tr><tr><td>Get User By ID</td><td><code>getUserById</code></td><td>Fetch public information about a user by their user ID.</td></tr><tr><td>Import Content</td><td><code>importContent</code></td><td>Import content into a space from a Git repository.</td></tr><tr><td>List Change Request Comments</td><td><code>listChangeRequestComments</code></td><td>List the comments on a change request.</td></tr><tr><td>List Change Request Pages</td><td><code>listChangeRequestPages</code></td><td>List all pages in a change request's content.</td></tr><tr><td>List Change Requests</td><td><code>listChangeRequests</code></td><td>List the change requests of a space.</td></tr><tr><td>List Collection Spaces</td><td><code>listCollectionSpaces</code></td><td>List the spaces contained in a collection.</td></tr><tr><td>List Organization Collections</td><td><code>listOrganizationCollections</code></td><td>List the collections in an organization.</td></tr><tr><td>List Organization Members</td><td><code>listOrganizationMembers</code></td><td>List the members of an organization.</td></tr><tr><td>List Organization Spaces</td><td><code>listOrganizationSpaces</code></td><td>List the spaces in an organization.</td></tr><tr><td>List Organization Teams</td><td><code>listOrganizationTeams</code></td><td>List the teams in an organization.</td></tr><tr><td>List Organizations</td><td><code>listOrganizations</code></td><td>List the organizations the authenticated user is a member of. FREE read — credit-safe for validation.</td></tr><tr><td>List Pages</td><td><code>listPages</code></td><td>List all pages in the current revision of a space.</td></tr><tr><td>List Revision Files</td><td><code>listRevisionFiles</code></td><td>List the files in a specific revision of a space.</td></tr><tr><td>List Revision Pages</td><td><code>listRevisionPages</code></td><td>List the pages in a specific revision of a space.</td></tr><tr><td>List Space Files</td><td><code>listSpaceFiles</code></td><td>List all files (images, assets) in the current revision of a space.</td></tr><tr><td>List Team Members</td><td><code>listTeamMembers</code></td><td>List members of an organization team.</td></tr><tr><td>Merge Change Request</td><td><code>mergeChangeRequest</code></td><td>Merge a change request into the primary revision of its space.</td></tr><tr><td>Move Space</td><td><code>moveSpace</code></td><td>Move a space to a new parent collection and/or position.</td></tr><tr><td>Post Change Request Comment</td><td><code>postChangeRequestComment</code></td><td>Post a comment on a change request.</td></tr><tr><td>Restore Space</td><td><code>restoreSpace</code></td><td>Restore a deleted space within the 7-day retention window.</td></tr><tr><td>Search Organization Content</td><td><code>searchOrganizationContent</code></td><td>Search content across an organization's spaces.</td></tr><tr><td>Search Space Content</td><td><code>searchSpaceContent</code></td><td>Full-text search content within a single space.</td></tr><tr><td>Update Change Request</td><td><code>updateChangeRequest</code></td><td>Update a change request's subject and/or status.</td></tr><tr><td>Update Collection</td><td><code>updateCollection</code></td><td>Update a collection's title, description, or default permission level.</td></tr><tr><td>Update Space</td><td><code>updateSpace</code></td><td>Update a space's properties (title, edit mode, language, emoji). Send only the fields you want to change.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+GitBook has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

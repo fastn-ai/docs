@@ -1,5 +1,5 @@
 ---
-description: "Connect Coda to your product with fastn."
+description: "Coda is a collaborative doc platform. Create docs and pages, manage table rows, and control sharing permissions."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/coda.png" alt="Coda logo">
 
-Coda API (v1) connector — programmatically interact with Coda docs, pages, tables, columns, rows, formulas, controls, permissions (ACL), doc analytics, and automation webhook triggers. Base: https://coda.io/apis/v1
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [coda.io](https://coda.io) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `coda` |
+
+## Setup
+
+Your customers enter their access token for Coda when they connect. Nothing else needs setting up.
 
 ## Use it
 

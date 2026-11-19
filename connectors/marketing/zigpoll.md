@@ -1,5 +1,5 @@
 ---
-description: "Zigpoll is a survey platform for post-purchase, on-site, email and SMS surveys."
+description: "Zigpoll runs on-site and post-purchase surveys. Create polls and questions, generate survey links and read reports."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zigpoll.png" alt="Zigpoll logo">
 
-This connector covers the complete Zigpoll Web API v1: the current user and accounts, surveys (polls) and their slides (questions) including create, update, dry-run staging and commit, slide reordering, translations, action logic, responses, response metadata, location, device and trend breakdowns, attribution reports, participants, captured emails, AI insights, synthetic research, email and SMS campaign sends, trackable survey links and signed webhooks. API access requires a Zigpoll Premium plan or higher.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [zigpoll.com](https://zigpoll.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key or token |
 | **Slug** | `zigpoll` |
+
+## Setup
+
+Your customers enter their API key or token for Zigpoll when they connect. Nothing else needs setting up.
 
 ## Use it
 

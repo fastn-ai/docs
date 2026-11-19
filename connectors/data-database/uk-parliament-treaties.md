@@ -1,5 +1,5 @@
 ---
-description: "Connect UK Parliament Treaties API to your product with fastn."
+description: "The UK Parliament Treaties service covers treaties laid before Parliament. Search treaties and read their business items and series."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uk-parliament-treaties.png" alt="UK Parliament Treaties API logo">
 
-The UK Parliament Treaties API gives open data on treaties laid before Parliament under the CRaG Act: search treaties by text, lead government department, series and parliamentary process, get a treaty and its business items (laying, debates, committee reports), and list government organisations and treaty series. No API key needed.
-
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Website** | [parliament.uk](https://parliament.uk) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `ukParliamentTreaties` |
+
+## Setup
+
+UK Parliament Treaties API needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -22,4 +24,8 @@ Add UK Parliament Treaties API from **Build → Integrations → Connectors** an
 
 ## Actions
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Business Item</td><td><code>getBusinessItem</code></td><td>Returns business item by ID. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/BusinessItem/{id})</td></tr><tr><td>Get Treaty</td><td><code>getTreaty</code></td><td>Returns a treaty by ID. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Treaty/{id})</td></tr><tr><td>List Government Organisations</td><td><code>listGovernmentOrganisations</code></td><td>Returns all government organisations. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/GovernmentOrganisation)</td></tr><tr><td>List Series Memberships</td><td><code>listSeriesMemberships</code></td><td>Returns all series memberships. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/SeriesMembership)</td></tr><tr><td>List Treaty Business Items</td><td><code>listTreatyBusinessItems</code></td><td>Returns business items belonging to the treaty with ID. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Treaty/{id}/BusinessItems)</td></tr><tr><td>Search Treaties</td><td><code>searchTreaties</code></td><td>Returns a list of treaties. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json) (GET /api/Treaty)</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Business Item</td><td><code>getBusinessItem</code></td><td>Returns business item by ID. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json)</td></tr><tr><td>Get Treaty</td><td><code>getTreaty</code></td><td>Returns a treaty by ID. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json)</td></tr><tr><td>List Government Organisations</td><td><code>listGovernmentOrganisations</code></td><td>Returns all government organisations. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json)</td></tr><tr><td>List Series Memberships</td><td><code>listSeriesMemberships</code></td><td>Returns all series memberships. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json)</td></tr><tr><td>List Treaty Business Items</td><td><code>listTreatyBusinessItems</code></td><td>Returns business items belonging to the treaty with ID. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json)</td></tr><tr><td>Search Treaties</td><td><code>searchTreaties</code></td><td>Returns a list of treaties. Docs: https://treaties-api.parliament.uk/index.html (OpenAPI /swagger/v1/swagger.json)</td></tr></tbody></table>
+
+## Events
+
+UK Parliament Treaties API has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

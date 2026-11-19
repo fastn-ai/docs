@@ -1,5 +1,5 @@
 ---
-description: "Laposta is a Dutch email marketing platform."
+description: "Laposta is a Dutch email marketing platform. Manage lists, members, fields, segments, campaigns and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/laposta.png" alt="Laposta logo">
 
-This connector covers the full Laposta v2 REST API: mailing lists and their members, custom fields, segments, campaigns and campaign content, delivery reports, member and campaign history, and webhook management.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [laposta.nl](https://laposta.nl) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `laposta` |
+
+## Setup
+
+Your customers enter their API key for Laposta when they connect. Nothing else needs setting up.
 
 ## Use it
 

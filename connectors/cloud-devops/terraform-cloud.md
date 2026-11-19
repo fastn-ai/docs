@@ -1,5 +1,5 @@
 ---
-description: "HashiCorp HCP Terraform (Terraform Cloud) API v2."
+description: "Terraform Cloud manages infrastructure as code. Manage organizations, workspaces, projects, runs, policy sets, teams and tags."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/terraform-cloud.png" alt="Terraform Cloud logo">
 
-Manage organizations, workspaces, projects, runs, plans, applies, configuration versions, state versions, variables, variable sets, teams, policies, registry modules, SSH keys, notifications, run triggers, agent pools, VCS OAuth clients, and memberships. Uses the JSON:API format.
-
 | | |
 | --- | --- |
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [app.terraform.io](https://app.terraform.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `terraformCloud` |
+
+## Setup
+
+Your customers enter their API token for Terraform Cloud when they connect. Nothing else needs setting up.
 
 ## Use it
 

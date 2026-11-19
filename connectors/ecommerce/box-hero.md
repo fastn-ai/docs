@@ -1,5 +1,5 @@
 ---
-description: "BoxHero inventory management."
+description: "BoxHero is inventory management software. Manage items, locations, partners, purchase and sales orders, and stock transactions."
 hidden: true
 ---
 
@@ -7,13 +7,11 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/box-hero.png" alt="BoxHero logo">
 
-Manage items, item attributes, locations, bundles, partners, purchase orders, sales orders, sales returns, price lists and inventory transactions (stock in, stock out, adjust, move) through the BoxHero Open API.
-
 | | |
 | --- | --- |
 | **Category** | [E-commerce](README.md) |
 | **Website** | [boxhero.io](https://boxhero.io) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `boxHero` |
 
 ## Setup guide

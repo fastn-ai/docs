@@ -1,5 +1,5 @@
 ---
-description: "webCRM via the webCRM REST API (api.webcrm.com)."
+description: "webCRM is a sales CRM. Manage organizations, persons, opportunities, deliveries, activities and change hooks."
 hidden: true
 ---
 
@@ -7,13 +7,11 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/web-crm-api.png" alt="webCRM logo">
 
-Manage organisations, persons, B2C persons, opportunities, deliveries, activities, events, meetings, support cases, products, quotation lines, documents, users, price groups, VAT and account settings, and register per-entity webhooks (hooks) for create, update and delete events. Access tokens are minted from the webCRM API token and renewed automatically.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [webcrm.com](https://webcrm.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `webCrmApi` |
 
 ## Setup guide

@@ -1,5 +1,5 @@
 ---
-description: "Heartbeat is a community platform for creators, coaches and course businesses."
+description: "Heartbeat is a community platform for creators and course businesses. Manage users, groups, channels, threads, comments, events and lessons."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/heartbeat.png" alt="Heartbeat logo">
 
-This connector covers the full Heartbeat v0 REST API: users and pending users, roles, groups and group memberships, invitations, channels, channel categories and voice channels, threads, comments and chat channel messages, direct chats and direct messages, events with attendance and recurring instances, courses, lessons, documents, videos, notification counts and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Website** | [heartbeat.chat](https://heartbeat.chat) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `heartbeat` |
+
+## Setup
+
+Your customers enter their API key for Heartbeat when they connect. Nothing else needs setting up.
 
 ## Use it
 

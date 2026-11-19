@@ -1,5 +1,5 @@
 ---
-description: "Plausible Analytics is a privacy-friendly, cookie-free web analytics platform."
+description: "Plausible is a privacy-friendly web analytics tool. Read aggregate, timeseries and realtime visitor stats, and manage sites, goals and shared links."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/plausible.png" alt="Plausible Analytics logo">
 
-This connector covers the Stats API v2 query endpoint for aggregate, timeseries, breakdown and absolute date-range reporting, the Stats API v1 realtime, aggregate, timeseries and breakdown endpoints, and the Sites API for managing sites, shared dashboard links and conversion goals. Requests authenticate with a Plausible API key sent as a bearer token.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [plausible.io](https://plausible.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `plausible` |
+
+## Setup
+
+Your customers enter their API key for Plausible Analytics when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Plausible Analytics from **Build → Integrations → Connectors** and conne
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Sites</td><td><code>listSites</code></td><td>Lists every site the API key has access to, with cursor-based paging.</td></tr><tr><td>Run Aggregate Stats Query</td><td><code>runAggregateQuery</code></td><td>Runs an aggregate Stats API v2 query against the site configured on the connection, returning a single row of totals for the requested metrics over a relative date range.</td></tr><tr><td>Run Breakdown Stats Query</td><td><code>runBreakdownQuery</code></td><td>Runs a Stats API v2 query broken down by one or more dimensions against the site configured on the connection, returning one paginated row per dimension combination ordered by the first metric descending.</td></tr><tr><td>Run Custom Date Range Stats Query</td><td><code>runCustomDateRangeQuery</code></td><td>Runs an aggregate Stats API v2 query over an absolute start and end date against the site configured on the connection. Use this instead of the relative date ranges offered by the other v2 query actions.</td></tr><tr><td>Run Timeseries Stats Query</td><td><code>runTimeseriesQuery</code></td><td>Runs a Stats API v2 query bucketed over time against the site configured on the connection, returning one row per hour, day, week or month in the requested date range.</td></tr><tr><td>Update Site</td><td><code>updateSite</code></td><td>Changes the domain of an existing site, which also changes its site id. Requires an API key with the sites:provision:* scope; a Stats API key is rejected with HTTP 401.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Plausible Analytics has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Uplisting is a vacation-rental and short-term-let property management platform."
+description: "Uplisting is a vacation rental management platform. Create and list bookings, read properties and calendars, and manage webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uplisting.png" alt="Uplisting logo">
 
-This connector covers the full public Uplisting API: account verification, properties, availability search, bookings, calendar rates and restrictions, calendar updates, webhook registration, and the partner-only v2 endpoints for creating bookings and managing custom booking attributes.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [uplisting.io](https://uplisting.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `uplisting` |
+
+## Setup
+
+Your customers enter their API key for Uplisting when they connect. Nothing else needs setting up.
 
 ## Use it
 

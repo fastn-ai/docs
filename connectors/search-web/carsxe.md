@@ -1,5 +1,5 @@
 ---
-description: "CarsXE is a vehicle data API for decoding VINs and license plates and enriching vehicle records."
+description: "CarsXE provides vehicle data. Decode VINs, license plates and OBD codes, and get market values, recalls and lien and theft records."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/carsxe.png" alt="CarsXE logo">
 
-This connector covers the complete CarsXE REST surface: vehicle specifications (VIN decoding), international VIN decoding, US and worldwide license plate decoding (v1 and v2), market value (v1 and v2), vehicle history, lien and theft checks, safety recalls by VIN, by year/make/model and in bulk batches, vehicle images, year/make/model lookups and dropdown options, OBD-II trouble code decoding, VIN and license plate image recognition, and the Enterprise ownership and identity-graph lookups. Every call spends account credits.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [carsxe.com](https://carsxe.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `carsxe` |
+
+## Setup
+
+Your customers enter their API key for CarsXE when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add CarsXE from **Build → Integrations → Connectors** and connect an account
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Ownership By Address</td><td><code>getOwnershipByAddress</code></td><td>Finds everyone on file at a US street address in the CarsXE identity graph. Requires a CarsXE Enterprise plan. Charged per resident returned, only when a match is found.</td></tr><tr><td>Get Ownership By Person</td><td><code>getOwnershipByPerson</code></td><td>Resolves contact details for a person you already have a name and address for, from the CarsXE identity graph. Requires a CarsXE Enterprise plan. Charged per match returned, only when a match is found.</td></tr><tr><td>Get Ownership By Phone</td><td><code>getOwnershipByPhone</code></td><td>Resolves people and contact details from one or more US phone numbers in the CarsXE identity graph. Requires a CarsXE Enterprise plan. Charged per match returned, only when a match is found.</td></tr><tr><td>Get Ownership By Phone In Bulk</td><td><code>getOwnershipByPhoneBulk</code></td><td>Resolves people and contact details for up to 100 US phone numbers in a single call. Requires a CarsXE Enterprise plan. Charged per match returned; numbers with no hit are omitted from the matches and are not billed.</td></tr><tr><td>Get Ownership By VIN</td><td><code>getOwnershipByVin</code></td><td>Looks up the registered owners of a vehicle by VIN, with vehicle attributes, vehicle history and owner contact details. Requires a CarsXE Enterprise plan. Charged per owner returned, only when a match is found.</td></tr><tr><td>Get Ownership By ZIP Code</td><td><code>getOwnershipByZip</code></td><td>Searches a US ZIP code for people matching optional gender, age and income filters, returned as a paginated list. Requires a CarsXE Enterprise plan. Charged per record on the page, up to 100 per call, so broad searches consume credits quickly.</td></tr><tr><td>Get Recalls Batch Results</td><td><code>getRecallsBatchResults</code></td><td>Fetches the per-VIN safety recall results of a completed bulk recalls batch as JSON, including the recall count and campaigns found for each VIN.</td></tr><tr><td>Get Recalls Batch Status</td><td><code>getRecallsBatchStatus</code></td><td>Checks the processing status of a previously submitted bulk recalls batch, returning the batch state and the number of VINs in it.</td></tr><tr><td>Get Recalls By Year Make Model</td><td><code>getRecallsByYearMakeModel</code></td><td>Retrieves open safety recalls for a vehicle by year, make and model, for cases where no VIN is available. Returns the recall count and the individual recall campaigns.</td></tr><tr><td>Get Vehicle By Year Make Model</td><td><code>getVehicleByYearMakeModel</code></td><td>Looks up vehicle data by year, make and model, and optionally trim, when no VIN is available. Returns the best matching vehicle and, on request, every trim option for that year, make and model.</td></tr><tr><td>Get Vehicle History</td><td><code>getVehicleHistory</code></td><td>Retrieves a vehicle history report by VIN, including current and historical title records, title brands, junk and salvage events and insurance records.</td></tr><tr><td>Get Vehicle Images</td><td><code>getVehicleImages</code></td><td>Retrieves photos of a vehicle by make and model, optionally narrowed by year, trim, color, angle, photo type, size and image license. Returns image links with dimensions and thumbnails.</td></tr><tr><td>Get Vehicle Recalls</td><td><code>getVehicleRecalls</code></td><td>Retrieves open safety recalls associated with a vehicle by VIN, including the recall campaign details reported for that specific vehicle.</td></tr><tr><td>Get Vehicle Specifications</td><td><code>getVehicleSpecs</code></td><td>Decodes a 17-character VIN and returns detailed vehicle specifications, including attributes such as year, make, model, trim, engine and dimensions, plus available colors, equipment and standard warranties. If the VIN cannot be decoded, CarsXE falls back to an international VIN decoding check unless that fallback is disabled.</td></tr><tr><td>Get Year Make Model Options</td><td><code>getYearMakeModelOptions</code></td><td>Returns one layer of vehicle reference data for populating Year, Make, Model and Variant dropdown menus. Each call returns exactly one layer; when no dimension is given, the layer is inferred from the year, make and model supplied.</td></tr><tr><td>Recognize License Plate From Image</td><td><code>recognizePlateImage</code></td><td>Extracts the license plate number from a photo of a vehicle using computer vision, returning each detected plate with its bounding box and region.</td></tr><tr><td>Submit Recalls Batch</td><td><code>submitRecallsBatch</code></td><td>Submits up to 10,000 VINs for asynchronous safety recall processing. Supply the VINs as a list, as inline CSV text, or as an HTTPS link to a CSV file. Optionally supply a webhook URL that CarsXE will POST to when the batch finishes. Returns a batch ID to poll with Get Recalls Batch Status.</td></tr><tr><td>Validate API Key</td><td><code>validateApiKey</code></td><td>Checks that the connected CarsXE API key is valid and the account is active, and returns the account owner's email and creation date. Use it to verify credentials before making calls that spend credits.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+CarsXE has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

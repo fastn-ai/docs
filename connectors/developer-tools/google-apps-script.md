@@ -1,5 +1,5 @@
 ---
-description: "Google Apps Script API for managing Apps Script projects programmatically."
+description: "Google Apps Script runs scripts across Google Workspace. Create and update script projects, and manage their versions, deployments and metrics."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-apps-script.png" alt="Google Apps Script logo">
 
-Create projects, read and update project content and manifests, manage versions and deployments, run deployed script functions, and inspect execution processes and metrics.
-
 | | |
 | --- | --- |
 | **Category** | [Developer tools](README.md) |
 | **Website** | [script.googleapis.com](https://script.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleAppsScript` |
+
+## Setup
+
+Your customers sign in to Google Apps Script through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Google Apps Script from **Build → Integrations → Connectors** and connec
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Script Processes</td><td><code>listScriptProcesses</code></td><td>Lists the Apps Script executions of one specific script project, with optional filters on deployment, function, status, type, access level and time window.</td></tr><tr><td>List User Processes</td><td><code>listUserProcesses</code></td><td>Lists the Apps Script executions run by or on behalf of the authenticated user across all their script projects, with optional filters on project, function, status, type, access level and time window.</td></tr><tr><td>List Versions</td><td><code>listVersions</code></td><td>Lists every saved version of an Apps Script project, newest last, with pagination support.</td></tr><tr><td>Run Script Function</td><td><code>runScriptFunction</code></td><td>Runs a function in a deployed Apps Script project and returns the result. The script must be deployed as an executable API and the calling credentials must carry every OAuth scope the script itself uses, otherwise the call is rejected.</td></tr><tr><td>Update Deployment</td><td><code>updateDeployment</code></td><td>Updates an existing deployment of an Apps Script project, for example to point it at a newer saved version. The full deployment configuration replaces the previous one.</td></tr><tr><td>Update Project Content</td><td><code>updateProjectContent</code></td><td>Replaces the entire contents of an Apps Script project with the supplied files. The files array must include the appsscript JSON manifest, and any existing file omitted from the array is deleted.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Google Apps Script has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

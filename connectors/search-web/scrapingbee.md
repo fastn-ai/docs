@@ -1,5 +1,5 @@
 ---
-description: "Connect ScrapingBee to your product with fastn."
+description: "ScrapingBee is a web scraping service. Extract structured data, run web searches and get Amazon and Walmart product data."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/scrapingbee.png" alt="ScrapingBee logo">
 
-ScrapingBee is a web scraping API that handles headless browser rendering, JavaScript execution, and rotating proxies (including premium/stealth residential proxies) so you can scrape any webpage without getting blocked. It also offers specialized APIs for Google Search, Fast Search, Amazon, Walmart, YouTube, ChatGPT, Gemini, and AI-powered employee search.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [scrapingbee.com](https://scrapingbee.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `scrapingbee` |
+
+## Setup
+
+Your customers enter their API key for ScrapingBee when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add ScrapingBee from **Build → Integrations → Connectors** and connect an ac
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get YouTube Subtitles</td><td><code>getYoutubeSubtitles</code></td><td>Fetches the closed-caption/subtitle track for a YouTube video by video ID, including auto-generated captions, with per-line timing.</td></tr><tr><td>Scrape Webpage</td><td><code>scrapeWebpage</code></td><td>Fetches a webpage through ScrapingBee's proxy/headless-browser infrastructure and returns the rendered HTML (or text/markdown/screenshot variants via flags). Supports JavaScript rendering, premium/stealth residential proxies, geolocation, custom cookies, header forwarding, and JS interaction scenarios to avoid bot detection.</td></tr><tr><td>Search Amazon Products</td><td><code>searchAmazonProducts</code></td><td>Searches Amazon for products matching a keyword query and returns structured search-result listings (title, price, rating, ASIN, image) across one or more result pages.</td></tr><tr><td>Search Google</td><td><code>searchGoogle</code></td><td>Runs a Google search and returns structured results - organic results, ads, knowledge graph, local results, news, images, and related queries - without you having to scrape and parse Google's HTML yourself.</td></tr><tr><td>Search Walmart Products</td><td><code>searchWalmartProducts</code></td><td>Searches Walmart.com for products matching a keyword query and returns structured search-result listings with pricing, ratings, and fulfillment/delivery options.</td></tr><tr><td>Search YouTube</td><td><code>searchYoutube</code></td><td>Searches YouTube for videos, channels, playlists, or movies matching a keyword query, with rich filters for quality, duration, upload date, and content type.</td></tr><tr><td>Take Screenshot</td><td><code>takeScreenshot</code></td><td>Renders a webpage and captures a screenshot of it as a base64-encoded image, optionally full-page or scoped to one element via a CSS selector. Uses the same scrape endpoint with screenshot=true and json_response=true so the image comes back as base64 JSON rather than a raw binary body.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+ScrapingBee has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

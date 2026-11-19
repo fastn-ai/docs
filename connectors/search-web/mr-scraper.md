@@ -1,5 +1,5 @@
 ---
-description: "MrScraper is an AI-powered web scraping platform with anti-bot bypass, browser rendering and residential proxies."
+description: "MrScraper is an AI web scraping platform. Create and run AI scrapers, rerun scrapers in bulk and run Google search tasks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mr-scraper.png" alt="MrScraper logo">
 
-Aligned with the MrScraper Python SDK v0.6.0: Scraper API (fetch a URL as HTML, Markdown or a screenshot), Web Search (Google SERP) and Account (identity, subscription, token usage and rate limits). Also covers Playground scraping (HTML, Markdown, screenshots, AI JSON extraction, listing pages, sitemap discovery), the Platform API (AI and manual scrapers, reruns, bulk cancellation, self-healing, results, analytics, proxy bandwidth), bulk submissions, and Marketplace sync and async scrapers such as Amazon product details and YouTube videos. Auth: MrScraper API token sent as x-api-token and Authorization: Bearer.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [mrscraper.com](https://mrscraper.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `mrScraper` |
+
+## Setup
+
+Your customers enter their API token for MrScraper when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add MrScraper from **Build → Integrations → Connectors** and connect an acco
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Scrape Completed</td><td><code>scrape_completed</code></td><td>Fires when a scraper run finishes successfully. MrScraper has no webhook API, so set this up in the dashboard for each account: gear icon &gt; Webhooks &gt; + ; Request Type POST; Event 'Scraping Completed'; paste this fastn webhook URL as the URL; Submit. Then open the scraper, click the ellipsis (⋮) &gt; Webhooks, select the webhook under Webhook Settings and click Save Webhook Settings. The event name is in the top-level event field and the scrape result in data. MrScraper does not sign deliveries; add a static header in the webhook form if you need to authenticate it. Payload taken from the official docs example (no live delivery captured).</td></tr><tr><td>Scrape Failed</td><td><code>scrape_failed</code></td><td>Fires when a scraper run fails. Set up in the MrScraper dashboard: gear icon &gt; Webhooks &gt; + ; Request Type POST; Event 'Scraping Failed'; paste this fastn webhook URL; Submit; then attach the webhook to the scraper via ⋮ &gt; Webhooks &gt; Save Webhook Settings. The docs name only the completed event verbatim (scrape_completed); this event id follows the same documented naming and the payload is modelled on the completed example, so confirm the event value against your first delivery.</td></tr><tr><td>Scrape Started</td><td><code>scrape_started</code></td><td>Fires when a scraper run starts. Set up in the MrScraper dashboard: gear icon &gt; Webhooks &gt; + ; Request Type POST; Event 'Scraping Started'; paste this fastn webhook URL; Submit; then attach the webhook to the scraper via ⋮ &gt; Webhooks &gt; Save Webhook Settings. The docs name only the completed event verbatim (scrape_completed); this event id follows the same documented naming and the payload is modelled on the completed example, so confirm the event value against your first delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Scrape Completed</td><td><code>scrape_completed</code></td><td>Fires when a scraper run finishes successfully. MrScraper has no webhook API, so set this up in the dashboard for each account: gear icon &gt; Webhooks &gt; +; Request Type POST; Event 'Scraping Completed'; paste this fastn webhook URL as the URL; Submit. Then open the scraper, click the ellipsis (⋮) &gt; Webhooks, select the webhook under Webhook Settings and click Save Webhook Settings. The event name is in the top-level event field and the scrape result in data. MrScraper does not sign deliveries; add a static header in the webhook form if you need to authenticate it.</td></tr><tr><td>Scrape Failed</td><td><code>scrape_failed</code></td><td>Fires when a scraper run fails. Set up in the MrScraper dashboard: gear icon &gt; Webhooks &gt; +; Request Type POST; Event 'Scraping Failed'; paste this fastn webhook URL; Submit; then attach the webhook to the scraper via ⋮ &gt; Webhooks &gt; Save Webhook Settings.</td></tr><tr><td>Scrape Started</td><td><code>scrape_started</code></td><td>Fires when a scraper run starts. Set up in the MrScraper dashboard: gear icon &gt; Webhooks &gt; +; Request Type POST; Event 'Scraping Started'; paste this fastn webhook URL; Submit; then attach the webhook to the scraper via ⋮ &gt; Webhooks &gt; Save Webhook Settings.</td></tr></tbody></table>

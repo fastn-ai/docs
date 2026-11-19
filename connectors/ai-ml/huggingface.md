@@ -1,5 +1,5 @@
 ---
-description: "Connect Hugging Face to your product with fastn."
+description: "Hugging Face hosts AI models, datasets and apps. Run chat and embedding models, browse models, datasets and spaces, and create or delete repositories."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/huggingface.png" alt="Hugging Face logo">
 
-Hugging Face connector covering the Hub API (whoami, models, datasets, spaces, repos, refs, commits) and Inference Providers router (OpenAI-compatible chat completions, feature-extraction embeddings). Auth: bearer hf_ token.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [huggingface.co](https://huggingface.co) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `huggingface` |
+
+## Setup
+
+Your customers enter their access token for Hugging Face when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Hugging Face from **Build → Integrations → Connectors** and connect an a
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Models</td><td><code>listModels</code></td><td>List/search models on the Hub. FREE / zero-cost. Supports search, author, filter (tags), sort, direction, limit, full, config.</td></tr><tr><td>List Router Models</td><td><code>listRouterModels</code></td><td>List models available through the Inference Providers router (OpenAI /v1/models style), including per-provider pricing/context.</td></tr><tr><td>List Spaces</td><td><code>listSpaces</code></td><td>List/search Spaces on the Hub. FREE / zero-cost. Supports search, author, filter, sort, direction, limit, full.</td></tr><tr><td>Who Am I</td><td><code>whoami</code></td><td>Return the authenticated user/org info for the hf_ token. FREE / zero-cost — ideal for validating a connection.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Hugging Face has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

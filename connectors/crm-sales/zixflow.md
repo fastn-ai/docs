@@ -1,5 +1,5 @@
 ---
-description: "Zixflow is a CRM and multichannel campaign platform."
+description: "Zixflow is a CRM and campaign platform. Manage collection records, list entries, attributes and activities."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zixflow.png" alt="Zixflow logo">
 
-This connector covers the Zixflow App REST API (api.zixflow.com/api/v1): collections, lists, custom attributes with their select and status options (create, update, delete), collection records (people, companies, deals and custom collections) with filtering and sorting, list entries, activities and tasks, and workspace members; plus campaign messaging over WhatsApp (accounts, templates, template variables, template and session messages), RCS (template variables, template, text and media messages), SMS, email with attachments, the OTPflow multichannel fallback API, and WhatsApp, SMS and email delivery reports. Incoming WhatsApp and RCS message events are delivered to a webhook URL registered in Zixflow under Settings &gt; Developer &gt; Webhook. Authentication uses a Zixflow API key sent as a Bearer token. The separate Zixflow AI product (api-ai.zixflow.com, x-api-key and workspace ID authentication) is not part of this connector.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [zixflow.com](https://zixflow.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `zixflow` |
+
+## Setup
+
+Your customers enter their API key for Zixflow when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Zixflow from **Build → Integrations → Connectors** and connect an accoun
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Incoming RCS Message</td><td><code>incoming.rcs.message</code></td><td>Triggered when an RCS message (text, suggestion reply, image, video, audio, file or location) is received by an RCS bot connected to Zixflow (RCS is available for Indian numbers once activated by Zixflow support). Setup (once per Zixflow workspace): in Zixflow open Settings &gt; Developer &gt; Webhook, click Add, paste the fastn webhook URL and select the incoming.rcs.message event. Zixflow has no webhook registration API and does not sign deliveries. The event type is read from the 'event' field. Payload schema is modelled from Zixflow's documented example; the 'message' object carries only the key matching message.type.</td></tr><tr><td>Incoming WhatsApp Message</td><td><code>incoming.whatsapp.message</code></td><td>Triggered when a WhatsApp message (text, media, location, contacts, button reply, flow form reply or order) is received on a WhatsApp number connected to Zixflow. Setup (once per Zixflow workspace): in Zixflow open Settings &gt; Developer &gt; Webhook, click Add, paste the fastn webhook URL and select the incoming.whatsapp.message event. Zixflow has no webhook registration API and does not sign deliveries. The event type is read from the 'event' field. Payload schema is modelled from Zixflow's documented example; the 'message' object carries only the key matching message.type.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Incoming RCS Message</td><td><code>incoming.rcs.message</code></td><td>Triggered when an RCS message (text, suggestion reply, image, video, audio, file or location) is received by an RCS bot connected to Zixflow (RCS is available for Indian numbers once activated by Zixflow support). Setup (once per Zixflow workspace): in Zixflow open Settings &gt; Developer &gt; Webhook, click Add, paste the fastn webhook URL and select the incoming.rcs.message event. Zixflow has no webhook registration API and does not sign deliveries. The event type is read from the 'event' field.</td></tr><tr><td>Incoming WhatsApp Message</td><td><code>incoming.whatsapp.message</code></td><td>Triggered when a WhatsApp message (text, media, location, contacts, button reply, flow form reply or order) is received on a WhatsApp number connected to Zixflow. Setup (once per Zixflow workspace): in Zixflow open Settings &gt; Developer &gt; Webhook, click Add, paste the fastn webhook URL and select the incoming.whatsapp.message event. Zixflow has no webhook registration API and does not sign deliveries. The event type is read from the 'event' field.</td></tr></tbody></table>

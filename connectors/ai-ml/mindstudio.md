@@ -1,5 +1,5 @@
 ---
-description: "Connect MindStudio to your product with fastn."
+description: "MindStudio is a platform for building AI agents. List and run published apps and workers in your workspace."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mindstudio.png" alt="MindStudio logo">
 
-MindStudio developer API (api.mindstudio.ai/developer/v2): run published AI agents/apps synchronously or asynchronously with launch variables, load the workspace's agent catalog, and inspect an agent's workflows.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [mindstudio.ai](https://mindstudio.ai) |
 | **Authentication** | API key |
 | **Slug** | `mindstudio` |
+
+## Setup
+
+Your customers enter their API key for MindStudio when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,4 +30,4 @@ Add MindStudio from **Build → Integrations → Connectors** and connect an acc
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>App Run Completed</td><td><code>app.run.completed</code></td><td>Fires when an asynchronous MindStudio agent run finishes. To receive it, pass this webhook's URL as the callbackUrl input of the Run App or Run Worker action; MindStudio has no webhook registration API, so delivery is opted into per run. Payload schema is MODELLED from the documented synchronous run response (success/threadId/thread/result/billingCost) because the callback body is not documented and could not be captured: the credentialed workspace contains zero agents, so no run could be started.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>App Run Completed</td><td><code>app.run.completed</code></td><td>Fires when an asynchronous MindStudio agent run finishes. To receive it, pass this webhook's URL as the callbackUrl input of the Run App or Run Worker action; MindStudio has no webhook registration API, so delivery is opted into per run.</td></tr></tbody></table>

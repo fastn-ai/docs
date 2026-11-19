@@ -1,5 +1,5 @@
 ---
-description: "Serply provides real-time search engine results and web scraping over a simple REST API."
+description: "Serply returns search results and scrapes pages. Search Google, Bing and eBay, read Reddit posts and comments, and scrape URLs."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/serply.png" alt="Serply logo">
 
-This connector covers the full Serply API: Google Search, Google Video, Google Images, Google Jobs, Google Scholar, Google News, Google Maps, Bing Search, Amazon product search, eBay search, Reddit subreddits, users, posts and comment threads, and the URL scraping Request endpoint that returns full HTML or markdown.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [serply.io](https://serply.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `serply` |
+
+## Setup
+
+Your customers enter their API key for Serply when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Serply from **Build → Integrations → Connectors** and connect an account
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search Google Jobs</td><td><code>searchGoogleJobs</code></td><td>Searches Google Jobs for listings matching a position title and optional location, returning employer, location, apply link and posting date for each job. Currently only jobs in North America are supported.</td></tr><tr><td>Search Google Maps</td><td><code>searchGoogleMaps</code></td><td>Searches Google Maps for places matching a location or category query and returns structured place records including name, address, coordinates, rating, categories, phone, website, timezone and opening hours.</td></tr><tr><td>Search Google News</td><td><code>searchGoogleNews</code></td><td>Searches Google News for articles from thousands of sources and returns the news feed metadata and the matching article entries with title, link, publication date, summary and source. Results can be scoped to a country and language edition.</td></tr><tr><td>Search Google Scholar</td><td><code>searchGoogleScholar</code></td><td>Searches scholarly literature for academic papers and articles, returning title, link, authors, open-access document link and citation count for each article. Supports page size up to 200 and offset pagination.</td></tr><tr><td>Search Google Videos</td><td><code>searchGoogleVideos</code></td><td>Runs a Google Video search and returns video results with their titles, links and positions, plus any other SERP features on the page. Supports search operators, page size, offset pagination, proxy location and device type.</td></tr><tr><td>Search Products</td><td><code>searchProducts</code></td><td>Searches Amazon product listings and returns each product's ASIN, title, price, rating, review count, image, Prime eligibility, bestseller flag and sponsored status.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Serply has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

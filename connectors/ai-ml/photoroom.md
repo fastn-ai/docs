@@ -1,5 +1,5 @@
 ---
-description: "Photoroom AI image editing API."
+description: "Photoroom edits product photos with AI. Remove and replace backgrounds, edit images from a link, and check your image balance."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/photoroom.png" alt="Photoroom logo">
 
-Removes backgrounds, generates AI backgrounds, shadows, relighting, text removal, flat lay, ghost mannequin, virtual model and virtual try-on, upscaling and uncropping, and returns the edited image. Covers the Image Editing API v2 (image-api.photoroom.com), the legacy v1 render endpoint, the Remove Background API v1 (sdk.photoroom.com), Visual QA, and account/credit balance. Authenticates with an x-api-key header; prefix the key with sandbox_ to use Photoroom's free watermarked sandbox mode.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [photoroom.com](https://photoroom.com) |
 | **Authentication** | API key |
 | **Slug** | `photoroom` |
+
+## Setup
+
+Your customers enter their API key for Photoroom when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Photoroom from **Build → Integrations → Connectors** and connect an acco
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Render Template From Upload (Legacy v1)</td><td><code>renderTemplateFromUploadV1</code></td><td>Renders an image into a saved Photoroom template through the legacy v1 render POST endpoint, sending the template id and the source image URL as multipart form fields, and returns the rendered image. Deprecated by Photoroom in favour of the v2 edit endpoint. Photoroom's POST form also accepts a raw imageFile upload, which the fastn engine cannot emit; supply the image by URL instead. Each render consumes one image from the account balance.</td></tr><tr><td>Render Template From URL (Legacy v1)</td><td><code>renderTemplateFromUrlV1</code></td><td>Renders an image into a saved Photoroom template using the legacy v1 render endpoint and returns the rendered image. Deprecated by Photoroom in favour of the v2 edit endpoint, which offers the same functionality plus the AI features; kept for existing integrations that still address templates by id. Each render consumes one image from the account balance.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Photoroom has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

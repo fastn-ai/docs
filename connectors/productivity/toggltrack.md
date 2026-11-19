@@ -1,5 +1,5 @@
 ---
-description: "Toggl Track time tracking API."
+description: "Toggl Track is a time tracking app. Manage time entries, projects, clients, tags, project users and groups, and organization users."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/toggltrack.png" alt="Toggl Track logo">
 
-Manage time entries (including the running entry, start/stop and bulk edits), projects, project users and groups, tasks, clients, tags, workspaces, workspace users and memberships, organizations, groups, invitations, goals, alerts, favorites, timesheets and saved reports, and run detailed, summary, weekly and comparative reports through the Reports API v3, plus webhook subscription management.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [toggl.com](https://toggl.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `toggltrack` |
+
+## Setup
+
+Your customers enter their username and password for Toggl Track when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -42,6 +44,6 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 
 <summary>View 12 more events</summary>
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Tag Deleted</td><td><code>tag.deleted</code></td><td>Maps to {"entity":"tag","action":"deleted"}.</td></tr><tr><td>Tag Updated</td><td><code>tag.updated</code></td><td>Maps to {"entity":"tag","action":"updated"}.</td></tr><tr><td>Task Created</td><td><code>task.created</code></td><td>Maps to {"entity":"task","action":"created"}. Note tasks are a paid Toggl feature; the free plan answers 403 "unauthorized to perform this action" on task writes.</td></tr><tr><td>Task Deleted</td><td><code>task.deleted</code></td><td>Maps to {"entity":"task","action":"deleted"}.</td></tr><tr><td>Task Updated</td><td><code>task.updated</code></td><td>Maps to {"entity":"task","action":"updated"}.</td></tr><tr><td>Time Entry Created</td><td><code>time_entry.created</code></td><td>Fires when a time entry is created in the subscribed workspace. Toggl subscriptions carry an event_filters array of {entity, action} pairs, so what a subscription receives is chosen at registration time. This event id maps to {"entity":"time_entry","action":"created"}. Verified live against workspace 21541382: subscription 127661 was created, its validate endpoint answered with the correct provider message for a wrong code, and delete returned the row - real integer subscription ids throughout, so unsubscribe genuinely removes rather than silently no-opping.</td></tr><tr><td>Time Entry Deleted</td><td><code>time_entry.deleted</code></td><td>Fires when a time entry is deleted. Maps to {"entity":"time_entry","action":"deleted"}.</td></tr><tr><td>Time Entry Updated</td><td><code>time_entry.updated</code></td><td>Fires when a time entry is updated. Maps to {"entity":"time_entry","action":"updated"}.</td></tr><tr><td>Workspace Updated</td><td><code>workspace.updated</code></td><td>Maps to {"entity":"workspace","action":"updated"}.</td></tr><tr><td>Workspace User Created</td><td><code>workspace_user.created</code></td><td>Maps to {"entity":"workspace_user","action":"created"}.</td></tr><tr><td>Workspace User Deleted</td><td><code>workspace_user.deleted</code></td><td>Maps to {"entity":"workspace_user","action":"deleted"}.</td></tr><tr><td>Workspace User Updated</td><td><code>workspace_user.updated</code></td><td>Maps to {"entity":"workspace_user","action":"updated"}.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Tag Deleted</td><td><code>tag.deleted</code></td><td>Maps to {"entity":"tag","action":"deleted"}.</td></tr><tr><td>Tag Updated</td><td><code>tag.updated</code></td><td>Maps to {"entity":"tag","action":"updated"}.</td></tr><tr><td>Task Created</td><td><code>task.created</code></td><td>Maps to {"entity":"task","action":"created"}.</td></tr><tr><td>Task Deleted</td><td><code>task.deleted</code></td><td>Maps to {"entity":"task","action":"deleted"}.</td></tr><tr><td>Task Updated</td><td><code>task.updated</code></td><td>Maps to {"entity":"task","action":"updated"}.</td></tr><tr><td>Time Entry Created</td><td><code>time_entry.created</code></td><td>Fires when a time entry is created in the subscribed workspace. Toggl subscriptions carry an event_filters array of {entity, action} pairs, so what a subscription receives is chosen at registration time. This event id maps to {"entity":"time_entry","action":"created"}. Verified live against workspace 21541382: subscription 127661 was created, its validate endpoint answered with the correct provider message for a wrong code, and delete returned the row - real integer subscription ids throughout, so unsubscribe genuinely removes rather than silently no-opping.</td></tr><tr><td>Time Entry Deleted</td><td><code>time_entry.deleted</code></td><td>Fires when a time entry is deleted. Maps to {"entity":"time_entry","action":"deleted"}.</td></tr><tr><td>Time Entry Updated</td><td><code>time_entry.updated</code></td><td>Fires when a time entry is updated. Maps to {"entity":"time_entry","action":"updated"}.</td></tr><tr><td>Workspace Updated</td><td><code>workspace.updated</code></td><td>Maps to {"entity":"workspace","action":"updated"}.</td></tr><tr><td>Workspace User Created</td><td><code>workspace_user.created</code></td><td>Maps to {"entity":"workspace_user","action":"created"}.</td></tr><tr><td>Workspace User Deleted</td><td><code>workspace_user.deleted</code></td><td>Maps to {"entity":"workspace_user","action":"deleted"}.</td></tr><tr><td>Workspace User Updated</td><td><code>workspace_user.updated</code></td><td>Maps to {"entity":"workspace_user","action":"updated"}.</td></tr></tbody></table>
 
 </details>

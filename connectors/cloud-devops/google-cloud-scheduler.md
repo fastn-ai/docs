@@ -1,5 +1,5 @@
 ---
-description: "Google Cloud Scheduler is a fully managed enterprise-grade cron job scheduler."
+description: "Google Cloud Scheduler runs scheduled jobs on Google Cloud. Create, list, update, pause, resume, run and delete scheduled jobs."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-scheduler.png" alt="Google Cloud Scheduler logo">
 
-Create, list, update, pause, resume, run and delete scheduled jobs that target HTTP endpoints, App Engine services and Pub/Sub topics, and manage locations, CMEK configuration and long-running operations.
-
 | | |
 | --- | --- |
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloudscheduler.googleapis.com](https://cloudscheduler.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleCloudScheduler` |
+
+## Setup
+
+Your customers sign in to Google Cloud Scheduler through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Google Cloud Scheduler from **Build → Integrations → Connectors** and co
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Operations</td><td><code>listOperations</code></td><td>Lists the long-running operations in a Cloud Scheduler project and location, such as pending CMEK configuration updates.</td></tr><tr><td>Pause Job</td><td><code>pauseJob</code></td><td>Pauses a Cloud Scheduler job so that it stops executing on its schedule. The job must be in the ENABLED state; after pausing its state becomes PAUSED.</td></tr><tr><td>Resume Job</td><td><code>resumeJob</code></td><td>Resumes a paused Cloud Scheduler job so that it executes on its schedule again. The job must be in the PAUSED state; after resuming its state becomes ENABLED.</td></tr><tr><td>Run Job</td><td><code>runJob</code></td><td>Forces a Cloud Scheduler job to run immediately, outside its normal schedule. The job's regular schedule is unaffected and the updated job resource is returned.</td></tr><tr><td>Update CMEK Config</td><td><code>updateCmekConfig</code></td><td>Updates the customer-managed encryption key (CMEK) configuration for Cloud Scheduler in a project and location. Returns a long-running operation. Supply an empty kmsKeyName to disable CMEK for the location.</td></tr><tr><td>Update Job</td><td><code>updateJob</code></td><td>Updates a Cloud Scheduler job. Only the fields named in updateMask are changed, so list exactly the fields you are modifying, for example 'schedule,description'. If the job is paused it remains paused after the update.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Google Cloud Scheduler has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

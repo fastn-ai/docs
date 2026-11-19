@@ -1,5 +1,5 @@
 ---
-description: "Runway generative AI API for video and image creation."
+description: "Runway generates video and images with AI. Start text-to-image, image-to-video and video-to-video tasks, upscale images and check usage."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/runway.png" alt="Runway logo">
 
-Start generation tasks (text-to-image, image-to-video, video-to-video, upscaling, character performance), track task status, and query organization credit usage.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [runwayml.com](https://runwayml.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `runway` |
+
+## Setup
+
+Your customers enter their access token for Runway when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Runway from **Build → Integrations → Connectors** and connect an account
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Task</td><td><code>getTask</code></td><td>Retrieves the status and result of a generation task by its id. Poll this until the task status is SUCCEEDED or FAILED. This is a free read that does not consume credits.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Runway has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

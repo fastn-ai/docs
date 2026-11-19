@@ -1,5 +1,5 @@
 ---
-description: "Sales tax automation with TaxJar."
+description: "TaxJar automates sales tax. Calculate sales tax, record order and refund transactions, and manage exempt customers."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/taxjar.png" alt="TaxJar logo">
 
-Calculate sales tax for orders, record order and refund transactions, manage exempt customers, look up tax rates and nexus regions, browse product tax categories, and validate customer addresses.
-
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [taxjar.com](https://taxjar.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `taxjar` |
+
+## Setup
+
+Your customers enter their API token for TaxJar when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add TaxJar from **Build → Integrations → Connectors** and connect an account
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Refund Transactions</td><td><code>listRefundTransactions</code></td><td>Lists the unique identifiers of refund transactions recorded in TaxJar. Filter by an exact transaction date or a date range. Either transaction_date or both from_transaction_date and to_transaction_date must be supplied.</td></tr><tr><td>List Tax Categories</td><td><code>listTaxCategories</code></td><td>Lists all product tax categories supported by TaxJar. Use the returned product_tax_code on order line items so items such as clothing, food, or software are taxed at the correct reduced or exempt rate.</td></tr><tr><td>Show Customer</td><td><code>showCustomer</code></td><td>Retrieves a single exempt customer from TaxJar by its unique identifier, including the exemption type and the regions where the customer is exempt.</td></tr><tr><td>Show Order Transaction</td><td><code>showOrderTransaction</code></td><td>Retrieves a single order transaction recorded in TaxJar by its unique identifier, including its addresses, amounts, collected sales tax, and line items.</td></tr><tr><td>Show Refund Transaction</td><td><code>showRefundTransaction</code></td><td>Retrieves a single refund transaction recorded in TaxJar by its unique identifier, including its addresses, refunded amounts, sales tax, and line items.</td></tr><tr><td>Show Tax Rates For Location</td><td><code>showTaxRatesForLocation</code></td><td>Retrieves the sales tax rates for a given location, broken down by state, county, city, and special district. Supply the street address as well for rooftop-accurate rates.</td></tr><tr><td>Summarize Tax Rates For All Regions</td><td><code>summarizeTaxRates</code></td><td>Retrieves the minimum and average sales tax rates for every region supported by TaxJar, giving a high-level view of rates across all states and countries.</td></tr><tr><td>Update Customer</td><td><code>updateCustomer</code></td><td>Updates an existing exempt customer in TaxJar, such as changing their exemption type, name, address, or the regions where they are exempt.</td></tr><tr><td>Update Order Transaction</td><td><code>updateOrderTransaction</code></td><td>Updates an existing order transaction in TaxJar. Only the fields you supply are sent, so you can amend individual amounts, addresses, or line items without resubmitting the whole order.</td></tr><tr><td>Update Refund Transaction</td><td><code>updateRefundTransaction</code></td><td>Updates an existing refund transaction in TaxJar. Only the fields you supply are sent, so you can amend individual amounts, addresses, or line items without resubmitting the whole refund.</td></tr><tr><td>Validate Address</td><td><code>validateAddress</code></td><td>Validates a customer address and returns a collection of matching, corrected addresses with ZIP+4 precision. Only US addresses can be validated. Requires a TaxJar Professional or higher subscription, and this endpoint is not available in the sandbox environment.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+TaxJar has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

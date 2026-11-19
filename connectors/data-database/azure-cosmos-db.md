@@ -1,5 +1,5 @@
 ---
-description: "Azure Cosmos DB management over the Microsoft.DocumentDB Azure Resource Manager API at https://management.azure.com."
+description: "Azure Cosmos DB is a managed database service on Microsoft Azure. Manage database accounts, SQL databases and containers, and read keys."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-cosmos-db.png" alt="Azure Cosmos DB logo">
 
-Create and manage database accounts, keys and connection strings, failover and region settings, and the full resource surface for the NoSQL (SQL), MongoDB, Cassandra, Gremlin and Table APIs - databases, containers, collections, keyspaces, tables, graphs, stored procedures, user defined functions, triggers, throughput settings, data-plane role definitions and role assignments, restorable accounts and point-in-time restore resources, private endpoint connections, services and notebook workspaces. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target subscription or resource group. Every request carries an api-version query parameter, exposed on each action with the current stable default.
-
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Website** | [cosmos.azure.com](https://cosmos.azure.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `azureCosmosDb` |
+
+## Setup
+
+Your customers sign in to Azure Cosmos DB through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Azure Cosmos DB from **Build → Integrations → Connectors** and connect a
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Database Account Metric Definitions</td><td><code>listDatabaseAccountMetricDefinitions</code></td><td>Lists the metric definitions available for a Cosmos DB account, including each metric's unit, primary aggregation type and available time grains.</td></tr><tr><td>List Database Account Read-Only Keys</td><td><code>listDatabaseAccountReadOnlyKeys</code></td><td>Lists the primary and secondary read-only master keys of a Cosmos DB account through the POST form of the operation.</td></tr><tr><td>List Database Account Usages</td><td><code>listDatabaseAccountUsages</code></td><td>Lists the current usage quotas of a Cosmos DB account, such as document count and storage consumed, against their limits.</td></tr><tr><td>List Database Accounts</td><td><code>listDatabaseAccounts</code></td><td>Lists every Azure Cosmos DB database account in a subscription, with its API kind, locations, consistency policy and endpoints.</td></tr><tr><td>List Database Accounts by Resource Group</td><td><code>listDatabaseAccountsByResourceGroup</code></td><td>Lists the Azure Cosmos DB database accounts in a single resource group.</td></tr><tr><td>List Locations</td><td><code>listLocations</code></td><td>Lists the Azure regions where Cosmos DB is available to this subscription, with each region's supported backup storage redundancies and availability zone support.</td></tr><tr><td>List SQL Containers</td><td><code>listSqlContainers</code></td><td>Lists the containers in a SQL (NoSQL) API database, with each container's partition key, indexing policy and time-to-live settings.</td></tr><tr><td>List SQL Databases</td><td><code>listSqlDatabases</code></td><td>Lists the SQL (NoSQL) API databases in a Cosmos DB account.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Azure Cosmos DB has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

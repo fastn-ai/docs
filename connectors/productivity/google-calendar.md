@@ -1,5 +1,5 @@
 ---
-description: "Google Calendar API v3 connector — manage calendars, events, ACLs, free/busy queries, and push notification channels."
+description: "Google Calendar is a shared calendar service. Create and manage calendars and events, invite attendees, check free and busy times, and set sharing rules."
 hidden: true
 ---
 
@@ -13,6 +13,10 @@ hidden: true
 | **Website** | [calendar.google.com](https://calendar.google.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleCalendar` |
+
+## Setup
+
+Your customers sign in to Google Calendar through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

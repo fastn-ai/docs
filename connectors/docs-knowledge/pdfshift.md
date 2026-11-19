@@ -1,5 +1,5 @@
 ---
-description: "PDFShift is an HTML/URL to PDF, PNG, JPEG, and WEBP conversion API."
+description: "PDFShift converts HTML or web pages to PDF and images. Convert pages, generate documents from templates and manage API keys."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdfshift.png" alt="PDFShift logo">
 
-This connector covers document conversion, reusable templates, account and API key management, credit usage, request logs, and invoices.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdfshift.io](https://pdfshift.io) |
 | **Authentication** | API key |
 | **Slug** | `pdfshift` |
+
+## Setup
+
+Your customers enter their API key for PDFShift when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add PDFShift from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Account Details</td><td><code>getAccountDetails</code></td><td>Returns the authenticated PDFShift account's profile, billing plan, and subscription details.</td></tr><tr><td>Get Credits Usage</td><td><code>getCreditsUsage</code></td><td>Returns the current billing period's credit usage for the authenticated PDFShift account, including total, used, remaining, and base credit allowances.</td></tr><tr><td>Get Log by Request ID</td><td><code>getLogByRequestId</code></td><td>Retrieves the full log entry for a single API request, identified by its unique request ID.</td></tr><tr><td>Get Template HTML</td><td><code>getTemplateHtml</code></td><td>Returns the raw HTML markup stored for a template, identified by its slug.</td></tr><tr><td>List Invoices</td><td><code>listInvoices</code></td><td>Lists billing invoices issued for the authenticated PDFShift account.</td></tr><tr><td>List Recent Logs</td><td><code>listLogs</code></td><td>Lists recent API request logs for the authenticated account, with optional filtering by status, API key, and time, and cursor-based pagination.</td></tr><tr><td>List Templates</td><td><code>listTemplates</code></td><td>Lists the reusable templates saved on the authenticated PDFShift account.</td></tr><tr><td>Update API Key</td><td><code>updateApiKey</code></td><td>Renames an existing API key on the account, identified by its secret token. Requires a master-level API key to call.</td></tr><tr><td>Update Template</td><td><code>updateTemplate</code></td><td>Updates the HTML content and optionally the display name of an existing template, identified by its slug.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+PDFShift has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Crawlbase is a web crawling and scraping platform with headless-browser rendering, residential proxies, anti-bot bypass and built-in scrapers."
+description: "Crawlbase is a web crawling and scraping platform. Crawl URLs, run crawlers and manage stored pages."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/crawlbase.png" alt="Crawlbase logo">
 
-This connector covers the Crawlbase REST API: the Crawling API (GET, POST and PUT crawls with JSON, HTML or Markdown output, screenshots, scrapers and async mode), the Enterprise Crawler queue and its management endpoints (create, get, update, stats, pause, unpause, purge, delete, delete job, find job by RID, push URLs), Cloud Storage (get, bulk get, delete, bulk delete, list RIDs, total count), the Account usage API, the free User Agents API and the legacy Scraper, Screenshots and Leads APIs.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [crawlbase.com](https://crawlbase.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `crawlbase` |
+
+## Setup
+
+Your customers enter their API token for Crawlbase when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Crawlbase from **Build → Integrations → Connectors** and connect an acco
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Crawl Result Delivered</td><td><code>crawl.completed</code></td><td>Fired by the Enterprise Crawler for every URL pushed to the crawler that fastn registered with your webhook URL (push URLs with the Push URL To Crawler action, using the same crawler name). The delivery is a gzip-compressed POST from 'Crawlbase Delivery Bot 1.0'. With format=json on the push the body is the JSON envelope shown here; with the default html format the body is the raw page and the metadata (rid, url, cb-status, original-status) travels in request headers instead. Crawlbase also POSTs monitoring probes with rid 'dummyrequest' and User-Agent 'Crawlbase Monitoring Bot 1.0'; ignore those. Crawlbase sends no event-type field, so this single event type receives every delivery. Payload captured from a real delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Crawl Result Delivered</td><td><code>crawl.completed</code></td><td>Fired by the Enterprise Crawler for every URL pushed to the crawler that fastn registered with your webhook URL (push URLs with the Push URL To Crawler action, using the same crawler name). The delivery is a gzip-compressed POST from 'Crawlbase Delivery Bot 1.0'. With format=json on the push the body is the JSON envelope shown here; with the default html format the body is the raw page and the metadata (rid, url, cb-status, original-status) travels in request headers instead. Crawlbase also POSTs monitoring probes with rid 'dummyrequest' and User-Agent 'Crawlbase Monitoring Bot 1.0'; ignore those. Crawlbase sends no event-type field, so this single event type receives every delivery.</td></tr></tbody></table>

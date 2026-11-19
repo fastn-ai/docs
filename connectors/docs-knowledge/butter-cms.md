@@ -1,5 +1,5 @@
 ---
-description: "ButterCMS headless CMS."
+description: "ButterCMS is a headless content management system. Create and read posts, pages and content items, and list authors and categories."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/butter-cms.png" alt="ButterCMS logo">
 
-Content API (read) for blog posts, authors, categories, tags, pages, collections, and feeds, plus the Write API for creating and managing blog posts, pages, and collection content.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [buttercms.com](https://buttercms.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `butterCms` |
+
+## Setup
+
+Your customers enter their API token for ButterCMS when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add ButterCMS from **Build → Integrations → Connectors** and connect an acco
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Pages</td><td><code>listPages</code></td><td>Retrieve a paginated list of pages of a given page type. Use '*' as the page type to list pages of all types.</td></tr><tr><td>List Posts</td><td><code>listPosts</code></td><td>Retrieve a paginated list of published blog posts, sorted by publication date (newest first). Supports filtering by author, category, or tag slug.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>Retrieve all blog tags. Optionally include each tag's recent posts.</td></tr><tr><td>Retrieve Author</td><td><code>retrieveAuthor</code></td><td>Retrieve a single blog author by slug, including profile details and optionally their recent posts.</td></tr><tr><td>Retrieve Category</td><td><code>retrieveCategory</code></td><td>Retrieve a single blog category by slug, optionally including its recent posts.</td></tr><tr><td>Retrieve Page</td><td><code>retrievePage</code></td><td>Retrieve a single page by its page type and page slug, including all field values. Use '*' as the page type when the type is unknown.</td></tr><tr><td>Retrieve Post</td><td><code>retrievePost</code></td><td>Retrieve a single blog post by its slug, including full body HTML, author, tags, categories, and SEO metadata.</td></tr><tr><td>Retrieve Tag</td><td><code>retrieveTag</code></td><td>Retrieve a single blog tag by slug, optionally including its recent posts.</td></tr><tr><td>Search Pages</td><td><code>searchPages</code></td><td>Full-text search across all pages by keyword. Returns a paginated list of matching pages.</td></tr><tr><td>Search Posts</td><td><code>searchPosts</code></td><td>Full-text search of published blog posts by keyword across title and body. Returns a paginated list of matching posts.</td></tr><tr><td>Update Page</td><td><code>updatePage</code></td><td>Update an existing page's field values via the Write API, identified by page type and page slug. Use '*' as the page type for single (type-less) pages. The write is processed asynchronously and returns a pending status.</td></tr><tr><td>Update Post</td><td><code>updatePost</code></td><td>Update an existing blog post identified by its slug via the Write API. Only the fields provided are changed; the write is processed asynchronously and returns a pending status.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+ButterCMS has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

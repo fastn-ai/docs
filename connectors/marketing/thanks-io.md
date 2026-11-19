@@ -1,5 +1,5 @@
 ---
-description: "thanks.io is a direct-mail automation platform for sending handwritten-style postcards, letters, notecards, magnacards and gift cards."
+description: "thanks.io sends handwritten-style direct mail. Manage recipients, mailing lists and message templates, and track orders."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/thanks-io.png" alt="thanks.io logo">
 
-This connector covers the full thanks.io v2 REST API: recipients, mailing lists and radius search, the six send-mailer endpoints, orders with tracking, items, cancel and replay, message and image templates, sub-accounts, handwriting styles, gift card brands, image building and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [thanks.io](https://thanks.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access token |
 | **Slug** | `thanksIo` |
+
+## Setup
+
+Your customers enter their access token for thanks.io when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add thanks.io from **Build → Integrations → Connectors** and connect an acco
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Order Item Delivered</td><td><code>order_item.delivered</code></td><td>Fires when an individual mail piece is confirmed delivered. Use it to trigger follow-up workflows on final delivery. Payload shape is modelled from the thanks.io Order Item Delivered documentation; no delivery was captured because webhooks require a paid thanks.io plan.</td></tr><tr><td>Order Item Status Change</td><td><code>order_item.status_update</code></td><td>Fires whenever an individual mail piece changes delivery status, for example In Transit or Returned To Sender. Use it to track USPS progress per recipient. Payload shape is modelled from the thanks.io Order Item Status Change documentation; no delivery was captured because webhooks require a paid thanks.io plan.</td></tr><tr><td>Order Status Change</td><td><code>order.status_update</code></td><td>Fires whenever an order changes status, for example from Reviewing to Fulfilled or Cancelled. The payload carries the order together with the metadata object you supplied when sending, as order.metadata. Payload shape is modelled from the thanks.io Order Status Change documentation; no delivery was captured because webhooks require a paid thanks.io plan.</td></tr><tr><td>QR Code Scan</td><td><code>scans.scan_update</code></td><td>Fires whenever a recipient scans the trackable QR code printed on one of your mailers. Payload shape is modelled from the thanks.io QR Code Scans documentation; no delivery was captured because webhooks require a paid thanks.io plan.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Order Item Delivered</td><td><code>order_item.delivered</code></td><td>Fires when an individual mail piece is confirmed delivered. Use it to trigger follow-up workflows on final delivery.</td></tr><tr><td>Order Item Status Change</td><td><code>order_item.status_update</code></td><td>Fires whenever an individual mail piece changes delivery status, for example In Transit or Returned To Sender. Use it to track USPS progress per recipient.</td></tr><tr><td>Order Status Change</td><td><code>order.status_update</code></td><td>Fires whenever an order changes status, for example from Reviewing to Fulfilled or Cancelled. The payload carries the order together with the metadata object you supplied when sending, as order.metadata.</td></tr><tr><td>QR Code Scan</td><td><code>scans.scan_update</code></td><td>Fires whenever a recipient scans the trackable QR code printed on one of your mailers.</td></tr></tbody></table>

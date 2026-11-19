@@ -1,5 +1,5 @@
 ---
-description: "Connect Crossref to your product with fastn."
+description: "Crossref holds metadata for scholarly works with DOIs. Look up and search works, journals, funders and members."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/crossref.png" alt="Crossref logo">
 
-Crossref REST API: free, keyless access to metadata for 150M+ scholarly works registered with DOIs - search and filter works, look up a DOI, and browse members (publishers), funders, journals, DOI prefixes, work types and licenses. Add a mailto address to use the faster 'polite' pool.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [crossref.org](https://crossref.org) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `crossref` |
+
+## Setup
+
+Crossref needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Crossref from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Journals</td><td><code>listJournals</code></td><td>Searches journals by title. Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>List Licenses</td><td><code>listLicenses</code></td><td>Returns the license URLs used by works, with work counts. Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>List Member Works</td><td><code>listMemberWorks</code></td><td>Searches and filters the works deposited by a member. Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>List Members</td><td><code>listMembers</code></td><td>Searches Crossref members (organisations that register content, mostly publishers). Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>List Prefix Works</td><td><code>listPrefixWorks</code></td><td>Searches and filters the works registered under a DOI prefix. Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>List Work Types</td><td><code>listTypes</code></td><td>Returns the valid work types (journal-article, book-chapter, posted-content, dataset...). Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>List Works by Type</td><td><code>listTypeWorks</code></td><td>Searches and filters the works of one type. Docs: https://api.crossref.org/swagger-ui/index.html</td></tr><tr><td>Search Works</td><td><code>listWorks</code></td><td>Searches and filters all registered works (journal articles, books, chapters, conference papers, datasets, preprints...), with field queries, filters, sorting, facets and paging. Docs: https://api.crossref.org/swagger-ui/index.html</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Crossref has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "SuiteDash is an all-in-one white-label client portal, CRM and business management platform."
+description: "SuiteDash is a client portal and business management platform. Create and read contacts and companies, and list projects."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/suite-dash.png" alt="SuiteDash logo">
 
-This connector wraps the SuiteDash Secure API (v1, https://app.suitedash.com/secure-api): CRM contacts (list with creation date filters, find by UID or email, create, update), CRM companies (list, find by UID or name, create with an optional primary contact, update), projects (list, find by UID, exact name, name substring or most recent, update), attribute metadata for contacts, companies and projects including custom fields, marketing audience subscriptions, and Worlds (WORLDS Power-up). Authentication uses the Public ID and Secret Key from Manage Account &gt; Secure API, sent as the X-Public-ID and X-Secret-Key headers.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [suitedash.com](https://suitedash.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Public ID and secret key |
 | **Slug** | `suiteDash` |
+
+## Setup
+
+Your customers enter their public id and secret key for SuiteDash when they connect. Nothing else needs setting up.
 
 ## Use it
 

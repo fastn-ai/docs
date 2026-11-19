@@ -1,5 +1,5 @@
 ---
-description: "Updown.io website and uptime monitoring."
+description: "Updown.io monitors website uptime. Create and manage checks, recipients and status pages, and read uptime metrics and downtime history."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/updown-io.png" alt="Updown.io logo">
 
-Create and manage HTTP/HTTPS, ICMP, TCP and pulse checks, read uptime metrics and downtime history, manage alert recipients and public status pages, and list the monitoring node IP addresses.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [updown.io](https://updown.io) |
 | **Authentication** | API key |
 | **Slug** | `updownIo` |
+
+## Setup
+
+Your customers enter their API key for Updown.io when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Updown.io from **Build → Integrations → Connectors** and connect an acco
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Check Down</td><td><code>check.down</code></td><td>Fires when a check goes down, after confirmation from a second monitoring node. Payload is a JSON ARRAY of event objects; each carries event, time, description, the full check object and the downtime object. payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api (no signed delivery could be captured in this environment).</td></tr><tr><td>Check Up</td><td><code>check.up</code></td><td>Fires when a check recovers after a check.down event. Payload is a JSON ARRAY; each element carries event, time, description, check and the now-closed downtime (ended_at and duration populated). payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api.</td></tr><tr><td>Performance Drop</td><td><code>check.performance_drop</code></td><td>Fires when the check's Apdex drops more than 30 percent below the lowest of the last 5 hours. Payload is a JSON ARRAY; each element carries event, time, description, check, apdex_dropped (a percentage string) and last_metrics keyed by hour. payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api.</td></tr><tr><td>SSL Certificate Expiring</td><td><code>check.ssl_expiration</code></td><td>Fires when the SSL certificate approaches its expiration date (30, 14, 7 and 1 day before for one-year certificates). Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object with the certificate and days_before_expiration. payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api.</td></tr><tr><td>SSL Certificate Invalid</td><td><code>check.ssl_invalid</code></td><td>Fires when the monitored host's SSL certificate is considered invalid. Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object holding cert (subject, issuer, from, to, algorithm) and error. payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api.</td></tr><tr><td>SSL Certificate Renewed</td><td><code>check.ssl_renewed</code></td><td>Fires when the SSL certificate is renewed close to expiration, recovering from check.ssl_expiration. Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object with old_cert and new_cert. payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api.</td></tr><tr><td>SSL Certificate Valid</td><td><code>check.ssl_valid</code></td><td>Fires when the SSL certificate becomes valid again after a check.ssl_invalid event. Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object. payloadSchema MODELLED from the vendor's documented sample at https://updown.io/api.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Check Down</td><td><code>check.down</code></td><td>Fires when a check goes down, after confirmation from a second monitoring node. Payload is a JSON ARRAY of event objects; each carries event, time, description, the full check object and the downtime object.</td></tr><tr><td>Check Up</td><td><code>check.up</code></td><td>Fires when a check recovers after a check.down event. Payload is a JSON ARRAY; each element carries event, time, description, check and the now-closed downtime (ended_at and duration populated).</td></tr><tr><td>Performance Drop</td><td><code>check.performance_drop</code></td><td>Fires when the check's Apdex drops more than 30 percent below the lowest of the last 5 hours. Payload is a JSON ARRAY; each element carries event, time, description, check, apdex_dropped (a percentage string) and last_metrics keyed by hour.</td></tr><tr><td>SSL Certificate Expiring</td><td><code>check.ssl_expiration</code></td><td>Fires when the SSL certificate approaches its expiration date (30, 14, 7 and 1 day before for one-year certificates). Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object with the certificate and days_before_expiration.</td></tr><tr><td>SSL Certificate Invalid</td><td><code>check.ssl_invalid</code></td><td>Fires when the monitored host's SSL certificate is considered invalid. Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object holding cert (subject, issuer, from, to, algorithm) and error.</td></tr><tr><td>SSL Certificate Renewed</td><td><code>check.ssl_renewed</code></td><td>Fires when the SSL certificate is renewed close to expiration, recovering from check.ssl_expiration. Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object with old_cert and new_cert.</td></tr><tr><td>SSL Certificate Valid</td><td><code>check.ssl_valid</code></td><td>Fires when the SSL certificate becomes valid again after a check.ssl_invalid event. Payload is a JSON ARRAY; each element carries event, time, description, check and an ssl object.</td></tr></tbody></table>

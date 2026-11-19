@@ -1,5 +1,5 @@
 ---
-description: "Connect AbstractAPI Image Processing to your product with fastn."
+description: "AbstractAPI Image Processing compresses and resizes images. Optimize an image from a URL."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/abstract-api-image-processing.png" alt="AbstractAPI Image Processing logo">
 
-AbstractAPI Image Processing and Optimization compresses an image hosted at a URL, with lossless or lossy compression, and returns the size savings and a download link to the optimized image.
-
 | | |
 | --- | --- |
 | **Category** | [Design](README.md) |
 | **Website** | [abstractapi.com](https://abstractapi.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `abstractApiImageProcessing` |
+
+## Setup
+
+Your customers enter their API key for AbstractAPI Image Processing when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -23,3 +25,7 @@ Add AbstractAPI Image Processing from **Build → Integrations → Connectors** 
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Optimize Image From URL</td><td><code>optimizeImageFromUrl</code></td><td>Compresses an image hosted at a public URL (up to 32 MB) using lossless or lossy compression, and returns the original and final size and dimensions, the bytes saved, and a URL to download the optimized image. Quality and resize options are not exposed by this action.</td></tr></tbody></table>
+
+## Events
+
+AbstractAPI Image Processing has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Leexi is a conversation-intelligence platform that records, transcribes and analyses sales and customer calls and meetings."
+description: "Leexi records and analyzes sales calls and meetings. Manage calls, call notes, meeting events, teams and users."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/leexi.png" alt="Leexi logo">
 
-This connector wraps the Leexi Public API v1: calls and call recordings, AI-generated call notes, meeting events and the meeting assistant bot, plus workspace users and teams.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leexi.ai](https://leexi.ai) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `leexi` |
+
+## Setup
+
+Your customers enter their username and password for Leexi when they connect. Nothing else needs setting up.
 
 ## Use it
 

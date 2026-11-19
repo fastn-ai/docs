@@ -1,5 +1,5 @@
 ---
-description: "Connect Snipcart to your product with fastn."
+description: "Snipcart is a shopping cart for websites. Manage orders, products, discounts, subscriptions, refunds and order notifications."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/snipcart.png" alt="Snipcart logo">
 
-Snipcart headless e-commerce REST API — manage orders, subscriptions, customers, products, discounts, abandoned carts, custom shipping methods, refunds, order notifications, and store domain settings.
-
 | | |
 | --- | --- |
 | **Category** | [E-commerce](README.md) |
 | **Website** | [snipcart.com](https://snipcart.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `snipcart` |
+
+## Setup
+
+Your customers enter their username and password for Snipcart when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Snipcart from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Shipping Method</td><td><code>deleteShippingMethod</code></td><td>Delete a custom shipping method by its id.</td></tr><tr><td>Fetch Product From URL</td><td><code>fetchProduct</code></td><td>Fetch and register a product by crawling the given URL where the Snipcart buy-button markup is found.</td></tr><tr><td>Get Abandoned Cart</td><td><code>getAbandonedCart</code></td><td>Retrieve a single abandoned cart by its token.</td></tr><tr><td>Get Customer</td><td><code>getCustomer</code></td><td>Retrieve the details and statistics of a single customer by id.</td></tr><tr><td>Get Discount</td><td><code>getDiscount</code></td><td>Retrieve a single discount by its id.</td></tr><tr><td>Get Order</td><td><code>getOrder</code></td><td>Retrieve the full details of a single order by its unique token.</td></tr><tr><td>Get Order Refund</td><td><code>getOrderRefund</code></td><td>Retrieve a single refund on an order by its refund id.</td></tr><tr><td>Get Product</td><td><code>getProduct</code></td><td>Retrieve a single product by its Snipcart GUID or user-defined ID, including stock, variants, and custom fields.</td></tr><tr><td>Get Shipping Method</td><td><code>getShippingMethod</code></td><td>Retrieve a single custom shipping method by its id.</td></tr><tr><td>Get Store Domain</td><td><code>getStoreDomain</code></td><td>Retrieve your store's default domain and protocol.</td></tr><tr><td>Get Subscription</td><td><code>getSubscription</code></td><td>Retrieve the details of a single subscription by its id.</td></tr><tr><td>List Abandoned Carts</td><td><code>listAbandonedCarts</code></td><td>Retrieve a cursor-paginated list of abandoned carts, with optional filters for time range, value, email, product, and campaign.</td></tr><tr><td>List Allowed Domains</td><td><code>listAllowedDomains</code></td><td>List every allowed domain and subdomain other than your default website domain.</td></tr><tr><td>List Customer Orders</td><td><code>listCustomerOrders</code></td><td>List all orders placed by a specific customer.</td></tr><tr><td>List Customers</td><td><code>listCustomers</code></td><td>Retrieve a paginated list of customers with optional filters for status, email, name, and date range.</td></tr><tr><td>List Discounts</td><td><code>listDiscounts</code></td><td>Retrieve all discounts configured in your Snipcart store.</td></tr><tr><td>List Order Digital Goods</td><td><code>listOrderDigitalGoods</code></td><td>List the digital goods (downloadable files) associated with an order, including download URLs and usage limits.</td></tr><tr><td>List Order Notifications</td><td><code>listOrderNotifications</code></td><td>Retrieve the notifications (emails, comments, logs) attached to a specific order.</td></tr><tr><td>List Order Refunds</td><td><code>listOrderRefunds</code></td><td>List all refunds issued against a specific order.</td></tr><tr><td>List Orders</td><td><code>listOrders</code></td><td>Retrieve a paginated list of orders in your Snipcart store, with optional filters for status, payment status, date range, and addresses.</td></tr><tr><td>List Products</td><td><code>listProducts</code></td><td>Retrieve a paginated list of products defined in your Snipcart store, with optional filters and sorting.</td></tr><tr><td>List Shipping Methods</td><td><code>listShippingMethods</code></td><td>Retrieve all custom shipping methods configured in your store.</td></tr><tr><td>List Subscription Invoices</td><td><code>listSubscriptionInvoices</code></td><td>Return the invoices (recurring orders) issued for a subscription.</td></tr><tr><td>List Subscriptions</td><td><code>listSubscriptions</code></td><td>Retrieve a paginated list of subscriptions with optional filters for status, date range, and customer.</td></tr><tr><td>Remove Allowed Domains</td><td><code>removeAllowedDomains</code></td><td>Remove one or more allowed domains. Provide a JSON array of objects, each with a domain and optional protocol.</td></tr><tr><td>Update Discount</td><td><code>updateDiscount</code></td><td>Update an existing discount by id. Supply the fields you want to change; you can also archive the discount.</td></tr><tr><td>Update Order</td><td><code>updateOrder</code></td><td>Update an order's status, payment status, tracking information, addresses, notes, custom fields, or metadata.</td></tr><tr><td>Update Product Inventory</td><td><code>updateProduct</code></td><td>Update the inventory management settings and stock levels of a product.</td></tr><tr><td>Update Shipping Method</td><td><code>updateShippingMethod</code></td><td>Replace a custom shipping method by id with a new full definition.</td></tr><tr><td>Update Store Domain</td><td><code>updateStoreDomain</code></td><td>Change your store's default domain and optionally its protocol.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Snipcart has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

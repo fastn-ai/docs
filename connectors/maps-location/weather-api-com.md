@@ -1,5 +1,5 @@
 ---
-description: "Connect WeatherAPI.com to your product with fastn."
+description: "WeatherAPI.com provides weather data. Get current, forecast, future, historical, marine and astronomy weather data."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/weather-api-com.png" alt="WeatherAPI.com logo">
 
-WeatherAPI.com provides real-time weather, multi-day and hourly forecasts, historical weather back to 2010, long-range future forecasts, astronomy, marine weather, sports schedules, time zone lookup, location search/autocomplete, IP geolocation, air quality, and government weather alerts through a single REST API authenticated by an API key passed as a query parameter.
-
 | | |
 | --- | --- |
 | **Category** | [Maps and location](README.md) |
 | **Website** | [weatherapi.com](https://weatherapi.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `weatherApiCom` |
+
+## Setup
+
+Your customers enter their API key for WeatherAPI.com when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add WeatherAPI.com from **Build → Integrations → Connectors** and connect an
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Weather Forecast</td><td><code>getForecast</code></td><td>Retrieves a daily and hourly weather forecast of up to 14 days for a location, optionally including air quality, government weather alerts, and pollen data for a specific date.</td></tr><tr><td>Look Up IP Address</td><td><code>lookupIpAddress</code></td><td>Retrieves geolocation, time zone, and network details for a given IP address.</td></tr><tr><td>Search Locations</td><td><code>searchLocations</code></td><td>Searches for matching cities and towns for a partial location name, useful for building autocomplete or location-picker experiences.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+WeatherAPI.com has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

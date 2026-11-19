@@ -1,5 +1,5 @@
 ---
-description: "Apify is a cloud platform for web scraping, browser automation and data extraction."
+description: "Apify is a web scraping and browser automation platform. Run and abort Actors and tasks, manage builds, and add requests to request queues."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/apify.png" alt="Apify logo">
 
-This connector covers the full Apify API v2: Actors and their versions, environment variables, builds and runs; Actor tasks; standalone runs and builds; key-value stores, datasets and request queues; schedules; webhooks and webhook dispatches; logs; Apify Store; user account, usage and limits; and the signing utilities.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [apify.com](https://apify.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `apify` |
+
+## Setup
+
+Your customers enter their API token for Apify when they connect. Nothing else needs setting up.
 
 ## Use it
 

@@ -1,5 +1,5 @@
 ---
-description: "Zenserp is a search engine results page (SERP) scraping API by APILayer."
+description: "Zenserp returns search results as structured data. Search Google and Bing, get trends and shopping pages, and run batches."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zenserp.png" alt="Zenserp logo">
 
-This connector covers the complete Zenserp API: Google web, image, video, maps, news and shopping search, reverse image search, Google Shopping product pages, YouTube, Bing and Yandex search, Google Trends and trending searches, the supported languages, countries, geo-locations and search-engine lookup lists, asynchronous batch jobs, and the remaining-requests status check. Every search request consumes one request from your plan quota.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [zenserp.com](https://zenserp.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `zenserp` |
+
+## Setup
+
+Your customers enter their API key for Zenserp when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Zenserp from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Google Reverse Image Search</td><td><code>googleReverseImageSearch</code></td><td>Runs a Google reverse image search for a publicly reachable image URL and returns the pages that contain the image together with visually similar results. The start parameter is not supported. Consumes one request from your quota.</td></tr><tr><td>Google Search</td><td><code>googleSearch</code></td><td>Runs a Google web search and returns the parsed results page: organic results, paid results (ads), featured snippets, knowledge graph, related questions and more. Optionally switch the result type with tbm (images, videos, maps, news, shopping). Consumes one request from your quota.</td></tr><tr><td>Google Shopping Search</td><td><code>googleShoppingSearch</code></td><td>Runs a Google Shopping search (tbm=shop) and returns product listings with prices, merchants, ratings and product ids that can be passed to Get Shopping Product Page. The start parameter is not supported. Consumes one request from your quota.</td></tr><tr><td>Google Video Search</td><td><code>googleVideoSearch</code></td><td>Runs a Google video search (tbm=vid) and returns the video results with titles, URLs, descriptions and sources. Consumes one request from your quota.</td></tr><tr><td>List Batches</td><td><code>listBatches</code></td><td>Lists every asynchronous batch job submitted with the connected API key, with its status and job count.</td></tr><tr><td>List Countries</td><td><code>listCountries</code></td><td>Returns every supported Google country code (gl) with its display name, for use in the gl parameter of the search actions.</td></tr><tr><td>List Languages</td><td><code>listLanguages</code></td><td>Returns every supported Google interface language code (hl) with its display name, for use in the hl parameter of the search actions.</td></tr><tr><td>List Locations</td><td><code>listLocations</code></td><td>Returns every supported Google geo-location as a canonical name string (e.g. 'Cremona,Lombardy,Italy'), for use in the location parameter of the search actions. The full list is very large (several megabytes) and is not filterable server-side.</td></tr><tr><td>List Search Engines</td><td><code>listSearchEngines</code></td><td>Returns every supported Google search engine domain (e.g. google.com, google.de, google.co.uk), for use in the search_engine parameter of the Google search actions.</td></tr><tr><td>Yandex Search</td><td><code>yandexSearch</code></td><td>Runs a Yandex web search (search_engine=yandex.com) and returns the organic results. Paginate with p and numdoc; restrict by language and timeframe with lang and within. Consumes one request from your quota.</td></tr><tr><td>YouTube Search</td><td><code>youtubeSearch</code></td><td>Runs a YouTube search (search_engine=youtube.com) and returns the video results with titles, channels, view counts and URLs. Any YouTube filter can be supplied through the sp parameter. Consumes one request from your quota.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Zenserp has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

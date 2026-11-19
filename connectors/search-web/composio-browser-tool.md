@@ -1,5 +1,5 @@
 ---
-description: "Composio Browser Tool lets AI agents run cloud-browser automation tasks (navigate sites, fill forms, extract data) through the Composio Connect Tool Router."
+description: "Composio Browser Tool runs cloud browser tasks for AI agents. Create browser tasks, read sessions and output files, and run tools."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/composio-browser-tool.png" alt="Composio Browser Tool logo">
 
-This connector calls the Tool Router MCP endpoint over HTTPS (JSON-RPC): create, watch and stop Browser Tool tasks, get the live browser session and download output files, plus the router's own tools for searching tools, fetching tool schemas, executing any Composio tool, managing app connections, remote bash and Python workbench, and organization skills.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [composio.dev](https://composio.dev) |
 | **Authentication** | API key |
 | **Slug** | `composioBrowserTool` |
+
+## Setup
+
+Your customers enter their API key for Composio Browser Tool when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Composio Browser Tool from **Build → Integrations → Connectors** and con
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search Skills</td><td><code>searchSkills</code></td><td>Searches the reusable Skills (saved workflows) of your Composio organization by query (COMPOSIO_SEARCH_SKILLS) and returns matching skills with their ids and slugs.</td></tr><tr><td>Search Tools</td><td><code>searchTools</code></td><td>Searches the Composio catalog for tools that fit a use case (COMPOSIO_SEARCH_TOOLS) and returns a recommended execution plan, known pitfalls, the matching tool slugs with input schemas, toolkit connection status and a session_id to reuse in later router calls.</td></tr><tr><td>Stop Browser Task</td><td><code>stopBrowserTask</code></td><td>Stops a running browser task and its cloud browser session (BROWSER_TOOL_STOP_TASK). Use it when a task is stuck, looping or heading in the wrong direction, or before starting a new task in the same session.</td></tr><tr><td>Use Skill</td><td><code>useSkill</code></td><td>Loads one organization Skill by its exact slug (COMPOSIO_USE_SKILL) and returns its Markdown instructions.</td></tr><tr><td>Wait For Connections</td><td><code>waitForConnections</code></td><td>Waits for pending toolkit authorizations started with Manage Connections to reach an active or failed state, or times out (COMPOSIO_WAIT_FOR_CONNECTIONS). Mode any returns when one toolkit finishes; all waits for every toolkit.</td></tr><tr><td>Watch Browser Task</td><td><code>watchBrowserTask</code></td><td>Polls a browser task for progress and results (BROWSER_TOOL_WATCH_TASK). While status is started the task is still running; when it is finished, check isSuccess and read output, the executed steps, the current URL and any outputFiles. Pass lastStepSeen to receive only steps after that number.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Composio Browser Tool has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

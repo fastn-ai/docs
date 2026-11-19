@@ -1,5 +1,5 @@
 ---
-description: "Connect Google Cloud Functions to your product with fastn."
+description: "Google Cloud Functions runs serverless code on Google Cloud. Create, update, list, get and delete functions, and manage their access policies."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-functions.png" alt="Google Cloud Functions logo">
 
-Manage Google Cloud Functions (2nd gen) through the Cloud Functions API v2: create, update, list, get and delete functions, generate signed upload and download URLs, manage IAM policies, list supported runtimes and locations, run the 1st-gen to 2nd-gen upgrade workflow, and poll long-running operations.
-
 | | |
 | --- | --- |
 | **Category** | [Cloud and DevOps](README.md) |
 | **Website** | [cloudfunctions.googleapis.com](https://cloudfunctions.googleapis.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleCloudFunctions` |
+
+## Setup
+
+Your customers sign in to Google Cloud Functions through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Google Cloud Functions from **Build → Integrations → Connectors** and co
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Operation</td><td><code>getOperation</code></td><td>Gets the latest state of a Cloud Functions long-running operation. Poll this at the interval recommended by the API to learn when a function deployment has finished.</td></tr><tr><td>List Functions</td><td><code>listFunction</code></td><td>Returns the list of Cloud Functions that belong to the requested project and location, with optional filtering, ordering and pagination.</td></tr><tr><td>List Locations</td><td><code>listLocations</code></td><td>Lists information about the supported Cloud Functions locations for a project. Returns the location id, display name and labels for each region where functions can be deployed.</td></tr><tr><td>List Operations</td><td><code>listOperation</code></td><td>Lists the long-running operations in a Cloud Functions location that match the specified filter. Use it to track the progress of function create, update and delete requests.</td></tr><tr><td>List Runtimes</td><td><code>listRuntime</code></td><td>Returns the list of language runtimes supported for the requested project and location, including each runtime's lifecycle stage and deprecation and decommission dates.</td></tr><tr><td>Redirect Function Upgrade Traffic</td><td><code>redirectFunctionUpgradeTraffic</code></td><td>Changes the traffic target of a function from the original 1st gen function to its 2nd gen copy. This is the second step of the multi-step 1st gen to 2nd gen upgrade; afterwards all new traffic is served by the 2nd gen copy.</td></tr><tr><td>Rollback Function Upgrade Traffic</td><td><code>rollbackFunctionUpgradeTraffic</code></td><td>Reverts the traffic target of a function from its 2nd gen copy back to the original 1st gen function. After this operation all new traffic is served by the 1st gen function.</td></tr><tr><td>Set IAM Policy for Function</td><td><code>setIamPolicyFunction</code></td><td>Sets the access control policy on a Cloud Function, replacing any existing policy. Can return NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED errors.</td></tr><tr><td>Setup Function Upgrade Config</td><td><code>setupFunctionUpgradeConfig</code></td><td>Creates a 2nd gen copy of the configuration of the named 1st gen function. This is the first step of the multi-step upgrade; only the 2nd gen configuration is set up and traffic continues to be served by the 1st gen function.</td></tr><tr><td>Test IAM Permissions for Function</td><td><code>testIamPermissionsFunction</code></td><td>Returns the subset of the supplied permissions that the caller holds on a function. If the function does not exist this returns an empty set rather than a NOT_FOUND error, so it is intended for building permission-aware UIs rather than for authorization checks.</td></tr><tr><td>Update Function</td><td><code>updateFunction</code></td><td>Updates an existing Cloud Function. Supply Update Mask to restrict the change to specific fields; if no field mask is provided every field is updated. Returns a long-running operation.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Google Cloud Functions has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Google Drive API v3 — list, upload, download, copy, move, and manage files and folders."
+description: "Google Drive is a cloud file storage service. Create, copy and organize files and folders, manage shared drives and permissions, and add comments."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-drive.png" alt="Google Drive logo">
 
-Supports shared drives, permissions, comments, and revisions.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [drive.google.com](https://drive.google.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleDrive` |
+
+## Setup
+
+Your customers sign in to Google Drive through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

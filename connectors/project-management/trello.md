@@ -1,5 +1,5 @@
 ---
-description: "Trello connector for boards, lists, cards, checklists, labels, members, organizations, actions, search, and webhooks via the Trello REST API (v1)."
+description: "Trello is a board-based project management tool. Create boards, cards and checklists, add comments, labels, members and attachments to cards."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/trello.png" alt="Trello logo">
 
-Auth uses an API key + token sent as query parameters on every request.
-
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
 | **Website** | [trello.com](https://trello.com) |
-| **Authentication** | Credentials you enter, OAuth 2.0 |
+| **Authentication** | API key and token, OAuth 2.0 |
 | **Slug** | `trello` |
+
+## Setup
+
+Your customers sign in to Trello through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

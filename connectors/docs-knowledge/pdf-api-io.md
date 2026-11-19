@@ -1,5 +1,5 @@
 ---
-description: "PDF-API.io generates PDF documents from pre-defined templates."
+description: "PDF-API.io generates PDFs from templates. List templates, render a template with your data, and merge templates into one PDF."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdf-api-io.png" alt="PDF-API.io logo">
 
-List and retrieve your templates, render a single template to a PDF with your own data, and merge several templates into one PDF document. Responses can be returned as raw PDF bytes, as a base64-encoded JSON envelope, or as a temporary download URL.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdf-api.io](https://pdf-api.io) |
 | **Authentication** | API key |
 | **Slug** | `pdfApiIo` |
+
+## Setup
+
+Your customers enter their API key for PDF-API.io when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,4 +30,4 @@ Add PDF-API.io from **Build → Integrations → Connectors** and connect an acc
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>PDF Created</td><td><code>pdf.created</code></td><td>Fires when a new PDF is generated from one of your templates. REGISTRATION IS MANUAL - PDF-API.io exposes no webhook API, so the endpoint must be registered in the web app: sign in at https://pdf-api.io/en/login, open the Webhooks page, choose Create, set Event to 'pdf.created', paste this trigger's URL into the URL field, optionally pick a single Template to scope the notifications to one template, and save. Delete the same entry on that page to stop delivery. PDF-API.io retries a failing endpoint up to 3 times with exponential backoff. NOTE: the payload schema below is transcribed from the vendor's published documentation (https://pdf-api.io/en/docs/api/webhooks), not captured from a live delivery, because no template exists in this account to generate one.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>PDF Created</td><td><code>pdf.created</code></td><td>Fires when a new PDF is generated from one of your templates. REGISTRATION IS MANUAL - PDF-API.io exposes no webhook API, so the endpoint must be registered in the web app: sign in at https://pdf-api.io/en/login, open the Webhooks page, choose Create, set Event to 'pdf.created', paste this trigger's URL into the URL field, optionally pick a single Template to scope the notifications to one template, and save. Delete the same entry on that page to stop delivery. PDF-API.io retries a failing endpoint up to 3 times with exponential backoff.</td></tr></tbody></table>

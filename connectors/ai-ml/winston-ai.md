@@ -1,5 +1,5 @@
 ---
-description: "Winston AI is an AI-content-detection and plagiarism platform."
+description: "Winston AI detects AI content and plagiarism. Check text for plagiarism and AI writing, detect AI images, compare texts and fact check."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/winston-ai.png" alt="Winston AI logo">
 
-This connector covers the full public v2 REST API (AI text detection, AI image detection, advanced image forensics, plagiarism, fact checking and text comparison), the legacy v1 detection routes, the hosted Model Context Protocol server, and the developer-dashboard account endpoint. All endpoints are metered in credits.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [gowinston.ai](https://gowinston.ai) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `winstonAi` |
+
+## Setup
+
+Your customers enter their access token for Winston AI when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Winston AI from **Build → Integrations → Connectors** and connect an acc
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Initialize MCP Session</td><td><code>initializeMcpSession</code></td><td>Performs the JSON-RPC 2.0 initialize handshake with the Winston AI hosted Model Context Protocol server and returns the negotiated protocol version, the server capabilities and the server name and version. Consumes no credits.</td></tr><tr><td>List MCP Tools</td><td><code>listMcpTools</code></td><td>Lists the tools exposed by the Winston AI hosted Model Context Protocol server, with each tool's title, description, credit cost and JSON Schema for its arguments. This is a JSON-RPC 2.0 tools/list call and consumes no credits.</td></tr><tr><td>Ping MCP Server</td><td><code>pingMcpServer</code></td><td>Sends a JSON-RPC 2.0 ping to the Winston AI hosted Model Context Protocol server to confirm it is reachable and the API key is accepted. Returns an empty result object and consumes no credits.</td></tr><tr><td>Run Advanced Image Forensics</td><td><code>runAdvancedImageForensics</code></td><td>Runs a deep forensic analysis on a public image URL using error-level analysis, residual noise maps, edge anomaly heat maps, CFA pattern analysis and metadata extraction, and returns a classification label, confidence, authenticity assessment, a written conclusion and the per-tool findings. The URL must be a public HTTP or HTTPS image address; localhost, private or reserved IP addresses and URLs carrying embedded credentials are rejected. SECURITY NOTE: the per-tool results for the image-rendering tools are returned as time-limited presigned Amazon S3 links that require no authentication, so anyone holding the link can view the forensic renderings of the submitted image until they expire. Metered: 500 credits per successful analysis, the most expensive endpoint on the platform.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Winston AI has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

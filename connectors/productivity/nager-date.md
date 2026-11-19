@@ -1,5 +1,5 @@
 ---
-description: "Connect Nager.Date to your product with fastn."
+description: "Nager.Date is a free public holiday service for 100+ countries. List upcoming holidays and long weekends, and check if today is a holiday."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nager-date.png" alt="Nager.Date logo">
 
-Nager.Date is a free, keyless public holiday API covering 100+ countries: public holidays per year, upcoming holidays, long weekends, 'is today a holiday' checks and country information. Uses the free Community API (v4 and v3).
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [date.nager.at](https://date.nager.at) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `nagerDate` |
+
+## Setup
+
+Nager.Date needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Nager.Date from **Build → Integrations → Connectors** and connect an acc
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Next Public Holidays (API v3)</td><td><code>listNextPublicHolidaysV3</code></td><td>Returns the public holidays of a country in the next 365 days using the v3 API. Docs: https://date.nager.at/Api</td></tr><tr><td>List Next Public Holidays Worldwide</td><td><code>listNextPublicHolidaysWorldwide</code></td><td>Returns public holidays in all supported countries in the next 7 days. Docs: https://date.nager.at/Api</td></tr><tr><td>List Public Holidays</td><td><code>listPublicHolidays</code></td><td>Returns all public holidays of a country for a year, with local and English names, whether they are national or regional, the subdivisions they apply to and holiday types. Docs: https://date.nager.at/Api</td></tr><tr><td>List Public Holidays (API v3)</td><td><code>listPublicHolidaysV3</code></td><td>Returns all public holidays of a country for a year using the v3 API. Docs: https://date.nager.at/Api</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Nager.Date has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

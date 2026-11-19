@@ -1,5 +1,5 @@
 ---
-description: "Shortcut (formerly Clubhouse) project management."
+description: "Shortcut is a project management tool for software teams. Manage stories, epics, iterations, docs, groups, categories and comments."
 hidden: true
 ---
 
@@ -7,13 +7,15 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shortcut.png" alt="Shortcut logo">
 
-Manage stories, epics, iterations, objectives, milestones, projects, workflows, members, teams, groups, labels, docs, files, and story links via the Shortcut REST API v3.
-
 | | |
 | --- | --- |
 | **Category** | [Project management](README.md) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `shortcut` |
+
+## Setup
+
+Your customers enter their API token for Shortcut when they connect. Nothing else needs setting up.
 
 ## Use it
 

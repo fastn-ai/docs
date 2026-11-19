@@ -1,5 +1,5 @@
 ---
-description: "Connect Deepgram to your product with fastn."
+description: "Deepgram is a voice AI platform for speech-to-text and text-to-speech. Manage projects, keys, invites and models, and check balances."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/deepgram.png" alt="Deepgram logo">
 
-Deepgram voice AI platform: speech-to-text transcription (listen), text-to-speech (speak), text intelligence (read), and full management API (projects, keys, members, invitations, usage, balances, models, auth grant). Auth: Authorization: Token &lt;api_key&gt;.
-
 | | |
 | --- | --- |
 | **Category** | [AI and ML](README.md) |
 | **Website** | [deepgram.com](https://deepgram.com) |
 | **Authentication** | API key |
 | **Slug** | `deepgram` |
+
+## Setup
+
+Your customers enter their API key for Deepgram when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Deepgram from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Project Balances</td><td><code>getProjectBalances</code></td><td>List credit balances for a project. Free read — credit-safe for validation.</td></tr><tr><td>Get Project Billing Breakdown</td><td><code>getProjectBillingBreakdown</code></td><td>Get a billing (dollars) breakdown for a project. Free read.</td></tr><tr><td>Get Project Key</td><td><code>getProjectKey</code></td><td>Get a single API key for a project by key id. Free read.</td></tr><tr><td>Get Project Model</td><td><code>getProjectModel</code></td><td>Get a single model available to a project by model id. Free read.</td></tr><tr><td>Get Project Request</td><td><code>getProjectRequest</code></td><td>Get a single API request record by id. Free read.</td></tr><tr><td>Get Project Usage</td><td><code>getProjectUsage</code></td><td>Get usage summary for a project over a date range. Free read — credit-safe for validation.</td></tr><tr><td>Get Project Usage Breakdown</td><td><code>getProjectUsageBreakdown</code></td><td>Get a grouped usage breakdown for a project. Free read.</td></tr><tr><td>List Member Scopes</td><td><code>listMemberScopes</code></td><td>List the scopes assigned to a project member. Free read.</td></tr><tr><td>List Models</td><td><code>listModels</code></td><td>List all public Deepgram models (STT and TTS). Free read — credit-safe for validation.</td></tr><tr><td>List Project Invites</td><td><code>listProjectInvites</code></td><td>List pending invitations for a project. Free read.</td></tr><tr><td>List Project Keys</td><td><code>listProjectKeys</code></td><td>List API keys for a project. Free read — credit-safe for validation.</td></tr><tr><td>List Project Members</td><td><code>listProjectMembers</code></td><td>List members of a project. Free read — credit-safe for validation.</td></tr><tr><td>List Project Models</td><td><code>listProjectModels</code></td><td>List models available to a project, including custom models. Free read.</td></tr><tr><td>List Project Requests</td><td><code>listProjectRequests</code></td><td>List API request records (usage) for a project. Free read — credit-safe for validation.</td></tr><tr><td>List Project Usage Fields</td><td><code>listProjectUsageFields</code></td><td>List available usage fields (models, methods, features, tags) for a project. Free read.</td></tr><tr><td>List Projects</td><td><code>listProjects</code></td><td>List all Deepgram projects the API key can access. Free read — credit-safe for validation.</td></tr><tr><td>Remove Project Member</td><td><code>removeProjectMember</code></td><td>Remove a member from a project.</td></tr><tr><td>Text to Speech (Speak)</td><td><code>speak</code></td><td>Convert text to speech audio using a Deepgram Aura voice. Returns binary audio (or request_id if callback is set). Costs credits per character.</td></tr><tr><td>Transcribe Pre-recorded Audio (URL)</td><td><code>transcribeUrl</code></td><td>Transcribe pre-recorded audio from a hosted URL using Deepgram speech-to-text. Supply the audio url and optional feature flags (model, smart_format, diarize, summarize, etc.). Costs credits per audio second.</td></tr><tr><td>Update Member Scopes</td><td><code>updateMemberScopes</code></td><td>Update the scope assigned to a project member.</td></tr><tr><td>Update Project</td><td><code>updateProject</code></td><td>Update a Deepgram project's name.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Deepgram has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,5 +1,5 @@
 ---
-description: "Parsio extracts structured data from emails, PDFs and other documents."
+description: "Parsio extracts data from emails and documents. Manage mailboxes, import and parse documents, and manage templates and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/parsio.png" alt="Parsio logo">
 
-This connector covers the Parsio public API: mailboxes, document import and parsing, parsed data, extraction templates, webhooks, collected email addresses and account settings.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [parsio.io](https://parsio.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `parsio` |
+
+## Setup
+
+Your customers enter their API key for Parsio when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Parsio from **Build → Integrations → Connectors** and connect an account
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Document Parsed</td><td><code>doc.parsed</code></td><td>Fires when Parsio finishes extracting data from a document. The payload object carries the extracted fields, nested as the mailbox's template defines them. Envelope captured from a real Parsio delivery; the payload contents are the mailbox's own fields.</td></tr><tr><td>Document Parsed (Flat)</td><td><code>doc.parsed.flat</code></td><td>Same as Document Parsed but the extracted data is flattened to a single level, which suits destinations that cannot handle nested objects. Envelope captured from a real Parsio delivery; the payload contents are the mailbox's own fields.</td></tr><tr><td>Document Parsing Failed</td><td><code>doc.fail</code></td><td>Fires when Parsio could not parse a document, for example when no template matches it. Payload schema captured from a real Parsio delivery.</td></tr><tr><td>Document Received</td><td><code>doc.received</code></td><td>Fires as soon as Parsio accepts a new document into the mailbox, before parsing. Payload schema captured from a real Parsio delivery.</td></tr><tr><td>Table Rows Parsed</td><td><code>table.parsed</code></td><td>Fires once per parsed table field, carrying the extracted rows. Set the Table ID input to the table field this trigger watches, from List Table Fields. Envelope captured from a real Parsio delivery; the payload contents are the table's own rows.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Document Parsed</td><td><code>doc.parsed</code></td><td>Fires when Parsio finishes extracting data from a document. The payload object carries the extracted fields, nested as the mailbox's template defines them.</td></tr><tr><td>Document Parsed (Flat)</td><td><code>doc.parsed.flat</code></td><td>Same as Document Parsed but the extracted data is flattened to a single level, which suits destinations that cannot handle nested objects.</td></tr><tr><td>Document Parsing Failed</td><td><code>doc.fail</code></td><td>Fires when Parsio could not parse a document, for example when no template matches it.</td></tr><tr><td>Document Received</td><td><code>doc.received</code></td><td>Fires as soon as Parsio accepts a new document into the mailbox, before parsing.</td></tr><tr><td>Table Rows Parsed</td><td><code>table.parsed</code></td><td>Fires once per parsed table field, carrying the extracted rows. Set the Table ID input to the table field this trigger watches, from List Table Fields.</td></tr></tbody></table>

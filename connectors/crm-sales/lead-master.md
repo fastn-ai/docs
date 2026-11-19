@@ -1,5 +1,5 @@
 ---
-description: "LeadMaster CRM (leadmaster.com) — lead management, sales and marketing automation."
+description: "LeadMaster is a lead management CRM. Manage leads, contacts, opportunities, cases, quotes, products and callbacks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lead-master.png" alt="LeadMaster logo">
 
-Wraps the LeadMaster Web API at webapi.leadmaster.com: leads and account records, contacts, opportunities and opportunity products, cases, quotes, callbacks/activities, campaigns, partners, users and workgroups, custom fields and custom forms, plus the webhook subscription API for entity create/update events. Authentication is an access_token query parameter minted from a LeadMaster username, password and company id.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [leadmaster.com](https://leadmaster.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Username, password and company ID |
 | **Slug** | `leadMaster` |
+
+## Setup
+
+Your customers enter their username, password and company id for LeadMaster when they connect. Nothing else needs setting up.
 
 ## Use it
 

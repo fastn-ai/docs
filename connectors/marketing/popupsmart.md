@@ -1,5 +1,5 @@
 ---
-description: "Popupsmart popup builder."
+description: "Popupsmart is a website popup builder. Manage campaigns, websites and folders, read leads and stats, and set up webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/popupsmart.png" alt="Popupsmart logo">
 
-Public Leads API (GET /api/leads, x-token + x-campaign-id headers) plus the app.popupsmart.com GraphQL dashboard API (campaigns, websites, folders, segments, leads, analytics, templates, webhook integrations) authenticated with a dashboard access token.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [popupsmart.com](https://popupsmart.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token |
 | **Slug** | `popupsmart` |
+
+## Setup
+
+Your customers enter their API token for Popupsmart when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add Popupsmart from **Build → Integrations → Connectors** and connect an acc
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Popup form submitted</td><td><code>form.submission</code></td><td>Fires when a visitor submits the form of the selected Popupsmart campaign. Popupsmart delivers the submission by POSTing to the registered webhook-integration URL. NOTE: this payloadSchema is MODELLED from the fields Popupsmart stores on a lead (the `leads` GraphQL query and the public /api/leads response) - it was NOT captured from a real delivery, because capturing one requires a published popup on a site that actually embeds the Popupsmart snippet.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Popup form submitted</td><td><code>form.submission</code></td><td>Fires when a visitor submits the form of the selected Popupsmart campaign. Popupsmart delivers the submission by POSTing to the registered webhook-integration URL.</td></tr></tbody></table>

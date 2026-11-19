@@ -1,5 +1,5 @@
 ---
-description: "Open Food Facts is a free, open database of 3M+ food products from around the world."
+description: "Open Food Facts is a free, open database of food products. Search products, get a product by barcode and read nutrient and taxonomy data."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/open-food-facts.png" alt="Open Food Facts logo">
 
-Read-only keyless access: look up products by barcode (ingredients, nutrition facts, Nutri-Score, NOVA, allergens, packaging, images), search products by category, brand, label or country, and use taxonomy suggestions, attribute groups and knowledge panels. Data is ODbL-licensed.
-
 | | |
 | --- | --- |
 | **Category** | [Data and databases](README.md) |
 | **Website** | [openfoodfacts.org](https://openfoodfacts.org) |
-| **Authentication** | No authentication |
+| **Authentication** | No sign-in needed |
 | **Slug** | `openFoodFacts` |
+
+## Setup
+
+Open Food Facts needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Open Food Facts from **Build → Integrations → Connectors** and connect a
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Taxonomy Suggestions</td><td><code>getTaxonomySuggestions</code></td><td>Returns taxonomy suggestions for a tag type, optionally filtered by a starting string, categories or packaging shape. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/</td></tr><tr><td>List Attribute Groups</td><td><code>listAttributeGroups</code></td><td>Returns the product attribute groups (nutritional quality, allergens, processing, labels, environment) used for personal search scoring. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/</td></tr><tr><td>List Attribute Groups (API v3.4)</td><td><code>listAttributeGroupsV3</code></td><td>Returns attribute groups and attributes using API v3.4. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/</td></tr><tr><td>List External Knowledge Panel Sources</td><td><code>listExternalSources</code></td><td>Returns the external knowledge panel sources configured on the server. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/</td></tr><tr><td>List Preference Weights</td><td><code>listPreferences</code></td><td>Returns the importance levels (not important, important, very important, mandatory) and their weights used to compute personal product scores. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/</td></tr><tr><td>List Preference Weights (API v3)</td><td><code>listPreferencesV3</code></td><td>Returns the preference importance values using API v3. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v3/</td></tr><tr><td>Search Products</td><td><code>searchProducts</code></td><td>Searches products by tag filters (category, brand, label, country, Nutri-Score...), sorted and paged. Limited to 10 requests per minute. Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Open Food Facts has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

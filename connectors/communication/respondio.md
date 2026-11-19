@@ -1,5 +1,5 @@
 ---
-description: "respond.io is a conversational CRM and customer messaging platform."
+description: "respond.io is a customer messaging platform. Create and update contacts, assign conversations, add comments, and manage tags and custom fields."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/respondio.png" alt="respond.io logo">
 
-This connector wraps the respond.io Developer API v2: contacts (create, update, create-or-update, merge, list, delete), contact tags, contact channels and lifecycle stages, conversations (assign and open/close), messaging (send, get and list messages), comments, and workspace resources (users, custom fields, closing notes, channels, WhatsApp message templates and space tags). It also defines the respond.io webhook events (contact, conversation, message, comment, lifecycle, tag and call events) registered in Workspace Settings. Authenticates with a workspace API access token sent as a Bearer token.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |
 | **Website** | [respond.io](https://respond.io) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `respondio` |
+
+## Setup
+
+Your customers enter their access token for respond.io when they connect. Nothing else needs setting up.
 
 ## Use it
 

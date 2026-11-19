@@ -1,5 +1,5 @@
 ---
-description: "CabinPanda is a data collection platform for building online forms, surveys and popups."
+description: "CabinPanda builds online forms and surveys. Create, duplicate and delete forms, read submissions and manage webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cabinpanda.png" alt="CabinPanda logo">
 
-This connector covers the CabinPanda REST API: forms (list, get, create, update, rename, duplicate, delete, fields), submissions (list, get, delete, public submit), form types and templates, webhooks (create, update, enable/disable, delete, activities, test and redelivery), workspaces, notifications, API tokens and the current user.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [cabinpanda.com](https://cabinpanda.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `cabinpanda` |
+
+## Setup
+
+Your customers enter their access token for CabinPanda when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add CabinPanda from **Build → Integrations → Connectors** and connect an acc
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Submission Received</td><td><code>TEAM_WEBHOOK_CALLED</code></td><td>Fired when a respondent submits the form the webhook is attached to. CabinPanda POSTs a JSON body with the workspace, the form (key and name) and the submitted values (field_label, field_key, value). The 'event' field is always TEAM_WEBHOOK_CALLED and 'event_key' is a unique delivery id. Payload captured from a real CabinPanda delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Submission Received</td><td><code>TEAM_WEBHOOK_CALLED</code></td><td>Fired when a respondent submits the form the webhook is attached to. CabinPanda POSTs a JSON body with the workspace, the form (key and name) and the submitted values (field_label, field_key, value). The 'event' field is always TEAM_WEBHOOK_CALLED and 'event_key' is a unique delivery id.</td></tr></tbody></table>

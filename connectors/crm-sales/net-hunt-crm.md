@@ -1,5 +1,5 @@
 ---
-description: "NetHunt CRM is a CRM that runs inside Gmail and organises data into folders (Contacts, Companies, Deals, Tasks and custom folders)."
+description: "NetHunt CRM works inside Gmail. Create, update, filter and comment on records in folders such as contacts, companies and deals."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/net-hunt-crm.png" alt="NetHunt CRM logo">
 
-This connector covers the full NetHunt public REST API v2: list, get, create and update folders; add and update folder fields; create, get, update and delete records; list recently updated records for incremental sync; full-text search and structured filtering with sorting and cursor pagination; read a record's activity timeline and timeline item content; and log comments and calls on a record. Authentication uses a NetHunt API token. NetHunt does not offer outgoing webhooks through its API, so changes are detected by polling the List Updated Records action.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [nethunt.com](https://nethunt.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `netHuntCrm` |
+
+## Setup
+
+Your customers enter their access token for NetHunt CRM when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add NetHunt CRM from **Build → Integrations → Connectors** and connect an ac
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Record Timeline</td><td><code>listRecordTimeline</code></td><td>Lists the activity timeline of a NetHunt record, newest first: emails, campaign emails, calls, comments, chats, calendar events, files and record created/updated changes. Supports filtering by event type and time range, and cursor pagination via Next Cursor. Note: NetHunt currently returns an upstream error when Event Types is exactly 'call'; to read logged calls, omit Event Types and select events whose type is 'call'.</td></tr><tr><td>List Updated Records</td><td><code>listUpdatedRecords</code></td><td>Lists records in a NetHunt folder that were created or updated since a point in time, oldest first. Designed for incremental polling and sync: pass the returned Next Since token back in Since to read the rest of the window. Without Since, the last 24 hours are returned.</td></tr><tr><td>Log Record Call</td><td><code>logRecordCall</code></td><td>Logs a call that happened outside NetHunt on a record's timeline, with notes, time and duration, and returns it as a call timeline event. Calls made through NetHunt telephony integrations appear automatically and do not need to be logged.</td></tr><tr><td>Search Records</td><td><code>searchRecords</code></td><td>Runs a full-text search across record field values in a NetHunt folder and returns up to Limit relevance-ranked records. There is no pagination; use Filter Records for structured queries with sorting and cursor pagination.</td></tr><tr><td>Update Folder</td><td><code>updateFolder</code></td><td>Updates the name and/or description of a NetHunt folder. Only the properties you pass are changed. Returns the updated folder.</td></tr><tr><td>Update Folder Field</td><td><code>updateFolderField</code></td><td>Updates the name, description, required flag, presets, group or non-structural options of a field in a NetHunt folder. The field type cannot be changed, and protected fields (the built-in Name field and role-bound Tasks fields) cannot be updated. Returns the full updated folder.</td></tr><tr><td>Update Record</td><td><code>updateRecord</code></td><td>Partially updates a record in a NetHunt folder: only the keys present in Fields change, a null value clears a field, and omitted fields are left untouched. The record name cannot be changed and read-only fields are rejected. Returns the updated record.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+NetHunt CRM has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

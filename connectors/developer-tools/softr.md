@@ -1,5 +1,5 @@
 ---
-description: "Softr no-code app builder API."
+description: "Softr is a no-code app builder. Manage databases, tables, fields, records and app users."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/softr.png" alt="Softr logo">
 
-Covers the Softr Database API for databases, tables, table views, table fields and records including search, and the Softr application user API for creating, deleting, activating, deactivating, inviting and syncing users of a published application, generating magic links and validating user authentication tokens. Authenticates with a Softr workspace personal access token sent in the Softr-Api-Key header; user endpoints additionally target a published application through the Softr-Domain header.
-
 | | |
 | --- | --- |
 | **Category** | [Developer tools](README.md) |
 | **Website** | [softr.io](https://softr.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `softr` |
+
+## Setup
+
+Your customers enter their API key for Softr when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Softr from **Build → Integrations → Connectors** and connect an account,
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Table</td><td><code>deleteTable</code></td><td>Delete a specific table by its ID. It can only be deleted if it is empty, unless the 'force' parameter is used. The record is removed permanently and cannot be recovered.</td></tr><tr><td>Delete Table Field</td><td><code>deleteTableField</code></td><td>Delete a specific field from a table. The record is removed permanently and cannot be recovered.</td></tr><tr><td>Generate User Magic Link</td><td><code>generateUserMagicLink</code></td><td>Generate a magic link that signs the given user into a published Softr application without a password.</td></tr><tr><td>Get Database</td><td><code>getDatabase</code></td><td>Retrieve details of a specific database by its ID.</td></tr><tr><td>Get Record</td><td><code>getRecord</code></td><td>Retrieve details of a specific record by its ID.</td></tr><tr><td>Get Table</td><td><code>getTable</code></td><td>Retrieve details of a specific table by its ID.</td></tr><tr><td>Get Table Field</td><td><code>getTableField</code></td><td>Retrieve details of a specific field.</td></tr><tr><td>Invite App User</td><td><code>inviteAppUser</code></td><td>Send an invitation email to an existing user of a published Softr application and move their status to Invited. The application must be published for the invitation to be delivered.</td></tr><tr><td>List Databases</td><td><code>listDatabases</code></td><td>Retrieve a list of all databases accessible to the authenticated user.</td></tr><tr><td>List Records</td><td><code>listRecords</code></td><td>Retrieve a list of all records in the specified table.</td></tr><tr><td>List Table Views</td><td><code>listTableViews</code></td><td>Retrieve a list of views for a specific table.</td></tr><tr><td>List Tables</td><td><code>listTables</code></td><td>Retrieve a list of all tables in the specified database.</td></tr><tr><td>Search Records</td><td><code>searchRecords</code></td><td>Search for records in the specified table based on filter, sort, and pagination criteria.</td></tr><tr><td>Sync App Users</td><td><code>syncAppUsers</code></td><td>Trigger a user sync for a published Softr application. Supply a JSON array of email addresses as a string to sync specific users, for example ["a@example.com","b@example.com"], or the literal [] to sync every user.</td></tr><tr><td>Update Database</td><td><code>updateDatabase</code></td><td>Update the details of an existing database.</td></tr><tr><td>Update Record</td><td><code>updateRecord</code></td><td>Partially update a specific record by its ID. Only the fields provided in the request body will be changed.</td></tr><tr><td>Update Table</td><td><code>updateTable</code></td><td>Update a table's name and/or description. To modify fields, use the field-specific endpoints.</td></tr><tr><td>Update Table Field</td><td><code>updateTableField</code></td><td>Update the properties of a specific field.</td></tr><tr><td>Validate User Token</td><td><code>validateUserToken</code></td><td>Validate a Softr user authentication JWT against the application's own domain. This endpoint is served by the published application rather than the Softr studio API and takes no API key, so external systems can confirm a Softr session before trusting the user identity it carries.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Softr has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

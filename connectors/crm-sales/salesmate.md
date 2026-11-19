@@ -1,5 +1,5 @@
 ---
-description: "Salesmate is a sales CRM for contacts, companies, deals, activities, notes, products and custom modules."
+description: "Salesmate is a sales CRM. Manage contacts, companies, deals, activities, notes, products and custom module records."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/salesmate.png" alt="Salesmate logo">
 
-This connector covers the Salesmate Public API: contact, company, deal and activity records with their search endpoints, notes across every module, custom module records, product catalogue management, lookup field associations and user directory. The API host is your own Salesmate tenant, https://&lt;link name&gt;.salesmate.io, and is derived from the link name you supply when connecting.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [salesmate.io](https://salesmate.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access token and link name |
 | **Slug** | `salesmate` |
+
+## Setup
+
+Your customers enter their access token and link name for Salesmate when they connect. Nothing else needs setting up.
 
 ## Use it
 

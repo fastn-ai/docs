@@ -1,5 +1,5 @@
 ---
-description: "ipdata is an IP geolocation and threat intelligence API."
+description: "ipdata provides IP location and threat data. Look up IPs in bulk, with network, carrier, company, currency and time zone details."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ipdata.png" alt="ipdata logo">
 
-This connector covers the full ipdata REST API: IP address lookups, caller IP lookups, ASN lookups, per-field lookups for the geolocation, ASN, carrier, company, currency, time zone, language and threat objects, and bulk lookups, against either the global or the EU data-residency endpoint.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [ipdata.co](https://ipdata.co) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `ipdata` |
+
+## Setup
+
+Your customers enter their API key for ipdata when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add ipdata from **Build → Integrations → Connectors** and connect an account
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Look Up Caller IP Address</td><td><code>lookupCallerIpAddress</code></td><td>Returns the full ipdata record for the IP address the request originates from, without needing to supply an address. Use the fields parameter to return only selected top-level fields.</td></tr><tr><td>Look Up IP Address</td><td><code>lookupIpAddress</code></td><td>Returns the full ipdata record for a single IPv4 or IPv6 address, including geolocation, autonomous system, currency, languages, time zone, carrier and threat intelligence. Use the fields parameter to return only selected top-level fields.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+ipdata has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

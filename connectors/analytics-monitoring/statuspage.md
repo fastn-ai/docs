@@ -1,5 +1,5 @@
 ---
-description: "Atlassian Statuspage REST API v1."
+description: "Statuspage by Atlassian publishes service status pages. Manage pages, components, incidents and metrics, and control who can access a page."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/statuspage.png" alt="Statuspage logo">
 
-Manage status pages, components and component groups, incidents and incident updates, postmortems, scheduled maintenance, uptime reporting, custom metrics and metrics providers, page and incident subscribers, audience-specific page access users and groups, the status embed widget, and organization users and permissions. Single host https://api.statuspage.io/v1 with API key authentication sent as an Authorization: OAuth header.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [statuspage.io](https://statuspage.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `statuspage` |
+
+## Setup
+
+Your customers enter their API key for Statuspage when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -22,7 +24,7 @@ Add Statuspage from **Build → Integrations → Connectors** and connect an acc
 
 ## Actions
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Components To Page Access Group</td><td><code>addComponentsToPageAccessGroup</code></td><td>Add components to page access group. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Components To Page Access User</td><td><code>addComponentsToPageAccessUser</code></td><td>Add components for page access user. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Data Point To Metric</td><td><code>addDataPointToMetric</code></td><td>Add data to a metric. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Data Points To Metrics</td><td><code>addDataPointsToMetrics</code></td><td>Append data points to several self-reported metrics in one call. The request and the response are both maps keyed by metric ID: each key is the ID of a self-reported metric and each value is an array of {timestamp, value} points, for example {"gmwtxqyy34n5": [{"timestamp": 1590603000, "value": 1.23}]}. Statuspage answers 202 Accepted and echoes the accepted points back in the same map shape. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Metrics To Page Access User</td><td><code>addMetricsToPageAccessUser</code></td><td>Add metrics for page access user. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Page Access Groups To Component</td><td><code>addPageAccessGroupsToComponent</code></td><td>Add page access groups to a component. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Page Access Users To Component</td><td><code>addPageAccessUsersToComponent</code></td><td>Add page access users to a component. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Create Component</td><td><code>createComponent</code></td><td>Create a component. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Create Component Group</td><td><code>createComponentGroup</code></td><td>Create a component group. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Create Incident</td><td><code>createIncident</code></td><td>Create an incident. Scoped to the Statuspage status page given by the Page ID input.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Components To Page Access Group</td><td><code>addComponentsToPageAccessGroup</code></td><td>Add components to page access group. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Components To Page Access User</td><td><code>addComponentsToPageAccessUser</code></td><td>Add components for page access user. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Data Point To Metric</td><td><code>addDataPointToMetric</code></td><td>Add data to a metric. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Data Points To Metrics</td><td><code>addDataPointsToMetrics</code></td><td>Append data points to several self-reported metrics in one call. The request and the response are both maps keyed by metric ID: each key is the ID of a self-reported metric and each value is an array of {timestamp, value} points, for example {"gmwtxqyy34n5": [{"timestamp": 1590603000, "value": 1.23}]}. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Metrics To Page Access User</td><td><code>addMetricsToPageAccessUser</code></td><td>Add metrics for page access user. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Page Access Groups To Component</td><td><code>addPageAccessGroupsToComponent</code></td><td>Add page access groups to a component. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Add Page Access Users To Component</td><td><code>addPageAccessUsersToComponent</code></td><td>Add page access users to a component. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Create Component</td><td><code>createComponent</code></td><td>Create a component. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Create Component Group</td><td><code>createComponentGroup</code></td><td>Create a component group. Scoped to the Statuspage status page given by the Page ID input.</td></tr><tr><td>Create Incident</td><td><code>createIncident</code></td><td>Create an incident. Scoped to the Statuspage status page given by the Page ID input.</td></tr></tbody></table>
 
 <details>
 

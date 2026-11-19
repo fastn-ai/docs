@@ -1,5 +1,5 @@
 ---
-description: "UptimeRobot monitors websites, APIs, ports, and cron jobs for uptime and downtime, and sends alerts when a monitor goes down."
+description: "UptimeRobot monitors websites, ports and cron jobs for downtime. Manage monitors, alert contacts, maintenance windows and public status pages."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uptimerobot.png" alt="UptimeRobot logo">
 
-This connector wraps UptimeRobot's v2 REST API, which is POST-only with a form-urlencoded body carrying the API key, covering monitors, alert contacts, maintenance windows, public status pages, and account details.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [uptimerobot.com](https://uptimerobot.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `uptimerobot` |
+
+## Setup
+
+Your customers enter their API key for UptimeRobot when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add UptimeRobot from **Build → Integrations → Connectors** and connect an ac
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Edit Monitor</td><td><code>editMonitor</code></td><td>Update a monitor's friendly name, URL, and pause/resume status. UptimeRobot's editMonitor endpoint treats all of these as optional, but this connector requires them together: UptimeRobot's API rejects any templated field sent with an empty value, and this connector's form-urlencoded body cannot conditionally omit a field the caller did not supply. Fetch the monitor's current values first with Get Monitors and pass through any field you do not want to change.</td></tr><tr><td>Edit Public Status Page</td><td><code>editPSP</code></td><td>Rename an existing public status page by id. UptimeRobot's editPSP endpoint also accepts an optional url change, but this connector only supports friendly_name: UptimeRobot's API rejects other templated fields when sent empty, and this connector's form-urlencoded body cannot conditionally omit a field the caller did not supply.</td></tr><tr><td>Get Account Details</td><td><code>getAccountDetails</code></td><td>Retrieve the connected UptimeRobot account's details: email, monitor limit, check interval, monitor counts by status, and subscription info.</td></tr><tr><td>Get Alert Contacts</td><td><code>getAlertContacts</code></td><td>List all alert contacts (notification channels such as e-mail, SMS, and integrations like Slack, webhook, or Google Chat) configured on the account, with each contact's id, type, status, and destination value.</td></tr><tr><td>Get Maintenance Windows</td><td><code>getMWindows</code></td><td>List all maintenance windows on the account. Note: this account's Free plan does not include Maintenance Windows at all - live-tested and UptimeRobot returned a real account_paused error ("User does not have an active subscription") even for this read-only list call, matching the dashboard UI's own paid-plan upsell for this feature. The endpoint and request wiring are correct; a real list can only be exercised on a paid UptimeRobot plan.</td></tr><tr><td>Get Monitors</td><td><code>getMonitors</code></td><td>List all monitors on the account (up to 50 per page, UptimeRobot's default and maximum page size), with each monitor's id, friendly name, URL, type, status, interval, and timeout. Note: UptimeRobot's optional filter/detail-inclusion parameters (offset, limit, search, types, statuses, logs, ssl, alert_contacts, mwindows, response_times, custom_http_headers, etc.) are not exposed on this action - UptimeRobot's v2 API rejects any of these parameters when sent as an empty value, and this connector's form-urlencoded body template cannot conditionally omit a field the caller did not supply, so only the always-present api_key/format fields are templated (verified live: templating limit, types, or logs with no value each produced a real stat:fail invalid_parameter error).</td></tr><tr><td>Get Public Status Pages</td><td><code>getPSPs</code></td><td>List all public status pages configured on the account, with each page's id, friendly name, and public status-page URL.</td></tr><tr><td>Reset Monitor</td><td><code>resetMonitor</code></td><td>Reset a monitor's uptime/downtime statistics and event log, starting its history over from now.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+UptimeRobot has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

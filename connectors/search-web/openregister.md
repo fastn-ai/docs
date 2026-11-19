@@ -1,5 +1,5 @@
 ---
-description: "OpenRegister provides programmatic access to official German company data from the Handelsregister, Bundesanzeiger, Transparenzregister and Insolvenzregister."
+description: "OpenRegister gives access to official German company data. Search and read companies, contacts and register documents, and monitor changes."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/openregister.png" alt="OpenRegister logo">
 
-This connector covers company search and lookup, ownership and beneficial owners, holdings, financial statements, contact and web data, official register documents, person search and holdings, insolvency proceedings, Transparenzregister extracts, and register change monitors.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [openregister.de](https://openregister.de) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `openregister` |
+
+## Setup
+
+Your customers enter their access token for OpenRegister when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add OpenRegister from **Build → Integrations → Connectors** and connect an a
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Monitored Entity Updated</td><td><code>monitor.update</code></td><td>Fires when OpenRegister detects a change to a company or person you monitor, in one of the data categories chosen on the monitor (for companies: basic, representation, financials, documents, ownership, holdings, insolvencies; for people: management_positions, holdings, insolvencies). Setup is manual and account-wide: 1) sign in at https://openregister.de, open the API Keys page (https://openregister.de/keys) and add a webhook endpoint, pasting the fastn webhook URL for this trigger; 2) then create a monitor for each company or person with the Create Monitor action. Until an endpoint is configured, Create Monitor is rejected with 'no webhook endpoint configured'. Deliveries are sent through Svix and signed with svix-id, svix-timestamp and svix-signature headers; that signing scheme cannot be verified by the platform today, so signature checking must be done downstream with the endpoint's whsec_ secret. OpenRegister does not publish the notification body and no live delivery has been captured, so the schema below is a recommended minimum modelled from the monitor resource, not a vendor contract.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Monitored Entity Updated</td><td><code>monitor.update</code></td><td>Fires when OpenRegister detects a change to a company or person you monitor, in one of the data categories chosen on the monitor (for companies: basic, representation, financials, documents, ownership, holdings, insolvencies; for people: management_positions, holdings, insolvencies). Setup is manual and account-wide: 1) sign in at https://openregister.de, open the API Keys page (https://openregister.de/keys) and add a webhook endpoint, pasting the fastn webhook URL for this trigger; 2) then create a monitor for each company or person with the Create Monitor action. Until an endpoint is configured, Create Monitor is rejected with 'no webhook endpoint configured'. Deliveries are sent through Svix and signed with svix-id, svix-timestamp and svix-signature headers; that signing scheme cannot be verified by the platform today, so signature checking must be done downstream with the endpoint's whsec_ secret.</td></tr></tbody></table>

@@ -1,5 +1,5 @@
 ---
-description: "Buttondown is newsletter software for writers and creators."
+description: "Buttondown is newsletter software. Manage subscribers, emails, tags and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/buttondown.png" alt="Buttondown logo">
 
-This connector covers subscriber management, draft email lifecycle, tags, automations (read-only), registration forms, newsletter settings, and webhook event subscriptions via the Buttondown v1 REST API.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [buttondown.com](https://buttondown.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `buttondown` |
+
+## Setup
+
+Your customers enter their API key for Buttondown when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Buttondown from **Build → Integrations → Connectors** and connect an acc
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Email</td><td><code>getEmail</code></td><td>Retrieve a single email on the connected Buttondown newsletter by its id.</td></tr><tr><td>Get Form</td><td><code>getForm</code></td><td>Retrieve a single registration form on the connected Buttondown newsletter by its id.</td></tr><tr><td>Get Newsletter</td><td><code>getNewsletter</code></td><td>Retrieve the current settings for a single newsletter on the connected Buttondown account by its id, including branding, template, timezone, and delivery configuration.</td></tr><tr><td>Get Subscriber</td><td><code>getSubscriber</code></td><td>Retrieve a single subscriber on the connected Buttondown newsletter, identified by their id or email address.</td></tr><tr><td>Get Tag</td><td><code>getTag</code></td><td>Retrieve a single tag on the connected Buttondown newsletter by its id.</td></tr><tr><td>Get Webhook</td><td><code>getWebhook</code></td><td>Retrieve a single webhook on the connected Buttondown newsletter by its id.</td></tr><tr><td>List Automations</td><td><code>listAutomations</code></td><td>List automations configured on the connected Buttondown newsletter. Automations are event-triggered email sequences and are read-only through this connector - use the Buttondown dashboard to create, edit, enable, or invoke them.</td></tr><tr><td>List Emails</td><td><code>listEmails</code></td><td>List emails (drafts, scheduled, and sent) on the connected Buttondown newsletter, with optional filters for status, subject, and creation/publish date ranges. Returns a paginated page of email objects.</td></tr><tr><td>List Forms</td><td><code>listForms</code></td><td>List registration forms configured on the connected Buttondown newsletter, with subscriber and page-view counts for each. Returns a paginated page of form objects.</td></tr><tr><td>List Newsletters</td><td><code>listNewsletters</code></td><td>List the newsletters on the connected Buttondown account, including branding, template, and delivery settings for each. Most accounts have exactly one newsletter.</td></tr><tr><td>List Subscribers</td><td><code>listSubscribers</code></td><td>List subscribers on the connected Buttondown newsletter, with optional filters for tag, type (e.g. regular, unsubscribed, blocked), email address, and other engagement/date fields. Returns a paginated page of subscriber objects.</td></tr><tr><td>List Tags</td><td><code>listTags</code></td><td>List tags defined on the connected Buttondown newsletter. Returns a paginated page of tag objects.</td></tr><tr><td>List Webhooks</td><td><code>listWebhooks</code></td><td>List webhooks registered on the connected Buttondown newsletter, showing their target URL, status, and subscribed event types.</td></tr><tr><td>Test Webhook</td><td><code>testWebhook</code></td><td>Send a sample event payload to a webhook's configured URL on the connected Buttondown newsletter, to verify the endpoint is reachable and correctly configured. Does not affect real subscribers or emails.</td></tr><tr><td>Update Email</td><td><code>updateEmail</code></td><td>Partially update a draft or scheduled email on the connected Buttondown newsletter by its id. Only supplied fields are changed. Use this to edit content while an email is still in draft status.</td></tr><tr><td>Update Subscriber</td><td><code>updateSubscriber</code></td><td>Partially update a subscriber on the connected Buttondown newsletter, identified by their id or email address. Only supplied fields are changed.</td></tr><tr><td>Update Tag</td><td><code>updateTag</code></td><td>Partially update a tag on the connected Buttondown newsletter by its id. Only supplied fields are changed.</td></tr><tr><td>Update Webhook</td><td><code>updateWebhook</code></td><td>Update a webhook on the connected Buttondown newsletter by its id. Buttondown's API treats this as a full replacement of the webhook's url and event_types, so both must be supplied even though the HTTP method is PATCH.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Buttondown has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

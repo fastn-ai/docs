@@ -1,5 +1,5 @@
 ---
-description: "Bitly is a URL shortening, QR code, and link analytics platform."
+description: "Bitly shortens links and creates QR codes. Create, expand and delete short links and QR codes, and read click analytics."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bitly.png" alt="Bitly logo">
 
-This connector manages Bitlinks (create, retrieve, update, delete, expand, and view click analytics), Groups, QR Codes, and the connected user's account.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [bitly.com](https://bitly.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access token |
 | **Slug** | `bitly` |
+
+## Setup
+
+Your customers enter their access token for Bitly when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Bitly from **Build → Integrations → Connectors** and connect an account,
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get QR Code</td><td><code>getQrCode</code></td><td>Retrieves the full details of a single QR Code by its ID, including its title, destination, type, and customization settings.</td></tr><tr><td>List Bitlinks by Group</td><td><code>listBitlinksByGroup</code></td><td>Retrieves the Bitlinks belonging to a group, with optional search, tag, and archived-state filters. Supports pagination via size and search_after.</td></tr><tr><td>List Groups</td><td><code>listGroups</code></td><td>Retrieves all Bitly groups the authenticated user belongs to, optionally filtered to a single organization. A group is the container used when creating Bitlinks and QR Codes.</td></tr><tr><td>List QR Codes by Group</td><td><code>listQrCodesByGroup</code></td><td>Retrieves the QR Codes belonging to a group, with optional search, tag, and archived-state filters. Supports pagination via size and search_after.</td></tr><tr><td>Update Bitlink</td><td><code>updateBitlink</code></td><td>Updates an existing Bitlink's title, tags, destination URL, archived state, deep links, or expiration timestamp.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Bitly has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

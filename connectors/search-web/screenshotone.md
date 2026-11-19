@@ -1,5 +1,5 @@
 ---
-description: "ScreenshotOne is a screenshot and website-rendering API that turns any URL, raw HTML or Markdown into a PNG, JPEG, WebP, GIF, MP4/WebM video or PDF."
+description: "ScreenshotOne renders websites as images, videos or PDFs. Take screenshots, render animated captures in bulk and check usage."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/screenshotone.png" alt="ScreenshotOne logo">
 
-This connector covers the complete api.screenshotone.com surface: the GET and POST forms of the screenshot endpoint with every documented rendering option (viewport and device emulation, full-page and element capture, clipping, dark mode, ad/cookie-banner/tracker blocking, geolocation, proxies, cookie and header injection, custom CSS and JS, caching, S3-compatible storage upload, metadata extraction, async rendering and webhook callbacks), the animated screenshot endpoint for GIF, MP4, WebM and AVIF in both GET and POST forms, the bulk rendering endpoint, API usage and credit metrics, the supported viewport device catalogue, the service health probe and the machine-readable OpenAPI specification.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [screenshotone.com](https://screenshotone.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | Access key |
 | **Slug** | `screenshotone` |
+
+## Setup
+
+Your customers enter their access key for ScreenshotOne when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,4 +30,4 @@ Add ScreenshotOne from **Build → Integrations → Connectors** and connect an 
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Screenshot Rendered</td><td><code>screenshot.rendered</code></td><td>Fires when ScreenshotOne finishes a render that was submitted with a callback URL. ScreenshotOne has NO webhook registration API and no webhook management screen: a callback is requested per render, not subscribed once. To make this trigger fire, copy this trigger's webhook URL and pass it as the webhook_url option on a Render Screenshot or Render Animated Screenshot action, together with response_type set to 'json'. Set async to true so the render runs in the background and the action returns at once; the result then arrives here. To upload to your own S3-compatible bucket and receive the object location, also set store to true, supply the storage_* options, and set storage_return_location to true. By default only successful renders are delivered; set webhook_errors to true to receive failures here as well. ScreenshotOne signs the body with your secret key and sends the signature in the x-screenshotone-signature header unless you set webhook_sign to false; it also sends x-screenshotone-trace-id, x-screenshotone-reference and, when you set the external_identifier option, x-screenshotone-external-identifier, which is the field to correlate a delivery back to the render you submitted. This schema is modelled from ScreenshotOne's documented callback body plus the live response body observed from POST /take with response_type=json; it was not captured from a real delivery, because a delivery requires a publicly reachable callback URL.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Screenshot Rendered</td><td><code>screenshot.rendered</code></td><td>Fires when ScreenshotOne finishes a render that was submitted with a callback URL. ScreenshotOne has NO webhook registration API and no webhook management screen: a callback is requested per render, not subscribed once. To make this trigger fire, copy this trigger's webhook URL and pass it as the webhook_url option on a Render Screenshot or Render Animated Screenshot action, together with response_type set to 'json'. Set async to true so the render runs in the background and the action returns at once; the result then arrives here. To upload to your own S3-compatible bucket and receive the object location, also set store to true, supply the storage_* options, and set storage_return_location to true. By default only successful renders are delivered; set webhook_errors to true to receive failures here as well. ScreenshotOne signs the body with your secret key and sends the signature in the x-screenshotone-signature header unless you set webhook_sign to false; it also sends x-screenshotone-trace-id, x-screenshotone-reference and, when you set the external_identifier option, x-screenshotone-external-identifier, which is the field to correlate a delivery back to the render you submitted.</td></tr></tbody></table>

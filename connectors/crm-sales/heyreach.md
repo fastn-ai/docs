@@ -1,13 +1,11 @@
 ---
-description: "HeyReach LinkedIn outreach automation."
+description: "HeyReach automates LinkedIn outreach. Manage campaigns, lead lists, leads, sender accounts and inbox conversations."
 hidden: true
 ---
 
 # HeyReach
 
 <img src="../../.gitbook/assets/connectors/lg/heyreach.png" alt="HeyReach logo">
-
-Manage campaigns, lead lists, leads, LinkedIn sender accounts, inbox conversations, network, webhooks, and analytics via the HeyReach public API (X-API-KEY auth).
 
 | | |
 | --- | --- |
@@ -16,13 +14,17 @@ Manage campaigns, lead lists, leads, LinkedIn sender accounts, inbox conversatio
 | **Authentication** | API key |
 | **Slug** | `heyreach` |
 
+## Setup
+
+Your customers enter their API key for HeyReach when they connect. Nothing else needs setting up.
+
 ## Use it
 
 Add HeyReach from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.heyreach.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
 
 ## Actions
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Leads To Campaign</td><td><code>addLeadsToCampaign</code></td><td>Add LinkedIn leads to an ACTIVE campaign (with assigned sender accounts). Body: { campaignId, accountLeadPairs:[{ linkedInAccountId, lead:{ profileUrl, firstName, lastName, ... } }] }.</td></tr><tr><td>Add Leads To List</td><td><code>addLeadsToList</code></td><td>Add leads to a list. Body: { listId, leads:[{ profileUrl, firstName, lastName, ... }] }.</td></tr><tr><td>Add Tags To Lead</td><td><code>addTagsToLead</code></td><td>Add tags to a lead (additive, keeps existing tags). Body: { leadProfileUrl, tags:[] }. Optionally createTagIfNotExisting.</td></tr><tr><td>Check API Key</td><td><code>checkApiKey</code></td><td>Validate that the configured HeyReach API key is working. Returns 200 when valid.</td></tr><tr><td>Create Empty List</td><td><code>createEmptyList</code></td><td>Create a new empty lead or company list in HeyReach that leads can subsequently be added to.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Create a HeyReach webhook subscription that delivers the selected event type to your endpoint, either for all campaigns or for a specific set of campaigns.</td></tr><tr><td>Delete Leads From List</td><td><code>deleteLeadsFromList</code></td><td>Remove one or more leads from a HeyReach list, identifying each lead by its LinkedIn profile URL.</td></tr><tr><td>Delete Webhook</td><td><code>deleteWebhook</code></td><td>Permanently delete a HeyReach webhook subscription. The webhook must first be deactivated with Update Webhook (isActive set to false), otherwise the API rejects the request.</td></tr><tr><td>Get Campaign</td><td><code>getCampaign</code></td><td>Get a single campaign by ID (query param campaignId).</td></tr><tr><td>Get Campaigns For Lead</td><td><code>getCampaignsForLead</code></td><td>Get all campaigns a lead belongs to. Body: { profileUrl }.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Leads To Campaign</td><td><code>addLeadsToCampaign</code></td><td>Add LinkedIn leads to an ACTIVE campaign (with assigned sender accounts). Body: { campaignId, accountLeadPairs:[{ linkedInAccountId, lead:{ profileUrl, firstName, lastName,... } }] }.</td></tr><tr><td>Add Leads To List</td><td><code>addLeadsToList</code></td><td>Add leads to a list. Body: { listId, leads:[{ profileUrl, firstName, lastName,... }] }.</td></tr><tr><td>Add Tags To Lead</td><td><code>addTagsToLead</code></td><td>Add tags to a lead (additive, keeps existing tags). Body: { leadProfileUrl, tags:[] }. Optionally createTagIfNotExisting.</td></tr><tr><td>Check API Key</td><td><code>checkApiKey</code></td><td>Validate that the configured HeyReach API key is working.</td></tr><tr><td>Create Empty List</td><td><code>createEmptyList</code></td><td>Create a new empty lead or company list in HeyReach that leads can subsequently be added to.</td></tr><tr><td>Create Webhook</td><td><code>createWebhook</code></td><td>Create a HeyReach webhook subscription that delivers the selected event type to your endpoint, either for all campaigns or for a specific set of campaigns.</td></tr><tr><td>Delete Leads From List</td><td><code>deleteLeadsFromList</code></td><td>Remove one or more leads from a HeyReach list, identifying each lead by its LinkedIn profile URL.</td></tr><tr><td>Delete Webhook</td><td><code>deleteWebhook</code></td><td>Permanently delete a HeyReach webhook subscription. The webhook must first be deactivated with Update Webhook (isActive set to false), otherwise the API rejects the request.</td></tr><tr><td>Get Campaign</td><td><code>getCampaign</code></td><td>Get a single campaign by ID (query param campaignId).</td></tr><tr><td>Get Campaigns For Lead</td><td><code>getCampaignsForLead</code></td><td>Get all campaigns a lead belongs to. Body: { profileUrl }.</td></tr></tbody></table>
 
 <details>
 

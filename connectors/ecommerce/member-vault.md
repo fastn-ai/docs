@@ -1,5 +1,5 @@
 ---
-description: "MemberVault is an online course and membership platform."
+description: "MemberVault is an online course and membership platform. List products and add or remove users from products."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/member-vault.png" alt="MemberVault logo">
 
-This connector covers the complete MemberVault public API: listing the products in an account, granting a member access to a product, removing product access, and permanently deleting a member.
-
 | | |
 | --- | --- |
 | **Category** | [E-commerce](README.md) |
 | **Website** | [membervault.co](https://membervault.co) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `memberVault` |
+
+## Setup
+
+Your customers enter their API key for MemberVault when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,4 +30,4 @@ Add MemberVault from **Build → Integrations → Connectors** and connect an ac
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Content Completed</td><td><code>content.completed</code></td><td>Fires when a member marks a lesson or the whole product as complete. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action with the completion trigger you want, choose 'Call a webhook' and paste this trigger URL. Append a literal parameter named 'event' with the value 'content.completed'. Payload schema below is modelled from MemberVault's documented Actions webhook fields, not captured from a live delivery.</td></tr><tr><td>Member Added To Product</td><td><code>user.added</code></td><td>Fires when a member is granted access to a product. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action with the trigger 'when a user is added to this product', choose 'Call a webhook' and paste this trigger URL. MemberVault sends no event-type discriminator, so append a literal query parameter or body field named 'event' with the value 'user.added' to the URL you paste - without it the event cannot be routed and is silently dropped. Payload schema below is modelled from MemberVault's documented Actions webhook fields, not captured from a live delivery.</td></tr><tr><td>Member Removed From Product</td><td><code>user.removed</code></td><td>Fires when a member's access to a product is revoked. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action with the trigger 'when a user is removed from this product', choose 'Call a webhook' and paste this trigger URL. Append a literal parameter named 'event' with the value 'user.removed', because MemberVault sends no discriminator of its own. Payload schema below is modelled from MemberVault's documented Actions webhook fields, not captured from a live delivery.</td></tr><tr><td>Quiz Submitted</td><td><code>quiz.submitted</code></td><td>Fires when a member submits a quiz or form inside a product. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action on the quiz trigger, choose 'Call a webhook' and paste this trigger URL. Append a literal parameter named 'event' with the value 'quiz.submitted'. Payload schema below is modelled from MemberVault's documented Actions webhook fields, not captured from a live delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Content Completed</td><td><code>content.completed</code></td><td>Fires when a member marks a lesson or the whole product as complete. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action with the completion trigger you want, choose 'Call a webhook' and paste this trigger URL. Append a literal parameter named 'event' with the value 'content.completed'.</td></tr><tr><td>Member Added To Product</td><td><code>user.added</code></td><td>Fires when a member is granted access to a product. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action with the trigger 'when a user is added to this product', choose 'Call a webhook' and paste this trigger URL. MemberVault sends no event-type discriminator, so append a literal query parameter or body field named 'event' with the value 'user.added' to the URL you paste - without it the event cannot be routed and is silently dropped.</td></tr><tr><td>Member Removed From Product</td><td><code>user.removed</code></td><td>Fires when a member's access to a product is revoked. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action with the trigger 'when a user is removed from this product', choose 'Call a webhook' and paste this trigger URL. Append a literal parameter named 'event' with the value 'user.removed', because MemberVault sends no discriminator of its own.</td></tr><tr><td>Quiz Submitted</td><td><code>quiz.submitted</code></td><td>Fires when a member submits a quiz or form inside a product. MemberVault has no webhook-subscription API, so this must be wired by hand once per product: sign in to the MemberVault admin, open the product, go to the Actions tab, add an Action on the quiz trigger, choose 'Call a webhook' and paste this trigger URL. Append a literal parameter named 'event' with the value 'quiz.submitted'.</td></tr></tbody></table>

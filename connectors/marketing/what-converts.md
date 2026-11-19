@@ -1,5 +1,5 @@
 ---
-description: "WhatConverts lead tracking and call tracking."
+description: "WhatConverts tracks leads from calls, forms and chats. Create and read leads, and manage accounts, profiles and users."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/what-converts.png" alt="WhatConverts logo">
 
-Read, create and update leads across every lead type (phone calls, web forms, chats, text messages, transactions, custom events, emails, appointments) with full marketing attribution, qualify and value them (quotable, quote_value, sales_value), and manage the agency hierarchy: accounts, profiles, users, roles, tracking phone numbers and tracked web forms. Wraps the REST API at https://app.whatconverts.com/api/v1 using HTTP Basic auth with an API token and secret.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [whatconverts.com](https://whatconverts.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API token and secret |
 | **Slug** | `whatConverts` |
+
+## Setup
+
+Your customers enter their API token and secret for WhatConverts when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -22,7 +24,7 @@ Add WhatConverts from **Build → Integrations → Connectors** and connect an a
 
 ## Actions
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Account</td><td><code>createAccount</code></td><td>Create a new account under the master account, optionally creating a first profile inside it. Requires an Agency (master account) API key.</td></tr><tr><td>Create Lead</td><td><code>createLead</code></td><td>Create a lead in a WhatConverts profile. lead_type is required; profile_id is required when using an Agency (master account) key and implicit when using a profile key. Fields that do not apply to the chosen lead type are simply omitted. Pass wc_client_current (the WhatConverts visitor cookie) to auto-populate source, medium, campaign, content, keyword, gclid, msclkid, user_id and landing_url.</td></tr><tr><td>Create Profile</td><td><code>createProfile</code></td><td>Create a new profile inside an account. A profile is the tracking container that owns tracking numbers, web forms and leads. Requires an Agency (master account) API key.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Invite a new dashboard user. Master account users take a role_id; account users take an accounts array granting per-account access and role. The user is created pending activation and receives an activation email. Requires an Agency (master account) API key.</td></tr><tr><td>Delete Account</td><td><code>deleteAccount</code></td><td>Permanently delete an account. This removes every profile, tracking number, lead and setting belonging to it and cannot be undone. Requires an Agency (master account) API key.</td></tr><tr><td>Delete Profile</td><td><code>deleteProfile</code></td><td>Permanently delete a profile. This removes every tracking number, lead and setting belonging to it and cannot be undone. Requires an Agency (master account) API key.</td></tr><tr><td>Delete Tracking Number</td><td><code>deleteTrackingNumber</code></td><td>Release a call tracking phone number. The number stops routing calls and is removed from its pool. Irreversible - the number may not be reclaimable afterwards.</td></tr><tr><td>Delete Web Form</td><td><code>deleteWebForm</code></td><td>Stop tracking a web form. Existing leads captured from it are kept; future submissions are no longer recorded.</td></tr><tr><td>Get Account</td><td><code>getAccount</code></td><td>Retrieve a single account and its profiles by account_id. Requires an Agency (master account) API key.</td></tr><tr><td>Get Account Info</td><td><code>getAccountInfo</code></td><td>Identify which WhatConverts account and profile this connection's API key belongs to. Takes no input: it reads the single most recent lead and returns its account_id, account, profile_id and profile. Used as the account-mapping action for webhook (app event) triggers, and as a cheap connection health check. Returns an empty leads array if the profile has never captured a lead.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Account</td><td><code>createAccount</code></td><td>Create a new account under the master account, optionally creating a first profile inside it. Requires an Agency (master account) API key.</td></tr><tr><td>Create Lead</td><td><code>createLead</code></td><td>Create a lead in a WhatConverts profile. lead_type is required; profile_id is required when using an Agency (master account) key and implicit when using a profile key. Fields that do not apply to the chosen lead type are simply omitted. Pass wc_client_current (the WhatConverts visitor cookie) to auto-populate source, medium, campaign, content, keyword, gclid, msclkid, user_id and landing_url.</td></tr><tr><td>Create Profile</td><td><code>createProfile</code></td><td>Create a new profile inside an account. A profile is the tracking container that owns tracking numbers, web forms and leads. Requires an Agency (master account) API key.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Invite a new dashboard user. Master account users take a role_id; account users take an accounts array granting per-account access and role. The user is created pending activation and receives an activation email. Requires an Agency (master account) API key.</td></tr><tr><td>Delete Account</td><td><code>deleteAccount</code></td><td>Permanently delete an account. This removes every profile, tracking number, lead and setting belonging to it and cannot be undone. Requires an Agency (master account) API key.</td></tr><tr><td>Delete Profile</td><td><code>deleteProfile</code></td><td>Permanently delete a profile. This removes every tracking number, lead and setting belonging to it and cannot be undone. Requires an Agency (master account) API key.</td></tr><tr><td>Delete Tracking Number</td><td><code>deleteTrackingNumber</code></td><td>Release a call tracking phone number. The number stops routing calls and is removed from its pool. Irreversible - the number may not be reclaimable afterwards.</td></tr><tr><td>Delete Web Form</td><td><code>deleteWebForm</code></td><td>Stop tracking a web form.</td></tr><tr><td>Get Account</td><td><code>getAccount</code></td><td>Retrieve a single account and its profiles by account_id. Requires an Agency (master account) API key.</td></tr><tr><td>Get Account Info</td><td><code>getAccountInfo</code></td><td>Identify which WhatConverts account and profile this connection's API key belongs to. Takes no input: it reads the single most recent lead and returns its account_id, account, profile_id and profile. Used as the account-mapping action for webhook (app event) triggers, and as a cheap connection health check. Returns an empty leads array if the profile has never captured a lead.</td></tr></tbody></table>
 
 <details>
 

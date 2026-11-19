@@ -1,5 +1,5 @@
 ---
-description: "PDFMonkey generates PDF and image documents from reusable Liquid or drag-and-drop templates."
+description: "PDFMonkey generates PDF and image documents from templates. Create documents and manage templates, snippets and folders."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdfmonkey.png" alt="PDFMonkey logo">
 
-This connector covers the PDFMonkey v1 API: document generation (asynchronous and synchronous), documents and document cards, document templates and template cards, template folders, snippets and snippet folders, PDF rendering engines, workspaces, invoices and the current user account.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [pdfmonkey.io](https://pdfmonkey.io) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `pdfmonkey` |
+
+## Setup
+
+Your customers enter their access token for PDFMonkey when they connect. Nothing else needs setting up.
 
 ## Use it
 

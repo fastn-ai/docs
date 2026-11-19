@@ -1,5 +1,5 @@
 ---
-description: "Hootsuite is a social media management platform for scheduling, approving, and publishing content across connected social profiles."
+description: "Hootsuite is a social media management platform. Schedule and approve messages, upload media and manage teams and members."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hootsuite.png" alt="Hootsuite logo">
 
-This connector covers the Hootsuite Platform REST API 1.0: outbound message scheduling and approval workflows, comment approvals, media uploads, social profiles, the authenticated member, organizations, teams, members and their permissions, and SCIM 2.0 user and group provisioning.
-
 | | |
 | --- | --- |
 | **Category** | [Social media](README.md) |
 | **Website** | [hootsuite.com](https://hootsuite.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `hootsuite` |
+
+## Setup
+
+Your customers sign in to Hootsuite through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

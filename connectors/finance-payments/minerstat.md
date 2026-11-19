@@ -1,5 +1,5 @@
 ---
-description: "Minerstat is a crypto-mining intelligence platform."
+description: "Minerstat is a crypto-mining data service. Look up coins, algorithms, mining pools, hardware and profitability rankings."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/minerstat.png" alt="Minerstat logo">
 
-This connector covers the full Minerstat Data API (v3) plus the legacy v2 contract: mineable coins with live network and market data, coin history snapshots, the hardware catalogue (ASICs, GPUs, CPUs and FPGAs) with manufacturer specs, mining algorithms with their coins and benchmarks, the mining-pool directory with fees and payout schemes, and ranked profitability opportunities.
-
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |
 | **Website** | [minerstat.com](https://minerstat.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `minerstat` |
+
+## Setup
+
+Your customers enter their API key for Minerstat when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Minerstat from **Build → Integrations → Connectors** and connect an acco
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Hardware (Legacy v2)</td><td><code>listHardwareLegacy</code></td><td>Lists mining hardware using the legacy Minerstat v2 contract: a bare JSON array carrying per-algorithm benchmarked speeds. Retained for existing integrations; new work should use List Hardware. The v2 API retires on 31 December 2026.</td></tr><tr><td>List Pools</td><td><code>listPools</code></td><td>Lists the mining-pool directory with default fees, the number of coins each pool serves and the result of the most recent liveness check. Row counts are capped by the account's Minerstat plan.</td></tr><tr><td>List Pools (Legacy v2)</td><td><code>listLegacyPools</code></td><td>Lists mining pools using the legacy Minerstat v2 contract: a bare JSON array with stable sha1 identifiers, an editorial description and a per-ticker map of pool terms. Retained for existing integrations; new work should use List Pools. The v2 API retires on 31 December 2026.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Minerstat has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

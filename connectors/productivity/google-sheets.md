@@ -1,5 +1,5 @@
 ---
-description: "Read, write, and manage Google Sheets spreadsheets via the Sheets API v4."
+description: "Google Sheets is an online spreadsheet app. Read, append, update and clear cell values, and add sheets and named ranges."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-sheets.png" alt="Google Sheets logo">
 
-Supports spreadsheet creation, sheet tab management, cell value operations, named ranges, and batch updates.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [sheets.google.com](https://sheets.google.com) |
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `googleSheets` |
+
+## Setup
+
+Your customers sign in to Google Sheets through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Google Sheets from **Build → Integrations → Connectors** and connect an 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Clear Values</td><td><code>clearValues</code></td><td>Clear all values in a specific range of a spreadsheet, leaving formatting intact.</td></tr><tr><td>Copy Sheet To</td><td><code>copySheetTo</code></td><td>Copy a sheet tab from one spreadsheet to another spreadsheet.</td></tr><tr><td>Create Spreadsheet</td><td><code>createSpreadsheet</code></td><td>Create a new Google Sheets spreadsheet with a given title.</td></tr><tr><td>Delete Named Range</td><td><code>deleteNamedRange</code></td><td>Delete a named range from a spreadsheet by its ID.</td></tr><tr><td>Delete Sheet</td><td><code>deleteSheet</code></td><td>Delete a sheet tab from a spreadsheet by its sheetId (numeric ID, not title).</td></tr><tr><td>Duplicate Sheet</td><td><code>duplicateSheet</code></td><td>Duplicate an existing sheet tab within the same spreadsheet.</td></tr><tr><td>Get Developer Metadata</td><td><code>getDeveloperMetadata</code></td><td>Returns the developer metadata with the specified ID from the given spreadsheet.</td></tr><tr><td>Get Spreadsheet</td><td><code>getSpreadsheet</code></td><td>Get full spreadsheet metadata including all sheet tabs, named ranges, and properties.</td></tr><tr><td>Get Spreadsheet By Data Filter</td><td><code>getSpreadsheetByDataFilter</code></td><td>Returns the spreadsheet at the given ID, selecting subsets of data via dataFilters (a1Range, gridRange, or developerMetadataLookup). Optionally includes grid cell data.</td></tr><tr><td>Get Values</td><td><code>getValues</code></td><td>Read cell values from a specific range in a spreadsheet. Range format: 'Sheet1!A1:B10'.</td></tr><tr><td>Rename Sheet</td><td><code>renameSheet</code></td><td>Rename a sheet tab by its sheetId.</td></tr><tr><td>Search Developer Metadata</td><td><code>searchDeveloperMetadata</code></td><td>Returns all developer metadata matching the criteria described by the supplied dataFilters (developerMetadataLookup, a1Range, or gridRange).</td></tr><tr><td>TEMP watch spreadsheet check (delete me)</td><td><code>tempWatchSpreadsheetCheck</code></td><td>Temporary B185 probe: can a Sheets connection open a Drive watch channel on a spreadsheet. Delete after the check.</td></tr><tr><td>Update Named Range</td><td><code>updateNamedRange</code></td><td>Update the name or cell range of an existing named range.</td></tr><tr><td>Update Values</td><td><code>updateValues</code></td><td>Write values to a specific range in a spreadsheet, overwriting existing data.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Google Sheets has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

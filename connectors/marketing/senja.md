@@ -1,5 +1,5 @@
 ---
-description: "Senja is a testimonial collection, management and sharing platform."
+description: "Senja collects and shares customer testimonials. Create, update and list testimonials, and send form invites."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/senja.png" alt="Senja logo">
 
-This connector covers the full Senja REST API v1: listing, creating, retrieving, updating and deleting testimonials, retrieving shareable link URLs for forms, widgets, walls of love, case studies, quick links and sizzle reels, and sending form invite emails to customers.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [senja.io](https://senja.io) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `senja` |
+
+## Setup
+
+Your customers enter their access token for Senja when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -28,4 +30,4 @@ Add Senja from **Build → Integrations → Connectors** and connect an account,
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Testimonial Created</td><td><code>testimonial_created</code></td><td>Fires when a new testimonial is created in your Senja project, from a collection form, an import or the API. Senja has no webhook registration API, so the endpoint must be registered by hand: in Senja, open the Automate tab in the left sidebar (or Project Settings), scroll to Webhooks, click to add a webhook, paste this trigger URL into Webhook URL, optionally set a Secret, tick the testimonial_created event and save. Payload schema is modelled from Senja's published sample payload in the Webhook Integration help article, not from a captured delivery.</td></tr><tr><td>Testimonial Deleted</td><td><code>testimonial_deleted</code></td><td>Fires when a testimonial is deleted from your Senja project. The payload carries the deleted testimonial under data.old. Senja has no webhook registration API, so the endpoint must be registered by hand: in Senja, open the Automate tab in the left sidebar (or Project Settings), scroll to Webhooks, add a webhook, paste this trigger URL into Webhook URL, optionally set a Secret, tick the testimonial_deleted event and save. Payload schema is modelled from Senja's published sample payload in the Webhook Integration help article, not from a captured delivery.</td></tr><tr><td>Testimonial Updated</td><td><code>testimonial_updated</code></td><td>Fires when an existing testimonial is updated in your Senja project, for example when it is approved, edited or retagged. The payload carries both the previous (old) and the new state. Senja has no webhook registration API, so the endpoint must be registered by hand: in Senja, open the Automate tab in the left sidebar (or Project Settings), scroll to Webhooks, add a webhook, paste this trigger URL into Webhook URL, optionally set a Secret, tick the testimonial_updated event and save. Payload schema is modelled from Senja's published sample payload in the Webhook Integration help article, not from a captured delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Testimonial Created</td><td><code>testimonial_created</code></td><td>Fires when a new testimonial is created in your Senja project, from a collection form, an import or the API. Senja has no webhook registration API, so the endpoint must be registered by hand: in Senja, open the Automate tab in the left sidebar (or Project Settings), scroll to Webhooks, click to add a webhook, paste this trigger URL into Webhook URL, optionally set a Secret, tick the testimonial_created event and save.</td></tr><tr><td>Testimonial Deleted</td><td><code>testimonial_deleted</code></td><td>Fires when a testimonial is deleted from your Senja project. The payload carries the deleted testimonial under data.old. Senja has no webhook registration API, so the endpoint must be registered by hand: in Senja, open the Automate tab in the left sidebar (or Project Settings), scroll to Webhooks, add a webhook, paste this trigger URL into Webhook URL, optionally set a Secret, tick the testimonial_deleted event and save.</td></tr><tr><td>Testimonial Updated</td><td><code>testimonial_updated</code></td><td>Fires when an existing testimonial is updated in your Senja project, for example when it is approved, edited or retagged. The payload carries both the previous (old) and the new state. Senja has no webhook registration API, so the endpoint must be registered by hand: in Senja, open the Automate tab in the left sidebar (or Project Settings), scroll to Webhooks, add a webhook, paste this trigger URL into Webhook URL, optionally set a Secret, tick the testimonial_updated event and save.</td></tr></tbody></table>

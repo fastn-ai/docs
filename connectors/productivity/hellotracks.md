@@ -1,5 +1,5 @@
 ---
-description: "Hellotracks field-workforce management: jobs and dispatch, places, zones, members/workers, real-time locate, GPS tracks, forms, reports, API keys and webhooks."
+description: "Hellotracks is a field workforce management app. Create and dispatch jobs, manage places and team members, and read company details."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hellotracks.png" alt="Hellotracks logo">
 
-Wraps both the Hellotracks REST API (/v1) and the legacy JSON-RPC-style /api surface.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [hellotracks.com](https://hellotracks.com) |
 | **Authentication** | API key |
 | **Slug** | `hellotracks` |
+
+## Setup
+
+Your customers enter their API key for Hellotracks when they connect. Nothing else needs setting up.
 
 ## Use it
 

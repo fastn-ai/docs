@@ -1,5 +1,5 @@
 ---
-description: "Piggy (now Leat) is a loyalty, marketing and gift-card platform."
+description: "Piggy, now Leat, is a loyalty and gift card platform. Manage contacts, credits, rewards, vouchers, gift cards and orders."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/piggy.png" alt="Piggy logo">
 
-This connector wraps the Piggy/Leat Public API v3: contacts and contact identifiers, loyalty programs, credits, rewards, tiers and perks, promotions and vouchers, gift cards and gift-card transactions, prepaid balances, orders, products and categories, shops, shifts, bookings, visits, forms, automations, portal sessions and webhook subscriptions.
-
 | | |
 | --- | --- |
 | **Category** | [Marketing](README.md) |
 | **Website** | [piggy.eu](https://piggy.eu) |
-| **Authentication** | Bearer token, OAuth 2.0 |
+| **Authentication** | Access token, OAuth 2.0 |
 | **Slug** | `piggy` |
+
+## Setup
+
+Your customers sign in to Piggy through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

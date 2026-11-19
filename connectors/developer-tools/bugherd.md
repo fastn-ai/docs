@@ -1,5 +1,5 @@
 ---
-description: "BugHerd is a visual bug tracker and website feedback tool that pins client feedback directly onto a web page."
+description: "BugHerd is a visual bug tracker for website feedback. Manage projects, tasks, comments, columns, members and webhooks."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bugherd.png" alt="BugHerd logo">
 
-This connector covers the BugHerd API v2: the organization, users, members and guests, projects, project membership, kanban columns, tasks with filtering and moving between projects, task comments, task attachments, and webhook subscriptions.
-
 | | |
 | --- | --- |
 | **Category** | [Developer tools](README.md) |
 | **Website** | [bugherd.com](https://bugherd.com) |
-| **Authentication** | Basic auth |
+| **Authentication** | Username and password |
 | **Slug** | `bugherd` |
+
+## Setup
+
+Your customers enter their username and password for BugHerd when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add BugHerd from **Build → Integrations → Connectors** and connect an accoun
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Comment Posted</td><td><code>comment</code></td><td>Fires when a comment is posted on a BugHerd task. The payload carries the comment, its author and the full task it belongs to. Set the optional projectId input to restrict the trigger to one project. Payload schema captured from a real delivery. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Project Created</td><td><code>project_create</code></td><td>Fires when a project is created in the BugHerd organization. This event is organization-wide, so leave the projectId input empty. Payload schema captured from a real delivery. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Task Created</td><td><code>task_create</code></td><td>Fires when a task is created in BugHerd. Set the optional projectId input to restrict the trigger to one project; leave it empty to receive the event for every project in the organization. Payload schema captured from a real delivery. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Task Deleted</td><td><code>task_destroy</code></td><td>Fires when a task is deleted from BugHerd. The payload carries the deleted task in the same envelope as Task Created. Set the optional projectId input to restrict the trigger to one project. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Task Updated</td><td><code>task_update</code></td><td>Fires when a task is changed in BugHerd, including moves between kanban columns and priority, tag or assignee changes. Set the optional projectId input to restrict the trigger to one project. Payload schema captured from a real delivery. BugHerd does not sign webhook deliveries.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Comment Posted</td><td><code>comment</code></td><td>Fires when a comment is posted on a BugHerd task. The payload carries the comment, its author and the full task it belongs to. Set the optional projectId input to restrict the trigger to one project. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Project Created</td><td><code>project_create</code></td><td>Fires when a project is created in the BugHerd organization. This event is organization-wide, so leave the projectId input empty. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Task Created</td><td><code>task_create</code></td><td>Fires when a task is created in BugHerd. Set the optional projectId input to restrict the trigger to one project; leave it empty to receive the event for every project in the organization. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Task Deleted</td><td><code>task_destroy</code></td><td>Fires when a task is deleted from BugHerd. The payload carries the deleted task in the same envelope as Task Created. Set the optional projectId input to restrict the trigger to one project. BugHerd does not sign webhook deliveries.</td></tr><tr><td>Task Updated</td><td><code>task_update</code></td><td>Fires when a task is changed in BugHerd, including moves between kanban columns and priority, tag or assignee changes. Set the optional projectId input to restrict the trigger to one project. BugHerd does not sign webhook deliveries.</td></tr></tbody></table>

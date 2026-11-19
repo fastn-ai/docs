@@ -1,5 +1,5 @@
 ---
-description: "Follow Up Boss is a real-estate CRM (Zillow Group) for lead follow-up, agent assignment and deal tracking."
+description: "Follow Up Boss is a CRM for real estate teams. Manage people, deals, appointments, calls, action plans and custom fields."
 hidden: true
 ---
 
@@ -7,13 +7,11 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/follow-up-boss.png" alt="Follow Up Boss logo">
 
-This connector covers the Follow Up Boss REST API v1 at https://api.followupboss.com/v1: people (contacts) with search, duplicate checking, unclaimed-lead claiming, relationships and attachments; lead activity events; notes; calls; text messages; tasks; appointments with their types and outcomes; deals, deal attachments, deal custom fields and pipelines; lead stages and custom fields; users, teams, groups, ponds and team inboxes; smart lists, action plans, automations and timeframes; email and text message templates with merge; email marketing campaigns and events; reactions and threaded replies; identity and current-user lookups; rate-limit introspection; and full webhook subscription management for every Follow Up Boss event type.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |
 | **Website** | [followupboss.com](https://followupboss.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `followUpBoss` |
 
 ## Setup guide

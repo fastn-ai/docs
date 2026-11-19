@@ -1,5 +1,5 @@
 ---
-description: "IPLocate is an IP geolocation and threat intelligence platform."
+description: "IPLocate provides IP geolocation and threat data. Look up one or many IPs for location, network, company, abuse contacts and privacy flags."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/iplocate.png" alt="IPLocate logo">
 
-This connector covers the full IPLocate IP Intelligence API: single IP lookups, caller IP lookups, field- and object-filtered lookups (ASN, privacy and threat flags, hosting provider, company, abuse contact), batch lookups of up to 1,000 addresses, and the free current-IP echo endpoints.
-
 | | |
 | --- | --- |
 | **Category** | [Search and web](README.md) |
 | **Website** | [iplocate.io](https://iplocate.io) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `iplocate` |
+
+## Setup
+
+Your customers enter their API key for IPLocate when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add IPLocate from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Look Up IP Address</td><td><code>lookupIpAddress</code></td><td>Returns the full IPLocate intelligence record for a single IPv4 or IPv6 address, including geolocation, autonomous system, privacy and threat flags, hosting provider, company and abuse contact data. Use the include parameter to return only selected fields.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+IPLocate has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

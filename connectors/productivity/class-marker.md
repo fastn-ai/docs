@@ -1,5 +1,5 @@
 ---
-description: "ClassMarker is an online testing and quiz platform for exams, training assessments and certification."
+description: "ClassMarker runs online tests and quizzes. Manage questions, categories and access codes, and read recent results."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/class-marker.png" alt="ClassMarker logo">
 
-This connector covers the ClassMarker REST API v1: the group, link and exam catalogue, recent results for groups, links and individual exams, access list code management, the question bank, and test categories. Requests are authenticated with an API key plus a per-request SHA-256 signature and UNIX timestamp.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |
 | **Website** | [classmarker.com](https://classmarker.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key and secret |
 | **Slug** | `classMarker` |
+
+## Setup
+
+Your customers enter their API key and secret for ClassMarker when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -36,4 +38,4 @@ Add ClassMarker from **Build → Integrations → Connectors** and connect an ac
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Exam Completed (Group)</td><td><code>single_user_test_results_group</code></td><td>Fires in real time when a user registered in a ClassMarker group finishes an exam, delivering the full result including score, pass/pass-mark, timings, certificate and any monitoring events. ClassMarker has NO webhook registration API, so the customer must register the fastn trigger URL by hand: log in to ClassMarker, go to My Account &gt; Webhooks / API Keys, open the Webhooks tab, click 'New Webhook +', enter a name, paste the fastn trigger URL into the endpoint field, tick the optional extras you need (Questions, responses and category results; Unique link ID for links; URL for viewing results), tick 'Verify on Save', then click 'Save Webhook Settings'. Finally assign the webhook to the group, either while assigning an exam or by editing an existing exam's settings. ClassMarker sends a probe with payload_status 'verify' on save and 'live' for real results. Payload schema modelled from ClassMarker's published sample, not from a captured delivery.</td></tr><tr><td>Exam Completed (Link)</td><td><code>single_user_test_results_link</code></td><td>Fires in real time when someone finishes an exam taken through a ClassMarker public link, delivering the full result including score, pass/pass-mark, timings, certificate and any monitoring events. ClassMarker has NO webhook registration API, so the customer must register the fastn trigger URL by hand: log in to ClassMarker, go to My Account &gt; Webhooks / API Keys, open the Webhooks tab, click 'New Webhook +', enter a name, paste the fastn trigger URL into the endpoint field, tick the optional extras you need (Questions, responses and category results; Unique link ID for links; URL for viewing results), tick 'Verify on Save', then click 'Save Webhook Settings'. Finally assign the webhook to the link, either while assigning an exam or by editing an existing exam's settings. ClassMarker sends a probe with payload_status 'verify' on save and 'live' for real results. Payload schema modelled from ClassMarker's published sample, not from a captured delivery.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Exam Completed (Group)</td><td><code>single_user_test_results_group</code></td><td>Fires in real time when a user registered in a ClassMarker group finishes an exam, delivering the full result including score, pass/pass-mark, timings, certificate and any monitoring events. ClassMarker has NO webhook registration API, so the customer must register the fastn trigger URL by hand: log in to ClassMarker, go to My Account &gt; Webhooks / API Keys, open the Webhooks tab, click 'New Webhook +', enter a name, paste the fastn trigger URL into the endpoint field, tick the optional extras you need (Questions, responses and category results; Unique link ID for links; URL for viewing results), tick 'Verify on Save', then click 'Save Webhook Settings'. Finally assign the webhook to the group, either while assigning an exam or by editing an existing exam's settings. ClassMarker sends a probe with payload_status 'verify' on save and 'live' for real results.</td></tr><tr><td>Exam Completed (Link)</td><td><code>single_user_test_results_link</code></td><td>Fires in real time when someone finishes an exam taken through a ClassMarker public link, delivering the full result including score, pass/pass-mark, timings, certificate and any monitoring events. ClassMarker has NO webhook registration API, so the customer must register the fastn trigger URL by hand: log in to ClassMarker, go to My Account &gt; Webhooks / API Keys, open the Webhooks tab, click 'New Webhook +', enter a name, paste the fastn trigger URL into the endpoint field, tick the optional extras you need (Questions, responses and category results; Unique link ID for links; URL for viewing results), tick 'Verify on Save', then click 'Save Webhook Settings'. Finally assign the webhook to the link, either while assigning an exam or by editing an existing exam's settings. ClassMarker sends a probe with payload_status 'verify' on save and 'live' for real results.</td></tr></tbody></table>

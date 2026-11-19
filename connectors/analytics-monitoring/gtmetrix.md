@@ -1,5 +1,5 @@
 ---
-description: "GTmetrix is a web page performance testing service."
+description: "GTmetrix tests web page performance. Run tests, read reports and filmstrips, manage pages, and list test locations and browsers."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gtmetrix.png" alt="GTmetrix logo">
 
-This connector covers the GTmetrix REST API 2.0: starting page tests, polling test state, reading performance reports and their resources (screenshots, filmstrip, HAR, Lighthouse JSON, PDF, video), managing tested pages and their report history, retesting, and looking up test locations, browsers, simulated devices and API credit status.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |
 | **Website** | [gtmetrix.com](https://gtmetrix.com) |
-| **Authentication** | Credentials you enter |
+| **Authentication** | API key |
 | **Slug** | `gtmetrix` |
+
+## Setup
+
+Your customers enter their API key for GTmetrix when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add GTmetrix from **Build → Integrations → Connectors** and connect an accou
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Report HAR</td><td><code>getReportHar</code></td><td>Downloads the HTTP Archive (HAR) of all network requests recorded during the report's page load. Returned as a file reference; set pretty to 1 for indented JSON.</td></tr><tr><td>Get Report Lighthouse JSON</td><td><code>getReportLighthouse</code></td><td>Downloads the raw Lighthouse result JSON for a report generated with the lighthouse report type. Returned as a file reference; optionally compressed or pretty-printed.</td></tr><tr><td>Get Report PDF</td><td><code>getReportPdf</code></td><td>Renders and downloads the report as a PDF file reference. Charged 0.2 API credits per request (0.3 for the full PDF). Not available to Team plan Viewer roles.</td></tr><tr><td>Get Report Resource</td><td><code>getReportResource</code></td><td>Downloads any report resource by its file name, such as report.pdf, screenshot.jpg, net.har, lighthouse.json, filmstrip.json, video.mp4, pagespeed.json, yslow.json, pagespeed-files.zip, or the legacy optimized image bundle. Returned as a file reference. PDF resources incur credit charges.</td></tr><tr><td>Get Report Resource Summary</td><td><code>getReportResourceSummary</code></td><td>Retrieves the resource summary JSON for a report: request counts and byte totals broken down by resource type such as HTML, JavaScript, CSS, images and fonts.</td></tr><tr><td>Get Report Screenshot</td><td><code>getReportScreenshot</code></td><td>Downloads the page screenshot captured for a report as a JPEG image, returned as a file reference. Optionally request the full-page screenshot or the shareable version.</td></tr><tr><td>Get Report Video</td><td><code>getReportVideo</code></td><td>Downloads the page-load video (MP4) for a report whose test was started with the video option. Returned as a file reference; reports without video respond with 404.</td></tr><tr><td>Get Simulated Device</td><td><code>getSimulatedDevice</code></td><td>Retrieves a single simulated device by its ID, including its user agent, viewport size and pixel ratio.</td></tr><tr><td>Get Test</td><td><code>getTest</code></td><td>Retrieves the state of a test by its ID. Poll this until state is completed, then read the report ID from the response and fetch it with Get Report.</td></tr><tr><td>List Browsers</td><td><code>listBrowsers</code></td><td>Lists the browsers available for testing, with each browser's platform and the analysis features it supports (AdBlock, Lighthouse, cookies, DNS, throttling, video and more).</td></tr><tr><td>List Locations</td><td><code>listLocations</code></td><td>Lists all GTmetrix test locations with their region, supported browsers, server IPs, availability and whether your plan has access to each.</td></tr><tr><td>List Page Reports</td><td><code>listPageReports</code></td><td>Lists the reports generated for a page, newest first by default, with pagination, sorting and filters on source, location, browser, grade, scores, timestamps and key performance metrics. Each filter accepts a value for the named comparison (eq, gt, gte, lt, lte).</td></tr><tr><td>List Pages</td><td><code>listPages</code></td><td>Lists the pages (unique URL, location and browser combinations) that have been tested on the account, with pagination, sorting and filters on location, browser, monitoring frequency, URL and timestamps.</td></tr><tr><td>List Simulated Devices</td><td><code>listSimulatedDevices</code></td><td>Lists the simulated devices (phones and tablets) that can be used with the simulate_device test option, including each device's user agent, viewport size and pixel ratio.</td></tr><tr><td>List Tests</td><td><code>listTests</code></td><td>Lists tests on the account with pagination, sorting and filters on source, state, location, browser and created, started or finished timestamps. By default only API-started tests are returned; set filter[source] to any to include on-demand and monitored tests.</td></tr><tr><td>Retest Page</td><td><code>retestPage</code></td><td>Starts a new test for an existing page using the page's URL, location and browser. Consumes API credits like Start Test and returns the queued test.</td></tr><tr><td>Retest Report</td><td><code>retestReport</code></td><td>Starts a new test using the same URL and analysis options as an existing report. Consumes API credits like Start Test and returns the queued test.</td></tr><tr><td>Start Test</td><td><code>startTest</code></td><td>Starts a new GTmetrix page performance test with the given URL and analysis options. Consumes API credits depending on the report type and add-ons. Returns the queued test whose state can be polled with Get Test; on a Basic account only two tests may run concurrently (HTTP 429 otherwise).</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+GTmetrix has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -1,11 +1,11 @@
 ---
-description: "Formdesk online forms platform."
+description: "Formdesk is an online forms platform. Add and export form entries, manage uploaded files, and add users and visitors."
 hidden: true
 ---
 
 # Formdesk
 
-Manage forms, form entries (results), uploaded files, Formdesk user accounts and form visitors through the Formdesk REST API v1. Formdesk uses a two-step host discovery: GET /connect on www.formdesk.com returns the regional host (e.g. fd7.formdesk.com) that all other calls must use, so the host is supplied as a connection field.
+<img src="../../.gitbook/assets/connectors/lg/formdesk.png" alt="Formdesk logo">
 
 | | |
 | --- | --- |
@@ -13,6 +13,10 @@ Manage forms, form entries (results), uploaded files, Formdesk user accounts and
 | **Website** | [formdesk.com](https://formdesk.com) |
 | **Authentication** | API key |
 | **Slug** | `formdesk` |
+
+## Setup
+
+Your customers enter their API key for Formdesk when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -34,4 +38,4 @@ Add Formdesk from **Build → Integrations → Connectors** and connect an accou
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Entry Submitted</td><td><code>form.entry.submitted</code></td><td>Fires when a visitor completes and submits a Formdesk form. REGISTRATION IS MANUAL - the Formdesk REST API v1 has no webhook CRUD endpoint, so the subscription must be created once in the Formdesk web application. Click path: log in to https://www.formdesk.com/&lt;your domain&gt;/ , open the form, choose Edit form, open the Webhooks section (under the form's integration/notification settings), click Add webhook, set Method to POST and URL to the fastn trigger URL shown above, optionally set Sending criteria so the webhook only fires for matching submissions, then save and publish the form. In the webhook's request body add a literal field named 'event' with the value 'form.entry.submitted' (this connector routes on that field) and a field named '_fd_id' mapped to the Formdesk entry id, then add any form item identifiers you want delivered. Formdesk lets you compose the body yourself, so the payload schema below is the recommended shape, not a fixed vendor contract. Formdesk supports GET, POST, PUT, PATCH and DELETE over HTTPS and can store the receiving system's response back into a form field.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Form Entry Submitted</td><td><code>form.entry.submitted</code></td><td>Fires when a visitor completes and submits a Formdesk form. REGISTRATION IS MANUAL - the Formdesk REST API v1 has no webhook CRUD endpoint, so the subscription must be created once in the Formdesk web application. Click path: log in to https://www.formdesk.com/&lt;your domain&gt;/, open the form, choose Edit form, open the Webhooks section (under the form's integration/notification settings), click Add webhook, set Method to POST and URL to the fastn trigger URL shown above, optionally set Sending criteria so the webhook only fires for matching submissions, then save and publish the form. In the webhook's request body add a literal field named 'event' with the value 'form.entry.submitted' (this connector routes on that field) and a field named '_fd_id' mapped to the Formdesk entry id, then add any form item identifiers you want delivered. Formdesk lets you compose the body yourself, so the payload schema below is the recommended shape, not a fixed vendor contract. Formdesk supports GET, POST, PUT, PATCH and DELETE over HTTPS and can store the receiving system's response back into a form field.</td></tr></tbody></table>

@@ -1,5 +1,5 @@
 ---
-description: "Nuclino is a unified workspace for team knowledge, docs, and projects."
+description: "Nuclino is a team wiki for knowledge and projects. Manage workspaces, items, collections and fields."
 hidden: true
 ---
 
@@ -7,14 +7,16 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nuclino.png" alt="Nuclino logo">
 
-This connector wraps the Nuclino REST API v0 to manage teams, workspaces, items and collections (pages/notes), custom fields, files, and users.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |
 | **Website** | [nuclino.com](https://nuclino.com) |
-| **Authentication** | Bearer token |
+| **Authentication** | Access token |
 | **Slug** | `nuclino` |
+
+## Setup
+
+Your customers enter their access token for Nuclino when they connect. Nothing else needs setting up.
 
 ## Use it
 
@@ -31,3 +33,7 @@ Add Nuclino from **Build → Integrations → Connectors** and connect an accoun
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Items and Collections</td><td><code>listItems</code></td><td>Lists items (documents/pages) and collections (folders). Filter by either a team or a workspace (mutually exclusive). Content is not included in list results; use Get Item for full content.</td></tr><tr><td>List Teams</td><td><code>listTeams</code></td><td>Lists all teams the API key has access to. Supports cursor pagination via the 'after' parameter.</td></tr><tr><td>List Workspaces</td><td><code>listWorkspaces</code></td><td>Lists workspaces, optionally filtered by team. Supports cursor pagination via 'after'.</td></tr><tr><td>Update Field</td><td><code>updateField</code></td><td>Updates a custom field definition. Destructive type changes may delete existing values across all items.</td></tr><tr><td>Update Item or Collection</td><td><code>updateItem</code></td><td>Updates an existing item or collection. Provide at least one of title, content, or fields. Set a value to null to clear it.</td></tr></tbody></table>
 
 </details>
+
+## Events
+
+Nuclino has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.
