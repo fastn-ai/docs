@@ -16,9 +16,60 @@ HubSpot CRM connector — full CRUD, search and batch operations across contacts
 | **Authentication** | OAuth 2.0 |
 | **Slug** | `hubspot` |
 
-## Use it
+## Setup guide
+This guide shows how to create your own HubSpot app for OAuth and add it to fastn, so your customers connect HubSpot through your app instead of fastn's shared one.
 
-Add HubSpot from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.hubspot.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+For HubSpot's own setup steps, see [Create a new app](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/create-an-app) in the HubSpot documentation.
+
+### Before you start
+- You need the Owner, Admin or Developer role in fastn.
+- You need a HubSpot account where you can open **Development**, such as a free developer account.
+- You need Node.js, to install the HubSpot CLI.
+- Have the fastn redirect URL ready: `https://oauth.live.fastn.ai`.
+
+### Create your HubSpot app
+1. In HubSpot, go to **Development** → **Projects** and click **Create project**. HubSpot creates apps through its command-line tool, and the dialog shows the two commands to run.
+
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/create-project.png" alt="HubSpot shows the CLI commands for creating a project."><figcaption><p>HubSpot shows the CLI commands for creating a project.</p></figcaption></figure>
+
+2. In a terminal, install the CLI with `npm i -g @hubspot/cli`, sign in with `hs account auth`, then run `hs project create` and choose an app that uses OAuth.
+3. In the app's configuration file (`app-hsmeta.json`), set the redirect URL to `https://oauth.live.fastn.ai` and list the scopes your integration needs under `requiredScopes`.
+4. Run `hs project upload`. HubSpot builds and deploys the project.
+
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/project-deployed.png" alt="The deployed project and its app."><figcaption><p>The deployed project and its app.</p></figcaption></figure>
+
+5. Open the app from the project. Its overview shows the configuration you uploaded.
+
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/app-config.png" alt="The app's overview and configuration."><figcaption><p>The app's overview and configuration.</p></figcaption></figure>
+
+6. Open the app's **Auth** tab and check that `https://oauth.live.fastn.ai` is listed under **Redirect URLs**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/redirect-url.png" alt="fastn's redirect URL on the app."><figcaption><p>fastn's redirect URL on the app.</p></figcaption></figure>
+
+7. On the same tab, check the **Required Scopes**. These are the scopes fastn's HubSpot connector uses:
+
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/scopes.png" alt="The app's required scopes."><figcaption><p>The app's required scopes.</p></figcaption></figure>
+
+8. Under **Client credentials**, copy the **Client ID** and **Client secret**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/credentials.png" alt="Client ID and Client secret, under Client credentials on the Auth tab."><figcaption><p>Client ID and Client secret, under Client credentials on the Auth tab.</p></figcaption></figure>
+
+### Add your app to fastn
+1. In fastn, go to Build → Integrations → Connectors and open HubSpot.
+2. Open the **Auth** tab and click **Manage providers**.
+
+<figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
+
+3. Click **+ Create Provider**.
+4. In the New Auth Provider form, enter a **Name** and an optional **Description**.
+5. Paste the Client ID and Client secret, and enter the same scopes you set on the HubSpot app.
+
+<figure><img src="../../.gitbook/assets/connector-guides/new-auth-provider.png" alt="The New Auth Provider form"><figcaption><p>The New Auth Provider form: paste your app's Client ID and Client Secret.</p></figcaption></figure>
+
+6. Create the provider, then choose **Use this app** so it becomes the Preferred app.
+7. In your widget, set the HubSpot connector's **Auth provider** setting to your app instead of "Use platform default".
+
+Customers who skip this setup connect through fastn's shared HubSpot app.
 
 ## Actions
 
