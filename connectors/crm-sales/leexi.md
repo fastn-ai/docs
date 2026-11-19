@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/leexi.png" alt="Leexi logo">
 
-Leexi is a conversation-intelligence platform that records, transcribes and analyses sales and customer calls and meetings. This connector wraps the Leexi Public API v1: calls and call recordings, AI-generated call notes, meeting events and the meeting assistant bot, plus workspace users and teams.
+This connector wraps the Leexi Public API v1: calls and call recordings, AI-generated call notes, meeting events and the meeting assistant bot, plus workspace users and teams.
 
 | | |
 | --- | --- |

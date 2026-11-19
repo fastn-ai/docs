@@ -1,5 +1,5 @@
 ---
-description: "ScreenshotAPI.net renders any URL or raw HTML into a PNG, JPG, WebP or PDF, records scrolling screenshots as MP4/WebM/GIF, and scrapes page text, HTML,…"
+description: "Connect Screenshot API to your product with fastn."
 hidden: true
 ---
 

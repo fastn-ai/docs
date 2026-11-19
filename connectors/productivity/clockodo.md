@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clockodo.png" alt="Clockodo logo">
 
-Clockodo time tracking, absence management and project reporting. Wraps the Clockodo REST API at https://my.clockodo.com/api (per-resource versioning: v2, v3 and v4 paths coexist).
+Wraps the Clockodo REST API at https://my.clockodo.com/api (per-resource versioning: v2, v3 and v4 paths coexist).
 
 | | |
 | --- | --- |

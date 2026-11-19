@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdf-api-io.png" alt="PDF-API.io logo">
 
-PDF-API.io generates PDF documents from pre-defined templates. List and retrieve your templates, render a single template to a PDF with your own data, and merge several templates into one PDF document. Responses can be returned as raw PDF bytes, as a base64-encoded JSON envelope, or as a temporary download URL.
+List and retrieve your templates, render a single template to a PDF with your own data, and merge several templates into one PDF document. Responses can be returned as raw PDF bytes, as a base64-encoded JSON envelope, or as a temporary download URL.
 
 | | |
 | --- | --- |

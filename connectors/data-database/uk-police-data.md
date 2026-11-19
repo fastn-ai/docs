@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uk-police-data.png" alt="UK Police Data logo">
 
-data.police.uk is the UK Home Office's open police data API for England, Wales and Northern Ireland. Get forces and senior officers, street-level crimes and outcomes by point, area or location, crime categories, neighbourhoods with teams, events, priorities and boundaries, and stop and search records. No API key needed (15 requests per second).
+Get forces and senior officers, street-level crimes and outcomes by point, area or location, crime categories, neighbourhoods with teams, events, priorities and boundaries, and stop and search records. No API key needed (15 requests per second).
 
 | | |
 | --- | --- |

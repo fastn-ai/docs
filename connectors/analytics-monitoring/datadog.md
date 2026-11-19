@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/datadog.png" alt="Datadog logo">
 
-Datadog monitoring and observability platform. Manage dashboards, monitors, downtimes, events, metrics, hosts, SLOs, tags, users, roles, notebooks, synthetics, and incidents via the Datadog v1 and v2 REST APIs.
+Manage dashboards, monitors, downtimes, events, metrics, hosts, SLOs, tags, users, roles, notebooks, synthetics, and incidents via the Datadog v1 and v2 REST APIs.
 
 | | |
 | --- | --- |

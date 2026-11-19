@@ -1,5 +1,5 @@
 ---
-description: "Novu is an open-source notification infrastructure platform that lets teams orchestrate Email, SMS, Push, In-App, and Chat notifications through code-defined…"
+description: "Connect Novu to your product with fastn."
 hidden: true
 ---
 

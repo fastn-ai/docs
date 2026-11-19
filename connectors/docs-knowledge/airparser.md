@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/airparser.png" alt="Airparser logo">
 
-Airparser is an AI-powered document and email parser that extracts structured data from PDFs, emails, images and spreadsheets. This connector covers the Airparser public API: inboxes, extraction schemas, documents and parsed results, post-processing, document review, integrations (webhooks, Zapier, Make, n8n, Google Sheets), team, account settings and billing information.
+This connector covers the Airparser public API: inboxes, extraction schemas, documents and parsed results, post-processing, document review, integrations (webhooks, Zapier, Make, n8n, Google Sheets), team, account settings and billing information.
 
 | | |
 | --- | --- |

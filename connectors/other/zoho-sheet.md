@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-sheet.png" alt="Zoho Sheet logo">
 
-Zoho Sheet online spreadsheet application, part of the Zoho suite. Programmatic access via Zoho Sheet Data APIs (sheet.zoho.com/api/v2) to manage workbooks, worksheets, tabular data, charts, pivot tables, cell/range content, formatting, named ranges, picklists, data validation, merge templates and premium high-throughput record APIs. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
+Programmatic access via Zoho Sheet Data APIs (sheet.zoho.com/api/v2) to manage workbooks, worksheets, tabular data, charts, pivot tables, cell/range content, formatting, named ranges, picklists, data validation, merge templates and premium high-throughput record APIs. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
 | --- | --- |

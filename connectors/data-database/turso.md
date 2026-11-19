@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/turso.png" alt="Turso logo">
 
-Turso is a managed SQLite-compatible edge database platform built on libSQL. This connector wraps the Turso Platform API to manage databases, database tokens, instances, groups, locations, organizations, members, invites, API tokens and audit logs.
+This connector wraps the Turso Platform API to manage databases, database tokens, instances, groups, locations, organizations, members, invites, API tokens and audit logs.
 
 | | |
 | --- | --- |

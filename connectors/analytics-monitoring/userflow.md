@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/userflow.png" alt="Userflow logo">
 
-Userflow builds in-app onboarding flows, checklists, surveys and resource centres without code. This connector covers the Userflow REST API: syncing users, groups and group memberships, tracking events, reading event and attribute definitions, and reading content, content versions and content sessions - plus the Personal-API-Key Accounts API for team members.
+This connector covers the Userflow REST API: syncing users, groups and group memberships, tracking events, reading event and attribute definitions, and reading content, content versions and content sessions - plus the Personal-API-Key Accounts API for team members.
 
 | | |
 | --- | --- |

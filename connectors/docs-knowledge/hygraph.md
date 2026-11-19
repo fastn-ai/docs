@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hygraph.png" alt="Hygraph logo">
 
-Hygraph headless CMS. GraphQL Management API for schema management (models, fields, enumerations, components, stages, locales, taxonomies), webhooks, and permanent auth tokens, plus Content API access. Auth via a Permanent Auth Token (Bearer).
+GraphQL Management API for schema management (models, fields, enumerations, components, stages, locales, taxonomies), webhooks, and permanent auth tokens, plus Content API access. Auth via a Permanent Auth Token (Bearer).
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/kibana.png" alt="Kibana logo">
 
-Kibana is the management and visualization layer for the Elastic Stack. This connector covers the Kibana REST API on Elastic Cloud: spaces, data views and their fields and runtime fields, saved objects, dashboards, alerting rules and rule types with enable/disable/mute/snooze, action connectors and connector types (including webhook connectors used to deliver alerts), maintenance windows, Fleet agent policies, package policies, agents, enrollment keys, outputs, proxies, server hosts and integration packages, Logstash pipelines, streams, security roles, task manager health, Kibana features and status. Authenticates with an Elasticsearch API key sent as 'Authorization: ApiKey &lt;key&gt;' plus the mandatory kbn-xsrf header.
+This connector covers the Kibana REST API on Elastic Cloud: spaces, data views and their fields and runtime fields, saved objects, dashboards, alerting rules and rule types with enable/disable/mute/snooze, action connectors and connector types (including webhook connectors used to deliver alerts), maintenance windows, Fleet agent policies, package policies, agents, enrollment keys, outputs, proxies, server hosts and integration packages, Logstash pipelines, streams, security roles, task manager health, Kibana features and status. Authenticates with an Elasticsearch API key sent as 'Authorization: ApiKey &lt;key&gt;' plus the mandatory kbn-xsrf header.
 
 | | |
 | --- | --- |

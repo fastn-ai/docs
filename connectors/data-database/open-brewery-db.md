@@ -1,5 +1,5 @@
 ---
-description: "Open Brewery DB is a free, keyless dataset of breweries, cideries, brewpubs and bottle shops worldwide: list and filter breweries by city, state, country,…"
+description: "Connect Open Brewery DB to your product with fastn."
 hidden: true
 ---
 

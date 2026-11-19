@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/intercom.png" alt="Intercom logo">
 
-Intercom customer messaging and support platform. Manage contacts, companies, conversations, messages, admins, tags, segments, notes, data events, articles, tickets, and data attributes via the Intercom REST API (api.intercom.io, Intercom-Version 2.15).
+Manage contacts, companies, conversations, messages, admins, tags, segments, notes, data events, articles, tickets, and data attributes via the Intercom REST API (api.intercom.io, Intercom-Version 2.15).
 
 | | |
 | --- | --- |

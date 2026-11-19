@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/apipie.png" alt="APIpie.ai logo">
 
-APIpie.ai is a unified gateway to hundreds of AI models from OpenAI, Anthropic, Google, Meta, Mistral and more behind an OpenAI-compatible API. This connector covers the complete APIpie REST API: chat completions with memory, RAG, integrity voting and inline web search, embeddings, image generation, text to speech, audio transcription, the model catalog, usage history, per-app and per-user state settings, web search, AI search answers, web scraping, text anonymization, document parsing, RAG tuning collections, vector collections, file sharing, and the job-search and real-estate data APIs.
+This connector covers the complete APIpie REST API: chat completions with memory, RAG, integrity voting and inline web search, embeddings, image generation, text to speech, audio transcription, the model catalog, usage history, per-app and per-user state settings, web search, AI search answers, web scraping, text anonymization, document parsing, RAG tuning collections, vector collections, file sharing, and the job-search and real-estate data APIs.
 
 | | |
 | --- | --- |

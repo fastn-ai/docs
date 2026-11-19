@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ambee.png" alt="Ambee logo">
 
-Ambee provides real-time and forecast environmental intelligence. This connector covers the Ambee REST API: air quality (latest, history and forecast), weather (latest, history and forecast), pollen (latest, history and 48/120-hour forecasts), wildfires and fire risk, natural disasters (latest, history and event lookup), geocoding and reverse geocoding, elevation, and influenza-like illness forecasts.
+This connector covers the Ambee REST API: air quality (latest, history and forecast), weather (latest, history and forecast), pollen (latest, history and 48/120-hour forecasts), wildfires and fire risk, natural disasters (latest, history and event lookup), geocoding and reverse geocoding, elevation, and influenza-like illness forecasts.
 
 | | |
 | --- | --- |

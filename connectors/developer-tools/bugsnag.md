@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bugsnag.png" alt="BugSnag logo">
 
-BugSnag (now SmartBear Insight Hub) is an error monitoring and application stability platform. This connector covers the BugSnag Data Access API: organizations, projects and project settings, errors and error triage, events and event fields, pivots, trends and stability trend, releases and release groups, feature flags and variants, collaborators, teams and project access, saved searches, configured integrations and integration connections, error assignment rules, network endpoint grouping, spans, span groups and traces, SCIM user and group provisioning, and event data export and deletion requests.
+This connector covers the BugSnag Data Access API: organizations, projects and project settings, errors and error triage, events and event fields, pivots, trends and stability trend, releases and release groups, feature flags and variants, collaborators, teams and project access, saved searches, configured integrations and integration connections, error assignment rules, network endpoint grouping, spans, span groups and traces, SCIM user and group provisioning, and event data export and deletion requests.
 
 | | |
 | --- | --- |

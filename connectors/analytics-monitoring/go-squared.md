@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/go-squared.png" alt="GoSquared logo">
 
-GoSquared is a website analytics and customer engagement platform. This connector covers the GoSquared REST API: real-time Now analytics (concurrents, visitors, pages, sources, geo, engagement and time series), account administration (sites, usage, shared users, blocked visitors, bots and IPs, tagged visitors), webhooks and their triggers, and entry points to the People CRM, Chat, Forms, Ecommerce and Trends products.
+This connector covers the GoSquared REST API: real-time Now analytics (concurrents, visitors, pages, sources, geo, engagement and time series), account administration (sites, usage, shared users, blocked visitors, bots and IPs, tagged visitors), webhooks and their triggers, and entry points to the People CRM, Chat, Forms, Ecommerce and Trends products.
 
 | | |
 | --- | --- |

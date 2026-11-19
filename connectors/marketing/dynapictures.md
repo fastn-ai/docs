@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dynapictures.png" alt="DynaPictures logo">
 
-DynaPictures generates personalized images, PDFs and animated countdown timers from reusable design templates. This connector covers image generation (JSON, binary, multipage and PDF), the batch PDF API, AI image generation, template and workspace management, the media library, generated-image cleanup and NEW_IMAGE webhooks.
+This connector covers image generation (JSON, binary, multipage and PDF), the batch PDF API, AI image generation, template and workspace management, the media library, generated-image cleanup and NEW_IMAGE webhooks.
 
 | | |
 | --- | --- |

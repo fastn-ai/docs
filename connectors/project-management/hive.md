@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hive.png" alt="Hive logo">
 
-Hive is a project management and collaboration platform. Manage projects, actions (tasks), subactions, comments, attachments, labels, statuses, custom fields, tags, resource assignments, workflows, and webhooks.
+Manage projects, actions (tasks), subactions, comments, attachments, labels, statuses, custom fields, tags, resource assignments, workflows, and webhooks.
 
 | | |
 | --- | --- |

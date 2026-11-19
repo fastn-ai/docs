@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/commcare-hq.png" alt="CommCare HQ logo">
 
-CommCare HQ by Dimagi — mobile data collection and case management for frontline programs. Read and manage cases, form submissions, mobile workers, web users, groups, applications, lookup tables, locations, device logs, user-configurable reports and OData feeds within a CommCare project space.
+Read and manage cases, form submissions, mobile workers, web users, groups, applications, lookup tables, locations, device logs, user-configurable reports and OData feeds within a CommCare project space.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI Avatars generates a customizable initials avatar image (PNG or SVG) from a person's name, with control over size, colors, font, shape, and letter…"
+description: "Connect AbstractAPI Avatars to your product with fastn."
 hidden: true
 ---
 

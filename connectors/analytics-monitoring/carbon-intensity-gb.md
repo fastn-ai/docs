@@ -1,5 +1,5 @@
 ---
-description: "The Carbon Intensity API from National Energy System Operator (NESO) gives the carbon intensity (gCO2/kWh) of Great Britain's electricity: current, forecast,…"
+description: "Connect Carbon Intensity API (GB) to your product with fastn."
 hidden: true
 ---
 

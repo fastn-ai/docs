@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/artificial-analysis.png" alt="Artificial Analysis logo">
 
-Artificial Analysis provides independent benchmarks of AI models. This connector covers the free Artificial Analysis Data API: LLM intelligence, speed and pricing metrics, and Elo leaderboards for text-to-image, image-editing, text-to-speech, text-to-video and image-to-video models, plus the CritPt benchmark batch evaluation endpoint for approved research accounts.
+This connector covers the free Artificial Analysis Data API: LLM intelligence, speed and pricing metrics, and Elo leaderboards for text-to-image, image-editing, text-to-speech, text-to-video and image-to-video models, plus the CritPt benchmark batch evaluation endpoint for approved research accounts.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/youform.png" alt="Youform logo">
 
-Youform is an online form builder for surveys, quizzes and lead capture. This connector covers the full Youform REST API: reading the authenticated account profile, listing forms, reading a single form by slug, reading complete and partial submissions for a form, creating and deleting per-form submission webhooks, and enabling or disabling a submission refill link.
+This connector covers the full Youform REST API: reading the authenticated account profile, listing forms, reading a single form by slug, reading complete and partial submissions for a form, creating and deleting per-form submission webhooks, and enabling or disabling a submission refill link.
 
 | | |
 | --- | --- |

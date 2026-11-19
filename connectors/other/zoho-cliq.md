@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-cliq.png" alt="Zoho Cliq logo">
 
-Zoho Cliq is Zoho's team chat/messaging platform. This connector provides access to Cliq's REST API v2: channels, chats (1:1/group), messages, threads, reactions, users, user status, teams, departments, designations, bots, scheduled messages, and organization/profile data.
+This connector provides access to Cliq's REST API v2: channels, chats (1:1/group), messages, threads, reactions, users, user status, teams, departments, designations, bots, scheduled messages, and organization/profile data.
 
 | | |
 | --- | --- |

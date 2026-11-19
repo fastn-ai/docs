@@ -1,5 +1,5 @@
 ---
-description: "GitHub REST API v3 connector — repositories, contents, branches/commits/git-data, issues & comments & labels & milestones, pull requests & reviews, releases,…"
+description: "Connect GitHub to your product with fastn."
 hidden: true
 ---
 

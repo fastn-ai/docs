@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/helpdesk-com.png" alt="HelpDesk.com logo">
 
-HelpDesk.com is a ticketing and customer support platform from Text (LiveChat). This connector wraps the full HelpDesk.com REST API v1: tickets and ticket events, transactions and attachments, agents, teams, tags, views, macros, rules, canned responses, templates, custom fields, mailboxes, licenses, email domains, reply addresses, trusted and blocked emails, subscriptions, imported tickets, the audit log, webhooks and the full reporting suite.
+This connector wraps the full HelpDesk.com REST API v1: tickets and ticket events, transactions and attachments, agents, teams, tags, views, macros, rules, canned responses, templates, custom fields, mailboxes, licenses, email domains, reply addresses, trusted and blocked emails, subscriptions, imported tickets, the audit log, webhooks and the full reporting suite.
 
 | | |
 | --- | --- |

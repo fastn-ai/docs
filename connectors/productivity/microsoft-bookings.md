@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-bookings.png" alt="Microsoft Bookings logo">
 
-Microsoft Bookings appointment scheduling via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/solutions/bookingBusinesses). Manage booking businesses (create, read, update, delete, publish and unpublish the self-service booking page), services, staff members, customers, custom questions and appointments, cancel an appointment with a message, read the calendar view for a date range, look up staff availability, and list the supported booking currencies. Connect with a Microsoft work or school account using Entra ID OAuth 2.0. All four delegated Bookings permissions are user-consentable and need no tenant administrator approval, but the tenant must have Microsoft Bookings enabled and the signed-in user must hold a licence that includes it (Microsoft 365 Business Standard or Premium, or A3/A5/E3/E5).
+Manage booking businesses (create, read, update, delete, publish and unpublish the self-service booking page), services, staff members, customers, custom questions and appointments, cancel an appointment with a message, read the calendar view for a date range, look up staff availability, and list the supported booking currencies. Connect with a Microsoft work or school account using Entra ID OAuth 2.0. All four delegated Bookings permissions are user-consentable and need no tenant administrator approval, but the tenant must have Microsoft Bookings enabled and the signed-in user must hold a licence that includes it (Microsoft 365 Business Standard or Premium, or A3/A5/E3/E5).
 
 | | |
 | --- | --- |

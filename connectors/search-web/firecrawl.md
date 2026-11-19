@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/firecrawl.png" alt="Firecrawl logo">
 
-Firecrawl web scraping, crawling, mapping, search, and structured-data extraction API (v2). Turns any website into clean markdown, HTML, or structured JSON for AI applications.
+Turns any website into clean markdown, HTML, or structured JSON for AI applications.
 
 | | |
 | --- | --- |

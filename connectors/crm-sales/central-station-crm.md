@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/central-station-crm.png" alt="CentralStationCRM logo">
 
-CentralStationCRM is a German customer relationship management platform for small and mid-sized teams. This connector covers the full CentralStationCRM REST API: people, companies, deals, projects, tasks, protocols, comments, tags, addresses, contact details, custom fields, calendar events, attachments, avatars, external emails, filter groups, users and webhooks.
+This connector covers the full CentralStationCRM REST API: people, companies, deals, projects, tasks, protocols, comments, tags, addresses, contact details, custom fields, calendar events, attachments, avatars, external emails, filter groups, users and webhooks.
 
 | | |
 | --- | --- |

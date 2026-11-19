@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/honeycomb.png" alt="Honeycomb logo">
 
-Honeycomb is an observability platform for querying, alerting on and exploring event, trace and log data.
-
 | | |
 | --- | --- |
 | **Category** | [Analytics and monitoring](README.md) |

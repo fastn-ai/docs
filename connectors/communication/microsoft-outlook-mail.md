@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-outlook-mail.png" alt="Microsoft Outlook Mail logo">
 
-Microsoft Outlook Mail via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0). Messages (list, get, create draft, update, delete, copy, move, send), replies and forwards, MIME content, delta sync, attachments, mail folders, message rules, Outlook categories, Focused Inbox overrides and mailbox settings.
+Messages (list, get, create draft, update, delete, copy, move, send), replies and forwards, MIME content, delta sync, attachments, mail folders, message rules, Outlook categories, Focused Inbox overrides and mailbox settings.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rev-ai.png" alt="Rev AI logo">
 
-Rev AI is a speech-to-text and voice-intelligence platform. This connector covers the full Rev AI REST surface on api.rev.ai: asynchronous speech-to-text jobs (submit, list, get, delete) with transcripts in JSON or plain text, SRT and VTT captions, AI summaries, and machine translation of transcripts and captions; custom vocabularies (submit, list, get, delete); language identification jobs and results; sentiment analysis jobs and results; topic extraction jobs and results; forced alignment jobs and aligned transcripts; and developer account balance. Transcription of audio is billed per minute; jobs submitted with transcriber "human" and test_mode true are not charged. Real-time streaming speech-to-text is WebSocket-only and is not covered.
+This connector covers the full Rev AI REST surface on api.rev.ai: asynchronous speech-to-text jobs (submit, list, get, delete) with transcripts in JSON or plain text, SRT and VTT captions, AI summaries, and machine translation of transcripts and captions; custom vocabularies (submit, list, get, delete); language identification jobs and results; sentiment analysis jobs and results; topic extraction jobs and results; forced alignment jobs and aligned transcripts; and developer account balance. Transcription of audio is billed per minute; jobs submitted with transcriber "human" and test_mode true are not charged. Real-time streaming speech-to-text is WebSocket-only and is not covered.
 
 | | |
 | --- | --- |

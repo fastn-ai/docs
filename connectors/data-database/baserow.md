@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/baserow.png" alt="Baserow logo">
 
-Baserow is an open-source no-code database platform (an Airtable alternative). This connector manages rows, fields, and tables through Baserow's database-token-authenticated REST API: list, get, create, update, delete, move, and batch rows; list and create fields; discover tables accessible to the token; and validate the token or a row's password field.
+This connector manages rows, fields, and tables through Baserow's database-token-authenticated REST API: list, get, create, update, delete, move, and batch rows; list and create fields; discover tables accessible to the token; and validate the token or a row's password field.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/veriphone.png" alt="Veriphone logo">
 
-Veriphone phone number validation and carrier lookup API. Validate phone numbers, detect line types (mobile, fixed line, VoIP, toll free), identify the original and currently serving carrier via portability registries, format numbers to E.164/international/local, generate example numbers, check credit balance and payment history, and run bulk CSV verification jobs for 240+ countries.
+Validate phone numbers, detect line types (mobile, fixed line, VoIP, toll free), identify the original and currently serving carrier via portability registries, format numbers to E.164/international/local, generate example numbers, check credit balance and payment history, and run bulk CSV verification jobs for 240+ countries.
 
 | | |
 | --- | --- |

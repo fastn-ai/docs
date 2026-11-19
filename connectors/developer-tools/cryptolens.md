@@ -1,5 +1,5 @@
 ---
-description: "Cryptolens software licensing (Web API 3): license keys, products, customers, data objects, machine-code activations, messages, resellers, user auth and usage…"
+description: "Connect Cryptolens to your product with fastn."
 hidden: true
 ---
 

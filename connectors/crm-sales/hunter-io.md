@@ -1,5 +1,5 @@
 ---
-description: "Hunter.io helps you find and verify professional email addresses, search all the emails associated with a domain, verify deliverability, enrich people and…"
+description: "Connect Hunter.io to your product with fastn."
 hidden: true
 ---
 

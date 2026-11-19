@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wayback-machine.png" alt="Wayback Machine logo">
 
-The Internet Archive Wayback Machine holds over a trillion archived web pages. Check if a page is archived and get the closest snapshot, or search the CDX capture index by URL, prefix, host or domain with date ranges, filters and paging. No API key needed.
+Check if a page is archived and get the closest snapshot, or search the CDX capture index by URL, prefix, host or domain with date ranges, filters and paging. No API key needed.
 
 | | |
 | --- | --- |

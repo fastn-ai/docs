@@ -1,5 +1,5 @@
 ---
-description: "ManageEngine ServiceDesk Plus Cloud IT service management - requests, problems, changes, releases, projects, assets, CMDB, purchase orders, contracts,…"
+description: "Connect ManageEngine ServiceDesk Plus to your product with fastn."
 hidden: true
 ---
 

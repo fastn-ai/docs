@@ -1,5 +1,5 @@
 ---
-description: "GenderAPI.io predicts gender from a first name, full name, email address or username, with optional country context and AI fallback, and validates and formats…"
+description: "Connect GenderAPI.io to your product with fastn."
 hidden: true
 ---
 

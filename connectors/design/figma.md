@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/figma.png" alt="Figma logo">
 
-Figma REST API connector. Read and manage files, comments, versions, components, styles, variables, dev resources, projects, and webhooks (v2). Base URL https://api.figma.com/v1.
+Read and manage files, comments, versions, components, styles, variables, dev resources, projects, and webhooks (v2). Base URL https://api.figma.com/v1.
 
 | | |
 | --- | --- |

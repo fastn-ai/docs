@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-projects.png" alt="Zoho Projects logo">
 
-Zoho Projects is Zoho's cloud project management suite. This connector provides access to Zoho Projects' REST API: portals, projects, dashboard/status updates, milestones, tasklists, tasks (with comments/subtasks), timesheets/time logs, bugs, tags, events/calendar, forums, users, client contacts, documents/folders, search, entity properties, and teams (user groups).
+This connector provides access to Zoho Projects' REST API: portals, projects, dashboard/status updates, milestones, tasklists, tasks (with comments/subtasks), timesheets/time logs, bugs, tags, events/calendar, forums, users, client contacts, documents/folders, search, entity properties, and teams (user groups).
 
 | | |
 | --- | --- |

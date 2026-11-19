@@ -1,5 +1,5 @@
 ---
-description: "commercetools composable commerce HTTP API — manage products, categories, customers, carts, orders, inventory, discounts, shipping, payments, types, channels,…"
+description: "Connect commercetools to your product with fastn."
 hidden: true
 ---
 

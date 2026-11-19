@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bigcommerce-b2b.png" alt="BigCommerce B2B Edition logo">
 
-BigCommerce B2B Edition Server-to-Server REST Management API (api-b2b.bigcommerce.com, base path /api/v3/io). Manage Companies (CRUD, extra fields, attachments, status, catalogs/price-list assignment, hierarchy), Company Users, Addresses, Quotes/RFQ (CRUD, products, shipping rates, checkout/order, email, PDF), B2B Orders, Shopping Lists (CRUD + items), Sales Reps (sales staff), Super Admins / user assignment, Roles & Permissions, Invoices & Payments, Channels, and Storefront/backend token generation. Authenticates with a store-level X-Auth-Token API token.
+Manage Companies (CRUD, extra fields, attachments, status, catalogs/price-list assignment, hierarchy), Company Users, Addresses, Quotes/RFQ (CRUD, products, shipping rates, checkout/order, email, PDF), B2B Orders, Shopping Lists (CRUD + items), Sales Reps (sales staff), Super Admins / user assignment, Roles & Permissions, Invoices & Payments, Channels, and Storefront/backend token generation. Authenticates with a store-level X-Auth-Token API token.
 
 | | |
 | --- | --- |

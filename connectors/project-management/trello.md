@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/trello.png" alt="Trello logo">
 
-Trello connector for boards, lists, cards, checklists, labels, members, organizations, actions, search, and webhooks via the Trello REST API (v1). Auth uses an API key + token sent as query parameters on every request.
+Auth uses an API key + token sent as query parameters on every request.
 
 | | |
 | --- | --- |

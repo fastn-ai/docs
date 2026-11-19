@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ticket-tailor.png" alt="Ticket Tailor logo">
 
-Ticket Tailor is a low-fee event ticketing and box office platform. This connector covers the Ticket Tailor API v1: event series and their event occurrences, ticket types, ticket groups, bundles and overrides, events, orders and offline payment confirmation, issued tickets and voiding, check-ins, discount codes, vouchers and voucher codes, memberships (types, issued memberships and redemptions), products and stores, checkout forms, waitlist signups, and the box office overview.
+This connector covers the Ticket Tailor API v1: event series and their event occurrences, ticket types, ticket groups, bundles and overrides, events, orders and offline payment confirmation, issued tickets and voiding, check-ins, discount codes, vouchers and voucher codes, memberships (types, issued memberships and redemptions), products and stores, checkout forms, waitlist signups, and the box office overview.
 
 | | |
 | --- | --- |

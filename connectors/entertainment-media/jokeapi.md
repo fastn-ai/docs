@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/jokeapi.png" alt="JokeAPI logo">
 
-JokeAPI (v2) serves consistently formatted jokes in several languages. Get jokes by category with filters for type, text, id range, blacklist flags, safe mode and amount, read API info, categories, flags, formats and languages, look up language codes, and validate a joke submission. Free with no API key (120 requests per minute).
+Get jokes by category with filters for type, text, id range, blacklist flags, safe mode and amount, read API info, categories, flags, formats and languages, look up language codes, and validate a joke submission. Free with no API key (120 requests per minute).
 
 | | |
 | --- | --- |

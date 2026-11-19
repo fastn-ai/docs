@@ -1,5 +1,5 @@
 ---
-description: "Facebook (Meta Graph API v25.0) connector for Page publishing and engagement: list/read Pages, create posts, publish photos/videos, comments, insights, and…"
+description: "Connect Facebook to your product with fastn."
 hidden: true
 ---
 

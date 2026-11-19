@@ -1,5 +1,5 @@
 ---
-description: "Grafana Cloud connector for the Grafana instance HTTP API — manage dashboards, folders, data sources, alerting, annotations, teams, users, service accounts,…"
+description: "Connect Grafana Cloud to your product with fastn."
 hidden: true
 ---
 

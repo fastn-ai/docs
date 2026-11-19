@@ -1,5 +1,5 @@
 ---
-description: "Dog images, breed data, breed facts, health tips, legislation/breed-ban lookups, favourites, votes, and AI-powered pet analysis (portraits, genealogy, body…"
+description: "Connect The Dog API to your product with fastn."
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "Beach Day API provides beach data for more than 36,000 beaches in over 100 countries: beach profiles with location and access details, water quality grades,…"
+description: "Connect Beach Day API to your product with fastn."
 hidden: true
 ---
 

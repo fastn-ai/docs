@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/referral-rock.png" alt="Referral Rock logo">
 
-Referral Rock is a referral, affiliate and partner marketing platform. This connector covers the complete Referral Rock REST API (https://api.referralrock.com): referral programs, members (referrers) and their statistics, referrals, rewards and reward rules, payouts and payout transactions, referral actions for recurring rewards, the customer feed that approves matching referrals, pre-authenticated member access and share URLs, the email unsubscribe list, and webhook subscription management with delivery history. Authentication is HTTP Basic using your Referral Rock public key as the username and private key as the password.
+This connector covers the complete Referral Rock REST API (https://api.referralrock.com): referral programs, members (referrers) and their statistics, referrals, rewards and reward rules, payouts and payout transactions, referral actions for recurring rewards, the customer feed that approves matching referrals, pre-authenticated member access and share URLs, the email unsubscribe list, and webhook subscription management with delivery history. Authentication is HTTP Basic using your Referral Rock public key as the username and private key as the password.
 
 | | |
 | --- | --- |

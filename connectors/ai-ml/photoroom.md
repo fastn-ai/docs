@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/photoroom.png" alt="Photoroom logo">
 
-Photoroom AI image editing API. Removes backgrounds, generates AI backgrounds, shadows, relighting, text removal, flat lay, ghost mannequin, virtual model and virtual try-on, upscaling and uncropping, and returns the edited image. Covers the Image Editing API v2 (image-api.photoroom.com), the legacy v1 render endpoint, the Remove Background API v1 (sdk.photoroom.com), Visual QA, and account/credit balance. Authenticates with an x-api-key header; prefix the key with sandbox_ to use Photoroom's free watermarked sandbox mode.
+Removes backgrounds, generates AI backgrounds, shadows, relighting, text removal, flat lay, ghost mannequin, virtual model and virtual try-on, upscaling and uncropping, and returns the edited image. Covers the Image Editing API v2 (image-api.photoroom.com), the legacy v1 render endpoint, the Remove Background API v1 (sdk.photoroom.com), Visual QA, and account/credit balance. Authenticates with an x-api-key header; prefix the key with sandbox_ to use Photoroom's free watermarked sandbox mode.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/trengo.png" alt="Trengo logo">
 
-Trengo is a multichannel customer engagement and helpdesk platform unifying WhatsApp, email, SMS, live chat, voice, and social channels into one team inbox. This connector wraps the Trengo REST API v2 for tickets, contacts, profiles, messages, WhatsApp, SMS, team chat, labels, teams, users, custom fields, quick replies, help center, and webhooks.
+This connector wraps the Trengo REST API v2 for tickets, contacts, profiles, messages, WhatsApp, SMS, team chat, labels, teams, users, custom fields, quick replies, help center, and webhooks.
 
 | | |
 | --- | --- |

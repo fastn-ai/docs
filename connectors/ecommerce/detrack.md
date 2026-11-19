@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/detrack.png" alt="Detrack logo">
 
-Detrack delivery management and real-time vehicle tracking (API v2). Create, update and track delivery and collection jobs, manage vehicles/drivers, driver groups, sub-accounts, geofences, depots, routes, rate cards, invoices, exports, and account-wide job/notification/webhook settings.
+Create, update and track delivery and collection jobs, manage vehicles/drivers, driver groups, sub-accounts, geofences, depots, routes, rate cards, invoices, exports, and account-wide job/notification/webhook settings.
 
 | | |
 | --- | --- |

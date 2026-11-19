@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/invalid-bounce.png" alt="Invalid Bounce logo">
 
-Invalid Bounce is an email verification and list-hygiene platform. Verify single addresses or bulk lists in real time over SMTP, detect disposable, catch-all, mailbox-full and no-MX addresses, run SPF/DKIM and blacklist checks on sending domains, retrieve verification job results, and manage webhook notifications. Authenticates with an account API key sent in the X-API-Key header.
+Verify single addresses or bulk lists in real time over SMTP, detect disposable, catch-all, mailbox-full and no-MX addresses, run SPF/DKIM and blacklist checks on sending domains, retrieve verification job results, and manage webhook notifications. Authenticates with an account API key sent in the X-API-Key header.
 
 | | |
 | --- | --- |

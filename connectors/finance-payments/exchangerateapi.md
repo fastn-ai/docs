@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/exchangerateapi.png" alt="ExchangeRate-API logo">
 
-Currency exchange rate and conversion API (v6) from exchangerate-api.com. Provides latest exchange rates for a base currency, currency-pair conversion (with optional amount), historical exchange rates by date, enriched currency metadata, the list of supported currency codes, and account request-quota status.
+Provides latest exchange rates for a base currency, currency-pair conversion (with optional amount), historical exchange rates by date, enriched currency metadata, the list of supported currency codes, and account request-quota status.
 
 | | |
 | --- | --- |

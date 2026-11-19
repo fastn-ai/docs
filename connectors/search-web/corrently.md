@@ -1,5 +1,5 @@
 ---
-description: "Corrently Energy APIs by STROMDAO provide regional green-electricity, CO2, price and scheduling signals for Germany: GrünstromIndex forecasts, CO2 Advisor,…"
+description: "Connect Corrently to your product with fastn."
 hidden: true
 ---
 

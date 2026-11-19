@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/never-bounce.png" alt="NeverBounce logo">
 
-NeverBounce is a real-time email verification and bulk list-cleaning service. This connector covers the full NeverBounce v4 API: account information and credit balance, single email verification, bulk verification jobs (create, parse, start, search, status, results, download and delete) and Point-of-Entry widget token confirmation.
+This connector covers the full NeverBounce v4 API: account information and credit balance, single email verification, bulk verification jobs (create, parse, start, search, status, results, download and delete) and Point-of-Entry widget token confirmation.
 
 | | |
 | --- | --- |

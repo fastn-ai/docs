@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/new-relic.png" alt="New Relic logo">
 
-New Relic observability platform. NerdGraph (GraphQL) for entities, NRQL, dashboards, alerts, workloads, tags and notifications, plus the REST API v2 for applications, alert policies, deployments, labels and key transactions.
+NerdGraph (GraphQL) for entities, NRQL, dashboards, alerts, workloads, tags and notifications, plus the REST API v2 for applications, alert policies, deployments, labels and key transactions.
 
 | | |
 | --- | --- |

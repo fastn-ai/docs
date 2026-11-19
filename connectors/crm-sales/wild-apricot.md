@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wild-apricot.png" alt="WildApricot logo">
 
-WildApricot is a membership management platform for associations, clubs and non-profits. This connector covers the WildApricot Admin API v2.3: accounts, contacts and members, contact and donation fields, saved searches, membership levels, bundles and member groups, pending membership approvals, events, event registration types and registrations, check-in and waitlists, invoices, payments, refunds, tenders and allocations, donations, CEU records, audit log, email log, drafts and sending, attachments and pictures, and the online store (products and orders).
+This connector covers the WildApricot Admin API v2.3: accounts, contacts and members, contact and donation fields, saved searches, membership levels, bundles and member groups, pending membership approvals, events, event registration types and registrations, check-in and waitlists, invoices, payments, refunds, tenders and allocations, donations, CEU records, audit log, email log, drafts and sending, attachments and pictures, and the online store (products and orders).
 
 | | |
 | --- | --- |

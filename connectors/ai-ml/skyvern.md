@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/skyvern.png" alt="Skyvern logo">
 
-Skyvern AI browser automation. Run natural-language browser tasks and agents, manage workflows/agents, runs, schedules, browser sessions and browser profiles, credentials and TOTP, scripts, folders, tags, artifacts and files through the Skyvern Cloud REST API (https://api.skyvern.com).
+Run natural-language browser tasks and agents, manage workflows/agents, runs, schedules, browser sessions and browser profiles, credentials and TOTP, scripts, folders, tags, artifacts and files through the Skyvern Cloud REST API (https://api.skyvern.com).
 
 | | |
 | --- | --- |

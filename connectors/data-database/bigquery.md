@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bigquery.png" alt="Google BigQuery logo">
 
-Google BigQuery REST API v2 connector. Manage datasets, tables, jobs, queries, table data, routines, and models in Google Cloud BigQuery.
+Manage datasets, tables, jobs, queries, table data, routines, and models in Google Cloud BigQuery.
 
 | | |
 | --- | --- |

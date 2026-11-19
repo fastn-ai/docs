@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/accu-weather.png" alt="AccuWeather logo">
 
-AccuWeather provides global weather data. This connector covers the AccuWeather APIs on dataservice.accuweather.com: location lookup by text, postal code, coordinates, IP address and point of interest, current conditions and past-24-hour observations, daily and hourly forecasts, MinuteCast precipitation, lifestyle indices, severe weather alerts and alarms, government tropical storm tracking, and phrase translations.
+This connector covers the AccuWeather APIs on dataservice.accuweather.com: location lookup by text, postal code, coordinates, IP address and point of interest, current conditions and past-24-hour observations, daily and hourly forecasts, MinuteCast precipitation, lifestyle indices, severe weather alerts and alarms, government tropical storm tracking, and phrase translations.
 
 | | |
 | --- | --- |

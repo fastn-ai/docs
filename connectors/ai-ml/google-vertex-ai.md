@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-vertex-ai.png" alt="Google Vertex AI logo">
 
-Run and manage generative AI and machine learning workloads on Google Vertex AI (aiplatform API v1). Covers publisher model and endpoint inference (generateContent, predict, rawPredict, embedContent, countTokens, computeTokens, OpenAI-compatible chat completions, embeddings and responses), endpoint and model registry management, datasets and dataset versions, batch prediction jobs, custom jobs, tuning jobs, pipeline jobs, training pipelines, IAM policies, and long-running operations.
+Covers publisher model and endpoint inference (generateContent, predict, rawPredict, embedContent, countTokens, computeTokens, OpenAI-compatible chat completions, embeddings and responses), endpoint and model registry management, datasets and dataset versions, batch prediction jobs, custom jobs, tuning jobs, pipeline jobs, training pipelines, IAM policies, and long-running operations.
 
 | | |
 | --- | --- |

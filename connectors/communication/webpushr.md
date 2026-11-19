@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/webpushr.png" alt="Webpushr logo">
 
-Webpushr web push notification platform. Send web push notifications to all subscribers, a single subscriber id, one or more segments, or subscribers matching custom attributes; check campaign delivery status; read subscriber counts, segments and dashboard analytics.
+Send web push notifications to all subscribers, a single subscriber id, one or more segments, or subscribers matching custom attributes; check campaign delivery status; read subscriber counts, segments and dashboard analytics.
 
 | | |
 | --- | --- |

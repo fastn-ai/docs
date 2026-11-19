@@ -4,7 +4,7 @@ description: "Data and databases connectors fastn manages, with their auth, acti
 
 # Data and databases
 
-Data and databases apps you can connect to with fastn, the most used first. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
+Listed most used first. Back to the [connector catalog](../README.md).
 
 | | Connector | Authentication | About |
 | --- | --- | --- | --- |

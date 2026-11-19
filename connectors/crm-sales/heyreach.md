@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/heyreach.png" alt="HeyReach logo">
 
-HeyReach LinkedIn outreach automation. Manage campaigns, lead lists, leads, LinkedIn sender accounts, inbox conversations, network, webhooks, and analytics via the HeyReach public API (X-API-KEY auth).
+Manage campaigns, lead lists, leads, LinkedIn sender accounts, inbox conversations, network, webhooks, and analytics via the HeyReach public API (X-API-KEY auth).
 
 | | |
 | --- | --- |

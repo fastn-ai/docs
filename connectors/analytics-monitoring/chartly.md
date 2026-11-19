@@ -1,5 +1,5 @@
 ---
-description: "Chartly renders Chart.js configurations into PNG or SVG chart images over a simple HTTP API, for embedding charts in emails, Slack messages, PDFs and low-code…"
+description: "Connect Chartly to your product with fastn."
 hidden: true
 ---
 

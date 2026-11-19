@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tink.png" alt="Tink logo">
 
-Tink is an open banking platform for accessing bank account, balance, transaction, and financial insight data across European financial institutions. Connect an end user's bank via Tink Link to read accounts, balances, transactions, categories, budgets, statistics, loans, and consent status.
+Connect an end user's bank via Tink Link to read accounts, balances, transactions, categories, budgets, statistics, loans, and consent status.
 
 | | |
 | --- | --- |

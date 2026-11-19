@@ -1,5 +1,5 @@
 ---
-description: "Collect and manage bank-to-bank payments with GoCardless — customers, mandates, payments, subscriptions, refunds, payouts, billing requests and webhook events…"
+description: "Connect GoCardless to your product with fastn."
 hidden: true
 ---
 

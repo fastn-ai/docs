@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/smart-survey.png" alt="SmartSurvey logo">
 
-SmartSurvey is a UK-based online survey and feedback platform. This connector covers the documented SmartSurvey Public API v2: surveys and survey folders, pages, responses, tracking links and collectors, invitations and their recipients, contact lists and contacts, exports and downloads, filter groups, sharing permissions, themes, the file library, account users, API keys, and webhook registration.
+This connector covers the documented SmartSurvey Public API v2: surveys and survey folders, pages, responses, tracking links and collectors, invitations and their recipients, contact lists and contacts, exports and downloads, filter groups, sharing permissions, themes, the file library, account users, API keys, and webhook registration.
 
 | | |
 | --- | --- |

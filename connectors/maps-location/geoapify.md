@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/geoapify.png" alt="Geoapify logo">
 
-Geoapify is a location platform built on OpenStreetMap data. This connector covers the Geoapify REST APIs: forward, reverse and batch geocoding, address autocomplete, places search and place details, postcodes, boundaries, routing, route matrix, route planner optimization, isochrones and isodistances, map matching, elevation, geometry storage and geometry operations, IP geolocation, generic batch jobs, and map rendering (static maps, map tiles, MapLibre styles and marker icons).
+This connector covers the Geoapify REST APIs: forward, reverse and batch geocoding, address autocomplete, places search and place details, postcodes, boundaries, routing, route matrix, route planner optimization, isochrones and isodistances, map matching, elevation, geometry storage and geometry operations, IP geolocation, generic batch jobs, and map rendering (static maps, map tiles, MapLibre styles and marker icons).
 
 | | |
 | --- | --- |

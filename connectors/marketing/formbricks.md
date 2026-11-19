@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/formbricks.png" alt="Formbricks logo">
 
-Open-source Experience Management platform for surveys, forms, and in-product feedback. Manage surveys, responses, contacts, action classes, webhooks, teams, and contact attributes via the Formbricks Management API.
+Manage surveys, responses, contacts, action classes, webhooks, teams, and contact attributes via the Formbricks Management API.
 
 | | |
 | --- | --- |

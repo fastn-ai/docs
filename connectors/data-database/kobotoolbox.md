@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/kobotoolbox.png" alt="KoboToolbox logo">
 
-KoboToolbox is an open-source platform for field data collection. This connector covers the KoboToolbox KPI v2 API: projects and forms, form content and versions, deployment, submissions and their validation statuses, exports and export settings, media files, paired data, permission assignments, REST service hooks, organizations and members, project views, tags, imports, usage reporting and account logs.
+This connector covers the KoboToolbox KPI v2 API: projects and forms, form content and versions, deployment, submissions and their validation statuses, exports and export settings, media files, paired data, permission assignments, REST service hooks, organizations and members, project views, tags, imports, usage reporting and account logs.
 
 | | |
 | --- | --- |

@@ -5,7 +5,7 @@ hidden: true
 
 # Stitch
 
-Stitch is a cloud ETL service that replicates data from SaaS applications and databases into a data warehouse. This connector covers the documented Stitch Connect API v4 - sources and source types, destinations and destination types, connection checks, streams, stream schemas and field selection, replication jobs, extraction and load history, and Import API access tokens - together with the Notification API v1 for custom email recipients and post-load webhooks, the partner-only account and session endpoints, and the Import API v2 for pushing records into Stitch.
+This connector covers the documented Stitch Connect API v4 - sources and source types, destinations and destination types, connection checks, streams, stream schemas and field selection, replication jobs, extraction and load history, and Import API access tokens - together with the Notification API v1 for custom email recipients and post-load webhooks, the partner-only account and session endpoints, and the Import API v2 for pushing records into Stitch.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nutshell.png" alt="Nutshell logo">
 
-Nutshell CRM connector over the JSON-RPC 2.0 API (https://app.nutshell.com/api/v1/json). Full coverage of leads, contacts, accounts (companies), activities, tasks, notes, users, teams, products, sources, tags, emails, timeline, pipelines/stagesets, and CRM metadata. HTTP Basic auth (login email + API key).
+Full coverage of leads, contacts, accounts (companies), activities, tasks, notes, users, teams, products, sources, tags, emails, timeline, pipelines/stagesets, and CRM metadata. HTTP Basic auth (login email + API key).
 
 | | |
 | --- | --- |

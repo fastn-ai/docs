@@ -1,5 +1,5 @@
 ---
-description: "Autom is a SERP and web-data API: structured results from Google Search, Google Search Light, Autocomplete, Images, News, Videos, Shopping, Jobs and Maps,…"
+description: "Connect Autom to your product with fastn."
 hidden: true
 ---
 

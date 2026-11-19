@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-spanner.png" alt="Google Cloud Spanner logo">
 
-Google Cloud Spanner API v1 (https://spanner.googleapis.com/v1). List instance configurations, instances and databases, create and drop databases on an existing instance, and run SQL queries through sessions (create session, execute SQL, delete session). OAuth 2.0 (Google) authorization-code auth with the spanner.admin and spanner.data scopes.
+List instance configurations, instances and databases, create and drop databases on an existing instance, and run SQL queries through sessions (create session, execute SQL, delete session). OAuth 2.0 (Google) authorization-code auth with the spanner.admin and spanner.data scopes.
 
 | | |
 | --- | --- |

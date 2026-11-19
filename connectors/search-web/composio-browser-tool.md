@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/composio-browser-tool.png" alt="Composio Browser Tool logo">
 
-Composio Browser Tool lets AI agents run cloud-browser automation tasks (navigate sites, fill forms, extract data) through the Composio Connect Tool Router. This connector calls the Tool Router MCP endpoint over HTTPS (JSON-RPC): create, watch and stop Browser Tool tasks, get the live browser session and download output files, plus the router's own tools for searching tools, fetching tool schemas, executing any Composio tool, managing app connections, remote bash and Python workbench, and organization skills.
+This connector calls the Tool Router MCP endpoint over HTTPS (JSON-RPC): create, watch and stop Browser Tool tasks, get the live browser session and download output files, plus the router's own tools for searching tools, fetching tool schemas, executing any Composio tool, managing app connections, remote bash and Python workbench, and organization skills.
 
 | | |
 | --- | --- |

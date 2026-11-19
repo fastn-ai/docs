@@ -1,5 +1,5 @@
 ---
-description: "Google Merchant Center connector for the Content API for Shopping v2.1 — manage products, product statuses, inventory, orders, accounts, tax, shipping…"
+description: "Connect Google Merchant Center to your product with fastn."
 hidden: true
 ---
 

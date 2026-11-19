@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailchimp.png" alt="Mailchimp logo">
 
-Mailchimp Marketing API v3.0 (base https://{dc}.api.mailchimp.com/3.0). Manage audiences (lists), members + tags, merge fields, segments, campaigns (create/content/send/schedule/test), templates, reports, automations, and list webhooks. Auth: HTTP Basic (any username + API key as password); the datacenter prefix (e.g. us21) comes from the API key suffix.
+Manage audiences (lists), members + tags, merge fields, segments, campaigns (create/content/send/schedule/test), templates, reports, automations, and list webhooks. Auth: HTTP Basic (any username + API key as password); the datacenter prefix (e.g. us21) comes from the API key suffix.
 
 | | |
 | --- | --- |

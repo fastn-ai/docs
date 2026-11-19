@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-file-storage.png" alt="Azure File Storage logo">
 
-Azure File Storage — cloud file shares over SMB/NFS. List files and directories in a share, read file content, create files, and append content to existing files via the Azure Files REST API ({account}.file.core.windows.net).
+List files and directories in a share, read file content, create files, and append content to existing files via the Azure Files REST API ({account}.file.core.windows.net).
 
 | | |
 | --- | --- |

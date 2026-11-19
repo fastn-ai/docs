@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/updown-io.png" alt="Updown.io logo">
 
-Updown.io website and uptime monitoring. Create and manage HTTP/HTTPS, ICMP, TCP and pulse checks, read uptime metrics and downtime history, manage alert recipients and public status pages, and list the monitoring node IP addresses.
+Create and manage HTTP/HTTPS, ICMP, TCP and pulse checks, read uptime metrics and downtime history, manage alert recipients and public status pages, and list the monitoring node IP addresses.
 
 | | |
 | --- | --- |

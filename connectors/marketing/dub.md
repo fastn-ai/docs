@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dub.png" alt="Dub logo">
 
-Dub is the modern link attribution platform for short links, conversion tracking, and affiliate (partner) programs. This connector covers the complete Dub REST API (https://api.dub.co): links (create, retrieve, list, count, update, upsert, delete, bulk create/update/delete), analytics and events, tags, folders, domains (create, list, update, delete, register, availability check), conversion tracking (lead, sale, open), customers, partners and partner applications, partner links and analytics, discount codes, commissions, payouts, bounties, referral embed tokens, QR codes, workspace info, and webhook management (list, create, get, update, delete). Authentication is a workspace API key sent as a Bearer token. Partner-program, customer, discount-code, webhook and analytics endpoints require a paid Dub plan.
+This connector covers the complete Dub REST API (https://api.dub.co): links (create, retrieve, list, count, update, upsert, delete, bulk create/update/delete), analytics and events, tags, folders, domains (create, list, update, delete, register, availability check), conversion tracking (lead, sale, open), customers, partners and partner applications, partner links and analytics, discount codes, commissions, payouts, bounties, referral embed tokens, QR codes, workspace info, and webhook management (list, create, get, update, delete). Authentication is a workspace API key sent as a Bearer token. Partner-program, customer, discount-code, webhook and analytics endpoints require a paid Dub plan.
 
 | | |
 | --- | --- |

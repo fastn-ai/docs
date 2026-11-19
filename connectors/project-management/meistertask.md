@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/meistertask.png" alt="MeisterTask logo">
 
-MeisterTask is a task and project management tool. Manage projects, sections, tasks, subtasks, checklists, comments, labels, attachments, custom fields, time tracking, and team members via the MeisterTask REST API.
+Manage projects, sections, tasks, subtasks, checklists, comments, labels, attachments, custom fields, time tracking, and team members via the MeisterTask REST API.
 
 | | |
 | --- | --- |

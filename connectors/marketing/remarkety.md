@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/remarkety.png" alt="Remarkety logo">
 
-Remarkety is an eCommerce email and SMS marketing automation platform. This connector wraps the store-scoped Remarkety REST API (https://app.remarkety.com/api/v2/stores/{storeId}) covering customers, contacts, products, orders, segments, campaigns, email senders, templates, recommendations, sync status and outbound webhook subscriptions, plus the Remarkety event ingestion endpoints on webhooks.remarkety.com.
+This connector wraps the store-scoped Remarkety REST API (https://app.remarkety.com/api/v2/stores/{storeId}) covering customers, contacts, products, orders, segments, campaigns, email senders, templates, recommendations, sync status and outbound webhook subscriptions, plus the Remarkety event ingestion endpoints on webhooks.remarkety.com.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/federal-register.png" alt="Federal Register logo">
 
-The Federal Register API (U.S. Office of the Federal Register) gives free access to every Federal Register document published since 1994 and to documents on public inspection: search with rich filters, get documents and facet counts, issue tables of contents, agencies, images and suggested searches. No API key needed.
+Office of the Federal Register) gives free access to every Federal Register document published since 1994 and to documents on public inspection: search with rich filters, get documents and facet counts, issue tables of contents, agencies, images and suggested searches. No API key needed.
 
 | | |
 | --- | --- |

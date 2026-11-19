@@ -1,5 +1,5 @@
 ---
-description: "DataForSEO provides SEO and marketing data through the DataForSEO API v3: SERP results for Google, Bing, Yahoo, Baidu, Naver and YouTube; Keywords Data…"
+description: "Connect DataForSEO to your product with fastn."
 hidden: true
 ---
 

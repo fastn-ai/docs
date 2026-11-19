@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-assist.png" alt="Zoho Assist logo">
 
-Zoho Assist is Zoho's remote support and unattended remote access platform. This connector wraps the Zoho Assist REST API v2 (https://assist.zoho.com/api/v2): create and schedule remote support and screen sharing sessions, resolve session identifiers, fetch session reports, export session notes and retrieve download links for session recordings, screenshots and chat transcripts, manage unattended devices and device groups, and start unattended remote sessions. Every request requires the Zoho Assist organization ID header.
+This connector wraps the Zoho Assist REST API v2 (https://assist.zoho.com/api/v2): create and schedule remote support and screen sharing sessions, resolve session identifiers, fetch session reports, export session notes and retrieve download links for session recordings, screenshots and chat transcripts, manage unattended devices and device groups, and start unattended remote sessions. Every request requires the Zoho Assist organization ID header.
 
 | | |
 | --- | --- |

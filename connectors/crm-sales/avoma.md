@@ -1,5 +1,5 @@
 ---
-description: "Avoma conversation intelligence — meetings, recordings, transcriptions, AI notes, smart categories, scorecards, sentiments, calls, users, engagement,…"
+description: "Connect Avoma to your product with fastn."
 hidden: true
 ---
 

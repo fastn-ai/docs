@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/siteleaf.png" alt="Siteleaf logo">
 
-Siteleaf is a Git-friendly, Jekyll-based content management system. This connector wraps the Siteleaf v2 REST API so you can manage sites, pages, collections, documents, collection files, raw Jekyll source files, site users and roles, publish jobs, tags and categories.
+This connector wraps the Siteleaf v2 REST API so you can manage sites, pages, collections, documents, collection files, raw Jekyll source files, site users and roles, publish jobs, tags and categories.
 
 | | |
 | --- | --- |

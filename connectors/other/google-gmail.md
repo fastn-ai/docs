@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-gmail.png" alt="Google Gmail logo">
 
-Google Gmail API connector for managing emails, drafts, labels, threads, history, attachments, settings, and push notifications via the Gmail REST API v1.
-
 | | |
 | --- | --- |
 | **Category** | [Other](README.md) |

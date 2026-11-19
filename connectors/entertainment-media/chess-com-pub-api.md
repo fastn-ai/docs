@@ -1,5 +1,5 @@
 ---
-description: "The Chess.com Published-Data API (PubAPI) is a free read-only API with public Chess.com data: player profiles, stats, current and archived games (JSON and…"
+description: "Connect Chess.com Published-Data API to your product with fastn."
 hidden: true
 ---
 

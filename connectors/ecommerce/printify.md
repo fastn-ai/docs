@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/printify.png" alt="Printify logo">
 
-Printify print-on-demand API. Manage shops, browse the product catalog (blueprints, print providers, variants, shipping), create and publish products, submit and manage orders, upload artwork, and manage webhooks.
+Manage shops, browse the product catalog (blueprints, print providers, variants, shipping), create and publish products, submit and manage orders, upload artwork, and manage webhooks.
 
 | | |
 | --- | --- |

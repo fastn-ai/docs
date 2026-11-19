@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/documint.png" alt="Documint logo">
 
-Documint turns structured data into pixel-perfect PDFs from templates you design in its drag-and-drop editor. This connector covers the Documint public API: template management, merging data into a template to render a document, the rendered-document store, folders, uploaded assets, and the account and subscription records.
+This connector covers the Documint public API: template management, merging data into a template to render a document, the rendered-document store, folders, uploaded assets, and the account and subscription records.
 
 | | |
 | --- | --- |

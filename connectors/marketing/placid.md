@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/placid.png" alt="Placid logo">
 
-Placid is a creative-automation platform that renders images, PDFs and videos from templates you design once and fill with data. This connector covers the Placid REST API v2: template and collection management, custom fonts, and the image, PDF and video generation endpoints with their polling and delete routes.
+This connector covers the Placid REST API v2: template and collection management, custom fonts, and the image, PDF and video generation endpoints with their polling and delete routes.
 
 | | |
 | --- | --- |

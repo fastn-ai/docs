@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/minelead.png" alt="Minelead logo">
 
-Minelead is a B2B lead generation and email intelligence platform. This connector wraps the Minelead REST API v1 to find company and professional emails, verify and enrich email addresses, detect disposable emails, analyze buying intent, generate leads from tags, and manage saved leads, search history, campaigns and recipient lists.
+This connector wraps the Minelead REST API v1 to find company and professional emails, verify and enrich email addresses, detect disposable emails, analyze buying intent, generate leads from tags, and manage saved leads, search history, campaigns and recipient lists.
 
 | | |
 | --- | --- |

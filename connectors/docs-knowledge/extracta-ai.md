@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/extracta-ai.png" alt="Extracta.ai logo">
 
-Extracta.ai (Extracta LABS) AI document data extraction and document classification. Define extraction templates with typed fields, upload documents (PDF, DOCX, TXT, JPEG/PNG/TIFF/BMP), and poll for structured JSON results; plus a document classification API that predicts a document type per file and can chain into an extraction template. Also exposes the account credit balance (1 credit = 1 page).
+Define extraction templates with typed fields, upload documents (PDF, DOCX, TXT, JPEG/PNG/TIFF/BMP), and poll for structured JSON results; plus a document classification API that predicts a document type per file and can chain into an extraction template. Also exposes the account credit balance (1 credit = 1 page).
 
 | | |
 | --- | --- |

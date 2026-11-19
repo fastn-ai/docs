@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cin7omni.png" alt="Cin7 Omni logo">
 
-Cin7 Omni (api.cin7.com) — cloud inventory, sales, purchasing, and retail management. Wraps the Cin7 Omni REST API v1 (https://api.cin7.com/api/v1). List endpoints use the fields/where/order/page/rows query pattern; POST/PUT bodies are JSON arrays of objects (bulk create/update). HTTP Basic auth with API Username + connection Key. Distinct from Cin7 Core.
+Wraps the Cin7 Omni REST API v1 (https://api.cin7.com/api/v1). List endpoints use the fields/where/order/page/rows query pattern; POST/PUT bodies are JSON arrays of objects (bulk create/update). HTTP Basic auth with API Username + connection Key. Distinct from Cin7 Core.
 
 | | |
 | --- | --- |

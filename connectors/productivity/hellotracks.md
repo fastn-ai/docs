@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hellotracks.png" alt="Hellotracks logo">
 
-Hellotracks field-workforce management: jobs and dispatch, places, zones, members/workers, real-time locate, GPS tracks, forms, reports, API keys and webhooks. Wraps both the Hellotracks REST API (/v1) and the legacy JSON-RPC-style /api surface.
+Wraps both the Hellotracks REST API (/v1) and the legacy JSON-RPC-style /api surface.
 
 | | |
 | --- | --- |

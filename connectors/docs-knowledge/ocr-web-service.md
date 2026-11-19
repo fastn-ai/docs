@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ocr-web-service.png" alt="OCR Web Service logo">
 
-OCR Web Service (OCR.space) converts images and PDFs into machine-readable text. This connector wraps the complete OCR.space OCR API surface — the two endpoints the service exposes, GET /parse/imageurl and POST /parse/image — as typed actions: parse an image or PDF from a public URL, parse a base64-encoded image or PDF, extract tabular layout, and produce a searchable PDF with an embedded text layer. Every documented option is exposed: OCR engine 1/2/3, 28 recognition languages plus auto-detect, word-level text overlay coordinates, orientation detection, image upscaling, table mode and file-type override.
+This connector wraps the complete OCR.space OCR API surface — the two endpoints the service exposes, GET /parse/imageurl and POST /parse/image — as typed actions: parse an image or PDF from a public URL, parse a base64-encoded image or PDF, extract tabular layout, and produce a searchable PDF with an embedded text layer. Every documented option is exposed: OCR engine 1/2/3, 28 recognition languages plus auto-detect, word-level text overlay coordinates, orientation detection, image upscaling, table mode and file-type override.
 
 | | |
 | --- | --- |

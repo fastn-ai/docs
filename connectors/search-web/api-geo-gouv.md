@@ -1,5 +1,5 @@
 ---
-description: "API Géo is the French government's free API for administrative boundaries: search communes by postcode, name or GPS point, and get communes,…"
+description: "Connect API Géo to your product with fastn."
 hidden: true
 ---
 

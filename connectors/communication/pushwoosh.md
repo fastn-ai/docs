@@ -1,5 +1,5 @@
 ---
-description: "Pushwoosh customer engagement platform — send push notifications, emails, and multichannel messages; manage devices, tags, segments, presets, events,…"
+description: "Connect Pushwoosh to your product with fastn."
 hidden: true
 ---
 

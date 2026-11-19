@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gumroad.png" alt="Gumroad logo">
 
-Gumroad is a commerce platform for creators to sell digital products, memberships and subscriptions. This connector covers products, variant categories and variants, offer codes, custom fields, sales, subscribers, licenses, and resource subscriptions (webhooks).
+This connector covers products, variant categories and variants, offer codes, custom fields, sales, subscribers, licenses, and resource subscriptions (webhooks).
 
 | | |
 | --- | --- |

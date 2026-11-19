@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clinical-trials-gov.png" alt="ClinicalTrials.gov logo">
 
-ClinicalTrials.gov (U.S. National Library of Medicine) is the registry of clinical studies run around the world. Its API v2 lets you search studies with rich query and filter options, fetch a study by NCT ID, and read the data model, search areas, enumerations and statistics. No API key needed.
+National Library of Medicine) is the registry of clinical studies run around the world. Its API v2 lets you search studies with rich query and filter options, fetch a study by NCT ID, and read the data model, search areas, enumerations and statistics. No API key needed.
 
 | | |
 | --- | --- |

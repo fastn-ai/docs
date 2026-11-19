@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gorgias.png" alt="Gorgias logo">
 
-Gorgias helpdesk connector: tickets, messages, customers, tags, users, account, and HTTP integration (webhook) management. Subdomain-based (https://{subdomain}.gorgias.com/api). HTTP Basic auth (email + API key) primary.
+Subdomain-based (https://{subdomain}.gorgias.com/api). HTTP Basic auth (email + API key) primary.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/esputnik.png" alt="eSputnik (Yespo) logo">
 
-eSputnik, now branded Yespo, is an omnichannel marketing automation platform for Email, SMS, Web Push, Mobile Push, Viber, Telegram and App Inbox campaigns. This connector wraps the full Yespo REST API v1/v2/v3: contact and segment management, message templates for every channel, broadcasts and transactional sends, orders and behavioural events, promo codes, product feeds, site and web-push domains, account balance and billing history.
+This connector wraps the full Yespo REST API v1/v2/v3: contact and segment management, message templates for every channel, broadcasts and transactional sends, orders and behavioural events, promo codes, product feeds, site and web-push domains, account balance and billing history.
 
 | | |
 | --- | --- |

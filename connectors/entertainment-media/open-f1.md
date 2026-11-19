@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/open-f1.png" alt="OpenF1 logo">
 
-OpenF1 is an open-source Formula 1 data API with telemetry, timing and session data from 2023 onward. Get meetings, sessions, drivers, laps, car telemetry, car locations, intervals, positions, pit stops, stints, overtakes, race control messages, team radio, weather, starting grids, session results and championship standings. Historical data is free with no API key.
+Get meetings, sessions, drivers, laps, car telemetry, car locations, intervals, positions, pit stops, stints, overtakes, race control messages, team radio, weather, starting grids, session results and championship standings. Historical data is free with no API key.
 
 | | |
 | --- | --- |

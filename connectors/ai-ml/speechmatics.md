@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/speechmatics.png" alt="Speechmatics logo">
 
-Speechmatics speech-to-text. Submit pre-recorded audio to the Batch Transcription (ASR) API, poll job status, retrieve transcripts in JSON, plain text or SRT, download the original media, read usage statistics, and administer workspace projects and API keys through the Management API.
+Submit pre-recorded audio to the Batch Transcription (ASR) API, poll job status, retrieve transcripts in JSON, plain text or SRT, download the original media, read usage statistics, and administer workspace projects and API keys through the Management API.
 
 | | |
 | --- | --- |

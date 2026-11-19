@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/trackdesk.png" alt="Trackdesk logo">
 
-Trackdesk affiliate and partner tracking platform. Manage offers, affiliates, conversions, clicks, coupons, tracking links, tiers, tags, advertisers, billing settlements and reporting through the Trackdesk public API.
+Manage offers, affiliates, conversions, clicks, coupons, tracking links, tiers, tags, advertisers, billing settlements and reporting through the Trackdesk public API.
 
 | | |
 | --- | --- |

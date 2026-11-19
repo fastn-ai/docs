@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ortto.png" alt="Ortto logo">
 
-Ortto is an AI-native customer data platform (CDP) and marketing automation tool. This connector covers people/contacts, accounts (organizations), audiences, custom fields, custom activities and definitions, tags, campaigns, transactional email and push, reports, Talk conversations, knowledge base, and business fields via the Ortto public API (ap3api).
+This connector covers people/contacts, accounts (organizations), audiences, custom fields, custom activities and definitions, tags, campaigns, transactional email and push, reports, Talk conversations, knowledge base, and business fields via the Ortto public API (ap3api).
 
 | | |
 | --- | --- |

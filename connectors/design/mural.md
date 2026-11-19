@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mural.png" alt="Mural logo">
 
-Mural visual collaboration API. Manage murals and their content (sticky notes, textboxes, titles, shapes, images, files, comments, areas, arrows and tables), rooms and folders, workspaces, templates, tags, voting sessions, timers, private mode, visitor settings, exports and member permissions.
+Manage murals and their content (sticky notes, textboxes, titles, shapes, images, files, comments, areas, arrows and tables), rooms and folders, workspaces, templates, tags, voting sessions, timers, private mode, visitor settings, exports and member permissions.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "OpenWeatherMap provides current weather, 5-day/3-hour forecasts, city search, air pollution data (current, forecast and history), direct/reverse/ZIP…"
+description: "Connect OpenWeatherMap to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/time-api-io.png" alt="TimeAPI.io logo">
 
-TimeAPI.io is a free time and time zone API. Get the current time as Unix timestamps or in UTC, look up the current time for an IANA time zone, a latitude/longitude or an IP address, list all IANA time zones and get time zone details such as UTC offset and daylight saving periods. No API key needed.
+Get the current time as Unix timestamps or in UTC, look up the current time for an IANA time zone, a latitude/longitude or an IP address, list all IANA time zones and get time zone details such as UTC offset and daylight saving periods. No API key needed.
 
 | | |
 | --- | --- |

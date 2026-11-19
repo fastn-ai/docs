@@ -1,5 +1,5 @@
 ---
-description: "Translate text and documents, detect languages, romanize text, and manage glossaries, custom AutoML models, datasets, Adaptive MT resources and long-running…"
+description: "Connect Google Cloud Translation to your product with fastn."
 hidden: true
 ---
 

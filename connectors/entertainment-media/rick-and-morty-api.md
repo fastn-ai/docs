@@ -1,5 +1,5 @@
 ---
-description: "The Rick and Morty API is a free REST and GraphQL API with every character, location and episode of the Rick and Morty TV show: list with filters and…"
+description: "Connect Rick and Morty API to your product with fastn."
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "Donately is an online fundraising and donation platform for nonprofits, churches and businesses, offering embeddable donation forms, campaign and peer-to-peer…"
+description: "Connect Donately to your product with fastn."
 hidden: true
 ---
 

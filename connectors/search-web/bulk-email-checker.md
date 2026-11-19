@@ -1,5 +1,5 @@
 ---
-description: "Bulk Email Checker is an email verification service that validates email addresses in real time, returning deliverability status, SMTP handshake result,…"
+description: "Connect Bulk Email Checker to your product with fastn."
 hidden: true
 ---
 

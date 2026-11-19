@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nimble.png" alt="Nimble logo">
 
-Nimble CRM connector. Relationship-focused CRM: contacts (person and company records with a rich fields structure), contact custom fields/tabs/groups/choices, contact pipelines and lead transitions, notes, proceedings/activities, deals (v2) with pipelines/stages/fields/groups/tags/files/notes, message drafts, and current-user info. REST API over https://app.nimble.com, Bearer API-key auth.
+Relationship-focused CRM: contacts (person and company records with a rich fields structure), contact custom fields/tabs/groups/choices, contact pipelines and lead transitions, notes, proceedings/activities, deals (v2) with pipelines/stages/fields/groups/tags/files/notes, message drafts, and current-user info. REST API over https://app.nimble.com, Bearer API-key auth.
 
 | | |
 | --- | --- |

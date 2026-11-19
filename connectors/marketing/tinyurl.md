@@ -1,5 +1,5 @@
 ---
-description: "TinyURL is a link-management service for shortening long URLs into branded short links, organising them with aliases and tags, and measuring the clicks they…"
+description: "Connect TinyURL to your product with fastn."
 hidden: true
 ---
 

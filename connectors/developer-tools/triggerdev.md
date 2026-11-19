@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/triggerdev.png" alt="Trigger.dev logo">
 
-Trigger.dev v3 REST/Management API connector. Trigger and manage background task runs, batch triggers, schedules (CRUD + activate/deactivate), environment variables (CRUD + import), and queues (list/retrieve/concurrency override/reset/pause/resume). Base: https://api.trigger.dev. Auth: project-specific Secret API key (tr_...) as Bearer token.
+Trigger and manage background task runs, batch triggers, schedules (CRUD + activate/deactivate), environment variables (CRUD + import), and queues (list/retrieve/concurrency override/reset/pause/resume). Base: https://api.trigger.dev. Auth: project-specific Secret API key (tr_...) as Bearer token.
 
 | | |
 | --- | --- |

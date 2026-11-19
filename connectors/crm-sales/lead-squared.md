@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lead-squared.png" alt="LeadSquared logo">
 
-LeadSquared sales and marketing CRM. Wraps the LeadSquared v2 REST API (apidocs.leadsquared.com): leads and their custom fields, notes, activities and activity types, tasks and appointments, opportunities, static and dynamic lists, users, sales groups, email campaigns and one-off lead emails, and webhook registration. The API host is region-specific (Singapore, US, India Mumbai/Hyderabad, Middle East, Ireland, Canada), so the host is supplied per connection alongside the access key and secret key; credentials are sent on every request as the x-LSQ-AccessKey and x-LSQ-SecretKey headers.
+Wraps the LeadSquared v2 REST API (apidocs.leadsquared.com): leads and their custom fields, notes, activities and activity types, tasks and appointments, opportunities, static and dynamic lists, users, sales groups, email campaigns and one-off lead emails, and webhook registration. The API host is region-specific (Singapore, US, India Mumbai/Hyderabad, Middle East, Ireland, Canada), so the host is supplied per connection alongside the access key and secret key; credentials are sent on every request as the x-LSQ-AccessKey and x-LSQ-SecretKey headers.
 
 | | |
 | --- | --- |

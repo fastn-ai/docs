@@ -1,5 +1,5 @@
 ---
-description: "Snapchat Marketing API connector covering the Ads API (organizations, ad accounts, funding sources, billing centers, members and roles, campaigns, ad squads,…"
+description: "Connect Snapchat Marketing API to your product with fastn."
 hidden: true
 ---
 

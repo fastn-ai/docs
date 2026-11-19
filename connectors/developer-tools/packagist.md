@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/packagist.png" alt="Packagist logo">
 
-Packagist is the main PHP package repository used by Composer. Its free public API lists and searches packages, gets package details, Composer v2 metadata, download stats, dependents, popular packages, the metadata change feed, overall statistics and security advisories. No API key needed for these read endpoints.
+Its free public API lists and searches packages, gets package details, Composer v2 metadata, download stats, dependents, popular packages, the metadata change feed, overall statistics and security advisories. No API key needed for these read endpoints.
 
 | | |
 | --- | --- |

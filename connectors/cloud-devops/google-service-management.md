@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-service-management.png" alt="Google Service Management logo">
 
-Google Service Management API (servicemanagement.googleapis.com v1). List managed API services (Google APIs and your own Cloud Endpoints / API Gateway services), read a service and its active or historical service configurations, and list the Service Management operations (config rollouts, service create/delete) for a service. Authorizes with Google OAuth 2.0 using the scopes service.management.readonly (read services and configs) and service.management (list service operations).
+List managed API services (Google APIs and your own Cloud Endpoints / API Gateway services), read a service and its active or historical service configurations, and list the Service Management operations (config rollouts, service create/delete) for a service. Authorizes with Google OAuth 2.0 using the scopes service.management.readonly (read services and configs) and service.management (list service operations).
 
 | | |
 | --- | --- |

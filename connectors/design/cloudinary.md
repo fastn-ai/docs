@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cloudinary.png" alt="Cloudinary logo">
 
-Cloudinary media management — Admin API and Upload API. Manage assets (resources), folders, transformations, upload presets, usage reporting, and upload/transform media. Auth via HTTP Basic (API key:API secret) scoped to a cloud name.
+Manage assets (resources), folders, transformations, upload presets, usage reporting, and upload/transform media. Auth via HTTP Basic (API key:API secret) scoped to a cloud name.
 
 | | |
 | --- | --- |

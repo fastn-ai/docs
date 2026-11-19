@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-creator.png" alt="Zoho Creator logo">
 
-Zoho Creator is Zoho's low-code application development platform. This connector wraps the Zoho Creator REST API v2.1 (https://www.zohoapis.com/creator/v2.1): Data APIs to fetch, add, update and delete report records; Meta APIs for applications, forms, reports, pages, sections and form fields; File APIs to upload and download file, image, audio, video and signature field content; Bulk APIs for asynchronous large-volume record export; and Publish APIs for records in publicly published forms and reports. All operations are scoped to an account owner name, application link name and form or report link name.
+This connector wraps the Zoho Creator REST API v2.1 (https://www.zohoapis.com/creator/v2.1): Data APIs to fetch, add, update and delete report records; Meta APIs for applications, forms, reports, pages, sections and form fields; File APIs to upload and download file, image, audio, video and signature field content; Bulk APIs for asynchronous large-volume record export; and Publish APIs for records in publicly published forms and reports. All operations are scoped to an account owner name, application link name and form or report link name.
 
 | | |
 | --- | --- |

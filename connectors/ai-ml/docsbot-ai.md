@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docsbot-ai.png" alt="DocsBot AI logo">
 
-DocsBot AI is a documentation-chatbot and AI agent platform. This connector covers the full DocsBot Admin API (teams, team members and invites, bots, sources, source tags, questions, conversations, leads, statistics, reports, deep-research jobs, skills, workspace agent and webhooks) on https://docsbot.ai/api, and the full DocsBot Chat API (chat agent, legacy chat and ask, semantic search, document fetch, answer rating, support escalation, lead capture, conversation summaries and tickets, deep research and voice sessions) on https://api.docsbot.ai.
+This connector covers the full DocsBot Admin API (teams, team members and invites, bots, sources, source tags, questions, conversations, leads, statistics, reports, deep-research jobs, skills, workspace agent and webhooks) on https://docsbot.ai/api, and the full DocsBot Chat API (chat agent, legacy chat and ask, semantic search, document fetch, answer rating, support escalation, lead capture, conversation summaries and tickets, deep research and voice sessions) on https://api.docsbot.ai.
 
 | | |
 | --- | --- |

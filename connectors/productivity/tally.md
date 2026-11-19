@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tally.png" alt="Tally logo">
 
-Tally is an online form builder. This connector wraps the complete Tally REST API (https://api.tally.so): forms and their blocks, questions, submissions, per-form analytics (metrics, visits, submissions, dimensions, drop-off), workspaces and folders, organization users and invites, and webhook subscriptions with their delivery events. Authentication uses a Tally API key sent as a Bearer token, created under Settings &gt; API keys.
+This connector wraps the complete Tally REST API (https://api.tally.so): forms and their blocks, questions, submissions, per-form analytics (metrics, visits, submissions, dimensions, drop-off), workspaces and folders, organization users and invites, and webhook subscriptions with their delivery events. Authentication uses a Tally API key sent as a Bearer token, created under Settings &gt; API keys.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bigmailer.png" alt="BigMailer logo">
 
-BigMailer email marketing platform. Manage brands, contacts, lists, fields, segments, templates, senders, message types, suppression lists, users and bulk/RSS/transactional campaigns via the BigMailer v1 REST API.
+Manage brands, contacts, lists, fields, segments, templates, senders, message types, suppression lists, users and bulk/RSS/transactional campaigns via the BigMailer v1 REST API.
 
 | | |
 | --- | --- |

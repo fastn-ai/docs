@@ -1,5 +1,5 @@
 ---
-description: "Encharge marketing automation — manage people, segments, tags, custom person fields, webhooks (event subscriptions), send transactional emails, and ingest…"
+description: "Connect Encharge to your product with fastn."
 hidden: true
 ---
 

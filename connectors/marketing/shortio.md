@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shortio.png" alt="Short.io logo">
 
-Short.io is a branded link-management platform for creating and tracking short links on your own domains. This connector covers the complete Short.io public API: domains and domain settings, DNS records, allowed hostnames, IP exclusions, themes, favicons, universal links, password pages and S3 exports; links (create, bulk create, update, duplicate, expand, archive, delete), link folders, tags, link permissions, OpenGraph properties, country and region targeting, link bundles and posts; QR code generation and hosted QR codes; organization plan and usage; the audit log; and the full click-statistics API on statistics.short.io (domain and link statistics, top values, interval breakdowns, raw click lists and popular paths).
+This connector covers the complete Short.io public API: domains and domain settings, DNS records, allowed hostnames, IP exclusions, themes, favicons, universal links, password pages and S3 exports; links (create, bulk create, update, duplicate, expand, archive, delete), link folders, tags, link permissions, OpenGraph properties, country and region targeting, link bundles and posts; QR code generation and hosted QR codes; organization plan and usage; the audit log; and the full click-statistics API on statistics.short.io (domain and link statistics, top values, interval breakdowns, raw click lists and popular paths).
 
 | | |
 | --- | --- |

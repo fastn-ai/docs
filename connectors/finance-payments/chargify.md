@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/chargify.png" alt="Chargify (Maxio Advanced Billing) logo">
 
-Chargify, now Maxio Advanced Billing, is a SaaS recurring billing and subscription management platform. This connector covers subscriptions, customers, products, product families, components and metered usage, invoices, payment profiles, coupons, credit notes, events, and webhook subscriptions.
+This connector covers subscriptions, customers, products, product families, components and metered usage, invoices, payment profiles, coupons, credit notes, events, and webhook subscriptions.
 
 | | |
 | --- | --- |

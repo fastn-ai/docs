@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/honeyhive.png" alt="HoneyHive logo">
 
-HoneyHive is an AI observability and evaluation platform for tracing, evaluating and monitoring LLM applications and agents. This connector covers the HoneyHive Data Plane API: sessions and trace events, event search, datasets and datapoints, evaluators (metrics) and metric versions, experiment runs with summaries and comparisons, annotation queues, charts and configurations.
+This connector covers the HoneyHive Data Plane API: sessions and trace events, event search, datasets and datapoints, evaluators (metrics) and metric versions, experiment runs with summaries and comparisons, annotation queues, charts and configurations.
 
 | | |
 | --- | --- |

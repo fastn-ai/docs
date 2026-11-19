@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wikidata.png" alt="Wikidata logo">
 
-Wikidata is the free, collaborative knowledge base of the Wikimedia projects. Its Wikibase REST API reads items, properties and lexemes with their labels, descriptions, aliases, sitelinks and statements (with language fallback), searches and suggests items and properties, and lists property data types. Read access needs no API key; Wikimedia asks for a descriptive User-Agent.
+Its Wikibase REST API reads items, properties and lexemes with their labels, descriptions, aliases, sitelinks and statements (with language fallback), searches and suggests items and properties, and lists property data types. Read access needs no API key; Wikimedia asks for a descriptive User-Agent.
 
 | | |
 | --- | --- |

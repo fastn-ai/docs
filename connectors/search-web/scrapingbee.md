@@ -1,5 +1,5 @@
 ---
-description: "ScrapingBee is a web scraping API that handles headless browser rendering, JavaScript execution, and rotating proxies (including premium/stealth residential…"
+description: "Connect ScrapingBee to your product with fastn."
 hidden: true
 ---
 

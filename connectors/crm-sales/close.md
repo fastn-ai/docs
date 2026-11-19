@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/close.png" alt="Close logo">
 
-Close CRM connector. Full REST coverage of the Close API (https://api.close.com/api/v1): leads, contacts, opportunities, activities (calls/emails/notes/sms/meetings/custom), tasks, comments, users, organizations, memberships, roles, groups, pipelines, lead/opportunity statuses, custom fields, custom objects, smart views, email/SMS templates, sequences, reporting, bulk actions, exports, webhooks and events. Covers both Close and Close.io (same product). Auth: HTTP Basic with the API key as username and an empty password.
+Full REST coverage of the Close API (https://api.close.com/api/v1): leads, contacts, opportunities, activities (calls/emails/notes/sms/meetings/custom), tasks, comments, users, organizations, memberships, roles, groups, pipelines, lead/opportunity statuses, custom fields, custom objects, smart views, email/SMS templates, sequences, reporting, bulk actions, exports, webhooks and events. Covers both Close and Close.io (same product). Auth: HTTP Basic with the API key as username and an empty password.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "arXiv APIs: free, keyless access to 2.5M+ scholarly preprints in physics, mathematics, computer science and more - search papers (Atom XML), harvest metadata…"
+description: "Connect arXiv to your product with fastn."
 hidden: true
 ---
 

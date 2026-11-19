@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/thecocktaildb.png" alt="TheCocktailDB logo">
 
-TheCocktailDB is an open, crowd-sourced database of drinks and cocktails. Search cocktails by name or first letter, look up full recipes, search and look up ingredients, get a random cocktail, filter by ingredient, alcohol, category or glass, and list categories, glasses, ingredients and alcohol filters. Use API key 1 (free developer test key) or your own supporter key.
+Search cocktails by name or first letter, look up full recipes, search and look up ingredients, get a random cocktail, filter by ingredient, alcohol, category or glass, and list categories, glasses, ingredients and alcohol filters. Use API key 1 (free developer test key) or your own supporter key.
 
 | | |
 | --- | --- |

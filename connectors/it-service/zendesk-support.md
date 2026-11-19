@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zendesk-support.png" alt="Zendesk Support logo">
 
-Zendesk Support customer service and ticketing platform. Manage tickets and comments, users and identities, organizations and memberships, groups, ticket fields and forms, macros, views, triggers, automations, SLA policies, satisfaction ratings, requests, brands, tags, ticket audits and metrics, search, file uploads, and webhooks. Base URL is https://{subdomain}.zendesk.com/api/v2.
+Manage tickets and comments, users and identities, organizations and memberships, groups, ticket fields and forms, macros, views, triggers, automations, SLA policies, satisfaction ratings, requests, brands, tags, ticket audits and metrics, search, file uploads, and webhooks. Base URL is https://{subdomain}.zendesk.com/api/v2.
 
 | | |
 | --- | --- |

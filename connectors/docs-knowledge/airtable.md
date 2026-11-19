@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/airtable.png" alt="Airtable logo">
 
-Airtable connector — manage bases, tables, fields, records and webhooks via the Airtable Web API (https://api.airtable.com/v0). Connect with OAuth 2.0 (authorization code + PKCE), or with a Personal Access Token (Bearer).
+Connect with OAuth 2.0 (authorization code + PKCE), or with a Personal Access Token (Bearer).
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "The UK Parliament Commons Votes API gives open data on House of Commons divisions (votes): search divisions by title, date and member, get a division with…"
+description: "Connect UK Parliament Commons Votes API to your product with fastn."
 hidden: true
 ---
 

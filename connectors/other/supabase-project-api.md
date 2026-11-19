@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/supabase-project-api.png" alt="Supabase logo">
 
-Supabase project data-plane API (https://&lt;projectRef&gt;.supabase.co): PostgREST table CRUD + RPC, Storage buckets/objects, and Auth Admin user management. Authenticates with the project reference + secret/service_role key. Management API operations (edge functions, SQL/DDL, project config) live in the separate supabaseManagementApi connector.
+Authenticates with the project reference + secret/service_role key. Management API operations (edge functions, SQL/DDL, project config) live in the separate supabaseManagementApi connector.
 
 | | |
 | --- | --- |

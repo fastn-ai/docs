@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nuclino.png" alt="Nuclino logo">
 
-Nuclino is a unified workspace for team knowledge, docs, and projects. This connector wraps the Nuclino REST API v0 to manage teams, workspaces, items and collections (pages/notes), custom fields, files, and users.
+This connector wraps the Nuclino REST API v0 to manage teams, workspaces, items and collections (pages/notes), custom fields, files, and users.
 
 | | |
 | --- | --- |

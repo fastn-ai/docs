@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/simla-com.png" alt="Simla.com logo">
 
-Simla.com (RetailCRM) is an omnichannel CRM for e-commerce and retail businesses. This connector wraps the Simla.com REST API v5: orders, order payments and packs, customers and corporate customers with notes, addresses, companies and contacts, products, offers, inventories and prices, tasks, costs, files, loyalty programs and accounts, delivery shipments, telephony calls, customer carts and favorites, invoices, custom fields and dictionaries, users and user groups, segments, integration modules, web analytics uploads, and every reference directory (statuses, order types and methods, payment and delivery types, sites, warehouses, couriers, currencies, units and more). Authentication uses an API key sent in the X-API-KEY header against your account host https://your-account.simla.com.
+This connector wraps the Simla.com REST API v5: orders, order payments and packs, customers and corporate customers with notes, addresses, companies and contacts, products, offers, inventories and prices, tasks, costs, files, loyalty programs and accounts, delivery shipments, telephony calls, customer carts and favorites, invoices, custom fields and dictionaries, users and user groups, segments, integration modules, web analytics uploads, and every reference directory (statuses, order types and methods, payment and delivery types, sites, warehouses, couriers, currencies, units and more). Authentication uses an API key sent in the X-API-KEY header against your account host https://your-account.simla.com.
 
 | | |
 | --- | --- |

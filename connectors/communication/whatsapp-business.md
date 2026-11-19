@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/whatsapp-business.png" alt="WhatsApp Business logo">
 
-WhatsApp Business Cloud API via Meta Graph API v23.0 (base https://graph.facebook.com/v23.0). Send messages (text, template, media, interactive, location, contacts, reaction), mark read, manage media, phone numbers, business profile, message templates, registration, and webhook app subscriptions. Auth: Bearer access token (system user / app token). phone_number_id and waba_id are per-request inputs.
+Send messages (text, template, media, interactive, location, contacts, reaction), mark read, manage media, phone numbers, business profile, message templates, registration, and webhook app subscriptions. Auth: Bearer access token (system user / app token). phone_number_id and waba_id are per-request inputs.
 
 | | |
 | --- | --- |

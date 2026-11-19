@@ -1,5 +1,5 @@
 ---
-description: "Google Cloud Agent Registry API (agentregistry.googleapis.com v1), a central catalog for discovering and governing AI agents, MCP servers and endpoints in…"
+description: "Connect Google Agent Registry to your product with fastn."
 hidden: true
 ---
 

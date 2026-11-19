@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/chart-mogul.png" alt="ChartMogul logo">
 
-ChartMogul is a subscription analytics and revenue reporting platform for SaaS businesses. This connector covers the full ChartMogul REST API v1: account details, data sources, customers with custom attributes, tags, contacts and activities, plans and plan groups, invoices and invoice line items, transactions, subscriptions and subscription events, notes and call logs, opportunities, tasks, activities and activity exports, the Import API for pushing billing data, and all key metrics endpoints including MRR, ARR, ARPA, ASP, LTV, customer count and churn rates.
+This connector covers the full ChartMogul REST API v1: account details, data sources, customers with custom attributes, tags, contacts and activities, plans and plan groups, invoices and invoice line items, transactions, subscriptions and subscription events, notes and call logs, opportunities, tasks, activities and activity exports, the Import API for pushing billing data, and all key metrics endpoints including MRR, ARR, ARPA, ASP, LTV, customer count and churn rates.
 
 | | |
 | --- | --- |

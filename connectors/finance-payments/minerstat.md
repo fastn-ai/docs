@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/minerstat.png" alt="Minerstat logo">
 
-Minerstat is a crypto-mining intelligence platform. This connector covers the full Minerstat Data API (v3) plus the legacy v2 contract: mineable coins with live network and market data, coin history snapshots, the hardware catalogue (ASICs, GPUs, CPUs and FPGAs) with manufacturer specs, mining algorithms with their coins and benchmarks, the mining-pool directory with fees and payout schemes, and ranked profitability opportunities.
+This connector covers the full Minerstat Data API (v3) plus the legacy v2 contract: mineable coins with live network and market data, coin history snapshots, the hardware catalogue (ASICs, GPUs, CPUs and FPGAs) with manufacturer specs, mining algorithms with their coins and benchmarks, the mining-pool directory with fees and payout schemes, and ranked profitability opportunities.
 
 | | |
 | --- | --- |

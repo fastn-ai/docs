@@ -1,5 +1,5 @@
 ---
-description: "Snipcart headless e-commerce REST API — manage orders, subscriptions, customers, products, discounts, abandoned carts, custom shipping methods, refunds, order…"
+description: "Connect Snipcart to your product with fastn."
 hidden: true
 ---
 

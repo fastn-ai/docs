@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ninjapipe.png" alt="NinjaPipe logo">
 
-NinjaPipe is an all-in-one CRM for small businesses. This connector wraps the NinjaPipe REST API to manage contacts and contact activities, client portal access, deals, products, projects and tasks, general tasks, orders, budgets and expenses, lists and list members, and workspace members.
+This connector wraps the NinjaPipe REST API to manage contacts and contact activities, client portal access, deals, products, projects and tasks, general tasks, orders, budgets and expenses, lists and list members, and workspace members.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/jotform.png" alt="Jotform logo">
 
-Jotform online form builder API. Manage forms, questions, properties, submissions, reports, folders, webhooks, and account/user data. Auth via APIKEY header.
+Manage forms, questions, properties, submissions, reports, folders, webhooks, and account/user data. Auth via APIKEY header.
 
 | | |
 | --- | --- |

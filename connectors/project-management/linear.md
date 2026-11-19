@@ -1,5 +1,5 @@
 ---
-description: "Linear issue tracking connector (GraphQL API) — issues (CRUD/search/archive), comments, projects & milestones, initiatives, teams, users, labels, cycles,…"
+description: "Connect Linear to your product with fastn."
 hidden: true
 ---
 

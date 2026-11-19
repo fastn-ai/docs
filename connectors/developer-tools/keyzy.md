@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/keyzy.png" alt="KEYZY logo">
 
-KEYZY software licensing platform. Issue, validate, upgrade and revoke licence serial numbers, manage device activations, and register offline dealer licences to customers through the KEYZY v2 REST API.
+Issue, validate, upgrade and revoke licence serial numbers, manage device activations, and register offline dealer licences to customers through the KEYZY v2 REST API.
 
 | | |
 | --- | --- |

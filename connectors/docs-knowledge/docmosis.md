@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docmosis.png" alt="Docmosis logo">
 
-Docmosis Cloud (DWS4) document generation API. Render DOCX/ODT/PDF/RTF/HTML/TXT documents from stored templates and JSON data, manage the template and image libraries, convert files between formats, and read environment, render-queue and render-tag usage statistics.
+Render DOCX/ODT/PDF/RTF/HTML/TXT documents from stored templates and JSON data, manage the template and image libraries, convert files between formats, and read environment, render-queue and render-tag usage statistics.
 
 | | |
 | --- | --- |

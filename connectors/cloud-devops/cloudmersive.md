@@ -1,5 +1,5 @@
 ---
-description: "Cloudmersive is a multi-API platform providing document/data conversion, OCR, data validation, image recognition, virus scanning, NLP, and barcode generation…"
+description: "Connect Cloudmersive to your product with fastn."
 hidden: true
 ---
 

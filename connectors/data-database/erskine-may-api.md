@@ -1,5 +1,5 @@
 ---
-description: "The Erskine May API gives open access to Erskine May, the authoritative guide to UK parliamentary practice: list parts and chapters, read sections and page…"
+description: "Connect Erskine May API to your product with fastn."
 hidden: true
 ---
 

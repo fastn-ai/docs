@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sympla.png" alt="Sympla logo">
 
-Sympla is Brazil's largest event ticketing and registration platform. This connector wraps the Sympla Public API v1.6.0 for event organizers: list and fetch events, list event presentations (sessions), list and fetch orders, list and fetch participants (attendees) by id or ticket number, and perform attendee check-in by participant id, ticket number or QR code.
+This connector wraps the Sympla Public API v1.6.0 for event organizers: list and fetch events, list event presentations (sessions), list and fetch orders, list and fetch participants (attendees) by id or ticket number, and perform attendee check-in by participant id, ticket number or QR code.
 
 | | |
 | --- | --- |

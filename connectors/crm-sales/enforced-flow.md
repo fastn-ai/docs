@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/enforced-flow.png" alt="EnforcedFlow logo">
 
-EnforcedFlow intelligent lead routing and advanced round-robin distribution. Manage round-robin groups, inspect their routing field configuration, list and upsert the agents in a group, and request the next agent the round-robin should assign work to, with MultiSelect, AI-classified, weighted and timezone-aware filtering.
+Manage round-robin groups, inspect their routing field configuration, list and upsert the agents in a group, and request the next agent the round-robin should assign work to, with MultiSelect, AI-classified, weighted and timezone-aware filtering.
 
 | | |
 | --- | --- |

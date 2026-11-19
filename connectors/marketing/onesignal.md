@@ -1,5 +1,5 @@
 ---
-description: "OneSignal customer engagement platform — send push notifications, emails, SMS, and Live Activities; manage users, subscriptions, aliases, segments, templates,…"
+description: "Connect OneSignal to your product with fastn."
 hidden: true
 ---
 

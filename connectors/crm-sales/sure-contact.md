@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sure-contact.png" alt="SureContact logo">
 
-SureContact CRM via MCP — manage contacts, tags, lists, notes, activities, campaigns, forms, sequences, automations and reports in your workspace. Exposes 105 MCP tools.
+Exposes 105 MCP tools.
 
 | | |
 | --- | --- |

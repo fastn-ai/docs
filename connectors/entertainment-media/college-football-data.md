@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/college-football-data.png" alt="College Football Data logo">
 
-CollegeFootballData.com (CFBD) provides historical and advanced college football data. This connector covers the full CFBD REST API: games, box scores, drives, plays, rushing and passing analytics, team and player stats, ratings (SP+, SRS, Elo, FPI), polls, recruiting, rosters, coaches, venues, betting lines, NFL draft, College Football Playoff data, and API usage.
+This connector covers the full CFBD REST API: games, box scores, drives, plays, rushing and passing analytics, team and player stats, ratings (SP+, SRS, Elo, FPI), polls, recruiting, rosters, coaches, venues, betting lines, NFL draft, College Football Playoff data, and API usage.
 
 | | |
 | --- | --- |

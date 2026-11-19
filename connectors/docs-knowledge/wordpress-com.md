@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wordpress-com.png" alt="WordPress.com logo">
 
-WordPress.com is Automattic's hosted WordPress platform. This connector covers the WordPress.com REST API v1.1 at public-api.wordpress.com, which also serves Jetpack-connected self-hosted WordPress sites: posts and pages, media library, comments and comment likes, categories, tags and custom taxonomy terms, navigation menus, widgets, site users and invites, site information and metadata, site and email statistics, followers and post subscribers, Publicize and Keyring social connections, sharing buttons, the Reader, notifications and the authenticated user's account.
+This connector covers the WordPress.com REST API v1.1 at public-api.wordpress.com, which also serves Jetpack-connected self-hosted WordPress sites: posts and pages, media library, comments and comment likes, categories, tags and custom taxonomy terms, navigation menus, widgets, site users and invites, site information and metadata, site and email statistics, followers and post subscribers, Publicize and Keyring social connections, sharing buttons, the Reader, notifications and the authenticated user's account.
 
 | | |
 | --- | --- |

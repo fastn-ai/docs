@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/documenso.png" alt="Documenso logo">
 
-Documenso open-source e-signature platform. Covers the v1 REST API (documents, recipients, fields, templates) and the v2 API (documents, envelopes, folders, templates, attachments, embedding presign tokens).
+Covers the v1 REST API (documents, recipients, fields, templates) and the v2 API (documents, envelopes, folders, templates, attachments, embedding presign tokens).
 
 | | |
 | --- | --- |

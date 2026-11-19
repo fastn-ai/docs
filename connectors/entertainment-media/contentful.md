@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/contentful.png" alt="Contentful logo">
 
-Manage and deliver structured content with Contentful. Covers the Content Management API (spaces, environments, content types, entries, assets, locales, webhooks, roles, API keys, uploads, tags, and content releases) and the Content Delivery API for reading published content.
+Covers the Content Management API (spaces, environments, content types, entries, assets, locales, webhooks, roles, API keys, uploads, tags, and content releases) and the Content Delivery API for reading published content.
 
 | | |
 | --- | --- |

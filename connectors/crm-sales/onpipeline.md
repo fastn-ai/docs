@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/onpipeline.png" alt="Onpipeline logo">
 
-Onpipeline is a sales pipeline CRM. This connector covers the complete Onpipeline REST API: persons (contacts), organizations, deals (including undelete), calendar events, notes, invoices and invoice lines, users, teams, pipelines and stages, products, last-updated records, inbound leads, custom fields, action menu links, widgets, history log entries, call tracking and recording, and webhooks. Every Onpipeline endpoint is a POST with a JSON body, authenticated with a personal API token sent in the Authorization header.
+This connector covers the complete Onpipeline REST API: persons (contacts), organizations, deals (including undelete), calendar events, notes, invoices and invoice lines, users, teams, pipelines and stages, products, last-updated records, inbound leads, custom fields, action menu links, widgets, history log entries, call tracking and recording, and webhooks. Every Onpipeline endpoint is a POST with a JSON body, authenticated with a personal API token sent in the Authorization header.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-crm.png" alt="Zoho CRM logo">
 
-Zoho CRM is a cloud-based CRM platform. Manage leads, contacts, accounts, deals, tasks, events, calls, and notes via the Zoho CRM REST API v8.
+Manage leads, contacts, accounts, deals, tasks, events, calls, and notes via the Zoho CRM REST API v8.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/kontent-ai.png" alt="Kontent.ai logo">
 
-Kontent.ai headless CMS Management API v2 connector. Manage content items, language variants, content types, snippets, taxonomy groups, assets, asset folders and renditions, languages, collections, spaces, workflows, webhooks, roles, and users in a Kontent.ai environment.
+Manage content items, language variants, content types, snippets, taxonomy groups, assets, asset folders and renditions, languages, collections, spaces, workflows, webhooks, roles, and users in a Kontent.ai environment.
 
 | | |
 | --- | --- |

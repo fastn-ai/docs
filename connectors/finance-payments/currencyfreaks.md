@@ -1,5 +1,5 @@
 ---
-description: "CurrencyFreaks provides real-time and historical foreign exchange rates and currency conversion for over 1,000 world currencies and metals, plus IP-based…"
+description: "Connect CurrencyFreaks to your product with fastn."
 hidden: true
 ---
 

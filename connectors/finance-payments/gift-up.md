@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gift-up.png" alt="Gift Up logo">
 
-Gift Up is a gift card and gift certificate platform for small businesses. This connector covers the full Gift Up REST API: gift cards (issue, look up, update, redeem, top up, void, reactivate and transfer balances), orders, catalogue items and groups, promotions, locations, users, transaction reports, checkout, email, gift card, artwork and shipping settings, the Stripe integration, partner account provisioning and webhook subscriptions.
+This connector covers the full Gift Up REST API: gift cards (issue, look up, update, redeem, top up, void, reactivate and transfer balances), orders, catalogue items and groups, promotions, locations, users, transaction reports, checkout, email, gift card, artwork and shipping settings, the Stripe integration, partner account provisioning and webhook subscriptions.
 
 | | |
 | --- | --- |

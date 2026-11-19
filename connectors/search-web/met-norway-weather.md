@@ -1,5 +1,5 @@
 ---
-description: "The Norwegian Meteorological Institute's free Weather API (api.met.no, the data behind Yr): global location forecasts, Nordic nowcasts, ocean and subseasonal…"
+description: "Connect MET Norway Weather API to your product with fastn."
 hidden: true
 ---
 

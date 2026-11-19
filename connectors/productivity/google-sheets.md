@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-sheets.png" alt="Google Sheets logo">
 
-Read, write, and manage Google Sheets spreadsheets via the Sheets API v4. Supports spreadsheet creation, sheet tab management, cell value operations, named ranges, and batch updates.
+Supports spreadsheet creation, sheet tab management, cell value operations, named ranges, and batch updates.
 
 | | |
 | --- | --- |

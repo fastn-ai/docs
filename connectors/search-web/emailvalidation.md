@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/emailvalidation.png" alt="emailvalidation logo">
 
-emailvalidation.io real-time email address validation. Validates a single email address and returns syntax, MX, SMTP, disposable, role, free-provider, catch-all and quality-score signals, plus account quota status. Metered: each validation consumes one credit; /v1/status is free.
+Validates a single email address and returns syntax, MX, SMTP, disposable, role, free-provider, catch-all and quality-score signals, plus account quota status. Metered: each validation consumes one credit; /v1/status is free.
 
 | | |
 | --- | --- |

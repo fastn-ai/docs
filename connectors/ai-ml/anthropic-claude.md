@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/anthropic-claude.png" alt="Anthropic (Claude) logo">
 
-Anthropic Claude API connector. Messages (create, count tokens), Models (list, get), Message Batches (create, list, get, results, cancel, delete), and Files API (upload, list, get, delete, download). Base URL https://api.anthropic.com/v1. API-key auth via x-api-key + anthropic-version header.
+Messages (create, count tokens), Models (list, get), Message Batches (create, list, get, results, cancel, delete), and Files API (upload, list, get, delete, download). Base URL https://api.anthropic.com/v1. API-key auth via x-api-key + anthropic-version header.
 
 | | |
 | --- | --- |

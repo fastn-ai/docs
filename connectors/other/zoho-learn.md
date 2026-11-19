@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-learn.png" alt="Zoho Learn logo">
 
-Zoho Learn is Zoho's knowledge management and online training platform. This connector wraps the Zoho Learn REST API v1 (learn.zoho.com/learn/api/v1): hubs and hub members, spaces and space members, manuals, chapters and articles, article export and search, courses with members, enrollment, completion, ratings and resources, lessons, learner status and discussions, question banks, course and lesson reports, and custom portal administration (invites, users, signup requests, and shared courses and manuals).
+This connector wraps the Zoho Learn REST API v1 (learn.zoho.com/learn/api/v1): hubs and hub members, spaces and space members, manuals, chapters and articles, article export and search, courses with members, enrollment, completion, ratings and resources, lessons, learner status and discussions, question banks, course and lesson reports, and custom portal administration (invites, users, signup requests, and shared courses and manuals).
 
 | | |
 | --- | --- |

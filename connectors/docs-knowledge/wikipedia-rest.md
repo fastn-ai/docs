@@ -1,5 +1,5 @@
 ---
-description: "Wikipedia's REST API (Wikimedia REST v1) for any language edition: page summaries, HTML and mobile HTML, revision metadata, media lists, talk pages, lint…"
+description: "Connect Wikipedia to your product with fastn."
 hidden: true
 ---
 

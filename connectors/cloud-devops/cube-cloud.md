@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cube-cloud.png" alt="Cube Cloud logo">
 
-Cube Cloud is a universal semantic layer that serves governed metrics and data models to BI tools, applications and AI agents. This connector runs analytical queries against a Cube deployment over its REST, SQL and GraphQL data APIs, inspects the deployment's data model, and manages pre-aggregation builds.
+This connector runs analytical queries against a Cube deployment over its REST, SQL and GraphQL data APIs, inspects the deployment's data model, and manages pre-aggregation builds.
 
 | | |
 | --- | --- |

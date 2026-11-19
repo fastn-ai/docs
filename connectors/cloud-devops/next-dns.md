@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/next-dns.png" alt="NextDNS logo">
 
-NextDNS is a cloud DNS firewall that blocks ads, trackers and threats and provides parental controls and DNS analytics. This connector covers the NextDNS API: profiles; security, privacy, parental control and settings (logs, log dropping, block page, performance); denylist, allowlist, security TLDs, privacy blocklists and native trackers, parental control services and categories; DNS rewrites; setup and linked IP; query logs (list, download, clear, stream); and analytics by status, domain, reason, IP, device, protocol, query type, IP version, DNSSEC, encryption and destination, each also as a time series.
+This connector covers the NextDNS API: profiles; security, privacy, parental control and settings (logs, log dropping, block page, performance); denylist, allowlist, security TLDs, privacy blocklists and native trackers, parental control services and categories; DNS rewrites; setup and linked IP; query logs (list, download, clear, stream); and analytics by status, domain, reason, IP, device, protocol, query type, IP version, DNSSEC, encryption and destination, each also as a time series.
 
 | | |
 | --- | --- |

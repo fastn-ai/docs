@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bouncer.png" alt="Bouncer logo">
 
-Bouncer email verification API. Verify the deliverability of a single email address in real time, run large batch verification jobs synchronously or asynchronously, check a domain's MX and catch-all behaviour, screen lists for toxic addresses, and check your remaining verification credits.
+Verify the deliverability of a single email address in real time, run large batch verification jobs synchronously or asynchronously, check a domain's MX and catch-all behaviour, screen lists for toxic addresses, and check your remaining verification credits.
 
 | | |
 | --- | --- |

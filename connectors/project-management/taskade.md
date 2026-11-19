@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/taskade.png" alt="Taskade logo">
 
-Taskade is an AI-native productivity platform for organizing work into workspaces, folders, projects, and tasks, and for building and running AI agents. This connector covers the Taskade Public API (v1): workspaces, folders, projects, project members, blocks, share links, tasks and subtasks (create, update, complete, move, dates, notes, assignees, custom fields), AI agents and their knowledge, conversations, public agents, media, and workspace bundles.
+This connector covers the Taskade Public API (v1): workspaces, folders, projects, project members, blocks, share links, tasks and subtasks (create, update, complete, move, dates, notes, assignees, custom fields), AI agents and their knowledge, conversations, public agents, media, and workspace bundles.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/print-autopilot.png" alt="Print Autopilot logo">
 
-Print Autopilot (printautopilot.com) automatically prints PDF documents on your own remote printers. Send a PDF to a print queue over the REST API and a desktop print client picks it up and prints it on the configured printer and paper size. This connector covers the account/queue API (add a document to a print queue, read the account) and the Print App API used by the desktop client (register printers, poll pending print jobs, report results, check client version). Billing is pay-as-you-go per printed document.
+Send a PDF to a print queue over the REST API and a desktop print client picks it up and prints it on the configured printer and paper size. This connector covers the account/queue API (add a document to a print queue, read the account) and the Print App API used by the desktop client (register printers, poll pending print jobs, report results, check client version). Billing is pay-as-you-go per printed document.
 
 | | |
 | --- | --- |

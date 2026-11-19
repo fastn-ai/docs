@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pipedream.png" alt="Pipedream logo">
 
-Pipedream is a workflow automation and integration platform for developers. This connector covers the Pipedream REST API v1: users, workspaces, apps in the integration registry, components, deployed event sources and their events, event subscriptions, webhooks, workflows and workspace OAuth tokens.
+This connector covers the Pipedream REST API v1: users, workspaces, apps in the integration registry, components, deployed event sources and their events, event subscriptions, webhooks, workflows and workspace OAuth tokens.
 
 | | |
 | --- | --- |

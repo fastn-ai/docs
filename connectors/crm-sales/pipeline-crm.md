@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pipeline-crm.png" alt="Pipeline CRM logo">
 
-Pipeline CRM (formerly PipelineDeals) is a sales CRM for small and mid-sized teams. This connector wraps the Pipeline API v3 to manage deals, people, companies, activities, calendar entries, files, projects and milestones, saved searches, account notifications, admin settings such as stages, custom fields, tags, users and teams, and webhook subscriptions.
+This connector wraps the Pipeline API v3 to manage deals, people, companies, activities, calendar entries, files, projects and milestones, saved searches, account notifications, admin settings such as stages, custom fields, tags, users and teams, and webhook subscriptions.
 
 | | |
 | --- | --- |

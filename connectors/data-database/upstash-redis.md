@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/upstash-redis.png" alt="Upstash Redis logo">
 
-Serverless Redis by Upstash. Run Redis commands over HTTP against your database's REST endpoint (strings, hashes, lists, sets, sorted sets, keys, pub/sub, pipelines and transactions), and manage your Upstash account's Redis databases (create, list, rename, delete, reset password, and view usage stats) via the Developer API.
+Run Redis commands over HTTP against your database's REST endpoint (strings, hashes, lists, sets, sorted sets, keys, pub/sub, pipelines and transactions), and manage your Upstash account's Redis databases (create, list, rename, delete, reset password, and view usage stats) via the Developer API.
 
 | | |
 | --- | --- |

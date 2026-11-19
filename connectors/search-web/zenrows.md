@@ -1,5 +1,5 @@
 ---
-description: "ZenRows web scraping platform: the Fetch universal scraper API (JS rendering, premium residential proxies, screenshots, markdown/plaintext/PDF output, CSS and…"
+description: "Connect ZenRows to your product with fastn."
 hidden: true
 ---
 

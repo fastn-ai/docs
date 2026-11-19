@@ -1,5 +1,5 @@
 ---
-description: "DocsAutomator document automation API: generate PDFs and Google Docs from Google Docs / Word / PDF templates, manage automations, inspect template…"
+description: "Connect DocsAutomator to your product with fastn."
 hidden: true
 ---
 

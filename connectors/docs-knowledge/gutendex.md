@@ -1,5 +1,5 @@
 ---
-description: "Gutendex is a free, keyless JSON API for Project Gutenberg ebook metadata: search 70,000+ public-domain books by title, author, topic, language, author…"
+description: "Connect Gutendex to your product with fastn."
 hidden: true
 ---
 

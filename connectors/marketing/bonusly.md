@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bonusly.png" alt="Bonusly logo">
 
-Bonusly employee recognition and rewards platform. Covers the Bonusly REST API v1 (bonuses, users, achievements, redemptions, custom reward redemptions and company settings), the public API (awards, file uploads, profile settings and the analytics data warehouse with its snapshot exports) and SCIM user provisioning. Authenticates with a Bonusly personal access token sent as a Bearer token. Bonusly publishes no webhook or event API, so this connector has no event configuration and no bindable triggers; poll the list endpoints or the analytics datasets instead.
+Covers the Bonusly REST API v1 (bonuses, users, achievements, redemptions, custom reward redemptions and company settings), the public API (awards, file uploads, profile settings and the analytics data warehouse with its snapshot exports) and SCIM user provisioning. Authenticates with a Bonusly personal access token sent as a Bearer token. Bonusly publishes no webhook or event API, so this connector has no event configuration and no bindable triggers; poll the list endpoints or the analytics datasets instead.
 
 | | |
 | --- | --- |

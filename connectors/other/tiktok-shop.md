@@ -1,5 +1,5 @@
 ---
-description: "TikTok Shop Open API connector — products, orders, fulfillment, logistics, returns/refunds, finance, promotions, analytics, customer service, FBT, affiliate,…"
+description: "Connect TikTok Shop to your product with fastn."
 hidden: true
 ---
 

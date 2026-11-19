@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/viral-loops.png" alt="Viral Loops logo">
 
-Viral Loops referral-marketing platform. Covers the full Backend API v3: campaign stats and campaign configuration, participant registration/edit/search/query/flag/convert, participant data, rank, order, referrals and referrer, pending and given rewards and reward redemption, plus the undocumented participant count, participant delete and campaign list routes. Participant records are personal data.
+Covers the full Backend API v3: campaign stats and campaign configuration, participant registration/edit/search/query/flag/convert, participant data, rank, order, referrals and referrer, pending and given rewards and reward redemption, plus the undocumented participant count, participant delete and campaign list routes. Participant records are personal data.
 
 | | |
 | --- | --- |

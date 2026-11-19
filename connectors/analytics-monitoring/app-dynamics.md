@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/app-dynamics.png" alt="AppDynamics logo">
 
-Cisco AppDynamics (Splunk AppDynamics) Controller REST API — full-stack application performance monitoring. Manage business applications, tiers, nodes, business transactions, metrics, transaction snapshots, health rules, policies, actions, schedules, action suppressions, events and health rule violations, custom dashboards, controller configuration, licensing, and role-based access control (users, groups, roles).
+Manage business applications, tiers, nodes, business transactions, metrics, transaction snapshots, health rules, policies, actions, schedules, action suppressions, events and health rule violations, custom dashboards, controller configuration, licensing, and role-based access control (users, groups, roles).
 
 | | |
 | --- | --- |

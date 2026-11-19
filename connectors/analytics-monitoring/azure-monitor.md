@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-monitor.png" alt="Azure Monitor logo">
 
-Azure Monitor over the Microsoft.Insights Azure Resource Manager API at https://management.azure.com. Read platform metrics, metric definitions and metric namespaces for any Azure resource, query subscription and tenant activity logs and event categories, and manage the alerting and collection surface - action groups, metric alert rules and their status, activity log alert rules, scheduled query (log search) alert rules, autoscale settings, diagnostic settings and diagnostic setting categories, log profiles, and data collection rules, endpoints and associations. Also runs Log Analytics KQL queries through the ARM proxy endpoint. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights such as Monitoring Reader or Monitoring Contributor on the target scope.
+Read platform metrics, metric definitions and metric namespaces for any Azure resource, query subscription and tenant activity logs and event categories, and manage the alerting and collection surface - action groups, metric alert rules and their status, activity log alert rules, scheduled query (log search) alert rules, autoscale settings, diagnostic settings and diagnostic setting categories, log profiles, and data collection rules, endpoints and associations. Also runs Log Analytics KQL queries through the ARM proxy endpoint. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights such as Monitoring Reader or Monitoring Contributor on the target scope.
 
 | | |
 | --- | --- |

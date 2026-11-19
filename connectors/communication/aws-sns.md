@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aws-sns.png" alt="AWS Simple Notification Service logo">
 
-Amazon Simple Notification Service (SNS) Query API. Create and manage topics and their subscriptions, publish messages to topics, phone numbers and mobile endpoints, manage topic and subscription attributes, tags and access policies, and administer SMS settings, the SMS sandbox and mobile push platform applications and endpoints. Requests are signed with AWS Signature Version 4 using the access key pair on the connection.
+Create and manage topics and their subscriptions, publish messages to topics, phone numbers and mobile endpoints, manage topic and subscription attributes, tags and access policies, and administer SMS settings, the SMS sandbox and mobile push platform applications and endpoints. Requests are signed with AWS Signature Version 4 using the access key pair on the connection.
 
 | | |
 | --- | --- |

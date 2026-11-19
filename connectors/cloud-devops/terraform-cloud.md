@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/terraform-cloud.png" alt="Terraform Cloud logo">
 
-HashiCorp HCP Terraform (Terraform Cloud) API v2. Manage organizations, workspaces, projects, runs, plans, applies, configuration versions, state versions, variables, variable sets, teams, policies, registry modules, SSH keys, notifications, run triggers, agent pools, VCS OAuth clients, and memberships. Uses the JSON:API format.
+Manage organizations, workspaces, projects, runs, plans, applies, configuration versions, state versions, variables, variable sets, teams, policies, registry modules, SSH keys, notifications, run triggers, agent pools, VCS OAuth clients, and memberships. Uses the JSON:API format.
 
 | | |
 | --- | --- |

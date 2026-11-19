@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-pub-sub.png" alt="Google Cloud Pub/Sub logo">
 
-Google Cloud Pub/Sub REST API v1 connector (https://pubsub.googleapis.com/v1). Manage topics (create, get, list, patch, delete, publish messages, list attached subscriptions and snapshots, IAM policy), subscriptions (create, get, list, patch, delete, pull, acknowledge, modify ack deadline, modify push config, seek, detach, IAM policy), snapshots (create, get, list, patch, delete, IAM policy), and schemas (create, get, list, list revisions, commit, rollback, delete revision, delete, validate, validate message, IAM policy). Resource names are project-scoped (projects/{project}/topics/{topic}, etc.). OAuth 2.0 (Google) authorization-code auth with the single scope https://www.googleapis.com/auth/pubsub.
+Manage topics (create, get, list, patch, delete, publish messages, list attached subscriptions and snapshots, IAM policy), subscriptions (create, get, list, patch, delete, pull, acknowledge, modify ack deadline, modify push config, seek, detach, IAM policy), snapshots (create, get, list, patch, delete, IAM policy), and schemas (create, get, list, list revisions, commit, rollback, delete revision, delete, validate, validate message, IAM policy). Resource names are project-scoped (projects/{project}/topics/{topic}, etc.). OAuth 2.0 (Google) authorization-code auth with the single scope https://www.googleapis.com/auth/pubsub.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rootly.png" alt="Rootly logo">
 
-Rootly incident management and on-call platform. Covers incidents, alerts, severities, teams, services, functionalities, environments, incident types, action items, retrospectives/post-mortems, workflows, schedules, escalation policies, on-call, catalogs, status pages and webhooks via the Rootly JSON:API v1 REST API.
+Covers incidents, alerts, severities, teams, services, functionalities, environments, incident types, action items, retrospectives/post-mortems, workflows, schedules, escalation policies, on-call, catalogs, status pages and webhooks via the Rootly JSON:API v1 REST API.
 
 | | |
 | --- | --- |

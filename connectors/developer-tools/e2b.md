@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/e2b.png" alt="E2B logo">
 
-E2B provides secure cloud sandboxes (isolated Linux VMs) for AI agents and code execution. This connector covers the full E2B public API: sandbox lifecycle (create, list, get, connect, pause, resume, fork, timeout, refresh, network, kill), sandbox logs and metrics, snapshots, templates and builds, tags, volumes, team metrics, project secrets, the in-sandbox envd API (health, stats, environment, file download and upload, filesystem operations, process control) and sandbox lifecycle events with webhook management.
+This connector covers the full E2B public API: sandbox lifecycle (create, list, get, connect, pause, resume, fork, timeout, refresh, network, kill), sandbox logs and metrics, snapshots, templates and builds, tags, volumes, team metrics, project secrets, the in-sandbox envd API (health, stats, environment, file download and upload, filesystem operations, process control) and sandbox lifecycle events with webhook management.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pushinator.png" alt="Pushinator logo">
 
-Pushinator push notifications. Covers the public REST API (api.pushinator.com/api/v2 — send notifications, manage channels, current user) and the full console API (api.pushinator.com/api/console/v2 — channels, subscribers, notification drafts/history/deliveries, API tokens, inbound channel webhooks, domain-uptime alerts, Polymarket price alerts, plans and account).
+Covers the public REST API (api.pushinator.com/api/v2 — send notifications, manage channels, current user) and the full console API (api.pushinator.com/api/console/v2 — channels, subscribers, notification drafts/history/deliveries, API tokens, inbound channel webhooks, domain-uptime alerts, Polymarket price alerts, plans and account).
 
 | | |
 | --- | --- |

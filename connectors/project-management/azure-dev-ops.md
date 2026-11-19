@@ -1,5 +1,5 @@
 ---
-description: "Azure DevOps — accounts and profile, projects, Git repositories, branches/refs, repository items (content) and commit changes, via the Azure DevOps REST API…"
+description: "Connect Azure DevOps to your product with fastn."
 hidden: true
 ---
 

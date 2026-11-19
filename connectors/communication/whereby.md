@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/whereby.png" alt="Whereby logo">
 
-Whereby Embedded is a video meeting API for embedding branded video rooms into your product. Create and manage transient meeting rooms, retrieve cloud recordings, transcriptions and AI summaries with time-limited access links, customize room branding, and query quality and usage insights for rooms, sessions and participants.
+Create and manage transient meeting rooms, retrieve cloud recordings, transcriptions and AI summaries with time-limited access links, customize room branding, and query quality and usage insights for rooms, sessions and participants.
 
 | | |
 | --- | --- |

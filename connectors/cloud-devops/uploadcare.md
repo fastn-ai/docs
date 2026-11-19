@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uploadcare.png" alt="Uploadcare logo">
 
-Uploadcare file uploading, storage, CDN delivery, and processing platform. Manage files, groups, file metadata, webhooks, document and video conversion, and AI add-ons (AWS Rekognition, virus scanning, background removal) via the Uploadcare REST API v0.7, plus uploading via the Upload API.
+Manage files, groups, file metadata, webhooks, document and video conversion, and AI add-ons (AWS Rekognition, virus scanning, background removal) via the Uploadcare REST API v0.7, plus uploading via the Upload API.
 
 | | |
 | --- | --- |

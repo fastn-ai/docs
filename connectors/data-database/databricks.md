@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/databricks.png" alt="Databricks logo">
 
-Databricks is a unified data intelligence platform for data engineering, analytics, machine learning and AI. This connector covers the Databricks workspace REST API: clusters and cluster policies, instance pools, libraries, jobs and job runs, Lakeflow Declarative Pipelines, SQL warehouses, queries, alerts, dashboards and statement execution, Unity Catalog (metastores, catalogs, schemas, tables, volumes, functions, models, grants, credentials, external locations and connections), the workspace file tree, DBFS and the Files API, Git folders and Git credentials, secrets, SCIM users, groups and service principals, object permissions, model serving endpoints, MLflow experiments and runs, Vector Search, Delta Sharing, Databricks Apps, AI/BI dashboards and Genie spaces, personal access tokens and workspace settings.
+This connector covers the Databricks workspace REST API: clusters and cluster policies, instance pools, libraries, jobs and job runs, Lakeflow Declarative Pipelines, SQL warehouses, queries, alerts, dashboards and statement execution, Unity Catalog (metastores, catalogs, schemas, tables, volumes, functions, models, grants, credentials, external locations and connections), the workspace file tree, DBFS and the Files API, Git folders and Git credentials, secrets, SCIM users, groups and service principals, object permissions, model serving endpoints, MLflow experiments and runs, Vector Search, Delta Sharing, Databricks Apps, AI/BI dashboards and Genie spaces, personal access tokens and workspace settings.
 
 | | |
 | --- | --- |

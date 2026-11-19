@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/happyscribe.png" alt="HappyScribe logo">
 
-HappyScribe transcription, subtitling and translation platform. Submit media for automatic or human transcription, manage transcriptions, folders, glossaries and style guides, export transcripts to 20+ formats, order translations, dispatch an AI notetaker to Zoom/Google Meet/Microsoft Teams calls, and manage workspace members. Wraps the HappyScribe REST API v1 at https://www.happyscribe.com/api/v1.
+Submit media for automatic or human transcription, manage transcriptions, folders, glossaries and style guides, export transcripts to 20+ formats, order translations, dispatch an AI notetaker to Zoom/Google Meet/Microsoft Teams calls, and manage workspace members. Wraps the HappyScribe REST API v1 at https://www.happyscribe.com/api/v1.
 
 | | |
 | --- | --- |

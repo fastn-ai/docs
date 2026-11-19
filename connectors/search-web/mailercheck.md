@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailercheck.png" alt="MailerCheck logo">
 
-MailerCheck email verification API. Verify single emails in real time or asynchronously, manage verification lists, run list verification, read results, and read account/credit/user information. Auth is a Bearer API token created in the MailerCheck UI (profile &gt; API &gt; Create token).
+Verify single emails in real time or asynchronously, manage verification lists, run list verification, read results, and read account/credit/user information. Auth is a Bearer API token created in the MailerCheck UI (profile &gt; API &gt; Create token).
 
 | | |
 | --- | --- |

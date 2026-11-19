@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/opnform.png" alt="OpnForm logo">
 
-OpnForm is an open-source form builder. This connector wraps the OpnForm Cloud REST API (https://api.opnform.com) covering forms, form submissions, form integrations (including outgoing webhooks), workspaces, workspace users and invites, form templates, public form viewing and answering, AI form generation and platform content endpoints.
+This connector wraps the OpnForm Cloud REST API (https://api.opnform.com) covering forms, form submissions, form integrations (including outgoing webhooks), workspaces, workspace users and invites, form templates, public form viewing and answering, AI form generation and platform content endpoints.
 
 | | |
 | --- | --- |

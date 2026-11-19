@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/big-data-cloud.png" alt="BigDataCloud logo">
 
-BigDataCloud provides location intelligence APIs. This connector covers the server-side BigDataCloud REST APIs on api-bdc.net: IP geolocation with confidence areas and hazard reports, country, time zone and user-agent lookups, user risk, reverse geocoding, phone number and email verification, and network engineering data (ASN details and peers, BGP prefixes, networks by CIDR, IPv4 address space, Tor exit nodes, ASN rankings), plus GraphQL queries for each API package.
+This connector covers the server-side BigDataCloud REST APIs on api-bdc.net: IP geolocation with confidence areas and hazard reports, country, time zone and user-agent lookups, user risk, reverse geocoding, phone number and email verification, and network engineering data (ASN details and peers, BGP prefixes, networks by CIDR, IPv4 address space, Tor exit nodes, ASN rankings), plus GraphQL queries for each API package.
 
 | | |
 | --- | --- |

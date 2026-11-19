@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/softr.png" alt="Softr logo">
 
-Softr no-code app builder API. Covers the Softr Database API for databases, tables, table views, table fields and records including search, and the Softr application user API for creating, deleting, activating, deactivating, inviting and syncing users of a published application, generating magic links and validating user authentication tokens. Authenticates with a Softr workspace personal access token sent in the Softr-Api-Key header; user endpoints additionally target a published application through the Softr-Domain header.
+Covers the Softr Database API for databases, tables, table views, table fields and records including search, and the Softr application user API for creating, deleting, activating, deactivating, inviting and syncing users of a published application, generating magic links and validating user authentication tokens. Authenticates with a Softr workspace personal access token sent in the Softr-Api-Key header; user endpoints additionally target a published application through the Softr-Domain header.
 
 | | |
 | --- | --- |

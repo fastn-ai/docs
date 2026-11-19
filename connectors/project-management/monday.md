@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/monday.png" alt="Monday.com logo">
 
-Monday.com Work OS GraphQL API connector. Single endpoint https://api.monday.com/v2 (all POST). Manage boards, groups, items, subitems, columns, updates, users, teams, workspaces, tags, docs, notifications and webhooks.
+Single endpoint https://api.monday.com/v2 (all POST). Manage boards, groups, items, subitems, columns, updates, users, teams, workspaces, tags, docs, notifications and webhooks.
 
 | | |
 | --- | --- |

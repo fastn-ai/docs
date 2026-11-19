@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nuget.png" alt="NuGet logo">
 
-NuGet is the package manager for .NET. The free public NuGet V3 API on nuget.org searches and autocompletes packages, gets registration metadata, version lists, .nuspec manifests and readmes, reads the catalog of package changes and the vulnerability database, and lists the repository signing certificates. No API key needed for these read endpoints.
+The free public NuGet V3 API on nuget.org searches and autocompletes packages, gets registration metadata, version lists, .nuspec manifests and readmes, reads the catalog of package changes and the vulnerability database, and lists the repository signing certificates. No API key needed for these read endpoints.
 
 | | |
 | --- | --- |

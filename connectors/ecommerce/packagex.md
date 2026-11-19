@@ -1,5 +1,5 @@
 ---
-description: "PackageX is a logistics operations platform providing package and mail tracking, mailroom management, shipping label generation, carrier rate shopping,…"
+description: "Connect PackageX to your product with fastn."
 hidden: true
 ---
 

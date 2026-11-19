@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/looker.png" alt="Looker logo">
 
-Looker (Google Cloud) BI platform — Looker API 4.0. Manage Looks, Dashboards, Queries, Folders, Users, Groups, Roles, database Connections, LookML models/projects, Content favorites, Scheduled plans, Render tasks, and Alerts. Auth: API3 credentials (client_id + client_secret) exchanged at POST /login for a short-lived access_token, then sent as 'Authorization: token &lt;access_token&gt;'. Base host is the per-instance API URL, e.g. https://&lt;instance&gt;.cloud.looker.com:19999/api/4.0
+Manage Looks, Dashboards, Queries, Folders, Users, Groups, Roles, database Connections, LookML models/projects, Content favorites, Scheduled plans, Render tasks, and Alerts. Auth: API3 credentials (client_id + client_secret) exchanged at POST /login for a short-lived access_token, then sent as 'Authorization: token &lt;access_token&gt;'. Base host is the per-instance API URL, e.g. https://&lt;instance&gt;.cloud.looker.com:19999/api/4.0
 
 | | |
 | --- | --- |

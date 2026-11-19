@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/instatus.png" alt="Instatus logo">
 
-Instatus status pages, uptime monitoring and incident communication. Manage status pages, workspaces, components, incidents and incident updates, scheduled maintenances, templates, general notices, outages, uptime metrics, audience groups, subscribers, teammates, HTTP and cron monitors, monitor alerts and groups, routing rules, escalation policies, on-call schedules and monitoring integrations.
+Manage status pages, workspaces, components, incidents and incident updates, scheduled maintenances, templates, general notices, outages, uptime metrics, audience groups, subscribers, teammates, HTTP and cron monitors, monitor alerts and groups, routing rules, escalation policies, on-call schedules and monitoring integrations.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cohere.png" alt="Cohere logo">
 
-Cohere AI platform connector (api.cohere.com). Full coverage of v2 chat, embed, rerank and v1 classify, tokenize/detokenize, models, datasets, embed-jobs, and check-api-key. Cheapest chat model: command-r7b-12-2024.
+Full coverage of v2 chat, embed, rerank and v1 classify, tokenize/detokenize, models, datasets, embed-jobs, and check-api-key. Cheapest chat model: command-r7b-12-2024.
 
 | | |
 | --- | --- |

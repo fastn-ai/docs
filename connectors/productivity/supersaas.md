@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/supersaas.png" alt="SuperSaaS logo">
 
-SuperSaaS is an online appointment scheduling and booking platform. This connector wraps the SuperSaaS REST API at https://www.supersaas.com/api: the user database (create, read, update and delete users, with groups and the account field list), schedules and form definitions, submitted form data, promotional coupon codes, resources and services, appointments (bookings, recent changes, date-range listing, per-user agenda and availability), and the REST-hooks webhook subscriptions that drive SuperSaaS event notifications.
+This connector wraps the SuperSaaS REST API at https://www.supersaas.com/api: the user database (create, read, update and delete users, with groups and the account field list), schedules and form definitions, submitted form data, promotional coupon codes, resources and services, appointments (bookings, recent changes, date-range listing, per-user agenda and availability), and the REST-hooks webhook subscriptions that drive SuperSaaS event notifications.
 
 | | |
 | --- | --- |

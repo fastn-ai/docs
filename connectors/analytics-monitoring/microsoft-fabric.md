@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-fabric.png" alt="Microsoft Fabric logo">
 
-Microsoft Fabric and Power BI analytics management. Spans two Microsoft APIs behind one Entra ID OAuth 2.0 connection: the Power BI REST API (https://api.powerbi.com/v1.0/myorg) for workspaces (groups), semantic models (datasets), push-dataset tables and rows, and embed tokens; and the Fabric REST API (https://api.fabric.microsoft.com/v1) for eventhouses, KQL databases and the long-running operation status of their creation. KQL queries are executed directly against the Kusto query service URI returned by the eventhouse or KQL database. Eventhouse and KQL database creation require the workspace to sit on a supported Fabric capacity.
+Spans two Microsoft APIs behind one Entra ID OAuth 2.0 connection: the Power BI REST API (https://api.powerbi.com/v1.0/myorg) for workspaces (groups), semantic models (datasets), push-dataset tables and rows, and embed tokens; and the Fabric REST API (https://api.fabric.microsoft.com/v1) for eventhouses, KQL databases and the long-running operation status of their creation. KQL queries are executed directly against the Kusto query service URI returned by the eventhouse or KQL database. Eventhouse and KQL database creation require the workspace to sit on a supported Fabric capacity.
 
 | | |
 | --- | --- |

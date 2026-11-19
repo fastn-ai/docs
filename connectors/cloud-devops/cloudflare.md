@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cloudflare.png" alt="Cloudflare logo">
 
-Cloudflare API v4 (base https://api.cloudflare.com/client/v4). Manage accounts, zones (CRUD + cache purge + settings), DNS records, page rules, Workers scripts, Workers KV namespaces and values, and notification webhook destinations/policies. Auth: Bearer API token. Responses use the standard {success, errors, messages, result, result_info} envelope.
+Manage accounts, zones (CRUD + cache purge + settings), DNS records, page rules, Workers scripts, Workers KV namespaces and values, and notification webhook destinations/policies. Auth: Bearer API token. Responses use the standard {success, errors, messages, result, result_info} envelope.
 
 | | |
 | --- | --- |

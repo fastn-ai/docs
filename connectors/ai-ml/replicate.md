@@ -1,5 +1,5 @@
 ---
-description: "Replicate HTTP API (https://api.replicate.com/v1) — run ML models via predictions, manage models/versions, deployments, trainings, collections, hardware,…"
+description: "Connect Replicate to your product with fastn."
 hidden: true
 ---
 

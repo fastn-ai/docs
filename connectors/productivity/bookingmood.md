@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bookingmood.png" alt="Bookingmood logo">
 
-Bookingmood vacation-rental and booking management API (PostgREST v11.1 at https://api.bookingmood.com/v1). Manage products, bookings, calendar events, guests/contacts, coupons, rates, availability, invoices, payments, tasks, sites, widgets and webhooks.
+Manage products, bookings, calendar events, guests/contacts, coupons, rates, availability, invoices, payments, tasks, sites, widgets and webhooks.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Microsoft OneDrive via Microsoft Graph v1.0 — drives, driveItems (upload, download, list children, move, copy, delete, search), file versions, thumbnails,…"
+description: "Connect Microsoft OneDrive to your product with fastn."
 hidden: true
 ---
 

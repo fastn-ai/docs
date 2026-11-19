@@ -1,5 +1,5 @@
 ---
-description: "Deepgram voice AI platform: speech-to-text transcription (listen), text-to-speech (speak), text intelligence (read), and full management API (projects, keys,…"
+description: "Connect Deepgram to your product with fastn."
 hidden: true
 ---
 

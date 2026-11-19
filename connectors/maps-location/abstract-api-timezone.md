@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI Time, Date, and Timezone returns the current time and timezone for a location name, coordinates, or IP address, and converts a date and time from…"
+description: "Connect AbstractAPI Timezone to your product with fastn."
 hidden: true
 ---
 

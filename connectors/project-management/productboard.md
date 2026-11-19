@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/productboard.png" alt="Productboard logo">
 
-Productboard is a product management platform for capturing customer feedback, prioritizing features, and building product roadmaps. This connector covers the Productboard REST API v2: notes (customer feedback) with search and relationships; the unified Entities API for products, components, features, subfeatures, initiatives, objectives, key results, releases, release groups, companies, and users (including configuration discovery, relationships, and select-field values); members and member activity; teams and team membership; Jira integrations; plugin (push) integrations and their connections; and webhook subscriptions.
+This connector covers the Productboard REST API v2: notes (customer feedback) with search and relationships; the unified Entities API for products, components, features, subfeatures, initiatives, objectives, key results, releases, release groups, companies, and users (including configuration discovery, relationships, and select-field values); members and member activity; teams and team membership; Jira integrations; plugin (push) integrations and their connections; and webhook subscriptions.
 
 | | |
 | --- | --- |

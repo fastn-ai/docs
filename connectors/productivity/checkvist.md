@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/checkvist.png" alt="Checkvist logo">
 
-Checkvist is an online outliner and hierarchical task/list manager. This connector covers checklists, list items (tasks), notes/comments, tags, list export (6 formats), import, repeating tasks, status changes, collaborators and account info against https://checkvist.com. Authentication uses HTTP Basic with the account email and the Remote API key from the Checkvist profile page (an account password also works). Checkvist also supports OAuth 2.0 (authorization_code + PKCE) for its MCP server; those tokens also work on the REST API but require a Checkvist PRO plan.
+This connector covers checklists, list items (tasks), notes/comments, tags, list export (6 formats), import, repeating tasks, status changes, collaborators and account info against https://checkvist.com. Authentication uses HTTP Basic with the account email and the Remote API key from the Checkvist profile page (an account password also works). Checkvist also supports OAuth 2.0 (authorization_code + PKCE) for its MCP server; those tokens also work on the REST API but require a Checkvist PRO plan.
 
 | | |
 | --- | --- |

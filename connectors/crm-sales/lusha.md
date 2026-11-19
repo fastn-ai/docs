@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lusha.png" alt="Lusha logo">
 
-Lusha B2B sales intelligence API (V3). Search, enrich, and prospect contacts and companies; AI lookalikes; real-time buying signals; decision makers; website-visit intent; prospecting/signal filter discovery; account usage/credits; and webhook subscription management for signal notifications. Base https://api.lusha.com, API key in the api_key header.
+Search, enrich, and prospect contacts and companies; AI lookalikes; real-time buying signals; decision makers; website-visit intent; prospecting/signal filter discovery; account usage/credits; and webhook subscription management for signal notifications. Base https://api.lusha.com, API key in the api_key header.
 
 | | |
 | --- | --- |

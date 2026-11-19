@@ -1,5 +1,5 @@
 ---
-description: "OSRM (Open Source Routing Machine) computes routes on OpenStreetMap data: fastest routes, nearest road snapping, distance/duration tables, GPS map matching,…"
+description: "Connect OSRM to your product with fastn."
 hidden: true
 ---
 

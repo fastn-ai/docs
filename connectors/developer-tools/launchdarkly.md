@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/launchdarkly.png" alt="LaunchDarkly logo">
 
-LaunchDarkly feature management platform. Wraps the LaunchDarkly REST API v2: projects, environments, feature flags, segments, metrics, experiments, teams, account members, custom roles, access tokens, webhooks, audit log, code references, contexts, approvals, scheduled changes, workflows and AI Configs.
+Wraps the LaunchDarkly REST API v2: projects, environments, feature flags, segments, metrics, experiments, teams, account members, custom roles, access tokens, webhooks, audit log, code references, contexts, approvals, scheduled changes, workflows and AI Configs.
 
 | | |
 | --- | --- |

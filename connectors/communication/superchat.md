@@ -1,5 +1,5 @@
 ---
-description: "Superchat is a unified business messaging platform that brings WhatsApp, SMS, email, Instagram, Facebook Messenger, Telegram, Google Business Messages and…"
+description: "Connect Superchat to your product with fastn."
 hidden: true
 ---
 

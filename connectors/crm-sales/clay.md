@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clay.png" alt="Clay logo">
 
-Clay is a GTM data platform for finding, enriching and acting on companies and people. This connector wraps the Clay Public API v0: advanced query-mode search of Clay's people and company database (with the query reference and result paging), legacy filters-mode search, running Clay-managed and custom function routines inline or as JSONL batches and fetching their results, structured queries across Clay tables (Enterprise), Clay workflow-run queries, workspace credit balances and the authenticated user. Routine runs can notify a Clay webhook when they finish. Authenticates with a Clay API key sent in the clay-api-key header.
+This connector wraps the Clay Public API v0: advanced query-mode search of Clay's people and company database (with the query reference and result paging), legacy filters-mode search, running Clay-managed and custom function routines inline or as JSONL batches and fetching their results, structured queries across Clay tables (Enterprise), Clay workflow-run queries, workspace credit balances and the authenticated user. Routine runs can notify a Clay webhook when they finish. Authenticates with a Clay API key sent in the clay-api-key header.
 
 | | |
 | --- | --- |

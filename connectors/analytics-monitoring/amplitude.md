@@ -1,5 +1,5 @@
 ---
-description: "Amplitude Analytics — HTTP V2 ingest (api2.amplitude.com: /2/httpapi, /batch, /identify) plus Dashboard REST, Behavioral Cohorts, and Taxonomy APIs…"
+description: "Connect Amplitude to your product with fastn."
 hidden: true
 ---
 

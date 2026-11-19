@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/quire.png" alt="Quire logo">
 
-Quire is a collaborative task-management and project-planning tool. Manage organizations, projects, tasks, sublists, comments, tags, statuses, documents, and notifications.
+Manage organizations, projects, tasks, sublists, comments, tags, statuses, documents, and notifications.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/layerre.png" alt="Layerre logo">
 
-Layerre design-automation API. Import a Canva design as a reusable template, edit its layers, and render image/PDF variants at scale (single, bulk, and combined multi-page PDFs). Also analyzes a public Canva share URL for its colors, fonts and images.
+Import a Canva design as a reusable template, edit its layers, and render image/PDF variants at scale (single, bulk, and combined multi-page PDFs). Also analyzes a public Canva share URL for its colors, fonts and images.
 
 | | |
 | --- | --- |

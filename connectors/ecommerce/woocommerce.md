@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/woocommerce.png" alt="WooCommerce logo">
 
-WooCommerce is the open-source e-commerce plugin for WordPress. This connector covers the WooCommerce REST API v3 (wp-json/wc/v3) of your own store: products, variations, attributes and terms, categories, tags, shipping classes, reviews, custom fields, orders, order notes, refunds, order actions, coupons, customers, reports, tax rates and classes, webhooks, settings, payment gateways, shipping zones, locations and methods, system status and tools, and store data (continents, countries, currencies).
+This connector covers the WooCommerce REST API v3 (wp-json/wc/v3) of your own store: products, variations, attributes and terms, categories, tags, shipping classes, reviews, custom fields, orders, order notes, refunds, order actions, coupons, customers, reports, tax rates and classes, webhooks, settings, payment gateways, shipping zones, locations and methods, system status and tools, and store data (continents, countries, currencies).
 
 | | |
 | --- | --- |

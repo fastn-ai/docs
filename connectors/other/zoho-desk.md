@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-desk.png" alt="Zoho Desk logo">
 
-Zoho Desk is Zoho's context-aware customer support / helpdesk ticketing platform. This connector provides access to Desk's REST API v1: tickets, threads/comments, contacts, accounts, agents, departments, teams, tasks, calls, custom views, business hours, holiday lists, and webhooks (notifications).
+This connector provides access to Desk's REST API v1: tickets, threads/comments, contacts, accounts, agents, departments, teams, tasks, calls, custom views, business hours, holiday lists, and webhooks (notifications).
 
 | | |
 | --- | --- |

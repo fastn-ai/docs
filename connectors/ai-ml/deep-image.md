@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/deep-image.png" alt="Deep Image logo">
 
-Deep-Image.ai is an AI image enhancement and generation API. This connector covers the full Deep Image REST API: synchronous and scheduled image processing (AI upscaling, denoise, deblur, face enhancement, light and color correction, background removal and generation, prompt-based editing, inpainting and outpainting, print sizing, captions, presets), job result retrieval, result deletion, and account information including remaining credits.
+This connector covers the full Deep Image REST API: synchronous and scheduled image processing (AI upscaling, denoise, deblur, face enhancement, light and color correction, background removal and generation, prompt-based editing, inpainting and outpainting, print sizing, captions, presets), job result retrieval, result deletion, and account information including remaining credits.
 
 | | |
 | --- | --- |

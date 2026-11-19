@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/postmark.png" alt="Postmark logo">
 
-Postmark transactional email API (base https://api.postmarkapp.com). Send single/batch email (raw or with templates), manage bounces, templates, message streams, suppressions, outbound/inbound messages, opens/clicks, delivery & engagement stats, webhooks, and data removals (all via the Server Token, header X-Postmark-Server-Token). Account-level operations — servers, domains (DKIM/return-path), and sender signatures — require the Account Token (header X-Postmark-Account-Token); supply it as the accountToken credential and it is injected on those actions. Requires Accept and Content-Type application/json.
+Send single/batch email (raw or with templates), manage bounces, templates, message streams, suppressions, outbound/inbound messages, opens/clicks, delivery & engagement stats, webhooks, and data removals (all via the Server Token, header X-Postmark-Server-Token). Account-level operations — servers, domains (DKIM/return-path), and sender signatures — require the Account Token (header X-Postmark-Account-Token); supply it as the accountToken credential and it is injected on those actions. Requires Accept and Content-Type application/json.
 
 | | |
 | --- | --- |

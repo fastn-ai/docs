@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/box-hero.png" alt="BoxHero logo">
 
-BoxHero inventory management. Manage items, item attributes, locations, bundles, partners, purchase orders, sales orders, sales returns, price lists and inventory transactions (stock in, stock out, adjust, move) through the BoxHero Open API.
+Manage items, item attributes, locations, bundles, partners, purchase orders, sales orders, sales returns, price lists and inventory transactions (stock in, stock out, adjust, move) through the BoxHero Open API.
 
 | | |
 | --- | --- |

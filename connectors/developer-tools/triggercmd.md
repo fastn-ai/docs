@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/triggercmd.png" alt="TRIGGERcmd logo">
 
-TRIGGERcmd is a cloud service that securely runs commands on your registered computers. This connector wraps the TRIGGERcmd REST API at https://www.triggercmd.com/api: computers, commands, panels and panel buttons, command triggering (run/trigger, run/triggerSave, panel/trigger), and account authentication. WARNING: the trigger actions execute real commands on real machines - use them deliberately.
+This connector wraps the TRIGGERcmd REST API at https://www.triggercmd.com/api: computers, commands, panels and panel buttons, command triggering (run/trigger, run/triggerSave, panel/trigger), and account authentication. WARNING: the trigger actions execute real commands on real machines - use them deliberately.
 
 | | |
 | --- | --- |

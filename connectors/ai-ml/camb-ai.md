@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/camb-ai.png" alt="CAMB.AI logo">
 
-CAMB.AI is an AI speech and localization platform. This connector covers the full CAMB.AI REST API: text-to-speech and streaming TTS, translated TTS, translation, transcription, subtitles, end-to-end dubbing, stories (audiobooks), sound and music generation, audio separation, voice cloning and voice design, project setup, dictionaries, folders, languages, and the live streaming API (streams, SRT flows and templates). Most generation endpoints are asynchronous: create a task, poll its status for a run_id, then fetch the result.
+This connector covers the full CAMB.AI REST API: text-to-speech and streaming TTS, translated TTS, translation, transcription, subtitles, end-to-end dubbing, stories (audiobooks), sound and music generation, audio separation, voice cloning and voice design, project setup, dictionaries, folders, languages, and the live streaming API (streams, SRT flows and templates). Most generation endpoints are asynchronous: create a task, poll its status for a run_id, then fetch the result.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/telnyx.png" alt="Telnyx logo">
 
-Telnyx CPaaS platform. Messaging (SMS/MMS), phone numbers and porting, Voice and Call Control, TeXML, Verify, Programmable Fax, Wireless/SIM, Storage, Email, AI Assistants, Video Rooms and account billing via the Telnyx v2 REST API.
+Messaging (SMS/MMS), phone numbers and porting, Voice and Call Control, TeXML, Verify, Programmable Fax, Wireless/SIM, Storage, Email, AI Assistants, Video Rooms and account billing via the Telnyx v2 REST API.
 
 | | |
 | --- | --- |

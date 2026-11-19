@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bitbucket.png" alt="Bitbucket logo">
 
-Bitbucket Cloud (Atlassian) REST API v2.0 connector. Manage workspaces, repositories, pull requests, issues, commits, refs/branches/tags, source, pipelines, snippets, projects, deploy keys, branch restrictions, downloads, and webhooks. Base URL https://api.bitbucket.org/2.0.
+Manage workspaces, repositories, pull requests, issues, commits, refs/branches/tags, source, pipelines, snippets, projects, deploy keys, branch restrictions, downloads, and webhooks. Base URL https://api.bitbucket.org/2.0.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Kartverket (the Norwegian Mapping Authority) offers free open APIs for Norway: search official addresses by text or near a point, search place names…"
+description: "Connect Kartverket to your product with fastn."
 hidden: true
 ---
 

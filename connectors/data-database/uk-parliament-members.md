@@ -1,5 +1,5 @@
 ---
-description: "The UK Parliament Members API gives open data on MPs and Lords: search current and historical members, get biographies, contact details, experience,…"
+description: "Connect UK Parliament Members API to your product with fastn."
 hidden: true
 ---
 

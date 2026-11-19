@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/digital-humani.png" alt="Digital Humani logo">
 
-Digital Humani RaaS (Reforestation as a Service) API. Plant trees with trusted reforestation organizations, browse reforestation projects, count trees planted by user/enterprise/month, manage the enterprise profile and its users, and drive the dashboard auth surface. Supports both the Production host (api.digitalhumani.com, $1 per tree, real money) and the free Sandbox host (api.sandbox.digitalhumani.com).
+Plant trees with trusted reforestation organizations, browse reforestation projects, count trees planted by user/enterprise/month, manage the enterprise profile and its users, and drive the dashboard auth surface. Supports both the Production host (api.digitalhumani.com, $1 per tree, real money) and the free Sandbox host (api.sandbox.digitalhumani.com).
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Hugging Face connector covering the Hub API (whoami, models, datasets, spaces, repos, refs, commits) and Inference Providers router (OpenAI-compatible chat…"
+description: "Connect Hugging Face to your product with fastn."
 hidden: true
 ---
 

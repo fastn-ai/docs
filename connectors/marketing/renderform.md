@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/renderform.png" alt="RenderForm logo">
 
-RenderForm generates images, PDFs and videos from reusable templates. This connector covers the full v1 and v2 REST surface: template CRUD and HTML content, single and batch rendering, screenshots, URL-to-PDF, render results, uploads, tags, fonts, organization settings, credit usage and webhook registration.
+This connector covers the full v1 and v2 REST surface: template CRUD and HTML content, single and batch rendering, screenshots, URL-to-PDF, render results, uploads, tags, fonts, organization settings, credit usage and webhook registration.
 
 | | |
 | --- | --- |

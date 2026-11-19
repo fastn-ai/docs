@@ -1,5 +1,5 @@
 ---
-description: "Gamma Generate API — programmatically generate presentations, documents, webpages, and social posts from text or templates, manage themes/folders, and…"
+description: "Connect Gamma API to your product with fastn."
 hidden: true
 ---
 

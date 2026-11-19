@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/base44.png" alt="Base44 logo">
 
-Base44 is an AI app-building platform. This connector covers the Base44 App Management API: apps, entity records and entity schemas, workflows and workflow runs, analytics, app checkpoints, the AI builder chat and coding surface, deployments, GitHub sync, custom domains and custom email domains, URL redirects, SEO, security scans, secrets, social calendar and virality campaigns, Stripe and Wix payments, and the Google Ads advertising surface.
+This connector covers the Base44 App Management API: apps, entity records and entity schemas, workflows and workflow runs, analytics, app checkpoints, the AI builder chat and coding surface, deployments, GitHub sync, custom domains and custom email domains, URL redirects, SEO, security scans, secrets, social calendar and virality campaigns, Stripe and Wix payments, and the Google Ads advertising surface.
 
 | | |
 | --- | --- |

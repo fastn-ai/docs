@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailersend.png" alt="MailerSend logo">
 
-MailerSend is a transactional email and SMS platform. This connector covers the MailerSend v1 API: sending email and bulk email, templates, domains and their DNS, DKIM and SMTP users, sender identities, recipients and suppression lists, message and activity history, analytics, scheduled messages, email verification, inbound routing, SMS sending with its numbers, recipients and inbound routes, account users and API tokens, and webhook management for both email and SMS.
+This connector covers the MailerSend v1 API: sending email and bulk email, templates, domains and their DNS, DKIM and SMTP users, sender identities, recipients and suppression lists, message and activity history, analytics, scheduled messages, email verification, inbound routing, SMS sending with its numbers, recipients and inbound routes, account users and API tokens, and webhook management for both email and SMS.
 
 | | |
 | --- | --- |

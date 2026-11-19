@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zenodo.png" alt="Zenodo logo">
 
-Zenodo is CERN's open research repository for datasets, software, papers and more, each with a DOI. Search and read published records, their versions, files and communities, and look up communities, licenses, funders, awards, affiliations, subjects and controlled vocabularies. Read-only public access, no API key needed.
+Search and read published records, their versions, files and communities, and look up communities, licenses, funders, awards, affiliations, subjects and controlled vocabularies. Read-only public access, no API key needed.
 
 | | |
 | --- | --- |

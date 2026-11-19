@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pagerduty.png" alt="PagerDuty logo">
 
-PagerDuty is an incident response and digital operations platform. This connector covers the PagerDuty REST API v2 (incidents, services, escalation policies, schedules, users, teams, extensions, add-ons, log entries, maintenance windows, event orchestrations, business services, analytics, tags, rulesets, and webhook subscription management) plus the Events API v2 for triggering and enqueuing alert and change events.
+This connector covers the PagerDuty REST API v2 (incidents, services, escalation policies, schedules, users, teams, extensions, add-ons, log entries, maintenance windows, event orchestrations, business services, analytics, tags, rulesets, and webhook subscription management) plus the Events API v2 for triggering and enqueuing alert and change events.
 
 | | |
 | --- | --- |

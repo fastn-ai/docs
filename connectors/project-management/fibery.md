@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fibery.png" alt="Fibery logo">
 
-Fibery work-management workspace API. Covers the /api/commands command API (entities, collections, schema/databases/fields), documents & rich text, files, views (JSON-RPC), workspace history, webhooks v2, access tokens and the per-space GraphQL API.
+Covers the /api/commands command API (entities, collections, schema/databases/fields), documents & rich text, files, views (JSON-RPC), workspace history, webhooks v2, access tokens and the per-space GraphQL API.
 
 | | |
 | --- | --- |

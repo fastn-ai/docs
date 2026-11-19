@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/odoo.png" alt="Odoo logo">
 
-Odoo is an open-source suite of business apps (CRM, Sales, Invoicing, Inventory, Purchase, Project, Employees, Calendar and more). This connector uses Odoo's JSON-2 external API (POST /json/2/&lt;model&gt;/&lt;method&gt;, Odoo 19+ and Odoo Online) with a user API key, so it can search, read, create, update and delete records in any Odoo model the API key's user can access.
+This connector uses Odoo's JSON-2 external API (POST /json/2/&lt;model&gt;/&lt;method&gt;, Odoo 19+ and Odoo Online) with a user API key, so it can search, read, create, update and delete records in any Odoo model the API key's user can access.
 
 | | |
 | --- | --- |

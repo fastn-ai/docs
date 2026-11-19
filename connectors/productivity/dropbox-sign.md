@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dropbox-sign.png" alt="Dropbox Sign logo">
 
-Dropbox Sign (formerly HelloSign) is an electronic signature platform for preparing, sending, signing and tracking legally binding documents. This connector covers the Dropbox Sign v3 API: signature requests including embedded, template-based and bulk send flows with remind, cancel, release, update and file download operations, reusable templates with their files, embedded create and edit URLs, team management with members, sub teams and invites, unclaimed drafts, API apps, fax lines and faxes, account management, usage reports and OAuth token issuance and refresh.
+This connector covers the Dropbox Sign v3 API: signature requests including embedded, template-based and bulk send flows with remind, cancel, release, update and file download operations, reusable templates with their files, embedded create and edit URLs, team management with members, sub teams and invites, unclaimed drafts, API apps, fax lines and faxes, account management, usage reports and OAuth token issuance and refresh.
 
 | | |
 | --- | --- |

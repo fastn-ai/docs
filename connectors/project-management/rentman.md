@@ -1,5 +1,5 @@
 ---
-description: "Rentman is rental and event-production management software covering projects, quotes and invoices, equipment and serial numbers, warehouse stock, crew…"
+description: "Connect Rentman to your product with fastn."
 hidden: true
 ---
 

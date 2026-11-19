@@ -1,5 +1,5 @@
 ---
-description: "The ECB Data Portal API is the European Central Bank's free SDMX 2.1 RESTful web service for euro-area statistics: exchange rates, interest rates, inflation,…"
+description: "Connect ECB Data Portal to your product with fastn."
 hidden: true
 ---
 

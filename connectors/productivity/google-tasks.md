@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-tasks.png" alt="Google Tasks logo">
 
-Google Tasks API - manage Google Workspace task lists and tasks (create, read, update, delete, move, and clear completed tasks).
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/proven-expert.png" alt="ProvenExpert logo">
 
-ProvenExpert review-collection platform. Manage ProvenExpert profiles and profile settings, create and manage surveys, generate personalised survey invitation links, send survey invitation e-mails and check their delivery status, read ratings and rating summaries, and generate rating-seal / widget HTML. All calls are POST to https://www.provenexpert.com/api/v1 and authenticate with HTTP Basic using the account's API-ID and API-Key.
+Manage ProvenExpert profiles and profile settings, create and manage surveys, generate personalised survey invitation links, send survey invitation e-mails and check their delivery status, read ratings and rating summaries, and generate rating-seal / widget HTML. All calls are POST to https://www.provenexpert.com/api/v1 and authenticate with HTTP Basic using the account's API-ID and API-Key.
 
 | | |
 | --- | --- |

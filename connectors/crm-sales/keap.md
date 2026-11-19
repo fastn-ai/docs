@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/keap.png" alt="Keap logo">
 
-Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform. Contacts, companies, opportunities, orders, subscriptions, products, tasks, appointments, notes, emails, tags, campaigns, automations, affiliates, files, users, and REST Hook webhooks over the Keap v1 + v2 REST API.
+Contacts, companies, opportunities, orders, subscriptions, products, tasks, appointments, notes, emails, tags, campaigns, automations, affiliates, files, users, and REST Hook webhooks over the Keap v1 + v2 REST API.
 
 | | |
 | --- | --- |

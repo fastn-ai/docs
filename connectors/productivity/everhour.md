@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/everhour.png" alt="Everhour logo">
 
-Everhour time tracking, project management and billing API. Manage time records, timers, timecards, timesheets and approvals, projects, sections, tasks, custom fields, clients, invoices, expenses, resource planning schedules, time off, reports, team users and webhooks.
+Manage time records, timers, timecards, timesheets and approvals, projects, sections, tasks, custom fields, clients, invoices, expenses, resource planning schedules, time off, reports, team users and webhooks.
 
 | | |
 | --- | --- |

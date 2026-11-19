@@ -1,5 +1,5 @@
 ---
-description: "Microsoft SharePoint via Microsoft Graph v1.0 — sites, lists, list items, columns, content types, document libraries (drives), pages, site permissions,…"
+description: "Connect SharePoint to your product with fastn."
 hidden: true
 ---
 

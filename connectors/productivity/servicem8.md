@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/servicem8.png" alt="ServiceM8 logo">
 
-ServiceM8 is a job management platform for trade and service businesses. This connector covers the ServiceM8 REST API (api_1.0): jobs, clients, contacts, activities, allocations, materials, payments, checklists, queues, staff, assets, forms, templates, attachments, notes, tasks, messaging and webhook subscriptions.
+This connector covers the ServiceM8 REST API (api_1.0): jobs, clients, contacts, activities, allocations, materials, payments, checklists, queues, staff, assets, forms, templates, attachments, notes, tasks, messaging and webhook subscriptions.
 
 | | |
 | --- | --- |

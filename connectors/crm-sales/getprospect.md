@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/getprospect.png" alt="GetProspect logo">
 
-GetProspect is a B2B lead generation platform. This connector wraps the GetProspect REST API: v2 People and Company Search, People and Company Enrich (single and bulk), Email Finder, Email Verifier, search suggestions and filter enums, plus the workspace CRM API for contacts, companies, lists and properties. Authenticates with a workspace API key sent in the x-api-key header.
+This connector wraps the GetProspect REST API: v2 People and Company Search, People and Company Enrich (single and bulk), Email Finder, Email Verifier, search suggestions and filter enums, plus the workspace CRM API for contacts, companies, lists and properties. Authenticates with a workspace API key sent in the x-api-key header.
 
 | | |
 | --- | --- |

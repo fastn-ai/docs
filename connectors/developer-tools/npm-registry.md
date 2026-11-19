@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/npm-registry.png" alt="npm Registry logo">
 
-The npm Registry is the public JavaScript package registry. Search packages, get package metadata, versions and dist-tags, check versions against npm security advisories, and get download counts (totals, per day, per version, bulk). Public read APIs need no token.
+Search packages, get package metadata, versions and dist-tags, check versions against npm security advisories, and get download counts (totals, per day, per version, bulk). Public read APIs need no token.
 
 | | |
 | --- | --- |

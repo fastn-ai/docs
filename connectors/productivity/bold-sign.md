@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bold-sign.png" alt="BoldSign logo">
 
-BoldSign is an electronic signature platform for sending, signing and managing legally binding documents. This connector covers the full BoldSign REST API: documents (send, draft, edit, remind, revoke, download, audit logs, tags, authentication, access codes, recipient changes, prefilled fields, expiry, embedded URLs), templates (create, edit, send, merge and send, share, tags, embedded URLs), contacts and contact groups, custom fields, brands, sender identities, teams, users, identity verification and API credit usage.
+This connector covers the full BoldSign REST API: documents (send, draft, edit, remind, revoke, download, audit logs, tags, authentication, access codes, recipient changes, prefilled fields, expiry, embedded URLs), templates (create, edit, send, merge and send, share, tags, embedded URLs), contacts and contact groups, custom fields, brands, sender identities, teams, users, identity verification and API credit usage.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/kommunicate.png" alt="Kommunicate logo">
 
-Kommunicate customer messaging and support chat platform. Manage conversations (groups), messages, users/visitors, agents, teams, routing, analytics and app settings via the Kommunicate platform REST API at services.kommunicate.io.
+Manage conversations (groups), messages, users/visitors, agents, teams, routing, analytics and app settings via the Kommunicate platform REST API at services.kommunicate.io.
 
 | | |
 | --- | --- |

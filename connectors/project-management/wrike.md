@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wrike.png" alt="Wrike logo">
 
-Wrike work management and project collaboration platform. Manage tasks, folders, projects, timelogs, comments, and account resources via the Wrike API v4.
+Manage tasks, folders, projects, timelogs, comments, and account resources via the Wrike API v4.
 
 | | |
 | --- | --- |

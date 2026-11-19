@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wafeq.png" alt="Wafeq logo">
 
-Wafeq is cloud accounting software for the Middle East. This connector wraps the Wafeq Public API v1: invoices, simplified invoices, bills, quotes, purchase orders, credit and debit notes, payments, payment requests, expenses, contacts, items, accounts, bank accounts and transactions, manual journals, journal line items, employees, payslips, projects, cost centers, branches, warehouses, custom fields, files, tax rates, units of measure, amortizations, revenue recognitions and financial reports.
+This connector wraps the Wafeq Public API v1: invoices, simplified invoices, bills, quotes, purchase orders, credit and debit notes, payments, payment requests, expenses, contacts, items, accounts, bank accounts and transactions, manual journals, journal line items, employees, payslips, projects, cost centers, branches, warehouses, custom fields, files, tax rates, units of measure, amortizations, revenue recognitions and financial reports.
 
 | | |
 | --- | --- |

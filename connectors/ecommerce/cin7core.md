@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cin7core.png" alt="Cin7 Core logo">
 
-Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing, production and accounting management. Wraps the Cin7 Core External API V2 (https://inventory.dearsystems.com/externalapi/v2/).
+Wraps the Cin7 Core External API V2 (https://inventory.dearsystems.com/externalapi/v2/).
 
 | | |
 | --- | --- |

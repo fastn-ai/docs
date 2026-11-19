@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nifty.png" alt="Nifty logo">
 
-Nifty project management platform. Manage projects, tasks, task groups (statuses), milestones, documents, files, tags, messages, team members, portfolios, custom fields, time tracking, folders, and webhooks.
+Manage projects, tasks, task groups (statuses), milestones, documents, files, tags, messages, team members, portfolios, custom fields, time tracking, folders, and webhooks.
 
 | | |
 | --- | --- |

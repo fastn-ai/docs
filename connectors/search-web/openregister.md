@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/openregister.png" alt="OpenRegister logo">
 
-OpenRegister provides programmatic access to official German company data from the Handelsregister, Bundesanzeiger, Transparenzregister and Insolvenzregister. This connector covers company search and lookup, ownership and beneficial owners, holdings, financial statements, contact and web data, official register documents, person search and holdings, insolvency proceedings, Transparenzregister extracts, and register change monitors.
+This connector covers company search and lookup, ownership and beneficial owners, holdings, financial statements, contact and web data, official register documents, person search and holdings, insolvency proceedings, Transparenzregister extracts, and register change monitors.
 
 | | |
 | --- | --- |

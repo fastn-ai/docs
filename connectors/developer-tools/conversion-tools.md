@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/conversion-tools.png" alt="Conversion Tools logo">
 
-Conversion Tools is a file-conversion API covering 100+ formats (XML, JSON, CSV, Excel, PDF, Word, images, audio/video, OCR). This connector wraps the full api.conversiontools.io v1 API: token verification, account info, plan configuration and usage, direct and resumable (upload-session) file uploads, conversion task creation with sandbox mode, task listing and polling, retention control and immediate file deletion, file metadata, authenticated downloads and temporary unauthenticated download links.
+This connector wraps the full api.conversiontools.io v1 API: token verification, account info, plan configuration and usage, direct and resumable (upload-session) file uploads, conversion task creation with sandbox mode, task listing and polling, retention control and immediate file deletion, file metadata, authenticated downloads and temporary unauthenticated download links.
 
 | | |
 | --- | --- |

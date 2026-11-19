@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cuttly.png" alt="Cutt.ly logo">
 
-Cutt.ly URL shortener and link analytics. Shorten URLs (optionally on a branded domain with a custom alias), read click analytics for a short link, and edit an existing short link: change its destination, alias, title or tag, set a password, expiration rule, mobile/OS-specific redirect, unique-click window or an A/B-C split test, and delete it. Wraps the Cutt.ly Regular API at https://cutt.ly/api/api.php, a single endpoint dispatched by query parameter.
+Shorten URLs (optionally on a branded domain with a custom alias), read click analytics for a short link, and edit an existing short link: change its destination, alias, title or tag, set a password, expiration rule, mobile/OS-specific redirect, unique-click window or an A/B-C split test, and delete it. Wraps the Cutt.ly Regular API at https://cutt.ly/api/api.php, a single endpoint dispatched by query parameter.
 
 | | |
 | --- | --- |

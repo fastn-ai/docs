@@ -1,5 +1,5 @@
 ---
-description: "The NOAA/NWS Aviation Weather Center Data API gives free aviation weather: METAR observations, TAF forecasts, PIREPs, SIGMETs, AIRMETs and G-AIRMETs,…"
+description: "Connect Aviation Weather Center (aviationweather.gov) to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-scheduler.png" alt="Google Cloud Scheduler logo">
 
-Google Cloud Scheduler is a fully managed enterprise-grade cron job scheduler. Create, list, update, pause, resume, run and delete scheduled jobs that target HTTP endpoints, App Engine services and Pub/Sub topics, and manage locations, CMEK configuration and long-running operations.
+Create, list, update, pause, resume, run and delete scheduled jobs that target HTTP endpoints, App Engine services and Pub/Sub topics, and manage locations, CMEK configuration and long-running operations.
 
 | | |
 | --- | --- |

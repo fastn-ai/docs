@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/chili-piper.png" alt="Chili Piper logo">
 
-Chili Piper is a demand conversion and meeting scheduling platform. This connector uses the Chili Piper Edge API to manage workspaces, teams, users, distributions, routers, meeting types, meetings, availability, scheduling links, rules, and webhooks.
+This connector uses the Chili Piper Edge API to manage workspaces, teams, users, distributions, routers, meeting types, meetings, availability, scheduling links, rules, and webhooks.
 
 | | |
 | --- | --- |

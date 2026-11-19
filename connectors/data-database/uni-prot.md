@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uni-prot.png" alt="UniProt logo">
 
-UniProt is the free, comprehensive protein sequence and function database (UniProtKB/Swiss-Prot, TrEMBL, UniRef, UniParc, proteomes). Search and get protein entries, clusters, sequence archives, proteomes and gene-centric sets, taxonomy, keywords, subcellular locations, diseases, cross-reference databases and citations, read entry history, and map identifiers between databases. No API key needed.
+Search and get protein entries, clusters, sequence archives, proteomes and gene-centric sets, taxonomy, keywords, subcellular locations, diseases, cross-reference databases and citations, read entry history, and map identifiers between databases. No API key needed.
 
 | | |
 | --- | --- |

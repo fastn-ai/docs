@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/verifi-email.png" alt="verifi.email logo">
 
-verifi.email is an email validation and deliverability API. This connector wraps the live verifi.email REST API at https://api.verifi.email: real-time validation of a single email address (RFC compliance, MX record, spoof-free, disposable detection), bulk validation of many addresses in one request (JSON array or comma-separated list), and a domain email-authentication health check that scores SPF, DKIM, DMARC and BIMI and returns actionable recommendations.
+This connector wraps the live verifi.email REST API at https://api.verifi.email: real-time validation of a single email address (RFC compliance, MX record, spoof-free, disposable detection), bulk validation of many addresses in one request (JSON array or comma-separated list), and a domain email-authentication health check that scores SPF, DKIM, DMARC and BIMI and returns actionable recommendations.
 
 | | |
 | --- | --- |

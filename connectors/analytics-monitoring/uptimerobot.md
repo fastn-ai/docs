@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/uptimerobot.png" alt="UptimeRobot logo">
 
-UptimeRobot monitors websites, APIs, ports, and cron jobs for uptime and downtime, and sends alerts when a monitor goes down. This connector wraps UptimeRobot's v2 REST API, which is POST-only with a form-urlencoded body carrying the API key, covering monitors, alert contacts, maintenance windows, public status pages, and account details.
+This connector wraps UptimeRobot's v2 REST API, which is POST-only with a form-urlencoded body carrying the API key, covering monitors, alert contacts, maintenance windows, public status pages, and account details.
 
 | | |
 | --- | --- |

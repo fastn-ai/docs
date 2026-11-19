@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/apollo.png" alt="Apollo logo">
 
-Apollo.io REST API (base https://api.apollo.io/v1). People & organization enrichment, people/contacts/accounts/organizations search and CRUD, sequences (emailer campaigns), deals (opportunities), tasks, users, email accounts, and labels. Auth: API key in the x-api-key header. Note: Apollo has no public webhook API.
+People & organization enrichment, people/contacts/accounts/organizations search and CRUD, sequences (emailer campaigns), deals (opportunities), tasks, users, email accounts, and labels. Auth: API key in the x-api-key header. Note: Apollo has no public webhook API.
 
 | | |
 | --- | --- |

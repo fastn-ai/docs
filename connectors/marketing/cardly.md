@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cardly.png" alt="Cardly logo">
 
-Cardly is a print-and-post greeting card platform. Use this connector to manage artwork, contact lists and contacts, generate card previews, place card orders, manage organisation users and invitations, inspect account credit balance and history, and register webhooks for order and delivery events. Wraps the Cardly v2 REST API at https://api.card.ly/v2.
+Use this connector to manage artwork, contact lists and contacts, generate card previews, place card orders, manage organisation users and invitations, inspect account credit balance and history, and register webhooks for order and delivery events. Wraps the Cardly v2 REST API at https://api.card.ly/v2.
 
 | | |
 | --- | --- |

@@ -5,7 +5,7 @@ hidden: true
 
 # Amazing Marvin
 
-Amazing Marvin is a personal task manager and productivity system. This connector covers the full Amazing Marvin public REST API: tasks, projects, categories, labels, calendar events, scheduled and due items, time blocks, time tracking, reward points, Marvin Kudos, goals, habits, reminders, account profile, and raw sync-database document read/create/update/delete.
+This connector covers the full Amazing Marvin public REST API: tasks, projects, categories, labels, calendar events, scheduled and due items, time blocks, time tracking, reward points, Marvin Kudos, goals, habits, reminders, account profile, and raw sync-database document read/create/update/delete.
 
 | | |
 | --- | --- |

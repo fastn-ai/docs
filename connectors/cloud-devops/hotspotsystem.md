@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hotspotsystem.png" alt="HotspotSystem logo">
 
-HotspotSystem cloud WiFi hotspot management. Read-only access to the HotspotSystem API v2.0: hotspot locations, registered customers, newsletter subscribers, prepaid vouchers, and paid / voucher / MAC / social-login connection transactions, globally or per location.
+Read-only access to the HotspotSystem API v2.0: hotspot locations, registered customers, newsletter subscribers, prepaid vouchers, and paid / voucher / MAC / social-login connection transactions, globally or per location.
 
 | | |
 | --- | --- |

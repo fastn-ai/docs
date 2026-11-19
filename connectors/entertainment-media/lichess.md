@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lichess.png" alt="Lichess logo">
 
-Lichess is a free, open-source chess server. Its public API (no token) gives users, ratings, leaderboards, games (PGN/NDJSON export), puzzles, TV, Arena and Swiss tournaments, studies, broadcasts, FIDE players, teams, simuls, streamers, cloud evaluation and the endgame tablebase. Lichess asks for one request at a time and a 60-second pause after a 429.
+Its public API (no token) gives users, ratings, leaderboards, games (PGN/NDJSON export), puzzles, TV, Arena and Swiss tournaments, studies, broadcasts, FIDE players, teams, simuls, streamers, cloud evaluation and the endgame tablebase. Lichess asks for one request at a time and a 60-second pause after a 429.
 
 | | |
 | --- | --- |

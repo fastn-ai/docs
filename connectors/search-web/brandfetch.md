@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/brandfetch.png" alt="Brandfetch logo">
 
-Brandfetch is the brand data layer for products and AI agents. This connector covers the Brand API (brand records by domain, email, brand ID, stock/ETF ticker, ISIN or crypto symbol), the Brand Context API, the Transaction API, the Brand Search API, the Logo API CDN and the Brandfetch GraphQL API (webhooks, request logs, organizations, API keys and Brand Police trackers).
+This connector covers the Brand API (brand records by domain, email, brand ID, stock/ETF ticker, ISIN or crypto symbol), the Brand Context API, the Transaction API, the Brand Search API, the Logo API CDN and the Brandfetch GraphQL API (webhooks, request logs, organizations, API keys and Brand Police trackers).
 
 | | |
 | --- | --- |

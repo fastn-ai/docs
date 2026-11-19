@@ -1,5 +1,5 @@
 ---
-description: "endoflife.date tracks end-of-life dates and support lifecycles for 400+ products: languages, frameworks, databases, operating systems, cloud services and…"
+description: "Connect endoflife.date to your product with fastn."
 hidden: true
 ---
 

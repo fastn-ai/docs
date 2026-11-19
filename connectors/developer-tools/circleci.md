@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/circleci.png" alt="CircleCI logo">
 
-CircleCI is a continuous integration and delivery platform for building, testing and deploying software. This connector covers the CircleCI API v2: projects, pipelines, workflows, jobs, contexts, environment variables, checkout keys, schedules, triggers, insights, deploys, policies, OIDC claims, usage exports and outbound webhooks.
+This connector covers the CircleCI API v2: projects, pipelines, workflows, jobs, contexts, environment variables, checkout keys, schedules, triggers, insights, deploys, policies, OIDC claims, usage exports and outbound webhooks.
 
 | | |
 | --- | --- |

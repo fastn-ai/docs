@@ -1,5 +1,5 @@
 ---
-description: "Wolfram|Alpha is a computational knowledge engine that answers free-form natural-language questions across mathematics, science, geography, history, finance…"
+description: "Connect Wolfram|Alpha to your product with fastn."
 hidden: true
 ---
 

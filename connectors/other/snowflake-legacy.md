@@ -1,5 +1,5 @@
 ---
-description: "Legacy Snowflake connector providing SQL-driven access to the Snowflake Data Cloud: databases, schemas, tables, views, columns, warehouses, users, roles,…"
+description: "Connect Snowflake (Legacy) to your product with fastn."
 hidden: true
 ---
 

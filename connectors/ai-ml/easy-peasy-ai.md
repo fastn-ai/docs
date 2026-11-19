@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/easy-peasy-ai.png" alt="Easy-Peasy.AI logo">
 
-Easy-Peasy.AI generative content API. Text generation from 100+ presets/templates, image generation and editing, video and talking-video generation, music and sound-effect generation, audio transcription with speaker detection, AI content from transcriptions, text-to-speech with 150+ voices, an OpenAI-compatible chat completions endpoint, and custom bot chat on the separate bots.easy-peasy.ai host. Authentication is a single x-api-key header. METERED: most generation routes consume account credits and word quota.
+Text generation from 100+ presets/templates, image generation and editing, video and talking-video generation, music and sound-effect generation, audio transcription with speaker detection, AI content from transcriptions, text-to-speech with 150+ voices, an OpenAI-compatible chat completions endpoint, and custom bot chat on the separate bots.easy-peasy.ai host. Authentication is a single x-api-key header. METERED: most generation routes consume account credits and word quota.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zulip.png" alt="Zulip logo">
 
-Zulip is an open-source team chat application organised by topic. This connector covers the Zulip REST API: messages (send, fetch, edit, delete, react, flag, schedule, remind, render, read receipts), channels and their subscriptions, topics and topic preferences, users, bots, user groups and their members and subgroups, drafts and saved snippets, invitations, real-time event queues, presence and status, attachments, navigation views, channel folders, and organization settings including custom emoji, linkifiers, code playgrounds, allowed domains, custom profile fields and data exports. Works with both Zulip Cloud and self-hosted servers; authentication is HTTP Basic with your email address as the username and your Zulip API key as the password.
+This connector covers the Zulip REST API: messages (send, fetch, edit, delete, react, flag, schedule, remind, render, read receipts), channels and their subscriptions, topics and topic preferences, users, bots, user groups and their members and subgroups, drafts and saved snippets, invitations, real-time event queues, presence and status, attachments, navigation views, channel folders, and organization settings including custom emoji, linkifiers, code playgrounds, allowed domains, custom profile fields and data exports. Works with both Zulip Cloud and self-hosted servers; authentication is HTTP Basic with your email address as the username and your Zulip API key as the password.
 
 | | |
 | --- | --- |

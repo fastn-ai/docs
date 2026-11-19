@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tableau.png" alt="Tableau logo">
 
-Tableau Cloud and Tableau Server REST API. Manage sites, projects, workbooks, views, data sources, users, groups, extract refresh jobs and tasks, flows, subscriptions, favorites and webhooks. Sign in with username and password, or with a personal access token; fastn signs in and renews the Tableau session for you.
+Manage sites, projects, workbooks, views, data sources, users, groups, extract refresh jobs and tasks, flows, subscriptions, favorites and webhooks. Sign in with username and password, or with a personal access token; fastn signs in and renews the Tableau session for you.
 
 | | |
 | --- | --- |

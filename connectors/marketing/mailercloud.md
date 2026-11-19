@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailercloud.png" alt="Mailercloud logo">
 
-Mailercloud email marketing platform. Manage lists, contacts, custom properties, segments, tags, senders, webforms, templates, automations and campaigns; send transactional and personalized email; and subscribe to delivery webhooks.
+Manage lists, contacts, custom properties, segments, tags, senders, webforms, templates, automations and campaigns; send transactional and personalized email; and subscribe to delivery webhooks.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "TVmaze public API: free, keyless TV metadata - search shows and people, TV schedules by country and date (including web/streaming), show details, episodes,…"
+description: "Connect TVmaze to your product with fastn."
 hidden: true
 ---
 

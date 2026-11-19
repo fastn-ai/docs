@@ -1,5 +1,5 @@
 ---
-description: "Dropbox API v2 connector — files & folders (list, metadata, create, delete, move, copy, search, revisions, temporary links, upload/download), sharing (shared…"
+description: "Connect Dropbox to your product with fastn."
 hidden: true
 ---
 

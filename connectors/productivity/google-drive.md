@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-drive.png" alt="Google Drive logo">
 
-Google Drive API v3 — list, upload, download, copy, move, and manage files and folders. Supports shared drives, permissions, comments, and revisions.
+Supports shared drives, permissions, comments, and revisions.
 
 | | |
 | --- | --- |

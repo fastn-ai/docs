@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/webling.png" alt="Webling logo">
 
-Webling association/club management (members, finances, documents, articles, letters, users). REST API v1 authenticated with an apikey header.
+REST API v1 authenticated with an apikey header.
 
 | | |
 | --- | --- |

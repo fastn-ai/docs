@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/taxjar.png" alt="TaxJar logo">
 
-Sales tax automation with TaxJar. Calculate sales tax for orders, record order and refund transactions, manage exempt customers, look up tax rates and nexus regions, browse product tax categories, and validate customer addresses.
+Calculate sales tax for orders, record order and refund transactions, manage exempt customers, look up tax rates and nexus regions, browse product tax categories, and validate customer addresses.
 
 | | |
 | --- | --- |

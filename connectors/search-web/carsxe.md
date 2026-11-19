@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/carsxe.png" alt="CarsXE logo">
 
-CarsXE is a vehicle data API for decoding VINs and license plates and enriching vehicle records. This connector covers the complete CarsXE REST surface: vehicle specifications (VIN decoding), international VIN decoding, US and worldwide license plate decoding (v1 and v2), market value (v1 and v2), vehicle history, lien and theft checks, safety recalls by VIN, by year/make/model and in bulk batches, vehicle images, year/make/model lookups and dropdown options, OBD-II trouble code decoding, VIN and license plate image recognition, and the Enterprise ownership and identity-graph lookups. Every call spends account credits.
+This connector covers the complete CarsXE REST surface: vehicle specifications (VIN decoding), international VIN decoding, US and worldwide license plate decoding (v1 and v2), market value (v1 and v2), vehicle history, lien and theft checks, safety recalls by VIN, by year/make/model and in bulk batches, vehicle images, year/make/model lookups and dropdown options, OBD-II trouble code decoding, VIN and license plate image recognition, and the Enterprise ownership and identity-graph lookups. Every call spends account credits.
 
 | | |
 | --- | --- |

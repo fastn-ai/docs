@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/all-images-ai.png" alt="All-Images.ai logo">
 
-All-Images.ai is an AI stock-image platform that generates royalty-free photos with Midjourney and sells ready-made images. This connector covers the complete All-Images.ai v1 API: API key check and credit balance, image search and purchase (direct URL or binary download), previously downloaded images, image display URLs, image generations (create, list, get, update, retry, delete) and webhook endpoint subscriptions for generation status events.
+This connector covers the complete All-Images.ai v1 API: API key check and credit balance, image search and purchase (direct URL or binary download), previously downloaded images, image display URLs, image generations (create, list, get, update, retry, delete) and webhook endpoint subscriptions for generation status events.
 
 | | |
 | --- | --- |

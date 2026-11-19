@@ -1,5 +1,5 @@
 ---
-description: "The World Bank Indicators API (v2) gives free access to tens of thousands of development indicators and their time series for every country, region and income…"
+description: "Connect World Bank Indicators API to your product with fastn."
 hidden: true
 ---
 

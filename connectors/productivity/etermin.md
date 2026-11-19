@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/etermin.png" alt="eTermin logo">
 
-eTermin is an online appointment scheduling and booking platform. This connector covers the eTermin REST API (https://www.etermin.net/api): appointments and appointment sync, calendars, calendar services, calendar return times and non-working times, anchor times by weekday and by date, working times by weekday and by date, services and service groups, contacts with frequency and service links, vouchers, ratings, time slots, survey results, booking page logs, message logs and user mappings, plus the account, user, company, settings, custom field, location, payment, invoice, tag, file, survey, statistics, log and webhook configuration resources.
+This connector covers the eTermin REST API (https://www.etermin.net/api): appointments and appointment sync, calendars, calendar services, calendar return times and non-working times, anchor times by weekday and by date, working times by weekday and by date, services and service groups, contacts with frequency and service links, vouchers, ratings, time slots, survey results, booking page logs, message logs and user mappings, plus the account, user, company, settings, custom field, location, payment, invoice, tag, file, survey, statistics, log and webhook configuration resources.
 
 | | |
 | --- | --- |

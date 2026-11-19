@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docupilot.png" alt="Docupilot logo">
 
-Docupilot is a document automation platform that generates PDF, DOCX, XLSX and PPTX documents from reusable templates and structured merge data. This connector covers the Docupilot v1 REST API: template folders, templates and their HTML content, document generation by merging JSON data into a template, per-template delivery configuration, and the document generation history.
+This connector covers the Docupilot v1 REST API: template folders, templates and their HTML content, document generation by merging JSON data into a template, per-template delivery configuration, and the document generation history.
 
 | | |
 | --- | --- |

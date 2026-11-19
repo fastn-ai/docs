@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI Image Processing and Optimization compresses an image hosted at a URL, with lossless or lossy compression, and returns the size savings and a…"
+description: "Connect AbstractAPI Image Processing to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/powerbi.png" alt="Microsoft Power BI logo">
 
-Microsoft Power BI REST API connector. Manage workspaces (groups), datasets, reports, dashboards, tiles, dataflows, imports, gateways, apps, capacities, and admin resources. Auth via Azure AD OAuth 2.0.
+Manage workspaces (groups), datasets, reports, dashboards, tiles, dataflows, imports, gateways, apps, capacities, and admin resources. Auth via Azure AD OAuth 2.0.
 
 | | |
 | --- | --- |

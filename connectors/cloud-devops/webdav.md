@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/webdav.png" alt="WebDAV logo">
 
-WebDAV (Web Distributed Authoring and Versioning) connector for remote file management over HTTP. Supports listing, reading, uploading, moving, copying, and deleting files and directories on any RFC 4918-compliant WebDAV server.
+Supports listing, reading, uploading, moving, copying, and deleting files and directories on any RFC 4918-compliant WebDAV server.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fixer.png" alt="Fixer logo">
 
-Fixer is a reliable, lightweight foreign exchange rates and currency conversion API by APILayer. It delivers JSON-formatted real-time and historical exchange rate data for 170+ world currencies, aggregated from 15+ trusted financial sources, plus currency conversion, time-series, and fluctuation endpoints.
+It delivers JSON-formatted real-time and historical exchange rate data for 170+ world currencies, aggregated from 15+ trusted financial sources, plus currency conversion, time-series, and fluctuation endpoints.
 
 | | |
 | --- | --- |

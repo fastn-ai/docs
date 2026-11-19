@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gitbook.png" alt="GitBook logo">
 
-GitBook documentation platform API connector. Manage organizations, spaces, collections, pages/content, revisions, and change requests via the GitBook REST API (https://api.gitbook.com/v1). Authenticates with a GitBook personal access token (gb_api_ ...) via Bearer auth.
+Manage organizations, spaces, collections, pages/content, revisions, and change requests via the GitBook REST API (https://api.gitbook.com/v1). Authenticates with a GitBook personal access token (gb_api_ ...) via Bearer auth.
 
 | | |
 | --- | --- |

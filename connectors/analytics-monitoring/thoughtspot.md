@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/thoughtspot.png" alt="ThoughtSpot logo">
 
-ThoughtSpot analytics platform — REST API v2. Search and AI-driven analytics over Liveboards, Answers, Metadata (worksheets, tables, models), Users, Groups, Roles, Tags, Data Objects, Connections, Orgs, Security/Sharing, Version Control (Git/TML), Reports, and Webhooks. Authenticates with a username/password login exchanged for a bearer access token against a per-tenant cluster URL (Cloud multi-tenant or self-hosted).
+Search and AI-driven analytics over Liveboards, Answers, Metadata (worksheets, tables, models), Users, Groups, Roles, Tags, Data Objects, Connections, Orgs, Security/Sharing, Version Control (Git/TML), Reports, and Webhooks. Authenticates with a username/password login exchanged for a bearer access token against a per-tenant cluster URL (Cloud multi-tenant or self-hosted).
 
 | | |
 | --- | --- |

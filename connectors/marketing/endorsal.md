@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/endorsal.png" alt="Endorsal logo">
 
-Endorsal is testimonial and review collection software. This connector wraps the Endorsal Public REST API v1 (https://api.endorsal.io) and covers testimonials, contacts, tags, widgets, the Wall of Love, AutoRequest campaigns and properties.
+This connector wraps the Endorsal Public REST API v1 (https://api.endorsal.io) and covers testimonials, contacts, tags, widgets, the Wall of Love, AutoRequest campaigns and properties.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/memberstack.png" alt="Memberstack logo">
 
-Memberstack adds authentication, gated content, member profiles and Stripe-backed memberships to any website. This connector covers the Memberstack Admin REST API: member listing, retrieval, creation, update and deletion; custom fields, metadata and JSON storage; free-plan assignment and removal; member JWT verification; and the Data Tables API for listing tables and creating, querying, updating and deleting records.
+This connector covers the Memberstack Admin REST API: member listing, retrieval, creation, update and deletion; custom fields, metadata and JSON storage; free-plan assignment and removal; member JWT verification; and the Data Tables API for listing tables and creating, querying, updating and deleting records.
 
 | | |
 | --- | --- |

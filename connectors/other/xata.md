@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/xata.png" alt="Xata logo">
 
-Xata is a serverless PostgreSQL platform with instant copy-on-write database branches, scale to zero, backups and zero-downtime schema changes. This connector covers the complete Xata control-plane API (api.xata.tech): organizations, members, roles and invitations, organization and user API keys, SSO domains and identity providers, billing customer, invoices and checkout sessions, regions, instance types, images and extensions, resource limits, projects, branches with credentials, metrics, logs, PostgreSQL configuration and backup restores, GitHub App installations and repository mappings, plus the MCP endpoint and the branch SQL gateway.
+This connector covers the complete Xata control-plane API (api.xata.tech): organizations, members, roles and invitations, organization and user API keys, SSO domains and identity providers, billing customer, invoices and checkout sessions, regions, instance types, images and extensions, resource limits, projects, branches with credentials, metrics, logs, PostgreSQL configuration and backup restores, GitHub App installations and repository mappings, plus the MCP endpoint and the branch SQL gateway.
 
 | | |
 | --- | --- |

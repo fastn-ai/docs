@@ -1,5 +1,5 @@
 ---
-description: "Audioscrape is an audio intelligence platform: a searchable, speaker-attributed record of 18M+ public podcast episodes plus your own uploaded calls, meetings…"
+description: "Connect Audioscrape to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/knock.png" alt="Knock logo">
 
-Knock notification infrastructure API. Covers recipients (users and custom objects), channel data, preference sets and per-category, per-channel-type and per-workflow preferences, in-app feeds and feed settings, guides, messages and their content, activities, events and delivery logs, message engagement status changes in single and batch form, subscriptions and audiences, tenants, schedules, workflow triggers and cancellations, workflow recipient runs, bulk operations, Slack and Microsoft Teams provider endpoints, and the Census and Hightouch reverse-ETL integration endpoints. Authenticates with a Knock environment secret key sent as an Authorization Bearer token; keys are scoped to a single Knock environment.
+Covers recipients (users and custom objects), channel data, preference sets and per-category, per-channel-type and per-workflow preferences, in-app feeds and feed settings, guides, messages and their content, activities, events and delivery logs, message engagement status changes in single and batch form, subscriptions and audiences, tenants, schedules, workflow triggers and cancellations, workflow recipient runs, bulk operations, Slack and Microsoft Teams provider endpoints, and the Census and Hightouch reverse-ETL integration endpoints. Authenticates with a Knock environment secret key sent as an Authorization Bearer token; keys are scoped to a single Knock environment.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fivetran.png" alt="Fivetran logo">
 
-Fivetran is a managed data-movement platform that replicates data from SaaS applications, databases and files into cloud data warehouses and lakes. This connector provides complete coverage of the Fivetran REST API v1 (https://api.fivetran.com/v1): connections and their sync, resync and setup tests, connection schema configuration, destinations, groups, users, roles, teams, user and team memberships, user API keys, system keys, webhooks, certificates and fingerprints, transformations and transformation projects, connector metadata, external log services, external secrets managers, private links, proxy agents, hybrid deployment agents, Connector SDK packages and account information.
+This connector provides complete coverage of the Fivetran REST API v1 (https://api.fivetran.com/v1): connections and their sync, resync and setup tests, connection schema configuration, destinations, groups, users, roles, teams, user and team memberships, user API keys, system keys, webhooks, certificates and fingerprints, transformations and transformation projects, connector metadata, external log services, external secrets managers, private links, proxy agents, hybrid deployment agents, Connector SDK packages and account information.
 
 | | |
 | --- | --- |

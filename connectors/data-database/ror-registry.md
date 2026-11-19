@@ -1,5 +1,5 @@
 ---
-description: "ROR (Research Organization Registry) is the open global registry of persistent identifiers for 120,000+ research organizations - universities, funders,…"
+description: "Connect ROR (Research Organization Registry) to your product with fastn."
 hidden: true
 ---
 

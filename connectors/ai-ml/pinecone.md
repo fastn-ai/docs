@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pinecone.png" alt="Pinecone logo">
 
-Pinecone vector database connector (API version 2026-04). Wraps the Database control plane (indexes, collections, backups, restore jobs), Database data plane (vectors upsert/query/fetch/update/delete/list, namespaces, records, bulk imports), Inference API (embed, rerank, models), and Assistant API (assistants, files, chat, context). Auth via Api-Key header. Data-plane and assistant-data calls target a per-resource host supplied per request.
+Wraps the Database control plane (indexes, collections, backups, restore jobs), Database data plane (vectors upsert/query/fetch/update/delete/list, namespaces, records, bulk imports), Inference API (embed, rerank, models), and Assistant API (assistants, files, chat, context). Auth via Api-Key header. Data-plane and assistant-data calls target a per-resource host supplied per request.
 
 | | |
 | --- | --- |

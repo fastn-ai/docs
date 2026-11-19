@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdfgen.png" alt="PDFgen logo">
 
-PDFgen generates pixel-perfect PDFs from saved Handlebars templates, raw HTML, Markdown, or an AI prompt through a single REST call. This connector covers the full v1 API: PDF generation, template CRUD, account/quota lookup and usage logs.
+This connector covers the full v1 API: PDF generation, template CRUD, account/quota lookup and usage logs.
 
 | | |
 | --- | --- |

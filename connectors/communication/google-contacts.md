@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-contacts.png" alt="Google Contacts logo">
 
-Google People API v1 — manage the authenticated user's contacts, contact groups, other contacts, and read domain directory profiles.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |

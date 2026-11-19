@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/attio.png" alt="Attio logo">
 
-Attio CRM API v2 (base https://api.attio.com/v2). Manage objects and attributes, records (query/create/assert/get/update/delete + attribute values), lists and list entries, workspace members, notes, tasks, comments and threads, and webhooks. Auth: Bearer API access token. Responses wrap payloads in a 'data' envelope.
+Manage objects and attributes, records (query/create/assert/get/update/delete + attribute values), lists and list entries, workspace members, notes, tasks, comments and threads, and webhooks. Auth: Bearer API access token. Responses wrap payloads in a 'data' envelope.
 
 | | |
 | --- | --- |

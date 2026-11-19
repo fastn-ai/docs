@@ -1,5 +1,5 @@
 ---
-description: "Google Tag Manager API v2 — manage accounts, containers, workspaces, tags, triggers, variables, templates, clients, transformations, zones, folders,…"
+description: "Connect Google Tag Manager to your product with fastn."
 hidden: true
 ---
 

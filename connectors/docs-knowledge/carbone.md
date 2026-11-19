@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/carbone.png" alt="Carbone logo">
 
-Carbone Cloud document generation API (api.carbone.io). Upload and manage DOCX/XLSX/ODT/HTML/MD templates, merge them with JSON data to render PDF/DOCX/XLSX/CSV/images, and download generated reports. Requires an API token from account.carbone.io; every request also sends the carbone-version: 5 header.
+Upload and manage DOCX/XLSX/ODT/HTML/MD templates, merge them with JSON data to render PDF/DOCX/XLSX/CSV/images, and download generated reports. Requires an API token from account.carbone.io; every request also sends the carbone-version: 5 header.
 
 | | |
 | --- | --- |

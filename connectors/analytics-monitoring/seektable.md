@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/seektable.png" alt="SeekTable logo">
 
-SeekTable is a self-service BI tool for pivot tables, charts and reports over CSV files, SQL databases, MongoDB, ElasticSearch and OLAP cubes. This connector covers the SeekTable web API for cloud and self-hosted installations: reports (list, get, export, share by email), cubes (list, get, CSV upload), dashboards (list, export), account backup, and the self-hosted user accounts and team management API.
+This connector covers the SeekTable web API for cloud and self-hosted installations: reports (list, get, export, share by email), cubes (list, get, CSV upload), dashboards (list, export), account backup, and the self-hosted user accounts and team management API.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gradium.png" alt="Gradium logo">
 
-Gradium is a low-latency speech API for text-to-speech, speech-to-text, voice design and voice cloning. This connector covers the Gradium REST API: text-to-speech synthesis, voice library and custom voices, voice design candidates, pronunciation dictionaries, short-lived WebSocket tokens and credit balance.
+This connector covers the Gradium REST API: text-to-speech synthesis, voice library and custom voices, voice design candidates, pronunciation dictionaries, short-lived WebSocket tokens and credit balance.
 
 | | |
 | --- | --- |

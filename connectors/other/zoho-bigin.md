@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-bigin.png" alt="Zoho Bigin logo">
 
-Zoho Bigin is a pipeline-centric CRM for small businesses. This connector provides full access to Bigin's REST API v2: contacts, companies (Accounts module), pipelines and deals, products, tasks, events, calls, notes, tags, users, roles, profiles, and module/field metadata.
+This connector provides full access to Bigin's REST API v2: contacts, companies (Accounts module), pipelines and deals, products, tasks, events, calls, notes, tags, users, roles, profiles, and module/field metadata.
 
 | | |
 | --- | --- |

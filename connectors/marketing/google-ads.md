@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-ads.png" alt="Google Ads logo">
 
-Google Ads API v25 connector (https://googleads.googleapis.com/v25). Manage Google Ads accounts through the query+mutate API: list accessible customers, run GAQL reporting queries (googleAds:search / googleAds:searchStream), and mutate resources either heterogeneously (googleAds:mutate) or via per-resource mutate services for campaigns, campaign budgets, ad groups, ad group ads, keywords and other criteria, bid modifiers, conversion actions, bidding strategies, labels, shared sets, user lists, and assets. Includes keyword planning (generateKeywordIdeas / generateKeywordHistoricalMetrics), offline conversion uploads, and GoogleAdsFieldService metadata. Auth: Google OAuth 2.0 (scope https://www.googleapis.com/auth/adwords) PLUS a mandatory developer-token header, and a login-customer-id header for manager (MCC) accounts.
+Manage Google Ads accounts through the query+mutate API: list accessible customers, run GAQL reporting queries (googleAds:search / googleAds:searchStream), and mutate resources either heterogeneously (googleAds:mutate) or via per-resource mutate services for campaigns, campaign budgets, ad groups, ad group ads, keywords and other criteria, bid modifiers, conversion actions, bidding strategies, labels, shared sets, user lists, and assets. Includes keyword planning (generateKeywordIdeas / generateKeywordHistoricalMetrics), offline conversion uploads, and GoogleAdsFieldService metadata. Auth: Google OAuth 2.0 (scope https://www.googleapis.com/auth/adwords) PLUS a mandatory developer-token header, and a login-customer-id header for manager (MCC) accounts.
 
 | | |
 | --- | --- |

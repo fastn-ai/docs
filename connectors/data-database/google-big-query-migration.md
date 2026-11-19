@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-big-query-migration.png" alt="Google BigQuery Migration logo">
 
-Google BigQuery Migration API (bigquerymigration.googleapis.com v2). List, get, create and delete BigQuery migration workflows (SQL translation and assessment workflows used to move a data warehouse to BigQuery). Authorizes with Google OAuth 2.0 using the BigQuery Migration scopes bigquerymigration.readonly (list/get workflows) and bigquerymigration (create/delete workflows).
+List, get, create and delete BigQuery migration workflows (SQL translation and assessment workflows used to move a data warehouse to BigQuery). Authorizes with Google OAuth 2.0 using the BigQuery Migration scopes bigquerymigration.readonly (list/get workflows) and bigquerymigration (create/delete workflows).
 
 | | |
 | --- | --- |

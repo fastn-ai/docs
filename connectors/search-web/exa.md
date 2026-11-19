@@ -1,5 +1,5 @@
 ---
-description: "Exa AI web search API — neural/keyword/auto search, content extraction, find similar links, LLM answers with citations, and Websets (async agentic search…"
+description: "Connect Exa to your product with fastn."
 hidden: true
 ---
 

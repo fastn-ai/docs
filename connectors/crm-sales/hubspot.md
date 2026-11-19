@@ -1,5 +1,5 @@
 ---
-description: "HubSpot CRM connector — full CRUD, search and batch operations across contacts, companies, deals, tickets, products, line items, quotes, and engagements…"
+description: "Connect HubSpot to your product with fastn."
 hidden: true
 ---
 

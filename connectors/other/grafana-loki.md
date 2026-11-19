@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/grafana-loki.png" alt="Grafana Loki logo">
 
-Grafana Loki log aggregation over the Loki HTTP API. Push log lines with stream labels and structured metadata, query them back with LogQL (range, instant, legacy and OTLP ingest), read labels, label values, series, detected fields and labels, index stats, volume and shards, manage log deletion requests, and manage Ruler alerting/recording rule groups. Works against self-hosted Loki and Grafana Cloud Logs. Auth is HTTP Basic: for self-hosted, the reverse-proxy username and password; for Grafana Cloud, the numeric instance/user ID as username and an access policy token (logs:write / logs:read) as password.
+Push log lines with stream labels and structured metadata, query them back with LogQL (range, instant, legacy and OTLP ingest), read labels, label values, series, detected fields and labels, index stats, volume and shards, manage log deletion requests, and manage Ruler alerting/recording rule groups. Works against self-hosted Loki and Grafana Cloud Logs. Auth is HTTP Basic: for self-hosted, the reverse-proxy username and password; for Grafana Cloud, the numeric instance/user ID as username and an access policy token (logs:write / logs:read) as password.
 
 | | |
 | --- | --- |

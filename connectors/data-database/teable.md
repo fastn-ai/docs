@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/teable.png" alt="Teable logo">
 
-Teable is an open-source, Airtable-style no-code database (spaces &gt; bases &gt; tables &gt; fields &gt; records &gt; views). This connector wraps the Teable Cloud REST API at https://app.teable.ai/api for base, table, field, record, view, aggregation, comment and trash operations.
+This connector wraps the Teable Cloud REST API at https://app.teable.ai/api for base, table, field, record, view, aggregation, comment and trash operations.
 
 | | |
 | --- | --- |

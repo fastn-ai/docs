@@ -1,5 +1,5 @@
 ---
-description: "Mixpanel product analytics — Query API (segmentation, funnels, retention, insights, activity stream, profiles), Lexicon schemas, annotations, cohorts, service…"
+description: "Connect Mixpanel to your product with fastn."
 hidden: true
 ---
 

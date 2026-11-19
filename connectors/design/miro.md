@@ -1,5 +1,5 @@
 ---
-description: "Miro REST API v2 connector — boards (CRUD/copy), board members & sharing, all item types (generic items, app cards, cards, documents, embeds, images, shapes,…"
+description: "Connect Miro to your product with fastn."
 hidden: true
 ---
 

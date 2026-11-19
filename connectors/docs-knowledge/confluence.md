@@ -1,5 +1,5 @@
 ---
-description: "Atlassian Confluence Cloud connector (REST API v2) — pages, blog posts, comments (footer/inline), attachments, custom content, labels, likes, versions,…"
+description: "Connect Confluence to your product with fastn."
 hidden: true
 ---
 

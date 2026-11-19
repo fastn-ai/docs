@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docuseal.png" alt="DocuSeal logo">
 
-DocuSeal is a document signing platform. This connector covers the DocuSeal API: document templates built from PDF, DOCX or HTML, signature requests (submissions), submitters and their filled values, signed document downloads, and webhook endpoints for signing events.
+This connector covers the DocuSeal API: document templates built from PDF, DOCX or HTML, signature requests (submissions), submitters and their filled values, signed document downloads, and webhook endpoints for signing events.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "OptimoRoute Web Service API connector for route planning and delivery/field-service management: create/update/get/delete orders, plan and stop routing, get…"
+description: "Connect OptimoRoute to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/checkout-com.png" alt="Checkout.com logo">
 
-Checkout.com Unified Payments API. Request, capture, void, refund and reverse card payments; manage customers, saved instruments, payment links, hosted payment pages, payment sessions (Flow), payment contexts and setups; look up payment methods and card metadata; handle disputes and evidence files; and build risk and notification workflows with events and reflows. The API base URL is per-merchant and per-environment, so it is supplied on the connection.
+Request, capture, void, refund and reverse card payments; manage customers, saved instruments, payment links, hosted payment pages, payment sessions (Flow), payment contexts and setups; look up payment methods and card metadata; handle disputes and evidence files; and build risk and notification workflows with events and reflows. The API base URL is per-merchant and per-environment, so it is supplied on the connection.
 
 | | |
 | --- | --- |

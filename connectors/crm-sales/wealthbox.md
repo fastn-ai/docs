@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wealthbox.png" alt="Wealthbox logo">
 
-Wealthbox CRM — the CRM built for financial advisors and RIA firms. Wraps the Wealthbox v1 REST API at https://api.crmworkspace.com/v1 and covers contacts (people, households, organizations and trusts), household membership, tasks and subtasks, calendar events, opportunities with amounts and stages, projects, notes, comments, workflows, workflow templates and workflow steps, tags, custom fields, contact roles and every customizable category pick-list, plus users, teams and user groups and the firm-wide activity stream. Supports both a personal API access token (ACCESS_TOKEN header) and OAuth 2.0 authorization-code with refresh. Change detection is by polling: every list endpoint accepts updated_since/updated_before, contacts expose deleted/deleted_since tombstones, and the activity stream is a cursor-paginated change feed.
+Wraps the Wealthbox v1 REST API at https://api.crmworkspace.com/v1 and covers contacts (people, households, organizations and trusts), household membership, tasks and subtasks, calendar events, opportunities with amounts and stages, projects, notes, comments, workflows, workflow templates and workflow steps, tags, custom fields, contact roles and every customizable category pick-list, plus users, teams and user groups and the firm-wide activity stream. Supports both a personal API access token (ACCESS_TOKEN header) and OAuth 2.0 authorization-code with refresh. Change detection is by polling: every list endpoint accepts updated_since/updated_before, contacts expose deleted/deleted_since tombstones, and the activity stream is a cursor-paginated change feed.
 
 | | |
 | --- | --- |

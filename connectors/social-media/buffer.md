@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/buffer.png" alt="Buffer logo">
 
-Buffer is a social media management platform for planning, scheduling, and publishing content across social channels. This connector uses the Buffer GraphQL API (https://api.buffer.com) to read account and organization details, list and inspect connected channels and their posting schedules, create, schedule, draft, edit, reorder and delete posts, manage the Ideas library and idea groups, manage post templates, tags, hashtag snippets and multi-channel content items (with channel-less drafts), read the per-organization configuration and Instagram audio catalog, check daily posting limits, and read per-post and aggregated post analytics.
+This connector uses the Buffer GraphQL API (https://api.buffer.com) to read account and organization details, list and inspect connected channels and their posting schedules, create, schedule, draft, edit, reorder and delete posts, manage the Ideas library and idea groups, manage post templates, tags, hashtag snippets and multi-channel content items (with channel-less drafts), read the per-organization configuration and Instagram audio catalog, check daily posting limits, and read per-post and aggregated post analytics.
 
 | | |
 | --- | --- |

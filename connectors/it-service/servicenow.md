@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/servicenow.png" alt="ServiceNow logo">
 
-ServiceNow ITSM platform connector. Full CRUD over the Table API (incident, problem, change_request, sc_request, task, sys_user, and any generic table), plus Attachment API, Aggregate/Stats API, dictionary field management, and Business-Rule-based outbound webhooks. Base URL https://{instance}.service-now.com/api/now
+Full CRUD over the Table API (incident, problem, change_request, sc_request, task, sys_user, and any generic table), plus Attachment API, Aggregate/Stats API, dictionary field management, and Business-Rule-based outbound webhooks. Base URL https://{instance}.service-now.com/api/now
 
 | | |
 | --- | --- |

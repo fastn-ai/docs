@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lob.png" alt="Lob logo">
 
-Lob is a direct-mail and address-verification platform. This connector covers the Lob v1 REST API: postcards, letters, checks, self-mailers, snap packs, booklets, cards and buckslips; address book and address verification (US and international, single and bulk, autocompletion, ZIP lookup and reverse geocode); templates and template versions; bank accounts; campaigns, creatives, uploads and QR-code analytics; Informed Delivery campaigns; tracking links and domains; resource proofs; identity validation; billing groups; users; and event, event-type and webhook management.
+This connector covers the Lob v1 REST API: postcards, letters, checks, self-mailers, snap packs, booklets, cards and buckslips; address book and address verification (US and international, single and bulk, autocompletion, ZIP lookup and reverse geocode); templates and template versions; bank accounts; campaigns, creatives, uploads and QR-code analytics; Informed Delivery campaigns; tracking links and domains; resource proofs; identity validation; billing groups; users; and event, event-type and webhook management.
 
 | | |
 | --- | --- |

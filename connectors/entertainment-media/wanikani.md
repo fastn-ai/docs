@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wanikani.png" alt="WaniKani logo">
 
-WaniKani API v2 — Japanese kanji learning SRS. Read your assignments, subjects (radicals/kanji/vocabulary), reviews, review statistics, level progressions, resets, study materials, spaced repetition systems, voice actors, summary and user profile; start lessons, submit reviews and manage study materials.
+Read your assignments, subjects (radicals/kanji/vocabulary), reviews, review statistics, level progressions, resets, study materials, spaced repetition systems, voice actors, summary and user profile; start lessons, submit reviews and manage study materials.
 
 | | |
 | --- | --- |

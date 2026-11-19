@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-resource-manager.png" alt="Google Cloud Resource Manager logo">
 
-Google Cloud Resource Manager API v3 connector (https://cloudresourcemanager.googleapis.com/v3). Programmatically manage the Google Cloud resource hierarchy: create, get, list, search, update, delete, undelete, and move projects and folders; read organizations; manage IAM policies on projects, folders, and organizations; and administer tags (tag keys, tag values, tag bindings, tag holds, effective tags), liens, capabilities, tag binding collections, and long-running operations. OAuth 2.0 (Google) authorization-code auth.
+Programmatically manage the Google Cloud resource hierarchy: create, get, list, search, update, delete, undelete, and move projects and folders; read organizations; manage IAM policies on projects, folders, and organizations; and administer tags (tag keys, tag values, tag bindings, tag holds, effective tags), liens, capabilities, tag binding collections, and long-running operations. OAuth 2.0 (Google) authorization-code auth.
 
 | | |
 | --- | --- |

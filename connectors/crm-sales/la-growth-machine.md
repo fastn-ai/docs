@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/la-growth-machine.png" alt="La Growth Machine logo">
 
-La Growth Machine is a multichannel B2B outreach platform combining LinkedIn, email and Twitter sequences. This connector covers the full La Growth Machine public API: workspace, member, identity and credit information, audiences and audience leads, lead creation and enrichment, lead search, lead status and audience membership, campaign listing with statistics and messages, conversation history, LinkedIn and email inbox messaging with conversation notes, website visitor imports from RB2B, Warmly and Vector, and inbox webhook management.
+This connector covers the full La Growth Machine public API: workspace, member, identity and credit information, audiences and audience leads, lead creation and enrichment, lead search, lead status and audience membership, campaign listing with statistics and messages, conversation history, LinkedIn and email inbox messaging with conversation notes, website visitor imports from RB2B, Warmly and Vector, and inbox webhook management.
 
 | | |
 | --- | --- |

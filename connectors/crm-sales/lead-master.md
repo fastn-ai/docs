@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lead-master.png" alt="LeadMaster logo">
 
-LeadMaster CRM (leadmaster.com) — lead management, sales and marketing automation. Wraps the LeadMaster Web API at webapi.leadmaster.com: leads and account records, contacts, opportunities and opportunity products, cases, quotes, callbacks/activities, campaigns, partners, users and workgroups, custom fields and custom forms, plus the webhook subscription API for entity create/update events. Authentication is an access_token query parameter minted from a LeadMaster username, password and company id.
+Wraps the LeadMaster Web API at webapi.leadmaster.com: leads and account records, contacts, opportunities and opportunity products, cases, quotes, callbacks/activities, campaigns, partners, users and workgroups, custom fields and custom forms, plus the webhook subscription API for entity create/update events. Authentication is an access_token query parameter minted from a LeadMaster username, password and company id.
 
 | | |
 | --- | --- |

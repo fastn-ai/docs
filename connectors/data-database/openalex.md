@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/openalex.png" alt="OpenAlex logo">
 
-OpenAlex is the open catalog of the global research system. This connector covers the OpenAlex REST API: works, authors, sources, institutions, publishers, funders, awards, topics and the rest of the subject hierarchy, keywords, SDGs, concepts, locations and every vocabulary endpoint, each with filtering, search, sorting, grouping, sampling and paging; plus autocomplete, OQL query execution and translation, the properties registry, usage and rate-limit status, full-text content downloads, private collections and author curations.
+This connector covers the OpenAlex REST API: works, authors, sources, institutions, publishers, funders, awards, topics and the rest of the subject hierarchy, keywords, SDGs, concepts, locations and every vocabulary endpoint, each with filtering, search, sorting, grouping, sampling and paging; plus autocomplete, OQL query execution and translation, the properties registry, usage and rate-limit status, full-text content downloads, private collections and author curations.
 
 | | |
 | --- | --- |

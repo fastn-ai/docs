@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/backblaze-b2.png" alt="Backblaze B2 logo">
 
-Backblaze B2 Cloud Storage connector using the B2 Native API v3. Manage buckets, files and file versions, application keys, large-file uploads, download authorizations, and bucket event-notification rules.
+Manage buckets, files and file versions, application keys, large-file uploads, download authorizations, and bucket event-notification rules.
 
 | | |
 | --- | --- |

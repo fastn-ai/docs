@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bugbug.png" alt="BugBug logo">
 
-BugBug browser test automation. Public API v2: tests, suites, test runs, suite runs, steps, groups, components, folders, variables, profiles, projects, project settings, backups, visual regression reference screenshots, and YAML/ZIP import-export.
+Public API v2: tests, suites, test runs, suite runs, steps, groups, components, folders, variables, profiles, projects, project settings, backups, visual regression reference screenshots, and YAML/ZIP import-export.
 
 | | |
 | --- | --- |

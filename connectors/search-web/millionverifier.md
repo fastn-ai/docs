@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/millionverifier.png" alt="MillionVerifier logo">
 
-MillionVerifier email verification. Wraps the Single API (real-time single email verification and credit balance on api.millionverifier.com/api/v3) and the Bulk API v2 (file upload, file info, file list, report download, stop and delete on bulkapi.millionverifier.com). Authenticates with a MillionVerifier API key sent as a query parameter (the vendor ignores auth headers entirely).
+Wraps the Single API (real-time single email verification and credit balance on api.millionverifier.com/api/v3) and the Bulk API v2 (file upload, file info, file list, report download, stop and delete on bulkapi.millionverifier.com). Authenticates with a MillionVerifier API key sent as a query parameter (the vendor ignores auth headers entirely).
 
 | | |
 | --- | --- |

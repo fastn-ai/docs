@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/plausible.png" alt="Plausible Analytics logo">
 
-Plausible Analytics is a privacy-friendly, cookie-free web analytics platform. This connector covers the Stats API v2 query endpoint for aggregate, timeseries, breakdown and absolute date-range reporting, the Stats API v1 realtime, aggregate, timeseries and breakdown endpoints, and the Sites API for managing sites, shared dashboard links and conversion goals. Requests authenticate with a Plausible API key sent as a bearer token.
+This connector covers the Stats API v2 query endpoint for aggregate, timeseries, breakdown and absolute date-range reporting, the Stats API v1 realtime, aggregate, timeseries and breakdown endpoints, and the Sites API for managing sites, shared dashboard links and conversion goals. Requests authenticate with a Plausible API key sent as a bearer token.
 
 | | |
 | --- | --- |

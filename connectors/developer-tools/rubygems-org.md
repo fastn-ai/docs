@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rubygems-org.png" alt="RubyGems.org logo">
 
-RubyGems.org is the Ruby community's gem hosting service. Its free public API gets gem and version details, searches and autocompletes gems, lists versions, reverse dependencies, file checksums, sigstore attestations, owners, user profiles, download counts and new or updated gems. No API key needed for these read endpoints.
+Its free public API gets gem and version details, searches and autocompletes gems, lists versions, reverse dependencies, file checksums, sigstore attestations, owners, user profiles, download counts and new or updated gems. No API key needed for these read endpoints.
 
 | | |
 | --- | --- |

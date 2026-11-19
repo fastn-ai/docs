@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/laposta.png" alt="Laposta logo">
 
-Laposta is a Dutch email marketing platform. This connector covers the full Laposta v2 REST API: mailing lists and their members, custom fields, segments, campaigns and campaign content, delivery reports, member and campaign history, and webhook management.
+This connector covers the full Laposta v2 REST API: mailing lists and their members, custom fields, segments, campaigns and campaign content, delivery reports, member and campaign history, and webhook management.
 
 | | |
 | --- | --- |

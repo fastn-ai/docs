@@ -1,5 +1,5 @@
 ---
-description: "Modem Pay is a payment infrastructure platform for businesses in The Gambia and West Africa, collecting payments through Wave, AfriMoney, QMoney and cards and…"
+description: "Connect Modem Pay to your product with fastn."
 hidden: true
 ---
 

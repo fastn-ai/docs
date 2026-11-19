@@ -1,5 +1,5 @@
 ---
-description: "Jina AI search-foundation and frontier APIs: Embeddings, Reranker, Classifier, Segmenter, Reader (URL to LLM-friendly text), Search (web search), DeepSearch…"
+description: "Connect Jina AI to your product with fastn."
 hidden: true
 ---
 

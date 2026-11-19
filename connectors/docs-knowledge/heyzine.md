@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/heyzine.png" alt="Heyzine Flipbooks logo">
 
-Heyzine turns PDF, Word, PowerPoint and OpenDocument files into interactive online flipbooks. This connector converts documents synchronously or asynchronously, lists and inspects flipbooks, updates their design and social sharing metadata, deletes them, manages password protection and per-user access lists, organizes flipbooks on bookshelves, and retrieves oEmbed embed codes.
+This connector converts documents synchronously or asynchronously, lists and inspects flipbooks, updates their design and social sharing metadata, deletes them, manages password protection and per-user access lists, organizes flipbooks on bookshelves, and retrieves oEmbed embed codes.
 
 | | |
 | --- | --- |

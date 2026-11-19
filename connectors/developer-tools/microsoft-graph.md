@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-graph.png" alt="Microsoft Graph logo">
 
-Microsoft Graph API v1.0 — manage users, groups, mail, calendar events, and SharePoint sites across the Microsoft 365 ecosystem.
-
 | | |
 | --- | --- |
 | **Category** | [Developer tools](README.md) |

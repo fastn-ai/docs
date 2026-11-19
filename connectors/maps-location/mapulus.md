@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mapulus.png" alt="Mapulus logo">
 
-Mapulus is a location-intelligence platform for Australian geographies. This connector covers the Mapulus Studio API - maps, layers and the locations (pins, addresses, custom attributes and travel contours) that sit on them - together with the public service-health endpoints of the Mapulus Data API.
+This connector covers the Mapulus Studio API - maps, layers and the locations (pins, addresses, custom attributes and travel contours) that sit on them - together with the public service-health endpoints of the Mapulus Data API.
 
 | | |
 | --- | --- |

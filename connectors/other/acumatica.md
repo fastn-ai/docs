@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/acumatica.png" alt="Acumatica logo">
 
-Acumatica Cloud ERP contract-based REST API. Access StockItem, NonStockItem, Customer, Vendor, SalesOrder, PurchaseOrder, Invoice, Bill, Payment, Shipment, InventoryReceipt, InventoryIssue, Account, JournalTransaction, Contact, Lead, Case, Project entities. Base URL: https://{instance}/entity/Default/{endpointVersion}. Auth via login session cookie (POST /entity/auth/login) or OAuth2.
+Access StockItem, NonStockItem, Customer, Vendor, SalesOrder, PurchaseOrder, Invoice, Bill, Payment, Shipment, InventoryReceipt, InventoryIssue, Account, JournalTransaction, Contact, Lead, Case, Project entities. Base URL: https://{instance}/entity/Default/{endpointVersion}. Auth via login session cookie (POST /entity/auth/login) or OAuth2.
 
 | | |
 | --- | --- |

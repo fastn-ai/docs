@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/waiver-file.png" alt="WaiverFile logo">
 
-WaiverFile digital waiver management. Manage waiver forms and signed waivers, events and event categories, event managers, SMS subscribers, and webhook subscriptions for new/edited waivers, events, check-ins and QR scans.
+Manage waiver forms and signed waivers, events and event categories, event managers, SMS subscribers, and webhook subscriptions for new/edited waivers, events, check-ins and QR scans.
 
 | | |
 | --- | --- |

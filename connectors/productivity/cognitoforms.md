@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cognitoforms.png" alt="Cognito Forms logo">
 
-Cognito Forms is a free online form builder for collecting submissions, managing entries, and generating documents. This connector covers the REST API: listing forms, reading a form's field schema, creating/reading/updating/deleting entries (submissions), and retrieving generated entry documents (PDFs).
+This connector covers the REST API: listing forms, reading a form's field schema, creating/reading/updating/deleting entries (submissions), and retrieving generated entry documents (PDFs).
 
 | | |
 | --- | --- |

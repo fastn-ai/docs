@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ascora.png" alt="Ascora logo">
 
-Ascora field service and job management platform. Manage enquiries, customers and contacts, inventory supplies, kits and categories, quotations and quote line items, jobs, job labour and timesheets, suppliers and supplier invoices, notes, attachments, accounting integration (invoices and payments to send), users, and webhook subscriptions.
+Manage enquiries, customers and contacts, inventory supplies, kits and categories, quotations and quote line items, jobs, job labour and timesheets, suppliers and supplier invoices, notes, attachments, accounting integration (invoices and payments to send), users, and webhook subscriptions.
 
 | | |
 | --- | --- |

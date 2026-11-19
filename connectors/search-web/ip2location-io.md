@@ -1,5 +1,5 @@
 ---
-description: "IP2Location.io is a real-time IP geolocation API returning country, region, city, ZIP code, coordinates, time zone, ASN, ISP, domain, usage type, mobile…"
+description: "Connect IP2Location.io to your product with fastn."
 hidden: true
 ---
 

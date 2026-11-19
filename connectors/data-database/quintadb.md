@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/quintadb.png" alt="QuintaDB logo">
 
-QuintaDB online database and form builder. Manage databases (apps), forms (tables), fields (columns), records, reports, file attachments, bulk updates and record search through the QuintaDB REST API.
+Manage databases (apps), forms (tables), fields (columns), records, reports, file attachments, bulk updates and record search through the QuintaDB REST API.
 
 | | |
 | --- | --- |

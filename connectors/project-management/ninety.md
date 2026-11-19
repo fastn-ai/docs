@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ninety.png" alt="Ninety logo">
 
-Ninety is a business operating system for teams running EOS. This connector covers the full Ninety public API: Issues, To-Dos, Rocks and Milestones, Headlines and Cascading Messages, the Scorecard with its Measurables, scores and notes, Teams, Users, Meetings, the Vision/Traction Organizer and the Accountability Chart.
+This connector covers the full Ninety public API: Issues, To-Dos, Rocks and Milestones, Headlines and Cascading Messages, the Scorecard with its Measurables, scores and notes, Teams, Users, Meetings, the Vision/Traction Organizer and the Accountability Chart.
 
 | | |
 | --- | --- |

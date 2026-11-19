@@ -1,5 +1,5 @@
 ---
-description: "The USGS Water Data OGC APIs (successor of the legacy NWIS Water Services) give free US water data: continuous (instantaneous) and daily values, field…"
+description: "Connect USGS Water Data APIs to your product with fastn."
 hidden: true
 ---
 

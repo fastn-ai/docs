@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/parseur.png" alt="Parseur logo">
 
-Parseur is an AI-powered document parser that extracts structured data from emails, PDFs and spreadsheets. This connector covers the Parseur REST API: parsers (mailboxes), documents and their processing lifecycle, templates, extraction schemas, export configurations, webhooks, account and subscription details.
+This connector covers the Parseur REST API: parsers (mailboxes), documents and their processing lifecycle, templates, extraction schemas, export configurations, webhooks, account and subscription details.
 
 | | |
 | --- | --- |

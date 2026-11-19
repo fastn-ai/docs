@@ -1,5 +1,5 @@
 ---
-description: "PopHIVE is Yale School of Public Health's harmonized US public-health surveillance dataset, covering emergency-department visits, wastewater,…"
+description: "Connect PopHIVE to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/context7.png" alt="Context7 logo">
 
-Context7 delivers up-to-date, version-specific library documentation and code examples to AI coding agents. This connector covers the complete Context7 Public REST API (https://context7.com/api): searching the library index, fetching ranked documentation context for a library and question, library usage metrics, refreshing an indexed library, reading and updating teamspace access policies, and adding new libraries from GitHub, GitLab, Bitbucket and other Git hosts, OpenAPI specifications, llms.txt files, websites, Confluence spaces and Notion pages.
+This connector covers the complete Context7 Public REST API (https://context7.com/api): searching the library index, fetching ranked documentation context for a library and question, library usage metrics, refreshing an indexed library, reading and updating teamspace access policies, and adding new libraries from GitHub, GitLab, Bitbucket and other Git hosts, OpenAPI specifications, llms.txt files, websites, Confluence spaces and Notion pages.
 
 | | |
 | --- | --- |

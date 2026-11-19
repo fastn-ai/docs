@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/vikunja.png" alt="Vikunja logo">
 
-Vikunja is an open-source, self-hostable to-do and task-management app. This connector covers projects, tasks, labels, teams, task relations/comments/attachments metadata, kanban views/buckets, project sharing (link shares, per-project users/teams), saved filters, project webhooks, and notifications via the REST API, authenticated with a Vikunja Personal Access Token.
+This connector covers projects, tasks, labels, teams, task relations/comments/attachments metadata, kanban views/buckets, project sharing (link shares, per-project users/teams), saved filters, project webhooks, and notifications via the REST API, authenticated with a Vikunja Personal Access Token.
 
 | | |
 | --- | --- |

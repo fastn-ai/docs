@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hootsuite.png" alt="Hootsuite logo">
 
-Hootsuite is a social media management platform for scheduling, approving, and publishing content across connected social profiles. This connector covers the Hootsuite Platform REST API 1.0: outbound message scheduling and approval workflows, comment approvals, media uploads, social profiles, the authenticated member, organizations, teams, members and their permissions, and SCIM 2.0 user and group provisioning.
+This connector covers the Hootsuite Platform REST API 1.0: outbound message scheduling and approval workflows, comment approvals, media uploads, social profiles, the authenticated member, organizations, teams, members and their permissions, and SCIM 2.0 user and group provisioning.
 
 | | |
 | --- | --- |

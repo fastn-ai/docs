@@ -1,5 +1,5 @@
 ---
-description: "Open-source Backend-as-a-Service platform providing Databases, Storage, Authentication, Teams, Functions, Messaging, and Sites via a server-key-authenticated…"
+description: "Connect Appwrite to your product with fastn."
 hidden: true
 ---
 

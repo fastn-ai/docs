@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/helpjuice.png" alt="Helpjuice logo">
 
-Helpjuice knowledge base platform. Manage articles, categories, users, groups, webhooks and account settings, run knowledge base searches, and read activity feeds, backups and the full analytics surface (searches, keywords, articles, categories, users and groups) through the Helpjuice API v3.
+Manage articles, categories, users, groups, webhooks and account settings, run knowledge base searches, and read activity feeds, backups and the full analytics surface (searches, keywords, articles, categories, users and groups) through the Helpjuice API v3.
 
 | | |
 | --- | --- |

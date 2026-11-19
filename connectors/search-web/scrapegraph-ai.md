@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/scrapegraph-ai.png" alt="ScrapeGraphAI logo">
 
-ScrapeGraphAI is an AI-powered web data extraction API. This connector covers the ScrapeGraphAI v2 API: multi-format page scraping, natural-language structured extraction, web search with inline content, asynchronous crawls with status, paginated pages, stop, resume and delete, scheduled monitors with change detection and webhook delivery, request history, credits, API key validation and health, plus the agent payment, offering discovery and agent enrollment endpoints.
+This connector covers the ScrapeGraphAI v2 API: multi-format page scraping, natural-language structured extraction, web search with inline content, asynchronous crawls with status, paginated pages, stop, resume and delete, scheduled monitors with change detection and webhook delivery, request history, credits, API key validation and health, plus the agent payment, offering discovery and agent enrollment endpoints.
 
 | | |
 | --- | --- |

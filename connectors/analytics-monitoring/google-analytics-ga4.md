@@ -1,5 +1,5 @@
 ---
-description: "Google Analytics 4 — Data API v1 (analyticsdata.googleapis.com: runReport, batchRunReports, runRealtimeReport, runPivotReport, checkCompatibility, metadata,…"
+description: "Connect Google Analytics GA4 to your product with fastn."
 hidden: true
 ---
 

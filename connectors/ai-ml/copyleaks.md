@@ -1,5 +1,5 @@
 ---
-description: "Copyleaks is an AI-powered content authenticity platform: plagiarism detection, AI-generated text, image and video detection, grammar checking, text…"
+description: "Connect Copyleaks to your product with fastn."
 hidden: true
 ---
 

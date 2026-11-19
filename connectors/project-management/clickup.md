@@ -1,5 +1,5 @@
 ---
-description: "ClickUp project management REST API connector for managing workspaces, spaces, folders, lists, tasks, subtasks, comments, members, goals, tags, time tracking,…"
+description: "Connect ClickUp to your product with fastn."
 hidden: true
 ---
 

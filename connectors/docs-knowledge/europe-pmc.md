@@ -1,5 +1,5 @@
 ---
-description: "Europe PMC is a free database of over 45 million life science publications (PubMed abstracts, PubMed Central full text, preprints, patents and more) run by…"
+description: "Connect Europe PMC to your product with fastn."
 hidden: true
 ---
 

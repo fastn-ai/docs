@@ -1,5 +1,5 @@
 ---
-description: "MindStudio developer API (api.mindstudio.ai/developer/v2): run published AI agents/apps synchronously or asynchronously with launch variables, load the…"
+description: "Connect MindStudio to your product with fastn."
 hidden: true
 ---
 

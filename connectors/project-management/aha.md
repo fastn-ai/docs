@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aha.png" alt="Aha! logo">
 
-Aha! product roadmap and idea management API (v1). Manage products/workspaces, features, releases and release phases, epics, requirements, ideas with categories/organizations/votes/comments, initiatives, goals and key results, to-dos, comments, users, competitors, personas, strategic models, notes, teams, integrations, record links, custom table records and custom fields.
+product roadmap and idea management API (v1). Manage products/workspaces, features, releases and release phases, epics, requirements, ideas with categories/organizations/votes/comments, initiatives, goals and key results, to-dos, comments, users, competitors, personas, strategic models, notes, teams, integrations, record links, custom table records and custom fields.
 
 | | |
 | --- | --- |

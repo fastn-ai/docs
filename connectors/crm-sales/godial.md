@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/godial.png" alt="GoDial logo">
 
-GoDial is a telecalling CRM and auto dialer. This connector wraps the GoDial CRM External API (v2) to manage teams, accounts (members), calling lists, contacts, dispositions, tasks and call logs.
+This connector wraps the GoDial CRM External API (v2) to manage teams, accounts (members), calling lists, contacts, dispositions, tasks and call logs.
 
 | | |
 | --- | --- |

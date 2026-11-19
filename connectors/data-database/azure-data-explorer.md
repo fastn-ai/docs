@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-data-explorer.png" alt="Azure Data Explorer logo">
 
-Azure Data Explorer (Kusto) — run KQL management and query commands against a cluster for real-time analytics on large datasets. REST API v1 at {clusterUrl}/v1/rest/mgmt.
+REST API v1 at {clusterUrl}/v1/rest/mgmt.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/getresponse.png" alt="GetResponse logo">
 
-GetResponse email marketing and automation platform. Manage contacts, campaigns (lists), custom fields, tags, from-fields, autoresponders, newsletters, RSS newsletters, forms, webforms, segments (search-contacts), statistics, ecommerce (shops, products, categories, carts, orders), account settings, and webhook callbacks via the GetResponse REST API v3.
+Manage contacts, campaigns (lists), custom fields, tags, from-fields, autoresponders, newsletters, RSS newsletters, forms, webforms, segments (search-contacts), statistics, ecommerce (shops, products, categories, carts, orders), account settings, and webhook callbacks via the GetResponse REST API v3.
 
 | | |
 | --- | --- |

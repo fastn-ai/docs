@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-service-bus.png" alt="Azure Service Bus logo">
 
-Azure Service Bus messaging. Send and receive messages on queues and topics/subscriptions, manage queue/topic/subscription entities, and handle message locking, completion, abandon, and dead-lettering. Auth via SAS token (Shared Access Signature).
+Send and receive messages on queues and topics/subscriptions, manage queue/topic/subscription entities, and handle message locking, completion, abandon, and dead-lettering. Auth via SAS token (Shared Access Signature).
 
 | | |
 | --- | --- |

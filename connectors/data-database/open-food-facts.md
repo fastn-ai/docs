@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/open-food-facts.png" alt="Open Food Facts logo">
 
-Open Food Facts is a free, open database of 3M+ food products from around the world. Read-only keyless access: look up products by barcode (ingredients, nutrition facts, Nutri-Score, NOVA, allergens, packaging, images), search products by category, brand, label or country, and use taxonomy suggestions, attribute groups and knowledge panels. Data is ODbL-licensed.
+Read-only keyless access: look up products by barcode (ingredients, nutrition facts, Nutri-Score, NOVA, allergens, packaging, images), search products by category, brand, label or country, and use taxonomy suggestions, attribute groups and knowledge panels. Data is ODbL-licensed.
 
 | | |
 | --- | --- |

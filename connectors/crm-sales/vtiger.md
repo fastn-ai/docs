@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/vtiger.png" alt="Vtiger logo">
 
-Vtiger CRM Cloud REST API connector. Generic record operations (create, retrieve, update, revise, delete, query with VTQL) across all CRM modules (Contacts, Leads, Organizations/Accounts, Potentials/Deals, Cases, Products, Services, Quotes, SalesOrder, Invoice, Events, Documents...), module metadata (listtypes, describe, picklist dependency), related-record management, tags, lookup, sync, lead conversion, and file retrieval.
+Generic record operations (create, retrieve, update, revise, delete, query with VTQL) across all CRM modules (Contacts, Leads, Organizations/Accounts, Potentials/Deals, Cases, Products, Services, Quotes, SalesOrder, Invoice, Events, Documents...), module metadata (listtypes, describe, picklist dependency), related-record management, tags, lookup, sync, lead conversion, and file retrieval.
 
 | | |
 | --- | --- |

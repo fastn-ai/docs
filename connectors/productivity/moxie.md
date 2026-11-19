@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/moxie.png" alt="Moxie logo">
 
-Moxie is a business management platform for freelancers and agencies. This connector wraps the Moxie Public API to create and search clients, contacts, projects, tasks, opportunities, invoices, payments, expenses, time entries, tickets, form submissions, calendar events and attachments.
+This connector wraps the Moxie Public API to create and search clients, contacts, projects, tasks, opportunities, invoices, payments, expenses, time entries, tickets, form submissions, calendar events and attachments.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/disease-sh.png" alt="Disease.sh logo">
 
-disease.sh is a free open API for disease statistics. Get COVID-19 totals by world, continent, country and US state, historical time series, NYT state data, Apple mobility, government-reported data, vaccine coverage and trials, therapeutics, ECDC variant data, and CDC influenza reports. No API key needed.
+Get COVID-19 totals by world, continent, country and US state, historical time series, NYT state data, Apple mobility, government-reported data, vaccine coverage and trials, therapeutics, ECDC variant data, and CDC influenza reports. No API key needed.
 
 | | |
 | --- | --- |

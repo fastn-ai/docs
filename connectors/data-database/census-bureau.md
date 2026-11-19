@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/census-bureau.png" alt="U.S. Census Bureau Data API logo">
 
-The U.S. Census Bureau Data API exposes more than 1,800 datasets from the American Community Survey, Decennial Census, Population Estimates, County Business Patterns, Economic Indicators, International Trade and other programs. This connector covers the discovery endpoints (dataset catalog, dataset descriptors, variables, geography, groups, examples, tags and sorts), a generic data query for any dataset, and ready-made query actions for the most used datasets.
+Census Bureau Data API exposes more than 1,800 datasets from the American Community Survey, Decennial Census, Population Estimates, County Business Patterns, Economic Indicators, International Trade and other programs. This connector covers the discovery endpoints (dataset catalog, dataset descriptors, variables, geography, groups, examples, tags and sorts), a generic data query for any dataset, and ready-made query actions for the most used datasets.
 
 | | |
 | --- | --- |

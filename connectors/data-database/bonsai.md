@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bonsai.png" alt="Bonsai logo">
 
-Bonsai is a fully managed Elasticsearch and OpenSearch hosting service. This connector works directly against a Bonsai cluster's search REST API: create and manage indices, mappings, settings and aliases; index, get, update, bulk load and delete documents; run searches, counts, multi-searches, scrolls, point-in-time searches, explain and validation; analyze text; manage ingest pipelines, stored scripts, templates and data streams; and read cluster, node and cat health and statistics. Endpoints that Bonsai restricts on shared (multi-tenant) plans return a permission error explaining the restriction. Authenticates with the cluster access key and access secret over HTTP Basic auth.
+This connector works directly against a Bonsai cluster's search REST API: create and manage indices, mappings, settings and aliases; index, get, update, bulk load and delete documents; run searches, counts, multi-searches, scrolls, point-in-time searches, explain and validation; analyze text; manage ingest pipelines, stored scripts, templates and data streams; and read cluster, node and cat health and statistics. Endpoints that Bonsai restricts on shared (multi-tenant) plans return a permission error explaining the restriction. Authenticates with the cluster access key and access secret over HTTP Basic auth.
 
 | | |
 | --- | --- |

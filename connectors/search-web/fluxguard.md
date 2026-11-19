@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fluxguard.png" alt="Fluxguard logo">
 
-Fluxguard is an AI-powered website change monitoring service. This connector covers the Fluxguard REST API: account details, adding pages to monitor, initiating crawls, reading page and session data, site and page deletion, site categories, and webhook endpoints that receive change notifications with links to captured HTML, screenshots and diffs.
+This connector covers the Fluxguard REST API: account details, adding pages to monitor, initiating crawls, reading page and session data, site and page deletion, site categories, and webhook endpoints that receive change notifications with links to captured HTML, screenshots and diffs.
 
 | | |
 | --- | --- |

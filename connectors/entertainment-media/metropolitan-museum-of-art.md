@@ -1,5 +1,5 @@
 ---
-description: "The Metropolitan Museum of Art Collection API: free, keyless access to 470,000+ open-access artwork records - search the collection, list object ids by…"
+description: "Connect Metropolitan Museum of Art to your product with fastn."
 hidden: true
 ---
 

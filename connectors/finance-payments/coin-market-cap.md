@@ -1,5 +1,5 @@
 ---
-description: "CoinMarketCap is the most-referenced source of cryptocurrency market data, covering real-time and historical prices, market capitalisation, OHLCV candles,…"
+description: "Connect CoinMarketCap to your product with fastn."
 hidden: true
 ---
 

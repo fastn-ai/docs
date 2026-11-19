@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/little-green-light.png" alt="Little Green Light logo">
 
-Little Green Light donor-management CRM for nonprofits. Wraps the LGL REST API v1 (https://api.littlegreenlight.com/api/v1): constituents and their contact info, gifts and pledges, memberships, events and invitations, volunteer times, campaigns, funds, appeals and appeal requests, groups, relationships, notes, contact reports, categories/keywords, custom attributes, lists, mailing templates and account types. Authenticates with an LGL account API key over Bearer or HTTP Basic. Rate limit: 300 calls per 5 minutes. LGL has no outbound webhooks; poll the /search endpoints with updated_from for change detection.
+Wraps the LGL REST API v1 (https://api.littlegreenlight.com/api/v1): constituents and their contact info, gifts and pledges, memberships, events and invitations, volunteer times, campaigns, funds, appeals and appeal requests, groups, relationships, notes, contact reports, categories/keywords, custom attributes, lists, mailing templates and account types. Authenticates with an LGL account API key over Bearer or HTTP Basic. Rate limit: 300 calls per 5 minutes. LGL has no outbound webhooks; poll the /search endpoints with updated_from for change detection.
 
 | | |
 | --- | --- |

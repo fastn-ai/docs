@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-geocoding.png" alt="Google Geocoding logo">
 
-Google Maps Platform Geocoding API connector. Forward geocode addresses into coordinates/Place IDs and reverse geocode coordinates/Place IDs into addresses, plus Time Zone and Elevation lookups. Authenticates with a Google Maps Platform API key supplied as the 'key' query parameter.
+Forward geocode addresses into coordinates/Place IDs and reverse geocode coordinates/Place IDs into addresses, plus Time Zone and Elevation lookups. Authenticates with a Google Maps Platform API key supplied as the 'key' query parameter.
 
 | | |
 | --- | --- |

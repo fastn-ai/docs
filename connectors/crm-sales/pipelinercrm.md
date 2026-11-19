@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pipelinercrm.png" alt="Pipeliner CRM (Coevera) logo">
 
-Coevera (formerly Pipeliner CRM), a sales CRM by Pipelinersales Inc. This connector provides full REST API access to accounts, contacts, leads, opportunities, pipelines, activities (tasks, calls, appointments), products, quotes, custom fields and custom entities, documents, notes, emails, tags, targets, projects, approvals, webhooks, and organization/reference data.
+This connector provides full REST API access to accounts, contacts, leads, opportunities, pipelines, activities (tasks, calls, appointments), products, quotes, custom fields and custom entities, documents, notes, emails, tags, targets, projects, approvals, webhooks, and organization/reference data.
 
 | | |
 | --- | --- |

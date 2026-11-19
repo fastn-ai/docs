@@ -1,5 +1,5 @@
 ---
-description: "Gladia is a speech-to-text and audio intelligence API for pre-recorded and real-time transcription with diarization, translation, summarization, subtitles,…"
+description: "Connect Gladia to your product with fastn."
 hidden: true
 ---
 

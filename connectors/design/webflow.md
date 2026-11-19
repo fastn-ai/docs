@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/webflow.png" alt="Webflow logo">
 
-Webflow Data API v2 connector — manage sites, CMS collections and items, pages, forms, assets, custom code, and site configuration via OAuth 2.0.
-
 | | |
 | --- | --- |
 | **Category** | [Design](README.md) |

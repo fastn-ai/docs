@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/livechat.png" alt="LiveChat logo">
 
-LiveChat (Text) API v3.6. Manage agents, bots, groups, tags, greetings, auto access rules, customer bans, properties and webhooks via the Configuration API; work with chats, threads, events, transfers, customers and routing statuses via the Agent Chat API; and pull chat, agent, customer and tag analytics from the Reports API.
+Manage agents, bots, groups, tags, greetings, auto access rules, customer bans, properties and webhooks via the Configuration API; work with chats, threads, events, transfers, customers and routing statuses via the Agent Chat API; and pull chat, agent, customer and tag analytics from the Reports API.
 
 | | |
 | --- | --- |

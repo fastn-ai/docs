@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/class-marker.png" alt="ClassMarker logo">
 
-ClassMarker is an online testing and quiz platform for exams, training assessments and certification. This connector covers the ClassMarker REST API v1: the group, link and exam catalogue, recent results for groups, links and individual exams, access list code management, the question bank, and test categories. Requests are authenticated with an API key plus a per-request SHA-256 signature and UNIX timestamp.
+This connector covers the ClassMarker REST API v1: the group, link and exam catalogue, recent results for groups, links and individual exams, access list code management, the question bank, and test categories. Requests are authenticated with an API key plus a per-request SHA-256 signature and UNIX timestamp.
 
 | | |
 | --- | --- |

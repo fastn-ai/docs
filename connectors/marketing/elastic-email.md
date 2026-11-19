@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/elastic-email.png" alt="Elastic Email logo">
 
-Elastic Email is an email delivery and marketing platform. This connector wraps the complete Elastic Email v4 REST API: sending transactional and bulk email, contacts, lists, segments, templates, campaigns, files, inbound routes, domains, email verification, statistics, suppressions, sub-accounts, API key and SMTP credential management, activity events and webhooks.
+This connector wraps the complete Elastic Email v4 REST API: sending transactional and bulk email, contacts, lists, segments, templates, campaigns, files, inbound routes, domains, email verification, statistics, suppressions, sub-accounts, API key and SMTP credential management, activity events and webhooks.
 
 | | |
 | --- | --- |

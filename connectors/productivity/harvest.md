@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/harvest.png" alt="Harvest logo">
 
-Harvest time tracking, invoicing and project profitability API (v2). Covers clients and contacts, projects with task and user assignments, tasks, time entries including running timers, expenses and expense categories, invoices with payments, messages and item categories, estimates with messages and item categories, users with billable rates, cost rates, teammates and project assignments, roles, company settings, and the time, expense, project budget and uninvoiced reports. Authenticates with a Harvest personal access token sent as a Bearer token together with the Harvest account ID header.
+Covers clients and contacts, projects with task and user assignments, tasks, time entries including running timers, expenses and expense categories, invoices with payments, messages and item categories, estimates with messages and item categories, users with billable rates, cost rates, teammates and project assignments, roles, company settings, and the time, expense, project budget and uninvoiced reports. Authenticates with a Harvest personal access token sent as a Bearer token together with the Harvest account ID header.
 
 | | |
 | --- | --- |

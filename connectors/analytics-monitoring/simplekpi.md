@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/simplekpi.png" alt="SimpleKPI logo">
 
-SimpleKPI is a KPI tracking and dashboard platform. This connector covers the complete SimpleKPI AI REST API (api.simplekpi.com/v1): KPIs and KPI categories with their KPIs, KPI units, the frequency and icon lookups, breakdown items, KPI entries (single upsert, batch upsert, read, update, delete), the aggregated actuals-and-targets report and the read-only users list.
+This connector covers the complete SimpleKPI AI REST API (api.simplekpi.com/v1): KPIs and KPI categories with their KPIs, KPI units, the frequency and icon lookups, breakdown items, KPI entries (single upsert, batch upsert, read, update, delete), the aggregated actuals-and-targets report and the read-only users list.
 
 | | |
 | --- | --- |

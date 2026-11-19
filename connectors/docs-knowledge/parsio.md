@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/parsio.png" alt="Parsio logo">
 
-Parsio extracts structured data from emails, PDFs and other documents. This connector covers the Parsio public API: mailboxes, document import and parsing, parsed data, extraction templates, webhooks, collected email addresses and account settings.
+This connector covers the Parsio public API: mailboxes, document import and parsing, parsed data, extraction templates, webhooks, collected email addresses and account settings.
 
 | | |
 | --- | --- |

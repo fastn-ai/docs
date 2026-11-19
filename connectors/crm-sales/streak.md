@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/streak.png" alt="Streak logo">
 
-Streak is a CRM that lives inside Gmail. This connector wraps the public Streak REST API (https://api.streak.com/api/v1 and /v2) and covers the full object model: pipelines, boxes, stages, pipeline fields and box field values, contacts, organizations and their team-level field definitions, email threads, tasks, comments, meeting notes and call logs, files, snippets, users, teams, search, newsfeeds, the box timeline, and webhook registration. Authentication is HTTP Basic with the Streak API key sent as the username and an empty password.
+This connector wraps the public Streak REST API (https://api.streak.com/api/v1 and /v2) and covers the full object model: pipelines, boxes, stages, pipeline fields and box field values, contacts, organizations and their team-level field definitions, email threads, tasks, comments, meeting notes and call logs, files, snippets, users, teams, search, newsfeeds, the box timeline, and webhook registration. Authentication is HTTP Basic with the Streak API key sent as the username and an empty password.
 
 | | |
 | --- | --- |

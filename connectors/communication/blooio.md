@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/blooio.png" alt="Blooio logo">
 
-Blooio multi-channel messaging API (v4): iMessage, SMS, RCS and WhatsApp. Manage channels and sender numbers, contacts and identities, chats, messages, reactions and polls, groups, templates, attachments, phone-number lookup, priorities, API keys, webhooks and a unified event feed.
+Manage channels and sender numbers, contacts and identities, chats, messages, reactions and polls, groups, templates, attachments, phone-number lookup, priorities, API keys, webhooks and a unified event feed.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/leadiq.png" alt="LeadIQ logo">
 
-LeadIQ sales intelligence — GraphQL API for contact/person search, company search, advanced people search, prospect enrichment, and prospect-list management. Single endpoint POST https://api.leadiq.com/graphql.
+Single endpoint POST https://api.leadiq.com/graphql.
 
 | | |
 | --- | --- |

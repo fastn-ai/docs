@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/paddle-billing.png" alt="Paddle Billing logo">
 
-Paddle Billing API connector. Merchant of record for payments, tax, subscriptions, and metrics. Covers products, prices, discounts, customers (addresses, businesses, payment methods, credit balances), transactions (incl. invoice PDF and preview), subscriptions (pause/resume/cancel/charge/preview), adjustments, reports, events, event-types, notifications and notification-settings. Bearer auth with a pdl_ API key.
+Merchant of record for payments, tax, subscriptions, and metrics. Covers products, prices, discounts, customers (addresses, businesses, payment methods, credit balances), transactions (incl. invoice PDF and preview), subscriptions (pause/resume/cancel/charge/preview), adjustments, reports, events, event-types, notifications and notification-settings. Bearer auth with a pdl_ API key.
 
 | | |
 | --- | --- |

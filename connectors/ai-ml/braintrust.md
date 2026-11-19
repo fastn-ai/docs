@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/braintrust.png" alt="Braintrust logo">
 
-Braintrust is an AI evaluation and observability platform for building, evaluating and monitoring LLM applications. This connector covers the Braintrust REST API v1: projects, experiments, datasets and dataset snapshots, project logs, prompts, functions and agents, views, span iframes, project scores and tags, groups, roles, ACLs, users, organizations, API keys, service tokens, AI secrets, environment variables, MCP servers, project and organization automations, environments, evals and the AI proxy.
+This connector covers the Braintrust REST API v1: projects, experiments, datasets and dataset snapshots, project logs, prompts, functions and agents, views, span iframes, project scores and tags, groups, roles, ACLs, users, organizations, API keys, service tokens, AI secrets, environment variables, MCP servers, project and organization automations, environments, evals and the AI proxy.
 
 | | |
 | --- | --- |

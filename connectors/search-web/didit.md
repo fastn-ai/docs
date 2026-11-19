@@ -1,5 +1,5 @@
 ---
-description: "Didit identity infrastructure: KYC verification sessions, KYB business verification, AML screening and monitoring, transaction monitoring (KYT), wallet…"
+description: "Connect Didit to your product with fastn."
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "CoinMarketCal is the leading crypto events calendar, tracking upcoming and historical announcements - listings, hard forks, token unlocks, airdrops, AMAs and…"
+description: "Connect CoinMarketCal to your product with fastn."
 hidden: true
 ---
 

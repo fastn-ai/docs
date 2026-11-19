@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/ons-api.png" alt="Office for National Statistics (ONS) API logo">
 
-The UK Office for National Statistics (ONS) open API: browse datasets, editions, versions, dimensions and metadata (e.g. CPIH inflation), code lists, dimension hierarchies, Census 2021 population types, areas and observations, plus search of ONS content, the release calendar and topics. No API key needed.
+CPIH inflation), code lists, dimension hierarchies, Census 2021 population types, areas and observations, plus search of ONS content, the release calendar and topics. No API key needed.
 
 | | |
 | --- | --- |

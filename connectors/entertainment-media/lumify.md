@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lumify.png" alt="Lumify logo">
 
-Lumify is an agent-ready sports intelligence API covering MLB, NBA, NFL, NHL, NCAAF, NCAAB, tennis and soccer. This connector covers the full Lumify v1 API: sports, seasons, teams, players and events; live scores and event statistics; betting odds, line-movement history, period odds, player props, team props and public betting splits; bet intelligence, expected-value scans and forecasts; natural-language search and entity resolution; slip grading; credit and API-key management; and signed webhook subscriptions with delivery history.
+This connector covers the full Lumify v1 API: sports, seasons, teams, players and events; live scores and event statistics; betting odds, line-movement history, period odds, player props, team props and public betting splits; bet intelligence, expected-value scans and forecasts; natural-language search and entity resolution; slip grading; credit and API-key management; and signed webhook subscriptions with delivery history.
 
 | | |
 | --- | --- |

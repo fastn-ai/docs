@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-photos.png" alt="Google Photos logo">
 
-Google Photos Library API v1 connector (https://photoslibrary.googleapis.com/v1). Manage app-created albums and media items: create/list/get/update albums, add enrichments, batch add/remove media items to albums; list/get/search/update media items, batchGet, batchCreate from upload tokens; raw byte uploads (/v1/uploads). Also includes the (deprecated as of 2025-03-31) sharing and sharedAlbums endpoints for completeness. OAuth 2.0 (Google) authorization-code auth using the shared Google OAuth app. Note: as of 2025-03-31 the API only accesses content the app itself created; the broad photoslibrary/photoslibrary.readonly/photoslibrary.sharing scopes were removed.
+Manage app-created albums and media items: create/list/get/update albums, add enrichments, batch add/remove media items to albums; list/get/search/update media items, batchGet, batchCreate from upload tokens; raw byte uploads (/v1/uploads). Also includes the (deprecated as of 2025-03-31) sharing and sharedAlbums endpoints for completeness. OAuth 2.0 (Google) authorization-code auth using the shared Google OAuth app. Note: as of 2025-03-31 the API only accesses content the app itself created; the broad photoslibrary/photoslibrary.readonly/photoslibrary.sharing scopes were removed.
 
 | | |
 | --- | --- |

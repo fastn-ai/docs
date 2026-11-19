@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wistia.png" alt="Wistia logo">
 
-Wistia video hosting platform. Manage projects, medias, customizations, captions, project sharings, and access account and viewing statistics via the Wistia Data API and Stats API, plus media upload/import via the Upload API.
+Manage projects, medias, customizations, captions, project sharings, and access account and viewing statistics via the Wistia Data API and Stats API, plus media upload/import via the Upload API.
 
 | | |
 | --- | --- |

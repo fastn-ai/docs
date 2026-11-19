@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mapflow.png" alt="Mapflow logo">
 
-Mapflow is an AI mapping platform that extracts buildings, roads, forests and other features from satellite and aerial imagery. This connector covers the Mapflow Processing API and Data API: projects, processings and their results, cost estimation, processing history, custom imagery mosaics and images, storage usage, the satellite imagery catalog and account status.
+This connector covers the Mapflow Processing API and Data API: projects, processings and their results, cost estimation, processing history, custom imagery mosaics and images, storage usage, the satellite imagery catalog and account status.
 
 | | |
 | --- | --- |

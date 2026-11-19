@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sec-edgar.png" alt="SEC EDGAR logo">
 
-SEC EDGAR APIs from the U.S. Securities and Exchange Commission give free access to company filings and XBRL financial data. Get a company's profile and filing history, every reported value of a financial concept, cross-company XBRL frames for a period, and the official ticker-to-CIK lists. No API key needed (requests carry a declared User-Agent, max 10 per second).
+Securities and Exchange Commission give free access to company filings and XBRL financial data. Get a company's profile and filing history, every reported value of a financial concept, cross-company XBRL frames for a period, and the official ticker-to-CIK lists. No API key needed (requests carry a declared User-Agent, max 10 per second).
 
 | | |
 | --- | --- |

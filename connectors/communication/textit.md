@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/textit.png" alt="TextIt logo">
 
-TextIt is a messaging and chatbot automation platform (RapidPro-based) for SMS, WhatsApp and social messaging campaigns. This connector wraps the TextIt API v2 at https://textit.com/api/v2 and covers contacts, groups, fields, globals, labels, messages, broadcasts, flows, flow starts, runs, campaigns, campaign events, channels, tickets, topics, users, archives, media, admin boundaries, flow definitions and resthook webhook subscriptions.
+This connector wraps the TextIt API v2 at https://textit.com/api/v2 and covers contacts, groups, fields, globals, labels, messages, broadcasts, flows, flow starts, runs, campaigns, campaign events, channels, tickets, topics, users, archives, media, admin boundaries, flow definitions and resthook webhook subscriptions.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/contactout.png" alt="ContactOut logo">
 
-ContactOut is a contact-data and recruitment-outreach platform that finds verified email addresses and phone numbers for professionals. This connector covers the full ContactOut public API: LinkedIn and email profile enrichment, people and company search, decision-maker discovery, bulk contact-info jobs, contact availability checks, hashed-email identifiers, single and bulk email verification, outreach campaign management and API usage statistics.
+This connector covers the full ContactOut public API: LinkedIn and email profile enrichment, people and company search, decision-maker discovery, bulk contact-info jobs, contact availability checks, hashed-email identifiers, single and bulk email verification, outreach campaign management and API usage statistics.
 
 | | |
 | --- | --- |

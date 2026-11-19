@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/brightpearl.png" alt="Brightpearl logo">
 
-Connect to Brightpearl's retail operations platform to manage orders, products, contacts, warehouse, and accounting data via the Brightpearl REST API.
-
 | | |
 | --- | --- |
 | **Category** | [Other](README.md) |

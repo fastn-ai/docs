@@ -1,5 +1,5 @@
 ---
-description: "World News API provides unified access to global news from thousands of sources in 86+ languages and 210+ countries, with full text, summaries, sentiment and…"
+description: "Connect World News API to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/phantombuster.png" alt="PhantomBuster logo">
 
-PhantomBuster is a cloud automation platform for lead generation and data extraction (Phantoms). This connector covers the PhantomBuster API v2 and the legacy v1 endpoints: agents (create, launch, schedule, stop, output, delete), containers and their output and result objects, scripts and branches, organization settings, resources, usage exports and agent groups, the current user, org storage for leads, lead lists, lead objects and company objects, identities, CRM access and contacts, AI completions and advice, ICPs, buyer personas, scoring definitions, SERP search, IP location and captcha solving.
+This connector covers the PhantomBuster API v2 and the legacy v1 endpoints: agents (create, launch, schedule, stop, output, delete), containers and their output and result objects, scripts and branches, organization settings, resources, usage exports and agent groups, the current user, org storage for leads, lead lists, lead objects and company objects, identities, CRM access and contacts, AI completions and advice, ICPs, buyer personas, scoring definitions, SERP search, IP location and captcha solving.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-classroom.png" alt="Google Classroom logo">
 
-Google Classroom API for managing courses, rosters, coursework and grades. Create and update courses and aliases, manage teachers, students and student groups, publish announcements, coursework and materials, grade and return student submissions, manage topics, rubrics, grading periods, invitations, guardians and add-on attachments, and register for push notifications.
+Create and update courses and aliases, manage teachers, students and student groups, publish announcements, coursework and materials, grade and return student submissions, manage topics, rubrics, grading periods, invitations, guardians and add-on attachments, and register for push notifications.
 
 | | |
 | --- | --- |

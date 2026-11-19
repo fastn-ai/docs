@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/discourse.png" alt="Discourse logo">
 
-Discourse is an open-source community discussion platform. This connector covers the Discourse REST API: topics, posts, categories, tags and tag groups, users and user preferences, groups and memberships, badges, invites, notifications, private messages, search, site settings, uploads, backups, admin user management and web hooks.
+This connector covers the Discourse REST API: topics, posts, categories, tags and tag groups, users and user preferences, groups and memberships, badges, invites, notifications, private messages, search, site settings, uploads, backups, admin user management and web hooks.
 
 | | |
 | --- | --- |

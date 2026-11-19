@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/serply.png" alt="Serply logo">
 
-Serply provides real-time search engine results and web scraping over a simple REST API. This connector covers the full Serply API: Google Search, Google Video, Google Images, Google Jobs, Google Scholar, Google News, Google Maps, Bing Search, Amazon product search, eBay search, Reddit subreddits, users, posts and comment threads, and the URL scraping Request endpoint that returns full HTML or markdown.
+This connector covers the full Serply API: Google Search, Google Video, Google Images, Google Jobs, Google Scholar, Google News, Google Maps, Bing Search, Amazon product search, eBay search, Reddit subreddits, users, posts and comment threads, and the URL scraping Request endpoint that returns full HTML or markdown.
 
 | | |
 | --- | --- |

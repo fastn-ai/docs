@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/typesense.png" alt="Typesense logo">
 
-Typesense is an open-source, typo-tolerant search engine. This connector wraps the Typesense Server API (v30.x) for managing collections, documents (index/upsert/update/import/export/search/multi_search), aliases, API keys, synonym sets, curation/override sets, stopwords, analytics rules and events, and cluster operations. Base URL is per-cluster; supply your cluster host and API key.
+This connector wraps the Typesense Server API (v30.x) for managing collections, documents (index/upsert/update/import/export/search/multi_search), aliases, API keys, synonym sets, curation/override sets, stopwords, analytics rules and events, and cluster operations. Base URL is per-cluster; supply your cluster host and API key.
 
 | | |
 | --- | --- |

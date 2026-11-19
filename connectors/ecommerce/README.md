@@ -4,7 +4,7 @@ description: "E-commerce connectors fastn manages, with their auth, actions and 
 
 # E-commerce
 
-E-commerce apps you can connect to with fastn, the most used first. Open a connector to see how it authenticates and every action and event it offers. Back to the [connector catalog](../README.md).
+Listed most used first. Back to the [connector catalog](../README.md).
 
 | | Connector | Authentication | About |
 | --- | --- | --- | --- |

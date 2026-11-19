@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-cosmos-db.png" alt="Azure Cosmos DB logo">
 
-Azure Cosmos DB management over the Microsoft.DocumentDB Azure Resource Manager API at https://management.azure.com. Create and manage database accounts, keys and connection strings, failover and region settings, and the full resource surface for the NoSQL (SQL), MongoDB, Cassandra, Gremlin and Table APIs - databases, containers, collections, keyspaces, tables, graphs, stored procedures, user defined functions, triggers, throughput settings, data-plane role definitions and role assignments, restorable accounts and point-in-time restore resources, private endpoint connections, services and notebook workspaces. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target subscription or resource group. Every request carries an api-version query parameter, exposed on each action with the current stable default.
+Create and manage database accounts, keys and connection strings, failover and region settings, and the full resource surface for the NoSQL (SQL), MongoDB, Cassandra, Gremlin and Table APIs - databases, containers, collections, keyspaces, tables, graphs, stored procedures, user defined functions, triggers, throughput settings, data-plane role definitions and role assignments, restorable accounts and point-in-time restore resources, private endpoint connections, services and notebook workspaces. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target subscription or resource group. Every request carries an api-version query parameter, exposed on each action with the current stable default.
 
 | | |
 | --- | --- |

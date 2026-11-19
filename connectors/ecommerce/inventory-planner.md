@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/inventory-planner.png" alt="Inventory Planner logo">
 
-Inventory Planner by Sage — smart forecasting and replenishment recommendations. Provides Stock Orders API (purchase orders, transfers, assembly orders) and Reports API (variants, metrics) for syncing data with ERPs, 3PLs, and custom systems.
+Provides Stock Orders API (purchase orders, transfers, assembly orders) and Reports API (variants, metrics) for syncing data with ERPs, 3PLs, and custom systems.
 
 | | |
 | --- | --- |

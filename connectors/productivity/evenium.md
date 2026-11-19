@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/evenium.png" alt="Evenium logo">
 
-Evenium event registration and ticketing platform (Evenium Net / ConnectMe). Manage events, guests, participants, tickets, documents, sponsors, alerts, badges and the organisation-wide contact book through the Evenium REST API v1 at https://secure.evenium.com/api/1/.
+Manage events, guests, participants, tickets, documents, sponsors, alerts, badges and the organisation-wide contact book through the Evenium REST API v1 at https://secure.evenium.com/api/1/.
 
 | | |
 | --- | --- |

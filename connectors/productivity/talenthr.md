@@ -1,5 +1,5 @@
 ---
-description: "TalentHR public API (v1) — all-in-one HR platform: employee directory and records, onboarding, time off, time tracking, attendance, documents, assets,…"
+description: "Connect TalentHR to your product with fastn."
 hidden: true
 ---
 

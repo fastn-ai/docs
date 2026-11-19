@@ -1,5 +1,5 @@
 ---
-description: "CometAPI is a unified gateway to 500+ AI models from OpenAI, Anthropic, Google, xAI, DeepSeek, Kling, Midjourney, Runway, Bria, Flux, Replicate and more…"
+description: "Connect CometAPI to your product with fastn."
 hidden: true
 ---
 

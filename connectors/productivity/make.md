@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/make.png" alt="Make logo">
 
-Make (formerly Integromat) is a visual workflow automation and iPaaS platform. This connector covers the Make Public API v2: scenarios, scenario folders, scenario labels, organizations, teams, connections, data stores and records, hooks (custom webhooks), templates, users, notifications, keys (keychain), and custom (SDK) apps. Base URL is zone-specific (e.g. https://eu1.make.com/api/v2) and authenticates with a per-user API token.
+This connector covers the Make Public API v2: scenarios, scenario folders, scenario labels, organizations, teams, connections, data stores and records, hooks (custom webhooks), templates, users, notifications, keys (keychain), and custom (SDK) apps. Base URL is zone-specific (e.g. https://eu1.make.com/api/v2) and authenticates with a per-user API token.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/adviceslip.png" alt="Advice Slip API logo">
 
-Advice Slip API is a free, public, keyless service that returns short pieces of fortune-cookie style advice. Supports fetching a random advice slip, fetching a specific slip by its numeric id, and searching slips by keyword.
+Supports fetching a random advice slip, fetching a specific slip by its numeric id, and searching slips by keyword.
 
 | | |
 | --- | --- |

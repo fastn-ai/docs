@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/crowdin.png" alt="Crowdin logo">
 
-Crowdin localization management platform (crowdin.com REST API v2). Manage projects, source files and directories, branches, source strings, translations and approvals, target languages, glossaries and terms, storages, and project webhooks.
+Manage projects, source files and directories, branches, source strings, translations and approvals, target languages, glossaries and terms, storages, and project webhooks.
 
 | | |
 | --- | --- |

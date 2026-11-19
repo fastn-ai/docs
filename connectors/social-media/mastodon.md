@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mastodon.png" alt="Mastodon logo">
 
-Mastodon is an open-source, self-hostable social network built on ActivityPub. This connector covers statuses, timelines, accounts, notifications, media, polls, lists, filters, search, trends, moderation and instance metadata on any Mastodon instance.
+This connector covers statuses, timelines, accounts, notifications, media, polls, lists, filters, search, trends, moderation and instance metadata on any Mastodon instance.
 
 | | |
 | --- | --- |

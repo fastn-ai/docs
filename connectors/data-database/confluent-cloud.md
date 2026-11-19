@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/confluent-cloud.png" alt="Confluent Cloud logo">
 
-Manage Confluent Cloud infrastructure through the Confluent Cloud Control Plane REST API. Covers organizations, environments, Kafka and Schema Registry clusters, Flink compute pools, service accounts, users, API keys, role bindings, IP filtering, networking, stream sharing, notifications, encryption keys, and billing.
+Covers organizations, environments, Kafka and Schema Registry clusters, Flink compute pools, service accounts, users, API keys, role bindings, IP filtering, networking, stream sharing, notifications, encryption keys, and billing.
 
 | | |
 | --- | --- |

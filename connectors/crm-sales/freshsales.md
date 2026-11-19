@@ -1,5 +1,5 @@
 ---
-description: "Freshsales (Freshworks CRM) connector — contacts, sales accounts, deals, tasks, appointments, notes, sales activities, phone calls, products, CPQ documents,…"
+description: "Connect Freshsales to your product with fastn."
 hidden: true
 ---
 

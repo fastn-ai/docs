@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dynamics365-crm.png" alt="Dynamics 365 CRM (Dataverse) logo">
 
-Microsoft Dynamics 365 Customer Engagement / Sales via the Dataverse Web API (OData v4, base https://{org}.crm.dynamics.com/api/data/v9.2). Covers accounts, contacts, leads, opportunities, quotes, sales orders, invoices, products, cases (incidents), tasks/activities, plus a generic OData CRUD pattern, WhoAmI, and $metadata. Auth: Azure AD (Entra ID) OAuth 2.0 (authorization_code).
+Covers accounts, contacts, leads, opportunities, quotes, sales orders, invoices, products, cases (incidents), tasks/activities, plus a generic OData CRUD pattern, WhoAmI, and $metadata. Auth: Azure AD (Entra ID) OAuth 2.0 (authorization_code).
 
 | | |
 | --- | --- |

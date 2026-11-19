@@ -1,5 +1,5 @@
 ---
-description: "Google Slides API v1 — create presentations, read presentation and page content, generate page thumbnails, and apply batch updates to slides, shapes, text,…"
+description: "Connect Google Slides to your product with fastn."
 hidden: true
 ---
 

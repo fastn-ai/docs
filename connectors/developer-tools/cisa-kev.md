@@ -1,5 +1,5 @@
 ---
-description: "The CISA Known Exploited Vulnerabilities (KEV) catalog is the US Cybersecurity and Infrastructure Security Agency's authoritative, free list of…"
+description: "Connect CISA Known Exploited Vulnerabilities to your product with fastn."
 hidden: true
 ---
 

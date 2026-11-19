@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-table-storage.png" alt="Azure Table Storage logo">
 
-Azure Table Storage — NoSQL key-value store for structured, non-relational data. Create tables, list/query entities with OData filters, and insert new entities via the Azure Tables REST API ({account}.table.core.windows.net).
+Create tables, list/query entities with OData filters, and insert new entities via the Azure Tables REST API ({account}.table.core.windows.net).
 
 | | |
 | --- | --- |

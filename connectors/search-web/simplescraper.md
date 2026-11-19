@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/simplescraper.png" alt="Simplescraper logo">
 
-Simplescraper turns any website into structured data and APIs. This connector covers the full Simplescraper Extract API v1: create, list, read and update scrape recipes, run them on demand or in bulk, manage the batch (crawler) URL list, read run results and run history, extract markdown, HTML, screenshots and structured data from a single URL, run AI-powered Smart Extract, capture page screenshots, and discover every URL on a site from its sitemap.
+This connector covers the full Simplescraper Extract API v1: create, list, read and update scrape recipes, run them on demand or in bulk, manage the batch (crawler) URL list, read run results and run history, extract markdown, HTML, screenshots and structured data from a single URL, run AI-powered Smart Extract, capture page screenshots, and discover every URL on a site from its sitemap.
 
 | | |
 | --- | --- |

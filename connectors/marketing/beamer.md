@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/beamer.png" alt="Beamer logo">
 
-Beamer is a changelog, feedback, NPS and user-onboarding platform for announcing product updates in-app. This connector covers the full Beamer v0 REST API: feed URL, ping, posts, post comments, post reactions, unread posts, feature requests with their comments and votes, analytics users, NPS responses and surveys, team members and privacy data deletion.
+This connector covers the full Beamer v0 REST API: feed URL, ping, posts, post comments, post reactions, unread posts, feature requests with their comments and votes, analytics users, NPS responses and surveys, team members and privacy data deletion.
 
 | | |
 | --- | --- |

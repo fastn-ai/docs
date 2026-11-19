@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/seven.png" alt="seven logo">
 
-seven (seven.io) is a European SMS, RCS, WhatsApp Business and voice messaging gateway. Send SMS, RCS and WhatsApp messages, place text-to-speech voice calls, manage contacts and groups, look up and validate phone numbers (format, HLR, MNP, CNAM, RCS capabilities), book and manage virtual numbers, query logbooks, delivery status reports, pricing, analytics and account balance, administer subaccounts, and register webhooks for inbound messages and delivery events.
+Send SMS, RCS and WhatsApp messages, place text-to-speech voice calls, manage contacts and groups, look up and validate phone numbers (format, HLR, MNP, CNAM, RCS capabilities), book and manage virtual numbers, query logbooks, delivery status reports, pricing, analytics and account balance, administer subaccounts, and register webhooks for inbound messages and delivery events.
 
 | | |
 | --- | --- |

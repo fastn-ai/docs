@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/goody.png" alt="Goody logo">
 
-Goody corporate gifting platform. Browse the Goody catalog (products, brands, categories, greeting cards, collections), price and create gift order batches, track orders and shipments, manage payment methods, and register webhook endpoints for order and order-batch events. Supports both the Goody Automation API and Commerce API on the production and sandbox environments.
+Browse the Goody catalog (products, brands, categories, greeting cards, collections), price and create gift order batches, track orders and shipments, manage payment methods, and register webhook endpoints for order and order-batch events. Supports both the Goody Automation API and Commerce API on the production and sandbox environments.
 
 | | |
 | --- | --- |

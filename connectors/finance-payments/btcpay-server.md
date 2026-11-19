@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/btcpay-server.png" alt="BTCPay Server logo">
 
-BTCPay Server Greenfield API v1. Self-hosted, open-source Bitcoin and Lightning payment processor. Manage stores, invoices, payment requests, apps, payment methods, rates, users, notifications and webhooks on any BTCPay Server instance.
+Self-hosted, open-source Bitcoin and Lightning payment processor. Manage stores, invoices, payment requests, apps, payment methods, rates, users, notifications and webhooks on any BTCPay Server instance.
 
 | | |
 | --- | --- |

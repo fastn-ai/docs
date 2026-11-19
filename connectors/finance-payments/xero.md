@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/xero.png" alt="Xero logo">
 
-Xero Accounting API connector. Manage contacts, invoices, credit notes, bank transactions, payments, accounts, items, quotes, purchase orders, tax rates, organisation, financial reports, currencies, and bank transfers via OAuth 2.0. Every call requires a Xero-Tenant-Id header identifying the connected organisation.
+Manage contacts, invoices, credit notes, bank transactions, payments, accounts, items, quotes, purchase orders, tax rates, organisation, financial reports, currencies, and bank transfers via OAuth 2.0. Every call requires a Xero-Tenant-Id header identifying the connected organisation.
 
 | | |
 | --- | --- |

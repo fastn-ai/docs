@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bitly.png" alt="Bitly logo">
 
-Bitly is a URL shortening, QR code, and link analytics platform. This connector manages Bitlinks (create, retrieve, update, delete, expand, and view click analytics), Groups, QR Codes, and the connected user's account.
+This connector manages Bitlinks (create, retrieve, update, delete, expand, and view click analytics), Groups, QR Codes, and the connected user's account.
 
 | | |
 | --- | --- |

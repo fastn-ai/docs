@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/drip.png" alt="Drip logo">
 
-Drip is an ecommerce marketing automation platform (email, SMS, subscribers, campaigns, workflows, broadcasts, and shopper activity). This connector covers the Drip REST API v2/v3.
+This connector covers the Drip REST API v2/v3.
 
 | | |
 | --- | --- |

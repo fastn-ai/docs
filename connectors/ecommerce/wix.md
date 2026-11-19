@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wix.png" alt="Wix logo">
 
-Wix REST API connector (www.wixapis.com). Stores (products/inventory/categories), eCommerce (orders/cart/checkout), CRM contacts, members, bookings, Wix Data/CMS, media, site properties, locations. Account-level API key auth: Authorization header (raw key) + wix-site-id (site APIs) / wix-account-id (account APIs).
+Stores (products/inventory/categories), eCommerce (orders/cart/checkout), CRM contacts, members, bookings, Wix Data/CMS, media, site properties, locations. Account-level API key auth: Authorization header (raw key) + wix-site-id (site APIs) / wix-account-id (account APIs).
 
 | | |
 | --- | --- |

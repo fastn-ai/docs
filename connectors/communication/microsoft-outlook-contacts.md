@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-outlook-contacts.png" alt="Microsoft Outlook Contacts logo">
 
-Microsoft Outlook Contacts (personal contacts in Outlook and Microsoft 365) via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0). Contacts create, read, update, delete and permanent delete; contact folders and child folders; contacts scoped to a folder or child folder; delta queries for incremental contact and folder sync; contact photo retrieval; open extensions; and single- and multi-value extended properties. Microsoft Graph provides no delete operation for an Outlook contact photo, and setting a contact photo requires a raw binary upload that this integration engine cannot currently deliver intact.
+Contacts create, read, update, delete and permanent delete; contact folders and child folders; contacts scoped to a folder or child folder; delta queries for incremental contact and folder sync; contact photo retrieval; open extensions; and single- and multi-value extended properties. Microsoft Graph provides no delete operation for an Outlook contact photo, and setting a contact photo requires a raw binary upload that this integration engine cannot currently deliver intact.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "ZeroBounce is an email validation and deliverability platform: verify single or batch email addresses in real time, validate large lists in bulk, check inbox…"
+description: "Connect ZeroBounce to your product with fastn."
 hidden: true
 ---
 

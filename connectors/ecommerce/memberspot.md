@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/memberspot.png" alt="Memberspot logo">
 
-Memberspot is a German online course and membership platform. This connector covers the full Memberspot public API: member lookup and listing, granting and revoking offer access by email or user id, order state management, custom user properties, chapter access, course progress reporting, offers and exam results.
+This connector covers the full Memberspot public API: member lookup and listing, granting and revoking offer access by email or user id, order state management, custom user properties, chapter access, course progress reporting, offers and exam results.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/budibase.png" alt="Budibase logo">
 
-Budibase low-code platform public API (v1). Covers workspaces and applications including publish, unpublish, import and export, tables and their schemas, rows with create, update, delete, retrieve and search, views and view row search, data-source queries, users, role assignment and unassignment, and tenant metrics. Authenticates with a Budibase user API key sent in the x-budibase-api-key header; app-scoped calls also take the target app or workspace ID in the x-budibase-app-id header.
+Covers workspaces and applications including publish, unpublish, import and export, tables and their schemas, rows with create, update, delete, retrieve and search, views and view row search, data-source queries, users, role assignment and unassignment, and tenant metrics. Authenticates with a Budibase user API key sent in the x-budibase-api-key header; app-scoped calls also take the target app or workspace ID in the x-budibase-app-id header.
 
 | | |
 | --- | --- |

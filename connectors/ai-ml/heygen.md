@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/heygen.png" alt="HeyGen logo">
 
-HeyGen is an AI video platform for avatar videos, voice cloning and text-to-speech, lip-sync, video translation and agentic video generation. This connector covers the HeyGen v3 API: videos and templates, video batches, Video Agent sessions, HyperFrames renders, avatars and looks, voices and speech, lipsyncs, video translations and proofread sessions, AI clipping, filler-word removal, background removal, assets, brand kits and glossaries, podcasts, workflows, video-quality comparisons, custom agents, users, API keys and webhook endpoints and events.
+This connector covers the HeyGen v3 API: videos and templates, video batches, Video Agent sessions, HyperFrames renders, avatars and looks, voices and speech, lipsyncs, video translations and proofread sessions, AI clipping, filler-word removal, background removal, assets, brand kits and glossaries, podcasts, workflows, video-quality comparisons, custom agents, users, API keys and webhook endpoints and events.
 
 | | |
 | --- | --- |

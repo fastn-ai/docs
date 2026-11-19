@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lessannoyingcrm.png" alt="Less Annoying CRM logo">
 
-Less Annoying CRM (LACRM) v2 API. Single-endpoint JSON-RPC: POST https://api.lessannoyingcrm.com/v2/ with body {Function, Parameters}. Covers contacts, companies, pipelines, pipeline items/statuses, tasks, events, notes, emails, files, relationships, groups, group memberships, custom fields, calendars, teams, users, search, and webhooks.
+Single-endpoint JSON-RPC: POST https://api.lessannoyingcrm.com/v2/ with body {Function, Parameters}. Covers contacts, companies, pipelines, pipeline items/statuses, tasks, events, notes, emails, files, relationships, groups, group memberships, custom fields, calendars, teams, users, search, and webhooks.
 
 | | |
 | --- | --- |

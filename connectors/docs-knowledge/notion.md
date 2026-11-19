@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/notion.png" alt="Notion logo">
 
-Notion REST API connector for managing pages, databases, blocks, users, comments, and search across a Notion workspace.
-
 | | |
 | --- | --- |
 | **Category** | [Docs and knowledge](README.md) |

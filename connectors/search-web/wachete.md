@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wachete.png" alt="Wachete logo">
 
-Wachete is a website-change monitoring service. This connector covers the full Wachete third-party REST API: monitoring jobs (wachets), folders, collected page data, change notifications, sub-pages of crawl jobs and API token management.
+This connector covers the full Wachete third-party REST API: monitoring jobs (wachets), folders, collected page data, change notifications, sub-pages of crawl jobs and API token management.
 
 | | |
 | --- | --- |

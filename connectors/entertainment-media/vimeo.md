@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/vimeo.png" alt="Vimeo logo">
 
-Vimeo video platform API. OAuth 2.0 (authorization_code). Manage videos, albums/showcases, channels, groups, portfolios, users, and interactions on api.vimeo.com.
+OAuth 2.0 (authorization_code). Manage videos, albums/showcases, channels, groups, portfolios, users, and interactions on api.vimeo.com.
 
 | | |
 | --- | --- |

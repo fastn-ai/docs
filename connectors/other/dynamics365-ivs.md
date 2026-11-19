@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dynamics365-ivs.png" alt="Dynamics 365 Inventory Visibility logo">
 
-Microsoft Dynamics 365 Supply Chain Management - Inventory Visibility Service (IVS). Cache-backed, F&O-decoupled near-real-time inventory API for high-frequency on-hand queries (avoids F&O OData 429 throttling). Two-step auth: Azure AD client_credentials token (scope 0cdb527f-a8d1-4bf8-9436-b352c68682b2/.default) is exchanged at https://securityservice.operations365.dynamics.com/token for an IVS bearer token (1h TTL); that token calls the region-specific data plane host https://inventoryservice.{RegionShortName}-il{Island}.gateway.prod.island.powerapps.com. Covers on-hand query (indexquery/exactquery/productsearch/GET), on-hand change events + set/override, soft reservations + allocation, change schedules + ATP, external-change adjustment sync, and reservation cleanup/job-progress.
+Cache-backed, F&O-decoupled near-real-time inventory API for high-frequency on-hand queries (avoids F&O OData 429 throttling). Two-step auth: Azure AD client_credentials token (scope 0cdb527f-a8d1-4bf8-9436-b352c68682b2/.default) is exchanged at https://securityservice.operations365.dynamics.com/token for an IVS bearer token (1h TTL); that token calls the region-specific data plane host https://inventoryservice.{RegionShortName}-il{Island}.gateway.prod.island.powerapps.com. Covers on-hand query (indexquery/exactquery/productsearch/GET), on-hand change events + set/override, soft reservations + allocation, change schedules + ATP, external-change adjustment sync, and reservation cleanup/job-progress.
 
 | | |
 | --- | --- |

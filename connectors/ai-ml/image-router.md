@@ -1,5 +1,5 @@
 ---
-description: "ImageRouter is a unified, OpenAI-compatible API for AI image, video and text generation across dozens of providers (FLUX, Gemini, Imagen, GPT Image, Ideogram,…"
+description: "Connect ImageRouter to your product with fastn."
 hidden: true
 ---
 

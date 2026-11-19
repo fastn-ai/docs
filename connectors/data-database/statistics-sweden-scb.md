@@ -1,5 +1,5 @@
 ---
-description: "Statistics Sweden (SCB) publishes Sweden's official statistics through the free PxWebApi 2.0 (Statistikdatabasen): search statistical tables on population,…"
+description: "Connect Statistics Sweden (SCB) to your product with fastn."
 hidden: true
 ---
 

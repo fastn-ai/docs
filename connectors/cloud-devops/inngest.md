@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/inngest.png" alt="Inngest logo">
 
-Inngest is a durable execution platform for background jobs, step functions, scheduled workflows and AI agent orchestration. Send events to trigger functions, inspect and control function runs, manage apps, functions, environments, webhooks, experiments and sessions, and query run analytics with Insights.
+Send events to trigger functions, inspect and control function runs, manage apps, functions, environments, webhooks, experiments and sessions, and query run analytics with Insights.
 
 | | |
 | --- | --- |

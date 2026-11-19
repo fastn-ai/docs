@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/customerio.png" alt="Customer.io logo">
 
-Customer.io marketing automation and customer messaging platform. Covers the Track API (people, events, devices, manual segments, merge, suppression, v2 entity/batch) using HTTP Basic auth, and the App/Journeys API (transactional send, broadcasts, customers, campaigns, newsletters, segments, messages, activities, exports, collections, snippets, sender identities, transactional templates, reporting webhooks) using Bearer auth.
+Covers the Track API (people, events, devices, manual segments, merge, suppression, v2 entity/batch) using HTTP Basic auth, and the App/Journeys API (transactional send, broadcasts, customers, campaigns, newsletters, segments, messages, activities, exports, collections, snippets, sender identities, transactional templates, reporting webhooks) using Bearer auth.
 
 | | |
 | --- | --- |

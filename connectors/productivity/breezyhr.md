@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/breezyhr.png" alt="Breezy HR logo">
 
-Breezy HR is a visual pipeline recruiting/ATS platform. This connector wraps the Breezy HR REST API v3 covering companies, positions, candidates, pipelines, questionnaires, templates, and webhook management.
+This connector wraps the Breezy HR REST API v3 covering companies, positions, candidates, pipelines, questionnaires, templates, and webhook management.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI Exchange Rates returns the latest exchange rates for 80+ fiat and crypto currencies, converts an arbitrary amount between two currencies, and…"
+description: "Connect AbstractAPI Exchange Rates to your product with fastn."
 hidden: true
 ---
 

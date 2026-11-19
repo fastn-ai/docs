@@ -1,5 +1,5 @@
 ---
-description: "Doppler is a secrets management platform for storing, syncing, and rotating environment variables, API keys, and secrets across projects, environments, and…"
+description: "Connect Doppler to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lemlist.png" alt="Lemlist logo">
 
-Lemlist sales engagement and cold outreach automation. Manage campaigns, leads, sequences, schedules, activities, unsubscribes, contacts, companies, tasks, inbox, people database, enrichment, lemwarm, and webhooks.
+Manage campaigns, leads, sequences, schedules, activities, unsubscribes, contacts, companies, tasks, inbox, people database, enrichment, lemwarm, and webhooks.
 
 | | |
 | --- | --- |

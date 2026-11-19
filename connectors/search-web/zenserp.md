@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zenserp.png" alt="Zenserp logo">
 
-Zenserp is a search engine results page (SERP) scraping API by APILayer. This connector covers the complete Zenserp API: Google web, image, video, maps, news and shopping search, reverse image search, Google Shopping product pages, YouTube, Bing and Yandex search, Google Trends and trending searches, the supported languages, countries, geo-locations and search-engine lookup lists, asynchronous batch jobs, and the remaining-requests status check. Every search request consumes one request from your plan quota.
+This connector covers the complete Zenserp API: Google web, image, video, maps, news and shopping search, reverse image search, Google Shopping product pages, YouTube, Bing and Yandex search, Google Trends and trending searches, the supported languages, countries, geo-locations and search-engine lookup lists, asynchronous batch jobs, and the remaining-requests status check. Every search request consumes one request from your plan quota.
 
 | | |
 | --- | --- |

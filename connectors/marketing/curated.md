@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/curated.png" alt="Curated logo">
 
-Curated is a newsletter publishing platform for curating links into email issues. This connector wraps the Curated public API v3: listing publications and their settings, listing and fetching issues (with open/click stats), creating and deleting draft issues, managing collected links (create, read, update, delete, and moving a link into a draft issue), retrieving publication categories, and managing email subscribers and unsubscribers.
+This connector wraps the Curated public API v3: listing publications and their settings, listing and fetching issues (with open/click stats), creating and deleting draft issues, managing collected links (create, read, update, delete, and moving a link into a draft issue), retrieving publication categories, and managing email subscribers and unsubscribers.
 
 | | |
 | --- | --- |

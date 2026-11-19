@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nocodb.png" alt="NocoDB logo">
 
-NocoDB is an open-source no-code database and Airtable alternative. Manage workspaces, bases, tables, columns, views, records, links, filters, sorts, shared views, comments, and webhooks via the NocoDB v2 REST API.
+Manage workspaces, bases, tables, columns, views, records, links, filters, sorts, shared views, comments, and webhooks via the NocoDB v2 REST API.
 
 | | |
 | --- | --- |

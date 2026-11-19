@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tomtom.png" alt="TomTom logo">
 
-TomTom location services. This connector covers the TomTom Maps REST APIs on api.tomtom.com: fuzzy, POI, category, geometry, nearby, along-route and routed search, autocomplete, place by ID, POI categories and additional data, geocoding and reverse geocoding, batch search, route and reachable-range calculation, batch and matrix routing, traffic incident details, viewport and flow data with traffic tiles, plus the Geofencing (projects, fences, objects, transitions, reports, alert rules, archives), Location History and Notifications (contact groups, history) services.
+This connector covers the TomTom Maps REST APIs on api.tomtom.com: fuzzy, POI, category, geometry, nearby, along-route and routed search, autocomplete, place by ID, POI categories and additional data, geocoding and reverse geocoding, batch search, route and reachable-range calculation, batch and matrix routing, traffic incident details, viewport and flow data with traffic tiles, plus the Geofencing (projects, fences, objects, transitions, reports, alert rules, archives), Location History and Notifications (contact groups, history) services.
 
 | | |
 | --- | --- |

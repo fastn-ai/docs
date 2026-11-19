@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/stripe.png" alt="Stripe logo">
 
-Stripe API (base https://api.stripe.com). Customers, payment intents, charges, refunds, products, prices, subscriptions, invoices, checkout sessions, payouts, balance, events, and webhook endpoints. Auth: Bearer secret key (sk_...). Write requests use application/x-www-form-urlencoded.
+Customers, payment intents, charges, refunds, products, prices, subscriptions, invoices, checkout sessions, payouts, balance, events, and webhook endpoints. Auth: Bearer secret key (sk_...). Write requests use application/x-www-form-urlencoded.
 
 | | |
 | --- | --- |

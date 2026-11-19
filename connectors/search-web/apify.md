@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/apify.png" alt="Apify logo">
 
-Apify is a cloud platform for web scraping, browser automation and data extraction. This connector covers the full Apify API v2: Actors and their versions, environment variables, builds and runs; Actor tasks; standalone runs and builds; key-value stores, datasets and request queues; schedules; webhooks and webhook dispatches; logs; Apify Store; user account, usage and limits; and the signing utilities.
+This connector covers the full Apify API v2: Actors and their versions, environment variables, builds and runs; Actor tasks; standalone runs and builds; key-value stores, datasets and request queues; schedules; webhooks and webhook dispatches; logs; Apify Store; user account, usage and limits; and the signing utilities.
 
 | | |
 | --- | --- |

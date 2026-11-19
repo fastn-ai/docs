@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/entur.png" alt="Entur logo">
 
-Entur runs Norway's national public transport data platform. Read the National Stop Place Register (stop places, quays, parkings, fare and tariff zones, topographic places, scheduled stop points and their versions), search places with the geocoder, and plan journeys with the Journey Planner GraphQL API. Free and open; no API key needed (requests send a client name header).
+Read the National Stop Place Register (stop places, quays, parkings, fare and tariff zones, topographic places, scheduled stop points and their versions), search places with the geocoder, and plan journeys with the Journey Planner GraphQL API. Free and open; no API key needed (requests send a client name header).
 
 | | |
 | --- | --- |

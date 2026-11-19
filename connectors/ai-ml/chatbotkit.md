@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/chatbotkit.png" alt="ChatBotKit logo">
 
-ChatBotKit is an AI agent infrastructure platform for building, deploying and operating production AI agents. This connector covers the full ChatBotKit REST API v1: bots, blueprints, datasets and files, skillsets and abilities, conversations and messages, contacts, memories, secrets, spaces and storage, tasks and executions, users and user tokens, portals, policies, magic prompts, usage, platform catalog, GraphQL, the OpenAI-compatible chat completions endpoint and every integration type (widget, Slack, Discord, WhatsApp, Telegram, Messenger, Instagram, Twilio, email, Google Chat, Microsoft Teams, Notion, GitHub, sitemap, trigger, extract, support, SkillServer and more).
+This connector covers the full ChatBotKit REST API v1: bots, blueprints, datasets and files, skillsets and abilities, conversations and messages, contacts, memories, secrets, spaces and storage, tasks and executions, users and user tokens, portals, policies, magic prompts, usage, platform catalog, GraphQL, the OpenAI-compatible chat completions endpoint and every integration type (widget, Slack, Discord, WhatsApp, Telegram, Messenger, Instagram, Twilio, email, Google Chat, Microsoft Teams, Notion, GitHub, sitemap, trigger, extract, support, SkillServer and more).
 
 | | |
 | --- | --- |

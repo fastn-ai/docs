@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/explorium.png" alt="Explorium logo">
 
-Explorium AgentSource is a B2B data platform for matching, searching and enriching companies and people. This connector covers the full AgentSource REST surface on api.explorium.ai: v1 (match/fetch/stats/autocomplete, 17 business enrichments and 3 prospect enrichments in single and bulk form, events, event enrollments, webhooks, credits and custom enrichments) and v2 (the re-cut API with one endpoint per enrichment, a synchronous /enrich and an asynchronous /job for each, AI-powered Research, async job infrastructure, tenant-scoped webhooks with rotatable secrets, events and enrollments, autocomplete and credits).
+This connector covers the full AgentSource REST surface on api.explorium.ai: v1 (match/fetch/stats/autocomplete, 17 business enrichments and 3 prospect enrichments in single and bulk form, events, event enrollments, webhooks, credits and custom enrichments) and v2 (the re-cut API with one endpoint per enrichment, a synchronous /enrich and an asynchronous /job for each, AI-powered Research, async job infrastructure, tenant-scoped webhooks with rotatable secrets, events and enrollments, autocomplete and credits).
 
 | | |
 | --- | --- |

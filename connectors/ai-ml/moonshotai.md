@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/moonshotai.png" alt="Moonshot AI (Kimi) logo">
 
-Moonshot AI Kimi API (kimi-k2, kimi-latest, moonshot-v1) — OpenAI-compatible LLM platform. Chat completions, models, files (extract/QA), context caching, token estimation, and account balance. Base URL https://api.moonshot.ai/v1. Bearer API key auth.
+Chat completions, models, files (extract/QA), context caching, token estimation, and account balance. Base URL https://api.moonshot.ai/v1. Bearer API key auth.
 
 | | |
 | --- | --- |

@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-teams.png" alt="Microsoft Teams logo">
 
-Microsoft Teams via Microsoft Graph API v1.0 — manage teams, channels, channel messages, replies, chats, chat messages, and members.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |

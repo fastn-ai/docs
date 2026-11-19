@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/starshipit.png" alt="Starshipit logo">
 
-Starshipit is a multi-carrier shipping and fulfilment platform for ecommerce retailers. This connector wraps the Starshipit REST API: orders and order search, label printing and manifesting, shipments, tracking, live rates and delivery services, the address book, manifests and the product catalogue.
+This connector wraps the Starshipit REST API: orders and order search, label printing and manifesting, shipments, tracking, live rates and delivery services, the address book, manifests and the product catalogue.
 
 | | |
 | --- | --- |

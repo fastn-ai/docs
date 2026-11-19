@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/eventbrite.png" alt="Eventbrite logo">
 
-Eventbrite events platform connector for the Eventbrite API v3. Manage events, ticket classes, venues, organizers, orders, attendees, discounts, media, webhooks, and reference data (categories, formats, timezones).
+Manage events, ticket classes, venues, organizers, orders, attendees, discounts, media, webhooks, and reference data (categories, formats, timezones).
 
 | | |
 | --- | --- |

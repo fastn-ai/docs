@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/web-crm-api.png" alt="webCRM logo">
 
-webCRM via the webCRM REST API (api.webcrm.com). Manage organisations, persons, B2C persons, opportunities, deliveries, activities, events, meetings, support cases, products, quotation lines, documents, users, price groups, VAT and account settings, and register per-entity webhooks (hooks) for create, update and delete events. Access tokens are minted from the webCRM API token and renewed automatically.
+Manage organisations, persons, B2C persons, opportunities, deliveries, activities, events, meetings, support cases, products, quotation lines, documents, users, price groups, VAT and account settings, and register per-entity webhooks (hooks) for create, update and delete events. Access tokens are minted from the webCRM API token and renewed automatically.
 
 | | |
 | --- | --- |

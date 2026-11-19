@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-storage.png" alt="Google Cloud Storage logo">
 
-Google Cloud Storage JSON API connector. Manage buckets, objects (including media upload, compose, copy, rewrite), bucket/object/default object ACLs, IAM policies, HMAC keys, and Pub/Sub notification configs. Base URL https://storage.googleapis.com/storage/v1 (uploads at https://storage.googleapis.com/upload/storage/v1). OAuth 2.0 (Google) auth.
+Manage buckets, objects (including media upload, compose, copy, rewrite), bucket/object/default object ACLs, IAM policies, HMAC keys, and Pub/Sub notification configs. Base URL https://storage.googleapis.com/storage/v1 (uploads at https://storage.googleapis.com/upload/storage/v1). OAuth 2.0 (Google) auth.
 
 | | |
 | --- | --- |

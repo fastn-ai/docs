@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/octolens.png" alt="OctoLens logo">
 
-OctoLens social listening — query brand mentions across Reddit, Twitter, LinkedIn, YouTube, HackerNews, GitHub and other platforms. Used to ingest pain-signal mentions.
+Used to ingest pain-signal mentions.
 
 | | |
 | --- | --- |

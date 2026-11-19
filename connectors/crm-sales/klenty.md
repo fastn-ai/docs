@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/klenty.png" alt="Klenty logo">
 
-Klenty sales engagement platform. Manage prospects, lists, cadences/sequences, tags, custom fields, call and email engagement reports, and webhooks via the Klenty REST API.
+Manage prospects, lists, cadences/sequences, tags, custom fields, call and email engagement reports, and webhooks via the Klenty REST API.
 
 | | |
 | --- | --- |

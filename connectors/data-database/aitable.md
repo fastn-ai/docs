@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aitable.png" alt="AITable.ai logo">
 
-AITable.ai Fusion API — datasheets, records, fields, views, nodes, embed links, contacts (members/teams/roles), attachments and AI chat completions. Base https://aitable.ai/fusion. Auth: personal API token sent as Authorization: Bearer.
+Base https://aitable.ai/fusion. Auth: personal API token sent as Authorization: Bearer.
 
 | | |
 | --- | --- |

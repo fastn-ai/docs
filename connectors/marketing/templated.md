@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/templated.png" alt="Templated logo">
 
-Templated (templated.io) generates images, PDFs and videos from reusable design templates. This connector covers the full Templated public v1 REST API: templates and their layers, pages, tags, versions and clones; the gallery; folders; renders (single, multi-template, merged, duplicated and downloaded); uploads and fonts; asynchronous download jobs; AI template generation from a prompt or HTML; and imports from Bannerbear, Canva and Polotno.
+This connector covers the full Templated public v1 REST API: templates and their layers, pages, tags, versions and clones; the gallery; folders; renders (single, multi-template, merged, duplicated and downloaded); uploads and fonts; asynchronous download jobs; AI template generation from a prompt or HTML; and imports from Bannerbear, Canva and Polotno.
 
 | | |
 | --- | --- |

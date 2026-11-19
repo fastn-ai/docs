@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/orshot.png" alt="Orshot logo">
 
-Orshot generates images, PDFs and videos from reusable templates. This connector wraps the Orshot v1 REST API: studio and library (utility) template rendering, signed render URLs, async render jobs, brand assets (images, videos, audio, colors, fonts), template folders, sharing and versions, AI video generation, social publishing and analytics, workflows, and workspace profile and logs.
+This connector wraps the Orshot v1 REST API: studio and library (utility) template rendering, signed render URLs, async render jobs, brand assets (images, videos, audio, colors, fonts), template folders, sharing and versions, AI video generation, social publishing and analytics, workflows, and workspace profile and logs.
 
 | | |
 | --- | --- |

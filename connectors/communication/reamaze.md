@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/reamaze.png" alt="Re:amaze logo">
 
-Re:amaze is a helpdesk and customer messaging platform for support teams, combining a shared inbox, live chat, FAQ knowledge base, and status page. This connector covers the Re:amaze JSON API v1: conversations, messages, contacts, contact identities and notes, help articles, channels, staff, response templates, satisfaction ratings, reports, and status page incidents and systems.
+This connector covers the Re:amaze JSON API v1: conversations, messages, contacts, contact identities and notes, help articles, channels, staff, response templates, satisfaction ratings, reports, and status page incidents and systems.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Statistics Norway (SSB) publishes Norway's official statistics through the free PxWebApi 2.0: search thousands of statistical tables (population, prices,…"
+description: "Connect Statistics Norway (SSB) to your product with fastn."
 hidden: true
 ---
 

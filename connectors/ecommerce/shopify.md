@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shopify.png" alt="Shopify logo">
 
-Shopify Admin REST API connector for managing orders, products, customers, inventory, discounts, shipping, payments, and more.
-
 | | |
 | --- | --- |
 | **Category** | [E-commerce](README.md) |

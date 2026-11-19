@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sendcloud.png" alt="Sendcloud logo">
 
-Sendcloud shipping and parcel automation platform. Create and manage parcels, shipping methods and products, labels, tracking, sender addresses, returns, integrations, invoices, brands, and webhook (integration) configuration via the Sendcloud v2 REST API.
+Create and manage parcels, shipping methods and products, labels, tracking, sender addresses, returns, integrations, invoices, brands, and webhook (integration) configuration via the Sendcloud v2 REST API.
 
 | | |
 | --- | --- |

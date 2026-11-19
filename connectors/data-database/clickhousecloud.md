@@ -1,5 +1,5 @@
 ---
-description: "ClickHouse Cloud Management API for administering organizations, services, API keys, members, invitations, usage/cost, private endpoints, and backups on…"
+description: "Connect ClickHouse Cloud to your product with fastn."
 hidden: true
 ---
 

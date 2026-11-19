@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/simplybook-me.png" alt="SimplyBook.me logo">
 
-SimplyBook.me is an online appointment scheduling platform for service businesses. This connector covers the SimplyBook.me Admin REST API v2 and the JSON-RPC Company Administration Service: bookings and cancellations, clients and client fields, services and service categories, providers (performers) and locations, the schedule, timeline and available booking slots, calendar notes, memberships, packages, products, promotions, coupons and gift cards, invoices and payments, booking statuses, tickets, reports and statistics, company settings and working hours, and webhook subscriptions.
+This connector covers the SimplyBook.me Admin REST API v2 and the JSON-RPC Company Administration Service: bookings and cancellations, clients and client fields, services and service categories, providers (performers) and locations, the schedule, timeline and available booking slots, calendar notes, memberships, packages, products, promotions, coupons and gift cards, invoices and payments, booking statuses, tickets, reports and statistics, company settings and working hours, and webhook subscriptions.
 
 | | |
 | --- | --- |

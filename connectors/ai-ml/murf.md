@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/murf.png" alt="Murf logo">
 
-Murf AI — text-to-speech, voice changer, translation, instant voice cloning and Murf Dub automation. Wraps the Murf REST API at https://api.murf.ai (OpenAPI 3.1). Authenticates with the account api-key header.
+Wraps the Murf REST API at https://api.murf.ai (OpenAPI 3.1). Authenticates with the account api-key header.
 
 | | |
 | --- | --- |

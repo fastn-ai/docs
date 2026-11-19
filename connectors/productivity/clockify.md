@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clockify.png" alt="Clockify logo">
 
-Clockify time-tracking integration. Manage workspaces, users, user groups, projects, tasks, clients, tags, and time entries; run detailed, summary, and weekly reports; and manage webhooks for real-time event notifications.
+Manage workspaces, users, user groups, projects, tasks, clients, tags, and time entries; run detailed, summary, and weekly reports; and manage webhooks for real-time event notifications.
 
 | | |
 | --- | --- |

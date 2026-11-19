@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/visualping.png" alt="Visualping logo">
 
-Visualping website-change monitoring — create and manage monitoring jobs that fire a webhook when a page changes. Used to ingest page-change pain signals.
+Used to ingest page-change pain signals.
 
 | | |
 | --- | --- |

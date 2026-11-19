@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/beebole.png" alt="Beebole logo">
 
-Beebole is a time-tracking, project-costing, absence and resource-planning platform for teams. This connector wraps Beebole's single GraphQL endpoint (POST https://app.beebole.com/graphql), exposing its people, roles, projects, tasks, tags, time records, expense records, absence types, schedule types, custom fields, approvals, budgets, reports, holidays, journal messages and integration-webhook operations as individual actions.
+This connector wraps Beebole's single GraphQL endpoint (POST https://app.beebole.com/graphql), exposing its people, roles, projects, tasks, tags, time records, expense records, absence types, schedule types, custom fields, approvals, budgets, reports, holidays, journal messages and integration-webhook operations as individual actions.
 
 | | |
 | --- | --- |

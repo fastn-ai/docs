@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/product-hunt.png" alt="Product Hunt logo">
 
-Product Hunt GraphQL API v2 for posts, comments, topics, collections, and users. Used to ingest pain-signal mentions from launches and product comments.
+Used to ingest pain-signal mentions from launches and product comments.
 
 | | |
 | --- | --- |

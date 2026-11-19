@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/val-town.png" alt="Val Town logo">
 
-Val Town is a social platform for writing and hosting serverless TypeScript and JavaScript. This connector covers vals, val branches and files, environment variables and environment variable groups, users and organizations, blob storage, the hosted SQLite database, transactional email and OpenTelemetry traces and logs through the Val Town REST API.
+This connector covers vals, val branches and files, environment variables and environment variable groups, users and organizations, blob storage, the hosted SQLite database, transactional email and OpenTelemetry traces and logs through the Val Town REST API.
 
 | | |
 | --- | --- |

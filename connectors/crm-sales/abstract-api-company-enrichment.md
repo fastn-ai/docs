@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI Company Enrichment returns firmographic data for a company domain, including name, logo, description, headquarters, industry codes, headcount,…"
+description: "Connect AbstractAPI Company Enrichment to your product with fastn."
 hidden: true
 ---
 

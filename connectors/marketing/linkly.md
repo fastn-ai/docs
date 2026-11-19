@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/linkly.png" alt="Linkly logo">
 
-Linkly URL shortener and click analytics. Create, update, list and delete branded short links; read click analytics and breakdown counters; manage workspaces, workspace members, custom domains and click webhooks.
+Create, update, list and delete branded short links; read click analytics and breakdown counters; manage workspaces, workspace members, custom domains and click webhooks.
 
 | | |
 | --- | --- |

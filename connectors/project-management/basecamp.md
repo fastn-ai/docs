@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/basecamp.png" alt="Basecamp logo">
 
-Basecamp 4 (Basecamp 3 API / bc3-api) connector. Project management, to-dos, messages, comments, documents, schedules, campfires, card tables, recordings, and webhooks. OAuth 2.0 via 37signals Launchpad. Account ID is supplied per-request in the URL path; every request requires a User-Agent header.
+Project management, to-dos, messages, comments, documents, schedules, campfires, card tables, recordings, and webhooks. OAuth 2.0 via 37signals Launchpad. Account ID is supplied per-request in the URL path; every request requires a User-Agent header.
 
 | | |
 | --- | --- |

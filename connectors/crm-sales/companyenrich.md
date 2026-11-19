@@ -1,5 +1,5 @@
 ---
-description: "CompanyEnrich is a real-time B2B data API for company enrichment, company and people search, lookalike (similar company) discovery, workforce insights,…"
+description: "Connect CompanyEnrich to your product with fastn."
 hidden: true
 ---
 

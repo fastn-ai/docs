@@ -1,5 +1,5 @@
 ---
-description: "PokeAPI (pokeapi.co) is a free, fully keyless RESTful API providing comprehensive Pokemon data - species, moves, abilities, types, items, berries, locations,…"
+description: "Connect PokeAPI to your product with fastn."
 hidden: true
 ---
 

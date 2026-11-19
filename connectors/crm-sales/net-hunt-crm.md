@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/net-hunt-crm.png" alt="NetHunt CRM logo">
 
-NetHunt CRM is a CRM that runs inside Gmail and organises data into folders (Contacts, Companies, Deals, Tasks and custom folders). This connector covers the full NetHunt public REST API v2: list, get, create and update folders; add and update folder fields; create, get, update and delete records; list recently updated records for incremental sync; full-text search and structured filtering with sorting and cursor pagination; read a record's activity timeline and timeline item content; and log comments and calls on a record. Authentication uses a NetHunt API token. NetHunt does not offer outgoing webhooks through its API, so changes are detected by polling the List Updated Records action.
+This connector covers the full NetHunt public REST API v2: list, get, create and update folders; add and update folder fields; create, get, update and delete records; list recently updated records for incremental sync; full-text search and structured filtering with sorting and cursor pagination; read a record's activity timeline and timeline item content; and log comments and calls on a record. Authentication uses a NetHunt API token. NetHunt does not offer outgoing webhooks through its API, so changes are detected by polling the List Updated Records action.
 
 | | |
 | --- | --- |

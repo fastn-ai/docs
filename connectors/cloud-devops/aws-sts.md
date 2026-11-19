@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aws-sts.png" alt="AWS Security Token Service logo">
 
-AWS Security Token Service (STS) Query API. Identify the caller behind the connection's credentials and mint temporary, limited-privilege credentials by assuming an IAM role, with support for session duration, external IDs, MFA, session policies and session tags. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported.
+Identify the caller behind the connection's credentials and mint temporary, limited-privilege credentials by assuming an IAM role, with support for session duration, external IDs, MFA, session policies and session tags. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported.
 
 | | |
 | --- | --- |

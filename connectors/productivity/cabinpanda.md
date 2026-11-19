@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cabinpanda.png" alt="CabinPanda logo">
 
-CabinPanda is a data collection platform for building online forms, surveys and popups. This connector covers the CabinPanda REST API: forms (list, get, create, update, rename, duplicate, delete, fields), submissions (list, get, delete, public submit), form types and templates, webhooks (create, update, enable/disable, delete, activities, test and redelivery), workspaces, notifications, API tokens and the current user.
+This connector covers the CabinPanda REST API: forms (list, get, create, update, rename, duplicate, delete, fields), submissions (list, get, delete, public submit), form types and templates, webhooks (create, update, enable/disable, delete, activities, test and redelivery), workspaces, notifications, API tokens and the current user.
 
 | | |
 | --- | --- |

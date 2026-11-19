@@ -1,5 +1,5 @@
 ---
-description: "Openverse (by WordPress) is a free search engine for openly licensed images and audio, with hundreds of millions of works from Creative Commons and public…"
+description: "Connect Openverse to your product with fastn."
 hidden: true
 ---
 

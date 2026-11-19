@@ -1,5 +1,5 @@
 ---
-description: "Gender-API.com determines the most likely gender behind a first name, full name or email address, optionally localised by country, locale or IP address, and…"
+description: "Connect Gender-API.com to your product with fastn."
 hidden: true
 ---
 

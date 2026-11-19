@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/adafruit-io.png" alt="Adafruit IO logo">
 
-Adafruit IO is a cloud platform for Internet of Things projects. This connector covers the Adafruit IO HTTP API v2: feeds and feed data, groups, dashboards and blocks, reactive and scheduled actions (triggers), permissions, API tokens, activities, feed webhook receivers, and the time, randomizer, weather and air quality services.
+This connector covers the Adafruit IO HTTP API v2: feeds and feed data, groups, dashboards and blocks, reactive and scheduled actions (triggers), permissions, API tokens, activities, feed webhook receivers, and the time, randomizer, weather and air quality services.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/emelia.png" alt="Emelia logo">
 
-Emelia cold-email and LinkedIn outreach platform. Manage multichannel campaigns, contact lists and contacts, email providers and warmup, webhooks, LinkedIn scrappers, and the Email Finder / Phone Finder / Email Verifier tools through the Emelia REST API at https://api.emelia.io.
+Manage multichannel campaigns, contact lists and contacts, email providers and warmup, webhooks, LinkedIn scrappers, and the Email Finder / Phone Finder / Email Verifier tools through the Emelia REST API at https://api.emelia.io.
 
 | | |
 | --- | --- |

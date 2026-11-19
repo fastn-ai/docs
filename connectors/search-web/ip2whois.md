@@ -1,5 +1,5 @@
 ---
-description: "IP2WHOIS provides domain WHOIS lookups returning registrar, registrant, admin, technical and billing contacts, creation, update and expiration dates, domain…"
+description: "Connect IP2WHOIS to your product with fastn."
 hidden: true
 ---
 

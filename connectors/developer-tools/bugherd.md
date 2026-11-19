@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bugherd.png" alt="BugHerd logo">
 
-BugHerd is a visual bug tracker and website feedback tool that pins client feedback directly onto a web page. This connector covers the BugHerd API v2: the organization, users, members and guests, projects, project membership, kanban columns, tasks with filtering and moving between projects, task comments, task attachments, and webhook subscriptions.
+This connector covers the BugHerd API v2: the organization, users, members and guests, projects, project membership, kanban columns, tasks with filtering and moving between projects, task comments, task attachments, and webhook subscriptions.
 
 | | |
 | --- | --- |

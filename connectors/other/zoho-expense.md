@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-expense.png" alt="Zoho Expense logo">
 
-Zoho Expense is Zoho's travel and expense management platform. This connector wraps the Zoho Expense REST API v1 (zohoapis.com/expense/v1): organizations, expenses, expense reports and their approval and reimbursement lifecycle, trips, employee advances, users, customers, projects, expense categories, currencies, taxes and reporting tags. Every request is scoped by an organization ID. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
+This connector wraps the Zoho Expense REST API v1 (zohoapis.com/expense/v1): organizations, expenses, expense reports and their approval and reimbursement lifecycle, trips, employee advances, users, customers, projects, expense categories, currencies, taxes and reporting tags. Every request is scoped by an organization ID. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
 | --- | --- |

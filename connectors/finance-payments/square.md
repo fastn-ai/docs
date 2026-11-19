@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/square.png" alt="Square logo">
 
-Square commerce platform connector. Take and manage payments, refunds, customers, catalog, orders, invoices, locations, payment links, and webhook subscriptions via Square's v2 REST API (Square-Version 2026-05-20). OAuth 2.0 primary auth; switchable sandbox/live host.
+Take and manage payments, refunds, customers, catalog, orders, invoices, locations, payment links, and webhook subscriptions via Square's v2 REST API (Square-Version 2026-05-20). OAuth 2.0 primary auth; switchable sandbox/live host.
 
 | | |
 | --- | --- |

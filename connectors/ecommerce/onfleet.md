@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/onfleet.png" alt="Onfleet logo">
 
-Onfleet is a last-mile delivery management platform. This connector covers the Onfleet v2 REST API: organizations and delegatees, administrators, workers and their schedules, teams and auto-dispatch, hubs, destinations, recipients, tasks (create, batch, clone, complete, auto-assign and metadata search), containers, task custom-field groups, route plans, route optimization and webhooks.
+This connector covers the Onfleet v2 REST API: organizations and delegatees, administrators, workers and their schedules, teams and auto-dispatch, hubs, destinations, recipients, tasks (create, batch, clone, complete, auto-assign and metadata search), containers, task custom-field groups, route plans, route optimization and webhooks.
 
 | | |
 | --- | --- |

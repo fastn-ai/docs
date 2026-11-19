@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/stockdata.png" alt="StockData.org logo">
 
-Real-time and historical stock market data, financial news, and market sentiment analytics from StockData.org. Covers live and end-of-day quotes, intraday OHLCV history, corporate actions (splits and dividends), crypto and forex EOD data, finance news search with entity and sentiment filters, market news statistics, and stock/entity metadata lookup.
+Covers live and end-of-day quotes, intraday OHLCV history, corporate actions (splits and dividends), crypto and forex EOD data, finance news search with entity and sentiment filters, market news statistics, and stock/entity metadata lookup.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Open Government Canada (open.canada.ca) is the Government of Canada's free open data portal with tens of thousands of federal datasets from Statistics Canada,…"
+description: "Connect Open Government Canada to your product with fastn."
 hidden: true
 ---
 

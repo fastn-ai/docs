@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shotstack.png" alt="Shotstack logo">
 
-Shotstack cloud video, image and audio editing API. Covers the Edit API (render edits, templates, media probe, AI asset generation and generation models), the Serve API (hosted asset lookup, transfer and delete) and the Ingest API (fetch/upload and manage source files). Renders are asynchronous: submit, then poll the render status endpoint for the output URL.
+Covers the Edit API (render edits, templates, media probe, AI asset generation and generation models), the Serve API (hosted asset lookup, transfer and delete) and the Ingest API (fetch/upload and manage source files). Renders are asynchronous: submit, then poll the render status endpoint for the output URL.
 
 | | |
 | --- | --- |

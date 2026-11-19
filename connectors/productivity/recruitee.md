@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/recruitee.png" alt="Recruitee logo">
 
-Recruitee (Tellent) is a collaborative recruitment and applicant tracking platform. This connector provides access to candidates, job offers, departments, talent pools, pipeline templates, notes, tags, admins, roles, disqualify reasons, and other Recruitee ATS resources.
+This connector provides access to candidates, job offers, departments, talent pools, pipeline templates, notes, tags, admins, roles, disqualify reasons, and other Recruitee ATS resources.
 
 | | |
 | --- | --- |

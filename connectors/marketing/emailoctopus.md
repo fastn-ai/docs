@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/emailoctopus.png" alt="EmailOctopus logo">
 
-EmailOctopus is an email marketing and newsletter sending platform. This connector covers the EmailOctopus v2 REST API: list and contact management (including custom fields), campaign retrieval and reporting, and automation triggering.
+This connector covers the EmailOctopus v2 REST API: list and contact management (including custom fields), campaign retrieval and reporting, and automation triggering.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/thanks-io.png" alt="thanks.io logo">
 
-thanks.io is a direct-mail automation platform for sending handwritten-style postcards, letters, notecards, magnacards and gift cards. This connector covers the full thanks.io v2 REST API: recipients, mailing lists and radius search, the six send-mailer endpoints, orders with tracking, items, cancel and replay, message and image templates, sub-accounts, handwriting styles, gift card brands, image building and webhooks.
+This connector covers the full thanks.io v2 REST API: recipients, mailing lists and radius search, the six send-mailer endpoints, orders with tracking, items, cancel and replay, message and image templates, sub-accounts, handwriting styles, gift card brands, image building and webhooks.
 
 | | |
 | --- | --- |

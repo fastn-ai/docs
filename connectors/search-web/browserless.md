@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/browserless.png" alt="Browserless logo">
 
-Browserless is a hosted headless-browser platform. Use it to render pages, capture screenshots and PDFs, scrape structured data, run Puppeteer/Playwright code remotely, audit page performance with Lighthouse, bypass bot detection, and drive BrowserQL automation flows against the Browserless v2 REST API.
+Use it to render pages, capture screenshots and PDFs, scrape structured data, run Puppeteer/Playwright code remotely, audit page performance with Lighthouse, bypass bot detection, and drive BrowserQL automation flows against the Browserless v2 REST API.
 
 | | |
 | --- | --- |

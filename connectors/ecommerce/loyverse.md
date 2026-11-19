@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/loyverse.png" alt="Loyverse logo">
 
-Loyverse is a point-of-sale and retail management platform for small businesses. This connector covers the full Loyverse API: merchant and store information, items, variants, categories, modifiers, discounts and taxes, inventory levels, customers, suppliers, employees, payment types, POS devices, receipts and refunds, shifts, and webhook subscriptions.
+This connector covers the full Loyverse API: merchant and store information, items, variants, categories, modifiers, discounts and taxes, inventory levels, customers, suppliers, employees, payment types, POS devices, receipts and refunds, shifts, and webhook subscriptions.
 
 | | |
 | --- | --- |

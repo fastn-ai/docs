@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rudder-stack.png" alt="RudderStack logo">
 
-RudderStack is a warehouse-native customer data platform. This connector covers the RudderStack Management (Config Plane) API: workspace details, event stream sources and their write keys, destinations with their transformation links, source-to-destination connections, cloud accounts, JavaScript transformations and shared libraries with versioning, publishing and test runs, the data catalog of events, properties, categories and custom types, tracking plans with their events and source connections, observed event schemas, Reverse ETL sources, connections and syncs, Profiles runs, data graphs, audit logs, user suppression and data regulation requests, and source/destination connectivity tests.
+This connector covers the RudderStack Management (Config Plane) API: workspace details, event stream sources and their write keys, destinations with their transformation links, source-to-destination connections, cloud accounts, JavaScript transformations and shared libraries with versioning, publishing and test runs, the data catalog of events, properties, categories and custom types, tracking plans with their events and source connections, observed event schemas, Reverse ETL sources, connections and syncs, Profiles runs, data graphs, audit logs, user suppression and data regulation requests, and source/destination connectivity tests.
 
 | | |
 | --- | --- |

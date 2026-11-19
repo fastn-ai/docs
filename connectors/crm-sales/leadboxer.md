@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/leadboxer.png" alt="LeadBoxer logo">
 
-LeadBoxer is a B2B lead identification and behavioural analytics platform. This connector wraps the LeadBoxer Platform API: leads, sessions and events, lead tags and assignment, lead exclusions, IP and domain company lookup, credit grants, datasets and form tracking, users and dataset access, segments, custom tracking domains and onboarding signup, plus the Track API for server-side events and email-open tracking. Authenticates with an account API key sent in the x-api-key header.
+This connector wraps the LeadBoxer Platform API: leads, sessions and events, lead tags and assignment, lead exclusions, IP and domain company lookup, credit grants, datasets and form tracking, users and dataset access, segments, custom tracking domains and onboarding signup, plus the Track API for server-side events and email-open tracking. Authenticates with an account API key sent in the x-api-key header.
 
 | | |
 | --- | --- |

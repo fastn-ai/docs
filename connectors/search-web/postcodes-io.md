@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/postcodes-io.png" alt="Postcodes.io logo">
 
-Postcodes.io is a free, open-source API for UK postcodes and geolocation, built on Office for National Statistics and Ordnance Survey open data. Look up, search, autocomplete and bulk-check postcodes, reverse geocode coordinates, and get outward codes, terminated and Scottish postcodes, and places. No API key needed.
+Look up, search, autocomplete and bulk-check postcodes, reverse geocode coordinates, and get outward codes, terminated and Scottish postcodes, and places. No API key needed.
 
 | | |
 | --- | --- |

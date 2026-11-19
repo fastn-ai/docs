@@ -5,7 +5,7 @@ hidden: true
 
 # PoetryDB
 
-PoetryDB is a free API with thousands of classic English poems. List authors and titles, and find poems by author, title, line text or line count, get random poems, or combine fields in one search, choosing which fields come back. No API key needed.
+List authors and titles, and find poems by author, title, line text or line count, get random poems, or combine fields in one search, choosing which fields come back. No API key needed.
 
 | | |
 | --- | --- |

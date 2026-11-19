@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/splunk.png" alt="Splunk logo">
 
-Splunk Enterprise / Splunk Cloud REST API connector. Manage search jobs, saved searches, indexes, data inputs, KV store collections, apps, users, roles, alerts, server info, and send events via HTTP Event Collector (HEC). Auth via Bearer token against the management port (8089); HEC uses port 8088.
+Manage search jobs, saved searches, indexes, data inputs, KV store collections, apps, users, roles, alerts, server info, and send events via HTTP Event Collector (HEC). Auth via Bearer token against the management port (8089); HEC uses port 8088.
 
 | | |
 | --- | --- |

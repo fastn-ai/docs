@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/timelines-ai.png" alt="TimelinesAI logo">
 
-TimelinesAI is a shared WhatsApp inbox and automation platform for teams. This connector covers the full TimelinesAI Public API: chats, chat history and chat updates, message sending to phone numbers, JIDs and existing chats, voice messages, internal notes, message details, delivery status history and reactions, chat labels, file uploads and downloads, connected WhatsApp accounts, workspace info and quotas, teammates and invitations, outbound webhooks, and the WhatsApp Business API (WABA) surface of accounts, templates, chats, messages, reactions, labels and account analytics.
+This connector covers the full TimelinesAI Public API: chats, chat history and chat updates, message sending to phone numbers, JIDs and existing chats, voice messages, internal notes, message details, delivery status history and reactions, chat labels, file uploads and downloads, connected WhatsApp accounts, workspace info and quotas, teammates and invitations, outbound webhooks, and the WhatsApp Business API (WABA) surface of accounts, templates, chats, messages, reactions, labels and account analytics.
 
 | | |
 | --- | --- |

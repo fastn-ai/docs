@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/adyen.png" alt="Adyen logo">
 
-Adyen is an enterprise unified commerce payment platform. This connector covers the Checkout API (payments, payment methods, sessions, orders, payment links, stored payment methods, donations, modifications), the Management API (merchant accounts, companies, stores, users, API credentials, webhooks, terminals, payout and payment method settings, split configurations), and the Disputes API (dispute defense and evidence).
+This connector covers the Checkout API (payments, payment methods, sessions, orders, payment links, stored payment methods, donations, modifications), the Management API (merchant accounts, companies, stores, users, API credentials, webhooks, terminals, payout and payment method settings, split configurations), and the Disputes API (dispute defense and evidence).
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdfco.png" alt="PDF.co logo">
 
-PDF.co is a document-automation API for converting, editing, splitting, merging, securing and extracting data from PDF and Office documents. This connector covers the whole PDF.co v1 API: PDF conversion to and from every supported format, merge and split, page editing, text and image search-and-replace, rotation, optimisation and compression, form field reading, barcode generation and reading, OCR (make searchable/unsearchable), the document parser and its templates, the AI invoice parser, document classification, attachments, email decoding, attachment extraction and sending, file upload and storage, presigned upload URLs, file hashing and deletion, HTML templates, background job status checks and the account credit balance.
+This connector covers the whole PDF.co v1 API: PDF conversion to and from every supported format, merge and split, page editing, text and image search-and-replace, rotation, optimisation and compression, form field reading, barcode generation and reading, OCR (make searchable/unsearchable), the document parser and its templates, the AI invoice parser, document classification, attachments, email decoding, attachment extraction and sending, file upload and storage, presigned upload URLs, file hashing and deletion, HTML templates, background job status checks and the account credit balance.
 
 | | |
 | --- | --- |

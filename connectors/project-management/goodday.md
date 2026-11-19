@@ -1,5 +1,5 @@
 ---
-description: "GoodDay work management platform — projects, tasks, users, time reports, events, custom fields, CRM, expenses, attendance, dependencies and documents via the…"
+description: "Connect GoodDay to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mediastack.png" alt="Mediastack logo">
 
-Mediastack by APILayer delivers real-time and historical worldwide news data in JSON format, aggregated from over 7,500 sources across 50 countries. Endpoints cover live news (with a 30-minute delay on the Free plan), historical news by date or date range, and a searchable directory of supported news sources, with filtering by source, category, country, language, and keyword.
+Endpoints cover live news (with a 30-minute delay on the Free plan), historical news by date or date range, and a searchable directory of supported news sources, with filtering by source, category, country, language, and keyword.
 
 | | |
 | --- | --- |

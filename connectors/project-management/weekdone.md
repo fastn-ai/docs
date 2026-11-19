@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/weekdone.png" alt="Weekdone logo">
 
-Weekdone is a team OKR, weekly progress reporting, and check-in platform. This connector wraps the Weekdone REST API v1 (https://api.weekdone.com/1) covering weekly report items and their comments, likes and ordering, weekly reports, teams, users, report item types, tags, Objectives and Key Results, KPIs, and company configuration.
+This connector wraps the Weekdone REST API v1 (https://api.weekdone.com/1) covering weekly report items and their comments, likes and ordering, weekly reports, teams, users, report item types, tags, Objectives and Key Results, KPIs, and company configuration.
 
 | | |
 | --- | --- |

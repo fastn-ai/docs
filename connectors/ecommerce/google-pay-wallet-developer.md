@@ -1,5 +1,5 @@
 ---
-description: "Google Pay & Wallet Developer MCP server (https://paydeveloper.googleapis.com/mcp), Google's hosted remote Model Context Protocol server for Google Pay and…"
+description: "Connect Google Pay & Wallet Developer to your product with fastn."
 hidden: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "VideoDB is a video database for AI: upload video, audio and image media, index spoken word and scenes, run semantic/keyword/agentic search over media,…"
+description: "Connect VideoDB to your product with fastn."
 hidden: true
 ---
 

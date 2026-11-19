@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-dataplex.png" alt="Google Dataplex logo">
 
-Google Cloud Dataplex Universal Catalog (dataplex.googleapis.com v1). List Dataplex lakes, list/get/create/delete Universal Catalog entry groups and poll the long-running operations they return. Authorizes with Google OAuth 2.0 using the Dataplex scopes dataplex.readonly (read lakes and entry groups) and dataplex.read-write (create/delete entry groups, read operations).
+List Dataplex lakes, list/get/create/delete Universal Catalog entry groups and poll the long-running operations they return. Authorizes with Google OAuth 2.0 using the Dataplex scopes dataplex.readonly (read lakes and entry groups) and dataplex.read-write (create/delete entry groups, read operations).
 
 | | |
 | --- | --- |

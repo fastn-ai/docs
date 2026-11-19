@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/agilecrm.png" alt="Agile CRM logo">
 
-Agile CRM - all-in-one CRM with sales, marketing and service automation. Full REST API coverage: contacts, companies, deals (opportunities), tasks, events, notes, tracks/milestones (pipelines), campaigns/workflows, documents and helpdesk tickets. HTTP Basic auth (account email + REST API key); per-account subdomain.
+Full REST API coverage: contacts, companies, deals (opportunities), tasks, events, notes, tracks/milestones (pipelines), campaigns/workflows, documents and helpdesk tickets. HTTP Basic auth (account email + REST API key); per-account subdomain.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdf-munk.png" alt="PDF Munk logo">
 
-PDF Munk (pdfmunk.com) document and file automation API. Generate PDFs and PNG images from HTML/CSS or a live URL, render Chart.js charts as images, compress images and PDFs, merge and split PDFs, read PDF metadata, password-protect and unlock PDFs, apply watermarks, fetch rendered HTML from a URL, and manage reusable HTML templates.
+Generate PDFs and PNG images from HTML/CSS or a live URL, render Chart.js charts as images, compress images and PDFs, merge and split PDFs, read PDF metadata, password-protect and unlock PDFs, apply watermarks, fetch rendered HTML from a URL, and manage reusable HTML templates.
 
 | | |
 | --- | --- |

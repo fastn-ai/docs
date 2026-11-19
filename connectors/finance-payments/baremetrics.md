@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/baremetrics.png" alt="Baremetrics logo">
 
-Baremetrics is a subscription analytics and revenue insights platform. This connector covers the full Baremetrics REST API: account, users, sources, plans, customers, subscriptions, one-off charges and refunds, subscription events, customer attributes and attribute fields, segments, annotations, goals, metrics (summary, per-metric, plan breakout, customer breakdown, cohorts) and Cancellation Insights reasons and events.
+This connector covers the full Baremetrics REST API: account, users, sources, plans, customers, subscriptions, one-off charges and refunds, subscription events, customer attributes and attribute fields, segments, annotations, goals, metrics (summary, per-metric, plan breakout, customer breakdown, cohorts) and Cancellation Insights reasons and events.
 
 | | |
 | --- | --- |

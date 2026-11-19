@@ -1,5 +1,5 @@
 ---
-description: "Akeneo PIM REST API connector — products, product models, families, attributes, categories, channels, locales, reference entities, assets, catalogs, jobs, and…"
+description: "Connect Akeneo PIM to your product with fastn."
 hidden: true
 ---
 

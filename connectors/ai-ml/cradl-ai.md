@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cradl-ai.png" alt="Cradl AI logo">
 
-Cradl AI document-AI / IDP platform. Build and run document agents, upload documents, run LLM field-extraction predictions, manage validation (human-in-the-loop) tasks, hooks, actions, models, roles, users, app clients, connections and secrets on https://api.cradl.ai/v1.
+Build and run document agents, upload documents, run LLM field-extraction predictions, manage validation (human-in-the-loop) tasks, hooks, actions, models, roles, users, app clients, connections and secrets on https://api.cradl.ai/v1.
 
 | | |
 | --- | --- |

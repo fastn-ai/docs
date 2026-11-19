@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-contracts.png" alt="Zoho Contracts logo">
 
-Zoho Contracts is Zoho's contract lifecycle management (CLM) application. This connector wraps the Zoho Contracts REST API v1 (contracts.zoho.com/api/v1): organization info, active users, departments, contract types and template fields, counterparties, counterparty types and counterparty contacts, contracts (create, import, draft completion, update, delete, ownership transfer and the contract lists), collaborators, approval, negotiation, signature, attachments and links, document downloads, obligation categories and obligations with their tasks.
+This connector wraps the Zoho Contracts REST API v1 (contracts.zoho.com/api/v1): organization info, active users, departments, contract types and template fields, counterparties, counterparty types and counterparty contacts, contracts (create, import, draft completion, update, delete, ownership transfer and the contract lists), collaborators, approval, negotiation, signature, attachments and links, document downloads, obligation categories and obligations with their tasks.
 
 | | |
 | --- | --- |

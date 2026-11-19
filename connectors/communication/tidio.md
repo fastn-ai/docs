@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tidio.png" alt="Tidio logo">
 
-Tidio is a customer service platform combining live chat, ticketing and the Lyro AI agent. This connector covers the Tidio OpenAPI (api.tidio.com) and the read-only Analytics API (taa.data.tidio.com, PostgREST; same credentials; Plus/Premium only, returns 401 Unauthorized otherwise). IMPORTANT: the Tidio OpenAPI is a paid feature - Product (Lyro product recommendation) endpoints require a paid Lyro plan, and every other endpoint family (contacts, conversations, tickets, operators, departments, Lyro data sources, project) requires the Plus or Premium plan and returns 403 api_access_disabled otherwise. Credentials are the OpenAPI Client Id/Client Secret pair generated in Tidio Panel under Developer &gt; OpenAPI.
+This connector covers the Tidio OpenAPI (api.tidio.com) and the read-only Analytics API (taa.data.tidio.com, PostgREST; same credentials; Plus/Premium only, returns 401 Unauthorized otherwise). IMPORTANT: the Tidio OpenAPI is a paid feature - Product (Lyro product recommendation) endpoints require a paid Lyro plan, and every other endpoint family (contacts, conversations, tickets, operators, departments, Lyro data sources, project) requires the Plus or Premium plan and returns 403 api_access_disabled otherwise. Credentials are the OpenAPI Client Id/Client Secret pair generated in Tidio Panel under Developer &gt; OpenAPI.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/commerce-layer.png" alt="Commerce Layer logo">
 
-Commerce Layer is a headless, API-first commerce platform. This connector covers the Commerce Layer Core API (JSON:API) at https://{organization}.commercelayer.io/api — markets, merchants, stores, SKUs and SKU lists, prices and price lists, inventory (stock locations, stock items, stock transfers, reserved stocks), orders, line items and line item options, customers, customer groups, customer addresses and payment sources, addresses, shipments, parcels and parcel line items, shipping methods, categories and zones, deliveries, returns and return line items, promotions and coupons, gift cards, tags, attachments, events, webhooks, imports, exports and cleanups. Authenticates with OAuth 2.0 client_credentials against https://auth.commercelayer.io/oauth/token using an Integration application's client id and secret.
+This connector covers the Commerce Layer Core API (JSON:API) at https://{organization}.commercelayer.io/api — markets, merchants, stores, SKUs and SKU lists, prices and price lists, inventory (stock locations, stock items, stock transfers, reserved stocks), orders, line items and line item options, customers, customer groups, customer addresses and payment sources, addresses, shipments, parcels and parcel line items, shipping methods, categories and zones, deliveries, returns and return line items, promotions and coupons, gift cards, tags, attachments, events, webhooks, imports, exports and cleanups. Authenticates with OAuth 2.0 client_credentials against https://auth.commercelayer.io/oauth/token using an Integration application's client id and secret.
 
 | | |
 | --- | --- |

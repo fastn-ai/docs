@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI VAT Validation and Rates validates EU VAT numbers and returns the registered company, calculates VAT-compliant prices for a country and goods…"
+description: "Connect AbstractAPI VAT Validation to your product with fastn."
 hidden: true
 ---
 

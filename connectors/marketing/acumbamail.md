@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/acumbamail.png" alt="Acumbamail logo">
 
-Acumbamail is a Spanish email and SMS marketing platform. This connector covers the full Acumbamail v1 API: subscriber lists, subscribers and merge fields, email campaigns and their statistics, templates, SMS campaigns, transactional SMTP email, and list and SMTP webhook configuration.
+This connector covers the full Acumbamail v1 API: subscriber lists, subscribers and merge fields, email campaigns and their statistics, templates, SMS campaigns, transactional SMTP email, and list and SMTP webhook configuration.
 
 | | |
 | --- | --- |

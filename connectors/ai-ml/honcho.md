@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/honcho.png" alt="Honcho logo">
 
-Honcho by Plastic Labs is a memory and social-cognition layer for AI agents. This connector covers the Honcho v3 REST API: workspaces, peers, sessions, messages, conclusions, scopes, peer cards, representations, session context and summaries, search, the dialectic chat endpoints, queue status, dreams, API keys and webhook endpoints.
+This connector covers the Honcho v3 REST API: workspaces, peers, sessions, messages, conclusions, scopes, peer cards, representations, session context and summaries, search, the dialectic chat endpoints, queue status, dreams, API keys and webhook endpoints.
 
 | | |
 | --- | --- |

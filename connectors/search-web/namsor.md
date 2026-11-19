@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/namsor.png" alt="NamSor logo">
 
-NamSor is a name-classification API that infers demographic attributes from personal names. This connector covers the NamSor API v2 classification surface: gender, country of origin and residence, ethnicity and diaspora, US race and ethnicity, religion, Indian caste and regional subclassification, phone country-code inference, name parsing, name-type detection, Chinese and Japanese romanization, transliteration and matching, and migration corridors, plus API key and usage reporting. Single-name and batch variants are provided for every classifier.
+This connector covers the NamSor API v2 classification surface: gender, country of origin and residence, ethnicity and diaspora, US race and ethnicity, religion, Indian caste and regional subclassification, phone country-code inference, name parsing, name-type detection, Chinese and Japanese romanization, transliteration and matching, and migration corridors, plus API key and usage reporting. Single-name and batch variants are provided for every classifier.
 
 | | |
 | --- | --- |

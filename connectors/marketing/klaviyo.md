@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/klaviyo.png" alt="Klaviyo logo">
 
-Klaviyo marketing automation platform. Manage profiles, lists, segments, campaigns, flows, events, metrics, templates, catalogs, tags, images, and webhooks via the Klaviyo JSON:API.
+Manage profiles, lists, segments, campaigns, flows, events, metrics, templates, catalogs, tags, images, and webhooks via the Klaviyo JSON:API.
 
 | | |
 | --- | --- |

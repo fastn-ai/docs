@@ -5,7 +5,7 @@ hidden: true
 
 # Billsby
 
-Billsby subscription billing and recurring payments. Manage products, plans, cycles, customers, subscriptions, add-ons, allowances, feature tags, custom fields, invoices, credit notes, refunds, payment details and usage counters through the Billsby public REST API.
+Manage products, plans, cycles, customers, subscriptions, add-ons, allowances, feature tags, custom fields, invoices, credit notes, refunds, payment details and usage counters through the Billsby public REST API.
 
 | | |
 | --- | --- |

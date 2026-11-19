@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/creatomate.png" alt="Creatomate logo">
 
-Creatomate is a media automation platform for generating videos, images and GIFs from reusable templates or raw RenderScript. This connector covers the Creatomate REST API: creating and tracking renders, full template CRUD, and reading data feeds.
+This connector covers the Creatomate REST API: creating and tracking renders, full template CRUD, and reading data feeds.
 
 | | |
 | --- | --- |

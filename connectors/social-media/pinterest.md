@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pinterest.png" alt="Pinterest logo">
 
-Pinterest API v5 connector: user account, boards (CRUD + sections), pins (CRUD), board pins, and pin analytics. OAuth 2.0 (authorization code) primary. Poll-only (no public webhook subscription API).
+OAuth 2.0 (authorization code) primary. Poll-only (no public webhook subscription API).
 
 | | |
 | --- | --- |

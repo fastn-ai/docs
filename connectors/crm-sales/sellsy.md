@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sellsy.png" alt="Sellsy logo">
 
-Sellsy CRM, invoicing and sales platform via the Sellsy API v2. Manage companies, contacts, individuals, opportunities, estimates, orders, invoices, credit notes, payments, items, tasks, calendar events, comments, custom fields, files, staff and webhooks.
+Manage companies, contacts, individuals, opportunities, estimates, orders, invoices, credit notes, payments, items, tasks, calendar events, comments, custom fields, files, staff and webhooks.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/twist.png" alt="Twist logo">
 
-Twist by Doist — asynchronous team communication. Manage workspaces, channels, threads, comments, messages, groups, reactions, attachments, notifications, and search via the Twist API v3.
+Manage workspaces, channels, threads, comments, messages, groups, reactions, attachments, notifications, and search via the Twist API v3.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/smartsuite.png" alt="SmartSuite logo">
 
-SmartSuite is a collaborative work management platform where data lives in solutions, applications (tables) and records. This connector wraps the SmartSuite REST API at app.smartsuite.com/api/v1, covering solutions, applications and their field schemas, and record retrieval and filtering.
+This connector wraps the SmartSuite REST API at app.smartsuite.com/api/v1, covering solutions, applications and their field schemas, and record retrieval and filtering.
 
 | | |
 | --- | --- |

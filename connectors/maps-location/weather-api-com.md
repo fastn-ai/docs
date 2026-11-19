@@ -1,5 +1,5 @@
 ---
-description: "WeatherAPI.com provides real-time weather, multi-day and hourly forecasts, historical weather back to 2010, long-range future forecasts, astronomy, marine…"
+description: "Connect WeatherAPI.com to your product with fastn."
 hidden: true
 ---
 

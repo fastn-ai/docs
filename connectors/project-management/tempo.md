@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/tempo.png" alt="Tempo logo">
 
-Tempo Cloud REST API v4 for Jira Time Tracking, Resourcing and Financial Management. Covers worklogs, accounts, plans, teams, holiday schemes, workload schemes, roles, and other Tempo resource families via Bearer token auth (personal/user API token generated in the Tempo app's own Settings &gt; API Integration screen inside Jira Cloud).
+Covers worklogs, accounts, plans, teams, holiday schemes, workload schemes, roles, and other Tempo resource families via Bearer token auth (personal/user API token generated in the Tempo app's own Settings &gt; API Integration screen inside Jira Cloud).
 
 | | |
 | --- | --- |

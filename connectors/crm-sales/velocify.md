@@ -5,7 +5,7 @@ hidden: true
 
 # Velocify
 
-Velocify LeadManager and Dial-IQ by ICE Mortgage Technology - sales acceleration and lead management for mortgage and high-velocity sales teams. Wraps the live LeadManager ClientService API at service.leads360.com (ASP.NET ASMX, version 1.3.0.0): leads, lead actions and activity logs, agents/users and groups, campaigns, providers, distribution programs, statuses, milestones, custom fields (FormBuilder), Dial-IQ call history and recordings, SMS/email opt-out, direct mail, and custom reports. Credentials are a LeadManager agent email and password sent as request parameters. Responses are XML, not JSON. There is no webhook registration API - poll getLeadsSpan or getLeadIdsSpan for changes.
+Wraps the live LeadManager ClientService API at service.leads360.com (ASP.NET ASMX, version 1.3.0.0): leads, lead actions and activity logs, agents/users and groups, campaigns, providers, distribution programs, statuses, milestones, custom fields (FormBuilder), Dial-IQ call history and recordings, SMS/email opt-out, direct mail, and custom reports. Credentials are a LeadManager agent email and password sent as request parameters. Responses are XML, not JSON. There is no webhook registration API - poll getLeadsSpan or getLeadIdsSpan for changes.
 
 | | |
 | --- | --- |

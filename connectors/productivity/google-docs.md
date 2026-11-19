@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-docs.png" alt="Google Docs logo">
 
-Google Docs API v1 — create, read, and edit Google Documents programmatically using batchUpdate operations.
-
 | | |
 | --- | --- |
 | **Category** | [Productivity](README.md) |

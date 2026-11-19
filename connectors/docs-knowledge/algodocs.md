@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/algodocs.png" alt="AlgoDocs logo">
 
-AlgoDocs document data extraction API. Upload invoices, receipts, bank statements, purchase orders and other PDFs or images to a trained extractor, then read back the structured fields plus JSON, Excel, XML, TXT and CSV outputs. Base URL https://api.algodocs.com/v1.
+Upload invoices, receipts, bank statements, purchase orders and other PDFs or images to a trained extractor, then read back the structured fields plus JSON, Excel, XML, TXT and CSV outputs. Base URL https://api.algodocs.com/v1.
 
 | | |
 | --- | --- |

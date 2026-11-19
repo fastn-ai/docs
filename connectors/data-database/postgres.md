@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/postgres.png" alt="PostgreSQL logo">
 
-Generic PostgreSQL database connector with full introspection coverage. Run any SQL or use the typed introspection actions.
+Run any SQL or use the typed introspection actions.
 
 | | |
 | --- | --- |

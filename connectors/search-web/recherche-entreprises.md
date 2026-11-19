@@ -1,5 +1,5 @@
 ---
-description: "Recherche d'entreprises is the French government's free company search API (Annuaire des Entreprises): find French companies, associations and public bodies…"
+description: "Connect Recherche d'entreprises to your product with fastn."
 hidden: true
 ---
 

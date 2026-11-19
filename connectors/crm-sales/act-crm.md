@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/act-crm.png" alt="Act! CRM logo">
 
-Act! CRM (Act! Premium Cloud and Act! Premium Web) via the Act! Web API. Manage contacts, companies, groups, opportunities, activities, history, notes, products, users, teams, documents and metadata in an Act! database.
+CRM (Act! Premium Cloud and Act! Premium Web) via the Act! Web API. Manage contacts, companies, groups, opportunities, activities, history, notes, products, users, teams, documents and metadata in an Act! database.
 
 | | |
 | --- | --- |

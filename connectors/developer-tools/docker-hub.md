@@ -1,5 +1,5 @@
 ---
-description: "Docker Hub API v2 connector — manage repositories, tags, image immutability rules, repository webhooks, personal access tokens, organizations, teams (groups),…"
+description: "Connect Docker Hub to your product with fastn."
 hidden: true
 ---
 

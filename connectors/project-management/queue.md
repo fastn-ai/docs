@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/queue.png" alt="Queue logo">
 
-Queue (app.usequeue.com) is a client-portal and project-management platform for agencies and productized-service businesses. This connector covers the Queue REST API v1: projects, taskboard columns and tasks, task comments and replies, clients, invoices, timesheets, task credits, services, service checkouts (subscriptions) with pause/unpause/cancel, and files with their comments and replies.
+This connector covers the Queue REST API v1: projects, taskboard columns and tasks, task comments and replies, clients, invoices, timesheets, task credits, services, service checkouts (subscriptions) with pause/unpause/cancel, and files with their comments and replies.
 
 | | |
 | --- | --- |

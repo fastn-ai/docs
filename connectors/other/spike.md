@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/spike.png" alt="Spike logo">
 
-Spike.sh incident management and on-call platform, through Spike's official MCP server (https://mcp.spike.sh/mcp). Read incident payloads and activity, acknowledge, resolve and prioritise incidents, see who is on call, and create or change on-call schedules, overrides and escalation policies. Connects with OAuth 2.1 (PKCE) to your Spike account.
+Read incident payloads and activity, acknowledge, resolve and prioritise incidents, see who is on call, and create or change on-call schedules, overrides and escalation policies. Connects with OAuth 2.1 (PKCE) to your Spike account.
 
 | | |
 | --- | --- |

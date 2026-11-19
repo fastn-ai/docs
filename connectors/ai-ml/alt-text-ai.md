@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/alt-text-ai.png" alt="AltText.ai logo">
 
-AltText.ai generates alt text for images using AI computer-vision models, so images can be made accessible and SEO-friendly without a human copywriter. This connector wraps the full AltText.ai REST API v1: account settings, the image library (create by public URL or base64 upload, read, update, delete, list, search), bulk CSV creation and web-page scraping, plus image webhook events.
+This connector wraps the full AltText.ai REST API v1: account settings, the image library (create by public URL or base64 upload, read, update, delete, list, search), bulk CSV creation and web-page scraping, plus image webhook events.
 
 | | |
 | --- | --- |

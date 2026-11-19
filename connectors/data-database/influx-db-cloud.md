@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/influx-db-cloud.png" alt="InfluxDB Cloud logo">
 
-InfluxDB Cloud is InfluxData's managed time series platform. This connector covers the InfluxDB Cloud v2 API and its Invocable Scripts API: writing line-protocol points and deleting data by predicate, running Flux queries and parsing them into an AST, stored invocable scripts and their parameters, buckets and bucket measurement schemas, organizations with their members, owners, secrets, limits and usage, API tokens (authorizations), tasks with their runs, retries and logs, dashboards with their cells and views, variables, labels, checks, notification rules and notification endpoints, Telegraf configurations and plugins, DBRP mappings for InfluxQL compatibility, templates and stacks, users, and instance metadata such as routes, resource types and feature flags.
+This connector covers the InfluxDB Cloud v2 API and its Invocable Scripts API: writing line-protocol points and deleting data by predicate, running Flux queries and parsing them into an AST, stored invocable scripts and their parameters, buckets and bucket measurement schemas, organizations with their members, owners, secrets, limits and usage, API tokens (authorizations), tasks with their runs, retries and logs, dashboards with their cells and views, variables, labels, checks, notification rules and notification endpoints, Telegraf configurations and plugins, DBRP mappings for InfluxQL compatibility, templates and stacks, users, and instance metadata such as routes, resource types and feature flags.
 
 | | |
 | --- | --- |

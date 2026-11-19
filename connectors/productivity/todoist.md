@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/todoist.png" alt="Todoist logo">
 
-Todoist unified API v1 (base https://api.todoist.com/api/v1). Manage projects, sections, tasks (create/get/update/close/reopen/delete), comments, labels (personal + shared), and collaborators. List endpoints are cursor-paginated ({results, next_cursor}). Auth: Bearer API token (Settings &gt; Integrations &gt; Developer) or OAuth 2.
+Manage projects, sections, tasks (create/get/update/close/reopen/delete), comments, labels (personal + shared), and collaborators. List endpoints are cursor-paginated ({results, next_cursor}). Auth: Bearer API token (Settings &gt; Integrations &gt; Developer) or OAuth 2.
 
 | | |
 | --- | --- |

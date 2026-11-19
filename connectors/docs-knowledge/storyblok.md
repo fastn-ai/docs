@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/storyblok.png" alt="Storyblok logo">
 
-Storyblok headless CMS Management API. Manage spaces, stories, components, component groups, datasources, assets, tags, releases, workflows, collaborators, webhooks and more.
+Manage spaces, stories, components, component groups, datasources, assets, tags, releases, workflows, collaborators, webhooks and more.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-outlook-calendar.png" alt="Microsoft Outlook Calendar logo">
 
-Microsoft Outlook Calendar via Microsoft Graph v1.0 (https://graph.microsoft.com/v1.0). Calendars and calendar groups, calendar sharing permissions, events (create, read, update, delete, permanent delete), calendar view and recurring-event instances, delta sync, meeting responses (accept, tentatively accept, decline, cancel, forward), event reminders (reminder view, snooze, dismiss), event attachments, free/busy schedule lookup and meeting time suggestions.
+Calendars and calendar groups, calendar sharing permissions, events (create, read, update, delete, permanent delete), calendar view and recurring-event instances, delta sync, meeting responses (accept, tentatively accept, decline, cancel, forward), event reminders (reminder view, snooze, dismiss), event attachments, free/busy schedule lookup and meeting time suggestions.
 
 | | |
 | --- | --- |

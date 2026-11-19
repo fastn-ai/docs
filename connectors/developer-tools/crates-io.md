@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/crates-io.png" alt="crates.io logo">
 
-crates.io is the Rust community's package registry. Search and browse crates, versions, dependencies, reverse dependencies, download stats, readmes, owners, categories, keywords, users, teams and registry summary through its public API, and use the token-based routes for email confirmation, owner invitations and trusted publishing. Read routes need no API key; crates.io asks for a descriptive User-Agent and at most 1 request per second.
+Search and browse crates, versions, dependencies, reverse dependencies, download stats, readmes, owners, categories, keywords, users, teams and registry summary through its public API, and use the token-based routes for email confirmation, owner invitations and trusted publishing. Read routes need no API key; crates.io asks for a descriptive User-Agent and at most 1 request per second.
 
 | | |
 | --- | --- |

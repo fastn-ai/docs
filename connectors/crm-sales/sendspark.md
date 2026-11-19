@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sendspark.png" alt="Sendspark logo">
 
-Sendspark personalised video outreach API (api-gw.sendspark.com/v1): workspaces, dynamic video campaigns, prospects, video transcripts and webhooks.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |

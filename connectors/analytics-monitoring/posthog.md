@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/posthog.png" alt="PostHog logo">
 
-PostHog product analytics, feature flags, experiments, surveys, session replay, and data management. Wraps the PostHog public REST API (US cloud) plus the event capture/batch ingestion endpoints.
+Wraps the PostHog public REST API (US cloud) plus the event capture/batch ingestion endpoints.
 
 | | |
 | --- | --- |

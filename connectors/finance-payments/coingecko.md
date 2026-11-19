@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/coingecko.png" alt="CoinGecko logo">
 
-CoinGecko is the world's largest independent cryptocurrency data aggregator. This connector covers the complete CoinGecko API v3: simple prices, search and ID maps, coins and market data, coin charts and OHLC, categories, tokenized real world assets (RWA), exchanges, derivatives, public treasury holdings, NFT collections, trending searches, news and insights, global market data, BTC exchange rates, plus the Onchain (GeckoTerminal) DEX endpoints for networks, DEXs, pools, tokens, OHLCV charts, trades, wallets, holders and categories. Endpoints marked as paid-plan only in the CoinGecko docs require a Pro API key.
+This connector covers the complete CoinGecko API v3: simple prices, search and ID maps, coins and market data, coin charts and OHLC, categories, tokenized real world assets (RWA), exchanges, derivatives, public treasury holdings, NFT collections, trending searches, news and insights, global market data, BTC exchange rates, plus the Onchain (GeckoTerminal) DEX endpoints for networks, DEXs, pools, tokens, OHLCV charts, trades, wallets, holders and categories. Endpoints marked as paid-plan only in the CoinGecko docs require a Pro API key.
 
 | | |
 | --- | --- |

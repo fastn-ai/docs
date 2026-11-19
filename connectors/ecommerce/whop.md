@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/whop.png" alt="Whop logo">
 
-Whop is a commerce platform for selling digital products, memberships and communities. This connector covers the Whop REST API v1 (both the Current versioned surface and the supported Legacy surface): accounts and companies, users and team members, products, plans and checkout configurations, memberships and members, payments, invoices, refunds, disputes and dispute alerts, resolution center cases, promo codes, payouts, transfers, ledgers and cards, experiences, courses, forums, chats and messages, reviews, entries, leads, affiliates, apps and app builds, files and media, notifications, exports, stats and webhooks.
+This connector covers the Whop REST API v1 (both the Current versioned surface and the supported Legacy surface): accounts and companies, users and team members, products, plans and checkout configurations, memberships and members, payments, invoices, refunds, disputes and dispute alerts, resolution center cases, promo codes, payouts, transfers, ledgers and cards, experiences, courses, forums, chats and messages, reviews, entries, leads, affiliates, apps and app builds, files and media, notifications, exports, stats and webhooks.
 
 | | |
 | --- | --- |

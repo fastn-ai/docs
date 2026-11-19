@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/freshbooks.png" alt="FreshBooks logo">
 
-FreshBooks cloud accounting and invoicing platform. Manage clients and contacts, invoices, recurring invoice profiles, estimates and proposals, payments and checkout links, credit notes, expenses and recurring expenses, expense categories, bills and vendors, items and services, taxes, projects, tasks, time entries, retainers, staff and team members, ledger accounts, journal entries, other income, financial reports, and webhook callbacks via the FreshBooks REST API (https://api.freshbooks.com). OAuth 2.0 authorization code auth.
+Manage clients and contacts, invoices, recurring invoice profiles, estimates and proposals, payments and checkout links, credit notes, expenses and recurring expenses, expense categories, bills and vendors, items and services, taxes, projects, tasks, time entries, retainers, staff and team members, ledger accounts, journal entries, other income, financial reports, and webhook callbacks via the FreshBooks REST API (https://api.freshbooks.com). OAuth 2.0 authorization code auth.
 
 | | |
 | --- | --- |

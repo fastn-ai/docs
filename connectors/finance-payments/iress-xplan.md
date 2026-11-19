@@ -1,5 +1,5 @@
 ---
-description: "Iress Xplan financial planning and advice platform, via the Iress Open Standard API 3.0 (the productised REST/JSON facade Iress hosts at api.iressopen.com.au…"
+description: "Connect Iress Xplan to your product with fastn."
 hidden: true
 ---
 

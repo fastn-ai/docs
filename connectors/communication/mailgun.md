@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailgun.png" alt="Mailgun logo">
 
-Mailgun transactional email and email automation API. Send email, manage domains, mailing lists, templates, routes, suppressions, events, stats, tags, IPs, and webhooks. HTTP Basic Auth with username 'api' and your Mailgun API key. Base host api.mailgun.net (US) or api.eu.mailgun.net (EU). Most endpoints v3, some v4.
+Send email, manage domains, mailing lists, templates, routes, suppressions, events, stats, tags, IPs, and webhooks. HTTP Basic Auth with username 'api' and your Mailgun API key. Base host api.mailgun.net (US) or api.eu.mailgun.net (EU). Most endpoints v3, some v4.
 
 | | |
 | --- | --- |

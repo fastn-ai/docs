@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/passcreator.png" alt="Passcreator logo">
 
-Passcreator — Apple Wallet and Google Wallet pass platform. Manage pass templates, create/update/void/delete passes, bundles, push notifications, distribution links, app-scan validation, statistics and webhooks over the v1/v2/v3 REST API at app.passcreator.com.
+Manage pass templates, create/update/void/delete passes, bundles, push notifications, distribution links, app-scan validation, statistics and webhooks over the v1/v2/v3 REST API at app.passcreator.com.
 
 | | |
 | --- | --- |

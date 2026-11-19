@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/crawlbase.png" alt="Crawlbase logo">
 
-Crawlbase is a web crawling and scraping platform with headless-browser rendering, residential proxies, anti-bot bypass and built-in scrapers. This connector covers the Crawlbase REST API: the Crawling API (GET, POST and PUT crawls with JSON, HTML or Markdown output, screenshots, scrapers and async mode), the Enterprise Crawler queue and its management endpoints (create, get, update, stats, pause, unpause, purge, delete, delete job, find job by RID, push URLs), Cloud Storage (get, bulk get, delete, bulk delete, list RIDs, total count), the Account usage API, the free User Agents API and the legacy Scraper, Screenshots and Leads APIs.
+This connector covers the Crawlbase REST API: the Crawling API (GET, POST and PUT crawls with JSON, HTML or Markdown output, screenshots, scrapers and async mode), the Enterprise Crawler queue and its management endpoints (create, get, update, stats, pause, unpause, purge, delete, delete job, find job by RID, push URLs), Cloud Storage (get, bulk get, delete, bulk delete, list RIDs, total count), the Account usage API, the free User Agents API and the legacy Scraper, Screenshots and Leads APIs.
 
 | | |
 | --- | --- |

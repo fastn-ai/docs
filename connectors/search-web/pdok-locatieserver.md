@@ -1,5 +1,5 @@
 ---
-description: "PDOK Locatieserver is the Dutch government's free geocoding service built on the BAG, BRK and other national registers: free-text search and type-ahead…"
+description: "Connect PDOK Locatieserver to your product with fastn."
 hidden: true
 ---
 

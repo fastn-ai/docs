@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rocketreach.png" alt="RocketReach logo">
 
-RocketReach is a contact-data and sales-intelligence platform covering emails, phone numbers and social profiles for 700M+ professionals and 35M+ companies. This connector wraps the RocketReach API v2 at https://api.rocketreach.co/api/v2: account details and API key management, people lookup with asynchronous status polling, people and company search, company lookup, combined person-and-company lookup, bulk people lookup, email verification, and the newer Universal API family (universal account, person search, company search, person lookup, company lookup, bulk lookup and lookup status).
+This connector wraps the RocketReach API v2 at https://api.rocketreach.co/api/v2: account details and API key management, people lookup with asynchronous status polling, people and company search, company lookup, combined person-and-company lookup, bulk people lookup, email verification, and the newer Universal API family (universal account, person search, company search, person lookup, company lookup, bulk lookup and lookup status).
 
 | | |
 | --- | --- |

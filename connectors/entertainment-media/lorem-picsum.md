@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lorem-picsum.png" alt="Lorem Picsum logo">
 
-Lorem Picsum is a free placeholder photo service built on Unsplash images. List the available images with paging and get details for an image by id or by seed. No API key needed.
+List the available images with paging and get details for an image by id or by seed. No API key needed.
 
 | | |
 | --- | --- |

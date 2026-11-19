@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/abyssale.png" alt="Abyssale logo">
 
-Abyssale image, video and PDF generation API. Generate banners and visuals from designs (synchronously or asynchronously), manage projects and workspace templates, import designs from JSON, list fonts, read credit balances, and manage the webhook signing secret.
+Generate banners and visuals from designs (synchronously or asynchronously), manage projects and workspace templates, import designs from JSON, list fonts, read credit balances, and manage the webhook signing secret.
 
 | | |
 | --- | --- |

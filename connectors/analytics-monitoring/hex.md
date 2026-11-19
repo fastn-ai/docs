@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hex.png" alt="Hex logo">
 
-Hex is a collaborative data workspace for notebooks, data apps and AI agents. This connector covers the Hex public API: projects and project runs, notebook cells and chart images, collections, groups and users, data connections, semantic models, guides, agent threads, suggestions and embedded app URLs.
+This connector covers the Hex public API: projects and project runs, notebook cells and chart images, collections, groups and users, data connections, semantic models, guides, agent threads, suggestions and embedded app URLs.
 
 | | |
 | --- | --- |

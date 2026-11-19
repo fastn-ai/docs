@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dataforb2b.png" alt="DataForB2B logo">
 
-DataForB2B is a B2B data API for searching and enriching people and companies. This connector covers the DataForB2B REST API: people, company, job and social post search; natural-language text-to-filters, one-shot and multi-turn reasoning search; result counts and filter typeahead; profile enrichment (full profile, work and personal email, phone, GitHub) and company enrichment; the signal catalog and monitors that push real-time signals such as post engagement to your webhook; and the account credit balance. Authenticates with an API key sent in the api_key header.
+This connector covers the DataForB2B REST API: people, company, job and social post search; natural-language text-to-filters, one-shot and multi-turn reasoning search; result counts and filter typeahead; profile enrichment (full profile, work and personal email, phone, GitHub) and company enrichment; the signal catalog and monitors that push real-time signals such as post engagement to your webhook; and the account credit balance. Authenticates with an API key sent in the api_key header.
 
 | | |
 | --- | --- |

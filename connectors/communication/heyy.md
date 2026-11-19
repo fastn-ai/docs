@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/heyy.png" alt="Heyy logo">
 
-Heyy customer-messaging platform (api.heyy.io v3). Manage contacts, labels, custom attributes, chats, channels, message templates, campaigns, journeys, automations, teams, files and API webhooks, and send WhatsApp/omnichannel messages.
+Manage contacts, labels, custom attributes, chats, channels, message templates, campaigns, journeys, automations, teams, files and API webhooks, and send WhatsApp/omnichannel messages.
 
 | | |
 | --- | --- |

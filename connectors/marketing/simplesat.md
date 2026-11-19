@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/simplesat.png" alt="Simplesat logo">
 
-Simplesat is a customer-satisfaction survey platform for CSAT, CES and NPS feedback. This connector covers the Simplesat public API: survey responses and individual answers, customers, team members, surveys, questions, email survey sends and satisfaction metrics.
+This connector covers the Simplesat public API: survey responses and individual answers, customers, team members, surveys, questions, email survey sends and satisfaction metrics.
 
 | | |
 | --- | --- |

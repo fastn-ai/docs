@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/firebase.png" alt="Firebase logo">
 
-Google Firebase app development platform. Covers Cloud Firestore (document CRUD, collections, structured queries, batch writes, transactions), Firebase Realtime Database (JSON REST read/write/patch/delete), Firebase Authentication Admin (list/get/create/update/delete users via Identity Toolkit), Firebase Cloud Messaging v1 (send push notifications), Remote Config (get/publish template), and Cloud Storage for Firebase (objects and buckets via the GCS JSON API). Auth is a Google service-account JWT-bearer flow: a per-project OAuth Bearer access token is minted by RS256-signing a JWT with the service account key and exchanging it at Google's token endpoint, then sent as Authorization: Bearer on every call alongside the project ID. Custom auth tokens are a local Admin SDK signing operation, not a REST endpoint, so are out of scope.
+Covers Cloud Firestore (document CRUD, collections, structured queries, batch writes, transactions), Firebase Realtime Database (JSON REST read/write/patch/delete), Firebase Authentication Admin (list/get/create/update/delete users via Identity Toolkit), Firebase Cloud Messaging v1 (send push notifications), Remote Config (get/publish template), and Cloud Storage for Firebase (objects and buckets via the GCS JSON API). Auth is a Google service-account JWT-bearer flow: a per-project OAuth Bearer access token is minted by RS256-signing a JWT with the service account key and exchanging it at Google's token endpoint, then sent as Authorization: Bearer on every call alongside the project ID. Custom auth tokens are a local Admin SDK signing operation, not a REST endpoint, so are out of scope.
 
 | | |
 | --- | --- |

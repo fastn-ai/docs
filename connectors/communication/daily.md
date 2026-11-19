@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/daily.png" alt="Daily logo">
 
-Daily is a real-time video and audio conferencing API. Create and manage rooms, issue meeting tokens, control recordings, transcription and live streaming, inspect meetings, participants and presence, run dial-in and dial-out telephony, submit batch post-processing jobs, and manage webhooks.
+Create and manage rooms, issue meeting tokens, control recordings, transcription and live streaming, inspect meetings, participants and presence, run dial-in and dial-out telephony, submit batch post-processing jobs, and manage webhooks.
 
 | | |
 | --- | --- |

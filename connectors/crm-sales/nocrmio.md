@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nocrmio.png" alt="noCRM.io logo">
 
-noCRM.io lead management and sales CRM. Manage leads, prospecting lists and prospects, pipelines and steps, users, teams, client folders, categories, tags, custom fields, activities, comments, attachments, and webhooks via the noCRM.io API v2.
+Manage leads, prospecting lists and prospects, pipelines and steps, users, teams, client folders, categories, tags, custom fields, activities, comments, attachments, and webhooks via the noCRM.io API v2.
 
 | | |
 | --- | --- |

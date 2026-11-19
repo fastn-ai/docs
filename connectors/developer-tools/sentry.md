@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sentry.png" alt="Sentry logo">
 
-Sentry API v0 (default base https://sentry.io, configurable for self-hosted). Manage organizations, projects, issues (list/get/update/delete/assign/resolve), events, issue comments and tags, releases and deploys, teams, members, project client keys (DSNs), and service hooks (webhooks). Auth: Bearer auth token / internal integration token.
+Manage organizations, projects, issues (list/get/update/delete/assign/resolve), events, issue comments and tags, releases and deploys, teams, members, project client keys (DSNs), and service hooks (webhooks). Auth: Bearer auth token / internal integration token.
 
 | | |
 | --- | --- |

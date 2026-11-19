@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/payhip.png" alt="Payhip logo">
 
-Payhip is an e-commerce platform for selling digital downloads, courses, memberships and coupons. This connector covers the complete Payhip public REST API: coupon management (create, list, retrieve) and software license key enforcement on both the current product-secret-key API (v2) and the legacy account API key API (v1) - verify, enable, disable and adjust usage counters. Payhip store events (paid, refunded, subscription.created, subscription.deleted) are delivered as webhooks configured in the Payhip dashboard.
+This connector covers the complete Payhip public REST API: coupon management (create, list, retrieve) and software license key enforcement on both the current product-secret-key API (v2) and the legacy account API key API (v1) - verify, enable, disable and adjust usage counters. Payhip store events (paid, refunded, subscription.created, subscription.deleted) are delivered as webhooks configured in the Payhip dashboard.
 
 | | |
 | --- | --- |

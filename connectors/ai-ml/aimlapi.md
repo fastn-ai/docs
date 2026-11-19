@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aimlapi.png" alt="AI/ML API logo">
 
-AI/ML API (aimlapi.com) gives access to hundreds of AI models from one OpenAI-compatible endpoint. This connector covers the full AI/ML API surface: the model catalogue and deprecations, model performance metrics, account balance, billing details and transactions, API key management and usage, request logs, chat completions, the Responses API, Anthropic-style messages and message batches, image generation and editing, video generation, music and audio generation, text to speech, speech to text, OCR and embeddings.
+This connector covers the full AI/ML API surface: the model catalogue and deprecations, model performance metrics, account balance, billing details and transactions, API key management and usage, request logs, chat completions, the Responses API, Anthropic-style messages and message batches, image generation and editing, video generation, music and audio generation, text to speech, speech to text, OCR and embeddings.
 
 | | |
 | --- | --- |

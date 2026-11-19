@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/imagior.png" alt="Imagior logo">
 
-Imagior automated image generation. Render images from a design template created in the Imagior dashboard, applying dynamic element modifications (text, colours, image sources) at request time. Also exposes account/credit details and template element introspection. Base URL https://api.imagior.com. Image generation consumes one account credit per generated image.
+Render images from a design template created in the Imagior dashboard, applying dynamic element modifications (text, colours, image sources) at request time. Also exposes account/credit details and template element introspection. Base URL https://api.imagior.com. Image generation consumes one account credit per generated image.
 
 | | |
 | --- | --- |

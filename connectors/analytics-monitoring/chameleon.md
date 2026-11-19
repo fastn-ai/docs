@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/chameleon.png" alt="Chameleon logo">
 
-Chameleon is a product-adoption platform for in-product Tours, Microsurveys, Tooltips, Launchers, Embeddables, Product Demos and the HelpBar. This connector covers the full Chameleon v3 REST API: user profiles and companies with search and counting, segments, every Experience type, deliveries, tour interactions and microsurvey responses, themes, tags, domains and URL groups, data properties, event names, rate limit and alert groups, data imports, HelpBar search configuration and items, change history, webhook subscriptions, and the incoming data-push hooks for profiles, companies and events.
+This connector covers the full Chameleon v3 REST API: user profiles and companies with search and counting, segments, every Experience type, deliveries, tour interactions and microsurvey responses, themes, tags, domains and URL groups, data properties, event names, rate limit and alert groups, data imports, HelpBar search configuration and items, change history, webhook subscriptions, and the incoming data-push hooks for profiles, companies and events.
 
 | | |
 | --- | --- |

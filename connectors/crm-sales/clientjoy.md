@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clientjoy.png" alt="Clientjoy logo">
 
-Clientjoy is an all-in-one client relationship suite for agencies and freelancers covering leads, clients, proposals, invoices and payments. This connector wraps the Clientjoy Public API v1: leads with stages and sources, customers, custom fields, items, taxes, currencies, workspace owners, proposals and proposal templates, invoices with payment modes and payment recording, cross-module search and webhook subscriptions.
+This connector wraps the Clientjoy Public API v1: leads with stages and sources, customers, custom fields, items, taxes, currencies, workspace owners, proposals and proposal templates, invoices with payment modes and payment recording, cross-module search and webhook subscriptions.
 
 | | |
 | --- | --- |

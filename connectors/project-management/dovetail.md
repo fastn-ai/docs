@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dovetail.png" alt="Dovetail logo">
 
-Dovetail is a customer research and insights platform. This connector covers the Dovetail Public API v1/v2: projects, folders, docs, notes, data (videos, transcripts, files), highlights, tags, insights, comments, contacts, channels and topics, fields, files, transcripts, users, Magic Search and Magic Summarize, and token info.
+This connector covers the Dovetail Public API v1/v2: projects, folders, docs, notes, data (videos, transcripts, files), highlights, tags, insights, comments, contacts, channels and topics, fields, files, transcripts, users, Magic Search and Magic Summarize, and token info.
 
 | | |
 | --- | --- |

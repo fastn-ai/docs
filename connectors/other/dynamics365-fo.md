@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dynamics365-fo.png" alt="Dynamics 365 Finance & Operations logo">
 
-Microsoft Dynamics 365 Finance & Operations connector via the OData v4 data-entity REST API (base https://{instance}.operations.dynamics.com/data). Covers Customers, Vendors, Sales/Purchase orders, Released products, General journal entries, Customer payment journals, Ledger journals, Invoices plus a generic OData CRUD pattern and metadata. Auth: Azure AD OAuth 2.0 (authorization_code or client_credentials).
+Covers Customers, Vendors, Sales/Purchase orders, Released products, General journal entries, Customer payment journals, Ledger journals, Invoices plus a generic OData CRUD pattern and metadata. Auth: Azure AD OAuth 2.0 (authorization_code or client_credentials).
 
 | | |
 | --- | --- |

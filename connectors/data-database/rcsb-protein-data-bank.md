@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rcsb-protein-data-bank.png" alt="RCSB Protein Data Bank logo">
 
-The RCSB Protein Data Bank (PDB) offers free APIs for 3D structures of proteins, nucleic acids and complexes. Get entries, assemblies, entities, chains, interfaces, ligands (chemical components), DrugBank, PubMed and UniProt annotations, groups, repository holdings and data schemas; run GraphQL queries and search structures by text, attributes, sequence or chemistry. No API key needed.
+Get entries, assemblies, entities, chains, interfaces, ligands (chemical components), DrugBank, PubMed and UniProt annotations, groups, repository holdings and data schemas; run GraphQL queries and search structures by text, attributes, sequence or chemistry. No API key needed.
 
 | | |
 | --- | --- |

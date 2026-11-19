@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/walmart-marketplace.png" alt="Walmart Marketplace logo">
 
-Walmart Marketplace (US) Seller API — environment-switchable (production or sandbox). Orders, items, prices, inventory (single/multi-node/WFS), feeds, reports, reconciliation, returns, refunds, rules/repricer, insights, fulfillment/WFS, and webhook management. OAuth2 client_credentials; Default host is PRODUCTION (marketplace.walmartapis.com).
+Orders, items, prices, inventory (single/multi-node/WFS), feeds, reports, reconciliation, returns, refunds, rules/repricer, insights, fulfillment/WFS, and webhook management. OAuth2 client_credentials; Default host is PRODUCTION (marketplace.walmartapis.com).
 
 | | |
 | --- | --- |

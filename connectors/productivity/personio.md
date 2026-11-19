@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/personio.png" alt="Personio logo">
 
-Personio is a European HR platform for SMBs covering people data, time off, attendances, compensation, recruiting, and org structure. This connector wraps Personio's v2 Public API (OAuth 2.0 client credentials) plus select v1 endpoints not yet available in v2.
+This connector wraps Personio's v2 Public API (OAuth 2.0 client credentials) plus select v1 endpoints not yet available in v2.
 
 | | |
 | --- | --- |

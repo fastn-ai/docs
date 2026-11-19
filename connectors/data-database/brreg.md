@@ -1,5 +1,5 @@
 ---
-description: "The Brønnøysund Register Centre's open API for Norway's Central Coordinating Register for Legal Entities (Enhetsregisteret) and the Register of Non-Profit…"
+description: "Connect Brønnøysund Register Centre (Enhetsregisteret) to your product with fastn."
 hidden: true
 ---
 

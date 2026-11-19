@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/noloco.png" alt="Noloco logo">
 
-Noloco is a no-code platform for building internal tools, client portals and business apps on top of your existing data. This connector covers both of Noloco's GraphQL APIs: the per-app Data API (https://api.portals.noloco.io/data/{appName}) for full CRUD, CSV export and bulk/import operations over every built-in collection (Users, Companies, Files, Roles, Messages, Shared Files, Comments, Onboarding Tasks, Push Subscriptions) plus authentication, notifications and workflow execution; and the Account API (https://api.portals.noloco.io/) for managing projects, data types, data sources, templates, team and billing.
+This connector covers both of Noloco's GraphQL APIs: the per-app Data API (https://api.portals.noloco.io/data/{appName}) for full CRUD, CSV export and bulk/import operations over every built-in collection (Users, Companies, Files, Roles, Messages, Shared Files, Comments, Onboarding Tasks, Push Subscriptions) plus authentication, notifications and workflow execution; and the Account API (https://api.portals.noloco.io/) for managing projects, data types, data sources, templates, team and billing.
 
 | | |
 | --- | --- |

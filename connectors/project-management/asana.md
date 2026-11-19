@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/asana.png" alt="Asana logo">
 
-Asana is a work management platform. Build, manage, and automate tasks, projects, goals, portfolios, teams, and workspaces via the Asana REST API v1.0.
+Build, manage, and automate tasks, projects, goals, portfolios, teams, and workspaces via the Asana REST API v1.0.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/telegram-bot.png" alt="Telegram Bot API logo">
 
-Telegram Bot API connector. Send messages and media, manage chats and members, handle webhooks, and query bot/chat info. Auth via bot token placed in the URL path (https://api.telegram.org/bot{token}/METHOD) — Telegram uses no Authorization header.
+Send messages and media, manage chats and members, handle webhooks, and query bot/chat info. Auth via bot token placed in the URL path (https://api.telegram.org/bot{token}/METHOD) — Telegram uses no Authorization header.
 
 | | |
 | --- | --- |

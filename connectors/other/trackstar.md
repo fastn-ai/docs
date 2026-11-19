@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/trackstar.png" alt="Trackstar logo">
 
-Trackstar Unified API for Supply Chain Logistics (WMS / 3PL). Integrate once to read and write orders, inventory, products, inbound shipments, returns, warehouses, locations, suppliers, shipping methods, and billing across dozens of warehouse management systems.
+Integrate once to read and write orders, inventory, products, inbound shipments, returns, warehouses, locations, suppliers, shipping methods, and billing across dozens of warehouse management systems.
 
 | | |
 | --- | --- |

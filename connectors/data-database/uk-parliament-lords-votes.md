@@ -1,5 +1,5 @@
 ---
-description: "The UK Parliament Lords Votes API gives open data on House of Lords divisions (votes): search divisions by title, date and member, get a division with every…"
+description: "Connect UK Parliament Lords Votes API to your product with fastn."
 hidden: true
 ---
 

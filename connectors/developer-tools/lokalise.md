@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/lokalise.png" alt="Lokalise logo">
 
-Lokalise translation management platform. Wraps the Lokalise API v2 (api.lokalise.com/api2) covering projects, keys, translations, languages, files, comments, contributors, screenshots, snapshots, branches, tasks, glossary terms, segments, custom translation statuses, webhooks, queued processes, translation memories, teams, team users, user groups, permission templates, orders, translation providers, payment cards and billing details, plus the Lokalise Public API v1 (audit logs), the Vantage content API and the OTA (over-the-air) bundle API.
+Wraps the Lokalise API v2 (api.lokalise.com/api2) covering projects, keys, translations, languages, files, comments, contributors, screenshots, snapshots, branches, tasks, glossary terms, segments, custom translation statuses, webhooks, queued processes, translation memories, teams, team users, user groups, permission templates, orders, translation providers, payment cards and billing details, plus the Lokalise Public API v1 (audit logs), the Vantage content API and the OTA (over-the-air) bundle API.
 
 | | |
 | --- | --- |

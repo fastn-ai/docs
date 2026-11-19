@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dnsfilter.png" alt="DNSFilter logo">
 
-DNSFilter is a cloud-based DNS security and content filtering platform. This connector wraps the DNSFilter public REST API (api.dnsfilter.com v1/v2): organizations, users, policies, networks, roaming clients (user agents), block pages, IP/MAC addresses, scheduled policies and reports, traffic reports and analytics, dashboards, billing and MSP/distributor management.
+This connector wraps the DNSFilter public REST API (api.dnsfilter.com v1/v2): organizations, users, policies, networks, roaming clients (user agents), block pages, IP/MAC addresses, scheduled policies and reports, traffic reports and analytics, dashboards, billing and MSP/distributor management.
 
 | | |
 | --- | --- |

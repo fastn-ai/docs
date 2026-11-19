@@ -1,5 +1,5 @@
 ---
-description: "Airship (Urban Airship) customer engagement platform — send and schedule push notifications, manage channels and named users, segments, static lists, tags,…"
+description: "Connect Airship to your product with fastn."
 hidden: true
 ---
 

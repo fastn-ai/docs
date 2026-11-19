@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/felt.png" alt="Felt logo">
 
-Felt is a collaborative web mapping platform. This connector covers the Felt REST API v2: maps (create, read, update, move, duplicate, delete, image export, embed tokens), map layers (upload, add from source, style, publish, refresh, export, duplicate, delete), layer components, layer groups, elements and element groups, comments, projects, data sources and source credentials, the layer library, and the current user.
+This connector covers the Felt REST API v2: maps (create, read, update, move, duplicate, delete, image export, embed tokens), map layers (upload, add from source, style, publish, refresh, export, duplicate, delete), layer components, layer groups, elements and element groups, comments, projects, data sources and source credentials, the layer library, and the current user.
 
 | | |
 | --- | --- |

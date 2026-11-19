@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fish-audio.png" alt="Fish Audio logo">
 
-Fish Audio is an AI voice platform for text-to-speech, speech-to-text and voice cloning. This connector covers the full Fish Audio REST API at https://api.fish.audio: text to speech (including streaming with word timestamps), speech to text, voice design, voice model management (list, create, get, update, delete), wallet package and API credit, and the Fish Agents voice-agent platform (agents, draft configuration and publishing, versions, sessions and recordings, tools, knowledge sources, phone numbers and outbound phone calls). Post-call agent webhooks (call.ended, call.analyzed, phone_call.dial_finished) are supported as events.
+This connector covers the full Fish Audio REST API at https://api.fish.audio: text to speech (including streaming with word timestamps), speech to text, voice design, voice model management (list, create, get, update, delete), wallet package and API credit, and the Fish Agents voice-agent platform (agents, draft configuration and publishing, versions, sessions and recordings, tools, knowledge sources, phone numbers and outbound phone calls). Post-call agent webhooks (call.ended, call.analyzed, phone_call.dial_finished) are supported as events.
 
 | | |
 | --- | --- |

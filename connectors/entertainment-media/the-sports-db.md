@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/the-sports-db.png" alt="TheSportsDB logo">
 
-TheSportsDB is an open, crowd-sourced sports database with artwork. Search teams, players, events and venues; look up leagues, tables, teams, kits, players (honours, contracts, results, stats), events (results, lineups, timelines, stats, TV); list sports, countries, leagues, seasons and teams; and get schedules, TV listings and video highlights. Use the free key 123 or your own premium key.
+Search teams, players, events and venues; look up leagues, tables, teams, kits, players (honours, contracts, results, stats), events (results, lineups, timelines, stats, TV); list sports, countries, leagues, seasons and teams; and get schedules, TV listings and video highlights. Use the free key 123 or your own premium key.
 
 | | |
 | --- | --- |

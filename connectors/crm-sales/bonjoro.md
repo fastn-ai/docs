@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bonjoro.png" alt="Bonjoro logo">
 
-Bonjoro is a personal video messaging platform for sales follow-up, onboarding and customer appreciation. This connector wraps the Bonjoro REST API v2 (https://www.bonjoro.com/api/v2) to manage greets (video message tasks), campaigns, contact profiles, message templates, sender signatures, teams, users, stats and in-app automations.
+This connector wraps the Bonjoro REST API v2 (https://www.bonjoro.com/api/v2) to manage greets (video message tasks), campaigns, contact profiles, message templates, sender signatures, teams, users, stats and in-app automations.
 
 | | |
 | --- | --- |

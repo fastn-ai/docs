@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/windsor-ai.png" alt="Windsor.ai logo">
 
-Windsor.ai is a marketing data platform that unifies data from 350+ advertising, analytics, CRM and e-commerce sources behind one API. This connector covers the complete Windsor.ai Connectors API and account-management API: querying any connector (or all sources at once) with field selection, date presets, filters and account selection; discovering connectors, fields and connector options; listing and executing write actions; listing connected accounts and custom fields; connector connect-info; and generating, listing and unlinking co-user authorization links.
+This connector covers the complete Windsor.ai Connectors API and account-management API: querying any connector (or all sources at once) with field selection, date presets, filters and account selection; discovering connectors, fields and connector options; listing and executing write actions; listing connected accounts and custom fields; connector connect-info; and generating, listing and unlinking co-user authorization links.
 
 | | |
 | --- | --- |

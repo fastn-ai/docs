@@ -1,5 +1,5 @@
 ---
-description: "The Géoplateforme geocoding service from IGN (the French national mapping agency, successor of api-adresse.data.gouv.fr) geocodes and reverse geocodes French…"
+description: "Connect Géoplateforme Geocoding (IGN) to your product with fastn."
 hidden: true
 ---
 

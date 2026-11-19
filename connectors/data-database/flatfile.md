@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/flatfile.png" alt="Flatfile logo">
 
-Flatfile is a data onboarding and import platform. This connector covers the Flatfile REST API v1: account and environment management, spaces and their documents, guidance and drafts, workbooks, sheets, records and cell values, files and uploads, jobs and their execution plans, agents and agent logs, events and event acknowledgement, secrets, apps and app constraints, actions, guests and users with their roles, views, snapshots, commits, mapping programs and rules, data clips, data retention policies, canvas areas, routines, runbooks, flags, entitlements and assistant prompts.
+This connector covers the Flatfile REST API v1: account and environment management, spaces and their documents, guidance and drafts, workbooks, sheets, records and cell values, files and uploads, jobs and their execution plans, agents and agent logs, events and event acknowledgement, secrets, apps and app constraints, actions, guests and users with their roles, views, snapshots, commits, mapping programs and rules, data clips, data retention policies, canvas areas, routines, runbooks, flags, entitlements and assistant prompts.
 
 | | |
 | --- | --- |

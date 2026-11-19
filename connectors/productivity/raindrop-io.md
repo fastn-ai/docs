@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/raindrop-io.png" alt="Raindrop.io logo">
 
-Raindrop.io is a bookmark manager for saving, organising and sharing links, articles, photos and files. This connector covers the full Raindrop.io v1 REST API: collections with nested structure, sharing and covers, raindrops (bookmarks) singly and in bulk, highlights, tags, filters, the authenticated user, URL and file import, export and backups.
+This connector covers the full Raindrop.io v1 REST API: collections with nested structure, sharing and covers, raindrops (bookmarks) singly and in bulk, highlights, tags, filters, the authenticated user, URL and file import, export and backups.
 
 | | |
 | --- | --- |

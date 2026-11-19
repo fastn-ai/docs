@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hitpay.png" alt="HitPay logo">
 
-HitPay payments platform for APAC. Create hosted payment requests and checkout links, accept PayNow, FPX, QRIS, GrabPay, DuitNow, PromptPay and cards, issue refunds, run recurring billing on saved cards, manage customers, products, orders, invoices, locations, static QR codes, card readers, virtual accounts, balances, payouts (beneficiaries, remitters, transfers) and webhook event subscriptions.
+Create hosted payment requests and checkout links, accept PayNow, FPX, QRIS, GrabPay, DuitNow, PromptPay and cards, issue refunds, run recurring billing on saved cards, manage customers, products, orders, invoices, locations, static QR codes, card readers, virtual accounts, balances, payouts (beneficiaries, remitters, transfers) and webhook event subscriptions.
 
 | | |
 | --- | --- |

@@ -4,8 +4,6 @@ description: "1,000+ ready-made connectors for the apps your customers use, by c
 
 # Connector catalog
 
-fastn manages 1,000+ ready-made connectors, and the list grows every week.
-
 ## What is a connector?
 
 A **connector** is fastn's ready-made link to one app's API, such as HubSpot, Slack or Stripe. It already knows how to talk to that app, so you don't have to write the integration code yourself. Each connector defines three things:
@@ -20,23 +18,23 @@ A connector is the definition. When one of your customers signs in to the app th
 
 | | Connector | Category | About |
 | --- | --- | --- | --- |
-| <img src="../.gitbook/assets/connectors/sm/hubspot.png" alt=""> | [HubSpot](crm-sales/hubspot.md) | [CRM and sales](crm-sales/README.md) | HubSpot CRM connector — full CRUD, search and batch operations across contacts, companies, deals, tickets,… |
-| <img src="../.gitbook/assets/connectors/sm/salesforce.png" alt=""> | [Salesforce](crm-sales/salesforce.md) | [CRM and sales](crm-sales/README.md) | Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, Cases, and Tasks via the… |
-| <img src="../.gitbook/assets/connectors/sm/lead-connector.png" alt=""> | [GoHighLevel](crm-sales/lead-connector.md) | [CRM and sales](crm-sales/README.md) | GoHighLevel (HighLevel) is an all-in-one CRM, marketing-automation and agency platform. |
+| <img src="../.gitbook/assets/connectors/sm/hubspot.png" alt=""> | [HubSpot](crm-sales/hubspot.md) | [CRM and sales](crm-sales/README.md) | HubSpot CRM connector — full CRUD, search and batch operations across… |
+| <img src="../.gitbook/assets/connectors/sm/salesforce.png" alt=""> | [Salesforce](crm-sales/salesforce.md) | [CRM and sales](crm-sales/README.md) | Salesforce CRM connector for managing Accounts, Contacts, Leads,… |
+| <img src="../.gitbook/assets/connectors/sm/lead-connector.png" alt=""> | [GoHighLevel](crm-sales/lead-connector.md) | [CRM and sales](crm-sales/README.md) | GoHighLevel (HighLevel) is an all-in-one CRM, marketing-automation and agency… |
 | <img src="../.gitbook/assets/connectors/sm/keap.png" alt=""> | [Keap](crm-sales/keap.md) | [CRM and sales](crm-sales/README.md) | Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform. |
 | <img src="../.gitbook/assets/connectors/sm/close.png" alt=""> | [Close](crm-sales/close.md) | [CRM and sales](crm-sales/README.md) | Close CRM connector. |
 | <img src="../.gitbook/assets/connectors/sm/salesloft.png" alt=""> | [Salesloft](crm-sales/salesloft.md) | [CRM and sales](crm-sales/README.md) | Salesloft Revenue Orchestration Platform (sales engagement). |
-| <img src="../.gitbook/assets/connectors/sm/shopify.png" alt=""> | [Shopify](ecommerce/shopify.md) | [E-commerce](ecommerce/README.md) | Shopify Admin REST API connector for managing orders, products, customers, inventory, discounts, shipping,… |
-| <img src="../.gitbook/assets/connectors/sm/cin7core.png" alt=""> | [Cin7 Core](ecommerce/cin7core.md) | [E-commerce](ecommerce/README.md) | Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing, production and accounting… |
-| <img src="../.gitbook/assets/connectors/sm/bigcommerce.png" alt=""> | [BigCommerce](ecommerce/bigcommerce.md) | [E-commerce](ecommerce/README.md) | BigCommerce REST Management API — Catalog (products, categories, brands, variants, images, modifiers),… |
+| <img src="../.gitbook/assets/connectors/sm/shopify.png" alt=""> | [Shopify](ecommerce/shopify.md) | [E-commerce](ecommerce/README.md) | Shopify Admin REST API connector for managing orders, products, customers,… |
+| <img src="../.gitbook/assets/connectors/sm/cin7core.png" alt=""> | [Cin7 Core](ecommerce/cin7core.md) | [E-commerce](ecommerce/README.md) | Cin7 Core (formerly DEAR Inventory) — cloud inventory, sales, purchasing,… |
+| <img src="../.gitbook/assets/connectors/sm/bigcommerce.png" alt=""> | [BigCommerce](ecommerce/bigcommerce.md) | [E-commerce](ecommerce/README.md) | BigCommerce REST Management API — Catalog (products, categories, brands,… |
 | <img src="../.gitbook/assets/connectors/sm/woocommerce.png" alt=""> | [WooCommerce](ecommerce/woocommerce.md) | [E-commerce](ecommerce/README.md) | WooCommerce is the open-source e-commerce plugin for WordPress. |
 | <img src="../.gitbook/assets/connectors/sm/wix.png" alt=""> | [Wix](ecommerce/wix.md) | [E-commerce](ecommerce/README.md) | Wix REST API connector (www.wixapis.com). |
-| <img src="../.gitbook/assets/connectors/sm/walmart-marketplace.png" alt=""> | [Walmart Marketplace](ecommerce/walmart-marketplace.md) | [E-commerce](ecommerce/README.md) | Walmart Marketplace (US) Seller API — environment-switchable (production or sandbox). |
+| <img src="../.gitbook/assets/connectors/sm/walmart-marketplace.png" alt=""> | [Walmart Marketplace](ecommerce/walmart-marketplace.md) | [E-commerce](ecommerce/README.md) | Walmart Marketplace (US) Seller API — environment-switchable (production or… |
 | <img src="../.gitbook/assets/connectors/sm/zendesk-support.png" alt=""> | [Zendesk Support](it-service/zendesk-support.md) | [IT and service management](it-service/README.md) | Zendesk Support customer service and ticketing platform. |
 | <img src="../.gitbook/assets/connectors/sm/servicenow.png" alt=""> | [ServiceNow](it-service/servicenow.md) | [IT and service management](it-service/README.md) | ServiceNow ITSM platform connector. |
-| <img src="../.gitbook/assets/connectors/sm/jira.png" alt=""> | [Jira](project-management/jira.md) | [IT and service management](it-service/README.md) | Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk ops, comments, worklogs,… |
+| <img src="../.gitbook/assets/connectors/sm/jira.png" alt=""> | [Jira](project-management/jira.md) | [IT and service management](it-service/README.md) | Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk… |
 | <img src="../.gitbook/assets/connectors/sm/intercom.png" alt=""> | [Intercom](it-service/intercom.md) | [IT and service management](it-service/README.md) | Intercom customer messaging and support platform. |
-| <img src="../.gitbook/assets/connectors/sm/freshservice.png" alt=""> | [Freshservice](it-service/freshservice.md) | [IT and service management](it-service/README.md) | Freshservice IT service management — tickets, problems, changes, releases, assets, service catalog,… |
+| <img src="../.gitbook/assets/connectors/sm/freshservice.png" alt=""> | [Freshservice](it-service/freshservice.md) | [IT and service management](it-service/README.md) | Freshservice IT service management — tickets, problems, changes, releases,… |
 
 ## Browse by category
 

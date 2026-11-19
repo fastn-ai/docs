@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-chat.png" alt="Google Chat logo">
 
-Google Chat API v1 connector for managing spaces, members, messages, reactions, attachments, space events, read state, and notification settings in Google Chat.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |

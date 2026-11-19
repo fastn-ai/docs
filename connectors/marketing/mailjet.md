@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailjet.png" alt="Mailjet logo">
 
-Send transactional and marketing email and SMS with Mailjet. Covers the Send API v3.1, contacts and contact lists, campaigns and drafts, templates, segmentation, statistics, sender and domain validation, event webhooks, and account settings.
+Covers the Send API v3.1, contacts and contact lists, campaigns and drafts, templates, segmentation, statistics, sender and domain validation, event webhooks, and account settings.
 
 | | |
 | --- | --- |

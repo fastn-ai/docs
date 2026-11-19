@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/twilio.png" alt="Twilio logo">
 
-Twilio communications API — send SMS/MMS, place voice calls, manage phone numbers, phone-number lookup, identity verification, and messaging services. Classic REST API (2010-04-01) plus Lookup v2, Verify v2, and Messaging v1.
+Classic REST API (2010-04-01) plus Lookup v2, Verify v2, and Messaging v1.
 
 | | |
 | --- | --- |

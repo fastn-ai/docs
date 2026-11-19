@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dwolla.png" alt="Dwolla logo">
 
-Dwolla's Payments API for ACH bank transfers in the United States. Create and verify Customers, attach and verify bank funding sources, initiate transfers and mass payments, allocate funds with Labels, connect external accounts via Exchanges, and subscribe to webhook events.
+Create and verify Customers, attach and verify bank funding sources, initiate transfers and mass payments, allocate funds with Labels, connect external accounts via Exchanges, and subscribe to webhook events.
 
 | | |
 | --- | --- |

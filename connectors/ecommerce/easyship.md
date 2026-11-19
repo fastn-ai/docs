@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/easyship.png" alt="Easyship logo">
 
-Easyship global shipping API (v2024-09). Rate shopping across 550+ courier services, shipment and label creation, tracking, pickups, manifests, customs taxes and duties, insurance, address and box management, shipping rules, batches, and webhooks.
+Rate shopping across 550+ courier services, shipment and label creation, tracking, pickups, manifests, customs taxes and duties, insurance, address and box management, shipping rules, batches, and webhooks.
 
 | | |
 | --- | --- |

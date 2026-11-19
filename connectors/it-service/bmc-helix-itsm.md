@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bmc-helix-itsm.png" alt="BMC Helix ITSM logo">
 
-BMC Helix ITSM service management platform. Manage incidents, changes, problems, known errors, work orders, tasks, people, support groups, companies, configuration items and knowledge articles through the BMC Remedy AR System REST API.
+Manage incidents, changes, problems, known errors, work orders, tasks, people, support groups, companies, configuration items and knowledge articles through the BMC Remedy AR System REST API.
 
 | | |
 | --- | --- |

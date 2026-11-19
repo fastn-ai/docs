@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/nhtsa-vpic.png" alt="NHTSA vPIC logo">
 
-NHTSA vPIC (Product Information Catalog and Vehicle Listing) is the US Department of Transportation's free vehicle API. Decode VINs (single, partial or batch of 50) and WMIs, and look up makes, models, manufacturers, vehicle types, equipment plant codes, vehicle variables and Canadian vehicle specifications. No API key needed.
+Decode VINs (single, partial or batch of 50) and WMIs, and look up makes, models, manufacturers, vehicle types, equipment plant codes, vehicle variables and Canadian vehicle specifications. No API key needed.
 
 | | |
 | --- | --- |

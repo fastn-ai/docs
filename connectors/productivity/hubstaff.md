@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hubstaff.png" alt="Hubstaff logo">
 
-Hubstaff V2 API. Manage organizations, projects, tasks, members, teams and clients; read time and activity data, daily activities, screenshots, timesheets and notes; administer time-off policies, requests and balances, overtime policies, attendance schedules and shifts, work breaks, job sites and GPS job-site visits, budgets, weekly limits, invoices, payments and rates; configure Insights smart-notification rules, tool classifications and network locations; and manage webhooks for real-time events.
+Manage organizations, projects, tasks, members, teams and clients; read time and activity data, daily activities, screenshots, timesheets and notes; administer time-off policies, requests and balances, overtime policies, attendance schedules and shifts, work breaks, job sites and GPS job-site visits, budgets, weekly limits, invoices, payments and rates; configure Insights smart-notification rules, tool classifications and network locations; and manage webhooks for real-time events.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/butter-cms.png" alt="ButterCMS logo">
 
-ButterCMS headless CMS. Content API (read) for blog posts, authors, categories, tags, pages, collections, and feeds, plus the Write API for creating and managing blog posts, pages, and collection content.
+Content API (read) for blog posts, authors, categories, tags, pages, collections, and feeds, plus the Write API for creating and managing blog posts, pages, and collection content.
 
 | | |
 | --- | --- |

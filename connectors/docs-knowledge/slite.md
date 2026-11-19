@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/slite.png" alt="Slite logo">
 
-Slite knowledge base and docs API. Create, read, update, delete and search notes (docs), traverse the doc tree, manage note lifecycle (verify, flag outdated, archive, owner, tiles), ask AI questions over the knowledge base, and look up users and groups. Base URL https://api.slite.com/v1.
+Create, read, update, delete and search notes (docs), traverse the doc tree, manage note lifecycle (verify, flag outdated, archive, owner, tiles), ask AI questions over the knowledge base, and look up users and groups. Base URL https://api.slite.com/v1.
 
 | | |
 | --- | --- |

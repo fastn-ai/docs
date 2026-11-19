@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/moosend.png" alt="Moosend logo">
 
-Moosend email marketing and automation platform. Manage mailing lists, subscribers, custom fields, segments, campaigns, and sender addresses through the Moosend v3 REST API.
+Manage mailing lists, subscribers, custom fields, segments, campaigns, and sender addresses through the Moosend v3 REST API.
 
 | | |
 | --- | --- |

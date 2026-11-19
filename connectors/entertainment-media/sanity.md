@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sanity.png" alt="Sanity logo">
 
-Sanity is a headless content operating system. Query and mutate content in the Content Lake with GROQ, manage documents, drafts, versions and Content Releases, upload assets, and administer projects, datasets, members, roles, tokens and webhooks through the Sanity Management API.
+Query and mutate content in the Content Lake with GROQ, manage documents, drafts, versions and Content Releases, upload assets, and administer projects, datasets, members, roles, tokens and webhooks through the Sanity Management API.
 
 | | |
 | --- | --- |

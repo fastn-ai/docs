@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/themealdb.png" alt="TheMealDB logo">
 
-TheMealDB is an open, crowd-sourced database of recipes from around the world. Search meals by name or first letter, look up full recipes with ingredients and instructions, get a random meal, filter by ingredient, category or area, and list categories, areas and ingredients. Use API key 1 (free developer test key) or your own supporter key.
+Search meals by name or first letter, look up full recipes with ingredients and instructions, get a random meal, filter by ingredient, category or area, and list categories, areas and ingredients. Use API key 1 (free developer test key) or your own supporter key.
 
 | | |
 | --- | --- |

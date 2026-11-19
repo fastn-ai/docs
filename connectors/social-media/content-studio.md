@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/content-studio.png" alt="ContentStudio logo">
 
-ContentStudio social media management platform. Manage workspaces, connected social accounts, posts, campaigns, labels, content categories, approval workflows, share links, team members, media library, automations (RSS/bulk CSV/evergreen), social inbox conversations, AI image and video generation, and cross-platform analytics for Facebook, Instagram, LinkedIn, X/Twitter, TikTok, YouTube, Pinterest, Threads, Bluesky, Google Business Profile, Meta Ads and Google Ads.
+Manage workspaces, connected social accounts, posts, campaigns, labels, content categories, approval workflows, share links, team members, media library, automations (RSS/bulk CSV/evergreen), social inbox conversations, AI image and video generation, and cross-platform analytics for Facebook, Instagram, LinkedIn, X/Twitter, TikTok, YouTube, Pinterest, Threads, Bluesky, Google Business Profile, Meta Ads and Google Ads.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/float.png" alt="Float logo">
 
-Float resource scheduling and capacity planning API (v3). Covers people, roles, departments and accounts, clients, projects, phases, project stages, project tasks, project expenses, rate cards, currencies and project templates, scheduled allocations and milestones, logged time, time off and time off types, public and team holidays, the people and project reports, and the delete log. Authenticates with a Float API key sent as a Bearer token; Float also requires every request to carry a User-Agent header.
+Covers people, roles, departments and accounts, clients, projects, phases, project stages, project tasks, project expenses, rate cards, currencies and project templates, scheduled allocations and milestones, logged time, time off and time off types, public and team holidays, the people and project reports, and the delete log. Authenticates with a Float API key sent as a Bearer token; Float also requires every request to carry a User-Agent header.
 
 | | |
 | --- | --- |

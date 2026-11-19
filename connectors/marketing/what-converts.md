@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/what-converts.png" alt="WhatConverts logo">
 
-WhatConverts lead tracking and call tracking. Read, create and update leads across every lead type (phone calls, web forms, chats, text messages, transactions, custom events, emails, appointments) with full marketing attribution, qualify and value them (quotable, quote_value, sales_value), and manage the agency hierarchy: accounts, profiles, users, roles, tracking phone numbers and tracked web forms. Wraps the REST API at https://app.whatconverts.com/api/v1 using HTTP Basic auth with an API token and secret.
+Read, create and update leads across every lead type (phone calls, web forms, chats, text messages, transactions, custom events, emails, appointments) with full marketing attribution, qualify and value them (quotable, quote_value, sales_value), and manage the agency hierarchy: accounts, profiles, users, roles, tracking phone numbers and tracked web forms. Wraps the REST API at https://app.whatconverts.com/api/v1 using HTTP Basic auth with an API token and secret.
 
 | | |
 | --- | --- |

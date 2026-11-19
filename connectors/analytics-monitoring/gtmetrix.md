@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gtmetrix.png" alt="GTmetrix logo">
 
-GTmetrix is a web page performance testing service. This connector covers the GTmetrix REST API 2.0: starting page tests, polling test state, reading performance reports and their resources (screenshots, filmstrip, HAR, Lighthouse JSON, PDF, video), managing tested pages and their report history, retesting, and looking up test locations, browsers, simulated devices and API credit status.
+This connector covers the GTmetrix REST API 2.0: starting page tests, polling test state, reading performance reports and their resources (screenshots, filmstrip, HAR, Lighthouse JSON, PDF, video), managing tested pages and their report history, retesting, and looking up test locations, browsers, simulated devices and API credit status.
 
 | | |
 | --- | --- |

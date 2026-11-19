@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/you-tube.png" alt="YouTube logo">
 
-YouTube Data API v3 — manage videos, channels, playlists, comments, subscriptions, and search YouTube content
-
 | | |
 | --- | --- |
 | **Category** | [Social media](README.md) |

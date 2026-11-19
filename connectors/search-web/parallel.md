@@ -1,5 +1,5 @@
 ---
-description: "Parallel web research APIs on api.parallel.ai: Search and Extract, Task runs and Task Groups (deep research and enrichment), Responses (OpenAI-compatible),…"
+description: "Connect Parallel to your product with fastn."
 hidden: true
 ---
 

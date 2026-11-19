@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/acuity-scheduling.png" alt="Acuity Scheduling logo">
 
-Acuity Scheduling (a Squarespace company) is an online appointment scheduling platform. Manage appointments, appointment types, availability, calendars, clients, intake forms, labels, orders, products, package and coupon certificates, blocked time, and webhook subscriptions through the Acuity Scheduling API v1.
+Manage appointments, appointment types, availability, calendars, clients, intake forms, labels, orders, products, package and coupon certificates, blocked time, and webhook subscriptions through the Acuity Scheduling API v1.
 
 | | |
 | --- | --- |

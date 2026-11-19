@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/certifier.png" alt="Certifier logo">
 
-Certifier is a platform for issuing digital certificates and badges. This connector covers the full Certifier REST API v1: creating, listing, searching, retrieving, updating, issuing, sending and deleting credentials, reading a credential's design template previews, listing and creating credential interaction events, full CRUD on credential templates (groups), and reading certificate and badge design templates.
+This connector covers the full Certifier REST API v1: creating, listing, searching, retrieving, updating, issuing, sending and deleting credentials, reading a credential's design template previews, listing and creating credential interaction events, full CRUD on credential templates (groups), and reading certificate and badge design templates.
 
 | | |
 | --- | --- |

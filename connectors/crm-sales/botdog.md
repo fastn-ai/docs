@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/botdog.png" alt="Botdog logo">
 
-Botdog is a LinkedIn outreach and automation platform. This connector covers campaigns and their sequences, statistics and activity controls, leads, audience lists and blacklists, connected LinkedIn sender accounts and their daily sending limits, message snippets, analytics, team users, messaging, and webhook subscriptions.
+This connector covers campaigns and their sequences, statistics and activity controls, leads, audience lists and blacklists, connected LinkedIn sender accounts and their daily sending limits, message snippets, analytics, team users, messaging, and webhook subscriptions.
 
 | | |
 | --- | --- |

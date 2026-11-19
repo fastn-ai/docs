@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/slack.png" alt="Slack logo">
 
-Connect to Slack to send messages, manage channels, interact with users, and automate workflows directly in your Slack workspace.
-
 | | |
 | --- | --- |
 | **Category** | [Communication](README.md) |

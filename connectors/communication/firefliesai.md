@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/firefliesai.png" alt="Fireflies.ai logo">
 
-Fireflies.ai connector — GraphQL API (single POST https://api.fireflies.ai/graphql) for the AI meeting notetaker. Query and manage transcripts, summaries, analytics, soundbites (bites), users, user groups, channels, contacts, AskFred AI threads, live/active meetings, audit events, and automation rule executions; upload audio; and run live/meeting mutations. Auth via Bearer API key.
+Query and manage transcripts, summaries, analytics, soundbites (bites), users, user groups, channels, contacts, AskFred AI threads, live/active meetings, audit events, and automation rule executions; upload audio; and run live/meeting mutations. Auth via Bearer API key.
 
 | | |
 | --- | --- |

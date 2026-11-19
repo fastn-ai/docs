@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/openrouter.png" alt="OpenRouter logo">
 
-OpenRouter unified LLM API (https://openrouter.ai/api/v1) — OpenAI-compatible access to hundreds of models from many providers behind one API. Covers chat completions, legacy text completions, model catalog (with pricing/context_length/supported params), per-model provider endpoints, generation cost/token stats, account credits, and current API key info. Bearer API key auth. Free models use the ':free' suffix (e.g. meta-llama/llama-3.2-3b-instruct:free) for zero-cost validation.
+Covers chat completions, legacy text completions, model catalog (with pricing/context_length/supported params), per-model provider endpoints, generation cost/token stats, account credits, and current API key info. Bearer API key auth. Free models use the ':free' suffix (e.g. meta-llama/llama-3.2-3b-instruct:free) for zero-cost validation.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/veryfi-ocr.png" alt="Veryfi OCR logo">
 
-Veryfi is a document AI / OCR platform. This connector wraps the Veryfi Data Extraction API v8: process and manage receipts and invoices, business cards, checks, contracts, W-2s, W-8BEN-Es, W-9s, bank statements, ∀Docs (any documents) and Parse (document-to-markdown); manage line items, tags and tax lines; classify and extract; document sets and PDF splitting; blueprints; OCR counts; fraud device blocklist; mTLS certificates; webhooks; and API/client key settings.
+This connector wraps the Veryfi Data Extraction API v8: process and manage receipts and invoices, business cards, checks, contracts, W-2s, W-8BEN-Es, W-9s, bank statements, ∀Docs (any documents) and Parse (document-to-markdown); manage line items, tags and tax lines; classify and extract; document sets and PDF splitting; blueprints; OCR counts; fraud device blocklist; mTLS certificates; webhooks; and API/client key settings.
 
 | | |
 | --- | --- |

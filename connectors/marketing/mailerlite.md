@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mailerlite.png" alt="MailerLite logo">
 
-MailerLite (new API) connector: subscribers (CRUD + group assign), groups, campaigns (create/schedule), fields, automations, and webhooks. Bearer token auth. Base https://connect.mailerlite.com/api.
+Bearer token auth. Base https://connect.mailerlite.com/api.
 
 | | |
 | --- | --- |

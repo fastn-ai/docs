@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/replyio.png" alt="Reply.io logo">
 
-Reply.io sales engagement platform. Manage contacts, contact lists, custom fields, multichannel sequences (email/LinkedIn/calls/tasks), sequence steps and contacts, email templates, email/LinkedIn accounts, tasks, schedules, holiday calendars, unified inbox, reporting, blacklist rules, email validation, and webhooks via the Reply v3 REST API (plus legacy v1 campaigns).
+Manage contacts, contact lists, custom fields, multichannel sequences (email/LinkedIn/calls/tasks), sequence steps and contacts, email templates, email/LinkedIn accounts, tasks, schedules, holiday calendars, unified inbox, reporting, blacklist rules, email validation, and webhooks via the Reply v3 REST API (plus legacy v1 campaigns).
 
 | | |
 | --- | --- |

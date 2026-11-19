@@ -1,5 +1,5 @@
 ---
-description: "Rebrandly is a branded link management platform for creating, organizing, and analyzing custom short links, QR codes, tags, and scripts across domains and…"
+description: "Connect Rebrandly to your product with fastn."
 hidden: true
 ---
 

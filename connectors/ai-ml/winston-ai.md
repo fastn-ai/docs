@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/winston-ai.png" alt="Winston AI logo">
 
-Winston AI is an AI-content-detection and plagiarism platform. This connector covers the full public v2 REST API (AI text detection, AI image detection, advanced image forensics, plagiarism, fact checking and text comparison), the legacy v1 detection routes, the hosted Model Context Protocol server, and the developer-dashboard account endpoint. All endpoints are metered in credits.
+This connector covers the full public v2 REST API (AI text detection, AI image detection, advanced image forensics, plagiarism, fact checking and text comparison), the legacy v1 detection routes, the hosted Model Context Protocol server, and the developer-dashboard account endpoint. All endpoints are metered in credits.
 
 | | |
 | --- | --- |

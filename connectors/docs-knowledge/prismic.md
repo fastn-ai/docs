@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/prismic.png" alt="Prismic logo">
 
-Prismic headless CMS connector. Manages custom types and shared slices (Custom Types API), creates and updates documents (Migration API), manages media library assets (Asset API), and reads published content and repository refs (Content API v2).
+Manages custom types and shared slices (Custom Types API), creates and updates documents (Migration API), manages media library assets (Asset API), and reads published content and repository refs (Content API v2).
 
 | | |
 | --- | --- |

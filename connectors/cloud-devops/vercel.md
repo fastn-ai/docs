@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/vercel.png" alt="Vercel logo">
 
-Vercel REST API (base https://api.vercel.com). Manage projects, deployments (create/get/cancel/delete/events), environment variables, domains and project domains, DNS records, teams, the current user, and webhooks. Auth: Bearer access token. Team-scoped resources accept a teamId query param.
+Manage projects, deployments (create/get/cancel/delete/events), environment variables, domains and project domains, DNS records, teams, the current user, and webhooks. Auth: Bearer access token. Team-scoped resources accept a teamId query param.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/hightouch.png" alt="Hightouch logo">
 
-Hightouch Composable CDP and data activation platform. Manage sources, models, destinations, syncs, sync runs, audiences, event contracts, Decision Engine flows and messages, identity resolution (IDR), and sync sequences through the Hightouch Management REST API.
+Manage sources, models, destinations, syncs, sync runs, audiences, event contracts, Decision Engine flows and messages, identity resolution (IDR), and sync sequences through the Hightouch Management REST API.
 
 | | |
 | --- | --- |

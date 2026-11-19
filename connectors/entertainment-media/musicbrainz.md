@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/musicbrainz.png" alt="MusicBrainz logo">
 
-MusicBrainz is the open music encyclopedia. Keyless read access to its Web Service v2: look up, browse and search artists, releases, release groups, recordings, works, labels, areas, places, events, instruments, series, URLs and genres, plus lookups by disc ID, ISRC and ISWC. Rate limit: 1 request per second per client.
+Keyless read access to its Web Service v2: look up, browse and search artists, releases, release groups, recordings, works, labels, areas, places, events, instruments, series, URLs and genres, plus lookups by disc ID, ISRC and ISWC. Rate limit: 1 request per second per client.
 
 | | |
 | --- | --- |

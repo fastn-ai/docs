@@ -1,5 +1,5 @@
 ---
-description: "NYC Open Data publishes thousands of free datasets from New York City agencies (311 requests, taxi trips, restaurant inspections, crime, housing and more) on…"
+description: "Connect NYC Open Data to your product with fastn."
 hidden: true
 ---
 

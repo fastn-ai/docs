@@ -1,5 +1,5 @@
 ---
-description: "iLovePDF / iLoveAPI REST API v1 — PDF and image processing (merge, split, compress, OCR, convert, watermark, protect, edit, …) and electronic signature…"
+description: "Connect iLovePDF to your product with fastn."
 hidden: true
 ---
 

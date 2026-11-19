@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/diffbot.png" alt="Diffbot logo">
 
-Diffbot turns web pages into structured data and exposes a Knowledge Graph of organizations, people, articles and products. This connector covers the full Diffbot API surface: the Extract APIs (analyze, article, product, image, video, discussion, event, list, job, plus raw-HTML POST extraction), Custom APIs, Crawl, Bulk Extract, Web Search, Knowledge Graph Search (DQL) with coverage reports, Enhance (single, combine and bulk), the Natural Language API, and the Account API.
+This connector covers the full Diffbot API surface: the Extract APIs (analyze, article, product, image, video, discussion, event, list, job, plus raw-HTML POST extraction), Custom APIs, Crawl, Bulk Extract, Web Search, Knowledge Graph Search (DQL) with coverage reports, Enhance (single, combine and bulk), the Natural Language API, and the Account API.
 
 | | |
 | --- | --- |

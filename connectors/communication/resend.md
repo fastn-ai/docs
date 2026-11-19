@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/resend.png" alt="Resend logo">
 
-Resend is the email platform for developers. Send transactional and marketing emails, manage domains, API keys, audiences, contacts, segments, topics, broadcasts, templates, automations, events and webhooks. — Public 2026-09-29: Send Email verified live (HTTP 200); other endpoints gated by a send-only API key, not a config defect.
+Send transactional and marketing emails, manage domains, API keys, audiences, contacts, segments, topics, broadcasts, templates, automations, events and webhooks. — Public 2026-09-29: Send Email verified live (HTTP 200); other endpoints gated by a send-only API key, not a config defect.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/spotlightr.png" alt="Spotlightr logo">
 
-Spotlightr (formerly vooPlayer) interactive video hosting and marketing platform. Create videos from a URL or upload, organise them into projects, replace video sources, delete videos, read per-video analytics and viewer-level view records, list top-performing videos, manage whitelisted embed domains, and create course/gallery students.
+Create videos from a URL or upload, organise them into projects, replace video sources, delete videos, read per-video analytics and viewer-level view records, list top-performing videos, manage whitelisted embed domains, and create course/gallery students.
 
 | | |
 | --- | --- |

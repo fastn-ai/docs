@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shortcut.png" alt="Shortcut logo">
 
-Shortcut (formerly Clubhouse) project management. Manage stories, epics, iterations, objectives, milestones, projects, workflows, members, teams, groups, labels, docs, files, and story links via the Shortcut REST API v3.
+Manage stories, epics, iterations, objectives, milestones, projects, workflows, members, teams, groups, labels, docs, files, and story links via the Shortcut REST API v3.
 
 | | |
 | --- | --- |

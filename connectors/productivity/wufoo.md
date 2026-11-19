@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/wufoo.png" alt="Wufoo logo">
 
-Wufoo is an online form builder for collecting submissions, payments and survey responses. This connector covers the Wufoo REST API v3: listing and retrieving forms and their field definitions, reading and submitting form entries, entry counts, entry comments and comment counts, reports with their entries, fields and widgets, account users, the login endpoint that exchanges account details for an API key, and the WebHook API for registering and removing per-form webhook subscriptions.
+This connector covers the Wufoo REST API v3: listing and retrieving forms and their field definitions, reading and submitting form entries, entry counts, entry comments and comment counts, reports with their entries, fields and widgets, account users, the login endpoint that exchanges account details for an API key, and the WebHook API for registering and removing per-form webhook subscriptions.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Deploy and operate serverless containers with the Google Cloud Run Admin API v2: services and revisions, jobs, executions and tasks, worker pools and worker…"
+description: "Connect Google Cloud Run to your product with fastn."
 hidden: true
 ---
 

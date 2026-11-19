@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dadata.png" alt="Dadata logo">
 
-Dadata is a Russian data quality service for suggestions, standardization and enrichment. This connector covers the Dadata Suggestions API (companies, banks, addresses, names, emails, countries, currencies, courts, tax and customs offices, postal units, metro, classifiers), the findById and geolocation lookups, the Cleaner (standardization) API for addresses, phones, emails, names, passports and vehicles, brand and company-by-email enrichment, and profile balance, usage statistics and reference-data versions.
+This connector covers the Dadata Suggestions API (companies, banks, addresses, names, emails, countries, currencies, courts, tax and customs offices, postal units, metro, classifiers), the findById and geolocation lookups, the Cleaner (standardization) API for addresses, phones, emails, names, passports and vehicles, brand and company-by-email enrichment, and profile balance, usage statistics and reference-data versions.
 
 | | |
 | --- | --- |

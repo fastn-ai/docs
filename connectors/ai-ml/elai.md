@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/elai.png" alt="Elai logo">
 
-Elai is an AI video generation platform that turns text, presentations and outlines into avatar-presented videos. This connector covers the complete Elai public API v1 at https://apis.elai.io/api/v1: videos (create, list, retrieve, update, delete, copy, translate, render, personalized batch rendering, text/HTML/URL and PPTX import, player payload, exports, SCORM packages, brand kits, edit history), story tools, outlines and LLM speech generation, quizzes, avatars, voices and voice previews, custom voices and voice customizations, media library uploads and folders, slide templates, live avatar streams, users, SSO, workspace API configuration and webhooks. Video rendering consumes plan minutes.
+This connector covers the complete Elai public API v1 at https://apis.elai.io/api/v1: videos (create, list, retrieve, update, delete, copy, translate, render, personalized batch rendering, text/HTML/URL and PPTX import, player payload, exports, SCORM packages, brand kits, edit history), story tools, outlines and LLM speech generation, quizzes, avatars, voices and voice previews, custom voices and voice customizations, media library uploads and folders, slide templates, live avatar streams, users, SSO, workspace API configuration and webhooks. Video rendering consumes plan minutes.
 
 | | |
 | --- | --- |

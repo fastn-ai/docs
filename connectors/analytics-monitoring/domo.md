@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/domo.png" alt="Domo logo">
 
-Domo is a cloud business intelligence platform for connecting, visualizing, and acting on data. This connector covers Domo's public v1 REST API: DataSets (create, query, import, export, PDP policies), Streams, the Simple API, Accounts, Users, Groups, Pages and Page Collections, Cards, Embed tokens, Projects and Tasks, and the Activity Log.
+This connector covers Domo's public v1 REST API: DataSets (create, query, import, export, PDP policies), Streams, the Simple API, Accounts, Users, Groups, Pages and Page Collections, Cards, Embed tokens, Projects and Tasks, and the Activity Log.
 
 | | |
 | --- | --- |

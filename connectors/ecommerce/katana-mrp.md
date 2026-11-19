@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/katana-mrp.png" alt="Katana MRP logo">
 
-Katana Cloud Inventory (Katana MRP) — manufacturing resource planning and inventory management. Full coverage of the Katana v1 API: products, materials, variants, recipes/BOM, manufacturing orders, sales orders, purchase orders, customers, suppliers, inventory, stock adjustments/transfers/stocktakes, locations, bins, price lists, tax rates, serial/batch tracking, and webhook subscriptions.
+Full coverage of the Katana v1 API: products, materials, variants, recipes/BOM, manufacturing orders, sales orders, purchase orders, customers, suppliers, inventory, stock adjustments/transfers/stocktakes, locations, bins, price lists, tax rates, serial/batch tracking, and webhook subscriptions.
 
 | | |
 | --- | --- |

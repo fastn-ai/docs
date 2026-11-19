@@ -1,5 +1,5 @@
 ---
-description: "GenerateBanners.com automates visual marketing: manage image templates, browse the public template library and Google Fonts catalogue, and render on-brand…"
+description: "Connect GenerateBanners.com to your product with fastn."
 hidden: true
 ---
 

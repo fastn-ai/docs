@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/icanhazdadjoke.png" alt="icanhazdadjoke logo">
 
-icanhazdadjoke is the largest free collection of dad jokes online. Get a random joke, fetch a joke by id (also as an image), search jokes with paging, get a Slack-formatted joke, or query by GraphQL. No API key needed.
+Get a random joke, fetch a joke by id (also as an image), search jokes with paging, get a Slack-formatted joke, or query by GraphQL. No API key needed.
 
 | | |
 | --- | --- |

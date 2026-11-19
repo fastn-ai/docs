@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cats.png" alt="CATS logo">
 
-CATS (CATSOne) applicant tracking system. Manage candidates, jobs, companies, contacts, pipelines, activities, tasks, tags, lists, custom fields, attachments and webhooks through the CATS v3 REST API.
+Manage candidates, jobs, companies, contacts, pipelines, activities, tasks, tags, lists, custom fields, attachments and webhooks through the CATS v3 REST API.
 
 | | |
 | --- | --- |

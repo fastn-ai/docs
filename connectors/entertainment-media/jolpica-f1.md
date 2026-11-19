@@ -5,7 +5,7 @@ hidden: true
 
 # Jolpica F1
 
-Jolpica F1 is the free, open-source successor to the Ergast Formula 1 API, with data from 1950 to today. Get seasons, circuits, constructors, drivers, race calendars, race, sprint and qualifying results, pit stops, lap times, championship standings and finishing statuses. No API key needed (500 requests per hour).
+Get seasons, circuits, constructors, drivers, race calendars, race, sprint and qualifying results, pit stops, lap times, championship standings and finishing statuses. No API key needed (500 requests per hour).
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-cloud-logging.png" alt="Google Cloud Logging logo">
 
-Google Cloud Logging API v2 for writing, reading and managing logs across projects, organizations, folders and billing accounts. Write and list log entries, manage log buckets, views, links, sinks, exclusions, log scopes, saved queries and log-based metrics, and configure CMEK and default logging settings.
+Write and list log entries, manage log buckets, views, links, sinks, exclusions, log scopes, saved queries and log-based metrics, and configure CMEK and default logging settings.
 
 | | |
 | --- | --- |

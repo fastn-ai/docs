@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-planner.png" alt="Microsoft Planner logo">
 
-Microsoft Planner task management via the Microsoft Graph v1.0 API (https://graph.microsoft.com/v1.0/planner). Create and manage plans, buckets and tasks, read and update task details (description, checklist, references, preview type) and plan details (category descriptions, sharedWith), and set the three task board formats - assignedTo, bucket and progress. Also lists the plans and tasks of the signed-in user, of another user, and of a Microsoft 365 group. Connect with a Microsoft work or school account using Entra ID OAuth 2.0; the delegated Tasks.ReadWrite permission is user-consentable and needs no tenant administrator approval. Every PATCH and DELETE requires the target object's current ETag in the If-Match header, which each action exposes as an input.
+Create and manage plans, buckets and tasks, read and update task details (description, checklist, references, preview type) and plan details (category descriptions, sharedWith), and set the three task board formats - assignedTo, bucket and progress. Also lists the plans and tasks of the signed-in user, of another user, and of a Microsoft 365 group. Connect with a Microsoft work or school account using Entra ID OAuth 2.0; the delegated Tasks.ReadWrite permission is user-consentable and needs no tenant administrator approval. Every PATCH and DELETE requires the target object's current ETag in the If-Match header, which each action exposes as an input.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "DeepL language AI API: text translation, document translation, v2 and v3 multilingual glossaries, spoken terms, translation memories, style rules, DeepL Write…"
+description: "Connect DeepL to your product with fastn."
 hidden: true
 ---
 

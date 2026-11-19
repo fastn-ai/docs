@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/callingly.png" alt="Callingly logo">
 
-Callingly is a lead response and speed-to-lead calling platform that instantly connects new inbound leads with available sales agents by phone and SMS. This connector covers the full Callingly REST API (v1): calls, leads, SMS, teams, team agent routing and caps, agents (users) and their availability schedules, agency client accounts, and outbound webhook subscriptions for call completed, lead created and lead updated events. Authenticates with a Callingly API key sent as a Bearer token.
+This connector covers the full Callingly REST API (v1): calls, leads, SMS, teams, team agent routing and caps, agents (users) and their availability schedules, agency client accounts, and outbound webhook subscriptions for call completed, lead created and lead updated events. Authenticates with a Callingly API key sent as a Bearer token.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rxnorm-rxnav.png" alt="RxNorm (RxNav) logo">
 
-RxNorm (via the NLM RxNav REST API) is the US National Library of Medicine's normalized naming system for clinical drugs. Find drug concepts (RXCUI) by name, NDC or other ids, approximate match and spelling suggestions, get drug products, brands, generics, related concepts, properties, NDCs and their status and history, plus reference lists of term types, relationships and sources. No API key needed.
+Find drug concepts (RXCUI) by name, NDC or other ids, approximate match and spelling suggestions, get drug products, brands, generics, related concepts, properties, NDCs and their status and history, plus reference lists of term types, relationships and sources. No API key needed.
 
 | | |
 | --- | --- |

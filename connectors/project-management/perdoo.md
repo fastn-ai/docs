@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/perdoo.png" alt="Perdoo logo">
 
-Perdoo OKR platform GraphQL API. Read objectives, key results, initiatives, KPIs, KPI targets, goals, progress updates, teams, users, cadences and company settings, and create, update or delete progress updates and check-ins.
+Read objectives, key results, initiatives, KPIs, KPI targets, goals, progress updates, teams, users, cadences and company settings, and create, update or delete progress updates and check-ins.
 
 | | |
 | --- | --- |

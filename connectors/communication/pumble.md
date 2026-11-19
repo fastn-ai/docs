@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pumble.png" alt="Pumble logo">
 
-Pumble is a team messaging platform by CAKE.com. This connector wraps the Pumble API addon, covering channels, channel membership, messages, threaded replies, message editing and deletion, emoji reactions, scheduled messages, workspace users, and custom status.
+This connector wraps the Pumble API addon, covering channels, channel membership, messages, threaded replies, message editing and deletion, emoji reactions, scheduled messages, workspace users, and custom status.
 
 | | |
 | --- | --- |

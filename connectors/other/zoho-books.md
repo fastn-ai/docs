@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-books.png" alt="Zoho Books logo">
 
-Zoho Books cloud accounting and invoicing platform. Manage organizations, contacts (customers/vendors), contact persons, items, estimates, sales orders, invoices, recurring invoices, delivery challans, retainer invoices, credit notes, customer payments, expenses, recurring expenses, purchase orders, bills, recurring bills, vendor credits, vendor payments, bank accounts, bank transactions, chart of accounts, journals, projects, users, price lists, currencies, taxes, and opening balances via the Zoho Books REST API v3 (books.zoho.com/api/v3). OAuth 2.0 authorization code auth via the shared Zoho API Console app.
+Manage organizations, contacts (customers/vendors), contact persons, items, estimates, sales orders, invoices, recurring invoices, delivery challans, retainer invoices, credit notes, customer payments, expenses, recurring expenses, purchase orders, bills, recurring bills, vendor credits, vendor payments, bank accounts, bank transactions, chart of accounts, journals, projects, users, price lists, currencies, taxes, and opening balances via the Zoho Books REST API v3 (books.zoho.com/api/v3). OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
 | --- | --- |

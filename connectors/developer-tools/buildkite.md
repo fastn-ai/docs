@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/buildkite.png" alt="Buildkite logo">
 
-Buildkite is a CI/CD platform that runs build pipelines on your own or Buildkite-hosted agents. This connector covers the Buildkite REST API v2: organizations, members, invitations, API and pipeline settings, notification services, repository connections and audit events; pipelines, pipeline schedules, pipeline templates and rules; builds, jobs, job logs, job environment variables, annotations and artifacts; agents; clusters with their queues, agent tokens, agent images, secrets, maintainers, network ranges and cache volumes; teams with their members, pipelines and suites; package registries, registry tokens and packages; Test Engine suites, tests, runs, quarantine and execution tags; plus emojis, rate limits, meta information and access-token management.
+This connector covers the Buildkite REST API v2: organizations, members, invitations, API and pipeline settings, notification services, repository connections and audit events; pipelines, pipeline schedules, pipeline templates and rules; builds, jobs, job logs, job environment variables, annotations and artifacts; agents; clusters with their queues, agent tokens, agent images, secrets, maintainers, network ranges and cache volumes; teams with their members, pipelines and suites; package registries, registry tokens and packages; Test Engine suites, tests, runs, quarantine and execution tags; plus emojis, rate limits, meta information and access-token management.
 
 | | |
 | --- | --- |

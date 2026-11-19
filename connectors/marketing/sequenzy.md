@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/sequenzy.png" alt="Sequenzy logo">
 
-Sequenzy email marketing and automation platform. Manage subscribers, lists, segments, tags, campaigns, sequences, templates, landing pages, forms, popups, A/B tests, transactional email, SMS, metrics, integrations and outbound webhooks via the Sequenzy REST API (https://api.sequenzy.com/api/v1).
+Manage subscribers, lists, segments, tags, campaigns, sequences, templates, landing pages, forms, popups, A/B tests, transactional email, SMS, metrics, integrations and outbound webhooks via the Sequenzy REST API (https://api.sequenzy.com/api/v1).
 
 | | |
 | --- | --- |

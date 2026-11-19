@@ -1,5 +1,5 @@
 ---
-description: "Crossref REST API: free, keyless access to metadata for 150M+ scholarly works registered with DOIs - search and filter works, look up a DOI, and browse…"
+description: "Connect Crossref to your product with fastn."
 hidden: true
 ---
 

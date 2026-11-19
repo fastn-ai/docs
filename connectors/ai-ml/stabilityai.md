@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/stabilityai.png" alt="Stability AI logo">
 
-Stability AI generative media API. Text-to-image (Stable Image Ultra, Core, SD3.5), image editing (inpaint, outpaint, erase, search-and-replace, search-and-recolor, remove-background, replace-background-and-relight), upscaling (fast, conservative, creative), structural/style control, async results polling, Stable Audio 2 text-to-audio and audio-to-audio, 3D generation (Stable Fast 3D, Stable Point Aware 3D), plus v1 legacy generation and account/balance reads.
+Text-to-image (Stable Image Ultra, Core, SD3.5), image editing (inpaint, outpaint, erase, search-and-replace, search-and-recolor, remove-background, replace-background-and-relight), upscaling (fast, conservative, creative), structural/style control, async results polling, Stable Audio 2 text-to-audio and audio-to-audio, 3D generation (Stable Fast 3D, Stable Point Aware 3D), plus v1 legacy generation and account/balance reads.
 
 | | |
 | --- | --- |

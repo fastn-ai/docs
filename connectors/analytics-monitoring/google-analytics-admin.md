@@ -1,5 +1,5 @@
 ---
-description: "Manage Google Analytics 4 configuration through the Google Analytics Admin API v1beta: accounts, account summaries, properties, data streams, measurement…"
+description: "Connect Google Analytics Admin to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/one-crm.png" alt="1CRM logo">
 
-1CRM all-in-one CRM and ERP via the 1CRM REST API. Work with any 1CRM module (accounts, contacts, leads, opportunities, cases, quotes, invoices, projects and more) through generic record, relationship, search and metadata endpoints, plus calendars, files, reports, dashboards, audit logs and webhooks.
+Work with any 1CRM module (accounts, contacts, leads, opportunities, cases, quotes, invoices, projects and more) through generic record, relationship, search and metadata endpoints, plus calendars, files, reports, dashboards, audit logs and webhooks.
 
 | | |
 | --- | --- |

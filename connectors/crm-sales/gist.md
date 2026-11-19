@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gist.png" alt="Gist logo">
 
-Gist is an all-in-one customer engagement platform covering live chat, email marketing, knowledge base and marketing automation. This connector covers the documented Gist API: contacts and batch contact imports, tags, segments, custom events, forms and form submissions, campaigns and subscriptions, subscription types, the conversations inbox with messages, assignment, priority and tagging, teams and teammates, knowledge base articles and collections, workspace metadata, and the ecommerce surface of stores, customers, products, variants, categories, carts and orders.
+This connector covers the documented Gist API: contacts and batch contact imports, tags, segments, custom events, forms and form submissions, campaigns and subscriptions, subscription types, the conversations inbox with messages, assignment, priority and tagging, teams and teammates, knowledge base articles and collections, workspace metadata, and the ecommerce surface of stores, customers, products, variants, categories, carts and orders.
 
 | | |
 | --- | --- |

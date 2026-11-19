@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-excel.png" alt="Microsoft Excel logo">
 
-Microsoft Excel workbooks stored in OneDrive or SharePoint, via the Microsoft Graph Excel (workbook) API at https://graph.microsoft.com/v1.0. Read and write worksheets, cell ranges and their formats, tables with rows and columns, charts and chart formatting, named items, pivot tables, comments, sorting, filtering, worksheet protection and workbook sessions. Every action addresses a workbook by its OneDrive drive item ID under /me/drive/items/{itemId}/workbook. Connect with a Microsoft work, school or personal account using Entra ID OAuth 2.0; the signed-in user needs the delegated Files.ReadWrite permission.
+Read and write worksheets, cell ranges and their formats, tables with rows and columns, charts and chart formatting, named items, pivot tables, comments, sorting, filtering, worksheet protection and workbook sessions. Every action addresses a workbook by its OneDrive drive item ID under /me/drive/items/{itemId}/workbook. Connect with a Microsoft work, school or personal account using Entra ID OAuth 2.0; the signed-in user needs the delegated Files.ReadWrite permission.
 
 | | |
 | --- | --- |

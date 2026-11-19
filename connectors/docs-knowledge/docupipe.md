@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docupipe.png" alt="DocuPipe logo">
 
-DocuPipe document parsing and structured data extraction API. Upload documents, run OCR/parsing, define extraction schemas, standardize documents into structured JSON, classify and split documents, run workflows, generate human reviews, and manage webhook endpoints.
+Upload documents, run OCR/parsing, define extraction schemas, standardize documents into structured JSON, classify and split documents, run workflows, generate human reviews, and manage webhook endpoints.
 
 | | |
 | --- | --- |

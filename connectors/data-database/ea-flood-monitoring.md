@@ -1,5 +1,5 @@
 ---
-description: "The UK Environment Agency real-time flood-monitoring API gives near real time flood warnings and alerts for England, flood areas with boundaries, and water…"
+description: "Connect Environment Agency Flood Monitoring to your product with fastn."
 hidden: true
 ---
 

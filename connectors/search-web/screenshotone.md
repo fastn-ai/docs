@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/screenshotone.png" alt="ScreenshotOne logo">
 
-ScreenshotOne is a screenshot and website-rendering API that turns any URL, raw HTML or Markdown into a PNG, JPEG, WebP, GIF, MP4/WebM video or PDF. This connector covers the complete api.screenshotone.com surface: the GET and POST forms of the screenshot endpoint with every documented rendering option (viewport and device emulation, full-page and element capture, clipping, dark mode, ad/cookie-banner/tracker blocking, geolocation, proxies, cookie and header injection, custom CSS and JS, caching, S3-compatible storage upload, metadata extraction, async rendering and webhook callbacks), the animated screenshot endpoint for GIF, MP4, WebM and AVIF in both GET and POST forms, the bulk rendering endpoint, API usage and credit metrics, the supported viewport device catalogue, the service health probe and the machine-readable OpenAPI specification.
+This connector covers the complete api.screenshotone.com surface: the GET and POST forms of the screenshot endpoint with every documented rendering option (viewport and device emulation, full-page and element capture, clipping, dark mode, ad/cookie-banner/tracker blocking, geolocation, proxies, cookie and header injection, custom CSS and JS, caching, S3-compatible storage upload, metadata extraction, async rendering and webhook callbacks), the animated screenshot endpoint for GIF, MP4, WebM and AVIF in both GET and POST forms, the bulk rendering endpoint, API usage and credit metrics, the supported viewport device catalogue, the service health probe and the machine-readable OpenAPI specification.
 
 | | |
 | --- | --- |

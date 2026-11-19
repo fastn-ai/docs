@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/mr-scraper.png" alt="MrScraper logo">
 
-MrScraper is an AI-powered web scraping platform with anti-bot bypass, browser rendering and residential proxies. Aligned with the MrScraper Python SDK v0.6.0: Scraper API (fetch a URL as HTML, Markdown or a screenshot), Web Search (Google SERP) and Account (identity, subscription, token usage and rate limits). Also covers Playground scraping (HTML, Markdown, screenshots, AI JSON extraction, listing pages, sitemap discovery), the Platform API (AI and manual scrapers, reruns, bulk cancellation, self-healing, results, analytics, proxy bandwidth), bulk submissions, and Marketplace sync and async scrapers such as Amazon product details and YouTube videos. Auth: MrScraper API token sent as x-api-token and Authorization: Bearer.
+Aligned with the MrScraper Python SDK v0.6.0: Scraper API (fetch a URL as HTML, Markdown or a screenshot), Web Search (Google SERP) and Account (identity, subscription, token usage and rate limits). Also covers Playground scraping (HTML, Markdown, screenshots, AI JSON extraction, listing pages, sitemap discovery), the Platform API (AI and manual scrapers, reruns, bulk cancellation, self-healing, results, analytics, proxy bandwidth), bulk submissions, and Marketplace sync and async scrapers such as Amazon product details and YouTube videos. Auth: MrScraper API token sent as x-api-token and Authorization: Bearer.
 
 | | |
 | --- | --- |

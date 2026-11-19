@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/serpapi.png" alt="SerpAPI logo">
 
-SerpAPI — scrape Google and other search engines in real time and get structured JSON results. Wraps the SerpAPI Search API (GET /search with an engine selector), Search Archive, Account, and Locations endpoints. Covers Google web/maps/images/news/scholar/jobs/shopping/trends/local/patents/play, plus Bing, DuckDuckGo, Yahoo, Baidu, YouTube, eBay, Walmart, Amazon, Home Depot, and the Apple App Store.
+Wraps the SerpAPI Search API (GET /search with an engine selector), Search Archive, Account, and Locations endpoints. Covers Google web/maps/images/news/scholar/jobs/shopping/trends/local/patents/play, plus Bing, DuckDuckGo, Yahoo, Baidu, YouTube, eBay, Walmart, Amazon, Home Depot, and the Apple App Store.
 
 | | |
 | --- | --- |

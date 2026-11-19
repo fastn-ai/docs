@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/landbot.png" alt="Landbot logo">
 
-Landbot is a no-code conversational app builder for websites, WhatsApp and Messenger. This connector covers the Landbot Platform API v1: listing and retrieving messaging channels, browsing bots and agents, reading and managing customers and their message history, archiving, blocking, assigning and unassigning conversations to agents or bots, sending text, image, location and WhatsApp template messages, managing WhatsApp opt-out, reading and writing custom customer fields, and registering message hooks that deliver conversation events to an external endpoint.
+This connector covers the Landbot Platform API v1: listing and retrieving messaging channels, browsing bots and agents, reading and managing customers and their message history, archiving, blocking, assigning and unassigning conversations to agents or bots, sending text, image, location and WhatsApp template messages, managing WhatsApp opt-out, reading and writing custom customer fields, and registering message hooks that deliver conversation events to an external endpoint.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bookafy.png" alt="Bookafy logo">
 
-Bookafy is an online appointment scheduling platform for booking meetings, consultations, classes and group events. This connector covers the complete Bookafy REST API v3: appointments (list, create, reschedule, cancel), customers (list, create, update, soft/hard delete, retrieve soft-deleted), services and appointment types with booking-page links, classes and their sessions and attendees, staff members, real-time staff availability lookup, the authenticated account, API key retrieval, and webhook subscription management for appointment and customer events.
+This connector covers the complete Bookafy REST API v3: appointments (list, create, reschedule, cancel), customers (list, create, update, soft/hard delete, retrieve soft-deleted), services and appointment types with booking-page links, classes and their sessions and attendees, staff members, real-time staff availability lookup, the authenticated account, API key retrieval, and webhook subscription management for appointment and customer events.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-meet.png" alt="Google Meet logo">
 
-Google Meet REST API v2 connector (https://meet.googleapis.com/v2). Create and manage meeting spaces, end active conferences, and read conference records, participants, participant sessions, recordings, transcripts, and transcript entries. Also manages Google Workspace Events API subscriptions (https://workspaceevents.googleapis.com/v1) for Meet conference and participant events delivered to a Cloud Pub/Sub topic. OAuth 2.0 (Google) authorization-code auth.
+Create and manage meeting spaces, end active conferences, and read conference records, participants, participant sessions, recordings, transcripts, and transcript entries. Also manages Google Workspace Events API subscriptions (https://workspaceevents.googleapis.com/v1) for Meet conference and participant events delivered to a Cloud Pub/Sub topic. OAuth 2.0 (Google) authorization-code auth.
 
 | | |
 | --- | --- |

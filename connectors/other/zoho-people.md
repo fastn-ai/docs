@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-people.png" alt="Zoho People logo">
 
-Zoho People is Zoho's HR management system. This connector wraps the Zoho People REST API (people.zoho.com): forms and form records including employee data, leave tracking (leave records, leave types and balances), attendance check-in and check-out with attendance reports, and the time tracker module covering clients, projects, jobs, time logs and timesheets. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
+This connector wraps the Zoho People REST API (people.zoho.com): forms and form records including employee data, leave tracking (leave records, leave types and balances), attendance check-in and check-out with attendance reports, and the time tracker module covering clients, projects, jobs, time logs and timesheets. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
 | --- | --- |

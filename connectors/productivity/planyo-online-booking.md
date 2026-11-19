@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/planyo-online-booking.png" alt="Planyo Online Booking logo">
 
-Planyo online booking / reservation system. Single-URL RPC REST API at https://www.planyo.com/rest/ where every operation is ?method=&lt;name&gt;&api_key=&lt;key&gt;. HTTP status is always 200; success is indicated by response_code:0 in the body.
+Single-URL RPC REST API at https://www.planyo.com/rest/ where every operation is ?method=&lt;name&gt;&api_key=&lt;key&gt;. HTTP status is always 200; success is indicated by response_code:0 in the body.
 
 | | |
 | --- | --- |

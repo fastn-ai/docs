@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/suite-dash.png" alt="SuiteDash logo">
 
-SuiteDash is an all-in-one white-label client portal, CRM and business management platform. This connector wraps the SuiteDash Secure API (v1, https://app.suitedash.com/secure-api): CRM contacts (list with creation date filters, find by UID or email, create, update), CRM companies (list, find by UID or name, create with an optional primary contact, update), projects (list, find by UID, exact name, name substring or most recent, update), attribute metadata for contacts, companies and projects including custom fields, marketing audience subscriptions, and Worlds (WORLDS Power-up). Authentication uses the Public ID and Secret Key from Manage Account &gt; Secure API, sent as the X-Public-ID and X-Secret-Key headers.
+This connector wraps the SuiteDash Secure API (v1, https://app.suitedash.com/secure-api): CRM contacts (list with creation date filters, find by UID or email, create, update), CRM companies (list, find by UID or name, create with an optional primary contact, update), projects (list, find by UID, exact name, name substring or most recent, update), attribute metadata for contacts, companies and projects including custom fields, marketing audience subscriptions, and Worlds (WORLDS Power-up). Authentication uses the Public ID and Secret Key from Manage Account &gt; Secure API, sent as the X-Public-ID and X-Secret-Key headers.
 
 | | |
 | --- | --- |

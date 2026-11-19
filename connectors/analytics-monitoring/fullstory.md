@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fullstory.png" alt="Fullstory logo">
 
-Fullstory is a digital experience analytics platform that captures web and mobile sessions. This connector covers the documented Fullstory Server API v2: users with batch and streaming import, custom server events with batch import, sessions and the Anywhere Activation session endpoints, chart annotations, organization quotas, the beta datasets listing, and the beta extraction rules that pull structured data out of pages, URLs and network requests.
+This connector covers the documented Fullstory Server API v2: users with batch and streaming import, custom server events with batch import, sessions and the Anywhere Activation session endpoints, chart annotations, organization quotas, the beta datasets listing, and the beta extraction rules that pull structured data out of pages, URLs and network requests.
 
 | | |
 | --- | --- |

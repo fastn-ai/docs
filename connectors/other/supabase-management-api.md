@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/supabase-management-api.png" alt="Supabase Management logo">
 
-Supabase Management API (api.supabase.com/v1): edge functions, SQL/DDL queries, migrations, PostgREST config, project & API key management. Authenticates with an account-level Personal Access Token (sbp_...); the target project is passed per-action via the projectRef input.
+Authenticates with an account-level Personal Access Token (sbp_...); the target project is passed per-action via the projectRef input.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/supadata.png" alt="Supadata logo">
 
-Supadata turns videos and websites into structured data. This connector covers the Supadata v1 API: transcripts and unified metadata for YouTube, TikTok, Instagram, X and Facebook media, AI extraction of structured data from videos, YouTube video, channel, playlist, search, transcript, translation and batch jobs, web page scraping to Markdown, site maps and website crawls, and account credit usage.
+This connector covers the Supadata v1 API: transcripts and unified metadata for YouTube, TikTok, Instagram, X and Facebook media, AI extraction of structured data from videos, YouTube video, channel, playlist, search, transcript, translation and batch jobs, web page scraping to Markdown, site maps and website crawls, and account credit usage.
 
 | | |
 | --- | --- |

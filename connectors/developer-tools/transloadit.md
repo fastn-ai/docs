@@ -1,5 +1,5 @@
 ---
-description: "Transloadit API2 — file uploading and encoding: Assemblies, Templates, Template Credentials, Auth Keys, DAM (Storage) assets, queues, billing, assembly…"
+description: "Connect Transloadit to your product with fastn."
 hidden: true
 ---
 

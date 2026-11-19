@@ -1,5 +1,5 @@
 ---
-description: "The official Nobel Prize API (Nobel Prize Outreach, v2.1) gives open data on every Nobel Prize and laureate since 1901: list and filter prizes by year and…"
+description: "Connect Nobel Prize API to your product with fastn."
 hidden: true
 ---
 

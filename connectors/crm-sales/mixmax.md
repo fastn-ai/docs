@@ -1,5 +1,5 @@
 ---
-description: "Mixmax sales engagement platform — sequences, recipients, contacts, contact groups, snippets, meetings/summaries, file requests, and more via the Mixmax REST…"
+description: "Connect Mixmax to your product with fastn."
 hidden: true
 ---
 

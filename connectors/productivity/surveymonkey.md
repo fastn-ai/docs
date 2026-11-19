@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/surveymonkey.png" alt="SurveyMonkey logo">
 
-SurveyMonkey API v3. Create and manage surveys, pages, questions, collectors, invite messages and recipients, responses, contacts and contact lists, webhooks, survey folders, templates, translations, benchmarks, teams/groups, workgroups, roles and organizations. Supports the US, EU and Canadian datacenters via a configurable API access URL.
+Create and manage surveys, pages, questions, collectors, invite messages and recipients, responses, contacts and contact lists, webhooks, survey folders, templates, translations, benchmarks, teams/groups, workgroups, roles and organizations. Supports the US, EU and Canadian datacenters via a configurable API access URL.
 
 | | |
 | --- | --- |

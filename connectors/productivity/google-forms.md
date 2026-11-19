@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-forms.png" alt="Google Forms logo">
 
-Google Forms API v1 connector (forms.googleapis.com). Create and read forms, apply batchUpdate mutations (form info, settings, items/questions of every type, item move/delete), publish/unpublish a form and toggle response acceptance, list and get form responses, and manage Pub/Sub watches (schema and responses change notifications). OAuth 2.0 (Google) authorization-code auth using the shared org OAuth app plus forms.body/forms.body.readonly/forms.responses.readonly scopes.
+Create and read forms, apply batchUpdate mutations (form info, settings, items/questions of every type, item move/delete), publish/unpublish a form and toggle response acceptance, list and get form responses, and manage Pub/Sub watches (schema and responses change notifications). OAuth 2.0 (Google) authorization-code auth using the shared org OAuth app plus forms.body/forms.body.readonly/forms.responses.readonly scopes.
 
 | | |
 | --- | --- |

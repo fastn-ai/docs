@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/open-fda.png" alt="openFDA logo">
 
-openFDA (U.S. Food and Drug Administration) offers free APIs over FDA public data: drug, device, food, animal, cosmetic and tobacco adverse events, recalls and enforcement reports, drug labels, NDC directory, Drugs@FDA, shortages, Orange Book, device clearances, approvals, classifications, registrations and UDI, substances, UNII, complete response letters and research datasets. Works without an API key (lower daily limits per IP).
+Food and Drug Administration) offers free APIs over FDA public data: drug, device, food, animal, cosmetic and tobacco adverse events, recalls and enforcement reports, drug labels, NDC directory, Drugs@FDA, shortages, Orange Book, device clearances, approvals, classifications, registrations and UDI, substances, UNII, complete response letters and research datasets. Works without an API key (lower daily limits per IP).
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/knack.png" alt="Knack logo">
 
-Knack is a no-code platform for building online databases and business apps. This connector covers the Knack REST API: application schema discovery, object-based record create, read, update and delete with filtering, sorting and pagination, view-based record operations for pages protected by logins, end-user session tokens, and asset downloads.
+This connector covers the Knack REST API: application schema discovery, object-based record create, read, update and delete with filtering, sorting and pagination, view-based record operations for pages protected by logins, end-user session tokens, and asset downloads.
 
 | | |
 | --- | --- |

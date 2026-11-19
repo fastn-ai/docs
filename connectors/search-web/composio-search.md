@@ -1,5 +1,5 @@
 ---
-description: "Composio Search is Composio's hosted search toolkit: web, news, image, scholar, shopping, finance, trends, events, flights, hotels, maps, travel and…"
+description: "Connect Composio Search to your product with fastn."
 hidden: true
 ---
 

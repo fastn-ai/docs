@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/codereadr.png" alt="CodeREADr logo">
 
-CodeREADr is a barcode scanning platform for data collection, validation and ticket/asset tracking. This connector covers the complete CodeREADr API: services (scan workflows) with user authorizations and questions, validation databases and their barcode values (add, upsert, edit, delete, search, CSV upload), scan records and scan search, scan uploads, scan properties, app users, devices, questions and answer options, API limits, and the barcode generator. Responses are returned as the raw XML documents CodeREADr produces.
+This connector covers the complete CodeREADr API: services (scan workflows) with user authorizations and questions, validation databases and their barcode values (add, upsert, edit, delete, search, CSV upload), scan records and scan search, scan uploads, scan properties, app users, devices, questions and answer options, API limits, and the barcode generator. Responses are returned as the raw XML documents CodeREADr produces.
 
 | | |
 | --- | --- |

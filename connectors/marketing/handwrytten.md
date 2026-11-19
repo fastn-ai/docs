@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/handwrytten.png" alt="Handwrytten logo">
 
-Handwrytten sends real handwritten notes and cards on your behalf, written by robots holding real pens. This connector covers the Handwrytten v2 API: the card, font, template, insert, bundle, gift-card and stamp catalogue, custom card design and QR codes, sender and recipient address books, basket and order management, outbound prospecting, and account, credit-card and subscription information.
+This connector covers the Handwrytten v2 API: the card, font, template, insert, bundle, gift-card and stamp catalogue, custom card design and QR codes, sender and recipient address books, basket and order management, outbound prospecting, and account, credit-card and subscription information.
 
 | | |
 | --- | --- |

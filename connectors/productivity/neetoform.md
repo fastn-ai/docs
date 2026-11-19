@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/neetoform.png" alt="NeetoForm logo">
 
-NeetoForm is a form builder from the neeto suite. This connector wraps the NeetoForm external REST API (v2, plus the deprecated v1) so you can list and create forms, read form submissions with their answers and submitter user-agent details, and manage workspace team members. Authentication is a workspace API key sent in the X-Api-Key header against your workspace subdomain host.
+This connector wraps the NeetoForm external REST API (v2, plus the deprecated v1) so you can list and create forms, read form submissions with their answers and submitter user-agent details, and manage workspace team members. Authentication is a workspace API key sent in the X-Api-Key header against your workspace subdomain host.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/savvycal.png" alt="SavvyCal logo">
 
-SavvyCal is a scheduling platform for booking meetings on your own terms. This connector covers the complete SavvyCal Meetings REST API (https://api.savvycal.com/v1): the current user profile, scheduling links (list, get, create in personal or team scope, update, duplicate, toggle active/disabled, delete), available time slots, events (list, get, create a booking, cancel), the IANA time-zone directory with localized names and DST detail, workflows and their rules, and webhook subscription management. Authentication is a SavvyCal personal access token sent as a Bearer token.
+This connector covers the complete SavvyCal Meetings REST API (https://api.savvycal.com/v1): the current user profile, scheduling links (list, get, create in personal or team scope, update, duplicate, toggle active/disabled, delete), available time slots, events (list, get, create a booking, cancel), the IANA time-zone directory with localized names and DST detail, workflows and their rules, and webhook subscription management. Authentication is a SavvyCal personal access token sent as a Bearer token.
 
 | | |
 | --- | --- |

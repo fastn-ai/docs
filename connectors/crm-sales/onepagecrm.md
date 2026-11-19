@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/onepagecrm.png" alt="OnePageCRM logo">
 
-OnePageCRM is an action-focused sales CRM. This connector wraps the OnePageCRM REST API v3 to manage contacts, companies, deals, next actions, notes, calls, meetings, relationships, attachments, pipelines, statuses, lead sources, custom fields, predefined actions and items, filters, notifications, users and webhooks.
+This connector wraps the OnePageCRM REST API v3 to manage contacts, companies, deals, next actions, notes, calls, meetings, relationships, attachments, pipelines, statuses, lead sources, custom fields, predefined actions and items, filters, notifications, users and webhooks.
 
 | | |
 | --- | --- |

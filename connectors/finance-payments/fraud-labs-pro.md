@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fraud-labs-pro.png" alt="FraudLabs Pro logo">
 
-FraudLabs Pro fraud prevention API (v2). Screens e-commerce orders and user registrations for chargeback and fraud risk using IP geolocation, proxy detection, email/phone/username reputation, BIN and address checks; submits order, user and payment feedback to tune the scoring model; and runs SMS OTP verification. Auth is a FraudLabs Pro API license key.
+Screens e-commerce orders and user registrations for chargeback and fraud risk using IP geolocation, proxy detection, email/phone/username reputation, BIN and address checks; submits order, user and payment feedback to tune the scoring model; and runs SMS OTP verification. Auth is a FraudLabs Pro API license key.
 
 | | |
 | --- | --- |

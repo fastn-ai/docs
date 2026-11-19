@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zylvie.png" alt="Zylvie logo">
 
-Zylvie is creator-commerce cart software for selling digital products, subscriptions and lead magnets. This connector wraps the Zylvie REST API (https://api.zylvie.com) covering the authenticated brand, products, coupons and per-email coupon grants, license keys, subscriptions, transactions and webhook workflow subscriptions.
+This connector wraps the Zylvie REST API (https://api.zylvie.com) covering the authenticated brand, products, coupons and per-email coupon grants, license keys, subscriptions, transactions and webhook workflow subscriptions.
 
 | | |
 | --- | --- |

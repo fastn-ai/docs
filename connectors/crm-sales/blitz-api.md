@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/blitz-api.png" alt="Blitz API logo">
 
-Blitz API is B2B go-to-market data infrastructure for growth and revenue teams. It provides verified contact data on 380M+ professionals: person and company enrichment (work email, mobile phone, reverse email/phone lookup, full company firmographics), ICP company and people search, waterfall decision-maker search, live job-posting search, and TAM-by-hiring-signal account lists. This connector uses the vendor's hosted Model Context Protocol server, so the tool surface is discovered live from Blitz and always matches the current API.
+It provides verified contact data on 380M+ professionals: person and company enrichment (work email, mobile phone, reverse email/phone lookup, full company firmographics), ICP company and people search, waterfall decision-maker search, live job-posting search, and TAM-by-hiring-signal account lists. This connector uses the vendor's hosted Model Context Protocol server, so the tool surface is discovered live from Blitz and always matches the current API.
 
 | | |
 | --- | --- |

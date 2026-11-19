@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/company-cam.png" alt="CompanyCam logo">
 
-CompanyCam is a photo documentation and project collaboration app for contractors. This connector covers the CompanyCam Core API v2: projects (create, update, archive, restore, delete, notepad, labels, comments, documents, collaborators, invitations, assigned users and checklists), photos (upload by URI, update, delete, comments, tags and descriptions), videos, tags, users, groups, checklists and checklist templates, the current company and user, and webhook subscriptions for real-time project, photo, comment, document, video, checklist and task events.
+This connector covers the CompanyCam Core API v2: projects (create, update, archive, restore, delete, notepad, labels, comments, documents, collaborators, invitations, assigned users and checklists), photos (upload by URI, update, delete, comments, tags and descriptions), videos, tags, users, groups, checklists and checklist templates, the current company and user, and webhook subscriptions for real-time project, photo, comment, document, video, checklist and task events.
 
 | | |
 | --- | --- |

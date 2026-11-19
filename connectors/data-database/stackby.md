@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/stackby.png" alt="Stackby logo">
 
-Stackby is a no-code database and spreadsheet work platform. This connector manages stacks (databases), tables, columns, views, and rows - list, retrieve, create, update, and delete records - plus file uploads, via the Stackby Web API v1.
+This connector manages stacks (databases), tables, columns, views, and rows - list, retrieve, create, update, and delete records - plus file uploads, via the Stackby Web API v1.
 
 | | |
 | --- | --- |

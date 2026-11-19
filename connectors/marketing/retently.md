@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/retently.png" alt="Retently logo">
 
-Retently is a customer experience platform for running NPS, CSAT, CES and STAR surveys. This connector covers the full Retently CX REST API v2: account status, customers, companies, feedback responses, outbox records, survey templates, campaigns, campaign reports, metric scores, trend groups, transactional survey sending, historical feedback import, response tags and topics, subscription management, and email and domain suppression lists.
+This connector covers the full Retently CX REST API v2: account status, customers, companies, feedback responses, outbox records, survey templates, campaigns, campaign reports, metric scores, trend groups, transactional survey sending, historical feedback import, response tags and topics, subscription management, and email and domain suppression lists.
 
 | | |
 | --- | --- |

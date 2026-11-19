@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/giphy.png" alt="GIPHY logo">
 
-GIPHY is a library of GIFs, stickers, animated emoji and short video clips, searchable through a public REST API. This connector covers the documented GIPHY API surface: GIF and sticker search, trending, translate, random and fetch-by-id; curated sticker packs; GIPHY Clips; the animated emoji library and its variations; channel search and browsing; browse categories, autocomplete, related and trending search terms; anonymous customer-id generation; the analytics pingback that reports user interaction; and the upload endpoint for publishing an asset to a channel.
+This connector covers the documented GIPHY API surface: GIF and sticker search, trending, translate, random and fetch-by-id; curated sticker packs; GIPHY Clips; the animated emoji library and its variations; channel search and browsing; browse categories, autocomplete, related and trending search terms; anonymous customer-id generation; the analytics pingback that reports user interaction; and the upload endpoint for publishing an asset to a channel.
 
 | | |
 | --- | --- |

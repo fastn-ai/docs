@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/peaka.png" alt="Peaka logo">
 
-Peaka is a zero-ETL data integration platform that lets you connect APIs, databases and SaaS tools and query them together with SQL. This connector covers the complete Peaka Partner API: organizations, workspaces and projects, project API keys, connections and connection types, catalogs, schemas, tables and search, Peaka internal and BI tables and columns, saved and materialized queries, query folders, query execution and SQL transpilation, table and query exports, data caches, parametric and semantic catalogs, AI metadata and golden SQL, metadata refresh callbacks, the AI agent, embedded sessions and supported drivers.
+This connector covers the complete Peaka Partner API: organizations, workspaces and projects, project API keys, connections and connection types, catalogs, schemas, tables and search, Peaka internal and BI tables and columns, saved and materialized queries, query folders, query execution and SQL transpilation, table and query exports, data caches, parametric and semantic catalogs, AI metadata and golden SQL, metadata refresh callbacks, the AI agent, embedded sessions and supported drivers.
 
 | | |
 | --- | --- |

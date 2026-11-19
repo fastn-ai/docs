@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clearout.png" alt="Clearout logo">
 
-Clearout email verification, email finder, reverse lookup, name validation and domain MX/WHOIS APIs (api.clearout.io/v2). API-token authentication.
+API-token authentication.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/statuspage.png" alt="Statuspage logo">
 
-Atlassian Statuspage REST API v1. Manage status pages, components and component groups, incidents and incident updates, postmortems, scheduled maintenance, uptime reporting, custom metrics and metrics providers, page and incident subscribers, audience-specific page access users and groups, the status embed widget, and organization users and permissions. Single host https://api.statuspage.io/v1 with API key authentication sent as an Authorization: OAuth header.
+Manage status pages, components and component groups, incidents and incident updates, postmortems, scheduled maintenance, uptime reporting, custom metrics and metrics providers, page and incident subscribers, audience-specific page access users and groups, the status embed widget, and organization users and permissions. Single host https://api.statuspage.io/v1 with API key authentication sent as an Authorization: OAuth header.
 
 | | |
 | --- | --- |

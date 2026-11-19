@@ -1,5 +1,5 @@
 ---
-description: "Insightly CRM REST API v3.1 — contacts, organisations, leads, opportunities, projects, tasks, events, notes, emails, comments, pipelines, custom…"
+description: "Connect Insightly to your product with fastn."
 hidden: true
 ---
 

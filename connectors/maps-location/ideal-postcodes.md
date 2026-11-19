@@ -1,5 +1,5 @@
 ---
-description: "Ideal Postcodes provides UK and international address data: postcode lookup, address search and autocomplete, UDPRN and UMPRN retrieval, reverse geocoding,…"
+description: "Connect Ideal Postcodes to your product with fastn."
 hidden: true
 ---
 

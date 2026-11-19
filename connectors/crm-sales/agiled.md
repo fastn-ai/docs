@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/agiled.png" alt="Agiled logo">
 
-Agiled is an all-in-one business management platform for agencies and service businesses. This connector wraps the Agiled Public REST API v1 (https://api.agiled.ai/public/v1): CRM contacts, accounts, deals and pipelines with stages; support tickets; projects, tasks and time entries; invoices, estimates, expenses, payments and products; documents and document templates; forms and form submissions; scheduling event types, booking pages, appointments (book, cancel, reschedule); files; users and token context; plus webhook subscriptions and delivery logs for real-time events such as contact.created, deal.status_changed and invoice.paid. Authentication uses a Public API token from Settings &gt; API, sent as a Bearer token.
+This connector wraps the Agiled Public REST API v1 (https://api.agiled.ai/public/v1): CRM contacts, accounts, deals and pipelines with stages; support tickets; projects, tasks and time entries; invoices, estimates, expenses, payments and products; documents and document templates; forms and form submissions; scheduling event types, booking pages, appointments (book, cancel, reschedule); files; users and token context; plus webhook subscriptions and delivery logs for real-time events such as contact.created, deal.status_changed and invoice.paid. Authentication uses a Public API token from Settings &gt; API, sent as a Bearer token.
 
 | | |
 | --- | --- |

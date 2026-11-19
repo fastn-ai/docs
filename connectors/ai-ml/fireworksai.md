@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fireworksai.png" alt="Fireworks AI logo">
 
-Fireworks AI — fast generative AI inference and platform management. Covers the OpenAI-compatible Inference API (chat/text completions, embeddings, image generation, audio transcription/translation) at https://api.fireworks.ai/inference/v1 and the Control Plane (models, deployments, datasets, supervised fine-tuning jobs, batch jobs) at https://api.fireworks.ai/v1. Auth: API key as Bearer token.
+Covers the OpenAI-compatible Inference API (chat/text completions, embeddings, image generation, audio transcription/translation) at https://api.fireworks.ai/inference/v1 and the Control Plane (models, deployments, datasets, supervised fine-tuning jobs, batch jobs) at https://api.fireworks.ai/v1. Auth: API key as Bearer token.
 
 | | |
 | --- | --- |

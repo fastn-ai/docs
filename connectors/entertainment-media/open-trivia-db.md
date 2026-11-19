@@ -1,5 +1,5 @@
 ---
-description: "Open Trivia DB is a free, keyless, user-contributed trivia question database: get multiple-choice or true/false questions by category, difficulty and…"
+description: "Connect Open Trivia DB to your product with fastn."
 hidden: true
 ---
 

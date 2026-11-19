@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/fusedesk.png" alt="FuseDesk logo">
 
-FuseDesk help desk and messaging platform. Manage cases, case notes, case tags, contacts, companies, departments, reps, emails, chats, automations, snippets, integrations, webhooks, activity and reports in your FuseDesk app.
+Manage cases, case notes, case tags, contacts, companies, departments, reps, emails, chats, automations, snippets, integrations, webhooks, activity and reports in your FuseDesk app.
 
 | | |
 | --- | --- |

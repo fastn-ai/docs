@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/craft.png" alt="Craft logo">
 
-Craft is a document and note-taking workspace. This connector wraps the Craft Connect Space API to manage documents, folders, blocks (document content), tasks, collections (structured tables) with their items, views and schemas, comments, and whiteboards across an entire Craft space.
+This connector wraps the Craft Connect Space API to manage documents, folders, blocks (document content), tasks, collections (structured tables) with their items, views and schemas, comments, and whiteboards across an entire Craft space.
 
 | | |
 | --- | --- |

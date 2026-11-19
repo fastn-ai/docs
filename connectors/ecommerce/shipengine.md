@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/shipengine.png" alt="ShipEngine logo">
 
-ShipEngine (ShipStation API) multi-carrier shipping API. Manage carriers, validate and parse addresses, create shipments, compare and estimate rates, buy and void labels, track packages, schedule pickups, build manifests and batches, manage warehouses, custom package types, insurance, tags, and webhooks.
+Manage carriers, validate and parse addresses, create shipments, compare and estimate rates, buy and void labels, track packages, schedule pickups, build manifests and batches, manage warehouses, custom package types, insurance, tags, and webhooks.
 
 | | |
 | --- | --- |

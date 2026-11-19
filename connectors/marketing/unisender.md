@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/unisender.png" alt="Unisender logo">
 
-Unisender email and SMS marketing platform. Single-URL RPC API at https://api.unisender.com/ru/api/&lt;method&gt; covering contact lists, subscribers, custom fields, tags, notes, email/SMS messages, campaigns, templates and delivery statistics.
+Single-URL RPC API at https://api.unisender.com/ru/api/&lt;method&gt; covering contact lists, subscribers, custom fields, tags, notes, email/SMS messages, campaigns, templates and delivery statistics.
 
 | | |
 | --- | --- |

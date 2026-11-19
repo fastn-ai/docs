@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-meeting.png" alt="Zoho Meeting logo">
 
-Zoho Meeting is Zoho's online meeting and webinar platform. This connector wraps the Zoho Meeting REST API v2 (https://meeting.zoho.com/api/v2): create, list, fetch, edit and delete meetings and webinars, register attendees in bulk for a webinar, pull meeting participant and webinar attendee reports, list session recordings, and read organization users. All operations are scoped to a Zoho Meeting organization ID (zsoid).
+This connector wraps the Zoho Meeting REST API v2 (https://meeting.zoho.com/api/v2): create, list, fetch, edit and delete meetings and webinars, register attendees in bulk for a webinar, pull meeting participant and webinar attendee reports, list session recordings, and read organization users. All operations are scoped to a Zoho Meeting organization ID (zsoid).
 
 | | |
 | --- | --- |

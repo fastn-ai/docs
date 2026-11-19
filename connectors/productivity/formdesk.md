@@ -5,7 +5,7 @@ hidden: true
 
 # Formdesk
 
-Formdesk online forms platform. Manage forms, form entries (results), uploaded files, Formdesk user accounts and form visitors through the Formdesk REST API v1. Formdesk uses a two-step host discovery: GET /connect on www.formdesk.com returns the regional host (e.g. fd7.formdesk.com) that all other calls must use, so the host is supplied as a connection field.
+Manage forms, form entries (results), uploaded files, Formdesk user accounts and form visitors through the Formdesk REST API v1. Formdesk uses a two-step host discovery: GET /connect on www.formdesk.com returns the regional host (e.g. fd7.formdesk.com) that all other calls must use, so the host is supplied as a connection field.
 
 | | |
 | --- | --- |

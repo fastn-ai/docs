@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/netlify.png" alt="Netlify logo">
 
-Netlify web hosting and deployment platform. Manage sites, deploys, builds, forms and submissions, files, snippets, DNS zones and records, build hooks, deploy keys, environment variables, accounts and members, service instances, and split tests via the Netlify REST API.
+Manage sites, deploys, builds, forms and submissions, files, snippets, DNS zones and records, build hooks, deploy keys, environment variables, accounts and members, service instances, and split tests via the Netlify REST API.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/typeform.png" alt="Typeform logo">
 
-Typeform Create, Responses, Webhooks, and Insights APIs. Manage forms, responses, themes, images, workspaces, webhooks, and insights via the api.typeform.com REST API.
+Manage forms, responses, themes, images, workspaces, webhooks, and insights via the api.typeform.com REST API.
 
 | | |
 | --- | --- |

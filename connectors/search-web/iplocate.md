@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/iplocate.png" alt="IPLocate logo">
 
-IPLocate is an IP geolocation and threat intelligence platform. This connector covers the full IPLocate IP Intelligence API: single IP lookups, caller IP lookups, field- and object-filtered lookups (ASN, privacy and threat flags, hosting provider, company, abuse contact), batch lookups of up to 1,000 addresses, and the free current-IP echo endpoints.
+This connector covers the full IPLocate IP Intelligence API: single IP lookups, caller IP lookups, field- and object-filtered lookups (ASN, privacy and threat flags, hosting provider, company, abuse contact), batch lookups of up to 1,000 addresses, and the free current-IP echo endpoints.
 
 | | |
 | --- | --- |

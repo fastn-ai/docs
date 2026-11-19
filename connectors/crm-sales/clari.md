@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/clari.png" alt="Clari logo">
 
-Clari is a revenue operations and forecasting platform. This connector wraps the public Clari API (api.clari.com, OpenAPI 5.0.0): queue and retrieve bulk exports of forecast data (submitted calls, quota, manager adjustments, CRM totals, week-over-week history), sales activity (meetings, emails, attachments mapped to accounts and opportunities) and audit events; read opportunity records with Clari's CRM score and field trend history; check your org's export quota; and, for Clari integration partners, ingest field extensions and sub-objects onto Clari Accounts and Opportunities. Clari Copilot (formerly Wingman) is a separate product with a separate API host and credential and is not covered here.
+This connector wraps the public Clari API (api.clari.com, OpenAPI 5.0.0): queue and retrieve bulk exports of forecast data (submitted calls, quota, manager adjustments, CRM totals, week-over-week history), sales activity (meetings, emails, attachments mapped to accounts and opportunities) and audit events; read opportunity records with Clari's CRM score and field trend history; check your org's export quota; and, for Clari integration partners, ingest field extensions and sub-objects onto Clari Accounts and Opportunities. Clari Copilot (formerly Wingman) is a separate product with a separate API host and credential and is not covered here.
 
 | | |
 | --- | --- |

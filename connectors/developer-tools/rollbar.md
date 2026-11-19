@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/rollbar.png" alt="Rollbar logo">
 
-Rollbar is a real-time error tracking and crash reporting platform for web, server and mobile applications. This connector covers the complete Rollbar API v1: reporting occurrences and deploys, browsing and updating items and their occurrences, session replays, item and occurrence metrics and reports, environments, code versions, RQL query jobs, source map and symbol uploads, Slack, PagerDuty, email and webhook notification channels and rules, service links, person deletion jobs, and the account-level administration of projects, project access tokens, teams, users and team invitations.
+This connector covers the complete Rollbar API v1: reporting occurrences and deploys, browsing and updating items and their occurrences, session replays, item and occurrence metrics and reports, environments, code versions, RQL query jobs, source map and symbol uploads, Slack, PagerDuty, email and webhook notification channels and rules, service links, person deletion jobs, and the account-level administration of projects, project access tokens, teams, users and team invitations.
 
 | | |
 | --- | --- |

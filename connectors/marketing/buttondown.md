@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/buttondown.png" alt="Buttondown logo">
 
-Buttondown is newsletter software for writers and creators. This connector covers subscriber management, draft email lifecycle, tags, automations (read-only), registration forms, newsletter settings, and webhook event subscriptions via the Buttondown v1 REST API.
+This connector covers subscriber management, draft email lifecycle, tags, automations (read-only), registration forms, newsletter settings, and webhook event subscriptions via the Buttondown v1 REST API.
 
 | | |
 | --- | --- |

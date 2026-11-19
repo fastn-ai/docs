@@ -1,5 +1,5 @@
 ---
-description: "IPGeolocation.io provides real-time IP intelligence: IP geolocation for IPv4, IPv6 and domain names, IP security and threat signals, ASN and abuse-contact…"
+description: "Connect IPGeolocation.io to your product with fastn."
 hidden: true
 ---
 

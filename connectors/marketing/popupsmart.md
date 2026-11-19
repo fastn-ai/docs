@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/popupsmart.png" alt="Popupsmart logo">
 
-Popupsmart popup builder. Public Leads API (GET /api/leads, x-token + x-campaign-id headers) plus the app.popupsmart.com GraphQL dashboard API (campaigns, websites, folders, segments, leads, analytics, templates, webhook integrations) authenticated with a dashboard access token.
+Public Leads API (GET /api/leads, x-token + x-campaign-id headers) plus the app.popupsmart.com GraphQL dashboard API (campaigns, websites, folders, segments, leads, analytics, templates, webhook integrations) authenticated with a dashboard access token.
 
 | | |
 | --- | --- |

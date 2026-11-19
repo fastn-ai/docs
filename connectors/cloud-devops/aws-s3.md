@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/aws-s3.png" alt="AWS S3 logo">
 
-Amazon Simple Storage Service (S3) REST API. List and create buckets, list objects, upload and download objects, run multipart uploads for large files, and delete objects and buckets. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported. XML responses are returned as JSON.
+List and create buckets, list objects, upload and download objects, run multipart uploads for large files, and delete objects and buckets. Requests are signed with AWS Signature Version 4 using the access key pair on the connection, and an optional STS session token is supported. XML responses are returned as JSON.
 
 | | |
 | --- | --- |

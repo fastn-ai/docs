@@ -1,5 +1,5 @@
 ---
-description: "HP Workforce Experience Platform (WXP) — device analytics, health scores, warranty, Windows 11 readiness, app performance, and incident management via the…"
+description: "Connect HP Workforce Experience to your product with fastn."
 hidden: true
 ---
 

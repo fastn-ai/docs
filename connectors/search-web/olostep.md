@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/olostep.png" alt="Olostep logo">
 
-Olostep is a web search, scraping and crawling API built for AI applications. This connector covers single-page scrapes, large asynchronous batches, website crawls and URL maps, AI answers and web search, stored content retrieval, change monitors, JSON context files, scheduled API calls, AirOps enrichment batches and credit balance information.
+This connector covers single-page scrapes, large asynchronous batches, website crawls and URL maps, AI answers and web search, stored content retrieval, change monitors, JSON context files, scheduled API calls, AirOps enrichment batches and credit balance information.
 
 | | |
 | --- | --- |

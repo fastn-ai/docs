@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pinch-payments.png" alt="Pinch Payments logo">
 
-Pinch Payments is an Australian payments platform for credit card and direct debit collection. This connector covers payers, payment sources, scheduled and realtime payments, payment links, plans and subscriptions, refunds, transfers and settlement line items, events, webhooks, contacts, fee schedules, tokenisation, and managed-merchant (PayFac) administration. Requests run against either the test or live environment, selected per connection.
+This connector covers payers, payment sources, scheduled and realtime payments, payment links, plans and subscriptions, refunds, transfers and settlement line items, events, webhooks, contacts, fee schedules, tokenisation, and managed-merchant (PayFac) administration. Requests run against either the test or live environment, selected per connection.
 
 | | |
 | --- | --- |

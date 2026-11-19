@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/grist.png" alt="Grist logo">
 
-Grist is a modern relational spreadsheet. Manage organizations, workspaces, documents, tables, columns, records, attachments, webhooks, and run SQL queries via the Grist REST API.
+Manage organizations, workspaces, documents, tables, columns, records, attachments, webhooks, and run SQL queries via the Grist REST API.
 
 | | |
 | --- | --- |

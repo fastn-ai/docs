@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoom.png" alt="Zoom logo">
 
-Zoom Meetings, Webinars, Cloud Recordings, Phone, Chat, Users, Groups, Roles, Reports and Tracking Fields via the Zoom REST API v2. OAuth 2.0 authorization-code auth.
+OAuth 2.0 authorization-code auth.
 
 | | |
 | --- | --- |

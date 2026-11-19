@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/salesforce.png" alt="Salesforce logo">
 
-Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, Cases, and Tasks via the Salesforce REST API.
-
 | | |
 | --- | --- |
 | **Category** | [CRM and sales](README.md) |

@@ -1,5 +1,5 @@
 ---
-description: "cloro extracts structured data from AI answer engines and search results - ChatGPT, Google Gemini, Grok, Microsoft Copilot, Perplexity, Google AI Mode, Google…"
+description: "Connect cloro to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/survey-sparrow.png" alt="SurveySparrow logo">
 
-SurveySparrow experience management platform. Wraps the complete SurveySparrow REST API v3: surveys, sections, questions, variables and expressions, responses and batch response import, contacts, contact lists and contact properties, share channels and reminders, NPS/CES/CSAT metrics and reports, tickets, ticket comments, ticket fields and templates, users, roles and teams, survey folders, translations and languages, audit logs, reputation management, Employee 360 invites, and webhooks. Authenticates with a private-app access token sent as a Bearer token, against the regional API host for the account's data center.
+Wraps the complete SurveySparrow REST API v3: surveys, sections, questions, variables and expressions, responses and batch response import, contacts, contact lists and contact properties, share channels and reminders, NPS/CES/CSAT metrics and reports, tickets, ticket comments, ticket fields and templates, users, roles and teams, survey folders, translations and languages, audit logs, reputation management, Employee 360 invites, and webhooks. Authenticates with a private-app access token sent as a Bearer token, against the regional API host for the account's data center.
 
 | | |
 | --- | --- |

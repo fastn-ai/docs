@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pingdom.png" alt="Pingdom logo">
 
-SolarWinds Pingdom website and transaction monitoring. Manage uptime checks, transaction (TMS) checks, maintenance windows, alerting contacts and teams, and read alerting actions, root-cause analysis, raw results, summary reports, probe servers and account credits via the Pingdom REST API 3.1.
+Manage uptime checks, transaction (TMS) checks, maintenance windows, alerting contacts and teams, and read alerting actions, root-cause analysis, raw results, summary reports, probe servers and account credits via the Pingdom REST API 3.1.
 
 | | |
 | --- | --- |

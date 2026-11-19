@@ -1,5 +1,5 @@
 ---
-description: "AbstractAPI Phone Intelligence validates a phone number and returns its formatting, carrier, line type, location, messaging, registration, and risk/breach…"
+description: "Connect AbstractAPI Phone Intelligence to your product with fastn."
 hidden: true
 ---
 

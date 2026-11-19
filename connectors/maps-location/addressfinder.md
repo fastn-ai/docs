@@ -1,5 +1,5 @@
 ---
-description: "Addressfinder provides address autocomplete, address verification, location and points-of-interest lookup, reverse geocoding, email verification and phone…"
+description: "Connect Addressfinder to your product with fastn."
 hidden: true
 ---
 

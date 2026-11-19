@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/get-transcribe.png" alt="GetTranscribe logo">
 
-GetTranscribe transcribes and analyzes social videos from Instagram, TikTok, YouTube, Facebook, X, Pinterest, Google Drive and direct video URLs. This connector covers the full GetTranscribe REST API: asynchronous transcription jobs (create, poll, list), finished transcriptions with word-level timing and media URLs, direct video download URL resolution, folder organization, and account and usage information.
+This connector covers the full GetTranscribe REST API: asynchronous transcription jobs (create, poll, list), finished transcriptions with word-level timing and media URLs, direct video download URL resolution, folder organization, and account and usage information.
 
 | | |
 | --- | --- |

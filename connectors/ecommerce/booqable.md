@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/booqable.png" alt="Booqable logo">
 
-Booqable is rental management software for equipment and inventory rental businesses. This connector covers the Booqable Boomerang API (v4): orders, customers, products and product groups, bundles, stock items and inventory levels, plannings, documents and invoices, payments and refunds, coupons and price rules, collections, employees and users, tax configuration, reports, settings and webhook endpoints.
+This connector covers the Booqable Boomerang API (v4): orders, customers, products and product groups, bundles, stock items and inventory levels, plannings, documents and invoices, payments and refunds, coupons and price rules, collections, employees and users, tax configuration, reports, settings and webhook endpoints.
 
 | | |
 | --- | --- |

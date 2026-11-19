@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/docugenerate.png" alt="DocuGenerate logo">
 
-DocuGenerate document automation API. Create and manage document templates (.docx, .doc, .odt, .rtf, .txt, .sql) with merge tags, then generate documents from those templates by merging JSON data or spreadsheet rows, with output in .docx, .pdf, PDF/A, .odt, .txt, .html or .png, optional PDF merging and attachments.
+Create and manage document templates (.docx, .doc, .odt, .rtf, .txt, .sql) with merge tags, then generate documents from those templates by merging JSON data or spreadsheet rows, with output in .docx, .pdf, PDF/A, .odt, .txt, .html or .png, optional PDF merging and attachments.
 
 | | |
 | --- | --- |

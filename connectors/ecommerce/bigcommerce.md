@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/bigcommerce.png" alt="BigCommerce logo">
 
-BigCommerce REST Management API — Catalog (products, categories, brands, variants, images, modifiers), Orders (V2), Customers (V3), and Carts & Checkouts (V3). Supports OAuth 2.0 app installs and store-level X-Auth-Token API accounts.
+Supports OAuth 2.0 app installs and store-level X-Auth-Token API accounts.
 
 | | |
 | --- | --- |

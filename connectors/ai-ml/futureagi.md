@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/futureagi.png" alt="Future AGI logo">
 
-Future AGI Agent Command Center gateway (https://gateway.futureagi.com): an OpenAI-compatible LLM gateway with routing, caching, guardrails and cost tracking. Covers chat and text completions, token counting, embeddings, reranking, search, OCR, audio (TTS, transcription, translation), image and video generation, files and vector stores, the Assistants API (assistants, threads, messages, runs, steps), the Responses API, async and scheduled jobs, Anthropic and Google native pass-through, model listing, MCP and A2A, plus the admin (/-/) endpoints for virtual keys, org config, provider key rotation, batches, health and MCP management.
+Covers chat and text completions, token counting, embeddings, reranking, search, OCR, audio (TTS, transcription, translation), image and video generation, files and vector stores, the Assistants API (assistants, threads, messages, runs, steps), the Responses API, async and scheduled jobs, Anthropic and Google native pass-through, model listing, MCP and A2A, plus the admin (/-/) endpoints for virtual keys, org config, provider key rotation, batches, health and MCP management.
 
 | | |
 | --- | --- |

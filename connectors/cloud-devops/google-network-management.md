@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-network-management.png" alt="Google Network Management logo">
 
-Google Network Management API (networkmanagement.googleapis.com v1), part of Network Intelligence Center. List, get, create and delete Connectivity Tests, which run static reachability analysis between a source and destination (IP addresses, VM instances, load balancers and more) in a Google Cloud project, and poll the long-running operations they return. Authorizes with Google OAuth 2.0 using the scope https://www.googleapis.com/auth/cloud-network-insights.
+List, get, create and delete Connectivity Tests, which run static reachability analysis between a source and destination (IP addresses, VM instances, load balancers and more) in a Google Cloud project, and poll the long-running operations they return. Authorizes with Google OAuth 2.0 using the scope https://www.googleapis.com/auth/cloud-network-insights.
 
 | | |
 | --- | --- |

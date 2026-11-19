@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/poper.png" alt="Poper logo">
 
-Poper is an AI popup, form, quiz, survey and widget builder for websites. This connector wraps the Poper General API (https://api.poper.ai/general/v1) to list projects, domains and campaigns (popups, forms, quizzes, NPS surveys, widgets, games), read captured leads and responses, and pull domain- and campaign-level analytics. Authentication uses a Poper API key that the vendor requires in the request body.
+This connector wraps the Poper General API (https://api.poper.ai/general/v1) to list projects, domains and campaigns (popups, forms, quizzes, NPS surveys, widgets, games), read captured leads and responses, and pull domain- and campaign-level analytics. Authentication uses a Poper API key that the vendor requires in the request body.
 
 | | |
 | --- | --- |

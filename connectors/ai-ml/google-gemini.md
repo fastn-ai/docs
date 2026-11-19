@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-gemini.png" alt="Google Gemini logo">
 
-Google Gemini Developer API (generativelanguage.googleapis.com/v1beta). Generate content (text/multimodal), streaming generation, token counting, embeddings, model discovery, the Files API, context caching (cachedContents), and Batch Mode generation. Auth via Gemini API key sent in the x-goog-api-key header.
+Generate content (text/multimodal), streaming generation, token counting, embeddings, model discovery, the Files API, context caching (cachedContents), and Batch Mode generation. Auth via Gemini API key sent in the x-goog-api-key header.
 
 | | |
 | --- | --- |

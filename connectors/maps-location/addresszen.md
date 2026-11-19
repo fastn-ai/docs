@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/addresszen.png" alt="AddressZen logo">
 
-AddressZen address autocomplete, verification and data quality API. Search and verify US and international addresses (USPS CASS-certified), autocomplete and retrieve addresses, look up UK postcodes/UDPRN/UMPRN, find and resolve geographic places, validate email addresses and phone numbers, and manage API keys, licensees, configurations and usage.
+Search and verify US and international addresses (USPS CASS-certified), autocomplete and retrieve addresses, look up UK postcodes/UDPRN/UMPRN, find and resolve geographic places, validate email addresses and phone numbers, and manage API keys, licensees, configurations and usage.
 
 | | |
 | --- | --- |

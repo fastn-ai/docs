@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/microsoft-one-note.png" alt="Microsoft OneNote logo">
 
-Microsoft OneNote via Microsoft Graph v1.0. Covers the signed-in user's notebooks, section groups, sections and pages, page HTML content read and patch, asynchronous copy operations for notebooks, sections and pages, notebook lookup by web URL, recently opened notebooks, and long-running operation status. All actions target the signed-in user's own OneNote content (the /me root); group-owned and SharePoint site-hosted notebooks are not covered.
+Covers the signed-in user's notebooks, section groups, sections and pages, page HTML content read and patch, asynchronous copy operations for notebooks, sections and pages, notebook lookup by web URL, recently opened notebooks, and long-running operation status. All actions target the signed-in user's own OneNote content (the /me root); group-owned and SharePoint site-hosted notebooks are not covered.
 
 | | |
 | --- | --- |

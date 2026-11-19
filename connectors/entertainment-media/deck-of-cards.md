@@ -1,5 +1,5 @@
 ---
-description: "Deck of Cards is a free API that simulates decks of playing cards: create and shuffle decks (single or multiple, partial, with Jokers), draw cards, manage…"
+description: "Connect Deck of Cards to your product with fastn."
 hidden: true
 ---
 

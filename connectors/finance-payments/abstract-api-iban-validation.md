@@ -7,8 +7,6 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/abstract-api-iban-validation.png" alt="AbstractAPI IBAN Validation logo">
 
-AbstractAPI IBAN Validation checks whether an International Bank Account Number (IBAN) is valid.
-
 | | |
 | --- | --- |
 | **Category** | [Finance and payments](README.md) |

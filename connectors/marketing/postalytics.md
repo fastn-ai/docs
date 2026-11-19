@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/postalytics.png" alt="Postalytics logo">
 
-Postalytics is a direct mail automation platform for sending trackable postcards, letters and self-mailers triggered from marketing and CRM workflows. This connector covers the full Postalytics REST API (v1): accounts and agency sub-accounts, auto-login links, integrations, campaigns and their stats and delivery events, triggered drip sends, multi-touch flows, contact lists and contacts, suppression lists, mail piece templates, and campaign webhooks. Authenticates with the account API key over HTTP Basic auth.
+This connector covers the full Postalytics REST API (v1): accounts and agency sub-accounts, auto-login links, integrations, campaigns and their stats and delivery events, triggered drip sends, multi-touch flows, contact lists and contacts, suppression lists, mail piece templates, and campaign webhooks. Authenticates with the account API key over HTTP Basic auth.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "OpenAI API connector — chat completions, responses, embeddings, models, files, images, audio, moderations, fine-tuning, batches, vector stores, and the…"
+description: "Connect OpenAI to your product with fastn."
 hidden: true
 ---
 

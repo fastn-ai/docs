@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pexels.png" alt="Pexels logo">
 
-Pexels stock photo and video API. Search and browse free-to-use photos, videos, and curated collections contributed by photographers and videographers on Pexels.
+Search and browse free-to-use photos, videos, and curated collections contributed by photographers and videographers on Pexels.
 
 | | |
 | --- | --- |

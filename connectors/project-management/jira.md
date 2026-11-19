@@ -1,5 +1,5 @@
 ---
-description: "Atlassian Jira Cloud connector — Issues (CRUD, JQL search, transitions, bulk ops, comments, worklogs, attachments, links, remote links, watchers, votes),…"
+description: "Connect Jira to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/browse-ai.png" alt="Browse AI logo">
 
-Browse AI extracts and monitors data from any website with no-code robots. This connector covers the complete Browse AI REST API v2: infrastructure status, teams, robots (list, get, update cookies), on-demand robot tasks (run, list with filters, get captured data), monitors (create, list, get, update, delete), bulk runs (create, list, get), robot webhooks (create, list, delete) and the robot event webhooks (task finished, task finished successfully or with error, captured data changed, table export finished) as bindable events.
+This connector covers the complete Browse AI REST API v2: infrastructure status, teams, robots (list, get, update cookies), on-demand robot tasks (run, list with filters, get captured data), monitors (create, list, get, update, delete), bulk runs (create, list, get), robot webhooks (create, list, delete) and the robot event webhooks (task finished, task finished successfully or with error, captured data changed, table export finished) as bindable events.
 
 | | |
 | --- | --- |

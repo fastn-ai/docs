@@ -5,7 +5,7 @@ hidden: true
 
 # Bible API
 
-bible-api.com is a free JSON API for Bible verses and passages in 16 public-domain translations. Look up passages by reference, list translations, books and chapters, read a full chapter, and get random verses. No API key needed (rate limit 15 requests per 30 seconds).
+Look up passages by reference, list translations, books and chapters, read a full chapter, and get random verses. No API key needed (rate limit 15 requests per 30 seconds).
 
 | | |
 | --- | --- |

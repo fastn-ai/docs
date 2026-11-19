@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pointagram.png" alt="Pointagram logo">
 
-Pointagram sales gamification platform. Manage players, teams, score series and point scoring, read competitions and leaderboards, and operate the reward store (items, settings, purchases) through the Pointagram Custom API 2.0.
+Manage players, teams, score series and point scoring, read competitions and leaderboards, and operate the reward store (items, settings, purchases) through the Pointagram Custom API 2.0.
 
 | | |
 | --- | --- |

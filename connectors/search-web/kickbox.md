@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/kickbox.png" alt="Kickbox logo">
 
-Kickbox email verification API. Single and batch email address verification, account credit balance, and the free open disposable-domain check.
+Single and batch email address verification, account credit balance, and the free open disposable-domain check.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/theoddsapi.png" alt="The Odds API logo">
 
-The Odds API v4 - live and upcoming sports betting odds, scores and fixtures aggregated from bookmakers across the US, UK, Australian and European regions. Provides the sport catalogue, featured and additional betting markets per event, final and in-play scores, event listings, event participants, and (on paid plans) point-in-time historical odds and events snapshots.
+Provides the sport catalogue, featured and additional betting markets per event, final and in-play scores, event listings, event participants, and (on paid plans) point-in-time historical odds and events snapshots.
 
 | | |
 | --- | --- |

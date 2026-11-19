@@ -1,5 +1,5 @@
 ---
-description: "Apiframe is a single REST API for 70+ generative media models, including Midjourney, Flux, Nano Banana, Ideogram, Imagen, GPT Image, Kling, Veo, Sora, Suno,…"
+description: "Connect Apiframe to your product with fastn."
 hidden: true
 ---
 

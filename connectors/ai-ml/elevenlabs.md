@@ -1,5 +1,5 @@
 ---
-description: "ElevenLabs AI audio API — text-to-speech, speech-to-text, voice changer (speech-to-speech), sound effects, voice design, voices/models/user management,…"
+description: "Connect ElevenLabs to your product with fastn."
 hidden: true
 ---
 

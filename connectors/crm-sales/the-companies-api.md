@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/the-companies-api.png" alt="The Companies API logo">
 
-The Companies API is a company data and enrichment platform. This connector covers the full v2 REST surface: company search by segmentation query, name, natural-language prompt or similarity; company enrichment from a domain, an email address or a social network URL; company context, email patterns and AI question answering; analytics and analytics exports; reference data for industries, technologies, cities, counties, states, countries and continents; job title enrichment; company list management and membership; background enrichment jobs (actions); saved prompts and prompt-to-segmentation conversion; and team and user account information.
+This connector covers the full v2 REST surface: company search by segmentation query, name, natural-language prompt or similarity; company enrichment from a domain, an email address or a social network URL; company context, email patterns and AI question answering; analytics and analytics exports; reference data for industries, technologies, cities, counties, states, countries and continents; job title enrichment; company list management and membership; background enrichment jobs (actions); saved prompts and prompt-to-segmentation conversion; and team and user account information.
 
 | | |
 | --- | --- |

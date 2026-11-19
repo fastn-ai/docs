@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/piggy.png" alt="Piggy logo">
 
-Piggy (now Leat) is a loyalty, marketing and gift-card platform. This connector wraps the Piggy/Leat Public API v3: contacts and contact identifiers, loyalty programs, credits, rewards, tiers and perks, promotions and vouchers, gift cards and gift-card transactions, prepaid balances, orders, products and categories, shops, shifts, bookings, visits, forms, automations, portal sessions and webhook subscriptions.
+This connector wraps the Piggy/Leat Public API v3: contacts and contact identifiers, loyalty programs, credits, rewards, tiers and perks, promotions and vouchers, gift cards and gift-card transactions, prepaid balances, orders, products and categories, shops, shifts, bookings, visits, forms, automations, portal sessions and webhook subscriptions.
 
 | | |
 | --- | --- |

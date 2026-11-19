@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-resource-manager.png" alt="Azure Resource Manager logo">
 
-Azure Resource Manager (ARM) control-plane API at https://management.azure.com. List and manage subscriptions, tenants, locations, resource groups, generic resources, ARM template deployments and deployment operations, resource providers and resource types, subscription tag names and values, resource tags at any scope, and read role assignments, role definitions and effective permissions. Every ARM request requires an api-version query parameter, exposed on each action with the current stable default. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target scope.
+List and manage subscriptions, tenants, locations, resource groups, generic resources, ARM template deployments and deployment operations, resource providers and resource types, subscription tag names and values, resource tags at any scope, and read role assignments, role definitions and effective permissions. Every ARM request requires an api-version query parameter, exposed on each action with the current stable default. Connect with Microsoft Entra ID OAuth 2.0; the signed-in user needs Azure RBAC rights on the target scope.
 
 | | |
 | --- | --- |

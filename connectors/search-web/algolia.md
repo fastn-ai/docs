@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/algolia.png" alt="Algolia logo">
 
-Algolia is a hosted search and discovery platform. This connector wraps the Algolia Search, Analytics, Insights and Monitoring REST APIs to manage indices, records, settings, synonyms, rules, dictionaries, API keys and user-ID clusters, to read search and conversion analytics, to send click and conversion events, and to read Algolia infrastructure status.
+This connector wraps the Algolia Search, Analytics, Insights and Monitoring REST APIs to manage indices, records, settings, synonyms, rules, dictionaries, API keys and user-ID clusters, to read search and conversion analytics, to send click and conversion events, and to read Algolia infrastructure status.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "The UK Parliament Treaties API gives open data on treaties laid before Parliament under the CRaG Act: search treaties by text, lead government department,…"
+description: "Connect UK Parliament Treaties API to your product with fastn."
 hidden: true
 ---
 

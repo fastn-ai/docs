@@ -1,5 +1,5 @@
 ---
-description: "NASA Open APIs (api.nasa.gov) give programmatic access to NASA data: the Astronomy Picture of the Day, near-Earth asteroids (NeoWs), DONKI space-weather…"
+description: "Connect NASA Open APIs to your product with fastn."
 hidden: true
 ---
 

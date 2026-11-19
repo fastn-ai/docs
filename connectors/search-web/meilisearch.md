@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/meilisearch.png" alt="Meilisearch logo">
 
-Meilisearch is an open-source, lightning-fast search engine. This connector manages indexes and their settings, adds and queries documents, runs search and multi-search (including facet search and similar-documents), tracks asynchronous tasks, manages API keys, triggers dumps and snapshots, reads instance/index statistics, and manages task-completion webhooks on a self-hosted Meilisearch instance.
+This connector manages indexes and their settings, adds and queries documents, runs search and multi-search (including facet search and similar-documents), tracks asynchronous tasks, manages API keys, triggers dumps and snapshots, reads instance/index statistics, and manages task-completion webhooks on a self-hosted Meilisearch instance.
 
 | | |
 | --- | --- |

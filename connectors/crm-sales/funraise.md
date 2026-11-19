@@ -1,5 +1,5 @@
 ---
-description: "Funraise is a nonprofit fundraising platform with a built-in donor CRM: donation forms, peer-to-peer campaign sites, recurring giving, fundraising-event…"
+description: "Connect Funraise to your product with fastn."
 hidden: true
 ---
 

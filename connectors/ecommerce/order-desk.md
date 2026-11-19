@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/order-desk.png" alt="Order Desk logo">
 
-Order Desk (order management) connector. Base https://app.orderdesk.me/api/v2. Two-header auth: ORDERDESK-STORE-ID + ORDERDESK-API-KEY. Full coverage (26 actions): test, store, orders CRUD + order history, order items CRUD, shipments CRUD + batch, move orders, inventory items CRUD + batch. Webhooks are UI/Rules-only (no management API).
+Base https://app.orderdesk.me/api/v2. Two-header auth: ORDERDESK-STORE-ID + ORDERDESK-API-KEY. Full coverage (26 actions): test, store, orders CRUD + order history, order items CRUD, shipments CRUD + batch, move orders, inventory items CRUD + batch. Webhooks are UI/Rules-only (no management API).
 
 | | |
 | --- | --- |

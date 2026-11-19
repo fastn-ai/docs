@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/gitlab.png" alt="GitLab logo">
 
-GitLab REST API v4 (default base https://gitlab.com, configurable for self-managed). Manage projects, issues, merge requests, branches, commits, repository files, tags, pipelines, jobs, labels, milestones, notes/comments, users, groups, and project webhooks (hooks). Auth: Bearer personal/project access token; set baseUrl for self-managed instances.
+Manage projects, issues, merge requests, branches, commits, repository files, tags, pipelines, jobs, labels, milestones, notes/comments, users, groups, and project webhooks (hooks). Auth: Bearer personal/project access token; set baseUrl for self-managed instances.
 
 | | |
 | --- | --- |

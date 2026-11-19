@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/timecamp.png" alt="TimeCamp logo">
 
-TimeCamp time tracking and project management API. Track time entries and timers, manage tasks and projects, users, groups and roles, computer activities, attendance and approvals, tags and tag lists, billing rates, expenses, custom fields, clients, invoices and data exports.
+Track time entries and timers, manage tasks and projects, users, groups and roles, computer activities, attendance and approvals, tags and tag lists, billing rates, expenses, custom fields, clients, invoices and data exports.
 
 | | |
 | --- | --- |

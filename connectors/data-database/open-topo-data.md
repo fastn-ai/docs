@@ -1,5 +1,5 @@
 ---
-description: "Open Topo Data is an open-source elevation API with a free public server (api.opentopodata.org) serving open datasets such as SRTM, ASTER, EU-DEM, NED,…"
+description: "Connect Open Topo Data to your product with fastn."
 hidden: true
 ---
 

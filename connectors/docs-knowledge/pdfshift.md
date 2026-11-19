@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pdfshift.png" alt="PDFShift logo">
 
-PDFShift is an HTML/URL to PDF, PNG, JPEG, and WEBP conversion API. This connector covers document conversion, reusable templates, account and API key management, credit usage, request logs, and invoices.
+This connector covers document conversion, reusable templates, account and API key management, credit usage, request logs, and invoices.
 
 | | |
 | --- | --- |

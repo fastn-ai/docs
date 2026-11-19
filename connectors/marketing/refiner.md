@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/refiner.png" alt="Refiner logo">
 
-Refiner is a customer survey platform for in-product, web and link surveys. This connector covers the full Refiner REST API v1: authentication check, account info, identifying users, tracking events, survey responses (list, store and tag), aggregated reporting, contacts, forms (list, publish, archive, duplicate and change history), segments and manual segment membership.
+This connector covers the full Refiner REST API v1: authentication check, account info, identifying users, tracking events, survey responses (list, store and tag), aggregated reporting, contacts, forms (list, publish, archive, duplicate and change history), segments and manual segment membership.
 
 | | |
 | --- | --- |

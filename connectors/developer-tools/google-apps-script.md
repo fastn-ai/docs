@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-apps-script.png" alt="Google Apps Script logo">
 
-Google Apps Script API for managing Apps Script projects programmatically. Create projects, read and update project content and manifests, manage versions and deployments, run deployed script functions, and inspect execution processes and metrics.
+Create projects, read and update project content and manifests, manage versions and deployments, run deployed script functions, and inspect execution processes and metrics.
 
 | | |
 | --- | --- |

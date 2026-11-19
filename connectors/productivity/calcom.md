@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/calcom.png" alt="Cal.com logo">
 
-Cal.com API v2 connector. Scheduling automation — bookings (list, get, create, cancel, reschedule, confirm, decline, reassign, mark no-show, attendees, guests, references, recordings, transcripts), event types (CRUD + history), schedules/availability (CRUD), slots (get available, reserve, manage reservations), calendars (list, busy times, connect/disconnect), conferencing apps, teams (CRUD, members, team event types, team bookings), webhooks (CRUD), out-of-office, verified resources, and the authenticated user profile (me). Base https://api.cal.com/v2. Auth: Bearer API key (cal_live_ / cal_ prefix). Each endpoint group requires a static cal-api-version date header.
+Scheduling automation — bookings (list, get, create, cancel, reschedule, confirm, decline, reassign, mark no-show, attendees, guests, references, recordings, transcripts), event types (CRUD + history), schedules/availability (CRUD), slots (get available, reserve, manage reservations), calendars (list, busy times, connect/disconnect), conferencing apps, teams (CRUD, members, team event types, team bookings), webhooks (CRUD), out-of-office, verified resources, and the authenticated user profile (me). Base https://api.cal.com/v2. Auth: Bearer API key (cal_live_ / cal_ prefix). Each endpoint group requires a static cal-api-version date header.
 
 | | |
 | --- | --- |

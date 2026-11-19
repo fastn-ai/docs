@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/contractbook.png" alt="Contractbook logo">
 
-Contractbook contract lifecycle management (CLM). Wraps the Contractbook Public API v3 (https://api.contractbook.com/v3) for documents/contracts, templates, spaces, automations and attachment uploads. Authenticates with a Contractbook API Access Key sent as an Authorization: Bearer header.
+Wraps the Contractbook Public API v3 (https://api.contractbook.com/v3) for documents/contracts, templates, spaces, automations and attachment uploads. Authenticates with a Contractbook API Access Key sent as an Authorization: Bearer header.
 
 | | |
 | --- | --- |

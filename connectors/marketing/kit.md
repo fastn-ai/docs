@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/kit.png" alt="Kit logo">
 
-Kit (formerly ConvertKit) email marketing platform for creators. Manage subscribers, tags, custom fields, broadcasts, forms, sequences, purchases, segments, snippets, email templates, account stats, and webhooks via the Kit V4 API.
+Manage subscribers, tags, custom fields, broadcasts, forms, sequences, purchases, segments, snippets, email templates, account stats, and webhooks via the Kit V4 API.
 
 | | |
 | --- | --- |

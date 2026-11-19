@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/alpaca.png" alt="Alpaca logo">
 
-Alpaca commission-free stock, options and crypto trading. Trading API is pinned to the PAPER host https://paper-api.alpaca.markets (no real money). Market Data API on https://data.alpaca.markets. Live trading host api.alpaca.markets is deliberately NOT wired.
+Trading API is pinned to the PAPER host https://paper-api.alpaca.markets (no real money). Market Data API on https://data.alpaca.markets. Live trading host api.alpaca.markets is deliberately NOT wired.
 
 | | |
 | --- | --- |

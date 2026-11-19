@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/cloud-convert.png" alt="CloudConvert logo">
 
-CloudConvert is a file conversion and processing API. This connector covers the CloudConvert v2 API: jobs, tasks, the import, convert, optimize, merge, archive, thumbnail, watermark, capture-website, metadata and export task types, webhook registration, signed URLs, and the account and format metadata endpoints.
+This connector covers the CloudConvert v2 API: jobs, tasks, the import, convert, optimize, merge, archive, thumbnail, watermark, capture-website, metadata and export task types, webhook registration, signed URLs, and the account and format metadata endpoints.
 
 | | |
 | --- | --- |

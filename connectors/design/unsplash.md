@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/unsplash.png" alt="Unsplash logo">
 
-Unsplash stock photo / image API. Browse, search, and manage photos, collections, topics, and users on Unsplash. Public-scope reads use an application Access Key (Client-ID); a subset of write endpoints (own profile, own photos, own collections) require a full user-scoped OAuth Bearer token which this app does not currently mint.
+Browse, search, and manage photos, collections, topics, and users on Unsplash. Public-scope reads use an application Access Key (Client-ID); a subset of write endpoints (own profile, own photos, own collections) require a full user-scoped OAuth Bearer token which this app does not currently mint.
 
 | | |
 | --- | --- |

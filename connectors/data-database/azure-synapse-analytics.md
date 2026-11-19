@@ -1,5 +1,5 @@
 ---
-description: "Connect to Azure Synapse Analytics data-plane APIs — pipelines, datasets, linked services, data flows, triggers, notebooks, Spark jobs (Livy), SQL pools, role…"
+description: "Connect Azure Synapse Analytics to your product with fastn."
 hidden: true
 ---
 

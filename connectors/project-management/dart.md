@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/dart.png" alt="Dart logo">
 
-Dart (dartai.com) is an AI-native project and task management tool. This connector wraps the Dart Public API v0: tasks, docs, comments, dartboards, folders, views, agents, skills, webhooks and workspace configuration.
+This connector wraps the Dart Public API v0: tasks, docs, comments, dartboards, folders, views, agents, skills, webhooks and workspace configuration.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/recurly.png" alt="Recurly logo">
 
-Recurly subscription management and recurring billing platform. Manage accounts, subscriptions, plans, add-ons, invoices, transactions, coupons, items, gift cards, usage, and exports through the Recurly V3 API.
+Manage accounts, subscriptions, plans, add-ons, invoices, transactions, coupons, items, gift cards, usage, and exports through the Recurly V3 API.
 
 | | |
 | --- | --- |

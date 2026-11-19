@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/google-workspace-admin-sdk.png" alt="Google Workspace Admin SDK logo">
 
-Administer a Google Workspace account with the Admin SDK. Provision and manage users, aliases, photos, groups, group members, organizational units, roles and role assignments, privileges, domains, ChromeOS and mobile devices, application-specific passwords, tokens, verification codes, custom user schemas, calendar resources (buildings, features, calendars), Chrome printers and print servers, and cross-user data transfers. Requires a Google Workspace administrator account and the customer identifier my_customer.
+Provision and manage users, aliases, photos, groups, group members, organizational units, roles and role assignments, privileges, domains, ChromeOS and mobile devices, application-specific passwords, tokens, verification codes, custom user schemas, calendar resources (buildings, features, calendars), Chrome printers and print servers, and cross-user data transfers. Requires a Google Workspace administrator account and the customer identifier my_customer.
 
 | | |
 | --- | --- |

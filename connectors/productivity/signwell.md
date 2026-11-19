@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/signwell.png" alt="SignWell logo">
 
-SignWell is an electronic signature platform for sending, tracking and completing legally binding documents. This connector covers the SignWell v1 API: documents and document creation from files or templates, recipient and authentication updates, sending and reminders, completed PDF retrieval, document templates, bulk sends with CSV validation, API applications, webhooks and the connected account's credentials.
+This connector covers the SignWell v1 API: documents and document creation from files or templates, recipient and authentication updates, sending and reminders, completed PDF retrieval, document templates, bulk sends with CSV validation, API applications, webhooks and the connected account's credentials.
 
 | | |
 | --- | --- |

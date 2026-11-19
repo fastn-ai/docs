@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/satismeter.png" alt="SatisMeter logo">
 
-SatisMeter is a customer-feedback platform for NPS, CSAT, CES, PMF and custom in-app, email and mobile surveys. This connector covers the whole SatisMeter REST API: project details, surveys, survey statistics, project-level and survey-level responses, the legacy response export with dashboard summary counts, response insertion, user creation and updates, user event tracking, user listing, lookup and deletion, and the project email unsubscribe list. Survey completion and dismissal are available as events.
+This connector covers the whole SatisMeter REST API: project details, surveys, survey statistics, project-level and survey-level responses, the legacy response export with dashboard summary counts, response insertion, user creation and updates, user event tracking, user listing, lookup and deletion, and the project email unsubscribe list. Survey completion and dismissal are available as events.
 
 | | |
 | --- | --- |

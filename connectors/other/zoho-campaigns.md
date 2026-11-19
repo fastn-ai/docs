@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-campaigns.png" alt="Zoho Campaigns logo">
 
-Zoho Campaigns is Zoho's email marketing automation platform. This connector wraps the Zoho Campaigns REST API v1.1 (campaigns.zoho.com/api/v1.1): mailing lists, list contacts (subscribe/unsubscribe), contact fields, topics, and campaigns (create, clone, send, schedule, delete) together with campaign details and campaign reports. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
+This connector wraps the Zoho Campaigns REST API v1.1 (campaigns.zoho.com/api/v1.1): mailing lists, list contacts (subscribe/unsubscribe), contact fields, topics, and campaigns (create, clone, send, schedule, delete) together with campaign details and campaign reports. OAuth 2.0 authorization code auth via the shared Zoho API Console app.
 
 | | |
 | --- | --- |

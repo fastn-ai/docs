@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/streamtime.png" alt="Streamtime logo">
 
-Streamtime is a job management, time tracking and quoting platform for creative agencies and studios. This connector covers the Streamtime public API: jobs, job items, phases, milestones, roles and users, companies and contacts, quotes, invoices and payments, logged time and expenses, labels, rate cards, branches, reporting and the universal search API.
+This connector covers the Streamtime public API: jobs, job items, phases, milestones, roles and users, companies and contacts, quotes, invoices and payments, logged time and expenses, labels, rate cards, branches, reporting and the universal search API.
 
 | | |
 | --- | --- |

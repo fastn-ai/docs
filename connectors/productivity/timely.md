@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/timely.png" alt="Timely logo">
 
-Timely automatic time tracking API. Log and manage time entries and timers, plan and forecast tasks, organize projects, clients, teams and users, manage tags, capacities, roles, states and permissions, generate reports, run bulk imports, and subscribe to webhooks.
+Log and manage time entries and timers, plan and forecast tasks, organize projects, clients, teams and users, manage tags, capacities, roles, states and permissions, generate reports, run bulk imports, and subscribe to webhooks.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/salesloft.png" alt="Salesloft logo">
 
-Salesloft Revenue Orchestration Platform (sales engagement). Wraps the Salesloft Platform REST API v2 at https://api.salesloft.com/v2 — people, accounts, cadences and cadence memberships, steps and step groups, actions, tasks, notes, calls and call data records, emails and email templates, meetings and calendar events, conversations and transcriptions, opportunities, users, teams and groups, custom fields, imports, bulk jobs, saved list views, successes, CRM activities, person/account stages and tiers, data-control (GDPR) operations, and the webhook subscription API. Supports OAuth 2.0 authorization code, OAuth 2.0 client credentials, and customer API keys.
+Wraps the Salesloft Platform REST API v2 at https://api.salesloft.com/v2 — people, accounts, cadences and cadence memberships, steps and step groups, actions, tasks, notes, calls and call data records, emails and email templates, meetings and calendar events, conversations and transcriptions, opportunities, users, teams and groups, custom fields, imports, bulk jobs, saved list views, successes, CRM activities, person/account stages and tiers, data-control (GDPR) operations, and the webhook subscription API. Supports OAuth 2.0 authorization code, OAuth 2.0 client credentials, and customer API keys.
 
 | | |
 | --- | --- |

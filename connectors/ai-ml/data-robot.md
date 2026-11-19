@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/data-robot.png" alt="DataRobot logo">
 
-DataRobot is an enterprise AI platform for building, deploying and monitoring predictive and generative AI models. This connector wraps the DataRobot Public API v2 (app.datarobot.com/api/v2): projects, autopilot and leaderboard models, AI Catalog datasets, Use Cases, deployments, model registry, batch predictions, credentials and data connectivity, custom models and execution environments, GenAI playgrounds/LLM blueprints/chats/vector databases, tags, comments and (admin-gated) user management.
+This connector wraps the DataRobot Public API v2 (app.datarobot.com/api/v2): projects, autopilot and leaderboard models, AI Catalog datasets, Use Cases, deployments, model registry, batch predictions, credentials and data connectivity, custom models and execution environments, GenAI playgrounds/LLM blueprints/chats/vector databases, tags, comments and (admin-gated) user management.
 
 | | |
 | --- | --- |

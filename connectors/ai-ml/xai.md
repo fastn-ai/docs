@@ -1,5 +1,5 @@
 ---
-description: "xAI Grok API — OpenAI-compatible and Anthropic-compatible inference (chat completions, messages, responses, deferred completions, legacy completions), image…"
+description: "Connect xAI (Grok) to your product with fastn."
 hidden: true
 ---
 

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/pub-chem.png" alt="PubChem logo">
 
-PubChem (NCBI) is the world's largest free chemistry database. Look up compounds by name, SMILES, InChIKey or CID; get properties, synonyms, descriptions, cross-references and 3D conformers; search by similarity, substructure or formula; read substances, bioassays, genes, proteins, taxonomy, pathways and cell lines; and get data sheet sections and annotations. No API key needed.
+Look up compounds by name, SMILES, InChIKey or CID; get properties, synonyms, descriptions, cross-references and 3D conformers; search by similarity, substructure or formula; read substances, bioassays, genes, proteins, taxonomy, pathways and cell lines; and get data sheet sections and annotations. No API key needed.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/enrich-layer.png" alt="Enrich Layer logo">
 
-Enrich Layer is a B2B data enrichment API with structured data on people, companies, jobs and schools. This connector covers the full v2 REST surface (person, company, school and job profiles; person, company and role lookups; employee, student, follower and customer listings and counts; person and company search; work, personal and reverse email and phone lookups; disposable email checks; profile pictures and credit balance), plus the v3 person enrichment, company logo and company autocomplete endpoints.
+This connector covers the full v2 REST surface (person, company, school and job profiles; person, company and role lookups; employee, student, follower and customer listings and counts; person and company search; work, personal and reverse email and phone lookups; disposable email checks; profile pictures and credit balance), plus the v3 person enrichment, company logo and company autocomplete endpoints.
 
 | | |
 | --- | --- |

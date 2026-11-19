@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/webcrawlerapi.png" alt="WebCrawlerAPI logo">
 
-WebCrawlerAPI crawls whole websites and scrapes single pages into Markdown, cleaned text, HTML or link lists. This connector covers the complete WebCrawlerAPI: asynchronous crawl jobs with status, discovered URLs, combined Markdown output and cancellation; synchronous and asynchronous single-page scraping with optional LLM prompts; scheduled change-monitoring feeds with RSS and JSON Feed output, pause, resume, force-run, webhook resend and deletion; AI agent runs that extract structured data; and organization balance and usage statistics.
+This connector covers the complete WebCrawlerAPI: asynchronous crawl jobs with status, discovered URLs, combined Markdown output and cancellation; synchronous and asynchronous single-page scraping with optional LLM prompts; scheduled change-monitoring feeds with RSS and JSON Feed output, pause, resume, force-run, webhook resend and deletion; AI agent runs that extract structured data; and organization balance and usage statistics.
 
 | | |
 | --- | --- |

@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/azure-data-lake.png" alt="Azure Data Lake logo">
 
-Azure Data Lake Storage Gen2 DataLake REST API. Manage filesystems, directories, files, and ACLs over the DFS endpoint (https://{account}.dfs.core.windows.net). Authenticates with Microsoft Entra ID (Azure AD) OAuth2 bearer tokens.
+Manage filesystems, directories, files, and ACLs over the DFS endpoint (https://{account}.dfs.core.windows.net). Authenticates with Microsoft Entra ID (Azure AD) OAuth2 bearer tokens.
 
 | | |
 | --- | --- |

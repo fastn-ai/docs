@@ -5,7 +5,7 @@ hidden: true
 
 # Cisco Webex
 
-Cisco Webex video conferencing, messaging, and collaboration platform. Wraps the Webex REST API (webexapis.com/v1) for meetings, messages, rooms/spaces, people, memberships, teams, and webhooks.
+Wraps the Webex REST API (webexapis.com/v1) for meetings, messages, rooms/spaces, people, memberships, teams, and webhooks.
 
 | | |
 | --- | --- |

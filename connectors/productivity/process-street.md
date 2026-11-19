@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/process-street.png" alt="Process Street logo">
 
-Process Street is a workflow and process management platform for recurring checklists, approvals and standard operating procedures. This connector covers the Process Street Public API v1.1: workflows and their revisions, tasks, widgets, form fields and conditional logic; workflow runs with assignees, approvals and form field values; pages and page revisions; data sets and their records; folders, permissions, scheduled workflows, one-off tasks, My Work, attachments, comments, users and webhooks.
+This connector covers the Process Street Public API v1.1: workflows and their revisions, tasks, widgets, form fields and conditional logic; workflow runs with assignees, approvals and form field values; pages and page revisions; data sets and their records; folders, permissions, scheduled workflows, one-off tasks, My Work, attachments, comments, users and webhooks.
 
 | | |
 | --- | --- |

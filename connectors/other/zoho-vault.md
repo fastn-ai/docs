@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/zoho-vault.png" alt="Zoho Vault logo">
 
-Zoho Vault is Zoho's workforce password management service. This connector wraps the Zoho Vault REST API v1 (vault.zoho.com/api/rest/json/v1): secrets (passwords), secret sharing with users, user groups and third parties, folders (chambers) and folder sharing, users and user groups, and the password, folder, user, misc and activity audit trails. Note that Vault secret payloads are client-side encrypted; secretdata, securenote, customcolumn and file values are exchanged as encrypted strings.
+This connector wraps the Zoho Vault REST API v1 (vault.zoho.com/api/rest/json/v1): secrets (passwords), secret sharing with users, user groups and third parties, folders (chambers) and folder sharing, users and user groups, and the password, folder, user, misc and activity audit trails. Note that Vault secret payloads are client-side encrypted; secretdata, securenote, customcolumn and file values are exchanged as encrypted strings.
 
 | | |
 | --- | --- |

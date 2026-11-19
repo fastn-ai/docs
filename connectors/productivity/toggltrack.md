@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/toggltrack.png" alt="Toggl Track logo">
 
-Toggl Track time tracking API. Manage time entries (including the running entry, start/stop and bulk edits), projects, project users and groups, tasks, clients, tags, workspaces, workspace users and memberships, organizations, groups, invitations, goals, alerts, favorites, timesheets and saved reports, and run detailed, summary, weekly and comparative reports through the Reports API v3, plus webhook subscription management.
+Manage time entries (including the running entry, start/stop and bulk edits), projects, project users and groups, tasks, clients, tags, workspaces, workspace users and memberships, organizations, groups, invitations, goals, alerts, favorites, timesheets and saved reports, and run detailed, summary, weekly and comparative reports through the Reports API v3, plus webhook subscription management.
 
 | | |
 | --- | --- |

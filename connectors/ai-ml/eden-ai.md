@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/eden-ai.png" alt="Eden AI logo">
 
-Eden AI is a unified AI gateway giving access to 500+ models from 50+ providers through one API. This connector covers the full Eden AI v3 API: OpenAI-compatible chat completions, responses, embeddings, moderation, Anthropic messages, image generation and editing, audio transcription and speech, video generation, the Universal AI expert-model endpoint (text analysis, web scraping and search, OCR and document parsing, image analysis, translation, text-to-speech) with typed actions per feature, asynchronous jobs, collections, file uploads, model and feature catalogs, and the organization Management API (API keys, management keys, members, groups and usage).
+This connector covers the full Eden AI v3 API: OpenAI-compatible chat completions, responses, embeddings, moderation, Anthropic messages, image generation and editing, audio transcription and speech, video generation, the Universal AI expert-model endpoint (text analysis, web scraping and search, OCR and document parsing, image analysis, translation, text-to-speech) with typed actions per feature, asynchronous jobs, collections, file uploads, model and feature catalogs, and the organization Management API (API keys, management keys, members, groups and usage).
 
 | | |
 | --- | --- |

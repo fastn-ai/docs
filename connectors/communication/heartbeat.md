@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/heartbeat.png" alt="Heartbeat logo">
 
-Heartbeat is a community platform for creators, coaches and course businesses. This connector covers the full Heartbeat v0 REST API: users and pending users, roles, groups and group memberships, invitations, channels, channel categories and voice channels, threads, comments and chat channel messages, direct chats and direct messages, events with attendance and recurring instances, courses, lessons, documents, videos, notification counts and webhooks.
+This connector covers the full Heartbeat v0 REST API: users and pending users, roles, groups and group memberships, invitations, channels, channel categories and voice channels, threads, comments and chat channel messages, direct chats and direct messages, events with attendance and recurring instances, courses, lessons, documents, videos, notification counts and webhooks.
 
 | | |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Freshservice IT service management — tickets, problems, changes, releases, assets, service catalog, knowledge base, and administration via the Freshservice…"
+description: "Connect Freshservice to your product with fastn."
 hidden: true
 ---
 

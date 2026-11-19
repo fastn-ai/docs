@@ -7,7 +7,7 @@ hidden: true
 
 <img src="../../.gitbook/assets/connectors/lg/moneybird.png" alt="Moneybird logo">
 
-Moneybird is a Dutch online accounting and invoicing platform. This connector covers the Moneybird API v2: contacts and contact people, sales invoices, recurring sales invoices, estimates, external sales invoices, purchase invoices, receipts, general and general journal documents, subscriptions and subscription templates, products, projects, time entries, task lists and tasks, ledger accounts, tax rates, financial accounts, mutations and statements, payments, purchase transactions, identities, custom fields, document styles, users, verifications, reports, downloads, the customer contact portal, workflows and webhooks.
+This connector covers the Moneybird API v2: contacts and contact people, sales invoices, recurring sales invoices, estimates, external sales invoices, purchase invoices, receipts, general and general journal documents, subscriptions and subscription templates, products, projects, time entries, task lists and tasks, ledger accounts, tax rates, financial accounts, mutations and statements, payments, purchase transactions, identities, custom fields, document styles, users, verifications, reports, downloads, the customer contact portal, workflows and webhooks.
 
 | | |
 | --- | --- |
