@@ -19,7 +19,7 @@ Close CRM connector. Full REST coverage of the Close API (https://api.close.com/
 ## Setup guide
 This guide shows where to find the Close API key that fastn uses to connect to a Close account, and how to enter it in fastn.
 
-For Close's own setup documentation, see [Close docs](https://developer.close.com/api/overview/api-key-authentication).
+For Close's own setup steps, see [Authentication with API keys](https://developer.close.com/api/overview/api-key-authentication) in the Close documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

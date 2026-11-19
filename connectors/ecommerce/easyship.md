@@ -20,7 +20,7 @@ Easyship global shipping API (v2024-09). Rate shopping across 550+ courier servi
 
 This guide shows where to find the Easyship API access token that fastn needs to connect to an Easyship account.
 
-For Easyship's own setup documentation, see [Easyship docs](https://developers.easyship.com/reference/authentication).
+For Easyship's own setup steps, see [Authentication](https://developers.easyship.com/reference/authentication) in the Easyship documentation.
 
 ### Before you start
 

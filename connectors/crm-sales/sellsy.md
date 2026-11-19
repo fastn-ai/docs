@@ -19,7 +19,7 @@ Sellsy CRM, invoicing and sales platform via the Sellsy API v2. Manage companies
 ## Setup guide
 This guide shows you how to create a Sellsy Personal API access and where to enter its client ID and client secret in fastn.
 
-For Sellsy's own setup documentation, see [Sellsy docs](https://help.sellsy.com/fr/articles/5876615-types-d-acces-api).
+For Sellsy's own setup steps, see [Types d'accès API (API access types)](https://help.sellsy.com/fr/articles/5876615-types-d-acces-api) in the Sellsy documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

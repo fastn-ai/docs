@@ -19,7 +19,7 @@ Salesforce CRM connector for managing Accounts, Contacts, Leads, Opportunities, 
 ## Setup guide
 This guide shows how to create your own Salesforce external client app for OAuth and add it to fastn, so your customers sign in to Salesforce through your app.
 
-For Salesforce's own setup documentation, see [Salesforce docs](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-eca.html).
+For Salesforce's own setup steps, see [Create an External Client App in Your Org](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-eca.html) in the Salesforce documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

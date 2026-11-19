@@ -19,7 +19,7 @@ Explorium AgentSource is a B2B data platform for matching, searching and enrichi
 ## Setup guide
 This guide shows where to find the Explorium API key that fastn needs to connect to Explorium AgentSource.
 
-For Explorium's own setup documentation, see [Explorium docs](https://developers.explorium.ai/reference/setup/getting_your_api_key).
+For Explorium's own setup steps, see [Getting your API key](https://developers.explorium.ai/reference/setup/getting_your_api_key) in the Explorium documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

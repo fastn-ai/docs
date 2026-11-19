@@ -19,7 +19,7 @@ HelpDesk.com is a ticketing and customer support platform from Text (LiveChat). 
 ## Setup guide
 This guide shows you where to find the account ID and personal access token that fastn uses to connect to HelpDesk.com, and how to start workflows from HelpDesk.com ticket events.
 
-For HelpDesk.com's own setup documentation, see [HelpDesk.com docs](https://platform.text.com/docs/authorization/personal-access-tokens).
+For HelpDesk.com's own setup steps, see [Personal access tokens](https://platform.text.com/docs/authorization/personal-access-tokens) in the HelpDesk.com documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

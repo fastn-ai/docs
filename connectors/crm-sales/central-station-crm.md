@@ -20,7 +20,7 @@ CentralStationCRM is a German customer relationship management platform for smal
 
 This guide shows where to find the account name and API key that fastn needs to connect to CentralStationCRM, and how to start workflows from CentralStationCRM events.
 
-For CentralStationCRM's own setup documentation, see [CentralStationCRM docs](https://centralstationcrm.com/api-basics).
+For CentralStationCRM's own setup steps, see [API Basics](https://centralstationcrm.com/api-basics) in the CentralStationCRM documentation.
 
 ### Before you start
 

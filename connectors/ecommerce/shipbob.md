@@ -19,7 +19,7 @@ ShipBob fulfillment (3PL) connector covering the full 2026-01 API surface: order
 ## Setup guide
 This guide covers how to connect ShipBob to fastn, either with your own ShipBob OAuth app or with a Personal Access Token, and how to start workflows from ShipBob events.
 
-For ShipBob's own setup documentation, see [ShipBob docs](https://developer.shipbob.com/auth).
+For ShipBob's own setup steps, see [Authentication](https://developer.shipbob.com/auth) in the ShipBob documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

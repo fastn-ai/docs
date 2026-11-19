@@ -19,7 +19,7 @@ Bonjoro is a personal video messaging platform for sales follow-up, onboarding a
 ## Setup guide
 This guide covers getting a Bonjoro API access token and using it to connect Bonjoro to fastn.
 
-For Bonjoro's own setup documentation, see [Bonjoro docs](https://vimily.github.io/bonjoro-api-docs/).
+For Bonjoro's own setup steps, see [Bonjoro API V2](https://vimily.github.io/bonjoro-api-docs/) in the Bonjoro documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

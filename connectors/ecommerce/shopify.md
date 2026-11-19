@@ -19,7 +19,7 @@ Shopify Admin REST API connector for managing orders, products, customers, inven
 ## Setup guide
 This guide shows how to connect Shopify to fastn, either with your own Shopify app on OAuth or with an Admin API access token that a merchant enters, and how to start workflows from Shopify events.
 
-For Shopify's own setup documentation, see [Shopify docs](https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard).
+For Shopify's own setup steps, see [Create apps using the Dev Dashboard](https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard) in the Shopify documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

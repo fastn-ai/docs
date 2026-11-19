@@ -20,7 +20,7 @@ Act! CRM (Act! Premium Cloud and Act! Premium Web) via the Act! Web API. Manage 
 
 This guide shows where to find the four values fastn needs to connect Act! CRM: your Act! user name, password, database name and Web API base URL.
 
-For Act! CRM's own setup documentation, see [Act! CRM docs](https://apimta.act.com/act.web.api).
+For Act! CRM's own setup steps, see [Act! Web API - Authorization](https://apimta.act.com/act.web.api) in the Act! CRM documentation.
 
 ### Before you start
 

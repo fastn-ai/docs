@@ -17,7 +17,7 @@ Conga Advantage Platform (formerly Apttus Intelligent Cloud) — Conga's standal
 ## Setup guide
 This guide shows how your customers get Conga Advantage Platform API credentials and enter them in fastn. Conga uses a client ID and client secret from its client-credentials flow, so no redirect URL is needed.
 
-For Conga Advantage Platform's own setup documentation, see [Conga Advantage Platform docs](https://documentation.conga.com/en/advantage-platform-administration/current/conga-advantage-platform-for-administrators/organization--platform-setup/organization-management/conga-api-connections).
+For Conga Advantage Platform's own setup steps, see [Conga API Connections](https://documentation.conga.com/en/advantage-platform-administration/current/conga-advantage-platform-for-administrators/organization--platform-setup/organization-management/conga-api-connections) in the Conga Advantage Platform documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

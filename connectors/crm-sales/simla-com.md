@@ -20,7 +20,7 @@ Simla.com (RetailCRM) is an omnichannel CRM for e-commerce and retail businesses
 
 This guide shows where to find the subdomain and API key that fastn needs to connect to Simla.com.
 
-For Simla.com's own setup documentation, see [Simla.com docs](https://docs.simla.com/users/integration/api-editing/).
+For Simla.com's own setup steps, see [Creating and editing an API key](https://docs.simla.com/users/integration/api-editing/) in the Simla.com documentation.
 
 ### Before you start
 

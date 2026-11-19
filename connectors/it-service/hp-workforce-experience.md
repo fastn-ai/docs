@@ -19,7 +19,7 @@ HP Workforce Experience Platform (WXP) — device analytics, health scores, warr
 ## Setup guide
 This guide shows you how to request your own OAuth app on the HP Developers portal and add it to fastn, and which regional URLs your customers enter when they connect HP Workforce Experience.
 
-For HP Workforce Experience's own setup documentation, see [HP Workforce Experience docs](https://developers.hp.com/hp-proactive-management/authenticating-oauth-20).
+For HP Workforce Experience's own setup steps, see [Authenticating with OAuth 2.0](https://developers.hp.com/hp-proactive-management/authenticating-oauth-20) in the HP Workforce Experience documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

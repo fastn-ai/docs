@@ -19,7 +19,7 @@ hidden: true
 ## Setup guide
 This guide shows which 1CRM details fastn needs to connect to your 1CRM instance, and where to find them.
 
-For 1CRM's own setup documentation, see [1CRM docs](https://1crm.com/docs/1CRM_9.0_Developer_Guide.pdf).
+For 1CRM's own setup steps, see [1CRM Developer Guide: Authentication](https://1crm.com/docs/1CRM_9.0_Developer_Guide.pdf) in the 1CRM documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

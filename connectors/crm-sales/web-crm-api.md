@@ -20,7 +20,7 @@ webCRM via the webCRM REST API (api.webcrm.com). Manage organisations, persons, 
 
 This guide shows how to create the webCRM API token that fastn needs to connect webCRM, and how to start workflows from webCRM events.
 
-For webCRM's own setup documentation, see [webCRM docs](https://api.webcrm.com/documentation).
+For webCRM's own setup steps, see [webCRM REST API](https://webcrm.com/customer-service/api/rest-api/) in the webCRM documentation.
 
 ### Before you start
 

@@ -19,7 +19,7 @@ Microsoft Intune device management via the Microsoft Graph v1.0 API (https://gra
 ## Setup guide
 This guide shows how to register your own Microsoft Entra app for Microsoft Intune and add it to fastn, so your customers sign in to Intune through your app.
 
-For Microsoft Intune's own setup documentation, see [Microsoft Intune docs](https://learn.microsoft.com/en-us/graph/auth-register-app-v2).
+For Microsoft Intune's own setup steps, see [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/graph/auth-register-app-v2) in the Microsoft Intune documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

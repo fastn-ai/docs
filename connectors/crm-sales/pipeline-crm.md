@@ -19,7 +19,7 @@ Pipeline CRM (formerly PipelineDeals) is a sales CRM for small and mid-sized tea
 ## Setup guide
 This guide shows where to find the two Pipeline CRM keys fastn asks for, the user API key and the App Key, and how to start workflows from Pipeline CRM events.
 
-For Pipeline CRM's own setup documentation, see [Pipeline CRM docs](https://app.pipelinecrm.com/llms/getting-started.md).
+For Pipeline CRM's own setup steps, see [Get Started with the Pipeline CRM API](https://help.pipelinecrm.com/article/pipelinedeals-api) in the Pipeline CRM documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

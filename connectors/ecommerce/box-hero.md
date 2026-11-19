@@ -19,7 +19,7 @@ BoxHero inventory management. Manage items, item attributes, locations, bundles,
 ## Setup guide
 This guide shows you how to get a BoxHero API token and connect BoxHero to fastn. BoxHero uses a bearer token, so you don't need to create an OAuth app.
 
-For BoxHero's own setup documentation, see [BoxHero docs](https://www.boxhero.io/docs/developers/api/authentication).
+For BoxHero's own setup steps, see [Authentication](https://www.boxhero.io/docs/developers/api/authentication) in the BoxHero documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

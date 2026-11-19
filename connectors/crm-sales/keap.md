@@ -19,7 +19,7 @@ Keap (formerly Infusionsoft) CRM, sales, and marketing automation platform. Cont
 ## Setup guide
 This guide shows how to get a Keap API key and use it to connect Keap to fastn.
 
-For Keap's own setup documentation, see [Keap docs](https://developer.infusionsoft.com/pat-and-sak/).
+For Keap's own setup steps, see [Getting started](https://developer.keap.com/docs/getting-started) in the Keap documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

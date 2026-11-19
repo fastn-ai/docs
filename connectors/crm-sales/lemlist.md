@@ -19,7 +19,7 @@ Lemlist sales engagement and cold outreach automation. Manage campaigns, leads, 
 ## Setup guide
 This guide shows you where to find the Lemlist API key that fastn uses to connect to a Lemlist account.
 
-For Lemlist's own setup documentation, see [Lemlist docs](https://developer.lemlist.com/api-reference/getting-started/authentication).
+For Lemlist's own setup steps, see [Authentication](https://developer.lemlist.com/api-reference/getting-started/authentication) in the Lemlist documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.

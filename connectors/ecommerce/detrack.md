@@ -19,7 +19,7 @@ Detrack delivery management and real-time vehicle tracking (API v2). Create, upd
 ## Setup guide
 This guide covers where to find the Detrack API key that fastn uses to connect, and how to start workflows from Detrack job status events.
 
-For Detrack's own setup documentation, see [Detrack docs](https://help.detrack.com/en/articles/6553302-how-to-generate-your-api-key).
+For Detrack's own setup steps, see [How to generate your API key](https://help.detrack.com/en/articles/6553302-how-to-generate-your-api-key) in the Detrack documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
