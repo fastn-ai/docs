@@ -19,7 +19,7 @@ ServiceNow ITSM platform connector. Full CRUD over the Table API (incident, prob
 ## Setup guide
 This guide explains which ServiceNow values fastn asks for when you connect, and where to find each one in your ServiceNow instance.
 
-For ServiceNow's own setup steps, see [Create an endpoint for clients to access the instance](https://www.servicenow.com/docs/r/platform-security/authentication/t_CreateEndpointforExternalClients.html) in the ServiceNow documentation.
+For ServiceNow's own setup steps, see [REST API](https://www.servicenow.com/docs/r/api-reference/rest-apis/c_RESTAPI.html) in the ServiceNow documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
