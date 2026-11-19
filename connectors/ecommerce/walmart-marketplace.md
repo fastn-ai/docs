@@ -19,6 +19,8 @@ Walmart Marketplace (US) Seller API — environment-switchable (production or sa
 ## Setup guide
 This guide covers how to register your own Walmart Marketplace app for OAuth 2.0 and add it to fastn, and where a seller finds the values for the Custom connection method.
 
+For Walmart Marketplace's own setup documentation, see [Walmart Marketplace docs](https://developer.walmart.com/us-marketplace/docs/app-registration-and-approval-process-for-publishing-to-app-store).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - To use your own OAuth app, you need access to Walmart's Solution Provider Center. Walmart reviews each app before it can be published, which includes a kickoff call and a demo of your integration.

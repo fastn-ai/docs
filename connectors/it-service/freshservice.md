@@ -20,6 +20,8 @@ Freshservice IT service management — tickets, problems, changes, releases, ass
 
 This guide shows where to find the two values fastn needs to connect to Freshservice: your account's subdomain and your personal API key.
 
+For Freshservice's own setup documentation, see [Freshservice docs](https://support.freshservice.com/en/support/solutions/articles/50000000306-where-do-i-find-my-api-key-).
+
 ### Before you start
 
 - You need the Owner, Admin or Developer role in fastn to configure the connector.

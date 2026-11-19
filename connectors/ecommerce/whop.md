@@ -20,6 +20,8 @@ Whop is a commerce platform for selling digital products, memberships and commun
 
 This guide shows you where to find the Whop API key and base URL that fastn asks for, and how to use Whop events in your workflows.
 
+For Whop's own setup documentation, see [Whop docs](https://docs.whop.com/developer/guides/auth-scoping).
+
 ### Before you start
 
 - You need the Owner, Admin or Developer role in fastn.

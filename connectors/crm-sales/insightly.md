@@ -19,6 +19,8 @@ Insightly CRM REST API v3.1 — contacts, organisations, leads, opportunities, p
 ## Setup guide
 This guide shows you where to find the Insightly API key and regional pod that fastn uses to connect to an Insightly account.
 
+For Insightly's own setup documentation, see [Insightly docs](https://support.insight.ly/en-US/Knowledge/article/9549/Find_your_API_key_and_url/).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need an Insightly user account with API access. All users have API access by default, but an Insightly administrator can turn it off for a user.

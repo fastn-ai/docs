@@ -19,6 +19,8 @@ Little Green Light donor-management CRM for nonprofits. Wraps the LGL REST API v
 ## Setup guide
 This guide shows where your customers find the Little Green Light (LGL) API key that fastn uses to connect to their LGL account, and how they enter it.
 
+For Little Green Light's own setup documentation, see [Little Green Light docs](https://api.littlegreenlight.com/api-docs/static.html).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - Your customer needs a subscribing Little Green Light account and must sign in as an account administrator. Only administrators can create API keys.

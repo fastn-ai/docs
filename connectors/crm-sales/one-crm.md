@@ -19,6 +19,8 @@ hidden: true
 ## Setup guide
 This guide shows which 1CRM details fastn needs to connect to your 1CRM instance, and where to find them.
 
+For 1CRM's own setup documentation, see [1CRM docs](https://1crm.com/docs/1CRM_9.0_Developer_Guide.pdf).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a 1CRM user account on a Pro or Enterprise edition. 1CRM's REST API is not available on the Startup or Startup+ editions and returns 403 Forbidden there.

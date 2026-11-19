@@ -19,6 +19,8 @@ Agiled is an all-in-one business management platform for agencies and service bu
 ## Setup guide
 This guide shows you where to find the Agiled API token that fastn needs to connect an Agiled workspace, and how to start workflows from Agiled events.
 
+For Agiled's own setup documentation, see [Agiled docs](https://docs.agiled.app/docs/guides/api-key).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need an Agiled account with access to the workspace you want to connect, and access to **Settings > API** in that workspace.

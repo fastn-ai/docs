@@ -19,6 +19,8 @@ Webling association/club management (members, finances, documents, articles, let
 ## Setup guide
 This guide shows how to find the Webling database address and API key that fastn needs to connect to a Webling account.
 
+For Webling's own setup documentation, see [Webling docs](https://demo.webling.ch/api).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn to set up the connector.
 - You need a Webling account with administrator access, because only administrators can create API keys in Webling.

@@ -19,6 +19,8 @@ Google Merchant Center connector for the Content API for Shopping v2.1 — manag
 ## Setup guide
 This guide shows how to create your own Google OAuth client for the Content API for Shopping and add it to fastn, so your customers sign in to Google Merchant Center through your app.
 
+For Google Merchant Center's own setup documentation, see [Google Merchant Center docs](https://developers.google.com/workspace/guides/create-credentials).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a Google Cloud project where you can enable APIs and create OAuth clients.

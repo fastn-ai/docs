@@ -19,6 +19,8 @@ Administer a Google Workspace account with the Admin SDK. Provision and manage u
 ## Setup guide
 This guide shows you how to create your own Google OAuth client for the Google Workspace Admin SDK and add it to fastn, so your customers sign in to Google through your app.
 
+For Google Workspace Admin SDK's own setup documentation, see [Google Workspace Admin SDK docs](https://developers.google.com/workspace/guides/create-credentials).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a Google Cloud project where you can create OAuth clients.

@@ -19,6 +19,8 @@ ServiceNow ITSM platform connector. Full CRUD over the Table API (incident, prob
 ## Setup guide
 This guide explains which ServiceNow values fastn asks for when you connect, and where to find each one in your ServiceNow instance.
 
+For ServiceNow's own setup documentation, see [ServiceNow docs](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0793963).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a ServiceNow instance and a user account on it that signs in with a ServiceNow user name and password. A free personal developer instance works for testing.

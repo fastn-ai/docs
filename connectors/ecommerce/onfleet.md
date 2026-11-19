@@ -19,6 +19,8 @@ Onfleet is a last-mile delivery management platform. This connector covers the O
 ## Setup guide
 This guide shows you how to get an Onfleet API key and connect Onfleet to fastn. Onfleet uses HTTP Basic authentication with the API key as the username, so you don't need to create an OAuth app.
 
+For Onfleet's own setup documentation, see [Onfleet docs](https://docs.onfleet.com/reference/authentication).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need an Onfleet account with administrator access. Only Onfleet administrators can create API keys.

@@ -19,6 +19,8 @@ BigCommerce REST Management API — Catalog (products, categories, brands, varia
 ## Setup guide
 This guide shows you how to create a BigCommerce store-level API account and connect your store to fastn with its access token and store hash.
 
+For BigCommerce's own setup documentation, see [BigCommerce docs](https://docs.bigcommerce.com/docs/start/authentication/api-accounts).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a BigCommerce store and a control panel login that is allowed to create store-level API accounts. BigCommerce's own walkthroughs use the store owner account.

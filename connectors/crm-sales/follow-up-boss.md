@@ -19,6 +19,8 @@ Follow Up Boss is a real-estate CRM (Zillow Group) for lead follow-up, agent ass
 ## Setup guide
 This guide shows where to find the Follow Up Boss API key and registered system values that fastn needs, and how to start workflows from Follow Up Boss events.
 
+For Follow Up Boss's own setup documentation, see [Follow Up Boss docs](https://docs.followupboss.com/reference/authentication).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn to set up the connector.
 - You need a Follow Up Boss user account. The API key carries the same access as its user: agents see only their own contacts, admins see all people but cannot manage webhooks, and owners can do everything.

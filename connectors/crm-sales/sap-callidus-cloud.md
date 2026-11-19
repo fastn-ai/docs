@@ -19,6 +19,8 @@ SAP SuccessFactors Incentive Management - the incentive compensation product for
 ## Setup guide
 This guide explains which values fastn needs to connect SAP Incentive Management (formerly SAP Commissions and CallidusCloud Commissions), and where to find them. The connector offers two ways to sign in: an API user with a password, or a JWT access token.
 
+For SAP Incentive Management (CallidusCloud Commissions)'s own setup documentation, see [SAP Incentive Management (CallidusCloud Commissions) docs](https://help.sap.com/docs/SAP_COMMISSIONS).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need access to an SAP Incentive Management tenant. SAP provisions these per customer, so there is no self-service sign-up.

@@ -19,6 +19,8 @@ BMC Helix ITSM service management platform. Manage incidents, changes, problems,
 ## Setup guide
 This guide covers the values you need to connect BMC Helix ITSM to fastn and how to start workflows from BMC Helix ITSM records.
 
+For BMC Helix ITSM's own setup documentation, see [BMC Helix ITSM docs](https://docs.helixops.ai/bin/Service-Management/Innovation-Suite/BMC-Helix-Innovation-Suite/is262/Developing-an-API-program/Integrating-AR-System-forms-with-a-third-party-application-by-using-the-REST-API/Access-and-authentication-for-the-REST-API/).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a BMC Helix ITSM user account. BMC's REST API acts on behalf of an AR System user, which can be a local user or an LDAP user.

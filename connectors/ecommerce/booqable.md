@@ -20,6 +20,8 @@ Booqable is rental management software for equipment and inventory rental busine
 
 This guide shows you where to find the Booqable company slug and access token that fastn asks for, and how to use Booqable events in your workflows.
 
+For Booqable's own setup documentation, see [Booqable docs](https://help.booqable.com/en/articles/4325485-how-to-create-an-api-key).
+
 ### Before you start
 
 - You need the Owner, Admin or Developer role in fastn.

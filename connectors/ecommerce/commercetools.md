@@ -20,6 +20,8 @@ commercetools composable commerce HTTP API — manage products, categories, cust
 
 This guide shows how to create a commercetools API client and add it to fastn, so your customers' connections use credentials from your own commercetools project.
 
+For commercetools's own setup documentation, see [commercetools docs](https://docs.commercetools.com/getting-started/create-api-client).
+
 ### Before you start
 
 - You need the Owner, Admin or Developer role in fastn.

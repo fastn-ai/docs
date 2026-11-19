@@ -19,6 +19,8 @@ Coevera (formerly Pipeliner CRM), a sales CRM by Pipelinersales Inc. This connec
 ## Setup guide
 This guide shows you where to find the API credentials fastn needs to connect to Pipeliner CRM (Coevera), and where to enter them.
 
+For Pipeliner CRM (Coevera)'s own setup documentation, see [Pipeliner CRM (Coevera) docs](https://developers.coevera.com/get-started/authentication/).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a Coevera account with administrator access to the team space you want to connect, because only an administrator can create an API application.

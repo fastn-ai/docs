@@ -19,6 +19,8 @@ Microsoft Entra ID (formerly Azure Active Directory) identity and directory mana
 ## Setup guide
 This guide shows you how to register your own Microsoft Entra ID app for Microsoft Graph and add it to fastn, so your customers sign in to Microsoft Entra ID through your app.
 
+For Microsoft Entra ID's own setup documentation, see [Microsoft Entra ID docs](https://learn.microsoft.com/en-us/graph/auth-register-app-v2).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a Microsoft Entra ID tenant and an account that can register apps there. Microsoft lists Cloud Application Administrator as the least privileged role for registering an app for Microsoft Graph.

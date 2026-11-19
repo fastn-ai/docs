@@ -19,6 +19,8 @@ ShipEngine (ShipStation API) multi-carrier shipping API. Manage carriers, valida
 ## Setup guide
 This guide shows you where to find the ShipEngine API key that fastn asks for and how to connect ShipEngine in fastn.
 
+For ShipEngine's own setup documentation, see [ShipEngine docs](https://docs.shipstation.com/apis/shipengine/docs/guides/auth).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn to set up the connector.
 - You need a ShipEngine account that can sign in to the ShipEngine dashboard at dashboard.shipengine.com.

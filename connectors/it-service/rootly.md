@@ -19,6 +19,8 @@ Rootly incident management and on-call platform. Covers incidents, alerts, sever
 ## Setup guide
 This guide covers how to create your own Rootly OAuth application and add it to fastn, and how to get a Rootly API key for the API key connection method.
 
+For Rootly's own setup documentation, see [Rootly docs](https://docs.rootly.com/api-reference/oauth2).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - To create an OAuth application, you need to be a team admin in Rootly.

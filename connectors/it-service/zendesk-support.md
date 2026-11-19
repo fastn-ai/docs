@@ -19,6 +19,8 @@ Zendesk Support customer service and ticketing platform. Manage tickets and comm
 ## Setup guide
 This guide shows how to connect Zendesk Support to fastn, either with your own Zendesk OAuth client or with an API token that each customer enters.
 
+For Zendesk Support's own setup documentation, see [Zendesk Support docs](https://support.zendesk.com/hc/en-us/articles/4408845965210-Using-OAuth-authentication-with-your-application).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a Zendesk account where you are an admin. Zendesk only lets admins create OAuth clients and API tokens.

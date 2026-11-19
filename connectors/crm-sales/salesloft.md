@@ -19,6 +19,8 @@ Salesloft Revenue Orchestration Platform (sales engagement). Wraps the Salesloft
 ## Setup guide
 This guide shows how to create your own Salesloft OAuth application and add it to fastn, so your customers sign in to Salesloft through your app.
 
+For Salesloft's own setup documentation, see [Salesloft docs](https://developers.salesloft.com/docs/platform/api-basics/oauth-authentication/).
+
 ### Before you start
 - You need the Owner, Admin or Developer role in fastn.
 - You need a Salesloft account that can sign in to the Salesloft Account site at accounts.salesloft.com.
