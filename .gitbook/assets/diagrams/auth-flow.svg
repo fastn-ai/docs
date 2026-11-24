@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 418" width="680" height="418" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">How authentication works</title>
+<desc id="d">Your backend mints a short-lived embed token for one customer with your API key. Only the token reaches your frontend, which opens the widget with it. The customer signs in to their app in the widget, and fastn stores the credential encrypted for that customer.</desc>
+<style>
+:root{--bg:#ffffff;--fg:#17171f;--mut:#5e5e72;--line:#c9c9d6;
+--team:#5b4cf0;--teamc:#efedff;--cust:#0e8f7e;--custc:#e3f6f3;--fastn:#3c3c52;--fastnc:#ececf3}
+@media (prefers-color-scheme:dark){:root{--bg:#121218;--fg:#ececf2;--mut:#9d9db0;--line:#3a3a48;
+--team:#9a8fff;--teamc:#26224a;--cust:#45d1bd;--custc:#12312d;--fastn:#c7c7d8;--fastnc:#24242f}}
+.bg{fill:var(--bg)}
+.h{fill:var(--fg);font-size:14px;font-weight:600}
+.s{fill:var(--mut);font-size:12px}
+.l{fill:var(--fg);font-size:12px}
+.team{fill:var(--teamc);stroke:var(--team);stroke-width:1}
+.cust{fill:var(--custc);stroke:var(--cust);stroke-width:1}
+.fastn{fill:var(--fastnc);stroke:var(--fastn);stroke-width:1}
+.frame{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.life{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.arr{stroke:var(--mut);stroke-width:1.4;fill:none}
+.ah{fill:var(--mut)}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="bg" width="680" height="418" rx="12"/>
+<g text-anchor="middle" dominant-baseline="central">
+<rect class="team" x="30.0" y="20" width="140.0" height="44" rx="8"/>
+<text class="h" x="100.0" y="42.0">Your backend</text>
+<line class="life" x1="100.0" y1="64" x2="100.0" y2="398"/>
+<rect class="fastn" x="190.0" y="20" width="140.0" height="44" rx="8"/>
+<text class="h" x="260.0" y="42.0">fastn</text>
+<line class="life" x1="260.0" y1="64" x2="260.0" y2="398"/>
+<rect class="team" x="350.0" y="20" width="140.0" height="44" rx="8"/>
+<text class="h" x="420.0" y="42.0">Your frontend</text>
+<line class="life" x1="420.0" y1="64" x2="420.0" y2="398"/>
+<rect class="cust" x="510.0" y="20" width="140.0" height="44" rx="8"/>
+<text class="h" x="580.0" y="42.0">Customer's app</text>
+<line class="life" x1="580.0" y1="64" x2="580.0" y2="398"/>
+<text class="l" x="180.0" y="96">1. Mint token</text>
+<line class="arr" x1="104.0" y1="112" x2="254.0" y2="112" marker-end="url(#a)"/>
+<text class="l" x="180.0" y="148">2. Embed token, 8 h</text>
+<line class="arr" x1="256.0" y1="164" x2="106.0" y2="164" marker-end="url(#a)"/>
+<text class="l" x="260.0" y="200">3. Token only</text>
+<line class="arr" x1="104.0" y1="216" x2="414.0" y2="216" marker-end="url(#a)"/>
+<text class="l" x="340.0" y="252">4. Open widget</text>
+<line class="arr" x1="416.0" y1="268" x2="266.0" y2="268" marker-end="url(#a)"/>
+<text class="l" x="420.0" y="304">5. Customer signs in</text>
+<line class="arr" x1="264.0" y1="320" x2="574.0" y2="320" marker-end="url(#a)"/>
+<text class="l" x="420.0" y="356">6. Credential saved</text>
+<line class="arr" x1="576.0" y1="372" x2="266.0" y2="372" marker-end="url(#a)"/>
+</g>
+</svg>

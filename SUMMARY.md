@@ -4,7 +4,7 @@
 
 * [Welcome to fastn](README.md)
 * [Quickstart: your first integration](getting-started/quickstart.md)
-* [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md)
+* [Authentication](tutorials/developer/authentication-and-api-keys.md)
 * [Core concepts](getting-started/concepts.md)
   * [Platform tour](getting-started/platform-tour.md)
 * [Set up fastn](getting-started/onboarding/README.md)
@@ -14,6 +14,13 @@
   * [Step 4: Customers connect and customize](getting-started/onboarding/customers-connect-and-customize.md)
   * [Set up your organization](tutorials/saas-admin/setting-up-your-organization.md)
 
+## How-to guides
+
+* [How-to guides](how-to/README.md)
+  * [Read and write a customer's CRM records](how-to/crm-records.md)
+  * [Run an integration for one customer](how-to/run-for-a-customer.md)
+  * [Start an integration from your product's events](how-to/events-from-your-product.md)
+
 ## Build
 
 * [Overview](build/README.md)
@@ -22,7 +29,7 @@
   * [Approval mode](build/agent/approval-mode.md)
   * [Worked example](build/agent/worked-example.md)
 * [Build from your AI tool](build/building-from-your-ai-agent.md)
-  * [Connect your AI tool (MCP)](build/mcp-gateway/README.md)
+  * [fastn MCP server](build/mcp-gateway/README.md)
     * [Claude](build/mcp-gateway/claude.md)
     * [Claude Code](build/mcp-gateway/claude-code.md)
     * [ChatGPT](build/mcp-gateway/chatgpt.md)
@@ -166,6 +173,7 @@
   * [Errors, retries and options](reference/sdk/errors-and-options.md)
   * [Workspace tools](reference/sdk/workspace-tools.md)
   * [Any other operation](reference/sdk/any-operation.md)
+* [Code samples](reference/code-samples.md)
 * [Workflow runtime API](reference/workflow-runtime.md)
 * [Errors and failure states](reference/errors.md)
 * [FAQs](reference/faqs.md)

@@ -15,15 +15,34 @@ layout:
 
 # Embedding Quickstart
 
-This walks through the shortest path to a working embed: generate a token from your backend, render the iframe, and see a connection. It assumes you have a published widget and an API key.
+In this quickstart you mint an embed token from your backend, render the widget in your page, and connect an app as a customer would. It takes about ten minutes, and you can do all of it from a fresh account.
+
+<figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
 
 ### Before you start
 
-You'll need:
+Set up three things in the dashboard. Each takes a minute.
 
-* **An API key** - From **Embed → API keys and MCP**. Use a `fsk_test_` key while developing. See [Authentication & API Keys](authentication-and-api-keys.md). This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
-* **The customer identifier** - fastn's id for the customer the widget is for, or the external reference you registered that customer under (`orgId` on `POST /api/v1/orgs`). See [Finding Your Org Identifier](finding-your-org-identifier.md).
-* **A backend** - Any server environment where you can make an HTTP request with a secret API key.
+1. **An API key.** In **Embed → API keys and MCP → API keys**, click **Create key** and choose **Test** mode. Copy the key: it is shown once. This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
+2. **A test customer.** In **Operate → Customers**, click **Create customer**, and note its id or the External ID you gave it. See [Managing customers](../saas-admin/managing-customers.md).
+3. **A widget with one integration.** In **Embed → Widget**, click **Add** under INTEGRATIONS and pick any integration. See [Build your widget](../saas-admin/building-your-widget.md).
+
+You also need a backend: any server where you can make an HTTP request with a secret API key.
+
+### Step 0: Check the token with curl
+
+Before writing code, mint a token from your terminal. Replace the key and the customer id:
+
+```bash
+curl -X POST https://api.fastn.dev/api/v1/embed/token \
+  -H "Authorization: Bearer fsk_test_<your-key>" \
+  -H "X-fastn-Test-Mode: true" \
+  -H "x-org-id: <your-customer-id>" \
+  -H "Content-Type: application/json" \
+  -d '{"userId": "test-user"}'
+```
+
+**You should see:** a JSON response with the token at `data.token`. A `403` with *Test API keys require X-fastn-Test-Mode: true header* means the test-mode header is missing.
 
 ### Step 1: Generate a token from your backend
 
@@ -91,7 +110,7 @@ document.getElementById("integrations").appendChild(iframe);
 
 ### Step 4: Verify
 
-Load the page. The fastn widget should render inside your application. You should see the integrations you added to the widget, each with a Connect button.
+**You should see:** the fastn widget inside your page, listing the integration you added with a **Connect** button.
 
 Click Connect on one, complete the authentication popup, and confirm the app shows as Connected.
 
