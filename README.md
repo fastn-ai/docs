@@ -25,7 +25,7 @@ fastn has four parts:
 
 | Part            | What it does                                                                                      | Who uses it          |
 | --------------- | ------------------------------------------------------------------------------------------------- | -------------------- |
-| **Dashboard** | Where the operator sets up and runs integrations, in four areas: **Build** (describe an integration to the fastn agent, or work with connectors, workflows and triggers directly), **Embed** (design the widget and get its embed code and API keys), **Operate** (Health, customers, connections and every run) and **Settings** (people, roles, billing, secrets) | The operator: the person on your team who sets up and runs integrations |
+| **Dashboard** | The web app at app.fastn.dev where the operator builds integrations, sets up the widget and watches every run | The operator: the person on your team who sets up and runs integrations |
 | **Widget**      | The panel inside your product where a customer connects apps and turns integrations on            | Your customers       |
 | **API and SDK** | Register customers, mint embed tokens, run workflows and read data from your backend              | Your developers      |
 | **fastn Connect** | The MCP gateway for integrations, built for AI agents. One URL gives an agent the connected apps as tools. Every call is checked against your policies, logged, and runs with the right customer's or person's account | Your AI agents, including agents that act for your customers |
