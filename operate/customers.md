@@ -17,7 +17,7 @@ A customer is one company using your product: a container for their connections,
 | Column          | Notes                                                          |
 | --------------- | ---------------------------------------------------------------- |
 | **Customer**    | Display name, with the customer's slug underneath.              |
-| **Connections** | How many systems they have authorized.                          |
+| **Connections** | How many apps they have authorized.                          |
 | **Status**      | Active, Pending admin activation, Suspended, Pending review or Blocked. |
 
 A count sits above the table, and **Search customers** narrows it. **View connections** on each row opens that customer's panel on this page: their settings, connections and installations.

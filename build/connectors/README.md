@@ -44,7 +44,7 @@ Find the app in the [catalog](the-catalogue.md). If it is not there, [request it
 {% step %}
 #### Connect
 
-**Connect** opens a dialog that asks for the credential the default auth method needs (an API key, or an OAuth sign-in). The result is a connection. See [Connect a system](connect-a-system.md).
+**Connect** opens a dialog that asks for the credential the default auth method needs (an API key, or an OAuth sign-in). The result is a connection. See [Connect an app](connect-an-app.md).
 {% endstep %}
 
 {% step %}
@@ -74,4 +74,4 @@ If the connector has a webhook config, fastn runs its subscription code for each
 * [Webhook config](webhook-config.md): how fastn subscribes to an app's events.
 * [Editing, publishing and deleting](editing-and-deleting.md): what you can change on a connector your workspace owns.
 * [Importing and exporting](importing-and-exporting.md): moving connectors and actions in and out as JSON.
-* [Connect a system](connect-a-system.md): making a connection, step by step.
+* [Connect an app](connect-an-app.md): making a connection, step by step.

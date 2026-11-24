@@ -31,7 +31,7 @@ Four cards sit under **START FROM AN EXAMPLE**, each pairing a goal with the con
 | **Keep a sheet current** | Append new HubSpot contacts to a Google Sheet as they arrive |
 | **Give an AI agent scoped access** | Read-only Jira for one customer, nothing beyond that |
 
-They are written in the shape a good first message takes (a system, a trigger, and the specific thing that moves) and are worth reading before you write your own.
+They are written in the shape a good first message takes (an app, a trigger, and the specific thing that moves) and are worth reading before you write your own.
 
 {% hint style="info" %}
 Do not confuse these with the suggestion chips on **Home**, which are seeded per workspace and differ between them. The four cards above are the agent screen's own examples.
@@ -43,7 +43,7 @@ The agent handles ambiguity by asking, but you get a better first draft by being
 
 | Say                         | Example                                                     |
 | --------------------------- | ------------------------------------------------------------ |
-| **The systems**             | "HubSpot", "Cin7 Core", not "our CRM"                        |
+| **The apps**             | "HubSpot", "Cin7 Core", not "our CRM"                        |
 | **What starts it**          | "when a deal is closed-won", "every night at 2am"            |
 | **What moves**              | "the company name, the deal amount, and the line items"      |
 | **The rules**               | "skip anything under $500", "only the EU warehouse"          |
@@ -52,13 +52,13 @@ The composer carries **Attach a file**, the message box (*Write a message…*) a
 
 ### What it does
 
-The product's own summary is the reliable one: fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs. In practice that means working out which systems are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat (inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes) and then writing the workflow code and opening it in the editor.
+The product's own summary is the reliable one: fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs. In practice that means working out which apps are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat (inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes) and then writing the workflow code and opening it in the editor.
 
 Generated test cases land on the editor's **Test cases** tab, in groups the agent names for the integration, each row badged **Live** or **Mock**.
 
 ### The integration plan
 
-Before building, the agent writes a plan: a markdown document that opens in a side panel. The agent writes it for each integration, so its name and sections vary, but it typically sets out the trigger, the actions and connectors involved, and how fields map between the systems. Its header has a download icon (**Download document**), so the plan can be reviewed or circulated before anything is created.
+Before building, the agent writes a plan: a markdown document that opens in a side panel. The agent writes it for each integration, so its name and sections vary, but it typically sets out the trigger, the actions and connectors involved, and how fields map between the apps. Its header has a download icon (**Download document**), so the plan can be reviewed or circulated before anything is created.
 
 Read it. It is the cheapest place to catch a wrong assumption: correcting a mapping here costs a sentence; correcting it after the workflow is generated costs a rebuild.
 

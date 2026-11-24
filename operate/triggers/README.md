@@ -1,5 +1,5 @@
 ---
-description: Firing the triggers you have built, from your own systems.
+description: Firing the triggers you have built, from your own apps.
 ---
 
 # Triggers

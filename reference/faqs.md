@@ -40,7 +40,15 @@ If an identifier says tenant, it means one of your customers.
 
 <summary>What is the difference between a connector and a connection?</summary>
 
-A **connector** is the definition of a system: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
+A **connector** is the definition of an app: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
+
+</details>
+
+<details>
+
+<summary>What is a sandbox connection?</summary>
+
+A connection for building and testing. It is free within your plan's allowance. The intended sandbox period is one week, but access is not automatically revoked when it ends. It never counts as a [customer connection](../manage/billing.md).
 
 </details>
 
@@ -66,7 +74,7 @@ The precise meaning of each status is not documented here; treat *Expired* and *
 
 <summary>What is a platform-wide connector for?</summary>
 
-Systems your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
+Apps your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
 
 </details>
 
@@ -92,7 +100,7 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 | **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
 | **Long**     | Returns 202, runs in the background.             | **Up to 36 hours** | 30s - 36h |
 
-Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
+Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
 
 </details>
 
@@ -202,6 +210,38 @@ Secret if exposure would be an incident (tokens, passwords, keys). Config if you
 
 <details>
 
+<summary>What are AI credits used for?</summary>
+
+Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Launch includes 50 a month, Scale 1,000, Enterprise has no cap. See [Credits](../manage/billing.md#credits).
+
+</details>
+
+<details>
+
+<summary>Does building in my own AI tool use AI credits?</summary>
+
+No. Your AI tool's model does the work and fastn only runs the actions, so it is how you keep building when credits run low.
+
+</details>
+
+<details>
+
+<summary>What happens when I run out of AI credits?</summary>
+
+Workflows without AI steps keep running, and runs that reach an AI step wait or fail until credits are back. The fastn agent and error diagnosis pause until the month resets or you upgrade. Your own AI tool still works.
+
+</details>
+
+<details>
+
+<summary>Do onboarding credits expire?</summary>
+
+No. Finishing onboarding adds 50 credits on top of your monthly ones. They are used after your monthly credits and never expire.
+
+</details>
+
+<details>
+
 <summary>What happens when I hit a plan limit?</summary>
 
 New work stops rather than being charged for, and nothing already running is interrupted. Check [Billing](../manage/billing.md): a sync that stops because of a quota looks exactly like a broken sync until you do.
@@ -226,9 +266,9 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 <summary>Why does the same connector appear twice in the catalog?</summary>
 
-Because two entries exist for one system: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
+Because two entries exist for one app: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
 
-The practical consequence: the connector count is a count of *entries*, not of distinct systems, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
+The practical consequence: the connector count is a count of *entries*, not of distinct apps, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
 
 </details>
 

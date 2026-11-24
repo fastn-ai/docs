@@ -78,7 +78,7 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 
 | Tab                   | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
-| **Connectors**        | Every system your customers can authorize. **Create connector** opens one menu: from scratch, Build with AI, build from Claude or any MCP client, or import from a file. **Request connector** asks fastn to add one. |
+| **Connectors**        | Every app your customers can authorize. **Create connector** opens one menu: from scratch, Build with AI, build from Claude or any MCP client, or import from a file. **Request connector** asks fastn to add one. |
 | **Workflows**         | The JavaScript that runs, with editor, tests, executions and API details.                        |
 | **Triggers**          | Webhooks, schedules and app events that start workflows.                                         |
 | **Unified APIs**      | One canonical endpoint per business entity, backed by whichever providers you connect.           |
@@ -121,7 +121,7 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | **Events**       | What arrived, from where, and was it delivered?                |
 | **Executions**   | Which runs happened, and how did they end?                      |
 | **Sync reports** | What actually changed, record by record?                        |
-| **Traces**       | Which connected systems did a run call, and how slow were they? Opened from a run, not the tab strip. |
+| **Traces**       | Which connected apps did a run call, and how slow were they? Opened from a run, not the tab strip. |
 
 ### Settings
 

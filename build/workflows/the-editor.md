@@ -34,7 +34,7 @@ Full ranges and defaults are in the Configuration panel reference below.
 {% step %}
 #### Write the function
 
-The middle column is one `<slug>.js` file exporting `export default async function (ctx)`. You reach the request through `ctx.input` and `ctx.headers`, and connected systems through `fastn.*`, for example `fastn.connector.<slug>.<action>()`. A new workflow is scaffolded for you:
+The middle column is one `<slug>.js` file exporting `export default async function (ctx)`. You reach the request through `ctx.input` and `ctx.headers`, and connected apps through `fastn.*`, for example `fastn.connector.<slug>.<action>()`. A new workflow is scaffolded for you:
 
 ```javascript
 export default async function(ctx) {
