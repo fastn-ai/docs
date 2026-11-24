@@ -25,7 +25,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | Component | What it is |
 | --- | --- |
 | Customer | One of your customers. It must be Active before its integrations run |
-| Connection | A customer's signed-in account on one system |
+| Connection | A customer's signed-in account on one app |
 | Configuration | A customer's own direction, field mappings and filters, copied from the integration's configuration template |
 | AI assistant | The customer describes a change in plain words and reviews it before saving |
 | Insights and alerts | Runs, records, errors and connection health, with failure and threshold alerts |
@@ -34,7 +34,7 @@ This step is for what your customers do: connect their own accounts in the widge
 
 | Way | How the customer connects |
 | --- | --- |
-| In the widget | **Connect**, sign in on the system's own page, then **Authorize** |
+| In the widget | **Connect**, sign in on the app's own page, then **Authorize** |
 | Shareable link | Opens a link you send |
 | Created for them | Your backend creates the connection with credentials you already hold ([step 3](embed-the-widget.md)) |
 | A second account | **Add another connection**, where the integration allows it |
@@ -54,12 +54,12 @@ This step is for what your customers do: connect their own accounts in the widge
 * **Activate customers.** A customer in **Pending admin activation** can't run integrations until an admin activates it.
 * **First-time setup.** A configurable integration needs its first configuration made once by your team (Operator role or higher). Until then, the customer's **Configure** shows "No configuration found for this widget".
 * **Changes apply on the next run.** Records already synced keep their old values.
-* **The AI assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add a system you don't offer, re-sync old records, change the schedule or add custom logic.
+* **The AI assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add an app you don't offer, re-sync old records, change the schedule or add custom logic.
 * **Limits.** Customers share your plan's limits. Change one customer's in **Settings** → **Billing** → **Customize customer limits**.
 
 ### In the onboarding
 
-You open your product where the widget is embedded, as a test customer, then connect and customize the integration from [step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on a live connection. Finishing the step earns 10 AI credits.
+You open your product where the widget is embedded, as a test customer, then connect and customize the integration from [step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on a live connection. Finishing the step earns its share of the 50 onboarding AI credits.
 
 ### Related docs
 

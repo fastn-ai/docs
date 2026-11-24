@@ -1,5 +1,5 @@
 ---
-description: A trigger that fires when something changes in a connected system.
+description: A trigger that fires when something changes in a connected app.
 layout:
   width: default
   title:
@@ -16,7 +16,7 @@ layout:
 
 # App event triggers
 
-An app event trigger fires when something changes in a connected system: a HubSpot deal moves, a GitHub PR merges.
+An app event trigger fires when something changes in a connected app: a HubSpot deal moves, a GitHub PR merges.
 
 **Columns:** `Name`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.
 

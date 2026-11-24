@@ -22,4 +22,4 @@ These tutorials are for the person responsible for fastn inside your company, of
 
 [**Managing Customers**](managing-customers.md): create customers under Operate → Customers, scope API calls per customer, and monitor customer-level activity.
 
-[**Roles & Permissions Setup** ](roles-and-permissions-setup.md) - Assign system roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage team access.
+[**Roles & Permissions Setup** ](roles-and-permissions-setup.md) - Assign built-in roles (Owner, Admin, Developer, Operator, Viewer, End User), create custom roles, and manage team access.

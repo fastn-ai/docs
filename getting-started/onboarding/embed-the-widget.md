@@ -45,7 +45,7 @@ This step is for putting your integrations inside your product. The widget is th
 | Use case | How you set it up |
 | --- | --- |
 | Settings page in a B2B product | The iframe on your settings page, with Organization level Scope so one admin connects for the whole customer |
-| Each user connects their own systems | User level Scope |
+| Each user connects their own apps | User level Scope |
 | Plans and tiers | Register each customer with a tier and connection limit; show some integrations to specific customers only |
 | Integrations that start from your product | Your backend calls a webhook trigger on each event (part 5 below) |
 
@@ -118,7 +118,7 @@ See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md)
 
 ### In the onboarding
 
-Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns 10 AI credits.
+Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns its share of the 50 onboarding AI credits.
 
 ### Related docs
 
