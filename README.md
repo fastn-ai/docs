@@ -46,18 +46,26 @@ fastn has four parts:
 
 <figure><img src=".gitbook/assets/overview/fastn-build-once-use-everywhere.svg" alt="Build once, extend per customer, use everywhere. You build an integration once in the fastn dashboard, from your AI tool through the fastn MCP server, or with the fastn agent. Each customer uses it as is or extends it, and their changes stay with that customer. Your product uses it through the widget and API, and your AI agents through the MCP gateway. fastn runs and maintains it against each customer's apps."><figcaption><p>Build once, extend per customer, use everywhere</p></figcaption></figure>
 
-* **Build once.** Build an integration in the dashboard, from your AI tool through the fastn MCP server, or by describing it to the fastn agent.
-* **Extend per customer.** Each customer uses the integration as is, or extends it in the widget: add fields, filter records, change direction, or ask the widget assistant. A customer's changes apply only to that customer.
-* **Use everywhere.** The same integration runs in your product, through the widget and the API, and for your AI agents, through fastn Connect, the MCP gateway.
-* **Runs and maintains.** fastn runs every call with that customer's setup, logs it and sends alerts. When an app's API changes, the maintainer agent proposes a fix, and it applies to every customer once you accept it.
+* **Build once.** Build an integration in the dashboard, from your AI tool through the fastn MCP server, or by describing it to the fastn agent. *Benefit:* one build serves every customer, so adding a customer adds no integration work.
+* **Extend per customer.** Each customer uses the integration as is, or extends it in the widget: add fields, filter records, change direction, or ask the widget assistant. A customer's changes apply only to that customer. *Benefit:* customers handle their own variations without a fork or a support ticket, and no change can break another customer.
+* **Use everywhere.** The same integration runs in your product, through the widget and the API, and for your AI agents, through fastn Connect, the MCP gateway. *Benefit:* your product and your agents share one set of integrations, credentials and logs instead of two.
+* **Runs and maintains.** fastn runs every call with that customer's setup, logs it and sends alerts. When an app's API changes, the maintainer agent proposes a fix, and it applies to every customer once you accept it. *Benefit:* you don't run integration infrastructure, and an API change is one review instead of one fix per customer.
 
 ## What fastn runs for you
 
-* **Sign-in and credentials.** The widget runs each app's own OAuth or API-key sign-in. fastn stores every credential encrypted, scoped to one customer, and renews OAuth tokens.
-* **Customer isolation.** Your backend mints a short-lived embed token for one customer, and the widget, API calls and runs see only that customer's connections and data.
-* **Running workflows.** Workflows run on a webhook, a schedule or an app event, synchronously for up to 25 seconds or in the background for up to 36 hours. fastn handles each app's rate limits. A retry policy with backoff retries transient failures, and deliveries that run out of retries wait in a dead-letter queue until someone acts.
-* **Monitoring.** Every event, run and call to an app is logged per customer. Alerts go out by email, Slack, Microsoft Teams or webhook when a run fails or a threshold is crossed.
-* **API changes.** fastn's maintainer agent watches the apps you use. When a vendor changes something your workflows depend on, it proposes a patch in **Health → Pending updates**. Nothing is applied until you accept it.
+Each row is something fastn does that you would otherwise build and run yourself.
+
+| Differentiator | What fastn does | What it saves you |
+| --- | --- | --- |
+| **Sign-in and credentials** | The widget runs each app's own OAuth or API-key sign-in. fastn stores every credential encrypted, scoped to one customer, and renews OAuth tokens. | Building an OAuth flow per app, a credential store, and token refresh. |
+| **Customer isolation** | Your backend mints a short-lived embed token for one customer. The widget, API calls and runs see only that customer's connections and data. | Building tenant separation into every integration, and the risk of one customer's data reaching another. |
+| **Connector catalog** | Over 1,000 connectors, each with its actions, auth methods and webhooks, plus unified APIs that read and write the same object (a contact, a ticket) across every app of a kind. | Writing and maintaining a client for each app's API, and a separate code path per CRM or helpdesk. |
+| **Building from a description** | Describe an integration to the fastn agent (Scale or Enterprise) or to your own AI tool through the fastn MCP server (every plan), and it picks the connectors, writes the workflow and tests it. | Hand-writing each workflow, and the developer time each new integration request takes. |
+| **Per-customer customization** | Customers change field mappings, filters and sync direction in the widget, or ask the widget assistant. Changes apply only to that customer. | Custom builds and forks for individual customers. |
+| **Running workflows** | Workflows run on a webhook, a schedule or an app event, synchronously for up to 25 seconds or in the background for long jobs. fastn handles each app's rate limits, retries transient failures with backoff, and holds deliveries that run out of retries in a dead-letter queue. | Queues, workers, schedulers, retry logic and rate-limit handling. |
+| **Monitoring** | Every event, run and call to an app is logged per customer. **Health** shows what needs attention, and alerts go out by email, Slack, Microsoft Teams or webhook. | Building logging, dashboards and alerting per integration, and finding which customer a failure hit. |
+| **API changes** | The maintainer agent watches the apps you use. When a vendor changes something your workflows depend on, it proposes a patch in **Health → Pending updates**. Nothing is applied until you accept it. | Tracking every vendor's changelog, and fixing breakages after customers report them. |
+| **AI agent access** | fastn Connect, the MCP gateway, gives your AI agents one customer's connected apps as tools. Every call is checked against your policies, logged, and runs with that customer's account. | A separate auth and tool layer for your agents, and agents holding raw customer credentials. |
 
 ## Learn more
 
