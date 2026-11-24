@@ -21,6 +21,20 @@ layout:
 
 fastn lets your product offer integrations with the apps your customers use, such as HubSpot, Salesforce, and Slack. You build each integration once. Each customer then connects their own accounts from inside your product, and fastn runs the integration for them, scoped to that customer.
 
+## Get started
+
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td><strong>Build your first integration</strong></td><td>For your team. Describe an integration to an AI agent, then test it. No code needed.</td><td><a href="getting-started/quickstart.md">getting-started/quickstart.md</a></td></tr>
+<tr><td><strong>Embed fastn in your product</strong></td><td>For developers. Mint a token from your backend and render the widget.</td><td><a href="tutorials/developer/embedding-quickstart.md">tutorials/developer/embedding-quickstart.md</a></td></tr>
+<tr><td><strong>Using integrations in a product?</strong></td><td>For customers of a product that uses fastn. Connect your apps and manage your integrations.</td><td><a href="tutorials/end-user/README.md">tutorials/end-user/README.md</a></td></tr>
+</tbody></table>
+
+{% hint style="success" %}
+**Try it in five minutes, on the free plan.** Sign up at [app.fastn.dev](https://app.fastn.dev), click **Connect your AI tool** in the top bar, and ask Claude or Cursor: *"Using fastn, when a new contact is created in HubSpot, post their name and email in our #sales Slack channel."* Then run its test, fully mocked, so no real data is touched. Step by step: [Quickstart](getting-started/quickstart.md).
+{% endhint %}
+
+## The parts
+
 fastn has four parts:
 
 | Part            | What it does                                                                                      | Who uses it          |
@@ -29,18 +43,6 @@ fastn has four parts:
 | **Widget**      | The panel inside your product where a customer connects apps and turns integrations on            | Your customers       |
 | **API and SDK** | Register customers, mint embed tokens, run workflows, and read data from your backend              | Your developers      |
 | **fastn Connect** | The MCP gateway for integrations, built for AI agents. One URL gives an agent the connected apps as tools. Every call is checked against your policies, logged, and runs with the right customer's or person's account | Your AI agents, including agents that act for your customers |
-
-{% hint style="success" %}
-**Try it in five minutes, on the free plan.** Sign up at [app.fastn.dev](https://app.fastn.dev), click **Connect your AI tool** in the top bar, and ask Claude or Cursor: *"Using fastn, when a new contact is created in HubSpot, post their name and email in our #sales Slack channel."* Then run its test, fully mocked, so no real data is touched. Step by step: [Quickstart](getting-started/quickstart.md).
-{% endhint %}
-
-## Get started
-
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
-<tr><td><strong>Build your first integration</strong></td><td>For your team. Describe an integration to an AI agent, then test it. No code needed.</td><td><a href="getting-started/quickstart.md">getting-started/quickstart.md</a></td></tr>
-<tr><td><strong>Embed fastn in your product</strong></td><td>For developers. Mint a token from your backend and render the widget.</td><td><a href="tutorials/developer/embedding-quickstart.md">tutorials/developer/embedding-quickstart.md</a></td></tr>
-<tr><td><strong>Using integrations in a product?</strong></td><td>For customers of a product that uses fastn. Connect your apps and manage your integrations.</td><td><a href="tutorials/end-user/README.md">tutorials/end-user/README.md</a></td></tr>
-</tbody></table>
 
 ## How it works
 
