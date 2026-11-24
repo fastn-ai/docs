@@ -36,7 +36,7 @@ This pass covered all 158 pages in SUMMARY.md, checked against fastn-platform ma
 * **"operator":** in prose the person is now **your team**. **Operator** only names the built-in role. The diagrams were regenerated to match.
 * **Demo data:** a test customer, Northwind Traders, is in the personal demo org. 9 more screenshots cover the customer list, create and detail pages, the new-workflow editor, Health Alerts and Pending updates, Logs Executions and Sync reports, and Settings General. Personal names and emails were replaced on screen before capture.
 * **ChatGPT, Lovable, GitHub Copilot:** checked against OpenAI's and Lovable's current docs. The docs pages were right and the dashboard's setup copy is out of date. A GitHub Copilot page was added.
-* **REST reference:** regenerated from v1.15.1: 470 operations (was 404) and a new Sync jobs page. The allowlist change is in platform PR fastn-ai-team/fastn-platform#3881, open and not merged.
+* **REST reference:** regenerated from v1.15.1: 470 operations (was 404) and a new Sync jobs page. The generator allowlist change (`scripts/docs-rest-reference`) belongs to the platform team; until it lands there, the next regeneration drops the new operations.
 * **Architecture:** a new [Architecture](../getting-started/architecture.md) page with a diagram of every part, four request flows and a "Which MCP do I need?" table. The same box is on the fastn MCP server and Core concepts pages.
 
 ## Still open (outside the docs)
