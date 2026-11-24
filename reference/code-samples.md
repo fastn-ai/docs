@@ -18,6 +18,17 @@ layout:
 
 Find a sample by what you want to do. Each link opens the page that holds the code and explains it.
 
+### Runnable examples
+
+Complete projects you can clone and run, in [fastn-ai/docs/examples](https://github.com/fastn-ai/docs/tree/main/examples):
+
+| Example | What it does | Language |
+| --- | --- | --- |
+| [embed-node](https://github.com/fastn-ai/docs/tree/main/examples/embed-node) | A web page with the widget, and the backend route that mints its embed token | Node.js (Express) |
+| [token-server-python](https://github.com/fastn-ai/docs/tree/main/examples/token-server-python) | A backend route that mints an embed token with signed identity headers | Python (Flask) |
+| [crm-contacts-node](https://github.com/fastn-ai/docs/tree/main/examples/crm-contacts-node) | Finds or creates a contact in a customer's CRM, then adds a note | Node.js, `@fastn-ai/sdk` |
+| [webhook-event-node](https://github.com/fastn-ai/docs/tree/main/examples/webhook-event-node) | Sends your product's event to a webhook trigger, signed for one customer | Node.js |
+
 ### Embed the widget
 
 | Task | Languages | Sample |

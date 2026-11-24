@@ -75,6 +75,8 @@ If a delivery fails, fastn retries it with the trigger's **Max attempts** and **
 
 ### Related
 
+* [webhook-event-node](https://github.com/fastn-ai/docs/tree/main/examples/webhook-event-node): this guide as a runnable project
+
 * [Using a webhook trigger](../operate/triggers/using-a-webhook-trigger.md): every header and response
 * [Webhook triggers](../build/triggers/webhooks.md): routes, retries, deduplication and execution mode
 * [Run an integration for one customer](run-for-a-customer.md): call a workflow directly and read its result

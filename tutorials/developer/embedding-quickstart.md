@@ -19,6 +19,8 @@ In this quickstart you mint an embed token from your backend, render the widget 
 
 <figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
 
+The finished code is in the runnable [embed-node](https://github.com/fastn-ai/docs/tree/main/examples/embed-node) example, with a Python backend in [token-server-python](https://github.com/fastn-ai/docs/tree/main/examples/token-server-python).
+
 ### Before you start
 
 Set up three things in the dashboard. Each takes a minute.

@@ -1,0 +1,16 @@
+{
+  "name": "fastn-embed-node-example",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A web page with the fastn widget, and the backend route that mints its embed token.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
