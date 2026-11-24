@@ -19,7 +19,7 @@ layout:
 In Lovable, fastn is a chat connector. It gives Lovable's chat your fastn tools while you build. It attaches to you and your chats, not to the app you publish.
 
 {% hint style="info" %}
-**Before you start:** custom MCP servers work on every Lovable plan. On Business and Enterprise, a workspace admin can turn them off; if **MCP server** is greyed out, ask your admin.
+**Before you start:** custom MCP servers work on every Lovable plan. On Business and Enterprise, a workspace admin can turn them off; if **MCP server** is grayed out, ask your admin. The connection is yours alone: each teammate adds fastn for themselves.
 {% endhint %}
 
 ## Add fastn
@@ -34,7 +34,7 @@ In Lovable, open **Connectors** in the sidebar. Click **Add custom** at the top 
 {% step %}
 #### Enter fastn's URL
 
-Enter **Server name** `fastn` and **Server URL** `https://mcp.fastn.dev/fastn-workspace`, leave **Authentication** on **OAuth (default)**, and click **Add & authorize**.
+Enter **Server name** `fastn` and **Server URL** `https://mcp.fastn.dev/fastn-workspace`. If your workspace shows a **Connection** list, keep **Direct connection**. Leave **Authentication** on **OAuth (default)**, with no client ID or secret, and click **Add & authorize**.
 
 <figure><img src="../../.gitbook/assets/mcp-lovable-add-server.webp" alt="Lovable's Add MCP server form with Server name fastn, Server URL https://mcp.fastn.dev/fastn-workspace, Authentication set to OAuth (default) with Bearer token or API key and No authentication as the other options, and Cancel and Add and authorize buttons"><figcaption>Keep <strong>OAuth</strong>. fastn signs you in, so no token is needed.</figcaption></figure>
 {% endstep %}

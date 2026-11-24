@@ -30,6 +30,8 @@ under the heading **No alerts yet**, with **Turn on failure alerts** and **Custo
 
 **Turn on failure alerts** creates the two alerts most teams need in one click: an email the moment a run fails, and a daily reliability check. If you do nothing else on this page, do that.
 
+<figure><img src="../.gitbook/assets/screens/health-alerts.webp" alt="Health, Alerts with none yet: a New alert button, Notification channels Slack, Microsoft Teams and Gmail with Connect buttons, and No alerts yet with Turn on failure alerts and Custom alert"><figcaption><strong>Operate → Health → Alerts</strong> before any alert exists.</figcaption></figure>
+
 ### Custom alerts
 
 **New alert** (or **Custom alert** on the empty state), opens the editor.

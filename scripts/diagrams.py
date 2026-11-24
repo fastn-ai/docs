@@ -127,7 +127,7 @@ sequence(
 body = text(180, 40, "Build integrations", "h") + text(500, 40, "Use integrations from AI agents", "h")
 body += '<rect class="frame" x="30" y="60" width="300" height="300" rx="12"/>\n'
 body += '<rect class="frame" x="350" y="60" width="300" height="300" rx="12"/>\n'
-body += box(45, 80, 130, 56, "team", "Operator", "Claude, Cursor")
+body += box(45, 80, 130, 56, "team", "Your team", "Claude, Cursor")
 body += box(185, 80, 130, 56, "cust", "Your customer", "If you allow it")
 body += arrow(110, 136, 110, 176) + arrow(250, 136, 250, 176)
 body += box(45, 180, 270, 56, "fastn", "fastn MCP server", "mcp.fastn.dev/fastn-workspace")
@@ -140,7 +140,7 @@ body += arrow(500, 236, 500, 276)
 body += box(365, 280, 270, 56, "cust", "Each customer's apps", "With their own sign-in")
 svg(
     "mcp-server-and-gateway.svg", 384, "The fastn MCP server and the fastn MCP gateway",
-    "Two MCP addresses for two jobs. The operator, and your customers if you allow it, connect an AI tool to the "
+    "Two MCP addresses for two jobs. Your team, and your customers if you allow it, connect an AI tool to the "
     "fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn "
     "Connect, to use each customer's apps as tools with that customer's own sign-in.", body,
 )
@@ -149,15 +149,61 @@ svg(
 body = ""
 xs = [20, 185, 350, 515]
 items = [("fastn", "App changes API", "Vendor update"), ("fastn", "Maintainer agent", "Proposes a patch"),
-         ("team", "Operator reviews", "Pending updates"), ("cust", "Fix goes live", "Every customer")]
+         ("team", "Your team reviews", "Pending updates"), ("cust", "Fix goes live", "Every customer")]
 for x, (kind, t, s) in zip(xs, items):
     body += box(x, 30, 145, 56, kind, t, s)
 for x in xs[:-1]:
     body += arrow(x + 145, 58, x + 162, 58)
 svg(
     "maintainer-flow.svg", 116, "How an API change gets fixed",
-    "An app changes its API. The maintainer agent detects it and proposes a patch. The operator reviews it in "
+    "An app changes its API. The maintainer agent detects it and proposes a patch. Your team reviews it in "
     "Health, Pending updates. Once accepted, the fix applies to every customer's setup.", body,
 )
 
 print("Wrote", ", ".join(sorted(p.name for p in OUT.glob("*.svg"))))
+
+
+# ---------------------------------------------------------------- architecture
+C1, C2, C3, BW = 125, 340, 555, 190
+def col(c):
+    return c - BW / 2
+body = ""
+body += box(col(C1), 20, BW, 50, "team", "Your team", "dashboard or your AI tool")
+body += box(col(C2), 20, BW, 50, "team", "Your backend", "holds the API key")
+body += box(col(C3), 20, BW, 50, "cust", "Your customer", "inside your product")
+body += f'<rect class="frame" x="20" y="92" width="{W - 40}" height="262" rx="10"/>\n'
+body += text(52, 106, "fastn", "h")
+rows = [
+    (118, [("fastn MCP server", "build and manage"), ("API and SDK", "embed tokens, runs"), ("Widget", "connect and configure")]),
+    (200, [("Integrations", "connectors, workflows"), ("Workflow runtime", "one customer per run"), ("Connections", "each customer's sign-ins")]),
+    (282, [("Maintainer agent", "watches apps, proposes fixes"), ("fastn Connect", "MCP gateway for AI agents"), ("Health and Logs", "every run and event")]),
+]
+for y, cells in rows:
+    for c, (t, s) in zip((C1, C2, C3), cells):
+        body += box(col(c), y, BW, 54, "fastn", t, s)
+for c in (C1, C2, C3):
+    body += arrow(c, 70, c, 116)
+body += arrow(C1, 172, C1, 198)
+body += arrow(C2, 172, C2, 198)
+body += arrow(C3, 172, C3, 198)
+body += arrow(C1 + BW / 2, 227, col(C2) - 2, 227)
+body += arrow(col(C3), 227, C2 + BW / 2 + 2, 227)
+body += arrow(C1, 280, C1, 256)
+body += arrow(C2, 280, C2, 256)
+body += box(col(C1), 392, BW, 50, "team", "Your AI agents", "act for one customer")
+body += box(col(C3), 392, BW, 50, "cust", "Customers' apps", "CRM, Slack, Jira, 1,000+ more")
+body += arrow(C1 + 40, 392, C2 - 30, 338)
+body += arrow(C3, 356, C3, 390)
+body += text(C3 - 140, 374, "calls with that customer's sign-in", "s")
+svg(
+    "architecture.svg", 462,
+    "fastn architecture",
+    "Your team builds in the fastn dashboard or from an AI tool through the fastn MCP server. Your backend holds the "
+    "API key and uses the API and SDK to get embed tokens and start runs. Your customer uses the widget inside your "
+    "product to connect apps, which stores a connection per customer. Integrations hold connectors, workflows and "
+    "triggers; the workflow runtime runs them once per customer with that customer's connections. The maintainer "
+    "agent watches apps and proposes fixes, fastn Connect gives your AI agents each customer's apps as tools, and "
+    "Health and Logs record every run and event. All calls reach the customers' apps with that customer's sign-in.",
+    body,
+)
+print("Wrote architecture.svg")

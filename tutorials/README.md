@@ -13,7 +13,7 @@ These tutorials are hands-on walkthroughs that teach you how to use fastn by bui
 
 ### Tutorials for your team
 
-For the operator: the person on your team who sets up and runs fastn for your product.
+For your team: the people who set up and run fastn for your product.
 
 [**Setting Up Your Organization**](saas-admin/setting-up-your-organization.md) - Configure organization settings, invite your team, review plan limits and the audit log, and find API keys, secrets, environments and connector auth.
 

@@ -87,9 +87,13 @@ The cross-customer rollup (previously the **Reporting** page): which customers n
 
 Vendors change their APIs. fastn notices, works out the fix, and files it here for you to accept. Nothing is applied until you do. See [Pending updates](../build/connector-updates.md).
 
+<figure><img src="../.gitbook/assets/screens/health-pending-updates.webp" alt="Health, Pending updates with nothing waiting: the note that an app's change lands here with any patch the maintainer agent proposes, and nothing is applied until you accept it"><figcaption>Nothing is applied until you accept it.</figcaption></figure>
+
 ## Alerts
 
 Set who is told when a run fails, an event is not processed in time, a metric crosses a threshold, or your workflow code raises an alert, by email, Slack, Teams or webhook. See [Alerts](alerts.md).
+
+<figure><img src="../.gitbook/assets/screens/health-alerts.webp" alt="Health, Alerts with none yet: a New alert button, Notification channels Slack, Microsoft Teams and Gmail with Connect buttons, and No alerts yet with Turn on failure alerts and Custom alert"><figcaption>One click turns on a failure alert and a daily reliability check.</figcaption></figure>
 
 ## A daily routine
 

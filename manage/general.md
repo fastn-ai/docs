@@ -25,6 +25,8 @@ layout:
 | **Name**     | Shown to your team and on invitations.                                                              |
 | **Timezone** | Sets the default timezone for new schedules. Dates elsewhere are shown in your own timezone.        |
 
+<figure><img src="../.gitbook/assets/screens/settings-general.webp" alt="Settings, General: Organization with Name and Timezone, Your product showing parkingpass.com Not connected yet, Required to go live, with a Connect Parkingpass button, and Joining by email domain with an Email domain field"><figcaption>Your organization, your product and who can join.</figcaption></figure>
+
 {% hint style="info" %}
 The timezone here is the default offered when creating a [schedule trigger](../build/triggers/README.md), not a global rewrite. A schedule keeps whatever timezone it was saved with.
 {% endhint %}
