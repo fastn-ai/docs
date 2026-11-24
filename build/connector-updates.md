@@ -22,6 +22,8 @@ Vendors deprecate endpoints, change parameter names and alter response shapes. N
 
 > When an app you connect to changes something your workflows depend on, it lands here, with any patch the maintainer agent proposes. Nothing is applied until you accept it.
 
+<figure><img src="../.gitbook/assets/diagrams/maintainer-flow.svg" alt="How an API change gets fixed: an app changes its API, the maintainer agent proposes a patch, the operator reviews it in Pending updates, and once accepted the fix applies to every customer."><figcaption><p>Nothing changes until someone accepts the fix.</p></figcaption></figure>
+
 It is a single list. There are no *Connector fixes* or *My workflows* tabs. When nothing is outstanding it reads *Nothing waiting* · *Every change an app made to something you use has been dealt with.*, and a **Show N already handled** toggle brings the resolved ones back into view.
 
 ### Reading a proposal

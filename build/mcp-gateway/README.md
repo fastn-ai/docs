@@ -14,9 +14,18 @@ layout:
     visible: true
 ---
 
-# MCP gateway
+# fastn MCP server
 
 Everything you build in fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your fastn workflows and the fastn platform tools, and reaches your connectors' actions through those platform tools, with the same customer scoping and the same permission model as everything else. Your agent can also build new integrations for you, right in the chat: see [Building from your AI agent](../building-from-your-ai-agent.md).
+
+fastn has two MCP addresses, for two different jobs:
+
+<figure><img src="../../.gitbook/assets/diagrams/mcp-server-and-gateway.svg" alt="Two MCP addresses. The operator, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with their own sign-in."><figcaption><p>The MCP server builds integrations. The MCP gateway lets AI agents use them.</p></figcaption></figure>
+
+| Address | What it is for | Who connects |
+| --- | --- | --- |
+| `https://mcp.fastn.dev/fastn-workspace` | **fastn MCP server** (this page): build and manage integrations from a chat | The operator, from Claude, Cursor or another AI tool. Your customers get their own one-time URL from the widget, if you allow it: see [Customer MCP URL](../../embed/embedding/customer-mcp-url.md) |
+| `https://mcp.fastn.dev/<your-org>` | **fastn MCP gateway** (fastn Connect): AI agents use each customer's connected apps as tools | Your AI agents |
 
 ### Connecting
 
@@ -62,7 +71,7 @@ An MCP client can change real things in your org, the same as you can. Approve t
 
 ### Watching it
 
-Gateway activity lands in the same places as everything else: runs appear in **Operate → Activity → [Executions](../../operate/executions.md)**, with the calling identity in the **Triggered by** column.
+Activity from the MCP server lands in the same places as everything else: runs appear in **Operate → Activity → [Executions](../../operate/executions.md)**, with the calling identity in the **Triggered by** column.
 
 An MCP client spends no fastn AI credits. The **By agent** breakdown in the credits popover in the top bar covers fastn's own agents, such as Build with AI, not your AI tool.
 

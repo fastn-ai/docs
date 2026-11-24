@@ -1,5 +1,5 @@
 ---
-description: From an empty workspace to a workflow running on a real trigger.
+description: Describe an integration, let the fastn agent build it, and run its test. About five minutes.
 layout:
   width: default
   title:
@@ -16,87 +16,51 @@ layout:
 
 # Quickstart: your first integration
 
-This takes about twenty minutes.
+In this quickstart you describe an integration in plain words, the fastn agent builds it, and you run its test without touching real data. It takes about five minutes.
 
-### 1. Describe what you want
+### Before you start
 
-Open **Build with AI** in the sidebar, or type what you want into the **What should your customers be able to do?** prompt on Home. Both land on the same screen.
+* A fastn account. Sign up at [app.fastn.dev](https://app.fastn.dev). The Launch plan is free.
+* An account in each app you name, for example Slack. The agent asks you to sign in to it.
 
-The screen describes what happens next:
+### 1. Describe the integration
 
-> Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
+Open **Build → Build with AI**, or type into the **What should your customers be able to do?** box on **Home**. Describe what should happen, naming the apps and what starts it:
 
-If you would rather start from a shape than a blank page, tap one of the example starter prompts beneath the box (these are seeded suggestions and vary by workspace) and edit it to fit.
+> When a new contact is created in HubSpot, post their name and email in our #sales Slack channel.
 
-Otherwise, write the integration the way you would explain it to a colleague:
+Leave the **Approval mode** chip on **Auto**. The agent then works without stopping to ask before each step.
 
-> When a HubSpot deal moves to closed-won, create a customer and a draft invoice in QuickBooks, and post a line in our #sales Slack channel.
+**You should see:** the agent replies with a plan: the connectors it will use and the workflow it will write.
 
-Name the apps, the trigger, and the fields that matter. The agent asks about anything ambiguous rather than guessing.
+### 2. Sign in to the apps
 
-The **Approval mode** chip under the message box decides how much it does unattended: **Auto** is the default and does not ask; **Manual** asks before any create, update or delete. Leave it on Auto while you are exploring.
+The agent checks that a connector exists for each app and asks you to connect any account it needs, in the chat: a form for an API key, or a sign-in window for OAuth.
 
-### 2. Let it set up connectors and auth
+**You should see:** each app marked as connected in the chat, and the agent moving on to build.
 
-The agent checks whether connectors exist for the apps you named, creates any that are missing, and handles authentication in the chat: API-key fields inline, or an OAuth form with client ID, secret and pre-filled scopes.
+### 3. Let the agent build and test
 
-Anything it creates shows up under [Connectors](../build/connectors/README.md) afterwards, so you can inspect it.
+The agent writes the workflow, generates test cases and runs them. When it finishes, it opens the workflow editor.
 
-### 3. Review the draft
+**You should see:** the workflow in the editor, with its test cases listed.
 
-The agent produces a workflow and opens the editor: configuration on the left, the tool tabs on the right, and, only where code editing is enabled, the code between them. **Code editing is off by default**: it is a per-organization setting that fastn turns on when you ask. Until then, expect two columns rather than three; the workflow is still there, it is just written and updated by the agent rather than by you.
+### 4. Run it without touching real data
 
-Work through it in this order:
+Open the **Test** tab and click **Use contract** to fill in a sample input. Set the mode beside the run button to **Fully Mock**, then click **Run Fully Mock**. A fully mocked run uses stubs instead of calling the apps, so nothing is written to HubSpot or Slack.
 
-1. **The code.** Where code editing is on, the middle column holds `<slug>.js`, a JavaScript module exporting `export default async function(ctx)`. This is the workflow; everything else on the screen describes, tests or deploys it. Where it is off, read the **Diagram** tab instead to see what the agent wrote.
-2. **Diagram → Flow.** A read-only picture that AI generates from that code, with node kinds `TRIGGER`, `READ`, `PROCESS`, `WRITE`, `DECISION` and `DONE`. You cannot edit the graph. It regenerates when you open it after the code has changed, so it can lag a save for a moment; the **Regenerate docs** button refreshes it on demand.
-3. **Contract.** Check the input and output shapes.
-4. **Connectors.** The list is extracted from the `fastn.connectors.X.Y(…)` calls in your code when you save. Confirm the right actions are wired, and whether each connector is marked **Per customer**.
-5. **Configuration** (left panel). Set the execution tier and timeout. **Instant** is synchronous and capped at 25 seconds (2 minutes only if fastn has turned on the longer Instant timeout for your organization), **Standard** is asynchronous and capped at 15 minutes, **Long** is asynchronous and runs for up to 36 hours. Instant is the default, with a 25-second timeout; most syncs want Standard.
+**You should see:** the run's output, with each step and its result.
 
-{% hint style="info" %}
-Code editing is a per-organization setting and is off by default. Without it, workflows are generated and updated by Build with AI, and you can still test them, wire connectors, edit the contract, publish and deploy. If you want to write workflow code yourself, ask fastn to switch it on for your organization; fastn can turn it on for any organization.
-{% endhint %}
-
-### 4. Test it
-
-Open **Test**, click **Use contract** to populate a sample `ctx.input`, and choose a mode beside the run button: **Live** calls the real apps, **Partial Mock** mixes real calls with stubs, **Fully Mock** uses stubs only. Then hit **Run Live** (or **Run**).
-
-If something is wrong, tell the agent rather than patching by hand. *"Skip deals under $500"* or *"Add error handling when QuickBooks is down"* and it rewrites the code, mappings and test cases together.
-
-### 5. Publish and deploy
-
-In the left panel, under **PUBLISH & DEPLOY**:
-
-* **Publish snapshot** freezes the current code and configuration as a version. The workflows list numbers them in its **Latest** column (`v1`, `v2`, …), and shows a dash there (tooltip "No published version yet.") until the first one exists.
-* **Deploy to environment** sends that version to an environment so it starts handling real events.
-
-Until a snapshot is published, the workflow's **Status** reads `Unpublished` and every call returns `WORKFLOW_NOT_PUBLISHED`.
-
-### 6. Attach a trigger
-
-A workflow with no trigger only runs when you call it. Go to **Integrations → Triggers → Add trigger** and pick one:
-
-<figure><img src="../.gitbook/assets/add-trigger-dialog.jpg" alt="The Add a trigger dialog, headed What should start the workflow?, with Webhook, Schedule and App event as three rows, each explained in a sentence and ending in an arrow"><figcaption>Three trigger types. A workflow with no trigger only runs when you call it.</figcaption></figure>
-
-For the HubSpot example, choose **App event**. The form is progressive: name it, pick the HubSpot connector, then pick a connection and an event, then add a route pointing at your workflow. Two things to know before you start: the connector cannot be changed after the trigger is created, and you cannot get past the connector step without an active connection. Without one the form stops you:
-
-> No active connection found for this connector. Connect first to use it as a trigger source.
-
-Full field-by-field detail is in [Triggers](../build/triggers/README.md).
-
-### 7. Put it in front of customers
-
-Open **Widget**, click **Add** under INTEGRATIONS, and pick the integration you just built. Then use the **Embed** tab to drop it into your product. See [Embedding the widget](../embed/embedding/README.md).
-
-### 8. Turn on failure alerts
-
-Go to **Health → Alerts** and click **Turn on failure alerts**. One click turns on the two alerts most teams need: an email the moment a run fails (it goes out within about a minute) and a daily reliability check. Threshold alerts are evaluated every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
+If something is wrong, tell the agent in the chat, for example *"Only post contacts that have an email"*. It updates the workflow and its tests together.
 
 {% hint style="success" %}
-Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows/README.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway/README.md) covers exposing the same integrations to an AI client.
+You have built and tested your first integration. Nothing runs for real until you publish it and attach a trigger.
 {% endhint %}
 
-{% hint style="info" %}
-Deleted a connector or workflow by mistake while exploring? It is in [Settings → Trash](../manage/trash.md), restorable with its slug and history intact. Trash appears in the Settings sidebar for Owners, Admins and Developers alike, at `/settings/trash`.
-{% endhint %}
+### Next steps
+
+* **Publish and deploy it.** Until a version is published, every call returns `WORKFLOW_NOT_PUBLISHED`. See [Test and release](../build/workflows/lifecycle.md).
+* **Run it on real events.** Attach a webhook, schedule or app event trigger. See [Triggers](../build/triggers/README.md).
+* **Offer it to your customers.** Add it to your widget and embed the widget in your product. See [Build your widget](../tutorials/saas-admin/building-your-widget.md) and the [embedding quickstart](../tutorials/developer/embedding-quickstart.md).
+* **Get told when it fails.** In **Health → Alerts**, click **Turn on failure alerts**. See [Alerts](../operate/alerts.md).
+* **Build from your own AI tool instead.** Connect Claude or Cursor to the [fastn MCP server](../build/mcp-gateway/README.md) and build the same way from your chat.

@@ -1,4 +1,5 @@
 ---
+description: Every credential fastn uses, where each one lives, and how a call names the customer it acts for.
 layout:
   width: default
   title:
@@ -13,9 +14,33 @@ layout:
     visible: true
 ---
 
-# Authentication & API Keys
+# Authentication
 
-fastn API keys authenticate your backend's requests - including generating embed tokens. Keys come in test and live variants, and each requires different handling.
+This page covers every credential fastn uses. Read it once before you embed the widget or call the API, then follow the links for the full detail on each.
+
+<figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
+
+1. Your backend calls fastn with your **API key** and names the customer in `x-org-id`.
+2. fastn returns an **embed token** for that one customer. It lasts 8 hours.
+3. Your backend passes only the token to your frontend.
+4. Your frontend opens the widget with the token.
+5. The customer signs in to their own app in the widget.
+6. fastn stores that **connection's credential**, encrypted and scoped to that customer.
+
+### The credentials
+
+| Credential | Where it lives | What it does | Details |
+| --- | --- | --- | --- |
+| **API key** (`fsk_test_…`, `fsk_live_…`) | Your backend only | Authenticates every call your backend makes to fastn | [Below](#test-vs-live-keys), and [API keys](../../manage/api-keys.md) |
+| **Identity secret** | Your backend only | Signs `x-org-id` and `x-user-id` as `x-identity-hmac`, so a call can't claim to be another customer | [Identity hash](../../manage/api-keys.md#identity-hash) |
+| **Embed token** | Your frontend, one page load | Opens the widget for one customer and user. Expires after 8 hours; refresh is capped at 7 days per session | [Generating embed tokens](generating-embed-tokens.md) |
+| **Connection credential** | fastn, encrypted | One customer's sign-in to one app. Every run for that customer reuses it | [Connections](../../build/connections/README.md) |
+| **MCP sign-in** | Your AI tool | Connects Claude, Cursor or another AI tool to the fastn MCP server. You sign in to fastn; no API key is needed | [fastn MCP server](../../build/mcp-gateway/README.md) |
+| **Customer MCP URL** | Your customer's AI tool | A one-time URL, valid for 10 minutes, that connects a customer's AI tool as that customer | [Customer MCP URL](../../embed/embedding/customer-mcp-url.md) |
+
+### Naming the customer
+
+A call acts for one of your customers when it sends `x-org-id`: your own id for the customer, or fastn's id for it. Leave it out to act as your own organization. See [Find your org identifier](finding-your-org-identifier.md) and [Scoping a call to a customer](../../reference/api.md#scoping-a-call-to-a-customer).
 
 ### Where to find your keys
 
