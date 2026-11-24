@@ -18,13 +18,17 @@ layout:
 
 Everything you build in fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your fastn workflows and the fastn platform tools, and reaches your connectors' actions through those platform tools, with the same customer scoping and the same permission model as everything else. Your AI tool can also build new integrations for you, right in the chat: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
+{% hint style="info" %}
+**Which MCP do I need?** To build and manage integrations from Claude, Cursor or another AI tool, use the **fastn MCP server** (`https://mcp.fastn.dev/fastn-workspace`). To let your AI agent, or a customer's AI client, use a customer's connected apps, use **fastn Connect**, the MCP gateway. See [Architecture](../../getting-started/architecture.md#which-mcp-do-i-need).
+{% endhint %}
+
 fastn has two MCP addresses, for two different jobs:
 
-<figure><img src="../../.gitbook/assets/diagrams/mcp-server-and-gateway.svg" alt="Two MCP addresses. The operator, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with their own sign-in."><figcaption><p>The MCP server builds integrations. The MCP gateway lets AI agents use them.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/diagrams/mcp-server-and-gateway.svg" alt="Two MCP addresses. Your team, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with their own sign-in."><figcaption><p>The MCP server builds integrations. The MCP gateway lets AI agents use them.</p></figcaption></figure>
 
 | Address | What it is for | Who connects |
 | --- | --- | --- |
-| `https://mcp.fastn.dev/fastn-workspace` | **fastn MCP server** (this page): build and manage integrations from a chat | The operator, from Claude, Cursor or another AI tool. Your customers get their own one-time URL from the widget, if you allow it: see [Customer MCP URL](../../embed/embedding/customer-mcp-url.md) |
+| `https://mcp.fastn.dev/fastn-workspace` | **fastn MCP server** (this page): build and manage integrations from a chat | Your team, from Claude, Cursor or another AI tool. Your customers get their own one-time URL from the widget, if you allow it: see [Customer MCP URL](../../embed/embedding/customer-mcp-url.md) |
 | `https://mcp.fastn.dev/<your-org>` | **fastn Connect** (the MCP gateway): AI agents use each customer's connected apps as tools | Your AI agents |
 
 ### Connecting
@@ -47,21 +51,20 @@ You add fastn as an MCP server at that URL and sign in. The client sends you to 
 | --- | --- |
 | [Claude](claude.md) | **Settings** → **Connectors** → **Add custom connector**, or **Add to Claude** in fastn |
 | [Claude Code](claude-code.md) | `claude mcp add --transport http fastn <URL>` |
-| [ChatGPT](chatgpt.md) | Turn on **Developer mode** (**Settings** → **Apps & Connectors** → **Advanced settings**), then **Add custom connector** |
+| [ChatGPT](chatgpt.md) | **Plugins** → **Add** → **Add custom MCP server** |
 | [Cursor](cursor.md) | **Add to Cursor** in fastn, or **Customize** → **MCPs** |
 | [VS Code](vscode.md) | **Install in VS Code** in fastn, or `.vscode/mcp.json` |
+| [GitHub Copilot](github-copilot.md) | VS Code, Visual Studio, JetBrains, Xcode or Eclipse: the editor's `mcp.json` |
 | [Codex](codex.md) | `codex mcp add fastn --url <URL>` |
 | [Antigravity](antigravity.md) | `~/.gemini/config/mcp_config.json`, then **Customizations** → **Authenticate** |
 | [Devin](devin.md) | **Customize** → **MCPs** → **New MCP** |
 | [Cline](cline.md) | **MCP** → **Add Remote Server**, or `cline_mcp_settings.json` |
-| [Lovable](lovable.md) | **Connectors** → **Chat connectors** → **New MCP server** |
+| [Lovable](lovable.md) | **Connectors** → **Add custom** → **MCP server** |
 | [Bolt](bolt.md) | **Connectors (MCP)** → **Custom MCP server** |
 
 #### Any other MCP client
 
 Any client that speaks Streamable HTTP and OAuth can add fastn the same way: give it the URL above and sign in when it asks.
-
-The **MCP server** page also has a **GitHub Copilot** tile. In VS Code, follow [VS Code](vscode.md) and use fastn from Copilot Chat in agent mode. In JetBrains, Visual Studio, Xcode or Eclipse, add an HTTP MCP server in Copilot's MCP settings and paste the URL above.
 
 ### Scoping
 
@@ -88,6 +91,7 @@ The widget's Embed tab lists **A2A** (agent-to-agent), alongside Iframe and SDK,
 * [ChatGPT](chatgpt.md)
 * [Cursor](cursor.md)
 * [VS Code](vscode.md)
+* [GitHub Copilot](github-copilot.md)
 * [Codex](codex.md)
 * [Antigravity](antigravity.md)
 * [Devin](devin.md)

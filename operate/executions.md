@@ -32,6 +32,8 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 | **When**         | Timestamp, in your timezone.                                    |
 | **Actions**      | **Replay** re-runs a finished execution. A pending, queued or running one shows **Stop** instead. |
 
+<figure><img src="../.gitbook/assets/screens/logs-executions.webp" alt="Operate, Logs, Executions: Runs and Logs views, All time and Refresh, a search box with Enable payload searching, status chips All, Pending, Queued, Running, Completed, Failed, Timed out and Canceled, an All workflows filter, and the note that test runs from a workflow's own Execute button are not recorded here"><figcaption>Every workflow run, newest first. Test runs started from the editor are not listed.</figcaption></figure>
+
 **Rows per page** is 10, 20 or 50.
 
 ### Filters

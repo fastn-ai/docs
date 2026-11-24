@@ -187,7 +187,7 @@ Operation: `listWorkflowDiffReports`
 GET /v1/workflows/executions
 ```
 
-Org-wide execution list, newest first. eventId/triggerId match the x-fastn-event-id / x-fastn-trigger-id headers stamped by the event pipeline on every dispatch, so a trigger fire can be correlated to its execution in one query. sort=duration lists finished runs slowest first and needs dateFrom within 30 days of dateTo (400 otherwise). List rows are metadata: they omit input, output, logs and trace (hasTrace flags a trace), and requestHeaders carries only x-fastn-event-id / x-fastn-trigger-id; outputCounts reports the run's record counts. outcome is "skipped" for a completed run that ended through fastn.skip(reason), with the reason in skipReason (null for a role that cannot read run bodies); both are null on every other run. Fetch a run's bodies from the per-execution detail route.
+Org-wide execution list, newest first. eventId/triggerId match the x-fastn-event-id / x-fastn-trigger-id headers stamped by the event pipeline on every dispatch, so a trigger fire can be correlated to its execution in one query. sort=duration lists finished runs slowest first and needs dateFrom within 30 days of dateTo (400 otherwise). List rows are metadata: they omit input, output, logs and trace (hasTrace flags a trace), and requestHeaders carries only x-fastn-event-id / x-fastn-trigger-id; outputCounts reports the run's record counts. outcome is "skipped" for a completed run that ended through fastn.skip(reason), with the reason in skipReason (null for a role that cannot read run bodies); both are null on every other run. A tier escalation names both runs: escalatedFromExecutionId on the standard run an instant run was retried as, escalatedToExecutionId and escalatedToStatus on the instant run (whose own status stays timeout or failed), and escalationReason (instant_timeout, pod_restart, connector_platform_unavailable) on both. replayedTo is set on a failed, timed-out or cancelled run that was re-run since: { executionId, status, createdAt } of the newest run that replayed it, from the executions page (replayedFromExecutionId names this run) or as a run of a replay of its event (event_replays, followed to replays of replays), of the same workflow, owner org and customer; null on every other run. Its own status is unchanged. A trace call the run was stopped in (killed at its timeout, or cancelled) is recorded with status in_progress_at_timeout or in_progress_at_cancel and the time it had run by then. Fetch a run's bodies from the per-execution detail route.
 
 Operation: `listWorkflowExecutions`
 
@@ -211,7 +211,7 @@ Operation: `listWorkflowExecutions`
 
 **Responses**
 
-* `200`: Execution list rows with workflow name/slug/version/tier. Any `search` walks the window newest-first within a time budget and also returns `payloadSearch: { complete, searchedFrom, hasMore, unsearched }` (the name predates ordinary searches using it): `complete: false` with `hasMore: false` means it stopped at `searchedFrom` before reaching dateFrom. With a `search`, `pagination.total` is a floor (`totalIsLowerBound`), and with no dateFrom the search covers the last 90 days, the longest any run is retained. /workflows/executions/counts with a `search` caps at 1000 matches and sets isLowerBound.
+* `200`: Execution list rows with workflow name/slug/version/tier. Any `search` walks the window newest-first within a time budget and also returns `payloadSearch: { complete, searchedFrom, hasMore, unsearched }` (the name predates ordinary searches using it): `complete: false` with `hasMore: false` means it stopped at `searchedFrom` before reaching dateFrom. `unsearched` counts runs in the searched stretch whose archived input could not be read (too large, or two failed reads): not searched, never reported as no match. With a `search`, `pagination.total` is a floor (`totalIsLowerBound`), and with no dateFrom the search covers the last 90 days, the longest any run is retained. /workflows/executions/counts with a `search` caps at 1000 matches and sets isLowerBound.
 * `400`: dateFrom/dateTo is not an ISO 8601 date or date-time (VALIDATION_ERROR), or searchIn=payload without a short enough window or a long enough search
 * `403`: searchIn=payload from a role that cannot read execution bodies
 
@@ -381,6 +381,7 @@ Operation: `runWorkflowCode`
 | `mockMode` | `boolean` | No |  |
 | `partialMock` | `boolean` | No |  |
 | `mockScenarios` | `object` | No |  |
+| `strictMock` | `boolean` | No | Optional, default false. With mockMode or partialMock, a mocked connector call that no stored stub matched fails the run with a UserCodeError naming the stubs that were tried and why each did not match, instead of returning a response synthesized from the action's output contract. |
 | `timeoutMs` | `integer` | No |  |
 | `workflowId` | `string` | No | Optional. Runs the body's code in this workflow's installation context. Must exist in the caller's org. |
 | `verification` | `object` | No | Optional. Runs contained: every connector call is mocked unless its `slug.action` is listed in liveReadActions; fastn.db statements run inside a transaction that is rolled back; fastn.state / checkpoint / envConfig writes stay in memory; fetch sends only GET/HEAD/OPTIONS and answers anything else locally; sub-flows, fastn.diff, unified writes, fastn.ai.complete (it would spend the customer's AI credits) and file uploads stop the run. The run is never saved as the workflow's test contract. The response carries a `verification` record: connectorCalls (slug, action, mode, input, ok, error), suppressed side effects, dbStatementsRolledBack, and isolationError when the run was stopped. |
@@ -863,7 +864,7 @@ Operation: `getWorkflowExecution`
 
 **Responses**
 
-* `200`: Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from: `outcome` is `skipped` for a completed run that ended through fastn.skip(reason), with the reason in `skipReason` (null for a role that cannot read run bodies).
+* `200`: Execution detail. `bodiesSource` says where input, request headers, output, logs and trace came from: `outcome` is `skipped` for a completed run that ended through fastn.skip(reason), with the reason in `skipReason` (null for a role that cannot read run bodies). `escalatedFromExecutionId`, `escalatedToExecutionId`, `escalatedToStatus` and `escalationReason` link a tier escalation's two runs, and `replayedTo` names the newest run that re-ran a failed one, as on the list. A `trace` entry with status `in_progress_at_timeout` or `in_progress_at_cancel` is the call the run was stopped in, with the time it had run by then; `summary.slowestStep` considers it.
 
 ### Cancel a running execution
 
@@ -871,7 +872,7 @@ Operation: `getWorkflowExecution`
 DELETE /v1/workflows/{id}/executions/{executionId}
 ```
 
-Marks a pending, queued or running execution cancelled and stops its engine run (requires workflows.execute). A finished run is left unchanged; the response is still 200.
+Marks a pending, queued or running execution cancelled and stops its engine run (requires workflows.execute). Its inline sub-flow runs (fastn.flow.invoke) still open, nested ones included, are cancelled with it; invokeAsync children are their own runs and are not. A finished run is left unchanged; the response is still 200.
 
 Operation: `cancelWorkflowExecution`
 
@@ -1029,7 +1030,7 @@ Operation: `forkWorkflow`
 POST /v1/workflows/{id}/generate-docs
 ```
 
-Fire-and-forget regeneration of the workflow's stored documentation from its current code, triggers, schemas, and connector actions. audience=end_user (default) rewrites the operator-facing doc and its visual artifacts; audience=technical writes a spec-only technical document under documentation.technical without touching the end-user doc. A generation that comes back empty is discarded and the previously saved doc is kept. When the inputs (code, schemas, triggers, connector actions) are the same as the ones the saved doc was generated from, nothing is regenerated unless force=true.
+Fire-and-forget regeneration of the workflow's stored documentation from its current code, triggers, schemas, and connector actions. audience=end_user (default) rewrites the operator-facing doc and its visual artifacts; audience=technical writes a spec-only technical document under documentation.technical without touching the customer-facing doc. A generation that comes back empty is discarded and the previously saved doc is kept. When the inputs (code, schemas, triggers, connector actions) are the same as the ones the saved doc was generated from, nothing is regenerated unless force=true.
 
 Operation: `generateWorkflowDocs`
 
@@ -1138,7 +1139,7 @@ Operation: `getWorkflowConnectorManifest`
 | `data.connectorManifest[].actions[].slug` | `string` |  |
 | `data.connectorManifest[].actions[].id` | `string` |  |
 | `data.connectorManifest[].actions[].version` | `string` |  |
-| `data.connectorManifest[].actions[].externalVersion` | `string` | The external system's contract version captured at save time (pin-on-build). |
+| `data.connectorManifest[].actions[].externalVersion` | `string` | The external app's contract version captured at save time (pin-on-build). |
 | `data.connectorManifest[].actions[].versionMajor` | `integer` | Our breaking-revision axis, captured at save time. |
 | `data.connectorManifest[].actions[].manual` | `boolean` | Added by hand from the UI, so it survives code-refresh merges. |
 | `data.connectorManifest[].actions[].retryPolicy` | `object` |  |
@@ -1252,7 +1253,7 @@ Operation: `setWorkflowConnectorScope`
 | `data.connectorManifest[].actions[].slug` | `string` |  |
 | `data.connectorManifest[].actions[].id` | `string` |  |
 | `data.connectorManifest[].actions[].version` | `string` |  |
-| `data.connectorManifest[].actions[].externalVersion` | `string` | The external system's contract version captured at save time (pin-on-build). |
+| `data.connectorManifest[].actions[].externalVersion` | `string` | The external app's contract version captured at save time (pin-on-build). |
 | `data.connectorManifest[].actions[].versionMajor` | `integer` | Our breaking-revision axis, captured at save time. |
 | `data.connectorManifest[].actions[].manual` | `boolean` | Added by hand from the UI, so it survives code-refresh merges. |
 | `data.connectorManifest[].actions[].retryPolicy` | `object` |  |
@@ -1460,10 +1461,11 @@ Operation: `testSavedWorkflow`
 | `mockMode` | `boolean` | No |  |
 | `partialMock` | `boolean` | No |  |
 | `mockScenarios` | `object` | No |  |
+| `strictMock` | `boolean` | No | Optional, default false. With mockMode or partialMock, a mocked connector call that no stored stub matched fails the run with a UserCodeError naming the stubs that were tried and why each did not match, instead of returning a response synthesized from the action's output contract. |
 
 **Responses**
 
-* `200`: Run result with logs and trace
+* `200`: Run result with logs and trace, and versionId: the published version that ran (null when nothing is published and the draft ran). Pass it to saveWorkflowValidation.
 * `400`: The body is not valid JSON, or is JSON but not an object (null, an array, a scalar). Code: VALIDATION_ERROR. Also refused with VALIDATION_ERROR when the session acts for a customer (an embed token or customer-scoped key, which carries a parent org) but names no customer and the body names no x-org-id, so the run would otherwise use the partner's connections.
 * `403`: x-fastn-env named in the body headers is outside the caller's environment pin: a test key (or a token minted with it) may run only 'test', a key made for one environment only that environment and 'test'. The gateway never sees the body, so it is held to the pin here. Code: ENV_NOT_PERMITTED.
 * `404`: Workflow not found
@@ -1473,13 +1475,42 @@ Operation: `testSavedWorkflow`
 * `429`: The org has used its monthly runs (error quota_exceeded, dimension executions_per_month), or its instant concurrency slots or this pod's sandbox slots are all in use (RATE_LIMITED, Retry-After 5). Test runs pass the same gates as POST /{id}/execute; a platform service calling directly is not metered.
 * `500`: A platform fault, not the workflow. Code: WF-EXEC-FAILED, with the requestId to quote when reporting it.
 
+### Take a workflow off one environment
+
+```http
+POST /v1/workflows/{id}/undeploy
+```
+
+Switches off the environment's active deployment and puts nothing in its place, so the workflow is as it was before it was ever deployed there: a caller that names the environment gets 404 No active deployment found, and one whose environment was derived runs the published version. Deployment history is kept; deploying again restores it. Taking it off the default (Live) environment also returns the legacy code column to the published version and clears live_published_at. Requires workflows.update. 409 for an environment that requires review (change it through a reviewed promotion); 403 ENV_NOT_PERMITTED for an API key pinned to another environment; 403 WF-CODE-READONLY when the org may read but not write workflow code. Kept off the MCP tool surface: it changes what production runs.
+
+Operation: `undeployWorkflow`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `env_id` | `string` | Yes | Environment id (GET /api/v1/environments). |
+
+**Responses**
+
+* `200`: { data: { workflowId, envId, undeployed } } - undeployed is false when nothing was deployed there
+* `400`: env_id missing
+* `404`: Workflow or environment not found
+* `409`: The environment requires review
+
 ### Save workflow validation results
 
 ```http
 PATCH /v1/workflows/{id}/validation
 ```
 
-Stores the result of running the workflow's test cases as its last validation, stamped with the time and caller (requires workflows.update). Each result id should be a test-case id.
+Stores the result of running the workflow's test cases as its last validation, stamped with the time and caller (requires workflows.update). Each result id must be a test-case id saved on the workflow, at most once. The saved overall status is computed from the results (any fail = fail, every saved case passed = pass, otherwise partial); status in the body is optional and ignored. Pass versionId (returned by testSavedWorkflow) to record which published version the results ran against; omitted, the newest published version at save time is recorded. A release review counts the results only for that version.
 
 Operation: `saveWorkflowValidation`
 
@@ -1493,7 +1524,7 @@ Operation: `saveWorkflowValidation`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `status` | `string` | Yes | One of: `pass`, `partial`, `fail`. |
+| `status` | `string` | No | One of: `pass`, `partial`, `fail`. |
 | `mode` | `string` | Yes | One of: `mock`, `live`. |
 | `results` | `object[]` | Yes |  |
 | `results[].id` | `string` | Yes |  |
@@ -1502,11 +1533,12 @@ Operation: `saveWorkflowValidation`
 | `results[].error` | `string` | No |  |
 | `results[].fix` | `string` | No |  |
 | `cleanup` | `string` | No |  |
+| `versionId` | `string` | No |  |
 
 **Responses**
 
 * `200`: The updated workflow
-* `400`: Body does not match the schema
+* `400`: Body does not match the schema, a result id names no saved test case (unknownIds), a case is listed twice (duplicateIds), or versionId is not a published version of this workflow
 * `404`: Workflow not found
 
 ### List workflow versions

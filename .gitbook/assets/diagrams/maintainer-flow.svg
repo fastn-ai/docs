@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 116" width="680" height="116" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="t d">
 <title id="t">How an API change gets fixed</title>
-<desc id="d">An app changes its API. The maintainer agent detects it and proposes a patch. The operator reviews it in Health, Pending updates. Once accepted, the fix applies to every customer's setup.</desc>
+<desc id="d">An app changes its API. The maintainer agent detects it and proposes a patch. Your team reviews it in Health, Pending updates. Once accepted, the fix applies to every customer's setup.</desc>
 <style>
 :root{--bg:#ffffff;--fg:#17171f;--mut:#5e5e72;--line:#c9c9d6;
 --team:#5b4cf0;--teamc:#efedff;--cust:#0e8f7e;--custc:#e3f6f3;--fastn:#3c3c52;--fastnc:#ececf3}
@@ -26,7 +26,7 @@
 <rect class="fastn" x="185" y="30" width="145" height="56" rx="8"/>
 <text class="h" x="257.5" y="49.0">Maintainer agent</text><text class="s" x="257.5" y="68.0">Proposes a patch</text>
 <rect class="team" x="350" y="30" width="145" height="56" rx="8"/>
-<text class="h" x="422.5" y="49.0">Operator reviews</text><text class="s" x="422.5" y="68.0">Pending updates</text>
+<text class="h" x="422.5" y="49.0">Your team reviews</text><text class="s" x="422.5" y="68.0">Pending updates</text>
 <rect class="cust" x="515" y="30" width="145" height="56" rx="8"/>
 <text class="h" x="587.5" y="49.0">Fix goes live</text><text class="s" x="587.5" y="68.0">Every customer</text>
 <line class="arr" x1="165" y1="58" x2="182" y2="58" marker-end="url(#a)"/>

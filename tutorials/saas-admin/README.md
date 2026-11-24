@@ -7,7 +7,7 @@ hidden: true
 
 # Dashboard tutorials
 
-These tutorials are for the operator: the person on your team responsible for fastn, often someone in operations or a product manager who would rather not go deep into the technical details. You'll configure the platform, preview and publish the integration experience, and manage your customers.
+These tutorials are for the person on your team responsible for fastn, often someone in operations or a product manager who would rather not go deep into the technical details. You'll configure the platform, preview and publish the integration experience, and manage your customers.
 
 **Prerequisites:** Complete the Getting Started section first. These tutorials assume you have a fastn account and have completed onboarding setup (Check your product, Pick your integrations, Set up the widget).
 

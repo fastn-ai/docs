@@ -20,6 +20,8 @@ layout:
 
 Executions tell you a run succeeded. Sync reports tell you what it did, record by record.
 
+<figure><img src="../.gitbook/assets/screens/logs-sync-reports.webp" alt="Operate, Logs, Sync reports with none yet: a search box and the note that a report appears the first time a workflow runs fastn.diff.compare"><figcaption>A report appears the first time a workflow calls <code>fastn.diff.compare</code>.</figcaption></figure>
+
 ### How a report is produced
 
 > A report appears the first time a workflow runs `fastn.diff.compare`.

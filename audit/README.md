@@ -31,23 +31,23 @@ This pass covered all 158 pages in SUMMARY.md, checked against fastn-platform ma
 | customer | tenant, end customer (identifiers such as `tenantRef` stay) |
 | Scale or Enterprise | Growth, Pro |
 
-## Open decisions
+## Round 2 (same day)
 
-* **"operator" vs the Operator role.** Settings → Roles has a built-in role named **Operator**. The docs also say "operator" for the person on your team who sets up integrations, about 46 times. The glossary notes the difference for now.
-* **Demo data for screenshots.** Customers, connections, workflows, logs and the fastn agent are shown in their empty state, or not at all. Shots with data need a test customer and a sample workflow in a demo org.
+* **"operator":** in prose the person is now **your team**. **Operator** only names the built-in role. The diagrams were regenerated to match.
+* **Demo data:** a test customer, Northwind Traders, is in the personal demo org. 9 more screenshots cover the customer list, create and detail pages, the new-workflow editor, Health Alerts and Pending updates, Logs Executions and Sync reports, and Settings General. Personal names and emails were replaced on screen before capture.
+* **ChatGPT, Lovable, GitHub Copilot:** checked against OpenAI's and Lovable's current docs. The docs pages were right and the dashboard's setup copy is out of date. A GitHub Copilot page was added.
+* **REST reference:** regenerated from v1.15.1: 470 operations (was 404) and a new Sync jobs page. The allowlist change is in platform PR fastn-ai-team/fastn-platform#3881, open and not merged.
+* **Architecture:** a new [Architecture](../getting-started/architecture.md) page with a diagram of every part, four request flows and a "Which MCP do I need?" table. The same box is on the fastn MCP server and Core concepts pages.
 
-## Follow-ups outside the docs
+## Still open (outside the docs)
 
-* Product copy says both "maintenance agent" (6 places) and "maintainer agent" (9). Billing says "sandbox tenant". Connections labels say "system" ("Connect a system", "Search systems").
-* The code-editing-off banner still says "the AI builder".
-* The Long tier timeout is 36 h in the UI and 48 h in the backend.
-* ChatGPT and Lovable setup steps in the dashboard disagree with their docs pages. Check them in the live tools.
-* Regenerate the REST reference from v1.15.1 and add the new routes (widget deploy, promote and translations, sync jobs, connector update proposals, environment guardrails).
-
-## Competitor takeaways worth doing next
-
-* Keep the core nouns. Customer, connector, connection, workflow and trigger match Prismatic and Workato.
-* Add a "Which MCP do I need?" box wherever fastn Connect and the fastn MCP server both appear.
-* Publish an architecture reference page covering the whole flow: API key → embed token → widget → connection → run → MCP (Merge has one).
-* Add a hosted widget demo and a "Where to start, by task" index (Paragon and Prismatic have these).
-* Add "For agents" notes to quickstart steps, with a prompt developers can copy (Nango does this).
+* **Product copy, for the platform team:**
+  * "maintenance agent" vs "maintainer agent".
+  * "sandbox tenant" on Billing.
+  * "system" labels on Connections ("Connect a system", "Search systems").
+  * "the AI builder" in the code-editing banner.
+  * "Which system?" on Request connector.
+  * Long tier 36 h in the UI vs 48 h in the backend.
+  * The ChatGPT and Lovable setup steps in `apps/dashboard/src/lib/mcp.ts` and `pages/onboarding/ai-tools.ts`.
+* **Screenshots that need a paid plan or real runs:** the fastn agent, a populated workflows list, and events and executions with data. The demo org is on Launch with code editing off, so it can't build or run a workflow.
+* **Hosted widget demo:** there is no public demo environment to link yet.

@@ -4,6 +4,8 @@ description: "Connectors, actions, auth methods, webhook configs and mock stubs.
 
 # Connectors
 
+Vendor API changes and the update proposals that fix them are reviewed under [Pending updates](../../build/connector-updates.md).
+
 Base URL, authentication and errors are on the [REST API overview](README.md).
 
 ## Connectors
@@ -1362,7 +1364,7 @@ Operation: `exportActions`
 POST /v1/actions/import
 ```
 
-Imports actions from an OpenAPI/Swagger, Postman, API Blueprint, hub/marketplace or fastn-export spec, given by url, by content, or as the request body itself. preview returns the parsed actions without creating them. Requires connectors.create.
+Imports actions from an OpenAPI/Swagger, Postman, API Blueprint, hub/integration catalog or fastn-export spec, given by url, by content, or as the request body itself. preview returns the parsed actions without creating them. Requires connectors.create.
 
 Operation: `importActions`
 
@@ -1427,7 +1429,7 @@ Operation: `updateAction`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
-| `description` | `string` | Yes |  |
+| `description` | `string` | No |  |
 | `authMethodId` | `string` | No |  |
 | `authConfig` | `object` | No |  |
 | `inputContract` | `object` | No |  |
@@ -1601,7 +1603,7 @@ Operation: `exportAction`
 POST /v1/actions/{id}/mock
 ```
 
-Validates the body against the action's inputContract and returns a response generated from its outputContract, without calling the provider. 400 lists the input contract violations. Requires connectors.read.
+Validates the body against the action's inputContract and returns placeholder data generated from its outputContract, without calling the provider. It never reads the workspace's saved mock stubs or its own mock server (mock settings `passThrough`): to test against those, use executeMockAction. 400 lists the input contract violations. Requires connectors.read.
 
 Operation: `mockAction`
 
@@ -1725,7 +1727,7 @@ Operation: `proposeActionUpdate`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
-| `description` | `string` | Yes |  |
+| `description` | `string` | No |  |
 | `authMethodId` | `string` | No |  |
 | `authConfig` | `object` | No |  |
 | `inputContract` | `object` | No |  |
@@ -2928,7 +2930,7 @@ Operation: `generateActionMock`
 POST /v1/mock/connectors/{connectorSlug}/actions/{actionSlug}/execute
 ```
 
-Runs an action without calling the provider: the response comes from its mock stubs, chosen by mockStubId, else by a stub whose name contains scenario, else by matching input against the stubs' matchers. No credential is used. Missing required input fields are a 400. Requires connectors.read.
+Runs an action without calling the provider and without any credential. When the workspace has set its own mock server for this connector (mock settings `passThrough`) and the call names no mockStubId and no scenario, the request the live call would send goes to that server instead and its answer is returned, marked `passThrough: true` with `passThroughUrl`; a mismatch with the action's contracts comes back in `warning`. Otherwise the response comes from its mock stubs, chosen by mockStubId, else by a stub whose name contains scenario, else by matching input against the stubs' matchers. Use this, not mockAction, to test against a workspace's stubs or mock server. Missing required input fields are a 400. Requires connectors.read.
 
 Operation: `executeMockAction`
 
@@ -3003,6 +3005,7 @@ Operation: `createMockStub`
 | `name` | `string` | Yes |  |
 | `description` | `string` | No |  |
 | `inputMatchers` | `object` | No | Input field -> value the call must carry for this stub to match; none = default stub. |
+| `scenario` | `string` | No | The built-in scenario this stub answers. A mock execution that asks for a scenario (for example not_found) gets the stub tagged with it, without naming the stub. With no scenario requested, only success and untagged success stubs answer, so tag a 404 or 500 stub with its scenario. null clears it. One of: `success`, `empty`, `not_found`, `error`, `rate_limited`. |
 | `response` | `object` | Yes |  |
 | `response.status` | `integer` | Yes | HTTP status the stub returns. |
 | `response.body` | `any` | Yes | JSON body the stub returns. |
@@ -3040,7 +3043,7 @@ Operation: `regenerateMockStubs`
 ### Update a mock stub
 
 ```http
-PUT /v1/mock/connectors/{connectorSlug}/actions/{actionSlug}/stubs/{stubId}
+PATCH /v1/mock/connectors/{connectorSlug}/actions/{actionSlug}/stubs/{stubId}
 ```
 
 Partially updates a stub; omitted fields keep their value. Requires connectors.update; 404 when the stub does not exist.
@@ -3063,6 +3066,7 @@ Operation: `updateMockStub`
 | `name` | `string` | No |  |
 | `description` | `string` | No |  |
 | `inputMatchers` | `object` | No | Input field -> value the call must carry for this stub to match; none = default stub. |
+| `scenario` | `string` | No | The built-in scenario this stub answers. A mock execution that asks for a scenario (for example not_found) gets the stub tagged with it, without naming the stub. With no scenario requested, only success and untagged success stubs answer, so tag a 404 or 500 stub with its scenario. null clears it. One of: `success`, `empty`, `not_found`, `error`, `rate_limited`. |
 | `response` | `object` | No |  |
 | `response.status` | `integer` | No | HTTP status the stub returns. |
 | `response.body` | `any` | No | JSON body the stub returns. |
@@ -3096,6 +3100,44 @@ Operation: `deleteMockStub`
 
 * `200`: { data: { id, deleted: true } }
 * `404`: Stub not found
+
+### Read the workspace's mock settings
+
+```http
+GET /v1/mock/settings
+```
+
+`strict`: when true, every mocked connector call of this workspace that no stored stub matches answers 501 `{ error: "no mock stub matched", detail }` (detail names the stubs that were tried) instead of a response synthesized from the output contract, so a workflow test run in mockMode fails on a missing stub. Off by default. `passThrough`: connector id or slug -> https base URL of the workspace's own mock server (mock pass-through). A mocked call to such a connector that pins no stub (mockStubId) and no scenario is sent to that server instead of a stub: the same method, path, query and body the live call would send, with the URL's host replaced by the base URL, and with NO credential (no stored connection is read; Authorization, API-key, cookie and {{auth.*}} headers are dropped). Its status and body are the mock answer, marked `passThrough: true` with `passThroughUrl`; differences from the action's input or output contract come back in `warning`. A server that does not answer is a 502 `mock pass-through failed`.
+
+Operation: `getMockSettings`
+
+**Responses**
+
+* `200`: { data: { strict: boolean, passThrough: { [connectorIdOrSlug]: string } } }
+* `403`: Requires connectors.read
+
+### Change the workspace's mock settings
+
+```http
+PUT /v1/mock/settings
+```
+
+Changes the caller's workspace's mock settings (see GET). Send `strict`, `passThrough`, or both: a field left out keeps its saved value, so turning strict on or off never clears the pass-through targets. In `passThrough`, a key set to a URL sets that connector's mock server and a key set to null removes it; other keys are kept. A target must be a public https base URL with no username, password, query string or fragment (private, loopback and link-local addresses are refused), at most 50 per workspace. Changes only that workspace's mock runs; it never affects a live (non-mock) call.
+
+Operation: `updateMockSettings`
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `strict` | `boolean` | No |  |
+| `passThrough` | `object` | No | Connector id or slug -> https base URL of your mock server, or null to remove it. |
+
+**Responses**
+
+* `200`: { data: { strict: boolean, passThrough: { [connectorIdOrSlug]: string } } } after the change
+* `400`: strict is not a boolean, passThrough is not an object, a target is not a public https base URL, more than 50 targets, neither field sent, or the body is not JSON
+* `403`: Requires connectors.update
 
 ## Probes
 
@@ -3177,3 +3219,219 @@ Operation: `probeConnectorValues`
 * `200`: { data: { connectorSlug, actionSlug, values, fields } }
 * `400`: Missing or non-read-only action
 * `403`: Access denied
+
+## Connector changes
+
+### List vendor API changes
+
+```http
+GET /v1/connector-changes
+```
+
+Detected vendor API changes to connectors the caller's org owns or the managed catalog. Requires connectors.read.
+
+Operation: `listConnectorChanges`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `status` | query | string | No | One of: `new`, `accepted`, `dismissed`. |
+| `connectorSlug` | query | string | No |  |
+| `openOnly` | query | boolean | No |  |
+| `limit` | query | integer | No |  |
+
+**Responses**
+
+* `200`: { data: [change] }
+
+### Who a vendor change affects
+
+```http
+GET /v1/connector-changes/{id}/consumers
+```
+
+The workflows and orgs that use the actions a vendor change touches. Requires connectors.read.
+
+Operation: `listConnectorChangeConsumers`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Responses**
+
+* `200`: Consumers
+* `404`: Not found
+
+### Propose a fix for a vendor change
+
+```http
+POST /v1/connector-changes/{id}/propose
+```
+
+Turns an accepted vendor change into a stage-1 update proposal (the deterministic action changes). Requires connectors.update.
+
+Operation: `proposeConnectorChangeFix`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Responses**
+
+* `201`: Proposal
+* `404`: Not found
+* `409`: Change not accepted or already proposed
+
+### Accept or dismiss a vendor change
+
+```http
+PUT /v1/connector-changes/{id}/status
+```
+
+Triage a detected vendor change. Only the org that owns the connector may write. Requires connectors.update.
+
+Operation: `setConnectorChangeStatus`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `status` | `string` | Yes | One of: `accepted`, `dismissed`, `new`. |
+
+**Responses**
+
+* `200`: Updated change
+* `404`: Not found
+
+## Connector update proposals
+
+### List connector update proposals
+
+```http
+GET /v1/connector-update-proposals
+```
+
+Proposals to update connector actions (stage action) and the workflows that use them (stage workflow) after a vendor change. scope=mine narrows to proposals touching the caller's own workflows. Requires connectors.read.
+
+Operation: `listConnectorUpdateProposals`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `stage` | query | string | No | One of: `action`, `workflow`. |
+| `scope` | query | string | No | One of: `mine`. |
+| `status` | query | string | No |  |
+| `connectorSlug` | query | string | No |  |
+| `changeEventId` | query | string | No |  |
+| `limit` | query | integer | No |  |
+
+**Responses**
+
+* `200`: { data: [proposal] }
+
+### Get a connector update proposal
+
+```http
+GET /v1/connector-update-proposals/{id}
+```
+
+One proposal with its items and impact. Requires connectors.read.
+
+Operation: `getConnectorUpdateProposal`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+| `scope` | query | string | No | One of: `mine`. |
+
+**Responses**
+
+* `200`: Proposal
+* `404`: Not found
+
+### Run the repair agent on a proposal
+
+```http
+POST /v1/connector-update-proposals/{id}/agent-run
+```
+
+Asks the repair agent to add its patch to an existing stage-1 proposal. The deterministic proposal stands without it. Requires connectors.update.
+
+Operation: `runConnectorUpdateAgent`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Responses**
+
+* `200`: Updated proposal
+* `404`: Not found
+
+### Apply a connector update proposal
+
+```http
+POST /v1/connector-update-proposals/{id}/apply
+```
+
+Applies the accepted items through the public endpoints with the caller's own credential, so the caller's permissions authorise every write. Requires connectors.update.
+
+Operation: `applyConnectorUpdateProposal`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+
+**Responses**
+
+* `200`: Apply result per item
+* `404`: Not found
+
+### Accept or reject a proposal item
+
+```http
+PUT /v1/connector-update-proposals/{id}/items/{itemId}
+```
+
+Records the reviewer's decision on one item; apply honours exactly the accepted items. Accepting a workflow patch whose verification failed needs overrideReason. 409 when the proposal is no longer open for decisions. Requires connectors.update.
+
+Operation: `decideConnectorUpdateProposalItem`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes |  |
+| `itemId` | path | string | Yes |  |
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `decision` | `string` | Yes | One of: `accept`, `reject`. |
+| `note` | `string` | No |  |
+| `overrideReason` | `string` | No |  |
+
+**Responses**
+
+* `200`: Updated proposal
+* `404`: Not found

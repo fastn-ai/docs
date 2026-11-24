@@ -25,7 +25,7 @@ fastn has four parts:
 
 | Part            | What it does                                                                                      | Who uses it          |
 | --------------- | ------------------------------------------------------------------------------------------------- | -------------------- |
-| **Dashboard** | The web app at app.fastn.dev where the operator builds integrations, sets up the widget and watches every run | The operator: the person on your team who sets up and runs integrations |
+| **Dashboard** | The web app at app.fastn.dev where your team builds integrations, sets up the widget and watches every run | Your team: the people who set up and run integrations |
 | **Widget**      | The panel inside your product where a customer connects apps and turns integrations on            | Your customers       |
 | **API and SDK** | Register customers, mint embed tokens, run workflows and read data from your backend              | Your developers      |
 | **fastn Connect** | The MCP gateway for integrations, built for AI agents. One URL gives an agent the connected apps as tools. Every call is checked against your policies, logged, and runs with the right customer's or person's account | Your AI agents, including agents that act for your customers |
@@ -62,6 +62,7 @@ fastn has four parts:
 ## Learn more
 
 * [Core concepts](getting-started/concepts.md): customers, connectors, connections, workflows and triggers.
+* [Architecture](getting-started/architecture.md): how the parts fit together and how a request flows.
 * [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md): test and live keys, and how your backend calls fastn.
 * [REST API reference](reference/rest/README.md) and [SDK](reference/sdk/README.md): every endpoint and method.
 * [FAQs](reference/faqs.md) and [Glossary](reference/glossary.md).

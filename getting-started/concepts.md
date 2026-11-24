@@ -134,3 +134,7 @@ On any plan, you can build the same way from your AI tool, such as Claude or Cur
 ### The fastn MCP server and fastn Connect
 
 fastn has two MCP addresses. The **fastn MCP server** (`mcp.fastn.dev/fastn-workspace`) lets your AI tool build and manage integrations in your workspace. **fastn Connect**, the MCP gateway, gives your AI agents each customer's connected apps as tools, with the same customer scoping and permission model. See [fastn MCP server](../build/mcp-gateway/README.md).
+
+{% hint style="info" %}
+**Which MCP do I need?** To build and manage integrations from Claude, Cursor or another AI tool, use the **fastn MCP server** (`https://mcp.fastn.dev/fastn-workspace`). To let your AI agent, or a customer's AI client, use a customer's connected apps, use **fastn Connect**, the MCP gateway. See [Architecture](architecture.md#which-mcp-do-i-need).
+{% endhint %}

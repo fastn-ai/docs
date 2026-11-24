@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 384" width="680" height="384" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="t d">
 <title id="t">The fastn MCP server and the fastn MCP gateway</title>
-<desc id="d">Two MCP addresses for two jobs. The operator, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with that customer's own sign-in.</desc>
+<desc id="d">Two MCP addresses for two jobs. Your team, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with that customer's own sign-in.</desc>
 <style>
 :root{--bg:#ffffff;--fg:#17171f;--mut:#5e5e72;--line:#c9c9d6;
 --team:#5b4cf0;--teamc:#efedff;--cust:#0e8f7e;--custc:#e3f6f3;--fastn:#3c3c52;--fastnc:#ececf3}
@@ -26,7 +26,7 @@
 <rect class="frame" x="30" y="60" width="300" height="300" rx="12"/>
 <rect class="frame" x="350" y="60" width="300" height="300" rx="12"/>
 <rect class="team" x="45" y="80" width="130" height="56" rx="8"/>
-<text class="h" x="110.0" y="99.0">Operator</text><text class="s" x="110.0" y="118.0">Claude, Cursor</text>
+<text class="h" x="110.0" y="99.0">Your team</text><text class="s" x="110.0" y="118.0">Claude, Cursor</text>
 <rect class="cust" x="185" y="80" width="130" height="56" rx="8"/>
 <text class="h" x="250.0" y="99.0">Your customer</text><text class="s" x="250.0" y="118.0">If you allow it</text>
 <line class="arr" x1="110" y1="136" x2="110" y2="176" marker-end="url(#a)"/>

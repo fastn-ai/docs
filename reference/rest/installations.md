@@ -39,7 +39,7 @@ Operation: `listInstallations`
 POST /v1/installations
 ```
 
-Creates an installation of a target for one customer. Unless defer_config is true, the widget's config template is cloned into a per-installation config. 400 when the target, customer, widget, config or a pinned connection is not the caller's; 409 when a binding already exists for target + customer + slug, or the widget allows a single activation per customer. Requires workflows.update.
+Creates an installation of a target for one customer. Unless defer_config is true, the widget's config template is cloned into a per-installation config. 400 when the target, customer, widget, config or a pinned connection is not the caller's; 409 when a binding already exists for target + customer + slug, or the widget allows a single activation per customer. 422 CONFIG_REQUIRED when the widget's setup_order is configure_first and the customer's configuration copy (config_id, or their existing copy) was never saved, or, for a widget whose only configuration is its settings form, the customer's settings copy was never saved with complete answers (a config_id naming a settings copy is ignored: the setup carries its answers in config.formValues); 422 with fieldErrors when config.formValues fail the widget's settings form. Requires workflows.update. For a customer (embed) session, the partner's widget filter workflow may refuse: 404 WIDGET_NOT_FOUND (hidden), 403 WIDGET_DISABLED / WIDGET_NOT_SUBSCRIBED (connect only) or ACTION_NOT_ALLOWED (the action is in hideActions), 424 WIDGET_FILTER_FAILED (fail closed). Its access workflow may refuse with 403 ACTION_NOT_ALLOWED and its message (connect needs canConnect, disconnect canDisconnect, configure canConfigure), or 424 ACCESS_CHECK_FAILED (fail closed). Each body carries action.
 
 Operation: `createInstallation`
 
@@ -69,7 +69,10 @@ Operation: `createInstallation`
 
 * `201`: Created installation
 * `400`: Validation or ownership error
+* `403`: WIDGET_DISABLED, WIDGET_NOT_SUBSCRIBED or ACTION_NOT_ALLOWED (connect)
 * `409`: Duplicate installation
+* `422`: CONFIG_REQUIRED: configure this integration first; or settings that fail the form ({ fieldErrors })
+* `424`: WIDGET_FILTER_FAILED or ACCESS_CHECK_FAILED: the partner's widget filter or access workflow failed (fail closed)
 
 ### Active customer setups whose app triggers have no working subscription, so the...
 
@@ -130,7 +133,7 @@ Operation: `getInstallation`
 PUT /v1/installations/{id}
 ```
 
-Updates an installation. Changing selected_trigger_categories provisions newly covered trigger instances and deletes uncovered ones. 400 when nothing applicable was sent or a referenced widget, config or connection is not the caller's; 409 on a duplicate label for the widget. Requires workflows.update.
+Updates an installation. Changing selected_trigger_categories provisions newly covered trigger instances and deletes uncovered ones. For the partner checks below, turning a setup on is a connect, off a disconnect, and a change to config, connections, label, config_id or selected_trigger_categories (a value other than the stored one) a configure. 400 when nothing applicable was sent or a referenced widget, config or connection is not the caller's; 409 on a duplicate label for the widget. 422 CONFIG_REQUIRED when the change turns the installation active, its widget is configure_first, and its configuration copy was never saved. Requires workflows.update. For a customer (embed) session, the partner's widget filter workflow may refuse: 404 WIDGET_NOT_FOUND (hidden), 403 WIDGET_DISABLED / WIDGET_NOT_SUBSCRIBED (connect only) or ACTION_NOT_ALLOWED (the action is in hideActions), 424 WIDGET_FILTER_FAILED (fail closed). Its access workflow may refuse with 403 ACTION_NOT_ALLOWED and its message (connect needs canConnect, disconnect canDisconnect, configure canConfigure), or 424 ACCESS_CHECK_FAILED (fail closed). Each body carries action.
 
 Operation: `updateInstallation`
 
@@ -160,8 +163,11 @@ Operation: `updateInstallation`
 
 * `200`: Updated installation
 * `400`: Validation or ownership error
+* `403`: ACTION_NOT_ALLOWED: activate is connect, deactivate disconnect, a change to config, connections, label, config_id or selected_trigger_categories configure
 * `404`: Not found
 * `409`: Duplicate label
+* `422`: CONFIG_REQUIRED: configure this integration first
+* `424`: WIDGET_FILTER_FAILED or ACCESS_CHECK_FAILED: the partner's widget filter or access workflow failed (fail closed)
 
 ### Delete an installation
 
@@ -169,7 +175,7 @@ Operation: `updateInstallation`
 DELETE /v1/installations/{id}
 ```
 
-Deletes an installation and its trigger instances. Deleting an active one fires the widget's onDeactivation hook first, which can veto. Requires workflows.update.
+Deletes an installation and its trigger instances. Deleting an active one fires the widget's onDeactivation hook first, which can veto. Requires workflows.update. For a customer (embed) session, the partner's widget filter workflow may refuse: 404 WIDGET_NOT_FOUND (hidden), 403 WIDGET_DISABLED / WIDGET_NOT_SUBSCRIBED (connect only) or ACTION_NOT_ALLOWED (the action is in hideActions), 424 WIDGET_FILTER_FAILED (fail closed). Its access workflow may refuse with 403 ACTION_NOT_ALLOWED and its message (connect needs canConnect, disconnect canDisconnect, configure canConfigure), or 424 ACCESS_CHECK_FAILED (fail closed). Each body carries action.
 
 Operation: `deleteInstallation`
 
@@ -182,7 +188,9 @@ Operation: `deleteInstallation`
 **Responses**
 
 * `200`: Deleted
+* `403`: ACTION_NOT_ALLOWED (disconnect)
 * `404`: Not found
+* `424`: WIDGET_FILTER_FAILED or ACCESS_CHECK_FAILED: the partner's widget filter or access workflow failed (fail closed)
 
 ### Save the customer's answers to the widget's settings form (form_schema)
 
@@ -240,7 +248,7 @@ Operation: `getInstallationResolvedConfig`
 GET /v1/installations/{id}/triggers
 ```
 
-List the widget's template triggers plus the trigger instances materialized for this installation (with live trigger state). Templates carry their categories tags and are never filtered by the installation's selected_trigger_categories, templates outside the selection stay available for manual creation. The installation's trigger templates (from its widget) and the live trigger instances made from them. Requires events.read.
+List the widget's template triggers plus the trigger instances materialized for this installation (with live trigger state). Templates carry their categories tags and are never filtered by the installation's selected_trigger_categories, templates outside the selection stay available for manual creation. A SCHEDULE template's scheduleOptions leave out every rate/cron preset that runs more often than the widget owner's plan allows (plan.limits.scheduleMinIntervalMinutes: an hour on Launch), so a customer is only offered cadences a create accepts. The installation's trigger templates (from its widget) and the live trigger instances made from them. Requires events.read.
 
 Operation: `getInstallationTriggers`
 
@@ -261,7 +269,7 @@ Operation: `getInstallationTriggers`
 POST /v1/installations/{id}/triggers
 ```
 
-Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-org-id headers. APP_EVENT templates subscribe with the end user's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config. Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as customer. 404 when the template is not attached to the widget. Requires events.create.
+Create one trigger instance from a widget template trigger (one instance per template per installation). The created trigger is partner-org-owned, stamped with org_id + installation_id, and its route bindings carry installationId plus x-installation-id / x-org-id headers. APP_EVENT templates subscribe with the customer's connection pinned on the installation. Fires the widget's beforeTriggerCreated (can veto/mutate settings) or onTriggerCreated hook per its lifecycle_hooks config. Materializes a trigger instance on this installation from one of its widget's template triggers, owned by the partner org with the customer as customer. 404 when the template is not attached to the widget. Requires events.create.
 
 Operation: `createInstallationTrigger`
 
@@ -290,6 +298,7 @@ Operation: `createInstallationTrigger`
 **Responses**
 
 * `201`: { data: { instance, trigger, subscription } }
+* `400`: SCHEDULE_TOO_FREQUENT: { error, code, minimumMinutes, requestedMinutes } when the chosen rate or cron runs more often than the widget owner's plan allows. A template default (nothing chosen) below it is created at the limit instead.
 * `404`: Installation or template not found
 * `409`: An instance already exists for this template
 * `422`: Hook veto, non-editable field, preset mismatch, extra headers not allowed, or missing APP_EVENT connection
@@ -329,6 +338,7 @@ Operation: `updateInstallationTrigger`
 **Responses**
 
 * `200`: Updated trigger
+* `400`: SCHEDULE_TOO_FREQUENT: { error, code, minimumMinutes, requestedMinutes } when the new rate or cron runs more often than the widget owner's plan allows
 * `404`: Installation or instance not found
 * `422`: Not editable, non-editable field, or preset mismatch
 
@@ -390,7 +400,7 @@ Operation: `updateInstallationUnifiedValues`
 GET /v1/configs
 ```
 
-Lists integration configs (field mappings, conditions, defaults, matching) in the caller's scope. With widget_id, an embed customer also gets the template its ancestor workspace defined for that widget. Requires widgets.read.
+Lists integration configs (field mappings, conditions, defaults, matching) in the caller's scope. With widget_id, an embed customer also gets the template its ancestor workspace defined for that widget. With lang (or the x-fastn-lang header), each row also carries translation, exactly as getConfig does. Requires widgets.read.
 
 Operation: `listConfigs`
 
@@ -400,6 +410,7 @@ Operation: `listConfigs`
 | --- | --- | --- | --- | --- |
 | `widget_id` | query | string | No |  |
 | `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `lang` | query | string | No | Language code such as de, pt-br or zh-hans. |
 
 **Responses**
 
@@ -411,7 +422,7 @@ Operation: `listConfigs`
 POST /v1/configs
 ```
 
-Creates a config. Either send config, or fork_from_widget_id to clone that widget's template server side. installation_id pins the new config onto that installation in the same call. 403 when org_id is outside the caller's customer scope. Requires widgets.create.
+Creates a config. Either send config, or fork_from_widget_id to clone that widget's template server side. installation_id pins the new config onto that installation in the same call. A customer's copy created with config is stamped savedAt; a bare fork is a draft (savedAt null) until its first PUT. On a configure_first widget with no config template but a settings form (form_schema), fork_from_widget_id with org_id mints, or hands back, the customer's settings copy instead (settingsOnly: true, config {}): it keeps their settings answers until a setup carries them and is never pinned by one. 403 when org_id is outside the caller's customer scope. Requires widgets.create. For a customer (embed) session creating its copy of a widget's configuration is a configure: the partner's widget filter may refuse with 404 WIDGET_NOT_FOUND, 403 ACTION_NOT_ALLOWED (configure is in hideActions) or 424 WIDGET_FILTER_FAILED, and its access workflow with 403 ACTION_NOT_ALLOWED and its message (canConfigure) or 424 ACCESS_CHECK_FAILED. Handing back a copy the customer already has (a fork with no config and no installation_id) writes nothing and is never refused. Each body carries action.
 
 Operation: `createConfig`
 
@@ -441,8 +452,9 @@ Operation: `createConfig`
 
 * `201`: Created config
 * `400`: Validation error, empty config, or a widget/template/installation that is not the caller's
-* `403`: org_id out of scope
-* `404`: installation not found
+* `403`: org_id out of scope, or ACTION_NOT_ALLOWED (configure): the partner's widget filter or access workflow refused a customer's copy
+* `404`: installation not found, or WIDGET_NOT_FOUND
+* `424`: WIDGET_FILTER_FAILED or ACCESS_CHECK_FAILED: the partner's widget filter or access workflow failed (fail closed)
 
 ### Get a config
 
@@ -450,7 +462,7 @@ Operation: `createConfig`
 GET /v1/configs/{id}
 ```
 
-Reads one config. 404 when it is outside the caller's scope. Requires widgets.read.
+Reads one config. 404 when it is outside the caller's scope. Requires widgets.read. ownerWidgetId names the integration the config belongs to: its own widgetId, else (a customer's copy, whose widgetId is null) its template's. With lang (or the x-fastn-lang header), the response also carries translation: the configs block of the owning widget's translation for that language (pt-br falls back to pt), for the template and for any customer copy of it. The config itself stays untranslated, so a client that saves it back never stores translated labels.
 
 Operation: `getConfig`
 
@@ -459,10 +471,11 @@ Operation: `getConfig`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Config id (cfg_*). |
+| `lang` | query | string | No | Language code such as de, pt-br or zh-hans. |
 
 **Responses**
 
-* `200`: Config
+* `200`: Config, with ownerWidgetId (and latestTemplateVersion on a customer's copy)
 * `404`: Not found
 
 ### Update a config
@@ -471,7 +484,7 @@ Operation: `getConfig`
 PUT /v1/configs/{id}
 ```
 
-Replaces the fields sent. Send baseUpdatedAt (the updatedAt you loaded) to get 409 CONFIG_CONFLICT instead of overwriting a newer save. To edit one row of an array-typed configuration prefer the /entries endpoints. Requires widgets.update.
+Replaces the fields sent. Send baseUpdatedAt (the updatedAt you loaded) to get 409 CONFIG_CONFLICT instead of overwriting a newer save. To edit one row of an array-typed configuration prefer the /entries endpoints. The first save of a customer's copy sets its savedAt, which a configure_first widget needs before it connects. form_values keeps a customer's draft settings answers on their copy (returned as formValues): it does not set savedAt, move updatedAt or fire a hook, and a template answers 400. On a settings copy (settingsOnly) form_values is the only field accepted (anything else is 400), and answers that are complete against the widget's settings form set its savedAt: that is the configure_first save for a widget whose only configuration is its settings form. Requires widgets.update. For a customer (embed) session, saving a copy a setup pins, the Configure step's draft of a configure_first widget, and form_values alone are a configure the partner may refuse: 403 ACTION_NOT_ALLOWED (configure, with the access workflow's message), 404 WIDGET_NOT_FOUND, or 424 WIDGET_FILTER_FAILED / ACCESS_CHECK_FAILED. Each body carries action.
 
 Operation: `updateConfig`
 
@@ -499,15 +512,18 @@ Operation: `updateConfig`
 | `config.unified` | `object[]` | No |  |
 | `config.unifiedValues` | `object` | No |  |
 | `plan` | `object` | No |  |
+| `form_values` | `object` | No |  |
 | `baseUpdatedAt` | `string` | No |  |
 | `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 
 **Responses**
 
-* `200`: Updated config
+* `200`: Updated config, with ownerWidgetId: the integration it belongs to, a customer's copy's template's when its own widgetId is null
 * `400`: Validation error or nothing to update
-* `404`: Not found
+* `403`: ACTION_NOT_ALLOWED (configure): the partner's widget filter or access workflow refused a customer's save
+* `404`: Not found, or WIDGET_NOT_FOUND
 * `409`: CONFIG_CONFLICT: the config changed since baseUpdatedAt
+* `424`: WIDGET_FILTER_FAILED or ACCESS_CHECK_FAILED: the partner's widget filter or access workflow failed (fail closed)
 
 ### Delete a config
 
@@ -744,13 +760,57 @@ Operation: `forkConfig`
 * `201`: data: { id, ... }
 * `400`: FORK_CONFIG_NOT_TEMPLATE / FORK_CONFIG_WIDGET
 
+### Check whether a list item may be removed
+
+```http
+POST /v1/configs/{id}/items/delete-check
+```
+
+Before the form removes an item from a list field, runs the field's onDelete.flowId workflow as the customer (the same flow resolution and customer context as the options route) with input { fieldId, itemIndex, item, data, configId, installationId }. The flow answers allowed (v1) or accept, and message or reason for the customer. Its whole reply comes back as details. A field without onDelete is always allowed. A flow that fails, times out (8s) or cannot be reached answers allowed false with reason error, so an item a check could not clear stays.
+
+Operation: `checkConfigItemDelete`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes | Config id (cfg_*) |
+| `installationId` | query | string | No | Pin the flow to a specific installation, as on the options route. Rejected for end_user callers. |
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `fieldId` | `string` | Yes | Dot-path id of the list field |
+| `itemIndex` | `integer` | Yes |  |
+| `item` | `any` | No | The item about to be removed |
+| `data` | `object` | No | Current form values, passed to the flow as input.data |
+
+**Responses**
+
+* `200`: The verdict
+* `400`: Invalid body
+* `403`: Caller lacks widgets.update, an end_user supplied installationId, or the pinned installation's customer is outside the caller's scope
+* `404`: Config, field, onDelete flow, or pinned installation not found
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `data.allowed` | `boolean` |  |
+| `data.checked` | `boolean` | False when the field has no onDelete flow |
+| `data.reason` | `string` | Set when allowed is false One of: `blocked`, `error`. |
+| `data.message` | `string` | The flow's text for the customer (blocked only) |
+| `data.details` | `object` | The flow's whole reply (blocked only) |
+
 ### Fetch dynamic options for a configuration form field
 
 ```http
 POST /v1/configs/{id}/options
 ```
 
-Executes the field's optionsSource.flowId workflow (matched by workflow id or slug within the config's catalog lineage) with the caller's current form values and the config's customer context (x-org-id + x-installation-id are stamped server-side; a caller-supplied installationId pin wins over the derivation and supplies the customer). The field is identified by its dot-path id (e.g. mapdata1.channels).
+Executes the field's optionsSource.flowId workflow (matched by workflow id or slug within the config's catalog lineage) with the caller's current form values and the config's customer context (x-org-id + x-installation-id are stamped server-side; a caller-supplied installationId pin wins over the derivation and supplies the customer). The field is identified by its dot-path id (e.g. mapdata1.channels). The flow's input carries locale: the reader's language from ?lang= or x-fastn-lang (null for English), so it can label its options in that language.
 
 Operation: `getConfigFieldOptions`
 
@@ -762,6 +822,7 @@ Operation: `getConfigFieldOptions`
 | `fieldId` | query | string | Yes | Dot-path field id, e.g. mapdata1.channels |
 | `side` | query | string | No | Mapping-mode fields only: which of the field's two flows to execute, source lists the items being mapped, destination lists the choices. Defaults to destination. One of: `source`, `destination`. |
 | `installationId` | query | string | No | Pin the options flow to a specific installation. The flow runs as that installation's customer (its connections map selects the connection), which must be within the caller's customer scope. Wins over the server-side derivation from the config. Rejected for end_user callers. |
+| `lang` | query | string | No | The reader's language, passed to the flow as input.locale. The x-fastn-lang header does the same. |
 
 **Request body**
 
@@ -821,7 +882,7 @@ Operation: `upgradeConfig`
 
 **Responses**
 
-* `200`: Upgraded config with a merge report, or alreadyUpToDate: true
+* `200`: Upgraded config (with ownerWidgetId) and a merge report, or alreadyUpToDate: true
 * `400`: Not a clone
 * `404`: Config or its template not found
 
@@ -853,7 +914,7 @@ Operation: `listConfigWorkflows`
 POST /v1/config-drafts
 ```
 
-Stores a finished configuration proposal (verbatim) for the user to review and returns a reviewUrl that opens the review page without signing in for 20 minutes. The draft expires after 24h. Poll getConfigDraft until status is approved, then use its configId. 503 while the store is unavailable. Requires widgets.create.
+Stores a finished configuration proposal (verbatim) for the user to review and returns a reviewUrl that opens the review page without signing in for 20 minutes. The draft expires after 24h. Poll getConfigDraft until status is approved, then use its configId. In a client that shows MCP App panels the review opens inline; the [fastn panel] note in the result says whether to give the user the link. 503 while the store is unavailable. Requires widgets.create.
 
 Operation: `createConfigDraft`
 
@@ -877,7 +938,7 @@ Operation: `createConfigDraft`
 POST /v1/config-drafts/propose
 ```
 
-Takes rough per-direction mappings plus the probe ids already run (POST /probes), and builds the enriched proposal server side: corrects field names against the probed fields, adds required target fields and option lists. Stores it as a draft and returns its reviewUrl like createConfigDraft. Requires widgets.create.
+Takes rough per-direction mappings plus the probe ids already run (POST /probes), and builds the enriched proposal server side: corrects field names against the probed fields, adds required target fields and option lists. Stores it as a draft and returns its reviewUrl like createConfigDraft. In a client that shows MCP App panels the review opens inline; the [fastn panel] note in the result says whether to give the user the link. Requires widgets.create.
 
 Operation: `proposeConfiguration`
 

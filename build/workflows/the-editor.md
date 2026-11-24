@@ -34,6 +34,8 @@ The walkthrough below assumes the code column is present. This is roughly the or
 
 Under **Identity**, give it a **Name** (required) and, on a new workflow, a **Slug**: the slug is fixed once the workflow exists, so choose it deliberately. **Description** is free text. Under **Execution**, pick an **Execution tier**: `Instant` runs synchronously and caps at 25s (2 minutes if fastn has granted your organization the "Increase Instant timeout" entitlement), `Standard` returns `202` and runs up to 15 min, `Long` returns `202` and runs up to 36 hours. The **Execution timeout** slider is then constrained to that tier.
 
+<figure><img src="../../.gitbook/assets/screens/workflow-editor-new.webp" alt="A new workflow named Sync new contacts: the Configuration panel with Start from an example, Name and Slug sync-new-contacts, Description and Labels on the left; on the right the Test, Connectors and Contract tabs with ctx.input and ctx.headers, a Live mode menu and Run Live, under a banner saying code editing is switched off for this organization"><figcaption>A new workflow. In an organization with code editing off, only the Test, Connectors and Contract tabs show.</figcaption></figure>
+
 Full ranges and defaults are in the Configuration panel reference below.
 {% endstep %}
 

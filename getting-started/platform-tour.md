@@ -115,7 +115,7 @@ Two pages. **API keys** are what your backend uses to mint embed tokens and call
 
 ### Operate → Customers
 
-<figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers list holding a single row (testing, identifier testing, 1 connection, Active) beside an All tiers filter, with Create customer top-right and View connections on the row"><figcaption>Every customer using your embedded integrations; this workspace has only a test one.</figcaption></figure>
+<figure><img src="../.gitbook/assets/screens/customers-list.webp" alt="Operate, Customers: a Create customer button, search and an All tiers filter, the note Your plan allows 3 customers, 1 in use, and one row: Northwind Traders, slug northwind-traders, no connections yet, status Active, with View connections"><figcaption><strong>Operate → Customers</strong> with one test customer.</figcaption></figure>
 
 **Customers** lists everyone using your embedded integrations, with columns *Customer*, *Connections* and *Status* (`Active` or `Pending admin activation`), plus **Create customer**, a search box, and **View connections** on each row. Documented with [Operate](../operate/customers.md).
 

@@ -8,9 +8,11 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 - [x] Competitor benchmark of docs structure and terms
 - [x] Glossary as the one canonical term list
 - [x] Sweep leftover deprecated terms across all pages
-- [~] Screenshots from the live dashboard, dark mode, .webp: 25 captured, placed on 23 pages; populated views (customers, connections, workflows, logs, fastn agent) wait on demo data
+- [x] Screenshots from the live dashboard, dark mode, .webp: 34 captured. Views needing a paid plan or real runs are listed in audit/README.md
 - [x] Link check (0 broken), dash check (0)
-- [ ] PR
+- [x] Round 1 merged (#85)
+- [x] Round 2: your team wording, demo data shots, ChatGPT/Lovable/Copilot, REST v1.15.1, Architecture page
+- [ ] Round 2 PR
 
 ## Pages
 
@@ -40,14 +42,14 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 22 | Build | fastn MCP server | `build/mcp-gateway/README.md` | [x] Fixed | [x] | connect-your-ai-tool.webp |
 | 23 | Build | Claude | `build/mcp-gateway/claude.md` | [x] Fixed | [ ] | |
 | 24 | Build | Claude Code | `build/mcp-gateway/claude-code.md` | [x] Fixed | [ ] | |
-| 25 | Build | ChatGPT | `build/mcp-gateway/chatgpt.md` | [~] Follow-up | [ ] | |
+| 25 | Build | ChatGPT | `build/mcp-gateway/chatgpt.md` | [x] Fixed | [ ] | Checked against OpenAI and Lovable docs |
 | 26 | Build | Cursor | `build/mcp-gateway/cursor.md` | [x] Fixed | [ ] | |
 | 27 | Build | VS Code | `build/mcp-gateway/vscode.md` | [x] Fixed | [ ] | |
 | 28 | Build | Codex | `build/mcp-gateway/codex.md` | [x] Fixed | [ ] | |
 | 29 | Build | Antigravity | `build/mcp-gateway/antigravity.md` | [x] Fixed | [ ] | |
 | 30 | Build | Devin | `build/mcp-gateway/devin.md` | [x] Fixed | [ ] | |
 | 31 | Build | Cline | `build/mcp-gateway/cline.md` | [x] Fixed | [ ] | |
-| 32 | Build | Lovable | `build/mcp-gateway/lovable.md` | [~] Follow-up | [ ] | |
+| 32 | Build | Lovable | `build/mcp-gateway/lovable.md` | [x] Fixed | [ ] | Checked against OpenAI and Lovable docs |
 | 33 | Build | Bolt | `build/mcp-gateway/bolt.md` | [x] Fixed | [ ] | |
 | 34 | Build | fastn for AI agents | `reference/ai-agents.md` | [x] Fixed | [ ] | |
 | 35 | Build | Connect your product | `manage/saas-connectors.md` | [x] OK | [x] | connect-your-product.webp |
@@ -69,7 +71,7 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 51 | Build | Inside a category | `build/unified-apis/inside-a-category.md` | [x] OK | [ ] | |
 | 52 | Build | Unified vs direct | `build/unified-apis/unified-vs-direct.md` | [x] OK | [ ] | |
 | 53 | Build | Workflows | `build/workflows/README.md` | [x] Fixed | [ ] | |
-| 54 | Build | The editor | `build/workflows/the-editor.md` | [x] Fixed | [ ] | |
+| 54 | Build | The editor | `build/workflows/the-editor.md` | [x] Fixed | [x] | workflow-editor-new.webp |
 | 55 | Build | Write a workflow in code | `tutorials/saas-admin/configuring-a-workflow-in-code.md` | [x] Fixed | [ ] | |
 | 56 | Build | Triggers | `build/triggers/README.md` | [x] OK | [ ] | |
 | 57 | Build | Set up triggers | `tutorials/saas-admin/setting-up-triggers.md` | [x] Fixed | [ ] | |
@@ -103,9 +105,9 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 85 | Embed | Find your org identifier | `tutorials/developer/finding-your-org-identifier.md` | [x] Fixed | [ ] | |
 | 86 | Operate | Overview | `operate/overview.md` | [x] Fixed | [ ] | |
 | 87 | Operate | Health | `operate/health.md` | [x] Fixed | [x] | health-needs-attention.webp |
-| 88 | Operate | Pending updates | `build/connector-updates.md` | [x] OK | [ ] | |
-| 89 | Operate | Alerts | `operate/alerts.md` | [x] OK | [ ] | |
-| 90 | Operate | Customers | `operate/customers.md` | [x] Fixed | [ ] | |
+| 88 | Operate | Pending updates | `build/connector-updates.md` | [x] OK | [x] | health-pending-updates.webp |
+| 89 | Operate | Alerts | `operate/alerts.md` | [x] OK | [x] | health-alerts.webp |
+| 90 | Operate | Customers | `operate/customers.md` | [x] Fixed | [x] | customers-list.webp |
 | 91 | Operate | Manage customers | `tutorials/saas-admin/managing-customers.md` | [x] Fixed | [ ] | |
 | 92 | Operate | Connections | `build/connections/README.md` | [x] Fixed | [x] | connections-customers-empty.webp |
 | 93 | Operate | Create a connection | `build/connections/creating-a-connection.md` | [x] Fixed | [ ] | |
@@ -114,9 +116,9 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 96 | Operate | Auth types | `build/connections/auth-types.md` | [x] OK | [ ] | |
 | 97 | Operate | Logs | `operate/README.md` | [x] Fixed | [x] | logs-events-empty.webp |
 | 98 | Operate | Events | `operate/events.md` | [x] Fixed | [ ] | |
-| 99 | Operate | Executions | `operate/executions.md` | [x] Fixed | [ ] | |
+| 99 | Operate | Executions | `operate/executions.md` | [x] Fixed | [x] | logs-executions.webp |
 | 100 | Operate | Traces | `operate/traces.md` | [x] Fixed | [ ] | |
-| 101 | Operate | Sync reports | `operate/sync-reports.md` | [x] Fixed | [ ] | |
+| 101 | Operate | Sync reports | `operate/sync-reports.md` | [x] Fixed | [x] | logs-sync-reports.webp |
 | 102 | Operate | Triggers | `operate/triggers/README.md` | [x] OK | [ ] | |
 | 103 | Operate | Using a webhook trigger | `operate/triggers/using-a-webhook-trigger.md` | [x] Fixed | [ ] | |
 | 104 | Operate | Troubleshooting | `operate/troubleshooting.md` | [x] Fixed | [ ] | |
@@ -132,7 +134,7 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 114 | Settings | People | `manage/people.md` | [x] OK | [ ] | |
 | 115 | Settings | Roles | `manage/roles.md` | [x] OK | [x] | settings-roles.webp |
 | 116 | Settings | Set up roles and permissions | `tutorials/saas-admin/roles-and-permissions-setup.md` | [x] Fixed | [ ] | |
-| 117 | Settings | General | `manage/general.md` | [x] Fixed | [ ] | |
+| 117 | Settings | General | `manage/general.md` | [x] Fixed | [x] | settings-general.webp |
 | 118 | Settings | Billing and limits | `manage/billing.md` | [x] Fixed | [x] | settings-billing.webp |
 | 119 | Settings | Audit log | `manage/audit-log.md` | [x] OK | [ ] | |
 | 120 | Settings | Secrets | `manage/secrets.md` | [x] OK | [x] | settings-secrets.webp |
@@ -142,18 +144,18 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 124 | Settings | Trash | `manage/trash.md` | [x] OK | [ ] | |
 | 125 | Settings | Your profile | `manage/profile.md` | [x] OK | [ ] | |
 | 126 | Reference | HTTP API | `reference/api.md` | [x] OK | [ ] | |
-| 127 | Reference | REST API reference | `reference/rest/README.md` | [~] Follow-up | [ ] | |
-| 128 | Reference | Workflows | `reference/rest/workflows.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 129 | Reference | Installations and configs | `reference/rest/installations.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 130 | Reference | Widgets and embedding | `reference/rest/widgets.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 131 | Reference | Triggers and events | `reference/rest/triggers.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 132 | Reference | Event subscriptions | `reference/rest/event-subscriptions.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 133 | Reference | Connectors | `reference/rest/connectors.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 134 | Reference | Connections | `reference/rest/connections.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 135 | Reference | Unified API | `reference/rest/unified.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 136 | Reference | Alerts and observability | `reference/rest/observability.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 137 | Reference | Environments and secrets | `reference/rest/environments.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
-| 138 | Reference | Organization and access | `reference/rest/organization.md` | [~] Generated | n/a | Regenerate from OpenAPI v1.15.1 (platform team) |
+| 127 | Reference | REST API reference | `reference/rest/README.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 128 | Reference | Workflows | `reference/rest/workflows.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 129 | Reference | Installations and configs | `reference/rest/installations.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 130 | Reference | Widgets and embedding | `reference/rest/widgets.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 131 | Reference | Triggers and events | `reference/rest/triggers.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 132 | Reference | Event subscriptions | `reference/rest/event-subscriptions.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 133 | Reference | Connectors | `reference/rest/connectors.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 134 | Reference | Connections | `reference/rest/connections.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 135 | Reference | Unified API | `reference/rest/unified.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 136 | Reference | Alerts and observability | `reference/rest/observability.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 137 | Reference | Environments and secrets | `reference/rest/environments.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
+| 138 | Reference | Organization and access | `reference/rest/organization.md` | [x] Generated | n/a | Regenerated from v1.15.1 |
 | 139 | Reference | Widget callbacks | `reference/widget-callbacks.md` | [x] OK | [ ] | |
 | 140 | Reference | SDK | `reference/sdk/README.md` | [x] OK | [ ] | |
 | 141 | Reference | Build an integration, end to end | `reference/sdk/end-to-end.md` | [x] Fixed | [ ] | |
@@ -174,3 +176,6 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 156 | Reference | Tutorials | `tutorials/README.md` | [x] Fixed | [ ] | |
 | 157 | Reference | Dashboard tutorials | `tutorials/saas-admin/README.md` | [x] Fixed | [ ] | |
 | 158 | Reference | Developer | `tutorials/developer/README.md` | [x] Fixed | [ ] | |
+| 159 | Get started | Architecture | `getting-started/architecture.md` | [x] New | [x] | architecture.svg |
+| 160 | Build | GitHub Copilot | `build/mcp-gateway/github-copilot.md` | [x] New | n/a | |
+| 161 | Reference | Sync jobs | `reference/rest/sync.md` | [x] Generated | n/a | v1.15.1 |
