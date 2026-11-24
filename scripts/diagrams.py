@@ -175,7 +175,7 @@ body += f'<rect class="frame" x="20" y="92" width="{W - 40}" height="262" rx="10
 body += text(52, 106, "fastn", "h")
 rows = [
     (118, [("fastn MCP server", "build and manage"), ("API and SDK", "embed tokens, runs"), ("Widget", "connect and configure")]),
-    (200, [("Integrations", "connectors, workflows"), ("Workflow runtime", "one run per customer"), ("Connections", "each customer's sign-ins")]),
+    (200, [("Integrations", "connectors, workflows"), ("Workflow runtime", "one customer per run"), ("Connections", "each customer's sign-ins")]),
     (282, [("Maintainer agent", "watches apps, proposes fixes"), ("fastn Connect", "MCP gateway for AI agents"), ("Health and Logs", "every run and event")]),
 ]
 for y, cells in rows:

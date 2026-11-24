@@ -29,8 +29,8 @@ fastn sits between your product and the apps your customers use. Your team build
 | [Integrations](../build/integrations.md) | Connectors (one per app), workflows (the code that runs) and triggers (what starts a run). | Built by your team |
 | [API and SDK](../reference/api.md) | Your backend mints embed tokens, runs workflows, and reads or writes customer data through unified APIs. Authenticated with an API key that never leaves your server. | Your backend |
 | [Widget](../embed/README.md) | The panel inside your product where a customer connects apps and adjusts each integration. Opened with a short-lived embed token. | Your customers |
-| [Connections](../build/connections/README.md) | One signed-in account per customer per app. Each customer's connections are isolated from every other customer's. | Created by your customers, or by you for them |
-| Workflow runtime | Runs a workflow for one customer at a time, with that customer's connections and configuration. | fastn |
+| [Connections](../build/connections/README.md) | A customer's signed-in account on an app. A customer can hold several, for example two Slack workspaces, or one per user. Each customer's connections are isolated from every other customer's. | Created by your customers, or by you for them |
+| Workflow runtime | Runs a workflow for one customer per run, with that customer's connections and configuration. | fastn |
 | [fastn Connect](../reference/ai-agents.md) | The MCP gateway: gives your AI agents one customer's connected apps as tools, with policies and audit logs. | Your AI agents |
 | [Maintainer agent](../build/connector-updates.md) | Watches the apps you connect to, detects API changes, and proposes fixes for your team to accept. | fastn, reviewed by your team |
 | [Health](../operate/health.md) and [Logs](../operate/README.md) | What needs attention now, and every event and run as it happened. | Your team |
