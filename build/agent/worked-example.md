@@ -101,7 +101,7 @@ The panel header carries a download icon (**Download document**): the plan is a 
 {% step %}
 #### It builds in tracked phases
 
-**Build progress** is the honest view of what is happening. It counts completed steps against the total (`0/6` → `2/6` → …) across the phases the agent has written steps into (up to four), each expandable into named substeps.
+**Build progress** shows what the agent is doing. It counts completed steps against the total (`0/6` → `2/6` → …) across the phases the agent has written steps into (up to four), each expandable into named substeps.
 
 | Phase | Substeps in this run |
 | ----- | -------------------- |

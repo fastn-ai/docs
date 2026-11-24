@@ -28,7 +28,7 @@ Operate shows how every customer's integrations are doing once they are live. **
 
 | Role | What they use Operate for |
 | --- | --- |
-| **Support and customer success** | See which customers need attention before they open a ticket |
+| **Support and customer success** | See which customers have failing runs or expired connections |
 | **On-call engineer** | Find the failed run, read why it failed, and replay it |
 | **Integration engineer** | Accept the fix when a vendor changes an API |
 | **Account owner** | Keep an eye on totals and trends across every customer |

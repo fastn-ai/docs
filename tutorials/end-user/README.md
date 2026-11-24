@@ -34,7 +34,7 @@ These tutorials are for the people at your customer who use integrations through
 
 [**Extending a Pre-Built Integration**](extending-a-prebuilt-integration.md) - Change what fields, filters and direction a shipped integration uses, and know where the assistant's authority ends.
 
-[**Getting Alerted**](getting-alerted.md) - Set up your own alerts so a broken or stalled integration tells you, instead of a colleague telling you.
+[**Getting Alerted**](getting-alerted.md) - Set up your own alerts so you hear when an integration fails or stops syncing.
 
 [**Connect Claude and Other AI Clients**](connecting-claude.md) - Generate a one-time MCP URL from the widget's **⋯** menu and drive your integrations from Claude, with no fastn account.
 

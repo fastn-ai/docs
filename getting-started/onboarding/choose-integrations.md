@@ -18,16 +18,7 @@ layout:
 
 This step is for choosing the integrations your customers get inside your product, and building the first one. You pick a system your customers use and say what the integration should do; fastn's agent (**Build with AI**) builds it. An integration is a connector, a connection, its triggers and the workflow logic around them: it moves data between your product and the customer's system and does a job there.
 
-**Why:** customers ask for integrations as jobs, not connectors. Not "a HubSpot connector", but "when a shipment is created, add it to our HubSpot". What you choose here is what they find in your widget.
-
-### Without fastn and with fastn
-
-|  | Without fastn | With fastn |
-| --- | --- | --- |
-| Building it | Engineers learn the other system's API, then write the sync, sign-in, retries and field mapping | Describe the job in a sentence; Build with AI or your AI tool builds and tests it |
-| Another system | A new engineering project | Pick it from the catalog, or have its connector built as in [step 1](connect-your-product.md) |
-| Running it | Your own queues, schedules and logs | fastn runs and logs every workflow, per customer |
-| Different needs per customer | Custom code per customer | Each customer adjusts mappings and filters in the widget ([step 4](customers-connect-and-customize.md)) |
+**Optional.** Describe each integration as a job, for example "when a shipment is created, add it to the customer's HubSpot". The integrations you choose here are the ones customers see in your widget.
 
 ### What it's made of
 

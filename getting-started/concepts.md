@@ -127,7 +127,7 @@ The categories and entities available depend on the unified API catalog in your 
 
 ### Build with AI
 
-fastn's builder, **Build with AI**, is not autocomplete. It discovers API specs, creates connectors, wires auth, proposes field mappings, generates test cases and writes the workflow, and it shows you a diff before anything runs. You review; it builds.
+**Build with AI** is fastn's agent for building integrations. It finds API specs, creates connectors, sets up authentication, proposes field mappings, generates test cases and writes the workflow. It shows you a diff before anything runs.
 
 ### The MCP gateway
 

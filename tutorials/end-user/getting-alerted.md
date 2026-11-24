@@ -18,7 +18,7 @@ layout:
 
 # Getting Alerted
 
-A sync that stops is worse than a sync that fails loudly: nothing errors, nothing lands in your inbox, and the first signal is a colleague asking why a record never arrived. Alerts close that gap, and you can set them up yourself from inside the widget - no fastn account, no request to your provider.
+A sync can stop without an error, so nothing tells you records stopped arriving. Alerts notify you when that happens. You set them up yourself inside the widget, with no fastn account.
 
 ### Where they live
 

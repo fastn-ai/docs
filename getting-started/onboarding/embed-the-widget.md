@@ -18,16 +18,7 @@ layout:
 
 This step is for putting your integrations inside your product. The widget is the panel where your customers find, connect and customize integrations, under your brand, without signing in to fastn. It holds your connectors, the workflows behind them, and the AI your customers use to adjust them.
 
-**Why:** customers can only use integrations they can turn on themselves. You embed the widget once; after that, new integrations and widget changes reach customers without a release on your side.
-
-### Without fastn and with fastn
-
-|  | Without fastn | With fastn |
-| --- | --- | --- |
-| Integrations page | Build your own marketplace and settings screens | The widget, styled to your product in the widget builder |
-| Customer sign-in | OAuth flows and token refresh for every system | The widget opens each system's own sign-in; fastn stores and refreshes the credentials |
-| Keeping customers apart | Your code keeps every token and record separate per customer | Your backend gets a short-lived embed token per customer; the widget shows only that customer's data |
-| New integrations | A frontend and backend release | Add it in fastn and it appears in the widget |
+**Required to go live.** You embed the widget once. Integrations you add later, and changes to the widget, appear in it without a release of your product.
 
 ### What it's made of
 

@@ -28,10 +28,9 @@ Build turns a plain-language description into a working integration. You say wha
 
 | Role | What they use Build for |
 | --- | --- |
-| **Integration or solutions engineer** | Turn a customer request into a tested integration the same day |
-| **Product manager** | Ship the integration a deal is waiting on, without queueing it for engineering |
+| **Integration or solutions engineer** | Build and test integrations from a description |
+| **Product manager** | Describe an integration and review its plan and test cases, without writing code |
 | **Developer** | Read the generated workflow code where code view is on for your organization, and edit it or write it yourself where code editing is also on |
-| **Founder or CTO** | Say yes to "do you integrate with X?" and keep engineers on the core product |
 
 ## How do I use it?
 
