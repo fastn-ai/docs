@@ -128,6 +128,10 @@ A callback marked **background** does not hold up the customer. The widget compl
 
 [Widget callbacks](../../reference/widget-callbacks.md) lists what each workflow receives in `ctx.input` and what it can return.
 
+## Localization
+
+The integration's text in other languages. Pick a language from the list, or enter its code under **Other code**, then translate the text customers see. The widget builder's **Preview language** switch shows the result.
+
 ## Saving
 
 **Save & Publish** applies everything, including binding the selected workflows, and offers the integration to every allowed customer. On a draft integration, **Save draft** saves your changes and keeps it a draft, so new customers still do not see it. **Cancel** discards the dialog.

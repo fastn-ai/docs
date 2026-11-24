@@ -28,7 +28,7 @@ Add fastn to Claude once, sign in, then ask for the integration in a chat. This 
 {% step %}
 #### Open Add to Claude from fastn
 
-In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP** → **MCP server**) and click **Add to Claude**. You need the **Developer** role or above. Claude opens the **Add custom connector** form with the name and URL already filled in.
+In fastn, click **Connect your AI tool** in the top bar (or open **Embed → MCP server**) and click **Add to Claude**. You need the **Developer** role or above. Claude opens the **Add custom connector** form with the name and URL already filled in.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-add-custom-connector.webp" alt="Claude's Add custom connector form opened from a link, with the warning This connector was suggested by an external link, the name Fastn, the URL https://mcp.fastn.dev/fastn-workspace, Connects to mcp.fastn.dev, and Cancel and Continue buttons"><figcaption>Claude warns that the connector came from a link. Check the URL is <code>https://mcp.fastn.dev/fastn-workspace</code>, then click <strong>Continue</strong>.</figcaption></figure>
 

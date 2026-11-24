@@ -26,7 +26,7 @@ X-API-Key: fsk_live_<your-key>
 
 These two are the only headers this API reads a key from. A webhook trigger URL takes them too, and also `x-fastn-access-key` (see [Webhook endpoints](#webhook-endpoints)). No endpoint reads `x-fastn-api-key`: a call that sends the key there is answered `401`.
 
-Keys are created under [Embed → API keys and MCP](../manage/api-keys.md) and come in two modes.
+Keys are created under [Embed → API keys](../manage/api-keys.md) and come in two modes.
 
 | Header                   | Live key                    | Test key                              |
 | ------------------------ | --------------------------- | ------------------------------------- |
@@ -225,7 +225,7 @@ That URL carries a live credential. Treat it like one: build it server-side per 
 | Response                  | Means                                                                          |
 | ------------------------- | -------------------------------------------------------------------------------- |
 | `WORKFLOW_NOT_PUBLISHED`  | The workflow has never had a snapshot published, so there is no version to run. **Every call returns this until you publish one**. It is the most common cause of "the API did nothing". Publish from the workflow editor. |
-| `401` / `403`             | The key is wrong, revoked, expired, outside its IP allowlist, or lacks the permission for what you called. Check the key on [Embed → API keys and MCP](../manage/api-keys.md). |
+| `401` / `403`             | The key is wrong, revoked, expired, outside its IP allowlist, or lacks the permission for what you called. Check the key on [Embed → API keys](../manage/api-keys.md). |
 | Test key rejected         | The key is a test key and `X-fastn-Test-Mode: true` was not sent.                |
 | `ENV_NOT_PERMITTED` (`403`) | The key may not run the environment named in `x-fastn-env`. See [Authentication](#authentication). |
 

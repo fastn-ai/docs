@@ -1,5 +1,5 @@
 ---
-description: Onboarding step 1. Connect your product's API to fastn once, as a connector, and register it as your SaaS connector.
+description: An optional going-live item. Connect your product's API to fastn once, as a connector, and register it as your SaaS connector.
 layout:
   width: default
   title:
@@ -18,7 +18,7 @@ layout:
 
 This step is for connecting your product to fastn. fastn learns your product's API once, as a connector, and you register it as your SaaS connector. Every integration then reads from and writes to your product through that connector, for each customer.
 
-**Required to go live.** Every integration reads from or writes to your product through this connector, and each customer gets their own connection to it. You can skip this step while you explore.
+**Optional.** Needed when an integration reads or writes your product's data: it then does so through this connector, and each customer gets their own connection to it. Customers can connect the apps you picked without it.
 
 ### What it's made of
 
@@ -37,7 +37,7 @@ This step is for connecting your product to fastn. fastn learns your product's A
 | --- | --- | --- |
 | Catalog connector | Your product is already in fastn's catalog | A connector fastn maintains. Nothing to build |
 | Your AI tools | Your team works in Claude, ChatGPT, Gemini, Cursor or similar | The connector built and tested from your chat, through fastn's MCP server. Uses no AI credits |
-| Build with AI | You want fastn to build it from your API docs or OpenAPI file | The connector built and tested by fastn's agent. Uses AI credits |
+| Build with AI | You want fastn to build it from your API docs or OpenAPI file | The connector built and tested by fastn's agent. Paid plans only (Scale, Enterprise). Uses AI credits |
 | By hand | You want full control | An empty connector you fill in action by action (you can paste a curl command) |
 | Import | You have a connector exported from another fastn workspace | The connector from a fastn .json bundle, without connections |
 | Request | You want fastn's team to build it | A connector built by fastn's team, with no committed date |
@@ -61,7 +61,14 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 
 ### In the onboarding
 
-fastn checks your domain, researches your product and shows the result on the "Here's what we found" screen. You click **Looks right** or **Edit** on each row, then pick who builds the connector: your AI tools (recommended, no AI credits) or the **fastn agent**, with an estimate such as "Up to 12 min" and the AI credits it may use. If your product is already in the catalog, there's nothing to build. Finishing the step earns its share of the 50 onboarding AI credits.
+Setup step 1, **Check your product**, checks your domain, researches your product and shows **Here's what we found**, where you click **Looks right** or **Edit** on each row. That step earns 15 AI credits.
+
+Connecting your product comes later, as the optional going-live item **Connect** followed by your product's name. An admin does it; a developer sees *An admin does this*. Choose who builds the connector:
+
+* **Your AI tool** (recommended): builds it through the fastn MCP server, with no AI credits.
+* **The fastn agent**, or **Start small** (two actions now, the rest later): on Scale and Enterprise, using AI credits. On Launch this option reads **Upgrade to use the fastn agent**.
+
+If your product is already in the catalog, there's nothing to build. This item earns no AI credits.
 
 ### Related docs
 

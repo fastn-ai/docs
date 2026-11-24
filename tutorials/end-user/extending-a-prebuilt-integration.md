@@ -34,6 +34,10 @@ Both change the same configuration. Neither needs a developer.
 
 ### What the assistant will do
 
+{% hint style="info" %}
+Building new integrations through the assistant depends on your provider's fastn plan. Where it is not available, the assistant says *Building new integrations isn't available here. You can still ask questions and change your configuration.* Everything on this page still works.
+{% endhint %}
+
 fastn's agent reads the real schemas of both connected apps - the actual fields on your HubSpot account, not a generic template - and changes the configuration to match what you asked for.
 
 Requests that suit it well:

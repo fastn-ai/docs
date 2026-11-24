@@ -24,7 +24,7 @@ layout:
 * **Triggers** decide when a workflow runs: an inbound webhook, a schedule or an event from a connected app.
 * **Unified APIs** give you one endpoint per business entity, such as a CRM contact, whichever provider a customer connected.
 
-The **widget** is the panel your customers use inside your product. **Activity** and **Health** are where you watch every run.
+The **widget** is the panel your customers use inside your product. **Logs** and **Health** are where you watch every run.
 
 ### How a build fits together
 
@@ -35,7 +35,7 @@ The **widget** is the panel your customers use inside your product. **Activity**
 3. It drafts the workflow and its test cases, and shows you the diff.
 4. You attach a trigger, publish a version and deploy it to an environment.
 5. You add the integration to your widget, and customers turn it on.
-6. You watch runs in Activity and set an alert so failures are not silent.
+6. You watch runs in **Logs** and set an alert so failures are not silent.
 
 What you can see in the dashboard depends on your role: **Owner**, **Admin**, **Developer**, **Operator** or **Viewer**. People at your customers who use the widget have the **End User** role and never sign in to fastn. See [Roles](../manage/roles.md).
 

@@ -29,7 +29,7 @@ fastn has two MCP addresses, for two different jobs:
 
 ### Connecting
 
-Click **Connect AI tools** in the top bar, or open **Embed → API keys and MCP** and the **MCP server** tab. Both show the same picker: **Use fastn from Claude or any MCP client**. Both need the **Developer** role or above; below that, neither is shown.
+Click **Connect your AI tool** in the top bar, or open **Embed → MCP server**. Both show the same picker: **Use fastn from Claude or any MCP client**. Both need the **Developer** role or above; below that, neither is shown.
 
 <figure><img src="../../.gitbook/assets/mcp-connect-ai-tools-dialog.webp" alt="fastn's dialog titled Use fastn from Claude or any MCP client, reading Add fastn as an MCP server and Claude, ChatGPT, Cursor or any MCP client can build integrations for you, right in the chat, with Claude recommended and an Add to Claude button"><figcaption><strong>Add to Claude</strong> is the one-click path. The tiles under <strong>Other</strong> give each client's own steps.</figcaption></figure>
 
@@ -71,7 +71,7 @@ An MCP client can change real things in your org, the same as you can. Approve t
 
 ### Watching it
 
-Activity from the MCP server lands in the same places as everything else: runs appear in **Operate → Activity → [Executions](../../operate/executions.md)**, with the calling identity in the **Triggered by** column.
+Activity from the MCP server lands in the same places as everything else: runs appear in **Operate → Logs → [Executions](../../operate/executions.md)**, with the calling identity in the **Triggered by** column.
 
 An MCP client spends no fastn AI credits. The **By agent** breakdown in the credits popover in the top bar covers fastn's own agents, such as Build with AI, not your AI tool.
 

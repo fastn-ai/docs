@@ -18,7 +18,7 @@ layout:
 
 # Setting Up Your Organization
 
-Onboarding (at `/onboarding`) takes you through four steps: **Connect your product**, **Choose integrations**, **Embed the widget** and **Customers connect and customize**. Alongside it, a handful of organization-level settings control your company profile, team access, customer management and billing. This tutorial walks through each one.
+Onboarding (at `/onboarding`) takes you through three setup steps, **Check your product**, **Pick your integrations** and **Set up the widget**, then going live: **Add the widget** to your product and **Your first customer connects**, plus the optional **Connect** your product and **Build an integration**. See [Onboarding](../../getting-started/onboarding/README.md). Alongside it, a handful of organization-level settings control your company profile, team access, customer management and billing. This tutorial walks through each one.
 
 ### Step 1: Configure organization settings
 
@@ -102,7 +102,7 @@ Significant actions in your organization are recorded here, from workflow deploy
 
 A few places your developers will need:
 
-* **API keys** - Under **Embed → API keys and MCP → API keys**: Test and Live keys for programmatic access to the fastn API, including the key your backend uses to mint embed tokens.
+* **API keys** - Under **Embed → API keys**: Test and Live keys for programmatic access to the fastn API, including the key your backend uses to mint embed tokens.
 * **Secrets** - Under **Settings → Secrets**: sensitive values (third-party tokens, database credentials) that workflows read at runtime.
 * **Environments** - Under **Settings → Environments**: where published workflow versions are deployed, such as test, live and your own named ones.
 * **Your own OAuth apps** - fastn manages OAuth apps for many common platforms. To use your own OAuth application for a connector instead, set it on that connector's **Auth** tab.

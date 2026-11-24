@@ -1,5 +1,5 @@
 ---
-description: Onboarding step 4. Customers connect their own accounts in the widget and adjust each integration; you try it once as a test customer.
+description: The going-live item Your first customer connects. Customers connect their own accounts in the widget and adjust each integration; you try it once as a test customer.
 layout:
   width: default
   title:
@@ -36,7 +36,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | --- | --- |
 | In the widget | **Connect**, sign in on the app's own page, then **Authorize** |
 | Shareable link | Opens a link you send |
-| Created for them | Your backend creates the connection with credentials you already hold ([step 3](embed-the-widget.md)) |
+| Created for them | Your backend creates the connection with credentials you already hold ([Embed the widget](embed-the-widget.md)) |
 | A second account | **Add another connection**, where the integration allows it |
 
 ### Use cases and scenarios
@@ -59,7 +59,7 @@ This step is for what your customers do: connect their own accounts in the widge
 
 ### In the onboarding
 
-You open your product where the widget is embedded, as a test customer, then connect and customize the integration from [step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on a live connection. Finishing the step earns its share of the 50 onboarding AI credits.
+The going-live item **Your first customer connects** opens **Try it as your first customer**. Open your product where the widget is embedded, as a test customer, and connect one of the apps you picked in [setup step 2](choose-integrations.md). Onboarding lists each real event from your product (widget loaded, connected, customized, first run) and unlocks **Finish** on the first customer connection. This item earns no AI credits.
 
 ### Related docs
 

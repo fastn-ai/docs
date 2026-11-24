@@ -65,7 +65,7 @@ The **Sections** group toggles the optional parts of the widget. A count beside 
 | Section | What it shows |
 | --- | --- |
 | **Header and branding** | Your title, subtitle and accent color across the top. Turn it off if your product already has its own header above the widget. |
-| **AI assistant** | A floating **Ask the assistant** launcher in the bottom-right corner, where a customer can describe what they want connected. |
+| **AI assistant** | A floating **Ask the assistant** launcher in the bottom-right corner, where a customer can ask questions and change their configuration in plain words. Building new integrations from it needs a paid plan. |
 | **Search bar** | A **Search integrations** field. Worth showing once there are more than about a dozen connectors. |
 
 The apps list itself is always shown; it is the widget's core content, not a toggle. Workflows appear inside each integration's detail view, and **Insights** (the customer's own runs, records processed, connection health and alerts for **Today**, **7 days** or **30 days**) opens from the menu in the widget's header.

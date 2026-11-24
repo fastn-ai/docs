@@ -23,7 +23,7 @@ In this quickstart you mint an embed token from your backend, render the widget 
 
 Set up three things in the dashboard. Each takes a minute.
 
-1. **An API key.** In **Embed → API keys and MCP → API keys**, click **Create key** and choose **Test** mode. Copy the key: it is shown once. This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
+1. **An API key.** In **Embed → API keys**, click **Create key** and choose **Test** mode. Copy the key: it is shown once. This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generating Embed Tokens](generating-embed-tokens.md).
 2. **A test customer.** In **Operate → Customers**, click **Create customer**, and note its id or the External ID you gave it. See [Managing customers](../saas-admin/managing-customers.md).
 3. **A widget with one integration.** In **Embed → Widget**, click **Add** under INTEGRATIONS and pick any integration. See [Build your widget](../saas-admin/building-your-widget.md).
 

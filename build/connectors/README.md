@@ -40,7 +40,7 @@ A connector is a **definition**. It holds no credentials. Credentials live on a 
 Every card carries a badge that says who maintains it.
 
 * **managed**: built and maintained by fastn. The card reads *Managed by Fastn*. You can view every part of it, connect to it, export its actions and run them, but you cannot edit, delete or publish it. To suggest a change to one of its actions, use **Propose an update**. fastn reviews it, and vendor changes reach you as proposals under [Pending updates](../connector-updates.md).
-* **Custom**: created in your workspace from the **Create connector** menu (**From scratch**, **Build with AI**, **Build from Claude or any MCP client**, or **Import from file**). People whose role cannot create connectors see an **Import** button instead of the menu. Your workspace owns it, so you can edit it, add actions, set up its webhook config, publish versions and delete it.
+* **Custom**: created in your workspace from the **Create connector** menu (**From scratch**, **Build with fastn agent**, **Build in your AI tool**, or **Import from file**; on Launch, **Build with fastn agent** reads *On paid plans. Upgrade to use it.*). People whose role cannot create connectors see an **Import** button instead of the menu. Your workspace owns it, so you can edit it, add actions, set up its webhook config, publish versions and delete it.
 
 When a connector has at least one active connection, its badge changes to **Connected**. If it has connections but none of them is active, the badge reads **Inactive**.
 

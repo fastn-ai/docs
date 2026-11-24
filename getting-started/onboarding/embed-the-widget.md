@@ -1,5 +1,5 @@
 ---
-description: Onboarding step 3. Put the widget inside your product, with the five-part developer setup.
+description: Setup step 3 and the going-live item that follows it. Put the widget inside your product, with the five-part developer setup.
 layout:
   width: default
   title:
@@ -53,7 +53,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 Five parts, each done once; part 5 is optional. Keep the API key and identity secret on your backend: only the embed token reaches the browser.
 
-**1 · Create an API key.** In **Embed** → **API keys and MCP** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
+**1 · Create an API key.** In **Embed** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
 
 Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Leaving **Verify caller identity (HMAC)** off on this key is simplest, because a key that enforces it refuses every call without identity headers. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
 
@@ -118,7 +118,9 @@ See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md)
 
 ### In the onboarding
 
-Onboarding shows parts 1 to 4 with their code, plus **Preview the widget** and **Copy link for a developer**. It shows "Widget found" once the widget loads on your domain. Finishing the step earns its share of the 50 onboarding AI credits.
+Setup step 3, **Set up the widget**, is yours: **Make it match** your product, then choose who adds it to your product: **I'll add it**, **My developer** or **My AI tool**. It is done once the widget loads in your product or a customer connects through it, and earns 5 AI credits.
+
+The going-live item **Add the widget to** your product is your developer's. It has **Preview the widget**, **Open the widget builder** and **Send to your developer**, which copies a link to the page, then parts 1 to 4 above with their code. The API key it creates is a live, full-access key with identity verification required, not the **Embed backend** preset described in part 1. It shows "Widget found" once the widget loads on your domain, and earns no AI credits.
 
 ### Related docs
 

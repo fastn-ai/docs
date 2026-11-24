@@ -16,7 +16,7 @@ layout:
 
 # API keys
 
-**Embed → API keys and MCP → API keys** · `/access`
+**Embed → API keys** · `/api-keys`
 
 | Column        | Notes                                              |
 | ------------- | ---------------------------------------------------- |
@@ -38,7 +38,7 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
 #### Quick steps
 
-1. Go to **Embed** → **API keys and MCP** → **API keys** (`/access`).
+1. Go to **Embed** → **API keys** (`/api-keys`).
 2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
     * **Name**: give it something identifiable.

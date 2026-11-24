@@ -33,7 +33,7 @@ fastn has four parts:
 ## Get started
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
-<tr><td><strong>Build your first integration</strong></td><td>For your team. Describe an integration to the fastn agent, then test it. No code needed.</td><td><a href="getting-started/quickstart.md">getting-started/quickstart.md</a></td></tr>
+<tr><td><strong>Build your first integration</strong></td><td>For your team. Describe an integration to an AI agent, then test it. No code needed.</td><td><a href="getting-started/quickstart.md">getting-started/quickstart.md</a></td></tr>
 <tr><td><strong>Embed fastn in your product</strong></td><td>For developers. Mint a token from your backend and render the widget.</td><td><a href="tutorials/developer/embedding-quickstart.md">tutorials/developer/embedding-quickstart.md</a></td></tr>
 <tr><td><strong>Using integrations in a product?</strong></td><td>For customers of a product that uses fastn. Connect your apps and manage your integrations.</td><td><a href="tutorials/end-user/README.md">tutorials/end-user/README.md</a></td></tr>
 </tbody></table>

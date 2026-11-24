@@ -21,14 +21,14 @@ layout:
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md). By now you should know what workflows and triggers are.
 
 {% hint style="info" %}
-Build with AI needs the **Operator** role or above, and Build with AI switched on for your organization. If either is missing, it does not appear in the sidebar. See [Build with AI](../../build/agent/README.md).
+Build with AI needs the **Operator** role or above. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch you can still ask the agent questions, and you can build from your own AI tool through the [fastn MCP server](../../build/mcp-gateway/README.md). See [Build with AI](../../build/agent/README.md).
 {% endhint %}
 
 ### Where to start
 
 There are two ways in, and both open the same screen:
 
-* **Build → Build with AI** in the sidebar (`/agent`).
+* **Integrations → Create integration → Build with fastn agent** (`/agent`).
 * The **What should your customers be able to do?** prompt on **Home**. Type your request there and send it.
 
 The screen is headed **Build an integration**. On the left, the **Sessions** rail keeps every earlier build with its full conversation; **New session** starts a fresh one. Under **Start from an example** there are four example cards you can click to start from.
@@ -168,7 +168,7 @@ The editor also holds the workflow's configuration (its name, description and ex
 
 ### What you've learned
 
-* How to open Build with AI from the sidebar or the Home prompt
+* How to open the fastn agent from Create integration or the Home prompt
 * How to describe a workflow in plain language so the agent can build it
 * How the agent handles the full cycle: connector setup, inline auth, field mapping, test cases
 * How to visualize the workflow the agent built, end to end
