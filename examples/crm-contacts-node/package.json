@@ -1,0 +1,16 @@
+{
+  "name": "fastn-crm-contacts-example",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Find or create a contact in a customer's CRM with the fastn SDK, then add a note.",
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fastn-ai/sdk": "^0.5.1"
+  }
+}

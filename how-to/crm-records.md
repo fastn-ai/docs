@@ -85,6 +85,8 @@ Start from the copied request: the fields each entity accepts come from your liv
 
 ### Related
 
+* [crm-contacts-node](https://github.com/fastn-ai/docs/tree/main/examples/crm-contacts-node): this guide as a runnable project
+
 * [Unified records](../reference/sdk/unified-records.md): every entity, `records()` and the live catalog
 * [Calendar and CRM](../reference/sdk/calendar-and-crm.md): every typed method, including deals and tasks
 * [Errors, retries and options](../reference/sdk/errors-and-options.md)
