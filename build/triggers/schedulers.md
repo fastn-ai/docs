@@ -1,5 +1,17 @@
 ---
 description: A trigger that fires on a clock you set.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Schedule triggers

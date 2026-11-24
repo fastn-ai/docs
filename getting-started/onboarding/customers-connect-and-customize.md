@@ -1,5 +1,17 @@
 ---
 description: Onboarding step 4. Customers connect their own accounts in the widget and adjust each integration; you try it once as a test customer.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Customers connect and customize

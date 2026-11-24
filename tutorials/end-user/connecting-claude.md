@@ -2,6 +2,18 @@
 description: >-
   Connect Claude, ChatGPT, Cursor or another AI client to your integrations from
   the widget, with no fastn account.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connect Claude and other AI clients

@@ -1,5 +1,17 @@
 ---
 description: Onboarding step 3. Put the widget inside your product, with the five-part developer setup.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Embed the widget

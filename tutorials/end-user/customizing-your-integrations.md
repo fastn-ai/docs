@@ -2,6 +2,18 @@
 description: >-
   Adjust field mappings, filters and other settings for an integration you've
   set up, through the widget.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Customizing Your Integrations

@@ -1,5 +1,17 @@
 ---
 description: "The Connectors page: header buttons, categories, search, filters, connector cards and the page guide."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # The catalog

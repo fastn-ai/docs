@@ -9,7 +9,7 @@ hidden: true
 
 These tutorials are hands-on walkthroughs that teach you how to use fastn by building real things. Each tutorial has a clear outcome and by the end, you'll have something working.
 
-**Prerequisites:** Complete the [Getting Started](../getting-started/README.md) section first. These tutorials assume you have a fastn account and basic familiarity with the dashboard.
+**Prerequisites:** Read [Core concepts](../getting-started/concepts.md) first. These tutorials assume you have a fastn account and basic familiarity with the dashboard.
 
 ### Tutorials for your team
 

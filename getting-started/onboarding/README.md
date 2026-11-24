@@ -1,5 +1,17 @@
 ---
 description: The four steps a SaaS company takes to offer integrations inside its product with fastn, and what each onboarding step does with you.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Onboarding

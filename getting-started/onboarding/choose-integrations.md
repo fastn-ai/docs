@@ -1,5 +1,17 @@
 ---
 description: Onboarding step 2. Choose the integrations your customers get inside your product, and build the first one.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Choose integrations

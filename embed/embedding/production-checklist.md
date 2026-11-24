@@ -2,6 +2,18 @@
 description: >-
   What to check before your customers see the widget: tokens, tenancy, hosts,
   OAuth branding, share links and the problems real deployments hit.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Embedding in production

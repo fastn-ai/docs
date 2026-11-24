@@ -2,6 +2,18 @@
 description: >-
   Put the integrations widget inside your product, scoped to each customer, with
   an iframe, the SDK or a share link.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Embed

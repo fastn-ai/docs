@@ -1,5 +1,17 @@
 ---
 description: "Create a one-time URL from your backend that connects a customer's AI client to fastn."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Customer MCP URL

@@ -1,5 +1,17 @@
 ---
 description: A real HubSpot-to-Google-Sheets build, from plain-words prompt to bound trigger.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Using the agent: a worked example

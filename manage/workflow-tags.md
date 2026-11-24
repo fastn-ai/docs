@@ -1,5 +1,17 @@
 ---
 description: "Labels and categories: how to create them, attach them to workflows, and what happens when you delete one."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Workflow tags

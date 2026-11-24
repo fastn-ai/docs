@@ -2,6 +2,18 @@
 description: >-
   Check what's syncing, view run history, spot errors, and know when to
   contact support.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Viewing Sync Status & History

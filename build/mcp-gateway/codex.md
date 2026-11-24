@@ -1,5 +1,17 @@
 ---
 description: Add fastn to OpenAI Codex with one command, sign in, and build integrations from the Codex CLI or IDE extension.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Codex

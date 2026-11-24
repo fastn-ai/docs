@@ -2,6 +2,18 @@
 description: >-
   Find an integration in the embedded widget, sign in to your account on the
   app, and manage or remove what you set up.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connecting Apps via Widget

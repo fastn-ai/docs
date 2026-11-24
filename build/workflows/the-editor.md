@@ -1,5 +1,17 @@
 ---
 description: The workflow editor walked through tab by tab, plus the configuration panel reference.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # The workflow editor, tab by tab

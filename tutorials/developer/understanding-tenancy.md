@@ -1,5 +1,17 @@
 ---
 description: How the embed token scopes the widget to one customer, and to one person at that customer
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Understanding Tenancy

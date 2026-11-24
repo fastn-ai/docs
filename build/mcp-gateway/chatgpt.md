@@ -1,5 +1,17 @@
 ---
 description: Add fastn to ChatGPT as a custom MCP plugin, sign in, and use your fastn tools from a ChatGPT chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # ChatGPT

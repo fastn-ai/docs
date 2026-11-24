@@ -2,6 +2,18 @@
 description: >-
   Be told when an integration breaks instead of finding out from a colleague.
   Set up your own alerts from inside the widget.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Getting Alerted

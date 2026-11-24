@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Cline in VS Code as a remote MCP server, sign in, and build integrations from a Cline task.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Cline

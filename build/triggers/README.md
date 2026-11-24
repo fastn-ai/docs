@@ -1,5 +1,17 @@
 ---
 description: "What starts a workflow: an inbound webhook, a schedule, or an event from a connected system."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Triggers

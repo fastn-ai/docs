@@ -2,6 +2,18 @@
 description: >-
   The four building blocks of every integration: connectors, unified APIs,
   workflows and triggers.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Integrations

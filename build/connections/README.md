@@ -1,5 +1,17 @@
 ---
 description: "The Connections page: your organization's and your customers' signed-in accounts, how to find one, and what each column means."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connections

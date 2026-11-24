@@ -2,6 +2,18 @@
 description: >-
   Keep every customer's integrations working: what needs attention, who is
   connected, and every run, in one place.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Operate

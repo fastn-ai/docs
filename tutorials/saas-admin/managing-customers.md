@@ -2,6 +2,18 @@
 description: >-
   Create customers under Operate → Customers, scope API calls per customer, and
   monitor customer-level activity.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Managing Customers

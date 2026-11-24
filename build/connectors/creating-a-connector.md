@@ -1,5 +1,17 @@
 ---
 description: "The Create a connector dialog field by field: identity, protocol, visibility and every authentication type, plus Request connector."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Creating a connector

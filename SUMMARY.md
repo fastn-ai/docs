@@ -4,15 +4,15 @@
 
 * [Welcome to fastn](README.md)
 * [Quickstart: your first integration](getting-started/quickstart.md)
+* [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md)
+* [Core concepts](getting-started/concepts.md)
+  * [Platform tour](getting-started/platform-tour.md)
 * [Set up fastn](getting-started/onboarding/README.md)
   * [Step 1: Connect your product](getting-started/onboarding/connect-your-product.md)
   * [Step 2: Choose integrations](getting-started/onboarding/choose-integrations.md)
   * [Step 3: Embed the widget](getting-started/onboarding/embed-the-widget.md)
   * [Step 4: Customers connect and customize](getting-started/onboarding/customers-connect-and-customize.md)
   * [Set up your organization](tutorials/saas-admin/setting-up-your-organization.md)
-* [How fastn works](getting-started/README.md)
-  * [Core concepts](getting-started/concepts.md)
-  * [Platform tour](getting-started/platform-tour.md)
 
 ## Build
 
@@ -88,7 +88,6 @@
   * [Customer MCP URL](embed/embedding/customer-mcp-url.md)
 * [Go-live checklist](embed/embedding/production-checklist.md)
 * [API keys and MCP](manage/api-keys.md)
-  * [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md)
   * [Find your org identifier](tutorials/developer/finding-your-org-identifier.md)
 
 ## Operate

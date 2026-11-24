@@ -1,5 +1,17 @@
 ---
 description: The chat-driven builder that picks connectors, drafts workflows and shows you the diff.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Build with AI

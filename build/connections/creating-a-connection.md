@@ -1,5 +1,17 @@
 ---
 description: "Making a connection yourself with New connection: the system picker, key-based methods, OAuth with providers and scopes, and when to use it."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Creating a connection

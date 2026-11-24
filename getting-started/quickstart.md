@@ -1,5 +1,17 @@
 ---
 description: From an empty workspace to a workflow running on a real trigger.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Quickstart: your first integration

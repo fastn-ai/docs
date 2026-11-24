@@ -5,9 +5,10 @@ structure:
   summary: SUMMARY.md
 
 redirects:
+  getting-started: getting-started/concepts.md
   getting-started/what-is-fastn: README.md
   getting-started/platform-overview: getting-started/platform-tour.md
-  getting-started/signing-up-as-a-saas-partner: getting-started/README.md
+  getting-started/signing-up-as-a-saas-partner: getting-started/concepts.md
   getting-started/your-first-integration: getting-started/quickstart.md
 
   reference/customer-model: operate/customers.md

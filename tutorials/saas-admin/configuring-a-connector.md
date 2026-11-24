@@ -2,6 +2,18 @@
 description: >-
   Set up a connector with OAuth or API key auth, configure its capabilities,
   test actions, and manage each customer's connections.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Configuring a Connector

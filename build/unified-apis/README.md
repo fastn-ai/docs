@@ -1,5 +1,17 @@
 ---
 description: One canonical endpoint per business entity, served by whichever providers your customers connect.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Unified APIs

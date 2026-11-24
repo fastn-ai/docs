@@ -1,5 +1,17 @@
 ---
 description: Get told when something crosses a line you care about. Checked every 15 minutes.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Alerts

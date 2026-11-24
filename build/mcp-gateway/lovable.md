@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Lovable as a custom MCP server, sign in, and use your fastn tools from Lovable's chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Lovable

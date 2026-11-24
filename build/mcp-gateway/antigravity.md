@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Google Antigravity through its MCP config file, sign in, and build integrations from the Antigravity agent.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Antigravity

@@ -2,6 +2,18 @@
 description: >-
   Help for the people at your customer who use the integrations widget -
   connecting apps, customizing integrations, alerts and sync status.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # For your customers

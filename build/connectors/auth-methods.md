@@ -1,5 +1,17 @@
 ---
 description: "The Auth tab: a connector's authentication methods, the default method, and the OAuth apps (auth providers) behind them."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Auth methods and providers

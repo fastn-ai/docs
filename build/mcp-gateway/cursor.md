@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Cursor with one click, sign in, and build integrations from Cursor's agent.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Cursor

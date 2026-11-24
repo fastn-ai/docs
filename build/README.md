@@ -2,6 +2,18 @@
 description: >-
   Describe an integration in plain words, from your AI tool or the dashboard,
   and fastn builds, tests and publishes it.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Build

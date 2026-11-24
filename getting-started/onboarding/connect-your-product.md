@@ -1,5 +1,17 @@
 ---
 description: Onboarding step 1. Connect your product's API to fastn once, as a connector, and register it as your SaaS connector.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connect your product

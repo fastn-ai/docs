@@ -1,5 +1,17 @@
 ---
 description: What your own AI agent does after you ask it for an integration, where the result lands in fastn, and how to test it.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Building from your AI agent

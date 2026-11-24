@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Bolt as a custom MCP connector, sign in, and use your fastn tools from Bolt's chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Bolt
