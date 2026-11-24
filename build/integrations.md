@@ -20,7 +20,7 @@ layout:
 
 **Build → Integrations** ([open in app](https://app.fastn.dev/integrations)).
 
-An integration is a connector, a connection, the trigger that starts it, and the workflow logic around them. The **Integrations** page in the dashboard has a tab for each building block:
+An integration is a connector, a connection, the trigger that starts it, and the workflow logic around them. The **Integrations** page in the dashboard has a tab for each building block, and a **Create integration** menu in its header: **Build with fastn agent** (*Describe it in plain words. Uses AI credits.*; on Launch it reads *On paid plans. Upgrade to use it.*) and **Build in your AI tool** (*Claude, Cursor or any MCP client. 0 AI credits.*).
 
 | Building block | What it is | When you touch it |
 | --- | --- | --- |

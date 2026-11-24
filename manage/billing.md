@@ -24,7 +24,7 @@ fastn is priced by **customer connection**: one of your customers signed in to o
 
 | Plan | Price | Includes |
 | --- | --- | --- |
-| **Launch** | $0 | 3 customer connections and 50 AI credits a month. For building and testing before you put a paying customer on it. |
+| **Launch** | $0 | 3 customer connections. No monthly AI credits from 1 December 2026: AI runs on the up to 50 credits you earn in onboarding. Building with the fastn agent and AI steps need a paid plan. For building and testing before you put a paying customer on it. |
 | **Scale** | $500 a month | 10 customer connections included, then $50 a month for each one past that, and 1,000 AI credits a month. Subscribe yourself from this page with **Subscribe to Scale**. |
 | **Enterprise** | Custom | Priced to your volume, with no AI credit cap. Contact sales. |
 
@@ -50,7 +50,7 @@ A plan change request shows a **Plan change requested** notice at the top of the
 
 ## Credits
 
-**Credits this period** shows how many AI credits you have used, how many are left and the days until the reset: 50 a month on Launch, 1,000 on Scale, no cap on Enterprise. The top bar shows the same number; click it for **Your usage**, **Org total** and a **By agent** breakdown. Credits reset on the 1st of each month (UTC).
+**Credits this period** shows how many AI credits you have used, how many are left and the days until the reset: 1,000 a month on Scale, no cap on Enterprise. Launch has no monthly credits from 1 December 2026, and Launch accounts created from 25 November 2026 start with none: they use only the onboarding credits they have left. The top bar shows the same number; click it for **Your usage**, **Org total** and a **By agent** breakdown. Credits reset on the 1st of each month (UTC).
 
 Credits are spent each time fastn calls an AI model for you:
 
@@ -62,9 +62,11 @@ Credits are spent each time fastn calls an AI model for you:
 
 Building from your own AI tool uses no credits.
 
-**Onboarding bonus:** finishing onboarding adds 50 credits. They are used after your monthly credits and never expire.
+**Paid plans only:** building with the fastn agent, building through the widget's AI assistant, and AI steps need Scale or Enterprise. On every plan, including Launch, you can ask the agent questions, and error diagnosis, run summaries, connector fixes, docs and the widget assistant's configuration changes keep working. They use AI credits.
 
-**Out of credits:** workflows without AI steps keep running, and runs that reach an AI step wait or fail until credits are back. The fastn agent and error diagnosis pause until the month resets or you upgrade.
+**Onboarding credits:** onboarding pays up to 50 credits as you finish its steps. They are used after any monthly credits and never expire. Spend past your limit and grants is taken off the next month's credits.
+
+**Out of credits:** workflows without AI steps keep running. An AI step fails until credits are back. The fastn agent and error diagnosis stop until credits are back: at the next monthly reset on Scale, or when you earn onboarding credits or upgrade on Launch. Your own AI tool still works.
 
 ## Limits
 
@@ -74,7 +76,7 @@ The **Limits** card lists every quota with your usage against it, ordered so the
 | --- | --- | --- | --- |
 | Customer connections | 3 | 10 included, then billed per connection | Custom |
 | Connected accounts (your customers) | 3 | No cap | No cap |
-| AI credits (per month) | 50 | 1,000 | No cap |
+| AI credits (per month) | 0 (onboarding credits only) | 1,000 | No cap |
 | Workflows running at the same time, account and customers | 1 | 5 | Custom, with per-customer caps |
 | Concurrent workflows (Cloud Run), per organization | 1 | 5 | 10 |
 | Concurrent instant runs | 3 | 10 | 20 |

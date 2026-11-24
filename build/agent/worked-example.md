@@ -34,7 +34,7 @@ Three things on this screen are worth knowing before you go further:
 
 * **The approval-mode chip** sits under the composer: here set to **Manual**. It decides whether the agent pauses before acting. See [Approval mode](approval-mode.md).
 * **The context meter** on the right (`19k / 1000k`) shows how much of the session's context window the conversation has used.
-* **AI credits** in the top bar (`50 of 50 AI credits left`) are what agent runs draw down. Only Owners and Admins see this badge.
+* **AI credits** in the top bar (for example `1,000 of 1,000 AI credits left`) are what agent runs draw down. Only Owners and Admins see this badge.
 {% endstep %}
 
 {% step %}

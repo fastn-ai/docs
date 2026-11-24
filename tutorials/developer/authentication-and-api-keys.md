@@ -44,7 +44,7 @@ A call acts for one of your customers when it sends `x-org-id`: your own id for 
 
 ### Where to find your keys
 
-Go to **Embed → API keys and MCP → API keys**. Next to **Search keys**, filter pills read **All**, **Live** and **Test**, and the keys table has a **Mode** column with a **Live** or **Test** badge on each key. Click **Create key** to open the **Create an API key** dialog. Keys are shown once at creation - copy and store it securely.
+Go to **Embed → API keys**. Next to **Search keys**, filter pills read **All**, **Live** and **Test**, and the keys table has a **Mode** column with a **Live** or **Test** badge on each key. Click **Create key** to open the **Create an API key** dialog. Keys are shown once at creation - copy and store it securely.
 
 In that dialog, the **Test** mode card says: "Refused unless the caller sends X-fastn-Test-Mode: true."
 

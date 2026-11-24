@@ -16,9 +16,9 @@ layout:
 
 # Build with AI
 
-**Build → Build with AI** (`/agent`), or the **What should your customers be able to do?** prompt on Home
+**Integrations → Create integration → Build with fastn agent** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
-There are two ways to open the agent: **Build with AI** in the sidebar, the first item under **Build**, or the **What should your customers be able to do?** prompt on Home. Both land on the same screen, headed **Build an integration**, which reads:
+There are two ways to open the agent: **Integrations → Create integration → Build with fastn agent**, or the **What should your customers be able to do?** prompt on Home. There is no sidebar row for it. Both land on the same screen, headed **Build an integration**, which reads:
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
 
@@ -117,7 +117,7 @@ Agent usage draws on the AI credits shown in the top bar (visible to Owners and 
 {% endhint %}
 
 {% hint style="warning" %}
-Build with AI needs two things: the **Operator** role or above, and Build with AI switched on for your organization (fastn turns it on). If either is missing, **Build with AI** does not appear in the sidebar. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
+Build with AI needs the **Operator** role or above; below that, the **Build with fastn agent** menu items and Home's prompt are not shown. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch the agent still answers questions, and you build from your own AI tool through the [fastn MCP server](../mcp-gateway/README.md), which uses no AI credits. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
 {% endhint %}
 
 ### In this section

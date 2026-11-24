@@ -1,5 +1,5 @@
 ---
-description: Describe an integration, let the fastn agent build it, and run its test. About five minutes.
+description: Describe an integration, let an AI agent build it, and run its test. About five minutes.
 layout:
   width: default
   title:
@@ -16,34 +16,49 @@ layout:
 
 # Quickstart: your first integration
 
-In this quickstart you describe an integration in plain words, the fastn agent builds it, and you run its test without touching real data. It takes about five minutes.
+In this quickstart you describe an integration in plain words, an AI agent builds it, and you run its test without touching real data. It takes about five minutes.
 
 ### Before you start
 
-* A fastn account. Sign up at [app.fastn.dev](https://app.fastn.dev). The Launch plan is free.
-* An account in each app you name, for example Slack. The agent asks you to sign in to it.
+* A fastn account. Sign up at [app.fastn.dev](https://app.fastn.dev).
+* An account in each app you name, for example HubSpot and Slack. The agent asks you to sign in to them.
+* A way to build:
+  * **On the free Launch plan**, build from your own AI tool, such as Claude or Cursor, through the [fastn MCP server](../build/mcp-gateway/README.md). It uses no AI credits.
+  * **On a paid plan** (Scale or Enterprise), you can also build with the fastn agent in the dashboard. It uses AI credits.
 
 ### 1. Describe the integration
 
-Open **Build → Build with AI**, or type into the **What should your customers be able to do?** box on **Home**. Describe what should happen, naming the apps and what starts it:
+{% tabs %}
+{% tab title="Your AI tool (every plan)" %}
+Connect your AI tool once: click **Connect your AI tool** in the top bar and follow the steps for your tool. See [fastn MCP server](../build/mcp-gateway/README.md).
+
+Then, in a new chat, describe what should happen, naming the apps and what starts it:
+
+> Using fastn, when a new contact is created in HubSpot, post their name and email in our #sales Slack channel.
+{% endtab %}
+
+{% tab title="fastn agent (paid plans)" %}
+Type into the **What should your customers be able to do?** box on **Home**, or open **Integrations → Create integration → Build with fastn agent**. Describe what should happen, naming the apps and what starts it:
 
 > When a new contact is created in HubSpot, post their name and email in our #sales Slack channel.
 
 Leave the **Approval mode** chip on **Auto**. The agent then works without stopping to ask before each step.
+{% endtab %}
+{% endtabs %}
 
 **You should see:** the agent replies with a plan: the connectors it will use and the workflow it will write.
 
 ### 2. Sign in to the apps
 
-The agent checks that a connector exists for each app and asks you to connect any account it needs, in the chat: a form for an API key, or a sign-in window for OAuth.
+The agent checks that a connector exists for each app and asks you to connect any account it needs. The fastn agent does this in the chat. Your AI tool sends you a connect link instead: enter credentials there, never in the chat.
 
-**You should see:** each app marked as connected in the chat, and the agent moving on to build.
+**You should see:** each app marked as connected, and the agent moving on to build.
 
 ### 3. Let the agent build and test
 
-The agent writes the workflow, generates test cases and runs them. When it finishes, it opens the workflow editor.
+The agent writes the workflow, generates test cases and runs them. Your AI tool may ask you to approve the field mappings and test cases on a review page first.
 
-**You should see:** the workflow in the editor, with its test cases listed.
+**You should see:** the workflow in **Build → Integrations → Workflows**, with its test cases listed.
 
 ### 4. Run it without touching real data
 

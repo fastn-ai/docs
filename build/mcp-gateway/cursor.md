@@ -28,7 +28,7 @@ Add fastn to Cursor from the fastn dashboard, sign in once, then ask Cursor's ag
 {% step %}
 #### Click Add to Cursor
 
-In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP** → **MCP server**), pick the **Cursor** tile and click **Add to Cursor**. When your browser asks to open Cursor, allow it.
+In fastn, click **Connect your AI tool** in the top bar (or open **Embed → MCP server**), pick the **Cursor** tile and click **Add to Cursor**. When your browser asks to open Cursor, allow it.
 
 <figure><img src="../../.gitbook/assets/mcp-fastn-tab-cursor.webp" alt="fastn's MCP server page with the Cursor tile selected, showing an Add to Cursor button, a note about project-scoped servers, and a ~/.cursor/mcp.json snippet with an mcpServers fastn entry"><figcaption>The Cursor tile also has the config file, if you prefer to add it by hand.</figcaption></figure>
 {% endstep %}

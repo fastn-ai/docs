@@ -28,7 +28,7 @@ Paths here start with `/v1`. The same routes also answer under `/api/v1`, which 
 
 ## Authentication
 
-Send an API key as a bearer token. Keys are created under [API keys and MCP](../../manage/api-keys.md).
+Send an API key as a bearer token. Keys are created under [API keys](../../manage/api-keys.md).
 
 ```bash
 curl https://api.fastn.dev/v1/installations \

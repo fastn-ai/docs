@@ -19,7 +19,7 @@ Keep every fixed value in one place.
 | Value | Where it is used |
 | ----- | ---------------- |
 | Base URL `https://api.fastn.dev` | The client. It is the default. |
-| API key `fsk_live_…` | Every call. Create it on [Embed → API keys and MCP](../../manage/api-keys.md). It is a password: secret store only. |
+| API key `fsk_live_…` | Every call. Create it on [Embed → API keys](../../manage/api-keys.md). It is a password: secret store only. |
 | Webhook secret `whsec_…` | Checking that an event really came from fastn (2.1). You get it once, when you register the webhook. |
 | Package `@fastn-ai/sdk` 0.5.1 or newer, Node.js 20 or newer | `npm install @fastn-ai/sdk` |
 

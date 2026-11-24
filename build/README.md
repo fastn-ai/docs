@@ -46,7 +46,7 @@ claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 {% endtab %}
 
 {% tab title="Build with AI" %}
-Open **Build → Build with AI** in the dashboard, or type into the prompt on Home, and describe the integration. fastn's builder runs in the browser and uses your plan's AI credits.
+Open **Integrations → Create integration → Build with fastn agent** in the dashboard, or type into the prompt on Home, and describe the integration. fastn's builder runs in the browser. It needs a paid plan (Scale or Enterprise) and uses AI credits. On Launch, build from your AI tool instead.
 
 [Build with AI](agent/README.md) · [Create a workflow with AI, step by step](../tutorials/saas-admin/creating-a-workflow-via-ai.md)
 {% endtab %}

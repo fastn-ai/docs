@@ -8,10 +8,10 @@
 * [Core concepts](getting-started/concepts.md)
   * [Platform tour](getting-started/platform-tour.md)
 * [Set up fastn](getting-started/onboarding/README.md)
-  * [Step 1: Connect your product](getting-started/onboarding/connect-your-product.md)
-  * [Step 2: Choose integrations](getting-started/onboarding/choose-integrations.md)
-  * [Step 3: Embed the widget](getting-started/onboarding/embed-the-widget.md)
-  * [Step 4: Customers connect and customize](getting-started/onboarding/customers-connect-and-customize.md)
+  * [Pick your integrations](getting-started/onboarding/choose-integrations.md)
+  * [Embed the widget](getting-started/onboarding/embed-the-widget.md)
+  * [Customers connect and customize](getting-started/onboarding/customers-connect-and-customize.md)
+  * [Connect your product](getting-started/onboarding/connect-your-product.md)
   * [Set up your organization](tutorials/saas-admin/setting-up-your-organization.md)
 
 ## How-to guides
@@ -94,7 +94,7 @@
   * [Customers and tenancy](tutorials/developer/understanding-tenancy.md)
   * [Customer MCP URL](embed/embedding/customer-mcp-url.md)
 * [Go-live checklist](embed/embedding/production-checklist.md)
-* [API keys and MCP](manage/api-keys.md)
+* [API keys](manage/api-keys.md)
   * [Find your org identifier](tutorials/developer/finding-your-org-identifier.md)
 
 ## Operate
@@ -110,7 +110,7 @@
   * [Inside a connection](build/connections/inside-a-connection.md)
   * [Statuses](build/connections/statuses.md)
   * [Auth types](build/connections/auth-types.md)
-* [Activity](operate/README.md)
+* [Logs](operate/README.md)
   * [Events](operate/events.md)
   * [Executions](operate/executions.md)
   * [Traces](operate/traces.md)

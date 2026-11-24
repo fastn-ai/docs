@@ -1,5 +1,5 @@
 ---
-description: Onboarding step 2. Choose the integrations your customers get inside your product, and build the first one.
+description: Setup step 2. Pick the apps your customers get in your widget, then optionally build an integration for them.
 layout:
   width: default
   title:
@@ -14,11 +14,11 @@ layout:
     visible: true
 ---
 
-# Choose integrations
+# Pick your integrations
 
 This step is for choosing the integrations your customers get inside your product, and building the first one. You pick an app your customers use and say what the integration should do; fastn's agent (**Build with AI**) builds it. An integration is a connector, a connection, its triggers and the workflow logic around them: it moves data between your product and the customer's app and does a job there.
 
-**Optional.** Describe each integration as a job, for example "when a shipment is created, add it to the customer's HubSpot". The integrations you choose here are the ones customers see in your widget.
+**Setup step 2.** Pick the apps your customers need: each one that is in fastn appears in your widget for customers to connect. Building an integration for an app, so it syncs or automates something, is optional. Describe it as a job, for example "when a shipment is created, add it to the customer's HubSpot".
 
 ### What it's made of
 
@@ -35,7 +35,7 @@ This step is for choosing the integrations your customers get inside your produc
 
 | Way | Best when | What you do |
 | --- | --- | --- |
-| Build with AI | You want it built and tested for you | Describe the job, or pick a suggested use case. Review the plan, answer its questions, approve the mappings and tests. Uses AI credits |
+| Build with AI | You want it built and tested for you | Describe the job, or pick a suggested use case. Review the plan, answer its questions, approve the mappings and tests. Paid plans only (Scale, Enterprise). Uses AI credits |
 | Your AI tools | Your team works in Claude, ChatGPT, Cursor or similar | Describe the job in your AI tool through fastn's MCP server, and approve each step in the chat |
 | Connectors only | Customers only need to connect an app your own code or agents use | Add the connector to the widget, with no workflow |
 | Unified API | Customers use different apps for the same job | Add a category such as CRM: one "create contact" call works with HubSpot, Salesforce or another CRM |
@@ -62,9 +62,11 @@ Each integration has a **Scope** setting: who shares a connection inside one cus
 
 ### In the onboarding
 
-Onboarding suggests apps for your product, each marked **Ready** or **Needs a connector** (fastn has none for that app yet, so one is built first). Pick one, then a suggested use case or your own in a sentence, and watch the **fastn agent** build the connector, workflow, trigger, widget entry and connection. It answers its own questions with assumptions you confirm. Or enable the whole catalog and build later. Finishing the step earns its share of the 50 onboarding AI credits.
+Setup step 2, **Pick your integrations**, lists apps suggested for your product. Pick every app your customers need. Each row carries two badges: whether your product offers that app (**You offer it**, **You don't offer it** or **Needs work**), and whether fastn has a connector for it (**In fastn** or **Not in fastn yet**). Each pick that is in fastn appears in your widget, ready for customers to connect, with nothing built. A pick that is not in fastn yet does not appear; request it, or build its connector later. You can also turn on the whole catalog. **Do it later** skips the step. The step earns 10 AI credits.
 
-<figure><img src="../../.gitbook/assets/onboarding-step-2-choose-integrations.webp" alt="Onboarding step 2 of 4, Pick your first integration: Jira, Slack and GitHub marked Ready, DefectDojo and Vanta marked Needs a connector, with Enable the whole fastn catalog and Skip this step"><figcaption>Step 2: Pick your first integration.</figcaption></figure>
+### Build an integration
+
+Picking an app lets customers connect it. To make it sync or automate something, build an integration: the optional going-live item **Build an integration**. Build it in your AI tool (**Build in your AI tool**, no AI credits) on every plan, or with **Build with the fastn agent** on Scale and Enterprise. It counts once one of your widgets runs a workflow, and earns 20 AI credits.
 
 ### Related docs
 

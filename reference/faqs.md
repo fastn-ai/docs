@@ -212,7 +212,7 @@ Secret if exposure would be an incident (tokens, passwords, keys). Config if you
 
 <summary>What are AI credits used for?</summary>
 
-Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Launch includes 50 a month, Scale 1,000, Enterprise has no cap. See [Credits](../manage/billing.md#credits).
+Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Scale includes 1,000 a month and Enterprise has no cap. Launch has no monthly credits and uses the up to 50 it earns in onboarding. Building with the fastn agent and AI steps are on paid plans. See [Credits](../manage/billing.md#credits).
 
 </details>
 
@@ -228,7 +228,7 @@ No. Your AI tool's model does the work and fastn only runs the actions, so it is
 
 <summary>What happens when I run out of AI credits?</summary>
 
-Workflows without AI steps keep running, and runs that reach an AI step wait or fail until credits are back. The fastn agent and error diagnosis pause until the month resets or you upgrade. Your own AI tool still works.
+Workflows without AI steps keep running. An AI step fails until credits are back. The fastn agent and error diagnosis stop until credits are back: at the next monthly reset on Scale, or when you earn onboarding credits or upgrade on Launch. Your own AI tool still works.
 
 </details>
 
@@ -236,7 +236,7 @@ Workflows without AI steps keep running, and runs that reach an AI step wait or 
 
 <summary>Do onboarding credits expire?</summary>
 
-No. Finishing onboarding adds 50 credits on top of your monthly ones. They are used after your monthly credits and never expire.
+No. Onboarding adds up to 50 credits. They are used after any monthly credits and never expire.
 
 </details>
 

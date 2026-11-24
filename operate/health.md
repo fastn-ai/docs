@@ -38,8 +38,10 @@ One row per thing that needs a person, each with the action that fixes it:
 * **A vendor changed an app you use**, for example *`hubspot` changed*. **Review** opens the fix the maintainer agent proposes. See [Pending updates](../build/connector-updates.md).
 * **A customer connection expired or failed.** The row says whether the customer must sign in again. **Open connection** takes you to it.
 * **A workflow failed today**, for example *"Order sync" failed 3 of 40 runs today*, with its last run status and a link to the runs.
+* **A customer's trigger is not listening**: it *has no subscription for this customer*, *failed to subscribe*, or *is unsubscribed*. **Open customer** takes you to it.
+* **A workflow is too slow for Instant**: it *needed more than 25 s* on some runs today and was retried on Standard. **Runs** opens them.
 
-When there is nothing to do, the tab reads **Nothing needs attention**: no vendor changes are waiting, every customer connection is working, and no workflow failed today.
+When there is nothing to do, the tab reads **Nothing needs attention**: no vendor changes are waiting on you, every customer connection and trigger is working, and no workflow failed today.
 
 ## Overview
 
