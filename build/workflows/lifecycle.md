@@ -1,5 +1,17 @@
 ---
 description: How to save, publish and deploy a workflow - the three buttons, where they are, and what each one actually does.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Lifecycle

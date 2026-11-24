@@ -1,5 +1,17 @@
 ---
 description: Your account and how you sign in. Organization settings live separately.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Your profile

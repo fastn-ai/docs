@@ -1,5 +1,17 @@
 ---
 description: "Making a connection step by step: open the connect dialog, choose the auth method, give the credential, and check that it worked."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connect an app, step by step

@@ -1,5 +1,17 @@
 ---
 description: Connecting your own product, through its API or webhooks, and the scopes your customers connect under.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connect your product

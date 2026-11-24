@@ -1,5 +1,17 @@
 ---
 description: Set up a Unified API in fastn, copy its request, authenticate with your fastn API key, and run it against your customers' connections.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # How to Set Up and Use fastn's Unified API

@@ -1,5 +1,17 @@
 ---
 description: "What you can change on a connector your workspace owns: editing it, credential verification, adding actions, publishing versions and deleting it."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Editing, publishing and deleting

@@ -1,8 +1,43 @@
 ---
 description: The handful of ideas that everything else in fastn is built from.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Core concepts
+
+### The building blocks
+
+* **Connectors** describe an app's API: its actions, auth methods and webhooks. fastn manages a catalog of them, and you can create your own.
+* **Connections** are created when a customer authorizes a connector. The credential is stored encrypted and scoped to that customer.
+* **Workflows** are the code that runs: a JavaScript module that reads from one app, transforms the data and writes to another.
+* **Triggers** decide when a workflow runs: an inbound webhook, a schedule or an event from a connected app.
+* **Unified APIs** give you one endpoint per business entity, such as a CRM contact, whichever provider a customer connected.
+
+The **widget** is the panel your customers use inside your product. **Activity** and **Health** are where you watch every run.
+
+### How a build fits together
+
+<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle.svg" alt="The fastn integration lifecycle: who does what across Build, Publish, Embed, Customize, and Run and monitor"><figcaption><p>Who does what: your team, your customer and fastn</p></figcaption></figure>
+
+1. Describe the integration to **Build with AI** or your AI tool, or write it in code.
+2. The fastn agent picks or creates the connectors and sets up authentication.
+3. It drafts the workflow and its test cases, and shows you the diff.
+4. You attach a trigger, publish a version and deploy it to an environment.
+5. You add the integration to your widget, and customers turn it on.
+6. You watch runs in Activity and set an alert so failures are not silent.
+
+What you can see in the dashboard depends on your role: **Owner**, **Admin**, **Developer**, **Operator** or **Viewer**. People at your customers who use the widget have the **End User** role and never sign in to fastn. See [Roles](../manage/roles.md).
 
 ### Organization, customer, connection
 
@@ -92,7 +127,7 @@ The categories and entities available depend on the unified API catalog in your 
 
 ### Build with AI
 
-fastn's builder, **Build with AI**, is not autocomplete. It discovers API specs, creates connectors, wires auth, proposes field mappings, generates test cases and writes the workflow, and it shows you a diff before anything runs. You review; it builds.
+**Build with AI** is fastn's agent for building integrations. It finds API specs, creates connectors, sets up authentication, proposes field mappings, generates test cases and writes the workflow. It shows you a diff before anything runs.
 
 ### The MCP gateway
 

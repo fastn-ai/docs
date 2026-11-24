@@ -1,5 +1,17 @@
 ---
 description: "How far the agent goes without checking in: Auto versus Manual."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Approval mode

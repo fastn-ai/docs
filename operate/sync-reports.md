@@ -1,5 +1,17 @@
 ---
 description: What changed on the last run of each sync, record by record.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Sync reports
@@ -16,7 +28,7 @@ Which implies reports are effectively opt-in at the workflow level: a workflow t
 
 ### What it is for
 
-The gap between "the run succeeded" and "the data is right" is where support tickets live. When a customer says records are missing, this is the page that distinguishes *the record was filtered out* from *the record was never seen*, which the executions log cannot tell you.
+A run can succeed and still skip records. When a customer says records are missing, this page distinguishes *the record was filtered out* from *the record was never seen*, which the executions log cannot tell you.
 
 Each workflow also has a **Sync reports** tab in its editor, scoped to that workflow, with the same empty-state note.
 

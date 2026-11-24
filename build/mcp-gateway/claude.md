@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Claude as a custom connector, then build integrations from a Claude chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Claude

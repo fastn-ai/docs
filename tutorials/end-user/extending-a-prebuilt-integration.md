@@ -3,6 +3,18 @@ description: >-
   Change what a pre-built integration does - fields, filters, direction and
   scope - using the assistant inside the widget, and know where its authority
   ends.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Extending a Pre-Built Integration

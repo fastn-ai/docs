@@ -1,5 +1,17 @@
 ---
 description: Add fastn to VS Code in one click and use it from GitHub Copilot's agent mode.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # VS Code

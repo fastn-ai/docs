@@ -1,5 +1,17 @@
 ---
 description: "What a connector is, how it relates to actions, auth methods, connections and webhooks, and where each part lives in the app."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connectors

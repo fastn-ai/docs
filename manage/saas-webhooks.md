@@ -2,6 +2,18 @@
 description: >-
   Have fastn call your product back with a signed POST when something happens for
   one of your customers: account, setup link, provider and workflow events.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Webhooks

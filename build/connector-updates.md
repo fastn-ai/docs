@@ -1,5 +1,17 @@
 ---
 description: When an app you connect to changes something your workflows depend on, it lands here with any proposed patch. Nothing is applied until you accept it.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Pending updates

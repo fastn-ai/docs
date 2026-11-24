@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Devin Desktop (formerly Windsurf) as a custom MCP server, sign in, and use your fastn tools from Devin.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Devin

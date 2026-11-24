@@ -1,21 +1,24 @@
 ---
 description: Onboarding step 4. Customers connect their own accounts in the widget and adjust each integration; you try it once as a test customer.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Customers connect and customize
 
 This step is for what your customers do: connect their own accounts in the widget and adjust each integration to how they work. Integrations then run for each customer with that customer's own connections and settings.
 
-**Why:** every customer's data is different. When customers customize integrations themselves, you don't build a version per customer. Doing it once yourself, as a test customer inside your product, proves the whole chain works: your product, the widget, the connection and the workflow.
-
-### Without fastn and with fastn
-
-|  | Without fastn | With fastn |
-| --- | --- | --- |
-| Connecting | Customers send credentials to your support team, or you build a connect flow per app | Customers sign in to each app in the widget; their credentials stay theirs |
-| Customizing | Feature requests and custom code per customer | Customers change mappings, filters and direction in **Configure**, or with the widget's AI assistant |
-| Knowing it works | Customers report what broke | **Insights** shows runs and connection health, with alerts by email, Slack, Teams or webhook |
-| Supporting customers | Search your own logs | You see each customer's connections, runs and events, and can replay a failed delivery |
+**Required to go live.** Each customer adjusts an integration's mappings and filters to fit their own data. Doing this once yourself, as a test customer inside your product, checks your product, the widget, the connection and the workflow together.
 
 ### What it's made of
 

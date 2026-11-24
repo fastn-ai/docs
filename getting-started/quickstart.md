@@ -1,16 +1,28 @@
 ---
 description: From an empty workspace to a workflow running on a real trigger.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Quickstart: your first integration
 
-This walks the shortest honest path. Budget about twenty minutes.
+This takes about twenty minutes.
 
 ### 1. Describe what you want
 
 Open **Build with AI** in the sidebar, or type what you want into the **What should your customers be able to do?** prompt on Home. Both land on the same screen.
 
-The pane states the contract plainly:
+The screen describes what happens next:
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
 
@@ -77,9 +89,9 @@ Full field-by-field detail is in [Triggers](../build/triggers/README.md).
 
 Open **Widget**, click **Add** under INTEGRATIONS, and pick the integration you just built. Then use the **Embed** tab to drop it into your product. See [Embedding the widget](../embed/embedding/README.md).
 
-### 8. Make failure loud
+### 8. Turn on failure alerts
 
-Go to **Health → Alerts** and click **Turn on failure alerts**. One click turns on the two alerts most teams need: an email the moment a run fails (it goes out within about a minute) and a daily reliability check. A sync that fails quietly for six hours is a support ticket you could have avoided. Threshold alerts are evaluated every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
+Go to **Health → Alerts** and click **Turn on failure alerts**. One click turns on the two alerts most teams need: an email the moment a run fails (it goes out within about a minute) and a daily reliability check. Threshold alerts are evaluated every 15 minutes, and the editor autosaves: there is no Save button, and a new alert exists the moment you create it.
 
 {% hint style="success" %}
 Done. From here, [Core concepts](concepts.md) explains the model underneath, [Workflows](../build/workflows/README.md) covers the editor in full, and [MCP gateway](../build/mcp-gateway/README.md) covers exposing the same integrations to an AI client.

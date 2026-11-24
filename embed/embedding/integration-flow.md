@@ -3,6 +3,18 @@ description: >-
   This page walks you through embedding the fastn widget for your customers:
   register a customer organization, retrieve an embed token, and load the
   widget.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Integration flow

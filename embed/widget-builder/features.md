@@ -1,5 +1,17 @@
 ---
 description: "The Features tab: optional capabilities your customers get inside the widget."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Features

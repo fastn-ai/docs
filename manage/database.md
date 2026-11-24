@@ -1,5 +1,17 @@
 ---
 description: Which Postgres your workflows read and write through.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Database

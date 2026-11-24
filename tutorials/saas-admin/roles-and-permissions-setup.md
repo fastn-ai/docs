@@ -2,6 +2,18 @@
 description: >-
   Assign built-in roles (Owner, Admin, Developer, Operator, Viewer, End User),
   create custom roles, and manage team access.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Roles & Permissions Setup

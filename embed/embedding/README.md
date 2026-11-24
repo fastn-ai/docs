@@ -1,5 +1,17 @@
 ---
 description: Three ways to put the widget in your product, and how to hand it a token safely.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Embedding the widget

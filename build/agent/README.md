@@ -1,12 +1,24 @@
 ---
 description: The chat-driven builder that picks connectors, drafts workflows and shows you the diff.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Build with AI
 
 **Build → Build with AI** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
-The agent is the primary way integrations get built in fastn, and there are two ways in: **Build with AI** in the sidebar, the first item under **Build**, or the **What should your customers be able to do?** prompt on Home. Both land on the same screen, headed **Build an integration**, which states its own contract:
+There are two ways to open the agent: **Build with AI** in the sidebar, the first item under **Build**, or the **What should your customers be able to do?** prompt on Home. Both land on the same screen, headed **Build an integration**, which reads:
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
 

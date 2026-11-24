@@ -1,5 +1,17 @@
 ---
 description: When to reach for a unified API and when to call the connector directly.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Choosing between unified and direct

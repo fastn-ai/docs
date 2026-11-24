@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Claude Code with one command, sign in, and build integrations from the terminal.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Claude Code

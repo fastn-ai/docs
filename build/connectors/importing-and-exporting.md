@@ -1,5 +1,17 @@
 ---
 description: "Moving connectors and actions in and out of a workspace as JSON files: Import, exporting actions and exporting connectors."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Importing and exporting

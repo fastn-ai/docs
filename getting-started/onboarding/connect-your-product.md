@@ -1,21 +1,24 @@
 ---
 description: Onboarding step 1. Connect your product's API to fastn once, as a connector, and register it as your SaaS connector.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connect your product
 
 This step is for connecting your product to fastn. fastn learns your product's API once, as a connector, and you register it as your SaaS connector. Every integration then reads from and writes to your product through that connector, for each customer.
 
-**Why:** every integration your customers ask for has two ends, and one is always your product. Connecting it once means every integration reuses it, and each customer gets their own connection to your product. You can skip this step to explore fastn, but you need it to go live.
-
-### Without fastn and with fastn
-
-|  | Without fastn | With fastn |
-| --- | --- | --- |
-| Your API | Each integration hard-codes its own calls to it | Described once as a connector; every integration reuses its actions |
-| Sign-in | You store and refresh each customer's credentials, per integration | Each customer's connection holds their own credential |
-| Events | Custom webhook code for each integration | The connector's webhook config lets your product's events start workflows |
-| API changes | Fix every integration that uses the changed endpoint | Update the connector once and publish a new version |
+**Required to go live.** Every integration reads from or writes to your product through this connector, and each customer gets their own connection to it. You can skip this step while you explore.
 
 ### What it's made of
 

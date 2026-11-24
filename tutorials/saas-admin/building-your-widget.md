@@ -2,6 +2,18 @@
 description: >-
   Use the widget builder to choose the integrations your customers see,
   set the layout and style, and preview the customer experience.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Building Your Widget

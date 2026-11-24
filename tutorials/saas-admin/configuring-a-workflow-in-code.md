@@ -2,6 +2,18 @@
 description: >-
   Write workflows in the code editor using export default async function(ctx),
   configure execution tiers, and test with sample input.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Configuring a Workflow in Code

@@ -1,5 +1,17 @@
 ---
 description: A real HubSpot-to-Google-Sheets build, from plain-words prompt to bound trigger.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Using the agent: a worked example
@@ -89,7 +101,7 @@ The panel header carries a download icon (**Download document**): the plan is a 
 {% step %}
 #### It builds in tracked phases
 
-**Build progress** is the honest view of what is happening. It counts completed steps against the total (`0/6` → `2/6` → …) across the phases the agent has written steps into (up to four), each expandable into named substeps.
+**Build progress** shows what the agent is doing. It counts completed steps against the total (`0/6` → `2/6` → …) across the phases the agent has written steps into (up to four), each expandable into named substeps.
 
 | Phase | Substeps in this run |
 | ----- | -------------------- |

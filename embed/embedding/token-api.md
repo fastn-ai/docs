@@ -1,5 +1,17 @@
 ---
 description: Minting and refreshing embed tokens from your backend, and the session cap.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Tokens

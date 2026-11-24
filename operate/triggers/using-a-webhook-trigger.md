@@ -1,5 +1,17 @@
 ---
 description: Call a webhook trigger from your backend once it exists, with an example curl.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Using a webhook trigger

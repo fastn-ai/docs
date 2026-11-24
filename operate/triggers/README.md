@@ -1,5 +1,17 @@
 ---
 description: Firing the triggers you have built, from your own apps.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Triggers

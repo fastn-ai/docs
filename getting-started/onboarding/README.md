@@ -1,10 +1,22 @@
 ---
 description: The four steps a SaaS company takes to offer integrations inside its product with fastn, and what each onboarding step does with you.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Onboarding
 
-Onboarding takes you through the four steps a SaaS company takes to offer integrations inside its product with fastn. Each step has its own page: what it's for and why, how it's done without and with fastn, what it's made of, the ways to do it, use cases, and how onboarding does it with you. Terms are defined in the [Glossary](../../reference/glossary.md).
+Onboarding takes you through the four steps a SaaS company takes to offer integrations inside its product with fastn. Each step has its own page: what it's for, what it's made of, the ways to do it, use cases, and how onboarding does it with you. Terms are defined in the [Glossary](../../reference/glossary.md).
 
 | Step | What you do | Time | Needed to go live |
 | --- | --- | --- | --- |

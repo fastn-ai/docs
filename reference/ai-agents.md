@@ -2,6 +2,18 @@
 description: >-
   A single dense page for LLMs and coding agents: the model, the runtime surface,
   the endpoints, and the things that are easy to get wrong.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # fastn for AI agents

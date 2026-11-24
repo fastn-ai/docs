@@ -2,6 +2,18 @@
 description: >-
   Keep every customer's integrations working: what needs attention, who is
   connected, and every run, in one place.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Operate
@@ -16,7 +28,7 @@ Operate shows how every customer's integrations are doing once they are live. **
 
 | Role | What they use Operate for |
 | --- | --- |
-| **Support and customer success** | See which customers need attention before they open a ticket |
+| **Support and customer success** | See which customers have failing runs or expired connections |
 | **On-call engineer** | Find the failed run, read why it failed, and replay it |
 | **Integration engineer** | Accept the fix when a vendor changes an API |
 | **Account owner** | Keep an eye on totals and trends across every customer |

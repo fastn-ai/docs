@@ -2,6 +2,18 @@
 description: >-
   Configure your organization profile, team access, customers, plan limits and
   audit log after your first fastn login.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Setting Up Your Organization

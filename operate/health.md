@@ -2,6 +2,18 @@
 description: >-
   Is everything working? Health shows what needs your attention across every
   customer, the totals behind it, vendor changes waiting on you, and your alerts.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Health

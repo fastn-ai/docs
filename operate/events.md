@@ -1,5 +1,17 @@
 ---
 description: Everything moving in and out of your customers' apps, newest first.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Events

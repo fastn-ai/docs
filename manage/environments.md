@@ -1,5 +1,17 @@
 ---
 description: Deployment stages, and the GitHub review gate in front of them.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Environments and GitHub

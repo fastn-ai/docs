@@ -1,5 +1,17 @@
 ---
 description: "A connector's actions: the action list, the action editor and its seven tabs, mocks, versions and proposing an update."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Actions

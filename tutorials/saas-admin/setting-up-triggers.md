@@ -2,6 +2,18 @@
 description: >-
   Create webhook, schedule, and app event triggers under Integrations →
   Triggers and route them to your workflows.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Setting Up Triggers

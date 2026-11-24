@@ -1,5 +1,17 @@
 ---
 description: The code that runs on a trigger, a schedule, or an API call.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Workflows

@@ -1,5 +1,17 @@
 ---
 description: "Every field in the Edit Integration dialog: connectors, workflows, callbacks and per-connector overrides."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Edit Integration
