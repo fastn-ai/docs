@@ -26,12 +26,15 @@ Optional capabilities your customers get inside the widget.
 | **Workflow Diagram**   | Shows the generated flow diagram on a workflow inside the widget.                     |
 | **Generate MCP URL**   | Lets a customer generate a one-time URL from the header menu that connects an MCP client (Claude, ChatGPT, Cursor and others) to their integrations, with no account. You can disconnect it from the Embed tab. To create the URL from your own product, see [Customer MCP URL](../embedding/customer-mcp-url.md). |
 
-**Coming soon**
+| **App page layout**    | **One tab, side by side** (activity next to the workflows) or **Separate tabs**. |
+| **Installations layout** | **Table** (one row per setup) or **Cards** (an expandable card each). |
 
-| Feature                | What it will do                                        |
+**Customer access** appears once your workspace has an Instant-tier workflow to pick. Each setting names one such workflow.
+
+| Setting                | What it does                                           |
 | ---------------------- | -------------------------------------------------------- |
-| **Widget filter**      | Let customers filter widgets by category or status.     |
-| **Role based access**  | Role-based access control per widget.                   |
+| **Widget filter**      | A workflow that decides, per customer and user, which integrations show and how: hidden, disabled with a message, offered as an upgrade, or with buttons hidden. |
+| **Access check**       | A workflow that answers what the signed-in user may do: connect, disconnect, configure. Anything it does not allow is hidden and refused. |
 
 {% hint style="warning" %}
 **Catalog connectors** widens the offer from the integrations you curated to everything public in your catalog. Useful for self-serve products, too broad for most. Decide deliberately.

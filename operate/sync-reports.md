@@ -16,7 +16,7 @@ layout:
 
 # Sync reports
 
-**Activity → Sync reports**
+**Operate → Logs → Sync reports** · `/activity/sync-reports`
 
 Executions tell you a run succeeded. Sync reports tell you what it did, record by record.
 
@@ -41,5 +41,5 @@ Each report shows its counts of records **unchanged**, **updated**, **created** 
 Until a workflow has run `fastn.diff.compare`, the page reads **No sync reports yet**.
 
 {% hint style="info" %}
-If you are building a data sync and this page stays empty, ask Build with AI (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterwards.
+If you are building a data sync and this page stays empty, ask the fastn agent (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterwards.
 {% endhint %}

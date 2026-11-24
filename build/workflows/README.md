@@ -63,5 +63,6 @@ Two buttons sit top-right: **Connect GitHub**, which connects your organization 
 ### In this section
 
 * [The editor](the-editor.md)
-* [The tabs](the-tabs.md)
-* [Lifecycle](lifecycle.md)
+* [Write a workflow in code](../../tutorials/saas-admin/configuring-a-workflow-in-code.md)
+* [Test a workflow](the-tabs.md)
+* [Test and release](lifecycle.md)

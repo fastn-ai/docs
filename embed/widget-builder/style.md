@@ -50,8 +50,7 @@ Surface colors, set individually: **Background**, **Foreground**, **Card**, **Mu
 | Control                        | Notes                                          |
 | ------------------------------ | ------------------------------------------------ |
 | **Allowed Origins**            | Which origins may embed the widget.             |
-| **Show 'Powered by fastn'**    | On by default.                                  |
-| **Compact mode**               | Off by default.                                 |
+| **Show 'Powered by fastn'**    | On by default. Hiding it is part of white-label, on the Enterprise plan. |
 | **Design Tokens**              | `JSON` or `CSS`, plus **Import from JSON**.     |
 
 {% hint style="danger" %}

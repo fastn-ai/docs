@@ -18,6 +18,8 @@ layout:
 
 `/integrations/connectors/<slug>`. Click a connector's name in the catalog to open it.
 
+<figure><img src="../../.gitbook/assets/screens/connector-detail-overview.webp" alt="The HubSpot connector page: the action rail on the left listing 300 actions, the header with v1.0 Test and a Connect button, tabs Overview, Auth, Connections, Version pins and Webhook config, tiles for 0 connections, 1 auth method (OAuth 2.0, set as default) and current version v1.0, and a Details table with slug hubspot and visibility Public"><figcaption>A catalog connector's Overview tab.</figcaption></figure>
+
 ### The connector rail (left)
 
 * **←** (Back to all connectors) returns to the catalog.

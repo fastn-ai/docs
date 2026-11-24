@@ -87,7 +87,7 @@ A delivery that does not get a `2xx` is retried with growing gaps for 24 hours. 
 
 ### 2.2 Register your return page
 
-When a customer finishes a setup link, the browser is sent to a page of yours. Register that address once in the dashboard, under **Widget › Embed › Setup links › Pages to send people back to**. The first address is the default; a link can pick another registered one with `redirectUrl` (3.2). An address that is not on the list is refused with `400 SETUP_LINK_REDIRECT_NOT_ALLOWED`.
+When a customer finishes a setup link, the browser is sent to a page of yours. Register that address once in the dashboard, under Embed → Widget → **Embed** tab → **Setup links** → **Pages to send people back to** (the panel appears once you pick a customer). The first address is the default; a link can pick another registered one with `redirectUrl` (3.2). An address that is not on the list is refused with `400 SETUP_LINK_REDIRECT_NOT_ALLOWED`.
 
 ---
 

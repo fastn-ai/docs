@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# Customers connect and customize
+# Your first customer connects
 
 This step is for what your customers do: connect their own accounts in the widget and adjust each integration to how they work. Integrations then run for each customer with that customer's own connections and settings.
 
@@ -27,7 +27,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | Customer | One of your customers. It must be Active before its integrations run |
 | Connection | A customer's signed-in account on one app |
 | Configuration | A customer's own direction, field mappings and filters, copied from the integration's configuration template |
-| AI assistant | The customer describes a change in plain words and reviews it before saving |
+| Widget assistant | The customer describes a change in plain words and reviews it before saving |
 | Insights and alerts | Runs, records, errors and connection health, with failure and threshold alerts |
 
 ### Ways to do it
@@ -36,7 +36,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | --- | --- |
 | In the widget | **Connect**, sign in on the app's own page, then **Authorize** |
 | Shareable link | Opens a link you send |
-| Created for them | Your backend creates the connection with credentials you already hold ([Embed the widget](embed-the-widget.md)) |
+| Created for them | Your backend creates the connection with credentials you already hold ([Set up and add the widget](embed-the-widget.md)) |
 | A second account | **Add another connection**, where the integration allows it |
 
 ### Use cases and scenarios
@@ -46,7 +46,7 @@ This step is for what your customers do: connect their own accounts in the widge
 | Different field names | Maps their "Region" field to your "Territory" |
 | Only some records | Adds a filter, for example only deals above a value |
 | One way instead of two | Turns off one direction of a two-way sync |
-| A change in plain words | Asks the widget's AI assistant, then reviews each labeled change |
+| A change in plain words | Asks the widget assistant, then reviews each labeled change |
 | Something broke | Sees it in **Insights**, or reconnects an expired connection |
 
 ### What to know
@@ -54,7 +54,7 @@ This step is for what your customers do: connect their own accounts in the widge
 * **Activate customers.** A customer in **Pending admin activation** can't run integrations until an admin activates it.
 * **First-time setup.** A configurable integration needs its first configuration made once by your team (Operator role or higher). Until then, the customer's **Configure** shows "No configuration found for this widget".
 * **Changes apply on the next run.** Records already synced keep their old values.
-* **The AI assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add an app you don't offer, re-sync old records, change the schedule or add custom logic.
+* **The widget assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add an app you don't offer, re-sync old records, change the schedule or add custom logic.
 * **Limits.** Customers share your plan's limits. Change one customer's in **Settings** → **Billing** → **Customize customer limits**.
 
 ### In the onboarding
@@ -63,4 +63,4 @@ The going-live item **Your first customer connects** opens **Try it as your firs
 
 ### Related docs
 
-[Customers](../../operate/customers.md) · [Managing customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customizing your integrations](../../tutorials/end-user/customizing-your-integrations.md) · [Extending a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Getting alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)
+[Customers](../../operate/customers.md) · [Manage customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customizing your integrations](../../tutorials/end-user/customizing-your-integrations.md) · [Extending a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Getting alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)

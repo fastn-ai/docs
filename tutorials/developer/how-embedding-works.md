@@ -13,9 +13,9 @@ layout:
     visible: true
 ---
 
-# How Embedding Works
+# How embedding works
 
-fastn is embedded into your product as an iframe. Your application renders the fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.
+fastn is embedded into your product as an iframe, directly or through the SDK. Your application renders the fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.
 
 ### How the pieces fit together
 
@@ -39,7 +39,7 @@ This guide documents the iframe path. The SDK wraps the same flow: your backend 
 
 1. A server-side function that generates an embed token on each request (never hardcode tokens: they expire in 8 hours).
 2. A frontend component that renders the fastn iframe with the token.
-3. A user id for each person at your customer, sent when you mint the token, so each person's session is scoped to them (see [Tenancy](understanding-tenancy.md)).
+3. A user id for each person at your customer, sent when you mint the token, so each person's session is scoped to them (see [Customers and tenancy](understanding-tenancy.md)).
 
 ### Why generate tokens server-side
 
@@ -49,4 +49,4 @@ A common failure is hardcoding a token into the frontend during testing. It work
 
 ### Next
 
-Start with the [Quickstart](embedding-quickstart.md) to get a working embed, then read [Generating Embed Tokens](generating-embed-tokens.md) for the full token details.
+Start with the [Embedding quickstart](embedding-quickstart.md) to get a working embed, then read [Generate embed tokens](generating-embed-tokens.md) for the full token details.

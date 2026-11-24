@@ -18,7 +18,7 @@ layout:
 
 Claude Code adds fastn as a remote MCP server with one command. Sign in once, then ask for the integration in a Claude Code session.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-claude-manual.webp" alt="fastn's MCP server page with the second Claude tile selected, showing the steps to add fastn by hand, a Claude Code command claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace, a Claude Desktop config snippet and an Add for the whole organization link"><figcaption>The command is on the second <strong>Claude</strong> tile under <strong>Connect AI tools</strong> in fastn.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-claude-manual.webp" alt="fastn's MCP server page with the second Claude tile selected, showing the steps to add fastn by hand, a Claude Code command claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace, a Claude Desktop config snippet and an Add for the whole organization link"><figcaption>The command is on the second <strong>Claude</strong> tile under <strong>Other</strong> on the fastn <strong>MCP server</strong> page.</figcaption></figure>
 
 ## Add fastn
 
@@ -66,7 +66,7 @@ fastn: https://mcp.fastn.dev/fastn-workspace (HTTP) - ✔ Connected
 
 Start `claude` and ask for the outcome in one sentence. To check the connection first, ask *Use fastn to tell me which org I'm in.* Claude Code asks before it runs a fastn tool; approve it, and it answers with the org you picked when signing in.
 
-From here Claude Code works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Claude Code works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Claude Desktop config file
 

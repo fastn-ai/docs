@@ -1,5 +1,5 @@
 ---
-description: Build a workflow by describing it in plain words to Build with AI.
+description: Build a workflow by describing it in plain words to the fastn agent.
 layout:
   width: default
   title:
@@ -14,14 +14,14 @@ layout:
     visible: true
 ---
 
-# Create a workflow with Build with AI
+# Create a workflow with the fastn agent
 
-**Build with AI** is fastn's own builder. You describe the workflow, what data to sync and between which apps, and it sets up the connectors, handles authentication, maps the fields, writes test cases, and then produces the workflow code and a diagram of it.
+The **fastn agent** is fastn's own builder. You describe the workflow, what data to sync and between which apps, and it sets up the connectors, handles authentication, maps the fields, writes test cases, and then produces the workflow code and a diagram of it.
 
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md). By now you should know what workflows and triggers are.
 
 {% hint style="info" %}
-Build with AI needs the **Operator** role or above. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch you can still ask the agent questions, and you can build from your own AI tool through the [fastn MCP server](../../build/mcp-gateway/README.md). See [Build with AI](../../build/agent/README.md).
+The fastn agent needs the **Operator** role or above. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch you can still ask the agent questions, and you can build from your own AI tool through the [fastn MCP server](../../build/mcp-gateway/README.md). See [Build with fastn agent](../../build/agent/README.md).
 {% endhint %}
 
 ### Where to start
@@ -98,7 +98,7 @@ Below the mappings you'll find:
 
 * **Record Matching Strategy** - how the workflow tracks records across apps (e.g., "Track IDs via fastn.state")
 * **+ Add Mapping** - add a field mapping the agent didn't include
-* **Add Filters** - narrow which records get synced
+* **Add filters** - narrow which records get synced
 * A text box where you can describe changes and the agent will update the mappings
 
 When everything looks right, click **Looks good, turn on** to approve the field mappings.

@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Customizing Your Integrations
+# Customize an integration
 
 After connecting an app, you can customize how data moves between it and the product you're using: which fields sync, which records are included, and how records are matched. The AI assistant can handle much of this for you, or you can fine-tune it yourself.
 
@@ -33,9 +33,9 @@ The Configuration row summarizes what's set up, for example _Sync · 2 entities 
 
 If no configuration exists yet, the dialog shows **No configuration found for this widget.** with the note _fastn's agent sets up field mappings and filters for you._ and, for you as a customer, _Ask whoever administers this organization to finish setting it up._
 
-That first pass belongs to your SaaS provider: the button that starts fastn's agent needs an operator role, so it isn't shown to you. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
+That first pass belongs to your SaaS provider: the **Build with fastn agent** button that starts it is shown only to your provider's team, not to you. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
 
-See [Extending a Pre-Built Integration](extending-a-prebuilt-integration.md) for what you can change yourself, and how to ask the AI assistant for it.
+See [Extend a pre-built integration](extending-a-prebuilt-integration.md) for what you can change yourself, and how to ask the AI assistant for it.
 
 ### The configuration dialog
 

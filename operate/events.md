@@ -16,7 +16,7 @@ layout:
 
 # Events
 
-**Activity → Events**
+**Operate → Logs → Events** · `/activity/events`
 
 An event is one inbound arrival: a webhook fired, a schedule reached, or a manual run. This is the first place to look when something did not happen.
 
@@ -26,17 +26,17 @@ An event is one inbound arrival: a webhook fired, a schedule reached, or a manua
 | ---------- | ---------------------------------------------------------------- |
 | **Event**  | The source's name, with the connector underneath.             |
 | **Source** | The kind of event, for example `webhook`.                     |
-| **Status** | `Delivered`, `Active`, `Idle`, `Queued`, `Warning`, `Retrying` or `Failed`. `Delivered` is a successful hand-off. |
+| **Status** | `Delivered`, `Active`, `Idle`, `Queued`, `Skipped`, `Warning`, `Retrying` or `Failed`. `Delivered` is a successful hand-off. |
 | **When**   | Timestamp, in your timezone.                                   |
 | **Replay** | Re-delivers the row. See below.                                |
 
-Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see at a glance whether your schedules are firing. **Search events** narrows the list. A time range select (**All time**, **Last 1h**, **Last 24h**, **Last 7d**, **Last 30d**, **Last 90d**), an environment select (**All environments**) and a **Refresh** button sit beside it.
+Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see at a glance whether your schedules are firing. **Search events** narrows the list. A time range select (**All time**, **Last 1h**, **Last 24h**, **Last 7d**, **Last 30d**, **Last 90d**), an environment select (**All environments**, **Test**, **Live** and any other environment you have), an **Auto refresh** toggle and a **Refresh** button sit beside it.
 
 The list is paginated: **Rows per page** sets 25, 50 or 100. Click a row to expand it into a detail panel. To see what a run did with an event, go to [Executions](executions.md).
 
 ### Auto refresh
 
-The toggle top-right is **off** by default. Turn it on to keep the list current without reloading (useful while you are testing a webhook from the sending app) and off again when you want to read a stable list.
+The **Auto refresh** toggle top-right is **off** by default. Turn it on to keep the list current without reloading (useful while you are testing a webhook from the sending app) and off again when you want to read a stable list.
 
 ### Replay
 

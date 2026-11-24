@@ -18,7 +18,7 @@ layout:
 
 **Settings → Environments** - in your dashboard, `/settings/environments`. Visible to **developer** and above.
 
-<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page: a GitHub card reading No repository connected beside a Connect GitHub button, and a single table row, Live, slug live, Default, Requires review off, Protected"><figcaption>What an organization looks like before anyone adds a stage: one built-in Live target and no review gate in front of it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/screens/settings-environments.webp" alt="Settings, Environments: a New environment button, a GitHub card reading No repository connected with Connect GitHub, and Guardrails with three switches: live uses only live secrets, Runs kept for live, and Separate data per environment"><figcaption>Test and Live are built in. Guardrails are off until you turn them on.</figcaption></figure>
 
 > Test and Live are built in. Add a named environment here when you want another stage, such as staging or review.
 

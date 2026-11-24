@@ -104,13 +104,13 @@ The retry policy retries transient failures. Code errors, data errors and out-of
 
 Open [Sync reports](sync-reports.md). It shows what the run did, record by record, which distinguishes *the record was filtered out* from *the record was never seen*.
 
-If the page is empty, the workflow does not call `fastn.diff.compare`. Ask Build with AI (or your AI tool) to add diff reporting; reconstructing this from logs afterwards is far harder.
+If the page is empty, the workflow does not call `fastn.diff.compare`. Ask the fastn agent (or your AI tool) to add diff reporting; reconstructing this from logs afterwards is far harder.
 
 Common causes:
 
 | Cause                     | Where to fix it                                                        |
 | ------------------------- | ------------------------------------------------------------------------ |
-| A field was never mapped  | The workflow's field mappings: tell Build with AI (or your AI tool) what is missing. |
+| A field was never mapped  | The workflow's field mappings: tell the fastn agent (or your AI tool) what is missing. |
 | A filter is too broad     | The include/exclude rules in the workflow.                             |
 | Duplicates downstream     | No deduplication key on the trigger, or no `fastn.state` idempotency guard. |
 | Stale values              | A pinned connector version that predates a field. See Version pins on the connector. |

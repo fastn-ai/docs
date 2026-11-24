@@ -67,7 +67,7 @@ If you signed in to fastn from VS Code before, the server starts without asking.
 
 <figure><img src="../../.gitbook/assets/mcp-vscode-agent-answer.webp" alt="Copilot's chat in VS Code answering the question Who am I in fastn after completing 6 steps, naming the signed-in user, their role and the fastn organization it is acting in"><figcaption>Copilot answers with the fastn org you picked when signing in.</figcaption></figure>
 
-From here Copilot works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Copilot works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Add it by hand
 

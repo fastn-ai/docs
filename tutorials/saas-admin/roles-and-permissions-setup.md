@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Roles & Permissions Setup
+# Set up roles and permissions
 
 ### The 6 built-in roles
 
@@ -84,15 +84,15 @@ If the built-in roles don't fit your needs, create a custom role:
 
 1. Go to **Settings → Roles**.
 2. Click **Custom role**.
-3. Pick the built-in role it is **Based on**, name it, and untick the permissions it should not have.
-4. Save.
+3. Pick the built-in role it is **Based on**, enter a **Role Name**, and untick the permissions it should not have.
+4. Click **Create Role**.
 
 Alternatively, duplicate an existing role and modify it:
 
 1. Click on a role (e.g., Developer).
 2. Click **Duplicate**.
 3. Adjust the permissions as needed.
-4. Save.
+4. Click **Create Role**.
 
 A custom role can only narrow its base role: ticking a permission the base role does not hold grants nothing. Assign a custom role to a person on the People screen, or to a customer tier under Settings → Billing.
 

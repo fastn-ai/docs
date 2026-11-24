@@ -13,11 +13,11 @@ layout:
     visible: true
 ---
 
-# Generating Embed Tokens
+# Generate embed tokens
 
 Embed tokens are short-lived credentials that scope the fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
 
-This page is the full reference for the token request. [Embed the widget](../../getting-started/onboarding/embed-the-widget.md) and [Token API](../../embed/embedding/token-api.md) show the same request in short.
+This page is the full reference for the token request. [Set up and add the widget](../../getting-started/onboarding/embed-the-widget.md) and [Token API](../../embed/embedding/token-api.md) show the same request in short.
 
 ### The token endpoint
 
@@ -102,8 +102,8 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
 
 | Field             | Description |
 | ----------------- | ----------- |
-| `orgId`           | The customer the widget is for: your own id for it, or fastn's id for it. Required unless `x-org-id` names the customer or `allowOrgLevel` is `true`; without either, the call is `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. A value that matches none of your customers is `404 Tenant not found`, and another account's customer is `403`. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
-| `userId`          | Optional. Your id for the person using the widget. Per-user isolation keys on this (or on an attested `x-user-id`). Left out, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Tenancy](understanding-tenancy.md)). |
+| `orgId`           | The customer the widget is for: your own id for it, or fastn's id for it. Required unless `x-org-id` names the customer or `allowOrgLevel` is `true`; without either, the call is `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. A value that matches none of your customers is `404 Tenant not found`, and another account's customer is `403`. See [Find your org identifier](finding-your-org-identifier.md). |
+| `userId`          | Optional. Your id for the person using the widget. Per-user isolation keys on this (or on an attested `x-user-id`). Left out, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Customers and tenancy](understanding-tenancy.md)). |
 | `userEmail`       | Optional. The person's email address. Display only. |
 | `userName`        | Optional. The person's display name, up to 200 characters. Display only. |
 | `createIfMissing` | Optional. `true` registers the customer named by `orgId` if your account does not have it yet, then mints the token. The value becomes the new customer's own id (its External ID), which the answer returns as `data.orgId`; fastn assigns its own id as well. The key needs the `customers.create` permission. |

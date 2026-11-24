@@ -16,7 +16,7 @@ layout:
 
 # Executions
 
-**Activity → Executions**
+**Operate → Logs → Executions** · `/activity/executions`
 
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 
@@ -39,7 +39,7 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 | Filter          | Values                                                                            |
 | --------------- | ----------------------------------------------------------------------------------- |
 | Date range      | **All time** (default), Last 15m, 1h, 6h, 24h, 7d, 30d, or **Custom range**        |
-| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timed out, Cancelled         |
+| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timed out, Canceled          |
 | Workflow        | One workflow, or all                                                               |
 
 Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch, and **Enable payload searching**, a toggle that extends the search into run payloads so you can find an id that came inside the event itself.
@@ -52,7 +52,8 @@ Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch
 | **Completed** | Finished successfully.                                             |
 | **Failed**    | Raised an error.                                                   |
 | **Timed out** | Exceeded its execution timeout.                                    |
-| **Cancelled** | Stopped before finishing.                                          |
+| **Canceled**  | Stopped before finishing.                                          |
+| **Skipped**   | The workflow ended the run through `fastn.skip(reason)`, so it did nothing. |
 
 ### Opening a run
 
@@ -83,7 +84,7 @@ Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed witho
 
 **Queued** for an extended period means the run has been accepted but has not yet reached a runner.
 
-**Cancelled** means the run stopped before finishing.
+**Canceled** means the run stopped before finishing.
 
 ### The per-workflow tab
 

@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# Creating a connection
+# Create a connection
 
 **New connection** on the Connections page connects an app for **your organization**. Use it for accounts your organization owns, such as your own Slack workspace or data warehouse, which your workflows then use. It is also the quickest way to test a connector end to end.
 
@@ -22,9 +22,9 @@ Your **customers'** connections should not be made here. Customers connect their
 
 ### 1. Pick the app
 
-**New connection** opens **Connect an app** · *Pick the app your customers use. You can add more later.*
+**New connection** opens the app picker (*Pick the app your customers use. You can add more later.*).
 
-Type in **Search apps** to narrow the grid, then click the app. The footer counts how many apps match. The list can take a few seconds to load (*Loading apps...*).
+Type in the search box to narrow the grid, then click the app. The footer counts how many apps match. The list can take a few seconds to load.
 
 ### 2. Give the credential
 

@@ -18,6 +18,8 @@ layout:
 
 **Create connector → From scratch** (top right of the catalog) opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.* The **+** at the top of the connector rail on a detail page opens a separate create dialog. Its footer stays blank once you enter a name, and its **Protocol** list offers only `REST` and `MCP` for most users.
 
+<figure><img src="../../.gitbook/assets/screens/create-connector-menu.webp" alt="The Create connector menu with four items: From scratch, Build with fastn agent (On paid plans. Upgrade to use it.), Build in your AI tool and Import from file"><figcaption>The four ways to create a connector.</figcaption></figure>
+
 {% hint style="info" %}
 You rarely need to build a connector by hand. Describe the app to [the fastn agent](../agent/README.md) (**Create connector → Build with fastn agent**, on paid plans) or to your AI tool (**Create connector → Build in your AI tool**, every plan), and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions and its auth method, then tests them.
 {% endhint %}
@@ -28,7 +30,7 @@ You rarely need to build a connector by hand. Describe the app to [the fastn age
 | --- | --- | --- |
 | **Name** | Yes | What people see on the card and in the widget. Placeholder: `Salesforce`. |
 | **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* In this dialog, use a lowercase letter followed by lowercase letters and digits only, for example `acmecrm`. The form blocks capital letters, spaces and underscores before you submit, so a slug derived from a two-word name (such as `acmeCrm` from *Acme CRM*) has to be edited to all lowercase. Hyphens pass the form but are rejected by the API with *Request validation failed*. |
-| **Description** | No | Shown on the card. Build with AI also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
+| **Description** | No | Shown on the card. The fastn agent also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
 
 ### Connection
 
@@ -124,7 +126,7 @@ If you would rather fastn built the connector, use **Request connector** on the 
 
 | Field | Required | What to write |
 | --- | --- | --- |
-| **Which app?** | Yes | The app's name. |
+| **Which system?** | Yes | The app's name. |
 | **Website or API docs** | Yes | *The docs if you have them, the product page otherwise. This is the difference between an estimate and a guess.* |
 | **What does it need to do?** | Yes | *The workflow, not the endpoint.* For example: *When a deal closes in HubSpot, create the employee record in Workday and keep their department in sync.* This tells the team which actions you need, and sometimes shows that an existing connector already does it. |
 | **Anything else?** | No | How it authenticates, sandbox credentials, a vendor contact, how many customers are waiting, a deadline. |

@@ -18,6 +18,8 @@ layout:
 
 **Settings → Secrets**
 
+<figure><img src="../.gitbook/assets/screens/settings-secrets.webp" alt="Settings, Secrets with none yet: a New secret button and the note that a secret is written once, never shown again, and read in workflows with fastn.secrets.get"><figcaption>Secrets before any is created.</figcaption></figure>
+
 > Encrypted values your workflows read at runtime. Scope a secret to a customer or environment for per-customer overrides.
 
 A secret is written once and never shown again, so a key never has to live in your code:

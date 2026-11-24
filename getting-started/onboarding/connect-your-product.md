@@ -1,5 +1,5 @@
 ---
-description: An optional going-live item. Connect your product's API to fastn once, as a connector, and register it as your SaaS connector.
+description: An optional going-live item. Connect your product's API to fastn once, as a connector, and register it as your product connector.
 layout:
   width: default
   title:
@@ -16,7 +16,7 @@ layout:
 
 # Connect your product
 
-This step is for connecting your product to fastn. fastn learns your product's API once, as a connector, and you register it as your SaaS connector. Every integration then reads from and writes to your product through that connector, for each customer.
+This step is for connecting your product to fastn. fastn learns your product's API once, as a connector, and you register it as your product connector. Every integration then reads from and writes to your product through that connector, for each customer.
 
 **Optional.** Needed when an integration reads or writes your product's data: it then does so through this connector, and each customer gets their own connection to it. Customers can connect the apps you picked without it.
 
@@ -25,19 +25,19 @@ This step is for connecting your product to fastn. fastn learns your product's A
 | Component | What it is |
 | --- | --- |
 | Connector | The definition of your API in fastn: its actions, auth methods and webhook config. It holds no credentials |
-| Actions | One operation each, such as list, get or create a record. Workflows, Build with AI and your AI tools call actions, never your API directly |
+| Actions | One operation each, such as list, get or create a record. Workflows, the fastn agent and your AI tool call actions, never your API directly |
 | Auth methods | How a customer signs in to your product: API key, OAuth 2.0, Basic, Bearer, Custom fields and more. An optional verification action checks that the credential works |
 | Webhook config (optional) | How fastn subscribes to your product's events, so they can start workflows |
 | Versions | Every change is saved as a Test version. Customers run the Live version until you publish |
-| SaaS connector and connection scopes | Your connector, registered as your product. A connection scope is one capability of your API, such as `billing`; each customer holds one connection per connection scope |
+| Product connector and connection scopes | Your connector, registered as your product. A connection scope is one capability of your API, such as `billing`; each customer holds one connection per connection scope |
 
 ### Ways to do it
 
 | Way | Best when | What you get |
 | --- | --- | --- |
 | Catalog connector | Your product is already in fastn's catalog | A connector fastn maintains. Nothing to build |
-| Your AI tools | Your team works in Claude, ChatGPT, Gemini, Cursor or similar | The connector built and tested from your chat, through fastn's MCP server. Uses no AI credits |
-| Build with AI | You want fastn to build it from your API docs or OpenAPI file | The connector built and tested by fastn's agent. Paid plans only (Scale, Enterprise). Uses AI credits |
+| Your AI tool | Your team works in Claude, ChatGPT, Gemini, Cursor or similar | The connector built and tested from your chat, through fastn's MCP server. Uses no AI credits |
+| fastn agent | You want fastn to build it from your API docs or OpenAPI file | The connector built and tested by the fastn agent. Paid plans only (Scale, Enterprise). Uses AI credits |
 | By hand | You want full control | An empty connector you fill in action by action (you can paste a curl command) |
 | Import | You have a connector exported from another fastn workspace | The connector from a fastn .json bundle, without connections |
 | Request | You want fastn's team to build it | A connector built by fastn's team, with no committed date |
@@ -57,7 +57,7 @@ No public REST API? A connector can also use MCP (your MCP server's URL), a data
 
 1. **Test it.** Connect your own test account and run each action until it shows Live tested.
 2. **Publish it to Live.** **Integrations** → **Connectors** → your connector → **Overview** → **Versions** → **Publish to live**. Customers only run the Live version.
-3. **Register it as your SaaS connector.** **Build** → **Connect your product** → **Connect your product** (or **Add another product connector** once one exists). In the **Connect your product** panel, pick your connector, add its connection scopes, then click **Add connector**.
+3. **Register it as your product connector.** **Build** → **Connect your product** → **Connect your product** (or **Add another product connector** once one exists). In the **Connect your product** panel, pick your connector, add its connection scopes, then click **Add connector**.
 
 ### In the onboarding
 
@@ -72,4 +72,4 @@ If your product is already in the catalog, there's nothing to build. This item e
 
 ### Related docs
 
-[Connectors](../../build/connectors/README.md) · [SaaS connectors](../../manage/saas-connectors.md) · [Adding fastn to Claude](../../build/mcp-gateway/claude.md) · [Building from your AI agent](../../build/building-from-your-ai-agent.md) · [Build with AI](../../build/agent/README.md)
+[Connectors](../../build/connectors/README.md) · [Connect your product](../../manage/saas-connectors.md) · [Adding fastn to Claude](../../build/mcp-gateway/claude.md) · [Build from your AI tool](../../build/building-from-your-ai-agent.md) · [Build with the fastn agent](../../build/agent/README.md)

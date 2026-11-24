@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# The tabs
+# Test a workflow
 
 A new workflow shows three tabs: **Test**, **Connectors** and **Contract**. Once it is saved, the rest appear: **Diagram**, **Compare** (when there is code to compare), **Test cases**, **Executions**, **Sync reports** and **API**. If there is not room for all of them, the overflow collapses into a **More** menu.
 
@@ -58,7 +58,7 @@ The customer-facing document has nine sections: *What this integration does*, *B
 
 The editor's **Test cases** tab shows the suite itself: a header with the case count, **+ New group** and **Refresh**, then the cases. On the workflow detail view (it opens when you select **Run** on a workflow's row) the same suite sits under two tabs, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
 
-**Who writes them.** Build with AI generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
+**Who writes them.** The fastn agent (or your AI tool) generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases` and `error-handling`. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
 
 A case is three fields and a mode:
 
@@ -81,7 +81,7 @@ None of this is the [Test](#test) tab above. **Test** runs one payload you type,
 
 #### Executions
 
-This workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Activity → Executions](../../operate/executions.md).
+This workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Operate → Logs → Executions](../../operate/executions.md).
 
 #### Sync reports
 
@@ -117,5 +117,5 @@ There is no separate runtime reference tab (the **Docs** view under **Diagram** 
 Calls made for a specific customer are addressed with headers: `x-org-id`, `x-installation-id`, `x-fastn-connections`, `x-fastn-installation-config`.
 
 {% hint style="warning" %}
-Use `fastn.connector` (singular) in your code. The Connectors tab's extractor recognizes the plural `fastn.connectors.<slug>.<action>()` too, but the runtime does not provide it, so a plural call fails when the workflow runs.
+`fastn.connector` (singular) and `fastn.connectors` (plural) both work: the Connectors tab's extractor recognizes both, and the runtime answers to both. A dynamic call such as `fastn.connectors[slug]` cannot be detected, so add that connector by hand on the **Connectors** tab.
 {% endhint %}

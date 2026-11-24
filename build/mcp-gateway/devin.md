@@ -60,7 +60,7 @@ The browser returns to Devin Desktop, which shows *MCP account linked successful
 
 Start a **New session** and ask for the outcome in one sentence. To check the connection first, ask *Who am I in fastn?*
 
-From here Devin works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Devin works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Devin CLI
 

@@ -16,13 +16,13 @@ layout:
     visible: true
 ---
 
-# Configuring a Connector
+# Configure a connector
 
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md).
 
 ### Ways to create a connector
 
-Go to **Integrations → Connectors** and open the **Create connector** menu (top right). It offers **From scratch**, **Build with AI**, **Build from Claude or any MCP client** and **Import from file**. This tutorial covers the first two.
+Go to **Integrations → Connectors** and open the **Create connector** menu (top right). It offers **From scratch**, **Build with fastn agent**, **Build in your AI tool** and **Import from file**. This tutorial covers the first two. **Build with fastn agent** and **Build in your AI tool** show only to roles that can use them.
 
 #### From scratch
 
@@ -41,11 +41,11 @@ Go to **Integrations → Connectors** and open the **Create connector** menu (to
 
 For every field and protocol, see [Creating a connector](../../build/connectors/creating-a-connector.md).
 
-#### Build with AI
+#### Build with fastn agent
 
-1. Choose **Create connector → Build with AI**. This opens [Build with AI](../../build/agent/README.md).
+1. Choose **Create connector → Build with fastn agent**. This opens the [fastn agent](../../build/agent/README.md). It is on paid plans (Scale or Enterprise); on Launch the item reads *On paid plans. Upgrade to use it.*, and you can use **Build in your AI tool** instead, which uses no AI credits.
 2. Describe what you want (e.g., "HubSpot CRM"), and give it the vendor's API docs if you have them.
-3. Build with AI researches the API, builds the actions and auth method, and tests them.
+3. The fastn agent researches the API, builds the actions and auth method, and tests them.
 
 ### Authentication methods
 
@@ -117,7 +117,7 @@ New connectors are always created as `Private`.
 
 ### What you've learned
 
-* Ways to create connectors: **From scratch** and **Build with AI**, both from the **Create connector** menu
+* Ways to create connectors: **From scratch** and **Build with fastn agent**, both from the **Create connector** menu
 * All 7 auth methods and when to use each
 * How fastn-managed OAuth apps simplify authentication
 * The difference between connectors and connections

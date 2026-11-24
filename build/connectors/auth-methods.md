@@ -88,7 +88,7 @@ Authentication settings live on the connector's **Auth** tab, not on the connect
 2. Under **Authentication methods**, you will see **OAuth 2.0** marked **Default**. On a fastn-managed connector it shows "1 provider" on the right: the community app.
 3. Click **Manage providers** at the top right of the panel. The button reads **Add provider** when the connector has no providers yet, and **View providers** when you can't add one.
 
-<figure><img src="../../.gitbook/assets/own-oauth-app-2-auth-tab.webp" alt="The HubSpot connector's Auth tab: Authentication methods lists OAuth 2.0 marked Default with 1 provider, and a Manage providers button at the top right"><figcaption>The <strong>Auth</strong> tab, with <strong>Manage providers</strong> at the top right.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/screens/connector-detail-auth.webp" alt="The HubSpot connector's Auth tab: Authentication methods, How your customers prove who they are, one OAuth 2.0 method marked Default with 1 provider, and a Manage providers button"><figcaption>The Auth tab lists each method; <strong>Manage providers</strong> is where your own OAuth app goes.</figcaption></figure>
 
 **Step 3: Review existing providers**
 

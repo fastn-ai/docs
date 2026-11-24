@@ -32,6 +32,8 @@ In this quickstart you describe an integration in plain words, an AI agent build
 {% tab title="Your AI tool (every plan)" %}
 Connect your AI tool once: click **Connect your AI tool** in the top bar and follow the steps for your tool. See [fastn MCP server](../build/mcp-gateway/README.md).
 
+<figure><img src="../.gitbook/assets/screens/connect-your-ai-tool.webp" alt="The Connect your AI tool dialog: Claude recommended with Add to Claude, tiles for other AI tools, the MCP server URL https://mcp.fastn.dev/fastn-workspace with Copy, and OAuth 2.0 sign-in with no API key"><figcaption>Click <strong>Connect your AI tool</strong> in the top bar to open this dialog.</figcaption></figure>
+
 Then, in a new chat, describe what should happen, naming the apps and what starts it:
 
 > Using fastn, when a new contact is created in HubSpot, post their name and email in our #sales Slack channel.

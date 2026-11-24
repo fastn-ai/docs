@@ -46,10 +46,10 @@ The sidebar starts with **Home**, then follows the three steps of putting fastn 
 | Embed | Widget | `/widgets` | [Widget](../embed/README.md) |
 | | API keys | `/api-keys` | [API keys](../manage/api-keys.md) |
 | | MCP server | `/mcp-server` | [Build from Claude, Cursor or any agent](../build/mcp-gateway/README.md) |
-| Operate | Customers | `/customers` | [Customers](../operate/customers.md) |
+| Operate | Health → Needs attention, Overview, Pending updates, Alerts | `/health` | [Operate](../operate/README.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
+| | Customers | `/customers` | [Customers](../operate/customers.md) |
 | | Connections | `/connections` | [Connections](../build/connections/README.md) |
-| | Health → Needs attention, Overview, Pending updates, Alerts | `/health` | [Operate](../operate/README.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
-| | Logs → Events, Traces, Executions, Sync reports, Monitoring | `/activity/*` | [Logs](../operate/README.md) |
+| | Logs → Events, Executions, Sync reports, Monitoring | `/activity/*` | [Logs](../operate/README.md) |
 | (own group) | Settings | `/settings/*` | [Settings](../manage/README.md) |
 
 {% hint style="info" %}
@@ -58,15 +58,21 @@ The sidebar starts with **Home**, then follows the three steps of putting fastn 
 
 ### Home
 
-Home asks one question: **What should your customers be able to do?** (with your product's name in it once fastn knows it). Under it, for roles that can use the builder, a prompt box reads *Describe an integration in plain words…*. Send it and **Build with AI** opens at `/agent` with your request, and fastn's agent starts building it using AI credits. Building with the agent is on paid plans: on Launch the box is replaced by *Building with the fastn agent is on paid plans.*, with **Upgrade to build with the fastn agent** and **Build in your AI tool, 0 AI credits**.
+Home asks one question: **What should your customers be able to do?** (with your product's name in it once fastn knows it). Under it, for roles that can use the builder, a prompt box reads *Describe an integration in plain words…*. Send it and the fastn agent opens at `/agent` with your request, and fastn's agent starts building it using AI credits. Building with the agent is on paid plans: on Launch the box is replaced by *Building with the fastn agent is on paid plans.*, with **Upgrade to build with the fastn agent**, **Build in your AI tool, 0 AI credits** and **Ask the fastn agent a question**: on Launch the agent still answers questions and runs maintenance work.
+
+<figure><img src="../.gitbook/assets/screens/home-launch-plan.webp" alt="Home on the Launch plan: a banner reading Your setup isn't finished with Continue setup, the question What should Parkingpass's customers be able to do?, a box explaining that building with the fastn agent is on paid plans with buttons Upgrade to build with the fastn agent and Build in your AI tool, 0 AI credits, the link Ask the fastn agent a question, and Ideas for Parkingpass"><figcaption>Home on the Launch plan, for a product named Parkingpass.</figcaption></figure>
 
 Below the box, **Ideas** (or **Ideas for** your product) offers up to three suggestions, written for your product where fastn has researched it. Click one to send it to the builder. Roles that cannot use the builder, and Launch accounts, see links to pages instead: **Build a workflow** (Developer and above), **Browse connectors** and **View logs**.
+
+While setup is unfinished, Home also shows a banner, *Your setup isn't finished.*, offering 50 AI credits for finishing it, with **Continue setup**.
 
 To build from Claude, Cursor or another AI tool instead, use **Connect your AI tool** in the top bar.
 
 ### Get started (setup checklist)
 
 The checklist follows onboarding at `/onboarding`: three setup steps, then going live.
+
+<figure><img src="../.gitbook/assets/screens/get-started-checklist.webp" alt="The Get started panel, 1 of 7 done and 10 of 50 AI credits earned: Setup steps Check your product (next, with Start), Pick your integrations (done) and Set up the widget, then Go live items Add the widget to Parkingpass, Your first customer connects (needs the widget live), Connect Parkingpass (optional) and Build an integration (optional)"><figcaption>The <strong>Get started</strong> checklist opened from the bottom of the sidebar.</figcaption></figure>
 
 | Item | Done when |
 | --- | --- |
@@ -97,7 +103,7 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 | **Triggers**          | Webhooks, schedules and app events that start workflows.                                         |
 | **Unified APIs**      | One canonical endpoint per business entity, backed by whichever providers you connect.           |
 
-**Connect your AI tool**, in the top bar, exposes all of this to Claude, Cursor or another AI client. See [MCP gateway](../build/mcp-gateway/README.md).
+**Connect your AI tool**, in the top bar, connects Claude, Cursor or another AI tool to the fastn MCP server, so you can build and manage all of this from your chat. See [fastn MCP server](../build/mcp-gateway/README.md).
 
 ### Embed → Widget
 
@@ -126,7 +132,7 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | **Needs attention** | Opens first. Every vendor change waiting for review, every customer connection that expired or failed, and every workflow that failed today, each with its action: **Review**, **Open connection**, or **Runs** and **Fix with AI**. |
 | **Overview** | Every customer's integration health in one place: who needs attention, runs and records over time, connection health, what is failing and why. See [Operate](../operate/README.md). |
 | **Pending updates** | The full review of each vendor patch the maintainer agent proposes: the diff, accept or refuse. Nothing is applied until you accept it. See [Pending connector updates](../build/connector-updates.md). |
-| **Alerts** | What should page us, and where. See [Alerts](../operate/alerts.md). |
+| **Alerts** | Which failures and thresholds send an alert, and where it goes. See [Alerts](../operate/alerts.md). |
 
 ### Operate → Logs
 
@@ -135,7 +141,9 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | **Events**       | What arrived, from where, and was it delivered?                |
 | **Executions**   | Which runs happened, and how did they end?                      |
 | **Sync reports** | What actually changed, record by record?                        |
-| **Traces**       | Which connected apps did a run call, and how slow were they? |
+| **Monitoring**   | Owners and Admins. Is each trigger healthy? Per-trigger health, the dead-letter queue (replay or delete), circuit-breaker state, and pause or resume. Shown locked until fastn turns it on for your organization. |
+
+A **Traces** view (which connected apps a run called, and how slow they were) exists at `/activity/traces` but is not on the tab strip yet.
 
 ### Settings
 

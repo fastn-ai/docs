@@ -28,5 +28,5 @@ layout:
 | Section                 | Notes                                                             |
 | ----------------------- | ------------------------------------------------------------------- |
 | **Header and branding** | Your title, subtitle and accent color across the top.             |
-| **AI assistant**        | The assistant surface inside the widget.                           |
+| **AI assistant**        | The widget assistant: an **Ask the assistant** launcher at the bottom right, where a customer changes their setup in plain words. |
 | **Search bar**          | Worth keeping once there are more than about a dozen connectors.   |

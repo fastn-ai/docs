@@ -65,7 +65,7 @@ No code. In **Embed → Widget → Embed**, pick a customer and create a share l
 
 ## Before you go live
 
-Mint tokens per customer on your backend, brand the OAuth consent screen with your own OAuth app, and test as a real customer. The full list is in [Embedding in production](embedding/production-checklist.md).
+Mint tokens per customer on your backend, brand the OAuth consent screen with your own OAuth app, and test as a real customer. The full list is in the [Go-live checklist](embedding/production-checklist.md).
 
 ## Example prompts
 

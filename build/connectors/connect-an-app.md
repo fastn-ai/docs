@@ -46,7 +46,7 @@ What the dialog asks for depends on the method.
 
 **API key, bearer token and other keyed methods**: the dialog shows one field per credential, for example **API Key**. Paste the value and click **Connect**.
 
-**OAuth 2.0**: the dialog shows *You will authorise in a new window*, the **Auth provider** it will use, and **Scopes**. Click **Authorise**, sign in to the app in the new window and approve access.
+**OAuth 2.0**: the dialog shows *You will authorize in a new window*, the **Auth provider** it will use, and **Scopes**. Click **Authorize**, sign in to the app in the new window and approve access.
 
 The scope and provider options are explained in [Creating a connection](../connections/creating-a-connection.md#connecting-with-oauth).
 {% endstep %}

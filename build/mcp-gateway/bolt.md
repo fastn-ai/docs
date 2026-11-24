@@ -64,7 +64,7 @@ Ask for the outcome in one sentence. To check the connection first, ask *Using t
 
 <figure><img src="../../.gitbook/assets/mcp-bolt-answer.webp" alt="Bolt's chat answering Using the fastn connector, who am I in fastn? with Used Fastn fastnPlatform whoami and a reply naming the signed-in user, role, workspace, plan and environment"><figcaption>Bolt shows which fastn tool it used above the answer.</figcaption></figure>
 
-From here Bolt works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Bolt works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Troubleshooting
 

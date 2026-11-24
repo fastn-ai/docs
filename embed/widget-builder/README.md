@@ -30,6 +30,8 @@ Opening **Widget** takes you straight into the builder; there is no widget list 
 
 Below the tabs, the **INTEGRATIONS** panel lists what appears in the widget, with a count. This panel *is* the widget list: the offer your customers browse. Everything else on this screen is presentation.
 
+<figure><img src="../../.gitbook/assets/screens/widget-builder.webp" alt="The Widget builder: Layout, Style, Features and Embed tabs on the left with Integrations (3) listing Linear + Confluence and Akeneo PIM, Custom pages (0), and Save and publish; on the right a Live preview at Tablet size with language English, Default widget and View as admin, showing the Integrations widget with Connect buttons"><figcaption>The builder on the left, a live preview of what your customer sees on the right.</figcaption></figure>
+
 An integration that moves data between two apps shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
 
 ### Add Integrations

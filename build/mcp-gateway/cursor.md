@@ -68,7 +68,7 @@ Start a new chat with Cursor's agent and ask for the outcome in one sentence. To
 
 <figure><img src="../../.gitbook/assets/mcp-cursor-agent-answer.webp" alt="Cursor's agent answering What can fastn do for me? with Fastn is the integration layer you can drive from this chat, followed by a list: talk to connected apps, build integrations"><figcaption>Cursor answers from the fastn workspace you picked.</figcaption></figure>
 
-From here Cursor works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Cursor works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Add it by hand
 

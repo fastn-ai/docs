@@ -58,7 +58,7 @@ The browser shows *Authentication Successful* and closes itself. Back in VS Code
 
 Start a new Cline task and ask for the outcome in one sentence. To check the connection first, ask *Who am I in fastn?* Cline asks before it runs a fastn tool; approve it, and it answers with the org you picked when signing in.
 
-From here Cline works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Cline works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Add it by hand
 

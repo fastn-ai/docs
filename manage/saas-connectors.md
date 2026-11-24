@@ -18,6 +18,8 @@ layout:
 
 **Build → Connect your product → API connector**
 
+<figure><img src="../.gitbook/assets/screens/connect-your-product.webp" alt="Build, Connect your product before setup: tabs API connector and Webhooks, and a panel reading Your product is not connected yet with a Connect your product button"><figcaption><strong>Build → Connect your product</strong> before your product is connected.</figcaption></figure>
+
 > Connect your product through its API or webhooks, so each customer's connection to it can be scoped, and tell fastn where to call your product back. Integrations can't go live until your product is connected.
 
 Every other connector in fastn represents someone else's app: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organized.

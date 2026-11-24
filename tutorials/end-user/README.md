@@ -28,14 +28,14 @@ These tutorials are for the people at your customer who use integrations through
 
 ### Tutorials in this section
 
-[**Connecting Apps via Widget**](connecting-apps-via-widget.md) - Find an integration, sign in to your account on the app, and manage or remove what you set up.
+[**Connect apps**](connecting-apps-via-widget.md) - Find an integration, sign in to your account on the app, and manage or remove what you set up.
 
-[**Customizing Your Integrations**](customizing-your-integrations.md) - Adjust field mappings, filters and other settings for an integration you've set up.
+[**Customize an integration**](customizing-your-integrations.md) - Adjust field mappings, filters and other settings for an integration you've set up.
 
-[**Extending a Pre-Built Integration**](extending-a-prebuilt-integration.md) - Change what fields, filters and direction a shipped integration uses, and know where the assistant's authority ends.
+[**Extend a pre-built integration**](extending-a-prebuilt-integration.md) - Change what fields, filters and direction a shipped integration uses, and know where the assistant's authority ends.
 
-[**Getting Alerted**](getting-alerted.md) - Set up your own alerts so you hear when an integration fails or stops syncing.
+[**Get alerted**](getting-alerted.md) - Set up your own alerts so you hear when an integration fails or stops syncing.
 
-[**Connect Claude and Other AI Clients**](connecting-claude.md) - Generate a one-time MCP URL from the widget's **⋯** menu and drive your integrations from Claude, with no fastn account.
+[**Connect Claude and other AI clients**](connecting-claude.md) - Generate a one-time MCP URL from the widget's **⋯** menu and drive your integrations from Claude, with no fastn account.
 
-[**Viewing Sync Status & History**](viewing-sync-status-and-history.md) - Check what's syncing, view run history, and troubleshoot when something fails.
+[**View sync status and history**](viewing-sync-status-and-history.md) - Check what's syncing, view run history, and troubleshoot when something fails.

@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# Lifecycle
+# Test and release
 
 **Build → Integrations → Workflows** tab → open a workflow
 
@@ -81,7 +81,7 @@ The setting is per environment and lives on [Environments](../../manage/environm
 
 Code editing is a per-organization entitlement. It is off by default and is enabled by fastn.
 
-Where it is off, a banner says so and the editor has no code column. Workflows are generated and updated with [Build with AI](../agent/README.md), and you change behavior by asking Build with AI rather than editing a file.
+Where it is off, a banner says so and the editor has no code column. Workflows are generated and updated by [the fastn agent](../agent/README.md) or your AI tool, and you change behavior by asking it rather than editing a file.
 
 Everything else is unchanged: you still test, wire connectors, edit the contract, publish and deploy, and the runtime surface is identical. Code editing can be switched on if you want to write workflow code yourself; ask fastn to enable it.
 
@@ -93,5 +93,5 @@ Everything else is unchanged: you still test, wire connectors, edit the contract
 
 ### What you can do next
 
-* [The tabs](the-tabs.md) - testing a workflow before you publish it
+* [Test a workflow](the-tabs.md) - testing a workflow before you publish it
 * [Environments](../../manage/environments.md) - adding a stage and putting a review gate in front of it

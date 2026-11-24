@@ -30,11 +30,11 @@ A webhook trigger fires when another app calls a URL you give it. Nothing is pol
 
 Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
 
-### Can Build with AI do this for me?
+### Can the fastn agent do this for me?
 
-Yes. [Build with AI](../agent/README.md) can bind triggers as part of building a workflow - webhook, schedule and app-event triggers are all actions it can take, so "run this whenever my store sends an order webhook" is a reasonable thing to ask for in plain language rather than wiring by hand.
+Yes. [The fastn agent](../agent/README.md), or your AI tool over the [fastn MCP server](../mcp-gateway/README.md), can bind triggers as part of building a workflow - webhook, schedule and app-event triggers are all actions it can take, so "run this whenever my store sends an order webhook" is a reasonable thing to ask for in plain language rather than wiring by hand.
 
-What Build with AI binds is the trigger-to-workflow connection. You still come to this screen to read the URL it created, to copy it as cURL while debugging, or to disable or delete it. Build it by hand when you want control over the routes, the delivery attempts and the auth up front; ask Build with AI when you want the workflow and its trigger created together.
+What the agent binds is the trigger-to-workflow connection. You still come to this screen to read the URL it created, to copy it as cURL while debugging, or to disable or delete it. Build it by hand when you want control over the routes, the delivery attempts and the auth up front; ask the agent when you want the workflow and its trigger created together.
 
 ### Create a webhook trigger by hand
 

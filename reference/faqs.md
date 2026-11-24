@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. [Build with AI](../build/agent/README.md) (or your AI tool) writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. If you want to write code yourself, ask fastn to turn it on for your organization; fastn can enable it for any organization.
+No. The [fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your AI tool writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. If you want to write code yourself, ask fastn to turn it on for your organization; fastn can enable it for any organization.
 
 </details>
 
@@ -48,7 +48,7 @@ A **connector** is the definition of an app: its actions, auth methods and webho
 
 <summary>What is a sandbox connection?</summary>
 
-A connection for building and testing. It is free within your plan's allowance. The intended sandbox period is one week, but access is not automatically revoked when it ends. It never counts as a [customer connection](../manage/billing.md).
+A connection for building and testing, made in a sandbox environment. It is free within your plan's sandbox allowance (3 on Launch, 20 on Scale) and is deleted after 7 days. It never counts as a [customer connection](../manage/billing.md).
 
 </details>
 

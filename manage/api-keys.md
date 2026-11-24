@@ -26,6 +26,8 @@ layout:
 | **Scope**     | The permissions it carries.                        |
 | **Last used** | Timestamp, or Never.                               |
 
+<figure><img src="../.gitbook/assets/screens/api-keys.webp" alt="Embed, API keys: a Create key button, filters All, Live and Test, and one key row: name UCL, key fsk_live_ masked, mode Live, All environments (legacy), scope Connectors only, last used 13h ago, with Rotate"><figcaption>Keys are masked after creation. <strong>Rotate</strong> issues a new secret for the same key.</figcaption></figure>
+
 **Search keys** narrows the list, and the filters are **All** / **Live** / **Test**.
 
 **Rotate** issues a new secret for the same key. The **…** menu holds **Edit**, **Identity verification** and **Revoke**; **Identity verification** is hidden on a key pinned to exactly one customer, because that key already is the customer. Revoking is how an active key ends. Once a key is revoked or expired, its row offers **Delete** (a trash icon) instead, which removes it permanently.
@@ -90,7 +92,7 @@ For every preset except **Admin**, the **What it can touch** matrix below shows 
 
 **Customers it can reach**: **Every customer**, or **Only the ones I pick**. Narrowing it is not optional everywhere: the form notes that picking specific customers is *Required for keys used in an embed session.*
 
-That note covers a key used directly as one customer's widget session. The backend key that registers customers and gets embed tokens should reach **Every customer**, because a key limited to specific customers is refused for any customer it doesn't list (see [Embed the widget](../getting-started/onboarding/embed-the-widget.md)).
+That note covers a key used directly as one customer's widget session. The backend key that registers customers and gets embed tokens should reach **Every customer**, because a key limited to specific customers is refused for any customer it doesn't list (see [Set up and add the widget](../getting-started/onboarding/embed-the-widget.md)).
 
 **Verify caller identity (HMAC)** *(optional)*: turning it on asks callers to send a signed `x-identity-hmac` header, so a caller cannot change the `x-org-id` or `x-user-id` it claims to be. Pick **Enforce** (reject a missing or invalid hash) or **Monitor only** (log mismatches, let calls through). Left off, the key trusts the headers. The option is not offered on a key that reaches exactly one customer.
 
@@ -155,7 +157,7 @@ The plaintext headers tell the gateway which identity is being claimed; the hash
 ### Using a key
 
 ```bash
-curl -X POST https://YOUR_FASTN_HOST/api/v1/workflows/WORKFLOW_ID/execute \
+curl -X POST https://api.fastn.dev/api/v1/workflows/WORKFLOW_ID/execute \
   -H "Authorization: Bearer fsk_live_<your-key>" \
   -H "Content-Type: application/json" \
   -d '{ "input": { "key": "value" } }'
@@ -188,7 +190,7 @@ Full detail in the [HTTP API reference](../reference/api.md).
 
 * One key per consuming service, so revoking one does not take down four things.
 * Rotate on a schedule, and when anyone with access leaves.
-* Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embedding the widget](../embed/embedding/README.md).
+* Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embed in your product](../embed/embedding/README.md).
 * Check **Last used** before revoking. A key showing Never is either unused or misconfigured; either way, find out which.
 * Set an expiry rather than **Never**, and turn on HMAC verification for any key a customer's browser session depends on.
 

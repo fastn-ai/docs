@@ -55,7 +55,7 @@ The SDK uses whichever CRM the customer connected. If they connected more than o
 ### 3. Add a note to it
 
 ```typescript
-await customer.crm.notes.add({ body: "Signed up for the Pro plan", parent_id: contact.id, parent_type: "contact" });
+await customer.crm.notes.add({ body: "Signed up for the annual plan", parent_id: contact.id, parent_type: "contact" });
 ```
 
 ### 4. List contacts, page by page

@@ -88,7 +88,7 @@ Back in Claude, a *Connected to fastn* notice appears and the connector lists fa
 
 <figure><img src="../../.gitbook/assets/mcp-claude-question-invoice.png" alt="Claude asking What counts as an invoice email?, with Subject or body mentions invoice marked recommended"><figcaption>A business question, with the recommended answer first.</figcaption></figure>
 
-From here Claude works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Claude works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Team and Enterprise plans
 
@@ -96,7 +96,7 @@ Only an organization owner can add a custom connector. Members see the note belo
 
 <figure><img src="../../.gitbook/assets/mcp-claude-team-owner-only.png" alt="Claude's Add custom connector option grayed out, with the note Ask an organization owner to add this for your team"><figcaption>What a Team or Enterprise member sees.</figcaption></figure>
 
-Owners can use **Add for the whole organization** on the second **Claude** tile, under **Other**, on fastn's MCP page instead of **Add to Claude**.
+Owners can use **Add for the whole organization** on the second **Claude** tile, under **Other**, on fastn's **MCP server** page instead of **Add to Claude**.
 
 If you belong to more than one Claude workspace (for example Personal and a Team), add fastn in the one you chat in. A connector only shows in the workspace it was added to.
 

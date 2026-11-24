@@ -18,7 +18,7 @@ layout:
 
 **Operate → Customers** · `/customers`
 
-A top-level item in the sidebar's **Operate** group, beside Health, Connections and Activity. It used to live under Settings at `/settings/customers`, and that old address redirects here.
+A top-level item in the sidebar's **Operate** group, beside Health, Connections and Logs. It used to live under Settings at `/settings/customers`, and that old address redirects here.
 
 <figure><img src="../.gitbook/assets/customers.jpg" alt="The Customers table with a single row: testing, identifier testing underneath, 1 connection, status Active, ending in View connections, with an All tiers filter and a 1 customer count above"><figcaption>The second line under each name is the customer's slug.</figcaption></figure>
 
@@ -32,7 +32,7 @@ A customer is one company using your product: a container for their connections,
 | **Connections** | How many apps they have authorized.                          |
 | **Status**      | Active, Pending admin activation, Suspended, Pending review or Blocked. |
 
-A count sits above the table, and **Search customers** narrows it. **View connections** on each row opens that customer's panel on this page: their settings, connections and installations.
+A count sits above the table, **Search customers** narrows it, and **All tiers** filters by customer tier. When your plan caps customers, a note above the table says so, for example *Your plan allows 3 customers, 1 in use.* At a hard cap, **Create customer** is refused until you remove a customer or move to a plan that allows more. **View connections** on each row opens that customer's panel on this page: their settings, connections and installations.
 
 ### Status
 

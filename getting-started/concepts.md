@@ -30,8 +30,8 @@ The **widget** is the panel your customers use inside your product. **Logs** and
 
 <figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle.svg" alt="The fastn integration lifecycle: who does what across Build, Publish, Embed, Customize, and Run and monitor"><figcaption><p>Who does what: your team, your customer and fastn</p></figcaption></figure>
 
-1. Describe the integration to **Build with AI** or your AI tool, or write it in code.
-2. The fastn agent picks or creates the connectors and sets up authentication.
+1. Describe the integration to the fastn agent or your AI tool, or write it in code.
+2. The agent picks or creates the connectors and sets up authentication.
 3. It drafts the workflow and its test cases, and shows you the diff.
 4. You attach a trigger, publish a version and deploy it to an environment.
 5. You add the integration to your widget, and customers turn it on.
@@ -125,10 +125,12 @@ Where several providers do the same job (HubSpot, Salesforce and Zoho all hold c
 
 The categories and entities available depend on the unified API catalog in your workspace, and the list grows over time; CRM contacts are a typical example. See [Unified APIs](../build/unified-apis/README.md) for how to browse what is available.
 
-### Build with AI
+### The fastn agent
 
-**Build with AI** is fastn's agent for building integrations. It finds API specs, creates connectors, sets up authentication, proposes field mappings, generates test cases and writes the workflow. It shows you a diff before anything runs.
+The **fastn agent** is fastn's own agent for building integrations, on paid plans (Scale or Enterprise). Start it from **Integrations → Create integration → Build with fastn agent** or the prompt on **Home**. It finds API specs, creates connectors, sets up authentication, proposes field mappings, generates test cases and writes the workflow. It shows you a diff before anything runs, and it uses AI credits.
 
-### The MCP gateway
+On any plan, you can build the same way from your AI tool, such as Claude or Cursor, through the fastn MCP server. That uses no AI credits.
 
-Everything you build can also be exposed to an AI client as tools, with the same customer scoping and permission model. See [MCP gateway](../build/mcp-gateway/README.md).
+### The fastn MCP server and fastn Connect
+
+fastn has two MCP addresses. The **fastn MCP server** (`mcp.fastn.dev/fastn-workspace`) lets your AI tool build and manage integrations in your workspace. **fastn Connect**, the MCP gateway, gives your AI agents each customer's connected apps as tools, with the same customer scoping and permission model. See [fastn MCP server](../build/mcp-gateway/README.md).
