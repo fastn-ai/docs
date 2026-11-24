@@ -1,5 +1,5 @@
 ---
-description: What your own AI agent does after you ask it for an integration, where the result lands in fastn, and how to test it.
+description: What your AI tool does after you ask it for an integration, where the result lands in fastn, and how to test it.
 layout:
   width: default
   title:
@@ -14,11 +14,13 @@ layout:
     visible: true
 ---
 
-# Building from your AI agent
+# Build from your AI tool
 
-Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever agent you use, it follows fastn's integration-builder playbook, which fastn serves to your AI tool and can update over time. A typical run looks like the one below, with something for you to approve along the way. The exact steps come from the playbook, so they can differ from this table as fastn updates it.
+Once fastn is connected to your AI tool through the [fastn MCP server](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever AI tool you use, it follows fastn's integration-builder playbook, which fastn serves to your AI tool and can update over time. A typical run looks like the one below, with something for you to approve along the way. The exact steps come from the playbook, so they can differ from this table as fastn updates it.
 
-| Step | What the agent does | What you do |
+<figure><img src="../.gitbook/assets/screens/mcp-server.webp" alt="Embed, MCP server: Claude recommended with Add to Claude, tiles for eleven other AI tools, the MCP server URL https://mcp.fastn.dev/fastn-workspace with Copy, and the note that sign-in is OAuth 2.0 with dynamic client registration and needs no API key"><figcaption><strong>Embed → MCP server</strong>, also opened from <strong>Connect your AI tool</strong> in the top bar.</figcaption></figure>
+
+| Step | What your AI tool does | What you do |
 | --- | --- | --- |
 | 1. Understand | Checks who you are and what's already in your workspace | Approve the read-only fastn calls |
 | 2. Plan | Picks the connectors and recommends a plan | Answer its business questions; the recommendation is pre-selected |
@@ -27,9 +29,9 @@ Once fastn is connected to your agent through the [MCP gateway](mcp-gateway/READ
 | 5. Build | Builds, tests and publishes each workflow, sets its trigger, and can set up a widget | Confirm how often it runs, and any test that writes more than a couple of live records |
 | 6. Verify | Runs the approved tests and checks real runs | Read its report: what's running, what passed, what's left |
 
-If an account isn't connected yet, the agent stops and sends a connect link. Enter credentials there, never in the chat.
+If an account isn't connected yet, your AI tool stops and sends a connect link. Enter credentials there, never in the chat.
 
-This is the same idea as fastn's in-app [Build with AI](agent/README.md), run from the agent you already use.
+This is the same idea as the in-app [fastn agent](agent/README.md), run from the AI tool you already use, and it uses no fastn AI credits.
 
 ### Where the result lands in fastn
 
@@ -42,9 +44,9 @@ This is the same idea as fastn's in-app [Build with AI](agent/README.md), run fr
 
 ### Test it
 
-Test from your agent or from your widget, not from the workflow editor.
+Test from your AI tool or from your widget, not from the workflow editor.
 
-* **From the agent:** ask in the same chat, for example *"Run all the test cases for the invoice integration and tell me what passed."* It runs every approved test case and reports back.
+* **From your AI tool:** ask in the same chat, for example *"Run all the test cases for the invoice integration and tell me what passed."* It runs every approved test case and reports back.
 * **From the widget:** connect a test account in your widget and let the integration run, the way your customers will use it.
 
 Each run then shows under the workflow's **Executions**.

@@ -23,7 +23,7 @@ Opening a workflow (**Create workflow**, or **Edit** from a row's `⋯` menu), d
 
 > Code editing is switched off for this organization - workflows here are generated and updated by the AI builder. You can still test, wire connectors and edit the contract. It can be switched on if you want to write workflow code yourself; ask fastn to enable it.
 
-Everything else on this page still applies. You change a workflow's behavior by asking [Build with AI](../agent/README.md) instead of typing into the file, and you still configure, test, wire connectors, edit the contract, publish and deploy exactly as described below. **If you want to write workflow code yourself, ask fastn to switch it on.**
+Everything else on this page still applies. You change a workflow's behavior by asking [the fastn agent](../agent/README.md) or your AI tool instead of typing into the file, and you still configure, test, wire connectors, edit the contract, publish and deploy exactly as described below. **If you want to write workflow code yourself, ask fastn to switch it on.**
 {% endhint %}
 
 The walkthrough below assumes the code column is present. This is roughly the order you move through it.
@@ -56,7 +56,7 @@ export default async function(ctx) {
 }
 ```
 
-**This step does not apply when code editing is off** (the default). The file is then generated and updated by [Build with AI](../agent/README.md), and you describe the change you want there rather than editing it here. Skip to the next step; everything from there on is identical.
+**This step does not apply when code editing is off** (the default). The file is then generated and updated by [the fastn agent](../agent/README.md) or your AI tool, and you describe the change you want there rather than editing it here. Skip to the next step; everything from there on is identical.
 {% endstep %}
 
 {% step %}
@@ -116,7 +116,7 @@ Along the top: **Discard**, the workflow name, **Close tab**, **Save workflow** 
 | --------------- | ----------------------------------------------------------------------------------- |
 | **Name**        | Required. Empty saves are refused with *Name is required.*                         |
 | **Slug**        | Required when you create the workflow, and **cannot be changed afterwards**.        |
-| **Description** | What it does. Build with AI writes one; edit freely.                                |
+| **Description** | What it does. The fastn agent writes one; edit freely.                              |
 
 **Execution**
 

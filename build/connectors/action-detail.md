@@ -16,7 +16,9 @@ layout:
 
 # Actions
 
-An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Under the hood it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, Build with AI and your AI tool (over MCP) call actions; they never call the vendor's API directly.
+An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Under the hood it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, the fastn agent and your AI tool (over MCP) call actions; they never call the vendor's API directly.
+
+<figure><img src="../../.gitbook/assets/screens/action-editor.webp" alt="The action editor for HubSpot Add List Members: name and description fields, method PUT and the URL with an input.listId placeholder, a Run button, tabs Params, Headers, Auth, Body, Input schema, Output schema and Mocks, and a footer with v1.2, New version, Read-only owned by platform and Propose an update"><figcaption>A platform-owned action opens read-only; <strong>Propose an update</strong> suggests a change.</figcaption></figure>
 
 ### The action list
 
@@ -34,7 +36,7 @@ The top of the editor holds:
 | Element | Meaning |
 | --- | --- |
 | **Name** | The action's display name. |
-| **Description** | What the action does and how to call it. Build with AI reads this, so it should say which inputs matter. |
+| **Description** | What the action does and how to call it. The fastn agent and your AI tool read this, so it should say which inputs matter. |
 | **Method** | `GET`, `POST`, `PUT`, `PATCH` or `DELETE`. |
 | **URL** | The endpoint. Parts in double braces are filled in when the action runs: `{{input.<field>}}` takes a value from the action's input. |
 | **Run** | Opens the run panel to call the action once, live or with a mock. See [Running an action](#running-an-action). |
@@ -77,7 +79,7 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 
 **Add** (top right) adds a top-level field. The count (for example *1 field*) shows how many top-level fields there are.
 
-The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and Build with AI read it to know which fields a response contains.
+The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and the fastn agent read it to know which fields a response contains.
 
 #### Mocks
 

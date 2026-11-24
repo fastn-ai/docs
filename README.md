@@ -48,7 +48,7 @@ fastn has four parts:
 
 * **Build once.** Build an integration in the dashboard, from your AI tool through the fastn MCP server, or by describing it to the fastn agent.
 * **Extend per customer.** Each customer uses the integration as is, or extends it in the widget: add fields, filter records, change direction, or ask the widget assistant. A customer's changes apply only to that customer.
-* **Use everywhere.** The same integration runs in your product, through the widget and the API, and for your AI agents, through the MCP gateway.
+* **Use everywhere.** The same integration runs in your product, through the widget and the API, and for your AI agents, through fastn Connect, the MCP gateway.
 * **Runs and maintains.** fastn runs every call with that customer's setup, logs it and sends alerts. When an app's API changes, the maintainer agent proposes a fix, and it applies to every customer once you accept it.
 
 ## What fastn runs for you

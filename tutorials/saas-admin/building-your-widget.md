@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Building Your Widget
+# Build your widget
 
 The widget is what your customers see: the integrations panel embedded inside your product, where they connect apps and turn integrations on. You configure it visually in the widget builder; your development team handles the embed code separately.
 
@@ -65,7 +65,7 @@ The **Sections** group toggles the optional parts of the widget. A count beside 
 | Section | What it shows |
 | --- | --- |
 | **Header and branding** | Your title, subtitle and accent color across the top. Turn it off if your product already has its own header above the widget. |
-| **AI assistant** | A floating **Ask the assistant** launcher in the bottom-right corner, where a customer can ask questions and change their configuration in plain words. Building new integrations from it needs a paid plan. |
+| **AI assistant** | The widget assistant: a floating **Ask the assistant** launcher in the bottom-right corner, where a customer can ask questions and change their configuration in plain words. Building new integrations from it needs a paid plan. |
 | **Search bar** | A **Search integrations** field. Worth showing once there are more than about a dozen connectors. |
 
 The apps list itself is always shown; it is the widget's core content, not a toggle. Workflows appear inside each integration's detail view, and **Insights** (the customer's own runs, records processed, connection health and alerts for **Today**, **7 days** or **30 days**) opens from the menu in the widget's header.
@@ -82,7 +82,7 @@ Click the **Style** tab to match the widget to your product. It has five sub-tab
 * **Accent** - **Accent** (default `#4F46E5`) and **Text on accent** (default `#FFFFFF`), with a live contrast readout.
 * **Type** - Font, base size, font weight and letter spacing.
 * **Shape** - Corner rounding presets plus **Global radius** (cards, panels and dropdowns), **Button radius** and **Input radius**, and **Shadow strength** (None, SM, MD or LG).
-* **Tokens** - Individual surface colors, **Allowed Origins**, **Show 'Powered by fastn'**, **Compact mode**, and the **Design Tokens** block with **Import from JSON**, so you can apply your own design system in one step.
+* **Tokens** - Individual surface colors, **Allowed Origins**, **Show 'Powered by fastn'** (hiding it is part of white-label, on the Enterprise plan), and the **Design Tokens** block with **Import from JSON**, so you can apply your own design system in one step.
 
 {% hint style="danger" %}
 **Allowed Origins** on the Tokens sub-tab is a security control, not a styling one. Set it to the origins that are actually allowed to embed your widget before you ship.
@@ -101,11 +101,13 @@ Click the **Features** tab. It has two groups.
 * **Catalog connectors** - Show all catalog connectors in the widget so customers can browse and connect them. Off by default.
 * **Workflow Diagram** - Show the generated flow diagram on a workflow in the widget. Off by default.
 * **Generate MCP URL** - Let a customer generate a one-time URL from the header menu that connects an MCP client (Claude, ChatGPT, Cursor and others) to their integrations, with no account. On by default.
+* **App page layout** - **One tab, side by side** (activity next to the workflows) or **Separate tabs**.
+* **Installations layout** - **Table** (one row per setup) or **Cards** (an expandable card each).
 
-**Coming soon** (shown but not yet switchable):
+**Customer access** (shown once your workspace has an Instant-tier workflow to pick):
 
-* **Widget filter** - "Let customers filter widgets by category or status."
-* **Role based access** - "Role-based access control per widget."
+* **Widget filter** - A workflow that decides, per customer and user, which integrations show and how: hidden, disabled with a message, offered as an upgrade, or with buttons hidden.
+* **Access check** - A workflow that answers what the signed-in user may do: connect, disconnect, configure. Anything it does not allow is hidden and refused.
 
 See [Features](../../embed/widget-builder/features.md).
 
@@ -141,7 +143,7 @@ Click the **Embed** tab. It has three sub-tabs: **Iframe**, **SDK**, and **A2A**
 * **SDK** - Four variants: **Connect card**, **React component**, **Script tag** and **Build your own UI**, each with a code block. All but **Script tag** (a hosted bundle) also show an install command.
 * **A2A** (coming soon).
 
-Hand this off to your development team - see [Embedding fastn](../developer/embedding-quickstart.md) in the Developer tutorials for the token generation and iframe setup.
+Hand this off to your development team - see the [Embedding quickstart](../developer/embedding-quickstart.md) in the Developer tutorials for the token generation and iframe setup.
 
 ***
 
@@ -151,6 +153,6 @@ Hand this off to your development team - see [Embedding fastn](../developer/embe
 * How to add, edit and delete the integrations your widget offers
 * How to configure Layout - header content, and the three optional Sections (show, hide and reorder)
 * How to customize Style across five sub-tabs: Theme, Accent, Type, Shape and Tokens
-* Which features are available now and which are coming soon
+* Which features you can turn on, and the Customer access workflows
 * How to use the live preview: widths, the customer selector and the full-page Preview
 * How Save and publish, Discard changes and Reset differ, and how to hand off the Embed tab to your developers

@@ -5,9 +5,9 @@ description: >-
 hidden: true
 ---
 
-# Developer
+# Developer tutorials
 
-This section is dedicated for developers embedding fastn into their own product. Your customers use the embedded widget to connect their apps and configure integrations; your job is to render that widget inside your application and generate the tokens that scope it to each customer.
+This section is for developers embedding fastn into their own product. Your customers use the embedded widget to connect their apps and configure integrations; your job is to render that widget inside your application and generate the tokens that scope it to each customer.
 
 You don't run fastn locally or build the integration infrastructure yourself. fastn runs as a hosted platform. You embed its widget as an iframe, generate a short-lived token from your backend, and decide how connections are scoped to your customers.
 
@@ -27,6 +27,6 @@ You don't run fastn locally or build the integration infrastructure yourself. fa
 
 [**Deployment**](deployment.md) - Environment variables and deploy-time considerations.
 
-[**MCP gateway**](../../build/mcp-gateway/README.md) - Using your integrations as tools from Claude, Cursor and other AI clients.
+[**fastn MCP server**](../../build/mcp-gateway/README.md) - Connect your AI tool, such as Claude or Cursor, to build and manage integrations; fastn Connect gives AI agents your customers' connected apps as tools.
 
 [**Troubleshooting**](troubleshooting.md) - Common errors and their causes.

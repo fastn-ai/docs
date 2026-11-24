@@ -58,7 +58,7 @@ Start a new chat and ask for the outcome in one sentence. To check the connectio
 
 <figure><img src="../../.gitbook/assets/mcp-chatgpt-answer.webp" alt="ChatGPT's answer card titled Your FASTN identity, showing the signed-in user, role, organization, organization type, plan and organization ID"><figcaption>ChatGPT answers from the fastn workspace you picked.</figcaption></figure>
 
-From here ChatGPT works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here ChatGPT works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Troubleshooting
 

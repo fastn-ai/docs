@@ -18,7 +18,7 @@ layout:
 
 **Settings** at the bottom of the left rail.
 
-**Its menu is role-scoped, so you will not see every page below.** An Owner or Admin sees People, General, Billing, Roles and Audit log, plus everything a Developer sees: Environments, Secrets, Configs, Database, Workflow tags and Trash. API keys and the MCP server moved to **Embed → MCP server**, and Your API moved to **Build → Connect your product**.
+**Its menu is role-scoped, so you will not see every page below.** An Owner or Admin sees People, General, Billing, Roles and Audit log, plus everything a Developer sees: Environments, Secrets, Configs, Database, Workflow tags and Trash. API keys and the MCP server moved to **Embed → API keys** and **Embed → MCP server**, and Your API moved to **Build → Connect your product**.
 
 The table follows the Settings menu order: People, General, Billing, Roles, Audit log, Environments, Secrets, Configs, Database, Workflow tags, Trash.
 

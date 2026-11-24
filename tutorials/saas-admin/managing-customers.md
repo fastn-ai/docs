@@ -16,17 +16,17 @@ layout:
     visible: true
 ---
 
-# Managing Customers
+# Manage customers
 
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md).&#x20;
 
-Each company using your product is a customer. Each customer gets an isolated environment with their own connections, data, and execution history.
+Each company using your product is a customer. Each customer gets an isolated space with their own connections, data, and execution history.
 
 ### Creating customers
 
 1. Go to **Operate → Customers**.
 2. Click **Create customer**.
-3. Enter the customer details (name, and any other required fields). Optionally, put your own ID for this customer (for example `customer_12345`) in **External ID**; if you leave it empty, it defaults to the slug.
+3. Enter a **Customer Name**. **Slug** is generated from the name, and **Admin Email** (invite an admin at the customer) and **Tier** (the tier the customer is billed under) are optional. Optionally, put your own ID for this customer (for example `customer_12345`) in **External ID**; if you leave it empty, it defaults to the slug.
 4. Click **Create Customer** at the bottom of the form. Note fastn's **customer id** or the External ID - you'll use one of them for API calls and widget embedding.
 
 #### Which identifier to use
@@ -61,7 +61,7 @@ By default, all customers share your plan's quota limits. To override limits for
 
 1. Go to **Settings → Billing**.
 2. On the **Limits** card, click **Customize customer limits**.
-3. Set per-customer overrides for any quota dimension.
+3. Pick a customer, then set overrides for any quota dimension. Overrides win over the plan default.
 
 Use this for:
 
@@ -71,16 +71,16 @@ Use this for:
 
 ### Monitoring customer activity
 
-#### Activity → Executions
+#### Logs → Executions
 
-1. Go to **Activity → Executions**.
-2. Use the **"All workflows"** dropdown to filter.
+1. Go to **Operate → Logs → Executions**.
+2. Use the **All workflows** dropdown to filter.
 3. Each execution row shows **Triggered by**, which tells you what started the execution: API key, Embed, Webhook, Schedule, Agent, Replay, Manual, or a person's name.
 
-#### Activity → Events
+#### Logs → Events
 
-1. Go to **Activity → Events**.
-2. Filter by type: **All | Webhook | Scheduled | Manual**.
+1. Go to **Operate → Logs → Events**.
+2. Filter by type: **All**, **Webhook**, **Scheduled** or **Manual**.
 3. See incoming and outgoing events for your customers.
 
 #### Audit log
@@ -94,6 +94,6 @@ For a complete history of all actions:
 ### What you've learned
 
 * How to create customers under Operate → Customers
-* Customer isolation model i.e. each customer has separate connections, data, and executions
+* The customer isolation model: each customer has separate connections, data, and executions
 * How to customize quota limits per customer
 * How to monitor customer activity through Executions, Events, and Audit log

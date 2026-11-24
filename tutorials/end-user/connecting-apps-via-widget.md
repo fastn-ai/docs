@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Connecting Apps via Widget
+# Connect apps
 
 The product you use has an integrations section powered by fastn. This is where you connect your other apps - your Slack workspace, your Shopify store, your HubSpot account - so data can move between them and the product.
 
@@ -84,7 +84,7 @@ Your credentials are stored securely and are isolated from other customers. No o
 
 ### Managing an integration
 
-Click **Manage** on an integration you've set up. The detail view lists your setups (installations) and the integration's **Workflows**. On each installation, click **View** to expand it and see its accounts, its **Configuration** row (see [Customizing Your Integrations](customizing-your-integrations.md)) and, where the product offers it, its **Triggers** row.
+Click **Manage** on an integration you've set up. The detail view lists your setups (installations) and the integration's **Workflows**. On each installation, click **View** to expand it and see its accounts, its **Configuration** row (see [Customize an integration](customizing-your-integrations.md)) and, where the product offers it, its **Triggers** row.
 
 ### Adding another setup or account
 

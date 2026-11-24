@@ -14,13 +14,15 @@ layout:
     visible: true
 ---
 
-# Embedding the widget
+# Embed in your product
 
 **Embed → Widget → Embed**
 
 ## Pick the customer first
 
 The widget is always scoped to **one** of your customers, so the dropdown labelled **User** at the top is not a preview toggle. It decides who the generated snippet is for.
+
+<figure><img src="../../.gitbook/assets/screens/widget-embed-tab.webp" alt="The widget builder's Embed tab: a note that customers see fastn.ai on the OAuth consent screen unless you set up your own OAuth app, then Iframe, SDK and A2A (soon) options and a card reading No customers yet, this is a template, with Create a customer"><figcaption><strong>Embed → Widget → Embed</strong> before any customer exists: the snippet uses placeholders until you pick one.</figcaption></figure>
 
 The dropdown lists the customers on your account by name. Selecting one does two things at once:
 

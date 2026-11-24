@@ -14,9 +14,9 @@ layout:
     visible: true
 ---
 
-# Embed the widget
+# Set up and add the widget
 
-This step is for putting your integrations inside your product. The widget is the panel where your customers find, connect and customize integrations, under your brand, without signing in to fastn. It holds your connectors, the workflows behind them, and the AI your customers use to adjust them.
+This step is for putting your integrations inside your product. The widget is the panel where your customers find, connect and customize integrations, under your brand, without signing in to fastn. It holds your connectors, the workflows behind them, and the widget assistant your customers use to adjust them.
 
 **Required to go live.** You embed the widget once. Integrations you add later, and changes to the widget, appear in it without a release of your product.
 
@@ -44,8 +44,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 | Use case | How you set it up |
 | --- | --- |
-| Settings page in a B2B product | The iframe on your settings page, with Organization level Scope so one admin connects for the whole customer |
-| Each user connects their own apps | User level Scope |
+| Settings page in a B2B product | The iframe on your settings page, with each embed token minted for the signed-in customer |
 | Plans and tiers | Register each customer with a tier and connection limit; show some integrations to specific customers only |
 | Integrations that start from your product | Your backend calls a webhook trigger on each event (part 5 below) |
 
@@ -118,7 +117,7 @@ See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md)
 
 ### In the onboarding
 
-Setup step 3, **Set up the widget**, is yours: **Make it match** your product, then choose who adds it to your product: **I'll add it**, **My developer** or **My AI tool**. It is done once the widget loads in your product or a customer connects through it, and earns 5 AI credits.
+Setup step 3, **Set up the widget**, is yours. Make the widget match your product with **Customize it in** your AI tool, or **Or change it in the widget builder**. Then, under **Who adds it to** your product, choose **I'll add it**, **My developer** or **My AI tool**. It is done once the widget loads in your product or a customer connects through it, and earns 5 AI credits.
 
 The going-live item **Add the widget to** your product is your developer's. It has **Preview the widget**, **Open the widget builder** and **Send to your developer**, which copies a link to the page, then parts 1 to 4 above with their code. The API key it creates is a live, full-access key with identity verification required, not the **Embed backend** preset described in part 1. It shows "Widget found" once the widget loads on your domain, and earns no AI credits.
 

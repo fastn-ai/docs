@@ -82,7 +82,7 @@ The first time the agent calls a fastn tool, Antigravity asks **Allow using this
 
 <figure><img src="../../.gitbook/assets/mcp-antigravity-tool-approval.webp" alt="Antigravity asking Allow using this MCP tool? for fastn/fastnPlatform__whoami, with options Yes allow this time, Yes and always allow in this conversation, Yes and always allow when not in a project, Yes and always allow, and No, plus Skip and Submit buttons"><figcaption>The prompt names the server and the tool.</figcaption></figure>
 
-From here Antigravity works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Antigravity works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Antigravity CLI
 

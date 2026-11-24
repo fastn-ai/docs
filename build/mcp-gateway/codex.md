@@ -74,7 +74,7 @@ Ask Codex to use fastn by name the first time. For example:
 codex "Use the fastn MCP server: call its whoami tool and tell me the org name."
 ```
 
-Codex calls `fastnPlatform__whoami` and answers with the name of the org you picked when signing in. From there, ask for the integration in one sentence. See [Building from your AI agent](../building-from-your-ai-agent.md) for what happens next.
+Codex calls `fastnPlatform__whoami` and answers with the name of the org you picked when signing in. From there, ask for the integration in one sentence. See [Build from your AI tool](../building-from-your-ai-agent.md) for what happens next.
 
 ## Troubleshooting
 

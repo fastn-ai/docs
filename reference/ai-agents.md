@@ -26,7 +26,7 @@ If you are an agent writing fastn workflows or calling the fastn API, read this 
 
 ## The model in six lines
 
-1. An **organization** is you, the SaaS company. It holds everything below.
+1. An **organization** is you, the company whose product embeds fastn. It holds everything below.
 2. A **connector** defines an external app: its actions, auth methods and versions.
 3. A **connection** is *one of your customers'* authorized link to one connector, holding the encrypted credential.
 4. A **workflow** is JavaScript that runs on a trigger. It is code, not a drag-and-drop graph.
@@ -188,20 +188,20 @@ Polling depends on the tier:
 
 Do not conflate these.
 
-| | Docs MCP | Product MCP gateway |
+| | Docs MCP | fastn MCP server |
 | --- | --- | --- |
 | **URL** | `<docs-site>/~gitbook/mcp` | `https://mcp.fastn.dev/fastn-workspace` |
 | **Exposes** | This documentation, as searchable tools | Your fastn workflows and the fastn platform tools (connector actions run through platform tools such as `executeAction`) |
 | **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to fastn to sign in, and to pick a workspace if you belong to more than one org |
 | **Use for** | Answering questions about fastn | Acting on real customer apps |
 
-Claude Code, against the product gateway:
+Claude Code, against the fastn MCP server:
 
 ```
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 ```
 
-A gateway client acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [MCP gateway](../build/mcp-gateway/README.md).
+A client of the fastn MCP server acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [fastn MCP server](../build/mcp-gateway/README.md). Not to be confused with fastn Connect, the MCP gateway that gives AI agents each customer's connected apps as governed tools.
 
 ---
 
@@ -209,7 +209,7 @@ A gateway client acts as you, in the workspace you picked when signing in, with 
 
 Read this section before generating code.
 
-* **`fastn.connector` vs `fastn.connectors`.** Both work. On save, fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
+* **`fastn.connector` vs `fastn.connectors`.** Both work, at save time and at run time. On save, fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
 * **`fastn.state` `ORG` keys are shared by every workflow in the org.** `INVOCATION` keys live for one execution. Namespace `ORG` keys by workflow (`myworkflow:deal:123`) so two workflows do not overwrite each other.
 * **Don't rely on `fastn.db` to separate customers.** Which schema a query runs in depends on your organization's database setup. If a table holds data for several customers, add a customer column and filter on it in every query.
 * **Always parameterize SQL.** Interpolating `ctx.input` into a query string is an injection.

@@ -4,7 +4,7 @@ description: "The optional route: list and run the MCP tools your fastn workspac
 
 # Workspace tools
 
-You do not need this page for the flows in the rest of this section. It is an optional second route: if your app or AI agent works with **tools by name** (as an MCP client does), `ToolsClient` lists and runs the tools your fastn workspace has turned on, with the customer set on each call. See [MCP gateway](../../build/mcp-gateway/README.md) for what a workspace exposes.
+You do not need this page for the flows in the rest of this section. It is an optional second route: if your app or AI agent works with **tools by name** (as an MCP client does), `ToolsClient` lists and runs the tools your fastn workspace has turned on, with the customer set on each call. The endpoint is fastn Connect, the MCP gateway at `mcp.fastn.dev/<workspace>`; see [fastn MCP server](../../build/mcp-gateway/README.md) for what a workspace exposes.
 
 ```typescript
 import { ToolsClient, ToolError } from "@fastn-ai/sdk";
@@ -93,7 +93,7 @@ Failures throw `ToolError`.
 Other fields: `status`, `code`, `tool`, `body`, and the shortcuts `isAuth`, `isUnknownTool` and `isConnectionRequired`. For kind `auth`, `isConnectionRequired` is `true`, `authorizeUrl` is where to send the customer to connect, and `connector` names the app.
 
 {% hint style="warning" %}
-Today the gateway reports an app refusal (a record id that does not exist, a value the app rejects) as a tool error whose message is only `error code: 502`, the same text as a real upstream hiccup. The app's own message is on its way (platform ticket KAT-8586). Until then: the SDK counts that message as a hiccup, so with `retries` on it has already retried it; a 502 that still comes back is the app refusing the request, so check the id or the value rather than retrying further.
+Today the gateway reports an app refusal (a record id that does not exist, a value the app rejects) as a tool error whose message is only `error code: 502`, the same text as a real upstream hiccup. Passing the app's own message through is planned. Until then: the SDK counts that message as a hiccup, so with `retries` on it has already retried it; a 502 that still comes back is the app refusing the request, so check the id or the value rather than retrying further.
 {% endhint %}
 
 ```typescript

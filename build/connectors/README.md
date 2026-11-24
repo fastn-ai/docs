@@ -62,7 +62,7 @@ Find the app in the [catalog](the-catalogue.md). If it is not there, [request it
 {% step %}
 #### Use the actions
 
-Workflows, **Build with AI** and your AI tool (over MCP) call the connector's actions through that connection. The connection decides whose account the call runs as.
+Workflows, the fastn agent and your AI tool (over MCP) call the connector's actions through that connection. The connection decides whose account the call runs as.
 {% endstep %}
 
 {% step %}
@@ -78,7 +78,7 @@ If the connector has a webhook config, fastn runs its subscription code for each
 
 ### In this section
 
-* [The catalog](the-catalogue.md): searching, filtering and reading the connector cards.
+* [The catalogue](the-catalogue.md): searching, filtering and reading the connector cards.
 * [Creating a connector](creating-a-connector.md): the Create connector dialog, every protocol and auth type, and Request connector.
 * [Inside a connector](inside-a-connector.md): the detail page, its Overview, Connections and Version pins tabs, and versions.
 * [Auth methods and providers](auth-methods.md): the Auth tab and the OAuth apps behind it.

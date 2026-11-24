@@ -17,11 +17,11 @@ layout:
     visible: true
 ---
 
-# Extending a Pre-Built Integration
+# Extend a pre-built integration
 
 The integration your SaaS provider shipped is a starting point, not a fixed contract. Most of what it does - which fields move, which records qualify - is configuration you can change from inside the widget, without a fastn account and without filing a ticket.
 
-This page is about **what you can change and how to ask for it**. For the click-by-click tour of the dialog itself, see [Customizing Your Integrations](customizing-your-integrations.md).
+This page is about **what you can change and how to ask for it**. For the click-by-click tour of the dialog itself, see [Customize an integration](customizing-your-integrations.md).
 
 ### The two ways in
 
@@ -57,7 +57,7 @@ The assistant inspects both schemas, finds the phone field on each side, adds th
 If it guesses a field wrong, re-pick the field on that one row rather than re-prompting - you will get there faster. Click the row (or its **Edit mapping** chevron) to re-pick either side, or use the remove icon. Required mappings are locked: they show a lock icon and have no remove icon.
 
 {% hint style="info" %}
-**First time on an integration?** There may be no configuration at all yet. The dialog then shows **No configuration found for this widget.** with the note _fastn's agent sets up field mappings and filters for you._ and, for a customer, _Ask whoever administers this organization to finish setting it up._ That first pass is your provider's to run, not yours: the **Build with AI** button that starts it needs an operator role, so it is not shown to you. Ask them to run it once, and everything below is yours to adjust from then on.
+**First time on an integration?** There may be no configuration at all yet. The dialog then shows **No configuration found for this widget.** with the note _fastn's agent sets up field mappings and filters for you._ and, for a customer, _Ask whoever administers this organization to finish setting it up._ That first pass is your provider's to run, not yours: the **Build with fastn agent** button that starts it is shown only to your provider's team, not to you. Ask them to run it once, and everything below is yours to adjust from then on.
 {% endhint %}
 
 ### What the assistant will not do
@@ -69,7 +69,7 @@ Knowing the edges saves you from fighting the tool:
 | "Connect my Shopify store too" | The apps on offer are chosen by your SaaS provider. The assistant configures what is offered; it does not widen the integration catalog. | Ask your provider to add the connector |
 | "Re-sync everything from last year with the new mapping" | Configuration applies to future runs. Already-synced records are not rewritten. | Ask your provider about a backfill |
 | "Run this every 5 minutes instead of hourly" | Schedules belong to the installation's triggers, not the configuration. | Where your provider made the schedule (rate or cron) editable, change it from the installation's **Triggers** row → **Open**; otherwise ask your provider |
-| "Send me a Slack message when a record fails" | That is an alert, not a mapping. | [Getting Alerted](getting-alerted.md) - you can set this up yourself |
+| "Send me a Slack message when a record fails" | That is an alert, not a mapping. | [Get alerted](getting-alerted.md) - you can set this up yourself |
 
 The rule of thumb: **the assistant changes _what_ data moves and _which_ records qualify. It does not change _which_ apps exist or backfill data that already synced.**
 
@@ -96,6 +96,6 @@ In all three cases the answer is the same: contact your SaaS provider's support 
 
 ### What you can do next
 
-* [Getting Alerted](getting-alerted.md) - be told when an integration breaks instead of discovering it
+* [Get alerted](getting-alerted.md) - be told when an integration breaks instead of discovering it
 * [Connect Claude and other AI clients](connecting-claude.md) - driving your integrations from an AI client
-* [Customizing Your Integrations](customizing-your-integrations.md) - the full dialog reference
+* [Customize an integration](customizing-your-integrations.md) - the full dialog reference

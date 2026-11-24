@@ -67,19 +67,19 @@ Two controls sit above the list:
 * **Labels** filters it. Pick several and a workflow has to carry all of them to show, so the filter narrows rather than widens.
 * **Group by category** switches the flat list into one group per category.
 
-### Uncategorised
+### Uncategorized
 
-Every workflow without a category falls into **Uncategorised**. It is not a category you create or can delete, it is where everything starts, and an organization that has never defined a category shows a single Uncategorised group holding everything.
+Every workflow without a category falls into **Uncategorized**. It is not a category you create or can delete, it is where everything starts, and an organization that has never defined a category shows a single Uncategorized group holding everything.
 
 ## Deleting one
 
 Deleting a tag never deletes the workflows carrying it.
 
 * Delete a **label** and it comes off the workflows that had it.
-* Delete a **category** and its workflows fall back to **Uncategorised**.
+* Delete a **category** and its workflows fall back to **Uncategorized**.
 
 {% hint style="warning" %}
-Deleting is the only way to make room once a panel is full. Check the usage count on the row first: a category showing **3 workflows** will drop those three into Uncategorised, and nothing records which category they used to be in.
+Deleting is the only way to make room once a panel is full. Check the usage count on the row first: a category showing **3 workflows** will drop those three into Uncategorized, and nothing records which category they used to be in.
 {% endhint %}
 
 ## Who can change them

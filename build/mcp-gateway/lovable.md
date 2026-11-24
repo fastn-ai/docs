@@ -58,7 +58,7 @@ Start a chat or open a project and ask for the outcome in one sentence. To check
 
 <figure><img src="../../.gitbook/assets/mcp-lovable-answer.webp" alt="Lovable's chat answering Using the fastn connector, who am I in fastn? with Checked your identity in fastn and a list of name, email, role, organization, environment and plan"><figcaption>Read-only fastn tools run straight away. Lovable asks before any tool that changes something.</figcaption></figure>
 
-From here Lovable works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Lovable works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Troubleshooting
 

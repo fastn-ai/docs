@@ -18,7 +18,7 @@ layout:
 
 **Settings → Roles**
 
-<figure><img src="../.gitbook/assets/settings-roles.jpg" alt="The Roles screen with the built-in roles down the left, Admin selected with every permission held, and its Connectors, Connections and Workflows groups fully ticked"><figcaption>Some capabilities are called out as role-gated rather than grantable, such as using the AI assistant and reading the audit log.</figcaption></figure>
+<figure><img src="../.gitbook/assets/screens/settings-roles.webp" alt="Settings, Roles: built-in roles down the left (Owner 44, Admin 44, Developer 36, Operator 21, Viewer 6, End User 35) with Admin selected, showing 44 of 44 permissions, a note on the two abilities gated by role, and the permission grid for Connectors, Connections and Workflows"><figcaption>Each built-in role with its permission count. A custom role narrows one of these.</figcaption></figure>
 
 > What each role can do. A custom role narrows a built-in one; assign either to a person on the People screen, or to a customer tier under Billing.
 

@@ -130,7 +130,7 @@ This is the moment to correct it. Replying *"put first and last name in separate
 {% step %}
 #### Then test and publish as usual
 
-What the agent hands over is an ordinary workflow, a `<slug>.js` module. It opens in the [workflow editor](../workflows/README.md) (the code itself is shown only where code view is switched on for your organization), its generated scenarios sit on the **Test cases** tab, and you run it from the **Test** tab. Publishing a snapshot and deploying it are the same steps as for anything you wrote by hand. See [Lifecycle](../workflows/lifecycle.md).
+What the agent hands over is an ordinary workflow, a `<slug>.js` module. It opens in the [workflow editor](../workflows/README.md) (the code itself is shown only where code view is switched on for your organization), its generated scenarios sit on the **Test cases** tab, and you run it from the **Test** tab. Publishing a snapshot and deploying it are the same steps as for anything you wrote by hand. See [Test and release](../workflows/lifecycle.md).
 {% endstep %}
 {% endstepper %}
 

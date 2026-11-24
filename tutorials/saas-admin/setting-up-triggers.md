@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Setting Up Triggers
+# Set up triggers
 
 Triggers are what start your workflows. In fastn, triggers are managed **separately from workflows**: you create a trigger under **Integrations → Triggers**, then route it to one or more workflows.
 

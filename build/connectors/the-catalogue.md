@@ -18,12 +18,14 @@ layout:
 
 `/integrations?tab=connectors` lists every connector your workspace can use: the ones fastn manages and the ones your workspace created.
 
+<figure><img src="../../.gitbook/assets/screens/connectors-catalog.webp" alt="The Connectors page: Request connector and Create connector buttons, a Categories list starting with All connectors 1030, a search box with All, Featured, Connected and OAuth chips and an All Visibility filter, and connector cards badged managed with a Connect button"><figcaption>The connector catalog.</figcaption></figure>
+
 ### Page header
 
 | Button | What it does |
 | --- | --- |
 | **Request connector** | Asks fastn to build a connector you need. See [Request a connector](creating-a-connector.md#request-a-connector). |
-| **Create connector** | Opens a menu with every way to add a connector: **From scratch** opens the Create a connector dialog (see [Creating a connector](creating-a-connector.md)); **Build with AI** opens fastn's builder; **Build from Claude or any MCP client** shows how to build one from your AI tool; **Import from file** opens a file picker that accepts one `.json` connector file (see [Importing and exporting](importing-and-exporting.md)). **Build with AI** and the MCP item show only where your role can use them. If your role cannot create connectors, you see an **Import** button instead of this menu. |
+| **Create connector** | Opens a menu with every way to add a connector: **From scratch** opens the Create a connector dialog (see [Creating a connector](creating-a-connector.md)); **Build with fastn agent** opens the [fastn agent](../agent/README.md) (on paid plans; on Launch it reads *On paid plans. Upgrade to use it.*); **Build in your AI tool** shows how to connect your AI tool to the [fastn MCP server](../mcp-gateway/README.md) and build one there; **Import from file** opens a file picker that accepts one `.json` connector file (see [Importing and exporting](importing-and-exporting.md)). **Build with fastn agent** and **Build in your AI tool** show only where your role can use them. If your role cannot create connectors, you see an **Import** button instead of this menu. |
 
 ### Finding a connector
 

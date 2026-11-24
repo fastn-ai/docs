@@ -16,7 +16,7 @@ layout:
 
 # Common patterns
 
-You can describe any of these to [Build with AI](agent/README.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
+You can describe any of these to [the fastn agent](agent/README.md) or [your AI tool](building-from-your-ai-agent.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
 
 Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use (`fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector`), show up in the code editor's autocomplete and are documented in [Workflow runtime API](../reference/workflow-runtime.md); check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
 

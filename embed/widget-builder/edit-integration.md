@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# Edit Integration
+# Edit integration
 
 **Embed → Widget → INTEGRATIONS → pencil on a row**
 

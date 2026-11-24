@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Getting Alerted
+# Get alerted
 
 A sync can stop without an error, so nothing tells you records stopped arriving. Alerts notify you when that happens. You set them up yourself inside the widget, with no fastn account.
 
@@ -128,5 +128,5 @@ So if an integration failing matters to you, set up your own rule - do not assum
 
 ### What you can do next
 
-* [Viewing Sync Status & History](viewing-sync-status-and-history.md) - what to look at once an alert fires
-* [Extending a Pre-Built Integration](extending-a-prebuilt-integration.md) - fixing the configuration that caused it
+* [View sync status and history](viewing-sync-status-and-history.md) - what to look at once an alert fires
+* [Extend a pre-built integration](extending-a-prebuilt-integration.md) - fixing the configuration that caused it

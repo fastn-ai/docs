@@ -9,7 +9,7 @@ description: >-
 Start with [Troubleshooting](../operate/troubleshooting.md) if you know the symptom but not the error. Use this page when you have an error in front of you and want to know what it means.
 
 {% hint style="info" %}
-**This page lists the failure states verified in the product.** fastn does not publish a fixed catalog of error codes: most failures surface as a category plus a message written for the specific case, rather than a numbered code. Where a literal string is quoted below, it is quoted verbatim from the product.
+**This page lists the failure states verified in the product.** Run failures surface as a category plus a message written for the specific case; API errors carry the codes listed under [Error codes](#error-codes). Where a literal string is quoted below, it is quoted verbatim from the product.
 {% endhint %}
 
 ---
@@ -235,6 +235,9 @@ Some routes return a bare status with no explicit code. One is then derived from
 `400` and `422` → `VALIDATION_ERROR` · `401` → `AUTH_INVALID` · `402` → `PAYMENT_REQUIRED` · `403` → `FORBIDDEN` · `404` → `NOT_FOUND` · `405` → `METHOD_NOT_ALLOWED` · `408` and `504` → `TIMEOUT` · `409` → `CONFLICT` · `429` → `RATE_LIMITED` · `500` → `INTERNAL_ERROR` · `502` → `UPSTREAM_ERROR` · `503` → `SERVICE_UNAVAILABLE`
 
 Any status outside that list yields `HTTP_<status>`.
+
+---
+
 ## Trigger failure states
 
 ### App events: `Subscription: Failed`
@@ -283,7 +286,7 @@ From [Connections](../build/connections/README.md). A connection that is not hea
 
 ## What is not covered here
 
-Being straight about the boundary: this page documents the failure states reachable through the product's own screens. It is **not** a generated list of every error string the platform can emit: fastn does not publish one, and inventing codes would be worse than omitting them.
+This page documents the failure states reachable through the product's own screens. It is **not** a generated list of every error string the platform can emit: fastn does not publish one, and inventing codes would be worse than omitting them.
 
 If you hit an error that is not here:
 

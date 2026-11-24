@@ -16,11 +16,11 @@ layout:
     visible: true
 ---
 
-# Viewing Sync Status & History
+# View sync status and history
 
 Once your integrations are connected and running, the widget shows you how they're doing: what's running, what succeeded or failed, and what needs attention. The overview lives in **Insights**, which you open from the **⋯** menu in the widget header. Each integration's own run history is in its detail view.
 
-**Prerequisites:** At least one app connected via the widget. See [Connecting Apps via Widget](connecting-apps-via-widget.md).
+**Prerequisites:** At least one app connected via the widget. See [Connect apps](connecting-apps-via-widget.md).
 
 ***
 

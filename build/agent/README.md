@@ -1,5 +1,5 @@
 ---
-description: The chat-driven builder that picks connectors, drafts workflows and shows you the diff.
+description: The fastn agent, the chat-driven builder that picks connectors, drafts workflows and shows you the diff.
 layout:
   width: default
   title:
@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# Build with AI
+# Build with fastn agent
 
 **Integrations → Create integration → Build with fastn agent** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
@@ -34,7 +34,7 @@ The left rail, headed **Sessions**, holds your session history. Each session kee
 
 ### Starting from an example
 
-Four cards sit under **START FROM AN EXAMPLE**, each pairing a goal with the concrete detail that makes it buildable:
+Four cards sit under **Start from an example**, each pairing a goal with the concrete detail that makes it buildable:
 
 | Card | What it asks for |
 | ---- | ---------------- |
@@ -117,7 +117,7 @@ Agent usage draws on the AI credits shown in the top bar (visible to Owners and 
 {% endhint %}
 
 {% hint style="warning" %}
-Build with AI needs the **Operator** role or above; below that, the **Build with fastn agent** menu items and Home's prompt are not shown. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch the agent still answers questions, and you build from your own AI tool through the [fastn MCP server](../mcp-gateway/README.md), which uses no AI credits. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
+Building with the fastn agent needs the **Operator** role or above, and the fastn agent switched on for your organization; below that, the **Build with fastn agent** menu items and Home's prompt are not shown. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch the agent still answers questions, and you build from your own AI tool through the [fastn MCP server](../mcp-gateway/README.md), which uses no AI credits. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
 {% endhint %}
 
 ### In this section

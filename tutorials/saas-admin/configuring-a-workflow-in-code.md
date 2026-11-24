@@ -16,12 +16,12 @@ layout:
     visible: true
 ---
 
-# Configuring a Workflow in Code
+# Write a workflow in code
 
 **Prerequisites:** [Your First Integration](../../getting-started/quickstart.md). Basic JavaScript familiarity.
 
 {% hint style="info" %}
-Code editing is a per-organization entitlement, off by default and enabled by fastn. If your editor has no code column, ask fastn to switch it on, or build the workflow with [Build with AI](../../build/agent/README.md) instead.
+Code editing is a per-organization entitlement, off by default and enabled by fastn. If your editor has no code column, ask fastn to switch it on, or build the workflow with the [fastn agent](../../build/agent/README.md) or [your AI tool](../../build/building-from-your-ai-agent.md) instead.
 {% endhint %}
 
 ### Opening the code editor
@@ -185,7 +185,7 @@ Once your code works in testing:
 4. Toggle **Retry policy** if you want automatic retries on failure.
 5. Click **Create Workflow** (bottom of the Configuration panel).
 
-The workflow appears in the Workflows list with status **Unpublished**. Until you publish it, every call returns `WORKFLOW_NOT_PUBLISHED`. Publish it from the **Publish & Deploy** section with **Publish snapshot**, then deploy it to an environment; see [Lifecycle](../../build/workflows/lifecycle.md).
+The workflow appears in the Workflows list with status **Unpublished**. Until you publish it, every call returns `WORKFLOW_NOT_PUBLISHED`. Publish it from the **Publish & Deploy** section with **Publish snapshot**, then deploy it to an environment; see [Test and release](../../build/workflows/lifecycle.md).
 
 ### Editing an existing workflow
 

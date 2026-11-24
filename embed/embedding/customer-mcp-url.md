@@ -64,7 +64,7 @@ Your call has already returned `201` by the time the customer pastes the URL, so
 
 ## What the client can reach
 
-The client connects to the Fastn Workspace tools and acts as that customer and that user, with the `end_user` role.
+The client connects to the fastn MCP server's workspace tools and acts as that customer and that user, with the `end_user` role.
 
 * It stays inside that customer, and it cannot see your other customers.
 * It acts as one person. It uses that user's connections, so a connection another person at the customer made for themselves is not available to it.

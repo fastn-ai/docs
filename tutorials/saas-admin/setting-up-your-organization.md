@@ -16,7 +16,7 @@ layout:
     visible: true
 ---
 
-# Setting Up Your Organization
+# Set up your organization
 
 Onboarding (at `/onboarding`) takes you through three setup steps, **Check your product**, **Pick your integrations** and **Set up the widget**, then going live: **Add the widget** to your product and **Your first customer connects**, plus the optional **Connect** your product and **Build an integration**. See [Onboarding](../../getting-started/onboarding/README.md). Alongside it, a handful of organization-level settings control your company profile, team access, customer management and billing. This tutorial walks through each one.
 
@@ -55,7 +55,7 @@ fastn has these built-in roles. **Settings → Roles** counts each role's permis
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Owner**     | 44          | Everything an Admin can do, plus managing admins and transferring ownership. One per organization.                    |
 | **Admin**     | 44          | Full access within the organization and its customers: connectors, workflows, customers, billing, settings.          |
-| **Developer** | 36          | Builds and deploys connectors and workflows, and uses Build with AI. No billing, people management or audit log.                     |
+| **Developer** | 36          | Builds and deploys connectors and workflows, and can use the fastn agent (paid plans). No billing, people management or audit log.                     |
 | **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only.                                                      |
 | **Viewer**    | 6           | Read-only access to connectors, connections, workflows, widgets, events and the Unified API. Not executions, users, settings or secrets, and no AI assistant. |
 | **End User**  | 35          | The role for people at your customers using the embedded widget: create connections and use the widget's assistant inside their own customer. |

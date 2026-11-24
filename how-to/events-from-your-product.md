@@ -71,7 +71,7 @@ The JSON body arrives in the workflow as `ctx.input`.
 
 **You should see:** the event in **Operate → Logs → Events** and the run in **Operate → Logs → Executions**.
 
-If a delivery fails, fastn retries it with the trigger's **Max attempts** and **Backoff strategy**. Deliveries that run out of retries wait in the dead-letter queue, shown on **Health**.
+If a delivery fails, fastn retries it with the trigger's **Max attempts** and **Backoff strategy**. Deliveries that run out of retries wait in the dead-letter queue. The trigger's row counts them as **Dead-lettered**, and **Operate → Logs → Monitoring** lets you replay or delete them.
 
 ### Related
 
