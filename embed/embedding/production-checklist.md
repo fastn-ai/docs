@@ -18,7 +18,7 @@ layout:
 
 # Go-live checklist
 
-The [iframe](iframe.md) is one HTML tag, and a first run takes minutes. Going live for real customers takes a few more decisions. This page collects them, along with the problems teams have actually hit when embedding fastn in production.
+The [iframe](iframe.md) is one HTML tag, and a first run takes minutes. Going live for real customers takes a few more decisions, listed below with the problems teams have hit when embedding fastn in production.
 
 ## Before you go live
 
@@ -32,7 +32,7 @@ Never ship the dashboard's sample snippet: it contains a live token in the URL, 
 {% step %}
 ### Scope every token to exactly one customer
 
-A token must identify one customer. If an API key covers several customers and you don't say which one, the widget cannot know whose connections to show. Name the customer on every mint. Register it first, from your backend with an **Admin** key or under **Operate → Customers**, then name it in `x-org-id`. See [Token API](token-api.md) and [Customers and tenancy](../../tutorials/developer/understanding-tenancy.md).
+A token must identify one customer. If an API key covers several customers and you don't say which one, the widget cannot know whose connections to show. Name the customer on every mint. Register it first, from your backend with an **Admin** key or under **Operate → Customers**, then name it in `x-org-id`. See [Token API](token-api.md) and [Customers and isolation](../../tutorials/developer/understanding-tenancy.md).
 {% endstep %}
 
 {% step %}

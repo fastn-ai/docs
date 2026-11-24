@@ -79,7 +79,7 @@ Your AI tool can set up the customer-facing side too:
 
 ## Questions?
 
-* Who can see what: [Customers and tenancy](../tutorials/developer/understanding-tenancy.md).
+* Who can see what: [Customers and isolation](../tutorials/developer/understanding-tenancy.md).
 * Keys and headers: [API keys](../manage/api-keys.md).
 * What your customers see: [Using integrations in the widget](../tutorials/end-user/README.md).
 

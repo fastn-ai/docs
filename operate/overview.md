@@ -31,7 +31,7 @@ Operate shows how every customer's integrations are doing once they are live. **
 | **Support and customer success** | See which customers have failing runs or expired connections |
 | **On-call engineer** | Find the failed run, read why it failed, and replay it |
 | **Integration engineer** | Accept the fix when a vendor changes an API |
-| **Account owner** | Keep an eye on totals and trends across every customer |
+| **Account owner** | Track totals and trends across every customer |
 
 ## How do I use it?
 

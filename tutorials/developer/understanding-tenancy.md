@@ -14,8 +14,7 @@ layout:
     visible: true
 ---
 
-# Customers and tenancy
-
+# Customers and isolation
 Every widget session in fastn is scoped twice: to one **customer** (a company using your product), and to one **person** at that customer. Both come from the embed token your backend mints. Nothing in the iframe URL changes either of them.
 
 ### The customer

@@ -1,5 +1,5 @@
 ---
-description: "The Connectors page: header buttons, categories, search, filters, connector cards and the page guide."
+description: "The Connectors page: header buttons, categories, search, filters, connector cards, and the page guide."
 layout:
   width: default
   title:
@@ -25,9 +25,9 @@ layout:
 | Button | What it does |
 | --- | --- |
 | **Request connector** | Asks fastn to build a connector you need. See [Request a connector](creating-a-connector.md#request-a-connector). |
-| **Create connector** | Opens a menu with every way to add a connector: **From scratch** opens the Create a connector dialog (see [Creating a connector](creating-a-connector.md)); **Build with fastn agent** opens the [fastn agent](../agent/README.md) (on paid plans; on Launch it reads *On paid plans. Upgrade to use it.*); **Build in your AI tool** shows how to connect your AI tool to the [fastn MCP server](../mcp-gateway/README.md) and build one there; **Import from file** opens a file picker that accepts one `.json` connector file (see [Importing and exporting](importing-and-exporting.md)). **Build with fastn agent** and **Build in your AI tool** show only where your role can use them. If your role cannot create connectors, you see an **Import** button instead of this menu. |
+| **Create connector** | Opens a menu with every way to add a connector: **From scratch** opens the Create a connector dialog (see [Create a connector](creating-a-connector.md)); **Build with fastn agent** opens the [fastn agent](../agent/README.md) (on paid plans; on Launch it reads *On paid plans. Upgrade to use it.*); **Build in your AI tool** shows how to connect your AI tool to the [fastn MCP server](../mcp-gateway/README.md) and build one there; **Import from file** opens a file picker that accepts one `.json` connector file (see [Import and export](importing-and-exporting.md)). **Build with fastn agent** and **Build in your AI tool** show only where your role can use them. If your role cannot create connectors, you see an **Import** button instead of this menu. |
 
-### Finding a connector
+### Find a connector
 
 | Control | What it does | URL parameter |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ The **Connected** and **OAuth** views can take several seconds to load the first
 
 The list is split into pages, with **Previous** and **Next** below it.
 
-### Reading a card
+### What a card shows
 
 Each card shows:
 
@@ -66,7 +66,7 @@ The button depends on whether you have connected:
 | Not connected | **Connect** | Opens the connect dialog for this connector. See [Connect an app](connect-an-app.md). |
 | Connected | **Add another connection**, plus a chevron | **Add another connection** opens the connect dialog again so you can sign in a second account. The chevron opens a menu with **Disconnect**. |
 
-Cards of connectors your workspace owns also have a **⋯** menu with **Select**, **Edit**, **Export** and **Delete**; see [Importing and exporting](importing-and-exporting.md#export-connectors) and [Editing, publishing and deleting](editing-and-deleting.md).
+Cards of connectors your workspace owns also have a **⋯** menu with **Select**, **Edit**, **Export**, and **Delete**; see [Import and export](importing-and-exporting.md#export-connectors) and [Edit, publish, and delete](editing-and-deleting.md).
 
 Click a card's name to open the [connector's detail page](inside-a-connector.md).
 

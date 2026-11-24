@@ -37,6 +37,10 @@ You can also ask the fastn agent to create it: *"Add a webhook trigger that runs
 
 ### 2. Send the event from your backend
 
+{% hint style="warning" %}
+`x-org-id` names the customer only when the key's identity verification is **Monitor only** or **Enforce**, or the call carries `x-identity-hmac`. Without that, the headers are only passed through to the workflow and do not name the customer.
+{% endhint %}
+
 Name the customer and the user in `x-org-id` and `x-user-id`, and sign them with your identity secret:
 
 ```javascript
@@ -63,10 +67,6 @@ async function sendOrderEvent({ customerId, userId, order }) {
 
 The JSON body arrives in the workflow as `ctx.input`.
 
-{% hint style="warning" %}
-`x-org-id` names the customer only when the key's identity verification is **Monitor only** or **Enforce**, or the call carries `x-identity-hmac`. Without that, the headers are only passed through to the workflow and do not name the customer.
-{% endhint %}
-
 ### 3. Check it ran
 
 **You should see:** the event in **Operate → Logs → Events** and the run in **Operate → Logs → Executions**.
@@ -76,7 +76,6 @@ If a delivery fails, fastn retries it with the trigger's **Max attempts** and **
 ### Related
 
 * [webhook-event-node](https://github.com/fastn-ai/docs/tree/main/examples/webhook-event-node): this guide as a runnable project
-
-* [Using a webhook trigger](../operate/triggers/using-a-webhook-trigger.md): every header and response
-* [Webhook triggers](../build/triggers/webhooks.md): routes, retries, deduplication and execution mode
+* [Call a webhook trigger](../operate/triggers/using-a-webhook-trigger.md): every header and response
+* [Webhook triggers](../build/triggers/webhooks.md): routes, retries, deduplication, and execution mode
 * [Run an integration for one customer](run-for-a-customer.md): call a workflow directly and read its result

@@ -78,9 +78,9 @@ Back in Claude, a *Connected to fastn* notice appears and the connector lists fa
 
 <figure><img src="../../.gitbook/assets/mcp-claude-prompt.png" alt="A Claude message reading: Using fastn, save invoice emails from Gmail to a Google Sheet. Test it, then add it to my widget."><figcaption>Name the apps, what starts it and what moves.</figcaption></figure>
 
-[Writing a good first message](../agent/README.md#writing-a-good-first-message) has more examples.
+[Write a good first message](../agent/README.md#write-a-good-first-message) has more examples.
 
-3. Each time Claude wants to use a fastn tool, it asks first: **Decline**, **Always allow** or **Allow once**.
+3. Each time Claude wants to use a fastn tool, it asks first: **Decline**, **Always allow**, or **Allow once**.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-tool-approval.webp" alt="Claude asking Claude wants to use fastnPlatform__listWorkflows from Fastn, with the argument Sort status, and Decline, Always allow and Allow once buttons"><figcaption>The prompt names the tool and the connector it comes from.</figcaption></figure>
 
@@ -103,7 +103,7 @@ If you belong to more than one Claude workspace (for example Personal and a Team
 ## Troubleshooting
 
 * *A connector with this URL already exists in your organization.* Someone in your Claude organization already added fastn. Open **Customize** → **Connectors** and connect that one instead of adding another.
-* **fastn works on the wrong org.** Open the connector, click **Disconnect**, then **Connect** again and pick the workspace (the picker appears when you belong to more than one fastn org). If you chose **The org selected in fastn**, switch org in the fastn dashboard instead.
+* **fastn works on the wrong org.** Open the connector, click **Disconnect**, then **Connect** again, and pick the workspace (the picker appears when you belong to more than one fastn org). If you chose **The org selected in fastn**, switch org in the fastn dashboard instead.
 * **Claude Code or the Claude desktop config file.** These are set up separately: see [Claude Code](claude-code.md).
 
 {% hint style="info" %}

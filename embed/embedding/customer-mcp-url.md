@@ -16,7 +16,7 @@ layout:
 
 # Customer MCP URL
 
-A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to fastn as that customer, with no fastn account. Your customer can [generate one in the widget](../../tutorials/end-user/connecting-claude.md). This page is for creating one from your own product, for example behind a "Connect Claude" button in your settings.
+A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to fastn as that customer, with no fastn account. Your customer can [generate one in the widget](../../tutorials/end-user/connecting-claude.md). You can also create one from your own product, for example behind a "Connect Claude" button in your settings.
 
 ## Create the URL
 

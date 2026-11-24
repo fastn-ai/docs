@@ -48,7 +48,7 @@ Click a customer to open its page: its details, its tier, its customer admin and
 
 **Pending review** and **Blocked**: the customer is held for review, or blocked.
 
-### Creating a customer
+### Create a customer
 
 **Create customer** adds one manually, which is what you want when onboarding an account before they first sign in.
 
@@ -73,4 +73,4 @@ ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]
 | ⌘K search, **Your customers** group | Picking one opens **Customers**.                    |
 | [Connections](../build/connections/README.md) | A **Customer** column in the **Customers** view. |
 | Widget builder preview             | The **View as** selector (default **View as admin**) renders the widget as a customer. |
-| [Embed tab](../embed/embedding/README.md) | The **USER** selector scopes the generated snippet.  |
+| [Embed tab](../embed/embedding/README.md) | The **User** selector scopes the generated snippet.  |

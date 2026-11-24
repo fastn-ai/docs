@@ -23,7 +23,7 @@ Terms used on this page are defined in the [Glossary](../../reference/glossary.m
 
 ### Prerequisites
 
-Before you start, you need an API key. We also recommend two optional security measures:
+Before you start, you need an API key. Two optional security measures are also recommended:
 
 * Enable caller identity verification (HMAC) on the API key.
 * Compute an identity hash on your backend and send it with every customer-specific request. The hash is recommended; it is required only when the key's identity verification is set to **Enforce**.
@@ -31,7 +31,6 @@ Before you start, you need an API key. We also recommend two optional security m
 #### Create an API key
 
 1. Go to **Embed** → **API keys** (`/api-keys`).
-
 2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
    * **Name**: give it something identifiable.
@@ -40,9 +39,11 @@ Before you start, you need an API key. We also recommend two optional security m
    * Turn on **Verify caller identity (HMAC)**. This is optional but recommended for security.
 4. Click **Create key**.
 
+   A dialog shows the new key. This is the only time the key is shown, so copy it somewhere safe. If you turned on HMAC, the dialog also shows the identity-verification secret.
+
 #### Create an identity hash (recommended)
 
-Sending an identity hash with customer-specific requests is optional, but we recommend it for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.
+Sending an identity hash with customer-specific requests is optional, but recommended for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.
 
 If you skip this section, omit the `x-identity-hmac` header from your requests and don't enable HMAC on your API key.
 
@@ -54,7 +55,7 @@ When you create an API key with HMAC enabled, a dialog appears showing the secre
 
 **Safety precautions:**
 
-* The secret is shown only once. If you lose it, you'll need to generate a new one.
+* The secret is shown only once. If you lose it, rotate it from **Identity verification** on the key's **…** menu.
 * Never ship the secret to the client. It must live only on your backend. If it appears in frontend code, anyone can forge a valid hash for any org or user.
 
 **2. Compute the hash**

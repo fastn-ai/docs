@@ -49,13 +49,13 @@ Shown to Owners and Admins only. Anyone signing up with this domain can ask to j
 Never set a mailbox provider here. Auto-approve on a shared domain means anyone with an address there can join your organization.
 {% endhint %}
 
-### Deleting an organization
+### Delete an organization
 
 This card explains where deletion lives, because it is not on this page:
 
 * To delete **a customer**, open it under [Customers](../operate/customers.md), suspend it, then delete it there. Deleting a customer removes its connections, workflows and stored credentials, and cannot be undone.
 * To delete **this organization**, contact fastn support. An organization has to be suspended before it can be deleted, and only fastn can suspend a top-level organization, so there is no self-serve path.
 
-### Saving
+### Save your changes
 
 Edits are not applied as you type. **Save changes** commits them and **Discard** throws them away; both are disabled until something has changed.

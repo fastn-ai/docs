@@ -16,7 +16,7 @@ layout:
 
 # Antigravity
 
-Google Antigravity has no install button for custom MCP servers: its **Add MCP** button only opens Google's MCP store. Add fastn to Antigravity's MCP config file instead, then sign in from **Customizations**. The Antigravity app, the Antigravity IDE and the Antigravity CLI all read the same file.
+Google Antigravity has no install button for custom MCP servers: its **Add MCP** button only opens Google's MCP store. Add fastn to Antigravity's MCP config file instead, then sign in from **Customizations**. The Antigravity app, the Antigravity IDE, and the Antigravity CLI all read the same file.
 
 ## Add fastn
 
@@ -38,7 +38,7 @@ Open `~/.gemini/config/mcp_config.json` in any editor (create it if it does not 
 
 The key must be `serverUrl`. Antigravity does not read `url` or `httpUrl`, and a server written with them silently loads no tools.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-antigravity.webp" alt="fastn's MCP server page with the Antigravity tile selected, showing a note that Antigravity's remote field is serverUrl and a ~/.gemini/config/mcp_config.json snippet with a fastn serverUrl entry"><figcaption>The Antigravity tile under <strong>Connect AI tools</strong> in fastn has the same snippet with a Copy button.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-antigravity.webp" alt="fastn's MCP server page with the Antigravity tile selected, showing a note that Antigravity's remote field is serverUrl and a ~/.gemini/config/mcp_config.json snippet with a fastn serverUrl entry"><figcaption>The Antigravity tile under <strong>Connect your AI tool</strong> in fastn has the same snippet with a Copy button.</figcaption></figure>
 
 In the Antigravity IDE you can open the same file from the agent panel: the **…** menu at the top, then **MCP Servers** → **Manage MCP Servers** → **View raw config**. For one workspace only, use `.agents/mcp_config.json` in that folder.
 {% endstep %}
@@ -64,7 +64,7 @@ fastn opens in your browser. Sign in if asked. If you belong to more than one fa
 {% step %}
 #### Paste the code back into Antigravity
 
-Google shows *Paste this code into your application to complete authentication*. Click **Copy to Clipboard**, go back to Antigravity, paste the code into **Enter authorization code…** and click **Submit**.
+Google shows *Paste this code into your application to complete authentication*. Click **Copy to Clipboard**, go back to Antigravity, paste the code into **Enter authorization code…**, and click **Submit**.
 
 <figure><img src="../../.gitbook/assets/mcp-antigravity-code.webp" alt="Google Antigravity's callback page reading Paste this code into your application to complete authentication, with a code box and a Copy to Clipboard button"><figcaption>The code works once and expires quickly. Paste it straight away.</figcaption></figure>
 
@@ -92,4 +92,4 @@ The CLI reads the same `~/.gemini/config/mcp_config.json`. Run `agy`, then type 
 
 * **fastn never appears in Customizations.** Check the file uses `serverUrl` and is valid JSON, then click refresh under **MCP Servers**.
 * **The code is rejected.** Codes are single use. Click **Authenticate** again and paste the new code.
-* **Antigravity works on the wrong org.** Click **Sign out** on the fastn row, then **Authenticate** and pick the workspace again.
+* **Antigravity works on the wrong org.** Click **Sign out** on the fastn row, then **Authenticate**, and pick the workspace again.

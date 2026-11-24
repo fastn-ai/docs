@@ -21,7 +21,7 @@ The chip under the message box decides how far the agent goes without checking i
 | Mode     | Behavior                                                                 |
 | -------- | ------------------------------------------------------------------------ |
 | **Auto** | The default. Does not ask. Fastest for exploration.                      |
-| Manual   | Asks before any create, update or delete. Use when touching live data.   |
+| **Manual** | Asks before any create, update, or delete. Use when touching live data. |
 
 You can change it mid-session. Switching to **Auto** after a few approvals is a common pattern: watch what the agent reaches for while it is unfamiliar, then let it run.
 
@@ -33,10 +33,10 @@ Every card carries the same parts:
 
 | Part | What it shows |
 | ---- | ------------- |
-| Title | The action in plain language, e.g. **Create connect link** |
-| Tool badge | The literal tool being invoked, e.g. `create_connect_link` |
-| Change preview | What the call will change, drawn as a before/after for the connector, action, workflow, widget or trigger it touches |
-| **VIEW RAW INPUT** | Expands the exact arguments as JSON, such as the `connectorId` it will act on. Secrets are redacted, and an input larger than 50,000 bytes is not displayed |
+| Title | The action in plain language, for example **Create connect link** |
+| Tool badge | The literal tool being invoked, for example `create_connect_link` |
+| Change preview | What the call changes, drawn as a before/after for the connector, action, workflow, widget, or trigger it touches |
+| **VIEW RAW INPUT** | Expands the exact arguments as JSON, such as the `connectorId` it acts on. Secrets are redacted, and an input larger than 50,000 bytes is not displayed |
 | **NOTE TO AGENT (OPTIONAL)** | Free text: *"On reject, this note is sent to the agent so it can re-plan…"* |
 
 ### The three responses
@@ -50,7 +50,7 @@ The note is what makes rejection useful. *"Use the sandbox sheet, not the produc
 {% endhint %}
 
 {% hint style="warning" %}
-**Always allow** is scoped to the session, not to the tool forever, but within a long session it can cover a lot of ground. If the agent is about to touch production data, leave the gate in place.
+**Always allow** is scoped to the session, not to the tool forever, but within a long session it can cover many calls. If the agent is about to touch production data, leave the gate in place.
 {% endhint %}
 
 See [the worked example](worked-example.md) for a gate in the middle of a real build.

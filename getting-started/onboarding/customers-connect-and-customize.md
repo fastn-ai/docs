@@ -16,9 +16,9 @@ layout:
 
 # Your first customer connects
 
-This step is for what your customers do: connect their own accounts in the widget and adjust each integration to how they work. Integrations then run for each customer with that customer's own connections and settings.
+Your customers connect their own accounts in the widget and adjust each integration to how they work. Integrations then run for each customer with that customer's own connections and settings.
 
-**Required to go live.** Each customer adjusts an integration's mappings and filters to fit their own data. Doing this once yourself, as a test customer inside your product, checks your product, the widget, the connection and the workflow together.
+**Required to go live.** Each customer adjusts an integration's mappings and filters to fit their own data. Doing this once yourself, as a test customer inside your product, checks your product, the widget, the connection, and the workflow together.
 
 ### What it's made of
 
@@ -26,9 +26,9 @@ This step is for what your customers do: connect their own accounts in the widge
 | --- | --- |
 | Customer | One of your customers. It must be Active before its integrations run |
 | Connection | A customer's signed-in account on one app |
-| Configuration | A customer's own direction, field mappings and filters, copied from the integration's configuration template |
+| Configuration | A customer's own direction, field mappings, and filters, copied from the integration's configuration template |
 | Widget assistant | The customer describes a change in plain words and reviews it before saving |
-| Insights and alerts | Runs, records, errors and connection health, with failure and threshold alerts |
+| Insights and alerts | Runs, records, errors, and connection health, with failure and threshold alerts |
 
 ### Ways to do it
 
@@ -54,7 +54,7 @@ This step is for what your customers do: connect their own accounts in the widge
 * **Activate customers.** A customer in **Pending admin activation** can't run integrations until an admin activates it.
 * **First-time setup.** A configurable integration needs its first configuration made once by your team (Operator role or higher). Until then, the customer's **Configure** shows "No configuration found for this widget".
 * **Changes apply on the next run.** Records already synced keep their old values.
-* **The widget assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings and change direction. It can't add an app you don't offer, re-sync old records, change the schedule or add custom logic.
+* **The widget assistant** opens from the sparkle button at the bottom right of the widget (**Ask the assistant**). It can add or remove fields, narrow which records sync, fix field pairings, and change direction. It can't add an app you don't offer, re-sync old records, change the schedule, or add custom logic.
 * **Limits.** Customers share your plan's limits. Change one customer's in **Settings** → **Billing** → **Customize customer limits**.
 
 ### In the onboarding
@@ -63,4 +63,4 @@ The going-live item **Your first customer connects** opens **Try it as your firs
 
 ### Related docs
 
-[Customers](../../operate/customers.md) · [Manage customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customizing your integrations](../../tutorials/end-user/customizing-your-integrations.md) · [Extending a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Getting alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)
+[Customers](../../operate/customers.md) · [Manage customers](../../tutorials/saas-admin/managing-customers.md) · [Connection statuses](../../build/connections/statuses.md) · [Customize an integration](../../tutorials/end-user/customizing-your-integrations.md) · [Extend a pre-built integration](../../tutorials/end-user/extending-a-prebuilt-integration.md) · [Get alerted](../../tutorials/end-user/getting-alerted.md) · [Troubleshooting](../../operate/troubleshooting.md)

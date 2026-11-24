@@ -20,9 +20,9 @@ An app event trigger fires when something changes in a connected app: a HubSpot 
 
 **Columns:** `Name`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.
 
-**`Subscription` is the column that matters on this page.** It reads `Subscribed`, `Pending`, `Failed`, `Not subscribed`, `Unsubscribed` or `Shared` (riding on another trigger's provider webhook for the same events and connection), and it is separate from `Status`: a trigger can be `Active` and still never fire, because *Status* is whether you have enabled it and *Subscription* is whether fastn successfully registered for events with the provider. Watch this one.
+**`Subscription` is the column that matters on this page.** It reads `Subscribed`, `Pending`, `Failed`, `Not subscribed`, `Unsubscribed`, or `Shared` (sharing another trigger's provider webhook for the same events and connection), and it is separate from `Status`: a trigger can be `Active` and still never fire, because *Status* is whether you have enabled it and *Subscription* is whether fastn successfully registered for events with the provider.
 
-The row menu holds **Copy ingest URL**, **Edit**, **Disable** (or **Enable** on a disabled trigger), **Retry Subscription** (only when the subscription is `Failed`) and **Delete**.
+The row menu holds **Copy ingest URL**, **Edit**, **Disable** (or **Enable** on a disabled trigger), **Retry Subscription** (only when the subscription is `Failed`), and **Delete**.
 
 ### Create an app event trigger
 
@@ -57,7 +57,7 @@ Without a live connection for that connector the form stops here: *No active con
 {% step %}
 #### Pick the event
 
-**Event** is required: a radio list with **Search events...**, a `WEBHOOK` badge, a `Registered` or `Not Subscribed` state, the raw event key, and a **Payload Schema** expander so you can see what will arrive.
+**Event** is required: a radio list with **Search events...**, a `WEBHOOK` badge, a `Registered` or `Not Subscribed` state, the raw event key, and a **Payload Schema** expander so you can see what arrives.
 {% endstep %}
 
 {% step %}
@@ -71,14 +71,14 @@ At least one route is required. Each route has a **Workflow** (required), an opt
 
 Select **Create trigger** (there is no Save button) and it joins the **App events** list.
 
-**Do not walk away at this point.** Creating the trigger asks fastn to register for events with the provider, and that registration can fail on its own, after the form has closed successfully. Look at the new row's `Subscription` column before you consider the job done.
+**Check the subscription before you move on.** Creating the trigger asks fastn to register for events with the provider, and that registration can fail on its own, after the form has closed successfully. Look at the new row's `Subscription` column before you consider the job done.
 {% endstep %}
 {% endstepper %}
 
 {% hint style="danger" %}
-**`Active` with `Subscription: Failed` means the trigger will never fire.** fastn could not register for events with the provider, so nothing will ever arrive, and because `Status` still reads `Active`, the list looks healthy at a glance.
+**`Active` with `Subscription: Failed` means the trigger never fires.** fastn could not register for events with the provider, so no events arrive, and because `Status` still reads `Active`, the list looks healthy at a glance.
 
 Recover with **Retry Subscription** from the row menu. If it fails again, the problem is upstream of the trigger: re-check the [connection](../connections/README.md) is still live and that its credential still carries the scopes the event needs.
 {% endhint %}
 
-App events are the cleanest option when the connector supports them: no URL to hand out, no polling, and fastn manages the subscription with the upstream provider on your behalf. That management is the trade: you gain a subscription you did not have to build, and you take on a failure mode the other two trigger types do not have.
+App events are the simplest option when the connector supports them: no URL to hand out, no polling, and fastn manages the subscription with the upstream provider on your behalf. That management is the trade: you gain a subscription you did not have to build, and you take on a failure mode the other two trigger types do not have.

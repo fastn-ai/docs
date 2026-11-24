@@ -18,15 +18,15 @@ layout:
 
 fastn sits between your product and the apps your customers use. Your team builds integrations once; each customer connects their own accounts; fastn runs the integrations for each customer with that customer's sign-in.
 
-<figure><img src="../.gitbook/assets/diagrams/architecture.svg" alt="fastn architecture. Your team builds in the fastn dashboard or from an AI tool through the fastn MCP server. Your backend holds the API key and uses the API and SDK to get embed tokens and start runs. Your customer uses the widget inside your product to connect apps, which stores a connection per customer. Integrations hold connectors, workflows and triggers, and the workflow runtime runs them once per customer with that customer's connections. The maintainer agent watches apps and proposes fixes, fastn Connect gives your AI agents each customer's apps as tools, and Health and Logs record every run and event."><figcaption>Purple is your side, green is your customer's side, and gray is fastn.</figcaption></figure>
+<figure><img src="../.gitbook/assets/diagrams/architecture.svg" alt="fastn architecture. Your team builds in the fastn dashboard or from an AI tool through the fastn MCP server. Your backend holds the API key and uses the API and SDK to get embed tokens and start runs. Your customer uses the widget inside your product to connect apps, which stores a connection per customer. Integrations hold connectors, workflows, and triggers, and the workflow runtime runs them once per customer with that customer's connections. The maintainer agent watches apps and proposes fixes, fastn Connect gives your AI agents each customer's apps as tools, and Health and Logs record every run and event."><figcaption>Purple is your side, green is your customer's side, and gray is fastn.</figcaption></figure>
 
 ## The parts
 
 | Part | What it does | Who uses it |
 | --- | --- | --- |
-| [fastn dashboard](platform-tour.md) | Build integrations, set up the widget, watch every run. At `app.fastn.dev`. | Your team |
+| [fastn dashboard](platform-tour.md) | Build integrations, set up the widget, and watch every run. At `app.fastn.dev`. | Your team |
 | [fastn MCP server](../build/mcp-gateway/README.md) | Lets an AI tool such as Claude or Cursor build and manage integrations in your workspace. At `mcp.fastn.dev/fastn-workspace`. | Your team, from an AI tool |
-| [Integrations](../build/integrations.md) | Connectors (one per app), workflows (the code that runs) and triggers (what starts a run). | Built by your team |
+| [Integrations](../build/integrations.md) | Connectors (one per app), workflows (the code that runs), and triggers (what starts a run). | Built by your team |
 | [API and SDK](../reference/api.md) | Your backend mints embed tokens, runs workflows, and reads or writes customer data through unified APIs. Authenticated with an API key that never leaves your server. | Your backend |
 | [Widget](../embed/README.md) | The panel inside your product where a customer connects apps and adjusts each integration. Opened with a short-lived embed token. | Your customers |
 | [Connections](../build/connections/README.md) | A customer's signed-in account on an app. A customer can hold several, for example two Slack workspaces, or one per user. Each customer's connections are isolated from every other customer's. | Created by your customers, or by you for them |
@@ -71,11 +71,11 @@ fastn has two MCP addresses for two different jobs:
 
 | You want to | Use | Address |
 | --- | --- | --- |
-| Build and manage integrations from Claude, Cursor or another AI tool | **fastn MCP server** | `https://mcp.fastn.dev/fastn-workspace` |
+| Build and manage integrations from Claude, Cursor, or another AI tool | **fastn MCP server** | `https://mcp.fastn.dev/fastn-workspace` |
 | Let your AI agent, or a customer's AI client, use a customer's connected apps | **fastn Connect** (the MCP gateway) | `https://mcp.fastn.dev/<your-org>`, or a one-time [customer MCP URL](../embed/embedding/customer-mcp-url.md) |
 
 ## Isolation
 
-* Each customer is identified by `x-org-id` (or `orgId`). A run, a connection and a token always belong to exactly one customer.
+* Each customer is identified by `x-org-id` (or `orgId`). A run, a connection, and a token always belong to exactly one customer.
 * Connections and their credentials are never shared across customers.
 * A customer can customize an integration for their own account without changing it for anyone else.

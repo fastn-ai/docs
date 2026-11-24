@@ -62,6 +62,6 @@ Every active session, with its **IP** address, newest marked **Most recent**.
 
 Sign out anything you do not recognize, then check the [audit log](audit-log.md) for `auth.login` entries from the same address.
 
-### Switching organization
+### Switch organization
 
 The account card at the bottom of the left rail switches between organizations you belong to. Everything else in the dashboard (connectors, workflows, customers, settings) is scoped to whichever one is selected.

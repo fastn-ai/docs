@@ -9,21 +9,21 @@ description: >-
 Start with [Troubleshooting](../operate/troubleshooting.md) if you know the symptom but not the error. Use this page when you have an error in front of you and want to know what it means.
 
 {% hint style="info" %}
-**This page lists the failure states verified in the product.** Run failures surface as a category plus a message written for the specific case; API errors carry the codes listed under [Error codes](#error-codes). Where a literal string is quoted below, it is quoted verbatim from the product.
+Run failures surface as a category plus a message written for the specific case; API errors carry the codes listed under [Error codes](#error-codes). Quoted strings are verbatim from the product.
 {% endhint %}
 
 ---
 
-## Where the detail actually is
+## Where the detail is
 
-A failed run tells you almost nothing from the list. **Click the row.** It expands into a step summary and the tabs **Summary**, **Input**, **Output** and **Logs**, plus an **Error** tab when the run errored. The Error tab is where the answer is.
+A failed run tells you almost nothing from the list. **Click the row.** It expands into a step summary and the tabs **Summary**, **Input**, **Output**, and **Logs**, plus an **Error** tab when the run errored. The Error tab is where the answer is.
 
 The Error tab carries, in order:
 
 | Element | What it gives you |
 | ------- | ----------------- |
-| **Category chip** | What kind of problem it is, e.g. `Configuration` |
-| **Severity chip** | How much of your attention it wants, e.g. `Needs your attention` |
+| **Category chip** | What kind of problem it is, for example `Configuration` |
+| **Severity chip** | How much of your attention it wants, for example `Needs your attention` |
 | **Headline** | The problem in one sentence, in plain language |
 | **Failed at** | The exact step that broke, as `connector.<slug>.<action>`, and its position: *Step 2 of 2* |
 | **AI Diagnosis** tab | **WHAT HAPPENED**, **WHY**, and **HOW TO FIX**: the last usually with a deep link and numbered steps |
@@ -32,15 +32,15 @@ The Error tab carries, in order:
 
 **Read AI Diagnosis first and Error Details second.** The diagnosis names the fix; the raw message tells you whether the diagnosis matched what really happened.
 
-There is a **Was this diagnosis helpful?** rating under it. It is worth answering: a wrong diagnosis on a common failure is a bug worth reporting.
+There is a **Was this diagnosis helpful?** rating under it. Answer it: a wrong diagnosis on a common failure is a bug worth reporting.
 
 ---
 
 ## Dependency Error
 
-The tag you will see most. It appears beside **Failed** in the Executions list.
+The most common tag. It appears beside **Failed** in the Executions list.
 
-**A dependency the workflow called did not do its job.** The workflow's own code ran; something it depended on (almost always a connector action), failed or refused. That is why the run is usually fast: it dies at the first call that will not work, not after a long timeout.
+**A dependency the workflow called did not do its job.** The workflow's own code ran; something it depended on (almost always a connector action) failed or refused. That is why the run is usually fast: it stops at the first call that fails, not after a long timeout.
 
 A real example, from a daily schedule that failed identically for nine consecutive days:
 
@@ -63,7 +63,7 @@ The usual causes, in rough order of frequency:
 | The upstream API changed | [Pending updates](../build/connector-updates.md) has a proposal for that connector | Accept the proposal |
 
 {% hint style="warning" %}
-**A Dependency Error will not fix itself, and it does not retry.** Retry policies cover transient failures; a connection that is invalid is not transient. A daily schedule in this state fails at the same minute every day until someone acts, which is exactly what failure alerts are for. See [Alerts](../operate/alerts.md).
+**A Dependency Error does not fix itself, and it does not retry.** Retry policies cover transient failures; a connection that is invalid is not transient. A daily schedule in this state fails at the same minute every day until someone acts, which is exactly what failure alerts are for. See [Alerts](../operate/alerts.md).
 {% endhint %}
 
 ---
@@ -80,9 +80,9 @@ Every run ends in one of these. They are the filter chips on [Executions](../ope
 | **Completed** | Finished successfully | [Sync reports](../operate/sync-reports.md), if the data looks wrong |
 | **Failed** | Threw, or a dependency refused | The Error tab, as above |
 | **Timed out** | The tier's budget ran out | [Traces](../operate/traces.md): one slow call, or hundreds? |
-| **Cancelled** | Stopped before finishing | - |
+| **Canceled** | Stopped before finishing | - |
 
-**Failed and Timed out are different problems.** Failed means something was wrong; Timed out means nothing was necessarily wrong except the clock. Do not raise the timeout on a Failed run. It will fail identically, just later.
+**Failed and Timed out are different problems.** Failed means something was wrong; Timed out means nothing was necessarily wrong except the clock. Do not raise the timeout on a Failed run. It fails the same way, only later.
 
 ### Out of memory
 
@@ -124,7 +124,7 @@ Most errors the HTTP API returns carry the same shape:
 
 In this envelope, `code` and `message` are always present. `details` appears only when there is structured context worth acting on. `retryAfter` appears on throttled responses, in **seconds**: the same value is sent as a standard `Retry-After` header, so a client that already honors that header needs no special handling.
 
-Not every route uses the envelope yet. Many return a flat body with a plain string instead, for example a Test key sent without the test-mode header gets a `403` with:
+Not every route uses the envelope yet. Many return a flat body with a plain string instead, for example a test key sent without the test-mode header gets a `403` with:
 
 ```json
 { "error": "Test API keys require X-fastn-Test-Mode: true header" }
@@ -151,7 +151,7 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `VALIDATION_ERROR` | 400 | Request validation failed: check `details` for the offending field |
 | `CONFLICT` | 409 | Resource conflict |
 | `RATE_LIMITED` | 429 | Rate limit exceeded: honor `retryAfter` |
-| `QUOTA_EXCEEDED` | 429 | Plan quota exceeded. Unlike `RATE_LIMITED`, waiting will not clear it |
+| `QUOTA_EXCEEDED` | 429 | Plan quota exceeded. Unlike `RATE_LIMITED`, waiting does not clear it |
 | `PAYMENT_REQUIRED` | 402 | Quota exhausted and billing action is needed. See [Billing and limits](../manage/billing.md) |
 | `METHOD_NOT_ALLOWED` | 405 | Wrong HTTP method for that route |
 | `PAYLOAD_TOO_LARGE` | 413 | Request body over the size limit |
@@ -167,9 +167,9 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | Code | HTTP | Means |
 | ---- | ---- | ----- |
 | `CONN-AUTH-FAILED` | 401 | The connection's credential was rejected by the provider |
-| `CONN-REFRESH-FAILED` | 401 | An OAuth token could not be refreshed. Reconnect. This will not recover on its own |
+| `CONN-REFRESH-FAILED` | 401 | An OAuth token could not be refreshed. Reconnect. It does not recover on its own |
 | `CONN-EXEC-FAILED` | 502 | The connector ran but the provider call failed |
-| `CONN-PROTOCOL-UNAVAILABLE` | 503 | A protocol action (database, SFTP, FTPS, MSSQL, MongoDB) reached a runtime that cannot run it. Retrying the same call will not help |
+| `CONN-PROTOCOL-UNAVAILABLE` | 503 | A protocol action (database, SFTP, FTPS, MSSQL, MongoDB) reached a runtime that cannot run it. Retrying the same call does not help |
 
 **Workflow**
 
@@ -225,7 +225,7 @@ Prefixed codes are canonical, but the earlier flat names are still returned by s
 | `CONN-AUTH-FAILED` / `CONN-REFRESH-FAILED` / `CONN-EXEC-FAILED` / `CONN-PROTOCOL-UNAVAILABLE` | `CONNECTOR_AUTH_FAILED` / `CONNECTOR_REFRESH_FAILED` / `CONNECTOR_EXEC_FAILED` / `CONNECTOR_PROTOCOL_UNAVAILABLE` |
 | `WF-EXEC-FAILED` / `WF-TIMEOUT` / `WF-LABEL-LIMIT` / `WF-CODE-READONLY` | `WORKFLOW_EXEC_FAILED` / `WORKFLOW_TIMEOUT` / `WORKFLOW_LABEL_LIMIT` / `WORKFLOW_CODE_READ_ONLY` |
 | `AGT-LLM-ERROR` / `AGT-TIMEOUT` | `AGENT_LLM_ERROR` / `AGENT_TIMEOUT` |
-| `API-UNIFIED-*` | `UNIFIED_*`, e.g. `API-UNIFIED-NO-PROVIDER` is `UNIFIED_NO_CONNECTED_PROVIDER` |
+| `API-UNIFIED-*` | `UNIFIED_*`, for example `API-UNIFIED-NO-PROVIDER` is `UNIFIED_NO_CONNECTED_PROVIDER` |
 | `EVT-*` | `WEBHOOK_AUTH_FAILED`, `WEBHOOK_DELIVERY_FAILED` |
 
 ### When no code was set
@@ -254,7 +254,7 @@ So a nightly job that stopped may have been switched off by the platform rather 
 
 ### Webhooks: delivery exhausted
 
-When the delivery attempts run out, the event is recorded as failed and can be replayed from [Events](../operate/events.md). Note that Events filters by *source*, not status, so on a busy org you will need to search by the trigger's name rather than filter for failures.
+When the delivery attempts run out, the event is recorded as failed and can be replayed from [Events](../operate/events.md). Note that Events filters by *source*, not status, so on a busy org you need to search by the trigger's name rather than filter for failures.
 
 {% hint style="warning" %}
 **Replay re-runs the workflow for real.** Without a deduplication key on the trigger and an idempotency guard in the workflow, replaying writes the record twice. See [Troubleshooting](../operate/troubleshooting.md#duplicates-after-a-replay).
@@ -279,14 +279,14 @@ From [Connections](../build/connections/README.md). A connection that is not hea
 
 | What you see | Means |
 | ------------ | ----- |
-| `fastn:session-expired` posted to the parent window | The embed session hit the **seven-day refresh cap**. Refreshing again will not extend it: listen for this message and mint a fresh token |
+| `fastn:session-expired` posted to the parent window | The embed session hit the **seven-day refresh cap**. Refreshing again does not extend it: listen for this message and mint a fresh token |
 | The widget renders blank | Usually an expired or hard-coded token. Fetch a fresh one on each load |
 
 ---
 
 ## What is not covered here
 
-This page documents the failure states reachable through the product's own screens. It is **not** a generated list of every error string the platform can emit: fastn does not publish one, and inventing codes would be worse than omitting them.
+The failure states here are the ones reachable through the product's own screens. This is **not** a generated list of every error string the platform can emit: fastn does not publish one.
 
 If you hit an error that is not here:
 

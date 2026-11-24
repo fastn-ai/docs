@@ -30,7 +30,7 @@ An event is one inbound arrival: a webhook fired, a schedule reached, or a manua
 | **When**   | Timestamp, in your timezone.                                   |
 | **Replay** | Re-delivers the row. See below.                                |
 
-Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see at a glance whether your schedules are firing. **Search events** narrows the list. A time range select (**All time**, **Last 1h**, **Last 24h**, **Last 7d**, **Last 30d**, **Last 90d**), an environment select (**All environments**, **Test**, **Live** and any other environment you have), an **Auto refresh** toggle and a **Refresh** button sit beside it.
+Filter chips carry live counts (**All**, **Webhook**, **Scheduled**, **Manual**) so you can see whether your schedules are firing. **Search events** narrows the list. A time range select (**All time**, **Last 1h**, **Last 24h**, **Last 7d**, **Last 30d**, **Last 90d**), an environment select (**All environments**, **Test**, **Live** and any other environment you have), an **Auto refresh** toggle and a **Refresh** button sit beside it.
 
 The list is paginated: **Rows per page** sets 25, 50 or 100. Click a row to expand it into a detail panel. To see what a run did with an event, go to [Executions](executions.md).
 

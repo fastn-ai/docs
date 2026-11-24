@@ -4,11 +4,11 @@ description: Calling workflows and unified endpoints over HTTP.
 
 # HTTP API
 
-### Base URL
+## Base URL
 
 Production base URL: `https://api.fastn.dev`. Your workflow's **API** tab shows the URL for your workspace. Examples below use `YOUR_FASTN_HOST`.
 
-From Node.js or TypeScript, the [SDK](sdk/README.md) (`@fastn-ai/sdk`) wraps the same API in typed methods. Every other endpoint, including installations, triggers and alerts, is in the [REST API reference](rest/README.md).
+From Node.js or TypeScript, the [SDK](sdk/README.md) (`@fastn-ai/sdk`) wraps the same API in typed methods. Every other endpoint, including installations, triggers, and alerts, is in the [REST API reference](rest/README.md).
 
 ---
 
@@ -91,7 +91,7 @@ curl -X POST https://YOUR_FASTN_HOST/api/v1/workflows/WORKFLOW_ID/execute \
 The `input` object is what arrives as `ctx.input`. Its shape comes from the workflow's input contract.
 
 {% hint style="info" %}
-Every workflow's **API** tab generates a ready-to-run curl filled in with that workflow's own host, id and contract fields. When the two differ, copy from there. It is generated from the deployment you are actually calling.
+Every workflow's **API** tab generates a ready-to-run curl filled in with that workflow's own host, id, and contract fields. When this page and the tab differ, copy from the tab: it is generated from the deployment you call.
 {% endhint %}
 
 ### Response: Instant tier
@@ -100,7 +100,7 @@ The workflow's return value comes back inline, synchronously, as a `200`. The ru
 
 ### Response: Standard and Long tiers
 
-`202 Accepted`, with the execution id in the body at `data.executionId`. The run continues in the background; the id is what identifies it afterwards in [Executions](../operate/executions.md), where each row expands to its input, output and per-step timings.
+`202 Accepted`, with the execution id in the body at `data.executionId`. The run continues in the background; the id is what identifies it afterwards in [Executions](../operate/executions.md), where each row expands to its input, output, and per-step timings.
 
 To get the outcome of a Standard or Long run, poll:
 
@@ -114,7 +114,7 @@ The workflow id is part of the path.
 
 ## Scoping a call to a customer
 
-The same workflow serves all of your customers, and headers on the request are what say which one a call is for.
+The same workflow serves all of your customers, and headers on the request say which one a call is for.
 
 | Header                          | Carries                                                       |
 | ------------------------------- | --------------------------------------------------------------- |
@@ -202,10 +202,10 @@ Every body field and error: [Generate embed tokens](../tutorials/developer/gener
 POST /api/v1/embed/token/refresh
 ```
 
-The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer carries `data.token`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` is the seconds the new token has left, below 28800 near the seven-day cap.
+The body is `{"token": "emb_…"}`, and no API key is sent: the token is the credential. The answer carries `data.token`, `data.role`, `data.expiresAt`, and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` is the seconds the new token has left, below 28800 near the seven-day cap.
 
 {% hint style="warning" %}
-**Refresh is capped at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops: refreshing again does not extend it. Listen for that message and start a new session by minting a fresh token. A host app that assumes refresh is indefinite will strand long-lived sessions.
+**Refresh is capped at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops: refreshing again does not extend it. Listen for that message and start a new session by minting a fresh token. A host app that assumes refresh is indefinite strands long-lived sessions.
 {% endhint %}
 
 ### Using the token
@@ -240,7 +240,7 @@ Two limits apply to API calls, both counted per minute:
 | Limit | What it counts | Ceiling |
 | ----- | -------------- | ------- |
 | **Per organization** | Every call made with an API key or an embed session, across your whole account. Your customers' calls count toward your account. | 100 requests per minute on Launch, 500 on Scale, custom on Enterprise. |
-| **Per caller** | Calls from one identity (one API key, one embed session, one signed-in person), held separately on each gateway instance. | A blunt cap on one caller hammering the API, separate from your plan. |
+| **Per caller** | Calls from one identity (one API key, one embed session, one signed-in person), held separately on each gateway instance. | A cap on calls from a single caller, separate from your plan's limit. |
 
 Two narrower limits can also apply: an API key can carry its own per-minute limit, and calls to `/execute` share one per-minute bucket per customer, so many embed sessions for one customer cannot run workflows without bound (code `EXECUTE_RATE_LIMITED`).
 

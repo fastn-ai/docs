@@ -26,7 +26,7 @@ From the dashboard, go to **Integrations** and open the **Unified APIs** tab.
 
 ## 3. Select a unified API
 
-Choose the Unified API you want to use. For this guide, we'll use **Project Management** as an example.
+Choose the unified API you want to use. This guide uses **Project Management** as an example.
 
 Click **Project Management** to view the available endpoints and their request details.
 
@@ -56,17 +56,19 @@ curl -X POST '<api-base>/v1/unified/<category>/<entity>' \
   }'
 ```
 
-Replace the placeholder values with the appropriate values for your request. The fields required and supported depend on the endpoint and the connected project management application.
+Replace the placeholder values with the appropriate values for your request. The fields required and supported depend on the endpoint and the connected project management app.
 
 ## 5. Create your fastn API key
 
-To authenticate your requests, you'll need a **fastn API key**.
+To authenticate your requests, you need a **fastn API key**.
 
 Create one under **Embed → API keys**; see [API keys](../../manage/api-keys.md).
 
-Replace `YOUR_FASTN_API_KEY` in the cURL request with your actual key.
-
+{% hint style="warning" %}
 Keep this key secure. Do not expose it in frontend code or public repositories.
+{% endhint %}
+
+Replace `YOUR_FASTN_API_KEY` in the cURL request with your actual key.
 
 ## 6. Make requests using your customers' connections
 
@@ -82,7 +84,7 @@ Add the following header:
 
 Use the same customer ID you send as `x-org-id` when you [embed the widget](../../embed/embedding/README.md).
 
-Make sure the customer has connected and authorized the relevant application in fastn before sending requests that rely on that connection.
+Make sure the customer has connected and authorized the relevant app in fastn before sending requests that rely on that connection.
 
 ## 7. Make API requests
 

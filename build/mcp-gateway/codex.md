@@ -18,7 +18,7 @@ layout:
 
 Codex reads its MCP servers from `~/.codex/config.toml`. The Codex CLI and the Codex IDE extension share that file, so adding fastn once covers both.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tile selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect AI tools</strong> in fastn has the command and the file.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tile selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect your AI tool</strong> in fastn has the command and the file.</figcaption></figure>
 
 ## Add fastn
 

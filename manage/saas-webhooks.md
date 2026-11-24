@@ -20,7 +20,7 @@ layout:
 
 The connector you registered on the **API connector** tab of [Connect your product](saas-connectors.md) lets fastn call your product's API, using each customer's connection for the right connection scope. Webhooks cover the other direction: they let fastn call your product back when something happens for one of your customers.
 
-Both live under **Connect your product**: the **API connector** tab is your product's connector, and the **Webhooks** tab is described on this page.
+Both live under **Connect your product**: the **API connector** tab is your product's connector, and the **Webhooks** tab holds the webhooks described below.
 
 ### What is the feature?
 
@@ -69,7 +69,6 @@ If your server does not answer with a 2xx status within 10 seconds, fastn retrie
 You need the Owner, Admin or Developer role.
 
 1. In the fastn dashboard, open **Connect your product** and go to the **Webhooks** tab.
-
 2. Click **Add webhook**.
 3. Enter your **Endpoint URL**. It must be a public https address. fastn does not follow redirects.
 4. Under **Events**, tick the events you want. All account and setup link events start ticked; untick any you don't need.
@@ -108,7 +107,6 @@ To add one:
 2. Click **+ Connector schema** and pick the connector, for example Jira.
 3. Use the **Editing** dropdown to choose which schema you are working on.
 4. Add each field with **Add field**: its name, its type, whether it is required, and **Value from**. With **Event path**, write where the value is in the event, for example `payload.ticket_url`. Paths starting with `payload.` read the data your workflow sent; `event`, `connector` and `tenantRef` read the event's own fields.
-
 5. Check the result in the preview box under the table, then click **Add webhook** (when adding a webhook) or **Save** (when editing one).
 
 You can also edit the schema as JSON in the **JSON Schema** tab, or start from **Use example**. If a field is marked **Required** and the event cannot fill it, that event is not sent, and the delivery log shows which field was missing. It is retried on the normal schedule for up to 24 hours, so if you fix the schema in that time, the waiting events go out. To send one straight away after a fix, use **Resend** in **Deliveries**.
@@ -117,7 +115,7 @@ An event uses the schema for the connector (or app) it names. If that has no sch
 
 ### What if I want a single schema for all?
 
-Add only a **Default** schema (click **+ Default**) and leave out the connector schemas. Every workflow event sent to that webhook will use it.
+Add only a **Default** schema (click **+ Default**) and leave out the connector schemas. Every workflow event sent to that webhook uses it.
 
 Example Default schema in the **JSON Schema** tab:
 

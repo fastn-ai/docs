@@ -36,7 +36,7 @@ In fastn, click **Connect your AI tool** in the top bar (or open **Embed → MCP
 {% step %}
 #### Install the server
 
-Cursor opens **Install MCP server?** with the name `fastn`, the type **Remote HTTPS** and the server URL `https://mcp.fastn.dev/fastn-workspace` filled in. Leave the headers and OAuth client fields empty and click **Install**.
+Cursor opens **Install MCP server?** with the name `fastn`, the type **Remote HTTPS**, and the server URL `https://mcp.fastn.dev/fastn-workspace` filled in. Leave the headers and OAuth client fields empty and click **Install**.
 
 <figure><img src="../../.gitbook/assets/mcp-cursor-install-dialog.webp" alt="Cursor's Install MCP server? dialog with Name fastn, Type Remote HTTPS, Server URL https://mcp.fastn.dev/fastn-workspace, empty HTTP headers, Client ID and Client Secret fields, and Cancel and Install buttons"><figcaption>fastn signs you in with OAuth, so no header or client ID is needed.</figcaption></figure>
 {% endstep %}
@@ -90,4 +90,4 @@ Cursor then lists fastn under **Customize** → **MCPs** with **Authenticate**. 
 
 * **fastn shows Connected but 0 tools enabled.** The tool list is still loading. Wait a few seconds or reopen **Customize** → **MCPs**.
 * **The agent does not use fastn.** Check fastn is under **Connected** in **Customize** → **MCPs**, then name fastn in your message, for example *Using fastn, …*.
-* **Cursor works on the wrong org.** Remove fastn from **Customize** → **MCPs**, add it again and pick the workspace when you authenticate.
+* **Cursor works on the wrong org.** Remove fastn from **Customize** → **MCPs**, add it again, and pick the workspace when you authenticate.

@@ -44,7 +44,7 @@ VS Code opens an **MCP Server: fastn** page with the URL `https://mcp.fastn.dev/
 {% step %}
 #### Start it and sign in
 
-Installing does not start the server. Press **Cmd+Shift+P** (**Ctrl+Shift+P** on Windows and Linux), run **MCP: List Servers**, pick **fastn** and choose **Start Server**.
+Installing does not start the server. Press **Cmd+Shift+P** (**Ctrl+Shift+P** on Windows and Linux), run **MCP: List Servers**, pick **fastn**, and choose **Start Server**.
 
 The first time, VS Code asks to let fastn authenticate. Click **Allow**. fastn opens in your browser: sign in and, if you belong to more than one fastn org, pick the workspace VS Code works in and click **Connect**.
 

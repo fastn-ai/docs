@@ -1,7 +1,7 @@
 ---
 description: >-
   Describe an integration in plain words, from your AI tool or the dashboard,
-  and fastn builds, tests and publishes it.
+  and fastn builds, tests, and publishes it.
 layout:
   width: default
   title:
@@ -36,7 +36,7 @@ Build turns a plain-language description into a working integration. You say wha
 
 {% tabs %}
 {% tab title="Your AI tool" %}
-Add fastn to Claude, Cursor, Codex or another MCP client, then ask for the integration in the chat. Your AI tool follows the same steps as the dashboard and asks you to approve each one. It uses no fastn AI credits.
+Add fastn to Claude, Cursor, Codex, or another MCP client, then ask for the integration in the chat. Your AI tool follows the same steps as the dashboard and asks you to approve each one. It uses no fastn AI credits.
 
 ```bash
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
@@ -74,10 +74,10 @@ Paste these into your AI tool or the fastn agent, and adjust the apps and fields
 
 | Block | What it is |
 | --- | --- |
-| [Connectors](connectors/README.md) | The apps your customers can connect, with their actions, auth and webhooks |
+| [Connectors](connectors/README.md) | The apps your customers can connect, with their actions, auth, and webhooks |
 | [Connect your product](../manage/saas-connectors.md) | Your own product's API and webhooks, as the connector that is yours |
 | [Workflows](workflows/README.md) | The code that moves and transforms data between apps |
-| [Triggers](triggers/README.md) | What starts a workflow: a webhook, a schedule or an app event |
+| [Triggers](triggers/README.md) | What starts a workflow: a webhook, a schedule, or an app event |
 | [Unified APIs](unified-apis/README.md) | One endpoint per business object (contact, deal, ticket) across many apps |
 
 ## Questions?
@@ -89,14 +89,14 @@ Paste these into your AI tool or the fastn agent, and adjust the apps and fields
 ## Works with
 
 * [Embed](../embed/README.md): put what you build in front of your customers.
-* [Test and release](workflows/lifecycle.md): test, publish and deploy across environments.
+* [Test and release](workflows/lifecycle.md): test, publish, and deploy across environments.
 * [Operate](../operate/overview.md): watch every customer's integrations once they are live.
 
 ## All Build pages
 
 Build is where integrations are made. The pages follow the **Build** section of the dashboard sidebar: **Connect your product** and **Integrations**.
 
-Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. The fastn agent has no sidebar row: open it from **Integrations → Create integration → Build with fastn agent** or the *What should your customers be able to do?* prompt on Home. *Build from your AI tool*, the *fastn MCP server* and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
+Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows, and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. The fastn agent has no sidebar row: open it from **Integrations → Create integration → Build with fastn agent** or the *What should your customers be able to do?* prompt on Home. *Build from your AI tool*, the *fastn MCP server*, and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
 
 {% content-ref url="agent/README.md" %}[Build with fastn agent](agent/README.md){% endcontent-ref %}
 

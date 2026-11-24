@@ -18,7 +18,7 @@ layout:
 
 You can describe any of these to [the fastn agent](agent/README.md) or [your AI tool](building-from-your-ai-agent.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
 
-Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use (`fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, `fastn.connector`), show up in the code editor's autocomplete and are documented in [Workflow runtime API](../reference/workflow-runtime.md); check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
+Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use, `fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, and `fastn.connector`, show up in the code editor's autocomplete and are documented in [Workflow runtime API](../reference/workflow-runtime.md); check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
 
 ---
 
@@ -57,7 +57,7 @@ The cost is one state read per record instead of one write to the destination, w
 
 ## Two-stage sync for large volumes
 
-**The problem.** A single run has to pull a large dataset and push it, and it either times out or hammers the destination's rate limit.
+**The problem.** A single run has to pull a large dataset and push it, and it either times out or exceeds the destination's rate limit.
 
 **The shape.** Split it.
 
@@ -98,7 +98,7 @@ Which customer a run belongs to arrives in the request headers (`x-org-id`, `x-i
 
 ## Fan-out from one webhook
 
-**The problem.** One inbound event needs to do three unrelated things: create an invoice, notify Slack, update a sheet.
+**The problem.** One inbound event needs to do three unrelated things: create an invoice, notify Slack, and update a sheet.
 
 **The shape.** One webhook trigger, three [routes](triggers/README.md). Each route names its own workflow, and they run independently, so a Slack outage does not stop the invoice.
 
@@ -133,7 +133,7 @@ Run it against one customer first, and read the [sync report](../operate/sync-re
 
 **The problem.** You want failures posted to *your* Slack, not the customer's.
 
-**The shape.** Use a Slack connection your organization owns (its detail page shows the scope `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/README.md) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
+**The shape.** Use a Slack connection your organization owns (its detail page shows the scope `Account level`), rather than one belonging to a customer. On the workflow's [Connectors tab](workflows/the-tabs.md#connectors) it is the row *without* a **Per customer** badge, so it behaves the same no matter whose data is being processed.
 
 For failure notification specifically, an [alert](../operate/alerts.md) with a Slack destination is simpler than building it into the workflow, and it also catches the case where the workflow itself never ran.
 
@@ -141,11 +141,11 @@ For failure notification specifically, an [alert](../operate/alerts.md) with a S
 
 ## Let the platform retry before you write retry code
 
-**The problem.** A destination is flaky, and the workflow is growing a hand-rolled retry loop.
+**The problem.** A destination fails intermittently, and the workflow is growing its own retry loop.
 
-**The shape.** Turn on **Retry policy** in the workflow's configuration panel instead. It gives you `Max attempts` (2-10, default 3), `Initial interval (ms)` (5000), `Backoff coefficient` (2) and `Max interval (ms)` (60000), applied to the run as a whole.
+**The shape.** Turn on **Retry policy** in the workflow's configuration panel instead. It gives you `Max attempts` (2-10, default 3), `Initial interval (ms)` (5000), `Backoff coefficient` (2), and `Max interval (ms)` (60000), applied to the run as a whole.
 
-Know its boundary: it retries transient failures. Code errors, data errors and out-of-memory never retry, so a bug will not be papered over by attempt three.
+Know its boundary: it retries transient failures. Code errors, data errors, and out-of-memory never retry, so retries do not hide a bug.
 
 If the failure is a timeout rather than a rejection, **Escalate on timeout** retries one tier up (instant → standard, or standard → long), subject to your plan, and an escalated instant run returns a queued execution id to poll instead of a synchronous result. The toggle is hidden on the Long tier, which has nowhere further to go.
 
@@ -155,7 +155,7 @@ If the failure is a timeout rather than a rejection, **Escalate on timeout** ret
 
 ## One code path across three CRMs
 
-**The problem.** Customer A is on HubSpot, B on Salesforce, C on Zoho, and the workflow has grown a branch per vendor for what is one operation.
+**The problem.** Customer A is on HubSpot, B on Salesforce, and C on Zoho, and the workflow has grown a branch per vendor for what is one operation.
 
 **The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorized. The unified `crm/contact` endpoint is the same call regardless of the stack underneath.
 

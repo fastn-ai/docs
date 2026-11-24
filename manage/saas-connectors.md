@@ -32,7 +32,7 @@ With nothing registered the page reads:
 
 > Your product is not connected yet. Pick the connector for your product, through its API or webhooks, and define connection scopes (e.g. inventory, product) that your customers' connections to it are created under.
 
-### Connecting it
+### Register your product's connector
 
 **Connect your product** opens the **Connect your product** panel, which takes two things.
 

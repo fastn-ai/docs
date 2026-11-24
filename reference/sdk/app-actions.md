@@ -6,7 +6,7 @@ description: "Run an app's own action with a customer's connection, for anything
 
 The [unified records](unified-records.md) cover the common records. For anything else (a field the unified shape does not have, an operation an app does not offer through the unified API) run the app's own action, with the customer's own connection.
 
-It takes three steps: find the action, read its input fields, run it.
+It takes three steps: find the action, read its input fields, and run it.
 
 ```typescript
 // 1. Find the action's slug
@@ -85,7 +85,7 @@ The SDK runs the action with **this customer's** connection for that app, so it 
 | `durationMs`, `executedAt` | How long it took, and when. |
 
 {% hint style="warning" %}
-**An error from the app does not throw.** When the app itself answers with an error (for example a record id that does not exist), `runAction` still returns normally, with `data.success: false`, the app's `data.status` (for example `404`) and `data.error`. Always check `success`.
+**An error from the app does not throw.** When the app itself answers with an error (for example a record id that does not exist), `runAction` still returns normally, with `data.success: false`, the app's `data.status` (for example `404`), and `data.error`. Always check `success`.
 
 `runAction` throws a `FastnApiError` when fastn cannot run the action at all, for example an unknown action slug (`404 NOT_FOUND`, "connector hubspot has no action …").
 {% endhint %}

@@ -20,13 +20,13 @@ A callback runs one of your workflows when something happens to a customer's set
 | `workflowId` | string | The workflow to run. Required. |
 | `mode` | `blocking` or `background` | How it runs. `blocking` when left out. |
 | `enabled` | boolean | Set `false` to silence the callback and keep the workflow selected. On when left out. |
-| `runForCustomer` | boolean | Lets this callback run a workflow the customer has not installed. Off when left out. `onSetupLinkCompleted`, `onConnectionCreated` and `onConnectionDeleted` do not need it. |
+| `runForCustomer` | boolean | Lets this callback run a workflow the customer has not installed. Off when left out. `onSetupLinkCompleted`, `onConnectionCreated`, and `onConnectionDeleted` do not need it. |
 
-Most callbacks run under the customer's org, whoever acted: the widget, a share link, the dashboard or an API key. The exception is updating or deleting a config through `/v1/configs`, which runs `onConfigurationChange` or `onConfigurationDelete` under the caller's org. A workflow you use only as a callback is not installed for the customer, so it needs `runForCustomer: true`. Without it the run is refused, and a blocking callback then stops the customer's action.
+Most callbacks run under the customer's org, whoever acted: the widget, a share link, the dashboard, or an API key. The exception is updating or deleting a config through `/v1/configs`, which runs `onConfigurationChange` or `onConfigurationDelete` under the caller's org. A workflow you use only as a callback is not installed for the customer, so it needs `runForCustomer: true`. Without it the run is refused, and a blocking callback then stops the customer's action.
 
 ## What the workflow receives
 
-The payload arrives as `ctx.input`. `event`, `endOrgId` and `widgetId` are always present. The other fields depend on the event.
+The payload arrives as `ctx.input`. `event`, `endOrgId`, and `widgetId` are always present. The other fields depend on the event.
 
 | Field | Type | Sent on |
 | --- | --- | --- |
@@ -36,7 +36,7 @@ The payload arrives as `ctx.input`. `event`, `endOrgId` and `widgetId` are alway
 | `externalRef` | string or null | Every callback. Your own id for the customer, or `null` if it has none. |
 | `installationId` | string | Everything except `onConfigurationDelete`. `onConfigurationCreated` has it only when the config is pinned to an installation. |
 | `connections` | object | Any callback with an `installationId`, when the installation has connections. Maps app slug to connection id. |
-| `config` | object or null | `onActivation`, `onDeactivation`, `onSetupLinkCompleted`, `onConfigurationCreated` and `onConfigurationChange`. The configuration values in effect. |
+| `config` | object or null | `onActivation`, `onDeactivation`, `onSetupLinkCompleted`, `onConfigurationCreated`, and `onConfigurationChange`. The configuration values in effect. |
 | `previousConfig` | object or null | `onConfigurationChange` and `onConfigurationDelete`. The values before the change. On a first activation that supplies values, `onConfigurationChange` sends `{}`. |
 | `metadata` | object | Only when there is some: what you passed to the [embed token](../embed/embedding/token-api.md) for `onActivation`, `onDeactivation` and `onConfigurationChange` from an embed session, or the setup link's metadata for `onSetupLinkCompleted` and `onConnectionCreated`. |
 | `source` | string | `setup_link` on `onSetupLinkCompleted` and `onConnectionCreated`. |
@@ -123,7 +123,7 @@ A blocking callback's return value decides what happens next.
 
 | Field | Used by | Effect |
 | --- | --- | --- |
-| `accept` | Blocking `onActivation`, `onDeactivation`, the configuration events and the `before*` events | `false` stops the action. Left out, the action goes ahead. |
+| `accept` | Blocking `onActivation`, `onDeactivation`, the configuration events, and the `before*` events | `false` stops the action. Left out, the action goes ahead. |
 | `reason` | The same | The message returned to the caller when `accept` is `false`. |
 | `modifiedConfig` | `onConfigurationCreated`, `onConfigurationChange` | Replaces the configuration that gets saved. On the first activation it is not applied. |
 | `modifiedSettings` | `beforeTriggerCreated`, `beforeTriggerUpdated` | Replaces the trigger settings. Settings that do not validate are ignored. |
@@ -135,14 +135,14 @@ A blocking callback's return value decides what happens next.
 A refusal returns `422` to whoever asked, with `error` set to your `reason` and `hook` set to everything the workflow returned. `onActivation` refusing a new installation also removes the installation it had just created.
 
 {% hint style="warning" %}
-**A blocking callback fails closed.** If the workflow times out, cannot be reached, returns a non-2xx status or returns something other than JSON, fastn treats that as `accept: false` and the customer's action fails. Keep blocking callbacks fast, and use background for anything slow.
+**A blocking callback fails closed.** If the workflow times out, cannot be reached, returns a non-2xx status, or returns something other than JSON, fastn treats that as `accept: false` and the customer's action fails. Keep blocking callbacks fast, and use background for anything slow.
 {% endhint %}
 
 {% hint style="info" %}
 **Use the Instant tier for a blocking callback.** Only an Instant workflow returns its value inline. A Standard or Long workflow answers `202` before it has run, so its return value never arrives and the action goes ahead.
 {% endhint %}
 
-`onTriggerCreated`, `onTriggerUpdated` and `onTriggerDeleted` run after the fact, so their return value is ignored in either mode.
+`onTriggerCreated`, `onTriggerUpdated`, and `onTriggerDeleted` run after the fact, so their return value is ignored in either mode.
 
 A background callback's return value is always ignored. If fastn cannot deliver one within 10 seconds, it writes `widget.hook.delivery_failed` to the [audit log](../manage/audit-log.md), since the workflow never ran and left no execution of its own.
 
@@ -162,7 +162,7 @@ The snapshot is taken before the delete, so you can clean up anything registered
 
 | Field | Meaning |
 | --- | --- |
-| `triggerId`, `type`, `name`, `status` | The trigger. `type` is `WEBHOOK`, `SCHEDULE` or `APP_EVENT`. |
+| `triggerId`, `type`, `name`, `status` | The trigger. `type` is `WEBHOOK`, `SCHEDULE`, or `APP_EVENT`. |
 | `cron`, `rate`, `timezone`, `startsAt` | Its schedule, for a schedule trigger. |
 | `triggerUrl`, `webhookUrl` | Its public URL. For an app event trigger, `webhookUrl` is the URL registered with the third-party app. |
 | `routes` | Its route bindings. |
@@ -170,4 +170,4 @@ The snapshot is taken before the delete, so you can clean up anything registered
 | `additionalConfig`, `subscriptionResponse`, `subscriptionStatus` | Its extra settings and subscription state. |
 | `reason` | On `onTriggerDeleted` only, when the delete came from something else: `installation_deleted` or `category_deselected`. |
 
-If the trigger's record cannot be read, the snapshot is only `triggerId`, `type` and `webhookUrl: null`.
+If the trigger's record cannot be read, the snapshot is only `triggerId`, `type`, and `webhookUrl: null`.

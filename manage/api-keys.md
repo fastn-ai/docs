@@ -32,7 +32,7 @@ layout:
 
 **Rotate** issues a new secret for the same key. The **…** menu holds **Edit**, **Identity verification** and **Revoke**; **Identity verification** is hidden on a key pinned to exactly one customer, because that key already is the customer. Revoking is how an active key ends. Once a key is revoked or expired, its row offers **Delete** (a trash icon) instead, which removes it permanently.
 
-### Creating a key
+### Create a key
 
 <figure><img src="../.gitbook/assets/create-api-key.jpg" alt="The Create an API key dialog with a Name field, Mode cards Test selected and Live carrying a warning, Permissions set to Viewer, and a line saying the key reads test data and expires in 90 days"><figcaption>The dialog spells out that Test is a separate credential, not a sandbox.</figcaption></figure>
 
@@ -48,6 +48,8 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
     * Set permissions, customers, allowed IP addresses, rate limit and expiry as needed.
     * Optionally turn on **Verify caller identity (HMAC)**.
 4. Click **Create key**.
+
+   A dialog shows the new key. This is the only time the key is shown, so copy it somewhere safe. If you turned on HMAC, the dialog also shows the identity-verification secret.
 
 #### Identity
 
@@ -87,7 +89,7 @@ For every preset except **Admin**, the **What it can touch** matrix below shows 
 | **Unified API** | read, execute, customize                                         |
 
 {% hint style="warning" %}
-`decrypt` on Connections and `read` on Secrets are the two boxes worth arguing about before you tick them. A key holding either can read credentials, and a key is easier to leak than a person.
+`decrypt` on Connections and `read` on Secrets are the two permissions to weigh most carefully before you tick them. A key holding either can read credentials, and a key is easier to leak than a person.
 {% endhint %}
 
 **Customers it can reach**: **Every customer**, or **Only the ones I pick**. Narrowing it is not optional everywhere: the form notes that picking specific customers is *Required for keys used in an embed session.*
@@ -118,7 +120,7 @@ When a key has identity verification turned on, each customer-specific request c
 
 #### 1. Get your identity-verification secret
 
-Once you create an API key with HMAC enabled the following dialog will appear. It contains the secret and code snippets to generate the HMAC key.
+When you create an API key with HMAC enabled, a dialog shows the secret and code snippets that generate the hash.
 
 <figure><img src="../.gitbook/assets/api-key-identity-secret.webp" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
 
@@ -186,9 +188,9 @@ Every key starts `fsk_live_` or `fsk_test_`. The header it goes in depends on wh
 
 Full detail in the [HTTP API reference](../reference/api.md).
 
-### Practice worth keeping
+### Recommended practices
 
-* One key per consuming service, so revoking one does not take down four things.
+* One key per consuming service, so revoking one does not break other services.
 * Rotate on a schedule, and when anyone with access leaves.
 * Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embed in your product](../embed/embedding/README.md).
 * Check **Last used** before revoking. A key showing Never is either unused or misconfigured; either way, find out which.

@@ -15,7 +15,7 @@ layout:
 
 # Find your org identifier
 
-The customer identifier names the customer a widget embed is for, in the `x-org-id` header of the token request. Only the token request needs it: the iframe URL takes the token alone, because the token already carries the customer. Getting the right identifier is necessary for anything to work.
+The customer identifier names the customer a widget embed is for, in the `x-org-id` header of the token request. Only the token request needs it: the iframe URL takes the token alone, because the token already carries the customer. The token request fails without the right identifier.
 
 ### Two identifiers work
 
@@ -36,7 +36,7 @@ Create a separate test customer for development and use its id locally, so test 
 
 ### Using it
 
-Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. Nothing else needs it: the iframe URL is just `?token=<token>`. A key limited to a single customer is the one exception: it takes only fastn's id, in `orgId`. See [Generate embed tokens](generating-embed-tokens.md).
+Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. A key limited to a single customer is the one exception: it takes only fastn's id, in `orgId`. See [Generate embed tokens](generating-embed-tokens.md).
 
 In production, look the identifier up per request from the signed-in person's company rather than fixing one value, so each customer gets their own token. For local testing against a single test customer, an environment variable is fine:
 

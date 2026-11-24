@@ -1,5 +1,5 @@
 ---
-description: The fastn agent, the chat-driven builder that picks connectors, drafts workflows and shows you the diff.
+description: The fastn agent, the chat-driven builder that picks connectors, drafts workflows, and shows you the diff.
 layout:
   width: default
   title:
@@ -18,7 +18,7 @@ layout:
 
 **Integrations → Create integration → Build with fastn agent** (`/agent`), or the **What should your customers be able to do?** prompt on Home
 
-There are two ways to open the agent: **Integrations → Create integration → Build with fastn agent**, or the **What should your customers be able to do?** prompt on Home. There is no sidebar row for it. Both land on the same screen, headed **Build an integration**, which reads:
+There is no sidebar row for the agent. Both entry points land on the same screen, headed **Build an integration**, which reads:
 
 > Describe what you need in plain words. fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs.
 
@@ -32,7 +32,7 @@ The left rail, headed **Sessions**, holds your session history. Each session kee
 * **Search sessions** (⌘K) filters the rail by name.
 * **Collapse sessions sidebar** widens the workspace when you are reading a long diff.
 
-### Starting from an example
+### Start from an example
 
 Four cards sit under **Start from an example**, each pairing a goal with the concrete detail that makes it buildable:
 
@@ -49,7 +49,7 @@ They are written in the shape a good first message takes (an app, a trigger, and
 Do not confuse these with the suggestion chips on **Home**, which are seeded per workspace and differ between them. The four cards above are the agent screen's own examples.
 {% endhint %}
 
-### Writing a good first message
+### Write a good first message
 
 The agent handles ambiguity by asking, but you get a better first draft by being specific about four things:
 
@@ -60,11 +60,11 @@ The agent handles ambiguity by asking, but you get a better first draft by being
 | **What moves**              | "the company name, the deal amount, and the line items"      |
 | **The rules**               | "skip anything under $500", "only the EU warehouse"          |
 
-The composer carries **Attach a file**, the message box (*Write a message…*) and **Send**.
+The composer carries **Attach a file**, the message box (*Write a message…*), and **Send**.
 
 ### What it does
 
-The product's own summary is the reliable one: fastn's agent picks the connectors, drafts the workflow, and shows you the diff before anything runs. In practice that means working out which apps are involved, reusing connectors that already exist and creating the ones that do not, handling authentication in the chat (inline API-key fields, or an OAuth form with client ID, secret and pre-filled scopes) and then writing the workflow code and opening it in the editor.
+In practice the agent works out which apps are involved, reuses connectors that already exist and creates the ones that do not, handles authentication in the chat (inline API-key fields, or an OAuth form with client ID, secret, and pre-filled scopes), and then writes the workflow code and opens it in the editor.
 
 Generated test cases land on the editor's **Test cases** tab, in groups the agent names for the integration, each row badged **Live** or **Mock**.
 
@@ -82,22 +82,22 @@ Alongside the plan, the **Build progress** section of the right-hand rail tracks
 | ----- | ------------ |
 | **1. Use cases** | Plan and confirm the integration with you |
 | **2. Connectors** | Create and authorize the connectors it needs |
-| **3. Workflows** | Approve mappings and test cases, build and test the workflow, bind the trigger |
+| **3. Workflows** | Approve mappings and test cases, build and test the workflow, and bind the trigger |
 | **4. Widget** | Expose the finished integration in the widget |
 
-Each phase expands to its named substeps, a completed one collapses to a green check and **Complete**, and the one in flight shows a spinner against the current substep. Only phases the agent has written steps into are shown, so the count varies with the integration: a build with no customer-facing surface will not have a Widget phase.
+Each phase expands to its named substeps. A completed phase collapses to a green check and **Complete**, and the one in flight shows a spinner against the current substep. Only phases the agent has written steps into are shown, so the count varies with the integration: a build with no customer-facing surface has no Widget phase.
 
 ### Clarifying questions
 
-Where your brief is ambiguous, the agent asks rather than guesses, rendering the question as selectable answer cards, each with a title and a sentence explaining what choosing it means. Every question also offers **Other…** for a free-form answer, so you are never limited to the options it drafted. Typical questions cover sync scope (ongoing only, versus an initial backfill first) and tenancy (internal, versus per-customer multi-tenant).
+Where your brief is ambiguous, the agent asks rather than guesses, rendering the question as selectable answer cards, each with a title and a sentence explaining what choosing it means. Every question also offers **Other…** for a free-form answer, so you are never limited to the options it drafted. Typical questions cover sync scope (ongoing only, versus an initial backfill first) and who the integration is for (internal use, versus each of your customers).
 
-### Reading what it did
+### Read what it did
 
 The agent's tool calls collapse into a single summary line in the chat: **Worked · 3 steps**, with **Show details** to expand the individual calls. Documents it produces appear as artifact chips that reopen the full panel.
 
 Two counters are worth watching: the **context meter** beside the composer (`19k / 1000k`) shows how much of the session's context window the conversation has consumed, and **AI credits** in the top bar show what is left of your quota. The credits badge is shown to Owners and Admins only.
 
-### Iterating
+### Refine with follow-up messages
 
 Follow-up messages refine what exists rather than starting over:
 
@@ -106,11 +106,11 @@ Follow-up messages refine what exists rather than starting over:
 * "Change the schedule to hourly"
 * "Notify Slack on failure"
 
-The agent updates code, mappings and test cases together, so they do not drift apart.
+The agent updates code, mappings, and test cases together, so they do not drift apart.
 
 ### Attachments
 
-**Attach a file** accepts an API spec, a sample payload, a field-mapping spreadsheet. Giving the agent a real payload is the single fastest way to get accurate mappings.
+**Attach a file** accepts files such as an API spec, a sample payload, or a field-mapping spreadsheet. A real payload is the fastest way to get accurate mappings.
 
 {% hint style="info" %}
 Agent usage draws on the AI credits shown in the top bar (visible to Owners and Admins): click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, listing each fastn agent that used credits in the period. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.

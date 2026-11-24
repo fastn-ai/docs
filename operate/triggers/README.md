@@ -16,8 +16,8 @@ layout:
 
 # Triggers
 
-Calling a trigger once it exists. To create one, see [Triggers](../../build/triggers/README.md) under Build.
+Call a trigger from your own apps once it exists. To create one, see [Triggers](../../build/triggers/README.md) under Build.
 
 ### In this section
 
-* [Using a webhook trigger](using-a-webhook-trigger.md)
+* [Call a webhook trigger](using-a-webhook-trigger.md)

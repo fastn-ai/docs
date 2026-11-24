@@ -37,7 +37,7 @@ And [Troubleshooting](troubleshooting.md), which is a page of this documentation
 
 ### How to debug in the right order
 
-When a customer says "it stopped working", walk down rather than around:
+When a customer says "it stopped working", check these in order:
 
 1. **Events**: did the event arrive at all? If not, the problem is upstream or in the trigger.
 2. **Executions**: did a run start, and how did it end? Failed, Timed out and Canceled each point somewhere different.

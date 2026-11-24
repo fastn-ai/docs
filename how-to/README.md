@@ -20,7 +20,7 @@ Each guide solves one task from start to finish, with code you can copy. They as
 
 | Guide | What you end up with |
 | --- | --- |
-| [Read and write a customer's CRM records](crm-records.md) | Your backend finds, creates and updates contacts in whichever CRM a customer connected, with the same code for HubSpot, Salesforce and others |
+| [Read and write a customer's CRM records](crm-records.md) | Your backend finds, creates, and updates contacts in whichever CRM a customer connected, with the same code for HubSpot, Salesforce, and others |
 | [Run an integration for one customer](run-for-a-customer.md) | Your backend runs a workflow for a named customer and reads the result |
 | [Start an integration from your product's events](events-from-your-product.md) | An event in your product, such as a new order, starts a workflow for that customer |
 

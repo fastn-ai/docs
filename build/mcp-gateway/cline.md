@@ -77,10 +77,10 @@ Click **Edit Configuration** in Cline's **MCP** tab and add fastn under `mcpServ
 
 Then click **Authenticate** on fastn's row, as in step 3.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-cline.webp" alt="fastn's MCP server page with the Cline tile selected, showing a cline_mcp_settings.json snippet with a fastn entry of type streamableHttp and a note that the type must be camelCase"><figcaption>The Cline tile under <strong>Connect AI tools</strong> in fastn has the same snippet.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-cline.webp" alt="fastn's MCP server page with the Cline tile selected, showing a cline_mcp_settings.json snippet with a fastn entry of type streamableHttp and a note that the type must be camelCase"><figcaption>The Cline tile under <strong>Connect your AI tool</strong> in fastn has the same snippet.</figcaption></figure>
 
 ## Troubleshooting
 
 * **`Invalid value for 'tools': maximum number of items is 128`.** The model Cline is using accepts at most 128 tools, and fastn exposes more. Pick a different model in Cline's settings; the error comes from the model provider, not from fastn.
 * **fastn fails with a 405 error.** The `type` is wrong. Use `streamableHttp` (camelCase), not `sse` or `streamable-http`.
-* **Cline works on the wrong org.** Delete fastn from Cline's **MCP** list, add it again and pick the workspace when you authenticate.
+* **Cline works on the wrong org.** Delete fastn from Cline's **MCP** list, add it again, and pick the workspace when you authenticate.
