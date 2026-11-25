@@ -1,0 +1,33 @@
+---
+description: "MillionVerifier verifies email addresses. Verify single emails, upload bulk files, download reports and check credit balance."
+hidden: true
+---
+
+# MillionVerifier
+
+<img src="../../.gitbook/assets/connectors/lg/millionverifier.png" alt="MillionVerifier logo">
+
+| | |
+| --- | --- |
+| **Category** | [Search and web](README.md) |
+| **Website** | [millionverifier.com](https://millionverifier.com) |
+| **Authentication** | API key |
+| **Slug** | `millionverifier` |
+
+## Setup
+
+Your customers enter their API key for MillionVerifier when they connect. Nothing else needs setting up.
+
+## Use it
+
+Add MillionVerifier from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.millionverifier.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Bulk File</td><td><code>deleteBulkFile</code></td><td>Permanently deletes a file previously uploaded to the MillionVerifier Bulk API, together with its verification report. This cannot be undone and consumed credits are not refunded. Costs no credits.</td></tr><tr><td>Download Bulk Report</td><td><code>downloadBulkReport</code></td><td>Downloads the verification report for a finished MillionVerifier bulk file as CSV text. Choose which rows to include with the filter: ok, ok_and_catch_all, unknown, invalid, all, or custom. With the custom filter you can additionally narrow by result statuses and by free-domain and role-address flags. Costs no credits.</td></tr><tr><td>Get Bulk File Info</td><td><code>getBulkFileInfo</code></td><td>Returns the current state of one file uploaded to the MillionVerifier Bulk API: verification status, percentage complete, per-result counts (ok, catch_all, disposable, invalid, unknown), credits used and estimated time remaining. Poll this to know when a bulk verification has finished. Costs no credits.</td></tr><tr><td>Get Credit Balance</td><td><code>getCreditBalance</code></td><td>Returns the MillionVerifier account's available credit balance: real-time single-verification credits, bulk credits, renewing credits and the plan id. Costs no credits. Use it before running verifications to confirm the account can pay for them.</td></tr><tr><td>List Bulk Files</td><td><code>listBulkFiles</code></td><td>Lists the email files uploaded to the MillionVerifier Bulk API, newest first, with paging and filters for id, name, status, progress percentage, created/updated date ranges and error state. Returns the matching files and the total count. Costs no credits.</td></tr><tr><td>Stop Bulk File Verification</td><td><code>stopBulkFileVerification</code></td><td>Cancels a MillionVerifier bulk file that is still in progress. The file moves to the canceled state and the results for the addresses already verified become downloadable a few seconds later. Costs no credits; credits already consumed are not refunded.</td></tr><tr><td>Upload Bulk Email File</td><td><code>uploadBulkEmailFile</code></td><td>Uploads a plain-text or CSV list of email addresses (one per line) to the MillionVerifier Bulk API and starts verifying it. Spends one bulk credit per unique address. Returns the new file_id together with the file's status, row counts and estimated completion time. Track progress with Get Bulk File Info and fetch results with Download Bulk Report.</td></tr><tr><td>Verify Email Address</td><td><code>verifyEmailAddress</code></td><td>Verifies a single email address in real time and returns its deliverability. Spends one real-time credit per verification. Returns quality (good/bad/risky), result (ok/catch_all/unknown/disposable/invalid), resultcode, subresult, whether the address is on a free or role domain, a did-you-mean suggestion, the remaining credit balance and the execution time.</td></tr></tbody></table>
+
+## Events
+
+Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
+
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Bulk File Ready</td><td><code>file_ready</code></td><td>Fires when a bulk verification file finishes and its report is ready to download. MillionVerifier has NO webhook registration API, so the customer must add the URL by hand: in the MillionVerifier app open the profile menu (top right) &gt; Account settings &gt; Notifications, scroll to the bottom, paste the fastn trigger URL into 'Webhook URL' and click Save. The individual notification toggles above the Webhook URL field must also be turned ON or nothing is ever delivered.</td></tr><tr><td>Bulk File Scheduled For Deletion</td><td><code>file_delete</code></td><td>Fires when MillionVerifier schedules an uploaded file for automatic deletion. Registration is UI-only: profile menu (top right) &gt; Account settings &gt; Notifications &gt; 'Webhook URL' at the bottom &gt; paste the fastn trigger URL &gt; Save, and switch ON the notification toggles above the Webhook URL field.</td></tr><tr><td>Low Credit Balance</td><td><code>low_credit</code></td><td>Fires when the MillionVerifier credit balance falls below the account's low-credit threshold. Registration is UI-only: profile menu (top right) &gt; Account settings &gt; Notifications &gt; 'Webhook URL' at the bottom &gt; paste the fastn trigger URL &gt; Save, and switch ON the notification toggles above the Webhook URL field.</td></tr><tr><td>Out Of Credits</td><td><code>no_credit</code></td><td>Fires when the MillionVerifier account runs out of credits. Registration is UI-only: profile menu (top right) &gt; Account settings &gt; Notifications &gt; 'Webhook URL' at the bottom &gt; paste the fastn trigger URL &gt; Save, and switch ON the notification toggles above the Webhook URL field.</td></tr></tbody></table>

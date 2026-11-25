@@ -1,0 +1,39 @@
+---
+description: "PackageX is a logistics and mailroom platform. Create shipments, contacts, locations and users, and autocomplete addresses."
+hidden: true
+---
+
+# PackageX
+
+<img src="../../.gitbook/assets/connectors/lg/packagex.png" alt="PackageX logo">
+
+| | |
+| --- | --- |
+| **Category** | [E-commerce](README.md) |
+| **Website** | [packagex.io](https://packagex.io) |
+| **Authentication** | API key |
+| **Slug** | `packagex` |
+
+## Setup
+
+Your customers enter their API key for PackageX when they connect. Nothing else needs setting up.
+
+## Use it
+
+Add PackageX from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.packagex.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Autocomplete Address</td><td><code>autocompleteAddress</code></td><td>Returns up to five address completions for a partial address string, powered by Google Maps Places. Optionally restrict results to a specific country using a two-letter region code.</td></tr><tr><td>Create API Key</td><td><code>createApiKey</code></td><td>Creates a new PackageX API key scoped to the given resources, optionally with an expiration date. The full key value is returned only once, at creation time.</td></tr><tr><td>Create Contact</td><td><code>createContact</code></td><td>Creates a new contact with name, contact details, and address information for use as a sender or recipient on deliveries and shipments.</td></tr><tr><td>Create Group</td><td><code>createGroup</code></td><td>Creates a group used to organize contacts or locations, optionally scoped to a location and pre-populated with member contact ids.</td></tr><tr><td>Create Location</td><td><code>createLocation</code></td><td>Creates a new physical location for your organization from a name and address. Operating hours, notification settings, and a default layout are generated automatically.</td></tr><tr><td>Create Shipment</td><td><code>createShipment</code></td><td>Creates an outbound shipment with sender and recipient details and one or more parcels. Generates shipping rates and, depending on options, a shipping label.</td></tr><tr><td>Create User</td><td><code>createUser</code></td><td>Creates a new user in your organization with a name, email, and role. A role_id is required by the API.</td></tr><tr><td>Delete API Key</td><td><code>deleteApiKey</code></td><td>Permanently deletes a single API key by its id, immediately revoking its access.</td></tr><tr><td>Delete Contact</td><td><code>deleteContact</code></td><td>Permanently deletes a contact by its id.</td></tr><tr><td>Delete Group</td><td><code>deleteGroup</code></td><td>Permanently deletes a group by its id.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 25 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Delete Location</td><td><code>deleteLocation</code></td><td>Permanently deletes a physical location by its id.</td></tr><tr><td>Delete User</td><td><code>deleteUser</code></td><td>Permanently removes a user from your organization by their id.</td></tr><tr><td>Geocode Address</td><td><code>geocodeAddress</code></td><td>Converts an address, or the id of an existing address or location, into geographical coordinates (latitude and longitude).</td></tr><tr><td>Get API Key</td><td><code>getApiKey</code></td><td>Retrieves a single API key by its id.</td></tr><tr><td>Get Contact</td><td><code>getContact</code></td><td>Retrieves a single contact by its id.</td></tr><tr><td>Get Delivery</td><td><code>getDelivery</code></td><td>Retrieves detailed information about a single delivery by its id, including tracking updates and addresses.</td></tr><tr><td>Get Group</td><td><code>getGroup</code></td><td>Retrieves a single group by its id.</td></tr><tr><td>Get Location</td><td><code>getLocation</code></td><td>Retrieves a single physical location by its id.</td></tr><tr><td>Get Organization</td><td><code>getOrganization</code></td><td>Retrieves comprehensive information about an organization, including configuration settings, carrier credentials, and tenant relationships.</td></tr><tr><td>Get Shipment</td><td><code>getShipment</code></td><td>Retrieves detailed information about a single outbound shipment by its id.</td></tr><tr><td>Get Tracker</td><td><code>getTracker</code></td><td>Retrieves detailed information about a specific tracker by its id, including its shipments, destination details, and tracking updates.</td></tr><tr><td>Get User</td><td><code>getUser</code></td><td>Retrieves a single user by its id.</td></tr><tr><td>List API Keys</td><td><code>listApiKeys</code></td><td>Retrieves the API keys associated with your organization, with an optional filter by key type.</td></tr><tr><td>List Contacts</td><td><code>listContacts</code></td><td>Retrieves the contacts belonging to your organization, with pagination.</td></tr><tr><td>List Deliveries</td><td><code>listDeliveries</code></td><td>Retrieves multiple deliveries with comprehensive filtering, sorting, and search capabilities. Returns an array of delivery records with a pagination object, even when no deliveries match.</td></tr><tr><td>List Groups</td><td><code>listGroups</code></td><td>Retrieves the groups belonging to your organization, with pagination. Groups are used to organize contacts, locations, and other resources.</td></tr><tr><td>List Locations</td><td><code>listLocations</code></td><td>Retrieves the physical locations belonging to your organization, with pagination.</td></tr><tr><td>List Shipments</td><td><code>listShipments</code></td><td>Retrieves outbound shipments belonging to your organization, with filtering, sorting, and pagination.</td></tr><tr><td>List Trackers</td><td><code>listTrackers</code></td><td>Retrieves the trackers belonging to your organization, with pagination. A tracker represents the end-to-end journey of a shipment, potentially spanning multiple hops.</td></tr><tr><td>List Users</td><td><code>listUsers</code></td><td>Retrieves the users belonging to your organization, with pagination.</td></tr><tr><td>Parse Address</td><td><code>parseAddress</code></td><td>Validates, normalizes, and standardizes a free-text or structured address into the PackageX address model, with optional USPS CASS validation for US addresses.</td></tr><tr><td>Update API Key</td><td><code>updateApiKey</code></td><td>Updates the name or scopes of an existing API key.</td></tr><tr><td>Update Contact</td><td><code>updateContact</code></td><td>Updates an existing contact's name, contact details, or address.</td></tr><tr><td>Update Group</td><td><code>updateGroup</code></td><td>Updates a group's name, or adds, removes, or replaces its member contact ids.</td></tr><tr><td>Update Location</td><td><code>updateLocation</code></td><td>Updates an existing location's attributes such as name, code, contact info, address, or provider instructions.</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+PackageX has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

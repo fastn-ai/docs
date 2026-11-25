@@ -1,0 +1,39 @@
+---
+description: "OpenF1 provides Formula 1 timing and telemetry data. Get meetings, sessions, drivers, laps, intervals, car data and standings."
+hidden: true
+---
+
+# OpenF1
+
+<img src="../../.gitbook/assets/connectors/lg/open-f1.png" alt="OpenF1 logo">
+
+| | |
+| --- | --- |
+| **Category** | [Entertainment and media](README.md) |
+| **Website** | [openf1.org](https://openf1.org) |
+| **Authentication** | No sign-in needed |
+| **Slug** | `openF1` |
+
+## Setup
+
+OpenF1 needs no sign-in, so there is nothing to set up. Add it and use its actions.
+
+## Use it
+
+Add OpenF1 from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.openF1.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Car Data</td><td><code>listCarData</code></td><td>Some data about each car, at a sample rate of about 3.7 Hz. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#car-data</td></tr><tr><td>List Car Locations</td><td><code>listLocations</code></td><td>The approximate location of the cars on the circuit, at a sample rate of about 3.7 Hz. Useful for gauging their progress along the track, but lacks details about lateral placement — i.e. whether the car is on the left or right side of the track. The origin point (0, 0, 0) appears to be arbitrary and not tied to any specific location on the track. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#location</td></tr><tr><td>List Drivers</td><td><code>listDrivers</code></td><td>Retrieve detailed information about the drivers participating in a specific session. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#drivers</td></tr><tr><td>List Drivers Championship Standings</td><td><code>listDriversChampionship</code></td><td>Provides championship standings for drivers. Only available for race sessions. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#drivers-championship-beta</td></tr><tr><td>List Intervals</td><td><code>listIntervals</code></td><td>Fetches real-time interval data between drivers and their gap to the race leader. Available during races only, with updates approximately every 4 seconds. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#intervals</td></tr><tr><td>List Laps</td><td><code>listLaps</code></td><td>Provides detailed information about individual laps. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#laps</td></tr><tr><td>List Meetings</td><td><code>listMeetings</code></td><td>Provides information about meetings. A meeting refers to a Grand Prix or testing weekend and usually includes multiple sessions (practice, qualifying, race,...). Meetings are updated every day at midnight UTC. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#meetings</td></tr><tr><td>List Overtakes</td><td><code>listOvertakes</code></td><td>Provides information about overtakes. An overtake refers to one driver (the overtaking driver) exchanging positions with another driver (the overtaken driver). This includes both on-track passes and position changes resulting from pit stops or post-race penalties. This data is only available during races and may be incomplete. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#overtakes</td></tr><tr><td>List Pit Stops</td><td><code>listPitStops</code></td><td>Provides information about cars going through the pit lane. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#pit</td></tr><tr><td>List Positions</td><td><code>listPositions</code></td><td>Provides driver positions throughout a session, including initial placement and subsequent changes. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#position</td></tr></tbody></table>
+
+<details>
+
+<summary>View 8 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Race Control Messages</td><td><code>listRaceControlMessages</code></td><td>Provides information about race control (session status, racing incidents, flags, safety car,...). Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#race-control</td></tr><tr><td>List Session Results</td><td><code>listSessionResults</code></td><td>Provides standings after a session. This data becomes available a few minutes after the official results are published on the official Formula 1 website. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#session-result</td></tr><tr><td>List Sessions</td><td><code>listSessions</code></td><td>Provides information about sessions. A session refers to a distinct period of track activity during a Grand Prix or testing weekend (practice, qualifying, sprint, race,...). Sessions are updated every day at midnight UTC. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#sessions</td></tr><tr><td>List Starting Grid</td><td><code>listStartingGrid</code></td><td>Provides the starting grid for the upcoming race. This data becomes available a few minutes after the official results are published on the official Formula 1 website. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#starting-grid</td></tr><tr><td>List Stints</td><td><code>listStints</code></td><td>Provides information about individual stints. A stint refers to a period of continuous driving by a driver during a session. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#stints</td></tr><tr><td>List Team Radio</td><td><code>listTeamRadio</code></td><td>Provides a collection of radio exchanges between Formula 1 drivers and their respective teams during sessions. Please note that only a limited selection of communications are included, not the complete record of radio interactions. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#team-radio</td></tr><tr><td>List Teams Championship Standings</td><td><code>listTeamsChampionship</code></td><td>Provides championship standings for teams. Only available for race sessions. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#teams-championship-beta</td></tr><tr><td>List Weather</td><td><code>listWeather</code></td><td>The weather over the track, updated every minute. Every field can be used as an exact-match filter; historical data from 2023 is free Docs: https://openf1.org/docs/#weather</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+OpenF1 has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

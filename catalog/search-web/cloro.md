@@ -1,0 +1,39 @@
+---
+description: "cloro extracts structured answers from AI answer engines and search results. Run monitoring tasks for ChatGPT, Gemini and Google AI Mode."
+hidden: true
+---
+
+# cloro
+
+<img src="../../.gitbook/assets/connectors/lg/cloro.png" alt="cloro logo">
+
+| | |
+| --- | --- |
+| **Category** | [Search and web](README.md) |
+| **Website** | [cloro.dev](https://cloro.dev) |
+| **Authentication** | Access token |
+| **Slug** | `cloro` |
+
+## Setup
+
+Your customers enter their access token for cloro when they connect. Nothing else needs setting up.
+
+## Use it
+
+Add cloro from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.cloro.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Clear Async Queue</td><td><code>clearAsyncQueue</code></td><td>Deletes every QUEUED async task for your organization and returns how many were removed. Tasks already processing keep running, completed history is kept, and no credits are charged or refunded.</td></tr><tr><td>Create Async Task</td><td><code>createAsyncTask</code></td><td>Submits a monitoring request as an asynchronous task for background processing and returns its task id and reserved credits. Poll it with Get Async Task or supply a webhook URL to be notified on completion. Async tasks cost the provider's base credits with no synchronous surcharge.</td></tr><tr><td>Create Batch Async Tasks</td><td><code>createBatchAsyncTasks</code></td><td>Submits up to 500 asynchronous monitoring tasks in one request. Each task is validated independently, so one invalid task does not block the rest, and the response lists a per-task success or failure result in the original order. The request body is a JSON array, so the tasks are supplied as a JSON-encoded array string.</td></tr><tr><td>Get Async Queue Status</td><td><code>getAsyncQueueStatus</code></td><td>Returns organization-wide async queue metrics: queued and processing task counts, queued tasks per priority level and current concurrency usage.</td></tr><tr><td>Get Async Task</td><td><code>getAsyncTask</code></td><td>Returns the status of an asynchronous task (QUEUED, PROCESSING, COMPLETED or FAILED), its credit accounting and, once completed, the full structured provider result.</td></tr><tr><td>Get Credit Balance</td><td><code>getCreditBalance</code></td><td>Returns your organization's remaining cloro credits, the credits granted per billing cycle and when the current cycle resets.</td></tr><tr><td>List Countries</td><td><code>listCountries</code></td><td>Returns every ISO 3166-1 alpha-2 country code cloro supports for geo-targeting, optionally filtered to the countries available for one AI provider or search model.</td></tr><tr><td>List States</td><td><code>listStates</code></td><td>Returns the US states supported for state-level geo-targeting on the ChatGPT, Gemini, Grok, Copilot and Perplexity endpoints. Only the United States is supported; other countries return an empty list.</td></tr><tr><td>Monitor ChatGPT</td><td><code>monitorChatGpt</code></td><td>Sends a prompt to ChatGPT from the chosen country and returns the structured answer: response text, cited sources, citation pills, brand entities and map entries, and optionally shopping cards, inline products, ads, query fan-out, Markdown, HTML and the raw response. Costs 5 credits (+2 for any of raw response, fan-out, ads or shopping; +2 for state targeting) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Gemini</td><td><code>monitorGemini</code></td><td>Sends a prompt to Google Gemini from the chosen country and returns the structured answer text, cited sources, citation pills and place cards, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 7 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Monitor Google AI Mode</td><td><code>monitorAiMode</code></td><td>Sends a prompt to Google AI Mode and returns the structured answer text, sources, citation pills, places, shopping cards, ads, inline products, videos and map data, optionally with expanded merchant product results. Costs 4 credits (+1 per expanded product cluster) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Google News</td><td><code>monitorGoogleNews</code></td><td>Runs a Google News search and returns structured news articles with titles, links, snippets, sources, dates and thumbnails across up to 10 result pages. Costs 3 credits for page one, +2 per extra page, plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Google Search</td><td><code>monitorGoogleSearch</code></td><td>Runs a Google web search and returns structured results: organic results, People Also Ask, related searches, sponsored ads, shopping cards, local pack, Knowledge Graph and, when requested, the AI Overview. Costs 3 credits for page one, +2 per extra page, +2 for AI Overview, plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Grok</td><td><code>monitorGrok</code></td><td>Sends a prompt to Grok from the chosen country and returns the answer text, cited sources (including X/Twitter references) and query fan-out, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge. cloro currently lists Grok as temporarily unavailable, so calls fail with a 500 until the provider is restored.</td></tr><tr><td>Monitor Microsoft Copilot</td><td><code>monitorCopilot</code></td><td>Sends a prompt to Microsoft Copilot from the chosen country and returns the structured answer text, cited sources, citation pills, shopping cards, map entries and query fan-out, with optional Markdown, HTML and raw response. Costs 5 credits (+2 for state targeting) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Monitor Perplexity</td><td><code>monitorPerplexity</code></td><td>Sends a prompt to Perplexity from the chosen country and returns the structured answer text, cited sources, citation pills, related queries, videos, images, hotels, places and shopping cards, with optional Markdown, HTML and raw response. Costs 4 credits (+2 for state targeting) plus a 2 credit synchronous surcharge.</td></tr><tr><td>Resolve Google Redirect Link</td><td><code>resolveGoogleRedirectLink</code></td><td>Resolves a Google /goto or /url redirect link (as returned in the redirectLink fields of Google Search, Google News and AI Mode results) to its final destination URL.</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+cloro has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.
