@@ -1,8 +1,20 @@
 ---
 description: Minting and refreshing embed tokens from your backend, and the session cap.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Tokens
+# Token API
 
 An embed token identifies one of your customers to the widget. The dashboard shows a live 8-hour token so you can try things immediately. Mint your own from your backend for production.
 

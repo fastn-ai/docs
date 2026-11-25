@@ -201,6 +201,7 @@ Operation: `setTriggerStatus`
 **Responses**
 
 * `200`: Updated
+* `400`: SCHEDULE_TOO_FREQUENT: { error: { code, message, minimumMinutes, requestedMinutes } }
 * `404`: Not found
 
 ### Connector webhook ingest (called by providers)
@@ -226,7 +227,7 @@ Operation: `receiveAppWebhook`
 * `202`: { data: { status: 'accepted', dispatched } }
 * `401`: Signature verification failed
 
-### Webhook ingest (called by external systems)
+### Webhook ingest (called by external apps)
 
 ```http
 POST /v1/triggers/{orgId}/webhooks/{triggerId}
@@ -330,7 +331,7 @@ Operation: `listSchedulers`
 POST /v1/schedulers
 ```
 
-Creates a scheduled trigger that fires its routes on a 5-field cron expression or a fixed rate (exactly one of cron or rate). runOnCreate=true also fires it once immediately; omitted or false waits for the schedule. A scheduler auto-disabled by repeated failures is re-enabled after reenableAfterMinutes, unless the failures were its workflow being deleted or never published: that one stays disabled until it is turned back on. Leave routes[].env out unless the workflow is deployed to that environment; the response carries a warning when it is not. Requires events.create.
+Creates a scheduled trigger that fires its routes on a 5-field cron expression or a fixed rate (exactly one of cron or rate). runOnCreate=true also fires it once immediately; omitted or false waits for the schedule. A scheduler auto-disabled by repeated failures is re-enabled after reenableAfterMinutes, unless the failures were its workflow being deleted or never published: that one stays disabled until it is turned back on. Leave routes[].env out unless the workflow is deployed to that environment; the response carries a warning when it is not. A schedule may not run more often than the workspace allows (60 minutes on Launch, 5 on Growth and Scale, no limit on Enterprise; a personal workspace is held to at least 15 minutes whatever its plan); a faster one is refused with 400 SCHEDULE_TOO_FREQUENT, whose minimumMinutes is the limit. Requires events.create.
 
 Operation: `createScheduler`
 
@@ -372,7 +373,7 @@ Operation: `createScheduler`
 **Responses**
 
 * `201`: { data: scheduler, warning? }
-* `400`: Invalid JSON or a body that fails validation
+* `400`: Validation error, or SCHEDULE_TOO_FREQUENT: { error: { code, message, minimumMinutes, requestedMinutes } }
 * `409`: A trigger with that id already exists
 
 **Response fields**
@@ -452,7 +453,7 @@ Operation: `getScheduler`
 PUT /v1/schedulers/{id}
 ```
 
-Partially updates a scheduler and re-registers its timer. cron and rate cannot both be sent. routes, when sent, replaces the whole binding list. The response carries a warning when a route is pinned to an environment the workflow is not deployed to. Requires events.update.
+Partially updates a scheduler and re-registers its timer. cron and rate cannot both be sent. routes, when sent, replaces the whole binding list. The response carries a warning when a route is pinned to an environment the workflow is not deployed to. A new cron or rate, or status ACTIVE, is held to the workspace's interval limit and refused with 400 SCHEDULE_TOO_FREQUENT below it. Requires events.update.
 
 Operation: `updateScheduler`
 
@@ -496,7 +497,7 @@ Operation: `updateScheduler`
 **Responses**
 
 * `200`: { data: scheduler, warning? }
-* `400`: Invalid JSON or a body that fails validation
+* `400`: Validation error, or SCHEDULE_TOO_FREQUENT: { error: { code, message, minimumMinutes, requestedMinutes } }
 * `404`: Not found in the caller's org
 
 **Response fields**
@@ -642,6 +643,7 @@ Operation: `createAppEventTrigger`
 | `additionalConfig` | `object` | No |  |
 | `accountId` | `string` | No |  |
 | `connectionId` | `string` | No |  |
+| `deferSubscription` | `boolean` | No | Create the trigger without subscribing at the provider: nothing is registered on the account until you turn it on and call retry-subscription. Only with status DISABLED. |
 
 **Responses**
 
@@ -894,7 +896,7 @@ Operation: `listWebhookTriggers`
 POST /v1/webhooks
 ```
 
-Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external system. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere, and a route pinned (env) to an environment the workflow is not deployed to dead-letters every event (the response carries a warning for either). authMethod API_KEY (default) makes callers send a fastn API key. orgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.
+Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external app. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere, and a route pinned (env) to an environment the workflow is not deployed to dead-letters every event (the response carries a warning for either). authMethod API_KEY (default) makes callers send a fastn API key. orgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.
 
 Operation: `createWebhookTrigger`
 

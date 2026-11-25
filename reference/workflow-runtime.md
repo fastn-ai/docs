@@ -1,7 +1,7 @@
 ---
 description: >-
   What a workflow can reach at runtime: ctx, customer headers, connectors,
-  unified APIs, database, state, secrets and configs.
+  unified APIs, database, state, secrets, and configs.
 ---
 
 # Workflow runtime API
@@ -46,7 +46,7 @@ The headers also carry customer context. See [Customer headers](#customer-header
 
 ## Customer and run fields on ctx
 
-The simplest way to know which of your customers a run is acting for is to read it straight off `ctx`:
+To find which of your customers a run acts for, read it from `ctx`:
 
 | Field             | Holds                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------- |
@@ -65,13 +65,13 @@ if (ctx.isRetry) {
 
 ## Connectors are not on ctx
 
-`ctx` carries only `input`, `headers`, `env`, `endOrgId`, `externalRef`, `attempt` and `isRetry`. There is no `ctx.connectors`: call connectors through the `fastn` global, as shown in [Calling a connector](#calling-a-connector). What a run can reach is what the workflow's **Connectors** tab lists, so that tab is the authoritative view.
+`ctx` carries only `input`, `headers`, `env`, `endOrgId`, `externalRef`, `attempt`, and `isRetry`. There is no `ctx.connectors`: call connectors through the `fastn` global, as shown in [Calling a connector](#calling-a-connector). What a run can reach is what the workflow's **Connectors** tab lists, so that tab is the authoritative view.
 
 ---
 
 ## Customer headers
 
-One workflow serves all of your customers, and these four headers on the incoming request are how a call says which customer it is for and what it may use. Getting them right is the difference between a workflow that serves one customer and one that serves all of them.
+One workflow serves all of your customers, and these four headers on the incoming request are how a call says which customer it is for and what it may use.
 
 | Header                          | Carries                                                                 |
 | ------------------------------- | ------------------------------------------------------------------------- |
@@ -88,18 +88,18 @@ Their exact shapes are listed in the workflow editor's autocomplete, which is ge
 
 ## Calling a connector
 
-Calls actions on connected systems, by connector slug.
+Calls actions on connected apps, by connector slug.
 
 ```javascript
 const sale    = await fastn.connector.cin7core.getSale({ saleId });
 const created = await fastn.connector.trackstar.createOrder({ ... });
 ```
 
-{% hint style="warning" %}
-**Use `fastn.connector.<slug>.<action>()`, singular.** The plural `fastn.connectors.<slug>.<action>()` is an alias for the same object and also works at run time, and saving the workflow extracts bound connectors from both spellings. Prefer the singular so your code matches these docs.
+{% hint style="info" %}
+**`fastn.connector.<slug>.<action>()` and the plural `fastn.connectors.<slug>.<action>()` both work**, at save time and at run time. Saving the workflow binds the connectors it finds in either spelling. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector by hand on the workflow's **Connectors** tab.
 {% endhint %}
 
-The slug is the one on the connector's Overview tab. Available actions and their versions are pinned on the workflow's **Connectors** tab, and each connector there is marked *per customer* or workspace, which decides whose credential the call uses.
+The slug is the one on the connector's Overview tab. Available actions and their versions are pinned on the workflow's **Connectors** tab, and each connector there is marked **Per customer** or **Platform-wide**, which decides whose credential the call uses.
 
 ---
 
@@ -107,7 +107,7 @@ The slug is the one on the connector's Overview tab. Available actions and their
 
 Calls a [unified API](../build/unified-apis/README.md) (one canonical entity, served by whichever provider the running customer has connected), rather than naming a specific connector.
 
-This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: the routing to hubspot, salesforce or zohoCrm is the platform's problem rather than your code's. The workflow editor's autocomplete shows the exact call shape.
+This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: fastn routes the call to `hubspot`, `salesforce`, or `zohoCrm`, so your code does not have to. The workflow editor's autocomplete shows the exact call shape.
 
 ---
 
@@ -115,7 +115,7 @@ This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{ent
 
 SQL against your workspace's Postgres schema.
 
-Which schema a query runs in depends on how your organization's database is set up (see [Database](../manage/database.md)). Do not rely on the database to keep one customer's rows apart from another's: if a table holds data for several customers, add a customer column (for example `ctx.endOrgId`) and filter on it in every query.
+Which schema a query runs in depends on how your organization's database is set up under [Settings → Database](../manage/database.md). Do not rely on the database to keep one customer's rows apart from another's: if a table holds data for several customers, add a customer column (for example `ctx.endOrgId`) and filter on it in every query.
 
 ```javascript
 await fastn.db.query(
@@ -129,14 +129,12 @@ const rows = await fastn.db.query(
 );
 ```
 
-Which Postgres this reaches is set under [Settings → Database](../manage/database.md).
-
 {% hint style="info" %}
 The signature is `query(sql, params)` with `$1`-style placeholders; the workflow editor's autocomplete shows the full shape.
 {% endhint %}
 
 {% hint style="warning" %}
-Always parameterize. String-interpolating a value from `ctx.input` into SQL is an injection waiting to happen.
+Always parameterize. String-interpolating a value from `ctx.input` into SQL opens the query to SQL injection.
 {% endhint %}
 
 ---
@@ -163,7 +161,7 @@ if (seen) {
 await fastn.state.set(key, { processedAt: new Date().toISOString() });
 ```
 
-That is the standard idempotency guard. Pair it with a [deduplication key](../build/triggers/README.md) on the trigger and a retried delivery is much less likely to double-write: verify the guard actually holds under a replay in your own workspace before treating it as a guarantee.
+That is the standard idempotency guard. Pair it with a [deduplication key](../build/triggers/README.md) on the trigger and a retried delivery is much less likely to double-write: verify the guard holds under a replay in your own workspace before treating it as a guarantee.
 
 ---
 
@@ -189,7 +187,7 @@ const base = await fastn.envConfig.get("UPSTREAM_API_BASE");
 
 ## fastn.diff.compare
 
-Produces a [sync report](../operate/sync-reports.md): a record-by-record account of what a run changed. A workflow that calls it gets a report; one that does not, does not.
+Produces a [sync report](../operate/sync-reports.md): a record-by-record account of what a run changed. A workflow that does not call it produces no report.
 
 ---
 
@@ -203,7 +201,7 @@ Whatever you return becomes the workflow's output, and must match the output con
 | **Standard** | `202` and an execution id.                                              | 15 minutes |
 | **Long**     | `202` and an execution id.                                              | Up to 36 hours |
 
-**Instant's ceiling is 25 seconds** unless your organization holds the "Increase Instant timeout" entitlement, which raises it to 2 minutes. It is short on purpose. It is the tier for something a caller is blocked on. Anything that reaches out to two or three systems in sequence belongs on Standard, and finding out by timing out in production is the expensive way to learn it.
+Instant is short on purpose: it is the tier for something a caller is blocked on. Anything that reaches out to two or three apps in sequence belongs on Standard.
 
 ## Errors
 

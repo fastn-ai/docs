@@ -1,7 +1,19 @@
 ---
 description: >-
   Describe an integration in plain words, from your AI tool or the dashboard,
-  and fastn builds, tests and publishes it.
+  and fastn builds, tests, and publishes it.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Build
@@ -16,16 +28,15 @@ Build turns a plain-language description into a working integration. You say wha
 
 | Role | What they use Build for |
 | --- | --- |
-| **Integration or solutions engineer** | Turn a customer request into a tested integration the same day |
-| **Product manager** | Ship the integration a deal is waiting on, without queueing it for engineering |
+| **Integration or solutions engineer** | Build and test integrations from a description |
+| **Product manager** | Describe an integration and review its plan and test cases, without writing code |
 | **Developer** | Read the generated workflow code where code view is on for your organization, and edit it or write it yourself where code editing is also on |
-| **Founder or CTO** | Say yes to "do you integrate with X?" and keep engineers on the core product |
 
 ## How do I use it?
 
 {% tabs %}
 {% tab title="Your AI tool" %}
-Add fastn to Claude, Cursor, Codex or another MCP client, then ask for the integration in the chat. Your AI tool follows the same steps as the dashboard and asks you to approve each one. It uses no fastn AI credits.
+Add fastn to Claude, Cursor, Codex, or another MCP client, then ask for the integration in the chat. Your AI tool follows the same steps as the dashboard and asks you to approve each one. It uses no fastn AI credits.
 
 ```bash
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
@@ -34,14 +45,14 @@ claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 [Connect your AI tool](mcp-gateway/README.md) · [What happens when you ask](building-from-your-ai-agent.md)
 {% endtab %}
 
-{% tab title="Build with AI" %}
-Open **Build → Build with AI** in the dashboard, or type into the prompt on Home, and describe the integration. fastn's builder runs in the browser and uses your plan's AI credits.
+{% tab title="fastn agent" %}
+Open **Integrations → Create integration → Build with fastn agent** in the dashboard, or type into the prompt on Home, and describe the integration. The fastn agent runs in the browser. It needs a paid plan (Scale or Enterprise) and uses AI credits. On Launch, build from your AI tool instead.
 
-[Build with AI](agent/README.md) · [Create a workflow with AI, step by step](../tutorials/saas-admin/creating-a-workflow-via-ai.md)
+[Build with fastn agent](agent/README.md) · [Create a workflow with the fastn agent, step by step](../tutorials/saas-admin/creating-a-workflow-via-ai.md)
 {% endtab %}
 
 {% tab title="Code" %}
-Every workflow is a JavaScript module you can test with sample input and version. Reading the code in the workflow editor needs code view to be switched on for your organization (fastn turns it on), and editing it needs code editing as well. Where code view is off, the editor shows diagrams and docs only, and you change a workflow by describing the change to Build with AI.
+Every workflow is a JavaScript module you can test with sample input and version. Reading the code in the workflow editor needs code view to be switched on for your organization (fastn turns it on), and editing it needs code editing as well. Where code view is off, the editor shows diagrams and docs only, and you change a workflow by describing the change to the fastn agent.
 
 [Workflows](workflows/README.md) · [Write a workflow in code](../tutorials/saas-admin/configuring-a-workflow-in-code.md)
 {% endtab %}
@@ -49,7 +60,7 @@ Every workflow is a JavaScript module you can test with sample input and version
 
 ## Example prompts
 
-Paste these into your AI tool or Build with AI, and adjust the apps and fields.
+Paste these into your AI tool or the fastn agent, and adjust the apps and fields.
 
 | Job | Prompt |
 | --- | --- |
@@ -63,10 +74,10 @@ Paste these into your AI tool or Build with AI, and adjust the apps and fields.
 
 | Block | What it is |
 | --- | --- |
-| [Connectors](connectors/README.md) | The apps your customers can connect, with their actions, auth and webhooks |
+| [Connectors](connectors/README.md) | The apps your customers can connect, with their actions, auth, and webhooks |
 | [Connect your product](../manage/saas-connectors.md) | Your own product's API and webhooks, as the connector that is yours |
-| [Workflows](workflows/README.md) | The code that moves and transforms data between systems |
-| [Triggers](triggers/README.md) | What starts a workflow: a webhook, a schedule or an app event |
+| [Workflows](workflows/README.md) | The code that moves and transforms data between apps |
+| [Triggers](triggers/README.md) | What starts a workflow: a webhook, a schedule, or an app event |
 | [Unified APIs](unified-apis/README.md) | One endpoint per business object (contact, deal, ticket) across many apps |
 
 ## Questions?
@@ -78,31 +89,33 @@ Paste these into your AI tool or Build with AI, and adjust the apps and fields.
 ## Works with
 
 * [Embed](../embed/README.md): put what you build in front of your customers.
-* [Test and release](workflows/lifecycle.md): test, publish and deploy across environments.
+* [Test and release](workflows/lifecycle.md): test, publish, and deploy across environments.
 * [Operate](../operate/overview.md): watch every customer's integrations once they are live.
 
 ## All Build pages
 
-Build is where integrations are made. Ten pages, in roughly the order you meet them.
+Build is where integrations are made. The pages follow the **Build** section of the dashboard sidebar: **Connect your product** and **Integrations**.
 
-Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. **Build with AI** has its own sidebar item and is also reached from the Home *What should your customers be able to do?* prompt. *Building from your AI agent*, *MCP gateway* and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
+Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows, and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. The fastn agent has no sidebar row: open it from **Integrations → Create integration → Build with fastn agent** or the *What should your customers be able to do?* prompt on Home. *Build from your AI tool*, the *fastn MCP server*, and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
 
-{% content-ref url="agent/README.md" %}[Build with AI](agent/README.md){% endcontent-ref %}
+{% content-ref url="agent/README.md" %}[Build with fastn agent](agent/README.md){% endcontent-ref %}
 
-{% content-ref url="building-from-your-ai-agent.md" %}[Building from your AI agent](building-from-your-ai-agent.md){% endcontent-ref %}
+{% content-ref url="building-from-your-ai-agent.md" %}[Build from your AI tool](building-from-your-ai-agent.md){% endcontent-ref %}
+
+{% content-ref url="mcp-gateway/README.md" %}[fastn MCP server](mcp-gateway/README.md){% endcontent-ref %}
+
+{% content-ref url="../manage/saas-connectors.md" %}[Connect your product](../manage/saas-connectors.md){% endcontent-ref %}
+
+{% content-ref url="integrations.md" %}[Integrations](integrations.md){% endcontent-ref %}
 
 {% content-ref url="connectors/README.md" %}[Connectors](connectors/README.md){% endcontent-ref %}
 
 {% content-ref url="unified-apis/README.md" %}[Unified APIs](unified-apis/README.md){% endcontent-ref %}
 
-{% content-ref url="connections/README.md" %}[Connections](connections/README.md){% endcontent-ref %}
-
 {% content-ref url="workflows/README.md" %}[Workflows](workflows/README.md){% endcontent-ref %}
 
 {% content-ref url="triggers/README.md" %}[Triggers](triggers/README.md){% endcontent-ref %}
 
-{% content-ref url="connector-updates.md" %}[Pending updates](connector-updates.md){% endcontent-ref %}
-
-{% content-ref url="mcp-gateway/README.md" %}[MCP gateway](mcp-gateway/README.md){% endcontent-ref %}
+{% content-ref url="workflows/lifecycle.md" %}[Test and release](workflows/lifecycle.md){% endcontent-ref %}
 
 {% content-ref url="patterns.md" %}[Common patterns](patterns.md){% endcontent-ref %}

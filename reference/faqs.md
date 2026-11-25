@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. [Build with AI](../build/agent/README.md) (or your AI tool) writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. If you want to write code yourself, ask fastn to turn it on for your organization; fastn can enable it for any organization.
+No. The [fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your AI tool writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish, and deploy. If you want to write code yourself, ask fastn to turn it on for your organization.
 
 </details>
 
@@ -40,7 +40,15 @@ If an identifier says tenant, it means one of your customers.
 
 <summary>What is the difference between a connector and a connection?</summary>
 
-A **connector** is the definition of a system: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
+A **connector** is the definition of an app: its actions, auth methods, and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
+
+</details>
+
+<details>
+
+<summary>What is a sandbox connection?</summary>
+
+A connection for building and testing, made in a sandbox environment. It is free within your plan's sandbox allowance (3 on Launch, 20 on Scale) and is deleted after 7 days. It never counts as a [customer connection](../manage/billing.md).
 
 </details>
 
@@ -58,7 +66,7 @@ Use your own OAuth application. You set it on the connector's **Auth** tab, whic
 
 Not by re-entering the credential. It belongs to the customer, and they re-authorize through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
 
-See [Statuses](../build/connections/statuses.md) for what each status means and what to do. The connection's own **Token and activity** section shows `Expires`, `Last refreshed` and `Last used`.
+For what each status means, see [Connection statuses](errors.md#connection-statuses). Treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect", and read the connection's own **Token and activity** section for `Expires`, `Last refreshed`, and `Last used`.
 
 </details>
 
@@ -66,7 +74,7 @@ See [Statuses](../build/connections/statuses.md) for what each status means and 
 
 <summary>What is a platform-wide connector for?</summary>
 
-Systems your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
+Apps your organization owns rather than your customers: your Slack, your warehouse. In a workflow, each connector is wired either **Per customer** or **Platform-wide** (the badge on the workflow's Connectors tab), which decides whose credential the call uses. A platform-wide call uses a connection your organization holds; on that connection's detail page, **Scope** reads `Account level`.
 
 </details>
 
@@ -92,7 +100,7 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 | **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
 | **Long**     | Returns 202, runs in the background.             | **Up to 36 hours** | 30s - 36h |
 
-Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two systems in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
+Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. Use **Instant** only when something is waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. Use **Standard** for almost everything else, and **Long** for batch imports and backfills.
 
 </details>
 
@@ -100,7 +108,7 @@ Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant
 
 <summary>What is the difference between Publish and Deploy?</summary>
 
-**Publish** creates an immutable version snapshot (v1, v2, …). **Deploy** sends a published version to an environment so it starts handling real events. Rollback is just deploying an earlier version.
+**Publish** creates an immutable version snapshot (v1, v2, …). **Deploy** sends a published version to an environment so it starts handling real events. To roll back, deploy an earlier version.
 
 </details>
 
@@ -124,7 +132,7 @@ Set a **deduplication key** on the webhook trigger, and add an idempotency guard
 
 <summary>Does a retry policy retry everything?</summary>
 
-No. It retries transient failures. **Code errors, data errors and out-of-memory never retry**: a bug does not get better on the second attempt, and neither does a payload that was always malformed.
+No. It retries transient failures. **Code errors, data errors, and out-of-memory never retry**: a bug does not get better on the second attempt, and neither does a payload that was always malformed.
 
 </details>
 
@@ -176,7 +184,7 @@ Account owners and admins only. It is enforced at the API layer and cannot be gr
 
 <summary>Can I limit an agent to read-only access for one customer?</summary>
 
-Yes. Combine the action selection on the connector with a narrow API key: pick the **Viewer** preset, or **Custom** with only the read boxes ticked in the `What it can touch` matrix, and set **Customers it can reach** to **Only the ones I pick**. See [API keys](../manage/api-keys.md).
+Yes. Combine the action selection on the connector with a narrow API key: pick the **Viewer** preset, or **Custom** with only the read boxes ticked in the **What it can touch** matrix, and set **Customers it can reach** to **Only the ones I pick**. See [API keys](../manage/api-keys.md).
 
 </details>
 
@@ -186,7 +194,7 @@ Yes. Combine the action selection on the connector with a narrow API key: pick t
 
 <details>
 
-<summary>Where does `fastn.db` data actually live?</summary>
+<summary>Where does `fastn.db` data live?</summary>
 
 In fastn's shared managed Postgres by default, in a schema isolated to your workspace. You can point it at a Postgres you operate instead, under [Settings → Database](../manage/database.md). Rows are never copied between the two, so switching changes where new reads and writes go and nothing else.
 
@@ -197,6 +205,38 @@ In fastn's shared managed Postgres by default, in a schema isolated to your work
 <summary>Secret or config?</summary>
 
 Secret if exposure would be an incident (tokens, passwords, keys). Config if you would happily show it to a colleague (endpoints, feature flags, batch sizes). When in doubt, secret.
+
+</details>
+
+<details>
+
+<summary>What are AI credits used for?</summary>
+
+Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Scale includes 1,000 a month and Enterprise has no cap. Launch has no monthly credits and uses the up to 50 it earns in onboarding. Building with the fastn agent and AI steps are on paid plans. See [Credits](../manage/billing.md#credits).
+
+</details>
+
+<details>
+
+<summary>Does building in my own AI tool use AI credits?</summary>
+
+No. Your AI tool's model does the work and fastn only runs the actions, so it is how you keep building when credits run low.
+
+</details>
+
+<details>
+
+<summary>What happens when I run out of AI credits?</summary>
+
+Workflows without AI steps keep running. An AI step fails until credits are back. The fastn agent and error diagnosis stop until credits are back: at the next monthly reset on Scale, or when you earn onboarding credits or upgrade on Launch. Your own AI tool still works.
+
+</details>
+
+<details>
+
+<summary>Do onboarding credits expire?</summary>
+
+No. Onboarding adds up to 50 credits. They are used after any monthly credits and never expire.
 
 </details>
 
@@ -214,7 +254,7 @@ Customer connections are the exception on Scale, the paid self-serve plan: past 
 
 <summary>I deleted something by mistake.</summary>
 
-Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources, including widgets and their integrations, are deleted immediately and cannot be restored.
+Connectors, connector actions, and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (widgets and their integrations among them) are deleted immediately and cannot be restored from that page.
 
 </details>
 
@@ -226,9 +266,9 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 <summary>Why does the same connector appear twice in the catalog?</summary>
 
-Because two entries exist for one system: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
+Two entries exist for one app, typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion, and Cin7 Core all show up this way.
 
-So the total on the Connectors page counts entries, not distinct systems. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
+The total on the Connectors page counts *entries*, not distinct apps. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
 
 </details>
 

@@ -35,7 +35,7 @@ for (const w of (widgets.data ?? []) as any[]) {
 
 ## Connect by app
 
-The short way to a setup link names the app and nothing else. The SDK finds your widget for that app, creates the link for the customer and answers the address to send:
+The short way to a setup link names the app and nothing else. The SDK finds your widget for that app, creates the link for the customer, and answers the address to send:
 
 ```typescript
 const link = await customer.connect("googleCalendar", {
@@ -59,7 +59,7 @@ Answer: `{ setupId, url, status, expiresAt, widgetId }`. Read or cancel the link
 
 ## Setup links
 
-A setup link is a one-time link to a hosted fastn page. The customer opens it, signs in to the app, and the connection is stored on that customer. `connect(app)` above makes one by app name; `setupLink` takes the widget id yourself:
+A setup link is a one-time link to a hosted fastn page. The customer opens it, signs in to the app, and the connection is stored on that customer. `connect(app)` above makes one by app name; with `setupLink` you pass the widget id yourself:
 
 ```typescript
 const link = await customer.setupLink({
@@ -110,7 +110,7 @@ The SDK fills in the customer for you. If the customer does not exist yet, the l
 | ----- | ------- |
 | `setupUrl` | The link to send to the customer. It carries a live credential: do not log it or share it beyond the customer. |
 | `setupId` | The link's id, to check or cancel it. |
-| `status` | `pending` (new), `complete` (used) or `revoked` (canceled). |
+| `status` | `pending` (new), `complete` (used), or `revoked` (canceled). |
 | `expiresAt` | When the link stops working. |
 | `orgId` | Your customer id. The link belongs to the customer you created it for. |
 

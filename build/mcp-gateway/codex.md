@@ -1,12 +1,24 @@
 ---
 description: Add fastn to OpenAI Codex with one command, sign in, and build integrations from the Codex CLI or IDE extension.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Codex
 
 Codex reads its MCP servers from `~/.codex/config.toml`. The Codex CLI and the Codex IDE extension share that file, so adding fastn once covers both.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tile selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect AI tools</strong> in fastn has the command and the file.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tile selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect your AI tool</strong> in fastn has the command and the file.</figcaption></figure>
 
 ## Add fastn
 
@@ -62,7 +74,7 @@ Ask Codex to use fastn by name the first time. For example:
 codex "Use the fastn MCP server: call its whoami tool and tell me the org name."
 ```
 
-Codex calls `fastnPlatform__whoami` and answers with the name of the org you picked when signing in. From there, ask for the integration in one sentence. See [Building from your AI agent](../building-from-your-ai-agent.md) for what happens next.
+Codex calls `fastnPlatform__whoami` and answers with the name of the org you picked when signing in. From there, ask for the integration in one sentence. See [Build from your AI tool](../building-from-your-ai-agent.md) for what happens next.
 
 ## Troubleshooting
 

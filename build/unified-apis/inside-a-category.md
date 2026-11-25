@@ -1,5 +1,17 @@
 ---
-description: "Opening a category: entities, connection state, providers and endpoints."
+description: "Opening a category: entities, connection state, providers, and endpoints."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Inside a category
@@ -10,9 +22,9 @@ Each entity gets its own block showing:
 
 * **Connection state**: `<connected>/<total> connected`, how many of the backing providers your organization has connected.
 * **Providers**: one row per provider, with a **Connect** button, or **Connected** and a `⋯` menu. The menu offers **Add another connection**; **Use \<name> by default** (only when the provider has two or more connections, one item per non-default connection); and **Disconnect** (or **Disconnect \<name>**, one per connection, when there are several). Viewers, who cannot connect accounts, see **Not connected** instead of a **Connect** button.
-* **API**: the endpoints, filtered by an **All providers** selector. Each row shows the HTTP method, the operation name and the path, with a **Copy curl** button.
+* **API**: the endpoints, filtered by an **All providers** selector. Each row shows the HTTP method, the operation name, and the path, with a **Copy curl** button.
 
-Endpoints follow a consistent shape. The operations are **List**, **Get**, **Search**, **Create**, **Update** and **Delete**:
+Endpoints follow a consistent shape. The operations are **List**, **Get**, **Search**, **Create**, **Update**, and **Delete**:
 
 ```http
 GET    /v1/unified/crm/account?page_size=50     # List
@@ -23,4 +35,4 @@ PATCH  /v1/unified/crm/account/RECORD_ID        # Update (send only the fields t
 DELETE /v1/unified/crm/account/RECORD_ID        # Delete
 ```
 
-Not every entity supports every operation; a row only appears for the operations at least one provider serves. When only some of the providers serve an operation, the row says **Only \<provider names>** so it does not overstate coverage. Some entities may support only a subset, for example Create alone.
+Not every entity supports every operation (some support only Create, for example); a row only appears for the operations at least one provider serves. When only some of the providers serve an operation, the row says **Only \<provider names>** so it does not overstate coverage.

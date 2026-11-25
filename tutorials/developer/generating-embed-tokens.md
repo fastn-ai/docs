@@ -1,17 +1,29 @@
 ---
-description: "The full reference for the embed token request: endpoint, headers, body and how to name the customer."
+description: "The full reference for the embed token request: endpoint, headers, body, and how to name the customer."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Generating Embed Tokens
+# Generate embed tokens
 
 Embed tokens are short-lived credentials that scope the fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
 
-This page is the full reference for the token request. [Embed the widget](../../getting-started/onboarding/embed-the-widget.md) and [Token API](../../embed/embedding/token-api.md) show the same request in short.
+For the same request in short, see [Set up and add the widget](../../getting-started/onboarding/embed-the-widget.md) and [Token API](../../embed/embedding/token-api.md).
 
 ### Before you start
 
 * **Who this is for:** the developer wiring the embed into your backend.
-* **An API key.** Creating one under **Embed → API keys and MCP → API keys** needs the Owner or Admin role. See [Authentication & API Keys](authentication-and-api-keys.md).
+* **An API key.** Creating one under **Embed → API keys** needs the Owner or Admin role. See [Authentication & API Keys](authentication-and-api-keys.md).
 * **The customer's identifier**, fastn's id or your own. See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** that can make an HTTP request with a secret key. Tokens are never minted in the browser.
 
@@ -33,7 +45,7 @@ The token is for one of your customers and, optionally, one person at that custo
 
 | Your API key | Name the customer with | Body |
 | ------------ | ---------------------- | ---- |
-| Verify caller identity set to **Enforce** | Signed headers: `x-org-id`, `x-user-id` and `x-identity-hmac` | Empty, or the user fields |
+| Verify caller identity set to **Enforce** | Signed headers: `x-org-id`, `x-user-id`, and `x-identity-hmac` | Empty, or the user fields |
 | No identity verification | `x-org-id` with no hash, or `orgId` in the body | The user fields, plus `orgId` if you use it |
 
 A key set to **Enforce** refuses a request without identity headers, even when the body names the customer (`401 IDENTITY_HEADERS_REQUIRED`), and a request whose hash is missing or wrong (`401 IDENTITY_HMAC_INVALID`). A key set to **Monitor only** takes either way, and logs a missing or wrong hash. A key with verification off trusts `x-org-id` and `x-user-id` as sent.
@@ -210,7 +222,7 @@ func main() {
 
 The body can stay empty. If it also names `orgId` or `userId`, they must match the headers, or the call is refused with `400 IDENTITY_ORG_MISMATCH` or `400 IDENTITY_USER_MISMATCH`. The other body fields below still apply.
 
-Register each customer before you mint for them (`POST /api/v1/orgs`): an `x-org-id` that names no customer is refused before the token request runs, so `createIfMissing` does not apply to it. To use `createIfMissing` with a key set to Enforce, leave out `x-org-id`, send `x-user-id`, sign an empty org id (`"\n" + userId`) and name the customer with `orgId` in the body, as in [Register with an enforcing key](../../embed/embedding/integration-flow.md#register-with-an-enforcing-key).
+Register each customer before you mint for them (`POST /api/v1/orgs`): an `x-org-id` that names no customer is refused before the token request runs, so `createIfMissing` does not apply to it. To use `createIfMissing` with a key set to Enforce, leave out `x-org-id`, send `x-user-id`, sign an empty org id (`"\n" + userId`), and name the customer with `orgId` in the body, as in [Register with an enforcing key](../../embed/embedding/integration-flow.md#register-with-an-enforcing-key).
 
 #### Without identity verification
 
@@ -311,8 +323,8 @@ func main() {
 
 | Field             | Description |
 | ----------------- | ----------- |
-| `orgId`           | The customer the widget is for: your own id for it, or fastn's id for it. Required unless `x-org-id` names the customer or `allowOrgLevel` is `true`; without either, the call is `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. A value that matches none of your customers is `404 Tenant not found`, and another account's customer is `403`. See [Finding Your Org Identifier](finding-your-org-identifier.md). |
-| `userId`          | Optional. Your id for the person using the widget. Per-user isolation keys on this (or on an attested `x-user-id`). Left out, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Tenancy](understanding-tenancy.md)). |
+| `orgId`           | The customer the widget is for: your own id for it, or fastn's id for it. Required unless `x-org-id` names the customer or `allowOrgLevel` is `true`; without either, the call is `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. A value that matches none of your customers is `404 Tenant not found`, and another account's customer is `403`. See [Find your org identifier](finding-your-org-identifier.md). |
+| `userId`          | Optional. Your id for the person using the widget. Per-user isolation keys on this (or on an attested `x-user-id`). Left out, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Customers and isolation](understanding-tenancy.md)). |
 | `userEmail`       | Optional. The person's email address. Display only. |
 | `userName`        | Optional. The person's display name, up to 200 characters. Display only. |
 | `createIfMissing` | Optional. `true` registers the customer named by `orgId` if your account does not have it yet, then mints the token. The value becomes the new customer's own id (its External ID), which the answer returns as `data.orgId`; fastn assigns its own id as well. The key needs the `customers.create` permission. |
@@ -373,7 +385,7 @@ Content-Type: application/json
 { "token": "emb_..." }
 ```
 
-The token in the body is the credential, so no API key is sent. The answer carries fewer fields than a mint: `data.token`, `data.role`, `data.expiresAt` and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` counts the seconds the new token has left, so it is below 28800 near the seven-day cap. The token you sent is retired: carry on with the new one. A token that expired less than 24 hours ago can still be refreshed. The widget calls this endpoint itself to keep its session going.
+The token in the body is the credential, so no API key is sent. The answer carries fewer fields than a mint: `data.token`, `data.role`, `data.expiresAt`, and `data.expiresIn`, with no `userId` or `tierId`. `expiresIn` counts the seconds the new token has left, so it is below 28800 near the seven-day cap. The token you sent is retired: use the new one. A token that expired less than 24 hours ago can still be refreshed. The widget calls this endpoint itself to keep its session going.
 
 Sending a retired token again later is treated as a stolen token: the whole session is revoked (`401 EMBED_TOKEN_REUSED`).
 
@@ -515,5 +527,3 @@ func GetFastnToken(customerID, userID string) (string, error) {
 With a key that has no identity verification, leave out `x-user-id` and `x-identity-hmac`, and send the user in the body instead: `{ "userId": "<user id>" }`.
 
 Expose this through an endpoint your frontend calls at render time. Return only the token, as `{ "token": "emb_..." }`, never the API key.
-
-This pattern is what makes the embed reliable across different users and sessions. Hardcoding or caching tokens is what causes "works for me, fails for them" behavior.

@@ -2,6 +2,18 @@
 description: >-
   Is everything working? Health shows what needs your attention across every
   customer, the totals behind it, vendor changes waiting on you, and your alerts.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Health
@@ -23,15 +35,21 @@ Health is the first place to look each morning. It has four tabs:
 
 One row per thing that needs a person, each with the action that fixes it:
 
+<figure><img src="../.gitbook/assets/screens/health-needs-attention.webp" alt="Operate, Health, Needs attention tab in the empty state: Nothing needs attention, with the line that no vendor changes are waiting, every customer connection and trigger is working, and no workflow failed today"><figcaption>When nothing is wrong, <strong>Needs attention</strong> says so.</figcaption></figure>
+
 * **A vendor changed an app you use**, for example *`hubspot` changed*. **Review** opens the fix the maintainer agent proposes. See [Pending updates](../build/connector-updates.md).
 * **A customer connection expired or failed.** The row says whether the customer must sign in again. **Open connection** takes you to it.
-* **A workflow failed today**, for example *"Order sync" failed 3 of 40 runs today*, with its last run status and a link to the runs.
+* **A workflow failed today**, for example *"Order sync" failed 3 of 40 runs today*, with its last run status. **Runs** opens them, and **Fix with fastn agent** (on plans with the fastn agent) hands the failure to the agent to diagnose and fix.
+* **A customer's trigger is not listening**: it *has no subscription for this customer*, *failed to subscribe*, or *is unsubscribed*. **Open customer** takes you to it.
+* **A workflow is too slow for Instant**: it *needed more than 25 s* on some runs today and was retried on Standard. **Runs** opens them.
 
-When there is nothing to do, the tab reads **Nothing needs attention**: no vendor changes are waiting, every customer connection is working, and no workflow failed today.
+When there is nothing to do, the tab reads **Nothing needs attention**: no vendor changes are waiting on you, every customer connection and trigger is working, and no workflow failed today.
 
 ## Overview
 
 The cross-customer rollup (previously the **Reporting** page): which customers need attention, how many runs and records, and what is failing and why. Filter by customer and date range.
+
+<figure><img src="../.gitbook/assets/screens/health-overview.webp" alt="Health, Overview tab: All customers and Today filters with Refresh, tiles for Customers, Need attention, Healthy, Not connected and Connections, then Right now with Workflow runs (Running, Waiting to start) and Trigger events (Waiting for a run, Retrying delivery)"><figcaption><strong>Overview</strong> totals health across every customer.</figcaption></figure>
 
 ### Filters
 
@@ -69,16 +87,20 @@ The cross-customer rollup (previously the **Reporting** page): which customers n
 
 Vendors change their APIs. fastn notices, works out the fix, and files it here for you to accept. Nothing is applied until you do. See [Pending updates](../build/connector-updates.md).
 
+<figure><img src="../.gitbook/assets/screens/health-pending-updates.webp" alt="Health, Pending updates with nothing waiting: the note that an app's change lands here with any patch the maintainer agent proposes, and nothing is applied until you accept it"><figcaption>Nothing is applied until you accept it.</figcaption></figure>
+
 ## Alerts
 
 Set who is told when a run fails, an event is not processed in time, a metric crosses a threshold, or your workflow code raises an alert, by email, Slack, Teams or webhook. See [Alerts](alerts.md).
+
+<figure><img src="../.gitbook/assets/screens/health-alerts.webp" alt="Health, Alerts with none yet: a New alert button, Notification channels Slack, Microsoft Teams and Gmail with Connect buttons, and No alerts yet with Turn on failure alerts and Custom alert"><figcaption>One click turns on a failure alert and a daily reliability check.</figcaption></figure>
 
 ## A daily routine
 
 1. Open **Health**. If **Needs attention** is empty, you are done.
 2. Work each row with its action: review the fix, ask the customer to reconnect, or open the failed runs.
 3. Use **Overview** to check whether a failure is one customer's credentials or a pattern across many.
-4. Go to [Activity](README.md) for the individual events and runs behind a number.
+4. Go to [Logs](README.md) for the individual events and runs behind a number.
 5. Turn anything you find yourself checking by hand into an [alert](alerts.md).
 
 Your customers see their own version of these numbers in the widget, under **⋯ → Insights**. See [View sync status and history](../tutorials/end-user/viewing-sync-status-and-history.md).

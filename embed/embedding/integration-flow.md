@@ -3,34 +3,47 @@ description: >-
   This page walks you through embedding the fastn widget for your customers:
   register a customer organization, retrieve an embed token, and load the
   widget.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Integration flow
 
 Terms used on this page are defined in the [Glossary](../../reference/glossary.md).
 
-### Pre-requisites
+### Prerequisites
 
-Before you start, you need an API key. We also recommend two optional security measures:
+Before you start, you need an API key. Two optional security measures are also recommended:
 
 * Enable caller identity verification (HMAC) on the API key.
 * Compute an identity hash on your backend and send it with every customer-specific request. The hash is recommended; it is required only when the key's identity verification is set to **Enforce**.
 
-#### Creating an API key
+#### Create an API key
 
-1. Go to **Embed → API keys and MCP → API keys** (`/access`).
-
+1. Go to **Embed** → **API keys** (`/api-keys`).
 2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
    * **Name**: give it something identifiable.
    * **Mode**: select **Live** for production use or **Test** for development. A live key also needs an **Environment**.
-   * Set **permissions** (the **Embed backend** preset fits a backend that mints tokens), **allowed IP addresses**, **rate limit** and **expiry** as needed.
-   * Enable **caller identity verification (HMAC)**. This is optional but recommended for security.
+   * Set **Permissions** (the **Embed backend** preset fits a backend that mints tokens), **Customers it can reach**, **Allowed IP addresses**, **Rate limit** and **Expires** as needed.
+   * Turn on **Verify caller identity (HMAC)**. This is optional but recommended for security.
 4. Click **Create key**.
 
-#### Creating an identity hash (recommended)
+   A dialog shows the new key. This is the only time the key is shown, so copy it somewhere safe. If you turned on HMAC, the dialog also shows the identity-verification secret.
 
-Sending an identity hash with customer-specific requests is optional, but we recommend it for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.
+#### Create an identity hash (recommended)
+
+Sending an identity hash with customer-specific requests is optional, but recommended for security. The hash confirms that the org ID and user ID you're sending are ones your backend actually authorized.
 
 If you skip this section, omit the `x-identity-hmac` header from your requests and don't enable HMAC on your API key.
 
@@ -42,7 +55,7 @@ When you create an API key with HMAC enabled, a dialog appears showing the secre
 
 **Safety precautions:**
 
-* The secret is shown only once. If you lose it, you'll need to generate a new one.
+* The secret is shown only once. If you lose it, rotate it from **Identity verification** on the key's **…** menu.
 * Never ship the secret to the client. It must live only on your backend. If it appears in frontend code, anyone can forge a valid hash for any org or user.
 
 **2. Compute the hash**
@@ -80,13 +93,13 @@ The plaintext headers tell the gateway which identity is being claimed, and the 
 
 **1. Register the customer organization**
 
-Register the customer once from your backend with Create a Customer Organization, before you mint its first token. That endpoint needs an **Admin** key (full access), and the **Embed backend** key that mints tokens gets `403`. Identity verification off is simplest. A key set to enforce needs [identity headers on this call too](#register-with-an-enforcing-key). See [API Reference: Create a Customer Organization](#create-a-customer-organization).
+Register the customer once from your backend with Create a customer organization, before you mint its first token. That endpoint needs an **Admin** key (full access), and the **Embed backend** key that mints tokens gets `403`. Identity verification off is simplest. A key set to enforce needs [identity headers on this call too](#register-with-an-enforcing-key). See [Create a customer organization](#create-a-customer-organization).
 
 #### Integrate the widget
 
 **2. Retrieve an embed token**
 
-From your backend server, call Generate Embed Token to get the authentication token for the customer. The token is in the response's `data` object: read it as `data.token`. See [API Reference: Generate Embed Token](#generate-embed-token).
+From your backend server, call Generate embed token to get the authentication token for the customer. The token is in the response's `data` object: read it as `data.token`. See [Generate embed token](#generate-embed-token).
 
 **3. Load the widget**
 
@@ -101,9 +114,9 @@ Pass the token to your frontend and embed the iframe:
 </iframe>
 ```
 
-### API Reference
+### API reference
 
-#### Create a Customer Organization
+#### Create a customer organization
 
 {% hint style="info" %}
 This endpoint needs an API key with full access (the **Admin** preset). An **Embed backend** key cannot call it. Use a key with identity verification off, or see [Register with an enforcing key](#register-with-an-enforcing-key).
@@ -139,7 +152,7 @@ content-type: application/json
 
 #### Register with an enforcing key
 
-A key set to **Enforce** refuses a call with no identity headers (`401 IDENTITY_HEADERS_REQUIRED`), and this customer does not exist yet. Send `x-user-id` and leave out `x-org-id`. No end user exists yet, so use any stable id for your provisioning service. The hash signs an empty org id:
+A key set to **Enforce** refuses a call with no identity headers (`401 IDENTITY_HEADERS_REQUIRED`), and this customer does not exist yet. Send `x-user-id` and leave out `x-org-id`. No user exists yet, so use any stable id for your provisioning service. The hash signs an empty org id:
 
 ```js
 const hmac = identityHash("", userId);   // the same as HMAC of "\n" + userId
@@ -152,7 +165,7 @@ x-identity-hmac: <hmac>
 
 Do not send the new customer's id as `x-org-id`. It names a customer that must already exist, so the call returns `404 IDENTITY_ORG_NOT_FOUND`.
 
-#### Generate Embed Token
+#### Generate embed token
 
 **Endpoint**
 
@@ -178,7 +191,7 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 { "userId": "<USER_ID>" }
 ```
 
-Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. `x-identity-hmac` is required when the API key's identity verification is set to Enforce. The full field list is on [Tokens](token-api.md), and every error, with a curl for each way of naming the customer, is in [Generate embed tokens](../../tutorials/developer/generating-embed-tokens.md).
+Send `userId` (or an attested `x-user-id`) so each person at the customer gets their own session; without one, every token gets a random user id. `x-identity-hmac` is required when the API key's identity verification is set to Enforce. The full field list is on [Token API](token-api.md), and every error, with a curl for each way of naming the customer, is in [Generate embed tokens](../../tutorials/developer/generating-embed-tokens.md).
 
 **Response**
 

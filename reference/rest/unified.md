@@ -562,7 +562,7 @@ Operation: `testUnifiedCustomEntity`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `op` | `string` | Yes | One of: `list`, `get`, `create`. |
-| `provider` | `string` | Yes |  |
+| `provider` | `string` | No |  |
 | `connectionId` | `string` | No |  |
 | `params` | `object` | No |  |
 

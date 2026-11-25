@@ -1,12 +1,24 @@
 ---
 description: Add fastn to Claude Code with one command, sign in, and build integrations from the terminal.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Claude Code
 
 Claude Code adds fastn as a remote MCP server with one command. Sign in once, then ask for the integration in a Claude Code session.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-claude-manual.webp" alt="fastn's MCP server page with the second Claude tile selected, showing the steps to add fastn by hand, a Claude Code command claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace, a Claude Desktop config snippet and an Add for the whole organization link"><figcaption>The command is on the second <strong>Claude</strong> tile under <strong>Connect AI tools</strong> in fastn.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-claude-manual.webp" alt="fastn's MCP server page with the second Claude tile selected, showing the steps to add fastn by hand, a Claude Code command claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace, a Claude Desktop config snippet and an Add for the whole organization link"><figcaption>The command is on the second <strong>Claude</strong> tile under <strong>Other</strong> on the fastn <strong>MCP server</strong> page.</figcaption></figure>
 
 ## Add fastn
 
@@ -28,7 +40,7 @@ Claude Code prints *Added HTTP MCP server fastn with URL: https://mcp.fastn.dev/
 claude mcp login fastn
 ```
 
-Or, inside a Claude Code session, type `/mcp`, pick **fastn** and choose **Authenticate**.
+Or, inside a Claude Code session, type `/mcp`, pick **fastn**, and choose **Authenticate**.
 
 fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Claude Code works in and click **Connect**.
 
@@ -54,7 +66,7 @@ fastn: https://mcp.fastn.dev/fastn-workspace (HTTP) - ✔ Connected
 
 Start `claude` and ask for the outcome in one sentence. To check the connection first, ask *Use fastn to tell me which org I'm in.* Claude Code asks before it runs a fastn tool; approve it, and it answers with the org you picked when signing in.
 
-From here Claude Code works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Claude Code works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Claude Desktop config file
 
@@ -77,4 +89,4 @@ A `"url"` entry in that file is ignored, and no fastn tools appear.
 
 * **`fastn ... ! Needs authentication` in `claude mcp list`.** Run `claude mcp login fastn`.
 * **The browser shows `{"error":"redirect_uri mismatch"}`.** Claude Code sign-in failed this way on fastn before 27 October 2026. Run `claude mcp login fastn` again.
-* **Claude Code works on the wrong org.** Run `claude mcp logout fastn`, then `claude mcp login fastn` and pick the workspace again.
+* **Claude Code works on the wrong org.** Run `claude mcp logout fastn`, then `claude mcp login fastn`, and pick the workspace again.

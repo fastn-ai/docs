@@ -2,20 +2,36 @@
 description: >-
   Create customers under Operate → Customers, scope API calls per customer, and
   monitor customer-level activity.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Managing Customers
+# Manage customers
 
-**Prerequisites:** [Your First Integration](../../getting-started/quickstart.md).&#x20;
+Each company using your product is a customer. Each customer gets an isolated space with their own connections, data, and execution history. Create customers, choose how to identify them, set their limits, and watch their activity.
 
-Each company using your product is a customer. Each customer gets an isolated environment with their own connections, data, and execution history.
+### Before you start
 
-### Creating customers
+* The [Quickstart: your first integration](../../getting-started/quickstart.md).
+
+### Create customers
 
 1. Go to **Operate → Customers**.
 2. Click **Create customer**.
-3. Enter the customer details (name, and any other required fields). Optionally, put your own ID for this customer (for example `customer_12345`) in **External ID**; if you leave it empty, it defaults to the slug.
-4. Click **Create Customer** at the bottom of the form. Note fastn's **customer id** or the External ID - you'll use one of them for API calls and widget embedding.
+3. Enter a **Customer Name**. **Slug** is generated from the name, and **Admin Email** (invite an admin at the customer) and **Tier** (the tier the customer is billed under) are optional. Optionally, put your own ID for this customer (for example `customer_12345`) in **External ID**; if you leave it empty, it defaults to the slug.
+4. Click **Create Customer** at the bottom of the form.
+
+**You should see:** the new customer in the **Customers** list. Note fastn's **customer id** or the External ID: API calls and widget embedding use one of them.
 
 #### Which identifier to use
 
@@ -43,13 +59,13 @@ Your Organization
 
 Workflows are defined once by you but execute per-customer using each customer's own connections and data.
 
-### Customizing customer limits
+### Customize customer limits
 
 By default, all customers share your plan's quota limits. To override limits for specific customers:
 
 1. Go to **Settings → Billing**.
 2. On the **Limits** card, click **Customize customer limits**.
-3. Set per-customer overrides for any quota dimension.
+3. Pick a customer, then set overrides for any quota dimension. Overrides win over the plan default.
 
 Use this for:
 
@@ -57,31 +73,39 @@ Use this for:
 * Trial customers with lower limits
 * Enterprise customers with custom agreements
 
-### Monitoring customer activity
+### Monitor customer activity
 
-#### Operate → Activity → Executions
+#### Logs → Executions
 
-1. Go to **Operate → Activity → Executions**.
-2. Use the **"All workflows"** dropdown to filter.
-3. Each execution row shows **Triggered by**, which tells you what started the execution: API key, Embed, Webhook, Schedule, Agent, Replay, Manual, or a person's name.
+1. Go to **Operate → Logs → Executions**.
+2. Use the **All workflows** dropdown to filter.
 
-#### Operate → Activity → Events
+Each execution row shows **Triggered by**, which tells you what started the execution: API key, Embed, Webhook, Schedule, Agent, Replay, Manual, or a person's name.
 
-1. Go to **Operate → Activity → Events**.
-2. Filter by type: **All | Webhook | Scheduled | Manual**.
-3. See incoming and outgoing events for your customers.
+#### Logs → Events
+
+1. Go to **Operate → Logs → Events**.
+2. Filter by type: **All**, **Webhook**, **Scheduled**, or **Manual**.
+
+**You should see:** incoming and outgoing events for your customers.
 
 #### Audit log
 
 For a complete history of all actions:
 
 1. Go to **Settings → Audit log**.
-2. Search by person, action or resource, and filter by person, action, resource type and date range.
-3. Columns: Who, Action, Resource, Customer, Result, When.
+2. Search by person, action, or resource, and filter by person, action, resource type, and date range.
+
+The columns are **Who**, **Action**, **Resource**, **Customer**, **Result**, and **When**.
 
 ### What you've learned
 
 * How to create customers under Operate → Customers
-* Customer isolation model i.e. each customer has separate connections, data, and executions
+* The customer isolation model: each customer has separate connections, data, and executions
 * How to customize quota limits per customer
 * How to monitor customer activity through Executions, Events, and Audit log
+
+### Next steps
+
+* Use the customer's id in a token request: [Find your org identifier](../developer/finding-your-org-identifier.md).
+* Run a workflow for one customer: [Run an integration for one customer](../../how-to/run-for-a-customer.md).

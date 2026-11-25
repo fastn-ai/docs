@@ -4,7 +4,7 @@ description: "Every REST endpoint you can call, generated from fastn's OpenAPI s
 
 # REST API reference
 
-This reference lists the REST endpoints you can call with an API key. It is generated from the platform's OpenAPI spec (release `v1.12.0`). To run workflows and mint embed tokens, start with the shorter [HTTP API](../api.md) guide.
+This reference lists the REST endpoints you can call with an API key. It is generated from the platform's OpenAPI spec (release `v1.15.1`). To run workflows and mint embed tokens, start with the shorter [HTTP API](../api.md) guide.
 
 * [Workflows](workflows.md): Create, publish, run and inspect workflows.
 * [Installations and configs](installations.md): Each customer's setup of a widget, its triggers and its configuration values.
@@ -13,6 +13,7 @@ This reference lists the REST endpoints you can call with an API key. It is gene
 * [Event subscriptions](event-subscriptions.md): Endpoints of yours that fastn delivers events to.
 * [Connectors](connectors.md): Connectors, actions, auth methods, webhook configs and mock stubs.
 * [Connections](connections.md): Connected accounts and how they are created.
+* [Sync jobs](sync.md): Jobs that sync records with a connected app, and their runs.
 * [Unified API](unified.md): Unified records, the catalog, and your own unified entities.
 * [Alerts and observability](observability.md): Alert rules, traces and the audit log.
 * [Environments and secrets](environments.md): Environments, their config values, and secrets.

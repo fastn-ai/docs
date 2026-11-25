@@ -1,5 +1,5 @@
 ---
-description: "Register, find, read, list, change and remove your customers with the SDK."
+description: "Register, find, read, list, change, and remove your customers with the SDK."
 ---
 
 # Customers
@@ -33,7 +33,7 @@ const { data } = await customer.get();
 console.log(data.name, data.status);
 ```
 
-### A customer
+## A customer
 
 ```json
 {
@@ -61,11 +61,11 @@ console.log(data.name, data.status);
 | `orgId`, `externalRef` | Your id for the customer (the same value). Use it to match the customer. |
 | `parentId` | Your own org: the account the customer belongs to. |
 | `type` | `end_org` for a customer. |
-| `status` | `active`, `suspended`, `pending_review` or `blocked`. `customer.update()` can set only `active` or `suspended`. |
+| `status` | `active`, `suspended`, `pending_review`, or `blocked`. `customer.update()` can set only `active` or `suspended`. |
 
-Rows from `customer.find()` and `listOrgs` carry two more fields, `connectionsCount` and `tierId`. With `include_usage: "true"`, `listOrgs` rows also carry `executions`, `events`, `storage_gb`, `overage`, `credits`, `integrations` and `users`.
+Rows from `customer.find()` and `listOrgs` carry two more fields, `connectionsCount` and `tierId`. With `include_usage: "true"`, `listOrgs` rows also carry `executions`, `events`, `storage_gb`, `overage`, `credits`, `integrations`, and `users`.
 
-### List your customers
+## List your customers
 
 ```typescript
 const me = await fastn.me();
@@ -76,7 +76,7 @@ for (const c of list.data ?? []) console.log(c.externalRef, c.name);
 
 `customer.find()` and every other `customer` method only look at customers under your own org, so they never return another account's customer.
 
-### Change a customer, trace a request
+## Change a customer, trace a request
 
 ```typescript
 await customer.update({ name: "Acme Dental Group" });
@@ -85,7 +85,7 @@ await customer.update({ status: "suspended" });
 const calls = await customer.callLog("req_abc");       // what fastn did for correlationId req_abc
 ```
 
-### Remove a customer
+## Remove a customer
 
 ```typescript
 await fastn.customer("acme_customer_42").remove();

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 384" width="680" height="384" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">The fastn MCP server and the fastn MCP gateway</title>
+<desc id="d">Two MCP addresses for two jobs. Your team, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with that customer's own sign-in.</desc>
+<style>
+:root{--bg:#ffffff;--fg:#17171f;--mut:#5e5e72;--line:#c9c9d6;
+--team:#5b4cf0;--teamc:#efedff;--cust:#0e8f7e;--custc:#e3f6f3;--fastn:#3c3c52;--fastnc:#ececf3}
+@media (prefers-color-scheme:dark){:root{--bg:#121218;--fg:#ececf2;--mut:#9d9db0;--line:#3a3a48;
+--team:#9a8fff;--teamc:#26224a;--cust:#45d1bd;--custc:#12312d;--fastn:#c7c7d8;--fastnc:#24242f}}
+.bg{fill:var(--bg)}
+.h{fill:var(--fg);font-size:14px;font-weight:600}
+.s{fill:var(--mut);font-size:12px}
+.l{fill:var(--fg);font-size:12px}
+.team{fill:var(--teamc);stroke:var(--team);stroke-width:1}
+.cust{fill:var(--custc);stroke:var(--cust);stroke-width:1}
+.fastn{fill:var(--fastnc);stroke:var(--fastn);stroke-width:1}
+.frame{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.life{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.arr{stroke:var(--mut);stroke-width:1.4;fill:none}
+.ah{fill:var(--mut)}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="bg" width="680" height="384" rx="12"/>
+<g text-anchor="middle" dominant-baseline="central">
+<text class="h" x="180" y="40">Build integrations</text>
+<text class="h" x="500" y="40">Use integrations from AI agents</text>
+<rect class="frame" x="30" y="60" width="300" height="300" rx="12"/>
+<rect class="frame" x="350" y="60" width="300" height="300" rx="12"/>
+<rect class="team" x="45" y="80" width="130" height="56" rx="8"/>
+<text class="h" x="110.0" y="99.0">Your team</text><text class="s" x="110.0" y="118.0">Claude, Cursor</text>
+<rect class="cust" x="185" y="80" width="130" height="56" rx="8"/>
+<text class="h" x="250.0" y="99.0">Your customer</text><text class="s" x="250.0" y="118.0">If you allow it</text>
+<line class="arr" x1="110" y1="136" x2="110" y2="176" marker-end="url(#a)"/>
+<line class="arr" x1="250" y1="136" x2="250" y2="176" marker-end="url(#a)"/>
+<rect class="fastn" x="45" y="180" width="270" height="56" rx="8"/>
+<text class="h" x="180.0" y="199.0">fastn MCP server</text><text class="s" x="180.0" y="218.0">mcp.fastn.dev/fastn-workspace</text>
+<line class="arr" x1="180" y1="236" x2="180" y2="276" marker-end="url(#a)"/>
+<rect class="team" x="45" y="280" width="270" height="56" rx="8"/>
+<text class="h" x="180.0" y="299.0">Your integrations</text><text class="s" x="180.0" y="318.0">Connectors, workflows, widget</text>
+<rect class="team" x="365" y="80" width="270" height="56" rx="8"/>
+<text class="h" x="500.0" y="99.0">Your AI agent</text><text class="s" x="500.0" y="118.0">Acts for each customer</text>
+<line class="arr" x1="500" y1="136" x2="500" y2="176" marker-end="url(#a)"/>
+<rect class="fastn" x="365" y="180" width="270" height="56" rx="8"/>
+<text class="h" x="500.0" y="199.0">fastn MCP gateway</text><text class="s" x="500.0" y="218.0">fastn Connect</text>
+<line class="arr" x1="500" y1="236" x2="500" y2="276" marker-end="url(#a)"/>
+<rect class="cust" x="365" y="280" width="270" height="56" rx="8"/>
+<text class="h" x="500.0" y="299.0">Each customer's apps</text><text class="s" x="500.0" y="318.0">With their own sign-in</text>
+</g>
+</svg>

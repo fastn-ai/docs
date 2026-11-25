@@ -1,5 +1,17 @@
 ---
 description: "The simplest embed: an HTML iframe tag."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Iframe
@@ -8,7 +20,7 @@ The simplest option: an HTML tag.
 
 ```html
 <iframe
-  src="https://YOUR_FASTN_HOST/api/v1/embed/iframe?token=YOUR_EMBED_TOKEN"
+  src="https://api.fastn.dev/api/v1/embed/iframe?token=YOUR_EMBED_TOKEN"
   style="width:100%; height:600px; border:none"
   allow="clipboard-write"
   referrerpolicy="strict-origin-when-cross-origin"

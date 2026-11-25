@@ -1,5 +1,17 @@
 ---
 description: Which Postgres your workflows read and write through.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Database
@@ -25,25 +37,25 @@ Username, password and CA chain are not rendered for this role. That is delibera
 
 ### Two options
 
-| | **Shared** (fastn runs it) | **Your own** (You run it) |
+| | **Shared** (fastn runs it) | **Your own** (you run it) |
 | --- | --- | --- |
 | **Backups** | fastn | You |
 | **Capacity** | fastn | You |
 | **Uptime** | fastn | You |
-| **Network setup** | None | Allow our runners |
+| **Network setup** | None | Allow fastn's runners |
 
 **Shared**: fastn runs it, and handles backups, patching, upgrades and capacity. Your organization sits in its own schema, isolated from everyone else.
 
-**Your own**: you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you will need to allow fastn's runners through your network.
+**Your own**: you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you must allow fastn's runners through your network.
 
 ### Reasons to bring your own
 
-Data residency requirements, a compliance regime that will not accept a processor's database, or an existing warehouse you want workflow data to land in directly.
+Data residency requirements, a compliance regime that does not accept a processor's database, or an existing warehouse you want workflow data to land in directly.
 
-If none of those apply, Shared is less work and one fewer thing to page you at 3am.
+If none of those apply, Shared is less work to run.
 
 {% hint style="danger" %}
-Switching changes where **new** reads and writes go. Rows are never copied between the two. If a workflow depends on data written before the switch, it will not find it. Migrate deliberately, or not at all.
+Switching changes where **new** reads and writes go. Rows are never copied between the two. If a workflow depends on data written before the switch, it does not find it. Migrate deliberately, or not at all.
 {% endhint %}
 
 ### What the isolation actually is
@@ -58,7 +70,7 @@ Shown to Owners and Admins only. The **Customer overrides** card lists every cus
 
 **Add override** points a single customer somewhere else. An override replaces the whole connection, not part of it. **Remove override** returns that customer to the organization default as runner pools recycle; rows already written to the override database stay there.
 
-### Using it from a workflow
+### Use it from a workflow
 
 ```javascript
 await fastn.db.query(`

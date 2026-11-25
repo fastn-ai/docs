@@ -764,7 +764,7 @@ Operation: `rollApiKey`
 GET /v1/me
 ```
 
-Who you are talking to. Answers from the gateway's resolved context, so it works for every credential a caller can arrive with, a dashboard JWT, an API key, an embed (widget) token and a share link alike; Call it before your first substantive reply and adapt to the answer, including `signupProfile` for how to word replies to this person and what they first came to build. Two independent axes, and do not collapse them: `actor` is WHICH CREDENTIAL, `actingAsTenant` is WHOSE WORKSPACE. `actingAsTenant: true` means the credential was minted for a customer of a parent org, `org` is that customer's own workspace and `parentOrg` is the partner whose product they are using, so speak in business terms about their own connections and not about building the platform. Their provider's integrations are theirs to use, and to customise by forking a copy into their own workspace (forkIntegration) - never in place. It is true for a partner's customer in an embedded widget AND for a customer-scoped API key, so it does not on its own mean a human is present; read `actor` for that. `actingAsTenant: false` means the caller is acting as the org itself, which for `actor: user` is the partner's own staff in the dashboard, with `role` naming the persona. `permissions` reports three layers rather than one merged list, because enforcement is a layered predicate and a merged copy would drift from it: `role` is the enforced baseline for the persona, `structured` narrows it when present (an action needs both; it is reported already intersected with the role, so it is the effective set), and `apiKeyGrant` is a ceiling over both and never widens them. Retired-resource entries may appear in `role` and govern nothing. Every tool call you make executes under this identity, so a 403 means this persona lacks the permission rather than a fault worth retrying. One limitation.
+Who you are talking to. Answers from the gateway's resolved context, so it works for every credential a caller can arrive with, a dashboard JWT, an API key, an embed (widget) token and a share link alike; Call it before your first substantive reply and adapt to the answer, including `signupProfile` for how to word replies to this person and what they first came to build, `memories` for what earlier sessions learned about them, and `product` for what the partner confirmed about their own product in setup: use it as fact, do not ask for it or research the product again, and build on its picked apps and widget. Two independent axes, and do not collapse them: `actor` is WHICH CREDENTIAL, `actingAsTenant` is WHOSE WORKSPACE. `actingAsTenant: true` means the credential was minted for a customer of a parent org, `org` is that customer's own workspace and `parentOrg` is the partner whose product they are using, so speak in business terms about their own connections and not about building the platform. Their provider's integrations are theirs to use, and to customise by forking a copy into their own workspace (forkIntegration) - never in place. It is true for a partner's customer in an embedded widget AND for a customer-scoped API key, so it does not on its own mean a human is present; read `actor` for that. `actingAsTenant: false` means the caller is acting as the org itself, which for `actor: user` is the partner's own staff in the dashboard, with `role` naming the persona. `permissions` reports three layers rather than one merged list, because enforcement is a layered predicate and a merged copy would drift from it: `role` is the enforced baseline for the persona, `structured` narrows it when present (an action needs both; it is reported already intersected with the role, so it is the effective set), and `apiKeyGrant` is a ceiling over both and never widens them. Retired-resource entries may appear in `role` and govern nothing. Every tool call you make executes under this identity, so a 403 means this persona lacks the permission rather than a fault worth retrying. One limitation.
 
 Operation: `whoami`
 
@@ -810,10 +810,34 @@ Operation: `whoami`
 | `data.plan.id` | `string` | launch, scale, growth or enterprise (free reads as launch) |
 | `data.plan.limits` | `object` |  |
 | `data.plan.limits.connectorsPerWidget` | `integer` | Most distinct connectors one widget may list: null = unlimited. A write past it is refused with 403 quota_exceeded, dimension connectors_per_widget. |
+| `data.plan.limits.scheduleMinIntervalMinutes` | `number` | Shortest gap, in minutes, between two runs of one schedule: 60 on Launch, 5 on Growth and Scale, at least 15 for a personal workspace; A schedule, or a widget rate/cron preset or default schedule, that runs more often is refused with 400 SCHEDULE_TOO_FREQUENT. |
 | `data.signupProfile` | `object` | What the person said at signup. Null for an API key, embed token or share link, and for anyone who skipped the questions. Read `hint` before using it: `jobRole` sets how technical your wording is, `useCase` is what they first came to build and may already be built, so check their existing workflows before offering it |
 | `data.signupProfile.jobRole` | `string` | One of: `engineering_lead`, `product_manager`, `solutions_architect`, `cto_vp_engineering`, `developer`, `devops_sre`, `founder`, `other`. |
 | `data.signupProfile.useCase` | `string` | Their signup use case, in their words or as a category |
 | `data.signupProfile.hint` | `string` | How to use these answers |
+| `data.memories` | `object` | The index of durable facts saved about this person, shared with the fastn dashboard agent: titles only, never content. Null for an API key, embed token or share link. Read `hint` before using it |
+| `data.memories.items` | `object[]` |  |
+| `data.memories.items[].slug` | `string` |  |
+| `data.memories.items[].title` | `string` | The memory’s first line: the fact as a sentence |
+| `data.memories.items[].updatedAt` | `string` |  |
+| `data.memories.hint` | `string` | How to use and maintain these memories |
+| `data.product` | `object` | What the partner confirmed about their own product in setup (setupJourney.product once step 1 is confirmed): their word on it, to use as fact. Null for a customer session, before step 1 is confirmed, or with no product. getSetupJourney has the full record. Read `hint` before using it |
+| `data.product.name` | `string` |  |
+| `data.product.domain` | `string` |  |
+| `data.product.description` | `string` |  |
+| `data.product.objects` | `string[]` | The objects its customers sync |
+| `data.product.apiDocsUrl` | `string` |  |
+| `data.product.openApiFile` | `string` | Name of an uploaded OpenAPI file, when given instead of a docs link |
+| `data.product.noApi` | `boolean` | The partner said the product has no public API |
+| `data.product.webhooks` | `string[]` | Webhook events the product sends |
+| `data.product.offers` | `string[]` | Integrations the product already offers |
+| `data.product.customerApps` | `string[]` | Apps the product's customers use |
+| `data.product.customers` | `string` |  |
+| `data.product.competitors` | `string[]` |  |
+| `data.product.useCase` | `string` | What they want to build |
+| `data.product.pickedApps` | `string[]` | Apps picked for their widget in setup |
+| `data.product.widgetId` | `string` |  |
+| `data.product.hint` | `string` | How to use this |
 | `data.apiKey` | `object` |  |
 | `data.apiKey.mode` | `string` |  |
 | `data.apiKey.environment` | `string` |  |
@@ -949,9 +973,85 @@ Operation: `inviteUser`
 
 **Responses**
 
-* `200`: The address already had an account, so it was granted membership rather than created. Same shape as the 201.  `emailSent` is the one field a caller must not skip: the invite and the notification are separate steps, and the membership is committed before the mail is attempted, so `emailSent: false` means this person HAS access and has not been told. It is reported, never assumed, it reflects what the mail provider said it did with the message, not merely that some upstream request was accepted. It is false too when the sign-in link could not be built into something the identity provider will honour, in which case nothing was sent rather than something unusable. When it is false, `emailNote` carries a sentence to show the admin, and the right UI is to keep them on the screen and tell them to follow up rather than to render success.
+* `200`: The address already had an account, so it was invited rather than created. The membership is written with `status: "invited"` and grants nothing until that person accepts it (POST /api/v1/users/me/invitations/{id}/accept); `inviteStatus` is `pending`. The exception is a person whose own join request was pending: the invite approves it, and `status` is `active`. Same shape as the 201.  `emailSent` is the one field a caller must not skip: the invite and the notification are separate steps, and the membership is committed before the mail is attempted, so `emailSent: false` means this person HAS access and has not been told. It is reported, never assumed, it reflects what the mail provider said it did with the message, not merely that some upstream request was accepted. It is false too when the sign-in link could not be built into something the identity provider will honour, in which case nothing was sent rather than something unusable. When it is false, `emailNote` carries a sentence to show the admin, and the right UI is to keep them on the screen and tell them to follow up rather than to render success.
 * `201`: User invited. Carries `inviteStatus`: `pending` for a brand-new account, and for an address that already had one whatever its real state is, `accepted` when that person has already verified, so a caller must not assume an invite response means somebody has to act. Whether this person still has an invite outstanding. somebody part-way through a two-factor or passkey setup, or carrying a forced password change, is `accepted`, they already have access. Consequence worth planning for: `emailVerified: false` can appear beside `inviteStatus: "accepted"`, because accounts created outside the invite paths hold full access without a verified address. Do not treat this field as an email-verification signal. Also carries `emailSent`, and a caller that reports "invited" without reading it will tell an admin something untrue. See the 200 response for what it means.
 * `400`: Validation error, includes an expires_at that is not ISO-8601 or is in the past
+
+### List my invitations
+
+```http
+GET /v1/users/me/invitations
+```
+
+The caller's unanswered invitations: the same list GET /api/v1/users/me/memberships returns as `invitations`. Reachable even when every membership the caller holds has expired, so a lapsed member can still see and answer an invitation into another org.
+
+Operation: `listMyInvitations`
+
+**Responses**
+
+* `200`: Invitations
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object[]` |  |
+| `data[].id` | `string` |  |
+| `data[].orgId` | `string` |  |
+| `data[].orgName` | `string` |  |
+| `data[].orgSlug` | `string` |  |
+| `data[].orgType` | `string` |  |
+| `data[].orgDomain` | `string` |  |
+| `data[].parentOrgId` | `string` | NULL for a partner-level org, set for a customer workspace. |
+| `data[].role` | `string` |  |
+| `data[].isDefault` | `boolean` |  |
+| `data[].status` | `string` | One of: `active`, `pending`. |
+| `data[].createdAt` | `string` |  |
+
+### Accept an invitation
+
+```http
+POST /v1/users/me/invitations/{id}/accept
+```
+
+Turns one of the caller's own invitations (the `invitations` of GET /api/v1/users/me/memberships) into an active membership. It becomes the default when the caller holds no other default.
+
+Operation: `acceptInvitation`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes | Membership id, from `invitations` |
+
+**Responses**
+
+* `200`: Accepted; the membership is active
+* `403`: Called by a machine or widget identity
+* `404`: No open invitation with that id for the caller
+* `409`: Answered or withdrawn meanwhile, or its access end date has passed
+
+### Decline an invitation
+
+```http
+POST /v1/users/me/invitations/{id}/decline
+```
+
+Deletes one of the caller's own invitations.
+
+Operation: `declineInvitation`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `id` | path | string | Yes | Membership id, from `invitations` |
+
+**Responses**
+
+* `200`: Declined; the invitation is gone
+* `403`: Called by a machine or widget identity
+* `404`: No open invitation with that id for the caller
 
 ### List current user's account memberships
 
@@ -995,6 +1095,18 @@ Operation: `getMyMemberships`
 | `pending[].isDefault` | `boolean` |  |
 | `pending[].status` | `string` | One of: `active`, `pending`. |
 | `pending[].createdAt` | `string` |  |
+| `invitations` | `object[]` | Invitations to an org that this user has not answered. They grant nothing until accepted (POST /api/v1/users/me/invitations/{id}/accept). Each carries `invitedBy`, the inviter's name or email, or null. |
+| `invitations[].id` | `string` |  |
+| `invitations[].orgId` | `string` |  |
+| `invitations[].orgName` | `string` |  |
+| `invitations[].orgSlug` | `string` |  |
+| `invitations[].orgType` | `string` |  |
+| `invitations[].orgDomain` | `string` |  |
+| `invitations[].parentOrgId` | `string` | NULL for a partner-level org, set for a customer workspace. |
+| `invitations[].role` | `string` |  |
+| `invitations[].isDefault` | `boolean` |  |
+| `invitations[].status` | `string` | One of: `active`, `pending`. |
+| `invitations[].createdAt` | `string` |  |
 | `activeOrgId` | `string` | The org the gateway resolves this caller's requests to, from the token's org_id claim falling back to the user's default membership. Null only when the user has no active membership (mid-signup). Clients must act as this org rather than picking one out of `data`. |
 
 ### Get the caller's UI preferences
@@ -1139,7 +1251,7 @@ Operation: `removeUser`
 
 **Responses**
 
-* `200`: User removed
+* `200`: User removed. For someone who was only invited, the invitation is withdrawn instead (`invitationWithdrawn: true`).
 
 ### List a user's memberships
 

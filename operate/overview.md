@@ -2,6 +2,18 @@
 description: >-
   Keep every customer's integrations working: what needs attention, who is
   connected, and every run, in one place.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Operate
@@ -10,16 +22,16 @@ description: >-
 
 ## What does it do?
 
-Operate shows how every customer's integrations are doing once they are live. **Health** lists what needs a person today, with the action that fixes it. **Customers** and **Connections** show who is connected to what. **Activity** holds every event and run, down to the individual call. fastn retries, renews tokens and handles rate limits on its own, and its maintainer agent proposes fixes when a vendor changes an API.
+Operate shows how every customer's integrations are doing once they are live. **Health** lists what needs a person today, with the action that fixes it. **Customers** and **Connections** show who is connected to what. **Logs** holds every event and run, down to the individual call. fastn retries, renews tokens and handles rate limits on its own, and its maintainer agent proposes fixes when a vendor changes an API.
 
 ## Who is it for?
 
 | Role | What they use Operate for |
 | --- | --- |
-| **Support and customer success** | See which customers need attention before they open a ticket |
+| **Support and customer success** | See which customers have failing runs or expired connections |
 | **On-call engineer** | Find the failed run, read why it failed, and replay it |
 | **Integration engineer** | Accept the fix when a vendor changes an API |
-| **Account owner** | Keep an eye on totals and trends across every customer |
+| **Account owner** | Track totals and trends across every customer |
 
 ## How do I use it?
 
@@ -27,7 +39,7 @@ Operate shows how every customer's integrations are doing once they are live. **
 {% tab title="Dashboard" %}
 Start each day on **Operate → Health**. If **Needs attention** is empty, everything is working. Otherwise each row carries its fix: review a proposed update, ask a customer to reconnect, or open the failed runs.
 
-[Health](health.md) · [Alerts](alerts.md) · [Activity](README.md)
+[Health](health.md) · [Alerts](alerts.md) · [Logs](README.md)
 {% endtab %}
 
 {% tab title="Your AI tool" %}
@@ -53,7 +65,7 @@ With fastn connected to your AI tool, ask about runs and failures in plain words
 | [Health](health.md) | See what needs attention, totals and trends, pending vendor fixes and alerts |
 | [Customers](customers.md) | Find a customer and everything they have connected |
 | [Connections](../build/connections/README.md) | Check each signed-in account and its status |
-| [Activity](README.md) | Read every event, execution and sync report |
+| [Logs](README.md) | Read every event, execution and sync report |
 | [Troubleshooting](troubleshooting.md) | Match a symptom to its cause and fix |
 
 ## Questions?

@@ -1,10 +1,22 @@
 ---
 description: Every workflow run, newest first.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Executions
 
-**Operate → Activity → Executions**
+**Operate → Logs → Executions** · `/activity/executions`
 
 The workspace-wide run history. Each workflow also has its own Executions tab in the editor.
 
@@ -20,6 +32,8 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 | **When**         | Timestamp, in your timezone.                                    |
 | **Actions**      | **Replay** re-runs a finished execution. A pending, queued or running one shows **Stop** instead. |
 
+<figure><img src="../.gitbook/assets/screens/logs-executions.webp" alt="Operate, Logs, Executions: Runs and Logs views, All time and Refresh, a search box with Enable payload searching, status chips All, Pending, Queued, Running, Completed, Failed, Timed out and Canceled, an All workflows filter, and the note that test runs from a workflow's own Execute button are not recorded here"><figcaption>Every workflow run, newest first. Test runs started from the editor are not listed.</figcaption></figure>
+
 **Rows per page** is 10, 20 or 50.
 
 ### Filters
@@ -27,7 +41,7 @@ The workspace-wide run history. Each workflow also has its own Executions tab in
 | Filter          | Values                                                                            |
 | --------------- | ----------------------------------------------------------------------------------- |
 | Date range      | **All time** (default), Last 15m, 1h, 6h, 24h, 7d, 30d, or **Custom range**        |
-| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timed out, Cancelled         |
+| Status          | **All**, Pending, Queued, Running, Completed, Failed, Timed out, Canceled          |
 | Workflow        | One workflow, or all                                                               |
 
 Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch, and **Enable payload searching**, a toggle that extends the search into run payloads so you can find an id that came inside the event itself.
@@ -40,9 +54,10 @@ Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch
 | **Completed** | Finished successfully.                                             |
 | **Failed**    | Raised an error.                                                   |
 | **Timed out** | Exceeded its execution timeout.                                    |
-| **Cancelled** | Stopped before finishing.                                          |
+| **Canceled**  | Stopped before finishing.                                          |
+| **Skipped**   | The workflow ended the run through `fastn.skip(reason)`, so it did nothing. |
 
-### Opening a run
+### Run details
 
 This is where debugging actually happens. A row expands **inline** (you do not leave the page), into:
 
@@ -60,10 +75,10 @@ The Summary JSON carries the keys worth knowing by name:
 | `peakSandboxMB`, `sandboxMemoryLimitMB`      | How close the run came to its memory ceiling.               |
 
 {% hint style="warning" %}
-Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run will not quietly recover the way a transient failure does. It just stops.
+Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run does not recover the way a transient failure does. It stops.
 {% endhint %}
 
-### Reading the statuses
+### What each status means
 
 **Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row and open the **Error** tab (**AI Diagnosis** and **Error Details**), then check [Traces](traces.md) (by URL, `/activity/traces`) for the external call behind it.
 
@@ -71,7 +86,7 @@ Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed witho
 
 **Queued** for an extended period means the run has been accepted but has not yet reached a runner.
 
-**Cancelled** means the run stopped before finishing.
+**Canceled** means the run stopped before finishing.
 
 ### The per-workflow tab
 

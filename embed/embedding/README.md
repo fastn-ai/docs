@@ -1,14 +1,28 @@
 ---
-description: Embed the widget with an iframe or the SDK, use a shareable link when you cannot embed, and pass tokens safely.
+description: Three ways to put the widget in your product, and how to hand it a token safely.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Embedding the widget
+# Embed in your product
 
 **Embed → Widget → Embed**
 
 ## Pick the customer first
 
 The widget is always scoped to **one** of your customers, so the dropdown labeled **User** (the customer) at the top is not a preview toggle. It decides who the generated snippet is for.
+
+<figure><img src="../../.gitbook/assets/screens/widget-embed-tab.webp" alt="The widget builder's Embed tab: a note that customers see fastn.ai on the OAuth consent screen unless you set up your own OAuth app, then Iframe, SDK and A2A (soon) options and a card reading No customers yet, this is a template, with Create a customer"><figcaption><strong>Embed → Widget → Embed</strong> before any customer exists: the snippet uses placeholders until you pick one.</figcaption></figure>
 
 The dropdown lists the customers on your account by name. Selecting one does two things at once:
 
@@ -39,12 +53,13 @@ Instead of a snippet, send a link. Shareable links live on the **Iframe** sub-ta
 A shareable link carries no short-lived token, but the reference in it works like a password: anyone who has the link can act as that customer until it expires or you revoke it. Treat the link itself as a secret.
 {% endhint %}
 
-#### Creating one
+### Create a shareable link
 
 1. Go to **Embed → Widget → Embed**, stay on the **Iframe** sub-tab, and pick the customer in the **User** dropdown. **Create link** stays disabled until you do - with nobody selected the card reads *Pick a customer above first.*
 2. In the **Shareable links** card, set **New links** to the expiry you want: **Never expire** (the default), **Expire in 1 day**, **Expire in 7 days** or **Expire in 30 days**.
 3. Select **Create link**.
-4. The new row appears badged **New**.
+
+   The new row appears in the list, badged **New**.
 
 Each row identifies itself by the last few characters of its id rather than printing the credential as a headline, and carries its own state:
 
@@ -55,7 +70,7 @@ Each row identifies itself by the last few characters of its id rather than prin
 | **Revoked** | You revoked it. It will not load. |
 | **Expired** | It passed its expiry. It will not load. |
 
-**Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. **Revoke** is immediate, and a revoked or expired link offers neither - handing one over is only a way to give someone something that will not load.
+**Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. A revoked or expired link offers neither, because it no longer loads.
 
 A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorize on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
 

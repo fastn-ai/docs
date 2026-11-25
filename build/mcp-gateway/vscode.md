@@ -1,5 +1,17 @@
 ---
 description: Add fastn to VS Code in one click and use it from GitHub Copilot's agent mode.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # VS Code
@@ -16,7 +28,7 @@ VS Code runs fastn as an MCP server for GitHub Copilot's **Agent** mode. Add it 
 {% step %}
 #### Click Install in VS Code
 
-In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP → MCP server**), pick the **VS Code** tile and click **Install in VS Code**. When your browser asks to open Visual Studio Code, allow it.
+In fastn, click **Connect your AI tool** in the top bar (or open **Embed → MCP server**), pick the **VS Code** tile and click **Install in VS Code**. When your browser asks to open Visual Studio Code, allow it.
 
 <figure><img src="../../.gitbook/assets/mcp-fastn-tab-vscode.webp" alt="fastn's MCP server page with the VS Code tile selected, showing an Install in VS Code button, a note that VS Code keys this object servers not mcpServers, a code --add-mcp command and a .vscode/mcp.json snippet"><figcaption>The VS Code tile also has a command and a file, if you prefer those.</figcaption></figure>
 {% endstep %}
@@ -32,7 +44,7 @@ VS Code opens an **MCP Server: fastn** page with the URL `https://mcp.fastn.dev/
 {% step %}
 #### Start it and sign in
 
-Installing does not start the server. Press **Cmd+Shift+P** (**Ctrl+Shift+P** on Windows and Linux), run **MCP: List Servers**, pick **fastn** and choose **Start Server**.
+Installing does not start the server. Press **Cmd+Shift+P** (**Ctrl+Shift+P** on Windows and Linux), run **MCP: List Servers**, pick **fastn**, and choose **Start Server**.
 
 The first time, VS Code asks to let fastn authenticate. Click **Allow**. fastn opens in your browser: sign in and, if you belong to more than one fastn org, pick the workspace VS Code works in and click **Connect**.
 
@@ -55,7 +67,7 @@ If you signed in to fastn from VS Code before, the server starts without asking.
 
 <figure><img src="../../.gitbook/assets/mcp-vscode-agent-answer.webp" alt="Copilot's chat in VS Code answering the question Who am I in fastn after completing 6 steps, naming the signed-in user, their role and the fastn organization it is acting in"><figcaption>Copilot answers with the fastn org you picked when signing in.</figcaption></figure>
 
-From here Copilot works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Copilot works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Add it by hand
 

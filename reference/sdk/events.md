@@ -1,5 +1,5 @@
 ---
-description: "Receive signed events about connections, setup links and app changes, verify them with parseEvent, and manage deliveries."
+description: "Receive signed events about connections, setup links, and app changes, verify them with parseEvent, and manage deliveries."
 ---
 
 # Events
@@ -26,11 +26,11 @@ const secret = hook.secret;    // whsec_…: shown once, store it now
 | Field | Required | Meaning |
 | ----- | -------- | ------- |
 | `url` | Yes | Your https endpoint. An `http` URL is refused with `400 VALIDATION_ERROR`; a private or internal address is refused with `400 EVENT_SUBSCRIPTION_URL_NOT_ALLOWED`. |
-| `eventTypes` | No | Which events to send (table below). Leave it out for every connection and setup link event. `connector.event`, `unified.event` and `workflow.event` are sent only when you list them. |
-| `connectors` | No | `connector.event` only: just events from these apps (slug or connector id), for example `["hubspot"]`. |
-| `providerEvents` | No | `connector.event` only: just these app event names, for example `["contact.creation"]`. |
-| `entities` | No | `unified.event` only: just these entities, as `category/entity`, for example `["crm/contact"]`. |
-| `workflowEvents` | No | `workflow.event` only: just these event names (the names your workflows pass to `fastn.events.emit`). Empty means every name. |
+| `eventTypes` | No | Which events to send (table below). Leave it out for every connection and setup link event. `connector.event`, `unified.event`, and `workflow.event` are sent only when you list them. |
+| `connectors` | No | For `connector.event`: send only events from these apps (slug or connector id), for example `["hubspot"]`. |
+| `providerEvents` | No | For `connector.event`: send only these app event names, for example `["contact.creation"]`. |
+| `entities` | No | For `unified.event`: send only these entities, as `category/entity`, for example `["crm/contact"]`. |
+| `workflowEvents` | No | For `workflow.event`: send only these event names (the names your workflows pass to `fastn.events.emit`). Empty means every name. |
 | `description` | No | Your label. |
 | `enabled` | No | Default `true`. |
 
@@ -48,7 +48,7 @@ Answer: the subscription itself, `{ id, url, orgId, eventTypes, connectors, conn
 | `setup_link.completed` | The customer finished a setup link. | `setupLinkId`, `installationId`, `connections` (app slug → `connectionId`), `metadata` |
 | `setup_link.expired` | A setup link expired unused. | `setupLinkId`, `metadata` |
 | `connector.event` | A change in a customer's app, for example a new HubSpot contact. Needs an [app event trigger](#app-events-watch-a-customers-app). | `app`, `connector`, `connectionId`, `event` (the app's event name), `accountId`, `triggerId`, `payload` (the app's own body) |
-| `unified.event` | The same app change, as a unified record. Needs an [app event trigger](#app-events-watch-a-customers-app). | `app`, `connector`, `connectionId`, `category`, `entity`, `action` (`created`, `updated` or `deleted`), `remoteId` (the record id in the app), `providerEvent`, `triggerId`, and `record` (the unified record `{ id, provider, data }`) or `recordError` (why it could not be read) |
+| `unified.event` | The same app change, as a unified record. Needs an [app event trigger](#app-events-watch-a-customers-app). | `app`, `connector`, `connectionId`, `category`, `entity`, `action` (`created`, `updated`, or `deleted`), `remoteId` (the record id in the app), `providerEvent`, `triggerId`, and `record` (the unified record `{ id, provider, data }`) or `recordError` (why it could not be read) |
 | `workflow.event` | A workflow sent an event with `fastn.events.emit`. Opt in: sent only when you list it, filtered by `workflowEvents`. | `event` (the name the workflow gave it), `workflowId`, `executionId`, `payload` (the data the workflow sent), and when set `app`, `connector`, `installationId` |
 | `endpoint.test` | You sent a test with `testEventSubscription`. | None |
 
@@ -156,7 +156,7 @@ fastn retries a delivery with growing gaps for 24 hours, until your endpoint ans
 | Do this | SDK | Answer |
 | ------- | --- | ------ |
 | Send a test event | `fastn.webhooks.test(id)` | `{ eventId, status: "queued" }`. Sends one `endpoint.test` event. |
-| See deliveries | `fastn.webhooks.deliveries(id, { limit? })` | `[ { id, eventId, type, status, attempts, lastStatus, lastError, nextAttemptAt, createdAt, deliveredAt } ]`, newest first. `limit` defaults to 50, at most 200. `status` is `pending`, `delivered` or `dead`; the API does not filter on it, so filter the list yourself. |
+| See deliveries | `fastn.webhooks.deliveries(id, { limit? })` | `[ { id, eventId, type, status, attempts, lastStatus, lastError, nextAttemptAt, createdAt, deliveredAt } ]`, newest first. `limit` defaults to 50, at most 200. `status` is `pending`, `delivered`, or `dead`; the API does not filter on it, so filter the list yourself. |
 | Send one again | `fastn.webhooks.replay(deliveryId)` | `{ id, status: "pending" }`. Sends the delivery again with the same event id, on a fresh retry schedule (attempts start again at 0). Works for `dead` deliveries too. |
 | Pause or change | `fastn.webhooks.update(id, { url?, eventTypes?, connectors?, providerEvents?, entities?, description?, enabled? })` | The updated subscription. With `enabled: false`, deliveries are held and checked again every 5 minutes; a delivery still held 24 hours after it was created is marked `dead`. Enable the webhook again within 24 hours, or replay the dead deliveries. |
 | Read | `fastn.webhooks.get(id)` / `fastn.webhooks.list()` | The subscription(s), without the secret. |

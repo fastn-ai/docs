@@ -2,6 +2,18 @@
 description: >-
   A single dense page for LLMs and coding agents: the model, the runtime surface,
   the endpoints, and the things that are easy to get wrong.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # fastn for AI agents
@@ -14,14 +26,14 @@ If you are an agent writing fastn workflows or calling the fastn API, read this 
 
 ## The model in six lines
 
-1. An **organization** is you, the SaaS company. It holds everything below.
-2. A **connector** defines an external system: its actions, auth methods and versions.
+1. An **organization** is you, the company whose product embeds fastn. It holds everything below.
+2. A **connector** defines an external app: its actions, auth methods, and versions.
 3. A **connection** is *one of your customers'* authorized link to one connector, holding the encrypted credential.
 4. A **workflow** is JavaScript that runs on a trigger. It is code, not a drag-and-drop graph.
 5. A **trigger** starts a workflow: webhook, schedule, or app event.
 6. A **widget** is the embedded UI your customers use, inside your product.
 
-fastn is multi-tenant throughout. One workflow serves every customer; headers on the request decide which customer a run acts for.
+One workflow serves every customer: headers on the request decide which customer a run acts for.
 
 ---
 
@@ -48,7 +60,7 @@ export default async function (ctx) {
 {% endhint %}
 
 {% hint style="danger" %}
-**Code editing may be switched off for your organization.** It is off unless fastn turns it on. Where it is off, the editor has no code column, and workflows are written and updated by the fastn agent from a natural-language description. Handing a user a code block to paste into the editor will not work there. Describe the change to the agent instead, or tell the user to ask fastn to enable code editing. The runtime surface documented below is identical either way, so this page is still the right reference for *what* the generated code can do.
+**Code editing may be switched off for your organization.** It is off unless fastn turns it on. Where it is off, the editor has no code column, and workflows are written and updated by the fastn agent from a natural-language description. Handing a user a code block to paste into the editor does not work there. Describe the change to the agent instead, or tell the user to ask fastn to enable code editing. The runtime surface documented below is identical either way, so this page is still the right reference for *what* the generated code can do.
 {% endhint %}
 
 ### `ctx`
@@ -62,7 +74,7 @@ export default async function (ctx) {
 
 | Call | Purpose |
 | ---- | ------- |
-| `fastn.connectors.<slug>.<action>(args)` | Call an action on a connected system. `fastn.connector.<slug>.<action>(args)` (singular) also works. See the caveat below. |
+| `fastn.connectors.<slug>.<action>(args)` | Call an action on a connected app. `fastn.connector.<slug>.<action>(args)` (singular) also works. See the caveat below. |
 | `fastn.unified.…` | Call a unified entity and let fastn route to whichever provider the customer connected. |
 | `fastn.db.query(sql, params)` | SQL against your workspace's Postgres schema (`ws_<hash>`). **Verify** signature. |
 | `fastn.state.get(key)` / `fastn.state.set(key, value)` | Durable key-value across runs. Scopes: `ORG`, `INVOCATION`. |
@@ -78,7 +90,7 @@ export default async function (ctx) {
 | **Standard** | `202` + execution id | 15 minutes |
 | **Long** | `202` + execution id | 36 hours (the maximum the dashboard allows) |
 
-Instant is the default. Anything calling two or three systems in sequence belongs on Standard.
+Instant is the default. Anything calling two or three apps in sequence belongs on Standard.
 
 ---
 
@@ -168,7 +180,7 @@ Polling depends on the tier:
 | ---- | ----------------- | ------------ |
 | **Webhook** | An HTTP request arrives at a public URL | Auth (API key in `X-API-Key`, `Authorization: Bearer` or `x-fastn-access-key`, or public), routes, execution mode (Parallel/Sequential), deduplication key |
 | **Schedule** | A time is reached | Cron/interval, plus a **Payload** JSON that becomes `ctx.input` |
-| **App event** | Something changes in a connected system | Connector, connection, event, routes |
+| **App event** | Something changes in a connected app | Connector, connection, event, routes |
 
 ---
 
@@ -176,20 +188,20 @@ Polling depends on the tier:
 
 Do not conflate these.
 
-| | Docs MCP | Product MCP gateway |
+| | Docs MCP | fastn MCP server |
 | --- | --- | --- |
 | **URL** | `<docs-site>/~gitbook/mcp` | `https://mcp.fastn.dev/fastn-workspace` |
 | **Exposes** | This documentation, as searchable tools | Your fastn workflows and the fastn platform tools (connector actions run through platform tools such as `executeAction`) |
 | **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to fastn to sign in, and to pick a workspace if you belong to more than one org |
-| **Use for** | Answering questions about fastn | Acting on real customer systems |
+| **Use for** | Answering questions about fastn | Building and managing integrations in your workspace |
 
-Claude Code, against the product gateway:
+Claude Code, against the fastn MCP server:
 
 ```
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 ```
 
-A gateway client acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [MCP gateway](../build/mcp-gateway/README.md).
+A client of the fastn MCP server acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [fastn MCP server](../build/mcp-gateway/README.md). Not to be confused with fastn Connect, the MCP gateway that gives AI agents each customer's connected apps as governed tools.
 
 ---
 
@@ -197,12 +209,12 @@ A gateway client acts as you, in the workspace you picked when signing in, with 
 
 Read this section before generating code.
 
-* **`fastn.connector` vs `fastn.connectors`.** Both work. On save, fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
+* **`fastn.connector` vs `fastn.connectors`.** Both work, at save time and at run time. On save, fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
 * **`fastn.state` `ORG` keys are shared by every workflow in the org.** `INVOCATION` keys live for one execution. Namespace `ORG` keys by workflow (`myworkflow:deal:123`) so two workflows do not overwrite each other.
 * **Don't rely on `fastn.db` to separate customers.** Which schema a query runs in depends on your organization's database setup. If a table holds data for several customers, add a customer column and filter on it in every query.
 * **Always parameterize SQL.** Interpolating `ctx.input` into a query string is an injection.
 * **Publishing is not optional.** Code that is saved but not published does not run over the API.
-* **Instant's 25-second ceiling is hard**, and finding out by timing out in production is expensive.
+* **Instant's 25-second ceiling is hard.** Put anything that calls two or three apps in sequence on Standard.
 * **Embed refresh caps at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops. Listen for it and mint a fresh token.
 * **Connector credentials are not secrets.** They live on connections and are managed by fastn, including OAuth refresh. `fastn.secrets` is for third-party tokens and keys you hold yourself.
 * **Settings is role-scoped.** What a user can see under Settings depends on their role, so do not assume a screen exists for the current user.
@@ -211,14 +223,14 @@ Read this section before generating code.
 
 ## Authoritative surfaces
 
-Generated from the deployment you are actually calling, and therefore more trustworthy than any document. This one included:
+These surfaces are generated from the deployment you call, so they are more reliable than any document, including this one.
 
 | Surface | Gives you |
 | ------- | --------- |
 | Workflow → **Diagram** tab → **Docs** | Exact runtime call shapes and header value formats for your deployment |
 | Workflow → **Contract** tab | The real input and output shapes |
 | Workflow → **API** tab | A ready-to-run curl with your host, workflow id and contract fields |
-| Workflow → **Connectors** tab | Which connectors and action versions are actually bound, and per-customer vs workspace scope |
+| Workflow → **Connectors** tab | Which connectors and action versions are bound, and whether each is **Per customer** or **Platform-wide** |
 | Connector detail page | The action list, and the **Select all** control that scopes them |
 
 When this page and a generated tab disagree, the tab is right.
@@ -236,4 +248,4 @@ This documentation is published from GitBook, which serves it in agent-friendly 
 | `<any page URL>.md` | That page as raw markdown |
 | `/~gitbook/mcp` | The documentation as an MCP server |
 
-Prefer `llms-full.txt` for a single bulk load, the MCP server for interactive lookup.
+Prefer `llms-full.txt` for a single bulk load and the MCP server for interactive lookup.

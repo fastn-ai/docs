@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Devin Desktop (formerly Windsurf) as a custom MCP server, sign in, and use your fastn tools from Devin.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Devin
@@ -24,7 +36,7 @@ In Devin Desktop, click **Customize** in the sidebar and open the **MCPs** tab. 
 {% step %}
 #### Enter fastn's URL
 
-Enter **Server name** `fastn` and a short description. Under **Connection**, set **Transport type** to **HTTP**, **Server URL** to `https://mcp.fastn.dev/fastn-workspace` and **Authentication** to **OAuth**, then click **Add**.
+Enter **Server name** `fastn` and a short description. Under **Connection**, set **Transport type** to **HTTP**, **Server URL** to `https://mcp.fastn.dev/fastn-workspace`, and **Authentication** to **OAuth**, then click **Add**.
 
 <figure><img src="../../.gitbook/assets/mcp-devin-add-server.webp" alt="Devin Desktop's New MCP form with Server name fastn, a short description, Transport type HTTP, Server URL https://mcp.fastn.dev/fastn-workspace, Authentication OAuth, an empty Custom headers section, and Cancel and Add buttons"><figcaption>fastn signs you in with OAuth, so no header is needed.</figcaption></figure>
 
@@ -48,7 +60,7 @@ The browser returns to Devin Desktop, which shows *MCP account linked successful
 
 Start a **New session** and ask for the outcome in one sentence. To check the connection first, ask *Who am I in fastn?*
 
-From here Devin works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Devin works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Devin CLI
 
@@ -63,4 +75,4 @@ devin mcp login fastn
 
 * **fastn stays on Needs connection.** Click **Connect MCP** again and finish the sign-in in the browser. If the row doesn't change, switch to another tab under **Customize** and back.
 * **You ran out of free credits.** Devin needs credits to run a session, including one that only calls fastn. This message comes from Devin, not fastn.
-* **Devin works on the wrong org.** Remove fastn under **Customize** → **MCPs**, add it again and pick the workspace when you sign in.
+* **Devin works on the wrong org.** Remove fastn under **Customize** → **MCPs**, add it again, and pick the workspace when you sign in.

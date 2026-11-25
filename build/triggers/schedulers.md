@@ -1,5 +1,17 @@
 ---
 description: A trigger that fires on a clock you set.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Schedule triggers
@@ -33,10 +45,10 @@ Five modes:
 | **Interval** | The default. **Run every** *n* + `minutes` / `hours` / `days`, with a live preview: *Every 5 minutes*. |
 | **Daily**    | **Time**, defaulting to 09:00.                                                                     |
 | **Weekly**   | S - M - T - W - T - F - S toggles, and a time.                                                                 |
-| **Monthly**  | **Day of month**, 1-31 (one day, not several) and a time.                                        |
+| **Monthly**  | **Day of month**, 1-31 (one day, not several), and a time.                                        |
 | **Custom**   | **Cron expression**, required. *Standard 5-field cron: minute hour day-of-month month day-of-week*  |
 
-**An interval is stored as a rate; every other mode is stored as a cron expression**, and the list's `Schedule` column shows whichever was stored. A trigger built with *Interval, every 5 minutes* displays `Every 5 minutes`; one built with *Daily, 06:00* displays `0 6 * * *`. **Custom** is the escape hatch for schedules the other four cannot express.
+**An interval is stored as a rate; every other mode is stored as a cron expression**, and the list's `Schedule` column shows whichever was stored. A trigger built with *Interval, every 5 minutes* displays `Every 5 minutes`; one built with *Daily, 06:00* displays `0 6 * * *`. **Custom** covers schedules the other four cannot express.
 {% endstep %}
 
 {% step %}
@@ -57,8 +69,8 @@ At least one route is required, and each route needs a **Workflow**. Each route 
 | Field                     | Notes                                                                                          |
 | ------------------------- | ------------------------------------------------------------------------------------------------ |
 | **Scheduler ID**          | Optional. Leave it empty and one is generated.                                                  |
-| **Delay (minutes)**       | Default `0`. Holds the run back by this many minutes after the scheduled moment: useful when an upstream system needs a head start. |
-| **Keep failed deliveries** | Off by default. Tick it to retry failed deliveries and keep them for inspection; it reveals **Max attempts** and **Backoff strategy** (Exponential, Linear or Fixed). Left off, each scheduled run gets one attempt with no delivery retries. |
+| **Delay** (minutes)       | Default `0`. Holds the run back by this many minutes after the scheduled moment: useful when an upstream app needs time to finish first. |
+| **Keep failed deliveries** | Off by default. Tick it to retry failed deliveries and keep them for inspection; it reveals **Max attempts** and **Backoff strategy** (Exponential, Linear, or Fixed). Left off, each scheduled run gets one attempt with no delivery retries. |
 {% endstep %}
 
 {% step %}

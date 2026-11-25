@@ -1,10 +1,24 @@
 ---
 description: Encrypted values your workflows read at runtime.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Secrets
 
 **Settings → Secrets**
+
+<figure><img src="../.gitbook/assets/screens/settings-secrets.webp" alt="Settings, Secrets with none yet: a New secret button and the note that a secret is written once, never shown again, and read in workflows with fastn.secrets.get"><figcaption>Secrets before any is created.</figcaption></figure>
 
 > Encrypted values your workflows read at runtime. Scope a secret to a customer or environment for per-customer overrides.
 
@@ -31,15 +45,15 @@ Once secrets exist, the page is a table:
 
 Each row ends in **Edit** and a delete control. The value itself is never shown in the table: only its metadata.
 
-### Creating one
+### Create a secret
 
-**New secret** opens the **Create Secret** side panel, which has five fields. The panel scrolls: **Environment** sits below **Customer**, past the fold.
+**New secret** opens the **Create Secret** side panel, which has five fields. The panel scrolls: **Environment** sits below **Customer**, so scroll to reach it.
 
 | Field             | Notes                                                                                                         |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |
 | **Name \***       | UPPER\_SNAKE\_CASE. This string is literally the argument to `fastn.secrets.get()`, so `SHOPIFY_API_TOKEN` here is `fastn.secrets.get("SHOPIFY_API_TOKEN")` in code. |
 | **Type**          | **Text** (the default) or **JSON**. The panel states the difference: *"A JSON secret is validated on save and `fastn.secrets.get()` returns it parsed; a text secret returns the exact string."* |
-| **Value \***      | The value itself. Written once; the screen does not show it again afterwards.                                  |
+| **Value \***      | The value itself. Written once; the screen does not show it again afterward.                                  |
 | **Customer**      | Defaults to **All customers (organization-wide)**; the dropdown lists your customers. *"Scope this secret to a specific customer. Leave blank for an organization-wide default that applies to all customers."* |
 | **Environment**   | Defaults to **All environments**; the other choices are **test**, then each of your environments by name. *"Scope this secret to a specific environment. Leave blank for an organization-wide default."* |
 

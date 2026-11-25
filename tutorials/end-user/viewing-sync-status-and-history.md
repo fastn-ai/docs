@@ -2,13 +2,27 @@
 description: >-
   Check what's syncing, view run history, spot errors, and know when to
   contact support.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # View sync status and history
 
 Once your integrations are connected and running, the widget shows you how they're doing: what's running, what succeeded or failed, and what needs attention. The overview lives in **Insights**, which you open from the **⋯** menu in the widget header. Each integration's own run history is in its detail view.
 
-**Prerequisites:** At least one app connected via the widget. See [Connect apps](connecting-apps-via-widget.md).
+### Before you start
+
+* At least one app connected in the widget. See [Connect apps](connecting-apps-via-widget.md).
 
 ***
 
@@ -25,7 +39,7 @@ Panels across the top give you an at-a-glance view:
 | Panel                 | Shows                                                                                                                   |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Runs**              | How many runs happened in the range, with the change against the previous period. When something failed, a **N needs attention** button appears (for example "3 need attention"). |
-| **Records processed** | How many records moved, split into synced, failed and skipped                                                           |
+| **Records processed** | How many records moved, split into synced, failed, and skipped                                                           |
 | **Connection health** | How many of your connections are healthy, and how many need action                                                      |
 | **Busiest workflows** | The workflows that ran the most in the range                                                                            |
 
@@ -35,7 +49,7 @@ Below the panels, a list of your workflows shows each one's recent activity. Its
 
 #### Connections
 
-The **Connections** section shows counts at the top ("N total", "N healthy", "N need action") and a row for each connection with its status: **Active**, **Reauth needed**, **Broken**, **Disconnected** or **Inactive**. **Reauth needed** means the app revoked or expired your sign-in: reconnect that account from the integration's detail view.
+The **Connections** section shows counts at the top ("N total", "N healthy", "N need action") and a row for each connection with its status: **Active**, **Reauth needed**, **Broken**, **Disconnected**, or **Inactive**. **Reauth needed** means the app revoked or expired your sign-in: reconnect that account from the integration's detail view.
 
 #### What needs attention
 
@@ -58,7 +72,7 @@ This is the fastest place to see what's gone wrong and which workflow it affects
 
 Click **Manage** on an integration to open its detail view.
 
-* **Activity** shows the last 7 days for that integration: records, runs and issues, plus its latest runs. Each run reads **ran**, **failed**, **timed out**, **cancelled**, **queued** or **running**. Click **View all runs** for the full list.
+* **Activity** shows the last 7 days for that integration: records, runs, and issues, plus its latest runs. Each run reads **ran**, **failed**, **timed out**, **cancelled**, **queued**, or **running**. Click **View all runs** for the full list.
 * **Workflows** lists the integration's workflows. Each row has a **Run workflow** button, may have an enable or disable toggle, and opens the workflow's details when you click the row. **Remove workflow** appears only on workflows your organization owns.
 
 The workflow details have these tabs:
@@ -66,7 +80,7 @@ The workflow details have these tabs:
 | Tab            | Shows                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | **Diagram**    | A visual graph of the workflow's steps. Shown only if the product turned on the workflow diagram; otherwise the details open on Executions. |
-| **Executions** | Run history for this workflow, one row per run with its status, duration and time                                           |
+| **Executions** | Run history for this workflow, one row per run with its status, duration, and time                                           |
 | **Errors**     | Errors with a count badge. Each shows a short explanation or its category (user\_data, configuration, dependency, system, Unknown Outcome), the message, and the time |
 | **Test Cases** | The test scenarios for the workflow, with a count badge                                                                     |
 
@@ -86,7 +100,7 @@ The workflow details have these tabs:
 
 ***
 
-### Reading timestamps
+### Timestamps
 
 Run times appear as relative timestamps ("40m ago", "14h ago", "2d ago") rather than absolute dates.
 
@@ -103,5 +117,10 @@ In the integrations list, each integration's status line shows its connection st
 * How to read overall sync health from the Insights panels
 * How to find which workflows ran and how often
 * How to see what needs attention and why, including error categories
-* How to open a workflow's run history, errors and diagram from the integration's detail view
+* How to open a workflow's run history, errors, and diagram from the integration's detail view
 * Where connection state is shown (Insights and the integration's status line)
+
+### Next steps
+
+* Hear about failures without checking: [Get alerted](getting-alerted.md).
+* Fix what caused a failure: [Customize an integration](customizing-your-integrations.md).

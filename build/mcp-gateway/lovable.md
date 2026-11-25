@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Lovable as a custom MCP server, sign in, and use your fastn tools from Lovable's chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Lovable
@@ -7,7 +19,7 @@ description: Add fastn to Lovable as a custom MCP server, sign in, and use your 
 In Lovable, fastn is a chat connector. It gives Lovable's chat your fastn tools while you build. It attaches to you and your chats, not to the app you publish.
 
 {% hint style="info" %}
-**Before you start:** custom MCP servers work on every Lovable plan. On Business and Enterprise, a workspace admin can turn them off; if **MCP server** is grayed out, ask your admin.
+**Before you start:** custom MCP servers work on every Lovable plan. On Business and Enterprise, a workspace admin can turn them off; if **MCP server** is grayed out, ask your admin. The connection is yours alone: each teammate adds fastn for themselves.
 {% endhint %}
 
 ## Add fastn
@@ -22,7 +34,7 @@ In Lovable, open **Connectors** in the sidebar. Click **Add custom** at the top 
 {% step %}
 #### Enter fastn's URL
 
-Enter **Server name** `fastn` and **Server URL** `https://mcp.fastn.dev/fastn-workspace`, leave **Authentication** on **OAuth (default)**, and click **Add & authorize**.
+Enter **Server name** `fastn` and **Server URL** `https://mcp.fastn.dev/fastn-workspace`. If your workspace shows a **Connection** list, keep **Direct connection**. Leave **Authentication** on **OAuth (default)**, with no client ID or secret, and click **Add & authorize**.
 
 <figure><img src="../../.gitbook/assets/mcp-lovable-add-server.webp" alt="Lovable's Add MCP server form with Server name fastn, Server URL https://mcp.fastn.dev/fastn-workspace, Authentication set to OAuth (default) with Bearer token or API key and No authentication as the other options, and Cancel and Add and authorize buttons"><figcaption>Keep <strong>OAuth</strong>. fastn signs you in, so no token is needed.</figcaption></figure>
 {% endstep %}
@@ -46,10 +58,10 @@ Start a chat or open a project and ask for the outcome in one sentence. To check
 
 <figure><img src="../../.gitbook/assets/mcp-lovable-answer.webp" alt="Lovable's chat answering Using the fastn connector, who am I in fastn? with Checked your identity in fastn and a list of name, email, role, organization, environment and plan"><figcaption>Read-only fastn tools run straight away. Lovable asks before any tool that changes something.</figcaption></figure>
 
-From here Lovable works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Lovable works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Troubleshooting
 
 * **Nothing happens after Add & authorize.** Your browser blocked the sign-in popup. Allow popups for lovable.dev and click **Add & authorize** again.
 * **Lovable doesn't use fastn.** Name it in your message, for example *Using the fastn connector, …*.
-* **Lovable works on the wrong org.** Open fastn under **Connectors**, click **Disconnect fastn**, add it again and pick the workspace when you sign in.
+* **Lovable works on the wrong org.** Open fastn under **Connectors**, click **Disconnect fastn**, add it again, and pick the workspace when you sign in.

@@ -1,27 +1,45 @@
 ---
 description: >-
-  Adjust field mappings, filters and other settings for an integration you've
+  Adjust field mappings, filters, and other settings for an integration you've
   set up, through the widget.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Customize an integration
 
 After connecting an app, you can customize how data moves between it and the product you're using: which fields sync, which records are included, and how records are matched. The AI assistant can handle much of this for you, or you can fine-tune it yourself.
 
-### Opening the configuration
+### Before you start
+
+* An integration you have set up in the widget. See [Connect apps](connecting-apps-via-widget.md).
+
+### Open the configuration
 
 1. Open the integration widget in your product.
 2. Find the integration you want to customize and click **Manage**.
-3. On the setup you want to change (the widget calls it an installation), click **View**.
+3. On the installation you want to change, click **View**.
 4. On the **Configuration** row, click **Open**.
 
 The Configuration row summarizes what's set up, for example _Sync · 2 entities · 14 fields mapped_. The **Open** button stays disabled until every account the integration needs is connected (its tooltip reads _Connect every account first_).
+
+**You should see:** the **Integration Configuration** dialog.
 
 #### First-time configuration
 
 If no configuration exists yet, the dialog shows **No configuration found for this widget.** with the note _fastn's agent sets up field mappings and filters for you._ and, for you as a customer, _Ask whoever administers this organization to finish setting it up._
 
-That first pass belongs to the team behind the product you use: the button that starts the setup agent needs an operator role, so it isn't shown to you. Ask the product's support team to run it once. After that the configuration exists and everything on this page is yours to adjust.
+That first pass belongs to your SaaS provider: the **Build with fastn agent** button that starts it is shown only to your provider's team, not to you. Ask them to run it once. After that the configuration exists and everything on this page is yours to adjust.
 
 See [Extend a pre-built integration](extending-a-prebuilt-integration.md) for what you can change yourself, and how to ask the AI assistant for it.
 
@@ -39,10 +57,10 @@ Click a pair to see and edit its settings. Each pair has its own configuration.
 
 For the selected pair, the dialog has these tabs:
 
-* **Setup**: questions the integration needs you to answer. Shown only when there are some.
-* **Field mappings**: which field in one app feeds which field in the other.
-* **Filters**: which records are included.
-* **Advanced**: how records are matched between the two apps (**Matching strategy** and **Matching keys**).
+* **Setup** - questions the integration needs you to answer. Shown only when there are some.
+* **Field mappings** - which field in one app feeds which field in the other.
+* **Filters** - which records are included.
+* **Advanced** - how records are matched between the two apps (**Matching strategy** and **Matching keys**).
 
 A small dot on a tab means something there is incomplete.
 
@@ -52,18 +70,18 @@ Each mapping row shows the **source field** (where the data comes from) and the 
 
 * To edit a mapping, click the row or its chevron (**Edit mapping**). It opens in place, where you can re-pick either field.
 * To remove a mapping, use the trash icon on the row (**Remove mapping**).
-* **Required mappings are locked.** They show a lock icon instead of a remove icon; the tooltip explains the mapping is required by this integration and can't be removed.
+* **Required mappings are locked.** They show a lock icon instead of a remove icon; the tooltip explains that the mapping is required by this integration and can't be removed.
 * To add a mapping that isn't there, click **Add field mapping** at the bottom of the list.
 
 #### Filters
 
-Filters narrow which records sync. For example, you might only want to sync contacts tagged as "Active" or orders above a certain amount. Click **Add filter** to add one.
+Filters narrow which records sync. For example, you might want to sync only contacts tagged as "Active" or orders above a certain amount. Click **Add filter** to add one.
 
 Each filter row has three parts:
 
-* **Field**: which field to check (for example "Status", "Amount" or "Email")
-* **Operator**: the condition to apply
-* **Value**: what to compare against
+* **Field** - Which field to check (for example "Status", "Amount", or "Email")
+* **Operator** - The condition to apply
+* **Value** - What to compare against
 
 Available operators:
 
@@ -78,7 +96,7 @@ Available operators:
 | is one of      | Syncs records where the field matches any value in a list       |
 | is not one of  | Syncs records where the field doesn't match any value in a list |
 
-### Saving your changes
+### Save your changes
 
 1. Click **Save changes** in the dialog header. Its tooltip reads _Changes apply on the next sync run_.
 2. Close the dialog with the **X**.
@@ -87,11 +105,11 @@ Your changes don't take effect immediately on existing data. The next time the w
 
 If you close the dialog with unsaved changes, it asks **Discard changes?** Click **Discard** to throw them away, or cancel to go back and save.
 
-### Changing the schedule
+### Change the schedule
 
-If the integration runs on a schedule, the setup's **Triggers** row shows it, for example _Every 1 hours_. Click **Open** on that row to see the triggers. Where the product made the schedule editable, you can change it there; otherwise ask the product's support team.
+If the integration runs on a schedule, the installation's **Triggers** row shows it, for example _Every 1 hours_. Click **Open** on that row to see the triggers. Where your provider made the schedule editable, you can change it there; otherwise ask your provider.
 
-### Using the AI assistant for changes
+### Use the AI assistant for changes
 
 If you're not sure how to adjust the configuration yourself, click the round sparkle button at the bottom right of the widget (**Ask the assistant**) and describe what you want in plain language:
 
@@ -99,25 +117,30 @@ If you're not sure how to adjust the configuration yourself, click the round spa
 * "Stop syncing orders under $50"
 * "Add the phone number field to the sync"
 
-### Viewing workflows
+### View workflows
 
-Workflows live inside each integration. Click **Manage** on an integration to see its **Workflows** list. Click a workflow's row to open its details, which start on **Executions** (its run history). A **Diagram** tab showing the workflow step by step appears only if the product turned it on.
+Workflows live inside each integration. Click **Manage** on an integration to see its **Workflows** list. Click a workflow's row to open its details, which start on **Executions** (its run history). A **Diagram** tab showing the workflow step by step appears only if your provider turned it on.
 
 ### Troubleshooting
 
 * **I don't see a Configuration row**\
-  The row appears only when the integration has a configuration (or configuration fields) set up by the product. With none, there's no row and nothing for you to configure. The product decides what's configurable; if you need changes that aren't available, contact the product's support team.
+  The row appears only when the integration has a configuration (or configuration fields) set up by your provider. With none, there's no row and nothing for you to configure. Your provider decides what's configurable; if you need changes that aren't available, contact the product's support team.
 * **The Open button is grayed out**\
   Connect every account the integration needs first (the tooltip reads _Connect every account first_).
 * **My changes didn't take effect**\
-  Changes apply on the next sync run, not immediately. Check the setup's **Triggers** row for the schedule, then use **Insights** (in the widget's **⋯** menu) to confirm the run after your change succeeded.
+  Changes apply on the next sync run, not immediately. Check the installation's **Triggers** row for the schedule, then use **Insights** (in the widget's **⋯** menu) to confirm the run after your change succeeded.
 * **I want to start over**\
-  Open the integration (**Manage**), click **View** on the setup, and use **Delete installation**; then set it up again. This clears the configuration, and only the product's team can rebuild it with the setup agent. Ask them before you clear anything you still depend on.
+  Open the integration (**Manage**), click **View** on the installation, and use **Delete installation**; then set it up again. This clears the configuration, but rebuilding it with fastn's agent is your provider's to run. Ask them before you clear anything you still depend on.
 
 ### What you've done
 
 * Opened the configuration dialog for an integration
-* Understood the two paths: the first-time setup the product's team runs, and your own adjustments
+* Understood the two paths: provider-run first-time setup vs your own adjustments
 * Reviewed and modified field mappings and filters
-* Know how to use the AI assistant for configuration changes
-* Know that changes apply on the next sync run
+* Learned how to use the AI assistant for configuration changes
+* Learned that changes apply on the next sync run
+
+### Next steps
+
+* Ask the assistant for bigger changes: [Extend a pre-built integration](extending-a-prebuilt-integration.md).
+* Check that your changes ran: [View sync status and history](viewing-sync-status-and-history.md).
