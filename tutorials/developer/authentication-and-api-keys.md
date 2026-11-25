@@ -32,7 +32,7 @@ Read this once before you embed the widget or call the API, then follow the link
 | Credential | Where it lives | What it does | Details |
 | --- | --- | --- | --- |
 | **API key** (`fsk_test_…`, `fsk_live_…`) | Your backend only | Authenticates every call your backend makes to fastn | [Below](#test-vs-live-keys), and [API keys](../../manage/api-keys.md) |
-| **Identity secret** | Your backend only | Signs `x-org-id` and `x-user-id` as `x-identity-hmac`, so a call can't claim to be another customer | [Identity hash](../../manage/api-keys.md#identity-hash) |
+| **Identity secret** | Your backend only | Signs `x-org-id` and `x-user-id` as `x-identity-hmac`, so a call can't claim to be another customer | [Identity hash](../../manage/identity-verification.md) |
 | **Embed token** | Your frontend, one page load | Opens the widget for one customer and user. Expires after 8 hours; refresh is capped at 7 days per session | [Generating embed tokens](generating-embed-tokens.md) |
 | **Connection credential** | fastn, encrypted | One customer's sign-in to one app. Every run for that customer reuses it | [Connections](../../build/connections/README.md) |
 | **MCP sign-in** | Your AI tool | Connects Claude, Cursor, or another AI tool to the fastn MCP server. You sign in to fastn; no API key is needed | [fastn MCP server](../../build/mcp-gateway/README.md) |

@@ -16,7 +16,7 @@ layout:
 
 # Troubleshooting
 
-Work down this page in order. Most problems resolve at the first or second step, and each step tells you which screen holds the answer.
+Find your symptom in the table below, then go to its section. Each section names the screen that holds the answer.
 
 ### Start here
 
@@ -88,11 +88,22 @@ The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 * **Hundreds of calls**: batch them, or move to the Long tier.
 * **A Pending trace that never resolved**: the upstream app accepted the request and never answered.
 
-**Escalate on timeout** retries one tier up (instant to standard), which buys time without redesigning. It returns a queued execution id to poll, so the caller's response shape changes; the option is hidden on the Long tier, which has nothing above it.
+**Escalate on timeout** (in the workflow's settings) retries a timed-out run one tier up, Instant to Standard or Standard to Long, with the higher tier's full time budget. It buys time without redesigning, subject to your plan. The option isn't available on the Long tier, which has nothing above it.
 
-### Status: Failed with no obvious error
+{% hint style="warning" %}
+With this on, an Instant run that times out and escalates returns a queued execution id to poll instead of the result, so your caller must handle both responses.
+{% endhint %}
 
-Expand the row and read `peakSandboxMB` against `sandboxMemoryLimitMB`. Out-of-memory never retries, so a run that hit the ceiling stops rather than recovering on the next attempt.
+### Status: Failed with a `Memory Limit` tag, or no obvious error
+
+A run that ran out of memory carries a `Memory Limit` tag in the Executions list, and **Error Details** on its **Error** tab names the limit it exceeded: `Execution exceeded the <N>MB sandbox memory limit`.
+
+To confirm, or when a failed run has no tag, expand the row and compare two fields:
+
+* `peakSandboxMB`: the most memory the run was seen using. It is sampled during the run, so the true peak can be a little higher.
+* `sandboxMemoryLimitMB`: the memory limit the run ran under.
+
+If `peakSandboxMB` is at or near `sandboxMemoryLimitMB`, the run ran out of memory. Fetch less data per call and process smaller batches. Out-of-memory never retries, so a run that hit the limit stops rather than recovering on the next attempt.
 
 ### Retries
 

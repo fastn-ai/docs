@@ -108,6 +108,10 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 
 The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet, and desktop widths. A sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits), and **Save and publish**. **Reset** publishes the defaults to every customer using the widget immediately, after you type `RESET` to confirm; **Widget actions** → **Reset to defaults** does the same. A **Live** badge appears once the widget is saved.
 
+{% hint style="warning" %}
+**Reset** replaces your widget's whole configuration (sections, integrations, templates, and theme) with the defaults. There is no draft step, and it cannot be undone. If a custom page is your widget, your customers keep seeing the custom page; the reset defaults reach them only after you use **Switch back to fastn's widget**.
+{% endhint %}
+
 ### Embed → API keys and Embed → MCP server
 
 Two pages. **API keys** are what your backend uses to mint embed tokens and call the API. **MCP server** adds fastn's integrations to Claude, Cursor, Codex, or any MCP client. See [fastn MCP server](../build/mcp-gateway/README.md).
@@ -153,7 +157,7 @@ A **Traces** view (which connected apps a run called, and how slow they were) ex
 | **Admin** (and Owner) | People, General, Billing, Roles, Audit log |
 | **Developer** and above | Environments, Secrets, Configs, Database, Workflow tags, Trash |
 
-Two capabilities are gated by role rather than by permission: using the builder, and reading the audit log. Each screen has its own page under [Settings](../manage/README.md).
+Some things depend only on your role and cannot be granted or taken away with a custom role, such as using the fastn agent and reading the audit log. See [Roles](../manage/roles.md). Each screen has its own page under [Settings](../manage/README.md).
 
 ### The account card
 

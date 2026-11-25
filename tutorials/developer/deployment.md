@@ -1,4 +1,5 @@
 ---
+description: "Bind your fastn API key and customer id on your hosting target so embed tokens still generate in production."
 layout:
   width: default
   title:

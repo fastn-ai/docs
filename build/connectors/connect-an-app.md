@@ -18,6 +18,14 @@ layout:
 
 A connection is what lets a connector call an app as a specific account. Connecting here signs in **your own** account, for your organization's workflows and for testing. Your customers connect their own accounts through the [widget](../../embed/README.md) you embed.
 
+## Before you start
+
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot connect.
+* **The connector** for the app, in the [catalog](the-catalogue.md) or [created by you](creating-a-connector.md).
+* **Access to the app's account**: a sign-in that can approve access for OAuth, or the API key or other credential the auth method asks for.
+
+## Where to connect from
+
 These all open the same connect dialog:
 
 * **Connect** on a connector's card in the [catalog](the-catalogue.md);

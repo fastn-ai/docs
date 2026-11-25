@@ -68,6 +68,10 @@ Open the **Test** tab and click **Use contract** to fill in a sample input. Set 
 
 **You should see:** the run's output, with each step and its result.
 
+{% hint style="warning" %}
+Only **Fully Mock** keeps every call away from the apps. **Partial Mock** runs live wherever a connector has an active connection and mocks only the rest, so it can still write to a connected app. **Run Live** calls the real apps.
+{% endhint %}
+
 If something is wrong, tell the agent in the chat, for example *"Only post contacts that have an email"*. It updates the workflow and its tests together.
 
 {% hint style="success" %}

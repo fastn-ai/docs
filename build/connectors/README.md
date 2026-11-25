@@ -16,7 +16,7 @@ layout:
 
 # Connectors
 
-**Integrations → Connectors** · `/integrations?tab=connectors`
+**Build → Integrations → Connectors** · `/integrations?tab=connectors`
 
 A **connector** is fastn's bridge to one external app, such as HubSpot, Jira, or Stripe. The page describes it in one line:
 

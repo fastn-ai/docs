@@ -20,7 +20,7 @@ layout:
 
 ## Pick the customer first
 
-The widget is always scoped to **one** of your customers, so the dropdown labelled **User** at the top is not a preview toggle. It decides who the generated snippet is for.
+The widget is always scoped to **one** of your customers, so the dropdown labeled **User** (the customer) at the top is not a preview toggle. It decides who the generated snippet is for.
 
 <figure><img src="../../.gitbook/assets/screens/widget-embed-tab.webp" alt="The widget builder's Embed tab: a note that customers see fastn.ai on the OAuth consent screen unless you set up your own OAuth app, then Iframe, SDK and A2A (soon) options and a card reading No customers yet, this is a template, with Create a customer"><figcaption><strong>Embed → Widget → Embed</strong> before any customer exists: the snippet uses placeholders until you pick one.</figcaption></figure>
 
@@ -47,10 +47,10 @@ For production, mint short-lived tokens from your backend and keep them out of t
 
 ## Shareable links
 
-Instead of a snippet, send a link. It keeps working until it expires or you revoke it, and the URL carries no token. Shareable links live on the **Iframe** sub-tab.
+Instead of a snippet, send a link. Shareable links live on the **Iframe** sub-tab.
 
 {% hint style="warning" %}
-The reference in a shareable link *is* the credential. Treat the link itself as a secret: anyone who has it can act as that customer.
+A shareable link carries no short-lived token, but the reference in it works like a password: anyone who has the link can act as that customer until it expires or you revoke it. Treat the link itself as a secret.
 {% endhint %}
 
 ### Create a shareable link

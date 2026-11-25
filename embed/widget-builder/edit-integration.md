@@ -16,7 +16,7 @@ layout:
 
 # Edit integration
 
-**Embed → Widget → INTEGRATIONS → pencil on a row**
+**Embed → Widget**, then the pencil on a row of the **INTEGRATIONS** panel
 
 Each row in the INTEGRATIONS panel carries a status dot, a **pencil** and a **trash**. The pencil opens **Edit Integration**, and this dialog is where most of an integration's behavior is configured. The trash deletes the integration.
 

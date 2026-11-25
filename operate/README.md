@@ -29,7 +29,7 @@ Build tells you what should happen. Operate tells you what did.
 | [Sync reports](sync-reports.md) | `/activity/sync-reports`  | What actually changed, record by record?                          |
 | [Traces](traces.md) (by URL only) | `/activity/traces`      | Which calls did a run make to each app?                           |
 
-[Alerts](alerts.md) live under **Health → Alerts** (`/health?tab=alerts`), and the old `/activity/alerts` address redirects there.
+[Alerts](alerts.md) live under **Operate → Health → Alerts** (`/health?tab=alerts`), and the old `/activity/alerts` address redirects there.
 
 Also under Operate: **[Health](health.md)**, what needs attention across every customer; **[Customers](customers.md)**, who is using your embedded integrations; and **[Connections](../build/connections/README.md)**, every signed-in account.
 

@@ -22,6 +22,7 @@ The widget is what your customers see: the integrations panel embedded inside yo
 
 ### Before you start
 
+* **Who this is for:** an Owner, Admin, Developer, or Operator. Viewers can open the builder but not change the widget.
 * The [Quickstart: your first integration](../../getting-started/quickstart.md), or at least one connector or workflow to offer.
 
 ***

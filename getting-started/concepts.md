@@ -45,7 +45,16 @@ What you can see in the dashboard depends on your role: **Owner**, **Admin**, **
 
 An **organization** is you, the company that builds the product. It holds your connectors, workflows, widgets, people, and settings.
 
-A **customer** is one of your customers. Every customer is isolated: its connections, credentials, and data never cross into another. Some identifiers and older material say *tenant*. API calls name a customer with `x-org-id` (or `orgId` in a query or body): your own id for it, which defaults to the customer's slug if you did not set one, or fastn's id for it. Answers name the customer by your own id, as `orgId`.
+A **customer** is one of your customers. Every customer is isolated: its connections, credentials, and data never cross into another. Some identifiers and older material say *tenant*.
+
+Inside fastn, each customer is its own small organization under yours. That is why the header that names a customer is called `x-org-id`: it never names your organization, which fastn already knows from your API key or login.
+
+API calls name a customer with `x-org-id` (or `orgId` in a query or body). The value can be either:
+
+* your own id for the customer, which defaults to its slug if you did not set one, or
+* fastn's id for it.
+
+Answers name the customer by your own id, as `orgId`.
 
 A **connection** is one customer's authorized link to one app. It stores the credential, encrypted, and records which auth method produced it.
 
@@ -109,9 +118,7 @@ fastn separates *what the code is* from *where it runs*.
 * **Environments** are where versions are deployed. `test` and `live` are built in and protected; you can add named ones such as `staging`, and mark any environment **Requires review** so promoting to it opens a pull request on a connected GitHub repository instead of deploying directly.
 * **API keys** carry a mode, `Test` or `Live`. A Test key is refused unless the caller sends `X-fastn-Test-Mode: true`.
 
-{% hint style="warning" %}
-Test mode is not a sandbox. A test key reaches the same live connections as a live key and causes the same real writes. It is a separate credential, not a safe one.
-{% endhint %}
+Test keys act on real data. See [API keys](../manage/api-keys.md).
 
 ### Triggers
 

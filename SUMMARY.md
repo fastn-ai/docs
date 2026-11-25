@@ -97,6 +97,7 @@
   * [Customer MCP URL](embed/embedding/customer-mcp-url.md)
 * [Go-live checklist](embed/embedding/production-checklist.md)
 * [API keys](manage/api-keys.md)
+  * [Verify caller identity](manage/identity-verification.md)
   * [Find your org identifier](tutorials/developer/finding-your-org-identifier.md)
 
 ## Operate
@@ -152,6 +153,7 @@
 
 * [HTTP API](reference/api.md)
   * [REST API reference](reference/rest/README.md)
+    * [OpenAPI spec and Postman collection](reference/rest/tools.md)
     * [Workflows](reference/rest/workflows.md)
     * [Installations and configs](reference/rest/installations.md)
     * [Widgets and embedding](reference/rest/widgets.md)
@@ -179,8 +181,10 @@
 * [Code samples](reference/code-samples.md)
 * [Workflow runtime API](reference/workflow-runtime.md)
 * [Errors and failure states](reference/errors.md)
+* [Security and compliance](reference/security.md)
 * [FAQs](reference/faqs.md)
 * [Glossary](reference/glossary.md)
+* [Changelog](reference/changelog.md)
 * [Tutorials](tutorials/README.md)
   * [Dashboard tutorials](tutorials/saas-admin/README.md)
   * [Developer tutorials](tutorials/developer/README.md)

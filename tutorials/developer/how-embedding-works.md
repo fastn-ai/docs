@@ -1,4 +1,5 @@
 ---
+description: "How your backend, your frontend and fastn fit together to show the widget to one of your customers."
 layout:
   width: default
   title:

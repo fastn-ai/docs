@@ -23,7 +23,7 @@ When something happens in your product, such as a new order, an integration shou
 ### Before you start
 
 * A published workflow that takes the event as its input. See [Test and release](../build/workflows/lifecycle.md).
-* An API key with **Verify caller identity (HMAC)** set to **Monitor only** or **Enforce**, and its identity secret. See [API keys](../manage/api-keys.md#identity-hash).
+* An API key with **Verify caller identity (HMAC)** set to **Monitor only** or **Enforce**, and its identity secret. See [Verify caller identity](../manage/identity-verification.md).
 * A customer that has connected the apps the workflow uses.
 
 ### 1. Create the webhook trigger

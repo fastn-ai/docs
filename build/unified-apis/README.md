@@ -16,7 +16,7 @@ layout:
 
 # Unified APIs
 
-**Integrations → Unified APIs** · `/integrations?tab=unified`
+**Build → Integrations → Unified APIs** · `/integrations?tab=unified`
 
 <figure><img src="../../.gitbook/assets/screens/unified-apis.webp" alt="The Unified APIs page: six category cards, CRM (10 entities), Documents, Knowledge Base, Messaging, Project Management and Scheduling, each with its provider icons and entity count"><figcaption>The icons on each card are the providers currently serving that category.</figcaption></figure>
 

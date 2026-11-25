@@ -1,7 +1,7 @@
 ---
 description: >-
-  Change what a pre-built integration does - fields, filters, direction and
-  scope - using the assistant inside the widget, and know where its authority
+  Change what a pre-built integration does (fields, filters, direction and
+  scope) using the assistant inside the widget, and know where its authority
   ends.
 layout:
   width: default

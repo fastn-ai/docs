@@ -26,7 +26,7 @@ No. The [fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your
 
 <summary>What is the difference between a customer and a tenant?</summary>
 
-They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example the second segment of a connection id, `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`.
+They are the same thing. *Customer* is what the dashboard calls one of the companies using your product: the Customers screen, the ⌘K search group, the Connections column. *Tenant* survives only in some identifiers and older API material, for example in a connection id, `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`, where the customer is the segment after the workspace.
 
 If an identifier says tenant, it means one of your customers.
 
@@ -152,7 +152,7 @@ Check whether the workflow has ever been published. Until a snapshot exists, eve
 
 <summary>Is a test API key a sandbox?</summary>
 
-No. A test key reaches the same live connections as a live key and causes the same real writes. It is a separate, separately revocable credential, not a safe one. It is also refused unless the caller sends `X-fastn-Test-Mode: true`.
+No. Test keys act on real data. See [API keys](../manage/api-keys.md). A test key is also refused unless the caller sends `X-fastn-Test-Mode: true`.
 
 </details>
 
@@ -246,7 +246,7 @@ No. Onboarding adds up to 50 credits. They are used after any monthly credits an
 
 New work stops rather than being charged for, and nothing already running is interrupted. Check [Billing](../manage/billing.md): a sync that stops because of a quota looks exactly like a broken sync until you do.
 
-Customer connections are the exception on Scale: past the 10 included, each extra one is billed at $50 a month and is never refused. On Launch, the fourth customer connection is refused.
+Customer connections are the exception on Scale, the paid self-serve plan: past the connections the plan includes, each extra one is billed and never refused. On Launch, the free plan, a customer connection past the plan's limit is refused. Limits and prices are on [Billing and limits](../manage/billing.md).
 
 </details>
 

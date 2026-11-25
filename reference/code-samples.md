@@ -35,7 +35,7 @@ Complete projects you can clone and run, in [fastn-ai/docs/examples](https://git
 | --- | --- | --- |
 | Mint an embed token from your backend | curl, Node.js | [Embedding quickstart](../tutorials/developer/embedding-quickstart.md) |
 | Mint a token with signed identity headers | curl, Node.js | [Generating embed tokens](../tutorials/developer/generating-embed-tokens.md) |
-| Compute the identity hash | Node.js | [API keys](../manage/api-keys.md#identity-hash) |
+| Compute the identity hash | Node.js | [Verify caller identity](../manage/identity-verification.md) |
 | Render the widget in an iframe | HTML | [Iframe](../embed/embedding/iframe.md) |
 | Render the widget with the SDK, including React | HTML, JavaScript, React | [SDK](../embed/embedding/sdk.md) |
 | Register a customer and create a connection for them | curl, JavaScript | [Integration flow](../embed/embedding/integration-flow.md) |

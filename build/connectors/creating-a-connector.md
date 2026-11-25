@@ -19,6 +19,12 @@ layout:
 
 <figure><img src="../../.gitbook/assets/screens/create-connector-menu.webp" alt="The Create connector menu with four items: From scratch, Build with fastn agent (On paid plans. Upgrade to use it.), Build in your AI tool and Import from file"><figcaption>The four ways to create a connector.</figcaption></figure>
 
+### Before you start
+
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot create connectors.
+* **The app's API details**: its base URL, how it authenticates, and for OAuth, a client ID and secret from an OAuth app you registered with the vendor.
+* **Check the [catalog](the-catalogue.md) first.** If fastn already has the app, connect to it instead.
+
 {% hint style="info" %}
 You rarely need to build a connector by hand. Describe the app to [the fastn agent](../agent/README.md) (**Create connector → Build with fastn agent**, on paid plans) or to your AI tool (**Create connector → Build in your AI tool**, every plan), and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions, and its auth method, then tests them.
 {% endhint %}
