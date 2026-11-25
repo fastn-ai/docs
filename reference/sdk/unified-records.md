@@ -1,5 +1,5 @@
 ---
-description: "One set of methods for every app: create, get, list, search, update and delete unified records, and find the fields each entity takes."
+description: "One set of methods for every app: create, get, list, search, update, and delete unified records, and find the fields each entity takes."
 ---
 
 # Unified records
@@ -13,18 +13,18 @@ const contacts = customer.records({ category: "crm", entity: "contact", provider
 const meetings = customer.records({ category: "scheduling", entity: "meeting", provider: "googleCalendar" });
 ```
 
-Then `create`, `get`, `list`, `search`, `update` or `delete` on it. To use another app, change only `provider`; the code stays the same.
+Then `create`, `get`, `list`, `search`, `update`, or `delete` on it. To use another app, change only `provider`; the code stays the same.
 
 | `records()` field | Required | Meaning |
 | ----------------- | -------- | ------- |
 | `category` | Yes | The kind of app, for example `crm` or `scheduling`. |
-| `entity` | Yes | The kind of record, for example `contact`, `note`, `task`, `opportunity`, `engagement`, `meeting` or `availability`. |
+| `entity` | Yes | The kind of record, for example `contact`, `note`, `task`, `opportunity`, `engagement`, `meeting`, or `availability`. |
 | `provider` | No | The app's slug, for example `hubspot`. Leave it out to use whichever app of that kind the customer connected. When the customer has more than one, single-record calls need it. |
 | `connectionId` | No | One account, when the customer has more than one for the same app. See [below](#pick-one-account-connectionid). |
 
 ---
 
-## Find categories, entities and fields
+## Find categories, entities, and fields
 
 The catalog is live. Read it rather than hard-coding it:
 
@@ -108,9 +108,9 @@ Answer:
 }
 ```
 
-`id` is the record's id in the app. Keep it to read, change or delete the record later.
+`id` is the record's id in the app. Keep it to read, change, or delete the record later.
 
-* Pass an `idempotencyKey` on writes. Sending the same key again returns the first answer (the same `id`) instead of creating a second record. See [Errors, retries and options](errors-and-options.md#safe-retries-idempotencykey).
+* Pass an `idempotencyKey` on writes. Sending the same key again returns the first answer (the same `id`) instead of creating a second record. See [Errors, retries, and options](errors-and-options.md#safe-retries-idempotencykey).
 * A field the catalog does not know is refused: `400 UNIFIED_VALIDATION_FAILED` with `Unknown field "…"`. A missing required field gives `Field "…" is required`.
 * A field the entity knows but this app does not map is skipped, and the answer says so in `warnings`, for example `["Field \"contact_id\" is not mapped for provider \"hubspot\" and was not sent"]`.
 
@@ -131,7 +131,7 @@ const booked = await meetings.create(
 console.log(booked.id, booked.data?.web_url);
 ```
 
-The answer also carries fields the app sets, such as `status`, `web_url`, `organizer_email`, `created_at` and `updated_at`.
+The answer also carries fields the app sets, such as `status`, `web_url`, `organizer_email`, `created_at`, and `updated_at`.
 
 Some entities use `create` for a question rather than a new record. For example `scheduling` / `availability` returns busy times:
 
@@ -148,7 +148,7 @@ const free = await availability.create({
 
 ---
 
-## Get, update and delete
+## Get, update, and delete
 
 ```typescript
 const one = await contacts.get("51234567890");
@@ -169,7 +169,7 @@ const removed = await contacts.delete("51234567890", { idempotencyKey: "signup_9
 | `update(id, fields)` | `id` (required). `fields`: only the fields that change. | `{ id, provider, data }` |
 | `delete(id)` | `id` (required). | `{ id, provider, deleted: true }` |
 
-What delete means is up to the app. Some archive or remove the record, so a later `get` fails. Others mark it cancelled, so a later `get` still works and shows the cancelled status. Check what your connected app does before relying on either.
+What delete means is up to the app. Some archive or remove the record, so a later `get` fails. Others mark it canceled, so a later `get` still works and shows the canceled status. Check what your connected app does before relying on either.
 
 ---
 
@@ -249,15 +249,15 @@ Get `connectionId` from `customer.connections()` or the `connection.connected` e
 | `404 UNIFIED_UNSUPPORTED_ENTITY` | The category or entity does not exist. |
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | This app does not support the operation for this entity (check `providers()`). Use a [direct app action](app-actions.md) instead. |
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has no active connection for any app mapped to this entity (or for the `provider` you named). Send a setup link. |
-| `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. |
+| `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed, or not active. |
 | `409 UNIFIED_CONNECTION_EXPIRED` | The connection's login expired. The customer has to sign in to the app again. |
 | `409 UNIFIED_MULTIPLE_PROVIDERS` | Several apps are connected and the call needs one: pass `provider`. |
 | `400 UNIFIED_PROVIDER_REJECTED` | The app refused what you sent, for example a duplicate or a value it does not accept. |
 | `401 UNIFIED_PROVIDER_AUTH_FAILED` | The app refused the connection's credentials. The customer has to reconnect the app. |
-| `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id on a get, update or delete, for example one that was deleted or archived. |
+| `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id on a get, update, or delete, for example one that was deleted or archived. |
 | `429 UNIFIED_PROVIDER_RATE_LIMITED` | The app's own rate limit was hit. Retry later. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer), or fastn's connector platform refused the call. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer), or fastn's connector platform refused the call. |
 
 For the `UNIFIED_PROVIDER_*` codes, what the app said is in `e.body.providerStatus` (its HTTP status) and `e.body.providerError` (its message), when the app answered.
 
-The full list of error fields is on [Errors, retries and options](errors-and-options.md#errors).
+The full list of error fields is on [Errors, retries, and options](errors-and-options.md#errors).

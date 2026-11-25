@@ -53,12 +53,13 @@ Instead of a snippet, send a link. It keeps working until it expires or you revo
 The reference in a shareable link *is* the credential. Treat the link itself as a secret: anyone who has it can act as that customer.
 {% endhint %}
 
-#### Creating one
+### Create a shareable link
 
 1. Go to **Embed → Widget → Embed**, stay on the **Iframe** sub-tab, and pick the customer in the **User** dropdown. **Create link** stays disabled until you do - with nobody selected the card reads *Pick a customer above first.*
 2. In the **Shareable links** card, set **New links** to the expiry you want: **Never expire** (the default), **Expire in 1 day**, **Expire in 7 days** or **Expire in 30 days**.
 3. Select **Create link**.
-4. The new row appears badged **New**.
+
+   The new row appears in the list, badged **New**.
 
 Each row identifies itself by the last few characters of its id rather than printing the credential as a headline, and carries its own state:
 
@@ -69,7 +70,7 @@ Each row identifies itself by the last few characters of its id rather than prin
 | **Revoked** | You revoked it. It will not load. |
 | **Expired** | It passed its expiry. It will not load. |
 
-**Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. **Revoke** is immediate, and a revoked or expired link offers neither - handing one over is only a way to give someone something that will not load.
+**Copy** works without revealing anything. **Show** reveals the URL on that row, on request only. A revoked or expired link offers neither, because it no longer loads.
 
 A shareable link suits the cases where you cannot embed at all: onboarding a customer before they have access to your product, letting someone connect their accounts from an email, or handing a link to a customer's IT team to authorize on their behalf. **Revoke** is immediate, and it is the only way to withdraw one.
 

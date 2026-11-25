@@ -35,7 +35,7 @@ Until a workflow calls a connected app there is nothing here. An empty filter gi
 > A trace is recorded for every workflow run that calls a connected app.
 
 {% hint style="info" %}
-This page is thin in these docs because no trace had been recorded in the workspace we documented from. The controls above are confirmed; the shape of a populated row is not. If you are working from a workspace with real traffic, trust the screen over this page.
+The controls above are confirmed, but these docs do not yet show a populated trace row. If your workspace has real traffic and the screen differs from this page, trust the screen.
 {% endhint %}
 
 ### Traces and timeouts

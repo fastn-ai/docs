@@ -72,11 +72,11 @@ Expand the execution row and open the **Error** tab (**AI Diagnosis** and **Erro
 
 ### Status: Failed with a `Dependency Error` tag
 
-The commonest failure of all, and it means something the workflow *called* refused: nearly always a connector action, not your code. Runs usually die in under a second, because they stop at the first call that will not work.
+The most common failure, and it means something the workflow *called* refused: nearly always a connector action, not your code. Runs usually fail in under a second, because they stop at the first call that is refused.
 
 Expand the row and open the **Error** tab. The **AI Diagnosis** names the step that broke and, usually, the fix; **Error Details** beside it carries the raw message. Most of the time the answer is a connection that is expired, revoked, pinned to something unusable, or belonging to another organization.
 
-**It will not clear on its own.** Retry policies cover transient failures, and an invalid connection is not transient: a daily schedule in this state fails at the same minute every day until someone acts.
+**It does not clear on its own.** Retry policies cover transient failures, and an invalid connection is not transient: a daily schedule in this state fails at the same minute every day until someone acts.
 
 Full breakdown, with the causes in order of frequency, in [Errors and failure states](../reference/errors.md#dependency-error).
 
@@ -92,7 +92,7 @@ The tier's budget ran out. Before raising the timeout, open [Traces](traces.md):
 
 ### Status: Failed with no obvious error
 
-Expand the row and read `peakSandboxMB` against `sandboxMemoryLimitMB`. Out-of-memory never retries, so a run that hit the ceiling simply stops rather than recovering on the next attempt.
+Expand the row and read `peakSandboxMB` against `sandboxMemoryLimitMB`. Out-of-memory never retries, so a run that hit the ceiling stops rather than recovering on the next attempt.
 
 ### Retries
 
@@ -104,7 +104,7 @@ The retry policy retries transient failures. Code errors, data errors and out-of
 
 Open [Sync reports](sync-reports.md). It shows what the run did, record by record, which distinguishes *the record was filtered out* from *the record was never seen*.
 
-If the page is empty, the workflow does not call `fastn.diff.compare`. Ask the fastn agent (or your AI tool) to add diff reporting; reconstructing this from logs afterwards is far harder.
+If the page is empty, the workflow does not call `fastn.diff.compare`. Ask the fastn agent (or your AI tool) to add diff reporting; reconstructing this from logs afterward is far harder.
 
 Common causes:
 
@@ -119,9 +119,9 @@ Common causes:
 
 ## Duplicates after a replay
 
-Replay re-runs the workflow for real. Without protection it will write twice.
+Replay re-runs the workflow for real. Without protection it writes twice.
 
-Two defences, and you want both:
+Use both of these defenses:
 
 1. A **deduplication key** on the webhook trigger: a field that uniquely identifies each event, so a retried delivery from the sender does not run the workflow twice.
 2. An **idempotency guard** in the workflow using `fastn.state`:
@@ -165,11 +165,11 @@ Also check whether that customer is **pinned to an older connector version**. Se
 
 ## You deleted something by mistake
 
-Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (as the product puts it, "widgets and their integrations among them"), are deleted immediately and cannot be restored from that page.
+Connectors, connector actions and workflows go to [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (as the product puts it, "widgets and their integrations among them") are deleted immediately and cannot be restored from that page.
 
 ---
 
-## Making the next one easier
+## Prevent the next problem
 
 | Do this once                                                  | Saves you                                     |
 | ------------------------------------------------------------- | ----------------------------------------------- |

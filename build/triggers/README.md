@@ -20,7 +20,7 @@ layout:
 
 A workflow with no trigger only runs when something calls it. A trigger is what makes it run on its own.
 
-The page splits into three sub-tabs (**Webhooks**, **Schedulers** (`?trigger=scheduler`) and **App events** (`?trigger=app`)), with a status select offering `All statuses`, `Active` and `Disabled`.
+The page splits into three sub-tabs: **Webhooks**, **Schedulers** (`?trigger=scheduler`), and **App events** (`?trigger=app`). A status select offers `All statuses`, `Active`, and `Disabled`.
 
 Each list paginates, with a footer reading `Page 1 of 4 · 30 total` and Previous/Next controls. **A trigger you just created may be on a later page rather than missing**: check the count before you conclude it failed. Every table also carries a leading select-all checkbox.
 
@@ -28,33 +28,33 @@ Each list paginates, with a footer reading `Page 1 of 4 · 30 total` and Previou
 **One concept, several labels.** The dialog calls it **Schedule**, the sub-tab **Schedulers**, the browser title *Scheduled triggers*, and a trigger's own Type field **Scheduler**. They are all the same thing. These pages say *schedule trigger* throughout, and the list you want is the **Schedulers** tab.
 {% endhint %}
 
-### Choosing a type
+### Choose a type
 
 <figure><img src="../../.gitbook/assets/add-trigger-dialog.jpg" alt="The Add a trigger dialog asking What should start the workflow?, offering Webhook, Schedule and App event as three rows, each with a sentence of explanation and a forward arrow"><figcaption>Each option carries its own one-line description, reproduced nowhere below, so read them here.</figcaption></figure>
 
-| Type          | Reach for it when                                            |
+| Type          | Use it when                                                  |
 | ------------- | -------------------------------------------------------------- |
 | **Webhook**   | The sender can push, and you want it immediate.               |
 | **Schedule**  | Nightly reconciliation, hourly pulls, anything time-based.    |
 | **App event** | A HubSpot deal moves, a GitHub PR merges, and the connector supports events. |
 
-### Inspecting a trigger
+### Inspect a trigger
 
-Clicking any row opens a side panel, which is where most of a trigger's life is visible. It carries:
+Clicking any row opens a side panel, which shows most of a trigger's state. It carries:
 
-* **Details**. On a schedule trigger this includes **Next run**, **Last run**, **Consecutive Failures** and **Re-enable Cooldown** (and **Delay**, when one is set).
+* **Details**. On a schedule trigger this includes **Next run**, **Last run**, **Consecutive Failures**, and **Re-enable Cooldown** (and **Delay**, when one is set).
 * **Retry policy**, shown only when the trigger has delivery retries configured.
 * **Status History (N)**, on schedule triggers only.
 * **Routes (N)**: where each fire goes.
 * **Failed deliveries (N)**: deliveries that ran out of attempts, each with **Replay** and **Delete**.
 
-Its footer holds **Close**, **Trigger Now** (schedule triggers only) and **Edit**.
+Its footer holds **Close**, **Trigger Now** (schedule triggers only), and **Edit**.
 
 The panel (not the row menu) is where you read *why* a trigger is in the state it is. Status History is the only place a change of status is explained.
 
-### Managing triggers
+### Manage triggers
 
-The status select separates active from disabled. Disabling a trigger stops it firing without losing its configuration: the right move while you fix a workflow, and better than deleting it.
+The status select separates active from disabled. Disabling a trigger stops it firing without losing its configuration, so disable a trigger while you fix its workflow rather than deleting it.
 
 #### When fastn disables a trigger for you
 

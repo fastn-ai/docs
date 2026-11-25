@@ -40,7 +40,7 @@ Claude Code prints *Added HTTP MCP server fastn with URL: https://mcp.fastn.dev/
 claude mcp login fastn
 ```
 
-Or, inside a Claude Code session, type `/mcp`, pick **fastn** and choose **Authenticate**.
+Or, inside a Claude Code session, type `/mcp`, pick **fastn**, and choose **Authenticate**.
 
 fastn opens in your browser. Sign in if asked. If you belong to more than one fastn org, pick the workspace Claude Code works in and click **Connect**.
 
@@ -89,4 +89,4 @@ A `"url"` entry in that file is ignored, and no fastn tools appear.
 
 * **`fastn ... ! Needs authentication` in `claude mcp list`.** Run `claude mcp login fastn`.
 * **The browser shows `{"error":"redirect_uri mismatch"}`.** Claude Code sign-in failed this way on fastn before 27 October 2026. Run `claude mcp login fastn` again.
-* **Claude Code works on the wrong org.** Run `claude mcp logout fastn`, then `claude mcp login fastn` and pick the workspace again.
+* **Claude Code works on the wrong org.** Run `claude mcp logout fastn`, then `claude mcp login fastn`, and pick the workspace again.

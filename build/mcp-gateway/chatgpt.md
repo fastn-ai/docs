@@ -72,5 +72,5 @@ From here ChatGPT works through the same steps as every AI tool: see [Build from
 
 * **`token_endpoint_auth_method "private_key_jwt" is not supported`.** ChatGPT sign-in failed this way on fastn before the fix for it reached your fastn. Click **Connect fastn** again.
 * **ChatGPT doesn't use fastn.** Type `@`, select **fastn**, and name it in your message, for example *Using the fastn plugin, …*.
-* **There's no Add custom MCP server option.** On Business, Enterprise and Edu, ask a workspace admin for permission to create plugins with MCPs, or ask them to add fastn for you.
-* **ChatGPT works on the wrong org.** Open fastn under **Plugins**, remove your connected account, connect again and pick the workspace.
+* **There's no Add custom MCP server option.** On Business, Enterprise, and Edu, ask a workspace admin for permission to create plugins with MCPs, or ask them to add fastn for you.
+* **ChatGPT works on the wrong org.** Open fastn under **Plugins**, remove your connected account, connect again, and pick the workspace.

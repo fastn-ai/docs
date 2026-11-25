@@ -25,7 +25,6 @@ Optional capabilities your customers get inside the widget.
 | **Catalog connectors** | Show all catalog connectors in the widget so customers can browse and connect them.   |
 | **Workflow Diagram**   | Shows the generated flow diagram on a workflow inside the widget.                     |
 | **Generate MCP URL**   | Lets a customer generate a one-time URL from the header menu that connects an MCP client (Claude, ChatGPT, Cursor and others) to their integrations, with no account. You can disconnect it from the Embed tab. To create the URL from your own product, see [Customer MCP URL](../embedding/customer-mcp-url.md). |
-
 | **App page layout**    | **One tab, side by side** (activity next to the workflows) or **Separate tabs**. |
 | **Installations layout** | **Table** (one row per setup) or **Cards** (an expandable card each). |
 

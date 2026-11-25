@@ -27,7 +27,7 @@ const endpoint  = await fastn.envConfig.get("PARTNER_API_BASE");
 const batchSize = await fastn.envConfig.get("BATCH_SIZE");
 ```
 
-### Creating one
+### Create a config
 
 **Add config** opens the **Add Config** dialog, which takes two things.
 
@@ -45,7 +45,7 @@ The same key resolves to a different value depending on which environment the ru
 
 A config's value is entered and edited in the dashboard rather than written once and hidden, which is the practical difference from a [secret](secrets.md): you can see what an environment is set to without running anything. Treat that as the working assumption: anything whose exposure would be an incident belongs in a secret regardless.
 
-### Choosing between a config and a secret
+### Choose between a config and a secret
 
 | Use a **config** for                        | Use a **secret** for                      |
 | --------------------------------------------- | ------------------------------------------- |

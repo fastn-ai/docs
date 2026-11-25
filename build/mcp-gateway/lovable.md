@@ -64,4 +64,4 @@ From here Lovable works through the same steps as every AI tool: see [Build from
 
 * **Nothing happens after Add & authorize.** Your browser blocked the sign-in popup. Allow popups for lovable.dev and click **Add & authorize** again.
 * **Lovable doesn't use fastn.** Name it in your message, for example *Using the fastn connector, …*.
-* **Lovable works on the wrong org.** Open fastn under **Connectors**, click **Disconnect fastn**, add it again and pick the workspace when you sign in.
+* **Lovable works on the wrong org.** Open fastn under **Connectors**, click **Disconnect fastn**, add it again, and pick the workspace when you sign in.

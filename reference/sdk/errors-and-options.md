@@ -2,11 +2,10 @@
 description: "Request options (retry keys, tracing, time limits, extra fields) and the errors the SDK throws."
 ---
 
-# Errors, retries and options
-
+# Errors, retries, and options
 ## Request options
 
-Every SDK method takes an optional **last argument** with request options. All of them are optional.
+Every SDK method takes an optional **last argument** with request options.
 
 ```typescript
 await contacts.create(
@@ -57,10 +56,10 @@ const again = await meetings.create(
 
 ### Automatic retries
 
-The SDK retries a call on `429`, `502`, `503`, `504` and network errors, up to `retries` times (default 2), and waits for `Retry-After` when the API sends it. It does this only when a repeat is safe:
+The SDK retries a call on `429`, `502`, `503`, `504`, and network errors, up to `retries` times (default 2), and waits for `Retry-After` when the API sends it. It does this only when a repeat is safe:
 
 * reads (`GET` calls), always;
-* writes, only when they carry an `idempotencyKey` **and** the operation is one fastn de-duplicates by that key (unified record create, update and delete, and workflow execute).
+* writes, only when they carry an `idempotencyKey` **and** the operation is one fastn de-duplicates by that key (unified record create, update, and delete, and workflow execute).
 
 Every other write is never retried, so a lost answer can never make it act twice.
 
@@ -87,7 +86,7 @@ Each row: `id`, `correlationId`, `orgId`, `category`, `entity`, `operation`, `co
 
 ## Errors
 
-Every non-2xx answer throws a `FastnApiError`. A request that never got an answer (network failure, time limit, cancelled) throws a `FastnNetworkError`.
+Every non-2xx answer throws a `FastnApiError`. A request that never got an answer (network failure, time limit, canceled) throws a `FastnNetworkError`.
 
 ```typescript
 import { FastnApiError, FastnNetworkError } from "@fastn-ai/sdk";
@@ -119,7 +118,7 @@ try {
 | ----- | ------- |
 | `status` | The HTTP status, for example `404`. |
 | `code` | The API's error code, for example `UNIFIED_VALIDATION_FAILED`. Some errors have no code: use `status` then. |
-| `message` | The method, path, status, code and the API's message, for example `POST /v1/unified/{category}/{entity} -> 400 UNIFIED_VALIDATION_FAILED: Field "title" is required`. |
+| `message` | The method, path, status, code, and the API's message, for example `POST /v1/unified/{category}/{entity} -> 400 UNIFIED_VALIDATION_FAILED: Field "title" is required`. |
 | `details` | Extra details the API sent, when any. |
 | `requestId` | The id fastn gave the failed request. Quote it when you ask fastn for help. |
 | `method`, `path` | The call that failed. |
@@ -145,11 +144,11 @@ try {
 | `404 NOT_FOUND` (or `404` with no code) | The thing you asked for does not exist. | Check the id. |
 | `404 UNIFIED_NO_CONNECTED_PROVIDER` | The customer has not connected an app for this entity. | Send a [setup link](connecting-apps.md#setup-links). |
 | `404 UNIFIED_UNSUPPORTED_OPERATION` | The app does not offer that operation for this entity. | Use a [direct app action](app-actions.md). |
-| `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed or not active. | Stop using it; pick a connection from `customer.connections()`. |
+| `404 UNIFIED_CONNECTION_NOT_FOUND` | The `connectionId` is wrong, removed, or not active. | Stop using it; pick a connection from `customer.connections()`. |
 | `409 UNIFIED_CONNECTION_EXPIRED` | The connection's login expired. | Ask the customer to sign in to the app again. |
 | `400 UNIFIED_PROVIDER_REJECTED` | The app refused what you sent. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); fix the fields. |
 | `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id. | Check the record id. |
 | `422 IDEMPOTENCY_KEY_REUSED` | The same `idempotencyKey` was used for a different request. | Use a new key for a new request. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer), or fastn's connector platform refused the call. | Retry later; `e.body.providerStatus` and `e.body.providerError` hold what the app said, when it answered. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer), or fastn's connector platform refused the call. | Retry later; `e.body.providerStatus` and `e.body.providerError` hold what the app said, when it answered. |
 
 See [Unified records](unified-records.md#errors-from-unified-calls) for every unified code, and [Errors and failure states](../errors.md) for failures you see in the dashboard.

@@ -14,9 +14,8 @@ layout:
     visible: true
 ---
 
-# Using a webhook trigger
-
-Once the webhook trigger is built, in the dashboard, with the fastn agent or with your AI tool, it can be called as shown by the example curl below. The first ID in the URL is your organization's ID.
+# Call a webhook trigger
+Once the webhook trigger is built, in the dashboard, with the fastn agent or with your AI tool, call it with a request like the one below. The first ID in the URL is your organization's ID.
 
 ```bash
 curl --location 'https://webhooks.fastn.dev/prod/triggers/<ORG_ID>/webhooks/<WEBHOOK_ID>' \

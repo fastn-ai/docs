@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. The [fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your AI tool writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish and deploy. If you want to write code yourself, ask fastn to turn it on for your organization; fastn can enable it for any organization.
+No. The [fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your AI tool writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish, and deploy. If you want to write code yourself, ask fastn to turn it on for your organization.
 
 </details>
 
@@ -40,7 +40,7 @@ If an identifier says tenant, it means one of your customers.
 
 <summary>What is the difference between a connector and a connection?</summary>
 
-A **connector** is the definition of an app: its actions, auth methods and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
+A **connector** is the definition of an app: its actions, auth methods, and webhooks. A **connection** is one customer's authorized link to it, holding the encrypted credential. One connector, many connections.
 
 </details>
 
@@ -66,7 +66,7 @@ Use your own OAuth application. You set it on the connector's **Auth** tab, whic
 
 Not by re-entering the credential. It belongs to the customer, and they re-authorize through your widget. What the dashboard offers on the row is **Reconnect** and **Disconnect**.
 
-The precise meaning of each status is not documented here; treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect" and read the connection's own **Token and activity** section for `Expires`, `Last refreshed` and `Last used`.
+For what each status means, see [Connection statuses](errors.md#connection-statuses). Treat *Expired* and *Failed* as "this credential no longer works, ask the customer to reconnect", and read the connection's own **Token and activity** section for `Expires`, `Last refreshed`, and `Last used`.
 
 </details>
 
@@ -100,7 +100,7 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 | **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
 | **Long**     | Returns 202, runs in the background.             | **Up to 36 hours** | 30s - 36h |
 
-Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. **Instant** only when something is genuinely waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. **Standard** for almost everything else. **Long** for batch imports and backfills.
+Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. Use **Instant** only when something is waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. Use **Standard** for almost everything else, and **Long** for batch imports and backfills.
 
 </details>
 
@@ -108,7 +108,7 @@ Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant
 
 <summary>What is the difference between Publish and Deploy?</summary>
 
-**Publish** creates an immutable version snapshot (v1, v2, …). **Deploy** sends a published version to an environment so it starts handling real events. Rollback is just deploying an earlier version.
+**Publish** creates an immutable version snapshot (v1, v2, …). **Deploy** sends a published version to an environment so it starts handling real events. To roll back, deploy an earlier version.
 
 </details>
 
@@ -132,7 +132,7 @@ Set a **deduplication key** on the webhook trigger, and add an idempotency guard
 
 <summary>Does a retry policy retry everything?</summary>
 
-No. It retries transient failures. **Code errors, data errors and out-of-memory never retry**: a bug does not get better on the second attempt, and neither does a payload that was always malformed.
+No. It retries transient failures. **Code errors, data errors, and out-of-memory never retry**: a bug does not get better on the second attempt, and neither does a payload that was always malformed.
 
 </details>
 
@@ -184,7 +184,7 @@ Account owners and admins only. It is enforced at the API layer and cannot be gr
 
 <summary>Can I limit an agent to read-only access for one customer?</summary>
 
-Yes. Combine the action selection on the connector with a narrow API key: pick the **Viewer** preset, or **Custom** with only the read boxes ticked in the `What it can touch` matrix, and set **Customers it can reach** to **Only the ones I pick**. See [API keys](../manage/api-keys.md).
+Yes. Combine the action selection on the connector with a narrow API key: pick the **Viewer** preset, or **Custom** with only the read boxes ticked in the **What it can touch** matrix, and set **Customers it can reach** to **Only the ones I pick**. See [API keys](../manage/api-keys.md).
 
 </details>
 
@@ -194,7 +194,7 @@ Yes. Combine the action selection on the connector with a narrow API key: pick t
 
 <details>
 
-<summary>Where does `fastn.db` data actually live?</summary>
+<summary>Where does `fastn.db` data live?</summary>
 
 In fastn's shared managed Postgres by default, in a schema isolated to your workspace. You can point it at a Postgres you operate instead, under [Settings → Database](../manage/database.md). Rows are never copied between the two, so switching changes where new reads and writes go and nothing else.
 
@@ -254,7 +254,7 @@ Customer connections are the exception on Scale: past the 10 included, each extr
 
 <summary>I deleted something by mistake.</summary>
 
-Connectors, connector actions and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (widgets and their integrations among them), are deleted immediately and cannot be restored from that page.
+Connectors, connector actions, and workflows are in [Trash](../manage/trash.md) and restore with slug and history intact. Other resources (widgets and their integrations among them) are deleted immediately and cannot be restored from that page.
 
 </details>
 
@@ -266,9 +266,9 @@ Connectors, connector actions and workflows are in [Trash](../manage/trash.md) a
 
 <summary>Why does the same connector appear twice in the catalog?</summary>
 
-Because two entries exist for one app: typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion and Cin7 Core all show up this way.
+Two entries exist for one app, typically one badged **managed** and one badged **Custom**. Asana, HubSpot, Salesforce, Slack, Notion, and Cin7 Core all show up this way.
 
-The practical consequence: the connector count is a count of *entries*, not of distinct apps, so the total on the Connectors page is not a count of distinct products. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
+The total on the Connectors page counts *entries*, not distinct apps. Check the badge and the provenance line before you connect, so you do not authorize the copy you did not mean.
 
 </details>
 

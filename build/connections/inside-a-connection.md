@@ -20,7 +20,7 @@ layout:
 
 ### Header
 
-The connector's name and icon, the connection's name (for example `Default`), its **status** badge and a one-line explanation of the status, for example *Authorized, but the credential has expired. Reconnecting usually clears it.* **Reconnect** (top right) repairs the connection. The **←** arrow (**Back to connections**) returns to the list.
+The connector's name and icon, the connection's name (for example `Default`), its **status** badge, and a one-line explanation of the status, for example *Authorized, but the credential has expired. Reconnecting usually clears it.* **Reconnect** (top right) repairs the connection. The **←** arrow (**Back to connections**) returns to the list.
 
 ### Connection
 

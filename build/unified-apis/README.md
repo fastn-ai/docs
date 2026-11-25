@@ -28,7 +28,7 @@ Three of your customers use three different CRMs. Without a unified API, your co
 
 A **category** is a domain. An **entity** is a business object inside it. Each entity is backed by one or more **providers**. The list shows a count chip (for example `N categories`) and a **Search categories** box. A search that matches nothing reads `No categories match` / *Try another search.*
 
-The catalog is live data: which categories, entities and providers you see depends on what fastn has published and mapped at the time. As an illustration, the catalog has included categories such as **CRM**, **Documents**, **Knowledge Base**, **Messaging**, **Project Management** and **Scheduling**, with entries like these:
+The catalog is live data: which categories, entities, and providers you see depends on what fastn has published and mapped at the time. As an illustration, the catalog has included categories such as **CRM**, **Documents**, **Knowledge Base**, **Messaging**, **Project Management**, and **Scheduling**, with entries like these:
 
 | Category      | Example entities                                   | Example providers (slugs)                |
 | ------------- | -------------------------------------------------- | ---------------------------------------- |
@@ -40,6 +40,6 @@ The provider slugs are what you use in the API; the cards show display names. Op
 
 ### In this section
 
-* [Setup and Usage](setup-and-usage.md)
+* [Set up and use](setup-and-usage.md)
 * [Inside a category](inside-a-category.md)
 * [Unified vs direct](unified-vs-direct.md)

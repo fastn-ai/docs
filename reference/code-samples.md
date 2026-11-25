@@ -18,7 +18,7 @@ layout:
 
 Find a sample by what you want to do. Each link opens the page that holds the code and explains it.
 
-### Runnable examples
+## Runnable examples
 
 Complete projects you can clone and run, in [fastn-ai/docs/examples](https://github.com/fastn-ai/docs/tree/main/examples):
 
@@ -29,7 +29,7 @@ Complete projects you can clone and run, in [fastn-ai/docs/examples](https://git
 | [crm-contacts-node](https://github.com/fastn-ai/docs/tree/main/examples/crm-contacts-node) | Finds or creates a contact in a customer's CRM, then adds a note | Node.js, `@fastn-ai/sdk` |
 | [webhook-event-node](https://github.com/fastn-ai/docs/tree/main/examples/webhook-event-node) | Sends your product's event to a webhook trigger, signed for one customer | Node.js |
 
-### Embed the widget
+## Embed the widget
 
 | Task | Languages | Sample |
 | --- | --- | --- |
@@ -43,13 +43,13 @@ Complete projects you can clone and run, in [fastn-ai/docs/examples](https://git
 | Create a customer MCP URL | curl | [Customer MCP URL](../embed/embedding/customer-mcp-url.md) |
 | Handle widget callbacks | JSON payloads | [Widget callbacks](widget-callbacks.md) |
 
-### Call fastn from your backend
+## Call fastn from your backend
 
 | Task | Languages | Sample |
 | --- | --- | --- |
-| Read and write a customer's CRM records | TypeScript, curl | [How-to](../how-to/crm-records.md) |
-| Run a workflow for one customer and read the result | curl | [How-to](../how-to/run-for-a-customer.md) |
-| Send your product's events to a webhook trigger | Node.js | [How-to](../how-to/events-from-your-product.md) |
+| Read and write a customer's CRM records | TypeScript, curl | [Read and write a customer's CRM records](../how-to/crm-records.md) |
+| Run a workflow for one customer and read the result | curl | [Run an integration for one customer](../how-to/run-for-a-customer.md) |
+| Send your product's events to a webhook trigger | Node.js | [Start an integration from your product's events](../how-to/events-from-your-product.md) |
 | Build an integration end to end with the SDK | TypeScript | [SDK: end to end](sdk/end-to-end.md) |
 | Manage customers | TypeScript | [SDK: customers](sdk/customers.md) |
 | Connect apps for a customer | TypeScript | [SDK: connecting apps](sdk/connecting-apps.md) |
@@ -60,15 +60,15 @@ Complete projects you can clone and run, in [fastn-ai/docs/examples](https://git
 | Handle errors and retries | TypeScript | [SDK: errors, retries and options](sdk/errors-and-options.md) |
 | Any other platform operation | TypeScript | [SDK: any other operation](sdk/any-operation.md) |
 
-### Write workflows
+## Write workflows
 
 | Task | Languages | Sample |
 | --- | --- | --- |
-| Read input, call connectors, use state, secrets and configs | JavaScript | [Workflow runtime API](workflow-runtime.md) |
+| Read input, call connectors, use state, secrets, and configs | JavaScript | [Workflow runtime API](workflow-runtime.md) |
 | Write a workflow in code | JavaScript | [Write a workflow in code](../tutorials/saas-admin/configuring-a-workflow-in-code.md) |
 | Idempotent syncs, change detection, large volumes, backfills | JavaScript | [Common patterns](../build/patterns.md) |
 
-### Connect an AI tool
+## Connect an AI tool
 
 | Task | Languages | Sample |
 | --- | --- | --- |

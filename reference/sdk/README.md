@@ -4,7 +4,7 @@ description: "Call the fastn platform from your backend with the fastn SDK: inst
 
 # SDK
 
-The fastn SDK is the fastn platform API as a library for your backend. It is for Node.js and TypeScript: `@fastn-ai/sdk` (version 0.5.1). A Python SDK, `fastn-ai` (also 0.5.1), offers the same client as `fastn.platform.FastnClient`, with `fastn.customer(ref)` for one customer; this section shows the Node.js SDK. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries and event signatures for you.
+The fastn SDK is the fastn platform API as a library for your backend. It is for Node.js and TypeScript: `@fastn-ai/sdk` (version 0.5.1). A Python SDK, `fastn-ai` (also 0.5.1), offers the same client as `fastn.platform.FastnClient`, with `fastn.customer(ref)` for one customer; this section shows the Node.js SDK. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries, and event signatures for you.
 
 Use it from your **backend**. It needs your fastn API key, which must never reach a browser.
 
@@ -46,9 +46,9 @@ const customer = fastn.customer("acme_customer_42");
 | `apiKey`    | Yes      | Your fastn API key. The SDK sends it on every call. |
 | `baseUrl`   | No       | The API address. Default `https://api.fastn.dev`. |
 | `timeoutMs` | No       | Time limit per request, in milliseconds. Default 60000. |
-| `retries`   | No       | How many times a safe call is retried (see [Errors, retries and options](errors-and-options.md)). Default 2. |
+| `retries`   | No       | How many times a safe call is retried (see [Errors, retries, and options](errors-and-options.md)). Default 2. |
 | `defaults`  | No       | [Request options](errors-and-options.md#request-options) applied to every call, for example `{ customer: { ref: "acme_customer_42" } }` to tie a whole client to one customer. |
-| `onRequest` | No       | A function called after every HTTP attempt, for your logs. It gets the operation, method, URL, status, duration, attempt number and request id. It never gets the API key. |
+| `onRequest` | No       | A function called after every HTTP attempt, for your logs. It gets the operation, method, URL, status, duration, attempt number, and request id. It never gets the API key. |
 | `tools`     | No       | Only for the optional [workspace tools](workspace-tools.md) route. |
 | `fetch`, `userAgent` | No | Your own `fetch` implementation, and a custom user agent. |
 
@@ -59,21 +59,21 @@ const me = await fastn.me();
 console.log(me.role, me.org?.id);
 ```
 
-`fastn.me()` answers who the key is: `actor` (`api_key`), `role`, `org` (`id`, `name`, `type`, `externalRef`), `parentOrg`, `environment`, `permissions` and `apiKey` (`mode`, `environment`). The answer is cached for the life of the client.
+`fastn.me()` answers who the key is: `actor` (`api_key`), `role`, `org` (`id`, `name`, `type`, `externalRef`), `parentOrg`, `environment`, `permissions`, and `apiKey` (`mode`, `environment`). The answer is cached for the life of the client.
 
 ---
 
 ## Your customers and their ids
 
-You are the SaaS company using fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) for the model.
+You are the SaaS company using fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Customers and isolation](../../tutorials/developer/understanding-tenancy.md) for the model.
 
 You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. Answers name the customer by your id too, as `orgId`.
 
 {% hint style="warning" %}
-To act for your customers, use a key that can act for your customers (one not pinned to a single customer).
+To act for your customers, use a key that is not pinned to a single customer.
 {% endhint %}
 
-### Every id you will see
+### Every id you see
 
 | Id | Example | What it is | Who makes it |
 | -- | ------- | ---------- | ------------ |
@@ -103,7 +103,7 @@ The generated methods (`fastn.<area>.<operation>()`) return answers exactly as t
 
 * `fastn.webhooks.*` unwraps `data` and returns the subscription (or list) itself.
 * `customer.connect(app)` returns `{ setupId, url, status, expiresAt, widgetId }`.
-* `customer.links.get()` and `.cancel()`, `customer.callLog()` and `customer.watch()` return the item itself, without the `data` wrapper.
+* `customer.links.get()` and `.cancel()`, `customer.callLog()`, and `customer.watch()` return the item itself, without the `data` wrapper.
 * `customer.find()` returns the customer row, or `undefined` when there is none.
 
 Raw answers from the generated methods look like this:
@@ -113,7 +113,7 @@ Raw answers from the generated methods look like this:
 | Customers, links, connections, events | `{ data: { … } }` for one item, `{ data: [ … ] }` for a list. Some lists add `pagination` or `meta`. |
 | One unified record (create, get, update) | `{ id, provider, data: { …fields } }`. `id` is the record's id in the app. |
 | A list of unified records (list, search) | `{ records: [ { id, provider, data } ], nextCursor, hasMore, provider }` |
-| A failure | A thrown `FastnApiError` or `FastnNetworkError`. See [Errors, retries and options](errors-and-options.md). |
+| A failure | A thrown `FastnApiError` or `FastnNetworkError`. See [Errors, retries, and options](errors-and-options.md). |
 
 Fields of unified records and their list options use `snake_case` (`start_time`, `page_size`). Everything else uses `camelCase` (`widgetId`, `connectionId`, `idempotencyKey`).
 
@@ -123,15 +123,15 @@ Fields of unified records and their list options use `snake_case` (`start_time`,
 
 | Page | Covers |
 | ---- | ------ |
-| [Build an integration, end to end](end-to-end.md) | One complete integration in the order you build it: set up once, onboard a customer, the calls during a conversation, events, retries and errors. |
-| [Customers](customers.md) | Register, find, read, list, change and remove customers. |
+| [Build an integration, end to end](end-to-end.md) | One complete integration in the order you build it: set up once, onboard a customer, the calls during a conversation, events, retries, and errors. |
+| [Customers](customers.md) | Register, find, read, list, change, and remove customers. |
 | [Connecting apps](connecting-apps.md) | Widgets, setup links, redirect addresses, embed tokens, and the connections a customer made. |
-| [Unified records](unified-records.md) | One set of methods for every app: create, get, list, search, update and delete records, and how to find the fields. |
-| [Calendar and CRM](calendar-and-crm.md) | The typed methods: free slots, book, find and cancel meetings; contacts, notes, tasks and deals. |
+| [Unified records](unified-records.md) | One set of methods for every app: create, get, list, search, update, and delete records, and how to find the fields. |
+| [Calendar and CRM](calendar-and-crm.md) | The typed methods: free slots, book, find, and cancel meetings; contacts, notes, tasks, and deals. |
 | [Direct app actions](app-actions.md) | Run an app's own action when the unified API does not cover what you need. |
 | [Events](events.md) | Register your webhook, receive signed events, and watch a customer's app for changes. |
-| [Errors, retries and options](errors-and-options.md) | Retry keys, tracing, time limits, and the errors to handle. |
+| [Errors, retries, and options](errors-and-options.md) | Retry keys, tracing, time limits, and the errors to handle. |
 | [Workspace tools](workspace-tools.md) | The optional route: run your workspace's MCP tools by name, or generate typed methods for them. |
 | [Any other operation](any-operation.md) | Every other API operation, by name. |
 
-The SDK has one method for every operation your key can call, under an area such as `fastn.orgs`, `fastn.embed`, `fastn.connections`, `fastn.unified`, `fastn.events` or `fastn.connectors`. Each method has the same name as the operation. For the plain HTTP calls, see [HTTP API](../api.md).
+The SDK has one method for every operation your key can call, under an area such as `fastn.orgs`, `fastn.embed`, `fastn.connections`, `fastn.unified`, `fastn.events`, or `fastn.connectors`. Each method has the same name as the operation. For the plain HTTP calls, see [HTTP API](../api.md).

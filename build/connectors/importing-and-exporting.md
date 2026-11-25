@@ -1,5 +1,5 @@
 ---
-description: "Moving connectors and actions in and out of a workspace as JSON files: Import, exporting actions and exporting connectors."
+description: "Moving connectors and actions in and out of a workspace as JSON files: importing, exporting actions, and exporting connectors."
 layout:
   width: default
   title:
@@ -14,8 +14,7 @@ layout:
     visible: true
 ---
 
-# Importing and exporting
-
+# Import and export
 Connectors and actions can be saved to JSON files and loaded into another workspace. Use this to copy a connector between environments, to keep a copy under version control, or to share a connector definition with someone.
 
 ### Export actions
@@ -57,7 +56,7 @@ The file looks like this (shortened):
 | Field | Meaning |
 | --- | --- |
 | `connector` | The connector the actions came from. |
-| `httpConfig` | The request: everything on the Params, Headers and Body tabs. `ftpConfig` and `redisConfig` hold the equivalent for FTP and REDIS connectors. |
+| `httpConfig` | The request: everything on the Params, Headers, and Body tabs. `ftpConfig` and `redisConfig` hold the equivalent for FTP and REDIS connectors. |
 | `authConfig` | The **Stored action setting** from the Auth tab. It is not used at run time. |
 | `inputContract` / `outputContract` | The **Input schema** and **Output schema**. |
 | `stage` | `test` or `live`. |
@@ -67,7 +66,7 @@ An action export holds definitions only: no credentials and no connections.
 
 ### Export connectors
 
-Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their catalog card with **Select**, **Edit**, **Export** and **Delete**.
+Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their catalog card with **Select**, **Edit**, **Export**, and **Delete**.
 
 * **⋯ → Export** downloads that one connector as `<slug>-bundle.json`.
 * **⋯ → Select** ticks the card and adds **Export Selected (n)** to the page header. Select more cards, then click it to download them together.
@@ -92,9 +91,9 @@ Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their ca
 }
 ```
 
-A single-connector `<slug>-bundle.json` is flat: `connector`, `actions`, `webhookConfigs`, `authProviders` and `appRegistrations` sit at the top level, with no `connectors` array.
+A single-connector `<slug>-bundle.json` is flat: `connector`, `actions`, `webhookConfigs`, `authProviders`, and `appRegistrations` sit at the top level, with no `connectors` array.
 
-Each entry carries the connector's definition, its actions, its webhook configs, its auth providers and its app registrations. Connections are never included. If the connector has its own OAuth app, open the file and check the `authProviders` entries before sharing it. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
+Each entry carries the connector's definition, its actions, its webhook configs, its auth providers, and its app registrations. Connections are never included. If the connector has its own OAuth app, open the file and check the `authProviders` entries before sharing it. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
 
 ### Import
 

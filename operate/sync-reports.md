@@ -26,7 +26,7 @@ Executions tell you a run succeeded. Sync reports tell you what it did, record b
 
 > A report appears the first time a workflow runs `fastn.diff.compare`.
 
-Which implies reports are effectively opt-in at the workflow level: a workflow that compares its source and target through `fastn.diff.compare` produces one, and a workflow that does not, does not.
+Reports are opt-in at the workflow level: a workflow that compares its source and target through `fastn.diff.compare` produces one, and a workflow that does not, does not.
 
 ### What it is for
 
@@ -43,5 +43,5 @@ Each report shows its counts of records **unchanged**, **updated**, **created** 
 Until a workflow has run `fastn.diff.compare`, the page reads **No sync reports yet**.
 
 {% hint style="info" %}
-If you are building a data sync and this page stays empty, ask the fastn agent (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterwards.
+If you are building a data sync and this page stays empty, ask the fastn agent (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterward.
 {% endhint %}

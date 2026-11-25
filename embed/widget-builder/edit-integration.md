@@ -33,7 +33,7 @@ Each row in the INTEGRATIONS panel carries a status dot, a **pencil** and a **tr
 
 ## Status
 
-**Widget enabled** is a switch: *Globally visible to customers. Disabling hides the widget without affecting existing installations.* Customers who already activated it keep running; new ones simply do not see it.
+**Widget enabled** is a switch: *Globally visible to customers. Disabling hides the widget without affecting existing installations.* Customers who already activated it keep running; new ones do not see it.
 
 A draft integration shows a **Draft.** notice here: new customers do not see it until it is published, and customers already running it keep it.
 

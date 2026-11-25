@@ -37,7 +37,7 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 | **Registered** | How many of those events are registered, for example `15/28`. Green when all are registered, amber when only some are. |
 | **Subscription** / **Unsubscription** | `Defined` when the config has that code, `-` when it does not. |
 | **Created** | When the config was created. |
-| **Actions** | **Edit**, **Execute** and **Delete**, on connectors your workspace owns. Empty on managed connectors. |
+| **Actions** | **Edit**, **Execute**, and **Delete**, on connectors your workspace owns. Empty on managed connectors. |
 
 * **Edit** opens **Edit webhook config** below the table, the same form as **New config** with **Update** instead of **Create**.
 * **Execute** runs the **Subscribe** snippet once with empty input and reports *Subscription executed successfully* when it works. It is disabled if the config has no Subscribe code.
@@ -93,13 +93,13 @@ Each snippet has its own **Run** button for trying it out.
 
 #### Events
 
-The list of events the config can deliver. **+ Add Event** adds one. Each event has an **Event ID** (the app's own name for it, for example `invoice.created`), a **Label** and an optional **Description**. These are the events a user picks from when creating an app event trigger on this connector.
+The list of events the config can deliver. **+ Add Event** adds one. Each event has an **Event ID** (the app's own name for it, for example `invoice.created`), a **Label**, and an optional **Description**. These are the events a user picks from when creating an app event trigger on this connector.
 
 #### Inputs
 
 > Define input parameters for the subscription code. `webhookUrl` and `event` are always auto-provided.
 
-Each input has a **Key** and a **Default value**, and a **Hidden** checkbox. **+ Add Input** adds one.
+Each input has a **Key**, a **Default value**, and a **Hidden** checkbox. **+ Add Input** adds one.
 
 #### Get User Account Action
 
@@ -123,9 +123,9 @@ Tells fastn how to match an incoming event to the right customer. It is shown fo
 
 For HMAC, enter the provider's webhook signing secret in **Signing Secret**. The form's help text also notes that the shared secret is read from the `client_secret` of the connector's auth provider.
 
-A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request. When it is ticked, set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`) and **Response Field** (for example `challenge`), the field fastn echoes back.
+A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request. When it is ticked, set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`), and **Response Field** (for example `challenge`), the field fastn echoes back.
 
-### Saving
+### Save the config
 
 **Create** saves the new config. For the **App** type, the footer reads *An event key is needed before this can be saved.* until **Event key** is filled in.
 

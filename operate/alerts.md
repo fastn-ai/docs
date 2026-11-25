@@ -18,7 +18,7 @@ layout:
 
 **Operate → Health → Alerts** · `/health?tab=alerts`
 
-Without an alert, a sync can fail quietly for hours. This is the cheapest insurance in the product.
+An alert tells you when a run fails, an event waits too long, a metric crosses a threshold, or your workflow code raises one.
 
 At the top of the tab, a **Notification channels** strip ("Email and webhooks work without a connection") shows which messaging apps are connected for alerts, with a way to connect the ones that are not. Below it, until an alert exists, sits the empty state:
 
@@ -28,13 +28,13 @@ under the heading **No alerts yet**, with **Turn on failure alerts** and **Custo
 
 ### The one-click start
 
-**Turn on failure alerts** creates the two alerts most teams need in one click: an email the moment a run fails, and a daily reliability check. If you do nothing else on this page, do that.
+**Turn on failure alerts** creates two alerts in one click: an email the moment a run fails, and a daily reliability check. If you do nothing else on this page, do that.
 
 <figure><img src="../.gitbook/assets/screens/health-alerts.webp" alt="Health, Alerts with none yet: a New alert button, Notification channels Slack, Microsoft Teams and Gmail with Connect buttons, and No alerts yet with Turn on failure alerts and Custom alert"><figcaption><strong>Operate → Health → Alerts</strong> before any alert exists.</figcaption></figure>
 
 ### Custom alerts
 
-**New alert** (or **Custom alert** on the empty state), opens the editor.
+**New alert** (or **Custom alert** on the empty state) opens the editor.
 
 {% hint style="danger" %}
 **The editor autosaves, and there is no Save button.** **New alert** persists an alert on the server the moment you click it (an `Untitled alert`, **Paused**, with **No recipients**) and every subsequent edit is saved as you make it. There is nothing to confirm and nothing to cancel. If you opened one by accident, delete it from its row; closing the editor leaves it behind.
@@ -89,7 +89,7 @@ A multi-select: leave it across everything, or pick the specific workflows this 
 
 Discord and Telegram deliveries can be [set up through the API](#set-deliveries-through-the-api).
 
-An alert with no recipients shows **No recipients** and will not notify anyone.
+An alert with no recipients shows **No recipients** and does not notify anyone.
 
 #### Firing history
 

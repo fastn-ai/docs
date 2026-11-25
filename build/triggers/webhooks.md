@@ -21,20 +21,20 @@ layout:
 A webhook trigger fires when another app calls a URL you give it. Nothing is polled.
 
 {% hint style="info" %}
-**Looking for triggers somewhere else?** They used to sit under Settings and under Activity. Both of those paths now redirect to **Integrations**, which is the one place triggers are created and listed. Its tabs are **Connectors**, **Workflows**, **Triggers** and **Unified APIs**.
+**Looking for triggers somewhere else?** They used to sit under Settings and under Activity. Both of those paths now redirect to **Integrations**, which is the one place triggers are created and listed. Its tabs are **Connectors**, **Workflows**, **Triggers**, and **Unified APIs**.
 {% endhint %}
 
 **Columns:** `Name`, `Type`, `Status`, `Auth`, `Routes`, `Created`, then the row actions.
 
 * **`Auth`** reads `API key` where the webhook requires a fastn API key (in the `x-api-key` header, `Authorization: Bearer`, or the older `x-fastn-access-key`), or `None (public)` where anyone with the URL can fire it. It is the column to scan if you are auditing exposure.
 
-Unlike the Schedulers and App events tables, this one ships **no `Actions` header**: the row menu is still there at the end of each row, the column simply has no title. That is a quirk of the product, not a missing feature.
+Unlike the Schedulers and App events tables, this one has **no `Actions` header**: the row menu is still at the end of each row, but the column has no title.
 
 ### Can the fastn agent do this for me?
 
-Yes. [The fastn agent](../agent/README.md), or your AI tool over the [fastn MCP server](../mcp-gateway/README.md), can bind triggers as part of building a workflow - webhook, schedule and app-event triggers are all actions it can take, so "run this whenever my store sends an order webhook" is a reasonable thing to ask for in plain language rather than wiring by hand.
+Yes. [The fastn agent](../agent/README.md), or your AI tool over the [fastn MCP server](../mcp-gateway/README.md), can bind triggers as part of building a workflow. Webhook, schedule, and app-event triggers are all actions it can take, so you can ask in plain language, for example "run this whenever my store sends an order webhook", rather than wiring it by hand.
 
-What the agent binds is the trigger-to-workflow connection. You still come to this screen to read the URL it created, to copy it as cURL while debugging, or to disable or delete it. Build it by hand when you want control over the routes, the delivery attempts and the auth up front; ask the agent when you want the workflow and its trigger created together.
+What the agent binds is the trigger-to-workflow connection. You still come to this screen to read the URL it created, to copy it as cURL while debugging, or to disable or delete it. Build it by hand when you want control over the routes, the delivery attempts, and the auth up front; ask the agent when you want the workflow and its trigger created together.
 
 ### Create a webhook trigger by hand
 
@@ -59,16 +59,16 @@ A route says where a payload goes when it arrives. Routes are required. Add more
 | --------------- | --------------------------------------------------------------------------------------------------------- |
 | **Workflow**    | Required. Which workflow this route runs.                                                                |
 | **Environment** | Optional. `test (latest published)`, the default, runs the workflow's latest published version, so publishing a new version changes what this route runs without any deploy. **Any other option is one of your organization's named environments** (see [Environments](../../manage/environments.md)) and runs the version deployed there, and **if nothing is deployed there, the fire fails**. |
-| **Headers**     | Optional key/value pairs sent with the request to the workflow. Use for a key the workflow needs to call back to the sender. |
+| **Headers**     | Optional key/value pairs sent with the request to the workflow. Use them for a key the workflow needs to call back to the sender. |
 {% endstep %}
 
 {% step %}
 #### Set delivery attempts
 
-How many times in total fastn tries to deliver an event to the workflow, counting the first try. Once the attempts are exhausted the delivery is recorded as failed.
+**Max attempts** sets how many times in total fastn tries to deliver an event to the workflow, counting the first try. Once the attempts are exhausted the delivery is recorded as failed.
 
 {% hint style="info" %}
-**Failed deliveries live on the trigger.** Click the trigger's row to open its detail panel: the **Failed deliveries (N)** section lists each one with its route, status, attempts and error, and each entry's menu offers **Replay** and **Delete**.
+**Failed deliveries live on the trigger.** Click the trigger's row to open its detail panel: the **Failed deliveries (N)** section lists each one with its route, status, attempts, and error, and each entry's menu offers **Replay** and **Delete**.
 {% endhint %}
 
 | Field                | Range / options                                      | Default          |
@@ -79,6 +79,10 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 
 {% step %}
 #### Set the advanced options, if you need them
+
+{% hint style="danger" %}
+Only use **None (public)** authentication when the sender cannot set a header, and pair it with a deduplication key and a workflow that validates its own payload.
+{% endhint %}
 
 | Field                 | Notes                                                                                                                                    |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -91,14 +95,10 @@ How many times in total fastn tries to deliver an event to the workflow, countin
 {% step %}
 #### Create it, then hand out the URL
 
-Select **Create trigger** (there is no Save button) and it joins the **Webhooks** list. Its row menu offers **Copy URL**, **Copy as cURL**, **Disable**, **Edit** and **Delete**: **Copy as cURL** is the fastest way to fire one by hand while you are debugging; with API key auth, the copied command sends an `x-api-key: <YOUR_API_KEY>` header for you to fill in. See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md).
+Select **Create trigger** (there is no Save button) and it joins the **Webhooks** list. Its row menu offers **Copy URL**, **Copy as cURL**, **Disable**, **Edit**, and **Delete**: **Copy as cURL** is the fastest way to fire one by hand while you are debugging; with API key auth, the copied command sends an `x-api-key: <YOUR_API_KEY>` header for you to fill in. See [Call a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md).
 {% endstep %}
 {% endstepper %}
 
-{% hint style="danger" %}
-Only use **None (public)** when the sender genuinely cannot set a header, and pair it with a deduplication key and a workflow that validates its own payload.
-{% endhint %}
-
 {% hint style="success" %}
-Sequential mode plus a deduplication key is the combination that makes a webhook-driven sync idempotent. Worth setting up front rather than after the first duplicate-record incident.
+Sequential mode plus a deduplication key is the combination that makes a webhook-driven sync idempotent. Set it up before the first duplicate record, not after.
 {% endhint %}

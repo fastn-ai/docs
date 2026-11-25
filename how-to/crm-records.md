@@ -1,5 +1,5 @@
 ---
-description: Find, create and update contacts in whichever CRM a customer connected, with one piece of code.
+description: Find, create, and update contacts in whichever CRM a customer connected, with one piece of code.
 layout:
   width: default
   title:
@@ -58,6 +58,8 @@ The SDK uses whichever CRM the customer connected. If they connected more than o
 await customer.crm.notes.add({ body: "Signed up for the annual plan", parent_id: contact.id, parent_type: "contact" });
 ```
 
+**You should see:** the note on the contact in the customer's CRM.
+
 ### 4. List contacts, page by page
 
 ```typescript
@@ -86,7 +88,6 @@ Start from the copied request: the fields each entity accepts come from your liv
 ### Related
 
 * [crm-contacts-node](https://github.com/fastn-ai/docs/tree/main/examples/crm-contacts-node): this guide as a runnable project
-
-* [Unified records](../reference/sdk/unified-records.md): every entity, `records()` and the live catalog
+* [Unified records](../reference/sdk/unified-records.md): every entity, `records()`, and the live catalog
 * [Calendar and CRM](../reference/sdk/calendar-and-crm.md): every typed method, including deals and tasks
-* [Errors, retries and options](../reference/sdk/errors-and-options.md)
+* [Errors, retries, and options](../reference/sdk/errors-and-options.md)

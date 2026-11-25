@@ -1,6 +1,6 @@
 ---
 description: >-
-  Adjust field mappings, filters and other settings for an integration you've
+  Adjust field mappings, filters, and other settings for an integration you've
   set up, through the widget.
 layout:
   width: default
@@ -20,7 +20,11 @@ layout:
 
 After connecting an app, you can customize how data moves between it and the product you're using: which fields sync, which records are included, and how records are matched. The AI assistant can handle much of this for you, or you can fine-tune it yourself.
 
-### Opening the configuration
+### Before you start
+
+* An integration you have set up in the widget. See [Connect apps](connecting-apps-via-widget.md).
+
+### Open the configuration
 
 1. Open the integration widget in your product.
 2. Find the integration you want to customize and click **Manage**.
@@ -28,6 +32,8 @@ After connecting an app, you can customize how data moves between it and the pro
 4. On the **Configuration** row, click **Open**.
 
 The Configuration row summarizes what's set up, for example _Sync · 2 entities · 14 fields mapped_. The **Open** button stays disabled until every account the integration needs is connected (its tooltip reads _Connect every account first_).
+
+**You should see:** the **Integration Configuration** dialog.
 
 #### First-time configuration
 
@@ -64,16 +70,16 @@ Each mapping row shows the **source field** (where the data comes from) and the 
 
 * To edit a mapping, click the row or its chevron (**Edit mapping**). It opens in place, where you can re-pick either field.
 * To remove a mapping, use the trash icon on the row (**Remove mapping**).
-* **Required mappings are locked.** They show a lock icon instead of a remove icon; the tooltip explains the mapping is required by this integration and can't be removed.
+* **Required mappings are locked.** They show a lock icon instead of a remove icon; the tooltip explains that the mapping is required by this integration and can't be removed.
 * To add a mapping that isn't there, click **Add field mapping** at the bottom of the list.
 
 #### Filters
 
-Filters narrow which records sync. For example, you might only want to sync contacts tagged as "Active" or orders above a certain amount. Click **Add filter** to add one.
+Filters narrow which records sync. For example, you might want to sync only contacts tagged as "Active" or orders above a certain amount. Click **Add filter** to add one.
 
 Each filter row has three parts:
 
-* **Field** - Which field to check (for example "Status", "Amount" or "Email")
+* **Field** - Which field to check (for example "Status", "Amount", or "Email")
 * **Operator** - The condition to apply
 * **Value** - What to compare against
 
@@ -90,7 +96,7 @@ Available operators:
 | is one of      | Syncs records where the field matches any value in a list       |
 | is not one of  | Syncs records where the field doesn't match any value in a list |
 
-### Saving your changes
+### Save your changes
 
 1. Click **Save changes** in the dialog header. Its tooltip reads _Changes apply on the next sync run_.
 2. Close the dialog with the **X**.
@@ -99,11 +105,11 @@ Your changes don't take effect immediately on existing data. The next time the w
 
 If you close the dialog with unsaved changes, it asks **Discard changes?** Click **Discard** to throw them away, or cancel to go back and save.
 
-### Changing the schedule
+### Change the schedule
 
 If the integration runs on a schedule, the installation's **Triggers** row shows it, for example _Every 1 hours_. Click **Open** on that row to see the triggers. Where your provider made the schedule editable, you can change it there; otherwise ask your provider.
 
-### Using the AI assistant for changes
+### Use the AI assistant for changes
 
 If you're not sure how to adjust the configuration yourself, click the round sparkle button at the bottom right of the widget (**Ask the assistant**) and describe what you want in plain language:
 
@@ -111,7 +117,7 @@ If you're not sure how to adjust the configuration yourself, click the round spa
 * "Stop syncing orders under $50"
 * "Add the phone number field to the sync"
 
-### Viewing workflows
+### View workflows
 
 Workflows live inside each integration. Click **Manage** on an integration to see its **Workflows** list. Click a workflow's row to open its details, which start on **Executions** (its run history). A **Diagram** tab showing the workflow step by step appears only if your provider turned it on.
 
@@ -131,5 +137,10 @@ Workflows live inside each integration. Click **Manage** on an integration to se
 * Opened the configuration dialog for an integration
 * Understood the two paths: provider-run first-time setup vs your own adjustments
 * Reviewed and modified field mappings and filters
-* Know how to use the AI assistant for configuration changes
-* Know that changes apply on the next sync run
+* Learned how to use the AI assistant for configuration changes
+* Learned that changes apply on the next sync run
+
+### Next steps
+
+* Ask the assistant for bigger changes: [Extend a pre-built integration](extending-a-prebuilt-integration.md).
+* Check that your changes ran: [View sync status and history](viewing-sync-status-and-history.md).

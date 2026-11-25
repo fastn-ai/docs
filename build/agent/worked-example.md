@@ -14,7 +14,7 @@ layout:
     visible: true
 ---
 
-# Using the agent: a worked example
+# Worked example: HubSpot to Google Sheets
 
 This is an actual run, screen by screen. The request was one sentence:
 
@@ -40,7 +40,7 @@ Three things on this screen are worth knowing before you go further:
 {% step %}
 #### It asks before acting, because Manual mode was on
 
-The agent needed to create connect links for the two apps. In **Manual** mode it does not just do that; it stops and shows you each call.
+The agent needed to create connect links for the two apps. In **Manual** mode it does not run them right away; it stops and shows you each call.
 
 Every gate shows you the same five things:
 
@@ -48,14 +48,14 @@ Every gate shows you the same five things:
 | ----------- | ---------- |
 | **Create connect link** | The action in plain language |
 | `create_connect_link` | The literal tool being called |
-| The change preview | What the call will change, drawn as a before/after |
+| The change preview | What the call changes, drawn as a before/after |
 | **VIEW RAW INPUT** | The exact arguments as JSON, here the `connectorId` it is acting on. Secrets are redacted, and an input over 50,000 bytes is not displayed |
 | **NOTE TO AGENT (OPTIONAL)** | Free text: *"On reject, this note is sent to the agent so it can re-plan…"* |
 
-And three ways out: **Accept** runs this one call, **Always allow** stops asking for that tool for the rest of the session, and **Reject** refuses it: with your note attached, so the agent re-plans rather than simply retrying.
+The card offers three responses: **Accept** runs this one call, **Always allow** stops asking for that tool for the rest of the session, and **Reject** refuses it, with your note attached, so the agent re-plans rather than retrying.
 
 {% hint style="info" %}
-The note is the useful part of rejecting. *"Use the sandbox sheet, not the production one"* gets you a corrected plan; a bare reject just gets you a stuck agent.
+The note is the useful part of rejecting. *"Use the sandbox sheet, not the production one"* gets you a corrected plan; a bare reject usually produces the same call again.
 {% endhint %}
 {% endstep %}
 
@@ -70,24 +70,24 @@ Rather than guessing at the ambiguous parts, the agent puts the question back to
 * **Initial import + ongoing sync**: *Import all existing HubSpot contacts into the spreadsheet first, then continue syncing new ones in real time.*
 * **Other…**: *Type a free-form answer.*
 
-**Who is it for?** The tenancy question, answered here with **For customers (Multi-tenant)**.
+**Who is it for?** Whether the integration serves your own team or your customers, answered here with **For customers (Multi-tenant)**.
 
-Those two answers change the generated code materially, which is exactly why it asks instead of assuming. Every question also offers **Other…**, so you are never boxed into the options it drafted.
+Those two answers change the generated code, which is why the agent asks instead of assuming. Every question offers **Other…**, so you are never limited to the options it drafted.
 {% endstep %}
 
 {% step %}
 #### It writes a plan you can read before anything is built
 
-The agent produces an **Integration Plan** (a real markdown document, here `/plan-hubspot-to-sheets.md`), in a side panel, and the **Build progress** tracker beside it.
+The agent produces an **Integration Plan** (a markdown document, here `/plan-hubspot-to-sheets.md`), in a side panel, and the **Build progress** tracker beside it.
 
-The plan spells out the mechanism, not just the intent:
+The plan sets out the mechanism as well as the intent:
 
 1. **Trigger**: the real-time `contact.creation` event from HubSpot.
 2. **Fetch details**: retrieve the contact's full profile (`firstname`, `lastname`, `email`, `company`) using HubSpot's `getContact` action.
 3. **Target action**: Google Sheets `appendValues`, appending `[First Name + Last Name, Email, Company]` to the designated tab.
 4. **Delivery**: ongoing real-time sync, with an optional initial backfill of existing contacts.
 
-Below that sits a **Field Mapping** table with a worked example per row, and a **Tenancy** section reflecting the multi-tenant answer:
+Below that sits a **Field Mapping** table with a worked example per row, and a **Tenancy** section that reflects the **For customers** answer:
 
 | HubSpot contact field | Google Sheet column | Example |
 | --------------------- | ------------------- | ------- |
@@ -112,7 +112,7 @@ The panel header carries a download icon (**Download document**): the plan is a 
 
 A completed phase collapses to a green check and **Complete**. The one in flight shows a spinner against the current substep, so you always know which of the six things it is doing.
 
-Notice that the last substep of **Workflows** is binding the trigger. The agent does not stop at generated code. It wires the thing that makes it run.
+The last substep of **Workflows** binds the trigger, so the build ends with a workflow that runs, not only with generated code.
 {% endstep %}
 
 {% step %}
@@ -124,7 +124,7 @@ Before writing the workflow, the agent posted its **Proposed Field Mappings** in
 * **Email**: maps the contact's `email` to the Email column.
 * **Company**: maps the contact's `company` to the Company column.
 
-This is the moment to correct it. Replying *"put first and last name in separate columns"* here is far cheaper than editing generated code afterwards, and the agent updates the code, the mappings and the test cases together, so they cannot drift apart.
+This is the moment to correct it. Replying *"put first and last name in separate columns"* here is far cheaper than editing generated code afterwards, and the agent updates the code, the mappings, and the test cases together, so they cannot drift apart.
 {% endstep %}
 
 {% step %}
@@ -136,12 +136,12 @@ What the agent hands over is an ordinary workflow, a `<slug>.js` module. It open
 
 ### What this run tells you about the agent
 
-* **It asks rather than assumes.** Two ambiguities in a one-sentence brief became two explicit questions, each with an **Other…** escape hatch.
-* **It plans in writing first.** The Integration Plan is readable, downloadable, and exists before any building starts.
-* **It shows its work.** Six tracked steps across four named phases, not a spinner and a promise.
-* **It finishes the job.** Binding the app-event trigger is part of the build, not homework left for you.
+* **It asks rather than assumes.** Two ambiguities in a one-sentence brief became two explicit questions, each with an **Other…** option.
+* **It plans in writing first.** The Integration Plan is readable and downloadable, and it exists before any building starts.
+* **It shows its work.** Six tracked steps across four named phases.
+* **It binds the trigger.** Binding the app-event trigger is part of the build, not a step left for you.
 * **Manual mode is a real gate.** Every call surfaced its exact tool name and a preview of the change, with a note field that turns a rejection into a re-plan.
 
 {% hint style="info" %}
-Manual mode is worth the extra clicks the first few times, purely because the approval cards show you which tools the agent reaches for. Once the shape is familiar, switch to **Auto** (as this run did partway through) and let it work.
+Manual mode is useful the first few times, because the approval cards show you which tools the agent reaches for. Once the pattern is familiar, switch to **Auto** (as this run did partway through) and let it work.
 {% endhint %}

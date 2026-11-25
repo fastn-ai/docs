@@ -16,7 +16,7 @@ layout:
 
 # Set up and add the widget
 
-This step is for putting your integrations inside your product. The widget is the panel where your customers find, connect and customize integrations, under your brand, without signing in to fastn. It holds your connectors, the workflows behind them, and the widget assistant your customers use to adjust them.
+Put your integrations inside your product. The widget is the panel where your customers find, connect, and customize integrations, under your brand, without signing in to fastn. It holds your connectors, the workflows behind them, and the widget assistant your customers use to adjust them.
 
 **Required to go live.** You embed the widget once. Integrations you add later, and changes to the widget, appear in it without a release of your product.
 
@@ -25,7 +25,7 @@ This step is for putting your integrations inside your product. The widget is th
 | Component | Where it lives | What it does |
 | --- | --- | --- |
 | Widget | Inside your product | The panel your customers use to connect and customize integrations |
-| Widget builder | fastn | Sets the widget's look, features and **Allowed Origins** (which sites can show it) |
+| Widget builder | fastn | Sets the widget's look, features, and **Allowed Origins** (which sites can show it) |
 | API key and identity secret | Your backend | Authenticate your server, and sign which customer and user each call is for |
 | Customer | fastn, registered by your backend | One of your customers; their connections and data stay separate |
 | Embed token | Your backend, then your page | Short-lived and for one customer; a new one on every page load |
@@ -36,7 +36,7 @@ This step is for putting your integrations inside your product. The widget is th
 | Way | Best when |
 | --- | --- |
 | Iframe | Anywhere you control HTML: one tag with the embed token |
-| SDK | You want events, token refresh, live theming or your own UI (check the docs for availability) |
+| SDK | You want events, token refresh, live theming, or your own UI (check the docs for availability) |
 | Shareable link | No developer yet: send a customer a link, and revoke it when done |
 | MCP URL | Customers want their own AI tools to use their connections |
 
@@ -52,7 +52,7 @@ This step is for putting your integrations inside your product. The widget is th
 
 Five parts, each done once; part 5 is optional. Keep the API key and identity secret on your backend: only the embed token reaches the browser.
 
-**1 · Create an API key.** In **Embed** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
+**1 · Create an API key.** In **Embed** → **API keys**, create a key with the **Embed backend** permissions (it mints embed tokens) that can reach **Every customer**, and turn on **Verify caller identity (HMAC)**. The other permission options are Admin, Developer, Operator, Viewer, End User, and Custom. You get an API key and an identity secret (shown once). Don't limit the key to specific customers: your backend uses this one key for every customer, including ones you register later, and the identity hash says which customer each call is for. A key limited to specific customers can't get embed tokens for customers it doesn't list.
 
 Registering customers (part 2) needs a second key with the **Admin** preset, because setting a customer's tier and limits needs full access. Leaving **Verify caller identity (HMAC)** off on this key is simplest, because a key that enforces it refuses every call without identity headers. Keep it in your backend's provisioning code only. See [API keys](../../manage/api-keys.md).
 
@@ -71,7 +71,7 @@ If your Admin key has **Verify caller identity (HMAC)** set to enforce, this cal
 
 Already hold a customer's credentials, such as a token for your own product? Create the connection for them with `POST /api/v1/connections`. See [Create a connection for a customer](../../embed/embedding/integration-flow.md#create-a-connection-for-a-customer).
 
-**3 · Get an embed token** (backend, every page load). Name the customer and user in the `x-org-id` and `x-user-id` headers, and sign them with your identity secret in `x-identity-hmac`. The key from part 1 refuses the call without them, and no body is needed. [Generating embed tokens](../../tutorials/developer/generating-embed-tokens.md) is the full reference: every field and error, and the request for a key without identity verification.
+**3 · Get an embed token** (backend, every page load). Name the customer and user in the `x-org-id` and `x-user-id` headers, and sign them with your identity secret in `x-identity-hmac`. The key from part 1 refuses the call without them, and no body is needed. [Generate embed tokens](../../tutorials/developer/generating-embed-tokens.md) is the full reference: every field and error, and the request for a key without identity verification.
 
 ```javascript
 const hmac = crypto.createHmac("sha256", process.env.FASTN_IDENTITY_SECRET)
@@ -113,14 +113,14 @@ curl --location 'https://webhooks.fastn.dev/prod/triggers/<WORKSPACE_ID>/webhook
 }'
 ```
 
-See [Using a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md). Before going live, set **Allowed Origins** in the widget builder to your product's domains.
+See [Call a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md). Before going live, set **Allowed Origins** in the widget builder to your product's domains.
 
 ### In the onboarding
 
-Setup step 3, **Set up the widget**, is yours. Make the widget match your product with **Customize it in** your AI tool, or **Or change it in the widget builder**. Then, under **Who adds it to** your product, choose **I'll add it**, **My developer** or **My AI tool**. It is done once the widget loads in your product or a customer connects through it, and earns 5 AI credits.
+Setup step 3, **Set up the widget**, is yours. Make the widget match your product with **Customize it in** your AI tool, or **Or change it in the widget builder**. Then, under **Who adds it to** your product, choose **I'll add it**, **My developer**, or **My AI tool**. It is done once the widget loads in your product or a customer connects through it, and earns 5 AI credits.
 
-The going-live item **Add the widget to** your product is your developer's. It has **Preview the widget**, **Open the widget builder** and **Send to your developer**, which copies a link to the page, then parts 1 to 4 above with their code. The API key it creates is a live, full-access key with identity verification required, not the **Embed backend** preset described in part 1. It shows "Widget found" once the widget loads on your domain, and earns no AI credits.
+The going-live item **Add the widget to** your product is your developer's. It has **Preview the widget**, **Open the widget builder**, and **Send to your developer**, which copies a link to the page, then parts 1 to 4 above with their code. The API key it creates is a live, full-access key with identity verification required, not the **Embed backend** preset described in part 1. It shows "Widget found" once the widget loads on your domain, and earns no AI credits.
 
 ### Related docs
 
-[How embedding works](../../tutorials/developer/how-embedding-works.md) · [API keys](../../manage/api-keys.md) · [Understanding tenancy](../../tutorials/developer/understanding-tenancy.md) · [Widget builder](../../embed/widget-builder/README.md) · [Webhook triggers](../../build/triggers/webhooks.md)
+[How embedding works](../../tutorials/developer/how-embedding-works.md) · [API keys](../../manage/api-keys.md) · [Customers and isolation](../../tutorials/developer/understanding-tenancy.md) · [Widget builder](../../embed/widget-builder/README.md) · [Webhook triggers](../../build/triggers/webhooks.md)

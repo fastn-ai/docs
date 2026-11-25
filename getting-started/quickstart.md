@@ -16,7 +16,7 @@ layout:
 
 # Quickstart: your first integration
 
-In this quickstart you describe an integration in plain words, an AI agent builds it, and you run its test without touching real data. It takes about five minutes.
+In this quickstart you describe an integration in plain words, an AI agent builds it, and you run its test without touching real data. It is for anyone on your team and needs no code. It takes about five minutes.
 
 ### Before you start
 
@@ -48,7 +48,7 @@ Leave the **Approval mode** chip on **Auto**. The agent then works without stopp
 {% endtab %}
 {% endtabs %}
 
-**You should see:** the agent replies with a plan: the connectors it will use and the workflow it will write.
+**You should see:** the agent replies with a plan: the connectors to use and the workflow to write.
 
 ### 2. Sign in to the apps
 
@@ -58,7 +58,7 @@ The agent checks that a connector exists for each app and asks you to connect an
 
 ### 3. Let the agent build and test
 
-The agent writes the workflow, generates test cases and runs them. Your AI tool may ask you to approve the field mappings and test cases on a review page first.
+The agent writes the workflow, generates test cases, and runs them. Your AI tool may ask you to approve the field mappings and test cases on a review page first.
 
 **You should see:** the workflow in **Build → Integrations → Workflows**, with its test cases listed.
 
@@ -77,7 +77,7 @@ You have built and tested your first integration. Nothing runs for real until yo
 ### Next steps
 
 * **Publish and deploy it.** Until a version is published, every call returns `WORKFLOW_NOT_PUBLISHED`. See [Test and release](../build/workflows/lifecycle.md).
-* **Run it on real events.** Attach a webhook, schedule or app event trigger. See [Triggers](../build/triggers/README.md).
+* **Run it on real events.** Attach a webhook, schedule, or app event trigger. See [Triggers](../build/triggers/README.md).
 * **Offer it to your customers.** Add it to your widget and embed the widget in your product. See [Build your widget](../tutorials/saas-admin/building-your-widget.md) and the [embedding quickstart](../tutorials/developer/embedding-quickstart.md).
 * **Get told when it fails.** In **Health → Alerts**, click **Turn on failure alerts**. See [Alerts](../operate/alerts.md).
 * **Build from your own AI tool instead.** Connect Claude or Cursor to the [fastn MCP server](../build/mcp-gateway/README.md) and build the same way from your chat.

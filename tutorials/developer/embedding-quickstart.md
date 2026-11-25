@@ -48,7 +48,7 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
 
 ### Step 1: Generate a token from your backend
 
-Create a server-side function that calls the fastn token endpoint. Keep the API key in an environment variable - never in client code.
+Create a server-side function that calls the fastn token endpoint. Keep the API key in an environment variable, never in client code.
 
 ```javascript
 // Server-side only
@@ -75,7 +75,7 @@ async function getFastnToken({ customerId, userId, userEmail, userName }) {
 }
 ```
 
-> Note: the response nests the token under `data` - read `json.data.token`, not `json.token`.
+> Note: the response nests the token under `data`. Read `json.data.token`, not `json.token`.
 
 ### Step 2: Expose the token to your frontend
 
@@ -93,6 +93,8 @@ app.get("/api/fastn-token", async (req, res) => {
   res.json({ token });
 });
 ```
+
+**You should see:** a request to `/api/fastn-token` returns `{ "token": "emb_..." }`.
 
 ### Step 3: Render the iframe
 
@@ -114,8 +116,15 @@ document.getElementById("integrations").appendChild(iframe);
 
 **You should see:** the fastn widget inside your page, listing the integration you added with a **Connect** button.
 
-Click Connect on one, complete the authentication popup, and confirm the app shows as Connected.
+Click **Connect** on one, complete the authentication popup, and confirm the app shows as **Connected**.
+
+You now have the widget running in your page, scoped to one customer, with a working connection.
 
 ### If the iframe is blank
 
 The most common cause is an expired or hardcoded token. Confirm your frontend fetches a fresh token on each load rather than reusing one. See [Troubleshooting](troubleshooting.md).
+
+### Next steps
+
+* Turn on identity verification and sign each token request: [Generate embed tokens](generating-embed-tokens.md).
+* Prepare for production: [Deployment checklist](deployment.md) and [Go-live checklist](../../embed/embedding/production-checklist.md).

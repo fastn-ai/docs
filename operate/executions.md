@@ -57,7 +57,7 @@ Alongside them: **Search executions**, **Refresh**, a **Runs** / **Logs** switch
 | **Canceled**  | Stopped before finishing.                                          |
 | **Skipped**   | The workflow ended the run through `fastn.skip(reason)`, so it did nothing. |
 
-### Opening a run
+### Run details
 
 This is where debugging actually happens. A row expands **inline** (you do not leave the page), into:
 
@@ -75,10 +75,10 @@ The Summary JSON carries the keys worth knowing by name:
 | `peakSandboxMB`, `sandboxMemoryLimitMB`      | How close the run came to its memory ceiling.               |
 
 {% hint style="warning" %}
-Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run will not quietly recover the way a transient failure does. It just stops.
+Read `peakSandboxMB` against `sandboxMemoryLimitMB` on any run that failed without an obvious error. Out-of-memory is one of the failures a retry policy never retries, so an OOM run does not recover the way a transient failure does. It stops.
 {% endhint %}
 
-### Reading the statuses
+### What each status means
 
 **Failed** is a workflow error: bad data, a rejected call, a bug. Expand the row and open the **Error** tab (**AI Diagnosis** and **Error Details**), then check [Traces](traces.md) (by URL, `/activity/traces`) for the external call behind it.
 

@@ -4,7 +4,7 @@ description: "The optional route: list and run the MCP tools your fastn workspac
 
 # Workspace tools
 
-You do not need this page for the flows in the rest of this section. It is an optional second route: if your app or AI agent works with **tools by name** (as an MCP client does), `ToolsClient` lists and runs the tools your fastn workspace has turned on, with the customer set on each call. The endpoint is fastn Connect, the MCP gateway at `mcp.fastn.dev/<workspace>`; see [fastn MCP server](../../build/mcp-gateway/README.md) for what a workspace exposes.
+`ToolsClient` is an optional second route, separate from the flows in the rest of this section: if your app or AI agent works with **tools by name** (as an MCP client does), it lists and runs the tools your fastn workspace has turned on, with the customer set on each call. The endpoint is fastn Connect, the MCP gateway at `mcp.fastn.dev/<workspace>`; see [fastn MCP server](../../build/mcp-gateway/README.md) for what a workspace exposes.
 
 ```typescript
 import { ToolsClient, ToolError } from "@fastn-ai/sdk";
@@ -27,7 +27,7 @@ You can also give `FastnClient` a `tools: { key, url }` option. Then `fastn.tool
 The workspace key is a different credential from your fastn platform API key. Keep both in your secret store.
 {% endhint %}
 
-### ToolsClient
+## ToolsClient
 
 | Option | Required | Meaning |
 | ------ | -------- | ------- |
@@ -47,7 +47,7 @@ The workspace key is a different credential from your fastn platform API key. Ke
 
 Per-call options: `customer`, `userId` (sent as `X-User-Id`, when the workspace runs calls as each person), `headers`, `timeoutMs`, `signal`, `retries` (default `0`, because the SDK cannot know whether a tool is safe to repeat; turn it on for reads).
 
-### Typed methods for your workspace: `npx fastn-sdk-tools`
+## Typed methods for your workspace: `npx fastn-sdk-tools`
 
 Tool names as strings work, but your editor cannot check them. The generator turns your workspace's tool list into one TypeScript module with a class per app and a method per tool, each input typed from the tool's schema:
 
@@ -79,7 +79,7 @@ const created = await acme.hubspot.createContact({ email: "jane@example.com", fi
 
 The module exports `createTools`, one class per app (`GoogleCalendarTools`), one input interface per tool (`GoogleCalendarListEventsInput`), an output type where the tool publishes one, and `TOOL_NAMES`. Names become identifiers (`google-calendar` → `googleCalendar`); property names stay as the schema spells them. `tools.client` is the `ToolsClient` underneath, for a tool the file does not know yet. Answers and errors are the same `ToolResult` and `ToolError` as `call()`.
 
-### ToolError
+## ToolError
 
 Failures throw `ToolError`.
 
@@ -90,10 +90,10 @@ Failures throw `ToolError`.
 | `tool` | The tool ran and answered with an error. |
 | `auth` | The app behind the tool is not connected for this customer yet. |
 
-Other fields: `status`, `code`, `tool`, `body`, and the shortcuts `isAuth`, `isUnknownTool` and `isConnectionRequired`. For kind `auth`, `isConnectionRequired` is `true`, `authorizeUrl` is where to send the customer to connect, and `connector` names the app.
+Other fields: `status`, `code`, `tool`, `body`, and the shortcuts `isAuth`, `isUnknownTool`, and `isConnectionRequired`. For kind `auth`, `isConnectionRequired` is `true`, `authorizeUrl` is where to send the customer to connect, and `connector` names the app.
 
 {% hint style="warning" %}
-Today the gateway reports an app refusal (a record id that does not exist, a value the app rejects) as a tool error whose message is only `error code: 502`, the same text as a real upstream hiccup. Passing the app's own message through is planned. Until then: the SDK counts that message as a hiccup, so with `retries` on it has already retried it; a 502 that still comes back is the app refusing the request, so check the id or the value rather than retrying further.
+The gateway reports an app refusal (a record id that does not exist, a value the app rejects) as a tool error whose message is only `error code: 502`, the same text as a real upstream failure. The SDK counts that message as a transient failure, so with `retries` on it has already retried it; a 502 that still comes back is the app refusing the request, so check the id or the value rather than retrying further.
 {% endhint %}
 
 ```typescript

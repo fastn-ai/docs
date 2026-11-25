@@ -34,7 +34,7 @@ Below the tabs, the **INTEGRATIONS** panel lists what appears in the widget, wit
 
 An integration that moves data between two apps shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
 
-### Add Integrations
+### Add integrations
 
 **Add** opens the **Add Integrations** dialog, with two tabs:
 
@@ -45,15 +45,15 @@ An integration that moves data between two apps shows both logos and a direction
 
 On the **Apps** tab, **Scope:** offers **Organization level** (the default, captioned "Shared connections") or **User level** ("Per-customer connections"). The choice is recorded on each integration you create (it sets the integration's sync direction and agent context); it does not share or separate connections. Which customer's connections an integration uses comes from the embed token the widget runs with.
 
-### Edit Integration
+### Edit integration
 
 The pencil on a row opens **Edit Integration**, where most of the configuration lives: the configuration template, activation mode, customer visibility, the connectors and their per-connector overrides, the workflows that auto-bind to every connected customer, triggers, and the callbacks that run a workflow when a customer activates or changes something.
 
-It has a page of its own: [Edit Integration](edit-integration.md).
+It has a page of its own: [Edit integration](edit-integration.md).
 
 ### In this section
 
-* [Edit Integration](edit-integration.md)
+* [Edit integration](edit-integration.md)
 * [Layout](layout.md)
 * [Style](style.md)
 * [Features](features.md)

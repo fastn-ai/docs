@@ -19,7 +19,7 @@ layout:
 GitHub Copilot uses the MCP servers you add in the editor it runs in, not on github.com. Add fastn to that editor once, sign in, then ask Copilot for the integration in Copilot Chat's **Agent** mode.
 
 {% hint style="info" %}
-**Before you start:** you need a Copilot license and an up-to-date Copilot extension or plugin. On Copilot Business or Enterprise, your organization must turn on the **MCP servers in Copilot** policy, which is off by default. Copilot Free, Pro, Pro+ and Max aren't affected by this policy.
+**Before you start:** you need a Copilot license and an up-to-date Copilot extension or plugin. On Copilot Business or Enterprise, your organization must turn on the **MCP servers in Copilot** policy, which is off by default. Copilot Free, Pro, Pro+, and Max aren't affected by this policy.
 {% endhint %}
 
 ## Add fastn in VS Code
@@ -28,7 +28,7 @@ In fastn, click **Connect your AI tool** in the top bar (or open **Embed → MCP
 
 ## Add fastn in another editor
 
-Each editor stores its MCP servers in an `mcp.json` file under the key `servers`. Add fastn with only its URL. fastn signs you in with OAuth 2.0 and dynamic client registration, so leave out any token, header, client ID or client secret.
+Each editor stores its MCP servers in an `mcp.json` file under the key `servers`. Add fastn with only its URL. fastn signs you in with OAuth 2.0 and dynamic client registration, so leave out any token, header, client ID, or client secret.
 
 ```json
 {
@@ -88,4 +88,4 @@ Copilot's cloud agent (the coding agent that works on issues and pull requests o
 
 * **fastn is added but Copilot never uses it.** Check that the chat is in **Agent** mode and that fastn is turned on under the tools icon.
 * **The tools icon or the MCP settings are missing.** On Copilot Business or Enterprise, ask an organization owner to turn on the **MCP servers in Copilot** policy. Then update the Copilot extension or plugin.
-* **Copilot works on the wrong org.** Remove fastn from `mcp.json`, sign out of fastn in the editor, then add it again and pick the workspace when you sign in. In VS Code, follow the steps in [VS Code](vscode.md#troubleshooting).
+* **Copilot works on the wrong org.** Remove fastn from `mcp.json`, sign out of fastn in the editor, then add it again, and pick the workspace when you sign in. In VS Code, follow the steps in [VS Code](vscode.md#troubleshooting).

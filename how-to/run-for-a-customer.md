@@ -60,7 +60,8 @@ curl https://api.fastn.dev/api/v1/workflows/WORKFLOW_ID/executions/EXECUTION_ID 
   -H "X-fastn-Test-Mode: true"
 ```
 
-**You should see:** the run in **Operate → Logs → Executions**, with its input, output and the time each step took.
+**You should see:** the run in **Operate → Logs → Executions**, with its input, output, and the time each step took.
+
 
 ### If the call fails
 
