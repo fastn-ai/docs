@@ -24,6 +24,10 @@ For example, when Acme, one of your customers, signs in to its HubSpot account t
 
 The connector is the definition of the app. The connection is a signed-in account on it. One connector can have many connections, for example one for your organization and one for each customer who connects.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create and manage connections. For example, ask it: *"List the connections that need action and help me fix them."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### How connections work
 
 * **Owner:** A connection belongs either to your organization (made by someone on your team) or to one of your customers (made through your embedded widget). This page shows the two in separate views.
