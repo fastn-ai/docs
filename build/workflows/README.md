@@ -89,5 +89,6 @@ Two buttons sit at the top right:
 
 * [The workflow editor](the-editor.md): the editor's layout and every Configuration setting.
 * [Write a workflow in code](../../tutorials/saas-admin/configuring-a-workflow-in-code.md): write and test a workflow by hand, when code editing is on.
-* [Test a workflow](the-tabs.md): every tool tab in the editor, from Test to API.
+* [Editor tabs](the-tabs.md): every tool tab in the editor, from Test to API.
+* [Test a workflow](testing.md): run a quick test and check the saved test cases.
 * [Test and release](lifecycle.md): save, publish and deploy, and roll back.

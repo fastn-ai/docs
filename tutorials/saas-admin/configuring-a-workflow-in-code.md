@@ -47,7 +47,7 @@ Write a workflow by hand in the code editor, test it with sample input, and crea
   ```
 
   Every workflow exports a default async function that receives `ctx`, the context object.
-* **Tool tabs (right):** a new workflow shows **Test**, **Connectors** and **Contract**. More tabs appear once you save it. See [Test a workflow](../../build/workflows/the-tabs.md).
+* **Tool tabs (right):** a new workflow shows **Test**, **Connectors** and **Contract**. More tabs appear once you save it. See [Editor tabs](../../build/workflows/the-tabs.md).
 
 The runtime reference, everything `ctx` and `fastn.*` offer inside the function, is in the code editor's autocomplete and in [Workflow runtime API](../../reference/workflow-runtime.md).
 
@@ -123,9 +123,7 @@ export default async function(ctx) {
 
 ### Test the workflow
 
-{% hint style="warning" %}
-Test runs in **Live** mode are real: connectors are called and side effects happen. Use **Fully Mock** to try the code without touching any app.
-{% endhint %}
+A **Live** test is real: changes it makes in connected apps really happen. See [Test a workflow](../../build/workflows/testing.md).
 
 1. Click the **Test** tab in the right panel.
 2. Enter sample JSON in **ctx.input**:
@@ -140,7 +138,7 @@ Test runs in **Live** mode are real: connectors are called and side effects happ
 ```
 
 3. Optionally add headers in **ctx.headers**.
-4. Pick a mode: **Live**, **Partial Mock** or **Fully Mock**. See [Test](../../build/workflows/the-tabs.md#test) for what each one calls.
+4. Pick a mode: **Live**, **Partial Mock** or **Fully Mock**. See [Run a quick test](../../build/workflows/testing.md#run-a-quick-test) for what each one calls.
 5. Click the run button (**Run Live**, **Run Partial Mock**, or **Run Fully Mock**).
 
 **You should see:** the output below the run button. Check that the result is what you expect.

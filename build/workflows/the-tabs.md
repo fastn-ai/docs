@@ -1,5 +1,5 @@
 ---
-description: "Every tool tab in the editor: Test, Connectors, Contract, Diagram, Compare, Test cases, Executions, Sync reports, and API."
+description: "Every tool tab in the workflow editor: Test, Connectors, Contract, Diagram, Compare, Test cases, Executions, Sync reports and API."
 layout:
   width: default
   title:
@@ -14,25 +14,17 @@ layout:
     visible: true
 ---
 
-# Test a workflow
+# Editor tabs
 
 **Build → Integrations → Workflows** → open a workflow · [Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)
 
-The tool tabs on the right of the [workflow editor](the-editor.md) are where you test a workflow and check what it does. This page covers each tab.
+The tool tabs on the right of the [workflow editor](the-editor.md) are where you test a workflow, check what it calls and returns, and see its runs. This page covers each tab. For a step-by-step guide to testing, see [Test a workflow](testing.md).
 
 A new workflow shows three tabs: **Test**, **Connectors** and **Contract**. Once you save it, the rest appear: **Diagram**, **Compare** (when there is code to compare), **Test cases**, **Executions**, **Sync reports** and **API**. If they don't all fit, the extra tabs move into a **More** menu.
 
 ### Test
 
-Runs the workflow once with an input you type, without saving it. Use it while you build.
-
-Put the input in the `ctx.input` editor and any headers in `ctx.headers`. **Use contract** fills the input from the workflow's [input contract](#contract). Then pick a mode beside the run button:
-
-* **Live:** calls the connected apps for real, so changes really happen in those apps.
-* **Partial Mock:** calls an app for real where it has an active connection, and uses a stored stand-in response (a mock) where it doesn't.
-* **Fully Mock:** uses stored mock responses only and calls no app.
-
-The run button follows the mode: **Run Live**, **Run Partial Mock** or **Run Fully Mock**.
+Runs the workflow once with an input you type, in **Live**, **Partial Mock** or **Fully Mock** mode, without saving it. See [Run a quick test](testing.md#run-a-quick-test).
 
 ### Connectors
 
@@ -65,30 +57,7 @@ The customer-facing document has nine sections: *What this integration does*, *B
 
 ### Test cases
 
-The editor's **Test cases** tab shows the suite itself: a header with the case count, **+ New group**, and **Refresh**, then the cases. On the workflow detail view (it opens when you select **Run** on a workflow's row) the same suite sits under two tabs, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
-
-A saved set of test scenarios for the workflow, which Fastn's validator agent runs to check the whole workflow.
-
-**Who writes them.** The Fastn agent or your AI tool generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases`, and `error-handling`. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
-
-A case is three fields and a mode:
-
-| Field | Notes |
-| ----- | ------- |
-| **Group** | Free text, with existing groups suggested. Left blank it becomes `Ungrouped`. |
-| **Scenario** | What is being exercised. |
-| **Pass criteria** | What has to be true for the case to pass. Required. |
-| **Mode** | `MOCK` (the default) or `LIVE`. This is the badge on the row. |
-
-**Who runs them.** The workflow validator agent does, not you and not the Run button. Until it has run, the **Validation** tab on the detail view reads *Not validated yet. The workflow validator agent will populate this tab after it runs against the test cases.* Once it has, that tab carries the status, the mode it ran in, when it ran, and a result for each case against the total.
-
-The pass, fail, and untested counters above the list reflect that last validation run. **Untested** means the validator has not reached that case, not that the case failed.
-
-{% hint style="info" %}
-**`LIVE` and `MOCK` are set per case, and `MOCK` is the default.** A `MOCK` case is served from stored mock stubs and never reaches the third-party API; a `LIVE` case makes real calls. A suite that is entirely `MOCK` proves your logic, not your connections, so promote the few cases that actually matter to `LIVE` before you trust a green run.
-{% endhint %}
-
-None of this is the [Test](#test) tab above. **Test** runs one payload you type, once, right now. **Test cases** are a saved suite the validator agent runs against the whole workflow.
+The workflow's saved test scenarios, which Fastn's validator agent runs against the whole workflow. See [Check the test cases](testing.md#check-the-test-cases).
 
 ### Executions
 

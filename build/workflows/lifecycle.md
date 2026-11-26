@@ -83,6 +83,6 @@ Publishing and deploying work the same whether code editing is on or off. **Publ
 
 ### What you can do next
 
-* [Test a workflow](the-tabs.md): run and check a workflow before you publish it.
+* [Test a workflow](testing.md): run and check a workflow before you publish it.
 * [Triggers](../triggers/README.md): choose which environment each trigger runs in.
 * [Environments](../../manage/environments.md): add a stage and put a review gate in front of it.

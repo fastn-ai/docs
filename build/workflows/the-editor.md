@@ -41,9 +41,9 @@ Code editing is off by default. Fastn turns it on for your organization if you a
 ### A typical pass through the editor
 
 1. **Configure it.** Name the workflow and pick its execution tier in the [Configuration panel](#configuration-panel). Choose the slug carefully: you can't change it later.
-2. **Test it.** Run it with a sample input on the [Test](the-tabs.md#test) tab.
+2. **Test it.** Run it with a sample input on the **Test** tab. See [Test a workflow](testing.md).
 3. **Check what it calls.** Confirm the apps and actions it uses on the [Connectors](the-tabs.md#connectors) tab, and its input and output shape on the [Contract](the-tabs.md#contract) tab.
-4. **Check its test cases.** Review the saved test suite on the [Test cases](the-tabs.md#test-cases) tab.
+4. **Check its test cases.** Review the saved test suite on the **Test cases** tab. See [Check the test cases](testing.md#check-the-test-cases).
 5. **Publish and deploy it.** Use **Publish & Deploy** in the Configuration panel. See [Test and release](lifecycle.md).
 
 ### Configuration panel
