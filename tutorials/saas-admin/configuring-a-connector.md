@@ -43,7 +43,7 @@ A [connector](../../build/connectors/README.md) is the definition of one app's A
    With either AI option, the AI researches the API, builds the actions and auth method, and tests them.
 
    **You should see:** the new connector in the catalog, badged `Custom`, with version `v1.0` in **Test**.
-3. **Add your OAuth app (OAuth only).** Open the connector, go to the **Auth** tab and select **Manage providers** (it reads **Add provider** when the connector has none yet). Add your app's client ID, client secret, scopes and endpoints, and make it the preferred app. Follow [Use your own OAuth app](../../build/connectors/auth-methods.md#use-your-own-oauth-app) for each field.
+3. **Add your OAuth app (OAuth only).** Open the connector, go to the **Auth** tab and select **Manage providers**, then **+ Create Provider**. Add your app's client ID, client secret, scopes and endpoints, and make it the preferred app. Follow [Use your own OAuth app](../../build/connectors/auth-methods.md#use-your-own-oauth-app) for each field.
 
    A Fastn-managed connector already ships with a community app, so you can skip this step for one, unless you want your own app name on the consent screen.
 

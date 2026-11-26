@@ -42,7 +42,7 @@ The method types, how each one works, the value each is stored as, and the field
 
 ### Auth providers
 
-The **Auth Providers** page lists the OAuth apps behind the connector's OAuth methods. Open it from the **Auth** tab with **Manage providers**. The button reads **Add provider** when the connector has no providers yet, and **View providers** when you can't add one.
+The **Auth Providers** page lists the OAuth apps behind the connector's OAuth methods. Open it from the **Auth** tab with **Manage providers**, then select **+ Create Provider** to add a new one to the list.
 
 | Column | Meaning |
 | --- | --- |
@@ -76,7 +76,7 @@ Every Fastn-managed OAuth connector ships with a **community app** (shown as "[C
 
 1. Go to **Build → Integrations → Connectors** · [Open in Fastn](https://app.fastn.dev/integrations).
 2. Type the connector's name in the search box. The matching card appears, grouped under a category such as **CRM & Sales**.
-3. Click the connector card. A green **Connected** badge means the connector is already available in your workspace; this does not mean your own credentials are in use yet.
+3. Click the connector card. A green **Connected** badge means the connector has at least one active connection. It doesn't mean your own OAuth app is in use yet.
 
 **You should see:** the connector's detail page, on its **Overview** tab.
 
@@ -88,7 +88,7 @@ Authentication settings live on the connector's **Auth** tab, not on the connect
 
 1. On the connector page, click the **Auth** tab. The other tabs are **Overview**, **Connections**, **Version pins**, and **Webhook config**.
 2. Under **Authentication methods**, **OAuth 2.0** is marked **Default**. On a Fastn-managed connector it shows "1 provider" on the right: the community app.
-3. Click **Manage providers** at the top right of the panel. The button reads **Add provider** when the connector has no providers yet, and **View providers** when you can't add one.
+3. Click **Manage providers** at the top right of the panel.
 
 **You should see:** the **Auth Providers** page.
 

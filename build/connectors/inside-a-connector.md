@@ -58,7 +58,7 @@ Then a **Details** table:
 | Field | Meaning |
 | --- | --- |
 | **Slug** | *Used in the API path and in code.* |
-| **Visibility** | **Private**: *Only your organization can see it.* **Public**: *Customers under your organization can use it when Catalog connectors is on. Other organizations never see it.* **Catalog connectors** is a widget setting; see [Widget features](../../embed/widget-builder/features.md). New connectors are always `Private`, and only a platform admin can make one `Public`. |
+| **Visibility** | **Private**: *Only your organization can see it.* **Public**: *Customers under your organization can use it when Catalog connectors is on.* A public connector is part of the shared catalog, so other organizations can see it too. **Catalog connectors** is a widget setting; see [Widget features](../../embed/widget-builder/features.md). New connectors are always `Private`, and only a platform admin can make one `Public`. |
 | **Auth methods** | *What your customers authorize with.* |
 | **Created** | When the connector was added. |
 

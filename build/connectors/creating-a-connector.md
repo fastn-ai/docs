@@ -56,7 +56,7 @@ The **+** at the top of the connector rail on a detail page opens a separate cre
 | Field | Required | Notes |
 | --- | --- | --- |
 | **Name** | Yes | What people see on the card and in the widget. Placeholder: `Salesforce`. |
-| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* In this dialog, use a lowercase letter followed by lowercase letters and digits only, for example `acmecrm`. The form blocks capital letters, spaces, and underscores before you submit, so a slug derived from a two-word name (such as `acmeCrm` from *Acme CRM*) has to be edited to all lowercase. Hyphens pass the form but are rejected by the API with *Request validation failed*. |
+| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* Start with a lowercase letter and use lowercase letters, digits and hyphens, for example `acme-crm`. The form blocks capital letters, spaces and underscores before you submit, so a slug derived from a two-word name (such as `acmeCrm` from *Acme CRM*) has to be edited, for example to `acme-crm` or `acmecrm`. |
 | **Description** | No | Shown on the card. The Fastn agent also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
 
 ### Connection
