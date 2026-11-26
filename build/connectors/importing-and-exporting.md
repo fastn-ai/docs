@@ -26,6 +26,10 @@ You can save connectors and actions to JSON files and load them into another wor
 
 A file holds definitions only. Connections and their credentials are never exported.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create and copy connectors. For example, ask it: *"Copy the Acme CRM connector into a new connector named Acme CRM v2."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Export actions
 
 You can export the actions of any connector, managed or owned.

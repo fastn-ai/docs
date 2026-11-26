@@ -22,6 +22,10 @@ A connector your workspace owns is yours to change: you can edit its settings, a
 
 This page applies only to connectors your workspace **owns**: ones you created from the **Create connector** menu or brought in with **Import from file**. Their card is badged `Custom` and reads *Managed by* followed by your organization's name. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to update connectors and add actions to them. For example, ask it: *"Add a List Invoices action to the Acme CRM connector."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Where the controls are
 
 On an owned connector:

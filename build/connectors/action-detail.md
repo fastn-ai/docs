@@ -28,6 +28,10 @@ Each action is made of:
 
 <figure><img src="../../.gitbook/assets/screens/action-editor.webp" alt="The action editor for HubSpot Add List Members: name and description fields, method PUT and the URL with an input.listId placeholder, a Run button, tabs Params, Headers, Auth, Body, Input schema, Output schema and Mocks, and a footer with v1.2, New version, Read-only owned by platform and Propose an update"><figcaption>A platform-owned action opens read-only; <strong>Propose an update</strong> suggests a change.</figcaption></figure>
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create, update and test a connector's actions. For example, ask it: *"Test the Create Contact action on the HubSpot connector."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### The action list
 
 On the [connector detail page](inside-a-connector.md), the connector rail lists every action of the open connector with its method chip (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`).

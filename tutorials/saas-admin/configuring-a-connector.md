@@ -24,6 +24,10 @@ Create a connector for an app, set up how people sign in to it, connect your own
 
 A [connector](../../build/connectors/README.md) is the definition of one app's API. Build one when the app you need isn't in the [catalog](../../build/connectors/the-catalogue.md). If it is, skip to step 4 and connect to it.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to create and set up connectors. For example, ask it: *"Create a connector for the Acme CRM API and set up its OAuth 2.0 authentication."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot create connectors.

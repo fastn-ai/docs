@@ -24,6 +24,10 @@ For example, with a webhook config on a billing app, a workflow can run each tim
 
 > Tell fastn how to subscribe to HubSpot's events on behalf of each customer, so a trigger can fire when something happens there.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to set up a connector's webhook config. For example, ask it: *"Set up the webhook config on the Acme CRM connector so it receives new-order events."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### How it works
 
 1. A customer connects to the connector.

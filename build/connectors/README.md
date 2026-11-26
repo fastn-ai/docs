@@ -24,6 +24,10 @@ For example, the HubSpot connector knows how to call *Create Contact* and *List 
 
 > A connector is fastn's bridge to one app: it handles sign-in and exposes the app's actions and events. Sign in to one to create a connection.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create and update connectors. For example, ask it: *"Create a connector for the Acme CRM API from its OpenAPI spec."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Connector versus connection
 
 A connector holds no credentials. Credentials live on a [connection](../connections/README.md), which is created when someone signs in to the connector.

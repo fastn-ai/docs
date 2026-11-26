@@ -22,6 +22,10 @@ Make a connection, so a connector can call an app as your account.
 
 A connection is what lets a connector call an app as a specific account. Connecting here signs in **your own** account, for your organization's workflows and for testing. It does not connect your customers: they connect their own accounts through the [widget](../../embed/README.md) you embed.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to connect apps. For example, ask it: *"Connect my HubSpot account."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot connect.

@@ -22,6 +22,10 @@ Create a connector when the app you need isn't in the [catalog](the-catalogue.md
 
 For a step-by-step walkthrough, see [Configure a connector](../../tutorials/saas-admin/configuring-a-connector.md). This page is the reference for every option.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create connectors. For example, ask it: *"Create a connector for the Acme CRM API from its OpenAPI spec."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot create connectors.
