@@ -20,6 +20,10 @@ layout:
 
 The **Layout** tab sets what appears around your integrations in the widget: the header text at the top, and which optional sections show. The live preview updates as you change it.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to update your widget's layout. For example, ask it: *"Change my widget's title to Integrations."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Header content
 
 | Field        | What it is | Default |

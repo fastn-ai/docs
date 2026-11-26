@@ -22,6 +22,10 @@ Set up the widget your customers use inside your product: choose its integration
 
 The [widget](../../embed/widget-builder/README.md) is a ready-made integrations page that you embed in your product. You set it up in the widget builder, with no code. Your developers then embed it in your product.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to build and update your widget. For example, ask it: *"Add the HubSpot contact sync integration to my widget."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * **Who this is for:** an Owner, Admin, Developer or Operator. Viewers can open the builder but can't change the widget.

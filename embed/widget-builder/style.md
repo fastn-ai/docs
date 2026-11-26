@@ -30,6 +30,10 @@ It has five sub-tabs:
 
 If you already have a design system, the fastest way to match it is **Import from JSON** on the [Tokens](#tokens) sub-tab.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to update your widget's style. For example, ask it: *"Change my widget's primary color to #5b4cf0."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Theme
 
 **Light** for a light product, **Dark** for a dark one. Every color except your accent color follows from it. If you have set your own surface colors that match neither base, the builder tells you, because picking a theme replaces them.

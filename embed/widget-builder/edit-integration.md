@@ -22,6 +22,10 @@ An integration in the widget is what your customers turn on. The **Edit Integrat
 
 To open it, select the **pencil** on a row of the **INTEGRATIONS** panel in the [widget builder](README.md#integrations).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to add and update the integrations in your widget. For example, ask it: *"Add the HubSpot contact sync integration to my widget."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Identity and template
 
 | Field | What it does |

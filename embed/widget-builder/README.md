@@ -24,6 +24,10 @@ You set up the widget in the **widget builder**: which integrations it offers, h
 
 <figure><img src="../../.gitbook/assets/lifecycle/fastn-lifecycle-2-publish.svg" alt="Stage 2, Publish: the product owner adds integrations to the widget catalog and chooses what customers may change"><figcaption><p>Where this fits: stage 2 of the integration lifecycle</p></figcaption></figure>
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to create and update your widget. For example, ask it: *"Add the HubSpot contact sync integration to my widget."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### The builder
 
 Opening **Embed → Widget** takes you straight into the builder. There is no list of widgets.

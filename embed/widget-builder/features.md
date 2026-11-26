@@ -20,6 +20,10 @@ layout:
 
 The **Features** tab turns on optional features your customers get inside the widget, and lets you choose workflows that decide what each customer can see and do.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to update your widget's features. For example, ask it: *"Show me which features are turned on in my widget."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Available now
 
 * **Catalog connectors:** shows all catalog connectors in the widget, so customers can browse and connect them. Off by default.
