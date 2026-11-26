@@ -23,6 +23,10 @@ Test a workflow before you publish it, to check that it does what you expect. Th
 * **Quick test:** runs the workflow once with an input you type, on the editor's **Test** tab. Use it while you build.
 * **Test cases:** a saved set of scenarios that Fastn's validator agent runs against the whole workflow. Use them to check every scenario before you publish.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to test workflows and fix what fails. For example, ask it: *"Run the test cases for the sync-new-contacts workflow and fix any that fail."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * A workflow open in the [workflow editor](the-editor.md).

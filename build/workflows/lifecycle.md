@@ -32,6 +32,10 @@ Save (draft) → Publish (version) → Deploy (to an environment)
 **Publishing can reach real traffic before you deploy anything.** A trigger runs in the environment set on its route, and that defaults to **test (latest published)**: the workflow's newest published version. So every trigger left on that default runs your new version the moment you publish, with no deploy step. If a trigger should only run what you have explicitly deployed, set its route's environment to a named environment such as `live`. See [Triggers](../triggers/README.md).
 {% endhint %}
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to publish and deploy workflows. For example, ask it: *"Publish the sync-new-contacts workflow and deploy it to live."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### How to do each one
 
 #### Save

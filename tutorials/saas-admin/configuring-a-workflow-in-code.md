@@ -20,6 +20,10 @@ layout:
 
 Write a workflow by hand in the code editor, test it with sample input, and create it.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to write and test workflows. For example, ask it: *"Create a workflow that lowercases the email of every incoming contact."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * The [Quickstart: your first integration](../../getting-started/quickstart.md).

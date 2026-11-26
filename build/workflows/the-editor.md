@@ -20,6 +20,10 @@ layout:
 
 The workflow editor is where you configure, test, publish and deploy a workflow. It opens as a drawer over the Workflows list.
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create and update workflows. For example, ask it: *"Change the sync-new-contacts workflow to also copy each contact's phone number."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Layout
 
 * **Configuration (left):** the workflow's name, execution tier, timeout, retries, and the **Publish & Deploy** actions. See [Configuration panel](#configuration-panel).

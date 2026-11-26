@@ -22,6 +22,10 @@ A **workflow** is the logic of an integration: the steps that run each time it i
 
 A workflow runs when a [trigger](../triggers/README.md) fires or when your backend calls it through the API. Each run is for one customer and uses that customer's own [connections](../connections/README.md).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create, update and test workflows. For example, ask it: *"Create a workflow that copies new HubSpot contacts into Salesforce."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### How you build one
 
 You describe the workflow to your AI tool through the [Fastn MCP server](../mcp-gateway/README.md), or to the [Fastn agent](../agent/README.md), and it writes the workflow for you. You then test it, publish it and deploy it.
