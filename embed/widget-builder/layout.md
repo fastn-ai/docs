@@ -1,5 +1,5 @@
 ---
-description: "The Layout tab: header content and the sections your customers see."
+description: "The Layout tab: the widget's header text and the sections your customers see."
 layout:
   width: default
   title:
@@ -16,17 +16,29 @@ layout:
 
 # Layout
 
-**Header content**
+**Embed → Widget** → **Layout** tab · [Open in Fastn](https://app.fastn.dev/widgets)
 
-| Field        | Default                        |
-| ------------ | -------------------------------- |
-| **Title**    | `Integrations`                  |
-| **Subtitle** | `Connect your favorite tools`   |
+The **Layout** tab sets what appears around your integrations in the widget: the header text at the top, and which optional sections show. The live preview updates as you change it.
 
-**Sections** toggles the blocks your customers see. All three are on by default.
+### Header content
 
-| Section                 | Notes                                                             |
-| ----------------------- | ------------------------------------------------------------------- |
-| **Header and branding** | Your title, subtitle and accent color across the top.             |
-| **AI assistant**        | The widget assistant: an **Ask the assistant** launcher at the bottom right, where a customer changes their setup in plain words. |
-| **Search bar**          | Worth keeping once there are more than about a dozen connectors.   |
+| Field        | What it is | Default |
+| ------------ | ---------- | ------- |
+| **Title**    | The heading at the top of the widget. | `Integrations` |
+| **Subtitle** | A short line below the title. Leave it empty to hide it. | `Connect your favorite tools` |
+
+### Sections
+
+**Sections** turns the optional parts of the widget on and off. All three are on by default, and a count beside the heading reads **N of 3 shown**. Each row has a switch. You can reorder rows by dragging them, or with the up and down arrows that appear when you hover over a row. A section you turn off reads **Hidden from widget**.
+
+* **Header and branding:** your title, subtitle and accent color across the top. Turn it off if your product already has its own header above the widget.
+* **AI assistant:** the widget assistant, an **Ask the assistant** launcher at the bottom right. There a customer can ask questions and change their setup in plain words. Building new integrations from it needs a paid plan.
+* **Search bar:** a **Search integrations** field. Worth keeping once there are more than about a dozen connectors.
+
+### Other parts of the widget
+
+These parts of the widget are not on the **Sections** list:
+
+* **Apps list:** the integrations you offer. It is the widget's main content, so it is always shown.
+* **Workflows:** shown inside each integration's detail view.
+* **Insights:** opens from the menu in the widget's header. It shows the customer's own runs, records processed, connection health and alerts, for **Today**, **7 days** or **30 days**.

@@ -1,5 +1,5 @@
 ---
-description: "The Features tab: optional capabilities your customers get inside the widget."
+description: "The Features tab: optional features your customers get in the widget, and workflows that decide what each customer can see and do."
 layout:
   width: default
   title:
@@ -16,25 +16,23 @@ layout:
 
 # Features
 
-Optional capabilities your customers get inside the widget.
+**Embed → Widget** → **Features** tab · [Open in Fastn](https://app.fastn.dev/widgets)
 
-**Available now**: **Catalog connectors** and **Workflow Diagram** are off by default; **Generate MCP URL** is on by default.
+The **Features** tab turns on optional features your customers get inside the widget, and lets you choose workflows that decide what each customer can see and do.
 
-| Feature                | What it does                                                                         |
-| ---------------------- | -------------------------------------------------------------------------------------- |
-| **Catalog connectors** | Show all catalog connectors in the widget so customers can browse and connect them.   |
-| **Workflow Diagram**   | Shows the generated flow diagram on a workflow inside the widget.                     |
-| **Generate MCP URL**   | Lets a customer generate a one-time URL from the header menu that connects an MCP client (Claude, ChatGPT, Cursor and others) to their integrations, with no account. You can disconnect it from the Embed tab. To create the URL from your own product, see [Customer MCP URL](../embedding/customer-mcp-url.md). |
-| **App page layout**    | **One tab, side by side** (activity next to the workflows) or **Separate tabs**. |
-| **Installations layout** | **Table** (one row per setup) or **Cards** (an expandable card each). |
+### Available now
 
-**Customer access** appears once your workspace has an Instant-tier workflow to pick. Each setting names one such workflow.
+* **Catalog connectors:** shows all catalog connectors in the widget, so customers can browse and connect them. Off by default.
+* **Workflow Diagram:** shows the generated flow diagram of a workflow inside the widget. Off by default.
+* **Generate MCP URL:** lets a customer generate a one-time URL from the widget's header menu. The URL connects an MCP client (Claude, ChatGPT, Cursor and others) to their integrations, with no account. You can disconnect it from the Embed tab. On by default. To create the URL from your own product, see [Customer MCP URL](../embedding/customer-mcp-url.md).
+* **App page layout:** **One tab, side by side** (activity next to the workflows) or **Separate tabs**.
+* **Installations layout:** **Table** (one row per setup) or **Cards** (an expandable card each).
 
-| Setting                | What it does                                           |
-| ---------------------- | -------------------------------------------------------- |
-| **Widget filter**      | A workflow that decides, per customer and user, which integrations show and how: hidden, disabled with a message, offered as an upgrade, or with buttons hidden. |
-| **Access check**       | A workflow that answers what the signed-in user may do: connect, disconnect, configure. Anything it does not allow is hidden and refused. |
+**Catalog connectors** changes what you offer: instead of only the integrations you chose, customers see everything public in your catalog. That suits self-serve products, but is too broad for most. Turn it on only if you mean to offer your whole catalog.
 
-{% hint style="warning" %}
-**Catalog connectors** widens the offer from the integrations you curated to everything public in your catalog. Useful for self-serve products, too broad for most. Decide deliberately.
-{% endhint %}
+### Customer access
+
+**Customer access** appears once your organization has a workflow on the [Instant tier](../../build/workflows/README.md#execution-tiers) to pick. Each setting names one such workflow:
+
+* **Widget filter:** a workflow that decides, for each customer and user, which integrations show and how: hidden, disabled with a message, offered as an upgrade, or shown with buttons hidden.
+* **Access check:** a workflow that answers what the signed-in user may do: connect, disconnect or configure. Anything it does not allow is hidden and refused.
