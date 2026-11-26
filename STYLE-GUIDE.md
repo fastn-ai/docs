@@ -1,19 +1,19 @@
-# fastn docs style guide
+# Fastn docs style guide
 
 How every page in these docs is written. It is for anyone editing this repo, human or AI agent. It is not published to the site.
 
 ## Voice
 
-- Write to the reader as **you**. fastn is **fastn** or **we** only when the product itself acts or decides ("fastn retries the call"), never **us** in the sense of the docs team ("what should page us").
+- Write to the reader as **you**. Fastn is **Fastn** or **we** only when the product itself acts or decides ("Fastn retries the call"), never **us** in the sense of the docs team ("what should page us").
 - Plain and direct. Say what a thing does, then how to use it. No marketing adjectives (powerful, seamless, effortless, robust), no slogans, no opening with what something is *not*.
 - Be honest about limits, once. State a warning in one place, in full, and link to it from everywhere else (see [Warnings](#warnings)).
 - No jokes or wordplay in headings or warnings. A heading names the task: "Turn on failure alerts", not "Make failure loud".
-- Keep fastn's internal words out of reader-facing pages. On pages for end users, the partner is "the product you use", never "the SaaS company".
+- Keep Fastn's internal words out of reader-facing pages. On pages for end users, the partner is "the product you use", never "the SaaS company".
 
 ## Spelling and naming
 
 - **US English**: catalog, organization, authorize, behavior, canceled, color. Quote product copy exactly as the app shows it, even where it differs, and only inside quotes or bold UI labels.
-- **fastn** is always lowercase, including in titles, descriptions and at the start of a sentence.
+- **Fastn** is capitalized in prose, including in titles, descriptions and mid-sentence. Code, identifiers, headers, URLs and file paths stay as written (`X-fastn-Test-Mode`, `fastn.connector.<slug>`, `mcp.fastn.dev`), and so do UI labels the app shows in lowercase.
 - One name per thing:
 
 | Use | Not | Note |

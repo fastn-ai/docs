@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 392" width="680" height="392" font-family="Inter, -apple-system, Segoe UI, Roboto, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Your organization, its customers and their end users</title>
+<desc id="d">Your organization is the SaaS company that builds the integrations, with team members in roles such as Owner, Admin and Developer. Under it, each customer is its own organization with its own end users and its own connections to apps such as HubSpot, Salesforce or Jira. Customers are isolated from each other.</desc>
+<style>
+:root{--bg:#ffffff;--fg:#17171f;--mut:#5e5e72;--line:#c9c9d6;
+--team:#5b4cf0;--teamc:#efedff;--cust:#0e8f7e;--custc:#e3f6f3;--fastn:#3c3c52;--fastnc:#ececf3}
+@media (prefers-color-scheme:dark){:root{--bg:#121218;--fg:#ececf2;--mut:#9d9db0;--line:#3a3a48;
+--team:#9a8fff;--teamc:#26224a;--cust:#45d1bd;--custc:#12312d;--fastn:#c7c7d8;--fastnc:#24242f}}
+.bg{fill:var(--bg)}
+.h{fill:var(--fg);font-size:14px;font-weight:600}
+.s{fill:var(--mut);font-size:12px}
+.l{fill:var(--fg);font-size:12px}
+.team{fill:var(--teamc);stroke:var(--team);stroke-width:1}
+.cust{fill:var(--custc);stroke:var(--cust);stroke-width:1}
+.fastn{fill:var(--fastnc);stroke:var(--fastn);stroke-width:1}
+.frame{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4}
+.life{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.arr{stroke:var(--mut);stroke-width:1.4;fill:none}
+.ah{fill:var(--mut)}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="ah" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="bg" width="680" height="392" rx="12"/>
+<g text-anchor="middle" dominant-baseline="central">
+<rect class="team" x="20" y="20" width="640" height="104" rx="10"/>
+<text class="h" x="340" y="42">Your organization</text>
+<text class="s" x="340" y="62">The SaaS company: builds the integrations and the widget</text>
+<text class="l" x="136" y="99">Team members</text>
+<rect style="fill:var(--bg);stroke:var(--team)" x="210" y="86" width="82" height="26" rx="6"/>
+<text class="l" x="251.0" y="99">Owner</text>
+<rect style="fill:var(--bg);stroke:var(--team)" x="300" y="86" width="82" height="26" rx="6"/>
+<text class="l" x="341.0" y="99">Admin</text>
+<rect style="fill:var(--bg);stroke:var(--team)" x="390" y="86" width="82" height="26" rx="6"/>
+<text class="l" x="431.0" y="99">Developer</text>
+<rect style="fill:var(--bg);stroke:var(--team)" x="480" y="86" width="82" height="26" rx="6"/>
+<text class="l" x="521.0" y="99">Operator</text>
+<rect style="fill:var(--bg);stroke:var(--team)" x="570" y="86" width="82" height="26" rx="6"/>
+<text class="l" x="611.0" y="99">Viewer</text>
+<line class="arr" x1="340" y1="124" x2="118" y2="166" marker-end="url(#a)"/>
+<rect class="cust" x="20" y="170" width="196" height="176" rx="10"/>
+<text class="h" x="118" y="190">Customer A</text>
+<text class="s" x="118" y="208">Its own organization</text>
+<text class="l" x="118" y="234">End users</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="34.0" y="246" width="52" height="26" rx="6"/>
+<text class="l" x="60.0" y="259">User</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="92.0" y="246" width="52" height="26" rx="6"/>
+<text class="l" x="118.0" y="259">User</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="150.0" y="246" width="52" height="26" rx="6"/>
+<text class="l" x="176.0" y="259">User</text>
+<text class="l" x="118" y="294">Connections</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="35.0" y="306" width="80" height="26" rx="6"/>
+<text class="l" x="75.0" y="319">HubSpot</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="121.0" y="306" width="80" height="26" rx="6"/>
+<text class="l" x="161.0" y="319">Slack</text>
+<line class="arr" x1="340" y1="124" x2="340" y2="166" marker-end="url(#a)"/>
+<rect class="cust" x="242" y="170" width="196" height="176" rx="10"/>
+<text class="h" x="340" y="190">Customer B</text>
+<text class="s" x="340" y="208">Its own organization</text>
+<text class="l" x="340" y="234">End users</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="314.0" y="246" width="52" height="26" rx="6"/>
+<text class="l" x="340.0" y="259">User</text>
+<text class="l" x="340" y="294">Connections</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="300.0" y="306" width="80" height="26" rx="6"/>
+<text class="l" x="340.0" y="319">Salesforce</text>
+<line class="arr" x1="340" y1="124" x2="562" y2="166" marker-end="url(#a)"/>
+<rect class="cust" x="464" y="170" width="196" height="176" rx="10"/>
+<text class="h" x="562" y="190">Customer C</text>
+<text class="s" x="562" y="208">Its own organization</text>
+<text class="l" x="562" y="234">End users</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="507.0" y="246" width="52" height="26" rx="6"/>
+<text class="l" x="533.0" y="259">User</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="565.0" y="246" width="52" height="26" rx="6"/>
+<text class="l" x="591.0" y="259">User</text>
+<text class="l" x="562" y="294">Connections</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="479.0" y="306" width="80" height="26" rx="6"/>
+<text class="l" x="519.0" y="319">Zoho</text>
+<rect style="fill:var(--bg);stroke:var(--cust)" x="565.0" y="306" width="80" height="26" rx="6"/>
+<text class="l" x="605.0" y="319">Jira</text>
+<text class="s" x="340" y="370">Each customer is isolated: its users, connections and data never reach another customer.</text>
+</g>
+</svg>

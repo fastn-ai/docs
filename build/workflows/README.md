@@ -26,7 +26,30 @@ export default async function (ctx) {
 }
 ```
 
-There is no node palette and no drag-and-drop step builder. Everything else on this screen configures, describes, tests, or deploys that function.
+There is no node palette and no drag-and-drop step builder. Everything else on this screen configures, describes, tests, or deploys that function. The editor's Diagram tab is AI-generated documentation of that code: a read-only picture that regenerates when the code has changed.
+
+### Execution tiers
+
+Every workflow declares how long it may run and how it answers the caller.
+
+| Tier         | Behavior                                        | Returns       | Timeout range | Default |
+| ------------ | ----------------------------------------------- | ------------- | ------------- | ------- |
+| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s - 25s      | 25s     |
+| **Standard** | Asynchronous, run via Temporal                  | 202 Accepted  | 5s - 15min    | 2min    |
+| **Long**     | Asynchronous, for large volumes                 | 202 Accepted  | 30s - 36h     | 15min   |
+
+Instant's 25-second ceiling rises to 2 minutes only for organizations where Fastn has turned on the longer Instant timeout. Long runs for up to 36 hours. Pick Instant only when something is waiting on the answer. Most syncs are Standard.
+
+
+### Test and live
+
+Fastn separates *what the code is* from *where it runs*.
+
+* **Versions** are snapshots created by Publish, numbered v1, v2, … in the workflows list.
+* **Environments** are where versions are deployed. `test` and `live` are built in and protected; you can add named ones such as `staging`, and mark any environment **Requires review** so promoting to it opens a pull request on a connected GitHub repository instead of deploying directly.
+* **API keys** carry a mode, `Test` or `Live`. A Test key is refused unless the caller sends `X-fastn-Test-Mode: true`.
+
+Test keys act on real data. See [API keys](../../manage/api-keys.md).
 
 ### The list
 
