@@ -1,5 +1,5 @@
 ---
-description: "IT and service management connectors fastn manages, with their auth, actions and events."
+description: "IT and service management connectors Fastn manages, with their auth, actions and events."
 ---
 
 # IT and service management

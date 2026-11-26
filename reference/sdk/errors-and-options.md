@@ -35,7 +35,7 @@ const withUsage = await fastn.orgs.listOrgs({ type: "end_org" }, { extraQuery: {
 
 ### Safe retries: idempotencyKey
 
-Pass an `idempotencyKey` on unified record writes (create, update, delete). If you send the same request again with the same key, fastn returns the first answer (for a create, the same record `id`) instead of acting twice.
+Pass an `idempotencyKey` on unified record writes (create, update, delete). If you send the same request again with the same key, Fastn returns the first answer (for a create, the same record `id`) instead of acting twice.
 
 ```typescript
 const first = await meetings.create(
@@ -59,13 +59,13 @@ const again = await meetings.create(
 The SDK retries a call on `429`, `502`, `503`, `504`, and network errors, up to `retries` times (default 2), and waits for `Retry-After` when the API sends it. It does this only when a repeat is safe:
 
 * reads (`GET` calls), always;
-* writes, only when they carry an `idempotencyKey` **and** the operation is one fastn de-duplicates by that key (unified record create, update, and delete, and workflow execute).
+* writes, only when they carry an `idempotencyKey` **and** the operation is one Fastn de-duplicates by that key (unified record create, update, and delete, and workflow execute).
 
 Every other write is never retried, so a lost answer can never make it act twice.
 
 ### Trace a request: correlationId
 
-Send your own id as `correlationId` on unified calls. Then ask what fastn did for it:
+Send your own id as `correlationId` on unified calls. Then ask what Fastn did for it:
 
 ```typescript
 await meetings.update(
@@ -120,7 +120,7 @@ try {
 | `code` | The API's error code, for example `UNIFIED_VALIDATION_FAILED`. Some errors have no code: use `status` then. |
 | `message` | The method, path, status, code, and the API's message, for example `POST /v1/unified/{category}/{entity} -> 400 UNIFIED_VALIDATION_FAILED: Field "title" is required`. |
 | `details` | Extra details the API sent, when any. |
-| `requestId` | The id fastn gave the failed request. Quote it when you ask fastn for help. |
+| `requestId` | The id Fastn gave the failed request. Quote it when you ask Fastn for help. |
 | `method`, `path` | The call that failed. |
 | `body` | The raw answer body. |
 | `isNotFound`, `isConflict`, `isRateLimited`, `isAuth`, `isValidation` | Shortcuts for the common cases (`404`, `409`, `429`, `401`/`403`, `400`/`422`). |
@@ -149,6 +149,6 @@ try {
 | `400 UNIFIED_PROVIDER_REJECTED` | The app refused what you sent. | Read `e.body.providerStatus` and `e.body.providerError` (the app's own status and message); fix the fields. |
 | `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id. | Check the record id. |
 | `422 IDEMPOTENCY_KEY_REUSED` | The same `idempotencyKey` was used for a different request. | Use a new key for a new request. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer), or fastn's connector platform refused the call. | Retry later; `e.body.providerStatus` and `e.body.providerError` hold what the app said, when it answered. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer), or Fastn's connector platform refused the call. | Retry later; `e.body.providerStatus` and `e.body.providerError` hold what the app said, when it answered. |
 
 See [Unified records](unified-records.md#errors-from-unified-calls) for every unified code, and [Errors and failure states](../errors.md) for failures you see in the dashboard.

@@ -16,28 +16,28 @@ hidden: true
 
 ## Setup guide
 
-This guide shows where to find the four values fastn needs to connect Act! CRM: your Act! user name, password, database name and Web API base URL.
+This guide shows where to find the four values Fastn needs to connect Act! CRM: your Act! user name, password, database name and Web API base URL.
 
 For Act! CRM's own setup steps, see [Act! Web API - Authorization](https://apimta.act.com/act.web.api) in the Act! CRM documentation.
 
 ### Before you start
 
-- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need the Owner, Admin or Developer role in Fastn to set up the connector.
 - You need an Act! user account with access to the Act! database you want to connect.
 - You need Act! Premium Cloud, or Act! Premium Web with the Act! Web API available on your server.
 
 ### Get your Act! credentials
 
-fastn signs in to the Act! Web API with your user name and password, together with your database name, and receives a token it uses on later calls.
+Fastn signs in to the Act! Web API with your user name and password, together with your database name, and receives a token it uses on later calls.
 
 1. **username**: Enter the Act! user name you sign in with. On Act! Premium Cloud this is your sign-in email address.
 2. **password**: Enter the password for that Act! user.
-3. **databaseName**: Enter the name of the Act! database to connect to. fastn sends it to Act! in the `Act-Database-Name` header. On Act! Premium Cloud the name looks like `F1234567890`. If you do not know it, ask your Act! administrator.
+3. **databaseName**: Enter the name of the Act! database to connect to. Fastn sends it to Act! in the `Act-Database-Name` header. On Act! Premium Cloud the name looks like `F1234567890`. If you do not know it, ask your Act! administrator.
 4. **baseUrl**: Enter the address of the Act! Web API, including the `/act.web.api` path and without a trailing slash.
    - Act! Premium Cloud accounts in the US use `https://apius.act.com/act.web.api`.
    - For Act! Premium Web on your own server, use your server's address followed by `/act.web.api`.
 
-### Connect in fastn
+### Connect in Fastn
 
 Your customers enter these values when they connect Act! CRM in your widget, or you enter them under **Build → Integrations → Connectors → Act! CRM**. After the connection is saved, your workflows can call Act! actions, for example `fastn.connector.actCrm.<actionSlug>()`.
 

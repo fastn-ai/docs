@@ -650,7 +650,7 @@ Operation: `activateConnector`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -715,7 +715,7 @@ Operation: `forkConnector`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Responses**
 
@@ -1342,7 +1342,7 @@ Operation: `batchDeleteActions`
 GET /v1/actions/export
 ```
 
-All actions of a connector in the fastn export format (re-importable with importActions). Requires connectors.read.
+All actions of a connector in the Fastn export format (re-importable with importActions). Requires connectors.read.
 
 Operation: `exportActions`
 
@@ -1582,7 +1582,7 @@ Operation: `executeAction`
 GET /v1/actions/{id}/export
 ```
 
-One action in the fastn export format. Requires connectors.read.
+One action in the Fastn export format. Requires connectors.read.
 
 Operation: `exportAction`
 
@@ -2847,7 +2847,7 @@ Operation: `listConnectorVersionPins`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `connectorSlug` | query | string | No |  |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -2871,7 +2871,7 @@ Operation: `upsertConnectorVersionPin`
 | `externalVersion` | `string` | No |  |
 | `apiVersion` | `string` | No |  |
 | `versionMajor` | `integer` | No |  |
-| `orgId` | `string` | Yes | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | Yes | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -3160,7 +3160,7 @@ Operation: `probeConnector`
 | `params` | `object` | No | Action input. |
 | `connectionId` | `string` | No |  |
 | `installationId` | `string` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -3212,7 +3212,7 @@ Operation: `probeConnectorValues`
 | `params` | `object` | No | Action input. |
 | `connectionId` | `string` | No |  |
 | `installationId` | `string` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 

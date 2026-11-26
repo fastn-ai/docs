@@ -22,7 +22,7 @@ layout:
 
 ## What does it do?
 
-Embed puts one widget inside your product. Your customers browse the integrations you offer, sign in to their own accounts, and adapt each integration to how they work, under your branding and without a fastn account. Each session is scoped to one customer by a token your backend issues, so customers only ever see their own connections.
+Embed puts one widget inside your product. Your customers browse the integrations you offer, sign in to their own accounts, and adapt each integration to how they work, under your branding and without a Fastn account. Each session is scoped to one customer by a token your backend issues, so customers only ever see their own connections.
 
 ## Who is it for?
 
@@ -92,7 +92,7 @@ Your AI tool can set up the customer-facing side too:
 
 **Embed → Widget** · `/widgets`
 
-Everything under Build exists so that this screen can do its job. The widget is the only part of fastn your customers ever touch: they browse the integrations you offer, authorize their own accounts, and configure what syncs, inside your product, under your branding.
+Everything under Build exists so that this screen can do its job. The widget is the only part of Fastn your customers ever touch: they browse the integrations you offer, authorize their own accounts, and configure what syncs, inside your product, under your branding.
 
 Two pages cover it:
 
@@ -113,7 +113,7 @@ A **Preview language** switch, defaulting to **English**, shows the widget as a 
 **Preview** opens the widget on its own page in a new tab, away from the builder panel, at `/widgets/hub` (it carries the customer picked in the selector). Use it to see the widget at full size, or to check it without the configuration panel beside it.
 
 {% hint style="warning" %}
-**The preview is not a link you can send to a customer.** It is a page inside your own dashboard and it needs a fastn login, so a customer opening it sees nothing. To put the widget in front of someone who has no fastn account, create a [shareable link](embedding/README.md#shareable-links) instead - that is the one that works for them.
+**The preview is not a link you can send to a customer.** It is a page inside your own dashboard and it needs a Fastn login, so a customer opening it sees nothing. To put the widget in front of someone who has no Fastn account, create a [shareable link](embedding/README.md#shareable-links) instead - that is the one that works for them.
 {% endhint %}
 
 ### Saving, discarding and resetting

@@ -18,11 +18,11 @@ layout:
 
 # Operate
 
-<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle-5-monitor.svg" alt="Stage 5, Run and monitor: support and ops check Health while fastn retries and maintains"><figcaption>Where Operate fits in the integration lifecycle</figcaption></figure>
+<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle-5-monitor.svg" alt="Stage 5, Run and monitor: support and ops check Health while Fastn retries and maintains"><figcaption>Where Operate fits in the integration lifecycle</figcaption></figure>
 
 ## What does it do?
 
-Operate shows how every customer's integrations are doing once they are live. **Health** lists what needs a person today, with the action that fixes it. **Customers** and **Connections** show who is connected to what. **Logs** holds every event and run, down to the individual call. fastn retries, renews tokens and handles rate limits on its own, and its maintainer agent proposes fixes when a vendor changes an API.
+Operate shows how every customer's integrations are doing once they are live. **Health** lists what needs a person today, with the action that fixes it. **Customers** and **Connections** show who is connected to what. **Logs** holds every event and run, down to the individual call. Fastn retries, renews tokens and handles rate limits on its own, and its maintainer agent proposes fixes when a vendor changes an API.
 
 ## Who is it for?
 
@@ -43,7 +43,7 @@ Start each day on **Operate → Health**. If **Needs attention** is empty, every
 {% endtab %}
 
 {% tab title="Your AI tool" %}
-With fastn connected to your AI tool, ask about runs and failures in plain words.
+With Fastn connected to your AI tool, ask about runs and failures in plain words.
 
 [Connect your AI tool](../build/mcp-gateway/README.md)
 {% endtab %}

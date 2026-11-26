@@ -18,12 +18,12 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 
 | # | Section | Page | File | Audit | Screenshot | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Get started | Welcome to fastn | `README.md` | [x] OK | [ ] | |
+| 1 | Get started | Welcome to Fastn | `README.md` | [x] OK | [ ] | |
 | 2 | Get started | Quickstart: your first integration | `getting-started/quickstart.md` | [x] OK | [x] | connect-your-ai-tool.webp |
 | 3 | Get started | Authentication | `tutorials/developer/authentication-and-api-keys.md` | [x] OK | [ ] | |
 | 4 | Get started | Core concepts | `getting-started/concepts.md` | [x] Fixed | [ ] | |
 | 5 | Get started | Platform tour | `getting-started/platform-tour.md` | [x] Fixed | [x] | home-launch-plan.webp |
-| 6 | Get started | Set up fastn | `getting-started/onboarding/README.md` | [x] Fixed | [x] | get-started-checklist.webp |
+| 6 | Get started | Set up Fastn | `getting-started/onboarding/README.md` | [x] Fixed | [x] | get-started-checklist.webp |
 | 7 | Get started | Pick your integrations | `getting-started/onboarding/choose-integrations.md` | [x] Fixed | [ ] | |
 | 8 | Get started | Set up and add the widget | `getting-started/onboarding/embed-the-widget.md` | [x] Fixed | [ ] | |
 | 9 | Get started | Your first customer connects | `getting-started/onboarding/customers-connect-and-customize.md` | [x] Fixed | [ ] | |
@@ -39,7 +39,7 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 19 | Build | Approval mode | `build/agent/approval-mode.md` | [x] OK | [ ] | |
 | 20 | Build | Worked example | `build/agent/worked-example.md` | [x] Fixed | [ ] | |
 | 21 | Build | Build from your AI tool | `build/building-from-your-ai-agent.md` | [x] Fixed | [x] | mcp-server.webp |
-| 22 | Build | fastn MCP server | `build/mcp-gateway/README.md` | [x] Fixed | [x] | connect-your-ai-tool.webp |
+| 22 | Build | Fastn MCP server | `build/mcp-gateway/README.md` | [x] Fixed | [x] | connect-your-ai-tool.webp |
 | 23 | Build | Claude | `build/mcp-gateway/claude.md` | [x] Fixed | [ ] | |
 | 24 | Build | Claude Code | `build/mcp-gateway/claude-code.md` | [x] Fixed | [ ] | |
 | 25 | Build | ChatGPT | `build/mcp-gateway/chatgpt.md` | [x] Fixed | [ ] | Checked against OpenAI and Lovable docs |
@@ -51,7 +51,7 @@ Full pass over every page in SUMMARY.md, started 24 Nov 2026: terminology, accur
 | 31 | Build | Cline | `build/mcp-gateway/cline.md` | [x] Fixed | [ ] | |
 | 32 | Build | Lovable | `build/mcp-gateway/lovable.md` | [x] Fixed | [ ] | Checked against OpenAI and Lovable docs |
 | 33 | Build | Bolt | `build/mcp-gateway/bolt.md` | [x] Fixed | [ ] | |
-| 34 | Build | fastn for AI agents | `reference/ai-agents.md` | [x] Fixed | [ ] | |
+| 34 | Build | Fastn for AI agents | `reference/ai-agents.md` | [x] Fixed | [ ] | |
 | 35 | Build | Connect your product | `manage/saas-connectors.md` | [x] OK | [x] | connect-your-product.webp |
 | 36 | Build | Webhooks | `manage/saas-webhooks.md` | [x] OK | [ ] | |
 | 37 | Build | Integrations | `build/integrations.md` | [x] Fixed | [x] | create-integration-menu.webp |

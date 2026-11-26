@@ -18,7 +18,7 @@ layout:
 
 # Get alerted
 
-A sync can stop without an error, so nothing tells you records stopped arriving. Alerts notify you when that happens. You set them up yourself inside the widget, with no fastn account.
+A sync can stop without an error, so nothing tells you records stopped arriving. Alerts notify you when that happens. You set them up yourself inside the widget, with no Fastn account.
 
 ### Before you start
 
@@ -94,7 +94,7 @@ Four channels, each a row with its own **Send via** choice:
 
 | Channel | Send via | What you provide |
 | --- | --- | --- |
-| **Email** | fastn's own mail, or one of your connected Gmail accounts | One or more addresses, and an optional subject (default `[Alert] <alert name>`) |
+| **Email** | Fastn's own mail, or one of your connected Gmail accounts | One or more addresses, and an optional subject (default `[Alert] <alert name>`) |
 | **Slack** | An Incoming Webhook URL, or a connected Slack account | The webhook URL, or a channel picked from your workspace |
 | **Teams** | A connected Teams account | The team, then the channel |
 | **Webhook** | - | An endpoint of your own, to route into whatever you already use |

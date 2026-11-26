@@ -1,5 +1,5 @@
 ---
-description: "Entertainment and media connectors fastn manages, with their auth, actions and events."
+description: "Entertainment and media connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Entertainment and media

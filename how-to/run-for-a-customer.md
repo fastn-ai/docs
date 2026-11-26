@@ -18,7 +18,7 @@ layout:
 
 Your backend needs to run an integration for one customer, for example to sync their orders now, and use the result. One workflow serves all your customers; the `x-org-id` header says which one a call is for.
 
-<figure><img src="../.gitbook/assets/diagrams/run-for-a-customer.svg" alt="Running an integration for one customer: your backend calls fastn with x-org-id, fastn loads that customer's setup, calls their apps, and returns the result or an execution id."><figcaption><p>fastn uses the named customer's own connections and settings for the run.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/diagrams/run-for-a-customer.svg" alt="Running an integration for one customer: your backend calls Fastn with x-org-id, Fastn loads that customer's setup, calls their apps, and returns the result or an execution id."><figcaption><p>Fastn uses the named customer's own connections and settings for the run.</p></figcaption></figure>
 
 ### Before you start
 

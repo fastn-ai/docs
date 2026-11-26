@@ -1,5 +1,5 @@
 ---
-description: "CRM and sales connectors fastn manages, with their auth, actions and events."
+description: "CRM and sales connectors Fastn manages, with their auth, actions and events."
 ---
 
 # CRM and sales

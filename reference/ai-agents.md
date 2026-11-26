@@ -16,17 +16,17 @@ layout:
     visible: true
 ---
 
-# fastn for AI agents
+# Fastn for AI agents
 
 This page exists for AI agents and other machine readers. It is deliberately terse and factual: no narrative, no screenshots, every exact string spelled out. Human readers are better served by [Core concepts](../getting-started/concepts.md).
 
-If you are an agent writing fastn workflows or calling the fastn API, read this page first, then confirm anything marked **Verify** against the live surfaces named at the bottom.
+If you are an agent writing Fastn workflows or calling the Fastn API, read this page first, then confirm anything marked **Verify** against the live surfaces named at the bottom.
 
 ---
 
 ## The model in six lines
 
-1. An **organization** is you, the company whose product embeds fastn. It holds everything below.
+1. An **organization** is you, the company whose product embeds Fastn. It holds everything below.
 2. A **connector** defines an external app: its actions, auth methods, and versions.
 3. A **connection** is *one of your customers'* authorized link to one connector, holding the encrypted credential.
 4. A **workflow** is JavaScript that runs on a trigger. It is code, not a drag-and-drop graph.
@@ -60,7 +60,7 @@ export default async function (ctx) {
 {% endhint %}
 
 {% hint style="danger" %}
-**Code editing may be switched off for your organization.** It is off unless fastn turns it on. Where it is off, the editor has no code column, and workflows are written and updated by the fastn agent from a natural-language description. Handing a user a code block to paste into the editor does not work there. Describe the change to the agent instead, or tell the user to ask fastn to enable code editing. The runtime surface documented below is identical either way, so this page is still the right reference for *what* the generated code can do.
+**Code editing may be switched off for your organization.** It is off unless Fastn turns it on. Where it is off, the editor has no code column, and workflows are written and updated by the Fastn agent from a natural-language description. Handing a user a code block to paste into the editor does not work there. Describe the change to the agent instead, or tell the user to ask Fastn to enable code editing. The runtime surface documented below is identical either way, so this page is still the right reference for *what* the generated code can do.
 {% endhint %}
 
 ### `ctx`
@@ -75,7 +75,7 @@ export default async function (ctx) {
 | Call | Purpose |
 | ---- | ------- |
 | `fastn.connectors.<slug>.<action>(args)` | Call an action on a connected app. `fastn.connector.<slug>.<action>(args)` (singular) also works. See the caveat below. |
-| `fastn.unified.…` | Call a unified entity and let fastn route to whichever provider the customer connected. |
+| `fastn.unified.…` | Call a unified entity and let Fastn route to whichever provider the customer connected. |
 | `fastn.db.query(sql, params)` | SQL against your workspace's Postgres schema (`ws_<hash>`). **Verify** signature. |
 | `fastn.state.get(key)` / `fastn.state.set(key, value)` | Durable key-value across runs. Scopes: `ORG`, `INVOCATION`. |
 | `fastn.secrets.get("NAME")` | Read an encrypted secret. Name is UPPER_SNAKE_CASE, exactly as created. JSON-typed secrets return already parsed. |
@@ -86,7 +86,7 @@ export default async function (ctx) {
 
 | Tier | Caller gets | Ceiling |
 | ---- | ----------- | ------- |
-| **Instant** | Return value inline, synchronously | 25 seconds (2 minutes if fastn has raised the Instant timeout for your organization) |
+| **Instant** | Return value inline, synchronously | 25 seconds (2 minutes if Fastn has raised the Instant timeout for your organization) |
 | **Standard** | `202` + execution id | 15 minutes |
 | **Long** | `202` + execution id | 36 hours (the maximum the dashboard allows) |
 
@@ -100,7 +100,7 @@ Sent on the request; readable at `ctx.headers`.
 
 | Header | Carries |
 | ------ | ------- |
-| `x-org-id` | The customer the run acts for: your own id for it, or fastn's id for it |
+| `x-org-id` | The customer the run acts for: your own id for it, or Fastn's id for it |
 | `x-installation-id` | Which installation of the integration this run belongs to |
 | `x-fastn-connections` | The connections the run may use |
 | `x-fastn-installation-config` | The configuration values that installation was set up with |
@@ -188,20 +188,20 @@ Polling depends on the tier:
 
 Do not conflate these.
 
-| | Docs MCP | fastn MCP server |
+| | Docs MCP | Fastn MCP server |
 | --- | --- | --- |
 | **URL** | `<docs-site>/~gitbook/mcp` | `https://mcp.fastn.dev/fastn-workspace` |
-| **Exposes** | This documentation, as searchable tools | Your fastn workflows and the fastn platform tools (connector actions run through platform tools such as `executeAction`) |
-| **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to fastn to sign in, and to pick a workspace if you belong to more than one org |
-| **Use for** | Answering questions about fastn | Building and managing integrations in your workspace |
+| **Exposes** | This documentation, as searchable tools | Your Fastn workflows and the Fastn platform tools (connector actions run through platform tools such as `executeAction`) |
+| **Auth** | Public, as the docs site is | OAuth sign-in: the client sends you to Fastn to sign in, and to pick a workspace if you belong to more than one org |
+| **Use for** | Answering questions about Fastn | Building and managing integrations in your workspace |
 
-Claude Code, against the fastn MCP server:
+Claude Code, against the Fastn MCP server:
 
 ```
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 ```
 
-A client of the fastn MCP server acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [fastn MCP server](../build/mcp-gateway/README.md). Not to be confused with fastn Connect, the MCP gateway that gives AI agents each customer's connected apps as governed tools.
+A client of the Fastn MCP server acts as you, in the workspace you picked when signing in, with your own role there. Per-client setup: [Fastn MCP server](../build/mcp-gateway/README.md). Not to be confused with Fastn Connect, the MCP gateway that gives AI agents each customer's connected apps as governed tools.
 
 ---
 
@@ -209,14 +209,14 @@ A client of the fastn MCP server acts as you, in the workspace you picked when s
 
 Read this section before generating code.
 
-* **`fastn.connector` vs `fastn.connectors`.** Both work, at save time and at run time. On save, fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
+* **`fastn.connector` vs `fastn.connectors`.** Both work, at save time and at run time. On save, Fastn scans the code for `fastn.connectors.<slug>.<action>(…)` and `<instance>.connector.<slug>.<action>(…)` calls and binds those connectors. A dynamic call such as `fastn.connectors[slug]` cannot be detected: add that connector to the workflow by hand on its **Connectors** tab.
 * **`fastn.state` `ORG` keys are shared by every workflow in the org.** `INVOCATION` keys live for one execution. Namespace `ORG` keys by workflow (`myworkflow:deal:123`) so two workflows do not overwrite each other.
 * **Don't rely on `fastn.db` to separate customers.** Which schema a query runs in depends on your organization's database setup. If a table holds data for several customers, add a customer column and filter on it in every query.
 * **Always parameterize SQL.** Interpolating `ctx.input` into a query string is an injection.
 * **Publishing is not optional.** Code that is saved but not published does not run over the API.
 * **Instant's 25-second ceiling is hard.** Put anything that calls two or three apps in sequence on Standard.
 * **Embed refresh caps at seven days per session.** At the cap the widget posts `fastn:session-expired` to the parent window and stops. Listen for it and mint a fresh token.
-* **Connector credentials are not secrets.** They live on connections and are managed by fastn, including OAuth refresh. `fastn.secrets` is for third-party tokens and keys you hold yourself.
+* **Connector credentials are not secrets.** They live on connections and are managed by Fastn, including OAuth refresh. `fastn.secrets` is for third-party tokens and keys you hold yourself.
 * **Settings is role-scoped.** What a user can see under Settings depends on their role, so do not assume a screen exists for the current user.
 
 ---

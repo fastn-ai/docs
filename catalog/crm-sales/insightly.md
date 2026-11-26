@@ -15,25 +15,25 @@ hidden: true
 | **Slug** | `insightly` |
 
 ## Setup guide
-This guide shows you where to find the Insightly API key and regional pod that fastn uses to connect to an Insightly account.
+This guide shows you where to find the Insightly API key and regional pod that Fastn uses to connect to an Insightly account.
 
 For Insightly's own setup steps, see [Find your API key and URL](https://support.insight.ly/en-US/Knowledge/article/9549/Find_your_API_key_and_url/) in the Insightly documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need an Insightly user account with API access. All users have API access by default, but an Insightly administrator can turn it off for a user.
 - Insightly offers its API on all plans. The number of API requests allowed per day depends on your plan.
 
 ### Get your Insightly credentials
 1. Sign in to Insightly.
 2. Click your user icon in the top-right corner and select **User Settings**.
-3. In the **API** section, copy your **API Key**. In fastn, enter it in the **username** field.
-4. In the same section, find the **API URL** shown under the key. The part after `api.` is your pod. For example, if the URL starts with `https://api.na1.insightly.com`, your pod is `na1`. In fastn, enter it in the **pod** field.
-5. Leave the **password** field in fastn empty. Insightly uses only the API key, with a blank password.
+3. In the **API** section, copy your **API Key**. In Fastn, enter it in the **username** field.
+4. In the same section, find the **API URL** shown under the key. The part after `api.` is your pod. For example, if the URL starts with `https://api.na1.insightly.com`, your pod is `na1`. In Fastn, enter it in the **pod** field.
+5. Leave the **password** field in Fastn empty. Insightly uses only the API key, with a blank password.
 
-If **User Settings** shows a message that API access is turned off, ask an Insightly administrator to turn it on for your user. If you generate a new API key, update it in fastn too, because the old key stops working.
+If **User Settings** shows a message that API access is turned off, ask an Insightly administrator to turn it on for your user. If you generate a new API key, update it in Fastn too, because the old key stops working.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Insightly in your widget, or you enter them under **Build → Integrations → Connectors → Insightly**. After the connection is saved, you can call Insightly actions in workflow code as `fastn.connector.insightly.<actionSlug>()`.
 
 ## Actions

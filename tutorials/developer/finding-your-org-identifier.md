@@ -22,12 +22,12 @@ The customer identifier names the customer a widget embed is for, in the `x-org-
 
 `x-org-id` accepts either:
 
-* **fastn's id for the customer**, or
-* **your external reference**: the id you gave the customer when you registered it (`orgId` on `POST /api/v1/orgs`). Using your own id means you never have to store fastn's. If you created a customer without one, fastn stored its slug as the external reference at creation time.
+* **Fastn's id for the customer**, or
+* **your external reference**: the id you gave the customer when you registered it (`orgId` on `POST /api/v1/orgs`). Using your own id means you never have to store Fastn's. If you created a customer without one, Fastn stored its slug as the external reference at creation time.
 
-### Where fastn's id comes from
+### Where Fastn's id comes from
 
-Each customer in your fastn workspace has an internal id. You create customers under **Operate → Customers** (see [Manage customers](../saas-admin/managing-customers.md)).
+Each customer in your Fastn workspace has an internal id. You create customers under **Operate → Customers** (see [Manage customers](../saas-admin/managing-customers.md)).
 
 To find it, open **Operate → Customers** in the dashboard and click the customer. The address bar changes to `app.fastn.dev/customers/<id>`: the last part of that URL is the customer's id. Copy it from there.
 
@@ -37,7 +37,7 @@ Create a separate test customer for development and use its id locally, so test 
 
 ### Using it
 
-Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. A key limited to a single customer is the one exception: it takes only fastn's id, in `orgId`. See [Generate embed tokens](generating-embed-tokens.md).
+Once you have the identifier, send it as the `x-org-id` header on the token request, or as `orgId` in the body. A key limited to a single customer is the one exception: it takes only Fastn's id, in `orgId`. See [Generate embed tokens](generating-embed-tokens.md).
 
 In production, look the identifier up per request from the signed-in person's company rather than fixing one value, so each customer gets their own token. For local testing against a single test customer, an environment variable is fine:
 

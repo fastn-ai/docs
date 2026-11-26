@@ -66,7 +66,7 @@ Operation: `listUnifiedRecords`
 | `page_size` | query | integer | No | Clamped to 1-200. |
 | `include_remote_data` | query | boolean | No | true adds the provider's raw record beside the canonical one. |
 | `widget_id` | query | string | No | Widget whose unified config values (per connector) are applied to the call; ignored when the widget is not visible to the caller. |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -98,7 +98,7 @@ Operation: `createUnifiedRecord`
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
 | `widget_id` | query | string | No | Widget whose unified config values (per connector) are applied to the call; ignored when the widget is not visible to the caller. |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -125,7 +125,7 @@ Operation: `listUnifiedEntityProviders`
 | --- | --- | --- | --- | --- |
 | `category` | path | string | Yes | Category slug, e.g. crm. |
 | `entity` | path | string | Yes | Entity slug within the category, e.g. contacts. |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -153,7 +153,7 @@ Operation: `searchUnifiedRecords`
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
 | `page_size` | query | integer | No |  |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -186,7 +186,7 @@ Operation: `getUnifiedRecord`
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
 | `include_remote_data` | query | boolean | No | true adds the provider's raw record beside the canonical one. |
 | `widget_id` | query | string | No | Widget whose unified config values (per connector) are applied to the call; ignored when the widget is not visible to the caller. |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -218,7 +218,7 @@ Operation: `updateUnifiedRecord`
 | `id` | path | string | Yes | The provider's remote id. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 
@@ -251,7 +251,7 @@ Operation: `deleteUnifiedRecord`
 | `id` | path | string | Yes | The provider's remote id. |
 | `provider` | query | string | No | Connector slug to pin the call to. Omitted or empty = resolve from the caller's connected providers. 400 when not a connector slug. |
 | `connection_id` | query | string | No | Which of the provider's connections to run against, when the org holds several accounts on the same connector. Ids come from GET /connections; one outside the caller's scope is rejected, not silently ignored. |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 
 **Responses**
 

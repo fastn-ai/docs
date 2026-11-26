@@ -1,10 +1,10 @@
-# Embed the fastn widget (Node.js)
+# Embed the Fastn widget (Node.js)
 
-A web page that shows the fastn widget, and the Express route that mints its embed token. Your API key stays on the server; only the short-lived token reaches the browser.
+A web page that shows the Fastn widget, and the Express route that mints its embed token. Your API key stays on the server; only the short-lived token reaches the browser.
 
 ## Before you start
 
-In the [fastn dashboard](https://app.fastn.dev):
+In the [Fastn dashboard](https://app.fastn.dev):
 
 1. **An API key:** **Embed → API keys → Create key**, in **Test** mode.
 2. **A test customer:** **Operate → Customers → Create customer**. Note the id you give it.

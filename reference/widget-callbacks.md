@@ -31,7 +31,7 @@ The payload arrives as `ctx.input`. `event`, `endOrgId`, and `widgetId` are alwa
 | Field | Type | Sent on |
 | --- | --- | --- |
 | `event` | string | Every callback. The callback's name. |
-| `endOrgId` | string | Every callback. The customer's fastn id. |
+| `endOrgId` | string | Every callback. The customer's Fastn id. |
 | `widgetId` | string | Every callback. |
 | `externalRef` | string or null | Every callback. Your own id for the customer, or `null` if it has none. |
 | `installationId` | string | Everything except `onConfigurationDelete`. `onConfigurationCreated` has it only when the config is pinned to an installation. |
@@ -135,7 +135,7 @@ A blocking callback's return value decides what happens next.
 A refusal returns `422` to whoever asked, with `error` set to your `reason` and `hook` set to everything the workflow returned. `onActivation` refusing a new installation also removes the installation it had just created.
 
 {% hint style="warning" %}
-**A blocking callback fails closed.** If the workflow times out, cannot be reached, returns a non-2xx status, or returns something other than JSON, fastn treats that as `accept: false` and the customer's action fails. Keep blocking callbacks fast, and use background for anything slow.
+**A blocking callback fails closed.** If the workflow times out, cannot be reached, returns a non-2xx status, or returns something other than JSON, Fastn treats that as `accept: false` and the customer's action fails. Keep blocking callbacks fast, and use background for anything slow.
 {% endhint %}
 
 {% hint style="info" %}
@@ -144,7 +144,7 @@ A refusal returns `422` to whoever asked, with `error` set to your `reason` and 
 
 `onTriggerCreated`, `onTriggerUpdated`, and `onTriggerDeleted` run after the fact, so their return value is ignored in either mode.
 
-A background callback's return value is always ignored. If fastn cannot deliver one within 10 seconds, it writes `widget.hook.delivery_failed` to the [audit log](../manage/audit-log.md), since the workflow never ran and left no execution of its own.
+A background callback's return value is always ignored. If Fastn cannot deliver one within 10 seconds, it writes `widget.hook.delivery_failed` to the [audit log](../manage/audit-log.md), since the workflow never ran and left no execution of its own.
 
 ## Trigger events
 

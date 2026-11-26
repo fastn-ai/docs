@@ -1,5 +1,5 @@
 ---
-description: "Search and web connectors fastn manages, with their auth, actions and events."
+description: "Search and web connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Search and web

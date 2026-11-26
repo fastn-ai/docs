@@ -1,5 +1,5 @@
 ---
-description: "Docs and knowledge connectors fastn manages, with their auth, actions and events."
+description: "Docs and knowledge connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Docs and knowledge

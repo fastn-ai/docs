@@ -1,7 +1,7 @@
 ---
 description: >-
   Configure your organization profile, team access, customers, plan limits, and
-  audit log after your first fastn login.
+  audit log after your first Fastn login.
 layout:
   width: default
   title:
@@ -18,11 +18,11 @@ layout:
 
 # Set up your organization
 
-Onboarding (at `/onboarding`) sets up your product, your integrations, and the widget; see [Set up fastn](../../getting-started/onboarding/README.md). Alongside it, a handful of organization-level settings control your company profile, team access, customer management, and billing. Set each one up once, after your first sign-in.
+Onboarding (at `/onboarding`) sets up your product, your integrations, and the widget; see [Set up Fastn](../../getting-started/onboarding/README.md). Alongside it, a handful of organization-level settings control your company profile, team access, customer management, and billing. Set each one up once, after your first sign-in.
 
 ### Before you start
 
-* A fastn account with the **Owner** or **Admin** role. **General**, **People**, **Billing**, **Roles**, and **Audit log** in Settings need Admin or higher.
+* A Fastn account with the **Owner** or **Admin** role. **General**, **People**, **Billing**, **Roles**, and **Audit log** in Settings need Admin or higher.
 
 ### Step 1: Configure organization settings
 
@@ -53,13 +53,13 @@ The **Joining by email domain** card lets people sign up and ask to join instead
 
 #### Roles
 
-fastn has these built-in roles. **Settings → Roles** counts each role's permissions across 11 resources (Connectors, Connections, Workflows, Users, Settings, Events, Secrets, Executions, Widgets, Customers, and Unified API), 44 permissions in all:
+Fastn has these built-in roles. **Settings → Roles** counts each role's permissions across 11 resources (Connectors, Connections, Workflows, Users, Settings, Events, Secrets, Executions, Widgets, Customers, and Unified API), 44 permissions in all:
 
 | Role          | Permissions | What they can do                                                                                                      |
 | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Owner**     | 44          | Everything an Admin can do, plus managing admins and transferring ownership. One per organization.                    |
 | **Admin**     | 44          | Full access within the organization and its customers: connectors, workflows, customers, billing, and settings.          |
-| **Developer** | 36          | Builds and deploys connectors and workflows, and can use the fastn agent (paid plans). No billing, people management, or audit log.                     |
+| **Developer** | 36          | Builds and deploys connectors and workflows, and can use the Fastn agent (paid plans). No billing, people management, or audit log.                     |
 | **Operator**  | 21          | Configures connections and runs workflows. Deploys to test only.                                                      |
 | **Viewer**    | 6           | Read-only access to connectors, connections, workflows, widgets, events, and the Unified API. Not executions, users, settings, or secrets, and no AI assistant. |
 | **End User**  | 35          | The role for people at your customers using the embedded widget: create connections and use the widget's assistant inside their own customer. |
@@ -108,10 +108,10 @@ Significant actions in your organization are recorded here, from workflow deploy
 
 Your developers use these pages:
 
-* **API keys** - Under **Embed → API keys**: Test and Live keys for programmatic access to the fastn API, including the key your backend uses to mint embed tokens.
+* **API keys** - Under **Embed → API keys**: Test and Live keys for programmatic access to the Fastn API, including the key your backend uses to mint embed tokens.
 * **Secrets** - Under **Settings → Secrets**: sensitive values (third-party tokens, database credentials) that workflows read at runtime.
 * **Environments** - Under **Settings → Environments**: where published workflow versions are deployed, such as test, live, and your own named ones.
-* **Your own OAuth apps** - fastn manages OAuth apps for many common platforms. To use your own OAuth application for a connector instead, set it on that connector's **Auth** tab.
+* **Your own OAuth apps** - Fastn manages OAuth apps for many common platforms. To use your own OAuth application for a connector instead, set it on that connector's **Auth** tab.
 
 See the [Developer tutorials](../developer/README.md) for the full setup guide.
 

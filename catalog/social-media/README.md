@@ -1,5 +1,5 @@
 ---
-description: "Social media connectors fastn manages, with their auth, actions and events."
+description: "Social media connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Social media

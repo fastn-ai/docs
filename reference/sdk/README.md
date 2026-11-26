@@ -1,15 +1,15 @@
 ---
-description: "Call the fastn platform from your backend with the fastn SDK: install, set up the client, and learn the ids."
+description: "Call the Fastn platform from your backend with the Fastn SDK: install, set up the client, and learn the ids."
 ---
 
 # SDK
 
-The fastn SDK is the fastn platform API as a library for your backend. It is for Node.js and TypeScript: `@fastn-ai/sdk` (version 0.5.1). A Python SDK, `fastn-ai` (also 0.5.1), offers the same client as `fastn.platform.FastnClient`, with `fastn.customer(ref)` for one customer; this section shows the Node.js SDK. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries, and event signatures for you.
+The Fastn SDK is the Fastn platform API as a library for your backend. It is for Node.js and TypeScript: `@fastn-ai/sdk` (version 0.5.1). A Python SDK, `fastn-ai` (also 0.5.1), offers the same client as `fastn.platform.FastnClient`, with `fastn.customer(ref)` for one customer; this section shows the Node.js SDK. You call normal typed methods (`customer.calendar.book(…)`, `customer.crm.contacts.find(…)`), you get plain objects back, and failures come back as typed errors. The SDK also picks the app the customer connected, and handles customer ids, retries, and event signatures for you.
 
-Use it from your **backend**. It needs your fastn API key, which must never reach a browser.
+Use it from your **backend**. It needs your Fastn API key, which must never reach a browser.
 
 {% hint style="info" %}
-This is not the widget SDK. `@fastn-ai/sdk` runs on your server and calls the fastn API. The browser package that shows the connect widget inside your app is `@fastn-ai/embed`: see [Embedding the widget: SDK](../../embed/embedding/sdk.md).
+This is not the widget SDK. `@fastn-ai/sdk` runs on your server and calls the Fastn API. The browser package that shows the connect widget inside your app is `@fastn-ai/embed`: see [Embedding the widget: SDK](../../embed/embedding/sdk.md).
 {% endhint %}
 
 ---
@@ -43,7 +43,7 @@ const customer = fastn.customer("acme_customer_42");
 
 | Option      | Required | Meaning |
 | ----------- | -------- | ------- |
-| `apiKey`    | Yes      | Your fastn API key. The SDK sends it on every call. |
+| `apiKey`    | Yes      | Your Fastn API key. The SDK sends it on every call. |
 | `baseUrl`   | No       | The API address. Default `https://api.fastn.dev`. |
 | `timeoutMs` | No       | Time limit per request, in milliseconds. Default 60000. |
 | `retries`   | No       | How many times a safe call is retried (see [Errors, retries, and options](errors-and-options.md)). Default 2. |
@@ -65,7 +65,7 @@ console.log(me.role, me.org?.id);
 
 ## Your customers and their ids
 
-You are the SaaS company using fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Customers and isolation](../../tutorials/developer/understanding-tenancy.md) for the model.
+You are the SaaS company using Fastn; each business you serve is a **customer**. Each customer gets its own connections, records and events. See [Customers and isolation](../../tutorials/developer/understanding-tenancy.md) for the model.
 
 You name each customer with **your own id**, for example the id it has in your database, and use it everywhere: `fastn.customer("acme_customer_42")`. Responses name the customer by your id too, in `orgId`.
 
@@ -78,22 +78,22 @@ To act for your customers, use a key that is not pinned to a single customer.
 | Id | Example | What it is | Who makes it |
 | -- | ------- | ---------- | ------------ |
 | Your customer id | `acme_customer_42` | Your own id for a customer. Use it everywhere. The API calls it `orgId`; customer answers also show it as `externalRef`, and events as `tenantRef`: all the same value. | You |
-| fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers. You never need it: wherever the API takes a customer, your customer id (`acme_customer_42`) works. | fastn |
+| Fastn's own id for the customer | `7c9e6679-…` (a UUID) | Comes back as `id` in customer answers. You never need it: wherever the API takes a customer, your customer id (`acme_customer_42`) works. | Fastn |
 | `widgetId` | `wgt_…` | A widget: which apps a setup link or the embedded widget offers. | You, in the dashboard |
-| `setupId` | `stp_…` | One setup link. | fastn |
-| `installationId` | `inst_…` | The finished setup made from a setup link or the widget. | fastn |
-| `connectionId` | `ucl:…:default` | One connected account, for example one Google Calendar of one customer. | fastn, when the customer connects |
-| `connectorId` | a UUID | One app (connector) in the catalog. | fastn |
-| Connector slug | `hubspot`, `googleCalendar` | The app's short name. Used as `provider` and `connector` in calls. | fastn |
-| Action slug | `getContact` | One action of an app. | fastn |
+| `setupId` | `stp_…` | One setup link. | Fastn |
+| `installationId` | `inst_…` | The finished setup made from a setup link or the widget. | Fastn |
+| `connectionId` | `ucl:…:default` | One connected account, for example one Google Calendar of one customer. | Fastn, when the customer connects |
+| `connectorId` | a UUID | One app (connector) in the catalog. | Fastn |
+| Connector slug | `hubspot`, `googleCalendar` | The app's short name. Used as `provider` and `connector` in calls. | Fastn |
+| Action slug | `getContact` | One action of an app. | Fastn |
 | Record id | `51234567890` | A record (contact, meeting, deal) in the app itself. | The app |
-| Subscription id | `esub_…` | One event subscription (your webhook). | fastn |
-| Delivery id | `evd_…` | One delivery of one event to your webhook. | fastn |
-| Event id | `evt_…` | One event. It stays the same across retries. | fastn |
-| Webhook secret | `whsec_…` | Signs the events fastn sends you. Shown once. | fastn |
+| Subscription id | `esub_…` | One event subscription (your webhook). | Fastn |
+| Delivery id | `evd_…` | One delivery of one event to your webhook. | Fastn |
+| Event id | `evt_…` | One event. It stays the same across retries. | Fastn |
+| Webhook secret | `whsec_…` | Signs the events Fastn sends you. Shown once. | Fastn |
 | `idempotencyKey` | `booking_123` | Your key that makes a write safe to retry. | You |
-| `correlationId` | `req_abc` | Your id for a request, to trace what fastn did for it. | You |
-| `requestId` | from the error | The id fastn gave one failed request. Quote it when you ask for help. | fastn |
+| `correlationId` | `req_abc` | Your id for a request, to trace what Fastn did for it. | You |
+| `requestId` | from the error | The id Fastn gave one failed request. Quote it when you ask for help. | Fastn |
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: "Cloud and DevOps connectors fastn manages, with their auth, actions and events."
+description: "Cloud and DevOps connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Cloud and DevOps

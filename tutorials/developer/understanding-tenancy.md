@@ -15,11 +15,11 @@ layout:
 ---
 
 # Customers and isolation
-Every widget session in fastn is scoped twice: to one **customer** (a company using your product), and to one **person** at that customer. Both come from the embed token your backend mints. Nothing in the iframe URL changes either of them.
+Every widget session in Fastn is scoped twice: to one **customer** (a company using your product), and to one **person** at that customer. Both come from the embed token your backend mints. Nothing in the iframe URL changes either of them.
 
 ### The customer
 
-The customer is named when your backend mints the token, by the `x-org-id` header (or `orgId` in the body). Either value can be your own id for the customer (the external reference you registered it under) or fastn's id for it (see [Find your org identifier](finding-your-org-identifier.md)). A token always belongs to exactly one customer, and the widget shows that customer's integrations and connections only.
+The customer is named when your backend mints the token, by the `x-org-id` header (or `orgId` in the body). Either value can be your own id for the customer (the external reference you registered it under) or Fastn's id for it (see [Find your org identifier](finding-your-org-identifier.md)). A token always belongs to exactly one customer, and the widget shows that customer's integrations and connections only.
 
 A token minted without a customer is refused (`400`, code `EMBED_TOKEN_REQUIRES_END_ORG_ID`) unless you explicitly ask for an organization-level token with `allowOrgLevel: true`. That kind of token is for previewing your own organization only; never hand one to a customer.
 

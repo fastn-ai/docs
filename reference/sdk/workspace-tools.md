@@ -1,10 +1,10 @@
 ---
-description: "The optional route: list and run the MCP tools your fastn workspace has turned on, with ToolsClient."
+description: "The optional route: list and run the MCP tools your Fastn workspace has turned on, with ToolsClient."
 ---
 
 # Workspace tools
 
-`ToolsClient` is an optional second route, separate from the flows in the rest of this section: if your app or AI agent works with **tools by name** (as an MCP client does), it lists and runs the tools your fastn workspace has turned on, with the customer set on each call. The endpoint is fastn Connect, the MCP gateway at `mcp.fastn.dev/<workspace>`; see [fastn MCP server](../../build/mcp-gateway/README.md) for what a workspace exposes.
+`ToolsClient` is an optional second route, separate from the flows in the rest of this section: if your app or AI agent works with **tools by name** (as an MCP client does), it lists and runs the tools your Fastn workspace has turned on, with the customer set on each call. The endpoint is Fastn Connect, the MCP gateway at `mcp.fastn.dev/<workspace>`; see [Fastn MCP server](../../build/mcp-gateway/README.md) for what a workspace exposes.
 
 ```typescript
 import { ToolsClient, ToolError } from "@fastn-ai/sdk";
@@ -24,7 +24,7 @@ console.log(r.data);                                    // the tool's answer, JS
 You can also give `FastnClient` a `tools: { key, url }` option. Then `fastn.tools` is a `ToolsClient`, and `fastn.customer(ref).tools` is the same client set to that customer.
 
 {% hint style="info" %}
-The workspace key is a different credential from your fastn platform API key. Keep both in your secret store.
+The workspace key is a different credential from your Fastn platform API key. Keep both in your secret store.
 {% endhint %}
 
 ## ToolsClient
@@ -35,7 +35,7 @@ The workspace key is a different credential from your fastn platform API key. Ke
 | `url` | Yes | The workspace endpoint. |
 | `timeoutMs` | No | Time limit per call. Default 120000 (tools can be slow). |
 | `defaults` | No | Options for every call, for example `{ customer: { ref: "acme_customer_42" } }`. |
-| `customerArg` | No | Default `true`: a call scoped to a customer fills your customer id into the Fastn Workspace tools that take it, so the customer is named once; `orgId` in the arguments reaches every Fastn Workspace tool that takes a customer, so you write `orgId` everywhere; and Fastn Workspace answers come back without fastn's internal customer id, so the only customer id you see is yours (`r.text` keeps the raw answer). `false` turns all three off. |
+| `customerArg` | No | Default `true`: a call scoped to a customer fills your customer id into the Fastn Workspace tools that take it, so the customer is named once; `orgId` in the arguments reaches every Fastn Workspace tool that takes a customer, so you write `orgId` everywhere; and Fastn Workspace answers come back without Fastn's internal customer id, so the only customer id you see is yours (`r.text` keeps the raw answer). `false` turns all three off. |
 
 | Method | Answer |
 | ------ | ------ |

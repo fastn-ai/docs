@@ -1,5 +1,5 @@
 ---
-description: "Download fastn's OpenAPI spec and a Postman collection, and call the REST API from Postman or Bruno."
+description: "Download Fastn's OpenAPI spec and a Postman collection, and call the REST API from Postman or Bruno."
 ---
 
 # OpenAPI spec and Postman collection
@@ -8,7 +8,7 @@ At the end of this page you can call any endpoint in the [REST API reference](RE
 
 ## Before you start
 
-* You need a fastn API key. Create one under [API keys](../../manage/api-keys.md). Use a test key (`fsk_test_…`) while you explore.
+* You need a Fastn API key. Create one under [API keys](../../manage/api-keys.md). Use a test key (`fsk_test_…`) while you explore.
 * Your role and the key's permissions decide which calls succeed. A call the key is not allowed to make is answered `401` or `403`.
 
 {% hint style="info" %}
@@ -28,7 +28,7 @@ Both are generated from the same release as the reference pages, so they list th
 
 1. In Postman, select **Import**, then paste the collection link from [Downloads](#downloads) or drop in the downloaded file.
 
-   **You should see:** a collection named **fastn REST API** with a folder per resource, such as **Workflows** and **Connectors**.
+   **You should see:** a collection named **Fastn REST API** with a folder per resource, such as **Workflows** and **Connectors**.
 2. Open the collection, select the **Variables** tab, and set `apiKey` to your test key. Save.
 
    **You should see:** three variables: `baseUrl` (`https://api.fastn.dev`), `apiKey` (your key) and `testMode` (`true`).

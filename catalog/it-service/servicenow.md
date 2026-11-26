@@ -15,26 +15,26 @@ hidden: true
 | **Slug** | `servicenow` |
 
 ## Setup guide
-This guide explains which ServiceNow values fastn asks for when you connect, and where to find each one in your ServiceNow instance.
+This guide explains which ServiceNow values Fastn asks for when you connect, and where to find each one in your ServiceNow instance.
 
 For ServiceNow's own setup steps, see [REST API](https://www.servicenow.com/docs/r/api-reference/rest-apis/c_RESTAPI.html) in the ServiceNow documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a ServiceNow instance and a user account on it that signs in with a ServiceNow user name and password. A free personal developer instance works for testing.
 - The account needs roles that give it access to the tables your workflows read and write, such as incidents, problems and change requests. Ask your ServiceNow administrator if you are not sure which roles your account has.
 
 ### Get your ServiceNow credentials
 1. Sign in to your ServiceNow instance in a browser and look at the address bar. The address has the form `https://<instance>.service-now.com`.
 2. Copy the part before `.service-now.com`. This is the **instance** value. For example, for `https://dev313269.service-now.com` the instance is `dev313269`.
-3. Note the **username** of the ServiceNow account you want fastn to act as. This is the user name stored on the account's user record in ServiceNow, not an email address used by a single sign-on provider.
-4. Note the **password** for that same ServiceNow account. If your company signs in to ServiceNow through single sign-on, the account needs its own local ServiceNow password; ask your ServiceNow administrator to set one or to create a dedicated integration user for fastn.
+3. Note the **username** of the ServiceNow account you want Fastn to act as. This is the user name stored on the account's user record in ServiceNow, not an email address used by a single sign-on provider.
+4. Note the **password** for that same ServiceNow account. If your company signs in to ServiceNow through single sign-on, the account needs its own local ServiceNow password; ask your ServiceNow administrator to set one or to create a dedicated integration user for Fastn.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter the instance, username and password when they connect ServiceNow in your widget. You can also enter them yourself under Build → Integrations → Connectors → ServiceNow.
 
 ### Events
-fastn can start a workflow when ServiceNow records change, for example when an incident is created, updated or resolved, or when a knowledge article is published. To use one of these events, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the ServiceNow event. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for ServiceNow.
+Fastn can start a workflow when ServiceNow records change, for example when an incident is created, updated or resolved, or when a knowledge article is published. To use one of these events, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the ServiceNow event. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for ServiceNow.
 
 ## Actions
 

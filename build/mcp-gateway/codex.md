@@ -1,5 +1,5 @@
 ---
-description: Add fastn to OpenAI Codex with one command, sign in, and build integrations from the Codex CLI or IDE extension.
+description: Add Fastn to OpenAI Codex with one command, sign in, and build integrations from the Codex CLI or IDE extension.
 layout:
   width: default
   title:
@@ -16,11 +16,11 @@ layout:
 
 # Codex
 
-Codex reads its MCP servers from `~/.codex/config.toml`. The Codex CLI and the Codex IDE extension share that file, so adding fastn once covers both.
+Codex reads its MCP servers from `~/.codex/config.toml`. The Codex CLI and the Codex IDE extension share that file, so adding Fastn once covers both.
 
-<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="fastn's MCP server page with the Codex tile selected, showing the command codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect your AI tool</strong> in fastn has the command and the file.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-fastn-tab-codex.webp" alt="Fastn's MCP server page with the Codex tile selected, showing the command codex mcp add Fastn --url https://mcp.fastn.dev/fastn-workspace, the file ~/.codex/config.toml with an mcp_servers.fastn entry, and a note that the CLI and the VS Code extension read the same file"><figcaption>The Codex tile under <strong>Connect your AI tool</strong> in Fastn has the command and the file.</figcaption></figure>
 
-## Add fastn
+## Add Fastn
 
 {% stepper %}
 {% step %}
@@ -30,15 +30,15 @@ Codex reads its MCP servers from `~/.codex/config.toml`. The Codex CLI and the C
 codex mcp add fastn --url https://mcp.fastn.dev/fastn-workspace
 ```
 
-Codex detects that fastn uses OAuth and starts the sign-in straight away. It prints *Authorize `fastn` by opening this URL in your browser* and opens the page.
+Codex detects that Fastn uses OAuth and starts the sign-in straight away. It prints *Authorize `fastn` by opening this URL in your browser* and opens the page.
 {% endstep %}
 
 {% step %}
-#### Sign in to fastn
+#### Sign in to Fastn
 
-In the browser, sign in to fastn if asked. If you belong to more than one fastn org, pick the workspace Codex works in and click **Connect**. When the terminal prints *Successfully logged in.*, you are done.
+In the browser, sign in to Fastn if asked. If you belong to more than one Fastn org, pick the workspace Codex works in and click **Connect**. When the terminal prints *Successfully logged in.*, you are done.
 
-<figure><img src="../../.gitbook/assets/mcp-codex-choose-workspace.webp" alt="fastn's page titled Which workspace should Codex (chatgpt.com) use?, with The org selected in fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in fastn</strong> follows whichever org you have open in the fastn dashboard; picking a named org pins Codex to it.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-codex-choose-workspace.webp" alt="Fastn's page titled Which workspace should Codex (chatgpt.com) use?, with The org selected in Fastn chosen, a list of orgs and a Connect button"><figcaption><strong>The org selected in Fastn</strong> follows whichever org you have open in the Fastn dashboard; picking a named org pins Codex to it.</figcaption></figure>
 
 If the browser does not open, copy the URL Codex printed. To sign in again later, run `codex mcp login fastn`.
 {% endstep %}
@@ -50,7 +50,7 @@ If the browser does not open, copy the URL Codex printed. To sign in again later
 codex mcp list
 ```
 
-fastn is listed with **Status** `enabled` and **Auth** `OAuth`:
+Fastn is listed with **Status** `enabled` and **Auth** `OAuth`:
 
 ```
 Name   Url                                    Bearer Token Env Var  Status   Auth
@@ -68,7 +68,7 @@ url = "https://mcp.fastn.dev/fastn-workspace"
 
 ## Use it
 
-Ask Codex to use fastn by name the first time. For example:
+Ask Codex to use Fastn by name the first time. For example:
 
 ```
 codex "Use the fastn MCP server: call its whoami tool and tell me the org name."
@@ -79,4 +79,4 @@ Codex calls `fastnPlatform__whoami` and answers with the name of the org you pic
 ## Troubleshooting
 
 * **Codex answers from the wrong org.** Run `codex mcp logout fastn`, then `codex mcp login fastn`, and pick the workspace again.
-* **fastn's tools are missing in the IDE extension.** The extension reads the same `~/.codex/config.toml`. Restart the extension after adding fastn.
+* **Fastn's tools are missing in the IDE extension.** The extension reads the same `~/.codex/config.toml`. Restart the extension after adding Fastn.

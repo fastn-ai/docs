@@ -39,7 +39,7 @@ One row per thing that needs a person, each with the action that fixes it:
 
 * **A vendor changed an app you use**, for example *`hubspot` changed*. **Review** opens the fix the maintainer agent proposes. See [Pending updates](../build/connector-updates.md).
 * **A customer connection expired or failed.** The row says whether the customer must sign in again. **Open connection** takes you to it.
-* **A workflow failed today**, for example *"Order sync" failed 3 of 40 runs today*, with its last run status. **Runs** opens them, and **Fix with fastn agent** (on plans with the fastn agent) hands the failure to the agent to diagnose and fix.
+* **A workflow failed today**, for example *"Order sync" failed 3 of 40 runs today*, with its last run status. **Runs** opens them, and **Fix with fastn agent** (on plans with the Fastn agent) hands the failure to the agent to diagnose and fix.
 * **A customer's trigger is not listening**: it *has no subscription for this customer*, *failed to subscribe*, or *is unsubscribed*. **Open customer** takes you to it.
 * **A workflow is too slow for Instant**: it *needed more than 25 s* on some runs today and was retried on Standard. **Runs** opens them.
 
@@ -85,7 +85,7 @@ The cross-customer rollup (previously the **Reporting** page): which customers n
 
 ## Pending updates
 
-Vendors change their APIs. fastn notices, works out the fix, and files it here for you to accept. Nothing is applied until you do. See [Pending updates](../build/connector-updates.md).
+Vendors change their APIs. Fastn notices, works out the fix, and files it here for you to accept. Nothing is applied until you do. See [Pending updates](../build/connector-updates.md).
 
 <figure><img src="../.gitbook/assets/screens/health-pending-updates.webp" alt="Health, Pending updates with nothing waiting: the note that an app's change lands here with any patch the maintainer agent proposes, and nothing is applied until you accept it"><figcaption>Nothing is applied until you accept it.</figcaption></figure>
 

@@ -1,5 +1,5 @@
 ---
-description: What your AI tool does after you ask it for an integration, where the result lands in fastn, and how to test it.
+description: What your AI tool does after you ask it for an integration, where the result lands in Fastn, and how to test it.
 layout:
   width: default
   title:
@@ -16,13 +16,13 @@ layout:
 
 # Build from your AI tool
 
-Once fastn is connected to your AI tool through the [fastn MCP server](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever AI tool you use, it follows fastn's integration-builder playbook, which fastn serves to your AI tool and can update over time. A typical run follows these steps, with something for you to approve along the way. The exact steps come from the playbook, so they can differ from this table as fastn updates it.
+Once Fastn is connected to your AI tool through the [Fastn MCP server](mcp-gateway/README.md), you can ask for an integration in the chat. Whichever AI tool you use, it follows Fastn's integration-builder playbook, which Fastn serves to your AI tool and can update over time. A typical run follows these steps, with something for you to approve along the way. The exact steps come from the playbook, so they can differ from this table as Fastn updates it.
 
 <figure><img src="../.gitbook/assets/screens/mcp-server.webp" alt="Embed, MCP server: Claude recommended with Add to Claude, tiles for eleven other AI tools, the MCP server URL https://mcp.fastn.dev/fastn-workspace with Copy, and the note that sign-in is OAuth 2.0 with dynamic client registration and needs no API key"><figcaption><strong>Embed → MCP server</strong>, also opened from <strong>Connect your AI tool</strong> in the top bar.</figcaption></figure>
 
 | Step | What your AI tool does | What you do |
 | --- | --- | --- |
-| 1. Understand | Checks who you are and what's already in your workspace | Approve the read-only fastn calls |
+| 1. Understand | Checks who you are and what's already in your workspace | Approve the read-only Fastn calls |
 | 2. Plan | Picks the connectors and recommends a plan | Answer its business questions; the recommendation is pre-selected |
 | 3. Map (only when data moves between apps) | Proposes field mappings and filters | Approve them on the review page it links to |
 | 4. Test cases | Writes acceptance tests for the whole integration | Approve them on the review page; this is the go-ahead to build |
@@ -31,9 +31,9 @@ Once fastn is connected to your AI tool through the [fastn MCP server](mcp-gatew
 
 If an account isn't connected yet, your AI tool stops and sends a connect link. Enter credentials there, never in the chat.
 
-This is the same idea as the in-app [fastn agent](agent/README.md), run from the AI tool you already use, and it uses no fastn AI credits.
+This is the same idea as the in-app [Fastn agent](agent/README.md), run from the AI tool you already use, and it uses no Fastn AI credits.
 
-### Where the result lands in fastn
+### Where the result lands in Fastn
 
 | What | Where |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-description: "Productivity connectors fastn manages, with their auth, actions and events."
+description: "Productivity connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Productivity

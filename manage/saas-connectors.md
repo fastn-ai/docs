@@ -22,7 +22,7 @@ layout:
 
 > Connect your product through its API or webhooks, so each customer's connection to it can be scoped, and tell fastn where to call your product back. Integrations can't go live until your product is connected.
 
-Every other connector in fastn represents someone else's app: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organized.
+Every other connector in Fastn represents someone else's app: Shopify, HubSpot, Jira. This page is for the opposite case: **your own product**, through its API or webhooks, registered so that each of your customers has a connection to your product, scoped the way your product is organized.
 
 An integration usually has two ends. One end is the app your customer uses, picked from **Integrations**. The other end is your product, connected here. Workflows read and write both through the same kind of connection. You can explore and build before this is done, but no integration goes live until your product is connected.
 
@@ -58,7 +58,7 @@ Three consequences worth being deliberate about:
 Pick scopes that name a *capability boundary* in your own product (`inventory`, `product`, `billing`), rather than one scope per customer. Customers are already one axis; scopes are the second axis crossing it.
 
 {% hint style="info" %}
-This page sits under **Build**, beside Integrations rather than inside it. Integrations is the catalog of other companies' apps; this is the one connector that is yours. It moved here from Settings (where it was called **SaaS Connectors**), and the old Settings address redirects. Its other tab, **Webhooks**, is where fastn calls your product back: see [Webhooks](saas-webhooks.md).
+This page sits under **Build**, beside Integrations rather than inside it. Integrations is the catalog of other companies' apps; this is the one connector that is yours. It moved here from Settings (where it was called **SaaS Connectors**), and the old Settings address redirects. Its other tab, **Webhooks**, is where Fastn calls your product back: see [Webhooks](saas-webhooks.md).
 {% endhint %}
 
 {% hint style="warning" %}

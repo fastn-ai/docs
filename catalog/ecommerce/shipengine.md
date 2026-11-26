@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `shipengine` |
 
 ## Setup guide
-This guide shows you where to find the ShipEngine API key that fastn asks for and how to connect ShipEngine in fastn.
+This guide shows you where to find the ShipEngine API key that Fastn asks for and how to connect ShipEngine in Fastn.
 
 For ShipEngine's own setup steps, see [Security & Authentication](https://docs.shipstation.com/apis/shipengine/docs/guides/auth) in the ShipEngine documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need the Owner, Admin or Developer role in Fastn to set up the connector.
 - You need a ShipEngine account that can sign in to the ShipEngine dashboard at dashboard.shipengine.com.
 - Decide whether to connect with a sandbox key for testing or a production key. Calls made with a production key can cost money.
 
@@ -32,7 +32,7 @@ For ShipEngine's own setup steps, see [Security & Authentication](https://docs.s
 
 If the key is wrong, expired or missing, ShipEngine returns a 401 Unauthorized error.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect ShipEngine in your widget. You can also enter them yourself under **Build → Integrations → Connectors → ShipEngine**. After that, workflow code can call actions such as `fastn.connector.shipengine.<actionSlug>()`.
 
 ## Actions

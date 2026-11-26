@@ -50,7 +50,7 @@ To find which of your customers a run acts for, read it from `ctx`:
 
 | Field             | Holds                                                                                 |
 | ----------------- | ------------------------------------------------------------------------------------- |
-| `ctx.endOrgId`    | fastn's id for the customer the run acts for, or `null` when the run is not for a customer. |
+| `ctx.endOrgId`    | Fastn's id for the customer the run acts for, or `null` when the run is not for a customer. |
 | `ctx.externalRef` | Your own id for that customer, when the caller named the customer by it; otherwise `null`. |
 | `ctx.env`         | The environment the run executes in, for example `test` or `live`.                   |
 | `ctx.attempt`     | The attempt number, starting at `1`.                                                  |
@@ -75,12 +75,12 @@ One workflow serves all of your customers, and these four headers on the incomin
 
 | Header                          | Carries                                                                 |
 | ------------------------------- | ------------------------------------------------------------------------- |
-| `x-org-id`                      | The customer the run acts for: your own id for it, or fastn's id for it. |
+| `x-org-id`                      | The customer the run acts for: your own id for it, or Fastn's id for it. |
 | `x-installation-id`             | Which installation of the integration this run belongs to.               |
 | `x-fastn-connections`           | The connections the installation uses.                                   |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.              |
 
-`x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On a direct call to `/execute`, fastn reloads the named installation and overlays its stored connections and configuration on whatever the headers say, so a caller names an installation; it cannot pick connections by sending them.
+`x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On a direct call to `/execute`, Fastn reloads the named installation and overlays its stored connections and configuration on whatever the headers say, so a caller names an installation; it cannot pick connections by sending them.
 
 Their exact shapes are listed in the workflow editor's autocomplete, which is generated from the runtime: check there before wiring them into a caller.
 
@@ -107,7 +107,7 @@ The slug is the one on the connector's Overview tab. Available actions and their
 
 Calls a [unified API](../build/unified-apis/README.md) (one canonical entity, served by whichever provider the running customer has connected), rather than naming a specific connector.
 
-This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: fastn routes the call to `hubspot`, `salesforce`, or `zohoCrm`, so your code does not have to. The workflow editor's autocomplete shows the exact call shape.
+This is the runtime counterpart to the `GET|POST /api/v1/unified/{category}/{entity}` endpoints on the Unified APIs page. Use it wherever you would otherwise write a branch per CRM: Fastn routes the call to `hubspot`, `salesforce`, or `zohoCrm`, so your code does not have to. The workflow editor's autocomplete shows the exact call shape.
 
 ---
 

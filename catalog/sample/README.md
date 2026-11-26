@@ -1,5 +1,5 @@
 ---
-description: "Sample and novelty APIs connectors fastn manages, with their auth, actions and events."
+description: "Sample and novelty APIs connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Sample and novelty APIs

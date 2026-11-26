@@ -19,7 +19,7 @@ layout:
 The SDK mounts the same iframe and adds what a raw tag cannot: events when a customer connects an app, token refresh, live theming, and modal mode.
 
 {% hint style="info" %}
-This page is the browser widget package, `@fastn-ai/embed`. The server-side package that calls the fastn API from your backend is `@fastn-ai/sdk`: see [SDK](../../reference/sdk/README.md).
+This page is the browser widget package, `@fastn-ai/embed`. The server-side package that calls the Fastn API from your backend is `@fastn-ai/sdk`: see [SDK](../../reference/sdk/README.md).
 {% endhint %}
 
 Four variants, depending on how much of the UI you want to own:
@@ -49,7 +49,7 @@ Here `/api/fastn-token` is your own backend route, which mints a token with the 
 
 ### Build your own UI
 
-`FastnProvider` and the hooks `useConnectors`, `useConnections` and `useConnect` come from `@fastn-ai/embed/headless/react`, and are only for the **Build your own UI** variant, where you render every pixel and fastn supplies the data, the auth and the OAuth popup. Your page's origin has to be registered on the API key that mints your tokens, or the browser blocks the calls before they are sent.
+`FastnProvider` and the hooks `useConnectors`, `useConnections` and `useConnect` come from `@fastn-ai/embed/headless/react`, and are only for the **Build your own UI** variant, where you render every pixel and Fastn supplies the data, the auth and the OAuth popup. Your page's origin has to be registered on the API key that mints your tokens, or the browser blocks the calls before they are sent.
 
 ### Script tag
 
@@ -70,4 +70,4 @@ hub.on('connected', (e) => {
 });
 ```
 
-Because fastn hosts the screen, it gains features without you shipping a release, and its styles can never collide with yours.
+Because Fastn hosts the screen, it gains features without you shipping a release, and its styles can never collide with yours.

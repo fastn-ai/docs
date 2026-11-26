@@ -15,20 +15,20 @@ hidden: true
 | **Slug** | `shipbob` |
 
 ## Setup guide
-This guide covers how to connect ShipBob to fastn, either with your own ShipBob OAuth app or with a Personal Access Token, and how to start workflows from ShipBob events.
+This guide covers how to connect ShipBob to Fastn, either with your own ShipBob OAuth app or with a Personal Access Token, and how to start workflows from ShipBob events.
 
 For ShipBob's own setup steps, see [Authentication](https://developer.shipbob.com/auth) in the ShipBob documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a ShipBob account. ShipBob ties API access to the account's root user, so sign in as the root user to generate a token or install an OAuth app.
-- fastn's Connect with ShipBob (OAuth) option uses ShipBob's sandbox environment. For it, you need a ShipBob sandbox account, which is separate from a production account. You can sign up for one from ShipBob's sandbox setup page.
+- Fastn's Connect with ShipBob (OAuth) option uses ShipBob's sandbox environment. For it, you need a ShipBob sandbox account, which is separate from a production account. You can sign up for one from ShipBob's sandbox setup page.
 
 ### Create your ShipBob app
 1. Sign in to the ShipBob sandbox dashboard (webstage.shipbob.dev) as the root user.
 2. Go to **Integrations** > **OAuth Apps** and select **Create App**.
 3. In the redirect URL field, enter `https://oauth.live.fastn.ai` exactly as written, with no trailing slash, and select **Add**. ShipBob only accepts a redirect URI that matches one you added here.
-4. Grant the app the scopes fastn requests:
+4. Grant the app the scopes Fastn requests:
    - `openid`
    - `offline_access`
    - `channels_read`
@@ -43,11 +43,11 @@ For ShipBob's own setup steps, see [Authentication](https://developer.shipbob.co
    - `pricing_read`
    - `webhooks_read`, `webhooks_write`
 
-   `offline_access` is what lets fastn receive a refresh token, so keep it.
+   `offline_access` is what lets Fastn receive a refresh token, so keep it.
 5. Save the app, then copy its client ID and client secret.
 
-### Add your app to fastn
-1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **ShipBob**.
+### Add your app to Fastn
+1. In Fastn, go to **Build** > **Integrations** > **Connectors** and open **ShipBob**.
 2. Open the **Auth** tab and select **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -61,7 +61,7 @@ For ShipBob's own setup steps, see [Authentication](https://developer.shipbob.co
 6. Save the provider, then choose **Use this app** so it becomes the preferred app.
 7. In your widget, set the ShipBob connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-Customers who connect without your own app sign in through fastn's shared ShipBob app.
+Customers who connect without your own app sign in through Fastn's shared ShipBob app.
 
 ### Get your ShipBob credentials
 If you or your customers connect with a Personal Access Token instead of OAuth, you need two values:
@@ -71,13 +71,13 @@ If you or your customers connect with a Personal Access Token instead of OAuth, 
 
 Personal Access Tokens do not expire, but you can revoke them from the same page and generate new ones.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect ShipBob in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **ShipBob**.
 
 ### Events
 To run a workflow when something happens in ShipBob, such as `order.shipped`, `return.created` or `wro.completed`, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the ShipBob event. See [App events](../../build/triggers/app-events.md).
 
-Contact fastn support to set up events for ShipBob.
+Contact Fastn support to set up events for ShipBob.
 
 ## Actions
 

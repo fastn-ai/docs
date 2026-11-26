@@ -77,4 +77,4 @@ The same headers work on a [webhook trigger](../operate/triggers/using-a-webhook
 
 * [API keys](api-keys.md): create, rotate and revoke keys.
 * [HTTP API](../reference/api.md): headers, environments and endpoints.
-* [Security](../reference/security.md): how fastn protects credentials and callers.
+* [Security](../reference/security.md): how Fastn protects credentials and callers.

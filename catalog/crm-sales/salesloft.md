@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `salesloft` |
 
 ## Setup guide
-This guide shows how to create your own Salesloft OAuth application and add it to fastn, so your customers sign in to Salesloft through your app.
+This guide shows how to create your own Salesloft OAuth application and add it to Fastn, so your customers sign in to Salesloft through your app.
 
 For Salesloft's own setup steps, see [OAuth - Authorization Code](https://developers.salesloft.com/docs/platform/api-basics/oauth-authentication/) in the Salesloft documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Salesloft account that can sign in to the Salesloft Account site at accounts.salesloft.com.
 - Salesloft says partners should use an OAuth application rather than API keys, which are meant for individual customers.
 
@@ -31,7 +31,7 @@ For Salesloft's own setup steps, see [OAuth - Authorization Code](https://develo
 4. In **Redirect URI**, enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
 5. Choose the **Application Type**: **Yes** makes it a public Frontend Integration, **No** keeps it a private team application. You cannot change this later.
 6. Set the **Grant Type** to **Authorization Code**. You cannot change this later either.
-7. Select the scopes fastn requests by clicking the checkmark next to each one:
+7. Select the scopes Fastn requests by clicking the checkmark next to each one:
    - `accounts:read`, `accounts:write`, `accounts:delete`
    - `people:read`, `people:write`, `people:delete`
    - `opportunities:read`, `opportunities:write`, `opportunities:delete`
@@ -60,8 +60,8 @@ For Salesloft's own setup steps, see [OAuth - Authorization Code](https://develo
 
 To change the app later, go to **Your Applications** > **OAuth Applications** > **Edit**.
 
-### Add your app to fastn
-1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **Salesloft**.
+### Add your app to Fastn
+1. In Fastn, go to **Build** > **Integrations** > **Connectors** and open **Salesloft**.
 2. Open the **Auth** tab and click **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -76,10 +76,10 @@ To change the app later, go to **Your Applications** > **OAuth Applications** > 
 7. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 8. In your widget, set the Salesloft connector's **Auth provider** to your app instead of **Use platform default**.
 
-Customers who connect without your own app sign in through fastn's shared Salesloft app.
+Customers who connect without your own app sign in through Fastn's shared Salesloft app.
 
 ### Events
-To start a workflow when something happens in Salesloft, such as a person being created or a task being completed, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Salesloft event. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Salesloft.
+To start a workflow when something happens in Salesloft, such as a person being created or a task being completed, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Salesloft event. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Salesloft.
 
 ## Actions
 

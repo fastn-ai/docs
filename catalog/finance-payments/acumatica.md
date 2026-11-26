@@ -16,7 +16,7 @@ hidden: true
 
 ## Setup
 
-Your customers sign in to Acumatica through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
+Your customers sign in to Acumatica through Fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -44,6 +44,6 @@ Start a workflow when one of these happens, with an [app event trigger](../../bu
 
 <summary>View 4 more events</summary>
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Sales Order Changed</td><td><code>SalesOrder</code></td><td>Push notification for SalesOrder insert/update.</td></tr><tr><td>Shipment Changed</td><td><code>Shipment</code></td><td>Push notification for Shipment insert/update.</td></tr><tr><td>Stock Item Changed</td><td><code>StockItem</code></td><td>Acumatica push notification fired when a StockItem record is inserted or updated. Configure a Push Notification in Acumatica (System Management &gt; Push Notifications) targeting the Stock Items generic inquiry/screen with this fastn webhook URL as the destination. Payload Inserted/Deleted arrays carry the changed field values.</td></tr><tr><td>Vendor Changed</td><td><code>Vendor</code></td><td>Push notification for Vendor record insert/update.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Sales Order Changed</td><td><code>SalesOrder</code></td><td>Push notification for SalesOrder insert/update.</td></tr><tr><td>Shipment Changed</td><td><code>Shipment</code></td><td>Push notification for Shipment insert/update.</td></tr><tr><td>Stock Item Changed</td><td><code>StockItem</code></td><td>Acumatica push notification fired when a StockItem record is inserted or updated. Configure a Push Notification in Acumatica (System Management &gt; Push Notifications) targeting the Stock Items generic inquiry/screen with this Fastn webhook URL as the destination. Payload Inserted/Deleted arrays carry the changed field values.</td></tr><tr><td>Vendor Changed</td><td><code>Vendor</code></td><td>Push notification for Vendor record insert/update.</td></tr></tbody></table>
 
 </details>

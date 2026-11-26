@@ -26,7 +26,7 @@ Give each person on your team the access they need: assign a built-in role, or c
 
 ### The 6 built-in roles
 
-fastn has 6 built-in roles. View them under **Settings → Roles** (Owners and Admins):
+Fastn has 6 built-in roles. View them under **Settings → Roles** (Owners and Admins):
 
 | Role          | Permissions | Description                                                      |
 | ------------- | ----------- | ---------------------------------------------------------------- |

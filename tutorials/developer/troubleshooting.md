@@ -15,7 +15,7 @@ layout:
 
 # Troubleshooting
 
-Common errors when embedding fastn, with their causes and fixes.
+Common errors when embedding Fastn, with their causes and fixes.
 
 ### Blank embed or iframe renders nothing
 
@@ -31,7 +31,7 @@ Embed tokens expire after 8 hours. If a token is hardcoded into your frontend or
 
 **Most likely cause:** the wrong customer identifier.
 
-For `x-org-id`, or `orgId` in the body, use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns `404`: `IDENTITY_ORG_NOT_FOUND` for `x-org-id`, `Tenant not found` for `orgId`. With a key limited to a single customer, only fastn's id works in `orgId`. See [Generate embed tokens](generating-embed-tokens.md).
+For `x-org-id`, or `orgId` in the body, use Fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An id that matches neither returns `404`: `IDENTITY_ORG_NOT_FOUND` for `x-org-id`, `Tenant not found` for `orgId`. With a key limited to a single customer, only Fastn's id works in `orgId`. See [Generate embed tokens](generating-embed-tokens.md).
 
 ### 401 on the token request
 

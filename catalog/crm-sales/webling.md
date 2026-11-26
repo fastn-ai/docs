@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `webling` |
 
 ## Setup guide
-This guide shows how to find the Webling database address and API key that fastn needs to connect to a Webling account.
+This guide shows how to find the Webling database address and API key that Fastn needs to connect to a Webling account.
 
 For Webling's own setup steps, see [Webling API](https://demo.webling.ch/api) in the Webling documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need the Owner, Admin or Developer role in Fastn to set up the connector.
 - You need a Webling account with administrator access, because only administrators can create API keys in Webling.
 - Decide what the key should be allowed to do. Webling API keys are either administrator keys with full access, or keys limited per area (members, finance, calendar, articles).
 
@@ -31,8 +31,8 @@ For Webling's own setup steps, see [Webling API](https://demo.webling.ch/api) in
 4. Create a new API key. Turn on the administrator setting for full access, or set the access level for each area (members, finance, calendar, articles) so the key can reach only what your workflows need.
 5. Copy the key. This is the **weblingApiKey** value. Store it somewhere safe, because anyone with the key can access your Webling data within its permissions.
 
-### Connect in fastn
-Your customers enter the subdomain, domain and API key when they connect Webling in your widget. You can also enter them yourself under Build → Integrations → Connectors → Webling. fastn sends the key with every request, and workflow code calls Webling actions as `fastn.connector.webling.<actionSlug>()`.
+### Connect in Fastn
+Your customers enter the subdomain, domain and API key when they connect Webling in your widget. You can also enter them yourself under Build → Integrations → Connectors → Webling. Fastn sends the key with every request, and workflow code calls Webling actions as `fastn.connector.webling.<actionSlug>()`.
 
 ## Actions
 

@@ -1,15 +1,15 @@
 ---
 description: >-
-  Tutorials for developers embedding fastn in their product: embed tokens, API
+  Tutorials for developers embedding Fastn in their product: embed tokens, API
   keys, customer identifiers, connection scope, deployment, and MCP.
 hidden: true
 ---
 
 # Developer tutorials
 
-These tutorials are for developers embedding fastn into their own product. Your customers use the embedded widget to connect their apps and configure integrations; your job is to render that widget inside your application and generate the tokens that scope it to each customer.
+These tutorials are for developers embedding Fastn into their own product. Your customers use the embedded widget to connect their apps and configure integrations; your job is to render that widget inside your application and generate the tokens that scope it to each customer.
 
-You don't run fastn locally or build the integration infrastructure yourself. fastn runs as a hosted platform. You embed its widget as an iframe, generate a short-lived token from your backend, and decide how connections are scoped to your customers.
+You don't run Fastn locally or build the integration infrastructure yourself. Fastn runs as a hosted platform. You embed its widget as an iframe, generate a short-lived token from your backend, and decide how connections are scoped to your customers.
 
 ### In this section
 
@@ -28,6 +28,6 @@ You don't run fastn locally or build the integration infrastructure yourself. fa
 
 [**Deployment checklist**](deployment.md) - Environment variables and deploy-time considerations.
 
-[**fastn MCP server**](../../build/mcp-gateway/README.md) - Connect your AI tool, such as Claude or Cursor, to build and manage integrations; fastn Connect gives AI agents your customers' connected apps as tools.
+[**Fastn MCP server**](../../build/mcp-gateway/README.md) - Connect your AI tool, such as Claude or Cursor, to build and manage integrations; Fastn Connect gives AI agents your customers' connected apps as tools.
 
 [**Troubleshooting**](troubleshooting.md) - Common errors and their causes.

@@ -1,5 +1,5 @@
 ---
-description: Create, rotate and revoke the fsk_ keys your backend uses to call fastn.
+description: Create, rotate and revoke the fsk_ keys your backend uses to call Fastn.
 layout:
   width: default
   title:
@@ -88,7 +88,7 @@ For every preset except **Admin**, the **What it can touch** matrix below shows 
 | **Customers**   | create                                                           |
 | **Unified API** | read, execute, customize                                         |
 
-`write` on Connectors has no effect on an API key: the only route that checks it is reserved for fastn platform admins. Use `create` and `update` to let a key change connectors.
+`write` on Connectors has no effect on an API key: the only route that checks it is reserved for Fastn platform admins. Use `create` and `update` to let a key change connectors.
 
 {% hint style="warning" %}
 `decrypt` on Connections and `read` on Secrets are the two permissions to weigh most carefully before you tick them. A key holding either can read credentials, and a key is easier to leak than a person.

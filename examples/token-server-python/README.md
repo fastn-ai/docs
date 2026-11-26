@@ -1,10 +1,10 @@
 # Embed token server (Python)
 
-A Flask route, `GET /api/fastn-token`, that mints a fastn embed token for the signed-in customer and user. Point your frontend's iframe at it, as in the [embed-node](../embed-node) example's `public/index.html`.
+A Flask route, `GET /api/fastn-token`, that mints a Fastn embed token for the signed-in customer and user. Point your frontend's iframe at it, as in the [embed-node](../embed-node) example's `public/index.html`.
 
 ## Before you start
 
-* An API key from **Embed → API keys** in the [fastn dashboard](https://app.fastn.dev). Use **Test** mode while you try it.
+* An API key from **Embed → API keys** in the [Fastn dashboard](https://app.fastn.dev). Use **Test** mode while you try it.
 * A test customer from **Operate → Customers → Create customer**.
 * Python 3.10 or newer.
 

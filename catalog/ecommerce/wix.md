@@ -15,10 +15,10 @@ hidden: true
 | **Slug** | `wix` |
 
 ## Setup guide
-This guide shows where your customers find the Wix values fastn asks for when they connect Wix, using either a Wix API key or a Wix headless OAuth client.
+This guide shows where your customers find the Wix values Fastn asks for when they connect Wix, using either a Wix API key or a Wix headless OAuth client.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn to configure the connector.
+- You need the Owner, Admin or Developer role in Fastn to configure the connector.
 - To create a Wix API key, you must be the owner or a co-owner of the Wix account.
 - Site-level calls work only with a key created in the account that owns the site, so create the key in the site owner's account.
 - To use OAuth instead, you need a Wix headless project with a headless OAuth client.
@@ -52,7 +52,7 @@ Fastn's **Wix OAuth 2.0** method uses the client credentials flow and asks for `
 4. In the **Client info** section, under **Client secret**, click **Generate Client Secret** and copy it. This is your `clientSecret`. Wix shows it only once.
 5. Find `siteId` and `accountId` as described in steps 7 and 8 above.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Wix in your widget, or you can enter them yourself under **Build → Integrations → Connectors → Wix**.
 
 ## Actions

@@ -1,6 +1,6 @@
 ---
 description: >-
-  This page walks you through embedding the fastn widget for your customers:
+  This page walks you through embedding the Fastn widget for your customers:
   register a customer organization, retrieve an embed token, and load the
   widget.
 layout:
@@ -183,7 +183,7 @@ x-user-id: <USER_ID>  // optional
 x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 ```
 
-`x-org-id` is the customer: fastn's id for it, or the `orgId` you registered it under above.
+`x-org-id` is the customer: Fastn's id for it, or the `orgId` you registered it under above.
 
 **Body**
 
@@ -252,8 +252,8 @@ x-identity-hmac: <IDENTITY_HASH>  // optional, recommended for security
 | `connectorId` | Yes | The connector. For your own product, `GET /api/v1/saas-connectors` lists it. |
 | `authMethodId` | Yes | The auth method on that connector. `GET /api/v1/auth-methods?connectorId=<CONNECTOR_ID>` lists them. |
 | `credentials` | Yes | The values for that auth method. |
-| `orgId` | No | The customer, if you do not send `x-org-id`: your own id for it, or fastn's id for it. If you send both, they must match. **With neither, the connection is created on your own organization, not a customer's.** |
-| `name` | No | A display name, unique per connector and customer. A name already in use returns `409`. Leave it out and fastn generates one. |
+| `orgId` | No | The customer, if you do not send `x-org-id`: your own id for it, or Fastn's id for it. If you send both, they must match. **With neither, the connection is created on your own organization, not a customer's.** |
+| `name` | No | A display name, unique per connector and customer. A name already in use returns `409`. Leave it out and Fastn generates one. |
 
 `connectionScope` is not accepted on this call and returns `400`.
 
@@ -308,6 +308,6 @@ The call answers `201` with the new connection. It only creates: to replace a cu
 | `404` `IDENTITY_ORG_NOT_FOUND` | `x-org-id` is not one of your customers. |
 | `409` | That `name` is already in use for this connector. |
 | `422` | The app rejected these credentials, so nothing was saved. Check the field names and values. |
-| `504` | fastn timed out while saving. The response says whether it is safe to try again. |
+| `504` | Fastn timed out while saving. The response says whether it is safe to try again. |
 
 **With an Enforce key, every call needs identity headers, including the two lookups above.** For the lookups, sign `x-user-id` with an empty org id, as in [Register with an enforcing key](#register-with-an-enforcing-key). For this call, send and sign `x-org-id` as well and leave `orgId` out of the body, so the hash covers the customer.

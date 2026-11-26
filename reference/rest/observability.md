@@ -24,7 +24,7 @@ Operation: `listAlerts`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -74,7 +74,7 @@ Operation: `createAlert`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Request body**
 
@@ -149,7 +149,7 @@ Operation: `listAlertChannels`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `includeInactive` | query | string | No | Also return connections whose status is not ACTIVE One of: `true`, `false`. |
 
 **Responses**
@@ -170,7 +170,7 @@ Operation: `enableDefaultAlerts`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Request body**
 
@@ -221,7 +221,7 @@ Operation: `updateAlert`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Alert rule id. |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Request body**
 
@@ -298,7 +298,7 @@ Operation: `deleteAlert`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Alert rule id. |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -319,7 +319,7 @@ Operation: `listAlertEvents`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | Alert rule id. |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -388,7 +388,7 @@ Operation: `listAuditLog`
 | --- | --- | --- | --- | --- |
 | `action` | query | string | No | Exact action, e.g. workflow.update. |
 | `userId` | query | string | No | Actor user id. |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `resourceType` | query | string | No |  |
 | `search` | query | string | No | Case-insensitive substring over action, resource type, resource id and details. |
 | `excludeAction` | query | string[] | No | Action to leave out; repeatable. |

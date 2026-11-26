@@ -15,27 +15,27 @@ hidden: true
 | **Slug** | `explorium` |
 
 ## Setup guide
-This guide shows where to find the Explorium API key that fastn needs to connect to Explorium AgentSource.
+This guide shows where to find the Explorium API key that Fastn needs to connect to Explorium AgentSource.
 
 For Explorium's own setup steps, see [Getting your API key](https://developers.explorium.ai/reference/setup/getting_your_api_key) in the Explorium documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need access to the Explorium Admin Portal for your company.
 - Explorium assigns an API key when your company buys a subscription package. One key is shared by everyone in your organization.
 
 ### Get your Explorium credentials
-fastn asks for one value, **apiToken**: your Explorium AgentSource API key.
+Fastn asks for one value, **apiToken**: your Explorium AgentSource API key.
 
 1. Sign in to the Explorium Admin Portal at [admin.explorium.ai](https://admin.explorium.ai/).
 2. Go to **Access & Authentication** > **Getting Your API Key**.
 3. The key is shown masked. Click **Show Key** to reveal it.
-4. Click **Copy Key** and paste the value into the **apiToken** field in fastn.
+4. Click **Copy Key** and paste the value into the **apiToken** field in Fastn.
 
 If you cannot see the key, ask your Explorium administrator for access.
 
-### Connect in fastn
-Your customers enter their API key when they connect Explorium in your widget, or you enter it under Build → Integrations → Connectors → Explorium. fastn sends the key with each request, so there is nothing else to set up at Explorium.
+### Connect in Fastn
+Your customers enter their API key when they connect Explorium in your widget, or you enter it under Build → Integrations → Connectors → Explorium. Fastn sends the key with each request, so there is nothing else to set up at Explorium.
 
 ## Actions
 

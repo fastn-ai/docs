@@ -15,15 +15,15 @@ hidden: true
 | **Slug** | `hubspot` |
 
 ## Setup guide
-This guide shows how to create your own HubSpot app for OAuth and add it to fastn, so your customers connect HubSpot through your app instead of fastn's shared one.
+This guide shows how to create your own HubSpot app for OAuth and add it to Fastn, so your customers connect HubSpot through your app instead of Fastn's shared one.
 
 For HubSpot's own setup steps, see [Create a new app](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/create-an-app) in the HubSpot documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a HubSpot account where you can open **Development**, such as a free developer account.
 - You need Node.js, to install the HubSpot CLI.
-- Have the fastn redirect URL ready: `https://oauth.live.fastn.ai`.
+- Have the Fastn redirect URL ready: `https://oauth.live.fastn.ai`.
 
 ### Create your HubSpot app
 1. In HubSpot, go to **Development** → **Projects** and click **Create project**. HubSpot creates apps through its command-line tool, and the dialog shows the two commands to run.
@@ -42,9 +42,9 @@ For HubSpot's own setup steps, see [Create a new app](https://developers.hubspot
 
 6. Open the app's **Auth** tab and check that `https://oauth.live.fastn.ai` is listed under **Redirect URLs**.
 
-<figure><img src="../../.gitbook/assets/connector-guides/hubspot/redirect-url.png" alt="fastn's redirect URL on the app."><figcaption><p>fastn's redirect URL on the app.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-guides/hubspot/redirect-url.png" alt="Fastn's redirect URL on the app."><figcaption><p>Fastn's redirect URL on the app.</p></figcaption></figure>
 
-7. On the same tab, check the **Required Scopes**. These are the scopes fastn's HubSpot connector uses:
+7. On the same tab, check the **Required Scopes**. These are the scopes Fastn's HubSpot connector uses:
 
 <figure><img src="../../.gitbook/assets/connector-guides/hubspot/scopes.png" alt="The app's required scopes."><figcaption><p>The app's required scopes.</p></figcaption></figure>
 
@@ -52,8 +52,8 @@ For HubSpot's own setup steps, see [Create a new app](https://developers.hubspot
 
 <figure><img src="../../.gitbook/assets/connector-guides/hubspot/credentials.png" alt="Client ID and Client secret, under Client credentials on the Auth tab."><figcaption><p>Client ID and Client secret, under Client credentials on the Auth tab.</p></figcaption></figure>
 
-### Add your app to fastn
-1. In fastn, go to Build → Integrations → Connectors and open HubSpot.
+### Add your app to Fastn
+1. In Fastn, go to Build → Integrations → Connectors and open HubSpot.
 2. Open the **Auth** tab and click **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -67,7 +67,7 @@ For HubSpot's own setup steps, see [Create a new app](https://developers.hubspot
 6. Create the provider, then choose **Use this app** so it becomes the Preferred app.
 7. In your widget, set the HubSpot connector's **Auth provider** setting to your app instead of "Use platform default".
 
-Customers who skip this setup connect through fastn's shared HubSpot app.
+Customers who skip this setup connect through Fastn's shared HubSpot app.
 
 ## Actions
 

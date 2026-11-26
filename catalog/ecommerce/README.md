@@ -1,5 +1,5 @@
 ---
-description: "E-commerce connectors fastn manages, with their auth, actions and events."
+description: "E-commerce connectors Fastn manages, with their auth, actions and events."
 ---
 
 # E-commerce

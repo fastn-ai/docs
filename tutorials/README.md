@@ -9,15 +9,15 @@ hidden: true
 
 Each tutorial is a hands-on walkthrough with one clear outcome. By the end, you have something working.
 
-**Prerequisites:** Read [Core concepts](../getting-started/concepts.md) first. These tutorials assume you have a fastn account and basic familiarity with the dashboard.
+**Prerequisites:** Read [Core concepts](../getting-started/concepts.md) first. These tutorials assume you have a Fastn account and basic familiarity with the dashboard.
 
 ### Tutorials for your team
 
-For your team: the people who set up and run fastn for your product.
+For your team: the people who set up and run Fastn for your product.
 
 [**Set up your organization**](saas-admin/setting-up-your-organization.md) - Configure organization settings, invite your team, review plan limits and the audit log, and find API keys, secrets, environments, and connector auth.
 
-[**Create a workflow with the fastn agent**](saas-admin/creating-a-workflow-via-ai.md) - Use the fastn agent to create workflows by describing what you need in plain language. Needs a paid plan (Scale or Enterprise).
+[**Create a workflow with the Fastn agent**](saas-admin/creating-a-workflow-via-ai.md) - Use the Fastn agent to create workflows by describing what you need in plain language. Needs a paid plan (Scale or Enterprise).
 
 [**Build your widget**](saas-admin/building-your-widget.md) - See how the widget builder works and what your customers see.
 

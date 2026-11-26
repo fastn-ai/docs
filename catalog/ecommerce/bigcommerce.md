@@ -15,31 +15,31 @@ hidden: true
 | **Slug** | `bigcommerce` |
 
 ## Setup guide
-This guide shows you how to create a BigCommerce store-level API account and connect your store to fastn with its access token and store hash.
+This guide shows you how to create a BigCommerce store-level API account and connect your store to Fastn with its access token and store hash.
 
 For BigCommerce's own setup steps, see [API Accounts](https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts) in the BigCommerce documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a BigCommerce store and a control panel login that is allowed to create store-level API accounts. BigCommerce's own walkthroughs use the store owner account.
-- Decide which parts of the store fastn should read or change (for example products, orders, customers or carts), so you can pick the matching OAuth scopes.
+- Decide which parts of the store Fastn should read or change (for example products, orders, customers or carts), so you can pick the matching OAuth scopes.
 
 ### Get your BigCommerce credentials
-fastn asks for two values: **apiKey** (the access token of a store-level API account) and **storeHash** (the short ID of your store).
+Fastn asks for two values: **apiKey** (the access token of a store-level API account) and **storeHash** (the short ID of your store).
 
 1. Sign in to your BigCommerce control panel.
 2. Go to **Settings > Store-level API accounts** and select **Create API Account**.
 3. For the token type, choose **V2/V3 API token**, and enter a name for the account, such as `fastn`.
 4. Find your store hash. It is the text after `store-` in your control panel URL: in `https://store-abcd1234.mybigcommerce.com`, the store hash is `abcd1234`. It also appears in the API path shown on this page, between `/stores/` and `/v3/`. Copy it; this is the **storeHash** value.
-5. Under **OAuth scopes**, set the access level for each area fastn should work with. Read-only scopes allow only reads, so choose modify access for any area your workflows need to create or update. You cannot change the scopes of a store-level account after you save it, so set them now.
+5. Under **OAuth scopes**, set the access level for each area Fastn should work with. Read-only scopes allow only reads, so choose modify access for any area your workflows need to create or update. You cannot change the scopes of a store-level account after you save it, so set them now.
 6. Select **Save**. BigCommerce shows the account credentials once, in a pop-up, and most browsers also download a text file with the same values.
 7. Copy the **Access Token** before you select **Done**. This is the **apiKey** value. If you lose it, you have to create a new API account.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter the access token and store hash when they connect BigCommerce in your widget. You can also enter them yourself under Build → Integrations → Connectors → BigCommerce. In workflow code, call an action as `fastn.connector.bigcommerce.<actionSlug>()`.
 
 ### Events
-fastn supports BigCommerce store events, such as `store/order/created`, `store/product/updated`, `store/customer/created` and `store/cart/abandoned`. To start a workflow from one of them, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events; see [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for BigCommerce.
+Fastn supports BigCommerce store events, such as `store/order/created`, `store/product/updated`, `store/customer/created` and `store/cart/abandoned`. To start a workflow from one of them, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events; see [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for BigCommerce.
 
 ## Actions
 

@@ -15,15 +15,15 @@ hidden: true
 | **Slug** | `commerceLayer` |
 
 ## Setup guide
-This guide shows you how to create a Commerce Layer integration credential and add it to fastn. fastn uses it to call the Commerce Layer Core API for your organization.
+This guide shows you how to create a Commerce Layer integration credential and add it to Fastn. Fastn uses it to call the Commerce Layer Core API for your organization.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need access to the Commerce Layer dashboard for the organization you want to connect, with permission to create API credentials.
-- fastn's actions create, update and delete data, so the credential needs the **Admin** role.
+- Fastn's actions create, update and delete data, so the credential needs the **Admin** role.
 
 ### Create your Commerce Layer app
-fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. This grant has no sign-in screen, so you do not need a redirect URL. In Commerce Layer, the app is called an integration.
+Fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. This grant has no sign-in screen, so you do not need a redirect URL. In Commerce Layer, the app is called an integration.
 
 1. Sign in to the Commerce Layer dashboard and select your organization.
 2. In the left sidebar, open **Developers** and click **API credentials**.
@@ -45,8 +45,8 @@ fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. Th
 
 <figure><img src="../../.gitbook/assets/connector-guides/commerceLayer/credentials.png" alt="The Credentials section, with the client ID and secret hidden"><figcaption><p>The Credentials section, with the client ID and secret hidden</p></figcaption></figure>
 
-### Add your app to fastn
-1. In fastn, go to **Build → Integrations → Connectors** and open **Commerce Layer**.
+### Add your app to Fastn
+1. In Fastn, go to **Build → Integrations → Connectors** and open **Commerce Layer**.
 2. Open the **Auth** tab and click **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -62,7 +62,7 @@ fastn connects to Commerce Layer with the OAuth 2.0 client credentials grant. Th
 When you or your customers connect Commerce Layer, enter the **organization slug**. This is the subdomain of the Core API endpoint. For `https://acme-sandbox.commercelayer.io`, enter `acme-sandbox`.
 
 ### Events
-To run a workflow when something happens in Commerce Layer, such as `orders.place`, `shipments.ship` or `returns.approve`, add an App event trigger. Go to **Build → Integrations → Triggers → Add trigger → App events** and choose Commerce Layer. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Commerce Layer.
+To run a workflow when something happens in Commerce Layer, such as `orders.place`, `shipments.ship` or `returns.approve`, add an App event trigger. Go to **Build → Integrations → Triggers → Add trigger → App events** and choose Commerce Layer. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Commerce Layer.
 
 ## Actions
 

@@ -414,7 +414,7 @@ Operation: `listSecrets`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -449,7 +449,7 @@ Operation: `createSecret`
 | `value` | `string` | Yes |  |
 | `type` | `string` | No | One of: `text`, `json`. Default: `"text"`. |
 | `environment` | `string` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -482,7 +482,7 @@ Operation: `updateSecret`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | The secret's name (UPPER_SNAKE_CASE), not its generated id. |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `environment` | query | string | No | Environment scope of the secret; omitted means no environment narrowing. |
 
 **Request body**
@@ -514,7 +514,7 @@ Operation: `deleteSecret`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | The secret's name (UPPER_SNAKE_CASE), not its generated id. |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `environment` | query | string | No | Environment scope of the secret; omitted means no environment narrowing. |
 
 **Responses**

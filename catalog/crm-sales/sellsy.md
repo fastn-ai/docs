@@ -15,16 +15,16 @@ hidden: true
 | **Slug** | `sellsy` |
 
 ## Setup guide
-This guide shows you how to create a Sellsy Personal API access and where to enter its client ID and client secret in fastn.
+This guide shows you how to create a Sellsy Personal API access and where to enter its client ID and client secret in Fastn.
 
 For Sellsy's own setup steps, see [Types d'accès API (API access types)](https://help.sellsy.com/fr/articles/5876615-types-d-acces-api) in the Sellsy documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Sellsy account that can open **Settings → Developer portal**. The API access uses the rights and license of the Sellsy user it belongs to, so use an account that can see the data you want to work with.
 
 ### Get your Sellsy credentials
-fastn connects to Sellsy with a Personal API access, which is meant for server-to-server connections. It does not use a redirect URL. fastn asks for two values: **clientId** and **clientSecret**.
+Fastn connects to Sellsy with a Personal API access, which is meant for server-to-server connections. It does not use a redirect URL. Fastn asks for two values: **clientId** and **clientSecret**.
 
 1. In Sellsy, go to **Settings → Developer portal**.
 2. Create a new API access and choose the **Personal** type.
@@ -34,11 +34,11 @@ fastn connects to Sellsy with a Personal API access, which is meant for server-t
 
 You can find your existing accesses later under **Settings → Developer portal → API v2**.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Sellsy in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Sellsy**.
 
 ### Events
-To start a workflow when something changes in Sellsy, such as a new client, an updated opportunity or a new invoice, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and pick the Sellsy event. See [App event triggers](../../build/triggers/app-events.md). Contact fastn support to set up events for Sellsy.
+To start a workflow when something changes in Sellsy, such as a new client, an updated opportunity or a new invoice, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and pick the Sellsy event. See [App event triggers](../../build/triggers/app-events.md). Contact Fastn support to set up events for Sellsy.
 
 ## Actions
 

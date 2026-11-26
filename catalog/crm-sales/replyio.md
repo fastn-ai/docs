@@ -15,14 +15,14 @@ hidden: true
 | **Slug** | `replyio` |
 
 ## Setup guide
-This guide shows you where to find the Reply.io API key that fastn needs to connect a Reply.io account.
+This guide shows you where to find the Reply.io API key that Fastn needs to connect a Reply.io account.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Reply.io account you can sign in to at run.reply.io.
 
 ### Get your Reply.io credentials
-fastn asks for one value, **apiKey**: your Reply.io API key. The same key works for Reply's current and legacy API endpoints.
+Fastn asks for one value, **apiKey**: your Reply.io API key. The same key works for Reply's current and legacy API endpoints.
 
 1. Sign in to Reply.io at run.reply.io.
 2. Open **Settings** and select **API keys** in the menu. Your personal keys are listed under **My API keys**.
@@ -38,7 +38,7 @@ fastn asks for one value, **apiKey**: your Reply.io API key. The same key works 
 
 Use a key from **My API keys** here. Reply.io's team and organization keys need extra headers that name the user to act as, which this connection does not send.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter the API key when they connect Reply.io in your widget, or you enter it under Build → Integrations → Connectors → Reply.io.
 
 ## Actions

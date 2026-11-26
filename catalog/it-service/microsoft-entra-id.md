@@ -15,23 +15,23 @@ hidden: true
 | **Slug** | `microsoftEntraId` |
 
 ## Setup guide
-This guide shows you how to register your own Microsoft Entra ID app for Microsoft Graph and add it to fastn, so your customers sign in to Microsoft Entra ID through your app.
+This guide shows you how to register your own Microsoft Entra ID app for Microsoft Graph and add it to Fastn, so your customers sign in to Microsoft Entra ID through your app.
 
 For Microsoft Entra ID's own setup steps, see [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/graph/auth-register-app-v2) in the Microsoft Entra ID documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Microsoft Entra ID tenant and an account that can register apps there. Microsoft lists Cloud Application Administrator as the least privileged role for registering an app for Microsoft Graph.
-- Many of the permissions fastn requests can only be granted by a tenant administrator, so each customer who connects needs an admin to consent, either at sign-in or ahead of time.
+- Many of the permissions Fastn requests can only be granted by a tenant administrator, so each customer who connects needs an admin to consent, either at sign-in or ahead of time.
 
 ### Create your Microsoft Entra ID app
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If you can reach more than one tenant, use the **Settings** icon in the top menu to switch to the tenant where the app should live.
 2. Go to **Entra ID** > **App registrations** and select **New registration**.
 3. Enter a **Name** for the app. Your customers see this name when they sign in.
-4. Under **Supported account types**, pick a multitenant option, such as **Multiple Entra ID tenants**, so users from your customers' tenants can sign in. fastn signs users in through Microsoft's common endpoint, which serves users from any tenant.
+4. Under **Supported account types**, pick a multitenant option, such as **Multiple Entra ID tenants**, so users from your customers' tenants can sign in. Fastn signs users in through Microsoft's common endpoint, which serves users from any tenant.
 5. Select **Register**. On the **Overview** page, copy the **Application (client) ID**.
 6. Under **Manage**, select **Authentication**, then add a redirect URI. Choose the **Web** platform, enter `https://oauth.live.fastn.ai` as the **Redirect URI**, and select **Configure**.
-7. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Delegated permissions**. Add each permission fastn requests, then select **Add permissions**:
+7. Select **API permissions** > **Add a permission** > **Microsoft Graph** > **Delegated permissions**. Add each permission Fastn requests, then select **Add permissions**:
    - `offline_access`
    - `User.Read`
    - `User.ReadWrite.All`
@@ -53,8 +53,8 @@ For Microsoft Entra ID's own setup steps, see [Register an application with the 
 8. If you are an admin and want to connect your own tenant, select **Grant admin consent for <tenant name>** and confirm.
 9. Select **Certificates & secrets** > **Client secrets** > **New client secret**. Add a description, choose an expiry, and select **Add**. Copy the secret **Value** right away, because Microsoft does not show it again after you leave the page. Secrets last at most 24 months, so plan to replace it before it expires.
 
-### Add your app to fastn
-1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **Microsoft Entra ID**.
+### Add your app to Fastn
+1. In Fastn, go to **Build** > **Integrations** > **Connectors** and open **Microsoft Entra ID**.
 2. Open the **Auth** tab and select **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -67,7 +67,7 @@ For Microsoft Entra ID's own setup steps, see [Register an application with the 
 5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-If you skip these steps, your customers sign in through fastn's shared app for Microsoft Entra ID.
+If you skip these steps, your customers sign in through Fastn's shared app for Microsoft Entra ID.
 
 ## Actions
 

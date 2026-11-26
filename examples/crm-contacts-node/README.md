@@ -1,10 +1,10 @@
 # Read and write a customer's CRM contacts (Node.js)
 
-Finds a contact by email in whichever CRM a customer connected, creates it if it is not there, then adds a note to it. It uses the fastn SDK's typed CRM methods, so the same code works for HubSpot, Salesforce and other CRMs.
+Finds a contact by email in whichever CRM a customer connected, creates it if it is not there, then adds a note to it. It uses the Fastn SDK's typed CRM methods, so the same code works for HubSpot, Salesforce and other CRMs.
 
 ## Before you start
 
-* An API key from **Embed → API keys** in the [fastn dashboard](https://app.fastn.dev), one that can act for more than one customer.
+* An API key from **Embed → API keys** in the [Fastn dashboard](https://app.fastn.dev), one that can act for more than one customer.
 * A customer that has connected a CRM, in the widget or with a connection you created for them.
 * Node.js 20 or newer.
 

@@ -15,15 +15,15 @@ hidden: true
 | **Slug** | `sureContact` |
 
 ## Setup guide
-This guide shows how to get the SureContact API key that fastn uses to connect to a SureContact workspace, and where that key goes in fastn.
+This guide shows how to get the SureContact API key that Fastn uses to connect to a SureContact workspace, and where that key goes in Fastn.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a SureContact account that can sign in to the workspace you want to connect.
-- The API key's abilities control what fastn can do in SureContact, so decide whether workflows only read data or also create, update and delete it.
+- The API key's abilities control what Fastn can do in SureContact, so decide whether workflows only read data or also create, update and delete it.
 
 ### Get your SureContact credentials
-fastn asks for one value, **API Key** (`apiKey`).
+Fastn asks for one value, **API Key** (`apiKey`).
 
 1. Sign in to SureContact.
 2. In the top bar, open your profile menu and, under **Developer**, click **API Keys**.
@@ -42,7 +42,7 @@ fastn asks for one value, **API Key** (`apiKey`).
 
 <figure><img src="../../.gitbook/assets/connector-guides/sureContact/key-created.png" alt="SureContact shows the new key only once"><figcaption><p>SureContact shows the new key only once</p></figcaption></figure>
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter their API key when they connect SureContact in your widget. You can also enter it yourself under Build → Integrations → Connectors → SureContact. After the connection is set up, call the connector's actions from workflow code as `fastn.connector.sureContact.<actionSlug>()`, for example `fastn.connector.sureContact.createContactTool()`.
 
 ## Actions

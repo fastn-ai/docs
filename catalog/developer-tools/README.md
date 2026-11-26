@@ -1,5 +1,5 @@
 ---
-description: "Developer tools connectors fastn manages, with their auth, actions and events."
+description: "Developer tools connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Developer tools
@@ -34,7 +34,7 @@ Popular connectors first, then A to Z. Back to the [connector catalog](../README
 | <img src="../../.gitbook/assets/connectors/sm/go-module-mirror.png" alt=""> [Go Module Mirror](go-module-mirror.md) | No sign-in needed | The Go Module Mirror serves public Go modules. Look up module versions, go.mod files, checksums and the module index. |
 | <img src="../../.gitbook/assets/connectors/sm/google-apps-script.png" alt=""> [Google Apps Script](google-apps-script.md) | OAuth 2.0 | Google Apps Script runs scripts across Google Workspace. Create and update script projects, and manage their versions, deployments and metrics. |
 | <img src="../../.gitbook/assets/connectors/sm/homebrew-formulae.png" alt=""> [Homebrew Formulae](homebrew-formulae.md) | No sign-in needed | Homebrew is a package manager for macOS and Linux. Get formula and cask details, list all packages and read install analytics. |
-| <img src="../../.gitbook/assets/connectors/sm/http-api.png" alt=""> [HTTP API](http-api.md) | API key or token | Make GET, POST, PUT, PATCH and DELETE requests to any web service that has no dedicated app in fastn. |
+| <img src="../../.gitbook/assets/connectors/sm/http-api.png" alt=""> [HTTP API](http-api.md) | API key or token | Make GET, POST, PUT, PATCH and DELETE requests to any web service that has no dedicated app in Fastn. |
 | <img src="../../.gitbook/assets/connectors/sm/inngest.png" alt=""> [Inngest](inngest.md) | Event key and signing key | Inngest runs background jobs and multi-step workflows. Send events, cancel function runs, and manage environments, webhooks and cancellations. |
 | <img src="../../.gitbook/assets/connectors/sm/keyzy.png" alt=""> [KEYZY](keyzy.md) | App ID and API key | KEYZY is a software licensing platform. Register and revoke license serials, manage device activations and list licensed products. |
 | <img src="../../.gitbook/assets/connectors/sm/launchdarkly.png" alt=""> [LaunchDarkly](launchdarkly.md) | Access token, OAuth 2.0 | LaunchDarkly is a feature flag platform. Manage projects, environments, flags, segments, experiments, teams and members. |

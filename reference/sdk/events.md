@@ -4,7 +4,7 @@ description: "Receive signed events about connections, setup links, and app chan
 
 # Events
 
-fastn can tell your backend when something happens: a customer connected an app, a setup link was used, or a record changed in a customer's app. You register an https endpoint once (an **event subscription**). fastn then sends each event to it as a signed `POST`.
+Fastn can tell your backend when something happens: a customer connected an app, a setup link was used, or a record changed in a customer's app. You register an https endpoint once (an **event subscription**). Fastn then sends each event to it as a signed `POST`.
 
 ---
 
@@ -127,11 +127,11 @@ In production keep the seen ids in your database rather than in memory.
 | `parseEvent(secret, headers, rawBody, opts?)` | `secret`: your `whsec_…`. `headers`: the request headers (Node, Fetch `Headers`, or a plain object). `rawBody`: string or `Buffer`. | The event object plus `headers` (`timestamp`, `signature`, `eventId`, `redelivery`). Throws when the signature does not match or the timestamp is too old. |
 | `verifyEventSignature(secret, headers, rawBody, opts?)` | Same as above. | `true` or `false`, without parsing. |
 | `readEventHeaders(headers)` | The request headers. | `{ timestamp, signature, eventId, redelivery }` |
-| `signEventBody(secret, timestamp, rawBody)` | | The signature string fastn would send. Useful in your own tests. |
+| `signEventBody(secret, timestamp, rawBody)` | | The signature string Fastn would send. Useful in your own tests. |
 
 `opts.toleranceSeconds` changes the five-minute window (default 300; `0` turns the age check off).
 
-Test your handler without fastn by signing a body yourself:
+Test your handler without Fastn by signing a body yourself:
 
 ```typescript
 import { parseEvent, signEventBody } from "@fastn-ai/sdk";
@@ -151,7 +151,7 @@ const event = parseEvent("whsec_test", headers, body);   // { id: "evt_123", typ
 
 ## Deliveries and retries
 
-fastn retries a delivery with growing gaps for 24 hours, until your endpoint answers `2xx`. After that the delivery is marked `dead`. The event id never changes, so drop repeats by id.
+Fastn retries a delivery with growing gaps for 24 hours, until your endpoint answers `2xx`. After that the delivery is marked `dead`. The event id never changes, so drop repeats by id.
 
 | Do this | SDK | Answer |
 | ------- | --- | ------ |
@@ -169,7 +169,7 @@ The same calls exist as raw operations under `fastn.events` (`createEventSubscri
 
 ## App events: watch a customer's app
 
-`connector.event` and `unified.event` come from changes inside a customer's app. fastn listens for them only after you turn them on for that customer's account:
+`connector.event` and `unified.event` come from changes inside a customer's app. Fastn listens for them only after you turn them on for that customer's account:
 
 ```typescript
 const watch = await customer.watch("hubspot", ["contact.created", "contact.updated", "deal.stageChanged"]);
@@ -229,4 +229,4 @@ await customer.api.events.createAppEventTrigger({
 | `type` | No | `WEBHOOK` or `POLLING`. |
 | `status` | No | `ACTIVE` or `DISABLED`. |
 
-List triggers with `fastn.events.listAppEventTriggers()` and remove one with `fastn.events.deleteAppEventTrigger({ id })`. See also [App event triggers](../../build/triggers/app-events.md) and, for the events fastn received, [Events](../../operate/events.md).
+List triggers with `fastn.events.listAppEventTriggers()` and remove one with `fastn.events.deleteAppEventTrigger({ id })`. See also [App event triggers](../../build/triggers/app-events.md) and, for the events Fastn received, [Events](../../operate/events.md).

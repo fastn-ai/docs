@@ -87,7 +87,7 @@ The SDK runs the action with **this customer's** connection for that app, so it 
 {% hint style="warning" %}
 **An error from the app does not throw.** When the app itself answers with an error (for example a record id that does not exist), `runAction` still returns normally, with `data.success: false`, the app's `data.status` (for example `404`), and `data.error`. Always check `success`.
 
-`runAction` throws a `FastnApiError` when fastn cannot run the action at all, for example an unknown action slug (`404 NOT_FOUND`, "connector hubspot has no action …").
+`runAction` throws a `FastnApiError` when Fastn cannot run the action at all, for example an unknown action slug (`404 NOT_FOUND`, "connector hubspot has no action …").
 {% endhint %}
 
 ```typescript

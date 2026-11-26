@@ -16,7 +16,7 @@ layout:
 
 # Set up and add the widget
 
-Put your integrations inside your product. The widget is the panel where your customers find, connect, and customize integrations, under your brand, without signing in to fastn. It holds your connectors, the workflows behind them, and the widget assistant your customers use to adjust them.
+Put your integrations inside your product. The widget is the panel where your customers find, connect, and customize integrations, under your brand, without signing in to Fastn. It holds your connectors, the workflows behind them, and the widget assistant your customers use to adjust them.
 
 **Required to go live.** You embed the widget once. Integrations you add later, and changes to the widget, appear in it without a release of your product.
 
@@ -25,9 +25,9 @@ Put your integrations inside your product. The widget is the panel where your cu
 | Component | Where it lives | What it does |
 | --- | --- | --- |
 | Widget | Inside your product | The panel your customers use to connect and customize integrations |
-| Widget builder | fastn | Sets the widget's look, features, and **Allowed Origins** (which sites can show it) |
+| Widget builder | Fastn | Sets the widget's look, features, and **Allowed Origins** (which sites can show it) |
 | API key and identity secret | Your backend | Authenticate your server, and sign which customer and user each call is for |
-| Customer | fastn, registered by your backend | One of your customers; their connections and data stay separate |
+| Customer | Fastn, registered by your backend | One of your customers; their connections and data stay separate |
 | Embed token | Your backend, then your page | Short-lived and for one customer; a new one on every page load |
 | Iframe or SDK | Your frontend | Shows the widget with the embed token |
 
@@ -65,7 +65,7 @@ curl -X POST https://api.fastn.dev/api/v1/orgs \
   -d '{"name": "Northwind", "orgId": "northwind", "tier": "pro", "limits": {"connections": 3}}'
 ```
 
-`orgId` is your own reference for the customer. If you leave it out, fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either fastn's customer id or that external reference. You don't send a `plan` for a customer: a paid plan in this call is refused with `403`.
+`orgId` is your own reference for the customer. If you leave it out, Fastn uses the customer's slug as its external reference. Later calls (`x-org-id`) accept either Fastn's customer id or that external reference. You don't send a `plan` for a customer: a paid plan in this call is refused with `403`.
 
 If your Admin key has **Verify caller identity (HMAC)** set to enforce, this call needs identity headers too. There is no customer yet, so send `x-user-id` and `x-identity-hmac`, leave out `x-org-id`, and sign an empty org id: `hmac("\n" + userId)`. See [Register with an enforcing key](../../embed/embedding/integration-flow.md#register-with-an-enforcing-key).
 

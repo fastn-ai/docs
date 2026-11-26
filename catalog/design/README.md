@@ -1,5 +1,5 @@
 ---
-description: "Design connectors fastn manages, with their auth, actions and events."
+description: "Design connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Design

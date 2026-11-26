@@ -15,16 +15,16 @@ hidden: true
 | **Slug** | `agiled` |
 
 ## Setup guide
-This guide shows you where to find the Agiled API token that fastn needs to connect an Agiled workspace, and how to start workflows from Agiled events.
+This guide shows you where to find the Agiled API token that Fastn needs to connect an Agiled workspace, and how to start workflows from Agiled events.
 
 For Agiled's own setup steps, see [Create an API Key](https://docs.agiled.app/docs/developers/api-keys/) in the Agiled documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need an Agiled account with access to the workspace you want to connect, and access to **Settings > API** in that workspace.
 
 ### Get your Agiled credentials
-fastn asks for one value, **accessToken**: an Agiled Public API token.
+Fastn asks for one value, **accessToken**: an Agiled Public API token.
 
 1. Sign in to Agiled and open **Settings**, then **API**.
 2. Enter a key name that tells you which system uses it, for example the name of your product and environment.
@@ -35,11 +35,11 @@ fastn asks for one value, **accessToken**: an Agiled Public API token.
 
 Agiled tokens expire after 90 days. Before that, create a new token, update the connection with it, and revoke the old one.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter the token when they connect Agiled in your widget, or you enter it under Build → Integrations → Connectors → Agiled.
 
 ### Events
-To run a workflow when something happens in Agiled, such as `contact.created`, `deal.status_changed` or `invoice.paid`, add an [App event trigger](../../build/triggers/app-events.md) (Build → Integrations → Triggers → Add trigger → App events) and pick the Agiled event. Contact fastn support to set up events for Agiled.
+To run a workflow when something happens in Agiled, such as `contact.created`, `deal.status_changed` or `invoice.paid`, add an [App event trigger](../../build/triggers/app-events.md) (Build → Integrations → Triggers → Add trigger → App events) and pick the Agiled event. Contact Fastn support to set up events for Agiled.
 
 ## Actions
 

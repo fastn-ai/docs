@@ -15,28 +15,28 @@ hidden: true
 | **Slug** | `bonjoro` |
 
 ## Setup guide
-This guide covers getting a Bonjoro API access token and using it to connect Bonjoro to fastn.
+This guide covers getting a Bonjoro API access token and using it to connect Bonjoro to Fastn.
 
 For Bonjoro's own setup steps, see [Bonjoro API V2](https://vimily.github.io/bonjoro-api-docs/) in the Bonjoro documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Bonjoro account that can sign in to the Bonjoro web app.
 - Bonjoro's API V2 issues access tokens through its OAuth token endpoint, which also asks for a client ID and client secret. If you do not have these, ask Bonjoro support for API access.
 
 ### Get your Bonjoro credentials
-fastn asks for one value, **token**: your Bonjoro API access token. fastn sends it as `Authorization: Bearer <token>`.
+Fastn asks for one value, **token**: your Bonjoro API access token. Fastn sends it as `Authorization: Bearer <token>`.
 
 1. Get API client credentials (a client ID and client secret) from Bonjoro.
 2. Request a token from Bonjoro's token endpoint, `POST https://www.bonjoro.com/api/v2/oauth/2/token`, with a JSON body that sets `grant_type` (for example `password`, with your Bonjoro `username` and `password`) along with your `client_id` and `client_secret`.
 3. From the response, copy the value of `access_token`. Bonjoro returns it with `token_type` `Bearer`.
 4. Keep the token somewhere safe. The sample response in Bonjoro's API docs shows an `expires_in` of one year, so plan to request a new token before it expires.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers paste the access token into the **token** field when they connect Bonjoro in your widget. You can also enter it yourself under Build → Integrations → Connectors → Bonjoro. After that, workflows call Bonjoro actions as `fastn.connector.bonjoro.<actionSlug>()`.
 
 ### Events
-fastn supports the Bonjoro events `bonjoro_created` and `bonjoro_interacted`. To run a workflow when one happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for Bonjoro.
+Fastn supports the Bonjoro events `bonjoro_created` and `bonjoro_interacted`. To run a workflow when one happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for Bonjoro.
 
 ## Actions
 
@@ -54,4 +54,4 @@ fastn supports the Bonjoro events `bonjoro_created` and `bonjoro_interacted`. To
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Bonjoro Created</td><td><code>bonjoro_created</code></td><td>A Bonjoro task is created for a contact. Bonjoro has no webhook registration API (help.bonjoro.com/en/articles/1891432-webhooks-integration says webhooks are still on their timeline for a direct integration), so delivery is set up by the customer in Zapier: create a Zap with the Bonjoro trigger Bonjoro Created, add a Webhooks by Zapier POST action pointing at the fastn trigger URL, and add a literal field event = bonjoro_created to the POST body so this connector can route the event. The payload fields below are the variables Bonjoro exposes for this trigger; the exact JSON shape is composed by the customer in the Zap.</td></tr><tr><td>Bonjoro Interaction</td><td><code>bonjoro_interacted</code></td><td>A recipient interacts with a sent Bonjoro: opens it, watches it, clicks the call to action, reacts, thanks or replies. Delivery is set up by the customer in Zapier exactly as for Bonjoro Created (Bonjoro trigger Bonjoro Interaction, or the individual Zapier triggers Bonjoro Sent, Email Opened, Watched, Call to Action Clicked, Reply, Reaction, Shared, Reassigned, Dismissed and Bounced), with a literal field event = bonjoro_interacted added to the POST body. The payload fields below are the variables Bonjoro exposes for this trigger; the exact JSON shape is composed by the customer in the Zap.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Bonjoro Created</td><td><code>bonjoro_created</code></td><td>A Bonjoro task is created for a contact. Bonjoro has no webhook registration API (help.bonjoro.com/en/articles/1891432-webhooks-integration says webhooks are still on their timeline for a direct integration), so delivery is set up by the customer in Zapier: create a Zap with the Bonjoro trigger Bonjoro Created, add a Webhooks by Zapier POST action pointing at the Fastn trigger URL, and add a literal field event = bonjoro_created to the POST body so this connector can route the event. The payload fields below are the variables Bonjoro exposes for this trigger; the exact JSON shape is composed by the customer in the Zap.</td></tr><tr><td>Bonjoro Interaction</td><td><code>bonjoro_interacted</code></td><td>A recipient interacts with a sent Bonjoro: opens it, watches it, clicks the call to action, reacts, thanks or replies. Delivery is set up by the customer in Zapier exactly as for Bonjoro Created (Bonjoro trigger Bonjoro Interaction, or the individual Zapier triggers Bonjoro Sent, Email Opened, Watched, Call to Action Clicked, Reply, Reaction, Shared, Reassigned, Dismissed and Bounced), with a literal field event = bonjoro_interacted added to the POST body. The payload fields below are the variables Bonjoro exposes for this trigger; the exact JSON shape is composed by the customer in the Zap.</td></tr></tbody></table>

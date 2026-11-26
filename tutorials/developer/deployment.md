@@ -1,5 +1,5 @@
 ---
-description: "Bind your fastn API key and customer id on your hosting target so embed tokens still generate in production."
+description: "Bind your Fastn API key and customer id on your hosting target so embed tokens still generate in production."
 layout:
   width: default
   title:
@@ -16,7 +16,7 @@ layout:
 
 # Deployment
 
-When you deploy the application you've embedded fastn into, the main consideration is how environment variables and secrets bind on your deploy target. Getting this wrong is a common cause of a working local build that fails in production.
+When you deploy the application you've embedded Fastn into, the main consideration is how environment variables and secrets bind on your deploy target. Getting this wrong is a common cause of a working local build that fails in production.
 
 ### Environment variables: runtime vs build time
 

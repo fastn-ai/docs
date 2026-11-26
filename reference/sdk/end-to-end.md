@@ -20,7 +20,7 @@ Keep every fixed value in one place.
 | ----- | ---------------- |
 | Base URL `https://api.fastn.dev` | The client. It is the default. |
 | API key `fsk_live_…` | Every call. Create it on [Embed → API keys](../../manage/api-keys.md). Treat it as a password and keep it in a secret store. |
-| Webhook secret `whsec_…` | Checking that an event really came from fastn (2.1). You get it once, when you register the webhook. |
+| Webhook secret `whsec_…` | Checking that an event really came from Fastn (2.1). You get it once, when you register the webhook. |
 | Package `@fastn-ai/sdk` 0.5.1 or newer, Node.js 20 or newer | `npm install @fastn-ai/sdk` |
 
 ### 1.2 Create the client
@@ -41,7 +41,7 @@ Create one client when your app starts and reuse it: it caches the lookups it ma
 
 * Record fields are `snake_case`, the catalog's own names (`start_time`, `first_name`, `parent_id`). Options and setup arguments are `camelCase` (`idempotencyKey`, `connectionName`).
 * Dates go in as ISO 8601 with a zone (`2026-11-03T15:00:00Z`) or as a JavaScript `Date`; they come back as ISO 8601 strings, in whatever zone the app reports.
-* You choose the customer id (`customerRef`), any string unique per customer. fastn also has its own id for the customer; you never need it.
+* You choose the customer id (`customerRef`), any string unique per customer. Fastn also has its own id for the customer; you never need it.
 * Ids you receive and keep: `setupId` (a setup link), `connectionId` (one connected account), a record id (the meeting or contact inside the app), `requestId` (from an error, for support).
 
 ---
@@ -209,8 +209,8 @@ Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a f
 | Topic | What to do |
 | ----- | ---------- |
 | Retry keys | Pass `idempotencyKey` on every write. The same key with the same input returns the first answer instead of creating a second record; the same key with different input is `422`; a key whose first run is still going is `409 IDEMPOTENCY_IN_PROGRESS` (wait a moment, send the same call again). |
-| Your call id | Pass `correlationId` on the calls of one conversation. `customer.callLog(correlationId)` then lists every app call fastn made for it. |
-| What the SDK retries | Reads (`GET`), and the writes fastn de-duplicates (unified create, update, and delete, and workflow execute) when they carry an `idempotencyKey`, on `429`, `502`, `503`, `504`, and network errors, twice by default. A `502 UNIFIED_PROVIDER_ERROR` whose `providerStatus` is `400`, `401`, `403`, `405`, `413`, `415`, or `422` is the app's final refusal and is never retried. Everything else is thrown to you. |
+| Your call id | Pass `correlationId` on the calls of one conversation. `customer.callLog(correlationId)` then lists every app call Fastn made for it. |
+| What the SDK retries | Reads (`GET`), and the writes Fastn de-duplicates (unified create, update, and delete, and workflow execute) when they carry an `idempotencyKey`, on `429`, `502`, `503`, `504`, and network errors, twice by default. A `502 UNIFIED_PROVIDER_ERROR` whose `providerStatus` is `400`, `401`, `403`, `405`, `413`, `415`, or `422` is the app's final refusal and is never retried. Everything else is thrown to you. |
 | Rate limits | `429` carries `Retry-After`; the SDK waits for it. |
 | Slow apps | Set `timeoutMs` per call when a provider is known to be slow; the default is 60 seconds. |
 

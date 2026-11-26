@@ -16,18 +16,18 @@ hidden: true
 
 ## Setup guide
 
-This guide shows where to find the Easyship API access token that fastn needs to connect to an Easyship account.
+This guide shows where to find the Easyship API access token that Fastn needs to connect to an Easyship account.
 
 For Easyship's own setup steps, see [Authentication](https://developers.easyship.com/reference/authentication) in the Easyship documentation.
 
 ### Before you start
 
-- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need the Owner, Admin or Developer role in Fastn to set up the connector.
 - You need an Easyship account you can sign in to at app.easyship.com.
 
 ### Get your Easyship credentials
 
-fastn asks for one value, **token**: the Easyship API access token, which fastn sends as a Bearer token.
+Fastn asks for one value, **token**: the Easyship API access token, which Fastn sends as a Bearer token.
 
 1. Sign in to the Easyship dashboard.
 2. In the menu, click **APIs & Webhooks** (app.easyship.com/api-connections).
@@ -36,7 +36,7 @@ fastn asks for one value, **token**: the Easyship API access token, which fastn 
 5. Select the API scopes the token can use. Choose the scopes that cover the actions you plan to run, such as shipments, rates and tracking.
 6. Copy the access token. Easyship gives you a production token, which starts with `prod_`, and a sandbox token, which starts with `sand_`. Use the sandbox token for testing and the production token for live shipments.
 
-### Connect in fastn
+### Connect in Fastn
 
 Your customers paste their token into the **token** field when they connect Easyship in your widget, or you enter it under **Build** > **Integrations** > **Connectors** > **Easyship**. After you connect, call actions from workflow code as `fastn.connector.easyship.<actionSlug>()`.
 

@@ -18,7 +18,7 @@ layout:
 
 # Go-live checklist
 
-The [iframe](iframe.md) is one HTML tag, and a first run takes minutes. Going live for real customers takes a few more decisions, listed below with the problems teams have hit when embedding fastn in production.
+The [iframe](iframe.md) is one HTML tag, and a first run takes minutes. Going live for real customers takes a few more decisions, listed below with the problems teams have hit when embedding Fastn in production.
 
 ## Before you go live
 

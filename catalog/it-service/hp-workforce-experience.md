@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `hpWorkforceExperience` |
 
 ## Setup guide
-This guide shows you how to request your own OAuth app on the HP Developers portal and add it to fastn, and which regional URLs your customers enter when they connect HP Workforce Experience.
+This guide shows you how to request your own OAuth app on the HP Developers portal and add it to Fastn, and which regional URLs your customers enter when they connect HP Workforce Experience.
 
 For HP Workforce Experience's own setup steps, see [Authenticating with OAuth 2.0](https://developers.hp.com/hp-proactive-management/authenticating-oauth-20) in the HP Workforce Experience documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need an HP Proactive Insights (Workforce Experience) account, set up by HP for your company as a customer or as a partner. HP sets up these accounts on request.
 - You need an account on the [HP Developers portal](https://developers.hp.com) that signs in with your Proactive Insights login. Your HP representative has to add you to the HP Proactive Insights Group before you can create an app.
 - HP reviews each new app request, so plan for a wait before you get the credentials.
@@ -29,14 +29,14 @@ For HP Workforce Experience's own setup steps, see [Authenticating with OAuth 2.
 1. Go to the [HP Developers portal](https://developers.hp.com) and select **Login**, using your Proactive Insights login. If you have no portal account yet, select **Register** first.
 2. Start a new app request from the portal (from **APIs** > **Get Credentials**, or from **My Apps** > **Add a new App**, depending on your portal view).
 3. For the product, choose the HP Proactive Insights / TechPulse Analytics product.
-4. Under **Product Scope**, select **Read**. This is the scope fastn requests.
+4. Under **Product Scope**, select **Read**. This is the scope Fastn requests.
 5. Enter an **App Name**. The **App Unique Name** is filled in for you.
 6. In the redirect field, enter `https://oauth.live.fastn.ai`.
 7. Select **Create**. The request stays in the Pending state until HP approves it, and HP emails you when it does.
 8. After approval, open your dashboard or **My Apps**, select the approved app, and copy the **API Key** (the client ID) and **API Secret** (the client secret). HP expires the secret after 365 days, so note the date and reset it before then.
 
-### Add your app to fastn
-1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **HP Workforce Experience**.
+### Add your app to Fastn
+1. In Fastn, go to **Build** > **Integrations** > **Connectors** and open **HP Workforce Experience**.
 2. Open the **Auth** tab and select **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -49,10 +49,10 @@ For HP Workforce Experience's own setup steps, see [Authenticating with OAuth 2.
 5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-If you skip these steps, your customers sign in through fastn's shared app for HP Workforce Experience.
+If you skip these steps, your customers sign in through Fastn's shared app for HP Workforce Experience.
 
 ### Values your customers enter
-When a customer connects, fastn also asks for the base URLs of their HP region:
+When a customer connects, Fastn also asks for the base URLs of their HP region:
 - **daasUrl**: the TechPulse (DaaS) Analytics and Incident Integration API for their region. For US tenants this is `https://daas.api.hp.com`; for EU tenants it is `https://eu.daas.api.hp.com`.
 - **wxpUrl**: the Workforce Experience Platform API used for insights, asset queries and reports. In production this is `https://api.workforceexperience.hp.com`.
 - **authzUrl**: the base URL of the Workforce Experience platform services (tenant search, roles, entitlements, asset queries) for their region.
@@ -61,7 +61,7 @@ When a customer connects, fastn also asks for the base URLs of their HP region:
 Customers who are unsure of their region's URLs can get them from their HP representative.
 
 ### Events
-fastn supports HP Workforce Experience `critical`, `warn` and `info` events. To start a workflow from one, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for HP Workforce Experience.
+Fastn supports HP Workforce Experience `critical`, `warn` and `info` events. To start a workflow from one, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for HP Workforce Experience.
 
 ## Actions
 

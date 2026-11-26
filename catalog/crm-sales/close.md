@@ -15,22 +15,22 @@ hidden: true
 | **Slug** | `close` |
 
 ## Setup guide
-This guide shows where to find the Close API key that fastn uses to connect to a Close account, and how to enter it in fastn.
+This guide shows where to find the Close API key that Fastn uses to connect to a Close account, and how to enter it in Fastn.
 
 For Close's own setup steps, see [Authentication with API keys](https://developer.close.com/api/overview/api-key-authentication) in the Close documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Close account in the organization you want to connect. The API key acts as the user who creates it, in that user's organization.
 
 ### Get your Close credentials
 1. Sign in to Close.
 2. Go to **Settings** > **Developer** > **API Keys**.
 3. Generate a new API key and copy it. Keep it somewhere safe.
-4. In fastn, enter the key in the **username** field. Close uses the API key as the HTTP Basic username.
+4. In Fastn, enter the key in the **username** field. Close uses the API key as the HTTP Basic username.
 5. Leave the **password** field empty. Close expects a blank password.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Close in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **Close**. Because each key belongs to one Close user, actions run with that user's access in Close. You can delete a key on the same Close settings page if you need to revoke access.
 
 ## Actions
