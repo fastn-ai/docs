@@ -35,6 +35,10 @@ A connector is a **definition**. It holds no credentials. Credentials live on a 
 | **Versions** | Every change to a connector produces a version. Versions live in **Test** until they are published to **Live**. | **Overview → Versions**, and the **Version pins** tab. |
 | **Connections** | Signed-in accounts that use this connector. | The **Connections** tab, and the workspace-wide [Connections](../connections/README.md) page. |
 
+### Connector versus connection
+
+A **connector** is the definition: this API, these actions, these auth methods, this webhook config. A **connection** is an instance of it for one customer. One connector, many connections.
+
 ### Managed and custom connectors
 
 Every card carries a badge that says who maintains it.

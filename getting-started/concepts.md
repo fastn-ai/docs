@@ -27,19 +27,6 @@ These are the terms used across the dashboard and these docs. For one-line defin
 * **Unified APIs:** A unified API is one standard API for a whole category of apps, such as CRMs. You call one endpoint with one data format, and Fastn translates the call for whichever app that customer connected. For example, a single "create contact" call works the same whether the customer uses HubSpot, Salesforce or Zoho, so you don't write separate code for each app. [Learn more](../build/unified-apis/README.md) · [Open in Fastn](https://app.fastn.dev/integrations?tab=unified)
 * **Widget:** The widget is a ready-made integrations page that you embed in your product, styled to match your brand. Your customers use it to browse the integrations you offer, sign in to their own apps and turn integrations on, without leaving your product or creating a Fastn account. For example, a project management tool can put the widget on its Settings page, so each customer connects their own Slack workspace and turns on an integration that posts new tasks to a Slack channel. [Learn more](../embed/widget-builder/README.md) · [Open in Fastn](https://app.fastn.dev/widgets)
 
-### How a build fits together
-
-<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle.svg" alt="The Fastn integration lifecycle: who does what across Build, Publish, Embed, Customize, and Run and monitor"><figcaption><p>Who does what: your team, your customer, and Fastn</p></figcaption></figure>
-
-1. Describe the integration to the Fastn agent or your AI tool, or write it in code.
-2. The agent picks or creates the connectors and sets up authentication.
-3. It drafts the workflow and its test cases, and shows you the diff.
-4. You attach a trigger, publish a version, and deploy it to an environment.
-5. You add the integration to your widget, and customers turn it on.
-6. You watch runs in **Logs** and set an alert so failures are not silent.
-
-What you can see in the dashboard depends on your role: **Owner**, **Admin**, **Developer**, **Operator**, or **Viewer**. People at your customers who use the widget have the **End User** role and never sign in to Fastn. See [Roles](../manage/roles.md).
-
 ### Organization and customer management
 
 Fastn has two kinds of organization: yours, and one for each of your customers.
@@ -49,12 +36,6 @@ Fastn has two kinds of organization: yours, and one for each of your customers.
 * **End users:** An end user is a person at one of your customers who uses the widget inside your product. A customer can have many end users. They have the **End User** role and never sign in to Fastn itself. [Learn more](../manage/roles.md)
 
 <figure><img src="../.gitbook/assets/diagrams/organization-hierarchy.svg" alt="Your organization, its customers and their end users. Your organization is the SaaS company that builds the integrations, with team members in roles such as Owner, Admin and Developer. Under it, each customer is its own organization with its own end users and its own connections to apps such as HubSpot, Salesforce or Jira. Customers are isolated from each other."><figcaption><p>Purple is your organization, and green is your customers' organizations.</p></figcaption></figure>
-
-### Connector versus connection
-
-A **connector** is the definition: this API, these actions, these auth methods, this webhook config. A **connection** is an instance of it for one customer. One connector, many connections.
-
-Connectors are either **managed by Fastn**, maintained upstream and patched when the vendor changes something, or **custom**, created by you.
 
 ### Per-customer versus platform-wide connectors
 
@@ -67,60 +48,24 @@ Inside a workflow, each connector is wired one of two ways.
 
 Both modes are labeled in the UI: the workflow's Connectors tab shows a **Per customer** or **Platform-wide** badge on each connector. On the connection side, a connection that belongs to your organization rather than to one customer shows `Scope: Account level` on its detail page.
 
-### Workflows are code
+### Build with the Fastn MCP server or the Fastn agent
 
-A workflow is a JavaScript module. The editor holds one file, `<slug>.js`, and it exports a single function:
+You can build an integration by describing it in plain words, in one of two ways. Fastn recommends the Fastn MCP server.
 
-```javascript
-export default async function (ctx) {
-  // ctx.input, ctx.headers (connectors are called as fastn.connector.<slug>.<action>())
-}
-```
+* **Fastn MCP server (recommended):** The Fastn MCP server connects the AI tool you already use, such as Claude, Cursor or VS Code, to your Fastn workspace at `https://mcp.fastn.dev/fastn-workspace`. From a chat, your AI tool can create connectors, set up authentication, write and test workflows, and manage your integrations. It works on every plan and uses no AI credits. To set it up, see [Connect your AI tool](../build/mcp-gateway/README.md#open-the-connect-dialog), or follow the steps for [Claude](../build/mcp-gateway/claude.md), [Claude Code](../build/mcp-gateway/claude-code.md), [Cursor](../build/mcp-gateway/cursor.md), [VS Code](../build/mcp-gateway/vscode.md) or [any other MCP client](../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+* **Fastn agent:** The Fastn agent is Fastn's own build agent, inside the dashboard, on paid plans (Scale or Enterprise). Start it from **Integrations → Create integration → Build with fastn agent** or the prompt on **Home**. It finds API specs, creates connectors, sets up authentication, proposes field mappings, generates test cases and writes the workflow, and it shows you a diff before anything runs. It uses AI credits. [Learn more](../build/agent/README.md) · [Open in Fastn](https://app.fastn.dev/agent)
 
-There is no node palette and no drag-and-drop step builder. The editor's Diagram tab is AI-generated documentation of that code: a read-only picture that regenerates when the code has changed.
+**Fastn Connect**, the MCP gateway, is a different MCP address with a different job: it is not for building, but gives your AI agents each customer's connected apps as tools. See [Which MCP do I need?](architecture.md#which-mcp-do-i-need).
 
-### Execution tiers
+### How a build fits together
 
-Every workflow declares how long it may run and how it answers the caller.
+<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle.svg" alt="The Fastn integration lifecycle: who does what across Build, Publish, Embed, Customize, and Run and monitor"><figcaption><p>Who does what: your team, your customer, and Fastn</p></figcaption></figure>
 
-| Tier         | Behavior                                        | Returns       | Timeout range | Default |
-| ------------ | ----------------------------------------------- | ------------- | ------------- | ------- |
-| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s - 25s      | 25s     |
-| **Standard** | Asynchronous, run via Temporal                  | 202 Accepted  | 5s - 15min    | 2min    |
-| **Long**     | Asynchronous, for large volumes                 | 202 Accepted  | 30s - 36h     | 15min   |
+1. Describe the integration to your AI tool through the Fastn MCP server, or to the Fastn agent, or write it in code.
+2. The agent picks or creates the connectors and sets up authentication.
+3. It drafts the workflow and its test cases, and shows you the diff.
+4. You attach a trigger, publish a version, and deploy it to an environment.
+5. You add the integration to your widget, and customers turn it on.
+6. You watch runs in **Logs** and set an alert so failures are not silent.
 
-Instant's 25-second ceiling rises to 2 minutes only for organizations where Fastn has turned on the longer Instant timeout. Long runs for up to 36 hours. Pick Instant only when something is waiting on the answer. Most syncs are Standard.
-
-### Test and live
-
-Fastn separates *what the code is* from *where it runs*.
-
-* **Versions** are snapshots created by Publish, numbered v1, v2, … in the workflows list.
-* **Environments** are where versions are deployed. `test` and `live` are built in and protected; you can add named ones such as `staging`, and mark any environment **Requires review** so promoting to it opens a pull request on a connected GitHub repository instead of deploying directly.
-* **API keys** carry a mode, `Test` or `Live`. A Test key is refused unless the caller sends `X-fastn-Test-Mode: true`.
-
-Test keys act on real data. See [API keys](../manage/api-keys.md).
-
-### Triggers
-
-Three kinds, covered fully in [Triggers](../build/triggers/README.md).
-
-* **Webhook**: an outside app calls a URL you give it.
-* **Schedule**: a clock you set.
-* **App event**: something changed in a connected app.
-
-### Unified APIs
-
-Where several providers do the same job (HubSpot, Salesforce, and Zoho all hold contacts), Fastn exposes one canonical endpoint per entity and routes to whichever provider that customer connected. Your code calls `/api/v1/unified/crm/contact` and does not branch on the CRM.
-
-The categories and entities available depend on the unified API catalog in your workspace, and the list grows over time; CRM contacts are a typical example. See [Unified APIs](../build/unified-apis/README.md) for how to browse what is available.
-
-### The Fastn agent
-
-The **Fastn agent** is Fastn's own agent for building integrations, on paid plans (Scale or Enterprise). Start it from **Integrations → Create integration → Build with fastn agent** or the prompt on **Home**. It finds API specs, creates connectors, sets up authentication, proposes field mappings, generates test cases, and writes the workflow. It shows you a diff before anything runs, and it uses AI credits.
-
-On any plan, you can build the same way from your AI tool, such as Claude or Cursor, through the Fastn MCP server. That uses no AI credits.
-
-### The Fastn MCP server and Fastn Connect
-
-Fastn has two MCP addresses. The **Fastn MCP server** (`mcp.fastn.dev/fastn-workspace`) lets your AI tool build and manage integrations in your workspace. **Fastn Connect**, the MCP gateway, gives your AI agents each customer's connected apps as tools, with the same customer scoping and permission model. A customer's own AI client can use it too. See [Fastn MCP server](../build/mcp-gateway/README.md) and [Which MCP do I need?](architecture.md#which-mcp-do-i-need).
+What you can see in the dashboard depends on your role: **Owner**, **Admin**, **Developer**, **Operator**, or **Viewer**. People at your customers who use the widget have the **End User** role and never sign in to Fastn. See [Roles](../manage/roles.md).
