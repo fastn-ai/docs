@@ -33,7 +33,7 @@ Save (draft) → Publish (version) → Deploy (to an environment)
 {% endhint %}
 
 {% hint style="info" %}
-**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to publish workflows. For example, ask it: *"Publish the sync-new-contacts workflow."* For security, deploying to `live` from your AI tool needs an admin to approve it in the Fastn dashboard. To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to publish workflows. For example, ask it: *"Publish the sync-new-contacts workflow."* For security, deploying to `live` from your AI tool needs an admin to approve it in the Fastn dashboard. See [Deploy to live from your AI tool](#deploy-to-live-from-your-ai-tool). To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
 {% endhint %}
 
 ### How to do each one
@@ -64,6 +64,23 @@ The button is disabled until the workflow has at least one published version (*P
 {% hint style="info" %}
 **Deploying an older version is how you roll back.** There is no separate rollback command. Pick the last good version number in the **Version** dropdown and deploy it to the environment you need to fix.
 {% endhint %}
+
+#### Deploy to live from your AI tool
+
+Your AI tool can't deploy a workflow to `live` by itself. When you ask it to, it creates a **release review** and gives you a link to approve the deploy in your browser.
+
+1. Ask your AI tool to deploy the workflow to `live`, for example: *"Deploy the sync-new-contacts workflow to live."*
+
+   **You should see:** a link to the workflow's release review.
+2. Open the link and check the review:
+   * **Version:** which version will replace the one in `live`.
+   * **Test results:** how many test cases passed and failed. If the page says **Results are out of date**, the tests didn't run against this version. Ask your AI tool to run the test cases again before you promote.
+   * **Flow before / after** and **Compare code:** what changes between the two versions.
+3. Select **Promote to Live**. Check the summary in the **Promote to Live?** dialog, type `promote`, and select **Promote to Live**.
+
+   **You should see:** *Version N is live in Live*. Go back to your AI tool to continue.
+
+The review warns you about failing or out-of-date tests, but doesn't stop you from promoting.
 
 ### See what is deployed where
 
