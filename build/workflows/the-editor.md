@@ -1,5 +1,5 @@
 ---
-description: The workflow editor walked through tab by tab, plus the configuration panel reference.
+description: The workflow editor's layout, what changes when code editing is off, and every setting in the Configuration panel.
 layout:
   width: default
   title:
@@ -14,123 +14,59 @@ layout:
     visible: true
 ---
 
-# The workflow editor, tab by tab
+# The workflow editor
 
-Opening a workflow (**Create workflow**, or **Edit** from a row's `⋯` menu) opens a drawer with **Configuration** on the left and the tool tabs on the right. Whether there is a code column between them depends on your organization.
+**Build → Integrations → Workflows** → **Create workflow**, or **Edit** in a workflow's `⋯` menu · [Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)
 
-{% hint style="warning" %}
-**Code editing is a per-organization entitlement, off by default and enabled by fastn.** Unless fastn has switched it on for your organization, the middle column is not shown: the editor shows Configuration and the tool tabs, and the banner reads:
+The workflow editor is where you configure, test, publish and deploy a workflow. It opens as a drawer over the Workflows list.
 
-> Code editing is switched off for this organization - workflows here are generated and updated by the AI builder. You can still test, wire connectors and edit the contract. It can be switched on if you want to write workflow code yourself; ask fastn to enable it.
+### Layout
 
-Everything else on this page still applies. You change a workflow's behavior by asking [the fastn agent](../agent/README.md) or your AI tool instead of typing into the file, and you still configure, test, wire connectors, edit the contract, publish, and deploy as described below.
-{% endhint %}
+* **Configuration (left):** the workflow's name, execution tier, timeout, retries, and the **Publish & Deploy** actions. See [Configuration panel](#configuration-panel).
+* **Code (middle):** the workflow's `<slug>.js` file. Shown only when code editing is on for your organization. See [Write a workflow in code](../../tutorials/saas-admin/configuring-a-workflow-in-code.md).
+* **Tool tabs (right):** tabs to test the workflow, check its connectors and contract, read its diagram, and see its runs. [Learn more](the-tabs.md)
 
-The walkthrough below assumes the code column is present. This is roughly the order you move through it.
-
-{% stepper %}
-{% step %}
-#### Set up Configuration
-
-Under **Identity**, give it a **Name** (required) and, on a new workflow, a **Slug**: the slug is fixed once the workflow exists, so choose it deliberately. **Description** is free text. Under **Execution**, pick an **Execution tier**: `Instant` runs synchronously and caps at 25s (2 minutes if fastn has granted your organization the "Increase Instant timeout" entitlement), `Standard` returns `202` and runs up to 15 min, and `Long` returns `202` and runs up to 36 hours. The **Execution timeout** slider is then constrained to that tier.
+The top bar holds **Discard**, the workflow name, **Close tab**, **Save workflow** and **Publish**. If you close the editor with unsaved edits, it asks first: *Discard unsaved changes?*, with **Keep editing** and **Discard changes**.
 
 <figure><img src="../../.gitbook/assets/screens/workflow-editor-new.webp" alt="A new workflow named Sync new contacts: the Configuration panel with Start from an example, Name and Slug sync-new-contacts, Description and Labels on the left; on the right the Test, Connectors and Contract tabs with ctx.input and ctx.headers, a Live mode menu and Run Live, under a banner saying code editing is switched off for this organization"><figcaption>A new workflow. In an organization with code editing off, only the Test, Connectors and Contract tabs show.</figcaption></figure>
 
-Full ranges and defaults are in the Configuration panel reference below.
-{% endstep %}
+### When code editing is off
 
-{% step %}
-#### Decide what happens when a run fails
+Code editing is off by default. Fastn turns it on for your organization if you ask. While it is off:
 
-**Retry policy** is off by default; turning it on exposes **Max attempts**, **Initial interval (ms)**, **Backoff coefficient**, and **Max interval (ms)**. It only retries transient failures: code errors, data errors, and out-of-memory never retry. **Escalate on timeout** is a separate toggle that retries one tier up on a timeout (instant → standard, or standard → long), subject to your plan, and is hidden on the `Long` tier.
-{% endstep %}
+* The editor has no code column, and a banner says that workflows are generated and updated by the AI builder.
+* To change what a workflow does, you ask your AI tool through the [Fastn MCP server](../mcp-gateway/README.md), or the [Fastn agent](../agent/README.md).
+* Everything else works the same: you still configure, test, wire connectors, edit the contract, publish and deploy.
 
-{% step %}
-#### Write the function
+### A typical pass through the editor
 
-The middle column is one `<slug>.js` file exporting `export default async function (ctx)`. You reach the request through `ctx.input` and `ctx.headers`, and connected apps through `fastn.*`, for example `fastn.connector.<slug>.<action>()`. A new workflow is scaffolded for you:
+1. **Configure it.** Name the workflow and pick its execution tier in the [Configuration panel](#configuration-panel). Choose the slug carefully: you can't change it later.
+2. **Test it.** Run it with a sample input on the [Test](the-tabs.md#test) tab.
+3. **Check what it calls.** Confirm the apps and actions it uses on the [Connectors](the-tabs.md#connectors) tab, and its input and output shape on the [Contract](the-tabs.md#contract) tab.
+4. **Check its test cases.** Review the saved test suite on the [Test cases](the-tabs.md#test-cases) tab.
+5. **Publish and deploy it.** Use **Publish & Deploy** in the Configuration panel. See [Test and release](lifecycle.md).
 
-```javascript
-export default async function(ctx) {
-  const { input, headers } = ctx;
-  // Your workflow logic here
-  return { result: "Hello from workflow!", input };
-}
-```
+### Configuration panel
 
-**This step does not apply when code editing is off** (the default). The file is then generated and updated by [the fastn agent](../agent/README.md) or your AI tool, and you describe the change you want there rather than editing it here. Skip to the next step; everything from there on is identical.
-{% endstep %}
-
-{% step %}
-#### Test it: `Test` tab
-
-Put a body in the `ctx.input` editor and headers in `ctx.headers`, or press **Use contract** to fill the input from the declared contract. Pick what the run actually touches (`Live`, `Partial Mock`, or `Fully Mock`); the run button follows the mode and reads **Run Live**, **Run Partial Mock**, or **Run Fully Mock**.
-{% endstep %}
-
-{% step %}
-#### Check the wiring: `Connectors` tab
-
-Every `fastn.connector.<slug>.<action>(…)` call in your code is extracted here each time you save, so this tab is a readout of what the workflow actually talks to. **Add** covers anything you need to wire by hand.
-{% endstep %}
-
-{% step %}
-#### Declare the shape: `Contract` tab
-
-The tab holds **Input contract** and **Output contract**, each viewable as **JSON** or **Schema**. Paste an example payload in the JSON view and the schema is generated live; the schema is the contract, and is hand-editable.
-{% endstep %}
-
-{% step %}
-#### Read the logic back: `Diagram` tab
-
-**Flow** and **Sequence** are generated from the code and read-only: you edit the code and they follow. **Docs** is generated too, with an **End user** / **Technical** toggle and **Regenerate**, but you can also **Edit** and **Save** it; an edited doc shows an **Edited** badge, survives regeneration, and **Reset to generated** returns to the generated version.
-{% endstep %}
-
-{% step %}
-#### Confirm the scenarios: `Test cases` tab
-
-This tab lists the cases drafted during the build, grouped as `happy-path`, `pagination`, `fields`, `edge-cases`, and `error-handling`. Each row has an id such as `TC-01` and a `LIVE` or `MOCK` badge.
-{% endstep %}
-
-{% step %}
-#### Watch it run: `Executions` tab
-
-This tab shows the workflow's own run history, filtered by the HTTP-status pills `All`, `200`, `201`, `400`, `404`, `422`, `500`. The neighboring **Sync reports** tab fills in the first time the workflow runs `fastn.diff.compare`.
-{% endstep %}
-
-{% step %}
-#### Hand it to callers: `API` tab
-
-**API** gives the `POST …/api/v1/workflows/<wfId>/execute` endpoint with a copyable curl and the two headers that steer it, `X-fastn-Test-Mode` and `x-fastn-env`. There is no separate runtime reference tab: what `ctx` and `fastn.*` expose inside the function shows up in the code editor's autocomplete and is documented in [Workflow runtime API](../../reference/workflow-runtime.md).
-{% endstep %}
-{% endstepper %}
-
-### The editor
-
-Opening a workflow opens a drawer laid out as **configuration on the left, the tool tabs on the right, and, where code editing is enabled, the code editor between them**. That middle column is labeled `<slug>.js` and `JavaScript · export default async function(ctx)`. An organization without code editing gets the same drawer minus that column.
-
-Along the top: **Discard**, the workflow name, **Close tab**, **Save workflow**, and **Publish**. Closing with unsaved edits asks first: *Discard unsaved changes?* / "\"\<name>\" has edits that have not been saved. Closing this tab throws them away." / **Keep editing** / **Discard changes**.
-
-#### Configuration panel
-
-**Identity**
+#### Identity
 
 | Field           | Notes                                                                             |
 | --------------- | ----------------------------------------------------------------------------------- |
 | **Name**        | Required. Empty saves are refused with *Name is required.*                         |
 | **Slug**        | Required when you create the workflow, and **cannot be changed afterwards**.        |
-| **Description** | What it does. The fastn agent writes one; edit freely.                              |
+| **Description** | What the workflow does. The Fastn agent or your AI tool writes one, and you can edit it. |
 
-**Execution**
+#### Execution
 
 | Field                 | Notes                                                                                     |
 | --------------------- | ------------------------------------------------------------------------------------------- |
-| **Execution tier**    | `Instant` (default): synchronous, returns the result inline, max 25s (help text: *Synchronous. Returns the result inline. Max 25s.*), or 2 min with the "Increase Instant timeout" entitlement. `Standard`: asynchronous via Temporal, returns 202, max 15 min. `Long`: asynchronous, returns 202, max 36 hours. |
-| **Execution timeout** | A slider constrained to the tier: 1s to 25s (or 2 min with the entitlement) for Instant, 5s to 15min for Standard, 30s to 36h for Long. Defaults are 25s, 2.0m, and 15.0m respectively. |
+| **Execution tier**    | `Instant` (the default), `Standard` or `Long`. Sets how long a run can take and whether the caller waits for the result. See [Execution tiers](README.md#execution-tiers). |
+| **Execution timeout** | A slider constrained to the tier: 1s to 25s for Instant (2 min if Fastn has raised your organization's limit), 5s to 15min for Standard, 30s to 36h for Long. Defaults are 25s, 2.0m, and 15.0m respectively. |
 | **Status**            | A toggle, on by default, and shown only on workflows that already exist. Off stops new runs without deleting anything. |
 
-**WHEN A RUN FAILS**
+#### When a run fails
 
-The **Retry policy** toggle is off by default (off means a single attempt). Its own description sets the boundary: it retries transient failures (and timeouts, when **Escalate on timeout** is off), and code errors, data errors, and out-of-memory never retry. Turning it on exposes four fields.
+* **Retry policy:** Off by default, so a failed run is not retried. When it is on, Fastn retries temporary failures, and timeouts too when **Escalate on timeout** is off. Code errors, data errors and out-of-memory failures are never retried. Turning it on shows four fields:
 
 | Field                    | Range | Default |
 | ------------------------ | ----- | ------- |
@@ -139,10 +75,13 @@ The **Retry policy** toggle is off by default (off means a single attempt). Its 
 | **Backoff coefficient**  | - | 2       |
 | **Max interval (ms)**    | - | 60000   |
 
-**Escalate on timeout** is a separate toggle, off by default and hidden on the Long tier. On timeout it retries one tier up (instant → standard, or standard → long) with the higher tier's full time budget, subject to your plan. An escalated instant run returns a queued execution id to poll rather than a synchronous result.
+* **Escalate on timeout:** Off by default, and hidden on the Long tier. When a run times out, Fastn runs it again one tier up (Instant to Standard, or Standard to Long) with that tier's full time limit, if your plan allows it. An escalated Instant run returns an execution id to poll instead of the result.
 
-**PUBLISH & DEPLOY** (existing workflows only)
+#### Publish & Deploy
 
-* **Publish snapshot**: freezes the current code and configuration as a version.
-* **Deploy to environment**: sends a published version to an environment.
-* Underneath: a **Latest: vN** line for the newest published version, then one row per environment showing its current status.
+Shown on existing workflows only. See [Test and release](lifecycle.md) for what each action does.
+
+* **Publish snapshot:** saves the current code and configuration as a new version.
+* **Deploy to environment:** puts a published version into an environment.
+
+Underneath, a **Latest: vN** line shows the newest published version, followed by one row per environment with the version running there.

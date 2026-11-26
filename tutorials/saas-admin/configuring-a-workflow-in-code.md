@@ -24,60 +24,32 @@ Write a workflow by hand in the code editor, test it with sample input, and crea
 
 * The [Quickstart: your first integration](../../getting-started/quickstart.md).
 * Basic JavaScript.
-* Code editing turned on for your organization. It is a per-organization entitlement, off by default and turned on by fastn. If your editor has no code column, ask fastn to turn it on, or build the workflow with the [fastn agent](../../build/agent/README.md) or [your AI tool](../../build/building-from-your-ai-agent.md) instead.
+* Code editing turned on for your organization. It is off by default, and Fastn turns it on if you ask. If your editor has no code column, ask Fastn, or build the workflow from [your AI tool](../../build/building-from-your-ai-agent.md) or with the [Fastn agent](../../build/agent/README.md) instead.
 
 ### Open the code editor
 
-1. Go to **Integrations** and open the **Workflows** tab.
+1. Go to **Build → Integrations → Workflows** ([Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)).
 2. Click **Create workflow**.
 
 **You should see:** the workflow editor, with three panels.
 
 ### The three panels
 
-The editor has these panels:
+* **Configuration (left):** the workflow's name, slug, execution tier, timeout and retries. Every setting is described in [Configuration panel](../../build/workflows/the-editor.md#configuration-panel).
+* **Code (middle):** the `<slug>.js` file, which starts from this template:
 
-#### 1. Configuration
+  ```javascript
+  export default async function(ctx) {
+    const { input, headers } = ctx;
+    // Your workflow logic here
+    return { result: "Hello from workflow!", input };
+  }
+  ```
 
-| Field                 | What it does                                                                       |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Name**              | Required. Placeholder: "e.g. Sync Contacts".                                        |
-| **Slug**              | Required on create. Unique identifier, used in the API path. Placeholder: "sync-contacts". *Cannot be changed after creation.* |
-| **Description**       | What the workflow does. Shown in the workflows table.                              |
-| **Execution tier**    | **Instant** (the default; synchronous, max 25s, or 2 minutes with the "Increase Instant timeout" entitlement), **Standard** (async, up to 15 minutes), or **Long** (async, up to 36 hours) |
-| **Execution timeout** | Max time before the run is cut off. The slider is constrained to the tier: 1s to 25s for Instant (up to 2 min with the entitlement), 5s to 15min for Standard, 30s to 36h for Long. |
-| **Retry policy**      | Toggle on/off. When on, transient failures retry automatically, up to **Max attempts** (2-10, default 3). |
+  Every workflow exports a default async function that receives `ctx`, the context object.
+* **Tool tabs (right):** a new workflow shows **Test**, **Connectors** and **Contract**. More tabs appear once you save it. See [Test a workflow](../../build/workflows/the-tabs.md).
 
-#### 2. Code editor
-
-The editor shows `<slug>.js` with a default template:
-
-```javascript
-export default async function(ctx) {
-  const { input, headers } = ctx;
-  // Your workflow logic here
-  return { result: "Hello from workflow!", input };
-}
-```
-
-Every workflow exports a default async function that receives `ctx`, the context object.
-
-#### 3. Tool tabs
-
-On a new workflow there are three tabs:
-
-* **Test** - run the workflow with sample input
-* **Connectors** - the connectors the workflow calls
-* **Contract** - the input and output contract
-
-Once the workflow is saved, more tabs appear (Diagram, Test cases, Executions, Sync reports, API, and others). Diagram has a **Docs** view, but it documents this workflow, not the runtime; the runtime reference is in the code editor's autocomplete and in [Workflow runtime API](../../reference/workflow-runtime.md).
-
-The Test tab has:
-
-* **ctx.input** - JSON input your workflow receives (**Use contract** fills it from the input contract)
-* **ctx.headers** - optional HTTP headers
-* A mode select: **Live**, **Partial Mock**, or **Fully Mock**
-* A run button that follows the mode: **Run Live**, **Run Partial Mock**, or **Run Fully Mock**. It executes the workflow without saving.
+The runtime reference, everything `ctx` and `fastn.*` offer inside the function, is in the code editor's autocomplete and in [Workflow runtime API](../../reference/workflow-runtime.md).
 
 ### The ctx object
 
@@ -168,28 +140,18 @@ Test runs in **Live** mode are real: connectors are called and side effects happ
 ```
 
 3. Optionally add headers in **ctx.headers**.
-4. Pick a mode: **Live** (real calls to connected apps), **Partial Mock** (live where the connector has an active connection, a stored mock stub where it does not), or **Fully Mock** (stubs only).
+4. Pick a mode: **Live**, **Partial Mock** or **Fully Mock**. See [Test](../../build/workflows/the-tabs.md#test) for what each one calls.
 5. Click the run button (**Run Live**, **Run Partial Mock**, or **Run Fully Mock**).
 
 **You should see:** the output below the run button. Check that the result is what you expect.
-
-### Choose an execution tier
-
-| Tier         | Behavior                                                                          | Use when                                                             |
-| ------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| **Instant**  | Synchronous: the caller waits for the result. Max 25 seconds (2 minutes with the "Increase Instant timeout" entitlement). Returns result inline. | API endpoints that need a response, quick lookups, simple transforms |
-| **Standard** | Asynchronous: returns `202` immediately, executes in background. Up to 15 minutes. | Data syncs, multi-step processes, most workflows                     |
-| **Long**     | Asynchronous, for large data volumes and long-running processes. Up to 36 hours.   | Batch imports, full data backfills, large report generation          |
-
-The Workflows list has filter pills for **All | Instant | Standard | Long** so you can filter by tier.
 
 ### Create the workflow
 
 Once your code works in testing:
 
 1. Fill in **Name**, **Slug**, and **Description** in the Configuration panel.
-2. Select the appropriate **Execution tier**.
-3. Set **Execution timeout** (for Instant, the slider tops out at 25s unless your organization has the extended Instant timeout).
+2. Select the **Execution tier**: **Instant** when the caller waits for the answer, **Standard** for most syncs, **Long** for large imports. See [Execution tiers](../../build/workflows/README.md#execution-tiers).
+3. Set the **Execution timeout**.
 4. Toggle **Retry policy** if you want automatic retries on failure.
 5. Click **Create Workflow** (bottom of the Configuration panel).
 
@@ -197,10 +159,10 @@ Once your code works in testing:
 
 ### Edit an existing workflow
 
-1. Go to **Integrations** and open the **Workflows** tab.
+1. Go to **Build → Integrations → Workflows** ([Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)).
 2. Click the workflow's row (or **Edit** in its `⋯` menu). The code editor opens with the existing code.
 3. Make your changes and test them. Draft edits auto-save (**✓ Draft saved**); **Save workflow** saves explicitly.
-4. Publish again to make the change runnable. Publishing immediately changes what triggers routed to **test (latest published)** run.
+4. Publish again to make the change runnable. Publishing changes what triggers routed to **test (latest published)** run straight away. See [Test and release](../../build/workflows/lifecycle.md).
 
 ### What you've learned
 

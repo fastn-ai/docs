@@ -1,5 +1,5 @@
 ---
-description: The code that runs on a trigger, a schedule, or an API call.
+description: What a workflow is, how it runs, and how to read the Workflows list.
 layout:
   width: default
   title:
@@ -16,40 +16,39 @@ layout:
 
 # Workflows
 
-**Build → Integrations → Workflows** · `/integrations?tab=workflows`
+**Build → Integrations → Workflows** · [Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)
 
-A workflow is JavaScript. One file, `<slug>.js`, exporting one function:
+A **workflow** is the logic of an integration: the steps that run each time it is triggered. It uses [connectors](../connectors/README.md) to read from and write to apps. For example, a workflow can fetch new deals from a CRM, reshape them and create matching invoices in an accounting app.
 
-```javascript
-export default async function (ctx) {
-  // ctx.input, ctx.headers; connectors via fastn.connector.<slug>.<action>()
-}
-```
+A workflow runs when a [trigger](../triggers/README.md) fires or when your backend calls it through the API. Each run is for one customer and uses that customer's own [connections](../connections/README.md).
 
-There is no node palette and no drag-and-drop step builder. Everything else on this screen configures, describes, tests, or deploys that function. The editor's Diagram tab is AI-generated documentation of that code: a read-only picture that regenerates when the code has changed.
+### How you build one
+
+You describe the workflow to your AI tool through the [Fastn MCP server](../mcp-gateway/README.md), or to the [Fastn agent](../agent/README.md), and it writes the workflow for you. You then test it, publish it and deploy it.
+
+Under the hood, a workflow is a JavaScript function in one file, `<slug>.js`. You see that file in the editor only when code editing is on for your organization, which is off by default. Either way, you configure, test, publish and deploy the workflow the same way. See [The workflow editor](the-editor.md).
 
 ### Execution tiers
 
-Every workflow declares how long it may run and how it answers the caller.
+Each workflow has an execution tier. The tier sets how long a run can take and whether the caller waits for the result.
 
-| Tier         | Behavior                                        | Returns       | Timeout range | Default |
-| ------------ | ----------------------------------------------- | ------------- | ------------- | ------- |
-| **Instant**  | Synchronous; the caller waits                   | Result inline | 1s - 25s      | 25s     |
-| **Standard** | Asynchronous, run via Temporal                  | 202 Accepted  | 5s - 15min    | 2min    |
-| **Long**     | Asynchronous, for large volumes                 | 202 Accepted  | 30s - 36h     | 15min   |
+* **Instant:** The caller waits and gets the result in the response. A run can take up to 25 seconds, or 2 minutes if Fastn has raised the limit for your organization. Use it when something is waiting on the answer, such as a quick lookup.
+* **Standard:** The caller gets `202 Accepted` straight away, and the run continues in the background for up to 15 minutes (2 minutes by default). Use it for most syncs and multi-step processes.
+* **Long:** Like Standard, but a run can take up to 36 hours (15 minutes by default). Use it for large imports, backfills and reports.
 
-Instant's 25-second ceiling rises to 2 minutes only for organizations where Fastn has turned on the longer Instant timeout. Long runs for up to 36 hours. Pick Instant only when something is waiting on the answer. Most syncs are Standard.
+You set the tier and the timeout in the editor's [Configuration panel](the-editor.md#configuration-panel).
 
+### Versions and environments
 
-### Test and live
+Fastn keeps *what the code is* separate from *where it runs*.
 
-Fastn separates *what the code is* from *where it runs*.
-
-* **Versions** are snapshots created by Publish, numbered v1, v2, … in the workflows list.
-* **Environments** are where versions are deployed. `test` and `live` are built in and protected; you can add named ones such as `staging`, and mark any environment **Requires review** so promoting to it opens a pull request on a connected GitHub repository instead of deploying directly.
-* **API keys** carry a mode, `Test` or `Live`. A Test key is refused unless the caller sends `X-fastn-Test-Mode: true`.
+* **Version:** A frozen copy of the workflow, created each time you publish. Versions are numbered v1, v2 and so on.
+* **Environment:** A place where a version runs. `test` and `live` are built in. You can add your own, such as `staging`, and you can require a GitHub pull request before anything is deployed to one. [Learn more](../../manage/environments.md)
+* **API key mode:** Every API key is either `Test` or `Live`. A call with a Test key must also send `X-fastn-Test-Mode: true`, or it is refused.
 
 Test keys act on real data. See [API keys](../../manage/api-keys.md).
+
+To publish and deploy versions, see [Test and release](lifecycle.md).
 
 ### The list
 
@@ -73,19 +72,22 @@ What each status means:
 | `In review` | A publish is waiting on a GitHub pull request; the version is created when the PR merges. |
 | `Unpublished` | Never published. |
 
-Two tooltips explain why a call fails, and the first is the error string you are most likely to search for:
+When a call fails because nothing is published or deployed, the list's tooltips explain why. The first message is the error you are most likely to search for:
 
 > Never published. Every call returns WORKFLOW\_NOT\_PUBLISHED until a snapshot is published. Draft edits alone do not make a workflow runnable.
 
 > Nothing deployed to \<environment>. A call naming this environment fails until a version is deployed to it.
 
-**Search workflows** filters by name; pills split the list by execution tier: **All**, **Instant**, **Standard**, **Long**.
+**Search workflows** filters by name, and the **All**, **Instant**, **Standard** and **Long** pills filter by execution tier.
 
-Two buttons sit top-right: **Connect GitHub**, which connects your organization to a GitHub repository, and **Create workflow**, which gives you an empty one.
+Two buttons sit at the top right:
+
+* **Connect GitHub:** connects your organization to a GitHub repository, so publishing and deploying can go through pull requests.
+* **Create workflow:** opens the editor with an empty workflow.
 
 ### In this section
 
-* [The editor](the-editor.md)
-* [Write a workflow in code](../../tutorials/saas-admin/configuring-a-workflow-in-code.md)
-* [Test a workflow](the-tabs.md)
-* [Test and release](lifecycle.md)
+* [The workflow editor](the-editor.md): the editor's layout and every Configuration setting.
+* [Write a workflow in code](../../tutorials/saas-admin/configuring-a-workflow-in-code.md): write and test a workflow by hand, when code editing is on.
+* [Test a workflow](the-tabs.md): every tool tab in the editor, from Test to API.
+* [Test and release](lifecycle.md): save, publish and deploy, and roll back.

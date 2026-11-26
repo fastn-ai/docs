@@ -1,5 +1,5 @@
 ---
-description: How to save, publish, and deploy a workflow - the three buttons, where they are, and what each one actually does.
+description: How to save, publish and deploy a workflow, what each step changes, and how to roll back.
 layout:
   width: default
   title:
@@ -16,50 +16,46 @@ layout:
 
 # Test and release
 
-**Build → Integrations → Workflows** tab → open a workflow
+**Build → Integrations → Workflows** → open a workflow · [Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)
+
+A change to a workflow goes through three steps before it handles real traffic. Each step has its own button.
 
 ```
-Create → Save (draft) → Publish (snapshot) → Deploy (to an environment)
+Save (draft) → Publish (version) → Deploy (to an environment)
 ```
 
-These are three separate actions, with three separate buttons.
-
-| Stage | Effect |
-| ----------- | ----------------------------------------------------------------------- |
-| **Save** | Persists the draft. Nothing new runs anywhere. |
-| **Publish** | Creates v1, v2, … A snapshot, so rollback is deploying an older one. The newest published version is also what the **test** environment runs. |
-| **Deploy** | Puts a published version into a named environment (for example `live`), where it handles calls and trigger fires that target that environment. |
+* **Save:** stores your edits as a draft. Nothing that runs changes.
+* **Publish:** freezes the draft as a new numbered version (v1, v2 and so on). The `test` environment always runs the newest published version.
+* **Deploy:** puts a published version into an environment, such as `live`, where it handles calls and triggers aimed at that environment.
 
 {% hint style="warning" %}
-**Publishing can reach real traffic before you deploy anything.** A trigger route's **Environment** defaults to **test (latest published)**, which runs the workflow's newest published version. Every trigger routed that way starts firing the new version the moment you publish, with no deploy step in between. If a trigger should only run what you have explicitly deployed, set its route's environment to a named environment such as `live`. See [Triggers](../triggers/README.md).
+**Publishing can reach real traffic before you deploy anything.** A trigger runs in the environment set on its route, and that defaults to **test (latest published)**: the workflow's newest published version. So every trigger left on that default runs your new version the moment you publish, with no deploy step. If a trigger should only run what you have explicitly deployed, set its route's environment to a named environment such as `live`. See [Triggers](../triggers/README.md).
 {% endhint %}
 
 ### How to do each one
 
 #### Save
 
-When you create a workflow, the form's submit button reads **Create Workflow**. On an existing workflow the button reads **Save workflow**, and **Saving…** while it works. Draft edits to an existing workflow also auto-save; the editor shows **Saving…** and then **✓ Draft saved**.
+On a new workflow, select **Create Workflow**. On an existing one, select **Save workflow**. Edits to an existing workflow also save automatically, and the editor shows **Saving…** and then **✓ Draft saved**.
 
-Saving only persists your draft. A saved draft does not change what runs: a workflow with no published version is `Unpublished`, and every call to it returns `WORKFLOW_NOT_PUBLISHED`.
+Saving doesn't change what runs. A workflow that has never been published shows `Unpublished`, and every call to it returns `WORKFLOW_NOT_PUBLISHED`.
 
 #### Publish
 
-Open the **Publish & Deploy** panel and select **Publish snapshot**. (The workflow detail view, which opens when you select **Run** on a workflow's row, has its own **Publish & Deploy** card whose **Draft** row offers **Publish now**, which does the same thing.)
+In the editor's **Publish & Deploy** section, select **Publish snapshot**. You can also select **Run** on the workflow's row and use **Publish now** on the **Publish & Deploy** card there.
 
-A publish freezes the current code as the next numbered version. When it succeeds the toast reads *Published vN. Deploy it to make it live.* Publishing does not put a version into a named environment such as `live`, but it does change what the test environment runs, and so what every trigger routed to **test (latest published)** runs (see the warning above).
+Fastn saves the current code and configuration as the next numbered version, and confirms with *Published vN. Deploy it to make it live.* The new version doesn't reach `live` or any other named environment until you deploy it. It does reach the `test` environment straight away, and with it every trigger routed to **test (latest published)** (see the warning above).
 
-If **Require review before publishing** is switched on for your connected GitHub repository (on [Environments](../../manage/environments.md)), **Publish snapshot** opens a pull request instead of creating a version. The toast reads *Publish opened for review. The version is created when the PR merges*, followed by the PR link, and the workflow's row shows `In review` until the pull request is merged.
+If **Require review before publishing** is on for your connected GitHub repository (on [Environments](../../manage/environments.md)), **Publish snapshot** opens a pull request instead. The version is created when the pull request merges, and until then the workflow shows `In review`.
 
 #### Deploy
 
-Select **Deploy to environment**. The dialog asks for two things:
+Select **Deploy to environment** and choose:
 
-| Field | Notes |
-| ----- | ----- |
-| **Version** | Which published snapshot to deploy. Defaults to the newest. |
-| **Environment** | Where to run it. Defaults to your default environment. |
+* **Version:** the published version to deploy. Defaults to the newest.
+* **Environment:** where to run it. Defaults to your default environment.
 
-Until a workflow has at least one published version this button is disabled, and its tooltip tells you why: *Publish a snapshot first*.
+The button is disabled until the workflow has at least one published version (*Publish a snapshot first*).
 
 {% hint style="info" %}
 **Deploying an older version is how you roll back.** There is no separate rollback command. Pick the last good version number in the **Version** dropdown and deploy it to the environment you need to fix.
@@ -67,31 +63,26 @@ Until a workflow has at least one published version this button is disabled, and
 
 ### See what is deployed where
 
-The **Publish & Deploy** panel lists every environment with the version currently active in it, and flags how many versions behind that is. An environment showing a gap is one where a published fix has not been deployed yet - the most common reason for "I fixed it but it is still broken".
+The **Publish & Deploy** section lists every environment with the version running in it, and how many versions behind the newest it is. A gap means a published fix hasn't been deployed there yet, which is the most common reason a fix doesn't seem to work.
 
 The version table also records who published each version and which environments it reached.
 
 ### When an environment requires review
 
-An environment can be marked **Requires review**. Promoting to one of those opens a pull request on the connected GitHub repository instead of deploying straight away, and the deployment stays **pending** until that pull request is merged.
+If an environment is marked **Requires review**, deploying to it opens a pull request on your connected GitHub repository instead. The deployment stays **pending** until the pull request is merged.
 
-The setting is per environment and lives on [Environments](../../manage/environments.md), which is also where the repository is connected. The gate needs both: a connected repository **and** **Requires review** switched on for the environment you are promoting into.
+This needs both a connected repository and **Requires review** turned on for that environment. You set both on [Environments](../../manage/environments.md) · [Open in Fastn](https://app.fastn.dev/settings/environments).
 
-### When code editing is switched off
+### When Publish and Deploy are disabled
 
-Code editing is a per-organization entitlement. It is off by default and is enabled by fastn.
+Publishing and deploying work the same whether code editing is on or off. **Publish snapshot** and **Deploy to environment** are disabled only when:
 
-Where it is off, a banner says so and the editor has no code column. Workflows are generated and updated by [the fastn agent](../agent/README.md) or your AI tool, and you change behavior by asking it rather than editing a file.
-
-Everything else is unchanged: you still test, wire connectors, edit the contract, publish, and deploy, and the runtime surface is identical. Code editing can be switched on if you want to write workflow code yourself; ask fastn to enable it.
-
-**Publish snapshot** and **Deploy to environment** are disabled only when:
-
-* your organization can see workflow code but has had code saving switched off (read-only code), or
-* the workflow is inherited from your provider (*Provided by your provider. You can run it and read its executions, but it is not yours to edit.*), or
-* for **Deploy to environment** only, the workflow has no published version yet (*Publish a snapshot first*).
+* your organization can see workflow code but can't save it (read-only code),
+* the workflow comes from your provider, so you can run it and read its runs but not edit it, or
+* for **Deploy to environment** only, the workflow has no published version yet.
 
 ### What you can do next
 
 * [Test a workflow](the-tabs.md): run and check a workflow before you publish it.
+* [Triggers](../triggers/README.md): choose which environment each trigger runs in.
 * [Environments](../../manage/environments.md): add a stage and put a review gate in front of it.
