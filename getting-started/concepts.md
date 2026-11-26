@@ -48,13 +48,14 @@ Fastn also offers **Fastn Connect**, which is a separate MCP server that gives y
 
 ### How a build fits together
 
+Here is how the pieces above come together, from building an integration once to running it for every customer. The diagram shows who does each step: your team, your customers or Fastn.
+
 <figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle.svg" alt="The Fastn integration lifecycle: who does what across Build, Publish, Embed, Customize, and Run and monitor"><figcaption><p>Who does what: your team, your customer, and Fastn</p></figcaption></figure>
 
-1. Describe the integration to your AI tool through the Fastn MCP server, or to the Fastn agent, or write it in code.
-2. The agent picks or creates the connectors and sets up authentication.
-3. It drafts the workflow and its test cases, and shows you the diff.
-4. You attach a trigger, publish a version, and deploy it to an environment.
-5. You add the integration to your widget, and customers turn it on.
-6. You watch runs in **Logs** and set an alert so failures are not silent.
+1. **Build:** Your team describes the integration to your AI tool through the Fastn MCP server, or to the Fastn agent. It picks or creates the **connectors** for the apps involved, writes the **workflow** and adds a **trigger** that decides when the workflow runs. You test the workflow, then publish and deploy it.
+2. **Publish:** You add the integration to your **widget** and choose what customers can change.
+3. **Embed:** Your developers put the widget in your product.
+4. **Customize:** People at each **customer** open the widget, sign in to their own apps, which creates that customer's **connections**, and turn the integration on.
+5. **Run and monitor:** The workflow runs for each customer with that customer's own connections. You watch every run in [Logs](../operate/README.md) and set an [alert](../operate/alerts.md) so failures don't go unnoticed.
 
-What you can see in the dashboard depends on your role: **Owner**, **Admin**, **Developer**, **Operator**, or **Viewer**. People at your customers who use the widget have the **End User** role and never sign in to Fastn. See [Roles](../manage/roles.md).
+What your team members can see and do in the dashboard depends on their role. See [Roles](../manage/roles.md).
