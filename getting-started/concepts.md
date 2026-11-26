@@ -40,33 +40,15 @@ These are the terms used across the dashboard and these docs. For one-line defin
 
 What you can see in the dashboard depends on your role: **Owner**, **Admin**, **Developer**, **Operator**, or **Viewer**. People at your customers who use the widget have the **End User** role and never sign in to Fastn. See [Roles](../manage/roles.md).
 
-### Organization, customer, connection
+### Organization and customer management
 
-An **organization** is you, the company that builds the product. It holds your connectors, workflows, widgets, people, and settings.
+Fastn has two kinds of organization: yours, and one for each of your customers.
 
-A **customer** is one of your customers. Every customer is isolated: its connections, credentials, and data never cross into another. Some identifiers and older material say *tenant*.
+* **Organization:** Your organization is your company, the SaaS business that builds the product your customers use. It holds everything you build in Fastn, such as connectors, workflows, triggers and the widget, along with your settings. Your team members sign in to Fastn, and each one's role, such as Owner, Admin or Developer, decides what they can see and change. [Learn more](../manage/people.md)
+* **Customer:** A customer is a company that uses your product. In Fastn, each customer is an organization of its own under yours, with its own users and its own connections to apps. For example, if Acme uses your product, Acme is a customer organization, and several people at Acme can use your widget to connect Acme's HubSpot and Slack. Customers are isolated from each other: one customer's connections, credentials and data never reach another. [Learn more](../operate/customers.md) · [Open in Fastn](https://app.fastn.dev/customers)
+* **End users:** An end user is a person at one of your customers who uses the widget inside your product. A customer can have many end users. They have the **End User** role and never sign in to Fastn itself. [Learn more](../manage/roles.md)
 
-Inside Fastn, each customer is its own small organization under yours. That is why the header that names a customer is called `x-org-id`: it never names your organization, which Fastn already knows from your API key or login.
-
-API calls name a customer with `x-org-id` (or `orgId` in a query or body). The value can be either:
-
-* your own id for the customer, which defaults to its slug if you did not set one, or
-* Fastn's id for it.
-
-Answers name the customer by your own id, as `orgId`.
-
-A **connection** is one customer's authorized link to one app. It stores the credential, encrypted, and records which auth method produced it.
-
-```
-Organization (you)
-├── Customer A
-│   ├── Connection → HubSpot   (OAuth)
-│   └── Connection → Cin7 Core (API key)
-└── Customer B
-    └── Connection → Salesforce (OAuth)
-```
-
-Every connection has an id in the form `ucl:<workspace>:<customer or default>:<connectorId>:<identity>[:<account>]`. The detail page shows it with the line *Pass this to the API to act as this customer.* In the customer segment you can use your own id for the customer, and answers to your API key show it that way. When you call a workflow on a customer's behalf, the customer is identified in request headers: `x-org-id`, `x-installation-id`, `x-fastn-connections`, and `x-fastn-installation-config`.
+<figure><img src="../.gitbook/assets/diagrams/organization-hierarchy.svg" alt="Your organization, its customers and their end users. Your organization is the SaaS company that builds the integrations, with team members in roles such as Owner, Admin and Developer. Under it, each customer is its own organization with its own end users and its own connections to apps such as HubSpot, Salesforce or Jira. Customers are isolated from each other."><figcaption><p>Purple is your organization, and green is your customers' organizations.</p></figcaption></figure>
 
 ### Connector versus connection
 

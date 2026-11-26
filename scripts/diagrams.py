@@ -207,3 +207,42 @@ svg(
     body,
 )
 print("Wrote architecture.svg")
+
+
+# ------------------------------------------------------------- organizations
+def chip(x, y, w, label, color):
+    return (f'<rect style="fill:var(--bg);stroke:var(--{color})" x="{x}" y="{y}" width="{w}" height="26" rx="6"/>\n'
+            + text(x + w / 2, y + 13, label, "l"))
+
+
+body = '<rect class="team" x="20" y="20" width="640" height="104" rx="10"/>\n'
+body += text(340, 42, "Your organization", "h")
+body += text(340, 62, "The SaaS company: builds the integrations and the widget")
+body += text(136, 99, "Team members", "l")
+for i, role in enumerate(["Owner", "Admin", "Developer", "Operator", "Viewer"]):
+    body += chip(210 + i * 90, 86, 82, role, "team")
+customers = [("Customer A", ["User", "User", "User"], ["HubSpot", "Slack"]),
+             ("Customer B", ["User"], ["Salesforce"]),
+             ("Customer C", ["User", "User"], ["Zoho", "Jira"])]
+for i, (name, users, apps) in enumerate(customers):
+    x = 20 + i * 222
+    cx = x + 98
+    body += arrow(340, 124, cx, 166)
+    body += f'<rect class="cust" x="{x}" y="170" width="196" height="176" rx="10"/>\n'
+    body += text(cx, 190, name, "h") + text(cx, 208, "Its own organization")
+    body += text(cx, 234, "End users", "l")
+    for j, u in enumerate(users):
+        body += chip(cx - (len(users) * 58 - 6) / 2 + j * 58, 246, 52, u, "cust")
+    body += text(cx, 294, "Connections", "l")
+    for j, a in enumerate(apps):
+        body += chip(cx - (len(apps) * 86 - 6) / 2 + j * 86, 306, 80, a, "cust")
+body += text(340, 370, "Each customer is isolated: its users, connections and data never reach another customer.")
+svg(
+    "organization-hierarchy.svg", 392,
+    "Your organization, its customers and their end users",
+    "Your organization is the SaaS company that builds the integrations, with team members in roles such as Owner, "
+    "Admin and Developer. Under it, each customer is its own organization with its own end users and its own "
+    "connections to apps such as HubSpot, Salesforce or Jira. Customers are isolated from each other.",
+    body,
+)
+print("Wrote organization-hierarchy.svg")
