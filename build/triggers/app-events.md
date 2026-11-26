@@ -16,69 +16,89 @@ layout:
 
 # App event triggers
 
-An app event trigger fires when something changes in a connected app: a HubSpot deal moves, a GitHub PR merges.
+**Build → Integrations → Triggers** → **App events** · [Open in Fastn](https://app.fastn.dev/integrations?tab=triggers)
 
-**Columns:** `Name`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.
+An **app event trigger** runs your workflows when something changes in a connected app, such as a HubSpot deal moving or a GitHub pull request merging. You pick the event from the app's [connector](../connectors/README.md), and Fastn subscribes to it with the app for you. There is no URL to hand out and nothing is polled.
 
-**`Subscription` is the column that matters on this page.** It reads `Subscribed`, `Pending`, `Failed`, `Not subscribed`, `Unsubscribed`, or `Shared` (sharing another trigger's provider webhook for the same events and connection), and it is separate from `Status`: a trigger can be `Active` and still never fire, because *Status* is whether you have enabled it and *Subscription* is whether fastn successfully registered for events with the provider.
+The trade is one extra thing to check. Because Fastn manages the subscription with the app, the subscription itself can fail, which the other two trigger types can't. See [Check the subscription](#check-the-subscription).
 
-The row menu holds **Copy ingest URL**, **Edit**, **Disable** (or **Enable** on a disabled trigger), **Retry Subscription** (only when the subscription is `Failed`), and **Delete**.
+This page covers creating and configuring an app event trigger. To watch the events it receives, see [Operate → Triggers](../../operate/triggers/README.md).
+
+### The App events list
+
+The list has these columns: `Name`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.
+
+* **`Status`:** Whether you have turned the trigger on.
+* **`Subscription`:** Whether Fastn registered for the event with the app. It reads `Subscribed`, `Pending`, `Failed`, `Not subscribed`, `Unsubscribed` or `Shared` (sharing another trigger's provider webhook for the same events and connection).
+
+The two are separate, so a trigger can be `Active` and still never fire.
+
+The row menu holds **Copy ingest URL**, **Edit**, **Disable** (or **Enable** on a disabled trigger), **Retry Subscription** (only when the subscription is `Failed`) and **Delete**. When you delete the trigger, Fastn unsubscribes from the app.
 
 ### Create an app event trigger
 
-The form is progressive: each answer reveals the next question. Five answers in all (name, connector, connection, event, routes), with a gate between the connector and the connection if nothing is connected yet.
+The form shows one question at a time, and each answer reveals the next: name, connector, connection, event and routes. If nothing is connected for the connector yet, the form stops before the connection.
 
 {% stepper %}
 {% step %}
 #### Name it
 
 From **Add trigger**, choose **App event**, and give it a **Name** (required).
-
 {% endstep %}
 
 {% step %}
 #### Choose the connector
 
-**Connector** is required, searchable, and **immutable after the trigger is created**: choose carefully, because you cannot change it later.
+**Connector** is required and searchable, for example `Cin7 Core`. You can't change it after the trigger is created, so choose carefully.
 {% endstep %}
 
 {% step %}
-#### Clear the connection gate
+#### Connect the app, if needed
 
-Without a live connection for that connector the form stops here: *No active connection found for this connector. Connect first to use it as a trigger source.* Make the [connection](../connections/README.md) first, then continue.
+Without an active connection for that connector, the form stops here with *No active connection found for this connector. Connect first to use it as a trigger source.* Make the [connection](../connections/README.md) first, then continue.
 {% endstep %}
 
 {% step %}
 #### Pick the connection
 
-**Connection** is required: which authorized connection this trigger listens on. Like the connector, it cannot be changed after the trigger is created.
+**Connection** is required: the authorized connection this trigger listens on. Like the connector, you can't change it after the trigger is created.
 {% endstep %}
 
 {% step %}
 #### Pick the event
 
-**Event** is required: a radio list with **Search events...**, a `WEBHOOK` badge, a `Registered` or `Not Subscribed` state, the raw event key, and a **Payload Schema** expander so you can see what arrives.
+**Event** is required. The list has **Search events...**, and each event shows:
+
+* **Type:** A `WEBHOOK` badge.
+* **State:** `Registered` or `Not Subscribed`.
+* **Event key:** The raw key, for example `Sale/Created`.
+* **Payload Schema:** An expander that shows the data the event sends.
 {% endstep %}
 
 {% step %}
 #### Add routes
 
-At least one route is required. Each route has a **Workflow** (required), an optional **Environment** (defaulting to **test (latest published)**, which runs the latest published version) and optional **Headers** (key/value).
+Add at least one route. See [Routes](README.md#routes) for the **Workflow**, **Environment** and **Headers** fields.
 {% endstep %}
 
 {% step %}
-#### Create it, then check Subscription
+#### Create it
 
-Select **Create trigger** (there is no Save button) and it joins the **App events** list.
-
-**Check the subscription before you move on.** Creating the trigger asks fastn to register for events with the provider, and that registration can fail on its own, after the form has closed successfully. Look at the new row's `Subscription` column before you consider the job done.
+Select **Create trigger** (there is no Save button), and the trigger joins the **App events** list. Then check its subscription, as below.
 {% endstep %}
 {% endstepper %}
 
-{% hint style="danger" %}
-**`Active` with `Subscription: Failed` means the trigger never fires.** fastn could not register for events with the provider, so no events arrive, and because `Status` still reads `Active`, the list looks healthy at a glance.
+### Check the subscription
 
-Recover with **Retry Subscription** from the row menu. If it fails again, the problem is upstream of the trigger: re-check the [connection](../connections/README.md) is still live and that its credential still carries the scopes the event needs.
+Creating the trigger asks Fastn to register for the event with the app. That registration can fail on its own, after the form has closed without an error. Look at the new row's `Subscription` column before you consider the job done.
+
+{% hint style="info" %}
+**`Active` with `Subscription: Failed` means the trigger never fires.** Fastn couldn't register for events with the app, so no events arrive. Because `Status` still reads `Active`, the list looks healthy at a glance.
 {% endhint %}
 
-App events are the simplest option when the connector supports them: no URL to hand out, no polling, and fastn manages the subscription with the upstream provider on your behalf. That management is the trade: you gain a subscription you did not have to build, and you take on a failure mode the other two trigger types do not have.
+To recover, select **Retry Subscription** in the row menu. If it fails again, the problem is outside the trigger: check that the [connection](../connections/README.md) is still active and that its credential still has the scopes the event needs.
+
+### What's next
+
+* [Operate → Health](../../operate/health.md): see any customer's trigger that is not listening.
+* [Events](../../operate/events.md): check that the app's events arrive.

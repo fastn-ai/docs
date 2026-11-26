@@ -18,134 +18,52 @@ layout:
 
 # Set up triggers
 
-Triggers are what start your workflows. In fastn, triggers are managed **separately from workflows**: you create a trigger under **Build → Integrations → Triggers**, then route it to one or more workflows.
+At the end, you have a trigger that starts one of your workflows on its own: when another app calls a URL, on a schedule, or when something changes in a connected app.
+
+A trigger lives separately from the workflows it runs. You create it under **Build → Integrations → Triggers**, then route it to one or more workflows. For what triggers are and how routes work, see [Triggers](../../build/triggers/README.md).
 
 ### Before you start
 
-* **Who this is for:** an Owner, Admin, or Developer. Operators can pause, resume, and replay triggers but cannot create them.
-* A published workflow to route the trigger to. See [Test and release](../../build/workflows/lifecycle.md).
-* **For an app event trigger:** a connection to the app the event comes from.
+* **Who this is for:** An Owner, Admin or Developer. Operators can pause, resume and replay triggers, but can't create them.
+* **A published workflow** to route the trigger to. See [Test and release](../../build/workflows/lifecycle.md).
+* **For an app event trigger:** A [connection](../../build/connections/README.md) to the app the event comes from.
 
-### Open the triggers
+{% hint style="info" %}
+You can also ask your AI tool, through the [Fastn MCP server](../../build/mcp-gateway/README.md), or the [Fastn agent](../../build/agent/README.md), to create the trigger while it builds the workflow. See [Build a trigger with AI](../../build/triggers/README.md#build-a-trigger-with-ai).
+{% endhint %}
 
-1. Go to **Build → Integrations → Triggers**. The page has three tabs:
-   * **Webhooks** - HTTP POST endpoints for external events
-   * **Schedulers** - Time-based triggers (interval, daily, weekly, monthly, custom cron)
-   * **App events** - Subscribe to events from your connectors
-2. Click **Add trigger**. The **Add a trigger** picker asks *What should start the workflow?*
-3. Choose **Webhook**, **Schedule**, or **App event**.
+### Steps
 
-Every trigger type sends its fires through **routes**. A route names a **Workflow** (required) and an **Environment**. The environment defaults to **test (latest published)**, which runs the workflow's latest published version: publishing a new version changes what that route runs immediately, with no deploy step. Pick a named environment such as `live` if the route should only run what you have deployed there.
+1. **Open the triggers.** Go to **Build → Integrations → Triggers** · [Open in Fastn](https://app.fastn.dev/integrations?tab=triggers).
 
-### Webhook triggers
+   **You should see:** three tabs, **Webhooks**, **Schedulers** and **App events**, and an **Add trigger** button.
 
-Webhooks receive events from external services via HTTP POST. When a third-party app sends a webhook to your endpoint, the trigger routes the payload to your workflow.
+2. **Choose a type.** Select **Add trigger**, then choose **Webhook**, **Schedule** or **App event**. To pick one, see [Trigger types](../../build/triggers/README.md#trigger-types).
 
-#### Create a webhook trigger
+   **You should see:** the form for that type, starting with **Name**.
 
-1. Click **Add trigger** → **Webhook**.
-2. Enter a **Name** and optional **Description**.
-3. Configure **Routes** (at least one is required). Each route has:
+3. **Name the trigger.** Enter a **Name**, and a **Description** if the form offers one.
 
-| Field           | What it does                                                                 |
-| --------------- | ---------------------------------------------------------------------------- |
-| **Workflow**    | Required. The target workflow.                                               |
-| **Environment** | Optional. **test (latest published)** by default, or one of your named environments, which runs the version deployed there. |
-| **Headers**     | Optional key/value pairs sent with the request to the workflow.              |
+   **You should see:** the rest of the form. On an app event trigger, the form reveals each question after you answer the one before.
 
-4. Click **Add route** to add more routes. A single webhook trigger can fan out to **multiple workflows**: every route receives every payload.
-5. Set **Max attempts** and **Backoff strategy** for delivery, and expand **Advanced options** for the Webhook ID, Authentication, Execution mode, and Deduplication key.
-6. Click **Create trigger**.
+4. **Set what fires it.** Fill in the settings for your type:
 
-**You should see:** the new trigger in the **Webhooks** tab. Copy its URL from the row menu (**Copy URL**).
+   * **Webhook:** Set **Max attempts** and **Backoff strategy** for delivery. Under **Advanced options**, check **Authentication** and add a **Deduplication key** if the sender may send the same event twice. [Every webhook option](../../build/triggers/webhooks.md)
+   * **Schedule:** Pick a mode (**Interval**, **Daily**, **Weekly**, **Monthly** or **Custom**), set the time, and set the **Timezone**. [Every schedule option](../../build/triggers/schedulers.md)
+   * **App event:** Choose the **Connector**, the **Connection** and the **Event**. You can't change the connector or the connection later. [Every app event option](../../build/triggers/app-events.md)
 
-#### Example: fan one webhook out to two workflows
+   **You should see:** on a schedule in **Interval** mode, a live preview such as *Every 5 minutes*. On an app event, the event you picked, with its **Payload Schema**.
 
-A single webhook endpoint that two workflows need to react to:
+5. **Add a route.** Under **Routes**, pick the **Workflow** to run. Leave **Environment** on **test (latest published)** while you try it out, or pick a named environment such as `live`. To run more than one workflow, select **Add route** for each. See [Routes](../../build/triggers/README.md#routes).
 
-**Route 1:** Workflow = "process-new-orders"
+   **You should see:** one route row per workflow, each with a workflow selected.
 
-**Route 2:** Workflow = "update-inventory"
+6. **Create the trigger.** Select **Create trigger**.
 
-Both workflows receive every payload sent to the webhook URL. If a workflow should only act on certain events, have it check the payload (for example `ctx.input.event_type`) and return early for the others.
+   **You should see:** the new trigger in its tab. On a webhook trigger, **Copy URL** in the row menu gives you the URL to hand to the sender. On an app event trigger, the `Subscription` column should read `Subscribed`. If it reads `Failed`, see [Check the subscription](../../build/triggers/app-events.md#check-the-subscription).
 
-### Schedule triggers
+### What's next
 
-Schedule triggers run workflows on a time-based schedule.
-
-#### Create a schedule trigger
-
-1. Click **Add trigger** → **Schedule**.
-2. Enter a **Name** (required) and optional **Description**.
-3. Configure the schedule using the mode buttons:
-
-| Mode         | Configuration                                   |
-| ------------ | ----------------------------------------------- |
-| **Interval** | Run every X minutes, hours, or days. Set number and unit. |
-| **Daily**    | Run once per day at a specific time.            |
-| **Weekly**   | Run on selected days of the week at a time.     |
-| **Monthly**  | Run once per month on a specific day and time.  |
-| **Custom**   | Enter a custom cron expression.                 |
-
-4. For **Interval**: set "Run every \[number] \[minutes/hours/days]".
-5. Set the **Timezone** (required). It defaults to your organization's default timezone if one is set, otherwise to your browser's.
-6. Optionally, set **Starts at** (the date and time to begin), and select **Run immediately on create** for a first run right away.
-7. Add at least one **Route** and pick its **Workflow** (required). A route can also carry an **Environment**, **Headers**, and a JSON **Payload** to hand to the workflow.
-8. Click **Create trigger**.
-
-#### Example schedules
-
-* "Run every 5 minutes" - Interval mode, 5 minutes
-* "Daily at 6 AM" - Daily mode, 06:00
-* "Every Monday at 9 AM" - Weekly mode, Monday 09:00
-* "First of every month" - Monthly mode, day 1
-
-### App event triggers
-
-App events subscribe to events from your connected third-party apps. When something happens in the app (new sale, contact update), fastn receives the event and triggers your workflow.
-
-#### Create an app event trigger
-
-1. Click **Add trigger** → **App event**.
-2. Enter a **Name**.
-3. Select the **Connector** (for example "Cin7 Core"). It cannot be changed after the trigger is created.
-4. Select the **Connection**: the authorized connection this trigger uses. If there is none, connect one first.
-5. Browse the **Event** list (with **Search events...**), which shows available events from the connector:
-   * Each event shows: event name, type badge (**WEBHOOK**), and whether it is **Registered** or **Not Subscribed**
-   * The raw event key (for example "Sale/Created")
-   * Expandable **Payload Schema** showing the event data structure
-6. Select the event you want to subscribe to.
-7. Add at least one **Route**: **Workflow** (required), plus optional **Environment** and **Headers**.
-8. Click **Create trigger**.
-
-#### Event subscription
-
-When you create an app event trigger, fastn subscribes to the webhook on the third-party app automatically. Check the new row's **Subscription** column: it reads `Subscribed`, `Pending`, `Failed`, `Not subscribed`, `Unsubscribed`, or `Shared`. If it reads `Failed`, the trigger never fires; use **Retry Subscription** from the row menu. When you delete the trigger, fastn unsubscribes.
-
-### Manage triggers
-
-#### View triggers
-
-Each tab (Webhooks, Schedulers, App events) shows a list of triggers with:
-
-* Search bar
-* Status filter (**All statuses**, **Active**, **Disabled**)
-* Trigger count in the tab label
-
-#### Edit and delete triggers
-
-Click a trigger's row to open its detail panel, then **Edit** to change its configuration, routes, or schedule; **Edit** is also in the row's menu. Delete triggers you no longer need from the row menu. Deleting a trigger stops the webhook or schedule and unsubscribes from app events.
-
-### What you've learned
-
-* Triggers are managed separately from workflows under **Build → Integrations → Triggers**
-* Three trigger types: Webhook (with routes), Schedule (with modes), and App event (with connector event subscription)
-* A single trigger can route to multiple workflows, and each route picks the environment it runs in
-* Schedules use preset modes (not raw cron by default)
-* App event triggers show subscription status and payload schemas
-
-### Next steps
-
-* Every webhook option: [Webhook triggers](../../build/triggers/webhooks.md).
-* Call a webhook trigger from your backend: [Start an integration from your product's events](../../how-to/events-from-your-product.md).
-* Watch trigger health: [Logs](../../operate/README.md).
+* [Call a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md): send a request to a webhook trigger from your backend.
+* [Start an integration from your product's events](../../how-to/events-from-your-product.md): fire a webhook trigger when something happens in your product.
+* [Logs](../../operate/README.md): watch the runs your trigger starts.
