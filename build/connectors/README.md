@@ -39,6 +39,17 @@ A connector is a **definition**. It holds no credentials. Credentials live on a 
 
 A **connector** is the definition: this API, these actions, these auth methods, this webhook config. A **connection** is an instance of it for one customer. One connector, many connections.
 
+### Per-customer versus platform-wide connectors
+
+Inside a workflow, each connector is wired one of two ways.
+
+| Mode              | Credential used                                  | Use for                                            |
+| ----------------- | ------------------------------------------------ | -------------------------------------------------- |
+| **Per customer**  | The connection belonging to the running customer | Anything touching customer data                    |
+| **Platform-wide** | A single connection owned by your org, shared across the workspace | Your own apps: your Slack, your data warehouse |
+
+Both modes are labeled in the UI: the workflow's Connectors tab shows a **Per customer** or **Platform-wide** badge on each connector. On the connection side, a connection that belongs to your organization rather than to one customer shows `Scope: Account level` on its detail page.
+
 ### Managed and custom connectors
 
 Every card carries a badge that says who maintains it.

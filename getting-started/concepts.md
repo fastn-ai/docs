@@ -37,17 +37,6 @@ Fastn has two kinds of organization: yours, and one for each of your customers.
 
 <figure><img src="../.gitbook/assets/diagrams/organization-hierarchy.svg" alt="Your organization, its customers and their end users. Your organization is the SaaS company that builds the integrations, with team members in roles such as Owner, Admin and Developer. Under it, each customer is its own organization with its own end users and its own connections to apps such as HubSpot, Salesforce or Jira. Customers are isolated from each other."><figcaption><p>Purple is your organization, and green is your customers' organizations.</p></figcaption></figure>
 
-### Per-customer versus platform-wide connectors
-
-Inside a workflow, each connector is wired one of two ways.
-
-| Mode              | Credential used                                  | Use for                                            |
-| ----------------- | ------------------------------------------------ | -------------------------------------------------- |
-| **Per customer**  | The connection belonging to the running customer | Anything touching customer data                    |
-| **Platform-wide** | A single connection owned by your org, shared across the workspace | Your own apps: your Slack, your data warehouse |
-
-Both modes are labeled in the UI: the workflow's Connectors tab shows a **Per customer** or **Platform-wide** badge on each connector. On the connection side, a connection that belongs to your organization rather than to one customer shows `Scope: Account level` on its detail page.
-
 ### Build with the Fastn MCP server or the Fastn agent
 
 You can build an integration by describing it in plain words, in one of two ways. Fastn recommends the Fastn MCP server.
